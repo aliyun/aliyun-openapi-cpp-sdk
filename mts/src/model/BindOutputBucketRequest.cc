@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::BindOutputBucketRequest;
 
 BindOutputBucketRequest::BindOutputBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "BindOutputBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindOutputBucketRequest::~BindOutputBucketRequest()
 {}
@@ -33,7 +35,7 @@ long BindOutputBucketRequest::getResourceOwnerId()const
 void BindOutputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BindOutputBucketRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string BindOutputBucketRequest::getAccessKeyId()const
 void BindOutputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindOutputBucketRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string BindOutputBucketRequest::getResourceOwnerAccount()const
 void BindOutputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string BindOutputBucketRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string BindOutputBucketRequest::getOwnerAccount()const
 void BindOutputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long BindOutputBucketRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long BindOutputBucketRequest::getOwnerId()const
 void BindOutputBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BindOutputBucketRequest::getBucket()const
@@ -88,7 +90,7 @@ std::string BindOutputBucketRequest::getBucket()const
 void BindOutputBucketRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setParameter("Bucket", bucket);
 }
 
 std::string BindOutputBucketRequest::getRoleArn()const
@@ -99,6 +101,6 @@ std::string BindOutputBucketRequest::getRoleArn()const
 void BindOutputBucketRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setParameter("RoleArn", roleArn);
 }
 

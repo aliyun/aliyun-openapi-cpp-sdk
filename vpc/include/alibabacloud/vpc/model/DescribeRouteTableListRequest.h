@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeRouteTableListRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

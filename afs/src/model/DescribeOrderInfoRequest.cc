@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeOrderInfoRequest;
 
 DescribeOrderInfoRequest::DescribeOrderInfoRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeOrderInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderInfoRequest::~DescribeOrderInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeOrderInfoRequest::getSourceIp()const
 void DescribeOrderInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

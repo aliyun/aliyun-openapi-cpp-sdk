@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeEarlyWarningRequest;
 
 DescribeEarlyWarningRequest::DescribeEarlyWarningRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeEarlyWarning")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEarlyWarningRequest::~DescribeEarlyWarningRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeEarlyWarningRequest::getSourceIp()const
 void DescribeEarlyWarningRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

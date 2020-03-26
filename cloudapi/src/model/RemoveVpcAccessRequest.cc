@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveVpcAccessRequest;
 
 RemoveVpcAccessRequest::RemoveVpcAccessRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveVpcAccess")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveVpcAccessRequest::~RemoveVpcAccessRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveVpcAccessRequest::getAccessKeyId()const
 void RemoveVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveVpcAccessRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string RemoveVpcAccessRequest::getInstanceId()const
 void RemoveVpcAccessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RemoveVpcAccessRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string RemoveVpcAccessRequest::getSecurityToken()const
 void RemoveVpcAccessRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int RemoveVpcAccessRequest::getPort()const
@@ -66,7 +68,7 @@ int RemoveVpcAccessRequest::getPort()const
 void RemoveVpcAccessRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string RemoveVpcAccessRequest::getVpcId()const
@@ -77,6 +79,6 @@ std::string RemoveVpcAccessRequest::getVpcId()const
 void RemoveVpcAccessRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

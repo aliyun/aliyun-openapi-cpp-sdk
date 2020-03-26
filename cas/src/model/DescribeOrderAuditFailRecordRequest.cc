@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderAuditFailRecordRequest;
 
 DescribeOrderAuditFailRecordRequest::DescribeOrderAuditFailRecordRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderAuditFailRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderAuditFailRecordRequest::~DescribeOrderAuditFailRecordRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeOrderAuditFailRecordRequest::getOrderId()const
 void DescribeOrderAuditFailRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeOrderAuditFailRecordRequest::getResourceGroupId()const
 void DescribeOrderAuditFailRecordRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeOrderAuditFailRecordRequest::getSourceIp()const
 void DescribeOrderAuditFailRecordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderAuditFailRecordRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeOrderAuditFailRecordRequest::getLang()const
 void DescribeOrderAuditFailRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

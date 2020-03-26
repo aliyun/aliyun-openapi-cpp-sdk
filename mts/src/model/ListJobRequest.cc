@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListJobRequest;
 
 ListJobRequest::ListJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobRequest::~ListJobRequest()
 {}
@@ -33,7 +35,7 @@ long ListJobRequest::getResourceOwnerId()const
 void ListJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobRequest::getNextPageToken()const
@@ -44,7 +46,7 @@ std::string ListJobRequest::getNextPageToken()const
 void ListJobRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string ListJobRequest::getStartOfJobCreatedTimeRange()const
@@ -55,7 +57,7 @@ std::string ListJobRequest::getStartOfJobCreatedTimeRange()const
 void ListJobRequest::setStartOfJobCreatedTimeRange(const std::string& startOfJobCreatedTimeRange)
 {
 	startOfJobCreatedTimeRange_ = startOfJobCreatedTimeRange;
-	setCoreParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
+	setParameter("StartOfJobCreatedTimeRange", startOfJobCreatedTimeRange);
 }
 
 std::string ListJobRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListJobRequest::getAccessKeyId()const
 void ListJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListJobRequest::getState()const
@@ -77,7 +79,7 @@ std::string ListJobRequest::getState()const
 void ListJobRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListJobRequest::getEndOfJobCreatedTimeRange()const
@@ -88,7 +90,7 @@ std::string ListJobRequest::getEndOfJobCreatedTimeRange()const
 void ListJobRequest::setEndOfJobCreatedTimeRange(const std::string& endOfJobCreatedTimeRange)
 {
 	endOfJobCreatedTimeRange_ = endOfJobCreatedTimeRange;
-	setCoreParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
+	setParameter("EndOfJobCreatedTimeRange", endOfJobCreatedTimeRange);
 }
 
 std::string ListJobRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ListJobRequest::getResourceOwnerAccount()const
 void ListJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListJobRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string ListJobRequest::getOwnerAccount()const
 void ListJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListJobRequest::getMaximumPageSize()const
@@ -121,7 +123,7 @@ long ListJobRequest::getMaximumPageSize()const
 void ListJobRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long ListJobRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long ListJobRequest::getOwnerId()const
 void ListJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListJobRequest::getPipelineId()const
@@ -143,6 +145,6 @@ std::string ListJobRequest::getPipelineId()const
 void ListJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 

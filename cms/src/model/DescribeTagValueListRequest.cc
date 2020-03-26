@@ -35,7 +35,7 @@ int DescribeTagValueListRequest::getPageNumber()const
 void DescribeTagValueListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeTagValueListRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeTagValueListRequest::getPageSize()const
 void DescribeTagValueListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTagValueListRequest::getTagKey()const
@@ -57,6 +57,6 @@ std::string DescribeTagValueListRequest::getTagKey()const
 void DescribeTagValueListRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
-	setCoreParameter("TagKey", tagKey);
+	setParameter("TagKey", tagKey);
 }
 

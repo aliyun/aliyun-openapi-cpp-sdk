@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UpdateNetworkAclEntriesRequest;
 
 UpdateNetworkAclEntriesRequest::UpdateNetworkAclEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UpdateNetworkAclEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateNetworkAclEntriesRequest::~UpdateNetworkAclEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateNetworkAclEntriesRequest::getResourceOwnerId()const
 void UpdateNetworkAclEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<UpdateNetworkAclEntriesRequest::EgressAclEntries> UpdateNetworkAclEntriesRequest::getEgressAclEntries()const
@@ -44,18 +46,17 @@ std::vector<UpdateNetworkAclEntriesRequest::EgressAclEntries> UpdateNetworkAclEn
 void UpdateNetworkAclEntriesRequest::setEgressAclEntries(const std::vector<EgressAclEntries>& egressAclEntries)
 {
 	egressAclEntries_ = egressAclEntries;
-	int i = 0;
-	for(int i = 0; i!= egressAclEntries.size(); i++)	{
-		auto obj = egressAclEntries.at(i);
-		std::string str ="EgressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
-		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
-		setCoreParameter(str + ".Policy", obj.policy);
-		setCoreParameter(str + ".Protocol", obj.protocol);
-		setCoreParameter(str + ".DestinationCidrIp", obj.destinationCidrIp);
-		setCoreParameter(str + ".Port", obj.port);
-		setCoreParameter(str + ".EntryType", obj.entryType);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= egressAclEntries.size(); dep1++) {
+		auto egressAclEntriesObj = egressAclEntries.at(dep1);
+		std::string egressAclEntriesObjStr = "EgressAclEntries." + std::to_string(dep1 + 1);
+		setParameter(egressAclEntriesObjStr + ".NetworkAclEntryName", egressAclEntriesObj.networkAclEntryName);
+		setParameter(egressAclEntriesObjStr + ".NetworkAclEntryId", egressAclEntriesObj.networkAclEntryId);
+		setParameter(egressAclEntriesObjStr + ".Policy", egressAclEntriesObj.policy);
+		setParameter(egressAclEntriesObjStr + ".Protocol", egressAclEntriesObj.protocol);
+		setParameter(egressAclEntriesObjStr + ".DestinationCidrIp", egressAclEntriesObj.destinationCidrIp);
+		setParameter(egressAclEntriesObjStr + ".Port", egressAclEntriesObj.port);
+		setParameter(egressAclEntriesObjStr + ".EntryType", egressAclEntriesObj.entryType);
+		setParameter(egressAclEntriesObjStr + ".Description", egressAclEntriesObj.description);
 	}
 }
 
@@ -67,7 +68,7 @@ std::string UpdateNetworkAclEntriesRequest::getClientToken()const
 void UpdateNetworkAclEntriesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getRegionId()const
@@ -78,7 +79,7 @@ std::string UpdateNetworkAclEntriesRequest::getRegionId()const
 void UpdateNetworkAclEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UpdateNetworkAclEntriesRequest::getNetworkAclId()const
@@ -89,7 +90,7 @@ std::string UpdateNetworkAclEntriesRequest::getNetworkAclId()const
 void UpdateNetworkAclEntriesRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", networkAclId);
+	setParameter("NetworkAclId", networkAclId);
 }
 
 bool UpdateNetworkAclEntriesRequest::getUpdateIngressAclEntries()const
@@ -100,7 +101,7 @@ bool UpdateNetworkAclEntriesRequest::getUpdateIngressAclEntries()const
 void UpdateNetworkAclEntriesRequest::setUpdateIngressAclEntries(bool updateIngressAclEntries)
 {
 	updateIngressAclEntries_ = updateIngressAclEntries;
-	setCoreParameter("UpdateIngressAclEntries", updateIngressAclEntries ? "true" : "false");
+	setParameter("UpdateIngressAclEntries", updateIngressAclEntries ? "true" : "false");
 }
 
 std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount()const
@@ -111,7 +112,7 @@ std::string UpdateNetworkAclEntriesRequest::getResourceOwnerAccount()const
 void UpdateNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool UpdateNetworkAclEntriesRequest::getUpdateEgressAclEntries()const
@@ -122,7 +123,7 @@ bool UpdateNetworkAclEntriesRequest::getUpdateEgressAclEntries()const
 void UpdateNetworkAclEntriesRequest::setUpdateEgressAclEntries(bool updateEgressAclEntries)
 {
 	updateEgressAclEntries_ = updateEgressAclEntries;
-	setCoreParameter("UpdateEgressAclEntries", updateEgressAclEntries ? "true" : "false");
+	setParameter("UpdateEgressAclEntries", updateEgressAclEntries ? "true" : "false");
 }
 
 long UpdateNetworkAclEntriesRequest::getOwnerId()const
@@ -133,7 +134,7 @@ long UpdateNetworkAclEntriesRequest::getOwnerId()const
 void UpdateNetworkAclEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<UpdateNetworkAclEntriesRequest::IngressAclEntries> UpdateNetworkAclEntriesRequest::getIngressAclEntries()const
@@ -144,18 +145,17 @@ std::vector<UpdateNetworkAclEntriesRequest::IngressAclEntries> UpdateNetworkAclE
 void UpdateNetworkAclEntriesRequest::setIngressAclEntries(const std::vector<IngressAclEntries>& ingressAclEntries)
 {
 	ingressAclEntries_ = ingressAclEntries;
-	int i = 0;
-	for(int i = 0; i!= ingressAclEntries.size(); i++)	{
-		auto obj = ingressAclEntries.at(i);
-		std::string str ="IngressAclEntries."+ std::to_string(i);
-		setCoreParameter(str + ".NetworkAclEntryName", obj.networkAclEntryName);
-		setCoreParameter(str + ".NetworkAclEntryId", obj.networkAclEntryId);
-		setCoreParameter(str + ".Policy", obj.policy);
-		setCoreParameter(str + ".Protocol", obj.protocol);
-		setCoreParameter(str + ".SourceCidrIp", obj.sourceCidrIp);
-		setCoreParameter(str + ".Port", obj.port);
-		setCoreParameter(str + ".EntryType", obj.entryType);
-		setCoreParameter(str + ".Description", obj.description);
+	for(int dep1 = 0; dep1!= ingressAclEntries.size(); dep1++) {
+		auto ingressAclEntriesObj = ingressAclEntries.at(dep1);
+		std::string ingressAclEntriesObjStr = "IngressAclEntries." + std::to_string(dep1 + 1);
+		setParameter(ingressAclEntriesObjStr + ".NetworkAclEntryName", ingressAclEntriesObj.networkAclEntryName);
+		setParameter(ingressAclEntriesObjStr + ".NetworkAclEntryId", ingressAclEntriesObj.networkAclEntryId);
+		setParameter(ingressAclEntriesObjStr + ".Policy", ingressAclEntriesObj.policy);
+		setParameter(ingressAclEntriesObjStr + ".Protocol", ingressAclEntriesObj.protocol);
+		setParameter(ingressAclEntriesObjStr + ".SourceCidrIp", ingressAclEntriesObj.sourceCidrIp);
+		setParameter(ingressAclEntriesObjStr + ".Port", ingressAclEntriesObj.port);
+		setParameter(ingressAclEntriesObjStr + ".EntryType", ingressAclEntriesObj.entryType);
+		setParameter(ingressAclEntriesObjStr + ".Description", ingressAclEntriesObj.description);
 	}
 }
 

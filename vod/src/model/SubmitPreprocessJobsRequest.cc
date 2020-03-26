@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitPreprocessJobsRequest;
 
 SubmitPreprocessJobsRequest::SubmitPreprocessJobsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitPreprocessJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitPreprocessJobsRequest::~SubmitPreprocessJobsRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitPreprocessJobsRequest::getResourceOwnerId()const
 void SubmitPreprocessJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string SubmitPreprocessJobsRequest::getResourceOwnerAccount()const
 void SubmitPreprocessJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitPreprocessJobsRequest::getVideoId()const
@@ -55,7 +57,7 @@ std::string SubmitPreprocessJobsRequest::getVideoId()const
 void SubmitPreprocessJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long SubmitPreprocessJobsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long SubmitPreprocessJobsRequest::getOwnerId()const
 void SubmitPreprocessJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string SubmitPreprocessJobsRequest::getAccessKeyId()const
 void SubmitPreprocessJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitPreprocessJobsRequest::getPreprocessType()const
@@ -88,6 +90,6 @@ std::string SubmitPreprocessJobsRequest::getPreprocessType()const
 void SubmitPreprocessJobsRequest::setPreprocessType(const std::string& preprocessType)
 {
 	preprocessType_ = preprocessType;
-	setCoreParameter("PreprocessType", preprocessType);
+	setParameter("PreprocessType", preprocessType);
 }
 

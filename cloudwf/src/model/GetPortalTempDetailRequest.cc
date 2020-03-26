@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPortalTempDetailRequest;
 
 GetPortalTempDetailRequest::GetPortalTempDetailRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPortalTempDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPortalTempDetailRequest::~GetPortalTempDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPortalTempDetailRequest::getAccessKeyId()const
 void GetPortalTempDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetPortalTempDetailRequest::getId()const
@@ -44,7 +46,7 @@ long GetPortalTempDetailRequest::getId()const
 void GetPortalTempDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string GetPortalTempDetailRequest::getUniqueId()const
@@ -55,6 +57,6 @@ std::string GetPortalTempDetailRequest::getUniqueId()const
 void GetPortalTempDetailRequest::setUniqueId(const std::string& uniqueId)
 {
 	uniqueId_ = uniqueId;
-	setCoreParameter("UniqueId", uniqueId);
+	setParameter("UniqueId", uniqueId);
 }
 

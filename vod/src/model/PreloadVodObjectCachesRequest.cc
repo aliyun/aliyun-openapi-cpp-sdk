@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::PreloadVodObjectCachesRequest;
 
 PreloadVodObjectCachesRequest::PreloadVodObjectCachesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "PreloadVodObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PreloadVodObjectCachesRequest::~PreloadVodObjectCachesRequest()
 {}
@@ -33,7 +35,7 @@ std::string PreloadVodObjectCachesRequest::getObjectPath()const
 void PreloadVodObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setParameter("ObjectPath", objectPath);
 }
 
 long PreloadVodObjectCachesRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long PreloadVodObjectCachesRequest::getOwnerId()const
 void PreloadVodObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PreloadVodObjectCachesRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string PreloadVodObjectCachesRequest::getSecurityToken()const
 void PreloadVodObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

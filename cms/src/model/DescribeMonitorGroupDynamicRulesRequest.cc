@@ -35,6 +35,6 @@ long DescribeMonitorGroupDynamicRulesRequest::getGroupId()const
 void DescribeMonitorGroupDynamicRulesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 

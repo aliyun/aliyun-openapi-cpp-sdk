@@ -20,10 +20,45 @@ using AlibabaCloud::Sddp::Model::ModifyRuleRequest;
 
 ModifyRuleRequest::ModifyRuleRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRuleRequest::~ModifyRuleRequest()
 {}
+
+int ModifyRuleRequest::getWarnLevel()const
+{
+	return warnLevel_;
+}
+
+void ModifyRuleRequest::setWarnLevel(int warnLevel)
+{
+	warnLevel_ = warnLevel;
+	setParameter("WarnLevel", std::to_string(warnLevel));
+}
+
+std::string ModifyRuleRequest::getProductCode()const
+{
+	return productCode_;
+}
+
+void ModifyRuleRequest::setProductCode(const std::string& productCode)
+{
+	productCode_ = productCode;
+	setParameter("ProductCode", productCode);
+}
+
+long ModifyRuleRequest::getProductId()const
+{
+	return productId_;
+}
+
+void ModifyRuleRequest::setProductId(long productId)
+{
+	productId_ = productId;
+	setParameter("ProductId", std::to_string(productId));
+}
 
 long ModifyRuleRequest::getRiskLevelId()const
 {
@@ -33,7 +68,7 @@ long ModifyRuleRequest::getRiskLevelId()const
 void ModifyRuleRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string ModifyRuleRequest::getContent()const
@@ -44,7 +79,7 @@ std::string ModifyRuleRequest::getContent()const
 void ModifyRuleRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string ModifyRuleRequest::getSourceIp()const
@@ -55,7 +90,7 @@ std::string ModifyRuleRequest::getSourceIp()const
 void ModifyRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long ModifyRuleRequest::getId()const
@@ -66,7 +101,7 @@ long ModifyRuleRequest::getId()const
 void ModifyRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string ModifyRuleRequest::getLang()const
@@ -77,7 +112,7 @@ std::string ModifyRuleRequest::getLang()const
 void ModifyRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int ModifyRuleRequest::getFeatureType()const
@@ -88,7 +123,29 @@ int ModifyRuleRequest::getFeatureType()const
 void ModifyRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
+}
+
+int ModifyRuleRequest::getRuleType()const
+{
+	return ruleType_;
+}
+
+void ModifyRuleRequest::setRuleType(int ruleType)
+{
+	ruleType_ = ruleType;
+	setParameter("RuleType", std::to_string(ruleType));
+}
+
+std::string ModifyRuleRequest::getStatExpress()const
+{
+	return statExpress_;
+}
+
+void ModifyRuleRequest::setStatExpress(const std::string& statExpress)
+{
+	statExpress_ = statExpress;
+	setParameter("StatExpress", statExpress);
 }
 
 int ModifyRuleRequest::getCustomType()const
@@ -99,7 +156,7 @@ int ModifyRuleRequest::getCustomType()const
 void ModifyRuleRequest::setCustomType(int customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setParameter("CustomType", std::to_string(customType));
 }
 
 std::string ModifyRuleRequest::getName()const
@@ -110,7 +167,7 @@ std::string ModifyRuleRequest::getName()const
 void ModifyRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ModifyRuleRequest::getCategory()const
@@ -121,6 +178,6 @@ int ModifyRuleRequest::getCategory()const
 void ModifyRuleRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setParameter("Category", std::to_string(category));
 }
 

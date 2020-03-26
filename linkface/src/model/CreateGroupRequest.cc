@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::CreateGroupRequest;
 
 CreateGroupRequest::CreateGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "CreateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGroupRequest::~CreateGroupRequest()
 {}
@@ -33,6 +35,28 @@ std::string CreateGroupRequest::getGroupId()const
 void CreateGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string CreateGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

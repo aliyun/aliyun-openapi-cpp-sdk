@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateVideoInfoRequest;
 
 UpdateVideoInfoRequest::UpdateVideoInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateVideoInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateVideoInfoRequest::~UpdateVideoInfoRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateVideoInfoRequest::getResourceOwnerId()const
 void UpdateVideoInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateVideoInfoRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string UpdateVideoInfoRequest::getDescription()const
 void UpdateVideoInfoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateVideoInfoRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string UpdateVideoInfoRequest::getTitle()const
 void UpdateVideoInfoRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string UpdateVideoInfoRequest::getCoverURL()const
@@ -66,7 +68,7 @@ std::string UpdateVideoInfoRequest::getCoverURL()const
 void UpdateVideoInfoRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setParameter("CoverURL", coverURL);
 }
 
 std::string UpdateVideoInfoRequest::getDownloadSwitch()const
@@ -77,7 +79,7 @@ std::string UpdateVideoInfoRequest::getDownloadSwitch()const
 void UpdateVideoInfoRequest::setDownloadSwitch(const std::string& downloadSwitch)
 {
 	downloadSwitch_ = downloadSwitch;
-	setCoreParameter("DownloadSwitch", downloadSwitch);
+	setParameter("DownloadSwitch", downloadSwitch);
 }
 
 long UpdateVideoInfoRequest::getCateId()const
@@ -88,7 +90,7 @@ long UpdateVideoInfoRequest::getCateId()const
 void UpdateVideoInfoRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 std::string UpdateVideoInfoRequest::getCustomMediaInfo()const
@@ -99,7 +101,7 @@ std::string UpdateVideoInfoRequest::getCustomMediaInfo()const
 void UpdateVideoInfoRequest::setCustomMediaInfo(const std::string& customMediaInfo)
 {
 	customMediaInfo_ = customMediaInfo;
-	setCoreParameter("CustomMediaInfo", customMediaInfo);
+	setParameter("CustomMediaInfo", customMediaInfo);
 }
 
 std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string UpdateVideoInfoRequest::getResourceOwnerAccount()const
 void UpdateVideoInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateVideoInfoRequest::getVideoId()const
@@ -121,7 +123,7 @@ std::string UpdateVideoInfoRequest::getVideoId()const
 void UpdateVideoInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long UpdateVideoInfoRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long UpdateVideoInfoRequest::getOwnerId()const
 void UpdateVideoInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateVideoInfoRequest::getTags()const
@@ -143,7 +145,7 @@ std::string UpdateVideoInfoRequest::getTags()const
 void UpdateVideoInfoRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string UpdateVideoInfoRequest::getStatus()const
@@ -154,6 +156,6 @@ std::string UpdateVideoInfoRequest::getStatus()const
 void UpdateVideoInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

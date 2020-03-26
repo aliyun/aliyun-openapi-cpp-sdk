@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaInfoRequest;
 
 AreaInfoRequest::AreaInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaInfoRequest::~AreaInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string AreaInfoRequest::getAccessKeyId()const
 void AreaInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaInfoRequest::getSid()const
@@ -44,7 +46,7 @@ long AreaInfoRequest::getSid()const
 void AreaInfoRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 long AreaInfoRequest::getAid()const
@@ -55,6 +57,6 @@ long AreaInfoRequest::getAid()const
 void AreaInfoRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", std::to_string(aid));
+	setParameter("Aid", std::to_string(aid));
 }
 

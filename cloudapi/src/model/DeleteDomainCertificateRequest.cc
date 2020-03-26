@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteDomainCertificateRequest;
 
 DeleteDomainCertificateRequest::DeleteDomainCertificateRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainCertificateRequest::~DeleteDomainCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDomainCertificateRequest::getGroupId()const
 void DeleteDomainCertificateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteDomainCertificateRequest::getCertificateId()const
@@ -44,7 +46,7 @@ std::string DeleteDomainCertificateRequest::getCertificateId()const
 void DeleteDomainCertificateRequest::setCertificateId(const std::string& certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", certificateId);
+	setParameter("CertificateId", certificateId);
 }
 
 std::string DeleteDomainCertificateRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DeleteDomainCertificateRequest::getDomainName()const
 void DeleteDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainCertificateRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteDomainCertificateRequest::getAccessKeyId()const
 void DeleteDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDomainCertificateRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string DeleteDomainCertificateRequest::getSecurityToken()const
 void DeleteDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

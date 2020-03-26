@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiSignaturesRequest;
 
 DescribeApiSignaturesRequest::DescribeApiSignaturesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiSignatures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiSignaturesRequest::~DescribeApiSignaturesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiSignaturesRequest::getStageName()const
 void DescribeApiSignaturesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeApiSignaturesRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApiSignaturesRequest::getGroupId()const
 void DescribeApiSignaturesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeApiSignaturesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeApiSignaturesRequest::getPageNumber()const
 void DescribeApiSignaturesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiSignaturesRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiSignaturesRequest::getAccessKeyId()const
 void DescribeApiSignaturesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiSignaturesRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiSignaturesRequest::getSecurityToken()const
 void DescribeApiSignaturesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApiSignaturesRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeApiSignaturesRequest::getPageSize()const
 void DescribeApiSignaturesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeApiSignaturesRequest::getApiIds()const
@@ -99,6 +101,6 @@ std::string DescribeApiSignaturesRequest::getApiIds()const
 void DescribeApiSignaturesRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

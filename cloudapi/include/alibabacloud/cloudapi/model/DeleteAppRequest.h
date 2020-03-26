@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT DeleteAppRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

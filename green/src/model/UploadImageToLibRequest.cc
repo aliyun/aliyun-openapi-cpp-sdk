@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UploadImageToLibRequest;
 
 UploadImageToLibRequest::UploadImageToLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UploadImageToLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadImageToLibRequest::~UploadImageToLibRequest()
 {}
@@ -33,7 +35,18 @@ std::string UploadImageToLibRequest::getImages()const
 void UploadImageToLibRequest::setImages(const std::string& images)
 {
 	images_ = images;
-	setCoreParameter("Images", images);
+	setParameter("Images", images);
+}
+
+std::string UploadImageToLibRequest::getUrls()const
+{
+	return urls_;
+}
+
+void UploadImageToLibRequest::setUrls(const std::string& urls)
+{
+	urls_ = urls;
+	setParameter("Urls", urls);
 }
 
 std::string UploadImageToLibRequest::getSourceIp()const
@@ -44,7 +57,7 @@ std::string UploadImageToLibRequest::getSourceIp()const
 void UploadImageToLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int UploadImageToLibRequest::getImageLibId()const
@@ -55,6 +68,6 @@ int UploadImageToLibRequest::getImageLibId()const
 void UploadImageToLibRequest::setImageLibId(int imageLibId)
 {
 	imageLibId_ = imageLibId;
-	setCoreParameter("ImageLibId", std::to_string(imageLibId));
+	setParameter("ImageLibId", std::to_string(imageLibId));
 }
 

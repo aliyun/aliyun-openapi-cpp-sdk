@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSmartAccessGatewayAttributeRequest;
 
 DescribeSmartAccessGatewayAttributeRequest::DescribeSmartAccessGatewayAttributeRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSmartAccessGatewayAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSmartAccessGatewayAttributeRequest::~DescribeSmartAccessGatewayAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSmartAccessGatewayAttributeRequest::getResourceOwnerId()const
 void DescribeSmartAccessGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSmartAccessGatewayAttributeRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeSmartAccessGatewayAttributeRequest::getRegionId()const
 void DescribeSmartAccessGatewayAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSmartAccessGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeSmartAccessGatewayAttributeRequest::getResourceOwnerAccount(
 void DescribeSmartAccessGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSmartAccessGatewayAttributeRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeSmartAccessGatewayAttributeRequest::getOwnerAccount()const
 void DescribeSmartAccessGatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSmartAccessGatewayAttributeRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeSmartAccessGatewayAttributeRequest::getOwnerId()const
 void DescribeSmartAccessGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSmartAccessGatewayAttributeRequest::getSmartAGId()const
@@ -88,6 +90,6 @@ std::string DescribeSmartAccessGatewayAttributeRequest::getSmartAGId()const
 void DescribeSmartAccessGatewayAttributeRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

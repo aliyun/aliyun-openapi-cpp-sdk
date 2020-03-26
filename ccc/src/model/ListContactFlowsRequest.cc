@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListContactFlowsRequest;
 
 ListContactFlowsRequest::ListContactFlowsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListContactFlows")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListContactFlowsRequest::~ListContactFlowsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListContactFlowsRequest::getInstanceId()const
 void ListContactFlowsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListContactFlowsRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ListContactFlowsRequest::getAccessKeyId()const
 void ListContactFlowsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

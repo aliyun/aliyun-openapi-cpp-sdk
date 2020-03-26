@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string instanceId;
 					std::string volume;
-					std::string tTSConfigId;
 					std::string scriptId;
+					std::string tTSConfigId;
 					std::string voice;
 					std::string speechRate;
 				};

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryIntentionDetailRequest;
 
 QueryIntentionDetailRequest::QueryIntentionDetailRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryIntentionDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryIntentionDetailRequest::~QueryIntentionDetailRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryIntentionDetailRequest::getBizId()const
 void QueryIntentionDetailRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

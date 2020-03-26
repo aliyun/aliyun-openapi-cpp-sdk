@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::ActivateLicenseRequest;
 
 ActivateLicenseRequest::ActivateLicenseRequest() :
 	RpcServiceRequest("market", "2015-11-01", "ActivateLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivateLicenseRequest::~ActivateLicenseRequest()
 {}
@@ -33,7 +35,7 @@ std::string ActivateLicenseRequest::getIdentification()const
 void ActivateLicenseRequest::setIdentification(const std::string& identification)
 {
 	identification_ = identification;
-	setCoreParameter("Identification", identification);
+	setParameter("Identification", identification);
 }
 
 std::string ActivateLicenseRequest::getLicenseCode()const
@@ -44,6 +46,6 @@ std::string ActivateLicenseRequest::getLicenseCode()const
 void ActivateLicenseRequest::setLicenseCode(const std::string& licenseCode)
 {
 	licenseCode_ = licenseCode;
-	setCoreParameter("LicenseCode", licenseCode);
+	setParameter("LicenseCode", licenseCode);
 }
 

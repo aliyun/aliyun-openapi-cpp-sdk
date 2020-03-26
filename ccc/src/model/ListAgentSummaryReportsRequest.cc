@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentSummaryReportsRequest;
 
 ListAgentSummaryReportsRequest::ListAgentSummaryReportsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentSummaryReports")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentSummaryReportsRequest::~ListAgentSummaryReportsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAgentSummaryReportsRequest::getAgentIds()const
 void ListAgentSummaryReportsRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setParameter("AgentIds", agentIds);
 }
 
 std::string ListAgentSummaryReportsRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string ListAgentSummaryReportsRequest::getEndTime()const
 void ListAgentSummaryReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string ListAgentSummaryReportsRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string ListAgentSummaryReportsRequest::getStartTime()const
 void ListAgentSummaryReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int ListAgentSummaryReportsRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int ListAgentSummaryReportsRequest::getPageNumber()const
 void ListAgentSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAgentSummaryReportsRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListAgentSummaryReportsRequest::getAccessKeyId()const
 void ListAgentSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAgentSummaryReportsRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string ListAgentSummaryReportsRequest::getInstanceId()const
 void ListAgentSummaryReportsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
@@ -99,7 +101,7 @@ std::string ListAgentSummaryReportsRequest::getSkillGroupId()const
 void ListAgentSummaryReportsRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 int ListAgentSummaryReportsRequest::getPageSize()const
@@ -110,6 +112,6 @@ int ListAgentSummaryReportsRequest::getPageSize()const
 void ListAgentSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

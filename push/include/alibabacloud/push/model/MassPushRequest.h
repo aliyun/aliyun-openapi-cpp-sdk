@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_PUSH_EXPORT MassPushRequest : public RpcServiceRequest
 			{
+			public:
 				struct PushTask
 				{
 					int androidNotificationBarType;

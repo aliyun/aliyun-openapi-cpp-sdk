@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeImageFromLibRequest;
 
 DescribeImageFromLibRequest::DescribeImageFromLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeImageFromLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageFromLibRequest::~DescribeImageFromLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeImageFromLibRequest::getStartDate()const
 void DescribeImageFromLibRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeImageFromLibRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeImageFromLibRequest::getSourceIp()const
 void DescribeImageFromLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeImageFromLibRequest::getImageLibId()const
@@ -55,7 +57,7 @@ int DescribeImageFromLibRequest::getImageLibId()const
 void DescribeImageFromLibRequest::setImageLibId(int imageLibId)
 {
 	imageLibId_ = imageLibId;
-	setCoreParameter("ImageLibId", std::to_string(imageLibId));
+	setParameter("ImageLibId", std::to_string(imageLibId));
 }
 
 int DescribeImageFromLibRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeImageFromLibRequest::getPageSize()const
 void DescribeImageFromLibRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeImageFromLibRequest::getId()const
@@ -77,7 +79,7 @@ long DescribeImageFromLibRequest::getId()const
 void DescribeImageFromLibRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 int DescribeImageFromLibRequest::getTotalCount()const
@@ -88,7 +90,7 @@ int DescribeImageFromLibRequest::getTotalCount()const
 void DescribeImageFromLibRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeImageFromLibRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeImageFromLibRequest::getCurrentPage()const
 void DescribeImageFromLibRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeImageFromLibRequest::getEndDate()const
@@ -110,6 +112,6 @@ std::string DescribeImageFromLibRequest::getEndDate()const
 void DescribeImageFromLibRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 

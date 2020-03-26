@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string geographicSpanId;
 					std::string oppositeRegionId;
 					std::string cenId;
+					std::string bandwidthPackageId;
 					long bandwidthLimit;
 					std::string localRegionId;
 				};

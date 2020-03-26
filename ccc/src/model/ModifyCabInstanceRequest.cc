@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyCabInstanceRequest;
 
 ModifyCabInstanceRequest::ModifyCabInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyCabInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCabInstanceRequest::~ModifyCabInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int ModifyCabInstanceRequest::getMaxConcurrentConversation()const
 void ModifyCabInstanceRequest::setMaxConcurrentConversation(int maxConcurrentConversation)
 {
 	maxConcurrentConversation_ = maxConcurrentConversation;
-	setCoreParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
+	setParameter("MaxConcurrentConversation", std::to_string(maxConcurrentConversation));
 }
 
 std::string ModifyCabInstanceRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyCabInstanceRequest::getInstanceId()const
 void ModifyCabInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyCabInstanceRequest::getInstanceName()const
@@ -55,7 +57,7 @@ std::string ModifyCabInstanceRequest::getInstanceName()const
 void ModifyCabInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string ModifyCabInstanceRequest::getCallCenterInstanceId()const
@@ -66,7 +68,7 @@ std::string ModifyCabInstanceRequest::getCallCenterInstanceId()const
 void ModifyCabInstanceRequest::setCallCenterInstanceId(const std::string& callCenterInstanceId)
 {
 	callCenterInstanceId_ = callCenterInstanceId;
-	setCoreParameter("CallCenterInstanceId", callCenterInstanceId);
+	setParameter("CallCenterInstanceId", callCenterInstanceId);
 }
 
 std::string ModifyCabInstanceRequest::getInstanceDescription()const
@@ -77,6 +79,6 @@ std::string ModifyCabInstanceRequest::getInstanceDescription()const
 void ModifyCabInstanceRequest::setInstanceDescription(const std::string& instanceDescription)
 {
 	instanceDescription_ = instanceDescription;
-	setCoreParameter("InstanceDescription", instanceDescription);
+	setParameter("InstanceDescription", instanceDescription);
 }
 

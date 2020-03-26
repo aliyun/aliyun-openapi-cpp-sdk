@@ -22,7 +22,7 @@ ModifyServiceVersionRequest::ModifyServiceVersionRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/version");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ModifyServiceVersionRequest::~ModifyServiceVersionRequest()

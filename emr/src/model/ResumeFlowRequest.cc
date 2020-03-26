@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResumeFlowRequest;
 
 ResumeFlowRequest::ResumeFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ResumeFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeFlowRequest::~ResumeFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResumeFlowRequest::getFlowInstanceId()const
 void ResumeFlowRequest::setFlowInstanceId(const std::string& flowInstanceId)
 {
 	flowInstanceId_ = flowInstanceId;
-	setCoreParameter("FlowInstanceId", flowInstanceId);
+	setParameter("FlowInstanceId", flowInstanceId);
 }
 
 std::string ResumeFlowRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ResumeFlowRequest::getRegionId()const
 void ResumeFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ResumeFlowRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string ResumeFlowRequest::getProjectId()const
 void ResumeFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

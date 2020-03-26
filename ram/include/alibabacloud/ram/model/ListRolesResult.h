@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Role
 				{
 					std::string updateDate;
+					long maxSessionDuration;
 					std::string roleName;
 					std::string description;
 					std::string arn;

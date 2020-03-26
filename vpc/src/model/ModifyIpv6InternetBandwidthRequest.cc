@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyIpv6InternetBandwidthRequest;
 
 ModifyIpv6InternetBandwidthRequest::ModifyIpv6InternetBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyIpv6InternetBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpv6InternetBandwidthRequest::~ModifyIpv6InternetBandwidthRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyIpv6InternetBandwidthRequest::getResourceOwnerId()const
 void ModifyIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ModifyIpv6InternetBandwidthRequest::getClientToken()const
 void ModifyIpv6InternetBandwidthRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId()const
@@ -55,7 +57,7 @@ std::string ModifyIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId()cons
 void ModifyIpv6InternetBandwidthRequest::setIpv6InternetBandwidthId(const std::string& ipv6InternetBandwidthId)
 {
 	ipv6InternetBandwidthId_ = ipv6InternetBandwidthId;
-	setCoreParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
+	setParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ModifyIpv6InternetBandwidthRequest::getRegionId()const
 void ModifyIpv6InternetBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 long ModifyIpv6InternetBandwidthRequest::getBandwidth()const
@@ -77,7 +79,7 @@ long ModifyIpv6InternetBandwidthRequest::getBandwidth()const
 void ModifyIpv6InternetBandwidthRequest::setBandwidth(long bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
 void ModifyIpv6InternetBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ModifyIpv6InternetBandwidthRequest::getOwnerAccount()const
 void ModifyIpv6InternetBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyIpv6InternetBandwidthRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ModifyIpv6InternetBandwidthRequest::getOwnerId()const
 void ModifyIpv6InternetBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyIpv6InternetBandwidthRequest::getIpv6AddressId()const
@@ -121,6 +123,6 @@ std::string ModifyIpv6InternetBandwidthRequest::getIpv6AddressId()const
 void ModifyIpv6InternetBandwidthRequest::setIpv6AddressId(const std::string& ipv6AddressId)
 {
 	ipv6AddressId_ = ipv6AddressId;
-	setCoreParameter("Ipv6AddressId", ipv6AddressId);
+	setParameter("Ipv6AddressId", ipv6AddressId);
 }
 

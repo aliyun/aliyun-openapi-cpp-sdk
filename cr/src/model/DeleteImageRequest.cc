@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteImageRequest;
 
 DeleteImageRequest::DeleteImageRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteImageRequest::~DeleteImageRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteImageRequest::getRepoNamespace()const
 void DeleteImageRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteImageRequest::getRepoName()const
@@ -44,7 +47,7 @@ std::string DeleteImageRequest::getRepoName()const
 void DeleteImageRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 std::string DeleteImageRequest::getTag()const
@@ -55,6 +58,6 @@ std::string DeleteImageRequest::getTag()const
 void DeleteImageRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 

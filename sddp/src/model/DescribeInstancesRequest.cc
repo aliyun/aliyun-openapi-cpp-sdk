@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeInstancesRequest;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeInstancesRequest::getProductCode()const
 void DescribeInstancesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 long DescribeInstancesRequest::getProductId()const
@@ -44,7 +46,18 @@ long DescribeInstancesRequest::getProductId()const
 void DescribeInstancesRequest::setProductId(long productId)
 {
 	productId_ = productId;
-	setCoreParameter("ProductId", std::to_string(productId));
+	setParameter("ProductId", std::to_string(productId));
+}
+
+std::string DescribeInstancesRequest::getRiskLevels()const
+{
+	return riskLevels_;
+}
+
+void DescribeInstancesRequest::setRiskLevels(const std::string& riskLevels)
+{
+	riskLevels_ = riskLevels;
+	setParameter("RiskLevels", riskLevels);
 }
 
 std::string DescribeInstancesRequest::getQueryName()const
@@ -55,7 +68,7 @@ std::string DescribeInstancesRequest::getQueryName()const
 void DescribeInstancesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setParameter("QueryName", queryName);
 }
 
 long DescribeInstancesRequest::getRiskLevelId()const
@@ -66,7 +79,7 @@ long DescribeInstancesRequest::getRiskLevelId()const
 void DescribeInstancesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeInstancesRequest::getSourceIp()const
@@ -77,7 +90,7 @@ std::string DescribeInstancesRequest::getSourceIp()const
 void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -88,7 +101,7 @@ int DescribeInstancesRequest::getPageSize()const
 void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInstancesRequest::getLang()const
@@ -99,7 +112,7 @@ std::string DescribeInstancesRequest::getLang()const
 void DescribeInstancesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeInstancesRequest::getQueryType()const
@@ -110,7 +123,18 @@ int DescribeInstancesRequest::getQueryType()const
 void DescribeInstancesRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
+}
+
+std::string DescribeInstancesRequest::getServiceRegionId()const
+{
+	return serviceRegionId_;
+}
+
+void DescribeInstancesRequest::setServiceRegionId(const std::string& serviceRegionId)
+{
+	serviceRegionId_ = serviceRegionId;
+	setParameter("ServiceRegionId", serviceRegionId);
 }
 
 int DescribeInstancesRequest::getFeatureType()const
@@ -121,7 +145,18 @@ int DescribeInstancesRequest::getFeatureType()const
 void DescribeInstancesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeInstancesRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeInstancesRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 int DescribeInstancesRequest::getCurrentPage()const
@@ -132,7 +167,7 @@ int DescribeInstancesRequest::getCurrentPage()const
 void DescribeInstancesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeInstancesRequest::getName()const
@@ -143,7 +178,7 @@ std::string DescribeInstancesRequest::getName()const
 void DescribeInstancesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribeInstancesRequest::getRuleId()const
@@ -154,6 +189,6 @@ long DescribeInstancesRequest::getRuleId()const
 void DescribeInstancesRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

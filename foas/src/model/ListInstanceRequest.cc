@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListInstanceRequest;
 
 ListInstanceRequest::ListInstanceRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/instances");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListInstanceRequest::~ListInstanceRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListInstanceRequest::getProjectName()const
 void ListInstanceRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long ListInstanceRequest::getEndBeginTs()const
@@ -44,7 +47,7 @@ long ListInstanceRequest::getEndBeginTs()const
 void ListInstanceRequest::setEndBeginTs(long endBeginTs)
 {
 	endBeginTs_ = endBeginTs;
-	setCoreParameter("EndBeginTs", std::to_string(endBeginTs));
+	setParameter("EndBeginTs", std::to_string(endBeginTs));
 }
 
 std::string ListInstanceRequest::getExpectState()const
@@ -55,7 +58,7 @@ std::string ListInstanceRequest::getExpectState()const
 void ListInstanceRequest::setExpectState(const std::string& expectState)
 {
 	expectState_ = expectState;
-	setCoreParameter("ExpectState", expectState);
+	setParameter("ExpectState", expectState);
 }
 
 std::string ListInstanceRequest::getJobType()const
@@ -66,7 +69,7 @@ std::string ListInstanceRequest::getJobType()const
 void ListInstanceRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setParameter("JobType", jobType);
 }
 
 std::string ListInstanceRequest::getApiType()const
@@ -77,7 +80,7 @@ std::string ListInstanceRequest::getApiType()const
 void ListInstanceRequest::setApiType(const std::string& apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setParameter("ApiType", apiType);
 }
 
 std::string ListInstanceRequest::getActualState()const
@@ -88,7 +91,7 @@ std::string ListInstanceRequest::getActualState()const
 void ListInstanceRequest::setActualState(const std::string& actualState)
 {
 	actualState_ = actualState;
-	setCoreParameter("ActualState", actualState);
+	setParameter("ActualState", actualState);
 }
 
 long ListInstanceRequest::getEndEndTs()const
@@ -99,7 +102,7 @@ long ListInstanceRequest::getEndEndTs()const
 void ListInstanceRequest::setEndEndTs(long endEndTs)
 {
 	endEndTs_ = endEndTs;
-	setCoreParameter("EndEndTs", std::to_string(endEndTs));
+	setParameter("EndEndTs", std::to_string(endEndTs));
 }
 
 std::string ListInstanceRequest::getRegionId()const
@@ -110,7 +113,7 @@ std::string ListInstanceRequest::getRegionId()const
 void ListInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 long ListInstanceRequest::getStartEndTs()const
@@ -121,7 +124,7 @@ long ListInstanceRequest::getStartEndTs()const
 void ListInstanceRequest::setStartEndTs(long startEndTs)
 {
 	startEndTs_ = startEndTs;
-	setCoreParameter("StartEndTs", std::to_string(startEndTs));
+	setParameter("StartEndTs", std::to_string(startEndTs));
 }
 
 int ListInstanceRequest::getPageSize()const
@@ -132,7 +135,7 @@ int ListInstanceRequest::getPageSize()const
 void ListInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListInstanceRequest::getStartBeginTs()const
@@ -143,7 +146,7 @@ long ListInstanceRequest::getStartBeginTs()const
 void ListInstanceRequest::setStartBeginTs(long startBeginTs)
 {
 	startBeginTs_ = startBeginTs;
-	setCoreParameter("StartBeginTs", std::to_string(startBeginTs));
+	setParameter("StartBeginTs", std::to_string(startBeginTs));
 }
 
 int ListInstanceRequest::getPageIndex()const
@@ -154,7 +157,7 @@ int ListInstanceRequest::getPageIndex()const
 void ListInstanceRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 bool ListInstanceRequest::getIsArchived()const
@@ -165,7 +168,7 @@ bool ListInstanceRequest::getIsArchived()const
 void ListInstanceRequest::setIsArchived(bool isArchived)
 {
 	isArchived_ = isArchived;
-	setCoreParameter("IsArchived", isArchived ? "true" : "false");
+	setParameter("IsArchived", isArchived ? "true" : "false");
 }
 
 std::string ListInstanceRequest::getJobName()const
@@ -176,6 +179,6 @@ std::string ListInstanceRequest::getJobName()const
 void ListInstanceRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

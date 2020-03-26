@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ModifyCenBandwidthPackageAttributeRequest;
 
 ModifyCenBandwidthPackageAttributeRequest::ModifyCenBandwidthPackageAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCenBandwidthPackageAttributeRequest::~ModifyCenBandwidthPackageAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyCenBandwidthPackageAttributeRequest::getResourceOwnerId()const
 void ModifyCenBandwidthPackageAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCenBandwidthPackageAttributeRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyCenBandwidthPackageAttributeRequest::getDescription()const
 void ModifyCenBandwidthPackageAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyCenBandwidthPackageAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string ModifyCenBandwidthPackageAttributeRequest::getResourceOwnerAccount()
 void ModifyCenBandwidthPackageAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCenBandwidthPackageAttributeRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ModifyCenBandwidthPackageAttributeRequest::getOwnerAccount()const
 void ModifyCenBandwidthPackageAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCenBandwidthPackageAttributeRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long ModifyCenBandwidthPackageAttributeRequest::getOwnerId()const
 void ModifyCenBandwidthPackageAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCenBandwidthPackageAttributeRequest::getCenBandwidthPackageId()const
@@ -88,7 +90,7 @@ std::string ModifyCenBandwidthPackageAttributeRequest::getCenBandwidthPackageId(
 void ModifyCenBandwidthPackageAttributeRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
 {
 	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+	setParameter("CenBandwidthPackageId", cenBandwidthPackageId);
 }
 
 std::string ModifyCenBandwidthPackageAttributeRequest::getName()const
@@ -99,6 +101,6 @@ std::string ModifyCenBandwidthPackageAttributeRequest::getName()const
 void ModifyCenBandwidthPackageAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

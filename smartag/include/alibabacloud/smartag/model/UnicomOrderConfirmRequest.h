@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMARTAG_EXPORT UnicomOrderConfirmRequest : public RpcServiceRequest
 			{
+			public:
 				struct OrderItem
 				{
 					std::string scItemName;

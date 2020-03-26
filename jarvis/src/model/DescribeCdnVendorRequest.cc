@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnVendorRequest;
 
 DescribeCdnVendorRequest::DescribeCdnVendorRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnVendor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnVendorRequest::~DescribeCdnVendorRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeCdnVendorRequest::getCurrentPage()const
 void DescribeCdnVendorRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCdnVendorRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DescribeCdnVendorRequest::getSourceCode()const
 void DescribeCdnVendorRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeCdnVendorRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeCdnVendorRequest::getSourceIp()const
 void DescribeCdnVendorRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeCdnVendorRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeCdnVendorRequest::getPageSize()const
 void DescribeCdnVendorRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCdnVendorRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeCdnVendorRequest::getLang()const
 void DescribeCdnVendorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,6 +35,6 @@ std::string GetUserRequest::getUserId()const
 void GetUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 

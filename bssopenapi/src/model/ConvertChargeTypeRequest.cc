@@ -35,7 +35,7 @@ int ConvertChargeTypeRequest::getPeriod()const
 void ConvertChargeTypeRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string ConvertChargeTypeRequest::getProductCode()const
@@ -46,7 +46,7 @@ std::string ConvertChargeTypeRequest::getProductCode()const
 void ConvertChargeTypeRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string ConvertChargeTypeRequest::getSubscriptionType()const
@@ -57,7 +57,7 @@ std::string ConvertChargeTypeRequest::getSubscriptionType()const
 void ConvertChargeTypeRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setParameter("SubscriptionType", subscriptionType);
 }
 
 long ConvertChargeTypeRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ConvertChargeTypeRequest::getOwnerId()const
 void ConvertChargeTypeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ConvertChargeTypeRequest::getProductType()const
@@ -79,7 +79,7 @@ std::string ConvertChargeTypeRequest::getProductType()const
 void ConvertChargeTypeRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string ConvertChargeTypeRequest::getInstanceId()const
@@ -90,6 +90,6 @@ std::string ConvertChargeTypeRequest::getInstanceId()const
 void ConvertChargeTypeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

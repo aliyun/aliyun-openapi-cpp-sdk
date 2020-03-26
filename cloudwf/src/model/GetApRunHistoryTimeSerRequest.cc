@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApRunHistoryTimeSerRequest;
 
 GetApRunHistoryTimeSerRequest::GetApRunHistoryTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApRunHistoryTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApRunHistoryTimeSerRequest::~GetApRunHistoryTimeSerRequest()
 {}
@@ -33,7 +35,7 @@ long GetApRunHistoryTimeSerRequest::getStart()const
 void GetApRunHistoryTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setParameter("Start", std::to_string(start));
 }
 
 std::string GetApRunHistoryTimeSerRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetApRunHistoryTimeSerRequest::getAccessKeyId()const
 void GetApRunHistoryTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetApRunHistoryTimeSerRequest::getEnd()const
@@ -55,7 +57,7 @@ long GetApRunHistoryTimeSerRequest::getEnd()const
 void GetApRunHistoryTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setParameter("End", std::to_string(end));
 }
 
 long GetApRunHistoryTimeSerRequest::getId()const
@@ -66,6 +68,6 @@ long GetApRunHistoryTimeSerRequest::getId()const
 void GetApRunHistoryTimeSerRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

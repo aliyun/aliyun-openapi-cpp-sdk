@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderRedeemRequest;
 
 SaveBatchTaskForCreatingOrderRedeemRequest::SaveBatchTaskForCreatingOrderRedeemRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderRedeemRequest::~SaveBatchTaskForCreatingOrderRedeemRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
@@ -44,7 +46,7 @@ bool SaveBatchTaskForCreatingOrderRedeemRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getPromotionNo()const
@@ -55,7 +57,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRedeemRequest::OrderRedeemParam> SaveBatchTaskForCreatingOrderRedeemRequest::getOrderRedeemParam()const
@@ -66,12 +68,11 @@ std::vector<SaveBatchTaskForCreatingOrderRedeemRequest::OrderRedeemParam> SaveBa
 void SaveBatchTaskForCreatingOrderRedeemRequest::setOrderRedeemParam(const std::vector<OrderRedeemParam>& orderRedeemParam)
 {
 	orderRedeemParam_ = orderRedeemParam;
-	int i = 0;
-	for(int i = 0; i!= orderRedeemParam.size(); i++)	{
-		auto obj = orderRedeemParam.at(i);
-		std::string str ="OrderRedeemParam."+ std::to_string(i);
-		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setCoreParameter(str + ".DomainName", obj.domainName);
+	for(int dep1 = 0; dep1!= orderRedeemParam.size(); dep1++) {
+		auto orderRedeemParamObj = orderRedeemParam.at(dep1);
+		std::string orderRedeemParamObjStr = "OrderRedeemParam." + std::to_string(dep1 + 1);
+		setParameter(orderRedeemParamObjStr + ".CurrentExpirationDate", std::to_string(orderRedeemParamObj.currentExpirationDate));
+		setParameter(orderRedeemParamObjStr + ".DomainName", orderRedeemParamObj.domainName);
 	}
 }
 
@@ -83,7 +84,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const
@@ -94,7 +95,7 @@ std::string SaveBatchTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForCreatingOrderRedeemRequest::getUsePromotion()const
@@ -105,6 +106,6 @@ bool SaveBatchTaskForCreatingOrderRedeemRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderRedeemRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

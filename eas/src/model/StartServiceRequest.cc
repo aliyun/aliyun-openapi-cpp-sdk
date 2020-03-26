@@ -22,7 +22,7 @@ StartServiceRequest::StartServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/start");
-	setMethod(HttpRequest::Method::PUT);
+	setMethod(HttpRequest::Method::Put);
 }
 
 StartServiceRequest::~StartServiceRequest()

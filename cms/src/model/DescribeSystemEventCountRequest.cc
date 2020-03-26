@@ -35,7 +35,7 @@ std::string DescribeSystemEventCountRequest::getStartTime()const
 void DescribeSystemEventCountRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSystemEventCountRequest::getSearchKeywords()const
@@ -46,7 +46,7 @@ std::string DescribeSystemEventCountRequest::getSearchKeywords()const
 void DescribeSystemEventCountRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 std::string DescribeSystemEventCountRequest::getProduct()const
@@ -57,7 +57,7 @@ std::string DescribeSystemEventCountRequest::getProduct()const
 void DescribeSystemEventCountRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 
 std::string DescribeSystemEventCountRequest::getLevel()const
@@ -68,7 +68,7 @@ std::string DescribeSystemEventCountRequest::getLevel()const
 void DescribeSystemEventCountRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeSystemEventCountRequest::getGroupId()const
@@ -79,7 +79,7 @@ std::string DescribeSystemEventCountRequest::getGroupId()const
 void DescribeSystemEventCountRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeSystemEventCountRequest::getEndTime()const
@@ -90,7 +90,7 @@ std::string DescribeSystemEventCountRequest::getEndTime()const
 void DescribeSystemEventCountRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSystemEventCountRequest::getName()const
@@ -101,7 +101,7 @@ std::string DescribeSystemEventCountRequest::getName()const
 void DescribeSystemEventCountRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeSystemEventCountRequest::getEventType()const
@@ -112,7 +112,7 @@ std::string DescribeSystemEventCountRequest::getEventType()const
 void DescribeSystemEventCountRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string DescribeSystemEventCountRequest::getStatus()const
@@ -123,6 +123,6 @@ std::string DescribeSystemEventCountRequest::getStatus()const
 void DescribeSystemEventCountRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

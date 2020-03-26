@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setInvoicingType(int invoicingType);
 				int getProcessWay()const;
 				void setProcessWay(int processWay);
-				long getCallerBid()const;
-				void setCallerBid(long callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getInvoiceAmount()const;
@@ -55,13 +53,10 @@ namespace AlibabaCloud
 				void setCustomerId(long customerId);
 				std::vector<long> getSelectedIds()const;
 				void setSelectedIds(const std::vector<long>& selectedIds);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
 
             private:
 				int invoicingType_;
 				int processWay_;
-				long callerBid_;
 				long ownerId_;
 				long invoiceAmount_;
 				long addressId_;
@@ -69,7 +64,6 @@ namespace AlibabaCloud
 				bool invoiceByAmount_;
 				long customerId_;
 				std::vector<long> selectedIds_;
-				long callerUid_;
 
 			};
 		}

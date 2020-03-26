@@ -36,15 +36,18 @@ namespace AlibabaCloud
 				{
 					std::string parentId;
 					std::string connector;
-					long gmtCreate;
 					std::string userName;
+					int logStoreDay;
+					int port;
 					int checkStatus;
-					std::string resourceTypeCode;
 					long resourceType;
+					std::string localName;
+					long gmtCreate;
+					int auditStatus;
+					std::string resourceTypeCode;
 					std::string regionId;
 					long id;
 					std::string checkStatusName;
-					std::string localName;
 				};
 
 

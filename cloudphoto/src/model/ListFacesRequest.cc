@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListFacesRequest;
 
 ListFacesRequest::ListFacesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFacesRequest::~ListFacesRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFacesRequest::getCursor()const
 void ListFacesRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setParameter("Cursor", cursor);
 }
 
 std::string ListFacesRequest::getHasFaceName()const
@@ -44,7 +46,7 @@ std::string ListFacesRequest::getHasFaceName()const
 void ListFacesRequest::setHasFaceName(const std::string& hasFaceName)
 {
 	hasFaceName_ = hasFaceName;
-	setCoreParameter("HasFaceName", hasFaceName);
+	setParameter("HasFaceName", hasFaceName);
 }
 
 std::string ListFacesRequest::getLibraryId()const
@@ -55,7 +57,7 @@ std::string ListFacesRequest::getLibraryId()const
 void ListFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string ListFacesRequest::getStoreName()const
@@ -66,7 +68,7 @@ std::string ListFacesRequest::getStoreName()const
 void ListFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int ListFacesRequest::getSize()const
@@ -77,7 +79,7 @@ int ListFacesRequest::getSize()const
 void ListFacesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListFacesRequest::getState()const
@@ -88,7 +90,7 @@ std::string ListFacesRequest::getState()const
 void ListFacesRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListFacesRequest::getDirection()const
@@ -99,6 +101,6 @@ std::string ListFacesRequest::getDirection()const
 void ListFacesRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 

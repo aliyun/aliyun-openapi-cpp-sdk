@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUserFlowStatisticsRequest;
 
 DescribeUserFlowStatisticsRequest::DescribeUserFlowStatisticsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUserFlowStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserFlowStatisticsRequest::~DescribeUserFlowStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeUserFlowStatisticsRequest::getResourceOwnerId()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeUserFlowStatisticsRequest::getRegionId()const
 void DescribeUserFlowStatisticsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
@@ -55,8 +57,9 @@ std::vector<std::string> DescribeUserFlowStatisticsRequest::getUserNames()const
 void DescribeUserFlowStatisticsRequest::setUserNames(const std::vector<std::string>& userNames)
 {
 	userNames_ = userNames;
-	for(int i = 0; i!= userNames.size(); i++)
-		setCoreParameter("UserNames."+ std::to_string(i), userNames.at(i));
+	for(int dep1 = 0; dep1!= userNames.size(); dep1++) {
+		setParameter("UserNames."+ std::to_string(dep1), userNames.at(dep1));
+	}
 }
 
 std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
@@ -67,7 +70,7 @@ std::string DescribeUserFlowStatisticsRequest::getResourceOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
@@ -78,7 +81,7 @@ std::string DescribeUserFlowStatisticsRequest::getOwnerAccount()const
 void DescribeUserFlowStatisticsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
@@ -89,7 +92,7 @@ std::string DescribeUserFlowStatisticsRequest::getStatisticsDate()const
 void DescribeUserFlowStatisticsRequest::setStatisticsDate(const std::string& statisticsDate)
 {
 	statisticsDate_ = statisticsDate;
-	setCoreParameter("StatisticsDate", statisticsDate);
+	setParameter("StatisticsDate", statisticsDate);
 }
 
 long DescribeUserFlowStatisticsRequest::getOwnerId()const
@@ -100,7 +103,7 @@ long DescribeUserFlowStatisticsRequest::getOwnerId()const
 void DescribeUserFlowStatisticsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
@@ -111,6 +114,6 @@ std::string DescribeUserFlowStatisticsRequest::getSmartAGId()const
 void DescribeUserFlowStatisticsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

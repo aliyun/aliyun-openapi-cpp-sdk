@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetDailyStatisticRequest;
 
 GetDailyStatisticRequest::GetDailyStatisticRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetDailyStatistic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDailyStatisticRequest::~GetDailyStatisticRequest()
 {}
@@ -33,7 +35,7 @@ long GetDailyStatisticRequest::getApgroupId()const
 void GetDailyStatisticRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetDailyStatisticRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetDailyStatisticRequest::getAccessKeyId()const
 void GetDailyStatisticRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

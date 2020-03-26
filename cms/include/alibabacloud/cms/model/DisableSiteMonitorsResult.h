@@ -32,13 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CMS_EXPORT DisableSiteMonitorsResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					int count;
+				};
 
 
 				DisableSiteMonitorsResult();
 				explicit DisableSiteMonitorsResult(const std::string &payload);
 				~DisableSiteMonitorsResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				Data getData()const;
 				std::string getCode()const;
 				std::string getSuccess()const;
 
@@ -46,7 +50,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				Data data_;
 				std::string code_;
 				std::string success_;
 

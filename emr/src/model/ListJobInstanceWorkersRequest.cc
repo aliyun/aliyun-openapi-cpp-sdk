@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListJobInstanceWorkersRequest;
 
 ListJobInstanceWorkersRequest::ListJobInstanceWorkersRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListJobInstanceWorkers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobInstanceWorkersRequest::~ListJobInstanceWorkersRequest()
 {}
@@ -33,7 +35,7 @@ long ListJobInstanceWorkersRequest::getResourceOwnerId()const
 void ListJobInstanceWorkersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobInstanceWorkersRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListJobInstanceWorkersRequest::getAccessKeyId()const
 void ListJobInstanceWorkersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListJobInstanceWorkersRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ListJobInstanceWorkersRequest::getRegionId()const
 void ListJobInstanceWorkersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListJobInstanceWorkersRequest::getJobInstanceId()const
@@ -66,6 +68,6 @@ std::string ListJobInstanceWorkersRequest::getJobInstanceId()const
 void ListJobInstanceWorkersRequest::setJobInstanceId(const std::string& jobInstanceId)
 {
 	jobInstanceId_ = jobInstanceId;
-	setCoreParameter("JobInstanceId", jobInstanceId);
+	setParameter("JobInstanceId", jobInstanceId);
 }
 

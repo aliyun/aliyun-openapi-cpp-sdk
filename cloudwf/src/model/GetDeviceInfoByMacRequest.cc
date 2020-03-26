@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetDeviceInfoByMacRequest;
 
 GetDeviceInfoByMacRequest::GetDeviceInfoByMacRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetDeviceInfoByMac")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDeviceInfoByMacRequest::~GetDeviceInfoByMacRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetDeviceInfoByMacRequest::getMac()const
 void GetDeviceInfoByMacRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setParameter("Mac", mac);
 }
 
 std::string GetDeviceInfoByMacRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetDeviceInfoByMacRequest::getAccessKeyId()const
 void GetDeviceInfoByMacRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

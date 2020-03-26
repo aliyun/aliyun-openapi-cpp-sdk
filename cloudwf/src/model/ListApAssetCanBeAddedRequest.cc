@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApAssetCanBeAddedRequest;
 
 ListApAssetCanBeAddedRequest::ListApAssetCanBeAddedRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApAssetCanBeAdded")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApAssetCanBeAddedRequest::~ListApAssetCanBeAddedRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApAssetCanBeAddedRequest::getSearchName()const
 void ListApAssetCanBeAddedRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 long ListApAssetCanBeAddedRequest::getApgroupId()const
@@ -44,7 +46,7 @@ long ListApAssetCanBeAddedRequest::getApgroupId()const
 void ListApAssetCanBeAddedRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 int ListApAssetCanBeAddedRequest::getLength()const
@@ -55,7 +57,7 @@ int ListApAssetCanBeAddedRequest::getLength()const
 void ListApAssetCanBeAddedRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListApAssetCanBeAddedRequest::getAccessKeyId()const
 void ListApAssetCanBeAddedRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListApAssetCanBeAddedRequest::getPageIndex()const
@@ -77,7 +79,7 @@ int ListApAssetCanBeAddedRequest::getPageIndex()const
 void ListApAssetCanBeAddedRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApAssetCanBeAddedRequest::getSearchMac()const
@@ -88,7 +90,7 @@ std::string ListApAssetCanBeAddedRequest::getSearchMac()const
 void ListApAssetCanBeAddedRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 std::string ListApAssetCanBeAddedRequest::getSearchModel()const
@@ -99,6 +101,6 @@ std::string ListApAssetCanBeAddedRequest::getSearchModel()const
 void ListApAssetCanBeAddedRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setCoreParameter("SearchModel", searchModel);
+	setParameter("SearchModel", searchModel);
 }
 

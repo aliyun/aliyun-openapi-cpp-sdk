@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string acrId;
 					std::string destPortRange;
 					std::string direction;
+					std::string name;
 					long gmtCreate;
 					std::string type;
 					std::string destCidr;

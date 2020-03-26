@@ -36,7 +36,7 @@ void InstallMonitoringAgentRequest::setInstanceIds(const std::vector<std::string
 {
 	instanceIds_ = instanceIds;
 	for(int dep1 = 0; dep1!= instanceIds.size(); dep1++) {
-		setCoreParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
+		setParameter("InstanceIds."+ std::to_string(dep1), instanceIds.at(dep1));
 	}
 }
 
@@ -48,6 +48,6 @@ bool InstallMonitoringAgentRequest::getForce()const
 void InstallMonitoringAgentRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

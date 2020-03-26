@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CopyCasterRequest;
 
 CopyCasterRequest::CopyCasterRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CopyCaster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyCasterRequest::~CopyCasterRequest()
 {}
@@ -33,7 +35,7 @@ std::string CopyCasterRequest::getClientToken()const
 void CopyCasterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CopyCasterRequest::getCasterName()const
@@ -44,7 +46,7 @@ std::string CopyCasterRequest::getCasterName()const
 void CopyCasterRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
+	setParameter("CasterName", casterName);
 }
 
 std::string CopyCasterRequest::getSrcCasterId()const
@@ -55,7 +57,7 @@ std::string CopyCasterRequest::getSrcCasterId()const
 void CopyCasterRequest::setSrcCasterId(const std::string& srcCasterId)
 {
 	srcCasterId_ = srcCasterId;
-	setCoreParameter("SrcCasterId", srcCasterId);
+	setParameter("SrcCasterId", srcCasterId);
 }
 
 long CopyCasterRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long CopyCasterRequest::getOwnerId()const
 void CopyCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

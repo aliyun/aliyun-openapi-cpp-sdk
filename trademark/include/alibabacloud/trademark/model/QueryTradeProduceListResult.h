@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string operateNote;
 					int failReason;
 					int finalAmount;
+					int source;
 					std::string preOrderId;
 					bool allowCancel;
 					std::string registerNumber;

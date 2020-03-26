@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeRulesRequest;
 
 DescribeRulesRequest::DescribeRulesRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRulesRequest::~DescribeRulesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRulesRequest::getAccess_key_id()const
 void DescribeRulesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeRulesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeRulesRequest::getResourceOwnerId()const
 void DescribeRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRulesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeRulesRequest::getRegionId()const
 void DescribeRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeRulesRequest::getListenerPort()const
@@ -66,7 +68,7 @@ int DescribeRulesRequest::getListenerPort()const
 void DescribeRulesRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeRulesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeRulesRequest::getResourceOwnerAccount()const
 void DescribeRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRulesRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeRulesRequest::getOwnerAccount()const
 void DescribeRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRulesRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeRulesRequest::getOwnerId()const
 void DescribeRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRulesRequest::getListenerProtocol()const
@@ -110,7 +112,7 @@ std::string DescribeRulesRequest::getListenerProtocol()const
 void DescribeRulesRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string DescribeRulesRequest::getTags()const
@@ -121,7 +123,7 @@ std::string DescribeRulesRequest::getTags()const
 void DescribeRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeRulesRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string DescribeRulesRequest::getLoadBalancerId()const
 void DescribeRulesRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

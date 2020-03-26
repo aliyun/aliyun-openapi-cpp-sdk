@@ -55,6 +55,8 @@ void ListRolesResult::parse(const std::string &payload)
 			rolesObject.createDate = valueRolesRole["CreateDate"].asString();
 		if(!valueRolesRole["UpdateDate"].isNull())
 			rolesObject.updateDate = valueRolesRole["UpdateDate"].asString();
+		if(!valueRolesRole["MaxSessionDuration"].isNull())
+			rolesObject.maxSessionDuration = std::stol(valueRolesRole["MaxSessionDuration"].asString());
 		roles_.push_back(rolesObject);
 	}
 	if(!value["IsTruncated"].isNull())

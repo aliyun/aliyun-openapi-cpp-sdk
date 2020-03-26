@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRecordNotifyConfigRequest;
 
 DescribeLiveRecordNotifyConfigRequest::DescribeLiveRecordNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRecordNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRecordNotifyConfigRequest::~DescribeLiveRecordNotifyConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveRecordNotifyConfigRequest::getDomainName()const
 void DescribeLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveRecordNotifyConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeLiveRecordNotifyConfigRequest::getOwnerId()const
 void DescribeLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveRecordNotifyConfigRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribeLiveRecordNotifyConfigRequest::getSecurityToken()const
 void DescribeLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

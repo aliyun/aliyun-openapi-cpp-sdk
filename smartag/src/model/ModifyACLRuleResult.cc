@@ -63,6 +63,8 @@ void ModifyACLRuleResult::parse(const std::string &payload)
 		priority_ = std::stoi(value["Priority"].asString());
 	if(!value["GmtCreate"].isNull())
 		gmtCreate_ = std::stol(value["GmtCreate"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
@@ -71,19 +73,9 @@ std::string ModifyACLRuleResult::getPolicy()const
 	return policy_;
 }
 
-long ModifyACLRuleResult::getGmtCreate()const
-{
-	return gmtCreate_;
-}
-
 std::string ModifyACLRuleResult::getDescription()const
 {
 	return description_;
-}
-
-std::string ModifyACLRuleResult::getDestCidr()const
-{
-	return destCidr_;
 }
 
 std::string ModifyACLRuleResult::getSourcePortRange()const
@@ -111,11 +103,6 @@ std::string ModifyACLRuleResult::getAcrId()const
 	return acrId_;
 }
 
-std::string ModifyACLRuleResult::getIpProtocol()const
-{
-	return ipProtocol_;
-}
-
 std::string ModifyACLRuleResult::getDestPortRange()const
 {
 	return destPortRange_;
@@ -124,5 +111,25 @@ std::string ModifyACLRuleResult::getDestPortRange()const
 std::string ModifyACLRuleResult::getDirection()const
 {
 	return direction_;
+}
+
+std::string ModifyACLRuleResult::getName()const
+{
+	return name_;
+}
+
+long ModifyACLRuleResult::getGmtCreate()const
+{
+	return gmtCreate_;
+}
+
+std::string ModifyACLRuleResult::getDestCidr()const
+{
+	return destCidr_;
+}
+
+std::string ModifyACLRuleResult::getIpProtocol()const
+{
+	return ipProtocol_;
 }
 

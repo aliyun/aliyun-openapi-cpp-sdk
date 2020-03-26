@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::UploadServerCertificateRequest;
 
 UploadServerCertificateRequest::UploadServerCertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "UploadServerCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadServerCertificateRequest::~UploadServerCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadServerCertificateRequest::getAccess_key_id()const
 void UploadServerCertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long UploadServerCertificateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long UploadServerCertificateRequest::getResourceOwnerId()const
 void UploadServerCertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UploadServerCertificateRequest::getServerCertificate()const
@@ -55,7 +57,7 @@ std::string UploadServerCertificateRequest::getServerCertificate()const
 void UploadServerCertificateRequest::setServerCertificate(const std::string& serverCertificate)
 {
 	serverCertificate_ = serverCertificate;
-	setCoreParameter("ServerCertificate", serverCertificate);
+	setParameter("ServerCertificate", serverCertificate);
 }
 
 std::string UploadServerCertificateRequest::getAliCloudCertificateName()const
@@ -66,7 +68,7 @@ std::string UploadServerCertificateRequest::getAliCloudCertificateName()const
 void UploadServerCertificateRequest::setAliCloudCertificateName(const std::string& aliCloudCertificateName)
 {
 	aliCloudCertificateName_ = aliCloudCertificateName;
-	setCoreParameter("AliCloudCertificateName", aliCloudCertificateName);
+	setParameter("AliCloudCertificateName", aliCloudCertificateName);
 }
 
 std::string UploadServerCertificateRequest::getAliCloudCertificateId()const
@@ -77,7 +79,7 @@ std::string UploadServerCertificateRequest::getAliCloudCertificateId()const
 void UploadServerCertificateRequest::setAliCloudCertificateId(const std::string& aliCloudCertificateId)
 {
 	aliCloudCertificateId_ = aliCloudCertificateId;
-	setCoreParameter("AliCloudCertificateId", aliCloudCertificateId);
+	setParameter("AliCloudCertificateId", aliCloudCertificateId);
 }
 
 std::string UploadServerCertificateRequest::getPrivateKey()const
@@ -88,7 +90,7 @@ std::string UploadServerCertificateRequest::getPrivateKey()const
 void UploadServerCertificateRequest::setPrivateKey(const std::string& privateKey)
 {
 	privateKey_ = privateKey;
-	setCoreParameter("PrivateKey", privateKey);
+	setParameter("PrivateKey", privateKey);
 }
 
 std::string UploadServerCertificateRequest::getResourceGroupId()const
@@ -99,7 +101,7 @@ std::string UploadServerCertificateRequest::getResourceGroupId()const
 void UploadServerCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UploadServerCertificateRequest::getRegionId()const
@@ -110,7 +112,7 @@ std::string UploadServerCertificateRequest::getRegionId()const
 void UploadServerCertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
@@ -121,7 +123,7 @@ std::string UploadServerCertificateRequest::getResourceOwnerAccount()const
 void UploadServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UploadServerCertificateRequest::getOwnerAccount()const
@@ -132,7 +134,7 @@ std::string UploadServerCertificateRequest::getOwnerAccount()const
 void UploadServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UploadServerCertificateRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long UploadServerCertificateRequest::getOwnerId()const
 void UploadServerCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UploadServerCertificateRequest::getTags()const
@@ -154,7 +156,18 @@ std::string UploadServerCertificateRequest::getTags()const
 void UploadServerCertificateRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
+}
+
+std::string UploadServerCertificateRequest::getAliCloudCertificateRegionId()const
+{
+	return aliCloudCertificateRegionId_;
+}
+
+void UploadServerCertificateRequest::setAliCloudCertificateRegionId(const std::string& aliCloudCertificateRegionId)
+{
+	aliCloudCertificateRegionId_ = aliCloudCertificateRegionId;
+	setParameter("AliCloudCertificateRegionId", aliCloudCertificateRegionId);
 }
 
 std::string UploadServerCertificateRequest::getServerCertificateName()const
@@ -165,6 +178,6 @@ std::string UploadServerCertificateRequest::getServerCertificateName()const
 void UploadServerCertificateRequest::setServerCertificateName(const std::string& serverCertificateName)
 {
 	serverCertificateName_ = serverCertificateName;
-	setCoreParameter("ServerCertificateName", serverCertificateName);
+	setParameter("ServerCertificateName", serverCertificateName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeGrantRulesRequest;
 
 DescribeGrantRulesRequest::DescribeGrantRulesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeGrantRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGrantRulesRequest::~DescribeGrantRulesRequest()
 {}
@@ -33,18 +35,18 @@ long DescribeGrantRulesRequest::getResourceOwnerId()const
 void DescribeGrantRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeGrantRulesRequest::getPageNumber()const
+int DescribeGrantRulesRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeGrantRulesRequest::setPageNumber(const std::string& pageNumber)
+void DescribeGrantRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGrantRulesRequest::getRegionId()const
@@ -55,18 +57,18 @@ std::string DescribeGrantRulesRequest::getRegionId()const
 void DescribeGrantRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeGrantRulesRequest::getPageSize()const
+int DescribeGrantRulesRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeGrantRulesRequest::setPageSize(const std::string& pageSize)
+void DescribeGrantRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeGrantRulesRequest::getResourceOwnerAccount()const
 void DescribeGrantRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantRulesRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeGrantRulesRequest::getOwnerAccount()const
 void DescribeGrantRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
@@ -99,7 +101,7 @@ std::string DescribeGrantRulesRequest::getAssociatedCcnId()const
 void DescribeGrantRulesRequest::setAssociatedCcnId(const std::string& associatedCcnId)
 {
 	associatedCcnId_ = associatedCcnId;
-	setCoreParameter("AssociatedCcnId", associatedCcnId);
+	setParameter("AssociatedCcnId", associatedCcnId);
 }
 
 long DescribeGrantRulesRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long DescribeGrantRulesRequest::getOwnerId()const
 void DescribeGrantRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

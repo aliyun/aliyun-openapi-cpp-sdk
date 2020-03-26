@@ -35,7 +35,7 @@ std::string DescribeCustomMetricListRequest::getGroupId()const
 void DescribeCustomMetricListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeCustomMetricListRequest::getPageNumber()const
@@ -46,7 +46,7 @@ std::string DescribeCustomMetricListRequest::getPageNumber()const
 void DescribeCustomMetricListRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeCustomMetricListRequest::getPageSize()const
@@ -57,7 +57,7 @@ std::string DescribeCustomMetricListRequest::getPageSize()const
 void DescribeCustomMetricListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeCustomMetricListRequest::getMetricName()const
@@ -68,7 +68,7 @@ std::string DescribeCustomMetricListRequest::getMetricName()const
 void DescribeCustomMetricListRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeCustomMetricListRequest::getDimension()const
@@ -79,7 +79,7 @@ std::string DescribeCustomMetricListRequest::getDimension()const
 void DescribeCustomMetricListRequest::setDimension(const std::string& dimension)
 {
 	dimension_ = dimension;
-	setCoreParameter("Dimension", dimension);
+	setParameter("Dimension", dimension);
 }
 
 std::string DescribeCustomMetricListRequest::getMd5()const
@@ -90,6 +90,6 @@ std::string DescribeCustomMetricListRequest::getMd5()const
 void DescribeCustomMetricListRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setParameter("Md5", md5);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateUsersRequest;
 
 CreateUsersRequest::CreateUsersRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUsersRequest::~CreateUsersRequest()
 {}
@@ -33,7 +35,7 @@ long CreateUsersRequest::getResourceOwnerId()const
 void CreateUsersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUsersRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string CreateUsersRequest::getClusterId()const
 void CreateUsersRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateUsersRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateUsersRequest::getAccessKeyId()const
 void CreateUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateUsersRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateUsersRequest::getRegionId()const
 void CreateUsersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<CreateUsersRequest::UserInfo> CreateUsersRequest::getUserInfo()const
@@ -77,13 +79,12 @@ std::vector<CreateUsersRequest::UserInfo> CreateUsersRequest::getUserInfo()const
 void CreateUsersRequest::setUserInfo(const std::vector<UserInfo>& userInfo)
 {
 	userInfo_ = userInfo;
-	int i = 0;
-	for(int i = 0; i!= userInfo.size(); i++)	{
-		auto obj = userInfo.at(i);
-		std::string str ="UserInfo."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".UserId", obj.userId);
-		setCoreParameter(str + ".UserName", obj.userName);
+	for(int dep1 = 0; dep1!= userInfo.size(); dep1++) {
+		auto userInfoObj = userInfo.at(dep1);
+		std::string userInfoObjStr = "UserInfo." + std::to_string(dep1 + 1);
+		setParameter(userInfoObjStr + ".Type", userInfoObj.type);
+		setParameter(userInfoObjStr + ".UserId", userInfoObj.userId);
+		setParameter(userInfoObjStr + ".UserName", userInfoObj.userName);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyPhoneRequest;
 
 VerifyPhoneRequest::VerifyPhoneRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyPhoneRequest::~VerifyPhoneRequest()
 {}
@@ -33,7 +35,7 @@ std::string VerifyPhoneRequest::getVerifyCode()const
 void VerifyPhoneRequest::setVerifyCode(const std::string& verifyCode)
 {
 	verifyCode_ = verifyCode;
-	setCoreParameter("VerifyCode", verifyCode);
+	setParameter("VerifyCode", verifyCode);
 }
 
 std::string VerifyPhoneRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string VerifyPhoneRequest::getSourceIp()const
 void VerifyPhoneRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string VerifyPhoneRequest::getPhone()const
@@ -55,7 +57,7 @@ std::string VerifyPhoneRequest::getPhone()const
 void VerifyPhoneRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setParameter("Phone", phone);
 }
 
 std::string VerifyPhoneRequest::getLang()const
@@ -66,6 +68,6 @@ std::string VerifyPhoneRequest::getLang()const
 void VerifyPhoneRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

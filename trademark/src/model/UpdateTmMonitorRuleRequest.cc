@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::UpdateTmMonitorRuleRequest;
 
 UpdateTmMonitorRuleRequest::UpdateTmMonitorRuleRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "UpdateTmMonitorRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateTmMonitorRuleRequest::~UpdateTmMonitorRuleRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<int> UpdateTmMonitorRuleRequest::getNotifyStatus()const
 void UpdateTmMonitorRuleRequest::setNotifyStatus(const std::vector<int>& notifyStatus)
 {
 	notifyStatus_ = notifyStatus;
-	for(int i = 0; i!= notifyStatus.size(); i++)
-		setCoreParameter("NotifyStatus."+ std::to_string(i), std::to_string(notifyStatus.at(i)));
+	for(int dep1 = 0; dep1!= notifyStatus.size(); dep1++) {
+		setParameter("NotifyStatus."+ std::to_string(dep1), std::to_string(notifyStatus.at(dep1)));
+	}
 }
 
 std::string UpdateTmMonitorRuleRequest::getRuleName()const
@@ -45,7 +48,7 @@ std::string UpdateTmMonitorRuleRequest::getRuleName()const
 void UpdateTmMonitorRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 long UpdateTmMonitorRuleRequest::getId()const
@@ -56,6 +59,6 @@ long UpdateTmMonitorRuleRequest::getId()const
 void UpdateTmMonitorRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

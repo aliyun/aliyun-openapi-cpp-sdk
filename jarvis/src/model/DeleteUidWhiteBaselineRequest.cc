@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteUidWhiteBaselineRequest;
 
 DeleteUidWhiteBaselineRequest::DeleteUidWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteUidWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteUidWhiteBaselineRequest::~DeleteUidWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteUidWhiteBaselineRequest::getResourceOwnerId()const
 void DeleteUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteUidWhiteBaselineRequest::getWblUidList()const
@@ -44,7 +46,7 @@ std::string DeleteUidWhiteBaselineRequest::getWblUidList()const
 void DeleteUidWhiteBaselineRequest::setWblUidList(const std::string& wblUidList)
 {
 	wblUidList_ = wblUidList;
-	setCoreParameter("WblUidList", wblUidList);
+	setParameter("WblUidList", wblUidList);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string DeleteUidWhiteBaselineRequest::getSourceCode()const
 void DeleteUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DeleteUidWhiteBaselineRequest::getSourceIp()const
 void DeleteUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteUidWhiteBaselineRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DeleteUidWhiteBaselineRequest::getLang()const
 void DeleteUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

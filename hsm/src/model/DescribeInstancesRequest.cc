@@ -20,42 +20,22 @@ using AlibabaCloud::Hsm::Model::DescribeInstancesRequest;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "DescribeInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}
 
-long DescribeInstancesRequest::getResourceOwnerId()const
+std::string DescribeInstancesRequest::getResourceGroupId()const
 {
-	return resourceOwnerId_;
+	return resourceGroupId_;
 }
 
-void DescribeInstancesRequest::setResourceOwnerId(long resourceOwnerId)
+void DescribeInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-int DescribeInstancesRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeInstancesRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string DescribeInstancesRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DescribeInstancesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeInstancesRequest::getSourceIp()const
@@ -66,7 +46,18 @@ std::string DescribeInstancesRequest::getSourceIp()const
 void DescribeInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeInstancesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeInstancesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 int DescribeInstancesRequest::getPageSize()const
@@ -77,7 +68,40 @@ int DescribeInstancesRequest::getPageSize()const
 void DescribeInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeInstancesRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeInstancesRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
+}
+
+int DescribeInstancesRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeInstancesRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeInstancesRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeInstancesRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 int DescribeInstancesRequest::getHsmStatus()const
@@ -88,6 +112,6 @@ int DescribeInstancesRequest::getHsmStatus()const
 void DescribeInstancesRequest::setHsmStatus(int hsmStatus)
 {
 	hsmStatus_ = hsmStatus;
-	setCoreParameter("HsmStatus", std::to_string(hsmStatus));
+	setParameter("HsmStatus", std::to_string(hsmStatus));
 }
 

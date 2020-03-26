@@ -65,33 +65,37 @@ namespace AlibabaCloud
 				explicit ModifyVpnConnectionAttributeResult(const std::string &payload);
 				~ModifyVpnConnectionAttributeResult();
 				std::string getLocalSubnet()const;
+				std::string getDescription()const;
+				std::string getCustomerGatewayId()const;
+				long getCreateTime()const;
+				std::string getName()const;
 				bool getEffectImmediately()const;
 				VcoHealthCheck getVcoHealthCheck()const;
 				std::string getRemoteSubnet()const;
-				std::string getDescription()const;
-				std::string getCustomerGatewayId()const;
 				std::string getVpnGatewayId()const;
 				IpsecConfig getIpsecConfig()const;
-				long getCreateTime()const;
 				std::string getVpnConnectionId()const;
+				bool getEnableNatTraversal()const;
 				IkeConfig getIkeConfig()const;
-				std::string getName()const;
+				bool getEnableDpd()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string localSubnet_;
+				std::string description_;
+				std::string customerGatewayId_;
+				long createTime_;
+				std::string name_;
 				bool effectImmediately_;
 				VcoHealthCheck vcoHealthCheck_;
 				std::string remoteSubnet_;
-				std::string description_;
-				std::string customerGatewayId_;
 				std::string vpnGatewayId_;
 				IpsecConfig ipsecConfig_;
-				long createTime_;
 				std::string vpnConnectionId_;
+				bool enableNatTraversal_;
 				IkeConfig ikeConfig_;
-				std::string name_;
+				bool enableDpd_;
 
 			};
 		}

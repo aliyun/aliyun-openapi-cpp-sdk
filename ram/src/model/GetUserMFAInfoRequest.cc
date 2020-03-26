@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetUserMFAInfoRequest;
 
 GetUserMFAInfoRequest::GetUserMFAInfoRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetUserMFAInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserMFAInfoRequest::~GetUserMFAInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetUserMFAInfoRequest::getUserName()const
 void GetUserMFAInfoRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

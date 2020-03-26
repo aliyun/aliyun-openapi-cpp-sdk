@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemHeatLineRequest;
 
 OemHeatLineRequest::OemHeatLineRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemHeatLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemHeatLineRequest::~OemHeatLineRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemHeatLineRequest::getAccessKeyId()const
 void OemHeatLineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemHeatLineRequest::getGsid()const
@@ -44,6 +46,6 @@ long OemHeatLineRequest::getGsid()const
 void OemHeatLineRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

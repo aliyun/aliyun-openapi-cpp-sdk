@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteAttachedMediaRequest;
 
 DeleteAttachedMediaRequest::DeleteAttachedMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteAttachedMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAttachedMediaRequest::~DeleteAttachedMediaRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteAttachedMediaRequest::getResourceOwnerId()const
 void DeleteAttachedMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAttachedMediaRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteAttachedMediaRequest::getResourceOwnerAccount()const
 void DeleteAttachedMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteAttachedMediaRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteAttachedMediaRequest::getOwnerId()const
 void DeleteAttachedMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAttachedMediaRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteAttachedMediaRequest::getAccessKeyId()const
 void DeleteAttachedMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAttachedMediaRequest::getMediaIds()const
@@ -77,6 +79,6 @@ std::string DeleteAttachedMediaRequest::getMediaIds()const
 void DeleteAttachedMediaRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setParameter("MediaIds", mediaIds);
 }
 

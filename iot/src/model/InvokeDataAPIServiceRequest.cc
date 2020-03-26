@@ -20,20 +20,43 @@ using AlibabaCloud::Iot::Model::InvokeDataAPIServiceRequest;
 
 InvokeDataAPIServiceRequest::InvokeDataAPIServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "InvokeDataAPIService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InvokeDataAPIServiceRequest::~InvokeDataAPIServiceRequest()
 {}
 
-std::string InvokeDataAPIServiceRequest::getAccessKeyId()const
+std::vector<InvokeDataAPIServiceRequest::Param> InvokeDataAPIServiceRequest::getParam()const
 {
-	return accessKeyId_;
+	return param_;
 }
 
-void InvokeDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	param_ = param;
+	for(int dep1 = 0; dep1!= param.size(); dep1++) {
+		auto paramObj = param.at(dep1);
+		std::string paramObjStr = "Param." + std::to_string(dep1 + 1);
+		setParameter(paramObjStr + ".ParamType", paramObj.paramType);
+		for(int dep2 = 0; dep2!= paramObj.listParamValue.size(); dep2++) {
+			setParameter(paramObjStr + ".ListParamValue."+ std::to_string(dep2), paramObj.listParamValue.at(dep2));
+		}
+		setParameter(paramObjStr + ".ListParamType", paramObj.listParamType);
+		setParameter(paramObjStr + ".ParamName", paramObj.paramName);
+		setParameter(paramObjStr + ".ParamValue", paramObj.paramValue);
+	}
+}
+
+std::string InvokeDataAPIServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void InvokeDataAPIServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string InvokeDataAPIServiceRequest::getApiSrn()const
@@ -44,25 +67,28 @@ std::string InvokeDataAPIServiceRequest::getApiSrn()const
 void InvokeDataAPIServiceRequest::setApiSrn(const std::string& apiSrn)
 {
 	apiSrn_ = apiSrn;
-	setCoreParameter("ApiSrn", apiSrn);
+	setBodyParameter("ApiSrn", apiSrn);
 }
 
-std::vector<InvokeDataAPIServiceRequest::Param> InvokeDataAPIServiceRequest::getParam()const
+std::string InvokeDataAPIServiceRequest::getApiProduct()const
 {
-	return param_;
+	return apiProduct_;
 }
 
-void InvokeDataAPIServiceRequest::setParam(const std::vector<Param>& param)
+void InvokeDataAPIServiceRequest::setApiProduct(const std::string& apiProduct)
 {
-	param_ = param;
-	int i = 0;
-	for(int i = 0; i!= param.size(); i++)	{
-		auto obj = param.at(i);
-		std::string str ="Param."+ std::to_string(i);
-		setCoreParameter(str + ".ListParamType", obj.listParamType);
-		for(int i = 0; i!= obj.listParamValue.size(); i++)				setCoreParameter(str + ".ListParamValue."+ std::to_string(i), obj.listParamValue.at(i));
-		setCoreParameter(str + ".ParamValue", obj.paramValue);
-		setCoreParameter(str + ".ParamName", obj.paramName);
-	}
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string InvokeDataAPIServiceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void InvokeDataAPIServiceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

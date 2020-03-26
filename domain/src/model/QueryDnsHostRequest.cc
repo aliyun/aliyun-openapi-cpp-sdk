@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDnsHostRequest;
 
 QueryDnsHostRequest::QueryDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDnsHostRequest::~QueryDnsHostRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDnsHostRequest::getInstanceId()const
 void QueryDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string QueryDnsHostRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryDnsHostRequest::getUserClientIp()const
 void QueryDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDnsHostRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryDnsHostRequest::getLang()const
 void QueryDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

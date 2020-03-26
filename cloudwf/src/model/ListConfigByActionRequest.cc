@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListConfigByActionRequest;
 
 ListConfigByActionRequest::ListConfigByActionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListConfigByAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListConfigByActionRequest::~ListConfigByActionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListConfigByActionRequest::getSearchName()const
 void ListConfigByActionRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 std::string ListConfigByActionRequest::getActionName()const
@@ -44,7 +46,7 @@ std::string ListConfigByActionRequest::getActionName()const
 void ListConfigByActionRequest::setActionName(const std::string& actionName)
 {
 	actionName_ = actionName;
-	setCoreParameter("ActionName", actionName);
+	setParameter("ActionName", actionName);
 }
 
 std::string ListConfigByActionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListConfigByActionRequest::getAccessKeyId()const
 void ListConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListConfigByActionRequest::getLimit()const
@@ -66,6 +68,6 @@ int ListConfigByActionRequest::getLimit()const
 void ListConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 

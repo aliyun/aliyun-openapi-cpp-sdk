@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::SendVerifyCodeToEmailRequest;
 
 SendVerifyCodeToEmailRequest::SendVerifyCodeToEmailRequest() :
 	RpcServiceRequest("green", "2017-08-23", "SendVerifyCodeToEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendVerifyCodeToEmailRequest::~SendVerifyCodeToEmailRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendVerifyCodeToEmailRequest::getSourceIp()const
 void SendVerifyCodeToEmailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string SendVerifyCodeToEmailRequest::getLang()const
@@ -44,7 +46,7 @@ std::string SendVerifyCodeToEmailRequest::getLang()const
 void SendVerifyCodeToEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SendVerifyCodeToEmailRequest::getEmail()const
@@ -55,6 +57,6 @@ std::string SendVerifyCodeToEmailRequest::getEmail()const
 void SendVerifyCodeToEmailRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

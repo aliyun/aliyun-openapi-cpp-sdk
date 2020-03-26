@@ -35,7 +35,7 @@ long TwiceTelVerifyRequest::getResourceOwnerId()const
 void TwiceTelVerifyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string TwiceTelVerifyRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string TwiceTelVerifyRequest::getResourceOwnerAccount()const
 void TwiceTelVerifyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string TwiceTelVerifyRequest::getPhoneNumber()const
@@ -57,7 +57,7 @@ std::string TwiceTelVerifyRequest::getPhoneNumber()const
 void TwiceTelVerifyRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 long TwiceTelVerifyRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long TwiceTelVerifyRequest::getOwnerId()const
 void TwiceTelVerifyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string TwiceTelVerifyRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string TwiceTelVerifyRequest::getAccessKeyId()const
 void TwiceTelVerifyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string TwiceTelVerifyRequest::getSince()const
@@ -90,6 +90,6 @@ std::string TwiceTelVerifyRequest::getSince()const
 void TwiceTelVerifyRequest::setSince(const std::string& since)
 {
 	since_ = since;
-	setCoreParameter("Since", since);
+	setParameter("Since", since);
 }
 

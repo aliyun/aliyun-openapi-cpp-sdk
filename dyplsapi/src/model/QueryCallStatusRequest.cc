@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QueryCallStatusRequest;
 QueryCallStatusRequest::QueryCallStatusRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryCallStatus")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 QueryCallStatusRequest::~QueryCallStatusRequest()

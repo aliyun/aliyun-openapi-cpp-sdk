@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryCredentialsInfoRequest;
 
 QueryCredentialsInfoRequest::QueryCredentialsInfoRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryCredentialsInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCredentialsInfoRequest::~QueryCredentialsInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryCredentialsInfoRequest::getOssKey()const
 void QueryCredentialsInfoRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setBodyParameter("OssKey", ossKey);
 }
 
 std::string QueryCredentialsInfoRequest::getMaterialType()const
@@ -44,7 +46,7 @@ std::string QueryCredentialsInfoRequest::getMaterialType()const
 void QueryCredentialsInfoRequest::setMaterialType(const std::string& materialType)
 {
 	materialType_ = materialType;
-	setCoreParameter("MaterialType", materialType);
+	setBodyParameter("MaterialType", materialType);
 }
 
 std::string QueryCredentialsInfoRequest::getCompanyName()const
@@ -55,6 +57,6 @@ std::string QueryCredentialsInfoRequest::getCompanyName()const
 void QueryCredentialsInfoRequest::setCompanyName(const std::string& companyName)
 {
 	companyName_ = companyName;
-	setCoreParameter("CompanyName", companyName);
+	setParameter("CompanyName", companyName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CombineLoaRequest;
 
 CombineLoaRequest::CombineLoaRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CombineLoa")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CombineLoaRequest::~CombineLoaRequest()
 {}
@@ -33,7 +35,7 @@ std::string CombineLoaRequest::getMaterialName()const
 void CombineLoaRequest::setMaterialName(const std::string& materialName)
 {
 	materialName_ = materialName;
-	setCoreParameter("MaterialName", materialName);
+	setParameter("MaterialName", materialName);
 }
 
 std::string CombineLoaRequest::getAddress()const
@@ -44,7 +46,7 @@ std::string CombineLoaRequest::getAddress()const
 void CombineLoaRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string CombineLoaRequest::getMaterialId()const
@@ -55,7 +57,7 @@ std::string CombineLoaRequest::getMaterialId()const
 void CombineLoaRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
+	setParameter("MaterialId", materialId);
 }
 
 std::string CombineLoaRequest::getTrademarkName()const
@@ -66,7 +68,7 @@ std::string CombineLoaRequest::getTrademarkName()const
 void CombineLoaRequest::setTrademarkName(const std::string& trademarkName)
 {
 	trademarkName_ = trademarkName;
-	setCoreParameter("TrademarkName", trademarkName);
+	setParameter("TrademarkName", trademarkName);
 }
 
 std::string CombineLoaRequest::getNationality()const
@@ -77,7 +79,7 @@ std::string CombineLoaRequest::getNationality()const
 void CombineLoaRequest::setNationality(const std::string& nationality)
 {
 	nationality_ = nationality;
-	setCoreParameter("Nationality", nationality);
+	setParameter("Nationality", nationality);
 }
 
 std::string CombineLoaRequest::getTmProduceType()const
@@ -88,6 +90,6 @@ std::string CombineLoaRequest::getTmProduceType()const
 void CombineLoaRequest::setTmProduceType(const std::string& tmProduceType)
 {
 	tmProduceType_ = tmProduceType;
-	setCoreParameter("TmProduceType", tmProduceType);
+	setParameter("TmProduceType", tmProduceType);
 }
 

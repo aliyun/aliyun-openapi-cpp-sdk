@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::QueryCutoutTaskResultRequest;
 
 QueryCutoutTaskResultRequest::QueryCutoutTaskResultRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "QueryCutoutTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCutoutTaskResultRequest::~QueryCutoutTaskResultRequest()
 {}
@@ -33,6 +35,6 @@ long QueryCutoutTaskResultRequest::getTaskId()const
 void QueryCutoutTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 

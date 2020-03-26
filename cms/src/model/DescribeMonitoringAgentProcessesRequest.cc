@@ -35,6 +35,6 @@ std::string DescribeMonitoringAgentProcessesRequest::getInstanceId()const
 void DescribeMonitoringAgentProcessesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

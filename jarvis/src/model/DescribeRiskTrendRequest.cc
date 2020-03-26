@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeRiskTrendRequest;
 
 DescribeRiskTrendRequest::DescribeRiskTrendRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeRiskTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskTrendRequest::~DescribeRiskTrendRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRiskTrendRequest::getPeroid()const
 void DescribeRiskTrendRequest::setPeroid(const std::string& peroid)
 {
 	peroid_ = peroid;
-	setCoreParameter("Peroid", peroid);
+	setParameter("Peroid", peroid);
 }
 
 std::string DescribeRiskTrendRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DescribeRiskTrendRequest::getSourceCode()const
 void DescribeRiskTrendRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeRiskTrendRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeRiskTrendRequest::getSourceIp()const
 void DescribeRiskTrendRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRiskTrendRequest::getQueryProduct()const
@@ -66,7 +68,7 @@ std::string DescribeRiskTrendRequest::getQueryProduct()const
 void DescribeRiskTrendRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setParameter("QueryProduct", queryProduct);
 }
 
 std::string DescribeRiskTrendRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeRiskTrendRequest::getLang()const
 void DescribeRiskTrendRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeRiskTrendRequest::getQueryRegionId()const
@@ -88,6 +90,6 @@ std::string DescribeRiskTrendRequest::getQueryRegionId()const
 void DescribeRiskTrendRequest::setQueryRegionId(const std::string& queryRegionId)
 {
 	queryRegionId_ = queryRegionId;
-	setCoreParameter("QueryRegionId", queryRegionId);
+	setParameter("QueryRegionId", queryRegionId);
 }
 

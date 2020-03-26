@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getImages()const;
 				void setImages(const std::string& images);
+				std::string getUrls()const;
+				void setUrls(const std::string& urls);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getImageLibId()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string images_;
+				std::string urls_;
 				std::string sourceIp_;
 				int imageLibId_;
 

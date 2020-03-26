@@ -35,6 +35,6 @@ std::string DisableActiveMetricRuleRequest::getProduct()const
 void DisableActiveMetricRuleRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 

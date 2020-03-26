@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeWarningMachinesRequest;
 
 DescribeWarningMachinesRequest::DescribeWarningMachinesRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeWarningMachines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWarningMachinesRequest::~DescribeWarningMachinesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeWarningMachinesRequest::getSourceIp()const
 void DescribeWarningMachinesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeWarningMachinesRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeWarningMachinesRequest::getPageSize()const
 void DescribeWarningMachinesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWarningMachinesRequest::getMachineName()const
@@ -55,7 +57,7 @@ std::string DescribeWarningMachinesRequest::getMachineName()const
 void DescribeWarningMachinesRequest::setMachineName(const std::string& machineName)
 {
 	machineName_ = machineName;
-	setCoreParameter("MachineName", machineName);
+	setParameter("MachineName", machineName);
 }
 
 std::string DescribeWarningMachinesRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeWarningMachinesRequest::getLang()const
 void DescribeWarningMachinesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeWarningMachinesRequest::getCurrentPage()const
@@ -77,7 +79,7 @@ int DescribeWarningMachinesRequest::getCurrentPage()const
 void DescribeWarningMachinesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeWarningMachinesRequest::getRiskId()const
@@ -88,7 +90,7 @@ long DescribeWarningMachinesRequest::getRiskId()const
 void DescribeWarningMachinesRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setParameter("RiskId", std::to_string(riskId));
 }
 
 long DescribeWarningMachinesRequest::getStrategyId()const
@@ -99,7 +101,7 @@ long DescribeWarningMachinesRequest::getStrategyId()const
 void DescribeWarningMachinesRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeWarningMachinesRequest::getUuids()const
@@ -110,6 +112,6 @@ std::string DescribeWarningMachinesRequest::getUuids()const
 void DescribeWarningMachinesRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

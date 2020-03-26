@@ -40,11 +40,15 @@ namespace AlibabaCloud
 					std::string streamId;
 					std::string notify;
 					std::string userData;
+					std::string predictId;
+					std::string detectIntervals;
+					std::string modelUserData;
+					std::string predictTemplateId;
 					std::string output;
 					std::string creationTime;
 					std::string modelIds;
-					std::string predictId;
-					std::string detectIntervals;
+					std::string faceGroupId;
+					std::string autoStart;
 				};
 
 

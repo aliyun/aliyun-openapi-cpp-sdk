@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListScenarioTemplatesRequest;
 
 ListScenarioTemplatesRequest::ListScenarioTemplatesRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListScenarioTemplates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListScenarioTemplatesRequest::~ListScenarioTemplatesRequest()
 {}

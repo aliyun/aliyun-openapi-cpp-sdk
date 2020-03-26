@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetCategoriesRequest;
 
 GetCategoriesRequest::GetCategoriesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetCategories")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCategoriesRequest::~GetCategoriesRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetCategoriesRequest::getResourceOwnerId()const
 void GetCategoriesRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetCategoriesRequest::getType()const
@@ -44,7 +46,7 @@ std::string GetCategoriesRequest::getType()const
 void GetCategoriesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 long GetCategoriesRequest::getCateId()const
@@ -55,7 +57,7 @@ long GetCategoriesRequest::getCateId()const
 void GetCategoriesRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 long GetCategoriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ long GetCategoriesRequest::getPageSize()const
 void GetCategoriesRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetCategoriesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string GetCategoriesRequest::getResourceOwnerAccount()const
 void GetCategoriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetCategoriesRequest::getOwnerId()const
@@ -88,7 +90,7 @@ std::string GetCategoriesRequest::getOwnerId()const
 void GetCategoriesRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 long GetCategoriesRequest::getPageNo()const
@@ -99,7 +101,7 @@ long GetCategoriesRequest::getPageNo()const
 void GetCategoriesRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string GetCategoriesRequest::getSortBy()const
@@ -110,6 +112,6 @@ std::string GetCategoriesRequest::getSortBy()const
 void GetCategoriesRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

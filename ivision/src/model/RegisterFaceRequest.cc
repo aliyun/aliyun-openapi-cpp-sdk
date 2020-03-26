@@ -35,7 +35,7 @@ std::string RegisterFaceRequest::getContent()const
 void RegisterFaceRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string RegisterFaceRequest::getDataType()const
@@ -46,7 +46,7 @@ std::string RegisterFaceRequest::getDataType()const
 void RegisterFaceRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
+	setParameter("DataType", dataType);
 }
 
 std::string RegisterFaceRequest::getShowLog()const
@@ -57,7 +57,7 @@ std::string RegisterFaceRequest::getShowLog()const
 void RegisterFaceRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string RegisterFaceRequest::getGroupId()const
@@ -68,7 +68,7 @@ std::string RegisterFaceRequest::getGroupId()const
 void RegisterFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long RegisterFaceRequest::getOwnerId()const
@@ -79,6 +79,6 @@ long RegisterFaceRequest::getOwnerId()const
 void RegisterFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

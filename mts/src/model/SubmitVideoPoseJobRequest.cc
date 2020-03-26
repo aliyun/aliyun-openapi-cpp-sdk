@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitVideoPoseJobRequest;
 
 SubmitVideoPoseJobRequest::SubmitVideoPoseJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitVideoPoseJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitVideoPoseJobRequest::~SubmitVideoPoseJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitVideoPoseJobRequest::getResourceOwnerId()const
 void SubmitVideoPoseJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVideoPoseJobRequest::getOutputConfig()const
@@ -44,7 +46,7 @@ std::string SubmitVideoPoseJobRequest::getOutputConfig()const
 void SubmitVideoPoseJobRequest::setOutputConfig(const std::string& outputConfig)
 {
 	outputConfig_ = outputConfig;
-	setCoreParameter("OutputConfig", outputConfig);
+	setParameter("OutputConfig", outputConfig);
 }
 
 std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitVideoPoseJobRequest::getAccessKeyId()const
 void SubmitVideoPoseJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitVideoPoseJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitVideoPoseJobRequest::getUserData()const
 void SubmitVideoPoseJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitVideoPoseJobRequest::getResourceOwnerAccount()const
 void SubmitVideoPoseJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitVideoPoseJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitVideoPoseJobRequest::getOwnerAccount()const
 void SubmitVideoPoseJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitVideoPoseJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitVideoPoseJobRequest::getOwnerId()const
 void SubmitVideoPoseJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitVideoPoseJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitVideoPoseJobRequest::getPipelineId()const
 void SubmitVideoPoseJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitVideoPoseJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitVideoPoseJobRequest::getInput()const
 void SubmitVideoPoseJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

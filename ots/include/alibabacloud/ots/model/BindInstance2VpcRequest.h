@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				BindInstance2VpcRequest();
 				~BindInstance2VpcRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getVirtualSwitchId()const;
 				void setVirtualSwitchId(const std::string& virtualSwitchId);
 				std::string getRegionNo()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 
             private:
-				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string virtualSwitchId_;
 				std::string regionNo_;
 				std::string network_;

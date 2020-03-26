@@ -35,7 +35,7 @@ long BatchRobotSmartCallRequest::getResourceOwnerId()const
 void BatchRobotSmartCallRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool BatchRobotSmartCallRequest::getEarlyMediaAsr()const
@@ -46,7 +46,7 @@ bool BatchRobotSmartCallRequest::getEarlyMediaAsr()const
 void BatchRobotSmartCallRequest::setEarlyMediaAsr(bool earlyMediaAsr)
 {
 	earlyMediaAsr_ = earlyMediaAsr;
-	setCoreParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
+	setParameter("EarlyMediaAsr", earlyMediaAsr ? "true" : "false");
 }
 
 std::string BatchRobotSmartCallRequest::getTtsParamHead()const
@@ -57,7 +57,7 @@ std::string BatchRobotSmartCallRequest::getTtsParamHead()const
 void BatchRobotSmartCallRequest::setTtsParamHead(const std::string& ttsParamHead)
 {
 	ttsParamHead_ = ttsParamHead;
-	setCoreParameter("TtsParamHead", ttsParamHead);
+	setParameter("TtsParamHead", ttsParamHead);
 }
 
 std::string BatchRobotSmartCallRequest::getTaskName()const
@@ -68,7 +68,7 @@ std::string BatchRobotSmartCallRequest::getTaskName()const
 void BatchRobotSmartCallRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string BatchRobotSmartCallRequest::getTtsParam()const
@@ -79,7 +79,7 @@ std::string BatchRobotSmartCallRequest::getTtsParam()const
 void BatchRobotSmartCallRequest::setTtsParam(const std::string& ttsParam)
 {
 	ttsParam_ = ttsParam;
-	setCoreParameter("TtsParam", ttsParam);
+	setParameter("TtsParam", ttsParam);
 }
 
 std::string BatchRobotSmartCallRequest::getAccessKeyId()const
@@ -90,7 +90,7 @@ std::string BatchRobotSmartCallRequest::getAccessKeyId()const
 void BatchRobotSmartCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BatchRobotSmartCallRequest::getCalledNumber()const
@@ -101,7 +101,7 @@ std::string BatchRobotSmartCallRequest::getCalledNumber()const
 void BatchRobotSmartCallRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setParameter("CalledNumber", calledNumber);
 }
 
 std::string BatchRobotSmartCallRequest::getCalledShowNumber()const
@@ -112,7 +112,7 @@ std::string BatchRobotSmartCallRequest::getCalledShowNumber()const
 void BatchRobotSmartCallRequest::setCalledShowNumber(const std::string& calledShowNumber)
 {
 	calledShowNumber_ = calledShowNumber;
-	setCoreParameter("CalledShowNumber", calledShowNumber);
+	setParameter("CalledShowNumber", calledShowNumber);
 }
 
 bool BatchRobotSmartCallRequest::getIsSelfLine()const
@@ -123,7 +123,7 @@ bool BatchRobotSmartCallRequest::getIsSelfLine()const
 void BatchRobotSmartCallRequest::setIsSelfLine(bool isSelfLine)
 {
 	isSelfLine_ = isSelfLine;
-	setCoreParameter("IsSelfLine", isSelfLine ? "true" : "false");
+	setParameter("IsSelfLine", isSelfLine ? "true" : "false");
 }
 
 std::string BatchRobotSmartCallRequest::getResourceOwnerAccount()const
@@ -134,7 +134,7 @@ std::string BatchRobotSmartCallRequest::getResourceOwnerAccount()const
 void BatchRobotSmartCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BatchRobotSmartCallRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long BatchRobotSmartCallRequest::getOwnerId()const
 void BatchRobotSmartCallRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchRobotSmartCallRequest::getDialogId()const
@@ -156,7 +156,7 @@ std::string BatchRobotSmartCallRequest::getDialogId()const
 void BatchRobotSmartCallRequest::setDialogId(const std::string& dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", dialogId);
+	setParameter("DialogId", dialogId);
 }
 
 long BatchRobotSmartCallRequest::getScheduleTime()const
@@ -167,7 +167,7 @@ long BatchRobotSmartCallRequest::getScheduleTime()const
 void BatchRobotSmartCallRequest::setScheduleTime(long scheduleTime)
 {
 	scheduleTime_ = scheduleTime;
-	setCoreParameter("ScheduleTime", std::to_string(scheduleTime));
+	setParameter("ScheduleTime", std::to_string(scheduleTime));
 }
 
 std::string BatchRobotSmartCallRequest::getCorpName()const
@@ -178,7 +178,7 @@ std::string BatchRobotSmartCallRequest::getCorpName()const
 void BatchRobotSmartCallRequest::setCorpName(const std::string& corpName)
 {
 	corpName_ = corpName;
-	setCoreParameter("CorpName", corpName);
+	setParameter("CorpName", corpName);
 }
 
 bool BatchRobotSmartCallRequest::getScheduleCall()const
@@ -189,6 +189,6 @@ bool BatchRobotSmartCallRequest::getScheduleCall()const
 void BatchRobotSmartCallRequest::setScheduleCall(bool scheduleCall)
 {
 	scheduleCall_ = scheduleCall;
-	setCoreParameter("ScheduleCall", scheduleCall ? "true" : "false");
+	setParameter("ScheduleCall", scheduleCall ? "true" : "false");
 }
 

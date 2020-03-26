@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::TestHttpApiRequest;
 TestHttpApiRequest::TestHttpApiRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "TestHttpApi")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 TestHttpApiRequest::~TestHttpApiRequest()

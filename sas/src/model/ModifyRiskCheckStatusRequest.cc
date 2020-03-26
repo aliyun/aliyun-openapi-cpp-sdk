@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyRiskCheckStatusRequest;
 
 ModifyRiskCheckStatusRequest::ModifyRiskCheckStatusRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyRiskCheckStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRiskCheckStatusRequest::~ModifyRiskCheckStatusRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyRiskCheckStatusRequest::getResourceOwnerId()const
 void ModifyRiskCheckStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ModifyRiskCheckStatusRequest::getItemId()const
@@ -44,7 +46,7 @@ long ModifyRiskCheckStatusRequest::getItemId()const
 void ModifyRiskCheckStatusRequest::setItemId(long itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
+	setParameter("ItemId", std::to_string(itemId));
 }
 
 std::string ModifyRiskCheckStatusRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string ModifyRiskCheckStatusRequest::getSourceIp()const
 void ModifyRiskCheckStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyRiskCheckStatusRequest::getLang()const
@@ -66,7 +68,7 @@ std::string ModifyRiskCheckStatusRequest::getLang()const
 void ModifyRiskCheckStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long ModifyRiskCheckStatusRequest::getTaskId()const
@@ -77,7 +79,7 @@ long ModifyRiskCheckStatusRequest::getTaskId()const
 void ModifyRiskCheckStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 
 std::string ModifyRiskCheckStatusRequest::getStatus()const
@@ -88,6 +90,6 @@ std::string ModifyRiskCheckStatusRequest::getStatus()const
 void ModifyRiskCheckStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

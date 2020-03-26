@@ -42,43 +42,43 @@ void CreateBatchJobsResult::parse(const std::string &payload)
 	auto batchJobNode = value["BatchJob"];
 	if(!batchJobNode["BatchJobId"].isNull())
 		batchJob_.batchJobId = batchJobNode["BatchJobId"].asString();
-	if(!batchJobNode["JobGroupName"].isNull())
-		batchJob_.jobGroupName = batchJobNode["JobGroupName"].asString();
-	if(!batchJobNode["JobGroupDescription"].isNull())
-		batchJob_.jobGroupDescription = batchJobNode["JobGroupDescription"].asString();
-	if(!batchJobNode["ScenarioId"].isNull())
-		batchJob_.scenarioId = batchJobNode["ScenarioId"].asString();
-	if(!batchJobNode["JobFilePath"].isNull())
-		batchJob_.jobFilePath = batchJobNode["JobFilePath"].asString();
 	if(!batchJobNode["CreationTime"].isNull())
 		batchJob_.creationTime = std::stol(batchJobNode["CreationTime"].asString());
+	if(!batchJobNode["JobFilePath"].isNull())
+		batchJob_.jobFilePath = batchJobNode["JobFilePath"].asString();
+	if(!batchJobNode["JobGroupDescription"].isNull())
+		batchJob_.jobGroupDescription = batchJobNode["JobGroupDescription"].asString();
+	if(!batchJobNode["JobGroupName"].isNull())
+		batchJob_.jobGroupName = batchJobNode["JobGroupName"].asString();
+	if(!batchJobNode["ScenarioId"].isNull())
+		batchJob_.scenarioId = batchJobNode["ScenarioId"].asString();
 	auto strategyNode = batchJobNode["Strategy"];
-	if(!strategyNode["StrategyId"].isNull())
-		batchJob_.strategy.strategyId = strategyNode["StrategyId"].asString();
-	if(!strategyNode["StrategyName"].isNull())
-		batchJob_.strategy.strategyName = strategyNode["StrategyName"].asString();
-	if(!strategyNode["StrategyDescription"].isNull())
-		batchJob_.strategy.strategyDescription = strategyNode["StrategyDescription"].asString();
-	if(!strategyNode["Type"].isNull())
-		batchJob_.strategy.type = strategyNode["Type"].asString();
-	if(!strategyNode["StartTime"].isNull())
-		batchJob_.strategy.startTime = std::stol(strategyNode["StartTime"].asString());
-	if(!strategyNode["EndTime"].isNull())
-		batchJob_.strategy.endTime = std::stol(strategyNode["EndTime"].asString());
-	if(!strategyNode["RepeatBy"].isNull())
-		batchJob_.strategy.repeatBy = strategyNode["RepeatBy"].asString();
-	if(!strategyNode["MaxAttemptsPerDay"].isNull())
-		batchJob_.strategy.maxAttemptsPerDay = std::stoi(strategyNode["MaxAttemptsPerDay"].asString());
-	if(!strategyNode["MinAttemptInterval"].isNull())
-		batchJob_.strategy.minAttemptInterval = std::stoi(strategyNode["MinAttemptInterval"].asString());
 	if(!strategyNode["Customized"].isNull())
 		batchJob_.strategy.customized = strategyNode["Customized"].asString();
-	if(!strategyNode["RoutingStrategy"].isNull())
-		batchJob_.strategy.routingStrategy = strategyNode["RoutingStrategy"].asString();
+	if(!strategyNode["EndTime"].isNull())
+		batchJob_.strategy.endTime = std::stol(strategyNode["EndTime"].asString());
 	if(!strategyNode["FollowUpStrategy"].isNull())
 		batchJob_.strategy.followUpStrategy = strategyNode["FollowUpStrategy"].asString();
 	if(!strategyNode["IsTemplate"].isNull())
 		batchJob_.strategy.isTemplate = strategyNode["IsTemplate"].asString() == "true";
+	if(!strategyNode["MaxAttemptsPerDay"].isNull())
+		batchJob_.strategy.maxAttemptsPerDay = std::stoi(strategyNode["MaxAttemptsPerDay"].asString());
+	if(!strategyNode["MinAttemptInterval"].isNull())
+		batchJob_.strategy.minAttemptInterval = std::stoi(strategyNode["MinAttemptInterval"].asString());
+	if(!strategyNode["RepeatBy"].isNull())
+		batchJob_.strategy.repeatBy = strategyNode["RepeatBy"].asString();
+	if(!strategyNode["RoutingStrategy"].isNull())
+		batchJob_.strategy.routingStrategy = strategyNode["RoutingStrategy"].asString();
+	if(!strategyNode["StartTime"].isNull())
+		batchJob_.strategy.startTime = std::stol(strategyNode["StartTime"].asString());
+	if(!strategyNode["StrategyDescription"].isNull())
+		batchJob_.strategy.strategyDescription = strategyNode["StrategyDescription"].asString();
+	if(!strategyNode["StrategyId"].isNull())
+		batchJob_.strategy.strategyId = strategyNode["StrategyId"].asString();
+	if(!strategyNode["StrategyName"].isNull())
+		batchJob_.strategy.strategyName = strategyNode["StrategyName"].asString();
+	if(!strategyNode["Type"].isNull())
+		batchJob_.strategy.type = strategyNode["Type"].asString();
 	auto allWorkingTimeNode = strategyNode["WorkingTime"]["TimeFrame"];
 	for (auto strategyNodeWorkingTimeTimeFrame : allWorkingTimeNode)
 	{
@@ -95,14 +95,14 @@ void CreateBatchJobsResult::parse(const std::string &payload)
 		auto allCallingNumbers = batchJobNode["CallingNumbers"]["String"];
 		for (auto value : allCallingNumbers)
 			batchJob_.callingNumbers.push_back(value.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

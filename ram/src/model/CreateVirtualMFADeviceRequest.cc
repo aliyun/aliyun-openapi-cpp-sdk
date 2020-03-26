@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateVirtualMFADeviceRequest;
 
 CreateVirtualMFADeviceRequest::CreateVirtualMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateVirtualMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVirtualMFADeviceRequest::~CreateVirtualMFADeviceRequest()
 {}
@@ -33,6 +35,6 @@ std::string CreateVirtualMFADeviceRequest::getVirtualMFADeviceName()const
 void CreateVirtualMFADeviceRequest::setVirtualMFADeviceName(const std::string& virtualMFADeviceName)
 {
 	virtualMFADeviceName_ = virtualMFADeviceName;
-	setCoreParameter("VirtualMFADeviceName", virtualMFADeviceName);
+	setParameter("VirtualMFADeviceName", virtualMFADeviceName);
 }
 

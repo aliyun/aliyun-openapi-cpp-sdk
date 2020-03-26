@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForUpdatingContactInfoByNewConta
 
 SaveBatchTaskForUpdatingContactInfoByNewContactRequest::SaveBatchTaskForUpdatingContactInfoByNewContactRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByNewContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForUpdatingContactInfoByNewContactRequest::~SaveBatchTaskForUpdatingContactInfoByNewContactRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getCountry()
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setParameter("Country", country);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getCity()const
@@ -44,7 +46,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getCity()con
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 bool SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTransferOutProhibited()const
@@ -55,7 +57,7 @@ bool SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTransferOutProhi
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhCity()const
@@ -66,7 +68,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhCity()c
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setZhCity(const std::string& zhCity)
 {
 	zhCity_ = zhCity;
-	setCoreParameter("ZhCity", zhCity);
+	setParameter("ZhCity", zhCity);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelExt()const
@@ -77,7 +79,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelExt()c
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setTelExt(const std::string& telExt)
 {
 	telExt_ = telExt;
-	setCoreParameter("TelExt", telExt);
+	setParameter("TelExt", telExt);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getProvince()const
@@ -88,7 +90,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getProvince(
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", province);
+	setParameter("Province", province);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhRegistrantName()const
@@ -99,7 +101,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhRegistr
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setZhRegistrantName(const std::string& zhRegistrantName)
 {
 	zhRegistrantName_ = zhRegistrantName;
-	setCoreParameter("ZhRegistrantName", zhRegistrantName);
+	setParameter("ZhRegistrantName", zhRegistrantName);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getPostalCode()const
@@ -110,7 +112,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getPostalCod
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setPostalCode(const std::string& postalCode)
 {
 	postalCode_ = postalCode;
-	setCoreParameter("PostalCode", postalCode);
+	setParameter("PostalCode", postalCode);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getLang()const
@@ -121,7 +123,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getLang()con
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getEmail()const
@@ -132,7 +134,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getEmail()co
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhRegistrantOrganization()const
@@ -143,7 +145,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhRegistr
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setZhRegistrantOrganization(const std::string& zhRegistrantOrganization)
 {
 	zhRegistrantOrganization_ = zhRegistrantOrganization;
-	setCoreParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+	setParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getAddress()const
@@ -154,7 +156,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getAddress()
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelArea()const
@@ -165,7 +167,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelArea()
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setTelArea(const std::string& telArea)
 {
 	telArea_ = telArea;
-	setCoreParameter("TelArea", telArea);
+	setParameter("TelArea", telArea);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getContactType()const
@@ -176,7 +178,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getContactTy
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setParameter("ContactType", contactType);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhAddress()const
@@ -187,7 +189,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhAddress
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setZhAddress(const std::string& zhAddress)
 {
 	zhAddress_ = zhAddress;
-	setCoreParameter("ZhAddress", zhAddress);
+	setParameter("ZhAddress", zhAddress);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistrantType()const
@@ -198,7 +200,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistran
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setRegistrantType(const std::string& registrantType)
 {
 	registrantType_ = registrantType;
-	setCoreParameter("RegistrantType", registrantType);
+	setParameter("RegistrantType", registrantType);
 }
 
 std::vector<std::string> SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getDomainName()const
@@ -209,8 +211,9 @@ std::vector<std::string> SaveBatchTaskForUpdatingContactInfoByNewContactRequest:
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelephone()const
@@ -221,7 +224,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getTelephone
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setTelephone(const std::string& telephone)
 {
 	telephone_ = telephone;
-	setCoreParameter("Telephone", telephone);
+	setParameter("Telephone", telephone);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhProvince()const
@@ -232,7 +235,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getZhProvinc
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setZhProvince(const std::string& zhProvince)
 {
 	zhProvince_ = zhProvince;
-	setCoreParameter("ZhProvince", zhProvince);
+	setParameter("ZhProvince", zhProvince);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistrantOrganization()const
@@ -243,7 +246,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistran
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setRegistrantOrganization(const std::string& registrantOrganization)
 {
 	registrantOrganization_ = registrantOrganization;
-	setCoreParameter("RegistrantOrganization", registrantOrganization);
+	setParameter("RegistrantOrganization", registrantOrganization);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getUserClientIp()const
@@ -254,7 +257,7 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getUserClien
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistrantName()const
@@ -265,6 +268,6 @@ std::string SaveBatchTaskForUpdatingContactInfoByNewContactRequest::getRegistran
 void SaveBatchTaskForUpdatingContactInfoByNewContactRequest::setRegistrantName(const std::string& registrantName)
 {
 	registrantName_ = registrantName;
-	setCoreParameter("RegistrantName", registrantName);
+	setParameter("RegistrantName", registrantName);
 }
 

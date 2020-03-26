@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteDnatEntryRequest;
 
 DeleteDnatEntryRequest::DeleteDnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteDnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDnatEntryRequest::~DeleteDnatEntryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteDnatEntryRequest::getResourceOwnerId()const
 void DeleteDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteDnatEntryRequest::getDnatEntryId()const
@@ -44,7 +46,7 @@ std::string DeleteDnatEntryRequest::getDnatEntryId()const
 void DeleteDnatEntryRequest::setDnatEntryId(const std::string& dnatEntryId)
 {
 	dnatEntryId_ = dnatEntryId;
-	setCoreParameter("DnatEntryId", dnatEntryId);
+	setParameter("DnatEntryId", dnatEntryId);
 }
 
 std::string DeleteDnatEntryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteDnatEntryRequest::getRegionId()const
 void DeleteDnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteDnatEntryRequest::getResourceOwnerAccount()const
 void DeleteDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteDnatEntryRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteDnatEntryRequest::getOwnerAccount()const
 void DeleteDnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteDnatEntryRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteDnatEntryRequest::getOwnerId()const
 void DeleteDnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDnatEntryRequest::getSagId()const
@@ -99,6 +101,6 @@ std::string DeleteDnatEntryRequest::getSagId()const
 void DeleteDnatEntryRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	setParameter("SagId", sagId);
 }
 

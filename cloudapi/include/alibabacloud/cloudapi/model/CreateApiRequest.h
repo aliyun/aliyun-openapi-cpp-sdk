@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setServiceParameters(const std::string& serviceParameters);
 				std::string getFailResultSample()const;
 				void setFailResultSample(const std::string& failResultSample);
+				std::string getResourceOwnerToken()const;
+				void setResourceOwnerToken(const std::string& resourceOwnerToken);
 				std::string getSystemParameters()const;
 				void setSystemParameters(const std::string& systemParameters);
 				std::string getServiceParametersMap()const;
@@ -100,6 +102,7 @@ namespace AlibabaCloud
 				std::string allowSignatureMethod_;
 				std::string serviceParameters_;
 				std::string failResultSample_;
+				std::string resourceOwnerToken_;
 				std::string systemParameters_;
 				std::string serviceParametersMap_;
 				std::string securityToken_;

@@ -55,6 +55,20 @@ void GetAnalyzePlaceDataResult::parse(const std::string &payload)
 			analyzePlaceItemsObject.storeId = std::stol(valueAnalyzePlaceItemsAnalyzePlaceItem["StoreId"].asString());
 		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["Percent"].isNull())
 			analyzePlaceItemsObject.percent = std::stof(valueAnalyzePlaceItemsAnalyzePlaceItem["Percent"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["MaleCount"].isNull())
+			analyzePlaceItemsObject.maleCount = std::stoi(valueAnalyzePlaceItemsAnalyzePlaceItem["MaleCount"].asString());
+		if(!valueAnalyzePlaceItemsAnalyzePlaceItem["FemaleCount"].isNull())
+			analyzePlaceItemsObject.femaleCount = std::stoi(valueAnalyzePlaceItemsAnalyzePlaceItem["FemaleCount"].asString());
+		auto allAgeItemsNode = allAnalyzePlaceItemsNode["AgeItems"]["AgeItem"];
+		for (auto allAnalyzePlaceItemsNodeAgeItemsAgeItem : allAgeItemsNode)
+		{
+			AnalyzePlaceItem::AgeItem ageItemsObject;
+			if(!allAnalyzePlaceItemsNodeAgeItemsAgeItem["Count"].isNull())
+				ageItemsObject.count = std::stoi(allAnalyzePlaceItemsNodeAgeItemsAgeItem["Count"].asString());
+			if(!allAnalyzePlaceItemsNodeAgeItemsAgeItem["Age"].isNull())
+				ageItemsObject.age = std::stoi(allAnalyzePlaceItemsNodeAgeItemsAgeItem["Age"].asString());
+			analyzePlaceItemsObject.ageItems.push_back(ageItemsObject);
+		}
 		analyzePlaceItems_.push_back(analyzePlaceItemsObject);
 	}
 	if(!value["Count"].isNull())

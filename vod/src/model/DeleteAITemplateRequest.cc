@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteAITemplateRequest;
 
 DeleteAITemplateRequest::DeleteAITemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteAITemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAITemplateRequest::~DeleteAITemplateRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteAITemplateRequest::getResourceOwnerId()const
 void DeleteAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAITemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteAITemplateRequest::getResourceOwnerAccount()const
 void DeleteAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteAITemplateRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteAITemplateRequest::getOwnerId()const
 void DeleteAITemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAITemplateRequest::getTemplateId()const
@@ -66,6 +68,6 @@ std::string DeleteAITemplateRequest::getTemplateId()const
 void DeleteAITemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 

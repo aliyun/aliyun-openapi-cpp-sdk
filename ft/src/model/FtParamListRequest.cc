@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtParamListRequest;
 FtParamListRequest::FtParamListRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtParamList")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FtParamListRequest::~FtParamListRequest()

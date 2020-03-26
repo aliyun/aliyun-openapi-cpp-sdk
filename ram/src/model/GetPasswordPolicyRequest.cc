@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetPasswordPolicyRequest;
 
 GetPasswordPolicyRequest::GetPasswordPolicyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetPasswordPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPasswordPolicyRequest::~GetPasswordPolicyRequest()
 {}

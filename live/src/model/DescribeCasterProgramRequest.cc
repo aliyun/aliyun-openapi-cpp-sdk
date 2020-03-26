@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterProgramRequest;
 
 DescribeCasterProgramRequest::DescribeCasterProgramRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterProgram")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterProgramRequest::~DescribeCasterProgramRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCasterProgramRequest::getStartTime()const
 void DescribeCasterProgramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeCasterProgramRequest::getPageNum()const
@@ -44,7 +46,7 @@ int DescribeCasterProgramRequest::getPageNum()const
 void DescribeCasterProgramRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeCasterProgramRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeCasterProgramRequest::getPageSize()const
 void DescribeCasterProgramRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCasterProgramRequest::getCasterId()const
@@ -66,7 +68,7 @@ std::string DescribeCasterProgramRequest::getCasterId()const
 void DescribeCasterProgramRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 std::string DescribeCasterProgramRequest::getEpisodeType()const
@@ -77,7 +79,7 @@ std::string DescribeCasterProgramRequest::getEpisodeType()const
 void DescribeCasterProgramRequest::setEpisodeType(const std::string& episodeType)
 {
 	episodeType_ = episodeType;
-	setCoreParameter("EpisodeType", episodeType);
+	setParameter("EpisodeType", episodeType);
 }
 
 std::string DescribeCasterProgramRequest::getEndTime()const
@@ -88,7 +90,7 @@ std::string DescribeCasterProgramRequest::getEndTime()const
 void DescribeCasterProgramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeCasterProgramRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeCasterProgramRequest::getOwnerId()const
 void DescribeCasterProgramRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCasterProgramRequest::getEpisodeId()const
@@ -110,7 +112,7 @@ std::string DescribeCasterProgramRequest::getEpisodeId()const
 void DescribeCasterProgramRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
-	setCoreParameter("EpisodeId", episodeId);
+	setParameter("EpisodeId", episodeId);
 }
 
 int DescribeCasterProgramRequest::getStatus()const
@@ -121,6 +123,6 @@ int DescribeCasterProgramRequest::getStatus()const
 void DescribeCasterProgramRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

@@ -35,7 +35,7 @@ std::string DescribeMetricRuleTemplateAttributeRequest::getName()const
 void DescribeMetricRuleTemplateAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeMetricRuleTemplateAttributeRequest::getTemplateId()const
@@ -46,6 +46,6 @@ std::string DescribeMetricRuleTemplateAttributeRequest::getTemplateId()const
 void DescribeMetricRuleTemplateAttributeRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 

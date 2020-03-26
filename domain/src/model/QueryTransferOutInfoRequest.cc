@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTransferOutInfoRequest;
 
 QueryTransferOutInfoRequest::QueryTransferOutInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTransferOutInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTransferOutInfoRequest::~QueryTransferOutInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTransferOutInfoRequest::getDomainName()const
 void QueryTransferOutInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryTransferOutInfoRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryTransferOutInfoRequest::getUserClientIp()const
 void QueryTransferOutInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTransferOutInfoRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryTransferOutInfoRequest::getLang()const
 void QueryTransferOutInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

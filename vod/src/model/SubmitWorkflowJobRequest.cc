@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitWorkflowJobRequest;
 
 SubmitWorkflowJobRequest::SubmitWorkflowJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitWorkflowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitWorkflowJobRequest::~SubmitWorkflowJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitWorkflowJobRequest::getResourceOwnerId()const
 void SubmitWorkflowJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitWorkflowJobRequest::getWorkflowId()const
@@ -44,7 +46,7 @@ std::string SubmitWorkflowJobRequest::getWorkflowId()const
 void SubmitWorkflowJobRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", workflowId);
+	setParameter("WorkflowId", workflowId);
 }
 
 std::string SubmitWorkflowJobRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string SubmitWorkflowJobRequest::getResourceOwnerAccount()const
 void SubmitWorkflowJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SubmitWorkflowJobRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long SubmitWorkflowJobRequest::getOwnerId()const
 void SubmitWorkflowJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitWorkflowJobRequest::getMediaId()const
@@ -77,7 +79,7 @@ std::string SubmitWorkflowJobRequest::getMediaId()const
 void SubmitWorkflowJobRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string SubmitWorkflowJobRequest::getFileUrl()const
@@ -88,6 +90,6 @@ std::string SubmitWorkflowJobRequest::getFileUrl()const
 void SubmitWorkflowJobRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
-	setCoreParameter("FileUrl", fileUrl);
+	setParameter("FileUrl", fileUrl);
 }
 

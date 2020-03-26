@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitAIJobRequest;
 
 SubmitAIJobRequest::SubmitAIJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitAIJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAIJobRequest::~SubmitAIJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitAIJobRequest::getResourceOwnerId()const
 void SubmitAIJobRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SubmitAIJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitAIJobRequest::getAccessKeyId()const
 void SubmitAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAIJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitAIJobRequest::getUserData()const
 void SubmitAIJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitAIJobRequest::getTypes()const
@@ -66,7 +68,7 @@ std::string SubmitAIJobRequest::getTypes()const
 void SubmitAIJobRequest::setTypes(const std::string& types)
 {
 	types_ = types;
-	setCoreParameter("Types", types);
+	setParameter("Types", types);
 }
 
 std::string SubmitAIJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitAIJobRequest::getResourceOwnerAccount()const
 void SubmitAIJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAIJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitAIJobRequest::getOwnerAccount()const
 void SubmitAIJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitAIJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ std::string SubmitAIJobRequest::getOwnerId()const
 void SubmitAIJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string SubmitAIJobRequest::getMediaId()const
@@ -110,7 +112,7 @@ std::string SubmitAIJobRequest::getMediaId()const
 void SubmitAIJobRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string SubmitAIJobRequest::getInput()const
@@ -121,7 +123,7 @@ std::string SubmitAIJobRequest::getInput()const
 void SubmitAIJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 
 std::string SubmitAIJobRequest::getConfig()const
@@ -132,6 +134,6 @@ std::string SubmitAIJobRequest::getConfig()const
 void SubmitAIJobRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

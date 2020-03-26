@@ -57,6 +57,10 @@ void DescribeCenVbrHealthCheckResult::parse(const std::string &payload)
 			vbrHealthChecksObject.healthCheckTargetIp = valueVbrHealthChecksVbrHealthCheck["HealthCheckTargetIp"].asString();
 		if(!valueVbrHealthChecksVbrHealthCheck["Delay"].isNull())
 			vbrHealthChecksObject.delay = std::stol(valueVbrHealthChecksVbrHealthCheck["Delay"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].isNull())
+			vbrHealthChecksObject.healthCheckInterval = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthCheckInterval"].asString());
+		if(!valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].isNull())
+			vbrHealthChecksObject.healthyThreshold = std::stoi(valueVbrHealthChecksVbrHealthCheck["HealthyThreshold"].asString());
 		vbrHealthChecks_.push_back(vbrHealthChecksObject);
 	}
 	if(!value["TotalCount"].isNull())

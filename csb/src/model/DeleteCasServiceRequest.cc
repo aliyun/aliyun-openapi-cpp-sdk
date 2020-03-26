@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteCasServiceRequest;
 
 DeleteCasServiceRequest::DeleteCasServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteCasService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasServiceRequest::~DeleteCasServiceRequest()
 {}
@@ -33,7 +35,7 @@ bool DeleteCasServiceRequest::getLeafOnly()const
 void DeleteCasServiceRequest::setLeafOnly(bool leafOnly)
 {
 	leafOnly_ = leafOnly;
-	setCoreParameter("LeafOnly", leafOnly ? "true" : "false");
+	setParameter("LeafOnly", leafOnly ? "true" : "false");
 }
 
 std::string DeleteCasServiceRequest::getCasCsbName()const
@@ -44,7 +46,7 @@ std::string DeleteCasServiceRequest::getCasCsbName()const
 void DeleteCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 {
 	casCsbName_ = casCsbName;
-	setCoreParameter("CasCsbName", casCsbName);
+	setParameter("CasCsbName", casCsbName);
 }
 
 std::string DeleteCasServiceRequest::getSrcUserId()const
@@ -55,7 +57,7 @@ std::string DeleteCasServiceRequest::getSrcUserId()const
 void DeleteCasServiceRequest::setSrcUserId(const std::string& srcUserId)
 {
 	srcUserId_ = srcUserId;
-	setCoreParameter("SrcUserId", srcUserId);
+	setParameter("SrcUserId", srcUserId);
 }
 
 std::string DeleteCasServiceRequest::getCasServiceId()const
@@ -66,6 +68,6 @@ std::string DeleteCasServiceRequest::getCasServiceId()const
 void DeleteCasServiceRequest::setCasServiceId(const std::string& casServiceId)
 {
 	casServiceId_ = casServiceId;
-	setCoreParameter("CasServiceId", casServiceId);
+	setParameter("CasServiceId", casServiceId);
 }
 

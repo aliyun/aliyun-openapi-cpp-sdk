@@ -47,7 +47,7 @@ namespace AlibabaCloud
 					bool sensitive;
 					std::string dataType;
 					std::string riskLevelName;
-					long id;
+					std::string id;
 					std::string ruleName;
 				};
 

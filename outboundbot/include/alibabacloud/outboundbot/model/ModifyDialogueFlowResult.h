@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				int getHttpStatusCode()const;
 				std::string getDialogueFlowId()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 				std::string getDialogueFlowDefinition()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				int httpStatusCode_;
 				std::string dialogueFlowId_;
 				std::string code_;
-				bool success_;
 				std::string dialogueFlowDefinition_;
+				bool success_;
 
 			};
 		}

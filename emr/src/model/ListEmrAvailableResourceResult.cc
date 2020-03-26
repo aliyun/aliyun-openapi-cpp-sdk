@@ -63,8 +63,6 @@ void ListEmrAvailableResourceResult::parse(const std::string &payload)
 					supportedResourceListObject.max = std::stoi(allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Max"].asString());
 				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].isNull())
 					supportedResourceListObject.unit = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Unit"].asString();
-				if(!allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].isNull())
-					supportedResourceListObject.value1 = allEmrResourceInfoListNodeSupportedResourceListSupportedResource["Value"].asString();
 				auto emrInstanceTypeNode = value["EmrInstanceType"];
 				if(!emrInstanceTypeNode["InstanceType"].isNull())
 					supportedResourceListObject.emrInstanceType.instanceType = emrInstanceTypeNode["InstanceType"].asString();

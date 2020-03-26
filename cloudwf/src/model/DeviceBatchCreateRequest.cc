@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceBatchCreateRequest;
 
 DeviceBatchCreateRequest::DeviceBatchCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceBatchCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceBatchCreateRequest::~DeviceBatchCreateRequest()
 {}
@@ -33,7 +35,7 @@ int DeviceBatchCreateRequest::getDeviceType()const
 void DeviceBatchCreateRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setParameter("DeviceType", std::to_string(deviceType));
 }
 
 std::string DeviceBatchCreateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeviceBatchCreateRequest::getAccessKeyId()const
 void DeviceBatchCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeviceBatchCreateRequest::getSn()const
@@ -55,6 +57,6 @@ std::string DeviceBatchCreateRequest::getSn()const
 void DeviceBatchCreateRequest::setSn(const std::string& sn)
 {
 	sn_ = sn;
-	setCoreParameter("Sn", sn);
+	setParameter("Sn", sn);
 }
 

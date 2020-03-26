@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CompleteLifecycleActionRequest;
 
 CompleteLifecycleActionRequest::CompleteLifecycleActionRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CompleteLifecycleAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteLifecycleActionRequest::~CompleteLifecycleActionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CompleteLifecycleActionRequest::getLifecycleActionToken()const
 void CompleteLifecycleActionRequest::setLifecycleActionToken(const std::string& lifecycleActionToken)
 {
 	lifecycleActionToken_ = lifecycleActionToken;
-	setCoreParameter("LifecycleActionToken", lifecycleActionToken);
+	setParameter("LifecycleActionToken", lifecycleActionToken);
 }
 
 std::string CompleteLifecycleActionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CompleteLifecycleActionRequest::getAccessKeyId()const
 void CompleteLifecycleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CompleteLifecycleActionRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string CompleteLifecycleActionRequest::getResourceOwnerAccount()const
 void CompleteLifecycleActionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CompleteLifecycleActionRequest::getLifecycleHookId()const
@@ -66,7 +68,7 @@ std::string CompleteLifecycleActionRequest::getLifecycleHookId()const
 void CompleteLifecycleActionRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setCoreParameter("LifecycleHookId", lifecycleHookId);
+	setParameter("LifecycleHookId", lifecycleHookId);
 }
 
 std::string CompleteLifecycleActionRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CompleteLifecycleActionRequest::getOwnerAccount()const
 void CompleteLifecycleActionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CompleteLifecycleActionRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long CompleteLifecycleActionRequest::getOwnerId()const
 void CompleteLifecycleActionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CompleteLifecycleActionRequest::getLifecycleActionResult()const
@@ -99,6 +101,6 @@ std::string CompleteLifecycleActionRequest::getLifecycleActionResult()const
 void CompleteLifecycleActionRequest::setLifecycleActionResult(const std::string& lifecycleActionResult)
 {
 	lifecycleActionResult_ = lifecycleActionResult;
-	setCoreParameter("LifecycleActionResult", lifecycleActionResult);
+	setParameter("LifecycleActionResult", lifecycleActionResult);
 }
 

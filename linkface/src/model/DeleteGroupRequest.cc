@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteGroupRequest;
 
 DeleteGroupRequest::DeleteGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupRequest::~DeleteGroupRequest()
 {}
@@ -33,6 +35,28 @@ std::string DeleteGroupRequest::getGroupId()const
 void DeleteGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string DeleteGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

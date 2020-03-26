@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::DescribeLocationsRequest;
 
 DescribeLocationsRequest::DescribeLocationsRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "DescribeLocations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLocationsRequest::~DescribeLocationsRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeLocationsRequest::getStoreId()const
 void DescribeLocationsRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 

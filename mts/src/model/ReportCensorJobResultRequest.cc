@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportCensorJobResultRequest;
 
 ReportCensorJobResultRequest::ReportCensorJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportCensorJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportCensorJobResultRequest::~ReportCensorJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportCensorJobResultRequest::getResourceOwnerId()const
 void ReportCensorJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportCensorJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportCensorJobResultRequest::getAccessKeyId()const
 void ReportCensorJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportCensorJobResultRequest::getJobId()const
@@ -55,7 +57,7 @@ std::string ReportCensorJobResultRequest::getJobId()const
 void ReportCensorJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportCensorJobResultRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ReportCensorJobResultRequest::getResourceOwnerAccount()const
 void ReportCensorJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportCensorJobResultRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ReportCensorJobResultRequest::getOwnerAccount()const
 void ReportCensorJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportCensorJobResultRequest::getLabel()const
@@ -88,7 +90,7 @@ std::string ReportCensorJobResultRequest::getLabel()const
 void ReportCensorJobResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 
 long ReportCensorJobResultRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ReportCensorJobResultRequest::getOwnerId()const
 void ReportCensorJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportCensorJobResultRequest::getDetail()const
@@ -110,6 +112,6 @@ std::string ReportCensorJobResultRequest::getDetail()const
 void ReportCensorJobResultRequest::setDetail(const std::string& detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail);
+	setParameter("Detail", detail);
 }
 

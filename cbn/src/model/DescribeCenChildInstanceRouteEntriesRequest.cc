@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenChildInstanceRouteEntriesRequest;
 
 DescribeCenChildInstanceRouteEntriesRequest::DescribeCenChildInstanceRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenChildInstanceRouteEntriesRequest::~DescribeCenChildInstanceRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenChildInstanceRouteEntriesRequest::getResourceOwnerId()const
 void DescribeCenChildInstanceRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getCenId()const
 void DescribeCenChildInstanceRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 int DescribeCenChildInstanceRouteEntriesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeCenChildInstanceRouteEntriesRequest::getPageNumber()const
 void DescribeCenChildInstanceRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCenChildInstanceRouteEntriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeCenChildInstanceRouteEntriesRequest::getPageSize()const
 void DescribeCenChildInstanceRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceRegionI
 void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getResourceOwnerAccount
 void DescribeCenChildInstanceRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getOwnerAccount()const
 void DescribeCenChildInstanceRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenChildInstanceRouteEntriesRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeCenChildInstanceRouteEntriesRequest::getOwnerId()const
 void DescribeCenChildInstanceRouteEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceType()const
@@ -121,7 +123,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceType()c
 void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceId()const
@@ -132,7 +134,7 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceId()con
 void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 
 std::string DescribeCenChildInstanceRouteEntriesRequest::getStatus()const
@@ -143,6 +145,6 @@ std::string DescribeCenChildInstanceRouteEntriesRequest::getStatus()const
 void DescribeCenChildInstanceRouteEntriesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

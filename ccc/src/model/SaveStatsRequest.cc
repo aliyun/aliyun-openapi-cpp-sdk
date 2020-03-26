@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SaveStatsRequest;
 
 SaveStatsRequest::SaveStatsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SaveStats")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveStatsRequest::~SaveStatsRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveStatsRequest::getCallId()const
 void SaveStatsRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 long SaveStatsRequest::getRecordTime()const
@@ -44,7 +46,7 @@ long SaveStatsRequest::getRecordTime()const
 void SaveStatsRequest::setRecordTime(long recordTime)
 {
 	recordTime_ = recordTime;
-	setCoreParameter("RecordTime", std::to_string(recordTime));
+	setParameter("RecordTime", std::to_string(recordTime));
 }
 
 long SaveStatsRequest::getCallStartTime()const
@@ -55,7 +57,7 @@ long SaveStatsRequest::getCallStartTime()const
 void SaveStatsRequest::setCallStartTime(long callStartTime)
 {
 	callStartTime_ = callStartTime;
-	setCoreParameter("CallStartTime", std::to_string(callStartTime));
+	setParameter("CallStartTime", std::to_string(callStartTime));
 }
 
 std::string SaveStatsRequest::getUid()const
@@ -66,7 +68,7 @@ std::string SaveStatsRequest::getUid()const
 void SaveStatsRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setParameter("Uid", uid);
 }
 
 std::string SaveStatsRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string SaveStatsRequest::getInstanceId()const
 void SaveStatsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveStatsRequest::getStats()const
@@ -88,7 +90,7 @@ std::string SaveStatsRequest::getStats()const
 void SaveStatsRequest::setStats(const std::string& stats)
 {
 	stats_ = stats;
-	setCoreParameter("Stats", stats);
+	setParameter("Stats", stats);
 }
 
 std::string SaveStatsRequest::getTenantId()const
@@ -99,7 +101,7 @@ std::string SaveStatsRequest::getTenantId()const
 void SaveStatsRequest::setTenantId(const std::string& tenantId)
 {
 	tenantId_ = tenantId;
-	setCoreParameter("TenantId", tenantId);
+	setParameter("TenantId", tenantId);
 }
 
 std::string SaveStatsRequest::getCalleeNumber()const
@@ -110,7 +112,7 @@ std::string SaveStatsRequest::getCalleeNumber()const
 void SaveStatsRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setParameter("CalleeNumber", calleeNumber);
 }
 
 std::string SaveStatsRequest::getCallerNumber()const
@@ -121,6 +123,6 @@ std::string SaveStatsRequest::getCallerNumber()const
 void SaveStatsRequest::setCallerNumber(const std::string& callerNumber)
 {
 	callerNumber_ = callerNumber;
-	setCoreParameter("CallerNumber", callerNumber);
+	setParameter("CallerNumber", callerNumber);
 }
 

@@ -35,7 +35,7 @@ std::string PutContactRequest::getChannelsDingWebHook()const
 void PutContactRequest::setChannelsDingWebHook(const std::string& channelsDingWebHook)
 {
 	channelsDingWebHook_ = channelsDingWebHook;
-	setCoreParameter("ChannelsDingWebHook", channelsDingWebHook);
+	setParameter("ChannelsDingWebHook", channelsDingWebHook);
 }
 
 std::string PutContactRequest::getContactName()const
@@ -46,7 +46,7 @@ std::string PutContactRequest::getContactName()const
 void PutContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 std::string PutContactRequest::getChannelsMail()const
@@ -57,7 +57,7 @@ std::string PutContactRequest::getChannelsMail()const
 void PutContactRequest::setChannelsMail(const std::string& channelsMail)
 {
 	channelsMail_ = channelsMail;
-	setCoreParameter("ChannelsMail", channelsMail);
+	setParameter("ChannelsMail", channelsMail);
 }
 
 std::string PutContactRequest::getChannelsAliIM()const
@@ -68,7 +68,7 @@ std::string PutContactRequest::getChannelsAliIM()const
 void PutContactRequest::setChannelsAliIM(const std::string& channelsAliIM)
 {
 	channelsAliIM_ = channelsAliIM;
-	setCoreParameter("ChannelsAliIM", channelsAliIM);
+	setParameter("ChannelsAliIM", channelsAliIM);
 }
 
 std::string PutContactRequest::getDescribe()const
@@ -79,7 +79,7 @@ std::string PutContactRequest::getDescribe()const
 void PutContactRequest::setDescribe(const std::string& describe)
 {
 	describe_ = describe;
-	setCoreParameter("Describe", describe);
+	setParameter("Describe", describe);
 }
 
 std::string PutContactRequest::getChannelsSMS()const
@@ -90,6 +90,6 @@ std::string PutContactRequest::getChannelsSMS()const
 void PutContactRequest::setChannelsSMS(const std::string& channelsSMS)
 {
 	channelsSMS_ = channelsSMS;
-	setCoreParameter("ChannelsSMS", channelsSMS);
+	setParameter("ChannelsSMS", channelsSMS);
 }
 

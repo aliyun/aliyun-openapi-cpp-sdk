@@ -56,6 +56,8 @@ void QueryEdgeInstanceResult::parse(const std::string &payload)
 			instanceObject.name = dataNodeInstanceListInstance["Name"].asString();
 		if(!dataNodeInstanceListInstance["Tags"].isNull())
 			instanceObject.tags = dataNodeInstanceListInstance["Tags"].asString();
+		if(!dataNodeInstanceListInstance["Type"].isNull())
+			instanceObject.type = std::stoi(dataNodeInstanceListInstance["Type"].asString());
 		if(!dataNodeInstanceListInstance["GmtCreate"].isNull())
 			instanceObject.gmtCreate = dataNodeInstanceListInstance["GmtCreate"].asString();
 		if(!dataNodeInstanceListInstance["GmtModified"].isNull())
@@ -74,6 +76,12 @@ void QueryEdgeInstanceResult::parse(const std::string &payload)
 			instanceObject.latestDeploymentStatus = std::stoi(dataNodeInstanceListInstance["LatestDeploymentStatus"].asString());
 		if(!dataNodeInstanceListInstance["LatestDeploymentType"].isNull())
 			instanceObject.latestDeploymentType = dataNodeInstanceListInstance["LatestDeploymentType"].asString();
+		if(!dataNodeInstanceListInstance["GmtCreateTimestamp"].isNull())
+			instanceObject.gmtCreateTimestamp = std::stol(dataNodeInstanceListInstance["GmtCreateTimestamp"].asString());
+		if(!dataNodeInstanceListInstance["GmtModifiedTimestamp"].isNull())
+			instanceObject.gmtModifiedTimestamp = std::stol(dataNodeInstanceListInstance["GmtModifiedTimestamp"].asString());
+		if(!dataNodeInstanceListInstance["RoleAttachTimestamp"].isNull())
+			instanceObject.roleAttachTimestamp = std::stol(dataNodeInstanceListInstance["RoleAttachTimestamp"].asString());
 		data_.instanceList.push_back(instanceObject);
 	}
 	if(!value["Success"].isNull())

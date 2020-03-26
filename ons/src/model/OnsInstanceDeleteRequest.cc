@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceDeleteRequest;
 OnsInstanceDeleteRequest::OnsInstanceDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceDelete")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsInstanceDeleteRequest::~OnsInstanceDeleteRequest()

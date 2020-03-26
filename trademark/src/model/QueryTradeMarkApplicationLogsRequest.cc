@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTradeMarkApplicationLogsRequest;
 
 QueryTradeMarkApplicationLogsRequest::QueryTradeMarkApplicationLogsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTradeMarkApplicationLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTradeMarkApplicationLogsRequest::~QueryTradeMarkApplicationLogsRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryTradeMarkApplicationLogsRequest::getBizId()const
 void QueryTradeMarkApplicationLogsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

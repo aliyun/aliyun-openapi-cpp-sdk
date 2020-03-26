@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GetRandomPasswordRequest;
 GetRandomPasswordRequest::GetRandomPasswordRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetRandomPassword")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetRandomPasswordRequest::~GetRandomPasswordRequest()

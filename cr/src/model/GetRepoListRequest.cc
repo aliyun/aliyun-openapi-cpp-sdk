@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoListRequest;
 
 GetRepoListRequest::GetRepoListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoListRequest::~GetRepoListRequest()
 {}
@@ -33,7 +36,7 @@ int GetRepoListRequest::getPageSize()const
 void GetRepoListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoListRequest::getPage()const
@@ -44,7 +47,7 @@ int GetRepoListRequest::getPage()const
 void GetRepoListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string GetRepoListRequest::getStatus()const
@@ -55,6 +58,6 @@ std::string GetRepoListRequest::getStatus()const
 void GetRepoListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

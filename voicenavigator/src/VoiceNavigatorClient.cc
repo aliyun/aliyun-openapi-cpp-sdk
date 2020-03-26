@@ -51,6 +51,42 @@ VoiceNavigatorClient::VoiceNavigatorClient(const std::string & accessKeyId, cons
 VoiceNavigatorClient::~VoiceNavigatorClient()
 {}
 
+VoiceNavigatorClient::AssociateChatbotInstanceOutcome VoiceNavigatorClient::associateChatbotInstance(const AssociateChatbotInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AssociateChatbotInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AssociateChatbotInstanceOutcome(AssociateChatbotInstanceResult(outcome.result()));
+	else
+		return AssociateChatbotInstanceOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::associateChatbotInstanceAsync(const AssociateChatbotInstanceRequest& request, const AssociateChatbotInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, associateChatbotInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::AssociateChatbotInstanceOutcomeCallable VoiceNavigatorClient::associateChatbotInstanceCallable(const AssociateChatbotInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AssociateChatbotInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->associateChatbotInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::AuditTTSVoiceOutcome VoiceNavigatorClient::auditTTSVoice(const AuditTTSVoiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1377,42 @@ VoiceNavigatorClient::ListCategoriesOutcomeCallable VoiceNavigatorClient::listCa
 			[this, request]()
 			{
 			return this->listCategories(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VoiceNavigatorClient::ListChatbotInstancesOutcome VoiceNavigatorClient::listChatbotInstances(const ListChatbotInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListChatbotInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListChatbotInstancesOutcome(ListChatbotInstancesResult(outcome.result()));
+	else
+		return ListChatbotInstancesOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::listChatbotInstancesAsync(const ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listChatbotInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::ListChatbotInstancesOutcomeCallable VoiceNavigatorClient::listChatbotInstancesCallable(const ListChatbotInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListChatbotInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listChatbotInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

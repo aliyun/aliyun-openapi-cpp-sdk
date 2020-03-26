@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::MobileStopSpeedUpRequest;
 
 MobileStopSpeedUpRequest::MobileStopSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "MobileStopSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MobileStopSpeedUpRequest::~MobileStopSpeedUpRequest()
 {}
@@ -33,7 +35,7 @@ long MobileStopSpeedUpRequest::getResourceOwnerId()const
 void MobileStopSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MobileStopSpeedUpRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string MobileStopSpeedUpRequest::getResourceOwnerAccount()const
 void MobileStopSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long MobileStopSpeedUpRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long MobileStopSpeedUpRequest::getOwnerId()const
 void MobileStopSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MobileStopSpeedUpRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string MobileStopSpeedUpRequest::getAccessKeyId()const
 void MobileStopSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MobileStopSpeedUpRequest::getCorrelationId()const
@@ -77,6 +79,6 @@ std::string MobileStopSpeedUpRequest::getCorrelationId()const
 void MobileStopSpeedUpRequest::setCorrelationId(const std::string& correlationId)
 {
 	correlationId_ = correlationId;
-	setCoreParameter("CorrelationId", correlationId);
+	setParameter("CorrelationId", correlationId);
 }
 

@@ -35,7 +35,7 @@ std::string CreateReplicationJobRequest::getTargetType()const
 void CreateReplicationJobRequest::setTargetType(const std::string& targetType)
 {
 	targetType_ = targetType;
-	setCoreParameter("TargetType", targetType);
+	setParameter("TargetType", targetType);
 }
 
 std::string CreateReplicationJobRequest::getClientToken()const
@@ -46,7 +46,7 @@ std::string CreateReplicationJobRequest::getClientToken()const
 void CreateReplicationJobRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateReplicationJobRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateReplicationJobRequest::getDescription()const
 void CreateReplicationJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateReplicationJobRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string CreateReplicationJobRequest::getAccessKeyId()const
 void CreateReplicationJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateReplicationJobRequest::getFrequency()const
@@ -79,7 +79,7 @@ int CreateReplicationJobRequest::getFrequency()const
 void CreateReplicationJobRequest::setFrequency(int frequency)
 {
 	frequency_ = frequency;
-	setCoreParameter("Frequency", std::to_string(frequency));
+	setParameter("Frequency", std::to_string(frequency));
 }
 
 std::string CreateReplicationJobRequest::getReplicationParameters()const
@@ -90,7 +90,7 @@ std::string CreateReplicationJobRequest::getReplicationParameters()const
 void CreateReplicationJobRequest::setReplicationParameters(const std::string& replicationParameters)
 {
 	replicationParameters_ = replicationParameters;
-	setCoreParameter("ReplicationParameters", replicationParameters);
+	setParameter("ReplicationParameters", replicationParameters);
 }
 
 std::string CreateReplicationJobRequest::getRegionId()const
@@ -101,7 +101,7 @@ std::string CreateReplicationJobRequest::getRegionId()const
 void CreateReplicationJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateReplicationJobRequest::getImageName()const
@@ -112,7 +112,7 @@ std::string CreateReplicationJobRequest::getImageName()const
 void CreateReplicationJobRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", imageName);
+	setParameter("ImageName", imageName);
 }
 
 int CreateReplicationJobRequest::getSystemDiskSize()const
@@ -123,7 +123,7 @@ int CreateReplicationJobRequest::getSystemDiskSize()const
 void CreateReplicationJobRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string CreateReplicationJobRequest::getInstanceType()const
@@ -134,7 +134,7 @@ std::string CreateReplicationJobRequest::getInstanceType()const
 void CreateReplicationJobRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::vector<CreateReplicationJobRequest::Tag> CreateReplicationJobRequest::getTag()const
@@ -147,9 +147,9 @@ void CreateReplicationJobRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -161,7 +161,7 @@ int CreateReplicationJobRequest::getNetMode()const
 void CreateReplicationJobRequest::setNetMode(int netMode)
 {
 	netMode_ = netMode;
-	setCoreParameter("NetMode", std::to_string(netMode));
+	setParameter("NetMode", std::to_string(netMode));
 }
 
 std::string CreateReplicationJobRequest::getSourceId()const
@@ -172,7 +172,7 @@ std::string CreateReplicationJobRequest::getSourceId()const
 void CreateReplicationJobRequest::setSourceId(const std::string& sourceId)
 {
 	sourceId_ = sourceId;
-	setCoreParameter("SourceId", sourceId);
+	setParameter("SourceId", sourceId);
 }
 
 bool CreateReplicationJobRequest::getRunOnce()const
@@ -183,7 +183,18 @@ bool CreateReplicationJobRequest::getRunOnce()const
 void CreateReplicationJobRequest::setRunOnce(bool runOnce)
 {
 	runOnce_ = runOnce;
-	setCoreParameter("RunOnce", runOnce ? "true" : "false");
+	setParameter("RunOnce", runOnce ? "true" : "false");
+}
+
+std::string CreateReplicationJobRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void CreateReplicationJobRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string CreateReplicationJobRequest::getResourceOwnerAccount()const
@@ -194,7 +205,7 @@ std::string CreateReplicationJobRequest::getResourceOwnerAccount()const
 void CreateReplicationJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateReplicationJobRequest::getValidTime()const
@@ -205,7 +216,7 @@ std::string CreateReplicationJobRequest::getValidTime()const
 void CreateReplicationJobRequest::setValidTime(const std::string& validTime)
 {
 	validTime_ = validTime;
-	setCoreParameter("ValidTime", validTime);
+	setParameter("ValidTime", validTime);
 }
 
 long CreateReplicationJobRequest::getOwnerId()const
@@ -216,7 +227,7 @@ long CreateReplicationJobRequest::getOwnerId()const
 void CreateReplicationJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateReplicationJobRequest::DataDisk> CreateReplicationJobRequest::getDataDisk()const
@@ -229,10 +240,21 @@ void CreateReplicationJobRequest::setDataDisk(const std::vector<DataDisk>& dataD
 	dataDisk_ = dataDisk;
 	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
 		auto dataDiskObj = dataDisk.at(dep1);
-		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
-		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
-		setCoreParameter(dataDiskObjStr + ".Index", std::to_string(dataDiskObj.index));
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setParameter(dataDiskObjStr + ".Index", std::to_string(dataDiskObj.index));
 	}
+}
+
+std::string CreateReplicationJobRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void CreateReplicationJobRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string CreateReplicationJobRequest::getVSwitchId()const
@@ -243,7 +265,7 @@ std::string CreateReplicationJobRequest::getVSwitchId()const
 void CreateReplicationJobRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateReplicationJobRequest::getScheduledStartTime()const
@@ -254,7 +276,7 @@ std::string CreateReplicationJobRequest::getScheduledStartTime()const
 void CreateReplicationJobRequest::setScheduledStartTime(const std::string& scheduledStartTime)
 {
 	scheduledStartTime_ = scheduledStartTime;
-	setCoreParameter("ScheduledStartTime", scheduledStartTime);
+	setParameter("ScheduledStartTime", scheduledStartTime);
 }
 
 std::string CreateReplicationJobRequest::getInstanceId()const
@@ -265,7 +287,7 @@ std::string CreateReplicationJobRequest::getInstanceId()const
 void CreateReplicationJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateReplicationJobRequest::getVpcId()const
@@ -276,7 +298,7 @@ std::string CreateReplicationJobRequest::getVpcId()const
 void CreateReplicationJobRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateReplicationJobRequest::getName()const
@@ -287,7 +309,7 @@ std::string CreateReplicationJobRequest::getName()const
 void CreateReplicationJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int CreateReplicationJobRequest::getMaxNumberOfImageToKeep()const
@@ -298,6 +320,6 @@ int CreateReplicationJobRequest::getMaxNumberOfImageToKeep()const
 void CreateReplicationJobRequest::setMaxNumberOfImageToKeep(int maxNumberOfImageToKeep)
 {
 	maxNumberOfImageToKeep_ = maxNumberOfImageToKeep;
-	setCoreParameter("MaxNumberOfImageToKeep", std::to_string(maxNumberOfImageToKeep));
+	setParameter("MaxNumberOfImageToKeep", std::to_string(maxNumberOfImageToKeep));
 }
 

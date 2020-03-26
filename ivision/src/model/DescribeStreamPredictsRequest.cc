@@ -35,7 +35,7 @@ std::string DescribeStreamPredictsRequest::getNextPageToken()const
 void DescribeStreamPredictsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string DescribeStreamPredictsRequest::getPredictIds()const
@@ -46,7 +46,7 @@ std::string DescribeStreamPredictsRequest::getPredictIds()const
 void DescribeStreamPredictsRequest::setPredictIds(const std::string& predictIds)
 {
 	predictIds_ = predictIds;
-	setCoreParameter("PredictIds", predictIds);
+	setParameter("PredictIds", predictIds);
 }
 
 long DescribeStreamPredictsRequest::getPageSize()const
@@ -57,7 +57,7 @@ long DescribeStreamPredictsRequest::getPageSize()const
 void DescribeStreamPredictsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeStreamPredictsRequest::getShowLog()const
@@ -68,7 +68,7 @@ std::string DescribeStreamPredictsRequest::getShowLog()const
 void DescribeStreamPredictsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string DescribeStreamPredictsRequest::getModelId()const
@@ -79,7 +79,7 @@ std::string DescribeStreamPredictsRequest::getModelId()const
 void DescribeStreamPredictsRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setParameter("ModelId", modelId);
 }
 
 long DescribeStreamPredictsRequest::getCurrentPage()const
@@ -90,7 +90,7 @@ long DescribeStreamPredictsRequest::getCurrentPage()const
 void DescribeStreamPredictsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeStreamPredictsRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeStreamPredictsRequest::getOwnerId()const
 void DescribeStreamPredictsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

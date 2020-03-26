@@ -35,7 +35,7 @@ std::string DescribeCustomEventCountRequest::getEventId()const
 void DescribeCustomEventCountRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", eventId);
+	setParameter("EventId", eventId);
 }
 
 std::string DescribeCustomEventCountRequest::getLevel()const
@@ -46,7 +46,7 @@ std::string DescribeCustomEventCountRequest::getLevel()const
 void DescribeCustomEventCountRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeCustomEventCountRequest::getGroupId()const
@@ -57,7 +57,7 @@ std::string DescribeCustomEventCountRequest::getGroupId()const
 void DescribeCustomEventCountRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeCustomEventCountRequest::getEndTime()const
@@ -68,7 +68,7 @@ std::string DescribeCustomEventCountRequest::getEndTime()const
 void DescribeCustomEventCountRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeCustomEventCountRequest::getStartTime()const
@@ -79,7 +79,7 @@ std::string DescribeCustomEventCountRequest::getStartTime()const
 void DescribeCustomEventCountRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeCustomEventCountRequest::getSearchKeywords()const
@@ -90,7 +90,7 @@ std::string DescribeCustomEventCountRequest::getSearchKeywords()const
 void DescribeCustomEventCountRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 std::string DescribeCustomEventCountRequest::getName()const
@@ -101,6 +101,6 @@ std::string DescribeCustomEventCountRequest::getName()const
 void DescribeCustomEventCountRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCheckWarningsRequest;
 
 DescribeCheckWarningsRequest::DescribeCheckWarningsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCheckWarnings")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCheckWarningsRequest::~DescribeCheckWarningsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeCheckWarningsRequest::getCurrentPage()const
 void DescribeCheckWarningsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeCheckWarningsRequest::getRiskId()const
@@ -44,7 +46,7 @@ long DescribeCheckWarningsRequest::getRiskId()const
 void DescribeCheckWarningsRequest::setRiskId(long riskId)
 {
 	riskId_ = riskId;
-	setCoreParameter("RiskId", std::to_string(riskId));
+	setParameter("RiskId", std::to_string(riskId));
 }
 
 std::string DescribeCheckWarningsRequest::getUuid()const
@@ -55,7 +57,7 @@ std::string DescribeCheckWarningsRequest::getUuid()const
 void DescribeCheckWarningsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribeCheckWarningsRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeCheckWarningsRequest::getSourceIp()const
 void DescribeCheckWarningsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeCheckWarningsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCheckWarningsRequest::getPageSize()const
 void DescribeCheckWarningsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCheckWarningsRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DescribeCheckWarningsRequest::getLang()const
 void DescribeCheckWarningsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

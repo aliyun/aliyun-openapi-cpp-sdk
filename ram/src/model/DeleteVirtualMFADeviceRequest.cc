@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteVirtualMFADeviceRequest;
 
 DeleteVirtualMFADeviceRequest::DeleteVirtualMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteVirtualMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVirtualMFADeviceRequest::~DeleteVirtualMFADeviceRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteVirtualMFADeviceRequest::getSerialNumber()const
 void DeleteVirtualMFADeviceRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setParameter("SerialNumber", serialNumber);
 }
 

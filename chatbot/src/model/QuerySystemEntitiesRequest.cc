@@ -35,6 +35,6 @@ std::string QuerySystemEntitiesRequest::getEntityName()const
 void QuerySystemEntitiesRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setParameter("EntityName", entityName);
 }
 

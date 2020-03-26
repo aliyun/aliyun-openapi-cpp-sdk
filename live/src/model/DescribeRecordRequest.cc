@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRecordRequest;
 
 DescribeRecordRequest::DescribeRecordRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRecordRequest::~DescribeRecordRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRecordRequest::getOwnerId()const
 void DescribeRecordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRecordRequest::getRecordId()const
@@ -44,7 +46,7 @@ std::string DescribeRecordRequest::getRecordId()const
 void DescribeRecordRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setParameter("RecordId", recordId);
 }
 
 std::string DescribeRecordRequest::getAppId()const
@@ -55,6 +57,6 @@ std::string DescribeRecordRequest::getAppId()const
 void DescribeRecordRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

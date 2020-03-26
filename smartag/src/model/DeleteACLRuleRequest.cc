@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteACLRuleRequest;
 
 DeleteACLRuleRequest::DeleteACLRuleRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteACLRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteACLRuleRequest::~DeleteACLRuleRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteACLRuleRequest::getResourceOwnerId()const
 void DeleteACLRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteACLRuleRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteACLRuleRequest::getRegionId()const
 void DeleteACLRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteACLRuleRequest::getAclId()const
@@ -55,7 +57,7 @@ std::string DeleteACLRuleRequest::getAclId()const
 void DeleteACLRuleRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DeleteACLRuleRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteACLRuleRequest::getResourceOwnerAccount()const
 void DeleteACLRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteACLRuleRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteACLRuleRequest::getOwnerAccount()const
 void DeleteACLRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteACLRuleRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteACLRuleRequest::getOwnerId()const
 void DeleteACLRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteACLRuleRequest::getAcrId()const
@@ -99,6 +101,6 @@ std::string DeleteACLRuleRequest::getAcrId()const
 void DeleteACLRuleRequest::setAcrId(const std::string& acrId)
 {
 	acrId_ = acrId;
-	setCoreParameter("AcrId", acrId);
+	setParameter("AcrId", acrId);
 }
 

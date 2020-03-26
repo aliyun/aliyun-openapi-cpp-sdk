@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DeleteClusterNodesRequest();
 				~DeleteClusterNodesRequest();
 
+				std::string getRelease_node()const;
+				void setRelease_node(const std::string& release_node);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 
             private:
+				std::string release_node_;
 				std::string clusterId_;
 
 			};

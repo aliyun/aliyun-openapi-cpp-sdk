@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeGlobalAccelerationInstancesRequest;
 
 DescribeGlobalAccelerationInstancesRequest::DescribeGlobalAccelerationInstancesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeGlobalAccelerationInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGlobalAccelerationInstancesRequest::~DescribeGlobalAccelerationInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getIpAddress()const
 void DescribeGlobalAccelerationInstancesRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setParameter("IpAddress", ipAddress);
 }
 
 long DescribeGlobalAccelerationInstancesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeGlobalAccelerationInstancesRequest::getResourceOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getBandwidthType()const
@@ -55,7 +57,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getBandwidthType()const
 void DescribeGlobalAccelerationInstancesRequest::setBandwidthType(const std::string& bandwidthType)
 {
 	bandwidthType_ = bandwidthType;
-	setCoreParameter("BandwidthType", bandwidthType);
+	setParameter("BandwidthType", bandwidthType);
 }
 
 bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()const
@@ -66,7 +68,7 @@ bool DescribeGlobalAccelerationInstancesRequest::getIncludeReservationData()cons
 void DescribeGlobalAccelerationInstancesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationInstanceId()const
@@ -77,7 +79,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getGlobalAccelerationIns
 void DescribeGlobalAccelerationInstancesRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 int DescribeGlobalAccelerationInstancesRequest::getPageNumber()const
@@ -88,7 +90,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageNumber()const
 void DescribeGlobalAccelerationInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getRegionId()const
 void DescribeGlobalAccelerationInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeGlobalAccelerationInstancesRequest::getPageSize()const
@@ -110,7 +112,7 @@ int DescribeGlobalAccelerationInstancesRequest::getPageSize()const
 void DescribeGlobalAccelerationInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
@@ -121,7 +123,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getResourceOwnerAccount(
 void DescribeGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getServiceLocation()const
@@ -132,7 +134,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getServiceLocation()cons
 void DescribeGlobalAccelerationInstancesRequest::setServiceLocation(const std::string& serviceLocation)
 {
 	serviceLocation_ = serviceLocation;
-	setCoreParameter("ServiceLocation", serviceLocation);
+	setParameter("ServiceLocation", serviceLocation);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getOwnerAccount()const
@@ -143,7 +145,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getOwnerAccount()const
 void DescribeGlobalAccelerationInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeGlobalAccelerationInstancesRequest::getOwnerId()const
@@ -154,7 +156,7 @@ long DescribeGlobalAccelerationInstancesRequest::getOwnerId()const
 void DescribeGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getServerId()const
@@ -165,7 +167,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getServerId()const
 void DescribeGlobalAccelerationInstancesRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setCoreParameter("ServerId", serverId);
+	setParameter("ServerId", serverId);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getName()const
@@ -176,7 +178,7 @@ std::string DescribeGlobalAccelerationInstancesRequest::getName()const
 void DescribeGlobalAccelerationInstancesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeGlobalAccelerationInstancesRequest::getStatus()const
@@ -187,6 +189,6 @@ std::string DescribeGlobalAccelerationInstancesRequest::getStatus()const
 void DescribeGlobalAccelerationInstancesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

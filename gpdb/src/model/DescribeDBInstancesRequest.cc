@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstancesRequest;
 
 DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancesRequest::~DescribeDBInstancesRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeDBInstancesRequest::getPageNumber()const
 void DescribeDBInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDBInstancesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeDBInstancesRequest::getAccessKeyId()const
 void DescribeDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeDBInstancesRequest::getRegionId()const
 void DescribeDBInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeDBInstancesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeDBInstancesRequest::getPageSize()const
 void DescribeDBInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
@@ -77,7 +79,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceDescription()const
 void DescribeDBInstancesRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
 std::vector<DescribeDBInstancesRequest::Tag> DescribeDBInstancesRequest::getTag()const
@@ -88,12 +90,11 @@ std::vector<DescribeDBInstancesRequest::Tag> DescribeDBInstancesRequest::getTag(
 void DescribeDBInstancesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -105,7 +106,7 @@ std::string DescribeDBInstancesRequest::getDBInstanceIds()const
 void DescribeDBInstancesRequest::setDBInstanceIds(const std::string& dBInstanceIds)
 {
 	dBInstanceIds_ = dBInstanceIds;
-	setCoreParameter("DBInstanceIds", dBInstanceIds);
+	setParameter("DBInstanceIds", dBInstanceIds);
 }
 
 long DescribeDBInstancesRequest::getOwnerId()const
@@ -116,7 +117,7 @@ long DescribeDBInstancesRequest::getOwnerId()const
 void DescribeDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDBInstancesRequest::getInstanceNetworkType()const
@@ -127,6 +128,6 @@ std::string DescribeDBInstancesRequest::getInstanceNetworkType()const
 void DescribeDBInstancesRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

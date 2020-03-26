@@ -30,55 +30,62 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateDataAPIServiceRequest : public RpcServiceRequest
 			{
+			public:
 				struct RequestParam
 				{
 					std::string name;
 					std::string type;
-					bool required;
 					std::string desc;
 					std::string example;
+					bool required;
 				};
 				struct ResponseParam
 				{
 					std::string name;
 					std::string type;
-					bool required;
 					std::string desc;
 					std::string example;
+					bool required;
 				};
 
 			public:
 				CreateDataAPIServiceRequest();
 				~CreateDataAPIServiceRequest();
 
-				std::string getApiPath()const;
-				void setApiPath(const std::string& apiPath);
 				std::vector<RequestParam> getRequestParam()const;
 				void setRequestParam(const std::vector<RequestParam>& requestParam);
 				std::string getFolderId()const;
 				void setFolderId(const std::string& folderId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getApiPath()const;
+				void setApiPath(const std::string& apiPath);
 				std::string getTemplateSql()const;
 				void setTemplateSql(const std::string& templateSql);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
 				std::vector<ResponseParam> getResponseParam()const;
 				void setResponseParam(const std::vector<ResponseParam>& responseParam);
 				std::string getOriginSql()const;
 				void setOriginSql(const std::string& originSql);
 				std::string getDisplayName()const;
 				void setDisplayName(const std::string& displayName);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getDesc()const;
 				void setDesc(const std::string& desc);
 
             private:
-				std::string apiPath_;
 				std::vector<RequestParam> requestParam_;
 				std::string folderId_;
+				std::string iotInstanceId_;
+				std::string apiPath_;
 				std::string templateSql_;
-				std::string accessKeyId_;
 				std::vector<ResponseParam> responseParam_;
 				std::string originSql_;
 				std::string displayName_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string desc_;
 
 			};

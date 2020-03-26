@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeHlsLiveStreamRealTimeBpsDataRequest;
 
 DescribeHlsLiveStreamRealTimeBpsDataRequest::DescribeHlsLiveStreamRealTimeBpsDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeHlsLiveStreamRealTimeBpsDataRequest::~DescribeHlsLiveStreamRealTimeBpsDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getDomainName()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeHlsLiveStreamRealTimeBpsDataRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeHlsLiveStreamRealTimeBpsDataRequest::getOwnerId()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getTime()const
@@ -55,6 +57,6 @@ std::string DescribeHlsLiveStreamRealTimeBpsDataRequest::getTime()const
 void DescribeHlsLiveStreamRealTimeBpsDataRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setParameter("Time", time);
 }
 

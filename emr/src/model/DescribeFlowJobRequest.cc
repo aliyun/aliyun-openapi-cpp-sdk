@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowJobRequest;
 
 DescribeFlowJobRequest::DescribeFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowJobRequest::~DescribeFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeFlowJobRequest::getRegionId()const
 void DescribeFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowJobRequest::getId()const
@@ -44,7 +46,7 @@ std::string DescribeFlowJobRequest::getId()const
 void DescribeFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string DescribeFlowJobRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string DescribeFlowJobRequest::getProjectId()const
 void DescribeFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

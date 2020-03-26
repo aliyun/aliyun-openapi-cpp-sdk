@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddTemplateRequest;
 
 AddTemplateRequest::AddTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTemplateRequest::~AddTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddTemplateRequest::getContainer()const
 void AddTemplateRequest::setContainer(const std::string& container)
 {
 	container_ = container;
-	setCoreParameter("Container", container);
+	setParameter("Container", container);
 }
 
 long AddTemplateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long AddTemplateRequest::getResourceOwnerId()const
 void AddTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddTemplateRequest::getVideo()const
@@ -55,7 +57,7 @@ std::string AddTemplateRequest::getVideo()const
 void AddTemplateRequest::setVideo(const std::string& video)
 {
 	video_ = video;
-	setCoreParameter("Video", video);
+	setParameter("Video", video);
 }
 
 std::string AddTemplateRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string AddTemplateRequest::getAccessKeyId()const
 void AddTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddTemplateRequest::getTransConfig()const
@@ -77,7 +79,7 @@ std::string AddTemplateRequest::getTransConfig()const
 void AddTemplateRequest::setTransConfig(const std::string& transConfig)
 {
 	transConfig_ = transConfig;
-	setCoreParameter("TransConfig", transConfig);
+	setParameter("TransConfig", transConfig);
 }
 
 std::string AddTemplateRequest::getAudio()const
@@ -88,7 +90,7 @@ std::string AddTemplateRequest::getAudio()const
 void AddTemplateRequest::setAudio(const std::string& audio)
 {
 	audio_ = audio;
-	setCoreParameter("Audio", audio);
+	setParameter("Audio", audio);
 }
 
 std::string AddTemplateRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string AddTemplateRequest::getResourceOwnerAccount()const
 void AddTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddTemplateRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string AddTemplateRequest::getOwnerAccount()const
 void AddTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddTemplateRequest::getMuxConfig()const
@@ -121,7 +123,7 @@ std::string AddTemplateRequest::getMuxConfig()const
 void AddTemplateRequest::setMuxConfig(const std::string& muxConfig)
 {
 	muxConfig_ = muxConfig;
-	setCoreParameter("MuxConfig", muxConfig);
+	setParameter("MuxConfig", muxConfig);
 }
 
 long AddTemplateRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long AddTemplateRequest::getOwnerId()const
 void AddTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddTemplateRequest::getName()const
@@ -143,6 +145,6 @@ std::string AddTemplateRequest::getName()const
 void AddTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

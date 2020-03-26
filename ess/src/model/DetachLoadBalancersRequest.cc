@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DetachLoadBalancersRequest;
 
 DetachLoadBalancersRequest::DetachLoadBalancersRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DetachLoadBalancers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachLoadBalancersRequest::~DetachLoadBalancersRequest()
 {}
@@ -33,7 +35,7 @@ std::string DetachLoadBalancersRequest::getScalingGroupId()const
 void DetachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DetachLoadBalancersRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DetachLoadBalancersRequest::getAccessKeyId()const
 void DetachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> DetachLoadBalancersRequest::getLoadBalancer()const
@@ -55,8 +57,9 @@ std::vector<std::string> DetachLoadBalancersRequest::getLoadBalancer()const
 void DetachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>& loadBalancer)
 {
 	loadBalancer_ = loadBalancer;
-	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++) {
+		setParameter("LoadBalancer."+ std::to_string(dep1), loadBalancer.at(dep1));
+	}
 }
 
 std::string DetachLoadBalancersRequest::getResourceOwnerAccount()const
@@ -67,7 +70,7 @@ std::string DetachLoadBalancersRequest::getResourceOwnerAccount()const
 void DetachLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DetachLoadBalancersRequest::getOwnerId()const
@@ -78,7 +81,7 @@ long DetachLoadBalancersRequest::getOwnerId()const
 void DetachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DetachLoadBalancersRequest::getForceDetach()const
@@ -89,6 +92,6 @@ bool DetachLoadBalancersRequest::getForceDetach()const
 void DetachLoadBalancersRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
+	setParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 

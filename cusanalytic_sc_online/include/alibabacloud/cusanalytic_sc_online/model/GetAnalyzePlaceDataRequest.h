@@ -37,14 +37,14 @@ namespace AlibabaCloud
 
 				long getEndUVCount()const;
 				void setEndUVCount(long endUVCount);
-				long getParentAmount()const;
-				void setParentAmount(long parentAmount);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
-				long getStartUVCount()const;
-				void setStartUVCount(long startUVCount);
 				long getStoreId()const;
 				void setStoreId(long storeId);
+				long getParentAmount()const;
+				void setParentAmount(long parentAmount);
+				long getStartUVCount()const;
+				void setStartUVCount(long startUVCount);
 				std::string getEndDate()const;
 				void setEndDate(const std::string& endDate);
 				long getLocationId()const;
@@ -54,10 +54,10 @@ namespace AlibabaCloud
 
             private:
 				long endUVCount_;
-				long parentAmount_;
 				std::string startDate_;
-				long startUVCount_;
 				long storeId_;
+				long parentAmount_;
+				long startUVCount_;
 				std::string endDate_;
 				long locationId_;
 				std::string parentLocationIds_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryServerLockRequest;
 
 QueryServerLockRequest::QueryServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryServerLockRequest::~QueryServerLockRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryServerLockRequest::getInstanceId()const
 void QueryServerLockRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string QueryServerLockRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryServerLockRequest::getUserClientIp()const
 void QueryServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryServerLockRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryServerLockRequest::getLang()const
 void QueryServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

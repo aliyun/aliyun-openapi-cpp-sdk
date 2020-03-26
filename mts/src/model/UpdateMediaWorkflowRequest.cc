@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaWorkflowRequest;
 
 UpdateMediaWorkflowRequest::UpdateMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaWorkflowRequest::~UpdateMediaWorkflowRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateMediaWorkflowRequest::getResourceOwnerId()const
 void UpdateMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaWorkflowRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateMediaWorkflowRequest::getAccessKeyId()const
 void UpdateMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaWorkflowRequest::getMediaWorkflowId()const
@@ -55,7 +57,7 @@ std::string UpdateMediaWorkflowRequest::getMediaWorkflowId()const
 void UpdateMediaWorkflowRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 std::string UpdateMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateMediaWorkflowRequest::getResourceOwnerAccount()const
 void UpdateMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaWorkflowRequest::getTopology()const
@@ -77,7 +79,7 @@ std::string UpdateMediaWorkflowRequest::getTopology()const
 void UpdateMediaWorkflowRequest::setTopology(const std::string& topology)
 {
 	topology_ = topology;
-	setCoreParameter("Topology", topology);
+	setParameter("Topology", topology);
 }
 
 std::string UpdateMediaWorkflowRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string UpdateMediaWorkflowRequest::getOwnerAccount()const
 void UpdateMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaWorkflowRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long UpdateMediaWorkflowRequest::getOwnerId()const
 void UpdateMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

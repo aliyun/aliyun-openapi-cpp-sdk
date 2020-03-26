@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopCreatemarketingRequest;
 
 ShopCreatemarketingRequest::ShopCreatemarketingRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopCreatemarketing")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopCreatemarketingRequest::~ShopCreatemarketingRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopCreatemarketingRequest::getStime()const
 void ShopCreatemarketingRequest::setStime(const std::string& stime)
 {
 	stime_ = stime;
-	setCoreParameter("Stime", stime);
+	setParameter("Stime", stime);
 }
 
 std::string ShopCreatemarketingRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ShopCreatemarketingRequest::getAccessKeyId()const
 void ShopCreatemarketingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopCreatemarketingRequest::getSid()const
@@ -55,7 +57,7 @@ long ShopCreatemarketingRequest::getSid()const
 void ShopCreatemarketingRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string ShopCreatemarketingRequest::getEtime()const
@@ -66,7 +68,7 @@ std::string ShopCreatemarketingRequest::getEtime()const
 void ShopCreatemarketingRequest::setEtime(const std::string& etime)
 {
 	etime_ = etime;
-	setCoreParameter("Etime", etime);
+	setParameter("Etime", etime);
 }
 
 std::string ShopCreatemarketingRequest::getName()const
@@ -77,6 +79,6 @@ std::string ShopCreatemarketingRequest::getName()const
 void ShopCreatemarketingRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetRoiRankingRequest;
 
 GetRoiRankingRequest::GetRoiRankingRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetRoiRanking")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoiRankingRequest::~GetRoiRankingRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetRoiRankingRequest::getDate()const
 void GetRoiRankingRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 long GetRoiRankingRequest::getStoreId()const
@@ -44,6 +46,6 @@ long GetRoiRankingRequest::getStoreId()const
 void GetRoiRankingRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 

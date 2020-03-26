@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ConfirmTransferInEmailRequest;
 
 ConfirmTransferInEmailRequest::ConfirmTransferInEmailRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ConfirmTransferInEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfirmTransferInEmailRequest::~ConfirmTransferInEmailRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ConfirmTransferInEmailRequest::getDomainName()const
 void ConfirmTransferInEmailRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 std::string ConfirmTransferInEmailRequest::getUserClientIp()const
@@ -45,7 +48,7 @@ std::string ConfirmTransferInEmailRequest::getUserClientIp()const
 void ConfirmTransferInEmailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string ConfirmTransferInEmailRequest::getLang()const
@@ -56,7 +59,7 @@ std::string ConfirmTransferInEmailRequest::getLang()const
 void ConfirmTransferInEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ConfirmTransferInEmailRequest::getEmail()const
@@ -67,6 +70,6 @@ std::string ConfirmTransferInEmailRequest::getEmail()const
 void ConfirmTransferInEmailRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

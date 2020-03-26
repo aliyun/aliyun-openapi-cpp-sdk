@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeInstanceContainerStatusRequest;
 
 ListFlowNodeInstanceContainerStatusRequest::ListFlowNodeInstanceContainerStatusRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeInstanceContainerStatusRequest::~ListFlowNodeInstanceContainerStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getNodeInstanceId()const
 void ListFlowNodeInstanceContainerStatusRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setParameter("NodeInstanceId", nodeInstanceId);
 }
 
 int ListFlowNodeInstanceContainerStatusRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageNumber()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowNodeInstanceContainerStatusRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getRegionId()const
 void ListFlowNodeInstanceContainerStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListFlowNodeInstanceContainerStatusRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListFlowNodeInstanceContainerStatusRequest::getPageSize()const
 void ListFlowNodeInstanceContainerStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowNodeInstanceContainerStatusRequest::getProjectId()const
@@ -77,6 +79,6 @@ std::string ListFlowNodeInstanceContainerStatusRequest::getProjectId()const
 void ListFlowNodeInstanceContainerStatusRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

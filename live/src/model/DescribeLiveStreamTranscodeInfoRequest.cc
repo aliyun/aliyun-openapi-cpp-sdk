@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamTranscodeInfoRequest;
 
 DescribeLiveStreamTranscodeInfoRequest::DescribeLiveStreamTranscodeInfoRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamTranscodeInfoRequest::~DescribeLiveStreamTranscodeInfoRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeLiveStreamTranscodeInfoRequest::getOwnerId()const
 void DescribeLiveStreamTranscodeInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()const
@@ -44,6 +46,6 @@ std::string DescribeLiveStreamTranscodeInfoRequest::getDomainTranscodeName()cons
 void DescribeLiveStreamTranscodeInfoRequest::setDomainTranscodeName(const std::string& domainTranscodeName)
 {
 	domainTranscodeName_ = domainTranscodeName;
-	setCoreParameter("DomainTranscodeName", domainTranscodeName);
+	setParameter("DomainTranscodeName", domainTranscodeName);
 }
 

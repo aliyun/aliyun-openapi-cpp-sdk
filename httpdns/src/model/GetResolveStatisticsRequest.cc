@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetResolveStatisticsRequest;
 
 GetResolveStatisticsRequest::GetResolveStatisticsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetResolveStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetResolveStatisticsRequest::~GetResolveStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetResolveStatisticsRequest::getProtocolName()const
 void GetResolveStatisticsRequest::setProtocolName(const std::string& protocolName)
 {
 	protocolName_ = protocolName;
-	setCoreParameter("ProtocolName", protocolName);
+	setParameter("ProtocolName", protocolName);
 }
 
 std::string GetResolveStatisticsRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string GetResolveStatisticsRequest::getDomainName()const
 void GetResolveStatisticsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int GetResolveStatisticsRequest::getTimeSpan()const
@@ -55,7 +57,7 @@ int GetResolveStatisticsRequest::getTimeSpan()const
 void GetResolveStatisticsRequest::setTimeSpan(int timeSpan)
 {
 	timeSpan_ = timeSpan;
-	setCoreParameter("TimeSpan", std::to_string(timeSpan));
+	setParameter("TimeSpan", std::to_string(timeSpan));
 }
 
 std::string GetResolveStatisticsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetResolveStatisticsRequest::getAccessKeyId()const
 void GetResolveStatisticsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetResolveStatisticsRequest::getGranularity()const
@@ -77,6 +79,6 @@ std::string GetResolveStatisticsRequest::getGranularity()const
 void GetResolveStatisticsRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setParameter("Granularity", granularity);
 }
 

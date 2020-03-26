@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddWatermarkRequest;
 
 AddWatermarkRequest::AddWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddWatermarkRequest::~AddWatermarkRequest()
 {}
@@ -33,7 +35,7 @@ long AddWatermarkRequest::getResourceOwnerId()const
 void AddWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddWatermarkRequest::getType()const
@@ -44,7 +46,7 @@ std::string AddWatermarkRequest::getType()const
 void AddWatermarkRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string AddWatermarkRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AddWatermarkRequest::getAccessKeyId()const
 void AddWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddWatermarkRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddWatermarkRequest::getResourceOwnerAccount()const
 void AddWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AddWatermarkRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long AddWatermarkRequest::getOwnerId()const
 void AddWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddWatermarkRequest::getWatermarkConfig()const
@@ -88,7 +90,7 @@ std::string AddWatermarkRequest::getWatermarkConfig()const
 void AddWatermarkRequest::setWatermarkConfig(const std::string& watermarkConfig)
 {
 	watermarkConfig_ = watermarkConfig;
-	setCoreParameter("WatermarkConfig", watermarkConfig);
+	setParameter("WatermarkConfig", watermarkConfig);
 }
 
 std::string AddWatermarkRequest::getAppId()const
@@ -99,7 +101,7 @@ std::string AddWatermarkRequest::getAppId()const
 void AddWatermarkRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string AddWatermarkRequest::getName()const
@@ -110,7 +112,7 @@ std::string AddWatermarkRequest::getName()const
 void AddWatermarkRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AddWatermarkRequest::getFileUrl()const
@@ -121,6 +123,6 @@ std::string AddWatermarkRequest::getFileUrl()const
 void AddWatermarkRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
-	setCoreParameter("FileUrl", fileUrl);
+	setParameter("FileUrl", fileUrl);
 }
 

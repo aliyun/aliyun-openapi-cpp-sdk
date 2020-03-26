@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::RenewCredentialsRequest;
 
 RenewCredentialsRequest::RenewCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "RenewCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewCredentialsRequest::~RenewCredentialsRequest()
 {}
@@ -33,6 +35,6 @@ long RenewCredentialsRequest::getCredentialId()const
 void RenewCredentialsRequest::setCredentialId(long credentialId)
 {
 	credentialId_ = credentialId;
-	setCoreParameter("CredentialId", std::to_string(credentialId));
+	setParameter("CredentialId", std::to_string(credentialId));
 }
 

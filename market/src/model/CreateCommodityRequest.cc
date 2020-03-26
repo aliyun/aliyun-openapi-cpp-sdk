@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::CreateCommodityRequest;
 
 CreateCommodityRequest::CreateCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "CreateCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCommodityRequest::~CreateCommodityRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCommodityRequest::getApplicationId()const
 void CreateCommodityRequest::setApplicationId(const std::string& applicationId)
 {
 	applicationId_ = applicationId;
-	setCoreParameter("ApplicationId", applicationId);
+	setParameter("ApplicationId", applicationId);
 }
 
 std::string CreateCommodityRequest::getContent()const
@@ -44,6 +46,6 @@ std::string CreateCommodityRequest::getContent()const
 void CreateCommodityRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 

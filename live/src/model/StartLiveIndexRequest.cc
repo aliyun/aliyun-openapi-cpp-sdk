@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartLiveIndexRequest;
 
 StartLiveIndexRequest::StartLiveIndexRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartLiveIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLiveIndexRequest::~StartLiveIndexRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartLiveIndexRequest::getTokenId()const
 void StartLiveIndexRequest::setTokenId(const std::string& tokenId)
 {
 	tokenId_ = tokenId;
-	setCoreParameter("TokenId", tokenId);
+	setParameter("TokenId", tokenId);
 }
 
 std::string StartLiveIndexRequest::getOssEndpoint()const
@@ -44,7 +46,7 @@ std::string StartLiveIndexRequest::getOssEndpoint()const
 void StartLiveIndexRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
+	setParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string StartLiveIndexRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string StartLiveIndexRequest::getAppName()const
 void StartLiveIndexRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string StartLiveIndexRequest::getOssRamRole()const
@@ -66,7 +68,7 @@ std::string StartLiveIndexRequest::getOssRamRole()const
 void StartLiveIndexRequest::setOssRamRole(const std::string& ossRamRole)
 {
 	ossRamRole_ = ossRamRole;
-	setCoreParameter("OssRamRole", ossRamRole);
+	setParameter("OssRamRole", ossRamRole);
 }
 
 std::string StartLiveIndexRequest::getStreamName()const
@@ -77,7 +79,7 @@ std::string StartLiveIndexRequest::getStreamName()const
 void StartLiveIndexRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string StartLiveIndexRequest::getOssUserId()const
@@ -88,7 +90,7 @@ std::string StartLiveIndexRequest::getOssUserId()const
 void StartLiveIndexRequest::setOssUserId(const std::string& ossUserId)
 {
 	ossUserId_ = ossUserId;
-	setCoreParameter("OssUserId", ossUserId);
+	setParameter("OssUserId", ossUserId);
 }
 
 std::string StartLiveIndexRequest::getOssBucket()const
@@ -99,7 +101,7 @@ std::string StartLiveIndexRequest::getOssBucket()const
 void StartLiveIndexRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setParameter("OssBucket", ossBucket);
 }
 
 std::string StartLiveIndexRequest::getDomainName()const
@@ -110,7 +112,7 @@ std::string StartLiveIndexRequest::getDomainName()const
 void StartLiveIndexRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string StartLiveIndexRequest::getInputUrl()const
@@ -121,7 +123,7 @@ std::string StartLiveIndexRequest::getInputUrl()const
 void StartLiveIndexRequest::setInputUrl(const std::string& inputUrl)
 {
 	inputUrl_ = inputUrl;
-	setCoreParameter("InputUrl", inputUrl);
+	setParameter("InputUrl", inputUrl);
 }
 
 long StartLiveIndexRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long StartLiveIndexRequest::getOwnerId()const
 void StartLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int StartLiveIndexRequest::getInterval()const
@@ -143,6 +145,6 @@ int StartLiveIndexRequest::getInterval()const
 void StartLiveIndexRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setParameter("Interval", std::to_string(interval));
 }
 

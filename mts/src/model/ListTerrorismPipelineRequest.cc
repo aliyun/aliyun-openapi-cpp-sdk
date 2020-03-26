@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListTerrorismPipelineRequest;
 
 ListTerrorismPipelineRequest::ListTerrorismPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListTerrorismPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTerrorismPipelineRequest::~ListTerrorismPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long ListTerrorismPipelineRequest::getResourceOwnerId()const
 void ListTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListTerrorismPipelineRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long ListTerrorismPipelineRequest::getPageNumber()const
 void ListTerrorismPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListTerrorismPipelineRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListTerrorismPipelineRequest::getAccessKeyId()const
 void ListTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListTerrorismPipelineRequest::getPageSize()const
@@ -66,7 +68,7 @@ long ListTerrorismPipelineRequest::getPageSize()const
 void ListTerrorismPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListTerrorismPipelineRequest::getState()const
@@ -77,7 +79,7 @@ std::string ListTerrorismPipelineRequest::getState()const
 void ListTerrorismPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListTerrorismPipelineRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ListTerrorismPipelineRequest::getResourceOwnerAccount()const
 void ListTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListTerrorismPipelineRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ListTerrorismPipelineRequest::getOwnerAccount()const
 void ListTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListTerrorismPipelineRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ListTerrorismPipelineRequest::getOwnerId()const
 void ListTerrorismPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

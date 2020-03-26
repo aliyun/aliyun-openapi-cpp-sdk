@@ -37,10 +37,14 @@ namespace AlibabaCloud
 				ModifyDBClusterAccessWhiteListResult();
 				explicit ModifyDBClusterAccessWhiteListResult(const std::string &payload);
 				~ModifyDBClusterAccessWhiteListResult();
+				int getTaskId()const;
+				std::string getDBClusterId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int taskId_;
+				std::string dBClusterId_;
 
 			};
 		}

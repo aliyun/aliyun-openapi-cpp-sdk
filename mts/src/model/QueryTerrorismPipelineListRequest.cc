@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryTerrorismPipelineListRequest;
 
 QueryTerrorismPipelineListRequest::QueryTerrorismPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryTerrorismPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTerrorismPipelineListRequest::~QueryTerrorismPipelineListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryTerrorismPipelineListRequest::getResourceOwnerId()const
 void QueryTerrorismPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTerrorismPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryTerrorismPipelineListRequest::getResourceOwnerAccount()const
 void QueryTerrorismPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTerrorismPipelineListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryTerrorismPipelineListRequest::getOwnerAccount()const
 void QueryTerrorismPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTerrorismPipelineListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryTerrorismPipelineListRequest::getOwnerId()const
 void QueryTerrorismPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTerrorismPipelineListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryTerrorismPipelineListRequest::getAccessKeyId()const
 void QueryTerrorismPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryTerrorismPipelineListRequest::getPipelineIds()const
@@ -88,6 +90,6 @@ std::string QueryTerrorismPipelineListRequest::getPipelineIds()const
 void QueryTerrorismPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setParameter("PipelineIds", pipelineIds);
 }
 

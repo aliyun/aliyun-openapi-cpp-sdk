@@ -1059,6 +1059,42 @@ AdbClient::DescribeTablesOutcomeCallable AdbClient::describeTablesCallable(const
 	return task->get_future();
 }
 
+AdbClient::DescribeTaskInfoOutcome AdbClient::describeTaskInfo(const DescribeTaskInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTaskInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTaskInfoOutcome(DescribeTaskInfoResult(outcome.result()));
+	else
+		return DescribeTaskInfoOutcome(outcome.error());
+}
+
+void AdbClient::describeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTaskInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeTaskInfoOutcomeCallable AdbClient::describeTaskInfoCallable(const DescribeTaskInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTaskInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::GrantOperatorPermissionOutcome AdbClient::grantOperatorPermission(const GrantOperatorPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1305,42 @@ AdbClient::ModifyBackupPolicyOutcomeCallable AdbClient::modifyBackupPolicyCallab
 			[this, request]()
 			{
 			return this->modifyBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ModifyClusterConnectionStringOutcome AdbClient::modifyClusterConnectionString(const ModifyClusterConnectionStringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterConnectionStringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterConnectionStringOutcome(ModifyClusterConnectionStringResult(outcome.result()));
+	else
+		return ModifyClusterConnectionStringOutcome(outcome.error());
+}
+
+void AdbClient::modifyClusterConnectionStringAsync(const ModifyClusterConnectionStringRequest& request, const ModifyClusterConnectionStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterConnectionString(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ModifyClusterConnectionStringOutcomeCallable AdbClient::modifyClusterConnectionStringCallable(const ModifyClusterConnectionStringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterConnectionStringOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterConnectionString(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

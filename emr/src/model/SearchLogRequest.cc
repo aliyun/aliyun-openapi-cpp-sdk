@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SearchLogRequest;
 
 SearchLogRequest::SearchLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SearchLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchLogRequest::~SearchLogRequest()
 {}
@@ -33,7 +35,7 @@ long SearchLogRequest::getResourceOwnerId()const
 void SearchLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int SearchLogRequest::getLine()const
@@ -44,7 +46,7 @@ int SearchLogRequest::getLine()const
 void SearchLogRequest::setLine(int line)
 {
 	line_ = line;
-	setCoreParameter("Line", std::to_string(line));
+	setParameter("Line", std::to_string(line));
 }
 
 std::string SearchLogRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SearchLogRequest::getAccessKeyId()const
 void SearchLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SearchLogRequest::getHostName()const
@@ -66,7 +68,7 @@ std::string SearchLogRequest::getHostName()const
 void SearchLogRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string SearchLogRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string SearchLogRequest::getRegionId()const
 void SearchLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SearchLogRequest::getLogstoreName()const
@@ -88,7 +90,7 @@ std::string SearchLogRequest::getLogstoreName()const
 void SearchLogRequest::setLogstoreName(const std::string& logstoreName)
 {
 	logstoreName_ = logstoreName;
-	setCoreParameter("LogstoreName", logstoreName);
+	setParameter("LogstoreName", logstoreName);
 }
 
 int SearchLogRequest::getFromTimestamp()const
@@ -99,7 +101,7 @@ int SearchLogRequest::getFromTimestamp()const
 void SearchLogRequest::setFromTimestamp(int fromTimestamp)
 {
 	fromTimestamp_ = fromTimestamp;
-	setCoreParameter("FromTimestamp", std::to_string(fromTimestamp));
+	setParameter("FromTimestamp", std::to_string(fromTimestamp));
 }
 
 int SearchLogRequest::getOffset()const
@@ -110,7 +112,7 @@ int SearchLogRequest::getOffset()const
 void SearchLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setParameter("Offset", std::to_string(offset));
 }
 
 std::string SearchLogRequest::getClusterId()const
@@ -121,7 +123,7 @@ std::string SearchLogRequest::getClusterId()const
 void SearchLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 bool SearchLogRequest::getReverse()const
@@ -132,7 +134,7 @@ bool SearchLogRequest::getReverse()const
 void SearchLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string SearchLogRequest::getHostInnerIp()const
@@ -143,7 +145,7 @@ std::string SearchLogRequest::getHostInnerIp()const
 void SearchLogRequest::setHostInnerIp(const std::string& hostInnerIp)
 {
 	hostInnerIp_ = hostInnerIp;
-	setCoreParameter("HostInnerIp", hostInnerIp);
+	setParameter("HostInnerIp", hostInnerIp);
 }
 
 int SearchLogRequest::getToTimestamp()const
@@ -154,7 +156,7 @@ int SearchLogRequest::getToTimestamp()const
 void SearchLogRequest::setToTimestamp(int toTimestamp)
 {
 	toTimestamp_ = toTimestamp;
-	setCoreParameter("ToTimestamp", std::to_string(toTimestamp));
+	setParameter("ToTimestamp", std::to_string(toTimestamp));
 }
 
 std::string SearchLogRequest::getSlsQueryString()const
@@ -165,6 +167,6 @@ std::string SearchLogRequest::getSlsQueryString()const
 void SearchLogRequest::setSlsQueryString(const std::string& slsQueryString)
 {
 	slsQueryString_ = slsQueryString;
-	setCoreParameter("SlsQueryString", slsQueryString);
+	setParameter("SlsQueryString", slsQueryString);
 }
 

@@ -155,6 +155,8 @@ void DescribeApiHistoryResult::parse(const std::string &payload)
 			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
 		if(!valueRequestParametersRequestParameter["Description"].isNull())
 			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
+		if(!valueRequestParametersRequestParameter["ArrayItemsType"].isNull())
+			requestParametersObject.arrayItemsType = valueRequestParametersRequestParameter["ArrayItemsType"].asString();
 		requestParameters_.push_back(requestParametersObject);
 	}
 	auto allServiceParametersNode = value["ServiceParameters"]["ServiceParameter"];
@@ -213,6 +215,8 @@ void DescribeApiHistoryResult::parse(const std::string &payload)
 		serviceConfig_.serviceVpcEnable = serviceConfigNode["ServiceVpcEnable"].asString();
 	if(!serviceConfigNode["MockStatusCode"].isNull())
 		serviceConfig_.mockStatusCode = std::stoi(serviceConfigNode["MockStatusCode"].asString());
+	if(!serviceConfigNode["VpcId"].isNull())
+		serviceConfig_.vpcId = serviceConfigNode["VpcId"].asString();
 	auto allMockHeadersNode = serviceConfigNode["MockHeaders"]["MockHeader"];
 	for (auto serviceConfigNodeMockHeadersMockHeader : allMockHeadersNode)
 	{

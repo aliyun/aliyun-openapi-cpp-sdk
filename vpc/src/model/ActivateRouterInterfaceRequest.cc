@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ActivateRouterInterfaceRequest;
 
 ActivateRouterInterfaceRequest::ActivateRouterInterfaceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ActivateRouterInterface")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivateRouterInterfaceRequest::~ActivateRouterInterfaceRequest()
 {}
@@ -33,7 +35,7 @@ long ActivateRouterInterfaceRequest::getResourceOwnerId()const
 void ActivateRouterInterfaceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ActivateRouterInterfaceRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string ActivateRouterInterfaceRequest::getResourceOwnerAccount()const
 void ActivateRouterInterfaceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ActivateRouterInterfaceRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ActivateRouterInterfaceRequest::getOwnerId()const
 void ActivateRouterInterfaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ActivateRouterInterfaceRequest::getRouterInterfaceId()const
@@ -66,7 +68,7 @@ std::string ActivateRouterInterfaceRequest::getRouterInterfaceId()const
 void ActivateRouterInterfaceRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setParameter("RouterInterfaceId", routerInterfaceId);
 }
 
 std::string ActivateRouterInterfaceRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string ActivateRouterInterfaceRequest::getRegionId()const
 void ActivateRouterInterfaceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

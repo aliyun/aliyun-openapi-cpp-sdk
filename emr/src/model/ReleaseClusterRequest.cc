@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ReleaseClusterRequest;
 
 ReleaseClusterRequest::ReleaseClusterRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ReleaseCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseClusterRequest::~ReleaseClusterRequest()
 {}
@@ -33,7 +35,7 @@ long ReleaseClusterRequest::getResourceOwnerId()const
 void ReleaseClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ReleaseClusterRequest::getForceRelease()const
@@ -44,7 +46,7 @@ bool ReleaseClusterRequest::getForceRelease()const
 void ReleaseClusterRequest::setForceRelease(bool forceRelease)
 {
 	forceRelease_ = forceRelease;
-	setCoreParameter("ForceRelease", forceRelease ? "true" : "false");
+	setParameter("ForceRelease", forceRelease ? "true" : "false");
 }
 
 std::string ReleaseClusterRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ReleaseClusterRequest::getAccessKeyId()const
 void ReleaseClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseClusterRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ReleaseClusterRequest::getRegionId()const
 void ReleaseClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ReleaseClusterRequest::getId()const
@@ -77,6 +79,6 @@ std::string ReleaseClusterRequest::getId()const
 void ReleaseClusterRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

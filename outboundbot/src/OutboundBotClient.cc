@@ -1059,6 +1059,42 @@ OutboundBotClient::DescribeTTSConfigOutcomeCallable OutboundBotClient::describeT
 	return task->get_future();
 }
 
+OutboundBotClient::DescribeTagHitsSummaryOutcome OutboundBotClient::describeTagHitsSummary(const DescribeTagHitsSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTagHitsSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTagHitsSummaryOutcome(DescribeTagHitsSummaryResult(outcome.result()));
+	else
+		return DescribeTagHitsSummaryOutcome(outcome.error());
+}
+
+void OutboundBotClient::describeTagHitsSummaryAsync(const DescribeTagHitsSummaryRequest& request, const DescribeTagHitsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTagHitsSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DescribeTagHitsSummaryOutcomeCallable OutboundBotClient::describeTagHitsSummaryCallable(const DescribeTagHitsSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTagHitsSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTagHitsSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DialogueOutcome OutboundBotClient::dialogue(const DialogueRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1917,42 @@ OutboundBotClient::ListJobsByGroupOutcomeCallable OutboundBotClient::listJobsByG
 			[this, request]()
 			{
 			return this->listJobsByGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListMediaOutcome OutboundBotClient::listMedia(const ListMediaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMediaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMediaOutcome(ListMediaResult(outcome.result()));
+	else
+		return ListMediaOutcome(outcome.error());
+}
+
+void OutboundBotClient::listMediaAsync(const ListMediaRequest& request, const ListMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMedia(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListMediaOutcomeCallable OutboundBotClient::listMediaCallable(const ListMediaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMediaOutcome()>>(
+			[this, request]()
+			{
+			return this->listMedia(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3069,6 +3141,42 @@ OutboundBotClient::WithdrawScriptOutcomeCallable OutboundBotClient::withdrawScri
 			[this, request]()
 			{
 			return this->withdrawScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::WithdrawScriptReviewOutcome OutboundBotClient::withdrawScriptReview(const WithdrawScriptReviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WithdrawScriptReviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WithdrawScriptReviewOutcome(WithdrawScriptReviewResult(outcome.result()));
+	else
+		return WithdrawScriptReviewOutcome(outcome.error());
+}
+
+void OutboundBotClient::withdrawScriptReviewAsync(const WithdrawScriptReviewRequest& request, const WithdrawScriptReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, withdrawScriptReview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::WithdrawScriptReviewOutcomeCallable OutboundBotClient::withdrawScriptReviewCallable(const WithdrawScriptReviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WithdrawScriptReviewOutcome()>>(
+			[this, request]()
+			{
+			return this->withdrawScriptReview(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClustersRequest;
 
 ListClustersRequest::ListClustersRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClustersRequest::~ListClustersRequest()
 {}
@@ -33,7 +35,7 @@ long ListClustersRequest::getResourceOwnerId()const
 void ListClustersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ListClustersRequest::getStatusList()const
@@ -44,8 +46,9 @@ std::vector<std::string> ListClustersRequest::getStatusList()const
 void ListClustersRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListClustersRequest::getIsDesc()const
@@ -56,7 +59,7 @@ bool ListClustersRequest::getIsDesc()const
 void ListClustersRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 std::string ListClustersRequest::getDepositType()const
@@ -67,7 +70,7 @@ std::string ListClustersRequest::getDepositType()const
 void ListClustersRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
+	setParameter("DepositType", depositType);
 }
 
 int ListClustersRequest::getPageNumber()const
@@ -78,7 +81,7 @@ int ListClustersRequest::getPageNumber()const
 void ListClustersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClustersRequest::getAccessKeyId()const
@@ -89,7 +92,7 @@ std::string ListClustersRequest::getAccessKeyId()const
 void ListClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClustersRequest::getMachineType()const
@@ -100,7 +103,7 @@ std::string ListClustersRequest::getMachineType()const
 void ListClustersRequest::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
-	setCoreParameter("MachineType", machineType);
+	setParameter("MachineType", machineType);
 }
 
 std::string ListClustersRequest::getRegionId()const
@@ -111,7 +114,7 @@ std::string ListClustersRequest::getRegionId()const
 void ListClustersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListClustersRequest::getPageSize()const
@@ -122,7 +125,23 @@ int ListClustersRequest::getPageSize()const
 void ListClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<ListClustersRequest::Tag> ListClustersRequest::getTag()const
+{
+	return tag_;
+}
+
+void ListClustersRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 std::string ListClustersRequest::getCreateType()const
@@ -133,7 +152,7 @@ std::string ListClustersRequest::getCreateType()const
 void ListClustersRequest::setCreateType(const std::string& createType)
 {
 	createType_ = createType;
-	setCoreParameter("CreateType", createType);
+	setParameter("CreateType", createType);
 }
 
 bool ListClustersRequest::getDefaultStatus()const
@@ -144,7 +163,18 @@ bool ListClustersRequest::getDefaultStatus()const
 void ListClustersRequest::setDefaultStatus(bool defaultStatus)
 {
 	defaultStatus_ = defaultStatus;
-	setCoreParameter("DefaultStatus", defaultStatus ? "true" : "false");
+	setParameter("DefaultStatus", defaultStatus ? "true" : "false");
+}
+
+std::string ListClustersRequest::getName()const
+{
+	return name_;
+}
+
+void ListClustersRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
 std::vector<std::string> ListClustersRequest::getClusterTypeList()const
@@ -155,7 +185,8 @@ std::vector<std::string> ListClustersRequest::getClusterTypeList()const
 void ListClustersRequest::setClusterTypeList(const std::vector<std::string>& clusterTypeList)
 {
 	clusterTypeList_ = clusterTypeList;
-	for(int i = 0; i!= clusterTypeList.size(); i++)
-		setCoreParameter("ClusterTypeList."+ std::to_string(i), clusterTypeList.at(i));
+	for(int dep1 = 0; dep1!= clusterTypeList.size(); dep1++) {
+		setParameter("ClusterTypeList."+ std::to_string(dep1), clusterTypeList.at(dep1));
+	}
 }
 

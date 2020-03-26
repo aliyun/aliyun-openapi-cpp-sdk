@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::ListTagsRequest;
 
 ListTagsRequest::ListTagsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "ListTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagsRequest::~ListTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListTagsRequest::getAccessKeyId()const
 void ListTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListTagsRequest::getAppKey()const
@@ -44,6 +46,6 @@ long ListTagsRequest::getAppKey()const
 void ListTagsRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

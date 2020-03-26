@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DetachPolicyFromUserRequest;
 
 DetachPolicyFromUserRequest::DetachPolicyFromUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DetachPolicyFromUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachPolicyFromUserRequest::~DetachPolicyFromUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string DetachPolicyFromUserRequest::getPolicyType()const
 void DetachPolicyFromUserRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string DetachPolicyFromUserRequest::getPolicyName()const
@@ -44,7 +46,7 @@ std::string DetachPolicyFromUserRequest::getPolicyName()const
 void DetachPolicyFromUserRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 
 std::string DetachPolicyFromUserRequest::getUserName()const
@@ -55,6 +57,6 @@ std::string DetachPolicyFromUserRequest::getUserName()const
 void DetachPolicyFromUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

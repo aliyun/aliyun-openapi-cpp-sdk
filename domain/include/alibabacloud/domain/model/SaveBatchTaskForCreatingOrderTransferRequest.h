@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForCreatingOrderTransferRequest : public RpcServiceRequest
 			{
+			public:
 				struct OrderTransferParam
 				{
 					bool permitPremiumTransfer;

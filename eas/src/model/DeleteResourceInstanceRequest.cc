@@ -22,7 +22,7 @@ DeleteResourceInstanceRequest::DeleteResourceInstanceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/resources/[cluster_id]/[resource_name]/instances/delete");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteResourceInstanceRequest::~DeleteResourceInstanceRequest()

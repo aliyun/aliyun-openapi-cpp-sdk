@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGroupCreateRequest;
 
 ShopGroupCreateRequest::ShopGroupCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGroupCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGroupCreateRequest::~ShopGroupCreateRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopGroupCreateRequest::getDescription()const
 void ShopGroupCreateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ShopGroupCreateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ShopGroupCreateRequest::getAccessKeyId()const
 void ShopGroupCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ShopGroupCreateRequest::getShopIds()const
@@ -55,7 +57,7 @@ std::string ShopGroupCreateRequest::getShopIds()const
 void ShopGroupCreateRequest::setShopIds(const std::string& shopIds)
 {
 	shopIds_ = shopIds;
-	setCoreParameter("ShopIds", shopIds);
+	setParameter("ShopIds", shopIds);
 }
 
 std::string ShopGroupCreateRequest::getName()const
@@ -66,7 +68,7 @@ std::string ShopGroupCreateRequest::getName()const
 void ShopGroupCreateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long ShopGroupCreateRequest::getBid()const
@@ -77,6 +79,6 @@ long ShopGroupCreateRequest::getBid()const
 void ShopGroupCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

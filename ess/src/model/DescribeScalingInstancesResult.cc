@@ -65,6 +65,8 @@ void DescribeScalingInstancesResult::parse(const std::string &payload)
 			scalingInstancesObject.launchTemplateVersion = valueScalingInstancesScalingInstance["LaunchTemplateVersion"].asString();
 		if(!valueScalingInstancesScalingInstance["WarmupState"].isNull())
 			scalingInstancesObject.warmupState = valueScalingInstancesScalingInstance["WarmupState"].asString();
+		if(!valueScalingInstancesScalingInstance["Entrusted"].isNull())
+			scalingInstancesObject.entrusted = valueScalingInstancesScalingInstance["Entrusted"].asString() == "true";
 		scalingInstances_.push_back(scalingInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -35,7 +35,7 @@ long CreateGroupMetricRulesRequest::getGroupId()const
 void CreateGroupMetricRulesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::vector<CreateGroupMetricRulesRequest::GroupMetricRules> CreateGroupMetricRulesRequest::getGroupMetricRules()const
@@ -48,32 +48,32 @@ void CreateGroupMetricRulesRequest::setGroupMetricRules(const std::vector<GroupM
 	groupMetricRules_ = groupMetricRules;
 	for(int dep1 = 0; dep1!= groupMetricRules.size(); dep1++) {
 		auto groupMetricRulesObj = groupMetricRules.at(dep1);
-		std::string groupMetricRulesObjStr = "GroupMetricRules." + std::to_string(dep1);
-		setCoreParameter(groupMetricRulesObjStr + ".Webhook", groupMetricRulesObj.webhook);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsWarnComparisonOperator", groupMetricRulesObj.escalationsWarnComparisonOperator);
-		setCoreParameter(groupMetricRulesObjStr + ".RuleName", groupMetricRulesObj.ruleName);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsInfoStatistics", groupMetricRulesObj.escalationsInfoStatistics);
-		setCoreParameter(groupMetricRulesObjStr + ".EffectiveInterval", groupMetricRulesObj.effectiveInterval);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsInfoComparisonOperator", groupMetricRulesObj.escalationsInfoComparisonOperator);
-		setCoreParameter(groupMetricRulesObjStr + ".NoEffectiveInterval", groupMetricRulesObj.noEffectiveInterval);
-		setCoreParameter(groupMetricRulesObjStr + ".EmailSubject", groupMetricRulesObj.emailSubject);
-		setCoreParameter(groupMetricRulesObjStr + ".SilenceTime", std::to_string(groupMetricRulesObj.silenceTime));
-		setCoreParameter(groupMetricRulesObjStr + ".MetricName", groupMetricRulesObj.metricName);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsWarnTimes", std::to_string(groupMetricRulesObj.escalationsWarnTimes));
-		setCoreParameter(groupMetricRulesObjStr + ".Period", groupMetricRulesObj.period);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsWarnThreshold", groupMetricRulesObj.escalationsWarnThreshold);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsCriticalStatistics", groupMetricRulesObj.escalationsCriticalStatistics);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsInfoTimes", std::to_string(groupMetricRulesObj.escalationsInfoTimes));
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsCriticalTimes", std::to_string(groupMetricRulesObj.escalationsCriticalTimes));
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsWarnStatistics", groupMetricRulesObj.escalationsWarnStatistics);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsInfoThreshold", groupMetricRulesObj.escalationsInfoThreshold);
-		setCoreParameter(groupMetricRulesObjStr + "._Namespace", groupMetricRulesObj._namespace);
-		setCoreParameter(groupMetricRulesObjStr + ".Interval", groupMetricRulesObj.interval);
-		setCoreParameter(groupMetricRulesObjStr + ".Category", groupMetricRulesObj.category);
-		setCoreParameter(groupMetricRulesObjStr + ".RuleId", groupMetricRulesObj.ruleId);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsCriticalComparisonOperator", groupMetricRulesObj.escalationsCriticalComparisonOperator);
-		setCoreParameter(groupMetricRulesObjStr + ".EscalationsCriticalThreshold", groupMetricRulesObj.escalationsCriticalThreshold);
-		setCoreParameter(groupMetricRulesObjStr + ".Dimensions", groupMetricRulesObj.dimensions);
+		std::string groupMetricRulesObjStr = "GroupMetricRules." + std::to_string(dep1 + 1);
+		setParameter(groupMetricRulesObjStr + ".Webhook", groupMetricRulesObj.webhook);
+		setParameter(groupMetricRulesObjStr + ".EscalationsWarnComparisonOperator", groupMetricRulesObj.escalationsWarnComparisonOperator);
+		setParameter(groupMetricRulesObjStr + ".RuleName", groupMetricRulesObj.ruleName);
+		setParameter(groupMetricRulesObjStr + ".EscalationsInfoStatistics", groupMetricRulesObj.escalationsInfoStatistics);
+		setParameter(groupMetricRulesObjStr + ".EffectiveInterval", groupMetricRulesObj.effectiveInterval);
+		setParameter(groupMetricRulesObjStr + ".EscalationsInfoComparisonOperator", groupMetricRulesObj.escalationsInfoComparisonOperator);
+		setParameter(groupMetricRulesObjStr + ".NoEffectiveInterval", groupMetricRulesObj.noEffectiveInterval);
+		setParameter(groupMetricRulesObjStr + ".EmailSubject", groupMetricRulesObj.emailSubject);
+		setParameter(groupMetricRulesObjStr + ".SilenceTime", std::to_string(groupMetricRulesObj.silenceTime));
+		setParameter(groupMetricRulesObjStr + ".MetricName", groupMetricRulesObj.metricName);
+		setParameter(groupMetricRulesObjStr + ".EscalationsWarnTimes", std::to_string(groupMetricRulesObj.escalationsWarnTimes));
+		setParameter(groupMetricRulesObjStr + ".Period", groupMetricRulesObj.period);
+		setParameter(groupMetricRulesObjStr + ".EscalationsWarnThreshold", groupMetricRulesObj.escalationsWarnThreshold);
+		setParameter(groupMetricRulesObjStr + ".EscalationsCriticalStatistics", groupMetricRulesObj.escalationsCriticalStatistics);
+		setParameter(groupMetricRulesObjStr + ".EscalationsInfoTimes", std::to_string(groupMetricRulesObj.escalationsInfoTimes));
+		setParameter(groupMetricRulesObjStr + ".EscalationsCriticalTimes", std::to_string(groupMetricRulesObj.escalationsCriticalTimes));
+		setParameter(groupMetricRulesObjStr + ".EscalationsWarnStatistics", groupMetricRulesObj.escalationsWarnStatistics);
+		setParameter(groupMetricRulesObjStr + ".EscalationsInfoThreshold", groupMetricRulesObj.escalationsInfoThreshold);
+		setParameter(groupMetricRulesObjStr + "._Namespace", groupMetricRulesObj._namespace);
+		setParameter(groupMetricRulesObjStr + ".Interval", groupMetricRulesObj.interval);
+		setParameter(groupMetricRulesObjStr + ".Category", groupMetricRulesObj.category);
+		setParameter(groupMetricRulesObjStr + ".RuleId", groupMetricRulesObj.ruleId);
+		setParameter(groupMetricRulesObjStr + ".EscalationsCriticalComparisonOperator", groupMetricRulesObj.escalationsCriticalComparisonOperator);
+		setParameter(groupMetricRulesObjStr + ".EscalationsCriticalThreshold", groupMetricRulesObj.escalationsCriticalThreshold);
+		setParameter(groupMetricRulesObjStr + ".Dimensions", groupMetricRulesObj.dimensions);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeTrafficControlsByApiRequest;
 
 DescribeTrafficControlsByApiRequest::DescribeTrafficControlsByApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeTrafficControlsByApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTrafficControlsByApiRequest::~DescribeTrafficControlsByApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeTrafficControlsByApiRequest::getStageName()const
 void DescribeTrafficControlsByApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeTrafficControlsByApiRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeTrafficControlsByApiRequest::getGroupId()const
 void DescribeTrafficControlsByApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeTrafficControlsByApiRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeTrafficControlsByApiRequest::getAccessKeyId()const
 void DescribeTrafficControlsByApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTrafficControlsByApiRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DescribeTrafficControlsByApiRequest::getSecurityToken()const
 void DescribeTrafficControlsByApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeTrafficControlsByApiRequest::getApiId()const
@@ -77,6 +79,6 @@ std::string DescribeTrafficControlsByApiRequest::getApiId()const
 void DescribeTrafficControlsByApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

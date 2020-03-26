@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelUmengPagePermission4RootRequest;
 
 DelUmengPagePermission4RootRequest::DelUmengPagePermission4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelUmengPagePermission4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelUmengPagePermission4RootRequest::~DelUmengPagePermission4RootRequest()
 {}
@@ -33,7 +35,7 @@ std::string DelUmengPagePermission4RootRequest::getAccessKeyId()const
 void DelUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DelUmengPagePermission4RootRequest::getId()const
@@ -44,6 +46,6 @@ long DelUmengPagePermission4RootRequest::getId()const
 void DelUmengPagePermission4RootRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

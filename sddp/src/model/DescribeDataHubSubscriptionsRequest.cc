@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataHubSubscriptionsRequest;
 
 DescribeDataHubSubscriptionsRequest::DescribeDataHubSubscriptionsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataHubSubscriptions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataHubSubscriptionsRequest::~DescribeDataHubSubscriptionsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDataHubSubscriptionsRequest::getTopicId()const
 void DescribeDataHubSubscriptionsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setParameter("TopicId", std::to_string(topicId));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDataHubSubscriptionsRequest::getSourceIp()const
 void DescribeDataHubSubscriptionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubSubscriptionsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeDataHubSubscriptionsRequest::getPageSize()const
 void DescribeDataHubSubscriptionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeDataHubSubscriptionsRequest::getLang()const
 void DescribeDataHubSubscriptionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeDataHubSubscriptionsRequest::getProjectId()const
@@ -77,7 +79,7 @@ long DescribeDataHubSubscriptionsRequest::getProjectId()const
 void DescribeDataHubSubscriptionsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubSubscriptionsRequest::getKey()const
@@ -88,7 +90,7 @@ std::string DescribeDataHubSubscriptionsRequest::getKey()const
 void DescribeDataHubSubscriptionsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeDataHubSubscriptionsRequest::getFeatureType()const
@@ -99,7 +101,7 @@ int DescribeDataHubSubscriptionsRequest::getFeatureType()const
 void DescribeDataHubSubscriptionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
@@ -110,7 +112,7 @@ int DescribeDataHubSubscriptionsRequest::getCurrentPage()const
 void DescribeDataHubSubscriptionsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeDataHubSubscriptionsRequest::getDepartId()const
@@ -121,6 +123,6 @@ long DescribeDataHubSubscriptionsRequest::getDepartId()const
 void DescribeDataHubSubscriptionsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 

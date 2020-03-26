@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::QueryHotlineRecordRequest;
 
 QueryHotlineRecordRequest::QueryHotlineRecordRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "QueryHotlineRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryHotlineRecordRequest::~QueryHotlineRecordRequest()
 {}
@@ -33,7 +35,7 @@ long QueryHotlineRecordRequest::getMaxTalkDuration()const
 void QueryHotlineRecordRequest::setMaxTalkDuration(long maxTalkDuration)
 {
 	maxTalkDuration_ = maxTalkDuration;
-	setCoreParameter("MaxTalkDuration", std::to_string(maxTalkDuration));
+	setParameter("MaxTalkDuration", std::to_string(maxTalkDuration));
 }
 
 std::string QueryHotlineRecordRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string QueryHotlineRecordRequest::getStartTime()const
 void QueryHotlineRecordRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int QueryHotlineRecordRequest::getPageNum()const
@@ -55,7 +57,7 @@ int QueryHotlineRecordRequest::getPageNum()const
 void QueryHotlineRecordRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryHotlineRecordRequest::getCategoryIds()const
@@ -66,7 +68,7 @@ std::string QueryHotlineRecordRequest::getCategoryIds()const
 void QueryHotlineRecordRequest::setCategoryIds(const std::string& categoryIds)
 {
 	categoryIds_ = categoryIds;
-	setCoreParameter("CategoryIds", categoryIds);
+	setParameter("CategoryIds", categoryIds);
 }
 
 int QueryHotlineRecordRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryHotlineRecordRequest::getPageSize()const
 void QueryHotlineRecordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryHotlineRecordRequest::getCallType()const
@@ -88,7 +90,7 @@ std::string QueryHotlineRecordRequest::getCallType()const
 void QueryHotlineRecordRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setCoreParameter("CallType", callType);
+	setParameter("CallType", callType);
 }
 
 std::string QueryHotlineRecordRequest::getCcsInstanceId()const
@@ -99,7 +101,7 @@ std::string QueryHotlineRecordRequest::getCcsInstanceId()const
 void QueryHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setParameter("CcsInstanceId", ccsInstanceId);
 }
 
 std::string QueryHotlineRecordRequest::getVisitorId()const
@@ -110,7 +112,7 @@ std::string QueryHotlineRecordRequest::getVisitorId()const
 void QueryHotlineRecordRequest::setVisitorId(const std::string& visitorId)
 {
 	visitorId_ = visitorId;
-	setCoreParameter("VisitorId", visitorId);
+	setParameter("VisitorId", visitorId);
 }
 
 std::string QueryHotlineRecordRequest::getAgentId()const
@@ -121,7 +123,7 @@ std::string QueryHotlineRecordRequest::getAgentId()const
 void QueryHotlineRecordRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setParameter("AgentId", agentId);
 }
 
 std::string QueryHotlineRecordRequest::getGroupId()const
@@ -132,7 +134,7 @@ std::string QueryHotlineRecordRequest::getGroupId()const
 void QueryHotlineRecordRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string QueryHotlineRecordRequest::getEndTime()const
@@ -143,7 +145,7 @@ std::string QueryHotlineRecordRequest::getEndTime()const
 void QueryHotlineRecordRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryHotlineRecordRequest::getSatisfaction()const
@@ -154,7 +156,7 @@ std::string QueryHotlineRecordRequest::getSatisfaction()const
 void QueryHotlineRecordRequest::setSatisfaction(const std::string& satisfaction)
 {
 	satisfaction_ = satisfaction;
-	setCoreParameter("Satisfaction", satisfaction);
+	setParameter("Satisfaction", satisfaction);
 }
 
 long QueryHotlineRecordRequest::getMinTalkDuratoin()const
@@ -165,7 +167,7 @@ long QueryHotlineRecordRequest::getMinTalkDuratoin()const
 void QueryHotlineRecordRequest::setMinTalkDuratoin(long minTalkDuratoin)
 {
 	minTalkDuratoin_ = minTalkDuratoin;
-	setCoreParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
+	setParameter("MinTalkDuratoin", std::to_string(minTalkDuratoin));
 }
 
 std::string QueryHotlineRecordRequest::getVisitorProvince()const
@@ -176,7 +178,7 @@ std::string QueryHotlineRecordRequest::getVisitorProvince()const
 void QueryHotlineRecordRequest::setVisitorProvince(const std::string& visitorProvince)
 {
 	visitorProvince_ = visitorProvince;
-	setCoreParameter("VisitorProvince", visitorProvince);
+	setParameter("VisitorProvince", visitorProvince);
 }
 
 std::string QueryHotlineRecordRequest::getVisitorPhone()const
@@ -187,7 +189,7 @@ std::string QueryHotlineRecordRequest::getVisitorPhone()const
 void QueryHotlineRecordRequest::setVisitorPhone(const std::string& visitorPhone)
 {
 	visitorPhone_ = visitorPhone;
-	setCoreParameter("VisitorPhone", visitorPhone);
+	setParameter("VisitorPhone", visitorPhone);
 }
 
 std::string QueryHotlineRecordRequest::getStatus()const
@@ -198,6 +200,6 @@ std::string QueryHotlineRecordRequest::getStatus()const
 void QueryHotlineRecordRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

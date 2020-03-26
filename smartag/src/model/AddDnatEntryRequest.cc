@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AddDnatEntryRequest;
 
 AddDnatEntryRequest::AddDnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AddDnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddDnatEntryRequest::~AddDnatEntryRequest()
 {}
@@ -33,7 +35,7 @@ long AddDnatEntryRequest::getResourceOwnerId()const
 void AddDnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddDnatEntryRequest::getType()const
@@ -44,7 +46,7 @@ std::string AddDnatEntryRequest::getType()const
 void AddDnatEntryRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string AddDnatEntryRequest::getInternalIp()const
@@ -55,7 +57,7 @@ std::string AddDnatEntryRequest::getInternalIp()const
 void AddDnatEntryRequest::setInternalIp(const std::string& internalIp)
 {
 	internalIp_ = internalIp;
-	setCoreParameter("InternalIp", internalIp);
+	setParameter("InternalIp", internalIp);
 }
 
 std::string AddDnatEntryRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string AddDnatEntryRequest::getRegionId()const
 void AddDnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddDnatEntryRequest::getExternalIp()const
@@ -77,7 +79,7 @@ std::string AddDnatEntryRequest::getExternalIp()const
 void AddDnatEntryRequest::setExternalIp(const std::string& externalIp)
 {
 	externalIp_ = externalIp;
-	setCoreParameter("ExternalIp", externalIp);
+	setParameter("ExternalIp", externalIp);
 }
 
 std::string AddDnatEntryRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AddDnatEntryRequest::getResourceOwnerAccount()const
 void AddDnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddDnatEntryRequest::getIpProtocol()const
@@ -99,7 +101,7 @@ std::string AddDnatEntryRequest::getIpProtocol()const
 void AddDnatEntryRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setParameter("IpProtocol", ipProtocol);
 }
 
 std::string AddDnatEntryRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string AddDnatEntryRequest::getOwnerAccount()const
 void AddDnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddDnatEntryRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long AddDnatEntryRequest::getOwnerId()const
 void AddDnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddDnatEntryRequest::getSagId()const
@@ -132,7 +134,7 @@ std::string AddDnatEntryRequest::getSagId()const
 void AddDnatEntryRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	setParameter("SagId", sagId);
 }
 
 std::string AddDnatEntryRequest::getInternalPort()const
@@ -143,7 +145,7 @@ std::string AddDnatEntryRequest::getInternalPort()const
 void AddDnatEntryRequest::setInternalPort(const std::string& internalPort)
 {
 	internalPort_ = internalPort;
-	setCoreParameter("InternalPort", internalPort);
+	setParameter("InternalPort", internalPort);
 }
 
 std::string AddDnatEntryRequest::getExternalPort()const
@@ -154,6 +156,6 @@ std::string AddDnatEntryRequest::getExternalPort()const
 void AddDnatEntryRequest::setExternalPort(const std::string& externalPort)
 {
 	externalPort_ = externalPort;
-	setCoreParameter("ExternalPort", externalPort);
+	setParameter("ExternalPort", externalPort);
 }
 

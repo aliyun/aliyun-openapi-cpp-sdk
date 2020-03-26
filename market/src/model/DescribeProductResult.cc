@@ -175,12 +175,21 @@ void DescribeProductResult::parse(const std::string &payload)
 		gmtCreated_ = std::stol(value["GmtCreated"].asString());
 	if(!value["GmtModified"].isNull())
 		gmtModified_ = std::stol(value["GmtModified"].asString());
+	if(!value["SupplierPk"].isNull())
+		supplierPk_ = std::stol(value["SupplierPk"].asString());
+	if(!value["FrontCategoryId"].isNull())
+		frontCategoryId_ = std::stol(value["FrontCategoryId"].asString());
 
 }
 
 std::string DescribeProductResult::getStatus()const
 {
 	return status_;
+}
+
+long DescribeProductResult::getFrontCategoryId()const
+{
+	return frontCategoryId_;
 }
 
 std::string DescribeProductResult::getDescription()const
@@ -226,6 +235,11 @@ std::string DescribeProductResult::getName()const
 std::string DescribeProductResult::getShortDescription()const
 {
 	return shortDescription_;
+}
+
+long DescribeProductResult::getSupplierPk()const
+{
+	return supplierPk_;
 }
 
 std::string DescribeProductResult::getType()const

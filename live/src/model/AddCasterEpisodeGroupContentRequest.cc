@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterEpisodeGroupContentRequest;
 
 AddCasterEpisodeGroupContentRequest::AddCasterEpisodeGroupContentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterEpisodeGroupContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterEpisodeGroupContentRequest::~AddCasterEpisodeGroupContentRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddCasterEpisodeGroupContentRequest::getClientToken()const
 void AddCasterEpisodeGroupContentRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AddCasterEpisodeGroupContentRequest::getContent()const
@@ -44,7 +46,7 @@ std::string AddCasterEpisodeGroupContentRequest::getContent()const
 void AddCasterEpisodeGroupContentRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 long AddCasterEpisodeGroupContentRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long AddCasterEpisodeGroupContentRequest::getOwnerId()const
 void AddCasterEpisodeGroupContentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

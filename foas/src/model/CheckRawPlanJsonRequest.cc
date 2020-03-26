@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CheckRawPlanJsonRequest;
 
 CheckRawPlanJsonRequest::CheckRawPlanJsonRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/planjson/check");
+	setMethod(HttpRequest::Method::Get);
+}
 
 CheckRawPlanJsonRequest::~CheckRawPlanJsonRequest()
 {}
@@ -33,7 +36,7 @@ std::string CheckRawPlanJsonRequest::getProjectName()const
 void CheckRawPlanJsonRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CheckRawPlanJsonRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string CheckRawPlanJsonRequest::getRegionId()const
 void CheckRawPlanJsonRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CheckRawPlanJsonRequest::getSessionId()const
@@ -55,7 +58,7 @@ std::string CheckRawPlanJsonRequest::getSessionId()const
 void CheckRawPlanJsonRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setParameter("SessionId", sessionId);
 }
 
 std::string CheckRawPlanJsonRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string CheckRawPlanJsonRequest::getJobName()const
 void CheckRawPlanJsonRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

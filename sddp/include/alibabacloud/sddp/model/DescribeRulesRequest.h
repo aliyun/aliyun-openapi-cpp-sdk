@@ -35,6 +35,12 @@ namespace AlibabaCloud
 				DescribeRulesRequest();
 				~DescribeRulesRequest();
 
+				int getWarnLevel()const;
+				void setWarnLevel(int warnLevel);
+				int getProductCode()const;
+				void setProductCode(int productCode);
+				long getProductId()const;
+				void setProductId(long productId);
 				long getRiskLevelId()const;
 				void setRiskLevelId(long riskLevelId);
 				std::string getSourceIp()const;
@@ -43,6 +49,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				int getRuleType()const;
+				void setRuleType(int ruleType);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				int getCustomType()const;
@@ -53,10 +61,14 @@ namespace AlibabaCloud
 				void setCategory(int category);
 
             private:
+				int warnLevel_;
+				int productCode_;
+				long productId_;
 				long riskLevelId_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
+				int ruleType_;
 				int currentPage_;
 				int customType_;
 				std::string name_;

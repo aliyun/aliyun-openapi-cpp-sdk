@@ -92,6 +92,10 @@ void GetTranscodeTemplateGroupResult::parse(const std::string &payload)
 			transcodeTemplateObject.clip = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Clip"].asString();
 		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Rotate"].isNull())
 			transcodeTemplateObject.rotate = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Rotate"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Type"].isNull())
+			transcodeTemplateObject.type = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["Type"].asString();
+		if(!transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["UserData"].isNull())
+			transcodeTemplateObject.userData = transcodeTemplateGroupNodeTranscodeTemplateListTranscodeTemplate["UserData"].asString();
 		auto allWatermarkIds = value["WatermarkIds"]["WatermarkId"];
 		for (auto value : allWatermarkIds)
 			transcodeTemplateObject.watermarkIds.push_back(value.asString());

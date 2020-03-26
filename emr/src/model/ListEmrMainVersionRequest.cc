@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListEmrMainVersionRequest;
 
 ListEmrMainVersionRequest::ListEmrMainVersionRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListEmrMainVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEmrMainVersionRequest::~ListEmrMainVersionRequest()
 {}
@@ -33,7 +35,7 @@ long ListEmrMainVersionRequest::getResourceOwnerId()const
 void ListEmrMainVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ListEmrMainVersionRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListEmrMainVersionRequest::getPageNumber()const
 void ListEmrMainVersionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListEmrMainVersionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListEmrMainVersionRequest::getAccessKeyId()const
 void ListEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListEmrMainVersionRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ListEmrMainVersionRequest::getRegionId()const
 void ListEmrMainVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListEmrMainVersionRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListEmrMainVersionRequest::getPageSize()const
 void ListEmrMainVersionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListEmrMainVersionRequest::getEmrVersion()const
@@ -88,7 +90,7 @@ std::string ListEmrMainVersionRequest::getEmrVersion()const
 void ListEmrMainVersionRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", emrVersion);
+	setParameter("EmrVersion", emrVersion);
 }
 
 std::string ListEmrMainVersionRequest::getStackName()const
@@ -99,7 +101,7 @@ std::string ListEmrMainVersionRequest::getStackName()const
 void ListEmrMainVersionRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 
 std::string ListEmrMainVersionRequest::getStackVersion()const
@@ -110,6 +112,6 @@ std::string ListEmrMainVersionRequest::getStackVersion()const
 void ListEmrMainVersionRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", stackVersion);
+	setParameter("StackVersion", stackVersion);
 }
 

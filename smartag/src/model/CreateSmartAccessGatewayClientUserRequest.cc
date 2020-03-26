@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateSmartAccessGatewayClientUserRequest;
 
 CreateSmartAccessGatewayClientUserRequest::CreateSmartAccessGatewayClientUserRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateSmartAccessGatewayClientUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSmartAccessGatewayClientUserRequest::~CreateSmartAccessGatewayClientUserRequest()
 {}
@@ -33,7 +35,7 @@ long CreateSmartAccessGatewayClientUserRequest::getResourceOwnerId()const
 void CreateSmartAccessGatewayClientUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getPassword()const
@@ -44,7 +46,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getPassword()const
 void CreateSmartAccessGatewayClientUserRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getRegionId()const
 void CreateSmartAccessGatewayClientUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getClientIp()const
@@ -66,7 +68,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getClientIp()const
 void CreateSmartAccessGatewayClientUserRequest::setClientIp(const std::string& clientIp)
 {
 	clientIp_ = clientIp;
-	setCoreParameter("ClientIp", clientIp);
+	setParameter("ClientIp", clientIp);
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()
 void CreateSmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CreateSmartAccessGatewayClientUserRequest::getBandwidth()const
@@ -88,7 +90,7 @@ long CreateSmartAccessGatewayClientUserRequest::getBandwidth()const
 void CreateSmartAccessGatewayClientUserRequest::setBandwidth(long bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getOwnerAccount()const
 void CreateSmartAccessGatewayClientUserRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getUserMail()const
@@ -110,7 +112,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getUserMail()const
 void CreateSmartAccessGatewayClientUserRequest::setUserMail(const std::string& userMail)
 {
 	userMail_ = userMail;
-	setCoreParameter("UserMail", userMail);
+	setParameter("UserMail", userMail);
 }
 
 long CreateSmartAccessGatewayClientUserRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long CreateSmartAccessGatewayClientUserRequest::getOwnerId()const
 void CreateSmartAccessGatewayClientUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getSmartAGId()const
@@ -132,7 +134,7 @@ std::string CreateSmartAccessGatewayClientUserRequest::getSmartAGId()const
 void CreateSmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string CreateSmartAccessGatewayClientUserRequest::getUserName()const
@@ -143,6 +145,6 @@ std::string CreateSmartAccessGatewayClientUserRequest::getUserName()const
 void CreateSmartAccessGatewayClientUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsGroupConsumerUpdateRequest;
 OnsGroupConsumerUpdateRequest::OnsGroupConsumerUpdateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupConsumerUpdate")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsGroupConsumerUpdateRequest::~OnsGroupConsumerUpdateRequest()

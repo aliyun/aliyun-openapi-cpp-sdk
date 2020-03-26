@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDevicePropertyStatusRequest;
 
 QueryDevicePropertyStatusRequest::QueryDevicePropertyStatusRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDevicePropertyStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicePropertyStatusRequest::~QueryDevicePropertyStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDevicePropertyStatusRequest::getProductKey()const
 void QueryDevicePropertyStatusRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryDevicePropertyStatusRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDevicePropertyStatusRequest::getAccessKeyId()const
 void QueryDevicePropertyStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDevicePropertyStatusRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string QueryDevicePropertyStatusRequest::getIotId()const
 void QueryDevicePropertyStatusRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDevicePropertyStatusRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDevicePropertyStatusRequest::getIotInstanceId()const
 void QueryDevicePropertyStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryDevicePropertyStatusRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string QueryDevicePropertyStatusRequest::getDeviceName()const
 void QueryDevicePropertyStatusRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

@@ -39,39 +39,84 @@ void DescribeDataLimitsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataLimitListNode = value["DataLimitList"]["DataLimit"];
-	for (auto valueDataLimitListDataLimit : allDataLimitListNode)
+	auto allItemsNode = value["Items"]["DataLimit"];
+	for (auto valueItemsDataLimit : allItemsNode)
 	{
-		DataLimit dataLimitListObject;
-		if(!valueDataLimitListDataLimit["RegionId"].isNull())
-			dataLimitListObject.regionId = valueDataLimitListDataLimit["RegionId"].asString();
-		if(!valueDataLimitListDataLimit["LocalName"].isNull())
-			dataLimitListObject.localName = valueDataLimitListDataLimit["LocalName"].asString();
-		if(!valueDataLimitListDataLimit["ParentId"].isNull())
-			dataLimitListObject.parentId = valueDataLimitListDataLimit["ParentId"].asString();
-		if(!valueDataLimitListDataLimit["Id"].isNull())
-			dataLimitListObject.id = std::stol(valueDataLimitListDataLimit["Id"].asString());
-		if(!valueDataLimitListDataLimit["UserName"].isNull())
-			dataLimitListObject.userName = valueDataLimitListDataLimit["UserName"].asString();
-		if(!valueDataLimitListDataLimit["GmtCreate"].isNull())
-			dataLimitListObject.gmtCreate = std::stol(valueDataLimitListDataLimit["GmtCreate"].asString());
-		if(!valueDataLimitListDataLimit["Connector"].isNull())
-			dataLimitListObject.connector = valueDataLimitListDataLimit["Connector"].asString();
-		if(!valueDataLimitListDataLimit["CheckStatus"].isNull())
-			dataLimitListObject.checkStatus = std::stoi(valueDataLimitListDataLimit["CheckStatus"].asString());
-		if(!valueDataLimitListDataLimit["CheckStatusName"].isNull())
-			dataLimitListObject.checkStatusName = valueDataLimitListDataLimit["CheckStatusName"].asString();
-		if(!valueDataLimitListDataLimit["ResourceType"].isNull())
-			dataLimitListObject.resourceType = std::stol(valueDataLimitListDataLimit["ResourceType"].asString());
-		if(!valueDataLimitListDataLimit["ResourceTypeCode"].isNull())
-			dataLimitListObject.resourceTypeCode = valueDataLimitListDataLimit["ResourceTypeCode"].asString();
-		dataLimitList_.push_back(dataLimitListObject);
+		DataLimit itemsObject;
+		if(!valueItemsDataLimit["RegionId"].isNull())
+			itemsObject.regionId = valueItemsDataLimit["RegionId"].asString();
+		if(!valueItemsDataLimit["LocalName"].isNull())
+			itemsObject.localName = valueItemsDataLimit["LocalName"].asString();
+		if(!valueItemsDataLimit["ParentId"].isNull())
+			itemsObject.parentId = valueItemsDataLimit["ParentId"].asString();
+		if(!valueItemsDataLimit["Id"].isNull())
+			itemsObject.id = std::stol(valueItemsDataLimit["Id"].asString());
+		if(!valueItemsDataLimit["UserName"].isNull())
+			itemsObject.userName = valueItemsDataLimit["UserName"].asString();
+		if(!valueItemsDataLimit["GmtCreate"].isNull())
+			itemsObject.gmtCreate = std::stol(valueItemsDataLimit["GmtCreate"].asString());
+		if(!valueItemsDataLimit["Connector"].isNull())
+			itemsObject.connector = valueItemsDataLimit["Connector"].asString();
+		if(!valueItemsDataLimit["CheckStatus"].isNull())
+			itemsObject.checkStatus = std::stoi(valueItemsDataLimit["CheckStatus"].asString());
+		if(!valueItemsDataLimit["CheckStatusName"].isNull())
+			itemsObject.checkStatusName = valueItemsDataLimit["CheckStatusName"].asString();
+		if(!valueItemsDataLimit["ResourceType"].isNull())
+			itemsObject.resourceType = std::stol(valueItemsDataLimit["ResourceType"].asString());
+		if(!valueItemsDataLimit["ResourceTypeCode"].isNull())
+			itemsObject.resourceTypeCode = valueItemsDataLimit["ResourceTypeCode"].asString();
+		if(!valueItemsDataLimit["AuditStatus"].isNull())
+			itemsObject.auditStatus = std::stoi(valueItemsDataLimit["AuditStatus"].asString());
+		if(!valueItemsDataLimit["LogStoreDay"].isNull())
+			itemsObject.logStoreDay = std::stoi(valueItemsDataLimit["LogStoreDay"].asString());
+		if(!valueItemsDataLimit["Enable"].isNull())
+			itemsObject.enable = std::stoi(valueItemsDataLimit["Enable"].asString());
+		if(!valueItemsDataLimit["AutoScan"].isNull())
+			itemsObject.autoScan = std::stoi(valueItemsDataLimit["AutoScan"].asString());
+		if(!valueItemsDataLimit["EngineType"].isNull())
+			itemsObject.engineType = valueItemsDataLimit["EngineType"].asString();
+		if(!valueItemsDataLimit["ProcessStatus"].isNull())
+			itemsObject.processStatus = std::stoi(valueItemsDataLimit["ProcessStatus"].asString());
+		if(!valueItemsDataLimit["ProcessTotalCount"].isNull())
+			itemsObject.processTotalCount = std::stoi(valueItemsDataLimit["ProcessTotalCount"].asString());
+		if(!valueItemsDataLimit["TotalCount"].isNull())
+			itemsObject.totalCount = std::stoi(valueItemsDataLimit["TotalCount"].asString());
+		if(!valueItemsDataLimit["LastFinishedTime"].isNull())
+			itemsObject.lastFinishedTime = std::stol(valueItemsDataLimit["LastFinishedTime"].asString());
+		if(!valueItemsDataLimit["ErrorCode"].isNull())
+			itemsObject.errorCode = valueItemsDataLimit["ErrorCode"].asString();
+		if(!valueItemsDataLimit["ErrorMessage"].isNull())
+			itemsObject.errorMessage = valueItemsDataLimit["ErrorMessage"].asString();
+		if(!valueItemsDataLimit["Port"].isNull())
+			itemsObject.port = std::stoi(valueItemsDataLimit["Port"].asString());
+		items_.push_back(itemsObject);
 	}
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
-std::vector<DescribeDataLimitsResult::DataLimit> DescribeDataLimitsResult::getDataLimitList()const
+int DescribeDataLimitsResult::getTotalCount()const
 {
-	return dataLimitList_;
+	return totalCount_;
+}
+
+int DescribeDataLimitsResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeDataLimitsResult::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+std::vector<DescribeDataLimitsResult::DataLimit> DescribeDataLimitsResult::getItems()const
+{
+	return items_;
 }
 

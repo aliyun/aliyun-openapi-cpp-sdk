@@ -67,6 +67,10 @@ void ModifySslVpnServerResult::parse(const std::string &payload)
 		maxConnections_ = std::stoi(value["MaxConnections"].asString());
 	if(!value["InternetIp"].isNull())
 		internetIp_ = value["InternetIp"].asString();
+	if(!value["EnableMultiFactorAuth"].isNull())
+		enableMultiFactorAuth_ = value["EnableMultiFactorAuth"].asString() == "true";
+	if(!value["IDaaSInstanceId"].isNull())
+		iDaaSInstanceId_ = value["IDaaSInstanceId"].asString();
 
 }
 
@@ -90,9 +94,19 @@ std::string ModifySslVpnServerResult::getClientIpPool()const
 	return clientIpPool_;
 }
 
+std::string ModifySslVpnServerResult::getIDaaSInstanceId()const
+{
+	return iDaaSInstanceId_;
+}
+
 int ModifySslVpnServerResult::getMaxConnections()const
 {
 	return maxConnections_;
+}
+
+bool ModifySslVpnServerResult::getEnableMultiFactorAuth()const
+{
+	return enableMultiFactorAuth_;
 }
 
 std::string ModifySslVpnServerResult::getSslVpnServerId()const

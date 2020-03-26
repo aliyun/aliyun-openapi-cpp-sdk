@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainFrameRateAndBitRateDataReques
 
 DescribeLiveDomainFrameRateAndBitRateDataRequest::DescribeLiveDomainFrameRateAndBitRateDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainFrameRateAndBitRateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainFrameRateAndBitRateDataRequest::~DescribeLiveDomainFrameRateAndBitRateDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getQueryTime()cons
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setQueryTime(const std::string& queryTime)
 {
 	queryTime_ = queryTime;
-	setCoreParameter("QueryTime", queryTime);
+	setParameter("QueryTime", queryTime);
 }
 
 std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainFrameRateAndBitRateDataRequest::getDomainName()con
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeLiveDomainFrameRateAndBitRateDataRequest::getOwnerId()const
 void DescribeLiveDomainFrameRateAndBitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

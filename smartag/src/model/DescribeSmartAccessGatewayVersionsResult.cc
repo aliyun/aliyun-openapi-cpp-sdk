@@ -49,6 +49,8 @@ void DescribeSmartAccessGatewayVersionsResult::parse(const std::string &payload)
 			smartAGVersionsObject.versionName = valueSmartAGVersionsSmartAGVersion["VersionName"].asString();
 		if(!valueSmartAGVersionsSmartAGVersion["CreateTime"].isNull())
 			smartAGVersionsObject.createTime = std::stol(valueSmartAGVersionsSmartAGVersion["CreateTime"].asString());
+		if(!valueSmartAGVersionsSmartAGVersion["Type"].isNull())
+			smartAGVersionsObject.type = valueSmartAGVersionsSmartAGVersion["Type"].asString();
 		smartAGVersions_.push_back(smartAGVersionsObject);
 	}
 

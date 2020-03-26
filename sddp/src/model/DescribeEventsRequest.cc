@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeEventsRequest;
 
 DescribeEventsRequest::DescribeEventsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventsRequest::~DescribeEventsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeEventsRequest::getProductCode()const
 void DescribeEventsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string DescribeEventsRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeEventsRequest::getStartTime()const
 void DescribeEventsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeEventsRequest::getUserId()const
@@ -55,7 +57,7 @@ long DescribeEventsRequest::getUserId()const
 void DescribeEventsRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setParameter("UserId", std::to_string(userId));
 }
 
 std::string DescribeEventsRequest::getTypeCode()const
@@ -66,7 +68,7 @@ std::string DescribeEventsRequest::getTypeCode()const
 void DescribeEventsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
+	setParameter("TypeCode", typeCode);
 }
 
 std::string DescribeEventsRequest::getSubTypeCode()const
@@ -77,7 +79,7 @@ std::string DescribeEventsRequest::getSubTypeCode()const
 void DescribeEventsRequest::setSubTypeCode(const std::string& subTypeCode)
 {
 	subTypeCode_ = subTypeCode;
-	setCoreParameter("SubTypeCode", subTypeCode);
+	setParameter("SubTypeCode", subTypeCode);
 }
 
 std::string DescribeEventsRequest::getSourceIp()const
@@ -88,7 +90,7 @@ std::string DescribeEventsRequest::getSourceIp()const
 void DescribeEventsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeEventsRequest::getTargetProductCode()const
@@ -99,7 +101,7 @@ std::string DescribeEventsRequest::getTargetProductCode()const
 void DescribeEventsRequest::setTargetProductCode(const std::string& targetProductCode)
 {
 	targetProductCode_ = targetProductCode;
-	setCoreParameter("TargetProductCode", targetProductCode);
+	setParameter("TargetProductCode", targetProductCode);
 }
 
 int DescribeEventsRequest::getPageSize()const
@@ -110,7 +112,7 @@ int DescribeEventsRequest::getPageSize()const
 void DescribeEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeEventsRequest::getLang()const
@@ -121,7 +123,7 @@ std::string DescribeEventsRequest::getLang()const
 void DescribeEventsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeEventsRequest::getDealUserId()const
@@ -132,7 +134,7 @@ std::string DescribeEventsRequest::getDealUserId()const
 void DescribeEventsRequest::setDealUserId(const std::string& dealUserId)
 {
 	dealUserId_ = dealUserId;
-	setCoreParameter("DealUserId", dealUserId);
+	setParameter("DealUserId", dealUserId);
 }
 
 int DescribeEventsRequest::getFeatureType()const
@@ -143,7 +145,7 @@ int DescribeEventsRequest::getFeatureType()const
 void DescribeEventsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeEventsRequest::getEndTime()const
@@ -154,7 +156,7 @@ std::string DescribeEventsRequest::getEndTime()const
 void DescribeEventsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 int DescribeEventsRequest::getCurrentPage()const
@@ -165,7 +167,7 @@ int DescribeEventsRequest::getCurrentPage()const
 void DescribeEventsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeEventsRequest::getDepartId()const
@@ -176,7 +178,7 @@ long DescribeEventsRequest::getDepartId()const
 void DescribeEventsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 
 std::string DescribeEventsRequest::getStatus()const
@@ -187,6 +189,6 @@ std::string DescribeEventsRequest::getStatus()const
 void DescribeEventsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

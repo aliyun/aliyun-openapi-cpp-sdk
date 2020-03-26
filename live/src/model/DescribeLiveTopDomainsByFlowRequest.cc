@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveTopDomainsByFlowRequest;
 
 DescribeLiveTopDomainsByFlowRequest::DescribeLiveTopDomainsByFlowRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveTopDomainsByFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveTopDomainsByFlowRequest::~DescribeLiveTopDomainsByFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveTopDomainsByFlowRequest::getStartTime()const
 void DescribeLiveTopDomainsByFlowRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeLiveTopDomainsByFlowRequest::getLimit()const
@@ -44,7 +46,7 @@ long DescribeLiveTopDomainsByFlowRequest::getLimit()const
 void DescribeLiveTopDomainsByFlowRequest::setLimit(long limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeLiveTopDomainsByFlowRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeLiveTopDomainsByFlowRequest::getEndTime()const
 void DescribeLiveTopDomainsByFlowRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveTopDomainsByFlowRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DescribeLiveTopDomainsByFlowRequest::getOwnerId()const
 void DescribeLiveTopDomainsByFlowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

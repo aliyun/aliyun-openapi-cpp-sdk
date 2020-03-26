@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::DeleteEmailVerificationRequest;
 
 DeleteEmailVerificationRequest::DeleteEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "DeleteEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEmailVerificationRequest::~DeleteEmailVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteEmailVerificationRequest::getUserClientIp()const
 void DeleteEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteEmailVerificationRequest::getLang()const
@@ -44,7 +46,7 @@ std::string DeleteEmailVerificationRequest::getLang()const
 void DeleteEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DeleteEmailVerificationRequest::getEmail()const
@@ -55,6 +57,6 @@ std::string DeleteEmailVerificationRequest::getEmail()const
 void DeleteEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeUidWhiteListGroupRequest;
 
 DescribeUidWhiteListGroupRequest::DescribeUidWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeUidWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUidWhiteListGroupRequest::~DescribeUidWhiteListGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUidWhiteListGroupRequest::getSourceCode()const
 void DescribeUidWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeUidWhiteListGroupRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeUidWhiteListGroupRequest::getSourceIp()const
 void DescribeUidWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeUidWhiteListGroupRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeUidWhiteListGroupRequest::getPageSize()const
 void DescribeUidWhiteListGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getDstIP()const
@@ -66,7 +68,7 @@ std::string DescribeUidWhiteListGroupRequest::getDstIP()const
 void DescribeUidWhiteListGroupRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setParameter("DstIP", dstIP);
 }
 
 std::string DescribeUidWhiteListGroupRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeUidWhiteListGroupRequest::getLang()const
 void DescribeUidWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeUidWhiteListGroupRequest::getSrcUid()const
@@ -88,7 +90,7 @@ std::string DescribeUidWhiteListGroupRequest::getSrcUid()const
 void DescribeUidWhiteListGroupRequest::setSrcUid(const std::string& srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setParameter("SrcUid", srcUid);
 }
 
 int DescribeUidWhiteListGroupRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeUidWhiteListGroupRequest::getCurrentPage()const
 void DescribeUidWhiteListGroupRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeUidWhiteListGroupRequest::getWhiteListType()const
@@ -110,7 +112,7 @@ int DescribeUidWhiteListGroupRequest::getWhiteListType()const
 void DescribeUidWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string DescribeUidWhiteListGroupRequest::getStatus()const
@@ -121,6 +123,6 @@ std::string DescribeUidWhiteListGroupRequest::getStatus()const
 void DescribeUidWhiteListGroupRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

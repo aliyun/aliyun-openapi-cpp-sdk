@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::MergeFacesRequest;
 
 MergeFacesRequest::MergeFacesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "MergeFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MergeFacesRequest::~MergeFacesRequest()
 {}
@@ -33,7 +35,7 @@ std::string MergeFacesRequest::getLibraryId()const
 void MergeFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long MergeFacesRequest::getTargetFaceId()const
@@ -44,7 +46,7 @@ long MergeFacesRequest::getTargetFaceId()const
 void MergeFacesRequest::setTargetFaceId(long targetFaceId)
 {
 	targetFaceId_ = targetFaceId;
-	setCoreParameter("TargetFaceId", std::to_string(targetFaceId));
+	setParameter("TargetFaceId", std::to_string(targetFaceId));
 }
 
 std::string MergeFacesRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string MergeFacesRequest::getStoreName()const
 void MergeFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::vector<long> MergeFacesRequest::getFaceId()const
@@ -66,7 +68,8 @@ std::vector<long> MergeFacesRequest::getFaceId()const
 void MergeFacesRequest::setFaceId(const std::vector<long>& faceId)
 {
 	faceId_ = faceId;
-	for(int i = 0; i!= faceId.size(); i++)
-		setCoreParameter("FaceId."+ std::to_string(i), std::to_string(faceId.at(i)));
+	for(int dep1 = 0; dep1!= faceId.size(); dep1++) {
+		setParameter("FaceId."+ std::to_string(dep1), std::to_string(faceId.at(dep1)));
+	}
 }
 

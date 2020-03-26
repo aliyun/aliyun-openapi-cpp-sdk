@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CBN_EXPORT DescribeCenBandwidthPackagesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filter
 				{
 					std::vector<std::string> value;

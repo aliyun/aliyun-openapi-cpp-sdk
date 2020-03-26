@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ForbidLiveStreamRequest;
 
 ForbidLiveStreamRequest::ForbidLiveStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ForbidLiveStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ForbidLiveStreamRequest::~ForbidLiveStreamRequest()
 {}
@@ -33,7 +35,7 @@ std::string ForbidLiveStreamRequest::getAppName()const
 void ForbidLiveStreamRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string ForbidLiveStreamRequest::getStreamName()const
@@ -44,7 +46,7 @@ std::string ForbidLiveStreamRequest::getStreamName()const
 void ForbidLiveStreamRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string ForbidLiveStreamRequest::getControlStreamAction()const
@@ -55,7 +57,7 @@ std::string ForbidLiveStreamRequest::getControlStreamAction()const
 void ForbidLiveStreamRequest::setControlStreamAction(const std::string& controlStreamAction)
 {
 	controlStreamAction_ = controlStreamAction;
-	setCoreParameter("ControlStreamAction", controlStreamAction);
+	setParameter("ControlStreamAction", controlStreamAction);
 }
 
 std::string ForbidLiveStreamRequest::getResumeTime()const
@@ -66,7 +68,7 @@ std::string ForbidLiveStreamRequest::getResumeTime()const
 void ForbidLiveStreamRequest::setResumeTime(const std::string& resumeTime)
 {
 	resumeTime_ = resumeTime;
-	setCoreParameter("ResumeTime", resumeTime);
+	setParameter("ResumeTime", resumeTime);
 }
 
 std::string ForbidLiveStreamRequest::getLiveStreamType()const
@@ -77,7 +79,7 @@ std::string ForbidLiveStreamRequest::getLiveStreamType()const
 void ForbidLiveStreamRequest::setLiveStreamType(const std::string& liveStreamType)
 {
 	liveStreamType_ = liveStreamType;
-	setCoreParameter("LiveStreamType", liveStreamType);
+	setParameter("LiveStreamType", liveStreamType);
 }
 
 std::string ForbidLiveStreamRequest::getDomainName()const
@@ -88,7 +90,7 @@ std::string ForbidLiveStreamRequest::getDomainName()const
 void ForbidLiveStreamRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ForbidLiveStreamRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ForbidLiveStreamRequest::getOwnerId()const
 void ForbidLiveStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ForbidLiveStreamRequest::getOneshot()const
@@ -110,6 +112,6 @@ std::string ForbidLiveStreamRequest::getOneshot()const
 void ForbidLiveStreamRequest::setOneshot(const std::string& oneshot)
 {
 	oneshot_ = oneshot;
-	setCoreParameter("Oneshot", oneshot);
+	setParameter("Oneshot", oneshot);
 }
 

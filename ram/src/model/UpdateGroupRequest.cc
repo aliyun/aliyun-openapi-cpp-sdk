@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateGroupRequest;
 
 UpdateGroupRequest::UpdateGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateGroupRequest::~UpdateGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateGroupRequest::getGroupName()const
 void UpdateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string UpdateGroupRequest::getNewGroupName()const
@@ -44,7 +46,7 @@ std::string UpdateGroupRequest::getNewGroupName()const
 void UpdateGroupRequest::setNewGroupName(const std::string& newGroupName)
 {
 	newGroupName_ = newGroupName;
-	setCoreParameter("NewGroupName", newGroupName);
+	setParameter("NewGroupName", newGroupName);
 }
 
 std::string UpdateGroupRequest::getNewComments()const
@@ -55,6 +57,6 @@ std::string UpdateGroupRequest::getNewComments()const
 void UpdateGroupRequest::setNewComments(const std::string& newComments)
 {
 	newComments_ = newComments;
-	setCoreParameter("NewComments", newComments);
+	setParameter("NewComments", newComments);
 }
 

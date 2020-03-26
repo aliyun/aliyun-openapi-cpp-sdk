@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterV2Request;
 
 DescribeClusterV2Request::DescribeClusterV2Request() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterV2")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterV2Request::~DescribeClusterV2Request()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterV2Request::getResourceOwnerId()const
 void DescribeClusterV2Request::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterV2Request::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterV2Request::getAccessKeyId()const
 void DescribeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterV2Request::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeClusterV2Request::getRegionId()const
 void DescribeClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterV2Request::getId()const
@@ -66,6 +68,6 @@ std::string DescribeClusterV2Request::getId()const
 void DescribeClusterV2Request::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

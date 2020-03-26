@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::LookupTmchNoticeRequest;
 
 LookupTmchNoticeRequest::LookupTmchNoticeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "LookupTmchNotice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LookupTmchNoticeRequest::~LookupTmchNoticeRequest()
 {}
@@ -33,7 +35,7 @@ std::string LookupTmchNoticeRequest::getClaimKey()const
 void LookupTmchNoticeRequest::setClaimKey(const std::string& claimKey)
 {
 	claimKey_ = claimKey;
-	setCoreParameter("ClaimKey", claimKey);
+	setParameter("ClaimKey", claimKey);
 }
 
 std::string LookupTmchNoticeRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string LookupTmchNoticeRequest::getUserClientIp()const
 void LookupTmchNoticeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string LookupTmchNoticeRequest::getLang()const
@@ -55,6 +57,6 @@ std::string LookupTmchNoticeRequest::getLang()const
 void LookupTmchNoticeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

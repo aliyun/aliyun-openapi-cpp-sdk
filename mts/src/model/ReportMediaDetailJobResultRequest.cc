@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportMediaDetailJobResultRequest;
 
 ReportMediaDetailJobResultRequest::ReportMediaDetailJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportMediaDetailJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportMediaDetailJobResultRequest::~ReportMediaDetailJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportMediaDetailJobResultRequest::getResourceOwnerId()const
 void ReportMediaDetailJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportMediaDetailJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportMediaDetailJobResultRequest::getAccessKeyId()const
 void ReportMediaDetailJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportMediaDetailJobResultRequest::getJobId()const
@@ -55,7 +57,7 @@ std::string ReportMediaDetailJobResultRequest::getJobId()const
 void ReportMediaDetailJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportMediaDetailJobResultRequest::getTag()const
@@ -66,7 +68,7 @@ std::string ReportMediaDetailJobResultRequest::getTag()const
 void ReportMediaDetailJobResultRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 
 std::string ReportMediaDetailJobResultRequest::getResults()const
@@ -77,7 +79,7 @@ std::string ReportMediaDetailJobResultRequest::getResults()const
 void ReportMediaDetailJobResultRequest::setResults(const std::string& results)
 {
 	results_ = results;
-	setCoreParameter("Results", results);
+	setParameter("Results", results);
 }
 
 std::string ReportMediaDetailJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ReportMediaDetailJobResultRequest::getResourceOwnerAccount()const
 void ReportMediaDetailJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportMediaDetailJobResultRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ReportMediaDetailJobResultRequest::getOwnerAccount()const
 void ReportMediaDetailJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReportMediaDetailJobResultRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ReportMediaDetailJobResultRequest::getOwnerId()const
 void ReportMediaDetailJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -35,7 +35,7 @@ long CreateVerifySchemeRequest::getResourceOwnerId()const
 void CreateVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateVerifySchemeRequest::getBundleId()const
@@ -46,7 +46,7 @@ std::string CreateVerifySchemeRequest::getBundleId()const
 void CreateVerifySchemeRequest::setBundleId(const std::string& bundleId)
 {
 	bundleId_ = bundleId;
-	setCoreParameter("BundleId", bundleId);
+	setParameter("BundleId", bundleId);
 }
 
 std::string CreateVerifySchemeRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string CreateVerifySchemeRequest::getAccessKeyId()const
 void CreateVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVerifySchemeRequest::getAppName()const
@@ -68,7 +68,7 @@ std::string CreateVerifySchemeRequest::getAppName()const
 void CreateVerifySchemeRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string CreateVerifySchemeRequest::getPackSign()const
@@ -79,7 +79,7 @@ std::string CreateVerifySchemeRequest::getPackSign()const
 void CreateVerifySchemeRequest::setPackSign(const std::string& packSign)
 {
 	packSign_ = packSign;
-	setCoreParameter("PackSign", packSign);
+	setParameter("PackSign", packSign);
 }
 
 std::string CreateVerifySchemeRequest::getPackName()const
@@ -90,7 +90,7 @@ std::string CreateVerifySchemeRequest::getPackName()const
 void CreateVerifySchemeRequest::setPackName(const std::string& packName)
 {
 	packName_ = packName;
-	setCoreParameter("PackName", packName);
+	setParameter("PackName", packName);
 }
 
 std::string CreateVerifySchemeRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateVerifySchemeRequest::getResourceOwnerAccount()const
 void CreateVerifySchemeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVerifySchemeRequest::getOsType()const
@@ -112,7 +112,7 @@ std::string CreateVerifySchemeRequest::getOsType()const
 void CreateVerifySchemeRequest::setOsType(const std::string& osType)
 {
 	osType_ = osType;
-	setCoreParameter("OsType", osType);
+	setParameter("OsType", osType);
 }
 
 long CreateVerifySchemeRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long CreateVerifySchemeRequest::getOwnerId()const
 void CreateVerifySchemeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateVerifySchemeRequest::getSchemeName()const
@@ -134,6 +134,6 @@ std::string CreateVerifySchemeRequest::getSchemeName()const
 void CreateVerifySchemeRequest::setSchemeName(const std::string& schemeName)
 {
 	schemeName_ = schemeName;
-	setCoreParameter("SchemeName", schemeName);
+	setParameter("SchemeName", schemeName);
 }
 

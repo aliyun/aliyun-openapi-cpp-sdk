@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::ApproveOrderListRequest;
 
 ApproveOrderListRequest::ApproveOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "ApproveOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApproveOrderListRequest::~ApproveOrderListRequest()
 {}
@@ -33,6 +35,6 @@ std::string ApproveOrderListRequest::getData()const
 void ApproveOrderListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 

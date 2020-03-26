@@ -37,16 +37,16 @@ void CreateGroupMonitoringAgentProcessRequest::setAlertConfig(const std::vector<
 	alertConfig_ = alertConfig;
 	for(int dep1 = 0; dep1!= alertConfig.size(); dep1++) {
 		auto alertConfigObj = alertConfig.at(dep1);
-		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1);
-		setCoreParameter(alertConfigObjStr + ".Times", alertConfigObj.times);
-		setCoreParameter(alertConfigObjStr + ".NoEffectiveInterval", alertConfigObj.noEffectiveInterval);
-		setCoreParameter(alertConfigObjStr + ".Webhook", alertConfigObj.webhook);
-		setCoreParameter(alertConfigObjStr + ".SilenceTime", alertConfigObj.silenceTime);
-		setCoreParameter(alertConfigObjStr + ".Threshold", alertConfigObj.threshold);
-		setCoreParameter(alertConfigObjStr + ".EffectiveInterval", alertConfigObj.effectiveInterval);
-		setCoreParameter(alertConfigObjStr + ".ComparisonOperator", alertConfigObj.comparisonOperator);
-		setCoreParameter(alertConfigObjStr + ".EscalationsLevel", alertConfigObj.escalationsLevel);
-		setCoreParameter(alertConfigObjStr + ".Statistics", alertConfigObj.statistics);
+		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1 + 1);
+		setParameter(alertConfigObjStr + ".Times", alertConfigObj.times);
+		setParameter(alertConfigObjStr + ".NoEffectiveInterval", alertConfigObj.noEffectiveInterval);
+		setParameter(alertConfigObjStr + ".Webhook", alertConfigObj.webhook);
+		setParameter(alertConfigObjStr + ".SilenceTime", alertConfigObj.silenceTime);
+		setParameter(alertConfigObjStr + ".Threshold", alertConfigObj.threshold);
+		setParameter(alertConfigObjStr + ".EffectiveInterval", alertConfigObj.effectiveInterval);
+		setParameter(alertConfigObjStr + ".ComparisonOperator", alertConfigObj.comparisonOperator);
+		setParameter(alertConfigObjStr + ".EscalationsLevel", alertConfigObj.escalationsLevel);
+		setParameter(alertConfigObjStr + ".Statistics", alertConfigObj.statistics);
 	}
 }
 
@@ -58,7 +58,7 @@ std::string CreateGroupMonitoringAgentProcessRequest::getGroupId()const
 void CreateGroupMonitoringAgentProcessRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string CreateGroupMonitoringAgentProcessRequest::getProcessName()const
@@ -69,7 +69,7 @@ std::string CreateGroupMonitoringAgentProcessRequest::getProcessName()const
 void CreateGroupMonitoringAgentProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
+	setParameter("ProcessName", processName);
 }
 
 std::string CreateGroupMonitoringAgentProcessRequest::getMatchExpressFilterRelation()const
@@ -80,7 +80,7 @@ std::string CreateGroupMonitoringAgentProcessRequest::getMatchExpressFilterRelat
 void CreateGroupMonitoringAgentProcessRequest::setMatchExpressFilterRelation(const std::string& matchExpressFilterRelation)
 {
 	matchExpressFilterRelation_ = matchExpressFilterRelation;
-	setCoreParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
+	setParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
 }
 
 std::vector<CreateGroupMonitoringAgentProcessRequest::MatchExpress> CreateGroupMonitoringAgentProcessRequest::getMatchExpress()const
@@ -93,10 +93,10 @@ void CreateGroupMonitoringAgentProcessRequest::setMatchExpress(const std::vector
 	matchExpress_ = matchExpress;
 	for(int dep1 = 0; dep1!= matchExpress.size(); dep1++) {
 		auto matchExpressObj = matchExpress.at(dep1);
-		std::string matchExpressObjStr = "MatchExpress." + std::to_string(dep1);
-		setCoreParameter(matchExpressObjStr + ".Function", matchExpressObj.function);
-		setCoreParameter(matchExpressObjStr + ".Name", matchExpressObj.name);
-		setCoreParameter(matchExpressObjStr + ".Value", matchExpressObj.value);
+		std::string matchExpressObjStr = "MatchExpress." + std::to_string(dep1 + 1);
+		setParameter(matchExpressObjStr + ".Function", matchExpressObj.function);
+		setParameter(matchExpressObjStr + ".Name", matchExpressObj.name);
+		setParameter(matchExpressObjStr + ".Value", matchExpressObj.value);
 	}
 }
 

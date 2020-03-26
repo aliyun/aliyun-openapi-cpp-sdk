@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DeleteQueueRequest;
 
 DeleteQueueRequest::DeleteQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/queue");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteQueueRequest::~DeleteQueueRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteQueueRequest::getQueueName()const
 void DeleteQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string DeleteQueueRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string DeleteQueueRequest::getRegionId()const
 void DeleteQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string DeleteQueueRequest::getClusterId()const
@@ -55,6 +58,6 @@ std::string DeleteQueueRequest::getClusterId()const
 void DeleteQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

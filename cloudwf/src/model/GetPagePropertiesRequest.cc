@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPagePropertiesRequest;
 
 GetPagePropertiesRequest::GetPagePropertiesRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPageProperties")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPagePropertiesRequest::~GetPagePropertiesRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetPagePropertiesRequest::getAccessKeyId()const
 void GetPagePropertiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

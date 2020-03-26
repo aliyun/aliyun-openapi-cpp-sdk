@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::QueryGenerateTaskResultRequest;
 
 QueryGenerateTaskResultRequest::QueryGenerateTaskResultRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "QueryGenerateTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryGenerateTaskResultRequest::~QueryGenerateTaskResultRequest()
 {}
@@ -33,6 +35,6 @@ long QueryGenerateTaskResultRequest::getTaskId()const
 void QueryGenerateTaskResultRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 

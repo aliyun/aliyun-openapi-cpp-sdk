@@ -27,6 +27,28 @@ DescribeDomainFileSizeProportionDataRequest::DescribeDomainFileSizeProportionDat
 DescribeDomainFileSizeProportionDataRequest::~DescribeDomainFileSizeProportionDataRequest()
 {}
 
+std::string DescribeDomainFileSizeProportionDataRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void DescribeDomainFileSizeProportionDataRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
+}
+
+std::string DescribeDomainFileSizeProportionDataRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DescribeDomainFileSizeProportionDataRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string DescribeDomainFileSizeProportionDataRequest::getDomainName()const
 {
 	return domainName_;
@@ -49,17 +71,6 @@ void DescribeDomainFileSizeProportionDataRequest::setEndTime(const std::string& 
 	setParameter("EndTime", endTime);
 }
 
-std::string DescribeDomainFileSizeProportionDataRequest::getStartTime()const
-{
-	return startTime_;
-}
-
-void DescribeDomainFileSizeProportionDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
-}
-
 long DescribeDomainFileSizeProportionDataRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -69,16 +80,5 @@ void DescribeDomainFileSizeProportionDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeDomainFileSizeProportionDataRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DescribeDomainFileSizeProportionDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

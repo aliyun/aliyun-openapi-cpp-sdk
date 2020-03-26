@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GetSecretValueRequest;
 GetSecretValueRequest::GetSecretValueRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetSecretValue")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetSecretValueRequest::~GetSecretValueRequest()

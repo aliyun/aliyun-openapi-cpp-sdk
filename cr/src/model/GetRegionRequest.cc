@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRegionRequest;
 
 GetRegionRequest::GetRegionRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/regions");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRegionRequest::~GetRegionRequest()
 {}
@@ -33,6 +36,6 @@ std::string GetRegionRequest::getDomain()const
 void GetRegionRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

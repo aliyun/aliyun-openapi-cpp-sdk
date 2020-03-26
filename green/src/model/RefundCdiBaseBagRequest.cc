@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RefundCdiBaseBagRequest;
 
 RefundCdiBaseBagRequest::RefundCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RefundCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundCdiBaseBagRequest::~RefundCdiBaseBagRequest()
 {}
@@ -33,7 +35,7 @@ std::string RefundCdiBaseBagRequest::getResourceOwnerId()const
 void RefundCdiBaseBagRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefundCdiBaseBagRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string RefundCdiBaseBagRequest::getInstanceId()const
 void RefundCdiBaseBagRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

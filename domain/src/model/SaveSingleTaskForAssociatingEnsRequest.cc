@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForAssociatingEnsRequest;
 
 SaveSingleTaskForAssociatingEnsRequest::SaveSingleTaskForAssociatingEnsRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForAssociatingEns")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForAssociatingEnsRequest::~SaveSingleTaskForAssociatingEnsRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getAddress()const
 void SaveSingleTaskForAssociatingEnsRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getDomainName()const
 void SaveSingleTaskForAssociatingEnsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getUserClientIp()const
 void SaveSingleTaskForAssociatingEnsRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForAssociatingEnsRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SaveSingleTaskForAssociatingEnsRequest::getLang()const
 void SaveSingleTaskForAssociatingEnsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

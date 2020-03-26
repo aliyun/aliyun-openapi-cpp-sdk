@@ -36,17 +36,21 @@ namespace AlibabaCloud
 				{
 					struct Instance
 					{
-						std::string gmtCreate;
-						std::string roleName;
 						bool bizEnable;
 						std::string instanceId;
+						long gmtCreateTimestamp;
 						std::string latestDeploymentType;
 						std::string gmtModified;
+						long roleAttachTimestamp;
 						std::string roleAttachTime;
-						int spec;
-						std::string tags;
 						std::string roleArn;
 						std::string name;
+						int type;
+						std::string gmtCreate;
+						std::string roleName;
+						long gmtModifiedTimestamp;
+						int spec;
+						std::string tags;
 						int latestDeploymentStatus;
 					};
 					int pageSize;

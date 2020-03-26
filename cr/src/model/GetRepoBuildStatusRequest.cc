@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoBuildStatusRequest;
 
 GetRepoBuildStatusRequest::GetRepoBuildStatusRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoBuildStatusRequest::~GetRepoBuildStatusRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoBuildStatusRequest::getBuildId()const
 void GetRepoBuildStatusRequest::setBuildId(const std::string& buildId)
 {
 	buildId_ = buildId;
-	setCoreParameter("BuildId", buildId);
+	setParameter("BuildId", buildId);
 }
 
 std::string GetRepoBuildStatusRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string GetRepoBuildStatusRequest::getRepoNamespace()const
 void GetRepoBuildStatusRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoBuildStatusRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string GetRepoBuildStatusRequest::getRepoName()const
 void GetRepoBuildStatusRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

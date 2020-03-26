@@ -40,42 +40,42 @@ void ListIntentsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto intentsNode = value["Intents"];
-	if(!intentsNode["TotalCount"].isNull())
-		intents_.totalCount = std::stoi(intentsNode["TotalCount"].asString());
 	if(!intentsNode["PageNumber"].isNull())
 		intents_.pageNumber = std::stoi(intentsNode["PageNumber"].asString());
 	if(!intentsNode["PageSize"].isNull())
 		intents_.pageSize = std::stoi(intentsNode["PageSize"].asString());
+	if(!intentsNode["TotalCount"].isNull())
+		intents_.totalCount = std::stoi(intentsNode["TotalCount"].asString());
 	auto allListNode = intentsNode["List"]["Intent"];
 	for (auto intentsNodeListIntent : allListNode)
 	{
 		Intents::Intent intentObject;
-		if(!intentsNodeListIntent["IntentId"].isNull())
-			intentObject.intentId = intentsNodeListIntent["IntentId"].asString();
-		if(!intentsNodeListIntent["ScriptId"].isNull())
-			intentObject.scriptId = intentsNodeListIntent["ScriptId"].asString();
-		if(!intentsNodeListIntent["IntentName"].isNull())
-			intentObject.intentName = intentsNodeListIntent["IntentName"].asString();
-		if(!intentsNodeListIntent["IntentDescription"].isNull())
-			intentObject.intentDescription = intentsNodeListIntent["IntentDescription"].asString();
-		if(!intentsNodeListIntent["Utterances"].isNull())
-			intentObject.utterances = intentsNodeListIntent["Utterances"].asString();
-		if(!intentsNodeListIntent["Keywords"].isNull())
-			intentObject.keywords = intentsNodeListIntent["Keywords"].asString();
 		if(!intentsNodeListIntent["CreateTime"].isNull())
 			intentObject.createTime = std::stol(intentsNodeListIntent["CreateTime"].asString());
+		if(!intentsNodeListIntent["IntentDescription"].isNull())
+			intentObject.intentDescription = intentsNodeListIntent["IntentDescription"].asString();
+		if(!intentsNodeListIntent["IntentId"].isNull())
+			intentObject.intentId = intentsNodeListIntent["IntentId"].asString();
+		if(!intentsNodeListIntent["IntentName"].isNull())
+			intentObject.intentName = intentsNodeListIntent["IntentName"].asString();
+		if(!intentsNodeListIntent["Keywords"].isNull())
+			intentObject.keywords = intentsNodeListIntent["Keywords"].asString();
+		if(!intentsNodeListIntent["ScriptId"].isNull())
+			intentObject.scriptId = intentsNodeListIntent["ScriptId"].asString();
 		if(!intentsNodeListIntent["UpdateTime"].isNull())
 			intentObject.updateTime = std::stol(intentsNodeListIntent["UpdateTime"].asString());
+		if(!intentsNodeListIntent["Utterances"].isNull())
+			intentObject.utterances = intentsNodeListIntent["Utterances"].asString();
 		intents_.list.push_back(intentObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

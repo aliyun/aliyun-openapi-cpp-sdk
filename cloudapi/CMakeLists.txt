@@ -83,6 +83,8 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeApiErrorDataResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiGroupRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiGroupResult.h
+	include/alibabacloud/cloudapi/model/DescribeApiGroupVpcWhitelistRequest.h
+	include/alibabacloud/cloudapi/model/DescribeApiGroupVpcWhitelistResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiGroupsRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiGroupsResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiHistoriesRequest.h
@@ -93,6 +95,8 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeApiIpControlsResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiLatencyDataRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiLatencyDataResult.h
+	include/alibabacloud/cloudapi/model/DescribeApiMarketAttributesRequest.h
+	include/alibabacloud/cloudapi/model/DescribeApiMarketAttributesResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiQpsDataRequest.h
 	include/alibabacloud/cloudapi/model/DescribeApiQpsDataResult.h
 	include/alibabacloud/cloudapi/model/DescribeApiSignaturesRequest.h
@@ -169,6 +173,10 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/ModifyApiResult.h
 	include/alibabacloud/cloudapi/model/ModifyApiGroupRequest.h
 	include/alibabacloud/cloudapi/model/ModifyApiGroupResult.h
+	include/alibabacloud/cloudapi/model/ModifyApiGroupVpcWhitelistRequest.h
+	include/alibabacloud/cloudapi/model/ModifyApiGroupVpcWhitelistResult.h
+	include/alibabacloud/cloudapi/model/ModifyApiMarketAttributesRequest.h
+	include/alibabacloud/cloudapi/model/ModifyApiMarketAttributesResult.h
 	include/alibabacloud/cloudapi/model/ModifyAppRequest.h
 	include/alibabacloud/cloudapi/model/ModifyAppResult.h
 	include/alibabacloud/cloudapi/model/ModifyIpControlRequest.h
@@ -223,6 +231,8 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/SetTrafficControlApisResult.h
 	include/alibabacloud/cloudapi/model/SetVpcAccessRequest.h
 	include/alibabacloud/cloudapi/model/SetVpcAccessResult.h
+	include/alibabacloud/cloudapi/model/SetWildcardDomainPatternsRequest.h
+	include/alibabacloud/cloudapi/model/SetWildcardDomainPatternsResult.h
 	include/alibabacloud/cloudapi/model/SwitchApiRequest.h
 	include/alibabacloud/cloudapi/model/SwitchApiResult.h
 	include/alibabacloud/cloudapi/model/TagResourcesRequest.h
@@ -294,6 +304,8 @@ set(cloudapi_src
 	src/model/DescribeApiErrorDataResult.cc
 	src/model/DescribeApiGroupRequest.cc
 	src/model/DescribeApiGroupResult.cc
+	src/model/DescribeApiGroupVpcWhitelistRequest.cc
+	src/model/DescribeApiGroupVpcWhitelistResult.cc
 	src/model/DescribeApiGroupsRequest.cc
 	src/model/DescribeApiGroupsResult.cc
 	src/model/DescribeApiHistoriesRequest.cc
@@ -304,6 +316,8 @@ set(cloudapi_src
 	src/model/DescribeApiIpControlsResult.cc
 	src/model/DescribeApiLatencyDataRequest.cc
 	src/model/DescribeApiLatencyDataResult.cc
+	src/model/DescribeApiMarketAttributesRequest.cc
+	src/model/DescribeApiMarketAttributesResult.cc
 	src/model/DescribeApiQpsDataRequest.cc
 	src/model/DescribeApiQpsDataResult.cc
 	src/model/DescribeApiSignaturesRequest.cc
@@ -380,6 +394,10 @@ set(cloudapi_src
 	src/model/ModifyApiResult.cc
 	src/model/ModifyApiGroupRequest.cc
 	src/model/ModifyApiGroupResult.cc
+	src/model/ModifyApiGroupVpcWhitelistRequest.cc
+	src/model/ModifyApiGroupVpcWhitelistResult.cc
+	src/model/ModifyApiMarketAttributesRequest.cc
+	src/model/ModifyApiMarketAttributesResult.cc
 	src/model/ModifyAppRequest.cc
 	src/model/ModifyAppResult.cc
 	src/model/ModifyIpControlRequest.cc
@@ -434,6 +452,8 @@ set(cloudapi_src
 	src/model/SetTrafficControlApisResult.cc
 	src/model/SetVpcAccessRequest.cc
 	src/model/SetVpcAccessResult.cc
+	src/model/SetWildcardDomainPatternsRequest.cc
+	src/model/SetWildcardDomainPatternsResult.cc
 	src/model/SwitchApiRequest.cc
 	src/model/SwitchApiResult.cc
 	src/model/TagResourcesRequest.cc

@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setDBNodeClass(const std::string& dBNodeClass);
 				std::string getEngine()const;
 				void setEngine(const std::string& engine);
+				std::string getGDNId()const;
+				void setGDNId(const std::string& gDNId);
 				std::string getCreationOption()const;
 				void setCreationOption(const std::string& creationOption);
 				std::string getSourceResourceId()const;
@@ -81,6 +83,8 @@ namespace AlibabaCloud
 				void setDBVersion(const std::string& dBVersion);
 				std::string getCloneDataPoint()const;
 				void setCloneDataPoint(const std::string& cloneDataPoint);
+				bool getTDEStatus()const;
+				void setTDEStatus(bool tDEStatus);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 
@@ -93,6 +97,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string dBNodeClass_;
 				std::string engine_;
+				std::string gDNId_;
 				std::string creationOption_;
 				std::string sourceResourceId_;
 				std::string period_;
@@ -108,6 +113,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::string dBVersion_;
 				std::string cloneDataPoint_;
+				bool tDEStatus_;
 				std::string payType_;
 
 			};

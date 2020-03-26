@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainMappingRequest;
 
 DescribeLiveDomainMappingRequest::DescribeLiveDomainMappingRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainMapping")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeLiveDomainMappingRequest::~DescribeLiveDomainMappingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainMappingRequest::getDomainName()const
 void DescribeLiveDomainMappingRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainMappingRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeLiveDomainMappingRequest::getOwnerId()const
 void DescribeLiveDomainMappingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

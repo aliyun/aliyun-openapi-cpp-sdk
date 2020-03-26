@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateWebsiteIndexPageBaselineRequest;
 
 CreateWebsiteIndexPageBaselineRequest::CreateWebsiteIndexPageBaselineRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateWebsiteIndexPageBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateWebsiteIndexPageBaselineRequest::~CreateWebsiteIndexPageBaselineRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateWebsiteIndexPageBaselineRequest::getInstanceId()const
 void CreateWebsiteIndexPageBaselineRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateWebsiteIndexPageBaselineRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string CreateWebsiteIndexPageBaselineRequest::getSourceIp()const
 void CreateWebsiteIndexPageBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateWebsiteIndexPageBaselineRequest::getLang()const
@@ -55,6 +57,6 @@ std::string CreateWebsiteIndexPageBaselineRequest::getLang()const
 void CreateWebsiteIndexPageBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

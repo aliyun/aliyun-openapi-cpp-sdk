@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::DeleteInstanceRequest;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "DeleteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
-
-std::string DeleteInstanceRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void DeleteInstanceRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long DeleteInstanceRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long DeleteInstanceRequest::getResourceOwnerId()const
 void DeleteInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DeleteInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteInstanceRequest::getInstanceName()const
@@ -55,6 +57,6 @@ std::string DeleteInstanceRequest::getInstanceName()const
 void DeleteInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

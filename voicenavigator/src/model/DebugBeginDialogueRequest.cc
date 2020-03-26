@@ -27,6 +27,28 @@ DebugBeginDialogueRequest::DebugBeginDialogueRequest() :
 DebugBeginDialogueRequest::~DebugBeginDialogueRequest()
 {}
 
+std::string DebugBeginDialogueRequest::getConversationId()const
+{
+	return conversationId_;
+}
+
+void DebugBeginDialogueRequest::setConversationId(const std::string& conversationId)
+{
+	conversationId_ = conversationId;
+	setParameter("ConversationId", conversationId);
+}
+
+std::string DebugBeginDialogueRequest::getInitialContext()const
+{
+	return initialContext_;
+}
+
+void DebugBeginDialogueRequest::setInitialContext(const std::string& initialContext)
+{
+	initialContext_ = initialContext;
+	setParameter("InitialContext", initialContext);
+}
+
 std::string DebugBeginDialogueRequest::getCallingNumber()const
 {
 	return callingNumber_;
@@ -58,27 +80,5 @@ void DebugBeginDialogueRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
 	setParameter("CalledNumber", calledNumber);
-}
-
-std::string DebugBeginDialogueRequest::getConversationId()const
-{
-	return conversationId_;
-}
-
-void DebugBeginDialogueRequest::setConversationId(const std::string& conversationId)
-{
-	conversationId_ = conversationId;
-	setParameter("ConversationId", conversationId);
-}
-
-std::string DebugBeginDialogueRequest::getInitialContext()const
-{
-	return initialContext_;
-}
-
-void DebugBeginDialogueRequest::setInitialContext(const std::string& initialContext)
-{
-	initialContext_ = initialContext;
-	setParameter("InitialContext", initialContext);
 }
 

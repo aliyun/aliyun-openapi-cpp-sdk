@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetEndPointByDomainRequest;
 
 GetEndPointByDomainRequest::GetEndPointByDomainRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetEndPointByDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEndPointByDomainRequest::~GetEndPointByDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetEndPointByDomainRequest::getRegionID()const
 void GetEndPointByDomainRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 long GetEndPointByDomainRequest::getUserID()const
@@ -44,7 +46,7 @@ long GetEndPointByDomainRequest::getUserID()const
 void GetEndPointByDomainRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setCoreParameter("UserID", std::to_string(userID));
+	setBodyParameter("UserID", std::to_string(userID));
 }
 
 std::string GetEndPointByDomainRequest::getDomainURL()const
@@ -55,6 +57,6 @@ std::string GetEndPointByDomainRequest::getDomainURL()const
 void GetEndPointByDomainRequest::setDomainURL(const std::string& domainURL)
 {
 	domainURL_ = domainURL;
-	setCoreParameter("DomainURL", domainURL);
+	setBodyParameter("DomainURL", domainURL);
 }
 

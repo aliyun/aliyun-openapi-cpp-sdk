@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyDrdsIpWhiteListRequest;
 
 ModifyDrdsIpWhiteListRequest::ModifyDrdsIpWhiteListRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyDrdsIpWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDrdsIpWhiteListRequest::~ModifyDrdsIpWhiteListRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDrdsIpWhiteListRequest::getDrdsInstanceId()const
 void ModifyDrdsIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
@@ -44,7 +46,7 @@ std::string ModifyDrdsIpWhiteListRequest::getGroupName()const
 void ModifyDrdsIpWhiteListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyDrdsIpWhiteListRequest::getAccessKeyId()const
 void ModifyDrdsIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool ModifyDrdsIpWhiteListRequest::getMode()const
@@ -66,7 +68,7 @@ bool ModifyDrdsIpWhiteListRequest::getMode()const
 void ModifyDrdsIpWhiteListRequest::setMode(bool mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode ? "true" : "false");
+	setParameter("Mode", mode ? "true" : "false");
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getDbName()const
@@ -77,7 +79,7 @@ std::string ModifyDrdsIpWhiteListRequest::getDbName()const
 void ModifyDrdsIpWhiteListRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getGroupAttribute()const
@@ -88,7 +90,7 @@ std::string ModifyDrdsIpWhiteListRequest::getGroupAttribute()const
 void ModifyDrdsIpWhiteListRequest::setGroupAttribute(const std::string& groupAttribute)
 {
 	groupAttribute_ = groupAttribute;
-	setCoreParameter("GroupAttribute", groupAttribute);
+	setParameter("GroupAttribute", groupAttribute);
 }
 
 std::string ModifyDrdsIpWhiteListRequest::getIpWhiteList()const
@@ -99,6 +101,6 @@ std::string ModifyDrdsIpWhiteListRequest::getIpWhiteList()const
 void ModifyDrdsIpWhiteListRequest::setIpWhiteList(const std::string& ipWhiteList)
 {
 	ipWhiteList_ = ipWhiteList;
-	setCoreParameter("IpWhiteList", ipWhiteList);
+	setParameter("IpWhiteList", ipWhiteList);
 }
 

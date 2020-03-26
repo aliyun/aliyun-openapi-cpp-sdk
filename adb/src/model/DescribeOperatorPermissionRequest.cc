@@ -35,7 +35,7 @@ long DescribeOperatorPermissionRequest::getResourceOwnerId()const
 void DescribeOperatorPermissionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeOperatorPermissionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeOperatorPermissionRequest::getAccessKeyId()const
 void DescribeOperatorPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeOperatorPermissionRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeOperatorPermissionRequest::getResourceOwnerAccount()const
 void DescribeOperatorPermissionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeOperatorPermissionRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DescribeOperatorPermissionRequest::getDBClusterId()const
 void DescribeOperatorPermissionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeOperatorPermissionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeOperatorPermissionRequest::getOwnerAccount()const
 void DescribeOperatorPermissionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeOperatorPermissionRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeOperatorPermissionRequest::getOwnerId()const
 void DescribeOperatorPermissionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

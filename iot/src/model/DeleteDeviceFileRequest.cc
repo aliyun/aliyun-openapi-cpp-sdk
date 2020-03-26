@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDeviceFileRequest;
 
 DeleteDeviceFileRequest::DeleteDeviceFileRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDeviceFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceFileRequest::~DeleteDeviceFileRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDeviceFileRequest::getProductKey()const
 void DeleteDeviceFileRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string DeleteDeviceFileRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDeviceFileRequest::getAccessKeyId()const
 void DeleteDeviceFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDeviceFileRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string DeleteDeviceFileRequest::getIotId()const
 void DeleteDeviceFileRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string DeleteDeviceFileRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string DeleteDeviceFileRequest::getIotInstanceId()const
 void DeleteDeviceFileRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DeleteDeviceFileRequest::getDeviceName()const
@@ -77,7 +79,7 @@ std::string DeleteDeviceFileRequest::getDeviceName()const
 void DeleteDeviceFileRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 
 std::string DeleteDeviceFileRequest::getFileId()const
@@ -88,6 +90,6 @@ std::string DeleteDeviceFileRequest::getFileId()const
 void DeleteDeviceFileRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
-	setCoreParameter("FileId", fileId);
+	setParameter("FileId", fileId);
 }
 

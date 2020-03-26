@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::EncryptRequest;
 EncryptRequest::EncryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "Encrypt")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 EncryptRequest::~EncryptRequest()

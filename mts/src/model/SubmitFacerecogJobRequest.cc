@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitFacerecogJobRequest;
 
 SubmitFacerecogJobRequest::SubmitFacerecogJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitFacerecogJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFacerecogJobRequest::~SubmitFacerecogJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitFacerecogJobRequest::getResourceOwnerId()const
 void SubmitFacerecogJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitFacerecogJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitFacerecogJobRequest::getAccessKeyId()const
 void SubmitFacerecogJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitFacerecogJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitFacerecogJobRequest::getUserData()const
 void SubmitFacerecogJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitFacerecogJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitFacerecogJobRequest::getResourceOwnerAccount()const
 void SubmitFacerecogJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitFacerecogJobRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitFacerecogJobRequest::getOwnerAccount()const
 void SubmitFacerecogJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitFacerecogJobRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SubmitFacerecogJobRequest::getOwnerId()const
 void SubmitFacerecogJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitFacerecogJobRequest::getFacerecogConfig()const
@@ -99,7 +101,7 @@ std::string SubmitFacerecogJobRequest::getFacerecogConfig()const
 void SubmitFacerecogJobRequest::setFacerecogConfig(const std::string& facerecogConfig)
 {
 	facerecogConfig_ = facerecogConfig;
-	setCoreParameter("FacerecogConfig", facerecogConfig);
+	setParameter("FacerecogConfig", facerecogConfig);
 }
 
 std::string SubmitFacerecogJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitFacerecogJobRequest::getPipelineId()const
 void SubmitFacerecogJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitFacerecogJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitFacerecogJobRequest::getInput()const
 void SubmitFacerecogJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

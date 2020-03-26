@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeTagsRequest;
 
 DescribeTagsRequest::DescribeTagsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTagsRequest::~DescribeTagsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeTagsRequest::getResourceOwnerId()const
 void DescribeTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeTagsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeTagsRequest::getAccessKeyId()const
 void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTagsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeTagsRequest::getRegionId()const
 void DescribeTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeTagsRequest::getResourceOwnerAccount()const
 void DescribeTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTagsRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeTagsRequest::getOwnerAccount()const
 void DescribeTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeTagsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeTagsRequest::getOwnerId()const
 void DescribeTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeTagsRequest::getResourceType()const
@@ -99,6 +101,6 @@ std::string DescribeTagsRequest::getResourceType()const
 void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 

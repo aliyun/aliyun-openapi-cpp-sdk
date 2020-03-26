@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateClusterRequest;
 
 CreateClusterRequest::CreateClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateClusterRequest::~CreateClusterRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreateClusterRequest::getRegionId()const
 void CreateClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CreateClusterRequest::getOrderId()const
@@ -44,7 +47,7 @@ std::string CreateClusterRequest::getOrderId()const
 void CreateClusterRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setBodyParameter("OrderId", orderId);
 }
 
 std::string CreateClusterRequest::getUserOssBucket()const
@@ -55,7 +58,7 @@ std::string CreateClusterRequest::getUserOssBucket()const
 void CreateClusterRequest::setUserOssBucket(const std::string& userOssBucket)
 {
 	userOssBucket_ = userOssBucket;
-	setCoreParameter("UserOssBucket", userOssBucket);
+	setBodyParameter("UserOssBucket", userOssBucket);
 }
 
 std::string CreateClusterRequest::getDisplayName()const
@@ -66,7 +69,7 @@ std::string CreateClusterRequest::getDisplayName()const
 void CreateClusterRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setBodyParameter("DisplayName", displayName);
 }
 
 std::string CreateClusterRequest::getUserVpcId()const
@@ -77,7 +80,7 @@ std::string CreateClusterRequest::getUserVpcId()const
 void CreateClusterRequest::setUserVpcId(const std::string& userVpcId)
 {
 	userVpcId_ = userVpcId;
-	setCoreParameter("UserVpcId", userVpcId);
+	setBodyParameter("UserVpcId", userVpcId);
 }
 
 std::string CreateClusterRequest::getZoneId()const
@@ -88,7 +91,7 @@ std::string CreateClusterRequest::getZoneId()const
 void CreateClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setBodyParameter("ZoneId", zoneId);
 }
 
 std::string CreateClusterRequest::getDescription()const
@@ -99,7 +102,7 @@ std::string CreateClusterRequest::getDescription()const
 void CreateClusterRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreateClusterRequest::getUserVSwitch()const
@@ -110,6 +113,6 @@ std::string CreateClusterRequest::getUserVSwitch()const
 void CreateClusterRequest::setUserVSwitch(const std::string& userVSwitch)
 {
 	userVSwitch_ = userVSwitch;
-	setCoreParameter("UserVSwitch", userVSwitch);
+	setBodyParameter("UserVSwitch", userVSwitch);
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT ModifyApiGroupRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;
@@ -50,8 +51,16 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getCompatibleFlags()const;
+				void setCompatibleFlags(const std::string& compatibleFlags);
+				std::string getRpcPattern()const;
+				void setRpcPattern(const std::string& rpcPattern);
+				std::string getUserLogConfig()const;
+				void setUserLogConfig(const std::string& userLogConfig);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getCustomTraceConfig()const;
+				void setCustomTraceConfig(const std::string& customTraceConfig);
 
             private:
 				std::string groupId_;
@@ -59,7 +68,11 @@ namespace AlibabaCloud
 				std::string groupName_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string compatibleFlags_;
+				std::string rpcPattern_;
+				std::string userLogConfig_;
 				std::vector<Tag> tag_;
+				std::string customTraceConfig_;
 
 			};
 		}

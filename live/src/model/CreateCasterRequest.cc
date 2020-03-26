@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateCasterRequest;
 
 CreateCasterRequest::CreateCasterRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateCaster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCasterRequest::~CreateCasterRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCasterRequest::getClientToken()const
 void CreateCasterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateCasterRequest::getCasterName()const
@@ -44,7 +46,7 @@ std::string CreateCasterRequest::getCasterName()const
 void CreateCasterRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
+	setParameter("CasterName", casterName);
 }
 
 std::string CreateCasterRequest::getCasterTemplate()const
@@ -55,7 +57,7 @@ std::string CreateCasterRequest::getCasterTemplate()const
 void CreateCasterRequest::setCasterTemplate(const std::string& casterTemplate)
 {
 	casterTemplate_ = casterTemplate;
-	setCoreParameter("CasterTemplate", casterTemplate);
+	setParameter("CasterTemplate", casterTemplate);
 }
 
 std::string CreateCasterRequest::getExpireTime()const
@@ -66,7 +68,7 @@ std::string CreateCasterRequest::getExpireTime()const
 void CreateCasterRequest::setExpireTime(const std::string& expireTime)
 {
 	expireTime_ = expireTime;
-	setCoreParameter("ExpireTime", expireTime);
+	setParameter("ExpireTime", expireTime);
 }
 
 int CreateCasterRequest::getNormType()const
@@ -77,7 +79,7 @@ int CreateCasterRequest::getNormType()const
 void CreateCasterRequest::setNormType(int normType)
 {
 	normType_ = normType;
-	setCoreParameter("NormType", std::to_string(normType));
+	setParameter("NormType", std::to_string(normType));
 }
 
 long CreateCasterRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long CreateCasterRequest::getOwnerId()const
 void CreateCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCasterRequest::getPurchaseTime()const
@@ -99,7 +101,7 @@ std::string CreateCasterRequest::getPurchaseTime()const
 void CreateCasterRequest::setPurchaseTime(const std::string& purchaseTime)
 {
 	purchaseTime_ = purchaseTime;
-	setCoreParameter("PurchaseTime", purchaseTime);
+	setParameter("PurchaseTime", purchaseTime);
 }
 
 std::string CreateCasterRequest::getChargeType()const
@@ -110,6 +112,6 @@ std::string CreateCasterRequest::getChargeType()const
 void CreateCasterRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 

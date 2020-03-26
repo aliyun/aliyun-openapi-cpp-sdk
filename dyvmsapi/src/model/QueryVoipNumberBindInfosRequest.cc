@@ -35,7 +35,7 @@ long QueryVoipNumberBindInfosRequest::getResourceOwnerId()const
 void QueryVoipNumberBindInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVoipNumberBindInfosRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string QueryVoipNumberBindInfosRequest::getResourceOwnerAccount()const
 void QueryVoipNumberBindInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVoipNumberBindInfosRequest::getPhoneNumber()const
@@ -57,7 +57,7 @@ std::string QueryVoipNumberBindInfosRequest::getPhoneNumber()const
 void QueryVoipNumberBindInfosRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 long QueryVoipNumberBindInfosRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long QueryVoipNumberBindInfosRequest::getOwnerId()const
 void QueryVoipNumberBindInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVoipNumberBindInfosRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string QueryVoipNumberBindInfosRequest::getAccessKeyId()const
 void QueryVoipNumberBindInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryVoipNumberBindInfosRequest::getVoipId()const
@@ -90,6 +90,6 @@ std::string QueryVoipNumberBindInfosRequest::getVoipId()const
 void QueryVoipNumberBindInfosRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", voipId);
+	setParameter("VoipId", voipId);
 }
 

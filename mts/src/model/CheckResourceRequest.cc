@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CheckResourceRequest;
 
 CheckResourceRequest::CheckResourceRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CheckResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckResourceRequest::~CheckResourceRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckResourceRequest::getCountry()const
 void CheckResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setParameter("Country", country);
 }
 
 long CheckResourceRequest::getHid()const
@@ -44,7 +46,7 @@ long CheckResourceRequest::getHid()const
 void CheckResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", std::to_string(hid));
+	setParameter("Hid", std::to_string(hid));
 }
 
 long CheckResourceRequest::getLevel()const
@@ -55,7 +57,7 @@ long CheckResourceRequest::getLevel()const
 void CheckResourceRequest::setLevel(long level)
 {
 	level_ = level;
-	setCoreParameter("Level", std::to_string(level));
+	setParameter("Level", std::to_string(level));
 }
 
 std::string CheckResourceRequest::getInvoker()const
@@ -66,7 +68,7 @@ std::string CheckResourceRequest::getInvoker()const
 void CheckResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setCoreParameter("Invoker", invoker);
+	setParameter("Invoker", invoker);
 }
 
 std::string CheckResourceRequest::getMessage()const
@@ -77,7 +79,7 @@ std::string CheckResourceRequest::getMessage()const
 void CheckResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", message);
+	setParameter("Message", message);
 }
 
 std::string CheckResourceRequest::getUrl()const
@@ -88,7 +90,7 @@ std::string CheckResourceRequest::getUrl()const
 void CheckResourceRequest::setUrl(const std::string& url)
 {
 	url_ = url;
-	setCoreParameter("Url", url);
+	setParameter("Url", url);
 }
 
 bool CheckResourceRequest::getSuccess()const
@@ -99,7 +101,7 @@ bool CheckResourceRequest::getSuccess()const
 void CheckResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success ? "true" : "false");
+	setParameter("Success", success ? "true" : "false");
 }
 
 bool CheckResourceRequest::getInterrupt()const
@@ -110,7 +112,7 @@ bool CheckResourceRequest::getInterrupt()const
 void CheckResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt ? "true" : "false");
+	setParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string CheckResourceRequest::getGmtWakeup()const
@@ -121,7 +123,7 @@ std::string CheckResourceRequest::getGmtWakeup()const
 void CheckResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setCoreParameter("GmtWakeup", gmtWakeup);
+	setParameter("GmtWakeup", gmtWakeup);
 }
 
 std::string CheckResourceRequest::getPk()const
@@ -132,7 +134,7 @@ std::string CheckResourceRequest::getPk()const
 void CheckResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setCoreParameter("Pk", pk);
+	setParameter("Pk", pk);
 }
 
 std::string CheckResourceRequest::getBid()const
@@ -143,7 +145,7 @@ std::string CheckResourceRequest::getBid()const
 void CheckResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", bid);
+	setParameter("Bid", bid);
 }
 
 std::string CheckResourceRequest::getPrompt()const
@@ -154,7 +156,7 @@ std::string CheckResourceRequest::getPrompt()const
 void CheckResourceRequest::setPrompt(const std::string& prompt)
 {
 	prompt_ = prompt;
-	setCoreParameter("Prompt", prompt);
+	setParameter("Prompt", prompt);
 }
 
 std::string CheckResourceRequest::getTaskExtraData()const
@@ -165,7 +167,7 @@ std::string CheckResourceRequest::getTaskExtraData()const
 void CheckResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setCoreParameter("TaskExtraData", taskExtraData);
+	setParameter("TaskExtraData", taskExtraData);
 }
 
 std::string CheckResourceRequest::getTaskIdentifier()const
@@ -176,6 +178,6 @@ std::string CheckResourceRequest::getTaskIdentifier()const
 void CheckResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setCoreParameter("TaskIdentifier", taskIdentifier);
+	setParameter("TaskIdentifier", taskIdentifier);
 }
 

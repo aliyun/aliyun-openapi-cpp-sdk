@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveStreamDelayConfigRequest;
 
 SetLiveStreamDelayConfigRequest::SetLiveStreamDelayConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamDelayConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveStreamDelayConfigRequest::~SetLiveStreamDelayConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLiveStreamDelayConfigRequest::getFlvLevel()const
 void SetLiveStreamDelayConfigRequest::setFlvLevel(const std::string& flvLevel)
 {
 	flvLevel_ = flvLevel;
-	setCoreParameter("FlvLevel", flvLevel);
+	setParameter("FlvLevel", flvLevel);
 }
 
 std::string SetLiveStreamDelayConfigRequest::getHlsLevel()const
@@ -44,7 +46,7 @@ std::string SetLiveStreamDelayConfigRequest::getHlsLevel()const
 void SetLiveStreamDelayConfigRequest::setHlsLevel(const std::string& hlsLevel)
 {
 	hlsLevel_ = hlsLevel;
-	setCoreParameter("HlsLevel", hlsLevel);
+	setParameter("HlsLevel", hlsLevel);
 }
 
 int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
@@ -55,7 +57,7 @@ int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
 void SetLiveStreamDelayConfigRequest::setRtmpDelay(int rtmpDelay)
 {
 	rtmpDelay_ = rtmpDelay;
-	setCoreParameter("RtmpDelay", std::to_string(rtmpDelay));
+	setParameter("RtmpDelay", std::to_string(rtmpDelay));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string SetLiveStreamDelayConfigRequest::getDomainName()const
 void SetLiveStreamDelayConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetLiveStreamDelayConfigRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long SetLiveStreamDelayConfigRequest::getOwnerId()const
 void SetLiveStreamDelayConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SetLiveStreamDelayConfigRequest::getFlvDelay()const
@@ -88,7 +90,7 @@ int SetLiveStreamDelayConfigRequest::getFlvDelay()const
 void SetLiveStreamDelayConfigRequest::setFlvDelay(int flvDelay)
 {
 	flvDelay_ = flvDelay;
-	setCoreParameter("FlvDelay", std::to_string(flvDelay));
+	setParameter("FlvDelay", std::to_string(flvDelay));
 }
 
 std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
@@ -99,7 +101,7 @@ std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
 void SetLiveStreamDelayConfigRequest::setRtmpLevel(const std::string& rtmpLevel)
 {
 	rtmpLevel_ = rtmpLevel;
-	setCoreParameter("RtmpLevel", rtmpLevel);
+	setParameter("RtmpLevel", rtmpLevel);
 }
 
 int SetLiveStreamDelayConfigRequest::getHlsDelay()const
@@ -110,6 +112,6 @@ int SetLiveStreamDelayConfigRequest::getHlsDelay()const
 void SetLiveStreamDelayConfigRequest::setHlsDelay(int hlsDelay)
 {
 	hlsDelay_ = hlsDelay;
-	setCoreParameter("HlsDelay", std::to_string(hlsDelay));
+	setParameter("HlsDelay", std::to_string(hlsDelay));
 }
 

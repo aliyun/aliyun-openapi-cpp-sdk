@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteQosCarRequest;
 
 DeleteQosCarRequest::DeleteQosCarRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteQosCar")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteQosCarRequest::~DeleteQosCarRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteQosCarRequest::getResourceOwnerId()const
 void DeleteQosCarRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteQosCarRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteQosCarRequest::getRegionId()const
 void DeleteQosCarRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteQosCarRequest::getQosId()const
@@ -55,7 +57,7 @@ std::string DeleteQosCarRequest::getQosId()const
 void DeleteQosCarRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string DeleteQosCarRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteQosCarRequest::getResourceOwnerAccount()const
 void DeleteQosCarRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteQosCarRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteQosCarRequest::getOwnerAccount()const
 void DeleteQosCarRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteQosCarRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteQosCarRequest::getOwnerId()const
 void DeleteQosCarRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteQosCarRequest::getQosCarId()const
@@ -99,6 +101,6 @@ std::string DeleteQosCarRequest::getQosCarId()const
 void DeleteQosCarRequest::setQosCarId(const std::string& qosCarId)
 {
 	qosCarId_ = qosCarId;
-	setCoreParameter("QosCarId", qosCarId);
+	setParameter("QosCarId", qosCarId);
 }
 

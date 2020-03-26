@@ -35,7 +35,7 @@ std::string CreateEntityRequest::getEntityName()const
 void CreateEntityRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setParameter("EntityName", entityName);
 }
 
 long CreateEntityRequest::getDialogId()const
@@ -46,7 +46,7 @@ long CreateEntityRequest::getDialogId()const
 void CreateEntityRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setParameter("DialogId", std::to_string(dialogId));
 }
 
 std::string CreateEntityRequest::getRegex()const
@@ -57,7 +57,7 @@ std::string CreateEntityRequest::getRegex()const
 void CreateEntityRequest::setRegex(const std::string& regex)
 {
 	regex_ = regex;
-	setCoreParameter("Regex", regex);
+	setParameter("Regex", regex);
 }
 
 std::string CreateEntityRequest::getEntityType()const
@@ -68,7 +68,7 @@ std::string CreateEntityRequest::getEntityType()const
 void CreateEntityRequest::setEntityType(const std::string& entityType)
 {
 	entityType_ = entityType;
-	setCoreParameter("EntityType", entityType);
+	setParameter("EntityType", entityType);
 }
 
 std::string CreateEntityRequest::getMembers()const
@@ -79,6 +79,6 @@ std::string CreateEntityRequest::getMembers()const
 void CreateEntityRequest::setMembers(const std::string& members)
 {
 	members_ = members;
-	setCoreParameter("Members", members);
+	setBodyParameter("Members", members);
 }
 

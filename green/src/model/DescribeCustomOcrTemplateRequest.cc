@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeCustomOcrTemplateRequest;
 
 DescribeCustomOcrTemplateRequest::DescribeCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCustomOcrTemplateRequest::~DescribeCustomOcrTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCustomOcrTemplateRequest::getSourceIp()const
 void DescribeCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCustomOcrTemplateRequest::getIds()const
@@ -44,6 +46,6 @@ std::string DescribeCustomOcrTemplateRequest::getIds()const
 void DescribeCustomOcrTemplateRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 

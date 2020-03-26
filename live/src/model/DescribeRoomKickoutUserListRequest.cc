@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRoomKickoutUserListRequest;
 
 DescribeRoomKickoutUserListRequest::DescribeRoomKickoutUserListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRoomKickoutUserList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRoomKickoutUserListRequest::~DescribeRoomKickoutUserListRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeRoomKickoutUserListRequest::getPageNum()const
 void DescribeRoomKickoutUserListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeRoomKickoutUserListRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeRoomKickoutUserListRequest::getPageSize()const
 void DescribeRoomKickoutUserListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getOrder()const
@@ -55,7 +57,7 @@ std::string DescribeRoomKickoutUserListRequest::getOrder()const
 void DescribeRoomKickoutUserListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 long DescribeRoomKickoutUserListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeRoomKickoutUserListRequest::getOwnerId()const
 void DescribeRoomKickoutUserListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRoomKickoutUserListRequest::getRoomId()const
@@ -77,7 +79,7 @@ std::string DescribeRoomKickoutUserListRequest::getRoomId()const
 void DescribeRoomKickoutUserListRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string DescribeRoomKickoutUserListRequest::getAppId()const
@@ -88,6 +90,6 @@ std::string DescribeRoomKickoutUserListRequest::getAppId()const
 void DescribeRoomKickoutUserListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

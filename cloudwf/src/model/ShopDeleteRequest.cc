@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopDeleteRequest;
 
 ShopDeleteRequest::ShopDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopDeleteRequest::~ShopDeleteRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopDeleteRequest::getAccessKeyId()const
 void ShopDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopDeleteRequest::getSid()const
@@ -44,6 +46,6 @@ long ShopDeleteRequest::getSid()const
 void ShopDeleteRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 

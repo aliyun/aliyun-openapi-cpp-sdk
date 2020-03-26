@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT ModifyFlowJobRequest : public RpcServiceRequest
 			{
+			public:
 				struct ResourceList
 				{
 					std::string path;
@@ -66,6 +67,8 @@ namespace AlibabaCloud
 				void setProjectId(const std::string& projectId);
 				std::string getEnvConf()const;
 				void setEnvConf(const std::string& envConf);
+				long getMaxRunningTimeSec()const;
+				void setMaxRunningTimeSec(long maxRunningTimeSec);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getParams()const;
@@ -91,6 +94,7 @@ namespace AlibabaCloud
 				std::string alertConf_;
 				std::string projectId_;
 				std::string envConf_;
+				long maxRunningTimeSec_;
 				std::string clusterId_;
 				std::string params_;
 				std::string customVariables_;

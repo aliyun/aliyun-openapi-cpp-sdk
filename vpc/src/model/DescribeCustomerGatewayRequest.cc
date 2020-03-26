@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeCustomerGatewayRequest;
 
 DescribeCustomerGatewayRequest::DescribeCustomerGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeCustomerGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCustomerGatewayRequest::~DescribeCustomerGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCustomerGatewayRequest::getResourceOwnerId()const
 void DescribeCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCustomerGatewayRequest::getCustomerGatewayId()const
@@ -44,7 +46,7 @@ std::string DescribeCustomerGatewayRequest::getCustomerGatewayId()const
 void DescribeCustomerGatewayRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setParameter("CustomerGatewayId", customerGatewayId);
 }
 
 std::string DescribeCustomerGatewayRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeCustomerGatewayRequest::getRegionId()const
 void DescribeCustomerGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeCustomerGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeCustomerGatewayRequest::getResourceOwnerAccount()const
 void DescribeCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCustomerGatewayRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeCustomerGatewayRequest::getOwnerAccount()const
 void DescribeCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCustomerGatewayRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeCustomerGatewayRequest::getOwnerId()const
 void DescribeCustomerGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

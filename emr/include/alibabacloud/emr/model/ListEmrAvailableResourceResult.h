@@ -61,7 +61,6 @@ namespace AlibabaCloud
 							int max;
 							EmrInstanceType emrInstanceType;
 							std::string value;
-							std::string value1;
 							std::vector<std::string> supportNodeTypeList;
 							std::string unit;
 						};

@@ -79,6 +79,7 @@ namespace AlibabaCloud
 					std::string type;
 					std::string creationTime;
 					std::string accessPointId;
+					std::string pConnVbrExpireTime;
 					std::string physicalConnectionBusinessStatus;
 				};
 

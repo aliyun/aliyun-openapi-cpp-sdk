@@ -35,7 +35,7 @@ std::string DeleteReplicationJobRequest::getResourceOwnerAccount()const
 void DeleteReplicationJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteReplicationJobRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DeleteReplicationJobRequest::getOwnerId()const
 void DeleteReplicationJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteReplicationJobRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DeleteReplicationJobRequest::getAccessKeyId()const
 void DeleteReplicationJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteReplicationJobRequest::getJobId()const
@@ -68,6 +68,6 @@ std::string DeleteReplicationJobRequest::getJobId()const
 void DeleteReplicationJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 

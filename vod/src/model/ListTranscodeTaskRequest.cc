@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListTranscodeTaskRequest;
 
 ListTranscodeTaskRequest::ListTranscodeTaskRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListTranscodeTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTranscodeTaskRequest::~ListTranscodeTaskRequest()
 {}
@@ -33,7 +35,7 @@ long ListTranscodeTaskRequest::getResourceOwnerId()const
 void ListTranscodeTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListTranscodeTaskRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string ListTranscodeTaskRequest::getStartTime()const
 void ListTranscodeTaskRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string ListTranscodeTaskRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListTranscodeTaskRequest::getAccessKeyId()const
 void ListTranscodeTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListTranscodeTaskRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListTranscodeTaskRequest::getPageSize()const
 void ListTranscodeTaskRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListTranscodeTaskRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ListTranscodeTaskRequest::getResourceOwnerAccount()const
 void ListTranscodeTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListTranscodeTaskRequest::getEndTime()const
@@ -88,7 +90,7 @@ std::string ListTranscodeTaskRequest::getEndTime()const
 void ListTranscodeTaskRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string ListTranscodeTaskRequest::getVideoId()const
@@ -99,7 +101,7 @@ std::string ListTranscodeTaskRequest::getVideoId()const
 void ListTranscodeTaskRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long ListTranscodeTaskRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ListTranscodeTaskRequest::getOwnerId()const
 void ListTranscodeTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListTranscodeTaskRequest::getPageNo()const
@@ -121,6 +123,6 @@ int ListTranscodeTaskRequest::getPageNo()const
 void ListTranscodeTaskRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 

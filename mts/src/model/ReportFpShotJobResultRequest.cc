@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportFpShotJobResultRequest;
 
 ReportFpShotJobResultRequest::ReportFpShotJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportFpShotJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportFpShotJobResultRequest::~ReportFpShotJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportFpShotJobResultRequest::getResourceOwnerId()const
 void ReportFpShotJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportFpShotJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportFpShotJobResultRequest::getAccessKeyId()const
 void ReportFpShotJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportFpShotJobResultRequest::getResult()const
@@ -55,7 +57,7 @@ std::string ReportFpShotJobResultRequest::getResult()const
 void ReportFpShotJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", result);
+	setParameter("Result", result);
 }
 
 std::string ReportFpShotJobResultRequest::getJobId()const
@@ -66,7 +68,7 @@ std::string ReportFpShotJobResultRequest::getJobId()const
 void ReportFpShotJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportFpShotJobResultRequest::getDetails()const
@@ -77,7 +79,7 @@ std::string ReportFpShotJobResultRequest::getDetails()const
 void ReportFpShotJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setParameter("Details", details);
 }
 
 std::string ReportFpShotJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ReportFpShotJobResultRequest::getResourceOwnerAccount()const
 void ReportFpShotJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportFpShotJobResultRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ReportFpShotJobResultRequest::getOwnerAccount()const
 void ReportFpShotJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReportFpShotJobResultRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ReportFpShotJobResultRequest::getOwnerId()const
 void ReportFpShotJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

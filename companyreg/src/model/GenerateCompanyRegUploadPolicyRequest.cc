@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::GenerateCompanyRegUploadPolicyRequest;
 
 GenerateCompanyRegUploadPolicyRequest::GenerateCompanyRegUploadPolicyRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateCompanyRegUploadPolicyRequest::~GenerateCompanyRegUploadPolicyRequest()
 {}
@@ -33,7 +35,7 @@ std::string GenerateCompanyRegUploadPolicyRequest::getData()const
 void GenerateCompanyRegUploadPolicyRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string GenerateCompanyRegUploadPolicyRequest::getBizCode()const
@@ -44,7 +46,7 @@ std::string GenerateCompanyRegUploadPolicyRequest::getBizCode()const
 void GenerateCompanyRegUploadPolicyRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string GenerateCompanyRegUploadPolicyRequest::getBizSubCode()const
@@ -55,6 +57,6 @@ std::string GenerateCompanyRegUploadPolicyRequest::getBizSubCode()const
 void GenerateCompanyRegUploadPolicyRequest::setBizSubCode(const std::string& bizSubCode)
 {
 	bizSubCode_ = bizSubCode;
-	setCoreParameter("BizSubCode", bizSubCode);
+	setParameter("BizSubCode", bizSubCode);
 }
 

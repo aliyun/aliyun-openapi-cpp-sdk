@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListVirtualMFADevicesRequest;
 
 ListVirtualMFADevicesRequest::ListVirtualMFADevicesRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListVirtualMFADevices")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVirtualMFADevicesRequest::~ListVirtualMFADevicesRequest()
 {}

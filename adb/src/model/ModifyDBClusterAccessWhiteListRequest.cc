@@ -35,7 +35,7 @@ long ModifyDBClusterAccessWhiteListRequest::getResourceOwnerId()const
 void ModifyDBClusterAccessWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getSecurityIps()const
@@ -46,7 +46,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getSecurityIps()const
 void ModifyDBClusterAccessWhiteListRequest::setSecurityIps(const std::string& securityIps)
 {
 	securityIps_ = securityIps;
-	setCoreParameter("SecurityIps", securityIps);
+	setParameter("SecurityIps", securityIps);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterIPArrayAttribute()const
@@ -57,7 +57,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterIPArrayAttribute(
 void ModifyDBClusterAccessWhiteListRequest::setDBClusterIPArrayAttribute(const std::string& dBClusterIPArrayAttribute)
 {
 	dBClusterIPArrayAttribute_ = dBClusterIPArrayAttribute;
-	setCoreParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
+	setParameter("DBClusterIPArrayAttribute", dBClusterIPArrayAttribute);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getAccessKeyId()const
 void ModifyDBClusterAccessWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getModifyMode()const
@@ -79,7 +79,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getModifyMode()const
 void ModifyDBClusterAccessWhiteListRequest::setModifyMode(const std::string& modifyMode)
 {
 	modifyMode_ = modifyMode;
-	setCoreParameter("ModifyMode", modifyMode);
+	setParameter("ModifyMode", modifyMode);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getResourceOwnerAccount()cons
 void ModifyDBClusterAccessWhiteListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterId()const
@@ -101,7 +101,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterId()const
 void ModifyDBClusterAccessWhiteListRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getOwnerAccount()const
@@ -112,7 +112,7 @@ std::string ModifyDBClusterAccessWhiteListRequest::getOwnerAccount()const
 void ModifyDBClusterAccessWhiteListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBClusterAccessWhiteListRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long ModifyDBClusterAccessWhiteListRequest::getOwnerId()const
 void ModifyDBClusterAccessWhiteListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterIPArrayName()const
@@ -134,6 +134,6 @@ std::string ModifyDBClusterAccessWhiteListRequest::getDBClusterIPArrayName()cons
 void ModifyDBClusterAccessWhiteListRequest::setDBClusterIPArrayName(const std::string& dBClusterIPArrayName)
 {
 	dBClusterIPArrayName_ = dBClusterIPArrayName;
-	setCoreParameter("DBClusterIPArrayName", dBClusterIPArrayName);
+	setParameter("DBClusterIPArrayName", dBClusterIPArrayName);
 }
 

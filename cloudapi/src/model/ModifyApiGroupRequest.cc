@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyApiGroupRequest;
 
 ModifyApiGroupRequest::ModifyApiGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyApiGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyApiGroupRequest::~ModifyApiGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyApiGroupRequest::getGroupId()const
 void ModifyApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string ModifyApiGroupRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyApiGroupRequest::getDescription()const
 void ModifyApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyApiGroupRequest::getGroupName()const
@@ -55,7 +57,7 @@ std::string ModifyApiGroupRequest::getGroupName()const
 void ModifyApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string ModifyApiGroupRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ModifyApiGroupRequest::getAccessKeyId()const
 void ModifyApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyApiGroupRequest::getSecurityToken()const
@@ -77,7 +79,40 @@ std::string ModifyApiGroupRequest::getSecurityToken()const
 void ModifyApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string ModifyApiGroupRequest::getCompatibleFlags()const
+{
+	return compatibleFlags_;
+}
+
+void ModifyApiGroupRequest::setCompatibleFlags(const std::string& compatibleFlags)
+{
+	compatibleFlags_ = compatibleFlags;
+	setParameter("CompatibleFlags", compatibleFlags);
+}
+
+std::string ModifyApiGroupRequest::getRpcPattern()const
+{
+	return rpcPattern_;
+}
+
+void ModifyApiGroupRequest::setRpcPattern(const std::string& rpcPattern)
+{
+	rpcPattern_ = rpcPattern;
+	setParameter("RpcPattern", rpcPattern);
+}
+
+std::string ModifyApiGroupRequest::getUserLogConfig()const
+{
+	return userLogConfig_;
+}
+
+void ModifyApiGroupRequest::setUserLogConfig(const std::string& userLogConfig)
+{
+	userLogConfig_ = userLogConfig;
+	setParameter("UserLogConfig", userLogConfig);
 }
 
 std::vector<ModifyApiGroupRequest::Tag> ModifyApiGroupRequest::getTag()const
@@ -88,12 +123,22 @@ std::vector<ModifyApiGroupRequest::Tag> ModifyApiGroupRequest::getTag()const
 void ModifyApiGroupRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
+}
+
+std::string ModifyApiGroupRequest::getCustomTraceConfig()const
+{
+	return customTraceConfig_;
+}
+
+void ModifyApiGroupRequest::setCustomTraceConfig(const std::string& customTraceConfig)
+{
+	customTraceConfig_ = customTraceConfig;
+	setParameter("CustomTraceConfig", customTraceConfig);
 }
 

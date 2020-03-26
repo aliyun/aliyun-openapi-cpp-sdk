@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getIpType()const;
+				void setIpType(const std::string& ipType);
 				std::string getIpInstanceId()const;
 				void setIpInstanceId(const std::string& ipInstanceId);
 
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string ipType_;
 				std::string ipInstanceId_;
 
 			};

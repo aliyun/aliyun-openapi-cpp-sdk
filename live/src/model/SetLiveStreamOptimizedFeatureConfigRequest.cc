@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveStreamOptimizedFeatureConfigRequest;
 
 SetLiveStreamOptimizedFeatureConfigRequest::SetLiveStreamOptimizedFeatureConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveStreamOptimizedFeatureConfigRequest::~SetLiveStreamOptimizedFeatureConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLiveStreamOptimizedFeatureConfigRequest::getConfigStatus()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setConfigStatus(const std::string& configStatus)
 {
 	configStatus_ = configStatus;
-	setCoreParameter("ConfigStatus", configStatus);
+	setParameter("ConfigStatus", configStatus);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getConfigName()const
@@ -44,7 +46,7 @@ std::string SetLiveStreamOptimizedFeatureConfigRequest::getConfigName()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string SetLiveStreamOptimizedFeatureConfigRequest::getDomainName()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetLiveStreamOptimizedFeatureConfigRequest::getConfigValue()const
@@ -66,7 +68,7 @@ std::string SetLiveStreamOptimizedFeatureConfigRequest::getConfigValue()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setConfigValue(const std::string& configValue)
 {
 	configValue_ = configValue;
-	setCoreParameter("ConfigValue", configValue);
+	setParameter("ConfigValue", configValue);
 }
 
 long SetLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long SetLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
 void SetLiveStreamOptimizedFeatureConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

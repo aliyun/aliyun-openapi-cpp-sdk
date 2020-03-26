@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyNatGatewayAttributeRequest;
 
 ModifyNatGatewayAttributeRequest::ModifyNatGatewayAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyNatGatewayAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNatGatewayAttributeRequest::~ModifyNatGatewayAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyNatGatewayAttributeRequest::getResourceOwnerId()const
 void ModifyNatGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyNatGatewayAttributeRequest::getDescription()const
 void ModifyNatGatewayAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyNatGatewayAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyNatGatewayAttributeRequest::getRegionId()const
 void ModifyNatGatewayAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyNatGatewayAttributeRequest::getNatGatewayId()const
@@ -66,7 +68,7 @@ std::string ModifyNatGatewayAttributeRequest::getNatGatewayId()const
 void ModifyNatGatewayAttributeRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setParameter("NatGatewayId", natGatewayId);
 }
 
 std::string ModifyNatGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyNatGatewayAttributeRequest::getResourceOwnerAccount()const
 void ModifyNatGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyNatGatewayAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyNatGatewayAttributeRequest::getOwnerAccount()const
 void ModifyNatGatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyNatGatewayAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ModifyNatGatewayAttributeRequest::getOwnerId()const
 void ModifyNatGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyNatGatewayAttributeRequest::getName()const
@@ -110,6 +112,6 @@ std::string ModifyNatGatewayAttributeRequest::getName()const
 void ModifyNatGatewayAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

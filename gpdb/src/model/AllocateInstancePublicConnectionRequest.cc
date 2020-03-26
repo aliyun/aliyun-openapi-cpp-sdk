@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::AllocateInstancePublicConnectionRequest;
 
 AllocateInstancePublicConnectionRequest::AllocateInstancePublicConnectionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "AllocateInstancePublicConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateInstancePublicConnectionRequest::~AllocateInstancePublicConnectionRequest()
 {}
@@ -33,7 +35,7 @@ long AllocateInstancePublicConnectionRequest::getResourceOwnerId()const
 void AllocateInstancePublicConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getConnectionStringPrefix()const
@@ -44,7 +46,7 @@ std::string AllocateInstancePublicConnectionRequest::getConnectionStringPrefix()
 void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AllocateInstancePublicConnectionRequest::getAccessKeyId()const
 void AllocateInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AllocateInstancePublicConnectionRequest::getDBInstanceId()const
@@ -66,7 +68,7 @@ std::string AllocateInstancePublicConnectionRequest::getDBInstanceId()const
 void AllocateInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AllocateInstancePublicConnectionRequest::getResourceOwnerAccount()co
 void AllocateInstancePublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AllocateInstancePublicConnectionRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AllocateInstancePublicConnectionRequest::getOwnerId()const
 void AllocateInstancePublicConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllocateInstancePublicConnectionRequest::getPort()const
@@ -99,6 +101,6 @@ std::string AllocateInstancePublicConnectionRequest::getPort()const
 void AllocateInstancePublicConnectionRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setParameter("Port", port);
 }
 

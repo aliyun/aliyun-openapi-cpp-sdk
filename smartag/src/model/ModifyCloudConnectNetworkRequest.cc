@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyCloudConnectNetworkRequest;
 
 ModifyCloudConnectNetworkRequest::ModifyCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCloudConnectNetworkRequest::~ModifyCloudConnectNetworkRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyCloudConnectNetworkRequest::getResourceOwnerId()const
 void ModifyCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getCcnId()const
@@ -44,7 +46,7 @@ std::string ModifyCloudConnectNetworkRequest::getCcnId()const
 void ModifyCloudConnectNetworkRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setParameter("CcnId", ccnId);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string ModifyCloudConnectNetworkRequest::getDescription()const
 void ModifyCloudConnectNetworkRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ModifyCloudConnectNetworkRequest::getRegionId()const
 void ModifyCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyCloudConnectNetworkRequest::getResourceOwnerAccount()const
 void ModifyCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyCloudConnectNetworkRequest::getOwnerAccount()const
 void ModifyCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCloudConnectNetworkRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ModifyCloudConnectNetworkRequest::getOwnerId()const
 void ModifyCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCloudConnectNetworkRequest::getName()const
@@ -110,7 +112,7 @@ std::string ModifyCloudConnectNetworkRequest::getName()const
 void ModifyCloudConnectNetworkRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getCidrBlock()const
@@ -121,7 +123,7 @@ std::string ModifyCloudConnectNetworkRequest::getCidrBlock()const
 void ModifyCloudConnectNetworkRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setParameter("CidrBlock", cidrBlock);
 }
 
 std::string ModifyCloudConnectNetworkRequest::getInterworkingStatus()const
@@ -132,6 +134,6 @@ std::string ModifyCloudConnectNetworkRequest::getInterworkingStatus()const
 void ModifyCloudConnectNetworkRequest::setInterworkingStatus(const std::string& interworkingStatus)
 {
 	interworkingStatus_ = interworkingStatus;
-	setCoreParameter("InterworkingStatus", interworkingStatus);
+	setParameter("InterworkingStatus", interworkingStatus);
 }
 

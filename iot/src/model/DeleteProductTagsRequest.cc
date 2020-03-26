@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteProductTagsRequest;
 
 DeleteProductTagsRequest::DeleteProductTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteProductTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProductTagsRequest::~DeleteProductTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteProductTagsRequest::getProductKey()const
 void DeleteProductTagsRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string DeleteProductTagsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteProductTagsRequest::getAccessKeyId()const
 void DeleteProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteProductTagsRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string DeleteProductTagsRequest::getIotInstanceId()const
 void DeleteProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> DeleteProductTagsRequest::getProductTagKey()const
@@ -66,7 +68,8 @@ std::vector<std::string> DeleteProductTagsRequest::getProductTagKey()const
 void DeleteProductTagsRequest::setProductTagKey(const std::vector<std::string>& productTagKey)
 {
 	productTagKey_ = productTagKey;
-	for(int i = 0; i!= productTagKey.size(); i++)
-		setCoreParameter("ProductTagKey."+ std::to_string(i), productTagKey.at(i));
+	for(int dep1 = 0; dep1!= productTagKey.size(); dep1++) {
+		setParameter("ProductTagKey."+ std::to_string(dep1), productTagKey.at(dep1));
+	}
 }
 

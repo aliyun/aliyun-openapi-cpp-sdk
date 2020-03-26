@@ -35,7 +35,7 @@ int CreateUserRequest::getCount()const
 void CreateUserRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setBodyParameter("Count", std::to_string(count));
 }
 
 std::string CreateUserRequest::getUserInfo()const
@@ -46,6 +46,6 @@ std::string CreateUserRequest::getUserInfo()const
 void CreateUserRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setCoreParameter("UserInfo", userInfo);
+	setBodyParameter("UserInfo", userInfo);
 }
 

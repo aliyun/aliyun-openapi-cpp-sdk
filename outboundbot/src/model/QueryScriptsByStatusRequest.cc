@@ -27,6 +27,19 @@ QueryScriptsByStatusRequest::QueryScriptsByStatusRequest() :
 QueryScriptsByStatusRequest::~QueryScriptsByStatusRequest()
 {}
 
+std::vector<std::string> QueryScriptsByStatusRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void QueryScriptsByStatusRequest::setStatusList(const std::vector<std::string>& statusList)
+{
+	statusList_ = statusList;
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
+}
+
 int QueryScriptsByStatusRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,16 +71,5 @@ void QueryScriptsByStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string QueryScriptsByStatusRequest::getStatus()const
-{
-	return status_;
-}
-
-void QueryScriptsByStatusRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
 }
 

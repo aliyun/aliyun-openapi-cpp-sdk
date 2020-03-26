@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCoverPipelineRequest;
 
 UpdateCoverPipelineRequest::UpdateCoverPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCoverPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCoverPipelineRequest::~UpdateCoverPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateCoverPipelineRequest::getResourceOwnerId()const
 void UpdateCoverPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateCoverPipelineRequest::getRole()const
@@ -44,7 +46,7 @@ std::string UpdateCoverPipelineRequest::getRole()const
 void UpdateCoverPipelineRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setParameter("Role", role);
 }
 
 std::string UpdateCoverPipelineRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UpdateCoverPipelineRequest::getAccessKeyId()const
 void UpdateCoverPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateCoverPipelineRequest::getState()const
@@ -66,7 +68,7 @@ std::string UpdateCoverPipelineRequest::getState()const
 void UpdateCoverPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string UpdateCoverPipelineRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UpdateCoverPipelineRequest::getResourceOwnerAccount()const
 void UpdateCoverPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateCoverPipelineRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string UpdateCoverPipelineRequest::getOwnerAccount()const
 void UpdateCoverPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateCoverPipelineRequest::getNotifyConfig()const
@@ -99,7 +101,7 @@ std::string UpdateCoverPipelineRequest::getNotifyConfig()const
 void UpdateCoverPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setParameter("NotifyConfig", notifyConfig);
 }
 
 long UpdateCoverPipelineRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long UpdateCoverPipelineRequest::getOwnerId()const
 void UpdateCoverPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateCoverPipelineRequest::getPriority()const
@@ -121,7 +123,7 @@ int UpdateCoverPipelineRequest::getPriority()const
 void UpdateCoverPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string UpdateCoverPipelineRequest::getPipelineId()const
@@ -132,7 +134,7 @@ std::string UpdateCoverPipelineRequest::getPipelineId()const
 void UpdateCoverPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string UpdateCoverPipelineRequest::getName()const
@@ -143,6 +145,6 @@ std::string UpdateCoverPipelineRequest::getName()const
 void UpdateCoverPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

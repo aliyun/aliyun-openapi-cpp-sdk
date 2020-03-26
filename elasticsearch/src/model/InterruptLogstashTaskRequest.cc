@@ -22,7 +22,7 @@ InterruptLogstashTaskRequest::InterruptLogstashTaskRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/actions/interrupt");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 InterruptLogstashTaskRequest::~InterruptLogstashTaskRequest()

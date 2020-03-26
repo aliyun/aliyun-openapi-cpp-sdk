@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::CreateMetricRuleResourcesRequest;
 CreateMetricRuleResourcesRequest::CreateMetricRuleResourcesRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "CreateMetricRuleResources")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CreateMetricRuleResourcesRequest::~CreateMetricRuleResourcesRequest()
@@ -35,7 +35,7 @@ std::string CreateMetricRuleResourcesRequest::getResources()const
 void CreateMetricRuleResourcesRequest::setResources(const std::string& resources)
 {
 	resources_ = resources;
-	setCoreParameter("Resources", resources);
+	setParameter("Resources", resources);
 }
 
 std::string CreateMetricRuleResourcesRequest::getRuleId()const
@@ -46,7 +46,7 @@ std::string CreateMetricRuleResourcesRequest::getRuleId()const
 void CreateMetricRuleResourcesRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 
 std::string CreateMetricRuleResourcesRequest::getOverwrite()const
@@ -57,6 +57,6 @@ std::string CreateMetricRuleResourcesRequest::getOverwrite()const
 void CreateMetricRuleResourcesRequest::setOverwrite(const std::string& overwrite)
 {
 	overwrite_ = overwrite;
-	setCoreParameter("Overwrite", overwrite);
+	setParameter("Overwrite", overwrite);
 }
 

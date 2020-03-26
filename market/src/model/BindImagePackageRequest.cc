@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::BindImagePackageRequest;
 
 BindImagePackageRequest::BindImagePackageRequest() :
 	RpcServiceRequest("market", "2015-11-01", "BindImagePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindImagePackageRequest::~BindImagePackageRequest()
 {}
@@ -33,7 +35,7 @@ std::string BindImagePackageRequest::getEcsInstanceId()const
 void BindImagePackageRequest::setEcsInstanceId(const std::string& ecsInstanceId)
 {
 	ecsInstanceId_ = ecsInstanceId;
-	setCoreParameter("EcsInstanceId", ecsInstanceId);
+	setParameter("EcsInstanceId", ecsInstanceId);
 }
 
 std::string BindImagePackageRequest::getImagePackageInstanceId()const
@@ -44,6 +46,6 @@ std::string BindImagePackageRequest::getImagePackageInstanceId()const
 void BindImagePackageRequest::setImagePackageInstanceId(const std::string& imagePackageInstanceId)
 {
 	imagePackageInstanceId_ = imagePackageInstanceId;
-	setCoreParameter("ImagePackageInstanceId", imagePackageInstanceId);
+	setParameter("ImagePackageInstanceId", imagePackageInstanceId);
 }
 

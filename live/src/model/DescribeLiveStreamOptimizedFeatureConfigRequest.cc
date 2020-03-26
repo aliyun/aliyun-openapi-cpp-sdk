@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamOptimizedFeatureConfigRequest
 
 DescribeLiveStreamOptimizedFeatureConfigRequest::DescribeLiveStreamOptimizedFeatureConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamOptimizedFeatureConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamOptimizedFeatureConfigRequest::~DescribeLiveStreamOptimizedFeatureConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getConfigName()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveStreamOptimizedFeatureConfigRequest::getDomainName()cons
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeLiveStreamOptimizedFeatureConfigRequest::getOwnerId()const
 void DescribeLiveStreamOptimizedFeatureConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveDomainGroupRequest;
 
 SaveDomainGroupRequest::SaveDomainGroupRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveDomainGroupRequest::~SaveDomainGroupRequest()
 {}
@@ -33,7 +35,7 @@ long SaveDomainGroupRequest::getDomainGroupId()const
 void SaveDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 
 std::string SaveDomainGroupRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveDomainGroupRequest::getUserClientIp()const
 void SaveDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveDomainGroupRequest::getDomainGroupName()const
@@ -55,7 +57,7 @@ std::string SaveDomainGroupRequest::getDomainGroupName()const
 void SaveDomainGroupRequest::setDomainGroupName(const std::string& domainGroupName)
 {
 	domainGroupName_ = domainGroupName;
-	setCoreParameter("DomainGroupName", domainGroupName);
+	setParameter("DomainGroupName", domainGroupName);
 }
 
 std::string SaveDomainGroupRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SaveDomainGroupRequest::getLang()const
 void SaveDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

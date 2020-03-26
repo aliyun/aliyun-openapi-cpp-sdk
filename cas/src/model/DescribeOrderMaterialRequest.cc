@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderMaterialRequest;
 
 DescribeOrderMaterialRequest::DescribeOrderMaterialRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderMaterialRequest::~DescribeOrderMaterialRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeOrderMaterialRequest::getOrderId()const
 void DescribeOrderMaterialRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeOrderMaterialRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeOrderMaterialRequest::getResourceGroupId()const
 void DescribeOrderMaterialRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderMaterialRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeOrderMaterialRequest::getSourceIp()const
 void DescribeOrderMaterialRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderMaterialRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeOrderMaterialRequest::getLang()const
 void DescribeOrderMaterialRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

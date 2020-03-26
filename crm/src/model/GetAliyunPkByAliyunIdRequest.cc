@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::GetAliyunPkByAliyunIdRequest;
 
 GetAliyunPkByAliyunIdRequest::GetAliyunPkByAliyunIdRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "GetAliyunPkByAliyunId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAliyunPkByAliyunIdRequest::~GetAliyunPkByAliyunIdRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetAliyunPkByAliyunIdRequest::getAliyunId()const
 void GetAliyunPkByAliyunIdRequest::setAliyunId(const std::string& aliyunId)
 {
 	aliyunId_ = aliyunId;
-	setCoreParameter("AliyunId", aliyunId);
+	setParameter("AliyunId", aliyunId);
 }
 

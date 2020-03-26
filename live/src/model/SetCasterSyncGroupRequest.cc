@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterSyncGroupRequest;
 
 SetCasterSyncGroupRequest::SetCasterSyncGroupRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterSyncGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterSyncGroupRequest::~SetCasterSyncGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetCasterSyncGroupRequest::getCasterId()const
 void SetCasterSyncGroupRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long SetCasterSyncGroupRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long SetCasterSyncGroupRequest::getOwnerId()const
 void SetCasterSyncGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<SetCasterSyncGroupRequest::SyncGroup> SetCasterSyncGroupRequest::getSyncGroup()const
@@ -55,13 +57,15 @@ std::vector<SetCasterSyncGroupRequest::SyncGroup> SetCasterSyncGroupRequest::get
 void SetCasterSyncGroupRequest::setSyncGroup(const std::vector<SyncGroup>& syncGroup)
 {
 	syncGroup_ = syncGroup;
-	int i = 0;
-	for(int i = 0; i!= syncGroup.size(); i++)	{
-		auto obj = syncGroup.at(i);
-		std::string str ="SyncGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Mode", std::to_string(obj.mode));
-		setCoreParameter(str + ".HostResourceId", obj.hostResourceId);
-		for(int i = 0; i!= obj.resourceIds.size(); i++)				setCoreParameter(str + ".ResourceIds."+ std::to_string(i), obj.resourceIds.at(i));
+	for(int dep1 = 0; dep1!= syncGroup.size(); dep1++) {
+		auto syncGroupObj = syncGroup.at(dep1);
+		std::string syncGroupObjStr = "SyncGroup." + std::to_string(dep1 + 1);
+		setParameter(syncGroupObjStr + ".Mode", std::to_string(syncGroupObj.mode));
+		setParameter(syncGroupObjStr + ".SyncDelayThreshold", std::to_string(syncGroupObj.syncDelayThreshold));
+		setParameter(syncGroupObjStr + ".HostResourceId", syncGroupObj.hostResourceId);
+		for(int dep2 = 0; dep2!= syncGroupObj.resourceIds.size(); dep2++) {
+			setParameter(syncGroupObjStr + ".ResourceIds."+ std::to_string(dep2), syncGroupObj.resourceIds.at(dep2));
+		}
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::UpdateUserRequest;
 
 UpdateUserRequest::UpdateUserRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "UpdateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateUserRequest::~UpdateUserRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateUserRequest::getResourceOwnerId()const
 void UpdateUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateUserRequest::getUserType()const
@@ -44,7 +46,7 @@ std::string UpdateUserRequest::getUserType()const
 void UpdateUserRequest::setUserType(const std::string& userType)
 {
 	userType_ = userType;
-	setCoreParameter("UserType", userType);
+	setParameter("UserType", userType);
 }
 
 std::string UpdateUserRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string UpdateUserRequest::getDescription()const
 void UpdateUserRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateUserRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string UpdateUserRequest::getAccessKeyId()const
 void UpdateUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<UpdateUserRequest::UserAccountParamList> UpdateUserRequest::getUserAccountParamList()const
@@ -77,13 +79,12 @@ std::vector<UpdateUserRequest::UserAccountParamList> UpdateUserRequest::getUserA
 void UpdateUserRequest::setUserAccountParamList(const std::vector<UserAccountParamList>& userAccountParamList)
 {
 	userAccountParamList_ = userAccountParamList;
-	int i = 0;
-	for(int i = 0; i!= userAccountParamList.size(); i++)	{
-		auto obj = userAccountParamList.at(i);
-		std::string str ="UserAccountParamList."+ std::to_string(i);
-		setCoreParameter(str + ".AccountType", obj.accountType);
-		setCoreParameter(str + ".AuthType", obj.authType);
-		setCoreParameter(str + ".AccountPassword", obj.accountPassword);
+	for(int dep1 = 0; dep1!= userAccountParamList.size(); dep1++) {
+		auto userAccountParamListObj = userAccountParamList.at(dep1);
+		std::string userAccountParamListObjStr = "UserAccountParamList." + std::to_string(dep1 + 1);
+		setParameter(userAccountParamListObjStr + ".AccountType", userAccountParamListObj.accountType);
+		setParameter(userAccountParamListObjStr + ".AuthType", userAccountParamListObj.authType);
+		setParameter(userAccountParamListObjStr + ".AccountPassword", userAccountParamListObj.accountPassword);
 	}
 }
 
@@ -95,8 +96,9 @@ std::vector<long> UpdateUserRequest::getGroupIdList()const
 void UpdateUserRequest::setGroupIdList(const std::vector<long>& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	for(int i = 0; i!= groupIdList.size(); i++)
-		setCoreParameter("GroupIdList."+ std::to_string(i), std::to_string(groupIdList.at(i)));
+	for(int dep1 = 0; dep1!= groupIdList.size(); dep1++) {
+		setParameter("GroupIdList."+ std::to_string(dep1), std::to_string(groupIdList.at(dep1)));
+	}
 }
 
 std::string UpdateUserRequest::getRegionId()const
@@ -107,7 +109,7 @@ std::string UpdateUserRequest::getRegionId()const
 void UpdateUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<long> UpdateUserRequest::getRoleIdList()const
@@ -118,8 +120,9 @@ std::vector<long> UpdateUserRequest::getRoleIdList()const
 void UpdateUserRequest::setRoleIdList(const std::vector<long>& roleIdList)
 {
 	roleIdList_ = roleIdList;
-	for(int i = 0; i!= roleIdList.size(); i++)
-		setCoreParameter("RoleIdList."+ std::to_string(i), std::to_string(roleIdList.at(i)));
+	for(int dep1 = 0; dep1!= roleIdList.size(); dep1++) {
+		setParameter("RoleIdList."+ std::to_string(dep1), std::to_string(roleIdList.at(dep1)));
+	}
 }
 
 std::string UpdateUserRequest::getAliyunUserId()const
@@ -130,7 +133,7 @@ std::string UpdateUserRequest::getAliyunUserId()const
 void UpdateUserRequest::setAliyunUserId(const std::string& aliyunUserId)
 {
 	aliyunUserId_ = aliyunUserId;
-	setCoreParameter("AliyunUserId", aliyunUserId);
+	setParameter("AliyunUserId", aliyunUserId);
 }
 
 std::string UpdateUserRequest::getUserName()const
@@ -141,7 +144,7 @@ std::string UpdateUserRequest::getUserName()const
 void UpdateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 
 std::string UpdateUserRequest::getStatus()const
@@ -152,6 +155,6 @@ std::string UpdateUserRequest::getStatus()const
 void UpdateUserRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

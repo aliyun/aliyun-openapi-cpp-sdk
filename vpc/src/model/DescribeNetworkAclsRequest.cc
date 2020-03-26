@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeNetworkAclsRequest;
 
 DescribeNetworkAclsRequest::DescribeNetworkAclsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeNetworkAcls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkAclsRequest::~DescribeNetworkAclsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeNetworkAclsRequest::getResourceOwnerId()const
 void DescribeNetworkAclsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNetworkAclsRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DescribeNetworkAclsRequest::getClientToken()const
 void DescribeNetworkAclsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int DescribeNetworkAclsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeNetworkAclsRequest::getPageNumber()const
 void DescribeNetworkAclsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeNetworkAclsRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeNetworkAclsRequest::getRegionId()const
 void DescribeNetworkAclsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeNetworkAclsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeNetworkAclsRequest::getPageSize()const
 void DescribeNetworkAclsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeNetworkAclsRequest::getNetworkAclId()const
@@ -88,7 +90,7 @@ std::string DescribeNetworkAclsRequest::getNetworkAclId()const
 void DescribeNetworkAclsRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", networkAclId);
+	setParameter("NetworkAclId", networkAclId);
 }
 
 std::string DescribeNetworkAclsRequest::getResourceId()const
@@ -99,7 +101,7 @@ std::string DescribeNetworkAclsRequest::getResourceId()const
 void DescribeNetworkAclsRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string DescribeNetworkAclsRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeNetworkAclsRequest::getResourceOwnerAccount()const
 void DescribeNetworkAclsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNetworkAclsRequest::getNetworkAclName()const
@@ -121,7 +123,7 @@ std::string DescribeNetworkAclsRequest::getNetworkAclName()const
 void DescribeNetworkAclsRequest::setNetworkAclName(const std::string& networkAclName)
 {
 	networkAclName_ = networkAclName;
-	setCoreParameter("NetworkAclName", networkAclName);
+	setParameter("NetworkAclName", networkAclName);
 }
 
 long DescribeNetworkAclsRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long DescribeNetworkAclsRequest::getOwnerId()const
 void DescribeNetworkAclsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNetworkAclsRequest::getResourceType()const
@@ -143,7 +145,7 @@ std::string DescribeNetworkAclsRequest::getResourceType()const
 void DescribeNetworkAclsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeNetworkAclsRequest::getVpcId()const
@@ -154,6 +156,6 @@ std::string DescribeNetworkAclsRequest::getVpcId()const
 void DescribeNetworkAclsRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

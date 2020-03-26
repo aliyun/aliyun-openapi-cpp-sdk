@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListPortalTemplateRequest;
 
 ListPortalTemplateRequest::ListPortalTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListPortalTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPortalTemplateRequest::~ListPortalTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListPortalTemplateRequest::getOrderCol()const
 void ListPortalTemplateRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 int ListPortalTemplateRequest::getLength()const
@@ -44,7 +46,7 @@ int ListPortalTemplateRequest::getLength()const
 void ListPortalTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListPortalTemplateRequest::getOrderDir()const
@@ -55,7 +57,7 @@ std::string ListPortalTemplateRequest::getOrderDir()const
 void ListPortalTemplateRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListPortalTemplateRequest::getSearchTempName()const
@@ -66,7 +68,7 @@ std::string ListPortalTemplateRequest::getSearchTempName()const
 void ListPortalTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setCoreParameter("SearchTempName", searchTempName);
+	setParameter("SearchTempName", searchTempName);
 }
 
 std::string ListPortalTemplateRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListPortalTemplateRequest::getAccessKeyId()const
 void ListPortalTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListPortalTemplateRequest::getPageIndex()const
@@ -88,6 +90,6 @@ int ListPortalTemplateRequest::getPageIndex()const
 void ListPortalTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryCommunicationLogsRequest;
 
 QueryCommunicationLogsRequest::QueryCommunicationLogsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryCommunicationLogs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCommunicationLogsRequest::~QueryCommunicationLogsRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryCommunicationLogsRequest::getBizId()const
 void QueryCommunicationLogsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 int QueryCommunicationLogsRequest::getPageSize()const
@@ -44,7 +46,7 @@ int QueryCommunicationLogsRequest::getPageSize()const
 void QueryCommunicationLogsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryCommunicationLogsRequest::getType()const
@@ -55,7 +57,7 @@ int QueryCommunicationLogsRequest::getType()const
 void QueryCommunicationLogsRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 int QueryCommunicationLogsRequest::getPageNum()const
@@ -66,6 +68,6 @@ int QueryCommunicationLogsRequest::getPageNum()const
 void QueryCommunicationLogsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 

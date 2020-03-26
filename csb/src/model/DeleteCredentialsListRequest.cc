@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteCredentialsListRequest;
 
 DeleteCredentialsListRequest::DeleteCredentialsListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteCredentialsList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCredentialsListRequest::~DeleteCredentialsListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCredentialsListRequest::getData()const
 void DeleteCredentialsListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 bool DeleteCredentialsListRequest::getIgnoreDauth()const
@@ -44,7 +46,7 @@ bool DeleteCredentialsListRequest::getIgnoreDauth()const
 void DeleteCredentialsListRequest::setIgnoreDauth(bool ignoreDauth)
 {
 	ignoreDauth_ = ignoreDauth;
-	setCoreParameter("IgnoreDauth", ignoreDauth ? "true" : "false");
+	setParameter("IgnoreDauth", ignoreDauth ? "true" : "false");
 }
 
 bool DeleteCredentialsListRequest::getForce()const
@@ -55,6 +57,6 @@ bool DeleteCredentialsListRequest::getForce()const
 void DeleteCredentialsListRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

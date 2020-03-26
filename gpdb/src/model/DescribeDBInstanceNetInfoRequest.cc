@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceNetInfoRequest;
 
 DescribeDBInstanceNetInfoRequest::DescribeDBInstanceNetInfoRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceNetInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceNetInfoRequest::~DescribeDBInstanceNetInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDBInstanceNetInfoRequest::getAccessKeyId()const
 void DescribeDBInstanceNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
@@ -44,6 +46,6 @@ std::string DescribeDBInstanceNetInfoRequest::getDBInstanceId()const
 void DescribeDBInstanceNetInfoRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

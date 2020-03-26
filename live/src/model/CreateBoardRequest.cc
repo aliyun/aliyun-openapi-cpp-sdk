@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateBoardRequest;
 
 CreateBoardRequest::CreateBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBoardRequest::~CreateBoardRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateBoardRequest::getAppUid()const
 void CreateBoardRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setParameter("AppUid", appUid);
 }
 
 long CreateBoardRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long CreateBoardRequest::getOwnerId()const
 void CreateBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateBoardRequest::getAppId()const
@@ -55,6 +57,6 @@ std::string CreateBoardRequest::getAppId()const
 void CreateBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

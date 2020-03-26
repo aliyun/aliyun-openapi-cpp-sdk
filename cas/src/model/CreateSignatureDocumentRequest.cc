@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateSignatureDocumentRequest;
 
 CreateSignatureDocumentRequest::CreateSignatureDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateSignatureDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSignatureDocumentRequest::~CreateSignatureDocumentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateSignatureDocumentRequest::getDocContent()const
 void CreateSignatureDocumentRequest::setDocContent(const std::string& docContent)
 {
 	docContent_ = docContent;
-	setCoreParameter("DocContent", docContent);
+	setBodyParameter("DocContent", docContent);
 }
 
 std::string CreateSignatureDocumentRequest::getDocTitle()const
@@ -44,7 +46,7 @@ std::string CreateSignatureDocumentRequest::getDocTitle()const
 void CreateSignatureDocumentRequest::setDocTitle(const std::string& docTitle)
 {
 	docTitle_ = docTitle;
-	setCoreParameter("DocTitle", docTitle);
+	setParameter("DocTitle", docTitle);
 }
 
 std::string CreateSignatureDocumentRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateSignatureDocumentRequest::getResourceGroupId()const
 void CreateSignatureDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateSignatureDocumentRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateSignatureDocumentRequest::getSourceIp()const
 void CreateSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateSignatureDocumentRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateSignatureDocumentRequest::getLang()const
 void CreateSignatureDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

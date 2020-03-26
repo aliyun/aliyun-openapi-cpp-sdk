@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::CreateConfigurationRequest;
 
 CreateConfigurationRequest::CreateConfigurationRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "CreateConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateConfigurationRequest::~CreateConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateConfigurationRequest::getMaxPV()const
 void CreateConfigurationRequest::setMaxPV(const std::string& maxPV)
 {
 	maxPV_ = maxPV;
-	setCoreParameter("MaxPV", maxPV);
+	setParameter("MaxPV", maxPV);
 }
 
 std::string CreateConfigurationRequest::getScene()const
@@ -44,7 +46,7 @@ std::string CreateConfigurationRequest::getScene()const
 void CreateConfigurationRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string CreateConfigurationRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateConfigurationRequest::getSourceIp()const
 void CreateConfigurationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateConfigurationRequest::getConfigurationName()const
@@ -66,7 +68,7 @@ std::string CreateConfigurationRequest::getConfigurationName()const
 void CreateConfigurationRequest::setConfigurationName(const std::string& configurationName)
 {
 	configurationName_ = configurationName;
-	setCoreParameter("ConfigurationName", configurationName);
+	setParameter("ConfigurationName", configurationName);
 }
 
 std::string CreateConfigurationRequest::getConfigurationMethod()const
@@ -77,7 +79,7 @@ std::string CreateConfigurationRequest::getConfigurationMethod()const
 void CreateConfigurationRequest::setConfigurationMethod(const std::string& configurationMethod)
 {
 	configurationMethod_ = configurationMethod;
-	setCoreParameter("ConfigurationMethod", configurationMethod);
+	setParameter("ConfigurationMethod", configurationMethod);
 }
 
 std::string CreateConfigurationRequest::getApplyType()const
@@ -88,6 +90,6 @@ std::string CreateConfigurationRequest::getApplyType()const
 void CreateConfigurationRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
-	setCoreParameter("ApplyType", applyType);
+	setParameter("ApplyType", applyType);
 }
 

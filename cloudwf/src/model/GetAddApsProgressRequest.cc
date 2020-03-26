@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAddApsProgressRequest;
 
 GetAddApsProgressRequest::GetAddApsProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAddApsProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAddApsProgressRequest::~GetAddApsProgressRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAddApsProgressRequest::getAccessKeyId()const
 void GetAddApsProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetAddApsProgressRequest::getId()const
@@ -44,6 +46,6 @@ long GetAddApsProgressRequest::getId()const
 void GetAddApsProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

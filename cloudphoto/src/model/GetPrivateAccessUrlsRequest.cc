@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPrivateAccessUrlsRequest;
 
 GetPrivateAccessUrlsRequest::GetPrivateAccessUrlsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPrivateAccessUrls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPrivateAccessUrlsRequest::~GetPrivateAccessUrlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPrivateAccessUrlsRequest::getLibraryId()const
 void GetPrivateAccessUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::vector<long> GetPrivateAccessUrlsRequest::getPhotoId()const
@@ -44,8 +46,9 @@ std::vector<long> GetPrivateAccessUrlsRequest::getPhotoId()const
 void GetPrivateAccessUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string GetPrivateAccessUrlsRequest::getStoreName()const
@@ -56,7 +59,7 @@ std::string GetPrivateAccessUrlsRequest::getStoreName()const
 void GetPrivateAccessUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string GetPrivateAccessUrlsRequest::getZoomType()const
@@ -67,6 +70,6 @@ std::string GetPrivateAccessUrlsRequest::getZoomType()const
 void GetPrivateAccessUrlsRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", zoomType);
+	setParameter("ZoomType", zoomType);
 }
 

@@ -35,7 +35,7 @@ std::string DeleteStreamPredictRequest::getPredictId()const
 void DeleteStreamPredictRequest::setPredictId(const std::string& predictId)
 {
 	predictId_ = predictId;
-	setCoreParameter("PredictId", predictId);
+	setParameter("PredictId", predictId);
 }
 
 std::string DeleteStreamPredictRequest::getShowLog()const
@@ -46,7 +46,7 @@ std::string DeleteStreamPredictRequest::getShowLog()const
 void DeleteStreamPredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 long DeleteStreamPredictRequest::getOwnerId()const
@@ -57,6 +57,6 @@ long DeleteStreamPredictRequest::getOwnerId()const
 void DeleteStreamPredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

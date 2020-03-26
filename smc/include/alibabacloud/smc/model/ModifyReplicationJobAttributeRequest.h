@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMC_EXPORT ModifyReplicationJobAttributeRequest : public RpcServiceRequest
 			{
+			public:
 				struct DataDisk
 				{
 					int size;
@@ -56,12 +57,16 @@ namespace AlibabaCloud
 				void setSystemDiskSize(int systemDiskSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getLaunchTemplateId()const;
+				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
+				std::string getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				std::string getScheduledStartTime()const;
 				void setScheduledStartTime(const std::string& scheduledStartTime);
 				std::string getInstanceId()const;
@@ -80,9 +85,11 @@ namespace AlibabaCloud
 				std::string imageName_;
 				int systemDiskSize_;
 				std::string instanceType_;
+				std::string launchTemplateId_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;
+				std::string launchTemplateVersion_;
 				std::string scheduledStartTime_;
 				std::string instanceId_;
 				std::string name_;

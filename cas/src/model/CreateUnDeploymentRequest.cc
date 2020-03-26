@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateUnDeploymentRequest;
 
 CreateUnDeploymentRequest::CreateUnDeploymentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateUnDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUnDeploymentRequest::~CreateUnDeploymentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateUnDeploymentRequest::getResourceGroupId()const
 void CreateUnDeploymentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateUnDeploymentRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string CreateUnDeploymentRequest::getSourceIp()const
 void CreateUnDeploymentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long CreateUnDeploymentRequest::getDeploymentId()const
@@ -55,7 +57,7 @@ long CreateUnDeploymentRequest::getDeploymentId()const
 void CreateUnDeploymentRequest::setDeploymentId(long deploymentId)
 {
 	deploymentId_ = deploymentId;
-	setCoreParameter("DeploymentId", std::to_string(deploymentId));
+	setParameter("DeploymentId", std::to_string(deploymentId));
 }
 
 std::string CreateUnDeploymentRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CreateUnDeploymentRequest::getLang()const
 void CreateUnDeploymentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

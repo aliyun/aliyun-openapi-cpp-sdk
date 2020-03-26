@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::ListRetcodeAppsRequest;
 
 ListRetcodeAppsRequest::ListRetcodeAppsRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "ListRetcodeApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRetcodeAppsRequest::~ListRetcodeAppsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRetcodeAppsRequest::getSecurityToken()const
 void ListRetcodeAppsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ListRetcodeAppsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ListRetcodeAppsRequest::getRegionId()const
 void ListRetcodeAppsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListRetcodeAppsRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ListRetcodeAppsRequest::getAccessKeyId()const
 void ListRetcodeAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

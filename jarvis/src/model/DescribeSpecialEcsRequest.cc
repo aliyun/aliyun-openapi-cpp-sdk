@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeSpecialEcsRequest;
 
 DescribeSpecialEcsRequest::DescribeSpecialEcsRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeSpecialEcs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSpecialEcsRequest::~DescribeSpecialEcsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSpecialEcsRequest::getSourceCode()const
 void DescribeSpecialEcsRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeSpecialEcsRequest::getTargetIp()const
@@ -44,7 +46,7 @@ std::string DescribeSpecialEcsRequest::getTargetIp()const
 void DescribeSpecialEcsRequest::setTargetIp(const std::string& targetIp)
 {
 	targetIp_ = targetIp;
-	setCoreParameter("TargetIp", targetIp);
+	setParameter("TargetIp", targetIp);
 }
 
 std::string DescribeSpecialEcsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeSpecialEcsRequest::getSourceIp()const
 void DescribeSpecialEcsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSpecialEcsRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeSpecialEcsRequest::getLang()const
 void DescribeSpecialEcsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

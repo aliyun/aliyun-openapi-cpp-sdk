@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowNodeInstanceLauncherLogRequest;
 
 DescribeFlowNodeInstanceLauncherLogRequest::DescribeFlowNodeInstanceLauncherLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowNodeInstanceLauncherLogRequest::~DescribeFlowNodeInstanceLauncherLogRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getOffset()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setParameter("Offset", std::to_string(offset));
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getStart()const
@@ -44,7 +46,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getStart()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setStart(int start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setParameter("Start", std::to_string(start));
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getLength()const
@@ -55,7 +57,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getLength()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 long DescribeFlowNodeInstanceLauncherLogRequest::getEndTime()const
@@ -66,7 +68,7 @@ long DescribeFlowNodeInstanceLauncherLogRequest::getEndTime()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeFlowNodeInstanceLauncherLogRequest::getStartTime()const
@@ -77,7 +79,7 @@ long DescribeFlowNodeInstanceLauncherLogRequest::getStartTime()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
@@ -88,7 +90,7 @@ bool DescribeFlowNodeInstanceLauncherLogRequest::getReverse()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setReverse(bool reverse)
 {
 	reverse_ = reverse;
-	setCoreParameter("Reverse", reverse ? "true" : "false");
+	setParameter("Reverse", reverse ? "true" : "false");
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getNodeInstanceId()const
@@ -99,7 +101,7 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getNodeInstanceId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setParameter("NodeInstanceId", nodeInstanceId);
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
@@ -110,7 +112,7 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getRegionId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
@@ -121,7 +123,7 @@ int DescribeFlowNodeInstanceLauncherLogRequest::getLines()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setLines(int lines)
 {
 	lines_ = lines;
-	setCoreParameter("Lines", std::to_string(lines));
+	setParameter("Lines", std::to_string(lines));
 }
 
 std::string DescribeFlowNodeInstanceLauncherLogRequest::getProjectId()const
@@ -132,6 +134,6 @@ std::string DescribeFlowNodeInstanceLauncherLogRequest::getProjectId()const
 void DescribeFlowNodeInstanceLauncherLogRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

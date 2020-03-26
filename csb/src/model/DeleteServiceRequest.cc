@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteServiceRequest;
 
 DeleteServiceRequest::DeleteServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteServiceRequest::~DeleteServiceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteServiceRequest::getServiceName()const
 void DeleteServiceRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 
 long DeleteServiceRequest::getServiceId()const
@@ -44,6 +46,6 @@ long DeleteServiceRequest::getServiceId()const
 void DeleteServiceRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 

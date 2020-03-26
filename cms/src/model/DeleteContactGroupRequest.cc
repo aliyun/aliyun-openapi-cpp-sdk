@@ -35,6 +35,6 @@ std::string DeleteContactGroupRequest::getContactGroupName()const
 void DeleteContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setParameter("ContactGroupName", contactGroupName);
 }
 

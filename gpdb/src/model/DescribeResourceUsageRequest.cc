@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeResourceUsageRequest;
 
 DescribeResourceUsageRequest::DescribeResourceUsageRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeResourceUsage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResourceUsageRequest::~DescribeResourceUsageRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeResourceUsageRequest::getAccessKeyId()const
 void DescribeResourceUsageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeResourceUsageRequest::getDBInstanceId()const
@@ -44,6 +46,6 @@ std::string DescribeResourceUsageRequest::getDBInstanceId()const
 void DescribeResourceUsageRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

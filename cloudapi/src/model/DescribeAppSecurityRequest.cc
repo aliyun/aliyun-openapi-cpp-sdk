@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAppSecurityRequest;
 
 DescribeAppSecurityRequest::DescribeAppSecurityRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeAppSecurity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAppSecurityRequest::~DescribeAppSecurityRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAppSecurityRequest::getAccessKeyId()const
 void DescribeAppSecurityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAppSecurityRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DescribeAppSecurityRequest::getSecurityToken()const
 void DescribeAppSecurityRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DescribeAppSecurityRequest::getAppId()const
@@ -55,7 +57,7 @@ long DescribeAppSecurityRequest::getAppId()const
 void DescribeAppSecurityRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 std::vector<DescribeAppSecurityRequest::Tag> DescribeAppSecurityRequest::getTag()const
@@ -66,12 +68,11 @@ std::vector<DescribeAppSecurityRequest::Tag> DescribeAppSecurityRequest::getTag(
 void DescribeAppSecurityRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGroupUpdateRequest;
 
 ShopGroupUpdateRequest::ShopGroupUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGroupUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGroupUpdateRequest::~ShopGroupUpdateRequest()
 {}
@@ -33,7 +35,7 @@ long ShopGroupUpdateRequest::getGid()const
 void ShopGroupUpdateRequest::setGid(long gid)
 {
 	gid_ = gid;
-	setCoreParameter("Gid", std::to_string(gid));
+	setParameter("Gid", std::to_string(gid));
 }
 
 std::string ShopGroupUpdateRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ShopGroupUpdateRequest::getDescription()const
 void ShopGroupUpdateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ShopGroupUpdateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ShopGroupUpdateRequest::getAccessKeyId()const
 void ShopGroupUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ShopGroupUpdateRequest::getShopIds()const
@@ -66,7 +68,7 @@ std::string ShopGroupUpdateRequest::getShopIds()const
 void ShopGroupUpdateRequest::setShopIds(const std::string& shopIds)
 {
 	shopIds_ = shopIds;
-	setCoreParameter("ShopIds", shopIds);
+	setParameter("ShopIds", shopIds);
 }
 
 std::string ShopGroupUpdateRequest::getName()const
@@ -77,6 +79,6 @@ std::string ShopGroupUpdateRequest::getName()const
 void ShopGroupUpdateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

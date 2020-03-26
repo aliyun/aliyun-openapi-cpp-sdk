@@ -35,7 +35,7 @@ std::string DeleteFaceGroupRequest::getShowLog()const
 void DeleteFaceGroupRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string DeleteFaceGroupRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string DeleteFaceGroupRequest::getGroupId()const
 void DeleteFaceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long DeleteFaceGroupRequest::getOwnerId()const
@@ -57,6 +57,6 @@ long DeleteFaceGroupRequest::getOwnerId()const
 void DeleteFaceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

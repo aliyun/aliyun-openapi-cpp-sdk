@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::CreateDataLimitRequest;
 
 CreateDataLimitRequest::CreateDataLimitRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "CreateDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataLimitRequest::~CreateDataLimitRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateDataLimitRequest::getParentId()const
 void CreateDataLimitRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 std::string CreateDataLimitRequest::getPassword()const
@@ -44,7 +46,7 @@ std::string CreateDataLimitRequest::getPassword()const
 void CreateDataLimitRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateDataLimitRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateDataLimitRequest::getSourceIp()const
 void CreateDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateDataLimitRequest::getDataLimitList()const
@@ -66,7 +68,7 @@ std::string CreateDataLimitRequest::getDataLimitList()const
 void CreateDataLimitRequest::setDataLimitList(const std::string& dataLimitList)
 {
 	dataLimitList_ = dataLimitList;
-	setCoreParameter("DataLimitList", dataLimitList);
+	setParameter("DataLimitList", dataLimitList);
 }
 
 std::string CreateDataLimitRequest::getLang()const
@@ -77,7 +79,7 @@ std::string CreateDataLimitRequest::getLang()const
 void CreateDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateDataLimitRequest::getServiceRegionId()const
@@ -88,7 +90,7 @@ std::string CreateDataLimitRequest::getServiceRegionId()const
 void CreateDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", serviceRegionId);
+	setParameter("ServiceRegionId", serviceRegionId);
 }
 
 int CreateDataLimitRequest::getResourceType()const
@@ -99,7 +101,7 @@ int CreateDataLimitRequest::getResourceType()const
 void CreateDataLimitRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string CreateDataLimitRequest::getConnector()const
@@ -110,7 +112,7 @@ std::string CreateDataLimitRequest::getConnector()const
 void CreateDataLimitRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", connector);
+	setParameter("Connector", connector);
 }
 
 std::string CreateDataLimitRequest::getUserName()const
@@ -121,6 +123,6 @@ std::string CreateDataLimitRequest::getUserName()const
 void CreateDataLimitRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

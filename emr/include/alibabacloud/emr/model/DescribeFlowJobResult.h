@@ -50,6 +50,8 @@ namespace AlibabaCloud
 				long getGmtModified()const;
 				std::string getParams()const;
 				int getMaxRetry()const;
+				std::string getEditLockDetail()const;
+				long getMaxRunningTimeSec()const;
 				std::string getName()const;
 				std::string getParamConf()const;
 				std::vector<Resource> getResourceList()const;
@@ -75,6 +77,8 @@ namespace AlibabaCloud
 				long gmtModified_;
 				std::string params_;
 				int maxRetry_;
+				std::string editLockDetail_;
+				long maxRunningTimeSec_;
 				std::string name_;
 				std::string paramConf_;
 				std::vector<Resource> resourceList_;

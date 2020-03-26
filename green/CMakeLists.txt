@@ -131,6 +131,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeUpdatePackageResultResult.h
 	include/alibabacloud/green/model/DescribeUploadInfoRequest.h
 	include/alibabacloud/green/model/DescribeUploadInfoResult.h
+	include/alibabacloud/green/model/DescribeUsageBillRequest.h
+	include/alibabacloud/green/model/DescribeUsageBillResult.h
 	include/alibabacloud/green/model/DescribeUserBizTypesRequest.h
 	include/alibabacloud/green/model/DescribeUserBizTypesResult.h
 	include/alibabacloud/green/model/DescribeUserStatusRequest.h
@@ -414,6 +416,8 @@ set(green_src
 	src/model/DescribeUpdatePackageResultResult.cc
 	src/model/DescribeUploadInfoRequest.cc
 	src/model/DescribeUploadInfoResult.cc
+	src/model/DescribeUsageBillRequest.cc
+	src/model/DescribeUsageBillResult.cc
 	src/model/DescribeUserBizTypesRequest.cc
 	src/model/DescribeUserBizTypesResult.cc
 	src/model/DescribeUserStatusRequest.cc

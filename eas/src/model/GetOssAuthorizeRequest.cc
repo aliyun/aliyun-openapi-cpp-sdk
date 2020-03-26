@@ -22,7 +22,7 @@ GetOssAuthorizeRequest::GetOssAuthorizeRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/oss_authorize");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetOssAuthorizeRequest::~GetOssAuthorizeRequest()

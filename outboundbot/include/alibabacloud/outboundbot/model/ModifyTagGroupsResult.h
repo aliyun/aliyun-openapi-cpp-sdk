@@ -32,19 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ModifyTagGroupsResult : public ServiceResult
 			{
 			public:
+				struct TagGroup
+				{
+					int tagGroupIndex;
+					std::string tagGroup;
+					std::string tagGroupId;
+					std::string scriptId;
+				};
 				struct Tag
 				{
 					int tagIndex;
 					std::string tagName;
 					std::string tagGroup;
 					std::string tagId;
-					std::string scriptId;
-				};
-				struct TagGroup
-				{
-					int tagGroupIndex;
-					std::string tagGroup;
-					std::string tagGroupId;
 					std::string scriptId;
 				};
 

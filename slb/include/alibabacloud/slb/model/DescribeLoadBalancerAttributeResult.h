@@ -60,10 +60,12 @@ namespace AlibabaCloud
 				explicit DescribeLoadBalancerAttributeResult(const std::string &payload);
 				~DescribeLoadBalancerAttributeResult();
 				int getRenewalDuration()const;
+				std::string getAssociatedCenStatus()const;
 				std::vector<ListenerPortAndProtocal> getListenerPortsAndProtocal()const;
 				std::string getResourceGroupId()const;
 				std::string getAddress()const;
 				std::string getEndTime()const;
+				bool getSupportPrivateLink()const;
 				std::string getAddressIPVersion()const;
 				std::vector<ListenerPortAndProtocol> getListenerPortsAndProtocol()const;
 				std::string getLoadBalancerId()const;
@@ -73,6 +75,7 @@ namespace AlibabaCloud
 				std::string getLoadBalancerSpec()const;
 				std::string getNetworkType()const;
 				int getBandwidth()const;
+				std::string getAssociatedCenId()const;
 				std::vector<std::string> getListenerPorts()const;
 				std::string getMasterZoneId()const;
 				std::string getTunnelType()const;
@@ -82,6 +85,7 @@ namespace AlibabaCloud
 				std::string getCreateTime()const;
 				std::string getRenewalStatus()const;
 				long getCloudInstanceUid()const;
+				std::vector<std::string> getLabels()const;
 				std::string getRenewalCycUnit()const;
 				std::string getPayType()const;
 				std::string getReservedInfoActiveTime()const;
@@ -105,10 +109,12 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int renewalDuration_;
+				std::string associatedCenStatus_;
 				std::vector<ListenerPortAndProtocal> listenerPortsAndProtocal_;
 				std::string resourceGroupId_;
 				std::string address_;
 				std::string endTime_;
+				bool supportPrivateLink_;
 				std::string addressIPVersion_;
 				std::vector<ListenerPortAndProtocol> listenerPortsAndProtocol_;
 				std::string loadBalancerId_;
@@ -118,6 +124,7 @@ namespace AlibabaCloud
 				std::string loadBalancerSpec_;
 				std::string networkType_;
 				int bandwidth_;
+				std::string associatedCenId_;
 				std::vector<std::string> listenerPorts_;
 				std::string masterZoneId_;
 				std::string tunnelType_;
@@ -127,6 +134,7 @@ namespace AlibabaCloud
 				std::string createTime_;
 				std::string renewalStatus_;
 				long cloudInstanceUid_;
+				std::vector<std::string> labels_;
 				std::string renewalCycUnit_;
 				std::string payType_;
 				std::string reservedInfoActiveTime_;

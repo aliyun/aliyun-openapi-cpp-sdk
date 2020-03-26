@@ -35,7 +35,7 @@ bool DescribeMonitorGroupsRequest::getSelectContactGroups()const
 void DescribeMonitorGroupsRequest::setSelectContactGroups(bool selectContactGroups)
 {
 	selectContactGroups_ = selectContactGroups;
-	setCoreParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
+	setParameter("SelectContactGroups", selectContactGroups ? "true" : "false");
 }
 
 bool DescribeMonitorGroupsRequest::getIncludeTemplateHistory()const
@@ -46,7 +46,7 @@ bool DescribeMonitorGroupsRequest::getIncludeTemplateHistory()const
 void DescribeMonitorGroupsRequest::setIncludeTemplateHistory(bool includeTemplateHistory)
 {
 	includeTemplateHistory_ = includeTemplateHistory;
-	setCoreParameter("IncludeTemplateHistory", includeTemplateHistory ? "true" : "false");
+	setParameter("IncludeTemplateHistory", includeTemplateHistory ? "true" : "false");
 }
 
 std::string DescribeMonitorGroupsRequest::getDynamicTagRuleId()const
@@ -57,7 +57,7 @@ std::string DescribeMonitorGroupsRequest::getDynamicTagRuleId()const
 void DescribeMonitorGroupsRequest::setDynamicTagRuleId(const std::string& dynamicTagRuleId)
 {
 	dynamicTagRuleId_ = dynamicTagRuleId;
-	setCoreParameter("DynamicTagRuleId", dynamicTagRuleId);
+	setParameter("DynamicTagRuleId", dynamicTagRuleId);
 }
 
 std::string DescribeMonitorGroupsRequest::getType()const
@@ -68,7 +68,7 @@ std::string DescribeMonitorGroupsRequest::getType()const
 void DescribeMonitorGroupsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int DescribeMonitorGroupsRequest::getPageNumber()const
@@ -79,7 +79,7 @@ int DescribeMonitorGroupsRequest::getPageNumber()const
 void DescribeMonitorGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeMonitorGroupsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeMonitorGroupsRequest::getPageSize()const
 void DescribeMonitorGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeMonitorGroupsRequest::Tag> DescribeMonitorGroupsRequest::getTag()const
@@ -103,9 +103,9 @@ void DescribeMonitorGroupsRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -117,7 +117,7 @@ std::string DescribeMonitorGroupsRequest::getKeyword()const
 void DescribeMonitorGroupsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeMonitorGroupsRequest::getGroupId()const
@@ -128,7 +128,7 @@ std::string DescribeMonitorGroupsRequest::getGroupId()const
 void DescribeMonitorGroupsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeMonitorGroupsRequest::getGroupName()const
@@ -139,7 +139,7 @@ std::string DescribeMonitorGroupsRequest::getGroupName()const
 void DescribeMonitorGroupsRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string DescribeMonitorGroupsRequest::getInstanceId()const
@@ -150,6 +150,17 @@ std::string DescribeMonitorGroupsRequest::getInstanceId()const
 void DescribeMonitorGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
+}
+
+std::string DescribeMonitorGroupsRequest::getServiceId()const
+{
+	return serviceId_;
+}
+
+void DescribeMonitorGroupsRequest::setServiceId(const std::string& serviceId)
+{
+	serviceId_ = serviceId;
+	setParameter("ServiceId", serviceId);
 }
 

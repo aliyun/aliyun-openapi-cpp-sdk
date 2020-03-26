@@ -39,10 +39,12 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					std::string moduleStackVersion;
 					bool isHa;
 					std::string createdTime;
 					std::string masterInstanceType;
 					bool isDeletionProtection;
+					int moduleId;
 					std::string networkType;
 					std::string coreInstanceType;
 					std::string clusterName;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
 					std::string engine;
 					std::string status;
 					std::string majorVersion;
+					std::string parentId;
 					int masterDiskSize;
 					std::string expireTimeUTC;
 					std::string zoneId;

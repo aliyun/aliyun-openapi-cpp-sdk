@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateEditingProjectRequest;
 
 UpdateEditingProjectRequest::UpdateEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateEditingProjectRequest::~UpdateEditingProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateEditingProjectRequest::getResourceOwnerId()const
 void UpdateEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateEditingProjectRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string UpdateEditingProjectRequest::getDescription()const
 void UpdateEditingProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateEditingProjectRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string UpdateEditingProjectRequest::getTitle()const
 void UpdateEditingProjectRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string UpdateEditingProjectRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string UpdateEditingProjectRequest::getAccessKeyId()const
 void UpdateEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateEditingProjectRequest::getCoverURL()const
@@ -77,7 +79,7 @@ std::string UpdateEditingProjectRequest::getCoverURL()const
 void UpdateEditingProjectRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setParameter("CoverURL", coverURL);
 }
 
 std::string UpdateEditingProjectRequest::getProjectId()const
@@ -88,7 +90,7 @@ std::string UpdateEditingProjectRequest::getProjectId()const
 void UpdateEditingProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string UpdateEditingProjectRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string UpdateEditingProjectRequest::getResourceOwnerAccount()const
 void UpdateEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateEditingProjectRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string UpdateEditingProjectRequest::getOwnerAccount()const
 void UpdateEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateEditingProjectRequest::getOwnerId()const
@@ -121,7 +123,7 @@ std::string UpdateEditingProjectRequest::getOwnerId()const
 void UpdateEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string UpdateEditingProjectRequest::getTimeline()const
@@ -132,6 +134,6 @@ std::string UpdateEditingProjectRequest::getTimeline()const
 void UpdateEditingProjectRequest::setTimeline(const std::string& timeline)
 {
 	timeline_ = timeline;
-	setCoreParameter("Timeline", timeline);
+	setParameter("Timeline", timeline);
 }
 

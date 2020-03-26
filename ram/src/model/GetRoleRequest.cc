@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetRoleRequest;
 
 GetRoleRequest::GetRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoleRequest::~GetRoleRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetRoleRequest::getRoleName()const
 void GetRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 

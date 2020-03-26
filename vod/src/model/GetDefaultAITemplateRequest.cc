@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetDefaultAITemplateRequest;
 
 GetDefaultAITemplateRequest::GetDefaultAITemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetDefaultAITemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDefaultAITemplateRequest::~GetDefaultAITemplateRequest()
 {}
@@ -33,7 +35,7 @@ long GetDefaultAITemplateRequest::getResourceOwnerId()const
 void GetDefaultAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetDefaultAITemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetDefaultAITemplateRequest::getResourceOwnerAccount()const
 void GetDefaultAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetDefaultAITemplateRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetDefaultAITemplateRequest::getOwnerId()const
 void GetDefaultAITemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetDefaultAITemplateRequest::getTemplateType()const
@@ -66,6 +68,6 @@ std::string GetDefaultAITemplateRequest::getTemplateType()const
 void GetDefaultAITemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", templateType);
+	setParameter("TemplateType", templateType);
 }
 

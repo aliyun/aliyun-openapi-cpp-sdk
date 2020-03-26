@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetUserInstanceRequest;
 
 GetUserInstanceRequest::GetUserInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetUserInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetUserInstanceRequest::~GetUserInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int GetUserInstanceRequest::getPageSize()const
 void GetUserInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetUserInstanceRequest::getPageNum()const
@@ -44,7 +46,7 @@ int GetUserInstanceRequest::getPageNum()const
 void GetUserInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetUserInstanceRequest::getRegion()const
@@ -55,7 +57,7 @@ std::string GetUserInstanceRequest::getRegion()const
 void GetUserInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetUserInstanceRequest::getUser()const
@@ -66,7 +68,7 @@ std::string GetUserInstanceRequest::getUser()const
 void GetUserInstanceRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 
 std::string GetUserInstanceRequest::getStatus()const
@@ -77,6 +79,6 @@ std::string GetUserInstanceRequest::getStatus()const
 void GetUserInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

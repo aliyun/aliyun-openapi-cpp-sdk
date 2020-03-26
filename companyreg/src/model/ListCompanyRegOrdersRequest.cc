@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ListCompanyRegOrdersRequest;
 
 ListCompanyRegOrdersRequest::ListCompanyRegOrdersRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ListCompanyRegOrders")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCompanyRegOrdersRequest::~ListCompanyRegOrdersRequest()
 {}
@@ -33,7 +35,7 @@ int ListCompanyRegOrdersRequest::getPageNum()const
 void ListCompanyRegOrdersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string ListCompanyRegOrdersRequest::getBizCode()const
@@ -44,7 +46,7 @@ std::string ListCompanyRegOrdersRequest::getBizCode()const
 void ListCompanyRegOrdersRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string ListCompanyRegOrdersRequest::getBizStatus()const
@@ -55,7 +57,7 @@ std::string ListCompanyRegOrdersRequest::getBizStatus()const
 void ListCompanyRegOrdersRequest::setBizStatus(const std::string& bizStatus)
 {
 	bizStatus_ = bizStatus;
-	setCoreParameter("BizStatus", bizStatus);
+	setParameter("BizStatus", bizStatus);
 }
 
 std::string ListCompanyRegOrdersRequest::getCompanyName()const
@@ -66,7 +68,7 @@ std::string ListCompanyRegOrdersRequest::getCompanyName()const
 void ListCompanyRegOrdersRequest::setCompanyName(const std::string& companyName)
 {
 	companyName_ = companyName;
-	setCoreParameter("CompanyName", companyName);
+	setParameter("CompanyName", companyName);
 }
 
 int ListCompanyRegOrdersRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListCompanyRegOrdersRequest::getPageSize()const
 void ListCompanyRegOrdersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCompanyRegOrdersRequest::getAliyunOrderId()const
@@ -88,7 +90,7 @@ std::string ListCompanyRegOrdersRequest::getAliyunOrderId()const
 void ListCompanyRegOrdersRequest::setAliyunOrderId(const std::string& aliyunOrderId)
 {
 	aliyunOrderId_ = aliyunOrderId;
-	setCoreParameter("AliyunOrderId", aliyunOrderId);
+	setParameter("AliyunOrderId", aliyunOrderId);
 }
 
 std::string ListCompanyRegOrdersRequest::getBizSubCode()const
@@ -99,6 +101,6 @@ std::string ListCompanyRegOrdersRequest::getBizSubCode()const
 void ListCompanyRegOrdersRequest::setBizSubCode(const std::string& bizSubCode)
 {
 	bizSubCode_ = bizSubCode;
-	setCoreParameter("BizSubCode", bizSubCode);
+	setParameter("BizSubCode", bizSubCode);
 }
 

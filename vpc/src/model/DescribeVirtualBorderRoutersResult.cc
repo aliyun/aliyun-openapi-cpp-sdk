@@ -83,6 +83,8 @@ void DescribeVirtualBorderRoutersResult::parse(const std::string &payload)
 			virtualBorderRouterSetObject.name = valueVirtualBorderRouterSetVirtualBorderRouterType["Name"].asString();
 		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["Description"].isNull())
 			virtualBorderRouterSetObject.description = valueVirtualBorderRouterSetVirtualBorderRouterType["Description"].asString();
+		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["PConnVbrExpireTime"].isNull())
+			virtualBorderRouterSetObject.pConnVbrExpireTime = valueVirtualBorderRouterSetVirtualBorderRouterType["PConnVbrExpireTime"].asString();
 		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["EccId"].isNull())
 			virtualBorderRouterSetObject.eccId = valueVirtualBorderRouterSetVirtualBorderRouterType["EccId"].asString();
 		if(!valueVirtualBorderRouterSetVirtualBorderRouterType["Type"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::AttachPolicyToRoleRequest;
 
 AttachPolicyToRoleRequest::AttachPolicyToRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "AttachPolicyToRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachPolicyToRoleRequest::~AttachPolicyToRoleRequest()
 {}
@@ -33,7 +35,7 @@ std::string AttachPolicyToRoleRequest::getPolicyType()const
 void AttachPolicyToRoleRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string AttachPolicyToRoleRequest::getRoleName()const
@@ -44,7 +46,7 @@ std::string AttachPolicyToRoleRequest::getRoleName()const
 void AttachPolicyToRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 
 std::string AttachPolicyToRoleRequest::getPolicyName()const
@@ -55,6 +57,6 @@ std::string AttachPolicyToRoleRequest::getPolicyName()const
 void AttachPolicyToRoleRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 

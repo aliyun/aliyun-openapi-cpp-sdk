@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchClearEdgeInstanceDeviceConfigRequest;
 
 BatchClearEdgeInstanceDeviceConfigRequest::BatchClearEdgeInstanceDeviceConfigRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchClearEdgeInstanceDeviceConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchClearEdgeInstanceDeviceConfigRequest::~BatchClearEdgeInstanceDeviceConfigRequest()
 {}
@@ -33,18 +35,7 @@ std::string BatchClearEdgeInstanceDeviceConfigRequest::getAccessKeyId()const
 void BatchClearEdgeInstanceDeviceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BatchClearEdgeInstanceDeviceConfigRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BatchClearEdgeInstanceDeviceConfigRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> BatchClearEdgeInstanceDeviceConfigRequest::getIotIds()const
@@ -55,8 +46,9 @@ std::vector<std::string> BatchClearEdgeInstanceDeviceConfigRequest::getIotIds()c
 void BatchClearEdgeInstanceDeviceConfigRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
+		setParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchClearEdgeInstanceDeviceConfigRequest::getIotInstanceId()const
@@ -67,6 +59,39 @@ std::string BatchClearEdgeInstanceDeviceConfigRequest::getIotInstanceId()const
 void BatchClearEdgeInstanceDeviceConfigRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchClearEdgeInstanceDeviceConfigRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BatchClearEdgeInstanceDeviceConfigRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BatchClearEdgeInstanceDeviceConfigRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchClearEdgeInstanceDeviceConfigRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchClearEdgeInstanceDeviceConfigRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchClearEdgeInstanceDeviceConfigRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

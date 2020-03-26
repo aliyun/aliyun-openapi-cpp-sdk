@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyOperateVulRequest;
 
 ModifyOperateVulRequest::ModifyOperateVulRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyOperateVul")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyOperateVulRequest::~ModifyOperateVulRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyOperateVulRequest::getReason()const
 void ModifyOperateVulRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 std::string ModifyOperateVulRequest::getType()const
@@ -44,7 +46,7 @@ std::string ModifyOperateVulRequest::getType()const
 void ModifyOperateVulRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string ModifyOperateVulRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string ModifyOperateVulRequest::getSourceIp()const
 void ModifyOperateVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyOperateVulRequest::getOperateType()const
@@ -66,7 +68,7 @@ std::string ModifyOperateVulRequest::getOperateType()const
 void ModifyOperateVulRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", operateType);
+	setParameter("OperateType", operateType);
 }
 
 std::string ModifyOperateVulRequest::getInfo()const
@@ -77,6 +79,6 @@ std::string ModifyOperateVulRequest::getInfo()const
 void ModifyOperateVulRequest::setInfo(const std::string& info)
 {
 	info_ = info;
-	setCoreParameter("Info", info);
+	setParameter("Info", info);
 }
 

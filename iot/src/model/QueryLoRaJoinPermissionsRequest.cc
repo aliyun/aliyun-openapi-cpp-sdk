@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryLoRaJoinPermissionsRequest;
 
 QueryLoRaJoinPermissionsRequest::QueryLoRaJoinPermissionsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryLoRaJoinPermissions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryLoRaJoinPermissionsRequest::~QueryLoRaJoinPermissionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryLoRaJoinPermissionsRequest::getAccessKeyId()const
 void QueryLoRaJoinPermissionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryLoRaJoinPermissionsRequest::getIotInstanceId()const
@@ -44,6 +46,6 @@ std::string QueryLoRaJoinPermissionsRequest::getIotInstanceId()const
 void QueryLoRaJoinPermissionsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

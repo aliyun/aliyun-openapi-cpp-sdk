@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::EnterStandbyRequest;
 
 EnterStandbyRequest::EnterStandbyRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "EnterStandby")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnterStandbyRequest::~EnterStandbyRequest()
 {}
@@ -33,7 +35,7 @@ std::string EnterStandbyRequest::getResourceOwnerAccount()const
 void EnterStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EnterStandbyRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string EnterStandbyRequest::getScalingGroupId()const
 void EnterStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 long EnterStandbyRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long EnterStandbyRequest::getOwnerId()const
 void EnterStandbyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EnterStandbyRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string EnterStandbyRequest::getAccessKeyId()const
 void EnterStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> EnterStandbyRequest::getInstanceId()const
@@ -77,7 +79,8 @@ std::vector<std::string> EnterStandbyRequest::getInstanceId()const
 void EnterStandbyRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::RebalanceInstancesRequest;
 
 RebalanceInstancesRequest::RebalanceInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "RebalanceInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RebalanceInstancesRequest::~RebalanceInstancesRequest()
 {}
@@ -33,7 +35,7 @@ long RebalanceInstancesRequest::getResourceOwnerId()const
 void RebalanceInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string RebalanceInstancesRequest::getResourceOwnerAccount()const
 void RebalanceInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RebalanceInstancesRequest::getScalingGroupId()const
@@ -55,7 +57,7 @@ std::string RebalanceInstancesRequest::getScalingGroupId()const
 void RebalanceInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string RebalanceInstancesRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string RebalanceInstancesRequest::getOwnerAccount()const
 void RebalanceInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RebalanceInstancesRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long RebalanceInstancesRequest::getOwnerId()const
 void RebalanceInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RebalanceInstancesRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string RebalanceInstancesRequest::getAccessKeyId()const
 void RebalanceInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

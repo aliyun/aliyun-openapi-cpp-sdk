@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeSqlResultRequest;
 
 ListFlowNodeSqlResultRequest::ListFlowNodeSqlResultRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeSqlResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeSqlResultRequest::~ListFlowNodeSqlResultRequest()
 {}
@@ -33,7 +35,7 @@ int ListFlowNodeSqlResultRequest::getOffset()const
 void ListFlowNodeSqlResultRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setParameter("Offset", std::to_string(offset));
 }
 
 int ListFlowNodeSqlResultRequest::getLength()const
@@ -44,7 +46,7 @@ int ListFlowNodeSqlResultRequest::getLength()const
 void ListFlowNodeSqlResultRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 int ListFlowNodeSqlResultRequest::getSqlIndex()const
@@ -55,7 +57,7 @@ int ListFlowNodeSqlResultRequest::getSqlIndex()const
 void ListFlowNodeSqlResultRequest::setSqlIndex(int sqlIndex)
 {
 	sqlIndex_ = sqlIndex;
-	setCoreParameter("SqlIndex", std::to_string(sqlIndex));
+	setParameter("SqlIndex", std::to_string(sqlIndex));
 }
 
 std::string ListFlowNodeSqlResultRequest::getNodeInstanceId()const
@@ -66,7 +68,7 @@ std::string ListFlowNodeSqlResultRequest::getNodeInstanceId()const
 void ListFlowNodeSqlResultRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setParameter("NodeInstanceId", nodeInstanceId);
 }
 
 std::string ListFlowNodeSqlResultRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListFlowNodeSqlResultRequest::getRegionId()const
 void ListFlowNodeSqlResultRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListFlowNodeSqlResultRequest::getProjectId()const
@@ -88,6 +90,6 @@ std::string ListFlowNodeSqlResultRequest::getProjectId()const
 void ListFlowNodeSqlResultRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

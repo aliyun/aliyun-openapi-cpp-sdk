@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateAuditRangeRequest;
 
 UpdateAuditRangeRequest::UpdateAuditRangeRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateAuditRange")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAuditRangeRequest::~UpdateAuditRangeRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateAuditRangeRequest::getAuditRange()const
 void UpdateAuditRangeRequest::setAuditRange(const std::string& auditRange)
 {
 	auditRange_ = auditRange;
-	setCoreParameter("AuditRange", auditRange);
+	setParameter("AuditRange", auditRange);
 }
 
 std::string UpdateAuditRangeRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string UpdateAuditRangeRequest::getSourceIp()const
 void UpdateAuditRangeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

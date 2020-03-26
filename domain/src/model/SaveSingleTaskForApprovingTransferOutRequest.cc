@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForApprovingTransferOutRequest;
 
 SaveSingleTaskForApprovingTransferOutRequest::SaveSingleTaskForApprovingTransferOutRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForApprovingTransferOutRequest::~SaveSingleTaskForApprovingTransferOutRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getDomainName()const
 void SaveSingleTaskForApprovingTransferOutRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForApprovingTransferOutRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getUserClientIp()const
 void SaveSingleTaskForApprovingTransferOutRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForApprovingTransferOutRequest::getLang()const
@@ -55,6 +57,6 @@ std::string SaveSingleTaskForApprovingTransferOutRequest::getLang()const
 void SaveSingleTaskForApprovingTransferOutRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

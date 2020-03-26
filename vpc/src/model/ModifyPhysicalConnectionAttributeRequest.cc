@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyPhysicalConnectionAttributeRequest;
 
 ModifyPhysicalConnectionAttributeRequest::ModifyPhysicalConnectionAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPhysicalConnectionAttributeRequest::~ModifyPhysicalConnectionAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyPhysicalConnectionAttributeRequest::getResourceOwnerId()const
 void ModifyPhysicalConnectionAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getPortType()const
@@ -44,7 +46,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getPortType()const
 void ModifyPhysicalConnectionAttributeRequest::setPortType(const std::string& portType)
 {
 	portType_ = portType;
-	setCoreParameter("PortType", portType);
+	setParameter("PortType", portType);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getCircuitCode()const
@@ -55,7 +57,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getCircuitCode()const
 void ModifyPhysicalConnectionAttributeRequest::setCircuitCode(const std::string& circuitCode)
 {
 	circuitCode_ = circuitCode;
-	setCoreParameter("CircuitCode", circuitCode);
+	setParameter("CircuitCode", circuitCode);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getClientToken()const
@@ -66,7 +68,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getClientToken()const
 void ModifyPhysicalConnectionAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getDescription()const
@@ -77,7 +79,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getDescription()const
 void ModifyPhysicalConnectionAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getRegionId()const
 void ModifyPhysicalConnectionAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getRedundantPhysicalConnectionId()const
@@ -99,7 +101,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getRedundantPhysicalConnec
 void ModifyPhysicalConnectionAttributeRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
 {
 	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
-	setCoreParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+	setParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getPeerLocation()const
@@ -110,7 +112,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getPeerLocation()const
 void ModifyPhysicalConnectionAttributeRequest::setPeerLocation(const std::string& peerLocation)
 {
 	peerLocation_ = peerLocation;
-	setCoreParameter("PeerLocation", peerLocation);
+	setParameter("PeerLocation", peerLocation);
 }
 
 int ModifyPhysicalConnectionAttributeRequest::getBandwidth()const
@@ -121,7 +123,7 @@ int ModifyPhysicalConnectionAttributeRequest::getBandwidth()const
 void ModifyPhysicalConnectionAttributeRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getResourceOwnerAccount()const
@@ -132,7 +134,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getResourceOwnerAccount()c
 void ModifyPhysicalConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getOwnerAccount()const
@@ -143,7 +145,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getOwnerAccount()const
 void ModifyPhysicalConnectionAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyPhysicalConnectionAttributeRequest::getOwnerId()const
@@ -154,7 +156,7 @@ long ModifyPhysicalConnectionAttributeRequest::getOwnerId()const
 void ModifyPhysicalConnectionAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getLineOperator()const
@@ -165,7 +167,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getLineOperator()const
 void ModifyPhysicalConnectionAttributeRequest::setLineOperator(const std::string& lineOperator)
 {
 	lineOperator_ = lineOperator;
-	setCoreParameter("LineOperator", lineOperator);
+	setParameter("LineOperator", lineOperator);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getPhysicalConnectionId()const
@@ -176,7 +178,7 @@ std::string ModifyPhysicalConnectionAttributeRequest::getPhysicalConnectionId()c
 void ModifyPhysicalConnectionAttributeRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setParameter("PhysicalConnectionId", physicalConnectionId);
 }
 
 std::string ModifyPhysicalConnectionAttributeRequest::getName()const
@@ -187,6 +189,6 @@ std::string ModifyPhysicalConnectionAttributeRequest::getName()const
 void ModifyPhysicalConnectionAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

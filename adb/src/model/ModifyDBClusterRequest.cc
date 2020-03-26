@@ -35,7 +35,7 @@ long ModifyDBClusterRequest::getResourceOwnerId()const
 void ModifyDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDBClusterRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyDBClusterRequest::getAccessKeyId()const
 void ModifyDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBClusterRequest::getDBNodeClass()const
@@ -57,7 +57,7 @@ std::string ModifyDBClusterRequest::getDBNodeClass()const
 void ModifyDBClusterRequest::setDBNodeClass(const std::string& dBNodeClass)
 {
 	dBNodeClass_ = dBNodeClass;
-	setCoreParameter("DBNodeClass", dBNodeClass);
+	setParameter("DBNodeClass", dBNodeClass);
 }
 
 std::string ModifyDBClusterRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyDBClusterRequest::getResourceOwnerAccount()const
 void ModifyDBClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDBClusterRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string ModifyDBClusterRequest::getDBClusterId()const
 void ModifyDBClusterRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyDBClusterRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyDBClusterRequest::getOwnerAccount()const
 void ModifyDBClusterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDBClusterRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long ModifyDBClusterRequest::getOwnerId()const
 void ModifyDBClusterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDBClusterRequest::getDBNodeGroupCount()const
@@ -112,7 +112,7 @@ std::string ModifyDBClusterRequest::getDBNodeGroupCount()const
 void ModifyDBClusterRequest::setDBNodeGroupCount(const std::string& dBNodeGroupCount)
 {
 	dBNodeGroupCount_ = dBNodeGroupCount;
-	setCoreParameter("DBNodeGroupCount", dBNodeGroupCount);
+	setParameter("DBNodeGroupCount", dBNodeGroupCount);
 }
 
 std::string ModifyDBClusterRequest::getDBNodeStorage()const
@@ -123,7 +123,7 @@ std::string ModifyDBClusterRequest::getDBNodeStorage()const
 void ModifyDBClusterRequest::setDBNodeStorage(const std::string& dBNodeStorage)
 {
 	dBNodeStorage_ = dBNodeStorage;
-	setCoreParameter("DBNodeStorage", dBNodeStorage);
+	setParameter("DBNodeStorage", dBNodeStorage);
 }
 
 std::string ModifyDBClusterRequest::getModifyType()const
@@ -134,6 +134,6 @@ std::string ModifyDBClusterRequest::getModifyType()const
 void ModifyDBClusterRequest::setModifyType(const std::string& modifyType)
 {
 	modifyType_ = modifyType;
-	setCoreParameter("ModifyType", modifyType);
+	setParameter("ModifyType", modifyType);
 }
 

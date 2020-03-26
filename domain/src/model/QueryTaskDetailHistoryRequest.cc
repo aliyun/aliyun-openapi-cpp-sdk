@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTaskDetailHistoryRequest;
 
 QueryTaskDetailHistoryRequest::QueryTaskDetailHistoryRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTaskDetailHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskDetailHistoryRequest::~QueryTaskDetailHistoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTaskDetailHistoryRequest::getDomainName()const
 void QueryTaskDetailHistoryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int QueryTaskDetailHistoryRequest::getTaskStatus()const
@@ -44,7 +46,7 @@ int QueryTaskDetailHistoryRequest::getTaskStatus()const
 void QueryTaskDetailHistoryRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", std::to_string(taskStatus));
+	setParameter("TaskStatus", std::to_string(taskStatus));
 }
 
 std::string QueryTaskDetailHistoryRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryTaskDetailHistoryRequest::getUserClientIp()const
 void QueryTaskDetailHistoryRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTaskDetailHistoryRequest::getTaskNo()const
@@ -66,7 +68,7 @@ std::string QueryTaskDetailHistoryRequest::getTaskNo()const
 void QueryTaskDetailHistoryRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", taskNo);
+	setParameter("TaskNo", taskNo);
 }
 
 int QueryTaskDetailHistoryRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryTaskDetailHistoryRequest::getPageSize()const
 void QueryTaskDetailHistoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskDetailHistoryRequest::getTaskDetailNoCursor()const
@@ -88,7 +90,7 @@ std::string QueryTaskDetailHistoryRequest::getTaskDetailNoCursor()const
 void QueryTaskDetailHistoryRequest::setTaskDetailNoCursor(const std::string& taskDetailNoCursor)
 {
 	taskDetailNoCursor_ = taskDetailNoCursor;
-	setCoreParameter("TaskDetailNoCursor", taskDetailNoCursor);
+	setParameter("TaskDetailNoCursor", taskDetailNoCursor);
 }
 
 std::string QueryTaskDetailHistoryRequest::getLang()const
@@ -99,7 +101,7 @@ std::string QueryTaskDetailHistoryRequest::getLang()const
 void QueryTaskDetailHistoryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string QueryTaskDetailHistoryRequest::getDomainNameCursor()const
@@ -110,6 +112,6 @@ std::string QueryTaskDetailHistoryRequest::getDomainNameCursor()const
 void QueryTaskDetailHistoryRequest::setDomainNameCursor(const std::string& domainNameCursor)
 {
 	domainNameCursor_ = domainNameCursor;
-	setCoreParameter("DomainNameCursor", domainNameCursor);
+	setParameter("DomainNameCursor", domainNameCursor);
 }
 

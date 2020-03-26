@@ -35,7 +35,7 @@ int DescribeContactListRequest::getPageNumber()const
 void DescribeContactListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeContactListRequest::getContactName()const
@@ -46,7 +46,7 @@ std::string DescribeContactListRequest::getContactName()const
 void DescribeContactListRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 int DescribeContactListRequest::getPageSize()const
@@ -57,6 +57,6 @@ int DescribeContactListRequest::getPageSize()const
 void DescribeContactListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

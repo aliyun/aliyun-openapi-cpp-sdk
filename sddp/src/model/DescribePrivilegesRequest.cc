@@ -20,10 +20,23 @@ using AlibabaCloud::Sddp::Model::DescribePrivilegesRequest;
 
 DescribePrivilegesRequest::DescribePrivilegesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribePrivileges")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePrivilegesRequest::~DescribePrivilegesRequest()
 {}
+
+int DescribePrivilegesRequest::getAccountType()const
+{
+	return accountType_;
+}
+
+void DescribePrivilegesRequest::setAccountType(int accountType)
+{
+	accountType_ = accountType;
+	setParameter("AccountType", std::to_string(accountType));
+}
 
 long DescribePrivilegesRequest::getAccountId()const
 {
@@ -33,7 +46,7 @@ long DescribePrivilegesRequest::getAccountId()const
 void DescribePrivilegesRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setParameter("AccountId", std::to_string(accountId));
 }
 
 std::string DescribePrivilegesRequest::getSourceIp()const
@@ -44,7 +57,7 @@ std::string DescribePrivilegesRequest::getSourceIp()const
 void DescribePrivilegesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePrivilegesRequest::getPageSize()const
@@ -55,7 +68,7 @@ int DescribePrivilegesRequest::getPageSize()const
 void DescribePrivilegesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePrivilegesRequest::getLang()const
@@ -66,7 +79,7 @@ std::string DescribePrivilegesRequest::getLang()const
 void DescribePrivilegesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribePrivilegesRequest::getKey()const
@@ -77,7 +90,7 @@ std::string DescribePrivilegesRequest::getKey()const
 void DescribePrivilegesRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 long DescribePrivilegesRequest::getUseAccountId()const
@@ -88,7 +101,7 @@ long DescribePrivilegesRequest::getUseAccountId()const
 void DescribePrivilegesRequest::setUseAccountId(long useAccountId)
 {
 	useAccountId_ = useAccountId;
-	setCoreParameter("UseAccountId", std::to_string(useAccountId));
+	setParameter("UseAccountId", std::to_string(useAccountId));
 }
 
 int DescribePrivilegesRequest::getFeatureType()const
@@ -99,7 +112,7 @@ int DescribePrivilegesRequest::getFeatureType()const
 void DescribePrivilegesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribePrivilegesRequest::getCurrentPage()const
@@ -110,7 +123,7 @@ int DescribePrivilegesRequest::getCurrentPage()const
 void DescribePrivilegesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePrivilegesRequest::getDataTypeIds()const
@@ -121,6 +134,6 @@ std::string DescribePrivilegesRequest::getDataTypeIds()const
 void DescribePrivilegesRequest::setDataTypeIds(const std::string& dataTypeIds)
 {
 	dataTypeIds_ = dataTypeIds;
-	setCoreParameter("DataTypeIds", dataTypeIds);
+	setParameter("DataTypeIds", dataTypeIds);
 }
 

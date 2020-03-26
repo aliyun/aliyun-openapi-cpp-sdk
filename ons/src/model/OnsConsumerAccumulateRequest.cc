@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerAccumulateRequest;
 OnsConsumerAccumulateRequest::OnsConsumerAccumulateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerAccumulate")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsConsumerAccumulateRequest::~OnsConsumerAccumulateRequest()

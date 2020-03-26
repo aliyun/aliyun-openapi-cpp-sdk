@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryTopicReverseRouteTableRequest;
 
 QueryTopicReverseRouteTableRequest::QueryTopicReverseRouteTableRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryTopicReverseRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTopicReverseRouteTableRequest::~QueryTopicReverseRouteTableRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTopicReverseRouteTableRequest::getAccessKeyId()const
 void QueryTopicReverseRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string QueryTopicReverseRouteTableRequest::getRegionId()const
 void QueryTopicReverseRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string QueryTopicReverseRouteTableRequest::getIotInstanceId()const
 void QueryTopicReverseRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryTopicReverseRouteTableRequest::getTopic()const
@@ -66,6 +68,6 @@ std::string QueryTopicReverseRouteTableRequest::getTopic()const
 void QueryTopicReverseRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 

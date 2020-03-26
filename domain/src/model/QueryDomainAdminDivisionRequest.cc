@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainAdminDivisionRequest;
 
 QueryDomainAdminDivisionRequest::QueryDomainAdminDivisionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainAdminDivision")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainAdminDivisionRequest::~QueryDomainAdminDivisionRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDomainAdminDivisionRequest::getUserClientIp()const
 void QueryDomainAdminDivisionRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainAdminDivisionRequest::getLang()const
@@ -44,6 +46,6 @@ std::string QueryDomainAdminDivisionRequest::getLang()const
 void QueryDomainAdminDivisionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

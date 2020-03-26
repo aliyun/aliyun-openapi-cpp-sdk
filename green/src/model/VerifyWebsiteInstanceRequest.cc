@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyWebsiteInstanceRequest;
 
 VerifyWebsiteInstanceRequest::VerifyWebsiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyWebsiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyWebsiteInstanceRequest::~VerifyWebsiteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string VerifyWebsiteInstanceRequest::getVerifyMethod()const
 void VerifyWebsiteInstanceRequest::setVerifyMethod(const std::string& verifyMethod)
 {
 	verifyMethod_ = verifyMethod;
-	setCoreParameter("VerifyMethod", verifyMethod);
+	setParameter("VerifyMethod", verifyMethod);
 }
 
 std::string VerifyWebsiteInstanceRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string VerifyWebsiteInstanceRequest::getInstanceId()const
 void VerifyWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string VerifyWebsiteInstanceRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string VerifyWebsiteInstanceRequest::getSourceIp()const
 void VerifyWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string VerifyWebsiteInstanceRequest::getLang()const
@@ -66,6 +68,6 @@ std::string VerifyWebsiteInstanceRequest::getLang()const
 void VerifyWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

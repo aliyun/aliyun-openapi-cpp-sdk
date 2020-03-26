@@ -20,7 +20,9 @@ using AlibabaCloud::Sts::Model::AssumeRoleWithSAMLRequest;
 
 AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
 	RpcServiceRequest("sts", "2015-04-01", "AssumeRoleWithSAML")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssumeRoleWithSAMLRequest::~AssumeRoleWithSAMLRequest()
 {}
@@ -33,7 +35,7 @@ std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
 void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string& sAMLAssertion)
 {
 	sAMLAssertion_ = sAMLAssertion;
-	setCoreParameter("SAMLAssertion", sAMLAssertion);
+	setParameter("SAMLAssertion", sAMLAssertion);
 }
 
 std::string AssumeRoleWithSAMLRequest::getRoleArn()const
@@ -44,7 +46,7 @@ std::string AssumeRoleWithSAMLRequest::getRoleArn()const
 void AssumeRoleWithSAMLRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setParameter("RoleArn", roleArn);
 }
 
 std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn()const
@@ -55,7 +57,7 @@ std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn()const
 void AssumeRoleWithSAMLRequest::setSAMLProviderArn(const std::string& sAMLProviderArn)
 {
 	sAMLProviderArn_ = sAMLProviderArn;
-	setCoreParameter("SAMLProviderArn", sAMLProviderArn);
+	setParameter("SAMLProviderArn", sAMLProviderArn);
 }
 
 long AssumeRoleWithSAMLRequest::getDurationSeconds()const
@@ -66,7 +68,7 @@ long AssumeRoleWithSAMLRequest::getDurationSeconds()const
 void AssumeRoleWithSAMLRequest::setDurationSeconds(long durationSeconds)
 {
 	durationSeconds_ = durationSeconds;
-	setCoreParameter("DurationSeconds", std::to_string(durationSeconds));
+	setParameter("DurationSeconds", std::to_string(durationSeconds));
 }
 
 std::string AssumeRoleWithSAMLRequest::getPolicy()const
@@ -77,6 +79,6 @@ std::string AssumeRoleWithSAMLRequest::getPolicy()const
 void AssumeRoleWithSAMLRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", policy);
+	setParameter("Policy", policy);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::StartImageScanRequest;
 
 StartImageScanRequest::StartImageScanRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan");
+	setMethod(HttpRequest::Method::Put);
+}
 
 StartImageScanRequest::~StartImageScanRequest()
 {}
@@ -33,7 +36,7 @@ std::string StartImageScanRequest::getRepoNamespace()const
 void StartImageScanRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string StartImageScanRequest::getRepoName()const
@@ -44,7 +47,7 @@ std::string StartImageScanRequest::getRepoName()const
 void StartImageScanRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 std::string StartImageScanRequest::getTag()const
@@ -55,6 +58,6 @@ std::string StartImageScanRequest::getTag()const
 void StartImageScanRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::UnbindQueueRequest;
 
 UnbindQueueRequest::UnbindQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/queue");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 UnbindQueueRequest::~UnbindQueueRequest()
 {}
@@ -33,7 +36,7 @@ std::string UnbindQueueRequest::getQueueName()const
 void UnbindQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string UnbindQueueRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string UnbindQueueRequest::getProjectName()const
 void UnbindQueueRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string UnbindQueueRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string UnbindQueueRequest::getRegionId()const
 void UnbindQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string UnbindQueueRequest::getClusterId()const
@@ -66,6 +69,6 @@ std::string UnbindQueueRequest::getClusterId()const
 void UnbindQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

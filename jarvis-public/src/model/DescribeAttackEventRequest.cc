@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis_public::Model::DescribeAttackEventRequest;
 
 DescribeAttackEventRequest::DescribeAttackEventRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeAttackEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAttackEventRequest::~DescribeAttackEventRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeAttackEventRequest::getStartTime()const
 void DescribeAttackEventRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeAttackEventRequest::getProductType()const
@@ -44,7 +46,7 @@ std::string DescribeAttackEventRequest::getProductType()const
 void DescribeAttackEventRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string DescribeAttackEventRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeAttackEventRequest::getSourceIp()const
 void DescribeAttackEventRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAttackEventRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeAttackEventRequest::getPageSize()const
 void DescribeAttackEventRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAttackEventRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeAttackEventRequest::getLang()const
 void DescribeAttackEventRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAttackEventRequest::getServerIpList()const
@@ -88,7 +90,7 @@ std::string DescribeAttackEventRequest::getServerIpList()const
 void DescribeAttackEventRequest::setServerIpList(const std::string& serverIpList)
 {
 	serverIpList_ = serverIpList;
-	setCoreParameter("ServerIpList", serverIpList);
+	setParameter("ServerIpList", serverIpList);
 }
 
 int DescribeAttackEventRequest::getEndTime()const
@@ -99,7 +101,7 @@ int DescribeAttackEventRequest::getEndTime()const
 void DescribeAttackEventRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeAttackEventRequest::getCurrentPage()const
@@ -110,7 +112,7 @@ int DescribeAttackEventRequest::getCurrentPage()const
 void DescribeAttackEventRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAttackEventRequest::getRegion()const
@@ -121,6 +123,6 @@ std::string DescribeAttackEventRequest::getRegion()const
 void DescribeAttackEventRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

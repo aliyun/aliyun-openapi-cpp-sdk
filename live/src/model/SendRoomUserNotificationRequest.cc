@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SendRoomUserNotificationRequest;
 
 SendRoomUserNotificationRequest::SendRoomUserNotificationRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SendRoomUserNotification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendRoomUserNotificationRequest::~SendRoomUserNotificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendRoomUserNotificationRequest::getData()const
 void SendRoomUserNotificationRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string SendRoomUserNotificationRequest::getToAppUid()const
@@ -44,7 +46,7 @@ std::string SendRoomUserNotificationRequest::getToAppUid()const
 void SendRoomUserNotificationRequest::setToAppUid(const std::string& toAppUid)
 {
 	toAppUid_ = toAppUid;
-	setCoreParameter("ToAppUid", toAppUid);
+	setParameter("ToAppUid", toAppUid);
 }
 
 std::string SendRoomUserNotificationRequest::getAppUid()const
@@ -55,7 +57,7 @@ std::string SendRoomUserNotificationRequest::getAppUid()const
 void SendRoomUserNotificationRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setParameter("AppUid", appUid);
 }
 
 long SendRoomUserNotificationRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long SendRoomUserNotificationRequest::getOwnerId()const
 void SendRoomUserNotificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SendRoomUserNotificationRequest::getPriority()const
@@ -77,7 +79,7 @@ int SendRoomUserNotificationRequest::getPriority()const
 void SendRoomUserNotificationRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string SendRoomUserNotificationRequest::getRoomId()const
@@ -88,7 +90,7 @@ std::string SendRoomUserNotificationRequest::getRoomId()const
 void SendRoomUserNotificationRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string SendRoomUserNotificationRequest::getAppId()const
@@ -99,6 +101,6 @@ std::string SendRoomUserNotificationRequest::getAppId()const
 void SendRoomUserNotificationRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

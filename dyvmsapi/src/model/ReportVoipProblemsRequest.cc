@@ -35,7 +35,7 @@ long ReportVoipProblemsRequest::getResourceOwnerId()const
 void ReportVoipProblemsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportVoipProblemsRequest::getTitle()const
@@ -46,7 +46,7 @@ std::string ReportVoipProblemsRequest::getTitle()const
 void ReportVoipProblemsRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string ReportVoipProblemsRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ReportVoipProblemsRequest::getAccessKeyId()const
 void ReportVoipProblemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportVoipProblemsRequest::getVoipId()const
@@ -68,7 +68,7 @@ std::string ReportVoipProblemsRequest::getVoipId()const
 void ReportVoipProblemsRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", voipId);
+	setParameter("VoipId", voipId);
 }
 
 std::string ReportVoipProblemsRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ReportVoipProblemsRequest::getResourceOwnerAccount()const
 void ReportVoipProblemsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ReportVoipProblemsRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long ReportVoipProblemsRequest::getOwnerId()const
 void ReportVoipProblemsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportVoipProblemsRequest::getChannelId()const
@@ -101,7 +101,7 @@ std::string ReportVoipProblemsRequest::getChannelId()const
 void ReportVoipProblemsRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 
 std::string ReportVoipProblemsRequest::getDesc()const
@@ -112,6 +112,6 @@ std::string ReportVoipProblemsRequest::getDesc()const
 void ReportVoipProblemsRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setParameter("Desc", desc);
 }
 

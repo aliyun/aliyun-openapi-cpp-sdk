@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteTrafficControlRequest;
 
 DeleteTrafficControlRequest::DeleteTrafficControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteTrafficControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTrafficControlRequest::~DeleteTrafficControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteTrafficControlRequest::getTrafficControlId()const
 void DeleteTrafficControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 std::string DeleteTrafficControlRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteTrafficControlRequest::getAccessKeyId()const
 void DeleteTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTrafficControlRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteTrafficControlRequest::getSecurityToken()const
 void DeleteTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					bool spotInstanceRemedy;
 					std::string activeScalingConfigurationId;
 					int onDemandPercentageAboveBaseCapacity;
+					int desiredCapacity;
 					std::string lifecycleState;
 					std::string modificationTime;
 					int onDemandBaseCapacity;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 					int protectedCapacity;
 					int standbyCapacity;
 					std::string scalingPolicy;
+					std::vector<std::string> suspendedProcesses;
 					int removingCapacity;
 					std::vector<std::string> vSwitchIds;
 					int pendingCapacity;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 					std::string vSwitchId;
 					std::vector<std::string> loadBalancerIds;
 					int spotInstancePools;
+					bool groupDeletionProtection;
 					std::string launchTemplateId;
 					int maxSize;
 					std::string scalingGroupName;

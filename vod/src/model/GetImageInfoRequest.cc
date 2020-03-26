@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetImageInfoRequest;
 
 GetImageInfoRequest::GetImageInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetImageInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetImageInfoRequest::~GetImageInfoRequest()
 {}
@@ -33,7 +35,7 @@ long GetImageInfoRequest::getResourceOwnerId()const
 void GetImageInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetImageInfoRequest::getImageId()const
@@ -44,7 +46,7 @@ std::string GetImageInfoRequest::getImageId()const
 void GetImageInfoRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string GetImageInfoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetImageInfoRequest::getAccessKeyId()const
 void GetImageInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetImageInfoRequest::getOutputType()const
@@ -66,7 +68,7 @@ std::string GetImageInfoRequest::getOutputType()const
 void GetImageInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setParameter("OutputType", outputType);
 }
 
 long GetImageInfoRequest::getAuthTimeout()const
@@ -77,7 +79,7 @@ long GetImageInfoRequest::getAuthTimeout()const
 void GetImageInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string GetImageInfoRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string GetImageInfoRequest::getResourceOwnerAccount()const
 void GetImageInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetImageInfoRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long GetImageInfoRequest::getOwnerId()const
 void GetImageInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

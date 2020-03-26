@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenSendMqttMessageRequest;
 
 MoPenSendMqttMessageRequest::MoPenSendMqttMessageRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenSendMqttMessage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenSendMqttMessageRequest::~MoPenSendMqttMessageRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoPenSendMqttMessageRequest::getPayload()const
 void MoPenSendMqttMessageRequest::setPayload(const std::string& payload)
 {
 	payload_ = payload;
-	setCoreParameter("Payload", payload);
+	setBodyParameter("Payload", payload);
 }
 
 std::string MoPenSendMqttMessageRequest::getDeviceName()const
@@ -44,6 +46,6 @@ std::string MoPenSendMqttMessageRequest::getDeviceName()const
 void MoPenSendMqttMessageRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 

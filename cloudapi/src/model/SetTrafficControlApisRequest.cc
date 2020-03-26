@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetTrafficControlApisRequest;
 
 SetTrafficControlApisRequest::SetTrafficControlApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetTrafficControlApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetTrafficControlApisRequest::~SetTrafficControlApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetTrafficControlApisRequest::getTrafficControlId()const
 void SetTrafficControlApisRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 std::string SetTrafficControlApisRequest::getStageName()const
@@ -44,7 +46,7 @@ std::string SetTrafficControlApisRequest::getStageName()const
 void SetTrafficControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string SetTrafficControlApisRequest::getGroupId()const
@@ -55,7 +57,7 @@ std::string SetTrafficControlApisRequest::getGroupId()const
 void SetTrafficControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetTrafficControlApisRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SetTrafficControlApisRequest::getAccessKeyId()const
 void SetTrafficControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetTrafficControlApisRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string SetTrafficControlApisRequest::getSecurityToken()const
 void SetTrafficControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetTrafficControlApisRequest::getApiIds()const
@@ -88,6 +90,6 @@ std::string SetTrafficControlApisRequest::getApiIds()const
 void SetTrafficControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

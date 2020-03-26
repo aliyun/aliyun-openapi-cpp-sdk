@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getLocationNameEn()co
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getStartTime()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getIspNameEn()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getDomainName()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getEndTime()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainWebsocketTrafficDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDcdnDomainWebsocketTrafficDataRequest::getOwnerId()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDcdnDomainWebsocketTrafficDataRequest::getInterval()const
 void DescribeDcdnDomainWebsocketTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

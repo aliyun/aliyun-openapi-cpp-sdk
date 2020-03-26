@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAuthConfigRequest;
 
 QueryAuthConfigRequest::QueryAuthConfigRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAuthConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuthConfigRequest::~QueryAuthConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryAuthConfigRequest::getResourceOwnerId()const
 void QueryAuthConfigRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string QueryAuthConfigRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryAuthConfigRequest::getResourceOwnerAccount()const
 void QueryAuthConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAuthConfigRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryAuthConfigRequest::getOwnerAccount()const
 void QueryAuthConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string QueryAuthConfigRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string QueryAuthConfigRequest::getOwnerId()const
 void QueryAuthConfigRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string QueryAuthConfigRequest::getAccessKeyId()const
@@ -77,6 +79,6 @@ std::string QueryAuthConfigRequest::getAccessKeyId()const
 void QueryAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

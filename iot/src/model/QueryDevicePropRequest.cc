@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDevicePropRequest;
 
 QueryDevicePropRequest::QueryDevicePropRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceProp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicePropRequest::~QueryDevicePropRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDevicePropRequest::getProductKey()const
 void QueryDevicePropRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryDevicePropRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDevicePropRequest::getAccessKeyId()const
 void QueryDevicePropRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDevicePropRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string QueryDevicePropRequest::getIotId()const
 void QueryDevicePropRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDevicePropRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDevicePropRequest::getIotInstanceId()const
 void QueryDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryDevicePropRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string QueryDevicePropRequest::getDeviceName()const
 void QueryDevicePropRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

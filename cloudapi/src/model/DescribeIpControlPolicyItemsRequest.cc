@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeIpControlPolicyItemsRequest;
 
 DescribeIpControlPolicyItemsRequest::DescribeIpControlPolicyItemsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeIpControlPolicyItems")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpControlPolicyItemsRequest::~DescribeIpControlPolicyItemsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeIpControlPolicyItemsRequest::getPageNumber()const
 void DescribeIpControlPolicyItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeIpControlPolicyItemsRequest::getAccessKeyId()const
 void DescribeIpControlPolicyItemsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getIpControlId()const
@@ -55,7 +57,7 @@ std::string DescribeIpControlPolicyItemsRequest::getIpControlId()const
 void DescribeIpControlPolicyItemsRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
@@ -66,7 +68,7 @@ std::string DescribeIpControlPolicyItemsRequest::getPolicyItemId()const
 void DescribeIpControlPolicyItemsRequest::setPolicyItemId(const std::string& policyItemId)
 {
 	policyItemId_ = policyItemId;
-	setCoreParameter("PolicyItemId", policyItemId);
+	setParameter("PolicyItemId", policyItemId);
 }
 
 std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeIpControlPolicyItemsRequest::getSecurityToken()const
 void DescribeIpControlPolicyItemsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeIpControlPolicyItemsRequest::getPageSize()const
@@ -88,6 +90,6 @@ int DescribeIpControlPolicyItemsRequest::getPageSize()const
 void DescribeIpControlPolicyItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

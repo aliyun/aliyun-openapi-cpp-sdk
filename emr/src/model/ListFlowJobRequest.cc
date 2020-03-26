@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowJobRequest;
 
 ListFlowJobRequest::ListFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowJobRequest::~ListFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFlowJobRequest::getType()const
 void ListFlowJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 int ListFlowJobRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListFlowJobRequest::getPageNumber()const
 void ListFlowJobRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowJobRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ListFlowJobRequest::getRegionId()const
 void ListFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListFlowJobRequest::getName()const
@@ -66,7 +68,7 @@ std::string ListFlowJobRequest::getName()const
 void ListFlowJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ListFlowJobRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListFlowJobRequest::getPageSize()const
 void ListFlowJobRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowJobRequest::getId()const
@@ -88,7 +90,7 @@ std::string ListFlowJobRequest::getId()const
 void ListFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 bool ListFlowJobRequest::getAdhoc()const
@@ -99,7 +101,7 @@ bool ListFlowJobRequest::getAdhoc()const
 void ListFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc ? "true" : "false");
+	setParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string ListFlowJobRequest::getProjectId()const
@@ -110,6 +112,6 @@ std::string ListFlowJobRequest::getProjectId()const
 void ListFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

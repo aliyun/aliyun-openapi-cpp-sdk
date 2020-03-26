@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DeleteMetricRuleTargetsRequest;
 DeleteMetricRuleTargetsRequest::DeleteMetricRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DeleteMetricRuleTargets")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteMetricRuleTargetsRequest::~DeleteMetricRuleTargetsRequest()
@@ -36,7 +36,7 @@ void DeleteMetricRuleTargetsRequest::setTargetIds(const std::vector<std::string>
 {
 	targetIds_ = targetIds;
 	for(int dep1 = 0; dep1!= targetIds.size(); dep1++) {
-		setCoreParameter("TargetIds."+ std::to_string(dep1), targetIds.at(dep1));
+		setParameter("TargetIds."+ std::to_string(dep1), targetIds.at(dep1));
 	}
 }
 
@@ -48,6 +48,6 @@ std::string DeleteMetricRuleTargetsRequest::getRuleId()const
 void DeleteMetricRuleTargetsRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 

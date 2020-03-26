@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetGatewayBySubDeviceRequest;
 
 GetGatewayBySubDeviceRequest::GetGatewayBySubDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetGatewayBySubDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGatewayBySubDeviceRequest::~GetGatewayBySubDeviceRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetGatewayBySubDeviceRequest::getProductKey()const
 void GetGatewayBySubDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
 void GetGatewayBySubDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetGatewayBySubDeviceRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string GetGatewayBySubDeviceRequest::getIotId()const
 void GetGatewayBySubDeviceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string GetGatewayBySubDeviceRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string GetGatewayBySubDeviceRequest::getIotInstanceId()const
 void GetGatewayBySubDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetGatewayBySubDeviceRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string GetGatewayBySubDeviceRequest::getDeviceName()const
 void GetGatewayBySubDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

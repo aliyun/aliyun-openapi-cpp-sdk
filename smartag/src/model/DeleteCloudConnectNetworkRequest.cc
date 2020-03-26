@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteCloudConnectNetworkRequest;
 
 DeleteCloudConnectNetworkRequest::DeleteCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCloudConnectNetworkRequest::~DeleteCloudConnectNetworkRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCloudConnectNetworkRequest::getResourceOwnerId()const
 void DeleteCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCloudConnectNetworkRequest::getCcnId()const
@@ -44,7 +46,7 @@ std::string DeleteCloudConnectNetworkRequest::getCcnId()const
 void DeleteCloudConnectNetworkRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setParameter("CcnId", ccnId);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteCloudConnectNetworkRequest::getRegionId()const
 void DeleteCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteCloudConnectNetworkRequest::getResourceOwnerAccount()const
 void DeleteCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCloudConnectNetworkRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteCloudConnectNetworkRequest::getOwnerAccount()const
 void DeleteCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCloudConnectNetworkRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DeleteCloudConnectNetworkRequest::getOwnerId()const
 void DeleteCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

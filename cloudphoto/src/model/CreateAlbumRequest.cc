@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateAlbumRequest;
 
 CreateAlbumRequest::CreateAlbumRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateAlbum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlbumRequest::~CreateAlbumRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAlbumRequest::getLibraryId()const
 void CreateAlbumRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string CreateAlbumRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string CreateAlbumRequest::getStoreName()const
 void CreateAlbumRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string CreateAlbumRequest::getRemark()const
@@ -55,7 +57,7 @@ std::string CreateAlbumRequest::getRemark()const
 void CreateAlbumRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string CreateAlbumRequest::getAlbumName()const
@@ -66,6 +68,6 @@ std::string CreateAlbumRequest::getAlbumName()const
 void CreateAlbumRequest::setAlbumName(const std::string& albumName)
 {
 	albumName_ = albumName;
-	setCoreParameter("AlbumName", albumName);
+	setParameter("AlbumName", albumName);
 }
 

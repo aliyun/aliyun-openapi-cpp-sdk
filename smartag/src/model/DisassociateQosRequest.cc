@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisassociateQosRequest;
 
 DisassociateQosRequest::DisassociateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisassociateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisassociateQosRequest::~DisassociateQosRequest()
 {}
@@ -33,7 +35,7 @@ long DisassociateQosRequest::getResourceOwnerId()const
 void DisassociateQosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DisassociateQosRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DisassociateQosRequest::getRegionId()const
 void DisassociateQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DisassociateQosRequest::getQosId()const
@@ -55,7 +57,7 @@ std::string DisassociateQosRequest::getQosId()const
 void DisassociateQosRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string DisassociateQosRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DisassociateQosRequest::getResourceOwnerAccount()const
 void DisassociateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DisassociateQosRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DisassociateQosRequest::getOwnerAccount()const
 void DisassociateQosRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DisassociateQosRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DisassociateQosRequest::getOwnerId()const
 void DisassociateQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DisassociateQosRequest::getSmartAGId()const
@@ -99,6 +101,6 @@ std::string DisassociateQosRequest::getSmartAGId()const
 void DisassociateQosRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

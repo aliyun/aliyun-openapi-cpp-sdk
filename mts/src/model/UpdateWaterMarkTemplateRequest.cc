@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateWaterMarkTemplateRequest;
 
 UpdateWaterMarkTemplateRequest::UpdateWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWaterMarkTemplateRequest::~UpdateWaterMarkTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateWaterMarkTemplateRequest::getResourceOwnerId()const
 void UpdateWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateWaterMarkTemplateRequest::getWaterMarkTemplateId()const
@@ -44,7 +46,7 @@ std::string UpdateWaterMarkTemplateRequest::getWaterMarkTemplateId()const
 void UpdateWaterMarkTemplateRequest::setWaterMarkTemplateId(const std::string& waterMarkTemplateId)
 {
 	waterMarkTemplateId_ = waterMarkTemplateId;
-	setCoreParameter("WaterMarkTemplateId", waterMarkTemplateId);
+	setParameter("WaterMarkTemplateId", waterMarkTemplateId);
 }
 
 std::string UpdateWaterMarkTemplateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UpdateWaterMarkTemplateRequest::getAccessKeyId()const
 void UpdateWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void UpdateWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateWaterMarkTemplateRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UpdateWaterMarkTemplateRequest::getOwnerAccount()const
 void UpdateWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateWaterMarkTemplateRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long UpdateWaterMarkTemplateRequest::getOwnerId()const
 void UpdateWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateWaterMarkTemplateRequest::getName()const
@@ -99,7 +101,7 @@ std::string UpdateWaterMarkTemplateRequest::getName()const
 void UpdateWaterMarkTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateWaterMarkTemplateRequest::getConfig()const
@@ -110,6 +112,6 @@ std::string UpdateWaterMarkTemplateRequest::getConfig()const
 void UpdateWaterMarkTemplateRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

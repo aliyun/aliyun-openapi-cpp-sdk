@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateRuleActionRequest;
 
 CreateRuleActionRequest::CreateRuleActionRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateRuleAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRuleActionRequest::~CreateRuleActionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateRuleActionRequest::getConfiguration()const
 void CreateRuleActionRequest::setConfiguration(const std::string& configuration)
 {
 	configuration_ = configuration;
-	setCoreParameter("Configuration", configuration);
+	setParameter("Configuration", configuration);
 }
 
 std::string CreateRuleActionRequest::getType()const
@@ -44,7 +46,7 @@ std::string CreateRuleActionRequest::getType()const
 void CreateRuleActionRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateRuleActionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateRuleActionRequest::getAccessKeyId()const
 void CreateRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateRuleActionRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string CreateRuleActionRequest::getIotInstanceId()const
 void CreateRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 long CreateRuleActionRequest::getRuleId()const
@@ -77,7 +79,7 @@ long CreateRuleActionRequest::getRuleId()const
 void CreateRuleActionRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 
 bool CreateRuleActionRequest::getErrorActionFlag()const
@@ -88,6 +90,6 @@ bool CreateRuleActionRequest::getErrorActionFlag()const
 void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
 {
 	errorActionFlag_ = errorActionFlag;
-	setCoreParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
+	setParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
 }
 

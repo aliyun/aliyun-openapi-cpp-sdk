@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionRequest;
 
 ActionRequest::ActionRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "Action")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionRequest::~ActionRequest()
 {}
@@ -33,7 +35,7 @@ int ActionRequest::getOrderId()const
 void ActionRequest::setOrderId(int orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string ActionRequest::getStepCode()const
@@ -44,6 +46,6 @@ std::string ActionRequest::getStepCode()const
 void ActionRequest::setStepCode(const std::string& stepCode)
 {
 	stepCode_ = stepCode;
-	setCoreParameter("StepCode", stepCode);
+	setParameter("StepCode", stepCode);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteAccessControlListRequest;
 
 DeleteAccessControlListRequest::DeleteAccessControlListRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteAccessControlList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccessControlListRequest::~DeleteAccessControlListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteAccessControlListRequest::getAccess_key_id()const
 void DeleteAccessControlListRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DeleteAccessControlListRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DeleteAccessControlListRequest::getResourceOwnerId()const
 void DeleteAccessControlListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAccessControlListRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteAccessControlListRequest::getAccessKeyId()const
 void DeleteAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAccessControlListRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DeleteAccessControlListRequest::getRegionId()const
 void DeleteAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteAccessControlListRequest::getAclId()const
@@ -77,7 +79,7 @@ std::string DeleteAccessControlListRequest::getAclId()const
 void DeleteAccessControlListRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DeleteAccessControlListRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteAccessControlListRequest::getResourceOwnerAccount()const
 void DeleteAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteAccessControlListRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DeleteAccessControlListRequest::getOwnerAccount()const
 void DeleteAccessControlListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteAccessControlListRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DeleteAccessControlListRequest::getOwnerId()const
 void DeleteAccessControlListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAccessControlListRequest::getTags()const
@@ -121,6 +123,6 @@ std::string DeleteAccessControlListRequest::getTags()const
 void DeleteAccessControlListRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

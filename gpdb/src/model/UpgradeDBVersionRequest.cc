@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::UpgradeDBVersionRequest;
 
 UpgradeDBVersionRequest::UpgradeDBVersionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "UpgradeDBVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeDBVersionRequest::~UpgradeDBVersionRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpgradeDBVersionRequest::getAccessKeyId()const
 void UpgradeDBVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpgradeDBVersionRequest::getSwitchTimeMode()const
@@ -44,7 +46,7 @@ std::string UpgradeDBVersionRequest::getSwitchTimeMode()const
 void UpgradeDBVersionRequest::setSwitchTimeMode(const std::string& switchTimeMode)
 {
 	switchTimeMode_ = switchTimeMode;
-	setCoreParameter("SwitchTimeMode", switchTimeMode);
+	setParameter("SwitchTimeMode", switchTimeMode);
 }
 
 std::string UpgradeDBVersionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string UpgradeDBVersionRequest::getRegionId()const
 void UpgradeDBVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UpgradeDBVersionRequest::getDBInstanceId()const
@@ -66,7 +68,7 @@ std::string UpgradeDBVersionRequest::getDBInstanceId()const
 void UpgradeDBVersionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string UpgradeDBVersionRequest::getSwitchTime()const
@@ -77,7 +79,7 @@ std::string UpgradeDBVersionRequest::getSwitchTime()const
 void UpgradeDBVersionRequest::setSwitchTime(const std::string& switchTime)
 {
 	switchTime_ = switchTime;
-	setCoreParameter("SwitchTime", switchTime);
+	setParameter("SwitchTime", switchTime);
 }
 
 std::string UpgradeDBVersionRequest::getMajorVersion()const
@@ -88,7 +90,7 @@ std::string UpgradeDBVersionRequest::getMajorVersion()const
 void UpgradeDBVersionRequest::setMajorVersion(const std::string& majorVersion)
 {
 	majorVersion_ = majorVersion;
-	setCoreParameter("MajorVersion", majorVersion);
+	setParameter("MajorVersion", majorVersion);
 }
 
 std::string UpgradeDBVersionRequest::getMinorVersion()const
@@ -99,7 +101,7 @@ std::string UpgradeDBVersionRequest::getMinorVersion()const
 void UpgradeDBVersionRequest::setMinorVersion(const std::string& minorVersion)
 {
 	minorVersion_ = minorVersion;
-	setCoreParameter("MinorVersion", minorVersion);
+	setParameter("MinorVersion", minorVersion);
 }
 
 long UpgradeDBVersionRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long UpgradeDBVersionRequest::getOwnerId()const
 void UpgradeDBVersionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

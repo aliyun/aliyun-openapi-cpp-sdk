@@ -35,7 +35,7 @@ bool DeleteSiteMonitorsRequest::getIsDeleteAlarms()const
 void DeleteSiteMonitorsRequest::setIsDeleteAlarms(bool isDeleteAlarms)
 {
 	isDeleteAlarms_ = isDeleteAlarms;
-	setCoreParameter("IsDeleteAlarms", isDeleteAlarms ? "true" : "false");
+	setParameter("IsDeleteAlarms", isDeleteAlarms ? "true" : "false");
 }
 
 std::string DeleteSiteMonitorsRequest::getTaskIds()const
@@ -46,6 +46,6 @@ std::string DeleteSiteMonitorsRequest::getTaskIds()const
 void DeleteSiteMonitorsRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setCoreParameter("TaskIds", taskIds);
+	setParameter("TaskIds", taskIds);
 }
 

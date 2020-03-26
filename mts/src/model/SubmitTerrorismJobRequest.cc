@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitTerrorismJobRequest;
 
 SubmitTerrorismJobRequest::SubmitTerrorismJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitTerrorismJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitTerrorismJobRequest::~SubmitTerrorismJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitTerrorismJobRequest::getResourceOwnerId()const
 void SubmitTerrorismJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTerrorismJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitTerrorismJobRequest::getAccessKeyId()const
 void SubmitTerrorismJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTerrorismJobRequest::getTerrorismConfig()const
@@ -55,7 +57,7 @@ std::string SubmitTerrorismJobRequest::getTerrorismConfig()const
 void SubmitTerrorismJobRequest::setTerrorismConfig(const std::string& terrorismConfig)
 {
 	terrorismConfig_ = terrorismConfig;
-	setCoreParameter("TerrorismConfig", terrorismConfig);
+	setParameter("TerrorismConfig", terrorismConfig);
 }
 
 std::string SubmitTerrorismJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitTerrorismJobRequest::getUserData()const
 void SubmitTerrorismJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitTerrorismJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitTerrorismJobRequest::getResourceOwnerAccount()const
 void SubmitTerrorismJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitTerrorismJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitTerrorismJobRequest::getOwnerAccount()const
 void SubmitTerrorismJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitTerrorismJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitTerrorismJobRequest::getOwnerId()const
 void SubmitTerrorismJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTerrorismJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitTerrorismJobRequest::getPipelineId()const
 void SubmitTerrorismJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitTerrorismJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitTerrorismJobRequest::getInput()const
 void SubmitTerrorismJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

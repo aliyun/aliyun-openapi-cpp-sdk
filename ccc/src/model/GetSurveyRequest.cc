@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetSurveyRequest;
 
 GetSurveyRequest::GetSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSurveyRequest::~GetSurveyRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetSurveyRequest::getSurveyId()const
 void GetSurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setCoreParameter("SurveyId", surveyId);
+	setParameter("SurveyId", surveyId);
 }
 
 std::string GetSurveyRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string GetSurveyRequest::getInstanceId()const
 void GetSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetSurveyRequest::getScenarioId()const
@@ -55,6 +57,6 @@ std::string GetSurveyRequest::getScenarioId()const
 void GetSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

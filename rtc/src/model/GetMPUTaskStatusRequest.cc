@@ -27,6 +27,17 @@ GetMPUTaskStatusRequest::GetMPUTaskStatusRequest() :
 GetMPUTaskStatusRequest::~GetMPUTaskStatusRequest()
 {}
 
+std::string GetMPUTaskStatusRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void GetMPUTaskStatusRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setParameter("TaskId", taskId);
+}
+
 long GetMPUTaskStatusRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -47,16 +58,5 @@ void GetMPUTaskStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
-}
-
-std::string GetMPUTaskStatusRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void GetMPUTaskStatusRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setParameter("TaskId", taskId);
 }
 

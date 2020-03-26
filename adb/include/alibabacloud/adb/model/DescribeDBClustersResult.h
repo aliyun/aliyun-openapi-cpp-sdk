@@ -51,12 +51,14 @@ namespace AlibabaCloud
 					std::string dBNodeClass;
 					std::string dBClusterType;
 					std::string dBVersion;
+					std::string dtsJobId;
 					long dBNodeCount;
 					std::string commodityCode;
 					std::string regionId;
 					std::string expireTime;
 					std::string lockReason;
 					std::vector<DBCluster::Tag> tags;
+					std::string rdsInstanceId;
 				};
 
 

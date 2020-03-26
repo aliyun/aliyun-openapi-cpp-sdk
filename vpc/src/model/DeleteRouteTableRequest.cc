@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteRouteTableRequest;
 
 DeleteRouteTableRequest::DeleteRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRouteTableRequest::~DeleteRouteTableRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteRouteTableRequest::getResourceOwnerId()const
 void DeleteRouteTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteRouteTableRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteRouteTableRequest::getRegionId()const
 void DeleteRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteRouteTableRequest::getRouteTableId()const
@@ -55,7 +57,7 @@ std::string DeleteRouteTableRequest::getRouteTableId()const
 void DeleteRouteTableRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string DeleteRouteTableRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteRouteTableRequest::getResourceOwnerAccount()const
 void DeleteRouteTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteRouteTableRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteRouteTableRequest::getOwnerAccount()const
 void DeleteRouteTableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteRouteTableRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DeleteRouteTableRequest::getOwnerId()const
 void DeleteRouteTableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

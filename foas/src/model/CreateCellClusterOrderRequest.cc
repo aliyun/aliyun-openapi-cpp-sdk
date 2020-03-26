@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateCellClusterOrderRequest;
 
 CreateCellClusterOrderRequest::CreateCellClusterOrderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/realtime-compute/cell/buy");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCellClusterOrderRequest::~CreateCellClusterOrderRequest()
 {}
@@ -33,7 +36,7 @@ int CreateCellClusterOrderRequest::getPeriod()const
 void CreateCellClusterOrderRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setBodyParameter("Period", std::to_string(period));
 }
 
 int CreateCellClusterOrderRequest::getSlaveNum()const
@@ -44,7 +47,7 @@ int CreateCellClusterOrderRequest::getSlaveNum()const
 void CreateCellClusterOrderRequest::setSlaveNum(int slaveNum)
 {
 	slaveNum_ = slaveNum;
-	setCoreParameter("SlaveNum", std::to_string(slaveNum));
+	setBodyParameter("SlaveNum", std::to_string(slaveNum));
 }
 
 std::string CreateCellClusterOrderRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string CreateCellClusterOrderRequest::getRegionId()const
 void CreateCellClusterOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CreateCellClusterOrderRequest::getSlaveSpec()const
@@ -66,7 +69,7 @@ std::string CreateCellClusterOrderRequest::getSlaveSpec()const
 void CreateCellClusterOrderRequest::setSlaveSpec(const std::string& slaveSpec)
 {
 	slaveSpec_ = slaveSpec;
-	setCoreParameter("SlaveSpec", slaveSpec);
+	setBodyParameter("SlaveSpec", slaveSpec);
 }
 
 std::string CreateCellClusterOrderRequest::getRegion()const
@@ -77,7 +80,7 @@ std::string CreateCellClusterOrderRequest::getRegion()const
 void CreateCellClusterOrderRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setBodyParameter("Region", region);
 }
 
 int CreateCellClusterOrderRequest::getMasterNum()const
@@ -88,7 +91,7 @@ int CreateCellClusterOrderRequest::getMasterNum()const
 void CreateCellClusterOrderRequest::setMasterNum(int masterNum)
 {
 	masterNum_ = masterNum;
-	setCoreParameter("MasterNum", std::to_string(masterNum));
+	setBodyParameter("MasterNum", std::to_string(masterNum));
 }
 
 std::string CreateCellClusterOrderRequest::getMasterSpec()const
@@ -99,7 +102,7 @@ std::string CreateCellClusterOrderRequest::getMasterSpec()const
 void CreateCellClusterOrderRequest::setMasterSpec(const std::string& masterSpec)
 {
 	masterSpec_ = masterSpec;
-	setCoreParameter("MasterSpec", masterSpec);
+	setBodyParameter("MasterSpec", masterSpec);
 }
 
 std::string CreateCellClusterOrderRequest::getPayModel()const
@@ -110,6 +113,6 @@ std::string CreateCellClusterOrderRequest::getPayModel()const
 void CreateCellClusterOrderRequest::setPayModel(const std::string& payModel)
 {
 	payModel_ = payModel;
-	setCoreParameter("PayModel", payModel);
+	setBodyParameter("PayModel", payModel);
 }
 

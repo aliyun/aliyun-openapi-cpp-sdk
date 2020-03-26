@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::SetAccountAliasRequest;
 
 SetAccountAliasRequest::SetAccountAliasRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "SetAccountAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAccountAliasRequest::~SetAccountAliasRequest()
 {}
@@ -33,6 +35,6 @@ std::string SetAccountAliasRequest::getAccountAlias()const
 void SetAccountAliasRequest::setAccountAlias(const std::string& accountAlias)
 {
 	accountAlias_ = accountAlias;
-	setCoreParameter("AccountAlias", accountAlias);
+	setParameter("AccountAlias", accountAlias);
 }
 

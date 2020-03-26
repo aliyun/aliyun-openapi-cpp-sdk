@@ -20,21 +20,12 @@ using AlibabaCloud::Iot::Model::QueryEdgeInstanceDriverRequest;
 
 QueryEdgeInstanceDriverRequest::QueryEdgeInstanceDriverRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryEdgeInstanceDriver")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEdgeInstanceDriverRequest::~QueryEdgeInstanceDriverRequest()
 {}
-
-int QueryEdgeInstanceDriverRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryEdgeInstanceDriverRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
 
 std::string QueryEdgeInstanceDriverRequest::getAccessKeyId()const
 {
@@ -44,18 +35,7 @@ std::string QueryEdgeInstanceDriverRequest::getAccessKeyId()const
 void QueryEdgeInstanceDriverRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryEdgeInstanceDriverRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryEdgeInstanceDriverRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryEdgeInstanceDriverRequest::getIotInstanceId()const
@@ -66,7 +46,7 @@ std::string QueryEdgeInstanceDriverRequest::getIotInstanceId()const
 void QueryEdgeInstanceDriverRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryEdgeInstanceDriverRequest::getPageSize()const
@@ -77,6 +57,50 @@ int QueryEdgeInstanceDriverRequest::getPageSize()const
 void QueryEdgeInstanceDriverRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryEdgeInstanceDriverRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryEdgeInstanceDriverRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryEdgeInstanceDriverRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void QueryEdgeInstanceDriverRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string QueryEdgeInstanceDriverRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryEdgeInstanceDriverRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryEdgeInstanceDriverRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryEdgeInstanceDriverRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeAutoDelConfigRequest;
 
 DescribeAutoDelConfigRequest::DescribeAutoDelConfigRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeAutoDelConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoDelConfigRequest::~DescribeAutoDelConfigRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeAutoDelConfigRequest::getSourceIp()const
 void DescribeAutoDelConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

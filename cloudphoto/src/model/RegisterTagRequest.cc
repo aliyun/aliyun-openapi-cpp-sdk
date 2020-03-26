@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RegisterTagRequest;
 
 RegisterTagRequest::RegisterTagRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RegisterTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterTagRequest::~RegisterTagRequest()
 {}
@@ -33,7 +35,7 @@ std::string RegisterTagRequest::getStoreName()const
 void RegisterTagRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string RegisterTagRequest::getText()const
@@ -44,7 +46,7 @@ std::string RegisterTagRequest::getText()const
 void RegisterTagRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setParameter("Text", text);
 }
 
 std::string RegisterTagRequest::getTagKey()const
@@ -55,7 +57,7 @@ std::string RegisterTagRequest::getTagKey()const
 void RegisterTagRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
-	setCoreParameter("TagKey", tagKey);
+	setParameter("TagKey", tagKey);
 }
 
 std::string RegisterTagRequest::getLang()const
@@ -66,6 +68,6 @@ std::string RegisterTagRequest::getLang()const
 void RegisterTagRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateRotationPolicyRequest;
 UpdateRotationPolicyRequest::UpdateRotationPolicyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateRotationPolicy")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateRotationPolicyRequest::~UpdateRotationPolicyRequest()

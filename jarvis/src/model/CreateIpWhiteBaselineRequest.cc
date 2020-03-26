@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateIpWhiteBaselineRequest;
 
 CreateIpWhiteBaselineRequest::CreateIpWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateIpWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIpWhiteBaselineRequest::~CreateIpWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ long CreateIpWhiteBaselineRequest::getResourceOwnerId()const
 void CreateIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateIpWhiteBaselineRequest::getSrcIp()const
@@ -44,7 +46,7 @@ std::string CreateIpWhiteBaselineRequest::getSrcIp()const
 void CreateIpWhiteBaselineRequest::setSrcIp(const std::string& srcIp)
 {
 	srcIp_ = srcIp;
-	setCoreParameter("SrcIp", srcIp);
+	setParameter("SrcIp", srcIp);
 }
 
 std::string CreateIpWhiteBaselineRequest::getRemark()const
@@ -55,7 +57,7 @@ std::string CreateIpWhiteBaselineRequest::getRemark()const
 void CreateIpWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string CreateIpWhiteBaselineRequest::getSourceCode()const
@@ -66,7 +68,7 @@ std::string CreateIpWhiteBaselineRequest::getSourceCode()const
 void CreateIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateIpWhiteBaselineRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string CreateIpWhiteBaselineRequest::getSourceIp()const
 void CreateIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateIpWhiteBaselineRequest::getLang()const
@@ -88,6 +90,6 @@ std::string CreateIpWhiteBaselineRequest::getLang()const
 void CreateIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

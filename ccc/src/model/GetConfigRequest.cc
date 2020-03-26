@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConfigRequest;
 
 GetConfigRequest::GetConfigRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConfigRequest::~GetConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetConfigRequest::getAccessKeyId()const
 void GetConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetConfigRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string GetConfigRequest::getInstanceId()const
 void GetConfigRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetConfigRequest::getName()const
@@ -55,7 +57,7 @@ std::string GetConfigRequest::getName()const
 void GetConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string GetConfigRequest::getObjectType()const
@@ -66,7 +68,7 @@ std::string GetConfigRequest::getObjectType()const
 void GetConfigRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setParameter("ObjectType", objectType);
 }
 
 std::string GetConfigRequest::getObjectId()const
@@ -77,6 +79,6 @@ std::string GetConfigRequest::getObjectId()const
 void GetConfigRequest::setObjectId(const std::string& objectId)
 {
 	objectId_ = objectId;
-	setCoreParameter("ObjectId", objectId);
+	setParameter("ObjectId", objectId);
 }
 

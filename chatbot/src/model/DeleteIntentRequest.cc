@@ -35,6 +35,6 @@ long DeleteIntentRequest::getIntentId()const
 void DeleteIntentRequest::setIntentId(long intentId)
 {
 	intentId_ = intentId;
-	setCoreParameter("IntentId", std::to_string(intentId));
+	setParameter("IntentId", std::to_string(intentId));
 }
 

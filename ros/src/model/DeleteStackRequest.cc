@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DeleteStackRequest;
 
 DeleteStackRequest::DeleteStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteStackRequest::~DeleteStackRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteStackRequest::getRegionId()const
 void DeleteStackRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteStackRequest::getStackId()const
@@ -44,7 +47,7 @@ std::string DeleteStackRequest::getStackId()const
 void DeleteStackRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DeleteStackRequest::getStackName()const
@@ -55,6 +58,6 @@ std::string DeleteStackRequest::getStackName()const
 void DeleteStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

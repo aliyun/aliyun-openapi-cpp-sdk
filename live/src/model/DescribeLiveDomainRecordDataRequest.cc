@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainRecordDataRequest;
 
 DescribeLiveDomainRecordDataRequest::DescribeLiveDomainRecordDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainRecordData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainRecordDataRequest::~DescribeLiveDomainRecordDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainRecordDataRequest::getStartTime()const
 void DescribeLiveDomainRecordDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainRecordDataRequest::getRecordType()const
 void DescribeLiveDomainRecordDataRequest::setRecordType(const std::string& recordType)
 {
 	recordType_ = recordType;
-	setCoreParameter("RecordType", recordType);
+	setParameter("RecordType", recordType);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainRecordDataRequest::getDomainName()const
 void DescribeLiveDomainRecordDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDomainRecordDataRequest::getEndTime()const
 void DescribeLiveDomainRecordDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainRecordDataRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long DescribeLiveDomainRecordDataRequest::getOwnerId()const
 void DescribeLiveDomainRecordDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -36,7 +36,7 @@ void RemoveTagsRequest::setGroupIds(const std::vector<std::string>& groupIds)
 {
 	groupIds_ = groupIds;
 	for(int dep1 = 0; dep1!= groupIds.size(); dep1++) {
-		setCoreParameter("GroupIds."+ std::to_string(dep1), groupIds.at(dep1));
+		setParameter("GroupIds."+ std::to_string(dep1), groupIds.at(dep1));
 	}
 }
 
@@ -50,9 +50,9 @@ void RemoveTagsRequest::setTag(const std::vector<Tag>& tag)
 	tag_ = tag;
 	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
 		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1);
-		setCoreParameter(tagObjStr + ".Value", tagObj.value);
-		setCoreParameter(tagObjStr + ".Key", tagObj.key);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

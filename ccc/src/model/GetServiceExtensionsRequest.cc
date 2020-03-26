@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetServiceExtensionsRequest;
 
 GetServiceExtensionsRequest::GetServiceExtensionsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetServiceExtensions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetServiceExtensionsRequest::~GetServiceExtensionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetServiceExtensionsRequest::getServiceType()const
 void GetServiceExtensionsRequest::setServiceType(const std::string& serviceType)
 {
 	serviceType_ = serviceType;
-	setCoreParameter("ServiceType", serviceType);
+	setParameter("ServiceType", serviceType);
 }
 
 std::string GetServiceExtensionsRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string GetServiceExtensionsRequest::getInstanceId()const
 void GetServiceExtensionsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetServiceExtensionsRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetServiceExtensionsRequest::getAccessKeyId()const
 void GetServiceExtensionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowCategoryRequest;
 
 CreateFlowCategoryRequest::CreateFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowCategoryRequest::~CreateFlowCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateFlowCategoryRequest::getType()const
 void CreateFlowCategoryRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateFlowCategoryRequest::getParentId()const
@@ -44,7 +46,7 @@ std::string CreateFlowCategoryRequest::getParentId()const
 void CreateFlowCategoryRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 std::string CreateFlowCategoryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string CreateFlowCategoryRequest::getRegionId()const
 void CreateFlowCategoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateFlowCategoryRequest::getName()const
@@ -66,7 +68,7 @@ std::string CreateFlowCategoryRequest::getName()const
 void CreateFlowCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateFlowCategoryRequest::getProjectId()const
@@ -77,6 +79,6 @@ std::string CreateFlowCategoryRequest::getProjectId()const
 void CreateFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

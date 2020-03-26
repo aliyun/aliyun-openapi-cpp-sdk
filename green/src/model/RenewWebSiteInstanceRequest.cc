@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RenewWebSiteInstanceRequest;
 
 RenewWebSiteInstanceRequest::RenewWebSiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RenewWebSiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewWebSiteInstanceRequest::~RenewWebSiteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string RenewWebSiteInstanceRequest::getClientToken()const
 void RenewWebSiteInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int RenewWebSiteInstanceRequest::getOrderNum()const
@@ -44,7 +46,7 @@ int RenewWebSiteInstanceRequest::getOrderNum()const
 void RenewWebSiteInstanceRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", std::to_string(orderNum));
+	setParameter("OrderNum", std::to_string(orderNum));
 }
 
 std::string RenewWebSiteInstanceRequest::getCommodityCode()const
@@ -55,7 +57,7 @@ std::string RenewWebSiteInstanceRequest::getCommodityCode()const
 void RenewWebSiteInstanceRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setParameter("CommodityCode", commodityCode);
 }
 
 long RenewWebSiteInstanceRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long RenewWebSiteInstanceRequest::getOwnerId()const
 void RenewWebSiteInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int RenewWebSiteInstanceRequest::getDuration()const
@@ -77,7 +79,7 @@ int RenewWebSiteInstanceRequest::getDuration()const
 void RenewWebSiteInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string RenewWebSiteInstanceRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string RenewWebSiteInstanceRequest::getInstanceId()const
 void RenewWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RenewWebSiteInstanceRequest::getPricingCycle()const
@@ -99,7 +101,7 @@ std::string RenewWebSiteInstanceRequest::getPricingCycle()const
 void RenewWebSiteInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 
 std::string RenewWebSiteInstanceRequest::getOrderType()const
@@ -110,6 +112,6 @@ std::string RenewWebSiteInstanceRequest::getOrderType()const
 void RenewWebSiteInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::QueryRenewPriceRequest;
 
 QueryRenewPriceRequest::QueryRenewPriceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "QueryRenewPrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryRenewPriceRequest::~QueryRenewPriceRequest()
 {}
@@ -33,7 +35,7 @@ int QueryRenewPriceRequest::getTimeCycleNum()const
 void QueryRenewPriceRequest::setTimeCycleNum(int timeCycleNum)
 {
 	timeCycleNum_ = timeCycleNum;
-	setCoreParameter("TimeCycleNum", std::to_string(timeCycleNum));
+	setParameter("TimeCycleNum", std::to_string(timeCycleNum));
 }
 
 std::vector<std::string> QueryRenewPriceRequest::getApList()const
@@ -44,8 +46,9 @@ std::vector<std::string> QueryRenewPriceRequest::getApList()const
 void QueryRenewPriceRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
-	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
+	for(int dep1 = 0; dep1!= apList.size(); dep1++) {
+		setParameter("ApList."+ std::to_string(dep1), apList.at(dep1));
+	}
 }
 
 std::string QueryRenewPriceRequest::getAccessKeyId()const
@@ -56,6 +59,6 @@ std::string QueryRenewPriceRequest::getAccessKeyId()const
 void QueryRenewPriceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

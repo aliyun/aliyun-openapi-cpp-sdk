@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListPackageRequest;
 
 ListPackageRequest::ListPackageRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListPackageRequest::~ListPackageRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListPackageRequest::getProjectName()const
 void ListPackageRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string ListPackageRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string ListPackageRequest::getRegionId()const
 void ListPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ListPackageRequest::getPackageName()const
@@ -55,7 +58,7 @@ std::string ListPackageRequest::getPackageName()const
 void ListPackageRequest::setPackageName(const std::string& packageName)
 {
 	packageName_ = packageName;
-	setCoreParameter("PackageName", packageName);
+	setParameter("PackageName", packageName);
 }
 
 int ListPackageRequest::getPageSize()const
@@ -66,7 +69,7 @@ int ListPackageRequest::getPageSize()const
 void ListPackageRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListPackageRequest::getPageIndex()const
@@ -77,7 +80,7 @@ int ListPackageRequest::getPageIndex()const
 void ListPackageRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListPackageRequest::getTag()const
@@ -88,7 +91,7 @@ std::string ListPackageRequest::getTag()const
 void ListPackageRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 
 std::string ListPackageRequest::getType()const
@@ -99,6 +102,6 @@ std::string ListPackageRequest::getType()const
 void ListPackageRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 

@@ -37,10 +37,10 @@ void AllocateCostUnitResourceRequest::setResourceInstanceList(const std::vector<
 	resourceInstanceList_ = resourceInstanceList;
 	for(int dep1 = 0; dep1!= resourceInstanceList.size(); dep1++) {
 		auto resourceInstanceListObj = resourceInstanceList.at(dep1);
-		std::string resourceInstanceListObjStr = "ResourceInstanceList." + std::to_string(dep1);
-		setCoreParameter(resourceInstanceListObjStr + ".ResourceId", resourceInstanceListObj.resourceId);
-		setCoreParameter(resourceInstanceListObjStr + ".CommodityCode", resourceInstanceListObj.commodityCode);
-		setCoreParameter(resourceInstanceListObjStr + ".ResourceUserId", std::to_string(resourceInstanceListObj.resourceUserId));
+		std::string resourceInstanceListObjStr = "ResourceInstanceList." + std::to_string(dep1 + 1);
+		setParameter(resourceInstanceListObjStr + ".ResourceId", resourceInstanceListObj.resourceId);
+		setParameter(resourceInstanceListObjStr + ".CommodityCode", resourceInstanceListObj.commodityCode);
+		setParameter(resourceInstanceListObjStr + ".ResourceUserId", std::to_string(resourceInstanceListObj.resourceUserId));
 	}
 }
 
@@ -52,7 +52,7 @@ long AllocateCostUnitResourceRequest::getFromUnitId()const
 void AllocateCostUnitResourceRequest::setFromUnitId(long fromUnitId)
 {
 	fromUnitId_ = fromUnitId;
-	setCoreParameter("FromUnitId", std::to_string(fromUnitId));
+	setParameter("FromUnitId", std::to_string(fromUnitId));
 }
 
 long AllocateCostUnitResourceRequest::getToUnitId()const
@@ -63,7 +63,7 @@ long AllocateCostUnitResourceRequest::getToUnitId()const
 void AllocateCostUnitResourceRequest::setToUnitId(long toUnitId)
 {
 	toUnitId_ = toUnitId;
-	setCoreParameter("ToUnitId", std::to_string(toUnitId));
+	setParameter("ToUnitId", std::to_string(toUnitId));
 }
 
 long AllocateCostUnitResourceRequest::getFromUnitUserId()const
@@ -74,7 +74,7 @@ long AllocateCostUnitResourceRequest::getFromUnitUserId()const
 void AllocateCostUnitResourceRequest::setFromUnitUserId(long fromUnitUserId)
 {
 	fromUnitUserId_ = fromUnitUserId;
-	setCoreParameter("FromUnitUserId", std::to_string(fromUnitUserId));
+	setParameter("FromUnitUserId", std::to_string(fromUnitUserId));
 }
 
 long AllocateCostUnitResourceRequest::getToUnitUserId()const
@@ -85,6 +85,6 @@ long AllocateCostUnitResourceRequest::getToUnitUserId()const
 void AllocateCostUnitResourceRequest::setToUnitUserId(long toUnitUserId)
 {
 	toUnitUserId_ = toUnitUserId;
-	setCoreParameter("ToUnitUserId", std::to_string(toUnitUserId));
+	setParameter("ToUnitUserId", std::to_string(toUnitUserId));
 }
 

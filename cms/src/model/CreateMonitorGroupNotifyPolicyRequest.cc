@@ -35,7 +35,7 @@ std::string CreateMonitorGroupNotifyPolicyRequest::getPolicyType()const
 void CreateMonitorGroupNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string CreateMonitorGroupNotifyPolicyRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string CreateMonitorGroupNotifyPolicyRequest::getGroupId()const
 void CreateMonitorGroupNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long CreateMonitorGroupNotifyPolicyRequest::getEndTime()const
@@ -57,7 +57,7 @@ long CreateMonitorGroupNotifyPolicyRequest::getEndTime()const
 void CreateMonitorGroupNotifyPolicyRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long CreateMonitorGroupNotifyPolicyRequest::getStartTime()const
@@ -68,6 +68,6 @@ long CreateMonitorGroupNotifyPolicyRequest::getStartTime()const
 void CreateMonitorGroupNotifyPolicyRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 

@@ -35,7 +35,7 @@ std::string CreateStreamPredictRequest::getClientToken()const
 void CreateStreamPredictRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateStreamPredictRequest::getAutoStart()const
@@ -46,7 +46,7 @@ std::string CreateStreamPredictRequest::getAutoStart()const
 void CreateStreamPredictRequest::setAutoStart(const std::string& autoStart)
 {
 	autoStart_ = autoStart;
-	setCoreParameter("AutoStart", autoStart);
+	setParameter("AutoStart", autoStart);
 }
 
 std::string CreateStreamPredictRequest::getNotify()const
@@ -57,7 +57,7 @@ std::string CreateStreamPredictRequest::getNotify()const
 void CreateStreamPredictRequest::setNotify(const std::string& notify)
 {
 	notify_ = notify;
-	setCoreParameter("Notify", notify);
+	setParameter("Notify", notify);
 }
 
 std::string CreateStreamPredictRequest::getOutput()const
@@ -68,7 +68,7 @@ std::string CreateStreamPredictRequest::getOutput()const
 void CreateStreamPredictRequest::setOutput(const std::string& output)
 {
 	output_ = output;
-	setCoreParameter("Output", output);
+	setParameter("Output", output);
 }
 
 std::string CreateStreamPredictRequest::getShowLog()const
@@ -79,7 +79,7 @@ std::string CreateStreamPredictRequest::getShowLog()const
 void CreateStreamPredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string CreateStreamPredictRequest::getStreamType()const
@@ -90,7 +90,7 @@ std::string CreateStreamPredictRequest::getStreamType()const
 void CreateStreamPredictRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setParameter("StreamType", streamType);
 }
 
 std::string CreateStreamPredictRequest::getFaceGroupId()const
@@ -101,7 +101,7 @@ std::string CreateStreamPredictRequest::getFaceGroupId()const
 void CreateStreamPredictRequest::setFaceGroupId(const std::string& faceGroupId)
 {
 	faceGroupId_ = faceGroupId;
-	setCoreParameter("FaceGroupId", faceGroupId);
+	setParameter("FaceGroupId", faceGroupId);
 }
 
 std::string CreateStreamPredictRequest::getStreamId()const
@@ -112,7 +112,18 @@ std::string CreateStreamPredictRequest::getStreamId()const
 void CreateStreamPredictRequest::setStreamId(const std::string& streamId)
 {
 	streamId_ = streamId;
-	setCoreParameter("StreamId", streamId);
+	setParameter("StreamId", streamId);
+}
+
+std::string CreateStreamPredictRequest::getPredictTemplateId()const
+{
+	return predictTemplateId_;
+}
+
+void CreateStreamPredictRequest::setPredictTemplateId(const std::string& predictTemplateId)
+{
+	predictTemplateId_ = predictTemplateId;
+	setParameter("PredictTemplateId", predictTemplateId);
 }
 
 std::string CreateStreamPredictRequest::getDetectIntervals()const
@@ -123,7 +134,7 @@ std::string CreateStreamPredictRequest::getDetectIntervals()const
 void CreateStreamPredictRequest::setDetectIntervals(const std::string& detectIntervals)
 {
 	detectIntervals_ = detectIntervals;
-	setCoreParameter("DetectIntervals", detectIntervals);
+	setParameter("DetectIntervals", detectIntervals);
 }
 
 long CreateStreamPredictRequest::getOwnerId()const
@@ -134,7 +145,7 @@ long CreateStreamPredictRequest::getOwnerId()const
 void CreateStreamPredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateStreamPredictRequest::getProbabilityThresholds()const
@@ -145,7 +156,7 @@ std::string CreateStreamPredictRequest::getProbabilityThresholds()const
 void CreateStreamPredictRequest::setProbabilityThresholds(const std::string& probabilityThresholds)
 {
 	probabilityThresholds_ = probabilityThresholds;
-	setCoreParameter("ProbabilityThresholds", probabilityThresholds);
+	setParameter("ProbabilityThresholds", probabilityThresholds);
 }
 
 std::string CreateStreamPredictRequest::getModelIds()const
@@ -156,7 +167,7 @@ std::string CreateStreamPredictRequest::getModelIds()const
 void CreateStreamPredictRequest::setModelIds(const std::string& modelIds)
 {
 	modelIds_ = modelIds;
-	setCoreParameter("ModelIds", modelIds);
+	setParameter("ModelIds", modelIds);
 }
 
 std::string CreateStreamPredictRequest::getModelUserData()const
@@ -167,6 +178,6 @@ std::string CreateStreamPredictRequest::getModelUserData()const
 void CreateStreamPredictRequest::setModelUserData(const std::string& modelUserData)
 {
 	modelUserData_ = modelUserData;
-	setCoreParameter("ModelUserData", modelUserData);
+	setParameter("ModelUserData", modelUserData);
 }
 

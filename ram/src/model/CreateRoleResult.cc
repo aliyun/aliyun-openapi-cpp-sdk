@@ -52,6 +52,8 @@ void CreateRoleResult::parse(const std::string &payload)
 		role_.assumeRolePolicyDocument = roleNode["AssumeRolePolicyDocument"].asString();
 	if(!roleNode["CreateDate"].isNull())
 		role_.createDate = roleNode["CreateDate"].asString();
+	if(!roleNode["MaxSessionDuration"].isNull())
+		role_.maxSessionDuration = std::stol(roleNode["MaxSessionDuration"].asString());
 
 }
 

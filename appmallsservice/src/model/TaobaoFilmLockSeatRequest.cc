@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmLockSeatRequest;
 
 TaobaoFilmLockSeatRequest::TaobaoFilmLockSeatRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmLockSeat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmLockSeatRequest::~TaobaoFilmLockSeatRequest()
 {}
@@ -33,7 +35,7 @@ long TaobaoFilmLockSeatRequest::getScheduleId()const
 void TaobaoFilmLockSeatRequest::setScheduleId(long scheduleId)
 {
 	scheduleId_ = scheduleId;
-	setCoreParameter("ScheduleId", std::to_string(scheduleId));
+	setParameter("ScheduleId", std::to_string(scheduleId));
 }
 
 std::string TaobaoFilmLockSeatRequest::getSeatIds()const
@@ -44,7 +46,7 @@ std::string TaobaoFilmLockSeatRequest::getSeatIds()const
 void TaobaoFilmLockSeatRequest::setSeatIds(const std::string& seatIds)
 {
 	seatIds_ = seatIds;
-	setCoreParameter("SeatIds", seatIds);
+	setParameter("SeatIds", seatIds);
 }
 
 std::string TaobaoFilmLockSeatRequest::getSeatNames()const
@@ -55,7 +57,7 @@ std::string TaobaoFilmLockSeatRequest::getSeatNames()const
 void TaobaoFilmLockSeatRequest::setSeatNames(const std::string& seatNames)
 {
 	seatNames_ = seatNames;
-	setCoreParameter("SeatNames", seatNames);
+	setParameter("SeatNames", seatNames);
 }
 
 std::string TaobaoFilmLockSeatRequest::getMobile()const
@@ -66,7 +68,7 @@ std::string TaobaoFilmLockSeatRequest::getMobile()const
 void TaobaoFilmLockSeatRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setParameter("Mobile", mobile);
 }
 
 std::string TaobaoFilmLockSeatRequest::getExtUserId()const
@@ -77,7 +79,7 @@ std::string TaobaoFilmLockSeatRequest::getExtUserId()const
 void TaobaoFilmLockSeatRequest::setExtUserId(const std::string& extUserId)
 {
 	extUserId_ = extUserId;
-	setCoreParameter("ExtUserId", extUserId);
+	setParameter("ExtUserId", extUserId);
 }
 
 std::string TaobaoFilmLockSeatRequest::getParamsJson()const
@@ -88,6 +90,6 @@ std::string TaobaoFilmLockSeatRequest::getParamsJson()const
 void TaobaoFilmLockSeatRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

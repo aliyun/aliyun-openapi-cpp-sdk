@@ -35,7 +35,7 @@ std::string DescribeGroupMonitoringAgentProcessRequest::getGroupId()const
 void DescribeGroupMonitoringAgentProcessRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeGroupMonitoringAgentProcessRequest::getProcessName()const
@@ -46,7 +46,7 @@ std::string DescribeGroupMonitoringAgentProcessRequest::getProcessName()const
 void DescribeGroupMonitoringAgentProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
+	setParameter("ProcessName", processName);
 }
 
 int DescribeGroupMonitoringAgentProcessRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeGroupMonitoringAgentProcessRequest::getPageNumber()const
 void DescribeGroupMonitoringAgentProcessRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeGroupMonitoringAgentProcessRequest::getPageSize()const
@@ -68,6 +68,6 @@ int DescribeGroupMonitoringAgentProcessRequest::getPageSize()const
 void DescribeGroupMonitoringAgentProcessRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

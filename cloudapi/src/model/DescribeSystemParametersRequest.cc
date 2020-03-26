@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeSystemParametersRequest;
 
 DescribeSystemParametersRequest::DescribeSystemParametersRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeSystemParameters")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSystemParametersRequest::~DescribeSystemParametersRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSystemParametersRequest::getAccessKeyId()const
 void DescribeSystemParametersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSystemParametersRequest::getSecurityToken()const
@@ -44,6 +46,6 @@ std::string DescribeSystemParametersRequest::getSecurityToken()const
 void DescribeSystemParametersRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

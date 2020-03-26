@@ -35,23 +35,23 @@ namespace AlibabaCloud
 				DebugBeginDialogueRequest();
 				~DebugBeginDialogueRequest();
 
+				std::string getConversationId()const;
+				void setConversationId(const std::string& conversationId);
+				std::string getInitialContext()const;
+				void setInitialContext(const std::string& initialContext);
 				std::string getCallingNumber()const;
 				void setCallingNumber(const std::string& callingNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
-				std::string getConversationId()const;
-				void setConversationId(const std::string& conversationId);
-				std::string getInitialContext()const;
-				void setInitialContext(const std::string& initialContext);
 
             private:
+				std::string conversationId_;
+				std::string initialContext_;
 				std::string callingNumber_;
 				std::string instanceId_;
 				std::string calledNumber_;
-				std::string conversationId_;
-				std::string initialContext_;
 
 			};
 		}

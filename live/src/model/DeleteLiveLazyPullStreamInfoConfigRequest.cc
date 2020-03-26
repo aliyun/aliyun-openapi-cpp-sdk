@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveLazyPullStreamInfoConfigRequest;
 
 DeleteLiveLazyPullStreamInfoConfigRequest::DeleteLiveLazyPullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveLazyPullStreamInfoConfigRequest::~DeleteLiveLazyPullStreamInfoConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveLazyPullStreamInfoConfigRequest::getDomainName()const
 void DeleteLiveLazyPullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveLazyPullStreamInfoConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteLiveLazyPullStreamInfoConfigRequest::getOwnerId()const
 void DeleteLiveLazyPullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveLazyPullStreamInfoConfigRequest::getAppName()const
@@ -55,6 +57,6 @@ std::string DeleteLiveLazyPullStreamInfoConfigRequest::getAppName()const
 void DeleteLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::BindAxbRequest;
 BindAxbRequest::BindAxbRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "BindAxb")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 BindAxbRequest::~BindAxbRequest()

@@ -20,20 +20,22 @@ using AlibabaCloud::Iot::Model::GetDataAPIServiceDetailRequest;
 
 GetDataAPIServiceDetailRequest::GetDataAPIServiceDetailRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetDataAPIServiceDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetDataAPIServiceDetailRequest::~GetDataAPIServiceDetailRequest()
 {}
 
-std::string GetDataAPIServiceDetailRequest::getAccessKeyId()const
+std::string GetDataAPIServiceDetailRequest::getIotInstanceId()const
 {
-	return accessKeyId_;
+	return iotInstanceId_;
 }
 
-void GetDataAPIServiceDetailRequest::setAccessKeyId(const std::string& accessKeyId)
+void GetDataAPIServiceDetailRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	iotInstanceId_ = iotInstanceId;
+	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetDataAPIServiceDetailRequest::getApiSrn()const
@@ -44,6 +46,28 @@ std::string GetDataAPIServiceDetailRequest::getApiSrn()const
 void GetDataAPIServiceDetailRequest::setApiSrn(const std::string& apiSrn)
 {
 	apiSrn_ = apiSrn;
-	setCoreParameter("ApiSrn", apiSrn);
+	setBodyParameter("ApiSrn", apiSrn);
+}
+
+std::string GetDataAPIServiceDetailRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetDataAPIServiceDetailRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetDataAPIServiceDetailRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetDataAPIServiceDetailRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

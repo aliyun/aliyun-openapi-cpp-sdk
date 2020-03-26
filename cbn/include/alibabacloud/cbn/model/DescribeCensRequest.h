@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CBN_EXPORT DescribeCensRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForUpdateProhibitionLockRequest
 
 SaveSingleTaskForUpdateProhibitionLockRequest::SaveSingleTaskForUpdateProhibitionLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForUpdateProhibitionLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForUpdateProhibitionLockRequest::~SaveSingleTaskForUpdateProhibitionLockRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getDomainName()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getUserClientIp()cons
 void SaveSingleTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdateProhibitionLockRequest::getLang()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForUpdateProhibitionLockRequest::getLang()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForUpdateProhibitionLockRequest::getStatus()const
@@ -66,6 +68,6 @@ bool SaveSingleTaskForUpdateProhibitionLockRequest::getStatus()const
 void SaveSingleTaskForUpdateProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setParameter("Status", status ? "true" : "false");
 }
 

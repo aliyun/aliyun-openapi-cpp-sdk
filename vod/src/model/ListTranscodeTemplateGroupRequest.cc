@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListTranscodeTemplateGroupRequest;
 
 ListTranscodeTemplateGroupRequest::ListTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTranscodeTemplateGroupRequest::~ListTranscodeTemplateGroupRequest()
 {}
@@ -33,7 +35,7 @@ long ListTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListTranscodeTemplateGroupRequest::getAccessKeyId()const
 void ListTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListTranscodeTemplateGroupRequest::getPageSize()const
@@ -55,7 +57,7 @@ int ListTranscodeTemplateGroupRequest::getPageSize()const
 void ListTranscodeTemplateGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ListTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void ListTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ListTranscodeTemplateGroupRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long ListTranscodeTemplateGroupRequest::getOwnerId()const
 void ListTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListTranscodeTemplateGroupRequest::getPageNo()const
@@ -88,7 +90,7 @@ int ListTranscodeTemplateGroupRequest::getPageNo()const
 void ListTranscodeTemplateGroupRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListTranscodeTemplateGroupRequest::getAppId()const
@@ -99,6 +101,6 @@ std::string ListTranscodeTemplateGroupRequest::getAppId()const
 void ListTranscodeTemplateGroupRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

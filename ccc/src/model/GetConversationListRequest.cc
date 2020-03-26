@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConversationListRequest;
 
 GetConversationListRequest::GetConversationListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConversationList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConversationListRequest::~GetConversationListRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetConversationListRequest::getInstanceId()const
 void GetConversationListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetConversationListRequest::getTaskId()const
@@ -44,6 +46,6 @@ std::string GetConversationListRequest::getTaskId()const
 void GetConversationListRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

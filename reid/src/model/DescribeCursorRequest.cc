@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeCursorRequest;
 DescribeCursorRequest::DescribeCursorRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeCursor")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeCursorRequest::~DescribeCursorRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveSnapshotDetectPornConfigRequest;
 
 DeleteLiveSnapshotDetectPornConfigRequest::DeleteLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveSnapshotDetectPornConfigRequest::~DeleteLiveSnapshotDetectPornConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveSnapshotDetectPornConfigRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getAppName()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DeleteLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DeleteLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void DeleteLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

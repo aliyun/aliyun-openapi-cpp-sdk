@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryCoverPipelineListRequest;
 
 QueryCoverPipelineListRequest::QueryCoverPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryCoverPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCoverPipelineListRequest::~QueryCoverPipelineListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryCoverPipelineListRequest::getResourceOwnerId()const
 void QueryCoverPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCoverPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryCoverPipelineListRequest::getResourceOwnerAccount()const
 void QueryCoverPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCoverPipelineListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryCoverPipelineListRequest::getOwnerAccount()const
 void QueryCoverPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryCoverPipelineListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryCoverPipelineListRequest::getOwnerId()const
 void QueryCoverPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCoverPipelineListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryCoverPipelineListRequest::getAccessKeyId()const
 void QueryCoverPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCoverPipelineListRequest::getPipelineIds()const
@@ -88,6 +90,6 @@ std::string QueryCoverPipelineListRequest::getPipelineIds()const
 void QueryCoverPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setParameter("PipelineIds", pipelineIds);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeMonitoringAgentHostsRequest::getSerialNumbers()const
 void DescribeMonitoringAgentHostsRequest::setSerialNumbers(const std::string& serialNumbers)
 {
 	serialNumbers_ = serialNumbers;
-	setCoreParameter("SerialNumbers", serialNumbers);
+	setParameter("SerialNumbers", serialNumbers);
 }
 
 int DescribeMonitoringAgentHostsRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeMonitoringAgentHostsRequest::getPageNumber()const
 void DescribeMonitoringAgentHostsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeMonitoringAgentHostsRequest::getHostName()const
@@ -57,7 +57,7 @@ std::string DescribeMonitoringAgentHostsRequest::getHostName()const
 void DescribeMonitoringAgentHostsRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string DescribeMonitoringAgentHostsRequest::getInstanceIds()const
@@ -68,7 +68,7 @@ std::string DescribeMonitoringAgentHostsRequest::getInstanceIds()const
 void DescribeMonitoringAgentHostsRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 
 std::string DescribeMonitoringAgentHostsRequest::getInstanceRegionId()const
@@ -79,7 +79,7 @@ std::string DescribeMonitoringAgentHostsRequest::getInstanceRegionId()const
 void DescribeMonitoringAgentHostsRequest::setInstanceRegionId(const std::string& instanceRegionId)
 {
 	instanceRegionId_ = instanceRegionId;
-	setCoreParameter("InstanceRegionId", instanceRegionId);
+	setParameter("InstanceRegionId", instanceRegionId);
 }
 
 int DescribeMonitoringAgentHostsRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeMonitoringAgentHostsRequest::getPageSize()const
 void DescribeMonitoringAgentHostsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMonitoringAgentHostsRequest::getKeyWord()const
@@ -101,6 +101,6 @@ std::string DescribeMonitoringAgentHostsRequest::getKeyWord()const
 void DescribeMonitoringAgentHostsRequest::setKeyWord(const std::string& keyWord)
 {
 	keyWord_ = keyWord;
-	setCoreParameter("KeyWord", keyWord);
+	setParameter("KeyWord", keyWord);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsDLQMessagePageQueryByGroupIdRequest;
 OnsDLQMessagePageQueryByGroupIdRequest::OnsDLQMessagePageQueryByGroupIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsDLQMessagePageQueryByGroupIdRequest::~OnsDLQMessagePageQueryByGroupIdRequest()

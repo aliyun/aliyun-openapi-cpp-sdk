@@ -27,17 +27,6 @@ UpdateDcdnDomainRequest::UpdateDcdnDomainRequest() :
 UpdateDcdnDomainRequest::~UpdateDcdnDomainRequest()
 {}
 
-std::string UpdateDcdnDomainRequest::getTopLevelDomain()const
-{
-	return topLevelDomain_;
-}
-
-void UpdateDcdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
-{
-	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
-}
-
 std::string UpdateDcdnDomainRequest::getSources()const
 {
 	return sources_;
@@ -46,29 +35,7 @@ std::string UpdateDcdnDomainRequest::getSources()const
 void UpdateDcdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
-}
-
-std::string UpdateDcdnDomainRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void UpdateDcdnDomainRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
-}
-
-long UpdateDcdnDomainRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void UpdateDcdnDomainRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("Sources", sources);
 }
 
 std::string UpdateDcdnDomainRequest::getResourceGroupId()const
@@ -79,7 +46,7 @@ std::string UpdateDcdnDomainRequest::getResourceGroupId()const
 void UpdateDcdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateDcdnDomainRequest::getSecurityToken()const
@@ -90,6 +57,39 @@ std::string UpdateDcdnDomainRequest::getSecurityToken()const
 void UpdateDcdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string UpdateDcdnDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void UpdateDcdnDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setParameter("TopLevelDomain", topLevelDomain);
+}
+
+std::string UpdateDcdnDomainRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void UpdateDcdnDomainRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long UpdateDcdnDomainRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void UpdateDcdnDomainRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

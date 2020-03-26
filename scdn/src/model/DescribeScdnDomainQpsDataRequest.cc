@@ -35,7 +35,7 @@ std::string DescribeScdnDomainQpsDataRequest::getLocationNameEn()const
 void DescribeScdnDomainQpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeScdnDomainQpsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainQpsDataRequest::getStartTime()const
 void DescribeScdnDomainQpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainQpsDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainQpsDataRequest::getIspNameEn()const
 void DescribeScdnDomainQpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeScdnDomainQpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeScdnDomainQpsDataRequest::getDomainName()const
 void DescribeScdnDomainQpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainQpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeScdnDomainQpsDataRequest::getEndTime()const
 void DescribeScdnDomainQpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainQpsDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeScdnDomainQpsDataRequest::getOwnerId()const
 void DescribeScdnDomainQpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainQpsDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeScdnDomainQpsDataRequest::getInterval()const
 void DescribeScdnDomainQpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

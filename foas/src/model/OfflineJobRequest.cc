@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::OfflineJobRequest;
 
 OfflineJobRequest::OfflineJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/offline");
+	setMethod(HttpRequest::Method::Put);
+}
 
 OfflineJobRequest::~OfflineJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string OfflineJobRequest::getProjectName()const
 void OfflineJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string OfflineJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string OfflineJobRequest::getRegionId()const
 void OfflineJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string OfflineJobRequest::getJobName()const
@@ -55,6 +58,6 @@ std::string OfflineJobRequest::getJobName()const
 void OfflineJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

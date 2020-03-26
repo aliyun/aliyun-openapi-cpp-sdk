@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchWaterMarkTemplateRequest;
 
 SearchWaterMarkTemplateRequest::SearchWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchWaterMarkTemplateRequest::~SearchWaterMarkTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long SearchWaterMarkTemplateRequest::getResourceOwnerId()const
 void SearchWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long SearchWaterMarkTemplateRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long SearchWaterMarkTemplateRequest::getPageNumber()const
 void SearchWaterMarkTemplateRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string SearchWaterMarkTemplateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SearchWaterMarkTemplateRequest::getAccessKeyId()const
 void SearchWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SearchWaterMarkTemplateRequest::getPageSize()const
@@ -66,7 +68,7 @@ long SearchWaterMarkTemplateRequest::getPageSize()const
 void SearchWaterMarkTemplateRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchWaterMarkTemplateRequest::getState()const
@@ -77,7 +79,7 @@ std::string SearchWaterMarkTemplateRequest::getState()const
 void SearchWaterMarkTemplateRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string SearchWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SearchWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void SearchWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchWaterMarkTemplateRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SearchWaterMarkTemplateRequest::getOwnerAccount()const
 void SearchWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SearchWaterMarkTemplateRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long SearchWaterMarkTemplateRequest::getOwnerId()const
 void SearchWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

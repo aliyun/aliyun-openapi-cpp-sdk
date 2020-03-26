@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetRoutePointRequest;
 
 GetRoutePointRequest::GetRoutePointRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetRoutePoint")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRoutePointRequest::~GetRoutePointRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetRoutePointRequest::getContactFlowId()const
 void GetRoutePointRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", contactFlowId);
+	setParameter("ContactFlowId", contactFlowId);
 }
 
 std::string GetRoutePointRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string GetRoutePointRequest::getInstanceId()const
 void GetRoutePointRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetRoutePointRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetRoutePointRequest::getAccessKeyId()const
 void GetRoutePointRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

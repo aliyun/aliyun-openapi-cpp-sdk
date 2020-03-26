@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::RemoveThingTopoRequest;
 
 RemoveThingTopoRequest::RemoveThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "RemoveThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveThingTopoRequest::~RemoveThingTopoRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveThingTopoRequest::getProductKey()const
 void RemoveThingTopoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string RemoveThingTopoRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string RemoveThingTopoRequest::getAccessKeyId()const
 void RemoveThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveThingTopoRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string RemoveThingTopoRequest::getIotId()const
 void RemoveThingTopoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string RemoveThingTopoRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string RemoveThingTopoRequest::getIotInstanceId()const
 void RemoveThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string RemoveThingTopoRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string RemoveThingTopoRequest::getDeviceName()const
 void RemoveThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

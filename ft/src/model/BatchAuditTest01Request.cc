@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::BatchAuditTest01Request;
 BatchAuditTest01Request::BatchAuditTest01Request() :
 	RpcServiceRequest("ft", "2018-07-13", "BatchAuditTest01")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 BatchAuditTest01Request::~BatchAuditTest01Request()

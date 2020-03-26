@@ -51,6 +51,8 @@ set(csb_public_header_model
 	include/alibabacloud/csb/model/DeleteServiceListResult.h
 	include/alibabacloud/csb/model/DeleteUnionCasServiceRequest.h
 	include/alibabacloud/csb/model/DeleteUnionCasServiceResult.h
+	include/alibabacloud/csb/model/DescribeRegionsRequest.h
+	include/alibabacloud/csb/model/DescribeRegionsResult.h
 	include/alibabacloud/csb/model/FindApprovalOrderListRequest.h
 	include/alibabacloud/csb/model/FindApprovalOrderListResult.h
 	include/alibabacloud/csb/model/FindApproveServiceListRequest.h
@@ -136,6 +138,8 @@ set(csb_src
 	src/model/DeleteServiceListResult.cc
 	src/model/DeleteUnionCasServiceRequest.cc
 	src/model/DeleteUnionCasServiceResult.cc
+	src/model/DescribeRegionsRequest.cc
+	src/model/DescribeRegionsResult.cc
 	src/model/FindApprovalOrderListRequest.cc
 	src/model/FindApprovalOrderListResult.cc
 	src/model/FindApproveServiceListRequest.cc

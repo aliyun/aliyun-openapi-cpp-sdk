@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeEventCountsRequest;
 
 DescribeEventCountsRequest::DescribeEventCountsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeEventCounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventCountsRequest::~DescribeEventCountsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeEventCountsRequest::getFeatureType()const
 void DescribeEventCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeEventCountsRequest::getCountType()const
@@ -44,7 +46,7 @@ int DescribeEventCountsRequest::getCountType()const
 void DescribeEventCountsRequest::setCountType(int countType)
 {
 	countType_ = countType;
-	setCoreParameter("CountType", std::to_string(countType));
+	setParameter("CountType", std::to_string(countType));
 }
 
 std::string DescribeEventCountsRequest::getTypeCode()const
@@ -55,7 +57,7 @@ std::string DescribeEventCountsRequest::getTypeCode()const
 void DescribeEventCountsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
+	setParameter("TypeCode", typeCode);
 }
 
 std::string DescribeEventCountsRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeEventCountsRequest::getSourceIp()const
 void DescribeEventCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeEventCountsRequest::getDays()const
@@ -77,7 +79,7 @@ int DescribeEventCountsRequest::getDays()const
 void DescribeEventCountsRequest::setDays(int days)
 {
 	days_ = days;
-	setCoreParameter("Days", std::to_string(days));
+	setParameter("Days", std::to_string(days));
 }
 
 std::string DescribeEventCountsRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DescribeEventCountsRequest::getLang()const
 void DescribeEventCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

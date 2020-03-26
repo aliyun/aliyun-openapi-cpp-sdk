@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListUsersOfSkillGroupRequest;
 
 ListUsersOfSkillGroupRequest::ListUsersOfSkillGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListUsersOfSkillGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUsersOfSkillGroupRequest::~ListUsersOfSkillGroupRequest()
 {}
@@ -33,7 +35,7 @@ int ListUsersOfSkillGroupRequest::getPageNumber()const
 void ListUsersOfSkillGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListUsersOfSkillGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListUsersOfSkillGroupRequest::getAccessKeyId()const
 void ListUsersOfSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListUsersOfSkillGroupRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListUsersOfSkillGroupRequest::getInstanceId()const
 void ListUsersOfSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListUsersOfSkillGroupRequest::getSkillGroupId()const
@@ -66,7 +68,7 @@ std::string ListUsersOfSkillGroupRequest::getSkillGroupId()const
 void ListUsersOfSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 int ListUsersOfSkillGroupRequest::getPageSize()const
@@ -77,6 +79,6 @@ int ListUsersOfSkillGroupRequest::getPageSize()const
 void ListUsersOfSkillGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

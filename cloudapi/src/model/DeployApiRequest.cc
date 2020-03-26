@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeployApiRequest;
 
 DeployApiRequest::DeployApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeployApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeployApiRequest::~DeployApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeployApiRequest::getStageName()const
 void DeployApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DeployApiRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DeployApiRequest::getGroupId()const
 void DeployApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeployApiRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string DeployApiRequest::getDescription()const
 void DeployApiRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string DeployApiRequest::getAccessKeyId()const
@@ -66,7 +68,18 @@ std::string DeployApiRequest::getAccessKeyId()const
 void DeployApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeployApiRequest::getResourceOwnerToken()const
+{
+	return resourceOwnerToken_;
+}
+
+void DeployApiRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
+{
+	resourceOwnerToken_ = resourceOwnerToken;
+	setParameter("ResourceOwnerToken", resourceOwnerToken);
 }
 
 std::string DeployApiRequest::getSecurityToken()const
@@ -77,7 +90,7 @@ std::string DeployApiRequest::getSecurityToken()const
 void DeployApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeployApiRequest::getApiId()const
@@ -88,6 +101,6 @@ std::string DeployApiRequest::getApiId()const
 void DeployApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

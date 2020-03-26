@@ -22,7 +22,7 @@ UninstallLogstashPluginRequest::UninstallLogstashPluginRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/plugins/actions/uninstall");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UninstallLogstashPluginRequest::~UninstallLogstashPluginRequest()

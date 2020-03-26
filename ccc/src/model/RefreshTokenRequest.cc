@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RefreshTokenRequest;
 
 RefreshTokenRequest::RefreshTokenRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RefreshToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshTokenRequest::~RefreshTokenRequest()
 {}
@@ -33,7 +35,7 @@ std::string RefreshTokenRequest::getInstanceId()const
 void RefreshTokenRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RefreshTokenRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string RefreshTokenRequest::getAccessKeyId()const
 void RefreshTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

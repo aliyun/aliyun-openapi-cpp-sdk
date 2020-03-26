@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::CurrentDdosAttackNumRequest;
 
 CurrentDdosAttackNumRequest::CurrentDdosAttackNumRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "CurrentDdosAttackNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CurrentDdosAttackNumRequest::~CurrentDdosAttackNumRequest()
 {}

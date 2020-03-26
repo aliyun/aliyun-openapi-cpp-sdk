@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForUpdatingRegistrantInfoByRegistrant
 
 SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::~SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest()
 {}
@@ -33,7 +35,7 @@ long SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getRegistran
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getDomainName()const
@@ -44,8 +46,9 @@ std::vector<std::string> SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDR
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferOutProhibited()const
@@ -56,7 +59,7 @@ bool SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getTransferO
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setTransferOutProhibited(bool transferOutProhibited)
 {
 	transferOutProhibited_ = transferOutProhibited;
-	setCoreParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
+	setParameter("TransferOutProhibited", transferOutProhibited ? "true" : "false");
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUserClientIp()const
@@ -67,7 +70,7 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getUs
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLang()const
@@ -78,6 +81,6 @@ std::string SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::getLa
 void SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

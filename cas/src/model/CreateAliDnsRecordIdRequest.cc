@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateAliDnsRecordIdRequest;
 
 CreateAliDnsRecordIdRequest::CreateAliDnsRecordIdRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateAliDnsRecordId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAliDnsRecordIdRequest::~CreateAliDnsRecordIdRequest()
 {}
@@ -33,7 +35,7 @@ long CreateAliDnsRecordIdRequest::getOrderId()const
 void CreateAliDnsRecordIdRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateAliDnsRecordIdRequest::getRecordId()const
@@ -44,7 +46,7 @@ std::string CreateAliDnsRecordIdRequest::getRecordId()const
 void CreateAliDnsRecordIdRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setParameter("RecordId", recordId);
 }
 
 std::string CreateAliDnsRecordIdRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateAliDnsRecordIdRequest::getResourceGroupId()const
 void CreateAliDnsRecordIdRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateAliDnsRecordIdRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateAliDnsRecordIdRequest::getSourceIp()const
 void CreateAliDnsRecordIdRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateAliDnsRecordIdRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateAliDnsRecordIdRequest::getLang()const
 void CreateAliDnsRecordIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

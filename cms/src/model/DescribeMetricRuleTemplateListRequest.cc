@@ -35,7 +35,7 @@ bool DescribeMetricRuleTemplateListRequest::getHistory()const
 void DescribeMetricRuleTemplateListRequest::setHistory(bool history)
 {
 	history_ = history;
-	setCoreParameter("History", history ? "true" : "false");
+	setParameter("History", history ? "true" : "false");
 }
 
 long DescribeMetricRuleTemplateListRequest::getTemplateId()const
@@ -46,7 +46,7 @@ long DescribeMetricRuleTemplateListRequest::getTemplateId()const
 void DescribeMetricRuleTemplateListRequest::setTemplateId(long templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", std::to_string(templateId));
+	setParameter("TemplateId", std::to_string(templateId));
 }
 
 long DescribeMetricRuleTemplateListRequest::getPageNumber()const
@@ -57,7 +57,7 @@ long DescribeMetricRuleTemplateListRequest::getPageNumber()const
 void DescribeMetricRuleTemplateListRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeMetricRuleTemplateListRequest::getName()const
@@ -68,7 +68,7 @@ std::string DescribeMetricRuleTemplateListRequest::getName()const
 void DescribeMetricRuleTemplateListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribeMetricRuleTemplateListRequest::getPageSize()const
@@ -79,7 +79,7 @@ long DescribeMetricRuleTemplateListRequest::getPageSize()const
 void DescribeMetricRuleTemplateListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMetricRuleTemplateListRequest::getKeyword()const
@@ -90,6 +90,6 @@ std::string DescribeMetricRuleTemplateListRequest::getKeyword()const
 void DescribeMetricRuleTemplateListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

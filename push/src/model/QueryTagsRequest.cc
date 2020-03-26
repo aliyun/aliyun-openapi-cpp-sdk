@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryTagsRequest;
 
 QueryTagsRequest::QueryTagsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTagsRequest::~QueryTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTagsRequest::getKeyType()const
 void QueryTagsRequest::setKeyType(const std::string& keyType)
 {
 	keyType_ = keyType;
-	setCoreParameter("KeyType", keyType);
+	setParameter("KeyType", keyType);
 }
 
 std::string QueryTagsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryTagsRequest::getAccessKeyId()const
 void QueryTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryTagsRequest::getClientKey()const
@@ -55,7 +57,7 @@ std::string QueryTagsRequest::getClientKey()const
 void QueryTagsRequest::setClientKey(const std::string& clientKey)
 {
 	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", clientKey);
+	setParameter("ClientKey", clientKey);
 }
 
 long QueryTagsRequest::getAppKey()const
@@ -66,6 +68,6 @@ long QueryTagsRequest::getAppKey()const
 void QueryTagsRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

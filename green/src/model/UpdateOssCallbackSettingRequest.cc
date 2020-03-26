@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateOssCallbackSettingRequest;
 
 UpdateOssCallbackSettingRequest::UpdateOssCallbackSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateOssCallbackSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateOssCallbackSettingRequest::~UpdateOssCallbackSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateOssCallbackSettingRequest::getScanCallbackSuggestions()const
 void UpdateOssCallbackSettingRequest::setScanCallbackSuggestions(const std::string& scanCallbackSuggestions)
 {
 	scanCallbackSuggestions_ = scanCallbackSuggestions;
-	setCoreParameter("ScanCallbackSuggestions", scanCallbackSuggestions);
+	setParameter("ScanCallbackSuggestions", scanCallbackSuggestions);
 }
 
 std::string UpdateOssCallbackSettingRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateOssCallbackSettingRequest::getSourceIp()const
 void UpdateOssCallbackSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateOssCallbackSettingRequest::getCallbackSeed()const
@@ -55,7 +57,7 @@ std::string UpdateOssCallbackSettingRequest::getCallbackSeed()const
 void UpdateOssCallbackSettingRequest::setCallbackSeed(const std::string& callbackSeed)
 {
 	callbackSeed_ = callbackSeed;
-	setCoreParameter("CallbackSeed", callbackSeed);
+	setParameter("CallbackSeed", callbackSeed);
 }
 
 std::string UpdateOssCallbackSettingRequest::getServiceModules()const
@@ -66,7 +68,7 @@ std::string UpdateOssCallbackSettingRequest::getServiceModules()const
 void UpdateOssCallbackSettingRequest::setServiceModules(const std::string& serviceModules)
 {
 	serviceModules_ = serviceModules;
-	setCoreParameter("ServiceModules", serviceModules);
+	setParameter("ServiceModules", serviceModules);
 }
 
 bool UpdateOssCallbackSettingRequest::getAuditCallback()const
@@ -77,7 +79,7 @@ bool UpdateOssCallbackSettingRequest::getAuditCallback()const
 void UpdateOssCallbackSettingRequest::setAuditCallback(bool auditCallback)
 {
 	auditCallback_ = auditCallback;
-	setCoreParameter("AuditCallback", auditCallback ? "true" : "false");
+	setParameter("AuditCallback", auditCallback ? "true" : "false");
 }
 
 bool UpdateOssCallbackSettingRequest::getScanCallback()const
@@ -88,7 +90,7 @@ bool UpdateOssCallbackSettingRequest::getScanCallback()const
 void UpdateOssCallbackSettingRequest::setScanCallback(bool scanCallback)
 {
 	scanCallback_ = scanCallback;
-	setCoreParameter("ScanCallback", scanCallback ? "true" : "false");
+	setParameter("ScanCallback", scanCallback ? "true" : "false");
 }
 
 std::string UpdateOssCallbackSettingRequest::getCallbackUrl()const
@@ -99,6 +101,6 @@ std::string UpdateOssCallbackSettingRequest::getCallbackUrl()const
 void UpdateOssCallbackSettingRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setParameter("CallbackUrl", callbackUrl);
 }
 

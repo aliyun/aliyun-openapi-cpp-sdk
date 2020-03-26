@@ -58,6 +58,8 @@ void DescribeOssObjectDetailResult::parse(const std::string &payload)
 			ruleObject.ruleName = ossObjectDetailNodeRuleListRule["RuleName"].asString();
 		if(!ossObjectDetailNodeRuleListRule["Count"].isNull())
 			ruleObject.count = std::stol(ossObjectDetailNodeRuleListRule["Count"].asString());
+		if(!ossObjectDetailNodeRuleListRule["Category"].isNull())
+			ruleObject.category = std::stoi(ossObjectDetailNodeRuleListRule["Category"].asString());
 		ossObjectDetail_.ruleList.push_back(ruleObject);
 	}
 

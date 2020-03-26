@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveGroupApRadioConfigRequest;
 
 SaveGroupApRadioConfigRequest::SaveGroupApRadioConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveGroupApRadioConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveGroupApRadioConfigRequest::~SaveGroupApRadioConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveGroupApRadioConfigRequest::getJsonData()const
 void SaveGroupApRadioConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string SaveGroupApRadioConfigRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string SaveGroupApRadioConfigRequest::getAccessKeyId()const
 void SaveGroupApRadioConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

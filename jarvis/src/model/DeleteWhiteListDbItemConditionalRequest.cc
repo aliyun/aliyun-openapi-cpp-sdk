@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteWhiteListDbItemConditionalRequest;
 
 DeleteWhiteListDbItemConditionalRequest::DeleteWhiteListDbItemConditionalRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteWhiteListDbItemConditional")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWhiteListDbItemConditionalRequest::~DeleteWhiteListDbItemConditionalRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSrcIP()const
 void DeleteWhiteListDbItemConditionalRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSourceCode()const
 void DeleteWhiteListDbItemConditionalRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getSourceIp()const
 void DeleteWhiteListDbItemConditionalRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getQueryProduct()const
@@ -66,7 +68,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getQueryProduct()const
 void DeleteWhiteListDbItemConditionalRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setParameter("QueryProduct", queryProduct);
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getDstIP()const
@@ -77,7 +79,7 @@ std::string DeleteWhiteListDbItemConditionalRequest::getDstIP()const
 void DeleteWhiteListDbItemConditionalRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setParameter("DstIP", dstIP);
 }
 
 std::string DeleteWhiteListDbItemConditionalRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DeleteWhiteListDbItemConditionalRequest::getLang()const
 void DeleteWhiteListDbItemConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

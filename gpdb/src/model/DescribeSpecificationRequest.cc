@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSpecificationRequest;
 
 DescribeSpecificationRequest::DescribeSpecificationRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSpecification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSpecificationRequest::~DescribeSpecificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSpecificationRequest::getStorageType()const
 void DescribeSpecificationRequest::setStorageType(const std::string& storageType)
 {
 	storageType_ = storageType;
-	setCoreParameter("StorageType", storageType);
+	setParameter("StorageType", storageType);
 }
 
 std::string DescribeSpecificationRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeSpecificationRequest::getAccessKeyId()const
 void DescribeSpecificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeSpecificationRequest::getCpuCores()const
@@ -55,7 +57,7 @@ int DescribeSpecificationRequest::getCpuCores()const
 void DescribeSpecificationRequest::setCpuCores(int cpuCores)
 {
 	cpuCores_ = cpuCores;
-	setCoreParameter("CpuCores", std::to_string(cpuCores));
+	setParameter("CpuCores", std::to_string(cpuCores));
 }
 
 std::string DescribeSpecificationRequest::getDBInstanceId()const
@@ -66,7 +68,7 @@ std::string DescribeSpecificationRequest::getDBInstanceId()const
 void DescribeSpecificationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 int DescribeSpecificationRequest::getTotalNodeNum()const
@@ -77,7 +79,7 @@ int DescribeSpecificationRequest::getTotalNodeNum()const
 void DescribeSpecificationRequest::setTotalNodeNum(int totalNodeNum)
 {
 	totalNodeNum_ = totalNodeNum;
-	setCoreParameter("TotalNodeNum", std::to_string(totalNodeNum));
+	setParameter("TotalNodeNum", std::to_string(totalNodeNum));
 }
 
 long DescribeSpecificationRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeSpecificationRequest::getOwnerId()const
 void DescribeSpecificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

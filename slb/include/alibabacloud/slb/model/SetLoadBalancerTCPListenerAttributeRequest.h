@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SLB_EXPORT SetLoadBalancerTCPListenerAttributeRequest : public RpcServiceRequest
 			{
+			public:
+				struct PortRange
+				{
+					int startPort;
+					int endPort;
+				};
 
 			public:
 				SetLoadBalancerTCPListenerAttributeRequest();
@@ -55,6 +61,8 @@ namespace AlibabaCloud
 				void setVServerGroupId(const std::string& vServerGroupId);
 				std::string getAclId()const;
 				void setAclId(const std::string& aclId);
+				std::vector<PortRange> getPortRange()const;
+				void setPortRange(const std::vector<PortRange>& portRange);
 				std::string getHealthCheckMethod()const;
 				void setHealthCheckMethod(const std::string& healthCheckMethod);
 				std::string getHealthCheckDomain()const;
@@ -71,6 +79,8 @@ namespace AlibabaCloud
 				void setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId);
 				int getHealthCheckInterval()const;
 				void setHealthCheckInterval(int healthCheckInterval);
+				std::string getConnectionDrain()const;
+				void setConnectionDrain(const std::string& connectionDrain);
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
 				int getHealthCheckConnectTimeout()const;
@@ -97,6 +107,8 @@ namespace AlibabaCloud
 				void setBandwidth(int bandwidth);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				int getConnectionDrainTimeout()const;
+				void setConnectionDrainTimeout(int connectionDrainTimeout);
 				int getHealthCheckConnectPort()const;
 				void setHealthCheckConnectPort(int healthCheckConnectPort);
 				std::string getHealthCheckHttpCode()const;
@@ -115,6 +127,7 @@ namespace AlibabaCloud
 				std::string vpcIds_;
 				std::string vServerGroupId_;
 				std::string aclId_;
+				std::vector<PortRange> portRange_;
 				std::string healthCheckMethod_;
 				std::string healthCheckDomain_;
 				std::string synProxy_;
@@ -123,6 +136,7 @@ namespace AlibabaCloud
 				std::string loadBalancerId_;
 				std::string masterSlaveServerGroupId_;
 				int healthCheckInterval_;
+				std::string connectionDrain_;
 				std::string access_key_id_;
 				int healthCheckConnectTimeout_;
 				std::string description_;
@@ -136,6 +150,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				int bandwidth_;
 				std::string ownerAccount_;
+				int connectionDrainTimeout_;
 				int healthCheckConnectPort_;
 				std::string healthCheckHttpCode_;
 				std::string vServerGroup_;

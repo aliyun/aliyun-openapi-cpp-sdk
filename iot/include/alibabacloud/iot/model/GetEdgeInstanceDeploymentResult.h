@@ -39,24 +39,30 @@ namespace AlibabaCloud
 						struct ResourceSnapshot
 						{
 							int status;
+							std::string gmtCompleted;
+							std::string log;
+							long gmtCreateTimestamp;
+							std::string resourceName;
+							long gmtCompletedTimestamp;
+							std::string gmtModified;
+							std::string resourceType;
 							std::string snapshotId;
 							std::string gmtCreate;
-							std::string gmtCompleted;
 							std::string resourceId;
-							std::string log;
-							std::string resourceName;
-							std::string gmtModified;
 							int stage;
-							std::string resourceType;
+							long gmtModifiedTimestamp;
 							int operateType;
 						};
 						int status;
 						std::string gmtCreate;
 						std::string gmtCompleted;
 						std::string taskId;
+						long gmtCreateTimestamp;
+						long gmtCompletedTimestamp;
 						std::vector<Task::ResourceSnapshot> resourceSnapshotList;
 						std::string gmtModified;
 						int stage;
+						long gmtModifiedTimestamp;
 						std::string gatewayId;
 					};
 					int status;
@@ -65,8 +71,11 @@ namespace AlibabaCloud
 					std::string deploymentId;
 					std::string type;
 					std::string description;
+					long gmtCreateTimestamp;
+					long gmtCompletedTimestamp;
 					std::vector<Task> taskList;
 					std::string gmtModified;
+					long gmtModifiedTimestamp;
 				};
 
 

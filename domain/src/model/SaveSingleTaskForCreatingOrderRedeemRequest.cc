@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCreatingOrderRedeemRequest;
 
 SaveSingleTaskForCreatingOrderRedeemRequest::SaveSingleTaskForCreatingOrderRedeemRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCreatingOrderRedeemRequest::~SaveSingleTaskForCreatingOrderRedeemRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getCouponNo()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getCouponNo()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 bool SaveSingleTaskForCreatingOrderRedeemRequest::getUseCoupon()const
@@ -55,7 +57,7 @@ bool SaveSingleTaskForCreatingOrderRedeemRequest::getUseCoupon()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
@@ -66,7 +68,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getPromotionNo()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()const
@@ -77,7 +79,7 @@ long SaveSingleTaskForCreatingOrderRedeemRequest::getCurrentExpirationDate()cons
 void SaveSingleTaskForCreatingOrderRedeemRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+	setParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
@@ -88,7 +90,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
@@ -99,7 +101,7 @@ std::string SaveSingleTaskForCreatingOrderRedeemRequest::getLang()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForCreatingOrderRedeemRequest::getUsePromotion()const
@@ -110,6 +112,6 @@ bool SaveSingleTaskForCreatingOrderRedeemRequest::getUsePromotion()const
 void SaveSingleTaskForCreatingOrderRedeemRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

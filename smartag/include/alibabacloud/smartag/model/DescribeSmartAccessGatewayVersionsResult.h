@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct SmartAGVersion
 				{
 					std::string versionCode;
+					std::string type;
 					long createTime;
 					std::string versionName;
 				};

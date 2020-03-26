@@ -29,6 +29,8 @@ set(chatbot_public_header_model
 	include/alibabacloud/chatbot/model/AppendEntityMemberResult.h
 	include/alibabacloud/chatbot/model/ChatRequest.h
 	include/alibabacloud/chatbot/model/ChatResult.h
+	include/alibabacloud/chatbot/model/CreateBotRequest.h
+	include/alibabacloud/chatbot/model/CreateBotResult.h
 	include/alibabacloud/chatbot/model/CreateCategoryRequest.h
 	include/alibabacloud/chatbot/model/CreateCategoryResult.h
 	include/alibabacloud/chatbot/model/CreateCoreWordRequest.h
@@ -43,6 +45,8 @@ set(chatbot_public_header_model
 	include/alibabacloud/chatbot/model/CreateKnowledgeResult.h
 	include/alibabacloud/chatbot/model/CreatePerspectiveRequest.h
 	include/alibabacloud/chatbot/model/CreatePerspectiveResult.h
+	include/alibabacloud/chatbot/model/DeleteBotRequest.h
+	include/alibabacloud/chatbot/model/DeleteBotResult.h
 	include/alibabacloud/chatbot/model/DeleteCategoryRequest.h
 	include/alibabacloud/chatbot/model/DeleteCategoryResult.h
 	include/alibabacloud/chatbot/model/DeleteCoreWordRequest.h
@@ -55,6 +59,8 @@ set(chatbot_public_header_model
 	include/alibabacloud/chatbot/model/DeleteIntentResult.h
 	include/alibabacloud/chatbot/model/DeleteKnowledgeRequest.h
 	include/alibabacloud/chatbot/model/DeleteKnowledgeResult.h
+	include/alibabacloud/chatbot/model/DescribeBotRequest.h
+	include/alibabacloud/chatbot/model/DescribeBotResult.h
 	include/alibabacloud/chatbot/model/DescribeCategoryRequest.h
 	include/alibabacloud/chatbot/model/DescribeCategoryResult.h
 	include/alibabacloud/chatbot/model/DescribeCoreWordRequest.h
@@ -77,12 +83,16 @@ set(chatbot_public_header_model
 	include/alibabacloud/chatbot/model/DisableKnowledgeResult.h
 	include/alibabacloud/chatbot/model/FeedbackRequest.h
 	include/alibabacloud/chatbot/model/FeedbackResult.h
+	include/alibabacloud/chatbot/model/LinkBotCategoryRequest.h
+	include/alibabacloud/chatbot/model/LinkBotCategoryResult.h
 	include/alibabacloud/chatbot/model/MoveKnowledgeCategoryRequest.h
 	include/alibabacloud/chatbot/model/MoveKnowledgeCategoryResult.h
 	include/alibabacloud/chatbot/model/PublishDialogFlowRequest.h
 	include/alibabacloud/chatbot/model/PublishDialogFlowResult.h
 	include/alibabacloud/chatbot/model/PublishKnowledgeRequest.h
 	include/alibabacloud/chatbot/model/PublishKnowledgeResult.h
+	include/alibabacloud/chatbot/model/QueryBotsRequest.h
+	include/alibabacloud/chatbot/model/QueryBotsResult.h
 	include/alibabacloud/chatbot/model/QueryCategoriesRequest.h
 	include/alibabacloud/chatbot/model/QueryCategoriesResult.h
 	include/alibabacloud/chatbot/model/QueryCoreWordsRequest.h
@@ -132,6 +142,8 @@ set(chatbot_src
 	src/model/AppendEntityMemberResult.cc
 	src/model/ChatRequest.cc
 	src/model/ChatResult.cc
+	src/model/CreateBotRequest.cc
+	src/model/CreateBotResult.cc
 	src/model/CreateCategoryRequest.cc
 	src/model/CreateCategoryResult.cc
 	src/model/CreateCoreWordRequest.cc
@@ -146,6 +158,8 @@ set(chatbot_src
 	src/model/CreateKnowledgeResult.cc
 	src/model/CreatePerspectiveRequest.cc
 	src/model/CreatePerspectiveResult.cc
+	src/model/DeleteBotRequest.cc
+	src/model/DeleteBotResult.cc
 	src/model/DeleteCategoryRequest.cc
 	src/model/DeleteCategoryResult.cc
 	src/model/DeleteCoreWordRequest.cc
@@ -158,6 +172,8 @@ set(chatbot_src
 	src/model/DeleteIntentResult.cc
 	src/model/DeleteKnowledgeRequest.cc
 	src/model/DeleteKnowledgeResult.cc
+	src/model/DescribeBotRequest.cc
+	src/model/DescribeBotResult.cc
 	src/model/DescribeCategoryRequest.cc
 	src/model/DescribeCategoryResult.cc
 	src/model/DescribeCoreWordRequest.cc
@@ -180,12 +196,16 @@ set(chatbot_src
 	src/model/DisableKnowledgeResult.cc
 	src/model/FeedbackRequest.cc
 	src/model/FeedbackResult.cc
+	src/model/LinkBotCategoryRequest.cc
+	src/model/LinkBotCategoryResult.cc
 	src/model/MoveKnowledgeCategoryRequest.cc
 	src/model/MoveKnowledgeCategoryResult.cc
 	src/model/PublishDialogFlowRequest.cc
 	src/model/PublishDialogFlowResult.cc
 	src/model/PublishKnowledgeRequest.cc
 	src/model/PublishKnowledgeResult.cc
+	src/model/QueryBotsRequest.cc
+	src/model/QueryBotsResult.cc
 	src/model/QueryCategoriesRequest.cc
 	src/model/QueryCategoriesResult.cc
 	src/model/QueryCoreWordsRequest.cc

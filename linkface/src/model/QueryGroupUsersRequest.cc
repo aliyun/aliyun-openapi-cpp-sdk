@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::QueryGroupUsersRequest;
 
 QueryGroupUsersRequest::QueryGroupUsersRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryGroupUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryGroupUsersRequest::~QueryGroupUsersRequest()
 {}
-
-std::string QueryGroupUsersRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void QueryGroupUsersRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
 
 int QueryGroupUsersRequest::getPageSize()const
 {
@@ -44,7 +35,18 @@ int QueryGroupUsersRequest::getPageSize()const
 void QueryGroupUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryGroupUsersRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryGroupUsersRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
 }
 
 int QueryGroupUsersRequest::getCurrentPage()const
@@ -55,6 +57,28 @@ int QueryGroupUsersRequest::getCurrentPage()const
 void QueryGroupUsersRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setBodyParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryGroupUsersRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryGroupUsersRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryGroupUsersRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryGroupUsersRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

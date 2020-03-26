@@ -81,6 +81,8 @@ void DescribeOrderResult::parse(const std::string &payload)
 		paymentPrice_ = std::stof(value["PaymentPrice"].asString());
 	if(!value["CouponPrice"].isNull())
 		couponPrice_ = std::stof(value["CouponPrice"].asString());
+	if(!value["Components"].isNull())
+		components_ = value["Components"].asString();
 
 }
 
@@ -137,6 +139,11 @@ long DescribeOrderResult::getOrderId()const
 std::vector<std::string> DescribeOrderResult::getSupplierTelephones()const
 {
 	return supplierTelephones_;
+}
+
+std::string DescribeOrderResult::getComponents()const
+{
+	return components_;
 }
 
 std::string DescribeOrderResult::getOrderStatus()const

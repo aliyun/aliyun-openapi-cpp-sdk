@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeChangeSetDetailRequest;
 
 DescribeChangeSetDetailRequest::DescribeChangeSetDetailRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeChangeSetDetailRequest::~DescribeChangeSetDetailRequest()
 {}
@@ -33,7 +36,7 @@ std::string DescribeChangeSetDetailRequest::getChangeSetName()const
 void DescribeChangeSetDetailRequest::setChangeSetName(const std::string& changeSetName)
 {
 	changeSetName_ = changeSetName;
-	setCoreParameter("ChangeSetName", changeSetName);
+	setParameter("ChangeSetName", changeSetName);
 }
 
 std::string DescribeChangeSetDetailRequest::getStackId()const
@@ -44,7 +47,7 @@ std::string DescribeChangeSetDetailRequest::getStackId()const
 void DescribeChangeSetDetailRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DescribeChangeSetDetailRequest::getStackName()const
@@ -55,6 +58,6 @@ std::string DescribeChangeSetDetailRequest::getStackName()const
 void DescribeChangeSetDetailRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

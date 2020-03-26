@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ResetApRequest;
 
 ResetApRequest::ResetApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ResetAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetApRequest::~ResetApRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResetApRequest::getAccessKeyId()const
 void ResetApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ResetApRequest::getId()const
@@ -44,6 +46,6 @@ long ResetApRequest::getId()const
 void ResetApRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

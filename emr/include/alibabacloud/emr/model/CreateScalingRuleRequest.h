@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateScalingRuleRequest : public RpcServiceRequest
 			{
+			public:
 				struct CloudWatchTrigger
 				{
 					int period;

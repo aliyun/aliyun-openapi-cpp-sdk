@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeLocationListRequest;
 
 DescribeLocationListRequest::DescribeLocationListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeLocationList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLocationListRequest::~DescribeLocationListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLocationListRequest::getResourceGroupId()const
 void DescribeLocationListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeLocationListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeLocationListRequest::getSourceIp()const
 void DescribeLocationListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeLocationListRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeLocationListRequest::getLang()const
 void DescribeLocationListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

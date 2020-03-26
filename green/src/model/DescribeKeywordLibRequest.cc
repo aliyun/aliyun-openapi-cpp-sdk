@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeKeywordLibRequest;
 
 DescribeKeywordLibRequest::DescribeKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKeywordLibRequest::~DescribeKeywordLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeKeywordLibRequest::getServiceModule()const
 void DescribeKeywordLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setParameter("ServiceModule", serviceModule);
 }
 
 std::string DescribeKeywordLibRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeKeywordLibRequest::getSourceIp()const
 void DescribeKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeKeywordLibRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeKeywordLibRequest::getLang()const
 void DescribeKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

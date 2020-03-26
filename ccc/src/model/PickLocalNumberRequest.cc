@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PickLocalNumberRequest;
 
 PickLocalNumberRequest::PickLocalNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PickLocalNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PickLocalNumberRequest::~PickLocalNumberRequest()
 {}
@@ -33,7 +35,7 @@ std::string PickLocalNumberRequest::getAccessKeyId()const
 void PickLocalNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PickLocalNumberRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string PickLocalNumberRequest::getInstanceId()const
 void PickLocalNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> PickLocalNumberRequest::getCandidateNumber()const
@@ -55,8 +57,9 @@ std::vector<std::string> PickLocalNumberRequest::getCandidateNumber()const
 void PickLocalNumberRequest::setCandidateNumber(const std::vector<std::string>& candidateNumber)
 {
 	candidateNumber_ = candidateNumber;
-	for(int i = 0; i!= candidateNumber.size(); i++)
-		setCoreParameter("CandidateNumber."+ std::to_string(i), candidateNumber.at(i));
+	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++) {
+		setParameter("CandidateNumber."+ std::to_string(dep1), candidateNumber.at(dep1));
+	}
 }
 
 std::string PickLocalNumberRequest::getCalleeNumber()const
@@ -67,6 +70,6 @@ std::string PickLocalNumberRequest::getCalleeNumber()const
 void PickLocalNumberRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setParameter("CalleeNumber", calleeNumber);
 }
 

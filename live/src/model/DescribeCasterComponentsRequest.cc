@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterComponentsRequest;
 
 DescribeCasterComponentsRequest::DescribeCasterComponentsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterComponents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterComponentsRequest::~DescribeCasterComponentsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCasterComponentsRequest::getComponentId()const
 void DescribeCasterComponentsRequest::setComponentId(const std::string& componentId)
 {
 	componentId_ = componentId;
-	setCoreParameter("ComponentId", componentId);
+	setParameter("ComponentId", componentId);
 }
 
 std::string DescribeCasterComponentsRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DescribeCasterComponentsRequest::getCasterId()const
 void DescribeCasterComponentsRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DescribeCasterComponentsRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeCasterComponentsRequest::getOwnerId()const
 void DescribeCasterComponentsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

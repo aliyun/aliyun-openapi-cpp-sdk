@@ -35,7 +35,7 @@ bool PutMonitoringConfigRequest::getAutoInstall()const
 void PutMonitoringConfigRequest::setAutoInstall(bool autoInstall)
 {
 	autoInstall_ = autoInstall;
-	setCoreParameter("AutoInstall", autoInstall ? "true" : "false");
+	setParameter("AutoInstall", autoInstall ? "true" : "false");
 }
 
 bool PutMonitoringConfigRequest::getEnableInstallAgentNewECS()const
@@ -46,6 +46,6 @@ bool PutMonitoringConfigRequest::getEnableInstallAgentNewECS()const
 void PutMonitoringConfigRequest::setEnableInstallAgentNewECS(bool enableInstallAgentNewECS)
 {
 	enableInstallAgentNewECS_ = enableInstallAgentNewECS;
-	setCoreParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS ? "true" : "false");
+	setParameter("EnableInstallAgentNewECS", enableInstallAgentNewECS ? "true" : "false");
 }
 

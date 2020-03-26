@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ApplyBoardTokenRequest;
 
 ApplyBoardTokenRequest::ApplyBoardTokenRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ApplyBoardToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyBoardTokenRequest::~ApplyBoardTokenRequest()
 {}
@@ -33,7 +35,7 @@ std::string ApplyBoardTokenRequest::getBoardId()const
 void ApplyBoardTokenRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 
 std::string ApplyBoardTokenRequest::getAppUid()const
@@ -44,7 +46,7 @@ std::string ApplyBoardTokenRequest::getAppUid()const
 void ApplyBoardTokenRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setParameter("AppUid", appUid);
 }
 
 long ApplyBoardTokenRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ApplyBoardTokenRequest::getOwnerId()const
 void ApplyBoardTokenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ApplyBoardTokenRequest::getAppId()const
@@ -66,6 +68,6 @@ std::string ApplyBoardTokenRequest::getAppId()const
 void ApplyBoardTokenRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMCTemplateRequest;
 
 UpdateMCTemplateRequest::UpdateMCTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMCTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMCTemplateRequest::~UpdateMCTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateMCTemplateRequest::getPolitics()const
 void UpdateMCTemplateRequest::setPolitics(const std::string& politics)
 {
 	politics_ = politics;
-	setCoreParameter("Politics", politics);
+	setParameter("Politics", politics);
 }
 
 long UpdateMCTemplateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long UpdateMCTemplateRequest::getResourceOwnerId()const
 void UpdateMCTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMCTemplateRequest::getAbuse()const
@@ -55,7 +57,7 @@ std::string UpdateMCTemplateRequest::getAbuse()const
 void UpdateMCTemplateRequest::setAbuse(const std::string& abuse)
 {
 	abuse_ = abuse;
-	setCoreParameter("Abuse", abuse);
+	setParameter("Abuse", abuse);
 }
 
 std::string UpdateMCTemplateRequest::getQrcode()const
@@ -66,7 +68,7 @@ std::string UpdateMCTemplateRequest::getQrcode()const
 void UpdateMCTemplateRequest::setQrcode(const std::string& qrcode)
 {
 	qrcode_ = qrcode;
-	setCoreParameter("Qrcode", qrcode);
+	setParameter("Qrcode", qrcode);
 }
 
 std::string UpdateMCTemplateRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string UpdateMCTemplateRequest::getAccessKeyId()const
 void UpdateMCTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMCTemplateRequest::getPorn()const
@@ -88,7 +90,7 @@ std::string UpdateMCTemplateRequest::getPorn()const
 void UpdateMCTemplateRequest::setPorn(const std::string& porn)
 {
 	porn_ = porn;
-	setCoreParameter("Porn", porn);
+	setParameter("Porn", porn);
 }
 
 std::string UpdateMCTemplateRequest::getTerrorism()const
@@ -99,7 +101,7 @@ std::string UpdateMCTemplateRequest::getTerrorism()const
 void UpdateMCTemplateRequest::setTerrorism(const std::string& terrorism)
 {
 	terrorism_ = terrorism;
-	setCoreParameter("Terrorism", terrorism);
+	setParameter("Terrorism", terrorism);
 }
 
 std::string UpdateMCTemplateRequest::getLogo()const
@@ -110,7 +112,7 @@ std::string UpdateMCTemplateRequest::getLogo()const
 void UpdateMCTemplateRequest::setLogo(const std::string& logo)
 {
 	logo_ = logo;
-	setCoreParameter("Logo", logo);
+	setParameter("Logo", logo);
 }
 
 std::string UpdateMCTemplateRequest::getLive()const
@@ -121,7 +123,7 @@ std::string UpdateMCTemplateRequest::getLive()const
 void UpdateMCTemplateRequest::setLive(const std::string& live)
 {
 	live_ = live;
-	setCoreParameter("Live", live);
+	setParameter("Live", live);
 }
 
 std::string UpdateMCTemplateRequest::getContraband()const
@@ -132,7 +134,7 @@ std::string UpdateMCTemplateRequest::getContraband()const
 void UpdateMCTemplateRequest::setContraband(const std::string& contraband)
 {
 	contraband_ = contraband;
-	setCoreParameter("Contraband", contraband);
+	setParameter("Contraband", contraband);
 }
 
 std::string UpdateMCTemplateRequest::getAd()const
@@ -143,7 +145,7 @@ std::string UpdateMCTemplateRequest::getAd()const
 void UpdateMCTemplateRequest::setAd(const std::string& ad)
 {
 	ad_ = ad;
-	setCoreParameter("Ad", ad);
+	setParameter("Ad", ad);
 }
 
 std::string UpdateMCTemplateRequest::getResourceOwnerAccount()const
@@ -154,7 +156,7 @@ std::string UpdateMCTemplateRequest::getResourceOwnerAccount()const
 void UpdateMCTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMCTemplateRequest::getOwnerAccount()const
@@ -165,7 +167,7 @@ std::string UpdateMCTemplateRequest::getOwnerAccount()const
 void UpdateMCTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMCTemplateRequest::getOwnerId()const
@@ -176,7 +178,7 @@ long UpdateMCTemplateRequest::getOwnerId()const
 void UpdateMCTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMCTemplateRequest::getTemplateId()const
@@ -187,7 +189,7 @@ std::string UpdateMCTemplateRequest::getTemplateId()const
 void UpdateMCTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 
 std::string UpdateMCTemplateRequest::getName()const
@@ -198,7 +200,7 @@ std::string UpdateMCTemplateRequest::getName()const
 void UpdateMCTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateMCTemplateRequest::getSpam()const
@@ -209,6 +211,6 @@ std::string UpdateMCTemplateRequest::getSpam()const
 void UpdateMCTemplateRequest::setSpam(const std::string& spam)
 {
 	spam_ = spam;
-	setCoreParameter("Spam", spam);
+	setParameter("Spam", spam);
 }
 

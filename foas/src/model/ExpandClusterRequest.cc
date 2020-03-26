@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ExpandClusterRequest;
 
 ExpandClusterRequest::ExpandClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/expand");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ExpandClusterRequest::~ExpandClusterRequest()
 {}
@@ -33,7 +36,7 @@ std::string ExpandClusterRequest::getRegionId()const
 void ExpandClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 int ExpandClusterRequest::getCount()const
@@ -44,7 +47,7 @@ int ExpandClusterRequest::getCount()const
 void ExpandClusterRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setBodyParameter("Count", std::to_string(count));
 }
 
 std::string ExpandClusterRequest::getModel()const
@@ -55,7 +58,7 @@ std::string ExpandClusterRequest::getModel()const
 void ExpandClusterRequest::setModel(const std::string& model)
 {
 	model_ = model;
-	setCoreParameter("Model", model);
+	setBodyParameter("Model", model);
 }
 
 std::string ExpandClusterRequest::getUserVSwitch()const
@@ -66,7 +69,7 @@ std::string ExpandClusterRequest::getUserVSwitch()const
 void ExpandClusterRequest::setUserVSwitch(const std::string& userVSwitch)
 {
 	userVSwitch_ = userVSwitch;
-	setCoreParameter("UserVSwitch", userVSwitch);
+	setBodyParameter("UserVSwitch", userVSwitch);
 }
 
 std::string ExpandClusterRequest::getClusterId()const
@@ -77,6 +80,6 @@ std::string ExpandClusterRequest::getClusterId()const
 void ExpandClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

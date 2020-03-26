@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListMediaWorkflowExecutionsRequest;
 
 ListMediaWorkflowExecutionsRequest::ListMediaWorkflowExecutionsRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListMediaWorkflowExecutions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMediaWorkflowExecutionsRequest::~ListMediaWorkflowExecutionsRequest()
 {}
@@ -33,7 +35,7 @@ long ListMediaWorkflowExecutionsRequest::getResourceOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getNextPageToken()const
@@ -44,7 +46,7 @@ std::string ListMediaWorkflowExecutionsRequest::getNextPageToken()const
 void ListMediaWorkflowExecutionsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListMediaWorkflowExecutionsRequest::getAccessKeyId()const
 void ListMediaWorkflowExecutionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
@@ -66,7 +68,7 @@ std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowId()const
 void ListMediaWorkflowExecutionsRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ListMediaWorkflowExecutionsRequest::getResourceOwnerAccount()const
 void ListMediaWorkflowExecutionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ListMediaWorkflowExecutionsRequest::getOwnerAccount()const
 void ListMediaWorkflowExecutionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListMediaWorkflowExecutionsRequest::getMaximumPageSize()const
@@ -99,7 +101,7 @@ long ListMediaWorkflowExecutionsRequest::getMaximumPageSize()const
 void ListMediaWorkflowExecutionsRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long ListMediaWorkflowExecutionsRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ListMediaWorkflowExecutionsRequest::getOwnerId()const
 void ListMediaWorkflowExecutionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowName()const
@@ -121,7 +123,7 @@ std::string ListMediaWorkflowExecutionsRequest::getMediaWorkflowName()const
 void ListMediaWorkflowExecutionsRequest::setMediaWorkflowName(const std::string& mediaWorkflowName)
 {
 	mediaWorkflowName_ = mediaWorkflowName;
-	setCoreParameter("MediaWorkflowName", mediaWorkflowName);
+	setParameter("MediaWorkflowName", mediaWorkflowName);
 }
 
 std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
@@ -132,6 +134,6 @@ std::string ListMediaWorkflowExecutionsRequest::getInputFileURL()const
 void ListMediaWorkflowExecutionsRequest::setInputFileURL(const std::string& inputFileURL)
 {
 	inputFileURL_ = inputFileURL;
-	setCoreParameter("InputFileURL", inputFileURL);
+	setParameter("InputFileURL", inputFileURL);
 }
 

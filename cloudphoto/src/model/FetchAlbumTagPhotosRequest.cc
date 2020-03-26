@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::FetchAlbumTagPhotosRequest;
 
 FetchAlbumTagPhotosRequest::FetchAlbumTagPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "FetchAlbumTagPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FetchAlbumTagPhotosRequest::~FetchAlbumTagPhotosRequest()
 {}
@@ -33,7 +35,7 @@ long FetchAlbumTagPhotosRequest::getTagId()const
 void FetchAlbumTagPhotosRequest::setTagId(long tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", std::to_string(tagId));
+	setParameter("TagId", std::to_string(tagId));
 }
 
 std::string FetchAlbumTagPhotosRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string FetchAlbumTagPhotosRequest::getLibraryId()const
 void FetchAlbumTagPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long FetchAlbumTagPhotosRequest::getAlbumId()const
@@ -55,7 +57,7 @@ long FetchAlbumTagPhotosRequest::getAlbumId()const
 void FetchAlbumTagPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setParameter("AlbumId", std::to_string(albumId));
 }
 
 std::string FetchAlbumTagPhotosRequest::getStoreName()const
@@ -66,7 +68,7 @@ std::string FetchAlbumTagPhotosRequest::getStoreName()const
 void FetchAlbumTagPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int FetchAlbumTagPhotosRequest::getSize()const
@@ -77,7 +79,7 @@ int FetchAlbumTagPhotosRequest::getSize()const
 void FetchAlbumTagPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int FetchAlbumTagPhotosRequest::getPage()const
@@ -88,6 +90,6 @@ int FetchAlbumTagPhotosRequest::getPage()const
 void FetchAlbumTagPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 

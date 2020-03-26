@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListCallDetailRecordsRequest;
 
 ListCallDetailRecordsRequest::ListCallDetailRecordsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListCallDetailRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCallDetailRecordsRequest::~ListCallDetailRecordsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListCallDetailRecordsRequest::getContactType()const
 void ListCallDetailRecordsRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setParameter("ContactType", contactType);
 }
 
 std::string ListCallDetailRecordsRequest::getContactId()const
@@ -44,7 +46,7 @@ std::string ListCallDetailRecordsRequest::getContactId()const
 void ListCallDetailRecordsRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 std::string ListCallDetailRecordsRequest::getCriteria()const
@@ -55,7 +57,7 @@ std::string ListCallDetailRecordsRequest::getCriteria()const
 void ListCallDetailRecordsRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setParameter("Criteria", criteria);
 }
 
 std::string ListCallDetailRecordsRequest::getPhoneNumber()const
@@ -66,7 +68,7 @@ std::string ListCallDetailRecordsRequest::getPhoneNumber()const
 void ListCallDetailRecordsRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 std::string ListCallDetailRecordsRequest::getOrderBy()const
@@ -77,7 +79,7 @@ std::string ListCallDetailRecordsRequest::getOrderBy()const
 void ListCallDetailRecordsRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 long ListCallDetailRecordsRequest::getStartTime()const
@@ -88,7 +90,7 @@ long ListCallDetailRecordsRequest::getStartTime()const
 void ListCallDetailRecordsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 long ListCallDetailRecordsRequest::getStopTime()const
@@ -99,7 +101,7 @@ long ListCallDetailRecordsRequest::getStopTime()const
 void ListCallDetailRecordsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setParameter("StopTime", std::to_string(stopTime));
 }
 
 int ListCallDetailRecordsRequest::getPageNumber()const
@@ -110,7 +112,7 @@ int ListCallDetailRecordsRequest::getPageNumber()const
 void ListCallDetailRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListCallDetailRecordsRequest::getAccessKeyId()const
@@ -121,7 +123,7 @@ std::string ListCallDetailRecordsRequest::getAccessKeyId()const
 void ListCallDetailRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListCallDetailRecordsRequest::getInstanceId()const
@@ -132,7 +134,7 @@ std::string ListCallDetailRecordsRequest::getInstanceId()const
 void ListCallDetailRecordsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListCallDetailRecordsRequest::getContactDisposition()const
@@ -143,7 +145,7 @@ std::string ListCallDetailRecordsRequest::getContactDisposition()const
 void ListCallDetailRecordsRequest::setContactDisposition(const std::string& contactDisposition)
 {
 	contactDisposition_ = contactDisposition;
-	setCoreParameter("ContactDisposition", contactDisposition);
+	setParameter("ContactDisposition", contactDisposition);
 }
 
 int ListCallDetailRecordsRequest::getPageSize()const
@@ -154,7 +156,7 @@ int ListCallDetailRecordsRequest::getPageSize()const
 void ListCallDetailRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool ListCallDetailRecordsRequest::getWithRecording()const
@@ -165,6 +167,6 @@ bool ListCallDetailRecordsRequest::getWithRecording()const
 void ListCallDetailRecordsRequest::setWithRecording(bool withRecording)
 {
 	withRecording_ = withRecording;
-	setCoreParameter("WithRecording", withRecording ? "true" : "false");
+	setParameter("WithRecording", withRecording ? "true" : "false");
 }
 

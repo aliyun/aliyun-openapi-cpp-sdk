@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVodSpecificConfigRequest;
 
 DeleteVodSpecificConfigRequest::DeleteVodSpecificConfigRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVodSpecificConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVodSpecificConfigRequest::~DeleteVodSpecificConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteVodSpecificConfigRequest::getDomainName()const
 void DeleteVodSpecificConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteVodSpecificConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteVodSpecificConfigRequest::getOwnerId()const
 void DeleteVodSpecificConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVodSpecificConfigRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DeleteVodSpecificConfigRequest::getSecurityToken()const
 void DeleteVodSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteVodSpecificConfigRequest::getConfigId()const
@@ -66,6 +68,6 @@ std::string DeleteVodSpecificConfigRequest::getConfigId()const
 void DeleteVodSpecificConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setParameter("ConfigId", configId);
 }
 

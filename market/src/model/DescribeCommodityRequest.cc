@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeCommodityRequest;
 
 DescribeCommodityRequest::DescribeCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeCommodityRequest::~DescribeCommodityRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeCommodityRequest::getCommodityId()const
 void DescribeCommodityRequest::setCommodityId(const std::string& commodityId)
 {
 	commodityId_ = commodityId;
-	setCoreParameter("CommodityId", commodityId);
+	setParameter("CommodityId", commodityId);
 }
 

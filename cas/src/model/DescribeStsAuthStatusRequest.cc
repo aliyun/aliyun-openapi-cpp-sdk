@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeStsAuthStatusRequest;
 
 DescribeStsAuthStatusRequest::DescribeStsAuthStatusRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeStsAuthStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStsAuthStatusRequest::~DescribeStsAuthStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeStsAuthStatusRequest::getCloudProduct()const
 void DescribeStsAuthStatusRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setParameter("CloudProduct", cloudProduct);
 }
 
 std::string DescribeStsAuthStatusRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeStsAuthStatusRequest::getResourceGroupId()const
 void DescribeStsAuthStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeStsAuthStatusRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeStsAuthStatusRequest::getSourceIp()const
 void DescribeStsAuthStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeStsAuthStatusRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeStsAuthStatusRequest::getLang()const
 void DescribeStsAuthStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

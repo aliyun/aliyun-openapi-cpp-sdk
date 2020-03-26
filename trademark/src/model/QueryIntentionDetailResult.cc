@@ -61,22 +61,16 @@ void QueryIntentionDetailResult::parse(const std::string &payload)
 		mobile_ = value["Mobile"].asString();
 	if(!value["UserName"].isNull())
 		userName_ = value["UserName"].asString();
+	if(!value["RelationBizId"].isNull())
+		relationBizId_ = value["RelationBizId"].asString();
+	if(!value["PartnerMobile"].isNull())
+		partnerMobile_ = value["PartnerMobile"].asString();
 
 }
 
 int QueryIntentionDetailResult::getStatus()const
 {
 	return status_;
-}
-
-std::string QueryIntentionDetailResult::getRegisterNumber()const
-{
-	return registerNumber_;
-}
-
-int QueryIntentionDetailResult::getType()const
-{
-	return type_;
 }
 
 std::string QueryIntentionDetailResult::getDescription()const
@@ -89,6 +83,31 @@ std::string QueryIntentionDetailResult::getUserName()const
 	return userName_;
 }
 
+std::string QueryIntentionDetailResult::getRelationBizId()const
+{
+	return relationBizId_;
+}
+
+long QueryIntentionDetailResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string QueryIntentionDetailResult::getMobile()const
+{
+	return mobile_;
+}
+
+std::string QueryIntentionDetailResult::getRegisterNumber()const
+{
+	return registerNumber_;
+}
+
+int QueryIntentionDetailResult::getType()const
+{
+	return type_;
+}
+
 std::string QueryIntentionDetailResult::getUserId()const
 {
 	return userId_;
@@ -97,11 +116,6 @@ std::string QueryIntentionDetailResult::getUserId()const
 std::string QueryIntentionDetailResult::getClassification()const
 {
 	return classification_;
-}
-
-long QueryIntentionDetailResult::getCreateTime()const
-{
-	return createTime_;
 }
 
 long QueryIntentionDetailResult::getUpdateTime()const
@@ -114,8 +128,8 @@ std::string QueryIntentionDetailResult::getBizId()const
 	return bizId_;
 }
 
-std::string QueryIntentionDetailResult::getMobile()const
+std::string QueryIntentionDetailResult::getPartnerMobile()const
 {
-	return mobile_;
+	return partnerMobile_;
 }
 

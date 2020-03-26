@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CreateRoomRequest;
 
 CreateRoomRequest::CreateRoomRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CreateRoom")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRoomRequest::~CreateRoomRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateRoomRequest::getTemplateIds()const
 void CreateRoomRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setParameter("TemplateIds", templateIds);
 }
 
 std::string CreateRoomRequest::getAnchorId()const
@@ -44,7 +46,7 @@ std::string CreateRoomRequest::getAnchorId()const
 void CreateRoomRequest::setAnchorId(const std::string& anchorId)
 {
 	anchorId_ = anchorId;
-	setCoreParameter("AnchorId", anchorId);
+	setParameter("AnchorId", anchorId);
 }
 
 bool CreateRoomRequest::getUseAppTranscode()const
@@ -55,7 +57,7 @@ bool CreateRoomRequest::getUseAppTranscode()const
 void CreateRoomRequest::setUseAppTranscode(bool useAppTranscode)
 {
 	useAppTranscode_ = useAppTranscode;
-	setCoreParameter("UseAppTranscode", useAppTranscode ? "true" : "false");
+	setParameter("UseAppTranscode", useAppTranscode ? "true" : "false");
 }
 
 long CreateRoomRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long CreateRoomRequest::getOwnerId()const
 void CreateRoomRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateRoomRequest::getRoomId()const
@@ -77,7 +79,7 @@ std::string CreateRoomRequest::getRoomId()const
 void CreateRoomRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string CreateRoomRequest::getAppId()const
@@ -88,6 +90,6 @@ std::string CreateRoomRequest::getAppId()const
 void CreateRoomRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

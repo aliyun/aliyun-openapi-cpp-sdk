@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListInstancesOfUserRequest;
 
 ListInstancesOfUserRequest::ListInstancesOfUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListInstancesOfUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListInstancesOfUserRequest::~ListInstancesOfUserRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListInstancesOfUserRequest::getAccessKeyId()const
 void ListInstancesOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

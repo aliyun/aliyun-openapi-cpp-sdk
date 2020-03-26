@@ -63,6 +63,8 @@ void DescribeQosCarsResult::parse(const std::string &payload)
 			qosCarsObject.maxBandwidthPercent = std::stoi(valueQosCarsQosCar["MaxBandwidthPercent"].asString());
 		if(!valueQosCarsQosCar["PercentSourceType"].isNull())
 			qosCarsObject.percentSourceType = valueQosCarsQosCar["PercentSourceType"].asString();
+		if(!valueQosCarsQosCar["Name"].isNull())
+			qosCarsObject.name = valueQosCarsQosCar["Name"].asString();
 		qosCars_.push_back(qosCarsObject);
 	}
 	if(!value["TotalCount"].isNull())

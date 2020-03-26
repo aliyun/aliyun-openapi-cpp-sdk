@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceMetricRequest;
 
 GetInstanceMetricRequest::GetInstanceMetricRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/metric");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceMetricRequest::~GetInstanceMetricRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceMetricRequest::getProjectName()const
 void GetInstanceMetricRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceMetricRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceMetricRequest::getInstanceId()const
 void GetInstanceMetricRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceMetricRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceMetricRequest::getRegionId()const
 void GetInstanceMetricRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceMetricRequest::getMetricJson()const
@@ -66,7 +69,7 @@ std::string GetInstanceMetricRequest::getMetricJson()const
 void GetInstanceMetricRequest::setMetricJson(const std::string& metricJson)
 {
 	metricJson_ = metricJson;
-	setCoreParameter("MetricJson", metricJson);
+	setBodyParameter("MetricJson", metricJson);
 }
 
 std::string GetInstanceMetricRequest::getJobName()const
@@ -77,6 +80,6 @@ std::string GetInstanceMetricRequest::getJobName()const
 void GetInstanceMetricRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

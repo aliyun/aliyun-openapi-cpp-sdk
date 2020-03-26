@@ -96,12 +96,36 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["EffectImmediately"].isNull())
 		effectImmediately_ = value["EffectImmediately"].asString() == "true";
+	if(!value["EnableDpd"].isNull())
+		enableDpd_ = value["EnableDpd"].asString() == "true";
+	if(!value["EnableNatTraversal"].isNull())
+		enableNatTraversal_ = value["EnableNatTraversal"].asString() == "true";
 
 }
 
 std::string ModifyVpnConnectionAttributeResult::getLocalSubnet()const
 {
 	return localSubnet_;
+}
+
+std::string ModifyVpnConnectionAttributeResult::getDescription()const
+{
+	return description_;
+}
+
+std::string ModifyVpnConnectionAttributeResult::getCustomerGatewayId()const
+{
+	return customerGatewayId_;
+}
+
+long ModifyVpnConnectionAttributeResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string ModifyVpnConnectionAttributeResult::getName()const
+{
+	return name_;
 }
 
 bool ModifyVpnConnectionAttributeResult::getEffectImmediately()const
@@ -119,16 +143,6 @@ std::string ModifyVpnConnectionAttributeResult::getRemoteSubnet()const
 	return remoteSubnet_;
 }
 
-std::string ModifyVpnConnectionAttributeResult::getDescription()const
-{
-	return description_;
-}
-
-std::string ModifyVpnConnectionAttributeResult::getCustomerGatewayId()const
-{
-	return customerGatewayId_;
-}
-
 std::string ModifyVpnConnectionAttributeResult::getVpnGatewayId()const
 {
 	return vpnGatewayId_;
@@ -139,14 +153,14 @@ ModifyVpnConnectionAttributeResult::IpsecConfig ModifyVpnConnectionAttributeResu
 	return ipsecConfig_;
 }
 
-long ModifyVpnConnectionAttributeResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 std::string ModifyVpnConnectionAttributeResult::getVpnConnectionId()const
 {
 	return vpnConnectionId_;
+}
+
+bool ModifyVpnConnectionAttributeResult::getEnableNatTraversal()const
+{
+	return enableNatTraversal_;
 }
 
 ModifyVpnConnectionAttributeResult::IkeConfig ModifyVpnConnectionAttributeResult::getIkeConfig()const
@@ -154,8 +168,8 @@ ModifyVpnConnectionAttributeResult::IkeConfig ModifyVpnConnectionAttributeResult
 	return ikeConfig_;
 }
 
-std::string ModifyVpnConnectionAttributeResult::getName()const
+bool ModifyVpnConnectionAttributeResult::getEnableDpd()const
 {
-	return name_;
+	return enableDpd_;
 }
 

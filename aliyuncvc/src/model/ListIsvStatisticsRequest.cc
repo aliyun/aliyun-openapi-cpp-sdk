@@ -35,7 +35,7 @@ long ListIsvStatisticsRequest::getEndTime()const
 void ListIsvStatisticsRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long ListIsvStatisticsRequest::getStartTime()const
@@ -46,6 +46,6 @@ long ListIsvStatisticsRequest::getStartTime()const
 void ListIsvStatisticsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 

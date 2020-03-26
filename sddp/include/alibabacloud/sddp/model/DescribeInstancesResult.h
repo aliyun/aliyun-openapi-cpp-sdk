@@ -39,18 +39,24 @@ namespace AlibabaCloud
 					std::string odpsRiskLevelName;
 					std::string productId;
 					std::string acl;
+					int s2Count;
 					long riskLevelId;
 					std::string departName;
 					std::string name;
-					int labelsec;
+					bool labelsec;
 					int totalCount;
+					std::string regionName;
+					long lastFinishTime;
 					long creationTime;
 					bool sensitive;
 					std::string riskLevelName;
+					std::string engineType;
 					long id;
+					std::string regionId;
 					int sensitiveCount;
 					bool protection;
 					std::string ruleName;
+					int s3Count;
 				};
 
 

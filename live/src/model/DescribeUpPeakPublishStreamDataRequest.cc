@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeUpPeakPublishStreamDataRequest;
 
 DescribeUpPeakPublishStreamDataRequest::DescribeUpPeakPublishStreamDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeUpPeakPublishStreamData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpPeakPublishStreamDataRequest::~DescribeUpPeakPublishStreamDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getStartTime()const
 void DescribeUpPeakPublishStreamDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainName()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeUpPeakPublishStreamDataRequest::getEndTime()const
 void DescribeUpPeakPublishStreamDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeUpPeakPublishStreamDataRequest::getOwnerId()const
 void DescribeUpPeakPublishStreamDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const
@@ -77,6 +79,6 @@ std::string DescribeUpPeakPublishStreamDataRequest::getDomainSwitch()const
 void DescribeUpPeakPublishStreamDataRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", domainSwitch);
+	setParameter("DomainSwitch", domainSwitch);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeRdsListRequest;
 
 DescribeRdsListRequest::DescribeRdsListRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeRdsList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRdsListRequest::~DescribeRdsListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRdsListRequest::getDrdsInstanceId()const
 void DescribeRdsListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeRdsListRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeRdsListRequest::getAccessKeyId()const
 void DescribeRdsListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRdsListRequest::getDbName()const
@@ -55,6 +57,6 @@ std::string DescribeRdsListRequest::getDbName()const
 void DescribeRdsListRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

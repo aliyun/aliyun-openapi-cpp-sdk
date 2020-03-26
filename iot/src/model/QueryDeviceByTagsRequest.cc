@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceByTagsRequest;
 
 QueryDeviceByTagsRequest::QueryDeviceByTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceByTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceByTagsRequest::~QueryDeviceByTagsRequest()
 {}
@@ -33,7 +35,7 @@ int QueryDeviceByTagsRequest::getCurrentPage()const
 void QueryDeviceByTagsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceByTagsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceByTagsRequest::getAccessKeyId()const
 void QueryDeviceByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceByTagsRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string QueryDeviceByTagsRequest::getIotInstanceId()const
 void QueryDeviceByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceByTagsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int QueryDeviceByTagsRequest::getPageSize()const
 void QueryDeviceByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<QueryDeviceByTagsRequest::Tag> QueryDeviceByTagsRequest::getTag()const
@@ -77,12 +79,11 @@ std::vector<QueryDeviceByTagsRequest::Tag> QueryDeviceByTagsRequest::getTag()con
 void QueryDeviceByTagsRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".TagValue", tagObj.tagValue);
+		setParameter(tagObjStr + ".TagKey", tagObj.tagKey);
 	}
 }
 

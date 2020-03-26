@@ -40,38 +40,38 @@ void ListGlobalQuestionsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto globalQuestionsNode = value["GlobalQuestions"];
-	if(!globalQuestionsNode["TotalCount"].isNull())
-		globalQuestions_.totalCount = std::stoi(globalQuestionsNode["TotalCount"].asString());
 	if(!globalQuestionsNode["PageNumber"].isNull())
 		globalQuestions_.pageNumber = std::stoi(globalQuestionsNode["PageNumber"].asString());
 	if(!globalQuestionsNode["PageSize"].isNull())
 		globalQuestions_.pageSize = std::stoi(globalQuestionsNode["PageSize"].asString());
+	if(!globalQuestionsNode["TotalCount"].isNull())
+		globalQuestions_.totalCount = std::stoi(globalQuestionsNode["TotalCount"].asString());
 	auto allListNode = globalQuestionsNode["List"]["GlobalQuestion"];
 	for (auto globalQuestionsNodeListGlobalQuestion : allListNode)
 	{
 		GlobalQuestions::GlobalQuestion globalQuestionObject;
+		if(!globalQuestionsNodeListGlobalQuestion["Answers"].isNull())
+			globalQuestionObject.answers = globalQuestionsNodeListGlobalQuestion["Answers"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionId"].isNull())
 			globalQuestionObject.globalQuestionId = globalQuestionsNodeListGlobalQuestion["GlobalQuestionId"].asString();
-		if(!globalQuestionsNodeListGlobalQuestion["ScriptId"].isNull())
-			globalQuestionObject.scriptId = globalQuestionsNodeListGlobalQuestion["ScriptId"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].isNull())
 			globalQuestionObject.globalQuestionName = globalQuestionsNodeListGlobalQuestion["GlobalQuestionName"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["GlobalQuestionType"].isNull())
 			globalQuestionObject.globalQuestionType = globalQuestionsNodeListGlobalQuestion["GlobalQuestionType"].asString();
 		if(!globalQuestionsNodeListGlobalQuestion["Questions"].isNull())
 			globalQuestionObject.questions = globalQuestionsNodeListGlobalQuestion["Questions"].asString();
-		if(!globalQuestionsNodeListGlobalQuestion["Answers"].isNull())
-			globalQuestionObject.answers = globalQuestionsNodeListGlobalQuestion["Answers"].asString();
+		if(!globalQuestionsNodeListGlobalQuestion["ScriptId"].isNull())
+			globalQuestionObject.scriptId = globalQuestionsNodeListGlobalQuestion["ScriptId"].asString();
 		globalQuestions_.list.push_back(globalQuestionObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

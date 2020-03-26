@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeEipAddressesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;
@@ -68,6 +69,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getSegmentInstanceId()const;
+				void setSegmentInstanceId(const std::string& segmentInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -100,6 +103,7 @@ namespace AlibabaCloud
 				std::string associatedInstanceType_;
 				int pageSize_;
 				std::vector<Tag> tag_;
+				std::string segmentInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string filter1Value_;

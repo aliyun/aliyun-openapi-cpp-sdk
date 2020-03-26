@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListGroupApBriefConfigRequest;
 
 ListGroupApBriefConfigRequest::ListGroupApBriefConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListGroupApBriefConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListGroupApBriefConfigRequest::~ListGroupApBriefConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListGroupApBriefConfigRequest::getOrderCol()const
 void ListGroupApBriefConfigRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListGroupApBriefConfigRequest::getSearchName()const
@@ -44,7 +46,7 @@ std::string ListGroupApBriefConfigRequest::getSearchName()const
 void ListGroupApBriefConfigRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 long ListGroupApBriefConfigRequest::getApgroupId()const
@@ -55,7 +57,7 @@ long ListGroupApBriefConfigRequest::getApgroupId()const
 void ListGroupApBriefConfigRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 int ListGroupApBriefConfigRequest::getLength()const
@@ -66,7 +68,7 @@ int ListGroupApBriefConfigRequest::getLength()const
 void ListGroupApBriefConfigRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListGroupApBriefConfigRequest::getOrderDir()const
@@ -77,7 +79,7 @@ std::string ListGroupApBriefConfigRequest::getOrderDir()const
 void ListGroupApBriefConfigRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListGroupApBriefConfigRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string ListGroupApBriefConfigRequest::getAccessKeyId()const
 void ListGroupApBriefConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListGroupApBriefConfigRequest::getColCnt()const
@@ -99,7 +101,7 @@ int ListGroupApBriefConfigRequest::getColCnt()const
 void ListGroupApBriefConfigRequest::setColCnt(int colCnt)
 {
 	colCnt_ = colCnt;
-	setCoreParameter("ColCnt", std::to_string(colCnt));
+	setParameter("ColCnt", std::to_string(colCnt));
 }
 
 int ListGroupApBriefConfigRequest::getPageIndex()const
@@ -110,7 +112,7 @@ int ListGroupApBriefConfigRequest::getPageIndex()const
 void ListGroupApBriefConfigRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListGroupApBriefConfigRequest::getSearchMac()const
@@ -121,6 +123,6 @@ std::string ListGroupApBriefConfigRequest::getSearchMac()const
 void ListGroupApBriefConfigRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 

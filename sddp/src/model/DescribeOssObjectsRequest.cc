@@ -20,10 +20,23 @@ using AlibabaCloud::Sddp::Model::DescribeOssObjectsRequest;
 
 DescribeOssObjectsRequest::DescribeOssObjectsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeOssObjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssObjectsRequest::~DescribeOssObjectsRequest()
 {}
+
+std::string DescribeOssObjectsRequest::getRiskLevels()const
+{
+	return riskLevels_;
+}
+
+void DescribeOssObjectsRequest::setRiskLevels(const std::string& riskLevels)
+{
+	riskLevels_ = riskLevels;
+	setParameter("RiskLevels", riskLevels);
+}
 
 std::string DescribeOssObjectsRequest::getQueryName()const
 {
@@ -33,7 +46,7 @@ std::string DescribeOssObjectsRequest::getQueryName()const
 void DescribeOssObjectsRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setParameter("QueryName", queryName);
 }
 
 int DescribeOssObjectsRequest::getRiskLevelId()const
@@ -44,7 +57,7 @@ int DescribeOssObjectsRequest::getRiskLevelId()const
 void DescribeOssObjectsRequest::setRiskLevelId(int riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeOssObjectsRequest::getSourceIp()const
@@ -55,7 +68,7 @@ std::string DescribeOssObjectsRequest::getSourceIp()const
 void DescribeOssObjectsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeOssObjectsRequest::getPageSize()const
@@ -66,7 +79,7 @@ int DescribeOssObjectsRequest::getPageSize()const
 void DescribeOssObjectsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeOssObjectsRequest::getLang()const
@@ -77,7 +90,7 @@ std::string DescribeOssObjectsRequest::getLang()const
 void DescribeOssObjectsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeOssObjectsRequest::getFeatureType()const
@@ -88,7 +101,18 @@ int DescribeOssObjectsRequest::getFeatureType()const
 void DescribeOssObjectsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeOssObjectsRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeOssObjectsRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 int DescribeOssObjectsRequest::getCurrentPage()const
@@ -99,7 +123,7 @@ int DescribeOssObjectsRequest::getCurrentPage()const
 void DescribeOssObjectsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeOssObjectsRequest::getInstanceId()const
@@ -110,7 +134,7 @@ std::string DescribeOssObjectsRequest::getInstanceId()const
 void DescribeOssObjectsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeOssObjectsRequest::getName()const
@@ -121,7 +145,7 @@ std::string DescribeOssObjectsRequest::getName()const
 void DescribeOssObjectsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribeOssObjectsRequest::getRuleId()const
@@ -132,6 +156,17 @@ long DescribeOssObjectsRequest::getRuleId()const
 void DescribeOssObjectsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
+}
+
+int DescribeOssObjectsRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeOssObjectsRequest::setCategory(int category)
+{
+	category_ = category;
+	setParameter("Category", std::to_string(category));
 }
 

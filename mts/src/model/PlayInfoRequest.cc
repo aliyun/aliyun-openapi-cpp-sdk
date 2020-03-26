@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::PlayInfoRequest;
 
 PlayInfoRequest::PlayInfoRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "PlayInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PlayInfoRequest::~PlayInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string PlayInfoRequest::getResourceOwnerId()const
 void PlayInfoRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PlayInfoRequest::getFormats()const
@@ -44,7 +46,7 @@ std::string PlayInfoRequest::getFormats()const
 void PlayInfoRequest::setFormats(const std::string& formats)
 {
 	formats_ = formats;
-	setCoreParameter("Formats", formats);
+	setParameter("Formats", formats);
 }
 
 std::string PlayInfoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string PlayInfoRequest::getAccessKeyId()const
 void PlayInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PlayInfoRequest::getRand()const
@@ -66,7 +68,7 @@ std::string PlayInfoRequest::getRand()const
 void PlayInfoRequest::setRand(const std::string& rand)
 {
 	rand_ = rand;
-	setCoreParameter("Rand", rand);
+	setParameter("Rand", rand);
 }
 
 long PlayInfoRequest::getAuthTimeout()const
@@ -77,7 +79,7 @@ long PlayInfoRequest::getAuthTimeout()const
 void PlayInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string PlayInfoRequest::getPlayDomain()const
@@ -88,7 +90,7 @@ std::string PlayInfoRequest::getPlayDomain()const
 void PlayInfoRequest::setPlayDomain(const std::string& playDomain)
 {
 	playDomain_ = playDomain;
-	setCoreParameter("PlayDomain", playDomain);
+	setParameter("PlayDomain", playDomain);
 }
 
 std::string PlayInfoRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string PlayInfoRequest::getResourceOwnerAccount()const
 void PlayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PlayInfoRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string PlayInfoRequest::getOwnerAccount()const
 void PlayInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string PlayInfoRequest::getHlsUriToken()const
@@ -121,7 +123,7 @@ std::string PlayInfoRequest::getHlsUriToken()const
 void PlayInfoRequest::setHlsUriToken(const std::string& hlsUriToken)
 {
 	hlsUriToken_ = hlsUriToken;
-	setCoreParameter("HlsUriToken", hlsUriToken);
+	setParameter("HlsUriToken", hlsUriToken);
 }
 
 std::string PlayInfoRequest::getTerminal()const
@@ -132,7 +134,7 @@ std::string PlayInfoRequest::getTerminal()const
 void PlayInfoRequest::setTerminal(const std::string& terminal)
 {
 	terminal_ = terminal;
-	setCoreParameter("Terminal", terminal);
+	setParameter("Terminal", terminal);
 }
 
 std::string PlayInfoRequest::getOwnerId()const
@@ -143,7 +145,7 @@ std::string PlayInfoRequest::getOwnerId()const
 void PlayInfoRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string PlayInfoRequest::getMediaId()const
@@ -154,7 +156,7 @@ std::string PlayInfoRequest::getMediaId()const
 void PlayInfoRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string PlayInfoRequest::getAuthInfo()const
@@ -165,6 +167,6 @@ std::string PlayInfoRequest::getAuthInfo()const
 void PlayInfoRequest::setAuthInfo(const std::string& authInfo)
 {
 	authInfo_ = authInfo;
-	setCoreParameter("AuthInfo", authInfo);
+	setParameter("AuthInfo", authInfo);
 }
 

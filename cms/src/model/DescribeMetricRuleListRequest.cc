@@ -35,7 +35,7 @@ bool DescribeMetricRuleListRequest::getEnableState()const
 void DescribeMetricRuleListRequest::setEnableState(bool enableState)
 {
 	enableState_ = enableState;
-	setCoreParameter("EnableState", enableState ? "true" : "false");
+	setParameter("EnableState", enableState ? "true" : "false");
 }
 
 std::string DescribeMetricRuleListRequest::getRuleName()const
@@ -46,7 +46,7 @@ std::string DescribeMetricRuleListRequest::getRuleName()const
 void DescribeMetricRuleListRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::string DescribeMetricRuleListRequest::getPageSize()const
@@ -57,7 +57,7 @@ std::string DescribeMetricRuleListRequest::getPageSize()const
 void DescribeMetricRuleListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeMetricRuleListRequest::getMetricName()const
@@ -68,7 +68,7 @@ std::string DescribeMetricRuleListRequest::getMetricName()const
 void DescribeMetricRuleListRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeMetricRuleListRequest::getGroupId()const
@@ -79,7 +79,7 @@ std::string DescribeMetricRuleListRequest::getGroupId()const
 void DescribeMetricRuleListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeMetricRuleListRequest::getRuleIds()const
@@ -90,7 +90,7 @@ std::string DescribeMetricRuleListRequest::getRuleIds()const
 void DescribeMetricRuleListRequest::setRuleIds(const std::string& ruleIds)
 {
 	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", ruleIds);
+	setParameter("RuleIds", ruleIds);
 }
 
 std::string DescribeMetricRuleListRequest::get_Namespace()const
@@ -101,7 +101,7 @@ std::string DescribeMetricRuleListRequest::get_Namespace()const
 void DescribeMetricRuleListRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 std::string DescribeMetricRuleListRequest::getAlertState()const
@@ -112,7 +112,7 @@ std::string DescribeMetricRuleListRequest::getAlertState()const
 void DescribeMetricRuleListRequest::setAlertState(const std::string& alertState)
 {
 	alertState_ = alertState;
-	setCoreParameter("AlertState", alertState);
+	setParameter("AlertState", alertState);
 }
 
 std::string DescribeMetricRuleListRequest::getPage()const
@@ -123,7 +123,7 @@ std::string DescribeMetricRuleListRequest::getPage()const
 void DescribeMetricRuleListRequest::setPage(const std::string& page)
 {
 	page_ = page;
-	setCoreParameter("Page", page);
+	setParameter("Page", page);
 }
 
 std::string DescribeMetricRuleListRequest::getDimensions()const
@@ -134,6 +134,6 @@ std::string DescribeMetricRuleListRequest::getDimensions()const
 void DescribeMetricRuleListRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setParameter("Dimensions", dimensions);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::FillLogisticsRequest;
 
 FillLogisticsRequest::FillLogisticsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "FillLogistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FillLogisticsRequest::~FillLogisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string FillLogisticsRequest::getBizId()const
 void FillLogisticsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string FillLogisticsRequest::getLogistics()const
@@ -44,6 +46,6 @@ std::string FillLogisticsRequest::getLogistics()const
 void FillLogisticsRequest::setLogistics(const std::string& logistics)
 {
 	logistics_ = logistics;
-	setCoreParameter("Logistics", logistics);
+	setParameter("Logistics", logistics);
 }
 

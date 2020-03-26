@@ -71,6 +71,14 @@ void DescribeTablesResult::parse(const std::string &payload)
 			itemsObject.sensitiveRatio = valueItemsTable["SensitiveRatio"].asString();
 		if(!valueItemsTable["InstanceId"].isNull())
 			itemsObject.instanceId = std::stol(valueItemsTable["InstanceId"].asString());
+		if(!valueItemsTable["S2Count"].isNull())
+			itemsObject.s2Count = std::stoi(valueItemsTable["S2Count"].asString());
+		if(!valueItemsTable["S3Count"].isNull())
+			itemsObject.s3Count = std::stoi(valueItemsTable["S3Count"].asString());
+		if(!valueItemsTable["TotalRows"].isNull())
+			itemsObject.totalRows = std::stoi(valueItemsTable["TotalRows"].asString());
+		if(!valueItemsTable["LastScanTime"].isNull())
+			itemsObject.lastScanTime = std::stol(valueItemsTable["LastScanTime"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::AbolishApiRequest;
 
 AbolishApiRequest::AbolishApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "AbolishApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AbolishApiRequest::~AbolishApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string AbolishApiRequest::getStageName()const
 void AbolishApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string AbolishApiRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string AbolishApiRequest::getGroupId()const
 void AbolishApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string AbolishApiRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AbolishApiRequest::getAccessKeyId()const
 void AbolishApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AbolishApiRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string AbolishApiRequest::getSecurityToken()const
 void AbolishApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AbolishApiRequest::getApiId()const
@@ -77,6 +79,6 @@ std::string AbolishApiRequest::getApiId()const
 void AbolishApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

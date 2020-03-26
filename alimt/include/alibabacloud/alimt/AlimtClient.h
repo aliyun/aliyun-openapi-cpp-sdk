@@ -24,6 +24,8 @@
 #include "AlimtExport.h"
 #include "model/CreateDocTranslateTaskRequest.h"
 #include "model/CreateDocTranslateTaskResult.h"
+#include "model/GetDetectLanguageRequest.h"
+#include "model/GetDetectLanguageResult.h"
 #include "model/GetDocTranslateTaskRequest.h"
 #include "model/GetDocTranslateTaskResult.h"
 #include "model/TranslateRequest.h"
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDocTranslateTaskResult> CreateDocTranslateTaskOutcome;
 			typedef std::future<CreateDocTranslateTaskOutcome> CreateDocTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::CreateDocTranslateTaskRequest&, const CreateDocTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocTranslateTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetDetectLanguageResult> GetDetectLanguageOutcome;
+			typedef std::future<GetDetectLanguageOutcome> GetDetectLanguageOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetDetectLanguageRequest&, const GetDetectLanguageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectLanguageAsyncHandler;
 			typedef Outcome<Error, Model::GetDocTranslateTaskResult> GetDocTranslateTaskOutcome;
 			typedef std::future<GetDocTranslateTaskOutcome> GetDocTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetDocTranslateTaskRequest&, const GetDocTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDocTranslateTaskAsyncHandler;
@@ -69,6 +74,9 @@ namespace AlibabaCloud
 			CreateDocTranslateTaskOutcome createDocTranslateTask(const Model::CreateDocTranslateTaskRequest &request)const;
 			void createDocTranslateTaskAsync(const Model::CreateDocTranslateTaskRequest& request, const CreateDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDocTranslateTaskOutcomeCallable createDocTranslateTaskCallable(const Model::CreateDocTranslateTaskRequest& request) const;
+			GetDetectLanguageOutcome getDetectLanguage(const Model::GetDetectLanguageRequest &request)const;
+			void getDetectLanguageAsync(const Model::GetDetectLanguageRequest& request, const GetDetectLanguageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDetectLanguageOutcomeCallable getDetectLanguageCallable(const Model::GetDetectLanguageRequest& request) const;
 			GetDocTranslateTaskOutcome getDocTranslateTask(const Model::GetDocTranslateTaskRequest &request)const;
 			void getDocTranslateTaskAsync(const Model::GetDocTranslateTaskRequest& request, const GetDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDocTranslateTaskOutcomeCallable getDocTranslateTaskCallable(const Model::GetDocTranslateTaskRequest& request) const;

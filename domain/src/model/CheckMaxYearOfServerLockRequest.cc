@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckMaxYearOfServerLockRequest;
 
 CheckMaxYearOfServerLockRequest::CheckMaxYearOfServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckMaxYearOfServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckMaxYearOfServerLockRequest::~CheckMaxYearOfServerLockRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckMaxYearOfServerLockRequest::getDomainName()const
 void CheckMaxYearOfServerLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string CheckMaxYearOfServerLockRequest::getUserClientIp()const
 void CheckMaxYearOfServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getCheckAction()const
@@ -55,7 +57,7 @@ std::string CheckMaxYearOfServerLockRequest::getCheckAction()const
 void CheckMaxYearOfServerLockRequest::setCheckAction(const std::string& checkAction)
 {
 	checkAction_ = checkAction;
-	setCoreParameter("CheckAction", checkAction);
+	setParameter("CheckAction", checkAction);
 }
 
 std::string CheckMaxYearOfServerLockRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CheckMaxYearOfServerLockRequest::getLang()const
 void CheckMaxYearOfServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

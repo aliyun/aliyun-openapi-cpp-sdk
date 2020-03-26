@@ -39,6 +39,19 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allPortRangesNode = value["PortRanges"]["PortRange"];
+	for (auto valuePortRangesPortRange : allPortRangesNode)
+	{
+		PortRange portRangesObject;
+		if(!valuePortRangesPortRange["StartPort"].isNull())
+			portRangesObject.startPort = std::stoi(valuePortRangesPortRange["StartPort"].asString());
+		if(!valuePortRangesPortRange["EndPort"].isNull())
+			portRangesObject.endPort = std::stoi(valuePortRangesPortRange["EndPort"].asString());
+		portRanges_.push_back(portRangesObject);
+	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -83,12 +96,11 @@ void DescribeLoadBalancerUDPListenerAttributeResult::parse(const std::string &pa
 		vpcIds_ = value["VpcIds"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["ConnectionDrain"].isNull())
+		connectionDrain_ = value["ConnectionDrain"].asString();
+	if(!value["ConnectionDrainTimeout"].isNull())
+		connectionDrainTimeout_ = std::stoi(value["ConnectionDrainTimeout"].asString());
 
-}
-
-std::string DescribeLoadBalancerUDPListenerAttributeResult::getStatus()const
-{
-	return status_;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getMaxConnection()const
@@ -96,19 +108,9 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getMaxConnection()const
 	return maxConnection_;
 }
 
-int DescribeLoadBalancerUDPListenerAttributeResult::getListenerPort()const
-{
-	return listenerPort_;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getVServerGroupId()const
 {
 	return vServerGroupId_;
-}
-
-int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckInterval()const
-{
-	return healthCheckInterval_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getDescription()const
@@ -126,24 +128,19 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getScheduler()const
 	return scheduler_;
 }
 
-std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclId()const
-{
-	return aclId_;
-}
-
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheck()const
 {
 	return healthCheck_;
 }
 
-int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectTimeout()const
-{
-	return healthCheckConnectTimeout_;
-}
-
 int DescribeLoadBalancerUDPListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getConnectionDrainTimeout()const
+{
+	return connectionDrainTimeout_;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getPersistenceTimeout()const
@@ -154,6 +151,46 @@ int DescribeLoadBalancerUDPListenerAttributeResult::getPersistenceTimeout()const
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectPort()const
 {
 	return healthCheckConnectPort_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getBandwidth()const
+{
+	return bandwidth_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getListenerPort()const
+{
+	return listenerPort_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+std::vector<DescribeLoadBalancerUDPListenerAttributeResult::PortRange> DescribeLoadBalancerUDPListenerAttributeResult::getPortRanges()const
+{
+	return portRanges_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclId()const
+{
+	return aclId_;
+}
+
+int DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckConnectTimeout()const
+{
+	return healthCheckConnectTimeout_;
+}
+
+std::string DescribeLoadBalancerUDPListenerAttributeResult::getConnectionDrain()const
+{
+	return connectionDrain_;
 }
 
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getHealthCheckReq()const
@@ -169,11 +206,6 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclStatus()const
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getVpcIds()const
 {
 	return vpcIds_;
-}
-
-int DescribeLoadBalancerUDPListenerAttributeResult::getBandwidth()const
-{
-	return bandwidth_;
 }
 
 int DescribeLoadBalancerUDPListenerAttributeResult::getHealthyThreshold()const
@@ -194,5 +226,10 @@ std::string DescribeLoadBalancerUDPListenerAttributeResult::getMasterSlaveServer
 std::string DescribeLoadBalancerUDPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::vector<std::string> DescribeLoadBalancerUDPListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 

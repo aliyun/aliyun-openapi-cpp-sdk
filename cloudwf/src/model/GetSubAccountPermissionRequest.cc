@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSubAccountPermissionRequest;
 
 GetSubAccountPermissionRequest::GetSubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSubAccountPermissionRequest::~GetSubAccountPermissionRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetSubAccountPermissionRequest::getAccessKeyId()const
 void GetSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetSubAccountPermissionRequest::getId()const
@@ -44,6 +46,6 @@ long GetSubAccountPermissionRequest::getId()const
 void GetSubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

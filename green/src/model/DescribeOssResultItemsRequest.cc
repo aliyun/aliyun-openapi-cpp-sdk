@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssResultItemsRequest;
 
 DescribeOssResultItemsRequest::DescribeOssResultItemsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssResultItems")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssResultItemsRequest::~DescribeOssResultItemsRequest()
 {}
@@ -33,7 +35,7 @@ float DescribeOssResultItemsRequest::getMinScore()const
 void DescribeOssResultItemsRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
-	setCoreParameter("MinScore", std::to_string(minScore));
+	setParameter("MinScore", std::to_string(minScore));
 }
 
 float DescribeOssResultItemsRequest::getMaxScore()const
@@ -44,7 +46,7 @@ float DescribeOssResultItemsRequest::getMaxScore()const
 void DescribeOssResultItemsRequest::setMaxScore(float maxScore)
 {
 	maxScore_ = maxScore;
-	setCoreParameter("MaxScore", std::to_string(maxScore));
+	setParameter("MaxScore", std::to_string(maxScore));
 }
 
 std::string DescribeOssResultItemsRequest::getStartDate()const
@@ -55,7 +57,7 @@ std::string DescribeOssResultItemsRequest::getStartDate()const
 void DescribeOssResultItemsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeOssResultItemsRequest::getScene()const
@@ -66,7 +68,7 @@ std::string DescribeOssResultItemsRequest::getScene()const
 void DescribeOssResultItemsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string DescribeOssResultItemsRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string DescribeOssResultItemsRequest::getSourceIp()const
 void DescribeOssResultItemsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeOssResultItemsRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeOssResultItemsRequest::getPageSize()const
 void DescribeOssResultItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeOssResultItemsRequest::getLang()const
@@ -99,7 +101,7 @@ std::string DescribeOssResultItemsRequest::getLang()const
 void DescribeOssResultItemsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool DescribeOssResultItemsRequest::getStock()const
@@ -110,7 +112,7 @@ bool DescribeOssResultItemsRequest::getStock()const
 void DescribeOssResultItemsRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setParameter("Stock", stock ? "true" : "false");
 }
 
 int DescribeOssResultItemsRequest::getTotalCount()const
@@ -121,7 +123,7 @@ int DescribeOssResultItemsRequest::getTotalCount()const
 void DescribeOssResultItemsRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeOssResultItemsRequest::getSuggestion()const
@@ -132,7 +134,7 @@ std::string DescribeOssResultItemsRequest::getSuggestion()const
 void DescribeOssResultItemsRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setParameter("Suggestion", suggestion);
 }
 
 int DescribeOssResultItemsRequest::getCurrentPage()const
@@ -143,7 +145,7 @@ int DescribeOssResultItemsRequest::getCurrentPage()const
 void DescribeOssResultItemsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeOssResultItemsRequest::getResourceType()const
@@ -154,7 +156,7 @@ std::string DescribeOssResultItemsRequest::getResourceType()const
 void DescribeOssResultItemsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeOssResultItemsRequest::getQueryId()const
@@ -165,7 +167,7 @@ std::string DescribeOssResultItemsRequest::getQueryId()const
 void DescribeOssResultItemsRequest::setQueryId(const std::string& queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", queryId);
+	setParameter("QueryId", queryId);
 }
 
 std::string DescribeOssResultItemsRequest::getBucket()const
@@ -176,7 +178,7 @@ std::string DescribeOssResultItemsRequest::getBucket()const
 void DescribeOssResultItemsRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setParameter("Bucket", bucket);
 }
 
 std::string DescribeOssResultItemsRequest::getEndDate()const
@@ -187,7 +189,7 @@ std::string DescribeOssResultItemsRequest::getEndDate()const
 void DescribeOssResultItemsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeOssResultItemsRequest::getObject()const
@@ -198,6 +200,6 @@ std::string DescribeOssResultItemsRequest::getObject()const
 void DescribeOssResultItemsRequest::setObject(const std::string& object)
 {
 	object_ = object;
-	setCoreParameter("Object", object);
+	setParameter("Object", object);
 }
 

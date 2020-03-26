@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateClusterTemplateRequest;
 
 CreateClusterTemplateRequest::CreateClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateClusterTemplateRequest::~CreateClusterTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long CreateClusterTemplateRequest::getResourceOwnerId()const
 void CreateClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterTemplateRequest::getLogPath()const
@@ -44,7 +46,7 @@ std::string CreateClusterTemplateRequest::getLogPath()const
 void CreateClusterTemplateRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setCoreParameter("LogPath", logPath);
+	setParameter("LogPath", logPath);
 }
 
 std::string CreateClusterTemplateRequest::getMasterPwd()const
@@ -55,7 +57,7 @@ std::string CreateClusterTemplateRequest::getMasterPwd()const
 void CreateClusterTemplateRequest::setMasterPwd(const std::string& masterPwd)
 {
 	masterPwd_ = masterPwd;
-	setCoreParameter("MasterPwd", masterPwd);
+	setParameter("MasterPwd", masterPwd);
 }
 
 std::string CreateClusterTemplateRequest::getConfigurations()const
@@ -66,7 +68,7 @@ std::string CreateClusterTemplateRequest::getConfigurations()const
 void CreateClusterTemplateRequest::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setCoreParameter("Configurations", configurations);
+	setParameter("Configurations", configurations);
 }
 
 bool CreateClusterTemplateRequest::getSshEnable()const
@@ -77,7 +79,7 @@ bool CreateClusterTemplateRequest::getSshEnable()const
 void CreateClusterTemplateRequest::setSshEnable(bool sshEnable)
 {
 	sshEnable_ = sshEnable;
-	setCoreParameter("SshEnable", sshEnable ? "true" : "false");
+	setParameter("SshEnable", sshEnable ? "true" : "false");
 }
 
 std::string CreateClusterTemplateRequest::getKeyPairName()const
@@ -88,7 +90,7 @@ std::string CreateClusterTemplateRequest::getKeyPairName()const
 void CreateClusterTemplateRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setParameter("KeyPairName", keyPairName);
 }
 
 std::string CreateClusterTemplateRequest::getMetaStoreType()const
@@ -99,7 +101,7 @@ std::string CreateClusterTemplateRequest::getMetaStoreType()const
 void CreateClusterTemplateRequest::setMetaStoreType(const std::string& metaStoreType)
 {
 	metaStoreType_ = metaStoreType;
-	setCoreParameter("MetaStoreType", metaStoreType);
+	setParameter("MetaStoreType", metaStoreType);
 }
 
 std::string CreateClusterTemplateRequest::getSecurityGroupName()const
@@ -110,7 +112,7 @@ std::string CreateClusterTemplateRequest::getSecurityGroupName()const
 void CreateClusterTemplateRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string CreateClusterTemplateRequest::getMachineType()const
@@ -121,7 +123,7 @@ std::string CreateClusterTemplateRequest::getMachineType()const
 void CreateClusterTemplateRequest::setMachineType(const std::string& machineType)
 {
 	machineType_ = machineType;
-	setCoreParameter("MachineType", machineType);
+	setParameter("MachineType", machineType);
 }
 
 std::vector<CreateClusterTemplateRequest::BootstrapAction> CreateClusterTemplateRequest::getBootstrapAction()const
@@ -132,13 +134,12 @@ std::vector<CreateClusterTemplateRequest::BootstrapAction> CreateClusterTemplate
 void CreateClusterTemplateRequest::setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction)
 {
 	bootstrapAction_ = bootstrapAction;
-	int i = 0;
-	for(int i = 0; i!= bootstrapAction.size(); i++)	{
-		auto obj = bootstrapAction.at(i);
-		std::string str ="BootstrapAction."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Arg", obj.arg);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= bootstrapAction.size(); dep1++) {
+		auto bootstrapActionObj = bootstrapAction.at(dep1);
+		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1 + 1);
+		setParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
+		setParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
 	}
 }
 
@@ -150,7 +151,7 @@ std::string CreateClusterTemplateRequest::getMetaStoreConf()const
 void CreateClusterTemplateRequest::setMetaStoreConf(const std::string& metaStoreConf)
 {
 	metaStoreConf_ = metaStoreConf;
-	setCoreParameter("MetaStoreConf", metaStoreConf);
+	setParameter("MetaStoreConf", metaStoreConf);
 }
 
 std::string CreateClusterTemplateRequest::getEmrVer()const
@@ -161,7 +162,7 @@ std::string CreateClusterTemplateRequest::getEmrVer()const
 void CreateClusterTemplateRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setCoreParameter("EmrVer", emrVer);
+	setParameter("EmrVer", emrVer);
 }
 
 bool CreateClusterTemplateRequest::getIsOpenPublicIp()const
@@ -172,7 +173,7 @@ bool CreateClusterTemplateRequest::getIsOpenPublicIp()const
 void CreateClusterTemplateRequest::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
+	setParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 int CreateClusterTemplateRequest::getPeriod()const
@@ -183,7 +184,7 @@ int CreateClusterTemplateRequest::getPeriod()const
 void CreateClusterTemplateRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateClusterTemplateRequest::getInstanceGeneration()const
@@ -194,7 +195,7 @@ std::string CreateClusterTemplateRequest::getInstanceGeneration()const
 void CreateClusterTemplateRequest::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setCoreParameter("InstanceGeneration", instanceGeneration);
+	setParameter("InstanceGeneration", instanceGeneration);
 }
 
 std::string CreateClusterTemplateRequest::getVSwitchId()const
@@ -205,7 +206,7 @@ std::string CreateClusterTemplateRequest::getVSwitchId()const
 void CreateClusterTemplateRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string CreateClusterTemplateRequest::getClusterType()const
@@ -216,7 +217,7 @@ std::string CreateClusterTemplateRequest::getClusterType()const
 void CreateClusterTemplateRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 bool CreateClusterTemplateRequest::getAutoRenew()const
@@ -227,7 +228,7 @@ bool CreateClusterTemplateRequest::getAutoRenew()const
 void CreateClusterTemplateRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
 std::vector<std::string> CreateClusterTemplateRequest::getOptionSoftWareList()const
@@ -238,8 +239,9 @@ std::vector<std::string> CreateClusterTemplateRequest::getOptionSoftWareList()co
 void CreateClusterTemplateRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
+		setParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string CreateClusterTemplateRequest::getNetType()const
@@ -250,7 +252,7 @@ std::string CreateClusterTemplateRequest::getNetType()const
 void CreateClusterTemplateRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setParameter("NetType", netType);
 }
 
 std::string CreateClusterTemplateRequest::getZoneId()const
@@ -261,7 +263,7 @@ std::string CreateClusterTemplateRequest::getZoneId()const
 void CreateClusterTemplateRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 bool CreateClusterTemplateRequest::getUseCustomHiveMetaDb()const
@@ -272,7 +274,7 @@ bool CreateClusterTemplateRequest::getUseCustomHiveMetaDb()const
 void CreateClusterTemplateRequest::setUseCustomHiveMetaDb(bool useCustomHiveMetaDb)
 {
 	useCustomHiveMetaDb_ = useCustomHiveMetaDb;
-	setCoreParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb ? "true" : "false");
+	setParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb ? "true" : "false");
 }
 
 bool CreateClusterTemplateRequest::getInitCustomHiveMetaDb()const
@@ -283,7 +285,7 @@ bool CreateClusterTemplateRequest::getInitCustomHiveMetaDb()const
 void CreateClusterTemplateRequest::setInitCustomHiveMetaDb(bool initCustomHiveMetaDb)
 {
 	initCustomHiveMetaDb_ = initCustomHiveMetaDb;
-	setCoreParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb ? "true" : "false");
+	setParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb ? "true" : "false");
 }
 
 bool CreateClusterTemplateRequest::getIoOptimized()const
@@ -294,7 +296,7 @@ bool CreateClusterTemplateRequest::getIoOptimized()const
 void CreateClusterTemplateRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+	setParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string CreateClusterTemplateRequest::getSecurityGroupId()const
@@ -305,7 +307,7 @@ std::string CreateClusterTemplateRequest::getSecurityGroupId()const
 void CreateClusterTemplateRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 bool CreateClusterTemplateRequest::getEasEnable()const
@@ -316,7 +318,7 @@ bool CreateClusterTemplateRequest::getEasEnable()const
 void CreateClusterTemplateRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+	setParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::string CreateClusterTemplateRequest::getDepositType()const
@@ -327,7 +329,7 @@ std::string CreateClusterTemplateRequest::getDepositType()const
 void CreateClusterTemplateRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
+	setParameter("DepositType", depositType);
 }
 
 std::string CreateClusterTemplateRequest::getAccessKeyId()const
@@ -338,7 +340,7 @@ std::string CreateClusterTemplateRequest::getAccessKeyId()const
 void CreateClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterTemplateRequest::getRegionId()const
@@ -349,7 +351,7 @@ std::string CreateClusterTemplateRequest::getRegionId()const
 void CreateClusterTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool CreateClusterTemplateRequest::getUseLocalMetaDb()const
@@ -360,7 +362,7 @@ bool CreateClusterTemplateRequest::getUseLocalMetaDb()const
 void CreateClusterTemplateRequest::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+	setParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string CreateClusterTemplateRequest::getTemplateName()const
@@ -371,7 +373,7 @@ std::string CreateClusterTemplateRequest::getTemplateName()const
 void CreateClusterTemplateRequest::setTemplateName(const std::string& templateName)
 {
 	templateName_ = templateName;
-	setCoreParameter("TemplateName", templateName);
+	setParameter("TemplateName", templateName);
 }
 
 std::string CreateClusterTemplateRequest::getUserDefinedEmrEcsRole()const
@@ -382,7 +384,7 @@ std::string CreateClusterTemplateRequest::getUserDefinedEmrEcsRole()const
 void CreateClusterTemplateRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 std::string CreateClusterTemplateRequest::getVpcId()const
@@ -393,7 +395,7 @@ std::string CreateClusterTemplateRequest::getVpcId()const
 void CreateClusterTemplateRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::vector<CreateClusterTemplateRequest::HostGroup> CreateClusterTemplateRequest::getHostGroup()const
@@ -404,28 +406,27 @@ std::vector<CreateClusterTemplateRequest::HostGroup> CreateClusterTemplateReques
 void CreateClusterTemplateRequest::setHostGroup(const std::vector<HostGroup>& hostGroup)
 {
 	hostGroup_ = hostGroup;
-	int i = 0;
-	for(int i = 0; i!= hostGroup.size(); i++)	{
-		auto obj = hostGroup.at(i);
-		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
-		setCoreParameter(str + ".ClusterId", obj.clusterId);
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".VSwitchId", obj.vSwitchId);
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
-		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".ChargeType", obj.chargeType);
-		setCoreParameter(str + ".MultiInstanceTypes", obj.multiInstanceTypes);
-		setCoreParameter(str + ".CreateType", obj.createType);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+	for(int dep1 = 0; dep1!= hostGroup.size(); dep1++) {
+		auto hostGroupObj = hostGroup.at(dep1);
+		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1 + 1);
+		setParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
+		setParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
+		setParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
+		setParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
+		setParameter(hostGroupObjStr + ".DiskType", hostGroupObj.diskType);
+		setParameter(hostGroupObjStr + ".HostGroupName", hostGroupObj.hostGroupName);
+		setParameter(hostGroupObjStr + ".VSwitchId", hostGroupObj.vSwitchId);
+		setParameter(hostGroupObjStr + ".DiskCount", std::to_string(hostGroupObj.diskCount));
+		setParameter(hostGroupObjStr + ".AutoRenew", hostGroupObj.autoRenew ? "true" : "false");
+		setParameter(hostGroupObjStr + ".HostGroupId", hostGroupObj.hostGroupId);
+		setParameter(hostGroupObjStr + ".NodeCount", std::to_string(hostGroupObj.nodeCount));
+		setParameter(hostGroupObjStr + ".InstanceType", hostGroupObj.instanceType);
+		setParameter(hostGroupObjStr + ".Comment", hostGroupObj.comment);
+		setParameter(hostGroupObjStr + ".ChargeType", hostGroupObj.chargeType);
+		setParameter(hostGroupObjStr + ".MultiInstanceTypes", hostGroupObj.multiInstanceTypes);
+		setParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
+		setParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
 	}
 }
 
@@ -437,16 +438,15 @@ std::vector<CreateClusterTemplateRequest::Config> CreateClusterTemplateRequest::
 void CreateClusterTemplateRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".FileName", obj.fileName);
-		setCoreParameter(str + ".Encrypt", obj.encrypt);
-		setCoreParameter(str + ".Replace", obj.replace);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1 + 1);
+		setParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setParameter(configObjStr + ".FileName", configObj.fileName);
+		setParameter(configObjStr + ".Encrypt", configObj.encrypt);
+		setParameter(configObjStr + ".Replace", configObj.replace);
+		setParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setParameter(configObjStr + ".ServiceName", configObj.serviceName);
 	}
 }
 
@@ -458,6 +458,6 @@ bool CreateClusterTemplateRequest::getHighAvailabilityEnable()const
 void CreateClusterTemplateRequest::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
+	setParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 

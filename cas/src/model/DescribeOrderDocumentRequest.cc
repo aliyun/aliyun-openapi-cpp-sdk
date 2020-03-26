@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderDocumentRequest;
 
 DescribeOrderDocumentRequest::DescribeOrderDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderDocumentRequest::~DescribeOrderDocumentRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeOrderDocumentRequest::getOrderId()const
 void DescribeOrderDocumentRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeOrderDocumentRequest::getType()const
@@ -44,7 +46,7 @@ std::string DescribeOrderDocumentRequest::getType()const
 void DescribeOrderDocumentRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeOrderDocumentRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeOrderDocumentRequest::getResourceGroupId()const
 void DescribeOrderDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderDocumentRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeOrderDocumentRequest::getSourceIp()const
 void DescribeOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOrderDocumentRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeOrderDocumentRequest::getLang()const
 void DescribeOrderDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

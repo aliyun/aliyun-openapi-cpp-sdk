@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSendCommandByMacProgressRequest;
 
 GetSendCommandByMacProgressRequest::GetSendCommandByMacProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSendCommandByMacProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSendCommandByMacProgressRequest::~GetSendCommandByMacProgressRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetSendCommandByMacProgressRequest::getAccessKeyId()const
 void GetSendCommandByMacProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

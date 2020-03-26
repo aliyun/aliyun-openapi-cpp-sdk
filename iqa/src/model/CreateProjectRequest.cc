@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::CreateProjectRequest;
 
 CreateProjectRequest::CreateProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "CreateProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProjectRequest::~CreateProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateProjectRequest::getProjectName()const
 void CreateProjectRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setBodyParameter("ProjectName", projectName);
 }
 
 std::string CreateProjectRequest::getModelId()const
@@ -44,7 +46,7 @@ std::string CreateProjectRequest::getModelId()const
 void CreateProjectRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setBodyParameter("ModelId", modelId);
 }
 
 std::string CreateProjectRequest::getProjectType()const
@@ -55,6 +57,6 @@ std::string CreateProjectRequest::getProjectType()const
 void CreateProjectRequest::setProjectType(const std::string& projectType)
 {
 	projectType_ = projectType;
-	setCoreParameter("ProjectType", projectType);
+	setBodyParameter("ProjectType", projectType);
 }
 

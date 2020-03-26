@@ -45,16 +45,28 @@ namespace AlibabaCloud
 					std::string iPAddress;
 					std::string vswitchId;
 				};
+				struct CompatibleConnection
+				{
+					std::string networkAddress;
+					std::string vPCId;
+					std::string networkType;
+					std::string port;
+					std::string expiredTime;
+					std::string iPAddress;
+					std::string vswitchId;
+				};
 
 
 				DescribeShardingNetworkAddressResult();
 				explicit DescribeShardingNetworkAddressResult(const std::string &payload);
 				~DescribeShardingNetworkAddressResult();
+				std::vector<CompatibleConnection> getCompatibleConnections()const;
 				std::vector<NetworkAddress> getNetworkAddresses()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<CompatibleConnection> compatibleConnections_;
 				std::vector<NetworkAddress> networkAddresses_;
 
 			};

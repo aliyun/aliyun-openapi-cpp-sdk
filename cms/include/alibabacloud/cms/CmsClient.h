@@ -62,6 +62,10 @@
 #include "model/DeleteEventRuleTargetsResult.h"
 #include "model/DeleteEventRulesRequest.h"
 #include "model/DeleteEventRulesResult.h"
+#include "model/DeleteExporterOutputRequest.h"
+#include "model/DeleteExporterOutputResult.h"
+#include "model/DeleteExporterRuleRequest.h"
+#include "model/DeleteExporterRuleResult.h"
 #include "model/DeleteGroupMonitoringAgentProcessRequest.h"
 #include "model/DeleteGroupMonitoringAgentProcessResult.h"
 #include "model/DeleteHostAvailabilityRequest.h"
@@ -114,6 +118,12 @@
 #include "model/DescribeEventRuleListResult.h"
 #include "model/DescribeEventRuleTargetListRequest.h"
 #include "model/DescribeEventRuleTargetListResult.h"
+#include "model/DescribeExporterOutputListRequest.h"
+#include "model/DescribeExporterOutputListResult.h"
+#include "model/DescribeExporterRuleListRequest.h"
+#include "model/DescribeExporterRuleListResult.h"
+#include "model/DescribeFolderListRequest.h"
+#include "model/DescribeFolderListResult.h"
 #include "model/DescribeGroupMonitoringAgentProcessRequest.h"
 #include "model/DescribeGroupMonitoringAgentProcessResult.h"
 #include "model/DescribeHostAvailabilityListRequest.h"
@@ -240,6 +250,10 @@
 #include "model/PutEventRuleResult.h"
 #include "model/PutEventRuleTargetsRequest.h"
 #include "model/PutEventRuleTargetsResult.h"
+#include "model/PutExporterOutputRequest.h"
+#include "model/PutExporterOutputResult.h"
+#include "model/PutExporterRuleRequest.h"
+#include "model/PutExporterRuleResult.h"
 #include "model/PutGroupMetricRuleRequest.h"
 #include "model/PutGroupMetricRuleResult.h"
 #include "model/PutMetricRuleTargetsRequest.h"
@@ -327,6 +341,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteEventRulesResult> DeleteEventRulesOutcome;
 			typedef std::future<DeleteEventRulesOutcome> DeleteEventRulesOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteEventRulesRequest&, const DeleteEventRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventRulesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteExporterOutputResult> DeleteExporterOutputOutcome;
+			typedef std::future<DeleteExporterOutputOutcome> DeleteExporterOutputOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteExporterOutputRequest&, const DeleteExporterOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExporterOutputAsyncHandler;
+			typedef Outcome<Error, Model::DeleteExporterRuleResult> DeleteExporterRuleOutcome;
+			typedef std::future<DeleteExporterRuleOutcome> DeleteExporterRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DeleteExporterRuleRequest&, const DeleteExporterRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExporterRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteGroupMonitoringAgentProcessResult> DeleteGroupMonitoringAgentProcessOutcome;
 			typedef std::future<DeleteGroupMonitoringAgentProcessOutcome> DeleteGroupMonitoringAgentProcessOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DeleteGroupMonitoringAgentProcessRequest&, const DeleteGroupMonitoringAgentProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupMonitoringAgentProcessAsyncHandler;
@@ -405,6 +425,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEventRuleTargetListResult> DescribeEventRuleTargetListOutcome;
 			typedef std::future<DescribeEventRuleTargetListOutcome> DescribeEventRuleTargetListOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeEventRuleTargetListRequest&, const DescribeEventRuleTargetListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventRuleTargetListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeExporterOutputListResult> DescribeExporterOutputListOutcome;
+			typedef std::future<DescribeExporterOutputListOutcome> DescribeExporterOutputListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeExporterOutputListRequest&, const DescribeExporterOutputListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExporterOutputListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeExporterRuleListResult> DescribeExporterRuleListOutcome;
+			typedef std::future<DescribeExporterRuleListOutcome> DescribeExporterRuleListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeExporterRuleListRequest&, const DescribeExporterRuleListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExporterRuleListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFolderListResult> DescribeFolderListOutcome;
+			typedef std::future<DescribeFolderListOutcome> DescribeFolderListOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::DescribeFolderListRequest&, const DescribeFolderListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGroupMonitoringAgentProcessResult> DescribeGroupMonitoringAgentProcessOutcome;
 			typedef std::future<DescribeGroupMonitoringAgentProcessOutcome> DescribeGroupMonitoringAgentProcessOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::DescribeGroupMonitoringAgentProcessRequest&, const DescribeGroupMonitoringAgentProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMonitoringAgentProcessAsyncHandler;
@@ -594,6 +623,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutEventRuleTargetsResult> PutEventRuleTargetsOutcome;
 			typedef std::future<PutEventRuleTargetsOutcome> PutEventRuleTargetsOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutEventRuleTargetsRequest&, const PutEventRuleTargetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutEventRuleTargetsAsyncHandler;
+			typedef Outcome<Error, Model::PutExporterOutputResult> PutExporterOutputOutcome;
+			typedef std::future<PutExporterOutputOutcome> PutExporterOutputOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutExporterOutputRequest&, const PutExporterOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutExporterOutputAsyncHandler;
+			typedef Outcome<Error, Model::PutExporterRuleResult> PutExporterRuleOutcome;
+			typedef std::future<PutExporterRuleOutcome> PutExporterRuleOutcomeCallable;
+			typedef std::function<void(const CmsClient*, const Model::PutExporterRuleRequest&, const PutExporterRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutExporterRuleAsyncHandler;
 			typedef Outcome<Error, Model::PutGroupMetricRuleResult> PutGroupMetricRuleOutcome;
 			typedef std::future<PutGroupMetricRuleOutcome> PutGroupMetricRuleOutcomeCallable;
 			typedef std::function<void(const CmsClient*, const Model::PutGroupMetricRuleRequest&, const PutGroupMetricRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutGroupMetricRuleAsyncHandler;
@@ -686,6 +721,12 @@ namespace AlibabaCloud
 			DeleteEventRulesOutcome deleteEventRules(const Model::DeleteEventRulesRequest &request)const;
 			void deleteEventRulesAsync(const Model::DeleteEventRulesRequest& request, const DeleteEventRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteEventRulesOutcomeCallable deleteEventRulesCallable(const Model::DeleteEventRulesRequest& request) const;
+			DeleteExporterOutputOutcome deleteExporterOutput(const Model::DeleteExporterOutputRequest &request)const;
+			void deleteExporterOutputAsync(const Model::DeleteExporterOutputRequest& request, const DeleteExporterOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteExporterOutputOutcomeCallable deleteExporterOutputCallable(const Model::DeleteExporterOutputRequest& request) const;
+			DeleteExporterRuleOutcome deleteExporterRule(const Model::DeleteExporterRuleRequest &request)const;
+			void deleteExporterRuleAsync(const Model::DeleteExporterRuleRequest& request, const DeleteExporterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteExporterRuleOutcomeCallable deleteExporterRuleCallable(const Model::DeleteExporterRuleRequest& request) const;
 			DeleteGroupMonitoringAgentProcessOutcome deleteGroupMonitoringAgentProcess(const Model::DeleteGroupMonitoringAgentProcessRequest &request)const;
 			void deleteGroupMonitoringAgentProcessAsync(const Model::DeleteGroupMonitoringAgentProcessRequest& request, const DeleteGroupMonitoringAgentProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGroupMonitoringAgentProcessOutcomeCallable deleteGroupMonitoringAgentProcessCallable(const Model::DeleteGroupMonitoringAgentProcessRequest& request) const;
@@ -764,6 +805,15 @@ namespace AlibabaCloud
 			DescribeEventRuleTargetListOutcome describeEventRuleTargetList(const Model::DescribeEventRuleTargetListRequest &request)const;
 			void describeEventRuleTargetListAsync(const Model::DescribeEventRuleTargetListRequest& request, const DescribeEventRuleTargetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEventRuleTargetListOutcomeCallable describeEventRuleTargetListCallable(const Model::DescribeEventRuleTargetListRequest& request) const;
+			DescribeExporterOutputListOutcome describeExporterOutputList(const Model::DescribeExporterOutputListRequest &request)const;
+			void describeExporterOutputListAsync(const Model::DescribeExporterOutputListRequest& request, const DescribeExporterOutputListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeExporterOutputListOutcomeCallable describeExporterOutputListCallable(const Model::DescribeExporterOutputListRequest& request) const;
+			DescribeExporterRuleListOutcome describeExporterRuleList(const Model::DescribeExporterRuleListRequest &request)const;
+			void describeExporterRuleListAsync(const Model::DescribeExporterRuleListRequest& request, const DescribeExporterRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeExporterRuleListOutcomeCallable describeExporterRuleListCallable(const Model::DescribeExporterRuleListRequest& request) const;
+			DescribeFolderListOutcome describeFolderList(const Model::DescribeFolderListRequest &request)const;
+			void describeFolderListAsync(const Model::DescribeFolderListRequest& request, const DescribeFolderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFolderListOutcomeCallable describeFolderListCallable(const Model::DescribeFolderListRequest& request) const;
 			DescribeGroupMonitoringAgentProcessOutcome describeGroupMonitoringAgentProcess(const Model::DescribeGroupMonitoringAgentProcessRequest &request)const;
 			void describeGroupMonitoringAgentProcessAsync(const Model::DescribeGroupMonitoringAgentProcessRequest& request, const DescribeGroupMonitoringAgentProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGroupMonitoringAgentProcessOutcomeCallable describeGroupMonitoringAgentProcessCallable(const Model::DescribeGroupMonitoringAgentProcessRequest& request) const;
@@ -953,6 +1003,12 @@ namespace AlibabaCloud
 			PutEventRuleTargetsOutcome putEventRuleTargets(const Model::PutEventRuleTargetsRequest &request)const;
 			void putEventRuleTargetsAsync(const Model::PutEventRuleTargetsRequest& request, const PutEventRuleTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutEventRuleTargetsOutcomeCallable putEventRuleTargetsCallable(const Model::PutEventRuleTargetsRequest& request) const;
+			PutExporterOutputOutcome putExporterOutput(const Model::PutExporterOutputRequest &request)const;
+			void putExporterOutputAsync(const Model::PutExporterOutputRequest& request, const PutExporterOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutExporterOutputOutcomeCallable putExporterOutputCallable(const Model::PutExporterOutputRequest& request) const;
+			PutExporterRuleOutcome putExporterRule(const Model::PutExporterRuleRequest &request)const;
+			void putExporterRuleAsync(const Model::PutExporterRuleRequest& request, const PutExporterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PutExporterRuleOutcomeCallable putExporterRuleCallable(const Model::PutExporterRuleRequest& request) const;
 			PutGroupMetricRuleOutcome putGroupMetricRule(const Model::PutGroupMetricRuleRequest &request)const;
 			void putGroupMetricRuleAsync(const Model::PutGroupMetricRuleRequest& request, const PutGroupMetricRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutGroupMetricRuleOutcomeCallable putGroupMetricRuleCallable(const Model::PutGroupMetricRuleRequest& request) const;

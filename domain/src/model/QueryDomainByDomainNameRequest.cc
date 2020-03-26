@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainByDomainNameRequest;
 
 QueryDomainByDomainNameRequest::QueryDomainByDomainNameRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainByDomainName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainByDomainNameRequest::~QueryDomainByDomainNameRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDomainByDomainNameRequest::getDomainName()const
 void QueryDomainByDomainNameRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryDomainByDomainNameRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryDomainByDomainNameRequest::getUserClientIp()const
 void QueryDomainByDomainNameRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainByDomainNameRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryDomainByDomainNameRequest::getLang()const
 void QueryDomainByDomainNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssStockStatusRequest;
 
 DescribeOssStockStatusRequest::DescribeOssStockStatusRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssStockStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssStockStatusRequest::~DescribeOssStockStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOssStockStatusRequest::getSourceIp()const
 void DescribeOssStockStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOssStockStatusRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeOssStockStatusRequest::getLang()const
 void DescribeOssStockStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

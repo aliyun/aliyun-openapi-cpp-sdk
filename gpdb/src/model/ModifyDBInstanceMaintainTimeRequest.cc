@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceMaintainTimeRequest;
 
 ModifyDBInstanceMaintainTimeRequest::ModifyDBInstanceMaintainTimeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceMaintainTime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceMaintainTimeRequest::~ModifyDBInstanceMaintainTimeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getStartTime()const
 void ModifyDBInstanceMaintainTimeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getAccessKeyId()const
 void ModifyDBInstanceMaintainTimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
@@ -55,7 +57,7 @@ std::string ModifyDBInstanceMaintainTimeRequest::getDBInstanceId()const
 void ModifyDBInstanceMaintainTimeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceMaintainTimeRequest::getEndTime()const
@@ -66,6 +68,6 @@ std::string ModifyDBInstanceMaintainTimeRequest::getEndTime()const
 void ModifyDBInstanceMaintainTimeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 

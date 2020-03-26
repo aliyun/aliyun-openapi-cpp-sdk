@@ -37,11 +37,11 @@ void CreateMonitorGroupInstancesRequest::setInstances(const std::vector<Instance
 	instances_ = instances;
 	for(int dep1 = 0; dep1!= instances.size(); dep1++) {
 		auto instancesObj = instances.at(dep1);
-		std::string instancesObjStr = "Instances." + std::to_string(dep1);
-		setCoreParameter(instancesObjStr + ".InstanceId", instancesObj.instanceId);
-		setCoreParameter(instancesObjStr + ".InstanceName", instancesObj.instanceName);
-		setCoreParameter(instancesObjStr + ".RegionId", instancesObj.regionId);
-		setCoreParameter(instancesObjStr + ".Category", instancesObj.category);
+		std::string instancesObjStr = "Instances." + std::to_string(dep1 + 1);
+		setParameter(instancesObjStr + ".InstanceId", instancesObj.instanceId);
+		setParameter(instancesObjStr + ".InstanceName", instancesObj.instanceName);
+		setParameter(instancesObjStr + ".RegionId", instancesObj.regionId);
+		setParameter(instancesObjStr + ".Category", instancesObj.category);
 	}
 }
 
@@ -53,6 +53,6 @@ long CreateMonitorGroupInstancesRequest::getGroupId()const
 void CreateMonitorGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 

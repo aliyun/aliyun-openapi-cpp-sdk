@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupSummaryReportsByIntervalRequest;
 
 ListSkillGroupSummaryReportsByIntervalRequest::ListSkillGroupSummaryReportsByIntervalRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupSummaryReportsByInterval")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupSummaryReportsByIntervalRequest::~ListSkillGroupSummaryReportsByIntervalRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getEndTime()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getStartTime()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int ListSkillGroupSummaryReportsByIntervalRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListSkillGroupSummaryReportsByIntervalRequest::getPageNumber()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getAccessKeyId()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getInstanceId()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getSkillGroupIds()const
@@ -88,7 +90,7 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getSkillGroupIds()con
 void ListSkillGroupSummaryReportsByIntervalRequest::setSkillGroupIds(const std::string& skillGroupIds)
 {
 	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", skillGroupIds);
+	setParameter("SkillGroupIds", skillGroupIds);
 }
 
 int ListSkillGroupSummaryReportsByIntervalRequest::getPageSize()const
@@ -99,7 +101,7 @@ int ListSkillGroupSummaryReportsByIntervalRequest::getPageSize()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListSkillGroupSummaryReportsByIntervalRequest::getInterval()const
@@ -110,6 +112,6 @@ std::string ListSkillGroupSummaryReportsByIntervalRequest::getInterval()const
 void ListSkillGroupSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

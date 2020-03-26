@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderDocumentRequest;
 
 CreateOrderDocumentRequest::CreateOrderDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderDocumentRequest::~CreateOrderDocumentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateOrderDocumentRequest::getOssKey()const
 void CreateOrderDocumentRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setParameter("OssKey", ossKey);
 }
 
 std::string CreateOrderDocumentRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateOrderDocumentRequest::getResourceGroupId()const
 void CreateOrderDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderDocumentRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateOrderDocumentRequest::getSourceIp()const
 void CreateOrderDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderDocumentRequest::getLang()const
@@ -66,7 +68,7 @@ std::string CreateOrderDocumentRequest::getLang()const
 void CreateOrderDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateOrderDocumentRequest::getExtName()const
@@ -77,7 +79,7 @@ std::string CreateOrderDocumentRequest::getExtName()const
 void CreateOrderDocumentRequest::setExtName(const std::string& extName)
 {
 	extName_ = extName;
-	setCoreParameter("ExtName", extName);
+	setParameter("ExtName", extName);
 }
 
 long CreateOrderDocumentRequest::getOrderId()const
@@ -88,7 +90,7 @@ long CreateOrderDocumentRequest::getOrderId()const
 void CreateOrderDocumentRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 int CreateOrderDocumentRequest::getDocumentType()const
@@ -99,6 +101,6 @@ int CreateOrderDocumentRequest::getDocumentType()const
 void CreateOrderDocumentRequest::setDocumentType(int documentType)
 {
 	documentType_ = documentType;
-	setCoreParameter("DocumentType", std::to_string(documentType));
+	setParameter("DocumentType", std::to_string(documentType));
 }
 

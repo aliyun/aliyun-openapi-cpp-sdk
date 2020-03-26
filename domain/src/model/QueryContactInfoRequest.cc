@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryContactInfoRequest;
 
 QueryContactInfoRequest::QueryContactInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryContactInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryContactInfoRequest::~QueryContactInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryContactInfoRequest::getContactType()const
 void QueryContactInfoRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setParameter("ContactType", contactType);
 }
 
 std::string QueryContactInfoRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string QueryContactInfoRequest::getDomainName()const
 void QueryContactInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryContactInfoRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryContactInfoRequest::getUserClientIp()const
 void QueryContactInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryContactInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryContactInfoRequest::getLang()const
 void QueryContactInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

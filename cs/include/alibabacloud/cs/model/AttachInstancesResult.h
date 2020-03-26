@@ -32,15 +32,25 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT AttachInstancesResult : public ServiceResult
 			{
 			public:
+				struct ListItem
+				{
+					std::string message;
+					std::string instanceId;
+					std::string code;
+				};
 
 
 				AttachInstancesResult();
 				explicit AttachInstancesResult(const std::string &payload);
 				~AttachInstancesResult();
+				std::vector<ListItem> getlist()const;
+				std::string getTask_id()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<ListItem> list_;
+				std::string task_id_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SubmitCabRecordingRequest;
 
 SubmitCabRecordingRequest::SubmitCabRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SubmitCabRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCabRecordingRequest::~SubmitCabRecordingRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitCabRecordingRequest::getMergedRecording()const
 void SubmitCabRecordingRequest::setMergedRecording(const std::string& mergedRecording)
 {
 	mergedRecording_ = mergedRecording;
-	setCoreParameter("MergedRecording", mergedRecording);
+	setParameter("MergedRecording", mergedRecording);
 }
 
 std::string SubmitCabRecordingRequest::getResourceRecording()const
@@ -44,7 +46,7 @@ std::string SubmitCabRecordingRequest::getResourceRecording()const
 void SubmitCabRecordingRequest::setResourceRecording(const std::string& resourceRecording)
 {
 	resourceRecording_ = resourceRecording;
-	setCoreParameter("ResourceRecording", resourceRecording);
+	setParameter("ResourceRecording", resourceRecording);
 }
 
 std::string SubmitCabRecordingRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string SubmitCabRecordingRequest::getInstanceId()const
 void SubmitCabRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 long SubmitCabRecordingRequest::getInstanceOwnerId()const
@@ -66,7 +68,7 @@ long SubmitCabRecordingRequest::getInstanceOwnerId()const
 void SubmitCabRecordingRequest::setInstanceOwnerId(long instanceOwnerId)
 {
 	instanceOwnerId_ = instanceOwnerId;
-	setCoreParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
 }
 
 std::string SubmitCabRecordingRequest::getTaskId()const
@@ -77,6 +79,6 @@ std::string SubmitCabRecordingRequest::getTaskId()const
 void SubmitCabRecordingRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

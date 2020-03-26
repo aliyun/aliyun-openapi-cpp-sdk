@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setVpnSslServerId(const std::string& vpnSslServerId);
 				int getFrom()const;
 				void setFrom(int from);
+				std::string getSslVpnClientCertId()const;
+				void setSslVpnClientCertId(const std::string& sslVpnClientCertId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string vpnSslServerId_;
 				int from_;
+				std::string sslVpnClientCertId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

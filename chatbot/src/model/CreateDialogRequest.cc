@@ -35,7 +35,7 @@ std::string CreateDialogRequest::getDescription()const
 void CreateDialogRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateDialogRequest::getDialogName()const
@@ -46,7 +46,7 @@ std::string CreateDialogRequest::getDialogName()const
 void CreateDialogRequest::setDialogName(const std::string& dialogName)
 {
 	dialogName_ = dialogName;
-	setCoreParameter("DialogName", dialogName);
+	setParameter("DialogName", dialogName);
 }
 
 std::string CreateDialogRequest::getInstanceId()const
@@ -57,6 +57,6 @@ std::string CreateDialogRequest::getInstanceId()const
 void CreateDialogRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT CreateLoRaNodesTaskRequest : public RpcServiceRequest
 			{
+			public:
 				struct DeviceInfo
 				{
 					std::string pinCode;

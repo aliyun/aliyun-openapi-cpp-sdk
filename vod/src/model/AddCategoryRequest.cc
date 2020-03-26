@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddCategoryRequest;
 
 AddCategoryRequest::AddCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCategoryRequest::~AddCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddCategoryRequest::getResourceOwnerId()const
 void AddCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string AddCategoryRequest::getType()const
@@ -44,7 +46,7 @@ std::string AddCategoryRequest::getType()const
 void AddCategoryRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 long AddCategoryRequest::getParentId()const
@@ -55,7 +57,7 @@ long AddCategoryRequest::getParentId()const
 void AddCategoryRequest::setParentId(long parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setParameter("ParentId", std::to_string(parentId));
 }
 
 std::string AddCategoryRequest::getCateName()const
@@ -66,7 +68,7 @@ std::string AddCategoryRequest::getCateName()const
 void AddCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
+	setParameter("CateName", cateName);
 }
 
 std::string AddCategoryRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddCategoryRequest::getResourceOwnerAccount()const
 void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddCategoryRequest::getOwnerId()const
@@ -88,6 +90,6 @@ std::string AddCategoryRequest::getOwnerId()const
 void AddCategoryRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

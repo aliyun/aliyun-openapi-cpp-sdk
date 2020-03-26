@@ -45,6 +45,12 @@ void GetDocTranslateTaskResult::parse(const std::string &payload)
 		status_ = value["Status"].asString();
 	if(!value["TranslateFileUrl"].isNull())
 		translateFileUrl_ = value["TranslateFileUrl"].asString();
+	if(!value["TranslateErrorCode"].isNull())
+		translateErrorCode_ = value["TranslateErrorCode"].asString();
+	if(!value["TranslateErrorMessage"].isNull())
+		translateErrorMessage_ = value["TranslateErrorMessage"].asString();
+	if(!value["PageCount"].isNull())
+		pageCount_ = std::stoi(value["PageCount"].asString());
 
 }
 
@@ -53,13 +59,28 @@ std::string GetDocTranslateTaskResult::getStatus()const
 	return status_;
 }
 
+std::string GetDocTranslateTaskResult::getTranslateErrorMessage()const
+{
+	return translateErrorMessage_;
+}
+
 std::string GetDocTranslateTaskResult::getTaskId()const
 {
 	return taskId_;
 }
 
+int GetDocTranslateTaskResult::getPageCount()const
+{
+	return pageCount_;
+}
+
 std::string GetDocTranslateTaskResult::getTranslateFileUrl()const
 {
 	return translateFileUrl_;
+}
+
+std::string GetDocTranslateTaskResult::getTranslateErrorCode()const
+{
+	return translateErrorCode_;
 }
 

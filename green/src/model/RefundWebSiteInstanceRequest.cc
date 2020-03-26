@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::RefundWebSiteInstanceRequest;
 
 RefundWebSiteInstanceRequest::RefundWebSiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "RefundWebSiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundWebSiteInstanceRequest::~RefundWebSiteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string RefundWebSiteInstanceRequest::getResourceOwnerId()const
 void RefundWebSiteInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefundWebSiteInstanceRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string RefundWebSiteInstanceRequest::getInstanceId()const
 void RefundWebSiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

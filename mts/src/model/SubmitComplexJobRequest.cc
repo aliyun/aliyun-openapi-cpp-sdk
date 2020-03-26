@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitComplexJobRequest;
 
 SubmitComplexJobRequest::SubmitComplexJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitComplexJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitComplexJobRequest::~SubmitComplexJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitComplexJobRequest::getResourceOwnerId()const
 void SubmitComplexJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitComplexJobRequest::getTranscodeOutput()const
@@ -44,7 +46,7 @@ std::string SubmitComplexJobRequest::getTranscodeOutput()const
 void SubmitComplexJobRequest::setTranscodeOutput(const std::string& transcodeOutput)
 {
 	transcodeOutput_ = transcodeOutput;
-	setCoreParameter("TranscodeOutput", transcodeOutput);
+	setParameter("TranscodeOutput", transcodeOutput);
 }
 
 std::string SubmitComplexJobRequest::getInputs()const
@@ -55,7 +57,7 @@ std::string SubmitComplexJobRequest::getInputs()const
 void SubmitComplexJobRequest::setInputs(const std::string& inputs)
 {
 	inputs_ = inputs;
-	setCoreParameter("Inputs", inputs);
+	setParameter("Inputs", inputs);
 }
 
 std::string SubmitComplexJobRequest::getOutputLocation()const
@@ -66,7 +68,7 @@ std::string SubmitComplexJobRequest::getOutputLocation()const
 void SubmitComplexJobRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", outputLocation);
+	setParameter("OutputLocation", outputLocation);
 }
 
 std::string SubmitComplexJobRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string SubmitComplexJobRequest::getAccessKeyId()const
 void SubmitComplexJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitComplexJobRequest::getUserData()const
@@ -88,7 +90,7 @@ std::string SubmitComplexJobRequest::getUserData()const
 void SubmitComplexJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitComplexJobRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SubmitComplexJobRequest::getResourceOwnerAccount()const
 void SubmitComplexJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitComplexJobRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string SubmitComplexJobRequest::getOwnerAccount()const
 void SubmitComplexJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitComplexJobRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long SubmitComplexJobRequest::getOwnerId()const
 void SubmitComplexJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitComplexJobRequest::getPipelineId()const
@@ -132,7 +134,7 @@ std::string SubmitComplexJobRequest::getPipelineId()const
 void SubmitComplexJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitComplexJobRequest::getOutputBucket()const
@@ -143,7 +145,7 @@ std::string SubmitComplexJobRequest::getOutputBucket()const
 void SubmitComplexJobRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", outputBucket);
+	setParameter("OutputBucket", outputBucket);
 }
 
 std::string SubmitComplexJobRequest::getComplexConfigs()const
@@ -154,6 +156,6 @@ std::string SubmitComplexJobRequest::getComplexConfigs()const
 void SubmitComplexJobRequest::setComplexConfigs(const std::string& complexConfigs)
 {
 	complexConfigs_ = complexConfigs;
-	setCoreParameter("ComplexConfigs", complexConfigs);
+	setParameter("ComplexConfigs", complexConfigs);
 }
 

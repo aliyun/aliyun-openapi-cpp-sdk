@@ -35,7 +35,7 @@ long DescribeAllDataSourceRequest::getResourceOwnerId()const
 void DescribeAllDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAllDataSourceRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeAllDataSourceRequest::getAccessKeyId()const
 void DescribeAllDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAllDataSourceRequest::getTableName()const
@@ -57,7 +57,7 @@ std::string DescribeAllDataSourceRequest::getTableName()const
 void DescribeAllDataSourceRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", tableName);
+	setParameter("TableName", tableName);
 }
 
 std::string DescribeAllDataSourceRequest::getSchemaName()const
@@ -68,7 +68,7 @@ std::string DescribeAllDataSourceRequest::getSchemaName()const
 void DescribeAllDataSourceRequest::setSchemaName(const std::string& schemaName)
 {
 	schemaName_ = schemaName;
-	setCoreParameter("SchemaName", schemaName);
+	setParameter("SchemaName", schemaName);
 }
 
 std::string DescribeAllDataSourceRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeAllDataSourceRequest::getResourceOwnerAccount()const
 void DescribeAllDataSourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAllDataSourceRequest::getDBClusterId()const
@@ -90,7 +90,7 @@ std::string DescribeAllDataSourceRequest::getDBClusterId()const
 void DescribeAllDataSourceRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeAllDataSourceRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeAllDataSourceRequest::getOwnerAccount()const
 void DescribeAllDataSourceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeAllDataSourceRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeAllDataSourceRequest::getOwnerId()const
 void DescribeAllDataSourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

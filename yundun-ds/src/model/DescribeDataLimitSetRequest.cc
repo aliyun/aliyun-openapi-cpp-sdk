@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDataLimitSetRequest;
 
 DescribeDataLimitSetRequest::DescribeDataLimitSetRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDataLimitSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataLimitSetRequest::~DescribeDataLimitSetRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeDataLimitSetRequest::getResourceType()const
 void DescribeDataLimitSetRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string DescribeDataLimitSetRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDataLimitSetRequest::getSourceIp()const
 void DescribeDataLimitSetRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDataLimitSetRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeDataLimitSetRequest::getLang()const
 void DescribeDataLimitSetRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DowngradeSmartAccessGatewayRequest;
 
 DowngradeSmartAccessGatewayRequest::DowngradeSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DowngradeSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DowngradeSmartAccessGatewayRequest::~DowngradeSmartAccessGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DowngradeSmartAccessGatewayRequest::getResourceOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DowngradeSmartAccessGatewayRequest::getBandWidthSpec()const
@@ -44,7 +46,7 @@ long DowngradeSmartAccessGatewayRequest::getBandWidthSpec()const
 void DowngradeSmartAccessGatewayRequest::setBandWidthSpec(long bandWidthSpec)
 {
 	bandWidthSpec_ = bandWidthSpec;
-	setCoreParameter("BandWidthSpec", std::to_string(bandWidthSpec));
+	setParameter("BandWidthSpec", std::to_string(bandWidthSpec));
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DowngradeSmartAccessGatewayRequest::getRegionId()const
 void DowngradeSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DowngradeSmartAccessGatewayRequest::getUserCount()const
@@ -66,7 +68,7 @@ int DowngradeSmartAccessGatewayRequest::getUserCount()const
 void DowngradeSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setParameter("UserCount", std::to_string(userCount));
 }
 
 bool DowngradeSmartAccessGatewayRequest::getAutoPay()const
@@ -77,7 +79,7 @@ bool DowngradeSmartAccessGatewayRequest::getAutoPay()const
 void DowngradeSmartAccessGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DowngradeSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void DowngradeSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DowngradeSmartAccessGatewayRequest::getOwnerAccount()const
 void DowngradeSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DowngradeSmartAccessGatewayRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DowngradeSmartAccessGatewayRequest::getOwnerId()const
 void DowngradeSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DowngradeSmartAccessGatewayRequest::getSmartAGId()const
@@ -121,7 +123,7 @@ std::string DowngradeSmartAccessGatewayRequest::getSmartAGId()const
 void DowngradeSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 long DowngradeSmartAccessGatewayRequest::getDataPlan()const
@@ -132,6 +134,6 @@ long DowngradeSmartAccessGatewayRequest::getDataPlan()const
 void DowngradeSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setParameter("DataPlan", std::to_string(dataPlan));
 }
 

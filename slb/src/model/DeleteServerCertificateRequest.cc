@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteServerCertificateRequest;
 
 DeleteServerCertificateRequest::DeleteServerCertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteServerCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteServerCertificateRequest::~DeleteServerCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteServerCertificateRequest::getAccess_key_id()const
 void DeleteServerCertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DeleteServerCertificateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DeleteServerCertificateRequest::getResourceOwnerId()const
 void DeleteServerCertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteServerCertificateRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteServerCertificateRequest::getRegionId()const
 void DeleteServerCertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteServerCertificateRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteServerCertificateRequest::getResourceOwnerAccount()const
 void DeleteServerCertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteServerCertificateRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteServerCertificateRequest::getOwnerAccount()const
 void DeleteServerCertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteServerCertificateRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteServerCertificateRequest::getOwnerId()const
 void DeleteServerCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteServerCertificateRequest::getServerCertificateId()const
@@ -99,7 +101,7 @@ std::string DeleteServerCertificateRequest::getServerCertificateId()const
 void DeleteServerCertificateRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string DeleteServerCertificateRequest::getTags()const
@@ -110,6 +112,6 @@ std::string DeleteServerCertificateRequest::getTags()const
 void DeleteServerCertificateRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

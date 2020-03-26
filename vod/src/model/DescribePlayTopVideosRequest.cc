@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribePlayTopVideosRequest;
 
 DescribePlayTopVideosRequest::DescribePlayTopVideosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribePlayTopVideos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePlayTopVideosRequest::~DescribePlayTopVideosRequest()
 {}
@@ -33,7 +35,7 @@ long DescribePlayTopVideosRequest::getPageSize()const
 void DescribePlayTopVideosRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribePlayTopVideosRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribePlayTopVideosRequest::getOwnerId()const
 void DescribePlayTopVideosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribePlayTopVideosRequest::getBizDate()const
@@ -55,7 +57,7 @@ std::string DescribePlayTopVideosRequest::getBizDate()const
 void DescribePlayTopVideosRequest::setBizDate(const std::string& bizDate)
 {
 	bizDate_ = bizDate;
-	setCoreParameter("BizDate", bizDate);
+	setParameter("BizDate", bizDate);
 }
 
 long DescribePlayTopVideosRequest::getPageNo()const
@@ -66,6 +68,6 @@ long DescribePlayTopVideosRequest::getPageNo()const
 void DescribePlayTopVideosRequest::setPageNo(long pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 

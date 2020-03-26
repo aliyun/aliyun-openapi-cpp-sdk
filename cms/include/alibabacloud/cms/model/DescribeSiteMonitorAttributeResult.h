@@ -34,6 +34,28 @@ namespace AlibabaCloud
 			public:
 				struct SiteMonitors
 				{
+					struct OptionJson
+					{
+						std::string cookie;
+						int ping_num;
+						long traceroute;
+						float failure_rate;
+						int port;
+						int match_rule;
+						std::string response_format;
+						std::string expect_value;
+						std::string http_method;
+						long time_out;
+						std::string header;
+						std::string response_content;
+						std::string username;
+						int authentication;
+						std::string request_content;
+						std::string dns_server;
+						std::string dns_type;
+						std::string request_format;
+						std::string password;
+					};
 					struct IspCity
 					{
 						std::string ispName;
@@ -41,7 +63,7 @@ namespace AlibabaCloud
 						std::string cityName;
 						std::string city;
 					};
-					std::string optionJson;
+					OptionJson optionJson;
 					std::string taskId;
 					std::string address;
 					std::string taskName;

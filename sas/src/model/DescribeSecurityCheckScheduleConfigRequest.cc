@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeSecurityCheckScheduleConfigRequest;
 
 DescribeSecurityCheckScheduleConfigRequest::DescribeSecurityCheckScheduleConfigRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSecurityCheckScheduleConfigRequest::~DescribeSecurityCheckScheduleConfigRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSecurityCheckScheduleConfigRequest::getResourceOwnerId()const
 void DescribeSecurityCheckScheduleConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityCheckScheduleConfigRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeSecurityCheckScheduleConfigRequest::getSourceIp()const
 void DescribeSecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSecurityCheckScheduleConfigRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeSecurityCheckScheduleConfigRequest::getLang()const
 void DescribeSecurityCheckScheduleConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ bool CreateDynamicTagGroupRequest::getEnableSubscribeEvent()const
 void CreateDynamicTagGroupRequest::setEnableSubscribeEvent(bool enableSubscribeEvent)
 {
 	enableSubscribeEvent_ = enableSubscribeEvent;
-	setCoreParameter("EnableSubscribeEvent", enableSubscribeEvent ? "true" : "false");
+	setParameter("EnableSubscribeEvent", enableSubscribeEvent ? "true" : "false");
 }
 
 std::string CreateDynamicTagGroupRequest::getMatchExpressFilterRelation()const
@@ -46,7 +46,7 @@ std::string CreateDynamicTagGroupRequest::getMatchExpressFilterRelation()const
 void CreateDynamicTagGroupRequest::setMatchExpressFilterRelation(const std::string& matchExpressFilterRelation)
 {
 	matchExpressFilterRelation_ = matchExpressFilterRelation;
-	setCoreParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
+	setParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
 }
 
 bool CreateDynamicTagGroupRequest::getEnableInstallAgent()const
@@ -57,7 +57,7 @@ bool CreateDynamicTagGroupRequest::getEnableInstallAgent()const
 void CreateDynamicTagGroupRequest::setEnableInstallAgent(bool enableInstallAgent)
 {
 	enableInstallAgent_ = enableInstallAgent;
-	setCoreParameter("EnableInstallAgent", enableInstallAgent ? "true" : "false");
+	setParameter("EnableInstallAgent", enableInstallAgent ? "true" : "false");
 }
 
 std::string CreateDynamicTagGroupRequest::getRegionId()const
@@ -68,7 +68,7 @@ std::string CreateDynamicTagGroupRequest::getRegionId()const
 void CreateDynamicTagGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<CreateDynamicTagGroupRequest::MatchExpress> CreateDynamicTagGroupRequest::getMatchExpress()const
@@ -81,9 +81,9 @@ void CreateDynamicTagGroupRequest::setMatchExpress(const std::vector<MatchExpres
 	matchExpress_ = matchExpress;
 	for(int dep1 = 0; dep1!= matchExpress.size(); dep1++) {
 		auto matchExpressObj = matchExpress.at(dep1);
-		std::string matchExpressObjStr = "MatchExpress." + std::to_string(dep1);
-		setCoreParameter(matchExpressObjStr + ".TagValue", matchExpressObj.tagValue);
-		setCoreParameter(matchExpressObjStr + ".TagValueMatchFunction", matchExpressObj.tagValueMatchFunction);
+		std::string matchExpressObjStr = "MatchExpress." + std::to_string(dep1 + 1);
+		setParameter(matchExpressObjStr + ".TagValue", matchExpressObj.tagValue);
+		setParameter(matchExpressObjStr + ".TagValueMatchFunction", matchExpressObj.tagValueMatchFunction);
 	}
 }
 
@@ -96,7 +96,7 @@ void CreateDynamicTagGroupRequest::setContactGroupList(const std::vector<std::st
 {
 	contactGroupList_ = contactGroupList;
 	for(int dep1 = 0; dep1!= contactGroupList.size(); dep1++) {
-		setCoreParameter("ContactGroupList."+ std::to_string(dep1), contactGroupList.at(dep1));
+		setParameter("ContactGroupList."+ std::to_string(dep1), contactGroupList.at(dep1));
 	}
 }
 
@@ -109,7 +109,7 @@ void CreateDynamicTagGroupRequest::setTemplateIdList(const std::vector<std::stri
 {
 	templateIdList_ = templateIdList;
 	for(int dep1 = 0; dep1!= templateIdList.size(); dep1++) {
-		setCoreParameter("TemplateIdList."+ std::to_string(dep1), templateIdList.at(dep1));
+		setParameter("TemplateIdList."+ std::to_string(dep1), templateIdList.at(dep1));
 	}
 }
 
@@ -121,6 +121,6 @@ std::string CreateDynamicTagGroupRequest::getTagKey()const
 void CreateDynamicTagGroupRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
-	setCoreParameter("TagKey", tagKey);
+	setParameter("TagKey", tagKey);
 }
 

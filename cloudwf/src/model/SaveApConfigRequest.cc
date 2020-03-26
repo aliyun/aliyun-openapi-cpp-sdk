@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApConfigRequest;
 
 SaveApConfigRequest::SaveApConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApConfigRequest::~SaveApConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveApConfigRequest::getCountry()const
 void SaveApConfigRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setParameter("Country", country);
 }
 
 int SaveApConfigRequest::getScan()const
@@ -44,7 +46,7 @@ int SaveApConfigRequest::getScan()const
 void SaveApConfigRequest::setScan(int scan)
 {
 	scan_ = scan;
-	setCoreParameter("Scan", std::to_string(scan));
+	setParameter("Scan", std::to_string(scan));
 }
 
 std::string SaveApConfigRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string SaveApConfigRequest::getDescription()const
 void SaveApConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string SaveApConfigRequest::getDai()const
@@ -66,7 +68,7 @@ std::string SaveApConfigRequest::getDai()const
 void SaveApConfigRequest::setDai(const std::string& dai)
 {
 	dai_ = dai;
-	setCoreParameter("Dai", dai);
+	setParameter("Dai", dai);
 }
 
 std::string SaveApConfigRequest::getLogIp()const
@@ -77,7 +79,7 @@ std::string SaveApConfigRequest::getLogIp()const
 void SaveApConfigRequest::setLogIp(const std::string& logIp)
 {
 	logIp_ = logIp;
-	setCoreParameter("LogIp", logIp);
+	setParameter("LogIp", logIp);
 }
 
 std::string SaveApConfigRequest::getMac()const
@@ -88,7 +90,7 @@ std::string SaveApConfigRequest::getMac()const
 void SaveApConfigRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setParameter("Mac", mac);
 }
 
 std::string SaveApConfigRequest::getAccessKeyId()const
@@ -99,7 +101,7 @@ std::string SaveApConfigRequest::getAccessKeyId()const
 void SaveApConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SaveApConfigRequest::getApAssetId()const
@@ -110,7 +112,7 @@ long SaveApConfigRequest::getApAssetId()const
 void SaveApConfigRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setParameter("ApAssetId", std::to_string(apAssetId));
 }
 
 int SaveApConfigRequest::getLogLevel()const
@@ -121,7 +123,7 @@ int SaveApConfigRequest::getLogLevel()const
 void SaveApConfigRequest::setLogLevel(int logLevel)
 {
 	logLevel_ = logLevel;
-	setCoreParameter("LogLevel", std::to_string(logLevel));
+	setParameter("LogLevel", std::to_string(logLevel));
 }
 
 std::string SaveApConfigRequest::getName()const
@@ -132,7 +134,7 @@ std::string SaveApConfigRequest::getName()const
 void SaveApConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int SaveApConfigRequest::getEchoInt()const
@@ -143,7 +145,7 @@ int SaveApConfigRequest::getEchoInt()const
 void SaveApConfigRequest::setEchoInt(int echoInt)
 {
 	echoInt_ = echoInt;
-	setCoreParameter("EchoInt", std::to_string(echoInt));
+	setParameter("EchoInt", std::to_string(echoInt));
 }
 
 long SaveApConfigRequest::getId()const
@@ -154,6 +156,6 @@ long SaveApConfigRequest::getId()const
 void SaveApConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

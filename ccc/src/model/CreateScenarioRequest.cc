@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateScenarioRequest;
 
 CreateScenarioRequest::CreateScenarioRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScenarioRequest::~CreateScenarioRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> CreateScenarioRequest::getSurveysJson()const
 void CreateScenarioRequest::setSurveysJson(const std::vector<std::string>& surveysJson)
 {
 	surveysJson_ = surveysJson;
-	for(int i = 0; i!= surveysJson.size(); i++)
-		setCoreParameter("SurveysJson."+ std::to_string(i), surveysJson.at(i));
+	for(int dep1 = 0; dep1!= surveysJson.size(); dep1++) {
+		setParameter("SurveysJson."+ std::to_string(dep1), surveysJson.at(dep1));
+	}
 }
 
 std::string CreateScenarioRequest::getDescription()const
@@ -45,7 +48,7 @@ std::string CreateScenarioRequest::getDescription()const
 void CreateScenarioRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateScenarioRequest::getType()const
@@ -56,7 +59,7 @@ std::string CreateScenarioRequest::getType()const
 void CreateScenarioRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateScenarioRequest::getInstanceId()const
@@ -67,7 +70,7 @@ std::string CreateScenarioRequest::getInstanceId()const
 void CreateScenarioRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateScenarioRequest::getStrategyJson()const
@@ -78,7 +81,7 @@ std::string CreateScenarioRequest::getStrategyJson()const
 void CreateScenarioRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setParameter("StrategyJson", strategyJson);
 }
 
 std::string CreateScenarioRequest::getName()const
@@ -89,6 +92,6 @@ std::string CreateScenarioRequest::getName()const
 void CreateScenarioRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

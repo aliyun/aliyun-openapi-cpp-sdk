@@ -20,7 +20,10 @@ using AlibabaCloud::ImageSearch::Model::AddItemRequest;
 
 AddItemRequest::AddItemRequest() :
 	RoaServiceRequest("imagesearch", "2018-01-20")
-{}
+{
+	setResourcePath("/item/add");
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddItemRequest::~AddItemRequest()
 {}
@@ -33,6 +36,6 @@ std::string AddItemRequest::getInstanceName()const
 void AddItemRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

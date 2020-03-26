@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateBizTypeRequest;
 
 CreateBizTypeRequest::CreateBizTypeRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateBizType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBizTypeRequest::~CreateBizTypeRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateBizTypeRequest::getBizTypeImport()const
 void CreateBizTypeRequest::setBizTypeImport(const std::string& bizTypeImport)
 {
 	bizTypeImport_ = bizTypeImport;
-	setCoreParameter("BizTypeImport", bizTypeImport);
+	setParameter("BizTypeImport", bizTypeImport);
 }
 
 std::string CreateBizTypeRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string CreateBizTypeRequest::getSourceIp()const
 void CreateBizTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateBizTypeRequest::getIndustryInfo()const
@@ -55,7 +57,7 @@ std::string CreateBizTypeRequest::getIndustryInfo()const
 void CreateBizTypeRequest::setIndustryInfo(const std::string& industryInfo)
 {
 	industryInfo_ = industryInfo;
-	setCoreParameter("IndustryInfo", industryInfo);
+	setParameter("IndustryInfo", industryInfo);
 }
 
 std::string CreateBizTypeRequest::getBizTypeName()const
@@ -66,6 +68,6 @@ std::string CreateBizTypeRequest::getBizTypeName()const
 void CreateBizTypeRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", bizTypeName);
+	setParameter("BizTypeName", bizTypeName);
 }
 

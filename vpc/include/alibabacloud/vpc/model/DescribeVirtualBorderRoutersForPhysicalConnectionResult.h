@@ -40,14 +40,18 @@ namespace AlibabaCloud
 					std::string activationTime;
 					std::string circuitCode;
 					std::string vbrId;
+					std::string pConnVbrChargeType;
 					std::string terminationTime;
 					std::string peeringSubnetMask;
 					std::string recoveryTime;
 					std::string type;
 					std::string localGatewayIp;
+					std::string bandwidth;
 					std::string creationTime;
 					std::string eccId;
+					std::string pConnVbrExpireTime;
 					int vlanId;
+					std::string pConnVbrBussinessStatus;
 				};
 
 

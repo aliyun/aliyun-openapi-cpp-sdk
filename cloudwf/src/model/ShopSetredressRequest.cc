@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopSetredressRequest;
 
 ShopSetredressRequest::ShopSetredressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopSetredress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopSetredressRequest::~ShopSetredressRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopSetredressRequest::getWorkday()const
 void ShopSetredressRequest::setWorkday(const std::string& workday)
 {
 	workday_ = workday;
-	setCoreParameter("Workday", workday);
+	setParameter("Workday", workday);
 }
 
 int ShopSetredressRequest::getMinstoptime()const
@@ -44,7 +46,7 @@ int ShopSetredressRequest::getMinstoptime()const
 void ShopSetredressRequest::setMinstoptime(int minstoptime)
 {
 	minstoptime_ = minstoptime;
-	setCoreParameter("Minstoptime", std::to_string(minstoptime));
+	setParameter("Minstoptime", std::to_string(minstoptime));
 }
 
 std::string ShopSetredressRequest::getHoliday()const
@@ -55,7 +57,7 @@ std::string ShopSetredressRequest::getHoliday()const
 void ShopSetredressRequest::setHoliday(const std::string& holiday)
 {
 	holiday_ = holiday;
-	setCoreParameter("Holiday", holiday);
+	setParameter("Holiday", holiday);
 }
 
 std::string ShopSetredressRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ShopSetredressRequest::getAccessKeyId()const
 void ShopSetredressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopSetredressRequest::getSid()const
@@ -77,7 +79,7 @@ long ShopSetredressRequest::getSid()const
 void ShopSetredressRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 int ShopSetredressRequest::getFilterstate()const
@@ -88,7 +90,7 @@ int ShopSetredressRequest::getFilterstate()const
 void ShopSetredressRequest::setFilterstate(int filterstate)
 {
 	filterstate_ = filterstate;
-	setCoreParameter("Filterstate", std::to_string(filterstate));
+	setParameter("Filterstate", std::to_string(filterstate));
 }
 
 std::string ShopSetredressRequest::getWnum()const
@@ -99,7 +101,7 @@ std::string ShopSetredressRequest::getWnum()const
 void ShopSetredressRequest::setWnum(const std::string& wnum)
 {
 	wnum_ = wnum;
-	setCoreParameter("Wnum", wnum);
+	setParameter("Wnum", wnum);
 }
 
 int ShopSetredressRequest::getState()const
@@ -110,7 +112,7 @@ int ShopSetredressRequest::getState()const
 void ShopSetredressRequest::setState(int state)
 {
 	state_ = state;
-	setCoreParameter("State", std::to_string(state));
+	setParameter("State", std::to_string(state));
 }
 
 int ShopSetredressRequest::getCrowdfixed()const
@@ -121,7 +123,7 @@ int ShopSetredressRequest::getCrowdfixed()const
 void ShopSetredressRequest::setCrowdfixed(int crowdfixed)
 {
 	crowdfixed_ = crowdfixed;
-	setCoreParameter("Crowdfixed", std::to_string(crowdfixed));
+	setParameter("Crowdfixed", std::to_string(crowdfixed));
 }
 
 int ShopSetredressRequest::getFilterclose()const
@@ -132,7 +134,7 @@ int ShopSetredressRequest::getFilterclose()const
 void ShopSetredressRequest::setFilterclose(int filterclose)
 {
 	filterclose_ = filterclose;
-	setCoreParameter("Filterclose", std::to_string(filterclose));
+	setParameter("Filterclose", std::to_string(filterclose));
 }
 
 std::string ShopSetredressRequest::getHnum()const
@@ -143,7 +145,7 @@ std::string ShopSetredressRequest::getHnum()const
 void ShopSetredressRequest::setHnum(const std::string& hnum)
 {
 	hnum_ = hnum;
-	setCoreParameter("Hnum", hnum);
+	setParameter("Hnum", hnum);
 }
 
 int ShopSetredressRequest::getClerk()const
@@ -154,7 +156,7 @@ int ShopSetredressRequest::getClerk()const
 void ShopSetredressRequest::setClerk(int clerk)
 {
 	clerk_ = clerk;
-	setCoreParameter("Clerk", std::to_string(clerk));
+	setParameter("Clerk", std::to_string(clerk));
 }
 
 int ShopSetredressRequest::getMaxstoptime()const
@@ -165,6 +167,6 @@ int ShopSetredressRequest::getMaxstoptime()const
 void ShopSetredressRequest::setMaxstoptime(int maxstoptime)
 {
 	maxstoptime_ = maxstoptime;
-	setCoreParameter("Maxstoptime", std::to_string(maxstoptime));
+	setParameter("Maxstoptime", std::to_string(maxstoptime));
 }
 

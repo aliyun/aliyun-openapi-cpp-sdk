@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteKeywordRequest;
 
 DeleteKeywordRequest::DeleteKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteKeywordRequest::~DeleteKeywordRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteKeywordRequest::getKeywords()const
 void DeleteKeywordRequest::setKeywords(const std::string& keywords)
 {
 	keywords_ = keywords;
-	setCoreParameter("Keywords", keywords);
+	setParameter("Keywords", keywords);
 }
 
 std::string DeleteKeywordRequest::getKeywordLibId()const
@@ -44,7 +46,7 @@ std::string DeleteKeywordRequest::getKeywordLibId()const
 void DeleteKeywordRequest::setKeywordLibId(const std::string& keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", keywordLibId);
+	setParameter("KeywordLibId", keywordLibId);
 }
 
 std::string DeleteKeywordRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteKeywordRequest::getSourceIp()const
 void DeleteKeywordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteKeywordRequest::getIds()const
@@ -66,7 +68,7 @@ std::string DeleteKeywordRequest::getIds()const
 void DeleteKeywordRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 
 std::string DeleteKeywordRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DeleteKeywordRequest::getLang()const
 void DeleteKeywordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

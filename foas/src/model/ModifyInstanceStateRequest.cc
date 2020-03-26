@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ModifyInstanceStateRequest;
 
 ModifyInstanceStateRequest::ModifyInstanceStateRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ModifyInstanceStateRequest::~ModifyInstanceStateRequest()
 {}
@@ -33,7 +36,7 @@ bool ModifyInstanceStateRequest::getIsFlush()const
 void ModifyInstanceStateRequest::setIsFlush(bool isFlush)
 {
 	isFlush_ = isFlush;
-	setCoreParameter("IsFlush", isFlush ? "true" : "false");
+	setBodyParameter("IsFlush", isFlush ? "true" : "false");
 }
 
 std::string ModifyInstanceStateRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string ModifyInstanceStateRequest::getProjectName()const
 void ModifyInstanceStateRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long ModifyInstanceStateRequest::getInstanceId()const
@@ -55,7 +58,7 @@ long ModifyInstanceStateRequest::getInstanceId()const
 void ModifyInstanceStateRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string ModifyInstanceStateRequest::getRegionId()const
@@ -66,7 +69,7 @@ std::string ModifyInstanceStateRequest::getRegionId()const
 void ModifyInstanceStateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ModifyInstanceStateRequest::getExpectState()const
@@ -77,7 +80,7 @@ std::string ModifyInstanceStateRequest::getExpectState()const
 void ModifyInstanceStateRequest::setExpectState(const std::string& expectState)
 {
 	expectState_ = expectState;
-	setCoreParameter("ExpectState", expectState);
+	setBodyParameter("ExpectState", expectState);
 }
 
 std::string ModifyInstanceStateRequest::getJobName()const
@@ -88,6 +91,6 @@ std::string ModifyInstanceStateRequest::getJobName()const
 void ModifyInstanceStateRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

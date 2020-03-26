@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetScanModeRequest;
 
 GetScanModeRequest::GetScanModeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetScanMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetScanModeRequest::~GetScanModeRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetScanModeRequest::getAccessKeyId()const
 void GetScanModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> GetScanModeRequest::getMacList()const
@@ -44,7 +46,8 @@ std::vector<std::string> GetScanModeRequest::getMacList()const
 void GetScanModeRequest::setMacList(const std::vector<std::string>& macList)
 {
 	macList_ = macList;
-	for(int i = 0; i!= macList.size(); i++)
-		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
+	for(int dep1 = 0; dep1!= macList.size(); dep1++) {
+		setParameter("MacList."+ std::to_string(dep1), macList.at(dep1));
+	}
 }
 

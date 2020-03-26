@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDevicePropRequest;
 
 DeleteDevicePropRequest::DeleteDevicePropRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDeviceProp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDevicePropRequest::~DeleteDevicePropRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDevicePropRequest::getProductKey()const
 void DeleteDevicePropRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string DeleteDevicePropRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDevicePropRequest::getAccessKeyId()const
 void DeleteDevicePropRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDevicePropRequest::getPropKey()const
@@ -55,7 +57,7 @@ std::string DeleteDevicePropRequest::getPropKey()const
 void DeleteDevicePropRequest::setPropKey(const std::string& propKey)
 {
 	propKey_ = propKey;
-	setCoreParameter("PropKey", propKey);
+	setParameter("PropKey", propKey);
 }
 
 std::string DeleteDevicePropRequest::getIotId()const
@@ -66,7 +68,7 @@ std::string DeleteDevicePropRequest::getIotId()const
 void DeleteDevicePropRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string DeleteDevicePropRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string DeleteDevicePropRequest::getIotInstanceId()const
 void DeleteDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DeleteDevicePropRequest::getDeviceName()const
@@ -88,6 +90,6 @@ std::string DeleteDevicePropRequest::getDeviceName()const
 void DeleteDevicePropRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

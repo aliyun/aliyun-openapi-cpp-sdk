@@ -35,7 +35,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getStartTime()const
 void DescribeDcdnTopDomainsByFlowRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeDcdnTopDomainsByFlowRequest::getLimit()const
@@ -46,7 +46,7 @@ long DescribeDcdnTopDomainsByFlowRequest::getLimit()const
 void DescribeDcdnTopDomainsByFlowRequest::setLimit(long limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string DescribeDcdnTopDomainsByFlowRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnTopDomainsByFlowRequest::getEndTime()const
 void DescribeDcdnTopDomainsByFlowRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnTopDomainsByFlowRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDcdnTopDomainsByFlowRequest::getOwnerId()const
 void DescribeDcdnTopDomainsByFlowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

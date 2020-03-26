@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentEventsRequest;
 
 ListAgentEventsRequest::ListAgentEventsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentEventsRequest::~ListAgentEventsRequest()
 {}
@@ -33,7 +35,7 @@ long ListAgentEventsRequest::getStartTime()const
 void ListAgentEventsRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 long ListAgentEventsRequest::getStopTime()const
@@ -44,7 +46,7 @@ long ListAgentEventsRequest::getStopTime()const
 void ListAgentEventsRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setParameter("StopTime", std::to_string(stopTime));
 }
 
 std::vector<std::string> ListAgentEventsRequest::getRamId()const
@@ -55,8 +57,9 @@ std::vector<std::string> ListAgentEventsRequest::getRamId()const
 void ListAgentEventsRequest::setRamId(const std::vector<std::string>& ramId)
 {
 	ramId_ = ramId;
-	for(int i = 0; i!= ramId.size(); i++)
-		setCoreParameter("RamId."+ std::to_string(i), ramId.at(i));
+	for(int dep1 = 0; dep1!= ramId.size(); dep1++) {
+		setParameter("RamId."+ std::to_string(dep1), ramId.at(dep1));
+	}
 }
 
 std::string ListAgentEventsRequest::getAccessKeyId()const
@@ -67,7 +70,7 @@ std::string ListAgentEventsRequest::getAccessKeyId()const
 void ListAgentEventsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAgentEventsRequest::getInstanceId()const
@@ -78,7 +81,7 @@ std::string ListAgentEventsRequest::getInstanceId()const
 void ListAgentEventsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ListAgentEventsRequest::getEvent()const
@@ -89,7 +92,8 @@ std::vector<std::string> ListAgentEventsRequest::getEvent()const
 void ListAgentEventsRequest::setEvent(const std::vector<std::string>& event)
 {
 	event_ = event;
-	for(int i = 0; i!= event.size(); i++)
-		setCoreParameter("Event."+ std::to_string(i), event.at(i));
+	for(int dep1 = 0; dep1!= event.size(); dep1++) {
+		setParameter("Event."+ std::to_string(dep1), event.at(dep1));
+	}
 }
 

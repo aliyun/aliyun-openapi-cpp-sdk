@@ -35,17 +35,11 @@ namespace AlibabaCloud
 				QueryCustomerAddressListRequest();
 				~QueryCustomerAddressListRequest();
 
-				long getCallerBid()const;
-				void setCallerBid(long callerBid);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getCallerUid()const;
-				void setCallerUid(long callerUid);
 
             private:
-				long callerBid_;
 				long ownerId_;
-				long callerUid_;
 
 			};
 		}

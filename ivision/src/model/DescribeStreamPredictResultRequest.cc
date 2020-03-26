@@ -35,7 +35,7 @@ std::string DescribeStreamPredictResultRequest::getNextPageToken()const
 void DescribeStreamPredictResultRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string DescribeStreamPredictResultRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeStreamPredictResultRequest::getStartTime()const
 void DescribeStreamPredictResultRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeStreamPredictResultRequest::getPredictId()const
@@ -57,7 +57,7 @@ std::string DescribeStreamPredictResultRequest::getPredictId()const
 void DescribeStreamPredictResultRequest::setPredictId(const std::string& predictId)
 {
 	predictId_ = predictId;
-	setCoreParameter("PredictId", predictId);
+	setParameter("PredictId", predictId);
 }
 
 long DescribeStreamPredictResultRequest::getPageSize()const
@@ -68,7 +68,7 @@ long DescribeStreamPredictResultRequest::getPageSize()const
 void DescribeStreamPredictResultRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeStreamPredictResultRequest::getProbabilityThreshold()const
@@ -79,7 +79,7 @@ std::string DescribeStreamPredictResultRequest::getProbabilityThreshold()const
 void DescribeStreamPredictResultRequest::setProbabilityThreshold(const std::string& probabilityThreshold)
 {
 	probabilityThreshold_ = probabilityThreshold;
-	setCoreParameter("ProbabilityThreshold", probabilityThreshold);
+	setParameter("ProbabilityThreshold", probabilityThreshold);
 }
 
 std::string DescribeStreamPredictResultRequest::getShowLog()const
@@ -90,7 +90,7 @@ std::string DescribeStreamPredictResultRequest::getShowLog()const
 void DescribeStreamPredictResultRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string DescribeStreamPredictResultRequest::getModelId()const
@@ -101,7 +101,7 @@ std::string DescribeStreamPredictResultRequest::getModelId()const
 void DescribeStreamPredictResultRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setParameter("ModelId", modelId);
 }
 
 std::string DescribeStreamPredictResultRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeStreamPredictResultRequest::getEndTime()const
 void DescribeStreamPredictResultRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeStreamPredictResultRequest::getCurrentPage()const
@@ -123,7 +123,7 @@ long DescribeStreamPredictResultRequest::getCurrentPage()const
 void DescribeStreamPredictResultRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeStreamPredictResultRequest::getOwnerId()const
@@ -134,6 +134,6 @@ long DescribeStreamPredictResultRequest::getOwnerId()const
 void DescribeStreamPredictResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

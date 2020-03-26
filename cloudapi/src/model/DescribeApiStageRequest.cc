@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiStageRequest;
 
 DescribeApiStageRequest::DescribeApiStageRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiStage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiStageRequest::~DescribeApiStageRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiStageRequest::getGroupId()const
 void DescribeApiStageRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiStageRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeApiStageRequest::getAccessKeyId()const
 void DescribeApiStageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiStageRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeApiStageRequest::getSecurityToken()const
 void DescribeApiStageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiStageRequest::getStageId()const
@@ -66,6 +68,6 @@ std::string DescribeApiStageRequest::getStageId()const
 void DescribeApiStageRequest::setStageId(const std::string& stageId)
 {
 	stageId_ = stageId;
-	setCoreParameter("StageId", stageId);
+	setParameter("StageId", stageId);
 }
 

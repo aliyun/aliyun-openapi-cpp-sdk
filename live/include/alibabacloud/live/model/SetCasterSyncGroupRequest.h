@@ -30,9 +30,11 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT SetCasterSyncGroupRequest : public RpcServiceRequest
 			{
+			public:
 				struct SyncGroup
 				{
 					int mode;
+					long syncDelayThreshold;
 					std::string hostResourceId;
 					std::vector<std::string> resourceIds;
 				};

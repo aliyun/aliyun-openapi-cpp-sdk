@@ -35,6 +35,6 @@ std::string DescribeContactListByContactGroupRequest::getContactGroupName()const
 void DescribeContactListByContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setParameter("ContactGroupName", contactGroupName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterSupportServiceRequest;
 
 ListClusterSupportServiceRequest::ListClusterSupportServiceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterSupportService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterSupportServiceRequest::~ListClusterSupportServiceRequest()
 {}
@@ -33,7 +35,7 @@ long ListClusterSupportServiceRequest::getResourceOwnerId()const
 void ListClusterSupportServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterSupportServiceRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ListClusterSupportServiceRequest::getClusterId()const
 void ListClusterSupportServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListClusterSupportServiceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListClusterSupportServiceRequest::getAccessKeyId()const
 void ListClusterSupportServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterSupportServiceRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string ListClusterSupportServiceRequest::getRegionId()const
 void ListClusterSupportServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

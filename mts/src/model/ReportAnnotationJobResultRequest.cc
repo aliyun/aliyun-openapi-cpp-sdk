@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportAnnotationJobResultRequest;
 
 ReportAnnotationJobResultRequest::ReportAnnotationJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportAnnotationJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportAnnotationJobResultRequest::~ReportAnnotationJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportAnnotationJobResultRequest::getResourceOwnerId()const
 void ReportAnnotationJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportAnnotationJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportAnnotationJobResultRequest::getAccessKeyId()const
 void ReportAnnotationJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportAnnotationJobResultRequest::getJobId()const
@@ -55,7 +57,7 @@ std::string ReportAnnotationJobResultRequest::getJobId()const
 void ReportAnnotationJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportAnnotationJobResultRequest::getDetails()const
@@ -66,7 +68,7 @@ std::string ReportAnnotationJobResultRequest::getDetails()const
 void ReportAnnotationJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setParameter("Details", details);
 }
 
 std::string ReportAnnotationJobResultRequest::getAnnotation()const
@@ -77,7 +79,7 @@ std::string ReportAnnotationJobResultRequest::getAnnotation()const
 void ReportAnnotationJobResultRequest::setAnnotation(const std::string& annotation)
 {
 	annotation_ = annotation;
-	setCoreParameter("Annotation", annotation);
+	setParameter("Annotation", annotation);
 }
 
 std::string ReportAnnotationJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ReportAnnotationJobResultRequest::getResourceOwnerAccount()const
 void ReportAnnotationJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportAnnotationJobResultRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ReportAnnotationJobResultRequest::getOwnerAccount()const
 void ReportAnnotationJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReportAnnotationJobResultRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ReportAnnotationJobResultRequest::getOwnerId()const
 void ReportAnnotationJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

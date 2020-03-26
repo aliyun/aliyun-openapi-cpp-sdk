@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteAccessWhiteListGroupRequest;
 
 DeleteAccessWhiteListGroupRequest::DeleteAccessWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteAccessWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccessWhiteListGroupRequest::~DeleteAccessWhiteListGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteAccessWhiteListGroupRequest::getSourceCode()const
 void DeleteAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteAccessWhiteListGroupRequest::getGroupIdList()const
@@ -44,7 +46,7 @@ std::string DeleteAccessWhiteListGroupRequest::getGroupIdList()const
 void DeleteAccessWhiteListGroupRequest::setGroupIdList(const std::string& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	setCoreParameter("GroupIdList", groupIdList);
+	setParameter("GroupIdList", groupIdList);
 }
 
 std::string DeleteAccessWhiteListGroupRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteAccessWhiteListGroupRequest::getSourceIp()const
 void DeleteAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteAccessWhiteListGroupRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteAccessWhiteListGroupRequest::getLang()const
 void DeleteAccessWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

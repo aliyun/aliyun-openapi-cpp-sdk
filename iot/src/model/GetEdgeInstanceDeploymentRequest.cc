@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetEdgeInstanceDeploymentRequest;
 
 GetEdgeInstanceDeploymentRequest::GetEdgeInstanceDeploymentRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetEdgeInstanceDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEdgeInstanceDeploymentRequest::~GetEdgeInstanceDeploymentRequest()
 {}
@@ -33,18 +35,7 @@ std::string GetEdgeInstanceDeploymentRequest::getAccessKeyId()const
 void GetEdgeInstanceDeploymentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string GetEdgeInstanceDeploymentRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void GetEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetEdgeInstanceDeploymentRequest::getIotInstanceId()const
@@ -55,7 +46,18 @@ std::string GetEdgeInstanceDeploymentRequest::getIotInstanceId()const
 void GetEdgeInstanceDeploymentRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetEdgeInstanceDeploymentRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void GetEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetEdgeInstanceDeploymentRequest::getDeploymentId()const
@@ -66,6 +68,28 @@ std::string GetEdgeInstanceDeploymentRequest::getDeploymentId()const
 void GetEdgeInstanceDeploymentRequest::setDeploymentId(const std::string& deploymentId)
 {
 	deploymentId_ = deploymentId;
-	setCoreParameter("DeploymentId", deploymentId);
+	setParameter("DeploymentId", deploymentId);
+}
+
+std::string GetEdgeInstanceDeploymentRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetEdgeInstanceDeploymentRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetEdgeInstanceDeploymentRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetEdgeInstanceDeploymentRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

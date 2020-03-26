@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OnoffGroupApRadioRequest;
 
 OnoffGroupApRadioRequest::OnoffGroupApRadioRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OnoffGroupApRadio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OnoffGroupApRadioRequest::~OnoffGroupApRadioRequest()
 {}
@@ -33,7 +35,7 @@ long OnoffGroupApRadioRequest::getApgroupId()const
 void OnoffGroupApRadioRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string OnoffGroupApRadioRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string OnoffGroupApRadioRequest::getAccessKeyId()const
 void OnoffGroupApRadioRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int OnoffGroupApRadioRequest::getDisabled()const
@@ -55,6 +57,6 @@ int OnoffGroupApRadioRequest::getDisabled()const
 void OnoffGroupApRadioRequest::setDisabled(int disabled)
 {
 	disabled_ = disabled;
-	setCoreParameter("Disabled", std::to_string(disabled));
+	setParameter("Disabled", std::to_string(disabled));
 }
 

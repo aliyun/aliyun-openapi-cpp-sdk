@@ -87,3 +87,39 @@ Et_industry_openapiClient::UploadDeviceDataOutcomeCallable Et_industry_openapiCl
 	return task->get_future();
 }
 
+Et_industry_openapiClient::UploadDeviceDataDCOutcome Et_industry_openapiClient::uploadDeviceDataDC(const UploadDeviceDataDCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadDeviceDataDCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadDeviceDataDCOutcome(UploadDeviceDataDCResult(outcome.result()));
+	else
+		return UploadDeviceDataDCOutcome(outcome.error());
+}
+
+void Et_industry_openapiClient::uploadDeviceDataDCAsync(const UploadDeviceDataDCRequest& request, const UploadDeviceDataDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadDeviceDataDC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Et_industry_openapiClient::UploadDeviceDataDCOutcomeCallable Et_industry_openapiClient::uploadDeviceDataDCCallable(const UploadDeviceDataDCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadDeviceDataDCOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadDeviceDataDC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

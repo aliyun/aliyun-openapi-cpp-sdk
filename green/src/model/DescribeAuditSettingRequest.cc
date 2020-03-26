@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAuditSettingRequest;
 
 DescribeAuditSettingRequest::DescribeAuditSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAuditSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditSettingRequest::~DescribeAuditSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAuditSettingRequest::getSourceIp()const
 void DescribeAuditSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAuditSettingRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeAuditSettingRequest::getLang()const
 void DescribeAuditSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeFlowTotalCountRequest;
 
 DescribeFlowTotalCountRequest::DescribeFlowTotalCountRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeFlowTotalCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowTotalCountRequest::~DescribeFlowTotalCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeFlowTotalCountRequest::getProductCode()const
 void DescribeFlowTotalCountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 int DescribeFlowTotalCountRequest::getFeatureType()const
@@ -44,7 +46,7 @@ int DescribeFlowTotalCountRequest::getFeatureType()const
 void DescribeFlowTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeFlowTotalCountRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeFlowTotalCountRequest::getSourceIp()const
 void DescribeFlowTotalCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeFlowTotalCountRequest::getDepartId()const
@@ -66,7 +68,7 @@ long DescribeFlowTotalCountRequest::getDepartId()const
 void DescribeFlowTotalCountRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 
 std::string DescribeFlowTotalCountRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeFlowTotalCountRequest::getLang()const
 void DescribeFlowTotalCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

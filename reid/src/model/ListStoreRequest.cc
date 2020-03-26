@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ListStoreRequest;
 ListStoreRequest::ListStoreRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ListStore")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListStoreRequest::~ListStoreRequest()

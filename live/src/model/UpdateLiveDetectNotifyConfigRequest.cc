@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateLiveDetectNotifyConfigRequest;
 
 UpdateLiveDetectNotifyConfigRequest::UpdateLiveDetectNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateLiveDetectNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLiveDetectNotifyConfigRequest::~UpdateLiveDetectNotifyConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateLiveDetectNotifyConfigRequest::getDomainName()const
 void UpdateLiveDetectNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateLiveDetectNotifyConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long UpdateLiveDetectNotifyConfigRequest::getOwnerId()const
 void UpdateLiveDetectNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateLiveDetectNotifyConfigRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string UpdateLiveDetectNotifyConfigRequest::getSecurityToken()const
 void UpdateLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateLiveDetectNotifyConfigRequest::getNotifyUrl()const
@@ -66,6 +68,6 @@ std::string UpdateLiveDetectNotifyConfigRequest::getNotifyUrl()const
 void UpdateLiveDetectNotifyConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
+	setParameter("NotifyUrl", notifyUrl);
 }
 

@@ -64,6 +64,10 @@ void QueryRIUtilizationDetailResult::parse(const std::string &payload)
 			detailListItemObject.deductHours = dataNodeDetailListDetailListItem["DeductHours"].asString();
 		if(!dataNodeDetailListDetailListItem["DeductedProductDetail"].isNull())
 			detailListItemObject.deductedProductDetail = dataNodeDetailListDetailListItem["DeductedProductDetail"].asString();
+		if(!dataNodeDetailListDetailListItem["DeductQuantity"].isNull())
+			detailListItemObject.deductQuantity = std::stof(dataNodeDetailListDetailListItem["DeductQuantity"].asString());
+		if(!dataNodeDetailListDetailListItem["DeductFactorTotal"].isNull())
+			detailListItemObject.deductFactorTotal = std::stof(dataNodeDetailListDetailListItem["DeductFactorTotal"].asString());
 		data_.detailList.push_back(detailListItemObject);
 	}
 	if(!value["Success"].isNull())

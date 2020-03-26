@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DetachNetworkOptimizationSagsRequest;
 
 DetachNetworkOptimizationSagsRequest::DetachNetworkOptimizationSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DetachNetworkOptimizationSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachNetworkOptimizationSagsRequest::~DetachNetworkOptimizationSagsRequest()
 {}
@@ -33,7 +35,7 @@ long DetachNetworkOptimizationSagsRequest::getResourceOwnerId()const
 void DetachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DetachNetworkOptimizationSagsRequest::getRegionId()const
 void DetachNetworkOptimizationSagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getNetworkOptId()const
@@ -55,7 +57,7 @@ std::string DetachNetworkOptimizationSagsRequest::getNetworkOptId()const
 void DetachNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setParameter("NetworkOptId", networkOptId);
 }
 
 std::vector<std::string> DetachNetworkOptimizationSagsRequest::getSmartAGIds()const
@@ -66,8 +68,9 @@ std::vector<std::string> DetachNetworkOptimizationSagsRequest::getSmartAGIds()co
 void DetachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
 {
 	smartAGIds_ = smartAGIds;
-	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
+		setParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
@@ -78,7 +81,7 @@ std::string DetachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
 void DetachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
@@ -89,7 +92,7 @@ std::string DetachNetworkOptimizationSagsRequest::getOwnerAccount()const
 void DetachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DetachNetworkOptimizationSagsRequest::getOwnerId()const
@@ -100,6 +103,6 @@ long DetachNetworkOptimizationSagsRequest::getOwnerId()const
 void DetachNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsCoincideRequest;
 
 HeadquartersToolsCoincideRequest::HeadquartersToolsCoincideRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsCoincide")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsCoincideRequest::~HeadquartersToolsCoincideRequest()
 {}
@@ -33,7 +35,7 @@ std::string HeadquartersToolsCoincideRequest::getAccessKeyId()const
 void HeadquartersToolsCoincideRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long HeadquartersToolsCoincideRequest::getBid()const
@@ -44,6 +46,6 @@ long HeadquartersToolsCoincideRequest::getBid()const
 void HeadquartersToolsCoincideRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

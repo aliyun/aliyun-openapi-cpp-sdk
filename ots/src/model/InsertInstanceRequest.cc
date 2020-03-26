@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::InsertInstanceRequest;
 
 InsertInstanceRequest::InsertInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "InsertInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertInstanceRequest::~InsertInstanceRequest()
 {}
-
-std::string InsertInstanceRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void InsertInstanceRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long InsertInstanceRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,7 @@ long InsertInstanceRequest::getResourceOwnerId()const
 void InsertInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string InsertInstanceRequest::getDescription()const
@@ -55,7 +46,18 @@ std::string InsertInstanceRequest::getDescription()const
 void InsertInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
+}
+
+std::string InsertInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void InsertInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string InsertInstanceRequest::getNetwork()const
@@ -66,7 +68,7 @@ std::string InsertInstanceRequest::getNetwork()const
 void InsertInstanceRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setCoreParameter("Network", network);
+	setParameter("Network", network);
 }
 
 std::string InsertInstanceRequest::getClusterType()const
@@ -77,7 +79,7 @@ std::string InsertInstanceRequest::getClusterType()const
 void InsertInstanceRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 std::string InsertInstanceRequest::getInstanceName()const
@@ -88,7 +90,7 @@ std::string InsertInstanceRequest::getInstanceName()const
 void InsertInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::vector<InsertInstanceRequest::TagInfo> InsertInstanceRequest::getTagInfo()const
@@ -99,12 +101,11 @@ std::vector<InsertInstanceRequest::TagInfo> InsertInstanceRequest::getTagInfo()c
 void InsertInstanceRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 {
 	tagInfo_ = tagInfo;
-	int i = 0;
-	for(int i = 0; i!= tagInfo.size(); i++)	{
-		auto obj = tagInfo.at(i);
-		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tagInfo.size(); dep1++) {
+		auto tagInfoObj = tagInfo.at(dep1);
+		std::string tagInfoObjStr = "TagInfo." + std::to_string(dep1 + 1);
+		setParameter(tagInfoObjStr + ".TagValue", tagInfoObj.tagValue);
+		setParameter(tagInfoObjStr + ".TagKey", tagInfoObj.tagKey);
 	}
 }
 

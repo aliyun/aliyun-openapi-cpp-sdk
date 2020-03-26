@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainCertificateRequest;
 
 SetDomainCertificateRequest::SetDomainCertificateRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainCertificateRequest::~SetDomainCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDomainCertificateRequest::getCertificatePrivateKey()const
 void SetDomainCertificateRequest::setCertificatePrivateKey(const std::string& certificatePrivateKey)
 {
 	certificatePrivateKey_ = certificatePrivateKey;
-	setCoreParameter("CertificatePrivateKey", certificatePrivateKey);
+	setParameter("CertificatePrivateKey", certificatePrivateKey);
 }
 
 std::string SetDomainCertificateRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string SetDomainCertificateRequest::getGroupId()const
 void SetDomainCertificateRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetDomainCertificateRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string SetDomainCertificateRequest::getDomainName()const
 void SetDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetDomainCertificateRequest::getCertificateBody()const
@@ -66,7 +68,7 @@ std::string SetDomainCertificateRequest::getCertificateBody()const
 void SetDomainCertificateRequest::setCertificateBody(const std::string& certificateBody)
 {
 	certificateBody_ = certificateBody;
-	setCoreParameter("CertificateBody", certificateBody);
+	setParameter("CertificateBody", certificateBody);
 }
 
 std::string SetDomainCertificateRequest::getAccessKeyId()const
@@ -77,7 +79,18 @@ std::string SetDomainCertificateRequest::getAccessKeyId()const
 void SetDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetDomainCertificateRequest::getCaCertificateBody()const
+{
+	return caCertificateBody_;
+}
+
+void SetDomainCertificateRequest::setCaCertificateBody(const std::string& caCertificateBody)
+{
+	caCertificateBody_ = caCertificateBody;
+	setParameter("CaCertificateBody", caCertificateBody);
 }
 
 std::string SetDomainCertificateRequest::getSecurityToken()const
@@ -88,7 +101,7 @@ std::string SetDomainCertificateRequest::getSecurityToken()const
 void SetDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetDomainCertificateRequest::getCertificateName()const
@@ -99,6 +112,6 @@ std::string SetDomainCertificateRequest::getCertificateName()const
 void SetDomainCertificateRequest::setCertificateName(const std::string& certificateName)
 {
 	certificateName_ = certificateName;
-	setCoreParameter("CertificateName", certificateName);
+	setParameter("CertificateName", certificateName);
 }
 

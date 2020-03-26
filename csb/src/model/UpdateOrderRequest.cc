@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::UpdateOrderRequest;
 
 UpdateOrderRequest::UpdateOrderRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "UpdateOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateOrderRequest::~UpdateOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateOrderRequest::getData()const
 void UpdateOrderRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 long UpdateOrderRequest::getCsbId()const
@@ -44,6 +46,6 @@ long UpdateOrderRequest::getCsbId()const
 void UpdateOrderRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 

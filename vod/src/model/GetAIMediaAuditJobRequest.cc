@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAIMediaAuditJobRequest;
 
 GetAIMediaAuditJobRequest::GetAIMediaAuditJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAIMediaAuditJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAIMediaAuditJobRequest::~GetAIMediaAuditJobRequest()
 {}
@@ -33,7 +35,7 @@ long GetAIMediaAuditJobRequest::getResourceOwnerId()const
 void GetAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetAIMediaAuditJobRequest::getResourceOwnerAccount()const
 void GetAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetAIMediaAuditJobRequest::getOwnerId()const
@@ -55,7 +57,7 @@ std::string GetAIMediaAuditJobRequest::getOwnerId()const
 void GetAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetAIMediaAuditJobRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetAIMediaAuditJobRequest::getAccessKeyId()const
 void GetAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetAIMediaAuditJobRequest::getJobId()const
@@ -77,6 +79,6 @@ std::string GetAIMediaAuditJobRequest::getJobId()const
 void GetAIMediaAuditJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 

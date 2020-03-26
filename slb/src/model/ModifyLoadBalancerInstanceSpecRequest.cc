@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::ModifyLoadBalancerInstanceSpecRequest;
 
 ModifyLoadBalancerInstanceSpecRequest::ModifyLoadBalancerInstanceSpecRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLoadBalancerInstanceSpecRequest::~ModifyLoadBalancerInstanceSpecRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getAccess_key_id()const
 void ModifyLoadBalancerInstanceSpecRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerId()const
 void ModifyLoadBalancerInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getRegionId()const
 void ModifyLoadBalancerInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerSpec()const
@@ -66,7 +68,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerSpec()const
 void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerSpec(const std::string& loadBalancerSpec)
 {
 	loadBalancerSpec_ = loadBalancerSpec;
-	setCoreParameter("LoadBalancerSpec", loadBalancerSpec);
+	setParameter("LoadBalancerSpec", loadBalancerSpec);
 }
 
 bool ModifyLoadBalancerInstanceSpecRequest::getAutoPay()const
@@ -77,7 +79,7 @@ bool ModifyLoadBalancerInstanceSpecRequest::getAutoPay()const
 void ModifyLoadBalancerInstanceSpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getResourceOwnerAccount()cons
 void ModifyLoadBalancerInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getOwnerAccount()const
 void ModifyLoadBalancerInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyLoadBalancerInstanceSpecRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ModifyLoadBalancerInstanceSpecRequest::getOwnerId()const
 void ModifyLoadBalancerInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getTags()const
@@ -121,7 +123,7 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getTags()const
 void ModifyLoadBalancerInstanceSpecRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string ModifyLoadBalancerInstanceSpecRequest::getLoadBalancerId()const
 void ModifyLoadBalancerInstanceSpecRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

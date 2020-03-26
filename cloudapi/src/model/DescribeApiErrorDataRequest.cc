@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiErrorDataRequest;
 
 DescribeApiErrorDataRequest::DescribeApiErrorDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiErrorData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiErrorDataRequest::~DescribeApiErrorDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiErrorDataRequest::getGroupId()const
 void DescribeApiErrorDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiErrorDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribeApiErrorDataRequest::getEndTime()const
 void DescribeApiErrorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeApiErrorDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string DescribeApiErrorDataRequest::getStartTime()const
 void DescribeApiErrorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeApiErrorDataRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiErrorDataRequest::getAccessKeyId()const
 void DescribeApiErrorDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiErrorDataRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiErrorDataRequest::getSecurityToken()const
 void DescribeApiErrorDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiErrorDataRequest::getApiId()const
@@ -88,6 +90,6 @@ std::string DescribeApiErrorDataRequest::getApiId()const
 void DescribeApiErrorDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::EnableKeyRequest;
 EnableKeyRequest::EnableKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "EnableKey")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 EnableKeyRequest::~EnableKeyRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::FindUsersRequest;
 
 FindUsersRequest::FindUsersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "FindUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindUsersRequest::~FindUsersRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindUsersRequest::getCriteria()const
 void FindUsersRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setParameter("Criteria", criteria);
 }
 
 int FindUsersRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int FindUsersRequest::getPageNumber()const
 void FindUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string FindUsersRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string FindUsersRequest::getAccessKeyId()const
 void FindUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string FindUsersRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string FindUsersRequest::getInstanceId()const
 void FindUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int FindUsersRequest::getPageSize()const
@@ -77,6 +79,6 @@ int FindUsersRequest::getPageSize()const
 void FindUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

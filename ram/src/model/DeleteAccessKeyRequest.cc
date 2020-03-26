@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteAccessKeyRequest;
 
 DeleteAccessKeyRequest::DeleteAccessKeyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteAccessKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAccessKeyRequest::~DeleteAccessKeyRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteAccessKeyRequest::getUserAccessKeyId()const
 void DeleteAccessKeyRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setCoreParameter("UserAccessKeyId", userAccessKeyId);
+	setParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string DeleteAccessKeyRequest::getUserName()const
@@ -44,6 +46,6 @@ std::string DeleteAccessKeyRequest::getUserName()const
 void DeleteAccessKeyRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

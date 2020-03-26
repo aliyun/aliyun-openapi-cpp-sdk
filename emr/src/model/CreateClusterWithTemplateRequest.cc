@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateClusterWithTemplateRequest;
 
 CreateClusterWithTemplateRequest::CreateClusterWithTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateClusterWithTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateClusterWithTemplateRequest::~CreateClusterWithTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long CreateClusterWithTemplateRequest::getResourceOwnerId()const
 void CreateClusterWithTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateClusterWithTemplateRequest::getUniqueTag()const
@@ -44,7 +46,7 @@ std::string CreateClusterWithTemplateRequest::getUniqueTag()const
 void CreateClusterWithTemplateRequest::setUniqueTag(const std::string& uniqueTag)
 {
 	uniqueTag_ = uniqueTag;
-	setCoreParameter("UniqueTag", uniqueTag);
+	setParameter("UniqueTag", uniqueTag);
 }
 
 std::string CreateClusterWithTemplateRequest::getClusterName()const
@@ -55,7 +57,7 @@ std::string CreateClusterWithTemplateRequest::getClusterName()const
 void CreateClusterWithTemplateRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateClusterWithTemplateRequest::getAccessKeyId()const
 void CreateClusterWithTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
@@ -77,6 +79,6 @@ std::string CreateClusterWithTemplateRequest::getTemplateBizId()const
 void CreateClusterWithTemplateRequest::setTemplateBizId(const std::string& templateBizId)
 {
 	templateBizId_ = templateBizId;
-	setCoreParameter("TemplateBizId", templateBizId);
+	setParameter("TemplateBizId", templateBizId);
 }
 

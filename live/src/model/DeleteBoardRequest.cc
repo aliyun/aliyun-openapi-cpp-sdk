@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteBoardRequest;
 
 DeleteBoardRequest::DeleteBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBoardRequest::~DeleteBoardRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteBoardRequest::getOwnerId()const
 void DeleteBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBoardRequest::getAppId()const
@@ -44,7 +46,7 @@ std::string DeleteBoardRequest::getAppId()const
 void DeleteBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DeleteBoardRequest::getBoardId()const
@@ -55,6 +57,6 @@ std::string DeleteBoardRequest::getBoardId()const
 void DeleteBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 

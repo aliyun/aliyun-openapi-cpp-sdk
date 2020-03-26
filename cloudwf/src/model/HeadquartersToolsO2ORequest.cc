@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsO2ORequest;
 
 HeadquartersToolsO2ORequest::HeadquartersToolsO2ORequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsO2O")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsO2ORequest::~HeadquartersToolsO2ORequest()
 {}
@@ -33,7 +35,7 @@ std::string HeadquartersToolsO2ORequest::getAccessKeyId()const
 void HeadquartersToolsO2ORequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long HeadquartersToolsO2ORequest::getBid()const
@@ -44,6 +46,6 @@ long HeadquartersToolsO2ORequest::getBid()const
 void HeadquartersToolsO2ORequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

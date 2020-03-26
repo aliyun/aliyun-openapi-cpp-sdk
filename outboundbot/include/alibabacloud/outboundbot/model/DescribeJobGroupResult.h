@@ -34,29 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct JobGroup
 				{
-					struct Strategy
-					{
-						struct TimeFrame
-						{
-							std::string endTime;
-							std::string beginTime;
-						};
-						std::vector<TimeFrame> workingTime;
-						bool isTemplate;
-						std::string repeatBy;
-						int minAttemptInterval;
-						long endTime;
-						std::string strategyId;
-						long startTime;
-						std::string followUpStrategy;
-						std::string type;
-						std::string strategyName;
-						std::string strategyDescription;
-						std::string customized;
-						int maxAttemptsPerDay;
-						std::string routingStrategy;
-						std::vector<std::string> repeatDays;
-					};
 					struct Progress
 					{
 						struct KeyValuePair
@@ -75,8 +52,31 @@ namespace AlibabaCloud
 						std::vector<KeyValuePair> briefs;
 						int executing;
 						int totalNotAnswered;
-						int totalJobs;
 						int paused;
+						int totalJobs;
+					};
+					struct Strategy
+					{
+						struct TimeFrame
+						{
+							std::string endTime;
+							std::string beginTime;
+						};
+						std::vector<TimeFrame> workingTime;
+						bool isTemplate;
+						int minAttemptInterval;
+						std::string repeatBy;
+						long endTime;
+						long startTime;
+						std::string strategyId;
+						std::string followUpStrategy;
+						std::string type;
+						std::string strategyName;
+						std::string customized;
+						std::string strategyDescription;
+						int maxAttemptsPerDay;
+						std::string routingStrategy;
+						std::vector<std::string> repeatDays;
 					};
 					Progress progress;
 					std::string jobGroupId;
@@ -85,8 +85,8 @@ namespace AlibabaCloud
 					std::string scriptName;
 					long creationTime;
 					Strategy strategy;
-					std::string scriptId;
 					std::string jobFilePath;
+					std::string scriptId;
 					std::string jobGroupDescription;
 					std::vector<std::string> callingNumbers;
 				};

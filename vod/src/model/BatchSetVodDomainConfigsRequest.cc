@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchSetVodDomainConfigsRequest;
 
 BatchSetVodDomainConfigsRequest::BatchSetVodDomainConfigsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchSetVodDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSetVodDomainConfigsRequest::~BatchSetVodDomainConfigsRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchSetVodDomainConfigsRequest::getFunctions()const
 void BatchSetVodDomainConfigsRequest::setFunctions(const std::string& functions)
 {
 	functions_ = functions;
-	setCoreParameter("Functions", functions);
+	setParameter("Functions", functions);
 }
 
 std::string BatchSetVodDomainConfigsRequest::getDomainNames()const
@@ -44,7 +46,7 @@ std::string BatchSetVodDomainConfigsRequest::getDomainNames()const
 void BatchSetVodDomainConfigsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string BatchSetVodDomainConfigsRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string BatchSetVodDomainConfigsRequest::getOwnerAccount()const
 void BatchSetVodDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long BatchSetVodDomainConfigsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long BatchSetVodDomainConfigsRequest::getOwnerId()const
 void BatchSetVodDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchSetVodDomainConfigsRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string BatchSetVodDomainConfigsRequest::getSecurityToken()const
 void BatchSetVodDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

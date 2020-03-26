@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteTrafficSpecialControlRequest;
 
 DeleteTrafficSpecialControlRequest::DeleteTrafficSpecialControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteTrafficSpecialControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTrafficSpecialControlRequest::~DeleteTrafficSpecialControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteTrafficSpecialControlRequest::getTrafficControlId()const
 void DeleteTrafficSpecialControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSpecialKey()const
@@ -44,7 +46,7 @@ std::string DeleteTrafficSpecialControlRequest::getSpecialKey()const
 void DeleteTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKey)
 {
 	specialKey_ = specialKey;
-	setCoreParameter("SpecialKey", specialKey);
+	setParameter("SpecialKey", specialKey);
 }
 
 std::string DeleteTrafficSpecialControlRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteTrafficSpecialControlRequest::getAccessKeyId()const
 void DeleteTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DeleteTrafficSpecialControlRequest::getSecurityToken()const
 void DeleteTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteTrafficSpecialControlRequest::getSpecialType()const
@@ -77,6 +79,6 @@ std::string DeleteTrafficSpecialControlRequest::getSpecialType()const
 void DeleteTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
 {
 	specialType_ = specialType;
-	setCoreParameter("SpecialType", specialType);
+	setParameter("SpecialType", specialType);
 }
 

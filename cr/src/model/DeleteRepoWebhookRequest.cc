@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoWebhookRequest;
 
 DeleteRepoWebhookRequest::DeleteRepoWebhookRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoWebhookRequest::~DeleteRepoWebhookRequest()
 {}
@@ -33,7 +36,7 @@ long DeleteRepoWebhookRequest::getWebhookId()const
 void DeleteRepoWebhookRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setCoreParameter("WebhookId", std::to_string(webhookId));
+	setParameter("WebhookId", std::to_string(webhookId));
 }
 
 std::string DeleteRepoWebhookRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string DeleteRepoWebhookRequest::getRepoNamespace()const
 void DeleteRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoWebhookRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string DeleteRepoWebhookRequest::getRepoName()const
 void DeleteRepoWebhookRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

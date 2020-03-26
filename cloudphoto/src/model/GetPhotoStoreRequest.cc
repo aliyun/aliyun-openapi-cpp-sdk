@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPhotoStoreRequest;
 
 GetPhotoStoreRequest::GetPhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhotoStoreRequest::~GetPhotoStoreRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetPhotoStoreRequest::getStoreName()const
 void GetPhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

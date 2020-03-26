@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::GetMessagesRequest;
 
 GetMessagesRequest::GetMessagesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "GetMessages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMessagesRequest::~GetMessagesRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetMessagesRequest::getTopic()const
 void GetMessagesRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
-	setCoreParameter("Topic", topic);
+	setParameter("Topic", topic);
 }
 
 std::string GetMessagesRequest::getParamsJson()const
@@ -44,6 +46,6 @@ std::string GetMessagesRequest::getParamsJson()const
 void GetMessagesRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

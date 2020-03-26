@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyRiskSingleResultStatusRequest;
 
 ModifyRiskSingleResultStatusRequest::ModifyRiskSingleResultStatusRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyRiskSingleResultStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRiskSingleResultStatusRequest::~ModifyRiskSingleResultStatusRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyRiskSingleResultStatusRequest::getResourceOwnerId()const
 void ModifyRiskSingleResultStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string ModifyRiskSingleResultStatusRequest::getSourceIp()const
 void ModifyRiskSingleResultStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
@@ -55,8 +57,9 @@ std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds()const
 void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string>& ids)
 {
 	ids_ = ids;
-	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), ids.at(i));
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
+		setParameter("Ids."+ std::to_string(dep1), ids.at(dep1));
+	}
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getLang()const
@@ -67,7 +70,7 @@ std::string ModifyRiskSingleResultStatusRequest::getLang()const
 void ModifyRiskSingleResultStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long ModifyRiskSingleResultStatusRequest::getTaskId()const
@@ -78,7 +81,7 @@ long ModifyRiskSingleResultStatusRequest::getTaskId()const
 void ModifyRiskSingleResultStatusRequest::setTaskId(long taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", std::to_string(taskId));
+	setParameter("TaskId", std::to_string(taskId));
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getStatus()const
@@ -89,6 +92,6 @@ std::string ModifyRiskSingleResultStatusRequest::getStatus()const
 void ModifyRiskSingleResultStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

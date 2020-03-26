@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListClusterRequest;
 
 ListClusterRequest::ListClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListClusterRequest::~ListClusterRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListClusterRequest::getRegionId()const
 void ListClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ListClusterRequest::getDisplayName()const
@@ -44,7 +47,7 @@ std::string ListClusterRequest::getDisplayName()const
 void ListClusterRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setParameter("DisplayName", displayName);
 }
 
 int ListClusterRequest::getPageSize()const
@@ -55,7 +58,7 @@ int ListClusterRequest::getPageSize()const
 void ListClusterRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListClusterRequest::getPageIndex()const
@@ -66,7 +69,7 @@ int ListClusterRequest::getPageIndex()const
 void ListClusterRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListClusterRequest::getClusterId()const
@@ -77,7 +80,7 @@ std::string ListClusterRequest::getClusterId()const
 void ListClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListClusterRequest::getState()const
@@ -88,7 +91,7 @@ std::string ListClusterRequest::getState()const
 void ListClusterRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListClusterRequest::getRegion()const
@@ -99,6 +102,6 @@ std::string ListClusterRequest::getRegion()const
 void ListClusterRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

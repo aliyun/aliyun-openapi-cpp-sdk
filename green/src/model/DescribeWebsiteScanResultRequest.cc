@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteScanResultRequest;
 
 DescribeWebsiteScanResultRequest::DescribeWebsiteScanResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteScanResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteScanResultRequest::~DescribeWebsiteScanResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeWebsiteScanResultRequest::getSubServiceModule()const
 void DescribeWebsiteScanResultRequest::setSubServiceModule(const std::string& subServiceModule)
 {
 	subServiceModule_ = subServiceModule;
-	setCoreParameter("SubServiceModule", subServiceModule);
+	setParameter("SubServiceModule", subServiceModule);
 }
 
 std::string DescribeWebsiteScanResultRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeWebsiteScanResultRequest::getSourceIp()const
 void DescribeWebsiteScanResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebsiteScanResultRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeWebsiteScanResultRequest::getPageSize()const
 void DescribeWebsiteScanResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWebsiteScanResultRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeWebsiteScanResultRequest::getLang()const
 void DescribeWebsiteScanResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeWebsiteScanResultRequest::getTotalCount()const
@@ -77,7 +79,7 @@ int DescribeWebsiteScanResultRequest::getTotalCount()const
 void DescribeWebsiteScanResultRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
@@ -88,7 +90,7 @@ std::string DescribeWebsiteScanResultRequest::getSiteUrl()const
 void DescribeWebsiteScanResultRequest::setSiteUrl(const std::string& siteUrl)
 {
 	siteUrl_ = siteUrl;
-	setCoreParameter("SiteUrl", siteUrl);
+	setParameter("SiteUrl", siteUrl);
 }
 
 std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
@@ -99,7 +101,7 @@ std::string DescribeWebsiteScanResultRequest::getHandleStatus()const
 void DescribeWebsiteScanResultRequest::setHandleStatus(const std::string& handleStatus)
 {
 	handleStatus_ = handleStatus;
-	setCoreParameter("HandleStatus", handleStatus);
+	setParameter("HandleStatus", handleStatus);
 }
 
 int DescribeWebsiteScanResultRequest::getCurrentPage()const
@@ -110,7 +112,7 @@ int DescribeWebsiteScanResultRequest::getCurrentPage()const
 void DescribeWebsiteScanResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWebsiteScanResultRequest::getLabel()const
@@ -121,7 +123,7 @@ std::string DescribeWebsiteScanResultRequest::getLabel()const
 void DescribeWebsiteScanResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 
 std::string DescribeWebsiteScanResultRequest::getDomain()const
@@ -132,6 +134,6 @@ std::string DescribeWebsiteScanResultRequest::getDomain()const
 void DescribeWebsiteScanResultRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

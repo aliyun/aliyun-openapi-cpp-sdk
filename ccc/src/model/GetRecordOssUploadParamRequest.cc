@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetRecordOssUploadParamRequest;
 
 GetRecordOssUploadParamRequest::GetRecordOssUploadParamRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetRecordOssUploadParam")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRecordOssUploadParamRequest::~GetRecordOssUploadParamRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetRecordOssUploadParamRequest::getInstanceId()const
 void GetRecordOssUploadParamRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetRecordOssUploadParamRequest::getFileName()const
@@ -44,7 +46,7 @@ std::string GetRecordOssUploadParamRequest::getFileName()const
 void GetRecordOssUploadParamRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setParameter("FileName", fileName);
 }
 
 std::string GetRecordOssUploadParamRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetRecordOssUploadParamRequest::getAccessKeyId()const
 void GetRecordOssUploadParamRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

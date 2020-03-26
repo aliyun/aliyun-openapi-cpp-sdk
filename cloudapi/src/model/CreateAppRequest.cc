@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateAppRequest;
 
 CreateAppRequest::CreateAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAppRequest::~CreateAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAppRequest::getDescription()const
 void CreateAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateAppRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateAppRequest::getAccessKeyId()const
 void CreateAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAppRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string CreateAppRequest::getAppName()const
 void CreateAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string CreateAppRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string CreateAppRequest::getSecurityToken()const
 void CreateAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::vector<CreateAppRequest::Tag> CreateAppRequest::getTag()const
@@ -77,12 +79,11 @@ std::vector<CreateAppRequest::Tag> CreateAppRequest::getTag()const
 void CreateAppRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

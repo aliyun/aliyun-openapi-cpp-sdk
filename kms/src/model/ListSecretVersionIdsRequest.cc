@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListSecretVersionIdsRequest;
 ListSecretVersionIdsRequest::ListSecretVersionIdsRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListSecretVersionIds")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListSecretVersionIdsRequest::~ListSecretVersionIdsRequest()

@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTags()const;
 				void setTags(const std::string& tags);
+				std::string getAliCloudCertificateRegionId()const;
+				void setAliCloudCertificateRegionId(const std::string& aliCloudCertificateRegionId);
 				std::string getServerCertificateName()const;
 				void setServerCertificateName(const std::string& serverCertificateName);
 
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string tags_;
+				std::string aliCloudCertificateRegionId_;
 				std::string serverCertificateName_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AddApgroupConfigRequest;
 
 AddApgroupConfigRequest::AddApgroupConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AddApgroupConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddApgroupConfigRequest::~AddApgroupConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddApgroupConfigRequest::getDescription()const
 void AddApgroupConfigRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string AddApgroupConfigRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddApgroupConfigRequest::getAccessKeyId()const
 void AddApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long AddApgroupConfigRequest::getParentApgroupId()const
@@ -55,7 +57,7 @@ long AddApgroupConfigRequest::getParentApgroupId()const
 void AddApgroupConfigRequest::setParentApgroupId(long parentApgroupId)
 {
 	parentApgroupId_ = parentApgroupId;
-	setCoreParameter("ParentApgroupId", std::to_string(parentApgroupId));
+	setParameter("ParentApgroupId", std::to_string(parentApgroupId));
 }
 
 std::string AddApgroupConfigRequest::getName()const
@@ -66,6 +68,6 @@ std::string AddApgroupConfigRequest::getName()const
 void AddApgroupConfigRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

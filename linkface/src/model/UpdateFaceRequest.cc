@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::UpdateFaceRequest;
 
 UpdateFaceRequest::UpdateFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "UpdateFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateFaceRequest::~UpdateFaceRequest()
 {}
-
-std::string UpdateFaceRequest::getImage()const
-{
-	return image_;
-}
-
-void UpdateFaceRequest::setImage(const std::string& image)
-{
-	image_ = image;
-	setCoreParameter("Image", image);
-}
 
 std::string UpdateFaceRequest::getUserId()const
 {
@@ -44,7 +35,7 @@ std::string UpdateFaceRequest::getUserId()const
 void UpdateFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
 }
 
 std::string UpdateFaceRequest::getUserInfo()const
@@ -55,6 +46,39 @@ std::string UpdateFaceRequest::getUserInfo()const
 void UpdateFaceRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setCoreParameter("UserInfo", userInfo);
+	setBodyParameter("UserInfo", userInfo);
+}
+
+std::string UpdateFaceRequest::getImage()const
+{
+	return image_;
+}
+
+void UpdateFaceRequest::setImage(const std::string& image)
+{
+	image_ = image;
+	setBodyParameter("Image", image);
+}
+
+std::string UpdateFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UpdateFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

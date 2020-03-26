@@ -50,9 +50,15 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
+					struct SummaryItem
+					{
+						std::string category;
+						std::string content;
+						std::string summaryName;
+					};
 					struct Task
 					{
-						struct Contact2
+						struct Contact3
 						{
 							std::string role;
 							std::string honorific;
@@ -65,14 +71,14 @@ namespace AlibabaCloud
 						};
 						struct ConversationDetail
 						{
-							struct SummaryItem
+							struct SummaryItem2
 							{
 								std::string category;
 								std::string content;
 								std::string summaryName;
 							};
 							std::string script;
-							std::vector<ConversationDetail::SummaryItem> summary1;
+							std::vector<ConversationDetail::SummaryItem2> summary1;
 							long timestamp;
 							std::string speaker;
 						};
@@ -80,22 +86,16 @@ namespace AlibabaCloud
 						std::string chatbotId;
 						long planedTime;
 						std::string calledNumber;
-						std::string taskId;
 						std::string scenarioId;
+						std::string taskId;
 						long actualTime;
 						std::string callId;
 						std::vector<Task::ConversationDetail> conversation;
 						int duration;
 						std::string brief;
 						std::string callingNumber;
-						Contact2 contact2;
+						Contact3 contact3;
 						std::string jobId;
-					};
-					struct SummaryItem3
-					{
-						std::string category;
-						std::string content;
-						std::string summaryName;
 					};
 					std::string status;
 					std::vector<Task> tasks;
@@ -106,9 +106,9 @@ namespace AlibabaCloud
 					std::string jobGroupId;
 					std::vector<Contact> contacts;
 					std::string referenceId;
-					int systemPriority;
 					std::string failureReason;
-					std::vector<SummaryItem3> summary;
+					int systemPriority;
+					std::vector<SummaryItem> summary;
 					std::string jobId;
 					std::vector<std::string> callingNumbers;
 				};

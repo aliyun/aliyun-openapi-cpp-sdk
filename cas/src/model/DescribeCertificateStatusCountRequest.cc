@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateStatusCountRequest;
 
 DescribeCertificateStatusCountRequest::DescribeCertificateStatusCountRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateStatusCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateStatusCountRequest::~DescribeCertificateStatusCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCertificateStatusCountRequest::getResourceGroupId()const
 void DescribeCertificateStatusCountRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCertificateStatusCountRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCertificateStatusCountRequest::getSourceIp()const
 void DescribeCertificateStatusCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::vector<DescribeCertificateStatusCountRequest::Tag> DescribeCertificateStatusCountRequest::getTag()const
@@ -55,12 +57,11 @@ std::vector<DescribeCertificateStatusCountRequest::Tag> DescribeCertificateStatu
 void DescribeCertificateStatusCountRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -72,6 +73,6 @@ std::string DescribeCertificateStatusCountRequest::getLang()const
 void DescribeCertificateStatusCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::PutGroupMetricRuleRequest;
 PutGroupMetricRuleRequest::PutGroupMetricRuleRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "PutGroupMetricRule")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 PutGroupMetricRuleRequest::~PutGroupMetricRuleRequest()
@@ -35,7 +35,7 @@ std::string PutGroupMetricRuleRequest::getWebhook()const
 void PutGroupMetricRuleRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", webhook);
+	setParameter("Webhook", webhook);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsWarnComparisonOperator()const
@@ -46,7 +46,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsWarnComparisonOperator()con
 void PutGroupMetricRuleRequest::setEscalationsWarnComparisonOperator(const std::string& escalationsWarnComparisonOperator)
 {
 	escalationsWarnComparisonOperator_ = escalationsWarnComparisonOperator;
-	setCoreParameter("EscalationsWarnComparisonOperator", escalationsWarnComparisonOperator);
+	setParameter("EscalationsWarnComparisonOperator", escalationsWarnComparisonOperator);
 }
 
 std::string PutGroupMetricRuleRequest::getRuleName()const
@@ -57,7 +57,7 @@ std::string PutGroupMetricRuleRequest::getRuleName()const
 void PutGroupMetricRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsInfoStatistics()const
@@ -68,7 +68,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsInfoStatistics()const
 void PutGroupMetricRuleRequest::setEscalationsInfoStatistics(const std::string& escalationsInfoStatistics)
 {
 	escalationsInfoStatistics_ = escalationsInfoStatistics;
-	setCoreParameter("EscalationsInfoStatistics", escalationsInfoStatistics);
+	setParameter("EscalationsInfoStatistics", escalationsInfoStatistics);
 }
 
 std::string PutGroupMetricRuleRequest::getEffectiveInterval()const
@@ -79,7 +79,7 @@ std::string PutGroupMetricRuleRequest::getEffectiveInterval()const
 void PutGroupMetricRuleRequest::setEffectiveInterval(const std::string& effectiveInterval)
 {
 	effectiveInterval_ = effectiveInterval;
-	setCoreParameter("EffectiveInterval", effectiveInterval);
+	setParameter("EffectiveInterval", effectiveInterval);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsInfoComparisonOperator()const
@@ -90,7 +90,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsInfoComparisonOperator()con
 void PutGroupMetricRuleRequest::setEscalationsInfoComparisonOperator(const std::string& escalationsInfoComparisonOperator)
 {
 	escalationsInfoComparisonOperator_ = escalationsInfoComparisonOperator;
-	setCoreParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
+	setParameter("EscalationsInfoComparisonOperator", escalationsInfoComparisonOperator);
 }
 
 std::string PutGroupMetricRuleRequest::getNoEffectiveInterval()const
@@ -101,7 +101,7 @@ std::string PutGroupMetricRuleRequest::getNoEffectiveInterval()const
 void PutGroupMetricRuleRequest::setNoEffectiveInterval(const std::string& noEffectiveInterval)
 {
 	noEffectiveInterval_ = noEffectiveInterval;
-	setCoreParameter("NoEffectiveInterval", noEffectiveInterval);
+	setParameter("NoEffectiveInterval", noEffectiveInterval);
 }
 
 std::string PutGroupMetricRuleRequest::getEmailSubject()const
@@ -112,7 +112,7 @@ std::string PutGroupMetricRuleRequest::getEmailSubject()const
 void PutGroupMetricRuleRequest::setEmailSubject(const std::string& emailSubject)
 {
 	emailSubject_ = emailSubject;
-	setCoreParameter("EmailSubject", emailSubject);
+	setParameter("EmailSubject", emailSubject);
 }
 
 int PutGroupMetricRuleRequest::getSilenceTime()const
@@ -123,7 +123,7 @@ int PutGroupMetricRuleRequest::getSilenceTime()const
 void PutGroupMetricRuleRequest::setSilenceTime(int silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", std::to_string(silenceTime));
+	setParameter("SilenceTime", std::to_string(silenceTime));
 }
 
 std::string PutGroupMetricRuleRequest::getMetricName()const
@@ -134,7 +134,7 @@ std::string PutGroupMetricRuleRequest::getMetricName()const
 void PutGroupMetricRuleRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 int PutGroupMetricRuleRequest::getEscalationsWarnTimes()const
@@ -145,7 +145,7 @@ int PutGroupMetricRuleRequest::getEscalationsWarnTimes()const
 void PutGroupMetricRuleRequest::setEscalationsWarnTimes(int escalationsWarnTimes)
 {
 	escalationsWarnTimes_ = escalationsWarnTimes;
-	setCoreParameter("EscalationsWarnTimes", std::to_string(escalationsWarnTimes));
+	setParameter("EscalationsWarnTimes", std::to_string(escalationsWarnTimes));
 }
 
 std::string PutGroupMetricRuleRequest::getPeriod()const
@@ -156,7 +156,7 @@ std::string PutGroupMetricRuleRequest::getPeriod()const
 void PutGroupMetricRuleRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsWarnThreshold()const
@@ -167,7 +167,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsWarnThreshold()const
 void PutGroupMetricRuleRequest::setEscalationsWarnThreshold(const std::string& escalationsWarnThreshold)
 {
 	escalationsWarnThreshold_ = escalationsWarnThreshold;
-	setCoreParameter("EscalationsWarnThreshold", escalationsWarnThreshold);
+	setParameter("EscalationsWarnThreshold", escalationsWarnThreshold);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsCriticalStatistics()const
@@ -178,7 +178,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsCriticalStatistics()const
 void PutGroupMetricRuleRequest::setEscalationsCriticalStatistics(const std::string& escalationsCriticalStatistics)
 {
 	escalationsCriticalStatistics_ = escalationsCriticalStatistics;
-	setCoreParameter("EscalationsCriticalStatistics", escalationsCriticalStatistics);
+	setParameter("EscalationsCriticalStatistics", escalationsCriticalStatistics);
 }
 
 std::string PutGroupMetricRuleRequest::getGroupId()const
@@ -189,7 +189,7 @@ std::string PutGroupMetricRuleRequest::getGroupId()const
 void PutGroupMetricRuleRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int PutGroupMetricRuleRequest::getEscalationsInfoTimes()const
@@ -200,7 +200,7 @@ int PutGroupMetricRuleRequest::getEscalationsInfoTimes()const
 void PutGroupMetricRuleRequest::setEscalationsInfoTimes(int escalationsInfoTimes)
 {
 	escalationsInfoTimes_ = escalationsInfoTimes;
-	setCoreParameter("EscalationsInfoTimes", std::to_string(escalationsInfoTimes));
+	setParameter("EscalationsInfoTimes", std::to_string(escalationsInfoTimes));
 }
 
 int PutGroupMetricRuleRequest::getEscalationsCriticalTimes()const
@@ -211,7 +211,7 @@ int PutGroupMetricRuleRequest::getEscalationsCriticalTimes()const
 void PutGroupMetricRuleRequest::setEscalationsCriticalTimes(int escalationsCriticalTimes)
 {
 	escalationsCriticalTimes_ = escalationsCriticalTimes;
-	setCoreParameter("EscalationsCriticalTimes", std::to_string(escalationsCriticalTimes));
+	setParameter("EscalationsCriticalTimes", std::to_string(escalationsCriticalTimes));
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsWarnStatistics()const
@@ -222,7 +222,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsWarnStatistics()const
 void PutGroupMetricRuleRequest::setEscalationsWarnStatistics(const std::string& escalationsWarnStatistics)
 {
 	escalationsWarnStatistics_ = escalationsWarnStatistics;
-	setCoreParameter("EscalationsWarnStatistics", escalationsWarnStatistics);
+	setParameter("EscalationsWarnStatistics", escalationsWarnStatistics);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsInfoThreshold()const
@@ -233,7 +233,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsInfoThreshold()const
 void PutGroupMetricRuleRequest::setEscalationsInfoThreshold(const std::string& escalationsInfoThreshold)
 {
 	escalationsInfoThreshold_ = escalationsInfoThreshold;
-	setCoreParameter("EscalationsInfoThreshold", escalationsInfoThreshold);
+	setParameter("EscalationsInfoThreshold", escalationsInfoThreshold);
 }
 
 std::string PutGroupMetricRuleRequest::get_Namespace()const
@@ -244,7 +244,7 @@ std::string PutGroupMetricRuleRequest::get_Namespace()const
 void PutGroupMetricRuleRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 std::string PutGroupMetricRuleRequest::getInterval()const
@@ -255,7 +255,7 @@ std::string PutGroupMetricRuleRequest::getInterval()const
 void PutGroupMetricRuleRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 
 std::string PutGroupMetricRuleRequest::getRuleId()const
@@ -266,7 +266,7 @@ std::string PutGroupMetricRuleRequest::getRuleId()const
 void PutGroupMetricRuleRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 
 std::string PutGroupMetricRuleRequest::getCategory()const
@@ -277,7 +277,7 @@ std::string PutGroupMetricRuleRequest::getCategory()const
 void PutGroupMetricRuleRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsCriticalComparisonOperator()const
@@ -288,7 +288,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsCriticalComparisonOperator(
 void PutGroupMetricRuleRequest::setEscalationsCriticalComparisonOperator(const std::string& escalationsCriticalComparisonOperator)
 {
 	escalationsCriticalComparisonOperator_ = escalationsCriticalComparisonOperator;
-	setCoreParameter("EscalationsCriticalComparisonOperator", escalationsCriticalComparisonOperator);
+	setParameter("EscalationsCriticalComparisonOperator", escalationsCriticalComparisonOperator);
 }
 
 std::string PutGroupMetricRuleRequest::getEscalationsCriticalThreshold()const
@@ -299,7 +299,7 @@ std::string PutGroupMetricRuleRequest::getEscalationsCriticalThreshold()const
 void PutGroupMetricRuleRequest::setEscalationsCriticalThreshold(const std::string& escalationsCriticalThreshold)
 {
 	escalationsCriticalThreshold_ = escalationsCriticalThreshold;
-	setCoreParameter("EscalationsCriticalThreshold", escalationsCriticalThreshold);
+	setParameter("EscalationsCriticalThreshold", escalationsCriticalThreshold);
 }
 
 std::string PutGroupMetricRuleRequest::getDimensions()const
@@ -310,6 +310,6 @@ std::string PutGroupMetricRuleRequest::getDimensions()const
 void PutGroupMetricRuleRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setParameter("Dimensions", dimensions);
 }
 

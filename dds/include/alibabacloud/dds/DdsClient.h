@@ -88,6 +88,8 @@
 #include "model/DescribeInstanceAutoRenewalAttributeResult.h"
 #include "model/DescribeKernelReleaseNotesRequest.h"
 #include "model/DescribeKernelReleaseNotesResult.h"
+#include "model/DescribeMongoDBLogConfigRequest.h"
+#include "model/DescribeMongoDBLogConfigResult.h"
 #include "model/DescribeParameterModificationHistoryRequest.h"
 #include "model/DescribeParameterModificationHistoryResult.h"
 #include "model/DescribeParameterTemplatesRequest.h"
@@ -294,6 +296,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeKernelReleaseNotesResult> DescribeKernelReleaseNotesOutcome;
 			typedef std::future<DescribeKernelReleaseNotesOutcome> DescribeKernelReleaseNotesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeKernelReleaseNotesRequest&, const DescribeKernelReleaseNotesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKernelReleaseNotesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMongoDBLogConfigResult> DescribeMongoDBLogConfigOutcome;
+			typedef std::future<DescribeMongoDBLogConfigOutcome> DescribeMongoDBLogConfigOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeMongoDBLogConfigRequest&, const DescribeMongoDBLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongoDBLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeParameterModificationHistoryResult> DescribeParameterModificationHistoryOutcome;
 			typedef std::future<DescribeParameterModificationHistoryOutcome> DescribeParameterModificationHistoryOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeParameterModificationHistoryRequest&, const DescribeParameterModificationHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterModificationHistoryAsyncHandler;
@@ -545,6 +550,9 @@ namespace AlibabaCloud
 			DescribeKernelReleaseNotesOutcome describeKernelReleaseNotes(const Model::DescribeKernelReleaseNotesRequest &request)const;
 			void describeKernelReleaseNotesAsync(const Model::DescribeKernelReleaseNotesRequest& request, const DescribeKernelReleaseNotesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKernelReleaseNotesOutcomeCallable describeKernelReleaseNotesCallable(const Model::DescribeKernelReleaseNotesRequest& request) const;
+			DescribeMongoDBLogConfigOutcome describeMongoDBLogConfig(const Model::DescribeMongoDBLogConfigRequest &request)const;
+			void describeMongoDBLogConfigAsync(const Model::DescribeMongoDBLogConfigRequest& request, const DescribeMongoDBLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMongoDBLogConfigOutcomeCallable describeMongoDBLogConfigCallable(const Model::DescribeMongoDBLogConfigRequest& request) const;
 			DescribeParameterModificationHistoryOutcome describeParameterModificationHistory(const Model::DescribeParameterModificationHistoryRequest &request)const;
 			void describeParameterModificationHistoryAsync(const Model::DescribeParameterModificationHistoryRequest& request, const DescribeParameterModificationHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParameterModificationHistoryOutcomeCallable describeParameterModificationHistoryCallable(const Model::DescribeParameterModificationHistoryRequest& request) const;

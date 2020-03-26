@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddListenerWhiteListItemRequest;
 
 AddListenerWhiteListItemRequest::AddListenerWhiteListItemRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddListenerWhiteListItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddListenerWhiteListItemRequest::~AddListenerWhiteListItemRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddListenerWhiteListItemRequest::getAccess_key_id()const
 void AddListenerWhiteListItemRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long AddListenerWhiteListItemRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long AddListenerWhiteListItemRequest::getResourceOwnerId()const
 void AddListenerWhiteListItemRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddListenerWhiteListItemRequest::getSourceItems()const
@@ -55,7 +57,7 @@ std::string AddListenerWhiteListItemRequest::getSourceItems()const
 void AddListenerWhiteListItemRequest::setSourceItems(const std::string& sourceItems)
 {
 	sourceItems_ = sourceItems;
-	setCoreParameter("SourceItems", sourceItems);
+	setParameter("SourceItems", sourceItems);
 }
 
 std::string AddListenerWhiteListItemRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string AddListenerWhiteListItemRequest::getRegionId()const
 void AddListenerWhiteListItemRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int AddListenerWhiteListItemRequest::getListenerPort()const
@@ -77,7 +79,7 @@ int AddListenerWhiteListItemRequest::getListenerPort()const
 void AddListenerWhiteListItemRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AddListenerWhiteListItemRequest::getResourceOwnerAccount()const
 void AddListenerWhiteListItemRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string AddListenerWhiteListItemRequest::getOwnerAccount()const
 void AddListenerWhiteListItemRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddListenerWhiteListItemRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long AddListenerWhiteListItemRequest::getOwnerId()const
 void AddListenerWhiteListItemRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddListenerWhiteListItemRequest::getListenerProtocol()const
@@ -121,7 +123,7 @@ std::string AddListenerWhiteListItemRequest::getListenerProtocol()const
 void AddListenerWhiteListItemRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string AddListenerWhiteListItemRequest::getTags()const
@@ -132,7 +134,7 @@ std::string AddListenerWhiteListItemRequest::getTags()const
 void AddListenerWhiteListItemRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
@@ -143,6 +145,6 @@ std::string AddListenerWhiteListItemRequest::getLoadBalancerId()const
 void AddListenerWhiteListItemRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

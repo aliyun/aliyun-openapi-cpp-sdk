@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateDeviceGroupRequest;
 
 CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDeviceGroupRequest::~CreateDeviceGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateDeviceGroupRequest::getSuperGroupId()const
 void CreateDeviceGroupRequest::setSuperGroupId(const std::string& superGroupId)
 {
 	superGroupId_ = superGroupId;
-	setCoreParameter("SuperGroupId", superGroupId);
+	setParameter("SuperGroupId", superGroupId);
 }
 
 std::string CreateDeviceGroupRequest::getGroupName()const
@@ -44,7 +46,7 @@ std::string CreateDeviceGroupRequest::getGroupName()const
 void CreateDeviceGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string CreateDeviceGroupRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateDeviceGroupRequest::getAccessKeyId()const
 void CreateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDeviceGroupRequest::getGroupDesc()const
@@ -66,7 +68,7 @@ std::string CreateDeviceGroupRequest::getGroupDesc()const
 void CreateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
 {
 	groupDesc_ = groupDesc;
-	setCoreParameter("GroupDesc", groupDesc);
+	setParameter("GroupDesc", groupDesc);
 }
 
 std::string CreateDeviceGroupRequest::getIotInstanceId()const
@@ -77,6 +79,6 @@ std::string CreateDeviceGroupRequest::getIotInstanceId()const
 void CreateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

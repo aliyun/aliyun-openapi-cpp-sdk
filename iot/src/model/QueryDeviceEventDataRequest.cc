@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceEventDataRequest;
 
 QueryDeviceEventDataRequest::QueryDeviceEventDataRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceEventData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceEventDataRequest::~QueryDeviceEventDataRequest()
 {}
@@ -33,7 +35,7 @@ long QueryDeviceEventDataRequest::getStartTime()const
 void QueryDeviceEventDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDeviceEventDataRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceEventDataRequest::getAccessKeyId()const
 void QueryDeviceEventDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceEventDataRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string QueryDeviceEventDataRequest::getIotId()const
 void QueryDeviceEventDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDeviceEventDataRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceEventDataRequest::getIotInstanceId()const
 void QueryDeviceEventDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceEventDataRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryDeviceEventDataRequest::getPageSize()const
 void QueryDeviceEventDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryDeviceEventDataRequest::getIdentifier()const
@@ -88,7 +90,7 @@ std::string QueryDeviceEventDataRequest::getIdentifier()const
 void QueryDeviceEventDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setParameter("Identifier", identifier);
 }
 
 long QueryDeviceEventDataRequest::getEndTime()const
@@ -99,7 +101,7 @@ long QueryDeviceEventDataRequest::getEndTime()const
 void QueryDeviceEventDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryDeviceEventDataRequest::getProductKey()const
@@ -110,7 +112,7 @@ std::string QueryDeviceEventDataRequest::getProductKey()const
 void QueryDeviceEventDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 int QueryDeviceEventDataRequest::getAsc()const
@@ -121,7 +123,7 @@ int QueryDeviceEventDataRequest::getAsc()const
 void QueryDeviceEventDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setCoreParameter("Asc", std::to_string(asc));
+	setParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceEventDataRequest::getEventType()const
@@ -132,7 +134,7 @@ std::string QueryDeviceEventDataRequest::getEventType()const
 void QueryDeviceEventDataRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string QueryDeviceEventDataRequest::getDeviceName()const
@@ -143,6 +145,6 @@ std::string QueryDeviceEventDataRequest::getDeviceName()const
 void QueryDeviceEventDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

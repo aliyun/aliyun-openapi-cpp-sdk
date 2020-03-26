@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMCTemplateListRequest;
 
 QueryMCTemplateListRequest::QueryMCTemplateListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMCTemplateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMCTemplateListRequest::~QueryMCTemplateListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryMCTemplateListRequest::getResourceOwnerId()const
 void QueryMCTemplateListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMCTemplateListRequest::getTemplateIds()const
@@ -44,7 +46,7 @@ std::string QueryMCTemplateListRequest::getTemplateIds()const
 void QueryMCTemplateListRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setParameter("TemplateIds", templateIds);
 }
 
 std::string QueryMCTemplateListRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryMCTemplateListRequest::getResourceOwnerAccount()const
 void QueryMCTemplateListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMCTemplateListRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string QueryMCTemplateListRequest::getOwnerAccount()const
 void QueryMCTemplateListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMCTemplateListRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long QueryMCTemplateListRequest::getOwnerId()const
 void QueryMCTemplateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMCTemplateListRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string QueryMCTemplateListRequest::getAccessKeyId()const
 void QueryMCTemplateListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterServiceConfigRequest;
 
 DescribeClusterServiceConfigRequest::DescribeClusterServiceConfigRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterServiceConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterServiceConfigRequest::~DescribeClusterServiceConfigRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterServiceConfigRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterServiceConfigRequest::getHostInstanceId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterServiceConfigRequest::getHostInstanceId()const
 void DescribeClusterServiceConfigRequest::setHostInstanceId(const std::string& hostInstanceId)
 {
 	hostInstanceId_ = hostInstanceId;
-	setCoreParameter("HostInstanceId", hostInstanceId);
+	setParameter("HostInstanceId", hostInstanceId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getTagValue()const
@@ -55,7 +57,7 @@ std::string DescribeClusterServiceConfigRequest::getTagValue()const
 void DescribeClusterServiceConfigRequest::setTagValue(const std::string& tagValue)
 {
 	tagValue_ = tagValue;
-	setCoreParameter("TagValue", tagValue);
+	setParameter("TagValue", tagValue);
 }
 
 std::string DescribeClusterServiceConfigRequest::getGroupId()const
@@ -66,7 +68,7 @@ std::string DescribeClusterServiceConfigRequest::getGroupId()const
 void DescribeClusterServiceConfigRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getClusterId()const
@@ -77,7 +79,7 @@ std::string DescribeClusterServiceConfigRequest::getClusterId()const
 void DescribeClusterServiceConfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string DescribeClusterServiceConfigRequest::getAccessKeyId()const
 void DescribeClusterServiceConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getConfigVersion()const
@@ -99,7 +101,7 @@ std::string DescribeClusterServiceConfigRequest::getConfigVersion()const
 void DescribeClusterServiceConfigRequest::setConfigVersion(const std::string& configVersion)
 {
 	configVersion_ = configVersion;
-	setCoreParameter("ConfigVersion", configVersion);
+	setParameter("ConfigVersion", configVersion);
 }
 
 std::string DescribeClusterServiceConfigRequest::getRegionId()const
@@ -110,7 +112,7 @@ std::string DescribeClusterServiceConfigRequest::getRegionId()const
 void DescribeClusterServiceConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterServiceConfigRequest::getServiceName()const
@@ -121,6 +123,6 @@ std::string DescribeClusterServiceConfigRequest::getServiceName()const
 void DescribeClusterServiceConfigRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVpnPbrRouteEntriesRequest;
 
 DescribeVpnPbrRouteEntriesRequest::DescribeVpnPbrRouteEntriesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnPbrRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpnPbrRouteEntriesRequest::~DescribeVpnPbrRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeVpnPbrRouteEntriesRequest::getResourceOwnerId()const
 void DescribeVpnPbrRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeVpnPbrRouteEntriesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeVpnPbrRouteEntriesRequest::getPageNumber()const
 void DescribeVpnPbrRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeVpnPbrRouteEntriesRequest::getRegionId()const
 void DescribeVpnPbrRouteEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeVpnPbrRouteEntriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeVpnPbrRouteEntriesRequest::getPageSize()const
 void DescribeVpnPbrRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeVpnPbrRouteEntriesRequest::getResourceOwnerAccount()const
 void DescribeVpnPbrRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeVpnPbrRouteEntriesRequest::getOwnerAccount()const
 void DescribeVpnPbrRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeVpnPbrRouteEntriesRequest::getVpnGatewayId()const
@@ -99,7 +101,7 @@ std::string DescribeVpnPbrRouteEntriesRequest::getVpnGatewayId()const
 void DescribeVpnPbrRouteEntriesRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long DescribeVpnPbrRouteEntriesRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long DescribeVpnPbrRouteEntriesRequest::getOwnerId()const
 void DescribeVpnPbrRouteEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

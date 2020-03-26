@@ -37,14 +37,16 @@ namespace AlibabaCloud
 					std::string description;
 					std::string launchTime;
 					std::string scheduledTaskId;
+					std::string scalingGroupId;
 					std::string recurrenceType;
-					int minValue;
 					std::string scheduledTaskName;
-					std::string scheduledAction;
+					int desiredCapacity;
 					int maxValue;
+					int launchExpirationTime;
+					int minValue;
+					std::string scheduledAction;
 					std::string recurrenceEndTime;
 					std::string recurrenceValue;
-					int launchExpirationTime;
 					bool taskEnabled;
 				};
 

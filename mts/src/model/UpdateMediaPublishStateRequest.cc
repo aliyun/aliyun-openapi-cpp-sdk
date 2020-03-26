@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaPublishStateRequest;
 
 UpdateMediaPublishStateRequest::UpdateMediaPublishStateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMediaPublishState")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaPublishStateRequest::~UpdateMediaPublishStateRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateMediaPublishStateRequest::getResourceOwnerId()const
 void UpdateMediaPublishStateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaPublishStateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateMediaPublishStateRequest::getAccessKeyId()const
 void UpdateMediaPublishStateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaPublishStateRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string UpdateMediaPublishStateRequest::getResourceOwnerAccount()const
 void UpdateMediaPublishStateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaPublishStateRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateMediaPublishStateRequest::getOwnerAccount()const
 void UpdateMediaPublishStateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaPublishStateRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long UpdateMediaPublishStateRequest::getOwnerId()const
 void UpdateMediaPublishStateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaPublishStateRequest::getMediaId()const
@@ -88,7 +90,7 @@ std::string UpdateMediaPublishStateRequest::getMediaId()const
 void UpdateMediaPublishStateRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 bool UpdateMediaPublishStateRequest::getPublish()const
@@ -99,6 +101,6 @@ bool UpdateMediaPublishStateRequest::getPublish()const
 void UpdateMediaPublishStateRequest::setPublish(bool publish)
 {
 	publish_ = publish;
-	setCoreParameter("Publish", publish ? "true" : "false");
+	setParameter("Publish", publish ? "true" : "false");
 }
 

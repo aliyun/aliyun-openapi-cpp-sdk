@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartBoardRecordRequest;
 
 StartBoardRecordRequest::StartBoardRecordRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartBoardRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBoardRecordRequest::~StartBoardRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartBoardRecordRequest::getStartTime()const
 void StartBoardRecordRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string StartBoardRecordRequest::getBoardId()const
@@ -44,7 +46,7 @@ std::string StartBoardRecordRequest::getBoardId()const
 void StartBoardRecordRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 
 long StartBoardRecordRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long StartBoardRecordRequest::getOwnerId()const
 void StartBoardRecordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartBoardRecordRequest::getAppId()const
@@ -66,6 +68,6 @@ std::string StartBoardRecordRequest::getAppId()const
 void StartBoardRecordRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

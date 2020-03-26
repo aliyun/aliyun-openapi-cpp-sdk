@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetPersonInStore5MinRequest;
 
 GetPersonInStore5MinRequest::GetPersonInStore5MinRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetPersonInStore5Min")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPersonInStore5MinRequest::~GetPersonInStore5MinRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPersonInStore5MinRequest::getDate()const
 void GetPersonInStore5MinRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 long GetPersonInStore5MinRequest::getStoreId()const
@@ -44,6 +46,6 @@ long GetPersonInStore5MinRequest::getStoreId()const
 void GetPersonInStore5MinRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 

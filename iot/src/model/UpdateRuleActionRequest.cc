@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateRuleActionRequest;
 
 UpdateRuleActionRequest::UpdateRuleActionRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateRuleAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateRuleActionRequest::~UpdateRuleActionRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateRuleActionRequest::getConfiguration()const
 void UpdateRuleActionRequest::setConfiguration(const std::string& configuration)
 {
 	configuration_ = configuration;
-	setCoreParameter("Configuration", configuration);
+	setParameter("Configuration", configuration);
 }
 
 std::string UpdateRuleActionRequest::getType()const
@@ -44,7 +46,7 @@ std::string UpdateRuleActionRequest::getType()const
 void UpdateRuleActionRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string UpdateRuleActionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UpdateRuleActionRequest::getAccessKeyId()const
 void UpdateRuleActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateRuleActionRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string UpdateRuleActionRequest::getIotInstanceId()const
 void UpdateRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 long UpdateRuleActionRequest::getActionId()const
@@ -77,6 +79,6 @@ long UpdateRuleActionRequest::getActionId()const
 void UpdateRuleActionRequest::setActionId(long actionId)
 {
 	actionId_ = actionId;
-	setCoreParameter("ActionId", std::to_string(actionId));
+	setParameter("ActionId", std::to_string(actionId));
 }
 

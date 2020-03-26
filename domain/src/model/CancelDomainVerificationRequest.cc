@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CancelDomainVerificationRequest;
 
 CancelDomainVerificationRequest::CancelDomainVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CancelDomainVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelDomainVerificationRequest::~CancelDomainVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string CancelDomainVerificationRequest::getActionType()const
 void CancelDomainVerificationRequest::setActionType(const std::string& actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", actionType);
+	setParameter("ActionType", actionType);
 }
 
 std::string CancelDomainVerificationRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CancelDomainVerificationRequest::getAccessKeyId()const
 void CancelDomainVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CancelDomainVerificationRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string CancelDomainVerificationRequest::getInstanceId()const
 void CancelDomainVerificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CancelDomainVerificationRequest::getUserClientIp()const
@@ -66,7 +68,7 @@ std::string CancelDomainVerificationRequest::getUserClientIp()const
 void CancelDomainVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CancelDomainVerificationRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CancelDomainVerificationRequest::getLang()const
 void CancelDomainVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

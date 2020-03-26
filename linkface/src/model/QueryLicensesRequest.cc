@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::QueryLicensesRequest;
 
 QueryLicensesRequest::QueryLicensesRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryLicenses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryLicensesRequest::~QueryLicensesRequest()
 {}
-
-int QueryLicensesRequest::getLicenseType()const
-{
-	return licenseType_;
-}
-
-void QueryLicensesRequest::setLicenseType(int licenseType)
-{
-	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", std::to_string(licenseType));
-}
 
 int QueryLicensesRequest::getPageSize()const
 {
@@ -44,7 +35,18 @@ int QueryLicensesRequest::getPageSize()const
 void QueryLicensesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryLicensesRequest::getLicenseType()const
+{
+	return licenseType_;
+}
+
+void QueryLicensesRequest::setLicenseType(int licenseType)
+{
+	licenseType_ = licenseType;
+	setBodyParameter("LicenseType", std::to_string(licenseType));
 }
 
 int QueryLicensesRequest::getCurrentPage()const
@@ -55,6 +57,28 @@ int QueryLicensesRequest::getCurrentPage()const
 void QueryLicensesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setBodyParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryLicensesRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryLicensesRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryLicensesRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryLicensesRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

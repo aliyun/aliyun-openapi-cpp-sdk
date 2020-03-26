@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateQosPolicyRequest;
 
 CreateQosPolicyRequest::CreateQosPolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateQosPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQosPolicyRequest::~CreateQosPolicyRequest()
 {}
@@ -33,7 +35,7 @@ long CreateQosPolicyRequest::getResourceOwnerId()const
 void CreateQosPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateQosPolicyRequest::getSourcePortRange()const
@@ -44,7 +46,7 @@ std::string CreateQosPolicyRequest::getSourcePortRange()const
 void CreateQosPolicyRequest::setSourcePortRange(const std::string& sourcePortRange)
 {
 	sourcePortRange_ = sourcePortRange;
-	setCoreParameter("SourcePortRange", sourcePortRange);
+	setParameter("SourcePortRange", sourcePortRange);
 }
 
 std::string CreateQosPolicyRequest::getSourceCidr()const
@@ -55,7 +57,7 @@ std::string CreateQosPolicyRequest::getSourceCidr()const
 void CreateQosPolicyRequest::setSourceCidr(const std::string& sourceCidr)
 {
 	sourceCidr_ = sourceCidr;
-	setCoreParameter("SourceCidr", sourceCidr);
+	setParameter("SourceCidr", sourceCidr);
 }
 
 std::string CreateQosPolicyRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string CreateQosPolicyRequest::getDescription()const
 void CreateQosPolicyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateQosPolicyRequest::getStartTime()const
@@ -77,7 +79,7 @@ std::string CreateQosPolicyRequest::getStartTime()const
 void CreateQosPolicyRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string CreateQosPolicyRequest::getDestCidr()const
@@ -88,7 +90,7 @@ std::string CreateQosPolicyRequest::getDestCidr()const
 void CreateQosPolicyRequest::setDestCidr(const std::string& destCidr)
 {
 	destCidr_ = destCidr;
-	setCoreParameter("DestCidr", destCidr);
+	setParameter("DestCidr", destCidr);
 }
 
 std::string CreateQosPolicyRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string CreateQosPolicyRequest::getRegionId()const
 void CreateQosPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateQosPolicyRequest::getQosId()const
@@ -110,7 +112,7 @@ std::string CreateQosPolicyRequest::getQosId()const
 void CreateQosPolicyRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string CreateQosPolicyRequest::getResourceOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateQosPolicyRequest::getResourceOwnerAccount()const
 void CreateQosPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateQosPolicyRequest::getIpProtocol()const
@@ -132,7 +134,7 @@ std::string CreateQosPolicyRequest::getIpProtocol()const
 void CreateQosPolicyRequest::setIpProtocol(const std::string& ipProtocol)
 {
 	ipProtocol_ = ipProtocol;
-	setCoreParameter("IpProtocol", ipProtocol);
+	setParameter("IpProtocol", ipProtocol);
 }
 
 std::string CreateQosPolicyRequest::getOwnerAccount()const
@@ -143,7 +145,7 @@ std::string CreateQosPolicyRequest::getOwnerAccount()const
 void CreateQosPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateQosPolicyRequest::getEndTime()const
@@ -154,7 +156,7 @@ std::string CreateQosPolicyRequest::getEndTime()const
 void CreateQosPolicyRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long CreateQosPolicyRequest::getOwnerId()const
@@ -165,7 +167,7 @@ long CreateQosPolicyRequest::getOwnerId()const
 void CreateQosPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateQosPolicyRequest::getPriority()const
@@ -176,7 +178,7 @@ int CreateQosPolicyRequest::getPriority()const
 void CreateQosPolicyRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string CreateQosPolicyRequest::getDestPortRange()const
@@ -187,6 +189,17 @@ std::string CreateQosPolicyRequest::getDestPortRange()const
 void CreateQosPolicyRequest::setDestPortRange(const std::string& destPortRange)
 {
 	destPortRange_ = destPortRange;
-	setCoreParameter("DestPortRange", destPortRange);
+	setParameter("DestPortRange", destPortRange);
+}
+
+std::string CreateQosPolicyRequest::getName()const
+{
+	return name_;
+}
+
+void CreateQosPolicyRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

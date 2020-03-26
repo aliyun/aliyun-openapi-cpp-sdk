@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::AbandonStackRequest;
 
 AbandonStackRequest::AbandonStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/abandon");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 AbandonStackRequest::~AbandonStackRequest()
 {}
@@ -33,7 +36,7 @@ std::string AbandonStackRequest::getStackId()const
 void AbandonStackRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string AbandonStackRequest::getStackName()const
@@ -44,6 +47,6 @@ std::string AbandonStackRequest::getStackName()const
 void AbandonStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

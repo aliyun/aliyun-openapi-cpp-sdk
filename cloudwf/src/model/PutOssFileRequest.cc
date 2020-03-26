@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::PutOssFileRequest;
 
 PutOssFileRequest::PutOssFileRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "PutOssFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PutOssFileRequest::~PutOssFileRequest()
 {}
@@ -33,7 +35,7 @@ std::string PutOssFileRequest::getJsonData()const
 void PutOssFileRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string PutOssFileRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string PutOssFileRequest::getAccessKeyId()const
 void PutOssFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

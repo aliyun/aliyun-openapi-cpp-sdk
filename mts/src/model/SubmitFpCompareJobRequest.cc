@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitFpCompareJobRequest;
 
 SubmitFpCompareJobRequest::SubmitFpCompareJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitFpCompareJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFpCompareJobRequest::~SubmitFpCompareJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitFpCompareJobRequest::getResourceOwnerId()const
 void SubmitFpCompareJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitFpCompareJobRequest::getFpDBId()const
@@ -44,7 +46,7 @@ std::string SubmitFpCompareJobRequest::getFpDBId()const
 void SubmitFpCompareJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
-	setCoreParameter("FpDBId", fpDBId);
+	setParameter("FpDBId", fpDBId);
 }
 
 std::string SubmitFpCompareJobRequest::getMasterMedia()const
@@ -55,7 +57,7 @@ std::string SubmitFpCompareJobRequest::getMasterMedia()const
 void SubmitFpCompareJobRequest::setMasterMedia(const std::string& masterMedia)
 {
 	masterMedia_ = masterMedia;
-	setCoreParameter("MasterMedia", masterMedia);
+	setParameter("MasterMedia", masterMedia);
 }
 
 std::string SubmitFpCompareJobRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SubmitFpCompareJobRequest::getAccessKeyId()const
 void SubmitFpCompareJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitFpCompareJobRequest::getUserData()const
@@ -77,7 +79,7 @@ std::string SubmitFpCompareJobRequest::getUserData()const
 void SubmitFpCompareJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitFpCompareJobRequest::getQueryMedia()const
@@ -88,7 +90,7 @@ std::string SubmitFpCompareJobRequest::getQueryMedia()const
 void SubmitFpCompareJobRequest::setQueryMedia(const std::string& queryMedia)
 {
 	queryMedia_ = queryMedia;
-	setCoreParameter("QueryMedia", queryMedia);
+	setParameter("QueryMedia", queryMedia);
 }
 
 std::string SubmitFpCompareJobRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SubmitFpCompareJobRequest::getResourceOwnerAccount()const
 void SubmitFpCompareJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitFpCompareJobRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string SubmitFpCompareJobRequest::getOwnerAccount()const
 void SubmitFpCompareJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitFpCompareJobRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long SubmitFpCompareJobRequest::getOwnerId()const
 void SubmitFpCompareJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitFpCompareJobRequest::getPipelineId()const
@@ -132,7 +134,7 @@ std::string SubmitFpCompareJobRequest::getPipelineId()const
 void SubmitFpCompareJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitFpCompareJobRequest::getMatchedFrameStorage()const
@@ -143,6 +145,6 @@ std::string SubmitFpCompareJobRequest::getMatchedFrameStorage()const
 void SubmitFpCompareJobRequest::setMatchedFrameStorage(const std::string& matchedFrameStorage)
 {
 	matchedFrameStorage_ = matchedFrameStorage;
-	setCoreParameter("MatchedFrameStorage", matchedFrameStorage);
+	setParameter("MatchedFrameStorage", matchedFrameStorage);
 }
 

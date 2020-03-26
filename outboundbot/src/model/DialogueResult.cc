@@ -40,22 +40,22 @@ void DialogueResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto feedbackNode = value["Feedback"];
-	if(!feedbackNode["Content"].isNull())
-		feedback_.content = feedbackNode["Content"].asString();
 	if(!feedbackNode["Action"].isNull())
 		feedback_.action = feedbackNode["Action"].asString();
 	if(!feedbackNode["ActionParams"].isNull())
 		feedback_.actionParams = feedbackNode["ActionParams"].asString();
+	if(!feedbackNode["Content"].isNull())
+		feedback_.content = feedbackNode["Content"].asString();
 	if(!feedbackNode["Interruptible"].isNull())
 		feedback_.interruptible = feedbackNode["Interruptible"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

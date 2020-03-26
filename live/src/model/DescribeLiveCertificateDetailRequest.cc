@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveCertificateDetailRequest;
 
 DescribeLiveCertificateDetailRequest::DescribeLiveCertificateDetailRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveCertificateDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveCertificateDetailRequest::~DescribeLiveCertificateDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveCertificateDetailRequest::getCertName()const
 void DescribeLiveCertificateDetailRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setParameter("CertName", certName);
 }
 
 long DescribeLiveCertificateDetailRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeLiveCertificateDetailRequest::getOwnerId()const
 void DescribeLiveCertificateDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveCertificateDetailRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribeLiveCertificateDetailRequest::getSecurityToken()const
 void DescribeLiveCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

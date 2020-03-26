@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetUserUmengPagePermissionRequest;
 
 GetUserUmengPagePermissionRequest::GetUserUmengPagePermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetUserUmengPagePermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserUmengPagePermissionRequest::~GetUserUmengPagePermissionRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetUserUmengPagePermissionRequest::getAccessKeyId()const
 void GetUserUmengPagePermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetUserUmengPagePermissionRequest::getBid()const
@@ -44,6 +46,6 @@ long GetUserUmengPagePermissionRequest::getBid()const
 void GetUserUmengPagePermissionRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

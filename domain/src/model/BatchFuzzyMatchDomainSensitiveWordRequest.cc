@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::BatchFuzzyMatchDomainSensitiveWordRequest;
 
 BatchFuzzyMatchDomainSensitiveWordRequest::BatchFuzzyMatchDomainSensitiveWordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchFuzzyMatchDomainSensitiveWordRequest::~BatchFuzzyMatchDomainSensitiveWordRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchFuzzyMatchDomainSensitiveWordRequest::getUserClientIp()const
 void BatchFuzzyMatchDomainSensitiveWordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string BatchFuzzyMatchDomainSensitiveWordRequest::getKeyword()const
@@ -44,7 +46,7 @@ std::string BatchFuzzyMatchDomainSensitiveWordRequest::getKeyword()const
 void BatchFuzzyMatchDomainSensitiveWordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string BatchFuzzyMatchDomainSensitiveWordRequest::getLang()const
@@ -55,6 +57,6 @@ std::string BatchFuzzyMatchDomainSensitiveWordRequest::getLang()const
 void BatchFuzzyMatchDomainSensitiveWordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

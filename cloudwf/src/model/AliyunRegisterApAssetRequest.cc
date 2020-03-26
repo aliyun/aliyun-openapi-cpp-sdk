@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AliyunRegisterApAssetRequest;
 
 AliyunRegisterApAssetRequest::AliyunRegisterApAssetRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AliyunRegisterApAsset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AliyunRegisterApAssetRequest::~AliyunRegisterApAssetRequest()
 {}
@@ -33,7 +35,7 @@ long AliyunRegisterApAssetRequest::getApgroupId()const
 void AliyunRegisterApAssetRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string AliyunRegisterApAssetRequest::getMac()const
@@ -44,7 +46,7 @@ std::string AliyunRegisterApAssetRequest::getMac()const
 void AliyunRegisterApAssetRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setParameter("Mac", mac);
 }
 
 std::string AliyunRegisterApAssetRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AliyunRegisterApAssetRequest::getAccessKeyId()const
 void AliyunRegisterApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AliyunRegisterApAssetRequest::getSerialNo()const
@@ -66,6 +68,6 @@ std::string AliyunRegisterApAssetRequest::getSerialNo()const
 void AliyunRegisterApAssetRequest::setSerialNo(const std::string& serialNo)
 {
 	serialNo_ = serialNo;
-	setCoreParameter("SerialNo", serialNo);
+	setParameter("SerialNo", serialNo);
 }
 

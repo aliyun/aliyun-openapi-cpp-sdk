@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::PublishVpnRouteEntryRequest;
 
 PublishVpnRouteEntryRequest::PublishVpnRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "PublishVpnRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishVpnRouteEntryRequest::~PublishVpnRouteEntryRequest()
 {}
@@ -33,7 +35,7 @@ long PublishVpnRouteEntryRequest::getResourceOwnerId()const
 void PublishVpnRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PublishVpnRouteEntryRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string PublishVpnRouteEntryRequest::getClientToken()const
 void PublishVpnRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string PublishVpnRouteEntryRequest::getRouteType()const
@@ -55,7 +57,7 @@ std::string PublishVpnRouteEntryRequest::getRouteType()const
 void PublishVpnRouteEntryRequest::setRouteType(const std::string& routeType)
 {
 	routeType_ = routeType;
-	setCoreParameter("RouteType", routeType);
+	setParameter("RouteType", routeType);
 }
 
 bool PublishVpnRouteEntryRequest::getPublishVpc()const
@@ -66,7 +68,7 @@ bool PublishVpnRouteEntryRequest::getPublishVpc()const
 void PublishVpnRouteEntryRequest::setPublishVpc(bool publishVpc)
 {
 	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
+	setParameter("PublishVpc", publishVpc ? "true" : "false");
 }
 
 std::string PublishVpnRouteEntryRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string PublishVpnRouteEntryRequest::getRegionId()const
 void PublishVpnRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string PublishVpnRouteEntryRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string PublishVpnRouteEntryRequest::getResourceOwnerAccount()const
 void PublishVpnRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PublishVpnRouteEntryRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string PublishVpnRouteEntryRequest::getOwnerAccount()const
 void PublishVpnRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string PublishVpnRouteEntryRequest::getVpnGatewayId()const
@@ -110,7 +112,7 @@ std::string PublishVpnRouteEntryRequest::getVpnGatewayId()const
 void PublishVpnRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long PublishVpnRouteEntryRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long PublishVpnRouteEntryRequest::getOwnerId()const
 void PublishVpnRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string PublishVpnRouteEntryRequest::getRouteDest()const
@@ -132,7 +134,7 @@ std::string PublishVpnRouteEntryRequest::getRouteDest()const
 void PublishVpnRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setParameter("RouteDest", routeDest);
 }
 
 std::string PublishVpnRouteEntryRequest::getNextHop()const
@@ -143,6 +145,6 @@ std::string PublishVpnRouteEntryRequest::getNextHop()const
 void PublishVpnRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setParameter("NextHop", nextHop);
 }
 

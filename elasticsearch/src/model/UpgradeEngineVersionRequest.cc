@@ -22,7 +22,7 @@ UpgradeEngineVersionRequest::UpgradeEngineVersionRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/upgrade-version");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpgradeEngineVersionRequest::~UpgradeEngineVersionRequest()

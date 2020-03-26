@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UnbindDriverFromEdgeInstanceRequest;
 
 UnbindDriverFromEdgeInstanceRequest::UnbindDriverFromEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UnbindDriverFromEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindDriverFromEdgeInstanceRequest::~UnbindDriverFromEdgeInstanceRequest()
 {}
@@ -33,18 +35,7 @@ std::string UnbindDriverFromEdgeInstanceRequest::getAccessKeyId()const
 void UnbindDriverFromEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UnbindDriverFromEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void UnbindDriverFromEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindDriverFromEdgeInstanceRequest::getDriverId()const
@@ -55,7 +46,7 @@ std::string UnbindDriverFromEdgeInstanceRequest::getDriverId()const
 void UnbindDriverFromEdgeInstanceRequest::setDriverId(const std::string& driverId)
 {
 	driverId_ = driverId;
-	setCoreParameter("DriverId", driverId);
+	setParameter("DriverId", driverId);
 }
 
 std::string UnbindDriverFromEdgeInstanceRequest::getIotInstanceId()const
@@ -66,6 +57,39 @@ std::string UnbindDriverFromEdgeInstanceRequest::getIotInstanceId()const
 void UnbindDriverFromEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UnbindDriverFromEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void UnbindDriverFromEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string UnbindDriverFromEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UnbindDriverFromEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UnbindDriverFromEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UnbindDriverFromEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

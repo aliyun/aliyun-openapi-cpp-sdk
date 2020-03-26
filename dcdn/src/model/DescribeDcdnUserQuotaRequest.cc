@@ -35,7 +35,7 @@ long DescribeDcdnUserQuotaRequest::getOwnerId()const
 void DescribeDcdnUserQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnUserQuotaRequest::getSecurityToken()const
@@ -46,6 +46,6 @@ std::string DescribeDcdnUserQuotaRequest::getSecurityToken()const
 void DescribeDcdnUserQuotaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

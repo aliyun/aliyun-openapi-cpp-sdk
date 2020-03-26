@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetIpControlApisRequest;
 
 SetIpControlApisRequest::SetIpControlApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetIpControlApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetIpControlApisRequest::~SetIpControlApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetIpControlApisRequest::getStageName()const
 void SetIpControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string SetIpControlApisRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string SetIpControlApisRequest::getGroupId()const
 void SetIpControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetIpControlApisRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SetIpControlApisRequest::getAccessKeyId()const
 void SetIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetIpControlApisRequest::getIpControlId()const
@@ -66,7 +68,7 @@ std::string SetIpControlApisRequest::getIpControlId()const
 void SetIpControlApisRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string SetIpControlApisRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string SetIpControlApisRequest::getSecurityToken()const
 void SetIpControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetIpControlApisRequest::getApiIds()const
@@ -88,6 +90,6 @@ std::string SetIpControlApisRequest::getApiIds()const
 void SetIpControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

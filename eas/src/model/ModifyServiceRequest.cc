@@ -22,7 +22,7 @@ ModifyServiceRequest::ModifyServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ModifyServiceRequest::~ModifyServiceRequest()

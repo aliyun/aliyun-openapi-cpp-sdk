@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateBackupPlanRequest;
 
 CreateBackupPlanRequest::CreateBackupPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateBackupPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBackupPlanRequest::~CreateBackupPlanRequest()
 {}
@@ -33,7 +35,7 @@ long CreateBackupPlanRequest::getResourceOwnerId()const
 void CreateBackupPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateBackupPlanRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateBackupPlanRequest::getDescription()const
 void CreateBackupPlanRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateBackupPlanRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string CreateBackupPlanRequest::getClusterId()const
 void CreateBackupPlanRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateBackupPlanRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateBackupPlanRequest::getAccessKeyId()const
 void CreateBackupPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateBackupPlanRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateBackupPlanRequest::getRegionId()const
 void CreateBackupPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateBackupPlanRequest::getName()const
@@ -88,7 +90,7 @@ std::string CreateBackupPlanRequest::getName()const
 void CreateBackupPlanRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateBackupPlanRequest::getRootPath()const
@@ -99,6 +101,6 @@ std::string CreateBackupPlanRequest::getRootPath()const
 void CreateBackupPlanRequest::setRootPath(const std::string& rootPath)
 {
 	rootPath_ = rootPath;
-	setCoreParameter("RootPath", rootPath);
+	setParameter("RootPath", rootPath);
 }
 

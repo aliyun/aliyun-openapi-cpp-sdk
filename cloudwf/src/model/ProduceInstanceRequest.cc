@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProduceInstanceRequest;
 
 ProduceInstanceRequest::ProduceInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProduceInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProduceInstanceRequest::~ProduceInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProduceInstanceRequest::getTraceId()const
 void ProduceInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setParameter("TraceId", traceId);
 }
 
 std::string ProduceInstanceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ProduceInstanceRequest::getAccessKeyId()const
 void ProduceInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ProduceInstanceRequest::getProduceParameter()const
@@ -55,6 +57,6 @@ std::string ProduceInstanceRequest::getProduceParameter()const
 void ProduceInstanceRequest::setProduceParameter(const std::string& produceParameter)
 {
 	produceParameter_ = produceParameter;
-	setCoreParameter("ProduceParameter", produceParameter);
+	setParameter("ProduceParameter", produceParameter);
 }
 

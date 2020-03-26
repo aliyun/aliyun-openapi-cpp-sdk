@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateQosRequest;
 
 CreateQosRequest::CreateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQosRequest::~CreateQosRequest()
 {}
@@ -33,7 +35,7 @@ long CreateQosRequest::getResourceOwnerId()const
 void CreateQosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateQosRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string CreateQosRequest::getRegionId()const
 void CreateQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateQosRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string CreateQosRequest::getResourceOwnerAccount()const
 void CreateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateQosRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CreateQosRequest::getOwnerAccount()const
 void CreateQosRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateQosRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long CreateQosRequest::getOwnerId()const
 void CreateQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateQosRequest::getQosName()const
@@ -88,6 +90,17 @@ std::string CreateQosRequest::getQosName()const
 void CreateQosRequest::setQosName(const std::string& qosName)
 {
 	qosName_ = qosName;
-	setCoreParameter("QosName", qosName);
+	setParameter("QosName", qosName);
+}
+
+std::string CreateQosRequest::getQosDescription()const
+{
+	return qosDescription_;
+}
+
+void CreateQosRequest::setQosDescription(const std::string& qosDescription)
+{
+	qosDescription_ = qosDescription;
+	setParameter("QosDescription", qosDescription);
 }
 

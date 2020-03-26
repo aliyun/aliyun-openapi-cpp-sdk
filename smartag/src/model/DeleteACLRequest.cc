@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteACLRequest;
 
 DeleteACLRequest::DeleteACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteACLRequest::~DeleteACLRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteACLRequest::getResourceOwnerId()const
 void DeleteACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteACLRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteACLRequest::getRegionId()const
 void DeleteACLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteACLRequest::getAclId()const
@@ -55,7 +57,7 @@ std::string DeleteACLRequest::getAclId()const
 void DeleteACLRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DeleteACLRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteACLRequest::getResourceOwnerAccount()const
 void DeleteACLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteACLRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteACLRequest::getOwnerAccount()const
 void DeleteACLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteACLRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DeleteACLRequest::getOwnerId()const
 void DeleteACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

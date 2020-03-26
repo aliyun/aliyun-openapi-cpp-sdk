@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowJobRequest;
 
 ModifyFlowJobRequest::ModifyFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowJobRequest::~ModifyFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyFlowJobRequest::getRunConf()const
 void ModifyFlowJobRequest::setRunConf(const std::string& runConf)
 {
 	runConf_ = runConf;
-	setCoreParameter("RunConf", runConf);
+	setParameter("RunConf", runConf);
 }
 
 std::string ModifyFlowJobRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyFlowJobRequest::getDescription()const
 void ModifyFlowJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyFlowJobRequest::getParamConf()const
@@ -55,7 +57,7 @@ std::string ModifyFlowJobRequest::getParamConf()const
 void ModifyFlowJobRequest::setParamConf(const std::string& paramConf)
 {
 	paramConf_ = paramConf;
-	setCoreParameter("ParamConf", paramConf);
+	setParameter("ParamConf", paramConf);
 }
 
 std::vector<ModifyFlowJobRequest::ResourceList> ModifyFlowJobRequest::getResourceList()const
@@ -66,12 +68,11 @@ std::vector<ModifyFlowJobRequest::ResourceList> ModifyFlowJobRequest::getResourc
 void ModifyFlowJobRequest::setResourceList(const std::vector<ResourceList>& resourceList)
 {
 	resourceList_ = resourceList;
-	int i = 0;
-	for(int i = 0; i!= resourceList.size(); i++)	{
-		auto obj = resourceList.at(i);
-		std::string str ="ResourceList."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Alias", obj.alias);
+	for(int dep1 = 0; dep1!= resourceList.size(); dep1++) {
+		auto resourceListObj = resourceList.at(dep1);
+		std::string resourceListObjStr = "ResourceList." + std::to_string(dep1 + 1);
+		setParameter(resourceListObjStr + ".Path", resourceListObj.path);
+		setParameter(resourceListObjStr + ".Alias", resourceListObj.alias);
 	}
 }
 
@@ -83,7 +84,7 @@ std::string ModifyFlowJobRequest::getFailAct()const
 void ModifyFlowJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setParameter("FailAct", failAct);
 }
 
 std::string ModifyFlowJobRequest::getMode()const
@@ -94,7 +95,7 @@ std::string ModifyFlowJobRequest::getMode()const
 void ModifyFlowJobRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode);
+	setParameter("Mode", mode);
 }
 
 std::string ModifyFlowJobRequest::getMonitorConf()const
@@ -105,7 +106,7 @@ std::string ModifyFlowJobRequest::getMonitorConf()const
 void ModifyFlowJobRequest::setMonitorConf(const std::string& monitorConf)
 {
 	monitorConf_ = monitorConf;
-	setCoreParameter("MonitorConf", monitorConf);
+	setParameter("MonitorConf", monitorConf);
 }
 
 std::string ModifyFlowJobRequest::getRegionId()const
@@ -116,7 +117,7 @@ std::string ModifyFlowJobRequest::getRegionId()const
 void ModifyFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowJobRequest::getId()const
@@ -127,7 +128,7 @@ std::string ModifyFlowJobRequest::getId()const
 void ModifyFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 int ModifyFlowJobRequest::getMaxRetry()const
@@ -138,7 +139,7 @@ int ModifyFlowJobRequest::getMaxRetry()const
 void ModifyFlowJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", std::to_string(maxRetry));
+	setParameter("MaxRetry", std::to_string(maxRetry));
 }
 
 std::string ModifyFlowJobRequest::getAlertConf()const
@@ -149,7 +150,7 @@ std::string ModifyFlowJobRequest::getAlertConf()const
 void ModifyFlowJobRequest::setAlertConf(const std::string& alertConf)
 {
 	alertConf_ = alertConf;
-	setCoreParameter("AlertConf", alertConf);
+	setParameter("AlertConf", alertConf);
 }
 
 std::string ModifyFlowJobRequest::getProjectId()const
@@ -160,7 +161,7 @@ std::string ModifyFlowJobRequest::getProjectId()const
 void ModifyFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string ModifyFlowJobRequest::getEnvConf()const
@@ -171,7 +172,18 @@ std::string ModifyFlowJobRequest::getEnvConf()const
 void ModifyFlowJobRequest::setEnvConf(const std::string& envConf)
 {
 	envConf_ = envConf;
-	setCoreParameter("EnvConf", envConf);
+	setParameter("EnvConf", envConf);
+}
+
+long ModifyFlowJobRequest::getMaxRunningTimeSec()const
+{
+	return maxRunningTimeSec_;
+}
+
+void ModifyFlowJobRequest::setMaxRunningTimeSec(long maxRunningTimeSec)
+{
+	maxRunningTimeSec_ = maxRunningTimeSec;
+	setParameter("MaxRunningTimeSec", std::to_string(maxRunningTimeSec));
 }
 
 std::string ModifyFlowJobRequest::getClusterId()const
@@ -182,7 +194,7 @@ std::string ModifyFlowJobRequest::getClusterId()const
 void ModifyFlowJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyFlowJobRequest::getParams()const
@@ -193,7 +205,7 @@ std::string ModifyFlowJobRequest::getParams()const
 void ModifyFlowJobRequest::setParams(const std::string& params)
 {
 	params_ = params;
-	setCoreParameter("Params", params);
+	setParameter("Params", params);
 }
 
 std::string ModifyFlowJobRequest::getCustomVariables()const
@@ -204,7 +216,7 @@ std::string ModifyFlowJobRequest::getCustomVariables()const
 void ModifyFlowJobRequest::setCustomVariables(const std::string& customVariables)
 {
 	customVariables_ = customVariables;
-	setCoreParameter("CustomVariables", customVariables);
+	setParameter("CustomVariables", customVariables);
 }
 
 long ModifyFlowJobRequest::getRetryInterval()const
@@ -215,7 +227,7 @@ long ModifyFlowJobRequest::getRetryInterval()const
 void ModifyFlowJobRequest::setRetryInterval(long retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+	setParameter("RetryInterval", std::to_string(retryInterval));
 }
 
 std::string ModifyFlowJobRequest::getName()const
@@ -226,6 +238,6 @@ std::string ModifyFlowJobRequest::getName()const
 void ModifyFlowJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

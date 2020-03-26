@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteIpControlRequest;
 
 DeleteIpControlRequest::DeleteIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpControlRequest::~DeleteIpControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteIpControlRequest::getAccessKeyId()const
 void DeleteIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteIpControlRequest::getIpControlId()const
@@ -44,7 +46,7 @@ std::string DeleteIpControlRequest::getIpControlId()const
 void DeleteIpControlRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string DeleteIpControlRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteIpControlRequest::getSecurityToken()const
 void DeleteIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

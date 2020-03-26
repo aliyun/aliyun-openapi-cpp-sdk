@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteCdnIpRequest;
 
 DeleteCdnIpRequest::DeleteCdnIpRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteCdnIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCdnIpRequest::~DeleteCdnIpRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCdnIpRequest::getResourceOwnerId()const
 void DeleteCdnIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCdnIpRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DeleteCdnIpRequest::getSourceCode()const
 void DeleteCdnIpRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 int DeleteCdnIpRequest::getItemId()const
@@ -55,7 +57,7 @@ int DeleteCdnIpRequest::getItemId()const
 void DeleteCdnIpRequest::setItemId(int itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
+	setParameter("ItemId", std::to_string(itemId));
 }
 
 std::string DeleteCdnIpRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DeleteCdnIpRequest::getSourceIp()const
 void DeleteCdnIpRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCdnIpRequest::getCdnIp()const
@@ -77,7 +79,7 @@ std::string DeleteCdnIpRequest::getCdnIp()const
 void DeleteCdnIpRequest::setCdnIp(const std::string& cdnIp)
 {
 	cdnIp_ = cdnIp;
-	setCoreParameter("CdnIp", cdnIp);
+	setParameter("CdnIp", cdnIp);
 }
 
 std::string DeleteCdnIpRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DeleteCdnIpRequest::getLang()const
 void DeleteCdnIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

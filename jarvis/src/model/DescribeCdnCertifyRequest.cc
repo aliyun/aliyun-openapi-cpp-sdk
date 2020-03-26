@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnCertifyRequest;
 
 DescribeCdnCertifyRequest::DescribeCdnCertifyRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnCertify")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnCertifyRequest::~DescribeCdnCertifyRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCdnCertifyRequest::getSourceCode()const
 void DescribeCdnCertifyRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeCdnCertifyRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCdnCertifyRequest::getSourceIp()const
 void DescribeCdnCertifyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCdnCertifyRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeCdnCertifyRequest::getLang()const
 void DescribeCdnCertifyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

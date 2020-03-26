@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateFlowJobRequest;
 
 CreateFlowJobRequest::CreateFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowJobRequest::~CreateFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateFlowJobRequest::getRunConf()const
 void CreateFlowJobRequest::setRunConf(const std::string& runConf)
 {
 	runConf_ = runConf;
-	setCoreParameter("RunConf", runConf);
+	setParameter("RunConf", runConf);
 }
 
 std::string CreateFlowJobRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateFlowJobRequest::getDescription()const
 void CreateFlowJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateFlowJobRequest::getType()const
@@ -55,7 +57,7 @@ std::string CreateFlowJobRequest::getType()const
 void CreateFlowJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateFlowJobRequest::getParamConf()const
@@ -66,7 +68,7 @@ std::string CreateFlowJobRequest::getParamConf()const
 void CreateFlowJobRequest::setParamConf(const std::string& paramConf)
 {
 	paramConf_ = paramConf;
-	setCoreParameter("ParamConf", paramConf);
+	setParameter("ParamConf", paramConf);
 }
 
 std::vector<CreateFlowJobRequest::ResourceList> CreateFlowJobRequest::getResourceList()const
@@ -77,12 +79,11 @@ std::vector<CreateFlowJobRequest::ResourceList> CreateFlowJobRequest::getResourc
 void CreateFlowJobRequest::setResourceList(const std::vector<ResourceList>& resourceList)
 {
 	resourceList_ = resourceList;
-	int i = 0;
-	for(int i = 0; i!= resourceList.size(); i++)	{
-		auto obj = resourceList.at(i);
-		std::string str ="ResourceList."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Alias", obj.alias);
+	for(int dep1 = 0; dep1!= resourceList.size(); dep1++) {
+		auto resourceListObj = resourceList.at(dep1);
+		std::string resourceListObjStr = "ResourceList." + std::to_string(dep1 + 1);
+		setParameter(resourceListObjStr + ".Path", resourceListObj.path);
+		setParameter(resourceListObjStr + ".Alias", resourceListObj.alias);
 	}
 }
 
@@ -94,7 +95,7 @@ std::string CreateFlowJobRequest::getFailAct()const
 void CreateFlowJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setParameter("FailAct", failAct);
 }
 
 std::string CreateFlowJobRequest::getMode()const
@@ -105,7 +106,7 @@ std::string CreateFlowJobRequest::getMode()const
 void CreateFlowJobRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", mode);
+	setParameter("Mode", mode);
 }
 
 std::string CreateFlowJobRequest::getMonitorConf()const
@@ -116,7 +117,7 @@ std::string CreateFlowJobRequest::getMonitorConf()const
 void CreateFlowJobRequest::setMonitorConf(const std::string& monitorConf)
 {
 	monitorConf_ = monitorConf;
-	setCoreParameter("MonitorConf", monitorConf);
+	setParameter("MonitorConf", monitorConf);
 }
 
 std::string CreateFlowJobRequest::getRegionId()const
@@ -127,7 +128,7 @@ std::string CreateFlowJobRequest::getRegionId()const
 void CreateFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int CreateFlowJobRequest::getMaxRetry()const
@@ -138,7 +139,7 @@ int CreateFlowJobRequest::getMaxRetry()const
 void CreateFlowJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", std::to_string(maxRetry));
+	setParameter("MaxRetry", std::to_string(maxRetry));
 }
 
 std::string CreateFlowJobRequest::getAlertConf()const
@@ -149,7 +150,7 @@ std::string CreateFlowJobRequest::getAlertConf()const
 void CreateFlowJobRequest::setAlertConf(const std::string& alertConf)
 {
 	alertConf_ = alertConf;
-	setCoreParameter("AlertConf", alertConf);
+	setParameter("AlertConf", alertConf);
 }
 
 std::string CreateFlowJobRequest::getProjectId()const
@@ -160,7 +161,7 @@ std::string CreateFlowJobRequest::getProjectId()const
 void CreateFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string CreateFlowJobRequest::getEnvConf()const
@@ -171,7 +172,18 @@ std::string CreateFlowJobRequest::getEnvConf()const
 void CreateFlowJobRequest::setEnvConf(const std::string& envConf)
 {
 	envConf_ = envConf;
-	setCoreParameter("EnvConf", envConf);
+	setParameter("EnvConf", envConf);
+}
+
+long CreateFlowJobRequest::getMaxRunningTimeSec()const
+{
+	return maxRunningTimeSec_;
+}
+
+void CreateFlowJobRequest::setMaxRunningTimeSec(long maxRunningTimeSec)
+{
+	maxRunningTimeSec_ = maxRunningTimeSec;
+	setParameter("MaxRunningTimeSec", std::to_string(maxRunningTimeSec));
 }
 
 std::string CreateFlowJobRequest::getClusterId()const
@@ -182,7 +194,7 @@ std::string CreateFlowJobRequest::getClusterId()const
 void CreateFlowJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateFlowJobRequest::getParams()const
@@ -193,7 +205,18 @@ std::string CreateFlowJobRequest::getParams()const
 void CreateFlowJobRequest::setParams(const std::string& params)
 {
 	params_ = params;
-	setCoreParameter("Params", params);
+	setParameter("Params", params);
+}
+
+std::string CreateFlowJobRequest::getCustomVariables()const
+{
+	return customVariables_;
+}
+
+void CreateFlowJobRequest::setCustomVariables(const std::string& customVariables)
+{
+	customVariables_ = customVariables;
+	setParameter("CustomVariables", customVariables);
 }
 
 long CreateFlowJobRequest::getRetryInterval()const
@@ -204,7 +227,7 @@ long CreateFlowJobRequest::getRetryInterval()const
 void CreateFlowJobRequest::setRetryInterval(long retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+	setParameter("RetryInterval", std::to_string(retryInterval));
 }
 
 std::string CreateFlowJobRequest::getName()const
@@ -215,7 +238,7 @@ std::string CreateFlowJobRequest::getName()const
 void CreateFlowJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 bool CreateFlowJobRequest::getAdhoc()const
@@ -226,7 +249,7 @@ bool CreateFlowJobRequest::getAdhoc()const
 void CreateFlowJobRequest::setAdhoc(bool adhoc)
 {
 	adhoc_ = adhoc;
-	setCoreParameter("Adhoc", adhoc ? "true" : "false");
+	setParameter("Adhoc", adhoc ? "true" : "false");
 }
 
 std::string CreateFlowJobRequest::getParentCategory()const
@@ -237,6 +260,6 @@ std::string CreateFlowJobRequest::getParentCategory()const
 void CreateFlowJobRequest::setParentCategory(const std::string& parentCategory)
 {
 	parentCategory_ = parentCategory;
-	setCoreParameter("ParentCategory", parentCategory);
+	setParameter("ParentCategory", parentCategory);
 }
 

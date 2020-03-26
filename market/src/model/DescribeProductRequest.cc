@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeProductRequest;
 
 DescribeProductRequest::DescribeProductRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeProduct")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeProductRequest::~DescribeProductRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeProductRequest::getCode()const
 void DescribeProductRequest::setCode(const std::string& code)
 {
 	code_ = code;
-	setCoreParameter("Code", code);
+	setParameter("Code", code);
 }
 
 bool DescribeProductRequest::getQueryDraft()const
@@ -44,7 +46,7 @@ bool DescribeProductRequest::getQueryDraft()const
 void DescribeProductRequest::setQueryDraft(bool queryDraft)
 {
 	queryDraft_ = queryDraft;
-	setCoreParameter("QueryDraft", queryDraft ? "true" : "false");
+	setParameter("QueryDraft", queryDraft ? "true" : "false");
 }
 
 std::string DescribeProductRequest::getAliUid()const
@@ -55,6 +57,6 @@ std::string DescribeProductRequest::getAliUid()const
 void DescribeProductRequest::setAliUid(const std::string& aliUid)
 {
 	aliUid_ = aliUid;
-	setCoreParameter("AliUid", aliUid);
+	setParameter("AliUid", aliUid);
 }
 

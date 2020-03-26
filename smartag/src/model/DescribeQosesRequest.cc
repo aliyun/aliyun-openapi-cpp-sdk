@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeQosesRequest;
 
 DescribeQosesRequest::DescribeQosesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeQoses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeQosesRequest::~DescribeQosesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeQosesRequest::getResourceOwnerId()const
 void DescribeQosesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeQosesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeQosesRequest::getPageNumber()const
 void DescribeQosesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeQosesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeQosesRequest::getRegionId()const
 void DescribeQosesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeQosesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeQosesRequest::getPageSize()const
 void DescribeQosesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeQosesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeQosesRequest::getResourceOwnerAccount()const
 void DescribeQosesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeQosesRequest::getQosIds()const
@@ -88,7 +90,7 @@ std::string DescribeQosesRequest::getQosIds()const
 void DescribeQosesRequest::setQosIds(const std::string& qosIds)
 {
 	qosIds_ = qosIds;
-	setCoreParameter("QosIds", qosIds);
+	setParameter("QosIds", qosIds);
 }
 
 std::string DescribeQosesRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeQosesRequest::getOwnerAccount()const
 void DescribeQosesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeQosesRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeQosesRequest::getOwnerId()const
 void DescribeQosesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeQosesRequest::getQosName()const
@@ -121,6 +123,6 @@ std::string DescribeQosesRequest::getQosName()const
 void DescribeQosesRequest::setQosName(const std::string& qosName)
 {
 	qosName_ = qosName;
-	setCoreParameter("QosName", qosName);
+	setParameter("QosName", qosName);
 }
 

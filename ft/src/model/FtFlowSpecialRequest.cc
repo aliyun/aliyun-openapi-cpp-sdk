@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtFlowSpecialRequest;
 FtFlowSpecialRequest::FtFlowSpecialRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtFlowSpecial")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FtFlowSpecialRequest::~FtFlowSpecialRequest()

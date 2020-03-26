@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT BatchSetEdgeInstanceDeviceConfigRequest : public RpcServiceRequest
 			{
+			public:
 				struct DeviceConfigs
 				{
 					std::string iotId;
@@ -42,18 +43,24 @@ namespace AlibabaCloud
 
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::vector<DeviceConfigs> getDeviceConfigs()const;
 				void setDeviceConfigs(const std::vector<DeviceConfigs>& deviceConfigs);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
 				std::string accessKeyId_;
-				std::string instanceId_;
 				std::vector<DeviceConfigs> deviceConfigs_;
 				std::string iotInstanceId_;
+				std::string instanceId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

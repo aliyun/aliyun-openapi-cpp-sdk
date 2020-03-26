@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAsrJobListRequest;
 
 QueryAsrJobListRequest::QueryAsrJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAsrJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAsrJobListRequest::~QueryAsrJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryAsrJobListRequest::getResourceOwnerId()const
 void QueryAsrJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAsrJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryAsrJobListRequest::getResourceOwnerAccount()const
 void QueryAsrJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAsrJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryAsrJobListRequest::getOwnerAccount()const
 void QueryAsrJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAsrJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryAsrJobListRequest::getOwnerId()const
 void QueryAsrJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAsrJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryAsrJobListRequest::getAccessKeyId()const
 void QueryAsrJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryAsrJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryAsrJobListRequest::getJobIds()const
 void QueryAsrJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ListNotaryInfosRequest;
 
 ListNotaryInfosRequest::ListNotaryInfosRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ListNotaryInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListNotaryInfosRequest::~ListNotaryInfosRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListNotaryInfosRequest::getBizOrderNo()const
 void ListNotaryInfosRequest::setBizOrderNo(const std::string& bizOrderNo)
 {
 	bizOrderNo_ = bizOrderNo;
-	setCoreParameter("BizOrderNo", bizOrderNo);
+	setParameter("BizOrderNo", bizOrderNo);
 }
 
 int ListNotaryInfosRequest::getNotaryType()const
@@ -44,7 +46,7 @@ int ListNotaryInfosRequest::getNotaryType()const
 void ListNotaryInfosRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", std::to_string(notaryType));
+	setParameter("NotaryType", std::to_string(notaryType));
 }
 
 int ListNotaryInfosRequest::getPageSize()const
@@ -55,7 +57,7 @@ int ListNotaryInfosRequest::getPageSize()const
 void ListNotaryInfosRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListNotaryInfosRequest::getPageNum()const
@@ -66,7 +68,7 @@ int ListNotaryInfosRequest::getPageNum()const
 void ListNotaryInfosRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string ListNotaryInfosRequest::getToken()const
@@ -77,6 +79,6 @@ std::string ListNotaryInfosRequest::getToken()const
 void ListNotaryInfosRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 

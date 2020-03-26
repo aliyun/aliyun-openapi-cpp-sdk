@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateResourcePoolRequest : public RpcServiceRequest
 			{
+			public:
 				struct Config
 				{
 					std::string configKey;

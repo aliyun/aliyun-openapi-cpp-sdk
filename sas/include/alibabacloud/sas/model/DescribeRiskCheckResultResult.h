@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::vector<RiskCheckResultForDisplay::RiskItemResource> riskItemResources;
 					int affectedCount;
 					int sort;
+					std::string repairStatus;
 					std::string riskLevel;
 				};
 

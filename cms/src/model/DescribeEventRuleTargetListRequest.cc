@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DescribeEventRuleTargetListRequest;
 DescribeEventRuleTargetListRequest::DescribeEventRuleTargetListRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DescribeEventRuleTargetList")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeEventRuleTargetListRequest::~DescribeEventRuleTargetListRequest()
@@ -35,6 +35,6 @@ std::string DescribeEventRuleTargetListRequest::getRuleName()const
 void DescribeEventRuleTargetListRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 

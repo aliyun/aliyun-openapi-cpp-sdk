@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DecryptRequest;
 DecryptRequest::DecryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "Decrypt")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DecryptRequest::~DecryptRequest()

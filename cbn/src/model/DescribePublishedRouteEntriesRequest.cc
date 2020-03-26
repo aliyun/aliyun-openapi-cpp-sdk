@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribePublishedRouteEntriesRequest;
 
 DescribePublishedRouteEntriesRequest::DescribePublishedRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribePublishedRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePublishedRouteEntriesRequest::~DescribePublishedRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribePublishedRouteEntriesRequest::getResourceOwnerId()const
 void DescribePublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribePublishedRouteEntriesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribePublishedRouteEntriesRequest::getCenId()const
 void DescribePublishedRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 int DescribePublishedRouteEntriesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribePublishedRouteEntriesRequest::getPageNumber()const
 void DescribePublishedRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribePublishedRouteEntriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribePublishedRouteEntriesRequest::getPageSize()const
 void DescribePublishedRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()const
@@ -77,7 +79,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceRegionId()cons
 void DescribePublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribePublishedRouteEntriesRequest::getResourceOwnerAccount()const
 void DescribePublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
@@ -99,7 +101,7 @@ std::string DescribePublishedRouteEntriesRequest::getDestinationCidrBlock()const
 void DescribePublishedRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceType()const
@@ -110,7 +112,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceType()const
 void DescribePublishedRouteEntriesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceId()const
@@ -121,7 +123,7 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceId()const
 void DescribePublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 
 std::string DescribePublishedRouteEntriesRequest::getChildInstanceRouteTableId()const
@@ -132,6 +134,6 @@ std::string DescribePublishedRouteEntriesRequest::getChildInstanceRouteTableId()
 void DescribePublishedRouteEntriesRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	setParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 

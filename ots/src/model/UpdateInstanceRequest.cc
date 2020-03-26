@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::UpdateInstanceRequest;
 
 UpdateInstanceRequest::UpdateInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "UpdateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateInstanceRequest::~UpdateInstanceRequest()
 {}
-
-std::string UpdateInstanceRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void UpdateInstanceRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long UpdateInstanceRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long UpdateInstanceRequest::getResourceOwnerId()const
 void UpdateInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string UpdateInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateInstanceRequest::getNetwork()const
@@ -55,7 +57,7 @@ std::string UpdateInstanceRequest::getNetwork()const
 void UpdateInstanceRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setCoreParameter("Network", network);
+	setParameter("Network", network);
 }
 
 std::string UpdateInstanceRequest::getInstanceName()const
@@ -66,6 +68,6 @@ std::string UpdateInstanceRequest::getInstanceName()const
 void UpdateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

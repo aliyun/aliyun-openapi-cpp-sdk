@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetThumbnailRequest;
 
 GetThumbnailRequest::GetThumbnailRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetThumbnail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetThumbnailRequest::~GetThumbnailRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetThumbnailRequest::getLibraryId()const
 void GetThumbnailRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long GetThumbnailRequest::getPhotoId()const
@@ -44,7 +46,7 @@ long GetThumbnailRequest::getPhotoId()const
 void GetThumbnailRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string GetThumbnailRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string GetThumbnailRequest::getStoreName()const
 void GetThumbnailRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string GetThumbnailRequest::getZoomType()const
@@ -66,6 +68,6 @@ std::string GetThumbnailRequest::getZoomType()const
 void GetThumbnailRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", zoomType);
+	setParameter("ZoomType", zoomType);
 }
 

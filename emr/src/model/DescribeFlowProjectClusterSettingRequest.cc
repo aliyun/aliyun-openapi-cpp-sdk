@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowProjectClusterSettingRequest;
 
 DescribeFlowProjectClusterSettingRequest::DescribeFlowProjectClusterSettingRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowProjectClusterSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowProjectClusterSettingRequest::~DescribeFlowProjectClusterSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeFlowProjectClusterSettingRequest::getClusterId()const
 void DescribeFlowProjectClusterSettingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeFlowProjectClusterSettingRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeFlowProjectClusterSettingRequest::getRegionId()const
 void DescribeFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowProjectClusterSettingRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string DescribeFlowProjectClusterSettingRequest::getProjectId()const
 void DescribeFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::UpdateAutoScaleConfigRequest;
 
 UpdateAutoScaleConfigRequest::UpdateAutoScaleConfigRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/config");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateAutoScaleConfigRequest::~UpdateAutoScaleConfigRequest()
 {}
@@ -33,7 +36,7 @@ std::string UpdateAutoScaleConfigRequest::getProjectName()const
 void UpdateAutoScaleConfigRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long UpdateAutoScaleConfigRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long UpdateAutoScaleConfigRequest::getInstanceId()const
 void UpdateAutoScaleConfigRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string UpdateAutoScaleConfigRequest::getConfigJson()const
@@ -55,7 +58,7 @@ std::string UpdateAutoScaleConfigRequest::getConfigJson()const
 void UpdateAutoScaleConfigRequest::setConfigJson(const std::string& configJson)
 {
 	configJson_ = configJson;
-	setCoreParameter("ConfigJson", configJson);
+	setBodyParameter("ConfigJson", configJson);
 }
 
 std::string UpdateAutoScaleConfigRequest::getRegionId()const
@@ -66,7 +69,7 @@ std::string UpdateAutoScaleConfigRequest::getRegionId()const
 void UpdateAutoScaleConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string UpdateAutoScaleConfigRequest::getJobName()const
@@ -77,6 +80,6 @@ std::string UpdateAutoScaleConfigRequest::getJobName()const
 void UpdateAutoScaleConfigRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

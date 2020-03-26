@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitAIMediaAuditJobRequest;
 
 SubmitAIMediaAuditJobRequest::SubmitAIMediaAuditJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitAIMediaAuditJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAIMediaAuditJobRequest::~SubmitAIMediaAuditJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitAIMediaAuditJobRequest::getResourceOwnerId()const
 void SubmitAIMediaAuditJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitAIMediaAuditJobRequest::getAccessKeyId()const
 void SubmitAIMediaAuditJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitAIMediaAuditJobRequest::getUserData()const
 void SubmitAIMediaAuditJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitAIMediaAuditJobRequest::getResourceOwnerAccount()const
 void SubmitAIMediaAuditJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getOwnerId()const
@@ -77,7 +79,7 @@ std::string SubmitAIMediaAuditJobRequest::getOwnerId()const
 void SubmitAIMediaAuditJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getMediaId()const
@@ -88,7 +90,7 @@ std::string SubmitAIMediaAuditJobRequest::getMediaId()const
 void SubmitAIMediaAuditJobRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getTemplateId()const
@@ -99,7 +101,7 @@ std::string SubmitAIMediaAuditJobRequest::getTemplateId()const
 void SubmitAIMediaAuditJobRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 
 std::string SubmitAIMediaAuditJobRequest::getMediaType()const
@@ -110,6 +112,6 @@ std::string SubmitAIMediaAuditJobRequest::getMediaType()const
 void SubmitAIMediaAuditJobRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
-	setCoreParameter("MediaType", mediaType);
+	setParameter("MediaType", mediaType);
 }
 

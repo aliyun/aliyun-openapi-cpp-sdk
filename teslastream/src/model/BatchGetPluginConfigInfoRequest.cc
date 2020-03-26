@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaStream::Model::BatchGetPluginConfigInfoRequest;
 
 BatchGetPluginConfigInfoRequest::BatchGetPluginConfigInfoRequest() :
 	RpcServiceRequest("teslastream", "2018-01-15", "BatchGetPluginConfigInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 BatchGetPluginConfigInfoRequest::~BatchGetPluginConfigInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string BatchGetPluginConfigInfoRequest::getPluginInfos()const
 void BatchGetPluginConfigInfoRequest::setPluginInfos(const std::string& pluginInfos)
 {
 	pluginInfos_ = pluginInfos;
-	setCoreParameter("PluginInfos", pluginInfos);
+	setParameter("PluginInfos", pluginInfos);
 }
 

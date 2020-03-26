@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindOrderedListRequest;
 
 FindOrderedListRequest::FindOrderedListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindOrderedList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindOrderedListRequest::~FindOrderedListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindOrderedListRequest::getProjectName()const
 void FindOrderedListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 bool FindOrderedListRequest::getShowDelOrder()const
@@ -44,7 +46,7 @@ bool FindOrderedListRequest::getShowDelOrder()const
 void FindOrderedListRequest::setShowDelOrder(bool showDelOrder)
 {
 	showDelOrder_ = showDelOrder;
-	setCoreParameter("ShowDelOrder", showDelOrder ? "true" : "false");
+	setParameter("ShowDelOrder", showDelOrder ? "true" : "false");
 }
 
 long FindOrderedListRequest::getCsbId()const
@@ -55,7 +57,7 @@ long FindOrderedListRequest::getCsbId()const
 void FindOrderedListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindOrderedListRequest::getPageNum()const
@@ -66,7 +68,7 @@ int FindOrderedListRequest::getPageNum()const
 void FindOrderedListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string FindOrderedListRequest::getAlias()const
@@ -77,7 +79,7 @@ std::string FindOrderedListRequest::getAlias()const
 void FindOrderedListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setParameter("Alias", alias);
 }
 
 std::string FindOrderedListRequest::getServiceName()const
@@ -88,7 +90,7 @@ std::string FindOrderedListRequest::getServiceName()const
 void FindOrderedListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 
 long FindOrderedListRequest::getServiceId()const
@@ -99,7 +101,7 @@ long FindOrderedListRequest::getServiceId()const
 void FindOrderedListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 
 std::string FindOrderedListRequest::getStatus()const
@@ -110,6 +112,6 @@ std::string FindOrderedListRequest::getStatus()const
 void FindOrderedListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

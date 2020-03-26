@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeBgpPeersRequest;
 
 DescribeBgpPeersRequest::DescribeBgpPeersRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeBgpPeers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBgpPeersRequest::~DescribeBgpPeersRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeBgpPeersRequest::getResourceOwnerId()const
 void DescribeBgpPeersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBgpPeersRequest::getBgpGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeBgpPeersRequest::getBgpGroupId()const
 void DescribeBgpPeersRequest::setBgpGroupId(const std::string& bgpGroupId)
 {
 	bgpGroupId_ = bgpGroupId;
-	setCoreParameter("BgpGroupId", bgpGroupId);
+	setParameter("BgpGroupId", bgpGroupId);
 }
 
 int DescribeBgpPeersRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeBgpPeersRequest::getPageNumber()const
 void DescribeBgpPeersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeBgpPeersRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeBgpPeersRequest::getRegionId()const
 void DescribeBgpPeersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeBgpPeersRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeBgpPeersRequest::getPageSize()const
 void DescribeBgpPeersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribeBgpPeersRequest::getIsDefault()const
@@ -88,7 +90,7 @@ bool DescribeBgpPeersRequest::getIsDefault()const
 void DescribeBgpPeersRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 std::string DescribeBgpPeersRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeBgpPeersRequest::getResourceOwnerAccount()const
 void DescribeBgpPeersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBgpPeersRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeBgpPeersRequest::getOwnerAccount()const
 void DescribeBgpPeersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeBgpPeersRequest::getBgpPeerId()const
@@ -121,7 +123,7 @@ std::string DescribeBgpPeersRequest::getBgpPeerId()const
 void DescribeBgpPeersRequest::setBgpPeerId(const std::string& bgpPeerId)
 {
 	bgpPeerId_ = bgpPeerId;
-	setCoreParameter("BgpPeerId", bgpPeerId);
+	setParameter("BgpPeerId", bgpPeerId);
 }
 
 long DescribeBgpPeersRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long DescribeBgpPeersRequest::getOwnerId()const
 void DescribeBgpPeersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBgpPeersRequest::getRouterId()const
@@ -143,6 +145,6 @@ std::string DescribeBgpPeersRequest::getRouterId()const
 void DescribeBgpPeersRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setParameter("RouterId", routerId);
 }
 

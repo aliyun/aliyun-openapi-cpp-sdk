@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeEventTypesRequest;
 
 DescribeEventTypesRequest::DescribeEventTypesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeEventTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventTypesRequest::~DescribeEventTypesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeEventTypesRequest::getParentTypeId()const
 void DescribeEventTypesRequest::setParentTypeId(long parentTypeId)
 {
 	parentTypeId_ = parentTypeId;
-	setCoreParameter("ParentTypeId", std::to_string(parentTypeId));
+	setParameter("ParentTypeId", std::to_string(parentTypeId));
 }
 
 std::string DescribeEventTypesRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeEventTypesRequest::getSourceIp()const
 void DescribeEventTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeEventTypesRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeEventTypesRequest::getLang()const
 void DescribeEventTypesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

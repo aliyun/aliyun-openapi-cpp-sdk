@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::MarkOssResultRequest;
 
 MarkOssResultRequest::MarkOssResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "MarkOssResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MarkOssResultRequest::~MarkOssResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string MarkOssResultRequest::getScene()const
 void MarkOssResultRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string MarkOssResultRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string MarkOssResultRequest::getSourceIp()const
 void MarkOssResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string MarkOssResultRequest::getLang()const
@@ -55,7 +57,7 @@ std::string MarkOssResultRequest::getLang()const
 void MarkOssResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool MarkOssResultRequest::getStock()const
@@ -66,7 +68,7 @@ bool MarkOssResultRequest::getStock()const
 void MarkOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setParameter("Stock", stock ? "true" : "false");
 }
 
 std::string MarkOssResultRequest::getResourceType()const
@@ -77,7 +79,7 @@ std::string MarkOssResultRequest::getResourceType()const
 void MarkOssResultRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string MarkOssResultRequest::getIds()const
@@ -88,7 +90,7 @@ std::string MarkOssResultRequest::getIds()const
 void MarkOssResultRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 
 std::string MarkOssResultRequest::getOperation()const
@@ -99,6 +101,6 @@ std::string MarkOssResultRequest::getOperation()const
 void MarkOssResultRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setParameter("Operation", operation);
 }
 

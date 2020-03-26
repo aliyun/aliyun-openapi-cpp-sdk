@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApgroupSsidConfigRequest;
 
 SaveApgroupSsidConfigRequest::SaveApgroupSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApgroupSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApgroupSsidConfigRequest::~SaveApgroupSsidConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveApgroupSsidConfigRequest::getJsonData()const
 void SaveApgroupSsidConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string SaveApgroupSsidConfigRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string SaveApgroupSsidConfigRequest::getAccessKeyId()const
 void SaveApgroupSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

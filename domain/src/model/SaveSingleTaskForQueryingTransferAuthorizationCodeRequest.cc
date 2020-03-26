@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForQueryingTransferAuthorizatio
 
 SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::SaveSingleTaskForQueryingTransferAuthorizationCodeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForQueryingTransferAuthorizationCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::~SaveSingleTaskForQueryingTransferAuthorizationCodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getDomain
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getUserCl
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getLang()const
@@ -55,6 +57,6 @@ std::string SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::getLang()
 void SaveSingleTaskForQueryingTransferAuthorizationCodeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

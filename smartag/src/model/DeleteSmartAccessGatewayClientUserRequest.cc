@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteSmartAccessGatewayClientUserRequest;
 
 DeleteSmartAccessGatewayClientUserRequest::DeleteSmartAccessGatewayClientUserRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteSmartAccessGatewayClientUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSmartAccessGatewayClientUserRequest::~DeleteSmartAccessGatewayClientUserRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteSmartAccessGatewayClientUserRequest::getResourceOwnerId()const
 void DeleteSmartAccessGatewayClientUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteSmartAccessGatewayClientUserRequest::getRegionId()const
 void DeleteSmartAccessGatewayClientUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteSmartAccessGatewayClientUserRequest::getResourceOwnerAccount()
 void DeleteSmartAccessGatewayClientUserRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteSmartAccessGatewayClientUserRequest::getOwnerAccount()const
 void DeleteSmartAccessGatewayClientUserRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteSmartAccessGatewayClientUserRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DeleteSmartAccessGatewayClientUserRequest::getOwnerId()const
 void DeleteSmartAccessGatewayClientUserRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getSmartAGId()const
@@ -88,7 +90,7 @@ std::string DeleteSmartAccessGatewayClientUserRequest::getSmartAGId()const
 void DeleteSmartAccessGatewayClientUserRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string DeleteSmartAccessGatewayClientUserRequest::getUserName()const
@@ -99,6 +101,6 @@ std::string DeleteSmartAccessGatewayClientUserRequest::getUserName()const
 void DeleteSmartAccessGatewayClientUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

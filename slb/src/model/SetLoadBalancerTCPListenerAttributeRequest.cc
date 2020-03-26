@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerTCPListenerAttributeRequest;
 
 SetLoadBalancerTCPListenerAttributeRequest::SetLoadBalancerTCPListenerAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerTCPListenerAttributeRequest::~SetLoadBalancerTCPListenerAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long SetLoadBalancerTCPListenerAttributeRequest::getResourceOwnerId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckURI()const
@@ -44,7 +46,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckURI()const
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckURI(const std::string& healthCheckURI)
 {
 	healthCheckURI_ = healthCheckURI;
-	setCoreParameter("HealthCheckURI", healthCheckURI);
+	setParameter("HealthCheckURI", healthCheckURI);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAclStatus()const
@@ -55,7 +57,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getAclStatus()const
 void SetLoadBalancerTCPListenerAttributeRequest::setAclStatus(const std::string& aclStatus)
 {
 	aclStatus_ = aclStatus;
-	setCoreParameter("AclStatus", aclStatus);
+	setParameter("AclStatus", aclStatus);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAclType()const
@@ -66,7 +68,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getAclType()const
 void SetLoadBalancerTCPListenerAttributeRequest::setAclType(const std::string& aclType)
 {
 	aclType_ = aclType;
-	setCoreParameter("AclType", aclType);
+	setParameter("AclType", aclType);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveServerGroup()const
@@ -77,7 +79,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveServerGrou
 void SetLoadBalancerTCPListenerAttributeRequest::setMasterSlaveServerGroup(const std::string& masterSlaveServerGroup)
 {
 	masterSlaveServerGroup_ = masterSlaveServerGroup;
-	setCoreParameter("MasterSlaveServerGroup", masterSlaveServerGroup);
+	setParameter("MasterSlaveServerGroup", masterSlaveServerGroup);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getEstablishedTimeout()const
@@ -88,7 +90,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getEstablishedTimeout()const
 void SetLoadBalancerTCPListenerAttributeRequest::setEstablishedTimeout(int establishedTimeout)
 {
 	establishedTimeout_ = establishedTimeout;
-	setCoreParameter("EstablishedTimeout", std::to_string(establishedTimeout));
+	setParameter("EstablishedTimeout", std::to_string(establishedTimeout));
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getPersistenceTimeout()const
@@ -99,7 +101,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getPersistenceTimeout()const
 void SetLoadBalancerTCPListenerAttributeRequest::setPersistenceTimeout(int persistenceTimeout)
 {
 	persistenceTimeout_ = persistenceTimeout;
-	setCoreParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
+	setParameter("PersistenceTimeout", std::to_string(persistenceTimeout));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getVpcIds()const
@@ -110,7 +112,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getVpcIds()const
 void SetLoadBalancerTCPListenerAttributeRequest::setVpcIds(const std::string& vpcIds)
 {
 	vpcIds_ = vpcIds;
-	setCoreParameter("VpcIds", vpcIds);
+	setParameter("VpcIds", vpcIds);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroupId()const
@@ -121,7 +123,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroupId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setParameter("VServerGroupId", vServerGroupId);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAclId()const
@@ -132,7 +134,23 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getAclId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
+}
+
+std::vector<SetLoadBalancerTCPListenerAttributeRequest::PortRange> SetLoadBalancerTCPListenerAttributeRequest::getPortRange()const
+{
+	return portRange_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setPortRange(const std::vector<PortRange>& portRange)
+{
+	portRange_ = portRange;
+	for(int dep1 = 0; dep1!= portRange.size(); dep1++) {
+		auto portRangeObj = portRange.at(dep1);
+		std::string portRangeObjStr = "PortRange." + std::to_string(dep1 + 1);
+		setParameter(portRangeObjStr + ".StartPort", std::to_string(portRangeObj.startPort));
+		setParameter(portRangeObjStr + ".EndPort", std::to_string(portRangeObj.endPort));
+	}
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckMethod()const
@@ -143,7 +161,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckMethod()co
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckMethod(const std::string& healthCheckMethod)
 {
 	healthCheckMethod_ = healthCheckMethod;
-	setCoreParameter("HealthCheckMethod", healthCheckMethod);
+	setParameter("HealthCheckMethod", healthCheckMethod);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckDomain()const
@@ -154,7 +172,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckDomain()co
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckDomain(const std::string& healthCheckDomain)
 {
 	healthCheckDomain_ = healthCheckDomain;
-	setCoreParameter("HealthCheckDomain", healthCheckDomain);
+	setParameter("HealthCheckDomain", healthCheckDomain);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getSynProxy()const
@@ -165,7 +183,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getSynProxy()const
 void SetLoadBalancerTCPListenerAttributeRequest::setSynProxy(const std::string& synProxy)
 {
 	synProxy_ = synProxy;
-	setCoreParameter("SynProxy", synProxy);
+	setParameter("SynProxy", synProxy);
 }
 
 long SetLoadBalancerTCPListenerAttributeRequest::getOwnerId()const
@@ -176,7 +194,7 @@ long SetLoadBalancerTCPListenerAttributeRequest::getOwnerId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getTags()const
@@ -187,7 +205,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getTags()const
 void SetLoadBalancerTCPListenerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getLoadBalancerId()const
@@ -198,7 +216,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getLoadBalancerId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveServerGroupId()const
@@ -209,7 +227,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getMasterSlaveServerGrou
 void SetLoadBalancerTCPListenerAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
 {
 	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+	setParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckInterval()const
@@ -220,7 +238,18 @@ int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckInterval()const
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckInterval(int healthCheckInterval)
 {
 	healthCheckInterval_ = healthCheckInterval;
-	setCoreParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
+	setParameter("HealthCheckInterval", std::to_string(healthCheckInterval));
+}
+
+std::string SetLoadBalancerTCPListenerAttributeRequest::getConnectionDrain()const
+{
+	return connectionDrain_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setConnectionDrain(const std::string& connectionDrain)
+{
+	connectionDrain_ = connectionDrain;
+	setParameter("ConnectionDrain", connectionDrain);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getAccess_key_id()const
@@ -231,7 +260,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getAccess_key_id()const
 void SetLoadBalancerTCPListenerAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckConnectTimeout()const
@@ -242,7 +271,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckConnectTimeout()co
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckConnectTimeout(int healthCheckConnectTimeout)
 {
 	healthCheckConnectTimeout_ = healthCheckConnectTimeout;
-	setCoreParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
+	setParameter("HealthCheckConnectTimeout", std::to_string(healthCheckConnectTimeout));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getDescription()const
@@ -253,7 +282,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getDescription()const
 void SetLoadBalancerTCPListenerAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getUnhealthyThreshold()const
@@ -264,7 +293,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getUnhealthyThreshold()const
 void SetLoadBalancerTCPListenerAttributeRequest::setUnhealthyThreshold(int unhealthyThreshold)
 {
 	unhealthyThreshold_ = unhealthyThreshold;
-	setCoreParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
+	setParameter("UnhealthyThreshold", std::to_string(unhealthyThreshold));
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getHealthyThreshold()const
@@ -275,7 +304,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getHealthyThreshold()const
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthyThreshold(int healthyThreshold)
 {
 	healthyThreshold_ = healthyThreshold;
-	setCoreParameter("HealthyThreshold", std::to_string(healthyThreshold));
+	setParameter("HealthyThreshold", std::to_string(healthyThreshold));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getScheduler()const
@@ -286,7 +315,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getScheduler()const
 void SetLoadBalancerTCPListenerAttributeRequest::setScheduler(const std::string& scheduler)
 {
 	scheduler_ = scheduler;
-	setCoreParameter("Scheduler", scheduler);
+	setParameter("Scheduler", scheduler);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getMaxConnection()const
@@ -297,7 +326,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getMaxConnection()const
 void SetLoadBalancerTCPListenerAttributeRequest::setMaxConnection(int maxConnection)
 {
 	maxConnection_ = maxConnection;
-	setCoreParameter("MaxConnection", std::to_string(maxConnection));
+	setParameter("MaxConnection", std::to_string(maxConnection));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getRegionId()const
@@ -308,7 +337,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getRegionId()const
 void SetLoadBalancerTCPListenerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getListenerPort()const
@@ -319,7 +348,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getListenerPort()const
 void SetLoadBalancerTCPListenerAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckType()const
@@ -330,7 +359,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckType()cons
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckType(const std::string& healthCheckType)
 {
 	healthCheckType_ = healthCheckType;
-	setCoreParameter("HealthCheckType", healthCheckType);
+	setParameter("HealthCheckType", healthCheckType);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getResourceOwnerAccount()const
@@ -341,7 +370,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getResourceOwnerAccount(
 void SetLoadBalancerTCPListenerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getBandwidth()const
@@ -352,7 +381,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getBandwidth()const
 void SetLoadBalancerTCPListenerAttributeRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getOwnerAccount()const
@@ -363,7 +392,18 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getOwnerAccount()const
 void SetLoadBalancerTCPListenerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+int SetLoadBalancerTCPListenerAttributeRequest::getConnectionDrainTimeout()const
+{
+	return connectionDrainTimeout_;
+}
+
+void SetLoadBalancerTCPListenerAttributeRequest::setConnectionDrainTimeout(int connectionDrainTimeout)
+{
+	connectionDrainTimeout_ = connectionDrainTimeout;
+	setParameter("ConnectionDrainTimeout", std::to_string(connectionDrainTimeout));
 }
 
 int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckConnectPort()const
@@ -374,7 +414,7 @@ int SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckConnectPort()const
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckConnectPort(int healthCheckConnectPort)
 {
 	healthCheckConnectPort_ = healthCheckConnectPort;
-	setCoreParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
+	setParameter("HealthCheckConnectPort", std::to_string(healthCheckConnectPort));
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckHttpCode()const
@@ -385,7 +425,7 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getHealthCheckHttpCode()
 void SetLoadBalancerTCPListenerAttributeRequest::setHealthCheckHttpCode(const std::string& healthCheckHttpCode)
 {
 	healthCheckHttpCode_ = healthCheckHttpCode;
-	setCoreParameter("HealthCheckHttpCode", healthCheckHttpCode);
+	setParameter("HealthCheckHttpCode", healthCheckHttpCode);
 }
 
 std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroup()const
@@ -396,6 +436,6 @@ std::string SetLoadBalancerTCPListenerAttributeRequest::getVServerGroup()const
 void SetLoadBalancerTCPListenerAttributeRequest::setVServerGroup(const std::string& vServerGroup)
 {
 	vServerGroup_ = vServerGroup;
-	setCoreParameter("VServerGroup", vServerGroup);
+	setParameter("VServerGroup", vServerGroup);
 }
 

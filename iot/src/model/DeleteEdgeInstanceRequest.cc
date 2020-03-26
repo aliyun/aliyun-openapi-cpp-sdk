@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteEdgeInstanceRequest;
 
 DeleteEdgeInstanceRequest::DeleteEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEdgeInstanceRequest::~DeleteEdgeInstanceRequest()
 {}
@@ -33,18 +35,7 @@ std::string DeleteEdgeInstanceRequest::getAccessKeyId()const
 void DeleteEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DeleteEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DeleteEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteEdgeInstanceRequest::getIotInstanceId()const
@@ -55,6 +46,39 @@ std::string DeleteEdgeInstanceRequest::getIotInstanceId()const
 void DeleteEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DeleteEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string DeleteEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

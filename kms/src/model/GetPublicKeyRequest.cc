@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GetPublicKeyRequest;
 GetPublicKeyRequest::GetPublicKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GetPublicKey")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetPublicKeyRequest::~GetPublicKeyRequest()

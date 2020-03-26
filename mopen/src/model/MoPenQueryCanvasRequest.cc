@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenQueryCanvasRequest;
 
 MoPenQueryCanvasRequest::MoPenQueryCanvasRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenQueryCanvas")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenQueryCanvasRequest::~MoPenQueryCanvasRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoPenQueryCanvasRequest::getDeviceName()const
 void MoPenQueryCanvasRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 
 std::string MoPenQueryCanvasRequest::getSessionId()const
@@ -44,7 +46,7 @@ std::string MoPenQueryCanvasRequest::getSessionId()const
 void MoPenQueryCanvasRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setBodyParameter("SessionId", sessionId);
 }
 
 int MoPenQueryCanvasRequest::getPageId()const
@@ -55,7 +57,7 @@ int MoPenQueryCanvasRequest::getPageId()const
 void MoPenQueryCanvasRequest::setPageId(int pageId)
 {
 	pageId_ = pageId;
-	setCoreParameter("PageId", std::to_string(pageId));
+	setBodyParameter("PageId", std::to_string(pageId));
 }
 
 int MoPenQueryCanvasRequest::getStatus()const
@@ -66,6 +68,6 @@ int MoPenQueryCanvasRequest::getStatus()const
 void MoPenQueryCanvasRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setBodyParameter("Status", std::to_string(status));
 }
 

@@ -36,7 +36,7 @@ void EnableHostAvailabilityRequest::setId(const std::vector<long>& id)
 {
 	id_ = id;
 	for(int dep1 = 0; dep1!= id.size(); dep1++) {
-		setCoreParameter("Id."+ std::to_string(dep1), std::to_string(id.at(dep1)));
+		setParameter("Id."+ std::to_string(dep1), std::to_string(id.at(dep1)));
 	}
 }
 

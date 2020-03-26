@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteVpnRouteEntryRequest;
 
 DeleteVpnRouteEntryRequest::DeleteVpnRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpnRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpnRouteEntryRequest::~DeleteVpnRouteEntryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteVpnRouteEntryRequest::getResourceOwnerId()const
 void DeleteVpnRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVpnRouteEntryRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteVpnRouteEntryRequest::getClientToken()const
 void DeleteVpnRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteVpnRouteEntryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteVpnRouteEntryRequest::getRegionId()const
 void DeleteVpnRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteVpnRouteEntryRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteVpnRouteEntryRequest::getResourceOwnerAccount()const
 void DeleteVpnRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpnRouteEntryRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteVpnRouteEntryRequest::getOwnerAccount()const
 void DeleteVpnRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int DeleteVpnRouteEntryRequest::getWeight()const
@@ -88,7 +90,7 @@ int DeleteVpnRouteEntryRequest::getWeight()const
 void DeleteVpnRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setParameter("Weight", std::to_string(weight));
 }
 
 std::string DeleteVpnRouteEntryRequest::getVpnGatewayId()const
@@ -99,7 +101,7 @@ std::string DeleteVpnRouteEntryRequest::getVpnGatewayId()const
 void DeleteVpnRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long DeleteVpnRouteEntryRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DeleteVpnRouteEntryRequest::getOwnerId()const
 void DeleteVpnRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVpnRouteEntryRequest::getRouteDest()const
@@ -121,7 +123,7 @@ std::string DeleteVpnRouteEntryRequest::getRouteDest()const
 void DeleteVpnRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setParameter("RouteDest", routeDest);
 }
 
 std::string DeleteVpnRouteEntryRequest::getNextHop()const
@@ -132,7 +134,7 @@ std::string DeleteVpnRouteEntryRequest::getNextHop()const
 void DeleteVpnRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setParameter("NextHop", nextHop);
 }
 
 std::string DeleteVpnRouteEntryRequest::getOverlayMode()const
@@ -143,6 +145,6 @@ std::string DeleteVpnRouteEntryRequest::getOverlayMode()const
 void DeleteVpnRouteEntryRequest::setOverlayMode(const std::string& overlayMode)
 {
 	overlayMode_ = overlayMode;
-	setCoreParameter("OverlayMode", overlayMode);
+	setParameter("OverlayMode", overlayMode);
 }
 

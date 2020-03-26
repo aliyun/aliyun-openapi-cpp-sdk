@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::SetCenInterRegionBandwidthLimitRequest;
 
 SetCenInterRegionBandwidthLimitRequest::SetCenInterRegionBandwidthLimitRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCenInterRegionBandwidthLimitRequest::~SetCenInterRegionBandwidthLimitRequest()
 {}
@@ -33,7 +35,7 @@ long SetCenInterRegionBandwidthLimitRequest::getResourceOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
@@ -44,7 +46,18 @@ std::string SetCenInterRegionBandwidthLimitRequest::getCenId()const
 void SetCenInterRegionBandwidthLimitRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
+}
+
+std::string SetCenInterRegionBandwidthLimitRequest::getBandwidthPackageId()const
+{
+	return bandwidthPackageId_;
+}
+
+void SetCenInterRegionBandwidthLimitRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
+{
+	bandwidthPackageId_ = bandwidthPackageId;
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()const
@@ -55,7 +68,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getResourceOwnerAccount()con
 void SetCenInterRegionBandwidthLimitRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
@@ -66,7 +79,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOwnerAccount()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
@@ -77,7 +90,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getOppositeRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setOppositeRegionId(const std::string& oppositeRegionId)
 {
 	oppositeRegionId_ = oppositeRegionId;
-	setCoreParameter("OppositeRegionId", oppositeRegionId);
+	setParameter("OppositeRegionId", oppositeRegionId);
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
@@ -88,7 +101,7 @@ long SetCenInterRegionBandwidthLimitRequest::getOwnerId()const
 void SetCenInterRegionBandwidthLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetCenInterRegionBandwidthLimitRequest::getLocalRegionId()const
@@ -99,7 +112,7 @@ std::string SetCenInterRegionBandwidthLimitRequest::getLocalRegionId()const
 void SetCenInterRegionBandwidthLimitRequest::setLocalRegionId(const std::string& localRegionId)
 {
 	localRegionId_ = localRegionId;
-	setCoreParameter("LocalRegionId", localRegionId);
+	setParameter("LocalRegionId", localRegionId);
 }
 
 long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const
@@ -110,6 +123,6 @@ long SetCenInterRegionBandwidthLimitRequest::getBandwidthLimit()const
 void SetCenInterRegionBandwidthLimitRequest::setBandwidthLimit(long bandwidthLimit)
 {
 	bandwidthLimit_ = bandwidthLimit;
-	setCoreParameter("BandwidthLimit", std::to_string(bandwidthLimit));
+	setParameter("BandwidthLimit", std::to_string(bandwidthLimit));
 }
 

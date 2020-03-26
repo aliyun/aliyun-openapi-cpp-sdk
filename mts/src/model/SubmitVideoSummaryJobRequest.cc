@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitVideoSummaryJobRequest;
 
 SubmitVideoSummaryJobRequest::SubmitVideoSummaryJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitVideoSummaryJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitVideoSummaryJobRequest::~SubmitVideoSummaryJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitVideoSummaryJobRequest::getResourceOwnerId()const
 void SubmitVideoSummaryJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVideoSummaryJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitVideoSummaryJobRequest::getAccessKeyId()const
 void SubmitVideoSummaryJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitVideoSummaryJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitVideoSummaryJobRequest::getUserData()const
 void SubmitVideoSummaryJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitVideoSummaryJobRequest::getVideoSummaryConfig()const
@@ -66,7 +68,7 @@ std::string SubmitVideoSummaryJobRequest::getVideoSummaryConfig()const
 void SubmitVideoSummaryJobRequest::setVideoSummaryConfig(const std::string& videoSummaryConfig)
 {
 	videoSummaryConfig_ = videoSummaryConfig;
-	setCoreParameter("VideoSummaryConfig", videoSummaryConfig);
+	setParameter("VideoSummaryConfig", videoSummaryConfig);
 }
 
 std::string SubmitVideoSummaryJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitVideoSummaryJobRequest::getResourceOwnerAccount()const
 void SubmitVideoSummaryJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitVideoSummaryJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitVideoSummaryJobRequest::getOwnerAccount()const
 void SubmitVideoSummaryJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitVideoSummaryJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitVideoSummaryJobRequest::getOwnerId()const
 void SubmitVideoSummaryJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitVideoSummaryJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitVideoSummaryJobRequest::getPipelineId()const
 void SubmitVideoSummaryJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitVideoSummaryJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitVideoSummaryJobRequest::getInput()const
 void SubmitVideoSummaryJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

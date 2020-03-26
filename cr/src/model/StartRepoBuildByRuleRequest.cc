@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::StartRepoBuildByRuleRequest;
 
 StartRepoBuildByRuleRequest::StartRepoBuildByRuleRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build");
+	setMethod(HttpRequest::Method::Put);
+}
 
 StartRepoBuildByRuleRequest::~StartRepoBuildByRuleRequest()
 {}
@@ -33,7 +36,7 @@ long StartRepoBuildByRuleRequest::getBuildRuleId()const
 void StartRepoBuildByRuleRequest::setBuildRuleId(long buildRuleId)
 {
 	buildRuleId_ = buildRuleId;
-	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
+	setParameter("BuildRuleId", std::to_string(buildRuleId));
 }
 
 std::string StartRepoBuildByRuleRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string StartRepoBuildByRuleRequest::getRepoNamespace()const
 void StartRepoBuildByRuleRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string StartRepoBuildByRuleRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string StartRepoBuildByRuleRequest::getRepoName()const
 void StartRepoBuildByRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

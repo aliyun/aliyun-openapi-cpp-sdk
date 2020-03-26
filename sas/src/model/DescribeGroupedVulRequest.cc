@@ -20,10 +20,23 @@ using AlibabaCloud::Sas::Model::DescribeGroupedVulRequest;
 
 DescribeGroupedVulRequest::DescribeGroupedVulRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeGroupedVul")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGroupedVulRequest::~DescribeGroupedVulRequest()
 {}
+
+std::string DescribeGroupedVulRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void DescribeGroupedVulRequest::setStatusList(const std::string& statusList)
+{
+	statusList_ = statusList;
+	setParameter("StatusList", statusList);
+}
 
 std::string DescribeGroupedVulRequest::getType()const
 {
@@ -33,7 +46,7 @@ std::string DescribeGroupedVulRequest::getType()const
 void DescribeGroupedVulRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeGroupedVulRequest::getSourceIp()const
@@ -44,7 +57,7 @@ std::string DescribeGroupedVulRequest::getSourceIp()const
 void DescribeGroupedVulRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeGroupedVulRequest::getPageSize()const
@@ -55,7 +68,7 @@ int DescribeGroupedVulRequest::getPageSize()const
 void DescribeGroupedVulRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGroupedVulRequest::getLang()const
@@ -66,7 +79,18 @@ std::string DescribeGroupedVulRequest::getLang()const
 void DescribeGroupedVulRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
+}
+
+std::string DescribeGroupedVulRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DescribeGroupedVulRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeGroupedVulRequest::getDealed()const
@@ -77,7 +101,7 @@ std::string DescribeGroupedVulRequest::getDealed()const
 void DescribeGroupedVulRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setParameter("Dealed", dealed);
 }
 
 int DescribeGroupedVulRequest::getCurrentPage()const
@@ -88,7 +112,7 @@ int DescribeGroupedVulRequest::getCurrentPage()const
 void DescribeGroupedVulRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeGroupedVulRequest::getAliasName()const
@@ -99,7 +123,7 @@ std::string DescribeGroupedVulRequest::getAliasName()const
 void DescribeGroupedVulRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
 }
 
 std::string DescribeGroupedVulRequest::getNecessity()const
@@ -110,7 +134,7 @@ std::string DescribeGroupedVulRequest::getNecessity()const
 void DescribeGroupedVulRequest::setNecessity(const std::string& necessity)
 {
 	necessity_ = necessity;
-	setCoreParameter("Necessity", necessity);
+	setParameter("Necessity", necessity);
 }
 
 std::string DescribeGroupedVulRequest::getUuids()const
@@ -121,6 +145,6 @@ std::string DescribeGroupedVulRequest::getUuids()const
 void DescribeGroupedVulRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

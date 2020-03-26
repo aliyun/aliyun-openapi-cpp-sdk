@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT ModifyCasterProgramRequest : public RpcServiceRequest
 			{
+			public:
 				struct Episode
 				{
 					std::string episodeId;

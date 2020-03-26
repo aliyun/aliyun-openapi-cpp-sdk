@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitAsrJobRequest;
 
 SubmitAsrJobRequest::SubmitAsrJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitAsrJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAsrJobRequest::~SubmitAsrJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitAsrJobRequest::getResourceOwnerId()const
 void SubmitAsrJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAsrJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitAsrJobRequest::getAccessKeyId()const
 void SubmitAsrJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAsrJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitAsrJobRequest::getUserData()const
 void SubmitAsrJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitAsrJobRequest::getAsrConfig()const
@@ -66,7 +68,7 @@ std::string SubmitAsrJobRequest::getAsrConfig()const
 void SubmitAsrJobRequest::setAsrConfig(const std::string& asrConfig)
 {
 	asrConfig_ = asrConfig;
-	setCoreParameter("AsrConfig", asrConfig);
+	setParameter("AsrConfig", asrConfig);
 }
 
 std::string SubmitAsrJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitAsrJobRequest::getResourceOwnerAccount()const
 void SubmitAsrJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAsrJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitAsrJobRequest::getOwnerAccount()const
 void SubmitAsrJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitAsrJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitAsrJobRequest::getOwnerId()const
 void SubmitAsrJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAsrJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitAsrJobRequest::getPipelineId()const
 void SubmitAsrJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitAsrJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitAsrJobRequest::getInput()const
 void SubmitAsrJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

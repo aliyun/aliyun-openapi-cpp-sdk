@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeOssObjectDetailRequest;
 
 DescribeOssObjectDetailRequest::DescribeOssObjectDetailRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeOssObjectDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssObjectDetailRequest::~DescribeOssObjectDetailRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeOssObjectDetailRequest::getFeatureType()const
 void DescribeOssObjectDetailRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeOssObjectDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeOssObjectDetailRequest::getSourceIp()const
 void DescribeOssObjectDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeOssObjectDetailRequest::getId()const
@@ -55,7 +57,7 @@ long DescribeOssObjectDetailRequest::getId()const
 void DescribeOssObjectDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DescribeOssObjectDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeOssObjectDetailRequest::getLang()const
 void DescribeOssObjectDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

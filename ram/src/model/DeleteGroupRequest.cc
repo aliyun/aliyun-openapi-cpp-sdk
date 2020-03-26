@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteGroupRequest;
 
 DeleteGroupRequest::DeleteGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupRequest::~DeleteGroupRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteGroupRequest::getGroupName()const
 void DeleteGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

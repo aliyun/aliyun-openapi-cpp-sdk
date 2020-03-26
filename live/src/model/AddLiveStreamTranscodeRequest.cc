@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveStreamTranscodeRequest;
 
 AddLiveStreamTranscodeRequest::AddLiveStreamTranscodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveStreamTranscode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveStreamTranscodeRequest::~AddLiveStreamTranscodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLiveStreamTranscodeRequest::get_Template()const
 void AddLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", _template);
+	setParameter("_Template", _template);
 }
 
 std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
 void AddLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveStreamTranscodeRequest::getApp()const
@@ -55,7 +57,7 @@ std::string AddLiveStreamTranscodeRequest::getApp()const
 void AddLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", app);
+	setParameter("App", app);
 }
 
 long AddLiveStreamTranscodeRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long AddLiveStreamTranscodeRequest::getOwnerId()const
 void AddLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveStreamTranscodeRequest::getDomain()const
@@ -77,6 +79,6 @@ std::string AddLiveStreamTranscodeRequest::getDomain()const
 void AddLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

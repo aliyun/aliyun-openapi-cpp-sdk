@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetNamespaceListRequest;
 
 GetNamespaceListRequest::GetNamespaceListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/namespace");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetNamespaceListRequest::~GetNamespaceListRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetNamespaceListRequest::getAuthorize()const
 void GetNamespaceListRequest::setAuthorize(const std::string& authorize)
 {
 	authorize_ = authorize;
-	setCoreParameter("Authorize", authorize);
+	setParameter("Authorize", authorize);
 }
 
 std::string GetNamespaceListRequest::getStatus()const
@@ -44,6 +47,6 @@ std::string GetNamespaceListRequest::getStatus()const
 void GetNamespaceListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

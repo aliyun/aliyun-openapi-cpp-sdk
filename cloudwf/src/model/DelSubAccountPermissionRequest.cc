@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelSubAccountPermissionRequest;
 
 DelSubAccountPermissionRequest::DelSubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelSubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelSubAccountPermissionRequest::~DelSubAccountPermissionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DelSubAccountPermissionRequest::getAccessKeyId()const
 void DelSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DelSubAccountPermissionRequest::getId()const
@@ -44,6 +46,6 @@ long DelSubAccountPermissionRequest::getId()const
 void DelSubAccountPermissionRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

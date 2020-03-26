@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string flowId;
 					std::string dependencyFlowId;
+					bool meet;
 					std::string dependencyInstanceId;
 					std::string projectId;
 					std::string flowInstanceId;

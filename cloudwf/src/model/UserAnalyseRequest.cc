@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserAnalyseRequest;
 
 UserAnalyseRequest::UserAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserAnalyseRequest::~UserAnalyseRequest()
 {}
@@ -33,7 +35,7 @@ std::string UserAnalyseRequest::getAccessKeyId()const
 void UserAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long UserAnalyseRequest::getGsid()const
@@ -44,6 +46,6 @@ long UserAnalyseRequest::getGsid()const
 void UserAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

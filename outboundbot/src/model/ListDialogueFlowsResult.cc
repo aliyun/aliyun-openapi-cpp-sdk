@@ -43,28 +43,28 @@ void ListDialogueFlowsResult::parse(const std::string &payload)
 	for (auto valueDialogueFlowsDialogueFlow : allDialogueFlowsNode)
 	{
 		DialogueFlow dialogueFlowsObject;
+		if(!valueDialogueFlowsDialogueFlow["DialogueFlowDefinition"].isNull())
+			dialogueFlowsObject.dialogueFlowDefinition = valueDialogueFlowsDialogueFlow["DialogueFlowDefinition"].asString();
 		if(!valueDialogueFlowsDialogueFlow["DialogueFlowId"].isNull())
 			dialogueFlowsObject.dialogueFlowId = valueDialogueFlowsDialogueFlow["DialogueFlowId"].asString();
 		if(!valueDialogueFlowsDialogueFlow["DialogueFlowName"].isNull())
 			dialogueFlowsObject.dialogueFlowName = valueDialogueFlowsDialogueFlow["DialogueFlowName"].asString();
+		if(!valueDialogueFlowsDialogueFlow["DialogueFlowType"].isNull())
+			dialogueFlowsObject.dialogueFlowType = valueDialogueFlowsDialogueFlow["DialogueFlowType"].asString();
 		if(!valueDialogueFlowsDialogueFlow["ScriptId"].isNull())
 			dialogueFlowsObject.scriptId = valueDialogueFlowsDialogueFlow["ScriptId"].asString();
 		if(!valueDialogueFlowsDialogueFlow["ScriptVersion"].isNull())
 			dialogueFlowsObject.scriptVersion = valueDialogueFlowsDialogueFlow["ScriptVersion"].asString();
-		if(!valueDialogueFlowsDialogueFlow["DialogueFlowType"].isNull())
-			dialogueFlowsObject.dialogueFlowType = valueDialogueFlowsDialogueFlow["DialogueFlowType"].asString();
-		if(!valueDialogueFlowsDialogueFlow["DialogueFlowDefinition"].isNull())
-			dialogueFlowsObject.dialogueFlowDefinition = valueDialogueFlowsDialogueFlow["DialogueFlowDefinition"].asString();
 		dialogueFlows_.push_back(dialogueFlowsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::PutEventRuleTargetsRequest;
 PutEventRuleTargetsRequest::PutEventRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "PutEventRuleTargets")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 PutEventRuleTargetsRequest::~PutEventRuleTargetsRequest()
@@ -37,11 +37,11 @@ void PutEventRuleTargetsRequest::setWebhookParameters(const std::vector<WebhookP
 	webhookParameters_ = webhookParameters;
 	for(int dep1 = 0; dep1!= webhookParameters.size(); dep1++) {
 		auto webhookParametersObj = webhookParameters.at(dep1);
-		std::string webhookParametersObjStr = "WebhookParameters." + std::to_string(dep1);
-		setCoreParameter(webhookParametersObjStr + ".Protocol", webhookParametersObj.protocol);
-		setCoreParameter(webhookParametersObjStr + ".Method", webhookParametersObj.method);
-		setCoreParameter(webhookParametersObjStr + ".Id", webhookParametersObj.id);
-		setCoreParameter(webhookParametersObjStr + ".Url", webhookParametersObj.url);
+		std::string webhookParametersObjStr = "WebhookParameters." + std::to_string(dep1 + 1);
+		setParameter(webhookParametersObjStr + ".Protocol", webhookParametersObj.protocol);
+		setParameter(webhookParametersObjStr + ".Method", webhookParametersObj.method);
+		setParameter(webhookParametersObjStr + ".Id", webhookParametersObj.id);
+		setParameter(webhookParametersObjStr + ".Url", webhookParametersObj.url);
 	}
 }
 
@@ -55,10 +55,10 @@ void PutEventRuleTargetsRequest::setContactParameters(const std::vector<ContactP
 	contactParameters_ = contactParameters;
 	for(int dep1 = 0; dep1!= contactParameters.size(); dep1++) {
 		auto contactParametersObj = contactParameters.at(dep1);
-		std::string contactParametersObjStr = "ContactParameters." + std::to_string(dep1);
-		setCoreParameter(contactParametersObjStr + ".Level", contactParametersObj.level);
-		setCoreParameter(contactParametersObjStr + ".Id", contactParametersObj.id);
-		setCoreParameter(contactParametersObjStr + ".ContactGroupName", contactParametersObj.contactGroupName);
+		std::string contactParametersObjStr = "ContactParameters." + std::to_string(dep1 + 1);
+		setParameter(contactParametersObjStr + ".Level", contactParametersObj.level);
+		setParameter(contactParametersObjStr + ".Id", contactParametersObj.id);
+		setParameter(contactParametersObjStr + ".ContactGroupName", contactParametersObj.contactGroupName);
 	}
 }
 
@@ -72,11 +72,11 @@ void PutEventRuleTargetsRequest::setSlsParameters(const std::vector<SlsParameter
 	slsParameters_ = slsParameters;
 	for(int dep1 = 0; dep1!= slsParameters.size(); dep1++) {
 		auto slsParametersObj = slsParameters.at(dep1);
-		std::string slsParametersObjStr = "SlsParameters." + std::to_string(dep1);
-		setCoreParameter(slsParametersObjStr + ".Project", slsParametersObj.project);
-		setCoreParameter(slsParametersObjStr + ".Id", slsParametersObj.id);
-		setCoreParameter(slsParametersObjStr + ".Region", slsParametersObj.region);
-		setCoreParameter(slsParametersObjStr + ".LogStore", slsParametersObj.logStore);
+		std::string slsParametersObjStr = "SlsParameters." + std::to_string(dep1 + 1);
+		setParameter(slsParametersObjStr + ".Project", slsParametersObj.project);
+		setParameter(slsParametersObjStr + ".Id", slsParametersObj.id);
+		setParameter(slsParametersObjStr + ".Region", slsParametersObj.region);
+		setParameter(slsParametersObjStr + ".LogStore", slsParametersObj.logStore);
 	}
 }
 
@@ -88,7 +88,7 @@ std::string PutEventRuleTargetsRequest::getRuleName()const
 void PutEventRuleTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::vector<PutEventRuleTargetsRequest::MnsParameters> PutEventRuleTargetsRequest::getMnsParameters()const
@@ -101,10 +101,10 @@ void PutEventRuleTargetsRequest::setMnsParameters(const std::vector<MnsParameter
 	mnsParameters_ = mnsParameters;
 	for(int dep1 = 0; dep1!= mnsParameters.size(); dep1++) {
 		auto mnsParametersObj = mnsParameters.at(dep1);
-		std::string mnsParametersObjStr = "MnsParameters." + std::to_string(dep1);
-		setCoreParameter(mnsParametersObjStr + ".Id", mnsParametersObj.id);
-		setCoreParameter(mnsParametersObjStr + ".Region", mnsParametersObj.region);
-		setCoreParameter(mnsParametersObjStr + ".Queue", mnsParametersObj.queue);
+		std::string mnsParametersObjStr = "MnsParameters." + std::to_string(dep1 + 1);
+		setParameter(mnsParametersObjStr + ".Id", mnsParametersObj.id);
+		setParameter(mnsParametersObjStr + ".Region", mnsParametersObj.region);
+		setParameter(mnsParametersObjStr + ".Queue", mnsParametersObj.queue);
 	}
 }
 
@@ -118,11 +118,11 @@ void PutEventRuleTargetsRequest::setFcParameters(const std::vector<FcParameters>
 	fcParameters_ = fcParameters;
 	for(int dep1 = 0; dep1!= fcParameters.size(); dep1++) {
 		auto fcParametersObj = fcParameters.at(dep1);
-		std::string fcParametersObjStr = "FcParameters." + std::to_string(dep1);
-		setCoreParameter(fcParametersObjStr + ".FunctionName", fcParametersObj.functionName);
-		setCoreParameter(fcParametersObjStr + ".ServiceName", fcParametersObj.serviceName);
-		setCoreParameter(fcParametersObjStr + ".Id", fcParametersObj.id);
-		setCoreParameter(fcParametersObjStr + ".Region", fcParametersObj.region);
+		std::string fcParametersObjStr = "FcParameters." + std::to_string(dep1 + 1);
+		setParameter(fcParametersObjStr + ".FunctionName", fcParametersObj.functionName);
+		setParameter(fcParametersObjStr + ".ServiceName", fcParametersObj.serviceName);
+		setParameter(fcParametersObjStr + ".Id", fcParametersObj.id);
+		setParameter(fcParametersObjStr + ".Region", fcParametersObj.region);
 	}
 }
 

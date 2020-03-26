@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeCustomerFlowByLocationRequest;
 DescribeCustomerFlowByLocationRequest::DescribeCustomerFlowByLocationRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeCustomerFlowByLocation")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeCustomerFlowByLocationRequest::~DescribeCustomerFlowByLocationRequest()

@@ -20,32 +20,12 @@ using AlibabaCloud::LinkFace::Model::RegisterFaceRequest;
 
 RegisterFaceRequest::RegisterFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "RegisterFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterFaceRequest::~RegisterFaceRequest()
 {}
-
-std::string RegisterFaceRequest::getImage()const
-{
-	return image_;
-}
-
-void RegisterFaceRequest::setImage(const std::string& image)
-{
-	image_ = image;
-	setCoreParameter("Image", image);
-}
-
-std::string RegisterFaceRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void RegisterFaceRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
 
 std::string RegisterFaceRequest::getUserId()const
 {
@@ -55,7 +35,7 @@ std::string RegisterFaceRequest::getUserId()const
 void RegisterFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
 }
 
 std::string RegisterFaceRequest::getUserInfo()const
@@ -66,6 +46,50 @@ std::string RegisterFaceRequest::getUserInfo()const
 void RegisterFaceRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setCoreParameter("UserInfo", userInfo);
+	setBodyParameter("UserInfo", userInfo);
+}
+
+std::string RegisterFaceRequest::getImage()const
+{
+	return image_;
+}
+
+void RegisterFaceRequest::setImage(const std::string& image)
+{
+	image_ = image;
+	setBodyParameter("Image", image);
+}
+
+std::string RegisterFaceRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void RegisterFaceRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string RegisterFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void RegisterFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string RegisterFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void RegisterFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

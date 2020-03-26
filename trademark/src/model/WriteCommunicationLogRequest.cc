@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::WriteCommunicationLogRequest;
 
 WriteCommunicationLogRequest::WriteCommunicationLogRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "WriteCommunicationLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WriteCommunicationLogRequest::~WriteCommunicationLogRequest()
 {}
@@ -33,7 +35,7 @@ std::string WriteCommunicationLogRequest::getNote()const
 void WriteCommunicationLogRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setParameter("Note", note);
 }
 
 std::string WriteCommunicationLogRequest::getTargetId()const
@@ -44,7 +46,7 @@ std::string WriteCommunicationLogRequest::getTargetId()const
 void WriteCommunicationLogRequest::setTargetId(const std::string& targetId)
 {
 	targetId_ = targetId;
-	setCoreParameter("TargetId", targetId);
+	setParameter("TargetId", targetId);
 }
 
 std::string WriteCommunicationLogRequest::getBizId()const
@@ -55,6 +57,6 @@ std::string WriteCommunicationLogRequest::getBizId()const
 void WriteCommunicationLogRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

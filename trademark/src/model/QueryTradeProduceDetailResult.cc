@@ -82,6 +82,8 @@ void QueryTradeProduceDetailResult::parse(const std::string &payload)
 		data_.confiscateAmount = std::stof(dataNode["ConfiscateAmount"].asString());
 	if(!dataNode["RefundAmount"].isNull())
 		data_.refundAmount = std::stof(dataNode["RefundAmount"].asString());
+	if(!dataNode["Source"].isNull())
+		data_.source = std::stoi(dataNode["Source"].asString());
 
 }
 

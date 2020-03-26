@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetServerCertificateNameRequest;
 
 SetServerCertificateNameRequest::SetServerCertificateNameRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetServerCertificateName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetServerCertificateNameRequest::~SetServerCertificateNameRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetServerCertificateNameRequest::getAccess_key_id()const
 void SetServerCertificateNameRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long SetServerCertificateNameRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SetServerCertificateNameRequest::getResourceOwnerId()const
 void SetServerCertificateNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetServerCertificateNameRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string SetServerCertificateNameRequest::getRegionId()const
 void SetServerCertificateNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SetServerCertificateNameRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SetServerCertificateNameRequest::getResourceOwnerAccount()const
 void SetServerCertificateNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetServerCertificateNameRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SetServerCertificateNameRequest::getOwnerAccount()const
 void SetServerCertificateNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SetServerCertificateNameRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SetServerCertificateNameRequest::getOwnerId()const
 void SetServerCertificateNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetServerCertificateNameRequest::getServerCertificateId()const
@@ -99,7 +101,7 @@ std::string SetServerCertificateNameRequest::getServerCertificateId()const
 void SetServerCertificateNameRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string SetServerCertificateNameRequest::getTags()const
@@ -110,7 +112,7 @@ std::string SetServerCertificateNameRequest::getTags()const
 void SetServerCertificateNameRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string SetServerCertificateNameRequest::getServerCertificateName()const
@@ -121,6 +123,6 @@ std::string SetServerCertificateNameRequest::getServerCertificateName()const
 void SetServerCertificateNameRequest::setServerCertificateName(const std::string& serverCertificateName)
 {
 	serverCertificateName_ = serverCertificateName;
-	setCoreParameter("ServerCertificateName", serverCertificateName);
+	setParameter("ServerCertificateName", serverCertificateName);
 }
 

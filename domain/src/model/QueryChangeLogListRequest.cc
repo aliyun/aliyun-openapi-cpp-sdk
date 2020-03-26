@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryChangeLogListRequest;
 
 QueryChangeLogListRequest::QueryChangeLogListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryChangeLogList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryChangeLogListRequest::~QueryChangeLogListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryChangeLogListRequest::getDomainName()const
 void QueryChangeLogListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int QueryChangeLogListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryChangeLogListRequest::getPageNum()const
 void QueryChangeLogListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 long QueryChangeLogListRequest::getStartDate()const
@@ -55,7 +57,7 @@ long QueryChangeLogListRequest::getStartDate()const
 void QueryChangeLogListRequest::setStartDate(long startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", std::to_string(startDate));
+	setParameter("StartDate", std::to_string(startDate));
 }
 
 long QueryChangeLogListRequest::getEndDate()const
@@ -66,7 +68,7 @@ long QueryChangeLogListRequest::getEndDate()const
 void QueryChangeLogListRequest::setEndDate(long endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", std::to_string(endDate));
+	setParameter("EndDate", std::to_string(endDate));
 }
 
 std::string QueryChangeLogListRequest::getUserClientIp()const
@@ -77,7 +79,7 @@ std::string QueryChangeLogListRequest::getUserClientIp()const
 void QueryChangeLogListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int QueryChangeLogListRequest::getPageSize()const
@@ -88,7 +90,7 @@ int QueryChangeLogListRequest::getPageSize()const
 void QueryChangeLogListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryChangeLogListRequest::getLang()const
@@ -99,6 +101,6 @@ std::string QueryChangeLogListRequest::getLang()const
 void QueryChangeLogListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

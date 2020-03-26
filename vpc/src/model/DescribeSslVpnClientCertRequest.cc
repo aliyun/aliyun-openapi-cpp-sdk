@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeSslVpnClientCertRequest;
 
 DescribeSslVpnClientCertRequest::DescribeSslVpnClientCertRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeSslVpnClientCert")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSslVpnClientCertRequest::~DescribeSslVpnClientCertRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSslVpnClientCertRequest::getResourceOwnerId()const
 void DescribeSslVpnClientCertRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSslVpnClientCertRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeSslVpnClientCertRequest::getRegionId()const
 void DescribeSslVpnClientCertRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSslVpnClientCertRequest::getSslVpnClientCertId()const
@@ -55,7 +57,7 @@ std::string DescribeSslVpnClientCertRequest::getSslVpnClientCertId()const
 void DescribeSslVpnClientCertRequest::setSslVpnClientCertId(const std::string& sslVpnClientCertId)
 {
 	sslVpnClientCertId_ = sslVpnClientCertId;
-	setCoreParameter("SslVpnClientCertId", sslVpnClientCertId);
+	setParameter("SslVpnClientCertId", sslVpnClientCertId);
 }
 
 std::string DescribeSslVpnClientCertRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeSslVpnClientCertRequest::getResourceOwnerAccount()const
 void DescribeSslVpnClientCertRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSslVpnClientCertRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeSslVpnClientCertRequest::getOwnerAccount()const
 void DescribeSslVpnClientCertRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSslVpnClientCertRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeSslVpnClientCertRequest::getOwnerId()const
 void DescribeSslVpnClientCertRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

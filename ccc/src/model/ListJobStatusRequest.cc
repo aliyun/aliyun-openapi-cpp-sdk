@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListJobStatusRequest;
 
 ListJobStatusRequest::ListJobStatusRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListJobStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobStatusRequest::~ListJobStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListJobStatusRequest::getTimeAlignment()const
 void ListJobStatusRequest::setTimeAlignment(const std::string& timeAlignment)
 {
 	timeAlignment_ = timeAlignment;
-	setCoreParameter("TimeAlignment", timeAlignment);
+	setParameter("TimeAlignment", timeAlignment);
 }
 
 std::string ListJobStatusRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string ListJobStatusRequest::getGroupId()const
 void ListJobStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string ListJobStatusRequest::getPhoneNumber()const
@@ -55,7 +57,7 @@ std::string ListJobStatusRequest::getPhoneNumber()const
 void ListJobStatusRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 long ListJobStatusRequest::getEndTime()const
@@ -66,7 +68,7 @@ long ListJobStatusRequest::getEndTime()const
 void ListJobStatusRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long ListJobStatusRequest::getStartTime()const
@@ -77,7 +79,7 @@ long ListJobStatusRequest::getStartTime()const
 void ListJobStatusRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 int ListJobStatusRequest::getPageNumber()const
@@ -88,7 +90,7 @@ int ListJobStatusRequest::getPageNumber()const
 void ListJobStatusRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobStatusRequest::getContactName()const
@@ -99,7 +101,7 @@ std::string ListJobStatusRequest::getContactName()const
 void ListJobStatusRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 std::string ListJobStatusRequest::getInstanceId()const
@@ -110,7 +112,7 @@ std::string ListJobStatusRequest::getInstanceId()const
 void ListJobStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListJobStatusRequest::getPageSize()const
@@ -121,7 +123,7 @@ int ListJobStatusRequest::getPageSize()const
 void ListJobStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListJobStatusRequest::getScenarioId()const
@@ -132,6 +134,6 @@ std::string ListJobStatusRequest::getScenarioId()const
 void ListJobStatusRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryFaceRequest;
 
 QueryFaceRequest::QueryFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFaceRequest::~QueryFaceRequest()
 {}
@@ -33,6 +35,28 @@ std::string QueryFaceRequest::getUserId()const
 void QueryFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
+}
+
+std::string QueryFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

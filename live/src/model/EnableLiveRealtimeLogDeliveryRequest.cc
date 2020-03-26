@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::EnableLiveRealtimeLogDeliveryRequest;
 
 EnableLiveRealtimeLogDeliveryRequest::EnableLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "EnableLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 EnableLiveRealtimeLogDeliveryRequest::~EnableLiveRealtimeLogDeliveryRequest()
 {}
@@ -33,7 +35,7 @@ std::string EnableLiveRealtimeLogDeliveryRequest::getDomainName()const
 void EnableLiveRealtimeLogDeliveryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long EnableLiveRealtimeLogDeliveryRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long EnableLiveRealtimeLogDeliveryRequest::getOwnerId()const
 void EnableLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

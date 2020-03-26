@@ -32,59 +32,72 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerUDPListenerAttributeResult : public ServiceResult
 			{
 			public:
+				struct PortRange
+				{
+					int startPort;
+					int endPort;
+				};
 
 
 				DescribeLoadBalancerUDPListenerAttributeResult();
 				explicit DescribeLoadBalancerUDPListenerAttributeResult(const std::string &payload);
 				~DescribeLoadBalancerUDPListenerAttributeResult();
-				std::string getStatus()const;
 				int getMaxConnection()const;
-				int getListenerPort()const;
 				std::string getVServerGroupId()const;
-				int getHealthCheckInterval()const;
 				std::string getDescription()const;
 				int getUnhealthyThreshold()const;
 				std::string getScheduler()const;
-				std::string getAclId()const;
 				std::string getHealthCheck()const;
-				int getHealthCheckConnectTimeout()const;
 				int getBackendServerPort()const;
+				int getConnectionDrainTimeout()const;
 				int getPersistenceTimeout()const;
 				int getHealthCheckConnectPort()const;
+				int getBandwidth()const;
+				std::string getStatus()const;
+				int getListenerPort()const;
+				int getHealthCheckInterval()const;
+				std::vector<PortRange> getPortRanges()const;
+				std::string getAclId()const;
+				int getHealthCheckConnectTimeout()const;
+				std::string getConnectionDrain()const;
 				std::string getHealthCheckReq()const;
 				std::string getAclStatus()const;
 				std::string getVpcIds()const;
-				int getBandwidth()const;
 				int getHealthyThreshold()const;
 				std::string getHealthCheckExp()const;
 				std::string getMasterSlaveServerGroupId()const;
 				std::string getAclType()const;
+				std::vector<std::string> getAclIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
 				int maxConnection_;
-				int listenerPort_;
 				std::string vServerGroupId_;
-				int healthCheckInterval_;
 				std::string description_;
 				int unhealthyThreshold_;
 				std::string scheduler_;
-				std::string aclId_;
 				std::string healthCheck_;
-				int healthCheckConnectTimeout_;
 				int backendServerPort_;
+				int connectionDrainTimeout_;
 				int persistenceTimeout_;
 				int healthCheckConnectPort_;
+				int bandwidth_;
+				std::string status_;
+				int listenerPort_;
+				int healthCheckInterval_;
+				std::vector<PortRange> portRanges_;
+				std::string aclId_;
+				int healthCheckConnectTimeout_;
+				std::string connectionDrain_;
 				std::string healthCheckReq_;
 				std::string aclStatus_;
 				std::string vpcIds_;
-				int bandwidth_;
 				int healthyThreshold_;
 				std::string healthCheckExp_;
 				std::string masterSlaveServerGroupId_;
 				std::string aclType_;
+				std::vector<std::string> aclIds_;
 
 			};
 		}

@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::AddAxnTrackNoRequest;
 AddAxnTrackNoRequest::AddAxnTrackNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "AddAxnTrackNo")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 AddAxnTrackNoRequest::~AddAxnTrackNoRequest()

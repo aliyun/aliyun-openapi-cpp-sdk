@@ -35,15 +35,33 @@ namespace AlibabaCloud
 				DescribeAvailableResourceRequest();
 				~DescribeAvailableResourceRequest();
 
+				long getResourceOwnerId()const;
+				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
+				std::string getAcceptLanguage()const;
+				void setAcceptLanguage(const std::string& acceptLanguage);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 
             private:
+				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string regionId_;
+				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				long ownerId_;
+				std::string acceptLanguage_;
 				std::string zoneId_;
 				std::string chargeType_;
 

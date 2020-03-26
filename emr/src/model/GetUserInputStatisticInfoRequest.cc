@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetUserInputStatisticInfoRequest;
 
 GetUserInputStatisticInfoRequest::GetUserInputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetUserInputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserInputStatisticInfoRequest::~GetUserInputStatisticInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetUserInputStatisticInfoRequest::getFromDatetime()const
 void GetUserInputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setParameter("FromDatetime", fromDatetime);
 }
 
 long GetUserInputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long GetUserInputStatisticInfoRequest::getResourceOwnerId()const
 void GetUserInputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetUserInputStatisticInfoRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string GetUserInputStatisticInfoRequest::getClusterId()const
 void GetUserInputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetUserInputStatisticInfoRequest::getToDatetime()const
@@ -66,7 +68,7 @@ std::string GetUserInputStatisticInfoRequest::getToDatetime()const
 void GetUserInputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setParameter("ToDatetime", toDatetime);
 }
 
 std::string GetUserInputStatisticInfoRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string GetUserInputStatisticInfoRequest::getAccessKeyId()const
 void GetUserInputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetUserInputStatisticInfoRequest::getRegionId()const
@@ -88,6 +90,6 @@ std::string GetUserInputStatisticInfoRequest::getRegionId()const
 void GetUserInputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIPv6TranslatorEntryRequest;
 
 DeleteIPv6TranslatorEntryRequest::DeleteIPv6TranslatorEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIPv6TranslatorEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIPv6TranslatorEntryRequest::~DeleteIPv6TranslatorEntryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIPv6TranslatorEntryRequest::getResourceOwnerId()const
 void DeleteIPv6TranslatorEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getClientToken()const
 void DeleteIPv6TranslatorEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getRegionId()const
 void DeleteIPv6TranslatorEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
@@ -66,7 +68,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorEntryId()const
 void DeleteIPv6TranslatorEntryRequest::setIpv6TranslatorEntryId(const std::string& ipv6TranslatorEntryId)
 {
 	ipv6TranslatorEntryId_ = ipv6TranslatorEntryId;
-	setCoreParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
+	setParameter("Ipv6TranslatorEntryId", ipv6TranslatorEntryId);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
 void DeleteIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteIPv6TranslatorEntryRequest::getOwnerAccount()const
 void DeleteIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteIPv6TranslatorEntryRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeleteIPv6TranslatorEntryRequest::getOwnerId()const
 void DeleteIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
@@ -110,6 +112,6 @@ std::string DeleteIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
 void DeleteIPv6TranslatorEntryRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
+	setParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 

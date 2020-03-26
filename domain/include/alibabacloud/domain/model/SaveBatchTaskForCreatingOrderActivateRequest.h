@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForCreatingOrderActivateRequest : public RpcServiceRequest
 			{
+			public:
 				struct OrderActivateParam
 				{
 					std::string country;

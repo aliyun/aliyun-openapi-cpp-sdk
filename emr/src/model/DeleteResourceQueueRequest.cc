@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteResourceQueueRequest;
 
 DeleteResourceQueueRequest::DeleteResourceQueueRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteResourceQueue")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteResourceQueueRequest::~DeleteResourceQueueRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteResourceQueueRequest::getResourceOwnerId()const
 void DeleteResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteResourceQueueRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DeleteResourceQueueRequest::getClusterId()const
 void DeleteResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteResourceQueueRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteResourceQueueRequest::getAccessKeyId()const
 void DeleteResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteResourceQueueRequest::getResourceQueueId()const
@@ -66,7 +68,7 @@ std::string DeleteResourceQueueRequest::getResourceQueueId()const
 void DeleteResourceQueueRequest::setResourceQueueId(const std::string& resourceQueueId)
 {
 	resourceQueueId_ = resourceQueueId;
-	setCoreParameter("ResourceQueueId", resourceQueueId);
+	setParameter("ResourceQueueId", resourceQueueId);
 }
 
 std::string DeleteResourceQueueRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string DeleteResourceQueueRequest::getRegionId()const
 void DeleteResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

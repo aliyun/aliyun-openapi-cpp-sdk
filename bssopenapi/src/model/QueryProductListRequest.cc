@@ -35,7 +35,7 @@ int QueryProductListRequest::getPageNum()const
 void QueryProductListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 bool QueryProductListRequest::getQueryTotalCount()const
@@ -46,7 +46,7 @@ bool QueryProductListRequest::getQueryTotalCount()const
 void QueryProductListRequest::setQueryTotalCount(bool queryTotalCount)
 {
 	queryTotalCount_ = queryTotalCount;
-	setCoreParameter("QueryTotalCount", queryTotalCount ? "true" : "false");
+	setParameter("QueryTotalCount", queryTotalCount ? "true" : "false");
 }
 
 int QueryProductListRequest::getPageSize()const
@@ -57,6 +57,6 @@ int QueryProductListRequest::getPageSize()const
 void QueryProductListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

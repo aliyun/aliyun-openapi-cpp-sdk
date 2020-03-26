@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRouteTableListRequest;
 
 DescribeRouteTableListRequest::DescribeRouteTableListRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouteTableList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteTableListRequest::~DescribeRouteTableListRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRouteTableListRequest::getResourceOwnerId()const
 void DescribeRouteTableListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeRouteTableListRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeRouteTableListRequest::getPageNumber()const
 void DescribeRouteTableListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRouteTableListRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeRouteTableListRequest::getResourceGroupId()const
 void DescribeRouteTableListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeRouteTableListRequest::getRouteTableName()const
@@ -66,7 +68,7 @@ std::string DescribeRouteTableListRequest::getRouteTableName()const
 void DescribeRouteTableListRequest::setRouteTableName(const std::string& routeTableName)
 {
 	routeTableName_ = routeTableName;
-	setCoreParameter("RouteTableName", routeTableName);
+	setParameter("RouteTableName", routeTableName);
 }
 
 std::string DescribeRouteTableListRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeRouteTableListRequest::getRegionId()const
 void DescribeRouteTableListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeRouteTableListRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeRouteTableListRequest::getPageSize()const
 void DescribeRouteTableListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeRouteTableListRequest::Tag> DescribeRouteTableListRequest::getTag()const
@@ -99,12 +101,11 @@ std::vector<DescribeRouteTableListRequest::Tag> DescribeRouteTableListRequest::g
 void DescribeRouteTableListRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -116,7 +117,7 @@ std::string DescribeRouteTableListRequest::getRouteTableId()const
 void DescribeRouteTableListRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string DescribeRouteTableListRequest::getResourceOwnerAccount()const
@@ -127,7 +128,7 @@ std::string DescribeRouteTableListRequest::getResourceOwnerAccount()const
 void DescribeRouteTableListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRouteTableListRequest::getOwnerAccount()const
@@ -138,7 +139,7 @@ std::string DescribeRouteTableListRequest::getOwnerAccount()const
 void DescribeRouteTableListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRouteTableListRequest::getOwnerId()const
@@ -149,7 +150,7 @@ long DescribeRouteTableListRequest::getOwnerId()const
 void DescribeRouteTableListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRouteTableListRequest::getRouterType()const
@@ -160,7 +161,7 @@ std::string DescribeRouteTableListRequest::getRouterType()const
 void DescribeRouteTableListRequest::setRouterType(const std::string& routerType)
 {
 	routerType_ = routerType;
-	setCoreParameter("RouterType", routerType);
+	setParameter("RouterType", routerType);
 }
 
 std::string DescribeRouteTableListRequest::getRouterId()const
@@ -171,7 +172,7 @@ std::string DescribeRouteTableListRequest::getRouterId()const
 void DescribeRouteTableListRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setParameter("RouterId", routerId);
 }
 
 std::string DescribeRouteTableListRequest::getVpcId()const
@@ -182,6 +183,6 @@ std::string DescribeRouteTableListRequest::getVpcId()const
 void DescribeRouteTableListRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateLiveSnapshotDetectPornConfigRequest;
 
 UpdateLiveSnapshotDetectPornConfigRequest::UpdateLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLiveSnapshotDetectPornConfigRequest::~UpdateLiveSnapshotDetectPornConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getOssEndpoint()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
+	setParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getOssObject()const
@@ -44,7 +46,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getOssObject()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setOssObject(const std::string& ossObject)
 {
 	ossObject_ = ossObject;
-	setCoreParameter("OssObject", ossObject);
+	setParameter("OssObject", ossObject);
 }
 
 std::vector<std::string> UpdateLiveSnapshotDetectPornConfigRequest::getScene()const
@@ -55,8 +57,9 @@ std::vector<std::string> UpdateLiveSnapshotDetectPornConfigRequest::getScene()co
 void UpdateLiveSnapshotDetectPornConfigRequest::setScene(const std::vector<std::string>& scene)
 {
 	scene_ = scene;
-	for(int i = 0; i!= scene.size(); i++)
-		setCoreParameter("Scene."+ std::to_string(i), scene.at(i));
+	for(int dep1 = 0; dep1!= scene.size(); dep1++) {
+		setParameter("Scene."+ std::to_string(dep1), scene.at(dep1));
+	}
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getAppName()const
@@ -67,7 +70,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getAppName()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -78,7 +81,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getOssBucket()const
@@ -89,7 +92,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getOssBucket()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setParameter("OssBucket", ossBucket);
 }
 
 std::string UpdateLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -100,7 +103,7 @@ std::string UpdateLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -111,7 +114,7 @@ long UpdateLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateLiveSnapshotDetectPornConfigRequest::getInterval()const
@@ -122,6 +125,6 @@ int UpdateLiveSnapshotDetectPornConfigRequest::getInterval()const
 void UpdateLiveSnapshotDetectPornConfigRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setParameter("Interval", std::to_string(interval));
 }
 

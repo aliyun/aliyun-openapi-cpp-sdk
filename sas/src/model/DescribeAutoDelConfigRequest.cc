@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAutoDelConfigRequest;
 
 DescribeAutoDelConfigRequest::DescribeAutoDelConfigRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAutoDelConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAutoDelConfigRequest::~DescribeAutoDelConfigRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeAutoDelConfigRequest::getSourceIp()const
 void DescribeAutoDelConfigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

@@ -22,7 +22,7 @@ GetAvailableRegionsRequest::GetAvailableRegionsRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/regions");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetAvailableRegionsRequest::~GetAvailableRegionsRequest()

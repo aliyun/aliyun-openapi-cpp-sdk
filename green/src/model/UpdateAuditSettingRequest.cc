@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateAuditSettingRequest;
 
 UpdateAuditSettingRequest::UpdateAuditSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateAuditSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAuditSettingRequest::~UpdateAuditSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateAuditSettingRequest::getSeed()const
 void UpdateAuditSettingRequest::setSeed(const std::string& seed)
 {
 	seed_ = seed;
-	setCoreParameter("Seed", seed);
+	setParameter("Seed", seed);
 }
 
 std::string UpdateAuditSettingRequest::getAuditRange()const
@@ -44,7 +46,7 @@ std::string UpdateAuditSettingRequest::getAuditRange()const
 void UpdateAuditSettingRequest::setAuditRange(const std::string& auditRange)
 {
 	auditRange_ = auditRange;
-	setCoreParameter("AuditRange", auditRange);
+	setParameter("AuditRange", auditRange);
 }
 
 std::string UpdateAuditSettingRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string UpdateAuditSettingRequest::getSourceIp()const
 void UpdateAuditSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateAuditSettingRequest::getCallback()const
@@ -66,6 +68,6 @@ std::string UpdateAuditSettingRequest::getCallback()const
 void UpdateAuditSettingRequest::setCallback(const std::string& callback)
 {
 	callback_ = callback;
-	setCoreParameter("Callback", callback);
+	setParameter("Callback", callback);
 }
 

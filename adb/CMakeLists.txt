@@ -77,6 +77,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeTableDetailResult.h
 	include/alibabacloud/adb/model/DescribeTablesRequest.h
 	include/alibabacloud/adb/model/DescribeTablesResult.h
+	include/alibabacloud/adb/model/DescribeTaskInfoRequest.h
+	include/alibabacloud/adb/model/DescribeTaskInfoResult.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionResult.h
 	include/alibabacloud/adb/model/KillProcessRequest.h
@@ -89,6 +91,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeResult.h
 	include/alibabacloud/adb/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/adb/model/ModifyBackupPolicyResult.h
+	include/alibabacloud/adb/model/ModifyClusterConnectionStringRequest.h
+	include/alibabacloud/adb/model/ModifyClusterConnectionStringResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterRequest.h
 	include/alibabacloud/adb/model/ModifyDBClusterResult.h
 	include/alibabacloud/adb/model/ModifyDBClusterAccessWhiteListRequest.h
@@ -168,6 +172,8 @@ set(adb_src
 	src/model/DescribeTableDetailResult.cc
 	src/model/DescribeTablesRequest.cc
 	src/model/DescribeTablesResult.cc
+	src/model/DescribeTaskInfoRequest.cc
+	src/model/DescribeTaskInfoResult.cc
 	src/model/GrantOperatorPermissionRequest.cc
 	src/model/GrantOperatorPermissionResult.cc
 	src/model/KillProcessRequest.cc
@@ -180,6 +186,8 @@ set(adb_src
 	src/model/ModifyAutoRenewAttributeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
+	src/model/ModifyClusterConnectionStringRequest.cc
+	src/model/ModifyClusterConnectionStringResult.cc
 	src/model/ModifyDBClusterRequest.cc
 	src/model/ModifyDBClusterResult.cc
 	src/model/ModifyDBClusterAccessWhiteListRequest.cc

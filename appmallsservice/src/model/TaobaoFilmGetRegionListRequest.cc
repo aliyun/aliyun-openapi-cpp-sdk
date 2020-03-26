@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetRegionListRequest;
 
 TaobaoFilmGetRegionListRequest::TaobaoFilmGetRegionListRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetRegionListRequest::~TaobaoFilmGetRegionListRequest()
 {}
@@ -33,6 +35,6 @@ std::string TaobaoFilmGetRegionListRequest::getParamsJson()const
 void TaobaoFilmGetRegionListRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

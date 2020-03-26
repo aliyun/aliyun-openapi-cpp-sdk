@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyResourcePoolSchedulerTypeRequest;
 
 ModifyResourcePoolSchedulerTypeRequest::ModifyResourcePoolSchedulerTypeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyResourcePoolSchedulerType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyResourcePoolSchedulerTypeRequest::~ModifyResourcePoolSchedulerTypeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyResourcePoolSchedulerTypeRequest::getResourceOwnerId()const
 void ModifyResourcePoolSchedulerTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getClusterId()const
 void ModifyResourcePoolSchedulerTypeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getAccessKeyId()const
 void ModifyResourcePoolSchedulerTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getRegionId()const
 void ModifyResourcePoolSchedulerTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyResourcePoolSchedulerTypeRequest::getSchedulerType()const
@@ -77,6 +79,6 @@ std::string ModifyResourcePoolSchedulerTypeRequest::getSchedulerType()const
 void ModifyResourcePoolSchedulerTypeRequest::setSchedulerType(const std::string& schedulerType)
 {
 	schedulerType_ = schedulerType;
-	setCoreParameter("SchedulerType", schedulerType);
+	setParameter("SchedulerType", schedulerType);
 }
 

@@ -22,7 +22,7 @@ DeleteInstanceRequest::DeleteInstanceRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteInstanceRequest::~DeleteInstanceRequest()

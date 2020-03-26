@@ -36,17 +36,17 @@ namespace AlibabaCloud
 				{
 					struct Script
 					{
+						std::string debugVersion;
 						std::string industry;
 						std::string status;
-						std::string debugVersion;
 						std::string appliedVersion;
 						bool isDrafted;
 						std::string scriptName;
 						std::string scriptDescription;
 						long updateTime;
 						std::string scriptId;
-						std::string scene;
 						std::string debugStatus;
+						std::string scene;
 						bool isDebugDrafted;
 					};
 					int totalCount;

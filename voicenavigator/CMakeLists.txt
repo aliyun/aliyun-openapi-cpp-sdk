@@ -21,6 +21,8 @@ set(voicenavigator_public_header
 	include/alibabacloud/voicenavigator/VoiceNavigatorExport.h )
 
 set(voicenavigator_public_header_model 
+	include/alibabacloud/voicenavigator/model/AssociateChatbotInstanceRequest.h
+	include/alibabacloud/voicenavigator/model/AssociateChatbotInstanceResult.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceRequest.h
 	include/alibabacloud/voicenavigator/model/AuditTTSVoiceResult.h
 	include/alibabacloud/voicenavigator/model/AuthorizedRequest.h
@@ -93,6 +95,8 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/ExportStatisticalDataResult.h
 	include/alibabacloud/voicenavigator/model/ListCategoriesRequest.h
 	include/alibabacloud/voicenavigator/model/ListCategoriesResult.h
+	include/alibabacloud/voicenavigator/model/ListChatbotInstancesRequest.h
+	include/alibabacloud/voicenavigator/model/ListChatbotInstancesResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsRequest.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationsRequest.h
@@ -148,6 +152,8 @@ set(voicenavigator_public_header_model
 
 set(voicenavigator_src 
 	src/VoiceNavigatorClient.cc
+	src/model/AssociateChatbotInstanceRequest.cc
+	src/model/AssociateChatbotInstanceResult.cc
 	src/model/AuditTTSVoiceRequest.cc
 	src/model/AuditTTSVoiceResult.cc
 	src/model/AuthorizedRequest.cc
@@ -220,6 +226,8 @@ set(voicenavigator_src
 	src/model/ExportStatisticalDataResult.cc
 	src/model/ListCategoriesRequest.cc
 	src/model/ListCategoriesResult.cc
+	src/model/ListChatbotInstancesRequest.cc
+	src/model/ListChatbotInstancesResult.cc
 	src/model/ListConversationDetailsRequest.cc
 	src/model/ListConversationDetailsResult.cc
 	src/model/ListConversationsRequest.cc

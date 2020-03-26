@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowInstanceRequest;
 
 ListFlowInstanceRequest::ListFlowInstanceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowInstanceRequest::~ListFlowInstanceRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ListFlowInstanceRequest::getStatusList()const
 void ListFlowInstanceRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 int ListFlowInstanceRequest::getPageNumber()const
@@ -45,7 +48,7 @@ int ListFlowInstanceRequest::getPageNumber()const
 void ListFlowInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowInstanceRequest::getRegionId()const
@@ -56,7 +59,7 @@ std::string ListFlowInstanceRequest::getRegionId()const
 void ListFlowInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListFlowInstanceRequest::getPageSize()const
@@ -67,7 +70,7 @@ int ListFlowInstanceRequest::getPageSize()const
 void ListFlowInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowInstanceRequest::getId()const
@@ -78,7 +81,7 @@ std::string ListFlowInstanceRequest::getId()const
 void ListFlowInstanceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string ListFlowInstanceRequest::getProjectId()const
@@ -89,7 +92,7 @@ std::string ListFlowInstanceRequest::getProjectId()const
 void ListFlowInstanceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string ListFlowInstanceRequest::getOwner()const
@@ -100,7 +103,7 @@ std::string ListFlowInstanceRequest::getOwner()const
 void ListFlowInstanceRequest::setOwner(const std::string& owner)
 {
 	owner_ = owner;
-	setCoreParameter("Owner", owner);
+	setParameter("Owner", owner);
 }
 
 std::string ListFlowInstanceRequest::getTimeRange()const
@@ -111,7 +114,7 @@ std::string ListFlowInstanceRequest::getTimeRange()const
 void ListFlowInstanceRequest::setTimeRange(const std::string& timeRange)
 {
 	timeRange_ = timeRange;
-	setCoreParameter("TimeRange", timeRange);
+	setParameter("TimeRange", timeRange);
 }
 
 std::string ListFlowInstanceRequest::getOrderBy()const
@@ -122,7 +125,7 @@ std::string ListFlowInstanceRequest::getOrderBy()const
 void ListFlowInstanceRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string ListFlowInstanceRequest::getInstanceId()const
@@ -133,7 +136,7 @@ std::string ListFlowInstanceRequest::getInstanceId()const
 void ListFlowInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListFlowInstanceRequest::getFlowName()const
@@ -144,7 +147,7 @@ std::string ListFlowInstanceRequest::getFlowName()const
 void ListFlowInstanceRequest::setFlowName(const std::string& flowName)
 {
 	flowName_ = flowName;
-	setCoreParameter("FlowName", flowName);
+	setParameter("FlowName", flowName);
 }
 
 std::string ListFlowInstanceRequest::getFlowId()const
@@ -155,7 +158,7 @@ std::string ListFlowInstanceRequest::getFlowId()const
 void ListFlowInstanceRequest::setFlowId(const std::string& flowId)
 {
 	flowId_ = flowId;
-	setCoreParameter("FlowId", flowId);
+	setParameter("FlowId", flowId);
 }
 
 std::string ListFlowInstanceRequest::getOrderType()const
@@ -166,6 +169,6 @@ std::string ListFlowInstanceRequest::getOrderType()const
 void ListFlowInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -109,6 +109,7 @@ namespace AlibabaCloud
 					long modifyTs;
 					std::string internetIp;
 					std::string aliasName;
+					long recordId;
 					std::string canFix;
 					ExtendContentJson extendContentJson;
 					int status;
@@ -125,7 +126,10 @@ namespace AlibabaCloud
 					long firstTs;
 					std::string uuid;
 					std::string related;
+					std::string level;
 					std::string tag;
+					std::string regionId;
+					bool online;
 					long primaryId;
 					std::string resultCode;
 				};

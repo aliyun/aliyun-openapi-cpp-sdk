@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CreateScalingConfigurationRequest;
 
 CreateScalingConfigurationRequest::CreateScalingConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CreateScalingConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScalingConfigurationRequest::~CreateScalingConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateScalingConfigurationRequest::getHpcClusterId()const
 void CreateScalingConfigurationRequest::setHpcClusterId(const std::string& hpcClusterId)
 {
 	hpcClusterId_ = hpcClusterId;
-	setCoreParameter("HpcClusterId", hpcClusterId);
+	setParameter("HpcClusterId", hpcClusterId);
 }
 
 std::string CreateScalingConfigurationRequest::getSecurityEnhancementStrategy()const
@@ -44,7 +46,7 @@ std::string CreateScalingConfigurationRequest::getSecurityEnhancementStrategy()c
 void CreateScalingConfigurationRequest::setSecurityEnhancementStrategy(const std::string& securityEnhancementStrategy)
 {
 	securityEnhancementStrategy_ = securityEnhancementStrategy;
-	setCoreParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
+	setParameter("SecurityEnhancementStrategy", securityEnhancementStrategy);
 }
 
 std::string CreateScalingConfigurationRequest::getKeyPairName()const
@@ -55,7 +57,7 @@ std::string CreateScalingConfigurationRequest::getKeyPairName()const
 void CreateScalingConfigurationRequest::setKeyPairName(const std::string& keyPairName)
 {
 	keyPairName_ = keyPairName;
-	setCoreParameter("KeyPairName", keyPairName);
+	setParameter("KeyPairName", keyPairName);
 }
 
 std::vector<CreateScalingConfigurationRequest::SpotPriceLimit> CreateScalingConfigurationRequest::getSpotPriceLimit()const
@@ -66,12 +68,11 @@ std::vector<CreateScalingConfigurationRequest::SpotPriceLimit> CreateScalingConf
 void CreateScalingConfigurationRequest::setSpotPriceLimit(const std::vector<SpotPriceLimit>& spotPriceLimit)
 {
 	spotPriceLimit_ = spotPriceLimit;
-	int i = 0;
-	for(int i = 0; i!= spotPriceLimit.size(); i++)	{
-		auto obj = spotPriceLimit.at(i);
-		std::string str ="SpotPriceLimit."+ std::to_string(i);
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".PriceLimit", std::to_string(obj.priceLimit));
+	for(int dep1 = 0; dep1!= spotPriceLimit.size(); dep1++) {
+		auto spotPriceLimitObj = spotPriceLimit.at(dep1);
+		std::string spotPriceLimitObjStr = "SpotPriceLimit." + std::to_string(dep1 + 1);
+		setParameter(spotPriceLimitObjStr + ".InstanceType", spotPriceLimitObj.instanceType);
+		setParameter(spotPriceLimitObjStr + ".PriceLimit", std::to_string(spotPriceLimitObj.priceLimit));
 	}
 }
 
@@ -83,7 +84,7 @@ std::string CreateScalingConfigurationRequest::getResourceGroupId()const
 void CreateScalingConfigurationRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateScalingConfigurationRequest::getHostName()const
@@ -94,7 +95,7 @@ std::string CreateScalingConfigurationRequest::getHostName()const
 void CreateScalingConfigurationRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string CreateScalingConfigurationRequest::getPassword()const
@@ -105,7 +106,7 @@ std::string CreateScalingConfigurationRequest::getPassword()const
 void CreateScalingConfigurationRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateScalingConfigurationRequest::getInstanceDescription()const
@@ -116,7 +117,29 @@ std::string CreateScalingConfigurationRequest::getInstanceDescription()const
 void CreateScalingConfigurationRequest::setInstanceDescription(const std::string& instanceDescription)
 {
 	instanceDescription_ = instanceDescription;
-	setCoreParameter("InstanceDescription", instanceDescription);
+	setParameter("InstanceDescription", instanceDescription);
+}
+
+std::string CreateScalingConfigurationRequest::getSystemDiskAutoSnapshotPolicyId()const
+{
+	return systemDiskAutoSnapshotPolicyId_;
+}
+
+void CreateScalingConfigurationRequest::setSystemDiskAutoSnapshotPolicyId(const std::string& systemDiskAutoSnapshotPolicyId)
+{
+	systemDiskAutoSnapshotPolicyId_ = systemDiskAutoSnapshotPolicyId;
+	setParameter("SystemDiskAutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+}
+
+int CreateScalingConfigurationRequest::getIpv6AddressCount()const
+{
+	return ipv6AddressCount_;
+}
+
+void CreateScalingConfigurationRequest::setIpv6AddressCount(int ipv6AddressCount)
+{
+	ipv6AddressCount_ = ipv6AddressCount;
+	setParameter("Ipv6AddressCount", std::to_string(ipv6AddressCount));
 }
 
 int CreateScalingConfigurationRequest::getCpu()const
@@ -127,7 +150,7 @@ int CreateScalingConfigurationRequest::getCpu()const
 void CreateScalingConfigurationRequest::setCpu(int cpu)
 {
 	cpu_ = cpu;
-	setCoreParameter("Cpu", std::to_string(cpu));
+	setParameter("Cpu", std::to_string(cpu));
 }
 
 long CreateScalingConfigurationRequest::getOwnerId()const
@@ -138,7 +161,7 @@ long CreateScalingConfigurationRequest::getOwnerId()const
 void CreateScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateScalingConfigurationRequest::getScalingConfigurationName()const
@@ -149,7 +172,7 @@ std::string CreateScalingConfigurationRequest::getScalingConfigurationName()cons
 void CreateScalingConfigurationRequest::setScalingConfigurationName(const std::string& scalingConfigurationName)
 {
 	scalingConfigurationName_ = scalingConfigurationName;
-	setCoreParameter("ScalingConfigurationName", scalingConfigurationName);
+	setParameter("ScalingConfigurationName", scalingConfigurationName);
 }
 
 std::string CreateScalingConfigurationRequest::getTags()const
@@ -160,7 +183,7 @@ std::string CreateScalingConfigurationRequest::getTags()const
 void CreateScalingConfigurationRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string CreateScalingConfigurationRequest::getSpotStrategy()const
@@ -171,7 +194,7 @@ std::string CreateScalingConfigurationRequest::getSpotStrategy()const
 void CreateScalingConfigurationRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string CreateScalingConfigurationRequest::getInstanceName()const
@@ -182,7 +205,7 @@ std::string CreateScalingConfigurationRequest::getInstanceName()const
 void CreateScalingConfigurationRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string CreateScalingConfigurationRequest::getInternetChargeType()const
@@ -193,7 +216,7 @@ std::string CreateScalingConfigurationRequest::getInternetChargeType()const
 void CreateScalingConfigurationRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 int CreateScalingConfigurationRequest::getInternetMaxBandwidthIn()const
@@ -204,7 +227,7 @@ int CreateScalingConfigurationRequest::getInternetMaxBandwidthIn()const
 void CreateScalingConfigurationRequest::setInternetMaxBandwidthIn(int internetMaxBandwidthIn)
 {
 	internetMaxBandwidthIn_ = internetMaxBandwidthIn;
-	setCoreParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
+	setParameter("InternetMaxBandwidthIn", std::to_string(internetMaxBandwidthIn));
 }
 
 std::string CreateScalingConfigurationRequest::getImageId()const
@@ -215,7 +238,7 @@ std::string CreateScalingConfigurationRequest::getImageId()const
 void CreateScalingConfigurationRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 int CreateScalingConfigurationRequest::getMemory()const
@@ -226,7 +249,7 @@ int CreateScalingConfigurationRequest::getMemory()const
 void CreateScalingConfigurationRequest::setMemory(int memory)
 {
 	memory_ = memory;
-	setCoreParameter("Memory", std::to_string(memory));
+	setParameter("Memory", std::to_string(memory));
 }
 
 std::string CreateScalingConfigurationRequest::getClientToken()const
@@ -237,7 +260,7 @@ std::string CreateScalingConfigurationRequest::getClientToken()const
 void CreateScalingConfigurationRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateScalingConfigurationRequest::getScalingGroupId()const
@@ -248,7 +271,7 @@ std::string CreateScalingConfigurationRequest::getScalingGroupId()const
 void CreateScalingConfigurationRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::vector<std::string> CreateScalingConfigurationRequest::getInstanceTypes()const
@@ -259,8 +282,9 @@ std::vector<std::string> CreateScalingConfigurationRequest::getInstanceTypes()co
 void CreateScalingConfigurationRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
 {
 	instanceTypes_ = instanceTypes;
-	for(int i = 0; i!= instanceTypes.size(); i++)
-		setCoreParameter("InstanceTypes."+ std::to_string(i), instanceTypes.at(i));
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++) {
+		setParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
+	}
 }
 
 std::string CreateScalingConfigurationRequest::getIoOptimized()const
@@ -271,7 +295,7 @@ std::string CreateScalingConfigurationRequest::getIoOptimized()const
 void CreateScalingConfigurationRequest::setIoOptimized(const std::string& ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized);
+	setParameter("IoOptimized", ioOptimized);
 }
 
 std::string CreateScalingConfigurationRequest::getSecurityGroupId()const
@@ -282,7 +306,7 @@ std::string CreateScalingConfigurationRequest::getSecurityGroupId()const
 void CreateScalingConfigurationRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 int CreateScalingConfigurationRequest::getInternetMaxBandwidthOut()const
@@ -293,7 +317,7 @@ int CreateScalingConfigurationRequest::getInternetMaxBandwidthOut()const
 void CreateScalingConfigurationRequest::setInternetMaxBandwidthOut(int internetMaxBandwidthOut)
 {
 	internetMaxBandwidthOut_ = internetMaxBandwidthOut;
-	setCoreParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
+	setParameter("InternetMaxBandwidthOut", std::to_string(internetMaxBandwidthOut));
 }
 
 std::string CreateScalingConfigurationRequest::getSystemDiskCategory()const
@@ -304,7 +328,7 @@ std::string CreateScalingConfigurationRequest::getSystemDiskCategory()const
 void CreateScalingConfigurationRequest::setSystemDiskCategory(const std::string& systemDiskCategory)
 {
 	systemDiskCategory_ = systemDiskCategory;
-	setCoreParameter("SystemDiskCategory", systemDiskCategory);
+	setParameter("SystemDiskCategory", systemDiskCategory);
 }
 
 std::string CreateScalingConfigurationRequest::getAccessKeyId()const
@@ -315,7 +339,7 @@ std::string CreateScalingConfigurationRequest::getAccessKeyId()const
 void CreateScalingConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateScalingConfigurationRequest::getUserData()const
@@ -326,7 +350,7 @@ std::string CreateScalingConfigurationRequest::getUserData()const
 void CreateScalingConfigurationRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 bool CreateScalingConfigurationRequest::getPasswordInherit()const
@@ -337,7 +361,7 @@ bool CreateScalingConfigurationRequest::getPasswordInherit()const
 void CreateScalingConfigurationRequest::setPasswordInherit(bool passwordInherit)
 {
 	passwordInherit_ = passwordInherit;
-	setCoreParameter("PasswordInherit", passwordInherit ? "true" : "false");
+	setParameter("PasswordInherit", passwordInherit ? "true" : "false");
 }
 
 std::string CreateScalingConfigurationRequest::getImageName()const
@@ -348,7 +372,7 @@ std::string CreateScalingConfigurationRequest::getImageName()const
 void CreateScalingConfigurationRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", imageName);
+	setParameter("ImageName", imageName);
 }
 
 std::string CreateScalingConfigurationRequest::getInstanceType()const
@@ -359,7 +383,7 @@ std::string CreateScalingConfigurationRequest::getInstanceType()const
 void CreateScalingConfigurationRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateScalingConfigurationRequest::getDeploymentSetId()const
@@ -370,7 +394,7 @@ std::string CreateScalingConfigurationRequest::getDeploymentSetId()const
 void CreateScalingConfigurationRequest::setDeploymentSetId(const std::string& deploymentSetId)
 {
 	deploymentSetId_ = deploymentSetId;
-	setCoreParameter("DeploymentSetId", deploymentSetId);
+	setParameter("DeploymentSetId", deploymentSetId);
 }
 
 std::string CreateScalingConfigurationRequest::getResourceOwnerAccount()const
@@ -381,7 +405,7 @@ std::string CreateScalingConfigurationRequest::getResourceOwnerAccount()const
 void CreateScalingConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateScalingConfigurationRequest::getOwnerAccount()const
@@ -392,7 +416,7 @@ std::string CreateScalingConfigurationRequest::getOwnerAccount()const
 void CreateScalingConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateScalingConfigurationRequest::getSystemDiskDiskName()const
@@ -403,7 +427,7 @@ std::string CreateScalingConfigurationRequest::getSystemDiskDiskName()const
 void CreateScalingConfigurationRequest::setSystemDiskDiskName(const std::string& systemDiskDiskName)
 {
 	systemDiskDiskName_ = systemDiskDiskName;
-	setCoreParameter("SystemDiskDiskName", systemDiskDiskName);
+	setParameter("SystemDiskDiskName", systemDiskDiskName);
 }
 
 std::string CreateScalingConfigurationRequest::getRamRoleName()const
@@ -414,7 +438,7 @@ std::string CreateScalingConfigurationRequest::getRamRoleName()const
 void CreateScalingConfigurationRequest::setRamRoleName(const std::string& ramRoleName)
 {
 	ramRoleName_ = ramRoleName;
-	setCoreParameter("RamRoleName", ramRoleName);
+	setParameter("RamRoleName", ramRoleName);
 }
 
 std::vector<std::string> CreateScalingConfigurationRequest::getSecurityGroupIds()const
@@ -425,8 +449,9 @@ std::vector<std::string> CreateScalingConfigurationRequest::getSecurityGroupIds(
 void CreateScalingConfigurationRequest::setSecurityGroupIds(const std::vector<std::string>& securityGroupIds)
 {
 	securityGroupIds_ = securityGroupIds;
-	for(int i = 0; i!= securityGroupIds.size(); i++)
-		setCoreParameter("SecurityGroupIds."+ std::to_string(i), securityGroupIds.at(i));
+	for(int dep1 = 0; dep1!= securityGroupIds.size(); dep1++) {
+		setParameter("SecurityGroupIds."+ std::to_string(dep1), securityGroupIds.at(dep1));
+	}
 }
 
 std::vector<CreateScalingConfigurationRequest::DataDisk> CreateScalingConfigurationRequest::getDataDisk()const
@@ -437,19 +462,19 @@ std::vector<CreateScalingConfigurationRequest::DataDisk> CreateScalingConfigurat
 void CreateScalingConfigurationRequest::setDataDisk(const std::vector<DataDisk>& dataDisk)
 {
 	dataDisk_ = dataDisk;
-	int i = 0;
-	for(int i = 0; i!= dataDisk.size(); i++)	{
-		auto obj = dataDisk.at(i);
-		std::string str ="DataDisk."+ std::to_string(i);
-		setCoreParameter(str + ".DiskName", obj.diskName);
-		setCoreParameter(str + ".SnapshotId", obj.snapshotId);
-		setCoreParameter(str + ".Size", std::to_string(obj.size));
-		setCoreParameter(str + ".Encrypted", obj.encrypted);
-		setCoreParameter(str + ".Description", obj.description);
-		setCoreParameter(str + ".Category", obj.category);
-		setCoreParameter(str + ".KMSKeyId", obj.kMSKeyId);
-		setCoreParameter(str + ".Device", obj.device);
-		setCoreParameter(str + ".DeleteWithInstance", obj.deleteWithInstance ? "true" : "false");
+	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
+		auto dataDiskObj = dataDisk.at(dep1);
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".DiskName", dataDiskObj.diskName);
+		setParameter(dataDiskObjStr + ".SnapshotId", dataDiskObj.snapshotId);
+		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setParameter(dataDiskObjStr + ".Encrypted", dataDiskObj.encrypted);
+		setParameter(dataDiskObjStr + ".AutoSnapshotPolicyId", dataDiskObj.autoSnapshotPolicyId);
+		setParameter(dataDiskObjStr + ".Description", dataDiskObj.description);
+		setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+		setParameter(dataDiskObjStr + ".KMSKeyId", dataDiskObj.kMSKeyId);
+		setParameter(dataDiskObjStr + ".Device", dataDiskObj.device);
+		setParameter(dataDiskObjStr + ".DeleteWithInstance", dataDiskObj.deleteWithInstance ? "true" : "false");
 	}
 }
 
@@ -461,7 +486,7 @@ int CreateScalingConfigurationRequest::getLoadBalancerWeight()const
 void CreateScalingConfigurationRequest::setLoadBalancerWeight(int loadBalancerWeight)
 {
 	loadBalancerWeight_ = loadBalancerWeight;
-	setCoreParameter("LoadBalancerWeight", std::to_string(loadBalancerWeight));
+	setParameter("LoadBalancerWeight", std::to_string(loadBalancerWeight));
 }
 
 int CreateScalingConfigurationRequest::getSystemDiskSize()const
@@ -472,7 +497,7 @@ int CreateScalingConfigurationRequest::getSystemDiskSize()const
 void CreateScalingConfigurationRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string CreateScalingConfigurationRequest::getSystemDiskDescription()const
@@ -483,6 +508,6 @@ std::string CreateScalingConfigurationRequest::getSystemDiskDescription()const
 void CreateScalingConfigurationRequest::setSystemDiskDescription(const std::string& systemDiskDescription)
 {
 	systemDiskDescription_ = systemDiskDescription;
-	setCoreParameter("SystemDiskDescription", systemDiskDescription);
+	setParameter("SystemDiskDescription", systemDiskDescription);
 }
 

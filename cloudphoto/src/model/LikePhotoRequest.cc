@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::LikePhotoRequest;
 
 LikePhotoRequest::LikePhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "LikePhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LikePhotoRequest::~LikePhotoRequest()
 {}
@@ -33,7 +35,7 @@ std::string LikePhotoRequest::getLibraryId()const
 void LikePhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long LikePhotoRequest::getPhotoId()const
@@ -44,7 +46,7 @@ long LikePhotoRequest::getPhotoId()const
 void LikePhotoRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string LikePhotoRequest::getStoreName()const
@@ -55,6 +57,6 @@ std::string LikePhotoRequest::getStoreName()const
 void LikePhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

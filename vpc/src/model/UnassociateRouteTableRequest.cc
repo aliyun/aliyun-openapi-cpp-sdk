@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnassociateRouteTableRequest;
 
 UnassociateRouteTableRequest::UnassociateRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnassociateRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateRouteTableRequest::~UnassociateRouteTableRequest()
 {}
@@ -33,7 +35,7 @@ long UnassociateRouteTableRequest::getResourceOwnerId()const
 void UnassociateRouteTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnassociateRouteTableRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string UnassociateRouteTableRequest::getClientToken()const
 void UnassociateRouteTableRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string UnassociateRouteTableRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string UnassociateRouteTableRequest::getRegionId()const
 void UnassociateRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UnassociateRouteTableRequest::getRouteTableId()const
@@ -66,7 +68,7 @@ std::string UnassociateRouteTableRequest::getRouteTableId()const
 void UnassociateRouteTableRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string UnassociateRouteTableRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UnassociateRouteTableRequest::getResourceOwnerAccount()const
 void UnassociateRouteTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassociateRouteTableRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string UnassociateRouteTableRequest::getOwnerAccount()const
 void UnassociateRouteTableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnassociateRouteTableRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long UnassociateRouteTableRequest::getOwnerId()const
 void UnassociateRouteTableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnassociateRouteTableRequest::getVSwitchId()const
@@ -110,6 +112,6 @@ std::string UnassociateRouteTableRequest::getVSwitchId()const
 void UnassociateRouteTableRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 

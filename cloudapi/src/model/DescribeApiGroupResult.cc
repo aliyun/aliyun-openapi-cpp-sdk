@@ -53,6 +53,8 @@ void DescribeApiGroupResult::parse(const std::string &payload)
 			customDomainsObject.domainCNAMEStatus = valueCustomDomainsDomainItem["DomainCNAMEStatus"].asString();
 		if(!valueCustomDomainsDomainItem["DomainBindingStatus"].isNull())
 			customDomainsObject.domainBindingStatus = valueCustomDomainsDomainItem["DomainBindingStatus"].asString();
+		if(!valueCustomDomainsDomainItem["BindStageName"].isNull())
+			customDomainsObject.bindStageName = valueCustomDomainsDomainItem["BindStageName"].asString();
 		if(!valueCustomDomainsDomainItem["DomainLegalStatus"].isNull())
 			customDomainsObject.domainLegalStatus = valueCustomDomainsDomainItem["DomainLegalStatus"].asString();
 		if(!valueCustomDomainsDomainItem["DomainWebSocketStatus"].isNull())
@@ -103,6 +105,14 @@ void DescribeApiGroupResult::parse(const std::string &payload)
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["HttpsPolicy"].isNull())
 		httpsPolicy_ = value["HttpsPolicy"].asString();
+	if(!value["UserLogConfig"].isNull())
+		userLogConfig_ = value["UserLogConfig"].asString();
+	if(!value["CustomTraceConfig"].isNull())
+		customTraceConfig_ = value["CustomTraceConfig"].asString();
+	if(!value["RpcPattern"].isNull())
+		rpcPattern_ = value["RpcPattern"].asString();
+	if(!value["CompatibleFlags"].isNull())
+		compatibleFlags_ = value["CompatibleFlags"].asString();
 
 }
 
@@ -134,6 +144,21 @@ std::string DescribeApiGroupResult::getHttpsPolicy()const
 std::string DescribeApiGroupResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string DescribeApiGroupResult::getCompatibleFlags()const
+{
+	return compatibleFlags_;
+}
+
+std::string DescribeApiGroupResult::getCustomTraceConfig()const
+{
+	return customTraceConfig_;
+}
+
+std::string DescribeApiGroupResult::getUserLogConfig()const
+{
+	return userLogConfig_;
 }
 
 std::string DescribeApiGroupResult::getBillingStatus()const
@@ -169,6 +194,11 @@ std::vector<DescribeApiGroupResult::DomainItem> DescribeApiGroupResult::getCusto
 std::string DescribeApiGroupResult::getModifiedTime()const
 {
 	return modifiedTime_;
+}
+
+std::string DescribeApiGroupResult::getRpcPattern()const
+{
+	return rpcPattern_;
 }
 
 std::vector<DescribeApiGroupResult::StageInfo> DescribeApiGroupResult::getStageItems()const

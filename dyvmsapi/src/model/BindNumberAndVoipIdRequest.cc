@@ -35,7 +35,7 @@ long BindNumberAndVoipIdRequest::getResourceOwnerId()const
 void BindNumberAndVoipIdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BindNumberAndVoipIdRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string BindNumberAndVoipIdRequest::getResourceOwnerAccount()const
 void BindNumberAndVoipIdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string BindNumberAndVoipIdRequest::getPhoneNumber()const
@@ -57,7 +57,7 @@ std::string BindNumberAndVoipIdRequest::getPhoneNumber()const
 void BindNumberAndVoipIdRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 long BindNumberAndVoipIdRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long BindNumberAndVoipIdRequest::getOwnerId()const
 void BindNumberAndVoipIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BindNumberAndVoipIdRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string BindNumberAndVoipIdRequest::getAccessKeyId()const
 void BindNumberAndVoipIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindNumberAndVoipIdRequest::getVoipId()const
@@ -90,6 +90,6 @@ std::string BindNumberAndVoipIdRequest::getVoipId()const
 void BindNumberAndVoipIdRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", voipId);
+	setParameter("VoipId", voipId);
 }
 

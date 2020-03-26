@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaUpdateRequest;
 
 AreaUpdateRequest::AreaUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaUpdateRequest::~AreaUpdateRequest()
 {}
@@ -33,7 +35,7 @@ std::string AreaUpdateRequest::getAccessKeyId()const
 void AreaUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaUpdateRequest::getSid()const
@@ -44,7 +46,7 @@ long AreaUpdateRequest::getSid()const
 void AreaUpdateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string AreaUpdateRequest::getName()const
@@ -55,7 +57,7 @@ std::string AreaUpdateRequest::getName()const
 void AreaUpdateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AreaUpdateRequest::getDids()const
@@ -66,7 +68,7 @@ std::string AreaUpdateRequest::getDids()const
 void AreaUpdateRequest::setDids(const std::string& dids)
 {
 	dids_ = dids;
-	setCoreParameter("Dids", dids);
+	setParameter("Dids", dids);
 }
 
 long AreaUpdateRequest::getAid()const
@@ -77,6 +79,6 @@ long AreaUpdateRequest::getAid()const
 void AreaUpdateRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", std::to_string(aid));
+	setParameter("Aid", std::to_string(aid));
 }
 

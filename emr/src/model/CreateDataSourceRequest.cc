@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateDataSourceRequest;
 
 CreateDataSourceRequest::CreateDataSourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateDataSource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataSourceRequest::~CreateDataSourceRequest()
 {}
@@ -33,7 +35,7 @@ long CreateDataSourceRequest::getResourceOwnerId()const
 void CreateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDataSourceRequest::getNavParentId()const
@@ -44,7 +46,7 @@ std::string CreateDataSourceRequest::getNavParentId()const
 void CreateDataSourceRequest::setNavParentId(const std::string& navParentId)
 {
 	navParentId_ = navParentId;
-	setCoreParameter("NavParentId", navParentId);
+	setParameter("NavParentId", navParentId);
 }
 
 std::string CreateDataSourceRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateDataSourceRequest::getDescription()const
 void CreateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateDataSourceRequest::getConf()const
@@ -66,7 +68,7 @@ std::string CreateDataSourceRequest::getConf()const
 void CreateDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setParameter("Conf", conf);
 }
 
 std::string CreateDataSourceRequest::getClusterId()const
@@ -77,7 +79,7 @@ std::string CreateDataSourceRequest::getClusterId()const
 void CreateDataSourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateDataSourceRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string CreateDataSourceRequest::getAccessKeyId()const
 void CreateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDataSourceRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string CreateDataSourceRequest::getRegionId()const
 void CreateDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateDataSourceRequest::getName()const
@@ -110,7 +112,7 @@ std::string CreateDataSourceRequest::getName()const
 void CreateDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateDataSourceRequest::getSourceType()const
@@ -121,6 +123,6 @@ std::string CreateDataSourceRequest::getSourceType()const
 void CreateDataSourceRequest::setSourceType(const std::string& sourceType)
 {
 	sourceType_ = sourceType;
-	setCoreParameter("SourceType", sourceType);
+	setParameter("SourceType", sourceType);
 }
 

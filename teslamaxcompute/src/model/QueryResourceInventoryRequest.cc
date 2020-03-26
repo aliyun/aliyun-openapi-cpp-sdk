@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::QueryResourceInventoryRequest;
 
 QueryResourceInventoryRequest::QueryResourceInventoryRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "QueryResourceInventory")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryResourceInventoryRequest::~QueryResourceInventoryRequest()
 {}

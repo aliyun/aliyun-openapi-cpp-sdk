@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::ModifyDefaultLevelRequest;
 
 ModifyDefaultLevelRequest::ModifyDefaultLevelRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyDefaultLevel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDefaultLevelRequest::~ModifyDefaultLevelRequest()
 {}
@@ -33,7 +35,7 @@ int ModifyDefaultLevelRequest::getFeatureType()const
 void ModifyDefaultLevelRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 long ModifyDefaultLevelRequest::getDefaultId()const
@@ -44,7 +46,7 @@ long ModifyDefaultLevelRequest::getDefaultId()const
 void ModifyDefaultLevelRequest::setDefaultId(long defaultId)
 {
 	defaultId_ = defaultId;
-	setCoreParameter("DefaultId", std::to_string(defaultId));
+	setParameter("DefaultId", std::to_string(defaultId));
 }
 
 std::string ModifyDefaultLevelRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string ModifyDefaultLevelRequest::getSourceIp()const
 void ModifyDefaultLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyDefaultLevelRequest::getLang()const
@@ -66,7 +68,7 @@ std::string ModifyDefaultLevelRequest::getLang()const
 void ModifyDefaultLevelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ModifyDefaultLevelRequest::getSensitiveIds()const
@@ -77,6 +79,6 @@ std::string ModifyDefaultLevelRequest::getSensitiveIds()const
 void ModifyDefaultLevelRequest::setSensitiveIds(const std::string& sensitiveIds)
 {
 	sensitiveIds_ = sensitiveIds;
-	setCoreParameter("SensitiveIds", sensitiveIds);
+	setParameter("SensitiveIds", sensitiveIds);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DialExRequest;
 
 DialExRequest::DialExRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DialEx")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DialExRequest::~DialExRequest()
 {}
@@ -33,7 +35,7 @@ std::string DialExRequest::getCallee()const
 void DialExRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", callee);
+	setParameter("Callee", callee);
 }
 
 std::string DialExRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DialExRequest::getAccessKeyId()const
 void DialExRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DialExRequest::getRoutPoint()const
@@ -55,7 +57,7 @@ std::string DialExRequest::getRoutPoint()const
 void DialExRequest::setRoutPoint(const std::string& routPoint)
 {
 	routPoint_ = routPoint;
-	setCoreParameter("RoutPoint", routPoint);
+	setParameter("RoutPoint", routPoint);
 }
 
 std::string DialExRequest::getCaller()const
@@ -66,7 +68,7 @@ std::string DialExRequest::getCaller()const
 void DialExRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", caller);
+	setParameter("Caller", caller);
 }
 
 std::string DialExRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string DialExRequest::getInstanceId()const
 void DialExRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DialExRequest::getProvider()const
@@ -88,7 +90,7 @@ std::string DialExRequest::getProvider()const
 void DialExRequest::setProvider(const std::string& provider)
 {
 	provider_ = provider;
-	setCoreParameter("Provider", provider);
+	setParameter("Provider", provider);
 }
 
 int DialExRequest::getAnswerMode()const
@@ -99,6 +101,6 @@ int DialExRequest::getAnswerMode()const
 void DialExRequest::setAnswerMode(int answerMode)
 {
 	answerMode_ = answerMode;
-	setCoreParameter("AnswerMode", std::to_string(answerMode));
+	setParameter("AnswerMode", std::to_string(answerMode));
 }
 

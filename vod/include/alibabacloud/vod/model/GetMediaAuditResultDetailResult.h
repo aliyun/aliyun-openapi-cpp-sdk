@@ -36,10 +36,16 @@ namespace AlibabaCloud
 				{
 					struct ListItem
 					{
+						std::string logoLabel;
+						std::string liveScore;
 						std::string pornLabel;
 						std::string terrorismLabel;
 						std::string terrorismScore;
+						std::string adScore;
 						std::string pornScore;
+						std::string adLabel;
+						std::string logoScore;
+						std::string liveLabel;
 						std::string timestamp;
 						std::string url;
 					};

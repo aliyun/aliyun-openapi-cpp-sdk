@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::ListClusterTypeRequest;
 
 ListClusterTypeRequest::ListClusterTypeRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "ListClusterType")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListClusterTypeRequest::~ListClusterTypeRequest()
 {}
-
-std::string ListClusterTypeRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void ListClusterTypeRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long ListClusterTypeRequest::getResourceOwnerId()const
 {
@@ -44,6 +35,17 @@ long ListClusterTypeRequest::getResourceOwnerId()const
 void ListClusterTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ListClusterTypeRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListClusterTypeRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

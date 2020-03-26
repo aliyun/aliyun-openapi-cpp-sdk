@@ -1239,6 +1239,42 @@ DdsClient::DescribeKernelReleaseNotesOutcomeCallable DdsClient::describeKernelRe
 	return task->get_future();
 }
 
+DdsClient::DescribeMongoDBLogConfigOutcome DdsClient::describeMongoDBLogConfig(const DescribeMongoDBLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMongoDBLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMongoDBLogConfigOutcome(DescribeMongoDBLogConfigResult(outcome.result()));
+	else
+		return DescribeMongoDBLogConfigOutcome(outcome.error());
+}
+
+void DdsClient::describeMongoDBLogConfigAsync(const DescribeMongoDBLogConfigRequest& request, const DescribeMongoDBLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMongoDBLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeMongoDBLogConfigOutcomeCallable DdsClient::describeMongoDBLogConfigCallable(const DescribeMongoDBLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMongoDBLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMongoDBLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeParameterModificationHistoryOutcome DdsClient::describeParameterModificationHistory(const DescribeParameterModificationHistoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

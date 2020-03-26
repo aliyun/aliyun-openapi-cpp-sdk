@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetTranscodeTemplateGroupRequest;
 
 GetTranscodeTemplateGroupRequest::GetTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTranscodeTemplateGroupRequest::~GetTranscodeTemplateGroupRequest()
 {}
@@ -33,7 +35,7 @@ long GetTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void GetTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void GetTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetTranscodeTemplateGroupRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetTranscodeTemplateGroupRequest::getOwnerId()const
 void GetTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetTranscodeTemplateGroupRequest::getAccessKeyId()const
 void GetTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -77,6 +79,6 @@ std::string GetTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
 void GetTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+	setParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
 }
 

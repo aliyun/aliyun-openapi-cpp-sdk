@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddVodTemplateRequest;
 
 AddVodTemplateRequest::AddVodTemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddVodTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVodTemplateRequest::~AddVodTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long AddVodTemplateRequest::getResourceOwnerId()const
 void AddVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddVodTemplateRequest::getSubTemplateType()const
@@ -44,7 +46,7 @@ std::string AddVodTemplateRequest::getSubTemplateType()const
 void AddVodTemplateRequest::setSubTemplateType(const std::string& subTemplateType)
 {
 	subTemplateType_ = subTemplateType;
-	setCoreParameter("SubTemplateType", subTemplateType);
+	setParameter("SubTemplateType", subTemplateType);
 }
 
 std::string AddVodTemplateRequest::getTemplateConfig()const
@@ -55,7 +57,7 @@ std::string AddVodTemplateRequest::getTemplateConfig()const
 void AddVodTemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setCoreParameter("TemplateConfig", templateConfig);
+	setParameter("TemplateConfig", templateConfig);
 }
 
 std::string AddVodTemplateRequest::getTemplateType()const
@@ -66,7 +68,7 @@ std::string AddVodTemplateRequest::getTemplateType()const
 void AddVodTemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", templateType);
+	setParameter("TemplateType", templateType);
 }
 
 std::string AddVodTemplateRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddVodTemplateRequest::getResourceOwnerAccount()const
 void AddVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AddVodTemplateRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddVodTemplateRequest::getOwnerId()const
 void AddVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddVodTemplateRequest::getAppId()const
@@ -99,7 +101,7 @@ std::string AddVodTemplateRequest::getAppId()const
 void AddVodTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string AddVodTemplateRequest::getName()const
@@ -110,6 +112,6 @@ std::string AddVodTemplateRequest::getName()const
 void AddVodTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,21 +20,12 @@ using AlibabaCloud::Ess::Model::DescribeAlarmsRequest;
 
 DescribeAlarmsRequest::DescribeAlarmsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeAlarms")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmsRequest::~DescribeAlarmsRequest()
 {}
-
-bool DescribeAlarmsRequest::getIsEnable()const
-{
-	return isEnable_;
-}
-
-void DescribeAlarmsRequest::setIsEnable(bool isEnable)
-{
-	isEnable_ = isEnable;
-	setCoreParameter("IsEnable", isEnable ? "true" : "false");
-}
 
 std::string DescribeAlarmsRequest::getMetricType()const
 {
@@ -44,29 +35,7 @@ std::string DescribeAlarmsRequest::getMetricType()const
 void DescribeAlarmsRequest::setMetricType(const std::string& metricType)
 {
 	metricType_ = metricType;
-	setCoreParameter("MetricType", metricType);
-}
-
-std::string DescribeAlarmsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeAlarmsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DescribeAlarmsRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeAlarmsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("MetricType", metricType);
 }
 
 std::string DescribeAlarmsRequest::getScalingGroupId()const
@@ -77,51 +46,7 @@ std::string DescribeAlarmsRequest::getScalingGroupId()const
 void DescribeAlarmsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-int DescribeAlarmsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeAlarmsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string DescribeAlarmsRequest::getState()const
-{
-	return state_;
-}
-
-void DescribeAlarmsRequest::setState(const std::string& state)
-{
-	state_ = state;
-	setCoreParameter("State", state);
-}
-
-long DescribeAlarmsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeAlarmsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeAlarmsRequest::getAlarmTaskId()const
-{
-	return alarmTaskId_;
-}
-
-void DescribeAlarmsRequest::setAlarmTaskId(const std::string& alarmTaskId)
-{
-	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", alarmTaskId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 int DescribeAlarmsRequest::getPageNumber()const
@@ -132,7 +57,7 @@ int DescribeAlarmsRequest::getPageNumber()const
 void DescribeAlarmsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAlarmsRequest::getAccessKeyId()const
@@ -143,6 +68,83 @@ std::string DescribeAlarmsRequest::getAccessKeyId()const
 void DescribeAlarmsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeAlarmsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeAlarmsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int DescribeAlarmsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeAlarmsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeAlarmsRequest::getState()const
+{
+	return state_;
+}
+
+void DescribeAlarmsRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setParameter("State", state);
+}
+
+std::string DescribeAlarmsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAlarmsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+long DescribeAlarmsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAlarmsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAlarmsRequest::getAlarmTaskId()const
+{
+	return alarmTaskId_;
+}
+
+void DescribeAlarmsRequest::setAlarmTaskId(const std::string& alarmTaskId)
+{
+	alarmTaskId_ = alarmTaskId;
+	setParameter("AlarmTaskId", alarmTaskId);
+}
+
+bool DescribeAlarmsRequest::getIsEnable()const
+{
+	return isEnable_;
+}
+
+void DescribeAlarmsRequest::setIsEnable(bool isEnable)
+{
+	isEnable_ = isEnable;
+	setParameter("IsEnable", isEnable ? "true" : "false");
 }
 

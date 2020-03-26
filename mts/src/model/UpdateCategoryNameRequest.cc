@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCategoryNameRequest;
 
 UpdateCategoryNameRequest::UpdateCategoryNameRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCategoryName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCategoryNameRequest::~UpdateCategoryNameRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateCategoryNameRequest::getResourceOwnerId()const
 void UpdateCategoryNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateCategoryNameRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateCategoryNameRequest::getAccessKeyId()const
 void UpdateCategoryNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateCategoryNameRequest::getCateId()const
@@ -55,7 +57,7 @@ std::string UpdateCategoryNameRequest::getCateId()const
 void UpdateCategoryNameRequest::setCateId(const std::string& cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", cateId);
+	setParameter("CateId", cateId);
 }
 
 std::string UpdateCategoryNameRequest::getCateName()const
@@ -66,7 +68,7 @@ std::string UpdateCategoryNameRequest::getCateName()const
 void UpdateCategoryNameRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
+	setParameter("CateName", cateName);
 }
 
 std::string UpdateCategoryNameRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UpdateCategoryNameRequest::getResourceOwnerAccount()const
 void UpdateCategoryNameRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateCategoryNameRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string UpdateCategoryNameRequest::getOwnerAccount()const
 void UpdateCategoryNameRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateCategoryNameRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long UpdateCategoryNameRequest::getOwnerId()const
 void UpdateCategoryNameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

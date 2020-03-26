@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeLoadBalancerHTTPListenerAttributeRequest
 
 DescribeLoadBalancerHTTPListenerAttributeRequest::DescribeLoadBalancerHTTPListenerAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLoadBalancerHTTPListenerAttributeRequest::~DescribeLoadBalancerHTTPListenerAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getAccess_key_id()
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeLoadBalancerHTTPListenerAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeLoadBalancerHTTPListenerAttributeRequest::getResourceOwnerId()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getRegionId()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeLoadBalancerHTTPListenerAttributeRequest::getListenerPort()const
@@ -66,7 +68,7 @@ int DescribeLoadBalancerHTTPListenerAttributeRequest::getListenerPort()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getResourceOwnerAc
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getOwnerAccount()c
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLoadBalancerHTTPListenerAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeLoadBalancerHTTPListenerAttributeRequest::getOwnerId()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getTags()const
@@ -110,7 +112,7 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getTags()const
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getLoadBalancerId()const
@@ -121,6 +123,6 @@ std::string DescribeLoadBalancerHTTPListenerAttributeRequest::getLoadBalancerId(
 void DescribeLoadBalancerHTTPListenerAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

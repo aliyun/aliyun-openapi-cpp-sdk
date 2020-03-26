@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsInstanceDbMonitorRequest;
 
 DescribeDrdsInstanceDbMonitorRequest::DescribeDrdsInstanceDbMonitorRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsInstanceDbMonitorRequest::~DescribeDrdsInstanceDbMonitorRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
@@ -44,7 +46,7 @@ long DescribeDrdsInstanceDbMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceDbMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const
@@ -55,7 +57,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceDbMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceDbMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getDbName()const
@@ -77,7 +79,7 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getDbName()const
 void DescribeDrdsInstanceDbMonitorRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
@@ -88,6 +90,6 @@ std::string DescribeDrdsInstanceDbMonitorRequest::getKey()const
 void DescribeDrdsInstanceDbMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 

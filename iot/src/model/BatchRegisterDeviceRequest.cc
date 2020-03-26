@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchRegisterDeviceRequest;
 
 BatchRegisterDeviceRequest::BatchRegisterDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchRegisterDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchRegisterDeviceRequest::~BatchRegisterDeviceRequest()
 {}
@@ -33,7 +35,7 @@ int BatchRegisterDeviceRequest::getCount()const
 void BatchRegisterDeviceRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 
 std::string BatchRegisterDeviceRequest::getProductKey()const
@@ -44,7 +46,7 @@ std::string BatchRegisterDeviceRequest::getProductKey()const
 void BatchRegisterDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string BatchRegisterDeviceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string BatchRegisterDeviceRequest::getAccessKeyId()const
 void BatchRegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BatchRegisterDeviceRequest::getIotInstanceId()const
@@ -66,6 +68,6 @@ std::string BatchRegisterDeviceRequest::getIotInstanceId()const
 void BatchRegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

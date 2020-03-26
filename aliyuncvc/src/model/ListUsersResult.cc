@@ -72,6 +72,8 @@ void ListUsersResult::parse(const std::string &payload)
 			userInfoObject.userAvatarUrl = dataNodeUserInfosUserInfo["UserAvatarUrl"].asString();
 		if(!dataNodeUserInfosUserInfo["JobName"].isNull())
 			userInfoObject.jobName = dataNodeUserInfosUserInfo["JobName"].asString();
+		if(!dataNodeUserInfosUserInfo["UserId"].isNull())
+			userInfoObject.userId = dataNodeUserInfosUserInfo["UserId"].asString();
 		data_.userInfos.push_back(userInfoObject);
 	}
 	if(!value["ErrorCode"].isNull())

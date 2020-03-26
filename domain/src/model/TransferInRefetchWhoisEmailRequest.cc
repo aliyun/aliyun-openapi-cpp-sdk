@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInRefetchWhoisEmailRequest;
 
 TransferInRefetchWhoisEmailRequest::TransferInRefetchWhoisEmailRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInRefetchWhoisEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInRefetchWhoisEmailRequest::~TransferInRefetchWhoisEmailRequest()
 {}
@@ -33,7 +35,7 @@ std::string TransferInRefetchWhoisEmailRequest::getDomainName()const
 void TransferInRefetchWhoisEmailRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string TransferInRefetchWhoisEmailRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string TransferInRefetchWhoisEmailRequest::getUserClientIp()const
 void TransferInRefetchWhoisEmailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInRefetchWhoisEmailRequest::getLang()const
@@ -55,6 +57,6 @@ std::string TransferInRefetchWhoisEmailRequest::getLang()const
 void TransferInRefetchWhoisEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

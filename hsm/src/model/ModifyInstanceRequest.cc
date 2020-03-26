@@ -20,21 +20,12 @@ using AlibabaCloud::Hsm::Model::ModifyInstanceRequest;
 
 ModifyInstanceRequest::ModifyInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ModifyInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyInstanceRequest::~ModifyInstanceRequest()
 {}
-
-long ModifyInstanceRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ModifyInstanceRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
 
 std::string ModifyInstanceRequest::getRemark()const
 {
@@ -44,7 +35,7 @@ std::string ModifyInstanceRequest::getRemark()const
 void ModifyInstanceRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string ModifyInstanceRequest::getInstanceId()const
@@ -55,7 +46,7 @@ std::string ModifyInstanceRequest::getInstanceId()const
 void ModifyInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyInstanceRequest::getSourceIp()const
@@ -66,6 +57,28 @@ std::string ModifyInstanceRequest::getSourceIp()const
 void ModifyInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string ModifyInstanceRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyInstanceRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ModifyInstanceRequest::getLang()const
+{
+	return lang_;
+}
+
+void ModifyInstanceRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 

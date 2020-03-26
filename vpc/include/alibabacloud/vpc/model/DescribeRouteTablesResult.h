@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string nextHopOppsiteRegionId;
 						std::string routeTableId;
+						std::string description;
 						std::string privateIpAddress;
 						std::string instanceId;
 						std::vector<RouteEntry::NextHop> nextHops;

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteVodDomainRequest;
 
 DeleteVodDomainRequest::DeleteVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVodDomainRequest::~DeleteVodDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteVodDomainRequest::getOwnerAccount()const
 void DeleteVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteVodDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DeleteVodDomainRequest::getDomainName()const
 void DeleteVodDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteVodDomainRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteVodDomainRequest::getOwnerId()const
 void DeleteVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVodDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DeleteVodDomainRequest::getSecurityToken()const
 void DeleteVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

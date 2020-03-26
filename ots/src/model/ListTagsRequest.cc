@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::ListTagsRequest;
 
 ListTagsRequest::ListTagsRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "ListTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagsRequest::~ListTagsRequest()
 {}
-
-std::string ListTagsRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void ListTagsRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long ListTagsRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,7 @@ long ListTagsRequest::getResourceOwnerId()const
 void ListTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListTagsRequest::getPageNum()const
@@ -55,7 +46,18 @@ long ListTagsRequest::getPageNum()const
 void ListTagsRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
+}
+
+std::string ListTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ListTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListTagsRequest::getInstanceName()const
@@ -66,7 +68,7 @@ std::string ListTagsRequest::getInstanceName()const
 void ListTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 long ListTagsRequest::getPageSize()const
@@ -77,7 +79,7 @@ long ListTagsRequest::getPageSize()const
 void ListTagsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<ListTagsRequest::TagInfo> ListTagsRequest::getTagInfo()const
@@ -88,12 +90,11 @@ std::vector<ListTagsRequest::TagInfo> ListTagsRequest::getTagInfo()const
 void ListTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 {
 	tagInfo_ = tagInfo;
-	int i = 0;
-	for(int i = 0; i!= tagInfo.size(); i++)	{
-		auto obj = tagInfo.at(i);
-		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tagInfo.size(); dep1++) {
+		auto tagInfoObj = tagInfo.at(dep1);
+		std::string tagInfoObjStr = "TagInfo." + std::to_string(dep1 + 1);
+		setParameter(tagInfoObjStr + ".TagValue", tagInfoObj.tagValue);
+		setParameter(tagInfoObjStr + ".TagKey", tagInfoObj.tagKey);
 	}
 }
 

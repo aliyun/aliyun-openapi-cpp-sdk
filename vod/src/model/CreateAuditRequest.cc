@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateAuditRequest;
 
 CreateAuditRequest::CreateAuditRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateAudit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAuditRequest::~CreateAuditRequest()
 {}
@@ -33,6 +35,6 @@ std::string CreateAuditRequest::getAuditContent()const
 void CreateAuditRequest::setAuditContent(const std::string& auditContent)
 {
 	auditContent_ = auditContent;
-	setCoreParameter("AuditContent", auditContent);
+	setParameter("AuditContent", auditContent);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListBriefConfigByActionRequest;
 
 ListBriefConfigByActionRequest::ListBriefConfigByActionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListBriefConfigByAction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBriefConfigByActionRequest::~ListBriefConfigByActionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListBriefConfigByActionRequest::getAccessKeyId()const
 void ListBriefConfigByActionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListBriefConfigByActionRequest::getAncestorApgroupId()const
@@ -44,7 +46,7 @@ long ListBriefConfigByActionRequest::getAncestorApgroupId()const
 void ListBriefConfigByActionRequest::setAncestorApgroupId(long ancestorApgroupId)
 {
 	ancestorApgroupId_ = ancestorApgroupId;
-	setCoreParameter("AncestorApgroupId", std::to_string(ancestorApgroupId));
+	setParameter("AncestorApgroupId", std::to_string(ancestorApgroupId));
 }
 
 int ListBriefConfigByActionRequest::getLimit()const
@@ -55,7 +57,7 @@ int ListBriefConfigByActionRequest::getLimit()const
 void ListBriefConfigByActionRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string ListBriefConfigByActionRequest::getFuzzySearch()const
@@ -66,6 +68,6 @@ std::string ListBriefConfigByActionRequest::getFuzzySearch()const
 void ListBriefConfigByActionRequest::setFuzzySearch(const std::string& fuzzySearch)
 {
 	fuzzySearch_ = fuzzySearch;
-	setCoreParameter("FuzzySearch", fuzzySearch);
+	setParameter("FuzzySearch", fuzzySearch);
 }
 

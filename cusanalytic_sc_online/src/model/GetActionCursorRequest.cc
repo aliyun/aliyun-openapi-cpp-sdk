@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetActionCursorRequest;
 
 GetActionCursorRequest::GetActionCursorRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetActionCursor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetActionCursorRequest::~GetActionCursorRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetActionCursorRequest::getStoreId()const
 void GetActionCursorRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 

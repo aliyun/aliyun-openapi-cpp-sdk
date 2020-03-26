@@ -39,6 +39,19 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allPortRangesNode = value["PortRanges"]["PortRange"];
+	for (auto valuePortRangesPortRange : allPortRangesNode)
+	{
+		PortRange portRangesObject;
+		if(!valuePortRangesPortRange["StartPort"].isNull())
+			portRangesObject.startPort = std::stoi(valuePortRangesPortRange["StartPort"].asString());
+		if(!valuePortRangesPortRange["EndPort"].isNull())
+			portRangesObject.endPort = std::stoi(valuePortRangesPortRange["EndPort"].asString());
+		portRanges_.push_back(portRangesObject);
+	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
@@ -93,6 +106,10 @@ void DescribeLoadBalancerTCPListenerAttributeResult::parse(const std::string &pa
 		vpcIds_ = value["VpcIds"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["ConnectionDrain"].isNull())
+		connectionDrain_ = value["ConnectionDrain"].asString();
+	if(!value["ConnectionDrainTimeout"].isNull())
+		connectionDrainTimeout_ = std::stoi(value["ConnectionDrainTimeout"].asString());
 
 }
 
@@ -141,6 +158,11 @@ int DescribeLoadBalancerTCPListenerAttributeResult::getBackendServerPort()const
 	return backendServerPort_;
 }
 
+int DescribeLoadBalancerTCPListenerAttributeResult::getConnectionDrainTimeout()const
+{
+	return connectionDrainTimeout_;
+}
+
 int DescribeLoadBalancerTCPListenerAttributeResult::getPersistenceTimeout()const
 {
 	return persistenceTimeout_;
@@ -186,6 +208,11 @@ int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckInterval()cons
 	return healthCheckInterval_;
 }
 
+std::vector<DescribeLoadBalancerTCPListenerAttributeResult::PortRange> DescribeLoadBalancerTCPListenerAttributeResult::getPortRanges()const
+{
+	return portRanges_;
+}
+
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclId()const
 {
 	return aclId_;
@@ -194,6 +221,11 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclId()const
 int DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckConnectTimeout()const
 {
 	return healthCheckConnectTimeout_;
+}
+
+std::string DescribeLoadBalancerTCPListenerAttributeResult::getConnectionDrain()const
+{
+	return connectionDrain_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclStatus()const
@@ -224,6 +256,11 @@ std::string DescribeLoadBalancerTCPListenerAttributeResult::getMasterSlaveServer
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getAclType()const
 {
 	return aclType_;
+}
+
+std::vector<std::string> DescribeLoadBalancerTCPListenerAttributeResult::getAclIds()const
+{
+	return aclIds_;
 }
 
 std::string DescribeLoadBalancerTCPListenerAttributeResult::getHealthCheckType()const

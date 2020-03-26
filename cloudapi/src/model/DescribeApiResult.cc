@@ -157,6 +157,8 @@ void DescribeApiResult::parse(const std::string &payload)
 			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
 		if(!valueRequestParametersRequestParameter["Description"].isNull())
 			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
+		if(!valueRequestParametersRequestParameter["ArrayItemsType"].isNull())
+			requestParametersObject.arrayItemsType = valueRequestParametersRequestParameter["ArrayItemsType"].asString();
 		requestParameters_.push_back(requestParametersObject);
 	}
 	auto allServiceParametersNode = value["ServiceParameters"]["ServiceParameter"];
@@ -310,6 +312,8 @@ void DescribeApiResult::parse(const std::string &payload)
 		forceNonceCheck_ = value["ForceNonceCheck"].asString() == "true";
 	if(!value["DisableInternet"].isNull())
 		disableInternet_ = value["DisableInternet"].asString() == "true";
+	if(!value["AppCodeAuthType"].isNull())
+		appCodeAuthType_ = value["AppCodeAuthType"].asString();
 
 }
 
@@ -361,6 +365,11 @@ std::vector<DescribeApiResult::RequestParameter> DescribeApiResult::getRequestPa
 std::vector<DescribeApiResult::ServiceParameterMap> DescribeApiResult::getServiceParametersMap()const
 {
 	return serviceParametersMap_;
+}
+
+std::string DescribeApiResult::getAppCodeAuthType()const
+{
+	return appCodeAuthType_;
 }
 
 std::string DescribeApiResult::getResultBodyModel()const

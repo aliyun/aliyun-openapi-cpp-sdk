@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetTranscodeSummaryRequest;
 
 GetTranscodeSummaryRequest::GetTranscodeSummaryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetTranscodeSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTranscodeSummaryRequest::~GetTranscodeSummaryRequest()
 {}
@@ -33,7 +35,7 @@ long GetTranscodeSummaryRequest::getResourceOwnerId()const
 void GetTranscodeSummaryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetTranscodeSummaryRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetTranscodeSummaryRequest::getResourceOwnerAccount()const
 void GetTranscodeSummaryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetTranscodeSummaryRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetTranscodeSummaryRequest::getOwnerId()const
 void GetTranscodeSummaryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetTranscodeSummaryRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetTranscodeSummaryRequest::getAccessKeyId()const
 void GetTranscodeSummaryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetTranscodeSummaryRequest::getVideoIds()const
@@ -77,6 +79,6 @@ std::string GetTranscodeSummaryRequest::getVideoIds()const
 void GetTranscodeSummaryRequest::setVideoIds(const std::string& videoIds)
 {
 	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", videoIds);
+	setParameter("VideoIds", videoIds);
 }
 

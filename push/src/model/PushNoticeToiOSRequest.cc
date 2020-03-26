@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::PushNoticeToiOSRequest;
 
 PushNoticeToiOSRequest::PushNoticeToiOSRequest() :
 	RpcServiceRequest("push", "2016-08-01", "PushNoticeToiOS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushNoticeToiOSRequest::~PushNoticeToiOSRequest()
 {}
@@ -33,7 +35,7 @@ std::string PushNoticeToiOSRequest::getExtParameters()const
 void PushNoticeToiOSRequest::setExtParameters(const std::string& extParameters)
 {
 	extParameters_ = extParameters;
-	setCoreParameter("ExtParameters", extParameters);
+	setParameter("ExtParameters", extParameters);
 }
 
 std::string PushNoticeToiOSRequest::getApnsEnv()const
@@ -44,7 +46,7 @@ std::string PushNoticeToiOSRequest::getApnsEnv()const
 void PushNoticeToiOSRequest::setApnsEnv(const std::string& apnsEnv)
 {
 	apnsEnv_ = apnsEnv;
-	setCoreParameter("ApnsEnv", apnsEnv);
+	setParameter("ApnsEnv", apnsEnv);
 }
 
 std::string PushNoticeToiOSRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string PushNoticeToiOSRequest::getTitle()const
 void PushNoticeToiOSRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string PushNoticeToiOSRequest::getBody()const
@@ -66,7 +68,7 @@ std::string PushNoticeToiOSRequest::getBody()const
 void PushNoticeToiOSRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", body);
+	setParameter("Body", body);
 }
 
 std::string PushNoticeToiOSRequest::getJobKey()const
@@ -77,7 +79,7 @@ std::string PushNoticeToiOSRequest::getJobKey()const
 void PushNoticeToiOSRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", jobKey);
+	setParameter("JobKey", jobKey);
 }
 
 std::string PushNoticeToiOSRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string PushNoticeToiOSRequest::getAccessKeyId()const
 void PushNoticeToiOSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushNoticeToiOSRequest::getTarget()const
@@ -99,7 +101,7 @@ std::string PushNoticeToiOSRequest::getTarget()const
 void PushNoticeToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setParameter("Target", target);
 }
 
 long PushNoticeToiOSRequest::getAppKey()const
@@ -110,7 +112,7 @@ long PushNoticeToiOSRequest::getAppKey()const
 void PushNoticeToiOSRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushNoticeToiOSRequest::getTargetValue()const
@@ -121,6 +123,6 @@ std::string PushNoticeToiOSRequest::getTargetValue()const
 void PushNoticeToiOSRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setParameter("TargetValue", targetValue);
 }
 

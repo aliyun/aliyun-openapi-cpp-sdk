@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenVbrHealthCheckRequest;
 
 DescribeCenVbrHealthCheckRequest::DescribeCenVbrHealthCheckRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenVbrHealthCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenVbrHealthCheckRequest::~DescribeCenVbrHealthCheckRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenVbrHealthCheckRequest::getResourceOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeCenVbrHealthCheckRequest::getCenId()const
 void DescribeCenVbrHealthCheckRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 int DescribeCenVbrHealthCheckRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeCenVbrHealthCheckRequest::getPageNumber()const
 void DescribeCenVbrHealthCheckRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
@@ -66,7 +68,7 @@ long DescribeCenVbrHealthCheckRequest::getVbrInstanceOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceOwnerId(long vbrInstanceOwnerId)
 {
 	vbrInstanceOwnerId_ = vbrInstanceOwnerId;
-	setCoreParameter("VbrInstanceOwnerId", std::to_string(vbrInstanceOwnerId));
+	setParameter("VbrInstanceOwnerId", std::to_string(vbrInstanceOwnerId));
 }
 
 int DescribeCenVbrHealthCheckRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCenVbrHealthCheckRequest::getPageSize()const
 void DescribeCenVbrHealthCheckRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
@@ -88,7 +90,7 @@ std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceRegionId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceRegionId(const std::string& vbrInstanceRegionId)
 {
 	vbrInstanceRegionId_ = vbrInstanceRegionId;
-	setCoreParameter("VbrInstanceRegionId", vbrInstanceRegionId);
+	setParameter("VbrInstanceRegionId", vbrInstanceRegionId);
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeCenVbrHealthCheckRequest::getResourceOwnerAccount()const
 void DescribeCenVbrHealthCheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeCenVbrHealthCheckRequest::getOwnerAccount()const
 void DescribeCenVbrHealthCheckRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenVbrHealthCheckRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeCenVbrHealthCheckRequest::getOwnerId()const
 void DescribeCenVbrHealthCheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceId()const
@@ -132,6 +134,6 @@ std::string DescribeCenVbrHealthCheckRequest::getVbrInstanceId()const
 void DescribeCenVbrHealthCheckRequest::setVbrInstanceId(const std::string& vbrInstanceId)
 {
 	vbrInstanceId_ = vbrInstanceId;
-	setCoreParameter("VbrInstanceId", vbrInstanceId);
+	setParameter("VbrInstanceId", vbrInstanceId);
 }
 

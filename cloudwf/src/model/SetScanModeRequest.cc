@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SetScanModeRequest;
 
 SetScanModeRequest::SetScanModeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SetScanMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetScanModeRequest::~SetScanModeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetScanModeRequest::getAccessKeyId()const
 void SetScanModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int SetScanModeRequest::getOperation()const
@@ -44,7 +46,7 @@ int SetScanModeRequest::getOperation()const
 void SetScanModeRequest::setOperation(int operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", std::to_string(operation));
+	setParameter("Operation", std::to_string(operation));
 }
 
 std::vector<std::string> SetScanModeRequest::getMacList()const
@@ -55,7 +57,8 @@ std::vector<std::string> SetScanModeRequest::getMacList()const
 void SetScanModeRequest::setMacList(const std::vector<std::string>& macList)
 {
 	macList_ = macList;
-	for(int i = 0; i!= macList.size(); i++)
-		setCoreParameter("MacList."+ std::to_string(i), macList.at(i));
+	for(int dep1 = 0; dep1!= macList.size(); dep1++) {
+		setParameter("MacList."+ std::to_string(dep1), macList.at(dep1));
+	}
 }
 

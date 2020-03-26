@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateJobGroupRequest;
 
 CreateJobGroupRequest::CreateJobGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateJobGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateJobGroupRequest::~CreateJobGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateJobGroupRequest::getDescription()const
 void CreateJobGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
@@ -44,8 +46,9 @@ std::vector<std::string> CreateJobGroupRequest::getCallingNumber()const
 void CreateJobGroupRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string CreateJobGroupRequest::getInstanceId()const
@@ -56,7 +59,7 @@ std::string CreateJobGroupRequest::getInstanceId()const
 void CreateJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateJobGroupRequest::getStrategyJson()const
@@ -67,7 +70,7 @@ std::string CreateJobGroupRequest::getStrategyJson()const
 void CreateJobGroupRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setParameter("StrategyJson", strategyJson);
 }
 
 std::string CreateJobGroupRequest::getName()const
@@ -78,7 +81,7 @@ std::string CreateJobGroupRequest::getName()const
 void CreateJobGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateJobGroupRequest::getScenarioId()const
@@ -89,6 +92,6 @@ std::string CreateJobGroupRequest::getScenarioId()const
 void CreateJobGroupRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

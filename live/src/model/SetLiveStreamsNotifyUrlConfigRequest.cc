@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveStreamsNotifyUrlConfigRequest;
 
 SetLiveStreamsNotifyUrlConfigRequest::SetLiveStreamsNotifyUrlConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveStreamsNotifyUrlConfigRequest::~SetLiveStreamsNotifyUrlConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthKey()const
 void SetLiveStreamsNotifyUrlConfigRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setCoreParameter("AuthKey", authKey);
+	setParameter("AuthKey", authKey);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthType()const
@@ -44,7 +46,7 @@ std::string SetLiveStreamsNotifyUrlConfigRequest::getAuthType()const
 void SetLiveStreamsNotifyUrlConfigRequest::setAuthType(const std::string& authType)
 {
 	authType_ = authType;
-	setCoreParameter("AuthType", authType);
+	setParameter("AuthType", authType);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
@@ -55,7 +57,7 @@ std::string SetLiveStreamsNotifyUrlConfigRequest::getNotifyUrl()const
 void SetLiveStreamsNotifyUrlConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
+	setParameter("NotifyUrl", notifyUrl);
 }
 
 std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string SetLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void SetLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long SetLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void SetLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

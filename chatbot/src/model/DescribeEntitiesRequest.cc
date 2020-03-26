@@ -35,6 +35,6 @@ long DescribeEntitiesRequest::getEntityId()const
 void DescribeEntitiesRequest::setEntityId(long entityId)
 {
 	entityId_ = entityId;
-	setCoreParameter("EntityId", std::to_string(entityId));
+	setParameter("EntityId", std::to_string(entityId));
 }
 

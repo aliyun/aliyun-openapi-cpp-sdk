@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::DeleteFaceRequest;
 
 DeleteFaceRequest::DeleteFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFaceRequest::~DeleteFaceRequest()
 {}
-
-std::string DeleteFaceRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DeleteFaceRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
 
 std::string DeleteFaceRequest::getUserId()const
 {
@@ -44,6 +35,39 @@ std::string DeleteFaceRequest::getUserId()const
 void DeleteFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
+}
+
+std::string DeleteFaceRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DeleteFaceRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string DeleteFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteDeviceAllGroupRequest;
 
 DeleteDeviceAllGroupRequest::DeleteDeviceAllGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteDeviceAllGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceAllGroupRequest::~DeleteDeviceAllGroupRequest()
 {}
@@ -33,18 +35,7 @@ std::string DeleteDeviceAllGroupRequest::getIotId()const
 void DeleteDeviceAllGroupRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
-}
-
-std::string DeleteDeviceAllGroupRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void DeleteDeviceAllGroupRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("IotId", iotId);
 }
 
 std::string DeleteDeviceAllGroupRequest::getProductKey()const
@@ -55,6 +46,39 @@ std::string DeleteDeviceAllGroupRequest::getProductKey()const
 void DeleteDeviceAllGroupRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string DeleteDeviceAllGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteDeviceAllGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteDeviceAllGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteDeviceAllGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string DeleteDeviceAllGroupRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void DeleteDeviceAllGroupRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setBodyParameter("DeviceName", deviceName);
 }
 

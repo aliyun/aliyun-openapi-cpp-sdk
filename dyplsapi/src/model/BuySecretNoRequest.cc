@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::BuySecretNoRequest;
 BuySecretNoRequest::BuySecretNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "BuySecretNo")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 BuySecretNoRequest::~BuySecretNoRequest()

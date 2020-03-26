@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerDeleteProtectionRequest;
 
 SetLoadBalancerDeleteProtectionRequest::SetLoadBalancerDeleteProtectionRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerDeleteProtection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerDeleteProtectionRequest::~SetLoadBalancerDeleteProtectionRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getAccess_key_id()const
 void SetLoadBalancerDeleteProtectionRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long SetLoadBalancerDeleteProtectionRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SetLoadBalancerDeleteProtectionRequest::getResourceOwnerId()const
 void SetLoadBalancerDeleteProtectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getRegionId()const
 void SetLoadBalancerDeleteProtectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getDeleteProtection()const
@@ -66,7 +68,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getDeleteProtection()const
 void SetLoadBalancerDeleteProtectionRequest::setDeleteProtection(const std::string& deleteProtection)
 {
 	deleteProtection_ = deleteProtection;
-	setCoreParameter("DeleteProtection", deleteProtection);
+	setParameter("DeleteProtection", deleteProtection);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getResourceOwnerAccount()con
 void SetLoadBalancerDeleteProtectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getOwnerAccount()const
 void SetLoadBalancerDeleteProtectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SetLoadBalancerDeleteProtectionRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SetLoadBalancerDeleteProtectionRequest::getOwnerId()const
 void SetLoadBalancerDeleteProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getTags()const
@@ -110,7 +112,7 @@ std::string SetLoadBalancerDeleteProtectionRequest::getTags()const
 void SetLoadBalancerDeleteProtectionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string SetLoadBalancerDeleteProtectionRequest::getLoadBalancerId()const
@@ -121,6 +123,6 @@ std::string SetLoadBalancerDeleteProtectionRequest::getLoadBalancerId()const
 void SetLoadBalancerDeleteProtectionRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

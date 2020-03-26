@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CancelOrderRequest;
 
 CancelOrderRequest::CancelOrderRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CancelOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelOrderRequest::~CancelOrderRequest()
 {}
@@ -33,7 +35,7 @@ long CancelOrderRequest::getResourceOwnerId()const
 void CancelOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelOrderRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string CancelOrderRequest::getClusterId()const
 void CancelOrderRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CancelOrderRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CancelOrderRequest::getAccessKeyId()const
 void CancelOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CancelOrderRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string CancelOrderRequest::getRegionId()const
 void CancelOrderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

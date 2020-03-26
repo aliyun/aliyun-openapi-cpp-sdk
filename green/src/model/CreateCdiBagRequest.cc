@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateCdiBagRequest;
 
 CreateCdiBagRequest::CreateCdiBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateCdiBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdiBagRequest::~CreateCdiBagRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCdiBagRequest::getClientToken()const
 void CreateCdiBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int CreateCdiBagRequest::getOrderNum()const
@@ -44,7 +46,7 @@ int CreateCdiBagRequest::getOrderNum()const
 void CreateCdiBagRequest::setOrderNum(int orderNum)
 {
 	orderNum_ = orderNum;
-	setCoreParameter("OrderNum", std::to_string(orderNum));
+	setParameter("OrderNum", std::to_string(orderNum));
 }
 
 std::string CreateCdiBagRequest::getCommodityCode()const
@@ -55,7 +57,7 @@ std::string CreateCdiBagRequest::getCommodityCode()const
 void CreateCdiBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setParameter("CommodityCode", commodityCode);
 }
 
 long CreateCdiBagRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long CreateCdiBagRequest::getOwnerId()const
 void CreateCdiBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateCdiBagRequest::getFlowOutSpec()const
@@ -77,7 +79,7 @@ int CreateCdiBagRequest::getFlowOutSpec()const
 void CreateCdiBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
+	setParameter("FlowOutSpec", std::to_string(flowOutSpec));
 }
 
 std::string CreateCdiBagRequest::getOrderType()const
@@ -88,6 +90,6 @@ std::string CreateCdiBagRequest::getOrderType()const
 void CreateCdiBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

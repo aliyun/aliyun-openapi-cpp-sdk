@@ -35,7 +35,7 @@ std::string DeleteDcdnSpecificConfigRequest::getDomainName()const
 void DeleteDcdnSpecificConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteDcdnSpecificConfigRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long DeleteDcdnSpecificConfigRequest::getOwnerId()const
 void DeleteDcdnSpecificConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteDcdnSpecificConfigRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string DeleteDcdnSpecificConfigRequest::getSecurityToken()const
 void DeleteDcdnSpecificConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteDcdnSpecificConfigRequest::getConfigId()const
@@ -68,6 +68,6 @@ std::string DeleteDcdnSpecificConfigRequest::getConfigId()const
 void DeleteDcdnSpecificConfigRequest::setConfigId(const std::string& configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", configId);
+	setParameter("ConfigId", configId);
 }
 

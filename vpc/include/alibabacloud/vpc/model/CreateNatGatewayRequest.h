@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT CreateNatGatewayRequest : public RpcServiceRequest
 			{
+			public:
 				struct BandwidthPackage
 				{
 					int bandwidth;
@@ -55,6 +56,8 @@ namespace AlibabaCloud
 				void setDuration(const std::string& duration);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNatType()const;
+				void setNatType(const std::string& natType);
 				std::vector<BandwidthPackage> getBandwidthPackage()const;
 				void setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage);
 				std::string getInstanceChargeType()const;
@@ -67,6 +70,10 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
+				std::string getInternetChargeType()const;
+				void setInternetChargeType(const std::string& internetChargeType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
@@ -81,12 +88,15 @@ namespace AlibabaCloud
 				std::string spec_;
 				std::string duration_;
 				std::string regionId_;
+				std::string natType_;
 				std::vector<BandwidthPackage> bandwidthPackage_;
 				std::string instanceChargeType_;
 				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string vSwitchId_;
+				std::string internetChargeType_;
 				std::string vpcId_;
 				std::string name_;
 				std::string pricingCycle_;

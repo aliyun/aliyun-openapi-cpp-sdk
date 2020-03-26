@@ -35,7 +35,7 @@ std::string DescribeScdnDomainLogRequest::getStartTime()const
 void DescribeScdnDomainLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeScdnDomainLogRequest::getPageNumber()const
@@ -46,7 +46,7 @@ long DescribeScdnDomainLogRequest::getPageNumber()const
 void DescribeScdnDomainLogRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeScdnDomainLogRequest::getPageSize()const
@@ -57,7 +57,7 @@ long DescribeScdnDomainLogRequest::getPageSize()const
 void DescribeScdnDomainLogRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeScdnDomainLogRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeScdnDomainLogRequest::getDomainName()const
 void DescribeScdnDomainLogRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainLogRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeScdnDomainLogRequest::getEndTime()const
 void DescribeScdnDomainLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainLogRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeScdnDomainLogRequest::getOwnerId()const
 void DescribeScdnDomainLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

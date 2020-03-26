@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTradeMarkApplicationsByIntentionReque
 
 QueryTradeMarkApplicationsByIntentionRequest::QueryTradeMarkApplicationsByIntentionRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTradeMarkApplicationsByIntention")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTradeMarkApplicationsByIntentionRequest::~QueryTradeMarkApplicationsByIntentionRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getChannel()const
 void QueryTradeMarkApplicationsByIntentionRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setParameter("Channel", channel);
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
@@ -44,7 +46,7 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageSize()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()const
@@ -55,7 +57,7 @@ std::string QueryTradeMarkApplicationsByIntentionRequest::getIntentionBizId()con
 void QueryTradeMarkApplicationsByIntentionRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", intentionBizId);
+	setParameter("IntentionBizId", intentionBizId);
 }
 
 int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const
@@ -66,6 +68,6 @@ int QueryTradeMarkApplicationsByIntentionRequest::getPageNum()const
 void QueryTradeMarkApplicationsByIntentionRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 

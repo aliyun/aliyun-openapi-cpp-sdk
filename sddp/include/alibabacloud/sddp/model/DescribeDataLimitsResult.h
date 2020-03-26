@@ -36,27 +36,45 @@ namespace AlibabaCloud
 				{
 					std::string parentId;
 					std::string connector;
-					long gmtCreate;
 					std::string userName;
+					int processStatus;
+					int logStoreDay;
+					int port;
 					int checkStatus;
-					std::string resourceTypeCode;
 					long resourceType;
+					std::string localName;
+					long gmtCreate;
+					int totalCount;
+					int auditStatus;
+					long lastFinishedTime;
+					int autoScan;
+					std::string resourceTypeCode;
+					int enable;
+					std::string engineType;
 					std::string regionId;
 					long id;
+					std::string errorCode;
 					std::string checkStatusName;
-					std::string localName;
+					std::string errorMessage;
+					int processTotalCount;
 				};
 
 
 				DescribeDataLimitsResult();
 				explicit DescribeDataLimitsResult(const std::string &payload);
 				~DescribeDataLimitsResult();
-				std::vector<DataLimit> getDataLimitList()const;
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getCurrentPage()const;
+				std::vector<DataLimit> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DataLimit> dataLimitList_;
+				int totalCount_;
+				int pageSize_;
+				int currentPage_;
+				std::vector<DataLimit> items_;
 
 			};
 		}

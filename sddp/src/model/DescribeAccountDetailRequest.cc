@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeAccountDetailRequest;
 
 DescribeAccountDetailRequest::DescribeAccountDetailRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeAccountDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountDetailRequest::~DescribeAccountDetailRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeAccountDetailRequest::getUserId()const
 void DescribeAccountDetailRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setParameter("UserId", std::to_string(userId));
 }
 
 long DescribeAccountDetailRequest::getAccountTypeId()const
@@ -44,7 +46,7 @@ long DescribeAccountDetailRequest::getAccountTypeId()const
 void DescribeAccountDetailRequest::setAccountTypeId(long accountTypeId)
 {
 	accountTypeId_ = accountTypeId;
-	setCoreParameter("AccountTypeId", std::to_string(accountTypeId));
+	setParameter("AccountTypeId", std::to_string(accountTypeId));
 }
 
 std::string DescribeAccountDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeAccountDetailRequest::getSourceIp()const
 void DescribeAccountDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccountDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeAccountDetailRequest::getLang()const
 void DescribeAccountDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

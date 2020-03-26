@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BusinessUpdateRequest;
 
 BusinessUpdateRequest::BusinessUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BusinessUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BusinessUpdateRequest::~BusinessUpdateRequest()
 {}
@@ -33,7 +35,7 @@ std::string BusinessUpdateRequest::getBusinessCity()const
 void BusinessUpdateRequest::setBusinessCity(const std::string& businessCity)
 {
 	businessCity_ = businessCity;
-	setCoreParameter("BusinessCity", businessCity);
+	setParameter("BusinessCity", businessCity);
 }
 
 std::string BusinessUpdateRequest::getWarnEmail()const
@@ -44,7 +46,7 @@ std::string BusinessUpdateRequest::getWarnEmail()const
 void BusinessUpdateRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
-	setCoreParameter("WarnEmail", warnEmail);
+	setParameter("WarnEmail", warnEmail);
 }
 
 std::string BusinessUpdateRequest::getBusinessManager()const
@@ -55,7 +57,7 @@ std::string BusinessUpdateRequest::getBusinessManager()const
 void BusinessUpdateRequest::setBusinessManager(const std::string& businessManager)
 {
 	businessManager_ = businessManager;
-	setCoreParameter("BusinessManager", businessManager);
+	setParameter("BusinessManager", businessManager);
 }
 
 std::string BusinessUpdateRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string BusinessUpdateRequest::getAccessKeyId()const
 void BusinessUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int BusinessUpdateRequest::getWarn()const
@@ -77,7 +79,7 @@ int BusinessUpdateRequest::getWarn()const
 void BusinessUpdateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setParameter("Warn", std::to_string(warn));
 }
 
 std::string BusinessUpdateRequest::getBusinessAddress()const
@@ -88,7 +90,7 @@ std::string BusinessUpdateRequest::getBusinessAddress()const
 void BusinessUpdateRequest::setBusinessAddress(const std::string& businessAddress)
 {
 	businessAddress_ = businessAddress;
-	setCoreParameter("BusinessAddress", businessAddress);
+	setParameter("BusinessAddress", businessAddress);
 }
 
 long BusinessUpdateRequest::getBid()const
@@ -99,7 +101,7 @@ long BusinessUpdateRequest::getBid()const
 void BusinessUpdateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 
 std::string BusinessUpdateRequest::getBusinessProvince()const
@@ -110,6 +112,6 @@ std::string BusinessUpdateRequest::getBusinessProvince()const
 void BusinessUpdateRequest::setBusinessProvince(const std::string& businessProvince)
 {
 	businessProvince_ = businessProvince;
-	setCoreParameter("BusinessProvince", businessProvince);
+	setParameter("BusinessProvince", businessProvince);
 }
 

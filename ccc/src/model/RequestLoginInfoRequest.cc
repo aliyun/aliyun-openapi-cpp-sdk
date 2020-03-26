@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RequestLoginInfoRequest;
 
 RequestLoginInfoRequest::RequestLoginInfoRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RequestLoginInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RequestLoginInfoRequest::~RequestLoginInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string RequestLoginInfoRequest::getInstanceId()const
 void RequestLoginInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RequestLoginInfoRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string RequestLoginInfoRequest::getAccessKeyId()const
 void RequestLoginInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

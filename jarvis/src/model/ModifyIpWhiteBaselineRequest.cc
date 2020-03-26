@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::ModifyIpWhiteBaselineRequest;
 
 ModifyIpWhiteBaselineRequest::ModifyIpWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "ModifyIpWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpWhiteBaselineRequest::~ModifyIpWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyIpWhiteBaselineRequest::getResourceOwnerId()const
 void ModifyIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSrcIp()const
@@ -44,7 +46,7 @@ std::string ModifyIpWhiteBaselineRequest::getSrcIp()const
 void ModifyIpWhiteBaselineRequest::setSrcIp(const std::string& srcIp)
 {
 	srcIp_ = srcIp;
-	setCoreParameter("SrcIp", srcIp);
+	setParameter("SrcIp", srcIp);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getRemark()const
@@ -55,7 +57,7 @@ std::string ModifyIpWhiteBaselineRequest::getRemark()const
 void ModifyIpWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSourceCode()const
@@ -66,7 +68,7 @@ std::string ModifyIpWhiteBaselineRequest::getSourceCode()const
 void ModifyIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string ModifyIpWhiteBaselineRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string ModifyIpWhiteBaselineRequest::getSourceIp()const
 void ModifyIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int ModifyIpWhiteBaselineRequest::getId()const
@@ -88,7 +90,7 @@ int ModifyIpWhiteBaselineRequest::getId()const
 void ModifyIpWhiteBaselineRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string ModifyIpWhiteBaselineRequest::getLang()const
@@ -99,6 +101,6 @@ std::string ModifyIpWhiteBaselineRequest::getLang()const
 void ModifyIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

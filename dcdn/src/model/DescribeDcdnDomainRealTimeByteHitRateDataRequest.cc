@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainRealTimeByteHitRateDataRequest::getStartTime()cons
 void DescribeDcdnDomainRealTimeByteHitRateDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainRealTimeByteHitRateDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainRealTimeByteHitRateDataRequest::getDomainName()con
 void DescribeDcdnDomainRealTimeByteHitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainRealTimeByteHitRateDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainRealTimeByteHitRateDataRequest::getEndTime()const
 void DescribeDcdnDomainRealTimeByteHitRateDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainRealTimeByteHitRateDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDcdnDomainRealTimeByteHitRateDataRequest::getOwnerId()const
 void DescribeDcdnDomainRealTimeByteHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

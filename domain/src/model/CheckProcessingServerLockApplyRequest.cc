@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckProcessingServerLockApplyRequest;
 
 CheckProcessingServerLockApplyRequest::CheckProcessingServerLockApplyRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckProcessingServerLockApply")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckProcessingServerLockApplyRequest::~CheckProcessingServerLockApplyRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckProcessingServerLockApplyRequest::getDomainName()const
 void CheckProcessingServerLockApplyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int CheckProcessingServerLockApplyRequest::getFeePeriod()const
@@ -44,7 +46,7 @@ int CheckProcessingServerLockApplyRequest::getFeePeriod()const
 void CheckProcessingServerLockApplyRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", std::to_string(feePeriod));
+	setParameter("FeePeriod", std::to_string(feePeriod));
 }
 
 std::string CheckProcessingServerLockApplyRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string CheckProcessingServerLockApplyRequest::getUserClientIp()const
 void CheckProcessingServerLockApplyRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckProcessingServerLockApplyRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CheckProcessingServerLockApplyRequest::getLang()const
 void CheckProcessingServerLockApplyRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

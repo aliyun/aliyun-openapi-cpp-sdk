@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DetachDBInstancesRequest;
 
 DetachDBInstancesRequest::DetachDBInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DetachDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachDBInstancesRequest::~DetachDBInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DetachDBInstancesRequest::getScalingGroupId()const
 void DetachDBInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DetachDBInstancesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DetachDBInstancesRequest::getAccessKeyId()const
 void DetachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DetachDBInstancesRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DetachDBInstancesRequest::getResourceOwnerAccount()const
 void DetachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::vector<std::string> DetachDBInstancesRequest::getDBInstance()const
@@ -66,8 +68,9 @@ std::vector<std::string> DetachDBInstancesRequest::getDBInstance()const
 void DetachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBInstance)
 {
 	dBInstance_ = dBInstance;
-	for(int i = 0; i!= dBInstance.size(); i++)
-		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++) {
+		setParameter("DBInstance."+ std::to_string(dep1), dBInstance.at(dep1));
+	}
 }
 
 long DetachDBInstancesRequest::getOwnerId()const
@@ -78,7 +81,7 @@ long DetachDBInstancesRequest::getOwnerId()const
 void DetachDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DetachDBInstancesRequest::getForceDetach()const
@@ -89,6 +92,6 @@ bool DetachDBInstancesRequest::getForceDetach()const
 void DetachDBInstancesRequest::setForceDetach(bool forceDetach)
 {
 	forceDetach_ = forceDetach;
-	setCoreParameter("ForceDetach", forceDetach ? "true" : "false");
+	setParameter("ForceDetach", forceDetach ? "true" : "false");
 }
 

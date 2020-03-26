@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::TagResourcesRequest;
 
 TagResourcesRequest::TagResourcesRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "TagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TagResourcesRequest::~TagResourcesRequest()
 {}
@@ -33,7 +35,18 @@ std::string TagResourcesRequest::getTagOwnerUid()const
 void TagResourcesRequest::setTagOwnerUid(const std::string& tagOwnerUid)
 {
 	tagOwnerUid_ = tagOwnerUid;
-	setCoreParameter("TagOwnerUid", tagOwnerUid);
+	setParameter("TagOwnerUid", tagOwnerUid);
+}
+
+std::string TagResourcesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void TagResourcesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string TagResourcesRequest::getSourceIp()const
@@ -44,7 +57,7 @@ std::string TagResourcesRequest::getSourceIp()const
 void TagResourcesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string TagResourcesRequest::getRegionId()const
@@ -55,7 +68,7 @@ std::string TagResourcesRequest::getRegionId()const
 void TagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string TagResourcesRequest::getScope()const
@@ -66,7 +79,7 @@ std::string TagResourcesRequest::getScope()const
 void TagResourcesRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string TagResourcesRequest::getTagOwnerBid()const
@@ -77,7 +90,7 @@ std::string TagResourcesRequest::getTagOwnerBid()const
 void TagResourcesRequest::setTagOwnerBid(const std::string& tagOwnerBid)
 {
 	tagOwnerBid_ = tagOwnerBid;
-	setCoreParameter("TagOwnerBid", tagOwnerBid);
+	setParameter("TagOwnerBid", tagOwnerBid);
 }
 
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
@@ -88,12 +101,11 @@ std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
 void TagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -105,8 +117,9 @@ std::vector<std::string> TagResourcesRequest::getResourceId()const
 void TagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string TagResourcesRequest::getResourceType()const
@@ -117,6 +130,6 @@ std::string TagResourcesRequest::getResourceType()const
 void TagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 

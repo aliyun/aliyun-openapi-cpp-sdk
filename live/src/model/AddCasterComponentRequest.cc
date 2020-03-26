@@ -20,10 +20,23 @@ using AlibabaCloud::Live::Model::AddCasterComponentRequest;
 
 AddCasterComponentRequest::AddCasterComponentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterComponent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterComponentRequest::~AddCasterComponentRequest()
 {}
+
+std::string AddCasterComponentRequest::getHtmlLayerContent()const
+{
+	return htmlLayerContent_;
+}
+
+void AddCasterComponentRequest::setHtmlLayerContent(const std::string& htmlLayerContent)
+{
+	htmlLayerContent_ = htmlLayerContent;
+	setParameter("HtmlLayerContent", htmlLayerContent);
+}
 
 std::string AddCasterComponentRequest::getImageLayerContent()const
 {
@@ -33,7 +46,7 @@ std::string AddCasterComponentRequest::getImageLayerContent()const
 void AddCasterComponentRequest::setImageLayerContent(const std::string& imageLayerContent)
 {
 	imageLayerContent_ = imageLayerContent;
-	setCoreParameter("ImageLayerContent", imageLayerContent);
+	setParameter("ImageLayerContent", imageLayerContent);
 }
 
 std::string AddCasterComponentRequest::getComponentName()const
@@ -44,7 +57,18 @@ std::string AddCasterComponentRequest::getComponentName()const
 void AddCasterComponentRequest::setComponentName(const std::string& componentName)
 {
 	componentName_ = componentName;
-	setCoreParameter("ComponentName", componentName);
+	setParameter("ComponentName", componentName);
+}
+
+std::string AddCasterComponentRequest::getLayerOrder()const
+{
+	return layerOrder_;
+}
+
+void AddCasterComponentRequest::setLayerOrder(const std::string& layerOrder)
+{
+	layerOrder_ = layerOrder;
+	setParameter("LayerOrder", layerOrder);
 }
 
 std::string AddCasterComponentRequest::getCasterId()const
@@ -55,7 +79,7 @@ std::string AddCasterComponentRequest::getCasterId()const
 void AddCasterComponentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 std::string AddCasterComponentRequest::getComponentLayer()const
@@ -66,7 +90,7 @@ std::string AddCasterComponentRequest::getComponentLayer()const
 void AddCasterComponentRequest::setComponentLayer(const std::string& componentLayer)
 {
 	componentLayer_ = componentLayer;
-	setCoreParameter("ComponentLayer", componentLayer);
+	setParameter("ComponentLayer", componentLayer);
 }
 
 long AddCasterComponentRequest::getOwnerId()const
@@ -77,7 +101,7 @@ long AddCasterComponentRequest::getOwnerId()const
 void AddCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddCasterComponentRequest::getComponentType()const
@@ -88,7 +112,7 @@ std::string AddCasterComponentRequest::getComponentType()const
 void AddCasterComponentRequest::setComponentType(const std::string& componentType)
 {
 	componentType_ = componentType;
-	setCoreParameter("ComponentType", componentType);
+	setParameter("ComponentType", componentType);
 }
 
 std::string AddCasterComponentRequest::getLocationId()const
@@ -99,7 +123,7 @@ std::string AddCasterComponentRequest::getLocationId()const
 void AddCasterComponentRequest::setLocationId(const std::string& locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", locationId);
+	setParameter("LocationId", locationId);
 }
 
 std::string AddCasterComponentRequest::getEffect()const
@@ -110,7 +134,7 @@ std::string AddCasterComponentRequest::getEffect()const
 void AddCasterComponentRequest::setEffect(const std::string& effect)
 {
 	effect_ = effect;
-	setCoreParameter("Effect", effect);
+	setParameter("Effect", effect);
 }
 
 std::string AddCasterComponentRequest::getCaptionLayerContent()const
@@ -121,7 +145,7 @@ std::string AddCasterComponentRequest::getCaptionLayerContent()const
 void AddCasterComponentRequest::setCaptionLayerContent(const std::string& captionLayerContent)
 {
 	captionLayerContent_ = captionLayerContent;
-	setCoreParameter("CaptionLayerContent", captionLayerContent);
+	setParameter("CaptionLayerContent", captionLayerContent);
 }
 
 std::string AddCasterComponentRequest::getTextLayerContent()const
@@ -132,6 +156,6 @@ std::string AddCasterComponentRequest::getTextLayerContent()const
 void AddCasterComponentRequest::setTextLayerContent(const std::string& textLayerContent)
 {
 	textLayerContent_ = textLayerContent;
-	setCoreParameter("TextLayerContent", textLayerContent);
+	setParameter("TextLayerContent", textLayerContent);
 }
 

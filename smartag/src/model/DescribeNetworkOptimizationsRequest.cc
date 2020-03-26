@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeNetworkOptimizationsRequest;
 
 DescribeNetworkOptimizationsRequest::DescribeNetworkOptimizationsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeNetworkOptimizations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkOptimizationsRequest::~DescribeNetworkOptimizationsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeNetworkOptimizationsRequest::getResourceOwnerId()const
 void DescribeNetworkOptimizationsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getCcnId()const
@@ -44,7 +46,7 @@ std::string DescribeNetworkOptimizationsRequest::getCcnId()const
 void DescribeNetworkOptimizationsRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setParameter("CcnId", ccnId);
 }
 
 int DescribeNetworkOptimizationsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeNetworkOptimizationsRequest::getPageNumber()const
 void DescribeNetworkOptimizationsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeNetworkOptimizationsRequest::getRegionId()const
 void DescribeNetworkOptimizationsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeNetworkOptimizationsRequest::getNetworkOptId()const
@@ -77,7 +79,7 @@ std::string DescribeNetworkOptimizationsRequest::getNetworkOptId()const
 void DescribeNetworkOptimizationsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setParameter("NetworkOptId", networkOptId);
 }
 
 int DescribeNetworkOptimizationsRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeNetworkOptimizationsRequest::getPageSize()const
 void DescribeNetworkOptimizationsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeNetworkOptimizationsRequest::getResourceOwnerAccount()const
 void DescribeNetworkOptimizationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNetworkOptimizationsRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeNetworkOptimizationsRequest::getOwnerAccount()const
 void DescribeNetworkOptimizationsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeNetworkOptimizationsRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeNetworkOptimizationsRequest::getOwnerId()const
 void DescribeNetworkOptimizationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNetworkOptimizationsRequest::getName()const
@@ -132,6 +134,6 @@ std::string DescribeNetworkOptimizationsRequest::getName()const
 void DescribeNetworkOptimizationsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

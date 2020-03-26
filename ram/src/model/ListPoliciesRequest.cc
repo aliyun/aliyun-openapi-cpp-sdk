@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesRequest;
 
 ListPoliciesRequest::ListPoliciesRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPolicies")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesRequest::~ListPoliciesRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListPoliciesRequest::getPolicyType()const
 void ListPoliciesRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string ListPoliciesRequest::getMarker()const
@@ -44,7 +46,7 @@ std::string ListPoliciesRequest::getMarker()const
 void ListPoliciesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 int ListPoliciesRequest::getMaxItems()const
@@ -55,6 +57,6 @@ int ListPoliciesRequest::getMaxItems()const
 void ListPoliciesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setParameter("MaxItems", std::to_string(maxItems));
 }
 

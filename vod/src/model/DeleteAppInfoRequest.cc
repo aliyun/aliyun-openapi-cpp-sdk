@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteAppInfoRequest;
 
 DeleteAppInfoRequest::DeleteAppInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAppInfoRequest::~DeleteAppInfoRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteAppInfoRequest::getResourceOwnerId()const
 void DeleteAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteAppInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteAppInfoRequest::getResourceOwnerAccount()const
 void DeleteAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteAppInfoRequest::getResourceRealOwnerId()const
@@ -55,7 +57,7 @@ long DeleteAppInfoRequest::getResourceRealOwnerId()const
 void DeleteAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long DeleteAppInfoRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteAppInfoRequest::getOwnerId()const
 void DeleteAppInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAppInfoRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeleteAppInfoRequest::getAccessKeyId()const
 void DeleteAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAppInfoRequest::getAppId()const
@@ -88,6 +90,6 @@ std::string DeleteAppInfoRequest::getAppId()const
 void DeleteAppInfoRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::GetPackageRequest;
 
 GetPackageRequest::GetPackageRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "GetPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPackageRequest::~GetPackageRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPackageRequest::getResourceOwnerId()const
 void GetPackageRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetPackageRequest::getData()const
@@ -44,7 +46,7 @@ std::string GetPackageRequest::getData()const
 void GetPackageRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string GetPackageRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string GetPackageRequest::getResourceOwnerAccount()const
 void GetPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetPackageRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string GetPackageRequest::getOwnerAccount()const
 void GetPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetPackageRequest::getOwnerId()const
@@ -77,7 +79,7 @@ std::string GetPackageRequest::getOwnerId()const
 void GetPackageRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetPackageRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string GetPackageRequest::getAccessKeyId()const
 void GetPackageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

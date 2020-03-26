@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIpv6EgressOnlyRuleRequest;
 
 DeleteIpv6EgressOnlyRuleRequest::DeleteIpv6EgressOnlyRuleRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIpv6EgressOnlyRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpv6EgressOnlyRuleRequest::~DeleteIpv6EgressOnlyRuleRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerId()const
 void DeleteIpv6EgressOnlyRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getClientToken()const
 void DeleteIpv6EgressOnlyRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getIpv6EgressOnlyRuleId()const
@@ -55,7 +57,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getIpv6EgressOnlyRuleId()const
 void DeleteIpv6EgressOnlyRuleRequest::setIpv6EgressOnlyRuleId(const std::string& ipv6EgressOnlyRuleId)
 {
 	ipv6EgressOnlyRuleId_ = ipv6EgressOnlyRuleId;
-	setCoreParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
+	setParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getRegionId()const
 void DeleteIpv6EgressOnlyRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
 void DeleteIpv6EgressOnlyRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteIpv6EgressOnlyRuleRequest::getOwnerAccount()const
 void DeleteIpv6EgressOnlyRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteIpv6EgressOnlyRuleRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteIpv6EgressOnlyRuleRequest::getOwnerId()const
 void DeleteIpv6EgressOnlyRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

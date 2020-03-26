@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> CreateInstanceRequest::getPhoneNumbers()const
 void CreateInstanceRequest::setPhoneNumbers(const std::vector<std::string>& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	for(int i = 0; i!= phoneNumbers.size(); i++)
-		setCoreParameter("PhoneNumbers."+ std::to_string(i), phoneNumbers.at(i));
+	for(int dep1 = 0; dep1!= phoneNumbers.size(); dep1++) {
+		setParameter("PhoneNumbers."+ std::to_string(dep1), phoneNumbers.at(dep1));
+	}
 }
 
 std::vector<std::string> CreateInstanceRequest::getUserObject()const
@@ -45,8 +48,9 @@ std::vector<std::string> CreateInstanceRequest::getUserObject()const
 void CreateInstanceRequest::setUserObject(const std::vector<std::string>& userObject)
 {
 	userObject_ = userObject;
-	for(int i = 0; i!= userObject.size(); i++)
-		setCoreParameter("UserObject."+ std::to_string(i), userObject.at(i));
+	for(int dep1 = 0; dep1!= userObject.size(); dep1++) {
+		setParameter("UserObject."+ std::to_string(dep1), userObject.at(dep1));
+	}
 }
 
 std::string CreateInstanceRequest::getDomainName()const
@@ -57,7 +61,7 @@ std::string CreateInstanceRequest::getDomainName()const
 void CreateInstanceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string CreateInstanceRequest::getPhoneNumber()const
@@ -68,7 +72,7 @@ std::string CreateInstanceRequest::getPhoneNumber()const
 void CreateInstanceRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 std::string CreateInstanceRequest::getDescription()const
@@ -79,7 +83,7 @@ std::string CreateInstanceRequest::getDescription()const
 void CreateInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int CreateInstanceRequest::getStorageMaxDays()const
@@ -90,7 +94,7 @@ int CreateInstanceRequest::getStorageMaxDays()const
 void CreateInstanceRequest::setStorageMaxDays(int storageMaxDays)
 {
 	storageMaxDays_ = storageMaxDays;
-	setCoreParameter("StorageMaxDays", std::to_string(storageMaxDays));
+	setParameter("StorageMaxDays", std::to_string(storageMaxDays));
 }
 
 std::vector<std::string> CreateInstanceRequest::getAdminRamId()const
@@ -101,8 +105,9 @@ std::vector<std::string> CreateInstanceRequest::getAdminRamId()const
 void CreateInstanceRequest::setAdminRamId(const std::vector<std::string>& adminRamId)
 {
 	adminRamId_ = adminRamId;
-	for(int i = 0; i!= adminRamId.size(); i++)
-		setCoreParameter("AdminRamId."+ std::to_string(i), adminRamId.at(i));
+	for(int dep1 = 0; dep1!= adminRamId.size(); dep1++) {
+		setParameter("AdminRamId."+ std::to_string(dep1), adminRamId.at(dep1));
+	}
 }
 
 std::string CreateInstanceRequest::getAccessKeyId()const
@@ -113,7 +118,7 @@ std::string CreateInstanceRequest::getAccessKeyId()const
 void CreateInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateInstanceRequest::getName()const
@@ -124,7 +129,7 @@ std::string CreateInstanceRequest::getName()const
 void CreateInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int CreateInstanceRequest::getStorageMaxSize()const
@@ -135,7 +140,7 @@ int CreateInstanceRequest::getStorageMaxSize()const
 void CreateInstanceRequest::setStorageMaxSize(int storageMaxSize)
 {
 	storageMaxSize_ = storageMaxSize;
-	setCoreParameter("StorageMaxSize", std::to_string(storageMaxSize));
+	setParameter("StorageMaxSize", std::to_string(storageMaxSize));
 }
 
 std::string CreateInstanceRequest::getDirectoryId()const
@@ -146,6 +151,6 @@ std::string CreateInstanceRequest::getDirectoryId()const
 void CreateInstanceRequest::setDirectoryId(const std::string& directoryId)
 {
 	directoryId_ = directoryId;
-	setCoreParameter("DirectoryId", directoryId);
+	setParameter("DirectoryId", directoryId);
 }
 

@@ -144,6 +144,8 @@
 #include "model/UpdateJobResult.h"
 #include "model/UpdatePackageRequest.h"
 #include "model/UpdatePackageResult.h"
+#include "model/UpdateQueueRequest.h"
+#include "model/UpdateQueueResult.h"
 #include "model/ValidateJobRequest.h"
 #include "model/ValidateJobResult.h"
 
@@ -338,6 +340,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdatePackageResult> UpdatePackageOutcome;
 			typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::UpdatePackageRequest&, const UpdatePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePackageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateQueueResult> UpdateQueueOutcome;
+			typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
+			typedef std::function<void(const FoasClient*, const Model::UpdateQueueRequest&, const UpdateQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateQueueAsyncHandler;
 			typedef Outcome<Error, Model::ValidateJobResult> ValidateJobOutcome;
 			typedef std::future<ValidateJobOutcome> ValidateJobOutcomeCallable;
 			typedef std::function<void(const FoasClient*, const Model::ValidateJobRequest&, const ValidateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateJobAsyncHandler;
@@ -529,6 +534,9 @@ namespace AlibabaCloud
 			UpdatePackageOutcome updatePackage(const Model::UpdatePackageRequest &request)const;
 			void updatePackageAsync(const Model::UpdatePackageRequest& request, const UpdatePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdatePackageOutcomeCallable updatePackageCallable(const Model::UpdatePackageRequest& request) const;
+			UpdateQueueOutcome updateQueue(const Model::UpdateQueueRequest &request)const;
+			void updateQueueAsync(const Model::UpdateQueueRequest& request, const UpdateQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateQueueOutcomeCallable updateQueueCallable(const Model::UpdateQueueRequest& request) const;
 			ValidateJobOutcome validateJob(const Model::ValidateJobRequest &request)const;
 			void validateJobAsync(const Model::ValidateJobRequest& request, const ValidateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateJobOutcomeCallable validateJobCallable(const Model::ValidateJobRequest& request) const;

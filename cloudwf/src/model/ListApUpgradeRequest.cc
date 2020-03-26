@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApUpgradeRequest;
 
 ListApUpgradeRequest::ListApUpgradeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApUpgrade")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApUpgradeRequest::~ListApUpgradeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApUpgradeRequest::getOrderCol()const
 void ListApUpgradeRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListApUpgradeRequest::getSearchName()const
@@ -44,7 +46,7 @@ std::string ListApUpgradeRequest::getSearchName()const
 void ListApUpgradeRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 std::string ListApUpgradeRequest::getSearchApModelName()const
@@ -55,7 +57,7 @@ std::string ListApUpgradeRequest::getSearchApModelName()const
 void ListApUpgradeRequest::setSearchApModelName(const std::string& searchApModelName)
 {
 	searchApModelName_ = searchApModelName;
-	setCoreParameter("SearchApModelName", searchApModelName);
+	setParameter("SearchApModelName", searchApModelName);
 }
 
 int ListApUpgradeRequest::getLength()const
@@ -66,7 +68,7 @@ int ListApUpgradeRequest::getLength()const
 void ListApUpgradeRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListApUpgradeRequest::getOrderDir()const
@@ -77,7 +79,7 @@ std::string ListApUpgradeRequest::getOrderDir()const
 void ListApUpgradeRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListApUpgradeRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string ListApUpgradeRequest::getAccessKeyId()const
 void ListApUpgradeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApUpgradeRequest::getSearchMac()const
@@ -99,7 +101,7 @@ std::string ListApUpgradeRequest::getSearchMac()const
 void ListApUpgradeRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 int ListApUpgradeRequest::getPageIndex()const
@@ -110,6 +112,6 @@ int ListApUpgradeRequest::getPageIndex()const
 void ListApUpgradeRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddCensorPipelineRequest;
 
 AddCensorPipelineRequest::AddCensorPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddCensorPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCensorPipelineRequest::~AddCensorPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long AddCensorPipelineRequest::getResourceOwnerId()const
 void AddCensorPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddCensorPipelineRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddCensorPipelineRequest::getAccessKeyId()const
 void AddCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddCensorPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string AddCensorPipelineRequest::getResourceOwnerAccount()const
 void AddCensorPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddCensorPipelineRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddCensorPipelineRequest::getOwnerAccount()const
 void AddCensorPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddCensorPipelineRequest::getNotifyConfig()const
@@ -77,7 +79,7 @@ std::string AddCensorPipelineRequest::getNotifyConfig()const
 void AddCensorPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setParameter("NotifyConfig", notifyConfig);
 }
 
 long AddCensorPipelineRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddCensorPipelineRequest::getOwnerId()const
 void AddCensorPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddCensorPipelineRequest::getPriority()const
@@ -99,7 +101,7 @@ int AddCensorPipelineRequest::getPriority()const
 void AddCensorPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string AddCensorPipelineRequest::getName()const
@@ -110,6 +112,6 @@ std::string AddCensorPipelineRequest::getName()const
 void AddCensorPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

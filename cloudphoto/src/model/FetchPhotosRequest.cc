@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::FetchPhotosRequest;
 
 FetchPhotosRequest::FetchPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "FetchPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FetchPhotosRequest::~FetchPhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string FetchPhotosRequest::getLibraryId()const
 void FetchPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string FetchPhotosRequest::getOrderBy()const
@@ -44,7 +46,7 @@ std::string FetchPhotosRequest::getOrderBy()const
 void FetchPhotosRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string FetchPhotosRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string FetchPhotosRequest::getStoreName()const
 void FetchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int FetchPhotosRequest::getSize()const
@@ -66,7 +68,7 @@ int FetchPhotosRequest::getSize()const
 void FetchPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string FetchPhotosRequest::getState()const
@@ -77,7 +79,7 @@ std::string FetchPhotosRequest::getState()const
 void FetchPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 int FetchPhotosRequest::getPage()const
@@ -88,7 +90,7 @@ int FetchPhotosRequest::getPage()const
 void FetchPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string FetchPhotosRequest::getOrder()const
@@ -99,6 +101,6 @@ std::string FetchPhotosRequest::getOrder()const
 void FetchPhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 

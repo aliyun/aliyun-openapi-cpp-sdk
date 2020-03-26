@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchRetcodeAppByPageRequest;
 
 SearchRetcodeAppByPageRequest::SearchRetcodeAppByPageRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchRetcodeAppByPage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchRetcodeAppByPageRequest::~SearchRetcodeAppByPageRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchRetcodeAppByPageRequest::getRegionId()const
 void SearchRetcodeAppByPageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SearchRetcodeAppByPageRequest::getRetcodeAppName()const
@@ -44,7 +46,7 @@ std::string SearchRetcodeAppByPageRequest::getRetcodeAppName()const
 void SearchRetcodeAppByPageRequest::setRetcodeAppName(const std::string& retcodeAppName)
 {
 	retcodeAppName_ = retcodeAppName;
-	setCoreParameter("RetcodeAppName", retcodeAppName);
+	setParameter("RetcodeAppName", retcodeAppName);
 }
 
 int SearchRetcodeAppByPageRequest::getPageSize()const
@@ -55,7 +57,7 @@ int SearchRetcodeAppByPageRequest::getPageSize()const
 void SearchRetcodeAppByPageRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int SearchRetcodeAppByPageRequest::getPageNumber()const
@@ -66,6 +68,6 @@ int SearchRetcodeAppByPageRequest::getPageNumber()const
 void SearchRetcodeAppByPageRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

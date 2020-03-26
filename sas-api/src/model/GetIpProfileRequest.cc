@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetIpProfileRequest;
 
 GetIpProfileRequest::GetIpProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetIpProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetIpProfileRequest::~GetIpProfileRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetIpProfileRequest::getDeviceIdMd5()const
 void GetIpProfileRequest::setDeviceIdMd5(const std::string& deviceIdMd5)
 {
 	deviceIdMd5_ = deviceIdMd5;
-	setCoreParameter("DeviceIdMd5", deviceIdMd5);
+	setParameter("DeviceIdMd5", deviceIdMd5);
 }
 
 std::string GetIpProfileRequest::getOs()const
@@ -44,7 +46,7 @@ std::string GetIpProfileRequest::getOs()const
 void GetIpProfileRequest::setOs(const std::string& os)
 {
 	os_ = os;
-	setCoreParameter("Os", os);
+	setParameter("Os", os);
 }
 
 std::string GetIpProfileRequest::getIp()const
@@ -55,7 +57,7 @@ std::string GetIpProfileRequest::getIp()const
 void GetIpProfileRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setParameter("Ip", ip);
 }
 
 std::string GetIpProfileRequest::getUserAgent()const
@@ -66,7 +68,7 @@ std::string GetIpProfileRequest::getUserAgent()const
 void GetIpProfileRequest::setUserAgent(const std::string& userAgent)
 {
 	userAgent_ = userAgent;
-	setCoreParameter("UserAgent", userAgent);
+	setParameter("UserAgent", userAgent);
 }
 
 int GetIpProfileRequest::getSensType()const
@@ -77,7 +79,7 @@ int GetIpProfileRequest::getSensType()const
 void GetIpProfileRequest::setSensType(int sensType)
 {
 	sensType_ = sensType;
-	setCoreParameter("SensType", std::to_string(sensType));
+	setParameter("SensType", std::to_string(sensType));
 }
 
 int GetIpProfileRequest::getDeviceType()const
@@ -88,7 +90,7 @@ int GetIpProfileRequest::getDeviceType()const
 void GetIpProfileRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setParameter("DeviceType", std::to_string(deviceType));
 }
 
 int GetIpProfileRequest::getBusinessType()const
@@ -99,7 +101,7 @@ int GetIpProfileRequest::getBusinessType()const
 void GetIpProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setParameter("BusinessType", std::to_string(businessType));
 }
 
 int GetIpProfileRequest::getCarrier()const
@@ -110,7 +112,7 @@ int GetIpProfileRequest::getCarrier()const
 void GetIpProfileRequest::setCarrier(int carrier)
 {
 	carrier_ = carrier;
-	setCoreParameter("Carrier", std::to_string(carrier));
+	setParameter("Carrier", std::to_string(carrier));
 }
 
 std::string GetIpProfileRequest::getRequestUrl()const
@@ -121,7 +123,7 @@ std::string GetIpProfileRequest::getRequestUrl()const
 void GetIpProfileRequest::setRequestUrl(const std::string& requestUrl)
 {
 	requestUrl_ = requestUrl;
-	setCoreParameter("RequestUrl", requestUrl);
+	setParameter("RequestUrl", requestUrl);
 }
 
 int GetIpProfileRequest::getConnectionType()const
@@ -132,6 +134,6 @@ int GetIpProfileRequest::getConnectionType()const
 void GetIpProfileRequest::setConnectionType(int connectionType)
 {
 	connectionType_ = connectionType;
-	setCoreParameter("ConnectionType", std::to_string(connectionType));
+	setParameter("ConnectionType", std::to_string(connectionType));
 }
 

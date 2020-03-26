@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteJobRequest;
 
 DeleteJobRequest::DeleteJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteJobRequest::~DeleteJobRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteJobRequest::getResourceOwnerId()const
 void DeleteJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteJobRequest::getAccessKeyId()const
 void DeleteJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteJobRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteJobRequest::getRegionId()const
 void DeleteJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteJobRequest::getId()const
@@ -66,6 +68,6 @@ std::string DeleteJobRequest::getId()const
 void DeleteJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

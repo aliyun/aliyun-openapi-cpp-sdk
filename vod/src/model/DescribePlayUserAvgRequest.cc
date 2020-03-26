@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribePlayUserAvgRequest;
 
 DescribePlayUserAvgRequest::DescribePlayUserAvgRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribePlayUserAvg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePlayUserAvgRequest::~DescribePlayUserAvgRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePlayUserAvgRequest::getStartTime()const
 void DescribePlayUserAvgRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribePlayUserAvgRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribePlayUserAvgRequest::getEndTime()const
 void DescribePlayUserAvgRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribePlayUserAvgRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribePlayUserAvgRequest::getOwnerId()const
 void DescribePlayUserAvgRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

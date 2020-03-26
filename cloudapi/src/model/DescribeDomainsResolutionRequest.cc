@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeDomainsResolutionRequest;
 
 DescribeDomainsResolutionRequest::DescribeDomainsResolutionRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeDomainsResolution")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsResolutionRequest::~DescribeDomainsResolutionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDomainsResolutionRequest::getDomainNames()const
 void DescribeDomainsResolutionRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string DescribeDomainsResolutionRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeDomainsResolutionRequest::getGroupId()const
 void DescribeDomainsResolutionRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainsResolutionRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeDomainsResolutionRequest::getAccessKeyId()const
 void DescribeDomainsResolutionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainsResolutionRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DescribeDomainsResolutionRequest::getSecurityToken()const
 void DescribeDomainsResolutionRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

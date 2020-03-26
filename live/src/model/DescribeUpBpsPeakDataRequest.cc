@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeUpBpsPeakDataRequest;
 
 DescribeUpBpsPeakDataRequest::DescribeUpBpsPeakDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeUpBpsPeakData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpBpsPeakDataRequest::~DescribeUpBpsPeakDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUpBpsPeakDataRequest::getStartTime()const
 void DescribeUpBpsPeakDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeUpBpsPeakDataRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeUpBpsPeakDataRequest::getDomainName()const
 void DescribeUpBpsPeakDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeUpBpsPeakDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeUpBpsPeakDataRequest::getEndTime()const
 void DescribeUpBpsPeakDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeUpBpsPeakDataRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeUpBpsPeakDataRequest::getOwnerId()const
 void DescribeUpBpsPeakDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUpBpsPeakDataRequest::getDomainSwitch()const
@@ -77,6 +79,6 @@ std::string DescribeUpBpsPeakDataRequest::getDomainSwitch()const
 void DescribeUpBpsPeakDataRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", domainSwitch);
+	setParameter("DomainSwitch", domainSwitch);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ListEmapRequest;
 ListEmapRequest::ListEmapRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ListEmap")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListEmapRequest::~ListEmapRequest()

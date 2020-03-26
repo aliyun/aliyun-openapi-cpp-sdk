@@ -99,6 +99,7 @@ namespace AlibabaCloud
 				explicit DescribeProductResult(const std::string &payload);
 				~DescribeProductResult();
 				std::string getStatus()const;
+				long getFrontCategoryId()const;
 				std::string getDescription()const;
 				ShopInfo getShopInfo()const;
 				std::vector<ProductSku> getProductSkus()const;
@@ -108,6 +109,7 @@ namespace AlibabaCloud
 				std::string getCode()const;
 				std::string getName()const;
 				std::string getShortDescription()const;
+				long getSupplierPk()const;
 				std::string getType()const;
 				float getScore()const;
 				std::string getAuditStatus()const;
@@ -120,6 +122,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				long frontCategoryId_;
 				std::string description_;
 				ShopInfo shopInfo_;
 				std::vector<ProductSku> productSkus_;
@@ -129,6 +132,7 @@ namespace AlibabaCloud
 				std::string code_;
 				std::string name_;
 				std::string shortDescription_;
+				long supplierPk_;
 				std::string type_;
 				float score_;
 				std::string auditStatus_;

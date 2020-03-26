@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteFlowCategoryRequest;
 
 DeleteFlowCategoryRequest::DeleteFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowCategoryRequest::~DeleteFlowCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteFlowCategoryRequest::getRegionId()const
 void DeleteFlowCategoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteFlowCategoryRequest::getId()const
@@ -44,7 +46,7 @@ std::string DeleteFlowCategoryRequest::getId()const
 void DeleteFlowCategoryRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string DeleteFlowCategoryRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string DeleteFlowCategoryRequest::getProjectId()const
 void DeleteFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

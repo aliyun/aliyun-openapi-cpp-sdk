@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckTransferInFeasibilityRequest;
 
 CheckTransferInFeasibilityRequest::CheckTransferInFeasibilityRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckTransferInFeasibility")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckTransferInFeasibilityRequest::~CheckTransferInFeasibilityRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckTransferInFeasibilityRequest::getDomainName()const
 void CheckTransferInFeasibilityRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string CheckTransferInFeasibilityRequest::getTransferAuthorizationCode()const
@@ -44,7 +46,7 @@ std::string CheckTransferInFeasibilityRequest::getTransferAuthorizationCode()con
 void CheckTransferInFeasibilityRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
 {
 	transferAuthorizationCode_ = transferAuthorizationCode;
-	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
+	setParameter("TransferAuthorizationCode", transferAuthorizationCode);
 }
 
 std::string CheckTransferInFeasibilityRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string CheckTransferInFeasibilityRequest::getUserClientIp()const
 void CheckTransferInFeasibilityRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckTransferInFeasibilityRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CheckTransferInFeasibilityRequest::getLang()const
 void CheckTransferInFeasibilityRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

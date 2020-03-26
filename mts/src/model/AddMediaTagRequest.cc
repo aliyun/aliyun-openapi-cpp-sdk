@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddMediaTagRequest;
 
 AddMediaTagRequest::AddMediaTagRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddMediaTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddMediaTagRequest::~AddMediaTagRequest()
 {}
@@ -33,7 +35,7 @@ long AddMediaTagRequest::getResourceOwnerId()const
 void AddMediaTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddMediaTagRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddMediaTagRequest::getAccessKeyId()const
 void AddMediaTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddMediaTagRequest::getTag()const
@@ -55,7 +57,7 @@ std::string AddMediaTagRequest::getTag()const
 void AddMediaTagRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 
 std::string AddMediaTagRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddMediaTagRequest::getResourceOwnerAccount()const
 void AddMediaTagRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddMediaTagRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddMediaTagRequest::getOwnerAccount()const
 void AddMediaTagRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddMediaTagRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddMediaTagRequest::getOwnerId()const
 void AddMediaTagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddMediaTagRequest::getMediaId()const
@@ -99,6 +101,6 @@ std::string AddMediaTagRequest::getMediaId()const
 void AddMediaTagRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 

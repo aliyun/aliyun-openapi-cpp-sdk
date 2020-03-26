@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeShardDbConnectionInfoRequest;
 
 DescribeShardDbConnectionInfoRequest::DescribeShardDbConnectionInfoRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeShardDbConnectionInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeShardDbConnectionInfoRequest::~DescribeShardDbConnectionInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeShardDbConnectionInfoRequest::getDrdsInstanceId()const
 void DescribeShardDbConnectionInfoRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getSubDbName()const
@@ -44,7 +46,7 @@ std::string DescribeShardDbConnectionInfoRequest::getSubDbName()const
 void DescribeShardDbConnectionInfoRequest::setSubDbName(const std::string& subDbName)
 {
 	subDbName_ = subDbName;
-	setCoreParameter("SubDbName", subDbName);
+	setParameter("SubDbName", subDbName);
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeShardDbConnectionInfoRequest::getAccessKeyId()const
 void DescribeShardDbConnectionInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeShardDbConnectionInfoRequest::getDbName()const
@@ -66,6 +68,6 @@ std::string DescribeShardDbConnectionInfoRequest::getDbName()const
 void DescribeShardDbConnectionInfoRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

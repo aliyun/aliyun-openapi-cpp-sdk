@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::LaunchShortMessageAppraiseRequest;
 
 LaunchShortMessageAppraiseRequest::LaunchShortMessageAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "LaunchShortMessageAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LaunchShortMessageAppraiseRequest::~LaunchShortMessageAppraiseRequest()
 {}
@@ -33,7 +35,7 @@ int LaunchShortMessageAppraiseRequest::getContactType()const
 void LaunchShortMessageAppraiseRequest::setContactType(int contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", std::to_string(contactType));
+	setParameter("ContactType", std::to_string(contactType));
 }
 
 std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const
@@ -44,7 +46,7 @@ std::string LaunchShortMessageAppraiseRequest::getPhoneNumbers()const
 void LaunchShortMessageAppraiseRequest::setPhoneNumbers(const std::string& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	setCoreParameter("PhoneNumbers", phoneNumbers);
+	setParameter("PhoneNumbers", phoneNumbers);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string LaunchShortMessageAppraiseRequest::getAccessKeyId()const
 void LaunchShortMessageAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getAcid()const
@@ -66,7 +68,7 @@ std::string LaunchShortMessageAppraiseRequest::getAcid()const
 void LaunchShortMessageAppraiseRequest::setAcid(const std::string& acid)
 {
 	acid_ = acid;
-	setCoreParameter("Acid", acid);
+	setParameter("Acid", acid);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string LaunchShortMessageAppraiseRequest::getInstanceId()const
 void LaunchShortMessageAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
@@ -88,6 +90,6 @@ std::string LaunchShortMessageAppraiseRequest::getSkillGroupId()const
 void LaunchShortMessageAppraiseRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 

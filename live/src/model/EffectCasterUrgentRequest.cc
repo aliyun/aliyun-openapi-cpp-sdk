@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::EffectCasterUrgentRequest;
 
 EffectCasterUrgentRequest::EffectCasterUrgentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "EffectCasterUrgent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EffectCasterUrgentRequest::~EffectCasterUrgentRequest()
 {}
@@ -33,7 +35,7 @@ std::string EffectCasterUrgentRequest::getCasterId()const
 void EffectCasterUrgentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long EffectCasterUrgentRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long EffectCasterUrgentRequest::getOwnerId()const
 void EffectCasterUrgentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EffectCasterUrgentRequest::getSceneId()const
@@ -55,6 +57,6 @@ std::string EffectCasterUrgentRequest::getSceneId()const
 void EffectCasterUrgentRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

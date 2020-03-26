@@ -35,7 +35,7 @@ long QuerySmsSignRequest::getResourceOwnerId()const
 void QuerySmsSignRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySmsSignRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string QuerySmsSignRequest::getResourceOwnerAccount()const
 void QuerySmsSignRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QuerySmsSignRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long QuerySmsSignRequest::getOwnerId()const
 void QuerySmsSignRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QuerySmsSignRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string QuerySmsSignRequest::getAccessKeyId()const
 void QuerySmsSignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySmsSignRequest::getSignName()const
@@ -79,6 +79,6 @@ std::string QuerySmsSignRequest::getSignName()const
 void QuerySmsSignRequest::setSignName(const std::string& signName)
 {
 	signName_ = signName;
-	setCoreParameter("SignName", signName);
+	setParameter("SignName", signName);
 }
 

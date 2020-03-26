@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForSubmittingDomainDeleteRequest;
 
 SaveTaskForSubmittingDomainDeleteRequest::SaveTaskForSubmittingDomainDeleteRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForSubmittingDomainDeleteRequest::~SaveTaskForSubmittingDomainDeleteRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getInstanceId()const
 void SaveTaskForSubmittingDomainDeleteRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveTaskForSubmittingDomainDeleteRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getUserClientIp()const
 void SaveTaskForSubmittingDomainDeleteRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForSubmittingDomainDeleteRequest::getLang()const
@@ -55,6 +57,6 @@ std::string SaveTaskForSubmittingDomainDeleteRequest::getLang()const
 void SaveTaskForSubmittingDomainDeleteRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

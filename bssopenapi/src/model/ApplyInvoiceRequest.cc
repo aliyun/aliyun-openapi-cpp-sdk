@@ -35,7 +35,7 @@ int ApplyInvoiceRequest::getInvoicingType()const
 void ApplyInvoiceRequest::setInvoicingType(int invoicingType)
 {
 	invoicingType_ = invoicingType;
-	setCoreParameter("InvoicingType", std::to_string(invoicingType));
+	setParameter("InvoicingType", std::to_string(invoicingType));
 }
 
 int ApplyInvoiceRequest::getProcessWay()const
@@ -46,18 +46,7 @@ int ApplyInvoiceRequest::getProcessWay()const
 void ApplyInvoiceRequest::setProcessWay(int processWay)
 {
 	processWay_ = processWay;
-	setCoreParameter("ProcessWay", std::to_string(processWay));
-}
-
-long ApplyInvoiceRequest::getCallerBid()const
-{
-	return callerBid_;
-}
-
-void ApplyInvoiceRequest::setCallerBid(long callerBid)
-{
-	callerBid_ = callerBid;
-	setCoreParameter("CallerBid", std::to_string(callerBid));
+	setParameter("ProcessWay", std::to_string(processWay));
 }
 
 long ApplyInvoiceRequest::getOwnerId()const
@@ -68,7 +57,7 @@ long ApplyInvoiceRequest::getOwnerId()const
 void ApplyInvoiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long ApplyInvoiceRequest::getInvoiceAmount()const
@@ -79,7 +68,7 @@ long ApplyInvoiceRequest::getInvoiceAmount()const
 void ApplyInvoiceRequest::setInvoiceAmount(long invoiceAmount)
 {
 	invoiceAmount_ = invoiceAmount;
-	setCoreParameter("InvoiceAmount", std::to_string(invoiceAmount));
+	setParameter("InvoiceAmount", std::to_string(invoiceAmount));
 }
 
 long ApplyInvoiceRequest::getAddressId()const
@@ -90,7 +79,7 @@ long ApplyInvoiceRequest::getAddressId()const
 void ApplyInvoiceRequest::setAddressId(long addressId)
 {
 	addressId_ = addressId;
-	setCoreParameter("AddressId", std::to_string(addressId));
+	setParameter("AddressId", std::to_string(addressId));
 }
 
 std::string ApplyInvoiceRequest::getApplyUserNick()const
@@ -101,7 +90,7 @@ std::string ApplyInvoiceRequest::getApplyUserNick()const
 void ApplyInvoiceRequest::setApplyUserNick(const std::string& applyUserNick)
 {
 	applyUserNick_ = applyUserNick;
-	setCoreParameter("ApplyUserNick", applyUserNick);
+	setParameter("ApplyUserNick", applyUserNick);
 }
 
 bool ApplyInvoiceRequest::getInvoiceByAmount()const
@@ -112,7 +101,7 @@ bool ApplyInvoiceRequest::getInvoiceByAmount()const
 void ApplyInvoiceRequest::setInvoiceByAmount(bool invoiceByAmount)
 {
 	invoiceByAmount_ = invoiceByAmount;
-	setCoreParameter("InvoiceByAmount", invoiceByAmount ? "true" : "false");
+	setParameter("InvoiceByAmount", invoiceByAmount ? "true" : "false");
 }
 
 long ApplyInvoiceRequest::getCustomerId()const
@@ -123,7 +112,7 @@ long ApplyInvoiceRequest::getCustomerId()const
 void ApplyInvoiceRequest::setCustomerId(long customerId)
 {
 	customerId_ = customerId;
-	setCoreParameter("CustomerId", std::to_string(customerId));
+	setParameter("CustomerId", std::to_string(customerId));
 }
 
 std::vector<long> ApplyInvoiceRequest::getSelectedIds()const
@@ -135,18 +124,7 @@ void ApplyInvoiceRequest::setSelectedIds(const std::vector<long>& selectedIds)
 {
 	selectedIds_ = selectedIds;
 	for(int dep1 = 0; dep1!= selectedIds.size(); dep1++) {
-		setCoreParameter("SelectedIds."+ std::to_string(dep1), std::to_string(selectedIds.at(dep1)));
+		setParameter("SelectedIds."+ std::to_string(dep1), std::to_string(selectedIds.at(dep1)));
 	}
-}
-
-long ApplyInvoiceRequest::getCallerUid()const
-{
-	return callerUid_;
-}
-
-void ApplyInvoiceRequest::setCallerUid(long callerUid)
-{
-	callerUid_ = callerUid;
-	setCoreParameter("CallerUid", std::to_string(callerUid));
 }
 

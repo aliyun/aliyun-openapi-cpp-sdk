@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateEdgeInstanceDeploymentRequest;
 
 CreateEdgeInstanceDeploymentRequest::CreateEdgeInstanceDeploymentRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateEdgeInstanceDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEdgeInstanceDeploymentRequest::~CreateEdgeInstanceDeploymentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateEdgeInstanceDeploymentRequest::getType()const
 void CreateEdgeInstanceDeploymentRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateEdgeInstanceDeploymentRequest::getAccessKeyId()const
@@ -44,18 +46,7 @@ std::string CreateEdgeInstanceDeploymentRequest::getAccessKeyId()const
 void CreateEdgeInstanceDeploymentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateEdgeInstanceDeploymentRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CreateEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateEdgeInstanceDeploymentRequest::getIotInstanceId()const
@@ -66,6 +57,39 @@ std::string CreateEdgeInstanceDeploymentRequest::getIotInstanceId()const
 void CreateEdgeInstanceDeploymentRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateEdgeInstanceDeploymentRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CreateEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string CreateEdgeInstanceDeploymentRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateEdgeInstanceDeploymentRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateEdgeInstanceDeploymentRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateEdgeInstanceDeploymentRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

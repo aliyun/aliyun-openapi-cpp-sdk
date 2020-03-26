@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RenameAlbumRequest;
 
 RenameAlbumRequest::RenameAlbumRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RenameAlbum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenameAlbumRequest::~RenameAlbumRequest()
 {}
@@ -33,7 +35,7 @@ std::string RenameAlbumRequest::getLibraryId()const
 void RenameAlbumRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long RenameAlbumRequest::getAlbumId()const
@@ -44,7 +46,7 @@ long RenameAlbumRequest::getAlbumId()const
 void RenameAlbumRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setParameter("AlbumId", std::to_string(albumId));
 }
 
 std::string RenameAlbumRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string RenameAlbumRequest::getStoreName()const
 void RenameAlbumRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string RenameAlbumRequest::getAlbumName()const
@@ -66,6 +68,6 @@ std::string RenameAlbumRequest::getAlbumName()const
 void RenameAlbumRequest::setAlbumName(const std::string& albumName)
 {
 	albumName_ = albumName;
-	setCoreParameter("AlbumName", albumName);
+	setParameter("AlbumName", albumName);
 }
 

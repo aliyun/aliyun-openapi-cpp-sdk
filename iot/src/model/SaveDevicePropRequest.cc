@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SaveDevicePropRequest;
 
 SaveDevicePropRequest::SaveDevicePropRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SaveDeviceProp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveDevicePropRequest::~SaveDevicePropRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveDevicePropRequest::getProductKey()const
 void SaveDevicePropRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string SaveDevicePropRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SaveDevicePropRequest::getAccessKeyId()const
 void SaveDevicePropRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SaveDevicePropRequest::getProps()const
@@ -55,7 +57,7 @@ std::string SaveDevicePropRequest::getProps()const
 void SaveDevicePropRequest::setProps(const std::string& props)
 {
 	props_ = props;
-	setCoreParameter("Props", props);
+	setParameter("Props", props);
 }
 
 std::string SaveDevicePropRequest::getIotId()const
@@ -66,7 +68,7 @@ std::string SaveDevicePropRequest::getIotId()const
 void SaveDevicePropRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string SaveDevicePropRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string SaveDevicePropRequest::getIotInstanceId()const
 void SaveDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string SaveDevicePropRequest::getDeviceName()const
@@ -88,6 +90,6 @@ std::string SaveDevicePropRequest::getDeviceName()const
 void SaveDevicePropRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

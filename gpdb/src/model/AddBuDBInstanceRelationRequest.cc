@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::AddBuDBInstanceRelationRequest;
 
 AddBuDBInstanceRelationRequest::AddBuDBInstanceRelationRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "AddBuDBInstanceRelation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBuDBInstanceRelationRequest::~AddBuDBInstanceRelationRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddBuDBInstanceRelationRequest::getAccessKeyId()const
 void AddBuDBInstanceRelationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddBuDBInstanceRelationRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string AddBuDBInstanceRelationRequest::getDBInstanceId()const
 void AddBuDBInstanceRelationRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 long AddBuDBInstanceRelationRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long AddBuDBInstanceRelationRequest::getOwnerId()const
 void AddBuDBInstanceRelationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddBuDBInstanceRelationRequest::getBusinessUnit()const
@@ -66,6 +68,6 @@ std::string AddBuDBInstanceRelationRequest::getBusinessUnit()const
 void AddBuDBInstanceRelationRequest::setBusinessUnit(const std::string& businessUnit)
 {
 	businessUnit_ = businessUnit;
-	setCoreParameter("BusinessUnit", businessUnit);
+	setParameter("BusinessUnit", businessUnit);
 }
 

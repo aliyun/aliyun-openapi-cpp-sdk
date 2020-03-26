@@ -35,6 +35,6 @@ std::string DescribeActiveMetricRuleListRequest::getProduct()const
 void DescribeActiveMetricRuleListRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 

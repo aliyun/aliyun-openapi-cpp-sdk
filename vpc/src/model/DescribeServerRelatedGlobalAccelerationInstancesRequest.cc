@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeServerRelatedGlobalAccelerationInstances
 
 DescribeServerRelatedGlobalAccelerationInstancesRequest::DescribeServerRelatedGlobalAccelerationInstancesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeServerRelatedGlobalAccelerationInstancesRequest::~DescribeServerRelatedGlobalAccelerationInstancesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerType()const
@@ -44,7 +46,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerTy
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerType(const std::string& serverType)
 {
 	serverType_ = serverType;
-	setCoreParameter("ServerType", serverType);
+	setParameter("ServerType", serverType);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getRegionId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getResource
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerAcc
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeServerRelatedGlobalAccelerationInstancesRequest::getOwnerId()const
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerId()const
@@ -99,6 +101,6 @@ std::string DescribeServerRelatedGlobalAccelerationInstancesRequest::getServerId
 void DescribeServerRelatedGlobalAccelerationInstancesRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
-	setCoreParameter("ServerId", serverId);
+	setParameter("ServerId", serverId);
 }
 

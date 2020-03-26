@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeVulWhitelistRequest;
 
 DescribeVulWhitelistRequest::DescribeVulWhitelistRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeVulWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulWhitelistRequest::~DescribeVulWhitelistRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeVulWhitelistRequest::getCurrentPage()const
 void DescribeVulWhitelistRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeVulWhitelistRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeVulWhitelistRequest::getSourceIp()const
 void DescribeVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeVulWhitelistRequest::getPageSize()const
@@ -55,6 +57,6 @@ int DescribeVulWhitelistRequest::getPageSize()const
 void DescribeVulWhitelistRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

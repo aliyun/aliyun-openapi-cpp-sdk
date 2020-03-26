@@ -27,3 +27,14 @@ QueryPerspectivesRequest::QueryPerspectivesRequest() :
 QueryPerspectivesRequest::~QueryPerspectivesRequest()
 {}
 
+std::string QueryPerspectivesRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void QueryPerspectivesRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+

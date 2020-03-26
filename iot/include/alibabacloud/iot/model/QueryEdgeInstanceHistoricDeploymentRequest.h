@@ -35,29 +35,35 @@ namespace AlibabaCloud
 				QueryEdgeInstanceHistoricDeploymentRequest();
 				~QueryEdgeInstanceHistoricDeploymentRequest();
 
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				long getStartTime()const;
 				void setStartTime(long startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				long endTime_;
-				int currentPage_;
 				long startTime_;
 				std::string accessKeyId_;
-				std::string instanceId_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				long endTime_;
+				int currentPage_;
+				std::string instanceId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

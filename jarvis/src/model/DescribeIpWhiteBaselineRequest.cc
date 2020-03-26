@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeIpWhiteBaselineRequest;
 
 DescribeIpWhiteBaselineRequest::DescribeIpWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeIpWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpWhiteBaselineRequest::~DescribeIpWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeIpWhiteBaselineRequest::getSrcIp()const
 void DescribeIpWhiteBaselineRequest::setSrcIp(const std::string& srcIp)
 {
 	srcIp_ = srcIp;
-	setCoreParameter("SrcIp", srcIp);
+	setParameter("SrcIp", srcIp);
 }
 
 std::string DescribeIpWhiteBaselineRequest::getRemark()const
@@ -44,7 +46,7 @@ std::string DescribeIpWhiteBaselineRequest::getRemark()const
 void DescribeIpWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribeIpWhiteBaselineRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string DescribeIpWhiteBaselineRequest::getSourceCode()const
 void DescribeIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeIpWhiteBaselineRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeIpWhiteBaselineRequest::getSourceIp()const
 void DescribeIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeIpWhiteBaselineRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeIpWhiteBaselineRequest::getPageSize()const
 void DescribeIpWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpWhiteBaselineRequest::getLang()const
@@ -88,7 +90,7 @@ std::string DescribeIpWhiteBaselineRequest::getLang()const
 void DescribeIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeIpWhiteBaselineRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeIpWhiteBaselineRequest::getCurrentPage()const
 void DescribeIpWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeIpWhiteBaselineRequest::getStatus()const
@@ -110,6 +112,6 @@ std::string DescribeIpWhiteBaselineRequest::getStatus()const
 void DescribeIpWhiteBaselineRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

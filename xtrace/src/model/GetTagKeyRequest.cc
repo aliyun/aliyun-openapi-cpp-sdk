@@ -35,7 +35,7 @@ std::string GetTagKeyRequest::getRegionId()const
 void GetTagKeyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 long GetTagKeyRequest::getEndTime()const
@@ -46,7 +46,7 @@ long GetTagKeyRequest::getEndTime()const
 void GetTagKeyRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string GetTagKeyRequest::getServiceName()const
@@ -57,7 +57,7 @@ std::string GetTagKeyRequest::getServiceName()const
 void GetTagKeyRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 
 long GetTagKeyRequest::getStartTime()const
@@ -68,7 +68,7 @@ long GetTagKeyRequest::getStartTime()const
 void GetTagKeyRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetTagKeyRequest::getSpanName()const
@@ -79,6 +79,6 @@ std::string GetTagKeyRequest::getSpanName()const
 void GetTagKeyRequest::setSpanName(const std::string& spanName)
 {
 	spanName_ = spanName;
-	setCoreParameter("SpanName", spanName);
+	setParameter("SpanName", spanName);
 }
 

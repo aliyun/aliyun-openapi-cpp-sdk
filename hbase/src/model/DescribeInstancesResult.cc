@@ -103,6 +103,12 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.clusterName = valueInstancesInstance["ClusterName"].asString();
 		if(!valueInstancesInstance["IsDeletionProtection"].isNull())
 			instancesObject.isDeletionProtection = valueInstancesInstance["IsDeletionProtection"].asString() == "true";
+		if(!valueInstancesInstance["ParentId"].isNull())
+			instancesObject.parentId = valueInstancesInstance["ParentId"].asString();
+		if(!valueInstancesInstance["ModuleId"].isNull())
+			instancesObject.moduleId = std::stoi(valueInstancesInstance["ModuleId"].asString());
+		if(!valueInstancesInstance["ModuleStackVersion"].isNull())
+			instancesObject.moduleStackVersion = valueInstancesInstance["ModuleStackVersion"].asString();
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

@@ -49,6 +49,8 @@ void DescribeBgpNetworksResult::parse(const std::string &payload)
 			bgpNetworksObject.dstCidrBlock = valueBgpNetworksBgpNetwork["DstCidrBlock"].asString();
 		if(!valueBgpNetworksBgpNetwork["RouterId"].isNull())
 			bgpNetworksObject.routerId = valueBgpNetworksBgpNetwork["RouterId"].asString();
+		if(!valueBgpNetworksBgpNetwork["Status"].isNull())
+			bgpNetworksObject.status = valueBgpNetworksBgpNetwork["Status"].asString();
 		bgpNetworks_.push_back(bgpNetworksObject);
 	}
 	if(!value["TotalCount"].isNull())

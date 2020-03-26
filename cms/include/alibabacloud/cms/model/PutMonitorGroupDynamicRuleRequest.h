@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutMonitorGroupDynamicRuleRequest : public RpcServiceRequest
 			{
+			public:
 				struct GroupRules
 				{
 					std::string filterRelation;

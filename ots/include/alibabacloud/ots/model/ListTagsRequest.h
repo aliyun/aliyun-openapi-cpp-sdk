@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_OTS_EXPORT ListTagsRequest : public RpcServiceRequest
 			{
+			public:
 				struct TagInfo
 				{
 					std::string tagValue;
@@ -40,12 +41,12 @@ namespace AlibabaCloud
 				ListTagsRequest();
 				~ListTagsRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				long getPageNum()const;
 				void setPageNum(long pageNum);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				long getPageSize()const;
@@ -54,9 +55,9 @@ namespace AlibabaCloud
 				void setTagInfo(const std::vector<TagInfo>& tagInfo);
 
             private:
-				std::string access_key_id_;
 				long resourceOwnerId_;
 				long pageNum_;
+				std::string accessKeyId_;
 				std::string instanceName_;
 				long pageSize_;
 				std::vector<TagInfo> tagInfo_;

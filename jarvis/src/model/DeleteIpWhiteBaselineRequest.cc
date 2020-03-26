@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteIpWhiteBaselineRequest;
 
 DeleteIpWhiteBaselineRequest::DeleteIpWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteIpWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpWhiteBaselineRequest::~DeleteIpWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIpWhiteBaselineRequest::getResourceOwnerId()const
 void DeleteIpWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIpWhiteBaselineRequest::getWblIpList()const
@@ -44,7 +46,7 @@ std::string DeleteIpWhiteBaselineRequest::getWblIpList()const
 void DeleteIpWhiteBaselineRequest::setWblIpList(const std::string& wblIpList)
 {
 	wblIpList_ = wblIpList;
-	setCoreParameter("WblIpList", wblIpList);
+	setParameter("WblIpList", wblIpList);
 }
 
 std::string DeleteIpWhiteBaselineRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string DeleteIpWhiteBaselineRequest::getSourceCode()const
 void DeleteIpWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteIpWhiteBaselineRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DeleteIpWhiteBaselineRequest::getSourceIp()const
 void DeleteIpWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteIpWhiteBaselineRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DeleteIpWhiteBaselineRequest::getLang()const
 void DeleteIpWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

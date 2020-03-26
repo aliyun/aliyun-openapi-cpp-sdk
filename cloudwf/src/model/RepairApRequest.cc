@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::RepairApRequest;
 
 RepairApRequest::RepairApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "RepairAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RepairApRequest::~RepairApRequest()
 {}
@@ -33,7 +35,7 @@ std::string RepairApRequest::getAccessKeyId()const
 void RepairApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long RepairApRequest::getId()const
@@ -44,6 +46,6 @@ long RepairApRequest::getId()const
 void RepairApRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

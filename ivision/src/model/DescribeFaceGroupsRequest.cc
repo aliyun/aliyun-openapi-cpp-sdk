@@ -35,7 +35,7 @@ std::string DescribeFaceGroupsRequest::getNextPageToken()const
 void DescribeFaceGroupsRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 long DescribeFaceGroupsRequest::getPageSize()const
@@ -46,7 +46,7 @@ long DescribeFaceGroupsRequest::getPageSize()const
 void DescribeFaceGroupsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeFaceGroupsRequest::getShowLog()const
@@ -57,7 +57,7 @@ std::string DescribeFaceGroupsRequest::getShowLog()const
 void DescribeFaceGroupsRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 long DescribeFaceGroupsRequest::getCurrentPage()const
@@ -68,7 +68,7 @@ long DescribeFaceGroupsRequest::getCurrentPage()const
 void DescribeFaceGroupsRequest::setCurrentPage(long currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeFaceGroupsRequest::getOwnerId()const
@@ -79,6 +79,6 @@ long DescribeFaceGroupsRequest::getOwnerId()const
 void DescribeFaceGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderCountForConsoleIndexRequest;
 
 DescribeOrderCountForConsoleIndexRequest::DescribeOrderCountForConsoleIndexRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderCountForConsoleIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderCountForConsoleIndexRequest::~DescribeOrderCountForConsoleIndexRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOrderCountForConsoleIndexRequest::getResourceGroupId()const
 void DescribeOrderCountForConsoleIndexRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderCountForConsoleIndexRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeOrderCountForConsoleIndexRequest::getSourceIp()const
 void DescribeOrderCountForConsoleIndexRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

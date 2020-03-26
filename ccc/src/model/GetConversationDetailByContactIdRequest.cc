@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetConversationDetailByContactIdRequest;
 
 GetConversationDetailByContactIdRequest::GetConversationDetailByContactIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetConversationDetailByContactId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetConversationDetailByContactIdRequest::~GetConversationDetailByContactIdRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetConversationDetailByContactIdRequest::getContactId()const
 void GetConversationDetailByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 int GetConversationDetailByContactIdRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int GetConversationDetailByContactIdRequest::getPageNumber()const
 void GetConversationDetailByContactIdRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetConversationDetailByContactIdRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetConversationDetailByContactIdRequest::getAccessKeyId()const
 void GetConversationDetailByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetConversationDetailByContactIdRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string GetConversationDetailByContactIdRequest::getInstanceId()const
 void GetConversationDetailByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int GetConversationDetailByContactIdRequest::getPageSize()const
@@ -77,6 +79,6 @@ int GetConversationDetailByContactIdRequest::getPageSize()const
 void GetConversationDetailByContactIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

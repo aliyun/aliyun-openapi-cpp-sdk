@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CloneFlowJobRequest;
 
 CloneFlowJobRequest::CloneFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CloneFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloneFlowJobRequest::~CloneFlowJobRequest()
 {}
@@ -33,7 +35,18 @@ std::string CloneFlowJobRequest::getRegionId()const
 void CloneFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+std::string CloneFlowJobRequest::getName()const
+{
+	return name_;
+}
+
+void CloneFlowJobRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 
 std::string CloneFlowJobRequest::getId()const
@@ -44,7 +57,7 @@ std::string CloneFlowJobRequest::getId()const
 void CloneFlowJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string CloneFlowJobRequest::getProjectId()const
@@ -55,6 +68,6 @@ std::string CloneFlowJobRequest::getProjectId()const
 void CloneFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

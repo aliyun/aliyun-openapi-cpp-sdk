@@ -45,6 +45,8 @@ void DescribeStreamPredictsResult::parse(const std::string &payload)
 		StreamPredict streamPredictsObject;
 		if(!valueStreamPredictsStreamPredict["PredictId"].isNull())
 			streamPredictsObject.predictId = valueStreamPredictsStreamPredict["PredictId"].asString();
+		if(!valueStreamPredictsStreamPredict["PredictTemplateId"].isNull())
+			streamPredictsObject.predictTemplateId = valueStreamPredictsStreamPredict["PredictTemplateId"].asString();
 		if(!valueStreamPredictsStreamPredict["StreamType"].isNull())
 			streamPredictsObject.streamType = valueStreamPredictsStreamPredict["StreamType"].asString();
 		if(!valueStreamPredictsStreamPredict["StreamId"].isNull())
@@ -61,8 +63,14 @@ void DescribeStreamPredictsResult::parse(const std::string &payload)
 			streamPredictsObject.notify = valueStreamPredictsStreamPredict["Notify"].asString();
 		if(!valueStreamPredictsStreamPredict["UserData"].isNull())
 			streamPredictsObject.userData = valueStreamPredictsStreamPredict["UserData"].asString();
+		if(!valueStreamPredictsStreamPredict["FaceGroupId"].isNull())
+			streamPredictsObject.faceGroupId = valueStreamPredictsStreamPredict["FaceGroupId"].asString();
+		if(!valueStreamPredictsStreamPredict["ModelUserData"].isNull())
+			streamPredictsObject.modelUserData = valueStreamPredictsStreamPredict["ModelUserData"].asString();
 		if(!valueStreamPredictsStreamPredict["CreationTime"].isNull())
 			streamPredictsObject.creationTime = valueStreamPredictsStreamPredict["CreationTime"].asString();
+		if(!valueStreamPredictsStreamPredict["AutoStart"].isNull())
+			streamPredictsObject.autoStart = valueStreamPredictsStreamPredict["AutoStart"].asString();
 		if(!valueStreamPredictsStreamPredict["Status"].isNull())
 			streamPredictsObject.status = valueStreamPredictsStreamPredict["Status"].asString();
 		streamPredicts_.push_back(streamPredictsObject);

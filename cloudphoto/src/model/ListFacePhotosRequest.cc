@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListFacePhotosRequest;
 
 ListFacePhotosRequest::ListFacePhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListFacePhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFacePhotosRequest::~ListFacePhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFacePhotosRequest::getCursor()const
 void ListFacePhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setParameter("Cursor", cursor);
 }
 
 std::string ListFacePhotosRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string ListFacePhotosRequest::getLibraryId()const
 void ListFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string ListFacePhotosRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string ListFacePhotosRequest::getStoreName()const
 void ListFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long ListFacePhotosRequest::getFaceId()const
@@ -66,7 +68,7 @@ long ListFacePhotosRequest::getFaceId()const
 void ListFacePhotosRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setParameter("FaceId", std::to_string(faceId));
 }
 
 int ListFacePhotosRequest::getSize()const
@@ -77,7 +79,7 @@ int ListFacePhotosRequest::getSize()const
 void ListFacePhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListFacePhotosRequest::getState()const
@@ -88,7 +90,7 @@ std::string ListFacePhotosRequest::getState()const
 void ListFacePhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListFacePhotosRequest::getDirection()const
@@ -99,6 +101,6 @@ std::string ListFacePhotosRequest::getDirection()const
 void ListFacePhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 

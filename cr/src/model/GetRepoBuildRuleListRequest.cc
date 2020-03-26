@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoBuildRuleListRequest;
 
 GetRepoBuildRuleListRequest::GetRepoBuildRuleListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/rules");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoBuildRuleListRequest::~GetRepoBuildRuleListRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoBuildRuleListRequest::getRepoNamespace()const
 void GetRepoBuildRuleListRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoBuildRuleListRequest::getRepoName()const
@@ -44,6 +47,6 @@ std::string GetRepoBuildRuleListRequest::getRepoName()const
 void GetRepoBuildRuleListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

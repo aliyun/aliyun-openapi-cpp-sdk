@@ -55,6 +55,10 @@ void DescribeRouteServicesInCenResult::parse(const std::string &payload)
 			routeServiceEntriesObject.updateInterval = valueRouteServiceEntriesRouteServiceEntry["UpdateInterval"].asString();
 		if(!valueRouteServiceEntriesRouteServiceEntry["Status"].isNull())
 			routeServiceEntriesObject.status = valueRouteServiceEntriesRouteServiceEntry["Status"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].isNull())
+			routeServiceEntriesObject.hostVpcId = valueRouteServiceEntriesRouteServiceEntry["HostVpcId"].asString();
+		if(!valueRouteServiceEntriesRouteServiceEntry["Description"].isNull())
+			routeServiceEntriesObject.description = valueRouteServiceEntriesRouteServiceEntry["Description"].asString();
 		auto allCidrs = value["Cidrs"]["Cidr"];
 		for (auto value : allCidrs)
 			routeServiceEntriesObject.cidrs.push_back(value.asString());

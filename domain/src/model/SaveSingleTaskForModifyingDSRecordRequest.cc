@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForModifyingDSRecordRequest;
 
 SaveSingleTaskForModifyingDSRecordRequest::SaveSingleTaskForModifyingDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForModifyingDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForModifyingDSRecordRequest::~SaveSingleTaskForModifyingDSRecordRequest()
 {}
@@ -33,7 +35,7 @@ int SaveSingleTaskForModifyingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForModifyingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", std::to_string(keyTag));
+	setParameter("KeyTag", std::to_string(keyTag));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForModifyingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getDigestType()const
@@ -66,7 +68,7 @@ int SaveSingleTaskForModifyingDSRecordRequest::getDigestType()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDigestType(int digestType)
 {
 	digestType_ = digestType;
-	setCoreParameter("DigestType", std::to_string(digestType));
+	setParameter("DigestType", std::to_string(digestType));
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getDigest()const
@@ -77,7 +79,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getDigest()const
 void SaveSingleTaskForModifyingDSRecordRequest::setDigest(const std::string& digest)
 {
 	digest_ = digest;
-	setCoreParameter("Digest", digest);
+	setParameter("Digest", digest);
 }
 
 std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
@@ -88,7 +90,7 @@ std::string SaveSingleTaskForModifyingDSRecordRequest::getLang()const
 void SaveSingleTaskForModifyingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int SaveSingleTaskForModifyingDSRecordRequest::getAlgorithm()const
@@ -99,6 +101,6 @@ int SaveSingleTaskForModifyingDSRecordRequest::getAlgorithm()const
 void SaveSingleTaskForModifyingDSRecordRequest::setAlgorithm(int algorithm)
 {
 	algorithm_ = algorithm;
-	setCoreParameter("Algorithm", std::to_string(algorithm));
+	setParameter("Algorithm", std::to_string(algorithm));
 }
 

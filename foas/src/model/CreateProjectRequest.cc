@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateProjectRequest;
 
 CreateProjectRequest::CreateProjectRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProjectRequest::~CreateProjectRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreateProjectRequest::getManagerIds()const
 void CreateProjectRequest::setManagerIds(const std::string& managerIds)
 {
 	managerIds_ = managerIds;
-	setCoreParameter("ManagerIds", managerIds);
+	setBodyParameter("ManagerIds", managerIds);
 }
 
 std::string CreateProjectRequest::getOrderId()const
@@ -44,7 +47,7 @@ std::string CreateProjectRequest::getOrderId()const
 void CreateProjectRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setBodyParameter("OrderId", orderId);
 }
 
 std::string CreateProjectRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string CreateProjectRequest::getRegionId()const
 void CreateProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CreateProjectRequest::getName()const
@@ -66,7 +69,7 @@ std::string CreateProjectRequest::getName()const
 void CreateProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setBodyParameter("Name", name);
 }
 
 std::string CreateProjectRequest::getDescription()const
@@ -77,7 +80,7 @@ std::string CreateProjectRequest::getDescription()const
 void CreateProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreateProjectRequest::getClusterId()const
@@ -88,7 +91,7 @@ std::string CreateProjectRequest::getClusterId()const
 void CreateProjectRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setBodyParameter("ClusterId", clusterId);
 }
 
 std::string CreateProjectRequest::getDeployType()const
@@ -99,6 +102,6 @@ std::string CreateProjectRequest::getDeployType()const
 void CreateProjectRequest::setDeployType(const std::string& deployType)
 {
 	deployType_ = deployType;
-	setCoreParameter("DeployType", deployType);
+	setBodyParameter("DeployType", deployType);
 }
 

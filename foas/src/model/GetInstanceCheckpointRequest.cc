@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceCheckpointRequest;
 
 GetInstanceCheckpointRequest::GetInstanceCheckpointRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/checkpoints");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceCheckpointRequest::~GetInstanceCheckpointRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceCheckpointRequest::getProjectName()const
 void GetInstanceCheckpointRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceCheckpointRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceCheckpointRequest::getInstanceId()const
 void GetInstanceCheckpointRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceCheckpointRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceCheckpointRequest::getRegionId()const
 void GetInstanceCheckpointRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceCheckpointRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceCheckpointRequest::getJobName()const
 void GetInstanceCheckpointRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

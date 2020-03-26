@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryEditingJobListRequest;
 
 QueryEditingJobListRequest::QueryEditingJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryEditingJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEditingJobListRequest::~QueryEditingJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryEditingJobListRequest::getResourceOwnerId()const
 void QueryEditingJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryEditingJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryEditingJobListRequest::getResourceOwnerAccount()const
 void QueryEditingJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryEditingJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryEditingJobListRequest::getOwnerAccount()const
 void QueryEditingJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryEditingJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryEditingJobListRequest::getOwnerId()const
 void QueryEditingJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryEditingJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryEditingJobListRequest::getAccessKeyId()const
 void QueryEditingJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryEditingJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryEditingJobListRequest::getJobIds()const
 void QueryEditingJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

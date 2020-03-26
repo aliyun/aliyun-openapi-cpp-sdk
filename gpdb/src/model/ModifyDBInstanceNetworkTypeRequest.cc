@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceNetworkTypeRequest;
 
 ModifyDBInstanceNetworkTypeRequest::ModifyDBInstanceNetworkTypeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceNetworkType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceNetworkTypeRequest::~ModifyDBInstanceNetworkTypeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getAccessKeyId()const
 void ModifyDBInstanceNetworkTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getDBInstanceId()const
 void ModifyDBInstanceNetworkTypeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
@@ -55,7 +57,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVSwitchId()const
 void ModifyDBInstanceNetworkTypeRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
@@ -66,7 +68,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getPrivateIpAddress()const
 void ModifyDBInstanceNetworkTypeRequest::setPrivateIpAddress(const std::string& privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress);
+	setParameter("PrivateIpAddress", privateIpAddress);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
@@ -77,7 +79,7 @@ std::string ModifyDBInstanceNetworkTypeRequest::getVPCId()const
 void ModifyDBInstanceNetworkTypeRequest::setVPCId(const std::string& vPCId)
 {
 	vPCId_ = vPCId;
-	setCoreParameter("VPCId", vPCId);
+	setParameter("VPCId", vPCId);
 }
 
 std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
@@ -88,6 +90,6 @@ std::string ModifyDBInstanceNetworkTypeRequest::getInstanceNetworkType()const
 void ModifyDBInstanceNetworkTypeRequest::setInstanceNetworkType(const std::string& instanceNetworkType)
 {
 	instanceNetworkType_ = instanceNetworkType;
-	setCoreParameter("InstanceNetworkType", instanceNetworkType);
+	setParameter("InstanceNetworkType", instanceNetworkType);
 }
 

@@ -58,6 +58,18 @@ void GetMediaAuditResultDetailResult::parse(const std::string &payload)
 			listItemObject.timestamp = mediaAuditResultDetailNodeListListItem["Timestamp"].asString();
 		if(!mediaAuditResultDetailNodeListListItem["Url"].isNull())
 			listItemObject.url = mediaAuditResultDetailNodeListListItem["Url"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["AdLabel"].isNull())
+			listItemObject.adLabel = mediaAuditResultDetailNodeListListItem["AdLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["AdScore"].isNull())
+			listItemObject.adScore = mediaAuditResultDetailNodeListListItem["AdScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["LiveLabel"].isNull())
+			listItemObject.liveLabel = mediaAuditResultDetailNodeListListItem["LiveLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["LiveScore"].isNull())
+			listItemObject.liveScore = mediaAuditResultDetailNodeListListItem["LiveScore"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["LogoLabel"].isNull())
+			listItemObject.logoLabel = mediaAuditResultDetailNodeListListItem["LogoLabel"].asString();
+		if(!mediaAuditResultDetailNodeListListItem["LogoScore"].isNull())
+			listItemObject.logoScore = mediaAuditResultDetailNodeListListItem["LogoScore"].asString();
 		mediaAuditResultDetail_.list.push_back(listItemObject);
 	}
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ResetAppSecretRequest;
 
 ResetAppSecretRequest::ResetAppSecretRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ResetAppSecret")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAppSecretRequest::~ResetAppSecretRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResetAppSecretRequest::getAccessKeyId()const
 void ResetAppSecretRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResetAppSecretRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string ResetAppSecretRequest::getSecurityToken()const
 void ResetAppSecretRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ResetAppSecretRequest::getAppKey()const
@@ -55,6 +57,6 @@ std::string ResetAppSecretRequest::getAppKey()const
 void ResetAppSecretRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setParameter("AppKey", appKey);
 }
 

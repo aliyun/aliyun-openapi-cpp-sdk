@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::RefundProduceRequest;
 
 RefundProduceRequest::RefundProduceRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "RefundProduce")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefundProduceRequest::~RefundProduceRequest()
 {}
@@ -33,6 +35,6 @@ std::string RefundProduceRequest::getBizId()const
 void RefundProduceRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderRevokeRequest;
 
 CreateOrderRevokeRequest::CreateOrderRevokeRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderRevoke")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRevokeRequest::~CreateOrderRevokeRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateOrderRevokeRequest::getReason()const
 void CreateOrderRevokeRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 long CreateOrderRevokeRequest::getOrderId()const
@@ -44,7 +46,7 @@ long CreateOrderRevokeRequest::getOrderId()const
 void CreateOrderRevokeRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderRevokeRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateOrderRevokeRequest::getResourceGroupId()const
 void CreateOrderRevokeRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderRevokeRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateOrderRevokeRequest::getSourceIp()const
 void CreateOrderRevokeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderRevokeRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateOrderRevokeRequest::getLang()const
 void CreateOrderRevokeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -51,6 +51,24 @@ void DescribePriceResult::parse(const std::string &payload)
 			promotionRulesObject.title = valuePromotionRulesPromotionRule["Title"].asString();
 		promotionRules_.push_back(promotionRulesObject);
 	}
+	auto allCouponsNode = value["Coupons"]["Coupon"];
+	for (auto valueCouponsCoupon : allCouponsNode)
+	{
+		Coupon couponsObject;
+		if(!valueCouponsCoupon["CouponOptionCode"].isNull())
+			couponsObject.couponOptionCode = valueCouponsCoupon["CouponOptionCode"].asString();
+		if(!valueCouponsCoupon["CouponOptionNo"].isNull())
+			couponsObject.couponOptionNo = valueCouponsCoupon["CouponOptionNo"].asString();
+		if(!valueCouponsCoupon["CouponName"].isNull())
+			couponsObject.couponName = valueCouponsCoupon["CouponName"].asString();
+		if(!valueCouponsCoupon["CouponDesc"].isNull())
+			couponsObject.couponDesc = valueCouponsCoupon["CouponDesc"].asString();
+		if(!valueCouponsCoupon["CanPromFee"].isNull())
+			couponsObject.canPromFee = std::stof(valueCouponsCoupon["CanPromFee"].asString());
+		if(!valueCouponsCoupon["IsSelected"].isNull())
+			couponsObject.isSelected = valueCouponsCoupon["IsSelected"].asString() == "true";
+		coupons_.push_back(couponsObject);
+	}
 	if(!value["ProductCode"].isNull())
 		productCode_ = value["ProductCode"].asString();
 	if(!value["OriginalPrice"].isNull())
@@ -59,12 +77,26 @@ void DescribePriceResult::parse(const std::string &payload)
 		tradePrice_ = std::stof(value["TradePrice"].asString());
 	if(!value["DiscountPrice"].isNull())
 		discountPrice_ = std::stof(value["DiscountPrice"].asString());
+	if(!value["Cuxiao"].isNull())
+		cuxiao_ = value["Cuxiao"].asString() == "true";
+	if(!value["Duration"].isNull())
+		duration_ = std::stoi(value["Duration"].asString());
+	if(!value["Cycle"].isNull())
+		cycle_ = value["Cycle"].asString();
+	if(!value["InfoTitle"].isNull())
+		infoTitle_ = value["InfoTitle"].asString();
+	if(!value["ExpressionCode"].isNull())
+		expressionCode_ = value["ExpressionCode"].asString();
+	if(!value["Currency"].isNull())
+		currency_ = value["Currency"].asString();
+	if(!value["ExpressionMessage"].isNull())
+		expressionMessage_ = value["ExpressionMessage"].asString();
 
 }
 
-std::vector<DescribePriceResult::PromotionRule> DescribePriceResult::getPromotionRules()const
+std::string DescribePriceResult::getExpressionCode()const
 {
-	return promotionRules_;
+	return expressionCode_;
 }
 
 float DescribePriceResult::getOriginalPrice()const
@@ -77,13 +109,53 @@ std::string DescribePriceResult::getProductCode()const
 	return productCode_;
 }
 
-float DescribePriceResult::getDiscountPrice()const
+int DescribePriceResult::getDuration()const
 {
-	return discountPrice_;
+	return duration_;
 }
 
 float DescribePriceResult::getTradePrice()const
 {
 	return tradePrice_;
+}
+
+bool DescribePriceResult::getCuxiao()const
+{
+	return cuxiao_;
+}
+
+std::string DescribePriceResult::getCycle()const
+{
+	return cycle_;
+}
+
+std::string DescribePriceResult::getInfoTitle()const
+{
+	return infoTitle_;
+}
+
+std::vector<DescribePriceResult::PromotionRule> DescribePriceResult::getPromotionRules()const
+{
+	return promotionRules_;
+}
+
+float DescribePriceResult::getDiscountPrice()const
+{
+	return discountPrice_;
+}
+
+std::string DescribePriceResult::getCurrency()const
+{
+	return currency_;
+}
+
+std::string DescribePriceResult::getExpressionMessage()const
+{
+	return expressionMessage_;
+}
+
+std::vector<DescribePriceResult::Coupon> DescribePriceResult::getCoupons()const
+{
+	return coupons_;
 }
 

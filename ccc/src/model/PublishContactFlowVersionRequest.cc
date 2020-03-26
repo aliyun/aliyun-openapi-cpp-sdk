@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PublishContactFlowVersionRequest;
 
 PublishContactFlowVersionRequest::PublishContactFlowVersionRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PublishContactFlowVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishContactFlowVersionRequest::~PublishContactFlowVersionRequest()
 {}
@@ -33,7 +35,7 @@ std::string PublishContactFlowVersionRequest::getAccessKeyId()const
 void PublishContactFlowVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PublishContactFlowVersionRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string PublishContactFlowVersionRequest::getInstanceId()const
 void PublishContactFlowVersionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string PublishContactFlowVersionRequest::getContactFlowVersionId()const
@@ -55,7 +57,7 @@ std::string PublishContactFlowVersionRequest::getContactFlowVersionId()const
 void PublishContactFlowVersionRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
 {
 	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
+	setParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 
 bool PublishContactFlowVersionRequest::getUseTianGong()const
@@ -66,6 +68,6 @@ bool PublishContactFlowVersionRequest::getUseTianGong()const
 void PublishContactFlowVersionRequest::setUseTianGong(bool useTianGong)
 {
 	useTianGong_ = useTianGong;
-	setCoreParameter("UseTianGong", useTianGong ? "true" : "false");
+	setParameter("UseTianGong", useTianGong ? "true" : "false");
 }
 

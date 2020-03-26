@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageTraceRequest;
 OnsMessageTraceRequest::OnsMessageTraceRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageTrace")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsMessageTraceRequest::~OnsMessageTraceRequest()

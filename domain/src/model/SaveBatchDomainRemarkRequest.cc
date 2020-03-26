@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchDomainRemarkRequest;
 
 SaveBatchDomainRemarkRequest::SaveBatchDomainRemarkRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchDomainRemark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchDomainRemarkRequest::~SaveBatchDomainRemarkRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveBatchDomainRemarkRequest::getRemark()const
 void SaveBatchDomainRemarkRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string SaveBatchDomainRemarkRequest::getInstanceIds()const
@@ -44,7 +46,7 @@ std::string SaveBatchDomainRemarkRequest::getInstanceIds()const
 void SaveBatchDomainRemarkRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 
 std::string SaveBatchDomainRemarkRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string SaveBatchDomainRemarkRequest::getUserClientIp()const
 void SaveBatchDomainRemarkRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchDomainRemarkRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SaveBatchDomainRemarkRequest::getLang()const
 void SaveBatchDomainRemarkRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

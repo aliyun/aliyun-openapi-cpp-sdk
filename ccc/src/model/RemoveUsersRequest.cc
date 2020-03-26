@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::RemoveUsersRequest;
 
 RemoveUsersRequest::RemoveUsersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "RemoveUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveUsersRequest::~RemoveUsersRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveUsersRequest::getInstanceId()const
 void RemoveUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> RemoveUsersRequest::getUserId()const
@@ -44,8 +46,9 @@ std::vector<std::string> RemoveUsersRequest::getUserId()const
 void RemoveUsersRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
-	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
+	for(int dep1 = 0; dep1!= userId.size(); dep1++) {
+		setParameter("UserId."+ std::to_string(dep1), userId.at(dep1));
+	}
 }
 
 std::string RemoveUsersRequest::getAccessKeyId()const
@@ -56,6 +59,6 @@ std::string RemoveUsersRequest::getAccessKeyId()const
 void RemoveUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

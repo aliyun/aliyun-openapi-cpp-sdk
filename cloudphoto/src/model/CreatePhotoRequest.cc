@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreatePhotoRequest;
 
 CreatePhotoRequest::CreatePhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreatePhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatePhotoRequest::~CreatePhotoRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreatePhotoRequest::getPhotoTitle()const
 void CreatePhotoRequest::setPhotoTitle(const std::string& photoTitle)
 {
 	photoTitle_ = photoTitle;
-	setCoreParameter("PhotoTitle", photoTitle);
+	setParameter("PhotoTitle", photoTitle);
 }
 
 std::string CreatePhotoRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string CreatePhotoRequest::getStoreName()const
 void CreatePhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string CreatePhotoRequest::getRemark()const
@@ -55,7 +57,7 @@ std::string CreatePhotoRequest::getRemark()const
 void CreatePhotoRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string CreatePhotoRequest::getSessionId()const
@@ -66,7 +68,7 @@ std::string CreatePhotoRequest::getSessionId()const
 void CreatePhotoRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setParameter("SessionId", sessionId);
 }
 
 long CreatePhotoRequest::getTakenAt()const
@@ -77,7 +79,7 @@ long CreatePhotoRequest::getTakenAt()const
 void CreatePhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setParameter("TakenAt", std::to_string(takenAt));
 }
 
 std::string CreatePhotoRequest::getStaging()const
@@ -88,7 +90,7 @@ std::string CreatePhotoRequest::getStaging()const
 void CreatePhotoRequest::setStaging(const std::string& staging)
 {
 	staging_ = staging;
-	setCoreParameter("Staging", staging);
+	setParameter("Staging", staging);
 }
 
 std::string CreatePhotoRequest::getFileId()const
@@ -99,7 +101,7 @@ std::string CreatePhotoRequest::getFileId()const
 void CreatePhotoRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
-	setCoreParameter("FileId", fileId);
+	setParameter("FileId", fileId);
 }
 
 std::string CreatePhotoRequest::getLibraryId()const
@@ -110,7 +112,7 @@ std::string CreatePhotoRequest::getLibraryId()const
 void CreatePhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string CreatePhotoRequest::getUploadType()const
@@ -121,7 +123,7 @@ std::string CreatePhotoRequest::getUploadType()const
 void CreatePhotoRequest::setUploadType(const std::string& uploadType)
 {
 	uploadType_ = uploadType;
-	setCoreParameter("UploadType", uploadType);
+	setParameter("UploadType", uploadType);
 }
 
 long CreatePhotoRequest::getShareExpireTime()const
@@ -132,6 +134,6 @@ long CreatePhotoRequest::getShareExpireTime()const
 void CreatePhotoRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
+	setParameter("ShareExpireTime", std::to_string(shareExpireTime));
 }
 

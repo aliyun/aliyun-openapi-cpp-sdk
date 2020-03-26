@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateTrafficControlRequest;
 
 CreateTrafficControlRequest::CreateTrafficControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateTrafficControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTrafficControlRequest::~CreateTrafficControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateTrafficControlRequest::getTrafficControlName()const
 void CreateTrafficControlRequest::setTrafficControlName(const std::string& trafficControlName)
 {
 	trafficControlName_ = trafficControlName;
-	setCoreParameter("TrafficControlName", trafficControlName);
+	setParameter("TrafficControlName", trafficControlName);
 }
 
 std::string CreateTrafficControlRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateTrafficControlRequest::getDescription()const
 void CreateTrafficControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int CreateTrafficControlRequest::getUserDefault()const
@@ -55,7 +57,7 @@ int CreateTrafficControlRequest::getUserDefault()const
 void CreateTrafficControlRequest::setUserDefault(int userDefault)
 {
 	userDefault_ = userDefault;
-	setCoreParameter("UserDefault", std::to_string(userDefault));
+	setParameter("UserDefault", std::to_string(userDefault));
 }
 
 std::string CreateTrafficControlRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateTrafficControlRequest::getAccessKeyId()const
 void CreateTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateTrafficControlRequest::getApiDefault()const
@@ -77,7 +79,7 @@ int CreateTrafficControlRequest::getApiDefault()const
 void CreateTrafficControlRequest::setApiDefault(int apiDefault)
 {
 	apiDefault_ = apiDefault;
-	setCoreParameter("ApiDefault", std::to_string(apiDefault));
+	setParameter("ApiDefault", std::to_string(apiDefault));
 }
 
 std::string CreateTrafficControlRequest::getSecurityToken()const
@@ -88,7 +90,7 @@ std::string CreateTrafficControlRequest::getSecurityToken()const
 void CreateTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateTrafficControlRequest::getTrafficControlUnit()const
@@ -99,7 +101,7 @@ std::string CreateTrafficControlRequest::getTrafficControlUnit()const
 void CreateTrafficControlRequest::setTrafficControlUnit(const std::string& trafficControlUnit)
 {
 	trafficControlUnit_ = trafficControlUnit;
-	setCoreParameter("TrafficControlUnit", trafficControlUnit);
+	setParameter("TrafficControlUnit", trafficControlUnit);
 }
 
 int CreateTrafficControlRequest::getAppDefault()const
@@ -110,6 +112,6 @@ int CreateTrafficControlRequest::getAppDefault()const
 void CreateTrafficControlRequest::setAppDefault(int appDefault)
 {
 	appDefault_ = appDefault;
-	setCoreParameter("AppDefault", std::to_string(appDefault));
+	setParameter("AppDefault", std::to_string(appDefault));
 }
 

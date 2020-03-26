@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUnbindFlowLogSagsRequest;
 
 DescribeUnbindFlowLogSagsRequest::DescribeUnbindFlowLogSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUnbindFlowLogSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUnbindFlowLogSagsRequest::~DescribeUnbindFlowLogSagsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeUnbindFlowLogSagsRequest::getResourceOwnerId()const
 void DescribeUnbindFlowLogSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUnbindFlowLogSagsRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeUnbindFlowLogSagsRequest::getResourceOwnerAccount()const
 void DescribeUnbindFlowLogSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUnbindFlowLogSagsRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeUnbindFlowLogSagsRequest::getOwnerAccount()const
 void DescribeUnbindFlowLogSagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeUnbindFlowLogSagsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeUnbindFlowLogSagsRequest::getOwnerId()const
 void DescribeUnbindFlowLogSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUnbindFlowLogSagsRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string DescribeUnbindFlowLogSagsRequest::getRegionId()const
 void DescribeUnbindFlowLogSagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

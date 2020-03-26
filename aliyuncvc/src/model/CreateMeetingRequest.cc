@@ -35,7 +35,7 @@ std::string CreateMeetingRequest::getMeetingName()const
 void CreateMeetingRequest::setMeetingName(const std::string& meetingName)
 {
 	meetingName_ = meetingName;
-	setCoreParameter("MeetingName", meetingName);
+	setBodyParameter("MeetingName", meetingName);
 }
 
 std::string CreateMeetingRequest::getUserId()const
@@ -46,6 +46,6 @@ std::string CreateMeetingRequest::getUserId()const
 void CreateMeetingRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
 }
 

@@ -35,7 +35,7 @@ std::string CreateMonitorGroupRequest::getContactGroups()const
 void CreateMonitorGroupRequest::setContactGroups(const std::string& contactGroups)
 {
 	contactGroups_ = contactGroups;
-	setCoreParameter("ContactGroups", contactGroups);
+	setParameter("ContactGroups", contactGroups);
 }
 
 std::string CreateMonitorGroupRequest::getType()const
@@ -46,7 +46,7 @@ std::string CreateMonitorGroupRequest::getType()const
 void CreateMonitorGroupRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateMonitorGroupRequest::getGroupName()const
@@ -57,7 +57,7 @@ std::string CreateMonitorGroupRequest::getGroupName()const
 void CreateMonitorGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string CreateMonitorGroupRequest::getOptions()const
@@ -68,7 +68,7 @@ std::string CreateMonitorGroupRequest::getOptions()const
 void CreateMonitorGroupRequest::setOptions(const std::string& options)
 {
 	options_ = options;
-	setCoreParameter("Options", options);
+	setParameter("Options", options);
 }
 
 long CreateMonitorGroupRequest::getServiceId()const
@@ -79,7 +79,7 @@ long CreateMonitorGroupRequest::getServiceId()const
 void CreateMonitorGroupRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 
 std::string CreateMonitorGroupRequest::getBindUrl()const
@@ -90,6 +90,6 @@ std::string CreateMonitorGroupRequest::getBindUrl()const
 void CreateMonitorGroupRequest::setBindUrl(const std::string& bindUrl)
 {
 	bindUrl_ = bindUrl;
-	setCoreParameter("BindUrl", bindUrl);
+	setParameter("BindUrl", bindUrl);
 }
 

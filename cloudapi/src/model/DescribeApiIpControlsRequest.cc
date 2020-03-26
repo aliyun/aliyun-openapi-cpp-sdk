@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiIpControlsRequest;
 
 DescribeApiIpControlsRequest::DescribeApiIpControlsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiIpControls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiIpControlsRequest::~DescribeApiIpControlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiIpControlsRequest::getStageName()const
 void DescribeApiIpControlsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeApiIpControlsRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApiIpControlsRequest::getGroupId()const
 void DescribeApiIpControlsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeApiIpControlsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeApiIpControlsRequest::getPageNumber()const
 void DescribeApiIpControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiIpControlsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiIpControlsRequest::getAccessKeyId()const
 void DescribeApiIpControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiIpControlsRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiIpControlsRequest::getSecurityToken()const
 void DescribeApiIpControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApiIpControlsRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeApiIpControlsRequest::getPageSize()const
 void DescribeApiIpControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeApiIpControlsRequest::getApiIds()const
@@ -99,6 +101,6 @@ std::string DescribeApiIpControlsRequest::getApiIds()const
 void DescribeApiIpControlsRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

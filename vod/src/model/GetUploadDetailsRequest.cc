@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetUploadDetailsRequest;
 
 GetUploadDetailsRequest::GetUploadDetailsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetUploadDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUploadDetailsRequest::~GetUploadDetailsRequest()
 {}
@@ -33,7 +35,7 @@ long GetUploadDetailsRequest::getResourceOwnerId()const
 void GetUploadDetailsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long GetUploadDetailsRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long GetUploadDetailsRequest::getResourceRealOwnerId()const
 void GetUploadDetailsRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetUploadDetailsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetUploadDetailsRequest::getAccessKeyId()const
 void GetUploadDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetUploadDetailsRequest::getMediaIds()const
@@ -66,7 +68,7 @@ std::string GetUploadDetailsRequest::getMediaIds()const
 void GetUploadDetailsRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setParameter("MediaIds", mediaIds);
 }
 
 std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string GetUploadDetailsRequest::getResourceOwnerAccount()const
 void GetUploadDetailsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetUploadDetailsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long GetUploadDetailsRequest::getOwnerId()const
 void GetUploadDetailsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetUploadDetailsRequest::getMediaType()const
@@ -99,6 +101,6 @@ std::string GetUploadDetailsRequest::getMediaType()const
 void GetUploadDetailsRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
-	setCoreParameter("MediaType", mediaType);
+	setParameter("MediaType", mediaType);
 }
 

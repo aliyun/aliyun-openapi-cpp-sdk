@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveUmengPagePermission4RootRequest;
 
 SaveUmengPagePermission4RootRequest::SaveUmengPagePermission4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveUmengPagePermission4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveUmengPagePermission4RootRequest::~SaveUmengPagePermission4RootRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveUmengPagePermission4RootRequest::getGsPermission()const
 void SaveUmengPagePermission4RootRequest::setGsPermission(const std::string& gsPermission)
 {
 	gsPermission_ = gsPermission;
-	setCoreParameter("GsPermission", gsPermission);
+	setParameter("GsPermission", gsPermission);
 }
 
 std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SaveUmengPagePermission4RootRequest::getAccessKeyId()const
 void SaveUmengPagePermission4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SaveUmengPagePermission4RootRequest::getAliyunPk()const
@@ -55,7 +57,7 @@ long SaveUmengPagePermission4RootRequest::getAliyunPk()const
 void SaveUmengPagePermission4RootRequest::setAliyunPk(long aliyunPk)
 {
 	aliyunPk_ = aliyunPk;
-	setCoreParameter("AliyunPk", std::to_string(aliyunPk));
+	setParameter("AliyunPk", std::to_string(aliyunPk));
 }
 
 long SaveUmengPagePermission4RootRequest::getPagePermission()const
@@ -66,7 +68,7 @@ long SaveUmengPagePermission4RootRequest::getPagePermission()const
 void SaveUmengPagePermission4RootRequest::setPagePermission(long pagePermission)
 {
 	pagePermission_ = pagePermission;
-	setCoreParameter("PagePermission", std::to_string(pagePermission));
+	setParameter("PagePermission", std::to_string(pagePermission));
 }
 
 long SaveUmengPagePermission4RootRequest::getId()const
@@ -77,7 +79,7 @@ long SaveUmengPagePermission4RootRequest::getId()const
 void SaveUmengPagePermission4RootRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 long SaveUmengPagePermission4RootRequest::getBid()const
@@ -88,6 +90,6 @@ long SaveUmengPagePermission4RootRequest::getBid()const
 void SaveUmengPagePermission4RootRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

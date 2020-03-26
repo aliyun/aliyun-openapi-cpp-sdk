@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateCdiBaseBagRequest;
 
 CreateCdiBaseBagRequest::CreateCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdiBaseBagRequest::~CreateCdiBaseBagRequest()
 {}
@@ -33,7 +35,7 @@ int CreateCdiBaseBagRequest::getDuration()const
 void CreateCdiBaseBagRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateCdiBaseBagRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateCdiBaseBagRequest::getClientToken()const
 void CreateCdiBaseBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateCdiBaseBagRequest::getCommodityCode()const
@@ -55,7 +57,7 @@ std::string CreateCdiBaseBagRequest::getCommodityCode()const
 void CreateCdiBaseBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setParameter("CommodityCode", commodityCode);
 }
 
 long CreateCdiBaseBagRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long CreateCdiBaseBagRequest::getOwnerId()const
 void CreateCdiBaseBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateCdiBaseBagRequest::getFlowOutSpec()const
@@ -77,7 +79,7 @@ int CreateCdiBaseBagRequest::getFlowOutSpec()const
 void CreateCdiBaseBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
+	setParameter("FlowOutSpec", std::to_string(flowOutSpec));
 }
 
 std::string CreateCdiBaseBagRequest::getOrderType()const
@@ -88,6 +90,6 @@ std::string CreateCdiBaseBagRequest::getOrderType()const
 void CreateCdiBaseBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::CreateTicketRequest;
 
 CreateTicketRequest::CreateTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "CreateTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTicketRequest::~CreateTicketRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateTicketRequest::getCreatorId()const
 void CreateTicketRequest::setCreatorId(const std::string& creatorId)
 {
 	creatorId_ = creatorId;
-	setCoreParameter("CreatorId", creatorId);
+	setParameter("CreatorId", creatorId);
 }
 
 std::string CreateTicketRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateTicketRequest::getDescription()const
 void CreateTicketRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateTicketRequest::getType()const
@@ -55,7 +57,7 @@ std::string CreateTicketRequest::getType()const
 void CreateTicketRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateTicketRequest::getCustomFields()const
@@ -66,7 +68,7 @@ std::string CreateTicketRequest::getCustomFields()const
 void CreateTicketRequest::setCustomFields(const std::string& customFields)
 {
 	customFields_ = customFields;
-	setCoreParameter("CustomFields", customFields);
+	setParameter("CustomFields", customFields);
 }
 
 std::string CreateTicketRequest::getCcsInstanceId()const
@@ -77,6 +79,6 @@ std::string CreateTicketRequest::getCcsInstanceId()const
 void CreateTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setParameter("CcsInstanceId", ccsInstanceId);
 }
 

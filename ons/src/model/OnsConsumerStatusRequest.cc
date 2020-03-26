@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerStatusRequest;
 OnsConsumerStatusRequest::OnsConsumerStatusRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerStatus")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsConsumerStatusRequest::~OnsConsumerStatusRequest()

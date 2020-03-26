@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::PutResourceMetricRulesRequest;
 PutResourceMetricRulesRequest::PutResourceMetricRulesRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "PutResourceMetricRules")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 PutResourceMetricRulesRequest::~PutResourceMetricRulesRequest()
@@ -37,32 +37,32 @@ void PutResourceMetricRulesRequest::setRules(const std::vector<Rules>& rules)
 	rules_ = rules;
 	for(int dep1 = 0; dep1!= rules.size(); dep1++) {
 		auto rulesObj = rules.at(dep1);
-		std::string rulesObjStr = "Rules." + std::to_string(dep1);
-		setCoreParameter(rulesObjStr + ".Webhook", rulesObj.webhook);
-		setCoreParameter(rulesObjStr + ".EscalationsWarnComparisonOperator", rulesObj.escalationsWarnComparisonOperator);
-		setCoreParameter(rulesObjStr + ".RuleName", rulesObj.ruleName);
-		setCoreParameter(rulesObjStr + ".EscalationsInfoStatistics", rulesObj.escalationsInfoStatistics);
-		setCoreParameter(rulesObjStr + ".EffectiveInterval", rulesObj.effectiveInterval);
-		setCoreParameter(rulesObjStr + ".EscalationsInfoComparisonOperator", rulesObj.escalationsInfoComparisonOperator);
-		setCoreParameter(rulesObjStr + ".NoEffectiveInterval", rulesObj.noEffectiveInterval);
-		setCoreParameter(rulesObjStr + ".EmailSubject", rulesObj.emailSubject);
-		setCoreParameter(rulesObjStr + ".SilenceTime", std::to_string(rulesObj.silenceTime));
-		setCoreParameter(rulesObjStr + ".MetricName", rulesObj.metricName);
-		setCoreParameter(rulesObjStr + ".EscalationsWarnTimes", std::to_string(rulesObj.escalationsWarnTimes));
-		setCoreParameter(rulesObjStr + ".Period", rulesObj.period);
-		setCoreParameter(rulesObjStr + ".EscalationsWarnThreshold", rulesObj.escalationsWarnThreshold);
-		setCoreParameter(rulesObjStr + ".ContactGroups", rulesObj.contactGroups);
-		setCoreParameter(rulesObjStr + ".EscalationsCriticalStatistics", rulesObj.escalationsCriticalStatistics);
-		setCoreParameter(rulesObjStr + ".Resources", rulesObj.resources);
-		setCoreParameter(rulesObjStr + ".EscalationsInfoTimes", std::to_string(rulesObj.escalationsInfoTimes));
-		setCoreParameter(rulesObjStr + ".EscalationsCriticalTimes", std::to_string(rulesObj.escalationsCriticalTimes));
-		setCoreParameter(rulesObjStr + ".EscalationsWarnStatistics", rulesObj.escalationsWarnStatistics);
-		setCoreParameter(rulesObjStr + ".EscalationsInfoThreshold", rulesObj.escalationsInfoThreshold);
-		setCoreParameter(rulesObjStr + "._Namespace", rulesObj._namespace);
-		setCoreParameter(rulesObjStr + ".Interval", rulesObj.interval);
-		setCoreParameter(rulesObjStr + ".RuleId", rulesObj.ruleId);
-		setCoreParameter(rulesObjStr + ".EscalationsCriticalComparisonOperator", rulesObj.escalationsCriticalComparisonOperator);
-		setCoreParameter(rulesObjStr + ".EscalationsCriticalThreshold", rulesObj.escalationsCriticalThreshold);
+		std::string rulesObjStr = "Rules." + std::to_string(dep1 + 1);
+		setParameter(rulesObjStr + ".Webhook", rulesObj.webhook);
+		setParameter(rulesObjStr + ".EscalationsWarnComparisonOperator", rulesObj.escalationsWarnComparisonOperator);
+		setParameter(rulesObjStr + ".RuleName", rulesObj.ruleName);
+		setParameter(rulesObjStr + ".EscalationsInfoStatistics", rulesObj.escalationsInfoStatistics);
+		setParameter(rulesObjStr + ".EffectiveInterval", rulesObj.effectiveInterval);
+		setParameter(rulesObjStr + ".EscalationsInfoComparisonOperator", rulesObj.escalationsInfoComparisonOperator);
+		setParameter(rulesObjStr + ".NoEffectiveInterval", rulesObj.noEffectiveInterval);
+		setParameter(rulesObjStr + ".EmailSubject", rulesObj.emailSubject);
+		setParameter(rulesObjStr + ".SilenceTime", std::to_string(rulesObj.silenceTime));
+		setParameter(rulesObjStr + ".MetricName", rulesObj.metricName);
+		setParameter(rulesObjStr + ".EscalationsWarnTimes", std::to_string(rulesObj.escalationsWarnTimes));
+		setParameter(rulesObjStr + ".Period", rulesObj.period);
+		setParameter(rulesObjStr + ".EscalationsWarnThreshold", rulesObj.escalationsWarnThreshold);
+		setParameter(rulesObjStr + ".ContactGroups", rulesObj.contactGroups);
+		setParameter(rulesObjStr + ".EscalationsCriticalStatistics", rulesObj.escalationsCriticalStatistics);
+		setParameter(rulesObjStr + ".Resources", rulesObj.resources);
+		setParameter(rulesObjStr + ".EscalationsInfoTimes", std::to_string(rulesObj.escalationsInfoTimes));
+		setParameter(rulesObjStr + ".EscalationsCriticalTimes", std::to_string(rulesObj.escalationsCriticalTimes));
+		setParameter(rulesObjStr + ".EscalationsWarnStatistics", rulesObj.escalationsWarnStatistics);
+		setParameter(rulesObjStr + ".EscalationsInfoThreshold", rulesObj.escalationsInfoThreshold);
+		setParameter(rulesObjStr + "._Namespace", rulesObj._namespace);
+		setParameter(rulesObjStr + ".Interval", rulesObj.interval);
+		setParameter(rulesObjStr + ".RuleId", rulesObj.ruleId);
+		setParameter(rulesObjStr + ".EscalationsCriticalComparisonOperator", rulesObj.escalationsCriticalComparisonOperator);
+		setParameter(rulesObjStr + ".EscalationsCriticalThreshold", rulesObj.escalationsCriticalThreshold);
 	}
 }
 

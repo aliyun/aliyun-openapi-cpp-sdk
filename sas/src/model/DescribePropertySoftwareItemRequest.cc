@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertySoftwareItemRequest;
 
 DescribePropertySoftwareItemRequest::DescribePropertySoftwareItemRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertySoftwareItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertySoftwareItemRequest::~DescribePropertySoftwareItemRequest()
 {}
@@ -33,7 +35,7 @@ int DescribePropertySoftwareItemRequest::getCurrentPage()const
 void DescribePropertySoftwareItemRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertySoftwareItemRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribePropertySoftwareItemRequest::getSourceIp()const
 void DescribePropertySoftwareItemRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribePropertySoftwareItemRequest::getName()const
@@ -55,7 +57,7 @@ std::string DescribePropertySoftwareItemRequest::getName()const
 void DescribePropertySoftwareItemRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int DescribePropertySoftwareItemRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribePropertySoftwareItemRequest::getPageSize()const
 void DescribePropertySoftwareItemRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribePropertySoftwareItemRequest::getForceFlush()const
@@ -77,6 +79,6 @@ bool DescribePropertySoftwareItemRequest::getForceFlush()const
 void DescribePropertySoftwareItemRequest::setForceFlush(bool forceFlush)
 {
 	forceFlush_ = forceFlush;
-	setCoreParameter("ForceFlush", forceFlush ? "true" : "false");
+	setParameter("ForceFlush", forceFlush ? "true" : "false");
 }
 

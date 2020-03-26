@@ -22,7 +22,7 @@ UpdatePipelinesRequest::UpdatePipelinesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]/pipelines");
-	setMethod(HttpRequest::Method::PUT);
+	setMethod(HttpRequest::Method::Put);
 }
 
 UpdatePipelinesRequest::~UpdatePipelinesRequest()

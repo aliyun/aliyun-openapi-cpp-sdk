@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoBuildRuleRequest;
 
 DeleteRepoBuildRuleRequest::DeleteRepoBuildRuleRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoBuildRuleRequest::~DeleteRepoBuildRuleRequest()
 {}
@@ -33,7 +36,7 @@ long DeleteRepoBuildRuleRequest::getBuildRuleId()const
 void DeleteRepoBuildRuleRequest::setBuildRuleId(long buildRuleId)
 {
 	buildRuleId_ = buildRuleId;
-	setCoreParameter("BuildRuleId", std::to_string(buildRuleId));
+	setParameter("BuildRuleId", std::to_string(buildRuleId));
 }
 
 std::string DeleteRepoBuildRuleRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string DeleteRepoBuildRuleRequest::getRepoNamespace()const
 void DeleteRepoBuildRuleRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoBuildRuleRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string DeleteRepoBuildRuleRequest::getRepoName()const
 void DeleteRepoBuildRuleRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

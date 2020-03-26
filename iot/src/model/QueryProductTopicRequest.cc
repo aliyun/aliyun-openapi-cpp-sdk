@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryProductTopicRequest;
 
 QueryProductTopicRequest::QueryProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryProductTopicRequest::~QueryProductTopicRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryProductTopicRequest::getProductKey()const
 void QueryProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryProductTopicRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryProductTopicRequest::getAccessKeyId()const
 void QueryProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryProductTopicRequest::getIotInstanceId()const
@@ -55,6 +57,6 @@ std::string QueryProductTopicRequest::getIotInstanceId()const
 void QueryProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

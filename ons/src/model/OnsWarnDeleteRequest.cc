@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsWarnDeleteRequest;
 OnsWarnDeleteRequest::OnsWarnDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsWarnDelete")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsWarnDeleteRequest::~OnsWarnDeleteRequest()

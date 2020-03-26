@@ -31,6 +31,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/AddDnatEntryResult.h
 	include/alibabacloud/smartag/model/AddNetworkOptimizationSettingRequest.h
 	include/alibabacloud/smartag/model/AddNetworkOptimizationSettingResult.h
+	include/alibabacloud/smartag/model/AddSagCidrRequest.h
+	include/alibabacloud/smartag/model/AddSagCidrResult.h
 	include/alibabacloud/smartag/model/AddSnatEntryRequest.h
 	include/alibabacloud/smartag/model/AddSnatEntryResult.h
 	include/alibabacloud/smartag/model/AssociateACLRequest.h
@@ -41,6 +43,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/AssociateQosResult.h
 	include/alibabacloud/smartag/model/AttachNetworkOptimizationSagsRequest.h
 	include/alibabacloud/smartag/model/AttachNetworkOptimizationSagsResult.h
+	include/alibabacloud/smartag/model/BindSerialNumberRequest.h
+	include/alibabacloud/smartag/model/BindSerialNumberResult.h
 	include/alibabacloud/smartag/model/BindSmartAccessGatewayRequest.h
 	include/alibabacloud/smartag/model/BindSmartAccessGatewayResult.h
 	include/alibabacloud/smartag/model/BindVbrRequest.h
@@ -55,6 +59,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/CreateDedicatedLineBackupResult.h
 	include/alibabacloud/smartag/model/CreateFlowLogRequest.h
 	include/alibabacloud/smartag/model/CreateFlowLogResult.h
+	include/alibabacloud/smartag/model/CreateHealthCheckRequest.h
+	include/alibabacloud/smartag/model/CreateHealthCheckResult.h
 	include/alibabacloud/smartag/model/CreateNetworkOptimizationRequest.h
 	include/alibabacloud/smartag/model/CreateNetworkOptimizationResult.h
 	include/alibabacloud/smartag/model/CreateQosRequest.h
@@ -65,6 +71,10 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/CreateQosPolicyResult.h
 	include/alibabacloud/smartag/model/CreateSAGLinkLevelHaRequest.h
 	include/alibabacloud/smartag/model/CreateSAGLinkLevelHaResult.h
+	include/alibabacloud/smartag/model/CreateSagExpressConnectInterfaceRequest.h
+	include/alibabacloud/smartag/model/CreateSagExpressConnectInterfaceResult.h
+	include/alibabacloud/smartag/model/CreateSagStaticRouteRequest.h
+	include/alibabacloud/smartag/model/CreateSagStaticRouteResult.h
 	include/alibabacloud/smartag/model/CreateSmartAccessGatewayRequest.h
 	include/alibabacloud/smartag/model/CreateSmartAccessGatewayResult.h
 	include/alibabacloud/smartag/model/CreateSmartAccessGatewayClientUserRequest.h
@@ -85,6 +95,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/DeleteDnatEntryResult.h
 	include/alibabacloud/smartag/model/DeleteFlowLogRequest.h
 	include/alibabacloud/smartag/model/DeleteFlowLogResult.h
+	include/alibabacloud/smartag/model/DeleteHealthCheckRequest.h
+	include/alibabacloud/smartag/model/DeleteHealthCheckResult.h
 	include/alibabacloud/smartag/model/DeleteNetworkOptimizationRequest.h
 	include/alibabacloud/smartag/model/DeleteNetworkOptimizationResult.h
 	include/alibabacloud/smartag/model/DeleteNetworkOptimizationSettingRequest.h
@@ -95,8 +107,18 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/DeleteQosCarResult.h
 	include/alibabacloud/smartag/model/DeleteQosPolicyRequest.h
 	include/alibabacloud/smartag/model/DeleteQosPolicyResult.h
+	include/alibabacloud/smartag/model/DeleteRouteDistributionStrategyRequest.h
+	include/alibabacloud/smartag/model/DeleteRouteDistributionStrategyResult.h
 	include/alibabacloud/smartag/model/DeleteSAGLinkLevelHaRequest.h
 	include/alibabacloud/smartag/model/DeleteSAGLinkLevelHaResult.h
+	include/alibabacloud/smartag/model/DeleteSagCidrRequest.h
+	include/alibabacloud/smartag/model/DeleteSagCidrResult.h
+	include/alibabacloud/smartag/model/DeleteSagExpressConnectInterfaceRequest.h
+	include/alibabacloud/smartag/model/DeleteSagExpressConnectInterfaceResult.h
+	include/alibabacloud/smartag/model/DeleteSagStaticRouteRequest.h
+	include/alibabacloud/smartag/model/DeleteSagStaticRouteResult.h
+	include/alibabacloud/smartag/model/DeleteSmartAccessGatewayRequest.h
+	include/alibabacloud/smartag/model/DeleteSmartAccessGatewayResult.h
 	include/alibabacloud/smartag/model/DeleteSmartAccessGatewayClientUserRequest.h
 	include/alibabacloud/smartag/model/DeleteSmartAccessGatewayClientUserResult.h
 	include/alibabacloud/smartag/model/DeleteSnatEntryRequest.h
@@ -121,12 +143,24 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/DescribeGrantRulesResult.h
 	include/alibabacloud/smartag/model/DescribeGrantSagRulesRequest.h
 	include/alibabacloud/smartag/model/DescribeGrantSagRulesResult.h
+	include/alibabacloud/smartag/model/DescribeGrantSagVbrRulesRequest.h
+	include/alibabacloud/smartag/model/DescribeGrantSagVbrRulesResult.h
+	include/alibabacloud/smartag/model/DescribeHealthCheckAttributeRequest.h
+	include/alibabacloud/smartag/model/DescribeHealthCheckAttributeResult.h
+	include/alibabacloud/smartag/model/DescribeHealthChecksRequest.h
+	include/alibabacloud/smartag/model/DescribeHealthChecksResult.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationSagsRequest.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationSagsResult.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationSettingsRequest.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationSettingsResult.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationsRequest.h
 	include/alibabacloud/smartag/model/DescribeNetworkOptimizationsResult.h
+	include/alibabacloud/smartag/model/DescribePbrInterfacesRequest.h
+	include/alibabacloud/smartag/model/DescribePbrInterfacesResult.h
+	include/alibabacloud/smartag/model/DescribePbrRulesRequest.h
+	include/alibabacloud/smartag/model/DescribePbrRulesResult.h
+	include/alibabacloud/smartag/model/DescribePolicyBasedRoutingsRequest.h
+	include/alibabacloud/smartag/model/DescribePolicyBasedRoutingsResult.h
 	include/alibabacloud/smartag/model/DescribeQosCarsRequest.h
 	include/alibabacloud/smartag/model/DescribeQosCarsResult.h
 	include/alibabacloud/smartag/model/DescribeQosPoliciesRequest.h
@@ -135,10 +169,54 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/DescribeQosesResult.h
 	include/alibabacloud/smartag/model/DescribeRegionsRequest.h
 	include/alibabacloud/smartag/model/DescribeRegionsResult.h
+	include/alibabacloud/smartag/model/DescribeRouteDistributionStrategiesRequest.h
+	include/alibabacloud/smartag/model/DescribeRouteDistributionStrategiesResult.h
+	include/alibabacloud/smartag/model/DescribeSAGDeviceInfoRequest.h
+	include/alibabacloud/smartag/model/DescribeSAGDeviceInfoResult.h
+	include/alibabacloud/smartag/model/DescribeSagCurrentDnsRequest.h
+	include/alibabacloud/smartag/model/DescribeSagCurrentDnsResult.h
+	include/alibabacloud/smartag/model/DescribeSagECRouteBackupAttributeRequest.h
+	include/alibabacloud/smartag/model/DescribeSagECRouteBackupAttributeResult.h
+	include/alibabacloud/smartag/model/DescribeSagExpressConnectInterfaceListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagExpressConnectInterfaceListResult.h
+	include/alibabacloud/smartag/model/DescribeSagGlobalRouteProtocolRequest.h
+	include/alibabacloud/smartag/model/DescribeSagGlobalRouteProtocolResult.h
+	include/alibabacloud/smartag/model/DescribeSagHaRequest.h
+	include/alibabacloud/smartag/model/DescribeSagHaResult.h
+	include/alibabacloud/smartag/model/DescribeSagLanListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagLanListResult.h
+	include/alibabacloud/smartag/model/DescribeSagManagementPortRequest.h
+	include/alibabacloud/smartag/model/DescribeSagManagementPortResult.h
 	include/alibabacloud/smartag/model/DescribeSagOnlineClientStatisticsRequest.h
 	include/alibabacloud/smartag/model/DescribeSagOnlineClientStatisticsResult.h
+	include/alibabacloud/smartag/model/DescribeSagPortListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagPortListResult.h
+	include/alibabacloud/smartag/model/DescribeSagPortRouteProtocolListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagPortRouteProtocolListResult.h
+	include/alibabacloud/smartag/model/DescribeSagRemoteAccessRequest.h
+	include/alibabacloud/smartag/model/DescribeSagRemoteAccessResult.h
+	include/alibabacloud/smartag/model/DescribeSagRouteListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagRouteListResult.h
+	include/alibabacloud/smartag/model/DescribeSagRouteProtocolBgpRequest.h
+	include/alibabacloud/smartag/model/DescribeSagRouteProtocolBgpResult.h
+	include/alibabacloud/smartag/model/DescribeSagRouteProtocolOspfRequest.h
+	include/alibabacloud/smartag/model/DescribeSagRouteProtocolOspfResult.h
 	include/alibabacloud/smartag/model/DescribeSagRouteableAddressRequest.h
 	include/alibabacloud/smartag/model/DescribeSagRouteableAddressResult.h
+	include/alibabacloud/smartag/model/DescribeSagStaticRouteListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagStaticRouteListResult.h
+	include/alibabacloud/smartag/model/DescribeSagUserDnsRequest.h
+	include/alibabacloud/smartag/model/DescribeSagUserDnsResult.h
+	include/alibabacloud/smartag/model/DescribeSagVbrRelationsRequest.h
+	include/alibabacloud/smartag/model/DescribeSagVbrRelationsResult.h
+	include/alibabacloud/smartag/model/DescribeSagWan4GRequest.h
+	include/alibabacloud/smartag/model/DescribeSagWan4GResult.h
+	include/alibabacloud/smartag/model/DescribeSagWanListRequest.h
+	include/alibabacloud/smartag/model/DescribeSagWanListResult.h
+	include/alibabacloud/smartag/model/DescribeSagWanSnatRequest.h
+	include/alibabacloud/smartag/model/DescribeSagWanSnatResult.h
+	include/alibabacloud/smartag/model/DescribeSagWifiRequest.h
+	include/alibabacloud/smartag/model/DescribeSagWifiResult.h
 	include/alibabacloud/smartag/model/DescribeSmartAccessGatewayAttributeRequest.h
 	include/alibabacloud/smartag/model/DescribeSmartAccessGatewayAttributeResult.h
 	include/alibabacloud/smartag/model/DescribeSmartAccessGatewayClientUsersRequest.h
@@ -185,6 +263,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/GrantInstanceToCbnResult.h
 	include/alibabacloud/smartag/model/GrantSagInstanceToCcnRequest.h
 	include/alibabacloud/smartag/model/GrantSagInstanceToCcnResult.h
+	include/alibabacloud/smartag/model/GrantSagInstanceToVbrRequest.h
+	include/alibabacloud/smartag/model/GrantSagInstanceToVbrResult.h
 	include/alibabacloud/smartag/model/KickOutClientsRequest.h
 	include/alibabacloud/smartag/model/KickOutClientsResult.h
 	include/alibabacloud/smartag/model/ModifyACLRequest.h
@@ -197,6 +277,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/ModifyDeviceAutoUpgradePolicyResult.h
 	include/alibabacloud/smartag/model/ModifyFlowLogAttributeRequest.h
 	include/alibabacloud/smartag/model/ModifyFlowLogAttributeResult.h
+	include/alibabacloud/smartag/model/ModifyHealthCheckRequest.h
+	include/alibabacloud/smartag/model/ModifyHealthCheckResult.h
 	include/alibabacloud/smartag/model/ModifyNetworkOptimizationRequest.h
 	include/alibabacloud/smartag/model/ModifyNetworkOptimizationResult.h
 	include/alibabacloud/smartag/model/ModifyQosRequest.h
@@ -205,8 +287,42 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/ModifyQosCarResult.h
 	include/alibabacloud/smartag/model/ModifyQosPolicyRequest.h
 	include/alibabacloud/smartag/model/ModifyQosPolicyResult.h
+	include/alibabacloud/smartag/model/ModifyRouteDistributionStrategyRequest.h
+	include/alibabacloud/smartag/model/ModifyRouteDistributionStrategyResult.h
+	include/alibabacloud/smartag/model/ModifySagCidrRequest.h
+	include/alibabacloud/smartag/model/ModifySagCidrResult.h
+	include/alibabacloud/smartag/model/ModifySagECRouteBackupRequest.h
+	include/alibabacloud/smartag/model/ModifySagECRouteBackupResult.h
+	include/alibabacloud/smartag/model/ModifySagExpressConnectInterfaceRequest.h
+	include/alibabacloud/smartag/model/ModifySagExpressConnectInterfaceResult.h
+	include/alibabacloud/smartag/model/ModifySagGlobalRouteProtocolRequest.h
+	include/alibabacloud/smartag/model/ModifySagGlobalRouteProtocolResult.h
+	include/alibabacloud/smartag/model/ModifySagHaRequest.h
+	include/alibabacloud/smartag/model/ModifySagHaResult.h
+	include/alibabacloud/smartag/model/ModifySagLanRequest.h
+	include/alibabacloud/smartag/model/ModifySagLanResult.h
+	include/alibabacloud/smartag/model/ModifySagManagementPortRequest.h
+	include/alibabacloud/smartag/model/ModifySagManagementPortResult.h
+	include/alibabacloud/smartag/model/ModifySagPortRoleRequest.h
+	include/alibabacloud/smartag/model/ModifySagPortRoleResult.h
+	include/alibabacloud/smartag/model/ModifySagPortRouteProtocolRequest.h
+	include/alibabacloud/smartag/model/ModifySagPortRouteProtocolResult.h
 	include/alibabacloud/smartag/model/ModifySagRemoteAccessRequest.h
 	include/alibabacloud/smartag/model/ModifySagRemoteAccessResult.h
+	include/alibabacloud/smartag/model/ModifySagRouteProtocolBgpRequest.h
+	include/alibabacloud/smartag/model/ModifySagRouteProtocolBgpResult.h
+	include/alibabacloud/smartag/model/ModifySagRouteProtocolOspfRequest.h
+	include/alibabacloud/smartag/model/ModifySagRouteProtocolOspfResult.h
+	include/alibabacloud/smartag/model/ModifySagStaticRouteRequest.h
+	include/alibabacloud/smartag/model/ModifySagStaticRouteResult.h
+	include/alibabacloud/smartag/model/ModifySagUserDnsRequest.h
+	include/alibabacloud/smartag/model/ModifySagUserDnsResult.h
+	include/alibabacloud/smartag/model/ModifySagWanRequest.h
+	include/alibabacloud/smartag/model/ModifySagWanResult.h
+	include/alibabacloud/smartag/model/ModifySagWanSnatRequest.h
+	include/alibabacloud/smartag/model/ModifySagWanSnatResult.h
+	include/alibabacloud/smartag/model/ModifySagWifiRequest.h
+	include/alibabacloud/smartag/model/ModifySagWifiResult.h
 	include/alibabacloud/smartag/model/ModifySerialNumberRequest.h
 	include/alibabacloud/smartag/model/ModifySerialNumberResult.h
 	include/alibabacloud/smartag/model/ModifySmartAccessGatewayRequest.h
@@ -215,12 +331,16 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/ModifySmartAccessGatewayClientUserResult.h
 	include/alibabacloud/smartag/model/ModifySmartAccessGatewayUpBandwidthRequest.h
 	include/alibabacloud/smartag/model/ModifySmartAccessGatewayUpBandwidthResult.h
+	include/alibabacloud/smartag/model/OrchestrateSagECRouteBackupRequest.h
+	include/alibabacloud/smartag/model/OrchestrateSagECRouteBackupResult.h
 	include/alibabacloud/smartag/model/RebootSmartAccessGatewayRequest.h
 	include/alibabacloud/smartag/model/RebootSmartAccessGatewayResult.h
 	include/alibabacloud/smartag/model/ResetSmartAccessGatewayClientUserPasswordRequest.h
 	include/alibabacloud/smartag/model/ResetSmartAccessGatewayClientUserPasswordResult.h
 	include/alibabacloud/smartag/model/RevokeInstanceFromCbnRequest.h
 	include/alibabacloud/smartag/model/RevokeInstanceFromCbnResult.h
+	include/alibabacloud/smartag/model/RevokeInstanceFromVbrRequest.h
+	include/alibabacloud/smartag/model/RevokeInstanceFromVbrResult.h
 	include/alibabacloud/smartag/model/RevokeSagInstanceFromCcnRequest.h
 	include/alibabacloud/smartag/model/RevokeSagInstanceFromCcnResult.h
 	include/alibabacloud/smartag/model/SetSagRouteableAddressRequest.h
@@ -229,6 +349,8 @@ set(smartag_public_header_model
 	include/alibabacloud/smartag/model/SwitchCloudBoxHaStateResult.h
 	include/alibabacloud/smartag/model/SwitchSAGHaStateRequest.h
 	include/alibabacloud/smartag/model/SwitchSAGHaStateResult.h
+	include/alibabacloud/smartag/model/SynchronizeSmartAGWebConfigRequest.h
+	include/alibabacloud/smartag/model/SynchronizeSmartAGWebConfigResult.h
 	include/alibabacloud/smartag/model/UnbindSerialNumberRequest.h
 	include/alibabacloud/smartag/model/UnbindSerialNumberResult.h
 	include/alibabacloud/smartag/model/UnbindSmartAccessGatewayRequest.h
@@ -260,6 +382,8 @@ set(smartag_src
 	src/model/AddDnatEntryResult.cc
 	src/model/AddNetworkOptimizationSettingRequest.cc
 	src/model/AddNetworkOptimizationSettingResult.cc
+	src/model/AddSagCidrRequest.cc
+	src/model/AddSagCidrResult.cc
 	src/model/AddSnatEntryRequest.cc
 	src/model/AddSnatEntryResult.cc
 	src/model/AssociateACLRequest.cc
@@ -270,6 +394,8 @@ set(smartag_src
 	src/model/AssociateQosResult.cc
 	src/model/AttachNetworkOptimizationSagsRequest.cc
 	src/model/AttachNetworkOptimizationSagsResult.cc
+	src/model/BindSerialNumberRequest.cc
+	src/model/BindSerialNumberResult.cc
 	src/model/BindSmartAccessGatewayRequest.cc
 	src/model/BindSmartAccessGatewayResult.cc
 	src/model/BindVbrRequest.cc
@@ -284,6 +410,8 @@ set(smartag_src
 	src/model/CreateDedicatedLineBackupResult.cc
 	src/model/CreateFlowLogRequest.cc
 	src/model/CreateFlowLogResult.cc
+	src/model/CreateHealthCheckRequest.cc
+	src/model/CreateHealthCheckResult.cc
 	src/model/CreateNetworkOptimizationRequest.cc
 	src/model/CreateNetworkOptimizationResult.cc
 	src/model/CreateQosRequest.cc
@@ -294,6 +422,10 @@ set(smartag_src
 	src/model/CreateQosPolicyResult.cc
 	src/model/CreateSAGLinkLevelHaRequest.cc
 	src/model/CreateSAGLinkLevelHaResult.cc
+	src/model/CreateSagExpressConnectInterfaceRequest.cc
+	src/model/CreateSagExpressConnectInterfaceResult.cc
+	src/model/CreateSagStaticRouteRequest.cc
+	src/model/CreateSagStaticRouteResult.cc
 	src/model/CreateSmartAccessGatewayRequest.cc
 	src/model/CreateSmartAccessGatewayResult.cc
 	src/model/CreateSmartAccessGatewayClientUserRequest.cc
@@ -314,6 +446,8 @@ set(smartag_src
 	src/model/DeleteDnatEntryResult.cc
 	src/model/DeleteFlowLogRequest.cc
 	src/model/DeleteFlowLogResult.cc
+	src/model/DeleteHealthCheckRequest.cc
+	src/model/DeleteHealthCheckResult.cc
 	src/model/DeleteNetworkOptimizationRequest.cc
 	src/model/DeleteNetworkOptimizationResult.cc
 	src/model/DeleteNetworkOptimizationSettingRequest.cc
@@ -324,8 +458,18 @@ set(smartag_src
 	src/model/DeleteQosCarResult.cc
 	src/model/DeleteQosPolicyRequest.cc
 	src/model/DeleteQosPolicyResult.cc
+	src/model/DeleteRouteDistributionStrategyRequest.cc
+	src/model/DeleteRouteDistributionStrategyResult.cc
 	src/model/DeleteSAGLinkLevelHaRequest.cc
 	src/model/DeleteSAGLinkLevelHaResult.cc
+	src/model/DeleteSagCidrRequest.cc
+	src/model/DeleteSagCidrResult.cc
+	src/model/DeleteSagExpressConnectInterfaceRequest.cc
+	src/model/DeleteSagExpressConnectInterfaceResult.cc
+	src/model/DeleteSagStaticRouteRequest.cc
+	src/model/DeleteSagStaticRouteResult.cc
+	src/model/DeleteSmartAccessGatewayRequest.cc
+	src/model/DeleteSmartAccessGatewayResult.cc
 	src/model/DeleteSmartAccessGatewayClientUserRequest.cc
 	src/model/DeleteSmartAccessGatewayClientUserResult.cc
 	src/model/DeleteSnatEntryRequest.cc
@@ -350,12 +494,24 @@ set(smartag_src
 	src/model/DescribeGrantRulesResult.cc
 	src/model/DescribeGrantSagRulesRequest.cc
 	src/model/DescribeGrantSagRulesResult.cc
+	src/model/DescribeGrantSagVbrRulesRequest.cc
+	src/model/DescribeGrantSagVbrRulesResult.cc
+	src/model/DescribeHealthCheckAttributeRequest.cc
+	src/model/DescribeHealthCheckAttributeResult.cc
+	src/model/DescribeHealthChecksRequest.cc
+	src/model/DescribeHealthChecksResult.cc
 	src/model/DescribeNetworkOptimizationSagsRequest.cc
 	src/model/DescribeNetworkOptimizationSagsResult.cc
 	src/model/DescribeNetworkOptimizationSettingsRequest.cc
 	src/model/DescribeNetworkOptimizationSettingsResult.cc
 	src/model/DescribeNetworkOptimizationsRequest.cc
 	src/model/DescribeNetworkOptimizationsResult.cc
+	src/model/DescribePbrInterfacesRequest.cc
+	src/model/DescribePbrInterfacesResult.cc
+	src/model/DescribePbrRulesRequest.cc
+	src/model/DescribePbrRulesResult.cc
+	src/model/DescribePolicyBasedRoutingsRequest.cc
+	src/model/DescribePolicyBasedRoutingsResult.cc
 	src/model/DescribeQosCarsRequest.cc
 	src/model/DescribeQosCarsResult.cc
 	src/model/DescribeQosPoliciesRequest.cc
@@ -364,10 +520,54 @@ set(smartag_src
 	src/model/DescribeQosesResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeRouteDistributionStrategiesRequest.cc
+	src/model/DescribeRouteDistributionStrategiesResult.cc
+	src/model/DescribeSAGDeviceInfoRequest.cc
+	src/model/DescribeSAGDeviceInfoResult.cc
+	src/model/DescribeSagCurrentDnsRequest.cc
+	src/model/DescribeSagCurrentDnsResult.cc
+	src/model/DescribeSagECRouteBackupAttributeRequest.cc
+	src/model/DescribeSagECRouteBackupAttributeResult.cc
+	src/model/DescribeSagExpressConnectInterfaceListRequest.cc
+	src/model/DescribeSagExpressConnectInterfaceListResult.cc
+	src/model/DescribeSagGlobalRouteProtocolRequest.cc
+	src/model/DescribeSagGlobalRouteProtocolResult.cc
+	src/model/DescribeSagHaRequest.cc
+	src/model/DescribeSagHaResult.cc
+	src/model/DescribeSagLanListRequest.cc
+	src/model/DescribeSagLanListResult.cc
+	src/model/DescribeSagManagementPortRequest.cc
+	src/model/DescribeSagManagementPortResult.cc
 	src/model/DescribeSagOnlineClientStatisticsRequest.cc
 	src/model/DescribeSagOnlineClientStatisticsResult.cc
+	src/model/DescribeSagPortListRequest.cc
+	src/model/DescribeSagPortListResult.cc
+	src/model/DescribeSagPortRouteProtocolListRequest.cc
+	src/model/DescribeSagPortRouteProtocolListResult.cc
+	src/model/DescribeSagRemoteAccessRequest.cc
+	src/model/DescribeSagRemoteAccessResult.cc
+	src/model/DescribeSagRouteListRequest.cc
+	src/model/DescribeSagRouteListResult.cc
+	src/model/DescribeSagRouteProtocolBgpRequest.cc
+	src/model/DescribeSagRouteProtocolBgpResult.cc
+	src/model/DescribeSagRouteProtocolOspfRequest.cc
+	src/model/DescribeSagRouteProtocolOspfResult.cc
 	src/model/DescribeSagRouteableAddressRequest.cc
 	src/model/DescribeSagRouteableAddressResult.cc
+	src/model/DescribeSagStaticRouteListRequest.cc
+	src/model/DescribeSagStaticRouteListResult.cc
+	src/model/DescribeSagUserDnsRequest.cc
+	src/model/DescribeSagUserDnsResult.cc
+	src/model/DescribeSagVbrRelationsRequest.cc
+	src/model/DescribeSagVbrRelationsResult.cc
+	src/model/DescribeSagWan4GRequest.cc
+	src/model/DescribeSagWan4GResult.cc
+	src/model/DescribeSagWanListRequest.cc
+	src/model/DescribeSagWanListResult.cc
+	src/model/DescribeSagWanSnatRequest.cc
+	src/model/DescribeSagWanSnatResult.cc
+	src/model/DescribeSagWifiRequest.cc
+	src/model/DescribeSagWifiResult.cc
 	src/model/DescribeSmartAccessGatewayAttributeRequest.cc
 	src/model/DescribeSmartAccessGatewayAttributeResult.cc
 	src/model/DescribeSmartAccessGatewayClientUsersRequest.cc
@@ -414,6 +614,8 @@ set(smartag_src
 	src/model/GrantInstanceToCbnResult.cc
 	src/model/GrantSagInstanceToCcnRequest.cc
 	src/model/GrantSagInstanceToCcnResult.cc
+	src/model/GrantSagInstanceToVbrRequest.cc
+	src/model/GrantSagInstanceToVbrResult.cc
 	src/model/KickOutClientsRequest.cc
 	src/model/KickOutClientsResult.cc
 	src/model/ModifyACLRequest.cc
@@ -426,6 +628,8 @@ set(smartag_src
 	src/model/ModifyDeviceAutoUpgradePolicyResult.cc
 	src/model/ModifyFlowLogAttributeRequest.cc
 	src/model/ModifyFlowLogAttributeResult.cc
+	src/model/ModifyHealthCheckRequest.cc
+	src/model/ModifyHealthCheckResult.cc
 	src/model/ModifyNetworkOptimizationRequest.cc
 	src/model/ModifyNetworkOptimizationResult.cc
 	src/model/ModifyQosRequest.cc
@@ -434,8 +638,42 @@ set(smartag_src
 	src/model/ModifyQosCarResult.cc
 	src/model/ModifyQosPolicyRequest.cc
 	src/model/ModifyQosPolicyResult.cc
+	src/model/ModifyRouteDistributionStrategyRequest.cc
+	src/model/ModifyRouteDistributionStrategyResult.cc
+	src/model/ModifySagCidrRequest.cc
+	src/model/ModifySagCidrResult.cc
+	src/model/ModifySagECRouteBackupRequest.cc
+	src/model/ModifySagECRouteBackupResult.cc
+	src/model/ModifySagExpressConnectInterfaceRequest.cc
+	src/model/ModifySagExpressConnectInterfaceResult.cc
+	src/model/ModifySagGlobalRouteProtocolRequest.cc
+	src/model/ModifySagGlobalRouteProtocolResult.cc
+	src/model/ModifySagHaRequest.cc
+	src/model/ModifySagHaResult.cc
+	src/model/ModifySagLanRequest.cc
+	src/model/ModifySagLanResult.cc
+	src/model/ModifySagManagementPortRequest.cc
+	src/model/ModifySagManagementPortResult.cc
+	src/model/ModifySagPortRoleRequest.cc
+	src/model/ModifySagPortRoleResult.cc
+	src/model/ModifySagPortRouteProtocolRequest.cc
+	src/model/ModifySagPortRouteProtocolResult.cc
 	src/model/ModifySagRemoteAccessRequest.cc
 	src/model/ModifySagRemoteAccessResult.cc
+	src/model/ModifySagRouteProtocolBgpRequest.cc
+	src/model/ModifySagRouteProtocolBgpResult.cc
+	src/model/ModifySagRouteProtocolOspfRequest.cc
+	src/model/ModifySagRouteProtocolOspfResult.cc
+	src/model/ModifySagStaticRouteRequest.cc
+	src/model/ModifySagStaticRouteResult.cc
+	src/model/ModifySagUserDnsRequest.cc
+	src/model/ModifySagUserDnsResult.cc
+	src/model/ModifySagWanRequest.cc
+	src/model/ModifySagWanResult.cc
+	src/model/ModifySagWanSnatRequest.cc
+	src/model/ModifySagWanSnatResult.cc
+	src/model/ModifySagWifiRequest.cc
+	src/model/ModifySagWifiResult.cc
 	src/model/ModifySerialNumberRequest.cc
 	src/model/ModifySerialNumberResult.cc
 	src/model/ModifySmartAccessGatewayRequest.cc
@@ -444,12 +682,16 @@ set(smartag_src
 	src/model/ModifySmartAccessGatewayClientUserResult.cc
 	src/model/ModifySmartAccessGatewayUpBandwidthRequest.cc
 	src/model/ModifySmartAccessGatewayUpBandwidthResult.cc
+	src/model/OrchestrateSagECRouteBackupRequest.cc
+	src/model/OrchestrateSagECRouteBackupResult.cc
 	src/model/RebootSmartAccessGatewayRequest.cc
 	src/model/RebootSmartAccessGatewayResult.cc
 	src/model/ResetSmartAccessGatewayClientUserPasswordRequest.cc
 	src/model/ResetSmartAccessGatewayClientUserPasswordResult.cc
 	src/model/RevokeInstanceFromCbnRequest.cc
 	src/model/RevokeInstanceFromCbnResult.cc
+	src/model/RevokeInstanceFromVbrRequest.cc
+	src/model/RevokeInstanceFromVbrResult.cc
 	src/model/RevokeSagInstanceFromCcnRequest.cc
 	src/model/RevokeSagInstanceFromCcnResult.cc
 	src/model/SetSagRouteableAddressRequest.cc
@@ -458,6 +700,8 @@ set(smartag_src
 	src/model/SwitchCloudBoxHaStateResult.cc
 	src/model/SwitchSAGHaStateRequest.cc
 	src/model/SwitchSAGHaStateResult.cc
+	src/model/SynchronizeSmartAGWebConfigRequest.cc
+	src/model/SynchronizeSmartAGWebConfigResult.cc
 	src/model/UnbindSerialNumberRequest.cc
 	src/model/UnbindSerialNumberResult.cc
 	src/model/UnbindSmartAccessGatewayRequest.cc

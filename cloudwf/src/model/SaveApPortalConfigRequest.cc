@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApPortalConfigRequest;
 
 SaveApPortalConfigRequest::SaveApPortalConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApPortalConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApPortalConfigRequest::~SaveApPortalConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveApPortalConfigRequest::getAuthKey()const
 void SaveApPortalConfigRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setCoreParameter("AuthKey", authKey);
+	setParameter("AuthKey", authKey);
 }
 
 bool SaveApPortalConfigRequest::getPortalStatus()const
@@ -44,7 +46,7 @@ bool SaveApPortalConfigRequest::getPortalStatus()const
 void SaveApPortalConfigRequest::setPortalStatus(bool portalStatus)
 {
 	portalStatus_ = portalStatus;
-	setCoreParameter("PortalStatus", portalStatus ? "true" : "false");
+	setParameter("PortalStatus", portalStatus ? "true" : "false");
 }
 
 std::string SaveApPortalConfigRequest::getWhitelist()const
@@ -55,7 +57,7 @@ std::string SaveApPortalConfigRequest::getWhitelist()const
 void SaveApPortalConfigRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
-	setCoreParameter("Whitelist", whitelist);
+	setParameter("Whitelist", whitelist);
 }
 
 std::string SaveApPortalConfigRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SaveApPortalConfigRequest::getAccessKeyId()const
 void SaveApPortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int SaveApPortalConfigRequest::getNetwork()const
@@ -77,7 +79,7 @@ int SaveApPortalConfigRequest::getNetwork()const
 void SaveApPortalConfigRequest::setNetwork(int network)
 {
 	network_ = network;
-	setCoreParameter("Network", std::to_string(network));
+	setParameter("Network", std::to_string(network));
 }
 
 std::string SaveApPortalConfigRequest::getPortalUrl()const
@@ -88,7 +90,7 @@ std::string SaveApPortalConfigRequest::getPortalUrl()const
 void SaveApPortalConfigRequest::setPortalUrl(const std::string& portalUrl)
 {
 	portalUrl_ = portalUrl;
-	setCoreParameter("PortalUrl", portalUrl);
+	setParameter("PortalUrl", portalUrl);
 }
 
 std::string SaveApPortalConfigRequest::getCheckUrl()const
@@ -99,7 +101,7 @@ std::string SaveApPortalConfigRequest::getCheckUrl()const
 void SaveApPortalConfigRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 
 long SaveApPortalConfigRequest::getApConfigId()const
@@ -110,7 +112,7 @@ long SaveApPortalConfigRequest::getApConfigId()const
 void SaveApPortalConfigRequest::setApConfigId(long apConfigId)
 {
 	apConfigId_ = apConfigId;
-	setCoreParameter("ApConfigId", std::to_string(apConfigId));
+	setParameter("ApConfigId", std::to_string(apConfigId));
 }
 
 std::string SaveApPortalConfigRequest::getAuthSecret()const
@@ -121,7 +123,7 @@ std::string SaveApPortalConfigRequest::getAuthSecret()const
 void SaveApPortalConfigRequest::setAuthSecret(const std::string& authSecret)
 {
 	authSecret_ = authSecret;
-	setCoreParameter("AuthSecret", authSecret);
+	setParameter("AuthSecret", authSecret);
 }
 
 std::string SaveApPortalConfigRequest::getWebAuthUrl()const
@@ -132,6 +134,6 @@ std::string SaveApPortalConfigRequest::getWebAuthUrl()const
 void SaveApPortalConfigRequest::setWebAuthUrl(const std::string& webAuthUrl)
 {
 	webAuthUrl_ = webAuthUrl;
-	setCoreParameter("WebAuthUrl", webAuthUrl);
+	setParameter("WebAuthUrl", webAuthUrl);
 }
 

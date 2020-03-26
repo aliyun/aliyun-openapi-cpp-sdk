@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchSaveApPositionRequest;
 
 BatchSaveApPositionRequest::BatchSaveApPositionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchSaveApPosition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchSaveApPositionRequest::~BatchSaveApPositionRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchSaveApPositionRequest::getJsonData()const
 void BatchSaveApPositionRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string BatchSaveApPositionRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string BatchSaveApPositionRequest::getAccessKeyId()const
 void BatchSaveApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,7 +35,7 @@ std::string GetOrderDetailRequest::getOrderId()const
 void GetOrderDetailRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setParameter("OrderId", orderId);
 }
 
 long GetOrderDetailRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long GetOrderDetailRequest::getOwnerId()const
 void GetOrderDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

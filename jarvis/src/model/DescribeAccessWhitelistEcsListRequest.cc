@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeAccessWhitelistEcsListRequest;
 
 DescribeAccessWhitelistEcsListRequest::DescribeAccessWhitelistEcsListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeAccessWhitelistEcsList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccessWhitelistEcsListRequest::~DescribeAccessWhitelistEcsListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAccessWhitelistEcsListRequest::getSourceCode()const
 void DescribeAccessWhitelistEcsListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeAccessWhitelistEcsListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeAccessWhitelistEcsListRequest::getSourceIp()const
 void DescribeAccessWhitelistEcsListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccessWhitelistEcsListRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeAccessWhitelistEcsListRequest::getLang()const
 void DescribeAccessWhitelistEcsListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

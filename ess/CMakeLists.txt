@@ -115,6 +115,12 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/ExecuteScalingRuleResult.h
 	include/alibabacloud/ess/model/ExitStandbyRequest.h
 	include/alibabacloud/ess/model/ExitStandbyResult.h
+	include/alibabacloud/ess/model/ListTagKeysRequest.h
+	include/alibabacloud/ess/model/ListTagKeysResult.h
+	include/alibabacloud/ess/model/ListTagResourcesRequest.h
+	include/alibabacloud/ess/model/ListTagResourcesResult.h
+	include/alibabacloud/ess/model/ListTagValuesRequest.h
+	include/alibabacloud/ess/model/ListTagValuesResult.h
 	include/alibabacloud/ess/model/ModifyAlarmRequest.h
 	include/alibabacloud/ess/model/ModifyAlarmResult.h
 	include/alibabacloud/ess/model/ModifyAlertConfigRequest.h
@@ -137,8 +143,20 @@ set(ess_public_header_model
 	include/alibabacloud/ess/model/RecordLifecycleActionHeartbeatResult.h
 	include/alibabacloud/ess/model/RemoveInstancesRequest.h
 	include/alibabacloud/ess/model/RemoveInstancesResult.h
+	include/alibabacloud/ess/model/ResumeProcessesRequest.h
+	include/alibabacloud/ess/model/ResumeProcessesResult.h
+	include/alibabacloud/ess/model/SetGroupDeletionProtectionRequest.h
+	include/alibabacloud/ess/model/SetGroupDeletionProtectionResult.h
+	include/alibabacloud/ess/model/SetInstanceHealthRequest.h
+	include/alibabacloud/ess/model/SetInstanceHealthResult.h
 	include/alibabacloud/ess/model/SetInstancesProtectionRequest.h
 	include/alibabacloud/ess/model/SetInstancesProtectionResult.h
+	include/alibabacloud/ess/model/SuspendProcessesRequest.h
+	include/alibabacloud/ess/model/SuspendProcessesResult.h
+	include/alibabacloud/ess/model/TagResourcesRequest.h
+	include/alibabacloud/ess/model/TagResourcesResult.h
+	include/alibabacloud/ess/model/UntagResourcesRequest.h
+	include/alibabacloud/ess/model/UntagResourcesResult.h
 	include/alibabacloud/ess/model/VerifyAuthenticationRequest.h
 	include/alibabacloud/ess/model/VerifyAuthenticationResult.h
 	include/alibabacloud/ess/model/VerifyUserRequest.h
@@ -240,6 +258,12 @@ set(ess_src
 	src/model/ExecuteScalingRuleResult.cc
 	src/model/ExitStandbyRequest.cc
 	src/model/ExitStandbyResult.cc
+	src/model/ListTagKeysRequest.cc
+	src/model/ListTagKeysResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ListTagValuesRequest.cc
+	src/model/ListTagValuesResult.cc
 	src/model/ModifyAlarmRequest.cc
 	src/model/ModifyAlarmResult.cc
 	src/model/ModifyAlertConfigRequest.cc
@@ -262,8 +286,20 @@ set(ess_src
 	src/model/RecordLifecycleActionHeartbeatResult.cc
 	src/model/RemoveInstancesRequest.cc
 	src/model/RemoveInstancesResult.cc
+	src/model/ResumeProcessesRequest.cc
+	src/model/ResumeProcessesResult.cc
+	src/model/SetGroupDeletionProtectionRequest.cc
+	src/model/SetGroupDeletionProtectionResult.cc
+	src/model/SetInstanceHealthRequest.cc
+	src/model/SetInstanceHealthResult.cc
 	src/model/SetInstancesProtectionRequest.cc
 	src/model/SetInstancesProtectionResult.cc
+	src/model/SuspendProcessesRequest.cc
+	src/model/SuspendProcessesResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/VerifyAuthenticationRequest.cc
 	src/model/VerifyAuthenticationResult.cc
 	src/model/VerifyUserRequest.cc

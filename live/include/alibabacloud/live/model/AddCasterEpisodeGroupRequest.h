@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT AddCasterEpisodeGroupRequest : public RpcServiceRequest
 			{
+			public:
 				struct Item
 				{
 					std::string itemName;

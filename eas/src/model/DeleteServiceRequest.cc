@@ -22,7 +22,7 @@ DeleteServiceRequest::DeleteServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteServiceRequest::~DeleteServiceRequest()

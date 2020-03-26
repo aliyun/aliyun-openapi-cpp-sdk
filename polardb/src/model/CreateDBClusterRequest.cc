@@ -115,6 +115,17 @@ void CreateDBClusterRequest::setEngine(const std::string& engine)
 	setParameter("Engine", engine);
 }
 
+std::string CreateDBClusterRequest::getGDNId()const
+{
+	return gDNId_;
+}
+
+void CreateDBClusterRequest::setGDNId(const std::string& gDNId)
+{
+	gDNId_ = gDNId;
+	setParameter("GDNId", gDNId);
+}
+
 std::string CreateDBClusterRequest::getCreationOption()const
 {
 	return creationOption_;
@@ -278,6 +289,17 @@ void CreateDBClusterRequest::setCloneDataPoint(const std::string& cloneDataPoint
 {
 	cloneDataPoint_ = cloneDataPoint;
 	setParameter("CloneDataPoint", cloneDataPoint);
+}
+
+bool CreateDBClusterRequest::getTDEStatus()const
+{
+	return tDEStatus_;
+}
+
+void CreateDBClusterRequest::setTDEStatus(bool tDEStatus)
+{
+	tDEStatus_ = tDEStatus;
+	setParameter("TDEStatus", tDEStatus ? "true" : "false");
 }
 
 std::string CreateDBClusterRequest::getPayType()const

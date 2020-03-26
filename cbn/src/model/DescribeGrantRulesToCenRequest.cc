@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeGrantRulesToCenRequest;
 
 DescribeGrantRulesToCenRequest::DescribeGrantRulesToCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeGrantRulesToCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGrantRulesToCenRequest::~DescribeGrantRulesToCenRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeGrantRulesToCenRequest::getResourceOwnerId()const
 void DescribeGrantRulesToCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeGrantRulesToCenRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeGrantRulesToCenRequest::getCenId()const
 void DescribeGrantRulesToCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DescribeGrantRulesToCenRequest::getProductType()const
@@ -55,7 +57,7 @@ std::string DescribeGrantRulesToCenRequest::getProductType()const
 void DescribeGrantRulesToCenRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string DescribeGrantRulesToCenRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeGrantRulesToCenRequest::getRegionId()const
 void DescribeGrantRulesToCenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount()const
 void DescribeGrantRulesToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGrantRulesToCenRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeGrantRulesToCenRequest::getOwnerAccount()const
 void DescribeGrantRulesToCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeGrantRulesToCenRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DescribeGrantRulesToCenRequest::getOwnerId()const
 void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

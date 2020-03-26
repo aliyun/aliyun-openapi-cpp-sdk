@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SetFaceCoverRequest;
 
 SetFaceCoverRequest::SetFaceCoverRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SetFaceCover")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetFaceCoverRequest::~SetFaceCoverRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetFaceCoverRequest::getLibraryId()const
 void SetFaceCoverRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long SetFaceCoverRequest::getPhotoId()const
@@ -44,7 +46,7 @@ long SetFaceCoverRequest::getPhotoId()const
 void SetFaceCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string SetFaceCoverRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string SetFaceCoverRequest::getStoreName()const
 void SetFaceCoverRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long SetFaceCoverRequest::getFaceId()const
@@ -66,6 +68,6 @@ long SetFaceCoverRequest::getFaceId()const
 void SetFaceCoverRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setParameter("FaceId", std::to_string(faceId));
 }
 

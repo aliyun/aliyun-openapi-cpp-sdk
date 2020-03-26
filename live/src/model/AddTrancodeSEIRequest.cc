@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddTrancodeSEIRequest;
 
 AddTrancodeSEIRequest::AddTrancodeSEIRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddTrancodeSEI")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTrancodeSEIRequest::~AddTrancodeSEIRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddTrancodeSEIRequest::getPattern()const
 void AddTrancodeSEIRequest::setPattern(const std::string& pattern)
 {
 	pattern_ = pattern;
-	setCoreParameter("Pattern", pattern);
+	setParameter("Pattern", pattern);
 }
 
 std::string AddTrancodeSEIRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string AddTrancodeSEIRequest::getAppName()const
 void AddTrancodeSEIRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 int AddTrancodeSEIRequest::getRepeat()const
@@ -55,7 +57,7 @@ int AddTrancodeSEIRequest::getRepeat()const
 void AddTrancodeSEIRequest::setRepeat(int repeat)
 {
 	repeat_ = repeat;
-	setCoreParameter("Repeat", std::to_string(repeat));
+	setParameter("Repeat", std::to_string(repeat));
 }
 
 std::string AddTrancodeSEIRequest::getText()const
@@ -66,7 +68,7 @@ std::string AddTrancodeSEIRequest::getText()const
 void AddTrancodeSEIRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setParameter("Text", text);
 }
 
 std::string AddTrancodeSEIRequest::getStreamName()const
@@ -77,7 +79,7 @@ std::string AddTrancodeSEIRequest::getStreamName()const
 void AddTrancodeSEIRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string AddTrancodeSEIRequest::getDomainName()const
@@ -88,7 +90,7 @@ std::string AddTrancodeSEIRequest::getDomainName()const
 void AddTrancodeSEIRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddTrancodeSEIRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long AddTrancodeSEIRequest::getOwnerId()const
 void AddTrancodeSEIRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddTrancodeSEIRequest::getDelay()const
@@ -110,6 +112,6 @@ int AddTrancodeSEIRequest::getDelay()const
 void AddTrancodeSEIRequest::setDelay(int delay)
 {
 	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
+	setParameter("Delay", std::to_string(delay));
 }
 

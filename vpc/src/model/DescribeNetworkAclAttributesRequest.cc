@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeNetworkAclAttributesRequest;
 
 DescribeNetworkAclAttributesRequest::DescribeNetworkAclAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeNetworkAclAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNetworkAclAttributesRequest::~DescribeNetworkAclAttributesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeNetworkAclAttributesRequest::getResourceOwnerId()const
 void DescribeNetworkAclAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNetworkAclAttributesRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DescribeNetworkAclAttributesRequest::getClientToken()const
 void DescribeNetworkAclAttributesRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeNetworkAclAttributesRequest::getRegionId()const
 void DescribeNetworkAclAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getNetworkAclId()const
@@ -66,7 +68,7 @@ std::string DescribeNetworkAclAttributesRequest::getNetworkAclId()const
 void DescribeNetworkAclAttributesRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", networkAclId);
+	setParameter("NetworkAclId", networkAclId);
 }
 
 std::string DescribeNetworkAclAttributesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeNetworkAclAttributesRequest::getResourceOwnerAccount()const
 void DescribeNetworkAclAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeNetworkAclAttributesRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeNetworkAclAttributesRequest::getOwnerId()const
 void DescribeNetworkAclAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

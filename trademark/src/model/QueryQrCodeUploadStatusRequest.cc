@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryQrCodeUploadStatusRequest;
 
 QueryQrCodeUploadStatusRequest::QueryQrCodeUploadStatusRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryQrCodeUploadStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryQrCodeUploadStatusRequest::~QueryQrCodeUploadStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryQrCodeUploadStatusRequest::getOssKey()const
 void QueryQrCodeUploadStatusRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setParameter("OssKey", ossKey);
 }
 
 std::string QueryQrCodeUploadStatusRequest::getFieldKey()const
@@ -44,7 +46,7 @@ std::string QueryQrCodeUploadStatusRequest::getFieldKey()const
 void QueryQrCodeUploadStatusRequest::setFieldKey(const std::string& fieldKey)
 {
 	fieldKey_ = fieldKey;
-	setCoreParameter("FieldKey", fieldKey);
+	setParameter("FieldKey", fieldKey);
 }
 
 std::string QueryQrCodeUploadStatusRequest::getUuid()const
@@ -55,6 +57,6 @@ std::string QueryQrCodeUploadStatusRequest::getUuid()const
 void QueryQrCodeUploadStatusRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 

@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getMessage()const;
 				std::vector<Target> getTargets()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 				std::string message_;
 				std::vector<Target> targets_;
 				std::string code_;
+				bool success_;
 
 			};
 		}

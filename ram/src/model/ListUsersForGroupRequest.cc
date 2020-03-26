@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListUsersForGroupRequest;
 
 ListUsersForGroupRequest::ListUsersForGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListUsersForGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUsersForGroupRequest::~ListUsersForGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListUsersForGroupRequest::getGroupName()const
 void ListUsersForGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string ListUsersForGroupRequest::getMarker()const
@@ -44,7 +46,7 @@ std::string ListUsersForGroupRequest::getMarker()const
 void ListUsersForGroupRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 int ListUsersForGroupRequest::getMaxItems()const
@@ -55,6 +57,6 @@ int ListUsersForGroupRequest::getMaxItems()const
 void ListUsersForGroupRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setParameter("MaxItems", std::to_string(maxItems));
 }
 

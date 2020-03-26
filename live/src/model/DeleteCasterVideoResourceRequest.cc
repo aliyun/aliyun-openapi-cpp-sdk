@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterVideoResourceRequest;
 
 DeleteCasterVideoResourceRequest::DeleteCasterVideoResourceRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterVideoResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterVideoResourceRequest::~DeleteCasterVideoResourceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterVideoResourceRequest::getResourceId()const
 void DeleteCasterVideoResourceRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string DeleteCasterVideoResourceRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DeleteCasterVideoResourceRequest::getCasterId()const
 void DeleteCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterVideoResourceRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DeleteCasterVideoResourceRequest::getOwnerId()const
 void DeleteCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

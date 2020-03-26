@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListEmrAvailableConfigRequest;
 
 ListEmrAvailableConfigRequest::ListEmrAvailableConfigRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListEmrAvailableConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEmrAvailableConfigRequest::~ListEmrAvailableConfigRequest()
 {}
@@ -33,7 +35,7 @@ long ListEmrAvailableConfigRequest::getResourceOwnerId()const
 void ListEmrAvailableConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListEmrAvailableConfigRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListEmrAvailableConfigRequest::getAccessKeyId()const
 void ListEmrAvailableConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListEmrAvailableConfigRequest::getRegionId()const
@@ -55,6 +57,6 @@ std::string ListEmrAvailableConfigRequest::getRegionId()const
 void ListEmrAvailableConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

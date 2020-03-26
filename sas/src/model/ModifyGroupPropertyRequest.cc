@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyGroupPropertyRequest;
 
 ModifyGroupPropertyRequest::ModifyGroupPropertyRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyGroupProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyGroupPropertyRequest::~ModifyGroupPropertyRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyGroupPropertyRequest::getData()const
 void ModifyGroupPropertyRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string ModifyGroupPropertyRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string ModifyGroupPropertyRequest::getSourceIp()const
 void ModifyGroupPropertyRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

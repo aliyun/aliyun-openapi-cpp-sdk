@@ -35,7 +35,7 @@ std::string DeleteGroupMonitoringAgentProcessRequest::getGroupId()const
 void DeleteGroupMonitoringAgentProcessRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteGroupMonitoringAgentProcessRequest::getId()const
@@ -46,6 +46,6 @@ std::string DeleteGroupMonitoringAgentProcessRequest::getId()const
 void DeleteGroupMonitoringAgentProcessRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

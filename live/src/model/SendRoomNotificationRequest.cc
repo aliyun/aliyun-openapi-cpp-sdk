@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SendRoomNotificationRequest;
 
 SendRoomNotificationRequest::SendRoomNotificationRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SendRoomNotification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendRoomNotificationRequest::~SendRoomNotificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendRoomNotificationRequest::getData()const
 void SendRoomNotificationRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string SendRoomNotificationRequest::getAppUid()const
@@ -44,7 +46,7 @@ std::string SendRoomNotificationRequest::getAppUid()const
 void SendRoomNotificationRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setParameter("AppUid", appUid);
 }
 
 long SendRoomNotificationRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long SendRoomNotificationRequest::getOwnerId()const
 void SendRoomNotificationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SendRoomNotificationRequest::getPriority()const
@@ -66,7 +68,7 @@ int SendRoomNotificationRequest::getPriority()const
 void SendRoomNotificationRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string SendRoomNotificationRequest::getRoomId()const
@@ -77,7 +79,7 @@ std::string SendRoomNotificationRequest::getRoomId()const
 void SendRoomNotificationRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string SendRoomNotificationRequest::getAppId()const
@@ -88,6 +90,6 @@ std::string SendRoomNotificationRequest::getAppId()const
 void SendRoomNotificationRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

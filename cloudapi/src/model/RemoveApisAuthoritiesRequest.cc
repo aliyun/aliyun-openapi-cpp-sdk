@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveApisAuthoritiesRequest;
 
 RemoveApisAuthoritiesRequest::RemoveApisAuthoritiesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveApisAuthorities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveApisAuthoritiesRequest::~RemoveApisAuthoritiesRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveApisAuthoritiesRequest::getStageName()const
 void RemoveApisAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string RemoveApisAuthoritiesRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string RemoveApisAuthoritiesRequest::getGroupId()const
 void RemoveApisAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string RemoveApisAuthoritiesRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string RemoveApisAuthoritiesRequest::getDescription()const
 void RemoveApisAuthoritiesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string RemoveApisAuthoritiesRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string RemoveApisAuthoritiesRequest::getAccessKeyId()const
 void RemoveApisAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveApisAuthoritiesRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string RemoveApisAuthoritiesRequest::getSecurityToken()const
 void RemoveApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long RemoveApisAuthoritiesRequest::getAppId()const
@@ -88,7 +90,7 @@ long RemoveApisAuthoritiesRequest::getAppId()const
 void RemoveApisAuthoritiesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 std::string RemoveApisAuthoritiesRequest::getApiIds()const
@@ -99,6 +101,6 @@ std::string RemoveApisAuthoritiesRequest::getApiIds()const
 void RemoveApisAuthoritiesRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

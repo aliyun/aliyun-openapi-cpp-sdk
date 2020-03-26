@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRegionsRequest::getResourceOwnerId()const
 void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRegionsRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeRegionsRequest::getOwnerAccount()const
 void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRegionsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeRegionsRequest::getOwnerId()const
 void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -77,6 +79,6 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 

@@ -52,6 +52,10 @@ void QueryEdgeInstanceDriverResult::parse(const std::string &payload)
 		Data::Driver driverObject;
 		if(!dataNodeDriverListDriver["DriverId"].isNull())
 			driverObject.driverId = dataNodeDriverListDriver["DriverId"].asString();
+		if(!dataNodeDriverListDriver["DriverVersion"].isNull())
+			driverObject.driverVersion = dataNodeDriverListDriver["DriverVersion"].asString();
+		if(!dataNodeDriverListDriver["OrderId"].isNull())
+			driverObject.orderId = dataNodeDriverListDriver["OrderId"].asString();
 		if(!dataNodeDriverListDriver["GmtCreate"].isNull())
 			driverObject.gmtCreate = dataNodeDriverListDriver["GmtCreate"].asString();
 		if(!dataNodeDriverListDriver["GmtModified"].isNull())

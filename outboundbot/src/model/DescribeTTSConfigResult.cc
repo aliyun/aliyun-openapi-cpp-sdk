@@ -42,24 +42,24 @@ void DescribeTTSConfigResult::parse(const std::string &payload)
 	auto tTSConfigNode = value["TTSConfig"];
 	if(!tTSConfigNode["Id"].isNull())
 		tTSConfig_.id = tTSConfigNode["Id"].asString();
-	if(!tTSConfigNode["ScriptId"].isNull())
-		tTSConfig_.scriptId = tTSConfigNode["ScriptId"].asString();
 	if(!tTSConfigNode["InstanceId"].isNull())
 		tTSConfig_.instanceId = tTSConfigNode["InstanceId"].asString();
-	if(!tTSConfigNode["Voice"].isNull())
-		tTSConfig_.voice = tTSConfigNode["Voice"].asString();
+	if(!tTSConfigNode["ScriptId"].isNull())
+		tTSConfig_.scriptId = tTSConfigNode["ScriptId"].asString();
 	if(!tTSConfigNode["SpeechRate"].isNull())
 		tTSConfig_.speechRate = tTSConfigNode["SpeechRate"].asString();
+	if(!tTSConfigNode["Voice"].isNull())
+		tTSConfig_.voice = tTSConfigNode["Voice"].asString();
 	if(!tTSConfigNode["Volume"].isNull())
 		tTSConfig_.volume = tTSConfigNode["Volume"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

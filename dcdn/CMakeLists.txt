@@ -39,6 +39,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DeleteDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnIpaDomainResult.h
+	include/alibabacloud/dcdn/model/DeleteDcdnIpaSpecificConfigRequest.h
+	include/alibabacloud/dcdn/model/DeleteDcdnIpaSpecificConfigResult.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificConfigRequest.h
 	include/alibabacloud/dcdn/model/DeleteDcdnSpecificConfigResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateDetailRequest.h
@@ -47,6 +49,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnCertificateListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainBpsDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainBpsDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainByCertificateRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnDomainByCertificateResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainCertificateInfoRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainCertificateInfoResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainCnameRequest.h
@@ -107,6 +111,8 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnDomainWebsocketTrafficDataResult.h
+	include/alibabacloud/dcdn/model/DescribeDcdnHttpsDomainListRequest.h
+	include/alibabacloud/dcdn/model/DescribeDcdnHttpsDomainListResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaDomainConfigsRequest.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaDomainConfigsResult.h
 	include/alibabacloud/dcdn/model/DescribeDcdnIpaDomainDetailRequest.h
@@ -174,6 +180,8 @@ set(dcdn_src
 	src/model/DeleteDcdnDomainResult.cc
 	src/model/DeleteDcdnIpaDomainRequest.cc
 	src/model/DeleteDcdnIpaDomainResult.cc
+	src/model/DeleteDcdnIpaSpecificConfigRequest.cc
+	src/model/DeleteDcdnIpaSpecificConfigResult.cc
 	src/model/DeleteDcdnSpecificConfigRequest.cc
 	src/model/DeleteDcdnSpecificConfigResult.cc
 	src/model/DescribeDcdnCertificateDetailRequest.cc
@@ -182,6 +190,8 @@ set(dcdn_src
 	src/model/DescribeDcdnCertificateListResult.cc
 	src/model/DescribeDcdnDomainBpsDataRequest.cc
 	src/model/DescribeDcdnDomainBpsDataResult.cc
+	src/model/DescribeDcdnDomainByCertificateRequest.cc
+	src/model/DescribeDcdnDomainByCertificateResult.cc
 	src/model/DescribeDcdnDomainCertificateInfoRequest.cc
 	src/model/DescribeDcdnDomainCertificateInfoResult.cc
 	src/model/DescribeDcdnDomainCnameRequest.cc
@@ -242,6 +252,8 @@ set(dcdn_src
 	src/model/DescribeDcdnDomainWebsocketHttpCodeDataResult.cc
 	src/model/DescribeDcdnDomainWebsocketTrafficDataRequest.cc
 	src/model/DescribeDcdnDomainWebsocketTrafficDataResult.cc
+	src/model/DescribeDcdnHttpsDomainListRequest.cc
+	src/model/DescribeDcdnHttpsDomainListResult.cc
 	src/model/DescribeDcdnIpaDomainConfigsRequest.cc
 	src/model/DescribeDcdnIpaDomainConfigsResult.cc
 	src/model/DescribeDcdnIpaDomainDetailRequest.cc

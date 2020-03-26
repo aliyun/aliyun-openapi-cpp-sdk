@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ForbidPushStreamRequest;
 
 ForbidPushStreamRequest::ForbidPushStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ForbidPushStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ForbidPushStreamRequest::~ForbidPushStreamRequest()
 {}
@@ -33,7 +35,7 @@ std::string ForbidPushStreamRequest::getUserData()const
 void ForbidPushStreamRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string ForbidPushStreamRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string ForbidPushStreamRequest::getEndTime()const
 void ForbidPushStreamRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long ForbidPushStreamRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ForbidPushStreamRequest::getOwnerId()const
 void ForbidPushStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ForbidPushStreamRequest::getRoomId()const
@@ -66,7 +68,7 @@ std::string ForbidPushStreamRequest::getRoomId()const
 void ForbidPushStreamRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string ForbidPushStreamRequest::getAppId()const
@@ -77,6 +79,6 @@ std::string ForbidPushStreamRequest::getAppId()const
 void ForbidPushStreamRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

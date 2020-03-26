@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateKeywordRequest;
 
 CreateKeywordRequest::CreateKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeywordRequest::~CreateKeywordRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateKeywordRequest::getKeywords()const
 void CreateKeywordRequest::setKeywords(const std::string& keywords)
 {
 	keywords_ = keywords;
-	setCoreParameter("Keywords", keywords);
+	setParameter("Keywords", keywords);
 }
 
 int CreateKeywordRequest::getKeywordLibId()const
@@ -44,7 +46,7 @@ int CreateKeywordRequest::getKeywordLibId()const
 void CreateKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setParameter("KeywordLibId", std::to_string(keywordLibId));
 }
 
 std::string CreateKeywordRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateKeywordRequest::getSourceIp()const
 void CreateKeywordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateKeywordRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CreateKeywordRequest::getLang()const
 void CreateKeywordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

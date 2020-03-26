@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListPornPipelineRequest;
 
 ListPornPipelineRequest::ListPornPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListPornPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPornPipelineRequest::~ListPornPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long ListPornPipelineRequest::getResourceOwnerId()const
 void ListPornPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListPornPipelineRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long ListPornPipelineRequest::getPageNumber()const
 void ListPornPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListPornPipelineRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListPornPipelineRequest::getAccessKeyId()const
 void ListPornPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListPornPipelineRequest::getPageSize()const
@@ -66,7 +68,7 @@ long ListPornPipelineRequest::getPageSize()const
 void ListPornPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListPornPipelineRequest::getState()const
@@ -77,7 +79,7 @@ std::string ListPornPipelineRequest::getState()const
 void ListPornPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListPornPipelineRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ListPornPipelineRequest::getResourceOwnerAccount()const
 void ListPornPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListPornPipelineRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ListPornPipelineRequest::getOwnerAccount()const
 void ListPornPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListPornPipelineRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ListPornPipelineRequest::getOwnerId()const
 void ListPornPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

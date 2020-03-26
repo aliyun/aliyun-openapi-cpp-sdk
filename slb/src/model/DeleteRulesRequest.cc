@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteRulesRequest;
 
 DeleteRulesRequest::DeleteRulesRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRulesRequest::~DeleteRulesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteRulesRequest::getAccess_key_id()const
 void DeleteRulesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DeleteRulesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DeleteRulesRequest::getResourceOwnerId()const
 void DeleteRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteRulesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteRulesRequest::getRegionId()const
 void DeleteRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteRulesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteRulesRequest::getResourceOwnerAccount()const
 void DeleteRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteRulesRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteRulesRequest::getOwnerAccount()const
 void DeleteRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteRulesRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteRulesRequest::getOwnerId()const
 void DeleteRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteRulesRequest::getTags()const
@@ -99,7 +101,7 @@ std::string DeleteRulesRequest::getTags()const
 void DeleteRulesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DeleteRulesRequest::getRuleIds()const
@@ -110,6 +112,6 @@ std::string DeleteRulesRequest::getRuleIds()const
 void DeleteRulesRequest::setRuleIds(const std::string& ruleIds)
 {
 	ruleIds_ = ruleIds;
-	setCoreParameter("RuleIds", ruleIds);
+	setParameter("RuleIds", ruleIds);
 }
 

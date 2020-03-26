@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListProjectBindQueueRequest;
 
 ListProjectBindQueueRequest::ListProjectBindQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/queues");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListProjectBindQueueRequest::~ListProjectBindQueueRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListProjectBindQueueRequest::getQueueName()const
 void ListProjectBindQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string ListProjectBindQueueRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string ListProjectBindQueueRequest::getProjectName()const
 void ListProjectBindQueueRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string ListProjectBindQueueRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string ListProjectBindQueueRequest::getRegionId()const
 void ListProjectBindQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ListProjectBindQueueRequest::getClusterId()const
@@ -66,6 +69,6 @@ std::string ListProjectBindQueueRequest::getClusterId()const
 void ListProjectBindQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

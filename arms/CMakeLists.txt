@@ -27,10 +27,22 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
+	include/alibabacloud/arms/model/DeleteAlertContactRequest.h
+	include/alibabacloud/arms/model/DeleteAlertContactResult.h
+	include/alibabacloud/arms/model/DeleteAlertContactGroupRequest.h
+	include/alibabacloud/arms/model/DeleteAlertContactGroupResult.h
+	include/alibabacloud/arms/model/DeleteAlertRulesRequest.h
+	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
+	include/alibabacloud/arms/model/GetRetcodeShareUrlRequest.h
+	include/alibabacloud/arms/model/GetRetcodeShareUrlResult.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesRequest.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesResult.h
+	include/alibabacloud/arms/model/ImportCustomAlertRulesRequest.h
+	include/alibabacloud/arms/model/ImportCustomAlertRulesResult.h
+	include/alibabacloud/arms/model/ListPromClustersRequest.h
+	include/alibabacloud/arms/model/ListPromClustersResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
@@ -43,12 +55,30 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/SearchAlertContactResult.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupResult.h
+	include/alibabacloud/arms/model/SearchAlertHistoriesRequest.h
+	include/alibabacloud/arms/model/SearchAlertHistoriesResult.h
+	include/alibabacloud/arms/model/SearchAlertRulesRequest.h
+	include/alibabacloud/arms/model/SearchAlertRulesResult.h
+	include/alibabacloud/arms/model/SearchEventsRequest.h
+	include/alibabacloud/arms/model/SearchEventsResult.h
 	include/alibabacloud/arms/model/SearchRetcodeAppByPageRequest.h
 	include/alibabacloud/arms/model/SearchRetcodeAppByPageResult.h
 	include/alibabacloud/arms/model/SearchTraceAppByNameRequest.h
 	include/alibabacloud/arms/model/SearchTraceAppByNameResult.h
 	include/alibabacloud/arms/model/SearchTraceAppByPageRequest.h
-	include/alibabacloud/arms/model/SearchTraceAppByPageResult.h )
+	include/alibabacloud/arms/model/SearchTraceAppByPageResult.h
+	include/alibabacloud/arms/model/SetRetcodeShareStatusRequest.h
+	include/alibabacloud/arms/model/SetRetcodeShareStatusResult.h
+	include/alibabacloud/arms/model/StartAlertRequest.h
+	include/alibabacloud/arms/model/StartAlertResult.h
+	include/alibabacloud/arms/model/StopAlertRequest.h
+	include/alibabacloud/arms/model/StopAlertResult.h
+	include/alibabacloud/arms/model/UpdateAlertContactRequest.h
+	include/alibabacloud/arms/model/UpdateAlertContactResult.h
+	include/alibabacloud/arms/model/UpdateAlertContactGroupRequest.h
+	include/alibabacloud/arms/model/UpdateAlertContactGroupResult.h
+	include/alibabacloud/arms/model/UpdateAlertRuleRequest.h
+	include/alibabacloud/arms/model/UpdateAlertRuleResult.h )
 
 set(arms_src 
 	src/ARMSClient.cc
@@ -58,10 +88,22 @@ set(arms_src
 	src/model/CreateAlertContactGroupResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
+	src/model/DeleteAlertContactRequest.cc
+	src/model/DeleteAlertContactResult.cc
+	src/model/DeleteAlertContactGroupRequest.cc
+	src/model/DeleteAlertContactGroupResult.cc
+	src/model/DeleteAlertRulesRequest.cc
+	src/model/DeleteAlertRulesResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
+	src/model/GetRetcodeShareUrlRequest.cc
+	src/model/GetRetcodeShareUrlResult.cc
 	src/model/ImportAppAlertRulesRequest.cc
 	src/model/ImportAppAlertRulesResult.cc
+	src/model/ImportCustomAlertRulesRequest.cc
+	src/model/ImportCustomAlertRulesResult.cc
+	src/model/ListPromClustersRequest.cc
+	src/model/ListPromClustersResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
 	src/model/ListTraceAppsRequest.cc
@@ -74,12 +116,30 @@ set(arms_src
 	src/model/SearchAlertContactResult.cc
 	src/model/SearchAlertContactGroupRequest.cc
 	src/model/SearchAlertContactGroupResult.cc
+	src/model/SearchAlertHistoriesRequest.cc
+	src/model/SearchAlertHistoriesResult.cc
+	src/model/SearchAlertRulesRequest.cc
+	src/model/SearchAlertRulesResult.cc
+	src/model/SearchEventsRequest.cc
+	src/model/SearchEventsResult.cc
 	src/model/SearchRetcodeAppByPageRequest.cc
 	src/model/SearchRetcodeAppByPageResult.cc
 	src/model/SearchTraceAppByNameRequest.cc
 	src/model/SearchTraceAppByNameResult.cc
 	src/model/SearchTraceAppByPageRequest.cc
-	src/model/SearchTraceAppByPageResult.cc )
+	src/model/SearchTraceAppByPageResult.cc
+	src/model/SetRetcodeShareStatusRequest.cc
+	src/model/SetRetcodeShareStatusResult.cc
+	src/model/StartAlertRequest.cc
+	src/model/StartAlertResult.cc
+	src/model/StopAlertRequest.cc
+	src/model/StopAlertResult.cc
+	src/model/UpdateAlertContactRequest.cc
+	src/model/UpdateAlertContactResult.cc
+	src/model/UpdateAlertContactGroupRequest.cc
+	src/model/UpdateAlertContactGroupResult.cc
+	src/model/UpdateAlertRuleRequest.cc
+	src/model/UpdateAlertRuleResult.cc )
 
 add_library(arms ${LIB_TYPE}
 	${arms_public_header}

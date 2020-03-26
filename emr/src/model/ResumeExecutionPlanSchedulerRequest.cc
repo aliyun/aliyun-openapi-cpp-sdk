@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResumeExecutionPlanSchedulerRequest;
 
 ResumeExecutionPlanSchedulerRequest::ResumeExecutionPlanSchedulerRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ResumeExecutionPlanScheduler")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeExecutionPlanSchedulerRequest::~ResumeExecutionPlanSchedulerRequest()
 {}
@@ -33,7 +35,7 @@ long ResumeExecutionPlanSchedulerRequest::getResourceOwnerId()const
 void ResumeExecutionPlanSchedulerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ResumeExecutionPlanSchedulerRequest::getAccessKeyId()const
 void ResumeExecutionPlanSchedulerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ResumeExecutionPlanSchedulerRequest::getRegionId()const
 void ResumeExecutionPlanSchedulerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ResumeExecutionPlanSchedulerRequest::getId()const
@@ -66,6 +68,6 @@ std::string ResumeExecutionPlanSchedulerRequest::getId()const
 void ResumeExecutionPlanSchedulerRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

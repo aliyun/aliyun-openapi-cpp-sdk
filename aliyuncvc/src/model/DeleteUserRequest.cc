@@ -35,7 +35,7 @@ int DeleteUserRequest::getCount()const
 void DeleteUserRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setBodyParameter("Count", std::to_string(count));
 }
 
 std::string DeleteUserRequest::getUserInfo()const
@@ -46,6 +46,6 @@ std::string DeleteUserRequest::getUserInfo()const
 void DeleteUserRequest::setUserInfo(const std::string& userInfo)
 {
 	userInfo_ = userInfo;
-	setCoreParameter("UserInfo", userInfo);
+	setBodyParameter("UserInfo", userInfo);
 }
 

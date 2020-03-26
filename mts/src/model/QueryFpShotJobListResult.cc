@@ -51,6 +51,10 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			fpShotJobListObject.pipelineId = valueFpShotJobListFpShotJob["PipelineId"].asString();
 		if(!valueFpShotJobListFpShotJob["FileId"].isNull())
 			fpShotJobListObject.fileId = valueFpShotJobListFpShotJob["FileId"].asString();
+		if(!valueFpShotJobListFpShotJob["TransactionId"].isNull())
+			fpShotJobListObject.transactionId = valueFpShotJobListFpShotJob["TransactionId"].asString();
+		if(!valueFpShotJobListFpShotJob["TxHash"].isNull())
+			fpShotJobListObject.txHash = valueFpShotJobListFpShotJob["TxHash"].asString();
 		if(!valueFpShotJobListFpShotJob["State"].isNull())
 			fpShotJobListObject.state = valueFpShotJobListFpShotJob["State"].asString();
 		if(!valueFpShotJobListFpShotJob["Code"].isNull())
@@ -73,6 +77,10 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			fpShotJobListObject.fpShotConfig.primaryKey = fpShotConfigNode["PrimaryKey"].asString();
 		if(!fpShotConfigNode["SaveType"].isNull())
 			fpShotJobListObject.fpShotConfig.saveType = fpShotConfigNode["SaveType"].asString();
+		if(!fpShotConfigNode["Notary"].isNull())
+			fpShotJobListObject.fpShotConfig.notary = fpShotConfigNode["Notary"].asString();
+		if(!fpShotConfigNode["FpDBId"].isNull())
+			fpShotJobListObject.fpShotConfig.fpDBId = fpShotConfigNode["FpDBId"].asString();
 		auto fpShotResultNode = value["FpShotResult"];
 		auto allFpShotsNode = fpShotResultNode["FpShots"]["FpShot"];
 		for (auto fpShotResultNodeFpShotsFpShot : allFpShotsNode)
@@ -86,6 +94,8 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			for (auto allFpShotsNodeFpShotSlicesFpShotSlice : allFpShotSlicesNode)
 			{
 				FpShotJob::FpShotResult::FpShot::FpShotSlice fpShotSlicesObject;
+				if(!allFpShotsNodeFpShotSlicesFpShotSlice["Similarity"].isNull())
+					fpShotSlicesObject.similarity = allFpShotsNodeFpShotSlicesFpShotSlice["Similarity"].asString();
 				auto inputNode = value["Input"];
 				if(!inputNode["Start"].isNull())
 					fpShotSlicesObject.input.start = inputNode["Start"].asString();
@@ -112,6 +122,8 @@ void QueryFpShotJobListResult::parse(const std::string &payload)
 			for (auto allAudioFpShotsNodeFpShotSlicesFpShotSlice : allFpShotSlicesNode)
 			{
 				FpShotJob::FpShotResult::FpShot::FpShotSlice fpShotSlicesObject;
+				if(!allAudioFpShotsNodeFpShotSlicesFpShotSlice["Similarity"].isNull())
+					fpShotSlicesObject.similarity = allAudioFpShotsNodeFpShotSlicesFpShotSlice["Similarity"].asString();
 				auto inputNode = value["Input"];
 				if(!inputNode["Start"].isNull())
 					fpShotSlicesObject.input.start = inputNode["Start"].asString();

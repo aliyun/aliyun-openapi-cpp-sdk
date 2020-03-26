@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyACLRequest;
 
 ModifyACLRequest::ModifyACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyACLRequest::~ModifyACLRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyACLRequest::getResourceOwnerId()const
 void ModifyACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyACLRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ModifyACLRequest::getRegionId()const
 void ModifyACLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyACLRequest::getAclId()const
@@ -55,7 +57,7 @@ std::string ModifyACLRequest::getAclId()const
 void ModifyACLRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string ModifyACLRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ModifyACLRequest::getResourceOwnerAccount()const
 void ModifyACLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyACLRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyACLRequest::getOwnerAccount()const
 void ModifyACLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyACLRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long ModifyACLRequest::getOwnerId()const
 void ModifyACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyACLRequest::getName()const
@@ -99,6 +101,6 @@ std::string ModifyACLRequest::getName()const
 void ModifyACLRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -35,23 +35,26 @@ namespace AlibabaCloud
 				BatchBindDeviceToEdgeInstanceWithDriverRequest();
 				~BatchBindDeviceToEdgeInstanceWithDriverRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getDriverId()const;
 				void setDriverId(const std::string& driverId);
 				std::vector<std::string> getIotIds()const;
 				void setIotIds(const std::vector<std::string>& iotIds);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string accessKeyId_;
-				std::string instanceId_;
 				std::string driverId_;
 				std::vector<std::string> iotIds_;
 				std::string iotInstanceId_;
+				std::string instanceId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

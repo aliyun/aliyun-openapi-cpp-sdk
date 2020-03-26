@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::HostGetsRequest;
 
 HostGetsRequest::HostGetsRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "HostGets")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 HostGetsRequest::~HostGetsRequest()
 {}
@@ -33,7 +35,7 @@ std::string HostGetsRequest::getQuery()const
 void HostGetsRequest::setQuery(const std::string& query)
 {
 	query_ = query;
-	setCoreParameter("Query", query);
+	setParameter("Query", query);
 }
 
 int HostGetsRequest::getEndTime()const
@@ -44,7 +46,7 @@ int HostGetsRequest::getEndTime()const
 void HostGetsRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int HostGetsRequest::getStartTime()const
@@ -55,7 +57,7 @@ int HostGetsRequest::getStartTime()const
 void HostGetsRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string HostGetsRequest::getQueryType()const
@@ -66,6 +68,6 @@ std::string HostGetsRequest::getQueryType()const
 void HostGetsRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 

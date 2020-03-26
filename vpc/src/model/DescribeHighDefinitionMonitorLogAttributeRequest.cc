@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeHighDefinitionMonitorLogAttributeRequest
 
 DescribeHighDefinitionMonitorLogAttributeRequest::DescribeHighDefinitionMonitorLogAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeHighDefinitionMonitorLogAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHighDefinitionMonitorLogAttributeRequest::~DescribeHighDefinitionMonitorLogAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeHighDefinitionMonitorLogAttributeRequest::getResourceOwnerId()const
 void DescribeHighDefinitionMonitorLogAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeHighDefinitionMonitorLogAttributeRequest::getRegionId()const
 void DescribeHighDefinitionMonitorLogAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeRequest::getInstanceType()const
@@ -55,7 +57,7 @@ std::string DescribeHighDefinitionMonitorLogAttributeRequest::getInstanceType()c
 void DescribeHighDefinitionMonitorLogAttributeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeHighDefinitionMonitorLogAttributeRequest::getResourceOwnerAc
 void DescribeHighDefinitionMonitorLogAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeHighDefinitionMonitorLogAttributeRequest::getOwnerAccount()c
 void DescribeHighDefinitionMonitorLogAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeHighDefinitionMonitorLogAttributeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeHighDefinitionMonitorLogAttributeRequest::getOwnerId()const
 void DescribeHighDefinitionMonitorLogAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeRequest::getInstanceId()const
@@ -99,6 +101,6 @@ std::string DescribeHighDefinitionMonitorLogAttributeRequest::getInstanceId()con
 void DescribeHighDefinitionMonitorLogAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

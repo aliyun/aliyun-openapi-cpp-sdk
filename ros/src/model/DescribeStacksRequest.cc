@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeStacksRequest;
 
 DescribeStacksRequest::DescribeStacksRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeStacksRequest::~DescribeStacksRequest()
 {}
@@ -33,7 +36,7 @@ std::string DescribeStacksRequest::getStackId()const
 void DescribeStacksRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DescribeStacksRequest::getName()const
@@ -44,7 +47,7 @@ std::string DescribeStacksRequest::getName()const
 void DescribeStacksRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int DescribeStacksRequest::getPageSize()const
@@ -55,7 +58,7 @@ int DescribeStacksRequest::getPageSize()const
 void DescribeStacksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeStacksRequest::getPageNumber()const
@@ -66,7 +69,7 @@ int DescribeStacksRequest::getPageNumber()const
 void DescribeStacksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeStacksRequest::getStatus()const
@@ -77,6 +80,6 @@ std::string DescribeStacksRequest::getStatus()const
 void DescribeStacksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLivePullStreamInfoConfigRequest;
 
 DeleteLivePullStreamInfoConfigRequest::DeleteLivePullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLivePullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLivePullStreamInfoConfigRequest::~DeleteLivePullStreamInfoConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getAppName()const
 void DeleteLivePullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getSecurityToken()const
 void DeleteLivePullStreamInfoConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
@@ -55,7 +57,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getStreamName()const
 void DeleteLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DeleteLivePullStreamInfoConfigRequest::getDomainName()const
 void DeleteLivePullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLivePullStreamInfoConfigRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long DeleteLivePullStreamInfoConfigRequest::getOwnerId()const
 void DeleteLivePullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

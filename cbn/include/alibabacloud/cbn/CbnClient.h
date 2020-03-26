@@ -92,6 +92,8 @@
 #include "model/DisableCenVbrHealthCheckResult.h"
 #include "model/EnableCenVbrHealthCheckRequest.h"
 #include "model/EnableCenVbrHealthCheckResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ModifyCenAttributeRequest.h"
 #include "model/ModifyCenAttributeResult.h"
 #include "model/ModifyCenBandwidthPackageAttributeRequest.h"
@@ -110,6 +112,8 @@
 #include "model/RoutePrivateZoneInCenToVpcResult.h"
 #include "model/SetCenInterRegionBandwidthLimitRequest.h"
 #include "model/SetCenInterRegionBandwidthLimitResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UnassociateCenBandwidthPackageRequest.h"
 #include "model/UnassociateCenBandwidthPackageResult.h"
 #include "model/UnroutePrivateZoneInCenToVpcRequest.h"
@@ -232,6 +236,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableCenVbrHealthCheckResult> EnableCenVbrHealthCheckOutcome;
 			typedef std::future<EnableCenVbrHealthCheckOutcome> EnableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableCenVbrHealthCheckRequest&, const EnableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVbrHealthCheckAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCenAttributeResult> ModifyCenAttributeOutcome;
 			typedef std::future<ModifyCenAttributeOutcome> ModifyCenAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ModifyCenAttributeRequest&, const ModifyCenAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCenAttributeAsyncHandler;
@@ -259,6 +266,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetCenInterRegionBandwidthLimitResult> SetCenInterRegionBandwidthLimitOutcome;
 			typedef std::future<SetCenInterRegionBandwidthLimitOutcome> SetCenInterRegionBandwidthLimitOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::SetCenInterRegionBandwidthLimitRequest&, const SetCenInterRegionBandwidthLimitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetCenInterRegionBandwidthLimitAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UnassociateCenBandwidthPackageResult> UnassociateCenBandwidthPackageOutcome;
 			typedef std::future<UnassociateCenBandwidthPackageOutcome> UnassociateCenBandwidthPackageOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UnassociateCenBandwidthPackageRequest&, const UnassociateCenBandwidthPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateCenBandwidthPackageAsyncHandler;
@@ -381,6 +391,9 @@ namespace AlibabaCloud
 			EnableCenVbrHealthCheckOutcome enableCenVbrHealthCheck(const Model::EnableCenVbrHealthCheckRequest &request)const;
 			void enableCenVbrHealthCheckAsync(const Model::EnableCenVbrHealthCheckRequest& request, const EnableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableCenVbrHealthCheckOutcomeCallable enableCenVbrHealthCheckCallable(const Model::EnableCenVbrHealthCheckRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ModifyCenAttributeOutcome modifyCenAttribute(const Model::ModifyCenAttributeRequest &request)const;
 			void modifyCenAttributeAsync(const Model::ModifyCenAttributeRequest& request, const ModifyCenAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCenAttributeOutcomeCallable modifyCenAttributeCallable(const Model::ModifyCenAttributeRequest& request) const;
@@ -408,6 +421,9 @@ namespace AlibabaCloud
 			SetCenInterRegionBandwidthLimitOutcome setCenInterRegionBandwidthLimit(const Model::SetCenInterRegionBandwidthLimitRequest &request)const;
 			void setCenInterRegionBandwidthLimitAsync(const Model::SetCenInterRegionBandwidthLimitRequest& request, const SetCenInterRegionBandwidthLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetCenInterRegionBandwidthLimitOutcomeCallable setCenInterRegionBandwidthLimitCallable(const Model::SetCenInterRegionBandwidthLimitRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UnassociateCenBandwidthPackageOutcome unassociateCenBandwidthPackage(const Model::UnassociateCenBandwidthPackageRequest &request)const;
 			void unassociateCenBandwidthPackageAsync(const Model::UnassociateCenBandwidthPackageRequest& request, const UnassociateCenBandwidthPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateCenBandwidthPackageOutcomeCallable unassociateCenBandwidthPackageCallable(const Model::UnassociateCenBandwidthPackageRequest& request) const;

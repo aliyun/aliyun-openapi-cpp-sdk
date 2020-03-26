@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceFinalStateRequest;
 
 GetInstanceFinalStateRequest::GetInstanceFinalStateRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/finalstate");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceFinalStateRequest::~GetInstanceFinalStateRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceFinalStateRequest::getProjectName()const
 void GetInstanceFinalStateRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceFinalStateRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceFinalStateRequest::getInstanceId()const
 void GetInstanceFinalStateRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceFinalStateRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceFinalStateRequest::getRegionId()const
 void GetInstanceFinalStateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceFinalStateRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceFinalStateRequest::getJobName()const
 void GetInstanceFinalStateRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

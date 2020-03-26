@@ -45,10 +45,12 @@ namespace AlibabaCloud
 				std::string getName()const;
 				int getLoaStatus()const;
 				std::string getTown()const;
+				std::vector<std::string> getReviewAdditionalFiles()const;
 				std::string getContactNumber()const;
 				std::string getLegalNoticeUrl()const;
 				std::string getContactAddress()const;
 				int getStatus()const;
+				std::string getReviewApplicationFile()const;
 				std::string getCity()const;
 				std::string getProvince()const;
 				std::string getEAddress()const;
@@ -75,10 +77,12 @@ namespace AlibabaCloud
 				std::string name_;
 				int loaStatus_;
 				std::string town_;
+				std::vector<std::string> reviewAdditionalFiles_;
 				std::string contactNumber_;
 				std::string legalNoticeUrl_;
 				std::string contactAddress_;
 				int status_;
+				std::string reviewApplicationFile_;
 				std::string city_;
 				std::string province_;
 				std::string eAddress_;

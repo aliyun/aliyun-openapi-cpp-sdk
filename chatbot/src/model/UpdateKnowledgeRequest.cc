@@ -35,6 +35,6 @@ std::string UpdateKnowledgeRequest::getKnowledge()const
 void UpdateKnowledgeRequest::setKnowledge(const std::string& knowledge)
 {
 	knowledge_ = knowledge;
-	setCoreParameter("Knowledge", knowledge);
+	setBodyParameter("Knowledge", knowledge);
 }
 

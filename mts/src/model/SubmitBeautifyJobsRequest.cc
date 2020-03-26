@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitBeautifyJobsRequest;
 
 SubmitBeautifyJobsRequest::SubmitBeautifyJobsRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitBeautifyJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitBeautifyJobsRequest::~SubmitBeautifyJobsRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitBeautifyJobsRequest::getResourceOwnerId()const
 void SubmitBeautifyJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitBeautifyJobsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitBeautifyJobsRequest::getAccessKeyId()const
 void SubmitBeautifyJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitBeautifyJobsRequest::getBeautifyConfig()const
@@ -55,7 +57,7 @@ std::string SubmitBeautifyJobsRequest::getBeautifyConfig()const
 void SubmitBeautifyJobsRequest::setBeautifyConfig(const std::string& beautifyConfig)
 {
 	beautifyConfig_ = beautifyConfig;
-	setCoreParameter("BeautifyConfig", beautifyConfig);
+	setParameter("BeautifyConfig", beautifyConfig);
 }
 
 std::string SubmitBeautifyJobsRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitBeautifyJobsRequest::getUserData()const
 void SubmitBeautifyJobsRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitBeautifyJobsRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitBeautifyJobsRequest::getResourceOwnerAccount()const
 void SubmitBeautifyJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitBeautifyJobsRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitBeautifyJobsRequest::getOwnerAccount()const
 void SubmitBeautifyJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitBeautifyJobsRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitBeautifyJobsRequest::getOwnerId()const
 void SubmitBeautifyJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitBeautifyJobsRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitBeautifyJobsRequest::getPipelineId()const
 void SubmitBeautifyJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 bool SubmitBeautifyJobsRequest::getAsync()const
@@ -121,6 +123,6 @@ bool SubmitBeautifyJobsRequest::getAsync()const
 void SubmitBeautifyJobsRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
+	setParameter("Async", async ? "true" : "false");
 }
 

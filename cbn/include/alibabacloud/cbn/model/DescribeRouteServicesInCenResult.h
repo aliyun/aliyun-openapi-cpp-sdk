@@ -36,10 +36,12 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string hostRegionId;
+					std::string description;
 					std::string cenId;
 					std::string host;
 					std::string accessRegionId;
 					std::string updateInterval;
+					std::string hostVpcId;
 					std::vector<std::string> cidrs;
 				};
 

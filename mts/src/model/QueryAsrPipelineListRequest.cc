@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAsrPipelineListRequest;
 
 QueryAsrPipelineListRequest::QueryAsrPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAsrPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAsrPipelineListRequest::~QueryAsrPipelineListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryAsrPipelineListRequest::getResourceOwnerId()const
 void QueryAsrPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAsrPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryAsrPipelineListRequest::getResourceOwnerAccount()const
 void QueryAsrPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAsrPipelineListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryAsrPipelineListRequest::getOwnerAccount()const
 void QueryAsrPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAsrPipelineListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryAsrPipelineListRequest::getOwnerId()const
 void QueryAsrPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAsrPipelineListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryAsrPipelineListRequest::getAccessKeyId()const
 void QueryAsrPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryAsrPipelineListRequest::getPipelineIds()const
@@ -88,6 +90,6 @@ std::string QueryAsrPipelineListRequest::getPipelineIds()const
 void QueryAsrPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setParameter("PipelineIds", pipelineIds);
 }
 

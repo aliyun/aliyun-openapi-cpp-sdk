@@ -40,30 +40,30 @@ void DescribeIntentResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto intentNode = value["Intent"];
-	if(!intentNode["IntentId"].isNull())
-		intent_.intentId = intentNode["IntentId"].asString();
-	if(!intentNode["ScriptId"].isNull())
-		intent_.scriptId = intentNode["ScriptId"].asString();
-	if(!intentNode["IntentName"].isNull())
-		intent_.intentName = intentNode["IntentName"].asString();
-	if(!intentNode["IntentDescription"].isNull())
-		intent_.intentDescription = intentNode["IntentDescription"].asString();
-	if(!intentNode["Utterances"].isNull())
-		intent_.utterances = intentNode["Utterances"].asString();
-	if(!intentNode["Keywords"].isNull())
-		intent_.keywords = intentNode["Keywords"].asString();
 	if(!intentNode["CreateTime"].isNull())
 		intent_.createTime = std::stol(intentNode["CreateTime"].asString());
+	if(!intentNode["IntentDescription"].isNull())
+		intent_.intentDescription = intentNode["IntentDescription"].asString();
+	if(!intentNode["IntentId"].isNull())
+		intent_.intentId = intentNode["IntentId"].asString();
+	if(!intentNode["IntentName"].isNull())
+		intent_.intentName = intentNode["IntentName"].asString();
+	if(!intentNode["Keywords"].isNull())
+		intent_.keywords = intentNode["Keywords"].asString();
+	if(!intentNode["ScriptId"].isNull())
+		intent_.scriptId = intentNode["ScriptId"].asString();
 	if(!intentNode["UpdateTime"].isNull())
 		intent_.updateTime = std::stol(intentNode["UpdateTime"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!intentNode["Utterances"].isNull())
+		intent_.utterances = intentNode["Utterances"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DecryptKeyRequest;
 
 DecryptKeyRequest::DecryptKeyRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DecryptKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DecryptKeyRequest::~DecryptKeyRequest()
 {}
@@ -33,7 +35,7 @@ std::string DecryptKeyRequest::getResourceOwnerId()const
 void DecryptKeyRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DecryptKeyRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DecryptKeyRequest::getAccessKeyId()const
 void DecryptKeyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DecryptKeyRequest::getRand()const
@@ -55,7 +57,7 @@ std::string DecryptKeyRequest::getRand()const
 void DecryptKeyRequest::setRand(const std::string& rand)
 {
 	rand_ = rand;
-	setCoreParameter("Rand", rand);
+	setParameter("Rand", rand);
 }
 
 std::string DecryptKeyRequest::getCiphertextBlob()const
@@ -66,7 +68,7 @@ std::string DecryptKeyRequest::getCiphertextBlob()const
 void DecryptKeyRequest::setCiphertextBlob(const std::string& ciphertextBlob)
 {
 	ciphertextBlob_ = ciphertextBlob;
-	setCoreParameter("CiphertextBlob", ciphertextBlob);
+	setParameter("CiphertextBlob", ciphertextBlob);
 }
 
 std::string DecryptKeyRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DecryptKeyRequest::getResourceOwnerAccount()const
 void DecryptKeyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DecryptKeyRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DecryptKeyRequest::getOwnerAccount()const
 void DecryptKeyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DecryptKeyRequest::getOwnerId()const
@@ -99,6 +101,6 @@ std::string DecryptKeyRequest::getOwnerId()const
 void DecryptKeyRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

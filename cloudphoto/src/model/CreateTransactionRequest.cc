@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateTransactionRequest;
 
 CreateTransactionRequest::CreateTransactionRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateTransaction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTransactionRequest::~CreateTransactionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateTransactionRequest::getExt()const
 void CreateTransactionRequest::setExt(const std::string& ext)
 {
 	ext_ = ext;
-	setCoreParameter("Ext", ext);
+	setParameter("Ext", ext);
 }
 
 std::string CreateTransactionRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string CreateTransactionRequest::getLibraryId()const
 void CreateTransactionRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string CreateTransactionRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string CreateTransactionRequest::getStoreName()const
 void CreateTransactionRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long CreateTransactionRequest::getSize()const
@@ -66,7 +68,7 @@ long CreateTransactionRequest::getSize()const
 void CreateTransactionRequest::setSize(long size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string CreateTransactionRequest::getForce()const
@@ -77,7 +79,7 @@ std::string CreateTransactionRequest::getForce()const
 void CreateTransactionRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setParameter("Force", force);
 }
 
 std::string CreateTransactionRequest::getMd5()const
@@ -88,6 +90,6 @@ std::string CreateTransactionRequest::getMd5()const
 void CreateTransactionRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setParameter("Md5", md5);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListRolesRequest;
 
 ListRolesRequest::ListRolesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListRoles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRolesRequest::~ListRolesRequest()
 {}
@@ -33,7 +35,7 @@ long ListRolesRequest::getResourceOwnerId()const
 void ListRolesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListRolesRequest::getResourceType()const
@@ -44,7 +46,7 @@ std::string ListRolesRequest::getResourceType()const
 void ListRolesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string ListRolesRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListRolesRequest::getAccessKeyId()const
 void ListRolesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListRolesRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string ListRolesRequest::getRegionId()const
 void ListRolesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

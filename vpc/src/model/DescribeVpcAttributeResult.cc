@@ -67,6 +67,9 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	auto allUserCidrs = value["UserCidrs"]["UserCidr"];
 	for (const auto &item : allUserCidrs)
 		userCidrs_.push_back(item.asString());
+	auto allSecondaryCidrBlocks = value["SecondaryCidrBlocks"]["SecondaryCidrBlock"];
+	for (const auto &item : allSecondaryCidrBlocks)
+		secondaryCidrBlocks_.push_back(item.asString());
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["RegionId"].isNull())
@@ -124,6 +127,11 @@ std::string DescribeVpcAttributeResult::getResourceGroupId()const
 std::vector<std::string> DescribeVpcAttributeResult::getVSwitchIds()const
 {
 	return vSwitchIds_;
+}
+
+std::vector<std::string> DescribeVpcAttributeResult::getSecondaryCidrBlocks()const
+{
+	return secondaryCidrBlocks_;
 }
 
 std::string DescribeVpcAttributeResult::getCidrBlock()const

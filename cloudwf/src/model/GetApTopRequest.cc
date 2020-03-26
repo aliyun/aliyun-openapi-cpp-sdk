@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApTopRequest;
 
 GetApTopRequest::GetApTopRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApTop")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApTopRequest::~GetApTopRequest()
 {}
@@ -33,7 +35,7 @@ long GetApTopRequest::getApgroupId()const
 void GetApTopRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetApTopRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetApTopRequest::getAccessKeyId()const
 void GetApTopRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -33,7 +35,7 @@ bool CreateInstanceRequest::getAutoPay()const
 void CreateInstanceRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getInstanceSpec()const
@@ -44,7 +46,7 @@ std::string CreateInstanceRequest::getInstanceSpec()const
 void CreateInstanceRequest::setInstanceSpec(const std::string& instanceSpec)
 {
 	instanceSpec_ = instanceSpec;
-	setCoreParameter("InstanceSpec", instanceSpec);
+	setParameter("InstanceSpec", instanceSpec);
 }
 
 std::string CreateInstanceRequest::getHttpsPolicy()const
@@ -55,7 +57,7 @@ std::string CreateInstanceRequest::getHttpsPolicy()const
 void CreateInstanceRequest::setHttpsPolicy(const std::string& httpsPolicy)
 {
 	httpsPolicy_ = httpsPolicy;
-	setCoreParameter("HttpsPolicy", httpsPolicy);
+	setParameter("HttpsPolicy", httpsPolicy);
 }
 
 std::string CreateInstanceRequest::getToken()const
@@ -66,7 +68,7 @@ std::string CreateInstanceRequest::getToken()const
 void CreateInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 int CreateInstanceRequest::getDuration()const
@@ -77,7 +79,7 @@ int CreateInstanceRequest::getDuration()const
 void CreateInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateInstanceRequest::getInstanceName()const
@@ -88,7 +90,7 @@ std::string CreateInstanceRequest::getInstanceName()const
 void CreateInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -99,7 +101,7 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string CreateInstanceRequest::getChargeType()const
@@ -110,7 +112,7 @@ std::string CreateInstanceRequest::getChargeType()const
 void CreateInstanceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 
 std::string CreateInstanceRequest::getPricingCycle()const
@@ -121,6 +123,6 @@ std::string CreateInstanceRequest::getPricingCycle()const
 void CreateInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

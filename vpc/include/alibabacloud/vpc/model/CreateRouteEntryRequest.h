@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT CreateRouteEntryRequest : public RpcServiceRequest
 			{
+			public:
 				struct NextHopList
 				{
 					int weight;
@@ -47,6 +48,8 @@ namespace AlibabaCloud
 				void setRouteEntryName(const std::string& routeEntryName);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getNextHopId()const;
@@ -72,6 +75,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string routeEntryName_;
 				std::string clientToken_;
+				std::string description_;
 				std::string regionId_;
 				std::string nextHopId_;
 				std::string nextHopType_;

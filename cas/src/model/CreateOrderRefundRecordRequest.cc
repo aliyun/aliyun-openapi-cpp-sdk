@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderRefundRecordRequest;
 
 CreateOrderRefundRecordRequest::CreateOrderRefundRecordRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderRefundRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRefundRecordRequest::~CreateOrderRefundRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateOrderRefundRecordRequest::getReason()const
 void CreateOrderRefundRecordRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 long CreateOrderRefundRecordRequest::getOrderId()const
@@ -44,7 +46,7 @@ long CreateOrderRefundRecordRequest::getOrderId()const
 void CreateOrderRefundRecordRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderRefundRecordRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateOrderRefundRecordRequest::getResourceGroupId()const
 void CreateOrderRefundRecordRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderRefundRecordRequest::getSourceIp()const
@@ -66,6 +68,6 @@ std::string CreateOrderRefundRecordRequest::getSourceIp()const
 void CreateOrderRefundRecordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

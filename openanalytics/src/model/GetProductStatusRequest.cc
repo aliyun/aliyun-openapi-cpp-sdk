@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetProductStatusRequest;
 
 GetProductStatusRequest::GetProductStatusRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetProductStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetProductStatusRequest::~GetProductStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetProductStatusRequest::getRegionID()const
 void GetProductStatusRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 std::string GetProductStatusRequest::getProductCode()const
@@ -44,7 +46,7 @@ std::string GetProductStatusRequest::getProductCode()const
 void GetProductStatusRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setBodyParameter("ProductCode", productCode);
 }
 
 std::string GetProductStatusRequest::getProductAccessKey()const
@@ -55,7 +57,7 @@ std::string GetProductStatusRequest::getProductAccessKey()const
 void GetProductStatusRequest::setProductAccessKey(const std::string& productAccessKey)
 {
 	productAccessKey_ = productAccessKey;
-	setCoreParameter("ProductAccessKey", productAccessKey);
+	setBodyParameter("ProductAccessKey", productAccessKey);
 }
 
 std::string GetProductStatusRequest::getTargetUid()const
@@ -66,7 +68,7 @@ std::string GetProductStatusRequest::getTargetUid()const
 void GetProductStatusRequest::setTargetUid(const std::string& targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", targetUid);
+	setBodyParameter("TargetUid", targetUid);
 }
 
 std::string GetProductStatusRequest::getTargetArnRole()const
@@ -77,6 +79,6 @@ std::string GetProductStatusRequest::getTargetArnRole()const
 void GetProductStatusRequest::setTargetArnRole(const std::string& targetArnRole)
 {
 	targetArnRole_ = targetArnRole;
-	setCoreParameter("TargetArnRole", targetArnRole);
+	setBodyParameter("TargetArnRole", targetArnRole);
 }
 

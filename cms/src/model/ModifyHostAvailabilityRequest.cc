@@ -35,7 +35,7 @@ std::string ModifyHostAvailabilityRequest::getTaskOptionHttpMethod()const
 void ModifyHostAvailabilityRequest::setTaskOptionHttpMethod(const std::string& taskOptionHttpMethod)
 {
 	taskOptionHttpMethod_ = taskOptionHttpMethod;
-	setCoreParameter("TaskOptionHttpMethod", taskOptionHttpMethod);
+	setParameter("TaskOptionHttpMethod", taskOptionHttpMethod);
 }
 
 std::vector<ModifyHostAvailabilityRequest::AlertConfigEscalationList> ModifyHostAvailabilityRequest::getAlertConfigEscalationList()const
@@ -48,12 +48,12 @@ void ModifyHostAvailabilityRequest::setAlertConfigEscalationList(const std::vect
 	alertConfigEscalationList_ = alertConfigEscalationList;
 	for(int dep1 = 0; dep1!= alertConfigEscalationList.size(); dep1++) {
 		auto alertConfigEscalationListObj = alertConfigEscalationList.at(dep1);
-		std::string alertConfigEscalationListObjStr = "AlertConfigEscalationList." + std::to_string(dep1);
-		setCoreParameter(alertConfigEscalationListObjStr + ".Times", std::to_string(alertConfigEscalationListObj.times));
-		setCoreParameter(alertConfigEscalationListObjStr + ".MetricName", alertConfigEscalationListObj.metricName);
-		setCoreParameter(alertConfigEscalationListObjStr + ".Value", alertConfigEscalationListObj.value);
-		setCoreParameter(alertConfigEscalationListObjStr + "._Operator", alertConfigEscalationListObj._operator);
-		setCoreParameter(alertConfigEscalationListObjStr + ".Aggregate", alertConfigEscalationListObj.aggregate);
+		std::string alertConfigEscalationListObjStr = "AlertConfigEscalationList." + std::to_string(dep1 + 1);
+		setParameter(alertConfigEscalationListObjStr + ".Times", std::to_string(alertConfigEscalationListObj.times));
+		setParameter(alertConfigEscalationListObjStr + ".MetricName", alertConfigEscalationListObj.metricName);
+		setParameter(alertConfigEscalationListObjStr + ".Value", alertConfigEscalationListObj.value);
+		setParameter(alertConfigEscalationListObjStr + "._Operator", alertConfigEscalationListObj._operator);
+		setParameter(alertConfigEscalationListObjStr + ".Aggregate", alertConfigEscalationListObj.aggregate);
 	}
 }
 
@@ -65,7 +65,7 @@ std::string ModifyHostAvailabilityRequest::getTaskName()const
 void ModifyHostAvailabilityRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 int ModifyHostAvailabilityRequest::getAlertConfigSilenceTime()const
@@ -76,7 +76,7 @@ int ModifyHostAvailabilityRequest::getAlertConfigSilenceTime()const
 void ModifyHostAvailabilityRequest::setAlertConfigSilenceTime(int alertConfigSilenceTime)
 {
 	alertConfigSilenceTime_ = alertConfigSilenceTime;
-	setCoreParameter("AlertConfigSilenceTime", std::to_string(alertConfigSilenceTime));
+	setParameter("AlertConfigSilenceTime", std::to_string(alertConfigSilenceTime));
 }
 
 std::string ModifyHostAvailabilityRequest::getTaskOptionHttpResponseCharset()const
@@ -87,7 +87,7 @@ std::string ModifyHostAvailabilityRequest::getTaskOptionHttpResponseCharset()con
 void ModifyHostAvailabilityRequest::setTaskOptionHttpResponseCharset(const std::string& taskOptionHttpResponseCharset)
 {
 	taskOptionHttpResponseCharset_ = taskOptionHttpResponseCharset;
-	setCoreParameter("TaskOptionHttpResponseCharset", taskOptionHttpResponseCharset);
+	setParameter("TaskOptionHttpResponseCharset", taskOptionHttpResponseCharset);
 }
 
 bool ModifyHostAvailabilityRequest::getTaskOptionHttpNegative()const
@@ -98,7 +98,7 @@ bool ModifyHostAvailabilityRequest::getTaskOptionHttpNegative()const
 void ModifyHostAvailabilityRequest::setTaskOptionHttpNegative(bool taskOptionHttpNegative)
 {
 	taskOptionHttpNegative_ = taskOptionHttpNegative;
-	setCoreParameter("TaskOptionHttpNegative", taskOptionHttpNegative ? "true" : "false");
+	setParameter("TaskOptionHttpNegative", taskOptionHttpNegative ? "true" : "false");
 }
 
 int ModifyHostAvailabilityRequest::getAlertConfigNotifyType()const
@@ -109,7 +109,7 @@ int ModifyHostAvailabilityRequest::getAlertConfigNotifyType()const
 void ModifyHostAvailabilityRequest::setAlertConfigNotifyType(int alertConfigNotifyType)
 {
 	alertConfigNotifyType_ = alertConfigNotifyType;
-	setCoreParameter("AlertConfigNotifyType", std::to_string(alertConfigNotifyType));
+	setParameter("AlertConfigNotifyType", std::to_string(alertConfigNotifyType));
 }
 
 std::string ModifyHostAvailabilityRequest::getTaskOptionTelnetOrPingHost()const
@@ -120,7 +120,7 @@ std::string ModifyHostAvailabilityRequest::getTaskOptionTelnetOrPingHost()const
 void ModifyHostAvailabilityRequest::setTaskOptionTelnetOrPingHost(const std::string& taskOptionTelnetOrPingHost)
 {
 	taskOptionTelnetOrPingHost_ = taskOptionTelnetOrPingHost;
-	setCoreParameter("TaskOptionTelnetOrPingHost", taskOptionTelnetOrPingHost);
+	setParameter("TaskOptionTelnetOrPingHost", taskOptionTelnetOrPingHost);
 }
 
 std::string ModifyHostAvailabilityRequest::getTaskOptionHttpResponseMatchContent()const
@@ -131,7 +131,7 @@ std::string ModifyHostAvailabilityRequest::getTaskOptionHttpResponseMatchContent
 void ModifyHostAvailabilityRequest::setTaskOptionHttpResponseMatchContent(const std::string& taskOptionHttpResponseMatchContent)
 {
 	taskOptionHttpResponseMatchContent_ = taskOptionHttpResponseMatchContent;
-	setCoreParameter("TaskOptionHttpResponseMatchContent", taskOptionHttpResponseMatchContent);
+	setParameter("TaskOptionHttpResponseMatchContent", taskOptionHttpResponseMatchContent);
 }
 
 long ModifyHostAvailabilityRequest::getId()const
@@ -142,7 +142,7 @@ long ModifyHostAvailabilityRequest::getId()const
 void ModifyHostAvailabilityRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::vector<std::string> ModifyHostAvailabilityRequest::getInstanceList()const
@@ -154,7 +154,7 @@ void ModifyHostAvailabilityRequest::setInstanceList(const std::vector<std::strin
 {
 	instanceList_ = instanceList;
 	for(int dep1 = 0; dep1!= instanceList.size(); dep1++) {
-		setCoreParameter("InstanceList."+ std::to_string(dep1), instanceList.at(dep1));
+		setParameter("InstanceList."+ std::to_string(dep1), instanceList.at(dep1));
 	}
 }
 
@@ -166,7 +166,7 @@ long ModifyHostAvailabilityRequest::getGroupId()const
 void ModifyHostAvailabilityRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 int ModifyHostAvailabilityRequest::getAlertConfigEndTime()const
@@ -177,7 +177,7 @@ int ModifyHostAvailabilityRequest::getAlertConfigEndTime()const
 void ModifyHostAvailabilityRequest::setAlertConfigEndTime(int alertConfigEndTime)
 {
 	alertConfigEndTime_ = alertConfigEndTime;
-	setCoreParameter("AlertConfigEndTime", std::to_string(alertConfigEndTime));
+	setParameter("AlertConfigEndTime", std::to_string(alertConfigEndTime));
 }
 
 std::string ModifyHostAvailabilityRequest::getTaskOptionHttpURI()const
@@ -188,7 +188,7 @@ std::string ModifyHostAvailabilityRequest::getTaskOptionHttpURI()const
 void ModifyHostAvailabilityRequest::setTaskOptionHttpURI(const std::string& taskOptionHttpURI)
 {
 	taskOptionHttpURI_ = taskOptionHttpURI;
-	setCoreParameter("TaskOptionHttpURI", taskOptionHttpURI);
+	setParameter("TaskOptionHttpURI", taskOptionHttpURI);
 }
 
 std::string ModifyHostAvailabilityRequest::getTaskScope()const
@@ -199,7 +199,7 @@ std::string ModifyHostAvailabilityRequest::getTaskScope()const
 void ModifyHostAvailabilityRequest::setTaskScope(const std::string& taskScope)
 {
 	taskScope_ = taskScope;
-	setCoreParameter("TaskScope", taskScope);
+	setParameter("TaskScope", taskScope);
 }
 
 int ModifyHostAvailabilityRequest::getAlertConfigStartTime()const
@@ -210,7 +210,7 @@ int ModifyHostAvailabilityRequest::getAlertConfigStartTime()const
 void ModifyHostAvailabilityRequest::setAlertConfigStartTime(int alertConfigStartTime)
 {
 	alertConfigStartTime_ = alertConfigStartTime;
-	setCoreParameter("AlertConfigStartTime", std::to_string(alertConfigStartTime));
+	setParameter("AlertConfigStartTime", std::to_string(alertConfigStartTime));
 }
 
 std::string ModifyHostAvailabilityRequest::getAlertConfigWebHook()const
@@ -221,6 +221,6 @@ std::string ModifyHostAvailabilityRequest::getAlertConfigWebHook()const
 void ModifyHostAvailabilityRequest::setAlertConfigWebHook(const std::string& alertConfigWebHook)
 {
 	alertConfigWebHook_ = alertConfigWebHook;
-	setCoreParameter("AlertConfigWebHook", alertConfigWebHook);
+	setParameter("AlertConfigWebHook", alertConfigWebHook);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateMasterSlaveServerGroupRequest;
 
 CreateMasterSlaveServerGroupRequest::CreateMasterSlaveServerGroupRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateMasterSlaveServerGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMasterSlaveServerGroupRequest::~CreateMasterSlaveServerGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateMasterSlaveServerGroupRequest::getAccess_key_id()const
 void CreateMasterSlaveServerGroupRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long CreateMasterSlaveServerGroupRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateMasterSlaveServerGroupRequest::getResourceOwnerId()const
 void CreateMasterSlaveServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveBackendServers()const
@@ -55,7 +57,7 @@ std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveBackendServers()c
 void CreateMasterSlaveServerGroupRequest::setMasterSlaveBackendServers(const std::string& masterSlaveBackendServers)
 {
 	masterSlaveBackendServers_ = masterSlaveBackendServers;
-	setCoreParameter("MasterSlaveBackendServers", masterSlaveBackendServers);
+	setParameter("MasterSlaveBackendServers", masterSlaveBackendServers);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateMasterSlaveServerGroupRequest::getRegionId()const
 void CreateMasterSlaveServerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateMasterSlaveServerGroupRequest::getResourceOwnerAccount()const
 void CreateMasterSlaveServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateMasterSlaveServerGroupRequest::getOwnerAccount()const
 void CreateMasterSlaveServerGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveServerGroupName()const
@@ -99,7 +101,7 @@ std::string CreateMasterSlaveServerGroupRequest::getMasterSlaveServerGroupName()
 void CreateMasterSlaveServerGroupRequest::setMasterSlaveServerGroupName(const std::string& masterSlaveServerGroupName)
 {
 	masterSlaveServerGroupName_ = masterSlaveServerGroupName;
-	setCoreParameter("MasterSlaveServerGroupName", masterSlaveServerGroupName);
+	setParameter("MasterSlaveServerGroupName", masterSlaveServerGroupName);
 }
 
 long CreateMasterSlaveServerGroupRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long CreateMasterSlaveServerGroupRequest::getOwnerId()const
 void CreateMasterSlaveServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getTags()const
@@ -121,7 +123,7 @@ std::string CreateMasterSlaveServerGroupRequest::getTags()const
 void CreateMasterSlaveServerGroupRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string CreateMasterSlaveServerGroupRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string CreateMasterSlaveServerGroupRequest::getLoadBalancerId()const
 void CreateMasterSlaveServerGroupRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

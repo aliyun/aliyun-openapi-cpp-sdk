@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DowngradeSmartAccessGatewaySoftwareRequest;
 
 DowngradeSmartAccessGatewaySoftwareRequest::DowngradeSmartAccessGatewaySoftwareRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DowngradeSmartAccessGatewaySoftware")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DowngradeSmartAccessGatewaySoftwareRequest::~DowngradeSmartAccessGatewaySoftwareRequest()
 {}
@@ -33,7 +35,7 @@ long DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerId()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DowngradeSmartAccessGatewaySoftwareRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DowngradeSmartAccessGatewaySoftwareRequest::getRegionId()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DowngradeSmartAccessGatewaySoftwareRequest::getUserCount()const
@@ -55,7 +57,7 @@ int DowngradeSmartAccessGatewaySoftwareRequest::getUserCount()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setParameter("UserCount", std::to_string(userCount));
 }
 
 bool DowngradeSmartAccessGatewaySoftwareRequest::getAutoPay()const
@@ -66,7 +68,7 @@ bool DowngradeSmartAccessGatewaySoftwareRequest::getAutoPay()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DowngradeSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount(
 void DowngradeSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DowngradeSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DowngradeSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DowngradeSmartAccessGatewaySoftwareRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DowngradeSmartAccessGatewaySoftwareRequest::getOwnerId()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DowngradeSmartAccessGatewaySoftwareRequest::getSmartAGId()const
@@ -110,7 +112,7 @@ std::string DowngradeSmartAccessGatewaySoftwareRequest::getSmartAGId()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 long DowngradeSmartAccessGatewaySoftwareRequest::getDataPlan()const
@@ -121,6 +123,6 @@ long DowngradeSmartAccessGatewaySoftwareRequest::getDataPlan()const
 void DowngradeSmartAccessGatewaySoftwareRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setParameter("DataPlan", std::to_string(dataPlan));
 }
 

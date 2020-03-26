@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				bool getDestinationInstanceIdsReverseMatch()const;
 				void setDestinationInstanceIdsReverseMatch(bool destinationInstanceIdsReverseMatch);
+				std::vector<long> getPrependAsPath()const;
+				void setPrependAsPath(const std::vector<long>& prependAsPath);
 				std::string getAsPathMatchMode()const;
 				void setAsPathMatchMode(const std::string& asPathMatchMode);
 				std::vector<std::string> getMatchCommunitySet()const;
@@ -124,6 +126,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				bool destinationInstanceIdsReverseMatch_;
+				std::vector<long> prependAsPath_;
 				std::string asPathMatchMode_;
 				std::vector<std::string> matchCommunitySet_;
 				std::string cenRegionId_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowClusterRequest;
 
 ListFlowClusterRequest::ListFlowClusterRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowCluster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowClusterRequest::~ListFlowClusterRequest()
 {}
@@ -33,7 +35,7 @@ int ListFlowClusterRequest::getPageNumber()const
 void ListFlowClusterRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowClusterRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ListFlowClusterRequest::getRegionId()const
 void ListFlowClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListFlowClusterRequest::getPageSize()const
@@ -55,7 +57,7 @@ int ListFlowClusterRequest::getPageSize()const
 void ListFlowClusterRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowClusterRequest::getProjectId()const
@@ -66,6 +68,6 @@ std::string ListFlowClusterRequest::getProjectId()const
 void ListFlowClusterRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

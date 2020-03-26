@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaShowListRequest;
 
 AreaShowListRequest::AreaShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaShowListRequest::~AreaShowListRequest()
 {}
@@ -33,7 +35,7 @@ std::string AreaShowListRequest::getAccessKeyId()const
 void AreaShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaShowListRequest::getSid()const
@@ -44,7 +46,7 @@ long AreaShowListRequest::getSid()const
 void AreaShowListRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 int AreaShowListRequest::getPage()const
@@ -55,7 +57,7 @@ int AreaShowListRequest::getPage()const
 void AreaShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 int AreaShowListRequest::getPer()const
@@ -66,6 +68,6 @@ int AreaShowListRequest::getPer()const
 void AreaShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

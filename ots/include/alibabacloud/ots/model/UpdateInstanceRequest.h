@@ -35,18 +35,18 @@ namespace AlibabaCloud
 				UpdateInstanceRequest();
 				~UpdateInstanceRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getNetwork()const;
 				void setNetwork(const std::string& network);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 
             private:
-				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string network_;
 				std::string instanceName_;
 

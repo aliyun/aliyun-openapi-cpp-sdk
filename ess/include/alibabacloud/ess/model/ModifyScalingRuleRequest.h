@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT ModifyScalingRuleRequest : public RpcServiceRequest
 			{
+			public:
 				struct StepAdjustment
 				{
 					float metricIntervalLowerBound;

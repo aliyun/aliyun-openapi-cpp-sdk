@@ -93,6 +93,18 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 			itemsObject.beginTimestampForRestore = std::stol(valueItemsBackupPlanDetail["BeginTimestampForRestore"].asString());
 		if(!valueItemsBackupPlanDetail["EndTimestampForRestore"].isNull())
 			itemsObject.endTimestampForRestore = std::stol(valueItemsBackupPlanDetail["EndTimestampForRestore"].asString());
+		if(!valueItemsBackupPlanDetail["OpenBackupSetAutoDownload"].isNull())
+			itemsObject.openBackupSetAutoDownload = valueItemsBackupPlanDetail["OpenBackupSetAutoDownload"].asString() == "true";
+		if(!valueItemsBackupPlanDetail["BackupSetDownloadTargetType"].isNull())
+			itemsObject.backupSetDownloadTargetType = valueItemsBackupPlanDetail["BackupSetDownloadTargetType"].asString();
+		if(!valueItemsBackupPlanDetail["BackupSetDownloadDir"].isNull())
+			itemsObject.backupSetDownloadDir = valueItemsBackupPlanDetail["BackupSetDownloadDir"].asString();
+		if(!valueItemsBackupPlanDetail["BackupSetDownloadGatewayId"].isNull())
+			itemsObject.backupSetDownloadGatewayId = std::stol(valueItemsBackupPlanDetail["BackupSetDownloadGatewayId"].asString());
+		if(!valueItemsBackupPlanDetail["BackupSetDownloadFullDataFormat"].isNull())
+			itemsObject.backupSetDownloadFullDataFormat = valueItemsBackupPlanDetail["BackupSetDownloadFullDataFormat"].asString();
+		if(!valueItemsBackupPlanDetail["BackupSetDownloadIncrementDataFormat"].isNull())
+			itemsObject.backupSetDownloadIncrementDataFormat = valueItemsBackupPlanDetail["BackupSetDownloadIncrementDataFormat"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

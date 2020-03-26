@@ -35,7 +35,7 @@ std::string ChangeResellerConsumeAmountRequest::getAmount()const
 void ChangeResellerConsumeAmountRequest::setAmount(const std::string& amount)
 {
 	amount_ = amount;
-	setCoreParameter("Amount", amount);
+	setParameter("Amount", amount);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getOutBizId()const
@@ -46,7 +46,7 @@ std::string ChangeResellerConsumeAmountRequest::getOutBizId()const
 void ChangeResellerConsumeAmountRequest::setOutBizId(const std::string& outBizId)
 {
 	outBizId_ = outBizId;
-	setCoreParameter("OutBizId", outBizId);
+	setParameter("OutBizId", outBizId);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getSource()const
@@ -57,7 +57,7 @@ std::string ChangeResellerConsumeAmountRequest::getSource()const
 void ChangeResellerConsumeAmountRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setParameter("Source", source);
 }
 
 long ChangeResellerConsumeAmountRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long ChangeResellerConsumeAmountRequest::getOwnerId()const
 void ChangeResellerConsumeAmountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ChangeResellerConsumeAmountRequest::getBusinessType()const
@@ -79,7 +79,7 @@ std::string ChangeResellerConsumeAmountRequest::getBusinessType()const
 void ChangeResellerConsumeAmountRequest::setBusinessType(const std::string& businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", businessType);
+	setParameter("BusinessType", businessType);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getAdjustType()const
@@ -90,7 +90,7 @@ std::string ChangeResellerConsumeAmountRequest::getAdjustType()const
 void ChangeResellerConsumeAmountRequest::setAdjustType(const std::string& adjustType)
 {
 	adjustType_ = adjustType;
-	setCoreParameter("AdjustType", adjustType);
+	setParameter("AdjustType", adjustType);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getExtendMap()const
@@ -101,7 +101,7 @@ std::string ChangeResellerConsumeAmountRequest::getExtendMap()const
 void ChangeResellerConsumeAmountRequest::setExtendMap(const std::string& extendMap)
 {
 	extendMap_ = extendMap;
-	setCoreParameter("ExtendMap", extendMap);
+	setParameter("ExtendMap", extendMap);
 }
 
 std::string ChangeResellerConsumeAmountRequest::getCurrency()const
@@ -112,6 +112,6 @@ std::string ChangeResellerConsumeAmountRequest::getCurrency()const
 void ChangeResellerConsumeAmountRequest::setCurrency(const std::string& currency)
 {
 	currency_ = currency;
-	setCoreParameter("Currency", currency);
+	setParameter("Currency", currency);
 }
 

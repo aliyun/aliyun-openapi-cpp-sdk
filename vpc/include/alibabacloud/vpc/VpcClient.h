@@ -38,6 +38,8 @@
 #include "model/AddIPv6TranslatorAclListEntryResult.h"
 #include "model/AllocateEipAddressRequest.h"
 #include "model/AllocateEipAddressResult.h"
+#include "model/AllocateEipSegmentAddressRequest.h"
+#include "model/AllocateEipSegmentAddressResult.h"
 #include "model/AllocateIpv6InternetBandwidthRequest.h"
 #include "model/AllocateIpv6InternetBandwidthResult.h"
 #include "model/ApplyPhysicalConnectionLOARequest.h"
@@ -54,8 +56,12 @@
 #include "model/AssociatePhysicalConnectionToVirtualBorderRouterResult.h"
 #include "model/AssociateRouteTableRequest.h"
 #include "model/AssociateRouteTableResult.h"
+#include "model/AssociateVpcCidrBlockRequest.h"
+#include "model/AssociateVpcCidrBlockResult.h"
 #include "model/CancelCommonBandwidthPackageIpBandwidthRequest.h"
 #include "model/CancelCommonBandwidthPackageIpBandwidthResult.h"
+#include "model/CancelExpressCloudConnectionRequest.h"
+#include "model/CancelExpressCloudConnectionResult.h"
 #include "model/CancelPhysicalConnectionRequest.h"
 #include "model/CancelPhysicalConnectionResult.h"
 #include "model/CompletePhysicalConnectionLOARequest.h"
@@ -148,6 +154,8 @@
 #include "model/DeleteCommonBandwidthPackageResult.h"
 #include "model/DeleteCustomerGatewayRequest.h"
 #include "model/DeleteCustomerGatewayResult.h"
+#include "model/DeleteExpressCloudConnectionRequest.h"
+#include "model/DeleteExpressCloudConnectionResult.h"
 #include "model/DeleteExpressConnectRequest.h"
 #include "model/DeleteExpressConnectResult.h"
 #include "model/DeleteFlowLogRequest.h"
@@ -226,6 +234,8 @@
 #include "model/DescribeEipGatewayInfoResult.h"
 #include "model/DescribeEipMonitorDataRequest.h"
 #include "model/DescribeEipMonitorDataResult.h"
+#include "model/DescribeEipSegmentRequest.h"
+#include "model/DescribeEipSegmentResult.h"
 #include "model/DescribeExpressCloudConnectionsRequest.h"
 #include "model/DescribeExpressCloudConnectionsResult.h"
 #include "model/DescribeFlowLogsRequest.h"
@@ -262,6 +272,8 @@
 #include "model/DescribeNetworkAclAttributesResult.h"
 #include "model/DescribeNetworkAclsRequest.h"
 #include "model/DescribeNetworkAclsResult.h"
+#include "model/DescribeNewProjectEipMonitorDataRequest.h"
+#include "model/DescribeNewProjectEipMonitorDataResult.h"
 #include "model/DescribePhysicalConnectionLOARequest.h"
 #include "model/DescribePhysicalConnectionLOAResult.h"
 #include "model/DescribePhysicalConnectionsRequest.h"
@@ -274,6 +286,8 @@
 #include "model/DescribeRouteTableListResult.h"
 #include "model/DescribeRouteTablesRequest.h"
 #include "model/DescribeRouteTablesResult.h"
+#include "model/DescribeRouterInterfaceAttributeRequest.h"
+#include "model/DescribeRouterInterfaceAttributeResult.h"
 #include "model/DescribeRouterInterfacesRequest.h"
 #include "model/DescribeRouterInterfacesResult.h"
 #include "model/DescribeServerRelatedGlobalAccelerationInstancesRequest.h"
@@ -426,6 +440,8 @@
 #include "model/RecoverVirtualBorderRouterResult.h"
 #include "model/ReleaseEipAddressRequest.h"
 #include "model/ReleaseEipAddressResult.h"
+#include "model/ReleaseEipSegmentAddressRequest.h"
+#include "model/ReleaseEipSegmentAddressResult.h"
 #include "model/RemoveBandwidthPackageIpsRequest.h"
 #include "model/RemoveBandwidthPackageIpsResult.h"
 #include "model/RemoveCommonBandwidthPackageIpRequest.h"
@@ -456,6 +472,8 @@
 #include "model/UnassociatePhysicalConnectionFromVirtualBorderRouterResult.h"
 #include "model/UnassociateRouteTableRequest.h"
 #include "model/UnassociateRouteTableResult.h"
+#include "model/UnassociateVpcCidrBlockRequest.h"
+#include "model/UnassociateVpcCidrBlockResult.h"
 #include "model/UpdateNetworkAclEntriesRequest.h"
 #include "model/UpdateNetworkAclEntriesResult.h"
 
@@ -491,6 +509,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateEipAddressResult> AllocateEipAddressOutcome;
 			typedef std::future<AllocateEipAddressOutcome> AllocateEipAddressOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AllocateEipAddressRequest&, const AllocateEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateEipAddressAsyncHandler;
+			typedef Outcome<Error, Model::AllocateEipSegmentAddressResult> AllocateEipSegmentAddressOutcome;
+			typedef std::future<AllocateEipSegmentAddressOutcome> AllocateEipSegmentAddressOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::AllocateEipSegmentAddressRequest&, const AllocateEipSegmentAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateEipSegmentAddressAsyncHandler;
 			typedef Outcome<Error, Model::AllocateIpv6InternetBandwidthResult> AllocateIpv6InternetBandwidthOutcome;
 			typedef std::future<AllocateIpv6InternetBandwidthOutcome> AllocateIpv6InternetBandwidthOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AllocateIpv6InternetBandwidthRequest&, const AllocateIpv6InternetBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateIpv6InternetBandwidthAsyncHandler;
@@ -515,9 +536,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AssociateRouteTableResult> AssociateRouteTableOutcome;
 			typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::AssociateRouteTableRequest&, const AssociateRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::AssociateVpcCidrBlockResult> AssociateVpcCidrBlockOutcome;
+			typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::AssociateVpcCidrBlockRequest&, const AssociateVpcCidrBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateVpcCidrBlockAsyncHandler;
 			typedef Outcome<Error, Model::CancelCommonBandwidthPackageIpBandwidthResult> CancelCommonBandwidthPackageIpBandwidthOutcome;
 			typedef std::future<CancelCommonBandwidthPackageIpBandwidthOutcome> CancelCommonBandwidthPackageIpBandwidthOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CancelCommonBandwidthPackageIpBandwidthRequest&, const CancelCommonBandwidthPackageIpBandwidthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonBandwidthPackageIpBandwidthAsyncHandler;
+			typedef Outcome<Error, Model::CancelExpressCloudConnectionResult> CancelExpressCloudConnectionOutcome;
+			typedef std::future<CancelExpressCloudConnectionOutcome> CancelExpressCloudConnectionOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CancelExpressCloudConnectionRequest&, const CancelExpressCloudConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelExpressCloudConnectionAsyncHandler;
 			typedef Outcome<Error, Model::CancelPhysicalConnectionResult> CancelPhysicalConnectionOutcome;
 			typedef std::future<CancelPhysicalConnectionOutcome> CancelPhysicalConnectionOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CancelPhysicalConnectionRequest&, const CancelPhysicalConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPhysicalConnectionAsyncHandler;
@@ -656,6 +683,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomerGatewayResult> DeleteCustomerGatewayOutcome;
 			typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteCustomerGatewayRequest&, const DeleteCustomerGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomerGatewayAsyncHandler;
+			typedef Outcome<Error, Model::DeleteExpressCloudConnectionResult> DeleteExpressCloudConnectionOutcome;
+			typedef std::future<DeleteExpressCloudConnectionOutcome> DeleteExpressCloudConnectionOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DeleteExpressCloudConnectionRequest&, const DeleteExpressCloudConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExpressCloudConnectionAsyncHandler;
 			typedef Outcome<Error, Model::DeleteExpressConnectResult> DeleteExpressConnectOutcome;
 			typedef std::future<DeleteExpressConnectOutcome> DeleteExpressConnectOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DeleteExpressConnectRequest&, const DeleteExpressConnectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExpressConnectAsyncHandler;
@@ -773,6 +803,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEipMonitorDataResult> DescribeEipMonitorDataOutcome;
 			typedef std::future<DescribeEipMonitorDataOutcome> DescribeEipMonitorDataOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeEipMonitorDataRequest&, const DescribeEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeEipSegmentResult> DescribeEipSegmentOutcome;
+			typedef std::future<DescribeEipSegmentOutcome> DescribeEipSegmentOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeEipSegmentRequest&, const DescribeEipSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipSegmentAsyncHandler;
 			typedef Outcome<Error, Model::DescribeExpressCloudConnectionsResult> DescribeExpressCloudConnectionsOutcome;
 			typedef std::future<DescribeExpressCloudConnectionsOutcome> DescribeExpressCloudConnectionsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeExpressCloudConnectionsRequest&, const DescribeExpressCloudConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExpressCloudConnectionsAsyncHandler;
@@ -827,6 +860,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNetworkAclsResult> DescribeNetworkAclsOutcome;
 			typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeNetworkAclsRequest&, const DescribeNetworkAclsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkAclsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNewProjectEipMonitorDataResult> DescribeNewProjectEipMonitorDataOutcome;
+			typedef std::future<DescribeNewProjectEipMonitorDataOutcome> DescribeNewProjectEipMonitorDataOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeNewProjectEipMonitorDataRequest&, const DescribeNewProjectEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewProjectEipMonitorDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhysicalConnectionLOAResult> DescribePhysicalConnectionLOAOutcome;
 			typedef std::future<DescribePhysicalConnectionLOAOutcome> DescribePhysicalConnectionLOAOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribePhysicalConnectionLOARequest&, const DescribePhysicalConnectionLOAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhysicalConnectionLOAAsyncHandler;
@@ -845,6 +881,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRouteTablesResult> DescribeRouteTablesOutcome;
 			typedef std::future<DescribeRouteTablesOutcome> DescribeRouteTablesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeRouteTablesRequest&, const DescribeRouteTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRouterInterfaceAttributeResult> DescribeRouterInterfaceAttributeOutcome;
+			typedef std::future<DescribeRouterInterfaceAttributeOutcome> DescribeRouterInterfaceAttributeOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::DescribeRouterInterfaceAttributeRequest&, const DescribeRouterInterfaceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfaceAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRouterInterfacesResult> DescribeRouterInterfacesOutcome;
 			typedef std::future<DescribeRouterInterfacesOutcome> DescribeRouterInterfacesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::DescribeRouterInterfacesRequest&, const DescribeRouterInterfacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouterInterfacesAsyncHandler;
@@ -1073,6 +1112,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ReleaseEipAddressResult> ReleaseEipAddressOutcome;
 			typedef std::future<ReleaseEipAddressOutcome> ReleaseEipAddressOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::ReleaseEipAddressRequest&, const ReleaseEipAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEipAddressAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseEipSegmentAddressResult> ReleaseEipSegmentAddressOutcome;
+			typedef std::future<ReleaseEipSegmentAddressOutcome> ReleaseEipSegmentAddressOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::ReleaseEipSegmentAddressRequest&, const ReleaseEipSegmentAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEipSegmentAddressAsyncHandler;
 			typedef Outcome<Error, Model::RemoveBandwidthPackageIpsResult> RemoveBandwidthPackageIpsOutcome;
 			typedef std::future<RemoveBandwidthPackageIpsOutcome> RemoveBandwidthPackageIpsOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::RemoveBandwidthPackageIpsRequest&, const RemoveBandwidthPackageIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveBandwidthPackageIpsAsyncHandler;
@@ -1118,6 +1160,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnassociateRouteTableResult> UnassociateRouteTableOutcome;
 			typedef std::future<UnassociateRouteTableOutcome> UnassociateRouteTableOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::UnassociateRouteTableRequest&, const UnassociateRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::UnassociateVpcCidrBlockResult> UnassociateVpcCidrBlockOutcome;
+			typedef std::future<UnassociateVpcCidrBlockOutcome> UnassociateVpcCidrBlockOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::UnassociateVpcCidrBlockRequest&, const UnassociateVpcCidrBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnassociateVpcCidrBlockAsyncHandler;
 			typedef Outcome<Error, Model::UpdateNetworkAclEntriesResult> UpdateNetworkAclEntriesOutcome;
 			typedef std::future<UpdateNetworkAclEntriesOutcome> UpdateNetworkAclEntriesOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::UpdateNetworkAclEntriesRequest&, const UpdateNetworkAclEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNetworkAclEntriesAsyncHandler;
@@ -1150,6 +1195,9 @@ namespace AlibabaCloud
 			AllocateEipAddressOutcome allocateEipAddress(const Model::AllocateEipAddressRequest &request)const;
 			void allocateEipAddressAsync(const Model::AllocateEipAddressRequest& request, const AllocateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateEipAddressOutcomeCallable allocateEipAddressCallable(const Model::AllocateEipAddressRequest& request) const;
+			AllocateEipSegmentAddressOutcome allocateEipSegmentAddress(const Model::AllocateEipSegmentAddressRequest &request)const;
+			void allocateEipSegmentAddressAsync(const Model::AllocateEipSegmentAddressRequest& request, const AllocateEipSegmentAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AllocateEipSegmentAddressOutcomeCallable allocateEipSegmentAddressCallable(const Model::AllocateEipSegmentAddressRequest& request) const;
 			AllocateIpv6InternetBandwidthOutcome allocateIpv6InternetBandwidth(const Model::AllocateIpv6InternetBandwidthRequest &request)const;
 			void allocateIpv6InternetBandwidthAsync(const Model::AllocateIpv6InternetBandwidthRequest& request, const AllocateIpv6InternetBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateIpv6InternetBandwidthOutcomeCallable allocateIpv6InternetBandwidthCallable(const Model::AllocateIpv6InternetBandwidthRequest& request) const;
@@ -1174,9 +1222,15 @@ namespace AlibabaCloud
 			AssociateRouteTableOutcome associateRouteTable(const Model::AssociateRouteTableRequest &request)const;
 			void associateRouteTableAsync(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssociateRouteTableOutcomeCallable associateRouteTableCallable(const Model::AssociateRouteTableRequest& request) const;
+			AssociateVpcCidrBlockOutcome associateVpcCidrBlock(const Model::AssociateVpcCidrBlockRequest &request)const;
+			void associateVpcCidrBlockAsync(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssociateVpcCidrBlockOutcomeCallable associateVpcCidrBlockCallable(const Model::AssociateVpcCidrBlockRequest& request) const;
 			CancelCommonBandwidthPackageIpBandwidthOutcome cancelCommonBandwidthPackageIpBandwidth(const Model::CancelCommonBandwidthPackageIpBandwidthRequest &request)const;
 			void cancelCommonBandwidthPackageIpBandwidthAsync(const Model::CancelCommonBandwidthPackageIpBandwidthRequest& request, const CancelCommonBandwidthPackageIpBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelCommonBandwidthPackageIpBandwidthOutcomeCallable cancelCommonBandwidthPackageIpBandwidthCallable(const Model::CancelCommonBandwidthPackageIpBandwidthRequest& request) const;
+			CancelExpressCloudConnectionOutcome cancelExpressCloudConnection(const Model::CancelExpressCloudConnectionRequest &request)const;
+			void cancelExpressCloudConnectionAsync(const Model::CancelExpressCloudConnectionRequest& request, const CancelExpressCloudConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelExpressCloudConnectionOutcomeCallable cancelExpressCloudConnectionCallable(const Model::CancelExpressCloudConnectionRequest& request) const;
 			CancelPhysicalConnectionOutcome cancelPhysicalConnection(const Model::CancelPhysicalConnectionRequest &request)const;
 			void cancelPhysicalConnectionAsync(const Model::CancelPhysicalConnectionRequest& request, const CancelPhysicalConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPhysicalConnectionOutcomeCallable cancelPhysicalConnectionCallable(const Model::CancelPhysicalConnectionRequest& request) const;
@@ -1315,6 +1369,9 @@ namespace AlibabaCloud
 			DeleteCustomerGatewayOutcome deleteCustomerGateway(const Model::DeleteCustomerGatewayRequest &request)const;
 			void deleteCustomerGatewayAsync(const Model::DeleteCustomerGatewayRequest& request, const DeleteCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomerGatewayOutcomeCallable deleteCustomerGatewayCallable(const Model::DeleteCustomerGatewayRequest& request) const;
+			DeleteExpressCloudConnectionOutcome deleteExpressCloudConnection(const Model::DeleteExpressCloudConnectionRequest &request)const;
+			void deleteExpressCloudConnectionAsync(const Model::DeleteExpressCloudConnectionRequest& request, const DeleteExpressCloudConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteExpressCloudConnectionOutcomeCallable deleteExpressCloudConnectionCallable(const Model::DeleteExpressCloudConnectionRequest& request) const;
 			DeleteExpressConnectOutcome deleteExpressConnect(const Model::DeleteExpressConnectRequest &request)const;
 			void deleteExpressConnectAsync(const Model::DeleteExpressConnectRequest& request, const DeleteExpressConnectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteExpressConnectOutcomeCallable deleteExpressConnectCallable(const Model::DeleteExpressConnectRequest& request) const;
@@ -1432,6 +1489,9 @@ namespace AlibabaCloud
 			DescribeEipMonitorDataOutcome describeEipMonitorData(const Model::DescribeEipMonitorDataRequest &request)const;
 			void describeEipMonitorDataAsync(const Model::DescribeEipMonitorDataRequest& request, const DescribeEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEipMonitorDataOutcomeCallable describeEipMonitorDataCallable(const Model::DescribeEipMonitorDataRequest& request) const;
+			DescribeEipSegmentOutcome describeEipSegment(const Model::DescribeEipSegmentRequest &request)const;
+			void describeEipSegmentAsync(const Model::DescribeEipSegmentRequest& request, const DescribeEipSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEipSegmentOutcomeCallable describeEipSegmentCallable(const Model::DescribeEipSegmentRequest& request) const;
 			DescribeExpressCloudConnectionsOutcome describeExpressCloudConnections(const Model::DescribeExpressCloudConnectionsRequest &request)const;
 			void describeExpressCloudConnectionsAsync(const Model::DescribeExpressCloudConnectionsRequest& request, const DescribeExpressCloudConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeExpressCloudConnectionsOutcomeCallable describeExpressCloudConnectionsCallable(const Model::DescribeExpressCloudConnectionsRequest& request) const;
@@ -1486,6 +1546,9 @@ namespace AlibabaCloud
 			DescribeNetworkAclsOutcome describeNetworkAcls(const Model::DescribeNetworkAclsRequest &request)const;
 			void describeNetworkAclsAsync(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNetworkAclsOutcomeCallable describeNetworkAclsCallable(const Model::DescribeNetworkAclsRequest& request) const;
+			DescribeNewProjectEipMonitorDataOutcome describeNewProjectEipMonitorData(const Model::DescribeNewProjectEipMonitorDataRequest &request)const;
+			void describeNewProjectEipMonitorDataAsync(const Model::DescribeNewProjectEipMonitorDataRequest& request, const DescribeNewProjectEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNewProjectEipMonitorDataOutcomeCallable describeNewProjectEipMonitorDataCallable(const Model::DescribeNewProjectEipMonitorDataRequest& request) const;
 			DescribePhysicalConnectionLOAOutcome describePhysicalConnectionLOA(const Model::DescribePhysicalConnectionLOARequest &request)const;
 			void describePhysicalConnectionLOAAsync(const Model::DescribePhysicalConnectionLOARequest& request, const DescribePhysicalConnectionLOAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhysicalConnectionLOAOutcomeCallable describePhysicalConnectionLOACallable(const Model::DescribePhysicalConnectionLOARequest& request) const;
@@ -1504,6 +1567,9 @@ namespace AlibabaCloud
 			DescribeRouteTablesOutcome describeRouteTables(const Model::DescribeRouteTablesRequest &request)const;
 			void describeRouteTablesAsync(const Model::DescribeRouteTablesRequest& request, const DescribeRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouteTablesOutcomeCallable describeRouteTablesCallable(const Model::DescribeRouteTablesRequest& request) const;
+			DescribeRouterInterfaceAttributeOutcome describeRouterInterfaceAttribute(const Model::DescribeRouterInterfaceAttributeRequest &request)const;
+			void describeRouterInterfaceAttributeAsync(const Model::DescribeRouterInterfaceAttributeRequest& request, const DescribeRouterInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRouterInterfaceAttributeOutcomeCallable describeRouterInterfaceAttributeCallable(const Model::DescribeRouterInterfaceAttributeRequest& request) const;
 			DescribeRouterInterfacesOutcome describeRouterInterfaces(const Model::DescribeRouterInterfacesRequest &request)const;
 			void describeRouterInterfacesAsync(const Model::DescribeRouterInterfacesRequest& request, const DescribeRouterInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRouterInterfacesOutcomeCallable describeRouterInterfacesCallable(const Model::DescribeRouterInterfacesRequest& request) const;
@@ -1732,6 +1798,9 @@ namespace AlibabaCloud
 			ReleaseEipAddressOutcome releaseEipAddress(const Model::ReleaseEipAddressRequest &request)const;
 			void releaseEipAddressAsync(const Model::ReleaseEipAddressRequest& request, const ReleaseEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseEipAddressOutcomeCallable releaseEipAddressCallable(const Model::ReleaseEipAddressRequest& request) const;
+			ReleaseEipSegmentAddressOutcome releaseEipSegmentAddress(const Model::ReleaseEipSegmentAddressRequest &request)const;
+			void releaseEipSegmentAddressAsync(const Model::ReleaseEipSegmentAddressRequest& request, const ReleaseEipSegmentAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseEipSegmentAddressOutcomeCallable releaseEipSegmentAddressCallable(const Model::ReleaseEipSegmentAddressRequest& request) const;
 			RemoveBandwidthPackageIpsOutcome removeBandwidthPackageIps(const Model::RemoveBandwidthPackageIpsRequest &request)const;
 			void removeBandwidthPackageIpsAsync(const Model::RemoveBandwidthPackageIpsRequest& request, const RemoveBandwidthPackageIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveBandwidthPackageIpsOutcomeCallable removeBandwidthPackageIpsCallable(const Model::RemoveBandwidthPackageIpsRequest& request) const;
@@ -1777,6 +1846,9 @@ namespace AlibabaCloud
 			UnassociateRouteTableOutcome unassociateRouteTable(const Model::UnassociateRouteTableRequest &request)const;
 			void unassociateRouteTableAsync(const Model::UnassociateRouteTableRequest& request, const UnassociateRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnassociateRouteTableOutcomeCallable unassociateRouteTableCallable(const Model::UnassociateRouteTableRequest& request) const;
+			UnassociateVpcCidrBlockOutcome unassociateVpcCidrBlock(const Model::UnassociateVpcCidrBlockRequest &request)const;
+			void unassociateVpcCidrBlockAsync(const Model::UnassociateVpcCidrBlockRequest& request, const UnassociateVpcCidrBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnassociateVpcCidrBlockOutcomeCallable unassociateVpcCidrBlockCallable(const Model::UnassociateVpcCidrBlockRequest& request) const;
 			UpdateNetworkAclEntriesOutcome updateNetworkAclEntries(const Model::UpdateNetworkAclEntriesRequest &request)const;
 			void updateNetworkAclEntriesAsync(const Model::UpdateNetworkAclEntriesRequest& request, const UpdateNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNetworkAclEntriesOutcomeCallable updateNetworkAclEntriesCallable(const Model::UpdateNetworkAclEntriesRequest& request) const;

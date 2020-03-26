@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeSuspEventDetailRequest;
 
 DescribeSuspEventDetailRequest::DescribeSuspEventDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeSuspEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSuspEventDetailRequest::~DescribeSuspEventDetailRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeSuspEventDetailRequest::getSuspiciousEventId()const
 void DescribeSuspEventDetailRequest::setSuspiciousEventId(int suspiciousEventId)
 {
 	suspiciousEventId_ = suspiciousEventId;
-	setCoreParameter("SuspiciousEventId", std::to_string(suspiciousEventId));
+	setParameter("SuspiciousEventId", std::to_string(suspiciousEventId));
 }
 
 std::string DescribeSuspEventDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeSuspEventDetailRequest::getSourceIp()const
 void DescribeSuspEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSuspEventDetailRequest::getFrom()const
@@ -55,7 +57,7 @@ std::string DescribeSuspEventDetailRequest::getFrom()const
 void DescribeSuspEventDetailRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string DescribeSuspEventDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeSuspEventDetailRequest::getLang()const
 void DescribeSuspEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

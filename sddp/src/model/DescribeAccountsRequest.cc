@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeAccountsRequest;
 
 DescribeAccountsRequest::DescribeAccountsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeAccounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountsRequest::~DescribeAccountsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAccountsRequest::getProductCode()const
 void DescribeAccountsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string DescribeAccountsRequest::getPackageId()const
@@ -44,7 +46,7 @@ std::string DescribeAccountsRequest::getPackageId()const
 void DescribeAccountsRequest::setPackageId(const std::string& packageId)
 {
 	packageId_ = packageId;
-	setCoreParameter("PackageId", packageId);
+	setParameter("PackageId", packageId);
 }
 
 std::string DescribeAccountsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeAccountsRequest::getSourceIp()const
 void DescribeAccountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAccountsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeAccountsRequest::getPageSize()const
 void DescribeAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAccountsRequest::getTableId()const
@@ -77,7 +79,7 @@ std::string DescribeAccountsRequest::getTableId()const
 void DescribeAccountsRequest::setTableId(const std::string& tableId)
 {
 	tableId_ = tableId;
-	setCoreParameter("TableId", tableId);
+	setParameter("TableId", tableId);
 }
 
 std::string DescribeAccountsRequest::getLang()const
@@ -88,7 +90,7 @@ std::string DescribeAccountsRequest::getLang()const
 void DescribeAccountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAccountsRequest::getKey()const
@@ -99,7 +101,7 @@ std::string DescribeAccountsRequest::getKey()const
 void DescribeAccountsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeAccountsRequest::getQueryType()const
@@ -110,7 +112,7 @@ int DescribeAccountsRequest::getQueryType()const
 void DescribeAccountsRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
 }
 
 std::string DescribeAccountsRequest::getLoginName()const
@@ -121,7 +123,7 @@ std::string DescribeAccountsRequest::getLoginName()const
 void DescribeAccountsRequest::setLoginName(const std::string& loginName)
 {
 	loginName_ = loginName;
-	setCoreParameter("LoginName", loginName);
+	setParameter("LoginName", loginName);
 }
 
 int DescribeAccountsRequest::getFeatureType()const
@@ -132,7 +134,7 @@ int DescribeAccountsRequest::getFeatureType()const
 void DescribeAccountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeAccountsRequest::getColumnId()const
@@ -143,7 +145,7 @@ std::string DescribeAccountsRequest::getColumnId()const
 void DescribeAccountsRequest::setColumnId(const std::string& columnId)
 {
 	columnId_ = columnId;
-	setCoreParameter("ColumnId", columnId);
+	setParameter("ColumnId", columnId);
 }
 
 int DescribeAccountsRequest::getCurrentPage()const
@@ -154,7 +156,7 @@ int DescribeAccountsRequest::getCurrentPage()const
 void DescribeAccountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAccountsRequest::getInstanceId()const
@@ -165,7 +167,7 @@ std::string DescribeAccountsRequest::getInstanceId()const
 void DescribeAccountsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 long DescribeAccountsRequest::getDepartId()const
@@ -176,7 +178,7 @@ long DescribeAccountsRequest::getDepartId()const
 void DescribeAccountsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 
 int DescribeAccountsRequest::getOperationId()const
@@ -187,6 +189,6 @@ int DescribeAccountsRequest::getOperationId()const
 void DescribeAccountsRequest::setOperationId(int operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", std::to_string(operationId));
+	setParameter("OperationId", std::to_string(operationId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::AddDomainRequest;
 
 AddDomainRequest::AddDomainRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "AddDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddDomainRequest::~AddDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddDomainRequest::getDomainName()const
 void AddDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string AddDomainRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddDomainRequest::getAccessKeyId()const
 void AddDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddDomainRequest::getAccountId()const
@@ -55,6 +57,6 @@ std::string AddDomainRequest::getAccountId()const
 void AddDomainRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", accountId);
+	setParameter("AccountId", accountId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ModifyEventStatusRequest;
 
 ModifyEventStatusRequest::ModifyEventStatusRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ModifyEventStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEventStatusRequest::~ModifyEventStatusRequest()
 {}
@@ -33,7 +35,7 @@ bool ModifyEventStatusRequest::getBacked()const
 void ModifyEventStatusRequest::setBacked(bool backed)
 {
 	backed_ = backed;
-	setCoreParameter("Backed", backed ? "true" : "false");
+	setParameter("Backed", backed ? "true" : "false");
 }
 
 std::string ModifyEventStatusRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string ModifyEventStatusRequest::getSourceIp()const
 void ModifyEventStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyEventStatusRequest::getDealReason()const
@@ -55,7 +57,7 @@ std::string ModifyEventStatusRequest::getDealReason()const
 void ModifyEventStatusRequest::setDealReason(const std::string& dealReason)
 {
 	dealReason_ = dealReason;
-	setCoreParameter("DealReason", dealReason);
+	setParameter("DealReason", dealReason);
 }
 
 long ModifyEventStatusRequest::getId()const
@@ -66,7 +68,7 @@ long ModifyEventStatusRequest::getId()const
 void ModifyEventStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string ModifyEventStatusRequest::getLang()const
@@ -77,7 +79,7 @@ std::string ModifyEventStatusRequest::getLang()const
 void ModifyEventStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int ModifyEventStatusRequest::getFeatureType()const
@@ -88,7 +90,7 @@ int ModifyEventStatusRequest::getFeatureType()const
 void ModifyEventStatusRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int ModifyEventStatusRequest::getStatus()const
@@ -99,6 +101,6 @@ int ModifyEventStatusRequest::getStatus()const
 void ModifyEventStatusRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

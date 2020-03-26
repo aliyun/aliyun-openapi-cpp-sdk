@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListAccessKeysRequest;
 
 ListAccessKeysRequest::ListAccessKeysRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListAccessKeys")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAccessKeysRequest::~ListAccessKeysRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListAccessKeysRequest::getUserName()const
 void ListAccessKeysRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

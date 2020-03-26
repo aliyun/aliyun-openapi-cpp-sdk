@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyScenarioRequest;
 
 ModifyScenarioRequest::ModifyScenarioRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScenarioRequest::~ModifyScenarioRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyScenarioRequest::getVariables()const
 void ModifyScenarioRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setParameter("Variables", variables);
 }
 
 std::string ModifyScenarioRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyScenarioRequest::getDescription()const
 void ModifyScenarioRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyScenarioRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ModifyScenarioRequest::getInstanceId()const
 void ModifyScenarioRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyScenarioRequest::getName()const
@@ -66,7 +68,7 @@ std::string ModifyScenarioRequest::getName()const
 void ModifyScenarioRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyScenarioRequest::getScenarioId()const
@@ -77,6 +79,6 @@ std::string ModifyScenarioRequest::getScenarioId()const
 void ModifyScenarioRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

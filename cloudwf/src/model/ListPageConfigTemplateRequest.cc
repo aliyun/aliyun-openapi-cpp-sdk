@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListPageConfigTemplateRequest;
 
 ListPageConfigTemplateRequest::ListPageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListPageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPageConfigTemplateRequest::~ListPageConfigTemplateRequest()
 {}
@@ -33,7 +35,7 @@ int ListPageConfigTemplateRequest::getLength()const
 void ListPageConfigTemplateRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListPageConfigTemplateRequest::getSearchTempName()const
@@ -44,7 +46,7 @@ std::string ListPageConfigTemplateRequest::getSearchTempName()const
 void ListPageConfigTemplateRequest::setSearchTempName(const std::string& searchTempName)
 {
 	searchTempName_ = searchTempName;
-	setCoreParameter("SearchTempName", searchTempName);
+	setParameter("SearchTempName", searchTempName);
 }
 
 std::string ListPageConfigTemplateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListPageConfigTemplateRequest::getAccessKeyId()const
 void ListPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListPageConfigTemplateRequest::getPageIndex()const
@@ -66,6 +68,6 @@ int ListPageConfigTemplateRequest::getPageIndex()const
 void ListPageConfigTemplateRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

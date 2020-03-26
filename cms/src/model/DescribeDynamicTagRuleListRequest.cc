@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DescribeDynamicTagRuleListRequest;
 DescribeDynamicTagRuleListRequest::DescribeDynamicTagRuleListRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DescribeDynamicTagRuleList")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDynamicTagRuleListRequest::~DescribeDynamicTagRuleListRequest()
@@ -35,7 +35,7 @@ std::string DescribeDynamicTagRuleListRequest::getPageNumber()const
 void DescribeDynamicTagRuleListRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeDynamicTagRuleListRequest::getPageSize()const
@@ -46,7 +46,7 @@ std::string DescribeDynamicTagRuleListRequest::getPageSize()const
 void DescribeDynamicTagRuleListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeDynamicTagRuleListRequest::getTagKey()const
@@ -57,6 +57,6 @@ std::string DescribeDynamicTagRuleListRequest::getTagKey()const
 void DescribeDynamicTagRuleListRequest::setTagKey(const std::string& tagKey)
 {
 	tagKey_ = tagKey;
-	setCoreParameter("TagKey", tagKey);
+	setParameter("TagKey", tagKey);
 }
 

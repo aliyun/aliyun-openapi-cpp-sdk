@@ -35,7 +35,7 @@ int DescribeDcdnIpaUserDomainsRequest::getPageNumber()const
 void DescribeDcdnIpaUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeDcdnIpaUserDomainsRequest::getCheckDomainShow()const
@@ -46,7 +46,7 @@ bool DescribeDcdnIpaUserDomainsRequest::getCheckDomainShow()const
 void DescribeDcdnIpaUserDomainsRequest::setCheckDomainShow(bool checkDomainShow)
 {
 	checkDomainShow_ = checkDomainShow;
-	setCoreParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
+	setParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getResourceGroupId()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getResourceGroupId()const
 void DescribeDcdnIpaUserDomainsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getSecurityToken()const
 void DescribeDcdnIpaUserDomainsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeDcdnIpaUserDomainsRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeDcdnIpaUserDomainsRequest::getPageSize()const
 void DescribeDcdnIpaUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getFuncFilter()const
@@ -90,7 +90,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getFuncFilter()const
 void DescribeDcdnIpaUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", funcFilter);
+	setParameter("FuncFilter", funcFilter);
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getDomainName()const
@@ -101,7 +101,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getDomainName()const
 void DescribeDcdnIpaUserDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeDcdnIpaUserDomainsRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeDcdnIpaUserDomainsRequest::getOwnerId()const
 void DescribeDcdnIpaUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getFuncId()const
@@ -123,7 +123,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getFuncId()const
 void DescribeDcdnIpaUserDomainsRequest::setFuncId(const std::string& funcId)
 {
 	funcId_ = funcId;
-	setCoreParameter("FuncId", funcId);
+	setParameter("FuncId", funcId);
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getDomainStatus()const
@@ -134,7 +134,7 @@ std::string DescribeDcdnIpaUserDomainsRequest::getDomainStatus()const
 void DescribeDcdnIpaUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", domainStatus);
+	setParameter("DomainStatus", domainStatus);
 }
 
 std::string DescribeDcdnIpaUserDomainsRequest::getDomainSearchType()const
@@ -145,6 +145,6 @@ std::string DescribeDcdnIpaUserDomainsRequest::getDomainSearchType()const
 void DescribeDcdnIpaUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
 {
 	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", domainSearchType);
+	setParameter("DomainSearchType", domainSearchType);
 }
 

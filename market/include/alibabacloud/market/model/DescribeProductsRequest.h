@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_MARKET_EXPORT DescribeProductsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filter
 				{
 					std::string value;

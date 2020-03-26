@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelPortalTempRequest;
 
 DelPortalTempRequest::DelPortalTempRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelPortalTemp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelPortalTempRequest::~DelPortalTempRequest()
 {}
@@ -33,7 +35,7 @@ std::string DelPortalTempRequest::getAccessKeyId()const
 void DelPortalTempRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DelPortalTempRequest::getId()const
@@ -44,6 +46,6 @@ long DelPortalTempRequest::getId()const
 void DelPortalTempRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

@@ -40,40 +40,40 @@ void ListScriptVoiceConfigsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto scriptVoiceConfigsNode = value["ScriptVoiceConfigs"];
-	if(!scriptVoiceConfigsNode["TotalCount"].isNull())
-		scriptVoiceConfigs_.totalCount = std::stoi(scriptVoiceConfigsNode["TotalCount"].asString());
 	if(!scriptVoiceConfigsNode["PageNumber"].isNull())
 		scriptVoiceConfigs_.pageNumber = std::stoi(scriptVoiceConfigsNode["PageNumber"].asString());
 	if(!scriptVoiceConfigsNode["PageSize"].isNull())
 		scriptVoiceConfigs_.pageSize = std::stoi(scriptVoiceConfigsNode["PageSize"].asString());
+	if(!scriptVoiceConfigsNode["TotalCount"].isNull())
+		scriptVoiceConfigs_.totalCount = std::stoi(scriptVoiceConfigsNode["TotalCount"].asString());
 	auto allListNode = scriptVoiceConfigsNode["List"]["ScriptVoiceConfig"];
 	for (auto scriptVoiceConfigsNodeListScriptVoiceConfig : allListNode)
 	{
 		ScriptVoiceConfigs::ScriptVoiceConfig scriptVoiceConfigObject;
-		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptVoiceConfigId"].isNull())
-			scriptVoiceConfigObject.scriptVoiceConfigId = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptVoiceConfigId"].asString();
 		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["InstanceId"].isNull())
 			scriptVoiceConfigObject.instanceId = scriptVoiceConfigsNodeListScriptVoiceConfig["InstanceId"].asString();
-		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptId"].isNull())
-			scriptVoiceConfigObject.scriptId = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptId"].asString();
 		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptContent"].isNull())
 			scriptVoiceConfigObject.scriptContent = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptContent"].asString();
+		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptId"].isNull())
+			scriptVoiceConfigObject.scriptId = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptId"].asString();
+		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptVoiceConfigId"].isNull())
+			scriptVoiceConfigObject.scriptVoiceConfigId = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptVoiceConfigId"].asString();
+		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptWaveformRelation"].isNull())
+			scriptVoiceConfigObject.scriptWaveformRelation = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptWaveformRelation"].asString();
 		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["Source"].isNull())
 			scriptVoiceConfigObject.source = scriptVoiceConfigsNodeListScriptVoiceConfig["Source"].asString();
 		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["Type"].isNull())
 			scriptVoiceConfigObject.type = scriptVoiceConfigsNodeListScriptVoiceConfig["Type"].asString();
-		if(!scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptWaveformRelation"].isNull())
-			scriptVoiceConfigObject.scriptWaveformRelation = scriptVoiceConfigsNodeListScriptVoiceConfig["ScriptWaveformRelation"].asString();
 		scriptVoiceConfigs_.list.push_back(scriptVoiceConfigObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

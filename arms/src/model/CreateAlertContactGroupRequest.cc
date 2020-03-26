@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::CreateAlertContactGroupRequest;
 
 CreateAlertContactGroupRequest::CreateAlertContactGroupRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "CreateAlertContactGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlertContactGroupRequest::~CreateAlertContactGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAlertContactGroupRequest::getRegionId()const
 void CreateAlertContactGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateAlertContactGroupRequest::getContactGroupName()const
@@ -44,7 +46,18 @@ std::string CreateAlertContactGroupRequest::getContactGroupName()const
 void CreateAlertContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setParameter("ContactGroupName", contactGroupName);
+}
+
+std::string CreateAlertContactGroupRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void CreateAlertContactGroupRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
 }
 
 std::string CreateAlertContactGroupRequest::getContactIds()const
@@ -55,6 +68,6 @@ std::string CreateAlertContactGroupRequest::getContactIds()const
 void CreateAlertContactGroupRequest::setContactIds(const std::string& contactIds)
 {
 	contactIds_ = contactIds;
-	setCoreParameter("ContactIds", contactIds);
+	setParameter("ContactIds", contactIds);
 }
 

@@ -375,6 +375,78 @@ DyvmsapiClient::DeleteRobotTaskOutcomeCallable DyvmsapiClient::deleteRobotTaskCa
 	return task->get_future();
 }
 
+DyvmsapiClient::DescribeRecordDataOutcome DyvmsapiClient::describeRecordData(const DescribeRecordDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecordDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecordDataOutcome(DescribeRecordDataResult(outcome.result()));
+	else
+		return DescribeRecordDataOutcome(outcome.error());
+}
+
+void DyvmsapiClient::describeRecordDataAsync(const DescribeRecordDataRequest& request, const DescribeRecordDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecordData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::DescribeRecordDataOutcomeCallable DyvmsapiClient::describeRecordDataCallable(const DescribeRecordDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecordDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecordData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::DoRtcNumberAuthOutcome DyvmsapiClient::doRtcNumberAuth(const DoRtcNumberAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DoRtcNumberAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DoRtcNumberAuthOutcome(DoRtcNumberAuthResult(outcome.result()));
+	else
+		return DoRtcNumberAuthOutcome(outcome.error());
+}
+
+void DyvmsapiClient::doRtcNumberAuthAsync(const DoRtcNumberAuthRequest& request, const DoRtcNumberAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, doRtcNumberAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::DoRtcNumberAuthOutcomeCallable DyvmsapiClient::doRtcNumberAuthCallable(const DoRtcNumberAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DoRtcNumberAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->doRtcNumberAuth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::GetRtcTokenOutcome DyvmsapiClient::getRtcToken(const GetRtcTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +513,78 @@ DyvmsapiClient::IvrCallOutcomeCallable DyvmsapiClient::ivrCallCallable(const Ivr
 			[this, request]()
 			{
 			return this->ivrCall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListOrderedNumbersOutcome DyvmsapiClient::listOrderedNumbers(const ListOrderedNumbersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOrderedNumbersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOrderedNumbersOutcome(ListOrderedNumbersResult(outcome.result()));
+	else
+		return ListOrderedNumbersOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listOrderedNumbersAsync(const ListOrderedNumbersRequest& request, const ListOrderedNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOrderedNumbers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListOrderedNumbersOutcomeCallable DyvmsapiClient::listOrderedNumbersCallable(const ListOrderedNumbersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOrderedNumbersOutcome()>>(
+			[this, request]()
+			{
+			return this->listOrderedNumbers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::ListOutboundStrategiesOutcome DyvmsapiClient::listOutboundStrategies(const ListOutboundStrategiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOutboundStrategiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOutboundStrategiesOutcome(ListOutboundStrategiesResult(outcome.result()));
+	else
+		return ListOutboundStrategiesOutcome(outcome.error());
+}
+
+void DyvmsapiClient::listOutboundStrategiesAsync(const ListOutboundStrategiesRequest& request, const ListOutboundStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOutboundStrategies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::ListOutboundStrategiesOutcomeCallable DyvmsapiClient::listOutboundStrategiesCallable(const ListOutboundStrategiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOutboundStrategiesOutcome()>>(
+			[this, request]()
+			{
+			return this->listOutboundStrategies(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +879,42 @@ DyvmsapiClient::QueryRobotv2AllListOutcomeCallable DyvmsapiClient::queryRobotv2A
 	return task->get_future();
 }
 
+DyvmsapiClient::QueryRtcNumberAuthStatusOutcome DyvmsapiClient::queryRtcNumberAuthStatus(const QueryRtcNumberAuthStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryRtcNumberAuthStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryRtcNumberAuthStatusOutcome(QueryRtcNumberAuthStatusResult(outcome.result()));
+	else
+		return QueryRtcNumberAuthStatusOutcome(outcome.error());
+}
+
+void DyvmsapiClient::queryRtcNumberAuthStatusAsync(const QueryRtcNumberAuthStatusRequest& request, const QueryRtcNumberAuthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryRtcNumberAuthStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::QueryRtcNumberAuthStatusOutcomeCallable DyvmsapiClient::queryRtcNumberAuthStatusCallable(const QueryRtcNumberAuthStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryRtcNumberAuthStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryRtcNumberAuthStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::QueryVoipNumberBindInfosOutcome DyvmsapiClient::queryVoipNumberBindInfos(const QueryVoipNumberBindInfosRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +1131,42 @@ DyvmsapiClient::SmartCallOperateOutcomeCallable DyvmsapiClient::smartCallOperate
 	return task->get_future();
 }
 
+DyvmsapiClient::StartMicroOutboundOutcome DyvmsapiClient::startMicroOutbound(const StartMicroOutboundRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartMicroOutboundOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartMicroOutboundOutcome(StartMicroOutboundResult(outcome.result()));
+	else
+		return StartMicroOutboundOutcome(outcome.error());
+}
+
+void DyvmsapiClient::startMicroOutboundAsync(const StartMicroOutboundRequest& request, const StartMicroOutboundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startMicroOutbound(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::StartMicroOutboundOutcomeCallable DyvmsapiClient::startMicroOutboundCallable(const StartMicroOutboundRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartMicroOutboundOutcome()>>(
+			[this, request]()
+			{
+			return this->startMicroOutbound(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyvmsapiClient::StartRobotTaskOutcome DyvmsapiClient::startRobotTask(const StartRobotTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1269,42 @@ DyvmsapiClient::UnbindNumberAndVoipIdOutcomeCallable DyvmsapiClient::unbindNumbe
 			[this, request]()
 			{
 			return this->unbindNumberAndVoipId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyvmsapiClient::UndoRtcNumberAuthOutcome DyvmsapiClient::undoRtcNumberAuth(const UndoRtcNumberAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UndoRtcNumberAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UndoRtcNumberAuthOutcome(UndoRtcNumberAuthResult(outcome.result()));
+	else
+		return UndoRtcNumberAuthOutcome(outcome.error());
+}
+
+void DyvmsapiClient::undoRtcNumberAuthAsync(const UndoRtcNumberAuthRequest& request, const UndoRtcNumberAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, undoRtcNumberAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyvmsapiClient::UndoRtcNumberAuthOutcomeCallable DyvmsapiClient::undoRtcNumberAuthCallable(const UndoRtcNumberAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UndoRtcNumberAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->undoRtcNumberAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

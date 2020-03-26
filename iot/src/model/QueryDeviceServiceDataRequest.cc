@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceServiceDataRequest;
 
 QueryDeviceServiceDataRequest::QueryDeviceServiceDataRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceServiceData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceServiceDataRequest::~QueryDeviceServiceDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceServiceDataRequest::getIdentifier()const
 void QueryDeviceServiceDataRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setParameter("Identifier", identifier);
 }
 
 long QueryDeviceServiceDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ long QueryDeviceServiceDataRequest::getEndTime()const
 void QueryDeviceServiceDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long QueryDeviceServiceDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ long QueryDeviceServiceDataRequest::getStartTime()const
 void QueryDeviceServiceDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDeviceServiceDataRequest::getProductKey()const
@@ -66,7 +68,7 @@ std::string QueryDeviceServiceDataRequest::getProductKey()const
 void QueryDeviceServiceDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryDeviceServiceDataRequest::getAccessKeyId()const
 void QueryDeviceServiceDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int QueryDeviceServiceDataRequest::getAsc()const
@@ -88,7 +90,7 @@ int QueryDeviceServiceDataRequest::getAsc()const
 void QueryDeviceServiceDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setCoreParameter("Asc", std::to_string(asc));
+	setParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDeviceServiceDataRequest::getIotId()const
@@ -99,7 +101,7 @@ std::string QueryDeviceServiceDataRequest::getIotId()const
 void QueryDeviceServiceDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
@@ -110,7 +112,7 @@ std::string QueryDeviceServiceDataRequest::getIotInstanceId()const
 void QueryDeviceServiceDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceServiceDataRequest::getPageSize()const
@@ -121,7 +123,7 @@ int QueryDeviceServiceDataRequest::getPageSize()const
 void QueryDeviceServiceDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryDeviceServiceDataRequest::getDeviceName()const
@@ -132,6 +134,6 @@ std::string QueryDeviceServiceDataRequest::getDeviceName()const
 void QueryDeviceServiceDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteCACertificateRequest;
 
 DeleteCACertificateRequest::DeleteCACertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteCACertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCACertificateRequest::~DeleteCACertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCACertificateRequest::getAccess_key_id()const
 void DeleteCACertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DeleteCACertificateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DeleteCACertificateRequest::getResourceOwnerId()const
 void DeleteCACertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCACertificateRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteCACertificateRequest::getRegionId()const
 void DeleteCACertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteCACertificateRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteCACertificateRequest::getResourceOwnerAccount()const
 void DeleteCACertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCACertificateRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteCACertificateRequest::getOwnerAccount()const
 void DeleteCACertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCACertificateRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteCACertificateRequest::getOwnerId()const
 void DeleteCACertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCACertificateRequest::getCACertificateId()const
@@ -99,6 +101,6 @@ std::string DeleteCACertificateRequest::getCACertificateId()const
 void DeleteCACertificateRequest::setCACertificateId(const std::string& cACertificateId)
 {
 	cACertificateId_ = cACertificateId;
-	setCoreParameter("CACertificateId", cACertificateId);
+	setParameter("CACertificateId", cACertificateId);
 }
 

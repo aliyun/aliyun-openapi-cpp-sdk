@@ -57,6 +57,8 @@ void DescribeFlowInstanceResult::parse(const std::string &payload)
 			dependencyFlowListObject.scheduleKey = valueDependencyFlowListParentFlow["ScheduleKey"].asString();
 		if(!valueDependencyFlowListParentFlow["BizDate"].isNull())
 			dependencyFlowListObject.bizDate = std::stol(valueDependencyFlowListParentFlow["BizDate"].asString());
+		if(!valueDependencyFlowListParentFlow["Meet"].isNull())
+			dependencyFlowListObject.meet = valueDependencyFlowListParentFlow["Meet"].asString() == "true";
 		dependencyFlowList_.push_back(dependencyFlowListObject);
 	}
 	auto allNodeInstanceNode = value["NodeInstance"]["NodeInstanceItem"];

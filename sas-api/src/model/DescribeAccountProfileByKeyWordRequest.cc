@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeAccountProfileByKeyWordRequest;
 
 DescribeAccountProfileByKeyWordRequest::DescribeAccountProfileByKeyWordRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeAccountProfileByKeyWord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountProfileByKeyWordRequest::~DescribeAccountProfileByKeyWordRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAccountProfileByKeyWordRequest::getSourceIp()const
 void DescribeAccountProfileByKeyWordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAccountProfileByKeyWordRequest::getKeyword()const
@@ -44,6 +46,6 @@ std::string DescribeAccountProfileByKeyWordRequest::getKeyword()const
 void DescribeAccountProfileByKeyWordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

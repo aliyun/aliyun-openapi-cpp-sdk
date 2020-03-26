@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "DeleteProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteProjectRequest::getProjectId()const
 void DeleteProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

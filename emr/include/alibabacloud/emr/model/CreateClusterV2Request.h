@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateClusterV2Request : public RpcServiceRequest
 			{
+			public:
 				struct HostComponentInfo
 				{
 					std::string hostName;
@@ -41,6 +42,11 @@ namespace AlibabaCloud
 					std::string path;
 					std::string arg;
 					std::string name;
+				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
 				};
 				struct UserInfo
 				{
@@ -68,6 +74,11 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string createType;
 					std::string hostGroupType;
+				};
+				struct ServiceInfo
+				{
+					std::string serviceVersion;
+					std::string serviceName;
 				};
 				struct Config
 				{
@@ -105,12 +116,16 @@ namespace AlibabaCloud
 				void setMachineType(const std::string& machineType);
 				std::vector<HostComponentInfo> getHostComponentInfo()const;
 				void setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo);
+				std::string getClickHouseConf()const;
+				void setClickHouseConf(const std::string& clickHouseConf);
 				std::vector<BootstrapAction> getBootstrapAction()const;
 				void setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction);
 				std::string getMetaStoreConf()const;
 				void setMetaStoreConf(const std::string& metaStoreConf);
 				std::string getEmrVer()const;
 				void setEmrVer(const std::string& emrVer);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getAuthorizeContent()const;
 				void setAuthorizeContent(const std::string& authorizeContent);
 				bool getIsOpenPublicIp()const;
@@ -165,6 +180,8 @@ namespace AlibabaCloud
 				void setHostGroup(const std::vector<HostGroup>& hostGroup);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
+				std::vector<ServiceInfo> getServiceInfo()const;
+				void setServiceInfo(const std::vector<ServiceInfo>& serviceInfo);
 				std::vector<Config> getConfig()const;
 				void setConfig(const std::vector<Config>& config);
 				bool getHighAvailabilityEnable()const;
@@ -182,9 +199,11 @@ namespace AlibabaCloud
 				std::string securityGroupName_;
 				std::string machineType_;
 				std::vector<HostComponentInfo> hostComponentInfo_;
+				std::string clickHouseConf_;
 				std::vector<BootstrapAction> bootstrapAction_;
 				std::string metaStoreConf_;
 				std::string emrVer_;
+				std::vector<Tag> tag_;
 				std::string authorizeContent_;
 				bool isOpenPublicIp_;
 				int period_;
@@ -212,6 +231,7 @@ namespace AlibabaCloud
 				std::string vpcId_;
 				std::vector<HostGroup> hostGroup_;
 				std::string chargeType_;
+				std::vector<ServiceInfo> serviceInfo_;
 				std::vector<Config> config_;
 				bool highAvailabilityEnable_;
 

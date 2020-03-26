@@ -39,15 +39,27 @@ void CreateKeywordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allvalidKeywordListNode = value["validKeywordList"]["validKeyword"];
+	for (auto valuevalidKeywordListvalidKeyword : allvalidKeywordListNode)
+	{
+		ValidKeyword validKeywordListObject;
+		if(!valuevalidKeywordListvalidKeyword["id"].isNull())
+			validKeywordListObject.id = std::stoi(valuevalidKeywordListvalidKeyword["id"].asString());
+		if(!valuevalidKeywordListvalidKeyword["keyword"].isNull())
+			validKeywordListObject.keyword = valuevalidKeywordListvalidKeyword["keyword"].asString();
+		validKeywordList_.push_back(validKeywordListObject);
+	}
 	auto allInvalidKeywordList = value["InvalidKeywordList"]["StringItem"];
 	for (const auto &item : allInvalidKeywordList)
 		invalidKeywordList_.push_back(item.asString());
-	auto allvalidKeywordList = value["validKeywordList"]["StringItem"];
-	for (const auto &item : allvalidKeywordList)
-		validKeywordList_.push_back(item.asString());
 	if(!value["SuccessCount"].isNull())
 		successCount_ = std::stoi(value["SuccessCount"].asString());
 
+}
+
+std::vector<CreateKeywordResult::ValidKeyword> CreateKeywordResult::getvalidKeywordList()const
+{
+	return validKeywordList_;
 }
 
 std::vector<std::string> CreateKeywordResult::getInvalidKeywordList()const
@@ -58,10 +70,5 @@ std::vector<std::string> CreateKeywordResult::getInvalidKeywordList()const
 int CreateKeywordResult::getSuccessCount()const
 {
 	return successCount_;
-}
-
-std::vector<std::string> CreateKeywordResult::getValidKeywordList()const
-{
-	return validKeywordList_;
 }
 

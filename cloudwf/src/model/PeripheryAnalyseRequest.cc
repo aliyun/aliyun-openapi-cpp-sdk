@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::PeripheryAnalyseRequest;
 
 PeripheryAnalyseRequest::PeripheryAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "PeripheryAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PeripheryAnalyseRequest::~PeripheryAnalyseRequest()
 {}
@@ -33,7 +35,7 @@ std::string PeripheryAnalyseRequest::getAccessKeyId()const
 void PeripheryAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long PeripheryAnalyseRequest::getGsid()const
@@ -44,6 +46,6 @@ long PeripheryAnalyseRequest::getGsid()const
 void PeripheryAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForUpdatingContactInfoRequest;
 
 SaveSingleTaskForUpdatingContactInfoRequest::SaveSingleTaskForUpdatingContactInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForUpdatingContactInfoRequest::~SaveSingleTaskForUpdatingContactInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getContactType()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setContactType(const std::string& contactType)
 {
 	contactType_ = contactType;
-	setCoreParameter("ContactType", contactType);
+	setParameter("ContactType", contactType);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getDomainName()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SaveSingleTaskForUpdatingContactInfoRequest::getRegistrantProfileId()const
@@ -55,7 +57,7 @@ long SaveSingleTaskForUpdatingContactInfoRequest::getRegistrantProfileId()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
@@ -66,7 +68,7 @@ bool SaveSingleTaskForUpdatingContactInfoRequest::getAddTransferLock()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setAddTransferLock(bool addTransferLock)
 {
 	addTransferLock_ = addTransferLock;
-	setCoreParameter("AddTransferLock", addTransferLock ? "true" : "false");
+	setParameter("AddTransferLock", addTransferLock ? "true" : "false");
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getInstanceId()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
@@ -88,7 +90,7 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getUserClientIp()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const
@@ -99,6 +101,6 @@ std::string SaveSingleTaskForUpdatingContactInfoRequest::getLang()const
 void SaveSingleTaskForUpdatingContactInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ std::string PutContactGroupRequest::getContactGroupName()const
 void PutContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setParameter("ContactGroupName", contactGroupName);
 }
 
 std::string PutContactGroupRequest::getDescribe()const
@@ -46,7 +46,7 @@ std::string PutContactGroupRequest::getDescribe()const
 void PutContactGroupRequest::setDescribe(const std::string& describe)
 {
 	describe_ = describe;
-	setCoreParameter("Describe", describe);
+	setParameter("Describe", describe);
 }
 
 std::vector<std::string> PutContactGroupRequest::getContactNames()const
@@ -58,7 +58,7 @@ void PutContactGroupRequest::setContactNames(const std::vector<std::string>& con
 {
 	contactNames_ = contactNames;
 	for(int dep1 = 0; dep1!= contactNames.size(); dep1++) {
-		setCoreParameter("ContactNames."+ std::to_string(dep1), contactNames.at(dep1));
+		setParameter("ContactNames."+ std::to_string(dep1), contactNames.at(dep1));
 	}
 }
 

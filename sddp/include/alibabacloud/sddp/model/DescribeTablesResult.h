@@ -39,15 +39,19 @@ namespace AlibabaCloud
 					long instanceId;
 					std::string sensitiveRatio;
 					std::string productId;
+					int s2Count;
+					long lastScanTime;
 					long riskLevelId;
 					std::string departName;
 					std::string name;
 					int totalCount;
+					int totalRows;
 					long creationTime;
 					bool sensitive;
 					std::string riskLevelName;
 					long id;
 					int sensitiveCount;
+					int s3Count;
 				};
 
 

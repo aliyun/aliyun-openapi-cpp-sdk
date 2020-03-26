@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::ReleaseInstanceRequest;
 
 ReleaseInstanceRequest::ReleaseInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ReleaseInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseInstanceRequest::~ReleaseInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReleaseInstanceRequest::getResourceOwnerId()const
 void ReleaseInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ReleaseInstanceRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string ReleaseInstanceRequest::getInstanceId()const
 void ReleaseInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

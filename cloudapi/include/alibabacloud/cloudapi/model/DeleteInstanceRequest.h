@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT DeleteInstanceRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DeleteInstanceRequest();
@@ -39,10 +45,13 @@ namespace AlibabaCloud
 				void setToken(const std::string& token);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::string token_;
 				std::string instanceId_;
+				std::vector<Tag> tag_;
 
 			};
 		}

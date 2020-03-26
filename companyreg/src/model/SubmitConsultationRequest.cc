@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::SubmitConsultationRequest;
 
 SubmitConsultationRequest::SubmitConsultationRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "SubmitConsultation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitConsultationRequest::~SubmitConsultationRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitConsultationRequest::getData()const
 void SubmitConsultationRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string SubmitConsultationRequest::getVcode()const
@@ -44,7 +46,7 @@ std::string SubmitConsultationRequest::getVcode()const
 void SubmitConsultationRequest::setVcode(const std::string& vcode)
 {
 	vcode_ = vcode;
-	setCoreParameter("Vcode", vcode);
+	setParameter("Vcode", vcode);
 }
 
 std::string SubmitConsultationRequest::getBizCode()const
@@ -55,7 +57,7 @@ std::string SubmitConsultationRequest::getBizCode()const
 void SubmitConsultationRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string SubmitConsultationRequest::getConsultRequestId()const
@@ -66,7 +68,7 @@ std::string SubmitConsultationRequest::getConsultRequestId()const
 void SubmitConsultationRequest::setConsultRequestId(const std::string& consultRequestId)
 {
 	consultRequestId_ = consultRequestId;
-	setCoreParameter("ConsultRequestId", consultRequestId);
+	setParameter("ConsultRequestId", consultRequestId);
 }
 
 std::string SubmitConsultationRequest::getBizSubCode()const
@@ -77,6 +79,6 @@ std::string SubmitConsultationRequest::getBizSubCode()const
 void SubmitConsultationRequest::setBizSubCode(const std::string& bizSubCode)
 {
 	bizSubCode_ = bizSubCode;
-	setCoreParameter("BizSubCode", bizSubCode);
+	setParameter("BizSubCode", bizSubCode);
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMC_EXPORT CreateReplicationJobRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;
@@ -73,6 +74,8 @@ namespace AlibabaCloud
 				void setSourceId(const std::string& sourceId);
 				bool getRunOnce()const;
 				void setRunOnce(bool runOnce);
+				std::string getLaunchTemplateId()const;
+				void setLaunchTemplateId(const std::string& launchTemplateId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getValidTime()const;
@@ -81,6 +84,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::vector<DataDisk> getDataDisk()const;
 				void setDataDisk(const std::vector<DataDisk>& dataDisk);
+				std::string getLaunchTemplateVersion()const;
+				void setLaunchTemplateVersion(const std::string& launchTemplateVersion);
 				std::string getVSwitchId()const;
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getScheduledStartTime()const;
@@ -109,10 +114,12 @@ namespace AlibabaCloud
 				int netMode_;
 				std::string sourceId_;
 				bool runOnce_;
+				std::string launchTemplateId_;
 				std::string resourceOwnerAccount_;
 				std::string validTime_;
 				long ownerId_;
 				std::vector<DataDisk> dataDisk_;
+				std::string launchTemplateVersion_;
 				std::string vSwitchId_;
 				std::string scheduledStartTime_;
 				std::string instanceId_;

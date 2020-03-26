@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateUidWhiteBaselineRequest;
 
 CreateUidWhiteBaselineRequest::CreateUidWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateUidWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUidWhiteBaselineRequest::~CreateUidWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ long CreateUidWhiteBaselineRequest::getResourceOwnerId()const
 void CreateUidWhiteBaselineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUidWhiteBaselineRequest::getRemark()const
@@ -44,7 +46,7 @@ std::string CreateUidWhiteBaselineRequest::getRemark()const
 void CreateUidWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string CreateUidWhiteBaselineRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string CreateUidWhiteBaselineRequest::getSourceCode()const
 void CreateUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateUidWhiteBaselineRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateUidWhiteBaselineRequest::getSourceIp()const
 void CreateUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateUidWhiteBaselineRequest::getLang()const
@@ -77,7 +79,7 @@ std::string CreateUidWhiteBaselineRequest::getLang()const
 void CreateUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long CreateUidWhiteBaselineRequest::getSrcUid()const
@@ -88,6 +90,6 @@ long CreateUidWhiteBaselineRequest::getSrcUid()const
 void CreateUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 

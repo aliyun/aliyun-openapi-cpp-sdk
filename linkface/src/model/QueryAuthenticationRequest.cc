@@ -20,43 +20,12 @@ using AlibabaCloud::LinkFace::Model::QueryAuthenticationRequest;
 
 QueryAuthenticationRequest::QueryAuthenticationRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAuthentication")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuthenticationRequest::~QueryAuthenticationRequest()
 {}
-
-int QueryAuthenticationRequest::getLicenseType()const
-{
-	return licenseType_;
-}
-
-void QueryAuthenticationRequest::setLicenseType(int licenseType)
-{
-	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", std::to_string(licenseType));
-}
-
-int QueryAuthenticationRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryAuthenticationRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string QueryAuthenticationRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryAuthenticationRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
 
 std::string QueryAuthenticationRequest::getIotId()const
 {
@@ -66,7 +35,7 @@ std::string QueryAuthenticationRequest::getIotId()const
 void QueryAuthenticationRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setBodyParameter("IotId", iotId);
 }
 
 int QueryAuthenticationRequest::getPageSize()const
@@ -77,7 +46,62 @@ int QueryAuthenticationRequest::getPageSize()const
 void QueryAuthenticationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryAuthenticationRequest::getLicenseType()const
+{
+	return licenseType_;
+}
+
+void QueryAuthenticationRequest::setLicenseType(int licenseType)
+{
+	licenseType_ = licenseType;
+	setBodyParameter("LicenseType", std::to_string(licenseType));
+}
+
+int QueryAuthenticationRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryAuthenticationRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setBodyParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryAuthenticationRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryAuthenticationRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string QueryAuthenticationRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryAuthenticationRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryAuthenticationRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryAuthenticationRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryAuthenticationRequest::getDeviceName()const
@@ -88,6 +112,6 @@ std::string QueryAuthenticationRequest::getDeviceName()const
 void QueryAuthenticationRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 

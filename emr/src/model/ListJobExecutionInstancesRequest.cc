@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListJobExecutionInstancesRequest;
 
 ListJobExecutionInstancesRequest::ListJobExecutionInstancesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListJobExecutionInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobExecutionInstancesRequest::~ListJobExecutionInstancesRequest()
 {}
@@ -33,7 +35,7 @@ long ListJobExecutionInstancesRequest::getResourceOwnerId()const
 void ListJobExecutionInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ListJobExecutionInstancesRequest::getIsDesc()const
@@ -44,7 +46,7 @@ bool ListJobExecutionInstancesRequest::getIsDesc()const
 void ListJobExecutionInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListJobExecutionInstancesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListJobExecutionInstancesRequest::getPageNumber()const
 void ListJobExecutionInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListJobExecutionInstancesRequest::getAccessKeyId()const
 void ListJobExecutionInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
@@ -77,7 +79,7 @@ std::string ListJobExecutionInstancesRequest::getExecutionPlanInstanceId()const
 void ListJobExecutionInstancesRequest::setExecutionPlanInstanceId(const std::string& executionPlanInstanceId)
 {
 	executionPlanInstanceId_ = executionPlanInstanceId;
-	setCoreParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+	setParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
 }
 
 std::string ListJobExecutionInstancesRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string ListJobExecutionInstancesRequest::getRegionId()const
 void ListJobExecutionInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListJobExecutionInstancesRequest::getPageSize()const
@@ -99,6 +101,6 @@ int ListJobExecutionInstancesRequest::getPageSize()const
 void ListJobExecutionInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

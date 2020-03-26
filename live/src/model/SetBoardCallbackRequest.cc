@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetBoardCallbackRequest;
 
 SetBoardCallbackRequest::SetBoardCallbackRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetBoardCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetBoardCallbackRequest::~SetBoardCallbackRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetBoardCallbackRequest::getAuthKey()const
 void SetBoardCallbackRequest::setAuthKey(const std::string& authKey)
 {
 	authKey_ = authKey;
-	setCoreParameter("AuthKey", authKey);
+	setParameter("AuthKey", authKey);
 }
 
 int SetBoardCallbackRequest::getCallbackEnable()const
@@ -44,7 +46,7 @@ int SetBoardCallbackRequest::getCallbackEnable()const
 void SetBoardCallbackRequest::setCallbackEnable(int callbackEnable)
 {
 	callbackEnable_ = callbackEnable;
-	setCoreParameter("CallbackEnable", std::to_string(callbackEnable));
+	setParameter("CallbackEnable", std::to_string(callbackEnable));
 }
 
 std::string SetBoardCallbackRequest::getCallbackEvents()const
@@ -55,7 +57,7 @@ std::string SetBoardCallbackRequest::getCallbackEvents()const
 void SetBoardCallbackRequest::setCallbackEvents(const std::string& callbackEvents)
 {
 	callbackEvents_ = callbackEvents;
-	setCoreParameter("CallbackEvents", callbackEvents);
+	setParameter("CallbackEvents", callbackEvents);
 }
 
 long SetBoardCallbackRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long SetBoardCallbackRequest::getOwnerId()const
 void SetBoardCallbackRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetBoardCallbackRequest::getCallbackUri()const
@@ -77,7 +79,7 @@ std::string SetBoardCallbackRequest::getCallbackUri()const
 void SetBoardCallbackRequest::setCallbackUri(const std::string& callbackUri)
 {
 	callbackUri_ = callbackUri;
-	setCoreParameter("CallbackUri", callbackUri);
+	setParameter("CallbackUri", callbackUri);
 }
 
 std::string SetBoardCallbackRequest::getAppId()const
@@ -88,7 +90,7 @@ std::string SetBoardCallbackRequest::getAppId()const
 void SetBoardCallbackRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string SetBoardCallbackRequest::getAuthSwitch()const
@@ -99,6 +101,6 @@ std::string SetBoardCallbackRequest::getAuthSwitch()const
 void SetBoardCallbackRequest::setAuthSwitch(const std::string& authSwitch)
 {
 	authSwitch_ = authSwitch;
-	setCoreParameter("AuthSwitch", authSwitch);
+	setParameter("AuthSwitch", authSwitch);
 }
 

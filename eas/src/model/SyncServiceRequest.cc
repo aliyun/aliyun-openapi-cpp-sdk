@@ -22,7 +22,7 @@ SyncServiceRequest::SyncServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/sync");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 SyncServiceRequest::~SyncServiceRequest()

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForCreatingOrderRenewRequest : public RpcServiceRequest
 			{
+			public:
 				struct OrderRenewParam
 				{
 					int subscriptionDuration;

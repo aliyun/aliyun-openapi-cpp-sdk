@@ -35,7 +35,7 @@ bool DescribeSiteMonitorAttributeRequest::getIncludeAlert()const
 void DescribeSiteMonitorAttributeRequest::setIncludeAlert(bool includeAlert)
 {
 	includeAlert_ = includeAlert;
-	setCoreParameter("IncludeAlert", includeAlert ? "true" : "false");
+	setParameter("IncludeAlert", includeAlert ? "true" : "false");
 }
 
 std::string DescribeSiteMonitorAttributeRequest::getTaskId()const
@@ -46,6 +46,6 @@ std::string DescribeSiteMonitorAttributeRequest::getTaskId()const
 void DescribeSiteMonitorAttributeRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

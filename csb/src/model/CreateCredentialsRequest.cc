@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CreateCredentialsRequest;
 
 CreateCredentialsRequest::CreateCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CreateCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCredentialsRequest::~CreateCredentialsRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCredentialsRequest::getData()const
 void CreateCredentialsRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 long CreateCredentialsRequest::getCsbId()const
@@ -44,6 +46,6 @@ long CreateCredentialsRequest::getCsbId()const
 void CreateCredentialsRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 

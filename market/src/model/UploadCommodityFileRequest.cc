@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::UploadCommodityFileRequest;
 
 UploadCommodityFileRequest::UploadCommodityFileRequest() :
 	RpcServiceRequest("market", "2015-11-01", "UploadCommodityFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadCommodityFileRequest::~UploadCommodityFileRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadCommodityFileRequest::getFileResourceType()const
 void UploadCommodityFileRequest::setFileResourceType(const std::string& fileResourceType)
 {
 	fileResourceType_ = fileResourceType;
-	setCoreParameter("FileResourceType", fileResourceType);
+	setParameter("FileResourceType", fileResourceType);
 }
 
 std::string UploadCommodityFileRequest::getFileResource()const
@@ -44,7 +46,7 @@ std::string UploadCommodityFileRequest::getFileResource()const
 void UploadCommodityFileRequest::setFileResource(const std::string& fileResource)
 {
 	fileResource_ = fileResource;
-	setCoreParameter("FileResource", fileResource);
+	setParameter("FileResource", fileResource);
 }
 
 std::string UploadCommodityFileRequest::getFileContentType()const
@@ -55,6 +57,6 @@ std::string UploadCommodityFileRequest::getFileContentType()const
 void UploadCommodityFileRequest::setFileContentType(const std::string& fileContentType)
 {
 	fileContentType_ = fileContentType;
-	setCoreParameter("FileContentType", fileContentType);
+	setParameter("FileContentType", fileContentType);
 }
 

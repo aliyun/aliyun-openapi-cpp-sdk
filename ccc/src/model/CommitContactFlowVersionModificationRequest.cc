@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CommitContactFlowVersionModificationRequest;
 
 CommitContactFlowVersionModificationRequest::CommitContactFlowVersionModificationRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CommitContactFlowVersionModification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CommitContactFlowVersionModificationRequest::~CommitContactFlowVersionModificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string CommitContactFlowVersionModificationRequest::getCanvas()const
 void CommitContactFlowVersionModificationRequest::setCanvas(const std::string& canvas)
 {
 	canvas_ = canvas;
-	setCoreParameter("Canvas", canvas);
+	setBodyParameter("Canvas", canvas);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getContent()const
@@ -44,7 +46,7 @@ std::string CommitContactFlowVersionModificationRequest::getContent()const
 void CommitContactFlowVersionModificationRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CommitContactFlowVersionModificationRequest::getAccessKeyId()const
 void CommitContactFlowVersionModificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string CommitContactFlowVersionModificationRequest::getInstanceId()const
 void CommitContactFlowVersionModificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CommitContactFlowVersionModificationRequest::getContactFlowVersionId()const
@@ -77,6 +79,6 @@ std::string CommitContactFlowVersionModificationRequest::getContactFlowVersionId
 void CommitContactFlowVersionModificationRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
 {
 	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
+	setParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 

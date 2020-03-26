@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getId()const;
 				void setId(const std::string& id);
 				std::string getProjectId()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string regionId_;
+				std::string name_;
 				std::string id_;
 				std::string projectId_;
 

@@ -35,7 +35,7 @@ std::string DescribeSystemEventAttributeRequest::getStartTime()const
 void DescribeSystemEventAttributeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSystemEventAttributeRequest::getSearchKeywords()const
@@ -46,7 +46,7 @@ std::string DescribeSystemEventAttributeRequest::getSearchKeywords()const
 void DescribeSystemEventAttributeRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 int DescribeSystemEventAttributeRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeSystemEventAttributeRequest::getPageNumber()const
 void DescribeSystemEventAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeSystemEventAttributeRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeSystemEventAttributeRequest::getPageSize()const
 void DescribeSystemEventAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSystemEventAttributeRequest::getProduct()const
@@ -79,7 +79,7 @@ std::string DescribeSystemEventAttributeRequest::getProduct()const
 void DescribeSystemEventAttributeRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 
 std::string DescribeSystemEventAttributeRequest::getLevel()const
@@ -90,7 +90,7 @@ std::string DescribeSystemEventAttributeRequest::getLevel()const
 void DescribeSystemEventAttributeRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeSystemEventAttributeRequest::getGroupId()const
@@ -101,7 +101,7 @@ std::string DescribeSystemEventAttributeRequest::getGroupId()const
 void DescribeSystemEventAttributeRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeSystemEventAttributeRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeSystemEventAttributeRequest::getEndTime()const
 void DescribeSystemEventAttributeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSystemEventAttributeRequest::getName()const
@@ -123,7 +123,7 @@ std::string DescribeSystemEventAttributeRequest::getName()const
 void DescribeSystemEventAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeSystemEventAttributeRequest::getEventType()const
@@ -134,7 +134,7 @@ std::string DescribeSystemEventAttributeRequest::getEventType()const
 void DescribeSystemEventAttributeRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string DescribeSystemEventAttributeRequest::getStatus()const
@@ -145,6 +145,6 @@ std::string DescribeSystemEventAttributeRequest::getStatus()const
 void DescribeSystemEventAttributeRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

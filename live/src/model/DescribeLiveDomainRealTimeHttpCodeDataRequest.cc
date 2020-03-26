@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainRealTimeHttpCodeDataRequest;
 
 DescribeLiveDomainRealTimeHttpCodeDataRequest::DescribeLiveDomainRealTimeHttpCodeDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainRealTimeHttpCodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainRealTimeHttpCodeDataRequest::~DescribeLiveDomainRealTimeHttpCodeDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getLocationNameEn()co
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getStartTime()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getIspNameEn()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getDomainName()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeLiveDomainRealTimeHttpCodeDataRequest::getEndTime()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeLiveDomainRealTimeHttpCodeDataRequest::getOwnerId()const
 void DescribeLiveDomainRealTimeHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMezzaninesRequest;
 
 DeleteMezzaninesRequest::DeleteMezzaninesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMezzanines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMezzaninesRequest::~DeleteMezzaninesRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteMezzaninesRequest::getResourceOwnerId()const
 void DeleteMezzaninesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMezzaninesRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteMezzaninesRequest::getResourceOwnerAccount()const
 void DeleteMezzaninesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteMezzaninesRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteMezzaninesRequest::getOwnerId()const
 void DeleteMezzaninesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteMezzaninesRequest::getForce()const
@@ -66,7 +68,7 @@ bool DeleteMezzaninesRequest::getForce()const
 void DeleteMezzaninesRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 
 std::string DeleteMezzaninesRequest::getVideoIds()const
@@ -77,6 +79,6 @@ std::string DeleteMezzaninesRequest::getVideoIds()const
 void DeleteMezzaninesRequest::setVideoIds(const std::string& videoIds)
 {
 	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", videoIds);
+	setParameter("VideoIds", videoIds);
 }
 

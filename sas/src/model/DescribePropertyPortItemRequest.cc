@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyPortItemRequest;
 
 DescribePropertyPortItemRequest::DescribePropertyPortItemRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyPortItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyPortItemRequest::~DescribePropertyPortItemRequest()
 {}
@@ -33,7 +35,7 @@ int DescribePropertyPortItemRequest::getCurrentPage()const
 void DescribePropertyPortItemRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertyPortItemRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribePropertyPortItemRequest::getSourceIp()const
 void DescribePropertyPortItemRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribePropertyPortItemRequest::getPort()const
@@ -55,7 +57,7 @@ std::string DescribePropertyPortItemRequest::getPort()const
 void DescribePropertyPortItemRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setParameter("Port", port);
 }
 
 int DescribePropertyPortItemRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribePropertyPortItemRequest::getPageSize()const
 void DescribePropertyPortItemRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribePropertyPortItemRequest::getForceFlush()const
@@ -77,6 +79,6 @@ bool DescribePropertyPortItemRequest::getForceFlush()const
 void DescribePropertyPortItemRequest::setForceFlush(bool forceFlush)
 {
 	forceFlush_ = forceFlush;
-	setCoreParameter("ForceFlush", forceFlush ? "true" : "false");
+	setParameter("ForceFlush", forceFlush ? "true" : "false");
 }
 

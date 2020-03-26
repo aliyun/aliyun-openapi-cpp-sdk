@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeRouteServicesInCenRequest;
 
 DescribeRouteServicesInCenRequest::DescribeRouteServicesInCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeRouteServicesInCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteServicesInCenRequest::~DescribeRouteServicesInCenRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRouteServicesInCenRequest::getResourceOwnerId()const
 void DescribeRouteServicesInCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRouteServicesInCenRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeRouteServicesInCenRequest::getCenId()const
 void DescribeRouteServicesInCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeRouteServicesInCenRequest::getAccessRegionId()const
 void DescribeRouteServicesInCenRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setParameter("AccessRegionId", accessRegionId);
 }
 
 int DescribeRouteServicesInCenRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribeRouteServicesInCenRequest::getPageNumber()const
 void DescribeRouteServicesInCenRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeRouteServicesInCenRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeRouteServicesInCenRequest::getPageSize()const
 void DescribeRouteServicesInCenRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRouteServicesInCenRequest::getHost()const
@@ -88,7 +90,7 @@ std::string DescribeRouteServicesInCenRequest::getHost()const
 void DescribeRouteServicesInCenRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", host);
+	setParameter("Host", host);
 }
 
 std::string DescribeRouteServicesInCenRequest::getHostRegionId()const
@@ -99,7 +101,7 @@ std::string DescribeRouteServicesInCenRequest::getHostRegionId()const
 void DescribeRouteServicesInCenRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setParameter("HostRegionId", hostRegionId);
 }
 
 std::string DescribeRouteServicesInCenRequest::getHostVpcId()const
@@ -110,7 +112,7 @@ std::string DescribeRouteServicesInCenRequest::getHostVpcId()const
 void DescribeRouteServicesInCenRequest::setHostVpcId(const std::string& hostVpcId)
 {
 	hostVpcId_ = hostVpcId;
-	setCoreParameter("HostVpcId", hostVpcId);
+	setParameter("HostVpcId", hostVpcId);
 }
 
 std::string DescribeRouteServicesInCenRequest::getResourceOwnerAccount()const
@@ -121,7 +123,7 @@ std::string DescribeRouteServicesInCenRequest::getResourceOwnerAccount()const
 void DescribeRouteServicesInCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
@@ -132,7 +134,7 @@ std::string DescribeRouteServicesInCenRequest::getOwnerAccount()const
 void DescribeRouteServicesInCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRouteServicesInCenRequest::getOwnerId()const
@@ -143,6 +145,6 @@ long DescribeRouteServicesInCenRequest::getOwnerId()const
 void DescribeRouteServicesInCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

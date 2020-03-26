@@ -41,12 +41,8 @@ namespace AlibabaCloud
 				void setSessionId(const std::string& sessionId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getKnowledgeId()const;
-				void setKnowledgeId(const std::string& knowledgeId);
-				std::string getSenderId()const;
-				void setSenderId(const std::string& senderId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getIntentName()const;
+				void setIntentName(const std::string& intentName);
 				std::string getSenderNick()const;
 				void setSenderNick(const std::string& senderNick);
 				std::vector<std::string> getPerspective()const;
@@ -55,18 +51,28 @@ namespace AlibabaCloud
 				void setTag(const std::string& tag);
 				std::string getUtterance()const;
 				void setUtterance(const std::string& utterance);
+				int getRecommendNum()const;
+				void setRecommendNum(int recommendNum);
+				std::string getKnowledgeId()const;
+				void setKnowledgeId(const std::string& knowledgeId);
+				std::string getSenderId()const;
+				void setSenderId(const std::string& senderId);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
 				bool recommend_;
 				std::string sessionId_;
 				std::string accessKeyId_;
-				std::string knowledgeId_;
-				std::string senderId_;
-				std::string instanceId_;
+				std::string intentName_;
 				std::string senderNick_;
 				std::vector<std::string> perspective_;
 				std::string tag_;
 				std::string utterance_;
+				int recommendNum_;
+				std::string knowledgeId_;
+				std::string senderId_;
+				std::string instanceId_;
 
 			};
 		}

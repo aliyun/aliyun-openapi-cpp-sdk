@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CreateLifecycleHookRequest;
 
 CreateLifecycleHookRequest::CreateLifecycleHookRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CreateLifecycleHook")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLifecycleHookRequest::~CreateLifecycleHookRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateLifecycleHookRequest::getDefaultResult()const
 void CreateLifecycleHookRequest::setDefaultResult(const std::string& defaultResult)
 {
 	defaultResult_ = defaultResult;
-	setCoreParameter("DefaultResult", defaultResult);
+	setParameter("DefaultResult", defaultResult);
 }
 
 int CreateLifecycleHookRequest::getHeartbeatTimeout()const
@@ -44,7 +46,7 @@ int CreateLifecycleHookRequest::getHeartbeatTimeout()const
 void CreateLifecycleHookRequest::setHeartbeatTimeout(int heartbeatTimeout)
 {
 	heartbeatTimeout_ = heartbeatTimeout;
-	setCoreParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+	setParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
 }
 
 std::string CreateLifecycleHookRequest::getScalingGroupId()const
@@ -55,7 +57,7 @@ std::string CreateLifecycleHookRequest::getScalingGroupId()const
 void CreateLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string CreateLifecycleHookRequest::getLifecycleTransition()const
@@ -66,7 +68,7 @@ std::string CreateLifecycleHookRequest::getLifecycleTransition()const
 void CreateLifecycleHookRequest::setLifecycleTransition(const std::string& lifecycleTransition)
 {
 	lifecycleTransition_ = lifecycleTransition;
-	setCoreParameter("LifecycleTransition", lifecycleTransition);
+	setParameter("LifecycleTransition", lifecycleTransition);
 }
 
 std::string CreateLifecycleHookRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string CreateLifecycleHookRequest::getAccessKeyId()const
 void CreateLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateLifecycleHookRequest::getLifecycleHookName()const
@@ -88,7 +90,7 @@ std::string CreateLifecycleHookRequest::getLifecycleHookName()const
 void CreateLifecycleHookRequest::setLifecycleHookName(const std::string& lifecycleHookName)
 {
 	lifecycleHookName_ = lifecycleHookName;
-	setCoreParameter("LifecycleHookName", lifecycleHookName);
+	setParameter("LifecycleHookName", lifecycleHookName);
 }
 
 std::string CreateLifecycleHookRequest::getNotificationArn()const
@@ -99,7 +101,7 @@ std::string CreateLifecycleHookRequest::getNotificationArn()const
 void CreateLifecycleHookRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
+	setParameter("NotificationArn", notificationArn);
 }
 
 std::string CreateLifecycleHookRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateLifecycleHookRequest::getResourceOwnerAccount()const
 void CreateLifecycleHookRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateLifecycleHookRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateLifecycleHookRequest::getOwnerAccount()const
 void CreateLifecycleHookRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateLifecycleHookRequest::getNotificationMetadata()const
@@ -132,7 +134,7 @@ std::string CreateLifecycleHookRequest::getNotificationMetadata()const
 void CreateLifecycleHookRequest::setNotificationMetadata(const std::string& notificationMetadata)
 {
 	notificationMetadata_ = notificationMetadata;
-	setCoreParameter("NotificationMetadata", notificationMetadata);
+	setParameter("NotificationMetadata", notificationMetadata);
 }
 
 long CreateLifecycleHookRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long CreateLifecycleHookRequest::getOwnerId()const
 void CreateLifecycleHookRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<CreateLifecycleHookRequest::LifecycleHook> CreateLifecycleHookRequest::getLifecycleHook()const
@@ -154,16 +156,15 @@ std::vector<CreateLifecycleHookRequest::LifecycleHook> CreateLifecycleHookReques
 void CreateLifecycleHookRequest::setLifecycleHook(const std::vector<LifecycleHook>& lifecycleHook)
 {
 	lifecycleHook_ = lifecycleHook;
-	int i = 0;
-	for(int i = 0; i!= lifecycleHook.size(); i++)	{
-		auto obj = lifecycleHook.at(i);
-		std::string str ="LifecycleHook."+ std::to_string(i);
-		setCoreParameter(str + ".DefaultResult", obj.defaultResult);
-		setCoreParameter(str + ".LifecycleHookName", obj.lifecycleHookName);
-		setCoreParameter(str + ".HeartbeatTimeout", std::to_string(obj.heartbeatTimeout));
-		setCoreParameter(str + ".NotificationArn", obj.notificationArn);
-		setCoreParameter(str + ".NotificationMetadata", obj.notificationMetadata);
-		setCoreParameter(str + ".LifecycleTransition", obj.lifecycleTransition);
+	for(int dep1 = 0; dep1!= lifecycleHook.size(); dep1++) {
+		auto lifecycleHookObj = lifecycleHook.at(dep1);
+		std::string lifecycleHookObjStr = "LifecycleHook." + std::to_string(dep1 + 1);
+		setParameter(lifecycleHookObjStr + ".DefaultResult", lifecycleHookObj.defaultResult);
+		setParameter(lifecycleHookObjStr + ".LifecycleHookName", lifecycleHookObj.lifecycleHookName);
+		setParameter(lifecycleHookObjStr + ".HeartbeatTimeout", std::to_string(lifecycleHookObj.heartbeatTimeout));
+		setParameter(lifecycleHookObjStr + ".NotificationArn", lifecycleHookObj.notificationArn);
+		setParameter(lifecycleHookObjStr + ".NotificationMetadata", lifecycleHookObj.notificationMetadata);
+		setParameter(lifecycleHookObjStr + ".LifecycleTransition", lifecycleHookObj.lifecycleTransition);
 	}
 }
 

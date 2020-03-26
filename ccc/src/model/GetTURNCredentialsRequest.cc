@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTURNCredentialsRequest;
 
 GetTURNCredentialsRequest::GetTURNCredentialsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTURNCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTURNCredentialsRequest::~GetTURNCredentialsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetTURNCredentialsRequest::getInstanceId()const
 void GetTURNCredentialsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetTURNCredentialsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetTURNCredentialsRequest::getAccessKeyId()const
 void GetTURNCredentialsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetTURNCredentialsRequest::getUserName()const
@@ -55,6 +57,6 @@ std::string GetTURNCredentialsRequest::getUserName()const
 void GetTURNCredentialsRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

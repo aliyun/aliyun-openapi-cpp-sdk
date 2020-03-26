@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::SendWebsiteFeedbackRequest;
 
 SendWebsiteFeedbackRequest::SendWebsiteFeedbackRequest() :
 	RpcServiceRequest("green", "2017-08-23", "SendWebsiteFeedback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendWebsiteFeedbackRequest::~SendWebsiteFeedbackRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendWebsiteFeedbackRequest::getFeedback()const
 void SendWebsiteFeedbackRequest::setFeedback(const std::string& feedback)
 {
 	feedback_ = feedback;
-	setCoreParameter("Feedback", feedback);
+	setParameter("Feedback", feedback);
 }
 
 std::string SendWebsiteFeedbackRequest::getUrls()const
@@ -44,7 +46,7 @@ std::string SendWebsiteFeedbackRequest::getUrls()const
 void SendWebsiteFeedbackRequest::setUrls(const std::string& urls)
 {
 	urls_ = urls;
-	setCoreParameter("Urls", urls);
+	setParameter("Urls", urls);
 }
 
 std::string SendWebsiteFeedbackRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string SendWebsiteFeedbackRequest::getSourceIp()const
 void SendWebsiteFeedbackRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string SendWebsiteFeedbackRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SendWebsiteFeedbackRequest::getLang()const
 void SendWebsiteFeedbackRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

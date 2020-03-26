@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetPageConfigTemplateRequest;
 
 GetPageConfigTemplateRequest::GetPageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetPageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPageConfigTemplateRequest::~GetPageConfigTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPageConfigTemplateRequest::getAccessKeyId()const
 void GetPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetPageConfigTemplateRequest::getId()const
@@ -44,6 +46,6 @@ long GetPageConfigTemplateRequest::getId()const
 void GetPageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

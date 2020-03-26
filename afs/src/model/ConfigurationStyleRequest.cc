@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::ConfigurationStyleRequest;
 
 ConfigurationStyleRequest::ConfigurationStyleRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "ConfigurationStyle")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigurationStyleRequest::~ConfigurationStyleRequest()
 {}
@@ -33,7 +35,7 @@ std::string ConfigurationStyleRequest::getScene()const
 void ConfigurationStyleRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string ConfigurationStyleRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string ConfigurationStyleRequest::getSourceIp()const
 void ConfigurationStyleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ConfigurationStyleRequest::getConfigurationMethod()const
@@ -55,7 +57,7 @@ std::string ConfigurationStyleRequest::getConfigurationMethod()const
 void ConfigurationStyleRequest::setConfigurationMethod(const std::string& configurationMethod)
 {
 	configurationMethod_ = configurationMethod;
-	setCoreParameter("ConfigurationMethod", configurationMethod);
+	setParameter("ConfigurationMethod", configurationMethod);
 }
 
 std::string ConfigurationStyleRequest::getRefExtId()const
@@ -66,7 +68,7 @@ std::string ConfigurationStyleRequest::getRefExtId()const
 void ConfigurationStyleRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string ConfigurationStyleRequest::getApplyType()const
@@ -77,6 +79,6 @@ std::string ConfigurationStyleRequest::getApplyType()const
 void ConfigurationStyleRequest::setApplyType(const std::string& applyType)
 {
 	applyType_ = applyType;
-	setCoreParameter("ApplyType", applyType);
+	setParameter("ApplyType", applyType);
 }
 

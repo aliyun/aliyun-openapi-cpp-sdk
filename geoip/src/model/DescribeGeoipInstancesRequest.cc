@@ -21,7 +21,7 @@ using AlibabaCloud::Geoip::Model::DescribeGeoipInstancesRequest;
 DescribeGeoipInstancesRequest::DescribeGeoipInstancesRequest() :
 	RpcServiceRequest("geoip", "2020-01-01", "DescribeGeoipInstances")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeGeoipInstancesRequest::~DescribeGeoipInstancesRequest()

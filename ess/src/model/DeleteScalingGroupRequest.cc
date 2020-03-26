@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScalingGroupRequest;
 
 DeleteScalingGroupRequest::DeleteScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScalingGroupRequest::~DeleteScalingGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteScalingGroupRequest::getScalingGroupId()const
 void DeleteScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DeleteScalingGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteScalingGroupRequest::getAccessKeyId()const
 void DeleteScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteScalingGroupRequest::getForceDelete()const
@@ -55,7 +57,7 @@ bool DeleteScalingGroupRequest::getForceDelete()const
 void DeleteScalingGroupRequest::setForceDelete(bool forceDelete)
 {
 	forceDelete_ = forceDelete;
-	setCoreParameter("ForceDelete", forceDelete ? "true" : "false");
+	setParameter("ForceDelete", forceDelete ? "true" : "false");
 }
 
 std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteScalingGroupRequest::getResourceOwnerAccount()const
 void DeleteScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingGroupRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteScalingGroupRequest::getOwnerAccount()const
 void DeleteScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScalingGroupRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DeleteScalingGroupRequest::getOwnerId()const
 void DeleteScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

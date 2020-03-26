@@ -30,6 +30,8 @@
 #include "model/AppendEntityMemberResult.h"
 #include "model/ChatRequest.h"
 #include "model/ChatResult.h"
+#include "model/CreateBotRequest.h"
+#include "model/CreateBotResult.h"
 #include "model/CreateCategoryRequest.h"
 #include "model/CreateCategoryResult.h"
 #include "model/CreateCoreWordRequest.h"
@@ -44,6 +46,8 @@
 #include "model/CreateKnowledgeResult.h"
 #include "model/CreatePerspectiveRequest.h"
 #include "model/CreatePerspectiveResult.h"
+#include "model/DeleteBotRequest.h"
+#include "model/DeleteBotResult.h"
 #include "model/DeleteCategoryRequest.h"
 #include "model/DeleteCategoryResult.h"
 #include "model/DeleteCoreWordRequest.h"
@@ -56,6 +60,8 @@
 #include "model/DeleteIntentResult.h"
 #include "model/DeleteKnowledgeRequest.h"
 #include "model/DeleteKnowledgeResult.h"
+#include "model/DescribeBotRequest.h"
+#include "model/DescribeBotResult.h"
 #include "model/DescribeCategoryRequest.h"
 #include "model/DescribeCategoryResult.h"
 #include "model/DescribeCoreWordRequest.h"
@@ -78,12 +84,16 @@
 #include "model/DisableKnowledgeResult.h"
 #include "model/FeedbackRequest.h"
 #include "model/FeedbackResult.h"
+#include "model/LinkBotCategoryRequest.h"
+#include "model/LinkBotCategoryResult.h"
 #include "model/MoveKnowledgeCategoryRequest.h"
 #include "model/MoveKnowledgeCategoryResult.h"
 #include "model/PublishDialogFlowRequest.h"
 #include "model/PublishDialogFlowResult.h"
 #include "model/PublishKnowledgeRequest.h"
 #include "model/PublishKnowledgeResult.h"
+#include "model/QueryBotsRequest.h"
+#include "model/QueryBotsResult.h"
 #include "model/QueryCategoriesRequest.h"
 #include "model/QueryCategoriesResult.h"
 #include "model/QueryCoreWordsRequest.h"
@@ -143,6 +153,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChatResult> ChatOutcome;
 			typedef std::future<ChatOutcome> ChatOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::ChatRequest&, const ChatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatAsyncHandler;
+			typedef Outcome<Error, Model::CreateBotResult> CreateBotOutcome;
+			typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
+			typedef std::function<void(const ChatbotClient*, const Model::CreateBotRequest&, const CreateBotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBotAsyncHandler;
 			typedef Outcome<Error, Model::CreateCategoryResult> CreateCategoryOutcome;
 			typedef std::future<CreateCategoryOutcome> CreateCategoryOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::CreateCategoryRequest&, const CreateCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCategoryAsyncHandler;
@@ -164,6 +177,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePerspectiveResult> CreatePerspectiveOutcome;
 			typedef std::future<CreatePerspectiveOutcome> CreatePerspectiveOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::CreatePerspectiveRequest&, const CreatePerspectiveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePerspectiveAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBotResult> DeleteBotOutcome;
+			typedef std::future<DeleteBotOutcome> DeleteBotOutcomeCallable;
+			typedef std::function<void(const ChatbotClient*, const Model::DeleteBotRequest&, const DeleteBotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBotAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCategoryResult> DeleteCategoryOutcome;
 			typedef std::future<DeleteCategoryOutcome> DeleteCategoryOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::DeleteCategoryRequest&, const DeleteCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCategoryAsyncHandler;
@@ -182,6 +198,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteKnowledgeResult> DeleteKnowledgeOutcome;
 			typedef std::future<DeleteKnowledgeOutcome> DeleteKnowledgeOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::DeleteKnowledgeRequest&, const DeleteKnowledgeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKnowledgeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBotResult> DescribeBotOutcome;
+			typedef std::future<DescribeBotOutcome> DescribeBotOutcomeCallable;
+			typedef std::function<void(const ChatbotClient*, const Model::DescribeBotRequest&, const DescribeBotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCategoryResult> DescribeCategoryOutcome;
 			typedef std::future<DescribeCategoryOutcome> DescribeCategoryOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::DescribeCategoryRequest&, const DescribeCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCategoryAsyncHandler;
@@ -215,6 +234,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FeedbackResult> FeedbackOutcome;
 			typedef std::future<FeedbackOutcome> FeedbackOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::FeedbackRequest&, const FeedbackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FeedbackAsyncHandler;
+			typedef Outcome<Error, Model::LinkBotCategoryResult> LinkBotCategoryOutcome;
+			typedef std::future<LinkBotCategoryOutcome> LinkBotCategoryOutcomeCallable;
+			typedef std::function<void(const ChatbotClient*, const Model::LinkBotCategoryRequest&, const LinkBotCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LinkBotCategoryAsyncHandler;
 			typedef Outcome<Error, Model::MoveKnowledgeCategoryResult> MoveKnowledgeCategoryOutcome;
 			typedef std::future<MoveKnowledgeCategoryOutcome> MoveKnowledgeCategoryOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::MoveKnowledgeCategoryRequest&, const MoveKnowledgeCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveKnowledgeCategoryAsyncHandler;
@@ -224,6 +246,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishKnowledgeResult> PublishKnowledgeOutcome;
 			typedef std::future<PublishKnowledgeOutcome> PublishKnowledgeOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::PublishKnowledgeRequest&, const PublishKnowledgeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishKnowledgeAsyncHandler;
+			typedef Outcome<Error, Model::QueryBotsResult> QueryBotsOutcome;
+			typedef std::future<QueryBotsOutcome> QueryBotsOutcomeCallable;
+			typedef std::function<void(const ChatbotClient*, const Model::QueryBotsRequest&, const QueryBotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBotsAsyncHandler;
 			typedef Outcome<Error, Model::QueryCategoriesResult> QueryCategoriesOutcome;
 			typedef std::future<QueryCategoriesOutcome> QueryCategoriesOutcomeCallable;
 			typedef std::function<void(const ChatbotClient*, const Model::QueryCategoriesRequest&, const QueryCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCategoriesAsyncHandler;
@@ -298,6 +323,9 @@ namespace AlibabaCloud
 			ChatOutcome chat(const Model::ChatRequest &request)const;
 			void chatAsync(const Model::ChatRequest& request, const ChatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChatOutcomeCallable chatCallable(const Model::ChatRequest& request) const;
+			CreateBotOutcome createBot(const Model::CreateBotRequest &request)const;
+			void createBotAsync(const Model::CreateBotRequest& request, const CreateBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBotOutcomeCallable createBotCallable(const Model::CreateBotRequest& request) const;
 			CreateCategoryOutcome createCategory(const Model::CreateCategoryRequest &request)const;
 			void createCategoryAsync(const Model::CreateCategoryRequest& request, const CreateCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCategoryOutcomeCallable createCategoryCallable(const Model::CreateCategoryRequest& request) const;
@@ -319,6 +347,9 @@ namespace AlibabaCloud
 			CreatePerspectiveOutcome createPerspective(const Model::CreatePerspectiveRequest &request)const;
 			void createPerspectiveAsync(const Model::CreatePerspectiveRequest& request, const CreatePerspectiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePerspectiveOutcomeCallable createPerspectiveCallable(const Model::CreatePerspectiveRequest& request) const;
+			DeleteBotOutcome deleteBot(const Model::DeleteBotRequest &request)const;
+			void deleteBotAsync(const Model::DeleteBotRequest& request, const DeleteBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBotOutcomeCallable deleteBotCallable(const Model::DeleteBotRequest& request) const;
 			DeleteCategoryOutcome deleteCategory(const Model::DeleteCategoryRequest &request)const;
 			void deleteCategoryAsync(const Model::DeleteCategoryRequest& request, const DeleteCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCategoryOutcomeCallable deleteCategoryCallable(const Model::DeleteCategoryRequest& request) const;
@@ -337,6 +368,9 @@ namespace AlibabaCloud
 			DeleteKnowledgeOutcome deleteKnowledge(const Model::DeleteKnowledgeRequest &request)const;
 			void deleteKnowledgeAsync(const Model::DeleteKnowledgeRequest& request, const DeleteKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteKnowledgeOutcomeCallable deleteKnowledgeCallable(const Model::DeleteKnowledgeRequest& request) const;
+			DescribeBotOutcome describeBot(const Model::DescribeBotRequest &request)const;
+			void describeBotAsync(const Model::DescribeBotRequest& request, const DescribeBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBotOutcomeCallable describeBotCallable(const Model::DescribeBotRequest& request) const;
 			DescribeCategoryOutcome describeCategory(const Model::DescribeCategoryRequest &request)const;
 			void describeCategoryAsync(const Model::DescribeCategoryRequest& request, const DescribeCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCategoryOutcomeCallable describeCategoryCallable(const Model::DescribeCategoryRequest& request) const;
@@ -370,6 +404,9 @@ namespace AlibabaCloud
 			FeedbackOutcome feedback(const Model::FeedbackRequest &request)const;
 			void feedbackAsync(const Model::FeedbackRequest& request, const FeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FeedbackOutcomeCallable feedbackCallable(const Model::FeedbackRequest& request) const;
+			LinkBotCategoryOutcome linkBotCategory(const Model::LinkBotCategoryRequest &request)const;
+			void linkBotCategoryAsync(const Model::LinkBotCategoryRequest& request, const LinkBotCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LinkBotCategoryOutcomeCallable linkBotCategoryCallable(const Model::LinkBotCategoryRequest& request) const;
 			MoveKnowledgeCategoryOutcome moveKnowledgeCategory(const Model::MoveKnowledgeCategoryRequest &request)const;
 			void moveKnowledgeCategoryAsync(const Model::MoveKnowledgeCategoryRequest& request, const MoveKnowledgeCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MoveKnowledgeCategoryOutcomeCallable moveKnowledgeCategoryCallable(const Model::MoveKnowledgeCategoryRequest& request) const;
@@ -379,6 +416,9 @@ namespace AlibabaCloud
 			PublishKnowledgeOutcome publishKnowledge(const Model::PublishKnowledgeRequest &request)const;
 			void publishKnowledgeAsync(const Model::PublishKnowledgeRequest& request, const PublishKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishKnowledgeOutcomeCallable publishKnowledgeCallable(const Model::PublishKnowledgeRequest& request) const;
+			QueryBotsOutcome queryBots(const Model::QueryBotsRequest &request)const;
+			void queryBotsAsync(const Model::QueryBotsRequest& request, const QueryBotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryBotsOutcomeCallable queryBotsCallable(const Model::QueryBotsRequest& request) const;
 			QueryCategoriesOutcome queryCategories(const Model::QueryCategoriesRequest &request)const;
 			void queryCategoriesAsync(const Model::QueryCategoriesRequest& request, const QueryCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCategoriesOutcomeCallable queryCategoriesCallable(const Model::QueryCategoriesRequest& request) const;

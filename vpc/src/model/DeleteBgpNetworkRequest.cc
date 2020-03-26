@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteBgpNetworkRequest;
 
 DeleteBgpNetworkRequest::DeleteBgpNetworkRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteBgpNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBgpNetworkRequest::~DeleteBgpNetworkRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteBgpNetworkRequest::getResourceOwnerId()const
 void DeleteBgpNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteBgpNetworkRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteBgpNetworkRequest::getClientToken()const
 void DeleteBgpNetworkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteBgpNetworkRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteBgpNetworkRequest::getRegionId()const
 void DeleteBgpNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteBgpNetworkRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteBgpNetworkRequest::getResourceOwnerAccount()const
 void DeleteBgpNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteBgpNetworkRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteBgpNetworkRequest::getOwnerAccount()const
 void DeleteBgpNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteBgpNetworkRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteBgpNetworkRequest::getOwnerId()const
 void DeleteBgpNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteBgpNetworkRequest::getRouterId()const
@@ -99,7 +101,7 @@ std::string DeleteBgpNetworkRequest::getRouterId()const
 void DeleteBgpNetworkRequest::setRouterId(const std::string& routerId)
 {
 	routerId_ = routerId;
-	setCoreParameter("RouterId", routerId);
+	setParameter("RouterId", routerId);
 }
 
 std::string DeleteBgpNetworkRequest::getDstCidrBlock()const
@@ -110,6 +112,6 @@ std::string DeleteBgpNetworkRequest::getDstCidrBlock()const
 void DeleteBgpNetworkRequest::setDstCidrBlock(const std::string& dstCidrBlock)
 {
 	dstCidrBlock_ = dstCidrBlock;
-	setCoreParameter("DstCidrBlock", dstCidrBlock);
+	setParameter("DstCidrBlock", dstCidrBlock);
 }
 

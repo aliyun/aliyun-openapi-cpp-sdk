@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterResourcePoolSchedulerTypeRequest;
 
 DescribeClusterResourcePoolSchedulerTypeRequest::DescribeClusterResourcePoolSchedulerTypeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterResourcePoolSchedulerType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterResourcePoolSchedulerTypeRequest::~DescribeClusterResourcePoolSchedulerTypeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterResourcePoolSchedulerTypeRequest::getResourceOwnerId()const
 void DescribeClusterResourcePoolSchedulerTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getClusterId()const
 void DescribeClusterResourcePoolSchedulerTypeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getAccessKeyId()con
 void DescribeClusterResourcePoolSchedulerTypeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterResourcePoolSchedulerTypeRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string DescribeClusterResourcePoolSchedulerTypeRequest::getRegionId()const
 void DescribeClusterResourcePoolSchedulerTypeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

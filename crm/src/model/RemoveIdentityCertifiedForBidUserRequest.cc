@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::RemoveIdentityCertifiedForBidUserRequest;
 
 RemoveIdentityCertifiedForBidUserRequest::RemoveIdentityCertifiedForBidUserRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "RemoveIdentityCertifiedForBidUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveIdentityCertifiedForBidUserRequest::~RemoveIdentityCertifiedForBidUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveIdentityCertifiedForBidUserRequest::getBidType()const
 void RemoveIdentityCertifiedForBidUserRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", bidType);
+	setParameter("BidType", bidType);
 }
 
 std::string RemoveIdentityCertifiedForBidUserRequest::getPK()const
@@ -44,6 +46,6 @@ std::string RemoveIdentityCertifiedForBidUserRequest::getPK()const
 void RemoveIdentityCertifiedForBidUserRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 

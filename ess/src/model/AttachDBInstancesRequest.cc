@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachDBInstancesRequest;
 
 AttachDBInstancesRequest::AttachDBInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachDBInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachDBInstancesRequest::~AttachDBInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string AttachDBInstancesRequest::getScalingGroupId()const
 void AttachDBInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachDBInstancesRequest::getForceAttach()const
@@ -44,7 +46,7 @@ bool AttachDBInstancesRequest::getForceAttach()const
 void AttachDBInstancesRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+	setParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 std::string AttachDBInstancesRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AttachDBInstancesRequest::getAccessKeyId()const
 void AttachDBInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AttachDBInstancesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AttachDBInstancesRequest::getResourceOwnerAccount()const
 void AttachDBInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
@@ -77,8 +79,9 @@ std::vector<std::string> AttachDBInstancesRequest::getDBInstance()const
 void AttachDBInstancesRequest::setDBInstance(const std::vector<std::string>& dBInstance)
 {
 	dBInstance_ = dBInstance;
-	for(int i = 0; i!= dBInstance.size(); i++)
-		setCoreParameter("DBInstance."+ std::to_string(i), dBInstance.at(i));
+	for(int dep1 = 0; dep1!= dBInstance.size(); dep1++) {
+		setParameter("DBInstance."+ std::to_string(dep1), dBInstance.at(dep1));
+	}
 }
 
 long AttachDBInstancesRequest::getOwnerId()const
@@ -89,6 +92,6 @@ long AttachDBInstancesRequest::getOwnerId()const
 void AttachDBInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

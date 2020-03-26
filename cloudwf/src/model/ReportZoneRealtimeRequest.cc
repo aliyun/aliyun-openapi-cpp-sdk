@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReportZoneRealtimeRequest;
 
 ReportZoneRealtimeRequest::ReportZoneRealtimeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReportZoneRealtime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportZoneRealtimeRequest::~ReportZoneRealtimeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReportZoneRealtimeRequest::getAccessKeyId()const
 void ReportZoneRealtimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportZoneRealtimeRequest::getAgsid()const
@@ -44,6 +46,6 @@ long ReportZoneRealtimeRequest::getAgsid()const
 void ReportZoneRealtimeRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setParameter("Agsid", std::to_string(agsid));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetLoraNodesTaskRequest;
 
 GetLoraNodesTaskRequest::GetLoraNodesTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetLoraNodesTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLoraNodesTaskRequest::~GetLoraNodesTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetLoraNodesTaskRequest::getAccessKeyId()const
 void GetLoraNodesTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetLoraNodesTaskRequest::getIotInstanceId()const
@@ -44,7 +46,7 @@ std::string GetLoraNodesTaskRequest::getIotInstanceId()const
 void GetLoraNodesTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetLoraNodesTaskRequest::getTaskId()const
@@ -55,6 +57,6 @@ std::string GetLoraNodesTaskRequest::getTaskId()const
 void GetLoraNodesTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

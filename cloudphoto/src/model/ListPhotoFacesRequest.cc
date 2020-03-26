@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListPhotoFacesRequest;
 
 ListPhotoFacesRequest::ListPhotoFacesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListPhotoFaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPhotoFacesRequest::~ListPhotoFacesRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListPhotoFacesRequest::getLibraryId()const
 void ListPhotoFacesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long ListPhotoFacesRequest::getPhotoId()const
@@ -44,7 +46,7 @@ long ListPhotoFacesRequest::getPhotoId()const
 void ListPhotoFacesRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string ListPhotoFacesRequest::getStoreName()const
@@ -55,6 +57,6 @@ std::string ListPhotoFacesRequest::getStoreName()const
 void ListPhotoFacesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

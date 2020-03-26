@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CreateNotificationConfigurationRequest;
 
 CreateNotificationConfigurationRequest::CreateNotificationConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CreateNotificationConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNotificationConfigurationRequest::~CreateNotificationConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateNotificationConfigurationRequest::getScalingGroupId()const
 void CreateNotificationConfigurationRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string CreateNotificationConfigurationRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateNotificationConfigurationRequest::getAccessKeyId()const
 void CreateNotificationConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateNotificationConfigurationRequest::getNotificationArn()const
@@ -55,7 +57,7 @@ std::string CreateNotificationConfigurationRequest::getNotificationArn()const
 void CreateNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
+	setParameter("NotificationArn", notificationArn);
 }
 
 std::string CreateNotificationConfigurationRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CreateNotificationConfigurationRequest::getResourceOwnerAccount()con
 void CreateNotificationConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CreateNotificationConfigurationRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long CreateNotificationConfigurationRequest::getOwnerId()const
 void CreateNotificationConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> CreateNotificationConfigurationRequest::getNotificationType()const
@@ -88,7 +90,8 @@ std::vector<std::string> CreateNotificationConfigurationRequest::getNotification
 void CreateNotificationConfigurationRequest::setNotificationType(const std::vector<std::string>& notificationType)
 {
 	notificationType_ = notificationType;
-	for(int i = 0; i!= notificationType.size(); i++)
-		setCoreParameter("NotificationType."+ std::to_string(i), notificationType.at(i));
+	for(int dep1 = 0; dep1!= notificationType.size(); dep1++) {
+		setParameter("NotificationType."+ std::to_string(dep1), notificationType.at(dep1));
+	}
 }
 

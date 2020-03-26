@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SubmitEmailVerificationRequest;
 
 SubmitEmailVerificationRequest::SubmitEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SubmitEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitEmailVerificationRequest::~SubmitEmailVerificationRequest()
 {}
@@ -33,7 +35,7 @@ bool SubmitEmailVerificationRequest::getSendIfExist()const
 void SubmitEmailVerificationRequest::setSendIfExist(bool sendIfExist)
 {
 	sendIfExist_ = sendIfExist;
-	setCoreParameter("SendIfExist", sendIfExist ? "true" : "false");
+	setParameter("SendIfExist", sendIfExist ? "true" : "false");
 }
 
 std::string SubmitEmailVerificationRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SubmitEmailVerificationRequest::getUserClientIp()const
 void SubmitEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SubmitEmailVerificationRequest::getLang()const
@@ -55,7 +57,7 @@ std::string SubmitEmailVerificationRequest::getLang()const
 void SubmitEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SubmitEmailVerificationRequest::getEmail()const
@@ -66,6 +68,6 @@ std::string SubmitEmailVerificationRequest::getEmail()const
 void SubmitEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

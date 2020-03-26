@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::QueryCustomerSaleInfoRequest;
 
 QueryCustomerSaleInfoRequest::QueryCustomerSaleInfoRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "QueryCustomerSaleInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 QueryCustomerSaleInfoRequest::~QueryCustomerSaleInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryCustomerSaleInfoRequest::getRegionName()const
 void QueryCustomerSaleInfoRequest::setRegionName(const std::string& regionName)
 {
 	regionName_ = regionName;
-	setCoreParameter("RegionName", regionName);
+	setParameter("RegionName", regionName);
 }
 

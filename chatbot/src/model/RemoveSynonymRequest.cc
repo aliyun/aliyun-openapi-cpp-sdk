@@ -35,7 +35,7 @@ std::string RemoveSynonymRequest::getSynonym()const
 void RemoveSynonymRequest::setSynonym(const std::string& synonym)
 {
 	synonym_ = synonym;
-	setCoreParameter("Synonym", synonym);
+	setParameter("Synonym", synonym);
 }
 
 std::string RemoveSynonymRequest::getCoreWordName()const
@@ -46,6 +46,6 @@ std::string RemoveSynonymRequest::getCoreWordName()const
 void RemoveSynonymRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
+	setParameter("CoreWordName", coreWordName);
 }
 

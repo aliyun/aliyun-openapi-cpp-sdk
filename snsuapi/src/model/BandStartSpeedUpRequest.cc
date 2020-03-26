@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandStartSpeedUpRequest;
 
 BandStartSpeedUpRequest::BandStartSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandStartSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandStartSpeedUpRequest::~BandStartSpeedUpRequest()
 {}
@@ -33,7 +35,7 @@ std::string BandStartSpeedUpRequest::getIpAddress()const
 void BandStartSpeedUpRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setParameter("IpAddress", ipAddress);
 }
 
 long BandStartSpeedUpRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long BandStartSpeedUpRequest::getResourceOwnerId()const
 void BandStartSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandStartSpeedUpRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string BandStartSpeedUpRequest::getAccessKeyId()const
 void BandStartSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long BandStartSpeedUpRequest::getBandId()const
@@ -66,7 +68,7 @@ long BandStartSpeedUpRequest::getBandId()const
 void BandStartSpeedUpRequest::setBandId(long bandId)
 {
 	bandId_ = bandId;
-	setCoreParameter("BandId", std::to_string(bandId));
+	setParameter("BandId", std::to_string(bandId));
 }
 
 long BandStartSpeedUpRequest::getTargetBandwidth()const
@@ -77,7 +79,7 @@ long BandStartSpeedUpRequest::getTargetBandwidth()const
 void BandStartSpeedUpRequest::setTargetBandwidth(long targetBandwidth)
 {
 	targetBandwidth_ = targetBandwidth;
-	setCoreParameter("TargetBandwidth", std::to_string(targetBandwidth));
+	setParameter("TargetBandwidth", std::to_string(targetBandwidth));
 }
 
 std::string BandStartSpeedUpRequest::getDirection()const
@@ -88,7 +90,7 @@ std::string BandStartSpeedUpRequest::getDirection()const
 void BandStartSpeedUpRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 std::string BandStartSpeedUpRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string BandStartSpeedUpRequest::getResourceOwnerAccount()const
 void BandStartSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BandStartSpeedUpRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long BandStartSpeedUpRequest::getOwnerId()const
 void BandStartSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandStartSpeedUpRequest::getBandScene()const
@@ -121,7 +123,7 @@ std::string BandStartSpeedUpRequest::getBandScene()const
 void BandStartSpeedUpRequest::setBandScene(const std::string& bandScene)
 {
 	bandScene_ = bandScene;
-	setCoreParameter("BandScene", bandScene);
+	setParameter("BandScene", bandScene);
 }
 
 int BandStartSpeedUpRequest::getPort()const
@@ -132,6 +134,6 @@ int BandStartSpeedUpRequest::getPort()const
 void BandStartSpeedUpRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 

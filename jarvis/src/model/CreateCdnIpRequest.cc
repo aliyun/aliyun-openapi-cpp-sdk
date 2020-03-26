@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCdnIpRequest;
 
 CreateCdnIpRequest::CreateCdnIpRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCdnIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdnIpRequest::~CreateCdnIpRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCdnIpRequest::getResourceOwnerId()const
 void CreateCdnIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCdnIpRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string CreateCdnIpRequest::getSourceCode()const
 void CreateCdnIpRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateCdnIpRequest::getCdnIpList()const
@@ -55,7 +57,7 @@ std::string CreateCdnIpRequest::getCdnIpList()const
 void CreateCdnIpRequest::setCdnIpList(const std::string& cdnIpList)
 {
 	cdnIpList_ = cdnIpList;
-	setCoreParameter("CdnIpList", cdnIpList);
+	setParameter("CdnIpList", cdnIpList);
 }
 
 std::string CreateCdnIpRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateCdnIpRequest::getSourceIp()const
 void CreateCdnIpRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCdnIpRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateCdnIpRequest::getLang()const
 void CreateCdnIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string content;
 						std::string answerSource;
 						std::string metaData;
+						std::string externalFlags;
 					};
 					struct Knowledge
 					{

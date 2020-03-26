@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeConditionsRequest;
 
 DescribeConditionsRequest::DescribeConditionsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeConditions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConditionsRequest::~DescribeConditionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeConditionsRequest::getProductCode()const
 void DescribeConditionsRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 int DescribeConditionsRequest::getFeatureType()const
@@ -44,7 +46,7 @@ int DescribeConditionsRequest::getFeatureType()const
 void DescribeConditionsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeConditionsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeConditionsRequest::getSourceIp()const
 void DescribeConditionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeConditionsRequest::getSearchType()const
@@ -66,7 +68,7 @@ int DescribeConditionsRequest::getSearchType()const
 void DescribeConditionsRequest::setSearchType(int searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", std::to_string(searchType));
+	setParameter("SearchType", std::to_string(searchType));
 }
 
 std::string DescribeConditionsRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeConditionsRequest::getLang()const
 void DescribeConditionsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeConditionsRequest::getQueryType()const
@@ -88,6 +90,6 @@ int DescribeConditionsRequest::getQueryType()const
 void DescribeConditionsRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
 }
 

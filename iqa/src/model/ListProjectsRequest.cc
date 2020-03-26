@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::ListProjectsRequest;
 
 ListProjectsRequest::ListProjectsRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "ListProjects")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProjectsRequest::~ListProjectsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListProjectsRequest::getFilterParam()const
 void ListProjectsRequest::setFilterParam(const std::string& filterParam)
 {
 	filterParam_ = filterParam;
-	setCoreParameter("FilterParam", filterParam);
+	setParameter("FilterParam", filterParam);
 }
 
 int ListProjectsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListProjectsRequest::getPageNumber()const
 void ListProjectsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int ListProjectsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int ListProjectsRequest::getPageSize()const
 void ListProjectsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListProjectsRequest::getProjectType()const
@@ -66,6 +68,6 @@ std::string ListProjectsRequest::getProjectType()const
 void ListProjectsRequest::setProjectType(const std::string& projectType)
 {
 	projectType_ = projectType;
-	setCoreParameter("ProjectType", projectType);
+	setParameter("ProjectType", projectType);
 }
 

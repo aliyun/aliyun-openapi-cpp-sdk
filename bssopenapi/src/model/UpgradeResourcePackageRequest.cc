@@ -35,7 +35,7 @@ std::string UpgradeResourcePackageRequest::getSpecification()const
 void UpgradeResourcePackageRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", specification);
+	setParameter("Specification", specification);
 }
 
 long UpgradeResourcePackageRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long UpgradeResourcePackageRequest::getOwnerId()const
 void UpgradeResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpgradeResourcePackageRequest::getEffectiveDate()const
@@ -57,7 +57,7 @@ std::string UpgradeResourcePackageRequest::getEffectiveDate()const
 void UpgradeResourcePackageRequest::setEffectiveDate(const std::string& effectiveDate)
 {
 	effectiveDate_ = effectiveDate;
-	setCoreParameter("EffectiveDate", effectiveDate);
+	setParameter("EffectiveDate", effectiveDate);
 }
 
 std::string UpgradeResourcePackageRequest::getInstanceId()const
@@ -68,6 +68,6 @@ std::string UpgradeResourcePackageRequest::getInstanceId()const
 void UpgradeResourcePackageRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

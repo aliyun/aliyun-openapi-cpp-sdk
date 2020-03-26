@@ -86,6 +86,9 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 	auto allListenerPorts = value["ListenerPorts"]["ListenerPort"];
 	for (const auto &item : allListenerPorts)
 		listenerPorts_.push_back(item.asString());
+	auto allLabels = value["Labels"]["Label"];
+	for (const auto &item : allLabels)
+		labels_.push_back(item.asString());
 	if(!value["LoadBalancerId"].isNull())
 		loadBalancerId_ = value["LoadBalancerId"].asString();
 	if(!value["ResourceGroupId"].isNull())
@@ -152,6 +155,10 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		reservedInfoActiveTime_ = value["ReservedInfoActiveTime"].asString();
 	if(!value["DeleteProtection"].isNull())
 		deleteProtection_ = value["DeleteProtection"].asString();
+	if(!value["AssociatedCenId"].isNull())
+		associatedCenId_ = value["AssociatedCenId"].asString();
+	if(!value["AssociatedCenStatus"].isNull())
+		associatedCenStatus_ = value["AssociatedCenStatus"].asString();
 	if(!value["CloudInstanceType"].isNull())
 		cloudInstanceType_ = value["CloudInstanceType"].asString();
 	if(!value["CloudInstanceId"].isNull())
@@ -160,12 +167,19 @@ void DescribeLoadBalancerAttributeResult::parse(const std::string &payload)
 		tunnelType_ = value["TunnelType"].asString();
 	if(!value["CloudInstanceUid"].isNull())
 		cloudInstanceUid_ = std::stol(value["CloudInstanceUid"].asString());
+	if(!value["SupportPrivateLink"].isNull())
+		supportPrivateLink_ = value["SupportPrivateLink"].asString() == "true";
 
 }
 
 int DescribeLoadBalancerAttributeResult::getRenewalDuration()const
 {
 	return renewalDuration_;
+}
+
+std::string DescribeLoadBalancerAttributeResult::getAssociatedCenStatus()const
+{
+	return associatedCenStatus_;
 }
 
 std::vector<DescribeLoadBalancerAttributeResult::ListenerPortAndProtocal> DescribeLoadBalancerAttributeResult::getListenerPortsAndProtocal()const
@@ -186,6 +200,11 @@ std::string DescribeLoadBalancerAttributeResult::getAddress()const
 std::string DescribeLoadBalancerAttributeResult::getEndTime()const
 {
 	return endTime_;
+}
+
+bool DescribeLoadBalancerAttributeResult::getSupportPrivateLink()const
+{
+	return supportPrivateLink_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getAddressIPVersion()const
@@ -233,6 +252,11 @@ int DescribeLoadBalancerAttributeResult::getBandwidth()const
 	return bandwidth_;
 }
 
+std::string DescribeLoadBalancerAttributeResult::getAssociatedCenId()const
+{
+	return associatedCenId_;
+}
+
 std::vector<std::string> DescribeLoadBalancerAttributeResult::getListenerPorts()const
 {
 	return listenerPorts_;
@@ -276,6 +300,11 @@ std::string DescribeLoadBalancerAttributeResult::getRenewalStatus()const
 long DescribeLoadBalancerAttributeResult::getCloudInstanceUid()const
 {
 	return cloudInstanceUid_;
+}
+
+std::vector<std::string> DescribeLoadBalancerAttributeResult::getLabels()const
+{
+	return labels_;
 }
 
 std::string DescribeLoadBalancerAttributeResult::getRenewalCycUnit()const

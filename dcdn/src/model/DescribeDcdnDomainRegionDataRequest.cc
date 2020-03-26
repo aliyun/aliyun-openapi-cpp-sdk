@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainRegionDataRequest::getStartTime()const
 void DescribeDcdnDomainRegionDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainRegionDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainRegionDataRequest::getDomainName()const
 void DescribeDcdnDomainRegionDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainRegionDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainRegionDataRequest::getEndTime()const
 void DescribeDcdnDomainRegionDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainRegionDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeDcdnDomainRegionDataRequest::getOwnerId()const
 void DescribeDcdnDomainRegionDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

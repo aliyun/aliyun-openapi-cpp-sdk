@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ResetQualificationVerificationRequest;
 
 ResetQualificationVerificationRequest::ResetQualificationVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ResetQualificationVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetQualificationVerificationRequest::~ResetQualificationVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResetQualificationVerificationRequest::getAccessKeyId()const
 void ResetQualificationVerificationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResetQualificationVerificationRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string ResetQualificationVerificationRequest::getInstanceId()const
 void ResetQualificationVerificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ResetQualificationVerificationRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string ResetQualificationVerificationRequest::getUserClientIp()const
 void ResetQualificationVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string ResetQualificationVerificationRequest::getLang()const
@@ -66,6 +68,6 @@ std::string ResetQualificationVerificationRequest::getLang()const
 void ResetQualificationVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

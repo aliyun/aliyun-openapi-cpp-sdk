@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListBusinessDetailsRequest;
 
 ListBusinessDetailsRequest::ListBusinessDetailsRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListBusinessDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBusinessDetailsRequest::~ListBusinessDetailsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListBusinessDetailsRequest::getOrderCol()const
 void ListBusinessDetailsRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListBusinessDetailsRequest::getSearchName()const
@@ -44,7 +46,7 @@ std::string ListBusinessDetailsRequest::getSearchName()const
 void ListBusinessDetailsRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 int ListBusinessDetailsRequest::getLength()const
@@ -55,7 +57,7 @@ int ListBusinessDetailsRequest::getLength()const
 void ListBusinessDetailsRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListBusinessDetailsRequest::getOrderDir()const
@@ -66,7 +68,7 @@ std::string ListBusinessDetailsRequest::getOrderDir()const
 void ListBusinessDetailsRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListBusinessDetailsRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListBusinessDetailsRequest::getAccessKeyId()const
 void ListBusinessDetailsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListBusinessDetailsRequest::getPageIndex()const
@@ -88,6 +90,6 @@ int ListBusinessDetailsRequest::getPageIndex()const
 void ListBusinessDetailsRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

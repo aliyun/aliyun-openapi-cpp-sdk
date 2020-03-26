@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ListLiveRealtimeLogDeliveryDomainsRequest;
 
 ListLiveRealtimeLogDeliveryDomainsRequest::ListLiveRealtimeLogDeliveryDomainsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ListLiveRealtimeLogDeliveryDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListLiveRealtimeLogDeliveryDomainsRequest::~ListLiveRealtimeLogDeliveryDomainsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListLiveRealtimeLogDeliveryDomainsRequest::getProject()const
 void ListLiveRealtimeLogDeliveryDomainsRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 long ListLiveRealtimeLogDeliveryDomainsRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long ListLiveRealtimeLogDeliveryDomainsRequest::getOwnerId()const
 void ListLiveRealtimeLogDeliveryDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListLiveRealtimeLogDeliveryDomainsRequest::getRegion()const
@@ -55,7 +57,7 @@ std::string ListLiveRealtimeLogDeliveryDomainsRequest::getRegion()const
 void ListLiveRealtimeLogDeliveryDomainsRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string ListLiveRealtimeLogDeliveryDomainsRequest::getLogstore()const
@@ -66,6 +68,6 @@ std::string ListLiveRealtimeLogDeliveryDomainsRequest::getLogstore()const
 void ListLiveRealtimeLogDeliveryDomainsRequest::setLogstore(const std::string& logstore)
 {
 	logstore_ = logstore;
-	setCoreParameter("Logstore", logstore);
+	setParameter("Logstore", logstore);
 }
 

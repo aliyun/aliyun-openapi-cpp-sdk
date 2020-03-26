@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateDomainVerifyConfigurationStatusRequest;
 
 CreateDomainVerifyConfigurationStatusRequest::CreateDomainVerifyConfigurationStatusRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateDomainVerifyConfigurationStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDomainVerifyConfigurationStatusRequest::~CreateDomainVerifyConfigurationStatusRequest()
 {}
@@ -33,7 +35,7 @@ long CreateDomainVerifyConfigurationStatusRequest::getOrderId()const
 void CreateDomainVerifyConfigurationStatusRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getType()const
@@ -44,7 +46,7 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getType()const
 void CreateDomainVerifyConfigurationStatusRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getResourceGroupId()co
 void CreateDomainVerifyConfigurationStatusRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getSourceIp()const
 void CreateDomainVerifyConfigurationStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateDomainVerifyConfigurationStatusRequest::getLang()const
 void CreateDomainVerifyConfigurationStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

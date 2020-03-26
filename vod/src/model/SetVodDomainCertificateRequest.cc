@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetVodDomainCertificateRequest;
 
 SetVodDomainCertificateRequest::SetVodDomainCertificateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetVodDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetVodDomainCertificateRequest::~SetVodDomainCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetVodDomainCertificateRequest::getSSLProtocol()const
 void SetVodDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", sSLProtocol);
+	setParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string SetVodDomainCertificateRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string SetVodDomainCertificateRequest::getSecurityToken()const
 void SetVodDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetVodDomainCertificateRequest::getSSLPri()const
@@ -55,7 +57,7 @@ std::string SetVodDomainCertificateRequest::getSSLPri()const
 void SetVodDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", sSLPri);
+	setParameter("SSLPri", sSLPri);
 }
 
 std::string SetVodDomainCertificateRequest::getCertName()const
@@ -66,7 +68,7 @@ std::string SetVodDomainCertificateRequest::getCertName()const
 void SetVodDomainCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setParameter("CertName", certName);
 }
 
 std::string SetVodDomainCertificateRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string SetVodDomainCertificateRequest::getDomainName()const
 void SetVodDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetVodDomainCertificateRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SetVodDomainCertificateRequest::getOwnerId()const
 void SetVodDomainCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetVodDomainCertificateRequest::getSSLPub()const
@@ -99,7 +101,7 @@ std::string SetVodDomainCertificateRequest::getSSLPub()const
 void SetVodDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	setParameter("SSLPub", sSLPub);
 }
 
 std::string SetVodDomainCertificateRequest::getRegion()const
@@ -110,6 +112,6 @@ std::string SetVodDomainCertificateRequest::getRegion()const
 void SetVodDomainCertificateRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

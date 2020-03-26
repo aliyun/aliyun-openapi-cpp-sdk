@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::StartLoadBalancerListenerRequest;
 
 StartLoadBalancerListenerRequest::StartLoadBalancerListenerRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "StartLoadBalancerListener")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLoadBalancerListenerRequest::~StartLoadBalancerListenerRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartLoadBalancerListenerRequest::getAccess_key_id()const
 void StartLoadBalancerListenerRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long StartLoadBalancerListenerRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long StartLoadBalancerListenerRequest::getResourceOwnerId()const
 void StartLoadBalancerListenerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string StartLoadBalancerListenerRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string StartLoadBalancerListenerRequest::getRegionId()const
 void StartLoadBalancerListenerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int StartLoadBalancerListenerRequest::getListenerPort()const
@@ -66,7 +68,7 @@ int StartLoadBalancerListenerRequest::getListenerPort()const
 void StartLoadBalancerListenerRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string StartLoadBalancerListenerRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string StartLoadBalancerListenerRequest::getResourceOwnerAccount()const
 void StartLoadBalancerListenerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string StartLoadBalancerListenerRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string StartLoadBalancerListenerRequest::getOwnerAccount()const
 void StartLoadBalancerListenerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long StartLoadBalancerListenerRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long StartLoadBalancerListenerRequest::getOwnerId()const
 void StartLoadBalancerListenerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartLoadBalancerListenerRequest::getListenerProtocol()const
@@ -110,7 +112,7 @@ std::string StartLoadBalancerListenerRequest::getListenerProtocol()const
 void StartLoadBalancerListenerRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string StartLoadBalancerListenerRequest::getTags()const
@@ -121,7 +123,7 @@ std::string StartLoadBalancerListenerRequest::getTags()const
 void StartLoadBalancerListenerRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string StartLoadBalancerListenerRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string StartLoadBalancerListenerRequest::getLoadBalancerId()const
 void StartLoadBalancerListenerRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

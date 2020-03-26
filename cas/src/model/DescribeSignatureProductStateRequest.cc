@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureProductStateRequest;
 
 DescribeSignatureProductStateRequest::DescribeSignatureProductStateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureProductState")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureProductStateRequest::~DescribeSignatureProductStateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignatureProductStateRequest::getResourceGroupId()const
 void DescribeSignatureProductStateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSignatureProductStateRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeSignatureProductStateRequest::getSourceIp()const
 void DescribeSignatureProductStateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

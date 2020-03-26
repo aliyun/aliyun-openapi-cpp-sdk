@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribePriceRequest;
 
 DescribePriceRequest::DescribePriceRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribePrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePriceRequest::~DescribePriceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePriceRequest::getCommodity()const
 void DescribePriceRequest::setCommodity(const std::string& commodity)
 {
 	commodity_ = commodity;
-	setCoreParameter("Commodity", commodity);
+	setParameter("Commodity", commodity);
 }
 
 std::string DescribePriceRequest::getOrderType()const
@@ -44,6 +46,6 @@ std::string DescribePriceRequest::getOrderType()const
 void DescribePriceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

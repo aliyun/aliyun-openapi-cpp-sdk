@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CheckRootPermissionRequest;
 
 CheckRootPermissionRequest::CheckRootPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CheckRootPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckRootPermissionRequest::~CheckRootPermissionRequest()
 {}
@@ -33,6 +35,6 @@ std::string CheckRootPermissionRequest::getAccessKeyId()const
 void CheckRootPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

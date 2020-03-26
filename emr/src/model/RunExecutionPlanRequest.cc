@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RunExecutionPlanRequest;
 
 RunExecutionPlanRequest::RunExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RunExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RunExecutionPlanRequest::~RunExecutionPlanRequest()
 {}
@@ -33,7 +35,7 @@ long RunExecutionPlanRequest::getResourceOwnerId()const
 void RunExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RunExecutionPlanRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string RunExecutionPlanRequest::getAccessKeyId()const
 void RunExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RunExecutionPlanRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string RunExecutionPlanRequest::getRegionId()const
 void RunExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RunExecutionPlanRequest::getArguments()const
@@ -66,7 +68,7 @@ std::string RunExecutionPlanRequest::getArguments()const
 void RunExecutionPlanRequest::setArguments(const std::string& arguments)
 {
 	arguments_ = arguments;
-	setCoreParameter("Arguments", arguments);
+	setParameter("Arguments", arguments);
 }
 
 std::string RunExecutionPlanRequest::getId()const
@@ -77,6 +79,6 @@ std::string RunExecutionPlanRequest::getId()const
 void RunExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPolicyVersionsRequest;
 
 ListPolicyVersionsRequest::ListPolicyVersionsRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPolicyVersions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPolicyVersionsRequest::~ListPolicyVersionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListPolicyVersionsRequest::getPolicyType()const
 void ListPolicyVersionsRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string ListPolicyVersionsRequest::getPolicyName()const
@@ -44,6 +46,6 @@ std::string ListPolicyVersionsRequest::getPolicyName()const
 void ListPolicyVersionsRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 

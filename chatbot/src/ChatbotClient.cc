@@ -195,6 +195,42 @@ ChatbotClient::ChatOutcomeCallable ChatbotClient::chatCallable(const ChatRequest
 	return task->get_future();
 }
 
+ChatbotClient::CreateBotOutcome ChatbotClient::createBot(const CreateBotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBotOutcome(CreateBotResult(outcome.result()));
+	else
+		return CreateBotOutcome(outcome.error());
+}
+
+void ChatbotClient::createBotAsync(const CreateBotRequest& request, const CreateBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ChatbotClient::CreateBotOutcomeCallable ChatbotClient::createBotCallable(const CreateBotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBotOutcome()>>(
+			[this, request]()
+			{
+			return this->createBot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ChatbotClient::CreateCategoryOutcome ChatbotClient::createCategory(const CreateCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +483,42 @@ ChatbotClient::CreatePerspectiveOutcomeCallable ChatbotClient::createPerspective
 	return task->get_future();
 }
 
+ChatbotClient::DeleteBotOutcome ChatbotClient::deleteBot(const DeleteBotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBotOutcome(DeleteBotResult(outcome.result()));
+	else
+		return DeleteBotOutcome(outcome.error());
+}
+
+void ChatbotClient::deleteBotAsync(const DeleteBotRequest& request, const DeleteBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ChatbotClient::DeleteBotOutcomeCallable ChatbotClient::deleteBotCallable(const DeleteBotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBotOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ChatbotClient::DeleteCategoryOutcome ChatbotClient::deleteCategory(const DeleteCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +729,42 @@ ChatbotClient::DeleteKnowledgeOutcomeCallable ChatbotClient::deleteKnowledgeCall
 			[this, request]()
 			{
 			return this->deleteKnowledge(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ChatbotClient::DescribeBotOutcome ChatbotClient::describeBot(const DescribeBotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBotOutcome(DescribeBotResult(outcome.result()));
+	else
+		return DescribeBotOutcome(outcome.error());
+}
+
+void ChatbotClient::describeBotAsync(const DescribeBotRequest& request, const DescribeBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ChatbotClient::DescribeBotOutcomeCallable ChatbotClient::describeBotCallable(const DescribeBotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBotOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1167,42 @@ ChatbotClient::FeedbackOutcomeCallable ChatbotClient::feedbackCallable(const Fee
 	return task->get_future();
 }
 
+ChatbotClient::LinkBotCategoryOutcome ChatbotClient::linkBotCategory(const LinkBotCategoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LinkBotCategoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LinkBotCategoryOutcome(LinkBotCategoryResult(outcome.result()));
+	else
+		return LinkBotCategoryOutcome(outcome.error());
+}
+
+void ChatbotClient::linkBotCategoryAsync(const LinkBotCategoryRequest& request, const LinkBotCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, linkBotCategory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ChatbotClient::LinkBotCategoryOutcomeCallable ChatbotClient::linkBotCategoryCallable(const LinkBotCategoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LinkBotCategoryOutcome()>>(
+			[this, request]()
+			{
+			return this->linkBotCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ChatbotClient::MoveKnowledgeCategoryOutcome ChatbotClient::moveKnowledgeCategory(const MoveKnowledgeCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1305,42 @@ ChatbotClient::PublishKnowledgeOutcomeCallable ChatbotClient::publishKnowledgeCa
 			[this, request]()
 			{
 			return this->publishKnowledge(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ChatbotClient::QueryBotsOutcome ChatbotClient::queryBots(const QueryBotsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryBotsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryBotsOutcome(QueryBotsResult(outcome.result()));
+	else
+		return QueryBotsOutcome(outcome.error());
+}
+
+void ChatbotClient::queryBotsAsync(const QueryBotsRequest& request, const QueryBotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryBots(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ChatbotClient::QueryBotsOutcomeCallable ChatbotClient::queryBotsCallable(const QueryBotsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryBotsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryBots(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

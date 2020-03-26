@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DescribeEventRuleListRequest;
 DescribeEventRuleListRequest::DescribeEventRuleListRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DescribeEventRuleList")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeEventRuleListRequest::~DescribeEventRuleListRequest()
@@ -35,7 +35,7 @@ std::string DescribeEventRuleListRequest::getGroupId()const
 void DescribeEventRuleListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeEventRuleListRequest::getPageNumber()const
@@ -46,7 +46,7 @@ std::string DescribeEventRuleListRequest::getPageNumber()const
 void DescribeEventRuleListRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeEventRuleListRequest::getPageSize()const
@@ -57,7 +57,7 @@ std::string DescribeEventRuleListRequest::getPageSize()const
 void DescribeEventRuleListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeEventRuleListRequest::getNamePrefix()const
@@ -68,6 +68,6 @@ std::string DescribeEventRuleListRequest::getNamePrefix()const
 void DescribeEventRuleListRequest::setNamePrefix(const std::string& namePrefix)
 {
 	namePrefix_ = namePrefix;
-	setCoreParameter("NamePrefix", namePrefix);
+	setParameter("NamePrefix", namePrefix);
 }
 

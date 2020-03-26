@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopActionReturningRequest;
 
 ShopActionReturningRequest::ShopActionReturningRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopActionReturning")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopActionReturningRequest::~ShopActionReturningRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopActionReturningRequest::getAccessKeyId()const
 void ShopActionReturningRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopActionReturningRequest::getGsid()const
@@ -44,6 +46,6 @@ long ShopActionReturningRequest::getGsid()const
 void ShopActionReturningRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

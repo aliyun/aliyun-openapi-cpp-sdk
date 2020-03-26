@@ -35,7 +35,7 @@ long DescribeLogStoreKeysRequest::getResourceOwnerId()const
 void DescribeLogStoreKeysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLogStoreKeysRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeLogStoreKeysRequest::getAccessKeyId()const
 void DescribeLogStoreKeysRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLogStoreKeysRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeLogStoreKeysRequest::getRegionId()const
 void DescribeLogStoreKeysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeLogStoreKeysRequest::getProjectName()const
@@ -68,7 +68,7 @@ std::string DescribeLogStoreKeysRequest::getProjectName()const
 void DescribeLogStoreKeysRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string DescribeLogStoreKeysRequest::getLogStoreName()const
@@ -79,7 +79,7 @@ std::string DescribeLogStoreKeysRequest::getLogStoreName()const
 void DescribeLogStoreKeysRequest::setLogStoreName(const std::string& logStoreName)
 {
 	logStoreName_ = logStoreName;
-	setCoreParameter("LogStoreName", logStoreName);
+	setParameter("LogStoreName", logStoreName);
 }
 
 std::string DescribeLogStoreKeysRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeLogStoreKeysRequest::getResourceOwnerAccount()const
 void DescribeLogStoreKeysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLogStoreKeysRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeLogStoreKeysRequest::getOwnerAccount()const
 void DescribeLogStoreKeysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLogStoreKeysRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeLogStoreKeysRequest::getOwnerId()const
 void DescribeLogStoreKeysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

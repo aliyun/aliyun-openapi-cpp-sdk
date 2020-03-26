@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::DeleteTagsRequest;
 
 DeleteTagsRequest::DeleteTagsRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "DeleteTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTagsRequest::~DeleteTagsRequest()
 {}
-
-std::string DeleteTagsRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void DeleteTagsRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long DeleteTagsRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long DeleteTagsRequest::getResourceOwnerId()const
 void DeleteTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DeleteTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTagsRequest::getInstanceName()const
@@ -55,7 +57,7 @@ std::string DeleteTagsRequest::getInstanceName()const
 void DeleteTagsRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::vector<DeleteTagsRequest::TagInfo> DeleteTagsRequest::getTagInfo()const
@@ -66,12 +68,11 @@ std::vector<DeleteTagsRequest::TagInfo> DeleteTagsRequest::getTagInfo()const
 void DeleteTagsRequest::setTagInfo(const std::vector<TagInfo>& tagInfo)
 {
 	tagInfo_ = tagInfo;
-	int i = 0;
-	for(int i = 0; i!= tagInfo.size(); i++)	{
-		auto obj = tagInfo.at(i);
-		std::string str ="TagInfo."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= tagInfo.size(); dep1++) {
+		auto tagInfoObj = tagInfo.at(dep1);
+		std::string tagInfoObjStr = "TagInfo." + std::to_string(dep1 + 1);
+		setParameter(tagInfoObjStr + ".TagValue", tagInfoObj.tagValue);
+		setParameter(tagInfoObjStr + ".TagKey", tagInfoObj.tagKey);
 	}
 }
 

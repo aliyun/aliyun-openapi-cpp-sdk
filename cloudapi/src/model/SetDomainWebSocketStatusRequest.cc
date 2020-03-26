@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainWebSocketStatusRequest;
 
 SetDomainWebSocketStatusRequest::SetDomainWebSocketStatusRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainWebSocketStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainWebSocketStatusRequest::~SetDomainWebSocketStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDomainWebSocketStatusRequest::getGroupId()const
 void SetDomainWebSocketStatusRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetDomainWebSocketStatusRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string SetDomainWebSocketStatusRequest::getDomainName()const
 void SetDomainWebSocketStatusRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetDomainWebSocketStatusRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SetDomainWebSocketStatusRequest::getAccessKeyId()const
 void SetDomainWebSocketStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDomainWebSocketStatusRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string SetDomainWebSocketStatusRequest::getSecurityToken()const
 void SetDomainWebSocketStatusRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetDomainWebSocketStatusRequest::getActionValue()const
@@ -77,6 +79,6 @@ std::string SetDomainWebSocketStatusRequest::getActionValue()const
 void SetDomainWebSocketStatusRequest::setActionValue(const std::string& actionValue)
 {
 	actionValue_ = actionValue;
-	setCoreParameter("ActionValue", actionValue);
+	setParameter("ActionValue", actionValue);
 }
 

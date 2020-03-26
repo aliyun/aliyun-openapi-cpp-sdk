@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoListByNamespaceRequest;
 
 GetRepoListByNamespaceRequest::GetRepoListByNamespaceRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoListByNamespaceRequest::~GetRepoListByNamespaceRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoListByNamespaceRequest::getRepoNamespace()const
 void GetRepoListByNamespaceRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 int GetRepoListByNamespaceRequest::getPageSize()const
@@ -44,7 +47,7 @@ int GetRepoListByNamespaceRequest::getPageSize()const
 void GetRepoListByNamespaceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoListByNamespaceRequest::getPage()const
@@ -55,7 +58,7 @@ int GetRepoListByNamespaceRequest::getPage()const
 void GetRepoListByNamespaceRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string GetRepoListByNamespaceRequest::getStatus()const
@@ -66,6 +69,6 @@ std::string GetRepoListByNamespaceRequest::getStatus()const
 void GetRepoListByNamespaceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

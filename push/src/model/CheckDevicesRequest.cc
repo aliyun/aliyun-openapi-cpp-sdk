@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::CheckDevicesRequest;
 
 CheckDevicesRequest::CheckDevicesRequest() :
 	RpcServiceRequest("push", "2016-08-01", "CheckDevices")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDevicesRequest::~CheckDevicesRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckDevicesRequest::getDeviceIds()const
 void CheckDevicesRequest::setDeviceIds(const std::string& deviceIds)
 {
 	deviceIds_ = deviceIds;
-	setCoreParameter("DeviceIds", deviceIds);
+	setParameter("DeviceIds", deviceIds);
 }
 
 std::string CheckDevicesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CheckDevicesRequest::getAccessKeyId()const
 void CheckDevicesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long CheckDevicesRequest::getAppKey()const
@@ -55,6 +57,6 @@ long CheckDevicesRequest::getAppKey()const
 void CheckDevicesRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

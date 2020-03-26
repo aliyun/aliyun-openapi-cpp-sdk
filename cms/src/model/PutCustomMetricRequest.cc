@@ -37,14 +37,14 @@ void PutCustomMetricRequest::setMetricList(const std::vector<MetricList>& metric
 	metricList_ = metricList;
 	for(int dep1 = 0; dep1!= metricList.size(); dep1++) {
 		auto metricListObj = metricList.at(dep1);
-		std::string metricListObjStr = "MetricList." + std::to_string(dep1);
-		setCoreParameter(metricListObjStr + ".Period", metricListObj.period);
-		setCoreParameter(metricListObjStr + ".GroupId", metricListObj.groupId);
-		setCoreParameter(metricListObjStr + ".Values", metricListObj.values);
-		setCoreParameter(metricListObjStr + ".Time", metricListObj.time);
-		setCoreParameter(metricListObjStr + ".MetricName", metricListObj.metricName);
-		setCoreParameter(metricListObjStr + ".Type", metricListObj.type);
-		setCoreParameter(metricListObjStr + ".Dimensions", metricListObj.dimensions);
+		std::string metricListObjStr = "MetricList." + std::to_string(dep1 + 1);
+		setParameter(metricListObjStr + ".Period", metricListObj.period);
+		setParameter(metricListObjStr + ".GroupId", metricListObj.groupId);
+		setParameter(metricListObjStr + ".Values", metricListObj.values);
+		setParameter(metricListObjStr + ".Time", metricListObj.time);
+		setParameter(metricListObjStr + ".MetricName", metricListObj.metricName);
+		setParameter(metricListObjStr + ".Type", metricListObj.type);
+		setParameter(metricListObjStr + ".Dimensions", metricListObj.dimensions);
 	}
 }
 

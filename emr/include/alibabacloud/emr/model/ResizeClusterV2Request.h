@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT ResizeClusterV2Request : public RpcServiceRequest
 			{
+			public:
 				struct HostComponentInfo
 				{
 					std::string hostName;

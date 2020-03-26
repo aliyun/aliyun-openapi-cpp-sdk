@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAppAttributesRequest;
 
 DescribeAppAttributesRequest::DescribeAppAttributesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeAppAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAppAttributesRequest::~DescribeAppAttributesRequest()
 {}
@@ -33,7 +35,7 @@ bool DescribeAppAttributesRequest::getEnableTagAuth()const
 void DescribeAppAttributesRequest::setEnableTagAuth(bool enableTagAuth)
 {
 	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+	setParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
 }
 
 int DescribeAppAttributesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeAppAttributesRequest::getPageNumber()const
 void DescribeAppAttributesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAppAttributesRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeAppAttributesRequest::getAccessKeyId()const
 void DescribeAppAttributesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAppAttributesRequest::getAppName()const
@@ -66,7 +68,7 @@ std::string DescribeAppAttributesRequest::getAppName()const
 void DescribeAppAttributesRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeAppAttributesRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeAppAttributesRequest::getSecurityToken()const
 void DescribeAppAttributesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DescribeAppAttributesRequest::getAppId()const
@@ -88,7 +90,7 @@ long DescribeAppAttributesRequest::getAppId()const
 void DescribeAppAttributesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 int DescribeAppAttributesRequest::getPageSize()const
@@ -99,7 +101,7 @@ int DescribeAppAttributesRequest::getPageSize()const
 void DescribeAppAttributesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeAppAttributesRequest::Tag> DescribeAppAttributesRequest::getTag()const
@@ -110,12 +112,11 @@ std::vector<DescribeAppAttributesRequest::Tag> DescribeAppAttributesRequest::get
 void DescribeAppAttributesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

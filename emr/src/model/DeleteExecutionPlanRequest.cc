@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteExecutionPlanRequest;
 
 DeleteExecutionPlanRequest::DeleteExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteExecutionPlanRequest::~DeleteExecutionPlanRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteExecutionPlanRequest::getResourceOwnerId()const
 void DeleteExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteExecutionPlanRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteExecutionPlanRequest::getAccessKeyId()const
 void DeleteExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteExecutionPlanRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteExecutionPlanRequest::getRegionId()const
 void DeleteExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteExecutionPlanRequest::getId()const
@@ -66,6 +68,6 @@ std::string DeleteExecutionPlanRequest::getId()const
 void DeleteExecutionPlanRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

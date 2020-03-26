@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getNluServiceType()const;
 				void setNluServiceType(const std::string& nluServiceType);
+				std::string getChatbotName()const;
+				void setChatbotName(const std::string& chatbotName);
 
             private:
 				std::string description_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string chatbotInstanceId_;
 				std::string name_;
 				std::string nluServiceType_;
+				std::string chatbotName_;
 
 			};
 		}

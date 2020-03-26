@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveDomainRequest;
 
 AddLiveDomainRequest::AddLiveDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveDomainRequest::~AddLiveDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLiveDomainRequest::getSecurityToken()const
 void AddLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveDomainRequest::getScope()const
@@ -44,7 +46,7 @@ std::string AddLiveDomainRequest::getScope()const
 void AddLiveDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string AddLiveDomainRequest::getTopLevelDomain()const
@@ -55,7 +57,7 @@ std::string AddLiveDomainRequest::getTopLevelDomain()const
 void AddLiveDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string AddLiveDomainRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddLiveDomainRequest::getOwnerAccount()const
 void AddLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddLiveDomainRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string AddLiveDomainRequest::getDomainName()const
 void AddLiveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddLiveDomainRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddLiveDomainRequest::getOwnerId()const
 void AddLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveDomainRequest::getRegion()const
@@ -99,7 +101,7 @@ std::string AddLiveDomainRequest::getRegion()const
 void AddLiveDomainRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string AddLiveDomainRequest::getCheckUrl()const
@@ -110,7 +112,7 @@ std::string AddLiveDomainRequest::getCheckUrl()const
 void AddLiveDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 
 std::string AddLiveDomainRequest::getLiveDomainType()const
@@ -121,6 +123,6 @@ std::string AddLiveDomainRequest::getLiveDomainType()const
 void AddLiveDomainRequest::setLiveDomainType(const std::string& liveDomainType)
 {
 	liveDomainType_ = liveDomainType;
-	setCoreParameter("LiveDomainType", liveDomainType);
+	setParameter("LiveDomainType", liveDomainType);
 }
 

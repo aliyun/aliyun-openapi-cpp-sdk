@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT RemoveTagsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

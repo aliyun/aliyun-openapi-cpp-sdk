@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::PushMessageToiOSRequest;
 
 PushMessageToiOSRequest::PushMessageToiOSRequest() :
 	RpcServiceRequest("push", "2016-08-01", "PushMessageToiOS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMessageToiOSRequest::~PushMessageToiOSRequest()
 {}
@@ -33,7 +35,7 @@ std::string PushMessageToiOSRequest::getTitle()const
 void PushMessageToiOSRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string PushMessageToiOSRequest::getBody()const
@@ -44,7 +46,7 @@ std::string PushMessageToiOSRequest::getBody()const
 void PushMessageToiOSRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", body);
+	setParameter("Body", body);
 }
 
 std::string PushMessageToiOSRequest::getJobKey()const
@@ -55,7 +57,7 @@ std::string PushMessageToiOSRequest::getJobKey()const
 void PushMessageToiOSRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", jobKey);
+	setParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToiOSRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string PushMessageToiOSRequest::getAccessKeyId()const
 void PushMessageToiOSRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToiOSRequest::getTarget()const
@@ -77,7 +79,7 @@ std::string PushMessageToiOSRequest::getTarget()const
 void PushMessageToiOSRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setParameter("Target", target);
 }
 
 long PushMessageToiOSRequest::getAppKey()const
@@ -88,7 +90,7 @@ long PushMessageToiOSRequest::getAppKey()const
 void PushMessageToiOSRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToiOSRequest::getTargetValue()const
@@ -99,6 +101,6 @@ std::string PushMessageToiOSRequest::getTargetValue()const
 void PushMessageToiOSRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setParameter("TargetValue", targetValue);
 }
 

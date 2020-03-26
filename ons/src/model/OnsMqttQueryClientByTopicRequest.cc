@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryClientByTopicRequest;
 OnsMqttQueryClientByTopicRequest::OnsMqttQueryClientByTopicRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryClientByTopic")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsMqttQueryClientByTopicRequest::~OnsMqttQueryClientByTopicRequest()

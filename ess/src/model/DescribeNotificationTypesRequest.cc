@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeNotificationTypesRequest;
 
 DescribeNotificationTypesRequest::DescribeNotificationTypesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeNotificationTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNotificationTypesRequest::~DescribeNotificationTypesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeNotificationTypesRequest::getResourceOwnerAccount()const
 void DescribeNotificationTypesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeNotificationTypesRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeNotificationTypesRequest::getOwnerId()const
 void DescribeNotificationTypesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNotificationTypesRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string DescribeNotificationTypesRequest::getAccessKeyId()const
 void DescribeNotificationTypesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

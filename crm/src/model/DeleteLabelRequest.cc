@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::DeleteLabelRequest;
 
 DeleteLabelRequest::DeleteLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "DeleteLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLabelRequest::~DeleteLabelRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLabelRequest::getLabelSeries()const
 void DeleteLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setParameter("LabelSeries", labelSeries);
 }
 
 std::string DeleteLabelRequest::getOrganization()const
@@ -44,7 +46,7 @@ std::string DeleteLabelRequest::getOrganization()const
 void DeleteLabelRequest::setOrganization(const std::string& organization)
 {
 	organization_ = organization;
-	setCoreParameter("Organization", organization);
+	setParameter("Organization", organization);
 }
 
 std::string DeleteLabelRequest::getPK()const
@@ -55,7 +57,7 @@ std::string DeleteLabelRequest::getPK()const
 void DeleteLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 
 std::string DeleteLabelRequest::getLabelName()const
@@ -66,7 +68,7 @@ std::string DeleteLabelRequest::getLabelName()const
 void DeleteLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setCoreParameter("LabelName", labelName);
+	setParameter("LabelName", labelName);
 }
 
 std::string DeleteLabelRequest::getUserName()const
@@ -77,6 +79,6 @@ std::string DeleteLabelRequest::getUserName()const
 void DeleteLabelRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

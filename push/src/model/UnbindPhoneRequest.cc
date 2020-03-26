@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindPhoneRequest;
 
 UnbindPhoneRequest::UnbindPhoneRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindPhoneRequest::~UnbindPhoneRequest()
 {}
@@ -33,7 +35,7 @@ std::string UnbindPhoneRequest::getDeviceId()const
 void UnbindPhoneRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 std::string UnbindPhoneRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UnbindPhoneRequest::getAccessKeyId()const
 void UnbindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long UnbindPhoneRequest::getAppKey()const
@@ -55,6 +57,6 @@ long UnbindPhoneRequest::getAppKey()const
 void UnbindPhoneRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

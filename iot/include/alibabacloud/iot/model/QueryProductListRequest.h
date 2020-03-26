@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setCurrentPage(int currentPage);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				int currentPage_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string iotInstanceId_;
 				int pageSize_;
 				std::string aliyunCommodityCode_;

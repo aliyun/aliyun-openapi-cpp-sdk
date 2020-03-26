@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CommitSuccessedServicesRequest;
 
 CommitSuccessedServicesRequest::CommitSuccessedServicesRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CommitSuccessedServices")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CommitSuccessedServicesRequest::~CommitSuccessedServicesRequest()
 {}
@@ -33,7 +35,7 @@ std::string CommitSuccessedServicesRequest::getCsbName()const
 void CommitSuccessedServicesRequest::setCsbName(const std::string& csbName)
 {
 	csbName_ = csbName;
-	setCoreParameter("CsbName", csbName);
+	setParameter("CsbName", csbName);
 }
 
 std::string CommitSuccessedServicesRequest::getServices()const
@@ -44,6 +46,6 @@ std::string CommitSuccessedServicesRequest::getServices()const
 void CommitSuccessedServicesRequest::setServices(const std::string& services)
 {
 	services_ = services;
-	setCoreParameter("Services", services);
+	setBodyParameter("Services", services);
 }
 

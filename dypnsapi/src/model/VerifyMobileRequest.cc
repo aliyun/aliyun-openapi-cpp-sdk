@@ -35,7 +35,7 @@ long VerifyMobileRequest::getResourceOwnerId()const
 void VerifyMobileRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VerifyMobileRequest::getPhoneNumber()const
@@ -46,7 +46,7 @@ std::string VerifyMobileRequest::getPhoneNumber()const
 void VerifyMobileRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 std::string VerifyMobileRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string VerifyMobileRequest::getAccessKeyId()const
 void VerifyMobileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string VerifyMobileRequest::getAccessCode()const
@@ -68,7 +68,7 @@ std::string VerifyMobileRequest::getAccessCode()const
 void VerifyMobileRequest::setAccessCode(const std::string& accessCode)
 {
 	accessCode_ = accessCode;
-	setCoreParameter("AccessCode", accessCode);
+	setParameter("AccessCode", accessCode);
 }
 
 std::string VerifyMobileRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string VerifyMobileRequest::getResourceOwnerAccount()const
 void VerifyMobileRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VerifyMobileRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long VerifyMobileRequest::getOwnerId()const
 void VerifyMobileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VerifyMobileRequest::getOutId()const
@@ -101,6 +101,6 @@ std::string VerifyMobileRequest::getOutId()const
 void VerifyMobileRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setParameter("OutId", outId);
 }
 

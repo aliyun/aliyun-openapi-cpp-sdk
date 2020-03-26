@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::DeletePhotoStoreRequest;
 
 DeletePhotoStoreRequest::DeletePhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "DeletePhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePhotoStoreRequest::~DeletePhotoStoreRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeletePhotoStoreRequest::getStoreName()const
 void DeletePhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeAlarmEventDetailRequest;
 
 DescribeAlarmEventDetailRequest::DescribeAlarmEventDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeAlarmEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmEventDetailRequest::~DescribeAlarmEventDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAlarmEventDetailRequest::getAlarmUniqueInfo()const
 void DescribeAlarmEventDetailRequest::setAlarmUniqueInfo(const std::string& alarmUniqueInfo)
 {
 	alarmUniqueInfo_ = alarmUniqueInfo;
-	setCoreParameter("AlarmUniqueInfo", alarmUniqueInfo);
+	setParameter("AlarmUniqueInfo", alarmUniqueInfo);
 }
 
 std::string DescribeAlarmEventDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeAlarmEventDetailRequest::getSourceIp()const
 void DescribeAlarmEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAlarmEventDetailRequest::getFrom()const
@@ -55,7 +57,7 @@ std::string DescribeAlarmEventDetailRequest::getFrom()const
 void DescribeAlarmEventDetailRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string DescribeAlarmEventDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeAlarmEventDetailRequest::getLang()const
 void DescribeAlarmEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

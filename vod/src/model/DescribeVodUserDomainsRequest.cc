@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodUserDomainsRequest;
 
 DescribeVodUserDomainsRequest::DescribeVodUserDomainsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodUserDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodUserDomainsRequest::~DescribeVodUserDomainsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeVodUserDomainsRequest::getPageNumber()const
 void DescribeVodUserDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeVodUserDomainsRequest::getCheckDomainShow()const
@@ -44,7 +46,7 @@ bool DescribeVodUserDomainsRequest::getCheckDomainShow()const
 void DescribeVodUserDomainsRequest::setCheckDomainShow(bool checkDomainShow)
 {
 	checkDomainShow_ = checkDomainShow;
-	setCoreParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
+	setParameter("CheckDomainShow", checkDomainShow ? "true" : "false");
 }
 
 std::string DescribeVodUserDomainsRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeVodUserDomainsRequest::getSecurityToken()const
 void DescribeVodUserDomainsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeVodUserDomainsRequest::getCdnType()const
@@ -66,7 +68,7 @@ std::string DescribeVodUserDomainsRequest::getCdnType()const
 void DescribeVodUserDomainsRequest::setCdnType(const std::string& cdnType)
 {
 	cdnType_ = cdnType;
-	setCoreParameter("CdnType", cdnType);
+	setParameter("CdnType", cdnType);
 }
 
 int DescribeVodUserDomainsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeVodUserDomainsRequest::getPageSize()const
 void DescribeVodUserDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVodUserDomainsRequest::getFuncFilter()const
@@ -88,7 +90,7 @@ std::string DescribeVodUserDomainsRequest::getFuncFilter()const
 void DescribeVodUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 {
 	funcFilter_ = funcFilter;
-	setCoreParameter("FuncFilter", funcFilter);
+	setParameter("FuncFilter", funcFilter);
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainName()const
@@ -99,7 +101,7 @@ std::string DescribeVodUserDomainsRequest::getDomainName()const
 void DescribeVodUserDomainsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeVodUserDomainsRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeVodUserDomainsRequest::getOwnerId()const
 void DescribeVodUserDomainsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodUserDomainsRequest::getFuncId()const
@@ -121,7 +123,7 @@ std::string DescribeVodUserDomainsRequest::getFuncId()const
 void DescribeVodUserDomainsRequest::setFuncId(const std::string& funcId)
 {
 	funcId_ = funcId;
-	setCoreParameter("FuncId", funcId);
+	setParameter("FuncId", funcId);
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainStatus()const
@@ -132,7 +134,7 @@ std::string DescribeVodUserDomainsRequest::getDomainStatus()const
 void DescribeVodUserDomainsRequest::setDomainStatus(const std::string& domainStatus)
 {
 	domainStatus_ = domainStatus;
-	setCoreParameter("DomainStatus", domainStatus);
+	setParameter("DomainStatus", domainStatus);
 }
 
 std::string DescribeVodUserDomainsRequest::getDomainSearchType()const
@@ -143,6 +145,6 @@ std::string DescribeVodUserDomainsRequest::getDomainSearchType()const
 void DescribeVodUserDomainsRequest::setDomainSearchType(const std::string& domainSearchType)
 {
 	domainSearchType_ = domainSearchType;
-	setCoreParameter("DomainSearchType", domainSearchType);
+	setParameter("DomainSearchType", domainSearchType);
 }
 

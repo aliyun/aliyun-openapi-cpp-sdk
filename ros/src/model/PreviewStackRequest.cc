@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::PreviewStackRequest;
 
 PreviewStackRequest::PreviewStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/preview");
+	setMethod(HttpRequest::Method::Post);
+}
 
 PreviewStackRequest::~PreviewStackRequest()
 {}

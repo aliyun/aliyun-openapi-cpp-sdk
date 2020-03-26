@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeUserLayoutAuthorizationRequest;
 
 DescribeUserLayoutAuthorizationRequest::DescribeUserLayoutAuthorizationRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeUserLayoutAuthorization")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserLayoutAuthorizationRequest::~DescribeUserLayoutAuthorizationRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeUserLayoutAuthorizationRequest::getResourceOwnerId()const
 void DescribeUserLayoutAuthorizationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserLayoutAuthorizationRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeUserLayoutAuthorizationRequest::getSourceIp()const
 void DescribeUserLayoutAuthorizationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUserLayoutAuthorizationRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeUserLayoutAuthorizationRequest::getLang()const
 void DescribeUserLayoutAuthorizationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

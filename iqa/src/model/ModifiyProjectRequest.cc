@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::ModifiyProjectRequest;
 
 ModifiyProjectRequest::ModifiyProjectRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "ModifiyProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifiyProjectRequest::~ModifiyProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifiyProjectRequest::getProjectName()const
 void ModifiyProjectRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setBodyParameter("ProjectName", projectName);
 }
 
 std::string ModifiyProjectRequest::getModelId()const
@@ -44,7 +46,7 @@ std::string ModifiyProjectRequest::getModelId()const
 void ModifiyProjectRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setBodyParameter("ModelId", modelId);
 }
 
 std::string ModifiyProjectRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string ModifiyProjectRequest::getProjectId()const
 void ModifiyProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setBodyParameter("ProjectId", projectId);
 }
 

@@ -51,6 +51,8 @@ void DescribeQosesResult::parse(const std::string &payload)
 			qosesObject.sagCount = valueQosesQos["SagCount"].asString();
 		if(!valueQosesQos["SmartAGIds"].isNull())
 			qosesObject.smartAGIds = valueQosesQos["SmartAGIds"].asString();
+		if(!valueQosesQos["QosDescription"].isNull())
+			qosesObject.qosDescription = valueQosesQos["QosDescription"].asString();
 		qoses_.push_back(qosesObject);
 	}
 	if(!value["TotalCount"].isNull())

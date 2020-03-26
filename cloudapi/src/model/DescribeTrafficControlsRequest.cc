@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeTrafficControlsRequest;
 
 DescribeTrafficControlsRequest::DescribeTrafficControlsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeTrafficControls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTrafficControlsRequest::~DescribeTrafficControlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeTrafficControlsRequest::getTrafficControlId()const
 void DescribeTrafficControlsRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 std::string DescribeTrafficControlsRequest::getStageName()const
@@ -44,7 +46,7 @@ std::string DescribeTrafficControlsRequest::getStageName()const
 void DescribeTrafficControlsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeTrafficControlsRequest::getTrafficControlName()const
@@ -55,7 +57,7 @@ std::string DescribeTrafficControlsRequest::getTrafficControlName()const
 void DescribeTrafficControlsRequest::setTrafficControlName(const std::string& trafficControlName)
 {
 	trafficControlName_ = trafficControlName;
-	setCoreParameter("TrafficControlName", trafficControlName);
+	setParameter("TrafficControlName", trafficControlName);
 }
 
 std::string DescribeTrafficControlsRequest::getGroupId()const
@@ -66,7 +68,7 @@ std::string DescribeTrafficControlsRequest::getGroupId()const
 void DescribeTrafficControlsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeTrafficControlsRequest::getPageNumber()const
@@ -77,7 +79,7 @@ int DescribeTrafficControlsRequest::getPageNumber()const
 void DescribeTrafficControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeTrafficControlsRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string DescribeTrafficControlsRequest::getAccessKeyId()const
 void DescribeTrafficControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTrafficControlsRequest::getSecurityToken()const
@@ -99,7 +101,7 @@ std::string DescribeTrafficControlsRequest::getSecurityToken()const
 void DescribeTrafficControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeTrafficControlsRequest::getPageSize()const
@@ -110,7 +112,7 @@ int DescribeTrafficControlsRequest::getPageSize()const
 void DescribeTrafficControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTrafficControlsRequest::getApiId()const
@@ -121,6 +123,6 @@ std::string DescribeTrafficControlsRequest::getApiId()const
 void DescribeTrafficControlsRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

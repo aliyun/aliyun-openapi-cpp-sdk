@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenAddGroupMemberRequest;
 
 MoPenAddGroupMemberRequest::MoPenAddGroupMemberRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenAddGroupMember")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenAddGroupMemberRequest::~MoPenAddGroupMemberRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoPenAddGroupMemberRequest::getGroupId()const
 void MoPenAddGroupMemberRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setBodyParameter("GroupId", groupId);
 }
 
 std::string MoPenAddGroupMemberRequest::getDeviceName()const
@@ -44,6 +46,6 @@ std::string MoPenAddGroupMemberRequest::getDeviceName()const
 void MoPenAddGroupMemberRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 

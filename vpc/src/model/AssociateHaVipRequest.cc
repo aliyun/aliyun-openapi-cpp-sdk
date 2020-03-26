@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociateHaVipRequest;
 
 AssociateHaVipRequest::AssociateHaVipRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociateHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateHaVipRequest::~AssociateHaVipRequest()
 {}
@@ -33,7 +35,7 @@ long AssociateHaVipRequest::getResourceOwnerId()const
 void AssociateHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociateHaVipRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string AssociateHaVipRequest::getClientToken()const
 void AssociateHaVipRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AssociateHaVipRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AssociateHaVipRequest::getRegionId()const
 void AssociateHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssociateHaVipRequest::getHaVipId()const
@@ -66,7 +68,7 @@ std::string AssociateHaVipRequest::getHaVipId()const
 void AssociateHaVipRequest::setHaVipId(const std::string& haVipId)
 {
 	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
+	setParameter("HaVipId", haVipId);
 }
 
 std::string AssociateHaVipRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AssociateHaVipRequest::getResourceOwnerAccount()const
 void AssociateHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateHaVipRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AssociateHaVipRequest::getOwnerAccount()const
 void AssociateHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssociateHaVipRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long AssociateHaVipRequest::getOwnerId()const
 void AssociateHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssociateHaVipRequest::getInstanceId()const
@@ -110,6 +112,6 @@ std::string AssociateHaVipRequest::getInstanceId()const
 void AssociateHaVipRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

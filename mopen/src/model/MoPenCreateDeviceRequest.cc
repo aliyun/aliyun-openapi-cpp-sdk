@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenCreateDeviceRequest;
 
 MoPenCreateDeviceRequest::MoPenCreateDeviceRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenCreateDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenCreateDeviceRequest::~MoPenCreateDeviceRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoPenCreateDeviceRequest::getDeviceName()const
 void MoPenCreateDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 
 int MoPenCreateDeviceRequest::getDeviceType()const
@@ -44,6 +46,6 @@ int MoPenCreateDeviceRequest::getDeviceType()const
 void MoPenCreateDeviceRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setBodyParameter("DeviceType", std::to_string(deviceType));
 }
 

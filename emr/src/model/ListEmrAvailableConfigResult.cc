@@ -91,6 +91,8 @@ void ListEmrAvailableConfigResult::parse(const std::string &payload)
 			securityGroupListObject.vpcId = valueSecurityGroupListSecurityGroup["VpcId"].asString();
 		if(!valueSecurityGroupListSecurityGroup["CreationTime"].isNull())
 			securityGroupListObject.creationTime = valueSecurityGroupListSecurityGroup["CreationTime"].asString();
+		if(!valueSecurityGroupListSecurityGroup["SecurityGroupType"].isNull())
+			securityGroupListObject.securityGroupType = valueSecurityGroupListSecurityGroup["SecurityGroupType"].asString();
 		if(!valueSecurityGroupListSecurityGroup["AvailableInstanceAmount"].isNull())
 			securityGroupListObject.availableInstanceAmount = std::stoi(valueSecurityGroupListSecurityGroup["AvailableInstanceAmount"].asString());
 		if(!valueSecurityGroupListSecurityGroup["EcsCount"].isNull())

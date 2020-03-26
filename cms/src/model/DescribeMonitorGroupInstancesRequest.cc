@@ -35,7 +35,7 @@ long DescribeMonitorGroupInstancesRequest::getGroupId()const
 void DescribeMonitorGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeMonitorGroupInstancesRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeMonitorGroupInstancesRequest::getPageNumber()const
 void DescribeMonitorGroupInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeMonitorGroupInstancesRequest::getInstanceIds()const
@@ -57,7 +57,7 @@ std::string DescribeMonitorGroupInstancesRequest::getInstanceIds()const
 void DescribeMonitorGroupInstancesRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 
 int DescribeMonitorGroupInstancesRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeMonitorGroupInstancesRequest::getPageSize()const
 void DescribeMonitorGroupInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMonitorGroupInstancesRequest::getCategory()const
@@ -79,7 +79,7 @@ std::string DescribeMonitorGroupInstancesRequest::getCategory()const
 void DescribeMonitorGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 
 std::string DescribeMonitorGroupInstancesRequest::getKeyword()const
@@ -90,6 +90,6 @@ std::string DescribeMonitorGroupInstancesRequest::getKeyword()const
 void DescribeMonitorGroupInstancesRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

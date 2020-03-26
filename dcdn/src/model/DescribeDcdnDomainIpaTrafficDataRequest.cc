@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getStartTime()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getIspNameEn()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getFixTimeGap()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getFixTimeGap()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", fixTimeGap);
+	setParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getTimeMerge()const
@@ -79,7 +79,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getTimeMerge()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	setParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getDomainName()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getEndTime()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainIpaTrafficDataRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeDcdnDomainIpaTrafficDataRequest::getOwnerId()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainIpaTrafficDataRequest::getInterval()const
@@ -123,6 +123,6 @@ std::string DescribeDcdnDomainIpaTrafficDataRequest::getInterval()const
 void DescribeDcdnDomainIpaTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

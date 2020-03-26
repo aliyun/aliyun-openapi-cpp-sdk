@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::OpenProductAccountRequest;
 
 OpenProductAccountRequest::OpenProductAccountRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "OpenProductAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OpenProductAccountRequest::~OpenProductAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string OpenProductAccountRequest::getRegionID()const
 void OpenProductAccountRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 std::string OpenProductAccountRequest::getProductCode()const
@@ -44,7 +46,7 @@ std::string OpenProductAccountRequest::getProductCode()const
 void OpenProductAccountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setBodyParameter("ProductCode", productCode);
 }
 
 std::string OpenProductAccountRequest::getProductAccessKey()const
@@ -55,7 +57,7 @@ std::string OpenProductAccountRequest::getProductAccessKey()const
 void OpenProductAccountRequest::setProductAccessKey(const std::string& productAccessKey)
 {
 	productAccessKey_ = productAccessKey;
-	setCoreParameter("ProductAccessKey", productAccessKey);
+	setBodyParameter("ProductAccessKey", productAccessKey);
 }
 
 std::string OpenProductAccountRequest::getTargetUid()const
@@ -66,7 +68,7 @@ std::string OpenProductAccountRequest::getTargetUid()const
 void OpenProductAccountRequest::setTargetUid(const std::string& targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", targetUid);
+	setBodyParameter("TargetUid", targetUid);
 }
 
 std::string OpenProductAccountRequest::getTargetArnRole()const
@@ -77,6 +79,6 @@ std::string OpenProductAccountRequest::getTargetArnRole()const
 void OpenProductAccountRequest::setTargetArnRole(const std::string& targetArnRole)
 {
 	targetArnRole_ = targetArnRole;
-	setCoreParameter("TargetArnRole", targetArnRole);
+	setBodyParameter("TargetArnRole", targetArnRole);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsConsumerResetOffsetRequest;
 OnsConsumerResetOffsetRequest::OnsConsumerResetOffsetRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsConsumerResetOffset")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsConsumerResetOffsetRequest::~OnsConsumerResetOffsetRequest()

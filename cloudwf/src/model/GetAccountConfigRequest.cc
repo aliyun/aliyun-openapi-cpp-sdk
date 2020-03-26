@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetAccountConfigRequest;
 
 GetAccountConfigRequest::GetAccountConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetAccountConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountConfigRequest::~GetAccountConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAccountConfigRequest::getAccessKeyId()const
 void GetAccountConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetAccountConfigRequest::getId()const
@@ -44,6 +46,6 @@ long GetAccountConfigRequest::getId()const
 void GetAccountConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

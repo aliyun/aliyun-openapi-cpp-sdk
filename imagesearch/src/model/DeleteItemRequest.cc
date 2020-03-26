@@ -20,7 +20,10 @@ using AlibabaCloud::ImageSearch::Model::DeleteItemRequest;
 
 DeleteItemRequest::DeleteItemRequest() :
 	RoaServiceRequest("imagesearch", "2018-01-20")
-{}
+{
+	setResourcePath("/item/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteItemRequest::~DeleteItemRequest()
 {}
@@ -33,6 +36,6 @@ std::string DeleteItemRequest::getInstanceName()const
 void DeleteItemRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteLoginProfileRequest;
 
 DeleteLoginProfileRequest::DeleteLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLoginProfileRequest::~DeleteLoginProfileRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteLoginProfileRequest::getUserName()const
 void DeleteLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

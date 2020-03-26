@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListRecordingOfDualTrackRequest;
 
 ListRecordingOfDualTrackRequest::ListRecordingOfDualTrackRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListRecordingOfDualTrack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRecordingOfDualTrackRequest::~ListRecordingOfDualTrackRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRecordingOfDualTrackRequest::getAgentId()const
 void ListRecordingOfDualTrackRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setParameter("AgentId", agentId);
 }
 
 long ListRecordingOfDualTrackRequest::getStartTime()const
@@ -44,7 +46,7 @@ long ListRecordingOfDualTrackRequest::getStartTime()const
 void ListRecordingOfDualTrackRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 long ListRecordingOfDualTrackRequest::getStopTime()const
@@ -55,7 +57,7 @@ long ListRecordingOfDualTrackRequest::getStopTime()const
 void ListRecordingOfDualTrackRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setParameter("StopTime", std::to_string(stopTime));
 }
 
 int ListRecordingOfDualTrackRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int ListRecordingOfDualTrackRequest::getPageNumber()const
 void ListRecordingOfDualTrackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListRecordingOfDualTrackRequest::getAccessKeyId()const
 void ListRecordingOfDualTrackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListRecordingOfDualTrackRequest::getCallingNumber()const
@@ -88,7 +90,7 @@ std::string ListRecordingOfDualTrackRequest::getCallingNumber()const
 void ListRecordingOfDualTrackRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
+	setParameter("CallingNumber", callingNumber);
 }
 
 std::string ListRecordingOfDualTrackRequest::getInstanceId()const
@@ -99,7 +101,7 @@ std::string ListRecordingOfDualTrackRequest::getInstanceId()const
 void ListRecordingOfDualTrackRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
@@ -110,7 +112,7 @@ std::string ListRecordingOfDualTrackRequest::getCalledNumber()const
 void ListRecordingOfDualTrackRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setParameter("CalledNumber", calledNumber);
 }
 
 int ListRecordingOfDualTrackRequest::getPageSize()const
@@ -121,7 +123,7 @@ int ListRecordingOfDualTrackRequest::getPageSize()const
 void ListRecordingOfDualTrackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListRecordingOfDualTrackRequest::getConnectId()const
@@ -132,6 +134,6 @@ std::string ListRecordingOfDualTrackRequest::getConnectId()const
 void ListRecordingOfDualTrackRequest::setConnectId(const std::string& connectId)
 {
 	connectId_ = connectId;
-	setCoreParameter("ConnectId", connectId);
+	setParameter("ConnectId", connectId);
 }
 

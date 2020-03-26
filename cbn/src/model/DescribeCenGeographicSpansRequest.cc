@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenGeographicSpansRequest;
 
 DescribeCenGeographicSpansRequest::DescribeCenGeographicSpansRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenGeographicSpans")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenGeographicSpansRequest::~DescribeCenGeographicSpansRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenGeographicSpansRequest::getResourceOwnerId()const
 void DescribeCenGeographicSpansRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeCenGeographicSpansRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeCenGeographicSpansRequest::getPageNumber()const
 void DescribeCenGeographicSpansRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCenGeographicSpansRequest::getGeographicSpanId()const
@@ -55,7 +57,7 @@ std::string DescribeCenGeographicSpansRequest::getGeographicSpanId()const
 void DescribeCenGeographicSpansRequest::setGeographicSpanId(const std::string& geographicSpanId)
 {
 	geographicSpanId_ = geographicSpanId;
-	setCoreParameter("GeographicSpanId", geographicSpanId);
+	setParameter("GeographicSpanId", geographicSpanId);
 }
 
 int DescribeCenGeographicSpansRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeCenGeographicSpansRequest::getPageSize()const
 void DescribeCenGeographicSpansRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenGeographicSpansRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeCenGeographicSpansRequest::getResourceOwnerAccount()const
 void DescribeCenGeographicSpansRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenGeographicSpansRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeCenGeographicSpansRequest::getOwnerAccount()const
 void DescribeCenGeographicSpansRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenGeographicSpansRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DescribeCenGeographicSpansRequest::getOwnerId()const
 void DescribeCenGeographicSpansRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

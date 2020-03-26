@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "VoiceNavigatorExport.h"
+#include "model/AssociateChatbotInstanceRequest.h"
+#include "model/AssociateChatbotInstanceResult.h"
 #include "model/AuditTTSVoiceRequest.h"
 #include "model/AuditTTSVoiceResult.h"
 #include "model/AuthorizedRequest.h"
@@ -94,6 +96,8 @@
 #include "model/ExportStatisticalDataResult.h"
 #include "model/ListCategoriesRequest.h"
 #include "model/ListCategoriesResult.h"
+#include "model/ListChatbotInstancesRequest.h"
+#include "model/ListChatbotInstancesResult.h"
 #include "model/ListConversationDetailsRequest.h"
 #include "model/ListConversationDetailsResult.h"
 #include "model/ListConversationsRequest.h"
@@ -155,6 +159,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_VOICENAVIGATOR_EXPORT VoiceNavigatorClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AssociateChatbotInstanceResult> AssociateChatbotInstanceOutcome;
+			typedef std::future<AssociateChatbotInstanceOutcome> AssociateChatbotInstanceOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::AssociateChatbotInstanceRequest&, const AssociateChatbotInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssociateChatbotInstanceAsyncHandler;
 			typedef Outcome<Error, Model::AuditTTSVoiceResult> AuditTTSVoiceOutcome;
 			typedef std::future<AuditTTSVoiceOutcome> AuditTTSVoiceOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::AuditTTSVoiceRequest&, const AuditTTSVoiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AuditTTSVoiceAsyncHandler;
@@ -263,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCategoriesResult> ListCategoriesOutcome;
 			typedef std::future<ListCategoriesOutcome> ListCategoriesOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListCategoriesRequest&, const ListCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCategoriesAsyncHandler;
+			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
+			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ListConversationDetailsResult> ListConversationDetailsOutcome;
 			typedef std::future<ListConversationDetailsOutcome> ListConversationDetailsOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListConversationDetailsRequest&, const ListConversationDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConversationDetailsAsyncHandler;
@@ -346,6 +356,9 @@ namespace AlibabaCloud
 			VoiceNavigatorClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			VoiceNavigatorClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~VoiceNavigatorClient();
+			AssociateChatbotInstanceOutcome associateChatbotInstance(const Model::AssociateChatbotInstanceRequest &request)const;
+			void associateChatbotInstanceAsync(const Model::AssociateChatbotInstanceRequest& request, const AssociateChatbotInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AssociateChatbotInstanceOutcomeCallable associateChatbotInstanceCallable(const Model::AssociateChatbotInstanceRequest& request) const;
 			AuditTTSVoiceOutcome auditTTSVoice(const Model::AuditTTSVoiceRequest &request)const;
 			void auditTTSVoiceAsync(const Model::AuditTTSVoiceRequest& request, const AuditTTSVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AuditTTSVoiceOutcomeCallable auditTTSVoiceCallable(const Model::AuditTTSVoiceRequest& request) const;
@@ -454,6 +467,9 @@ namespace AlibabaCloud
 			ListCategoriesOutcome listCategories(const Model::ListCategoriesRequest &request)const;
 			void listCategoriesAsync(const Model::ListCategoriesRequest& request, const ListCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCategoriesOutcomeCallable listCategoriesCallable(const Model::ListCategoriesRequest& request) const;
+			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
+			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;
 			ListConversationDetailsOutcome listConversationDetails(const Model::ListConversationDetailsRequest &request)const;
 			void listConversationDetailsAsync(const Model::ListConversationDetailsRequest& request, const ListConversationDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConversationDetailsOutcomeCallable listConversationDetailsCallable(const Model::ListConversationDetailsRequest& request) const;

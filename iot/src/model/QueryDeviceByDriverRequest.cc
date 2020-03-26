@@ -20,21 +20,12 @@ using AlibabaCloud::Iot::Model::QueryDeviceByDriverRequest;
 
 QueryDeviceByDriverRequest::QueryDeviceByDriverRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceByDriver")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceByDriverRequest::~QueryDeviceByDriverRequest()
 {}
-
-int QueryDeviceByDriverRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryDeviceByDriverRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
 
 std::string QueryDeviceByDriverRequest::getAccessKeyId()const
 {
@@ -44,18 +35,7 @@ std::string QueryDeviceByDriverRequest::getAccessKeyId()const
 void QueryDeviceByDriverRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryDeviceByDriverRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryDeviceByDriverRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceByDriverRequest::getDriverId()const
@@ -66,7 +46,7 @@ std::string QueryDeviceByDriverRequest::getDriverId()const
 void QueryDeviceByDriverRequest::setDriverId(const std::string& driverId)
 {
 	driverId_ = driverId;
-	setCoreParameter("DriverId", driverId);
+	setParameter("DriverId", driverId);
 }
 
 std::string QueryDeviceByDriverRequest::getIotInstanceId()const
@@ -77,7 +57,7 @@ std::string QueryDeviceByDriverRequest::getIotInstanceId()const
 void QueryDeviceByDriverRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceByDriverRequest::getPageSize()const
@@ -88,6 +68,50 @@ int QueryDeviceByDriverRequest::getPageSize()const
 void QueryDeviceByDriverRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryDeviceByDriverRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceByDriverRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceByDriverRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void QueryDeviceByDriverRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string QueryDeviceByDriverRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceByDriverRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceByDriverRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceByDriverRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

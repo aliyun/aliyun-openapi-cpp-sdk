@@ -35,7 +35,7 @@ long SubscribeBillToOSSRequest::getBucketOwnerId()const
 void SubscribeBillToOSSRequest::setBucketOwnerId(long bucketOwnerId)
 {
 	bucketOwnerId_ = bucketOwnerId;
-	setCoreParameter("BucketOwnerId", std::to_string(bucketOwnerId));
+	setParameter("BucketOwnerId", std::to_string(bucketOwnerId));
 }
 
 std::string SubscribeBillToOSSRequest::getSubscribeType()const
@@ -46,7 +46,7 @@ std::string SubscribeBillToOSSRequest::getSubscribeType()const
 void SubscribeBillToOSSRequest::setSubscribeType(const std::string& subscribeType)
 {
 	subscribeType_ = subscribeType;
-	setCoreParameter("SubscribeType", subscribeType);
+	setParameter("SubscribeType", subscribeType);
 }
 
 std::string SubscribeBillToOSSRequest::getSubscribeBucket()const
@@ -57,7 +57,7 @@ std::string SubscribeBillToOSSRequest::getSubscribeBucket()const
 void SubscribeBillToOSSRequest::setSubscribeBucket(const std::string& subscribeBucket)
 {
 	subscribeBucket_ = subscribeBucket;
-	setCoreParameter("SubscribeBucket", subscribeBucket);
+	setParameter("SubscribeBucket", subscribeBucket);
 }
 
 std::string SubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
@@ -68,6 +68,6 @@ std::string SubscribeBillToOSSRequest::getMultAccountRelSubscribe()const
 void SubscribeBillToOSSRequest::setMultAccountRelSubscribe(const std::string& multAccountRelSubscribe)
 {
 	multAccountRelSubscribe_ = multAccountRelSubscribe;
-	setCoreParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
+	setParameter("MultAccountRelSubscribe", multAccountRelSubscribe);
 }
 

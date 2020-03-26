@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "TrademarkExport.h"
+#include "model/AcceptPartnerNotificationRequest.h"
+#include "model/AcceptPartnerNotificationResult.h"
 #include "model/ApplyNotaryPostRequest.h"
 #include "model/ApplyNotaryPostResult.h"
 #include "model/BindMaterialRequest.h"
@@ -30,8 +32,14 @@
 #include "model/CancelTradeOrderResult.h"
 #include "model/CheckLoaFillRequest.h"
 #include "model/CheckLoaFillResult.h"
+#include "model/CheckTrademarkOrderRequest.h"
+#include "model/CheckTrademarkOrderResult.h"
 #include "model/CombineLoaRequest.h"
 #include "model/CombineLoaResult.h"
+#include "model/ConfirmAdditionalMaterialRequest.h"
+#include "model/ConfirmAdditionalMaterialResult.h"
+#include "model/ConfirmApplicantRequest.h"
+#include "model/ConfirmApplicantResult.h"
 #include "model/ConvertImageToGrayRequest.h"
 #include "model/ConvertImageToGrayResult.h"
 #include "model/CreateIntentionOrderRequest.h"
@@ -44,6 +52,8 @@
 #include "model/DeleteTmMonitorRuleResult.h"
 #include "model/DenySupplementRequest.h"
 #include "model/DenySupplementResult.h"
+#include "model/DescirbeCombineTrademarkRequest.h"
+#include "model/DescirbeCombineTrademarkResult.h"
 #include "model/FillLogisticsRequest.h"
 #include "model/FillLogisticsResult.h"
 #include "model/FilterUnavailableCodesRequest.h"
@@ -74,12 +84,16 @@
 #include "model/QueryIntentionDetailResult.h"
 #include "model/QueryIntentionListRequest.h"
 #include "model/QueryIntentionListResult.h"
+#include "model/QueryIntentionPriceRequest.h"
+#include "model/QueryIntentionPriceResult.h"
 #include "model/QueryMaterialRequest.h"
 #include "model/QueryMaterialResult.h"
 #include "model/QueryMaterialListRequest.h"
 #include "model/QueryMaterialListResult.h"
 #include "model/QueryMonitorKeywordsRequest.h"
 #include "model/QueryMonitorKeywordsResult.h"
+#include "model/QueryOfficialFileCustomListRequest.h"
+#include "model/QueryOfficialFileCustomListResult.h"
 #include "model/QueryOssResourcesRequest.h"
 #include "model/QueryOssResourcesResult.h"
 #include "model/QueryQrCodeUploadStatusRequest.h"
@@ -110,8 +124,20 @@
 #include "model/QueryTrademarkPriceResult.h"
 #include "model/RefundProduceRequest.h"
 #include "model/RefundProduceResult.h"
+#include "model/RefuseAdditionalMaterialRequest.h"
+#include "model/RefuseAdditionalMaterialResult.h"
+#include "model/RefuseApplicantRequest.h"
+#include "model/RefuseApplicantResult.h"
+#include "model/RejectApplicantRequest.h"
+#include "model/RejectApplicantResult.h"
 #include "model/SaveTaskRequest.h"
 #include "model/SaveTaskResult.h"
+#include "model/SaveTaskForOfficialFileCustomRequest.h"
+#include "model/SaveTaskForOfficialFileCustomResult.h"
+#include "model/SaveTradeMarkReviewMaterialDetailRequest.h"
+#include "model/SaveTradeMarkReviewMaterialDetailResult.h"
+#include "model/SearchTmOnsalesRequest.h"
+#include "model/SearchTmOnsalesResult.h"
 #include "model/StartNotaryRequest.h"
 #include "model/StartNotaryResult.h"
 #include "model/StoreMaterialTemporarilyRequest.h"
@@ -139,6 +165,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_TRADEMARK_EXPORT TrademarkClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AcceptPartnerNotificationResult> AcceptPartnerNotificationOutcome;
+			typedef std::future<AcceptPartnerNotificationOutcome> AcceptPartnerNotificationOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::AcceptPartnerNotificationRequest&, const AcceptPartnerNotificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AcceptPartnerNotificationAsyncHandler;
 			typedef Outcome<Error, Model::ApplyNotaryPostResult> ApplyNotaryPostOutcome;
 			typedef std::future<ApplyNotaryPostOutcome> ApplyNotaryPostOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::ApplyNotaryPostRequest&, const ApplyNotaryPostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyNotaryPostAsyncHandler;
@@ -151,9 +180,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckLoaFillResult> CheckLoaFillOutcome;
 			typedef std::future<CheckLoaFillOutcome> CheckLoaFillOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::CheckLoaFillRequest&, const CheckLoaFillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckLoaFillAsyncHandler;
+			typedef Outcome<Error, Model::CheckTrademarkOrderResult> CheckTrademarkOrderOutcome;
+			typedef std::future<CheckTrademarkOrderOutcome> CheckTrademarkOrderOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::CheckTrademarkOrderRequest&, const CheckTrademarkOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckTrademarkOrderAsyncHandler;
 			typedef Outcome<Error, Model::CombineLoaResult> CombineLoaOutcome;
 			typedef std::future<CombineLoaOutcome> CombineLoaOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::CombineLoaRequest&, const CombineLoaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CombineLoaAsyncHandler;
+			typedef Outcome<Error, Model::ConfirmAdditionalMaterialResult> ConfirmAdditionalMaterialOutcome;
+			typedef std::future<ConfirmAdditionalMaterialOutcome> ConfirmAdditionalMaterialOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::ConfirmAdditionalMaterialRequest&, const ConfirmAdditionalMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmAdditionalMaterialAsyncHandler;
+			typedef Outcome<Error, Model::ConfirmApplicantResult> ConfirmApplicantOutcome;
+			typedef std::future<ConfirmApplicantOutcome> ConfirmApplicantOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::ConfirmApplicantRequest&, const ConfirmApplicantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmApplicantAsyncHandler;
 			typedef Outcome<Error, Model::ConvertImageToGrayResult> ConvertImageToGrayOutcome;
 			typedef std::future<ConvertImageToGrayOutcome> ConvertImageToGrayOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::ConvertImageToGrayRequest&, const ConvertImageToGrayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertImageToGrayAsyncHandler;
@@ -172,6 +210,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DenySupplementResult> DenySupplementOutcome;
 			typedef std::future<DenySupplementOutcome> DenySupplementOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::DenySupplementRequest&, const DenySupplementOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DenySupplementAsyncHandler;
+			typedef Outcome<Error, Model::DescirbeCombineTrademarkResult> DescirbeCombineTrademarkOutcome;
+			typedef std::future<DescirbeCombineTrademarkOutcome> DescirbeCombineTrademarkOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::DescirbeCombineTrademarkRequest&, const DescirbeCombineTrademarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescirbeCombineTrademarkAsyncHandler;
 			typedef Outcome<Error, Model::FillLogisticsResult> FillLogisticsOutcome;
 			typedef std::future<FillLogisticsOutcome> FillLogisticsOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::FillLogisticsRequest&, const FillLogisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FillLogisticsAsyncHandler;
@@ -217,6 +258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryIntentionListResult> QueryIntentionListOutcome;
 			typedef std::future<QueryIntentionListOutcome> QueryIntentionListOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryIntentionListRequest&, const QueryIntentionListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryIntentionListAsyncHandler;
+			typedef Outcome<Error, Model::QueryIntentionPriceResult> QueryIntentionPriceOutcome;
+			typedef std::future<QueryIntentionPriceOutcome> QueryIntentionPriceOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::QueryIntentionPriceRequest&, const QueryIntentionPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryIntentionPriceAsyncHandler;
 			typedef Outcome<Error, Model::QueryMaterialResult> QueryMaterialOutcome;
 			typedef std::future<QueryMaterialOutcome> QueryMaterialOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryMaterialRequest&, const QueryMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMaterialAsyncHandler;
@@ -226,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMonitorKeywordsResult> QueryMonitorKeywordsOutcome;
 			typedef std::future<QueryMonitorKeywordsOutcome> QueryMonitorKeywordsOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryMonitorKeywordsRequest&, const QueryMonitorKeywordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMonitorKeywordsAsyncHandler;
+			typedef Outcome<Error, Model::QueryOfficialFileCustomListResult> QueryOfficialFileCustomListOutcome;
+			typedef std::future<QueryOfficialFileCustomListOutcome> QueryOfficialFileCustomListOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::QueryOfficialFileCustomListRequest&, const QueryOfficialFileCustomListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOfficialFileCustomListAsyncHandler;
 			typedef Outcome<Error, Model::QueryOssResourcesResult> QueryOssResourcesOutcome;
 			typedef std::future<QueryOssResourcesOutcome> QueryOssResourcesOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::QueryOssResourcesRequest&, const QueryOssResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOssResourcesAsyncHandler;
@@ -271,9 +318,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RefundProduceResult> RefundProduceOutcome;
 			typedef std::future<RefundProduceOutcome> RefundProduceOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::RefundProduceRequest&, const RefundProduceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefundProduceAsyncHandler;
+			typedef Outcome<Error, Model::RefuseAdditionalMaterialResult> RefuseAdditionalMaterialOutcome;
+			typedef std::future<RefuseAdditionalMaterialOutcome> RefuseAdditionalMaterialOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::RefuseAdditionalMaterialRequest&, const RefuseAdditionalMaterialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefuseAdditionalMaterialAsyncHandler;
+			typedef Outcome<Error, Model::RefuseApplicantResult> RefuseApplicantOutcome;
+			typedef std::future<RefuseApplicantOutcome> RefuseApplicantOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::RefuseApplicantRequest&, const RefuseApplicantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefuseApplicantAsyncHandler;
+			typedef Outcome<Error, Model::RejectApplicantResult> RejectApplicantOutcome;
+			typedef std::future<RejectApplicantOutcome> RejectApplicantOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::RejectApplicantRequest&, const RejectApplicantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RejectApplicantAsyncHandler;
 			typedef Outcome<Error, Model::SaveTaskResult> SaveTaskOutcome;
 			typedef std::future<SaveTaskOutcome> SaveTaskOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::SaveTaskRequest&, const SaveTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTaskAsyncHandler;
+			typedef Outcome<Error, Model::SaveTaskForOfficialFileCustomResult> SaveTaskForOfficialFileCustomOutcome;
+			typedef std::future<SaveTaskForOfficialFileCustomOutcome> SaveTaskForOfficialFileCustomOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::SaveTaskForOfficialFileCustomRequest&, const SaveTaskForOfficialFileCustomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTaskForOfficialFileCustomAsyncHandler;
+			typedef Outcome<Error, Model::SaveTradeMarkReviewMaterialDetailResult> SaveTradeMarkReviewMaterialDetailOutcome;
+			typedef std::future<SaveTradeMarkReviewMaterialDetailOutcome> SaveTradeMarkReviewMaterialDetailOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::SaveTradeMarkReviewMaterialDetailRequest&, const SaveTradeMarkReviewMaterialDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTradeMarkReviewMaterialDetailAsyncHandler;
+			typedef Outcome<Error, Model::SearchTmOnsalesResult> SearchTmOnsalesOutcome;
+			typedef std::future<SearchTmOnsalesOutcome> SearchTmOnsalesOutcomeCallable;
+			typedef std::function<void(const TrademarkClient*, const Model::SearchTmOnsalesRequest&, const SearchTmOnsalesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTmOnsalesAsyncHandler;
 			typedef Outcome<Error, Model::StartNotaryResult> StartNotaryOutcome;
 			typedef std::future<StartNotaryOutcome> StartNotaryOutcomeCallable;
 			typedef std::function<void(const TrademarkClient*, const Model::StartNotaryRequest&, const StartNotaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartNotaryAsyncHandler;
@@ -306,6 +371,9 @@ namespace AlibabaCloud
 			TrademarkClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			TrademarkClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~TrademarkClient();
+			AcceptPartnerNotificationOutcome acceptPartnerNotification(const Model::AcceptPartnerNotificationRequest &request)const;
+			void acceptPartnerNotificationAsync(const Model::AcceptPartnerNotificationRequest& request, const AcceptPartnerNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AcceptPartnerNotificationOutcomeCallable acceptPartnerNotificationCallable(const Model::AcceptPartnerNotificationRequest& request) const;
 			ApplyNotaryPostOutcome applyNotaryPost(const Model::ApplyNotaryPostRequest &request)const;
 			void applyNotaryPostAsync(const Model::ApplyNotaryPostRequest& request, const ApplyNotaryPostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyNotaryPostOutcomeCallable applyNotaryPostCallable(const Model::ApplyNotaryPostRequest& request) const;
@@ -318,9 +386,18 @@ namespace AlibabaCloud
 			CheckLoaFillOutcome checkLoaFill(const Model::CheckLoaFillRequest &request)const;
 			void checkLoaFillAsync(const Model::CheckLoaFillRequest& request, const CheckLoaFillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckLoaFillOutcomeCallable checkLoaFillCallable(const Model::CheckLoaFillRequest& request) const;
+			CheckTrademarkOrderOutcome checkTrademarkOrder(const Model::CheckTrademarkOrderRequest &request)const;
+			void checkTrademarkOrderAsync(const Model::CheckTrademarkOrderRequest& request, const CheckTrademarkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckTrademarkOrderOutcomeCallable checkTrademarkOrderCallable(const Model::CheckTrademarkOrderRequest& request) const;
 			CombineLoaOutcome combineLoa(const Model::CombineLoaRequest &request)const;
 			void combineLoaAsync(const Model::CombineLoaRequest& request, const CombineLoaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CombineLoaOutcomeCallable combineLoaCallable(const Model::CombineLoaRequest& request) const;
+			ConfirmAdditionalMaterialOutcome confirmAdditionalMaterial(const Model::ConfirmAdditionalMaterialRequest &request)const;
+			void confirmAdditionalMaterialAsync(const Model::ConfirmAdditionalMaterialRequest& request, const ConfirmAdditionalMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfirmAdditionalMaterialOutcomeCallable confirmAdditionalMaterialCallable(const Model::ConfirmAdditionalMaterialRequest& request) const;
+			ConfirmApplicantOutcome confirmApplicant(const Model::ConfirmApplicantRequest &request)const;
+			void confirmApplicantAsync(const Model::ConfirmApplicantRequest& request, const ConfirmApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfirmApplicantOutcomeCallable confirmApplicantCallable(const Model::ConfirmApplicantRequest& request) const;
 			ConvertImageToGrayOutcome convertImageToGray(const Model::ConvertImageToGrayRequest &request)const;
 			void convertImageToGrayAsync(const Model::ConvertImageToGrayRequest& request, const ConvertImageToGrayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertImageToGrayOutcomeCallable convertImageToGrayCallable(const Model::ConvertImageToGrayRequest& request) const;
@@ -339,6 +416,9 @@ namespace AlibabaCloud
 			DenySupplementOutcome denySupplement(const Model::DenySupplementRequest &request)const;
 			void denySupplementAsync(const Model::DenySupplementRequest& request, const DenySupplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DenySupplementOutcomeCallable denySupplementCallable(const Model::DenySupplementRequest& request) const;
+			DescirbeCombineTrademarkOutcome descirbeCombineTrademark(const Model::DescirbeCombineTrademarkRequest &request)const;
+			void descirbeCombineTrademarkAsync(const Model::DescirbeCombineTrademarkRequest& request, const DescirbeCombineTrademarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescirbeCombineTrademarkOutcomeCallable descirbeCombineTrademarkCallable(const Model::DescirbeCombineTrademarkRequest& request) const;
 			FillLogisticsOutcome fillLogistics(const Model::FillLogisticsRequest &request)const;
 			void fillLogisticsAsync(const Model::FillLogisticsRequest& request, const FillLogisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FillLogisticsOutcomeCallable fillLogisticsCallable(const Model::FillLogisticsRequest& request) const;
@@ -384,6 +464,9 @@ namespace AlibabaCloud
 			QueryIntentionListOutcome queryIntentionList(const Model::QueryIntentionListRequest &request)const;
 			void queryIntentionListAsync(const Model::QueryIntentionListRequest& request, const QueryIntentionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryIntentionListOutcomeCallable queryIntentionListCallable(const Model::QueryIntentionListRequest& request) const;
+			QueryIntentionPriceOutcome queryIntentionPrice(const Model::QueryIntentionPriceRequest &request)const;
+			void queryIntentionPriceAsync(const Model::QueryIntentionPriceRequest& request, const QueryIntentionPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryIntentionPriceOutcomeCallable queryIntentionPriceCallable(const Model::QueryIntentionPriceRequest& request) const;
 			QueryMaterialOutcome queryMaterial(const Model::QueryMaterialRequest &request)const;
 			void queryMaterialAsync(const Model::QueryMaterialRequest& request, const QueryMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMaterialOutcomeCallable queryMaterialCallable(const Model::QueryMaterialRequest& request) const;
@@ -393,6 +476,9 @@ namespace AlibabaCloud
 			QueryMonitorKeywordsOutcome queryMonitorKeywords(const Model::QueryMonitorKeywordsRequest &request)const;
 			void queryMonitorKeywordsAsync(const Model::QueryMonitorKeywordsRequest& request, const QueryMonitorKeywordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMonitorKeywordsOutcomeCallable queryMonitorKeywordsCallable(const Model::QueryMonitorKeywordsRequest& request) const;
+			QueryOfficialFileCustomListOutcome queryOfficialFileCustomList(const Model::QueryOfficialFileCustomListRequest &request)const;
+			void queryOfficialFileCustomListAsync(const Model::QueryOfficialFileCustomListRequest& request, const QueryOfficialFileCustomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryOfficialFileCustomListOutcomeCallable queryOfficialFileCustomListCallable(const Model::QueryOfficialFileCustomListRequest& request) const;
 			QueryOssResourcesOutcome queryOssResources(const Model::QueryOssResourcesRequest &request)const;
 			void queryOssResourcesAsync(const Model::QueryOssResourcesRequest& request, const QueryOssResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryOssResourcesOutcomeCallable queryOssResourcesCallable(const Model::QueryOssResourcesRequest& request) const;
@@ -438,9 +524,27 @@ namespace AlibabaCloud
 			RefundProduceOutcome refundProduce(const Model::RefundProduceRequest &request)const;
 			void refundProduceAsync(const Model::RefundProduceRequest& request, const RefundProduceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefundProduceOutcomeCallable refundProduceCallable(const Model::RefundProduceRequest& request) const;
+			RefuseAdditionalMaterialOutcome refuseAdditionalMaterial(const Model::RefuseAdditionalMaterialRequest &request)const;
+			void refuseAdditionalMaterialAsync(const Model::RefuseAdditionalMaterialRequest& request, const RefuseAdditionalMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefuseAdditionalMaterialOutcomeCallable refuseAdditionalMaterialCallable(const Model::RefuseAdditionalMaterialRequest& request) const;
+			RefuseApplicantOutcome refuseApplicant(const Model::RefuseApplicantRequest &request)const;
+			void refuseApplicantAsync(const Model::RefuseApplicantRequest& request, const RefuseApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefuseApplicantOutcomeCallable refuseApplicantCallable(const Model::RefuseApplicantRequest& request) const;
+			RejectApplicantOutcome rejectApplicant(const Model::RejectApplicantRequest &request)const;
+			void rejectApplicantAsync(const Model::RejectApplicantRequest& request, const RejectApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RejectApplicantOutcomeCallable rejectApplicantCallable(const Model::RejectApplicantRequest& request) const;
 			SaveTaskOutcome saveTask(const Model::SaveTaskRequest &request)const;
 			void saveTaskAsync(const Model::SaveTaskRequest& request, const SaveTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveTaskOutcomeCallable saveTaskCallable(const Model::SaveTaskRequest& request) const;
+			SaveTaskForOfficialFileCustomOutcome saveTaskForOfficialFileCustom(const Model::SaveTaskForOfficialFileCustomRequest &request)const;
+			void saveTaskForOfficialFileCustomAsync(const Model::SaveTaskForOfficialFileCustomRequest& request, const SaveTaskForOfficialFileCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveTaskForOfficialFileCustomOutcomeCallable saveTaskForOfficialFileCustomCallable(const Model::SaveTaskForOfficialFileCustomRequest& request) const;
+			SaveTradeMarkReviewMaterialDetailOutcome saveTradeMarkReviewMaterialDetail(const Model::SaveTradeMarkReviewMaterialDetailRequest &request)const;
+			void saveTradeMarkReviewMaterialDetailAsync(const Model::SaveTradeMarkReviewMaterialDetailRequest& request, const SaveTradeMarkReviewMaterialDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveTradeMarkReviewMaterialDetailOutcomeCallable saveTradeMarkReviewMaterialDetailCallable(const Model::SaveTradeMarkReviewMaterialDetailRequest& request) const;
+			SearchTmOnsalesOutcome searchTmOnsales(const Model::SearchTmOnsalesRequest &request)const;
+			void searchTmOnsalesAsync(const Model::SearchTmOnsalesRequest& request, const SearchTmOnsalesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchTmOnsalesOutcomeCallable searchTmOnsalesCallable(const Model::SearchTmOnsalesRequest& request) const;
 			StartNotaryOutcome startNotary(const Model::StartNotaryRequest &request)const;
 			void startNotaryAsync(const Model::StartNotaryRequest& request, const StartNotaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartNotaryOutcomeCallable startNotaryCallable(const Model::StartNotaryRequest& request) const;

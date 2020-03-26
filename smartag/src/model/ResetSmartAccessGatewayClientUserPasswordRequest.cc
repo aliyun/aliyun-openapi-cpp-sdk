@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ResetSmartAccessGatewayClientUserPasswordReq
 
 ResetSmartAccessGatewayClientUserPasswordRequest::ResetSmartAccessGatewayClientUserPasswordRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ResetSmartAccessGatewayClientUserPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetSmartAccessGatewayClientUserPasswordRequest::~ResetSmartAccessGatewayClientUserPasswordRequest()
 {}
@@ -33,7 +35,18 @@ long ResetSmartAccessGatewayClientUserPasswordRequest::getResourceOwnerId()const
 void ResetSmartAccessGatewayClientUserPasswordRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string ResetSmartAccessGatewayClientUserPasswordRequest::getPassword()const
+{
+	return password_;
+}
+
+void ResetSmartAccessGatewayClientUserPasswordRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setParameter("Password", password);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getRegionId()const
@@ -44,7 +57,7 @@ std::string ResetSmartAccessGatewayClientUserPasswordRequest::getRegionId()const
 void ResetSmartAccessGatewayClientUserPasswordRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getResourceOwnerAccount()const
@@ -55,7 +68,7 @@ std::string ResetSmartAccessGatewayClientUserPasswordRequest::getResourceOwnerAc
 void ResetSmartAccessGatewayClientUserPasswordRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerAccount()const
@@ -66,7 +79,7 @@ std::string ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerAccount()c
 void ResetSmartAccessGatewayClientUserPasswordRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerId()const
@@ -77,7 +90,7 @@ long ResetSmartAccessGatewayClientUserPasswordRequest::getOwnerId()const
 void ResetSmartAccessGatewayClientUserPasswordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getSmartAGId()const
@@ -88,7 +101,7 @@ std::string ResetSmartAccessGatewayClientUserPasswordRequest::getSmartAGId()cons
 void ResetSmartAccessGatewayClientUserPasswordRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string ResetSmartAccessGatewayClientUserPasswordRequest::getUserName()const
@@ -99,6 +112,6 @@ std::string ResetSmartAccessGatewayClientUserPasswordRequest::getUserName()const
 void ResetSmartAccessGatewayClientUserPasswordRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

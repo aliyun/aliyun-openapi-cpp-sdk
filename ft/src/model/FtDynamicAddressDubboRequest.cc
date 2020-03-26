@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtDynamicAddressDubboRequest;
 FtDynamicAddressDubboRequest::FtDynamicAddressDubboRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtDynamicAddressDubbo")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FtDynamicAddressDubboRequest::~FtDynamicAddressDubboRequest()

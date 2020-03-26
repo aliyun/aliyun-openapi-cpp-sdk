@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateKeywordLibRequest;
 
 CreateKeywordLibRequest::CreateKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateKeywordLibRequest::~CreateKeywordLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateKeywordLibRequest::getLanguage()const
 void CreateKeywordLibRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string CreateKeywordLibRequest::getServiceModule()const
@@ -44,7 +46,7 @@ std::string CreateKeywordLibRequest::getServiceModule()const
 void CreateKeywordLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setParameter("ServiceModule", serviceModule);
 }
 
 std::string CreateKeywordLibRequest::getMatchMode()const
@@ -55,7 +57,7 @@ std::string CreateKeywordLibRequest::getMatchMode()const
 void CreateKeywordLibRequest::setMatchMode(const std::string& matchMode)
 {
 	matchMode_ = matchMode;
-	setCoreParameter("MatchMode", matchMode);
+	setParameter("MatchMode", matchMode);
 }
 
 std::string CreateKeywordLibRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateKeywordLibRequest::getSourceIp()const
 void CreateKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateKeywordLibRequest::getLibType()const
@@ -77,7 +79,7 @@ std::string CreateKeywordLibRequest::getLibType()const
 void CreateKeywordLibRequest::setLibType(const std::string& libType)
 {
 	libType_ = libType;
-	setCoreParameter("LibType", libType);
+	setParameter("LibType", libType);
 }
 
 bool CreateKeywordLibRequest::getEnable()const
@@ -88,7 +90,7 @@ bool CreateKeywordLibRequest::getEnable()const
 void CreateKeywordLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateKeywordLibRequest::getLang()const
@@ -99,7 +101,7 @@ std::string CreateKeywordLibRequest::getLang()const
 void CreateKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateKeywordLibRequest::getBizTypes()const
@@ -110,7 +112,7 @@ std::string CreateKeywordLibRequest::getBizTypes()const
 void CreateKeywordLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", bizTypes);
+	setParameter("BizTypes", bizTypes);
 }
 
 std::string CreateKeywordLibRequest::getResourceType()const
@@ -121,7 +123,7 @@ std::string CreateKeywordLibRequest::getResourceType()const
 void CreateKeywordLibRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string CreateKeywordLibRequest::getName()const
@@ -132,7 +134,7 @@ std::string CreateKeywordLibRequest::getName()const
 void CreateKeywordLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateKeywordLibRequest::getCategory()const
@@ -143,6 +145,6 @@ std::string CreateKeywordLibRequest::getCategory()const
 void CreateKeywordLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

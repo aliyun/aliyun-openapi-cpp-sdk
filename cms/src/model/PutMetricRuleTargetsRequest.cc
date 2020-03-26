@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::PutMetricRuleTargetsRequest;
 PutMetricRuleTargetsRequest::PutMetricRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "PutMetricRuleTargets")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 PutMetricRuleTargetsRequest::~PutMetricRuleTargetsRequest()
@@ -37,10 +37,10 @@ void PutMetricRuleTargetsRequest::setTargets(const std::vector<Targets>& targets
 	targets_ = targets;
 	for(int dep1 = 0; dep1!= targets.size(); dep1++) {
 		auto targetsObj = targets.at(dep1);
-		std::string targetsObjStr = "Targets." + std::to_string(dep1);
-		setCoreParameter(targetsObjStr + ".Level", targetsObj.level);
-		setCoreParameter(targetsObjStr + ".Id", targetsObj.id);
-		setCoreParameter(targetsObjStr + ".Arn", targetsObj.arn);
+		std::string targetsObjStr = "Targets." + std::to_string(dep1 + 1);
+		setParameter(targetsObjStr + ".Level", targetsObj.level);
+		setParameter(targetsObjStr + ".Id", targetsObj.id);
+		setParameter(targetsObjStr + ".Arn", targetsObj.arn);
 	}
 }
 
@@ -52,6 +52,6 @@ std::string PutMetricRuleTargetsRequest::getRuleId()const
 void PutMetricRuleTargetsRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 

@@ -39,6 +39,9 @@ void QueryMaterialResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allReviewAdditionalFiles = value["ReviewAdditionalFiles"]["ReviewAdditionalFile"];
+	for (const auto &item : allReviewAdditionalFiles)
+		reviewAdditionalFiles_.push_back(item.asString());
 	if(!value["Type"].isNull())
 		type_ = std::stoi(value["Type"].asString());
 	if(!value["Region"].isNull())
@@ -91,6 +94,8 @@ void QueryMaterialResult::parse(const std::string &payload)
 		note_ = value["Note"].asString();
 	if(!value["Country"].isNull())
 		country_ = value["Country"].asString();
+	if(!value["ReviewApplicationFile"].isNull())
+		reviewApplicationFile_ = value["ReviewApplicationFile"].asString();
 
 }
 
@@ -134,6 +139,11 @@ std::string QueryMaterialResult::getTown()const
 	return town_;
 }
 
+std::vector<std::string> QueryMaterialResult::getReviewAdditionalFiles()const
+{
+	return reviewAdditionalFiles_;
+}
+
 std::string QueryMaterialResult::getContactNumber()const
 {
 	return contactNumber_;
@@ -152,6 +162,11 @@ std::string QueryMaterialResult::getContactAddress()const
 int QueryMaterialResult::getStatus()const
 {
 	return status_;
+}
+
+std::string QueryMaterialResult::getReviewApplicationFile()const
+{
+	return reviewApplicationFile_;
 }
 
 std::string QueryMaterialResult::getCity()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CreateSessionRequest;
 
 CreateSessionRequest::CreateSessionRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CreateSession")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSessionRequest::~CreateSessionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateSessionRequest::getResourceOwnerId()const
 void CreateSessionRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string CreateSessionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateSessionRequest::getAccessKeyId()const
 void CreateSessionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateSessionRequest::getSessionTime()const
@@ -55,7 +57,7 @@ int CreateSessionRequest::getSessionTime()const
 void CreateSessionRequest::setSessionTime(int sessionTime)
 {
 	sessionTime_ = sessionTime;
-	setCoreParameter("SessionTime", std::to_string(sessionTime));
+	setParameter("SessionTime", std::to_string(sessionTime));
 }
 
 std::string CreateSessionRequest::getEndUserId()const
@@ -66,7 +68,7 @@ std::string CreateSessionRequest::getEndUserId()const
 void CreateSessionRequest::setEndUserId(const std::string& endUserId)
 {
 	endUserId_ = endUserId;
-	setCoreParameter("EndUserId", endUserId);
+	setParameter("EndUserId", endUserId);
 }
 
 std::string CreateSessionRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateSessionRequest::getResourceOwnerAccount()const
 void CreateSessionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSessionRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateSessionRequest::getOwnerAccount()const
 void CreateSessionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSessionRequest::getOwnerId()const
@@ -99,7 +101,7 @@ std::string CreateSessionRequest::getOwnerId()const
 void CreateSessionRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string CreateSessionRequest::getMediaId()const
@@ -110,6 +112,6 @@ std::string CreateSessionRequest::getMediaId()const
 void CreateSessionRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 

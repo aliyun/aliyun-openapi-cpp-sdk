@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiTrafficControlsRequest;
 
 DescribeApiTrafficControlsRequest::DescribeApiTrafficControlsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiTrafficControls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiTrafficControlsRequest::~DescribeApiTrafficControlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiTrafficControlsRequest::getStageName()const
 void DescribeApiTrafficControlsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeApiTrafficControlsRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApiTrafficControlsRequest::getGroupId()const
 void DescribeApiTrafficControlsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeApiTrafficControlsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeApiTrafficControlsRequest::getPageNumber()const
 void DescribeApiTrafficControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApiTrafficControlsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiTrafficControlsRequest::getAccessKeyId()const
 void DescribeApiTrafficControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiTrafficControlsRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiTrafficControlsRequest::getSecurityToken()const
 void DescribeApiTrafficControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApiTrafficControlsRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeApiTrafficControlsRequest::getPageSize()const
 void DescribeApiTrafficControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeApiTrafficControlsRequest::getApiIds()const
@@ -99,6 +101,6 @@ std::string DescribeApiTrafficControlsRequest::getApiIds()const
 void DescribeApiTrafficControlsRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

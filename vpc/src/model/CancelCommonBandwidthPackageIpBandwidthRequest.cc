@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CancelCommonBandwidthPackageIpBandwidthRequest;
 
 CancelCommonBandwidthPackageIpBandwidthRequest::CancelCommonBandwidthPackageIpBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CancelCommonBandwidthPackageIpBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelCommonBandwidthPackageIpBandwidthRequest::~CancelCommonBandwidthPackageIpBandwidthRequest()
 {}
@@ -33,7 +35,7 @@ long CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getRegionId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageId()const
@@ -55,7 +57,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getBandwidthPackageI
 void CancelCommonBandwidthPackageIpBandwidthRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getResourceOwnerAcco
 void CancelCommonBandwidthPackageIpBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerAccount()con
 void CancelCommonBandwidthPackageIpBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CancelCommonBandwidthPackageIpBandwidthRequest::getEipId()const
@@ -88,7 +90,7 @@ std::string CancelCommonBandwidthPackageIpBandwidthRequest::getEipId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setEipId(const std::string& eipId)
 {
 	eipId_ = eipId;
-	setCoreParameter("EipId", eipId);
+	setParameter("EipId", eipId);
 }
 
 long CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long CancelCommonBandwidthPackageIpBandwidthRequest::getOwnerId()const
 void CancelCommonBandwidthPackageIpBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

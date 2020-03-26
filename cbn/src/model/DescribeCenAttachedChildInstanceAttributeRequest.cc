@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenAttachedChildInstanceAttributeRequest
 
 DescribeCenAttachedChildInstanceAttributeRequest::DescribeCenAttachedChildInstanceAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenAttachedChildInstanceAttributeRequest::~DescribeCenAttachedChildInstanceAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenAttachedChildInstanceAttributeRequest::getResourceOwnerId()const
 void DescribeCenAttachedChildInstanceAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getCenId()const
 void DescribeCenAttachedChildInstanceAttributeRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceRe
 void DescribeCenAttachedChildInstanceAttributeRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getResourceOwnerAc
 void DescribeCenAttachedChildInstanceAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getOwnerAccount()c
 void DescribeCenAttachedChildInstanceAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenAttachedChildInstanceAttributeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeCenAttachedChildInstanceAttributeRequest::getOwnerId()const
 void DescribeCenAttachedChildInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceType()const
@@ -99,7 +101,7 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceTy
 void DescribeCenAttachedChildInstanceAttributeRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceId()const
@@ -110,6 +112,6 @@ std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceId
 void DescribeCenAttachedChildInstanceAttributeRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 

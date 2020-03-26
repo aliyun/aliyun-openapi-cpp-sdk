@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSQLCollectorPolicyRequest;
 
 DescribeSQLCollectorPolicyRequest::DescribeSQLCollectorPolicyRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSQLCollectorPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLCollectorPolicyRequest::~DescribeSQLCollectorPolicyRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSQLCollectorPolicyRequest::getAccessKeyId()const
 void DescribeSQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId()const
@@ -44,6 +46,6 @@ std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId()const
 void DescribeSQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

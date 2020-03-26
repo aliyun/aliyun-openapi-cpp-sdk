@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeletePolicyVersionRequest;
 
 DeletePolicyVersionRequest::DeletePolicyVersionRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeletePolicyVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePolicyVersionRequest::~DeletePolicyVersionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeletePolicyVersionRequest::getVersionId()const
 void DeletePolicyVersionRequest::setVersionId(const std::string& versionId)
 {
 	versionId_ = versionId;
-	setCoreParameter("VersionId", versionId);
+	setParameter("VersionId", versionId);
 }
 
 std::string DeletePolicyVersionRequest::getPolicyName()const
@@ -44,6 +46,6 @@ std::string DeletePolicyVersionRequest::getPolicyName()const
 void DeletePolicyVersionRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 

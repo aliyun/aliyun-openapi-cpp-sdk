@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::RealTimeRecordCommandRequest;
 
 RealTimeRecordCommandRequest::RealTimeRecordCommandRequest() :
 	RpcServiceRequest("live", "2016-11-01", "RealTimeRecordCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RealTimeRecordCommandRequest::~RealTimeRecordCommandRequest()
 {}
@@ -33,7 +35,7 @@ std::string RealTimeRecordCommandRequest::getAppName()const
 void RealTimeRecordCommandRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string RealTimeRecordCommandRequest::getStreamName()const
@@ -44,7 +46,7 @@ std::string RealTimeRecordCommandRequest::getStreamName()const
 void RealTimeRecordCommandRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string RealTimeRecordCommandRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string RealTimeRecordCommandRequest::getDomainName()const
 void RealTimeRecordCommandRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long RealTimeRecordCommandRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long RealTimeRecordCommandRequest::getOwnerId()const
 void RealTimeRecordCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RealTimeRecordCommandRequest::getCommand()const
@@ -77,6 +79,6 @@ std::string RealTimeRecordCommandRequest::getCommand()const
 void RealTimeRecordCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setParameter("Command", command);
 }
 

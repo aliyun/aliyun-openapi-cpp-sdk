@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnTagResourcesRequest;
 
 UnTagResourcesRequest::UnTagResourcesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnTagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnTagResourcesRequest::~UnTagResourcesRequest()
 {}
@@ -33,7 +35,7 @@ long UnTagResourcesRequest::getResourceOwnerId()const
 void UnTagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnTagResourcesRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string UnTagResourcesRequest::getRegionId()const
 void UnTagResourcesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<std::string> UnTagResourcesRequest::getResourceId()const
@@ -55,8 +57,9 @@ std::vector<std::string> UnTagResourcesRequest::getResourceId()const
 void UnTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string UnTagResourcesRequest::getResourceOwnerAccount()const
@@ -67,7 +70,7 @@ std::string UnTagResourcesRequest::getResourceOwnerAccount()const
 void UnTagResourcesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnTagResourcesRequest::getOwnerAccount()const
@@ -78,7 +81,7 @@ std::string UnTagResourcesRequest::getOwnerAccount()const
 void UnTagResourcesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnTagResourcesRequest::getOwnerId()const
@@ -89,7 +92,7 @@ long UnTagResourcesRequest::getOwnerId()const
 void UnTagResourcesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnTagResourcesRequest::getResourceType()const
@@ -100,7 +103,7 @@ std::string UnTagResourcesRequest::getResourceType()const
 void UnTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::vector<std::string> UnTagResourcesRequest::getTagKey()const
@@ -111,7 +114,8 @@ std::vector<std::string> UnTagResourcesRequest::getTagKey()const
 void UnTagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

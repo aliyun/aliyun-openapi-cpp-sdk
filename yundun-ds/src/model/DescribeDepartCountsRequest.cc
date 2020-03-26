@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDepartCountsRequest;
 
 DescribeDepartCountsRequest::DescribeDepartCountsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDepartCounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDepartCountsRequest::~DescribeDepartCountsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDepartCountsRequest::getTypeCode()const
 void DescribeDepartCountsRequest::setTypeCode(const std::string& typeCode)
 {
 	typeCode_ = typeCode;
-	setCoreParameter("TypeCode", typeCode);
+	setParameter("TypeCode", typeCode);
 }
 
 std::string DescribeDepartCountsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDepartCountsRequest::getSourceIp()const
 void DescribeDepartCountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDepartCountsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeDepartCountsRequest::getPageSize()const
 void DescribeDepartCountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDepartCountsRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeDepartCountsRequest::getLang()const
 void DescribeDepartCountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeDepartCountsRequest::getFeatureType()const
@@ -77,7 +79,7 @@ int DescribeDepartCountsRequest::getFeatureType()const
 void DescribeDepartCountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDepartCountsRequest::getCurrentPage()const
@@ -88,7 +90,7 @@ int DescribeDepartCountsRequest::getCurrentPage()const
 void DescribeDepartCountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDepartCountsRequest::getDepartName()const
@@ -99,6 +101,6 @@ std::string DescribeDepartCountsRequest::getDepartName()const
 void DescribeDepartCountsRequest::setDepartName(const std::string& departName)
 {
 	departName_ = departName;
-	setCoreParameter("DepartName", departName);
+	setParameter("DepartName", departName);
 }
 

@@ -93,6 +93,8 @@ void DescribeFlowResult::parse(const std::string &payload)
 		alertDingDingGroupBizId_ = value["AlertDingDingGroupBizId"].asString();
 	if(!value["Application"].isNull())
 		application_ = value["Application"].asString();
+	if(!value["EditLockDetail"].isNull())
+		editLockDetail_ = value["EditLockDetail"].asString();
 
 }
 
@@ -134,6 +136,11 @@ bool DescribeFlowResult::getPeriodic()const
 std::string DescribeFlowResult::getCronExpr()const
 {
 	return cronExpr_;
+}
+
+std::string DescribeFlowResult::getEditLockDetail()const
+{
+	return editLockDetail_;
 }
 
 std::string DescribeFlowResult::getName()const

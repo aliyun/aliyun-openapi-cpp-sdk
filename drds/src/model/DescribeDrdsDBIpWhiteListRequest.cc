@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsDBIpWhiteListRequest;
 
 DescribeDrdsDBIpWhiteListRequest::DescribeDrdsDBIpWhiteListRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsDBIpWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsDBIpWhiteListRequest::~DescribeDrdsDBIpWhiteListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getDrdsInstanceId()const
 void DescribeDrdsDBIpWhiteListRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getGroupName()const
@@ -44,7 +46,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getGroupName()const
 void DescribeDrdsDBIpWhiteListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeDrdsDBIpWhiteListRequest::getAccessKeyId()const
 void DescribeDrdsDBIpWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDrdsDBIpWhiteListRequest::getDbName()const
@@ -66,6 +68,6 @@ std::string DescribeDrdsDBIpWhiteListRequest::getDbName()const
 void DescribeDrdsDBIpWhiteListRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

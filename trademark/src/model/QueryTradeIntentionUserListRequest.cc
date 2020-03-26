@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTradeIntentionUserListRequest;
 
 QueryTradeIntentionUserListRequest::QueryTradeIntentionUserListRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTradeIntentionUserList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTradeIntentionUserListRequest::~QueryTradeIntentionUserListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryTradeIntentionUserListRequest::getPageNum()const
 void QueryTradeIntentionUserListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryTradeIntentionUserListRequest::getPageSize()const
@@ -44,7 +46,7 @@ int QueryTradeIntentionUserListRequest::getPageSize()const
 void QueryTradeIntentionUserListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTradeIntentionUserListRequest::getBizId()const
@@ -55,7 +57,7 @@ std::string QueryTradeIntentionUserListRequest::getBizId()const
 void QueryTradeIntentionUserListRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 long QueryTradeIntentionUserListRequest::getEnd()const
@@ -66,7 +68,7 @@ long QueryTradeIntentionUserListRequest::getEnd()const
 void QueryTradeIntentionUserListRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setParameter("End", std::to_string(end));
 }
 
 long QueryTradeIntentionUserListRequest::getBegin()const
@@ -77,7 +79,7 @@ long QueryTradeIntentionUserListRequest::getBegin()const
 void QueryTradeIntentionUserListRequest::setBegin(long begin)
 {
 	begin_ = begin;
-	setCoreParameter("Begin", std::to_string(begin));
+	setParameter("Begin", std::to_string(begin));
 }
 
 int QueryTradeIntentionUserListRequest::getStatus()const
@@ -88,6 +90,6 @@ int QueryTradeIntentionUserListRequest::getStatus()const
 void QueryTradeIntentionUserListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

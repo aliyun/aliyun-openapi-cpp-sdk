@@ -22,7 +22,7 @@ ValidateShrinkNodesRequest::ValidateShrinkNodesRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/validate-shrink-nodes");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ValidateShrinkNodesRequest::~ValidateShrinkNodesRequest()

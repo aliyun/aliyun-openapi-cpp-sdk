@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOpenApiUsageRequest;
 
 DescribeOpenApiUsageRequest::DescribeOpenApiUsageRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOpenApiUsage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOpenApiUsageRequest::~DescribeOpenApiUsageRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOpenApiUsageRequest::getStartDate()const
 void DescribeOpenApiUsageRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeOpenApiUsageRequest::getResourceType()const
@@ -44,7 +46,7 @@ std::string DescribeOpenApiUsageRequest::getResourceType()const
 void DescribeOpenApiUsageRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeOpenApiUsageRequest::getEndDate()const
@@ -55,7 +57,7 @@ std::string DescribeOpenApiUsageRequest::getEndDate()const
 void DescribeOpenApiUsageRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeOpenApiUsageRequest::getSourceIp()const
@@ -66,6 +68,6 @@ std::string DescribeOpenApiUsageRequest::getSourceIp()const
 void DescribeOpenApiUsageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

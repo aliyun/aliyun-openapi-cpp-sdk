@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeImageUploadInfoRequest;
 
 DescribeImageUploadInfoRequest::DescribeImageUploadInfoRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeImageUploadInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageUploadInfoRequest::~DescribeImageUploadInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeImageUploadInfoRequest::getSourceIp()const
 void DescribeImageUploadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

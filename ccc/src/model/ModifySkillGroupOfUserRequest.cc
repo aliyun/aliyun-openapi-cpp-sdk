@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySkillGroupOfUserRequest;
 
 ModifySkillGroupOfUserRequest::ModifySkillGroupOfUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySkillGroupOfUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySkillGroupOfUserRequest::~ModifySkillGroupOfUserRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ModifySkillGroupOfUserRequest::getRoleId()const
 void ModifySkillGroupOfUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
+		setParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupOfUserRequest::getUserId()const
@@ -45,7 +48,7 @@ std::string ModifySkillGroupOfUserRequest::getUserId()const
 void ModifySkillGroupOfUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
@@ -56,7 +59,7 @@ std::string ModifySkillGroupOfUserRequest::getAccessKeyId()const
 void ModifySkillGroupOfUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<int> ModifySkillGroupOfUserRequest::getSkillLevel()const
@@ -67,8 +70,9 @@ std::vector<int> ModifySkillGroupOfUserRequest::getSkillLevel()const
 void ModifySkillGroupOfUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
+		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string ModifySkillGroupOfUserRequest::getInstanceId()const
@@ -79,7 +83,7 @@ std::string ModifySkillGroupOfUserRequest::getInstanceId()const
 void ModifySkillGroupOfUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ModifySkillGroupOfUserRequest::getSkillGroupId()const
@@ -90,7 +94,8 @@ std::vector<std::string> ModifySkillGroupOfUserRequest::getSkillGroupId()const
 void ModifySkillGroupOfUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

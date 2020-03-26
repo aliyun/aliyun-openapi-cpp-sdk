@@ -35,7 +35,7 @@ std::string FeedbackRequest::getFeedback()const
 void FeedbackRequest::setFeedback(const std::string& feedback)
 {
 	feedback_ = feedback;
-	setCoreParameter("Feedback", feedback);
+	setParameter("Feedback", feedback);
 }
 
 std::string FeedbackRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string FeedbackRequest::getInstanceId()const
 void FeedbackRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string FeedbackRequest::getMessageId()const
@@ -57,7 +57,7 @@ std::string FeedbackRequest::getMessageId()const
 void FeedbackRequest::setMessageId(const std::string& messageId)
 {
 	messageId_ = messageId;
-	setCoreParameter("MessageId", messageId);
+	setParameter("MessageId", messageId);
 }
 
 std::string FeedbackRequest::getSessionId()const
@@ -68,6 +68,6 @@ std::string FeedbackRequest::getSessionId()const
 void FeedbackRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setParameter("SessionId", sessionId);
 }
 

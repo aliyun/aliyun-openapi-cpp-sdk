@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateSmartAccessGatewayRequest;
 
 CreateSmartAccessGatewayRequest::CreateSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSmartAccessGatewayRequest::~CreateSmartAccessGatewayRequest()
 {}
@@ -33,7 +35,7 @@ int CreateSmartAccessGatewayRequest::getMaxBandWidth()const
 void CreateSmartAccessGatewayRequest::setMaxBandWidth(int maxBandWidth)
 {
 	maxBandWidth_ = maxBandWidth;
-	setCoreParameter("MaxBandWidth", std::to_string(maxBandWidth));
+	setParameter("MaxBandWidth", std::to_string(maxBandWidth));
 }
 
 long CreateSmartAccessGatewayRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateSmartAccessGatewayRequest::getResourceOwnerId()const
 void CreateSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSmartAccessGatewayRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateSmartAccessGatewayRequest::getDescription()const
 void CreateSmartAccessGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverTown()const
@@ -66,7 +68,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverTown()const
 void CreateSmartAccessGatewayRequest::setReceiverTown(const std::string& receiverTown)
 {
 	receiverTown_ = receiverTown;
-	setCoreParameter("ReceiverTown", receiverTown);
+	setParameter("ReceiverTown", receiverTown);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverDistrict()const
@@ -77,7 +79,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverDistrict()const
 void CreateSmartAccessGatewayRequest::setReceiverDistrict(const std::string& receiverDistrict)
 {
 	receiverDistrict_ = receiverDistrict;
-	setCoreParameter("ReceiverDistrict", receiverDistrict);
+	setParameter("ReceiverDistrict", receiverDistrict);
 }
 
 std::string CreateSmartAccessGatewayRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string CreateSmartAccessGatewayRequest::getRegionId()const
 void CreateSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int CreateSmartAccessGatewayRequest::getUserCount()const
@@ -99,7 +101,7 @@ int CreateSmartAccessGatewayRequest::getUserCount()const
 void CreateSmartAccessGatewayRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setParameter("UserCount", std::to_string(userCount));
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverAddress()const
@@ -110,7 +112,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverAddress()const
 void CreateSmartAccessGatewayRequest::setReceiverAddress(const std::string& receiverAddress)
 {
 	receiverAddress_ = receiverAddress;
-	setCoreParameter("ReceiverAddress", receiverAddress);
+	setParameter("ReceiverAddress", receiverAddress);
 }
 
 std::string CreateSmartAccessGatewayRequest::getInstanceType()const
@@ -121,7 +123,7 @@ std::string CreateSmartAccessGatewayRequest::getInstanceType()const
 void CreateSmartAccessGatewayRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateSmartAccessGatewayRequest::getBuyerMessage()const
@@ -132,7 +134,7 @@ std::string CreateSmartAccessGatewayRequest::getBuyerMessage()const
 void CreateSmartAccessGatewayRequest::setBuyerMessage(const std::string& buyerMessage)
 {
 	buyerMessage_ = buyerMessage;
-	setCoreParameter("BuyerMessage", buyerMessage);
+	setParameter("BuyerMessage", buyerMessage);
 }
 
 std::string CreateSmartAccessGatewayRequest::getHardWareSpec()const
@@ -143,7 +145,7 @@ std::string CreateSmartAccessGatewayRequest::getHardWareSpec()const
 void CreateSmartAccessGatewayRequest::setHardWareSpec(const std::string& hardWareSpec)
 {
 	hardWareSpec_ = hardWareSpec;
-	setCoreParameter("HardWareSpec", hardWareSpec);
+	setParameter("HardWareSpec", hardWareSpec);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverEmail()const
@@ -154,7 +156,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverEmail()const
 void CreateSmartAccessGatewayRequest::setReceiverEmail(const std::string& receiverEmail)
 {
 	receiverEmail_ = receiverEmail;
-	setCoreParameter("ReceiverEmail", receiverEmail);
+	setParameter("ReceiverEmail", receiverEmail);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverState()const
@@ -165,7 +167,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverState()const
 void CreateSmartAccessGatewayRequest::setReceiverState(const std::string& receiverState)
 {
 	receiverState_ = receiverState;
-	setCoreParameter("ReceiverState", receiverState);
+	setParameter("ReceiverState", receiverState);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverCity()const
@@ -176,7 +178,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverCity()const
 void CreateSmartAccessGatewayRequest::setReceiverCity(const std::string& receiverCity)
 {
 	receiverCity_ = receiverCity;
-	setCoreParameter("ReceiverCity", receiverCity);
+	setParameter("ReceiverCity", receiverCity);
 }
 
 int CreateSmartAccessGatewayRequest::getPeriod()const
@@ -187,7 +189,7 @@ int CreateSmartAccessGatewayRequest::getPeriod()const
 void CreateSmartAccessGatewayRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool CreateSmartAccessGatewayRequest::getAutoPay()const
@@ -198,7 +200,7 @@ bool CreateSmartAccessGatewayRequest::getAutoPay()const
 void CreateSmartAccessGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverMobile()const
@@ -209,7 +211,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverMobile()const
 void CreateSmartAccessGatewayRequest::setReceiverMobile(const std::string& receiverMobile)
 {
 	receiverMobile_ = receiverMobile;
-	setCoreParameter("ReceiverMobile", receiverMobile);
+	setParameter("ReceiverMobile", receiverMobile);
 }
 
 std::string CreateSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -220,7 +222,7 @@ std::string CreateSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void CreateSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSmartAccessGatewayRequest::getOwnerAccount()const
@@ -231,7 +233,7 @@ std::string CreateSmartAccessGatewayRequest::getOwnerAccount()const
 void CreateSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateSmartAccessGatewayRequest::getOwnerId()const
@@ -242,7 +244,7 @@ long CreateSmartAccessGatewayRequest::getOwnerId()const
 void CreateSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverPhone()const
@@ -253,7 +255,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverPhone()const
 void CreateSmartAccessGatewayRequest::setReceiverPhone(const std::string& receiverPhone)
 {
 	receiverPhone_ = receiverPhone;
-	setCoreParameter("ReceiverPhone", receiverPhone);
+	setParameter("ReceiverPhone", receiverPhone);
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverName()const
@@ -264,7 +266,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverName()const
 void CreateSmartAccessGatewayRequest::setReceiverName(const std::string& receiverName)
 {
 	receiverName_ = receiverName;
-	setCoreParameter("ReceiverName", receiverName);
+	setParameter("ReceiverName", receiverName);
 }
 
 std::string CreateSmartAccessGatewayRequest::getHaType()const
@@ -275,7 +277,7 @@ std::string CreateSmartAccessGatewayRequest::getHaType()const
 void CreateSmartAccessGatewayRequest::setHaType(const std::string& haType)
 {
 	haType_ = haType;
-	setCoreParameter("HaType", haType);
+	setParameter("HaType", haType);
 }
 
 std::string CreateSmartAccessGatewayRequest::getName()const
@@ -286,7 +288,18 @@ std::string CreateSmartAccessGatewayRequest::getName()const
 void CreateSmartAccessGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
+}
+
+bool CreateSmartAccessGatewayRequest::getAlreadyHaveSag()const
+{
+	return alreadyHaveSag_;
+}
+
+void CreateSmartAccessGatewayRequest::setAlreadyHaveSag(bool alreadyHaveSag)
+{
+	alreadyHaveSag_ = alreadyHaveSag;
+	setParameter("AlreadyHaveSag", alreadyHaveSag ? "true" : "false");
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverCountry()const
@@ -297,7 +310,7 @@ std::string CreateSmartAccessGatewayRequest::getReceiverCountry()const
 void CreateSmartAccessGatewayRequest::setReceiverCountry(const std::string& receiverCountry)
 {
 	receiverCountry_ = receiverCountry;
-	setCoreParameter("ReceiverCountry", receiverCountry);
+	setParameter("ReceiverCountry", receiverCountry);
 }
 
 std::string CreateSmartAccessGatewayRequest::getChargeType()const
@@ -308,7 +321,7 @@ std::string CreateSmartAccessGatewayRequest::getChargeType()const
 void CreateSmartAccessGatewayRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 
 long CreateSmartAccessGatewayRequest::getDataPlan()const
@@ -319,7 +332,7 @@ long CreateSmartAccessGatewayRequest::getDataPlan()const
 void CreateSmartAccessGatewayRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setParameter("DataPlan", std::to_string(dataPlan));
 }
 
 std::string CreateSmartAccessGatewayRequest::getReceiverZip()const
@@ -330,6 +343,6 @@ std::string CreateSmartAccessGatewayRequest::getReceiverZip()const
 void CreateSmartAccessGatewayRequest::setReceiverZip(const std::string& receiverZip)
 {
 	receiverZip_ = receiverZip;
-	setCoreParameter("ReceiverZip", receiverZip);
+	setParameter("ReceiverZip", receiverZip);
 }
 

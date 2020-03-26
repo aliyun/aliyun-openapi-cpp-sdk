@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListAlbumsRequest;
 
 ListAlbumsRequest::ListAlbumsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListAlbums")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAlbumsRequest::~ListAlbumsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAlbumsRequest::getCursor()const
 void ListAlbumsRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setParameter("Cursor", cursor);
 }
 
 std::string ListAlbumsRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string ListAlbumsRequest::getLibraryId()const
 void ListAlbumsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string ListAlbumsRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string ListAlbumsRequest::getStoreName()const
 void ListAlbumsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int ListAlbumsRequest::getSize()const
@@ -66,7 +68,7 @@ int ListAlbumsRequest::getSize()const
 void ListAlbumsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListAlbumsRequest::getState()const
@@ -77,7 +79,7 @@ std::string ListAlbumsRequest::getState()const
 void ListAlbumsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListAlbumsRequest::getDirection()const
@@ -88,6 +90,6 @@ std::string ListAlbumsRequest::getDirection()const
 void ListAlbumsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 

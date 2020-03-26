@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::ListTraceAppsRequest;
 
 ListTraceAppsRequest::ListTraceAppsRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "ListTraceApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTraceAppsRequest::~ListTraceAppsRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListTraceAppsRequest::getRegionId()const
 void ListTraceAppsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteRouteEntryRequest;
 
 DeleteRouteEntryRequest::DeleteRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRouteEntryRequest::~DeleteRouteEntryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteRouteEntryRequest::getResourceOwnerId()const
 void DeleteRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteRouteEntryRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteRouteEntryRequest::getRegionId()const
 void DeleteRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteRouteEntryRequest::getNextHopId()const
@@ -55,7 +57,7 @@ std::string DeleteRouteEntryRequest::getNextHopId()const
 void DeleteRouteEntryRequest::setNextHopId(const std::string& nextHopId)
 {
 	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
+	setParameter("NextHopId", nextHopId);
 }
 
 std::string DeleteRouteEntryRequest::getRouteTableId()const
@@ -66,7 +68,7 @@ std::string DeleteRouteEntryRequest::getRouteTableId()const
 void DeleteRouteEntryRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteRouteEntryRequest::getResourceOwnerAccount()const
 void DeleteRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
@@ -88,7 +90,7 @@ std::string DeleteRouteEntryRequest::getDestinationCidrBlock()const
 void DeleteRouteEntryRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string DeleteRouteEntryRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DeleteRouteEntryRequest::getOwnerAccount()const
 void DeleteRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteRouteEntryRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DeleteRouteEntryRequest::getOwnerId()const
 void DeleteRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteRouteEntryRequest::getRouteEntryId()const
@@ -121,7 +123,7 @@ std::string DeleteRouteEntryRequest::getRouteEntryId()const
 void DeleteRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
 {
 	routeEntryId_ = routeEntryId;
-	setCoreParameter("RouteEntryId", routeEntryId);
+	setParameter("RouteEntryId", routeEntryId);
 }
 
 std::vector<DeleteRouteEntryRequest::NextHopList> DeleteRouteEntryRequest::getNextHopList()const
@@ -132,12 +134,11 @@ std::vector<DeleteRouteEntryRequest::NextHopList> DeleteRouteEntryRequest::getNe
 void DeleteRouteEntryRequest::setNextHopList(const std::vector<NextHopList>& nextHopList)
 {
 	nextHopList_ = nextHopList;
-	int i = 0;
-	for(int i = 0; i!= nextHopList.size(); i++)	{
-		auto obj = nextHopList.at(i);
-		std::string str ="NextHopList."+ std::to_string(i);
-		setCoreParameter(str + ".NextHopId", obj.nextHopId);
-		setCoreParameter(str + ".NextHopType", obj.nextHopType);
+	for(int dep1 = 0; dep1!= nextHopList.size(); dep1++) {
+		auto nextHopListObj = nextHopList.at(dep1);
+		std::string nextHopListObjStr = "NextHopList." + std::to_string(dep1 + 1);
+		setParameter(nextHopListObjStr + ".NextHopId", nextHopListObj.nextHopId);
+		setParameter(nextHopListObjStr + ".NextHopType", nextHopListObj.nextHopType);
 	}
 }
 

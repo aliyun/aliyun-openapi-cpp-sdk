@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteVpnGatewayRequest;
 
 DeleteVpnGatewayRequest::DeleteVpnGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpnGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpnGatewayRequest::~DeleteVpnGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteVpnGatewayRequest::getResourceOwnerId()const
 void DeleteVpnGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVpnGatewayRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteVpnGatewayRequest::getClientToken()const
 void DeleteVpnGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteVpnGatewayRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteVpnGatewayRequest::getRegionId()const
 void DeleteVpnGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteVpnGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteVpnGatewayRequest::getResourceOwnerAccount()const
 void DeleteVpnGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpnGatewayRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteVpnGatewayRequest::getOwnerAccount()const
 void DeleteVpnGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteVpnGatewayRequest::getVpnGatewayId()const
@@ -88,7 +90,7 @@ std::string DeleteVpnGatewayRequest::getVpnGatewayId()const
 void DeleteVpnGatewayRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long DeleteVpnGatewayRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteVpnGatewayRequest::getOwnerId()const
 void DeleteVpnGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

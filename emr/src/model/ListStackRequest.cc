@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListStackRequest;
 
 ListStackRequest::ListStackRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListStack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListStackRequest::~ListStackRequest()
 {}
@@ -33,7 +35,7 @@ long ListStackRequest::getResourceOwnerId()const
 void ListStackRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ListStackRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListStackRequest::getPageNumber()const
 void ListStackRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListStackRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListStackRequest::getAccessKeyId()const
 void ListStackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListStackRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ListStackRequest::getRegionId()const
 void ListStackRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListStackRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListStackRequest::getPageSize()const
 void ListStackRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListStackRequest::getStackName()const
@@ -88,7 +90,7 @@ std::string ListStackRequest::getStackName()const
 void ListStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 
 std::string ListStackRequest::getStackVersion()const
@@ -99,6 +101,6 @@ std::string ListStackRequest::getStackVersion()const
 void ListStackRequest::setStackVersion(const std::string& stackVersion)
 {
 	stackVersion_ = stackVersion;
-	setCoreParameter("StackVersion", stackVersion);
+	setParameter("StackVersion", stackVersion);
 }
 

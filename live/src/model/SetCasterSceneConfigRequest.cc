@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterSceneConfigRequest;
 
 SetCasterSceneConfigRequest::SetCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterSceneConfigRequest::~SetCasterSceneConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetCasterSceneConfigRequest::getLayoutId()const
 void SetCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setParameter("LayoutId", layoutId);
 }
 
 std::vector<std::string> SetCasterSceneConfigRequest::getComponentId()const
@@ -44,8 +46,9 @@ std::vector<std::string> SetCasterSceneConfigRequest::getComponentId()const
 void SetCasterSceneConfigRequest::setComponentId(const std::vector<std::string>& componentId)
 {
 	componentId_ = componentId;
-	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+	for(int dep1 = 0; dep1!= componentId.size(); dep1++) {
+		setParameter("ComponentId."+ std::to_string(dep1), componentId.at(dep1));
+	}
 }
 
 std::string SetCasterSceneConfigRequest::getCasterId()const
@@ -56,7 +59,7 @@ std::string SetCasterSceneConfigRequest::getCasterId()const
 void SetCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long SetCasterSceneConfigRequest::getOwnerId()const
@@ -67,7 +70,7 @@ long SetCasterSceneConfigRequest::getOwnerId()const
 void SetCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetCasterSceneConfigRequest::getSceneId()const
@@ -78,6 +81,6 @@ std::string SetCasterSceneConfigRequest::getSceneId()const
 void SetCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

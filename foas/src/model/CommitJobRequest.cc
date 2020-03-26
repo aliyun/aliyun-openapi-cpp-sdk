@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CommitJobRequest;
 
 CommitJobRequest::CommitJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/commit");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CommitJobRequest::~CommitJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string CommitJobRequest::getProjectName()const
 void CommitJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CommitJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string CommitJobRequest::getRegionId()const
 void CommitJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 float CommitJobRequest::getMaxCU()const
@@ -55,7 +58,7 @@ float CommitJobRequest::getMaxCU()const
 void CommitJobRequest::setMaxCU(float maxCU)
 {
 	maxCU_ = maxCU;
-	setCoreParameter("MaxCU", std::to_string(maxCU));
+	setBodyParameter("MaxCU", std::to_string(maxCU));
 }
 
 std::string CommitJobRequest::getConfigure()const
@@ -66,7 +69,7 @@ std::string CommitJobRequest::getConfigure()const
 void CommitJobRequest::setConfigure(const std::string& configure)
 {
 	configure_ = configure;
-	setCoreParameter("Configure", configure);
+	setBodyParameter("Configure", configure);
 }
 
 bool CommitJobRequest::getIsOnOff()const
@@ -77,7 +80,7 @@ bool CommitJobRequest::getIsOnOff()const
 void CommitJobRequest::setIsOnOff(bool isOnOff)
 {
 	isOnOff_ = isOnOff;
-	setCoreParameter("IsOnOff", isOnOff ? "true" : "false");
+	setBodyParameter("IsOnOff", isOnOff ? "true" : "false");
 }
 
 std::string CommitJobRequest::getJobName()const
@@ -88,6 +91,6 @@ std::string CommitJobRequest::getJobName()const
 void CommitJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setMinBandwidthPercent(int minBandwidthPercent);
 				std::string getLimitType()const;
 				void setLimitType(const std::string& limitType);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				int priority_;
 				int minBandwidthPercent_;
 				std::string limitType_;
+				std::string name_;
 
 			};
 		}

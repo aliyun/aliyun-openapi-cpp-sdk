@@ -36,7 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string errMsg;
 					std::string taskType;
+					std::string fileName;
+					long createTime;
 					std::string taskStatus;
+					long completeTime;
 					std::string result;
 				};
 
@@ -44,12 +47,20 @@ namespace AlibabaCloud
 				QueryTaskListResult();
 				explicit QueryTaskListResult(const std::string &payload);
 				~QueryTaskListResult();
+				int getCurrentPageNum()const;
+				int getPageSize()const;
+				int getTotalPageNum()const;
 				std::vector<TaskList> getData()const;
+				int getTotalItemNum()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int currentPageNum_;
+				int pageSize_;
+				int totalPageNum_;
 				std::vector<TaskList> data_;
+				int totalItemNum_;
 
 			};
 		}

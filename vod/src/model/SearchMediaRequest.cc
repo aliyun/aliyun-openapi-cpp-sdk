@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SearchMediaRequest;
 
 SearchMediaRequest::SearchMediaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SearchMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchMediaRequest::~SearchMediaRequest()
 {}
@@ -33,7 +35,7 @@ long SearchMediaRequest::getResourceOwnerId()const
 void SearchMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SearchMediaRequest::getSessionId()const
@@ -44,7 +46,7 @@ std::string SearchMediaRequest::getSessionId()const
 void SearchMediaRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setParameter("SessionId", sessionId);
 }
 
 std::string SearchMediaRequest::getScrollToken()const
@@ -55,7 +57,7 @@ std::string SearchMediaRequest::getScrollToken()const
 void SearchMediaRequest::setScrollToken(const std::string& scrollToken)
 {
 	scrollToken_ = scrollToken;
-	setCoreParameter("ScrollToken", scrollToken);
+	setParameter("ScrollToken", scrollToken);
 }
 
 std::string SearchMediaRequest::getSearchType()const
@@ -66,7 +68,7 @@ std::string SearchMediaRequest::getSearchType()const
 void SearchMediaRequest::setSearchType(const std::string& searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", searchType);
+	setParameter("SearchType", searchType);
 }
 
 int SearchMediaRequest::getPageSize()const
@@ -77,7 +79,7 @@ int SearchMediaRequest::getPageSize()const
 void SearchMediaRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchMediaRequest::getResultTypes()const
@@ -88,7 +90,7 @@ std::string SearchMediaRequest::getResultTypes()const
 void SearchMediaRequest::setResultTypes(const std::string& resultTypes)
 {
 	resultTypes_ = resultTypes;
-	setCoreParameter("ResultTypes", resultTypes);
+	setParameter("ResultTypes", resultTypes);
 }
 
 std::string SearchMediaRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SearchMediaRequest::getResourceOwnerAccount()const
 void SearchMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchMediaRequest::getMatch()const
@@ -110,7 +112,7 @@ std::string SearchMediaRequest::getMatch()const
 void SearchMediaRequest::setMatch(const std::string& match)
 {
 	match_ = match;
-	setCoreParameter("Match", match);
+	setParameter("Match", match);
 }
 
 long SearchMediaRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long SearchMediaRequest::getOwnerId()const
 void SearchMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int SearchMediaRequest::getPageNo()const
@@ -132,7 +134,7 @@ int SearchMediaRequest::getPageNo()const
 void SearchMediaRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string SearchMediaRequest::getSortBy()const
@@ -143,7 +145,7 @@ std::string SearchMediaRequest::getSortBy()const
 void SearchMediaRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 
 std::string SearchMediaRequest::getFields()const
@@ -154,6 +156,6 @@ std::string SearchMediaRequest::getFields()const
 void SearchMediaRequest::setFields(const std::string& fields)
 {
 	fields_ = fields;
-	setCoreParameter("Fields", fields);
+	setParameter("Fields", fields);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAppInfoRequest;
 
 DescribeAppInfoRequest::DescribeAppInfoRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAppInfoRequest::~DescribeAppInfoRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeAppInfoRequest::getTotalCount()const
 void DescribeAppInfoRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeAppInfoRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int DescribeAppInfoRequest::getCurrentPage()const
 void DescribeAppInfoRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAppInfoRequest::getPlatform()const
@@ -55,7 +57,7 @@ std::string DescribeAppInfoRequest::getPlatform()const
 void DescribeAppInfoRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setParameter("Platform", platform);
 }
 
 std::string DescribeAppInfoRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeAppInfoRequest::getSourceIp()const
 void DescribeAppInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAppInfoRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeAppInfoRequest::getPageSize()const
 void DescribeAppInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAppInfoRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DescribeAppInfoRequest::getLang()const
 void DescribeAppInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

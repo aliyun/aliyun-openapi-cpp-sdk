@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::CreateDrdsDBRequest;
 
 CreateDrdsDBRequest::CreateDrdsDBRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "CreateDrdsDB")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDrdsDBRequest::~CreateDrdsDBRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateDrdsDBRequest::getEncode()const
 void CreateDrdsDBRequest::setEncode(const std::string& encode)
 {
 	encode_ = encode;
-	setCoreParameter("Encode", encode);
+	setParameter("Encode", encode);
 }
 
 std::string CreateDrdsDBRequest::getDrdsInstanceId()const
@@ -44,7 +46,7 @@ std::string CreateDrdsDBRequest::getDrdsInstanceId()const
 void CreateDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string CreateDrdsDBRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateDrdsDBRequest::getAccessKeyId()const
 void CreateDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateDrdsDBRequest::getPassword()const
@@ -66,7 +68,7 @@ std::string CreateDrdsDBRequest::getPassword()const
 void CreateDrdsDBRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string CreateDrdsDBRequest::getDbName()const
@@ -77,7 +79,7 @@ std::string CreateDrdsDBRequest::getDbName()const
 void CreateDrdsDBRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 std::string CreateDrdsDBRequest::getRdsInstances()const
@@ -88,6 +90,6 @@ std::string CreateDrdsDBRequest::getRdsInstances()const
 void CreateDrdsDBRequest::setRdsInstances(const std::string& rdsInstances)
 {
 	rdsInstances_ = rdsInstances;
-	setCoreParameter("RdsInstances", rdsInstances);
+	setParameter("RdsInstances", rdsInstances);
 }
 

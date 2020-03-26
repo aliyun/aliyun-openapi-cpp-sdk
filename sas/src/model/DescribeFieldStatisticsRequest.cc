@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeFieldStatisticsRequest;
 
 DescribeFieldStatisticsRequest::DescribeFieldStatisticsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeFieldStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFieldStatisticsRequest::~DescribeFieldStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeFieldStatisticsRequest::getMachineTypes()const
 void DescribeFieldStatisticsRequest::setMachineTypes(const std::string& machineTypes)
 {
 	machineTypes_ = machineTypes;
-	setCoreParameter("MachineTypes", machineTypes);
+	setParameter("MachineTypes", machineTypes);
 }
 
 std::string DescribeFieldStatisticsRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeFieldStatisticsRequest::getSourceIp()const
 void DescribeFieldStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

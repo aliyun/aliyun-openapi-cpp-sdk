@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteConsoleAccessWhiteListRequest;
 
 DeleteConsoleAccessWhiteListRequest::DeleteConsoleAccessWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteConsoleAccessWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteConsoleAccessWhiteListRequest::~DeleteConsoleAccessWhiteListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getSourceCode()const
 void DeleteConsoleAccessWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getSourceIp()const
 void DeleteConsoleAccessWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DeleteConsoleAccessWhiteListRequest::getLang()const
 void DeleteConsoleAccessWhiteListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DeleteConsoleAccessWhiteListRequest::getDisableWhitelist()const
@@ -66,6 +68,6 @@ std::string DeleteConsoleAccessWhiteListRequest::getDisableWhitelist()const
 void DeleteConsoleAccessWhiteListRequest::setDisableWhitelist(const std::string& disableWhitelist)
 {
 	disableWhitelist_ = disableWhitelist;
-	setCoreParameter("DisableWhitelist", disableWhitelist);
+	setParameter("DisableWhitelist", disableWhitelist);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SubmitBatchJobsRequest;
 
 SubmitBatchJobsRequest::SubmitBatchJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SubmitBatchJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitBatchJobsRequest::~SubmitBatchJobsRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitBatchJobsRequest::getInstanceId()const
 void SubmitBatchJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SubmitBatchJobsRequest::getJobGroupId()const
@@ -44,6 +46,6 @@ std::string SubmitBatchJobsRequest::getJobGroupId()const
 void SubmitBatchJobsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 

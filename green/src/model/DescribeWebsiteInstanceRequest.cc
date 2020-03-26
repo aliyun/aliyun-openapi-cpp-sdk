@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteInstanceRequest;
 
 DescribeWebsiteInstanceRequest::DescribeWebsiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteInstanceRequest::~DescribeWebsiteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeWebsiteInstanceRequest::getTotalCount()const
 void DescribeWebsiteInstanceRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeWebsiteInstanceRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int DescribeWebsiteInstanceRequest::getCurrentPage()const
 void DescribeWebsiteInstanceRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeWebsiteInstanceRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string DescribeWebsiteInstanceRequest::getInstanceId()const
 void DescribeWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeWebsiteInstanceRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeWebsiteInstanceRequest::getSourceIp()const
 void DescribeWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebsiteInstanceRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeWebsiteInstanceRequest::getPageSize()const
 void DescribeWebsiteInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeWebsiteInstanceRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DescribeWebsiteInstanceRequest::getLang()const
 void DescribeWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

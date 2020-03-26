@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				int getReloadFlag()const;
+				void setReloadFlag(int reloadFlag);
 				std::string getChannelId()const;
 				void setChannelId(const std::string& channelId);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string resourceId_;
 				std::string casterId_;
 				long ownerId_;
+				int reloadFlag_;
 				std::string channelId_;
 
 			};

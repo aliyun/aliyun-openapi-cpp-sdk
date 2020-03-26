@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyEmgVulSubmitRequest;
 
 ModifyEmgVulSubmitRequest::ModifyEmgVulSubmitRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyEmgVulSubmit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEmgVulSubmitRequest::~ModifyEmgVulSubmitRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyEmgVulSubmitRequest::getSourceIp()const
 void ModifyEmgVulSubmitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyEmgVulSubmitRequest::getName()const
@@ -44,7 +46,7 @@ std::string ModifyEmgVulSubmitRequest::getName()const
 void ModifyEmgVulSubmitRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyEmgVulSubmitRequest::getUserAgreement()const
@@ -55,7 +57,7 @@ std::string ModifyEmgVulSubmitRequest::getUserAgreement()const
 void ModifyEmgVulSubmitRequest::setUserAgreement(const std::string& userAgreement)
 {
 	userAgreement_ = userAgreement;
-	setCoreParameter("UserAgreement", userAgreement);
+	setParameter("UserAgreement", userAgreement);
 }
 
 std::string ModifyEmgVulSubmitRequest::getLang()const
@@ -66,6 +68,6 @@ std::string ModifyEmgVulSubmitRequest::getLang()const
 void ModifyEmgVulSubmitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

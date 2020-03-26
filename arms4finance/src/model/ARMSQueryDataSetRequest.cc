@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS4FINANCE::Model::ARMSQueryDataSetRequest;
 
 ARMSQueryDataSetRequest::ARMSQueryDataSetRequest() :
 	RpcServiceRequest("arms4finance", "2017-11-30", "ARMSQueryDataSet")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ARMSQueryDataSetRequest::~ARMSQueryDataSetRequest()
 {}
@@ -33,7 +35,7 @@ std::string ARMSQueryDataSetRequest::getDateStr()const
 void ARMSQueryDataSetRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
+	setParameter("DateStr", dateStr);
 }
 
 long ARMSQueryDataSetRequest::getMinTime()const
@@ -44,7 +46,7 @@ long ARMSQueryDataSetRequest::getMinTime()const
 void ARMSQueryDataSetRequest::setMinTime(long minTime)
 {
 	minTime_ = minTime;
-	setCoreParameter("MinTime", std::to_string(minTime));
+	setParameter("MinTime", std::to_string(minTime));
 }
 
 long ARMSQueryDataSetRequest::getMaxTime()const
@@ -55,7 +57,7 @@ long ARMSQueryDataSetRequest::getMaxTime()const
 void ARMSQueryDataSetRequest::setMaxTime(long maxTime)
 {
 	maxTime_ = maxTime;
-	setCoreParameter("MaxTime", std::to_string(maxTime));
+	setParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<std::string> ARMSQueryDataSetRequest::getMeasures()const
@@ -66,8 +68,9 @@ std::vector<std::string> ARMSQueryDataSetRequest::getMeasures()const
 void ARMSQueryDataSetRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
+		setParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int ARMSQueryDataSetRequest::getIntervalInSec()const
@@ -78,7 +81,7 @@ int ARMSQueryDataSetRequest::getIntervalInSec()const
 void ARMSQueryDataSetRequest::setIntervalInSec(int intervalInSec)
 {
 	intervalInSec_ = intervalInSec;
-	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
+	setParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
 bool ARMSQueryDataSetRequest::getIsDrillDown()const
@@ -89,7 +92,7 @@ bool ARMSQueryDataSetRequest::getIsDrillDown()const
 void ARMSQueryDataSetRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
+	setParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 long ARMSQueryDataSetRequest::getDatasetId()const
@@ -100,7 +103,7 @@ long ARMSQueryDataSetRequest::getDatasetId()const
 void ARMSQueryDataSetRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
-	setCoreParameter("DatasetId", std::to_string(datasetId));
+	setParameter("DatasetId", std::to_string(datasetId));
 }
 
 std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDimensions()const
@@ -111,12 +114,11 @@ std::vector<ARMSQueryDataSetRequest::Dimensions> ARMSQueryDataSetRequest::getDim
 void ARMSQueryDataSetRequest::setDimensions(const std::vector<Dimensions>& dimensions)
 {
 	dimensions_ = dimensions;
-	int i = 0;
-	for(int i = 0; i!= dimensions.size(); i++)	{
-		auto obj = dimensions.at(i);
-		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
+		auto dimensionsObj = dimensions.at(dep1);
+		std::string dimensionsObjStr = "Dimensions." + std::to_string(dep1 + 1);
+		setParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+		setParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
 	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupDetailedConfigRequest;
 
 GetApgroupDetailedConfigRequest::GetApgroupDetailedConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupDetailedConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupDetailedConfigRequest::~GetApgroupDetailedConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetApgroupDetailedConfigRequest::getAccessKeyId()const
 void GetApgroupDetailedConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetApgroupDetailedConfigRequest::getId()const
@@ -44,6 +46,6 @@ long GetApgroupDetailedConfigRequest::getId()const
 void GetApgroupDetailedConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

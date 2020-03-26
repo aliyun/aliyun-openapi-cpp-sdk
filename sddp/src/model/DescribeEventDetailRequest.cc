@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeEventDetailRequest;
 
 DescribeEventDetailRequest::DescribeEventDetailRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeEventDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEventDetailRequest::~DescribeEventDetailRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeEventDetailRequest::getFeatureType()const
 void DescribeEventDetailRequest::setFeatureType(long featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeEventDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeEventDetailRequest::getSourceIp()const
 void DescribeEventDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeEventDetailRequest::getId()const
@@ -55,7 +57,7 @@ long DescribeEventDetailRequest::getId()const
 void DescribeEventDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DescribeEventDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeEventDetailRequest::getLang()const
 void DescribeEventDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

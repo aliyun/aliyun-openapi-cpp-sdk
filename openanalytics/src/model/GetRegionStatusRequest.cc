@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetRegionStatusRequest;
 
 GetRegionStatusRequest::GetRegionStatusRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetRegionStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetRegionStatusRequest::~GetRegionStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetRegionStatusRequest::getRegionID()const
 void GetRegionStatusRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 long GetRegionStatusRequest::getTargetUid()const
@@ -44,6 +46,6 @@ long GetRegionStatusRequest::getTargetUid()const
 void GetRegionStatusRequest::setTargetUid(long targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", std::to_string(targetUid));
+	setBodyParameter("TargetUid", std::to_string(targetUid));
 }
 

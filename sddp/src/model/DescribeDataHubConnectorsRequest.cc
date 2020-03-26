@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataHubConnectorsRequest;
 
 DescribeDataHubConnectorsRequest::DescribeDataHubConnectorsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataHubConnectors")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataHubConnectorsRequest::~DescribeDataHubConnectorsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDataHubConnectorsRequest::getTopicId()const
 void DescribeDataHubConnectorsRequest::setTopicId(long topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", std::to_string(topicId));
+	setParameter("TopicId", std::to_string(topicId));
 }
 
 std::string DescribeDataHubConnectorsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDataHubConnectorsRequest::getSourceIp()const
 void DescribeDataHubConnectorsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubConnectorsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeDataHubConnectorsRequest::getPageSize()const
 void DescribeDataHubConnectorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDataHubConnectorsRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeDataHubConnectorsRequest::getLang()const
 void DescribeDataHubConnectorsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeDataHubConnectorsRequest::getProjectId()const
@@ -77,7 +79,7 @@ long DescribeDataHubConnectorsRequest::getProjectId()const
 void DescribeDataHubConnectorsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubConnectorsRequest::getKey()const
@@ -88,7 +90,7 @@ std::string DescribeDataHubConnectorsRequest::getKey()const
 void DescribeDataHubConnectorsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeDataHubConnectorsRequest::getFeatureType()const
@@ -99,7 +101,7 @@ int DescribeDataHubConnectorsRequest::getFeatureType()const
 void DescribeDataHubConnectorsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubConnectorsRequest::getCurrentPage()const
@@ -110,7 +112,7 @@ int DescribeDataHubConnectorsRequest::getCurrentPage()const
 void DescribeDataHubConnectorsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeDataHubConnectorsRequest::getDepartId()const
@@ -121,6 +123,6 @@ long DescribeDataHubConnectorsRequest::getDepartId()const
 void DescribeDataHubConnectorsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 

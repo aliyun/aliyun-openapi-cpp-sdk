@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::BindPhoneRequest;
 
 BindPhoneRequest::BindPhoneRequest() :
 	RpcServiceRequest("push", "2016-08-01", "BindPhone")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindPhoneRequest::~BindPhoneRequest()
 {}
@@ -33,7 +35,7 @@ std::string BindPhoneRequest::getPhoneNumber()const
 void BindPhoneRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 std::string BindPhoneRequest::getDeviceId()const
@@ -44,7 +46,7 @@ std::string BindPhoneRequest::getDeviceId()const
 void BindPhoneRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 std::string BindPhoneRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string BindPhoneRequest::getAccessKeyId()const
 void BindPhoneRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long BindPhoneRequest::getAppKey()const
@@ -66,6 +68,6 @@ long BindPhoneRequest::getAppKey()const
 void BindPhoneRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

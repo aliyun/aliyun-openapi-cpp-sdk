@@ -41,7 +41,9 @@ namespace AlibabaCloud
 				bool getCompress()const;
 				int getConnections()const;
 				std::string getClientIpPool()const;
+				std::string getIDaaSInstanceId()const;
 				int getMaxConnections()const;
+				bool getEnableMultiFactorAuth()const;
 				std::string getSslVpnServerId()const;
 				long getCreateTime()const;
 				int getPort()const;
@@ -59,7 +61,9 @@ namespace AlibabaCloud
 				bool compress_;
 				int connections_;
 				std::string clientIpPool_;
+				std::string iDaaSInstanceId_;
 				int maxConnections_;
+				bool enableMultiFactorAuth_;
 				std::string sslVpnServerId_;
 				long createTime_;
 				int port_;

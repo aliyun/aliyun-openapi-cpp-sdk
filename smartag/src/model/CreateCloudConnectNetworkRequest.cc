@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateCloudConnectNetworkRequest;
 
 CreateCloudConnectNetworkRequest::CreateCloudConnectNetworkRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateCloudConnectNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCloudConnectNetworkRequest::~CreateCloudConnectNetworkRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCloudConnectNetworkRequest::getResourceOwnerId()const
 void CreateCloudConnectNetworkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCloudConnectNetworkRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateCloudConnectNetworkRequest::getDescription()const
 void CreateCloudConnectNetworkRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateCloudConnectNetworkRequest::getSnatCidrBlock()const
@@ -55,7 +57,7 @@ std::string CreateCloudConnectNetworkRequest::getSnatCidrBlock()const
 void CreateCloudConnectNetworkRequest::setSnatCidrBlock(const std::string& snatCidrBlock)
 {
 	snatCidrBlock_ = snatCidrBlock;
-	setCoreParameter("SnatCidrBlock", snatCidrBlock);
+	setParameter("SnatCidrBlock", snatCidrBlock);
 }
 
 std::string CreateCloudConnectNetworkRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateCloudConnectNetworkRequest::getRegionId()const
 void CreateCloudConnectNetworkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool CreateCloudConnectNetworkRequest::getIsDefault()const
@@ -77,7 +79,7 @@ bool CreateCloudConnectNetworkRequest::getIsDefault()const
 void CreateCloudConnectNetworkRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 std::string CreateCloudConnectNetworkRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateCloudConnectNetworkRequest::getResourceOwnerAccount()const
 void CreateCloudConnectNetworkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCloudConnectNetworkRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateCloudConnectNetworkRequest::getOwnerAccount()const
 void CreateCloudConnectNetworkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateCloudConnectNetworkRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long CreateCloudConnectNetworkRequest::getOwnerId()const
 void CreateCloudConnectNetworkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCloudConnectNetworkRequest::getName()const
@@ -121,7 +123,7 @@ std::string CreateCloudConnectNetworkRequest::getName()const
 void CreateCloudConnectNetworkRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateCloudConnectNetworkRequest::getCidrBlock()const
@@ -132,6 +134,6 @@ std::string CreateCloudConnectNetworkRequest::getCidrBlock()const
 void CreateCloudConnectNetworkRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setParameter("CidrBlock", cidrBlock);
 }
 

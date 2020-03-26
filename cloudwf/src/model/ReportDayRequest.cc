@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReportDayRequest;
 
 ReportDayRequest::ReportDayRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReportDay")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportDayRequest::~ReportDayRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReportDayRequest::getBeginDate()const
 void ReportDayRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setParameter("BeginDate", beginDate);
 }
 
 std::string ReportDayRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportDayRequest::getAccessKeyId()const
 void ReportDayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportDayRequest::getAgsid()const
@@ -55,7 +57,7 @@ long ReportDayRequest::getAgsid()const
 void ReportDayRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setParameter("Agsid", std::to_string(agsid));
 }
 
 std::string ReportDayRequest::getEndDate()const
@@ -66,6 +68,6 @@ std::string ReportDayRequest::getEndDate()const
 void ReportDayRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 

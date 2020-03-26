@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CancelRepoBuildRequest;
 
 CancelRepoBuildRequest::CancelRepoBuildRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelRepoBuildRequest::~CancelRepoBuildRequest()
 {}
@@ -33,7 +36,7 @@ std::string CancelRepoBuildRequest::getBuildId()const
 void CancelRepoBuildRequest::setBuildId(const std::string& buildId)
 {
 	buildId_ = buildId;
-	setCoreParameter("BuildId", buildId);
+	setParameter("BuildId", buildId);
 }
 
 std::string CancelRepoBuildRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string CancelRepoBuildRequest::getRepoNamespace()const
 void CancelRepoBuildRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string CancelRepoBuildRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string CancelRepoBuildRequest::getRepoName()const
 void CancelRepoBuildRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

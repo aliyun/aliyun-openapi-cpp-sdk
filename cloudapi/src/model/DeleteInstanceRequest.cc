@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteInstanceRequest;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteInstanceRequest::getToken()const
 void DeleteInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 std::string DeleteInstanceRequest::getInstanceId()const
@@ -44,6 +46,22 @@ std::string DeleteInstanceRequest::getInstanceId()const
 void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
+}
+
+std::vector<DeleteInstanceRequest::Tag> DeleteInstanceRequest::getTag()const
+{
+	return tag_;
+}
+
+void DeleteInstanceRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 

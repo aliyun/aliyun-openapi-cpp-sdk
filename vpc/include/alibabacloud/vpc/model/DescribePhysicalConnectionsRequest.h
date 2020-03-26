@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribePhysicalConnectionsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filter
 				{
 					std::vector<std::string> value;

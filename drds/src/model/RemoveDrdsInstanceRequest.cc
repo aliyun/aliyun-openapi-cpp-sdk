@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::RemoveDrdsInstanceRequest;
 
 RemoveDrdsInstanceRequest::RemoveDrdsInstanceRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "RemoveDrdsInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveDrdsInstanceRequest::~RemoveDrdsInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveDrdsInstanceRequest::getDrdsInstanceId()const
 void RemoveDrdsInstanceRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string RemoveDrdsInstanceRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string RemoveDrdsInstanceRequest::getAccessKeyId()const
 void RemoveDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

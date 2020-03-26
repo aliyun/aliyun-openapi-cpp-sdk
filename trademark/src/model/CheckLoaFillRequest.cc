@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CheckLoaFillRequest;
 
 CheckLoaFillRequest::CheckLoaFillRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CheckLoaFill")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckLoaFillRequest::~CheckLoaFillRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckLoaFillRequest::getOssKey()const
 void CheckLoaFillRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setParameter("OssKey", ossKey);
 }
 
 std::string CheckLoaFillRequest::getType()const
@@ -44,6 +46,6 @@ std::string CheckLoaFillRequest::getType()const
 void CheckLoaFillRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 

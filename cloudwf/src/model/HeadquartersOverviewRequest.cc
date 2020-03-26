@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersOverviewRequest;
 
 HeadquartersOverviewRequest::HeadquartersOverviewRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersOverview")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersOverviewRequest::~HeadquartersOverviewRequest()
 {}
@@ -33,7 +35,7 @@ std::string HeadquartersOverviewRequest::getAccessKeyId()const
 void HeadquartersOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long HeadquartersOverviewRequest::getBid()const
@@ -44,6 +46,6 @@ long HeadquartersOverviewRequest::getBid()const
 void HeadquartersOverviewRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

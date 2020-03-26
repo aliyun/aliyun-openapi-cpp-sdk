@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::RemoveMessagesRequest;
 
 RemoveMessagesRequest::RemoveMessagesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "RemoveMessages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveMessagesRequest::~RemoveMessagesRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveMessagesRequest::getMsgIds()const
 void RemoveMessagesRequest::setMsgIds(const std::string& msgIds)
 {
 	msgIds_ = msgIds;
-	setCoreParameter("MsgIds", msgIds);
+	setParameter("MsgIds", msgIds);
 }
 
 std::string RemoveMessagesRequest::getParamsJson()const
@@ -44,6 +46,6 @@ std::string RemoveMessagesRequest::getParamsJson()const
 void RemoveMessagesRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

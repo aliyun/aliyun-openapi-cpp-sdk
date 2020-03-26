@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDomainNameProxyServiceReques
 
 SaveSingleTaskForDomainNameProxyServiceRequest::SaveSingleTaskForDomainNameProxyServiceRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDomainNameProxyServiceRequest::~SaveSingleTaskForDomainNameProxyServiceRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getDomainName()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getUserClientIp()con
 void SaveSingleTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDomainNameProxyServiceRequest::getLang()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForDomainNameProxyServiceRequest::getLang()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForDomainNameProxyServiceRequest::getStatus()const
@@ -66,6 +68,6 @@ bool SaveSingleTaskForDomainNameProxyServiceRequest::getStatus()const
 void SaveSingleTaskForDomainNameProxyServiceRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setParameter("Status", status ? "true" : "false");
 }
 

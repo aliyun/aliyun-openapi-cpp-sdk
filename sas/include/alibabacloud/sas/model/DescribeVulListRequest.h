@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeVulListRequest();
 				~DescribeVulListRequest();
 
+				std::string getStatusList()const;
+				void setStatusList(const std::string& statusList);
 				std::string getRemark()const;
 				void setRemark(const std::string& remark);
 				std::string getType()const;
@@ -51,12 +53,17 @@ namespace AlibabaCloud
 				void setCurrentPage(int currentPage);
 				std::string getAliasName()const;
 				void setAliasName(const std::string& aliasName);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::string getIds()const;
+				void setIds(const std::string& ids);
 				std::string getNecessity()const;
 				void setNecessity(const std::string& necessity);
 				std::string getUuids()const;
 				void setUuids(const std::string& uuids);
 
             private:
+				std::string statusList_;
 				std::string remark_;
 				std::string type_;
 				std::string sourceIp_;
@@ -65,6 +72,8 @@ namespace AlibabaCloud
 				std::string dealed_;
 				int currentPage_;
 				std::string aliasName_;
+				std::string name_;
+				std::string ids_;
 				std::string necessity_;
 				std::string uuids_;
 

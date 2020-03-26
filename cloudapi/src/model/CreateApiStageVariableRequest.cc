@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateApiStageVariableRequest;
 
 CreateApiStageVariableRequest::CreateApiStageVariableRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateApiStageVariable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateApiStageVariableRequest::~CreateApiStageVariableRequest()
 {}
@@ -33,7 +35,7 @@ bool CreateApiStageVariableRequest::getSupportRoute()const
 void CreateApiStageVariableRequest::setSupportRoute(bool supportRoute)
 {
 	supportRoute_ = supportRoute;
-	setCoreParameter("SupportRoute", supportRoute ? "true" : "false");
+	setParameter("SupportRoute", supportRoute ? "true" : "false");
 }
 
 std::string CreateApiStageVariableRequest::getVariableValue()const
@@ -44,7 +46,7 @@ std::string CreateApiStageVariableRequest::getVariableValue()const
 void CreateApiStageVariableRequest::setVariableValue(const std::string& variableValue)
 {
 	variableValue_ = variableValue;
-	setCoreParameter("VariableValue", variableValue);
+	setParameter("VariableValue", variableValue);
 }
 
 std::string CreateApiStageVariableRequest::getGroupId()const
@@ -55,7 +57,7 @@ std::string CreateApiStageVariableRequest::getGroupId()const
 void CreateApiStageVariableRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string CreateApiStageVariableRequest::getStageRouteModel()const
@@ -66,7 +68,7 @@ std::string CreateApiStageVariableRequest::getStageRouteModel()const
 void CreateApiStageVariableRequest::setStageRouteModel(const std::string& stageRouteModel)
 {
 	stageRouteModel_ = stageRouteModel;
-	setCoreParameter("StageRouteModel", stageRouteModel);
+	setParameter("StageRouteModel", stageRouteModel);
 }
 
 std::string CreateApiStageVariableRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string CreateApiStageVariableRequest::getAccessKeyId()const
 void CreateApiStageVariableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateApiStageVariableRequest::getSecurityToken()const
@@ -88,7 +90,7 @@ std::string CreateApiStageVariableRequest::getSecurityToken()const
 void CreateApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateApiStageVariableRequest::getVariableName()const
@@ -99,7 +101,7 @@ std::string CreateApiStageVariableRequest::getVariableName()const
 void CreateApiStageVariableRequest::setVariableName(const std::string& variableName)
 {
 	variableName_ = variableName;
-	setCoreParameter("VariableName", variableName);
+	setParameter("VariableName", variableName);
 }
 
 std::string CreateApiStageVariableRequest::getStageId()const
@@ -110,6 +112,6 @@ std::string CreateApiStageVariableRequest::getStageId()const
 void CreateApiStageVariableRequest::setStageId(const std::string& stageId)
 {
 	stageId_ = stageId;
-	setCoreParameter("StageId", stageId);
+	setParameter("StageId", stageId);
 }
 

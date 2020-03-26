@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeNatGatewaysRequest;
 
 DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeNatGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNatGatewaysRequest::~DescribeNatGatewaysRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeNatGatewaysRequest::getResourceOwnerId()const
 void DescribeNatGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeNatGatewaysRequest::getSpec()const
@@ -44,7 +46,7 @@ std::string DescribeNatGatewaysRequest::getSpec()const
 void DescribeNatGatewaysRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setParameter("Spec", spec);
 }
 
 int DescribeNatGatewaysRequest::getPageNumber()const
@@ -55,7 +57,18 @@ int DescribeNatGatewaysRequest::getPageNumber()const
 void DescribeNatGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string DescribeNatGatewaysRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeNatGatewaysRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeNatGatewaysRequest::getRegionId()const
@@ -66,7 +79,18 @@ std::string DescribeNatGatewaysRequest::getRegionId()const
 void DescribeNatGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeNatGatewaysRequest::getNatType()const
+{
+	return natType_;
+}
+
+void DescribeNatGatewaysRequest::setNatType(const std::string& natType)
+{
+	natType_ = natType;
+	setParameter("NatType", natType);
 }
 
 int DescribeNatGatewaysRequest::getPageSize()const
@@ -77,7 +101,7 @@ int DescribeNatGatewaysRequest::getPageSize()const
 void DescribeNatGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeNatGatewaysRequest::getNatGatewayId()const
@@ -88,7 +112,7 @@ std::string DescribeNatGatewaysRequest::getNatGatewayId()const
 void DescribeNatGatewaysRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setParameter("NatGatewayId", natGatewayId);
 }
 
 std::string DescribeNatGatewaysRequest::getInstanceChargeType()const
@@ -99,7 +123,7 @@ std::string DescribeNatGatewaysRequest::getInstanceChargeType()const
 void DescribeNatGatewaysRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
@@ -110,7 +134,7 @@ std::string DescribeNatGatewaysRequest::getResourceOwnerAccount()const
 void DescribeNatGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNatGatewaysRequest::getOwnerAccount()const
@@ -121,7 +145,7 @@ std::string DescribeNatGatewaysRequest::getOwnerAccount()const
 void DescribeNatGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeNatGatewaysRequest::getOwnerId()const
@@ -132,7 +156,7 @@ long DescribeNatGatewaysRequest::getOwnerId()const
 void DescribeNatGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNatGatewaysRequest::getVpcId()const
@@ -143,7 +167,7 @@ std::string DescribeNatGatewaysRequest::getVpcId()const
 void DescribeNatGatewaysRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeNatGatewaysRequest::getName()const
@@ -154,6 +178,6 @@ std::string DescribeNatGatewaysRequest::getName()const
 void DescribeNatGatewaysRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

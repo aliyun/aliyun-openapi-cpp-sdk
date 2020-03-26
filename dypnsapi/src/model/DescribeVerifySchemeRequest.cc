@@ -35,7 +35,7 @@ long DescribeVerifySchemeRequest::getResourceOwnerId()const
 void DescribeVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVerifySchemeRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DescribeVerifySchemeRequest::getResourceOwnerAccount()const
 void DescribeVerifySchemeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeVerifySchemeRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeVerifySchemeRequest::getOwnerId()const
 void DescribeVerifySchemeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVerifySchemeRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeVerifySchemeRequest::getAccessKeyId()const
 void DescribeVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVerifySchemeRequest::getSchemeCode()const
@@ -79,7 +79,7 @@ std::string DescribeVerifySchemeRequest::getSchemeCode()const
 void DescribeVerifySchemeRequest::setSchemeCode(const std::string& schemeCode)
 {
 	schemeCode_ = schemeCode;
-	setCoreParameter("SchemeCode", schemeCode);
+	setParameter("SchemeCode", schemeCode);
 }
 
 long DescribeVerifySchemeRequest::getCustomerId()const
@@ -90,6 +90,6 @@ long DescribeVerifySchemeRequest::getCustomerId()const
 void DescribeVerifySchemeRequest::setCustomerId(long customerId)
 {
 	customerId_ = customerId;
-	setCoreParameter("CustomerId", std::to_string(customerId));
+	setParameter("CustomerId", std::to_string(customerId));
 }
 

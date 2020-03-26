@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteStreamRequest;
 
 DeleteStreamRequest::DeleteStreamRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteStreamRequest::~DeleteStreamRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteStreamRequest::getResourceOwnerId()const
 void DeleteStreamRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteStreamRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteStreamRequest::getResourceOwnerAccount()const
 void DeleteStreamRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteStreamRequest::getVideoId()const
@@ -55,7 +57,7 @@ std::string DeleteStreamRequest::getVideoId()const
 void DeleteStreamRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long DeleteStreamRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteStreamRequest::getOwnerId()const
 void DeleteStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteStreamRequest::getJobIds()const
@@ -77,6 +79,6 @@ std::string DeleteStreamRequest::getJobIds()const
 void DeleteStreamRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

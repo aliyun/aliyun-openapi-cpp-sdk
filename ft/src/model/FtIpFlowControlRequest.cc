@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtIpFlowControlRequest;
 FtIpFlowControlRequest::FtIpFlowControlRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtIpFlowControl")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FtIpFlowControlRequest::~FtIpFlowControlRequest()

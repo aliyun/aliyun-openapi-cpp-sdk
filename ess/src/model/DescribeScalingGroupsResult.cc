@@ -103,6 +103,10 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 			scalingGroupsObject.spotInstanceRemedy = valueScalingGroupsScalingGroup["SpotInstanceRemedy"].asString() == "true";
 		if(!valueScalingGroupsScalingGroup["SpotInstancePools"].isNull())
 			scalingGroupsObject.spotInstancePools = std::stoi(valueScalingGroupsScalingGroup["SpotInstancePools"].asString());
+		if(!valueScalingGroupsScalingGroup["DesiredCapacity"].isNull())
+			scalingGroupsObject.desiredCapacity = std::stoi(valueScalingGroupsScalingGroup["DesiredCapacity"].asString());
+		if(!valueScalingGroupsScalingGroup["GroupDeletionProtection"].isNull())
+			scalingGroupsObject.groupDeletionProtection = valueScalingGroupsScalingGroup["GroupDeletionProtection"].asString() == "true";
 		auto allVServerGroupsNode = allScalingGroupsNode["VServerGroups"]["VServerGroup"];
 		for (auto allScalingGroupsNodeVServerGroupsVServerGroup : allVServerGroupsNode)
 		{
@@ -135,6 +139,9 @@ void DescribeScalingGroupsResult::parse(const std::string &payload)
 		auto allLoadBalancerIds = value["LoadBalancerIds"]["LoadBalancerId"];
 		for (auto value : allLoadBalancerIds)
 			scalingGroupsObject.loadBalancerIds.push_back(value.asString());
+		auto allSuspendedProcesses = value["SuspendedProcesses"]["SuspendedProcess"];
+		for (auto value : allSuspendedProcesses)
+			scalingGroupsObject.suspendedProcesses.push_back(value.asString());
 		scalingGroups_.push_back(scalingGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())

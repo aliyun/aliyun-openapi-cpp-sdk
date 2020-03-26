@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopCameraRequest;
 
 ShopCameraRequest::ShopCameraRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopCamera")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopCameraRequest::~ShopCameraRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopCameraRequest::getAccessKeyId()const
 void ShopCameraRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopCameraRequest::getGsid()const
@@ -44,6 +46,6 @@ long ShopCameraRequest::getGsid()const
 void ShopCameraRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

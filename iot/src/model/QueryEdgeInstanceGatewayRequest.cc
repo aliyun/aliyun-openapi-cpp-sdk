@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryEdgeInstanceGatewayRequest;
 
 QueryEdgeInstanceGatewayRequest::QueryEdgeInstanceGatewayRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryEdgeInstanceGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEdgeInstanceGatewayRequest::~QueryEdgeInstanceGatewayRequest()
 {}
@@ -33,18 +35,7 @@ std::string QueryEdgeInstanceGatewayRequest::getAccessKeyId()const
 void QueryEdgeInstanceGatewayRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string QueryEdgeInstanceGatewayRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void QueryEdgeInstanceGatewayRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryEdgeInstanceGatewayRequest::getIotInstanceId()const
@@ -55,6 +46,39 @@ std::string QueryEdgeInstanceGatewayRequest::getIotInstanceId()const
 void QueryEdgeInstanceGatewayRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryEdgeInstanceGatewayRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void QueryEdgeInstanceGatewayRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string QueryEdgeInstanceGatewayRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryEdgeInstanceGatewayRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryEdgeInstanceGatewayRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryEdgeInstanceGatewayRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::RegisterMediaDetailScenarioRequest;
 
 RegisterMediaDetailScenarioRequest::RegisterMediaDetailScenarioRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "RegisterMediaDetailScenario")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterMediaDetailScenarioRequest::~RegisterMediaDetailScenarioRequest()
 {}
@@ -33,7 +35,7 @@ long RegisterMediaDetailScenarioRequest::getResourceOwnerId()const
 void RegisterMediaDetailScenarioRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RegisterMediaDetailScenarioRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string RegisterMediaDetailScenarioRequest::getDescription()const
 void RegisterMediaDetailScenarioRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string RegisterMediaDetailScenarioRequest::getAccessKeyId()const
 void RegisterMediaDetailScenarioRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getJobId()const
@@ -66,7 +68,7 @@ std::string RegisterMediaDetailScenarioRequest::getJobId()const
 void RegisterMediaDetailScenarioRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getScenario()const
@@ -77,7 +79,7 @@ std::string RegisterMediaDetailScenarioRequest::getScenario()const
 void RegisterMediaDetailScenarioRequest::setScenario(const std::string& scenario)
 {
 	scenario_ = scenario;
-	setCoreParameter("Scenario", scenario);
+	setParameter("Scenario", scenario);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string RegisterMediaDetailScenarioRequest::getResourceOwnerAccount()const
 void RegisterMediaDetailScenarioRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RegisterMediaDetailScenarioRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string RegisterMediaDetailScenarioRequest::getOwnerAccount()const
 void RegisterMediaDetailScenarioRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RegisterMediaDetailScenarioRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long RegisterMediaDetailScenarioRequest::getOwnerId()const
 void RegisterMediaDetailScenarioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

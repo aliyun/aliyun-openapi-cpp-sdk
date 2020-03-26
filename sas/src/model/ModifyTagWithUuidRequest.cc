@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyTagWithUuidRequest;
 
 ModifyTagWithUuidRequest::ModifyTagWithUuidRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyTagWithUuid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyTagWithUuidRequest::~ModifyTagWithUuidRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyTagWithUuidRequest::getTagId()const
 void ModifyTagWithUuidRequest::setTagId(const std::string& tagId)
 {
 	tagId_ = tagId;
-	setCoreParameter("TagId", tagId);
+	setParameter("TagId", tagId);
 }
 
 std::string ModifyTagWithUuidRequest::getMachineTypes()const
@@ -44,7 +46,7 @@ std::string ModifyTagWithUuidRequest::getMachineTypes()const
 void ModifyTagWithUuidRequest::setMachineTypes(const std::string& machineTypes)
 {
 	machineTypes_ = machineTypes;
-	setCoreParameter("MachineTypes", machineTypes);
+	setParameter("MachineTypes", machineTypes);
 }
 
 std::string ModifyTagWithUuidRequest::getTagList()const
@@ -55,7 +57,7 @@ std::string ModifyTagWithUuidRequest::getTagList()const
 void ModifyTagWithUuidRequest::setTagList(const std::string& tagList)
 {
 	tagList_ = tagList;
-	setCoreParameter("TagList", tagList);
+	setParameter("TagList", tagList);
 }
 
 std::string ModifyTagWithUuidRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string ModifyTagWithUuidRequest::getSourceIp()const
 void ModifyTagWithUuidRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyTagWithUuidRequest::getUuidList()const
@@ -77,6 +79,6 @@ std::string ModifyTagWithUuidRequest::getUuidList()const
 void ModifyTagWithUuidRequest::setUuidList(const std::string& uuidList)
 {
 	uuidList_ = uuidList;
-	setCoreParameter("UuidList", uuidList);
+	setParameter("UuidList", uuidList);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceStateRequest;
 
 GetInstanceStateRequest::GetInstanceStateRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceState")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceStateRequest::~GetInstanceStateRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetInstanceStateRequest::getInstanceId()const
 void GetInstanceStateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetInstanceStateRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetInstanceStateRequest::getAccessKeyId()const
 void GetInstanceStateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -65,10 +65,14 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterAccessWhitelistResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeResult.h
+	include/alibabacloud/polardb/model/DescribeDBClusterAvailableResourcesRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClusterAvailableResourcesResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterEndpointsRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterEndpointsResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterMigrationResult.h
+	include/alibabacloud/polardb/model/DescribeDBClusterMonitorRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClusterMonitorResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterParametersResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterPerformanceRequest.h
@@ -111,6 +115,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBClusterMaintainTimeResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterMigrationRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterMigrationResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterMonitorRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterMonitorResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterParametersResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterSSLRequest.h
@@ -178,10 +184,14 @@ set(polardb_src
 	src/model/DescribeDBClusterAccessWhitelistResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
 	src/model/DescribeDBClusterAttributeResult.cc
+	src/model/DescribeDBClusterAvailableResourcesRequest.cc
+	src/model/DescribeDBClusterAvailableResourcesResult.cc
 	src/model/DescribeDBClusterEndpointsRequest.cc
 	src/model/DescribeDBClusterEndpointsResult.cc
 	src/model/DescribeDBClusterMigrationRequest.cc
 	src/model/DescribeDBClusterMigrationResult.cc
+	src/model/DescribeDBClusterMonitorRequest.cc
+	src/model/DescribeDBClusterMonitorResult.cc
 	src/model/DescribeDBClusterParametersRequest.cc
 	src/model/DescribeDBClusterParametersResult.cc
 	src/model/DescribeDBClusterPerformanceRequest.cc
@@ -224,6 +234,8 @@ set(polardb_src
 	src/model/ModifyDBClusterMaintainTimeResult.cc
 	src/model/ModifyDBClusterMigrationRequest.cc
 	src/model/ModifyDBClusterMigrationResult.cc
+	src/model/ModifyDBClusterMonitorRequest.cc
+	src/model/ModifyDBClusterMonitorResult.cc
 	src/model/ModifyDBClusterParametersRequest.cc
 	src/model/ModifyDBClusterParametersResult.cc
 	src/model/ModifyDBClusterSSLRequest.cc

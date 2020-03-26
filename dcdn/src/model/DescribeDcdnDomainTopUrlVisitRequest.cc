@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainTopUrlVisitRequest::getDomainName()const
 void DescribeDcdnDomainTopUrlVisitRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainTopUrlVisitRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainTopUrlVisitRequest::getStartTime()const
 void DescribeDcdnDomainTopUrlVisitRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeDcdnDomainTopUrlVisitRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DescribeDcdnDomainTopUrlVisitRequest::getOwnerId()const
 void DescribeDcdnDomainTopUrlVisitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainTopUrlVisitRequest::getSecurityToken()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainTopUrlVisitRequest::getSecurityToken()const
 void DescribeDcdnDomainTopUrlVisitRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDcdnDomainTopUrlVisitRequest::getSortBy()const
@@ -79,6 +79,6 @@ std::string DescribeDcdnDomainTopUrlVisitRequest::getSortBy()const
 void DescribeDcdnDomainTopUrlVisitRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

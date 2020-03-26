@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskItemTypeRequest;
 
 DescribeRiskItemTypeRequest::DescribeRiskItemTypeRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskItemType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskItemTypeRequest::~DescribeRiskItemTypeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRiskItemTypeRequest::getResourceOwnerId()const
 void DescribeRiskItemTypeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskItemTypeRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeRiskItemTypeRequest::getSourceIp()const
 void DescribeRiskItemTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRiskItemTypeRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeRiskItemTypeRequest::getLang()const
 void DescribeRiskItemTypeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

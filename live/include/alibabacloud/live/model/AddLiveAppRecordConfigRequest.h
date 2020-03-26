@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT AddLiveAppRecordConfigRequest : public RpcServiceRequest
 			{
+			public:
 				struct RecordFormat
 				{
 					std::string sliceOssObjectPrefix;

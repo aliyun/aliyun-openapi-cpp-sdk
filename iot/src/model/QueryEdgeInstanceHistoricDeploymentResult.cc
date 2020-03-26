@@ -64,6 +64,12 @@ void QueryEdgeInstanceHistoricDeploymentResult::parse(const std::string &payload
 			deploymentObject.status = std::stoi(dataNodeDeploymentListDeployment["Status"].asString());
 		if(!dataNodeDeploymentListDeployment["Type"].isNull())
 			deploymentObject.type = dataNodeDeploymentListDeployment["Type"].asString();
+		if(!dataNodeDeploymentListDeployment["GmtCreateTimestamp"].isNull())
+			deploymentObject.gmtCreateTimestamp = std::stol(dataNodeDeploymentListDeployment["GmtCreateTimestamp"].asString());
+		if(!dataNodeDeploymentListDeployment["GmtModifiedTimestamp"].isNull())
+			deploymentObject.gmtModifiedTimestamp = std::stol(dataNodeDeploymentListDeployment["GmtModifiedTimestamp"].asString());
+		if(!dataNodeDeploymentListDeployment["GmtCompletedTimestamp"].isNull())
+			deploymentObject.gmtCompletedTimestamp = std::stol(dataNodeDeploymentListDeployment["GmtCompletedTimestamp"].asString());
 		data_.deploymentList.push_back(deploymentObject);
 	}
 	if(!value["Success"].isNull())

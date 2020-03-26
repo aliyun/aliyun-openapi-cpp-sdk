@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobRequest;
 
 GetJobRequest::GetJobRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobRequest::~GetJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobRequest::getJobId()const
 void GetJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string GetJobRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string GetJobRequest::getInstanceId()const
 void GetJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

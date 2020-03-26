@@ -35,7 +35,7 @@ long DescribeTablesRequest::getResourceOwnerId()const
 void DescribeTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeTablesRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeTablesRequest::getAccessKeyId()const
 void DescribeTablesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeTablesRequest::getSchemaName()const
@@ -57,7 +57,7 @@ std::string DescribeTablesRequest::getSchemaName()const
 void DescribeTablesRequest::setSchemaName(const std::string& schemaName)
 {
 	schemaName_ = schemaName;
-	setCoreParameter("SchemaName", schemaName);
+	setParameter("SchemaName", schemaName);
 }
 
 std::string DescribeTablesRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeTablesRequest::getResourceOwnerAccount()const
 void DescribeTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeTablesRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string DescribeTablesRequest::getDBClusterId()const
 void DescribeTablesRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeTablesRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeTablesRequest::getOwnerAccount()const
 void DescribeTablesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeTablesRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long DescribeTablesRequest::getOwnerId()const
 void DescribeTablesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBids4Uid4RootRequest;
 
 GetBids4Uid4RootRequest::GetBids4Uid4RootRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBids4Uid4Root")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBids4Uid4RootRequest::~GetBids4Uid4RootRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetBids4Uid4RootRequest::getAccessKeyId()const
 void GetBids4Uid4RootRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetBids4Uid4RootRequest::getUid()const
@@ -44,6 +46,6 @@ long GetBids4Uid4RootRequest::getUid()const
 void GetBids4Uid4RootRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setParameter("Uid", std::to_string(uid));
 }
 

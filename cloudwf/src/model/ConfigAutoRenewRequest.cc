@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ConfigAutoRenewRequest;
 
 ConfigAutoRenewRequest::ConfigAutoRenewRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ConfigAutoRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigAutoRenewRequest::~ConfigAutoRenewRequest()
 {}
@@ -33,7 +35,7 @@ int ConfigAutoRenewRequest::getOffsetDays()const
 void ConfigAutoRenewRequest::setOffsetDays(int offsetDays)
 {
 	offsetDays_ = offsetDays;
-	setCoreParameter("OffsetDays", std::to_string(offsetDays));
+	setParameter("OffsetDays", std::to_string(offsetDays));
 }
 
 int ConfigAutoRenewRequest::getMonths()const
@@ -44,7 +46,7 @@ int ConfigAutoRenewRequest::getMonths()const
 void ConfigAutoRenewRequest::setMonths(int months)
 {
 	months_ = months;
-	setCoreParameter("Months", std::to_string(months));
+	setParameter("Months", std::to_string(months));
 }
 
 std::vector<std::string> ConfigAutoRenewRequest::getApList()const
@@ -55,8 +57,9 @@ std::vector<std::string> ConfigAutoRenewRequest::getApList()const
 void ConfigAutoRenewRequest::setApList(const std::vector<std::string>& apList)
 {
 	apList_ = apList;
-	for(int i = 0; i!= apList.size(); i++)
-		setCoreParameter("ApList."+ std::to_string(i), apList.at(i));
+	for(int dep1 = 0; dep1!= apList.size(); dep1++) {
+		setParameter("ApList."+ std::to_string(dep1), apList.at(dep1));
+	}
 }
 
 std::string ConfigAutoRenewRequest::getAccessKeyId()const
@@ -67,7 +70,7 @@ std::string ConfigAutoRenewRequest::getAccessKeyId()const
 void ConfigAutoRenewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool ConfigAutoRenewRequest::getAutoRenew()const
@@ -78,6 +81,6 @@ bool ConfigAutoRenewRequest::getAutoRenew()const
 void ConfigAutoRenewRequest::setAutoRenew(bool autoRenew)
 {
 	autoRenew_ = autoRenew;
-	setCoreParameter("AutoRenew", autoRenew ? "true" : "false");
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddVodDomainRequest;
 
 AddVodDomainRequest::AddVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVodDomainRequest::~AddVodDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddVodDomainRequest::getSources()const
 void AddVodDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string AddVodDomainRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string AddVodDomainRequest::getSecurityToken()const
 void AddVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddVodDomainRequest::getScope()const
@@ -55,7 +57,7 @@ std::string AddVodDomainRequest::getScope()const
 void AddVodDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string AddVodDomainRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddVodDomainRequest::getOwnerAccount()const
 void AddVodDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddVodDomainRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string AddVodDomainRequest::getDomainName()const
 void AddVodDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddVodDomainRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddVodDomainRequest::getOwnerId()const
 void AddVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddVodDomainRequest::getCheckUrl()const
@@ -99,6 +101,6 @@ std::string AddVodDomainRequest::getCheckUrl()const
 void AddVodDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 

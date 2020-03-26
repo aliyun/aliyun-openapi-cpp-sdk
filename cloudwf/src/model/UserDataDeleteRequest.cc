@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataDeleteRequest;
 
 UserDataDeleteRequest::UserDataDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataDeleteRequest::~UserDataDeleteRequest()
 {}
@@ -33,7 +35,7 @@ long UserDataDeleteRequest::getIid()const
 void UserDataDeleteRequest::setIid(long iid)
 {
 	iid_ = iid;
-	setCoreParameter("Iid", std::to_string(iid));
+	setParameter("Iid", std::to_string(iid));
 }
 
 std::string UserDataDeleteRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UserDataDeleteRequest::getAccessKeyId()const
 void UserDataDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long UserDataDeleteRequest::getBid()const
@@ -55,6 +57,6 @@ long UserDataDeleteRequest::getBid()const
 void UserDataDeleteRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

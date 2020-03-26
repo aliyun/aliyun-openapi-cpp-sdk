@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::ValidateTemplateRequest;
 
 ValidateTemplateRequest::ValidateTemplateRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/validate");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ValidateTemplateRequest::~ValidateTemplateRequest()
 {}

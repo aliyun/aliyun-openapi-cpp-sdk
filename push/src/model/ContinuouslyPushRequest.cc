@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::ContinuouslyPushRequest;
 
 ContinuouslyPushRequest::ContinuouslyPushRequest() :
 	RpcServiceRequest("push", "2016-08-01", "ContinuouslyPush")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ContinuouslyPushRequest::~ContinuouslyPushRequest()
 {}
@@ -33,7 +35,7 @@ std::string ContinuouslyPushRequest::getMessageId()const
 void ContinuouslyPushRequest::setMessageId(const std::string& messageId)
 {
 	messageId_ = messageId;
-	setCoreParameter("MessageId", messageId);
+	setParameter("MessageId", messageId);
 }
 
 std::string ContinuouslyPushRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ContinuouslyPushRequest::getAccessKeyId()const
 void ContinuouslyPushRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ContinuouslyPushRequest::getTarget()const
@@ -55,7 +57,7 @@ std::string ContinuouslyPushRequest::getTarget()const
 void ContinuouslyPushRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setParameter("Target", target);
 }
 
 long ContinuouslyPushRequest::getAppKey()const
@@ -66,7 +68,7 @@ long ContinuouslyPushRequest::getAppKey()const
 void ContinuouslyPushRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string ContinuouslyPushRequest::getTargetValue()const
@@ -77,6 +79,6 @@ std::string ContinuouslyPushRequest::getTargetValue()const
 void ContinuouslyPushRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setParameter("TargetValue", targetValue);
 }
 

@@ -22,7 +22,7 @@ CloseHttpsRequest::CloseHttpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/close-https");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CloseHttpsRequest::~CloseHttpsRequest()

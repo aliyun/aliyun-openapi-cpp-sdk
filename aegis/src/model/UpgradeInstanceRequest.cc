@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::UpgradeInstanceRequest;
 
 UpgradeInstanceRequest::UpgradeInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "UpgradeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeInstanceRequest::~UpgradeInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpgradeInstanceRequest::getInstanceId()const
 void UpgradeInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpgradeInstanceRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string UpgradeInstanceRequest::getClientToken()const
 void UpgradeInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int UpgradeInstanceRequest::getVmNumber()const
@@ -55,7 +57,7 @@ int UpgradeInstanceRequest::getVmNumber()const
 void UpgradeInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setCoreParameter("VmNumber", std::to_string(vmNumber));
+	setParameter("VmNumber", std::to_string(vmNumber));
 }
 
 long UpgradeInstanceRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long UpgradeInstanceRequest::getOwnerId()const
 void UpgradeInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpgradeInstanceRequest::getVersionCode()const
@@ -77,6 +79,6 @@ int UpgradeInstanceRequest::getVersionCode()const
 void UpgradeInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", std::to_string(versionCode));
+	setParameter("VersionCode", std::to_string(versionCode));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::GetPredictResultRequest;
 
 GetPredictResultRequest::GetPredictResultRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "GetPredictResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPredictResultRequest::~GetPredictResultRequest()
 {}
@@ -33,7 +35,7 @@ int GetPredictResultRequest::getTopK()const
 void GetPredictResultRequest::setTopK(int topK)
 {
 	topK_ = topK;
-	setCoreParameter("TopK", std::to_string(topK));
+	setParameter("TopK", std::to_string(topK));
 }
 
 std::string GetPredictResultRequest::getTraceTag()const
@@ -44,7 +46,7 @@ std::string GetPredictResultRequest::getTraceTag()const
 void GetPredictResultRequest::setTraceTag(const std::string& traceTag)
 {
 	traceTag_ = traceTag;
-	setCoreParameter("TraceTag", traceTag);
+	setParameter("TraceTag", traceTag);
 }
 
 std::string GetPredictResultRequest::getQuestion()const
@@ -55,7 +57,7 @@ std::string GetPredictResultRequest::getQuestion()const
 void GetPredictResultRequest::setQuestion(const std::string& question)
 {
 	question_ = question;
-	setCoreParameter("Question", question);
+	setBodyParameter("Question", question);
 }
 
 std::string GetPredictResultRequest::getProjectId()const
@@ -66,6 +68,6 @@ std::string GetPredictResultRequest::getProjectId()const
 void GetPredictResultRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeCommoditiesRequest;
 
 DescribeCommoditiesRequest::DescribeCommoditiesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeCommodities")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeCommoditiesRequest::~DescribeCommoditiesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtModifiedTo()const
 void DescribeCommoditiesRequest::setCommodityGmtModifiedTo(const std::string& commodityGmtModifiedTo)
 {
 	commodityGmtModifiedTo_ = commodityGmtModifiedTo;
-	setCoreParameter("CommodityGmtModifiedTo", commodityGmtModifiedTo);
+	setParameter("CommodityGmtModifiedTo", commodityGmtModifiedTo);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityGmtModifiedFrom()const
@@ -44,7 +46,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtModifiedFrom()const
 void DescribeCommoditiesRequest::setCommodityGmtModifiedFrom(const std::string& commodityGmtModifiedFrom)
 {
 	commodityGmtModifiedFrom_ = commodityGmtModifiedFrom;
-	setCoreParameter("CommodityGmtModifiedFrom", commodityGmtModifiedFrom);
+	setParameter("CommodityGmtModifiedFrom", commodityGmtModifiedFrom);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityId()const
@@ -55,7 +57,7 @@ std::string DescribeCommoditiesRequest::getCommodityId()const
 void DescribeCommoditiesRequest::setCommodityId(const std::string& commodityId)
 {
 	commodityId_ = commodityId;
-	setCoreParameter("CommodityId", commodityId);
+	setParameter("CommodityId", commodityId);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityGmtPublishFrom()const
@@ -66,7 +68,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtPublishFrom()const
 void DescribeCommoditiesRequest::setCommodityGmtPublishFrom(const std::string& commodityGmtPublishFrom)
 {
 	commodityGmtPublishFrom_ = commodityGmtPublishFrom;
-	setCoreParameter("CommodityGmtPublishFrom", commodityGmtPublishFrom);
+	setParameter("CommodityGmtPublishFrom", commodityGmtPublishFrom);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityStatuses()const
@@ -77,7 +79,7 @@ std::string DescribeCommoditiesRequest::getCommodityStatuses()const
 void DescribeCommoditiesRequest::setCommodityStatuses(const std::string& commodityStatuses)
 {
 	commodityStatuses_ = commodityStatuses;
-	setCoreParameter("CommodityStatuses", commodityStatuses);
+	setParameter("CommodityStatuses", commodityStatuses);
 }
 
 int DescribeCommoditiesRequest::getPageNumber()const
@@ -88,7 +90,7 @@ int DescribeCommoditiesRequest::getPageNumber()const
 void DescribeCommoditiesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCommoditiesRequest::getCommodityGmtCreatedFrom()const
@@ -99,7 +101,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtCreatedFrom()const
 void DescribeCommoditiesRequest::setCommodityGmtCreatedFrom(const std::string& commodityGmtCreatedFrom)
 {
 	commodityGmtCreatedFrom_ = commodityGmtCreatedFrom;
-	setCoreParameter("CommodityGmtCreatedFrom", commodityGmtCreatedFrom);
+	setParameter("CommodityGmtCreatedFrom", commodityGmtCreatedFrom);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityIds()const
@@ -110,7 +112,7 @@ std::string DescribeCommoditiesRequest::getCommodityIds()const
 void DescribeCommoditiesRequest::setCommodityIds(const std::string& commodityIds)
 {
 	commodityIds_ = commodityIds;
-	setCoreParameter("CommodityIds", commodityIds);
+	setParameter("CommodityIds", commodityIds);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityGmtCreatedTo()const
@@ -121,7 +123,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtCreatedTo()const
 void DescribeCommoditiesRequest::setCommodityGmtCreatedTo(const std::string& commodityGmtCreatedTo)
 {
 	commodityGmtCreatedTo_ = commodityGmtCreatedTo;
-	setCoreParameter("CommodityGmtCreatedTo", commodityGmtCreatedTo);
+	setParameter("CommodityGmtCreatedTo", commodityGmtCreatedTo);
 }
 
 int DescribeCommoditiesRequest::getPageSize()const
@@ -132,7 +134,7 @@ int DescribeCommoditiesRequest::getPageSize()const
 void DescribeCommoditiesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCommoditiesRequest::getCommodityGmtPublishTo()const
@@ -143,7 +145,7 @@ std::string DescribeCommoditiesRequest::getCommodityGmtPublishTo()const
 void DescribeCommoditiesRequest::setCommodityGmtPublishTo(const std::string& commodityGmtPublishTo)
 {
 	commodityGmtPublishTo_ = commodityGmtPublishTo;
-	setCoreParameter("CommodityGmtPublishTo", commodityGmtPublishTo);
+	setParameter("CommodityGmtPublishTo", commodityGmtPublishTo);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityAuditStatuses()const
@@ -154,7 +156,7 @@ std::string DescribeCommoditiesRequest::getCommodityAuditStatuses()const
 void DescribeCommoditiesRequest::setCommodityAuditStatuses(const std::string& commodityAuditStatuses)
 {
 	commodityAuditStatuses_ = commodityAuditStatuses;
-	setCoreParameter("CommodityAuditStatuses", commodityAuditStatuses);
+	setParameter("CommodityAuditStatuses", commodityAuditStatuses);
 }
 
 std::string DescribeCommoditiesRequest::getProperties()const
@@ -165,7 +167,7 @@ std::string DescribeCommoditiesRequest::getProperties()const
 void DescribeCommoditiesRequest::setProperties(const std::string& properties)
 {
 	properties_ = properties;
-	setCoreParameter("Properties", properties);
+	setParameter("Properties", properties);
 }
 
 std::string DescribeCommoditiesRequest::getCommodityCategoryIds()const
@@ -176,6 +178,6 @@ std::string DescribeCommoditiesRequest::getCommodityCategoryIds()const
 void DescribeCommoditiesRequest::setCommodityCategoryIds(const std::string& commodityCategoryIds)
 {
 	commodityCategoryIds_ = commodityCategoryIds;
-	setCoreParameter("CommodityCategoryIds", commodityCategoryIds);
+	setParameter("CommodityCategoryIds", commodityCategoryIds);
 }
 

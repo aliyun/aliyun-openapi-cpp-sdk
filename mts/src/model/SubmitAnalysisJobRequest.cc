@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitAnalysisJobRequest;
 
 SubmitAnalysisJobRequest::SubmitAnalysisJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitAnalysisJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAnalysisJobRequest::~SubmitAnalysisJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitAnalysisJobRequest::getResourceOwnerId()const
 void SubmitAnalysisJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAnalysisJobRequest::getAnalysisConfig()const
@@ -44,7 +46,7 @@ std::string SubmitAnalysisJobRequest::getAnalysisConfig()const
 void SubmitAnalysisJobRequest::setAnalysisConfig(const std::string& analysisConfig)
 {
 	analysisConfig_ = analysisConfig;
-	setCoreParameter("AnalysisConfig", analysisConfig);
+	setParameter("AnalysisConfig", analysisConfig);
 }
 
 std::string SubmitAnalysisJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitAnalysisJobRequest::getAccessKeyId()const
 void SubmitAnalysisJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAnalysisJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitAnalysisJobRequest::getUserData()const
 void SubmitAnalysisJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitAnalysisJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitAnalysisJobRequest::getResourceOwnerAccount()const
 void SubmitAnalysisJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAnalysisJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitAnalysisJobRequest::getOwnerAccount()const
 void SubmitAnalysisJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitAnalysisJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitAnalysisJobRequest::getOwnerId()const
 void SubmitAnalysisJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAnalysisJobRequest::getPriority()const
@@ -110,7 +112,7 @@ std::string SubmitAnalysisJobRequest::getPriority()const
 void SubmitAnalysisJobRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", priority);
+	setParameter("Priority", priority);
 }
 
 std::string SubmitAnalysisJobRequest::getPipelineId()const
@@ -121,7 +123,7 @@ std::string SubmitAnalysisJobRequest::getPipelineId()const
 void SubmitAnalysisJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitAnalysisJobRequest::getInput()const
@@ -132,6 +134,6 @@ std::string SubmitAnalysisJobRequest::getInput()const
 void SubmitAnalysisJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

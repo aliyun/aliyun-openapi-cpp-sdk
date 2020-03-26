@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CheckUmengDataAnalysisPermissionRequest;
 
 CheckUmengDataAnalysisPermissionRequest::CheckUmengDataAnalysisPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CheckUmengDataAnalysisPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckUmengDataAnalysisPermissionRequest::~CheckUmengDataAnalysisPermissionRequest()
 {}
@@ -33,6 +35,6 @@ std::string CheckUmengDataAnalysisPermissionRequest::getAccessKeyId()const
 void CheckUmengDataAnalysisPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

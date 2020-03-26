@@ -26,18 +26,30 @@
 #include "model/AddUserHdfsInfoResult.h"
 #include "model/ConvertInstanceRequest.h"
 #include "model/ConvertInstanceResult.h"
+#include "model/CreateBackupPlanRequest.h"
+#include "model/CreateBackupPlanResult.h"
 #include "model/CreateClusterRequest.h"
 #include "model/CreateClusterResult.h"
 #include "model/CreateHbaseHaSlbRequest.h"
 #include "model/CreateHbaseHaSlbResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateRestorePlanRequest.h"
+#include "model/CreateRestorePlanResult.h"
 #include "model/DeleteHbaseHaSlbRequest.h"
 #include "model/DeleteHbaseHaSlbResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
 #include "model/DeleteUserHdfsInfoRequest.h"
 #include "model/DeleteUserHdfsInfoResult.h"
+#include "model/DescribeBackupPlanConfigRequest.h"
+#include "model/DescribeBackupPlanConfigResult.h"
+#include "model/DescribeBackupStatusRequest.h"
+#include "model/DescribeBackupStatusResult.h"
+#include "model/DescribeBackupSummaryRequest.h"
+#include "model/DescribeBackupSummaryResult.h"
+#include "model/DescribeBackupTablesRequest.h"
+#include "model/DescribeBackupTablesResult.h"
 #include "model/DescribeDBInstanceUsageRequest.h"
 #include "model/DescribeDBInstanceUsageResult.h"
 #include "model/DescribeEndpointsRequest.h"
@@ -50,14 +62,24 @@
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeIpWhitelistRequest.h"
 #include "model/DescribeIpWhitelistResult.h"
+#include "model/DescribeRecoverableTimeRangeRequest.h"
+#include "model/DescribeRecoverableTimeRangeResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeRestoreSummaryRequest.h"
+#include "model/DescribeRestoreSummaryResult.h"
+#include "model/DescribeRestoreTablesRequest.h"
+#include "model/DescribeRestoreTablesResult.h"
 #include "model/DescribeSecurityGroupsRequest.h"
 #include "model/DescribeSecurityGroupsResult.h"
+#include "model/EnableHBaseueBackupRequest.h"
+#include "model/EnableHBaseueBackupResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
 #include "model/ListTagsResult.h"
+#include "model/ModifyBackupPlanConfigRequest.h"
+#include "model/ModifyBackupPlanConfigResult.h"
 #include "model/ModifyClusterDeletionProtectionRequest.h"
 #include "model/ModifyClusterDeletionProtectionResult.h"
 #include "model/ModifyInstanceMaintainTimeRequest.h"
@@ -105,6 +127,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConvertInstanceResult> ConvertInstanceOutcome;
 			typedef std::future<ConvertInstanceOutcome> ConvertInstanceOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ConvertInstanceRequest&, const ConvertInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateBackupPlanResult> CreateBackupPlanOutcome;
+			typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::CreateBackupPlanRequest&, const CreateBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPlanAsyncHandler;
 			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
 			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -114,6 +139,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateRestorePlanResult> CreateRestorePlanOutcome;
+			typedef std::future<CreateRestorePlanOutcome> CreateRestorePlanOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::CreateRestorePlanRequest&, const CreateRestorePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestorePlanAsyncHandler;
 			typedef Outcome<Error, Model::DeleteHbaseHaSlbResult> DeleteHbaseHaSlbOutcome;
 			typedef std::future<DeleteHbaseHaSlbOutcome> DeleteHbaseHaSlbOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteHbaseHaSlbRequest&, const DeleteHbaseHaSlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHbaseHaSlbAsyncHandler;
@@ -123,6 +151,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUserHdfsInfoResult> DeleteUserHdfsInfoOutcome;
 			typedef std::future<DeleteUserHdfsInfoOutcome> DeleteUserHdfsInfoOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteUserHdfsInfoRequest&, const DeleteUserHdfsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserHdfsInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupPlanConfigResult> DescribeBackupPlanConfigOutcome;
+			typedef std::future<DescribeBackupPlanConfigOutcome> DescribeBackupPlanConfigOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeBackupPlanConfigRequest&, const DescribeBackupPlanConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPlanConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupStatusResult> DescribeBackupStatusOutcome;
+			typedef std::future<DescribeBackupStatusOutcome> DescribeBackupStatusOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeBackupStatusRequest&, const DescribeBackupStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupSummaryResult> DescribeBackupSummaryOutcome;
+			typedef std::future<DescribeBackupSummaryOutcome> DescribeBackupSummaryOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeBackupSummaryRequest&, const DescribeBackupSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupTablesResult> DescribeBackupTablesOutcome;
+			typedef std::future<DescribeBackupTablesOutcome> DescribeBackupTablesOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeBackupTablesRequest&, const DescribeBackupTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTablesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBInstanceUsageResult> DescribeDBInstanceUsageOutcome;
 			typedef std::future<DescribeDBInstanceUsageOutcome> DescribeDBInstanceUsageOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeDBInstanceUsageRequest&, const DescribeDBInstanceUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceUsageAsyncHandler;
@@ -141,18 +181,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeIpWhitelistResult> DescribeIpWhitelistOutcome;
 			typedef std::future<DescribeIpWhitelistOutcome> DescribeIpWhitelistOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeIpWhitelistRequest&, const DescribeIpWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecoverableTimeRangeResult> DescribeRecoverableTimeRangeOutcome;
+			typedef std::future<DescribeRecoverableTimeRangeOutcome> DescribeRecoverableTimeRangeOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRecoverableTimeRangeRequest&, const DescribeRecoverableTimeRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecoverableTimeRangeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreSummaryResult> DescribeRestoreSummaryOutcome;
+			typedef std::future<DescribeRestoreSummaryOutcome> DescribeRestoreSummaryOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreSummaryRequest&, const DescribeRestoreSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreSummaryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreTablesResult> DescribeRestoreTablesOutcome;
+			typedef std::future<DescribeRestoreTablesOutcome> DescribeRestoreTablesOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreTablesRequest&, const DescribeRestoreTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTablesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSecurityGroupsResult> DescribeSecurityGroupsOutcome;
 			typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeSecurityGroupsRequest&, const DescribeSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupsAsyncHandler;
+			typedef Outcome<Error, Model::EnableHBaseueBackupResult> EnableHBaseueBackupOutcome;
+			typedef std::future<EnableHBaseueBackupOutcome> EnableHBaseueBackupOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::EnableHBaseueBackupRequest&, const EnableHBaseueBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableHBaseueBackupAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
 			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
+			typedef Outcome<Error, Model::ModifyBackupPlanConfigResult> ModifyBackupPlanConfigOutcome;
+			typedef std::future<ModifyBackupPlanConfigOutcome> ModifyBackupPlanConfigOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ModifyBackupPlanConfigRequest&, const ModifyBackupPlanConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPlanConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyClusterDeletionProtectionResult> ModifyClusterDeletionProtectionOutcome;
 			typedef std::future<ModifyClusterDeletionProtectionOutcome> ModifyClusterDeletionProtectionOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyClusterDeletionProtectionRequest&, const ModifyClusterDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDeletionProtectionAsyncHandler;
@@ -212,6 +267,9 @@ namespace AlibabaCloud
 			ConvertInstanceOutcome convertInstance(const Model::ConvertInstanceRequest &request)const;
 			void convertInstanceAsync(const Model::ConvertInstanceRequest& request, const ConvertInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertInstanceOutcomeCallable convertInstanceCallable(const Model::ConvertInstanceRequest& request) const;
+			CreateBackupPlanOutcome createBackupPlan(const Model::CreateBackupPlanRequest &request)const;
+			void createBackupPlanAsync(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBackupPlanOutcomeCallable createBackupPlanCallable(const Model::CreateBackupPlanRequest& request) const;
 			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
 			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
@@ -221,6 +279,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateRestorePlanOutcome createRestorePlan(const Model::CreateRestorePlanRequest &request)const;
+			void createRestorePlanAsync(const Model::CreateRestorePlanRequest& request, const CreateRestorePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRestorePlanOutcomeCallable createRestorePlanCallable(const Model::CreateRestorePlanRequest& request) const;
 			DeleteHbaseHaSlbOutcome deleteHbaseHaSlb(const Model::DeleteHbaseHaSlbRequest &request)const;
 			void deleteHbaseHaSlbAsync(const Model::DeleteHbaseHaSlbRequest& request, const DeleteHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteHbaseHaSlbOutcomeCallable deleteHbaseHaSlbCallable(const Model::DeleteHbaseHaSlbRequest& request) const;
@@ -230,6 +291,18 @@ namespace AlibabaCloud
 			DeleteUserHdfsInfoOutcome deleteUserHdfsInfo(const Model::DeleteUserHdfsInfoRequest &request)const;
 			void deleteUserHdfsInfoAsync(const Model::DeleteUserHdfsInfoRequest& request, const DeleteUserHdfsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserHdfsInfoOutcomeCallable deleteUserHdfsInfoCallable(const Model::DeleteUserHdfsInfoRequest& request) const;
+			DescribeBackupPlanConfigOutcome describeBackupPlanConfig(const Model::DescribeBackupPlanConfigRequest &request)const;
+			void describeBackupPlanConfigAsync(const Model::DescribeBackupPlanConfigRequest& request, const DescribeBackupPlanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupPlanConfigOutcomeCallable describeBackupPlanConfigCallable(const Model::DescribeBackupPlanConfigRequest& request) const;
+			DescribeBackupStatusOutcome describeBackupStatus(const Model::DescribeBackupStatusRequest &request)const;
+			void describeBackupStatusAsync(const Model::DescribeBackupStatusRequest& request, const DescribeBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupStatusOutcomeCallable describeBackupStatusCallable(const Model::DescribeBackupStatusRequest& request) const;
+			DescribeBackupSummaryOutcome describeBackupSummary(const Model::DescribeBackupSummaryRequest &request)const;
+			void describeBackupSummaryAsync(const Model::DescribeBackupSummaryRequest& request, const DescribeBackupSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupSummaryOutcomeCallable describeBackupSummaryCallable(const Model::DescribeBackupSummaryRequest& request) const;
+			DescribeBackupTablesOutcome describeBackupTables(const Model::DescribeBackupTablesRequest &request)const;
+			void describeBackupTablesAsync(const Model::DescribeBackupTablesRequest& request, const DescribeBackupTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupTablesOutcomeCallable describeBackupTablesCallable(const Model::DescribeBackupTablesRequest& request) const;
 			DescribeDBInstanceUsageOutcome describeDBInstanceUsage(const Model::DescribeDBInstanceUsageRequest &request)const;
 			void describeDBInstanceUsageAsync(const Model::DescribeDBInstanceUsageRequest& request, const DescribeDBInstanceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceUsageOutcomeCallable describeDBInstanceUsageCallable(const Model::DescribeDBInstanceUsageRequest& request) const;
@@ -248,18 +321,33 @@ namespace AlibabaCloud
 			DescribeIpWhitelistOutcome describeIpWhitelist(const Model::DescribeIpWhitelistRequest &request)const;
 			void describeIpWhitelistAsync(const Model::DescribeIpWhitelistRequest& request, const DescribeIpWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIpWhitelistOutcomeCallable describeIpWhitelistCallable(const Model::DescribeIpWhitelistRequest& request) const;
+			DescribeRecoverableTimeRangeOutcome describeRecoverableTimeRange(const Model::DescribeRecoverableTimeRangeRequest &request)const;
+			void describeRecoverableTimeRangeAsync(const Model::DescribeRecoverableTimeRangeRequest& request, const DescribeRecoverableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecoverableTimeRangeOutcomeCallable describeRecoverableTimeRangeCallable(const Model::DescribeRecoverableTimeRangeRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeRestoreSummaryOutcome describeRestoreSummary(const Model::DescribeRestoreSummaryRequest &request)const;
+			void describeRestoreSummaryAsync(const Model::DescribeRestoreSummaryRequest& request, const DescribeRestoreSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreSummaryOutcomeCallable describeRestoreSummaryCallable(const Model::DescribeRestoreSummaryRequest& request) const;
+			DescribeRestoreTablesOutcome describeRestoreTables(const Model::DescribeRestoreTablesRequest &request)const;
+			void describeRestoreTablesAsync(const Model::DescribeRestoreTablesRequest& request, const DescribeRestoreTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreTablesOutcomeCallable describeRestoreTablesCallable(const Model::DescribeRestoreTablesRequest& request) const;
 			DescribeSecurityGroupsOutcome describeSecurityGroups(const Model::DescribeSecurityGroupsRequest &request)const;
 			void describeSecurityGroupsAsync(const Model::DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSecurityGroupsOutcomeCallable describeSecurityGroupsCallable(const Model::DescribeSecurityGroupsRequest& request) const;
+			EnableHBaseueBackupOutcome enableHBaseueBackup(const Model::EnableHBaseueBackupRequest &request)const;
+			void enableHBaseueBackupAsync(const Model::EnableHBaseueBackupRequest& request, const EnableHBaseueBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableHBaseueBackupOutcomeCallable enableHBaseueBackupCallable(const Model::EnableHBaseueBackupRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
 			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
+			ModifyBackupPlanConfigOutcome modifyBackupPlanConfig(const Model::ModifyBackupPlanConfigRequest &request)const;
+			void modifyBackupPlanConfigAsync(const Model::ModifyBackupPlanConfigRequest& request, const ModifyBackupPlanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyBackupPlanConfigOutcomeCallable modifyBackupPlanConfigCallable(const Model::ModifyBackupPlanConfigRequest& request) const;
 			ModifyClusterDeletionProtectionOutcome modifyClusterDeletionProtection(const Model::ModifyClusterDeletionProtectionRequest &request)const;
 			void modifyClusterDeletionProtectionAsync(const Model::ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterDeletionProtectionOutcomeCallable modifyClusterDeletionProtectionCallable(const Model::ModifyClusterDeletionProtectionRequest& request) const;

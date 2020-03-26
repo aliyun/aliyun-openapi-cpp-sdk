@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListBackupsRequest;
 
 ListBackupsRequest::ListBackupsRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListBackups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBackupsRequest::~ListBackupsRequest()
 {}
@@ -33,7 +35,7 @@ long ListBackupsRequest::getResourceOwnerId()const
 void ListBackupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ListBackupsRequest::getPageCount()const
@@ -44,7 +46,7 @@ int ListBackupsRequest::getPageCount()const
 void ListBackupsRequest::setPageCount(int pageCount)
 {
 	pageCount_ = pageCount;
-	setCoreParameter("PageCount", std::to_string(pageCount));
+	setParameter("PageCount", std::to_string(pageCount));
 }
 
 std::string ListBackupsRequest::getOrderMode()const
@@ -55,7 +57,7 @@ std::string ListBackupsRequest::getOrderMode()const
 void ListBackupsRequest::setOrderMode(const std::string& orderMode)
 {
 	orderMode_ = orderMode;
-	setCoreParameter("OrderMode", orderMode);
+	setParameter("OrderMode", orderMode);
 }
 
 std::string ListBackupsRequest::getBackupPlanId()const
@@ -66,7 +68,7 @@ std::string ListBackupsRequest::getBackupPlanId()const
 void ListBackupsRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 int ListBackupsRequest::getPageNumber()const
@@ -77,7 +79,7 @@ int ListBackupsRequest::getPageNumber()const
 void ListBackupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListBackupsRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string ListBackupsRequest::getAccessKeyId()const
 void ListBackupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListBackupsRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string ListBackupsRequest::getRegionId()const
 void ListBackupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListBackupsRequest::getLimit()const
@@ -110,7 +112,7 @@ int ListBackupsRequest::getLimit()const
 void ListBackupsRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 int ListBackupsRequest::getPageSize()const
@@ -121,7 +123,7 @@ int ListBackupsRequest::getPageSize()const
 void ListBackupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListBackupsRequest::getServiceName()const
@@ -132,7 +134,7 @@ std::string ListBackupsRequest::getServiceName()const
 void ListBackupsRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 
 long ListBackupsRequest::getId()const
@@ -143,7 +145,7 @@ long ListBackupsRequest::getId()const
 void ListBackupsRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 int ListBackupsRequest::getCurrentSize()const
@@ -154,18 +156,7 @@ int ListBackupsRequest::getCurrentSize()const
 void ListBackupsRequest::setCurrentSize(int currentSize)
 {
 	currentSize_ = currentSize;
-	setCoreParameter("CurrentSize", std::to_string(currentSize));
-}
-
-std::string ListBackupsRequest::getOrderField()const
-{
-	return orderField_;
-}
-
-void ListBackupsRequest::setOrderField(const std::string& orderField)
-{
-	orderField_ = orderField;
-	setCoreParameter("OrderField", orderField);
+	setParameter("CurrentSize", std::to_string(currentSize));
 }
 
 std::vector<std::string> ListBackupsRequest::getBackupId()const
@@ -176,8 +167,9 @@ std::vector<std::string> ListBackupsRequest::getBackupId()const
 void ListBackupsRequest::setBackupId(const std::vector<std::string>& backupId)
 {
 	backupId_ = backupId;
-	for(int i = 0; i!= backupId.size(); i++)
-		setCoreParameter("BackupId."+ std::to_string(i), backupId.at(i));
+	for(int dep1 = 0; dep1!= backupId.size(); dep1++) {
+		setParameter("BackupId."+ std::to_string(dep1), backupId.at(dep1));
+	}
 }
 
 std::string ListBackupsRequest::getClusterId()const
@@ -188,7 +180,7 @@ std::string ListBackupsRequest::getClusterId()const
 void ListBackupsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListBackupsRequest::getMetadataType()const
@@ -199,7 +191,7 @@ std::string ListBackupsRequest::getMetadataType()const
 void ListBackupsRequest::setMetadataType(const std::string& metadataType)
 {
 	metadataType_ = metadataType;
-	setCoreParameter("MetadataType", metadataType);
+	setParameter("MetadataType", metadataType);
 }
 
 std::string ListBackupsRequest::getBizId()const
@@ -210,7 +202,7 @@ std::string ListBackupsRequest::getBizId()const
 void ListBackupsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string ListBackupsRequest::getStatus()const
@@ -221,6 +213,6 @@ std::string ListBackupsRequest::getStatus()const
 void ListBackupsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

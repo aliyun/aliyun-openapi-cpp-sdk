@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRoomStatusRequest;
 
 DescribeRoomStatusRequest::DescribeRoomStatusRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRoomStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRoomStatusRequest::~DescribeRoomStatusRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRoomStatusRequest::getOwnerId()const
 void DescribeRoomStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRoomStatusRequest::getRoomId()const
@@ -44,7 +46,7 @@ std::string DescribeRoomStatusRequest::getRoomId()const
 void DescribeRoomStatusRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string DescribeRoomStatusRequest::getAppId()const
@@ -55,6 +57,6 @@ std::string DescribeRoomStatusRequest::getAppId()const
 void DescribeRoomStatusRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

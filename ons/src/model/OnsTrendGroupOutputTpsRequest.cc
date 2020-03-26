@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTrendGroupOutputTpsRequest;
 OnsTrendGroupOutputTpsRequest::OnsTrendGroupOutputTpsRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTrendGroupOutputTps")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsTrendGroupOutputTpsRequest::~OnsTrendGroupOutputTpsRequest()

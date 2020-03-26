@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateListRequest;
 
 DescribeCertificateListRequest::DescribeCertificateListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateListRequest::~DescribeCertificateListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCertificateListRequest::getSortType()const
 void DescribeCertificateListRequest::setSortType(const std::string& sortType)
 {
 	sortType_ = sortType;
-	setCoreParameter("SortType", sortType);
+	setParameter("SortType", sortType);
 }
 
 std::string DescribeCertificateListRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeCertificateListRequest::getResourceGroupId()const
 void DescribeCertificateListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCertificateListRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeCertificateListRequest::getSourceIp()const
 void DescribeCertificateListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::vector<DescribeCertificateListRequest::Tag> DescribeCertificateListRequest::getTag()const
@@ -66,12 +68,11 @@ std::vector<DescribeCertificateListRequest::Tag> DescribeCertificateListRequest:
 void DescribeCertificateListRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -83,7 +84,7 @@ std::string DescribeCertificateListRequest::getLang()const
 void DescribeCertificateListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeCertificateListRequest::getKeyword()const
@@ -94,7 +95,7 @@ std::string DescribeCertificateListRequest::getKeyword()const
 void DescribeCertificateListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 int DescribeCertificateListRequest::getShowSize()const
@@ -105,7 +106,7 @@ int DescribeCertificateListRequest::getShowSize()const
 void DescribeCertificateListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setParameter("ShowSize", std::to_string(showSize));
 }
 
 int DescribeCertificateListRequest::getCurrentPage()const
@@ -116,7 +117,7 @@ int DescribeCertificateListRequest::getCurrentPage()const
 void DescribeCertificateListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCertificateListRequest::getSortColumn()const
@@ -127,7 +128,7 @@ std::string DescribeCertificateListRequest::getSortColumn()const
 void DescribeCertificateListRequest::setSortColumn(const std::string& sortColumn)
 {
 	sortColumn_ = sortColumn;
-	setCoreParameter("SortColumn", sortColumn);
+	setParameter("SortColumn", sortColumn);
 }
 
 std::string DescribeCertificateListRequest::getStatus()const
@@ -138,6 +139,6 @@ std::string DescribeCertificateListRequest::getStatus()const
 void DescribeCertificateListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeScdnDomainRegionDataRequest::getStartTime()const
 void DescribeScdnDomainRegionDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainRegionDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainRegionDataRequest::getDomainName()const
 void DescribeScdnDomainRegionDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainRegionDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainRegionDataRequest::getEndTime()const
 void DescribeScdnDomainRegionDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainRegionDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeScdnDomainRegionDataRequest::getOwnerId()const
 void DescribeScdnDomainRegionDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

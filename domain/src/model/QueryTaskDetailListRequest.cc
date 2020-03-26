@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTaskDetailListRequest;
 
 QueryTaskDetailListRequest::QueryTaskDetailListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTaskDetailList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskDetailListRequest::~QueryTaskDetailListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTaskDetailListRequest::getDomainName()const
 void QueryTaskDetailListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int QueryTaskDetailListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryTaskDetailListRequest::getPageNum()const
 void QueryTaskDetailListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryTaskDetailListRequest::getTaskStatus()const
@@ -55,7 +57,7 @@ int QueryTaskDetailListRequest::getTaskStatus()const
 void QueryTaskDetailListRequest::setTaskStatus(int taskStatus)
 {
 	taskStatus_ = taskStatus;
-	setCoreParameter("TaskStatus", std::to_string(taskStatus));
+	setParameter("TaskStatus", std::to_string(taskStatus));
 }
 
 std::string QueryTaskDetailListRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryTaskDetailListRequest::getInstanceId()const
 void QueryTaskDetailListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string QueryTaskDetailListRequest::getTaskNo()const
@@ -77,7 +79,7 @@ std::string QueryTaskDetailListRequest::getTaskNo()const
 void QueryTaskDetailListRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", taskNo);
+	setParameter("TaskNo", taskNo);
 }
 
 std::string QueryTaskDetailListRequest::getUserClientIp()const
@@ -88,7 +90,7 @@ std::string QueryTaskDetailListRequest::getUserClientIp()const
 void QueryTaskDetailListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskDetailListRequest::getPageSize()const
@@ -99,7 +101,7 @@ int QueryTaskDetailListRequest::getPageSize()const
 void QueryTaskDetailListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskDetailListRequest::getLang()const
@@ -110,6 +112,6 @@ std::string QueryTaskDetailListRequest::getLang()const
 void QueryTaskDetailListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

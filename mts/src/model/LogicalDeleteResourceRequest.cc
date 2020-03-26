@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::LogicalDeleteResourceRequest;
 
 LogicalDeleteResourceRequest::LogicalDeleteResourceRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "LogicalDeleteResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LogicalDeleteResourceRequest::~LogicalDeleteResourceRequest()
 {}
@@ -33,7 +35,7 @@ std::string LogicalDeleteResourceRequest::getCountry()const
 void LogicalDeleteResourceRequest::setCountry(const std::string& country)
 {
 	country_ = country;
-	setCoreParameter("Country", country);
+	setParameter("Country", country);
 }
 
 long LogicalDeleteResourceRequest::getHid()const
@@ -44,7 +46,7 @@ long LogicalDeleteResourceRequest::getHid()const
 void LogicalDeleteResourceRequest::setHid(long hid)
 {
 	hid_ = hid;
-	setCoreParameter("Hid", std::to_string(hid));
+	setParameter("Hid", std::to_string(hid));
 }
 
 std::string LogicalDeleteResourceRequest::getInvoker()const
@@ -55,7 +57,7 @@ std::string LogicalDeleteResourceRequest::getInvoker()const
 void LogicalDeleteResourceRequest::setInvoker(const std::string& invoker)
 {
 	invoker_ = invoker;
-	setCoreParameter("Invoker", invoker);
+	setParameter("Invoker", invoker);
 }
 
 std::string LogicalDeleteResourceRequest::getMessage()const
@@ -66,7 +68,7 @@ std::string LogicalDeleteResourceRequest::getMessage()const
 void LogicalDeleteResourceRequest::setMessage(const std::string& message)
 {
 	message_ = message;
-	setCoreParameter("Message", message);
+	setParameter("Message", message);
 }
 
 bool LogicalDeleteResourceRequest::getSuccess()const
@@ -77,7 +79,7 @@ bool LogicalDeleteResourceRequest::getSuccess()const
 void LogicalDeleteResourceRequest::setSuccess(bool success)
 {
 	success_ = success;
-	setCoreParameter("Success", success ? "true" : "false");
+	setParameter("Success", success ? "true" : "false");
 }
 
 bool LogicalDeleteResourceRequest::getInterrupt()const
@@ -88,7 +90,7 @@ bool LogicalDeleteResourceRequest::getInterrupt()const
 void LogicalDeleteResourceRequest::setInterrupt(bool interrupt)
 {
 	interrupt_ = interrupt;
-	setCoreParameter("Interrupt", interrupt ? "true" : "false");
+	setParameter("Interrupt", interrupt ? "true" : "false");
 }
 
 std::string LogicalDeleteResourceRequest::getGmtWakeup()const
@@ -99,7 +101,7 @@ std::string LogicalDeleteResourceRequest::getGmtWakeup()const
 void LogicalDeleteResourceRequest::setGmtWakeup(const std::string& gmtWakeup)
 {
 	gmtWakeup_ = gmtWakeup;
-	setCoreParameter("GmtWakeup", gmtWakeup);
+	setParameter("GmtWakeup", gmtWakeup);
 }
 
 std::string LogicalDeleteResourceRequest::getPk()const
@@ -110,7 +112,7 @@ std::string LogicalDeleteResourceRequest::getPk()const
 void LogicalDeleteResourceRequest::setPk(const std::string& pk)
 {
 	pk_ = pk;
-	setCoreParameter("Pk", pk);
+	setParameter("Pk", pk);
 }
 
 std::string LogicalDeleteResourceRequest::getBid()const
@@ -121,7 +123,7 @@ std::string LogicalDeleteResourceRequest::getBid()const
 void LogicalDeleteResourceRequest::setBid(const std::string& bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", bid);
+	setParameter("Bid", bid);
 }
 
 std::string LogicalDeleteResourceRequest::getTaskExtraData()const
@@ -132,7 +134,7 @@ std::string LogicalDeleteResourceRequest::getTaskExtraData()const
 void LogicalDeleteResourceRequest::setTaskExtraData(const std::string& taskExtraData)
 {
 	taskExtraData_ = taskExtraData;
-	setCoreParameter("TaskExtraData", taskExtraData);
+	setParameter("TaskExtraData", taskExtraData);
 }
 
 std::string LogicalDeleteResourceRequest::getTaskIdentifier()const
@@ -143,6 +145,6 @@ std::string LogicalDeleteResourceRequest::getTaskIdentifier()const
 void LogicalDeleteResourceRequest::setTaskIdentifier(const std::string& taskIdentifier)
 {
 	taskIdentifier_ = taskIdentifier;
-	setCoreParameter("TaskIdentifier", taskIdentifier);
+	setParameter("TaskIdentifier", taskIdentifier);
 }
 

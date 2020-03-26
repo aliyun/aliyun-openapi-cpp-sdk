@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::KillFlowJobRequest;
 
 KillFlowJobRequest::KillFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "KillFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KillFlowJobRequest::~KillFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string KillFlowJobRequest::getRegionId()const
 void KillFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string KillFlowJobRequest::getJobInstanceId()const
@@ -44,7 +46,7 @@ std::string KillFlowJobRequest::getJobInstanceId()const
 void KillFlowJobRequest::setJobInstanceId(const std::string& jobInstanceId)
 {
 	jobInstanceId_ = jobInstanceId;
-	setCoreParameter("JobInstanceId", jobInstanceId);
+	setParameter("JobInstanceId", jobInstanceId);
 }
 
 std::string KillFlowJobRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string KillFlowJobRequest::getProjectId()const
 void KillFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

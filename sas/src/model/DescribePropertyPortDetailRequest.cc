@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyPortDetailRequest;
 
 DescribePropertyPortDetailRequest::DescribePropertyPortDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyPortDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyPortDetailRequest::~DescribePropertyPortDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePropertyPortDetailRequest::getRemark()const
 void DescribePropertyPortDetailRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribePropertyPortDetailRequest::getUuid()const
@@ -44,7 +46,7 @@ std::string DescribePropertyPortDetailRequest::getUuid()const
 void DescribePropertyPortDetailRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribePropertyPortDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribePropertyPortDetailRequest::getSourceIp()const
 void DescribePropertyPortDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePropertyPortDetailRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribePropertyPortDetailRequest::getPageSize()const
 void DescribePropertyPortDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribePropertyPortDetailRequest::getCurrentPage()const
@@ -77,7 +79,7 @@ int DescribePropertyPortDetailRequest::getCurrentPage()const
 void DescribePropertyPortDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertyPortDetailRequest::getPort()const
@@ -88,7 +90,7 @@ std::string DescribePropertyPortDetailRequest::getPort()const
 void DescribePropertyPortDetailRequest::setPort(const std::string& port)
 {
 	port_ = port;
-	setCoreParameter("Port", port);
+	setParameter("Port", port);
 }
 
 std::string DescribePropertyPortDetailRequest::getProcName()const
@@ -99,6 +101,6 @@ std::string DescribePropertyPortDetailRequest::getProcName()const
 void DescribePropertyPortDetailRequest::setProcName(const std::string& procName)
 {
 	procName_ = procName;
-	setCoreParameter("ProcName", procName);
+	setParameter("ProcName", procName);
 }
 

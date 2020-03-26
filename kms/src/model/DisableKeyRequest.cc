@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DisableKeyRequest;
 DisableKeyRequest::DisableKeyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DisableKey")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DisableKeyRequest::~DisableKeyRequest()

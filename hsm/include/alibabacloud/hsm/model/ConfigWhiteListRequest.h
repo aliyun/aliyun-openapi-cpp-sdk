@@ -35,20 +35,23 @@ namespace AlibabaCloud
 				ConfigWhiteListRequest();
 				~ConfigWhiteListRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getWhiteList()const;
 				void setWhiteList(const std::string& whiteList);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getLang()const;
+				void setLang(const std::string& lang);
 
             private:
-				long resourceOwnerId_;
 				std::string whiteList_;
 				std::string instanceId_;
 				std::string sourceIp_;
+				std::string regionId_;
+				std::string lang_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataAssetsRequest;
 
 DescribeDataAssetsRequest::DescribeDataAssetsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataAssets")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataAssetsRequest::~DescribeDataAssetsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDataAssetsRequest::getRiskLevels()const
 void DescribeDataAssetsRequest::setRiskLevels(const std::string& riskLevels)
 {
 	riskLevels_ = riskLevels;
-	setCoreParameter("RiskLevels", riskLevels);
+	setParameter("RiskLevels", riskLevels);
 }
 
 int DescribeDataAssetsRequest::getRangeId()const
@@ -44,7 +46,7 @@ int DescribeDataAssetsRequest::getRangeId()const
 void DescribeDataAssetsRequest::setRangeId(int rangeId)
 {
 	rangeId_ = rangeId;
-	setCoreParameter("RangeId", std::to_string(rangeId));
+	setParameter("RangeId", std::to_string(rangeId));
 }
 
 std::string DescribeDataAssetsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeDataAssetsRequest::getSourceIp()const
 void DescribeDataAssetsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataAssetsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeDataAssetsRequest::getPageSize()const
 void DescribeDataAssetsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDataAssetsRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeDataAssetsRequest::getLang()const
 void DescribeDataAssetsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeDataAssetsRequest::getFeatureType()const
@@ -88,7 +90,7 @@ int DescribeDataAssetsRequest::getFeatureType()const
 void DescribeDataAssetsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataAssetsRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeDataAssetsRequest::getCurrentPage()const
 void DescribeDataAssetsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDataAssetsRequest::getName()const
@@ -110,7 +112,7 @@ std::string DescribeDataAssetsRequest::getName()const
 void DescribeDataAssetsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribeDataAssetsRequest::getRuleId()const
@@ -121,6 +123,6 @@ long DescribeDataAssetsRequest::getRuleId()const
 void DescribeDataAssetsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

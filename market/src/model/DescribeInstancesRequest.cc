@@ -20,21 +20,12 @@ using AlibabaCloud::Market::Model::DescribeInstancesRequest;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstancesRequest::~DescribeInstancesRequest()
 {}
-
-int DescribeInstancesRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void DescribeInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
-}
 
 int DescribeInstancesRequest::getPageNumber()const
 {
@@ -44,7 +35,7 @@ int DescribeInstancesRequest::getPageNumber()const
 void DescribeInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInstancesRequest::getProductType()const
@@ -55,6 +46,17 @@ std::string DescribeInstancesRequest::getProductType()const
 void DescribeInstancesRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
+}
+
+int DescribeInstancesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeInstancesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

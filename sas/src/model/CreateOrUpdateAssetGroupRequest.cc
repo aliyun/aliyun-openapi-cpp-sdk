@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::CreateOrUpdateAssetGroupRequest;
 
 CreateOrUpdateAssetGroupRequest::CreateOrUpdateAssetGroupRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "CreateOrUpdateAssetGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrUpdateAssetGroupRequest::~CreateOrUpdateAssetGroupRequest()
 {}
@@ -33,7 +35,7 @@ long CreateOrUpdateAssetGroupRequest::getGroupId()const
 void CreateOrUpdateAssetGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string CreateOrUpdateAssetGroupRequest::getGroupName()const
@@ -44,7 +46,7 @@ std::string CreateOrUpdateAssetGroupRequest::getGroupName()const
 void CreateOrUpdateAssetGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string CreateOrUpdateAssetGroupRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateOrUpdateAssetGroupRequest::getSourceIp()const
 void CreateOrUpdateAssetGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrUpdateAssetGroupRequest::getUuids()const
@@ -66,6 +68,6 @@ std::string CreateOrUpdateAssetGroupRequest::getUuids()const
 void CreateOrUpdateAssetGroupRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

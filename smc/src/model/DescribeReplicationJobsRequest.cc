@@ -35,7 +35,7 @@ int DescribeReplicationJobsRequest::getPageNumber()const
 void DescribeReplicationJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeReplicationJobsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeReplicationJobsRequest::getAccessKeyId()const
 void DescribeReplicationJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> DescribeReplicationJobsRequest::getJobId()const
@@ -58,7 +58,7 @@ void DescribeReplicationJobsRequest::setJobId(const std::vector<std::string>& jo
 {
 	jobId_ = jobId;
 	for(int dep1 = 0; dep1!= jobId.size(); dep1++) {
-		setCoreParameter("JobId."+ std::to_string(dep1), jobId.at(dep1));
+		setParameter("JobId."+ std::to_string(dep1), jobId.at(dep1));
 	}
 }
 
@@ -70,7 +70,7 @@ std::string DescribeReplicationJobsRequest::getRegionId()const
 void DescribeReplicationJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeReplicationJobsRequest::getPageSize()const
@@ -81,7 +81,7 @@ int DescribeReplicationJobsRequest::getPageSize()const
 void DescribeReplicationJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeReplicationJobsRequest::getSourceId()const
@@ -93,7 +93,7 @@ void DescribeReplicationJobsRequest::setSourceId(const std::vector<std::string>&
 {
 	sourceId_ = sourceId;
 	for(int dep1 = 0; dep1!= sourceId.size(); dep1++) {
-		setCoreParameter("SourceId."+ std::to_string(dep1), sourceId.at(dep1));
+		setParameter("SourceId."+ std::to_string(dep1), sourceId.at(dep1));
 	}
 }
 
@@ -105,7 +105,7 @@ std::string DescribeReplicationJobsRequest::getBusinessStatus()const
 void DescribeReplicationJobsRequest::setBusinessStatus(const std::string& businessStatus)
 {
 	businessStatus_ = businessStatus;
-	setCoreParameter("BusinessStatus", businessStatus);
+	setParameter("BusinessStatus", businessStatus);
 }
 
 std::string DescribeReplicationJobsRequest::getResourceOwnerAccount()const
@@ -116,7 +116,7 @@ std::string DescribeReplicationJobsRequest::getResourceOwnerAccount()const
 void DescribeReplicationJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeReplicationJobsRequest::getOwnerId()const
@@ -127,7 +127,7 @@ long DescribeReplicationJobsRequest::getOwnerId()const
 void DescribeReplicationJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeReplicationJobsRequest::getName()const
@@ -138,7 +138,7 @@ std::string DescribeReplicationJobsRequest::getName()const
 void DescribeReplicationJobsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeReplicationJobsRequest::getStatus()const
@@ -149,6 +149,6 @@ std::string DescribeReplicationJobsRequest::getStatus()const
 void DescribeReplicationJobsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

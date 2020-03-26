@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSnatEntriesRequest;
 
 DescribeSnatEntriesRequest::DescribeSnatEntriesRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSnatEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSnatEntriesRequest::~DescribeSnatEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSnatEntriesRequest::getResourceOwnerId()const
 void DescribeSnatEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeSnatEntriesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeSnatEntriesRequest::getPageNumber()const
 void DescribeSnatEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSnatEntriesRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeSnatEntriesRequest::getRegionId()const
 void DescribeSnatEntriesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeSnatEntriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeSnatEntriesRequest::getPageSize()const
 void DescribeSnatEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSnatEntriesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeSnatEntriesRequest::getResourceOwnerAccount()const
 void DescribeSnatEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSnatEntriesRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeSnatEntriesRequest::getOwnerAccount()const
 void DescribeSnatEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSnatEntriesRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeSnatEntriesRequest::getOwnerId()const
 void DescribeSnatEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSnatEntriesRequest::getSmartAGId()const
@@ -110,6 +112,6 @@ std::string DescribeSnatEntriesRequest::getSmartAGId()const
 void DescribeSnatEntriesRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

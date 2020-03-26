@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceGroupListRequest;
 
 QueryDeviceGroupListRequest::QueryDeviceGroupListRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceGroupList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceGroupListRequest::~QueryDeviceGroupListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceGroupListRequest::getSuperGroupId()const
 void QueryDeviceGroupListRequest::setSuperGroupId(const std::string& superGroupId)
 {
 	superGroupId_ = superGroupId;
-	setCoreParameter("SuperGroupId", superGroupId);
+	setParameter("SuperGroupId", superGroupId);
 }
 
 int QueryDeviceGroupListRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int QueryDeviceGroupListRequest::getCurrentPage()const
 void QueryDeviceGroupListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceGroupListRequest::getGroupName()const
@@ -55,7 +57,7 @@ std::string QueryDeviceGroupListRequest::getGroupName()const
 void QueryDeviceGroupListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string QueryDeviceGroupListRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceGroupListRequest::getAccessKeyId()const
 void QueryDeviceGroupListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceGroupListRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string QueryDeviceGroupListRequest::getIotInstanceId()const
 void QueryDeviceGroupListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceGroupListRequest::getPageSize()const
@@ -88,6 +90,6 @@ int QueryDeviceGroupListRequest::getPageSize()const
 void QueryDeviceGroupListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

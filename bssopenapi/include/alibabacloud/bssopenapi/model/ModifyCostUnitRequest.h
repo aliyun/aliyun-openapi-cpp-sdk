@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_BSSOPENAPI_EXPORT ModifyCostUnitRequest : public RpcServiceRequest
 			{
+			public:
 				struct UnitEntityList
 				{
 					std::string newUnitName;

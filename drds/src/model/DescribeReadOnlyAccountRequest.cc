@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeReadOnlyAccountRequest;
 
 DescribeReadOnlyAccountRequest::DescribeReadOnlyAccountRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeReadOnlyAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeReadOnlyAccountRequest::~DescribeReadOnlyAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeReadOnlyAccountRequest::getDrdsInstanceId()const
 void DescribeReadOnlyAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeReadOnlyAccountRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeReadOnlyAccountRequest::getAccessKeyId()const
 void DescribeReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeReadOnlyAccountRequest::getDbName()const
@@ -55,6 +57,6 @@ std::string DescribeReadOnlyAccountRequest::getDbName()const
 void DescribeReadOnlyAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

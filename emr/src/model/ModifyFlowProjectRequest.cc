@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowProjectRequest;
 
 ModifyFlowProjectRequest::ModifyFlowProjectRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowProjectRequest::~ModifyFlowProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyFlowProjectRequest::getDescription()const
 void ModifyFlowProjectRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyFlowProjectRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ModifyFlowProjectRequest::getRegionId()const
 void ModifyFlowProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowProjectRequest::getName()const
@@ -55,7 +57,7 @@ std::string ModifyFlowProjectRequest::getName()const
 void ModifyFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyFlowProjectRequest::getProjectId()const
@@ -66,6 +68,6 @@ std::string ModifyFlowProjectRequest::getProjectId()const
 void ModifyFlowProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

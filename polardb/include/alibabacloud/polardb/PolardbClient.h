@@ -66,10 +66,14 @@
 #include "model/DescribeDBClusterAccessWhitelistResult.h"
 #include "model/DescribeDBClusterAttributeRequest.h"
 #include "model/DescribeDBClusterAttributeResult.h"
+#include "model/DescribeDBClusterAvailableResourcesRequest.h"
+#include "model/DescribeDBClusterAvailableResourcesResult.h"
 #include "model/DescribeDBClusterEndpointsRequest.h"
 #include "model/DescribeDBClusterEndpointsResult.h"
 #include "model/DescribeDBClusterMigrationRequest.h"
 #include "model/DescribeDBClusterMigrationResult.h"
+#include "model/DescribeDBClusterMonitorRequest.h"
+#include "model/DescribeDBClusterMonitorResult.h"
 #include "model/DescribeDBClusterParametersRequest.h"
 #include "model/DescribeDBClusterParametersResult.h"
 #include "model/DescribeDBClusterPerformanceRequest.h"
@@ -112,6 +116,8 @@
 #include "model/ModifyDBClusterMaintainTimeResult.h"
 #include "model/ModifyDBClusterMigrationRequest.h"
 #include "model/ModifyDBClusterMigrationResult.h"
+#include "model/ModifyDBClusterMonitorRequest.h"
+#include "model/ModifyDBClusterMonitorResult.h"
 #include "model/ModifyDBClusterParametersRequest.h"
 #include "model/ModifyDBClusterParametersResult.h"
 #include "model/ModifyDBClusterSSLRequest.h"
@@ -207,12 +213,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterAttributeResult> DescribeDBClusterAttributeOutcome;
 			typedef std::future<DescribeDBClusterAttributeOutcome> DescribeDBClusterAttributeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAttributeRequest&, const DescribeDBClusterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterAvailableResourcesResult> DescribeDBClusterAvailableResourcesOutcome;
+			typedef std::future<DescribeDBClusterAvailableResourcesOutcome> DescribeDBClusterAvailableResourcesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAvailableResourcesRequest&, const DescribeDBClusterAvailableResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAvailableResourcesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterEndpointsResult> DescribeDBClusterEndpointsOutcome;
 			typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterEndpointsRequest&, const DescribeDBClusterEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterEndpointsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterMigrationResult> DescribeDBClusterMigrationOutcome;
 			typedef std::future<DescribeDBClusterMigrationOutcome> DescribeDBClusterMigrationOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterMigrationRequest&, const DescribeDBClusterMigrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterMigrationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterMonitorResult> DescribeDBClusterMonitorOutcome;
+			typedef std::future<DescribeDBClusterMonitorOutcome> DescribeDBClusterMonitorOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterMonitorRequest&, const DescribeDBClusterMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterMonitorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterParametersResult> DescribeDBClusterParametersOutcome;
 			typedef std::future<DescribeDBClusterParametersOutcome> DescribeDBClusterParametersOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterParametersRequest&, const DescribeDBClusterParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterParametersAsyncHandler;
@@ -276,6 +288,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBClusterMigrationResult> ModifyDBClusterMigrationOutcome;
 			typedef std::future<ModifyDBClusterMigrationOutcome> ModifyDBClusterMigrationOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterMigrationRequest&, const ModifyDBClusterMigrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterMigrationAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterMonitorResult> ModifyDBClusterMonitorOutcome;
+			typedef std::future<ModifyDBClusterMonitorOutcome> ModifyDBClusterMonitorOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterMonitorRequest&, const ModifyDBClusterMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterMonitorAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterParametersResult> ModifyDBClusterParametersOutcome;
 			typedef std::future<ModifyDBClusterParametersOutcome> ModifyDBClusterParametersOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterParametersRequest&, const ModifyDBClusterParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterParametersAsyncHandler;
@@ -377,12 +392,18 @@ namespace AlibabaCloud
 			DescribeDBClusterAttributeOutcome describeDBClusterAttribute(const Model::DescribeDBClusterAttributeRequest &request)const;
 			void describeDBClusterAttributeAsync(const Model::DescribeDBClusterAttributeRequest& request, const DescribeDBClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAttributeOutcomeCallable describeDBClusterAttributeCallable(const Model::DescribeDBClusterAttributeRequest& request) const;
+			DescribeDBClusterAvailableResourcesOutcome describeDBClusterAvailableResources(const Model::DescribeDBClusterAvailableResourcesRequest &request)const;
+			void describeDBClusterAvailableResourcesAsync(const Model::DescribeDBClusterAvailableResourcesRequest& request, const DescribeDBClusterAvailableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterAvailableResourcesOutcomeCallable describeDBClusterAvailableResourcesCallable(const Model::DescribeDBClusterAvailableResourcesRequest& request) const;
 			DescribeDBClusterEndpointsOutcome describeDBClusterEndpoints(const Model::DescribeDBClusterEndpointsRequest &request)const;
 			void describeDBClusterEndpointsAsync(const Model::DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterEndpointsOutcomeCallable describeDBClusterEndpointsCallable(const Model::DescribeDBClusterEndpointsRequest& request) const;
 			DescribeDBClusterMigrationOutcome describeDBClusterMigration(const Model::DescribeDBClusterMigrationRequest &request)const;
 			void describeDBClusterMigrationAsync(const Model::DescribeDBClusterMigrationRequest& request, const DescribeDBClusterMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterMigrationOutcomeCallable describeDBClusterMigrationCallable(const Model::DescribeDBClusterMigrationRequest& request) const;
+			DescribeDBClusterMonitorOutcome describeDBClusterMonitor(const Model::DescribeDBClusterMonitorRequest &request)const;
+			void describeDBClusterMonitorAsync(const Model::DescribeDBClusterMonitorRequest& request, const DescribeDBClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterMonitorOutcomeCallable describeDBClusterMonitorCallable(const Model::DescribeDBClusterMonitorRequest& request) const;
 			DescribeDBClusterParametersOutcome describeDBClusterParameters(const Model::DescribeDBClusterParametersRequest &request)const;
 			void describeDBClusterParametersAsync(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterParametersOutcomeCallable describeDBClusterParametersCallable(const Model::DescribeDBClusterParametersRequest& request) const;
@@ -446,6 +467,9 @@ namespace AlibabaCloud
 			ModifyDBClusterMigrationOutcome modifyDBClusterMigration(const Model::ModifyDBClusterMigrationRequest &request)const;
 			void modifyDBClusterMigrationAsync(const Model::ModifyDBClusterMigrationRequest& request, const ModifyDBClusterMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterMigrationOutcomeCallable modifyDBClusterMigrationCallable(const Model::ModifyDBClusterMigrationRequest& request) const;
+			ModifyDBClusterMonitorOutcome modifyDBClusterMonitor(const Model::ModifyDBClusterMonitorRequest &request)const;
+			void modifyDBClusterMonitorAsync(const Model::ModifyDBClusterMonitorRequest& request, const ModifyDBClusterMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterMonitorOutcomeCallable modifyDBClusterMonitorCallable(const Model::ModifyDBClusterMonitorRequest& request) const;
 			ModifyDBClusterParametersOutcome modifyDBClusterParameters(const Model::ModifyDBClusterParametersRequest &request)const;
 			void modifyDBClusterParametersAsync(const Model::ModifyDBClusterParametersRequest& request, const ModifyDBClusterParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterParametersOutcomeCallable modifyDBClusterParametersCallable(const Model::ModifyDBClusterParametersRequest& request) const;

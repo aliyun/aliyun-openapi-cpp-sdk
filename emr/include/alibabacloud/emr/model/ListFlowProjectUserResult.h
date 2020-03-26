@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string ownerId;
 					long gmtModified;
 					std::string projectId;
+					std::string accountUserId;
 				};
 
 

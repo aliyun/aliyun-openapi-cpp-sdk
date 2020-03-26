@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryArtExtensionRequest;
 
 QueryArtExtensionRequest::QueryArtExtensionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryArtExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryArtExtensionRequest::~QueryArtExtensionRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryArtExtensionRequest::getDomainName()const
 void QueryArtExtensionRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryArtExtensionRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryArtExtensionRequest::getUserClientIp()const
 void QueryArtExtensionRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryArtExtensionRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryArtExtensionRequest::getLang()const
 void QueryArtExtensionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

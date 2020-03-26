@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::RestoreSecretRequest;
 RestoreSecretRequest::RestoreSecretRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "RestoreSecret")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 RestoreSecretRequest::~RestoreSecretRequest()

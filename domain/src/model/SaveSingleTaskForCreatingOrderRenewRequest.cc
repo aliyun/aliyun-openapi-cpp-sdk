@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCreatingOrderRenewRequest;
 
 SaveSingleTaskForCreatingOrderRenewRequest::SaveSingleTaskForCreatingOrderRenewRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCreatingOrderRenewRequest::~SaveSingleTaskForCreatingOrderRenewRequest()
 {}
@@ -33,7 +35,7 @@ int SaveSingleTaskForCreatingOrderRenewRequest::getSubscriptionDuration()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setSubscriptionDuration(int subscriptionDuration)
 {
 	subscriptionDuration_ = subscriptionDuration;
-	setCoreParameter("SubscriptionDuration", std::to_string(subscriptionDuration));
+	setParameter("SubscriptionDuration", std::to_string(subscriptionDuration));
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getCouponNo()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getCouponNo()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 long SaveSingleTaskForCreatingOrderRenewRequest::getCurrentExpirationDate()const
@@ -55,7 +57,7 @@ long SaveSingleTaskForCreatingOrderRenewRequest::getCurrentExpirationDate()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setCurrentExpirationDate(long currentExpirationDate)
 {
 	currentExpirationDate_ = currentExpirationDate;
-	setCoreParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
+	setParameter("CurrentExpirationDate", std::to_string(currentExpirationDate));
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getLang()const
@@ -66,7 +68,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getLang()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getDomainName()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 bool SaveSingleTaskForCreatingOrderRenewRequest::getUseCoupon()const
@@ -88,7 +90,7 @@ bool SaveSingleTaskForCreatingOrderRenewRequest::getUseCoupon()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getPromotionNo()const
@@ -99,7 +101,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getPromotionNo()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 std::string SaveSingleTaskForCreatingOrderRenewRequest::getUserClientIp()const
@@ -110,7 +112,7 @@ std::string SaveSingleTaskForCreatingOrderRenewRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 bool SaveSingleTaskForCreatingOrderRenewRequest::getUsePromotion()const
@@ -121,6 +123,6 @@ bool SaveSingleTaskForCreatingOrderRenewRequest::getUsePromotion()const
 void SaveSingleTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

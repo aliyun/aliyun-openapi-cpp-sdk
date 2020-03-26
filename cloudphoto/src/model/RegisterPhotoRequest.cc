@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RegisterPhotoRequest;
 
 RegisterPhotoRequest::RegisterPhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RegisterPhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterPhotoRequest::~RegisterPhotoRequest()
 {}
@@ -33,7 +35,7 @@ float RegisterPhotoRequest::getLatitude()const
 void RegisterPhotoRequest::setLatitude(float latitude)
 {
 	latitude_ = latitude;
-	setCoreParameter("Latitude", std::to_string(latitude));
+	setParameter("Latitude", std::to_string(latitude));
 }
 
 std::string RegisterPhotoRequest::getPhotoTitle()const
@@ -44,7 +46,7 @@ std::string RegisterPhotoRequest::getPhotoTitle()const
 void RegisterPhotoRequest::setPhotoTitle(const std::string& photoTitle)
 {
 	photoTitle_ = photoTitle;
-	setCoreParameter("PhotoTitle", photoTitle);
+	setParameter("PhotoTitle", photoTitle);
 }
 
 std::string RegisterPhotoRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string RegisterPhotoRequest::getStoreName()const
 void RegisterPhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string RegisterPhotoRequest::getIsVideo()const
@@ -66,7 +68,7 @@ std::string RegisterPhotoRequest::getIsVideo()const
 void RegisterPhotoRequest::setIsVideo(const std::string& isVideo)
 {
 	isVideo_ = isVideo;
-	setCoreParameter("IsVideo", isVideo);
+	setParameter("IsVideo", isVideo);
 }
 
 std::string RegisterPhotoRequest::getRemark()const
@@ -77,7 +79,7 @@ std::string RegisterPhotoRequest::getRemark()const
 void RegisterPhotoRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 long RegisterPhotoRequest::getTakenAt()const
@@ -88,7 +90,7 @@ long RegisterPhotoRequest::getTakenAt()const
 void RegisterPhotoRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setParameter("TakenAt", std::to_string(takenAt));
 }
 
 float RegisterPhotoRequest::getLongitude()const
@@ -99,7 +101,7 @@ float RegisterPhotoRequest::getLongitude()const
 void RegisterPhotoRequest::setLongitude(float longitude)
 {
 	longitude_ = longitude;
-	setCoreParameter("Longitude", std::to_string(longitude));
+	setParameter("Longitude", std::to_string(longitude));
 }
 
 int RegisterPhotoRequest::getHeight()const
@@ -110,7 +112,7 @@ int RegisterPhotoRequest::getHeight()const
 void RegisterPhotoRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", std::to_string(height));
+	setParameter("Height", std::to_string(height));
 }
 
 std::string RegisterPhotoRequest::getLibraryId()const
@@ -121,7 +123,7 @@ std::string RegisterPhotoRequest::getLibraryId()const
 void RegisterPhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long RegisterPhotoRequest::getSize()const
@@ -132,7 +134,7 @@ long RegisterPhotoRequest::getSize()const
 void RegisterPhotoRequest::setSize(long size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int RegisterPhotoRequest::getWidth()const
@@ -143,7 +145,7 @@ int RegisterPhotoRequest::getWidth()const
 void RegisterPhotoRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
+	setParameter("Width", std::to_string(width));
 }
 
 std::string RegisterPhotoRequest::getLocation()const
@@ -154,7 +156,7 @@ std::string RegisterPhotoRequest::getLocation()const
 void RegisterPhotoRequest::setLocation(const std::string& location)
 {
 	location_ = location;
-	setCoreParameter("Location", location);
+	setParameter("Location", location);
 }
 
 std::string RegisterPhotoRequest::getMd5()const
@@ -165,6 +167,6 @@ std::string RegisterPhotoRequest::getMd5()const
 void RegisterPhotoRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setParameter("Md5", md5);
 }
 

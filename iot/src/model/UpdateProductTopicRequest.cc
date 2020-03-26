@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateProductTopicRequest;
 
 UpdateProductTopicRequest::UpdateProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateProductTopicRequest::~UpdateProductTopicRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateProductTopicRequest::getAccessKeyId()const
 void UpdateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateProductTopicRequest::getTopicId()const
@@ -44,7 +46,7 @@ std::string UpdateProductTopicRequest::getTopicId()const
 void UpdateProductTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setParameter("TopicId", topicId);
 }
 
 std::string UpdateProductTopicRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string UpdateProductTopicRequest::getIotInstanceId()const
 void UpdateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string UpdateProductTopicRequest::getOperation()const
@@ -66,7 +68,7 @@ std::string UpdateProductTopicRequest::getOperation()const
 void UpdateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setParameter("Operation", operation);
 }
 
 std::string UpdateProductTopicRequest::getTopicShortName()const
@@ -77,7 +79,7 @@ std::string UpdateProductTopicRequest::getTopicShortName()const
 void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setCoreParameter("TopicShortName", topicShortName);
+	setParameter("TopicShortName", topicShortName);
 }
 
 std::string UpdateProductTopicRequest::getDesc()const
@@ -88,6 +90,6 @@ std::string UpdateProductTopicRequest::getDesc()const
 void UpdateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setParameter("Desc", desc);
 }
 

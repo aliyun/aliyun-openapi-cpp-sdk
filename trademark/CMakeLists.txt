@@ -21,6 +21,8 @@ set(trademark_public_header
 	include/alibabacloud/trademark/TrademarkExport.h )
 
 set(trademark_public_header_model 
+	include/alibabacloud/trademark/model/AcceptPartnerNotificationRequest.h
+	include/alibabacloud/trademark/model/AcceptPartnerNotificationResult.h
 	include/alibabacloud/trademark/model/ApplyNotaryPostRequest.h
 	include/alibabacloud/trademark/model/ApplyNotaryPostResult.h
 	include/alibabacloud/trademark/model/BindMaterialRequest.h
@@ -29,8 +31,14 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/CancelTradeOrderResult.h
 	include/alibabacloud/trademark/model/CheckLoaFillRequest.h
 	include/alibabacloud/trademark/model/CheckLoaFillResult.h
+	include/alibabacloud/trademark/model/CheckTrademarkOrderRequest.h
+	include/alibabacloud/trademark/model/CheckTrademarkOrderResult.h
 	include/alibabacloud/trademark/model/CombineLoaRequest.h
 	include/alibabacloud/trademark/model/CombineLoaResult.h
+	include/alibabacloud/trademark/model/ConfirmAdditionalMaterialRequest.h
+	include/alibabacloud/trademark/model/ConfirmAdditionalMaterialResult.h
+	include/alibabacloud/trademark/model/ConfirmApplicantRequest.h
+	include/alibabacloud/trademark/model/ConfirmApplicantResult.h
 	include/alibabacloud/trademark/model/ConvertImageToGrayRequest.h
 	include/alibabacloud/trademark/model/ConvertImageToGrayResult.h
 	include/alibabacloud/trademark/model/CreateIntentionOrderRequest.h
@@ -43,6 +51,8 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/DeleteTmMonitorRuleResult.h
 	include/alibabacloud/trademark/model/DenySupplementRequest.h
 	include/alibabacloud/trademark/model/DenySupplementResult.h
+	include/alibabacloud/trademark/model/DescirbeCombineTrademarkRequest.h
+	include/alibabacloud/trademark/model/DescirbeCombineTrademarkResult.h
 	include/alibabacloud/trademark/model/FillLogisticsRequest.h
 	include/alibabacloud/trademark/model/FillLogisticsResult.h
 	include/alibabacloud/trademark/model/FilterUnavailableCodesRequest.h
@@ -73,12 +83,16 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/QueryIntentionDetailResult.h
 	include/alibabacloud/trademark/model/QueryIntentionListRequest.h
 	include/alibabacloud/trademark/model/QueryIntentionListResult.h
+	include/alibabacloud/trademark/model/QueryIntentionPriceRequest.h
+	include/alibabacloud/trademark/model/QueryIntentionPriceResult.h
 	include/alibabacloud/trademark/model/QueryMaterialRequest.h
 	include/alibabacloud/trademark/model/QueryMaterialResult.h
 	include/alibabacloud/trademark/model/QueryMaterialListRequest.h
 	include/alibabacloud/trademark/model/QueryMaterialListResult.h
 	include/alibabacloud/trademark/model/QueryMonitorKeywordsRequest.h
 	include/alibabacloud/trademark/model/QueryMonitorKeywordsResult.h
+	include/alibabacloud/trademark/model/QueryOfficialFileCustomListRequest.h
+	include/alibabacloud/trademark/model/QueryOfficialFileCustomListResult.h
 	include/alibabacloud/trademark/model/QueryOssResourcesRequest.h
 	include/alibabacloud/trademark/model/QueryOssResourcesResult.h
 	include/alibabacloud/trademark/model/QueryQrCodeUploadStatusRequest.h
@@ -109,8 +123,20 @@ set(trademark_public_header_model
 	include/alibabacloud/trademark/model/QueryTrademarkPriceResult.h
 	include/alibabacloud/trademark/model/RefundProduceRequest.h
 	include/alibabacloud/trademark/model/RefundProduceResult.h
+	include/alibabacloud/trademark/model/RefuseAdditionalMaterialRequest.h
+	include/alibabacloud/trademark/model/RefuseAdditionalMaterialResult.h
+	include/alibabacloud/trademark/model/RefuseApplicantRequest.h
+	include/alibabacloud/trademark/model/RefuseApplicantResult.h
+	include/alibabacloud/trademark/model/RejectApplicantRequest.h
+	include/alibabacloud/trademark/model/RejectApplicantResult.h
 	include/alibabacloud/trademark/model/SaveTaskRequest.h
 	include/alibabacloud/trademark/model/SaveTaskResult.h
+	include/alibabacloud/trademark/model/SaveTaskForOfficialFileCustomRequest.h
+	include/alibabacloud/trademark/model/SaveTaskForOfficialFileCustomResult.h
+	include/alibabacloud/trademark/model/SaveTradeMarkReviewMaterialDetailRequest.h
+	include/alibabacloud/trademark/model/SaveTradeMarkReviewMaterialDetailResult.h
+	include/alibabacloud/trademark/model/SearchTmOnsalesRequest.h
+	include/alibabacloud/trademark/model/SearchTmOnsalesResult.h
 	include/alibabacloud/trademark/model/StartNotaryRequest.h
 	include/alibabacloud/trademark/model/StartNotaryResult.h
 	include/alibabacloud/trademark/model/StoreMaterialTemporarilyRequest.h
@@ -132,6 +158,8 @@ set(trademark_public_header_model
 
 set(trademark_src 
 	src/TrademarkClient.cc
+	src/model/AcceptPartnerNotificationRequest.cc
+	src/model/AcceptPartnerNotificationResult.cc
 	src/model/ApplyNotaryPostRequest.cc
 	src/model/ApplyNotaryPostResult.cc
 	src/model/BindMaterialRequest.cc
@@ -140,8 +168,14 @@ set(trademark_src
 	src/model/CancelTradeOrderResult.cc
 	src/model/CheckLoaFillRequest.cc
 	src/model/CheckLoaFillResult.cc
+	src/model/CheckTrademarkOrderRequest.cc
+	src/model/CheckTrademarkOrderResult.cc
 	src/model/CombineLoaRequest.cc
 	src/model/CombineLoaResult.cc
+	src/model/ConfirmAdditionalMaterialRequest.cc
+	src/model/ConfirmAdditionalMaterialResult.cc
+	src/model/ConfirmApplicantRequest.cc
+	src/model/ConfirmApplicantResult.cc
 	src/model/ConvertImageToGrayRequest.cc
 	src/model/ConvertImageToGrayResult.cc
 	src/model/CreateIntentionOrderRequest.cc
@@ -154,6 +188,8 @@ set(trademark_src
 	src/model/DeleteTmMonitorRuleResult.cc
 	src/model/DenySupplementRequest.cc
 	src/model/DenySupplementResult.cc
+	src/model/DescirbeCombineTrademarkRequest.cc
+	src/model/DescirbeCombineTrademarkResult.cc
 	src/model/FillLogisticsRequest.cc
 	src/model/FillLogisticsResult.cc
 	src/model/FilterUnavailableCodesRequest.cc
@@ -184,12 +220,16 @@ set(trademark_src
 	src/model/QueryIntentionDetailResult.cc
 	src/model/QueryIntentionListRequest.cc
 	src/model/QueryIntentionListResult.cc
+	src/model/QueryIntentionPriceRequest.cc
+	src/model/QueryIntentionPriceResult.cc
 	src/model/QueryMaterialRequest.cc
 	src/model/QueryMaterialResult.cc
 	src/model/QueryMaterialListRequest.cc
 	src/model/QueryMaterialListResult.cc
 	src/model/QueryMonitorKeywordsRequest.cc
 	src/model/QueryMonitorKeywordsResult.cc
+	src/model/QueryOfficialFileCustomListRequest.cc
+	src/model/QueryOfficialFileCustomListResult.cc
 	src/model/QueryOssResourcesRequest.cc
 	src/model/QueryOssResourcesResult.cc
 	src/model/QueryQrCodeUploadStatusRequest.cc
@@ -220,8 +260,20 @@ set(trademark_src
 	src/model/QueryTrademarkPriceResult.cc
 	src/model/RefundProduceRequest.cc
 	src/model/RefundProduceResult.cc
+	src/model/RefuseAdditionalMaterialRequest.cc
+	src/model/RefuseAdditionalMaterialResult.cc
+	src/model/RefuseApplicantRequest.cc
+	src/model/RefuseApplicantResult.cc
+	src/model/RejectApplicantRequest.cc
+	src/model/RejectApplicantResult.cc
 	src/model/SaveTaskRequest.cc
 	src/model/SaveTaskResult.cc
+	src/model/SaveTaskForOfficialFileCustomRequest.cc
+	src/model/SaveTaskForOfficialFileCustomResult.cc
+	src/model/SaveTradeMarkReviewMaterialDetailRequest.cc
+	src/model/SaveTradeMarkReviewMaterialDetailResult.cc
+	src/model/SearchTmOnsalesRequest.cc
+	src/model/SearchTmOnsalesResult.cc
 	src/model/StartNotaryRequest.cc
 	src/model/StartNotaryResult.cc
 	src/model/StoreMaterialTemporarilyRequest.cc

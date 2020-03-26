@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveStaStatusRequest;
 
 SaveStaStatusRequest::SaveStaStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveStaStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveStaStatusRequest::~SaveStaStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveStaStatusRequest::getDescription()const
 void SaveStaStatusRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string SaveStaStatusRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SaveStaStatusRequest::getAccessKeyId()const
 void SaveStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SaveStaStatusRequest::getId()const
@@ -55,6 +57,6 @@ long SaveStaStatusRequest::getId()const
 void SaveStaStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

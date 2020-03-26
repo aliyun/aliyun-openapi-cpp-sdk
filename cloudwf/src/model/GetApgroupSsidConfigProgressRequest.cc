@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupSsidConfigProgressRequest;
 
 GetApgroupSsidConfigProgressRequest::GetApgroupSsidConfigProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupSsidConfigProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupSsidConfigProgressRequest::~GetApgroupSsidConfigProgressRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetApgroupSsidConfigProgressRequest::getAccessKeyId()const
 void GetApgroupSsidConfigProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetApgroupSsidConfigProgressRequest::getId()const
@@ -44,6 +46,6 @@ long GetApgroupSsidConfigProgressRequest::getId()const
 void GetApgroupSsidConfigProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

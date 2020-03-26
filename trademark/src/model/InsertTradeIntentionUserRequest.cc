@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertTradeIntentionUserRequest;
 
 InsertTradeIntentionUserRequest::InsertTradeIntentionUserRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertTradeIntentionUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertTradeIntentionUserRequest::~InsertTradeIntentionUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string InsertTradeIntentionUserRequest::getMobile()const
 void InsertTradeIntentionUserRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setParameter("Mobile", mobile);
 }
 
 std::string InsertTradeIntentionUserRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string InsertTradeIntentionUserRequest::getDescription()const
 void InsertTradeIntentionUserRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string InsertTradeIntentionUserRequest::getPartnerCode()const
@@ -55,7 +57,7 @@ std::string InsertTradeIntentionUserRequest::getPartnerCode()const
 void InsertTradeIntentionUserRequest::setPartnerCode(const std::string& partnerCode)
 {
 	partnerCode_ = partnerCode;
-	setCoreParameter("PartnerCode", partnerCode);
+	setParameter("PartnerCode", partnerCode);
 }
 
 std::string InsertTradeIntentionUserRequest::getClassification()const
@@ -66,7 +68,7 @@ std::string InsertTradeIntentionUserRequest::getClassification()const
 void InsertTradeIntentionUserRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setParameter("Classification", classification);
 }
 
 int InsertTradeIntentionUserRequest::getType()const
@@ -77,7 +79,7 @@ int InsertTradeIntentionUserRequest::getType()const
 void InsertTradeIntentionUserRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string InsertTradeIntentionUserRequest::getVcode()const
@@ -88,7 +90,7 @@ std::string InsertTradeIntentionUserRequest::getVcode()const
 void InsertTradeIntentionUserRequest::setVcode(const std::string& vcode)
 {
 	vcode_ = vcode;
-	setCoreParameter("Vcode", vcode);
+	setParameter("Vcode", vcode);
 }
 
 std::string InsertTradeIntentionUserRequest::getRegisterNumber()const
@@ -99,7 +101,7 @@ std::string InsertTradeIntentionUserRequest::getRegisterNumber()const
 void InsertTradeIntentionUserRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
+	setParameter("RegisterNumber", registerNumber);
 }
 
 std::string InsertTradeIntentionUserRequest::getUserName()const
@@ -110,6 +112,6 @@ std::string InsertTradeIntentionUserRequest::getUserName()const
 void InsertTradeIntentionUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

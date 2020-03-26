@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeConcernNecessityRequest;
 
 DescribeConcernNecessityRequest::DescribeConcernNecessityRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeConcernNecessity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConcernNecessityRequest::~DescribeConcernNecessityRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeConcernNecessityRequest::getSourceIp()const
 void DescribeConcernNecessityRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeConcernNecessityRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeConcernNecessityRequest::getLang()const
 void DescribeConcernNecessityRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

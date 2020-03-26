@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskCheckResultRequest;
 
 DescribeRiskCheckResultRequest::DescribeRiskCheckResultRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskCheckResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskCheckResultRequest::~DescribeRiskCheckResultRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRiskCheckResultRequest::getResourceOwnerId()const
 void DescribeRiskCheckResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskCheckResultRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeRiskCheckResultRequest::getSourceIp()const
 void DescribeRiskCheckResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeRiskCheckResultRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeRiskCheckResultRequest::getPageSize()const
 void DescribeRiskCheckResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRiskCheckResultRequest::getLang()const
@@ -66,7 +68,18 @@ std::string DescribeRiskCheckResultRequest::getLang()const
 void DescribeRiskCheckResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
+}
+
+std::string DescribeRiskCheckResultRequest::getAssetType()const
+{
+	return assetType_;
+}
+
+void DescribeRiskCheckResultRequest::setAssetType(const std::string& assetType)
+{
+	assetType_ = assetType;
+	setParameter("AssetType", assetType);
 }
 
 long DescribeRiskCheckResultRequest::getGroupId()const
@@ -77,7 +90,7 @@ long DescribeRiskCheckResultRequest::getGroupId()const
 void DescribeRiskCheckResultRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
@@ -88,8 +101,9 @@ std::vector<std::string> DescribeRiskCheckResultRequest::getItemIds()const
 void DescribeRiskCheckResultRequest::setItemIds(const std::vector<std::string>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), itemIds.at(i));
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++) {
+		setParameter("ItemIds."+ std::to_string(dep1), itemIds.at(dep1));
+	}
 }
 
 int DescribeRiskCheckResultRequest::getCurrentPage()const
@@ -100,7 +114,7 @@ int DescribeRiskCheckResultRequest::getCurrentPage()const
 void DescribeRiskCheckResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeRiskCheckResultRequest::getRiskLevel()const
@@ -111,7 +125,18 @@ std::string DescribeRiskCheckResultRequest::getRiskLevel()const
 void DescribeRiskCheckResultRequest::setRiskLevel(const std::string& riskLevel)
 {
 	riskLevel_ = riskLevel;
-	setCoreParameter("RiskLevel", riskLevel);
+	setParameter("RiskLevel", riskLevel);
+}
+
+std::string DescribeRiskCheckResultRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeRiskCheckResultRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeRiskCheckResultRequest::getName()const
@@ -122,7 +147,7 @@ std::string DescribeRiskCheckResultRequest::getName()const
 void DescribeRiskCheckResultRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeRiskCheckResultRequest::getStatus()const
@@ -133,6 +158,6 @@ std::string DescribeRiskCheckResultRequest::getStatus()const
 void DescribeRiskCheckResultRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

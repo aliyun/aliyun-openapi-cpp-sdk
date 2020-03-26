@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RefreshClusterResourcePoolRequest;
 
 RefreshClusterResourcePoolRequest::RefreshClusterResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RefreshClusterResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshClusterResourcePoolRequest::~RefreshClusterResourcePoolRequest()
 {}
@@ -33,7 +35,7 @@ long RefreshClusterResourcePoolRequest::getResourceOwnerId()const
 void RefreshClusterResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long RefreshClusterResourcePoolRequest::getResourcePoolId()const
@@ -44,7 +46,7 @@ long RefreshClusterResourcePoolRequest::getResourcePoolId()const
 void RefreshClusterResourcePoolRequest::setResourcePoolId(long resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
+	setParameter("ResourcePoolId", std::to_string(resourcePoolId));
 }
 
 std::string RefreshClusterResourcePoolRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string RefreshClusterResourcePoolRequest::getClusterId()const
 void RefreshClusterResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string RefreshClusterResourcePoolRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string RefreshClusterResourcePoolRequest::getAccessKeyId()const
 void RefreshClusterResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RefreshClusterResourcePoolRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string RefreshClusterResourcePoolRequest::getRegionId()const
 void RefreshClusterResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

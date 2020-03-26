@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteCdnSubscriptionRequest;
 
 DeleteCdnSubscriptionRequest::DeleteCdnSubscriptionRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteCdnSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCdnSubscriptionRequest::~DeleteCdnSubscriptionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCdnSubscriptionRequest::getSourceCode()const
 void DeleteCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteCdnSubscriptionRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DeleteCdnSubscriptionRequest::getSourceIp()const
 void DeleteCdnSubscriptionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCdnSubscriptionRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DeleteCdnSubscriptionRequest::getLang()const
 void DeleteCdnSubscriptionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DeleteCdnSubscriptionRequest::getCdnUidList()const
@@ -66,6 +68,6 @@ std::string DeleteCdnSubscriptionRequest::getCdnUidList()const
 void DeleteCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
-	setCoreParameter("CdnUidList", cdnUidList);
+	setParameter("CdnUidList", cdnUidList);
 }
 

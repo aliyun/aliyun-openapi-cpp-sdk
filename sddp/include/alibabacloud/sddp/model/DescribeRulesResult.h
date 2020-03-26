@@ -39,11 +39,16 @@ namespace AlibabaCloud
 					std::string loginName;
 					std::string description;
 					int category;
+					std::string productCode;
 					long gmtModified;
+					std::string statExpress;
+					long productId;
 					long riskLevelId;
 					std::string departName;
 					std::string name;
+					int hitTotalCount;
 					long gmtCreate;
+					int warnLevel;
 					long userId;
 					std::string content;
 					std::string displayName;

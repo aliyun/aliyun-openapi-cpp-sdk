@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteQosPolicyRequest;
 
 DeleteQosPolicyRequest::DeleteQosPolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteQosPolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteQosPolicyRequest::~DeleteQosPolicyRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteQosPolicyRequest::getResourceOwnerId()const
 void DeleteQosPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteQosPolicyRequest::getQosPolicyId()const
@@ -44,7 +46,7 @@ std::string DeleteQosPolicyRequest::getQosPolicyId()const
 void DeleteQosPolicyRequest::setQosPolicyId(const std::string& qosPolicyId)
 {
 	qosPolicyId_ = qosPolicyId;
-	setCoreParameter("QosPolicyId", qosPolicyId);
+	setParameter("QosPolicyId", qosPolicyId);
 }
 
 std::string DeleteQosPolicyRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteQosPolicyRequest::getRegionId()const
 void DeleteQosPolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteQosPolicyRequest::getQosId()const
@@ -66,7 +68,7 @@ std::string DeleteQosPolicyRequest::getQosId()const
 void DeleteQosPolicyRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string DeleteQosPolicyRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteQosPolicyRequest::getResourceOwnerAccount()const
 void DeleteQosPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteQosPolicyRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteQosPolicyRequest::getOwnerAccount()const
 void DeleteQosPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteQosPolicyRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteQosPolicyRequest::getOwnerId()const
 void DeleteQosPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

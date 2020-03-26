@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDeviceGroupRequest;
 
 DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDeviceGroupRequest::getGroupId()const
 void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteDeviceGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDeviceGroupRequest::getAccessKeyId()const
 void DeleteDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDeviceGroupRequest::getIotInstanceId()const
@@ -55,6 +57,6 @@ std::string DeleteDeviceGroupRequest::getIotInstanceId()const
 void DeleteDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

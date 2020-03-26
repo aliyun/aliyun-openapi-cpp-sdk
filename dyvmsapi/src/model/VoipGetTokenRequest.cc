@@ -35,7 +35,7 @@ long VoipGetTokenRequest::getResourceOwnerId()const
 void VoipGetTokenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VoipGetTokenRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string VoipGetTokenRequest::getAccessKeyId()const
 void VoipGetTokenRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string VoipGetTokenRequest::getVoipId()const
@@ -57,7 +57,7 @@ std::string VoipGetTokenRequest::getVoipId()const
 void VoipGetTokenRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", voipId);
+	setParameter("VoipId", voipId);
 }
 
 std::string VoipGetTokenRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string VoipGetTokenRequest::getResourceOwnerAccount()const
 void VoipGetTokenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VoipGetTokenRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long VoipGetTokenRequest::getOwnerId()const
 void VoipGetTokenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VoipGetTokenRequest::getDeviceId()const
@@ -90,7 +90,7 @@ std::string VoipGetTokenRequest::getDeviceId()const
 void VoipGetTokenRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 bool VoipGetTokenRequest::getIsCustomAccount()const
@@ -101,6 +101,6 @@ bool VoipGetTokenRequest::getIsCustomAccount()const
 void VoipGetTokenRequest::setIsCustomAccount(bool isCustomAccount)
 {
 	isCustomAccount_ = isCustomAccount;
-	setCoreParameter("IsCustomAccount", isCustomAccount ? "true" : "false");
+	setParameter("IsCustomAccount", isCustomAccount ? "true" : "false");
 }
 

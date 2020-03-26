@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryDevicesByAccountRequest;
 
 QueryDevicesByAccountRequest::QueryDevicesByAccountRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryDevicesByAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicesByAccountRequest::~QueryDevicesByAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDevicesByAccountRequest::getAccessKeyId()const
 void QueryDevicesByAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryDevicesByAccountRequest::getAppKey()const
@@ -44,7 +46,7 @@ long QueryDevicesByAccountRequest::getAppKey()const
 void QueryDevicesByAccountRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDevicesByAccountRequest::getAccount()const
@@ -55,6 +57,6 @@ std::string QueryDevicesByAccountRequest::getAccount()const
 void QueryDevicesByAccountRequest::setAccount(const std::string& account)
 {
 	account_ = account;
-	setCoreParameter("Account", account);
+	setParameter("Account", account);
 }
 

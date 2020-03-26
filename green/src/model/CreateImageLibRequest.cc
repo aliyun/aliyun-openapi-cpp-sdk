@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreateImageLibRequest;
 
 CreateImageLibRequest::CreateImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreateImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateImageLibRequest::~CreateImageLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateImageLibRequest::getServiceModule()const
 void CreateImageLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setParameter("ServiceModule", serviceModule);
 }
 
 std::string CreateImageLibRequest::getScene()const
@@ -44,7 +46,7 @@ std::string CreateImageLibRequest::getScene()const
 void CreateImageLibRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string CreateImageLibRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateImageLibRequest::getSourceIp()const
 void CreateImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 bool CreateImageLibRequest::getEnable()const
@@ -66,7 +68,7 @@ bool CreateImageLibRequest::getEnable()const
 void CreateImageLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 std::string CreateImageLibRequest::getBizTypes()const
@@ -77,7 +79,7 @@ std::string CreateImageLibRequest::getBizTypes()const
 void CreateImageLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", bizTypes);
+	setParameter("BizTypes", bizTypes);
 }
 
 std::string CreateImageLibRequest::getName()const
@@ -88,7 +90,7 @@ std::string CreateImageLibRequest::getName()const
 void CreateImageLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateImageLibRequest::getCategory()const
@@ -99,6 +101,6 @@ std::string CreateImageLibRequest::getCategory()const
 void CreateImageLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

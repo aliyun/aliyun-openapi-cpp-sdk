@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRadioConfigProgressRequest;
 
 GetGroupApRadioConfigProgressRequest::GetGroupApRadioConfigProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRadioConfigProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRadioConfigProgressRequest::~GetGroupApRadioConfigProgressRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetGroupApRadioConfigProgressRequest::getAccessKeyId()const
 void GetGroupApRadioConfigProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetGroupApRadioConfigProgressRequest::getId()const
@@ -44,6 +46,6 @@ long GetGroupApRadioConfigProgressRequest::getId()const
 void GetGroupApRadioConfigProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

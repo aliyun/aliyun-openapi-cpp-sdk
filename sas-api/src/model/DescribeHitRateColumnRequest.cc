@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeHitRateColumnRequest;
 
 DescribeHitRateColumnRequest::DescribeHitRateColumnRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeHitRateColumn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHitRateColumnRequest::~DescribeHitRateColumnRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeHitRateColumnRequest::getStartDate()const
 void DescribeHitRateColumnRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 int DescribeHitRateColumnRequest::getApiType()const
@@ -44,7 +46,7 @@ int DescribeHitRateColumnRequest::getApiType()const
 void DescribeHitRateColumnRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setParameter("ApiType", std::to_string(apiType));
 }
 
 std::string DescribeHitRateColumnRequest::getEndDate()const
@@ -55,7 +57,7 @@ std::string DescribeHitRateColumnRequest::getEndDate()const
 void DescribeHitRateColumnRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeHitRateColumnRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeHitRateColumnRequest::getSourceIp()const
 void DescribeHitRateColumnRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeHitRateColumnRequest::getHitDay()const
@@ -77,6 +79,6 @@ int DescribeHitRateColumnRequest::getHitDay()const
 void DescribeHitRateColumnRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
-	setCoreParameter("HitDay", std::to_string(hitDay));
+	setParameter("HitDay", std::to_string(hitDay));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CancelTradeOrderRequest;
 
 CancelTradeOrderRequest::CancelTradeOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CancelTradeOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelTradeOrderRequest::~CancelTradeOrderRequest()
 {}
@@ -33,6 +35,6 @@ std::string CancelTradeOrderRequest::getBizId()const
 void CancelTradeOrderRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetAccountInfoRequest;
 
 GetAccountInfoRequest::GetAccountInfoRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetAccountInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccountInfoRequest::~GetAccountInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetAccountInfoRequest::getAccessKeyId()const
 void GetAccountInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

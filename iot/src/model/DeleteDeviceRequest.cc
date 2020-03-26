@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteDeviceRequest;
 
 DeleteDeviceRequest::DeleteDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceRequest::~DeleteDeviceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDeviceRequest::getProductKey()const
 void DeleteDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string DeleteDeviceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDeviceRequest::getAccessKeyId()const
 void DeleteDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDeviceRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string DeleteDeviceRequest::getIotId()const
 void DeleteDeviceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string DeleteDeviceRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string DeleteDeviceRequest::getIotInstanceId()const
 void DeleteDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DeleteDeviceRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string DeleteDeviceRequest::getDeviceName()const
 void DeleteDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

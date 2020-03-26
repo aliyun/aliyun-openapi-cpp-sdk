@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT UpdateUserRequest : public RpcServiceRequest
 			{
+			public:
 				struct UserAccountParamList
 				{
 					std::string accountType;

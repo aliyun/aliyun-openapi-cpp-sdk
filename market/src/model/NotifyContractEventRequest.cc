@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::NotifyContractEventRequest;
 
 NotifyContractEventRequest::NotifyContractEventRequest() :
 	RpcServiceRequest("market", "2015-11-01", "NotifyContractEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyContractEventRequest::~NotifyContractEventRequest()
 {}
@@ -33,7 +35,7 @@ std::string NotifyContractEventRequest::getEventMessage()const
 void NotifyContractEventRequest::setEventMessage(const std::string& eventMessage)
 {
 	eventMessage_ = eventMessage;
-	setCoreParameter("EventMessage", eventMessage);
+	setParameter("EventMessage", eventMessage);
 }
 
 std::string NotifyContractEventRequest::getEventType()const
@@ -44,6 +46,6 @@ std::string NotifyContractEventRequest::getEventType()const
 void NotifyContractEventRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 

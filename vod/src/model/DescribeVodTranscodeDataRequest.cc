@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodTranscodeDataRequest;
 
 DescribeVodTranscodeDataRequest::DescribeVodTranscodeDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodTranscodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodTranscodeDataRequest::~DescribeVodTranscodeDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodTranscodeDataRequest::getStartTime()const
 void DescribeVodTranscodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodTranscodeDataRequest::getStorage()const
@@ -44,7 +46,7 @@ std::string DescribeVodTranscodeDataRequest::getStorage()const
 void DescribeVodTranscodeDataRequest::setStorage(const std::string& storage)
 {
 	storage_ = storage;
-	setCoreParameter("Storage", storage);
+	setParameter("Storage", storage);
 }
 
 std::string DescribeVodTranscodeDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeVodTranscodeDataRequest::getEndTime()const
 void DescribeVodTranscodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeVodTranscodeDataRequest::getSpecification()const
@@ -66,7 +68,7 @@ std::string DescribeVodTranscodeDataRequest::getSpecification()const
 void DescribeVodTranscodeDataRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", specification);
+	setParameter("Specification", specification);
 }
 
 long DescribeVodTranscodeDataRequest::getOwnerId()const
@@ -77,7 +79,18 @@ long DescribeVodTranscodeDataRequest::getOwnerId()const
 void DescribeVodTranscodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVodTranscodeDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeVodTranscodeDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
 }
 
 std::string DescribeVodTranscodeDataRequest::getRegion()const
@@ -88,6 +101,6 @@ std::string DescribeVodTranscodeDataRequest::getRegion()const
 void DescribeVodTranscodeDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

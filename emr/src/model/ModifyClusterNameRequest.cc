@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterNameRequest;
 
 ModifyClusterNameRequest::ModifyClusterNameRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterNameRequest::~ModifyClusterNameRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyClusterNameRequest::getResourceOwnerId()const
 void ModifyClusterNameRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterNameRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyClusterNameRequest::getAccessKeyId()const
 void ModifyClusterNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyClusterNameRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyClusterNameRequest::getRegionId()const
 void ModifyClusterNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterNameRequest::getName()const
@@ -66,7 +68,7 @@ std::string ModifyClusterNameRequest::getName()const
 void ModifyClusterNameRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyClusterNameRequest::getId()const
@@ -77,6 +79,6 @@ std::string ModifyClusterNameRequest::getId()const
 void ModifyClusterNameRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

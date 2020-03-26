@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeletePositionMapRequest;
 
 DeletePositionMapRequest::DeletePositionMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeletePositionMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePositionMapRequest::~DeletePositionMapRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeletePositionMapRequest::getAccessKeyId()const
 void DeletePositionMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeletePositionMapRequest::getMapId()const
@@ -44,6 +46,6 @@ long DeletePositionMapRequest::getMapId()const
 void DeletePositionMapRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setParameter("MapId", std::to_string(mapId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDeletingDnsHostRequest;
 
 SaveSingleTaskForDeletingDnsHostRequest::SaveSingleTaskForDeletingDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDeletingDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDeletingDnsHostRequest::~SaveSingleTaskForDeletingDnsHostRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getInstanceId()const
 void SaveSingleTaskForDeletingDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getDnsName()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getDnsName()const
 void SaveSingleTaskForDeletingDnsHostRequest::setDnsName(const std::string& dnsName)
 {
 	dnsName_ = dnsName;
-	setCoreParameter("DnsName", dnsName);
+	setParameter("DnsName", dnsName);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getUserClientIp()const
 void SaveSingleTaskForDeletingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDeletingDnsHostRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SaveSingleTaskForDeletingDnsHostRequest::getLang()const
 void SaveSingleTaskForDeletingDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

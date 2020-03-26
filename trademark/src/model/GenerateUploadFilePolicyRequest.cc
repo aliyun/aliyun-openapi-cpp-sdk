@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::GenerateUploadFilePolicyRequest;
 
 GenerateUploadFilePolicyRequest::GenerateUploadFilePolicyRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "GenerateUploadFilePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateUploadFilePolicyRequest::~GenerateUploadFilePolicyRequest()
 {}
@@ -33,7 +35,7 @@ std::string GenerateUploadFilePolicyRequest::getFileType()const
 void GenerateUploadFilePolicyRequest::setFileType(const std::string& fileType)
 {
 	fileType_ = fileType;
-	setCoreParameter("FileType", fileType);
+	setParameter("FileType", fileType);
 }
 
 std::string GenerateUploadFilePolicyRequest::getBizId()const
@@ -44,6 +46,6 @@ std::string GenerateUploadFilePolicyRequest::getBizId()const
 void GenerateUploadFilePolicyRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApisBySignatureRequest;
 
 DescribeApisBySignatureRequest::DescribeApisBySignatureRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApisBySignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApisBySignatureRequest::~DescribeApisBySignatureRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApisBySignatureRequest::getSignatureId()const
 void DescribeApisBySignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 int DescribeApisBySignatureRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeApisBySignatureRequest::getPageNumber()const
 void DescribeApisBySignatureRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApisBySignatureRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeApisBySignatureRequest::getAccessKeyId()const
 void DescribeApisBySignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApisBySignatureRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DescribeApisBySignatureRequest::getSecurityToken()const
 void DescribeApisBySignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApisBySignatureRequest::getPageSize()const
@@ -77,6 +79,6 @@ int DescribeApisBySignatureRequest::getPageSize()const
 void DescribeApisBySignatureRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -34,6 +34,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/ModifyInstanceRequest.h"
 #include "model/ModifyInstanceResult.h"
+#include "model/MoveResourceGroupRequest.h"
+#include "model/MoveResourceGroupResult.h"
 #include "model/ReleaseInstanceRequest.h"
 #include "model/ReleaseInstanceResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -65,6 +67,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyInstanceResult> ModifyInstanceOutcome;
 			typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
 			typedef std::function<void(const HsmClient*, const Model::ModifyInstanceRequest&, const ModifyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+			typedef Outcome<Error, Model::MoveResourceGroupResult> MoveResourceGroupOutcome;
+			typedef std::future<MoveResourceGroupOutcome> MoveResourceGroupOutcomeCallable;
+			typedef std::function<void(const HsmClient*, const Model::MoveResourceGroupRequest&, const MoveResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstanceResult> ReleaseInstanceOutcome;
 			typedef std::future<ReleaseInstanceOutcome> ReleaseInstanceOutcomeCallable;
 			typedef std::function<void(const HsmClient*, const Model::ReleaseInstanceRequest&, const ReleaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstanceAsyncHandler;
@@ -94,6 +99,9 @@ namespace AlibabaCloud
 			ModifyInstanceOutcome modifyInstance(const Model::ModifyInstanceRequest &request)const;
 			void modifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceOutcomeCallable modifyInstanceCallable(const Model::ModifyInstanceRequest& request) const;
+			MoveResourceGroupOutcome moveResourceGroup(const Model::MoveResourceGroupRequest &request)const;
+			void moveResourceGroupAsync(const Model::MoveResourceGroupRequest& request, const MoveResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MoveResourceGroupOutcomeCallable moveResourceGroupCallable(const Model::MoveResourceGroupRequest& request) const;
 			ReleaseInstanceOutcome releaseInstance(const Model::ReleaseInstanceRequest &request)const;
 			void releaseInstanceAsync(const Model::ReleaseInstanceRequest& request, const ReleaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstanceOutcomeCallable releaseInstanceCallable(const Model::ReleaseInstanceRequest& request) const;

@@ -44,7 +44,7 @@ void DescribeColumnsResult::parse(const std::string &payload)
 	{
 		Column itemsObject;
 		if(!valueItemsColumn["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsColumn["Id"].asString());
+			itemsObject.id = valueItemsColumn["Id"].asString();
 		if(!valueItemsColumn["Name"].isNull())
 			itemsObject.name = valueItemsColumn["Name"].asString();
 		if(!valueItemsColumn["InstanceId"].isNull())

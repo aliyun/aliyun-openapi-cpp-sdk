@@ -35,6 +35,6 @@ std::string DeleteMetricRuleTemplateRequest::getTemplateId()const
 void DeleteMetricRuleTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 

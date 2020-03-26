@@ -35,7 +35,7 @@ std::string DescribeSiteMonitorDataRequest::getPeriod()const
 void DescribeSiteMonitorDataRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 int DescribeSiteMonitorDataRequest::getLength()const
@@ -46,7 +46,7 @@ int DescribeSiteMonitorDataRequest::getLength()const
 void DescribeSiteMonitorDataRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string DescribeSiteMonitorDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeSiteMonitorDataRequest::getEndTime()const
 void DescribeSiteMonitorDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSiteMonitorDataRequest::getStartTime()const
@@ -68,7 +68,7 @@ std::string DescribeSiteMonitorDataRequest::getStartTime()const
 void DescribeSiteMonitorDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSiteMonitorDataRequest::getType()const
@@ -79,7 +79,7 @@ std::string DescribeSiteMonitorDataRequest::getType()const
 void DescribeSiteMonitorDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeSiteMonitorDataRequest::getNextToken()const
@@ -90,7 +90,7 @@ std::string DescribeSiteMonitorDataRequest::getNextToken()const
 void DescribeSiteMonitorDataRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::string DescribeSiteMonitorDataRequest::getMetricName()const
@@ -101,7 +101,7 @@ std::string DescribeSiteMonitorDataRequest::getMetricName()const
 void DescribeSiteMonitorDataRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeSiteMonitorDataRequest::getTaskId()const
@@ -112,6 +112,6 @@ std::string DescribeSiteMonitorDataRequest::getTaskId()const
 void DescribeSiteMonitorDataRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

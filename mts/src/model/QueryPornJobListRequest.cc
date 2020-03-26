@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryPornJobListRequest;
 
 QueryPornJobListRequest::QueryPornJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryPornJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPornJobListRequest::~QueryPornJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryPornJobListRequest::getResourceOwnerId()const
 void QueryPornJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryPornJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryPornJobListRequest::getResourceOwnerAccount()const
 void QueryPornJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryPornJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryPornJobListRequest::getOwnerAccount()const
 void QueryPornJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryPornJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryPornJobListRequest::getOwnerId()const
 void QueryPornJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryPornJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryPornJobListRequest::getAccessKeyId()const
 void QueryPornJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryPornJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryPornJobListRequest::getJobIds()const
 void QueryPornJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

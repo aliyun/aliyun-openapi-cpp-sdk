@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceRunSummaryRequest;
 
 GetInstanceRunSummaryRequest::GetInstanceRunSummaryRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/runsummary");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceRunSummaryRequest::~GetInstanceRunSummaryRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceRunSummaryRequest::getProjectName()const
 void GetInstanceRunSummaryRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceRunSummaryRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceRunSummaryRequest::getInstanceId()const
 void GetInstanceRunSummaryRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceRunSummaryRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceRunSummaryRequest::getRegionId()const
 void GetInstanceRunSummaryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceRunSummaryRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceRunSummaryRequest::getJobName()const
 void GetInstanceRunSummaryRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

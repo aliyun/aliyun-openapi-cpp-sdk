@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiRequest;
 
 DescribeApiRequest::DescribeApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiRequest::~DescribeApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiRequest::getGroupId()const
 void DescribeApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiRequest::getAccessKeyId()const
@@ -44,7 +46,18 @@ std::string DescribeApiRequest::getAccessKeyId()const
 void DescribeApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiRequest::getResourceOwnerToken()const
+{
+	return resourceOwnerToken_;
+}
+
+void DescribeApiRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
+{
+	resourceOwnerToken_ = resourceOwnerToken;
+	setParameter("ResourceOwnerToken", resourceOwnerToken);
 }
 
 std::string DescribeApiRequest::getSecurityToken()const
@@ -55,7 +68,7 @@ std::string DescribeApiRequest::getSecurityToken()const
 void DescribeApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiRequest::getApiId()const
@@ -66,6 +79,6 @@ std::string DescribeApiRequest::getApiId()const
 void DescribeApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

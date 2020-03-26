@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListIvrTrackingDetailRequest;
 
 ListIvrTrackingDetailRequest::ListIvrTrackingDetailRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListIvrTrackingDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListIvrTrackingDetailRequest::~ListIvrTrackingDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListIvrTrackingDetailRequest::getContactId()const
 void ListIvrTrackingDetailRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 long ListIvrTrackingDetailRequest::getStartTime()const
@@ -44,7 +46,7 @@ long ListIvrTrackingDetailRequest::getStartTime()const
 void ListIvrTrackingDetailRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 long ListIvrTrackingDetailRequest::getStopTime()const
@@ -55,7 +57,7 @@ long ListIvrTrackingDetailRequest::getStopTime()const
 void ListIvrTrackingDetailRequest::setStopTime(long stopTime)
 {
 	stopTime_ = stopTime;
-	setCoreParameter("StopTime", std::to_string(stopTime));
+	setParameter("StopTime", std::to_string(stopTime));
 }
 
 int ListIvrTrackingDetailRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int ListIvrTrackingDetailRequest::getPageNumber()const
 void ListIvrTrackingDetailRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListIvrTrackingDetailRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListIvrTrackingDetailRequest::getAccessKeyId()const
 void ListIvrTrackingDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListIvrTrackingDetailRequest::getCallingNumber()const
@@ -88,7 +90,7 @@ std::string ListIvrTrackingDetailRequest::getCallingNumber()const
 void ListIvrTrackingDetailRequest::setCallingNumber(const std::string& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
+	setParameter("CallingNumber", callingNumber);
 }
 
 std::string ListIvrTrackingDetailRequest::getInstanceId()const
@@ -99,7 +101,7 @@ std::string ListIvrTrackingDetailRequest::getInstanceId()const
 void ListIvrTrackingDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListIvrTrackingDetailRequest::getCalledNumber()const
@@ -110,7 +112,7 @@ std::string ListIvrTrackingDetailRequest::getCalledNumber()const
 void ListIvrTrackingDetailRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setParameter("CalledNumber", calledNumber);
 }
 
 int ListIvrTrackingDetailRequest::getPageSize()const
@@ -121,6 +123,6 @@ int ListIvrTrackingDetailRequest::getPageSize()const
 void ListIvrTrackingDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

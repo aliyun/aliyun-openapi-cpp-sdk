@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamRecordContentRequest;
 
 DescribeLiveStreamRecordContentRequest::DescribeLiveStreamRecordContentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamRecordContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamRecordContentRequest::~DescribeLiveStreamRecordContentRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamRecordContentRequest::getStartTime()const
 void DescribeLiveStreamRecordContentRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveStreamRecordContentRequest::getAppName()const
 void DescribeLiveStreamRecordContentRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeLiveStreamRecordContentRequest::getSecurityToken()const
 void DescribeLiveStreamRecordContentRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getStreamName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveStreamRecordContentRequest::getStreamName()const
 void DescribeLiveStreamRecordContentRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string DescribeLiveStreamRecordContentRequest::getDomainName()const
 void DescribeLiveStreamRecordContentRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
@@ -88,7 +90,7 @@ std::string DescribeLiveStreamRecordContentRequest::getEndTime()const
 void DescribeLiveStreamRecordContentRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveStreamRecordContentRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DescribeLiveStreamRecordContentRequest::getOwnerId()const
 void DescribeLiveStreamRecordContentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

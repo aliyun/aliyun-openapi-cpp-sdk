@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListAppInfoRequest;
 
 ListAppInfoRequest::ListAppInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAppInfoRequest::~ListAppInfoRequest()
 {}
@@ -33,7 +35,7 @@ long ListAppInfoRequest::getResourceOwnerId()const
 void ListAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListAppInfoRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long ListAppInfoRequest::getResourceRealOwnerId()const
 void ListAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string ListAppInfoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListAppInfoRequest::getAccessKeyId()const
 void ListAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListAppInfoRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListAppInfoRequest::getPageSize()const
 void ListAppInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAppInfoRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ListAppInfoRequest::getResourceOwnerAccount()const
 void ListAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ListAppInfoRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long ListAppInfoRequest::getOwnerId()const
 void ListAppInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListAppInfoRequest::getPageNo()const
@@ -99,7 +101,7 @@ int ListAppInfoRequest::getPageNo()const
 void ListAppInfoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListAppInfoRequest::getStatus()const
@@ -110,6 +112,6 @@ std::string ListAppInfoRequest::getStatus()const
 void ListAppInfoRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

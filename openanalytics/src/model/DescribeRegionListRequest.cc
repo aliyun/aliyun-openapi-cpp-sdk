@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::DescribeRegionListRequest;
 
 DescribeRegionListRequest::DescribeRegionListRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "DescribeRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionListRequest::~DescribeRegionListRequest()
 {}

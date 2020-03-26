@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DeleteEventRuleTargetsRequest;
 DeleteEventRuleTargetsRequest::DeleteEventRuleTargetsRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DeleteEventRuleTargets")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteEventRuleTargetsRequest::~DeleteEventRuleTargetsRequest()
@@ -35,7 +35,7 @@ std::string DeleteEventRuleTargetsRequest::getRuleName()const
 void DeleteEventRuleTargetsRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::vector<std::string> DeleteEventRuleTargetsRequest::getIds()const
@@ -47,7 +47,7 @@ void DeleteEventRuleTargetsRequest::setIds(const std::vector<std::string>& ids)
 {
 	ids_ = ids;
 	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
-		setCoreParameter("Ids."+ std::to_string(dep1), ids.at(dep1));
+		setParameter("Ids."+ std::to_string(dep1), ids.at(dep1));
 	}
 }
 

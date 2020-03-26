@@ -77,6 +77,8 @@ void DescribeAllDataSourceResult::parse(const std::string &payload)
 			columnsObject.type = valueColumnsColumn["Type"].asString();
 		if(!valueColumnsColumn["PrimaryKey"].isNull())
 			columnsObject.primaryKey = valueColumnsColumn["PrimaryKey"].asString() == "true";
+		if(!valueColumnsColumn["AutoIncrementColumn"].isNull())
+			columnsObject.autoIncrementColumn = valueColumnsColumn["AutoIncrementColumn"].asString() == "true";
 		columns_.push_back(columnsObject);
 	}
 

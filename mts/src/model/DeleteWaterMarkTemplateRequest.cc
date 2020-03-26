@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteWaterMarkTemplateRequest;
 
 DeleteWaterMarkTemplateRequest::DeleteWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWaterMarkTemplateRequest::~DeleteWaterMarkTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteWaterMarkTemplateRequest::getResourceOwnerId()const
 void DeleteWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void DeleteWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteWaterMarkTemplateRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteWaterMarkTemplateRequest::getOwnerAccount()const
 void DeleteWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteWaterMarkTemplateRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteWaterMarkTemplateRequest::getOwnerId()const
 void DeleteWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteWaterMarkTemplateRequest::getWaterMarkTemplateId()const
@@ -77,7 +79,7 @@ std::string DeleteWaterMarkTemplateRequest::getWaterMarkTemplateId()const
 void DeleteWaterMarkTemplateRequest::setWaterMarkTemplateId(const std::string& waterMarkTemplateId)
 {
 	waterMarkTemplateId_ = waterMarkTemplateId;
-	setCoreParameter("WaterMarkTemplateId", waterMarkTemplateId);
+	setParameter("WaterMarkTemplateId", waterMarkTemplateId);
 }
 
 std::string DeleteWaterMarkTemplateRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string DeleteWaterMarkTemplateRequest::getAccessKeyId()const
 void DeleteWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

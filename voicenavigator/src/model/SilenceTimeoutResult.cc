@@ -39,25 +39,25 @@ void SilenceTimeoutResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TextResponse"].isNull())
-		textResponse_ = value["TextResponse"].asString();
-	if(!value["Interruptible"].isNull())
-		interruptible_ = value["Interruptible"].asString() == "true";
 	if(!value["Action"].isNull())
 		action_ = value["Action"].asString();
 	if(!value["ActionParams"].isNull())
 		actionParams_ = value["ActionParams"].asString();
+	if(!value["Interruptible"].isNull())
+		interruptible_ = value["Interruptible"].asString() == "true";
+	if(!value["TextResponse"].isNull())
+		textResponse_ = value["TextResponse"].asString();
 
-}
-
-bool SilenceTimeoutResult::getInterruptible()const
-{
-	return interruptible_;
 }
 
 std::string SilenceTimeoutResult::getAction()const
 {
 	return action_;
+}
+
+bool SilenceTimeoutResult::getInterruptible()const
+{
+	return interruptible_;
 }
 
 std::string SilenceTimeoutResult::getActionParams()const

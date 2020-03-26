@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesForUserRequest;
 
 ListPoliciesForUserRequest::ListPoliciesForUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPoliciesForUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesForUserRequest::~ListPoliciesForUserRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListPoliciesForUserRequest::getUserName()const
 void ListPoliciesForUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

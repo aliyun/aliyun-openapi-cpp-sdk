@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DeleteVServerGroupRequest;
 
 DeleteVServerGroupRequest::DeleteVServerGroupRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DeleteVServerGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVServerGroupRequest::~DeleteVServerGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteVServerGroupRequest::getAccess_key_id()const
 void DeleteVServerGroupRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DeleteVServerGroupRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DeleteVServerGroupRequest::getResourceOwnerId()const
 void DeleteVServerGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVServerGroupRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteVServerGroupRequest::getRegionId()const
 void DeleteVServerGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteVServerGroupRequest::getVServerGroupId()const
@@ -66,7 +68,7 @@ std::string DeleteVServerGroupRequest::getVServerGroupId()const
 void DeleteVServerGroupRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setParameter("VServerGroupId", vServerGroupId);
 }
 
 std::string DeleteVServerGroupRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteVServerGroupRequest::getResourceOwnerAccount()const
 void DeleteVServerGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVServerGroupRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteVServerGroupRequest::getOwnerAccount()const
 void DeleteVServerGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteVServerGroupRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeleteVServerGroupRequest::getOwnerId()const
 void DeleteVServerGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVServerGroupRequest::getTags()const
@@ -110,6 +112,6 @@ std::string DeleteVServerGroupRequest::getTags()const
 void DeleteVServerGroupRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

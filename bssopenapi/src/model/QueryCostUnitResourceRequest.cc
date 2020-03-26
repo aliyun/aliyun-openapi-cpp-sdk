@@ -35,7 +35,7 @@ int QueryCostUnitResourceRequest::getPageNum()const
 void QueryCostUnitResourceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryCostUnitResourceRequest::getPageSize()const
@@ -46,7 +46,7 @@ int QueryCostUnitResourceRequest::getPageSize()const
 void QueryCostUnitResourceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryCostUnitResourceRequest::getUnitId()const
@@ -57,7 +57,7 @@ long QueryCostUnitResourceRequest::getUnitId()const
 void QueryCostUnitResourceRequest::setUnitId(long unitId)
 {
 	unitId_ = unitId;
-	setCoreParameter("UnitId", std::to_string(unitId));
+	setParameter("UnitId", std::to_string(unitId));
 }
 
 long QueryCostUnitResourceRequest::getOwnerUid()const
@@ -68,6 +68,6 @@ long QueryCostUnitResourceRequest::getOwnerUid()const
 void QueryCostUnitResourceRequest::setOwnerUid(long ownerUid)
 {
 	ownerUid_ = ownerUid;
-	setCoreParameter("OwnerUid", std::to_string(ownerUid));
+	setParameter("OwnerUid", std::to_string(ownerUid));
 }
 

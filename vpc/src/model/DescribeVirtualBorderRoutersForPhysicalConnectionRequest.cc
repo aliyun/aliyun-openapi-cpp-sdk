@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVirtualBorderRoutersForPhysicalConnectio
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::DescribeVirtualBorderRoutersForPhysicalConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVirtualBorderRoutersForPhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVirtualBorderRoutersForPhysicalConnectionRequest::~DescribeVirtualBorderRoutersForPhysicalConnectionRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerI
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageNumber()con
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getRegionI
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPageSize()const
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getResourc
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getOwnerId()const
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribeVirtualBorderRoutersForPhysicalConnectionRequest::Filter> DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getFilter()const
@@ -99,12 +101,13 @@ std::vector<DescribeVirtualBorderRoutersForPhysicalConnectionRequest::Filter> De
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 
@@ -116,6 +119,6 @@ std::string DescribeVirtualBorderRoutersForPhysicalConnectionRequest::getPhysica
 void DescribeVirtualBorderRoutersForPhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

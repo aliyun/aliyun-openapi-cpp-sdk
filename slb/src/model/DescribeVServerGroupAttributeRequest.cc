@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeVServerGroupAttributeRequest;
 
 DescribeVServerGroupAttributeRequest::DescribeVServerGroupAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeVServerGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVServerGroupAttributeRequest::~DescribeVServerGroupAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVServerGroupAttributeRequest::getAccess_key_id()const
 void DescribeVServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeVServerGroupAttributeRequest::getResourceOwnerId()const
 void DescribeVServerGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVServerGroupAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeVServerGroupAttributeRequest::getRegionId()const
 void DescribeVServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
@@ -66,7 +68,7 @@ std::string DescribeVServerGroupAttributeRequest::getVServerGroupId()const
 void DescribeVServerGroupAttributeRequest::setVServerGroupId(const std::string& vServerGroupId)
 {
 	vServerGroupId_ = vServerGroupId;
-	setCoreParameter("VServerGroupId", vServerGroupId);
+	setParameter("VServerGroupId", vServerGroupId);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeVServerGroupAttributeRequest::getResourceOwnerAccount()const
 void DescribeVServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeVServerGroupAttributeRequest::getOwnerAccount()const
 void DescribeVServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVServerGroupAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeVServerGroupAttributeRequest::getOwnerId()const
 void DescribeVServerGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVServerGroupAttributeRequest::getTags()const
@@ -110,6 +112,6 @@ std::string DescribeVServerGroupAttributeRequest::getTags()const
 void DescribeVServerGroupAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

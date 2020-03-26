@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySkillGroupRequest;
 
 ModifySkillGroupRequest::ModifySkillGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySkillGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySkillGroupRequest::~ModifySkillGroupRequest()
 {}
@@ -33,7 +35,7 @@ bool ModifySkillGroupRequest::getAllowPrivateOutboundNumber()const
 void ModifySkillGroupRequest::setAllowPrivateOutboundNumber(bool allowPrivateOutboundNumber)
 {
 	allowPrivateOutboundNumber_ = allowPrivateOutboundNumber;
-	setCoreParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
+	setParameter("AllowPrivateOutboundNumber", allowPrivateOutboundNumber ? "true" : "false");
 }
 
 std::string ModifySkillGroupRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifySkillGroupRequest::getDescription()const
 void ModifySkillGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifySkillGroupRequest::getRoutingStrategy()const
@@ -55,7 +57,7 @@ std::string ModifySkillGroupRequest::getRoutingStrategy()const
 void ModifySkillGroupRequest::setRoutingStrategy(const std::string& routingStrategy)
 {
 	routingStrategy_ = routingStrategy;
-	setCoreParameter("RoutingStrategy", routingStrategy);
+	setParameter("RoutingStrategy", routingStrategy);
 }
 
 std::vector<std::string> ModifySkillGroupRequest::getUserId()const
@@ -66,8 +68,9 @@ std::vector<std::string> ModifySkillGroupRequest::getUserId()const
 void ModifySkillGroupRequest::setUserId(const std::vector<std::string>& userId)
 {
 	userId_ = userId;
-	for(int i = 0; i!= userId.size(); i++)
-		setCoreParameter("UserId."+ std::to_string(i), userId.at(i));
+	for(int dep1 = 0; dep1!= userId.size(); dep1++) {
+		setParameter("UserId."+ std::to_string(dep1), userId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupRequest::getAccessKeyId()const
@@ -78,7 +81,7 @@ std::string ModifySkillGroupRequest::getAccessKeyId()const
 void ModifySkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<int> ModifySkillGroupRequest::getSkillLevel()const
@@ -89,8 +92,9 @@ std::vector<int> ModifySkillGroupRequest::getSkillLevel()const
 void ModifySkillGroupRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
+		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string ModifySkillGroupRequest::getInstanceId()const
@@ -101,7 +105,7 @@ std::string ModifySkillGroupRequest::getInstanceId()const
 void ModifySkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()const
@@ -112,8 +116,9 @@ std::vector<std::string> ModifySkillGroupRequest::getOutboundPhoneNumberId()cons
 void ModifySkillGroupRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++) {
+		setParameter("OutboundPhoneNumberId."+ std::to_string(dep1), outboundPhoneNumberId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupRequest::getSkillGroupId()const
@@ -124,7 +129,7 @@ std::string ModifySkillGroupRequest::getSkillGroupId()const
 void ModifySkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 std::string ModifySkillGroupRequest::getName()const
@@ -135,6 +140,6 @@ std::string ModifySkillGroupRequest::getName()const
 void ModifySkillGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

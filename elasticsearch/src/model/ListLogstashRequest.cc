@@ -22,7 +22,7 @@ ListLogstashRequest::ListLogstashRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListLogstashRequest::~ListLogstashRequest()

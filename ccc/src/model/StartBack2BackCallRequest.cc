@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::StartBack2BackCallRequest;
 
 StartBack2BackCallRequest::StartBack2BackCallRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "StartBack2BackCall")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBack2BackCallRequest::~StartBack2BackCallRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartBack2BackCallRequest::getCallCenterNumber()const
 void StartBack2BackCallRequest::setCallCenterNumber(const std::string& callCenterNumber)
 {
 	callCenterNumber_ = callCenterNumber;
-	setCoreParameter("CallCenterNumber", callCenterNumber);
+	setParameter("CallCenterNumber", callCenterNumber);
 }
 
 std::string StartBack2BackCallRequest::getCallee()const
@@ -44,7 +46,7 @@ std::string StartBack2BackCallRequest::getCallee()const
 void StartBack2BackCallRequest::setCallee(const std::string& callee)
 {
 	callee_ = callee;
-	setCoreParameter("Callee", callee);
+	setParameter("Callee", callee);
 }
 
 std::string StartBack2BackCallRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string StartBack2BackCallRequest::getAccessKeyId()const
 void StartBack2BackCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string StartBack2BackCallRequest::getCaller()const
@@ -66,7 +68,7 @@ std::string StartBack2BackCallRequest::getCaller()const
 void StartBack2BackCallRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", caller);
+	setParameter("Caller", caller);
 }
 
 std::string StartBack2BackCallRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string StartBack2BackCallRequest::getInstanceId()const
 void StartBack2BackCallRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string StartBack2BackCallRequest::getWorkflowId()const
@@ -88,6 +90,6 @@ std::string StartBack2BackCallRequest::getWorkflowId()const
 void StartBack2BackCallRequest::setWorkflowId(const std::string& workflowId)
 {
 	workflowId_ = workflowId;
-	setCoreParameter("WorkflowId", workflowId);
+	setParameter("WorkflowId", workflowId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::DeleteRoleRequest;
 
 DeleteRoleRequest::DeleteRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "DeleteRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRoleRequest::~DeleteRoleRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteRoleRequest::getRoleName()const
 void DeleteRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 

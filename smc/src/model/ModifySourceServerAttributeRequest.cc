@@ -35,7 +35,7 @@ std::string ModifySourceServerAttributeRequest::getDescription()const
 void ModifySourceServerAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifySourceServerAttributeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifySourceServerAttributeRequest::getAccessKeyId()const
 void ModifySourceServerAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySourceServerAttributeRequest::getSourceId()const
@@ -57,7 +57,7 @@ std::string ModifySourceServerAttributeRequest::getSourceId()const
 void ModifySourceServerAttributeRequest::setSourceId(const std::string& sourceId)
 {
 	sourceId_ = sourceId;
-	setCoreParameter("SourceId", sourceId);
+	setParameter("SourceId", sourceId);
 }
 
 std::string ModifySourceServerAttributeRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifySourceServerAttributeRequest::getResourceOwnerAccount()const
 void ModifySourceServerAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifySourceServerAttributeRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long ModifySourceServerAttributeRequest::getOwnerId()const
 void ModifySourceServerAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifySourceServerAttributeRequest::getName()const
@@ -90,6 +90,6 @@ std::string ModifySourceServerAttributeRequest::getName()const
 void ModifySourceServerAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

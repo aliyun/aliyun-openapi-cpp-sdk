@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVSwitchAttributesRequest;
 
 DescribeVSwitchAttributesRequest::DescribeVSwitchAttributesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVSwitchAttributes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVSwitchAttributesRequest::~DescribeVSwitchAttributesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeVSwitchAttributesRequest::getResourceOwnerId()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVSwitchAttributesRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeVSwitchAttributesRequest::getRegionId()const
 void DescribeVSwitchAttributesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool DescribeVSwitchAttributesRequest::getDryRun()const
@@ -55,7 +57,7 @@ bool DescribeVSwitchAttributesRequest::getDryRun()const
 void DescribeVSwitchAttributesRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeVSwitchAttributesRequest::getResourceOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeVSwitchAttributesRequest::getOwnerAccount()const
 void DescribeVSwitchAttributesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVSwitchAttributesRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeVSwitchAttributesRequest::getOwnerId()const
 void DescribeVSwitchAttributesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVSwitchAttributesRequest::getVSwitchId()const
@@ -99,6 +101,6 @@ std::string DescribeVSwitchAttributesRequest::getVSwitchId()const
 void DescribeVSwitchAttributesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 

@@ -35,7 +35,7 @@ long CreateRobotTaskRequest::getResourceOwnerId()const
 void CreateRobotTaskRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateRobotTaskRequest::getRecallStateCodes()const
@@ -46,7 +46,7 @@ std::string CreateRobotTaskRequest::getRecallStateCodes()const
 void CreateRobotTaskRequest::setRecallStateCodes(const std::string& recallStateCodes)
 {
 	recallStateCodes_ = recallStateCodes;
-	setCoreParameter("RecallStateCodes", recallStateCodes);
+	setParameter("RecallStateCodes", recallStateCodes);
 }
 
 std::string CreateRobotTaskRequest::getTaskName()const
@@ -57,7 +57,7 @@ std::string CreateRobotTaskRequest::getTaskName()const
 void CreateRobotTaskRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string CreateRobotTaskRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string CreateRobotTaskRequest::getAccessKeyId()const
 void CreateRobotTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int CreateRobotTaskRequest::getRecallTimes()const
@@ -79,7 +79,7 @@ int CreateRobotTaskRequest::getRecallTimes()const
 void CreateRobotTaskRequest::setRecallTimes(int recallTimes)
 {
 	recallTimes_ = recallTimes;
-	setCoreParameter("RecallTimes", std::to_string(recallTimes));
+	setParameter("RecallTimes", std::to_string(recallTimes));
 }
 
 bool CreateRobotTaskRequest::getIsSelfLine()const
@@ -90,7 +90,7 @@ bool CreateRobotTaskRequest::getIsSelfLine()const
 void CreateRobotTaskRequest::setIsSelfLine(bool isSelfLine)
 {
 	isSelfLine_ = isSelfLine;
-	setCoreParameter("IsSelfLine", isSelfLine ? "true" : "false");
+	setParameter("IsSelfLine", isSelfLine ? "true" : "false");
 }
 
 std::string CreateRobotTaskRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string CreateRobotTaskRequest::getResourceOwnerAccount()const
 void CreateRobotTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateRobotTaskRequest::getRetryType()const
@@ -112,7 +112,7 @@ int CreateRobotTaskRequest::getRetryType()const
 void CreateRobotTaskRequest::setRetryType(int retryType)
 {
 	retryType_ = retryType;
-	setCoreParameter("RetryType", std::to_string(retryType));
+	setParameter("RetryType", std::to_string(retryType));
 }
 
 long CreateRobotTaskRequest::getOwnerId()const
@@ -123,7 +123,7 @@ long CreateRobotTaskRequest::getOwnerId()const
 void CreateRobotTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long CreateRobotTaskRequest::getDialogId()const
@@ -134,7 +134,7 @@ long CreateRobotTaskRequest::getDialogId()const
 void CreateRobotTaskRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setParameter("DialogId", std::to_string(dialogId));
 }
 
 std::string CreateRobotTaskRequest::getCaller()const
@@ -145,7 +145,7 @@ std::string CreateRobotTaskRequest::getCaller()const
 void CreateRobotTaskRequest::setCaller(const std::string& caller)
 {
 	caller_ = caller;
-	setCoreParameter("Caller", caller);
+	setParameter("Caller", caller);
 }
 
 bool CreateRobotTaskRequest::getNumberStatusIdent()const
@@ -156,7 +156,7 @@ bool CreateRobotTaskRequest::getNumberStatusIdent()const
 void CreateRobotTaskRequest::setNumberStatusIdent(bool numberStatusIdent)
 {
 	numberStatusIdent_ = numberStatusIdent;
-	setCoreParameter("NumberStatusIdent", numberStatusIdent ? "true" : "false");
+	setParameter("NumberStatusIdent", numberStatusIdent ? "true" : "false");
 }
 
 std::string CreateRobotTaskRequest::getCorpName()const
@@ -167,7 +167,7 @@ std::string CreateRobotTaskRequest::getCorpName()const
 void CreateRobotTaskRequest::setCorpName(const std::string& corpName)
 {
 	corpName_ = corpName;
-	setCoreParameter("CorpName", corpName);
+	setParameter("CorpName", corpName);
 }
 
 int CreateRobotTaskRequest::getRecallInterval()const
@@ -178,6 +178,6 @@ int CreateRobotTaskRequest::getRecallInterval()const
 void CreateRobotTaskRequest::setRecallInterval(int recallInterval)
 {
 	recallInterval_ = recallInterval;
-	setCoreParameter("RecallInterval", std::to_string(recallInterval));
+	setParameter("RecallInterval", std::to_string(recallInterval));
 }
 

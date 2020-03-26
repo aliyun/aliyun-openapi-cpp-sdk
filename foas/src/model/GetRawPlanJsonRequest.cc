@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetRawPlanJsonRequest;
 
 GetRawPlanJsonRequest::GetRawPlanJsonRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/planjson");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRawPlanJsonRequest::~GetRawPlanJsonRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRawPlanJsonRequest::getProjectName()const
 void GetRawPlanJsonRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetRawPlanJsonRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string GetRawPlanJsonRequest::getRegionId()const
 void GetRawPlanJsonRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 float GetRawPlanJsonRequest::getExpectedGB()const
@@ -55,7 +58,7 @@ float GetRawPlanJsonRequest::getExpectedGB()const
 void GetRawPlanJsonRequest::setExpectedGB(float expectedGB)
 {
 	expectedGB_ = expectedGB;
-	setCoreParameter("ExpectedGB", std::to_string(expectedGB));
+	setParameter("ExpectedGB", std::to_string(expectedGB));
 }
 
 float GetRawPlanJsonRequest::getExpectedCore()const
@@ -66,7 +69,7 @@ float GetRawPlanJsonRequest::getExpectedCore()const
 void GetRawPlanJsonRequest::setExpectedCore(float expectedCore)
 {
 	expectedCore_ = expectedCore;
-	setCoreParameter("ExpectedCore", std::to_string(expectedCore));
+	setParameter("ExpectedCore", std::to_string(expectedCore));
 }
 
 std::string GetRawPlanJsonRequest::getJobName()const
@@ -77,7 +80,7 @@ std::string GetRawPlanJsonRequest::getJobName()const
 void GetRawPlanJsonRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 
 bool GetRawPlanJsonRequest::getAutoconfEnable()const
@@ -88,6 +91,6 @@ bool GetRawPlanJsonRequest::getAutoconfEnable()const
 void GetRawPlanJsonRequest::setAutoconfEnable(bool autoconfEnable)
 {
 	autoconfEnable_ = autoconfEnable;
-	setCoreParameter("AutoconfEnable", autoconfEnable ? "true" : "false");
+	setParameter("AutoconfEnable", autoconfEnable ? "true" : "false");
 }
 

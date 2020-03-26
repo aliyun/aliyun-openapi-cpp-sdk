@@ -20,7 +20,9 @@ using AlibabaCloud::Ubsms::Model::SetUserBusinessStatusRequest;
 
 SetUserBusinessStatusRequest::SetUserBusinessStatusRequest() :
 	RpcServiceRequest("ubsms", "2015-06-23", "SetUserBusinessStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetUserBusinessStatusRequest::~SetUserBusinessStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetUserBusinessStatusRequest::getUid()const
 void SetUserBusinessStatusRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setParameter("Uid", uid);
 }
 
 std::string SetUserBusinessStatusRequest::getStatusValue()const
@@ -44,7 +46,7 @@ std::string SetUserBusinessStatusRequest::getStatusValue()const
 void SetUserBusinessStatusRequest::setStatusValue(const std::string& statusValue)
 {
 	statusValue_ = statusValue;
-	setCoreParameter("StatusValue", statusValue);
+	setParameter("StatusValue", statusValue);
 }
 
 std::string SetUserBusinessStatusRequest::getService()const
@@ -55,7 +57,7 @@ std::string SetUserBusinessStatusRequest::getService()const
 void SetUserBusinessStatusRequest::setService(const std::string& service)
 {
 	service_ = service;
-	setCoreParameter("Service", service);
+	setParameter("Service", service);
 }
 
 std::string SetUserBusinessStatusRequest::getStatusKey()const
@@ -66,6 +68,6 @@ std::string SetUserBusinessStatusRequest::getStatusKey()const
 void SetUserBusinessStatusRequest::setStatusKey(const std::string& statusKey)
 {
 	statusKey_ = statusKey;
-	setCoreParameter("StatusKey", statusKey);
+	setParameter("StatusKey", statusKey);
 }
 

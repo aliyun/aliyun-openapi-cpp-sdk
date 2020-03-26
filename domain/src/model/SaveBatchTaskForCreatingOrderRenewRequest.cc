@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderRenewRequest;
 
 SaveBatchTaskForCreatingOrderRenewRequest::SaveBatchTaskForCreatingOrderRenewRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderRenewRequest::~SaveBatchTaskForCreatingOrderRenewRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
@@ -44,7 +46,7 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getPromotionNo()const
@@ -55,7 +57,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
@@ -66,7 +68,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::vector<SaveBatchTaskForCreatingOrderRenewRequest::OrderRenewParam> SaveBatchTaskForCreatingOrderRenewRequest::getOrderRenewParam()const
@@ -77,13 +79,12 @@ std::vector<SaveBatchTaskForCreatingOrderRenewRequest::OrderRenewParam> SaveBatc
 void SaveBatchTaskForCreatingOrderRenewRequest::setOrderRenewParam(const std::vector<OrderRenewParam>& orderRenewParam)
 {
 	orderRenewParam_ = orderRenewParam;
-	int i = 0;
-	for(int i = 0; i!= orderRenewParam.size(); i++)	{
-		auto obj = orderRenewParam.at(i);
-		std::string str ="OrderRenewParam."+ std::to_string(i);
-		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setCoreParameter(str + ".CurrentExpirationDate", std::to_string(obj.currentExpirationDate));
-		setCoreParameter(str + ".DomainName", obj.domainName);
+	for(int dep1 = 0; dep1!= orderRenewParam.size(); dep1++) {
+		auto orderRenewParamObj = orderRenewParam.at(dep1);
+		std::string orderRenewParamObjStr = "OrderRenewParam." + std::to_string(dep1 + 1);
+		setParameter(orderRenewParamObjStr + ".SubscriptionDuration", std::to_string(orderRenewParamObj.subscriptionDuration));
+		setParameter(orderRenewParamObjStr + ".CurrentExpirationDate", std::to_string(orderRenewParamObj.currentExpirationDate));
+		setParameter(orderRenewParamObjStr + ".DomainName", orderRenewParamObj.domainName);
 	}
 }
 
@@ -95,7 +96,7 @@ std::string SaveBatchTaskForCreatingOrderRenewRequest::getLang()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
@@ -106,6 +107,6 @@ bool SaveBatchTaskForCreatingOrderRenewRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderRenewRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

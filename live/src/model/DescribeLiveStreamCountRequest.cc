@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamCountRequest;
 
 DescribeLiveStreamCountRequest::DescribeLiveStreamCountRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamCount")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeLiveStreamCountRequest::~DescribeLiveStreamCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamCountRequest::getDomainName()const
 void DescribeLiveStreamCountRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamCountRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeLiveStreamCountRequest::getOwnerId()const
 void DescribeLiveStreamCountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

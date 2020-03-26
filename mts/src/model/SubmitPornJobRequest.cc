@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitPornJobRequest;
 
 SubmitPornJobRequest::SubmitPornJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitPornJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitPornJobRequest::~SubmitPornJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitPornJobRequest::getResourceOwnerId()const
 void SubmitPornJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitPornJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitPornJobRequest::getAccessKeyId()const
 void SubmitPornJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitPornJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitPornJobRequest::getUserData()const
 void SubmitPornJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitPornJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitPornJobRequest::getResourceOwnerAccount()const
 void SubmitPornJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitPornJobRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitPornJobRequest::getOwnerAccount()const
 void SubmitPornJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitPornJobRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SubmitPornJobRequest::getOwnerId()const
 void SubmitPornJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitPornJobRequest::getPipelineId()const
@@ -99,7 +101,7 @@ std::string SubmitPornJobRequest::getPipelineId()const
 void SubmitPornJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitPornJobRequest::getInput()const
@@ -110,7 +112,7 @@ std::string SubmitPornJobRequest::getInput()const
 void SubmitPornJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 
 std::string SubmitPornJobRequest::getPornConfig()const
@@ -121,6 +123,6 @@ std::string SubmitPornJobRequest::getPornConfig()const
 void SubmitPornJobRequest::setPornConfig(const std::string& pornConfig)
 {
 	pornConfig_ = pornConfig;
-	setCoreParameter("PornConfig", pornConfig);
+	setParameter("PornConfig", pornConfig);
 }
 

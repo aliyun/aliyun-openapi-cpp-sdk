@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::GetAllowIPRequest;
 
 GetAllowIPRequest::GetAllowIPRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "GetAllowIP")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAllowIPRequest::~GetAllowIPRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAllowIPRequest::getRegionID()const
 void GetAllowIPRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 long GetAllowIPRequest::getUserID()const
@@ -44,7 +46,7 @@ long GetAllowIPRequest::getUserID()const
 void GetAllowIPRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setCoreParameter("UserID", std::to_string(userID));
+	setBodyParameter("UserID", std::to_string(userID));
 }
 
 std::string GetAllowIPRequest::getNetworkType()const
@@ -55,6 +57,6 @@ std::string GetAllowIPRequest::getNetworkType()const
 void GetAllowIPRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setBodyParameter("NetworkType", networkType);
 }
 

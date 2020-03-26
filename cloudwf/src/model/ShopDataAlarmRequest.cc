@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopDataAlarmRequest;
 
 ShopDataAlarmRequest::ShopDataAlarmRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopDataAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopDataAlarmRequest::~ShopDataAlarmRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopDataAlarmRequest::getWarnEmail()const
 void ShopDataAlarmRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
-	setCoreParameter("WarnEmail", warnEmail);
+	setParameter("WarnEmail", warnEmail);
 }
 
 std::string ShopDataAlarmRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ShopDataAlarmRequest::getAccessKeyId()const
 void ShopDataAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopDataAlarmRequest::getSid()const
@@ -55,7 +57,7 @@ long ShopDataAlarmRequest::getSid()const
 void ShopDataAlarmRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string ShopDataAlarmRequest::getWarnPhone()const
@@ -66,7 +68,7 @@ std::string ShopDataAlarmRequest::getWarnPhone()const
 void ShopDataAlarmRequest::setWarnPhone(const std::string& warnPhone)
 {
 	warnPhone_ = warnPhone;
-	setCoreParameter("WarnPhone", warnPhone);
+	setParameter("WarnPhone", warnPhone);
 }
 
 int ShopDataAlarmRequest::getWarn()const
@@ -77,7 +79,7 @@ int ShopDataAlarmRequest::getWarn()const
 void ShopDataAlarmRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setParameter("Warn", std::to_string(warn));
 }
 
 int ShopDataAlarmRequest::getCloseWarn()const
@@ -88,6 +90,6 @@ int ShopDataAlarmRequest::getCloseWarn()const
 void ShopDataAlarmRequest::setCloseWarn(int closeWarn)
 {
 	closeWarn_ = closeWarn;
-	setCoreParameter("CloseWarn", std::to_string(closeWarn));
+	setParameter("CloseWarn", std::to_string(closeWarn));
 }
 

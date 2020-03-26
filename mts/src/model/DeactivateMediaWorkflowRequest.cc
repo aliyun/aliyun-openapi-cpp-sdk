@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeactivateMediaWorkflowRequest;
 
 DeactivateMediaWorkflowRequest::DeactivateMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeactivateMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactivateMediaWorkflowRequest::~DeactivateMediaWorkflowRequest()
 {}
@@ -33,7 +35,7 @@ long DeactivateMediaWorkflowRequest::getResourceOwnerId()const
 void DeactivateMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeactivateMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeactivateMediaWorkflowRequest::getResourceOwnerAccount()const
 void DeactivateMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeactivateMediaWorkflowRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeactivateMediaWorkflowRequest::getOwnerAccount()const
 void DeactivateMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeactivateMediaWorkflowRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeactivateMediaWorkflowRequest::getOwnerId()const
 void DeactivateMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeactivateMediaWorkflowRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeactivateMediaWorkflowRequest::getAccessKeyId()const
 void DeactivateMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeactivateMediaWorkflowRequest::getMediaWorkflowId()const
@@ -88,6 +90,6 @@ std::string DeactivateMediaWorkflowRequest::getMediaWorkflowId()const
 void DeactivateMediaWorkflowRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setParameter("MediaWorkflowId", mediaWorkflowId);
 }
 

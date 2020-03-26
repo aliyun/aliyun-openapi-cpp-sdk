@@ -35,26 +35,32 @@ namespace AlibabaCloud
 				QueryDeviceByDriverRequest();
 				~QueryDeviceByDriverRequest();
 
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getDriverId()const;
 				void setDriverId(const std::string& driverId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				int currentPage_;
 				std::string accessKeyId_;
-				std::string instanceId_;
 				std::string driverId_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				int currentPage_;
+				std::string instanceId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

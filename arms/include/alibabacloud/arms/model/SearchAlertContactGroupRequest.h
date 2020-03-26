@@ -35,14 +35,23 @@ namespace AlibabaCloud
 				SearchAlertContactGroupRequest();
 				~SearchAlertContactGroupRequest();
 
+				std::string getContactName()const;
+				void setContactName(const std::string& contactName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				long getContactId()const;
+				void setContactId(long contactId);
 				std::string getContactGroupName()const;
 				void setContactGroupName(const std::string& contactGroupName);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 
             private:
+				std::string contactName_;
 				std::string regionId_;
+				long contactId_;
 				std::string contactGroupName_;
+				std::string proxyUserId_;
 
 			};
 		}

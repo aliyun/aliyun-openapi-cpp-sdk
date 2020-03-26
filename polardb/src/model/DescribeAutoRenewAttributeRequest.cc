@@ -60,6 +60,17 @@ void DescribeAutoRenewAttributeRequest::setAccessKeyId(const std::string& access
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAutoRenewAttributeRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeAutoRenewAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeAutoRenewAttributeRequest::getRegionId()const
 {
 	return regionId_;

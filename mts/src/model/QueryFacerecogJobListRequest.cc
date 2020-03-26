@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryFacerecogJobListRequest;
 
 QueryFacerecogJobListRequest::QueryFacerecogJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryFacerecogJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFacerecogJobListRequest::~QueryFacerecogJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryFacerecogJobListRequest::getResourceOwnerId()const
 void QueryFacerecogJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryFacerecogJobListRequest::getResourceOwnerAccount()const
 void QueryFacerecogJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryFacerecogJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryFacerecogJobListRequest::getOwnerAccount()const
 void QueryFacerecogJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
@@ -66,7 +68,7 @@ std::string QueryFacerecogJobListRequest::getFacerecogJobIds()const
 void QueryFacerecogJobListRequest::setFacerecogJobIds(const std::string& facerecogJobIds)
 {
 	facerecogJobIds_ = facerecogJobIds;
-	setCoreParameter("FacerecogJobIds", facerecogJobIds);
+	setParameter("FacerecogJobIds", facerecogJobIds);
 }
 
 long QueryFacerecogJobListRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long QueryFacerecogJobListRequest::getOwnerId()const
 void QueryFacerecogJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryFacerecogJobListRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string QueryFacerecogJobListRequest::getAccessKeyId()const
 void QueryFacerecogJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

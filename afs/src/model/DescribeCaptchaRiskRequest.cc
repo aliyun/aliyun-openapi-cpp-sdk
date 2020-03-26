@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaRiskRequest;
 
 DescribeCaptchaRiskRequest::DescribeCaptchaRiskRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaRisk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaRiskRequest::~DescribeCaptchaRiskRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCaptchaRiskRequest::getSourceIp()const
 void DescribeCaptchaRiskRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaRiskRequest::getConfigName()const
@@ -44,7 +46,7 @@ std::string DescribeCaptchaRiskRequest::getConfigName()const
 void DescribeCaptchaRiskRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaRiskRequest::getRefExtId()const
@@ -55,7 +57,7 @@ std::string DescribeCaptchaRiskRequest::getRefExtId()const
 void DescribeCaptchaRiskRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaRiskRequest::getTime()const
@@ -66,6 +68,6 @@ std::string DescribeCaptchaRiskRequest::getTime()const
 void DescribeCaptchaRiskRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setParameter("Time", time);
 }
 

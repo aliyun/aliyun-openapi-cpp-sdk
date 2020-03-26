@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PickOutboundNumbersRequest;
 
 PickOutboundNumbersRequest::PickOutboundNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PickOutboundNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PickOutboundNumbersRequest::~PickOutboundNumbersRequest()
 {}
@@ -33,7 +35,7 @@ int PickOutboundNumbersRequest::getCount()const
 void PickOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 
 std::string PickOutboundNumbersRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string PickOutboundNumbersRequest::getAccessKeyId()const
 void PickOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PickOutboundNumbersRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string PickOutboundNumbersRequest::getInstanceId()const
 void PickOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
@@ -66,8 +68,9 @@ std::vector<std::string> PickOutboundNumbersRequest::getCandidateNumber()const
 void PickOutboundNumbersRequest::setCandidateNumber(const std::vector<std::string>& candidateNumber)
 {
 	candidateNumber_ = candidateNumber;
-	for(int i = 0; i!= candidateNumber.size(); i++)
-		setCoreParameter("CandidateNumber."+ std::to_string(i), candidateNumber.at(i));
+	for(int dep1 = 0; dep1!= candidateNumber.size(); dep1++) {
+		setParameter("CandidateNumber."+ std::to_string(dep1), candidateNumber.at(dep1));
+	}
 }
 
 std::string PickOutboundNumbersRequest::getCalleeNumber()const
@@ -78,6 +81,6 @@ std::string PickOutboundNumbersRequest::getCalleeNumber()const
 void PickOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setParameter("CalleeNumber", calleeNumber);
 }
 

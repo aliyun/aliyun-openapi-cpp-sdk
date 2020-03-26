@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListAuditSecurityIpRequest;
 
 ListAuditSecurityIpRequest::ListAuditSecurityIpRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListAuditSecurityIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAuditSecurityIpRequest::~ListAuditSecurityIpRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListAuditSecurityIpRequest::getSecurityGroupName()const
 void ListAuditSecurityIpRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setParameter("SecurityGroupName", securityGroupName);
 }
 

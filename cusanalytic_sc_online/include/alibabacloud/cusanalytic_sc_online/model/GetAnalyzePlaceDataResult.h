@@ -34,8 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct AnalyzePlaceItem
 				{
+					struct AgeItem
+					{
+						int count;
+						int age;
+					};
+					std::vector<AnalyzePlaceItem::AgeItem> ageItems;
 					long storeId;
+					int maleCount;
 					float percent;
+					int femaleCount;
 					long locationId;
 					std::string parentLocationIds;
 					long count;

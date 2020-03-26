@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterOperationHostTaskLogRequest;
 
 DescribeClusterOperationHostTaskLogRequest::DescribeClusterOperationHostTaskLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterOperationHostTaskLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterOperationHostTaskLogRequest::~DescribeClusterOperationHostTaskLogRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterOperationHostTaskLogRequest::getResourceOwnerId()const
 void DescribeClusterOperationHostTaskLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getHostId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getHostId()const
 void DescribeClusterOperationHostTaskLogRequest::setHostId(const std::string& hostId)
 {
 	hostId_ = hostId;
-	setCoreParameter("HostId", hostId);
+	setParameter("HostId", hostId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getClusterId()const
 void DescribeClusterOperationHostTaskLogRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getAccessKeyId()const
 void DescribeClusterOperationHostTaskLogRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getRegionId()const
 void DescribeClusterOperationHostTaskLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getOperationId()const
@@ -88,7 +90,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getOperationId()const
 void DescribeClusterOperationHostTaskLogRequest::setOperationId(const std::string& operationId)
 {
 	operationId_ = operationId;
-	setCoreParameter("OperationId", operationId);
+	setParameter("OperationId", operationId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getTaskId()const
@@ -99,7 +101,7 @@ std::string DescribeClusterOperationHostTaskLogRequest::getTaskId()const
 void DescribeClusterOperationHostTaskLogRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string DescribeClusterOperationHostTaskLogRequest::getStatus()const
@@ -110,6 +112,6 @@ std::string DescribeClusterOperationHostTaskLogRequest::getStatus()const
 void DescribeClusterOperationHostTaskLogRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

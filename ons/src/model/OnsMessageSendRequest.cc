@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessageSendRequest;
 OnsMessageSendRequest::OnsMessageSendRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessageSend")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsMessageSendRequest::~OnsMessageSendRequest()

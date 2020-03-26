@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::CreateCenRequest;
 
 CreateCenRequest::CreateCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "CreateCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCenRequest::~CreateCenRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCenRequest::getResourceOwnerId()const
 void CreateCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCenRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateCenRequest::getClientToken()const
 void CreateCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateCenRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateCenRequest::getDescription()const
 void CreateCenRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateCenRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CreateCenRequest::getResourceOwnerAccount()const
 void CreateCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateCenRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateCenRequest::getOwnerAccount()const
 void CreateCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateCenRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long CreateCenRequest::getOwnerId()const
 void CreateCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCenRequest::getProtectionLevel()const
@@ -99,7 +101,7 @@ std::string CreateCenRequest::getProtectionLevel()const
 void CreateCenRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", protectionLevel);
+	setParameter("ProtectionLevel", protectionLevel);
 }
 
 std::string CreateCenRequest::getName()const
@@ -110,6 +112,6 @@ std::string CreateCenRequest::getName()const
 void CreateCenRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

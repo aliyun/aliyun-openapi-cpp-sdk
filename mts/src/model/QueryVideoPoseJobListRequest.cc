@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryVideoPoseJobListRequest;
 
 QueryVideoPoseJobListRequest::QueryVideoPoseJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryVideoPoseJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryVideoPoseJobListRequest::~QueryVideoPoseJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryVideoPoseJobListRequest::getResourceOwnerId()const
 void QueryVideoPoseJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVideoPoseJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryVideoPoseJobListRequest::getResourceOwnerAccount()const
 void QueryVideoPoseJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVideoPoseJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryVideoPoseJobListRequest::getOwnerAccount()const
 void QueryVideoPoseJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryVideoPoseJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryVideoPoseJobListRequest::getOwnerId()const
 void QueryVideoPoseJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVideoPoseJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryVideoPoseJobListRequest::getAccessKeyId()const
 void QueryVideoPoseJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryVideoPoseJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryVideoPoseJobListRequest::getJobIds()const
 void QueryVideoPoseJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

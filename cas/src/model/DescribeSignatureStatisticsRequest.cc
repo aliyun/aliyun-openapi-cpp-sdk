@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureStatisticsRequest;
 
 DescribeSignatureStatisticsRequest::DescribeSignatureStatisticsRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureStatisticsRequest::~DescribeSignatureStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignatureStatisticsRequest::getResourceGroupId()const
 void DescribeSignatureStatisticsRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSignatureStatisticsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeSignatureStatisticsRequest::getSourceIp()const
 void DescribeSignatureStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSignatureStatisticsRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeSignatureStatisticsRequest::getLang()const
 void DescribeSignatureStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

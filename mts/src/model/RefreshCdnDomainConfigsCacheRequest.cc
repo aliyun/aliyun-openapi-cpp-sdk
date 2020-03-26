@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::RefreshCdnDomainConfigsCacheRequest;
 
 RefreshCdnDomainConfigsCacheRequest::RefreshCdnDomainConfigsCacheRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "RefreshCdnDomainConfigsCache")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshCdnDomainConfigsCacheRequest::~RefreshCdnDomainConfigsCacheRequest()
 {}
@@ -33,7 +35,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerId()const
 void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getResourceOwnerAccount()const
 void RefreshCdnDomainConfigsCacheRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getOwnerAccount()const
 void RefreshCdnDomainConfigsCacheRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getDomains()const
@@ -66,7 +68,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getDomains()const
 void RefreshCdnDomainConfigsCacheRequest::setDomains(const std::string& domains)
 {
 	domains_ = domains;
-	setCoreParameter("Domains", domains);
+	setParameter("Domains", domains);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId()const
@@ -77,7 +79,7 @@ std::string RefreshCdnDomainConfigsCacheRequest::getOwnerId()const
 void RefreshCdnDomainConfigsCacheRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string RefreshCdnDomainConfigsCacheRequest::getAccessKeyId()const
 void RefreshCdnDomainConfigsCacheRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyReadOnlyAccountPasswordRequest;
 
 ModifyReadOnlyAccountPasswordRequest::ModifyReadOnlyAccountPasswordRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyReadOnlyAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyReadOnlyAccountPasswordRequest::~ModifyReadOnlyAccountPasswordRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDrdsInstanceId()const
 void ModifyReadOnlyAccountPasswordRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccessKeyId()const
 void ModifyReadOnlyAccountPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getNewPasswd()const
@@ -55,7 +57,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getNewPasswd()const
 void ModifyReadOnlyAccountPasswordRequest::setNewPasswd(const std::string& newPasswd)
 {
 	newPasswd_ = newPasswd;
-	setCoreParameter("NewPasswd", newPasswd);
+	setParameter("NewPasswd", newPasswd);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
@@ -66,7 +68,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getDbName()const
 void ModifyReadOnlyAccountPasswordRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
@@ -77,7 +79,7 @@ std::string ModifyReadOnlyAccountPasswordRequest::getAccountName()const
 void ModifyReadOnlyAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
@@ -88,6 +90,6 @@ std::string ModifyReadOnlyAccountPasswordRequest::getOriginPassword()const
 void ModifyReadOnlyAccountPasswordRequest::setOriginPassword(const std::string& originPassword)
 {
 	originPassword_ = originPassword;
-	setCoreParameter("OriginPassword", originPassword);
+	setParameter("OriginPassword", originPassword);
 }
 

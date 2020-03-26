@@ -35,7 +35,7 @@ long ReleaseClusterPublicConnectionRequest::getResourceOwnerId()const
 void ReleaseClusterPublicConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseClusterPublicConnectionRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ReleaseClusterPublicConnectionRequest::getAccessKeyId()const
 void ReleaseClusterPublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseClusterPublicConnectionRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string ReleaseClusterPublicConnectionRequest::getResourceOwnerAccount()cons
 void ReleaseClusterPublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReleaseClusterPublicConnectionRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string ReleaseClusterPublicConnectionRequest::getDBClusterId()const
 void ReleaseClusterPublicConnectionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ReleaseClusterPublicConnectionRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string ReleaseClusterPublicConnectionRequest::getOwnerAccount()const
 void ReleaseClusterPublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReleaseClusterPublicConnectionRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long ReleaseClusterPublicConnectionRequest::getOwnerId()const
 void ReleaseClusterPublicConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

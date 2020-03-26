@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGetredressRequest;
 
 ShopGetredressRequest::ShopGetredressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGetredress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGetredressRequest::~ShopGetredressRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopGetredressRequest::getAccessKeyId()const
 void ShopGetredressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopGetredressRequest::getSid()const
@@ -44,6 +46,6 @@ long ShopGetredressRequest::getSid()const
 void ShopGetredressRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 

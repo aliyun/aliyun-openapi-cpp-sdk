@@ -22,7 +22,7 @@ DescribeElasticsearchHealthRequest::DescribeElasticsearchHealthRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/elasticsearch-health");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribeElasticsearchHealthRequest::~DescribeElasticsearchHealthRequest()

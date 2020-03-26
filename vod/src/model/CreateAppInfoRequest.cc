@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateAppInfoRequest;
 
 CreateAppInfoRequest::CreateAppInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateAppInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAppInfoRequest::~CreateAppInfoRequest()
 {}
@@ -33,7 +35,7 @@ long CreateAppInfoRequest::getResourceOwnerId()const
 void CreateAppInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAppInfoRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateAppInfoRequest::getDescription()const
 void CreateAppInfoRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 long CreateAppInfoRequest::getResourceRealOwnerId()const
@@ -55,7 +57,7 @@ long CreateAppInfoRequest::getResourceRealOwnerId()const
 void CreateAppInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string CreateAppInfoRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateAppInfoRequest::getAccessKeyId()const
 void CreateAppInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAppInfoRequest::getAppName()const
@@ -77,7 +79,7 @@ std::string CreateAppInfoRequest::getAppName()const
 void CreateAppInfoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string CreateAppInfoRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateAppInfoRequest::getResourceOwnerAccount()const
 void CreateAppInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CreateAppInfoRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long CreateAppInfoRequest::getOwnerId()const
 void CreateAppInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

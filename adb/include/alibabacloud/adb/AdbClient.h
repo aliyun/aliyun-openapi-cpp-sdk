@@ -78,6 +78,8 @@
 #include "model/DescribeTableDetailResult.h"
 #include "model/DescribeTablesRequest.h"
 #include "model/DescribeTablesResult.h"
+#include "model/DescribeTaskInfoRequest.h"
+#include "model/DescribeTaskInfoResult.h"
 #include "model/GrantOperatorPermissionRequest.h"
 #include "model/GrantOperatorPermissionResult.h"
 #include "model/KillProcessRequest.h"
@@ -90,6 +92,8 @@
 #include "model/ModifyAutoRenewAttributeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
+#include "model/ModifyClusterConnectionStringRequest.h"
+#include "model/ModifyClusterConnectionStringResult.h"
 #include "model/ModifyDBClusterRequest.h"
 #include "model/ModifyDBClusterResult.h"
 #include "model/ModifyDBClusterAccessWhiteListRequest.h"
@@ -203,6 +207,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
 			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTaskInfoResult> DescribeTaskInfoOutcome;
+			typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeTaskInfoRequest&, const DescribeTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
 			typedef Outcome<Error, Model::GrantOperatorPermissionResult> GrantOperatorPermissionOutcome;
 			typedef std::future<GrantOperatorPermissionOutcome> GrantOperatorPermissionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::GrantOperatorPermissionRequest&, const GrantOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantOperatorPermissionAsyncHandler;
@@ -221,6 +228,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterConnectionStringResult> ModifyClusterConnectionStringOutcome;
+			typedef std::future<ModifyClusterConnectionStringOutcome> ModifyClusterConnectionStringOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyClusterConnectionStringRequest&, const ModifyClusterConnectionStringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConnectionStringAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterResult> ModifyDBClusterOutcome;
 			typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterRequest&, const ModifyDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAsyncHandler;
@@ -340,6 +350,9 @@ namespace AlibabaCloud
 			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
 			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
+			DescribeTaskInfoOutcome describeTaskInfo(const Model::DescribeTaskInfoRequest &request)const;
+			void describeTaskInfoAsync(const Model::DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTaskInfoOutcomeCallable describeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request) const;
 			GrantOperatorPermissionOutcome grantOperatorPermission(const Model::GrantOperatorPermissionRequest &request)const;
 			void grantOperatorPermissionAsync(const Model::GrantOperatorPermissionRequest& request, const GrantOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantOperatorPermissionOutcomeCallable grantOperatorPermissionCallable(const Model::GrantOperatorPermissionRequest& request) const;
@@ -358,6 +371,9 @@ namespace AlibabaCloud
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
+			ModifyClusterConnectionStringOutcome modifyClusterConnectionString(const Model::ModifyClusterConnectionStringRequest &request)const;
+			void modifyClusterConnectionStringAsync(const Model::ModifyClusterConnectionStringRequest& request, const ModifyClusterConnectionStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterConnectionStringOutcomeCallable modifyClusterConnectionStringCallable(const Model::ModifyClusterConnectionStringRequest& request) const;
 			ModifyDBClusterOutcome modifyDBCluster(const Model::ModifyDBClusterRequest &request)const;
 			void modifyDBClusterAsync(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterOutcomeCallable modifyDBClusterCallable(const Model::ModifyDBClusterRequest& request) const;

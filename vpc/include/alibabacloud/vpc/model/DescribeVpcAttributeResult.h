@@ -54,6 +54,7 @@ namespace AlibabaCloud
 				bool getClassicLinkEnabled()const;
 				std::string getResourceGroupId()const;
 				std::vector<std::string> getVSwitchIds()const;
+				std::vector<std::string> getSecondaryCidrBlocks()const;
 				std::string getCidrBlock()const;
 				std::vector<std::string> getUserCidrs()const;
 				std::string getNetworkAclNum()const;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 				bool classicLinkEnabled_;
 				std::string resourceGroupId_;
 				std::vector<std::string> vSwitchIds_;
+				std::vector<std::string> secondaryCidrBlocks_;
 				std::string cidrBlock_;
 				std::vector<std::string> userCidrs_;
 				std::string networkAclNum_;

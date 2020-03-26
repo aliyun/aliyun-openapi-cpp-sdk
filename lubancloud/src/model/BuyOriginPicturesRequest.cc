@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::BuyOriginPicturesRequest;
 
 BuyOriginPicturesRequest::BuyOriginPicturesRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "BuyOriginPictures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BuyOriginPicturesRequest::~BuyOriginPicturesRequest()
 {}
@@ -33,7 +35,8 @@ std::vector<long> BuyOriginPicturesRequest::getPictureId()const
 void BuyOriginPicturesRequest::setPictureId(const std::vector<long>& pictureId)
 {
 	pictureId_ = pictureId;
-	for(int i = 0; i!= pictureId.size(); i++)
-		setCoreParameter("PictureId."+ std::to_string(i), std::to_string(pictureId.at(i)));
+	for(int dep1 = 0; dep1!= pictureId.size(); dep1++) {
+		setParameter("PictureId."+ std::to_string(dep1), std::to_string(pictureId.at(dep1)));
+	}
 }
 

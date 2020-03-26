@@ -36,7 +36,7 @@ void DisableMetricRulesRequest::setRuleId(const std::vector<std::string>& ruleId
 {
 	ruleId_ = ruleId;
 	for(int dep1 = 0; dep1!= ruleId.size(); dep1++) {
-		setCoreParameter("RuleId."+ std::to_string(dep1), ruleId.at(dep1));
+		setParameter("RuleId."+ std::to_string(dep1), ruleId.at(dep1));
 	}
 }
 

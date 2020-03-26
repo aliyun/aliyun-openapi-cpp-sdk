@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchAlertContactRequest;
 
 SearchAlertContactRequest::SearchAlertContactRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchAlertContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchAlertContactRequest::~SearchAlertContactRequest()
 {}
@@ -33,7 +35,18 @@ std::string SearchAlertContactRequest::getCurrentPage()const
 void SearchAlertContactRequest::setCurrentPage(const std::string& currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", currentPage);
+	setParameter("CurrentPage", currentPage);
+}
+
+std::string SearchAlertContactRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void SearchAlertContactRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
 }
 
 std::string SearchAlertContactRequest::getContactName()const
@@ -44,7 +57,7 @@ std::string SearchAlertContactRequest::getContactName()const
 void SearchAlertContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 std::string SearchAlertContactRequest::getPhone()const
@@ -55,7 +68,7 @@ std::string SearchAlertContactRequest::getPhone()const
 void SearchAlertContactRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setParameter("Phone", phone);
 }
 
 std::string SearchAlertContactRequest::getRegionId()const
@@ -66,7 +79,7 @@ std::string SearchAlertContactRequest::getRegionId()const
 void SearchAlertContactRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SearchAlertContactRequest::getPageSize()const
@@ -77,7 +90,7 @@ std::string SearchAlertContactRequest::getPageSize()const
 void SearchAlertContactRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string SearchAlertContactRequest::getEmail()const
@@ -88,6 +101,6 @@ std::string SearchAlertContactRequest::getEmail()const
 void SearchAlertContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

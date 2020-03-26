@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeSignaturesRequest;
 
 DescribeSignaturesRequest::DescribeSignaturesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeSignatures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignaturesRequest::~DescribeSignaturesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignaturesRequest::getSignatureName()const
 void DescribeSignaturesRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", signatureName);
+	setParameter("SignatureName", signatureName);
 }
 
 std::string DescribeSignaturesRequest::getSignatureId()const
@@ -44,7 +46,7 @@ std::string DescribeSignaturesRequest::getSignatureId()const
 void DescribeSignaturesRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 int DescribeSignaturesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeSignaturesRequest::getPageNumber()const
 void DescribeSignaturesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSignaturesRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeSignaturesRequest::getAccessKeyId()const
 void DescribeSignaturesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSignaturesRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeSignaturesRequest::getSecurityToken()const
 void DescribeSignaturesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeSignaturesRequest::getPageSize()const
@@ -88,6 +90,6 @@ int DescribeSignaturesRequest::getPageSize()const
 void DescribeSignaturesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

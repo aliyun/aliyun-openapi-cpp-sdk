@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::ListTagKeysRequest;
 
 ListTagKeysRequest::ListTagKeysRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "ListTagKeys")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagKeysRequest::~ListTagKeysRequest()
 {}
@@ -33,7 +35,7 @@ int ListTagKeysRequest::getCurrentPage()const
 void ListTagKeysRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string ListTagKeysRequest::getResourceType()const
@@ -44,7 +46,18 @@ std::string ListTagKeysRequest::getResourceType()const
 void ListTagKeysRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
+}
+
+std::string ListTagKeysRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListTagKeysRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ListTagKeysRequest::getSourceIp()const
@@ -55,7 +68,7 @@ std::string ListTagKeysRequest::getSourceIp()const
 void ListTagKeysRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ListTagKeysRequest::getRegionId()const
@@ -66,7 +79,7 @@ std::string ListTagKeysRequest::getRegionId()const
 void ListTagKeysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListTagKeysRequest::getPageSize()const
@@ -77,6 +90,6 @@ int ListTagKeysRequest::getPageSize()const
 void ListTagKeysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

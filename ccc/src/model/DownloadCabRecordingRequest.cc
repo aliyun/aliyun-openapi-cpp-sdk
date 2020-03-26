@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadCabRecordingRequest;
 
 DownloadCabRecordingRequest::DownloadCabRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadCabRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadCabRecordingRequest::~DownloadCabRecordingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DownloadCabRecordingRequest::getInstanceId()const
 void DownloadCabRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DownloadCabRecordingRequest::getTaskId()const
@@ -44,6 +46,6 @@ std::string DownloadCabRecordingRequest::getTaskId()const
 void DownloadCabRecordingRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

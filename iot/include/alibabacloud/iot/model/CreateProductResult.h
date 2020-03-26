@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string protocolType;
 					int nodeType;
 					int dataFormat;
+					std::string authType;
 					std::string productKey;
 				};
 

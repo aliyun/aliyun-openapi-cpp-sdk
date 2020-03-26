@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportTagJobResultRequest;
 
 ReportTagJobResultRequest::ReportTagJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportTagJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportTagJobResultRequest::~ReportTagJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportTagJobResultRequest::getResourceOwnerId()const
 void ReportTagJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportTagJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportTagJobResultRequest::getAccessKeyId()const
 void ReportTagJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportTagJobResultRequest::getResult()const
@@ -55,7 +57,7 @@ std::string ReportTagJobResultRequest::getResult()const
 void ReportTagJobResultRequest::setResult(const std::string& result)
 {
 	result_ = result;
-	setCoreParameter("Result", result);
+	setParameter("Result", result);
 }
 
 std::string ReportTagJobResultRequest::getJobId()const
@@ -66,7 +68,7 @@ std::string ReportTagJobResultRequest::getJobId()const
 void ReportTagJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportTagJobResultRequest::getTag()const
@@ -77,7 +79,7 @@ std::string ReportTagJobResultRequest::getTag()const
 void ReportTagJobResultRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 
 std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ReportTagJobResultRequest::getResourceOwnerAccount()const
 void ReportTagJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportTagJobResultRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ReportTagJobResultRequest::getOwnerAccount()const
 void ReportTagJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReportTagJobResultRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ReportTagJobResultRequest::getOwnerId()const
 void ReportTagJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

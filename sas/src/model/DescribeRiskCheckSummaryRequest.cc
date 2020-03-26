@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskCheckSummaryRequest;
 
 DescribeRiskCheckSummaryRequest::DescribeRiskCheckSummaryRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskCheckSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskCheckSummaryRequest::~DescribeRiskCheckSummaryRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRiskCheckSummaryRequest::getResourceOwnerId()const
 void DescribeRiskCheckSummaryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRiskCheckSummaryRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeRiskCheckSummaryRequest::getSourceIp()const
 void DescribeRiskCheckSummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeRiskCheckSummaryRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeRiskCheckSummaryRequest::getLang()const
 void DescribeRiskCheckSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

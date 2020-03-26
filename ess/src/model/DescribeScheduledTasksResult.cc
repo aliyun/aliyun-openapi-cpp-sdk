@@ -67,6 +67,10 @@ void DescribeScheduledTasksResult::parse(const std::string &payload)
 			scheduledTasksObject.maxValue = std::stoi(valueScheduledTasksScheduledTask["MaxValue"].asString());
 		if(!valueScheduledTasksScheduledTask["MinValue"].isNull())
 			scheduledTasksObject.minValue = std::stoi(valueScheduledTasksScheduledTask["MinValue"].asString());
+		if(!valueScheduledTasksScheduledTask["DesiredCapacity"].isNull())
+			scheduledTasksObject.desiredCapacity = std::stoi(valueScheduledTasksScheduledTask["DesiredCapacity"].asString());
+		if(!valueScheduledTasksScheduledTask["ScalingGroupId"].isNull())
+			scheduledTasksObject.scalingGroupId = valueScheduledTasksScheduledTask["ScalingGroupId"].asString();
 		scheduledTasks_.push_back(scheduledTasksObject);
 	}
 	if(!value["TotalCount"].isNull())

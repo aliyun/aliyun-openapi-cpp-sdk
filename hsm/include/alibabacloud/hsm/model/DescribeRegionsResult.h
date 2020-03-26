@@ -37,9 +37,11 @@ namespace AlibabaCloud
 					struct Zone
 					{
 						std::string zoneId;
+						std::string localName;
 					};
 					std::string regionId;
 					std::vector<Region::Zone> zones;
+					std::string localName;
 				};
 
 

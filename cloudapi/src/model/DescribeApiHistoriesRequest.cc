@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiHistoriesRequest;
 
 DescribeApiHistoriesRequest::DescribeApiHistoriesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiHistories")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiHistoriesRequest::~DescribeApiHistoriesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiHistoriesRequest::getStageName()const
 void DescribeApiHistoriesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeApiHistoriesRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApiHistoriesRequest::getGroupId()const
 void DescribeApiHistoriesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiHistoriesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ std::string DescribeApiHistoriesRequest::getPageNumber()const
 void DescribeApiHistoriesRequest::setPageNumber(const std::string& pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", pageNumber);
 }
 
 std::string DescribeApiHistoriesRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiHistoriesRequest::getAccessKeyId()const
 void DescribeApiHistoriesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiHistoriesRequest::getApiName()const
@@ -77,7 +79,7 @@ std::string DescribeApiHistoriesRequest::getApiName()const
 void DescribeApiHistoriesRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setParameter("ApiName", apiName);
 }
 
 std::string DescribeApiHistoriesRequest::getSecurityToken()const
@@ -88,7 +90,7 @@ std::string DescribeApiHistoriesRequest::getSecurityToken()const
 void DescribeApiHistoriesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiHistoriesRequest::getPageSize()const
@@ -99,7 +101,7 @@ std::string DescribeApiHistoriesRequest::getPageSize()const
 void DescribeApiHistoriesRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeApiHistoriesRequest::getApiId()const
@@ -110,6 +112,6 @@ std::string DescribeApiHistoriesRequest::getApiId()const
 void DescribeApiHistoriesRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

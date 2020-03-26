@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribePurchasedApiGroupsRequest;
 
 DescribePurchasedApiGroupsRequest::DescribePurchasedApiGroupsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribePurchasedApiGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePurchasedApiGroupsRequest::~DescribePurchasedApiGroupsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribePurchasedApiGroupsRequest::getPageNumber()const
 void DescribePurchasedApiGroupsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribePurchasedApiGroupsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribePurchasedApiGroupsRequest::getAccessKeyId()const
 void DescribePurchasedApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePurchasedApiGroupsRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribePurchasedApiGroupsRequest::getSecurityToken()const
 void DescribePurchasedApiGroupsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribePurchasedApiGroupsRequest::getPageSize()const
@@ -66,6 +68,6 @@ int DescribePurchasedApiGroupsRequest::getPageSize()const
 void DescribePurchasedApiGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

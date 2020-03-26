@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateContactFlowRequest;
 
 CreateContactFlowRequest::CreateContactFlowRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateContactFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateContactFlowRequest::~CreateContactFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateContactFlowRequest::getCanvas()const
 void CreateContactFlowRequest::setCanvas(const std::string& canvas)
 {
 	canvas_ = canvas;
-	setCoreParameter("Canvas", canvas);
+	setBodyParameter("Canvas", canvas);
 }
 
 std::string CreateContactFlowRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateContactFlowRequest::getDescription()const
 void CreateContactFlowRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateContactFlowRequest::getType()const
@@ -55,7 +57,7 @@ std::string CreateContactFlowRequest::getType()const
 void CreateContactFlowRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateContactFlowRequest::getContent()const
@@ -66,7 +68,7 @@ std::string CreateContactFlowRequest::getContent()const
 void CreateContactFlowRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
 std::string CreateContactFlowRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string CreateContactFlowRequest::getAccessKeyId()const
 void CreateContactFlowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateContactFlowRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string CreateContactFlowRequest::getInstanceId()const
 void CreateContactFlowRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateContactFlowRequest::getName()const
@@ -99,6 +101,6 @@ std::string CreateContactFlowRequest::getName()const
 void CreateContactFlowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

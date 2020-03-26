@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::SetDefaultPolicyVersionRequest;
 
 SetDefaultPolicyVersionRequest::SetDefaultPolicyVersionRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "SetDefaultPolicyVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDefaultPolicyVersionRequest::~SetDefaultPolicyVersionRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDefaultPolicyVersionRequest::getVersionId()const
 void SetDefaultPolicyVersionRequest::setVersionId(const std::string& versionId)
 {
 	versionId_ = versionId;
-	setCoreParameter("VersionId", versionId);
+	setParameter("VersionId", versionId);
 }
 
 std::string SetDefaultPolicyVersionRequest::getPolicyName()const
@@ -44,6 +46,6 @@ std::string SetDefaultPolicyVersionRequest::getPolicyName()const
 void SetDefaultPolicyVersionRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListBasicStatisticsReportSubItemsRequest;
 
 ListBasicStatisticsReportSubItemsRequest::ListBasicStatisticsReportSubItemsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListBasicStatisticsReportSubItems")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBasicStatisticsReportSubItemsRequest::~ListBasicStatisticsReportSubItemsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getTitle()const
 void ListBasicStatisticsReportSubItemsRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListBasicStatisticsReportSubItemsRequest::getPageNumber()const
 void ListBasicStatisticsReportSubItemsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getInstanceId()const
 void ListBasicStatisticsReportSubItemsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
@@ -66,7 +68,7 @@ std::string ListBasicStatisticsReportSubItemsRequest::getJobGroupId()const
 void ListBasicStatisticsReportSubItemsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 
 int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
@@ -77,6 +79,6 @@ int ListBasicStatisticsReportSubItemsRequest::getPageSize()const
 void ListBasicStatisticsReportSubItemsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

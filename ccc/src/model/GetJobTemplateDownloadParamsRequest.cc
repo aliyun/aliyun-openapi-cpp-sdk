@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobTemplateDownloadParamsRequest;
 
 GetJobTemplateDownloadParamsRequest::GetJobTemplateDownloadParamsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobTemplateDownloadParams")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobTemplateDownloadParamsRequest::~GetJobTemplateDownloadParamsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobTemplateDownloadParamsRequest::getInstanceId()const
 void GetJobTemplateDownloadParamsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetJobTemplateDownloadParamsRequest::getScenarioId()const
@@ -44,6 +46,6 @@ std::string GetJobTemplateDownloadParamsRequest::getScenarioId()const
 void GetJobTemplateDownloadParamsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetImageLayerRequest;
 
 GetImageLayerRequest::GetImageLayerRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetImageLayerRequest::~GetImageLayerRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetImageLayerRequest::getRepoNamespace()const
 void GetImageLayerRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetImageLayerRequest::getRepoName()const
@@ -44,7 +47,7 @@ std::string GetImageLayerRequest::getRepoName()const
 void GetImageLayerRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 std::string GetImageLayerRequest::getTag()const
@@ -55,6 +58,6 @@ std::string GetImageLayerRequest::getTag()const
 void GetImageLayerRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 

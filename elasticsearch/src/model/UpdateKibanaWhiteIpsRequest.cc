@@ -22,7 +22,7 @@ UpdateKibanaWhiteIpsRequest::UpdateKibanaWhiteIpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/kibana-white-ips");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateKibanaWhiteIpsRequest::~UpdateKibanaWhiteIpsRequest()

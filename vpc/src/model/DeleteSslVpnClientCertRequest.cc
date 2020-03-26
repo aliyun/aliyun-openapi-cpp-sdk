@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteSslVpnClientCertRequest;
 
 DeleteSslVpnClientCertRequest::DeleteSslVpnClientCertRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteSslVpnClientCert")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSslVpnClientCertRequest::~DeleteSslVpnClientCertRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteSslVpnClientCertRequest::getResourceOwnerId()const
 void DeleteSslVpnClientCertRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSslVpnClientCertRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteSslVpnClientCertRequest::getClientToken()const
 void DeleteSslVpnClientCertRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteSslVpnClientCertRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteSslVpnClientCertRequest::getRegionId()const
 void DeleteSslVpnClientCertRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteSslVpnClientCertRequest::getSslVpnClientCertId()const
@@ -66,7 +68,7 @@ std::string DeleteSslVpnClientCertRequest::getSslVpnClientCertId()const
 void DeleteSslVpnClientCertRequest::setSslVpnClientCertId(const std::string& sslVpnClientCertId)
 {
 	sslVpnClientCertId_ = sslVpnClientCertId;
-	setCoreParameter("SslVpnClientCertId", sslVpnClientCertId);
+	setParameter("SslVpnClientCertId", sslVpnClientCertId);
 }
 
 std::string DeleteSslVpnClientCertRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteSslVpnClientCertRequest::getResourceOwnerAccount()const
 void DeleteSslVpnClientCertRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSslVpnClientCertRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteSslVpnClientCertRequest::getOwnerAccount()const
 void DeleteSslVpnClientCertRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteSslVpnClientCertRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteSslVpnClientCertRequest::getOwnerId()const
 void DeleteSslVpnClientCertRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

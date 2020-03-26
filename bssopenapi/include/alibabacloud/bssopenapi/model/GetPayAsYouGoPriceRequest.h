@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_BSSOPENAPI_EXPORT GetPayAsYouGoPriceRequest : public RpcServiceRequest
 			{
+			public:
 				struct ModuleList
 				{
 					std::string moduleCode;

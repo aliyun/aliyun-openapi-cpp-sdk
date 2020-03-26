@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribePlayVideoStatisRequest;
 
 DescribePlayVideoStatisRequest::DescribePlayVideoStatisRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribePlayVideoStatis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePlayVideoStatisRequest::~DescribePlayVideoStatisRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePlayVideoStatisRequest::getStartTime()const
 void DescribePlayVideoStatisRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribePlayVideoStatisRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribePlayVideoStatisRequest::getEndTime()const
 void DescribePlayVideoStatisRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribePlayVideoStatisRequest::getVideoId()const
@@ -55,7 +57,7 @@ std::string DescribePlayVideoStatisRequest::getVideoId()const
 void DescribePlayVideoStatisRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long DescribePlayVideoStatisRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DescribePlayVideoStatisRequest::getOwnerId()const
 void DescribePlayVideoStatisRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

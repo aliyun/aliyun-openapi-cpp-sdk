@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT CreateLifecycleHookRequest : public RpcServiceRequest
 			{
+			public:
 				struct LifecycleHook
 				{
 					std::string defaultResult;

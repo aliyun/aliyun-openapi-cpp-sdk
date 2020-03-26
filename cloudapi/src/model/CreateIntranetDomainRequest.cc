@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateIntranetDomainRequest;
 
 CreateIntranetDomainRequest::CreateIntranetDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateIntranetDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIntranetDomainRequest::~CreateIntranetDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateIntranetDomainRequest::getGroupId()const
 void CreateIntranetDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string CreateIntranetDomainRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateIntranetDomainRequest::getAccessKeyId()const
 void CreateIntranetDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool CreateIntranetDomainRequest::getDeleteInternetDomain()const
@@ -55,7 +57,7 @@ bool CreateIntranetDomainRequest::getDeleteInternetDomain()const
 void CreateIntranetDomainRequest::setDeleteInternetDomain(bool deleteInternetDomain)
 {
 	deleteInternetDomain_ = deleteInternetDomain;
-	setCoreParameter("DeleteInternetDomain", deleteInternetDomain ? "true" : "false");
+	setParameter("DeleteInternetDomain", deleteInternetDomain ? "true" : "false");
 }
 
 std::string CreateIntranetDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string CreateIntranetDomainRequest::getSecurityToken()const
 void CreateIntranetDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

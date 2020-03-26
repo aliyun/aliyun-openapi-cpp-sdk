@@ -21,16 +21,32 @@ set(sas_public_header
 	include/alibabacloud/sas/SasExport.h )
 
 set(sas_public_header_model 
+	include/alibabacloud/sas/model/CreateAntiBruteForceRuleRequest.h
+	include/alibabacloud/sas/model/CreateAntiBruteForceRuleResult.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupRequest.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupResult.h
+	include/alibabacloud/sas/model/CreateSimilarSecurityEventsQueryTaskRequest.h
+	include/alibabacloud/sas/model/CreateSimilarSecurityEventsQueryTaskResult.h
 	include/alibabacloud/sas/model/DeleteGroupRequest.h
 	include/alibabacloud/sas/model/DeleteGroupResult.h
+	include/alibabacloud/sas/model/DeleteLoginBaseConfigRequest.h
+	include/alibabacloud/sas/model/DeleteLoginBaseConfigResult.h
+	include/alibabacloud/sas/model/DeleteTagWithUuidRequest.h
+	include/alibabacloud/sas/model/DeleteTagWithUuidResult.h
 	include/alibabacloud/sas/model/DescribeAlarmEventDetailRequest.h
 	include/alibabacloud/sas/model/DescribeAlarmEventDetailResult.h
 	include/alibabacloud/sas/model/DescribeAlarmEventListRequest.h
 	include/alibabacloud/sas/model/DescribeAlarmEventListResult.h
+	include/alibabacloud/sas/model/DescribeAllEntityRequest.h
+	include/alibabacloud/sas/model/DescribeAllEntityResult.h
 	include/alibabacloud/sas/model/DescribeAllGroupsRequest.h
 	include/alibabacloud/sas/model/DescribeAllGroupsResult.h
+	include/alibabacloud/sas/model/DescribeAllRegionsStatisticsRequest.h
+	include/alibabacloud/sas/model/DescribeAllRegionsStatisticsResult.h
+	include/alibabacloud/sas/model/DescribeAssetDetailByUuidRequest.h
+	include/alibabacloud/sas/model/DescribeAssetDetailByUuidResult.h
+	include/alibabacloud/sas/model/DescribeAssetDetailByUuidsRequest.h
+	include/alibabacloud/sas/model/DescribeAssetDetailByUuidsResult.h
 	include/alibabacloud/sas/model/DescribeAutoDelConfigRequest.h
 	include/alibabacloud/sas/model/DescribeAutoDelConfigResult.h
 	include/alibabacloud/sas/model/DescribeCheckWarningDetailRequest.h
@@ -45,6 +61,12 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeCloudProductFieldStatisticsResult.h
 	include/alibabacloud/sas/model/DescribeConcernNecessityRequest.h
 	include/alibabacloud/sas/model/DescribeConcernNecessityResult.h
+	include/alibabacloud/sas/model/DescribeCriteriaRequest.h
+	include/alibabacloud/sas/model/DescribeCriteriaResult.h
+	include/alibabacloud/sas/model/DescribeDialogMessagesRequest.h
+	include/alibabacloud/sas/model/DescribeDialogMessagesResult.h
+	include/alibabacloud/sas/model/DescribeDingTalkRequest.h
+	include/alibabacloud/sas/model/DescribeDingTalkResult.h
 	include/alibabacloud/sas/model/DescribeDomainCountRequest.h
 	include/alibabacloud/sas/model/DescribeDomainCountResult.h
 	include/alibabacloud/sas/model/DescribeDomainDetailRequest.h
@@ -53,14 +75,24 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeDomainListResult.h
 	include/alibabacloud/sas/model/DescribeEmgVulGroupRequest.h
 	include/alibabacloud/sas/model/DescribeEmgVulGroupResult.h
+	include/alibabacloud/sas/model/DescribeExportInfoRequest.h
+	include/alibabacloud/sas/model/DescribeExportInfoResult.h
 	include/alibabacloud/sas/model/DescribeFieldStatisticsRequest.h
 	include/alibabacloud/sas/model/DescribeFieldStatisticsResult.h
+	include/alibabacloud/sas/model/DescribeGraph4InvestigationOnlineRequest.h
+	include/alibabacloud/sas/model/DescribeGraph4InvestigationOnlineResult.h
 	include/alibabacloud/sas/model/DescribeGroupedTagsRequest.h
 	include/alibabacloud/sas/model/DescribeGroupedTagsResult.h
 	include/alibabacloud/sas/model/DescribeGroupedVulRequest.h
 	include/alibabacloud/sas/model/DescribeGroupedVulResult.h
 	include/alibabacloud/sas/model/DescribeInstanceStatisticsRequest.h
 	include/alibabacloud/sas/model/DescribeInstanceStatisticsResult.h
+	include/alibabacloud/sas/model/DescribeIpInfoRequest.h
+	include/alibabacloud/sas/model/DescribeIpInfoResult.h
+	include/alibabacloud/sas/model/DescribeModuleConfigRequest.h
+	include/alibabacloud/sas/model/DescribeModuleConfigResult.h
+	include/alibabacloud/sas/model/DescribeNoticeConfigRequest.h
+	include/alibabacloud/sas/model/DescribeNoticeConfigResult.h
 	include/alibabacloud/sas/model/DescribePropertyCountRequest.h
 	include/alibabacloud/sas/model/DescribePropertyCountResult.h
 	include/alibabacloud/sas/model/DescribePropertyPortDetailRequest.h
@@ -75,6 +107,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribePropertySoftwareDetailResult.h
 	include/alibabacloud/sas/model/DescribePropertySoftwareItemRequest.h
 	include/alibabacloud/sas/model/DescribePropertySoftwareItemResult.h
+	include/alibabacloud/sas/model/DescribePropertyUsageNewestRequest.h
+	include/alibabacloud/sas/model/DescribePropertyUsageNewestResult.h
 	include/alibabacloud/sas/model/DescribePropertyUserDetailRequest.h
 	include/alibabacloud/sas/model/DescribePropertyUserDetailResult.h
 	include/alibabacloud/sas/model/DescribePropertyUserItemRequest.h
@@ -87,12 +121,26 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeRiskCheckSummaryResult.h
 	include/alibabacloud/sas/model/DescribeRiskItemTypeRequest.h
 	include/alibabacloud/sas/model/DescribeRiskItemTypeResult.h
+	include/alibabacloud/sas/model/DescribeSasAssetStatisticsColumnRequest.h
+	include/alibabacloud/sas/model/DescribeSasAssetStatisticsColumnResult.h
+	include/alibabacloud/sas/model/DescribeSearchConditionRequest.h
+	include/alibabacloud/sas/model/DescribeSearchConditionResult.h
+	include/alibabacloud/sas/model/DescribeSecureSuggestionRequest.h
+	include/alibabacloud/sas/model/DescribeSecureSuggestionResult.h
 	include/alibabacloud/sas/model/DescribeSecurityCheckScheduleConfigRequest.h
 	include/alibabacloud/sas/model/DescribeSecurityCheckScheduleConfigResult.h
+	include/alibabacloud/sas/model/DescribeSecurityEventOperationsRequest.h
+	include/alibabacloud/sas/model/DescribeSecurityEventOperationsResult.h
+	include/alibabacloud/sas/model/DescribeSecurityStatInfoRequest.h
+	include/alibabacloud/sas/model/DescribeSecurityStatInfoResult.h
+	include/alibabacloud/sas/model/DescribeSimilarSecurityEventsRequest.h
+	include/alibabacloud/sas/model/DescribeSimilarSecurityEventsResult.h
 	include/alibabacloud/sas/model/DescribeStrategyExecDetailRequest.h
 	include/alibabacloud/sas/model/DescribeStrategyExecDetailResult.h
 	include/alibabacloud/sas/model/DescribeStratetyRequest.h
 	include/alibabacloud/sas/model/DescribeStratetyResult.h
+	include/alibabacloud/sas/model/DescribeSummaryInfoRequest.h
+	include/alibabacloud/sas/model/DescribeSummaryInfoResult.h
 	include/alibabacloud/sas/model/DescribeSuspEventDetailRequest.h
 	include/alibabacloud/sas/model/DescribeSuspEventDetailResult.h
 	include/alibabacloud/sas/model/DescribeSuspEventsRequest.h
@@ -101,6 +149,10 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeUserBaselineAuthorizationResult.h
 	include/alibabacloud/sas/model/DescribeUserLayoutAuthorizationRequest.h
 	include/alibabacloud/sas/model/DescribeUserLayoutAuthorizationResult.h
+	include/alibabacloud/sas/model/DescribeVolDingdingMessageRequest.h
+	include/alibabacloud/sas/model/DescribeVolDingdingMessageResult.h
+	include/alibabacloud/sas/model/DescribeVpcListRequest.h
+	include/alibabacloud/sas/model/DescribeVpcListResult.h
 	include/alibabacloud/sas/model/DescribeVulDetailsRequest.h
 	include/alibabacloud/sas/model/DescribeVulDetailsResult.h
 	include/alibabacloud/sas/model/DescribeVulListRequest.h
@@ -109,6 +161,16 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeVulWhitelistResult.h
 	include/alibabacloud/sas/model/DescribeWarningMachinesRequest.h
 	include/alibabacloud/sas/model/DescribeWarningMachinesResult.h
+	include/alibabacloud/sas/model/ExportRecordRequest.h
+	include/alibabacloud/sas/model/ExportRecordResult.h
+	include/alibabacloud/sas/model/GetIOCsRequest.h
+	include/alibabacloud/sas/model/GetIOCsResult.h
+	include/alibabacloud/sas/model/GetIncIOCsRequest.h
+	include/alibabacloud/sas/model/GetIncIOCsResult.h
+	include/alibabacloud/sas/model/HandleSimilarSecurityEventsRequest.h
+	include/alibabacloud/sas/model/HandleSimilarSecurityEventsResult.h
+	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleRequest.h
+	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleResult.h
 	include/alibabacloud/sas/model/ModifyAutoDelConfigRequest.h
 	include/alibabacloud/sas/model/ModifyAutoDelConfigResult.h
 	include/alibabacloud/sas/model/ModifyConcernNecessityRequest.h
@@ -121,6 +183,12 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ModifyEmgVulSubmitResult.h
 	include/alibabacloud/sas/model/ModifyGroupPropertyRequest.h
 	include/alibabacloud/sas/model/ModifyGroupPropertyResult.h
+	include/alibabacloud/sas/model/ModifyLoginBaseConfigRequest.h
+	include/alibabacloud/sas/model/ModifyLoginBaseConfigResult.h
+	include/alibabacloud/sas/model/ModifyLoginSwitchConfigRequest.h
+	include/alibabacloud/sas/model/ModifyLoginSwitchConfigResult.h
+	include/alibabacloud/sas/model/ModifyNoticeConfigRequest.h
+	include/alibabacloud/sas/model/ModifyNoticeConfigResult.h
 	include/alibabacloud/sas/model/ModifyOperateVulRequest.h
 	include/alibabacloud/sas/model/ModifyOperateVulResult.h
 	include/alibabacloud/sas/model/ModifyPushAllTaskRequest.h
@@ -131,23 +199,51 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ModifyRiskSingleResultStatusResult.h
 	include/alibabacloud/sas/model/ModifySecurityCheckScheduleConfigRequest.h
 	include/alibabacloud/sas/model/ModifySecurityCheckScheduleConfigResult.h
+	include/alibabacloud/sas/model/ModifyStartVulScanRequest.h
+	include/alibabacloud/sas/model/ModifyStartVulScanResult.h
 	include/alibabacloud/sas/model/ModifyTagWithUuidRequest.h
 	include/alibabacloud/sas/model/ModifyTagWithUuidResult.h
+	include/alibabacloud/sas/model/ModifyVulTargetConfigRequest.h
+	include/alibabacloud/sas/model/ModifyVulTargetConfigResult.h
+	include/alibabacloud/sas/model/OperateSuspiciousTargetConfigRequest.h
+	include/alibabacloud/sas/model/OperateSuspiciousTargetConfigResult.h
+	include/alibabacloud/sas/model/OperationSuspEventsRequest.h
+	include/alibabacloud/sas/model/OperationSuspEventsResult.h
+	include/alibabacloud/sas/model/PauseClientRequest.h
+	include/alibabacloud/sas/model/PauseClientResult.h
+	include/alibabacloud/sas/model/SasInstallCodeRequest.h
+	include/alibabacloud/sas/model/SasInstallCodeResult.h
 	include/alibabacloud/sas/model/StartBaselineSecurityCheckRequest.h
 	include/alibabacloud/sas/model/StartBaselineSecurityCheckResult.h )
 
 set(sas_src 
 	src/SasClient.cc
+	src/model/CreateAntiBruteForceRuleRequest.cc
+	src/model/CreateAntiBruteForceRuleResult.cc
 	src/model/CreateOrUpdateAssetGroupRequest.cc
 	src/model/CreateOrUpdateAssetGroupResult.cc
+	src/model/CreateSimilarSecurityEventsQueryTaskRequest.cc
+	src/model/CreateSimilarSecurityEventsQueryTaskResult.cc
 	src/model/DeleteGroupRequest.cc
 	src/model/DeleteGroupResult.cc
+	src/model/DeleteLoginBaseConfigRequest.cc
+	src/model/DeleteLoginBaseConfigResult.cc
+	src/model/DeleteTagWithUuidRequest.cc
+	src/model/DeleteTagWithUuidResult.cc
 	src/model/DescribeAlarmEventDetailRequest.cc
 	src/model/DescribeAlarmEventDetailResult.cc
 	src/model/DescribeAlarmEventListRequest.cc
 	src/model/DescribeAlarmEventListResult.cc
+	src/model/DescribeAllEntityRequest.cc
+	src/model/DescribeAllEntityResult.cc
 	src/model/DescribeAllGroupsRequest.cc
 	src/model/DescribeAllGroupsResult.cc
+	src/model/DescribeAllRegionsStatisticsRequest.cc
+	src/model/DescribeAllRegionsStatisticsResult.cc
+	src/model/DescribeAssetDetailByUuidRequest.cc
+	src/model/DescribeAssetDetailByUuidResult.cc
+	src/model/DescribeAssetDetailByUuidsRequest.cc
+	src/model/DescribeAssetDetailByUuidsResult.cc
 	src/model/DescribeAutoDelConfigRequest.cc
 	src/model/DescribeAutoDelConfigResult.cc
 	src/model/DescribeCheckWarningDetailRequest.cc
@@ -162,6 +258,12 @@ set(sas_src
 	src/model/DescribeCloudProductFieldStatisticsResult.cc
 	src/model/DescribeConcernNecessityRequest.cc
 	src/model/DescribeConcernNecessityResult.cc
+	src/model/DescribeCriteriaRequest.cc
+	src/model/DescribeCriteriaResult.cc
+	src/model/DescribeDialogMessagesRequest.cc
+	src/model/DescribeDialogMessagesResult.cc
+	src/model/DescribeDingTalkRequest.cc
+	src/model/DescribeDingTalkResult.cc
 	src/model/DescribeDomainCountRequest.cc
 	src/model/DescribeDomainCountResult.cc
 	src/model/DescribeDomainDetailRequest.cc
@@ -170,14 +272,24 @@ set(sas_src
 	src/model/DescribeDomainListResult.cc
 	src/model/DescribeEmgVulGroupRequest.cc
 	src/model/DescribeEmgVulGroupResult.cc
+	src/model/DescribeExportInfoRequest.cc
+	src/model/DescribeExportInfoResult.cc
 	src/model/DescribeFieldStatisticsRequest.cc
 	src/model/DescribeFieldStatisticsResult.cc
+	src/model/DescribeGraph4InvestigationOnlineRequest.cc
+	src/model/DescribeGraph4InvestigationOnlineResult.cc
 	src/model/DescribeGroupedTagsRequest.cc
 	src/model/DescribeGroupedTagsResult.cc
 	src/model/DescribeGroupedVulRequest.cc
 	src/model/DescribeGroupedVulResult.cc
 	src/model/DescribeInstanceStatisticsRequest.cc
 	src/model/DescribeInstanceStatisticsResult.cc
+	src/model/DescribeIpInfoRequest.cc
+	src/model/DescribeIpInfoResult.cc
+	src/model/DescribeModuleConfigRequest.cc
+	src/model/DescribeModuleConfigResult.cc
+	src/model/DescribeNoticeConfigRequest.cc
+	src/model/DescribeNoticeConfigResult.cc
 	src/model/DescribePropertyCountRequest.cc
 	src/model/DescribePropertyCountResult.cc
 	src/model/DescribePropertyPortDetailRequest.cc
@@ -192,6 +304,8 @@ set(sas_src
 	src/model/DescribePropertySoftwareDetailResult.cc
 	src/model/DescribePropertySoftwareItemRequest.cc
 	src/model/DescribePropertySoftwareItemResult.cc
+	src/model/DescribePropertyUsageNewestRequest.cc
+	src/model/DescribePropertyUsageNewestResult.cc
 	src/model/DescribePropertyUserDetailRequest.cc
 	src/model/DescribePropertyUserDetailResult.cc
 	src/model/DescribePropertyUserItemRequest.cc
@@ -204,12 +318,26 @@ set(sas_src
 	src/model/DescribeRiskCheckSummaryResult.cc
 	src/model/DescribeRiskItemTypeRequest.cc
 	src/model/DescribeRiskItemTypeResult.cc
+	src/model/DescribeSasAssetStatisticsColumnRequest.cc
+	src/model/DescribeSasAssetStatisticsColumnResult.cc
+	src/model/DescribeSearchConditionRequest.cc
+	src/model/DescribeSearchConditionResult.cc
+	src/model/DescribeSecureSuggestionRequest.cc
+	src/model/DescribeSecureSuggestionResult.cc
 	src/model/DescribeSecurityCheckScheduleConfigRequest.cc
 	src/model/DescribeSecurityCheckScheduleConfigResult.cc
+	src/model/DescribeSecurityEventOperationsRequest.cc
+	src/model/DescribeSecurityEventOperationsResult.cc
+	src/model/DescribeSecurityStatInfoRequest.cc
+	src/model/DescribeSecurityStatInfoResult.cc
+	src/model/DescribeSimilarSecurityEventsRequest.cc
+	src/model/DescribeSimilarSecurityEventsResult.cc
 	src/model/DescribeStrategyExecDetailRequest.cc
 	src/model/DescribeStrategyExecDetailResult.cc
 	src/model/DescribeStratetyRequest.cc
 	src/model/DescribeStratetyResult.cc
+	src/model/DescribeSummaryInfoRequest.cc
+	src/model/DescribeSummaryInfoResult.cc
 	src/model/DescribeSuspEventDetailRequest.cc
 	src/model/DescribeSuspEventDetailResult.cc
 	src/model/DescribeSuspEventsRequest.cc
@@ -218,6 +346,10 @@ set(sas_src
 	src/model/DescribeUserBaselineAuthorizationResult.cc
 	src/model/DescribeUserLayoutAuthorizationRequest.cc
 	src/model/DescribeUserLayoutAuthorizationResult.cc
+	src/model/DescribeVolDingdingMessageRequest.cc
+	src/model/DescribeVolDingdingMessageResult.cc
+	src/model/DescribeVpcListRequest.cc
+	src/model/DescribeVpcListResult.cc
 	src/model/DescribeVulDetailsRequest.cc
 	src/model/DescribeVulDetailsResult.cc
 	src/model/DescribeVulListRequest.cc
@@ -226,6 +358,16 @@ set(sas_src
 	src/model/DescribeVulWhitelistResult.cc
 	src/model/DescribeWarningMachinesRequest.cc
 	src/model/DescribeWarningMachinesResult.cc
+	src/model/ExportRecordRequest.cc
+	src/model/ExportRecordResult.cc
+	src/model/GetIOCsRequest.cc
+	src/model/GetIOCsResult.cc
+	src/model/GetIncIOCsRequest.cc
+	src/model/GetIncIOCsResult.cc
+	src/model/HandleSimilarSecurityEventsRequest.cc
+	src/model/HandleSimilarSecurityEventsResult.cc
+	src/model/ModifyAntiBruteForceRuleRequest.cc
+	src/model/ModifyAntiBruteForceRuleResult.cc
 	src/model/ModifyAutoDelConfigRequest.cc
 	src/model/ModifyAutoDelConfigResult.cc
 	src/model/ModifyConcernNecessityRequest.cc
@@ -238,6 +380,12 @@ set(sas_src
 	src/model/ModifyEmgVulSubmitResult.cc
 	src/model/ModifyGroupPropertyRequest.cc
 	src/model/ModifyGroupPropertyResult.cc
+	src/model/ModifyLoginBaseConfigRequest.cc
+	src/model/ModifyLoginBaseConfigResult.cc
+	src/model/ModifyLoginSwitchConfigRequest.cc
+	src/model/ModifyLoginSwitchConfigResult.cc
+	src/model/ModifyNoticeConfigRequest.cc
+	src/model/ModifyNoticeConfigResult.cc
 	src/model/ModifyOperateVulRequest.cc
 	src/model/ModifyOperateVulResult.cc
 	src/model/ModifyPushAllTaskRequest.cc
@@ -248,8 +396,20 @@ set(sas_src
 	src/model/ModifyRiskSingleResultStatusResult.cc
 	src/model/ModifySecurityCheckScheduleConfigRequest.cc
 	src/model/ModifySecurityCheckScheduleConfigResult.cc
+	src/model/ModifyStartVulScanRequest.cc
+	src/model/ModifyStartVulScanResult.cc
 	src/model/ModifyTagWithUuidRequest.cc
 	src/model/ModifyTagWithUuidResult.cc
+	src/model/ModifyVulTargetConfigRequest.cc
+	src/model/ModifyVulTargetConfigResult.cc
+	src/model/OperateSuspiciousTargetConfigRequest.cc
+	src/model/OperateSuspiciousTargetConfigResult.cc
+	src/model/OperationSuspEventsRequest.cc
+	src/model/OperationSuspEventsResult.cc
+	src/model/PauseClientRequest.cc
+	src/model/PauseClientResult.cc
+	src/model/SasInstallCodeRequest.cc
+	src/model/SasInstallCodeResult.cc
 	src/model/StartBaselineSecurityCheckRequest.cc
 	src/model/StartBaselineSecurityCheckResult.cc )
 

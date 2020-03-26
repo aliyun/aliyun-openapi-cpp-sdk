@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::QueryDatasetRequest;
 
 QueryDatasetRequest::QueryDatasetRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "QueryDataset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDatasetRequest::~QueryDatasetRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDatasetRequest::getDateStr()const
 void QueryDatasetRequest::setDateStr(const std::string& dateStr)
 {
 	dateStr_ = dateStr;
-	setCoreParameter("DateStr", dateStr);
+	setParameter("DateStr", dateStr);
 }
 
 long QueryDatasetRequest::getMinTime()const
@@ -44,7 +46,18 @@ long QueryDatasetRequest::getMinTime()const
 void QueryDatasetRequest::setMinTime(long minTime)
 {
 	minTime_ = minTime;
-	setCoreParameter("MinTime", std::to_string(minTime));
+	setParameter("MinTime", std::to_string(minTime));
+}
+
+std::string QueryDatasetRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void QueryDatasetRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
 }
 
 bool QueryDatasetRequest::getReduceTail()const
@@ -55,7 +68,7 @@ bool QueryDatasetRequest::getReduceTail()const
 void QueryDatasetRequest::setReduceTail(bool reduceTail)
 {
 	reduceTail_ = reduceTail;
-	setCoreParameter("ReduceTail", reduceTail ? "true" : "false");
+	setParameter("ReduceTail", reduceTail ? "true" : "false");
 }
 
 long QueryDatasetRequest::getMaxTime()const
@@ -66,7 +79,7 @@ long QueryDatasetRequest::getMaxTime()const
 void QueryDatasetRequest::setMaxTime(long maxTime)
 {
 	maxTime_ = maxTime;
-	setCoreParameter("MaxTime", std::to_string(maxTime));
+	setParameter("MaxTime", std::to_string(maxTime));
 }
 
 std::vector<QueryDatasetRequest::OptionalDims> QueryDatasetRequest::getOptionalDims()const
@@ -77,13 +90,12 @@ std::vector<QueryDatasetRequest::OptionalDims> QueryDatasetRequest::getOptionalD
 void QueryDatasetRequest::setOptionalDims(const std::vector<OptionalDims>& optionalDims)
 {
 	optionalDims_ = optionalDims;
-	int i = 0;
-	for(int i = 0; i!= optionalDims.size(); i++)	{
-		auto obj = optionalDims.at(i);
-		std::string str ="OptionalDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= optionalDims.size(); dep1++) {
+		auto optionalDimsObj = optionalDims.at(dep1);
+		std::string optionalDimsObjStr = "OptionalDims." + std::to_string(dep1 + 1);
+		setParameter(optionalDimsObjStr + ".Type", optionalDimsObj.type);
+		setParameter(optionalDimsObjStr + ".Value", optionalDimsObj.value);
+		setParameter(optionalDimsObjStr + ".Key", optionalDimsObj.key);
 	}
 }
 
@@ -95,8 +107,9 @@ std::vector<std::string> QueryDatasetRequest::getMeasures()const
 void QueryDatasetRequest::setMeasures(const std::vector<std::string>& measures)
 {
 	measures_ = measures;
-	for(int i = 0; i!= measures.size(); i++)
-		setCoreParameter("Measures."+ std::to_string(i), measures.at(i));
+	for(int dep1 = 0; dep1!= measures.size(); dep1++) {
+		setParameter("Measures."+ std::to_string(dep1), measures.at(dep1));
+	}
 }
 
 int QueryDatasetRequest::getIntervalInSec()const
@@ -107,7 +120,7 @@ int QueryDatasetRequest::getIntervalInSec()const
 void QueryDatasetRequest::setIntervalInSec(int intervalInSec)
 {
 	intervalInSec_ = intervalInSec;
-	setCoreParameter("IntervalInSec", std::to_string(intervalInSec));
+	setParameter("IntervalInSec", std::to_string(intervalInSec));
 }
 
 bool QueryDatasetRequest::getIsDrillDown()const
@@ -118,7 +131,7 @@ bool QueryDatasetRequest::getIsDrillDown()const
 void QueryDatasetRequest::setIsDrillDown(bool isDrillDown)
 {
 	isDrillDown_ = isDrillDown;
-	setCoreParameter("IsDrillDown", isDrillDown ? "true" : "false");
+	setParameter("IsDrillDown", isDrillDown ? "true" : "false");
 }
 
 bool QueryDatasetRequest::getHungryMode()const
@@ -129,7 +142,7 @@ bool QueryDatasetRequest::getHungryMode()const
 void QueryDatasetRequest::setHungryMode(bool hungryMode)
 {
 	hungryMode_ = hungryMode;
-	setCoreParameter("HungryMode", hungryMode ? "true" : "false");
+	setParameter("HungryMode", hungryMode ? "true" : "false");
 }
 
 std::string QueryDatasetRequest::getOrderByKey()const
@@ -140,7 +153,7 @@ std::string QueryDatasetRequest::getOrderByKey()const
 void QueryDatasetRequest::setOrderByKey(const std::string& orderByKey)
 {
 	orderByKey_ = orderByKey;
-	setCoreParameter("OrderByKey", orderByKey);
+	setParameter("OrderByKey", orderByKey);
 }
 
 int QueryDatasetRequest::getLimit()const
@@ -151,7 +164,7 @@ int QueryDatasetRequest::getLimit()const
 void QueryDatasetRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 long QueryDatasetRequest::getDatasetId()const
@@ -162,7 +175,7 @@ long QueryDatasetRequest::getDatasetId()const
 void QueryDatasetRequest::setDatasetId(long datasetId)
 {
 	datasetId_ = datasetId;
-	setCoreParameter("DatasetId", std::to_string(datasetId));
+	setParameter("DatasetId", std::to_string(datasetId));
 }
 
 std::vector<QueryDatasetRequest::RequiredDims> QueryDatasetRequest::getRequiredDims()const
@@ -173,13 +186,12 @@ std::vector<QueryDatasetRequest::RequiredDims> QueryDatasetRequest::getRequiredD
 void QueryDatasetRequest::setRequiredDims(const std::vector<RequiredDims>& requiredDims)
 {
 	requiredDims_ = requiredDims;
-	int i = 0;
-	for(int i = 0; i!= requiredDims.size(); i++)	{
-		auto obj = requiredDims.at(i);
-		std::string str ="RequiredDims."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= requiredDims.size(); dep1++) {
+		auto requiredDimsObj = requiredDims.at(dep1);
+		std::string requiredDimsObjStr = "RequiredDims." + std::to_string(dep1 + 1);
+		setParameter(requiredDimsObjStr + ".Type", requiredDimsObj.type);
+		setParameter(requiredDimsObjStr + ".Value", requiredDimsObj.value);
+		setParameter(requiredDimsObjStr + ".Key", requiredDimsObj.key);
 	}
 }
 
@@ -191,13 +203,12 @@ std::vector<QueryDatasetRequest::Dimensions> QueryDatasetRequest::getDimensions(
 void QueryDatasetRequest::setDimensions(const std::vector<Dimensions>& dimensions)
 {
 	dimensions_ = dimensions;
-	int i = 0;
-	for(int i = 0; i!= dimensions.size(); i++)	{
-		auto obj = dimensions.at(i);
-		std::string str ="Dimensions."+ std::to_string(i);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= dimensions.size(); dep1++) {
+		auto dimensionsObj = dimensions.at(dep1);
+		std::string dimensionsObjStr = "Dimensions." + std::to_string(dep1 + 1);
+		setParameter(dimensionsObjStr + ".Type", dimensionsObj.type);
+		setParameter(dimensionsObjStr + ".Value", dimensionsObj.value);
+		setParameter(dimensionsObjStr + ".Key", dimensionsObj.key);
 	}
 }
 

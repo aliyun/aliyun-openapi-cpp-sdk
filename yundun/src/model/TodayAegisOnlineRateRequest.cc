@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayAegisOnlineRateRequest;
 
 TodayAegisOnlineRateRequest::TodayAegisOnlineRateRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayAegisOnlineRate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayAegisOnlineRateRequest::~TodayAegisOnlineRateRequest()
 {}

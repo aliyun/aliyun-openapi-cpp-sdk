@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DisassociateFlowLogRequest;
 
 DisassociateFlowLogRequest::DisassociateFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DisassociateFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisassociateFlowLogRequest::~DisassociateFlowLogRequest()
 {}
@@ -33,7 +35,7 @@ long DisassociateFlowLogRequest::getResourceOwnerId()const
 void DisassociateFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DisassociateFlowLogRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DisassociateFlowLogRequest::getRegionId()const
 void DisassociateFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DisassociateFlowLogRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DisassociateFlowLogRequest::getResourceOwnerAccount()const
 void DisassociateFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DisassociateFlowLogRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DisassociateFlowLogRequest::getOwnerAccount()const
 void DisassociateFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DisassociateFlowLogRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DisassociateFlowLogRequest::getOwnerId()const
 void DisassociateFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DisassociateFlowLogRequest::getSmartAGId()const
@@ -88,7 +90,7 @@ std::string DisassociateFlowLogRequest::getSmartAGId()const
 void DisassociateFlowLogRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string DisassociateFlowLogRequest::getFlowLogId()const
@@ -99,6 +101,6 @@ std::string DisassociateFlowLogRequest::getFlowLogId()const
 void DisassociateFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setParameter("FlowLogId", flowLogId);
 }
 

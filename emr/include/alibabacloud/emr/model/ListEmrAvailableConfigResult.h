@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string securityGroupId;
 					std::string creationTime;
+					std::string securityGroupType;
 					int availableInstanceAmount;
 				};
 				struct VpcInfo

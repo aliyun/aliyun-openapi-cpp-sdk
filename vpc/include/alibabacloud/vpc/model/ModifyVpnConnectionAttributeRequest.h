@@ -61,10 +61,14 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				bool getEnableDpd()const;
+				void setEnableDpd(bool enableDpd);
 				std::string getVpnConnectionId()const;
 				void setVpnConnectionId(const std::string& vpnConnectionId);
 				std::string getName()const;
 				void setName(const std::string& name);
+				bool getEnableNatTraversal()const;
+				void setEnableNatTraversal(bool enableNatTraversal);
 
             private:
 				std::string ikeConfig_;
@@ -80,8 +84,10 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				bool enableDpd_;
 				std::string vpnConnectionId_;
 				std::string name_;
+				bool enableNatTraversal_;
 
 			};
 		}

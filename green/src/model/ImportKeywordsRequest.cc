@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::ImportKeywordsRequest;
 
 ImportKeywordsRequest::ImportKeywordsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "ImportKeywords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportKeywordsRequest::~ImportKeywordsRequest()
 {}
@@ -33,7 +35,7 @@ int ImportKeywordsRequest::getKeywordLibId()const
 void ImportKeywordsRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setParameter("KeywordLibId", std::to_string(keywordLibId));
 }
 
 std::string ImportKeywordsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string ImportKeywordsRequest::getSourceIp()const
 void ImportKeywordsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ImportKeywordsRequest::getKeywordsObject()const
@@ -55,6 +57,6 @@ std::string ImportKeywordsRequest::getKeywordsObject()const
 void ImportKeywordsRequest::setKeywordsObject(const std::string& keywordsObject)
 {
 	keywordsObject_ = keywordsObject;
-	setCoreParameter("KeywordsObject", keywordsObject);
+	setParameter("KeywordsObject", keywordsObject);
 }
 

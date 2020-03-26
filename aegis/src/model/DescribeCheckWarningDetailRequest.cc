@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeCheckWarningDetailRequest;
 
 DescribeCheckWarningDetailRequest::DescribeCheckWarningDetailRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeCheckWarningDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCheckWarningDetailRequest::~DescribeCheckWarningDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCheckWarningDetailRequest::getSourceIp()const
 void DescribeCheckWarningDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCheckWarningDetailRequest::getLang()const
@@ -44,7 +46,7 @@ std::string DescribeCheckWarningDetailRequest::getLang()const
 void DescribeCheckWarningDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeCheckWarningDetailRequest::getCheckWarningId()const
@@ -55,6 +57,6 @@ long DescribeCheckWarningDetailRequest::getCheckWarningId()const
 void DescribeCheckWarningDetailRequest::setCheckWarningId(long checkWarningId)
 {
 	checkWarningId_ = checkWarningId;
-	setCoreParameter("CheckWarningId", std::to_string(checkWarningId));
+	setParameter("CheckWarningId", std::to_string(checkWarningId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeactiveFlowLogRequest;
 
 DeactiveFlowLogRequest::DeactiveFlowLogRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeactiveFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactiveFlowLogRequest::~DeactiveFlowLogRequest()
 {}
@@ -33,7 +35,7 @@ long DeactiveFlowLogRequest::getResourceOwnerId()const
 void DeactiveFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeactiveFlowLogRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeactiveFlowLogRequest::getClientToken()const
 void DeactiveFlowLogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeactiveFlowLogRequest::getCenId()const
@@ -55,7 +57,7 @@ std::string DeactiveFlowLogRequest::getCenId()const
 void DeactiveFlowLogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DeactiveFlowLogRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DeactiveFlowLogRequest::getRegionId()const
 void DeactiveFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeactiveFlowLogRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeactiveFlowLogRequest::getResourceOwnerAccount()const
 void DeactiveFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeactiveFlowLogRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeactiveFlowLogRequest::getOwnerAccount()const
 void DeactiveFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeactiveFlowLogRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeactiveFlowLogRequest::getOwnerId()const
 void DeactiveFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeactiveFlowLogRequest::getFlowLogId()const
@@ -110,6 +112,6 @@ std::string DeactiveFlowLogRequest::getFlowLogId()const
 void DeactiveFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setParameter("FlowLogId", flowLogId);
 }
 

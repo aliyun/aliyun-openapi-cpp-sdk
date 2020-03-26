@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyProcDetailRequest;
 
 DescribePropertyProcDetailRequest::DescribePropertyProcDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyProcDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyProcDetailRequest::~DescribePropertyProcDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePropertyProcDetailRequest::getRemark()const
 void DescribePropertyProcDetailRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribePropertyProcDetailRequest::getUuid()const
@@ -44,7 +46,7 @@ std::string DescribePropertyProcDetailRequest::getUuid()const
 void DescribePropertyProcDetailRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribePropertyProcDetailRequest::getCmdline()const
@@ -55,7 +57,7 @@ std::string DescribePropertyProcDetailRequest::getCmdline()const
 void DescribePropertyProcDetailRequest::setCmdline(const std::string& cmdline)
 {
 	cmdline_ = cmdline;
-	setCoreParameter("Cmdline", cmdline);
+	setParameter("Cmdline", cmdline);
 }
 
 std::string DescribePropertyProcDetailRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribePropertyProcDetailRequest::getSourceIp()const
 void DescribePropertyProcDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePropertyProcDetailRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribePropertyProcDetailRequest::getPageSize()const
 void DescribePropertyProcDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribePropertyProcDetailRequest::getCurrentPage()const
@@ -88,7 +90,7 @@ int DescribePropertyProcDetailRequest::getCurrentPage()const
 void DescribePropertyProcDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertyProcDetailRequest::getName()const
@@ -99,7 +101,7 @@ std::string DescribePropertyProcDetailRequest::getName()const
 void DescribePropertyProcDetailRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribePropertyProcDetailRequest::getUser()const
@@ -110,6 +112,6 @@ std::string DescribePropertyProcDetailRequest::getUser()const
 void DescribePropertyProcDetailRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 

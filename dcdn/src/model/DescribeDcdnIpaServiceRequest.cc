@@ -35,7 +35,7 @@ long DescribeDcdnIpaServiceRequest::getOwnerId()const
 void DescribeDcdnIpaServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnIpaServiceRequest::getSecurityToken()const
@@ -46,6 +46,6 @@ std::string DescribeDcdnIpaServiceRequest::getSecurityToken()const
 void DescribeDcdnIpaServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

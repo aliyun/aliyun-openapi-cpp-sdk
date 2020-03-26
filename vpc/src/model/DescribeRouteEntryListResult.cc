@@ -53,6 +53,8 @@ void DescribeRouteEntryListResult::parse(const std::string &payload)
 			routeEntrysObject.routeEntryId = valueRouteEntrysRouteEntry["RouteEntryId"].asString();
 		if(!valueRouteEntrysRouteEntry["RouteEntryName"].isNull())
 			routeEntrysObject.routeEntryName = valueRouteEntrysRouteEntry["RouteEntryName"].asString();
+		if(!valueRouteEntrysRouteEntry["Description"].isNull())
+			routeEntrysObject.description = valueRouteEntrysRouteEntry["Description"].asString();
 		if(!valueRouteEntrysRouteEntry["Status"].isNull())
 			routeEntrysObject.status = valueRouteEntrysRouteEntry["Status"].asString();
 		if(!valueRouteEntrysRouteEntry["IpVersion"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDomainVerifyInfoRequest;
 
 DescribeDomainVerifyInfoRequest::DescribeDomainVerifyInfoRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDomainVerifyInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainVerifyInfoRequest::~DescribeDomainVerifyInfoRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDomainVerifyInfoRequest::getOrderId()const
 void DescribeDomainVerifyInfoRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeDomainVerifyInfoRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeDomainVerifyInfoRequest::getResourceGroupId()const
 void DescribeDomainVerifyInfoRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDomainVerifyInfoRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeDomainVerifyInfoRequest::getSourceIp()const
 void DescribeDomainVerifyInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDomainVerifyInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeDomainVerifyInfoRequest::getLang()const
 void DescribeDomainVerifyInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

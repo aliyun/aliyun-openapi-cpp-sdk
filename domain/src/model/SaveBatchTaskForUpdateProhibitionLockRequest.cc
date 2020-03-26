@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForUpdateProhibitionLockRequest;
 
 SaveBatchTaskForUpdateProhibitionLockRequest::SaveBatchTaskForUpdateProhibitionLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForUpdateProhibitionLockRequest::~SaveBatchTaskForUpdateProhibitionLockRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> SaveBatchTaskForUpdateProhibitionLockRequest::getDomain
 void SaveBatchTaskForUpdateProhibitionLockRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 std::string SaveBatchTaskForUpdateProhibitionLockRequest::getUserClientIp()const
@@ -45,7 +48,7 @@ std::string SaveBatchTaskForUpdateProhibitionLockRequest::getUserClientIp()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForUpdateProhibitionLockRequest::getLang()const
@@ -56,7 +59,7 @@ std::string SaveBatchTaskForUpdateProhibitionLockRequest::getLang()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForUpdateProhibitionLockRequest::getStatus()const
@@ -67,6 +70,6 @@ bool SaveBatchTaskForUpdateProhibitionLockRequest::getStatus()const
 void SaveBatchTaskForUpdateProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setParameter("Status", status ? "true" : "false");
 }
 

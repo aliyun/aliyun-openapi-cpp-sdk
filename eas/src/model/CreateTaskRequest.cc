@@ -22,7 +22,7 @@ CreateTaskRequest::CreateTaskRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/tasks");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CreateTaskRequest::~CreateTaskRequest()

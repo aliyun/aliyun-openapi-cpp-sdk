@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenPrivateZoneRoutesRequest;
 
 DescribeCenPrivateZoneRoutesRequest::DescribeCenPrivateZoneRoutesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenPrivateZoneRoutesRequest::~DescribeCenPrivateZoneRoutesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenPrivateZoneRoutesRequest::getResourceOwnerId()const
 void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getCenId()const
 void DescribeCenPrivateZoneRoutesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getAccessRegionId()const
 void DescribeCenPrivateZoneRoutesRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setParameter("AccessRegionId", accessRegionId);
 }
 
 int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribeCenPrivateZoneRoutesRequest::getPageNumber()const
 void DescribeCenPrivateZoneRoutesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCenPrivateZoneRoutesRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCenPrivateZoneRoutesRequest::getPageSize()const
 void DescribeCenPrivateZoneRoutesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getHostRegionId()const
@@ -88,7 +90,7 @@ std::string DescribeCenPrivateZoneRoutesRequest::getHostRegionId()const
 void DescribeCenPrivateZoneRoutesRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setParameter("HostRegionId", hostRegionId);
 }
 
 std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
@@ -99,6 +101,6 @@ std::string DescribeCenPrivateZoneRoutesRequest::getResourceOwnerAccount()const
 void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 

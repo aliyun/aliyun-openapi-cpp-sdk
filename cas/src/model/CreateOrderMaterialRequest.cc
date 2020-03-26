@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderMaterialRequest;
 
 CreateOrderMaterialRequest::CreateOrderMaterialRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderMaterialRequest::~CreateOrderMaterialRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateOrderMaterialRequest::getLeaderName()const
 void CreateOrderMaterialRequest::setLeaderName(const std::string& leaderName)
 {
 	leaderName_ = leaderName;
-	setCoreParameter("LeaderName", leaderName);
+	setParameter("LeaderName", leaderName);
 }
 
 std::string CreateOrderMaterialRequest::getCity()const
@@ -44,7 +46,7 @@ std::string CreateOrderMaterialRequest::getCity()const
 void CreateOrderMaterialRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 std::string CreateOrderMaterialRequest::getCountryCode()const
@@ -55,7 +57,7 @@ std::string CreateOrderMaterialRequest::getCountryCode()const
 void CreateOrderMaterialRequest::setCountryCode(const std::string& countryCode)
 {
 	countryCode_ = countryCode;
-	setCoreParameter("CountryCode", countryCode);
+	setParameter("CountryCode", countryCode);
 }
 
 std::string CreateOrderMaterialRequest::getLeaderEmail()const
@@ -66,7 +68,7 @@ std::string CreateOrderMaterialRequest::getLeaderEmail()const
 void CreateOrderMaterialRequest::setLeaderEmail(const std::string& leaderEmail)
 {
 	leaderEmail_ = leaderEmail;
-	setCoreParameter("LeaderEmail", leaderEmail);
+	setParameter("LeaderEmail", leaderEmail);
 }
 
 std::string CreateOrderMaterialRequest::getCompanyAddress()const
@@ -77,7 +79,7 @@ std::string CreateOrderMaterialRequest::getCompanyAddress()const
 void CreateOrderMaterialRequest::setCompanyAddress(const std::string& companyAddress)
 {
 	companyAddress_ = companyAddress;
-	setCoreParameter("CompanyAddress", companyAddress);
+	setParameter("CompanyAddress", companyAddress);
 }
 
 std::string CreateOrderMaterialRequest::getResourceGroupId()const
@@ -88,7 +90,7 @@ std::string CreateOrderMaterialRequest::getResourceGroupId()const
 void CreateOrderMaterialRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderMaterialRequest::getCompanyCode()const
@@ -99,7 +101,7 @@ std::string CreateOrderMaterialRequest::getCompanyCode()const
 void CreateOrderMaterialRequest::setCompanyCode(const std::string& companyCode)
 {
 	companyCode_ = companyCode;
-	setCoreParameter("CompanyCode", companyCode);
+	setParameter("CompanyCode", companyCode);
 }
 
 std::string CreateOrderMaterialRequest::getPersonEmail()const
@@ -110,7 +112,7 @@ std::string CreateOrderMaterialRequest::getPersonEmail()const
 void CreateOrderMaterialRequest::setPersonEmail(const std::string& personEmail)
 {
 	personEmail_ = personEmail;
-	setCoreParameter("PersonEmail", personEmail);
+	setParameter("PersonEmail", personEmail);
 }
 
 std::string CreateOrderMaterialRequest::getProvince()const
@@ -121,7 +123,7 @@ std::string CreateOrderMaterialRequest::getProvince()const
 void CreateOrderMaterialRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", province);
+	setParameter("Province", province);
 }
 
 int CreateOrderMaterialRequest::getDomainAuthType()const
@@ -132,7 +134,7 @@ int CreateOrderMaterialRequest::getDomainAuthType()const
 void CreateOrderMaterialRequest::setDomainAuthType(int domainAuthType)
 {
 	domainAuthType_ = domainAuthType;
-	setCoreParameter("DomainAuthType", std::to_string(domainAuthType));
+	setParameter("DomainAuthType", std::to_string(domainAuthType));
 }
 
 std::string CreateOrderMaterialRequest::getLeaderPhone()const
@@ -143,7 +145,7 @@ std::string CreateOrderMaterialRequest::getLeaderPhone()const
 void CreateOrderMaterialRequest::setLeaderPhone(const std::string& leaderPhone)
 {
 	leaderPhone_ = leaderPhone;
-	setCoreParameter("LeaderPhone", leaderPhone);
+	setParameter("LeaderPhone", leaderPhone);
 }
 
 std::string CreateOrderMaterialRequest::getSourceIp()const
@@ -154,7 +156,7 @@ std::string CreateOrderMaterialRequest::getSourceIp()const
 void CreateOrderMaterialRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderMaterialRequest::getCsrContent()const
@@ -165,7 +167,7 @@ std::string CreateOrderMaterialRequest::getCsrContent()const
 void CreateOrderMaterialRequest::setCsrContent(const std::string& csrContent)
 {
 	csrContent_ = csrContent;
-	setCoreParameter("CsrContent", csrContent);
+	setParameter("CsrContent", csrContent);
 }
 
 std::string CreateOrderMaterialRequest::getLang()const
@@ -176,7 +178,7 @@ std::string CreateOrderMaterialRequest::getLang()const
 void CreateOrderMaterialRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateOrderMaterialRequest::getPersonName()const
@@ -187,7 +189,7 @@ std::string CreateOrderMaterialRequest::getPersonName()const
 void CreateOrderMaterialRequest::setPersonName(const std::string& personName)
 {
 	personName_ = personName;
-	setCoreParameter("PersonName", personName);
+	setParameter("PersonName", personName);
 }
 
 std::string CreateOrderMaterialRequest::getPersonIdCardNumber()const
@@ -198,7 +200,7 @@ std::string CreateOrderMaterialRequest::getPersonIdCardNumber()const
 void CreateOrderMaterialRequest::setPersonIdCardNumber(const std::string& personIdCardNumber)
 {
 	personIdCardNumber_ = personIdCardNumber;
-	setCoreParameter("PersonIdCardNumber", personIdCardNumber);
+	setParameter("PersonIdCardNumber", personIdCardNumber);
 }
 
 long CreateOrderMaterialRequest::getOrderId()const
@@ -209,7 +211,7 @@ long CreateOrderMaterialRequest::getOrderId()const
 void CreateOrderMaterialRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderMaterialRequest::getLeaderTitle()const
@@ -220,7 +222,7 @@ std::string CreateOrderMaterialRequest::getLeaderTitle()const
 void CreateOrderMaterialRequest::setLeaderTitle(const std::string& leaderTitle)
 {
 	leaderTitle_ = leaderTitle;
-	setCoreParameter("LeaderTitle", leaderTitle);
+	setParameter("LeaderTitle", leaderTitle);
 }
 
 std::string CreateOrderMaterialRequest::getPersonTitle()const
@@ -231,7 +233,7 @@ std::string CreateOrderMaterialRequest::getPersonTitle()const
 void CreateOrderMaterialRequest::setPersonTitle(const std::string& personTitle)
 {
 	personTitle_ = personTitle;
-	setCoreParameter("PersonTitle", personTitle);
+	setParameter("PersonTitle", personTitle);
 }
 
 std::string CreateOrderMaterialRequest::getPostCode()const
@@ -242,7 +244,7 @@ std::string CreateOrderMaterialRequest::getPostCode()const
 void CreateOrderMaterialRequest::setPostCode(const std::string& postCode)
 {
 	postCode_ = postCode;
-	setCoreParameter("PostCode", postCode);
+	setParameter("PostCode", postCode);
 }
 
 int CreateOrderMaterialRequest::getCreateCsr()const
@@ -253,7 +255,7 @@ int CreateOrderMaterialRequest::getCreateCsr()const
 void CreateOrderMaterialRequest::setCreateCsr(int createCsr)
 {
 	createCsr_ = createCsr;
-	setCoreParameter("CreateCsr", std::to_string(createCsr));
+	setParameter("CreateCsr", std::to_string(createCsr));
 }
 
 std::string CreateOrderMaterialRequest::getPersonPhone()const
@@ -264,7 +266,7 @@ std::string CreateOrderMaterialRequest::getPersonPhone()const
 void CreateOrderMaterialRequest::setPersonPhone(const std::string& personPhone)
 {
 	personPhone_ = personPhone;
-	setCoreParameter("PersonPhone", personPhone);
+	setParameter("PersonPhone", personPhone);
 }
 
 std::string CreateOrderMaterialRequest::getCompanyName()const
@@ -275,7 +277,7 @@ std::string CreateOrderMaterialRequest::getCompanyName()const
 void CreateOrderMaterialRequest::setCompanyName(const std::string& companyName)
 {
 	companyName_ = companyName;
-	setCoreParameter("CompanyName", companyName);
+	setParameter("CompanyName", companyName);
 }
 
 std::string CreateOrderMaterialRequest::getCompanyPhone()const
@@ -286,7 +288,7 @@ std::string CreateOrderMaterialRequest::getCompanyPhone()const
 void CreateOrderMaterialRequest::setCompanyPhone(const std::string& companyPhone)
 {
 	companyPhone_ = companyPhone;
-	setCoreParameter("CompanyPhone", companyPhone);
+	setParameter("CompanyPhone", companyPhone);
 }
 
 int CreateOrderMaterialRequest::getCompanyType()const
@@ -297,7 +299,7 @@ int CreateOrderMaterialRequest::getCompanyType()const
 void CreateOrderMaterialRequest::setCompanyType(int companyType)
 {
 	companyType_ = companyType;
-	setCoreParameter("CompanyType", std::to_string(companyType));
+	setParameter("CompanyType", std::to_string(companyType));
 }
 
 std::string CreateOrderMaterialRequest::getDomain()const
@@ -308,7 +310,7 @@ std::string CreateOrderMaterialRequest::getDomain()const
 void CreateOrderMaterialRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 
 std::string CreateOrderMaterialRequest::getPersonDepartment()const
@@ -319,6 +321,6 @@ std::string CreateOrderMaterialRequest::getPersonDepartment()const
 void CreateOrderMaterialRequest::setPersonDepartment(const std::string& personDepartment)
 {
 	personDepartment_ = personDepartment;
-	setCoreParameter("PersonDepartment", personDepartment);
+	setParameter("PersonDepartment", personDepartment);
 }
 

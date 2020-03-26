@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::UpdateRepoRequest;
 
 UpdateRepoRequest::UpdateRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateRepoRequest::~UpdateRepoRequest()
 {}
@@ -33,7 +36,7 @@ std::string UpdateRepoRequest::getRepoNamespace()const
 void UpdateRepoRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string UpdateRepoRequest::getRepoName()const
@@ -44,6 +47,6 @@ std::string UpdateRepoRequest::getRepoName()const
 void UpdateRepoRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

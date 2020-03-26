@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateKeywordLibRequest;
 
 UpdateKeywordLibRequest::UpdateKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateKeywordLibRequest::~UpdateKeywordLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateKeywordLibRequest::getMatchMode()const
 void UpdateKeywordLibRequest::setMatchMode(const std::string& matchMode)
 {
 	matchMode_ = matchMode;
-	setCoreParameter("MatchMode", matchMode);
+	setParameter("MatchMode", matchMode);
 }
 
 std::string UpdateKeywordLibRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateKeywordLibRequest::getSourceIp()const
 void UpdateKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 bool UpdateKeywordLibRequest::getEnable()const
@@ -55,7 +57,7 @@ bool UpdateKeywordLibRequest::getEnable()const
 void UpdateKeywordLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 int UpdateKeywordLibRequest::getId()const
@@ -66,7 +68,7 @@ int UpdateKeywordLibRequest::getId()const
 void UpdateKeywordLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string UpdateKeywordLibRequest::getLang()const
@@ -77,7 +79,7 @@ std::string UpdateKeywordLibRequest::getLang()const
 void UpdateKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string UpdateKeywordLibRequest::getBizTypes()const
@@ -88,7 +90,7 @@ std::string UpdateKeywordLibRequest::getBizTypes()const
 void UpdateKeywordLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", bizTypes);
+	setParameter("BizTypes", bizTypes);
 }
 
 std::string UpdateKeywordLibRequest::getName()const
@@ -99,6 +101,6 @@ std::string UpdateKeywordLibRequest::getName()const
 void UpdateKeywordLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

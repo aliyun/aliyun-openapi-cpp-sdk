@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::UpdateConfigNameRequest;
 
 UpdateConfigNameRequest::UpdateConfigNameRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "UpdateConfigName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateConfigNameRequest::~UpdateConfigNameRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateConfigNameRequest::getSourceIp()const
 void UpdateConfigNameRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateConfigNameRequest::getConfigName()const
@@ -44,7 +46,7 @@ std::string UpdateConfigNameRequest::getConfigName()const
 void UpdateConfigNameRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string UpdateConfigNameRequest::getRefExtId()const
@@ -55,7 +57,7 @@ std::string UpdateConfigNameRequest::getRefExtId()const
 void UpdateConfigNameRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string UpdateConfigNameRequest::getLang()const
@@ -66,6 +68,6 @@ std::string UpdateConfigNameRequest::getLang()const
 void UpdateConfigNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

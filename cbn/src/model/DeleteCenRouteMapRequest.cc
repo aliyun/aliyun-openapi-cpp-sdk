@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenRouteMapRequest;
 
 DeleteCenRouteMapRequest::DeleteCenRouteMapRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCenRouteMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenRouteMapRequest::~DeleteCenRouteMapRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCenRouteMapRequest::getResourceOwnerId()const
 void DeleteCenRouteMapRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCenRouteMapRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DeleteCenRouteMapRequest::getCenId()const
 void DeleteCenRouteMapRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DeleteCenRouteMapRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteCenRouteMapRequest::getResourceOwnerAccount()const
 void DeleteCenRouteMapRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCenRouteMapRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteCenRouteMapRequest::getOwnerAccount()const
 void DeleteCenRouteMapRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteCenRouteMapRequest::getRouteMapId()const
@@ -77,7 +79,7 @@ std::string DeleteCenRouteMapRequest::getRouteMapId()const
 void DeleteCenRouteMapRequest::setRouteMapId(const std::string& routeMapId)
 {
 	routeMapId_ = routeMapId;
-	setCoreParameter("RouteMapId", routeMapId);
+	setParameter("RouteMapId", routeMapId);
 }
 
 long DeleteCenRouteMapRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteCenRouteMapRequest::getOwnerId()const
 void DeleteCenRouteMapRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCenRouteMapRequest::getCenRegionId()const
@@ -99,6 +101,6 @@ std::string DeleteCenRouteMapRequest::getCenRegionId()const
 void DeleteCenRouteMapRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", cenRegionId);
+	setParameter("CenRegionId", cenRegionId);
 }
 

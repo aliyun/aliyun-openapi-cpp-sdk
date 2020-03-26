@@ -45,19 +45,36 @@ namespace AlibabaCloud
 					std::string errorMsg;
 					std::string httpMethod;
 				};
+				struct ApiImportModelFailed
+				{
+					std::string modelName;
+					std::string errorMsg;
+					std::string groupId;
+				};
+				struct ApiImportModelSuccess
+				{
+					std::string modelUid;
+					std::string modelOperation;
+					std::string modelName;
+					std::string groupId;
+				};
 
 
 				ImportSwaggerResult();
 				explicit ImportSwaggerResult(const std::string &payload);
 				~ImportSwaggerResult();
 				std::vector<ApiImportSwaggerFailed> getFailed()const;
+				std::vector<ApiImportModelFailed> getModelFailed()const;
 				std::vector<ApiImportSwaggerSuccess> getSuccess()const;
+				std::vector<ApiImportModelSuccess> getModelSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ApiImportSwaggerFailed> failed_;
+				std::vector<ApiImportModelFailed> modelFailed_;
 				std::vector<ApiImportSwaggerSuccess> success_;
+				std::vector<ApiImportModelSuccess> modelSuccess_;
 
 			};
 		}

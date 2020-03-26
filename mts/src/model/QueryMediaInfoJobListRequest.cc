@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaInfoJobListRequest;
 
 QueryMediaInfoJobListRequest::QueryMediaInfoJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaInfoJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaInfoJobListRequest::~QueryMediaInfoJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryMediaInfoJobListRequest::getResourceOwnerId()const
 void QueryMediaInfoJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMediaInfoJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryMediaInfoJobListRequest::getResourceOwnerAccount()const
 void QueryMediaInfoJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMediaInfoJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryMediaInfoJobListRequest::getOwnerAccount()const
 void QueryMediaInfoJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaInfoJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryMediaInfoJobListRequest::getOwnerId()const
 void QueryMediaInfoJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMediaInfoJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryMediaInfoJobListRequest::getAccessKeyId()const
 void QueryMediaInfoJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryMediaInfoJobListRequest::getMediaInfoJobIds()const
@@ -88,6 +90,6 @@ std::string QueryMediaInfoJobListRequest::getMediaInfoJobIds()const
 void QueryMediaInfoJobListRequest::setMediaInfoJobIds(const std::string& mediaInfoJobIds)
 {
 	mediaInfoJobIds_ = mediaInfoJobIds;
-	setCoreParameter("MediaInfoJobIds", mediaInfoJobIds);
+	setParameter("MediaInfoJobIds", mediaInfoJobIds);
 }
 

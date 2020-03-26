@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRouteEntryListRequest;
 
 DescribeRouteEntryListRequest::DescribeRouteEntryListRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouteEntryList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteEntryListRequest::~DescribeRouteEntryListRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRouteEntryListRequest::getResourceOwnerId()const
 void DescribeRouteEntryListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRouteEntryListRequest::getRouteEntryName()const
@@ -44,7 +46,7 @@ std::string DescribeRouteEntryListRequest::getRouteEntryName()const
 void DescribeRouteEntryListRequest::setRouteEntryName(const std::string& routeEntryName)
 {
 	routeEntryName_ = routeEntryName;
-	setCoreParameter("RouteEntryName", routeEntryName);
+	setParameter("RouteEntryName", routeEntryName);
 }
 
 std::string DescribeRouteEntryListRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeRouteEntryListRequest::getRegionId()const
 void DescribeRouteEntryListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeRouteEntryListRequest::getNextToken()const
@@ -66,7 +68,7 @@ std::string DescribeRouteEntryListRequest::getNextToken()const
 void DescribeRouteEntryListRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::string DescribeRouteEntryListRequest::getRouteEntryType()const
@@ -77,7 +79,7 @@ std::string DescribeRouteEntryListRequest::getRouteEntryType()const
 void DescribeRouteEntryListRequest::setRouteEntryType(const std::string& routeEntryType)
 {
 	routeEntryType_ = routeEntryType;
-	setCoreParameter("RouteEntryType", routeEntryType);
+	setParameter("RouteEntryType", routeEntryType);
 }
 
 std::string DescribeRouteEntryListRequest::getIpVersion()const
@@ -88,7 +90,7 @@ std::string DescribeRouteEntryListRequest::getIpVersion()const
 void DescribeRouteEntryListRequest::setIpVersion(const std::string& ipVersion)
 {
 	ipVersion_ = ipVersion;
-	setCoreParameter("IpVersion", ipVersion);
+	setParameter("IpVersion", ipVersion);
 }
 
 std::string DescribeRouteEntryListRequest::getNextHopId()const
@@ -99,7 +101,7 @@ std::string DescribeRouteEntryListRequest::getNextHopId()const
 void DescribeRouteEntryListRequest::setNextHopId(const std::string& nextHopId)
 {
 	nextHopId_ = nextHopId;
-	setCoreParameter("NextHopId", nextHopId);
+	setParameter("NextHopId", nextHopId);
 }
 
 std::string DescribeRouteEntryListRequest::getNextHopType()const
@@ -110,7 +112,7 @@ std::string DescribeRouteEntryListRequest::getNextHopType()const
 void DescribeRouteEntryListRequest::setNextHopType(const std::string& nextHopType)
 {
 	nextHopType_ = nextHopType;
-	setCoreParameter("NextHopType", nextHopType);
+	setParameter("NextHopType", nextHopType);
 }
 
 std::string DescribeRouteEntryListRequest::getRouteTableId()const
@@ -121,7 +123,7 @@ std::string DescribeRouteEntryListRequest::getRouteTableId()const
 void DescribeRouteEntryListRequest::setRouteTableId(const std::string& routeTableId)
 {
 	routeTableId_ = routeTableId;
-	setCoreParameter("RouteTableId", routeTableId);
+	setParameter("RouteTableId", routeTableId);
 }
 
 std::string DescribeRouteEntryListRequest::getResourceOwnerAccount()const
@@ -132,7 +134,7 @@ std::string DescribeRouteEntryListRequest::getResourceOwnerAccount()const
 void DescribeRouteEntryListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRouteEntryListRequest::getDestinationCidrBlock()const
@@ -143,7 +145,7 @@ std::string DescribeRouteEntryListRequest::getDestinationCidrBlock()const
 void DescribeRouteEntryListRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string DescribeRouteEntryListRequest::getOwnerAccount()const
@@ -154,7 +156,7 @@ std::string DescribeRouteEntryListRequest::getOwnerAccount()const
 void DescribeRouteEntryListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRouteEntryListRequest::getOwnerId()const
@@ -165,7 +167,7 @@ long DescribeRouteEntryListRequest::getOwnerId()const
 void DescribeRouteEntryListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int DescribeRouteEntryListRequest::getMaxResult()const
@@ -176,7 +178,7 @@ int DescribeRouteEntryListRequest::getMaxResult()const
 void DescribeRouteEntryListRequest::setMaxResult(int maxResult)
 {
 	maxResult_ = maxResult;
-	setCoreParameter("MaxResult", std::to_string(maxResult));
+	setParameter("MaxResult", std::to_string(maxResult));
 }
 
 std::string DescribeRouteEntryListRequest::getRouteEntryId()const
@@ -187,6 +189,6 @@ std::string DescribeRouteEntryListRequest::getRouteEntryId()const
 void DescribeRouteEntryListRequest::setRouteEntryId(const std::string& routeEntryId)
 {
 	routeEntryId_ = routeEntryId;
-	setCoreParameter("RouteEntryId", routeEntryId);
+	setParameter("RouteEntryId", routeEntryId);
 }
 

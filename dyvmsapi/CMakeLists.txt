@@ -39,10 +39,18 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/CreateRobotTaskResult.h
 	include/alibabacloud/dyvmsapi/model/DeleteRobotTaskRequest.h
 	include/alibabacloud/dyvmsapi/model/DeleteRobotTaskResult.h
+	include/alibabacloud/dyvmsapi/model/DescribeRecordDataRequest.h
+	include/alibabacloud/dyvmsapi/model/DescribeRecordDataResult.h
+	include/alibabacloud/dyvmsapi/model/DoRtcNumberAuthRequest.h
+	include/alibabacloud/dyvmsapi/model/DoRtcNumberAuthResult.h
 	include/alibabacloud/dyvmsapi/model/GetRtcTokenRequest.h
 	include/alibabacloud/dyvmsapi/model/GetRtcTokenResult.h
 	include/alibabacloud/dyvmsapi/model/IvrCallRequest.h
 	include/alibabacloud/dyvmsapi/model/IvrCallResult.h
+	include/alibabacloud/dyvmsapi/model/ListOrderedNumbersRequest.h
+	include/alibabacloud/dyvmsapi/model/ListOrderedNumbersResult.h
+	include/alibabacloud/dyvmsapi/model/ListOutboundStrategiesRequest.h
+	include/alibabacloud/dyvmsapi/model/ListOutboundStrategiesResult.h
 	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdRequest.h
 	include/alibabacloud/dyvmsapi/model/QueryCallDetailByCallIdResult.h
 	include/alibabacloud/dyvmsapi/model/QueryCallDetailByTaskIdRequest.h
@@ -59,6 +67,8 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/QueryRobotTaskListResult.h
 	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListRequest.h
 	include/alibabacloud/dyvmsapi/model/QueryRobotv2AllListResult.h
+	include/alibabacloud/dyvmsapi/model/QueryRtcNumberAuthStatusRequest.h
+	include/alibabacloud/dyvmsapi/model/QueryRtcNumberAuthStatusResult.h
 	include/alibabacloud/dyvmsapi/model/QueryVoipNumberBindInfosRequest.h
 	include/alibabacloud/dyvmsapi/model/QueryVoipNumberBindInfosResult.h
 	include/alibabacloud/dyvmsapi/model/ReportVoipProblemsRequest.h
@@ -71,12 +81,16 @@ set(dyvmsapi_public_header_model
 	include/alibabacloud/dyvmsapi/model/SmartCallResult.h
 	include/alibabacloud/dyvmsapi/model/SmartCallOperateRequest.h
 	include/alibabacloud/dyvmsapi/model/SmartCallOperateResult.h
+	include/alibabacloud/dyvmsapi/model/StartMicroOutboundRequest.h
+	include/alibabacloud/dyvmsapi/model/StartMicroOutboundResult.h
 	include/alibabacloud/dyvmsapi/model/StartRobotTaskRequest.h
 	include/alibabacloud/dyvmsapi/model/StartRobotTaskResult.h
 	include/alibabacloud/dyvmsapi/model/StopRobotTaskRequest.h
 	include/alibabacloud/dyvmsapi/model/StopRobotTaskResult.h
 	include/alibabacloud/dyvmsapi/model/UnbindNumberAndVoipIdRequest.h
 	include/alibabacloud/dyvmsapi/model/UnbindNumberAndVoipIdResult.h
+	include/alibabacloud/dyvmsapi/model/UndoRtcNumberAuthRequest.h
+	include/alibabacloud/dyvmsapi/model/UndoRtcNumberAuthResult.h
 	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileRequest.h
 	include/alibabacloud/dyvmsapi/model/UploadRobotTaskCalledFileResult.h
 	include/alibabacloud/dyvmsapi/model/VoipAddAccountRequest.h
@@ -104,10 +118,18 @@ set(dyvmsapi_src
 	src/model/CreateRobotTaskResult.cc
 	src/model/DeleteRobotTaskRequest.cc
 	src/model/DeleteRobotTaskResult.cc
+	src/model/DescribeRecordDataRequest.cc
+	src/model/DescribeRecordDataResult.cc
+	src/model/DoRtcNumberAuthRequest.cc
+	src/model/DoRtcNumberAuthResult.cc
 	src/model/GetRtcTokenRequest.cc
 	src/model/GetRtcTokenResult.cc
 	src/model/IvrCallRequest.cc
 	src/model/IvrCallResult.cc
+	src/model/ListOrderedNumbersRequest.cc
+	src/model/ListOrderedNumbersResult.cc
+	src/model/ListOutboundStrategiesRequest.cc
+	src/model/ListOutboundStrategiesResult.cc
 	src/model/QueryCallDetailByCallIdRequest.cc
 	src/model/QueryCallDetailByCallIdResult.cc
 	src/model/QueryCallDetailByTaskIdRequest.cc
@@ -124,6 +146,8 @@ set(dyvmsapi_src
 	src/model/QueryRobotTaskListResult.cc
 	src/model/QueryRobotv2AllListRequest.cc
 	src/model/QueryRobotv2AllListResult.cc
+	src/model/QueryRtcNumberAuthStatusRequest.cc
+	src/model/QueryRtcNumberAuthStatusResult.cc
 	src/model/QueryVoipNumberBindInfosRequest.cc
 	src/model/QueryVoipNumberBindInfosResult.cc
 	src/model/ReportVoipProblemsRequest.cc
@@ -136,12 +160,16 @@ set(dyvmsapi_src
 	src/model/SmartCallResult.cc
 	src/model/SmartCallOperateRequest.cc
 	src/model/SmartCallOperateResult.cc
+	src/model/StartMicroOutboundRequest.cc
+	src/model/StartMicroOutboundResult.cc
 	src/model/StartRobotTaskRequest.cc
 	src/model/StartRobotTaskResult.cc
 	src/model/StopRobotTaskRequest.cc
 	src/model/StopRobotTaskResult.cc
 	src/model/UnbindNumberAndVoipIdRequest.cc
 	src/model/UnbindNumberAndVoipIdResult.cc
+	src/model/UndoRtcNumberAuthRequest.cc
+	src/model/UndoRtcNumberAuthResult.cc
 	src/model/UploadRobotTaskCalledFileRequest.cc
 	src/model/UploadRobotTaskCalledFileResult.cc
 	src/model/VoipAddAccountRequest.cc

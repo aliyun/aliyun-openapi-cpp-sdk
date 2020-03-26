@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeHelpListRequest;
 
 DescribeHelpListRequest::DescribeHelpListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeHelpList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHelpListRequest::~DescribeHelpListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeHelpListRequest::getResourceGroupId()const
 void DescribeHelpListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeHelpListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeHelpListRequest::getSourceIp()const
 void DescribeHelpListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeHelpListRequest::getCategory()const
@@ -55,7 +57,7 @@ std::string DescribeHelpListRequest::getCategory()const
 void DescribeHelpListRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 
 std::string DescribeHelpListRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeHelpListRequest::getLang()const
 void DescribeHelpListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

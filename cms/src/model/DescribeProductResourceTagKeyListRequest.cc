@@ -35,6 +35,6 @@ std::string DescribeProductResourceTagKeyListRequest::getNextToken()const
 void DescribeProductResourceTagKeyListRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBatchSaveApAssetProgressRequest;
 
 GetBatchSaveApAssetProgressRequest::GetBatchSaveApAssetProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBatchSaveApAssetProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBatchSaveApAssetProgressRequest::~GetBatchSaveApAssetProgressRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetBatchSaveApAssetProgressRequest::getAccessKeyId()const
 void GetBatchSaveApAssetProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

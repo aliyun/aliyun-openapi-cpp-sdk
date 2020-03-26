@@ -20,10 +20,23 @@ using AlibabaCloud::Trademark::Model::QueryMaterialRequest;
 
 QueryMaterialRequest::QueryMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMaterialRequest::~QueryMaterialRequest()
 {}
+
+bool QueryMaterialRequest::getQueryUnconfirmedInfo()const
+{
+	return queryUnconfirmedInfo_;
+}
+
+void QueryMaterialRequest::setQueryUnconfirmedInfo(bool queryUnconfirmedInfo)
+{
+	queryUnconfirmedInfo_ = queryUnconfirmedInfo;
+	setParameter("QueryUnconfirmedInfo", queryUnconfirmedInfo ? "true" : "false");
+}
 
 long QueryMaterialRequest::getId()const
 {
@@ -33,6 +46,6 @@ long QueryMaterialRequest::getId()const
 void QueryMaterialRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

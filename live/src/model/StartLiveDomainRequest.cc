@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartLiveDomainRequest;
 
 StartLiveDomainRequest::StartLiveDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartLiveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartLiveDomainRequest::~StartLiveDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartLiveDomainRequest::getDomainName()const
 void StartLiveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long StartLiveDomainRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long StartLiveDomainRequest::getOwnerId()const
 void StartLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartLiveDomainRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string StartLiveDomainRequest::getSecurityToken()const
 void StartLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

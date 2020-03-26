@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::LinkFaceRequest;
 
 LinkFaceRequest::LinkFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "LinkFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LinkFaceRequest::~LinkFaceRequest()
 {}
-
-std::string LinkFaceRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void LinkFaceRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
 
 std::string LinkFaceRequest::getUserId()const
 {
@@ -44,6 +35,39 @@ std::string LinkFaceRequest::getUserId()const
 void LinkFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
+}
+
+std::string LinkFaceRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void LinkFaceRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string LinkFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void LinkFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string LinkFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void LinkFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -78,6 +78,8 @@
 #include "model/DescribeScriptVoiceConfigResult.h"
 #include "model/DescribeTTSConfigRequest.h"
 #include "model/DescribeTTSConfigResult.h"
+#include "model/DescribeTagHitsSummaryRequest.h"
+#include "model/DescribeTagHitsSummaryResult.h"
 #include "model/DialogueRequest.h"
 #include "model/DialogueResult.h"
 #include "model/DownloadBasicStatisticsReportRequest.h"
@@ -124,6 +126,8 @@
 #include "model/ListJobsResult.h"
 #include "model/ListJobsByGroupRequest.h"
 #include "model/ListJobsByGroupResult.h"
+#include "model/ListMediaRequest.h"
+#include "model/ListMediaResult.h"
 #include "model/ListMediasRequest.h"
 #include "model/ListMediasResult.h"
 #include "model/ListOutboundCallNumbersRequest.h"
@@ -190,6 +194,8 @@
 #include "model/SuspendJobsResult.h"
 #include "model/WithdrawScriptRequest.h"
 #include "model/WithdrawScriptResult.h"
+#include "model/WithdrawScriptReviewRequest.h"
+#include "model/WithdrawScriptReviewResult.h"
 
 
 namespace AlibabaCloud
@@ -283,6 +289,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTTSConfigResult> DescribeTTSConfigOutcome;
 			typedef std::future<DescribeTTSConfigOutcome> DescribeTTSConfigOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DescribeTTSConfigRequest&, const DescribeTTSConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTTSConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTagHitsSummaryResult> DescribeTagHitsSummaryOutcome;
+			typedef std::future<DescribeTagHitsSummaryOutcome> DescribeTagHitsSummaryOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DescribeTagHitsSummaryRequest&, const DescribeTagHitsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagHitsSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DialogueResult> DialogueOutcome;
 			typedef std::future<DialogueOutcome> DialogueOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DialogueRequest&, const DialogueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DialogueAsyncHandler;
@@ -352,6 +361,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListJobsByGroupResult> ListJobsByGroupOutcome;
 			typedef std::future<ListJobsByGroupOutcome> ListJobsByGroupOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListJobsByGroupRequest&, const ListJobsByGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsByGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListMediaResult> ListMediaOutcome;
+			typedef std::future<ListMediaOutcome> ListMediaOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListMediaRequest&, const ListMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMediaAsyncHandler;
 			typedef Outcome<Error, Model::ListMediasResult> ListMediasOutcome;
 			typedef std::future<ListMediasOutcome> ListMediasOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListMediasRequest&, const ListMediasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMediasAsyncHandler;
@@ -451,6 +463,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::WithdrawScriptResult> WithdrawScriptOutcome;
 			typedef std::future<WithdrawScriptOutcome> WithdrawScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::WithdrawScriptRequest&, const WithdrawScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawScriptAsyncHandler;
+			typedef Outcome<Error, Model::WithdrawScriptReviewResult> WithdrawScriptReviewOutcome;
+			typedef std::future<WithdrawScriptReviewOutcome> WithdrawScriptReviewOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::WithdrawScriptReviewRequest&, const WithdrawScriptReviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawScriptReviewAsyncHandler;
 
 			OutboundBotClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			OutboundBotClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -540,6 +555,9 @@ namespace AlibabaCloud
 			DescribeTTSConfigOutcome describeTTSConfig(const Model::DescribeTTSConfigRequest &request)const;
 			void describeTTSConfigAsync(const Model::DescribeTTSConfigRequest& request, const DescribeTTSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTTSConfigOutcomeCallable describeTTSConfigCallable(const Model::DescribeTTSConfigRequest& request) const;
+			DescribeTagHitsSummaryOutcome describeTagHitsSummary(const Model::DescribeTagHitsSummaryRequest &request)const;
+			void describeTagHitsSummaryAsync(const Model::DescribeTagHitsSummaryRequest& request, const DescribeTagHitsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTagHitsSummaryOutcomeCallable describeTagHitsSummaryCallable(const Model::DescribeTagHitsSummaryRequest& request) const;
 			DialogueOutcome dialogue(const Model::DialogueRequest &request)const;
 			void dialogueAsync(const Model::DialogueRequest& request, const DialogueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DialogueOutcomeCallable dialogueCallable(const Model::DialogueRequest& request) const;
@@ -609,6 +627,9 @@ namespace AlibabaCloud
 			ListJobsByGroupOutcome listJobsByGroup(const Model::ListJobsByGroupRequest &request)const;
 			void listJobsByGroupAsync(const Model::ListJobsByGroupRequest& request, const ListJobsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListJobsByGroupOutcomeCallable listJobsByGroupCallable(const Model::ListJobsByGroupRequest& request) const;
+			ListMediaOutcome listMedia(const Model::ListMediaRequest &request)const;
+			void listMediaAsync(const Model::ListMediaRequest& request, const ListMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMediaOutcomeCallable listMediaCallable(const Model::ListMediaRequest& request) const;
 			ListMediasOutcome listMedias(const Model::ListMediasRequest &request)const;
 			void listMediasAsync(const Model::ListMediasRequest& request, const ListMediasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMediasOutcomeCallable listMediasCallable(const Model::ListMediasRequest& request) const;
@@ -708,6 +729,9 @@ namespace AlibabaCloud
 			WithdrawScriptOutcome withdrawScript(const Model::WithdrawScriptRequest &request)const;
 			void withdrawScriptAsync(const Model::WithdrawScriptRequest& request, const WithdrawScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WithdrawScriptOutcomeCallable withdrawScriptCallable(const Model::WithdrawScriptRequest& request) const;
+			WithdrawScriptReviewOutcome withdrawScriptReview(const Model::WithdrawScriptReviewRequest &request)const;
+			void withdrawScriptReviewAsync(const Model::WithdrawScriptReviewRequest& request, const WithdrawScriptReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			WithdrawScriptReviewOutcomeCallable withdrawScriptReviewCallable(const Model::WithdrawScriptReviewRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

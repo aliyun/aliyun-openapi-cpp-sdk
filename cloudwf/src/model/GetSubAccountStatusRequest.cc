@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSubAccountStatusRequest;
 
 GetSubAccountStatusRequest::GetSubAccountStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSubAccountStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSubAccountStatusRequest::~GetSubAccountStatusRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetSubAccountStatusRequest::getAccessKeyId()const
 void GetSubAccountStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

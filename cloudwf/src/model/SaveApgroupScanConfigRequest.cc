@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApgroupScanConfigRequest;
 
 SaveApgroupScanConfigRequest::SaveApgroupScanConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApgroupScanConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApgroupScanConfigRequest::~SaveApgroupScanConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveApgroupScanConfigRequest::getJsonData()const
 void SaveApgroupScanConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 long SaveApgroupScanConfigRequest::getApgroupId()const
@@ -44,7 +46,7 @@ long SaveApgroupScanConfigRequest::getApgroupId()const
 void SaveApgroupScanConfigRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string SaveApgroupScanConfigRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string SaveApgroupScanConfigRequest::getAccessKeyId()const
 void SaveApgroupScanConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

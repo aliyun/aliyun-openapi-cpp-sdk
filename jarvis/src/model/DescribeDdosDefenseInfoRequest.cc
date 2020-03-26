@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeDdosDefenseInfoRequest;
 
 DescribeDdosDefenseInfoRequest::DescribeDdosDefenseInfoRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeDdosDefenseInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDdosDefenseInfoRequest::~DescribeDdosDefenseInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDdosDefenseInfoRequest::getSourceCode()const
 void DescribeDdosDefenseInfoRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeDdosDefenseInfoRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDdosDefenseInfoRequest::getSourceIp()const
 void DescribeDdosDefenseInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDdosDefenseInfoRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DescribeDdosDefenseInfoRequest::getLang()const
 void DescribeDdosDefenseInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeDdosDefenseInfoRequest::getSrcUid()const
@@ -66,6 +68,6 @@ long DescribeDdosDefenseInfoRequest::getSrcUid()const
 void DescribeDdosDefenseInfoRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 

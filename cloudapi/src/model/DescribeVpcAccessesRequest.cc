@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeVpcAccessesRequest;
 
 DescribeVpcAccessesRequest::DescribeVpcAccessesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeVpcAccesses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpcAccessesRequest::~DescribeVpcAccessesRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeVpcAccessesRequest::getPageNumber()const
 void DescribeVpcAccessesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeVpcAccessesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeVpcAccessesRequest::getAccessKeyId()const
 void DescribeVpcAccessesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeVpcAccessesRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeVpcAccessesRequest::getSecurityToken()const
 void DescribeVpcAccessesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeVpcAccessesRequest::getPageSize()const
@@ -66,6 +68,17 @@ int DescribeVpcAccessesRequest::getPageSize()const
 void DescribeVpcAccessesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string DescribeVpcAccessesRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeVpcAccessesRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

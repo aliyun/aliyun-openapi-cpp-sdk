@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CancelJobRequest;
 
 CancelJobRequest::CancelJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CancelJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelJobRequest::~CancelJobRequest()
 {}
@@ -33,7 +35,7 @@ long CancelJobRequest::getResourceOwnerId()const
 void CancelJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelJobRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string CancelJobRequest::getResourceOwnerAccount()const
 void CancelJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CancelJobRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string CancelJobRequest::getOwnerAccount()const
 void CancelJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CancelJobRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long CancelJobRequest::getOwnerId()const
 void CancelJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CancelJobRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string CancelJobRequest::getAccessKeyId()const
 void CancelJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CancelJobRequest::getJobId()const
@@ -88,6 +90,6 @@ std::string CancelJobRequest::getJobId()const
 void CancelJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 

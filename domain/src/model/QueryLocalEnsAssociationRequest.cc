@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryLocalEnsAssociationRequest;
 
 QueryLocalEnsAssociationRequest::QueryLocalEnsAssociationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryLocalEnsAssociation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryLocalEnsAssociationRequest::~QueryLocalEnsAssociationRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryLocalEnsAssociationRequest::getDomainName()const
 void QueryLocalEnsAssociationRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryLocalEnsAssociationRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryLocalEnsAssociationRequest::getUserClientIp()const
 void QueryLocalEnsAssociationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryLocalEnsAssociationRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryLocalEnsAssociationRequest::getLang()const
 void QueryLocalEnsAssociationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

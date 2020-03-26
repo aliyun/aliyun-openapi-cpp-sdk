@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CopyCasterSceneConfigRequest;
 
 CopyCasterSceneConfigRequest::CopyCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CopyCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CopyCasterSceneConfigRequest::~CopyCasterSceneConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string CopyCasterSceneConfigRequest::getFromSceneId()const
 void CopyCasterSceneConfigRequest::setFromSceneId(const std::string& fromSceneId)
 {
 	fromSceneId_ = fromSceneId;
-	setCoreParameter("FromSceneId", fromSceneId);
+	setParameter("FromSceneId", fromSceneId);
 }
 
 std::string CopyCasterSceneConfigRequest::getToSceneId()const
@@ -44,7 +46,7 @@ std::string CopyCasterSceneConfigRequest::getToSceneId()const
 void CopyCasterSceneConfigRequest::setToSceneId(const std::string& toSceneId)
 {
 	toSceneId_ = toSceneId;
-	setCoreParameter("ToSceneId", toSceneId);
+	setParameter("ToSceneId", toSceneId);
 }
 
 std::string CopyCasterSceneConfigRequest::getCasterId()const
@@ -55,7 +57,7 @@ std::string CopyCasterSceneConfigRequest::getCasterId()const
 void CopyCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long CopyCasterSceneConfigRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long CopyCasterSceneConfigRequest::getOwnerId()const
 void CopyCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

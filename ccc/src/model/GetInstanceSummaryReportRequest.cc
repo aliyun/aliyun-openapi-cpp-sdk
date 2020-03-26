@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceSummaryReportRequest;
 
 GetInstanceSummaryReportRequest::GetInstanceSummaryReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceSummaryReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceSummaryReportRequest::~GetInstanceSummaryReportRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetInstanceSummaryReportRequest::getEndTime()const
 void GetInstanceSummaryReportRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string GetInstanceSummaryReportRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string GetInstanceSummaryReportRequest::getStartTime()const
 void GetInstanceSummaryReportRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int GetInstanceSummaryReportRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int GetInstanceSummaryReportRequest::getPageNumber()const
 void GetInstanceSummaryReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetInstanceSummaryReportRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetInstanceSummaryReportRequest::getAccessKeyId()const
 void GetInstanceSummaryReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetInstanceSummaryReportRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string GetInstanceSummaryReportRequest::getInstanceId()const
 void GetInstanceSummaryReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int GetInstanceSummaryReportRequest::getPageSize()const
@@ -88,6 +90,6 @@ int GetInstanceSummaryReportRequest::getPageSize()const
 void GetInstanceSummaryReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

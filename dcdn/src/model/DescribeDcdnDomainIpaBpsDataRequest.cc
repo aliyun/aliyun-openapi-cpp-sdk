@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainIpaBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getStartTime()const
 void DescribeDcdnDomainIpaBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getIspNameEn()const
 void DescribeDcdnDomainIpaBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getFixTimeGap()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getFixTimeGap()const
 void DescribeDcdnDomainIpaBpsDataRequest::setFixTimeGap(const std::string& fixTimeGap)
 {
 	fixTimeGap_ = fixTimeGap;
-	setCoreParameter("FixTimeGap", fixTimeGap);
+	setParameter("FixTimeGap", fixTimeGap);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getTimeMerge()const
@@ -79,7 +79,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getTimeMerge()const
 void DescribeDcdnDomainIpaBpsDataRequest::setTimeMerge(const std::string& timeMerge)
 {
 	timeMerge_ = timeMerge;
-	setCoreParameter("TimeMerge", timeMerge);
+	setParameter("TimeMerge", timeMerge);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getDomainName()const
 void DescribeDcdnDomainIpaBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getEndTime()const
 void DescribeDcdnDomainIpaBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainIpaBpsDataRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeDcdnDomainIpaBpsDataRequest::getOwnerId()const
 void DescribeDcdnDomainIpaBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainIpaBpsDataRequest::getInterval()const
@@ -123,6 +123,6 @@ std::string DescribeDcdnDomainIpaBpsDataRequest::getInterval()const
 void DescribeDcdnDomainIpaBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

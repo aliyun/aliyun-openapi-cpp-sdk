@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::RenewInstanceRequest;
 
 RenewInstanceRequest::RenewInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "RenewInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenewInstanceRequest::~RenewInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int RenewInstanceRequest::getDuration()const
 void RenewInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string RenewInstanceRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string RenewInstanceRequest::getInstanceId()const
 void RenewInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string RenewInstanceRequest::getClientToken()const
@@ -55,7 +57,7 @@ std::string RenewInstanceRequest::getClientToken()const
 void RenewInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string RenewInstanceRequest::getVmNumber()const
@@ -66,7 +68,7 @@ std::string RenewInstanceRequest::getVmNumber()const
 void RenewInstanceRequest::setVmNumber(const std::string& vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setCoreParameter("VmNumber", vmNumber);
+	setParameter("VmNumber", vmNumber);
 }
 
 long RenewInstanceRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long RenewInstanceRequest::getOwnerId()const
 void RenewInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RenewInstanceRequest::getPricingCycle()const
@@ -88,6 +90,6 @@ std::string RenewInstanceRequest::getPricingCycle()const
 void RenewInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

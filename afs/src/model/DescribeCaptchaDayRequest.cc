@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaDayRequest;
 
 DescribeCaptchaDayRequest::DescribeCaptchaDayRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaDay")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaDayRequest::~DescribeCaptchaDayRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCaptchaDayRequest::getType()const
 void DescribeCaptchaDayRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeCaptchaDayRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCaptchaDayRequest::getSourceIp()const
 void DescribeCaptchaDayRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaDayRequest::getConfigName()const
@@ -55,7 +57,7 @@ std::string DescribeCaptchaDayRequest::getConfigName()const
 void DescribeCaptchaDayRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaDayRequest::getRefExtId()const
@@ -66,7 +68,7 @@ std::string DescribeCaptchaDayRequest::getRefExtId()const
 void DescribeCaptchaDayRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaDayRequest::getTime()const
@@ -77,6 +79,6 @@ std::string DescribeCaptchaDayRequest::getTime()const
 void DescribeCaptchaDayRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setParameter("Time", time);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeExpressCloudConnectionsRequest;
 
 DescribeExpressCloudConnectionsRequest::DescribeExpressCloudConnectionsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeExpressCloudConnections")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeExpressCloudConnectionsRequest::~DescribeExpressCloudConnectionsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeExpressCloudConnectionsRequest::getResourceOwnerId()const
 void DescribeExpressCloudConnectionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeExpressCloudConnectionsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeExpressCloudConnectionsRequest::getPageNumber()const
 void DescribeExpressCloudConnectionsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeExpressCloudConnectionsRequest::getRegionId()const
 void DescribeExpressCloudConnectionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeExpressCloudConnectionsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeExpressCloudConnectionsRequest::getPageSize()const
 void DescribeExpressCloudConnectionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeExpressCloudConnectionsRequest::getResourceOwnerAccount()con
 void DescribeExpressCloudConnectionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeExpressCloudConnectionsRequest::getOwnerAccount()const
 void DescribeExpressCloudConnectionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeExpressCloudConnectionsRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeExpressCloudConnectionsRequest::getOwnerId()const
 void DescribeExpressCloudConnectionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribeExpressCloudConnectionsRequest::Filter> DescribeExpressCloudConnectionsRequest::getFilter()const
@@ -110,12 +112,13 @@ std::vector<DescribeExpressCloudConnectionsRequest::Filter> DescribeExpressCloud
 void DescribeExpressCloudConnectionsRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

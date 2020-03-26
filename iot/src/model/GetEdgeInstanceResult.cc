@@ -46,6 +46,8 @@ void GetEdgeInstanceResult::parse(const std::string &payload)
 		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Tags"].isNull())
 		data_.tags = dataNode["Tags"].asString();
+	if(!dataNode["Type"].isNull())
+		data_.type = dataNode["Type"].asString();
 	if(!dataNode["Spec"].isNull())
 		data_.spec = std::stoi(dataNode["Spec"].asString());
 	if(!dataNode["BizEnable"].isNull())
@@ -64,6 +66,12 @@ void GetEdgeInstanceResult::parse(const std::string &payload)
 		data_.latestDeploymentStatus = std::stoi(dataNode["LatestDeploymentStatus"].asString());
 	if(!dataNode["LatestDeploymentType"].isNull())
 		data_.latestDeploymentType = dataNode["LatestDeploymentType"].asString();
+	if(!dataNode["GmtCreateTimestamp"].isNull())
+		data_.gmtCreateTimestamp = std::stol(dataNode["GmtCreateTimestamp"].asString());
+	if(!dataNode["GmtModifiedTimestamp"].isNull())
+		data_.gmtModifiedTimestamp = std::stol(dataNode["GmtModifiedTimestamp"].asString());
+	if(!dataNode["RoleAttachTimestamp"].isNull())
+		data_.roleAttachTimestamp = std::stol(dataNode["RoleAttachTimestamp"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -20,21 +20,12 @@ using AlibabaCloud::Sddp::Model::DescribeDataLimitsRequest;
 
 DescribeDataLimitsRequest::DescribeDataLimitsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataLimits")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataLimitsRequest::~DescribeDataLimitsRequest()
 {}
-
-int DescribeDataLimitsRequest::getResourceType()const
-{
-	return resourceType_;
-}
-
-void DescribeDataLimitsRequest::setResourceType(int resourceType)
-{
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
-}
 
 std::string DescribeDataLimitsRequest::getParentId()const
 {
@@ -44,7 +35,7 @@ std::string DescribeDataLimitsRequest::getParentId()const
 void DescribeDataLimitsRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 std::string DescribeDataLimitsRequest::getSourceIp()const
@@ -55,7 +46,40 @@ std::string DescribeDataLimitsRequest::getSourceIp()const
 void DescribeDataLimitsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeDataLimitsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeDataLimitsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+int DescribeDataLimitsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeDataLimitsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int DescribeDataLimitsRequest::getCheckStatus()const
+{
+	return checkStatus_;
+}
+
+void DescribeDataLimitsRequest::setCheckStatus(int checkStatus)
+{
+	checkStatus_ = checkStatus;
+	setParameter("CheckStatus", std::to_string(checkStatus));
 }
 
 std::string DescribeDataLimitsRequest::getLang()const
@@ -66,6 +90,61 @@ std::string DescribeDataLimitsRequest::getLang()const
 void DescribeDataLimitsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
+}
+
+std::string DescribeDataLimitsRequest::getServiceRegionId()const
+{
+	return serviceRegionId_;
+}
+
+void DescribeDataLimitsRequest::setServiceRegionId(const std::string& serviceRegionId)
+{
+	serviceRegionId_ = serviceRegionId;
+	setParameter("ServiceRegionId", serviceRegionId);
+}
+
+std::string DescribeDataLimitsRequest::getEngineType()const
+{
+	return engineType_;
+}
+
+void DescribeDataLimitsRequest::setEngineType(const std::string& engineType)
+{
+	engineType_ = engineType;
+	setParameter("EngineType", engineType);
+}
+
+int DescribeDataLimitsRequest::getAuditStatus()const
+{
+	return auditStatus_;
+}
+
+void DescribeDataLimitsRequest::setAuditStatus(int auditStatus)
+{
+	auditStatus_ = auditStatus;
+	setParameter("AuditStatus", std::to_string(auditStatus));
+}
+
+int DescribeDataLimitsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeDataLimitsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+int DescribeDataLimitsRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void DescribeDataLimitsRequest::setResourceType(int resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", std::to_string(resourceType));
 }
 

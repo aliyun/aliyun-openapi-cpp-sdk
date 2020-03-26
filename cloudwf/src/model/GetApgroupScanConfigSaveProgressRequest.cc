@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApgroupScanConfigSaveProgressRequest;
 
 GetApgroupScanConfigSaveProgressRequest::GetApgroupScanConfigSaveProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApgroupScanConfigSaveProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApgroupScanConfigSaveProgressRequest::~GetApgroupScanConfigSaveProgressRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetApgroupScanConfigSaveProgressRequest::getAccessKeyId()const
 void GetApgroupScanConfigSaveProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetApgroupScanConfigSaveProgressRequest::getId()const
@@ -44,6 +46,6 @@ long GetApgroupScanConfigSaveProgressRequest::getId()const
 void GetApgroupScanConfigSaveProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

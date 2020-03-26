@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainCertificateInfoRequest;
 
 DescribeVodDomainCertificateInfoRequest::DescribeVodDomainCertificateInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainCertificateInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainCertificateInfoRequest::~DescribeVodDomainCertificateInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainCertificateInfoRequest::getDomainName()const
 void DescribeVodDomainCertificateInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeVodDomainCertificateInfoRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeVodDomainCertificateInfoRequest::getOwnerId()const
 void DescribeVodDomainCertificateInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

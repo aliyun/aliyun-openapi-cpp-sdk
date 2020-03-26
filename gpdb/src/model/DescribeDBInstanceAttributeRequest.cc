@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceAttributeRequest;
 
 DescribeDBInstanceAttributeRequest::DescribeDBInstanceAttributeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceAttributeRequest::~DescribeDBInstanceAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDBInstanceAttributeRequest::getAccessKeyId()const
 void DescribeDBInstanceAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceAttributeRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string DescribeDBInstanceAttributeRequest::getDBInstanceId()const
 void DescribeDBInstanceAttributeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeDBInstanceAttributeRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeDBInstanceAttributeRequest::getOwnerId()const
 void DescribeDBInstanceAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

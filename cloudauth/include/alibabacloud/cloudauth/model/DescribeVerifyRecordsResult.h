@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					};
 					int status;
 					long finishTime;
+					std::string dataStats;
 					float authorityComparisonScore;
 					Material material;
 					std::string bizType;

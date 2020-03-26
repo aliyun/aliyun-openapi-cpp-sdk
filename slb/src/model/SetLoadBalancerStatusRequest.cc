@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetLoadBalancerStatusRequest;
 
 SetLoadBalancerStatusRequest::SetLoadBalancerStatusRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetLoadBalancerStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLoadBalancerStatusRequest::~SetLoadBalancerStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLoadBalancerStatusRequest::getAccess_key_id()const
 void SetLoadBalancerStatusRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long SetLoadBalancerStatusRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SetLoadBalancerStatusRequest::getResourceOwnerId()const
 void SetLoadBalancerStatusRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetLoadBalancerStatusRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string SetLoadBalancerStatusRequest::getRegionId()const
 void SetLoadBalancerStatusRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SetLoadBalancerStatusRequest::getResourceOwnerAccount()const
 void SetLoadBalancerStatusRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetLoadBalancerStatusRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SetLoadBalancerStatusRequest::getOwnerAccount()const
 void SetLoadBalancerStatusRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SetLoadBalancerStatusRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SetLoadBalancerStatusRequest::getOwnerId()const
 void SetLoadBalancerStatusRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLoadBalancerStatusRequest::getLoadBalancerStatus()const
@@ -99,7 +101,7 @@ std::string SetLoadBalancerStatusRequest::getLoadBalancerStatus()const
 void SetLoadBalancerStatusRequest::setLoadBalancerStatus(const std::string& loadBalancerStatus)
 {
 	loadBalancerStatus_ = loadBalancerStatus;
-	setCoreParameter("LoadBalancerStatus", loadBalancerStatus);
+	setParameter("LoadBalancerStatus", loadBalancerStatus);
 }
 
 std::string SetLoadBalancerStatusRequest::getTags()const
@@ -110,7 +112,7 @@ std::string SetLoadBalancerStatusRequest::getTags()const
 void SetLoadBalancerStatusRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
@@ -121,6 +123,6 @@ std::string SetLoadBalancerStatusRequest::getLoadBalancerId()const
 void SetLoadBalancerStatusRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

@@ -22,7 +22,7 @@ GetResourcePodsRequest::GetResourcePodsRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/resources/[cluster_id]/[resource_name]/instances/[instance_name]/pods");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetResourcePodsRequest::~GetResourcePodsRequest()

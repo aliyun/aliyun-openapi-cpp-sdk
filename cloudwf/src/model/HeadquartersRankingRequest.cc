@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersRankingRequest;
 
 HeadquartersRankingRequest::HeadquartersRankingRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersRanking")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersRankingRequest::~HeadquartersRankingRequest()
 {}
@@ -33,7 +35,7 @@ std::string HeadquartersRankingRequest::getAccessKeyId()const
 void HeadquartersRankingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long HeadquartersRankingRequest::getBid()const
@@ -44,6 +46,6 @@ long HeadquartersRankingRequest::getBid()const
 void HeadquartersRankingRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

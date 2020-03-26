@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchChangeGroupApNameRequest;
 
 BatchChangeGroupApNameRequest::BatchChangeGroupApNameRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchChangeGroupApName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchChangeGroupApNameRequest::~BatchChangeGroupApNameRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchChangeGroupApNameRequest::getJsonData()const
 void BatchChangeGroupApNameRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string BatchChangeGroupApNameRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string BatchChangeGroupApNameRequest::getAccessKeyId()const
 void BatchChangeGroupApNameRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

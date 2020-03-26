@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveDomainRequest;
 
 DeleteLiveDomainRequest::DeleteLiveDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveDomainRequest::~DeleteLiveDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveDomainRequest::getOwnerAccount()const
 void DeleteLiveDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteLiveDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DeleteLiveDomainRequest::getDomainName()const
 void DeleteLiveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveDomainRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteLiveDomainRequest::getOwnerId()const
 void DeleteLiveDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DeleteLiveDomainRequest::getSecurityToken()const
 void DeleteLiveDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

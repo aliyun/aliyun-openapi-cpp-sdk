@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string domainName;
 					std::string certificateId;
 					std::string domainWebSocketStatus;
+					std::string bindStageName;
 					std::string certificateName;
 				};
 				struct StageInfo
@@ -60,6 +61,9 @@ namespace AlibabaCloud
 				std::string getCreatedTime()const;
 				std::string getHttpsPolicy()const;
 				std::string getInstanceId()const;
+				std::string getCompatibleFlags()const;
+				std::string getCustomTraceConfig()const;
+				std::string getUserLogConfig()const;
 				std::string getBillingStatus()const;
 				int getTrafficLimit()const;
 				std::string getGroupId()const;
@@ -67,6 +71,7 @@ namespace AlibabaCloud
 				std::string getSubDomain()const;
 				std::vector<DomainItem> getCustomDomains()const;
 				std::string getModifiedTime()const;
+				std::string getRpcPattern()const;
 				std::vector<StageInfo> getStageItems()const;
 				std::string getIllegalStatus()const;
 				std::string getRegionId()const;
@@ -81,6 +86,9 @@ namespace AlibabaCloud
 				std::string createdTime_;
 				std::string httpsPolicy_;
 				std::string instanceId_;
+				std::string compatibleFlags_;
+				std::string customTraceConfig_;
+				std::string userLogConfig_;
 				std::string billingStatus_;
 				int trafficLimit_;
 				std::string groupId_;
@@ -88,6 +96,7 @@ namespace AlibabaCloud
 				std::string subDomain_;
 				std::vector<DomainItem> customDomains_;
 				std::string modifiedTime_;
+				std::string rpcPattern_;
 				std::vector<StageInfo> stageItems_;
 				std::string illegalStatus_;
 				std::string regionId_;

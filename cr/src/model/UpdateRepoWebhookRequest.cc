@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::UpdateRepoWebhookRequest;
 
 UpdateRepoWebhookRequest::UpdateRepoWebhookRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateRepoWebhookRequest::~UpdateRepoWebhookRequest()
 {}
@@ -33,7 +36,7 @@ long UpdateRepoWebhookRequest::getWebhookId()const
 void UpdateRepoWebhookRequest::setWebhookId(long webhookId)
 {
 	webhookId_ = webhookId;
-	setCoreParameter("WebhookId", std::to_string(webhookId));
+	setParameter("WebhookId", std::to_string(webhookId));
 }
 
 std::string UpdateRepoWebhookRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string UpdateRepoWebhookRequest::getRepoNamespace()const
 void UpdateRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string UpdateRepoWebhookRequest::getRepoName()const
@@ -55,6 +58,6 @@ std::string UpdateRepoWebhookRequest::getRepoName()const
 void UpdateRepoWebhookRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryAllGroupsRequest;
 
 QueryAllGroupsRequest::QueryAllGroupsRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAllGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAllGroupsRequest::~QueryAllGroupsRequest()
 {}
@@ -33,7 +35,7 @@ int QueryAllGroupsRequest::getPageSize()const
 void QueryAllGroupsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryAllGroupsRequest::getCurrentPage()const
@@ -44,6 +46,28 @@ int QueryAllGroupsRequest::getCurrentPage()const
 void QueryAllGroupsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setBodyParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryAllGroupsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryAllGroupsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryAllGroupsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryAllGroupsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

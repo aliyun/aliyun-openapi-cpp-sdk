@@ -42,14 +42,14 @@ void ExportScriptResult::parse(const std::string &payload)
 	auto downloadParamsNode = value["DownloadParams"];
 	if(!downloadParamsNode["SignatureUrl"].isNull())
 		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

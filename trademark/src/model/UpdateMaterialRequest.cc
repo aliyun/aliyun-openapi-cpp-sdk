@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::UpdateMaterialRequest;
 
 UpdateMaterialRequest::UpdateMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "UpdateMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMaterialRequest::~UpdateMaterialRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateMaterialRequest::getContactEmail()const
 void UpdateMaterialRequest::setContactEmail(const std::string& contactEmail)
 {
 	contactEmail_ = contactEmail;
-	setCoreParameter("ContactEmail", contactEmail);
+	setParameter("ContactEmail", contactEmail);
 }
 
 std::string UpdateMaterialRequest::getEAddress()const
@@ -44,7 +46,7 @@ std::string UpdateMaterialRequest::getEAddress()const
 void UpdateMaterialRequest::setEAddress(const std::string& eAddress)
 {
 	eAddress_ = eAddress;
-	setCoreParameter("EAddress", eAddress);
+	setParameter("EAddress", eAddress);
 }
 
 std::string UpdateMaterialRequest::getLegalNoticeOssKey()const
@@ -55,7 +57,7 @@ std::string UpdateMaterialRequest::getLegalNoticeOssKey()const
 void UpdateMaterialRequest::setLegalNoticeOssKey(const std::string& legalNoticeOssKey)
 {
 	legalNoticeOssKey_ = legalNoticeOssKey;
-	setCoreParameter("LegalNoticeOssKey", legalNoticeOssKey);
+	setParameter("LegalNoticeOssKey", legalNoticeOssKey);
 }
 
 std::string UpdateMaterialRequest::getContactNumber()const
@@ -66,7 +68,7 @@ std::string UpdateMaterialRequest::getContactNumber()const
 void UpdateMaterialRequest::setContactNumber(const std::string& contactNumber)
 {
 	contactNumber_ = contactNumber;
-	setCoreParameter("ContactNumber", contactNumber);
+	setParameter("ContactNumber", contactNumber);
 }
 
 std::string UpdateMaterialRequest::getCity()const
@@ -77,7 +79,7 @@ std::string UpdateMaterialRequest::getCity()const
 void UpdateMaterialRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 std::string UpdateMaterialRequest::getContactName()const
@@ -88,7 +90,7 @@ std::string UpdateMaterialRequest::getContactName()const
 void UpdateMaterialRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 std::string UpdateMaterialRequest::getPassportOssKey()const
@@ -99,7 +101,7 @@ std::string UpdateMaterialRequest::getPassportOssKey()const
 void UpdateMaterialRequest::setPassportOssKey(const std::string& passportOssKey)
 {
 	passportOssKey_ = passportOssKey;
-	setCoreParameter("PassportOssKey", passportOssKey);
+	setParameter("PassportOssKey", passportOssKey);
 }
 
 std::string UpdateMaterialRequest::getProvince()const
@@ -110,7 +112,7 @@ std::string UpdateMaterialRequest::getProvince()const
 void UpdateMaterialRequest::setProvince(const std::string& province)
 {
 	province_ = province;
-	setCoreParameter("Province", province);
+	setParameter("Province", province);
 }
 
 long UpdateMaterialRequest::getId()const
@@ -121,7 +123,7 @@ long UpdateMaterialRequest::getId()const
 void UpdateMaterialRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string UpdateMaterialRequest::getLoaOssKey()const
@@ -132,7 +134,7 @@ std::string UpdateMaterialRequest::getLoaOssKey()const
 void UpdateMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
+	setParameter("LoaOssKey", loaOssKey);
 }
 
 std::string UpdateMaterialRequest::getContactAddress()const
@@ -143,7 +145,7 @@ std::string UpdateMaterialRequest::getContactAddress()const
 void UpdateMaterialRequest::setContactAddress(const std::string& contactAddress)
 {
 	contactAddress_ = contactAddress;
-	setCoreParameter("ContactAddress", contactAddress);
+	setParameter("ContactAddress", contactAddress);
 }
 
 std::string UpdateMaterialRequest::getAddress()const
@@ -154,7 +156,7 @@ std::string UpdateMaterialRequest::getAddress()const
 void UpdateMaterialRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string UpdateMaterialRequest::getTown()const
@@ -165,7 +167,7 @@ std::string UpdateMaterialRequest::getTown()const
 void UpdateMaterialRequest::setTown(const std::string& town)
 {
 	town_ = town;
-	setCoreParameter("Town", town);
+	setParameter("Town", town);
 }
 
 std::string UpdateMaterialRequest::getIdCardOssKey()const
@@ -176,7 +178,7 @@ std::string UpdateMaterialRequest::getIdCardOssKey()const
 void UpdateMaterialRequest::setIdCardOssKey(const std::string& idCardOssKey)
 {
 	idCardOssKey_ = idCardOssKey;
-	setCoreParameter("IdCardOssKey", idCardOssKey);
+	setParameter("IdCardOssKey", idCardOssKey);
 }
 
 std::string UpdateMaterialRequest::getContactZipcode()const
@@ -187,7 +189,7 @@ std::string UpdateMaterialRequest::getContactZipcode()const
 void UpdateMaterialRequest::setContactZipcode(const std::string& contactZipcode)
 {
 	contactZipcode_ = contactZipcode;
-	setCoreParameter("ContactZipcode", contactZipcode);
+	setParameter("ContactZipcode", contactZipcode);
 }
 
 std::string UpdateMaterialRequest::getEName()const
@@ -198,7 +200,7 @@ std::string UpdateMaterialRequest::getEName()const
 void UpdateMaterialRequest::setEName(const std::string& eName)
 {
 	eName_ = eName;
-	setCoreParameter("EName", eName);
+	setParameter("EName", eName);
 }
 
 std::string UpdateMaterialRequest::getBusinessLicenceOssKey()const
@@ -209,7 +211,7 @@ std::string UpdateMaterialRequest::getBusinessLicenceOssKey()const
 void UpdateMaterialRequest::setBusinessLicenceOssKey(const std::string& businessLicenceOssKey)
 {
 	businessLicenceOssKey_ = businessLicenceOssKey;
-	setCoreParameter("BusinessLicenceOssKey", businessLicenceOssKey);
+	setParameter("BusinessLicenceOssKey", businessLicenceOssKey);
 }
 
 std::string UpdateMaterialRequest::getName()const
@@ -220,7 +222,7 @@ std::string UpdateMaterialRequest::getName()const
 void UpdateMaterialRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateMaterialRequest::getCardNumber()const
@@ -231,7 +233,7 @@ std::string UpdateMaterialRequest::getCardNumber()const
 void UpdateMaterialRequest::setCardNumber(const std::string& cardNumber)
 {
 	cardNumber_ = cardNumber;
-	setCoreParameter("CardNumber", cardNumber);
+	setParameter("CardNumber", cardNumber);
 }
 
 long UpdateMaterialRequest::getLoaId()const
@@ -242,6 +244,6 @@ long UpdateMaterialRequest::getLoaId()const
 void UpdateMaterialRequest::setLoaId(long loaId)
 {
 	loaId_ = loaId;
-	setCoreParameter("LoaId", std::to_string(loaId));
+	setParameter("LoaId", std::to_string(loaId));
 }
 

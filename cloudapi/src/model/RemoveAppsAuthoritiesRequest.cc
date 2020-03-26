@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveAppsAuthoritiesRequest;
 
 RemoveAppsAuthoritiesRequest::RemoveAppsAuthoritiesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveAppsAuthorities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveAppsAuthoritiesRequest::~RemoveAppsAuthoritiesRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveAppsAuthoritiesRequest::getStageName()const
 void RemoveAppsAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string RemoveAppsAuthoritiesRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string RemoveAppsAuthoritiesRequest::getGroupId()const
 void RemoveAppsAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string RemoveAppsAuthoritiesRequest::getAccessKeyId()const
 void RemoveAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveAppsAuthoritiesRequest::getAppIds()const
@@ -66,7 +68,7 @@ std::string RemoveAppsAuthoritiesRequest::getAppIds()const
 void RemoveAppsAuthoritiesRequest::setAppIds(const std::string& appIds)
 {
 	appIds_ = appIds;
-	setCoreParameter("AppIds", appIds);
+	setParameter("AppIds", appIds);
 }
 
 std::string RemoveAppsAuthoritiesRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string RemoveAppsAuthoritiesRequest::getSecurityToken()const
 void RemoveAppsAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveAppsAuthoritiesRequest::getApiId()const
@@ -88,6 +90,6 @@ std::string RemoveAppsAuthoritiesRequest::getApiId()const
 void RemoveAppsAuthoritiesRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

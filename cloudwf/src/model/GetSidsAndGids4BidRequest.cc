@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetSidsAndGids4BidRequest;
 
 GetSidsAndGids4BidRequest::GetSidsAndGids4BidRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetSidsAndGids4Bid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSidsAndGids4BidRequest::~GetSidsAndGids4BidRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetSidsAndGids4BidRequest::getAccessKeyId()const
 void GetSidsAndGids4BidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetSidsAndGids4BidRequest::getQueryId()const
@@ -44,7 +46,7 @@ long GetSidsAndGids4BidRequest::getQueryId()const
 void GetSidsAndGids4BidRequest::setQueryId(long queryId)
 {
 	queryId_ = queryId;
-	setCoreParameter("QueryId", std::to_string(queryId));
+	setParameter("QueryId", std::to_string(queryId));
 }
 
 int GetSidsAndGids4BidRequest::getQueryType()const
@@ -55,6 +57,6 @@ int GetSidsAndGids4BidRequest::getQueryType()const
 void GetSidsAndGids4BidRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
 }
 

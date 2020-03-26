@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT CreateHostAvailabilityRequest : public RpcServiceRequest
 			{
+			public:
 				struct AlertConfigEscalationList
 				{
 					int times;

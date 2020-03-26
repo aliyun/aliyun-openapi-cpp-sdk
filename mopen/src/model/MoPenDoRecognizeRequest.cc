@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenDoRecognizeRequest;
 
 MoPenDoRecognizeRequest::MoPenDoRecognizeRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenDoRecognize")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenDoRecognizeRequest::~MoPenDoRecognizeRequest()
 {}
@@ -33,7 +35,7 @@ long MoPenDoRecognizeRequest::getCanvasId()const
 void MoPenDoRecognizeRequest::setCanvasId(long canvasId)
 {
 	canvasId_ = canvasId;
-	setCoreParameter("CanvasId", std::to_string(canvasId));
+	setBodyParameter("CanvasId", std::to_string(canvasId));
 }
 
 std::string MoPenDoRecognizeRequest::getJsonConf()const
@@ -44,7 +46,7 @@ std::string MoPenDoRecognizeRequest::getJsonConf()const
 void MoPenDoRecognizeRequest::setJsonConf(const std::string& jsonConf)
 {
 	jsonConf_ = jsonConf;
-	setCoreParameter("JsonConf", jsonConf);
+	setBodyParameter("JsonConf", jsonConf);
 }
 
 std::string MoPenDoRecognizeRequest::getExportType()const
@@ -55,7 +57,7 @@ std::string MoPenDoRecognizeRequest::getExportType()const
 void MoPenDoRecognizeRequest::setExportType(const std::string& exportType)
 {
 	exportType_ = exportType;
-	setCoreParameter("ExportType", exportType);
+	setBodyParameter("ExportType", exportType);
 }
 
 int MoPenDoRecognizeRequest::getEndY()const
@@ -66,7 +68,7 @@ int MoPenDoRecognizeRequest::getEndY()const
 void MoPenDoRecognizeRequest::setEndY(int endY)
 {
 	endY_ = endY;
-	setCoreParameter("EndY", std::to_string(endY));
+	setBodyParameter("EndY", std::to_string(endY));
 }
 
 int MoPenDoRecognizeRequest::getEndX()const
@@ -77,7 +79,7 @@ int MoPenDoRecognizeRequest::getEndX()const
 void MoPenDoRecognizeRequest::setEndX(int endX)
 {
 	endX_ = endX;
-	setCoreParameter("EndX", std::to_string(endX));
+	setBodyParameter("EndX", std::to_string(endX));
 }
 
 int MoPenDoRecognizeRequest::getStartY()const
@@ -88,7 +90,7 @@ int MoPenDoRecognizeRequest::getStartY()const
 void MoPenDoRecognizeRequest::setStartY(int startY)
 {
 	startY_ = startY;
-	setCoreParameter("StartY", std::to_string(startY));
+	setBodyParameter("StartY", std::to_string(startY));
 }
 
 int MoPenDoRecognizeRequest::getStartX()const
@@ -99,6 +101,6 @@ int MoPenDoRecognizeRequest::getStartX()const
 void MoPenDoRecognizeRequest::setStartX(int startX)
 {
 	startX_ = startX;
-	setCoreParameter("StartX", std::to_string(startX));
+	setBodyParameter("StartX", std::to_string(startX));
 }
 

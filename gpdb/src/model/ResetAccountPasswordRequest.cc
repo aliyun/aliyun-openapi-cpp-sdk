@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ResetAccountPassword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResetAccountPasswordRequest::getAccessKeyId()const
 void ResetAccountPasswordRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResetAccountPasswordRequest::getAccountName()const
@@ -44,7 +46,7 @@ std::string ResetAccountPasswordRequest::getAccountName()const
 void ResetAccountPasswordRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string ResetAccountPasswordRequest::getDBInstanceId()const
@@ -55,7 +57,7 @@ std::string ResetAccountPasswordRequest::getDBInstanceId()const
 void ResetAccountPasswordRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ResetAccountPasswordRequest::getAccountPassword()const
@@ -66,6 +68,6 @@ std::string ResetAccountPasswordRequest::getAccountPassword()const
 void ResetAccountPasswordRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setParameter("AccountPassword", accountPassword);
 }
 

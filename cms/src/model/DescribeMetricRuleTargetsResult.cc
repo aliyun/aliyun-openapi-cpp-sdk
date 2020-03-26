@@ -55,6 +55,8 @@ void DescribeMetricRuleTargetsResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -71,5 +73,10 @@ std::vector<DescribeMetricRuleTargetsResult::Target> DescribeMetricRuleTargetsRe
 std::string DescribeMetricRuleTargetsResult::getCode()const
 {
 	return code_;
+}
+
+bool DescribeMetricRuleTargetsResult::getSuccess()const
+{
+	return success_;
 }
 

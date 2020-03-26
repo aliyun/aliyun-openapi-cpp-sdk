@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::RemoveTagRequest;
 
 RemoveTagRequest::RemoveTagRequest() :
 	RpcServiceRequest("push", "2016-08-01", "RemoveTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTagRequest::~RemoveTagRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveTagRequest::getAccessKeyId()const
 void RemoveTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveTagRequest::getTagName()const
@@ -44,7 +46,7 @@ std::string RemoveTagRequest::getTagName()const
 void RemoveTagRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", tagName);
+	setParameter("TagName", tagName);
 }
 
 long RemoveTagRequest::getAppKey()const
@@ -55,6 +57,6 @@ long RemoveTagRequest::getAppKey()const
 void RemoveTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

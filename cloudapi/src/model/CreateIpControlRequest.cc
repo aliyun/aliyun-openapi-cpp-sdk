@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateIpControlRequest;
 
 CreateIpControlRequest::CreateIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIpControlRequest::~CreateIpControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateIpControlRequest::getIpControlName()const
 void CreateIpControlRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", ipControlName);
+	setParameter("IpControlName", ipControlName);
 }
 
 std::vector<CreateIpControlRequest::IpControlPolicys> CreateIpControlRequest::getIpControlPolicys()const
@@ -44,12 +46,11 @@ std::vector<CreateIpControlRequest::IpControlPolicys> CreateIpControlRequest::ge
 void CreateIpControlRequest::setIpControlPolicys(const std::vector<IpControlPolicys>& ipControlPolicys)
 {
 	ipControlPolicys_ = ipControlPolicys;
-	int i = 0;
-	for(int i = 0; i!= ipControlPolicys.size(); i++)	{
-		auto obj = ipControlPolicys.at(i);
-		std::string str ="IpControlPolicys."+ std::to_string(i);
-		setCoreParameter(str + ".AppId", obj.appId);
-		setCoreParameter(str + ".CidrIp", obj.cidrIp);
+	for(int dep1 = 0; dep1!= ipControlPolicys.size(); dep1++) {
+		auto ipControlPolicysObj = ipControlPolicys.at(dep1);
+		std::string ipControlPolicysObjStr = "IpControlPolicys." + std::to_string(dep1 + 1);
+		setParameter(ipControlPolicysObjStr + ".AppId", ipControlPolicysObj.appId);
+		setParameter(ipControlPolicysObjStr + ".CidrIp", ipControlPolicysObj.cidrIp);
 	}
 }
 
@@ -61,7 +62,7 @@ std::string CreateIpControlRequest::getDescription()const
 void CreateIpControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateIpControlRequest::getAccessKeyId()const
@@ -72,7 +73,7 @@ std::string CreateIpControlRequest::getAccessKeyId()const
 void CreateIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateIpControlRequest::getSecurityToken()const
@@ -83,7 +84,7 @@ std::string CreateIpControlRequest::getSecurityToken()const
 void CreateIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateIpControlRequest::getIpControlType()const
@@ -94,6 +95,6 @@ std::string CreateIpControlRequest::getIpControlType()const
 void CreateIpControlRequest::setIpControlType(const std::string& ipControlType)
 {
 	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", ipControlType);
+	setParameter("IpControlType", ipControlType);
 }
 

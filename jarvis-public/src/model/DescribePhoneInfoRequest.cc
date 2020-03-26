@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis_public::Model::DescribePhoneInfoRequest;
 
 DescribePhoneInfoRequest::DescribePhoneInfoRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribePhoneInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePhoneInfoRequest::~DescribePhoneInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePhoneInfoRequest::getPhoneNum()const
 void DescribePhoneInfoRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", phoneNum);
+	setParameter("PhoneNum", phoneNum);
 }
 
 std::string DescribePhoneInfoRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DescribePhoneInfoRequest::getSourceCode()const
 void DescribePhoneInfoRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribePhoneInfoRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribePhoneInfoRequest::getSourceIp()const
 void DescribePhoneInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribePhoneInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribePhoneInfoRequest::getLang()const
 void DescribePhoneInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

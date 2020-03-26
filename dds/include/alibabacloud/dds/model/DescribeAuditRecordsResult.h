@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct SQLRecord
 				{
+					std::string tableName;
 					std::string executeTime;
 					std::string threadID;
 					long returnRowCounts;

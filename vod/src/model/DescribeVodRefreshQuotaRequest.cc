@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodRefreshQuotaRequest;
 
 DescribeVodRefreshQuotaRequest::DescribeVodRefreshQuotaRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodRefreshQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodRefreshQuotaRequest::~DescribeVodRefreshQuotaRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeVodRefreshQuotaRequest::getOwnerId()const
 void DescribeVodRefreshQuotaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodRefreshQuotaRequest::getSecurityToken()const
@@ -44,6 +46,6 @@ std::string DescribeVodRefreshQuotaRequest::getSecurityToken()const
 void DescribeVodRefreshQuotaRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_MTS_EXPORT PlayerAuthResult : public ServiceResult
 			{
 			public:
-				struct Switch
+				struct _Switch
 				{
 					std::string functionId;
 					std::string functionName;
@@ -45,13 +45,13 @@ namespace AlibabaCloud
 				explicit PlayerAuthResult(const std::string &payload);
 				~PlayerAuthResult();
 				std::string getLogURL()const;
-				std::vector<Switch> getSwitchList()const;
+				std::vector<_Switch> getSwitchList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string logURL_;
-				std::vector<Switch> switchList_;
+				std::vector<_Switch> switchList_;
 
 			};
 		}

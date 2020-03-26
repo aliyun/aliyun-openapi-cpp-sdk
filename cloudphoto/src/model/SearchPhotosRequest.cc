@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SearchPhotosRequest;
 
 SearchPhotosRequest::SearchPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SearchPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchPhotosRequest::~SearchPhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchPhotosRequest::getLibraryId()const
 void SearchPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string SearchPhotosRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string SearchPhotosRequest::getStoreName()const
 void SearchPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int SearchPhotosRequest::getSize()const
@@ -55,7 +57,7 @@ int SearchPhotosRequest::getSize()const
 void SearchPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int SearchPhotosRequest::getPage()const
@@ -66,7 +68,7 @@ int SearchPhotosRequest::getPage()const
 void SearchPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string SearchPhotosRequest::getKeyword()const
@@ -77,6 +79,6 @@ std::string SearchPhotosRequest::getKeyword()const
 void SearchPhotosRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

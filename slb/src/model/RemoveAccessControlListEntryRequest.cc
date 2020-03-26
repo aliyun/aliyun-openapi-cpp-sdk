@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveAccessControlListEntryRequest;
 
 RemoveAccessControlListEntryRequest::RemoveAccessControlListEntryRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveAccessControlListEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveAccessControlListEntryRequest::~RemoveAccessControlListEntryRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveAccessControlListEntryRequest::getAccess_key_id()const
 void RemoveAccessControlListEntryRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long RemoveAccessControlListEntryRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long RemoveAccessControlListEntryRequest::getResourceOwnerId()const
 void RemoveAccessControlListEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveAccessControlListEntryRequest::getAclEntrys()const
@@ -55,7 +57,7 @@ std::string RemoveAccessControlListEntryRequest::getAclEntrys()const
 void RemoveAccessControlListEntryRequest::setAclEntrys(const std::string& aclEntrys)
 {
 	aclEntrys_ = aclEntrys;
-	setCoreParameter("AclEntrys", aclEntrys);
+	setParameter("AclEntrys", aclEntrys);
 }
 
 std::string RemoveAccessControlListEntryRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string RemoveAccessControlListEntryRequest::getAccessKeyId()const
 void RemoveAccessControlListEntryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveAccessControlListEntryRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string RemoveAccessControlListEntryRequest::getRegionId()const
 void RemoveAccessControlListEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RemoveAccessControlListEntryRequest::getAclId()const
@@ -88,7 +90,7 @@ std::string RemoveAccessControlListEntryRequest::getAclId()const
 void RemoveAccessControlListEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string RemoveAccessControlListEntryRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string RemoveAccessControlListEntryRequest::getResourceOwnerAccount()const
 void RemoveAccessControlListEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveAccessControlListEntryRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string RemoveAccessControlListEntryRequest::getOwnerAccount()const
 void RemoveAccessControlListEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveAccessControlListEntryRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long RemoveAccessControlListEntryRequest::getOwnerId()const
 void RemoveAccessControlListEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveAccessControlListEntryRequest::getTags()const
@@ -132,6 +134,6 @@ std::string RemoveAccessControlListEntryRequest::getTags()const
 void RemoveAccessControlListEntryRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

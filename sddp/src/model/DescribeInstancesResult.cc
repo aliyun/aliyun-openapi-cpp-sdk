@@ -58,7 +58,7 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		if(!valueItemsInstance["Protection"].isNull())
 			itemsObject.protection = valueItemsInstance["Protection"].asString() == "true";
 		if(!valueItemsInstance["Labelsec"].isNull())
-			itemsObject.labelsec = std::stoi(valueItemsInstance["Labelsec"].asString());
+			itemsObject.labelsec = valueItemsInstance["Labelsec"].asString() == "true";
 		if(!valueItemsInstance["OdpsRiskLevelName"].isNull())
 			itemsObject.odpsRiskLevelName = valueItemsInstance["OdpsRiskLevelName"].asString();
 		if(!valueItemsInstance["Sensitive"].isNull())
@@ -77,6 +77,18 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			itemsObject.sensitiveCount = std::stoi(valueItemsInstance["SensitiveCount"].asString());
 		if(!valueItemsInstance["Acl"].isNull())
 			itemsObject.acl = valueItemsInstance["Acl"].asString();
+		if(!valueItemsInstance["S2Count"].isNull())
+			itemsObject.s2Count = std::stoi(valueItemsInstance["S2Count"].asString());
+		if(!valueItemsInstance["S3Count"].isNull())
+			itemsObject.s3Count = std::stoi(valueItemsInstance["S3Count"].asString());
+		if(!valueItemsInstance["LastFinishTime"].isNull())
+			itemsObject.lastFinishTime = std::stol(valueItemsInstance["LastFinishTime"].asString());
+		if(!valueItemsInstance["RegionName"].isNull())
+			itemsObject.regionName = valueItemsInstance["RegionName"].asString();
+		if(!valueItemsInstance["RegionId"].isNull())
+			itemsObject.regionId = valueItemsInstance["RegionId"].asString();
+		if(!valueItemsInstance["EngineType"].isNull())
+			itemsObject.engineType = valueItemsInstance["EngineType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamRecordIndexFileRequest;
 
 DescribeLiveStreamRecordIndexFileRequest::DescribeLiveStreamRecordIndexFileRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamRecordIndexFileRequest::~DescribeLiveStreamRecordIndexFileRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getAppName()const
 void DescribeLiveStreamRecordIndexFileRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getSecurityToken()const
 void DescribeLiveStreamRecordIndexFileRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
@@ -55,7 +57,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getStreamName()const
 void DescribeLiveStreamRecordIndexFileRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getDomainName()const
 void DescribeLiveStreamRecordIndexFileRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamRecordIndexFileRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeLiveStreamRecordIndexFileRequest::getOwnerId()const
 void DescribeLiveStreamRecordIndexFileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveStreamRecordIndexFileRequest::getRecordId()const
@@ -88,6 +90,6 @@ std::string DescribeLiveStreamRecordIndexFileRequest::getRecordId()const
 void DescribeLiveStreamRecordIndexFileRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setParameter("RecordId", recordId);
 }
 

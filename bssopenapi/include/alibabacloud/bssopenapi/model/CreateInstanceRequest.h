@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_BSSOPENAPI_EXPORT CreateInstanceRequest : public RpcServiceRequest
 			{
+			public:
 				struct Parameter
 				{
 					std::string code;

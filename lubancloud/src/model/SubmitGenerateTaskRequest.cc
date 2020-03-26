@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::SubmitGenerateTaskRequest;
 
 SubmitGenerateTaskRequest::SubmitGenerateTaskRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "SubmitGenerateTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitGenerateTaskRequest::~SubmitGenerateTaskRequest()
 {}
@@ -33,7 +35,7 @@ int SubmitGenerateTaskRequest::getImageCount()const
 void SubmitGenerateTaskRequest::setImageCount(int imageCount)
 {
 	imageCount_ = imageCount;
-	setCoreParameter("ImageCount", std::to_string(imageCount));
+	setParameter("ImageCount", std::to_string(imageCount));
 }
 
 std::string SubmitGenerateTaskRequest::getActionPoint()const
@@ -44,7 +46,7 @@ std::string SubmitGenerateTaskRequest::getActionPoint()const
 void SubmitGenerateTaskRequest::setActionPoint(const std::string& actionPoint)
 {
 	actionPoint_ = actionPoint;
-	setCoreParameter("ActionPoint", actionPoint);
+	setParameter("ActionPoint", actionPoint);
 }
 
 std::string SubmitGenerateTaskRequest::getLogoImagePath()const
@@ -55,7 +57,7 @@ std::string SubmitGenerateTaskRequest::getLogoImagePath()const
 void SubmitGenerateTaskRequest::setLogoImagePath(const std::string& logoImagePath)
 {
 	logoImagePath_ = logoImagePath;
-	setCoreParameter("LogoImagePath", logoImagePath);
+	setParameter("LogoImagePath", logoImagePath);
 }
 
 int SubmitGenerateTaskRequest::getType()const
@@ -66,7 +68,7 @@ int SubmitGenerateTaskRequest::getType()const
 void SubmitGenerateTaskRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::vector<std::string> SubmitGenerateTaskRequest::getMajorImagePath()const
@@ -77,8 +79,9 @@ std::vector<std::string> SubmitGenerateTaskRequest::getMajorImagePath()const
 void SubmitGenerateTaskRequest::setMajorImagePath(const std::vector<std::string>& majorImagePath)
 {
 	majorImagePath_ = majorImagePath;
-	for(int i = 0; i!= majorImagePath.size(); i++)
-		setCoreParameter("MajorImagePath."+ std::to_string(i), majorImagePath.at(i));
+	for(int dep1 = 0; dep1!= majorImagePath.size(); dep1++) {
+		setParameter("MajorImagePath."+ std::to_string(dep1), majorImagePath.at(dep1));
+	}
 }
 
 int SubmitGenerateTaskRequest::getWidth()const
@@ -89,7 +92,7 @@ int SubmitGenerateTaskRequest::getWidth()const
 void SubmitGenerateTaskRequest::setWidth(int width)
 {
 	width_ = width;
-	setCoreParameter("Width", std::to_string(width));
+	setParameter("Width", std::to_string(width));
 }
 
 std::vector<std::string> SubmitGenerateTaskRequest::getCopyWrite()const
@@ -100,8 +103,9 @@ std::vector<std::string> SubmitGenerateTaskRequest::getCopyWrite()const
 void SubmitGenerateTaskRequest::setCopyWrite(const std::vector<std::string>& copyWrite)
 {
 	copyWrite_ = copyWrite;
-	for(int i = 0; i!= copyWrite.size(); i++)
-		setCoreParameter("CopyWrite."+ std::to_string(i), copyWrite.at(i));
+	for(int dep1 = 0; dep1!= copyWrite.size(); dep1++) {
+		setParameter("CopyWrite."+ std::to_string(dep1), copyWrite.at(dep1));
+	}
 }
 
 std::vector<long> SubmitGenerateTaskRequest::getPropertyId()const
@@ -112,8 +116,9 @@ std::vector<long> SubmitGenerateTaskRequest::getPropertyId()const
 void SubmitGenerateTaskRequest::setPropertyId(const std::vector<long>& propertyId)
 {
 	propertyId_ = propertyId;
-	for(int i = 0; i!= propertyId.size(); i++)
-		setCoreParameter("PropertyId."+ std::to_string(i), std::to_string(propertyId.at(i)));
+	for(int dep1 = 0; dep1!= propertyId.size(); dep1++) {
+		setParameter("PropertyId."+ std::to_string(dep1), std::to_string(propertyId.at(dep1)));
+	}
 }
 
 int SubmitGenerateTaskRequest::getHeight()const
@@ -124,6 +129,6 @@ int SubmitGenerateTaskRequest::getHeight()const
 void SubmitGenerateTaskRequest::setHeight(int height)
 {
 	height_ = height;
-	setCoreParameter("Height", std::to_string(height));
+	setParameter("Height", std::to_string(height));
 }
 

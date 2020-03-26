@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayAllkbpsRequest;
 
 TodayAllkbpsRequest::TodayAllkbpsRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayAllkbps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayAllkbpsRequest::~TodayAllkbpsRequest()
 {}

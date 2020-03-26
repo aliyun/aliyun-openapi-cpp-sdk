@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DeleteAliasRequest;
 DeleteAliasRequest::DeleteAliasRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DeleteAlias")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteAliasRequest::~DeleteAliasRequest()

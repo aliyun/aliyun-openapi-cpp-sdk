@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setSpecification(const std::string& specification);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string specification_;
 				long ownerId_;
+				std::string interval_;
 				std::string region_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::AnalyzeNvcRequest;
 
 AnalyzeNvcRequest::AnalyzeNvcRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "AnalyzeNvc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AnalyzeNvcRequest::~AnalyzeNvcRequest()
 {}
@@ -33,7 +35,7 @@ std::string AnalyzeNvcRequest::getData()const
 void AnalyzeNvcRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string AnalyzeNvcRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string AnalyzeNvcRequest::getSourceIp()const
 void AnalyzeNvcRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string AnalyzeNvcRequest::getScoreJsonStr()const
@@ -55,6 +57,6 @@ std::string AnalyzeNvcRequest::getScoreJsonStr()const
 void AnalyzeNvcRequest::setScoreJsonStr(const std::string& scoreJsonStr)
 {
 	scoreJsonStr_ = scoreJsonStr;
-	setCoreParameter("ScoreJsonStr", scoreJsonStr);
+	setParameter("ScoreJsonStr", scoreJsonStr);
 }
 

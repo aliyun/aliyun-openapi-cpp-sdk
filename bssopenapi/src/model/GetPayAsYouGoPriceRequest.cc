@@ -35,7 +35,7 @@ std::string GetPayAsYouGoPriceRequest::getProductCode()const
 void GetPayAsYouGoPriceRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string GetPayAsYouGoPriceRequest::getSubscriptionType()const
@@ -46,7 +46,7 @@ std::string GetPayAsYouGoPriceRequest::getSubscriptionType()const
 void GetPayAsYouGoPriceRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setParameter("SubscriptionType", subscriptionType);
 }
 
 std::vector<GetPayAsYouGoPriceRequest::ModuleList> GetPayAsYouGoPriceRequest::getModuleList()const
@@ -59,10 +59,10 @@ void GetPayAsYouGoPriceRequest::setModuleList(const std::vector<ModuleList>& mod
 	moduleList_ = moduleList;
 	for(int dep1 = 0; dep1!= moduleList.size(); dep1++) {
 		auto moduleListObj = moduleList.at(dep1);
-		std::string moduleListObjStr = "ModuleList." + std::to_string(dep1);
-		setCoreParameter(moduleListObjStr + ".ModuleCode", moduleListObj.moduleCode);
-		setCoreParameter(moduleListObjStr + ".PriceType", moduleListObj.priceType);
-		setCoreParameter(moduleListObjStr + ".Config", moduleListObj.config);
+		std::string moduleListObjStr = "ModuleList." + std::to_string(dep1 + 1);
+		setParameter(moduleListObjStr + ".ModuleCode", moduleListObj.moduleCode);
+		setParameter(moduleListObjStr + ".PriceType", moduleListObj.priceType);
+		setParameter(moduleListObjStr + ".Config", moduleListObj.config);
 	}
 }
 
@@ -74,7 +74,7 @@ long GetPayAsYouGoPriceRequest::getOwnerId()const
 void GetPayAsYouGoPriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetPayAsYouGoPriceRequest::getProductType()const
@@ -85,7 +85,7 @@ std::string GetPayAsYouGoPriceRequest::getProductType()const
 void GetPayAsYouGoPriceRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string GetPayAsYouGoPriceRequest::getRegion()const
@@ -96,6 +96,6 @@ std::string GetPayAsYouGoPriceRequest::getRegion()const
 void GetPayAsYouGoPriceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

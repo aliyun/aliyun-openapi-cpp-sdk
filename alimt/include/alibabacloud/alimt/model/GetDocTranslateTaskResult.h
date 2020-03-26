@@ -38,15 +38,21 @@ namespace AlibabaCloud
 				explicit GetDocTranslateTaskResult(const std::string &payload);
 				~GetDocTranslateTaskResult();
 				std::string getStatus()const;
+				std::string getTranslateErrorMessage()const;
 				std::string getTaskId()const;
+				int getPageCount()const;
 				std::string getTranslateFileUrl()const;
+				std::string getTranslateErrorCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				std::string translateErrorMessage_;
 				std::string taskId_;
+				int pageCount_;
 				std::string translateFileUrl_;
+				std::string translateErrorCode_;
 
 			};
 		}

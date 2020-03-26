@@ -22,7 +22,7 @@ UpdateBlackIpsRequest::UpdateBlackIpsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/black-ips");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateBlackIpsRequest::~UpdateBlackIpsRequest()

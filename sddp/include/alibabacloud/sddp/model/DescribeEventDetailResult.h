@@ -49,6 +49,7 @@ namespace AlibabaCloud
 								std::string y;
 							};
 							std::string yLabel;
+							std::string type;
 							std::string label;
 							Data data;
 							std::string xLabel;
@@ -74,7 +75,6 @@ namespace AlibabaCloud
 					long alertTime;
 					std::string departName;
 					std::string dealReason;
-					std::string telephoneNum;
 					std::string dealLoginName;
 					std::string dealDisplayName;
 					std::string subTypeName;

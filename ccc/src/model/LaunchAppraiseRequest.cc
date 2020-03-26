@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::LaunchAppraiseRequest;
 
 LaunchAppraiseRequest::LaunchAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "LaunchAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 LaunchAppraiseRequest::~LaunchAppraiseRequest()
 {}
@@ -33,7 +35,7 @@ std::string LaunchAppraiseRequest::getAcid()const
 void LaunchAppraiseRequest::setAcid(const std::string& acid)
 {
 	acid_ = acid;
-	setCoreParameter("Acid", acid);
+	setParameter("Acid", acid);
 }
 
 std::string LaunchAppraiseRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string LaunchAppraiseRequest::getInstanceId()const
 void LaunchAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string LaunchAppraiseRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string LaunchAppraiseRequest::getAccessKeyId()const
 void LaunchAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

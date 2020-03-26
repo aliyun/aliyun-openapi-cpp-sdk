@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeDeviceAutoUpgradePolicyRequest;
 
 DescribeDeviceAutoUpgradePolicyRequest::DescribeDeviceAutoUpgradePolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeDeviceAutoUpgradePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeviceAutoUpgradePolicyRequest::~DescribeDeviceAutoUpgradePolicyRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDeviceAutoUpgradePolicyRequest::getResourceOwnerId()const
 void DescribeDeviceAutoUpgradePolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDeviceAutoUpgradePolicyRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeDeviceAutoUpgradePolicyRequest::getRegionId()const
 void DescribeDeviceAutoUpgradePolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDeviceAutoUpgradePolicyRequest::getSerialNumber()const
@@ -55,7 +57,7 @@ std::string DescribeDeviceAutoUpgradePolicyRequest::getSerialNumber()const
 void DescribeDeviceAutoUpgradePolicyRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setParameter("SerialNumber", serialNumber);
 }
 
 std::string DescribeDeviceAutoUpgradePolicyRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeDeviceAutoUpgradePolicyRequest::getResourceOwnerAccount()con
 void DescribeDeviceAutoUpgradePolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDeviceAutoUpgradePolicyRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeDeviceAutoUpgradePolicyRequest::getOwnerAccount()const
 void DescribeDeviceAutoUpgradePolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDeviceAutoUpgradePolicyRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeDeviceAutoUpgradePolicyRequest::getOwnerId()const
 void DescribeDeviceAutoUpgradePolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDeviceAutoUpgradePolicyRequest::getSmartAGId()const
@@ -99,6 +101,6 @@ std::string DescribeDeviceAutoUpgradePolicyRequest::getSmartAGId()const
 void DescribeDeviceAutoUpgradePolicyRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

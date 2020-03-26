@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutCustomEventRequest : public RpcServiceRequest
 			{
+			public:
 				struct EventInfo
 				{
 					std::string groupId;

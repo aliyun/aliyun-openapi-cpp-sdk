@@ -22,7 +22,7 @@ ReleaseServiceRequest::ReleaseServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/release");
-	setMethod(HttpRequest::Method::PUT);
+	setMethod(HttpRequest::Method::Put);
 }
 
 ReleaseServiceRequest::~ReleaseServiceRequest()

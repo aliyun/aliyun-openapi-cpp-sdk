@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListExecutionPlansRequest;
 
 ListExecutionPlansRequest::ListExecutionPlansRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListExecutionPlans")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListExecutionPlansRequest::~ListExecutionPlansRequest()
 {}
@@ -33,7 +35,7 @@ long ListExecutionPlansRequest::getResourceOwnerId()const
 void ListExecutionPlansRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ListExecutionPlansRequest::getStatusList()const
@@ -44,8 +46,9 @@ std::vector<std::string> ListExecutionPlansRequest::getStatusList()const
 void ListExecutionPlansRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListExecutionPlansRequest::getIsDesc()const
@@ -56,7 +59,7 @@ bool ListExecutionPlansRequest::getIsDesc()const
 void ListExecutionPlansRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListExecutionPlansRequest::getPageNumber()const
@@ -67,7 +70,7 @@ int ListExecutionPlansRequest::getPageNumber()const
 void ListExecutionPlansRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListExecutionPlansRequest::getAccessKeyId()const
@@ -78,7 +81,7 @@ std::string ListExecutionPlansRequest::getAccessKeyId()const
 void ListExecutionPlansRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListExecutionPlansRequest::getJobId()const
@@ -89,7 +92,7 @@ std::string ListExecutionPlansRequest::getJobId()const
 void ListExecutionPlansRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ListExecutionPlansRequest::getRegionId()const
@@ -100,7 +103,7 @@ std::string ListExecutionPlansRequest::getRegionId()const
 void ListExecutionPlansRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListExecutionPlansRequest::getPageSize()const
@@ -111,7 +114,7 @@ int ListExecutionPlansRequest::getPageSize()const
 void ListExecutionPlansRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListExecutionPlansRequest::getQueryType()const
@@ -122,7 +125,7 @@ std::string ListExecutionPlansRequest::getQueryType()const
 void ListExecutionPlansRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 
 std::string ListExecutionPlansRequest::getQueryString()const
@@ -133,7 +136,7 @@ std::string ListExecutionPlansRequest::getQueryString()const
 void ListExecutionPlansRequest::setQueryString(const std::string& queryString)
 {
 	queryString_ = queryString;
-	setCoreParameter("QueryString", queryString);
+	setParameter("QueryString", queryString);
 }
 
 std::string ListExecutionPlansRequest::getClusterId()const
@@ -144,7 +147,7 @@ std::string ListExecutionPlansRequest::getClusterId()const
 void ListExecutionPlansRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListExecutionPlansRequest::getStrategy()const
@@ -155,6 +158,6 @@ std::string ListExecutionPlansRequest::getStrategy()const
 void ListExecutionPlansRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", strategy);
+	setParameter("Strategy", strategy);
 }
 

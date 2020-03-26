@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeDepartsRequest;
 
 DescribeDepartsRequest::DescribeDepartsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeDeparts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDepartsRequest::~DescribeDepartsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeDepartsRequest::getAccountType()const
 void DescribeDepartsRequest::setAccountType(int accountType)
 {
 	accountType_ = accountType;
-	setCoreParameter("AccountType", std::to_string(accountType));
+	setParameter("AccountType", std::to_string(accountType));
 }
 
 std::string DescribeDepartsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDepartsRequest::getSourceIp()const
 void DescribeDepartsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDepartsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeDepartsRequest::getPageSize()const
 void DescribeDepartsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDepartsRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeDepartsRequest::getLang()const
 void DescribeDepartsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeDepartsRequest::getKey()const
@@ -77,7 +79,7 @@ std::string DescribeDepartsRequest::getKey()const
 void DescribeDepartsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeDepartsRequest::getFeatureType()const
@@ -88,7 +90,7 @@ int DescribeDepartsRequest::getFeatureType()const
 void DescribeDepartsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDepartsRequest::getCurrentPage()const
@@ -99,6 +101,6 @@ int DescribeDepartsRequest::getCurrentPage()const
 void DescribeDepartsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

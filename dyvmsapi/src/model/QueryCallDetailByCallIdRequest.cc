@@ -35,7 +35,7 @@ std::string QueryCallDetailByCallIdRequest::getCallId()const
 void QueryCallDetailByCallIdRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 long QueryCallDetailByCallIdRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long QueryCallDetailByCallIdRequest::getResourceOwnerId()const
 void QueryCallDetailByCallIdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCallDetailByCallIdRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string QueryCallDetailByCallIdRequest::getAccessKeyId()const
 void QueryCallDetailByCallIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryCallDetailByCallIdRequest::getQueryDate()const
@@ -68,7 +68,7 @@ long QueryCallDetailByCallIdRequest::getQueryDate()const
 void QueryCallDetailByCallIdRequest::setQueryDate(long queryDate)
 {
 	queryDate_ = queryDate;
-	setCoreParameter("QueryDate", std::to_string(queryDate));
+	setParameter("QueryDate", std::to_string(queryDate));
 }
 
 std::string QueryCallDetailByCallIdRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string QueryCallDetailByCallIdRequest::getResourceOwnerAccount()const
 void QueryCallDetailByCallIdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QueryCallDetailByCallIdRequest::getProdId()const
@@ -90,7 +90,7 @@ long QueryCallDetailByCallIdRequest::getProdId()const
 void QueryCallDetailByCallIdRequest::setProdId(long prodId)
 {
 	prodId_ = prodId;
-	setCoreParameter("ProdId", std::to_string(prodId));
+	setParameter("ProdId", std::to_string(prodId));
 }
 
 long QueryCallDetailByCallIdRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long QueryCallDetailByCallIdRequest::getOwnerId()const
 void QueryCallDetailByCallIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

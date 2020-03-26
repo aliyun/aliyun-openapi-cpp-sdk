@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::CreatCustomOcrTemplateRequest;
 
 CreatCustomOcrTemplateRequest::CreatCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "CreatCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatCustomOcrTemplateRequest::~CreatCustomOcrTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreatCustomOcrTemplateRequest::getRecognizeArea()const
 void CreatCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
 {
 	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", recognizeArea);
+	setParameter("RecognizeArea", recognizeArea);
 }
 
 std::string CreatCustomOcrTemplateRequest::getImgUrl()const
@@ -44,7 +46,7 @@ std::string CreatCustomOcrTemplateRequest::getImgUrl()const
 void CreatCustomOcrTemplateRequest::setImgUrl(const std::string& imgUrl)
 {
 	imgUrl_ = imgUrl;
-	setCoreParameter("ImgUrl", imgUrl);
+	setParameter("ImgUrl", imgUrl);
 }
 
 std::string CreatCustomOcrTemplateRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreatCustomOcrTemplateRequest::getSourceIp()const
 void CreatCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreatCustomOcrTemplateRequest::getReferArea()const
@@ -66,7 +68,7 @@ std::string CreatCustomOcrTemplateRequest::getReferArea()const
 void CreatCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
-	setCoreParameter("ReferArea", referArea);
+	setParameter("ReferArea", referArea);
 }
 
 std::string CreatCustomOcrTemplateRequest::getName()const
@@ -77,6 +79,6 @@ std::string CreatCustomOcrTemplateRequest::getName()const
 void CreatCustomOcrTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeEmrMainVersionRequest;
 
 DescribeEmrMainVersionRequest::DescribeEmrMainVersionRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeEmrMainVersion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEmrMainVersionRequest::~DescribeEmrMainVersionRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeEmrMainVersionRequest::getResourceOwnerId()const
 void DescribeEmrMainVersionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeEmrMainVersionRequest::getAccessKeyId()const
 void DescribeEmrMainVersionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeEmrMainVersionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeEmrMainVersionRequest::getRegionId()const
 void DescribeEmrMainVersionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeEmrMainVersionRequest::getEmrVersion()const
@@ -66,6 +68,6 @@ std::string DescribeEmrMainVersionRequest::getEmrVersion()const
 void DescribeEmrMainVersionRequest::setEmrVersion(const std::string& emrVersion)
 {
 	emrVersion_ = emrVersion;
-	setCoreParameter("EmrVersion", emrVersion);
+	setParameter("EmrVersion", emrVersion);
 }
 

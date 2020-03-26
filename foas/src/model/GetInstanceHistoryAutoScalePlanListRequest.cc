@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceHistoryAutoScalePlanListRequest;
 
 GetInstanceHistoryAutoScalePlanListRequest::GetInstanceHistoryAutoScalePlanListRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/planlist");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceHistoryAutoScalePlanListRequest::~GetInstanceHistoryAutoScalePlanListRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceHistoryAutoScalePlanListRequest::getProjectName()const
 void GetInstanceHistoryAutoScalePlanListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceHistoryAutoScalePlanListRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceHistoryAutoScalePlanListRequest::getInstanceId()const
 void GetInstanceHistoryAutoScalePlanListRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceHistoryAutoScalePlanListRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceHistoryAutoScalePlanListRequest::getRegionId()const
 void GetInstanceHistoryAutoScalePlanListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceHistoryAutoScalePlanListRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceHistoryAutoScalePlanListRequest::getJobName()const
 void GetInstanceHistoryAutoScalePlanListRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

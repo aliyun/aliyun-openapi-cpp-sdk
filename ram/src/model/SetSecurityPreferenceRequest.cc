@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::SetSecurityPreferenceRequest;
 
 SetSecurityPreferenceRequest::SetSecurityPreferenceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "SetSecurityPreference")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetSecurityPreferenceRequest::~SetSecurityPreferenceRequest()
 {}
@@ -33,7 +35,7 @@ bool SetSecurityPreferenceRequest::getEnableSaveMFATicket()const
 void SetSecurityPreferenceRequest::setEnableSaveMFATicket(bool enableSaveMFATicket)
 {
 	enableSaveMFATicket_ = enableSaveMFATicket;
-	setCoreParameter("EnableSaveMFATicket", enableSaveMFATicket ? "true" : "false");
+	setParameter("EnableSaveMFATicket", enableSaveMFATicket ? "true" : "false");
 }
 
 std::string SetSecurityPreferenceRequest::getLoginNetworkMasks()const
@@ -44,7 +46,7 @@ std::string SetSecurityPreferenceRequest::getLoginNetworkMasks()const
 void SetSecurityPreferenceRequest::setLoginNetworkMasks(const std::string& loginNetworkMasks)
 {
 	loginNetworkMasks_ = loginNetworkMasks;
-	setCoreParameter("LoginNetworkMasks", loginNetworkMasks);
+	setParameter("LoginNetworkMasks", loginNetworkMasks);
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToChangePassword()const
@@ -55,7 +57,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToChangePassword()const
 void SetSecurityPreferenceRequest::setAllowUserToChangePassword(bool allowUserToChangePassword)
 {
 	allowUserToChangePassword_ = allowUserToChangePassword;
-	setCoreParameter("AllowUserToChangePassword", allowUserToChangePassword ? "true" : "false");
+	setParameter("AllowUserToChangePassword", allowUserToChangePassword ? "true" : "false");
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
@@ -66,7 +68,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToManagePublicKeys()const
 void SetSecurityPreferenceRequest::setAllowUserToManagePublicKeys(bool allowUserToManagePublicKeys)
 {
 	allowUserToManagePublicKeys_ = allowUserToManagePublicKeys;
-	setCoreParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
+	setParameter("AllowUserToManagePublicKeys", allowUserToManagePublicKeys ? "true" : "false");
 }
 
 int SetSecurityPreferenceRequest::getLoginSessionDuration()const
@@ -77,7 +79,7 @@ int SetSecurityPreferenceRequest::getLoginSessionDuration()const
 void SetSecurityPreferenceRequest::setLoginSessionDuration(int loginSessionDuration)
 {
 	loginSessionDuration_ = loginSessionDuration;
-	setCoreParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
+	setParameter("LoginSessionDuration", std::to_string(loginSessionDuration));
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
@@ -88,7 +90,7 @@ bool SetSecurityPreferenceRequest::getAllowUserToManageAccessKeys()const
 void SetSecurityPreferenceRequest::setAllowUserToManageAccessKeys(bool allowUserToManageAccessKeys)
 {
 	allowUserToManageAccessKeys_ = allowUserToManageAccessKeys;
-	setCoreParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
+	setParameter("AllowUserToManageAccessKeys", allowUserToManageAccessKeys ? "true" : "false");
 }
 
 bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
@@ -99,6 +101,6 @@ bool SetSecurityPreferenceRequest::getAllowUserToManageMFADevices()const
 void SetSecurityPreferenceRequest::setAllowUserToManageMFADevices(bool allowUserToManageMFADevices)
 {
 	allowUserToManageMFADevices_ = allowUserToManageMFADevices;
-	setCoreParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
+	setParameter("AllowUserToManageMFADevices", allowUserToManageMFADevices ? "true" : "false");
 }
 

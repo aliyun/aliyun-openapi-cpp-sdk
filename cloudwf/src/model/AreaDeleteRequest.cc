@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::AreaDeleteRequest;
 
 AreaDeleteRequest::AreaDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "AreaDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AreaDeleteRequest::~AreaDeleteRequest()
 {}
@@ -33,7 +35,7 @@ std::string AreaDeleteRequest::getAccessKeyId()const
 void AreaDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long AreaDeleteRequest::getSid()const
@@ -44,7 +46,7 @@ long AreaDeleteRequest::getSid()const
 void AreaDeleteRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 long AreaDeleteRequest::getAid()const
@@ -55,6 +57,6 @@ long AreaDeleteRequest::getAid()const
 void AreaDeleteRequest::setAid(long aid)
 {
 	aid_ = aid;
-	setCoreParameter("Aid", std::to_string(aid));
+	setParameter("Aid", std::to_string(aid));
 }
 

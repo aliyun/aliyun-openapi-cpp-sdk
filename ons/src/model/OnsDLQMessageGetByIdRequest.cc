@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsDLQMessageGetByIdRequest;
 OnsDLQMessageGetByIdRequest::OnsDLQMessageGetByIdRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsDLQMessageGetById")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsDLQMessageGetByIdRequest::~OnsDLQMessageGetByIdRequest()

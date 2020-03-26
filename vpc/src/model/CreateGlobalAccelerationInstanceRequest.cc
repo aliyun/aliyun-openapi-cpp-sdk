@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateGlobalAccelerationInstanceRequest;
 
 CreateGlobalAccelerationInstanceRequest::CreateGlobalAccelerationInstanceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateGlobalAccelerationInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGlobalAccelerationInstanceRequest::~CreateGlobalAccelerationInstanceRequest()
 {}
@@ -33,7 +35,7 @@ long CreateGlobalAccelerationInstanceRequest::getResourceOwnerId()const
 void CreateGlobalAccelerationInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getBandwidthType()const
@@ -44,7 +46,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getBandwidthType()const
 void CreateGlobalAccelerationInstanceRequest::setBandwidthType(const std::string& bandwidthType)
 {
 	bandwidthType_ = bandwidthType;
-	setCoreParameter("BandwidthType", bandwidthType);
+	setParameter("BandwidthType", bandwidthType);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getClientToken()const
@@ -55,7 +57,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getClientToken()const
 void CreateGlobalAccelerationInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getDescription()const
 void CreateGlobalAccelerationInstanceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getRegionId()const
 void CreateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()co
 void CreateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getServiceLocation()const
@@ -99,7 +101,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getServiceLocation()const
 void CreateGlobalAccelerationInstanceRequest::setServiceLocation(const std::string& serviceLocation)
 {
 	serviceLocation_ = serviceLocation;
-	setCoreParameter("ServiceLocation", serviceLocation);
+	setParameter("ServiceLocation", serviceLocation);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getBandwidth()const
@@ -110,7 +112,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getBandwidth()const
 void CreateGlobalAccelerationInstanceRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setParameter("Bandwidth", bandwidth);
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateGlobalAccelerationInstanceRequest::getOwnerAccount()const
 void CreateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateGlobalAccelerationInstanceRequest::getOwnerId()const
@@ -132,18 +134,7 @@ long CreateGlobalAccelerationInstanceRequest::getOwnerId()const
 void CreateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string CreateGlobalAccelerationInstanceRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
-}
-
-void CreateGlobalAccelerationInstanceRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateGlobalAccelerationInstanceRequest::getName()const
@@ -154,6 +145,6 @@ std::string CreateGlobalAccelerationInstanceRequest::getName()const
 void CreateGlobalAccelerationInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

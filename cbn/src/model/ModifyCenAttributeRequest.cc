@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ModifyCenAttributeRequest;
 
 ModifyCenAttributeRequest::ModifyCenAttributeRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ModifyCenAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCenAttributeRequest::~ModifyCenAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyCenAttributeRequest::getResourceOwnerId()const
 void ModifyCenAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCenAttributeRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string ModifyCenAttributeRequest::getCenId()const
 void ModifyCenAttributeRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string ModifyCenAttributeRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string ModifyCenAttributeRequest::getDescription()const
 void ModifyCenAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyCenAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ModifyCenAttributeRequest::getResourceOwnerAccount()const
 void ModifyCenAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCenAttributeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyCenAttributeRequest::getOwnerAccount()const
 void ModifyCenAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCenAttributeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long ModifyCenAttributeRequest::getOwnerId()const
 void ModifyCenAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCenAttributeRequest::getProtectionLevel()const
@@ -99,7 +101,7 @@ std::string ModifyCenAttributeRequest::getProtectionLevel()const
 void ModifyCenAttributeRequest::setProtectionLevel(const std::string& protectionLevel)
 {
 	protectionLevel_ = protectionLevel;
-	setCoreParameter("ProtectionLevel", protectionLevel);
+	setParameter("ProtectionLevel", protectionLevel);
 }
 
 std::string ModifyCenAttributeRequest::getName()const
@@ -110,6 +112,6 @@ std::string ModifyCenAttributeRequest::getName()const
 void ModifyCenAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

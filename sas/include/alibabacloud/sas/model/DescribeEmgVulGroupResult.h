@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				struct EmgVulGroup
 				{
 					int pendingCount;
+					int status;
 					std::string type;
+					int progress;
 					std::string description;
 					std::string aliasName;
 					long gmtPublish;
+					long gmtLastCheck;
 					std::string name;
 				};
 

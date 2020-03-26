@@ -42,11 +42,13 @@ namespace AlibabaCloud
 				DescribeInstanceResult();
 				explicit DescribeInstanceResult(const std::string &payload);
 				~DescribeInstanceResult();
+				std::string getModuleStackVersion()const;
 				bool getIsHa()const;
 				std::string getCreatedTime()const;
 				std::string getMasterInstanceType()const;
 				bool getIsDeletionProtection()const;
 				bool getIsLatestVersion()const;
+				int getModuleId()const;
 				std::string getMaintainEndTime()const;
 				std::string getNetworkType()const;
 				std::string getCoreInstanceType()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::string getMajorVersion()const;
 				std::string getCoreDiskCount()const;
+				std::string getParentId()const;
 				int getMasterDiskSize()const;
 				std::string getExpireTimeUTC()const;
 				std::string getZoneId()const;
@@ -83,11 +86,13 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string moduleStackVersion_;
 				bool isHa_;
 				std::string createdTime_;
 				std::string masterInstanceType_;
 				bool isDeletionProtection_;
 				bool isLatestVersion_;
+				int moduleId_;
 				std::string maintainEndTime_;
 				std::string networkType_;
 				std::string coreInstanceType_;
@@ -99,6 +104,7 @@ namespace AlibabaCloud
 				std::string status_;
 				std::string majorVersion_;
 				std::string coreDiskCount_;
+				std::string parentId_;
 				int masterDiskSize_;
 				std::string expireTimeUTC_;
 				std::string zoneId_;

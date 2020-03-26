@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeInstanceStatisticsRequest;
 
 DescribeInstanceStatisticsRequest::DescribeInstanceStatisticsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeInstanceStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceStatisticsRequest::~DescribeInstanceStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeInstanceStatisticsRequest::getUuid()const
 void DescribeInstanceStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribeInstanceStatisticsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeInstanceStatisticsRequest::getSourceIp()const
 void DescribeInstanceStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeInstanceStatisticsRequest::getFrom()const
@@ -55,7 +57,7 @@ std::string DescribeInstanceStatisticsRequest::getFrom()const
 void DescribeInstanceStatisticsRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string DescribeInstanceStatisticsRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeInstanceStatisticsRequest::getLang()const
 void DescribeInstanceStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

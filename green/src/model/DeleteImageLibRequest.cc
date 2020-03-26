@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteImageLibRequest;
 
 DeleteImageLibRequest::DeleteImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteImageLibRequest::~DeleteImageLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteImageLibRequest::getSourceIp()const
 void DeleteImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DeleteImageLibRequest::getId()const
@@ -44,6 +46,6 @@ int DeleteImageLibRequest::getId()const
 void DeleteImageLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

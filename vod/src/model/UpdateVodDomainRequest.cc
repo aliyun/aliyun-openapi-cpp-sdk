@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateVodDomainRequest;
 
 UpdateVodDomainRequest::UpdateVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateVodDomainRequest::~UpdateVodDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateVodDomainRequest::getTopLevelDomain()const
 void UpdateVodDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateVodDomainRequest::getSources()const
@@ -44,7 +46,7 @@ std::string UpdateVodDomainRequest::getSources()const
 void UpdateVodDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string UpdateVodDomainRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string UpdateVodDomainRequest::getDomainName()const
 void UpdateVodDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateVodDomainRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long UpdateVodDomainRequest::getOwnerId()const
 void UpdateVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateVodDomainRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string UpdateVodDomainRequest::getSecurityToken()const
 void UpdateVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

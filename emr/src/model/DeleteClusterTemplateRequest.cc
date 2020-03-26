@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteClusterTemplateRequest;
 
 DeleteClusterTemplateRequest::DeleteClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteClusterTemplateRequest::~DeleteClusterTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteClusterTemplateRequest::getResourceOwnerId()const
 void DeleteClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteClusterTemplateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteClusterTemplateRequest::getAccessKeyId()const
 void DeleteClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteClusterTemplateRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteClusterTemplateRequest::getRegionId()const
 void DeleteClusterTemplateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteClusterTemplateRequest::getBizId()const
@@ -66,6 +68,6 @@ std::string DeleteClusterTemplateRequest::getBizId()const
 void DeleteClusterTemplateRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteCustomOcrTemplateRequest;
 
 DeleteCustomOcrTemplateRequest::DeleteCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCustomOcrTemplateRequest::~DeleteCustomOcrTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCustomOcrTemplateRequest::getSourceIp()const
 void DeleteCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCustomOcrTemplateRequest::getIds()const
@@ -44,6 +46,6 @@ std::string DeleteCustomOcrTemplateRequest::getIds()const
 void DeleteCustomOcrTemplateRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 

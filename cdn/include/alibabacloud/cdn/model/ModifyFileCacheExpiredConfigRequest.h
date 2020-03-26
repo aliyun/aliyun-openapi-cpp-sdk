@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				ModifyFileCacheExpiredConfigRequest();
 				~ModifyFileCacheExpiredConfigRequest();
 
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getWeight()const;
@@ -45,18 +47,16 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getTTL()const;
 				void setTTL(const std::string& tTL);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getConfigID()const;
 				void setConfigID(const std::string& configID);
 
             private:
+				std::string securityToken_;
 				std::string domainName_;
 				std::string weight_;
 				std::string cacheContent_;
 				long ownerId_;
 				std::string tTL_;
-				std::string securityToken_;
 				std::string configID_;
 
 			};
