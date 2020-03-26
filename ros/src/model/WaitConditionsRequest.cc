@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::WaitConditionsRequest;
 
 WaitConditionsRequest::WaitConditionsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/waitcondition");
+	setMethod(HttpRequest::Method::Post);
+}
 
 WaitConditionsRequest::~WaitConditionsRequest()
 {}
@@ -33,7 +36,7 @@ std::string WaitConditionsRequest::getResource()const
 void WaitConditionsRequest::setResource(const std::string& resource)
 {
 	resource_ = resource;
-	setCoreParameter("Resource", resource);
+	setParameter("Resource", resource);
 }
 
 std::string WaitConditionsRequest::getSignature()const
@@ -44,7 +47,7 @@ std::string WaitConditionsRequest::getSignature()const
 void WaitConditionsRequest::setSignature(const std::string& signature)
 {
 	signature_ = signature;
-	setCoreParameter("Signature", signature);
+	setParameter("Signature", signature);
 }
 
 std::string WaitConditionsRequest::getStackid()const
@@ -55,7 +58,7 @@ std::string WaitConditionsRequest::getStackid()const
 void WaitConditionsRequest::setStackid(const std::string& stackid)
 {
 	stackid_ = stackid;
-	setCoreParameter("Stackid", stackid);
+	setParameter("Stackid", stackid);
 }
 
 std::string WaitConditionsRequest::getExpire()const
@@ -66,7 +69,7 @@ std::string WaitConditionsRequest::getExpire()const
 void WaitConditionsRequest::setExpire(const std::string& expire)
 {
 	expire_ = expire;
-	setCoreParameter("Expire", expire);
+	setParameter("Expire", expire);
 }
 
 std::string WaitConditionsRequest::getStackname()const
@@ -77,6 +80,6 @@ std::string WaitConditionsRequest::getStackname()const
 void WaitConditionsRequest::setStackname(const std::string& stackname)
 {
 	stackname_ = stackname;
-	setCoreParameter("Stackname", stackname);
+	setParameter("Stackname", stackname);
 }
 

@@ -43,32 +43,32 @@ void ListInstancesResult::parse(const std::string &payload)
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
+		if(!valueInstancesInstance["CallCenterInstanceId"].isNull())
+			instancesObject.callCenterInstanceId = valueInstancesInstance["CallCenterInstanceId"].asString();
+		if(!valueInstancesInstance["CreationTime"].isNull())
+			instancesObject.creationTime = std::stol(valueInstancesInstance["CreationTime"].asString());
+		if(!valueInstancesInstance["InstanceDescription"].isNull())
+			instancesObject.instanceDescription = valueInstancesInstance["InstanceDescription"].asString();
 		if(!valueInstancesInstance["InstanceId"].isNull())
 			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["InstanceName"].isNull())
 			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
-		if(!valueInstancesInstance["InstanceDescription"].isNull())
-			instancesObject.instanceDescription = valueInstancesInstance["InstanceDescription"].asString();
+		if(!valueInstancesInstance["IsTemplateContainer"].isNull())
+			instancesObject.isTemplateContainer = valueInstancesInstance["IsTemplateContainer"].asString() == "true";
 		if(!valueInstancesInstance["MaxConcurrentConversation"].isNull())
 			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
 		if(!valueInstancesInstance["Owner"].isNull())
 			instancesObject.owner = valueInstancesInstance["Owner"].asString();
-		if(!valueInstancesInstance["CreationTime"].isNull())
-			instancesObject.creationTime = std::stol(valueInstancesInstance["CreationTime"].asString());
-		if(!valueInstancesInstance["CallCenterInstanceId"].isNull())
-			instancesObject.callCenterInstanceId = valueInstancesInstance["CallCenterInstanceId"].asString();
-		if(!valueInstancesInstance["IsTemplateContainer"].isNull())
-			instancesObject.isTemplateContainer = valueInstancesInstance["IsTemplateContainer"].asString() == "true";
 		instances_.push_back(instancesObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

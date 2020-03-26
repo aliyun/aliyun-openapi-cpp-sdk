@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::DescribeActionDataRequest;
 
 DescribeActionDataRequest::DescribeActionDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "DescribeActionData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeActionDataRequest::~DescribeActionDataRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeActionDataRequest::getTsEnd()const
 void DescribeActionDataRequest::setTsEnd(long tsEnd)
 {
 	tsEnd_ = tsEnd;
-	setCoreParameter("TsEnd", std::to_string(tsEnd));
+	setBodyParameter("TsEnd", std::to_string(tsEnd));
 }
 
 std::string DescribeActionDataRequest::getStoreId()const
@@ -44,7 +46,7 @@ std::string DescribeActionDataRequest::getStoreId()const
 void DescribeActionDataRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 
 int DescribeActionDataRequest::getPageLimit()const
@@ -55,7 +57,7 @@ int DescribeActionDataRequest::getPageLimit()const
 void DescribeActionDataRequest::setPageLimit(int pageLimit)
 {
 	pageLimit_ = pageLimit;
-	setCoreParameter("PageLimit", std::to_string(pageLimit));
+	setBodyParameter("PageLimit", std::to_string(pageLimit));
 }
 
 int DescribeActionDataRequest::getPageNo()const
@@ -66,7 +68,7 @@ int DescribeActionDataRequest::getPageNo()const
 void DescribeActionDataRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setBodyParameter("PageNo", std::to_string(pageNo));
 }
 
 long DescribeActionDataRequest::getTsStart()const
@@ -77,6 +79,6 @@ long DescribeActionDataRequest::getTsStart()const
 void DescribeActionDataRequest::setTsStart(long tsStart)
 {
 	tsStart_ = tsStart;
-	setCoreParameter("TsStart", std::to_string(tsStart));
+	setBodyParameter("TsStart", std::to_string(tsStart));
 }
 

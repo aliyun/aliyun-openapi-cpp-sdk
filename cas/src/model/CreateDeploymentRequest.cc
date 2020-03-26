@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateDeploymentRequest;
 
 CreateDeploymentRequest::CreateDeploymentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDeploymentRequest::~CreateDeploymentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateDeploymentRequest::getCloudProduct()const
 void CreateDeploymentRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setParameter("CloudProduct", cloudProduct);
 }
 
 std::string CreateDeploymentRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateDeploymentRequest::getResourceGroupId()const
 void CreateDeploymentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateDeploymentRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateDeploymentRequest::getSourceIp()const
 void CreateDeploymentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateDeploymentRequest::getLang()const
@@ -66,7 +68,7 @@ std::string CreateDeploymentRequest::getLang()const
 void CreateDeploymentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long CreateDeploymentRequest::getCertificateId()const
@@ -77,7 +79,7 @@ long CreateDeploymentRequest::getCertificateId()const
 void CreateDeploymentRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string CreateDeploymentRequest::getDomain()const
@@ -88,7 +90,7 @@ std::string CreateDeploymentRequest::getDomain()const
 void CreateDeploymentRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 
 std::string CreateDeploymentRequest::getRegion()const
@@ -99,6 +101,6 @@ std::string CreateDeploymentRequest::getRegion()const
 void CreateDeploymentRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

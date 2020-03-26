@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstanceIPArrayListRequest;
 
 DescribeDBInstanceIPArrayListRequest::DescribeDBInstanceIPArrayListRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstanceIPArrayList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstanceIPArrayListRequest::~DescribeDBInstanceIPArrayListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDBInstanceIPArrayListRequest::getAccessKeyId()const
 void DescribeDBInstanceIPArrayListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
@@ -44,6 +46,6 @@ std::string DescribeDBInstanceIPArrayListRequest::getDBInstanceId()const
 void DescribeDBInstanceIPArrayListRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

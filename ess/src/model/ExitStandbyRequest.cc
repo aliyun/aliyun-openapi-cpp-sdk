@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ExitStandbyRequest;
 
 ExitStandbyRequest::ExitStandbyRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ExitStandby")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExitStandbyRequest::~ExitStandbyRequest()
 {}
@@ -33,7 +35,7 @@ std::string ExitStandbyRequest::getResourceOwnerAccount()const
 void ExitStandbyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExitStandbyRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string ExitStandbyRequest::getScalingGroupId()const
 void ExitStandbyRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 long ExitStandbyRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ExitStandbyRequest::getOwnerId()const
 void ExitStandbyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ExitStandbyRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ExitStandbyRequest::getAccessKeyId()const
 void ExitStandbyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> ExitStandbyRequest::getInstanceId()const
@@ -77,7 +79,8 @@ std::vector<std::string> ExitStandbyRequest::getInstanceId()const
 void ExitStandbyRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

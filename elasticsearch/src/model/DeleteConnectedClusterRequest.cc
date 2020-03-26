@@ -22,7 +22,7 @@ DeleteConnectedClusterRequest::DeleteConnectedClusterRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/connected-clusters");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteConnectedClusterRequest::~DeleteConnectedClusterRequest()

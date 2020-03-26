@@ -59,6 +59,8 @@ void DescribeAuditRecordsResult::parse(const std::string &payload)
 			itemsObject.executeTime = valueItemsSQLRecord["ExecuteTime"].asString();
 		if(!valueItemsSQLRecord["ThreadID"].isNull())
 			itemsObject.threadID = valueItemsSQLRecord["ThreadID"].asString();
+		if(!valueItemsSQLRecord["TableName"].isNull())
+			itemsObject.tableName = valueItemsSQLRecord["TableName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

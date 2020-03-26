@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteInstanceIdRequest;
 
 DescribeWebsiteInstanceIdRequest::DescribeWebsiteInstanceIdRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteInstanceId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteInstanceIdRequest::~DescribeWebsiteInstanceIdRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeWebsiteInstanceIdRequest::getSourceIp()const
 void DescribeWebsiteInstanceIdRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeWebsiteInstanceIdRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeWebsiteInstanceIdRequest::getLang()const
 void DescribeWebsiteInstanceIdRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemFlowrateRankingRequest;
 
 OemFlowrateRankingRequest::OemFlowrateRankingRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemFlowrateRanking")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemFlowrateRankingRequest::~OemFlowrateRankingRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemFlowrateRankingRequest::getAccessKeyId()const
 void OemFlowrateRankingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemFlowrateRankingRequest::getBid()const
@@ -44,6 +46,6 @@ long OemFlowrateRankingRequest::getBid()const
 void OemFlowrateRankingRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

@@ -35,6 +35,17 @@ std::string ActivatePerspectiveRequest::getPerspectiveId()const
 void ActivatePerspectiveRequest::setPerspectiveId(const std::string& perspectiveId)
 {
 	perspectiveId_ = perspectiveId;
-	setCoreParameter("PerspectiveId", perspectiveId);
+	setParameter("PerspectiveId", perspectiveId);
+}
+
+std::string ActivatePerspectiveRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ActivatePerspectiveRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 

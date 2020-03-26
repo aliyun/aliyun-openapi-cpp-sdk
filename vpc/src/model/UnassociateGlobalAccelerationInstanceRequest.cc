@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::UnassociateGlobalAccelerationInstanceRequest;
 
 UnassociateGlobalAccelerationInstanceRequest::UnassociateGlobalAccelerationInstanceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnassociateGlobalAccelerationInstanceRequest::~UnassociateGlobalAccelerationInstanceRequest()
 {}
@@ -33,7 +35,7 @@ long UnassociateGlobalAccelerationInstanceRequest::getResourceOwnerId()const
 void UnassociateGlobalAccelerationInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
@@ -44,7 +46,7 @@ std::string UnassociateGlobalAccelerationInstanceRequest::getGlobalAccelerationI
 void UnassociateGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string UnassociateGlobalAccelerationInstanceRequest::getRegionId()const
 void UnassociateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getInstanceType()const
@@ -66,7 +68,7 @@ std::string UnassociateGlobalAccelerationInstanceRequest::getInstanceType()const
 void UnassociateGlobalAccelerationInstanceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UnassociateGlobalAccelerationInstanceRequest::getResourceOwnerAccoun
 void UnassociateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnassociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string UnassociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
 void UnassociateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnassociateGlobalAccelerationInstanceRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long UnassociateGlobalAccelerationInstanceRequest::getOwnerId()const
 void UnassociateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

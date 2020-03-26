@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateSslVpnServerRequest;
 
 CreateSslVpnServerRequest::CreateSslVpnServerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateSslVpnServer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSslVpnServerRequest::~CreateSslVpnServerRequest()
 {}
@@ -33,7 +35,7 @@ long CreateSslVpnServerRequest::getResourceOwnerId()const
 void CreateSslVpnServerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSslVpnServerRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateSslVpnServerRequest::getClientToken()const
 void CreateSslVpnServerRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateSslVpnServerRequest::getLocalSubnet()const
@@ -55,7 +57,7 @@ std::string CreateSslVpnServerRequest::getLocalSubnet()const
 void CreateSslVpnServerRequest::setLocalSubnet(const std::string& localSubnet)
 {
 	localSubnet_ = localSubnet;
-	setCoreParameter("LocalSubnet", localSubnet);
+	setParameter("LocalSubnet", localSubnet);
 }
 
 std::string CreateSslVpnServerRequest::getRegionId()const
@@ -66,7 +68,29 @@ std::string CreateSslVpnServerRequest::getRegionId()const
 void CreateSslVpnServerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+bool CreateSslVpnServerRequest::getEnableMultiFactorAuth()const
+{
+	return enableMultiFactorAuth_;
+}
+
+void CreateSslVpnServerRequest::setEnableMultiFactorAuth(bool enableMultiFactorAuth)
+{
+	enableMultiFactorAuth_ = enableMultiFactorAuth;
+	setParameter("EnableMultiFactorAuth", enableMultiFactorAuth ? "true" : "false");
+}
+
+std::string CreateSslVpnServerRequest::getIDaaSInstanceId()const
+{
+	return iDaaSInstanceId_;
+}
+
+void CreateSslVpnServerRequest::setIDaaSInstanceId(const std::string& iDaaSInstanceId)
+{
+	iDaaSInstanceId_ = iDaaSInstanceId;
+	setParameter("IDaaSInstanceId", iDaaSInstanceId);
 }
 
 std::string CreateSslVpnServerRequest::getCipher()const
@@ -77,7 +101,7 @@ std::string CreateSslVpnServerRequest::getCipher()const
 void CreateSslVpnServerRequest::setCipher(const std::string& cipher)
 {
 	cipher_ = cipher;
-	setCoreParameter("Cipher", cipher);
+	setParameter("Cipher", cipher);
 }
 
 std::string CreateSslVpnServerRequest::getClientIpPool()const
@@ -88,7 +112,7 @@ std::string CreateSslVpnServerRequest::getClientIpPool()const
 void CreateSslVpnServerRequest::setClientIpPool(const std::string& clientIpPool)
 {
 	clientIpPool_ = clientIpPool;
-	setCoreParameter("ClientIpPool", clientIpPool);
+	setParameter("ClientIpPool", clientIpPool);
 }
 
 std::string CreateSslVpnServerRequest::getResourceOwnerAccount()const
@@ -99,7 +123,7 @@ std::string CreateSslVpnServerRequest::getResourceOwnerAccount()const
 void CreateSslVpnServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool CreateSslVpnServerRequest::getCompress()const
@@ -110,7 +134,7 @@ bool CreateSslVpnServerRequest::getCompress()const
 void CreateSslVpnServerRequest::setCompress(bool compress)
 {
 	compress_ = compress;
-	setCoreParameter("Compress", compress ? "true" : "false");
+	setParameter("Compress", compress ? "true" : "false");
 }
 
 std::string CreateSslVpnServerRequest::getOwnerAccount()const
@@ -121,7 +145,7 @@ std::string CreateSslVpnServerRequest::getOwnerAccount()const
 void CreateSslVpnServerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateSslVpnServerRequest::getVpnGatewayId()const
@@ -132,7 +156,7 @@ std::string CreateSslVpnServerRequest::getVpnGatewayId()const
 void CreateSslVpnServerRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long CreateSslVpnServerRequest::getOwnerId()const
@@ -143,7 +167,7 @@ long CreateSslVpnServerRequest::getOwnerId()const
 void CreateSslVpnServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateSslVpnServerRequest::getPort()const
@@ -154,7 +178,7 @@ int CreateSslVpnServerRequest::getPort()const
 void CreateSslVpnServerRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string CreateSslVpnServerRequest::getProto()const
@@ -165,7 +189,7 @@ std::string CreateSslVpnServerRequest::getProto()const
 void CreateSslVpnServerRequest::setProto(const std::string& proto)
 {
 	proto_ = proto;
-	setCoreParameter("Proto", proto);
+	setParameter("Proto", proto);
 }
 
 std::string CreateSslVpnServerRequest::getName()const
@@ -176,6 +200,6 @@ std::string CreateSslVpnServerRequest::getName()const
 void CreateSslVpnServerRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SdkGenerateByAppRequest;
 
 SdkGenerateByAppRequest::SdkGenerateByAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SdkGenerateByApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SdkGenerateByAppRequest::~SdkGenerateByAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string SdkGenerateByAppRequest::getLanguage()const
 void SdkGenerateByAppRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string SdkGenerateByAppRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SdkGenerateByAppRequest::getAccessKeyId()const
 void SdkGenerateByAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SdkGenerateByAppRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string SdkGenerateByAppRequest::getSecurityToken()const
 void SdkGenerateByAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long SdkGenerateByAppRequest::getAppId()const
@@ -66,6 +68,6 @@ long SdkGenerateByAppRequest::getAppId()const
 void SdkGenerateByAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 

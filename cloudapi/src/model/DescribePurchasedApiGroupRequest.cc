@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribePurchasedApiGroupRequest;
 
 DescribePurchasedApiGroupRequest::DescribePurchasedApiGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribePurchasedApiGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePurchasedApiGroupRequest::~DescribePurchasedApiGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePurchasedApiGroupRequest::getGroupId()const
 void DescribePurchasedApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribePurchasedApiGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribePurchasedApiGroupRequest::getAccessKeyId()const
 void DescribePurchasedApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePurchasedApiGroupRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribePurchasedApiGroupRequest::getSecurityToken()const
 void DescribePurchasedApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

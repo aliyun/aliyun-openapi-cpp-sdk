@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DeleteDataLimitRequest;
 
 DeleteDataLimitRequest::DeleteDataLimitRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DeleteDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDataLimitRequest::~DeleteDataLimitRequest()
 {}
@@ -33,7 +35,7 @@ int DeleteDataLimitRequest::getFeatureType()const
 void DeleteDataLimitRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DeleteDataLimitRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DeleteDataLimitRequest::getSourceIp()const
 void DeleteDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DeleteDataLimitRequest::getId()const
@@ -55,7 +57,7 @@ long DeleteDataLimitRequest::getId()const
 void DeleteDataLimitRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DeleteDataLimitRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteDataLimitRequest::getLang()const
 void DeleteDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

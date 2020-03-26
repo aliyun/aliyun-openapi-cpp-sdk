@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainTrafficDataRequest;
 
 DescribeVodDomainTrafficDataRequest::DescribeVodDomainTrafficDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainTrafficDataRequest::~DescribeVodDomainTrafficDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainTrafficDataRequest::getLocationNameEn()const
 void DescribeVodDomainTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeVodDomainTrafficDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeVodDomainTrafficDataRequest::getStartTime()const
 void DescribeVodDomainTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodDomainTrafficDataRequest::getIspNameEn()const
@@ -55,7 +57,7 @@ std::string DescribeVodDomainTrafficDataRequest::getIspNameEn()const
 void DescribeVodDomainTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeVodDomainTrafficDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeVodDomainTrafficDataRequest::getDomainName()const
 void DescribeVodDomainTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeVodDomainTrafficDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeVodDomainTrafficDataRequest::getEndTime()const
 void DescribeVodDomainTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodDomainTrafficDataRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeVodDomainTrafficDataRequest::getOwnerId()const
 void DescribeVodDomainTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodDomainTrafficDataRequest::getInterval()const
@@ -99,6 +101,6 @@ std::string DescribeVodDomainTrafficDataRequest::getInterval()const
 void DescribeVodDomainTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -35,7 +35,7 @@ std::string UpdateScdnDomainRequest::getSources()const
 void UpdateScdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string UpdateScdnDomainRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string UpdateScdnDomainRequest::getDomainName()const
 void UpdateScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateScdnDomainRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long UpdateScdnDomainRequest::getOwnerId()const
 void UpdateScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateScdnDomainRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string UpdateScdnDomainRequest::getResourceGroupId()const
 void UpdateScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateScdnDomainRequest::getSecurityToken()const
@@ -79,6 +79,6 @@ std::string UpdateScdnDomainRequest::getSecurityToken()const
 void UpdateScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

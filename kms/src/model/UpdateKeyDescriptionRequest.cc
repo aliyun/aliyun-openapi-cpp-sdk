@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateKeyDescriptionRequest;
 UpdateKeyDescriptionRequest::UpdateKeyDescriptionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateKeyDescription")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateKeyDescriptionRequest::~UpdateKeyDescriptionRequest()

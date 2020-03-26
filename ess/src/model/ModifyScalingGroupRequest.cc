@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyScalingGroupRequest;
 
 ModifyScalingGroupRequest::ModifyScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingGroupRequest::~ModifyScalingGroupRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyScalingGroupRequest::getResourceOwnerId()const
 void ModifyScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyScalingGroupRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string ModifyScalingGroupRequest::getScalingGroupId()const
 void ModifyScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::vector<std::string> ModifyScalingGroupRequest::getVSwitchIds()const
@@ -55,8 +57,9 @@ std::vector<std::string> ModifyScalingGroupRequest::getVSwitchIds()const
 void ModifyScalingGroupRequest::setVSwitchIds(const std::vector<std::string>& vSwitchIds)
 {
 	vSwitchIds_ = vSwitchIds;
-	for(int i = 0; i!= vSwitchIds.size(); i++)
-		setCoreParameter("VSwitchIds."+ std::to_string(i), vSwitchIds.at(i));
+	for(int dep1 = 0; dep1!= vSwitchIds.size(); dep1++) {
+		setParameter("VSwitchIds."+ std::to_string(dep1), vSwitchIds.at(dep1));
+	}
 }
 
 std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
@@ -67,7 +70,7 @@ std::string ModifyScalingGroupRequest::getActiveScalingConfigurationId()const
 void ModifyScalingGroupRequest::setActiveScalingConfigurationId(const std::string& activeScalingConfigurationId)
 {
 	activeScalingConfigurationId_ = activeScalingConfigurationId;
-	setCoreParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
+	setParameter("ActiveScalingConfigurationId", activeScalingConfigurationId);
 }
 
 int ModifyScalingGroupRequest::getOnDemandBaseCapacity()const
@@ -78,7 +81,7 @@ int ModifyScalingGroupRequest::getOnDemandBaseCapacity()const
 void ModifyScalingGroupRequest::setOnDemandBaseCapacity(int onDemandBaseCapacity)
 {
 	onDemandBaseCapacity_ = onDemandBaseCapacity;
-	setCoreParameter("OnDemandBaseCapacity", std::to_string(onDemandBaseCapacity));
+	setParameter("OnDemandBaseCapacity", std::to_string(onDemandBaseCapacity));
 }
 
 std::string ModifyScalingGroupRequest::getAccessKeyId()const
@@ -89,7 +92,7 @@ std::string ModifyScalingGroupRequest::getAccessKeyId()const
 void ModifyScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyScalingGroupRequest::getOnDemandPercentageAboveBaseCapacity()const
@@ -100,7 +103,7 @@ int ModifyScalingGroupRequest::getOnDemandPercentageAboveBaseCapacity()const
 void ModifyScalingGroupRequest::setOnDemandPercentageAboveBaseCapacity(int onDemandPercentageAboveBaseCapacity)
 {
 	onDemandPercentageAboveBaseCapacity_ = onDemandPercentageAboveBaseCapacity;
-	setCoreParameter("OnDemandPercentageAboveBaseCapacity", std::to_string(onDemandPercentageAboveBaseCapacity));
+	setParameter("OnDemandPercentageAboveBaseCapacity", std::to_string(onDemandPercentageAboveBaseCapacity));
 }
 
 bool ModifyScalingGroupRequest::getSpotInstanceRemedy()const
@@ -111,7 +114,7 @@ bool ModifyScalingGroupRequest::getSpotInstanceRemedy()const
 void ModifyScalingGroupRequest::setSpotInstanceRemedy(bool spotInstanceRemedy)
 {
 	spotInstanceRemedy_ = spotInstanceRemedy;
-	setCoreParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
+	setParameter("SpotInstanceRemedy", spotInstanceRemedy ? "true" : "false");
 }
 
 int ModifyScalingGroupRequest::getDefaultCooldown()const
@@ -122,7 +125,7 @@ int ModifyScalingGroupRequest::getDefaultCooldown()const
 void ModifyScalingGroupRequest::setDefaultCooldown(int defaultCooldown)
 {
 	defaultCooldown_ = defaultCooldown;
-	setCoreParameter("DefaultCooldown", std::to_string(defaultCooldown));
+	setParameter("DefaultCooldown", std::to_string(defaultCooldown));
 }
 
 std::string ModifyScalingGroupRequest::getRemovalPolicy1()const
@@ -133,7 +136,7 @@ std::string ModifyScalingGroupRequest::getRemovalPolicy1()const
 void ModifyScalingGroupRequest::setRemovalPolicy1(const std::string& removalPolicy1)
 {
 	removalPolicy1_ = removalPolicy1;
-	setCoreParameter("RemovalPolicy1", removalPolicy1);
+	setParameter("RemovalPolicy1", removalPolicy1);
 }
 
 std::string ModifyScalingGroupRequest::getRemovalPolicy2()const
@@ -144,7 +147,7 @@ std::string ModifyScalingGroupRequest::getRemovalPolicy2()const
 void ModifyScalingGroupRequest::setRemovalPolicy2(const std::string& removalPolicy2)
 {
 	removalPolicy2_ = removalPolicy2;
-	setCoreParameter("RemovalPolicy2", removalPolicy2);
+	setParameter("RemovalPolicy2", removalPolicy2);
 }
 
 std::string ModifyScalingGroupRequest::getHealthCheckType()const
@@ -155,7 +158,7 @@ std::string ModifyScalingGroupRequest::getHealthCheckType()const
 void ModifyScalingGroupRequest::setHealthCheckType(const std::string& healthCheckType)
 {
 	healthCheckType_ = healthCheckType;
-	setCoreParameter("HealthCheckType", healthCheckType);
+	setParameter("HealthCheckType", healthCheckType);
 }
 
 std::string ModifyScalingGroupRequest::getLaunchTemplateId()const
@@ -166,7 +169,18 @@ std::string ModifyScalingGroupRequest::getLaunchTemplateId()const
 void ModifyScalingGroupRequest::setLaunchTemplateId(const std::string& launchTemplateId)
 {
 	launchTemplateId_ = launchTemplateId;
-	setCoreParameter("LaunchTemplateId", launchTemplateId);
+	setParameter("LaunchTemplateId", launchTemplateId);
+}
+
+int ModifyScalingGroupRequest::getDesiredCapacity()const
+{
+	return desiredCapacity_;
+}
+
+void ModifyScalingGroupRequest::setDesiredCapacity(int desiredCapacity)
+{
+	desiredCapacity_ = desiredCapacity;
+	setParameter("DesiredCapacity", std::to_string(desiredCapacity));
 }
 
 std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
@@ -177,7 +191,7 @@ std::string ModifyScalingGroupRequest::getResourceOwnerAccount()const
 void ModifyScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyScalingGroupRequest::getScalingGroupName()const
@@ -188,7 +202,7 @@ std::string ModifyScalingGroupRequest::getScalingGroupName()const
 void ModifyScalingGroupRequest::setScalingGroupName(const std::string& scalingGroupName)
 {
 	scalingGroupName_ = scalingGroupName;
-	setCoreParameter("ScalingGroupName", scalingGroupName);
+	setParameter("ScalingGroupName", scalingGroupName);
 }
 
 std::string ModifyScalingGroupRequest::getOwnerAccount()const
@@ -199,7 +213,7 @@ std::string ModifyScalingGroupRequest::getOwnerAccount()const
 void ModifyScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int ModifyScalingGroupRequest::getSpotInstancePools()const
@@ -210,7 +224,7 @@ int ModifyScalingGroupRequest::getSpotInstancePools()const
 void ModifyScalingGroupRequest::setSpotInstancePools(int spotInstancePools)
 {
 	spotInstancePools_ = spotInstancePools;
-	setCoreParameter("SpotInstancePools", std::to_string(spotInstancePools));
+	setParameter("SpotInstancePools", std::to_string(spotInstancePools));
 }
 
 int ModifyScalingGroupRequest::getMinSize()const
@@ -221,7 +235,18 @@ int ModifyScalingGroupRequest::getMinSize()const
 void ModifyScalingGroupRequest::setMinSize(int minSize)
 {
 	minSize_ = minSize;
-	setCoreParameter("MinSize", std::to_string(minSize));
+	setParameter("MinSize", std::to_string(minSize));
+}
+
+bool ModifyScalingGroupRequest::getGroupDeletionProtection()const
+{
+	return groupDeletionProtection_;
+}
+
+void ModifyScalingGroupRequest::setGroupDeletionProtection(bool groupDeletionProtection)
+{
+	groupDeletionProtection_ = groupDeletionProtection;
+	setParameter("GroupDeletionProtection", groupDeletionProtection ? "true" : "false");
 }
 
 long ModifyScalingGroupRequest::getOwnerId()const
@@ -232,7 +257,7 @@ long ModifyScalingGroupRequest::getOwnerId()const
 void ModifyScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyScalingGroupRequest::getLaunchTemplateVersion()const
@@ -243,7 +268,7 @@ std::string ModifyScalingGroupRequest::getLaunchTemplateVersion()const
 void ModifyScalingGroupRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
 {
 	launchTemplateVersion_ = launchTemplateVersion;
-	setCoreParameter("LaunchTemplateVersion", launchTemplateVersion);
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 int ModifyScalingGroupRequest::getMaxSize()const
@@ -254,6 +279,6 @@ int ModifyScalingGroupRequest::getMaxSize()const
 void ModifyScalingGroupRequest::setMaxSize(int maxSize)
 {
 	maxSize_ = maxSize;
-	setCoreParameter("MaxSize", std::to_string(maxSize));
+	setParameter("MaxSize", std::to_string(maxSize));
 }
 

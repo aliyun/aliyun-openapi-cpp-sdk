@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetInstanceByShopRequest;
 
 GetInstanceByShopRequest::GetInstanceByShopRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetInstanceByShop")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceByShopRequest::~GetInstanceByShopRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetInstanceByShopRequest::getAccessKeyId()const
 void GetInstanceByShopRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetInstanceByShopRequest::getShopId()const
@@ -44,6 +46,6 @@ long GetInstanceByShopRequest::getShopId()const
 void GetInstanceByShopRequest::setShopId(long shopId)
 {
 	shopId_ = shopId;
-	setCoreParameter("ShopId", std::to_string(shopId));
+	setParameter("ShopId", std::to_string(shopId));
 }
 

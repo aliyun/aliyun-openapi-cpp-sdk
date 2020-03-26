@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMezzanineInfoRequest;
 
 GetMezzanineInfoRequest::GetMezzanineInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMezzanineInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMezzanineInfoRequest::~GetMezzanineInfoRequest()
 {}
@@ -33,7 +35,7 @@ long GetMezzanineInfoRequest::getResourceOwnerId()const
 void GetMezzanineInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMezzanineInfoRequest::getOutputType()const
@@ -44,7 +46,7 @@ std::string GetMezzanineInfoRequest::getOutputType()const
 void GetMezzanineInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setParameter("OutputType", outputType);
 }
 
 long GetMezzanineInfoRequest::getAuthTimeout()const
@@ -55,7 +57,7 @@ long GetMezzanineInfoRequest::getAuthTimeout()const
 void GetMezzanineInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string GetMezzanineInfoRequest::getResourceOwnerAccount()const
 void GetMezzanineInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMezzanineInfoRequest::getVideoId()const
@@ -77,7 +79,7 @@ std::string GetMezzanineInfoRequest::getVideoId()const
 void GetMezzanineInfoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long GetMezzanineInfoRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long GetMezzanineInfoRequest::getOwnerId()const
 void GetMezzanineInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool GetMezzanineInfoRequest::getPreviewSegment()const
@@ -99,7 +101,7 @@ bool GetMezzanineInfoRequest::getPreviewSegment()const
 void GetMezzanineInfoRequest::setPreviewSegment(bool previewSegment)
 {
 	previewSegment_ = previewSegment;
-	setCoreParameter("PreviewSegment", previewSegment ? "true" : "false");
+	setParameter("PreviewSegment", previewSegment ? "true" : "false");
 }
 
 std::string GetMezzanineInfoRequest::getAdditionType()const
@@ -110,6 +112,6 @@ std::string GetMezzanineInfoRequest::getAdditionType()const
 void GetMezzanineInfoRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
-	setCoreParameter("AdditionType", additionType);
+	setParameter("AdditionType", additionType);
 }
 

@@ -37,16 +37,20 @@ namespace AlibabaCloud
 				DescribeGtmInstanceStatusResult();
 				explicit DescribeGtmInstanceStatusResult(const std::string &payload);
 				~DescribeGtmInstanceStatusResult();
+				std::string getStatus()const;
 				int getStrategyNotAvailableNum()const;
 				int getSwitchToFailoverStrategyNum()const;
+				std::string getStatusReason()const;
 				int getAddrNotAvailableNum()const;
 				int getAddrPoolNotAvailableNum()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				int strategyNotAvailableNum_;
 				int switchToFailoverStrategyNum_;
+				std::string statusReason_;
 				int addrNotAvailableNum_;
 				int addrPoolNotAvailableNum_;
 

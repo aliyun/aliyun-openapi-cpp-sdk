@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::PushMessageToAndroidRequest;
 
 PushMessageToAndroidRequest::PushMessageToAndroidRequest() :
 	RpcServiceRequest("push", "2016-08-01", "PushMessageToAndroid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMessageToAndroidRequest::~PushMessageToAndroidRequest()
 {}
@@ -33,7 +35,7 @@ std::string PushMessageToAndroidRequest::getTitle()const
 void PushMessageToAndroidRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string PushMessageToAndroidRequest::getBody()const
@@ -44,7 +46,7 @@ std::string PushMessageToAndroidRequest::getBody()const
 void PushMessageToAndroidRequest::setBody(const std::string& body)
 {
 	body_ = body;
-	setCoreParameter("Body", body);
+	setParameter("Body", body);
 }
 
 std::string PushMessageToAndroidRequest::getJobKey()const
@@ -55,7 +57,7 @@ std::string PushMessageToAndroidRequest::getJobKey()const
 void PushMessageToAndroidRequest::setJobKey(const std::string& jobKey)
 {
 	jobKey_ = jobKey;
-	setCoreParameter("JobKey", jobKey);
+	setParameter("JobKey", jobKey);
 }
 
 std::string PushMessageToAndroidRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string PushMessageToAndroidRequest::getAccessKeyId()const
 void PushMessageToAndroidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PushMessageToAndroidRequest::getTarget()const
@@ -77,7 +79,7 @@ std::string PushMessageToAndroidRequest::getTarget()const
 void PushMessageToAndroidRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setParameter("Target", target);
 }
 
 long PushMessageToAndroidRequest::getAppKey()const
@@ -88,7 +90,7 @@ long PushMessageToAndroidRequest::getAppKey()const
 void PushMessageToAndroidRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string PushMessageToAndroidRequest::getTargetValue()const
@@ -99,6 +101,6 @@ std::string PushMessageToAndroidRequest::getTargetValue()const
 void PushMessageToAndroidRequest::setTargetValue(const std::string& targetValue)
 {
 	targetValue_ = targetValue;
-	setCoreParameter("TargetValue", targetValue);
+	setParameter("TargetValue", targetValue);
 }
 

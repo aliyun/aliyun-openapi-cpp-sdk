@@ -87,6 +87,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesRequest.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesResult.h
+	include/alibabacloud/dds/model/DescribeMongoDBLogConfigRequest.h
+	include/alibabacloud/dds/model/DescribeMongoDBLogConfigResult.h
 	include/alibabacloud/dds/model/DescribeParameterModificationHistoryRequest.h
 	include/alibabacloud/dds/model/DescribeParameterModificationHistoryResult.h
 	include/alibabacloud/dds/model/DescribeParameterTemplatesRequest.h
@@ -254,6 +256,8 @@ set(dds_src
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/DescribeKernelReleaseNotesRequest.cc
 	src/model/DescribeKernelReleaseNotesResult.cc
+	src/model/DescribeMongoDBLogConfigRequest.cc
+	src/model/DescribeMongoDBLogConfigResult.cc
 	src/model/DescribeParameterModificationHistoryRequest.cc
 	src/model/DescribeParameterModificationHistoryResult.cc
 	src/model/DescribeParameterTemplatesRequest.cc

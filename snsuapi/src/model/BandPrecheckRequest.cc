@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandPrecheckRequest;
 
 BandPrecheckRequest::BandPrecheckRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandPrecheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandPrecheckRequest::~BandPrecheckRequest()
 {}
@@ -33,7 +35,7 @@ std::string BandPrecheckRequest::getIpAddress()const
 void BandPrecheckRequest::setIpAddress(const std::string& ipAddress)
 {
 	ipAddress_ = ipAddress;
-	setCoreParameter("IpAddress", ipAddress);
+	setParameter("IpAddress", ipAddress);
 }
 
 long BandPrecheckRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long BandPrecheckRequest::getResourceOwnerId()const
 void BandPrecheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandPrecheckRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string BandPrecheckRequest::getResourceOwnerAccount()const
 void BandPrecheckRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BandPrecheckRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long BandPrecheckRequest::getOwnerId()const
 void BandPrecheckRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandPrecheckRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string BandPrecheckRequest::getAccessKeyId()const
 void BandPrecheckRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int BandPrecheckRequest::getPort()const
@@ -88,6 +90,6 @@ int BandPrecheckRequest::getPort()const
 void BandPrecheckRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 

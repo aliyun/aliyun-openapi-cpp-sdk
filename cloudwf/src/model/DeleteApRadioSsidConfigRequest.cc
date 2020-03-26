@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApRadioSsidConfigRequest;
 
 DeleteApRadioSsidConfigRequest::DeleteApRadioSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApRadioSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApRadioSsidConfigRequest::~DeleteApRadioSsidConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteApRadioSsidConfigRequest::getAccessKeyId()const
 void DeleteApRadioSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DeleteApRadioSsidConfigRequest::getInstantlyEffective()const
@@ -44,7 +46,7 @@ int DeleteApRadioSsidConfigRequest::getInstantlyEffective()const
 void DeleteApRadioSsidConfigRequest::setInstantlyEffective(int instantlyEffective)
 {
 	instantlyEffective_ = instantlyEffective;
-	setCoreParameter("InstantlyEffective", std::to_string(instantlyEffective));
+	setParameter("InstantlyEffective", std::to_string(instantlyEffective));
 }
 
 long DeleteApRadioSsidConfigRequest::getId()const
@@ -55,6 +57,6 @@ long DeleteApRadioSsidConfigRequest::getId()const
 void DeleteApRadioSsidConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

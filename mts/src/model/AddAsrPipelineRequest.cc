@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddAsrPipelineRequest;
 
 AddAsrPipelineRequest::AddAsrPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddAsrPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddAsrPipelineRequest::~AddAsrPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long AddAsrPipelineRequest::getResourceOwnerId()const
 void AddAsrPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddAsrPipelineRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddAsrPipelineRequest::getAccessKeyId()const
 void AddAsrPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddAsrPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string AddAsrPipelineRequest::getResourceOwnerAccount()const
 void AddAsrPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddAsrPipelineRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddAsrPipelineRequest::getOwnerAccount()const
 void AddAsrPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddAsrPipelineRequest::getNotifyConfig()const
@@ -77,7 +79,7 @@ std::string AddAsrPipelineRequest::getNotifyConfig()const
 void AddAsrPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setParameter("NotifyConfig", notifyConfig);
 }
 
 long AddAsrPipelineRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddAsrPipelineRequest::getOwnerId()const
 void AddAsrPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddAsrPipelineRequest::getPriority()const
@@ -99,7 +101,7 @@ int AddAsrPipelineRequest::getPriority()const
 void AddAsrPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string AddAsrPipelineRequest::getName()const
@@ -110,6 +112,6 @@ std::string AddAsrPipelineRequest::getName()const
 void AddAsrPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

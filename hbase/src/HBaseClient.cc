@@ -123,6 +123,42 @@ HBaseClient::ConvertInstanceOutcomeCallable HBaseClient::convertInstanceCallable
 	return task->get_future();
 }
 
+HBaseClient::CreateBackupPlanOutcome HBaseClient::createBackupPlan(const CreateBackupPlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBackupPlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBackupPlanOutcome(CreateBackupPlanResult(outcome.result()));
+	else
+		return CreateBackupPlanOutcome(outcome.error());
+}
+
+void HBaseClient::createBackupPlanAsync(const CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBackupPlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateBackupPlanOutcomeCallable HBaseClient::createBackupPlanCallable(const CreateBackupPlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBackupPlanOutcome()>>(
+			[this, request]()
+			{
+			return this->createBackupPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::CreateClusterOutcome HBaseClient::createCluster(const CreateClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -231,6 +267,42 @@ HBaseClient::CreateInstanceOutcomeCallable HBaseClient::createInstanceCallable(c
 	return task->get_future();
 }
 
+HBaseClient::CreateRestorePlanOutcome HBaseClient::createRestorePlan(const CreateRestorePlanRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRestorePlanOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRestorePlanOutcome(CreateRestorePlanResult(outcome.result()));
+	else
+		return CreateRestorePlanOutcome(outcome.error());
+}
+
+void HBaseClient::createRestorePlanAsync(const CreateRestorePlanRequest& request, const CreateRestorePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRestorePlan(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateRestorePlanOutcomeCallable HBaseClient::createRestorePlanCallable(const CreateRestorePlanRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRestorePlanOutcome()>>(
+			[this, request]()
+			{
+			return this->createRestorePlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DeleteHbaseHaSlbOutcome HBaseClient::deleteHbaseHaSlb(const DeleteHbaseHaSlbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +405,150 @@ HBaseClient::DeleteUserHdfsInfoOutcomeCallable HBaseClient::deleteUserHdfsInfoCa
 			[this, request]()
 			{
 			return this->deleteUserHdfsInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeBackupPlanConfigOutcome HBaseClient::describeBackupPlanConfig(const DescribeBackupPlanConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupPlanConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupPlanConfigOutcome(DescribeBackupPlanConfigResult(outcome.result()));
+	else
+		return DescribeBackupPlanConfigOutcome(outcome.error());
+}
+
+void HBaseClient::describeBackupPlanConfigAsync(const DescribeBackupPlanConfigRequest& request, const DescribeBackupPlanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupPlanConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeBackupPlanConfigOutcomeCallable HBaseClient::describeBackupPlanConfigCallable(const DescribeBackupPlanConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupPlanConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupPlanConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeBackupStatusOutcome HBaseClient::describeBackupStatus(const DescribeBackupStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupStatusOutcome(DescribeBackupStatusResult(outcome.result()));
+	else
+		return DescribeBackupStatusOutcome(outcome.error());
+}
+
+void HBaseClient::describeBackupStatusAsync(const DescribeBackupStatusRequest& request, const DescribeBackupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeBackupStatusOutcomeCallable HBaseClient::describeBackupStatusCallable(const DescribeBackupStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeBackupSummaryOutcome HBaseClient::describeBackupSummary(const DescribeBackupSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupSummaryOutcome(DescribeBackupSummaryResult(outcome.result()));
+	else
+		return DescribeBackupSummaryOutcome(outcome.error());
+}
+
+void HBaseClient::describeBackupSummaryAsync(const DescribeBackupSummaryRequest& request, const DescribeBackupSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeBackupSummaryOutcomeCallable HBaseClient::describeBackupSummaryCallable(const DescribeBackupSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeBackupTablesOutcome HBaseClient::describeBackupTables(const DescribeBackupTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupTablesOutcome(DescribeBackupTablesResult(outcome.result()));
+	else
+		return DescribeBackupTablesOutcome(outcome.error());
+}
+
+void HBaseClient::describeBackupTablesAsync(const DescribeBackupTablesRequest& request, const DescribeBackupTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeBackupTablesOutcomeCallable HBaseClient::describeBackupTablesCallable(const DescribeBackupTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupTables(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +771,42 @@ HBaseClient::DescribeIpWhitelistOutcomeCallable HBaseClient::describeIpWhitelist
 	return task->get_future();
 }
 
+HBaseClient::DescribeRecoverableTimeRangeOutcome HBaseClient::describeRecoverableTimeRange(const DescribeRecoverableTimeRangeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecoverableTimeRangeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecoverableTimeRangeOutcome(DescribeRecoverableTimeRangeResult(outcome.result()));
+	else
+		return DescribeRecoverableTimeRangeOutcome(outcome.error());
+}
+
+void HBaseClient::describeRecoverableTimeRangeAsync(const DescribeRecoverableTimeRangeRequest& request, const DescribeRecoverableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecoverableTimeRange(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRecoverableTimeRangeOutcomeCallable HBaseClient::describeRecoverableTimeRangeCallable(const DescribeRecoverableTimeRangeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecoverableTimeRangeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecoverableTimeRange(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeRegionsOutcome HBaseClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -591,6 +843,78 @@ HBaseClient::DescribeRegionsOutcomeCallable HBaseClient::describeRegionsCallable
 	return task->get_future();
 }
 
+HBaseClient::DescribeRestoreSummaryOutcome HBaseClient::describeRestoreSummary(const DescribeRestoreSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreSummaryOutcome(DescribeRestoreSummaryResult(outcome.result()));
+	else
+		return DescribeRestoreSummaryOutcome(outcome.error());
+}
+
+void HBaseClient::describeRestoreSummaryAsync(const DescribeRestoreSummaryRequest& request, const DescribeRestoreSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRestoreSummaryOutcomeCallable HBaseClient::describeRestoreSummaryCallable(const DescribeRestoreSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeRestoreTablesOutcome HBaseClient::describeRestoreTables(const DescribeRestoreTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreTablesOutcome(DescribeRestoreTablesResult(outcome.result()));
+	else
+		return DescribeRestoreTablesOutcome(outcome.error());
+}
+
+void HBaseClient::describeRestoreTablesAsync(const DescribeRestoreTablesRequest& request, const DescribeRestoreTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRestoreTablesOutcomeCallable HBaseClient::describeRestoreTablesCallable(const DescribeRestoreTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeSecurityGroupsOutcome HBaseClient::describeSecurityGroups(const DescribeSecurityGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -621,6 +945,42 @@ HBaseClient::DescribeSecurityGroupsOutcomeCallable HBaseClient::describeSecurity
 			[this, request]()
 			{
 			return this->describeSecurityGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::EnableHBaseueBackupOutcome HBaseClient::enableHBaseueBackup(const EnableHBaseueBackupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableHBaseueBackupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableHBaseueBackupOutcome(EnableHBaseueBackupResult(outcome.result()));
+	else
+		return EnableHBaseueBackupOutcome(outcome.error());
+}
+
+void HBaseClient::enableHBaseueBackupAsync(const EnableHBaseueBackupRequest& request, const EnableHBaseueBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableHBaseueBackup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::EnableHBaseueBackupOutcomeCallable HBaseClient::enableHBaseueBackupCallable(const EnableHBaseueBackupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableHBaseueBackupOutcome()>>(
+			[this, request]()
+			{
+			return this->enableHBaseueBackup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +1053,42 @@ HBaseClient::ListTagsOutcomeCallable HBaseClient::listTagsCallable(const ListTag
 			[this, request]()
 			{
 			return this->listTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ModifyBackupPlanConfigOutcome HBaseClient::modifyBackupPlanConfig(const ModifyBackupPlanConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackupPlanConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackupPlanConfigOutcome(ModifyBackupPlanConfigResult(outcome.result()));
+	else
+		return ModifyBackupPlanConfigOutcome(outcome.error());
+}
+
+void HBaseClient::modifyBackupPlanConfigAsync(const ModifyBackupPlanConfigRequest& request, const ModifyBackupPlanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackupPlanConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyBackupPlanConfigOutcomeCallable HBaseClient::modifyBackupPlanConfigCallable(const ModifyBackupPlanConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackupPlanConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackupPlanConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

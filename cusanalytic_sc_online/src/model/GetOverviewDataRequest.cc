@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetOverviewDataRequest;
 
 GetOverviewDataRequest::GetOverviewDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetOverviewData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOverviewDataRequest::~GetOverviewDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetOverviewDataRequest::getDate()const
 void GetOverviewDataRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 std::string GetOverviewDataRequest::getStoreIds()const
@@ -44,6 +46,6 @@ std::string GetOverviewDataRequest::getStoreIds()const
 void GetOverviewDataRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setBodyParameter("StoreIds", storeIds);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeSslVpnClientCertsRequest;
 
 DescribeSslVpnClientCertsRequest::DescribeSslVpnClientCertsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeSslVpnClientCerts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSslVpnClientCertsRequest::~DescribeSslVpnClientCertsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSslVpnClientCertsRequest::getResourceOwnerId()const
 void DescribeSslVpnClientCertsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeSslVpnClientCertsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeSslVpnClientCertsRequest::getPageNumber()const
 void DescribeSslVpnClientCertsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSslVpnClientCertsRequest::getSslVpnServerId()const
@@ -55,7 +57,7 @@ std::string DescribeSslVpnClientCertsRequest::getSslVpnServerId()const
 void DescribeSslVpnClientCertsRequest::setSslVpnServerId(const std::string& sslVpnServerId)
 {
 	sslVpnServerId_ = sslVpnServerId;
-	setCoreParameter("SslVpnServerId", sslVpnServerId);
+	setParameter("SslVpnServerId", sslVpnServerId);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeSslVpnClientCertsRequest::getRegionId()const
 void DescribeSslVpnClientCertsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeSslVpnClientCertsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeSslVpnClientCertsRequest::getPageSize()const
 void DescribeSslVpnClientCertsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSslVpnClientCertsRequest::getSslVpnClientCertId()const
@@ -88,7 +90,7 @@ std::string DescribeSslVpnClientCertsRequest::getSslVpnClientCertId()const
 void DescribeSslVpnClientCertsRequest::setSslVpnClientCertId(const std::string& sslVpnClientCertId)
 {
 	sslVpnClientCertId_ = sslVpnClientCertId;
-	setCoreParameter("SslVpnClientCertId", sslVpnClientCertId);
+	setParameter("SslVpnClientCertId", sslVpnClientCertId);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeSslVpnClientCertsRequest::getResourceOwnerAccount()const
 void DescribeSslVpnClientCertsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSslVpnClientCertsRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeSslVpnClientCertsRequest::getOwnerAccount()const
 void DescribeSslVpnClientCertsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSslVpnClientCertsRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeSslVpnClientCertsRequest::getOwnerId()const
 void DescribeSslVpnClientCertsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSslVpnClientCertsRequest::getName()const
@@ -132,6 +134,6 @@ std::string DescribeSslVpnClientCertsRequest::getName()const
 void DescribeSslVpnClientCertsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

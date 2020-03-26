@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getStartTime()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getIspNameEn()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getDomainName()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getEndTime()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDcdnDomainWebsocketBpsDataRequest::getOwnerId()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainWebsocketBpsDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDcdnDomainWebsocketBpsDataRequest::getInterval()const
 void DescribeDcdnDomainWebsocketBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

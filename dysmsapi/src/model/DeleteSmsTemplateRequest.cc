@@ -35,7 +35,7 @@ long DeleteSmsTemplateRequest::getResourceOwnerId()const
 void DeleteSmsTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSmsTemplateRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteSmsTemplateRequest::getResourceOwnerAccount()const
 void DeleteSmsTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteSmsTemplateRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteSmsTemplateRequest::getOwnerId()const
 void DeleteSmsTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteSmsTemplateRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteSmsTemplateRequest::getAccessKeyId()const
 void DeleteSmsTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteSmsTemplateRequest::getTemplateCode()const
@@ -79,6 +79,6 @@ std::string DeleteSmsTemplateRequest::getTemplateCode()const
 void DeleteSmsTemplateRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
-	setCoreParameter("TemplateCode", templateCode);
+	setParameter("TemplateCode", templateCode);
 }
 

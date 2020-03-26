@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT DescribeMonitorGroupsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;
@@ -62,6 +63,8 @@ namespace AlibabaCloud
 				void setGroupName(const std::string& groupName);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
+				std::string getServiceId()const;
+				void setServiceId(const std::string& serviceId);
 
             private:
 				bool selectContactGroups_;
@@ -75,6 +78,7 @@ namespace AlibabaCloud
 				std::string groupId_;
 				std::string groupName_;
 				std::string instanceId_;
+				std::string serviceId_;
 
 			};
 		}

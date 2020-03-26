@@ -771,6 +771,78 @@ CmsClient::DeleteEventRulesOutcomeCallable CmsClient::deleteEventRulesCallable(c
 	return task->get_future();
 }
 
+CmsClient::DeleteExporterOutputOutcome CmsClient::deleteExporterOutput(const DeleteExporterOutputRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteExporterOutputOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteExporterOutputOutcome(DeleteExporterOutputResult(outcome.result()));
+	else
+		return DeleteExporterOutputOutcome(outcome.error());
+}
+
+void CmsClient::deleteExporterOutputAsync(const DeleteExporterOutputRequest& request, const DeleteExporterOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteExporterOutput(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteExporterOutputOutcomeCallable CmsClient::deleteExporterOutputCallable(const DeleteExporterOutputRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteExporterOutputOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteExporterOutput(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DeleteExporterRuleOutcome CmsClient::deleteExporterRule(const DeleteExporterRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteExporterRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteExporterRuleOutcome(DeleteExporterRuleResult(outcome.result()));
+	else
+		return DeleteExporterRuleOutcome(outcome.error());
+}
+
+void CmsClient::deleteExporterRuleAsync(const DeleteExporterRuleRequest& request, const DeleteExporterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteExporterRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DeleteExporterRuleOutcomeCallable CmsClient::deleteExporterRuleCallable(const DeleteExporterRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteExporterRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteExporterRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CmsClient::DeleteGroupMonitoringAgentProcessOutcome CmsClient::deleteGroupMonitoringAgentProcess(const DeleteGroupMonitoringAgentProcessRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1773,114 @@ CmsClient::DescribeEventRuleTargetListOutcomeCallable CmsClient::describeEventRu
 			[this, request]()
 			{
 			return this->describeEventRuleTargetList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeExporterOutputListOutcome CmsClient::describeExporterOutputList(const DescribeExporterOutputListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeExporterOutputListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeExporterOutputListOutcome(DescribeExporterOutputListResult(outcome.result()));
+	else
+		return DescribeExporterOutputListOutcome(outcome.error());
+}
+
+void CmsClient::describeExporterOutputListAsync(const DescribeExporterOutputListRequest& request, const DescribeExporterOutputListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeExporterOutputList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeExporterOutputListOutcomeCallable CmsClient::describeExporterOutputListCallable(const DescribeExporterOutputListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeExporterOutputListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeExporterOutputList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeExporterRuleListOutcome CmsClient::describeExporterRuleList(const DescribeExporterRuleListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeExporterRuleListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeExporterRuleListOutcome(DescribeExporterRuleListResult(outcome.result()));
+	else
+		return DescribeExporterRuleListOutcome(outcome.error());
+}
+
+void CmsClient::describeExporterRuleListAsync(const DescribeExporterRuleListRequest& request, const DescribeExporterRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeExporterRuleList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeExporterRuleListOutcomeCallable CmsClient::describeExporterRuleListCallable(const DescribeExporterRuleListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeExporterRuleListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeExporterRuleList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::DescribeFolderListOutcome CmsClient::describeFolderList(const DescribeFolderListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFolderListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFolderListOutcome(DescribeFolderListResult(outcome.result()));
+	else
+		return DescribeFolderListOutcome(outcome.error());
+}
+
+void CmsClient::describeFolderListAsync(const DescribeFolderListRequest& request, const DescribeFolderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFolderList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::DescribeFolderListOutcomeCallable CmsClient::describeFolderListCallable(const DescribeFolderListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFolderListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFolderList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3969,6 +4149,78 @@ CmsClient::PutEventRuleTargetsOutcomeCallable CmsClient::putEventRuleTargetsCall
 			[this, request]()
 			{
 			return this->putEventRuleTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutExporterOutputOutcome CmsClient::putExporterOutput(const PutExporterOutputRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutExporterOutputOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutExporterOutputOutcome(PutExporterOutputResult(outcome.result()));
+	else
+		return PutExporterOutputOutcome(outcome.error());
+}
+
+void CmsClient::putExporterOutputAsync(const PutExporterOutputRequest& request, const PutExporterOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putExporterOutput(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutExporterOutputOutcomeCallable CmsClient::putExporterOutputCallable(const PutExporterOutputRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutExporterOutputOutcome()>>(
+			[this, request]()
+			{
+			return this->putExporterOutput(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CmsClient::PutExporterRuleOutcome CmsClient::putExporterRule(const PutExporterRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutExporterRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutExporterRuleOutcome(PutExporterRuleResult(outcome.result()));
+	else
+		return PutExporterRuleOutcome(outcome.error());
+}
+
+void CmsClient::putExporterRuleAsync(const PutExporterRuleRequest& request, const PutExporterRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putExporterRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CmsClient::PutExporterRuleOutcomeCallable CmsClient::putExporterRuleCallable(const PutExporterRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutExporterRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->putExporterRule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

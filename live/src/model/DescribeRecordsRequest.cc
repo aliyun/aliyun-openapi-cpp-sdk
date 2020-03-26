@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRecordsRequest;
 
 DescribeRecordsRequest::DescribeRecordsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRecordsRequest::~DescribeRecordsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRecordsRequest::getRecordState()const
 void DescribeRecordsRequest::setRecordState(const std::string& recordState)
 {
 	recordState_ = recordState;
-	setCoreParameter("RecordState", recordState);
+	setParameter("RecordState", recordState);
 }
 
 int DescribeRecordsRequest::getPageNum()const
@@ -44,7 +46,7 @@ int DescribeRecordsRequest::getPageNum()const
 void DescribeRecordsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeRecordsRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeRecordsRequest::getPageSize()const
 void DescribeRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeRecordsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeRecordsRequest::getOwnerId()const
 void DescribeRecordsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRecordsRequest::getAppId()const
@@ -77,6 +79,6 @@ std::string DescribeRecordsRequest::getAppId()const
 void DescribeRecordsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

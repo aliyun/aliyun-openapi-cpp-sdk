@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterSceneConfigRequest;
 
 DeleteCasterSceneConfigRequest::DeleteCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterSceneConfigRequest::~DeleteCasterSceneConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterSceneConfigRequest::getType()const
 void DeleteCasterSceneConfigRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DeleteCasterSceneConfigRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DeleteCasterSceneConfigRequest::getCasterId()const
 void DeleteCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterSceneConfigRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteCasterSceneConfigRequest::getOwnerId()const
 void DeleteCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCasterSceneConfigRequest::getSceneId()const
@@ -66,6 +68,6 @@ std::string DeleteCasterSceneConfigRequest::getSceneId()const
 void DeleteCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

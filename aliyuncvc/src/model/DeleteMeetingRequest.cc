@@ -35,6 +35,6 @@ std::string DeleteMeetingRequest::getMeetingUUID()const
 void DeleteMeetingRequest::setMeetingUUID(const std::string& meetingUUID)
 {
 	meetingUUID_ = meetingUUID;
-	setCoreParameter("MeetingUUID", meetingUUID);
+	setBodyParameter("MeetingUUID", meetingUUID);
 }
 

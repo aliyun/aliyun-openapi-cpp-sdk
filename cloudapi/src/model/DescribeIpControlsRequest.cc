@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeIpControlsRequest;
 
 DescribeIpControlsRequest::DescribeIpControlsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeIpControls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpControlsRequest::~DescribeIpControlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeIpControlsRequest::getIpControlName()const
 void DescribeIpControlsRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", ipControlName);
+	setParameter("IpControlName", ipControlName);
 }
 
 int DescribeIpControlsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeIpControlsRequest::getPageNumber()const
 void DescribeIpControlsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpControlsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeIpControlsRequest::getAccessKeyId()const
 void DescribeIpControlsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeIpControlsRequest::getIpControlId()const
@@ -66,7 +68,7 @@ std::string DescribeIpControlsRequest::getIpControlId()const
 void DescribeIpControlsRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string DescribeIpControlsRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeIpControlsRequest::getSecurityToken()const
 void DescribeIpControlsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeIpControlsRequest::getIpControlType()const
@@ -88,7 +90,7 @@ std::string DescribeIpControlsRequest::getIpControlType()const
 void DescribeIpControlsRequest::setIpControlType(const std::string& ipControlType)
 {
 	ipControlType_ = ipControlType;
-	setCoreParameter("IpControlType", ipControlType);
+	setParameter("IpControlType", ipControlType);
 }
 
 int DescribeIpControlsRequest::getPageSize()const
@@ -99,6 +101,6 @@ int DescribeIpControlsRequest::getPageSize()const
 void DescribeIpControlsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

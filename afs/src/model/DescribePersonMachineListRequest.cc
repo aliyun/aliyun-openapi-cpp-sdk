@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribePersonMachineListRequest;
 
 DescribePersonMachineListRequest::DescribePersonMachineListRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribePersonMachineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePersonMachineListRequest::~DescribePersonMachineListRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribePersonMachineListRequest::getSourceIp()const
 void DescribePersonMachineListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

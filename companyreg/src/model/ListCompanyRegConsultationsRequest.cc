@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ListCompanyRegConsultationsRequest;
 
 ListCompanyRegConsultationsRequest::ListCompanyRegConsultationsRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ListCompanyRegConsultations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCompanyRegConsultationsRequest::~ListCompanyRegConsultationsRequest()
 {}
@@ -33,7 +35,7 @@ long ListCompanyRegConsultationsRequest::getEndGmtCreate()const
 void ListCompanyRegConsultationsRequest::setEndGmtCreate(long endGmtCreate)
 {
 	endGmtCreate_ = endGmtCreate;
-	setCoreParameter("EndGmtCreate", std::to_string(endGmtCreate));
+	setParameter("EndGmtCreate", std::to_string(endGmtCreate));
 }
 
 std::string ListCompanyRegConsultationsRequest::getCity()const
@@ -44,7 +46,7 @@ std::string ListCompanyRegConsultationsRequest::getCity()const
 void ListCompanyRegConsultationsRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 int ListCompanyRegConsultationsRequest::getPageNum()const
@@ -55,7 +57,7 @@ int ListCompanyRegConsultationsRequest::getPageNum()const
 void ListCompanyRegConsultationsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string ListCompanyRegConsultationsRequest::getBizCode()const
@@ -66,7 +68,7 @@ std::string ListCompanyRegConsultationsRequest::getBizCode()const
 void ListCompanyRegConsultationsRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 int ListCompanyRegConsultationsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListCompanyRegConsultationsRequest::getPageSize()const
 void ListCompanyRegConsultationsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListCompanyRegConsultationsRequest::getBizId()const
@@ -88,7 +90,7 @@ std::string ListCompanyRegConsultationsRequest::getBizId()const
 void ListCompanyRegConsultationsRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 long ListCompanyRegConsultationsRequest::getStartGmtCreate()const
@@ -99,6 +101,6 @@ long ListCompanyRegConsultationsRequest::getStartGmtCreate()const
 void ListCompanyRegConsultationsRequest::setStartGmtCreate(long startGmtCreate)
 {
 	startGmtCreate_ = startGmtCreate;
-	setCoreParameter("StartGmtCreate", std::to_string(startGmtCreate));
+	setParameter("StartGmtCreate", std::to_string(startGmtCreate));
 }
 

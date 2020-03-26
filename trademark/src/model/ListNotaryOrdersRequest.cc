@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ListNotaryOrdersRequest;
 
 ListNotaryOrdersRequest::ListNotaryOrdersRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ListNotaryOrders")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListNotaryOrdersRequest::~ListNotaryOrdersRequest()
 {}
@@ -33,7 +35,7 @@ long ListNotaryOrdersRequest::getStartOrderDate()const
 void ListNotaryOrdersRequest::setStartOrderDate(long startOrderDate)
 {
 	startOrderDate_ = startOrderDate;
-	setCoreParameter("StartOrderDate", std::to_string(startOrderDate));
+	setParameter("StartOrderDate", std::to_string(startOrderDate));
 }
 
 int ListNotaryOrdersRequest::getNotaryType()const
@@ -44,7 +46,7 @@ int ListNotaryOrdersRequest::getNotaryType()const
 void ListNotaryOrdersRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", std::to_string(notaryType));
+	setParameter("NotaryType", std::to_string(notaryType));
 }
 
 int ListNotaryOrdersRequest::getPageNum()const
@@ -55,7 +57,7 @@ int ListNotaryOrdersRequest::getPageNum()const
 void ListNotaryOrdersRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int ListNotaryOrdersRequest::getSortKeyType()const
@@ -66,7 +68,7 @@ int ListNotaryOrdersRequest::getSortKeyType()const
 void ListNotaryOrdersRequest::setSortKeyType(int sortKeyType)
 {
 	sortKeyType_ = sortKeyType;
-	setCoreParameter("SortKeyType", std::to_string(sortKeyType));
+	setParameter("SortKeyType", std::to_string(sortKeyType));
 }
 
 std::string ListNotaryOrdersRequest::getSortByType()const
@@ -77,7 +79,7 @@ std::string ListNotaryOrdersRequest::getSortByType()const
 void ListNotaryOrdersRequest::setSortByType(const std::string& sortByType)
 {
 	sortByType_ = sortByType;
-	setCoreParameter("SortByType", sortByType);
+	setParameter("SortByType", sortByType);
 }
 
 int ListNotaryOrdersRequest::getPageSize()const
@@ -88,7 +90,7 @@ int ListNotaryOrdersRequest::getPageSize()const
 void ListNotaryOrdersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListNotaryOrdersRequest::getBizId()const
@@ -99,7 +101,7 @@ std::string ListNotaryOrdersRequest::getBizId()const
 void ListNotaryOrdersRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 long ListNotaryOrdersRequest::getEndOrderDate()const
@@ -110,7 +112,7 @@ long ListNotaryOrdersRequest::getEndOrderDate()const
 void ListNotaryOrdersRequest::setEndOrderDate(long endOrderDate)
 {
 	endOrderDate_ = endOrderDate;
-	setCoreParameter("EndOrderDate", std::to_string(endOrderDate));
+	setParameter("EndOrderDate", std::to_string(endOrderDate));
 }
 
 std::string ListNotaryOrdersRequest::getAliyunOrderId()const
@@ -121,7 +123,7 @@ std::string ListNotaryOrdersRequest::getAliyunOrderId()const
 void ListNotaryOrdersRequest::setAliyunOrderId(const std::string& aliyunOrderId)
 {
 	aliyunOrderId_ = aliyunOrderId;
-	setCoreParameter("AliyunOrderId", aliyunOrderId);
+	setParameter("AliyunOrderId", aliyunOrderId);
 }
 
 int ListNotaryOrdersRequest::getNotaryStatus()const
@@ -132,6 +134,6 @@ int ListNotaryOrdersRequest::getNotaryStatus()const
 void ListNotaryOrdersRequest::setNotaryStatus(int notaryStatus)
 {
 	notaryStatus_ = notaryStatus;
-	setCoreParameter("NotaryStatus", std::to_string(notaryStatus));
+	setParameter("NotaryStatus", std::to_string(notaryStatus));
 }
 

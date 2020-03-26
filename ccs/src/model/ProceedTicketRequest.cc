@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::ProceedTicketRequest;
 
 ProceedTicketRequest::ProceedTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "ProceedTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProceedTicketRequest::~ProceedTicketRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProceedTicketRequest::getMemo()const
 void ProceedTicketRequest::setMemo(const std::string& memo)
 {
 	memo_ = memo;
-	setCoreParameter("Memo", memo);
+	setParameter("Memo", memo);
 }
 
 std::string ProceedTicketRequest::getId()const
@@ -44,7 +46,7 @@ std::string ProceedTicketRequest::getId()const
 void ProceedTicketRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string ProceedTicketRequest::getCcsInstanceId()const
@@ -55,7 +57,7 @@ std::string ProceedTicketRequest::getCcsInstanceId()const
 void ProceedTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setParameter("CcsInstanceId", ccsInstanceId);
 }
 
 std::string ProceedTicketRequest::getOperation()const
@@ -66,7 +68,7 @@ std::string ProceedTicketRequest::getOperation()const
 void ProceedTicketRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setParameter("Operation", operation);
 }
 
 std::string ProceedTicketRequest::getOperatorId()const
@@ -77,6 +79,6 @@ std::string ProceedTicketRequest::getOperatorId()const
 void ProceedTicketRequest::setOperatorId(const std::string& operatorId)
 {
 	operatorId_ = operatorId;
-	setCoreParameter("OperatorId", operatorId);
+	setParameter("OperatorId", operatorId);
 }
 

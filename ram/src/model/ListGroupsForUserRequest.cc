@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListGroupsForUserRequest;
 
 ListGroupsForUserRequest::ListGroupsForUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListGroupsForUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListGroupsForUserRequest::~ListGroupsForUserRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListGroupsForUserRequest::getUserName()const
 void ListGroupsForUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

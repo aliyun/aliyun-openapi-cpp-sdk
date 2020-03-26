@@ -34,16 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct ConfigHistory
 				{
-					std::string configFileName;
 					std::string comment;
-					std::string serviceName;
 					std::string oldValue;
 					std::string configVersion;
 					long createTime;
+					std::string hostInstanceId;
+					bool applied;
+					std::string configFileName;
+					std::string hostGroupId;
+					std::string serviceName;
 					std::string author;
 					std::string newValue;
-					bool applied;
 					std::string configItemName;
+					std::string hostName;
 				};
 
 

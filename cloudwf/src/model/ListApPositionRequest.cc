@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApPositionRequest;
 
 ListApPositionRequest::ListApPositionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApPosition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApPositionRequest::~ListApPositionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApPositionRequest::getAccessKeyId()const
 void ListApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListApPositionRequest::getMapId()const
@@ -44,6 +46,6 @@ long ListApPositionRequest::getMapId()const
 void ListApPositionRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setParameter("MapId", std::to_string(mapId));
 }
 

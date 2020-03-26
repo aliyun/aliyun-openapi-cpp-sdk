@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ExcelToJsonRequest;
 
 ExcelToJsonRequest::ExcelToJsonRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ExcelToJson")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExcelToJsonRequest::~ExcelToJsonRequest()
 {}
@@ -33,7 +35,7 @@ std::string ExcelToJsonRequest::getUploadData()const
 void ExcelToJsonRequest::setUploadData(const std::string& uploadData)
 {
 	uploadData_ = uploadData;
-	setCoreParameter("UploadData", uploadData);
+	setParameter("UploadData", uploadData);
 }
 
 std::string ExcelToJsonRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ExcelToJsonRequest::getAccessKeyId()const
 void ExcelToJsonRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

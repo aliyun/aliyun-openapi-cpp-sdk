@@ -71,6 +71,14 @@ void DescribeVirtualBorderRoutersForPhysicalConnectionResult::parse(const std::s
 			virtualBorderRouterForPhysicalConnectionSetObject.peerGatewayIp = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeerGatewayIp"].asString();
 		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeeringSubnetMask"].isNull())
 			virtualBorderRouterForPhysicalConnectionSetObject.peeringSubnetMask = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PeeringSubnetMask"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrChargeType"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.pConnVbrChargeType = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrChargeType"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrExpireTime"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.pConnVbrExpireTime = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrExpireTime"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrBussinessStatus"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.pConnVbrBussinessStatus = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["PConnVbrBussinessStatus"].asString();
+		if(!valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["Bandwidth"].isNull())
+			virtualBorderRouterForPhysicalConnectionSetObject.bandwidth = valueVirtualBorderRouterForPhysicalConnectionSetVirtualBorderRouterForPhysicalConnectionType["Bandwidth"].asString();
 		virtualBorderRouterForPhysicalConnectionSet_.push_back(virtualBorderRouterForPhysicalConnectionSetObject);
 	}
 	if(!value["PageNumber"].isNull())

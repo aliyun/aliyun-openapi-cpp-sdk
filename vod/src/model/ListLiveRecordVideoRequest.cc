@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListLiveRecordVideoRequest;
 
 ListLiveRecordVideoRequest::ListLiveRecordVideoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListLiveRecordVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListLiveRecordVideoRequest::~ListLiveRecordVideoRequest()
 {}
@@ -33,7 +35,7 @@ long ListLiveRecordVideoRequest::getResourceOwnerId()const
 void ListLiveRecordVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListLiveRecordVideoRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string ListLiveRecordVideoRequest::getStartTime()const
 void ListLiveRecordVideoRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string ListLiveRecordVideoRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string ListLiveRecordVideoRequest::getAppName()const
 void ListLiveRecordVideoRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 int ListLiveRecordVideoRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListLiveRecordVideoRequest::getPageSize()const
 void ListLiveRecordVideoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListLiveRecordVideoRequest::getStreamName()const
@@ -77,7 +79,7 @@ std::string ListLiveRecordVideoRequest::getStreamName()const
 void ListLiveRecordVideoRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string ListLiveRecordVideoRequest::getQueryType()const
@@ -88,7 +90,7 @@ std::string ListLiveRecordVideoRequest::getQueryType()const
 void ListLiveRecordVideoRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 
 std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ListLiveRecordVideoRequest::getResourceOwnerAccount()const
 void ListLiveRecordVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListLiveRecordVideoRequest::getDomainName()const
@@ -110,7 +112,7 @@ std::string ListLiveRecordVideoRequest::getDomainName()const
 void ListLiveRecordVideoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string ListLiveRecordVideoRequest::getEndTime()const
@@ -121,7 +123,7 @@ std::string ListLiveRecordVideoRequest::getEndTime()const
 void ListLiveRecordVideoRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long ListLiveRecordVideoRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long ListLiveRecordVideoRequest::getOwnerId()const
 void ListLiveRecordVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int ListLiveRecordVideoRequest::getPageNo()const
@@ -143,7 +145,7 @@ int ListLiveRecordVideoRequest::getPageNo()const
 void ListLiveRecordVideoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string ListLiveRecordVideoRequest::getSortBy()const
@@ -154,6 +156,6 @@ std::string ListLiveRecordVideoRequest::getSortBy()const
 void ListLiveRecordVideoRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 

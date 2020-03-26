@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMediaRequest;
 
 DeleteMediaRequest::DeleteMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMediaRequest::~DeleteMediaRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteMediaRequest::getResourceOwnerId()const
 void DeleteMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMediaRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteMediaRequest::getResourceOwnerAccount()const
 void DeleteMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMediaRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteMediaRequest::getOwnerAccount()const
 void DeleteMediaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMediaRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteMediaRequest::getOwnerId()const
 void DeleteMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMediaRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeleteMediaRequest::getAccessKeyId()const
 void DeleteMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteMediaRequest::getMediaIds()const
@@ -88,6 +90,6 @@ std::string DeleteMediaRequest::getMediaIds()const
 void DeleteMediaRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setParameter("MediaIds", mediaIds);
 }
 

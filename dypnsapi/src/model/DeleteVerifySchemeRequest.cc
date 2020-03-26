@@ -35,7 +35,7 @@ long DeleteVerifySchemeRequest::getResourceOwnerId()const
 void DeleteVerifySchemeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVerifySchemeRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteVerifySchemeRequest::getResourceOwnerAccount()const
 void DeleteVerifySchemeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteVerifySchemeRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteVerifySchemeRequest::getOwnerId()const
 void DeleteVerifySchemeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVerifySchemeRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteVerifySchemeRequest::getAccessKeyId()const
 void DeleteVerifySchemeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteVerifySchemeRequest::getSchemeCode()const
@@ -79,7 +79,7 @@ std::string DeleteVerifySchemeRequest::getSchemeCode()const
 void DeleteVerifySchemeRequest::setSchemeCode(const std::string& schemeCode)
 {
 	schemeCode_ = schemeCode;
-	setCoreParameter("SchemeCode", schemeCode);
+	setParameter("SchemeCode", schemeCode);
 }
 
 long DeleteVerifySchemeRequest::getCustomerId()const
@@ -90,6 +90,6 @@ long DeleteVerifySchemeRequest::getCustomerId()const
 void DeleteVerifySchemeRequest::setCustomerId(long customerId)
 {
 	customerId_ = customerId;
-	setCoreParameter("CustomerId", std::to_string(customerId));
+	setParameter("CustomerId", std::to_string(customerId));
 }
 

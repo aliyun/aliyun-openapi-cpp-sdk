@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupSummaryReportsRequest;
 
 ListSkillGroupSummaryReportsRequest::ListSkillGroupSummaryReportsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupSummaryReports")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupSummaryReportsRequest::~ListSkillGroupSummaryReportsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListSkillGroupSummaryReportsRequest::getEndTime()const
 void ListSkillGroupSummaryReportsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string ListSkillGroupSummaryReportsRequest::getStartTime()const
 void ListSkillGroupSummaryReportsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int ListSkillGroupSummaryReportsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListSkillGroupSummaryReportsRequest::getPageNumber()const
 void ListSkillGroupSummaryReportsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListSkillGroupSummaryReportsRequest::getAccessKeyId()const
 void ListSkillGroupSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string ListSkillGroupSummaryReportsRequest::getInstanceId()const
 void ListSkillGroupSummaryReportsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
@@ -88,7 +90,7 @@ std::string ListSkillGroupSummaryReportsRequest::getSkillGroupIds()const
 void ListSkillGroupSummaryReportsRequest::setSkillGroupIds(const std::string& skillGroupIds)
 {
 	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", skillGroupIds);
+	setParameter("SkillGroupIds", skillGroupIds);
 }
 
 int ListSkillGroupSummaryReportsRequest::getPageSize()const
@@ -99,6 +101,6 @@ int ListSkillGroupSummaryReportsRequest::getPageSize()const
 void ListSkillGroupSummaryReportsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

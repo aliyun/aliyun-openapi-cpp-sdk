@@ -93,6 +93,17 @@ void RecordFailureRequest::setCalledNumber(const std::string& calledNumber)
 	setParameter("CalledNumber", calledNumber);
 }
 
+std::string RecordFailureRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void RecordFailureRequest::setInstanceOwnerId(const std::string& instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", instanceOwnerId);
+}
+
 std::string RecordFailureRequest::getTaskId()const
 {
 	return taskId_;

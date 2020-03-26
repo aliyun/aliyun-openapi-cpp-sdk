@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateCategoryRequest;
 
 UpdateCategoryRequest::UpdateCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCategoryRequest::~UpdateCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateCategoryRequest::getResourceOwnerId()const
 void UpdateCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string UpdateCategoryRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string UpdateCategoryRequest::getResourceOwnerAccount()const
 void UpdateCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateCategoryRequest::getOwnerId()const
@@ -55,7 +57,7 @@ std::string UpdateCategoryRequest::getOwnerId()const
 void UpdateCategoryRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 long UpdateCategoryRequest::getCateId()const
@@ -66,7 +68,7 @@ long UpdateCategoryRequest::getCateId()const
 void UpdateCategoryRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 std::string UpdateCategoryRequest::getCateName()const
@@ -77,6 +79,6 @@ std::string UpdateCategoryRequest::getCateName()const
 void UpdateCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
+	setParameter("CateName", cateName);
 }
 

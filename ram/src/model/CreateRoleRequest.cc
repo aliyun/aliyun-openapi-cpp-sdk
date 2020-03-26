@@ -20,10 +20,23 @@ using AlibabaCloud::Ram::Model::CreateRoleRequest;
 
 CreateRoleRequest::CreateRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRoleRequest::~CreateRoleRequest()
 {}
+
+long CreateRoleRequest::getMaxSessionDuration()const
+{
+	return maxSessionDuration_;
+}
+
+void CreateRoleRequest::setMaxSessionDuration(long maxSessionDuration)
+{
+	maxSessionDuration_ = maxSessionDuration;
+	setParameter("MaxSessionDuration", std::to_string(maxSessionDuration));
+}
 
 std::string CreateRoleRequest::getRoleName()const
 {
@@ -33,7 +46,7 @@ std::string CreateRoleRequest::getRoleName()const
 void CreateRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 
 std::string CreateRoleRequest::getDescription()const
@@ -44,7 +57,7 @@ std::string CreateRoleRequest::getDescription()const
 void CreateRoleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateRoleRequest::getAssumeRolePolicyDocument()const
@@ -55,6 +68,6 @@ std::string CreateRoleRequest::getAssumeRolePolicyDocument()const
 void CreateRoleRequest::setAssumeRolePolicyDocument(const std::string& assumeRolePolicyDocument)
 {
 	assumeRolePolicyDocument_ = assumeRolePolicyDocument;
-	setCoreParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
+	setParameter("AssumeRolePolicyDocument", assumeRolePolicyDocument);
 }
 

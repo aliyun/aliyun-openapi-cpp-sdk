@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeUpBpsPeakOfLineRequest;
 
 DescribeUpBpsPeakOfLineRequest::DescribeUpBpsPeakOfLineRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeUpBpsPeakOfLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpBpsPeakOfLineRequest::~DescribeUpBpsPeakOfLineRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getLine()const
 void DescribeUpBpsPeakOfLineRequest::setLine(const std::string& line)
 {
 	line_ = line;
-	setCoreParameter("Line", line);
+	setParameter("Line", line);
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getStartTime()const
 void DescribeUpBpsPeakOfLineRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getDomainName()const
 void DescribeUpBpsPeakOfLineRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getEndTime()const
@@ -66,7 +68,7 @@ std::string DescribeUpBpsPeakOfLineRequest::getEndTime()const
 void DescribeUpBpsPeakOfLineRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeUpBpsPeakOfLineRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeUpBpsPeakOfLineRequest::getOwnerId()const
 void DescribeUpBpsPeakOfLineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUpBpsPeakOfLineRequest::getDomainSwitch()const
@@ -88,6 +90,6 @@ std::string DescribeUpBpsPeakOfLineRequest::getDomainSwitch()const
 void DescribeUpBpsPeakOfLineRequest::setDomainSwitch(const std::string& domainSwitch)
 {
 	domainSwitch_ = domainSwitch;
-	setCoreParameter("DomainSwitch", domainSwitch);
+	setParameter("DomainSwitch", domainSwitch);
 }
 

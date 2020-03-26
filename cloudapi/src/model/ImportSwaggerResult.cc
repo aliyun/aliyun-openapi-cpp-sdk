@@ -65,6 +65,32 @@ void ImportSwaggerResult::parse(const std::string &payload)
 			failedObject.errorMsg = valueFailedApiImportSwaggerFailed["ErrorMsg"].asString();
 		failed_.push_back(failedObject);
 	}
+	auto allModelFailedNode = value["ModelFailed"]["ApiImportModelFailed"];
+	for (auto valueModelFailedApiImportModelFailed : allModelFailedNode)
+	{
+		ApiImportModelFailed modelFailedObject;
+		if(!valueModelFailedApiImportModelFailed["GroupId"].isNull())
+			modelFailedObject.groupId = valueModelFailedApiImportModelFailed["GroupId"].asString();
+		if(!valueModelFailedApiImportModelFailed["ModelName"].isNull())
+			modelFailedObject.modelName = valueModelFailedApiImportModelFailed["ModelName"].asString();
+		if(!valueModelFailedApiImportModelFailed["ErrorMsg"].isNull())
+			modelFailedObject.errorMsg = valueModelFailedApiImportModelFailed["ErrorMsg"].asString();
+		modelFailed_.push_back(modelFailedObject);
+	}
+	auto allModelSuccessNode = value["ModelSuccess"]["ApiImportModelSuccess"];
+	for (auto valueModelSuccessApiImportModelSuccess : allModelSuccessNode)
+	{
+		ApiImportModelSuccess modelSuccessObject;
+		if(!valueModelSuccessApiImportModelSuccess["ModelUid"].isNull())
+			modelSuccessObject.modelUid = valueModelSuccessApiImportModelSuccess["ModelUid"].asString();
+		if(!valueModelSuccessApiImportModelSuccess["ModelOperation"].isNull())
+			modelSuccessObject.modelOperation = valueModelSuccessApiImportModelSuccess["ModelOperation"].asString();
+		if(!valueModelSuccessApiImportModelSuccess["GroupId"].isNull())
+			modelSuccessObject.groupId = valueModelSuccessApiImportModelSuccess["GroupId"].asString();
+		if(!valueModelSuccessApiImportModelSuccess["ModelName"].isNull())
+			modelSuccessObject.modelName = valueModelSuccessApiImportModelSuccess["ModelName"].asString();
+		modelSuccess_.push_back(modelSuccessObject);
+	}
 
 }
 
@@ -73,8 +99,18 @@ std::vector<ImportSwaggerResult::ApiImportSwaggerFailed> ImportSwaggerResult::ge
 	return failed_;
 }
 
+std::vector<ImportSwaggerResult::ApiImportModelFailed> ImportSwaggerResult::getModelFailed()const
+{
+	return modelFailed_;
+}
+
 std::vector<ImportSwaggerResult::ApiImportSwaggerSuccess> ImportSwaggerResult::getSuccess()const
 {
 	return success_;
+}
+
+std::vector<ImportSwaggerResult::ApiImportModelSuccess> ImportSwaggerResult::getModelSuccess()const
+{
+	return modelSuccess_;
 }
 

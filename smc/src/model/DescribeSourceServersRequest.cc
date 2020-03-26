@@ -35,7 +35,7 @@ int DescribeSourceServersRequest::getPageNumber()const
 void DescribeSourceServersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSourceServersRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeSourceServersRequest::getAccessKeyId()const
 void DescribeSourceServersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSourceServersRequest::getJobId()const
@@ -57,7 +57,7 @@ std::string DescribeSourceServersRequest::getJobId()const
 void DescribeSourceServersRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 int DescribeSourceServersRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeSourceServersRequest::getPageSize()const
 void DescribeSourceServersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSourceServersRequest::getState()const
@@ -79,7 +79,7 @@ std::string DescribeSourceServersRequest::getState()const
 void DescribeSourceServersRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::vector<std::string> DescribeSourceServersRequest::getSourceId()const
@@ -91,7 +91,7 @@ void DescribeSourceServersRequest::setSourceId(const std::vector<std::string>& s
 {
 	sourceId_ = sourceId;
 	for(int dep1 = 0; dep1!= sourceId.size(); dep1++) {
-		setCoreParameter("SourceId."+ std::to_string(dep1), sourceId.at(dep1));
+		setParameter("SourceId."+ std::to_string(dep1), sourceId.at(dep1));
 	}
 }
 
@@ -103,7 +103,7 @@ std::string DescribeSourceServersRequest::getResourceOwnerAccount()const
 void DescribeSourceServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeSourceServersRequest::getOwnerId()const
@@ -114,7 +114,7 @@ long DescribeSourceServersRequest::getOwnerId()const
 void DescribeSourceServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSourceServersRequest::getName()const
@@ -125,6 +125,6 @@ std::string DescribeSourceServersRequest::getName()const
 void DescribeSourceServersRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

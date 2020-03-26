@@ -35,7 +35,7 @@ std::string DescribeSiteMonitorStatisticsRequest::getTimeRange()const
 void DescribeSiteMonitorStatisticsRequest::setTimeRange(const std::string& timeRange)
 {
 	timeRange_ = timeRange;
-	setCoreParameter("TimeRange", timeRange);
+	setParameter("TimeRange", timeRange);
 }
 
 std::string DescribeSiteMonitorStatisticsRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeSiteMonitorStatisticsRequest::getStartTime()const
 void DescribeSiteMonitorStatisticsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSiteMonitorStatisticsRequest::getMetricName()const
@@ -57,7 +57,7 @@ std::string DescribeSiteMonitorStatisticsRequest::getMetricName()const
 void DescribeSiteMonitorStatisticsRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeSiteMonitorStatisticsRequest::getTaskId()const
@@ -68,6 +68,6 @@ std::string DescribeSiteMonitorStatisticsRequest::getTaskId()const
 void DescribeSiteMonitorStatisticsRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

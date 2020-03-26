@@ -126,6 +126,12 @@ void GetInstanceSummaryReportByIntervalResult::parse(const std::string &payload)
 			instanceSummaryReportObject.inbound.satisfactionSurveysOffered = std::stol(inboundNode["SatisfactionSurveysOffered"].asString());
 		if(!inboundNode["SatisfactionSurveysResponded"].isNull())
 			instanceSummaryReportObject.inbound.satisfactionSurveysResponded = std::stol(inboundNode["SatisfactionSurveysResponded"].asString());
+		if(!inboundNode["TotalWaitTime"].isNull())
+			instanceSummaryReportObject.inbound.totalWaitTime = std::stol(inboundNode["TotalWaitTime"].asString());
+		if(!inboundNode["MaxWaitTime"].isNull())
+			instanceSummaryReportObject.inbound.maxWaitTime = std::stol(inboundNode["MaxWaitTime"].asString());
+		if(!inboundNode["AverageWaitTime"].isNull())
+			instanceSummaryReportObject.inbound.averageWaitTime = std::stol(inboundNode["AverageWaitTime"].asString());
 		auto outboundNode = value["Outbound"];
 		if(!outboundNode["CallsDialed"].isNull())
 			instanceSummaryReportObject.outbound.callsDialed = std::stol(outboundNode["CallsDialed"].asString());

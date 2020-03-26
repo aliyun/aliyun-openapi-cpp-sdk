@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateRoleRequest;
 
 UpdateRoleRequest::UpdateRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateRoleRequest::~UpdateRoleRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateRoleRequest::getNewAssumeRolePolicyDocument()const
 void UpdateRoleRequest::setNewAssumeRolePolicyDocument(const std::string& newAssumeRolePolicyDocument)
 {
 	newAssumeRolePolicyDocument_ = newAssumeRolePolicyDocument;
-	setCoreParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
+	setParameter("NewAssumeRolePolicyDocument", newAssumeRolePolicyDocument);
 }
 
 std::string UpdateRoleRequest::getRoleName()const
@@ -44,6 +46,17 @@ std::string UpdateRoleRequest::getRoleName()const
 void UpdateRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
+}
+
+long UpdateRoleRequest::getNewMaxSessionDuration()const
+{
+	return newMaxSessionDuration_;
+}
+
+void UpdateRoleRequest::setNewMaxSessionDuration(long newMaxSessionDuration)
+{
+	newMaxSessionDuration_ = newMaxSessionDuration;
+	setParameter("NewMaxSessionDuration", std::to_string(newMaxSessionDuration));
 }
 

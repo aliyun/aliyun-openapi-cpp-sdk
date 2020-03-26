@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeKeywordRequest;
 
 DescribeKeywordRequest::DescribeKeywordRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeKeyword")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeKeywordRequest::~DescribeKeywordRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeKeywordRequest::getSourceIp()const
 void DescribeKeywordRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeKeywordRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeKeywordRequest::getPageSize()const
 void DescribeKeywordRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeKeywordRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DescribeKeywordRequest::getLang()const
 void DescribeKeywordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeKeywordRequest::getKeyword()const
@@ -66,7 +68,7 @@ std::string DescribeKeywordRequest::getKeyword()const
 void DescribeKeywordRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 int DescribeKeywordRequest::getTotalCount()const
@@ -77,7 +79,7 @@ int DescribeKeywordRequest::getTotalCount()const
 void DescribeKeywordRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeKeywordRequest::getKeywordLibId()const
@@ -88,7 +90,7 @@ int DescribeKeywordRequest::getKeywordLibId()const
 void DescribeKeywordRequest::setKeywordLibId(int keywordLibId)
 {
 	keywordLibId_ = keywordLibId;
-	setCoreParameter("KeywordLibId", std::to_string(keywordLibId));
+	setParameter("KeywordLibId", std::to_string(keywordLibId));
 }
 
 int DescribeKeywordRequest::getCurrentPage()const
@@ -99,6 +101,6 @@ int DescribeKeywordRequest::getCurrentPage()const
 void DescribeKeywordRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

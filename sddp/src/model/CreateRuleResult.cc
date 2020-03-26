@@ -39,6 +39,13 @@ void CreateRuleResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Id"].isNull())
+		id_ = std::stoi(value["Id"].asString());
 
+}
+
+int CreateRuleResult::getId()const
+{
+	return id_;
 }
 

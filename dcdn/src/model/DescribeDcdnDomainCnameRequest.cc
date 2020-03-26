@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainCnameRequest::getDomainName()const
 void DescribeDcdnDomainCnameRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeDcdnDomainCnameRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long DescribeDcdnDomainCnameRequest::getOwnerId()const
 void DescribeDcdnDomainCnameRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

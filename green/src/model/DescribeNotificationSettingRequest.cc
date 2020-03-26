@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeNotificationSettingRequest;
 
 DescribeNotificationSettingRequest::DescribeNotificationSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeNotificationSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNotificationSettingRequest::~DescribeNotificationSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeNotificationSettingRequest::getSourceIp()const
 void DescribeNotificationSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeNotificationSettingRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeNotificationSettingRequest::getLang()const
 void DescribeNotificationSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

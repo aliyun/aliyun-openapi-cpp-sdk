@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeOssObjectsRequest();
 				~DescribeOssObjectsRequest();
 
+				std::string getRiskLevels()const;
+				void setRiskLevels(const std::string& riskLevels);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
 				int getRiskLevelId()const;
@@ -47,6 +49,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				std::string getInstanceId()const;
@@ -55,18 +59,23 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
+				int getCategory()const;
+				void setCategory(int category);
 
             private:
+				std::string riskLevels_;
 				std::string queryName_;
 				int riskLevelId_;
 				std::string sourceIp_;
 				int pageSize_;
 				std::string lang_;
 				int featureType_;
+				std::string orderBy_;
 				int currentPage_;
 				std::string instanceId_;
 				std::string name_;
 				long ruleId_;
+				int category_;
 
 			};
 		}

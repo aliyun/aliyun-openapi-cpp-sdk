@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceDeleteRequest;
 
 DeviceDeleteRequest::DeviceDeleteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceDelete")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceDeleteRequest::~DeviceDeleteRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeviceDeleteRequest::getMac()const
 void DeviceDeleteRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setParameter("Mac", mac);
 }
 
 std::string DeviceDeleteRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeviceDeleteRequest::getAccessKeyId()const
 void DeviceDeleteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeviceDeleteRequest::getDid()const
@@ -55,6 +57,6 @@ long DeviceDeleteRequest::getDid()const
 void DeviceDeleteRequest::setDid(long did)
 {
 	did_ = did;
-	setCoreParameter("Did", std::to_string(did));
+	setParameter("Did", std::to_string(did));
 }
 

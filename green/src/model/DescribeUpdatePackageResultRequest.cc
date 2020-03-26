@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeUpdatePackageResultRequest;
 
 DescribeUpdatePackageResultRequest::DescribeUpdatePackageResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeUpdatePackageResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUpdatePackageResultRequest::~DescribeUpdatePackageResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUpdatePackageResultRequest::getSourceIp()const
 void DescribeUpdatePackageResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUpdatePackageResultRequest::getLang()const
@@ -44,7 +46,7 @@ std::string DescribeUpdatePackageResultRequest::getLang()const
 void DescribeUpdatePackageResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeUpdatePackageResultRequest::getTaskId()const
@@ -55,6 +57,6 @@ std::string DescribeUpdatePackageResultRequest::getTaskId()const
 void DescribeUpdatePackageResultRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

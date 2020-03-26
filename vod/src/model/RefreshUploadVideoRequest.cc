@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::RefreshUploadVideoRequest;
 
 RefreshUploadVideoRequest::RefreshUploadVideoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "RefreshUploadVideo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshUploadVideoRequest::~RefreshUploadVideoRequest()
 {}
@@ -33,7 +35,7 @@ long RefreshUploadVideoRequest::getResourceOwnerId()const
 void RefreshUploadVideoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RefreshUploadVideoRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string RefreshUploadVideoRequest::getResourceOwnerAccount()const
 void RefreshUploadVideoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RefreshUploadVideoRequest::getVideoId()const
@@ -55,7 +57,7 @@ std::string RefreshUploadVideoRequest::getVideoId()const
 void RefreshUploadVideoRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long RefreshUploadVideoRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long RefreshUploadVideoRequest::getOwnerId()const
 void RefreshUploadVideoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

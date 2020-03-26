@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateOssStockStatusRequest;
 
 UpdateOssStockStatusRequest::UpdateOssStockStatusRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateOssStockStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateOssStockStatusRequest::~UpdateOssStockStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateOssStockStatusRequest::getResourceTypeList()const
 void UpdateOssStockStatusRequest::setResourceTypeList(const std::string& resourceTypeList)
 {
 	resourceTypeList_ = resourceTypeList;
-	setCoreParameter("ResourceTypeList", resourceTypeList);
+	setParameter("ResourceTypeList", resourceTypeList);
 }
 
 int UpdateOssStockStatusRequest::getVideoFrameInterval()const
@@ -44,7 +46,7 @@ int UpdateOssStockStatusRequest::getVideoFrameInterval()const
 void UpdateOssStockStatusRequest::setVideoFrameInterval(int videoFrameInterval)
 {
 	videoFrameInterval_ = videoFrameInterval;
-	setCoreParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
+	setParameter("VideoFrameInterval", std::to_string(videoFrameInterval));
 }
 
 std::string UpdateOssStockStatusRequest::getStartDate()const
@@ -55,7 +57,7 @@ std::string UpdateOssStockStatusRequest::getStartDate()const
 void UpdateOssStockStatusRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string UpdateOssStockStatusRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string UpdateOssStockStatusRequest::getSourceIp()const
 void UpdateOssStockStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
@@ -77,7 +79,7 @@ std::string UpdateOssStockStatusRequest::getVideoAutoFreezeSceneList()const
 void UpdateOssStockStatusRequest::setVideoAutoFreezeSceneList(const std::string& videoAutoFreezeSceneList)
 {
 	videoAutoFreezeSceneList_ = videoAutoFreezeSceneList;
-	setCoreParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
+	setParameter("VideoAutoFreezeSceneList", videoAutoFreezeSceneList);
 }
 
 std::string UpdateOssStockStatusRequest::getLang()const
@@ -88,7 +90,7 @@ std::string UpdateOssStockStatusRequest::getLang()const
 void UpdateOssStockStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string UpdateOssStockStatusRequest::getImageAutoFreeze()const
@@ -99,7 +101,7 @@ std::string UpdateOssStockStatusRequest::getImageAutoFreeze()const
 void UpdateOssStockStatusRequest::setImageAutoFreeze(const std::string& imageAutoFreeze)
 {
 	imageAutoFreeze_ = imageAutoFreeze;
-	setCoreParameter("ImageAutoFreeze", imageAutoFreeze);
+	setParameter("ImageAutoFreeze", imageAutoFreeze);
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxSize()const
@@ -110,7 +112,7 @@ int UpdateOssStockStatusRequest::getVideoMaxSize()const
 void UpdateOssStockStatusRequest::setVideoMaxSize(int videoMaxSize)
 {
 	videoMaxSize_ = videoMaxSize;
-	setCoreParameter("VideoMaxSize", std::to_string(videoMaxSize));
+	setParameter("VideoMaxSize", std::to_string(videoMaxSize));
 }
 
 std::string UpdateOssStockStatusRequest::getAutoFreezeType()const
@@ -121,7 +123,7 @@ std::string UpdateOssStockStatusRequest::getAutoFreezeType()const
 void UpdateOssStockStatusRequest::setAutoFreezeType(const std::string& autoFreezeType)
 {
 	autoFreezeType_ = autoFreezeType;
-	setCoreParameter("AutoFreezeType", autoFreezeType);
+	setParameter("AutoFreezeType", autoFreezeType);
 }
 
 std::string UpdateOssStockStatusRequest::getEndDate()const
@@ -132,7 +134,7 @@ std::string UpdateOssStockStatusRequest::getEndDate()const
 void UpdateOssStockStatusRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string UpdateOssStockStatusRequest::getBucketConfigList()const
@@ -143,7 +145,7 @@ std::string UpdateOssStockStatusRequest::getBucketConfigList()const
 void UpdateOssStockStatusRequest::setBucketConfigList(const std::string& bucketConfigList)
 {
 	bucketConfigList_ = bucketConfigList;
-	setCoreParameter("BucketConfigList", bucketConfigList);
+	setParameter("BucketConfigList", bucketConfigList);
 }
 
 std::string UpdateOssStockStatusRequest::getSceneList()const
@@ -154,7 +156,7 @@ std::string UpdateOssStockStatusRequest::getSceneList()const
 void UpdateOssStockStatusRequest::setSceneList(const std::string& sceneList)
 {
 	sceneList_ = sceneList;
-	setCoreParameter("SceneList", sceneList);
+	setParameter("SceneList", sceneList);
 }
 
 int UpdateOssStockStatusRequest::getVideoMaxFrames()const
@@ -165,7 +167,7 @@ int UpdateOssStockStatusRequest::getVideoMaxFrames()const
 void UpdateOssStockStatusRequest::setVideoMaxFrames(int videoMaxFrames)
 {
 	videoMaxFrames_ = videoMaxFrames;
-	setCoreParameter("VideoMaxFrames", std::to_string(videoMaxFrames));
+	setParameter("VideoMaxFrames", std::to_string(videoMaxFrames));
 }
 
 std::string UpdateOssStockStatusRequest::getOperation()const
@@ -176,6 +178,6 @@ std::string UpdateOssStockStatusRequest::getOperation()const
 void UpdateOssStockStatusRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setParameter("Operation", operation);
 }
 

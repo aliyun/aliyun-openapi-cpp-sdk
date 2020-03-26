@@ -37,6 +37,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/AddIPv6TranslatorAclListEntryResult.h
 	include/alibabacloud/vpc/model/AllocateEipAddressRequest.h
 	include/alibabacloud/vpc/model/AllocateEipAddressResult.h
+	include/alibabacloud/vpc/model/AllocateEipSegmentAddressRequest.h
+	include/alibabacloud/vpc/model/AllocateEipSegmentAddressResult.h
 	include/alibabacloud/vpc/model/AllocateIpv6InternetBandwidthRequest.h
 	include/alibabacloud/vpc/model/AllocateIpv6InternetBandwidthResult.h
 	include/alibabacloud/vpc/model/ApplyPhysicalConnectionLOARequest.h
@@ -53,8 +55,12 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/AssociatePhysicalConnectionToVirtualBorderRouterResult.h
 	include/alibabacloud/vpc/model/AssociateRouteTableRequest.h
 	include/alibabacloud/vpc/model/AssociateRouteTableResult.h
+	include/alibabacloud/vpc/model/AssociateVpcCidrBlockRequest.h
+	include/alibabacloud/vpc/model/AssociateVpcCidrBlockResult.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthRequest.h
 	include/alibabacloud/vpc/model/CancelCommonBandwidthPackageIpBandwidthResult.h
+	include/alibabacloud/vpc/model/CancelExpressCloudConnectionRequest.h
+	include/alibabacloud/vpc/model/CancelExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/CancelPhysicalConnectionRequest.h
 	include/alibabacloud/vpc/model/CancelPhysicalConnectionResult.h
 	include/alibabacloud/vpc/model/CompletePhysicalConnectionLOARequest.h
@@ -147,6 +153,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DeleteCommonBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayRequest.h
 	include/alibabacloud/vpc/model/DeleteCustomerGatewayResult.h
+	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionRequest.h
+	include/alibabacloud/vpc/model/DeleteExpressCloudConnectionResult.h
 	include/alibabacloud/vpc/model/DeleteExpressConnectRequest.h
 	include/alibabacloud/vpc/model/DeleteExpressConnectResult.h
 	include/alibabacloud/vpc/model/DeleteFlowLogRequest.h
@@ -225,6 +233,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeEipGatewayInfoResult.h
 	include/alibabacloud/vpc/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/vpc/model/DescribeEipMonitorDataResult.h
+	include/alibabacloud/vpc/model/DescribeEipSegmentRequest.h
+	include/alibabacloud/vpc/model/DescribeEipSegmentResult.h
 	include/alibabacloud/vpc/model/DescribeExpressCloudConnectionsRequest.h
 	include/alibabacloud/vpc/model/DescribeExpressCloudConnectionsResult.h
 	include/alibabacloud/vpc/model/DescribeFlowLogsRequest.h
@@ -261,6 +271,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeNetworkAclAttributesResult.h
 	include/alibabacloud/vpc/model/DescribeNetworkAclsRequest.h
 	include/alibabacloud/vpc/model/DescribeNetworkAclsResult.h
+	include/alibabacloud/vpc/model/DescribeNewProjectEipMonitorDataRequest.h
+	include/alibabacloud/vpc/model/DescribeNewProjectEipMonitorDataResult.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionLOARequest.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionLOAResult.h
 	include/alibabacloud/vpc/model/DescribePhysicalConnectionsRequest.h
@@ -273,6 +285,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/DescribeRouteTableListResult.h
 	include/alibabacloud/vpc/model/DescribeRouteTablesRequest.h
 	include/alibabacloud/vpc/model/DescribeRouteTablesResult.h
+	include/alibabacloud/vpc/model/DescribeRouterInterfaceAttributeRequest.h
+	include/alibabacloud/vpc/model/DescribeRouterInterfaceAttributeResult.h
 	include/alibabacloud/vpc/model/DescribeRouterInterfacesRequest.h
 	include/alibabacloud/vpc/model/DescribeRouterInterfacesResult.h
 	include/alibabacloud/vpc/model/DescribeServerRelatedGlobalAccelerationInstancesRequest.h
@@ -425,6 +439,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/RecoverVirtualBorderRouterResult.h
 	include/alibabacloud/vpc/model/ReleaseEipAddressRequest.h
 	include/alibabacloud/vpc/model/ReleaseEipAddressResult.h
+	include/alibabacloud/vpc/model/ReleaseEipSegmentAddressRequest.h
+	include/alibabacloud/vpc/model/ReleaseEipSegmentAddressResult.h
 	include/alibabacloud/vpc/model/RemoveBandwidthPackageIpsRequest.h
 	include/alibabacloud/vpc/model/RemoveBandwidthPackageIpsResult.h
 	include/alibabacloud/vpc/model/RemoveCommonBandwidthPackageIpRequest.h
@@ -455,6 +471,8 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/UnassociatePhysicalConnectionFromVirtualBorderRouterResult.h
 	include/alibabacloud/vpc/model/UnassociateRouteTableRequest.h
 	include/alibabacloud/vpc/model/UnassociateRouteTableResult.h
+	include/alibabacloud/vpc/model/UnassociateVpcCidrBlockRequest.h
+	include/alibabacloud/vpc/model/UnassociateVpcCidrBlockResult.h
 	include/alibabacloud/vpc/model/UpdateNetworkAclEntriesRequest.h
 	include/alibabacloud/vpc/model/UpdateNetworkAclEntriesResult.h )
 
@@ -476,6 +494,8 @@ set(vpc_src
 	src/model/AddIPv6TranslatorAclListEntryResult.cc
 	src/model/AllocateEipAddressRequest.cc
 	src/model/AllocateEipAddressResult.cc
+	src/model/AllocateEipSegmentAddressRequest.cc
+	src/model/AllocateEipSegmentAddressResult.cc
 	src/model/AllocateIpv6InternetBandwidthRequest.cc
 	src/model/AllocateIpv6InternetBandwidthResult.cc
 	src/model/ApplyPhysicalConnectionLOARequest.cc
@@ -492,8 +512,12 @@ set(vpc_src
 	src/model/AssociatePhysicalConnectionToVirtualBorderRouterResult.cc
 	src/model/AssociateRouteTableRequest.cc
 	src/model/AssociateRouteTableResult.cc
+	src/model/AssociateVpcCidrBlockRequest.cc
+	src/model/AssociateVpcCidrBlockResult.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthRequest.cc
 	src/model/CancelCommonBandwidthPackageIpBandwidthResult.cc
+	src/model/CancelExpressCloudConnectionRequest.cc
+	src/model/CancelExpressCloudConnectionResult.cc
 	src/model/CancelPhysicalConnectionRequest.cc
 	src/model/CancelPhysicalConnectionResult.cc
 	src/model/CompletePhysicalConnectionLOARequest.cc
@@ -586,6 +610,8 @@ set(vpc_src
 	src/model/DeleteCommonBandwidthPackageResult.cc
 	src/model/DeleteCustomerGatewayRequest.cc
 	src/model/DeleteCustomerGatewayResult.cc
+	src/model/DeleteExpressCloudConnectionRequest.cc
+	src/model/DeleteExpressCloudConnectionResult.cc
 	src/model/DeleteExpressConnectRequest.cc
 	src/model/DeleteExpressConnectResult.cc
 	src/model/DeleteFlowLogRequest.cc
@@ -664,6 +690,8 @@ set(vpc_src
 	src/model/DescribeEipGatewayInfoResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
+	src/model/DescribeEipSegmentRequest.cc
+	src/model/DescribeEipSegmentResult.cc
 	src/model/DescribeExpressCloudConnectionsRequest.cc
 	src/model/DescribeExpressCloudConnectionsResult.cc
 	src/model/DescribeFlowLogsRequest.cc
@@ -700,6 +728,8 @@ set(vpc_src
 	src/model/DescribeNetworkAclAttributesResult.cc
 	src/model/DescribeNetworkAclsRequest.cc
 	src/model/DescribeNetworkAclsResult.cc
+	src/model/DescribeNewProjectEipMonitorDataRequest.cc
+	src/model/DescribeNewProjectEipMonitorDataResult.cc
 	src/model/DescribePhysicalConnectionLOARequest.cc
 	src/model/DescribePhysicalConnectionLOAResult.cc
 	src/model/DescribePhysicalConnectionsRequest.cc
@@ -712,6 +742,8 @@ set(vpc_src
 	src/model/DescribeRouteTableListResult.cc
 	src/model/DescribeRouteTablesRequest.cc
 	src/model/DescribeRouteTablesResult.cc
+	src/model/DescribeRouterInterfaceAttributeRequest.cc
+	src/model/DescribeRouterInterfaceAttributeResult.cc
 	src/model/DescribeRouterInterfacesRequest.cc
 	src/model/DescribeRouterInterfacesResult.cc
 	src/model/DescribeServerRelatedGlobalAccelerationInstancesRequest.cc
@@ -864,6 +896,8 @@ set(vpc_src
 	src/model/RecoverVirtualBorderRouterResult.cc
 	src/model/ReleaseEipAddressRequest.cc
 	src/model/ReleaseEipAddressResult.cc
+	src/model/ReleaseEipSegmentAddressRequest.cc
+	src/model/ReleaseEipSegmentAddressResult.cc
 	src/model/RemoveBandwidthPackageIpsRequest.cc
 	src/model/RemoveBandwidthPackageIpsResult.cc
 	src/model/RemoveCommonBandwidthPackageIpRequest.cc
@@ -894,6 +928,8 @@ set(vpc_src
 	src/model/UnassociatePhysicalConnectionFromVirtualBorderRouterResult.cc
 	src/model/UnassociateRouteTableRequest.cc
 	src/model/UnassociateRouteTableResult.cc
+	src/model/UnassociateVpcCidrBlockRequest.cc
+	src/model/UnassociateVpcCidrBlockResult.cc
 	src/model/UpdateNetworkAclEntriesRequest.cc
 	src/model/UpdateNetworkAclEntriesResult.cc )
 

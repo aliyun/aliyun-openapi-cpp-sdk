@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDetectPornDataRequest;
 
 DescribeLiveDetectPornDataRequest::DescribeLiveDetectPornDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDetectPornData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDetectPornDataRequest::~DescribeLiveDetectPornDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDetectPornDataRequest::getFee()const
 void DescribeLiveDetectPornDataRequest::setFee(const std::string& fee)
 {
 	fee_ = fee;
-	setCoreParameter("Fee", fee);
+	setParameter("Fee", fee);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDetectPornDataRequest::getStartTime()const
 void DescribeLiveDetectPornDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getScene()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDetectPornDataRequest::getScene()const
 void DescribeLiveDetectPornDataRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getStream()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDetectPornDataRequest::getStream()const
 void DescribeLiveDetectPornDataRequest::setStream(const std::string& stream)
 {
 	stream_ = stream;
-	setCoreParameter("Stream", stream);
+	setParameter("Stream", stream);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getSplitBy()const
@@ -77,7 +79,7 @@ std::string DescribeLiveDetectPornDataRequest::getSplitBy()const
 void DescribeLiveDetectPornDataRequest::setSplitBy(const std::string& splitBy)
 {
 	splitBy_ = splitBy;
-	setCoreParameter("SplitBy", splitBy);
+	setParameter("SplitBy", splitBy);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getApp()const
@@ -88,7 +90,7 @@ std::string DescribeLiveDetectPornDataRequest::getApp()const
 void DescribeLiveDetectPornDataRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", app);
+	setParameter("App", app);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getDomainName()const
@@ -99,7 +101,7 @@ std::string DescribeLiveDetectPornDataRequest::getDomainName()const
 void DescribeLiveDetectPornDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDetectPornDataRequest::getEndTime()const
@@ -110,7 +112,7 @@ std::string DescribeLiveDetectPornDataRequest::getEndTime()const
 void DescribeLiveDetectPornDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDetectPornDataRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeLiveDetectPornDataRequest::getOwnerId()const
 void DescribeLiveDetectPornDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveDetectPornDataRequest::getRegion()const
@@ -132,6 +134,6 @@ std::string DescribeLiveDetectPornDataRequest::getRegion()const
 void DescribeLiveDetectPornDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

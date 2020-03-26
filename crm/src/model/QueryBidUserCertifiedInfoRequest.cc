@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::QueryBidUserCertifiedInfoRequest;
 
 QueryBidUserCertifiedInfoRequest::QueryBidUserCertifiedInfoRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "QueryBidUserCertifiedInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBidUserCertifiedInfoRequest::~QueryBidUserCertifiedInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryBidUserCertifiedInfoRequest::getBidType()const
 void QueryBidUserCertifiedInfoRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", bidType);
+	setParameter("BidType", bidType);
 }
 
 std::string QueryBidUserCertifiedInfoRequest::getPK()const
@@ -44,6 +46,6 @@ std::string QueryBidUserCertifiedInfoRequest::getPK()const
 void QueryBidUserCertifiedInfoRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 

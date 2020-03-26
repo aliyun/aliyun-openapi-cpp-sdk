@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetFolderRequest;
 
 GetFolderRequest::GetFolderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/folders");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetFolderRequest::~GetFolderRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetFolderRequest::getPath()const
 void GetFolderRequest::setPath(const std::string& path)
 {
 	path_ = path;
-	setCoreParameter("Path", path);
+	setParameter("Path", path);
 }
 
 std::string GetFolderRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string GetFolderRequest::getProjectName()const
 void GetFolderRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetFolderRequest::getRegionId()const
@@ -55,6 +58,6 @@ std::string GetFolderRequest::getRegionId()const
 void GetFolderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 

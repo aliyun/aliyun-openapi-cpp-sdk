@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::MarkWebsiteScanResultRequest;
 
 MarkWebsiteScanResultRequest::MarkWebsiteScanResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "MarkWebsiteScanResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MarkWebsiteScanResultRequest::~MarkWebsiteScanResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string MarkWebsiteScanResultRequest::getSourceIp()const
 void MarkWebsiteScanResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string MarkWebsiteScanResultRequest::getIds()const
@@ -44,7 +46,7 @@ std::string MarkWebsiteScanResultRequest::getIds()const
 void MarkWebsiteScanResultRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 
 std::string MarkWebsiteScanResultRequest::getLang()const
@@ -55,6 +57,6 @@ std::string MarkWebsiteScanResultRequest::getLang()const
 void MarkWebsiteScanResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

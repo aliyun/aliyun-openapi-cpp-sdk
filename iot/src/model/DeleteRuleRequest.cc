@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRuleRequest::~DeleteRuleRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteRuleRequest::getAccessKeyId()const
 void DeleteRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteRuleRequest::getIotInstanceId()const
@@ -44,7 +46,7 @@ std::string DeleteRuleRequest::getIotInstanceId()const
 void DeleteRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 long DeleteRuleRequest::getRuleId()const
@@ -55,6 +57,6 @@ long DeleteRuleRequest::getRuleId()const
 void DeleteRuleRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

@@ -109,6 +109,8 @@ void DescribeApiDocResult::parse(const std::string &payload)
 			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
 		if(!valueRequestParametersRequestParameter["Description"].isNull())
 			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
+		if(!valueRequestParametersRequestParameter["ArrayItemsType"].isNull())
+			requestParametersObject.arrayItemsType = valueRequestParametersRequestParameter["ArrayItemsType"].asString();
 		requestParameters_.push_back(requestParametersObject);
 	}
 	auto requestConfigNode = value["RequestConfig"];

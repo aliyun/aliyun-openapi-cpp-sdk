@@ -35,7 +35,7 @@ std::string DeleteMonitoringAgentProcessRequest::getProcessName()const
 void DeleteMonitoringAgentProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
+	setParameter("ProcessName", processName);
 }
 
 std::string DeleteMonitoringAgentProcessRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string DeleteMonitoringAgentProcessRequest::getInstanceId()const
 void DeleteMonitoringAgentProcessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteMonitoringAgentProcessRequest::getProcessId()const
@@ -57,6 +57,6 @@ std::string DeleteMonitoringAgentProcessRequest::getProcessId()const
 void DeleteMonitoringAgentProcessRequest::setProcessId(const std::string& processId)
 {
 	processId_ = processId;
-	setCoreParameter("ProcessId", processId);
+	setParameter("ProcessId", processId);
 }
 

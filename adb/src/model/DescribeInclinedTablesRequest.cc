@@ -35,7 +35,7 @@ std::string DescribeInclinedTablesRequest::getTableType()const
 void DescribeInclinedTablesRequest::setTableType(const std::string& tableType)
 {
 	tableType_ = tableType;
-	setCoreParameter("TableType", tableType);
+	setParameter("TableType", tableType);
 }
 
 long DescribeInclinedTablesRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long DescribeInclinedTablesRequest::getResourceOwnerId()const
 void DescribeInclinedTablesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeInclinedTablesRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeInclinedTablesRequest::getPageNumber()const
 void DescribeInclinedTablesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeInclinedTablesRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DescribeInclinedTablesRequest::getAccessKeyId()const
 void DescribeInclinedTablesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeInclinedTablesRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeInclinedTablesRequest::getPageSize()const
 void DescribeInclinedTablesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeInclinedTablesRequest::getOrder()const
@@ -90,7 +90,7 @@ std::string DescribeInclinedTablesRequest::getOrder()const
 void DescribeInclinedTablesRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeInclinedTablesRequest::getResourceOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeInclinedTablesRequest::getResourceOwnerAccount()const
 void DescribeInclinedTablesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeInclinedTablesRequest::getDBClusterId()const
@@ -112,7 +112,7 @@ std::string DescribeInclinedTablesRequest::getDBClusterId()const
 void DescribeInclinedTablesRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeInclinedTablesRequest::getOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeInclinedTablesRequest::getOwnerAccount()const
 void DescribeInclinedTablesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeInclinedTablesRequest::getOwnerId()const
@@ -134,6 +134,6 @@ long DescribeInclinedTablesRequest::getOwnerId()const
 void DescribeInclinedTablesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

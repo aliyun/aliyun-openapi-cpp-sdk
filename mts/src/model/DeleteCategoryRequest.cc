@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteCategoryRequest;
 
 DeleteCategoryRequest::DeleteCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCategoryRequest::getResourceOwnerId()const
 void DeleteCategoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCategoryRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteCategoryRequest::getResourceOwnerAccount()const
 void DeleteCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCategoryRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteCategoryRequest::getOwnerAccount()const
 void DeleteCategoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCategoryRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteCategoryRequest::getOwnerId()const
 void DeleteCategoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCategoryRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeleteCategoryRequest::getAccessKeyId()const
 void DeleteCategoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeleteCategoryRequest::getCateId()const
@@ -88,6 +90,6 @@ long DeleteCategoryRequest::getCateId()const
 void DeleteCategoryRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_GPDB_EXPORT DescribeDBInstancesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

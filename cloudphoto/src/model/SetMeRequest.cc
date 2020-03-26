@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SetMeRequest;
 
 SetMeRequest::SetMeRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SetMe")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetMeRequest::~SetMeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetMeRequest::getLibraryId()const
 void SetMeRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string SetMeRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string SetMeRequest::getStoreName()const
 void SetMeRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long SetMeRequest::getFaceId()const
@@ -55,6 +57,6 @@ long SetMeRequest::getFaceId()const
 void SetMeRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setParameter("FaceId", std::to_string(faceId));
 }
 

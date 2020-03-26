@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForSynchronizingDSRecordRequest
 
 SaveSingleTaskForSynchronizingDSRecordRequest::SaveSingleTaskForSynchronizingDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForSynchronizingDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForSynchronizingDSRecordRequest::~SaveSingleTaskForSynchronizingDSRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForSynchronizingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForSynchronizingDSRecordRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getUserClientIp()cons
 void SaveSingleTaskForSynchronizingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForSynchronizingDSRecordRequest::getLang()const
@@ -55,6 +57,6 @@ std::string SaveSingleTaskForSynchronizingDSRecordRequest::getLang()const
 void SaveSingleTaskForSynchronizingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

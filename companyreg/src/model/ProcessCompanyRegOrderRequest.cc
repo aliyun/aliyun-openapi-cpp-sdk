@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::ProcessCompanyRegOrderRequest;
 
 ProcessCompanyRegOrderRequest::ProcessCompanyRegOrderRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "ProcessCompanyRegOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProcessCompanyRegOrderRequest::~ProcessCompanyRegOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProcessCompanyRegOrderRequest::getActionType()const
 void ProcessCompanyRegOrderRequest::setActionType(const std::string& actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", actionType);
+	setParameter("ActionType", actionType);
 }
 
 std::string ProcessCompanyRegOrderRequest::getActionRequestId()const
@@ -44,7 +46,7 @@ std::string ProcessCompanyRegOrderRequest::getActionRequestId()const
 void ProcessCompanyRegOrderRequest::setActionRequestId(const std::string& actionRequestId)
 {
 	actionRequestId_ = actionRequestId;
-	setCoreParameter("ActionRequestId", actionRequestId);
+	setParameter("ActionRequestId", actionRequestId);
 }
 
 int ProcessCompanyRegOrderRequest::getOperatorType()const
@@ -55,7 +57,7 @@ int ProcessCompanyRegOrderRequest::getOperatorType()const
 void ProcessCompanyRegOrderRequest::setOperatorType(int operatorType)
 {
 	operatorType_ = operatorType;
-	setCoreParameter("OperatorType", std::to_string(operatorType));
+	setParameter("OperatorType", std::to_string(operatorType));
 }
 
 std::string ProcessCompanyRegOrderRequest::getActionInfo()const
@@ -66,7 +68,7 @@ std::string ProcessCompanyRegOrderRequest::getActionInfo()const
 void ProcessCompanyRegOrderRequest::setActionInfo(const std::string& actionInfo)
 {
 	actionInfo_ = actionInfo;
-	setCoreParameter("ActionInfo", actionInfo);
+	setParameter("ActionInfo", actionInfo);
 }
 
 std::string ProcessCompanyRegOrderRequest::getBizCode()const
@@ -77,7 +79,7 @@ std::string ProcessCompanyRegOrderRequest::getBizCode()const
 void ProcessCompanyRegOrderRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string ProcessCompanyRegOrderRequest::getBizId()const
@@ -88,7 +90,7 @@ std::string ProcessCompanyRegOrderRequest::getBizId()const
 void ProcessCompanyRegOrderRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string ProcessCompanyRegOrderRequest::getBizSubCode()const
@@ -99,6 +101,6 @@ std::string ProcessCompanyRegOrderRequest::getBizSubCode()const
 void ProcessCompanyRegOrderRequest::setBizSubCode(const std::string& bizSubCode)
 {
 	bizSubCode_ = bizSubCode;
-	setCoreParameter("BizSubCode", bizSubCode);
+	setParameter("BizSubCode", bizSubCode);
 }
 

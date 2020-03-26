@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::ActiveFlowLogRequest;
 
 ActiveFlowLogRequest::ActiveFlowLogRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "ActiveFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActiveFlowLogRequest::~ActiveFlowLogRequest()
 {}
@@ -33,7 +35,7 @@ long ActiveFlowLogRequest::getResourceOwnerId()const
 void ActiveFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ActiveFlowLogRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ActiveFlowLogRequest::getClientToken()const
 void ActiveFlowLogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ActiveFlowLogRequest::getCenId()const
@@ -55,7 +57,7 @@ std::string ActiveFlowLogRequest::getCenId()const
 void ActiveFlowLogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string ActiveFlowLogRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ActiveFlowLogRequest::getRegionId()const
 void ActiveFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ActiveFlowLogRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ActiveFlowLogRequest::getResourceOwnerAccount()const
 void ActiveFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ActiveFlowLogRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ActiveFlowLogRequest::getOwnerAccount()const
 void ActiveFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ActiveFlowLogRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ActiveFlowLogRequest::getOwnerId()const
 void ActiveFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ActiveFlowLogRequest::getFlowLogId()const
@@ -110,6 +112,6 @@ std::string ActiveFlowLogRequest::getFlowLogId()const
 void ActiveFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setParameter("FlowLogId", flowLogId);
 }
 

@@ -35,7 +35,7 @@ long DeleteMonitorGroupDynamicRuleRequest::getGroupId()const
 void DeleteMonitorGroupDynamicRuleRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteMonitorGroupDynamicRuleRequest::getCategory()const
@@ -46,6 +46,6 @@ std::string DeleteMonitorGroupDynamicRuleRequest::getCategory()const
 void DeleteMonitorGroupDynamicRuleRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

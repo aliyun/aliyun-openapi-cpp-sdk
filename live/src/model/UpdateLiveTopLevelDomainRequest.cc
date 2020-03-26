@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateLiveTopLevelDomainRequest;
 
 UpdateLiveTopLevelDomainRequest::UpdateLiveTopLevelDomainRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateLiveTopLevelDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateLiveTopLevelDomainRequest::~UpdateLiveTopLevelDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateLiveTopLevelDomainRequest::getTopLevelDomain()const
 void UpdateLiveTopLevelDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateLiveTopLevelDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string UpdateLiveTopLevelDomainRequest::getDomainName()const
 void UpdateLiveTopLevelDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateLiveTopLevelDomainRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long UpdateLiveTopLevelDomainRequest::getOwnerId()const
 void UpdateLiveTopLevelDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateLiveTopLevelDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string UpdateLiveTopLevelDomainRequest::getSecurityToken()const
 void UpdateLiveTopLevelDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::RegistrantProfileRealNameVerificationRequest;
 
 RegistrantProfileRealNameVerificationRequest::RegistrantProfileRealNameVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "RegistrantProfileRealNameVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegistrantProfileRealNameVerificationRequest::~RegistrantProfileRealNameVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialT
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredentialType(const std::string& identityCredentialType)
 {
 	identityCredentialType_ = identityCredentialType;
-	setCoreParameter("IdentityCredentialType", identityCredentialType);
+	setParameter("IdentityCredentialType", identityCredentialType);
 }
 
 long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
@@ -44,7 +46,7 @@ long RegistrantProfileRealNameVerificationRequest::getRegistrantProfileID()const
 void RegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
+	setParameter("RegistrantProfileID", std::to_string(registrantProfileID));
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredential()const
@@ -55,7 +57,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredential(
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredential(const std::string& identityCredential)
 {
 	identityCredential_ = identityCredential;
-	setCoreParameter("IdentityCredential", identityCredential);
+	setBodyParameter("IdentityCredential", identityCredential);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
@@ -66,7 +68,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getUserClientIp()const
 void RegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getLang()const
@@ -77,7 +79,7 @@ std::string RegistrantProfileRealNameVerificationRequest::getLang()const
 void RegistrantProfileRealNameVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialNo()const
@@ -88,6 +90,6 @@ std::string RegistrantProfileRealNameVerificationRequest::getIdentityCredentialN
 void RegistrantProfileRealNameVerificationRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
 {
 	identityCredentialNo_ = identityCredentialNo;
-	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
+	setParameter("IdentityCredentialNo", identityCredentialNo);
 }
 

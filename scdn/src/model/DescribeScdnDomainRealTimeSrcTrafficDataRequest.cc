@@ -35,7 +35,7 @@ std::string DescribeScdnDomainRealTimeSrcTrafficDataRequest::getStartTime()const
 void DescribeScdnDomainRealTimeSrcTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainRealTimeSrcTrafficDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainRealTimeSrcTrafficDataRequest::getDomainName()cons
 void DescribeScdnDomainRealTimeSrcTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainRealTimeSrcTrafficDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainRealTimeSrcTrafficDataRequest::getEndTime()const
 void DescribeScdnDomainRealTimeSrcTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainRealTimeSrcTrafficDataRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long DescribeScdnDomainRealTimeSrcTrafficDataRequest::getOwnerId()const
 void DescribeScdnDomainRealTimeSrcTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AddBulkPhoneNumbersRequest;
 
 AddBulkPhoneNumbersRequest::AddBulkPhoneNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AddBulkPhoneNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBulkPhoneNumbersRequest::~AddBulkPhoneNumbersRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddBulkPhoneNumbersRequest::getContactFlowId()const
 void AddBulkPhoneNumbersRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", contactFlowId);
+	setParameter("ContactFlowId", contactFlowId);
 }
 
 std::string AddBulkPhoneNumbersRequest::getUsage()const
@@ -44,7 +46,7 @@ std::string AddBulkPhoneNumbersRequest::getUsage()const
 void AddBulkPhoneNumbersRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", usage);
+	setParameter("Usage", usage);
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
@@ -55,8 +57,9 @@ std::vector<std::string> AddBulkPhoneNumbersRequest::getPhoneNumber()const
 void AddBulkPhoneNumbersRequest::setPhoneNumber(const std::vector<std::string>& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	for(int i = 0; i!= phoneNumber.size(); i++)
-		setCoreParameter("PhoneNumber."+ std::to_string(i), phoneNumber.at(i));
+	for(int dep1 = 0; dep1!= phoneNumber.size(); dep1++) {
+		setParameter("PhoneNumber."+ std::to_string(dep1), phoneNumber.at(dep1));
+	}
 }
 
 std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
@@ -67,7 +70,7 @@ std::string AddBulkPhoneNumbersRequest::getAccessKeyId()const
 void AddBulkPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddBulkPhoneNumbersRequest::getInstanceId()const
@@ -78,7 +81,7 @@ std::string AddBulkPhoneNumbersRequest::getInstanceId()const
 void AddBulkPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
@@ -89,7 +92,8 @@ std::vector<std::string> AddBulkPhoneNumbersRequest::getSkillGroupId()const
 void AddBulkPhoneNumbersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

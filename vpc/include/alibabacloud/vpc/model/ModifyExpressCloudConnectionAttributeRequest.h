@@ -47,6 +47,12 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getCeIp()const;
+				void setCeIp(const std::string& ceIp);
+				std::string getBgpAs()const;
+				void setBgpAs(const std::string& bgpAs);
+				std::string getPeIp()const;
+				void setPeIp(const std::string& peIp);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getName()const;
@@ -59,6 +65,9 @@ namespace AlibabaCloud
 				std::string eccId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string ceIp_;
+				std::string bgpAs_;
+				std::string peIp_;
 				long ownerId_;
 				std::string name_;
 

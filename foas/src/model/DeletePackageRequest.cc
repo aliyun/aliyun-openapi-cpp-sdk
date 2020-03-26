@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DeletePackageRequest;
 
 DeletePackageRequest::DeletePackageRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages/[packageName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeletePackageRequest::~DeletePackageRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeletePackageRequest::getProjectName()const
 void DeletePackageRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string DeletePackageRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string DeletePackageRequest::getRegionId()const
 void DeletePackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string DeletePackageRequest::getPackageName()const
@@ -55,6 +58,6 @@ std::string DeletePackageRequest::getPackageName()const
 void DeletePackageRequest::setPackageName(const std::string& packageName)
 {
 	packageName_ = packageName;
-	setCoreParameter("PackageName", packageName);
+	setParameter("PackageName", packageName);
 }
 

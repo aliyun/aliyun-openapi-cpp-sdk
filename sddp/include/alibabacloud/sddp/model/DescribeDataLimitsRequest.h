@@ -35,20 +35,41 @@ namespace AlibabaCloud
 				DescribeDataLimitsRequest();
 				~DescribeDataLimitsRequest();
 
-				int getResourceType()const;
-				void setResourceType(int resourceType);
 				std::string getParentId()const;
 				void setParentId(const std::string& parentId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getCheckStatus()const;
+				void setCheckStatus(int checkStatus);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
+				std::string getServiceRegionId()const;
+				void setServiceRegionId(const std::string& serviceRegionId);
+				std::string getEngineType()const;
+				void setEngineType(const std::string& engineType);
+				int getAuditStatus()const;
+				void setAuditStatus(int auditStatus);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				int getResourceType()const;
+				void setResourceType(int resourceType);
 
             private:
-				int resourceType_;
 				std::string parentId_;
 				std::string sourceIp_;
+				std::string regionId_;
+				int pageSize_;
+				int checkStatus_;
 				std::string lang_;
+				std::string serviceRegionId_;
+				std::string engineType_;
+				int auditStatus_;
+				int currentPage_;
+				int resourceType_;
 
 			};
 		}

@@ -20,21 +20,12 @@ using AlibabaCloud::Iot::Model::QueryEdgeInstanceRequest;
 
 QueryEdgeInstanceRequest::QueryEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEdgeInstanceRequest::~QueryEdgeInstanceRequest()
 {}
-
-int QueryEdgeInstanceRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryEdgeInstanceRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
-}
 
 std::string QueryEdgeInstanceRequest::getAccessKeyId()const
 {
@@ -44,7 +35,7 @@ std::string QueryEdgeInstanceRequest::getAccessKeyId()const
 void QueryEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryEdgeInstanceRequest::getIotInstanceId()const
@@ -55,7 +46,7 @@ std::string QueryEdgeInstanceRequest::getIotInstanceId()const
 void QueryEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryEdgeInstanceRequest::getPageSize()const
@@ -66,7 +57,29 @@ int QueryEdgeInstanceRequest::getPageSize()const
 void QueryEdgeInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryEdgeInstanceRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryEdgeInstanceRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
 }
 
 std::string QueryEdgeInstanceRequest::getName()const
@@ -77,6 +90,17 @@ std::string QueryEdgeInstanceRequest::getName()const
 void QueryEdgeInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
+}
+
+std::string QueryEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

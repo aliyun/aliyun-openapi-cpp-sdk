@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyCustomerGatewayAttributeRequest;
 
 ModifyCustomerGatewayAttributeRequest::ModifyCustomerGatewayAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyCustomerGatewayAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCustomerGatewayAttributeRequest::~ModifyCustomerGatewayAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyCustomerGatewayAttributeRequest::getResourceOwnerId()const
 void ModifyCustomerGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getClientToken()const
 void ModifyCustomerGatewayAttributeRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getDescription()const
 void ModifyCustomerGatewayAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getCustomerGatewayId()const
@@ -66,7 +68,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getCustomerGatewayId()const
 void ModifyCustomerGatewayAttributeRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setParameter("CustomerGatewayId", customerGatewayId);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getRegionId()const
 void ModifyCustomerGatewayAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getResourceOwnerAccount()cons
 void ModifyCustomerGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ModifyCustomerGatewayAttributeRequest::getOwnerAccount()const
 void ModifyCustomerGatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyCustomerGatewayAttributeRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ModifyCustomerGatewayAttributeRequest::getOwnerId()const
 void ModifyCustomerGatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyCustomerGatewayAttributeRequest::getName()const
@@ -121,6 +123,6 @@ std::string ModifyCustomerGatewayAttributeRequest::getName()const
 void ModifyCustomerGatewayAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

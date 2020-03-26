@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListJobsRequest;
 
 ListJobsRequest::ListJobsRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobsRequest::~ListJobsRequest()
 {}
@@ -33,7 +35,7 @@ long ListJobsRequest::getResourceOwnerId()const
 void ListJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListJobsRequest::getQueryString()const
@@ -44,7 +46,7 @@ std::string ListJobsRequest::getQueryString()const
 void ListJobsRequest::setQueryString(const std::string& queryString)
 {
 	queryString_ = queryString;
-	setCoreParameter("QueryString", queryString);
+	setParameter("QueryString", queryString);
 }
 
 bool ListJobsRequest::getIsDesc()const
@@ -55,7 +57,7 @@ bool ListJobsRequest::getIsDesc()const
 void ListJobsRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListJobsRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int ListJobsRequest::getPageNumber()const
 void ListJobsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobsRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListJobsRequest::getAccessKeyId()const
 void ListJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListJobsRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string ListJobsRequest::getRegionId()const
 void ListJobsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListJobsRequest::getPageSize()const
@@ -99,7 +101,7 @@ int ListJobsRequest::getPageSize()const
 void ListJobsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListJobsRequest::getQueryType()const
@@ -110,6 +112,6 @@ std::string ListJobsRequest::getQueryType()const
 void ListJobsRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 

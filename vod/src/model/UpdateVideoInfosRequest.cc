@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateVideoInfosRequest;
 
 UpdateVideoInfosRequest::UpdateVideoInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateVideoInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateVideoInfosRequest::~UpdateVideoInfosRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateVideoInfosRequest::getResourceOwnerId()const
 void UpdateVideoInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateVideoInfosRequest::getUpdateContent()const
@@ -44,7 +46,7 @@ std::string UpdateVideoInfosRequest::getUpdateContent()const
 void UpdateVideoInfosRequest::setUpdateContent(const std::string& updateContent)
 {
 	updateContent_ = updateContent;
-	setCoreParameter("UpdateContent", updateContent);
+	setParameter("UpdateContent", updateContent);
 }
 
 std::string UpdateVideoInfosRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string UpdateVideoInfosRequest::getResourceOwnerAccount()const
 void UpdateVideoInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UpdateVideoInfosRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long UpdateVideoInfosRequest::getOwnerId()const
 void UpdateVideoInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

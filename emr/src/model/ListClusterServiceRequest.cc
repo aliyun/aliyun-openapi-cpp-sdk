@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterServiceRequest;
 
 ListClusterServiceRequest::ListClusterServiceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterServiceRequest::~ListClusterServiceRequest()
 {}
@@ -33,7 +35,7 @@ long ListClusterServiceRequest::getResourceOwnerId()const
 void ListClusterServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterServiceRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ListClusterServiceRequest::getClusterId()const
 void ListClusterServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ListClusterServiceRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListClusterServiceRequest::getPageNumber()const
 void ListClusterServiceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterServiceRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListClusterServiceRequest::getAccessKeyId()const
 void ListClusterServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterServiceRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListClusterServiceRequest::getRegionId()const
 void ListClusterServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListClusterServiceRequest::getPageSize()const
@@ -88,6 +90,6 @@ int ListClusterServiceRequest::getPageSize()const
 void ListClusterServiceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

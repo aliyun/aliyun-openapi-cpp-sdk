@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetClusterInstanceRequest;
 
 GetClusterInstanceRequest::GetClusterInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetClusterInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterInstanceRequest::~GetClusterInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetClusterInstanceRequest::getCluster()const
 void GetClusterInstanceRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setParameter("Cluster", cluster);
 }
 
 int GetClusterInstanceRequest::getPageSize()const
@@ -44,7 +46,7 @@ int GetClusterInstanceRequest::getPageSize()const
 void GetClusterInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetClusterInstanceRequest::getPageNum()const
@@ -55,7 +57,7 @@ int GetClusterInstanceRequest::getPageNum()const
 void GetClusterInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetClusterInstanceRequest::getRegion()const
@@ -66,7 +68,7 @@ std::string GetClusterInstanceRequest::getRegion()const
 void GetClusterInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetClusterInstanceRequest::getStatus()const
@@ -77,6 +79,6 @@ std::string GetClusterInstanceRequest::getStatus()const
 void GetClusterInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

@@ -35,7 +35,7 @@ long DescribeDBClusterAttributeRequest::getResourceOwnerId()const
 void DescribeDBClusterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterAttributeRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBClusterAttributeRequest::getAccessKeyId()const
 void DescribeDBClusterAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClusterAttributeRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeDBClusterAttributeRequest::getResourceOwnerAccount()const
 void DescribeDBClusterAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterAttributeRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DescribeDBClusterAttributeRequest::getDBClusterId()const
 void DescribeDBClusterAttributeRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterAttributeRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDBClusterAttributeRequest::getOwnerAccount()const
 void DescribeDBClusterAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClusterAttributeRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDBClusterAttributeRequest::getOwnerId()const
 void DescribeDBClusterAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

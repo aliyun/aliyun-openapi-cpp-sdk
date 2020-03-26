@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryAppDeviceListRequest;
 
 QueryAppDeviceListRequest::QueryAppDeviceListRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryAppDeviceList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAppDeviceListRequest::~QueryAppDeviceListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryAppDeviceListRequest::getCurrentPage()const
 void QueryAppDeviceListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTagList()const
@@ -44,12 +46,11 @@ std::vector<QueryAppDeviceListRequest::TagList> QueryAppDeviceListRequest::getTa
 void QueryAppDeviceListRequest::setTagList(const std::vector<TagList>& tagList)
 {
 	tagList_ = tagList;
-	int i = 0;
-	for(int i = 0; i!= tagList.size(); i++)	{
-		auto obj = tagList.at(i);
-		std::string str ="TagList."+ std::to_string(i);
-		setCoreParameter(str + ".TagName", obj.tagName);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
+	for(int dep1 = 0; dep1!= tagList.size(); dep1++) {
+		auto tagListObj = tagList.at(dep1);
+		std::string tagListObjStr = "TagList." + std::to_string(dep1 + 1);
+		setParameter(tagListObjStr + ".TagName", tagListObj.tagName);
+		setParameter(tagListObjStr + ".TagValue", tagListObj.tagValue);
 	}
 }
 
@@ -61,8 +62,9 @@ std::vector<std::string> QueryAppDeviceListRequest::getProductKeyList()const
 void QueryAppDeviceListRequest::setProductKeyList(const std::vector<std::string>& productKeyList)
 {
 	productKeyList_ = productKeyList;
-	for(int i = 0; i!= productKeyList.size(); i++)
-		setCoreParameter("ProductKeyList."+ std::to_string(i), productKeyList.at(i));
+	for(int dep1 = 0; dep1!= productKeyList.size(); dep1++) {
+		setParameter("ProductKeyList."+ std::to_string(dep1), productKeyList.at(dep1));
+	}
 }
 
 std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
@@ -73,8 +75,9 @@ std::vector<std::string> QueryAppDeviceListRequest::getCategoryKeyList()const
 void QueryAppDeviceListRequest::setCategoryKeyList(const std::vector<std::string>& categoryKeyList)
 {
 	categoryKeyList_ = categoryKeyList;
-	for(int i = 0; i!= categoryKeyList.size(); i++)
-		setCoreParameter("CategoryKeyList."+ std::to_string(i), categoryKeyList.at(i));
+	for(int dep1 = 0; dep1!= categoryKeyList.size(); dep1++) {
+		setParameter("CategoryKeyList."+ std::to_string(dep1), categoryKeyList.at(dep1));
+	}
 }
 
 std::string QueryAppDeviceListRequest::getIotInstanceId()const
@@ -85,7 +88,7 @@ std::string QueryAppDeviceListRequest::getIotInstanceId()const
 void QueryAppDeviceListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryAppDeviceListRequest::getPageSize()const
@@ -96,7 +99,7 @@ int QueryAppDeviceListRequest::getPageSize()const
 void QueryAppDeviceListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryAppDeviceListRequest::getAppKey()const
@@ -107,6 +110,6 @@ std::string QueryAppDeviceListRequest::getAppKey()const
 void QueryAppDeviceListRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setParameter("AppKey", appKey);
 }
 

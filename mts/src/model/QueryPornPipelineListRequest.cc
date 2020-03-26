@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryPornPipelineListRequest;
 
 QueryPornPipelineListRequest::QueryPornPipelineListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryPornPipelineList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPornPipelineListRequest::~QueryPornPipelineListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryPornPipelineListRequest::getResourceOwnerId()const
 void QueryPornPipelineListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryPornPipelineListRequest::getResourceOwnerAccount()const
 void QueryPornPipelineListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryPornPipelineListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryPornPipelineListRequest::getOwnerAccount()const
 void QueryPornPipelineListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryPornPipelineListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryPornPipelineListRequest::getOwnerId()const
 void QueryPornPipelineListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryPornPipelineListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryPornPipelineListRequest::getAccessKeyId()const
 void QueryPornPipelineListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryPornPipelineListRequest::getPipelineIds()const
@@ -88,6 +90,6 @@ std::string QueryPornPipelineListRequest::getPipelineIds()const
 void QueryPornPipelineListRequest::setPipelineIds(const std::string& pipelineIds)
 {
 	pipelineIds_ = pipelineIds;
-	setCoreParameter("PipelineIds", pipelineIds);
+	setParameter("PipelineIds", pipelineIds);
 }
 

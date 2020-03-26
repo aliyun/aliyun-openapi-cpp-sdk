@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaIpCityRequest;
 
 DescribeCaptchaIpCityRequest::DescribeCaptchaIpCityRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaIpCity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaIpCityRequest::~DescribeCaptchaIpCityRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCaptchaIpCityRequest::getType()const
 void DescribeCaptchaIpCityRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeCaptchaIpCityRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCaptchaIpCityRequest::getSourceIp()const
 void DescribeCaptchaIpCityRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaIpCityRequest::getConfigName()const
@@ -55,7 +57,7 @@ std::string DescribeCaptchaIpCityRequest::getConfigName()const
 void DescribeCaptchaIpCityRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaIpCityRequest::getRefExtId()const
@@ -66,7 +68,7 @@ std::string DescribeCaptchaIpCityRequest::getRefExtId()const
 void DescribeCaptchaIpCityRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaIpCityRequest::getTime()const
@@ -77,6 +79,6 @@ std::string DescribeCaptchaIpCityRequest::getTime()const
 void DescribeCaptchaIpCityRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setParameter("Time", time);
 }
 

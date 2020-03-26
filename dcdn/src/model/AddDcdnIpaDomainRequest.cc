@@ -35,7 +35,7 @@ std::string AddDcdnIpaDomainRequest::getSources()const
 void AddDcdnIpaDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string AddDcdnIpaDomainRequest::getResourceGroupId()const
@@ -46,7 +46,7 @@ std::string AddDcdnIpaDomainRequest::getResourceGroupId()const
 void AddDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AddDcdnIpaDomainRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string AddDcdnIpaDomainRequest::getSecurityToken()const
 void AddDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddDcdnIpaDomainRequest::getScope()const
@@ -68,7 +68,7 @@ std::string AddDcdnIpaDomainRequest::getScope()const
 void AddDcdnIpaDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string AddDcdnIpaDomainRequest::getTopLevelDomain()const
@@ -79,7 +79,7 @@ std::string AddDcdnIpaDomainRequest::getTopLevelDomain()const
 void AddDcdnIpaDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string AddDcdnIpaDomainRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string AddDcdnIpaDomainRequest::getOwnerAccount()const
 void AddDcdnIpaDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddDcdnIpaDomainRequest::getDomainName()const
@@ -101,7 +101,7 @@ std::string AddDcdnIpaDomainRequest::getDomainName()const
 void AddDcdnIpaDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddDcdnIpaDomainRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long AddDcdnIpaDomainRequest::getOwnerId()const
 void AddDcdnIpaDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddDcdnIpaDomainRequest::getCheckUrl()const
@@ -123,6 +123,6 @@ std::string AddDcdnIpaDomainRequest::getCheckUrl()const
 void AddDcdnIpaDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 

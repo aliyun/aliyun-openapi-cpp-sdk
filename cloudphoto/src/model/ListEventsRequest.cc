@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListEventsRequest;
 
 ListEventsRequest::ListEventsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEventsRequest::~ListEventsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListEventsRequest::getCursor()const
 void ListEventsRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setParameter("Cursor", cursor);
 }
 
 std::string ListEventsRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string ListEventsRequest::getStoreName()const
 void ListEventsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int ListEventsRequest::getSize()const
@@ -55,7 +57,7 @@ int ListEventsRequest::getSize()const
 void ListEventsRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListEventsRequest::getState()const
@@ -66,7 +68,7 @@ std::string ListEventsRequest::getState()const
 void ListEventsRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListEventsRequest::getDirection()const
@@ -77,6 +79,6 @@ std::string ListEventsRequest::getDirection()const
 void ListEventsRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 

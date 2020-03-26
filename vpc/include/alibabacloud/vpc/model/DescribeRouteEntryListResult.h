@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::string routeEntryId;
 					std::string type;
 					std::string routeTableId;
+					std::string description;
 					std::string ipVersion;
 					std::vector<RouteEntry::NextHop> nextHops;
 					std::string routeEntryName;

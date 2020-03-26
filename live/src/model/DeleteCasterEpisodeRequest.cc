@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterEpisodeRequest;
 
 DeleteCasterEpisodeRequest::DeleteCasterEpisodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterEpisode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterEpisodeRequest::~DeleteCasterEpisodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterEpisodeRequest::getCasterId()const
 void DeleteCasterEpisodeRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterEpisodeRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteCasterEpisodeRequest::getOwnerId()const
 void DeleteCasterEpisodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCasterEpisodeRequest::getEpisodeId()const
@@ -55,6 +57,6 @@ std::string DeleteCasterEpisodeRequest::getEpisodeId()const
 void DeleteCasterEpisodeRequest::setEpisodeId(const std::string& episodeId)
 {
 	episodeId_ = episodeId;
-	setCoreParameter("EpisodeId", episodeId);
+	setParameter("EpisodeId", episodeId);
 }
 

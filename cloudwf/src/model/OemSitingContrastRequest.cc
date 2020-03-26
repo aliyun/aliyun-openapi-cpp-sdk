@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemSitingContrastRequest;
 
 OemSitingContrastRequest::OemSitingContrastRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemSitingContrast")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemSitingContrastRequest::~OemSitingContrastRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemSitingContrastRequest::getAccessKeyId()const
 void OemSitingContrastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemSitingContrastRequest::getBid()const
@@ -44,6 +46,6 @@ long OemSitingContrastRequest::getBid()const
 void OemSitingContrastRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

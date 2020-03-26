@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::AttachPolicyToGroupRequest;
 
 AttachPolicyToGroupRequest::AttachPolicyToGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "AttachPolicyToGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachPolicyToGroupRequest::~AttachPolicyToGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string AttachPolicyToGroupRequest::getPolicyType()const
 void AttachPolicyToGroupRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string AttachPolicyToGroupRequest::getGroupName()const
@@ -44,7 +46,7 @@ std::string AttachPolicyToGroupRequest::getGroupName()const
 void AttachPolicyToGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string AttachPolicyToGroupRequest::getPolicyName()const
@@ -55,6 +57,6 @@ std::string AttachPolicyToGroupRequest::getPolicyName()const
 void AttachPolicyToGroupRequest::setPolicyName(const std::string& policyName)
 {
 	policyName_ = policyName;
-	setCoreParameter("PolicyName", policyName);
+	setParameter("PolicyName", policyName);
 }
 

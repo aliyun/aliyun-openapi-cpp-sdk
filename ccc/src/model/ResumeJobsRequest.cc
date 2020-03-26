@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ResumeJobsRequest;
 
 ResumeJobsRequest::ResumeJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ResumeJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeJobsRequest::~ResumeJobsRequest()
 {}
@@ -33,7 +35,7 @@ bool ResumeJobsRequest::getAll()const
 void ResumeJobsRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> ResumeJobsRequest::getJobReferenceId()const
@@ -44,8 +46,9 @@ std::vector<std::string> ResumeJobsRequest::getJobReferenceId()const
 void ResumeJobsRequest::setJobReferenceId(const std::vector<std::string>& jobReferenceId)
 {
 	jobReferenceId_ = jobReferenceId;
-	for(int i = 0; i!= jobReferenceId.size(); i++)
-		setCoreParameter("JobReferenceId."+ std::to_string(i), jobReferenceId.at(i));
+	for(int dep1 = 0; dep1!= jobReferenceId.size(); dep1++) {
+		setParameter("JobReferenceId."+ std::to_string(dep1), jobReferenceId.at(dep1));
+	}
 }
 
 std::string ResumeJobsRequest::getGroupId()const
@@ -56,7 +59,7 @@ std::string ResumeJobsRequest::getGroupId()const
 void ResumeJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::vector<std::string> ResumeJobsRequest::getJobId()const
@@ -67,8 +70,9 @@ std::vector<std::string> ResumeJobsRequest::getJobId()const
 void ResumeJobsRequest::setJobId(const std::vector<std::string>& jobId)
 {
 	jobId_ = jobId;
-	for(int i = 0; i!= jobId.size(); i++)
-		setCoreParameter("JobId."+ std::to_string(i), jobId.at(i));
+	for(int dep1 = 0; dep1!= jobId.size(); dep1++) {
+		setParameter("JobId."+ std::to_string(dep1), jobId.at(dep1));
+	}
 }
 
 std::string ResumeJobsRequest::getInstanceId()const
@@ -79,7 +83,7 @@ std::string ResumeJobsRequest::getInstanceId()const
 void ResumeJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ResumeJobsRequest::getScenarioId()const
@@ -90,6 +94,6 @@ std::string ResumeJobsRequest::getScenarioId()const
 void ResumeJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

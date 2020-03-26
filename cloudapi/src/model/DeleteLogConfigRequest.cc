@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteLogConfigRequest;
 
 DeleteLogConfigRequest::DeleteLogConfigRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLogConfigRequest::~DeleteLogConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLogConfigRequest::getAccessKeyId()const
 void DeleteLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteLogConfigRequest::getLogType()const
@@ -44,7 +46,7 @@ std::string DeleteLogConfigRequest::getLogType()const
 void DeleteLogConfigRequest::setLogType(const std::string& logType)
 {
 	logType_ = logType;
-	setCoreParameter("LogType", logType);
+	setParameter("LogType", logType);
 }
 
 std::string DeleteLogConfigRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteLogConfigRequest::getSecurityToken()const
 void DeleteLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

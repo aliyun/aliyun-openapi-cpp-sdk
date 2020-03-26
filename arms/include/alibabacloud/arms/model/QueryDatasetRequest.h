@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ARMS_EXPORT QueryDatasetRequest : public RpcServiceRequest
 			{
+			public:
 				struct OptionalDims
 				{
 					std::string type;
@@ -57,6 +58,8 @@ namespace AlibabaCloud
 				void setDateStr(const std::string& dateStr);
 				long getMinTime()const;
 				void setMinTime(long minTime);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				bool getReduceTail()const;
 				void setReduceTail(bool reduceTail);
 				long getMaxTime()const;
@@ -85,6 +88,7 @@ namespace AlibabaCloud
             private:
 				std::string dateStr_;
 				long minTime_;
+				std::string proxyUserId_;
 				bool reduceTail_;
 				long maxTime_;
 				std::vector<OptionalDims> optionalDims_;

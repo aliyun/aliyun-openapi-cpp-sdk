@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCloudProductFieldStatisticsRequest;
 
 DescribeCloudProductFieldStatisticsRequest::DescribeCloudProductFieldStatisticsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCloudProductFieldStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCloudProductFieldStatisticsRequest::~DescribeCloudProductFieldStatisticsRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeCloudProductFieldStatisticsRequest::getSourceIp()const
 void DescribeCloudProductFieldStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

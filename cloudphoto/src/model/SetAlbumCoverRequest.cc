@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::SetAlbumCoverRequest;
 
 SetAlbumCoverRequest::SetAlbumCoverRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "SetAlbumCover")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAlbumCoverRequest::~SetAlbumCoverRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetAlbumCoverRequest::getLibraryId()const
 void SetAlbumCoverRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long SetAlbumCoverRequest::getAlbumId()const
@@ -44,7 +46,7 @@ long SetAlbumCoverRequest::getAlbumId()const
 void SetAlbumCoverRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setParameter("AlbumId", std::to_string(albumId));
 }
 
 long SetAlbumCoverRequest::getPhotoId()const
@@ -55,7 +57,7 @@ long SetAlbumCoverRequest::getPhotoId()const
 void SetAlbumCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string SetAlbumCoverRequest::getStoreName()const
@@ -66,6 +68,6 @@ std::string SetAlbumCoverRequest::getStoreName()const
 void SetAlbumCoverRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

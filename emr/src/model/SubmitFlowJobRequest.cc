@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SubmitFlowJobRequest;
 
 SubmitFlowJobRequest::SubmitFlowJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SubmitFlowJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFlowJobRequest::~SubmitFlowJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitFlowJobRequest::getConf()const
 void SubmitFlowJobRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setParameter("Conf", conf);
 }
 
 std::string SubmitFlowJobRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string SubmitFlowJobRequest::getClusterId()const
 void SubmitFlowJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string SubmitFlowJobRequest::getJobId()const
@@ -55,7 +57,7 @@ std::string SubmitFlowJobRequest::getJobId()const
 void SubmitFlowJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string SubmitFlowJobRequest::getHostName()const
@@ -66,7 +68,7 @@ std::string SubmitFlowJobRequest::getHostName()const
 void SubmitFlowJobRequest::setHostName(const std::string& hostName)
 {
 	hostName_ = hostName;
-	setCoreParameter("HostName", hostName);
+	setParameter("HostName", hostName);
 }
 
 std::string SubmitFlowJobRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string SubmitFlowJobRequest::getRegionId()const
 void SubmitFlowJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SubmitFlowJobRequest::getProjectId()const
@@ -88,6 +90,6 @@ std::string SubmitFlowJobRequest::getProjectId()const
 void SubmitFlowJobRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

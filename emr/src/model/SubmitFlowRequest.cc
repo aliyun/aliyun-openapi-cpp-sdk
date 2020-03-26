@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SubmitFlowRequest;
 
 SubmitFlowRequest::SubmitFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SubmitFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitFlowRequest::~SubmitFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitFlowRequest::getConf()const
 void SubmitFlowRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setParameter("Conf", conf);
 }
 
 std::string SubmitFlowRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string SubmitFlowRequest::getRegionId()const
 void SubmitFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SubmitFlowRequest::getProjectId()const
@@ -55,7 +57,7 @@ std::string SubmitFlowRequest::getProjectId()const
 void SubmitFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string SubmitFlowRequest::getFlowId()const
@@ -66,6 +68,6 @@ std::string SubmitFlowRequest::getFlowId()const
 void SubmitFlowRequest::setFlowId(const std::string& flowId)
 {
 	flowId_ = flowId;
-	setCoreParameter("FlowId", flowId);
+	setParameter("FlowId", flowId);
 }
 

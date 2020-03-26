@@ -38,7 +38,9 @@ namespace AlibabaCloud
 					{
 						std::string driverId;
 						std::string gmtCreate;
+						std::string driverVersion;
 						std::string gmtModified;
+						std::string orderId;
 					};
 					int pageSize;
 					int currentPage;

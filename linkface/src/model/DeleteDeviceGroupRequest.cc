@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::DeleteDeviceGroupRequest;
 
 DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "DeleteDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDeviceGroupRequest::getIotId()const
 void DeleteDeviceGroupRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setBodyParameter("IotId", iotId);
 }
 
 std::string DeleteDeviceGroupRequest::getGroupId()const
@@ -44,18 +46,7 @@ std::string DeleteDeviceGroupRequest::getGroupId()const
 void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string DeleteDeviceGroupRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void DeleteDeviceGroupRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("GroupId", groupId);
 }
 
 std::string DeleteDeviceGroupRequest::getProductKey()const
@@ -66,6 +57,39 @@ std::string DeleteDeviceGroupRequest::getProductKey()const
 void DeleteDeviceGroupRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string DeleteDeviceGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteDeviceGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteDeviceGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteDeviceGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string DeleteDeviceGroupRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void DeleteDeviceGroupRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setBodyParameter("DeviceName", deviceName);
 }
 

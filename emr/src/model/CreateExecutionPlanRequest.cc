@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateExecutionPlanRequest;
 
 CreateExecutionPlanRequest::CreateExecutionPlanRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateExecutionPlan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateExecutionPlanRequest::~CreateExecutionPlanRequest()
 {}
@@ -33,7 +35,7 @@ long CreateExecutionPlanRequest::getResourceOwnerId()const
 void CreateExecutionPlanRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateExecutionPlanRequest::getTimeInterval()const
@@ -44,7 +46,7 @@ int CreateExecutionPlanRequest::getTimeInterval()const
 void CreateExecutionPlanRequest::setTimeInterval(int timeInterval)
 {
 	timeInterval_ = timeInterval;
-	setCoreParameter("TimeInterval", std::to_string(timeInterval));
+	setParameter("TimeInterval", std::to_string(timeInterval));
 }
 
 std::string CreateExecutionPlanRequest::getLogPath()const
@@ -55,7 +57,7 @@ std::string CreateExecutionPlanRequest::getLogPath()const
 void CreateExecutionPlanRequest::setLogPath(const std::string& logPath)
 {
 	logPath_ = logPath;
-	setCoreParameter("LogPath", logPath);
+	setParameter("LogPath", logPath);
 }
 
 std::string CreateExecutionPlanRequest::getClusterName()const
@@ -66,7 +68,7 @@ std::string CreateExecutionPlanRequest::getClusterName()const
 void CreateExecutionPlanRequest::setClusterName(const std::string& clusterName)
 {
 	clusterName_ = clusterName;
-	setCoreParameter("ClusterName", clusterName);
+	setParameter("ClusterName", clusterName);
 }
 
 std::string CreateExecutionPlanRequest::getConfigurations()const
@@ -77,7 +79,7 @@ std::string CreateExecutionPlanRequest::getConfigurations()const
 void CreateExecutionPlanRequest::setConfigurations(const std::string& configurations)
 {
 	configurations_ = configurations;
-	setCoreParameter("Configurations", configurations);
+	setParameter("Configurations", configurations);
 }
 
 bool CreateExecutionPlanRequest::getCreateClusterOnDemand()const
@@ -88,7 +90,7 @@ bool CreateExecutionPlanRequest::getCreateClusterOnDemand()const
 void CreateExecutionPlanRequest::setCreateClusterOnDemand(bool createClusterOnDemand)
 {
 	createClusterOnDemand_ = createClusterOnDemand;
-	setCoreParameter("CreateClusterOnDemand", createClusterOnDemand ? "true" : "false");
+	setParameter("CreateClusterOnDemand", createClusterOnDemand ? "true" : "false");
 }
 
 long CreateExecutionPlanRequest::getStartTime()const
@@ -99,7 +101,7 @@ long CreateExecutionPlanRequest::getStartTime()const
 void CreateExecutionPlanRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::vector<CreateExecutionPlanRequest::BootstrapAction> CreateExecutionPlanRequest::getBootstrapAction()const
@@ -110,13 +112,12 @@ std::vector<CreateExecutionPlanRequest::BootstrapAction> CreateExecutionPlanRequ
 void CreateExecutionPlanRequest::setBootstrapAction(const std::vector<BootstrapAction>& bootstrapAction)
 {
 	bootstrapAction_ = bootstrapAction;
-	int i = 0;
-	for(int i = 0; i!= bootstrapAction.size(); i++)	{
-		auto obj = bootstrapAction.at(i);
-		std::string str ="BootstrapAction."+ std::to_string(i);
-		setCoreParameter(str + ".Path", obj.path);
-		setCoreParameter(str + ".Arg", obj.arg);
-		setCoreParameter(str + ".Name", obj.name);
+	for(int dep1 = 0; dep1!= bootstrapAction.size(); dep1++) {
+		auto bootstrapActionObj = bootstrapAction.at(dep1);
+		std::string bootstrapActionObjStr = "BootstrapAction." + std::to_string(dep1 + 1);
+		setParameter(bootstrapActionObjStr + ".Path", bootstrapActionObj.path);
+		setParameter(bootstrapActionObjStr + ".Arg", bootstrapActionObj.arg);
+		setParameter(bootstrapActionObjStr + ".Name", bootstrapActionObj.name);
 	}
 }
 
@@ -128,7 +129,7 @@ std::string CreateExecutionPlanRequest::getEmrVer()const
 void CreateExecutionPlanRequest::setEmrVer(const std::string& emrVer)
 {
 	emrVer_ = emrVer;
-	setCoreParameter("EmrVer", emrVer);
+	setParameter("EmrVer", emrVer);
 }
 
 bool CreateExecutionPlanRequest::getIsOpenPublicIp()const
@@ -139,7 +140,7 @@ bool CreateExecutionPlanRequest::getIsOpenPublicIp()const
 void CreateExecutionPlanRequest::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
+	setParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 std::string CreateExecutionPlanRequest::getInstanceGeneration()const
@@ -150,7 +151,7 @@ std::string CreateExecutionPlanRequest::getInstanceGeneration()const
 void CreateExecutionPlanRequest::setInstanceGeneration(const std::string& instanceGeneration)
 {
 	instanceGeneration_ = instanceGeneration;
-	setCoreParameter("InstanceGeneration", instanceGeneration);
+	setParameter("InstanceGeneration", instanceGeneration);
 }
 
 std::string CreateExecutionPlanRequest::getClusterType()const
@@ -161,7 +162,7 @@ std::string CreateExecutionPlanRequest::getClusterType()const
 void CreateExecutionPlanRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 std::string CreateExecutionPlanRequest::getVSwitchId()const
@@ -172,7 +173,7 @@ std::string CreateExecutionPlanRequest::getVSwitchId()const
 void CreateExecutionPlanRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::vector<std::string> CreateExecutionPlanRequest::getOptionSoftWareList()const
@@ -183,8 +184,9 @@ std::vector<std::string> CreateExecutionPlanRequest::getOptionSoftWareList()cons
 void CreateExecutionPlanRequest::setOptionSoftWareList(const std::vector<std::string>& optionSoftWareList)
 {
 	optionSoftWareList_ = optionSoftWareList;
-	for(int i = 0; i!= optionSoftWareList.size(); i++)
-		setCoreParameter("OptionSoftWareList."+ std::to_string(i), optionSoftWareList.at(i));
+	for(int dep1 = 0; dep1!= optionSoftWareList.size(); dep1++) {
+		setParameter("OptionSoftWareList."+ std::to_string(dep1), optionSoftWareList.at(dep1));
+	}
 }
 
 std::string CreateExecutionPlanRequest::getNetType()const
@@ -195,7 +197,7 @@ std::string CreateExecutionPlanRequest::getNetType()const
 void CreateExecutionPlanRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setParameter("NetType", netType);
 }
 
 std::vector<CreateExecutionPlanRequest::EcsOrder> CreateExecutionPlanRequest::getEcsOrder()const
@@ -206,17 +208,16 @@ std::vector<CreateExecutionPlanRequest::EcsOrder> CreateExecutionPlanRequest::ge
 void CreateExecutionPlanRequest::setEcsOrder(const std::vector<EcsOrder>& ecsOrder)
 {
 	ecsOrder_ = ecsOrder;
-	int i = 0;
-	for(int i = 0; i!= ecsOrder.size(); i++)	{
-		auto obj = ecsOrder.at(i);
-		std::string str ="EcsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".NodeType", obj.nodeType);
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".Index", std::to_string(obj.index));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".DiskType", obj.diskType);
+	for(int dep1 = 0; dep1!= ecsOrder.size(); dep1++) {
+		auto ecsOrderObj = ecsOrder.at(dep1);
+		std::string ecsOrderObjStr = "EcsOrder." + std::to_string(dep1 + 1);
+		setParameter(ecsOrderObjStr + ".NodeType", ecsOrderObj.nodeType);
+		setParameter(ecsOrderObjStr + ".DiskCount", std::to_string(ecsOrderObj.diskCount));
+		setParameter(ecsOrderObjStr + ".NodeCount", std::to_string(ecsOrderObj.nodeCount));
+		setParameter(ecsOrderObjStr + ".DiskCapacity", std::to_string(ecsOrderObj.diskCapacity));
+		setParameter(ecsOrderObjStr + ".Index", std::to_string(ecsOrderObj.index));
+		setParameter(ecsOrderObjStr + ".InstanceType", ecsOrderObj.instanceType);
+		setParameter(ecsOrderObjStr + ".DiskType", ecsOrderObj.diskType);
 	}
 }
 
@@ -228,7 +229,7 @@ std::string CreateExecutionPlanRequest::getName()const
 void CreateExecutionPlanRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateExecutionPlanRequest::getZoneId()const
@@ -239,7 +240,7 @@ std::string CreateExecutionPlanRequest::getZoneId()const
 void CreateExecutionPlanRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 bool CreateExecutionPlanRequest::getUseCustomHiveMetaDB()const
@@ -250,7 +251,7 @@ bool CreateExecutionPlanRequest::getUseCustomHiveMetaDB()const
 void CreateExecutionPlanRequest::setUseCustomHiveMetaDB(bool useCustomHiveMetaDB)
 {
 	useCustomHiveMetaDB_ = useCustomHiveMetaDB;
-	setCoreParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
+	setParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB ? "true" : "false");
 }
 
 bool CreateExecutionPlanRequest::getInitCustomHiveMetaDB()const
@@ -261,7 +262,7 @@ bool CreateExecutionPlanRequest::getInitCustomHiveMetaDB()const
 void CreateExecutionPlanRequest::setInitCustomHiveMetaDB(bool initCustomHiveMetaDB)
 {
 	initCustomHiveMetaDB_ = initCustomHiveMetaDB;
-	setCoreParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
+	setParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB ? "true" : "false");
 }
 
 bool CreateExecutionPlanRequest::getIoOptimized()const
@@ -272,7 +273,7 @@ bool CreateExecutionPlanRequest::getIoOptimized()const
 void CreateExecutionPlanRequest::setIoOptimized(bool ioOptimized)
 {
 	ioOptimized_ = ioOptimized;
-	setCoreParameter("IoOptimized", ioOptimized ? "true" : "false");
+	setParameter("IoOptimized", ioOptimized ? "true" : "false");
 }
 
 std::string CreateExecutionPlanRequest::getSecurityGroupId()const
@@ -283,7 +284,7 @@ std::string CreateExecutionPlanRequest::getSecurityGroupId()const
 void CreateExecutionPlanRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 bool CreateExecutionPlanRequest::getEasEnable()const
@@ -294,7 +295,7 @@ bool CreateExecutionPlanRequest::getEasEnable()const
 void CreateExecutionPlanRequest::setEasEnable(bool easEnable)
 {
 	easEnable_ = easEnable;
-	setCoreParameter("EasEnable", easEnable ? "true" : "false");
+	setParameter("EasEnable", easEnable ? "true" : "false");
 }
 
 std::vector<std::string> CreateExecutionPlanRequest::getJobIdList()const
@@ -305,8 +306,9 @@ std::vector<std::string> CreateExecutionPlanRequest::getJobIdList()const
 void CreateExecutionPlanRequest::setJobIdList(const std::vector<std::string>& jobIdList)
 {
 	jobIdList_ = jobIdList;
-	for(int i = 0; i!= jobIdList.size(); i++)
-		setCoreParameter("JobIdList."+ std::to_string(i), jobIdList.at(i));
+	for(int dep1 = 0; dep1!= jobIdList.size(); dep1++) {
+		setParameter("JobIdList."+ std::to_string(dep1), jobIdList.at(dep1));
+	}
 }
 
 std::string CreateExecutionPlanRequest::getAccessKeyId()const
@@ -317,7 +319,7 @@ std::string CreateExecutionPlanRequest::getAccessKeyId()const
 void CreateExecutionPlanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateExecutionPlanRequest::getDayOfMonth()const
@@ -328,7 +330,7 @@ std::string CreateExecutionPlanRequest::getDayOfMonth()const
 void CreateExecutionPlanRequest::setDayOfMonth(const std::string& dayOfMonth)
 {
 	dayOfMonth_ = dayOfMonth;
-	setCoreParameter("DayOfMonth", dayOfMonth);
+	setParameter("DayOfMonth", dayOfMonth);
 }
 
 std::string CreateExecutionPlanRequest::getRegionId()const
@@ -339,7 +341,7 @@ std::string CreateExecutionPlanRequest::getRegionId()const
 void CreateExecutionPlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool CreateExecutionPlanRequest::getUseLocalMetaDb()const
@@ -350,7 +352,7 @@ bool CreateExecutionPlanRequest::getUseLocalMetaDb()const
 void CreateExecutionPlanRequest::setUseLocalMetaDb(bool useLocalMetaDb)
 {
 	useLocalMetaDb_ = useLocalMetaDb;
-	setCoreParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
+	setParameter("UseLocalMetaDb", useLocalMetaDb ? "true" : "false");
 }
 
 std::string CreateExecutionPlanRequest::getUserDefinedEmrEcsRole()const
@@ -361,7 +363,7 @@ std::string CreateExecutionPlanRequest::getUserDefinedEmrEcsRole()const
 void CreateExecutionPlanRequest::setUserDefinedEmrEcsRole(const std::string& userDefinedEmrEcsRole)
 {
 	userDefinedEmrEcsRole_ = userDefinedEmrEcsRole;
-	setCoreParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+	setParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
 }
 
 std::string CreateExecutionPlanRequest::getClusterId()const
@@ -372,7 +374,7 @@ std::string CreateExecutionPlanRequest::getClusterId()const
 void CreateExecutionPlanRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateExecutionPlanRequest::getTimeUnit()const
@@ -383,7 +385,7 @@ std::string CreateExecutionPlanRequest::getTimeUnit()const
 void CreateExecutionPlanRequest::setTimeUnit(const std::string& timeUnit)
 {
 	timeUnit_ = timeUnit;
-	setCoreParameter("TimeUnit", timeUnit);
+	setParameter("TimeUnit", timeUnit);
 }
 
 std::string CreateExecutionPlanRequest::getVpcId()const
@@ -394,7 +396,7 @@ std::string CreateExecutionPlanRequest::getVpcId()const
 void CreateExecutionPlanRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateExecutionPlanRequest::getWorkflowDefinition()const
@@ -405,7 +407,7 @@ std::string CreateExecutionPlanRequest::getWorkflowDefinition()const
 void CreateExecutionPlanRequest::setWorkflowDefinition(const std::string& workflowDefinition)
 {
 	workflowDefinition_ = workflowDefinition;
-	setCoreParameter("WorkflowDefinition", workflowDefinition);
+	setParameter("WorkflowDefinition", workflowDefinition);
 }
 
 std::string CreateExecutionPlanRequest::getDayOfWeek()const
@@ -416,7 +418,7 @@ std::string CreateExecutionPlanRequest::getDayOfWeek()const
 void CreateExecutionPlanRequest::setDayOfWeek(const std::string& dayOfWeek)
 {
 	dayOfWeek_ = dayOfWeek;
-	setCoreParameter("DayOfWeek", dayOfWeek);
+	setParameter("DayOfWeek", dayOfWeek);
 }
 
 std::string CreateExecutionPlanRequest::getStrategy()const
@@ -427,7 +429,7 @@ std::string CreateExecutionPlanRequest::getStrategy()const
 void CreateExecutionPlanRequest::setStrategy(const std::string& strategy)
 {
 	strategy_ = strategy;
-	setCoreParameter("Strategy", strategy);
+	setParameter("Strategy", strategy);
 }
 
 std::vector<CreateExecutionPlanRequest::Config> CreateExecutionPlanRequest::getConfig()const
@@ -438,16 +440,15 @@ std::vector<CreateExecutionPlanRequest::Config> CreateExecutionPlanRequest::getC
 void CreateExecutionPlanRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".FileName", obj.fileName);
-		setCoreParameter(str + ".Encrypt", obj.encrypt);
-		setCoreParameter(str + ".Replace", obj.replace);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1 + 1);
+		setParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setParameter(configObjStr + ".FileName", configObj.fileName);
+		setParameter(configObjStr + ".Encrypt", configObj.encrypt);
+		setParameter(configObjStr + ".Replace", configObj.replace);
+		setParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setParameter(configObjStr + ".ServiceName", configObj.serviceName);
 	}
 }
 
@@ -459,7 +460,7 @@ bool CreateExecutionPlanRequest::getHighAvailabilityEnable()const
 void CreateExecutionPlanRequest::setHighAvailabilityEnable(bool highAvailabilityEnable)
 {
 	highAvailabilityEnable_ = highAvailabilityEnable;
-	setCoreParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
+	setParameter("HighAvailabilityEnable", highAvailabilityEnable ? "true" : "false");
 }
 
 bool CreateExecutionPlanRequest::getLogEnable()const
@@ -470,6 +471,6 @@ bool CreateExecutionPlanRequest::getLogEnable()const
 void CreateExecutionPlanRequest::setLogEnable(bool logEnable)
 {
 	logEnable_ = logEnable;
-	setCoreParameter("LogEnable", logEnable ? "true" : "false");
+	setParameter("LogEnable", logEnable ? "true" : "false");
 }
 

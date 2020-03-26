@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAuthorizedAppsRequest;
 
 DescribeAuthorizedAppsRequest::DescribeAuthorizedAppsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeAuthorizedApps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthorizedAppsRequest::~DescribeAuthorizedAppsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAuthorizedAppsRequest::getStageName()const
 void DescribeAuthorizedAppsRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeAuthorizedAppsRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeAuthorizedAppsRequest::getGroupId()const
 void DescribeAuthorizedAppsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long DescribeAuthorizedAppsRequest::getAppOwnerId()const
@@ -55,7 +57,7 @@ long DescribeAuthorizedAppsRequest::getAppOwnerId()const
 void DescribeAuthorizedAppsRequest::setAppOwnerId(long appOwnerId)
 {
 	appOwnerId_ = appOwnerId;
-	setCoreParameter("AppOwnerId", std::to_string(appOwnerId));
+	setParameter("AppOwnerId", std::to_string(appOwnerId));
 }
 
 int DescribeAuthorizedAppsRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribeAuthorizedAppsRequest::getPageNumber()const
 void DescribeAuthorizedAppsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAuthorizedAppsRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DescribeAuthorizedAppsRequest::getAccessKeyId()const
 void DescribeAuthorizedAppsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAuthorizedAppsRequest::getAppName()const
@@ -88,7 +90,7 @@ std::string DescribeAuthorizedAppsRequest::getAppName()const
 void DescribeAuthorizedAppsRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
@@ -99,7 +101,7 @@ std::string DescribeAuthorizedAppsRequest::getSecurityToken()const
 void DescribeAuthorizedAppsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DescribeAuthorizedAppsRequest::getAppId()const
@@ -110,7 +112,7 @@ long DescribeAuthorizedAppsRequest::getAppId()const
 void DescribeAuthorizedAppsRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 int DescribeAuthorizedAppsRequest::getPageSize()const
@@ -121,7 +123,7 @@ int DescribeAuthorizedAppsRequest::getPageSize()const
 void DescribeAuthorizedAppsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAuthorizedAppsRequest::getApiId()const
@@ -132,6 +134,6 @@ std::string DescribeAuthorizedAppsRequest::getApiId()const
 void DescribeAuthorizedAppsRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

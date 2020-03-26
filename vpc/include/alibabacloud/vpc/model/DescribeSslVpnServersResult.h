@@ -38,7 +38,9 @@ namespace AlibabaCloud
 					bool compress;
 					int connections;
 					std::string clientIpPool;
+					std::string iDaaSInstanceId;
 					int maxConnections;
+					bool enableMultiFactorAuth;
 					std::string sslVpnServerId;
 					long createTime;
 					int port;

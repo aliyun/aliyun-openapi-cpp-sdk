@@ -22,7 +22,7 @@ ListConnectedClustersRequest::ListConnectedClustersRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/connected-clusters");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListConnectedClustersRequest::~ListConnectedClustersRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterConfigRequest;
 
 SetCasterConfigRequest::SetCasterConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterConfigRequest::~SetCasterConfigRequest()
 {}
@@ -33,7 +35,7 @@ int SetCasterConfigRequest::getChannelEnable()const
 void SetCasterConfigRequest::setChannelEnable(int channelEnable)
 {
 	channelEnable_ = channelEnable;
-	setCoreParameter("ChannelEnable", std::to_string(channelEnable));
+	setParameter("ChannelEnable", std::to_string(channelEnable));
 }
 
 int SetCasterConfigRequest::getProgramEffect()const
@@ -44,7 +46,7 @@ int SetCasterConfigRequest::getProgramEffect()const
 void SetCasterConfigRequest::setProgramEffect(int programEffect)
 {
 	programEffect_ = programEffect;
-	setCoreParameter("ProgramEffect", std::to_string(programEffect));
+	setParameter("ProgramEffect", std::to_string(programEffect));
 }
 
 std::string SetCasterConfigRequest::getProgramName()const
@@ -55,7 +57,7 @@ std::string SetCasterConfigRequest::getProgramName()const
 void SetCasterConfigRequest::setProgramName(const std::string& programName)
 {
 	programName_ = programName;
-	setCoreParameter("ProgramName", programName);
+	setParameter("ProgramName", programName);
 }
 
 std::string SetCasterConfigRequest::getRecordConfig()const
@@ -66,7 +68,7 @@ std::string SetCasterConfigRequest::getRecordConfig()const
 void SetCasterConfigRequest::setRecordConfig(const std::string& recordConfig)
 {
 	recordConfig_ = recordConfig;
-	setCoreParameter("RecordConfig", recordConfig);
+	setParameter("RecordConfig", recordConfig);
 }
 
 std::string SetCasterConfigRequest::getUrgentMaterialId()const
@@ -77,7 +79,7 @@ std::string SetCasterConfigRequest::getUrgentMaterialId()const
 void SetCasterConfigRequest::setUrgentMaterialId(const std::string& urgentMaterialId)
 {
 	urgentMaterialId_ = urgentMaterialId;
-	setCoreParameter("UrgentMaterialId", urgentMaterialId);
+	setParameter("UrgentMaterialId", urgentMaterialId);
 }
 
 std::string SetCasterConfigRequest::getTranscodeConfig()const
@@ -88,7 +90,7 @@ std::string SetCasterConfigRequest::getTranscodeConfig()const
 void SetCasterConfigRequest::setTranscodeConfig(const std::string& transcodeConfig)
 {
 	transcodeConfig_ = transcodeConfig;
-	setCoreParameter("TranscodeConfig", transcodeConfig);
+	setParameter("TranscodeConfig", transcodeConfig);
 }
 
 std::string SetCasterConfigRequest::getCasterName()const
@@ -99,7 +101,7 @@ std::string SetCasterConfigRequest::getCasterName()const
 void SetCasterConfigRequest::setCasterName(const std::string& casterName)
 {
 	casterName_ = casterName;
-	setCoreParameter("CasterName", casterName);
+	setParameter("CasterName", casterName);
 }
 
 std::string SetCasterConfigRequest::getSideOutputUrl()const
@@ -110,7 +112,7 @@ std::string SetCasterConfigRequest::getSideOutputUrl()const
 void SetCasterConfigRequest::setSideOutputUrl(const std::string& sideOutputUrl)
 {
 	sideOutputUrl_ = sideOutputUrl;
-	setCoreParameter("SideOutputUrl", sideOutputUrl);
+	setParameter("SideOutputUrl", sideOutputUrl);
 }
 
 std::string SetCasterConfigRequest::getCasterId()const
@@ -121,7 +123,7 @@ std::string SetCasterConfigRequest::getCasterId()const
 void SetCasterConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 std::string SetCasterConfigRequest::getDomainName()const
@@ -132,7 +134,7 @@ std::string SetCasterConfigRequest::getDomainName()const
 void SetCasterConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetCasterConfigRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long SetCasterConfigRequest::getOwnerId()const
 void SetCasterConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 float SetCasterConfigRequest::getDelay()const
@@ -154,7 +156,7 @@ float SetCasterConfigRequest::getDelay()const
 void SetCasterConfigRequest::setDelay(float delay)
 {
 	delay_ = delay;
-	setCoreParameter("Delay", std::to_string(delay));
+	setParameter("Delay", std::to_string(delay));
 }
 
 std::string SetCasterConfigRequest::getCallbackUrl()const
@@ -165,6 +167,6 @@ std::string SetCasterConfigRequest::getCallbackUrl()const
 void SetCasterConfigRequest::setCallbackUrl(const std::string& callbackUrl)
 {
 	callbackUrl_ = callbackUrl;
-	setCoreParameter("CallbackUrl", callbackUrl);
+	setParameter("CallbackUrl", callbackUrl);
 }
 

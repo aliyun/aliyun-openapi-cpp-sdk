@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutEventRuleRequest : public RpcServiceRequest
 			{
+			public:
 				struct EventPattern
 				{
 					std::vector<std::string> levelList;

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainOnlineUserNumRequest;
 
 DescribeLiveDomainOnlineUserNumRequest::DescribeLiveDomainOnlineUserNumRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainOnlineUserNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainOnlineUserNumRequest::~DescribeLiveDomainOnlineUserNumRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainOnlineUserNumRequest::getQueryTime()const
 void DescribeLiveDomainOnlineUserNumRequest::setQueryTime(const std::string& queryTime)
 {
 	queryTime_ = queryTime;
-	setCoreParameter("QueryTime", queryTime);
+	setParameter("QueryTime", queryTime);
 }
 
 std::string DescribeLiveDomainOnlineUserNumRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainOnlineUserNumRequest::getDomainName()const
 void DescribeLiveDomainOnlineUserNumRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainOnlineUserNumRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeLiveDomainOnlineUserNumRequest::getOwnerId()const
 void DescribeLiveDomainOnlineUserNumRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitSnapshotJobRequest;
 
 SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitSnapshotJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitSnapshotJobRequest::getResourceOwnerId()const
 void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSnapshotJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitSnapshotJobRequest::getAccessKeyId()const
 void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSnapshotJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitSnapshotJobRequest::getUserData()const
 void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
@@ -66,7 +68,7 @@ long SubmitSnapshotJobRequest::getSpecifiedOffsetTime()const
 void SubmitSnapshotJobRequest::setSpecifiedOffsetTime(long specifiedOffsetTime)
 {
 	specifiedOffsetTime_ = specifiedOffsetTime;
-	setCoreParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
+	setParameter("SpecifiedOffsetTime", std::to_string(specifiedOffsetTime));
 }
 
 std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
@@ -77,7 +79,7 @@ std::string SubmitSnapshotJobRequest::getSpriteSnapshotConfig()const
 void SubmitSnapshotJobRequest::setSpriteSnapshotConfig(const std::string& spriteSnapshotConfig)
 {
 	spriteSnapshotConfig_ = spriteSnapshotConfig;
-	setCoreParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
+	setParameter("SpriteSnapshotConfig", spriteSnapshotConfig);
 }
 
 std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
@@ -88,7 +90,7 @@ std::string SubmitSnapshotJobRequest::getSnapshotTemplateId()const
 void SubmitSnapshotJobRequest::setSnapshotTemplateId(const std::string& snapshotTemplateId)
 {
 	snapshotTemplateId_ = snapshotTemplateId;
-	setCoreParameter("SnapshotTemplateId", snapshotTemplateId);
+	setParameter("SnapshotTemplateId", snapshotTemplateId);
 }
 
 std::string SubmitSnapshotJobRequest::getHeight()const
@@ -99,7 +101,7 @@ std::string SubmitSnapshotJobRequest::getHeight()const
 void SubmitSnapshotJobRequest::setHeight(const std::string& height)
 {
 	height_ = height;
-	setCoreParameter("Height", height);
+	setParameter("Height", height);
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
 void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SubmitSnapshotJobRequest::getCount()const
@@ -121,7 +123,7 @@ long SubmitSnapshotJobRequest::getCount()const
 void SubmitSnapshotJobRequest::setCount(long count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 
 std::string SubmitSnapshotJobRequest::getVideoId()const
@@ -132,7 +134,7 @@ std::string SubmitSnapshotJobRequest::getVideoId()const
 void SubmitSnapshotJobRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long SubmitSnapshotJobRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long SubmitSnapshotJobRequest::getOwnerId()const
 void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSnapshotJobRequest::getWidth()const
@@ -154,7 +156,7 @@ std::string SubmitSnapshotJobRequest::getWidth()const
 void SubmitSnapshotJobRequest::setWidth(const std::string& width)
 {
 	width_ = width;
-	setCoreParameter("Width", width);
+	setParameter("Width", width);
 }
 
 std::string SubmitSnapshotJobRequest::getFileUrl()const
@@ -165,7 +167,7 @@ std::string SubmitSnapshotJobRequest::getFileUrl()const
 void SubmitSnapshotJobRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
-	setCoreParameter("FileUrl", fileUrl);
+	setParameter("FileUrl", fileUrl);
 }
 
 long SubmitSnapshotJobRequest::getInterval()const
@@ -176,6 +178,6 @@ long SubmitSnapshotJobRequest::getInterval()const
 void SubmitSnapshotJobRequest::setInterval(long interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setParameter("Interval", std::to_string(interval));
 }
 

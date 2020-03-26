@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetShowCommentsRequest;
 
 TaobaoFilmGetShowCommentsRequest::TaobaoFilmGetShowCommentsRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetShowComments")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetShowCommentsRequest::~TaobaoFilmGetShowCommentsRequest()
 {}
@@ -33,7 +35,7 @@ long TaobaoFilmGetShowCommentsRequest::getShowId()const
 void TaobaoFilmGetShowCommentsRequest::setShowId(long showId)
 {
 	showId_ = showId;
-	setCoreParameter("ShowId", std::to_string(showId));
+	setParameter("ShowId", std::to_string(showId));
 }
 
 long TaobaoFilmGetShowCommentsRequest::getPageIndex()const
@@ -44,7 +46,7 @@ long TaobaoFilmGetShowCommentsRequest::getPageIndex()const
 void TaobaoFilmGetShowCommentsRequest::setPageIndex(long pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string TaobaoFilmGetShowCommentsRequest::getParamsJson()const
@@ -55,6 +57,6 @@ std::string TaobaoFilmGetShowCommentsRequest::getParamsJson()const
 void TaobaoFilmGetShowCommentsRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

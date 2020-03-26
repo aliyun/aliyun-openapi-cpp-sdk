@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QuerySupplementDetailRequest;
 
 QuerySupplementDetailRequest::QuerySupplementDetailRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QuerySupplementDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySupplementDetailRequest::~QuerySupplementDetailRequest()
 {}
@@ -33,6 +35,6 @@ long QuerySupplementDetailRequest::getId()const
 void QuerySupplementDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

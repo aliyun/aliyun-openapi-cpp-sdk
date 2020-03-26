@@ -35,10 +35,14 @@ namespace AlibabaCloud
 				AddCasterComponentRequest();
 				~AddCasterComponentRequest();
 
+				std::string getHtmlLayerContent()const;
+				void setHtmlLayerContent(const std::string& htmlLayerContent);
 				std::string getImageLayerContent()const;
 				void setImageLayerContent(const std::string& imageLayerContent);
 				std::string getComponentName()const;
 				void setComponentName(const std::string& componentName);
+				std::string getLayerOrder()const;
+				void setLayerOrder(const std::string& layerOrder);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				std::string getComponentLayer()const;
@@ -57,8 +61,10 @@ namespace AlibabaCloud
 				void setTextLayerContent(const std::string& textLayerContent);
 
             private:
+				std::string htmlLayerContent_;
 				std::string imageLayerContent_;
 				std::string componentName_;
+				std::string layerOrder_;
 				std::string casterId_;
 				std::string componentLayer_;
 				long ownerId_;

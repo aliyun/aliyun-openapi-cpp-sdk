@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteMediaRequest;
 
 DeleteMediaRequest::DeleteMediaRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMediaRequest::~DeleteMediaRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteMediaRequest::getInstanceId()const
 void DeleteMediaRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteMediaRequest::getName()const
@@ -44,7 +46,7 @@ std::string DeleteMediaRequest::getName()const
 void DeleteMediaRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DeleteMediaRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string DeleteMediaRequest::getAccessKeyId()const
 void DeleteMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

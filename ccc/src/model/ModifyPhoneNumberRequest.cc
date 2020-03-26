@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyPhoneNumberRequest;
 
 ModifyPhoneNumberRequest::ModifyPhoneNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyPhoneNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPhoneNumberRequest::~ModifyPhoneNumberRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyPhoneNumberRequest::getContactFlowId()const
 void ModifyPhoneNumberRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", contactFlowId);
+	setParameter("ContactFlowId", contactFlowId);
 }
 
 std::string ModifyPhoneNumberRequest::getUsage()const
@@ -44,7 +46,7 @@ std::string ModifyPhoneNumberRequest::getUsage()const
 void ModifyPhoneNumberRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", usage);
+	setParameter("Usage", usage);
 }
 
 std::string ModifyPhoneNumberRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyPhoneNumberRequest::getAccessKeyId()const
 void ModifyPhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyPhoneNumberRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string ModifyPhoneNumberRequest::getInstanceId()const
 void ModifyPhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyPhoneNumberRequest::getPhoneNumberId()const
@@ -77,7 +79,7 @@ std::string ModifyPhoneNumberRequest::getPhoneNumberId()const
 void ModifyPhoneNumberRequest::setPhoneNumberId(const std::string& phoneNumberId)
 {
 	phoneNumberId_ = phoneNumberId;
-	setCoreParameter("PhoneNumberId", phoneNumberId);
+	setParameter("PhoneNumberId", phoneNumberId);
 }
 
 std::vector<std::string> ModifyPhoneNumberRequest::getSkillGroupId()const
@@ -88,7 +90,8 @@ std::vector<std::string> ModifyPhoneNumberRequest::getSkillGroupId()const
 void ModifyPhoneNumberRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 

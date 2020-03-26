@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateDomainExtensionRequest;
 
 CreateDomainExtensionRequest::CreateDomainExtensionRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateDomainExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDomainExtensionRequest::~CreateDomainExtensionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateDomainExtensionRequest::getAccess_key_id()const
 void CreateDomainExtensionRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long CreateDomainExtensionRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateDomainExtensionRequest::getResourceOwnerId()const
 void CreateDomainExtensionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateDomainExtensionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string CreateDomainExtensionRequest::getRegionId()const
 void CreateDomainExtensionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int CreateDomainExtensionRequest::getListenerPort()const
@@ -66,7 +68,7 @@ int CreateDomainExtensionRequest::getListenerPort()const
 void CreateDomainExtensionRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string CreateDomainExtensionRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateDomainExtensionRequest::getResourceOwnerAccount()const
 void CreateDomainExtensionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateDomainExtensionRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateDomainExtensionRequest::getOwnerAccount()const
 void CreateDomainExtensionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateDomainExtensionRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long CreateDomainExtensionRequest::getOwnerId()const
 void CreateDomainExtensionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateDomainExtensionRequest::getServerCertificateId()const
@@ -110,7 +112,7 @@ std::string CreateDomainExtensionRequest::getServerCertificateId()const
 void CreateDomainExtensionRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string CreateDomainExtensionRequest::getTags()const
@@ -121,7 +123,7 @@ std::string CreateDomainExtensionRequest::getTags()const
 void CreateDomainExtensionRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string CreateDomainExtensionRequest::getLoadBalancerId()const
@@ -132,7 +134,7 @@ std::string CreateDomainExtensionRequest::getLoadBalancerId()const
 void CreateDomainExtensionRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 
 std::string CreateDomainExtensionRequest::getDomain()const
@@ -143,6 +145,6 @@ std::string CreateDomainExtensionRequest::getDomain()const
 void CreateDomainExtensionRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

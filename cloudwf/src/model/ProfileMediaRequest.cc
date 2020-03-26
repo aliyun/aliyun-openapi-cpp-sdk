@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileMediaRequest;
 
 ProfileMediaRequest::ProfileMediaRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileMediaRequest::~ProfileMediaRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProfileMediaRequest::getBeginDate()const
 void ProfileMediaRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setParameter("BeginDate", beginDate);
 }
 
 std::string ProfileMediaRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ProfileMediaRequest::getAccessKeyId()const
 void ProfileMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ProfileMediaRequest::getEndDate()const
@@ -55,7 +57,7 @@ std::string ProfileMediaRequest::getEndDate()const
 void ProfileMediaRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 int ProfileMediaRequest::getDataType()const
@@ -66,7 +68,7 @@ int ProfileMediaRequest::getDataType()const
 void ProfileMediaRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setParameter("DataType", std::to_string(dataType));
 }
 
 long ProfileMediaRequest::getGsid()const
@@ -77,6 +79,6 @@ long ProfileMediaRequest::getGsid()const
 void ProfileMediaRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

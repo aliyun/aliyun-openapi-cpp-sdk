@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListSecretsRequest;
 ListSecretsRequest::ListSecretsRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListSecrets")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListSecretsRequest::~ListSecretsRequest()

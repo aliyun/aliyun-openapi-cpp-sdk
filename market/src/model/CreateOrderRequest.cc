@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::CreateOrderRequest;
 
 CreateOrderRequest::CreateOrderRequest() :
 	RpcServiceRequest("market", "2015-11-01", "CreateOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderRequest::~CreateOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateOrderRequest::getOrderSouce()const
 void CreateOrderRequest::setOrderSouce(const std::string& orderSouce)
 {
 	orderSouce_ = orderSouce;
-	setCoreParameter("OrderSouce", orderSouce);
+	setParameter("OrderSouce", orderSouce);
 }
 
 std::string CreateOrderRequest::getCommodity()const
@@ -44,7 +46,7 @@ std::string CreateOrderRequest::getCommodity()const
 void CreateOrderRequest::setCommodity(const std::string& commodity)
 {
 	commodity_ = commodity;
-	setCoreParameter("Commodity", commodity);
+	setParameter("Commodity", commodity);
 }
 
 std::string CreateOrderRequest::getClientToken()const
@@ -55,7 +57,7 @@ std::string CreateOrderRequest::getClientToken()const
 void CreateOrderRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateOrderRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string CreateOrderRequest::getOwnerId()const
 void CreateOrderRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string CreateOrderRequest::getPaymentType()const
@@ -77,7 +79,7 @@ std::string CreateOrderRequest::getPaymentType()const
 void CreateOrderRequest::setPaymentType(const std::string& paymentType)
 {
 	paymentType_ = paymentType;
-	setCoreParameter("PaymentType", paymentType);
+	setParameter("PaymentType", paymentType);
 }
 
 std::string CreateOrderRequest::getOrderType()const
@@ -88,6 +90,6 @@ std::string CreateOrderRequest::getOrderType()const
 void CreateOrderRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

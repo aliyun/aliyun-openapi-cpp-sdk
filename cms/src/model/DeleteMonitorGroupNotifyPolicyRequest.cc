@@ -35,7 +35,7 @@ std::string DeleteMonitorGroupNotifyPolicyRequest::getPolicyType()const
 void DeleteMonitorGroupNotifyPolicyRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string DeleteMonitorGroupNotifyPolicyRequest::getGroupId()const
@@ -46,6 +46,6 @@ std::string DeleteMonitorGroupNotifyPolicyRequest::getGroupId()const
 void DeleteMonitorGroupNotifyPolicyRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 

@@ -67,12 +67,15 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 			domainExtensionsObject.serverCertificateId = valueDomainExtensionsDomainExtension["ServerCertificateId"].asString();
 		domainExtensions_.push_back(domainExtensionsObject);
 	}
+	auto allAclIds = value["AclIds"]["AclId"];
+	for (const auto &item : allAclIds)
+		aclIds_.push_back(item.asString());
 	if(!value["ListenerPort"].isNull())
 		listenerPort_ = std::stoi(value["ListenerPort"].asString());
 	if(!value["BackendServerPort"].isNull())
 		backendServerPort_ = std::stoi(value["BackendServerPort"].asString());
 	if(!value["BackendProtocol"].isNull())
-		backendProtocol_ = std::stoi(value["BackendProtocol"].asString());
+		backendProtocol_ = value["BackendProtocol"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
 	if(!value["Status"].isNull())
@@ -149,42 +152,32 @@ void DescribeLoadBalancerHTTPSListenerAttributeResult::parse(const std::string &
 		tLSCipherPolicy_ = value["TLSCipherPolicy"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["XForwardedFor_SLBPORT"].isNull())
+		xForwardedFor_SLBPORT_ = value["XForwardedFor_SLBPORT"].asString();
+	if(!value["XForwardedFor_ClientSrcPort"].isNull())
+		xForwardedFor_ClientSrcPort_ = value["XForwardedFor_ClientSrcPort"].asString();
+	if(!value["XForwardedFor_ClientCertSubjectDN"].isNull())
+		xForwardedFor_ClientCertSubjectDN_ = value["XForwardedFor_ClientCertSubjectDN"].asString();
+	if(!value["XForwardedFor_ClientCertIssuerDN"].isNull())
+		xForwardedFor_ClientCertIssuerDN_ = value["XForwardedFor_ClientCertIssuerDN"].asString();
+	if(!value["XForwardedFor_ClientCertFingerprint"].isNull())
+		xForwardedFor_ClientCertFingerprint_ = value["XForwardedFor_ClientCertFingerprint"].asString();
+	if(!value["XForwardedFor_ClientCertClientVerify"].isNull())
+		xForwardedFor_ClientCertClientVerify_ = value["XForwardedFor_ClientCertClientVerify"].asString();
+	if(!value["XForwardedFor_ClientCertSubjectDNAlias"].isNull())
+		xForwardedFor_ClientCertSubjectDNAlias_ = value["XForwardedFor_ClientCertSubjectDNAlias"].asString();
+	if(!value["XForwardedFor_ClientCertIssuerDNAlias"].isNull())
+		xForwardedFor_ClientCertIssuerDNAlias_ = value["XForwardedFor_ClientCertIssuerDNAlias"].asString();
+	if(!value["XForwardedFor_ClientCertFingerprintAlias"].isNull())
+		xForwardedFor_ClientCertFingerprintAlias_ = value["XForwardedFor_ClientCertFingerprintAlias"].asString();
+	if(!value["XForwardedFor_ClientCertClientVerifyAlias"].isNull())
+		xForwardedFor_ClientCertClientVerifyAlias_ = value["XForwardedFor_ClientCertClientVerifyAlias"].asString();
 
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getCookieTimeout()const
-{
-	return cookieTimeout_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getMaxConnection()const
-{
-	return maxConnection_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVServerGroupId()const
-{
-	return vServerGroupId_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendProtocol()const
-{
-	return backendProtocol_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getDescription()const
-{
-	return description_;
 }
 
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getUnhealthyThreshold()const
 {
 	return unhealthyThreshold_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getScheduler()const
-{
-	return scheduler_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckURI()const
@@ -202,14 +195,144 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheck()co
 	return healthCheck_;
 }
 
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getIdleTimeout()const
-{
-	return idleTimeout_;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendServerPort()const
 {
 	return backendServerPort_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_SLBPORT()const
+{
+	return xForwardedFor_SLBPORT_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySessionType()const
+{
+	return stickySessionType_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertSubjectDNAlias()const
+{
+	return xForwardedFor_ClientCertSubjectDNAlias_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStatus()const
+{
+	return status_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
+{
+	return cookie_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getRequestTimeout()const
+{
+	return requestTimeout_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertClientVerifyAlias()const
+{
+	return xForwardedFor_ClientCertClientVerifyAlias_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()const
+{
+	return healthCheckInterval_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getTLSCipherPolicy()const
+{
+	return tLSCipherPolicy_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCACertificateId()const
+{
+	return cACertificateId_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertFingerprintAlias()const
+{
+	return xForwardedFor_ClientCertFingerprintAlias_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()const
+{
+	return healthCheckTimeout_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclStatus()const
+{
+	return aclStatus_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVpcIds()const
+{
+	return vpcIds_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
+{
+	return healthyThreshold_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDomain()const
+{
+	return healthCheckDomain_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_proto()const
+{
+	return xForwardedFor_proto_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclType()const
+{
+	return aclType_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getEnableHttp2()const
+{
+	return enableHttp2_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckType()const
+{
+	return healthCheckType_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getCookieTimeout()const
+{
+	return cookieTimeout_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getMaxConnection()const
+{
+	return maxConnection_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVServerGroupId()const
+{
+	return vServerGroupId_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getBackendProtocol()const
+{
+	return backendProtocol_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getDescription()const
+{
+	return description_;
+}
+
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getScheduler()const
+{
+	return scheduler_;
+}
+
+int DescribeLoadBalancerHTTPSListenerAttributeResult::getIdleTimeout()const
+{
+	return idleTimeout_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_SLBID()const
@@ -247,11 +370,6 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getServerCertifica
 	return serverCertificateId_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySessionType()const
-{
-	return stickySessionType_;
-}
-
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_SLBIP()const
 {
 	return xForwardedFor_SLBIP_;
@@ -262,39 +380,9 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckHttp
 	return healthCheckHttpCode_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStatus()const
-{
-	return status_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCookie()const
-{
-	return cookie_;
-}
-
 int DescribeLoadBalancerHTTPSListenerAttributeResult::getListenerPort()const
 {
 	return listenerPort_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getRequestTimeout()const
-{
-	return requestTimeout_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckInterval()const
-{
-	return healthCheckInterval_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getTLSCipherPolicy()const
-{
-	return tLSCipherPolicy_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getCACertificateId()const
-{
-	return cACertificateId_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclId()const
@@ -302,14 +390,19 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclId()const
 	return aclId_;
 }
 
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertSubjectDN()const
+{
+	return xForwardedFor_ClientCertSubjectDN_;
+}
+
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckHttpVersion()const
 {
 	return healthCheckHttpVersion_;
 }
 
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckTimeout()const
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertIssuerDNAlias()const
 {
-	return healthCheckTimeout_;
+	return xForwardedFor_ClientCertIssuerDNAlias_;
 }
 
 std::vector<DescribeLoadBalancerHTTPSListenerAttributeResult::Rule> DescribeLoadBalancerHTTPSListenerAttributeResult::getRules()const
@@ -317,24 +410,14 @@ std::vector<DescribeLoadBalancerHTTPSListenerAttributeResult::Rule> DescribeLoad
 	return rules_;
 }
 
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertIssuerDN()const
+{
+	return xForwardedFor_ClientCertIssuerDN_;
+}
+
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getStickySession()const
 {
 	return stickySession_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclStatus()const
-{
-	return aclStatus_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getVpcIds()const
-{
-	return vpcIds_;
-}
-
-int DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthyThreshold()const
-{
-	return healthyThreshold_;
 }
 
 std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor()const
@@ -342,28 +425,23 @@ std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor()
 	return xForwardedFor_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckDomain()const
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientSrcPort()const
 {
-	return healthCheckDomain_;
+	return xForwardedFor_ClientSrcPort_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_proto()const
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertFingerprint()const
 {
-	return xForwardedFor_proto_;
+	return xForwardedFor_ClientCertFingerprint_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getAclType()const
+std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getXForwardedFor_ClientCertClientVerify()const
 {
-	return aclType_;
+	return xForwardedFor_ClientCertClientVerify_;
 }
 
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getEnableHttp2()const
+std::vector<std::string> DescribeLoadBalancerHTTPSListenerAttributeResult::getAclIds()const
 {
-	return enableHttp2_;
-}
-
-std::string DescribeLoadBalancerHTTPSListenerAttributeResult::getHealthCheckType()const
-{
-	return healthCheckType_;
+	return aclIds_;
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeRenewOrderRequest;
 
 DescribeRenewOrderRequest::DescribeRenewOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeRenewOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRenewOrderRequest::~DescribeRenewOrderRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRenewOrderRequest::getOrderId()const
 void DescribeRenewOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeRenewOrderRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeRenewOrderRequest::getResourceGroupId()const
 void DescribeRenewOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeRenewOrderRequest::getSourceIp()const
@@ -55,6 +57,6 @@ std::string DescribeRenewOrderRequest::getSourceIp()const
 void DescribeRenewOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

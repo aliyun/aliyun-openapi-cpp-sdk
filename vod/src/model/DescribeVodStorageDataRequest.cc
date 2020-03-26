@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodStorageDataRequest;
 
 DescribeVodStorageDataRequest::DescribeVodStorageDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodStorageData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodStorageDataRequest::~DescribeVodStorageDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodStorageDataRequest::getStartTime()const
 void DescribeVodStorageDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodStorageDataRequest::getStorage()const
@@ -44,7 +46,7 @@ std::string DescribeVodStorageDataRequest::getStorage()const
 void DescribeVodStorageDataRequest::setStorage(const std::string& storage)
 {
 	storage_ = storage;
-	setCoreParameter("Storage", storage);
+	setParameter("Storage", storage);
 }
 
 std::string DescribeVodStorageDataRequest::getStorageType()const
@@ -55,7 +57,7 @@ std::string DescribeVodStorageDataRequest::getStorageType()const
 void DescribeVodStorageDataRequest::setStorageType(const std::string& storageType)
 {
 	storageType_ = storageType;
-	setCoreParameter("StorageType", storageType);
+	setParameter("StorageType", storageType);
 }
 
 std::string DescribeVodStorageDataRequest::getEndTime()const
@@ -66,7 +68,7 @@ std::string DescribeVodStorageDataRequest::getEndTime()const
 void DescribeVodStorageDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodStorageDataRequest::getOwnerId()const
@@ -77,7 +79,18 @@ long DescribeVodStorageDataRequest::getOwnerId()const
 void DescribeVodStorageDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeVodStorageDataRequest::getInterval()const
+{
+	return interval_;
+}
+
+void DescribeVodStorageDataRequest::setInterval(const std::string& interval)
+{
+	interval_ = interval;
+	setParameter("Interval", interval);
 }
 
 std::string DescribeVodStorageDataRequest::getRegion()const
@@ -88,6 +101,6 @@ std::string DescribeVodStorageDataRequest::getRegion()const
 void DescribeVodStorageDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

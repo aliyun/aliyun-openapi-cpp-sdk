@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenBindIsvRequest;
 
 MoPenBindIsvRequest::MoPenBindIsvRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenBindIsv")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenBindIsvRequest::~MoPenBindIsvRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoPenBindIsvRequest::getOrderKey()const
 void MoPenBindIsvRequest::setOrderKey(const std::string& orderKey)
 {
 	orderKey_ = orderKey;
-	setCoreParameter("OrderKey", orderKey);
+	setBodyParameter("OrderKey", orderKey);
 }
 
 std::string MoPenBindIsvRequest::getDeviceName()const
@@ -44,6 +46,6 @@ std::string MoPenBindIsvRequest::getDeviceName()const
 void MoPenBindIsvRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 

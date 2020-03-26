@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CheckServiceExistRequest;
 
 CheckServiceExistRequest::CheckServiceExistRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CheckServiceExist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckServiceExistRequest::~CheckServiceExistRequest()
 {}
@@ -33,7 +35,7 @@ long CheckServiceExistRequest::getCsbId()const
 void CheckServiceExistRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 std::string CheckServiceExistRequest::getServiceName()const
@@ -44,6 +46,6 @@ std::string CheckServiceExistRequest::getServiceName()const
 void CheckServiceExistRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeAuthAccountsRequest;
 
 DescribeAuthAccountsRequest::DescribeAuthAccountsRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeAuthAccounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthAccountsRequest::~DescribeAuthAccountsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeAuthAccountsRequest::getFeatureType()const
 void DescribeAuthAccountsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeAuthAccountsRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int DescribeAuthAccountsRequest::getCurrentPage()const
 void DescribeAuthAccountsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAuthAccountsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeAuthAccountsRequest::getSourceIp()const
 void DescribeAuthAccountsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAuthAccountsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeAuthAccountsRequest::getPageSize()const
 void DescribeAuthAccountsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAuthAccountsRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeAuthAccountsRequest::getLang()const
 void DescribeAuthAccountsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

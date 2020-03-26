@@ -35,7 +35,7 @@ std::string StartStreamPredictRequest::getPredictId()const
 void StartStreamPredictRequest::setPredictId(const std::string& predictId)
 {
 	predictId_ = predictId;
-	setCoreParameter("PredictId", predictId);
+	setParameter("PredictId", predictId);
 }
 
 std::string StartStreamPredictRequest::getShowLog()const
@@ -46,7 +46,7 @@ std::string StartStreamPredictRequest::getShowLog()const
 void StartStreamPredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 long StartStreamPredictRequest::getOwnerId()const
@@ -57,6 +57,6 @@ long StartStreamPredictRequest::getOwnerId()const
 void StartStreamPredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

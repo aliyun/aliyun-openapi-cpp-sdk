@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryTerrorismJobListRequest;
 
 QueryTerrorismJobListRequest::QueryTerrorismJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryTerrorismJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTerrorismJobListRequest::~QueryTerrorismJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryTerrorismJobListRequest::getResourceOwnerId()const
 void QueryTerrorismJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTerrorismJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryTerrorismJobListRequest::getResourceOwnerAccount()const
 void QueryTerrorismJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTerrorismJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryTerrorismJobListRequest::getOwnerAccount()const
 void QueryTerrorismJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTerrorismJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryTerrorismJobListRequest::getOwnerId()const
 void QueryTerrorismJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTerrorismJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryTerrorismJobListRequest::getAccessKeyId()const
 void QueryTerrorismJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryTerrorismJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryTerrorismJobListRequest::getJobIds()const
 void QueryTerrorismJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

@@ -57,6 +57,7 @@ namespace AlibabaCloud
 				int getBackendServerPort()const;
 				std::string getXForwardedFor_SLBID()const;
 				int getHealthCheckConnectPort()const;
+				std::string getXForwardedFor_SLBPORT()const;
 				std::string getHealthCheckMethod()const;
 				int getBandwidth()const;
 				std::string getSecurityStatus()const;
@@ -64,6 +65,7 @@ namespace AlibabaCloud
 				std::string getStickySessionType()const;
 				std::string getXForwardedFor_SLBIP()const;
 				std::string getHealthCheckHttpCode()const;
+				int getForwardCode()const;
 				std::string getStatus()const;
 				std::string getCookie()const;
 				int getListenerPort()const;
@@ -80,9 +82,11 @@ namespace AlibabaCloud
 				std::string getVpcIds()const;
 				int getHealthyThreshold()const;
 				std::string getXForwardedFor()const;
+				std::string getXForwardedFor_ClientSrcPort()const;
 				std::string getHealthCheckDomain()const;
 				std::string getXForwardedFor_proto()const;
 				std::string getAclType()const;
+				std::vector<std::string> getAclIds()const;
 				std::string getHealthCheckType()const;
 
 			protected:
@@ -100,6 +104,7 @@ namespace AlibabaCloud
 				int backendServerPort_;
 				std::string xForwardedFor_SLBID_;
 				int healthCheckConnectPort_;
+				std::string xForwardedFor_SLBPORT_;
 				std::string healthCheckMethod_;
 				int bandwidth_;
 				std::string securityStatus_;
@@ -107,6 +112,7 @@ namespace AlibabaCloud
 				std::string stickySessionType_;
 				std::string xForwardedFor_SLBIP_;
 				std::string healthCheckHttpCode_;
+				int forwardCode_;
 				std::string status_;
 				std::string cookie_;
 				int listenerPort_;
@@ -123,9 +129,11 @@ namespace AlibabaCloud
 				std::string vpcIds_;
 				int healthyThreshold_;
 				std::string xForwardedFor_;
+				std::string xForwardedFor_ClientSrcPort_;
 				std::string healthCheckDomain_;
 				std::string xForwardedFor_proto_;
 				std::string aclType_;
+				std::vector<std::string> aclIds_;
 				std::string healthCheckType_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::CreateAlertContactRequest;
 
 CreateAlertContactRequest::CreateAlertContactRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "CreateAlertContact")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlertContactRequest::~CreateAlertContactRequest()
 {}
@@ -33,7 +35,18 @@ std::string CreateAlertContactRequest::getPhoneNum()const
 void CreateAlertContactRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", phoneNum);
+	setParameter("PhoneNum", phoneNum);
+}
+
+std::string CreateAlertContactRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void CreateAlertContactRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
 }
 
 std::string CreateAlertContactRequest::getContactName()const
@@ -44,7 +57,7 @@ std::string CreateAlertContactRequest::getContactName()const
 void CreateAlertContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 
 std::string CreateAlertContactRequest::getRegionId()const
@@ -55,7 +68,7 @@ std::string CreateAlertContactRequest::getRegionId()const
 void CreateAlertContactRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateAlertContactRequest::getDingRobotWebhookUrl()const
@@ -66,7 +79,7 @@ std::string CreateAlertContactRequest::getDingRobotWebhookUrl()const
 void CreateAlertContactRequest::setDingRobotWebhookUrl(const std::string& dingRobotWebhookUrl)
 {
 	dingRobotWebhookUrl_ = dingRobotWebhookUrl;
-	setCoreParameter("DingRobotWebhookUrl", dingRobotWebhookUrl);
+	setParameter("DingRobotWebhookUrl", dingRobotWebhookUrl);
 }
 
 std::string CreateAlertContactRequest::getEmail()const
@@ -77,7 +90,7 @@ std::string CreateAlertContactRequest::getEmail()const
 void CreateAlertContactRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 
 bool CreateAlertContactRequest::getSystemNoc()const
@@ -88,6 +101,6 @@ bool CreateAlertContactRequest::getSystemNoc()const
 void CreateAlertContactRequest::setSystemNoc(bool systemNoc)
 {
 	systemNoc_ = systemNoc;
-	setCoreParameter("SystemNoc", systemNoc ? "true" : "false");
+	setParameter("SystemNoc", systemNoc ? "true" : "false");
 }
 

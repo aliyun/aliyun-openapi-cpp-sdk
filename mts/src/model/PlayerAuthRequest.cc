@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::PlayerAuthRequest;
 
 PlayerAuthRequest::PlayerAuthRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "PlayerAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PlayerAuthRequest::~PlayerAuthRequest()
 {}
@@ -33,7 +35,7 @@ std::string PlayerAuthRequest::getResourceOwnerId()const
 void PlayerAuthRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string PlayerAuthRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string PlayerAuthRequest::getResourceOwnerAccount()const
 void PlayerAuthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PlayerAuthRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string PlayerAuthRequest::getOwnerAccount()const
 void PlayerAuthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string PlayerAuthRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string PlayerAuthRequest::getOwnerId()const
 void PlayerAuthRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string PlayerAuthRequest::getAccessKeyId()const
@@ -77,6 +79,6 @@ std::string PlayerAuthRequest::getAccessKeyId()const
 void PlayerAuthRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

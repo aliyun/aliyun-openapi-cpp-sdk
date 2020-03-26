@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyResourcePoolRequest;
 
 ModifyResourcePoolRequest::ModifyResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyResourcePoolRequest::~ModifyResourcePoolRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyResourcePoolRequest::getResourceOwnerId()const
 void ModifyResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool ModifyResourcePoolRequest::getActive()const
@@ -44,7 +46,7 @@ bool ModifyResourcePoolRequest::getActive()const
 void ModifyResourcePoolRequest::setActive(bool active)
 {
 	active_ = active;
-	setCoreParameter("Active", active ? "true" : "false");
+	setParameter("Active", active ? "true" : "false");
 }
 
 std::string ModifyResourcePoolRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string ModifyResourcePoolRequest::getClusterId()const
 void ModifyResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyResourcePoolRequest::getYarnsiteconfig()const
@@ -66,7 +68,7 @@ std::string ModifyResourcePoolRequest::getYarnsiteconfig()const
 void ModifyResourcePoolRequest::setYarnsiteconfig(const std::string& yarnsiteconfig)
 {
 	yarnsiteconfig_ = yarnsiteconfig;
-	setCoreParameter("Yarnsiteconfig", yarnsiteconfig);
+	setParameter("Yarnsiteconfig", yarnsiteconfig);
 }
 
 std::string ModifyResourcePoolRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ModifyResourcePoolRequest::getAccessKeyId()const
 void ModifyResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyResourcePoolRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string ModifyResourcePoolRequest::getRegionId()const
 void ModifyResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyResourcePoolRequest::getName()const
@@ -99,7 +101,7 @@ std::string ModifyResourcePoolRequest::getName()const
 void ModifyResourcePoolRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyResourcePoolRequest::getId()const
@@ -110,7 +112,7 @@ std::string ModifyResourcePoolRequest::getId()const
 void ModifyResourcePoolRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::vector<ModifyResourcePoolRequest::Config> ModifyResourcePoolRequest::getConfig()const
@@ -121,15 +123,14 @@ std::vector<ModifyResourcePoolRequest::Config> ModifyResourcePoolRequest::getCon
 void ModifyResourcePoolRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".Note", obj.note);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".Id", obj.id);
-		setCoreParameter(str + ".Category", obj.category);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1 + 1);
+		setParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setParameter(configObjStr + ".Note", configObj.note);
+		setParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setParameter(configObjStr + ".Id", configObj.id);
+		setParameter(configObjStr + ".Category", configObj.category);
 	}
 }
 

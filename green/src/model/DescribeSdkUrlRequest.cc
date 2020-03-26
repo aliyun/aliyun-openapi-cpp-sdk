@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeSdkUrlRequest;
 
 DescribeSdkUrlRequest::DescribeSdkUrlRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeSdkUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSdkUrlRequest::~DescribeSdkUrlRequest()
 {}
@@ -33,7 +35,7 @@ bool DescribeSdkUrlRequest::getDebug()const
 void DescribeSdkUrlRequest::setDebug(bool debug)
 {
 	debug_ = debug;
-	setCoreParameter("Debug", debug ? "true" : "false");
+	setParameter("Debug", debug ? "true" : "false");
 }
 
 std::string DescribeSdkUrlRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeSdkUrlRequest::getSourceIp()const
 void DescribeSdkUrlRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeSdkUrlRequest::getId()const
@@ -55,7 +57,7 @@ long DescribeSdkUrlRequest::getId()const
 void DescribeSdkUrlRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DescribeSdkUrlRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeSdkUrlRequest::getLang()const
 void DescribeSdkUrlRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

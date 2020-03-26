@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainBpsDataRequest;
 
 DescribeVodDomainBpsDataRequest::DescribeVodDomainBpsDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainBpsDataRequest::~DescribeVodDomainBpsDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainBpsDataRequest::getLocationNameEn()const
 void DescribeVodDomainBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeVodDomainBpsDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeVodDomainBpsDataRequest::getStartTime()const
 void DescribeVodDomainBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodDomainBpsDataRequest::getIspNameEn()const
@@ -55,7 +57,7 @@ std::string DescribeVodDomainBpsDataRequest::getIspNameEn()const
 void DescribeVodDomainBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeVodDomainBpsDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeVodDomainBpsDataRequest::getDomainName()const
 void DescribeVodDomainBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeVodDomainBpsDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeVodDomainBpsDataRequest::getEndTime()const
 void DescribeVodDomainBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodDomainBpsDataRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeVodDomainBpsDataRequest::getOwnerId()const
 void DescribeVodDomainBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodDomainBpsDataRequest::getInterval()const
@@ -99,6 +101,6 @@ std::string DescribeVodDomainBpsDataRequest::getInterval()const
 void DescribeVodDomainBpsDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -39,8 +39,8 @@ namespace AlibabaCloud
 						std::string keywords;
 						std::string intentName;
 						std::string intentDescription;
-						std::string utterances;
 						long createTime;
+						std::string utterances;
 						long updateTime;
 						std::string scriptId;
 						std::string intentId;

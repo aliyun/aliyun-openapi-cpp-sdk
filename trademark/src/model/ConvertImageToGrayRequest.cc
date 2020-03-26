@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ConvertImageToGrayRequest;
 
 ConvertImageToGrayRequest::ConvertImageToGrayRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ConvertImageToGray")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConvertImageToGrayRequest::~ConvertImageToGrayRequest()
 {}
@@ -33,6 +35,6 @@ std::string ConvertImageToGrayRequest::getOssKey()const
 void ConvertImageToGrayRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setParameter("OssKey", ossKey);
 }
 

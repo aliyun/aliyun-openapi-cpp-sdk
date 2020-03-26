@@ -21,7 +21,7 @@ using AlibabaCloud::BssOpenApi::Model::EnableBillGenerationRequest;
 EnableBillGenerationRequest::EnableBillGenerationRequest() :
 	RpcServiceRequest("bssopenapi", "2017-12-14", "EnableBillGeneration")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 EnableBillGenerationRequest::~EnableBillGenerationRequest()
@@ -35,7 +35,7 @@ std::string EnableBillGenerationRequest::getProductCode()const
 void EnableBillGenerationRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 long EnableBillGenerationRequest::getOwnerId()const
@@ -46,6 +46,6 @@ long EnableBillGenerationRequest::getOwnerId()const
 void EnableBillGenerationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

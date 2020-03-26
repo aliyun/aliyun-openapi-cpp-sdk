@@ -33,10 +33,22 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/CheckScdnServiceResult.h
 	include/alibabacloud/scdn/model/DeleteScdnDomainRequest.h
 	include/alibabacloud/scdn/model/DeleteScdnDomainResult.h
+	include/alibabacloud/scdn/model/DeleteScdnSpecificConfigRequest.h
+	include/alibabacloud/scdn/model/DeleteScdnSpecificConfigResult.h
+	include/alibabacloud/scdn/model/DescribeScdnCcQpsInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnCcQpsInfoResult.h
+	include/alibabacloud/scdn/model/DescribeScdnCcTopIpRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnCcTopIpResult.h
+	include/alibabacloud/scdn/model/DescribeScdnCcTopUrlRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnCcTopUrlResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateDetailRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateDetailResult.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnCertificateListResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDdosInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDdosInfoResult.h
+	include/alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnDdosTrafficInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainBpsDataResult.h
 	include/alibabacloud/scdn/model/DescribeScdnDomainCertificateInfoRequest.h
@@ -109,6 +121,14 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesResult.h
 	include/alibabacloud/scdn/model/SetDomainServerCertificateRequest.h
 	include/alibabacloud/scdn/model/SetDomainServerCertificateResult.h
+	include/alibabacloud/scdn/model/SetScdnBotInfoRequest.h
+	include/alibabacloud/scdn/model/SetScdnBotInfoResult.h
+	include/alibabacloud/scdn/model/SetScdnCcInfoRequest.h
+	include/alibabacloud/scdn/model/SetScdnCcInfoResult.h
+	include/alibabacloud/scdn/model/SetScdnDdosInfoRequest.h
+	include/alibabacloud/scdn/model/SetScdnDdosInfoResult.h
+	include/alibabacloud/scdn/model/SetScdnDomainBizInfoRequest.h
+	include/alibabacloud/scdn/model/SetScdnDomainBizInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateResult.h
 	include/alibabacloud/scdn/model/StartScdnDomainRequest.h
@@ -132,10 +152,22 @@ set(scdn_src
 	src/model/CheckScdnServiceResult.cc
 	src/model/DeleteScdnDomainRequest.cc
 	src/model/DeleteScdnDomainResult.cc
+	src/model/DeleteScdnSpecificConfigRequest.cc
+	src/model/DeleteScdnSpecificConfigResult.cc
+	src/model/DescribeScdnCcQpsInfoRequest.cc
+	src/model/DescribeScdnCcQpsInfoResult.cc
+	src/model/DescribeScdnCcTopIpRequest.cc
+	src/model/DescribeScdnCcTopIpResult.cc
+	src/model/DescribeScdnCcTopUrlRequest.cc
+	src/model/DescribeScdnCcTopUrlResult.cc
 	src/model/DescribeScdnCertificateDetailRequest.cc
 	src/model/DescribeScdnCertificateDetailResult.cc
 	src/model/DescribeScdnCertificateListRequest.cc
 	src/model/DescribeScdnCertificateListResult.cc
+	src/model/DescribeScdnDdosInfoRequest.cc
+	src/model/DescribeScdnDdosInfoResult.cc
+	src/model/DescribeScdnDdosTrafficInfoRequest.cc
+	src/model/DescribeScdnDdosTrafficInfoResult.cc
 	src/model/DescribeScdnDomainBpsDataRequest.cc
 	src/model/DescribeScdnDomainBpsDataResult.cc
 	src/model/DescribeScdnDomainCertificateInfoRequest.cc
@@ -208,6 +240,14 @@ set(scdn_src
 	src/model/RefreshScdnObjectCachesResult.cc
 	src/model/SetDomainServerCertificateRequest.cc
 	src/model/SetDomainServerCertificateResult.cc
+	src/model/SetScdnBotInfoRequest.cc
+	src/model/SetScdnBotInfoResult.cc
+	src/model/SetScdnCcInfoRequest.cc
+	src/model/SetScdnCcInfoResult.cc
+	src/model/SetScdnDdosInfoRequest.cc
+	src/model/SetScdnDdosInfoResult.cc
+	src/model/SetScdnDomainBizInfoRequest.cc
+	src/model/SetScdnDomainBizInfoResult.cc
 	src/model/SetScdnDomainCertificateRequest.cc
 	src/model/SetScdnDomainCertificateResult.cc
 	src/model/StartScdnDomainRequest.cc

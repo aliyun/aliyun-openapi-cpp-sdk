@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListResourcePoolRequest;
 
 ListResourcePoolRequest::ListResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListResourcePoolRequest::~ListResourcePoolRequest()
 {}
@@ -33,7 +35,7 @@ long ListResourcePoolRequest::getResourceOwnerId()const
 void ListResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListResourcePoolRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ListResourcePoolRequest::getClusterId()const
 void ListResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ListResourcePoolRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListResourcePoolRequest::getPageNumber()const
 void ListResourcePoolRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListResourcePoolRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListResourcePoolRequest::getAccessKeyId()const
 void ListResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListResourcePoolRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListResourcePoolRequest::getRegionId()const
 void ListResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListResourcePoolRequest::getPageSize()const
@@ -88,7 +90,7 @@ int ListResourcePoolRequest::getPageSize()const
 void ListResourcePoolRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListResourcePoolRequest::getPoolType()const
@@ -99,6 +101,6 @@ std::string ListResourcePoolRequest::getPoolType()const
 void ListResourcePoolRequest::setPoolType(const std::string& poolType)
 {
 	poolType_ = poolType;
-	setCoreParameter("PoolType", poolType);
+	setParameter("PoolType", poolType);
 }
 

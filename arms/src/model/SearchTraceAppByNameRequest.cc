@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchTraceAppByNameRequest;
 
 SearchTraceAppByNameRequest::SearchTraceAppByNameRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchTraceAppByName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchTraceAppByNameRequest::~SearchTraceAppByNameRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchTraceAppByNameRequest::getRegionId()const
 void SearchTraceAppByNameRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SearchTraceAppByNameRequest::getTraceAppName()const
@@ -44,6 +46,6 @@ std::string SearchTraceAppByNameRequest::getTraceAppName()const
 void SearchTraceAppByNameRequest::setTraceAppName(const std::string& traceAppName)
 {
 	traceAppName_ = traceAppName;
-	setCoreParameter("TraceAppName", traceAppName);
+	setParameter("TraceAppName", traceAppName);
 }
 

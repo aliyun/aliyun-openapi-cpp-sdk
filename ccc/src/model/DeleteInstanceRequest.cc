@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteInstanceRequest;
 
 DeleteInstanceRequest::DeleteInstanceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteInstanceRequest::~DeleteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteInstanceRequest::getAccessKeyId()const
 void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteInstanceRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string DeleteInstanceRequest::getInstanceId()const
 void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

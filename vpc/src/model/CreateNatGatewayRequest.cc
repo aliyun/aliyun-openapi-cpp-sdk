@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateNatGatewayRequest;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateNatGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNatGatewayRequest::~CreateNatGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long CreateNatGatewayRequest::getResourceOwnerId()const
 void CreateNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNatGatewayRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateNatGatewayRequest::getClientToken()const
 void CreateNatGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateNatGatewayRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateNatGatewayRequest::getDescription()const
 void CreateNatGatewayRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateNatGatewayRequest::getSpec()const
@@ -66,7 +68,7 @@ std::string CreateNatGatewayRequest::getSpec()const
 void CreateNatGatewayRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setParameter("Spec", spec);
 }
 
 std::string CreateNatGatewayRequest::getDuration()const
@@ -77,7 +79,7 @@ std::string CreateNatGatewayRequest::getDuration()const
 void CreateNatGatewayRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setParameter("Duration", duration);
 }
 
 std::string CreateNatGatewayRequest::getRegionId()const
@@ -88,7 +90,18 @@ std::string CreateNatGatewayRequest::getRegionId()const
 void CreateNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+std::string CreateNatGatewayRequest::getNatType()const
+{
+	return natType_;
+}
+
+void CreateNatGatewayRequest::setNatType(const std::string& natType)
+{
+	natType_ = natType;
+	setParameter("NatType", natType);
 }
 
 std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::getBandwidthPackage()const
@@ -99,15 +112,14 @@ std::vector<CreateNatGatewayRequest::BandwidthPackage> CreateNatGatewayRequest::
 void CreateNatGatewayRequest::setBandwidthPackage(const std::vector<BandwidthPackage>& bandwidthPackage)
 {
 	bandwidthPackage_ = bandwidthPackage;
-	int i = 0;
-	for(int i = 0; i!= bandwidthPackage.size(); i++)	{
-		auto obj = bandwidthPackage.at(i);
-		std::string str ="BandwidthPackage."+ std::to_string(i);
-		setCoreParameter(str + ".Bandwidth", std::to_string(obj.bandwidth));
-		setCoreParameter(str + ".Zone", obj.zone);
-		setCoreParameter(str + ".InternetChargeType", obj.internetChargeType);
-		setCoreParameter(str + ".ISP", obj.iSP);
-		setCoreParameter(str + ".IpCount", std::to_string(obj.ipCount));
+	for(int dep1 = 0; dep1!= bandwidthPackage.size(); dep1++) {
+		auto bandwidthPackageObj = bandwidthPackage.at(dep1);
+		std::string bandwidthPackageObjStr = "BandwidthPackage." + std::to_string(dep1 + 1);
+		setParameter(bandwidthPackageObjStr + ".Bandwidth", std::to_string(bandwidthPackageObj.bandwidth));
+		setParameter(bandwidthPackageObjStr + ".Zone", bandwidthPackageObj.zone);
+		setParameter(bandwidthPackageObjStr + ".InternetChargeType", bandwidthPackageObj.internetChargeType);
+		setParameter(bandwidthPackageObjStr + ".ISP", bandwidthPackageObj.iSP);
+		setParameter(bandwidthPackageObjStr + ".IpCount", std::to_string(bandwidthPackageObj.ipCount));
 	}
 }
 
@@ -119,7 +131,7 @@ std::string CreateNatGatewayRequest::getInstanceChargeType()const
 void CreateNatGatewayRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 bool CreateNatGatewayRequest::getAutoPay()const
@@ -130,7 +142,7 @@ bool CreateNatGatewayRequest::getAutoPay()const
 void CreateNatGatewayRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
@@ -141,7 +153,7 @@ std::string CreateNatGatewayRequest::getResourceOwnerAccount()const
 void CreateNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNatGatewayRequest::getOwnerAccount()const
@@ -152,7 +164,7 @@ std::string CreateNatGatewayRequest::getOwnerAccount()const
 void CreateNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateNatGatewayRequest::getOwnerId()const
@@ -163,7 +175,29 @@ long CreateNatGatewayRequest::getOwnerId()const
 void CreateNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateNatGatewayRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateNatGatewayRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
+std::string CreateNatGatewayRequest::getInternetChargeType()const
+{
+	return internetChargeType_;
+}
+
+void CreateNatGatewayRequest::setInternetChargeType(const std::string& internetChargeType)
+{
+	internetChargeType_ = internetChargeType;
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateNatGatewayRequest::getVpcId()const
@@ -174,7 +208,7 @@ std::string CreateNatGatewayRequest::getVpcId()const
 void CreateNatGatewayRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string CreateNatGatewayRequest::getName()const
@@ -185,7 +219,7 @@ std::string CreateNatGatewayRequest::getName()const
 void CreateNatGatewayRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateNatGatewayRequest::getPricingCycle()const
@@ -196,6 +230,6 @@ std::string CreateNatGatewayRequest::getPricingCycle()const
 void CreateNatGatewayRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

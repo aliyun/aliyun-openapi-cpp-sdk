@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetOssServerSignRequest;
 
 GetOssServerSignRequest::GetOssServerSignRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetOssServerSign")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOssServerSignRequest::~GetOssServerSignRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetOssServerSignRequest::getAccessKeyId()const
 void GetOssServerSignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int GetOssServerSignRequest::getDirType()const
@@ -44,6 +46,6 @@ int GetOssServerSignRequest::getDirType()const
 void GetOssServerSignRequest::setDirType(int dirType)
 {
 	dirType_ = dirType;
-	setCoreParameter("DirType", std::to_string(dirType));
+	setParameter("DirType", std::to_string(dirType));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadAllTypeRecordingRequest;
 
 DownloadAllTypeRecordingRequest::DownloadAllTypeRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadAllTypeRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadAllTypeRecordingRequest::~DownloadAllTypeRecordingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DownloadAllTypeRecordingRequest::getContactId()const
 void DownloadAllTypeRecordingRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 std::string DownloadAllTypeRecordingRequest::getChannel()const
@@ -44,7 +46,7 @@ std::string DownloadAllTypeRecordingRequest::getChannel()const
 void DownloadAllTypeRecordingRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setParameter("Channel", channel);
 }
 
 std::string DownloadAllTypeRecordingRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DownloadAllTypeRecordingRequest::getAccessKeyId()const
 void DownloadAllTypeRecordingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DownloadAllTypeRecordingRequest::getInstanceId()const
@@ -66,6 +68,6 @@ std::string DownloadAllTypeRecordingRequest::getInstanceId()const
 void DownloadAllTypeRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

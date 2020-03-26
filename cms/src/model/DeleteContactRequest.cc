@@ -35,6 +35,6 @@ std::string DeleteContactRequest::getContactName()const
 void DeleteContactRequest::setContactName(const std::string& contactName)
 {
 	contactName_ = contactName;
-	setCoreParameter("ContactName", contactName);
+	setParameter("ContactName", contactName);
 }
 

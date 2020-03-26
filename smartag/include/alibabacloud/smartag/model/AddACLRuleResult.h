@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getAcrId()const;
 				std::string getDestPortRange()const;
 				std::string getDirection()const;
+				std::string getName()const;
 				long getGmtCreate()const;
 				std::string getType()const;
 				std::string getDestCidr()const;
@@ -63,6 +64,7 @@ namespace AlibabaCloud
 				std::string acrId_;
 				std::string destPortRange_;
 				std::string direction_;
+				std::string name_;
 				long gmtCreate_;
 				std::string type_;
 				std::string destCidr_;

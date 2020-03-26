@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::UploadDictionaryRequest;
 
 UploadDictionaryRequest::UploadDictionaryRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "UploadDictionary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadDictionaryRequest::~UploadDictionaryRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadDictionaryRequest::getDictionaryFileUrl()const
 void UploadDictionaryRequest::setDictionaryFileUrl(const std::string& dictionaryFileUrl)
 {
 	dictionaryFileUrl_ = dictionaryFileUrl;
-	setCoreParameter("DictionaryFileUrl", dictionaryFileUrl);
+	setBodyParameter("DictionaryFileUrl", dictionaryFileUrl);
 }
 
 std::string UploadDictionaryRequest::getProjectId()const
@@ -44,7 +46,7 @@ std::string UploadDictionaryRequest::getProjectId()const
 void UploadDictionaryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setBodyParameter("ProjectId", projectId);
 }
 
 std::string UploadDictionaryRequest::getDictionaryData()const
@@ -55,6 +57,6 @@ std::string UploadDictionaryRequest::getDictionaryData()const
 void UploadDictionaryRequest::setDictionaryData(const std::string& dictionaryData)
 {
 	dictionaryData_ = dictionaryData;
-	setCoreParameter("DictionaryData", dictionaryData);
+	setBodyParameter("DictionaryData", dictionaryData);
 }
 

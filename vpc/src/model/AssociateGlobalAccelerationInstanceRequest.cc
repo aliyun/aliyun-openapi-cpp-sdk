@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociateGlobalAccelerationInstanceRequest;
 
 AssociateGlobalAccelerationInstanceRequest::AssociateGlobalAccelerationInstanceRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociateGlobalAccelerationInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateGlobalAccelerationInstanceRequest::~AssociateGlobalAccelerationInstanceRequest()
 {}
@@ -33,7 +35,7 @@ long AssociateGlobalAccelerationInstanceRequest::getResourceOwnerId()const
 void AssociateGlobalAccelerationInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getGlobalAccelerationInstanceId()const
@@ -44,7 +46,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getGlobalAccelerationIns
 void AssociateGlobalAccelerationInstanceRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getRegionId()const
 void AssociateGlobalAccelerationInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerId()const
@@ -66,7 +68,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerId()cons
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerId(const std::string& backendServerId)
 {
 	backendServerId_ = backendServerId;
-	setCoreParameter("BackendServerId", backendServerId);
+	setParameter("BackendServerId", backendServerId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getResourceOwnerAccount(
 void AssociateGlobalAccelerationInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getOwnerAccount()const
 void AssociateGlobalAccelerationInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssociateGlobalAccelerationInstanceRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long AssociateGlobalAccelerationInstanceRequest::getOwnerId()const
 void AssociateGlobalAccelerationInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerRegionId()const
@@ -110,7 +112,7 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerRegionId
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerRegionId(const std::string& backendServerRegionId)
 {
 	backendServerRegionId_ = backendServerRegionId;
-	setCoreParameter("BackendServerRegionId", backendServerRegionId);
+	setParameter("BackendServerRegionId", backendServerRegionId);
 }
 
 std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerType()const
@@ -121,6 +123,6 @@ std::string AssociateGlobalAccelerationInstanceRequest::getBackendServerType()co
 void AssociateGlobalAccelerationInstanceRequest::setBackendServerType(const std::string& backendServerType)
 {
 	backendServerType_ = backendServerType;
-	setCoreParameter("BackendServerType", backendServerType);
+	setParameter("BackendServerType", backendServerType);
 }
 

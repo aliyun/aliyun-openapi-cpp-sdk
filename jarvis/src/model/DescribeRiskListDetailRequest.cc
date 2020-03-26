@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeRiskListDetailRequest;
 
 DescribeRiskListDetailRequest::DescribeRiskListDetailRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeRiskListDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskListDetailRequest::~DescribeRiskListDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRiskListDetailRequest::getRiskType()const
 void DescribeRiskListDetailRequest::setRiskType(const std::string& riskType)
 {
 	riskType_ = riskType;
-	setCoreParameter("RiskType", riskType);
+	setParameter("RiskType", riskType);
 }
 
 std::string DescribeRiskListDetailRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DescribeRiskListDetailRequest::getSourceCode()const
 void DescribeRiskListDetailRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeRiskListDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeRiskListDetailRequest::getSourceIp()const
 void DescribeRiskListDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeRiskListDetailRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeRiskListDetailRequest::getPageSize()const
 void DescribeRiskListDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRiskListDetailRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeRiskListDetailRequest::getLang()const
 void DescribeRiskListDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeRiskListDetailRequest::getSrcUid()const
@@ -88,7 +90,7 @@ long DescribeRiskListDetailRequest::getSrcUid()const
 void DescribeRiskListDetailRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 
 int DescribeRiskListDetailRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeRiskListDetailRequest::getCurrentPage()const
 void DescribeRiskListDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeRiskListDetailRequest::getRiskDescribe()const
@@ -110,7 +112,7 @@ std::string DescribeRiskListDetailRequest::getRiskDescribe()const
 void DescribeRiskListDetailRequest::setRiskDescribe(const std::string& riskDescribe)
 {
 	riskDescribe_ = riskDescribe;
-	setCoreParameter("RiskDescribe", riskDescribe);
+	setParameter("RiskDescribe", riskDescribe);
 }
 
 std::string DescribeRiskListDetailRequest::getQueryProduct()const
@@ -121,7 +123,7 @@ std::string DescribeRiskListDetailRequest::getQueryProduct()const
 void DescribeRiskListDetailRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setParameter("QueryProduct", queryProduct);
 }
 
 std::string DescribeRiskListDetailRequest::getQueryRegionId()const
@@ -132,7 +134,7 @@ std::string DescribeRiskListDetailRequest::getQueryRegionId()const
 void DescribeRiskListDetailRequest::setQueryRegionId(const std::string& queryRegionId)
 {
 	queryRegionId_ = queryRegionId;
-	setCoreParameter("QueryRegionId", queryRegionId);
+	setParameter("QueryRegionId", queryRegionId);
 }
 
 std::string DescribeRiskListDetailRequest::getStatus()const
@@ -143,6 +145,6 @@ std::string DescribeRiskListDetailRequest::getStatus()const
 void DescribeRiskListDetailRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

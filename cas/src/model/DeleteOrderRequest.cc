@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DeleteOrderRequest;
 
 DeleteOrderRequest::DeleteOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DeleteOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteOrderRequest::~DeleteOrderRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteOrderRequest::getOrderId()const
 void DeleteOrderRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DeleteOrderRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DeleteOrderRequest::getResourceGroupId()const
 void DeleteOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DeleteOrderRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteOrderRequest::getSourceIp()const
 void DeleteOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteOrderRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteOrderRequest::getLang()const
 void DeleteOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

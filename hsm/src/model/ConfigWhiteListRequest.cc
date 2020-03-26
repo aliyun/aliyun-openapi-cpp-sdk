@@ -20,21 +20,12 @@ using AlibabaCloud::Hsm::Model::ConfigWhiteListRequest;
 
 ConfigWhiteListRequest::ConfigWhiteListRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ConfigWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigWhiteListRequest::~ConfigWhiteListRequest()
 {}
-
-long ConfigWhiteListRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void ConfigWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
 
 std::string ConfigWhiteListRequest::getWhiteList()const
 {
@@ -44,7 +35,7 @@ std::string ConfigWhiteListRequest::getWhiteList()const
 void ConfigWhiteListRequest::setWhiteList(const std::string& whiteList)
 {
 	whiteList_ = whiteList;
-	setCoreParameter("WhiteList", whiteList);
+	setParameter("WhiteList", whiteList);
 }
 
 std::string ConfigWhiteListRequest::getInstanceId()const
@@ -55,7 +46,7 @@ std::string ConfigWhiteListRequest::getInstanceId()const
 void ConfigWhiteListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ConfigWhiteListRequest::getSourceIp()const
@@ -66,6 +57,28 @@ std::string ConfigWhiteListRequest::getSourceIp()const
 void ConfigWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string ConfigWhiteListRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigWhiteListRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ConfigWhiteListRequest::getLang()const
+{
+	return lang_;
+}
+
+void ConfigWhiteListRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 

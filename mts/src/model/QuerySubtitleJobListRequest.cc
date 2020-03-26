@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QuerySubtitleJobListRequest;
 
 QuerySubtitleJobListRequest::QuerySubtitleJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QuerySubtitleJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySubtitleJobListRequest::~QuerySubtitleJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QuerySubtitleJobListRequest::getResourceOwnerId()const
 void QuerySubtitleJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySubtitleJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QuerySubtitleJobListRequest::getResourceOwnerAccount()const
 void QuerySubtitleJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QuerySubtitleJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QuerySubtitleJobListRequest::getOwnerAccount()const
 void QuerySubtitleJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QuerySubtitleJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QuerySubtitleJobListRequest::getOwnerId()const
 void QuerySubtitleJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QuerySubtitleJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QuerySubtitleJobListRequest::getAccessKeyId()const
 void QuerySubtitleJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySubtitleJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QuerySubtitleJobListRequest::getJobIds()const
 void QuerySubtitleJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

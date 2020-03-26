@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListAsrPipelineRequest;
 
 ListAsrPipelineRequest::ListAsrPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListAsrPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAsrPipelineRequest::~ListAsrPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long ListAsrPipelineRequest::getResourceOwnerId()const
 void ListAsrPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long ListAsrPipelineRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long ListAsrPipelineRequest::getPageNumber()const
 void ListAsrPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAsrPipelineRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListAsrPipelineRequest::getAccessKeyId()const
 void ListAsrPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListAsrPipelineRequest::getPageSize()const
@@ -66,7 +68,7 @@ long ListAsrPipelineRequest::getPageSize()const
 void ListAsrPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAsrPipelineRequest::getState()const
@@ -77,7 +79,7 @@ std::string ListAsrPipelineRequest::getState()const
 void ListAsrPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListAsrPipelineRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ListAsrPipelineRequest::getResourceOwnerAccount()const
 void ListAsrPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAsrPipelineRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ListAsrPipelineRequest::getOwnerAccount()const
 void ListAsrPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListAsrPipelineRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ListAsrPipelineRequest::getOwnerId()const
 void ListAsrPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

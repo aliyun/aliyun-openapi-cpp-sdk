@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CAS_EXPORT DescribeOrderListRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

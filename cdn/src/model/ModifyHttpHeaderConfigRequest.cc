@@ -27,28 +27,6 @@ ModifyHttpHeaderConfigRequest::ModifyHttpHeaderConfigRequest() :
 ModifyHttpHeaderConfigRequest::~ModifyHttpHeaderConfigRequest()
 {}
 
-std::string ModifyHttpHeaderConfigRequest::getDomainName()const
-{
-	return domainName_;
-}
-
-void ModifyHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
-}
-
-long ModifyHttpHeaderConfigRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyHttpHeaderConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ModifyHttpHeaderConfigRequest::getHeaderValue()const
 {
 	return headerValue_;
@@ -69,6 +47,28 @@ void ModifyHttpHeaderConfigRequest::setSecurityToken(const std::string& security
 {
 	securityToken_ = securityToken;
 	setParameter("SecurityToken", securityToken);
+}
+
+std::string ModifyHttpHeaderConfigRequest::getDomainName()const
+{
+	return domainName_;
+}
+
+void ModifyHttpHeaderConfigRequest::setDomainName(const std::string& domainName)
+{
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
+}
+
+long ModifyHttpHeaderConfigRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyHttpHeaderConfigRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyHttpHeaderConfigRequest::getConfigID()const

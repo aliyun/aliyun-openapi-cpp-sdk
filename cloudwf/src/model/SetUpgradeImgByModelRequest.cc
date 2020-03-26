@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SetUpgradeImgByModelRequest;
 
 SetUpgradeImgByModelRequest::SetUpgradeImgByModelRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SetUpgradeImgByModel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetUpgradeImgByModelRequest::~SetUpgradeImgByModelRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetUpgradeImgByModelRequest::getImgVersion()const
 void SetUpgradeImgByModelRequest::setImgVersion(const std::string& imgVersion)
 {
 	imgVersion_ = imgVersion;
-	setCoreParameter("ImgVersion", imgVersion);
+	setParameter("ImgVersion", imgVersion);
 }
 
 long SetUpgradeImgByModelRequest::getApModelId()const
@@ -44,7 +46,7 @@ long SetUpgradeImgByModelRequest::getApModelId()const
 void SetUpgradeImgByModelRequest::setApModelId(long apModelId)
 {
 	apModelId_ = apModelId;
-	setCoreParameter("ApModelId", std::to_string(apModelId));
+	setParameter("ApModelId", std::to_string(apModelId));
 }
 
 std::string SetUpgradeImgByModelRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SetUpgradeImgByModelRequest::getAccessKeyId()const
 void SetUpgradeImgByModelRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetUpgradeImgByModelRequest::getImgAddr()const
@@ -66,7 +68,7 @@ std::string SetUpgradeImgByModelRequest::getImgAddr()const
 void SetUpgradeImgByModelRequest::setImgAddr(const std::string& imgAddr)
 {
 	imgAddr_ = imgAddr;
-	setCoreParameter("ImgAddr", imgAddr);
+	setParameter("ImgAddr", imgAddr);
 }
 
 std::string SetUpgradeImgByModelRequest::getComment()const
@@ -77,6 +79,6 @@ std::string SetUpgradeImgByModelRequest::getComment()const
 void SetUpgradeImgByModelRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setParameter("Comment", comment);
 }
 

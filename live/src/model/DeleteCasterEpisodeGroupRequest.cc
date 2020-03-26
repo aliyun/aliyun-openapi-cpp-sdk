@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterEpisodeGroupRequest;
 
 DeleteCasterEpisodeGroupRequest::DeleteCasterEpisodeGroupRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterEpisodeGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterEpisodeGroupRequest::~DeleteCasterEpisodeGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterEpisodeGroupRequest::getProgramId()const
 void DeleteCasterEpisodeGroupRequest::setProgramId(const std::string& programId)
 {
 	programId_ = programId;
-	setCoreParameter("ProgramId", programId);
+	setParameter("ProgramId", programId);
 }
 
 long DeleteCasterEpisodeGroupRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DeleteCasterEpisodeGroupRequest::getOwnerId()const
 void DeleteCasterEpisodeGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

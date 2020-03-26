@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddMediaRequest;
 
 AddMediaRequest::AddMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddMediaRequest::~AddMediaRequest()
 {}
@@ -33,7 +35,7 @@ long AddMediaRequest::getResourceOwnerId()const
 void AddMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddMediaRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string AddMediaRequest::getDescription()const
 void AddMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string AddMediaRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string AddMediaRequest::getTitle()const
 void AddMediaRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 bool AddMediaRequest::getInputUnbind()const
@@ -66,7 +68,7 @@ bool AddMediaRequest::getInputUnbind()const
 void AddMediaRequest::setInputUnbind(bool inputUnbind)
 {
 	inputUnbind_ = inputUnbind;
-	setCoreParameter("InputUnbind", inputUnbind ? "true" : "false");
+	setParameter("InputUnbind", inputUnbind ? "true" : "false");
 }
 
 std::string AddMediaRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string AddMediaRequest::getAccessKeyId()const
 void AddMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddMediaRequest::getCoverURL()const
@@ -88,7 +90,7 @@ std::string AddMediaRequest::getCoverURL()const
 void AddMediaRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setParameter("CoverURL", coverURL);
 }
 
 long AddMediaRequest::getCateId()const
@@ -99,7 +101,7 @@ long AddMediaRequest::getCateId()const
 void AddMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 std::string AddMediaRequest::getMediaWorkflowId()const
@@ -110,7 +112,7 @@ std::string AddMediaRequest::getMediaWorkflowId()const
 void AddMediaRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 std::string AddMediaRequest::getMediaWorkflowUserData()const
@@ -121,7 +123,7 @@ std::string AddMediaRequest::getMediaWorkflowUserData()const
 void AddMediaRequest::setMediaWorkflowUserData(const std::string& mediaWorkflowUserData)
 {
 	mediaWorkflowUserData_ = mediaWorkflowUserData;
-	setCoreParameter("MediaWorkflowUserData", mediaWorkflowUserData);
+	setParameter("MediaWorkflowUserData", mediaWorkflowUserData);
 }
 
 std::string AddMediaRequest::getResourceOwnerAccount()const
@@ -132,7 +134,7 @@ std::string AddMediaRequest::getResourceOwnerAccount()const
 void AddMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddMediaRequest::getOwnerAccount()const
@@ -143,7 +145,7 @@ std::string AddMediaRequest::getOwnerAccount()const
 void AddMediaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddMediaRequest::getOverrideParams()const
@@ -154,7 +156,7 @@ std::string AddMediaRequest::getOverrideParams()const
 void AddMediaRequest::setOverrideParams(const std::string& overrideParams)
 {
 	overrideParams_ = overrideParams;
-	setCoreParameter("OverrideParams", overrideParams);
+	setParameter("OverrideParams", overrideParams);
 }
 
 long AddMediaRequest::getOwnerId()const
@@ -165,7 +167,7 @@ long AddMediaRequest::getOwnerId()const
 void AddMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddMediaRequest::getTags()const
@@ -176,7 +178,7 @@ std::string AddMediaRequest::getTags()const
 void AddMediaRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string AddMediaRequest::getFileURL()const
@@ -187,6 +189,6 @@ std::string AddMediaRequest::getFileURL()const
 void AddMediaRequest::setFileURL(const std::string& fileURL)
 {
 	fileURL_ = fileURL;
-	setCoreParameter("FileURL", fileURL);
+	setParameter("FileURL", fileURL);
 }
 

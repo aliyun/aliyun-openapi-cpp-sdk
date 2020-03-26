@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListSubAccountPermissionRequest;
 
 ListSubAccountPermissionRequest::ListSubAccountPermissionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListSubAccountPermission")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSubAccountPermissionRequest::~ListSubAccountPermissionRequest()
 {}
@@ -33,7 +35,7 @@ int ListSubAccountPermissionRequest::getLength()const
 void ListSubAccountPermissionRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListSubAccountPermissionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListSubAccountPermissionRequest::getAccessKeyId()const
 void ListSubAccountPermissionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListSubAccountPermissionRequest::getSearchUid()const
@@ -55,7 +57,7 @@ long ListSubAccountPermissionRequest::getSearchUid()const
 void ListSubAccountPermissionRequest::setSearchUid(long searchUid)
 {
 	searchUid_ = searchUid;
-	setCoreParameter("SearchUid", std::to_string(searchUid));
+	setParameter("SearchUid", std::to_string(searchUid));
 }
 
 int ListSubAccountPermissionRequest::getPageIndex()const
@@ -66,6 +68,6 @@ int ListSubAccountPermissionRequest::getPageIndex()const
 void ListSubAccountPermissionRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

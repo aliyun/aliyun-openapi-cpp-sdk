@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateCertificateNameRequest;
 
 CreateCertificateNameRequest::CreateCertificateNameRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateCertificateName")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCertificateNameRequest::~CreateCertificateNameRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCertificateNameRequest::getCertificateId()const
 void CreateCertificateNameRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string CreateCertificateNameRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateCertificateNameRequest::getResourceGroupId()const
 void CreateCertificateNameRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateCertificateNameRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateCertificateNameRequest::getSourceIp()const
 void CreateCertificateNameRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCertificateNameRequest::getName()const
@@ -66,7 +68,7 @@ std::string CreateCertificateNameRequest::getName()const
 void CreateCertificateNameRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateCertificateNameRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateCertificateNameRequest::getLang()const
 void CreateCertificateNameRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

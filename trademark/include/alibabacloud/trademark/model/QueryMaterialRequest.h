@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				QueryMaterialRequest();
 				~QueryMaterialRequest();
 
+				bool getQueryUnconfirmedInfo()const;
+				void setQueryUnconfirmedInfo(bool queryUnconfirmedInfo);
 				long getId()const;
 				void setId(long id);
 
             private:
+				bool queryUnconfirmedInfo_;
 				long id_;
 
 			};

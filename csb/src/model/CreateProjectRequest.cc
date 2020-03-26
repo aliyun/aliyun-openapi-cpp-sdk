@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::CreateProjectRequest;
 
 CreateProjectRequest::CreateProjectRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "CreateProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProjectRequest::~CreateProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateProjectRequest::getData()const
 void CreateProjectRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 long CreateProjectRequest::getCsbId()const
@@ -44,6 +46,6 @@ long CreateProjectRequest::getCsbId()const
 void CreateProjectRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 

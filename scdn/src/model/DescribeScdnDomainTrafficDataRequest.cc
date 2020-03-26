@@ -35,7 +35,7 @@ std::string DescribeScdnDomainTrafficDataRequest::getLocationNameEn()const
 void DescribeScdnDomainTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeScdnDomainTrafficDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainTrafficDataRequest::getStartTime()const
 void DescribeScdnDomainTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainTrafficDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainTrafficDataRequest::getIspNameEn()const
 void DescribeScdnDomainTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeScdnDomainTrafficDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeScdnDomainTrafficDataRequest::getDomainName()const
 void DescribeScdnDomainTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainTrafficDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeScdnDomainTrafficDataRequest::getEndTime()const
 void DescribeScdnDomainTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainTrafficDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeScdnDomainTrafficDataRequest::getOwnerId()const
 void DescribeScdnDomainTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainTrafficDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeScdnDomainTrafficDataRequest::getInterval()const
 void DescribeScdnDomainTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

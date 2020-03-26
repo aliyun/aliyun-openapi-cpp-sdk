@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::StartBaselineSecurityCheckRequest;
 
 StartBaselineSecurityCheckRequest::StartBaselineSecurityCheckRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "StartBaselineSecurityCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartBaselineSecurityCheckRequest::~StartBaselineSecurityCheckRequest()
 {}
@@ -33,7 +35,7 @@ long StartBaselineSecurityCheckRequest::getResourceOwnerId()const
 void StartBaselineSecurityCheckRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
@@ -44,8 +46,9 @@ std::vector<long> StartBaselineSecurityCheckRequest::getItemIds()const
 void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long>& itemIds)
 {
 	itemIds_ = itemIds;
-	for(int i = 0; i!= itemIds.size(); i++)
-		setCoreParameter("ItemIds."+ std::to_string(i), std::to_string(itemIds.at(i)));
+	for(int dep1 = 0; dep1!= itemIds.size(); dep1++) {
+		setParameter("ItemIds."+ std::to_string(dep1), std::to_string(itemIds.at(dep1)));
+	}
 }
 
 std::string StartBaselineSecurityCheckRequest::getType()const
@@ -56,7 +59,7 @@ std::string StartBaselineSecurityCheckRequest::getType()const
 void StartBaselineSecurityCheckRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
@@ -67,8 +70,9 @@ std::vector<std::string> StartBaselineSecurityCheckRequest::getAssets()const
 void StartBaselineSecurityCheckRequest::setAssets(const std::vector<std::string>& assets)
 {
 	assets_ = assets;
-	for(int i = 0; i!= assets.size(); i++)
-		setCoreParameter("Assets."+ std::to_string(i), assets.at(i));
+	for(int dep1 = 0; dep1!= assets.size(); dep1++) {
+		setParameter("Assets."+ std::to_string(dep1), assets.at(dep1));
+	}
 }
 
 std::string StartBaselineSecurityCheckRequest::getSourceIp()const
@@ -79,7 +83,7 @@ std::string StartBaselineSecurityCheckRequest::getSourceIp()const
 void StartBaselineSecurityCheckRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string StartBaselineSecurityCheckRequest::getLang()const
@@ -90,6 +94,6 @@ std::string StartBaselineSecurityCheckRequest::getLang()const
 void StartBaselineSecurityCheckRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

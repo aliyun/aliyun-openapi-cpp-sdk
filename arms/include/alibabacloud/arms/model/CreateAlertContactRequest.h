@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getPhoneNum()const;
 				void setPhoneNum(const std::string& phoneNum);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				std::string getRegionId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				std::string phoneNum_;
+				std::string proxyUserId_;
 				std::string contactName_;
 				std::string regionId_;
 				std::string dingRobotWebhookUrl_;

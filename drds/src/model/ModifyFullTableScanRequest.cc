@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyFullTableScanRequest;
 
 ModifyFullTableScanRequest::ModifyFullTableScanRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyFullTableScan")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFullTableScanRequest::~ModifyFullTableScanRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyFullTableScanRequest::getTableNames()const
 void ModifyFullTableScanRequest::setTableNames(const std::string& tableNames)
 {
 	tableNames_ = tableNames;
-	setCoreParameter("TableNames", tableNames);
+	setParameter("TableNames", tableNames);
 }
 
 std::string ModifyFullTableScanRequest::getDrdsInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyFullTableScanRequest::getDrdsInstanceId()const
 void ModifyFullTableScanRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyFullTableScanRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyFullTableScanRequest::getAccessKeyId()const
 void ModifyFullTableScanRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyFullTableScanRequest::getDbName()const
@@ -66,7 +68,7 @@ std::string ModifyFullTableScanRequest::getDbName()const
 void ModifyFullTableScanRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 bool ModifyFullTableScanRequest::getFullTableScan()const
@@ -77,6 +79,6 @@ bool ModifyFullTableScanRequest::getFullTableScan()const
 void ModifyFullTableScanRequest::setFullTableScan(bool fullTableScan)
 {
 	fullTableScan_ = fullTableScan;
-	setCoreParameter("FullTableScan", fullTableScan ? "true" : "false");
+	setParameter("FullTableScan", fullTableScan ? "true" : "false");
 }
 

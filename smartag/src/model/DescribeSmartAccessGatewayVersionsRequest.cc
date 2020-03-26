@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSmartAccessGatewayVersionsRequest;
 
 DescribeSmartAccessGatewayVersionsRequest::DescribeSmartAccessGatewayVersionsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSmartAccessGatewayVersionsRequest::~DescribeSmartAccessGatewayVersionsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSmartAccessGatewayVersionsRequest::getResourceOwnerId()const
 void DescribeSmartAccessGatewayVersionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSmartAccessGatewayVersionsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeSmartAccessGatewayVersionsRequest::getRegionId()const
 void DescribeSmartAccessGatewayVersionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSmartAccessGatewayVersionsRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeSmartAccessGatewayVersionsRequest::getResourceOwnerAccount()
 void DescribeSmartAccessGatewayVersionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSmartAccessGatewayVersionsRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeSmartAccessGatewayVersionsRequest::getOwnerAccount()const
 void DescribeSmartAccessGatewayVersionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSmartAccessGatewayVersionsRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeSmartAccessGatewayVersionsRequest::getOwnerId()const
 void DescribeSmartAccessGatewayVersionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGId()const
@@ -88,6 +90,6 @@ std::string DescribeSmartAccessGatewayVersionsRequest::getSmartAGId()const
 void DescribeSmartAccessGatewayVersionsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

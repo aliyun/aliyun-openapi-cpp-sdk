@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::GetCompanyRegOrderRequest;
 
 GetCompanyRegOrderRequest::GetCompanyRegOrderRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "GetCompanyRegOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCompanyRegOrderRequest::~GetCompanyRegOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetCompanyRegOrderRequest::getActionTypes()const
 void GetCompanyRegOrderRequest::setActionTypes(const std::string& actionTypes)
 {
 	actionTypes_ = actionTypes;
-	setCoreParameter("ActionTypes", actionTypes);
+	setParameter("ActionTypes", actionTypes);
 }
 
 std::string GetCompanyRegOrderRequest::getBizCode()const
@@ -44,7 +46,7 @@ std::string GetCompanyRegOrderRequest::getBizCode()const
 void GetCompanyRegOrderRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string GetCompanyRegOrderRequest::getBizId()const
@@ -55,7 +57,7 @@ std::string GetCompanyRegOrderRequest::getBizId()const
 void GetCompanyRegOrderRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 int GetCompanyRegOrderRequest::getMaxOperationSize()const
@@ -66,7 +68,7 @@ int GetCompanyRegOrderRequest::getMaxOperationSize()const
 void GetCompanyRegOrderRequest::setMaxOperationSize(int maxOperationSize)
 {
 	maxOperationSize_ = maxOperationSize;
-	setCoreParameter("MaxOperationSize", std::to_string(maxOperationSize));
+	setParameter("MaxOperationSize", std::to_string(maxOperationSize));
 }
 
 std::string GetCompanyRegOrderRequest::getBizSubCode()const
@@ -77,6 +79,6 @@ std::string GetCompanyRegOrderRequest::getBizSubCode()const
 void GetCompanyRegOrderRequest::setBizSubCode(const std::string& bizSubCode)
 {
 	bizSubCode_ = bizSubCode;
-	setCoreParameter("BizSubCode", bizSubCode);
+	setParameter("BizSubCode", bizSubCode);
 }
 

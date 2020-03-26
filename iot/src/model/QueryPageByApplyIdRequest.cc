@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryPageByApplyIdRequest;
 
 QueryPageByApplyIdRequest::QueryPageByApplyIdRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryPageByApplyId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPageByApplyIdRequest::~QueryPageByApplyIdRequest()
 {}
@@ -33,7 +35,7 @@ int QueryPageByApplyIdRequest::getCurrentPage()const
 void QueryPageByApplyIdRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryPageByApplyIdRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryPageByApplyIdRequest::getAccessKeyId()const
 void QueryPageByApplyIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryPageByApplyIdRequest::getApplyId()const
@@ -55,7 +57,7 @@ long QueryPageByApplyIdRequest::getApplyId()const
 void QueryPageByApplyIdRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setCoreParameter("ApplyId", std::to_string(applyId));
+	setParameter("ApplyId", std::to_string(applyId));
 }
 
 std::string QueryPageByApplyIdRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryPageByApplyIdRequest::getIotInstanceId()const
 void QueryPageByApplyIdRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryPageByApplyIdRequest::getPageSize()const
@@ -77,6 +79,6 @@ int QueryPageByApplyIdRequest::getPageSize()const
 void QueryPageByApplyIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

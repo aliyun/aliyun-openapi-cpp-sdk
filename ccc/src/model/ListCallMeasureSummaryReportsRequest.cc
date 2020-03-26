@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListCallMeasureSummaryReportsRequest;
 
 ListCallMeasureSummaryReportsRequest::ListCallMeasureSummaryReportsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListCallMeasureSummaryReports")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCallMeasureSummaryReportsRequest::~ListCallMeasureSummaryReportsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListCallMeasureSummaryReportsRequest::getIntervalType()const
 void ListCallMeasureSummaryReportsRequest::setIntervalType(const std::string& intervalType)
 {
 	intervalType_ = intervalType;
-	setCoreParameter("IntervalType", intervalType);
+	setParameter("IntervalType", intervalType);
 }
 
 std::string ListCallMeasureSummaryReportsRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ListCallMeasureSummaryReportsRequest::getAccessKeyId()const
 void ListCallMeasureSummaryReportsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

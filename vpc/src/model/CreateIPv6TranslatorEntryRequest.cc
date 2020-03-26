@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateIPv6TranslatorEntryRequest;
 
 CreateIPv6TranslatorEntryRequest::CreateIPv6TranslatorEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateIPv6TranslatorEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIPv6TranslatorEntryRequest::~CreateIPv6TranslatorEntryRequest()
 {}
@@ -33,7 +35,7 @@ int CreateIPv6TranslatorEntryRequest::getBackendIpv4Port()const
 void CreateIPv6TranslatorEntryRequest::setBackendIpv4Port(int backendIpv4Port)
 {
 	backendIpv4Port_ = backendIpv4Port;
-	setCoreParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
+	setParameter("BackendIpv4Port", std::to_string(backendIpv4Port));
 }
 
 long CreateIPv6TranslatorEntryRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateIPv6TranslatorEntryRequest::getResourceOwnerId()const
 void CreateIPv6TranslatorEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getEntryName()const
@@ -55,7 +57,7 @@ std::string CreateIPv6TranslatorEntryRequest::getEntryName()const
 void CreateIPv6TranslatorEntryRequest::setEntryName(const std::string& entryName)
 {
 	entryName_ = entryName;
-	setCoreParameter("EntryName", entryName);
+	setParameter("EntryName", entryName);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getAclStatus()const
@@ -66,7 +68,7 @@ std::string CreateIPv6TranslatorEntryRequest::getAclStatus()const
 void CreateIPv6TranslatorEntryRequest::setAclStatus(const std::string& aclStatus)
 {
 	aclStatus_ = aclStatus;
-	setCoreParameter("AclStatus", aclStatus);
+	setParameter("AclStatus", aclStatus);
 }
 
 int CreateIPv6TranslatorEntryRequest::getEntryBandwidth()const
@@ -77,7 +79,7 @@ int CreateIPv6TranslatorEntryRequest::getEntryBandwidth()const
 void CreateIPv6TranslatorEntryRequest::setEntryBandwidth(int entryBandwidth)
 {
 	entryBandwidth_ = entryBandwidth;
-	setCoreParameter("EntryBandwidth", std::to_string(entryBandwidth));
+	setParameter("EntryBandwidth", std::to_string(entryBandwidth));
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getAclType()const
@@ -88,7 +90,7 @@ std::string CreateIPv6TranslatorEntryRequest::getAclType()const
 void CreateIPv6TranslatorEntryRequest::setAclType(const std::string& aclType)
 {
 	aclType_ = aclType;
-	setCoreParameter("AclType", aclType);
+	setParameter("AclType", aclType);
 }
 
 int CreateIPv6TranslatorEntryRequest::getAllocateIpv6Port()const
@@ -99,7 +101,7 @@ int CreateIPv6TranslatorEntryRequest::getAllocateIpv6Port()const
 void CreateIPv6TranslatorEntryRequest::setAllocateIpv6Port(int allocateIpv6Port)
 {
 	allocateIpv6Port_ = allocateIpv6Port;
-	setCoreParameter("AllocateIpv6Port", std::to_string(allocateIpv6Port));
+	setParameter("AllocateIpv6Port", std::to_string(allocateIpv6Port));
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getEntryDescription()const
@@ -110,7 +112,7 @@ std::string CreateIPv6TranslatorEntryRequest::getEntryDescription()const
 void CreateIPv6TranslatorEntryRequest::setEntryDescription(const std::string& entryDescription)
 {
 	entryDescription_ = entryDescription;
-	setCoreParameter("EntryDescription", entryDescription);
+	setParameter("EntryDescription", entryDescription);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getRegionId()const
@@ -121,7 +123,7 @@ std::string CreateIPv6TranslatorEntryRequest::getRegionId()const
 void CreateIPv6TranslatorEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getBackendIpv4Addr()const
@@ -132,7 +134,7 @@ std::string CreateIPv6TranslatorEntryRequest::getBackendIpv4Addr()const
 void CreateIPv6TranslatorEntryRequest::setBackendIpv4Addr(const std::string& backendIpv4Addr)
 {
 	backendIpv4Addr_ = backendIpv4Addr;
-	setCoreParameter("BackendIpv4Addr", backendIpv4Addr);
+	setParameter("BackendIpv4Addr", backendIpv4Addr);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getAclId()const
@@ -143,7 +145,7 @@ std::string CreateIPv6TranslatorEntryRequest::getAclId()const
 void CreateIPv6TranslatorEntryRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
@@ -154,7 +156,7 @@ std::string CreateIPv6TranslatorEntryRequest::getResourceOwnerAccount()const
 void CreateIPv6TranslatorEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getOwnerAccount()const
@@ -165,7 +167,7 @@ std::string CreateIPv6TranslatorEntryRequest::getOwnerAccount()const
 void CreateIPv6TranslatorEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateIPv6TranslatorEntryRequest::getOwnerId()const
@@ -176,7 +178,7 @@ long CreateIPv6TranslatorEntryRequest::getOwnerId()const
 void CreateIPv6TranslatorEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getTransProtocol()const
@@ -187,7 +189,7 @@ std::string CreateIPv6TranslatorEntryRequest::getTransProtocol()const
 void CreateIPv6TranslatorEntryRequest::setTransProtocol(const std::string& transProtocol)
 {
 	transProtocol_ = transProtocol;
-	setCoreParameter("TransProtocol", transProtocol);
+	setParameter("TransProtocol", transProtocol);
 }
 
 std::string CreateIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
@@ -198,6 +200,6 @@ std::string CreateIPv6TranslatorEntryRequest::getIpv6TranslatorId()const
 void CreateIPv6TranslatorEntryRequest::setIpv6TranslatorId(const std::string& ipv6TranslatorId)
 {
 	ipv6TranslatorId_ = ipv6TranslatorId;
-	setCoreParameter("Ipv6TranslatorId", ipv6TranslatorId);
+	setParameter("Ipv6TranslatorId", ipv6TranslatorId);
 }
 

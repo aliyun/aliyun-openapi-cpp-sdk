@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeVpcAttributeRequest;
 
 DescribeVpcAttributeRequest::DescribeVpcAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpcAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVpcAttributeRequest::~DescribeVpcAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeVpcAttributeRequest::getResourceOwnerId()const
 void DescribeVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeVpcAttributeRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeVpcAttributeRequest::getRegionId()const
 void DescribeVpcAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool DescribeVpcAttributeRequest::getIsDefault()const
@@ -55,7 +57,7 @@ bool DescribeVpcAttributeRequest::getIsDefault()const
 void DescribeVpcAttributeRequest::setIsDefault(bool isDefault)
 {
 	isDefault_ = isDefault;
-	setCoreParameter("IsDefault", isDefault ? "true" : "false");
+	setParameter("IsDefault", isDefault ? "true" : "false");
 }
 
 bool DescribeVpcAttributeRequest::getDryRun()const
@@ -66,7 +68,7 @@ bool DescribeVpcAttributeRequest::getDryRun()const
 void DescribeVpcAttributeRequest::setDryRun(bool dryRun)
 {
 	dryRun_ = dryRun;
-	setCoreParameter("DryRun", dryRun ? "true" : "false");
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string DescribeVpcAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeVpcAttributeRequest::getResourceOwnerAccount()const
 void DescribeVpcAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVpcAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeVpcAttributeRequest::getOwnerAccount()const
 void DescribeVpcAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVpcAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeVpcAttributeRequest::getOwnerId()const
 void DescribeVpcAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVpcAttributeRequest::getVpcId()const
@@ -110,6 +112,6 @@ std::string DescribeVpcAttributeRequest::getVpcId()const
 void DescribeVpcAttributeRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

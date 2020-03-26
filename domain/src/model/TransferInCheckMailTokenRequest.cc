@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInCheckMailTokenRequest;
 
 TransferInCheckMailTokenRequest::TransferInCheckMailTokenRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInCheckMailToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInCheckMailTokenRequest::~TransferInCheckMailTokenRequest()
 {}
@@ -33,7 +35,7 @@ std::string TransferInCheckMailTokenRequest::getToken()const
 void TransferInCheckMailTokenRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 std::string TransferInCheckMailTokenRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string TransferInCheckMailTokenRequest::getUserClientIp()const
 void TransferInCheckMailTokenRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInCheckMailTokenRequest::getLang()const
@@ -55,6 +57,6 @@ std::string TransferInCheckMailTokenRequest::getLang()const
 void TransferInCheckMailTokenRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

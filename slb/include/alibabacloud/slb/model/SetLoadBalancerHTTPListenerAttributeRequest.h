@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setXForwardedFor(const std::string& xForwardedFor);
 				std::string getHealthCheckURI()const;
 				void setHealthCheckURI(const std::string& healthCheckURI);
+				std::string getXForwardedFor_SLBPORT()const;
+				void setXForwardedFor_SLBPORT(const std::string& xForwardedFor_SLBPORT);
 				std::string getAclStatus()const;
 				void setAclStatus(const std::string& aclStatus);
 				std::string getAclType()const;
@@ -55,6 +57,8 @@ namespace AlibabaCloud
 				void setVServerGroupId(const std::string& vServerGroupId);
 				std::string getAclId()const;
 				void setAclId(const std::string& aclId);
+				int getForwardCode()const;
+				void setForwardCode(int forwardCode);
 				std::string getCookie()const;
 				void setCookie(const std::string& cookie);
 				std::string getHealthCheckMethod()const;
@@ -77,6 +81,8 @@ namespace AlibabaCloud
 				void setXForwardedFor_SLBID(const std::string& xForwardedFor_SLBID);
 				std::string getAccess_key_id()const;
 				void setAccess_key_id(const std::string& access_key_id);
+				std::string getXForwardedFor_ClientSrcPort()const;
+				void setXForwardedFor_ClientSrcPort(const std::string& xForwardedFor_ClientSrcPort);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				int getUnhealthyThreshold()const;
@@ -123,12 +129,14 @@ namespace AlibabaCloud
 				int healthCheckTimeout_;
 				std::string xForwardedFor_;
 				std::string healthCheckURI_;
+				std::string xForwardedFor_SLBPORT_;
 				std::string aclStatus_;
 				std::string aclType_;
 				std::string healthCheck_;
 				std::string vpcIds_;
 				std::string vServerGroupId_;
 				std::string aclId_;
+				int forwardCode_;
 				std::string cookie_;
 				std::string healthCheckMethod_;
 				std::string healthCheckDomain_;
@@ -140,6 +148,7 @@ namespace AlibabaCloud
 				int healthCheckInterval_;
 				std::string xForwardedFor_SLBID_;
 				std::string access_key_id_;
+				std::string xForwardedFor_ClientSrcPort_;
 				std::string description_;
 				int unhealthyThreshold_;
 				int healthyThreshold_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyScalingRuleRequest;
 
 ModifyScalingRuleRequest::ModifyScalingRuleRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyScalingRuleRequest::~ModifyScalingRuleRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyScalingRuleRequest::getResourceOwnerId()const
 void ModifyScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyScalingRuleRequest::getRuleName()const
@@ -44,7 +46,7 @@ std::string ModifyScalingRuleRequest::getRuleName()const
 void ModifyScalingRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::string ModifyScalingRuleRequest::getScalingRuleId()const
@@ -55,7 +57,7 @@ std::string ModifyScalingRuleRequest::getScalingRuleId()const
 void ModifyScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setParameter("ScalingRuleId", scalingRuleId);
 }
 
 std::string ModifyScalingRuleRequest::getRecurrenceEndTime()const
@@ -66,7 +68,7 @@ std::string ModifyScalingRuleRequest::getRecurrenceEndTime()const
 void ModifyScalingRuleRequest::setRecurrenceEndTime(const std::string& recurrenceEndTime)
 {
 	recurrenceEndTime_ = recurrenceEndTime;
-	setCoreParameter("RecurrenceEndTime", recurrenceEndTime);
+	setParameter("RecurrenceEndTime", recurrenceEndTime);
 }
 
 std::vector<ModifyScalingRuleRequest::CloudWatchTrigger> ModifyScalingRuleRequest::getCloudWatchTrigger()const
@@ -77,16 +79,15 @@ std::vector<ModifyScalingRuleRequest::CloudWatchTrigger> ModifyScalingRuleReques
 void ModifyScalingRuleRequest::setCloudWatchTrigger(const std::vector<CloudWatchTrigger>& cloudWatchTrigger)
 {
 	cloudWatchTrigger_ = cloudWatchTrigger;
-	int i = 0;
-	for(int i = 0; i!= cloudWatchTrigger.size(); i++)	{
-		auto obj = cloudWatchTrigger.at(i);
-		std::string str ="CloudWatchTrigger."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".EvaluationCount", obj.evaluationCount);
-		setCoreParameter(str + ".Threshold", obj.threshold);
-		setCoreParameter(str + ".MetricName", obj.metricName);
-		setCoreParameter(str + ".ComparisonOperator", obj.comparisonOperator);
-		setCoreParameter(str + ".Statistics", obj.statistics);
+	for(int dep1 = 0; dep1!= cloudWatchTrigger.size(); dep1++) {
+		auto cloudWatchTriggerObj = cloudWatchTrigger.at(dep1);
+		std::string cloudWatchTriggerObjStr = "CloudWatchTrigger." + std::to_string(dep1 + 1);
+		setParameter(cloudWatchTriggerObjStr + ".Period", std::to_string(cloudWatchTriggerObj.period));
+		setParameter(cloudWatchTriggerObjStr + ".EvaluationCount", cloudWatchTriggerObj.evaluationCount);
+		setParameter(cloudWatchTriggerObjStr + ".Threshold", cloudWatchTriggerObj.threshold);
+		setParameter(cloudWatchTriggerObjStr + ".MetricName", cloudWatchTriggerObj.metricName);
+		setParameter(cloudWatchTriggerObjStr + ".ComparisonOperator", cloudWatchTriggerObj.comparisonOperator);
+		setParameter(cloudWatchTriggerObjStr + ".Statistics", cloudWatchTriggerObj.statistics);
 	}
 }
 
@@ -98,7 +99,7 @@ std::string ModifyScalingRuleRequest::getAccessKeyId()const
 void ModifyScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyScalingRuleRequest::getRegionId()const
@@ -109,7 +110,7 @@ std::string ModifyScalingRuleRequest::getRegionId()const
 void ModifyScalingRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ModifyScalingRuleRequest::getCooldown()const
@@ -120,7 +121,7 @@ int ModifyScalingRuleRequest::getCooldown()const
 void ModifyScalingRuleRequest::setCooldown(int cooldown)
 {
 	cooldown_ = cooldown;
-	setCoreParameter("Cooldown", std::to_string(cooldown));
+	setParameter("Cooldown", std::to_string(cooldown));
 }
 
 std::string ModifyScalingRuleRequest::getLaunchTime()const
@@ -131,7 +132,7 @@ std::string ModifyScalingRuleRequest::getLaunchTime()const
 void ModifyScalingRuleRequest::setLaunchTime(const std::string& launchTime)
 {
 	launchTime_ = launchTime;
-	setCoreParameter("LaunchTime", launchTime);
+	setParameter("LaunchTime", launchTime);
 }
 
 int ModifyScalingRuleRequest::getAdjustmentValue()const
@@ -142,7 +143,7 @@ int ModifyScalingRuleRequest::getAdjustmentValue()const
 void ModifyScalingRuleRequest::setAdjustmentValue(int adjustmentValue)
 {
 	adjustmentValue_ = adjustmentValue;
-	setCoreParameter("AdjustmentValue", std::to_string(adjustmentValue));
+	setParameter("AdjustmentValue", std::to_string(adjustmentValue));
 }
 
 std::string ModifyScalingRuleRequest::getAdjustmentType()const
@@ -153,7 +154,7 @@ std::string ModifyScalingRuleRequest::getAdjustmentType()const
 void ModifyScalingRuleRequest::setAdjustmentType(const std::string& adjustmentType)
 {
 	adjustmentType_ = adjustmentType;
-	setCoreParameter("AdjustmentType", adjustmentType);
+	setParameter("AdjustmentType", adjustmentType);
 }
 
 std::string ModifyScalingRuleRequest::getClusterId()const
@@ -164,7 +165,7 @@ std::string ModifyScalingRuleRequest::getClusterId()const
 void ModifyScalingRuleRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ModifyScalingRuleRequest::getLaunchExpirationTime()const
@@ -175,7 +176,7 @@ int ModifyScalingRuleRequest::getLaunchExpirationTime()const
 void ModifyScalingRuleRequest::setLaunchExpirationTime(int launchExpirationTime)
 {
 	launchExpirationTime_ = launchExpirationTime;
-	setCoreParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
+	setParameter("LaunchExpirationTime", std::to_string(launchExpirationTime));
 }
 
 std::string ModifyScalingRuleRequest::getRecurrenceValue()const
@@ -186,7 +187,7 @@ std::string ModifyScalingRuleRequest::getRecurrenceValue()const
 void ModifyScalingRuleRequest::setRecurrenceValue(const std::string& recurrenceValue)
 {
 	recurrenceValue_ = recurrenceValue;
-	setCoreParameter("RecurrenceValue", recurrenceValue);
+	setParameter("RecurrenceValue", recurrenceValue);
 }
 
 std::string ModifyScalingRuleRequest::getHostGroupId()const
@@ -197,7 +198,7 @@ std::string ModifyScalingRuleRequest::getHostGroupId()const
 void ModifyScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 
 std::vector<ModifyScalingRuleRequest::SchedulerTrigger> ModifyScalingRuleRequest::getSchedulerTrigger()const
@@ -208,15 +209,14 @@ std::vector<ModifyScalingRuleRequest::SchedulerTrigger> ModifyScalingRuleRequest
 void ModifyScalingRuleRequest::setSchedulerTrigger(const std::vector<SchedulerTrigger>& schedulerTrigger)
 {
 	schedulerTrigger_ = schedulerTrigger;
-	int i = 0;
-	for(int i = 0; i!= schedulerTrigger.size(); i++)	{
-		auto obj = schedulerTrigger.at(i);
-		std::string str ="SchedulerTrigger."+ std::to_string(i);
-		setCoreParameter(str + ".LaunchTime", obj.launchTime);
-		setCoreParameter(str + ".LaunchExpirationTime", std::to_string(obj.launchExpirationTime));
-		setCoreParameter(str + ".RecurrenceValue", obj.recurrenceValue);
-		setCoreParameter(str + ".RecurrenceEndTime", obj.recurrenceEndTime);
-		setCoreParameter(str + ".RecurrenceType", obj.recurrenceType);
+	for(int dep1 = 0; dep1!= schedulerTrigger.size(); dep1++) {
+		auto schedulerTriggerObj = schedulerTrigger.at(dep1);
+		std::string schedulerTriggerObjStr = "SchedulerTrigger." + std::to_string(dep1 + 1);
+		setParameter(schedulerTriggerObjStr + ".LaunchTime", schedulerTriggerObj.launchTime);
+		setParameter(schedulerTriggerObjStr + ".LaunchExpirationTime", std::to_string(schedulerTriggerObj.launchExpirationTime));
+		setParameter(schedulerTriggerObjStr + ".RecurrenceValue", schedulerTriggerObj.recurrenceValue);
+		setParameter(schedulerTriggerObjStr + ".RecurrenceEndTime", schedulerTriggerObj.recurrenceEndTime);
+		setParameter(schedulerTriggerObjStr + ".RecurrenceType", schedulerTriggerObj.recurrenceType);
 	}
 }
 
@@ -228,6 +228,6 @@ std::string ModifyScalingRuleRequest::getRecurrenceType()const
 void ModifyScalingRuleRequest::setRecurrenceType(const std::string& recurrenceType)
 {
 	recurrenceType_ = recurrenceType;
-	setCoreParameter("RecurrenceType", recurrenceType);
+	setParameter("RecurrenceType", recurrenceType);
 }
 

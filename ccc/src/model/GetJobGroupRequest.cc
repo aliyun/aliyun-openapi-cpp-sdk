@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobGroupRequest;
 
 GetJobGroupRequest::GetJobGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobGroupRequest::~GetJobGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobGroupRequest::getInstanceId()const
 void GetJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetJobGroupRequest::getJobGroupId()const
@@ -44,6 +46,6 @@ std::string GetJobGroupRequest::getJobGroupId()const
 void GetJobGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 

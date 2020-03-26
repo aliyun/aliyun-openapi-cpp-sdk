@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::DeleteRetcodeAppRequest;
 
 DeleteRetcodeAppRequest::DeleteRetcodeAppRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "DeleteRetcodeApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRetcodeAppRequest::~DeleteRetcodeAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteRetcodeAppRequest::getRegionId()const
 void DeleteRetcodeAppRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteRetcodeAppRequest::getAppId()const
@@ -44,6 +46,6 @@ std::string DeleteRetcodeAppRequest::getAppId()const
 void DeleteRetcodeAppRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

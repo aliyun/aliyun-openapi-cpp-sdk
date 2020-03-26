@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ShrinkClusterRequest;
 
 ShrinkClusterRequest::ShrinkClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/shrink");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ShrinkClusterRequest::~ShrinkClusterRequest()
 {}
@@ -33,7 +36,7 @@ std::string ShrinkClusterRequest::getRegionId()const
 void ShrinkClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ShrinkClusterRequest::getInstanceIds()const
@@ -44,7 +47,7 @@ std::string ShrinkClusterRequest::getInstanceIds()const
 void ShrinkClusterRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setBodyParameter("InstanceIds", instanceIds);
 }
 
 std::string ShrinkClusterRequest::getClusterId()const
@@ -55,7 +58,7 @@ std::string ShrinkClusterRequest::getClusterId()const
 void ShrinkClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ShrinkClusterRequest::getModelTargetCount()const
@@ -66,6 +69,6 @@ std::string ShrinkClusterRequest::getModelTargetCount()const
 void ShrinkClusterRequest::setModelTargetCount(const std::string& modelTargetCount)
 {
 	modelTargetCount_ = modelTargetCount;
-	setCoreParameter("ModelTargetCount", modelTargetCount);
+	setBodyParameter("ModelTargetCount", modelTargetCount);
 }
 

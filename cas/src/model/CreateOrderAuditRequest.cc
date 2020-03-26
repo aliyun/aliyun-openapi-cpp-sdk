@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderAuditRequest;
 
 CreateOrderAuditRequest::CreateOrderAuditRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderAudit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderAuditRequest::~CreateOrderAuditRequest()
 {}
@@ -33,7 +35,7 @@ long CreateOrderAuditRequest::getOrderId()const
 void CreateOrderAuditRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderAuditRequest::getType()const
@@ -44,7 +46,7 @@ std::string CreateOrderAuditRequest::getType()const
 void CreateOrderAuditRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateOrderAuditRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateOrderAuditRequest::getResourceGroupId()const
 void CreateOrderAuditRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderAuditRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateOrderAuditRequest::getSourceIp()const
 void CreateOrderAuditRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderAuditRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateOrderAuditRequest::getLang()const
 void CreateOrderAuditRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

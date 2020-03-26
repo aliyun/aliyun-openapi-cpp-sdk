@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::CeaseInstanceRequest;
 
 CeaseInstanceRequest::CeaseInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "CeaseInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CeaseInstanceRequest::~CeaseInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string CeaseInstanceRequest::getTraceId()const
 void CeaseInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setParameter("TraceId", traceId);
 }
 
 std::string CeaseInstanceRequest::getSpMsg()const
@@ -44,7 +46,7 @@ std::string CeaseInstanceRequest::getSpMsg()const
 void CeaseInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setCoreParameter("SpMsg", spMsg);
+	setParameter("SpMsg", spMsg);
 }
 
 std::string CeaseInstanceRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string CeaseInstanceRequest::getAccessKeyId()const
 void CeaseInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

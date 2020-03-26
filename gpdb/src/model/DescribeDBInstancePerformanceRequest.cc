@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeDBInstancePerformanceRequest;
 
 DescribeDBInstancePerformanceRequest::DescribeDBInstancePerformanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeDBInstancePerformance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDBInstancePerformanceRequest::~DescribeDBInstancePerformanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDBInstancePerformanceRequest::getStartTime()const
 void DescribeDBInstancePerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeDBInstancePerformanceRequest::getAccessKeyId()const
 void DescribeDBInstancePerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
@@ -55,7 +57,7 @@ std::string DescribeDBInstancePerformanceRequest::getDBInstanceId()const
 void DescribeDBInstancePerformanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getKey()const
@@ -66,7 +68,7 @@ std::string DescribeDBInstancePerformanceRequest::getKey()const
 void DescribeDBInstancePerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 std::string DescribeDBInstancePerformanceRequest::getEndTime()const
@@ -77,6 +79,6 @@ std::string DescribeDBInstancePerformanceRequest::getEndTime()const
 void DescribeDBInstancePerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 

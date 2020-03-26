@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::MoveResourceGroupRequest;
 
 MoveResourceGroupRequest::MoveResourceGroupRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "MoveResourceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveResourceGroupRequest::~MoveResourceGroupRequest()
 {}
@@ -33,7 +35,7 @@ long MoveResourceGroupRequest::getResourceOwnerId()const
 void MoveResourceGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MoveResourceGroupRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string MoveResourceGroupRequest::getRegionId()const
 void MoveResourceGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string MoveResourceGroupRequest::getResourceId()const
@@ -55,7 +57,7 @@ std::string MoveResourceGroupRequest::getResourceId()const
 void MoveResourceGroupRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string MoveResourceGroupRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string MoveResourceGroupRequest::getResourceOwnerAccount()const
 void MoveResourceGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MoveResourceGroupRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string MoveResourceGroupRequest::getOwnerAccount()const
 void MoveResourceGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long MoveResourceGroupRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long MoveResourceGroupRequest::getOwnerId()const
 void MoveResourceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MoveResourceGroupRequest::getResourceType()const
@@ -99,7 +101,7 @@ std::string MoveResourceGroupRequest::getResourceType()const
 void MoveResourceGroupRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string MoveResourceGroupRequest::getNewResourceGroupId()const
@@ -110,6 +112,6 @@ std::string MoveResourceGroupRequest::getNewResourceGroupId()const
 void MoveResourceGroupRequest::setNewResourceGroupId(const std::string& newResourceGroupId)
 {
 	newResourceGroupId_ = newResourceGroupId;
-	setCoreParameter("NewResourceGroupId", newResourceGroupId);
+	setParameter("NewResourceGroupId", newResourceGroupId);
 }
 

@@ -483,6 +483,42 @@ AlidnsClient::ChangeDomainOfDnsProductOutcomeCallable AlidnsClient::changeDomain
 	return task->get_future();
 }
 
+AlidnsClient::CopyGtmConfigOutcome AlidnsClient::copyGtmConfig(const CopyGtmConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyGtmConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyGtmConfigOutcome(CopyGtmConfigResult(outcome.result()));
+	else
+		return CopyGtmConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::copyGtmConfigAsync(const CopyGtmConfigRequest& request, const CopyGtmConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyGtmConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::CopyGtmConfigOutcomeCallable AlidnsClient::copyGtmConfigCallable(const CopyGtmConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyGtmConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->copyGtmConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DeleteCustomLinesOutcome AlidnsClient::deleteCustomLines(const DeleteCustomLinesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

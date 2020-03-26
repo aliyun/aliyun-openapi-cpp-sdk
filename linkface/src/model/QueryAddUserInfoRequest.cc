@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QueryAddUserInfoRequest;
 
 QueryAddUserInfoRequest::QueryAddUserInfoRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QueryAddUserInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAddUserInfoRequest::~QueryAddUserInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryAddUserInfoRequest::getIotId()const
 void QueryAddUserInfoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setBodyParameter("IotId", iotId);
 }
 
 std::string QueryAddUserInfoRequest::getGroupId()const
@@ -44,18 +46,7 @@ std::string QueryAddUserInfoRequest::getGroupId()const
 void QueryAddUserInfoRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string QueryAddUserInfoRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void QueryAddUserInfoRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("GroupId", groupId);
 }
 
 std::string QueryAddUserInfoRequest::getProductKey()const
@@ -66,6 +57,39 @@ std::string QueryAddUserInfoRequest::getProductKey()const
 void QueryAddUserInfoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string QueryAddUserInfoRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryAddUserInfoRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryAddUserInfoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryAddUserInfoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string QueryAddUserInfoRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryAddUserInfoRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setBodyParameter("DeviceName", deviceName);
 }
 

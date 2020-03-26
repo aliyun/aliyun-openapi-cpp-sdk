@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitDynamicImageJobRequest;
 
 SubmitDynamicImageJobRequest::SubmitDynamicImageJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitDynamicImageJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitDynamicImageJobRequest::~SubmitDynamicImageJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitDynamicImageJobRequest::getResourceOwnerId()const
 void SubmitDynamicImageJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitDynamicImageJobRequest::getDynamicImageTemplateId()const
@@ -44,7 +46,7 @@ std::string SubmitDynamicImageJobRequest::getDynamicImageTemplateId()const
 void SubmitDynamicImageJobRequest::setDynamicImageTemplateId(const std::string& dynamicImageTemplateId)
 {
 	dynamicImageTemplateId_ = dynamicImageTemplateId;
-	setCoreParameter("DynamicImageTemplateId", dynamicImageTemplateId);
+	setParameter("DynamicImageTemplateId", dynamicImageTemplateId);
 }
 
 std::string SubmitDynamicImageJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitDynamicImageJobRequest::getAccessKeyId()const
 void SubmitDynamicImageJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitDynamicImageJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitDynamicImageJobRequest::getResourceOwnerAccount()const
 void SubmitDynamicImageJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitDynamicImageJobRequest::getVideoId()const
@@ -77,7 +79,7 @@ std::string SubmitDynamicImageJobRequest::getVideoId()const
 void SubmitDynamicImageJobRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 std::string SubmitDynamicImageJobRequest::getOverrideParams()const
@@ -88,7 +90,7 @@ std::string SubmitDynamicImageJobRequest::getOverrideParams()const
 void SubmitDynamicImageJobRequest::setOverrideParams(const std::string& overrideParams)
 {
 	overrideParams_ = overrideParams;
-	setCoreParameter("OverrideParams", overrideParams);
+	setParameter("OverrideParams", overrideParams);
 }
 
 long SubmitDynamicImageJobRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long SubmitDynamicImageJobRequest::getOwnerId()const
 void SubmitDynamicImageJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

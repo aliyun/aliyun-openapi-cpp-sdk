@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRegionsRequest::getAccessKeyId()const
 void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRegionsRequest::getRegion()const
@@ -44,6 +46,6 @@ std::string DescribeRegionsRequest::getRegion()const
 void DescribeRegionsRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

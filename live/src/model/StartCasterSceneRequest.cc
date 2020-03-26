@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StartCasterSceneRequest;
 
 StartCasterSceneRequest::StartCasterSceneRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StartCasterScene")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartCasterSceneRequest::~StartCasterSceneRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartCasterSceneRequest::getCasterId()const
 void StartCasterSceneRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long StartCasterSceneRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long StartCasterSceneRequest::getOwnerId()const
 void StartCasterSceneRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartCasterSceneRequest::getSceneId()const
@@ -55,6 +57,6 @@ std::string StartCasterSceneRequest::getSceneId()const
 void StartCasterSceneRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesForGroupRequest;
 
 ListPoliciesForGroupRequest::ListPoliciesForGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPoliciesForGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesForGroupRequest::~ListPoliciesForGroupRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListPoliciesForGroupRequest::getGroupName()const
 void ListPoliciesForGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

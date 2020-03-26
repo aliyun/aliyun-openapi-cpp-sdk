@@ -37,10 +37,18 @@ namespace AlibabaCloud
 				ScaleOutClusterResult();
 				explicit ScaleOutClusterResult(const std::string &payload);
 				~ScaleOutClusterResult();
+				std::string getRequest_id()const;
+				std::string getCluster_id()const;
+				std::string getInstanceId()const;
+				std::string getTask_id()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string request_id_;
+				std::string cluster_id_;
+				std::string instanceId_;
+				std::string task_id_;
 
 			};
 		}

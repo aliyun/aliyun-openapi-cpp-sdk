@@ -35,6 +35,6 @@ std::string EnableActiveMetricRuleRequest::getProduct()const
 void EnableActiveMetricRuleRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 

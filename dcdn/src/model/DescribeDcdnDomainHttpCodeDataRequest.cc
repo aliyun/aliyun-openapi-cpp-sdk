@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getLocationNameEn()const
 void DescribeDcdnDomainHttpCodeDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeDcdnDomainHttpCodeDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getStartTime()const
 void DescribeDcdnDomainHttpCodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainHttpCodeDataRequest::getIspNameEn()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getIspNameEn()const
 void DescribeDcdnDomainHttpCodeDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeDcdnDomainHttpCodeDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getDomainName()const
 void DescribeDcdnDomainHttpCodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainHttpCodeDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getEndTime()const
 void DescribeDcdnDomainHttpCodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainHttpCodeDataRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long DescribeDcdnDomainHttpCodeDataRequest::getOwnerId()const
 void DescribeDcdnDomainHttpCodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainHttpCodeDataRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string DescribeDcdnDomainHttpCodeDataRequest::getInterval()const
 void DescribeDcdnDomainHttpCodeDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

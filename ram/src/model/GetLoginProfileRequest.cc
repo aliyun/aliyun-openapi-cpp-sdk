@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetLoginProfileRequest;
 
 GetLoginProfileRequest::GetLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLoginProfileRequest::~GetLoginProfileRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetLoginProfileRequest::getUserName()const
 void GetLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

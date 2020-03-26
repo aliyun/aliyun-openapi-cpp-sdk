@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenRequest;
 
 DeleteCenRequest::DeleteCenRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenRequest::~DeleteCenRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCenRequest::getResourceOwnerId()const
 void DeleteCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCenRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteCenRequest::getResourceOwnerAccount()const
 void DeleteCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCenRequest::getCenId()const
@@ -55,7 +57,7 @@ std::string DeleteCenRequest::getCenId()const
 void DeleteCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DeleteCenRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteCenRequest::getOwnerAccount()const
 void DeleteCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCenRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long DeleteCenRequest::getOwnerId()const
 void DeleteCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

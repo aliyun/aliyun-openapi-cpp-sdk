@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribePhysicalConnectionLOARequest;
 
 DescribePhysicalConnectionLOARequest::DescribePhysicalConnectionLOARequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribePhysicalConnectionLOA")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePhysicalConnectionLOARequest::~DescribePhysicalConnectionLOARequest()
 {}
@@ -33,7 +35,7 @@ long DescribePhysicalConnectionLOARequest::getResourceOwnerId()const
 void DescribePhysicalConnectionLOARequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribePhysicalConnectionLOARequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DescribePhysicalConnectionLOARequest::getClientToken()const
 void DescribePhysicalConnectionLOARequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribePhysicalConnectionLOARequest::getRegionId()const
 void DescribePhysicalConnectionLOARequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribePhysicalConnectionLOARequest::getResourceOwnerAccount()const
 void DescribePhysicalConnectionLOARequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribePhysicalConnectionLOARequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribePhysicalConnectionLOARequest::getOwnerAccount()const
 void DescribePhysicalConnectionLOARequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribePhysicalConnectionLOARequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribePhysicalConnectionLOARequest::getOwnerId()const
 void DescribePhysicalConnectionLOARequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribePhysicalConnectionLOARequest::getInstanceId()const
@@ -99,6 +101,6 @@ std::string DescribePhysicalConnectionLOARequest::getInstanceId()const
 void DescribePhysicalConnectionLOARequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

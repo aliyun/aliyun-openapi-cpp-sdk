@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 
             private:
 				std::string srcIP_;
@@ -61,6 +63,7 @@ namespace AlibabaCloud
 				std::string punishStatus_;
 				std::string lang_;
 				int currentPage_;
+				std::string instanceId_;
 
 			};
 		}

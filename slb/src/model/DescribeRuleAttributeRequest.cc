@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeRuleAttributeRequest;
 
 DescribeRuleAttributeRequest::DescribeRuleAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeRuleAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRuleAttributeRequest::~DescribeRuleAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRuleAttributeRequest::getAccess_key_id()const
 void DescribeRuleAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeRuleAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeRuleAttributeRequest::getResourceOwnerId()const
 void DescribeRuleAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRuleAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeRuleAttributeRequest::getRegionId()const
 void DescribeRuleAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeRuleAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeRuleAttributeRequest::getResourceOwnerAccount()const
 void DescribeRuleAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRuleAttributeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeRuleAttributeRequest::getOwnerAccount()const
 void DescribeRuleAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRuleAttributeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeRuleAttributeRequest::getOwnerId()const
 void DescribeRuleAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRuleAttributeRequest::getTags()const
@@ -99,7 +101,7 @@ std::string DescribeRuleAttributeRequest::getTags()const
 void DescribeRuleAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeRuleAttributeRequest::getRuleId()const
@@ -110,6 +112,6 @@ std::string DescribeRuleAttributeRequest::getRuleId()const
 void DescribeRuleAttributeRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 

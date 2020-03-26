@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiLatencyDataRequest;
 
 DescribeApiLatencyDataRequest::DescribeApiLatencyDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiLatencyData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiLatencyDataRequest::~DescribeApiLatencyDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiLatencyDataRequest::getGroupId()const
 void DescribeApiLatencyDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiLatencyDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribeApiLatencyDataRequest::getEndTime()const
 void DescribeApiLatencyDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeApiLatencyDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string DescribeApiLatencyDataRequest::getStartTime()const
 void DescribeApiLatencyDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiLatencyDataRequest::getAccessKeyId()const
 void DescribeApiLatencyDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiLatencyDataRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiLatencyDataRequest::getSecurityToken()const
 void DescribeApiLatencyDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiLatencyDataRequest::getApiId()const
@@ -88,6 +90,6 @@ std::string DescribeApiLatencyDataRequest::getApiId()const
 void DescribeApiLatencyDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

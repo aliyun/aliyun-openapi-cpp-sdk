@@ -35,7 +35,7 @@ std::string DeleteScdnDomainRequest::getOwnerAccount()const
 void DeleteScdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteScdnDomainRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DeleteScdnDomainRequest::getDomainName()const
 void DeleteScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteScdnDomainRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteScdnDomainRequest::getOwnerId()const
 void DeleteScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScdnDomainRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string DeleteScdnDomainRequest::getResourceGroupId()const
 void DeleteScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DeleteScdnDomainRequest::getSecurityToken()const
@@ -79,6 +79,6 @@ std::string DeleteScdnDomainRequest::getSecurityToken()const
 void DeleteScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::QueryTicketRequest;
 
 QueryTicketRequest::QueryTicketRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "QueryTicket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTicketRequest::~QueryTicketRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTicketRequest::getCreatorId()const
 void QueryTicketRequest::setCreatorId(const std::string& creatorId)
 {
 	creatorId_ = creatorId;
-	setCoreParameter("CreatorId", creatorId);
+	setParameter("CreatorId", creatorId);
 }
 
 std::string QueryTicketRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string QueryTicketRequest::getEndTime()const
 void QueryTicketRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryTicketRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string QueryTicketRequest::getStartTime()const
 void QueryTicketRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int QueryTicketRequest::getPageNum()const
@@ -66,7 +68,7 @@ int QueryTicketRequest::getPageNum()const
 void QueryTicketRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryTicketRequest::getType()const
@@ -77,7 +79,7 @@ std::string QueryTicketRequest::getType()const
 void QueryTicketRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string QueryTicketRequest::getStage()const
@@ -88,7 +90,7 @@ std::string QueryTicketRequest::getStage()const
 void QueryTicketRequest::setStage(const std::string& stage)
 {
 	stage_ = stage;
-	setCoreParameter("Stage", stage);
+	setParameter("Stage", stage);
 }
 
 int QueryTicketRequest::getPageSize()const
@@ -99,7 +101,7 @@ int QueryTicketRequest::getPageSize()const
 void QueryTicketRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTicketRequest::getCcsInstanceId()const
@@ -110,6 +112,6 @@ std::string QueryTicketRequest::getCcsInstanceId()const
 void QueryTicketRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setParameter("CcsInstanceId", ccsInstanceId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRegionsRequest::getAccess_key_id()const
 void DescribeRegionsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeRegionsRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeRegionsRequest::getResourceOwnerId()const
 void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRegionsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeRegionsRequest::getRegionId()const
 void DescribeRegionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeRegionsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeRegionsRequest::getResourceOwnerAccount()const
 void DescribeRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRegionsRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeRegionsRequest::getOwnerAccount()const
 void DescribeRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRegionsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeRegionsRequest::getOwnerId()const
 void DescribeRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRegionsRequest::getTags()const
@@ -99,7 +101,7 @@ std::string DescribeRegionsRequest::getTags()const
 void DescribeRegionsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeRegionsRequest::getAcceptLanguage()const
@@ -110,6 +112,6 @@ std::string DescribeRegionsRequest::getAcceptLanguage()const
 void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
 {
 	acceptLanguage_ = acceptLanguage;
-	setCoreParameter("AcceptLanguage", acceptLanguage);
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 

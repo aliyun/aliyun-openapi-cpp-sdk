@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetUserRequest;
 
 GetUserRequest::GetUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserRequest::~GetUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetUserRequest::getInstanceId()const
 void GetUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetUserRequest::getUserId()const
@@ -44,7 +46,7 @@ std::string GetUserRequest::getUserId()const
 void GetUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string GetUserRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetUserRequest::getAccessKeyId()const
 void GetUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

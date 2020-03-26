@@ -71,6 +71,8 @@ void QueryTradeProduceListResult::parse(const std::string &payload)
 			dataObject.allowCancel = valueDataTradeProduces["AllowCancel"].asString() == "true";
 		if(!valueDataTradeProduces["FailReason"].isNull())
 			dataObject.failReason = std::stoi(valueDataTradeProduces["FailReason"].asString());
+		if(!valueDataTradeProduces["Source"].isNull())
+			dataObject.source = std::stoi(valueDataTradeProduces["Source"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

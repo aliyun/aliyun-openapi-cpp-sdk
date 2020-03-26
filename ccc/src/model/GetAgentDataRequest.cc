@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetAgentDataRequest;
 
 GetAgentDataRequest::GetAgentDataRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetAgentData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAgentDataRequest::~GetAgentDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAgentDataRequest::getStartDay()const
 void GetAgentDataRequest::setStartDay(const std::string& startDay)
 {
 	startDay_ = startDay;
-	setCoreParameter("StartDay", startDay);
+	setParameter("StartDay", startDay);
 }
 
 std::string GetAgentDataRequest::getUserId()const
@@ -44,7 +46,7 @@ std::string GetAgentDataRequest::getUserId()const
 void GetAgentDataRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 int GetAgentDataRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int GetAgentDataRequest::getPageNumber()const
 void GetAgentDataRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetAgentDataRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetAgentDataRequest::getAccessKeyId()const
 void GetAgentDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetAgentDataRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string GetAgentDataRequest::getInstanceId()const
 void GetAgentDataRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetAgentDataRequest::getEndDay()const
@@ -88,7 +90,7 @@ std::string GetAgentDataRequest::getEndDay()const
 void GetAgentDataRequest::setEndDay(const std::string& endDay)
 {
 	endDay_ = endDay;
-	setCoreParameter("EndDay", endDay);
+	setParameter("EndDay", endDay);
 }
 
 int GetAgentDataRequest::getPageSize()const
@@ -99,6 +101,6 @@ int GetAgentDataRequest::getPageSize()const
 void GetAgentDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

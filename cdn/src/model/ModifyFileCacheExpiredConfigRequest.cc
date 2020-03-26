@@ -27,6 +27,17 @@ ModifyFileCacheExpiredConfigRequest::ModifyFileCacheExpiredConfigRequest() :
 ModifyFileCacheExpiredConfigRequest::~ModifyFileCacheExpiredConfigRequest()
 {}
 
+std::string ModifyFileCacheExpiredConfigRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void ModifyFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string ModifyFileCacheExpiredConfigRequest::getDomainName()const
 {
 	return domainName_;
@@ -80,17 +91,6 @@ void ModifyFileCacheExpiredConfigRequest::setTTL(const std::string& tTL)
 {
 	tTL_ = tTL;
 	setParameter("TTL", tTL);
-}
-
-std::string ModifyFileCacheExpiredConfigRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void ModifyFileCacheExpiredConfigRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyFileCacheExpiredConfigRequest::getConfigID()const

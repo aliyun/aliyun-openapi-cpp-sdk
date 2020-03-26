@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::GetPhoneProfileRequest;
 
 GetPhoneProfileRequest::GetPhoneProfileRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "GetPhoneProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhoneProfileRequest::~GetPhoneProfileRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPhoneProfileRequest::getPhone()const
 void GetPhoneProfileRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setParameter("Phone", phone);
 }
 
 int GetPhoneProfileRequest::getSensType()const
@@ -44,7 +46,7 @@ int GetPhoneProfileRequest::getSensType()const
 void GetPhoneProfileRequest::setSensType(int sensType)
 {
 	sensType_ = sensType;
-	setCoreParameter("SensType", std::to_string(sensType));
+	setParameter("SensType", std::to_string(sensType));
 }
 
 std::string GetPhoneProfileRequest::getDataVersion()const
@@ -55,7 +57,7 @@ std::string GetPhoneProfileRequest::getDataVersion()const
 void GetPhoneProfileRequest::setDataVersion(const std::string& dataVersion)
 {
 	dataVersion_ = dataVersion;
-	setCoreParameter("DataVersion", dataVersion);
+	setParameter("DataVersion", dataVersion);
 }
 
 int GetPhoneProfileRequest::getBusinessType()const
@@ -66,6 +68,6 @@ int GetPhoneProfileRequest::getBusinessType()const
 void GetPhoneProfileRequest::setBusinessType(int businessType)
 {
 	businessType_ = businessType;
-	setCoreParameter("BusinessType", std::to_string(businessType));
+	setParameter("BusinessType", std::to_string(businessType));
 }
 

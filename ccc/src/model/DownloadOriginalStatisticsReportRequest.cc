@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadOriginalStatisticsReportRequest;
 
 DownloadOriginalStatisticsReportRequest::DownloadOriginalStatisticsReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadOriginalStatisticsReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadOriginalStatisticsReportRequest::~DownloadOriginalStatisticsReportRequest()
 {}
@@ -33,7 +35,7 @@ std::string DownloadOriginalStatisticsReportRequest::getInstanceId()const
 void DownloadOriginalStatisticsReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DownloadOriginalStatisticsReportRequest::getJobGroupId()const
@@ -44,6 +46,6 @@ std::string DownloadOriginalStatisticsReportRequest::getJobGroupId()const
 void DownloadOriginalStatisticsReportRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 

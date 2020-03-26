@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAuditContentItemRequest;
 
 DescribeAuditContentItemRequest::DescribeAuditContentItemRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAuditContentItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditContentItemRequest::~DescribeAuditContentItemRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAuditContentItemRequest::getSourceIp()const
 void DescribeAuditContentItemRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAuditContentItemRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeAuditContentItemRequest::getPageSize()const
 void DescribeAuditContentItemRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAuditContentItemRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DescribeAuditContentItemRequest::getLang()const
 void DescribeAuditContentItemRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAuditContentItemRequest::getTaskId()const
@@ -66,7 +68,7 @@ std::string DescribeAuditContentItemRequest::getTaskId()const
 void DescribeAuditContentItemRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 int DescribeAuditContentItemRequest::getTotalCount()const
@@ -77,7 +79,7 @@ int DescribeAuditContentItemRequest::getTotalCount()const
 void DescribeAuditContentItemRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 int DescribeAuditContentItemRequest::getCurrentPage()const
@@ -88,7 +90,7 @@ int DescribeAuditContentItemRequest::getCurrentPage()const
 void DescribeAuditContentItemRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAuditContentItemRequest::getResourceType()const
@@ -99,6 +101,6 @@ std::string DescribeAuditContentItemRequest::getResourceType()const
 void DescribeAuditContentItemRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 

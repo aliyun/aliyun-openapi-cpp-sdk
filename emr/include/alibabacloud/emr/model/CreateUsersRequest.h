@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateUsersRequest : public RpcServiceRequest
 			{
+			public:
 				struct UserInfo
 				{
 					std::string type;

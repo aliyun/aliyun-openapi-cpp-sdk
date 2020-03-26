@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetWatermarkRequest;
 
 GetWatermarkRequest::GetWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetWatermarkRequest::~GetWatermarkRequest()
 {}
@@ -33,7 +35,7 @@ long GetWatermarkRequest::getResourceOwnerId()const
 void GetWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetWatermarkRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetWatermarkRequest::getResourceOwnerAccount()const
 void GetWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetWatermarkRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetWatermarkRequest::getOwnerId()const
 void GetWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetWatermarkRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetWatermarkRequest::getAccessKeyId()const
 void GetWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetWatermarkRequest::getWatermarkId()const
@@ -77,6 +79,6 @@ std::string GetWatermarkRequest::getWatermarkId()const
 void GetWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
+	setParameter("WatermarkId", watermarkId);
 }
 

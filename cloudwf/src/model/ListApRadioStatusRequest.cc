@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApRadioStatusRequest;
 
 ListApRadioStatusRequest::ListApRadioStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApRadioStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApRadioStatusRequest::~ListApRadioStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApRadioStatusRequest::getOrderCol()const
 void ListApRadioStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListApRadioStatusRequest::getSearchName()const
@@ -44,7 +46,7 @@ std::string ListApRadioStatusRequest::getSearchName()const
 void ListApRadioStatusRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 int ListApRadioStatusRequest::getSearchChannelEquals()const
@@ -55,7 +57,7 @@ int ListApRadioStatusRequest::getSearchChannelEquals()const
 void ListApRadioStatusRequest::setSearchChannelEquals(int searchChannelEquals)
 {
 	searchChannelEquals_ = searchChannelEquals;
-	setCoreParameter("SearchChannelEquals", std::to_string(searchChannelEquals));
+	setParameter("SearchChannelEquals", std::to_string(searchChannelEquals));
 }
 
 int ListApRadioStatusRequest::getLength()const
@@ -66,7 +68,7 @@ int ListApRadioStatusRequest::getLength()const
 void ListApRadioStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListApRadioStatusRequest::getOrderDir()const
@@ -77,7 +79,7 @@ std::string ListApRadioStatusRequest::getOrderDir()const
 void ListApRadioStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 int ListApRadioStatusRequest::getSearchApStatus()const
@@ -88,7 +90,7 @@ int ListApRadioStatusRequest::getSearchApStatus()const
 void ListApRadioStatusRequest::setSearchApStatus(int searchApStatus)
 {
 	searchApStatus_ = searchApStatus;
-	setCoreParameter("SearchApStatus", std::to_string(searchApStatus));
+	setParameter("SearchApStatus", std::to_string(searchApStatus));
 }
 
 std::string ListApRadioStatusRequest::getAccessKeyId()const
@@ -99,7 +101,7 @@ std::string ListApRadioStatusRequest::getAccessKeyId()const
 void ListApRadioStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListApRadioStatusRequest::getSearchDisabled()const
@@ -110,7 +112,7 @@ int ListApRadioStatusRequest::getSearchDisabled()const
 void ListApRadioStatusRequest::setSearchDisabled(int searchDisabled)
 {
 	searchDisabled_ = searchDisabled;
-	setCoreParameter("SearchDisabled", std::to_string(searchDisabled));
+	setParameter("SearchDisabled", std::to_string(searchDisabled));
 }
 
 std::string ListApRadioStatusRequest::getSearchMac()const
@@ -121,7 +123,7 @@ std::string ListApRadioStatusRequest::getSearchMac()const
 void ListApRadioStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 std::string ListApRadioStatusRequest::getSearchApgroupName()const
@@ -132,7 +134,7 @@ std::string ListApRadioStatusRequest::getSearchApgroupName()const
 void ListApRadioStatusRequest::setSearchApgroupName(const std::string& searchApgroupName)
 {
 	searchApgroupName_ = searchApgroupName;
-	setCoreParameter("SearchApgroupName", searchApgroupName);
+	setParameter("SearchApgroupName", searchApgroupName);
 }
 
 int ListApRadioStatusRequest::getPageIndex()const
@@ -143,6 +145,6 @@ int ListApRadioStatusRequest::getPageIndex()const
 void ListApRadioStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

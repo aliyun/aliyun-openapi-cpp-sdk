@@ -41,10 +41,14 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeAppsResult.h
 	include/alibabacloud/rtc/model/DescribeChannelParticipantsRequest.h
 	include/alibabacloud/rtc/model/DescribeChannelParticipantsResult.h
+	include/alibabacloud/rtc/model/DescribeChannelUsersRequest.h
+	include/alibabacloud/rtc/model/DescribeChannelUsersResult.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoRequest.h
 	include/alibabacloud/rtc/model/DescribeConferenceAuthInfoResult.h
 	include/alibabacloud/rtc/model/DescribeMAURuleRequest.h
 	include/alibabacloud/rtc/model/DescribeMAURuleResult.h
+	include/alibabacloud/rtc/model/DescribeRTCAppKeyRequest.h
+	include/alibabacloud/rtc/model/DescribeRTCAppKeyResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcChannelListRequest.h
@@ -65,6 +69,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/DescribeRtcUserCntDataResult.h
 	include/alibabacloud/rtc/model/DescribeRtcUserListRequest.h
 	include/alibabacloud/rtc/model/DescribeRtcUserListResult.h
+	include/alibabacloud/rtc/model/DescribeUserInfoInChannelRequest.h
+	include/alibabacloud/rtc/model/DescribeUserInfoInChannelResult.h
 	include/alibabacloud/rtc/model/DisableMAURuleRequest.h
 	include/alibabacloud/rtc/model/DisableMAURuleResult.h
 	include/alibabacloud/rtc/model/EnableMAURuleRequest.h
@@ -87,6 +93,8 @@ set(rtc_public_header_model
 	include/alibabacloud/rtc/model/RemoveParticipantsResult.h
 	include/alibabacloud/rtc/model/RemoveTerminalsRequest.h
 	include/alibabacloud/rtc/model/RemoveTerminalsResult.h
+	include/alibabacloud/rtc/model/SetChannelPropertyRequest.h
+	include/alibabacloud/rtc/model/SetChannelPropertyResult.h
 	include/alibabacloud/rtc/model/StartMPUTaskRequest.h
 	include/alibabacloud/rtc/model/StartMPUTaskResult.h
 	include/alibabacloud/rtc/model/StartTaskRequest.h
@@ -126,10 +134,14 @@ set(rtc_src
 	src/model/DescribeAppsResult.cc
 	src/model/DescribeChannelParticipantsRequest.cc
 	src/model/DescribeChannelParticipantsResult.cc
+	src/model/DescribeChannelUsersRequest.cc
+	src/model/DescribeChannelUsersResult.cc
 	src/model/DescribeConferenceAuthInfoRequest.cc
 	src/model/DescribeConferenceAuthInfoResult.cc
 	src/model/DescribeMAURuleRequest.cc
 	src/model/DescribeMAURuleResult.cc
+	src/model/DescribeRTCAppKeyRequest.cc
+	src/model/DescribeRTCAppKeyResult.cc
 	src/model/DescribeRtcChannelCntDataRequest.cc
 	src/model/DescribeRtcChannelCntDataResult.cc
 	src/model/DescribeRtcChannelListRequest.cc
@@ -150,6 +162,8 @@ set(rtc_src
 	src/model/DescribeRtcUserCntDataResult.cc
 	src/model/DescribeRtcUserListRequest.cc
 	src/model/DescribeRtcUserListResult.cc
+	src/model/DescribeUserInfoInChannelRequest.cc
+	src/model/DescribeUserInfoInChannelResult.cc
 	src/model/DisableMAURuleRequest.cc
 	src/model/DisableMAURuleResult.cc
 	src/model/EnableMAURuleRequest.cc
@@ -172,6 +186,8 @@ set(rtc_src
 	src/model/RemoveParticipantsResult.cc
 	src/model/RemoveTerminalsRequest.cc
 	src/model/RemoveTerminalsResult.cc
+	src/model/SetChannelPropertyRequest.cc
+	src/model/SetChannelPropertyResult.cc
 	src/model/StartMPUTaskRequest.cc
 	src/model/StartMPUTaskResult.cc
 	src/model/StartTaskRequest.cc

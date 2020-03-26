@@ -103,6 +103,8 @@ void DescribeEipAddressesResult::parse(const std::string &payload)
 			eipAddressesObject.deletionProtection = valueEipAddressesEipAddress["DeletionProtection"].asString() == "true";
 		if(!valueEipAddressesEipAddress["SecondLimited"].isNull())
 			eipAddressesObject.secondLimited = valueEipAddressesEipAddress["SecondLimited"].asString() == "true";
+		if(!valueEipAddressesEipAddress["SegmentInstanceId"].isNull())
+			eipAddressesObject.segmentInstanceId = valueEipAddressesEipAddress["SegmentInstanceId"].asString();
 		auto allOperationLocksNode = allEipAddressesNode["OperationLocks"]["LockReason"];
 		for (auto allEipAddressesNodeOperationLocksLockReason : allOperationLocksNode)
 		{

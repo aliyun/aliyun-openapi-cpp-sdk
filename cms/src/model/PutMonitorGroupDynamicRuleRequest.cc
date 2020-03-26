@@ -37,16 +37,16 @@ void PutMonitorGroupDynamicRuleRequest::setGroupRules(const std::vector<GroupRul
 	groupRules_ = groupRules;
 	for(int dep1 = 0; dep1!= groupRules.size(); dep1++) {
 		auto groupRulesObj = groupRules.at(dep1);
-		std::string groupRulesObjStr = "GroupRules." + std::to_string(dep1);
-		setCoreParameter(groupRulesObjStr + ".FilterRelation", groupRulesObj.filterRelation);
+		std::string groupRulesObjStr = "GroupRules." + std::to_string(dep1 + 1);
+		setParameter(groupRulesObjStr + ".FilterRelation", groupRulesObj.filterRelation);
 		for(int dep2 = 0; dep2!= groupRulesObj.filters.size(); dep2++) {
 			auto filtersObj = groupRulesObj.filters.at(dep2);
-			std::string filtersObjStr = groupRulesObjStr + "Filters." + std::to_string(dep2);
-			setCoreParameter(filtersObjStr + ".Function", filtersObj.function);
-			setCoreParameter(filtersObjStr + ".Name", filtersObj.name);
-			setCoreParameter(filtersObjStr + ".Value", filtersObj.value);
+			std::string filtersObjStr = groupRulesObjStr + "Filters." + std::to_string(dep2 + 1);
+			setParameter(filtersObjStr + ".Function", filtersObj.function);
+			setParameter(filtersObjStr + ".Name", filtersObj.name);
+			setParameter(filtersObjStr + ".Value", filtersObj.value);
 		}
-		setCoreParameter(groupRulesObjStr + ".Category", groupRulesObj.category);
+		setParameter(groupRulesObjStr + ".Category", groupRulesObj.category);
 	}
 }
 
@@ -58,6 +58,6 @@ long PutMonitorGroupDynamicRuleRequest::getGroupId()const
 void PutMonitorGroupDynamicRuleRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 

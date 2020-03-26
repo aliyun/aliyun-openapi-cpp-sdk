@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeImageLibRequest;
 
 DescribeImageLibRequest::DescribeImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeImageLibRequest::~DescribeImageLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeImageLibRequest::getServiceModule()const
 void DescribeImageLibRequest::setServiceModule(const std::string& serviceModule)
 {
 	serviceModule_ = serviceModule;
-	setCoreParameter("ServiceModule", serviceModule);
+	setParameter("ServiceModule", serviceModule);
 }
 
 std::string DescribeImageLibRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeImageLibRequest::getSourceIp()const
 void DescribeImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

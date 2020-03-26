@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyIpControlRequest;
 
 ModifyIpControlRequest::ModifyIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpControlRequest::~ModifyIpControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyIpControlRequest::getIpControlName()const
 void ModifyIpControlRequest::setIpControlName(const std::string& ipControlName)
 {
 	ipControlName_ = ipControlName;
-	setCoreParameter("IpControlName", ipControlName);
+	setParameter("IpControlName", ipControlName);
 }
 
 std::string ModifyIpControlRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyIpControlRequest::getDescription()const
 void ModifyIpControlRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyIpControlRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyIpControlRequest::getAccessKeyId()const
 void ModifyIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyIpControlRequest::getIpControlId()const
@@ -66,7 +68,7 @@ std::string ModifyIpControlRequest::getIpControlId()const
 void ModifyIpControlRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string ModifyIpControlRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string ModifyIpControlRequest::getSecurityToken()const
 void ModifyIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -42,10 +42,14 @@
 #include "model/DescribeAppsResult.h"
 #include "model/DescribeChannelParticipantsRequest.h"
 #include "model/DescribeChannelParticipantsResult.h"
+#include "model/DescribeChannelUsersRequest.h"
+#include "model/DescribeChannelUsersResult.h"
 #include "model/DescribeConferenceAuthInfoRequest.h"
 #include "model/DescribeConferenceAuthInfoResult.h"
 #include "model/DescribeMAURuleRequest.h"
 #include "model/DescribeMAURuleResult.h"
+#include "model/DescribeRTCAppKeyRequest.h"
+#include "model/DescribeRTCAppKeyResult.h"
 #include "model/DescribeRtcChannelCntDataRequest.h"
 #include "model/DescribeRtcChannelCntDataResult.h"
 #include "model/DescribeRtcChannelListRequest.h"
@@ -66,6 +70,8 @@
 #include "model/DescribeRtcUserCntDataResult.h"
 #include "model/DescribeRtcUserListRequest.h"
 #include "model/DescribeRtcUserListResult.h"
+#include "model/DescribeUserInfoInChannelRequest.h"
+#include "model/DescribeUserInfoInChannelResult.h"
 #include "model/DisableMAURuleRequest.h"
 #include "model/DisableMAURuleResult.h"
 #include "model/EnableMAURuleRequest.h"
@@ -88,6 +94,8 @@
 #include "model/RemoveParticipantsResult.h"
 #include "model/RemoveTerminalsRequest.h"
 #include "model/RemoveTerminalsResult.h"
+#include "model/SetChannelPropertyRequest.h"
+#include "model/SetChannelPropertyResult.h"
 #include "model/StartMPUTaskRequest.h"
 #include "model/StartMPUTaskResult.h"
 #include "model/StartTaskRequest.h"
@@ -143,12 +151,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeChannelParticipantsResult> DescribeChannelParticipantsOutcome;
 			typedef std::future<DescribeChannelParticipantsOutcome> DescribeChannelParticipantsOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeChannelParticipantsRequest&, const DescribeChannelParticipantsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelParticipantsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeChannelUsersResult> DescribeChannelUsersOutcome;
+			typedef std::future<DescribeChannelUsersOutcome> DescribeChannelUsersOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeChannelUsersRequest&, const DescribeChannelUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelUsersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConferenceAuthInfoResult> DescribeConferenceAuthInfoOutcome;
 			typedef std::future<DescribeConferenceAuthInfoOutcome> DescribeConferenceAuthInfoOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeConferenceAuthInfoRequest&, const DescribeConferenceAuthInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConferenceAuthInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMAURuleResult> DescribeMAURuleOutcome;
 			typedef std::future<DescribeMAURuleOutcome> DescribeMAURuleOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeMAURuleRequest&, const DescribeMAURuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMAURuleAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRTCAppKeyResult> DescribeRTCAppKeyOutcome;
+			typedef std::future<DescribeRTCAppKeyOutcome> DescribeRTCAppKeyOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeRTCAppKeyRequest&, const DescribeRTCAppKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRTCAppKeyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRtcChannelCntDataResult> DescribeRtcChannelCntDataOutcome;
 			typedef std::future<DescribeRtcChannelCntDataOutcome> DescribeRtcChannelCntDataOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcChannelCntDataRequest&, const DescribeRtcChannelCntDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcChannelCntDataAsyncHandler;
@@ -179,6 +193,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRtcUserListResult> DescribeRtcUserListOutcome;
 			typedef std::future<DescribeRtcUserListOutcome> DescribeRtcUserListOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DescribeRtcUserListRequest&, const DescribeRtcUserListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRtcUserListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserInfoInChannelResult> DescribeUserInfoInChannelOutcome;
+			typedef std::future<DescribeUserInfoInChannelOutcome> DescribeUserInfoInChannelOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::DescribeUserInfoInChannelRequest&, const DescribeUserInfoInChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoInChannelAsyncHandler;
 			typedef Outcome<Error, Model::DisableMAURuleResult> DisableMAURuleOutcome;
 			typedef std::future<DisableMAURuleOutcome> DisableMAURuleOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::DisableMAURuleRequest&, const DisableMAURuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableMAURuleAsyncHandler;
@@ -212,6 +229,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveTerminalsResult> RemoveTerminalsOutcome;
 			typedef std::future<RemoveTerminalsOutcome> RemoveTerminalsOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::RemoveTerminalsRequest&, const RemoveTerminalsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTerminalsAsyncHandler;
+			typedef Outcome<Error, Model::SetChannelPropertyResult> SetChannelPropertyOutcome;
+			typedef std::future<SetChannelPropertyOutcome> SetChannelPropertyOutcomeCallable;
+			typedef std::function<void(const RtcClient*, const Model::SetChannelPropertyRequest&, const SetChannelPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetChannelPropertyAsyncHandler;
 			typedef Outcome<Error, Model::StartMPUTaskResult> StartMPUTaskOutcome;
 			typedef std::future<StartMPUTaskOutcome> StartMPUTaskOutcomeCallable;
 			typedef std::function<void(const RtcClient*, const Model::StartMPUTaskRequest&, const StartMPUTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartMPUTaskAsyncHandler;
@@ -271,12 +291,18 @@ namespace AlibabaCloud
 			DescribeChannelParticipantsOutcome describeChannelParticipants(const Model::DescribeChannelParticipantsRequest &request)const;
 			void describeChannelParticipantsAsync(const Model::DescribeChannelParticipantsRequest& request, const DescribeChannelParticipantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeChannelParticipantsOutcomeCallable describeChannelParticipantsCallable(const Model::DescribeChannelParticipantsRequest& request) const;
+			DescribeChannelUsersOutcome describeChannelUsers(const Model::DescribeChannelUsersRequest &request)const;
+			void describeChannelUsersAsync(const Model::DescribeChannelUsersRequest& request, const DescribeChannelUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeChannelUsersOutcomeCallable describeChannelUsersCallable(const Model::DescribeChannelUsersRequest& request) const;
 			DescribeConferenceAuthInfoOutcome describeConferenceAuthInfo(const Model::DescribeConferenceAuthInfoRequest &request)const;
 			void describeConferenceAuthInfoAsync(const Model::DescribeConferenceAuthInfoRequest& request, const DescribeConferenceAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConferenceAuthInfoOutcomeCallable describeConferenceAuthInfoCallable(const Model::DescribeConferenceAuthInfoRequest& request) const;
 			DescribeMAURuleOutcome describeMAURule(const Model::DescribeMAURuleRequest &request)const;
 			void describeMAURuleAsync(const Model::DescribeMAURuleRequest& request, const DescribeMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMAURuleOutcomeCallable describeMAURuleCallable(const Model::DescribeMAURuleRequest& request) const;
+			DescribeRTCAppKeyOutcome describeRTCAppKey(const Model::DescribeRTCAppKeyRequest &request)const;
+			void describeRTCAppKeyAsync(const Model::DescribeRTCAppKeyRequest& request, const DescribeRTCAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRTCAppKeyOutcomeCallable describeRTCAppKeyCallable(const Model::DescribeRTCAppKeyRequest& request) const;
 			DescribeRtcChannelCntDataOutcome describeRtcChannelCntData(const Model::DescribeRtcChannelCntDataRequest &request)const;
 			void describeRtcChannelCntDataAsync(const Model::DescribeRtcChannelCntDataRequest& request, const DescribeRtcChannelCntDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcChannelCntDataOutcomeCallable describeRtcChannelCntDataCallable(const Model::DescribeRtcChannelCntDataRequest& request) const;
@@ -307,6 +333,9 @@ namespace AlibabaCloud
 			DescribeRtcUserListOutcome describeRtcUserList(const Model::DescribeRtcUserListRequest &request)const;
 			void describeRtcUserListAsync(const Model::DescribeRtcUserListRequest& request, const DescribeRtcUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRtcUserListOutcomeCallable describeRtcUserListCallable(const Model::DescribeRtcUserListRequest& request) const;
+			DescribeUserInfoInChannelOutcome describeUserInfoInChannel(const Model::DescribeUserInfoInChannelRequest &request)const;
+			void describeUserInfoInChannelAsync(const Model::DescribeUserInfoInChannelRequest& request, const DescribeUserInfoInChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserInfoInChannelOutcomeCallable describeUserInfoInChannelCallable(const Model::DescribeUserInfoInChannelRequest& request) const;
 			DisableMAURuleOutcome disableMAURule(const Model::DisableMAURuleRequest &request)const;
 			void disableMAURuleAsync(const Model::DisableMAURuleRequest& request, const DisableMAURuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableMAURuleOutcomeCallable disableMAURuleCallable(const Model::DisableMAURuleRequest& request) const;
@@ -340,6 +369,9 @@ namespace AlibabaCloud
 			RemoveTerminalsOutcome removeTerminals(const Model::RemoveTerminalsRequest &request)const;
 			void removeTerminalsAsync(const Model::RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveTerminalsOutcomeCallable removeTerminalsCallable(const Model::RemoveTerminalsRequest& request) const;
+			SetChannelPropertyOutcome setChannelProperty(const Model::SetChannelPropertyRequest &request)const;
+			void setChannelPropertyAsync(const Model::SetChannelPropertyRequest& request, const SetChannelPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetChannelPropertyOutcomeCallable setChannelPropertyCallable(const Model::SetChannelPropertyRequest& request) const;
 			StartMPUTaskOutcome startMPUTask(const Model::StartMPUTaskRequest &request)const;
 			void startMPUTaskAsync(const Model::StartMPUTaskRequest& request, const StartMPUTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartMPUTaskOutcomeCallable startMPUTaskCallable(const Model::StartMPUTaskRequest& request) const;

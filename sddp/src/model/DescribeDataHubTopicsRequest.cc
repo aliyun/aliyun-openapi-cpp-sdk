@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataHubTopicsRequest;
 
 DescribeDataHubTopicsRequest::DescribeDataHubTopicsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataHubTopics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataHubTopicsRequest::~DescribeDataHubTopicsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDataHubTopicsRequest::getSourceIp()const
 void DescribeDataHubTopicsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeDataHubTopicsRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeDataHubTopicsRequest::getPageSize()const
 void DescribeDataHubTopicsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeDataHubTopicsRequest::getLang()const
@@ -55,7 +57,7 @@ std::string DescribeDataHubTopicsRequest::getLang()const
 void DescribeDataHubTopicsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeDataHubTopicsRequest::getProjectId()const
@@ -66,7 +68,7 @@ long DescribeDataHubTopicsRequest::getProjectId()const
 void DescribeDataHubTopicsRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setParameter("ProjectId", std::to_string(projectId));
 }
 
 std::string DescribeDataHubTopicsRequest::getKey()const
@@ -77,7 +79,7 @@ std::string DescribeDataHubTopicsRequest::getKey()const
 void DescribeDataHubTopicsRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeDataHubTopicsRequest::getFeatureType()const
@@ -88,7 +90,7 @@ int DescribeDataHubTopicsRequest::getFeatureType()const
 void DescribeDataHubTopicsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 int DescribeDataHubTopicsRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeDataHubTopicsRequest::getCurrentPage()const
 void DescribeDataHubTopicsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeDataHubTopicsRequest::getDepartId()const
@@ -110,6 +112,6 @@ long DescribeDataHubTopicsRequest::getDepartId()const
 void DescribeDataHubTopicsRequest::setDepartId(long departId)
 {
 	departId_ = departId;
-	setCoreParameter("DepartId", std::to_string(departId));
+	setParameter("DepartId", std::to_string(departId));
 }
 

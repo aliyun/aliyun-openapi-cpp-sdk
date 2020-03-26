@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaOrderRequest;
 
 DescribeCaptchaOrderRequest::DescribeCaptchaOrderRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaOrderRequest::~DescribeCaptchaOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCaptchaOrderRequest::getSourceIp()const
 void DescribeCaptchaOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaOrderRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeCaptchaOrderRequest::getLang()const
 void DescribeCaptchaOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

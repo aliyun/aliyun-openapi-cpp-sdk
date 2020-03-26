@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListNotesRequest;
 
 ListNotesRequest::ListNotesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListNotes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListNotesRequest::~ListNotesRequest()
 {}
@@ -33,7 +35,7 @@ long ListNotesRequest::getResourceOwnerId()const
 void ListNotesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListNotesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListNotesRequest::getAccessKeyId()const
 void ListNotesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListNotesRequest::getRegionId()const
@@ -55,6 +57,6 @@ std::string ListNotesRequest::getRegionId()const
 void ListNotesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

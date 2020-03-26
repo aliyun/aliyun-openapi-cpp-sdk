@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeLimitationRequest;
 
 DescribeLimitationRequest::DescribeLimitationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeLimitation")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLimitationRequest::~DescribeLimitationRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLimitationRequest::getResourceOwnerAccount()const
 void DescribeLimitationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeLimitationRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeLimitationRequest::getOwnerId()const
 void DescribeLimitationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLimitationRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string DescribeLimitationRequest::getAccessKeyId()const
 void DescribeLimitationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

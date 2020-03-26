@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::RenameFaceRequest;
 
 RenameFaceRequest::RenameFaceRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "RenameFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RenameFaceRequest::~RenameFaceRequest()
 {}
@@ -33,7 +35,7 @@ std::string RenameFaceRequest::getLibraryId()const
 void RenameFaceRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string RenameFaceRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string RenameFaceRequest::getStoreName()const
 void RenameFaceRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long RenameFaceRequest::getFaceId()const
@@ -55,7 +57,7 @@ long RenameFaceRequest::getFaceId()const
 void RenameFaceRequest::setFaceId(long faceId)
 {
 	faceId_ = faceId;
-	setCoreParameter("FaceId", std::to_string(faceId));
+	setParameter("FaceId", std::to_string(faceId));
 }
 
 std::string RenameFaceRequest::getFaceName()const
@@ -66,6 +68,6 @@ std::string RenameFaceRequest::getFaceName()const
 void RenameFaceRequest::setFaceName(const std::string& faceName)
 {
 	faceName_ = faceName;
-	setCoreParameter("FaceName", faceName);
+	setParameter("FaceName", faceName);
 }
 

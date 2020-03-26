@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAppInfosRequest;
 
 GetAppInfosRequest::GetAppInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAppInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAppInfosRequest::~GetAppInfosRequest()
 {}
@@ -33,7 +35,7 @@ long GetAppInfosRequest::getResourceOwnerId()const
 void GetAppInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetAppInfosRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetAppInfosRequest::getResourceOwnerAccount()const
 void GetAppInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetAppInfosRequest::getResourceRealOwnerId()const
@@ -55,7 +57,7 @@ long GetAppInfosRequest::getResourceRealOwnerId()const
 void GetAppInfosRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 long GetAppInfosRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long GetAppInfosRequest::getOwnerId()const
 void GetAppInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetAppInfosRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string GetAppInfosRequest::getAccessKeyId()const
 void GetAppInfosRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetAppInfosRequest::getAppIds()const
@@ -88,6 +90,6 @@ std::string GetAppInfosRequest::getAppIds()const
 void GetAppInfosRequest::setAppIds(const std::string& appIds)
 {
 	appIds_ = appIds;
-	setCoreParameter("AppIds", appIds);
+	setParameter("AppIds", appIds);
 }
 

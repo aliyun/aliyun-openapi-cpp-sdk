@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeSecurityGroupAttributeRequest;
 
 DescribeSecurityGroupAttributeRequest::DescribeSecurityGroupAttributeRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeSecurityGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSecurityGroupAttributeRequest::~DescribeSecurityGroupAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSecurityGroupAttributeRequest::getResourceOwnerId()const
 void DescribeSecurityGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DescribeSecurityGroupAttributeRequest::getClusterId()const
 void DescribeSecurityGroupAttributeRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeSecurityGroupAttributeRequest::getAccessKeyId()const
 void DescribeSecurityGroupAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string DescribeSecurityGroupAttributeRequest::getRegionId()const
 void DescribeSecurityGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

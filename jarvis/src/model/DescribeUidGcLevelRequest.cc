@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeUidGcLevelRequest;
 
 DescribeUidGcLevelRequest::DescribeUidGcLevelRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeUidGcLevel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUidGcLevelRequest::~DescribeUidGcLevelRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUidGcLevelRequest::getSourceCode()const
 void DescribeUidGcLevelRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeUidGcLevelRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeUidGcLevelRequest::getSourceIp()const
 void DescribeUidGcLevelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUidGcLevelRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeUidGcLevelRequest::getLang()const
 void DescribeUidGcLevelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

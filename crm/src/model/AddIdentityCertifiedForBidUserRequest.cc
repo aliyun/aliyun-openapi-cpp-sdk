@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::AddIdentityCertifiedForBidUserRequest;
 
 AddIdentityCertifiedForBidUserRequest::AddIdentityCertifiedForBidUserRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "AddIdentityCertifiedForBidUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddIdentityCertifiedForBidUserRequest::~AddIdentityCertifiedForBidUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getBidType()const
 void AddIdentityCertifiedForBidUserRequest::setBidType(const std::string& bidType)
 {
 	bidType_ = bidType;
-	setCoreParameter("BidType", bidType);
+	setParameter("BidType", bidType);
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getLicenseNumber()const
@@ -44,7 +46,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getLicenseNumber()const
 void AddIdentityCertifiedForBidUserRequest::setLicenseNumber(const std::string& licenseNumber)
 {
 	licenseNumber_ = licenseNumber;
-	setCoreParameter("LicenseNumber", licenseNumber);
+	setParameter("LicenseNumber", licenseNumber);
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getLicenseType()const
@@ -55,7 +57,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getLicenseType()const
 void AddIdentityCertifiedForBidUserRequest::setLicenseType(const std::string& licenseType)
 {
 	licenseType_ = licenseType;
-	setCoreParameter("LicenseType", licenseType);
+	setParameter("LicenseType", licenseType);
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getPhone()const
@@ -66,7 +68,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getPhone()const
 void AddIdentityCertifiedForBidUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setParameter("Phone", phone);
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getName()const
@@ -77,7 +79,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getName()const
 void AddIdentityCertifiedForBidUserRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AddIdentityCertifiedForBidUserRequest::getPK()const
@@ -88,7 +90,7 @@ std::string AddIdentityCertifiedForBidUserRequest::getPK()const
 void AddIdentityCertifiedForBidUserRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 
 bool AddIdentityCertifiedForBidUserRequest::getIsEnterprise()const
@@ -99,6 +101,6 @@ bool AddIdentityCertifiedForBidUserRequest::getIsEnterprise()const
 void AddIdentityCertifiedForBidUserRequest::setIsEnterprise(bool isEnterprise)
 {
 	isEnterprise_ = isEnterprise;
-	setCoreParameter("IsEnterprise", isEnterprise ? "true" : "false");
+	setParameter("IsEnterprise", isEnterprise ? "true" : "false");
 }
 

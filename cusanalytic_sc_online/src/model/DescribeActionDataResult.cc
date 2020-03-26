@@ -72,6 +72,8 @@ void DescribeActionDataResult::parse(const std::string &payload)
 			actionsMsgItemsObject.actionInfosItem.rawId = std::stol(actionInfosItemNode["RawId"].asString());
 		if(!actionInfosItemNode["Mints"].isNull())
 			actionsMsgItemsObject.actionInfosItem.mints = std::stol(actionInfosItemNode["Mints"].asString());
+		if(!actionInfosItemNode["InStay"].isNull())
+			actionsMsgItemsObject.actionInfosItem.inStay = std::stol(actionInfosItemNode["InStay"].asString());
 		auto mapImagePointNode = actionInfosItemNode["MapImagePoint"];
 		if(!mapImagePointNode["X"].isNull())
 			actionsMsgItemsObject.actionInfosItem.mapImagePoint.x = std::stof(mapImagePointNode["X"].asString());

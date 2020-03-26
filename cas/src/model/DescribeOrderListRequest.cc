@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOrderListRequest;
 
 DescribeOrderListRequest::DescribeOrderListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderListRequest::~DescribeOrderListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOrderListRequest::getResourceGroupId()const
 void DescribeOrderListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOrderListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeOrderListRequest::getSourceIp()const
 void DescribeOrderListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeOrderListRequest::getBrandId()const
@@ -55,7 +57,7 @@ long DescribeOrderListRequest::getBrandId()const
 void DescribeOrderListRequest::setBrandId(long brandId)
 {
 	brandId_ = brandId;
-	setCoreParameter("BrandId", std::to_string(brandId));
+	setParameter("BrandId", std::to_string(brandId));
 }
 
 std::vector<DescribeOrderListRequest::Tag> DescribeOrderListRequest::getTag()const
@@ -66,12 +68,11 @@ std::vector<DescribeOrderListRequest::Tag> DescribeOrderListRequest::getTag()con
 void DescribeOrderListRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -83,7 +84,7 @@ std::string DescribeOrderListRequest::getKeyword()const
 void DescribeOrderListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeOrderListRequest::getLang()const
@@ -94,7 +95,7 @@ std::string DescribeOrderListRequest::getLang()const
 void DescribeOrderListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeOrderListRequest::getShowSize()const
@@ -105,7 +106,7 @@ int DescribeOrderListRequest::getShowSize()const
 void DescribeOrderListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setParameter("ShowSize", std::to_string(showSize));
 }
 
 int DescribeOrderListRequest::getCurrentPage()const
@@ -116,7 +117,7 @@ int DescribeOrderListRequest::getCurrentPage()const
 void DescribeOrderListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeOrderListRequest::getStatus()const
@@ -127,6 +128,6 @@ std::string DescribeOrderListRequest::getStatus()const
 void DescribeOrderListRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

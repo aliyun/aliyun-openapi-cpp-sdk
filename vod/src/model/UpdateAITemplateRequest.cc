@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateAITemplateRequest;
 
 UpdateAITemplateRequest::UpdateAITemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateAITemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAITemplateRequest::~UpdateAITemplateRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateAITemplateRequest::getResourceOwnerId()const
 void UpdateAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateAITemplateRequest::getTemplateConfig()const
@@ -44,7 +46,7 @@ std::string UpdateAITemplateRequest::getTemplateConfig()const
 void UpdateAITemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setCoreParameter("TemplateConfig", templateConfig);
+	setParameter("TemplateConfig", templateConfig);
 }
 
 std::string UpdateAITemplateRequest::getTemplateName()const
@@ -55,7 +57,7 @@ std::string UpdateAITemplateRequest::getTemplateName()const
 void UpdateAITemplateRequest::setTemplateName(const std::string& templateName)
 {
 	templateName_ = templateName;
-	setCoreParameter("TemplateName", templateName);
+	setParameter("TemplateName", templateName);
 }
 
 std::string UpdateAITemplateRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateAITemplateRequest::getResourceOwnerAccount()const
 void UpdateAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UpdateAITemplateRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long UpdateAITemplateRequest::getOwnerId()const
 void UpdateAITemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateAITemplateRequest::getTemplateId()const
@@ -88,6 +90,6 @@ std::string UpdateAITemplateRequest::getTemplateId()const
 void UpdateAITemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 

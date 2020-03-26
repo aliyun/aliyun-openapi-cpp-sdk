@@ -35,21 +35,21 @@ namespace AlibabaCloud
 				ListVpcInfoByInstanceRequest();
 				~ListVpcInfoByInstanceRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				long getPageNum()const;
 				void setPageNum(long pageNum);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
 
             private:
-				std::string access_key_id_;
 				long resourceOwnerId_;
 				long pageNum_;
+				std::string accessKeyId_;
 				std::string instanceName_;
 				long pageSize_;
 

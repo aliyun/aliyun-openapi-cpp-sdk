@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CreateTrademarkOrderRequest;
 
 CreateTrademarkOrderRequest::CreateTrademarkOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CreateTrademarkOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTrademarkOrderRequest::~CreateTrademarkOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateTrademarkOrderRequest::getRealUserName()const
 void CreateTrademarkOrderRequest::setRealUserName(const std::string& realUserName)
 {
 	realUserName_ = realUserName;
-	setCoreParameter("RealUserName", realUserName);
+	setParameter("RealUserName", realUserName);
 }
 
 std::string CreateTrademarkOrderRequest::getOrderData()const
@@ -44,7 +46,7 @@ std::string CreateTrademarkOrderRequest::getOrderData()const
 void CreateTrademarkOrderRequest::setOrderData(const std::string& orderData)
 {
 	orderData_ = orderData;
-	setCoreParameter("OrderData", orderData);
+	setParameter("OrderData", orderData);
 }
 
 std::string CreateTrademarkOrderRequest::getChannel()const
@@ -55,7 +57,7 @@ std::string CreateTrademarkOrderRequest::getChannel()const
 void CreateTrademarkOrderRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setParameter("Channel", channel);
 }
 
 int CreateTrademarkOrderRequest::getType()const
@@ -66,7 +68,7 @@ int CreateTrademarkOrderRequest::getType()const
 void CreateTrademarkOrderRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string CreateTrademarkOrderRequest::getMaterialId()const
@@ -77,7 +79,7 @@ std::string CreateTrademarkOrderRequest::getMaterialId()const
 void CreateTrademarkOrderRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
+	setParameter("MaterialId", materialId);
 }
 
 long CreateTrademarkOrderRequest::getUserId()const
@@ -88,7 +90,7 @@ long CreateTrademarkOrderRequest::getUserId()const
 void CreateTrademarkOrderRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setParameter("UserId", std::to_string(userId));
 }
 
 std::string CreateTrademarkOrderRequest::getTmComment()const
@@ -99,7 +101,7 @@ std::string CreateTrademarkOrderRequest::getTmComment()const
 void CreateTrademarkOrderRequest::setTmComment(const std::string& tmComment)
 {
 	tmComment_ = tmComment;
-	setCoreParameter("TmComment", tmComment);
+	setParameter("TmComment", tmComment);
 }
 
 std::string CreateTrademarkOrderRequest::getTmNameType()const
@@ -110,7 +112,7 @@ std::string CreateTrademarkOrderRequest::getTmNameType()const
 void CreateTrademarkOrderRequest::setTmNameType(const std::string& tmNameType)
 {
 	tmNameType_ = tmNameType;
-	setCoreParameter("TmNameType", tmNameType);
+	setParameter("TmNameType", tmNameType);
 }
 
 std::string CreateTrademarkOrderRequest::getTmIcon()const
@@ -121,7 +123,7 @@ std::string CreateTrademarkOrderRequest::getTmIcon()const
 void CreateTrademarkOrderRequest::setTmIcon(const std::string& tmIcon)
 {
 	tmIcon_ = tmIcon;
-	setCoreParameter("TmIcon", tmIcon);
+	setParameter("TmIcon", tmIcon);
 }
 
 std::string CreateTrademarkOrderRequest::getUid()const
@@ -132,7 +134,7 @@ std::string CreateTrademarkOrderRequest::getUid()const
 void CreateTrademarkOrderRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setParameter("Uid", uid);
 }
 
 std::string CreateTrademarkOrderRequest::getRenewInfoId()const
@@ -143,7 +145,7 @@ std::string CreateTrademarkOrderRequest::getRenewInfoId()const
 void CreateTrademarkOrderRequest::setRenewInfoId(const std::string& renewInfoId)
 {
 	renewInfoId_ = renewInfoId;
-	setCoreParameter("RenewInfoId", renewInfoId);
+	setParameter("RenewInfoId", renewInfoId);
 }
 
 std::string CreateTrademarkOrderRequest::getRootCode()const
@@ -154,7 +156,7 @@ std::string CreateTrademarkOrderRequest::getRootCode()const
 void CreateTrademarkOrderRequest::setRootCode(const std::string& rootCode)
 {
 	rootCode_ = rootCode;
-	setCoreParameter("RootCode", rootCode);
+	setParameter("RootCode", rootCode);
 }
 
 std::string CreateTrademarkOrderRequest::getLoaOssKey()const
@@ -165,7 +167,7 @@ std::string CreateTrademarkOrderRequest::getLoaOssKey()const
 void CreateTrademarkOrderRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
+	setParameter("LoaOssKey", loaOssKey);
 }
 
 std::string CreateTrademarkOrderRequest::getRegisterNumber()const
@@ -176,7 +178,7 @@ std::string CreateTrademarkOrderRequest::getRegisterNumber()const
 void CreateTrademarkOrderRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
+	setParameter("RegisterNumber", registerNumber);
 }
 
 std::string CreateTrademarkOrderRequest::getTmName()const
@@ -187,7 +189,7 @@ std::string CreateTrademarkOrderRequest::getTmName()const
 void CreateTrademarkOrderRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setParameter("TmName", tmName);
 }
 
 std::string CreateTrademarkOrderRequest::getPartnerCode()const
@@ -198,7 +200,7 @@ std::string CreateTrademarkOrderRequest::getPartnerCode()const
 void CreateTrademarkOrderRequest::setPartnerCode(const std::string& partnerCode)
 {
 	partnerCode_ = partnerCode;
-	setCoreParameter("PartnerCode", partnerCode);
+	setParameter("PartnerCode", partnerCode);
 }
 
 std::string CreateTrademarkOrderRequest::getPhoneNum()const
@@ -209,7 +211,7 @@ std::string CreateTrademarkOrderRequest::getPhoneNum()const
 void CreateTrademarkOrderRequest::setPhoneNum(const std::string& phoneNum)
 {
 	phoneNum_ = phoneNum;
-	setCoreParameter("PhoneNum", phoneNum);
+	setParameter("PhoneNum", phoneNum);
 }
 
 std::string CreateTrademarkOrderRequest::getRegisterName()const
@@ -220,7 +222,7 @@ std::string CreateTrademarkOrderRequest::getRegisterName()const
 void CreateTrademarkOrderRequest::setRegisterName(const std::string& registerName)
 {
 	registerName_ = registerName;
-	setCoreParameter("RegisterName", registerName);
+	setParameter("RegisterName", registerName);
 }
 
 bool CreateTrademarkOrderRequest::getIsBlackIcon()const
@@ -231,7 +233,7 @@ bool CreateTrademarkOrderRequest::getIsBlackIcon()const
 void CreateTrademarkOrderRequest::setIsBlackIcon(bool isBlackIcon)
 {
 	isBlackIcon_ = isBlackIcon;
-	setCoreParameter("IsBlackIcon", isBlackIcon ? "true" : "false");
+	setParameter("IsBlackIcon", isBlackIcon ? "true" : "false");
 }
 
 std::string CreateTrademarkOrderRequest::getBizId()const
@@ -242,6 +244,6 @@ std::string CreateTrademarkOrderRequest::getBizId()const
 void CreateTrademarkOrderRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

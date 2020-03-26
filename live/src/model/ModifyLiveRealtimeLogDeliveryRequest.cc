@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ModifyLiveRealtimeLogDeliveryRequest;
 
 ModifyLiveRealtimeLogDeliveryRequest::ModifyLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ModifyLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ModifyLiveRealtimeLogDeliveryRequest::~ModifyLiveRealtimeLogDeliveryRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyLiveRealtimeLogDeliveryRequest::getProject()const
 void ModifyLiveRealtimeLogDeliveryRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string ModifyLiveRealtimeLogDeliveryRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string ModifyLiveRealtimeLogDeliveryRequest::getDomainName()const
 void ModifyLiveRealtimeLogDeliveryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ModifyLiveRealtimeLogDeliveryRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ModifyLiveRealtimeLogDeliveryRequest::getOwnerId()const
 void ModifyLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyLiveRealtimeLogDeliveryRequest::getRegion()const
@@ -66,7 +68,7 @@ std::string ModifyLiveRealtimeLogDeliveryRequest::getRegion()const
 void ModifyLiveRealtimeLogDeliveryRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string ModifyLiveRealtimeLogDeliveryRequest::getLogstore()const
@@ -77,6 +79,6 @@ std::string ModifyLiveRealtimeLogDeliveryRequest::getLogstore()const
 void ModifyLiveRealtimeLogDeliveryRequest::setLogstore(const std::string& logstore)
 {
 	logstore_ = logstore;
-	setCoreParameter("Logstore", logstore);
+	setParameter("Logstore", logstore);
 }
 

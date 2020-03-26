@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataUpdateRequest;
 
 UserDataUpdateRequest::UserDataUpdateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataUpdate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataUpdateRequest::~UserDataUpdateRequest()
 {}
@@ -33,7 +35,7 @@ long UserDataUpdateRequest::getIid()const
 void UserDataUpdateRequest::setIid(long iid)
 {
 	iid_ = iid;
-	setCoreParameter("Iid", std::to_string(iid));
+	setParameter("Iid", std::to_string(iid));
 }
 
 std::string UserDataUpdateRequest::getType()const
@@ -44,7 +46,7 @@ std::string UserDataUpdateRequest::getType()const
 void UserDataUpdateRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string UserDataUpdateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UserDataUpdateRequest::getAccessKeyId()const
 void UserDataUpdateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UserDataUpdateRequest::getUploadFile()const
@@ -66,7 +68,7 @@ std::string UserDataUpdateRequest::getUploadFile()const
 void UserDataUpdateRequest::setUploadFile(const std::string& uploadFile)
 {
 	uploadFile_ = uploadFile;
-	setCoreParameter("UploadFile", uploadFile);
+	setParameter("UploadFile", uploadFile);
 }
 
 std::string UserDataUpdateRequest::getName()const
@@ -77,7 +79,7 @@ std::string UserDataUpdateRequest::getName()const
 void UserDataUpdateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long UserDataUpdateRequest::getBid()const
@@ -88,6 +90,6 @@ long UserDataUpdateRequest::getBid()const
 void UserDataUpdateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

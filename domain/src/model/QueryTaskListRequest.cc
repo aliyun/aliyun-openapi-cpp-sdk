@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTaskListRequest;
 
 QueryTaskListRequest::QueryTaskListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskListRequest::~QueryTaskListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryTaskListRequest::getEndCreateTime()const
 void QueryTaskListRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
-	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
+	setParameter("EndCreateTime", std::to_string(endCreateTime));
 }
 
 int QueryTaskListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryTaskListRequest::getPageNum()const
 void QueryTaskListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 long QueryTaskListRequest::getBeginCreateTime()const
@@ -55,7 +57,7 @@ long QueryTaskListRequest::getBeginCreateTime()const
 void QueryTaskListRequest::setBeginCreateTime(long beginCreateTime)
 {
 	beginCreateTime_ = beginCreateTime;
-	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
+	setParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 std::string QueryTaskListRequest::getUserClientIp()const
@@ -66,7 +68,7 @@ std::string QueryTaskListRequest::getUserClientIp()const
 void QueryTaskListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int QueryTaskListRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryTaskListRequest::getPageSize()const
 void QueryTaskListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTaskListRequest::getLang()const
@@ -88,6 +90,6 @@ std::string QueryTaskListRequest::getLang()const
 void QueryTaskListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DeleteRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRuleRequest::~DeleteRuleRequest()
 {}
@@ -33,7 +35,7 @@ int DeleteRuleRequest::getFeatureType()const
 void DeleteRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DeleteRuleRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DeleteRuleRequest::getSourceIp()const
 void DeleteRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DeleteRuleRequest::getId()const
@@ -55,7 +57,7 @@ long DeleteRuleRequest::getId()const
 void DeleteRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DeleteRuleRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteRuleRequest::getLang()const
 void DeleteRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

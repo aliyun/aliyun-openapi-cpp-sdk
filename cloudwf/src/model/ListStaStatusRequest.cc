@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListStaStatusRequest;
 
 ListStaStatusRequest::ListStaStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListStaStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListStaStatusRequest::~ListStaStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListStaStatusRequest::getAccessKeyId()const
 void ListStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListStaStatusRequest::getSearchSsid()const
@@ -44,7 +46,7 @@ std::string ListStaStatusRequest::getSearchSsid()const
 void ListStaStatusRequest::setSearchSsid(const std::string& searchSsid)
 {
 	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
+	setParameter("SearchSsid", searchSsid);
 }
 
 int ListStaStatusRequest::getPageIndex()const
@@ -55,7 +57,7 @@ int ListStaStatusRequest::getPageIndex()const
 void ListStaStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListStaStatusRequest::getSearchMac()const
@@ -66,7 +68,7 @@ std::string ListStaStatusRequest::getSearchMac()const
 void ListStaStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 std::string ListStaStatusRequest::getSearchDescription()const
@@ -77,7 +79,7 @@ std::string ListStaStatusRequest::getSearchDescription()const
 void ListStaStatusRequest::setSearchDescription(const std::string& searchDescription)
 {
 	searchDescription_ = searchDescription;
-	setCoreParameter("SearchDescription", searchDescription);
+	setParameter("SearchDescription", searchDescription);
 }
 
 std::string ListStaStatusRequest::getOrderCol()const
@@ -88,7 +90,7 @@ std::string ListStaStatusRequest::getOrderCol()const
 void ListStaStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListStaStatusRequest::getSearchGroupName()const
@@ -99,7 +101,7 @@ std::string ListStaStatusRequest::getSearchGroupName()const
 void ListStaStatusRequest::setSearchGroupName(const std::string& searchGroupName)
 {
 	searchGroupName_ = searchGroupName;
-	setCoreParameter("SearchGroupName", searchGroupName);
+	setParameter("SearchGroupName", searchGroupName);
 }
 
 int ListStaStatusRequest::getSearchStatus()const
@@ -110,7 +112,7 @@ int ListStaStatusRequest::getSearchStatus()const
 void ListStaStatusRequest::setSearchStatus(int searchStatus)
 {
 	searchStatus_ = searchStatus;
-	setCoreParameter("SearchStatus", std::to_string(searchStatus));
+	setParameter("SearchStatus", std::to_string(searchStatus));
 }
 
 int ListStaStatusRequest::getLength()const
@@ -121,7 +123,7 @@ int ListStaStatusRequest::getLength()const
 void ListStaStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListStaStatusRequest::getSearchUsername()const
@@ -132,7 +134,7 @@ std::string ListStaStatusRequest::getSearchUsername()const
 void ListStaStatusRequest::setSearchUsername(const std::string& searchUsername)
 {
 	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
+	setParameter("SearchUsername", searchUsername);
 }
 
 std::string ListStaStatusRequest::getOrderDir()const
@@ -143,7 +145,7 @@ std::string ListStaStatusRequest::getOrderDir()const
 void ListStaStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListStaStatusRequest::getSearchProtocal()const
@@ -154,7 +156,7 @@ std::string ListStaStatusRequest::getSearchProtocal()const
 void ListStaStatusRequest::setSearchProtocal(const std::string& searchProtocal)
 {
 	searchProtocal_ = searchProtocal;
-	setCoreParameter("SearchProtocal", searchProtocal);
+	setParameter("SearchProtocal", searchProtocal);
 }
 
 std::string ListStaStatusRequest::getSearchApName()const
@@ -165,7 +167,7 @@ std::string ListStaStatusRequest::getSearchApName()const
 void ListStaStatusRequest::setSearchApName(const std::string& searchApName)
 {
 	searchApName_ = searchApName;
-	setCoreParameter("SearchApName", searchApName);
+	setParameter("SearchApName", searchApName);
 }
 
 std::string ListStaStatusRequest::getSearchIp()const
@@ -176,6 +178,6 @@ std::string ListStaStatusRequest::getSearchIp()const
 void ListStaStatusRequest::setSearchIp(const std::string& searchIp)
 {
 	searchIp_ = searchIp;
-	setCoreParameter("SearchIp", searchIp);
+	setParameter("SearchIp", searchIp);
 }
 

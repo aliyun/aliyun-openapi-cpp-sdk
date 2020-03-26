@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::AuthenticateSigRequest;
 
 AuthenticateSigRequest::AuthenticateSigRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "AuthenticateSig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AuthenticateSigRequest::~AuthenticateSigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AuthenticateSigRequest::getRemoteIp()const
 void AuthenticateSigRequest::setRemoteIp(const std::string& remoteIp)
 {
 	remoteIp_ = remoteIp;
-	setCoreParameter("RemoteIp", remoteIp);
+	setParameter("RemoteIp", remoteIp);
 }
 
 std::string AuthenticateSigRequest::getSessionId()const
@@ -44,7 +46,7 @@ std::string AuthenticateSigRequest::getSessionId()const
 void AuthenticateSigRequest::setSessionId(const std::string& sessionId)
 {
 	sessionId_ = sessionId;
-	setCoreParameter("SessionId", sessionId);
+	setParameter("SessionId", sessionId);
 }
 
 std::string AuthenticateSigRequest::getScene()const
@@ -55,7 +57,7 @@ std::string AuthenticateSigRequest::getScene()const
 void AuthenticateSigRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string AuthenticateSigRequest::getSig()const
@@ -66,7 +68,7 @@ std::string AuthenticateSigRequest::getSig()const
 void AuthenticateSigRequest::setSig(const std::string& sig)
 {
 	sig_ = sig;
-	setCoreParameter("Sig", sig);
+	setParameter("Sig", sig);
 }
 
 std::string AuthenticateSigRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string AuthenticateSigRequest::getSourceIp()const
 void AuthenticateSigRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string AuthenticateSigRequest::getToken()const
@@ -88,7 +90,7 @@ std::string AuthenticateSigRequest::getToken()const
 void AuthenticateSigRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 std::string AuthenticateSigRequest::getAppKey()const
@@ -99,6 +101,6 @@ std::string AuthenticateSigRequest::getAppKey()const
 void AuthenticateSigRequest::setAppKey(const std::string& appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", appKey);
+	setParameter("AppKey", appKey);
 }
 

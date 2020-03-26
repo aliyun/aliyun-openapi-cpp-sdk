@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeWebsiteScanResultDetailRequest;
 
 DescribeWebsiteScanResultDetailRequest::DescribeWebsiteScanResultDetailRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeWebsiteScanResultDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeWebsiteScanResultDetailRequest::~DescribeWebsiteScanResultDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeWebsiteScanResultDetailRequest::getResourceType()const
 void DescribeWebsiteScanResultDetailRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeWebsiteScanResultDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeWebsiteScanResultDetailRequest::getSourceIp()const
 void DescribeWebsiteScanResultDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeWebsiteScanResultDetailRequest::getId()const
@@ -55,7 +57,7 @@ int DescribeWebsiteScanResultDetailRequest::getId()const
 void DescribeWebsiteScanResultDetailRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DescribeWebsiteScanResultDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeWebsiteScanResultDetailRequest::getLang()const
 void DescribeWebsiteScanResultDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DYSMSAPI_EXPORT AddSmsSignRequest : public RpcServiceRequest
 			{
+			public:
 				struct SignFileList
 				{
 					std::string fileContents;

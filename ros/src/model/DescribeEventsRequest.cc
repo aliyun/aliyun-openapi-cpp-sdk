@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeEventsRequest;
 
 DescribeEventsRequest::DescribeEventsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/events");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeEventsRequest::~DescribeEventsRequest()
 {}
@@ -33,7 +36,7 @@ std::string DescribeEventsRequest::getStackId()const
 void DescribeEventsRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 int DescribeEventsRequest::getPageSize()const
@@ -44,7 +47,7 @@ int DescribeEventsRequest::getPageSize()const
 void DescribeEventsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeEventsRequest::getStackName()const
@@ -55,7 +58,7 @@ std::string DescribeEventsRequest::getStackName()const
 void DescribeEventsRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 
 std::string DescribeEventsRequest::getResourceName()const
@@ -66,7 +69,7 @@ std::string DescribeEventsRequest::getResourceName()const
 void DescribeEventsRequest::setResourceName(const std::string& resourceName)
 {
 	resourceName_ = resourceName;
-	setCoreParameter("ResourceName", resourceName);
+	setParameter("ResourceName", resourceName);
 }
 
 std::string DescribeEventsRequest::getResourceStatus()const
@@ -77,7 +80,7 @@ std::string DescribeEventsRequest::getResourceStatus()const
 void DescribeEventsRequest::setResourceStatus(const std::string& resourceStatus)
 {
 	resourceStatus_ = resourceStatus;
-	setCoreParameter("ResourceStatus", resourceStatus);
+	setParameter("ResourceStatus", resourceStatus);
 }
 
 std::string DescribeEventsRequest::getResourceType()const
@@ -88,7 +91,7 @@ std::string DescribeEventsRequest::getResourceType()const
 void DescribeEventsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 int DescribeEventsRequest::getPageNumber()const
@@ -99,6 +102,6 @@ int DescribeEventsRequest::getPageNumber()const
 void DescribeEventsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

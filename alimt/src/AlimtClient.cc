@@ -87,6 +87,42 @@ AlimtClient::CreateDocTranslateTaskOutcomeCallable AlimtClient::createDocTransla
 	return task->get_future();
 }
 
+AlimtClient::GetDetectLanguageOutcome AlimtClient::getDetectLanguage(const GetDetectLanguageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDetectLanguageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDetectLanguageOutcome(GetDetectLanguageResult(outcome.result()));
+	else
+		return GetDetectLanguageOutcome(outcome.error());
+}
+
+void AlimtClient::getDetectLanguageAsync(const GetDetectLanguageRequest& request, const GetDetectLanguageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDetectLanguage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetDetectLanguageOutcomeCallable AlimtClient::getDetectLanguageCallable(const GetDetectLanguageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDetectLanguageOutcome()>>(
+			[this, request]()
+			{
+			return this->getDetectLanguage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::GetDocTranslateTaskOutcome AlimtClient::getDocTranslateTask(const GetDocTranslateTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::UpdateDataSourceRequest;
 
 UpdateDataSourceRequest::UpdateDataSourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "UpdateDataSource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDataSourceRequest::~UpdateDataSourceRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateDataSourceRequest::getResourceOwnerId()const
 void UpdateDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateDataSourceRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string UpdateDataSourceRequest::getDescription()const
 void UpdateDataSourceRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateDataSourceRequest::getConf()const
@@ -55,7 +57,7 @@ std::string UpdateDataSourceRequest::getConf()const
 void UpdateDataSourceRequest::setConf(const std::string& conf)
 {
 	conf_ = conf;
-	setCoreParameter("Conf", conf);
+	setParameter("Conf", conf);
 }
 
 std::string UpdateDataSourceRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string UpdateDataSourceRequest::getAccessKeyId()const
 void UpdateDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateDataSourceRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string UpdateDataSourceRequest::getRegionId()const
 void UpdateDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UpdateDataSourceRequest::getName()const
@@ -88,7 +90,7 @@ std::string UpdateDataSourceRequest::getName()const
 void UpdateDataSourceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateDataSourceRequest::getId()const
@@ -99,6 +101,6 @@ std::string UpdateDataSourceRequest::getId()const
 void UpdateDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

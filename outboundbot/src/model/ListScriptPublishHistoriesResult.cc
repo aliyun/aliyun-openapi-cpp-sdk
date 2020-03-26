@@ -40,36 +40,36 @@ void ListScriptPublishHistoriesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto scriptPublishHistoriesNode = value["ScriptPublishHistories"];
-	if(!scriptPublishHistoriesNode["TotalCount"].isNull())
-		scriptPublishHistories_.totalCount = std::stoi(scriptPublishHistoriesNode["TotalCount"].asString());
 	if(!scriptPublishHistoriesNode["PageNumber"].isNull())
 		scriptPublishHistories_.pageNumber = std::stoi(scriptPublishHistoriesNode["PageNumber"].asString());
 	if(!scriptPublishHistoriesNode["PageSize"].isNull())
 		scriptPublishHistories_.pageSize = std::stoi(scriptPublishHistoriesNode["PageSize"].asString());
+	if(!scriptPublishHistoriesNode["TotalCount"].isNull())
+		scriptPublishHistories_.totalCount = std::stoi(scriptPublishHistoriesNode["TotalCount"].asString());
 	auto allListNode = scriptPublishHistoriesNode["List"]["PublishHistory"];
 	for (auto scriptPublishHistoriesNodeListPublishHistory : allListNode)
 	{
 		ScriptPublishHistories::PublishHistory publishHistoryObject;
+		if(!scriptPublishHistoriesNodeListPublishHistory["Description"].isNull())
+			publishHistoryObject.description = scriptPublishHistoriesNodeListPublishHistory["Description"].asString();
 		if(!scriptPublishHistoriesNodeListPublishHistory["InstanceId"].isNull())
 			publishHistoryObject.instanceId = scriptPublishHistoriesNodeListPublishHistory["InstanceId"].asString();
+		if(!scriptPublishHistoriesNodeListPublishHistory["PublishTime"].isNull())
+			publishHistoryObject.publishTime = std::stol(scriptPublishHistoriesNodeListPublishHistory["PublishTime"].asString());
 		if(!scriptPublishHistoriesNodeListPublishHistory["ScriptId"].isNull())
 			publishHistoryObject.scriptId = scriptPublishHistoriesNodeListPublishHistory["ScriptId"].asString();
 		if(!scriptPublishHistoriesNodeListPublishHistory["ScriptVersion"].isNull())
 			publishHistoryObject.scriptVersion = scriptPublishHistoriesNodeListPublishHistory["ScriptVersion"].asString();
-		if(!scriptPublishHistoriesNodeListPublishHistory["Description"].isNull())
-			publishHistoryObject.description = scriptPublishHistoriesNodeListPublishHistory["Description"].asString();
-		if(!scriptPublishHistoriesNodeListPublishHistory["PublishTime"].isNull())
-			publishHistoryObject.publishTime = std::stol(scriptPublishHistoriesNodeListPublishHistory["PublishTime"].asString());
 		scriptPublishHistories_.list.push_back(publishHistoryObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

@@ -65,6 +65,8 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.status = std::stoi(valueVulRecordsVulRecord["Status"].asString());
 		if(!valueVulRecordsVulRecord["Related"].isNull())
 			vulRecordsObject.related = valueVulRecordsVulRecord["Related"].asString();
+		if(!valueVulRecordsVulRecord["RecordId"].isNull())
+			vulRecordsObject.recordId = std::stol(valueVulRecordsVulRecord["RecordId"].asString());
 		if(!valueVulRecordsVulRecord["ResultCode"].isNull())
 			vulRecordsObject.resultCode = valueVulRecordsVulRecord["ResultCode"].asString();
 		if(!valueVulRecordsVulRecord["ResultMessage"].isNull())
@@ -79,6 +81,12 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.instanceId = valueVulRecordsVulRecord["InstanceId"].asString();
 		if(!valueVulRecordsVulRecord["InstanceName"].isNull())
 			vulRecordsObject.instanceName = valueVulRecordsVulRecord["InstanceName"].asString();
+		if(!valueVulRecordsVulRecord["RegionId"].isNull())
+			vulRecordsObject.regionId = valueVulRecordsVulRecord["RegionId"].asString();
+		if(!valueVulRecordsVulRecord["Online"].isNull())
+			vulRecordsObject.online = valueVulRecordsVulRecord["Online"].asString() == "true";
+		if(!valueVulRecordsVulRecord["Level"].isNull())
+			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
 		if(!valueVulRecordsVulRecord["InternetIp"].isNull())
 			vulRecordsObject.internetIp = valueVulRecordsVulRecord["InternetIp"].asString();
 		if(!valueVulRecordsVulRecord["IntranetIp"].isNull())

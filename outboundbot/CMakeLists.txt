@@ -77,6 +77,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DescribeScriptVoiceConfigResult.h
 	include/alibabacloud/outboundbot/model/DescribeTTSConfigRequest.h
 	include/alibabacloud/outboundbot/model/DescribeTTSConfigResult.h
+	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryRequest.h
+	include/alibabacloud/outboundbot/model/DescribeTagHitsSummaryResult.h
 	include/alibabacloud/outboundbot/model/DialogueRequest.h
 	include/alibabacloud/outboundbot/model/DialogueResult.h
 	include/alibabacloud/outboundbot/model/DownloadBasicStatisticsReportRequest.h
@@ -123,6 +125,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ListJobsResult.h
 	include/alibabacloud/outboundbot/model/ListJobsByGroupRequest.h
 	include/alibabacloud/outboundbot/model/ListJobsByGroupResult.h
+	include/alibabacloud/outboundbot/model/ListMediaRequest.h
+	include/alibabacloud/outboundbot/model/ListMediaResult.h
 	include/alibabacloud/outboundbot/model/ListMediasRequest.h
 	include/alibabacloud/outboundbot/model/ListMediasResult.h
 	include/alibabacloud/outboundbot/model/ListOutboundCallNumbersRequest.h
@@ -188,7 +192,9 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/SuspendJobsRequest.h
 	include/alibabacloud/outboundbot/model/SuspendJobsResult.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptRequest.h
-	include/alibabacloud/outboundbot/model/WithdrawScriptResult.h )
+	include/alibabacloud/outboundbot/model/WithdrawScriptResult.h
+	include/alibabacloud/outboundbot/model/WithdrawScriptReviewRequest.h
+	include/alibabacloud/outboundbot/model/WithdrawScriptReviewResult.h )
 
 set(outboundbot_src 
 	src/OutboundBotClient.cc
@@ -248,6 +254,8 @@ set(outboundbot_src
 	src/model/DescribeScriptVoiceConfigResult.cc
 	src/model/DescribeTTSConfigRequest.cc
 	src/model/DescribeTTSConfigResult.cc
+	src/model/DescribeTagHitsSummaryRequest.cc
+	src/model/DescribeTagHitsSummaryResult.cc
 	src/model/DialogueRequest.cc
 	src/model/DialogueResult.cc
 	src/model/DownloadBasicStatisticsReportRequest.cc
@@ -294,6 +302,8 @@ set(outboundbot_src
 	src/model/ListJobsResult.cc
 	src/model/ListJobsByGroupRequest.cc
 	src/model/ListJobsByGroupResult.cc
+	src/model/ListMediaRequest.cc
+	src/model/ListMediaResult.cc
 	src/model/ListMediasRequest.cc
 	src/model/ListMediasResult.cc
 	src/model/ListOutboundCallNumbersRequest.cc
@@ -359,7 +369,9 @@ set(outboundbot_src
 	src/model/SuspendJobsRequest.cc
 	src/model/SuspendJobsResult.cc
 	src/model/WithdrawScriptRequest.cc
-	src/model/WithdrawScriptResult.cc )
+	src/model/WithdrawScriptResult.cc
+	src/model/WithdrawScriptReviewRequest.cc
+	src/model/WithdrawScriptReviewResult.cc )
 
 add_library(outboundbot ${LIB_TYPE}
 	${outboundbot_public_header}

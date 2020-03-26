@@ -20,10 +20,23 @@ using AlibabaCloud::ARMS::Model::SearchAlertContactGroupRequest;
 
 SearchAlertContactGroupRequest::SearchAlertContactGroupRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchAlertContactGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchAlertContactGroupRequest::~SearchAlertContactGroupRequest()
 {}
+
+std::string SearchAlertContactGroupRequest::getContactName()const
+{
+	return contactName_;
+}
+
+void SearchAlertContactGroupRequest::setContactName(const std::string& contactName)
+{
+	contactName_ = contactName;
+	setParameter("ContactName", contactName);
+}
 
 std::string SearchAlertContactGroupRequest::getRegionId()const
 {
@@ -33,7 +46,18 @@ std::string SearchAlertContactGroupRequest::getRegionId()const
 void SearchAlertContactGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+long SearchAlertContactGroupRequest::getContactId()const
+{
+	return contactId_;
+}
+
+void SearchAlertContactGroupRequest::setContactId(long contactId)
+{
+	contactId_ = contactId;
+	setParameter("ContactId", std::to_string(contactId));
 }
 
 std::string SearchAlertContactGroupRequest::getContactGroupName()const
@@ -44,6 +68,17 @@ std::string SearchAlertContactGroupRequest::getContactGroupName()const
 void SearchAlertContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
 {
 	contactGroupName_ = contactGroupName;
-	setCoreParameter("ContactGroupName", contactGroupName);
+	setParameter("ContactGroupName", contactGroupName);
+}
+
+std::string SearchAlertContactGroupRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void SearchAlertContactGroupRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
 }
 

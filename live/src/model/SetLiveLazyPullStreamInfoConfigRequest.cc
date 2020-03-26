@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveLazyPullStreamInfoConfigRequest;
 
 SetLiveLazyPullStreamInfoConfigRequest::SetLiveLazyPullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveLazyPullStreamInfoConfigRequest::~SetLiveLazyPullStreamInfoConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullArgs()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullArgs(const std::string& pullArgs)
 {
 	pullArgs_ = pullArgs;
-	setCoreParameter("PullArgs", pullArgs);
+	setParameter("PullArgs", pullArgs);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getAppName()const
 void SetLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom()const
@@ -55,7 +57,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom()const
 void SetLiveLazyPullStreamInfoConfigRequest::setLiveapiRequestFrom(const std::string& liveapiRequestFrom)
 {
 	liveapiRequestFrom_ = liveapiRequestFrom;
-	setCoreParameter("LiveapiRequestFrom", liveapiRequestFrom);
+	setParameter("LiveapiRequestFrom", liveapiRequestFrom);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthKey()const
@@ -66,7 +68,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthKey()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthKey(const std::string& pullAuthKey)
 {
 	pullAuthKey_ = pullAuthKey;
-	setCoreParameter("PullAuthKey", pullAuthKey);
+	setParameter("PullAuthKey", pullAuthKey);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthType()const
@@ -77,7 +79,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthType()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthType(const std::string& pullAuthType)
 {
 	pullAuthType_ = pullAuthType;
-	setCoreParameter("PullAuthType", pullAuthType);
+	setParameter("PullAuthType", pullAuthType);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getDomainName()const
@@ -88,7 +90,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getDomainName()const
 void SetLiveLazyPullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullDomainName()const
@@ -99,7 +101,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullDomainName()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullDomainName(const std::string& pullDomainName)
 {
 	pullDomainName_ = pullDomainName;
-	setCoreParameter("PullDomainName", pullDomainName);
+	setParameter("PullDomainName", pullDomainName);
 }
 
 long SetLiveLazyPullStreamInfoConfigRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long SetLiveLazyPullStreamInfoConfigRequest::getOwnerId()const
 void SetLiveLazyPullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAppName()const
@@ -121,7 +123,7 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAppName()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullAppName(const std::string& pullAppName)
 {
 	pullAppName_ = pullAppName;
-	setCoreParameter("PullAppName", pullAppName);
+	setParameter("PullAppName", pullAppName);
 }
 
 std::string SetLiveLazyPullStreamInfoConfigRequest::getPullProtocol()const
@@ -132,6 +134,6 @@ std::string SetLiveLazyPullStreamInfoConfigRequest::getPullProtocol()const
 void SetLiveLazyPullStreamInfoConfigRequest::setPullProtocol(const std::string& pullProtocol)
 {
 	pullProtocol_ = pullProtocol;
-	setCoreParameter("PullProtocol", pullProtocol);
+	setParameter("PullProtocol", pullProtocol);
 }
 

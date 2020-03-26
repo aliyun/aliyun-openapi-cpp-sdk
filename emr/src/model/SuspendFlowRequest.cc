@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::SuspendFlowRequest;
 
 SuspendFlowRequest::SuspendFlowRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "SuspendFlow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SuspendFlowRequest::~SuspendFlowRequest()
 {}
@@ -33,7 +35,7 @@ std::string SuspendFlowRequest::getFlowInstanceId()const
 void SuspendFlowRequest::setFlowInstanceId(const std::string& flowInstanceId)
 {
 	flowInstanceId_ = flowInstanceId;
-	setCoreParameter("FlowInstanceId", flowInstanceId);
+	setParameter("FlowInstanceId", flowInstanceId);
 }
 
 std::string SuspendFlowRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string SuspendFlowRequest::getRegionId()const
 void SuspendFlowRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SuspendFlowRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string SuspendFlowRequest::getProjectId()const
 void SuspendFlowRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

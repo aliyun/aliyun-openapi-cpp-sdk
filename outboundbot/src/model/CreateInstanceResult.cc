@@ -40,28 +40,28 @@ void CreateInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto instanceNode = value["Instance"];
+	if(!instanceNode["CallCenterInstanceId"].isNull())
+		instance_.callCenterInstanceId = instanceNode["CallCenterInstanceId"].asString();
+	if(!instanceNode["CreationTime"].isNull())
+		instance_.creationTime = std::stol(instanceNode["CreationTime"].asString());
+	if(!instanceNode["InstanceDescription"].isNull())
+		instance_.instanceDescription = instanceNode["InstanceDescription"].asString();
 	if(!instanceNode["InstanceId"].isNull())
 		instance_.instanceId = instanceNode["InstanceId"].asString();
 	if(!instanceNode["InstanceName"].isNull())
 		instance_.instanceName = instanceNode["InstanceName"].asString();
-	if(!instanceNode["InstanceDescription"].isNull())
-		instance_.instanceDescription = instanceNode["InstanceDescription"].asString();
 	if(!instanceNode["MaxConcurrentConversation"].isNull())
 		instance_.maxConcurrentConversation = std::stoi(instanceNode["MaxConcurrentConversation"].asString());
 	if(!instanceNode["Owner"].isNull())
 		instance_.owner = instanceNode["Owner"].asString();
-	if(!instanceNode["CreationTime"].isNull())
-		instance_.creationTime = std::stol(instanceNode["CreationTime"].asString());
-	if(!instanceNode["CallCenterInstanceId"].isNull())
-		instance_.callCenterInstanceId = instanceNode["CallCenterInstanceId"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

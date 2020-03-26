@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::RemoveUserFromGroupRequest;
 
 RemoveUserFromGroupRequest::RemoveUserFromGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "RemoveUserFromGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveUserFromGroupRequest::~RemoveUserFromGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveUserFromGroupRequest::getGroupName()const
 void RemoveUserFromGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string RemoveUserFromGroupRequest::getUserName()const
@@ -44,6 +46,6 @@ std::string RemoveUserFromGroupRequest::getUserName()const
 void RemoveUserFromGroupRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

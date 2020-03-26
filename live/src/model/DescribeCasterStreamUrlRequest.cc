@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterStreamUrlRequest;
 
 DescribeCasterStreamUrlRequest::DescribeCasterStreamUrlRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterStreamUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterStreamUrlRequest::~DescribeCasterStreamUrlRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCasterStreamUrlRequest::getCasterId()const
 void DescribeCasterStreamUrlRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DescribeCasterStreamUrlRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeCasterStreamUrlRequest::getOwnerId()const
 void DescribeCasterStreamUrlRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

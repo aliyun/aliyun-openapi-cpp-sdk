@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeVulDetailsRequest;
 
 DescribeVulDetailsRequest::DescribeVulDetailsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeVulDetails")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulDetailsRequest::~DescribeVulDetailsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVulDetailsRequest::getType()const
 void DescribeVulDetailsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeVulDetailsRequest::getAliasName()const
@@ -44,7 +46,7 @@ std::string DescribeVulDetailsRequest::getAliasName()const
 void DescribeVulDetailsRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
 }
 
 std::string DescribeVulDetailsRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeVulDetailsRequest::getSourceIp()const
 void DescribeVulDetailsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeVulDetailsRequest::getName()const
@@ -66,7 +68,7 @@ std::string DescribeVulDetailsRequest::getName()const
 void DescribeVulDetailsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeVulDetailsRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeVulDetailsRequest::getLang()const
 void DescribeVulDetailsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApisByTrafficControlRequest;
 
 DescribeApisByTrafficControlRequest::DescribeApisByTrafficControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApisByTrafficControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApisByTrafficControlRequest::~DescribeApisByTrafficControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApisByTrafficControlRequest::getTrafficControlId()const
 void DescribeApisByTrafficControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 int DescribeApisByTrafficControlRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeApisByTrafficControlRequest::getPageNumber()const
 void DescribeApisByTrafficControlRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApisByTrafficControlRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeApisByTrafficControlRequest::getAccessKeyId()const
 void DescribeApisByTrafficControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApisByTrafficControlRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DescribeApisByTrafficControlRequest::getSecurityToken()const
 void DescribeApisByTrafficControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApisByTrafficControlRequest::getPageSize()const
@@ -77,6 +79,6 @@ int DescribeApisByTrafficControlRequest::getPageSize()const
 void DescribeApisByTrafficControlRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

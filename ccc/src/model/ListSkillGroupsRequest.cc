@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupsRequest;
 
 ListSkillGroupsRequest::ListSkillGroupsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupsRequest::~ListSkillGroupsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListSkillGroupsRequest::getInstanceId()const
 void ListSkillGroupsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupsRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ListSkillGroupsRequest::getAccessKeyId()const
 void ListSkillGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

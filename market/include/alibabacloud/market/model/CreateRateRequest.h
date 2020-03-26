@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				CreateRateRequest();
 				~CreateRateRequest();
 
-				std::string getScore()const;
-				void setScore(const std::string& score);
 				std::string getOrderId()const;
 				void setOrderId(const std::string& orderId);
-				std::string getRequestId()const;
-				void setRequestId(const std::string& requestId);
 				std::string getContent()const;
 				void setContent(const std::string& content);
+				std::string getScore()const;
+				void setScore(const std::string& score);
+				std::string getRequestId()const;
+				void setRequestId(const std::string& requestId);
 
             private:
-				std::string score_;
 				std::string orderId_;
-				std::string requestId_;
 				std::string content_;
+				std::string score_;
+				std::string requestId_;
 
 			};
 		}

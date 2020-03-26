@@ -22,7 +22,7 @@ StopServiceRequest::StopServiceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/stop");
-	setMethod(HttpRequest::Method::PUT);
+	setMethod(HttpRequest::Method::Put);
 }
 
 StopServiceRequest::~StopServiceRequest()

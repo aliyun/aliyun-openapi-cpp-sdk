@@ -90,8 +90,6 @@ void DescribeSiteMonitorAttributeResult::parse(const std::string &payload)
 		siteMonitors_.interval = siteMonitorsNode["Interval"].asString();
 	if(!siteMonitorsNode["TaskId"].isNull())
 		siteMonitors_.taskId = siteMonitorsNode["TaskId"].asString();
-	if(!siteMonitorsNode["OptionJson"].isNull())
-		siteMonitors_.optionJson = siteMonitorsNode["OptionJson"].asString();
 	auto allIspCitiesNode = siteMonitorsNode["IspCities"]["IspCity"];
 	for (auto siteMonitorsNodeIspCitiesIspCity : allIspCitiesNode)
 	{
@@ -106,6 +104,45 @@ void DescribeSiteMonitorAttributeResult::parse(const std::string &payload)
 			ispCityObject.isp = siteMonitorsNodeIspCitiesIspCity["Isp"].asString();
 		siteMonitors_.ispCities.push_back(ispCityObject);
 	}
+	auto optionJsonNode = siteMonitorsNode["OptionJson"];
+	if(!optionJsonNode["dns_type"].isNull())
+		siteMonitors_.optionJson.dns_type = optionJsonNode["dns_type"].asString();
+	if(!optionJsonNode["dns_server"].isNull())
+		siteMonitors_.optionJson.dns_server = optionJsonNode["dns_server"].asString();
+	if(!optionJsonNode["expect_value"].isNull())
+		siteMonitors_.optionJson.expect_value = optionJsonNode["expect_value"].asString();
+	if(!optionJsonNode["http_method"].isNull())
+		siteMonitors_.optionJson.http_method = optionJsonNode["http_method"].asString();
+	if(!optionJsonNode["response_content"].isNull())
+		siteMonitors_.optionJson.response_content = optionJsonNode["response_content"].asString();
+	if(!optionJsonNode["match_rule"].isNull())
+		siteMonitors_.optionJson.match_rule = std::stoi(optionJsonNode["match_rule"].asString());
+	if(!optionJsonNode["request_content"].isNull())
+		siteMonitors_.optionJson.request_content = optionJsonNode["request_content"].asString();
+	if(!optionJsonNode["cookie"].isNull())
+		siteMonitors_.optionJson.cookie = optionJsonNode["cookie"].asString();
+	if(!optionJsonNode["header"].isNull())
+		siteMonitors_.optionJson.header = optionJsonNode["header"].asString();
+	if(!optionJsonNode["username"].isNull())
+		siteMonitors_.optionJson.username = optionJsonNode["username"].asString();
+	if(!optionJsonNode["password"].isNull())
+		siteMonitors_.optionJson.password = optionJsonNode["password"].asString();
+	if(!optionJsonNode["time_out"].isNull())
+		siteMonitors_.optionJson.time_out = std::stol(optionJsonNode["time_out"].asString());
+	if(!optionJsonNode["ping_num"].isNull())
+		siteMonitors_.optionJson.ping_num = std::stoi(optionJsonNode["ping_num"].asString());
+	if(!optionJsonNode["failure_rate"].isNull())
+		siteMonitors_.optionJson.failure_rate = std::stof(optionJsonNode["failure_rate"].asString());
+	if(!optionJsonNode["request_format"].isNull())
+		siteMonitors_.optionJson.request_format = optionJsonNode["request_format"].asString();
+	if(!optionJsonNode["response_format"].isNull())
+		siteMonitors_.optionJson.response_format = optionJsonNode["response_format"].asString();
+	if(!optionJsonNode["port"].isNull())
+		siteMonitors_.optionJson.port = std::stoi(optionJsonNode["port"].asString());
+	if(!optionJsonNode["authentication"].isNull())
+		siteMonitors_.optionJson.authentication = std::stoi(optionJsonNode["authentication"].asString());
+	if(!optionJsonNode["traceroute"].isNull())
+		siteMonitors_.optionJson.traceroute = std::stol(optionJsonNode["traceroute"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

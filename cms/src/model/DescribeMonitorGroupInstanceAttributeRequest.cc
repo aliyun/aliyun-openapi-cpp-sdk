@@ -35,7 +35,7 @@ long DescribeMonitorGroupInstanceAttributeRequest::getGroupId()const
 void DescribeMonitorGroupInstanceAttributeRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 int DescribeMonitorGroupInstanceAttributeRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeMonitorGroupInstanceAttributeRequest::getPageNumber()const
 void DescribeMonitorGroupInstanceAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeMonitorGroupInstanceAttributeRequest::getTotal()const
@@ -57,7 +57,7 @@ bool DescribeMonitorGroupInstanceAttributeRequest::getTotal()const
 void DescribeMonitorGroupInstanceAttributeRequest::setTotal(bool total)
 {
 	total_ = total;
-	setCoreParameter("Total", total ? "true" : "false");
+	setParameter("Total", total ? "true" : "false");
 }
 
 std::string DescribeMonitorGroupInstanceAttributeRequest::getInstanceIds()const
@@ -68,7 +68,7 @@ std::string DescribeMonitorGroupInstanceAttributeRequest::getInstanceIds()const
 void DescribeMonitorGroupInstanceAttributeRequest::setInstanceIds(const std::string& instanceIds)
 {
 	instanceIds_ = instanceIds;
-	setCoreParameter("InstanceIds", instanceIds);
+	setParameter("InstanceIds", instanceIds);
 }
 
 int DescribeMonitorGroupInstanceAttributeRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeMonitorGroupInstanceAttributeRequest::getPageSize()const
 void DescribeMonitorGroupInstanceAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMonitorGroupInstanceAttributeRequest::getCategory()const
@@ -90,7 +90,7 @@ std::string DescribeMonitorGroupInstanceAttributeRequest::getCategory()const
 void DescribeMonitorGroupInstanceAttributeRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 
 std::string DescribeMonitorGroupInstanceAttributeRequest::getKeyword()const
@@ -101,6 +101,6 @@ std::string DescribeMonitorGroupInstanceAttributeRequest::getKeyword()const
 void DescribeMonitorGroupInstanceAttributeRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 

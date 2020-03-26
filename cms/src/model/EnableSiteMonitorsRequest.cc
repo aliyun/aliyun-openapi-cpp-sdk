@@ -35,6 +35,6 @@ std::string EnableSiteMonitorsRequest::getTaskIds()const
 void EnableSiteMonitorsRequest::setTaskIds(const std::string& taskIds)
 {
 	taskIds_ = taskIds;
-	setCoreParameter("TaskIds", taskIds);
+	setParameter("TaskIds", taskIds);
 }
 

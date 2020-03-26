@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::UpdateServiceQPSRequest;
 
 UpdateServiceQPSRequest::UpdateServiceQPSRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "UpdateServiceQPS")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateServiceQPSRequest::~UpdateServiceQPSRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateServiceQPSRequest::getQps()const
 void UpdateServiceQPSRequest::setQps(const std::string& qps)
 {
 	qps_ = qps;
-	setCoreParameter("Qps", qps);
+	setParameter("Qps", qps);
 }
 
 long UpdateServiceQPSRequest::getServiceId()const
@@ -44,6 +46,6 @@ long UpdateServiceQPSRequest::getServiceId()const
 void UpdateServiceQPSRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 

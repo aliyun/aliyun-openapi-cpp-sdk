@@ -44,6 +44,7 @@ namespace AlibabaCloud
 						std::string device;
 						std::string encrypted;
 						bool deleteWithInstance;
+						std::string autoSnapshotPolicyId;
 						std::string diskName;
 					};
 					struct Tag
@@ -65,8 +66,10 @@ namespace AlibabaCloud
 					int memory;
 					int cpu;
 					std::string lifecycleState;
+					std::string systemDiskAutoSnapshotPolicyId;
 					std::string systemDiskName;
 					std::string ramRoleName;
+					int ipv6AddressCount;
 					std::string imageId;
 					std::vector<ScalingConfiguration::SpotPriceModel> spotPriceLimit;
 					std::vector<std::string> instanceTypes;

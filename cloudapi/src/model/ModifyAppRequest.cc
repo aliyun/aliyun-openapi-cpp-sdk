@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyAppRequest;
 
 ModifyAppRequest::ModifyAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAppRequest::~ModifyAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyAppRequest::getDescription()const
 void ModifyAppRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyAppRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyAppRequest::getAccessKeyId()const
 void ModifyAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyAppRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string ModifyAppRequest::getAppName()const
 void ModifyAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string ModifyAppRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string ModifyAppRequest::getSecurityToken()const
 void ModifyAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long ModifyAppRequest::getAppId()const
@@ -77,7 +79,7 @@ long ModifyAppRequest::getAppId()const
 void ModifyAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 std::vector<ModifyAppRequest::Tag> ModifyAppRequest::getTag()const
@@ -88,12 +90,11 @@ std::vector<ModifyAppRequest::Tag> ModifyAppRequest::getTag()const
 void ModifyAppRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

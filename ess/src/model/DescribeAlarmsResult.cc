@@ -35,52 +35,48 @@ DescribeAlarmsResult::~DescribeAlarmsResult()
 
 void DescribeAlarmsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAlarmList = value["AlarmList"]["Alarm"];
-	for (auto value : allAlarmList)
+	auto allAlarmListNode = value["AlarmList"]["Alarm"];
+	for (auto valueAlarmListAlarm : allAlarmListNode)
 	{
 		Alarm alarmListObject;
-		if(!value["AlarmTaskId"].isNull())
-			alarmListObject.alarmTaskId = value["AlarmTaskId"].asString();
-		if(!value["Name"].isNull())
-			alarmListObject.name = value["Name"].asString();
-		if(!value["Description"].isNull())
-			alarmListObject.description = value["Description"].asString();
-		if(!value["MetricType"].isNull())
-			alarmListObject.metricType = value["MetricType"].asString();
-		if(!value["MetricName"].isNull())
-			alarmListObject.metricName = value["MetricName"].asString();
-		if(!value["Period"].isNull())
-			alarmListObject.period = std::stoi(value["Period"].asString());
-		if(!value["Statistics"].isNull())
-			alarmListObject.statistics = value["Statistics"].asString();
-		if(!value["ComparisonOperator"].isNull())
-			alarmListObject.comparisonOperator = value["ComparisonOperator"].asString();
-		if(!value["Threshold"].isNull())
-			alarmListObject.threshold = std::stof(value["Threshold"].asString());
-		if(!value["EvaluationCount"].isNull())
-			alarmListObject.evaluationCount = std::stoi(value["EvaluationCount"].asString());
-		if(!value["State"].isNull())
-			alarmListObject.state = value["State"].asString();
-		if(!value["ScalingGroupId"].isNull())
-			alarmListObject.scalingGroupId = value["ScalingGroupId"].asString();
-		if(!value["Enable"].isNull())
-			alarmListObject.enable = value["Enable"].asString() == "true";
-		auto allDimensions = value["Dimensions"]["Dimension"];
-		for (auto value : allDimensions)
+		if(!valueAlarmListAlarm["AlarmTaskId"].isNull())
+			alarmListObject.alarmTaskId = valueAlarmListAlarm["AlarmTaskId"].asString();
+		if(!valueAlarmListAlarm["Name"].isNull())
+			alarmListObject.name = valueAlarmListAlarm["Name"].asString();
+		if(!valueAlarmListAlarm["Description"].isNull())
+			alarmListObject.description = valueAlarmListAlarm["Description"].asString();
+		if(!valueAlarmListAlarm["MetricType"].isNull())
+			alarmListObject.metricType = valueAlarmListAlarm["MetricType"].asString();
+		if(!valueAlarmListAlarm["MetricName"].isNull())
+			alarmListObject.metricName = valueAlarmListAlarm["MetricName"].asString();
+		if(!valueAlarmListAlarm["Period"].isNull())
+			alarmListObject.period = std::stoi(valueAlarmListAlarm["Period"].asString());
+		if(!valueAlarmListAlarm["Statistics"].isNull())
+			alarmListObject.statistics = valueAlarmListAlarm["Statistics"].asString();
+		if(!valueAlarmListAlarm["ComparisonOperator"].isNull())
+			alarmListObject.comparisonOperator = valueAlarmListAlarm["ComparisonOperator"].asString();
+		if(!valueAlarmListAlarm["Threshold"].isNull())
+			alarmListObject.threshold = std::stof(valueAlarmListAlarm["Threshold"].asString());
+		if(!valueAlarmListAlarm["EvaluationCount"].isNull())
+			alarmListObject.evaluationCount = std::stoi(valueAlarmListAlarm["EvaluationCount"].asString());
+		if(!valueAlarmListAlarm["State"].isNull())
+			alarmListObject.state = valueAlarmListAlarm["State"].asString();
+		if(!valueAlarmListAlarm["ScalingGroupId"].isNull())
+			alarmListObject.scalingGroupId = valueAlarmListAlarm["ScalingGroupId"].asString();
+		if(!valueAlarmListAlarm["Enable"].isNull())
+			alarmListObject.enable = valueAlarmListAlarm["Enable"].asString() == "true";
+		auto allDimensionsNode = allAlarmListNode["Dimensions"]["Dimension"];
+		for (auto allAlarmListNodeDimensionsDimension : allDimensionsNode)
 		{
 			Alarm::Dimension dimensionsObject;
-			if(!value["DimensionKey"].isNull())
-				dimensionsObject.dimensionKey = value["DimensionKey"].asString();
-			if(!value["DimensionValue"].isNull())
-				dimensionsObject.dimensionValue = value["DimensionValue"].asString();
+			if(!allAlarmListNodeDimensionsDimension["DimensionKey"].isNull())
+				dimensionsObject.dimensionKey = allAlarmListNodeDimensionsDimension["DimensionKey"].asString();
+			if(!allAlarmListNodeDimensionsDimension["DimensionValue"].isNull())
+				dimensionsObject.dimensionValue = allAlarmListNodeDimensionsDimension["DimensionValue"].asString();
 			alarmListObject.dimensions.push_back(dimensionsObject);
 		}
 		auto allAlarmActions = value["AlarmActions"]["AlarmAction"];

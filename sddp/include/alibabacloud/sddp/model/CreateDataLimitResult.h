@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CreateDataLimitResult();
 				explicit CreateDataLimitResult(const std::string &payload);
 				~CreateDataLimitResult();
+				int getId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int id_;
 
 			};
 		}

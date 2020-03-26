@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMessagePageQueryByTopicRequest;
 OnsMessagePageQueryByTopicRequest::OnsMessagePageQueryByTopicRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMessagePageQueryByTopic")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsMessagePageQueryByTopicRequest::~OnsMessagePageQueryByTopicRequest()

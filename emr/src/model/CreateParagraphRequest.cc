@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateParagraphRequest;
 
 CreateParagraphRequest::CreateParagraphRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateParagraph")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateParagraphRequest::~CreateParagraphRequest()
 {}
@@ -33,7 +35,7 @@ long CreateParagraphRequest::getResourceOwnerId()const
 void CreateParagraphRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateParagraphRequest::getNoteId()const
@@ -44,7 +46,7 @@ std::string CreateParagraphRequest::getNoteId()const
 void CreateParagraphRequest::setNoteId(const std::string& noteId)
 {
 	noteId_ = noteId;
-	setCoreParameter("NoteId", noteId);
+	setParameter("NoteId", noteId);
 }
 
 std::string CreateParagraphRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateParagraphRequest::getAccessKeyId()const
 void CreateParagraphRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateParagraphRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateParagraphRequest::getRegionId()const
 void CreateParagraphRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateParagraphRequest::getText()const
@@ -77,6 +79,6 @@ std::string CreateParagraphRequest::getText()const
 void CreateParagraphRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setParameter("Text", text);
 }
 

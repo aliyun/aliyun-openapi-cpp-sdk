@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeMasterSlaveServerGroupAttributeRequest;
 
 DescribeMasterSlaveServerGroupAttributeRequest::DescribeMasterSlaveServerGroupAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeMasterSlaveServerGroupAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeMasterSlaveServerGroupAttributeRequest::~DescribeMasterSlaveServerGroupAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getAccess_key_id()co
 void DescribeMasterSlaveServerGroupAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerId()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getRegionId()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getResourceOwnerAcco
 void DescribeMasterSlaveServerGroupAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getOwnerAccount()con
 void DescribeMasterSlaveServerGroupAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeMasterSlaveServerGroupAttributeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeMasterSlaveServerGroupAttributeRequest::getOwnerId()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getTags()const
@@ -99,7 +101,7 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getTags()const
 void DescribeMasterSlaveServerGroupAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeMasterSlaveServerGroupAttributeRequest::getMasterSlaveServerGroupId()const
@@ -110,6 +112,6 @@ std::string DescribeMasterSlaveServerGroupAttributeRequest::getMasterSlaveServer
 void DescribeMasterSlaveServerGroupAttributeRequest::setMasterSlaveServerGroupId(const std::string& masterSlaveServerGroupId)
 {
 	masterSlaveServerGroupId_ = masterSlaveServerGroupId;
-	setCoreParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
+	setParameter("MasterSlaveServerGroupId", masterSlaveServerGroupId);
 }
 

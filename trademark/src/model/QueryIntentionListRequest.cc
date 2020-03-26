@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryIntentionListRequest;
 
 QueryIntentionListRequest::QueryIntentionListRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryIntentionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryIntentionListRequest::~QueryIntentionListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryIntentionListRequest::getType()const
 void QueryIntentionListRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 int QueryIntentionListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryIntentionListRequest::getPageNum()const
 void QueryIntentionListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryIntentionListRequest::getSortFiled()const
@@ -55,7 +57,7 @@ std::string QueryIntentionListRequest::getSortFiled()const
 void QueryIntentionListRequest::setSortFiled(const std::string& sortFiled)
 {
 	sortFiled_ = sortFiled;
-	setCoreParameter("SortFiled", sortFiled);
+	setParameter("SortFiled", sortFiled);
 }
 
 int QueryIntentionListRequest::getPageSize()const
@@ -66,7 +68,7 @@ int QueryIntentionListRequest::getPageSize()const
 void QueryIntentionListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryIntentionListRequest::getSortOrder()const
@@ -77,7 +79,7 @@ std::string QueryIntentionListRequest::getSortOrder()const
 void QueryIntentionListRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
+	setParameter("SortOrder", sortOrder);
 }
 
 int QueryIntentionListRequest::getStatus()const
@@ -88,6 +90,6 @@ int QueryIntentionListRequest::getStatus()const
 void QueryIntentionListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

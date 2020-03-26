@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT BatchAddDeviceGroupRelationsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Device
 				{
 					std::string deviceName;

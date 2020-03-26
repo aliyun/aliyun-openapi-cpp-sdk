@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsInstancesRequest;
 
 DescribeDrdsInstancesRequest::DescribeDrdsInstancesRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsInstancesRequest::~DescribeDrdsInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDrdsInstancesRequest::getType()const
 void DescribeDrdsInstancesRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeDrdsInstancesRequest::getAccessKeyId()const
 void DescribeDrdsInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDrdsInstancesRequest::getTags()const
@@ -55,7 +57,7 @@ std::string DescribeDrdsInstancesRequest::getTags()const
 void DescribeDrdsInstancesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeDrdsInstancesRequest::getRegionId()const
@@ -66,6 +68,6 @@ std::string DescribeDrdsInstancesRequest::getRegionId()const
 void DescribeDrdsInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

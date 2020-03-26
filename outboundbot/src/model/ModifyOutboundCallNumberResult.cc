@@ -40,22 +40,22 @@ void ModifyOutboundCallNumberResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto outboundCallNumberNode = value["OutboundCallNumber"];
-	if(!outboundCallNumberNode["OutboundCallNumberId"].isNull())
-		outboundCallNumber_.outboundCallNumberId = outboundCallNumberNode["OutboundCallNumberId"].asString();
 	if(!outboundCallNumberNode["Number"].isNull())
 		outboundCallNumber_.number = outboundCallNumberNode["Number"].asString();
-	if(!outboundCallNumberNode["RateLimitPeriod"].isNull())
-		outboundCallNumber_.rateLimitPeriod = outboundCallNumberNode["RateLimitPeriod"].asString();
+	if(!outboundCallNumberNode["OutboundCallNumberId"].isNull())
+		outboundCallNumber_.outboundCallNumberId = outboundCallNumberNode["OutboundCallNumberId"].asString();
 	if(!outboundCallNumberNode["RateLimitCount"].isNull())
 		outboundCallNumber_.rateLimitCount = outboundCallNumberNode["RateLimitCount"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
+	if(!outboundCallNumberNode["RateLimitPeriod"].isNull())
+		outboundCallNumber_.rateLimitPeriod = outboundCallNumberNode["RateLimitPeriod"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

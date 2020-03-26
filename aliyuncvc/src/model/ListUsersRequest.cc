@@ -35,7 +35,7 @@ int ListUsersRequest::getPageNumber()const
 void ListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int ListUsersRequest::getPageSize()const
@@ -46,6 +46,6 @@ int ListUsersRequest::getPageSize()const
 void ListUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

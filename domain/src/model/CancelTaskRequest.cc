@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CancelTaskRequest;
 
 CancelTaskRequest::CancelTaskRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CancelTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CancelTaskRequest::~CancelTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string CancelTaskRequest::getUserClientIp()const
 void CancelTaskRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CancelTaskRequest::getTaskNo()const
@@ -44,7 +46,7 @@ std::string CancelTaskRequest::getTaskNo()const
 void CancelTaskRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", taskNo);
+	setParameter("TaskNo", taskNo);
 }
 
 std::string CancelTaskRequest::getLang()const
@@ -55,6 +57,6 @@ std::string CancelTaskRequest::getLang()const
 void CancelTaskRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

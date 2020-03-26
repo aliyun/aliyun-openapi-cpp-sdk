@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::SearchPersonByImgRequest;
 
 SearchPersonByImgRequest::SearchPersonByImgRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "SearchPersonByImg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchPersonByImgRequest::~SearchPersonByImgRequest()
 {}
@@ -33,7 +35,7 @@ long SearchPersonByImgRequest::getStoreId()const
 void SearchPersonByImgRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string SearchPersonByImgRequest::getImgUrl()const
@@ -44,6 +46,6 @@ std::string SearchPersonByImgRequest::getImgUrl()const
 void SearchPersonByImgRequest::setImgUrl(const std::string& imgUrl)
 {
 	imgUrl_ = imgUrl;
-	setCoreParameter("ImgUrl", imgUrl);
+	setBodyParameter("ImgUrl", imgUrl);
 }
 

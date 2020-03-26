@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentSummaryReportsByIntervalRequest;
 
 ListAgentSummaryReportsByIntervalRequest::ListAgentSummaryReportsByIntervalRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentSummaryReportsByInterval")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentSummaryReportsByIntervalRequest::~ListAgentSummaryReportsByIntervalRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getAgentIds()const
 void ListAgentSummaryReportsByIntervalRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setParameter("AgentIds", agentIds);
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getEndTime()const
 void ListAgentSummaryReportsByIntervalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getStartTime()const
 void ListAgentSummaryReportsByIntervalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int ListAgentSummaryReportsByIntervalRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int ListAgentSummaryReportsByIntervalRequest::getPageNumber()const
 void ListAgentSummaryReportsByIntervalRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getAccessKeyId()const
 void ListAgentSummaryReportsByIntervalRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getInstanceId()const
 void ListAgentSummaryReportsByIntervalRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
@@ -99,7 +101,7 @@ std::string ListAgentSummaryReportsByIntervalRequest::getSkillGroupId()const
 void ListAgentSummaryReportsByIntervalRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 int ListAgentSummaryReportsByIntervalRequest::getPageSize()const
@@ -110,7 +112,7 @@ int ListAgentSummaryReportsByIntervalRequest::getPageSize()const
 void ListAgentSummaryReportsByIntervalRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
@@ -121,6 +123,6 @@ std::string ListAgentSummaryReportsByIntervalRequest::getInterval()const
 void ListAgentSummaryReportsByIntervalRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

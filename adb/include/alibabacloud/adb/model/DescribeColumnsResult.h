@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string tableName;
 					std::string columnName;
 					std::string type;
+					bool autoIncrementColumn;
 					std::string dBClusterId;
 					bool primaryKey;
 					std::string schemaName;

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListRolesRequest;
 
 ListRolesRequest::ListRolesRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListRoles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRolesRequest::~ListRolesRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRolesRequest::getMarker()const
 void ListRolesRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 int ListRolesRequest::getMaxItems()const
@@ -44,6 +46,6 @@ int ListRolesRequest::getMaxItems()const
 void ListRolesRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setParameter("MaxItems", std::to_string(maxItems));
 }
 

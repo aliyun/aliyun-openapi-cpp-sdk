@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchCheckDeviceNamesRequest;
 
 BatchCheckDeviceNamesRequest::BatchCheckDeviceNamesRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchCheckDeviceNames")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchCheckDeviceNamesRequest::~BatchCheckDeviceNamesRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchCheckDeviceNamesRequest::getProductKey()const
 void BatchCheckDeviceNamesRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string BatchCheckDeviceNamesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string BatchCheckDeviceNamesRequest::getAccessKeyId()const
 void BatchCheckDeviceNamesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BatchCheckDeviceNamesRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string BatchCheckDeviceNamesRequest::getIotInstanceId()const
 void BatchCheckDeviceNamesRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> BatchCheckDeviceNamesRequest::getDeviceName()const
@@ -66,7 +68,8 @@ std::vector<std::string> BatchCheckDeviceNamesRequest::getDeviceName()const
 void BatchCheckDeviceNamesRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
+		setParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 

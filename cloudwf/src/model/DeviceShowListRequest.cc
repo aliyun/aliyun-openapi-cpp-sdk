@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceShowListRequest;
 
 DeviceShowListRequest::DeviceShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceShowListRequest::~DeviceShowListRequest()
 {}
@@ -33,7 +35,7 @@ int DeviceShowListRequest::getDeviceType()const
 void DeviceShowListRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setParameter("DeviceType", std::to_string(deviceType));
 }
 
 std::string DeviceShowListRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeviceShowListRequest::getAccessKeyId()const
 void DeviceShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeviceShowListRequest::getSid()const
@@ -55,7 +57,7 @@ long DeviceShowListRequest::getSid()const
 void DeviceShowListRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string DeviceShowListRequest::getDirc()const
@@ -66,7 +68,7 @@ std::string DeviceShowListRequest::getDirc()const
 void DeviceShowListRequest::setDirc(const std::string& dirc)
 {
 	dirc_ = dirc;
-	setCoreParameter("Dirc", dirc);
+	setParameter("Dirc", dirc);
 }
 
 int DeviceShowListRequest::getPage()const
@@ -77,7 +79,7 @@ int DeviceShowListRequest::getPage()const
 void DeviceShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 int DeviceShowListRequest::getPer()const
@@ -88,6 +90,6 @@ int DeviceShowListRequest::getPer()const
 void DeviceShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

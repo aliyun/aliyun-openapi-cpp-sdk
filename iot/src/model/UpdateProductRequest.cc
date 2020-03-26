@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateProductRequest;
 
 UpdateProductRequest::UpdateProductRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateProduct")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateProductRequest::~UpdateProductRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateProductRequest::getDescription()const
 void UpdateProductRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateProductRequest::getProductKey()const
@@ -44,7 +46,7 @@ std::string UpdateProductRequest::getProductKey()const
 void UpdateProductRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string UpdateProductRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UpdateProductRequest::getAccessKeyId()const
 void UpdateProductRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateProductRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string UpdateProductRequest::getIotInstanceId()const
 void UpdateProductRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string UpdateProductRequest::getProductName()const
@@ -77,6 +79,6 @@ std::string UpdateProductRequest::getProductName()const
 void UpdateProductRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", productName);
+	setParameter("ProductName", productName);
 }
 

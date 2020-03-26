@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateQueueRequest;
 
 CreateQueueRequest::CreateQueueRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/queue");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQueueRequest::~CreateQueueRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreateQueueRequest::getQueueName()const
 void CreateQueueRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setBodyParameter("QueueName", queueName);
 }
 
 std::string CreateQueueRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string CreateQueueRequest::getRegionId()const
 void CreateQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 int CreateQueueRequest::getMaxMemMB()const
@@ -55,7 +58,7 @@ int CreateQueueRequest::getMaxMemMB()const
 void CreateQueueRequest::setMaxMemMB(int maxMemMB)
 {
 	maxMemMB_ = maxMemMB;
-	setCoreParameter("MaxMemMB", std::to_string(maxMemMB));
+	setBodyParameter("MaxMemMB", std::to_string(maxMemMB));
 }
 
 std::string CreateQueueRequest::getClusterId()const
@@ -66,7 +69,7 @@ std::string CreateQueueRequest::getClusterId()const
 void CreateQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int CreateQueueRequest::getGpu()const
@@ -77,7 +80,7 @@ int CreateQueueRequest::getGpu()const
 void CreateQueueRequest::setGpu(int gpu)
 {
 	gpu_ = gpu;
-	setCoreParameter("Gpu", std::to_string(gpu));
+	setBodyParameter("Gpu", std::to_string(gpu));
 }
 
 int CreateQueueRequest::getMaxVcore()const
@@ -88,6 +91,6 @@ int CreateQueueRequest::getMaxVcore()const
 void CreateQueueRequest::setMaxVcore(int maxVcore)
 {
 	maxVcore_ = maxVcore;
-	setCoreParameter("MaxVcore", std::to_string(maxVcore));
+	setBodyParameter("MaxVcore", std::to_string(maxVcore));
 }
 

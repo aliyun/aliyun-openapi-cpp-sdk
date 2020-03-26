@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateBgpPeerRequest;
 
 CreateBgpPeerRequest::CreateBgpPeerRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateBgpPeer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBgpPeerRequest::~CreateBgpPeerRequest()
 {}
@@ -33,7 +35,7 @@ long CreateBgpPeerRequest::getResourceOwnerId()const
 void CreateBgpPeerRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateBgpPeerRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateBgpPeerRequest::getClientToken()const
 void CreateBgpPeerRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateBgpPeerRequest::getBgpGroupId()const
@@ -55,7 +57,7 @@ std::string CreateBgpPeerRequest::getBgpGroupId()const
 void CreateBgpPeerRequest::setBgpGroupId(const std::string& bgpGroupId)
 {
 	bgpGroupId_ = bgpGroupId;
-	setCoreParameter("BgpGroupId", bgpGroupId);
+	setParameter("BgpGroupId", bgpGroupId);
 }
 
 std::string CreateBgpPeerRequest::getPeerIpAddress()const
@@ -66,7 +68,7 @@ std::string CreateBgpPeerRequest::getPeerIpAddress()const
 void CreateBgpPeerRequest::setPeerIpAddress(const std::string& peerIpAddress)
 {
 	peerIpAddress_ = peerIpAddress;
-	setCoreParameter("PeerIpAddress", peerIpAddress);
+	setParameter("PeerIpAddress", peerIpAddress);
 }
 
 std::string CreateBgpPeerRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateBgpPeerRequest::getRegionId()const
 void CreateBgpPeerRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool CreateBgpPeerRequest::getEnableBfd()const
@@ -88,7 +90,7 @@ bool CreateBgpPeerRequest::getEnableBfd()const
 void CreateBgpPeerRequest::setEnableBfd(bool enableBfd)
 {
 	enableBfd_ = enableBfd;
-	setCoreParameter("EnableBfd", enableBfd ? "true" : "false");
+	setParameter("EnableBfd", enableBfd ? "true" : "false");
 }
 
 std::string CreateBgpPeerRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateBgpPeerRequest::getResourceOwnerAccount()const
 void CreateBgpPeerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateBgpPeerRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateBgpPeerRequest::getOwnerAccount()const
 void CreateBgpPeerRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateBgpPeerRequest::getOwnerId()const
@@ -121,6 +123,6 @@ long CreateBgpPeerRequest::getOwnerId()const
 void CreateBgpPeerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

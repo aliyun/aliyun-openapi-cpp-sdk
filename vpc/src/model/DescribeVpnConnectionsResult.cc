@@ -61,6 +61,10 @@ void DescribeVpnConnectionsResult::parse(const std::string &payload)
 			vpnConnectionsObject.effectImmediately = valueVpnConnectionsVpnConnection["EffectImmediately"].asString() == "true";
 		if(!valueVpnConnectionsVpnConnection["Status"].isNull())
 			vpnConnectionsObject.status = valueVpnConnectionsVpnConnection["Status"].asString();
+		if(!valueVpnConnectionsVpnConnection["EnableDpd"].isNull())
+			vpnConnectionsObject.enableDpd = valueVpnConnectionsVpnConnection["EnableDpd"].asString() == "true";
+		if(!valueVpnConnectionsVpnConnection["EnableNatTraversal"].isNull())
+			vpnConnectionsObject.enableNatTraversal = valueVpnConnectionsVpnConnection["EnableNatTraversal"].asString() == "true";
 		auto ikeConfigNode = value["IkeConfig"];
 		if(!ikeConfigNode["Psk"].isNull())
 			vpnConnectionsObject.ikeConfig.psk = ikeConfigNode["Psk"].asString();

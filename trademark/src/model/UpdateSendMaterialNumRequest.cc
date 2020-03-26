@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::UpdateSendMaterialNumRequest;
 
 UpdateSendMaterialNumRequest::UpdateSendMaterialNumRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "UpdateSendMaterialNum")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateSendMaterialNumRequest::~UpdateSendMaterialNumRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateSendMaterialNumRequest::getNum()const
 void UpdateSendMaterialNumRequest::setNum(const std::string& num)
 {
 	num_ = num;
-	setCoreParameter("Num", num);
+	setParameter("Num", num);
 }
 
 std::string UpdateSendMaterialNumRequest::getBizId()const
@@ -44,7 +46,7 @@ std::string UpdateSendMaterialNumRequest::getBizId()const
 void UpdateSendMaterialNumRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 int UpdateSendMaterialNumRequest::getOperateType()const
@@ -55,6 +57,6 @@ int UpdateSendMaterialNumRequest::getOperateType()const
 void UpdateSendMaterialNumRequest::setOperateType(int operateType)
 {
 	operateType_ = operateType;
-	setCoreParameter("OperateType", std::to_string(operateType));
+	setParameter("OperateType", std::to_string(operateType));
 }
 

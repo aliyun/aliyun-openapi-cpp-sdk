@@ -35,7 +35,7 @@ long AllocateClusterPublicConnectionRequest::getResourceOwnerId()const
 void AllocateClusterPublicConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateClusterPublicConnectionRequest::getConnectionStringPrefix()const
@@ -46,7 +46,7 @@ std::string AllocateClusterPublicConnectionRequest::getConnectionStringPrefix()c
 void AllocateClusterPublicConnectionRequest::setConnectionStringPrefix(const std::string& connectionStringPrefix)
 {
 	connectionStringPrefix_ = connectionStringPrefix;
-	setCoreParameter("ConnectionStringPrefix", connectionStringPrefix);
+	setParameter("ConnectionStringPrefix", connectionStringPrefix);
 }
 
 std::string AllocateClusterPublicConnectionRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AllocateClusterPublicConnectionRequest::getAccessKeyId()const
 void AllocateClusterPublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AllocateClusterPublicConnectionRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string AllocateClusterPublicConnectionRequest::getResourceOwnerAccount()con
 void AllocateClusterPublicConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocateClusterPublicConnectionRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string AllocateClusterPublicConnectionRequest::getDBClusterId()const
 void AllocateClusterPublicConnectionRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string AllocateClusterPublicConnectionRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string AllocateClusterPublicConnectionRequest::getOwnerAccount()const
 void AllocateClusterPublicConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AllocateClusterPublicConnectionRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long AllocateClusterPublicConnectionRequest::getOwnerId()const
 void AllocateClusterPublicConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

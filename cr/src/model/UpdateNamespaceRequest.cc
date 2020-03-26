@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::UpdateNamespaceRequest;
 
 UpdateNamespaceRequest::UpdateNamespaceRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/namespace/[Namespace]");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateNamespaceRequest::~UpdateNamespaceRequest()
 {}
@@ -33,6 +36,6 @@ std::string UpdateNamespaceRequest::get_Namespace()const
 void UpdateNamespaceRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 

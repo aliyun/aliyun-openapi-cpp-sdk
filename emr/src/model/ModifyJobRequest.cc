@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyJobRequest;
 
 ModifyJobRequest::ModifyJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyJobRequest::~ModifyJobRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyJobRequest::getResourceOwnerId()const
 void ModifyJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyJobRequest::getType()const
@@ -44,7 +46,7 @@ std::string ModifyJobRequest::getType()const
 void ModifyJobRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string ModifyJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyJobRequest::getAccessKeyId()const
 void ModifyJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyJobRequest::getFailAct()const
@@ -66,7 +68,7 @@ std::string ModifyJobRequest::getFailAct()const
 void ModifyJobRequest::setFailAct(const std::string& failAct)
 {
 	failAct_ = failAct;
-	setCoreParameter("FailAct", failAct);
+	setParameter("FailAct", failAct);
 }
 
 std::string ModifyJobRequest::getRunParameter()const
@@ -77,7 +79,7 @@ std::string ModifyJobRequest::getRunParameter()const
 void ModifyJobRequest::setRunParameter(const std::string& runParameter)
 {
 	runParameter_ = runParameter;
-	setCoreParameter("RunParameter", runParameter);
+	setParameter("RunParameter", runParameter);
 }
 
 int ModifyJobRequest::getRetryInterval()const
@@ -88,7 +90,7 @@ int ModifyJobRequest::getRetryInterval()const
 void ModifyJobRequest::setRetryInterval(int retryInterval)
 {
 	retryInterval_ = retryInterval;
-	setCoreParameter("RetryInterval", std::to_string(retryInterval));
+	setParameter("RetryInterval", std::to_string(retryInterval));
 }
 
 std::string ModifyJobRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string ModifyJobRequest::getRegionId()const
 void ModifyJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyJobRequest::getName()const
@@ -110,7 +112,7 @@ std::string ModifyJobRequest::getName()const
 void ModifyJobRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyJobRequest::getId()const
@@ -121,7 +123,7 @@ std::string ModifyJobRequest::getId()const
 void ModifyJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 int ModifyJobRequest::getMaxRetry()const
@@ -132,6 +134,6 @@ int ModifyJobRequest::getMaxRetry()const
 void ModifyJobRequest::setMaxRetry(int maxRetry)
 {
 	maxRetry_ = maxRetry;
-	setCoreParameter("MaxRetry", std::to_string(maxRetry));
+	setParameter("MaxRetry", std::to_string(maxRetry));
 }
 

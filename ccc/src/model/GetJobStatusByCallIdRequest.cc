@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobStatusByCallIdRequest;
 
 GetJobStatusByCallIdRequest::GetJobStatusByCallIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobStatusByCallId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobStatusByCallIdRequest::~GetJobStatusByCallIdRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobStatusByCallIdRequest::getCallId()const
 void GetJobStatusByCallIdRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 std::string GetJobStatusByCallIdRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string GetJobStatusByCallIdRequest::getInstanceId()const
 void GetJobStatusByCallIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -35,6 +35,6 @@ long DescribeKnowledgeRequest::getKnowledgeId()const
 void DescribeKnowledgeRequest::setKnowledgeId(long knowledgeId)
 {
 	knowledgeId_ = knowledgeId;
-	setCoreParameter("KnowledgeId", std::to_string(knowledgeId));
+	setParameter("KnowledgeId", std::to_string(knowledgeId));
 }
 

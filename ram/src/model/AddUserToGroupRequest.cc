@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::AddUserToGroupRequest;
 
 AddUserToGroupRequest::AddUserToGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "AddUserToGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddUserToGroupRequest::~AddUserToGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddUserToGroupRequest::getGroupName()const
 void AddUserToGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string AddUserToGroupRequest::getUserName()const
@@ -44,6 +46,6 @@ std::string AddUserToGroupRequest::getUserName()const
 void AddUserToGroupRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AddGlobalAccelerationInstanceIpRequest;
 
 AddGlobalAccelerationInstanceIpRequest::AddGlobalAccelerationInstanceIpRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AddGlobalAccelerationInstanceIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddGlobalAccelerationInstanceIpRequest::~AddGlobalAccelerationInstanceIpRequest()
 {}
@@ -33,7 +35,7 @@ long AddGlobalAccelerationInstanceIpRequest::getResourceOwnerId()const
 void AddGlobalAccelerationInstanceIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanceId()const
@@ -44,7 +46,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getGlobalAccelerationInstanc
 void AddGlobalAccelerationInstanceIpRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getRegionId()const
 void AddGlobalAccelerationInstanceIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getResourceOwnerAccount()con
 void AddGlobalAccelerationInstanceIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddGlobalAccelerationInstanceIpRequest::getOwnerAccount()const
 void AddGlobalAccelerationInstanceIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddGlobalAccelerationInstanceIpRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddGlobalAccelerationInstanceIpRequest::getOwnerId()const
 void AddGlobalAccelerationInstanceIpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
@@ -99,6 +101,6 @@ std::string AddGlobalAccelerationInstanceIpRequest::getIpInstanceId()const
 void AddGlobalAccelerationInstanceIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
+	setParameter("IpInstanceId", ipInstanceId);
 }
 

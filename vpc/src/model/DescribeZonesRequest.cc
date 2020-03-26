@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeZonesRequest;
 
 DescribeZonesRequest::DescribeZonesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeZones")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeZonesRequest::~DescribeZonesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeZonesRequest::getResourceOwnerId()const
 void DescribeZonesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeZonesRequest::getResourceOwnerAccount()const
 void DescribeZonesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeZonesRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeZonesRequest::getOwnerAccount()const
 void DescribeZonesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeZonesRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeZonesRequest::getOwnerId()const
 void DescribeZonesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeZonesRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string DescribeZonesRequest::getRegionId()const
 void DescribeZonesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

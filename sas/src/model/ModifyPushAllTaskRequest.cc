@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyPushAllTaskRequest;
 
 ModifyPushAllTaskRequest::ModifyPushAllTaskRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyPushAllTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPushAllTaskRequest::~ModifyPushAllTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyPushAllTaskRequest::getSourceIp()const
 void ModifyPushAllTaskRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyPushAllTaskRequest::getTasks()const
@@ -44,7 +46,7 @@ std::string ModifyPushAllTaskRequest::getTasks()const
 void ModifyPushAllTaskRequest::setTasks(const std::string& tasks)
 {
 	tasks_ = tasks;
-	setCoreParameter("Tasks", tasks);
+	setParameter("Tasks", tasks);
 }
 
 std::string ModifyPushAllTaskRequest::getUuids()const
@@ -55,6 +57,6 @@ std::string ModifyPushAllTaskRequest::getUuids()const
 void ModifyPushAllTaskRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

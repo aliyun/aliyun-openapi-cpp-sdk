@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayqpsByRegionRequest;
 
 TodayqpsByRegionRequest::TodayqpsByRegionRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayqpsByRegion")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayqpsByRegionRequest::~TodayqpsByRegionRequest()
 {}

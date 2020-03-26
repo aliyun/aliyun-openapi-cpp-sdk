@@ -49,14 +49,14 @@ void StartJobResult::parse(const std::string &payload)
 			taskIdsObject.value = valueTaskIdsKeyValuePair["Value"].asString();
 		taskIds_.push_back(taskIdsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

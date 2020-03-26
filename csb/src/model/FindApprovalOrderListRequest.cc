@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindApprovalOrderListRequest;
 
 FindApprovalOrderListRequest::FindApprovalOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindApprovalOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindApprovalOrderListRequest::~FindApprovalOrderListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindApprovalOrderListRequest::getProjectName()const
 void FindApprovalOrderListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long FindApprovalOrderListRequest::getCsbId()const
@@ -44,7 +46,7 @@ long FindApprovalOrderListRequest::getCsbId()const
 void FindApprovalOrderListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindApprovalOrderListRequest::getPageNum()const
@@ -55,7 +57,7 @@ int FindApprovalOrderListRequest::getPageNum()const
 void FindApprovalOrderListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string FindApprovalOrderListRequest::getAlias()const
@@ -66,7 +68,7 @@ std::string FindApprovalOrderListRequest::getAlias()const
 void FindApprovalOrderListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setParameter("Alias", alias);
 }
 
 std::string FindApprovalOrderListRequest::getServiceName()const
@@ -77,7 +79,7 @@ std::string FindApprovalOrderListRequest::getServiceName()const
 void FindApprovalOrderListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 
 long FindApprovalOrderListRequest::getServiceId()const
@@ -88,7 +90,7 @@ long FindApprovalOrderListRequest::getServiceId()const
 void FindApprovalOrderListRequest::setServiceId(long serviceId)
 {
 	serviceId_ = serviceId;
-	setCoreParameter("ServiceId", std::to_string(serviceId));
+	setParameter("ServiceId", std::to_string(serviceId));
 }
 
 bool FindApprovalOrderListRequest::getOnlyPending()const
@@ -99,6 +101,6 @@ bool FindApprovalOrderListRequest::getOnlyPending()const
 void FindApprovalOrderListRequest::setOnlyPending(bool onlyPending)
 {
 	onlyPending_ = onlyPending;
-	setCoreParameter("OnlyPending", onlyPending ? "true" : "false");
+	setParameter("OnlyPending", onlyPending ? "true" : "false");
 }
 

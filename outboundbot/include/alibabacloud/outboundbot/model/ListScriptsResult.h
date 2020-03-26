@@ -42,10 +42,11 @@ namespace AlibabaCloud
 						std::string scriptName;
 						std::string scriptDescription;
 						long updateTime;
+						std::string rejectReason;
 						std::string scriptId;
 						std::string failReason;
-						std::string scene;
 						std::string debugStatus;
+						std::string scene;
 						bool isDebugDrafted;
 					};
 					int totalCount;

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeEmgVulGroupRequest;
 
 DescribeEmgVulGroupRequest::DescribeEmgVulGroupRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeEmgVulGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEmgVulGroupRequest::~DescribeEmgVulGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeEmgVulGroupRequest::getSourceIp()const
 void DescribeEmgVulGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeEmgVulGroupRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeEmgVulGroupRequest::getLang()const
 void DescribeEmgVulGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

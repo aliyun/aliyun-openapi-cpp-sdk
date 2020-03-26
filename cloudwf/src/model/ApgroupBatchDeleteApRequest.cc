@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ApgroupBatchDeleteApRequest;
 
 ApgroupBatchDeleteApRequest::ApgroupBatchDeleteApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ApgroupBatchDeleteAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApgroupBatchDeleteApRequest::~ApgroupBatchDeleteApRequest()
 {}
@@ -33,7 +35,7 @@ std::string ApgroupBatchDeleteApRequest::getAccessKeyId()const
 void ApgroupBatchDeleteApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ApgroupBatchDeleteApRequest::getApAssetIds()const
@@ -44,6 +46,6 @@ std::string ApgroupBatchDeleteApRequest::getApAssetIds()const
 void ApgroupBatchDeleteApRequest::setApAssetIds(const std::string& apAssetIds)
 {
 	apAssetIds_ = apAssetIds;
-	setCoreParameter("ApAssetIds", apAssetIds);
+	setParameter("ApAssetIds", apAssetIds);
 }
 

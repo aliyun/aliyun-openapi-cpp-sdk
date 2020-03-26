@@ -20,32 +20,12 @@ using AlibabaCloud::Iot::Model::BatchBindDeviceToEdgeInstanceWithDriverRequest;
 
 BatchBindDeviceToEdgeInstanceWithDriverRequest::BatchBindDeviceToEdgeInstanceWithDriverRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchBindDeviceToEdgeInstanceWithDriver")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchBindDeviceToEdgeInstanceWithDriverRequest::~BatchBindDeviceToEdgeInstanceWithDriverRequest()
 {}
-
-std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchBindDeviceToEdgeInstanceWithDriverRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BatchBindDeviceToEdgeInstanceWithDriverRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
 
 std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getDriverId()const
 {
@@ -55,7 +35,7 @@ std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getDriverId()const
 void BatchBindDeviceToEdgeInstanceWithDriverRequest::setDriverId(const std::string& driverId)
 {
 	driverId_ = driverId;
-	setCoreParameter("DriverId", driverId);
+	setParameter("DriverId", driverId);
 }
 
 std::vector<std::string> BatchBindDeviceToEdgeInstanceWithDriverRequest::getIotIds()const
@@ -66,8 +46,9 @@ std::vector<std::string> BatchBindDeviceToEdgeInstanceWithDriverRequest::getIotI
 void BatchBindDeviceToEdgeInstanceWithDriverRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
+		setParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getIotInstanceId()const
@@ -78,6 +59,39 @@ std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getIotInstanceId()co
 void BatchBindDeviceToEdgeInstanceWithDriverRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BatchBindDeviceToEdgeInstanceWithDriverRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchBindDeviceToEdgeInstanceWithDriverRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchBindDeviceToEdgeInstanceWithDriverRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchBindDeviceToEdgeInstanceWithDriverRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

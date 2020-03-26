@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeCertificateBrandListRequest;
 
 DescribeCertificateBrandListRequest::DescribeCertificateBrandListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeCertificateBrandList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCertificateBrandListRequest::~DescribeCertificateBrandListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCertificateBrandListRequest::getResourceGroupId()const
 void DescribeCertificateBrandListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCertificateBrandListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCertificateBrandListRequest::getSourceIp()const
 void DescribeCertificateBrandListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCertificateBrandListRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeCertificateBrandListRequest::getLang()const
 void DescribeCertificateBrandListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

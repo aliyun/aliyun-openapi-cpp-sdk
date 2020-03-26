@@ -61,6 +61,14 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.processID = valueItemsSlowLogRecord["ProcessID"].asString();
 		if(!valueItemsSlowLogRecord["UserName"].isNull())
 			itemsObject.userName = valueItemsSlowLogRecord["UserName"].asString();
+		if(!valueItemsSlowLogRecord["ScanSize"].isNull())
+			itemsObject.scanSize = valueItemsSlowLogRecord["ScanSize"].asString();
+		if(!valueItemsSlowLogRecord["PeakMemoryUsage"].isNull())
+			itemsObject.peakMemoryUsage = valueItemsSlowLogRecord["PeakMemoryUsage"].asString();
+		if(!valueItemsSlowLogRecord["QueueTime"].isNull())
+			itemsObject.queueTime = std::stol(valueItemsSlowLogRecord["QueueTime"].asString());
+		if(!valueItemsSlowLogRecord["State"].isNull())
+			itemsObject.state = valueItemsSlowLogRecord["State"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT ListClustersRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				ListClustersRequest();
@@ -53,10 +59,14 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getCreateType()const;
 				void setCreateType(const std::string& createType);
 				bool getDefaultStatus()const;
 				void setDefaultStatus(bool defaultStatus);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::vector<std::string> getClusterTypeList()const;
 				void setClusterTypeList(const std::vector<std::string>& clusterTypeList);
 
@@ -70,8 +80,10 @@ namespace AlibabaCloud
 				std::string machineType_;
 				std::string regionId_;
 				int pageSize_;
+				std::vector<Tag> tag_;
 				std::string createType_;
 				bool defaultStatus_;
+				std::string name_;
 				std::vector<std::string> clusterTypeList_;
 
 			};

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyNetworkOptimizationRequest;
 
 ModifyNetworkOptimizationRequest::ModifyNetworkOptimizationRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyNetworkOptimization")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNetworkOptimizationRequest::~ModifyNetworkOptimizationRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyNetworkOptimizationRequest::getResourceOwnerId()const
 void ModifyNetworkOptimizationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyNetworkOptimizationRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ModifyNetworkOptimizationRequest::getRegionId()const
 void ModifyNetworkOptimizationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyNetworkOptimizationRequest::getNetworkOptId()const
@@ -55,7 +57,7 @@ std::string ModifyNetworkOptimizationRequest::getNetworkOptId()const
 void ModifyNetworkOptimizationRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setParameter("NetworkOptId", networkOptId);
 }
 
 std::string ModifyNetworkOptimizationRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ModifyNetworkOptimizationRequest::getResourceOwnerAccount()const
 void ModifyNetworkOptimizationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyNetworkOptimizationRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyNetworkOptimizationRequest::getOwnerAccount()const
 void ModifyNetworkOptimizationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyNetworkOptimizationRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long ModifyNetworkOptimizationRequest::getOwnerId()const
 void ModifyNetworkOptimizationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyNetworkOptimizationRequest::getName()const
@@ -99,6 +101,6 @@ std::string ModifyNetworkOptimizationRequest::getName()const
 void ModifyNetworkOptimizationRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

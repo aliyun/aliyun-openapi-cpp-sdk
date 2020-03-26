@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateQosCarRequest;
 
 CreateQosCarRequest::CreateQosCarRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateQosCar")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateQosCarRequest::~CreateQosCarRequest()
 {}
@@ -33,7 +35,7 @@ long CreateQosCarRequest::getResourceOwnerId()const
 void CreateQosCarRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int CreateQosCarRequest::getMinBandwidthAbs()const
@@ -44,7 +46,7 @@ int CreateQosCarRequest::getMinBandwidthAbs()const
 void CreateQosCarRequest::setMinBandwidthAbs(int minBandwidthAbs)
 {
 	minBandwidthAbs_ = minBandwidthAbs;
-	setCoreParameter("MinBandwidthAbs", std::to_string(minBandwidthAbs));
+	setParameter("MinBandwidthAbs", std::to_string(minBandwidthAbs));
 }
 
 std::string CreateQosCarRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateQosCarRequest::getDescription()const
 void CreateQosCarRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateQosCarRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateQosCarRequest::getRegionId()const
 void CreateQosCarRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateQosCarRequest::getPercentSourceType()const
@@ -77,7 +79,7 @@ std::string CreateQosCarRequest::getPercentSourceType()const
 void CreateQosCarRequest::setPercentSourceType(const std::string& percentSourceType)
 {
 	percentSourceType_ = percentSourceType;
-	setCoreParameter("PercentSourceType", percentSourceType);
+	setParameter("PercentSourceType", percentSourceType);
 }
 
 std::string CreateQosCarRequest::getQosId()const
@@ -88,7 +90,7 @@ std::string CreateQosCarRequest::getQosId()const
 void CreateQosCarRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 int CreateQosCarRequest::getMaxBandwidthAbs()const
@@ -99,7 +101,7 @@ int CreateQosCarRequest::getMaxBandwidthAbs()const
 void CreateQosCarRequest::setMaxBandwidthAbs(int maxBandwidthAbs)
 {
 	maxBandwidthAbs_ = maxBandwidthAbs;
-	setCoreParameter("MaxBandwidthAbs", std::to_string(maxBandwidthAbs));
+	setParameter("MaxBandwidthAbs", std::to_string(maxBandwidthAbs));
 }
 
 std::string CreateQosCarRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateQosCarRequest::getResourceOwnerAccount()const
 void CreateQosCarRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateQosCarRequest::getMaxBandwidthPercent()const
@@ -121,7 +123,7 @@ int CreateQosCarRequest::getMaxBandwidthPercent()const
 void CreateQosCarRequest::setMaxBandwidthPercent(int maxBandwidthPercent)
 {
 	maxBandwidthPercent_ = maxBandwidthPercent;
-	setCoreParameter("MaxBandwidthPercent", std::to_string(maxBandwidthPercent));
+	setParameter("MaxBandwidthPercent", std::to_string(maxBandwidthPercent));
 }
 
 std::string CreateQosCarRequest::getOwnerAccount()const
@@ -132,7 +134,7 @@ std::string CreateQosCarRequest::getOwnerAccount()const
 void CreateQosCarRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateQosCarRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long CreateQosCarRequest::getOwnerId()const
 void CreateQosCarRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateQosCarRequest::getPriority()const
@@ -154,7 +156,7 @@ int CreateQosCarRequest::getPriority()const
 void CreateQosCarRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 int CreateQosCarRequest::getMinBandwidthPercent()const
@@ -165,7 +167,7 @@ int CreateQosCarRequest::getMinBandwidthPercent()const
 void CreateQosCarRequest::setMinBandwidthPercent(int minBandwidthPercent)
 {
 	minBandwidthPercent_ = minBandwidthPercent;
-	setCoreParameter("MinBandwidthPercent", std::to_string(minBandwidthPercent));
+	setParameter("MinBandwidthPercent", std::to_string(minBandwidthPercent));
 }
 
 std::string CreateQosCarRequest::getLimitType()const
@@ -176,6 +178,17 @@ std::string CreateQosCarRequest::getLimitType()const
 void CreateQosCarRequest::setLimitType(const std::string& limitType)
 {
 	limitType_ = limitType;
-	setCoreParameter("LimitType", limitType);
+	setParameter("LimitType", limitType);
+}
+
+std::string CreateQosCarRequest::getName()const
+{
+	return name_;
+}
+
+void CreateQosCarRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

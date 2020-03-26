@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProjectRequest::~DeleteProjectRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteProjectRequest::getCsbId()const
 void DeleteProjectRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 long DeleteProjectRequest::getProjectId()const
@@ -44,6 +46,6 @@ long DeleteProjectRequest::getProjectId()const
 void DeleteProjectRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", std::to_string(projectId));
+	setParameter("ProjectId", std::to_string(projectId));
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoRequest;
 
 GetRepoRequest::GetRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoRequest::~GetRepoRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoRequest::getRepoNamespace()const
 void GetRepoRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoRequest::getRepoName()const
@@ -44,6 +47,6 @@ std::string GetRepoRequest::getRepoName()const
 void GetRepoRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

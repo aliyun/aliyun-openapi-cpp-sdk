@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QueryPhoneNoAByTrackNoRequest;
 QueryPhoneNoAByTrackNoRequest::QueryPhoneNoAByTrackNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 QueryPhoneNoAByTrackNoRequest::~QueryPhoneNoAByTrackNoRequest()

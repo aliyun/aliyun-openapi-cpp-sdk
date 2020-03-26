@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::SubmitSupplementRequest;
 
 SubmitSupplementRequest::SubmitSupplementRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "SubmitSupplement")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSupplementRequest::~SubmitSupplementRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitSupplementRequest::getUploadOssKeyList()const
 void SubmitSupplementRequest::setUploadOssKeyList(const std::string& uploadOssKeyList)
 {
 	uploadOssKeyList_ = uploadOssKeyList;
-	setCoreParameter("UploadOssKeyList", uploadOssKeyList);
+	setParameter("UploadOssKeyList", uploadOssKeyList);
 }
 
 long SubmitSupplementRequest::getId()const
@@ -44,7 +46,7 @@ long SubmitSupplementRequest::getId()const
 void SubmitSupplementRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string SubmitSupplementRequest::getContent()const
@@ -55,6 +57,6 @@ std::string SubmitSupplementRequest::getContent()const
 void SubmitSupplementRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 

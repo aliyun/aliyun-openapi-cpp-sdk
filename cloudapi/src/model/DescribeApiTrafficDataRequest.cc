@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiTrafficDataRequest;
 
 DescribeApiTrafficDataRequest::DescribeApiTrafficDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiTrafficDataRequest::~DescribeApiTrafficDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiTrafficDataRequest::getGroupId()const
 void DescribeApiTrafficDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiTrafficDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribeApiTrafficDataRequest::getEndTime()const
 void DescribeApiTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeApiTrafficDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string DescribeApiTrafficDataRequest::getStartTime()const
 void DescribeApiTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeApiTrafficDataRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiTrafficDataRequest::getAccessKeyId()const
 void DescribeApiTrafficDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiTrafficDataRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiTrafficDataRequest::getSecurityToken()const
 void DescribeApiTrafficDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiTrafficDataRequest::getApiId()const
@@ -88,6 +90,6 @@ std::string DescribeApiTrafficDataRequest::getApiId()const
 void DescribeApiTrafficDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsPublishListRequest;
 
 DescribeLiveStreamsPublishListRequest::DescribeLiveStreamsPublishListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsPublishList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsPublishListRequest::~DescribeLiveStreamsPublishListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStartTime()const
 void DescribeLiveStreamsPublishListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeLiveStreamsPublishListRequest::getPageNumber()const
 void DescribeLiveStreamsPublishListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string DescribeLiveStreamsPublishListRequest::getAppName()const
 void DescribeLiveStreamsPublishListRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 int DescribeLiveStreamsPublishListRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeLiveStreamsPublishListRequest::getPageSize()const
 void DescribeLiveStreamsPublishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
@@ -77,7 +79,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamName()const
 void DescribeLiveStreamsPublishListRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
@@ -88,7 +90,7 @@ std::string DescribeLiveStreamsPublishListRequest::getQueryType()const
 void DescribeLiveStreamsPublishListRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getStreamType()const
@@ -99,7 +101,7 @@ std::string DescribeLiveStreamsPublishListRequest::getStreamType()const
 void DescribeLiveStreamsPublishListRequest::setStreamType(const std::string& streamType)
 {
 	streamType_ = streamType;
-	setCoreParameter("StreamType", streamType);
+	setParameter("StreamType", streamType);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
@@ -110,7 +112,7 @@ std::string DescribeLiveStreamsPublishListRequest::getDomainName()const
 void DescribeLiveStreamsPublishListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
@@ -121,7 +123,7 @@ std::string DescribeLiveStreamsPublishListRequest::getEndTime()const
 void DescribeLiveStreamsPublishListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
@@ -132,7 +134,7 @@ std::string DescribeLiveStreamsPublishListRequest::getOrderBy()const
 void DescribeLiveStreamsPublishListRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 long DescribeLiveStreamsPublishListRequest::getOwnerId()const
@@ -143,6 +145,6 @@ long DescribeLiveStreamsPublishListRequest::getOwnerId()const
 void DescribeLiveStreamsPublishListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

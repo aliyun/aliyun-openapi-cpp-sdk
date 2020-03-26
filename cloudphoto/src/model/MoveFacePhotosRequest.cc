@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::MoveFacePhotosRequest;
 
 MoveFacePhotosRequest::MoveFacePhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "MoveFacePhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveFacePhotosRequest::~MoveFacePhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string MoveFacePhotosRequest::getLibraryId()const
 void MoveFacePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long MoveFacePhotosRequest::getTargetFaceId()const
@@ -44,7 +46,7 @@ long MoveFacePhotosRequest::getTargetFaceId()const
 void MoveFacePhotosRequest::setTargetFaceId(long targetFaceId)
 {
 	targetFaceId_ = targetFaceId;
-	setCoreParameter("TargetFaceId", std::to_string(targetFaceId));
+	setParameter("TargetFaceId", std::to_string(targetFaceId));
 }
 
 std::vector<long> MoveFacePhotosRequest::getPhotoId()const
@@ -55,8 +57,9 @@ std::vector<long> MoveFacePhotosRequest::getPhotoId()const
 void MoveFacePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string MoveFacePhotosRequest::getStoreName()const
@@ -67,7 +70,7 @@ std::string MoveFacePhotosRequest::getStoreName()const
 void MoveFacePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long MoveFacePhotosRequest::getSourceFaceId()const
@@ -78,6 +81,6 @@ long MoveFacePhotosRequest::getSourceFaceId()const
 void MoveFacePhotosRequest::setSourceFaceId(long sourceFaceId)
 {
 	sourceFaceId_ = sourceFaceId;
-	setCoreParameter("SourceFaceId", std::to_string(sourceFaceId));
+	setParameter("SourceFaceId", std::to_string(sourceFaceId));
 }
 

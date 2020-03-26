@@ -36,11 +36,6 @@ namespace AlibabaCloud
 				{
 					struct JobGroup
 					{
-						struct Strategy
-						{
-							long endTime;
-							long startTime;
-						};
 						struct Progress
 						{
 							std::string status;
@@ -49,6 +44,11 @@ namespace AlibabaCloud
 							int totalCompleted;
 							int totalNotAnswered;
 							int totalJobs;
+						};
+						struct Strategy
+						{
+							long endTime;
+							long startTime;
 						};
 						Progress progress;
 						std::string jobGroupId;

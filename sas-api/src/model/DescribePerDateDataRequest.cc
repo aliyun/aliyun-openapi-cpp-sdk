@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribePerDateDataRequest;
 
 DescribePerDateDataRequest::DescribePerDateDataRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribePerDateData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePerDateDataRequest::~DescribePerDateDataRequest()
 {}
@@ -33,7 +35,7 @@ int DescribePerDateDataRequest::getApiType()const
 void DescribePerDateDataRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setParameter("ApiType", std::to_string(apiType));
 }
 
 std::string DescribePerDateDataRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribePerDateDataRequest::getSourceIp()const
 void DescribePerDateDataRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

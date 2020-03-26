@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertRenewInfoRequest;
 
 InsertRenewInfoRequest::InsertRenewInfoRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertRenewInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertRenewInfoRequest::~InsertRenewInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string InsertRenewInfoRequest::getEngName()const
 void InsertRenewInfoRequest::setEngName(const std::string& engName)
 {
 	engName_ = engName;
-	setCoreParameter("EngName", engName);
+	setParameter("EngName", engName);
 }
 
 std::string InsertRenewInfoRequest::getAddress()const
@@ -44,7 +46,7 @@ std::string InsertRenewInfoRequest::getAddress()const
 void InsertRenewInfoRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 long InsertRenewInfoRequest::getRegisterTime()const
@@ -55,7 +57,7 @@ long InsertRenewInfoRequest::getRegisterTime()const
 void InsertRenewInfoRequest::setRegisterTime(long registerTime)
 {
 	registerTime_ = registerTime;
-	setCoreParameter("RegisterTime", std::to_string(registerTime));
+	setParameter("RegisterTime", std::to_string(registerTime));
 }
 
 std::string InsertRenewInfoRequest::getEngAddress()const
@@ -66,7 +68,7 @@ std::string InsertRenewInfoRequest::getEngAddress()const
 void InsertRenewInfoRequest::setEngAddress(const std::string& engAddress)
 {
 	engAddress_ = engAddress;
-	setCoreParameter("EngAddress", engAddress);
+	setParameter("EngAddress", engAddress);
 }
 
 std::string InsertRenewInfoRequest::getName()const
@@ -77,6 +79,6 @@ std::string InsertRenewInfoRequest::getName()const
 void InsertRenewInfoRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

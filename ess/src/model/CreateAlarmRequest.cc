@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::CreateAlarmRequest;
 
 CreateAlarmRequest::CreateAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "CreateAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAlarmRequest::~CreateAlarmRequest()
 {}
@@ -33,29 +35,7 @@ std::string CreateAlarmRequest::getMetricType()const
 void CreateAlarmRequest::setMetricType(const std::string& metricType)
 {
 	metricType_ = metricType;
-	setCoreParameter("MetricType", metricType);
-}
-
-int CreateAlarmRequest::getPeriod()const
-{
-	return period_;
-}
-
-void CreateAlarmRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
-std::string CreateAlarmRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void CreateAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("MetricType", metricType);
 }
 
 std::string CreateAlarmRequest::getScalingGroupId()const
@@ -66,18 +46,7 @@ std::string CreateAlarmRequest::getScalingGroupId()const
 void CreateAlarmRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
-}
-
-int CreateAlarmRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void CreateAlarmRequest::setGroupId(int groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string CreateAlarmRequest::getDescription()const
@@ -88,7 +57,7 @@ std::string CreateAlarmRequest::getDescription()const
 void CreateAlarmRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::vector<std::string> CreateAlarmRequest::getAlarmAction()const
@@ -99,8 +68,9 @@ std::vector<std::string> CreateAlarmRequest::getAlarmAction()const
 void CreateAlarmRequest::setAlarmAction(const std::vector<std::string>& alarmAction)
 {
 	alarmAction_ = alarmAction;
-	for(int i = 0; i!= alarmAction.size(); i++)
-		setCoreParameter("AlarmAction."+ std::to_string(i), alarmAction.at(i));
+	for(int dep1 = 0; dep1!= alarmAction.size(); dep1++) {
+		setParameter("AlarmAction."+ std::to_string(dep1), alarmAction.at(dep1));
+	}
 }
 
 float CreateAlarmRequest::getThreshold()const
@@ -111,18 +81,7 @@ float CreateAlarmRequest::getThreshold()const
 void CreateAlarmRequest::setThreshold(float threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
-}
-
-long CreateAlarmRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void CreateAlarmRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("Threshold", std::to_string(threshold));
 }
 
 std::string CreateAlarmRequest::getAccessKeyId()const
@@ -133,7 +92,7 @@ std::string CreateAlarmRequest::getAccessKeyId()const
 void CreateAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAlarmRequest::getRegionId()const
@@ -144,18 +103,7 @@ std::string CreateAlarmRequest::getRegionId()const
 void CreateAlarmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string CreateAlarmRequest::getName()const
-{
-	return name_;
-}
-
-void CreateAlarmRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("RegionId", regionId);
 }
 
 int CreateAlarmRequest::getEvaluationCount()const
@@ -166,7 +114,7 @@ int CreateAlarmRequest::getEvaluationCount()const
 void CreateAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 std::string CreateAlarmRequest::getMetricName()const
@@ -177,18 +125,7 @@ std::string CreateAlarmRequest::getMetricName()const
 void CreateAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
-}
-
-std::string CreateAlarmRequest::getComparisonOperator()const
-{
-	return comparisonOperator_;
-}
-
-void CreateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
-{
-	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", comparisonOperator);
+	setParameter("MetricName", metricName);
 }
 
 std::vector<CreateAlarmRequest::Dimension> CreateAlarmRequest::getDimension()const
@@ -199,13 +136,78 @@ std::vector<CreateAlarmRequest::Dimension> CreateAlarmRequest::getDimension()con
 void CreateAlarmRequest::setDimension(const std::vector<Dimension>& dimension)
 {
 	dimension_ = dimension;
-	int i = 0;
-	for(int i = 0; i!= dimension.size(); i++)	{
-		auto obj = dimension.at(i);
-		std::string str ="Dimension."+ std::to_string(i);
-		setCoreParameter(str + ".DimensionValue", obj.dimensionValue);
-		setCoreParameter(str + ".DimensionKey", obj.dimensionKey);
+	for(int dep1 = 0; dep1!= dimension.size(); dep1++) {
+		auto dimensionObj = dimension.at(dep1);
+		std::string dimensionObjStr = "Dimension." + std::to_string(dep1 + 1);
+		setParameter(dimensionObjStr + ".DimensionValue", dimensionObj.dimensionValue);
+		setParameter(dimensionObjStr + ".DimensionKey", dimensionObj.dimensionKey);
 	}
+}
+
+int CreateAlarmRequest::getPeriod()const
+{
+	return period_;
+}
+
+void CreateAlarmRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
+}
+
+std::string CreateAlarmRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void CreateAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int CreateAlarmRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void CreateAlarmRequest::setGroupId(int groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", std::to_string(groupId));
+}
+
+long CreateAlarmRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void CreateAlarmRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string CreateAlarmRequest::getName()const
+{
+	return name_;
+}
+
+void CreateAlarmRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::string CreateAlarmRequest::getComparisonOperator()const
+{
+	return comparisonOperator_;
+}
+
+void CreateAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
+{
+	comparisonOperator_ = comparisonOperator;
+	setParameter("ComparisonOperator", comparisonOperator);
 }
 
 std::string CreateAlarmRequest::getStatistics()const
@@ -216,6 +218,6 @@ std::string CreateAlarmRequest::getStatistics()const
 void CreateAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", statistics);
+	setParameter("Statistics", statistics);
 }
 

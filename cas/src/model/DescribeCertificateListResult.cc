@@ -91,6 +91,8 @@ void DescribeCertificateListResult::parse(const std::string &payload)
 			certificateListObject.partnerOrderId = valueCertificateListCertificate["PartnerOrderId"].asString();
 		if(!valueCertificateListCertificate["IsFree"].isNull())
 			certificateListObject.isFree = valueCertificateListCertificate["IsFree"].asString() == "true";
+		if(!valueCertificateListCertificate["ExpireRenew"].isNull())
+			certificateListObject.expireRenew = std::stoi(valueCertificateListCertificate["ExpireRenew"].asString());
 		certificateList_.push_back(certificateListObject);
 	}
 	if(!value["TotalCount"].isNull())

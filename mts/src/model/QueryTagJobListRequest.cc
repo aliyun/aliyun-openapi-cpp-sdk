@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryTagJobListRequest;
 
 QueryTagJobListRequest::QueryTagJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryTagJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTagJobListRequest::~QueryTagJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryTagJobListRequest::getResourceOwnerId()const
 void QueryTagJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryTagJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryTagJobListRequest::getResourceOwnerAccount()const
 void QueryTagJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryTagJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryTagJobListRequest::getOwnerAccount()const
 void QueryTagJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryTagJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryTagJobListRequest::getOwnerId()const
 void QueryTagJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryTagJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryTagJobListRequest::getAccessKeyId()const
 void QueryTagJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryTagJobListRequest::getTagJobIds()const
@@ -88,6 +90,6 @@ std::string QueryTagJobListRequest::getTagJobIds()const
 void QueryTagJobListRequest::setTagJobIds(const std::string& tagJobIds)
 {
 	tagJobIds_ = tagJobIds;
-	setCoreParameter("TagJobIds", tagJobIds);
+	setParameter("TagJobIds", tagJobIds);
 }
 

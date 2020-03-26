@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT CreateGroupMetricRulesRequest : public RpcServiceRequest
 			{
+			public:
 				struct GroupMetricRules
 				{
 					std::string webhook;

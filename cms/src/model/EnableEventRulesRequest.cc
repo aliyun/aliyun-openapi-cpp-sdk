@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::EnableEventRulesRequest;
 EnableEventRulesRequest::EnableEventRulesRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "EnableEventRules")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 EnableEventRulesRequest::~EnableEventRulesRequest()
@@ -36,7 +36,7 @@ void EnableEventRulesRequest::setRuleNames(const std::vector<std::string>& ruleN
 {
 	ruleNames_ = ruleNames;
 	for(int dep1 = 0; dep1!= ruleNames.size(); dep1++) {
-		setCoreParameter("RuleNames."+ std::to_string(dep1), ruleNames.at(dep1));
+		setParameter("RuleNames."+ std::to_string(dep1), ruleNames.at(dep1));
 	}
 }
 

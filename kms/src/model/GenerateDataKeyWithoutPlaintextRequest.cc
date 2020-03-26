@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::GenerateDataKeyWithoutPlaintextRequest;
 GenerateDataKeyWithoutPlaintextRequest::GenerateDataKeyWithoutPlaintextRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GenerateDataKeyWithoutPlaintextRequest::~GenerateDataKeyWithoutPlaintextRequest()

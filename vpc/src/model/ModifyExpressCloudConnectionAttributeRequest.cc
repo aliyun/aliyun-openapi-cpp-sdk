@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyExpressCloudConnectionAttributeRequest;
 
 ModifyExpressCloudConnectionAttributeRequest::ModifyExpressCloudConnectionAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyExpressCloudConnectionAttributeRequest::~ModifyExpressCloudConnectionAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyExpressCloudConnectionAttributeRequest::getResourceOwnerId()const
 void ModifyExpressCloudConnectionAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getDescription()const
 void ModifyExpressCloudConnectionAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getRegionId()const
 void ModifyExpressCloudConnectionAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getEccId()const
@@ -66,7 +68,7 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getEccId()const
 void ModifyExpressCloudConnectionAttributeRequest::setEccId(const std::string& eccId)
 {
 	eccId_ = eccId;
-	setCoreParameter("EccId", eccId);
+	setParameter("EccId", eccId);
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getResourceOwnerAccoun
 void ModifyExpressCloudConnectionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,40 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getOwnerAccount()const
 void ModifyExpressCloudConnectionAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+std::string ModifyExpressCloudConnectionAttributeRequest::getCeIp()const
+{
+	return ceIp_;
+}
+
+void ModifyExpressCloudConnectionAttributeRequest::setCeIp(const std::string& ceIp)
+{
+	ceIp_ = ceIp;
+	setParameter("CeIp", ceIp);
+}
+
+std::string ModifyExpressCloudConnectionAttributeRequest::getBgpAs()const
+{
+	return bgpAs_;
+}
+
+void ModifyExpressCloudConnectionAttributeRequest::setBgpAs(const std::string& bgpAs)
+{
+	bgpAs_ = bgpAs;
+	setParameter("BgpAs", bgpAs);
+}
+
+std::string ModifyExpressCloudConnectionAttributeRequest::getPeIp()const
+{
+	return peIp_;
+}
+
+void ModifyExpressCloudConnectionAttributeRequest::setPeIp(const std::string& peIp)
+{
+	peIp_ = peIp;
+	setParameter("PeIp", peIp);
 }
 
 long ModifyExpressCloudConnectionAttributeRequest::getOwnerId()const
@@ -99,7 +134,7 @@ long ModifyExpressCloudConnectionAttributeRequest::getOwnerId()const
 void ModifyExpressCloudConnectionAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyExpressCloudConnectionAttributeRequest::getName()const
@@ -110,6 +145,6 @@ std::string ModifyExpressCloudConnectionAttributeRequest::getName()const
 void ModifyExpressCloudConnectionAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

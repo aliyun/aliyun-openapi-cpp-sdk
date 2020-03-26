@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetQuotaRequest;
 
 GetQuotaRequest::GetQuotaRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetQuota")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetQuotaRequest::~GetQuotaRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetQuotaRequest::getLibraryId()const
 void GetQuotaRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string GetQuotaRequest::getStoreName()const
@@ -44,6 +46,6 @@ std::string GetQuotaRequest::getStoreName()const
 void GetQuotaRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

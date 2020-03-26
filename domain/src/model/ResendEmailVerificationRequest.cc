@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ResendEmailVerificationRequest;
 
 ResendEmailVerificationRequest::ResendEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ResendEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResendEmailVerificationRequest::~ResendEmailVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResendEmailVerificationRequest::getUserClientIp()const
 void ResendEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string ResendEmailVerificationRequest::getLang()const
@@ -44,7 +46,7 @@ std::string ResendEmailVerificationRequest::getLang()const
 void ResendEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ResendEmailVerificationRequest::getEmail()const
@@ -55,6 +57,6 @@ std::string ResendEmailVerificationRequest::getEmail()const
 void ResendEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

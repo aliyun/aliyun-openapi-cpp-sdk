@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::FrequencyAnalyseRequest;
 
 FrequencyAnalyseRequest::FrequencyAnalyseRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "FrequencyAnalyse")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FrequencyAnalyseRequest::~FrequencyAnalyseRequest()
 {}
@@ -33,7 +35,7 @@ std::string FrequencyAnalyseRequest::getAccessKeyId()const
 void FrequencyAnalyseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long FrequencyAnalyseRequest::getGsid()const
@@ -44,6 +46,6 @@ long FrequencyAnalyseRequest::getGsid()const
 void FrequencyAnalyseRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

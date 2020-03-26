@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateFlowProjectUserRequest : public RpcServiceRequest
 			{
+			public:
 				struct User
 				{
 					std::string userId;

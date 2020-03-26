@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceConnectionModeRequest;
 
 ModifyDBInstanceConnectionModeRequest::ModifyDBInstanceConnectionModeRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceConnectionMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceConnectionModeRequest::~ModifyDBInstanceConnectionModeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getConnectionMode()const
 void ModifyDBInstanceConnectionModeRequest::setConnectionMode(const std::string& connectionMode)
 {
 	connectionMode_ = connectionMode;
-	setCoreParameter("ConnectionMode", connectionMode);
+	setParameter("ConnectionMode", connectionMode);
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyDBInstanceConnectionModeRequest::getAccessKeyId()const
 void ModifyDBInstanceConnectionModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
@@ -55,6 +57,6 @@ std::string ModifyDBInstanceConnectionModeRequest::getDBInstanceId()const
 void ModifyDBInstanceConnectionModeRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

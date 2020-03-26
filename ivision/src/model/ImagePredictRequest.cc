@@ -35,7 +35,7 @@ std::string ImagePredictRequest::getDataUrl()const
 void ImagePredictRequest::setDataUrl(const std::string& dataUrl)
 {
 	dataUrl_ = dataUrl;
-	setCoreParameter("DataUrl", dataUrl);
+	setParameter("DataUrl", dataUrl);
 }
 
 std::string ImagePredictRequest::getShowLog()const
@@ -46,7 +46,7 @@ std::string ImagePredictRequest::getShowLog()const
 void ImagePredictRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string ImagePredictRequest::getModelId()const
@@ -57,7 +57,7 @@ std::string ImagePredictRequest::getModelId()const
 void ImagePredictRequest::setModelId(const std::string& modelId)
 {
 	modelId_ = modelId;
-	setCoreParameter("ModelId", modelId);
+	setParameter("ModelId", modelId);
 }
 
 long ImagePredictRequest::getOwnerId()const
@@ -68,6 +68,6 @@ long ImagePredictRequest::getOwnerId()const
 void ImagePredictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

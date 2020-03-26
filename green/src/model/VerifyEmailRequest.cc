@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyEmailRequest;
 
 VerifyEmailRequest::VerifyEmailRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyEmail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyEmailRequest::~VerifyEmailRequest()
 {}
@@ -33,7 +35,7 @@ std::string VerifyEmailRequest::getVerifyCode()const
 void VerifyEmailRequest::setVerifyCode(const std::string& verifyCode)
 {
 	verifyCode_ = verifyCode;
-	setCoreParameter("VerifyCode", verifyCode);
+	setParameter("VerifyCode", verifyCode);
 }
 
 std::string VerifyEmailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string VerifyEmailRequest::getSourceIp()const
 void VerifyEmailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string VerifyEmailRequest::getLang()const
@@ -55,6 +57,6 @@ std::string VerifyEmailRequest::getLang()const
 void VerifyEmailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

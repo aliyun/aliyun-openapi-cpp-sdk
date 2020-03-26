@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::AddIpControlPolicyItemRequest;
 
 AddIpControlPolicyItemRequest::AddIpControlPolicyItemRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "AddIpControlPolicyItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddIpControlPolicyItemRequest::~AddIpControlPolicyItemRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddIpControlPolicyItemRequest::getAccessKeyId()const
 void AddIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddIpControlPolicyItemRequest::getIpControlId()const
@@ -44,7 +46,7 @@ std::string AddIpControlPolicyItemRequest::getIpControlId()const
 void AddIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string AddIpControlPolicyItemRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string AddIpControlPolicyItemRequest::getSecurityToken()const
 void AddIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddIpControlPolicyItemRequest::getAppId()const
@@ -66,7 +68,7 @@ std::string AddIpControlPolicyItemRequest::getAppId()const
 void AddIpControlPolicyItemRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string AddIpControlPolicyItemRequest::getCidrIp()const
@@ -77,6 +79,6 @@ std::string AddIpControlPolicyItemRequest::getCidrIp()const
 void AddIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", cidrIp);
+	setParameter("CidrIp", cidrIp);
 }
 

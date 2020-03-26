@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveApMapInfoRequest;
 
 SaveApMapInfoRequest::SaveApMapInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveApMapInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveApMapInfoRequest::~SaveApMapInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveApMapInfoRequest::getJsonData()const
 void SaveApMapInfoRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string SaveApMapInfoRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string SaveApMapInfoRequest::getAccessKeyId()const
 void SaveApMapInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -22,7 +22,7 @@ InterruptElasticsearchTaskRequest::InterruptElasticsearchTaskRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/actions/interrupt");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 InterruptElasticsearchTaskRequest::~InterruptElasticsearchTaskRequest()

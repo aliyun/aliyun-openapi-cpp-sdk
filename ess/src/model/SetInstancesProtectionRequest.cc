@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::SetInstancesProtectionRequest;
 
 SetInstancesProtectionRequest::SetInstancesProtectionRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "SetInstancesProtection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetInstancesProtectionRequest::~SetInstancesProtectionRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetInstancesProtectionRequest::getScalingGroupId()const
 void SetInstancesProtectionRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string SetInstancesProtectionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SetInstancesProtectionRequest::getAccessKeyId()const
 void SetInstancesProtectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string SetInstancesProtectionRequest::getResourceOwnerAccount()const
 void SetInstancesProtectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SetInstancesProtectionRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long SetInstancesProtectionRequest::getOwnerId()const
 void SetInstancesProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> SetInstancesProtectionRequest::getInstanceId()const
@@ -77,8 +79,9 @@ std::vector<std::string> SetInstancesProtectionRequest::getInstanceId()const
 void SetInstancesProtectionRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 
 bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
@@ -89,6 +92,6 @@ bool SetInstancesProtectionRequest::getProtectedFromScaleIn()const
 void SetInstancesProtectionRequest::setProtectedFromScaleIn(bool protectedFromScaleIn)
 {
 	protectedFromScaleIn_ = protectedFromScaleIn;
-	setCoreParameter("ProtectedFromScaleIn", protectedFromScaleIn ? "true" : "false");
+	setParameter("ProtectedFromScaleIn", protectedFromScaleIn ? "true" : "false");
 }
 

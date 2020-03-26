@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::SendPredefinedShortMessageRequest;
 
 SendPredefinedShortMessageRequest::SendPredefinedShortMessageRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "SendPredefinedShortMessage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendPredefinedShortMessageRequest::~SendPredefinedShortMessageRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendPredefinedShortMessageRequest::getPhoneNumbers()const
 void SendPredefinedShortMessageRequest::setPhoneNumbers(const std::string& phoneNumbers)
 {
 	phoneNumbers_ = phoneNumbers;
-	setCoreParameter("PhoneNumbers", phoneNumbers);
+	setParameter("PhoneNumbers", phoneNumbers);
 }
 
 std::string SendPredefinedShortMessageRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SendPredefinedShortMessageRequest::getAccessKeyId()const
 void SendPredefinedShortMessageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SendPredefinedShortMessageRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string SendPredefinedShortMessageRequest::getInstanceId()const
 void SendPredefinedShortMessageRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 long SendPredefinedShortMessageRequest::getConfigId()const
@@ -66,7 +68,7 @@ long SendPredefinedShortMessageRequest::getConfigId()const
 void SendPredefinedShortMessageRequest::setConfigId(long configId)
 {
 	configId_ = configId;
-	setCoreParameter("ConfigId", std::to_string(configId));
+	setParameter("ConfigId", std::to_string(configId));
 }
 
 std::string SendPredefinedShortMessageRequest::getTemplateParam()const
@@ -77,6 +79,6 @@ std::string SendPredefinedShortMessageRequest::getTemplateParam()const
 void SendPredefinedShortMessageRequest::setTemplateParam(const std::string& templateParam)
 {
 	templateParam_ = templateParam;
-	setCoreParameter("TemplateParam", templateParam);
+	setParameter("TemplateParam", templateParam);
 }
 

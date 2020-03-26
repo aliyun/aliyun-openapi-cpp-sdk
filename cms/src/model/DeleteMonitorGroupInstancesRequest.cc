@@ -35,7 +35,7 @@ long DeleteMonitorGroupInstancesRequest::getGroupId()const
 void DeleteMonitorGroupInstancesRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteMonitorGroupInstancesRequest::getInstanceIdList()const
@@ -46,7 +46,7 @@ std::string DeleteMonitorGroupInstancesRequest::getInstanceIdList()const
 void DeleteMonitorGroupInstancesRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	setParameter("InstanceIdList", instanceIdList);
 }
 
 std::string DeleteMonitorGroupInstancesRequest::getCategory()const
@@ -57,6 +57,6 @@ std::string DeleteMonitorGroupInstancesRequest::getCategory()const
 void DeleteMonitorGroupInstancesRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						MapImagePoint mapImagePoint;
 						FaceImgRect faceImgRect;
 						long maxts;
+						long inStay;
 						long stayValid;
 						long mints;
 					};

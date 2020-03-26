@@ -69,6 +69,7 @@ namespace AlibabaCloud
 						std::string feedback;
 						std::string skillGroupNames;
 						std::string agentNames;
+						std::string skillGroupIdList;
 					};
 					int totalCount;
 					int pageSize;

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddWaterMarkTemplateRequest;
 
 AddWaterMarkTemplateRequest::AddWaterMarkTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddWaterMarkTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddWaterMarkTemplateRequest::~AddWaterMarkTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long AddWaterMarkTemplateRequest::getResourceOwnerId()const
 void AddWaterMarkTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddWaterMarkTemplateRequest::getAccessKeyId()const
 void AddWaterMarkTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string AddWaterMarkTemplateRequest::getResourceOwnerAccount()const
 void AddWaterMarkTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddWaterMarkTemplateRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddWaterMarkTemplateRequest::getOwnerAccount()const
 void AddWaterMarkTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddWaterMarkTemplateRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long AddWaterMarkTemplateRequest::getOwnerId()const
 void AddWaterMarkTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddWaterMarkTemplateRequest::getName()const
@@ -88,7 +90,7 @@ std::string AddWaterMarkTemplateRequest::getName()const
 void AddWaterMarkTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string AddWaterMarkTemplateRequest::getConfig()const
@@ -99,6 +101,6 @@ std::string AddWaterMarkTemplateRequest::getConfig()const
 void AddWaterMarkTemplateRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetDomainExtensionAttributeRequest;
 
 SetDomainExtensionAttributeRequest::SetDomainExtensionAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetDomainExtensionAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainExtensionAttributeRequest::~SetDomainExtensionAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDomainExtensionAttributeRequest::getAccess_key_id()const
 void SetDomainExtensionAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long SetDomainExtensionAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SetDomainExtensionAttributeRequest::getResourceOwnerId()const
 void SetDomainExtensionAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetDomainExtensionAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string SetDomainExtensionAttributeRequest::getRegionId()const
 void SetDomainExtensionAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SetDomainExtensionAttributeRequest::getDomainExtensionId()const
@@ -66,7 +68,7 @@ std::string SetDomainExtensionAttributeRequest::getDomainExtensionId()const
 void SetDomainExtensionAttributeRequest::setDomainExtensionId(const std::string& domainExtensionId)
 {
 	domainExtensionId_ = domainExtensionId;
-	setCoreParameter("DomainExtensionId", domainExtensionId);
+	setParameter("DomainExtensionId", domainExtensionId);
 }
 
 std::string SetDomainExtensionAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SetDomainExtensionAttributeRequest::getResourceOwnerAccount()const
 void SetDomainExtensionAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetDomainExtensionAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SetDomainExtensionAttributeRequest::getOwnerAccount()const
 void SetDomainExtensionAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SetDomainExtensionAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SetDomainExtensionAttributeRequest::getOwnerId()const
 void SetDomainExtensionAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetDomainExtensionAttributeRequest::getServerCertificateId()const
@@ -110,7 +112,7 @@ std::string SetDomainExtensionAttributeRequest::getServerCertificateId()const
 void SetDomainExtensionAttributeRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string SetDomainExtensionAttributeRequest::getTags()const
@@ -121,6 +123,6 @@ std::string SetDomainExtensionAttributeRequest::getTags()const
 void SetDomainExtensionAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

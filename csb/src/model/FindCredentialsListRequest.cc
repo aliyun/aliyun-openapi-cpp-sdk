@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindCredentialsListRequest;
 
 FindCredentialsListRequest::FindCredentialsListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindCredentialsList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindCredentialsListRequest::~FindCredentialsListRequest()
 {}
@@ -33,7 +35,7 @@ long FindCredentialsListRequest::getCsbId()const
 void FindCredentialsListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindCredentialsListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int FindCredentialsListRequest::getPageNum()const
 void FindCredentialsListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string FindCredentialsListRequest::getGroupName()const
@@ -55,6 +57,6 @@ std::string FindCredentialsListRequest::getGroupName()const
 void FindCredentialsListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::GetLicenseRequest;
 
 GetLicenseRequest::GetLicenseRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "GetLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetLicenseRequest::~GetLicenseRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetLicenseRequest::getResourceOwnerId()const
 void GetLicenseRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetLicenseRequest::getData()const
@@ -44,7 +46,7 @@ std::string GetLicenseRequest::getData()const
 void GetLicenseRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string GetLicenseRequest::getType()const
@@ -55,7 +57,7 @@ std::string GetLicenseRequest::getType()const
 void GetLicenseRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string GetLicenseRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetLicenseRequest::getAccessKeyId()const
 void GetLicenseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetLicenseRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string GetLicenseRequest::getResourceOwnerAccount()const
 void GetLicenseRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetLicenseRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string GetLicenseRequest::getOwnerAccount()const
 void GetLicenseRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetLicenseRequest::getOwnerId()const
@@ -99,7 +101,7 @@ std::string GetLicenseRequest::getOwnerId()const
 void GetLicenseRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetLicenseRequest::getMediaId()const
@@ -110,7 +112,7 @@ std::string GetLicenseRequest::getMediaId()const
 void GetLicenseRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string GetLicenseRequest::getHeader()const
@@ -121,7 +123,7 @@ std::string GetLicenseRequest::getHeader()const
 void GetLicenseRequest::setHeader(const std::string& header)
 {
 	header_ = header;
-	setCoreParameter("Header", header);
+	setParameter("Header", header);
 }
 
 std::string GetLicenseRequest::getLicenseUrl()const
@@ -132,6 +134,6 @@ std::string GetLicenseRequest::getLicenseUrl()const
 void GetLicenseRequest::setLicenseUrl(const std::string& licenseUrl)
 {
 	licenseUrl_ = licenseUrl;
-	setCoreParameter("LicenseUrl", licenseUrl);
+	setParameter("LicenseUrl", licenseUrl);
 }
 

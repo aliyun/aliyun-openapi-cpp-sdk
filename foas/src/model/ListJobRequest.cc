@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListJobRequest;
 
 ListJobRequest::ListJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListJobRequest::~ListJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListJobRequest::getQueueName()const
 void ListJobRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setParameter("QueueName", queueName);
 }
 
 std::string ListJobRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string ListJobRequest::getProjectName()const
 void ListJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string ListJobRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string ListJobRequest::getRegionId()const
 void ListJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 int ListJobRequest::getPageSize()const
@@ -66,7 +69,7 @@ int ListJobRequest::getPageSize()const
 void ListJobRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool ListJobRequest::getIsShowFullField()const
@@ -77,7 +80,7 @@ bool ListJobRequest::getIsShowFullField()const
 void ListJobRequest::setIsShowFullField(bool isShowFullField)
 {
 	isShowFullField_ = isShowFullField;
-	setCoreParameter("IsShowFullField", isShowFullField ? "true" : "false");
+	setParameter("IsShowFullField", isShowFullField ? "true" : "false");
 }
 
 int ListJobRequest::getPageIndex()const
@@ -88,7 +91,7 @@ int ListJobRequest::getPageIndex()const
 void ListJobRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListJobRequest::getEngineVersion()const
@@ -99,7 +102,7 @@ std::string ListJobRequest::getEngineVersion()const
 void ListJobRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setParameter("EngineVersion", engineVersion);
 }
 
 std::string ListJobRequest::getClusterId()const
@@ -110,7 +113,7 @@ std::string ListJobRequest::getClusterId()const
 void ListJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListJobRequest::getJobType()const
@@ -121,7 +124,7 @@ std::string ListJobRequest::getJobType()const
 void ListJobRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setParameter("JobType", jobType);
 }
 
 std::string ListJobRequest::getApiType()const
@@ -132,7 +135,7 @@ std::string ListJobRequest::getApiType()const
 void ListJobRequest::setApiType(const std::string& apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setParameter("ApiType", apiType);
 }
 
 std::string ListJobRequest::getJobName()const
@@ -143,7 +146,7 @@ std::string ListJobRequest::getJobName()const
 void ListJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 
 long ListJobRequest::getFolderId()const
@@ -154,6 +157,6 @@ long ListJobRequest::getFolderId()const
 void ListJobRequest::setFolderId(long folderId)
 {
 	folderId_ = folderId;
-	setCoreParameter("FolderId", std::to_string(folderId));
+	setParameter("FolderId", std::to_string(folderId));
 }
 

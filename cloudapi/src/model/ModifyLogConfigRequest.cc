@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyLogConfigRequest;
 
 ModifyLogConfigRequest::ModifyLogConfigRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLogConfigRequest::~ModifyLogConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyLogConfigRequest::getSlsLogStore()const
 void ModifyLogConfigRequest::setSlsLogStore(const std::string& slsLogStore)
 {
 	slsLogStore_ = slsLogStore;
-	setCoreParameter("SlsLogStore", slsLogStore);
+	setParameter("SlsLogStore", slsLogStore);
 }
 
 std::string ModifyLogConfigRequest::getSlsProject()const
@@ -44,7 +46,7 @@ std::string ModifyLogConfigRequest::getSlsProject()const
 void ModifyLogConfigRequest::setSlsProject(const std::string& slsProject)
 {
 	slsProject_ = slsProject;
-	setCoreParameter("SlsProject", slsProject);
+	setParameter("SlsProject", slsProject);
 }
 
 std::string ModifyLogConfigRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyLogConfigRequest::getAccessKeyId()const
 void ModifyLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLogConfigRequest::getLogType()const
@@ -66,7 +68,7 @@ std::string ModifyLogConfigRequest::getLogType()const
 void ModifyLogConfigRequest::setLogType(const std::string& logType)
 {
 	logType_ = logType;
-	setCoreParameter("LogType", logType);
+	setParameter("LogType", logType);
 }
 
 std::string ModifyLogConfigRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string ModifyLogConfigRequest::getSecurityToken()const
 void ModifyLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

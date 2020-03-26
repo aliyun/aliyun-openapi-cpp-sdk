@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApgroupSsidConfigRequest;
 
 DeleteApgroupSsidConfigRequest::DeleteApgroupSsidConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApgroupSsidConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApgroupSsidConfigRequest::~DeleteApgroupSsidConfigRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteApgroupSsidConfigRequest::getApgroupId()const
 void DeleteApgroupSsidConfigRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string DeleteApgroupSsidConfigRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteApgroupSsidConfigRequest::getAccessKeyId()const
 void DeleteApgroupSsidConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeleteApgroupSsidConfigRequest::getId()const
@@ -55,6 +57,6 @@ long DeleteApgroupSsidConfigRequest::getId()const
 void DeleteApgroupSsidConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

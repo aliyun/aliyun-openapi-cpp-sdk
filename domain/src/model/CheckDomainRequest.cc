@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckDomainRequest;
 
 CheckDomainRequest::CheckDomainRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDomainRequest::~CheckDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckDomainRequest::getDomainName()const
 void CheckDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string CheckDomainRequest::getFeeCurrency()const
@@ -44,7 +46,7 @@ std::string CheckDomainRequest::getFeeCurrency()const
 void CheckDomainRequest::setFeeCurrency(const std::string& feeCurrency)
 {
 	feeCurrency_ = feeCurrency;
-	setCoreParameter("FeeCurrency", feeCurrency);
+	setParameter("FeeCurrency", feeCurrency);
 }
 
 int CheckDomainRequest::getFeePeriod()const
@@ -55,7 +57,7 @@ int CheckDomainRequest::getFeePeriod()const
 void CheckDomainRequest::setFeePeriod(int feePeriod)
 {
 	feePeriod_ = feePeriod;
-	setCoreParameter("FeePeriod", std::to_string(feePeriod));
+	setParameter("FeePeriod", std::to_string(feePeriod));
 }
 
 std::string CheckDomainRequest::getFeeCommand()const
@@ -66,7 +68,7 @@ std::string CheckDomainRequest::getFeeCommand()const
 void CheckDomainRequest::setFeeCommand(const std::string& feeCommand)
 {
 	feeCommand_ = feeCommand;
-	setCoreParameter("FeeCommand", feeCommand);
+	setParameter("FeeCommand", feeCommand);
 }
 
 std::string CheckDomainRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CheckDomainRequest::getLang()const
 void CheckDomainRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::QuerySyncPicScheduleRequest;
 
 QuerySyncPicScheduleRequest::QuerySyncPicScheduleRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "QuerySyncPicSchedule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QuerySyncPicScheduleRequest::~QuerySyncPicScheduleRequest()
 {}
@@ -33,7 +35,7 @@ std::string QuerySyncPicScheduleRequest::getIotId()const
 void QuerySyncPicScheduleRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setBodyParameter("IotId", iotId);
 }
 
 std::string QuerySyncPicScheduleRequest::getGroupId()const
@@ -44,18 +46,7 @@ std::string QuerySyncPicScheduleRequest::getGroupId()const
 void QuerySyncPicScheduleRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string QuerySyncPicScheduleRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void QuerySyncPicScheduleRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("GroupId", groupId);
 }
 
 std::string QuerySyncPicScheduleRequest::getProductKey()const
@@ -66,6 +57,39 @@ std::string QuerySyncPicScheduleRequest::getProductKey()const
 void QuerySyncPicScheduleRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string QuerySyncPicScheduleRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QuerySyncPicScheduleRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QuerySyncPicScheduleRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QuerySyncPicScheduleRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string QuerySyncPicScheduleRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QuerySyncPicScheduleRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setBodyParameter("DeviceName", deviceName);
 }
 

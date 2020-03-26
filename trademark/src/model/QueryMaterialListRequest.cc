@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryMaterialListRequest;
 
 QueryMaterialListRequest::QueryMaterialListRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryMaterialList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMaterialListRequest::~QueryMaterialListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryMaterialListRequest::getType()const
 void QueryMaterialListRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 int QueryMaterialListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryMaterialListRequest::getPageNum()const
 void QueryMaterialListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryMaterialListRequest::getName()const
@@ -55,7 +57,7 @@ std::string QueryMaterialListRequest::getName()const
 void QueryMaterialListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int QueryMaterialListRequest::getPageSize()const
@@ -66,7 +68,7 @@ int QueryMaterialListRequest::getPageSize()const
 void QueryMaterialListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryMaterialListRequest::getCardNumber()const
@@ -77,7 +79,7 @@ std::string QueryMaterialListRequest::getCardNumber()const
 void QueryMaterialListRequest::setCardNumber(const std::string& cardNumber)
 {
 	cardNumber_ = cardNumber;
-	setCoreParameter("CardNumber", cardNumber);
+	setParameter("CardNumber", cardNumber);
 }
 
 int QueryMaterialListRequest::getRegion()const
@@ -88,7 +90,7 @@ int QueryMaterialListRequest::getRegion()const
 void QueryMaterialListRequest::setRegion(int region)
 {
 	region_ = region;
-	setCoreParameter("Region", std::to_string(region));
+	setParameter("Region", std::to_string(region));
 }
 
 int QueryMaterialListRequest::getStatus()const
@@ -99,6 +101,6 @@ int QueryMaterialListRequest::getStatus()const
 void QueryMaterialListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

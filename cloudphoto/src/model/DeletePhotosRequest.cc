@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::DeletePhotosRequest;
 
 DeletePhotosRequest::DeletePhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "DeletePhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePhotosRequest::~DeletePhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeletePhotosRequest::getLibraryId()const
 void DeletePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string DeletePhotosRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string DeletePhotosRequest::getStoreName()const
 void DeletePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::vector<long> DeletePhotosRequest::getPhotoId()const
@@ -55,7 +57,8 @@ std::vector<long> DeletePhotosRequest::getPhotoId()const
 void DeletePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 

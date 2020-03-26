@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DeleteCertificateRequest;
 
 DeleteCertificateRequest::DeleteCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DeleteCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCertificateRequest::~DeleteCertificateRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCertificateRequest::getCertificateId()const
 void DeleteCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DeleteCertificateRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DeleteCertificateRequest::getResourceGroupId()const
 void DeleteCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DeleteCertificateRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteCertificateRequest::getSourceIp()const
 void DeleteCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteCertificateRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteCertificateRequest::getLang()const
 void DeleteCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

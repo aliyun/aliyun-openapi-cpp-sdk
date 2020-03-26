@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowClusterAllRequest;
 
 ListFlowClusterAllRequest::ListFlowClusterAllRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowClusterAll")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowClusterAllRequest::~ListFlowClusterAllRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListFlowClusterAllRequest::getRegionId()const
 void ListFlowClusterAllRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

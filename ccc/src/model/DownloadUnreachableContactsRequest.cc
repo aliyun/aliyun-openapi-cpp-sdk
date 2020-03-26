@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadUnreachableContactsRequest;
 
 DownloadUnreachableContactsRequest::DownloadUnreachableContactsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadUnreachableContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadUnreachableContactsRequest::~DownloadUnreachableContactsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DownloadUnreachableContactsRequest::getInstanceId()const
 void DownloadUnreachableContactsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DownloadUnreachableContactsRequest::getJobGroupId()const
@@ -44,6 +46,6 @@ std::string DownloadUnreachableContactsRequest::getJobGroupId()const
 void DownloadUnreachableContactsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 

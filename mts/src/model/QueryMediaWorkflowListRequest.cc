@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaWorkflowListRequest;
 
 QueryMediaWorkflowListRequest::QueryMediaWorkflowListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaWorkflowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaWorkflowListRequest::~QueryMediaWorkflowListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryMediaWorkflowListRequest::getMediaWorkflowIds()const
 void QueryMediaWorkflowListRequest::setMediaWorkflowIds(const std::string& mediaWorkflowIds)
 {
 	mediaWorkflowIds_ = mediaWorkflowIds;
-	setCoreParameter("MediaWorkflowIds", mediaWorkflowIds);
+	setParameter("MediaWorkflowIds", mediaWorkflowIds);
 }
 
 long QueryMediaWorkflowListRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long QueryMediaWorkflowListRequest::getResourceOwnerId()const
 void QueryMediaWorkflowListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMediaWorkflowListRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryMediaWorkflowListRequest::getResourceOwnerAccount()const
 void QueryMediaWorkflowListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMediaWorkflowListRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string QueryMediaWorkflowListRequest::getOwnerAccount()const
 void QueryMediaWorkflowListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaWorkflowListRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long QueryMediaWorkflowListRequest::getOwnerId()const
 void QueryMediaWorkflowListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMediaWorkflowListRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string QueryMediaWorkflowListRequest::getAccessKeyId()const
 void QueryMediaWorkflowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

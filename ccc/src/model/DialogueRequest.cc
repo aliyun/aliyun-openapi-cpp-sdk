@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DialogueRequest;
 
 DialogueRequest::DialogueRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "Dialogue")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DialogueRequest::~DialogueRequest()
 {}
@@ -33,40 +35,7 @@ std::string DialogueRequest::getCallId()const
 void DialogueRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
-}
-
-std::string DialogueRequest::getActionParams()const
-{
-	return actionParams_;
-}
-
-void DialogueRequest::setActionParams(const std::string& actionParams)
-{
-	actionParams_ = actionParams;
-	setCoreParameter("ActionParams", actionParams);
-}
-
-std::string DialogueRequest::getCallingNumber()const
-{
-	return callingNumber_;
-}
-
-void DialogueRequest::setCallingNumber(const std::string& callingNumber)
-{
-	callingNumber_ = callingNumber;
-	setCoreParameter("CallingNumber", callingNumber);
-}
-
-std::string DialogueRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DialogueRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("CallId", callId);
 }
 
 std::string DialogueRequest::getCalledNumber()const
@@ -77,7 +46,7 @@ std::string DialogueRequest::getCalledNumber()const
 void DialogueRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
-	setCoreParameter("CalledNumber", calledNumber);
+	setParameter("CalledNumber", calledNumber);
 }
 
 long DialogueRequest::getInstanceOwnerId()const
@@ -88,18 +57,7 @@ long DialogueRequest::getInstanceOwnerId()const
 void DialogueRequest::setInstanceOwnerId(long instanceOwnerId)
 {
 	instanceOwnerId_ = instanceOwnerId;
-	setCoreParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
-}
-
-std::string DialogueRequest::getActionKey()const
-{
-	return actionKey_;
-}
-
-void DialogueRequest::setActionKey(const std::string& actionKey)
-{
-	actionKey_ = actionKey;
-	setCoreParameter("ActionKey", actionKey);
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
 }
 
 std::string DialogueRequest::getCallType()const
@@ -110,7 +68,7 @@ std::string DialogueRequest::getCallType()const
 void DialogueRequest::setCallType(const std::string& callType)
 {
 	callType_ = callType;
-	setCoreParameter("CallType", callType);
+	setParameter("CallType", callType);
 }
 
 std::string DialogueRequest::getScenarioId()const
@@ -121,7 +79,7 @@ std::string DialogueRequest::getScenarioId()const
 void DialogueRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 
 std::string DialogueRequest::getTaskId()const
@@ -132,7 +90,7 @@ std::string DialogueRequest::getTaskId()const
 void DialogueRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string DialogueRequest::getUtterance()const
@@ -143,6 +101,50 @@ std::string DialogueRequest::getUtterance()const
 void DialogueRequest::setUtterance(const std::string& utterance)
 {
 	utterance_ = utterance;
-	setCoreParameter("Utterance", utterance);
+	setParameter("Utterance", utterance);
+}
+
+std::string DialogueRequest::getActionParams()const
+{
+	return actionParams_;
+}
+
+void DialogueRequest::setActionParams(const std::string& actionParams)
+{
+	actionParams_ = actionParams;
+	setParameter("ActionParams", actionParams);
+}
+
+std::string DialogueRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void DialogueRequest::setCallingNumber(const std::string& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	setParameter("CallingNumber", callingNumber);
+}
+
+std::string DialogueRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DialogueRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string DialogueRequest::getActionKey()const
+{
+	return actionKey_;
+}
+
+void DialogueRequest::setActionKey(const std::string& actionKey)
+{
+	actionKey_ = actionKey;
+	setParameter("ActionKey", actionKey);
 }
 

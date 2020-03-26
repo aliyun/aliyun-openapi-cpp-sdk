@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DisableThingRequest;
 
 DisableThingRequest::DisableThingRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DisableThing")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableThingRequest::~DisableThingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DisableThingRequest::getProductKey()const
 void DisableThingRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string DisableThingRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DisableThingRequest::getAccessKeyId()const
 void DisableThingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DisableThingRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string DisableThingRequest::getIotId()const
 void DisableThingRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string DisableThingRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string DisableThingRequest::getIotInstanceId()const
 void DisableThingRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DisableThingRequest::getDeviceName()const
@@ -77,6 +79,6 @@ std::string DisableThingRequest::getDeviceName()const
 void DisableThingRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

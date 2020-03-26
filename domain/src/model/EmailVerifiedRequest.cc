@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::EmailVerifiedRequest;
 
 EmailVerifiedRequest::EmailVerifiedRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "EmailVerified")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EmailVerifiedRequest::~EmailVerifiedRequest()
 {}
@@ -33,7 +35,7 @@ std::string EmailVerifiedRequest::getUserClientIp()const
 void EmailVerifiedRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string EmailVerifiedRequest::getLang()const
@@ -44,7 +46,7 @@ std::string EmailVerifiedRequest::getLang()const
 void EmailVerifiedRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string EmailVerifiedRequest::getEmail()const
@@ -55,6 +57,6 @@ std::string EmailVerifiedRequest::getEmail()const
 void EmailVerifiedRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

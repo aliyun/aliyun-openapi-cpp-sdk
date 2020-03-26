@@ -35,17 +35,23 @@ namespace AlibabaCloud
 				QueryLicensesRequest();
 				~QueryLicensesRequest();
 
-				int getLicenseType()const;
-				void setLicenseType(int licenseType);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getLicenseType()const;
+				void setLicenseType(int licenseType);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				int licenseType_;
 				int pageSize_;
+				int licenseType_;
 				int currentPage_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

@@ -44,6 +44,8 @@ namespace AlibabaCloud
 					{
 						std::string saveType;
 						std::string primaryKey;
+						std::string notary;
+						std::string fpDBId;
 					};
 					struct FpShotResult
 					{
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 								};
 								Input input;
 								Duplication duplication;
+								std::string similarity;
 							};
 							std::string similarity;
 							std::string primaryKey;
@@ -71,18 +74,20 @@ namespace AlibabaCloud
 						std::vector<FpShot> audioFpShots;
 						std::vector<FpShot> fpShots;
 					};
-					FpShotConfig fpShotConfig;
 					std::string message;
-					std::string finishTime;
 					std::string userData;
-					std::string state;
+					std::string txHash;
 					FpShotResult fpShotResult;
+					std::string code;
+					InputFile inputFile;
+					std::string transactionId;
+					FpShotConfig fpShotConfig;
+					std::string finishTime;
+					std::string state;
 					std::string creationTime;
 					std::string pipelineId;
 					std::string fileId;
 					std::string id;
-					std::string code;
-					InputFile inputFile;
 				};
 
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CloseEdgeInstanceDeploymentRequest;
 
 CloseEdgeInstanceDeploymentRequest::CloseEdgeInstanceDeploymentRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CloseEdgeInstanceDeployment")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloseEdgeInstanceDeploymentRequest::~CloseEdgeInstanceDeploymentRequest()
 {}
@@ -33,18 +35,7 @@ std::string CloseEdgeInstanceDeploymentRequest::getAccessKeyId()const
 void CloseEdgeInstanceDeploymentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CloseEdgeInstanceDeploymentRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void CloseEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CloseEdgeInstanceDeploymentRequest::getIotInstanceId()const
@@ -55,6 +46,39 @@ std::string CloseEdgeInstanceDeploymentRequest::getIotInstanceId()const
 void CloseEdgeInstanceDeploymentRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CloseEdgeInstanceDeploymentRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void CloseEdgeInstanceDeploymentRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string CloseEdgeInstanceDeploymentRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CloseEdgeInstanceDeploymentRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CloseEdgeInstanceDeploymentRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CloseEdgeInstanceDeploymentRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

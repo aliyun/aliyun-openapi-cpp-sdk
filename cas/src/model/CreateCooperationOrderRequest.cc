@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateCooperationOrderRequest;
 
 CreateCooperationOrderRequest::CreateCooperationOrderRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateCooperationOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCooperationOrderRequest::~CreateCooperationOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCooperationOrderRequest::getProductCode()const
 void CreateCooperationOrderRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string CreateCooperationOrderRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateCooperationOrderRequest::getResourceGroupId()const
 void CreateCooperationOrderRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateCooperationOrderRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateCooperationOrderRequest::getSourceIp()const
 void CreateCooperationOrderRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCooperationOrderRequest::getFrom()const
@@ -66,7 +68,7 @@ std::string CreateCooperationOrderRequest::getFrom()const
 void CreateCooperationOrderRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string CreateCooperationOrderRequest::getLang()const
@@ -77,7 +79,7 @@ std::string CreateCooperationOrderRequest::getLang()const
 void CreateCooperationOrderRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateCooperationOrderRequest::getDomain()const
@@ -88,6 +90,6 @@ std::string CreateCooperationOrderRequest::getDomain()const
 void CreateCooperationOrderRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AssociateQosRequest;
 
 AssociateQosRequest::AssociateQosRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AssociateQos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateQosRequest::~AssociateQosRequest()
 {}
@@ -33,7 +35,7 @@ long AssociateQosRequest::getResourceOwnerId()const
 void AssociateQosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociateQosRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string AssociateQosRequest::getRegionId()const
 void AssociateQosRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssociateQosRequest::getQosId()const
@@ -55,7 +57,7 @@ std::string AssociateQosRequest::getQosId()const
 void AssociateQosRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string AssociateQosRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AssociateQosRequest::getResourceOwnerAccount()const
 void AssociateQosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociateQosRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AssociateQosRequest::getOwnerAccount()const
 void AssociateQosRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssociateQosRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AssociateQosRequest::getOwnerId()const
 void AssociateQosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssociateQosRequest::getSmartAGId()const
@@ -99,6 +101,6 @@ std::string AssociateQosRequest::getSmartAGId()const
 void AssociateQosRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

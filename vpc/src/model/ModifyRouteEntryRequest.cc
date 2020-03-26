@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyRouteEntryRequest;
 
 ModifyRouteEntryRequest::ModifyRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouteEntryRequest::~ModifyRouteEntryRequest()
 {}
@@ -33,7 +35,18 @@ std::string ModifyRouteEntryRequest::getRouteEntryName()const
 void ModifyRouteEntryRequest::setRouteEntryName(const std::string& routeEntryName)
 {
 	routeEntryName_ = routeEntryName;
-	setCoreParameter("RouteEntryName", routeEntryName);
+	setParameter("RouteEntryName", routeEntryName);
+}
+
+std::string ModifyRouteEntryRequest::getDescription()const
+{
+	return description_;
+}
+
+void ModifyRouteEntryRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
 }
 
 std::string ModifyRouteEntryRequest::getRegionId()const
@@ -44,7 +57,7 @@ std::string ModifyRouteEntryRequest::getRegionId()const
 void ModifyRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyRouteEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +68,7 @@ std::string ModifyRouteEntryRequest::getResourceOwnerAccount()const
 void ModifyRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyRouteEntryRequest::getOwnerAccount()const
@@ -66,7 +79,7 @@ std::string ModifyRouteEntryRequest::getOwnerAccount()const
 void ModifyRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyRouteEntryRequest::getOwnerId()const
@@ -77,7 +90,7 @@ long ModifyRouteEntryRequest::getOwnerId()const
 void ModifyRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyRouteEntryRequest::getRouteEntryId()const
@@ -88,6 +101,6 @@ std::string ModifyRouteEntryRequest::getRouteEntryId()const
 void ModifyRouteEntryRequest::setRouteEntryId(const std::string& routeEntryId)
 {
 	routeEntryId_ = routeEntryId;
-	setCoreParameter("RouteEntryId", routeEntryId);
+	setParameter("RouteEntryId", routeEntryId);
 }
 

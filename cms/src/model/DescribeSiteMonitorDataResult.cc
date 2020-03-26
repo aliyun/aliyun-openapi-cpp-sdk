@@ -45,10 +45,10 @@ void DescribeSiteMonitorDataResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 

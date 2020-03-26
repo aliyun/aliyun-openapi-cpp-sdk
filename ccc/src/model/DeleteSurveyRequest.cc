@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteSurveyRequest;
 
 DeleteSurveyRequest::DeleteSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSurveyRequest::~DeleteSurveyRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteSurveyRequest::getSurveyId()const
 void DeleteSurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setCoreParameter("SurveyId", surveyId);
+	setParameter("SurveyId", surveyId);
 }
 
 std::string DeleteSurveyRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string DeleteSurveyRequest::getInstanceId()const
 void DeleteSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSurveyRequest::getScenarioId()const
@@ -55,6 +57,6 @@ std::string DeleteSurveyRequest::getScenarioId()const
 void DeleteSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

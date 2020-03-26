@@ -35,8 +35,10 @@ namespace AlibabaCloud
 				struct VbrHealthCheck
 				{
 					std::string linkStatus;
+					int healthCheckInterval;
 					std::string vbrInstanceId;
 					std::string healthCheckSourceIp;
+					int healthyThreshold;
 					std::string cenId;
 					long packetLoss;
 					std::string healthCheckTargetIp;

@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetImageManifestRequest;
 
 GetImageManifestRequest::GetImageManifestRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetImageManifestRequest::~GetImageManifestRequest()
 {}
@@ -33,7 +36,7 @@ int GetImageManifestRequest::getSchemaVersion()const
 void GetImageManifestRequest::setSchemaVersion(int schemaVersion)
 {
 	schemaVersion_ = schemaVersion;
-	setCoreParameter("SchemaVersion", std::to_string(schemaVersion));
+	setParameter("SchemaVersion", std::to_string(schemaVersion));
 }
 
 std::string GetImageManifestRequest::getRepoNamespace()const
@@ -44,7 +47,7 @@ std::string GetImageManifestRequest::getRepoNamespace()const
 void GetImageManifestRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetImageManifestRequest::getRepoName()const
@@ -55,7 +58,7 @@ std::string GetImageManifestRequest::getRepoName()const
 void GetImageManifestRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 std::string GetImageManifestRequest::getTag()const
@@ -66,6 +69,6 @@ std::string GetImageManifestRequest::getTag()const
 void GetImageManifestRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setParameter("Tag", tag);
 }
 

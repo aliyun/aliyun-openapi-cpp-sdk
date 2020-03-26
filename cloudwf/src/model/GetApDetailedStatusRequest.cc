@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApDetailedStatusRequest;
 
 GetApDetailedStatusRequest::GetApDetailedStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApDetailedStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApDetailedStatusRequest::~GetApDetailedStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetApDetailedStatusRequest::getAccessKeyId()const
 void GetApDetailedStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetApDetailedStatusRequest::getId()const
@@ -44,6 +46,6 @@ long GetApDetailedStatusRequest::getId()const
 void GetApDetailedStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

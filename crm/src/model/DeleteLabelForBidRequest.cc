@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::DeleteLabelForBidRequest;
 
 DeleteLabelForBidRequest::DeleteLabelForBidRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "DeleteLabelForBid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLabelForBidRequest::~DeleteLabelForBidRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLabelForBidRequest::getLabelSeries()const
 void DeleteLabelForBidRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setParameter("LabelSeries", labelSeries);
 }
 
 std::string DeleteLabelForBidRequest::getPK()const
@@ -44,7 +46,7 @@ std::string DeleteLabelForBidRequest::getPK()const
 void DeleteLabelForBidRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 
 std::string DeleteLabelForBidRequest::getLabel()const
@@ -55,6 +57,6 @@ std::string DeleteLabelForBidRequest::getLabel()const
 void DeleteLabelForBidRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 

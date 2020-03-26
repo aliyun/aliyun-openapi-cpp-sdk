@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateEdgeInstanceRequest;
 
 UpdateEdgeInstanceRequest::UpdateEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateEdgeInstanceRequest::~UpdateEdgeInstanceRequest()
 {}
@@ -33,7 +35,7 @@ bool UpdateEdgeInstanceRequest::getBizEnable()const
 void UpdateEdgeInstanceRequest::setBizEnable(bool bizEnable)
 {
 	bizEnable_ = bizEnable;
-	setCoreParameter("BizEnable", bizEnable ? "true" : "false");
+	setParameter("BizEnable", bizEnable ? "true" : "false");
 }
 
 int UpdateEdgeInstanceRequest::getSpec()const
@@ -44,7 +46,7 @@ int UpdateEdgeInstanceRequest::getSpec()const
 void UpdateEdgeInstanceRequest::setSpec(int spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", std::to_string(spec));
+	setParameter("Spec", std::to_string(spec));
 }
 
 std::string UpdateEdgeInstanceRequest::getAccessKeyId()const
@@ -55,29 +57,7 @@ std::string UpdateEdgeInstanceRequest::getAccessKeyId()const
 void UpdateEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string UpdateEdgeInstanceRequest::getTags()const
-{
-	return tags_;
-}
-
-void UpdateEdgeInstanceRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
-}
-
-std::string UpdateEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void UpdateEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateEdgeInstanceRequest::getIotInstanceId()const
@@ -88,7 +68,40 @@ std::string UpdateEdgeInstanceRequest::getIotInstanceId()const
 void UpdateEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateEdgeInstanceRequest::getTags()const
+{
+	return tags_;
+}
+
+void UpdateEdgeInstanceRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
+std::string UpdateEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void UpdateEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string UpdateEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UpdateEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
 }
 
 std::string UpdateEdgeInstanceRequest::getName()const
@@ -99,6 +112,17 @@ std::string UpdateEdgeInstanceRequest::getName()const
 void UpdateEdgeInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
+}
+
+std::string UpdateEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeUidWhiteBaselineRequest;
 
 DescribeUidWhiteBaselineRequest::DescribeUidWhiteBaselineRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeUidWhiteBaseline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUidWhiteBaselineRequest::~DescribeUidWhiteBaselineRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUidWhiteBaselineRequest::getRemark()const
 void DescribeUidWhiteBaselineRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DescribeUidWhiteBaselineRequest::getSourceCode()const
 void DescribeUidWhiteBaselineRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeUidWhiteBaselineRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeUidWhiteBaselineRequest::getSourceIp()const
 void DescribeUidWhiteBaselineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeUidWhiteBaselineRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeUidWhiteBaselineRequest::getPageSize()const
 void DescribeUidWhiteBaselineRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeUidWhiteBaselineRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeUidWhiteBaselineRequest::getLang()const
 void DescribeUidWhiteBaselineRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 long DescribeUidWhiteBaselineRequest::getSrcUid()const
@@ -88,7 +90,7 @@ long DescribeUidWhiteBaselineRequest::getSrcUid()const
 void DescribeUidWhiteBaselineRequest::setSrcUid(long srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", std::to_string(srcUid));
+	setParameter("SrcUid", std::to_string(srcUid));
 }
 
 int DescribeUidWhiteBaselineRequest::getCurrentPage()const
@@ -99,7 +101,7 @@ int DescribeUidWhiteBaselineRequest::getCurrentPage()const
 void DescribeUidWhiteBaselineRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeUidWhiteBaselineRequest::getStatus()const
@@ -110,6 +112,6 @@ std::string DescribeUidWhiteBaselineRequest::getStatus()const
 void DescribeUidWhiteBaselineRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

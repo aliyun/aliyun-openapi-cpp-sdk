@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				DescribeClusterUserKubeconfigResult();
 				explicit DescribeClusterUserKubeconfigResult(const std::string &payload);
 				~DescribeClusterUserKubeconfigResult();
+				std::string getConfig()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string config_;
 
 			};
 		}

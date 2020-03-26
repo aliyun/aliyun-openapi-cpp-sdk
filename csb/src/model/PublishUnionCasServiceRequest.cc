@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::PublishUnionCasServiceRequest;
 
 PublishUnionCasServiceRequest::PublishUnionCasServiceRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "PublishUnionCasService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishUnionCasServiceRequest::~PublishUnionCasServiceRequest()
 {}
@@ -33,7 +35,7 @@ std::string PublishUnionCasServiceRequest::getCasCsbName()const
 void PublishUnionCasServiceRequest::setCasCsbName(const std::string& casCsbName)
 {
 	casCsbName_ = casCsbName;
-	setCoreParameter("CasCsbName", casCsbName);
+	setParameter("CasCsbName", casCsbName);
 }
 
 std::string PublishUnionCasServiceRequest::getData()const
@@ -44,6 +46,6 @@ std::string PublishUnionCasServiceRequest::getData()const
 void PublishUnionCasServiceRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 

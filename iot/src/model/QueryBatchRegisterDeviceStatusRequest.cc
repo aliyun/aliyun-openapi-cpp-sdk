@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryBatchRegisterDeviceStatusRequest;
 
 QueryBatchRegisterDeviceStatusRequest::QueryBatchRegisterDeviceStatusRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryBatchRegisterDeviceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBatchRegisterDeviceStatusRequest::~QueryBatchRegisterDeviceStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryBatchRegisterDeviceStatusRequest::getProductKey()const
 void QueryBatchRegisterDeviceStatusRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryBatchRegisterDeviceStatusRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryBatchRegisterDeviceStatusRequest::getAccessKeyId()const
 void QueryBatchRegisterDeviceStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
@@ -55,7 +57,7 @@ long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
 void QueryBatchRegisterDeviceStatusRequest::setApplyId(long applyId)
 {
 	applyId_ = applyId;
-	setCoreParameter("ApplyId", std::to_string(applyId));
+	setParameter("ApplyId", std::to_string(applyId));
 }
 
 std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const
@@ -66,6 +68,6 @@ std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const
 void QueryBatchRegisterDeviceStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteNoteRequest;
 
 DeleteNoteRequest::DeleteNoteRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNoteRequest::~DeleteNoteRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteNoteRequest::getResourceOwnerId()const
 void DeleteNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNoteRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteNoteRequest::getAccessKeyId()const
 void DeleteNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteNoteRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteNoteRequest::getRegionId()const
 void DeleteNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNoteRequest::getId()const
@@ -66,6 +68,6 @@ std::string DeleteNoteRequest::getId()const
 void DeleteNoteRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

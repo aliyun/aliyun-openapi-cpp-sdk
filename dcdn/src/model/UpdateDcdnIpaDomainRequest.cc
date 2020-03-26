@@ -35,7 +35,7 @@ std::string UpdateDcdnIpaDomainRequest::getSources()const
 void UpdateDcdnIpaDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getResourceGroupId()const
@@ -46,7 +46,7 @@ std::string UpdateDcdnIpaDomainRequest::getResourceGroupId()const
 void UpdateDcdnIpaDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string UpdateDcdnIpaDomainRequest::getSecurityToken()const
 void UpdateDcdnIpaDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getTopLevelDomain()const
@@ -68,7 +68,7 @@ std::string UpdateDcdnIpaDomainRequest::getTopLevelDomain()const
 void UpdateDcdnIpaDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
 {
 	topLevelDomain_ = topLevelDomain;
-	setCoreParameter("TopLevelDomain", topLevelDomain);
+	setParameter("TopLevelDomain", topLevelDomain);
 }
 
 std::string UpdateDcdnIpaDomainRequest::getDomainName()const
@@ -79,7 +79,7 @@ std::string UpdateDcdnIpaDomainRequest::getDomainName()const
 void UpdateDcdnIpaDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long UpdateDcdnIpaDomainRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long UpdateDcdnIpaDomainRequest::getOwnerId()const
 void UpdateDcdnIpaDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

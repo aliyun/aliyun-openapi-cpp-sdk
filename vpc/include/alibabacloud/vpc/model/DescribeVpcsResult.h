@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string resourceGroupId;
 					std::vector<std::string> vSwitchIds;
+					std::vector<std::string> secondaryCidrBlocks;
 					std::string cidrBlock;
 					std::vector<std::string> routerTableIds;
 					std::vector<std::string> userCidrs;

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMediaAuditResultTimelineRequest;
 
 GetMediaAuditResultTimelineRequest::GetMediaAuditResultTimelineRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMediaAuditResultTimeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaAuditResultTimelineRequest::~GetMediaAuditResultTimelineRequest()
 {}
@@ -33,7 +35,7 @@ long GetMediaAuditResultTimelineRequest::getResourceOwnerId()const
 void GetMediaAuditResultTimelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetMediaAuditResultTimelineRequest::getResourceOwnerAccount()const
 void GetMediaAuditResultTimelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getOwnerId()const
@@ -55,7 +57,7 @@ std::string GetMediaAuditResultTimelineRequest::getOwnerId()const
 void GetMediaAuditResultTimelineRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getMediaId()const
@@ -66,7 +68,7 @@ std::string GetMediaAuditResultTimelineRequest::getMediaId()const
 void GetMediaAuditResultTimelineRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string GetMediaAuditResultTimelineRequest::getAccessKeyId()const
@@ -77,6 +79,6 @@ std::string GetMediaAuditResultTimelineRequest::getAccessKeyId()const
 void GetMediaAuditResultTimelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeBoardsRequest;
 
 DescribeBoardsRequest::DescribeBoardsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeBoards")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBoardsRequest::~DescribeBoardsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeBoardsRequest::getPageNum()const
 void DescribeBoardsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeBoardsRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeBoardsRequest::getPageSize()const
 void DescribeBoardsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeBoardsRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DescribeBoardsRequest::getOwnerId()const
 void DescribeBoardsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBoardsRequest::getAppId()const
@@ -66,6 +68,6 @@ std::string DescribeBoardsRequest::getAppId()const
 void DescribeBoardsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

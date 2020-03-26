@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAuthorizedApisRequest;
 
 DescribeAuthorizedApisRequest::DescribeAuthorizedApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeAuthorizedApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuthorizedApisRequest::~DescribeAuthorizedApisRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeAuthorizedApisRequest::getPageNumber()const
 void DescribeAuthorizedApisRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeAuthorizedApisRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeAuthorizedApisRequest::getAccessKeyId()const
 void DescribeAuthorizedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAuthorizedApisRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeAuthorizedApisRequest::getSecurityToken()const
 void DescribeAuthorizedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DescribeAuthorizedApisRequest::getAppId()const
@@ -66,7 +68,7 @@ long DescribeAuthorizedApisRequest::getAppId()const
 void DescribeAuthorizedApisRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 int DescribeAuthorizedApisRequest::getPageSize()const
@@ -77,6 +79,6 @@ int DescribeAuthorizedApisRequest::getPageSize()const
 void DescribeAuthorizedApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

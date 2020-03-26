@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterInstalledServiceRequest;
 
 ListClusterInstalledServiceRequest::ListClusterInstalledServiceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterInstalledService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterInstalledServiceRequest::~ListClusterInstalledServiceRequest()
 {}
@@ -33,7 +35,7 @@ long ListClusterInstalledServiceRequest::getResourceOwnerId()const
 void ListClusterInstalledServiceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListClusterInstalledServiceRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ListClusterInstalledServiceRequest::getClusterId()const
 void ListClusterInstalledServiceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 int ListClusterInstalledServiceRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int ListClusterInstalledServiceRequest::getPageNumber()const
 void ListClusterInstalledServiceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterInstalledServiceRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ListClusterInstalledServiceRequest::getAccessKeyId()const
 void ListClusterInstalledServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterInstalledServiceRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListClusterInstalledServiceRequest::getRegionId()const
 void ListClusterInstalledServiceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListClusterInstalledServiceRequest::getPageSize()const
@@ -88,6 +90,6 @@ int ListClusterInstalledServiceRequest::getPageSize()const
 void ListClusterInstalledServiceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

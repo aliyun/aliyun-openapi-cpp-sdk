@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::RecordLifecycleActionHeartbeatRequest;
 
 RecordLifecycleActionHeartbeatRequest::RecordLifecycleActionHeartbeatRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "RecordLifecycleActionHeartbeat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecordLifecycleActionHeartbeatRequest::~RecordLifecycleActionHeartbeatRequest()
 {}
@@ -33,7 +35,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleActionToken()cons
 void RecordLifecycleActionHeartbeatRequest::setLifecycleActionToken(const std::string& lifecycleActionToken)
 {
 	lifecycleActionToken_ = lifecycleActionToken;
-	setCoreParameter("LifecycleActionToken", lifecycleActionToken);
+	setParameter("LifecycleActionToken", lifecycleActionToken);
 }
 
 int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
@@ -44,7 +46,7 @@ int RecordLifecycleActionHeartbeatRequest::getHeartbeatTimeout()const
 void RecordLifecycleActionHeartbeatRequest::setHeartbeatTimeout(int heartbeatTimeout)
 {
 	heartbeatTimeout_ = heartbeatTimeout;
-	setCoreParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
+	setParameter("HeartbeatTimeout", std::to_string(heartbeatTimeout));
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getAccessKeyId()const
 void RecordLifecycleActionHeartbeatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getResourceOwnerAccount()cons
 void RecordLifecycleActionHeartbeatRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
@@ -77,7 +79,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getLifecycleHookId()const
 void RecordLifecycleActionHeartbeatRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setCoreParameter("LifecycleHookId", lifecycleHookId);
+	setParameter("LifecycleHookId", lifecycleHookId);
 }
 
 std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string RecordLifecycleActionHeartbeatRequest::getOwnerAccount()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long RecordLifecycleActionHeartbeatRequest::getOwnerId()const
 void RecordLifecycleActionHeartbeatRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

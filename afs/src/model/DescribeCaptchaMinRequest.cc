@@ -20,7 +20,9 @@ using AlibabaCloud::Afs::Model::DescribeCaptchaMinRequest;
 
 DescribeCaptchaMinRequest::DescribeCaptchaMinRequest() :
 	RpcServiceRequest("afs", "2018-01-12", "DescribeCaptchaMin")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCaptchaMinRequest::~DescribeCaptchaMinRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCaptchaMinRequest::getType()const
 void DescribeCaptchaMinRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeCaptchaMinRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCaptchaMinRequest::getSourceIp()const
 void DescribeCaptchaMinRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeCaptchaMinRequest::getConfigName()const
@@ -55,7 +57,7 @@ std::string DescribeCaptchaMinRequest::getConfigName()const
 void DescribeCaptchaMinRequest::setConfigName(const std::string& configName)
 {
 	configName_ = configName;
-	setCoreParameter("ConfigName", configName);
+	setParameter("ConfigName", configName);
 }
 
 std::string DescribeCaptchaMinRequest::getRefExtId()const
@@ -66,7 +68,7 @@ std::string DescribeCaptchaMinRequest::getRefExtId()const
 void DescribeCaptchaMinRequest::setRefExtId(const std::string& refExtId)
 {
 	refExtId_ = refExtId;
-	setCoreParameter("RefExtId", refExtId);
+	setParameter("RefExtId", refExtId);
 }
 
 std::string DescribeCaptchaMinRequest::getTime()const
@@ -77,6 +79,6 @@ std::string DescribeCaptchaMinRequest::getTime()const
 void DescribeCaptchaMinRequest::setTime(const std::string& time)
 {
 	time_ = time;
-	setCoreParameter("Time", time);
+	setParameter("Time", time);
 }
 

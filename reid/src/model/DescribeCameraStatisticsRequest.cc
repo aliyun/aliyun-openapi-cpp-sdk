@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeCameraStatisticsRequest;
 DescribeCameraStatisticsRequest::DescribeCameraStatisticsRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeCameraStatistics")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeCameraStatisticsRequest::~DescribeCameraStatisticsRequest()

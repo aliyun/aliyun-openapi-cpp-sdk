@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetImageUrlRequest;
 
 GetImageUrlRequest::GetImageUrlRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetImageUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetImageUrlRequest::~GetImageUrlRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetImageUrlRequest::getOriginUrls()const
 void GetImageUrlRequest::setOriginUrls(const std::string& originUrls)
 {
 	originUrls_ = originUrls;
-	setCoreParameter("OriginUrls", originUrls);
+	setBodyParameter("OriginUrls", originUrls);
 }
 
 std::string GetImageUrlRequest::getStoreId()const
@@ -44,7 +46,7 @@ std::string GetImageUrlRequest::getStoreId()const
 void GetImageUrlRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 
 std::string GetImageUrlRequest::getObjectKeys()const
@@ -55,6 +57,6 @@ std::string GetImageUrlRequest::getObjectKeys()const
 void GetImageUrlRequest::setObjectKeys(const std::string& objectKeys)
 {
 	objectKeys_ = objectKeys;
-	setCoreParameter("ObjectKeys", objectKeys);
+	setBodyParameter("ObjectKeys", objectKeys);
 }
 

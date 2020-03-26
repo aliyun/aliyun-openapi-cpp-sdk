@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowCategoryRequest;
 
 ModifyFlowCategoryRequest::ModifyFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowCategoryRequest::~ModifyFlowCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyFlowCategoryRequest::getParentId()const
 void ModifyFlowCategoryRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 std::string ModifyFlowCategoryRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ModifyFlowCategoryRequest::getRegionId()const
 void ModifyFlowCategoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowCategoryRequest::getName()const
@@ -55,7 +57,7 @@ std::string ModifyFlowCategoryRequest::getName()const
 void ModifyFlowCategoryRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifyFlowCategoryRequest::getId()const
@@ -66,7 +68,7 @@ std::string ModifyFlowCategoryRequest::getId()const
 void ModifyFlowCategoryRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string ModifyFlowCategoryRequest::getProjectId()const
@@ -77,6 +79,6 @@ std::string ModifyFlowCategoryRequest::getProjectId()const
 void ModifyFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

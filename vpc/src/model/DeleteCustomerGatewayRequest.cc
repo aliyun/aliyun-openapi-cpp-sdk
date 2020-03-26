@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteCustomerGatewayRequest;
 
 DeleteCustomerGatewayRequest::DeleteCustomerGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteCustomerGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCustomerGatewayRequest::~DeleteCustomerGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCustomerGatewayRequest::getResourceOwnerId()const
 void DeleteCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCustomerGatewayRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteCustomerGatewayRequest::getClientToken()const
 void DeleteCustomerGatewayRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteCustomerGatewayRequest::getCustomerGatewayId()const
@@ -55,7 +57,7 @@ std::string DeleteCustomerGatewayRequest::getCustomerGatewayId()const
 void DeleteCustomerGatewayRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setParameter("CustomerGatewayId", customerGatewayId);
 }
 
 std::string DeleteCustomerGatewayRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DeleteCustomerGatewayRequest::getRegionId()const
 void DeleteCustomerGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteCustomerGatewayRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteCustomerGatewayRequest::getResourceOwnerAccount()const
 void DeleteCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCustomerGatewayRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteCustomerGatewayRequest::getOwnerAccount()const
 void DeleteCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCustomerGatewayRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteCustomerGatewayRequest::getOwnerId()const
 void DeleteCustomerGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,21 +20,12 @@ using AlibabaCloud::LinkFace::Model::UnlinkFaceRequest;
 
 UnlinkFaceRequest::UnlinkFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "UnlinkFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnlinkFaceRequest::~UnlinkFaceRequest()
 {}
-
-std::string UnlinkFaceRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void UnlinkFaceRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
 
 std::string UnlinkFaceRequest::getUserId()const
 {
@@ -44,6 +35,39 @@ std::string UnlinkFaceRequest::getUserId()const
 void UnlinkFaceRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
+}
+
+std::string UnlinkFaceRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void UnlinkFaceRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string UnlinkFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UnlinkFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UnlinkFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UnlinkFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

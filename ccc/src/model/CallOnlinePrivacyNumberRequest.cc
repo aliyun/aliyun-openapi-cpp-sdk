@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CallOnlinePrivacyNumberRequest;
 
 CallOnlinePrivacyNumberRequest::CallOnlinePrivacyNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CallOnlinePrivacyNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CallOnlinePrivacyNumberRequest::~CallOnlinePrivacyNumberRequest()
 {}
@@ -33,7 +35,7 @@ std::string CallOnlinePrivacyNumberRequest::getAccessKeyId()const
 void CallOnlinePrivacyNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CallOnlinePrivacyNumberRequest::getTelA()const
@@ -44,7 +46,7 @@ std::string CallOnlinePrivacyNumberRequest::getTelA()const
 void CallOnlinePrivacyNumberRequest::setTelA(const std::string& telA)
 {
 	telA_ = telA;
-	setCoreParameter("TelA", telA);
+	setParameter("TelA", telA);
 }
 
 std::string CallOnlinePrivacyNumberRequest::getTelB()const
@@ -55,7 +57,7 @@ std::string CallOnlinePrivacyNumberRequest::getTelB()const
 void CallOnlinePrivacyNumberRequest::setTelB(const std::string& telB)
 {
 	telB_ = telB;
-	setCoreParameter("TelB", telB);
+	setParameter("TelB", telB);
 }
 
 std::string CallOnlinePrivacyNumberRequest::getInstanceId()const
@@ -66,6 +68,6 @@ std::string CallOnlinePrivacyNumberRequest::getInstanceId()const
 void CallOnlinePrivacyNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeSiteMonitorISPCityListRequest::getCity()const
 void DescribeSiteMonitorISPCityListRequest::setCity(const std::string& city)
 {
 	city_ = city;
-	setCoreParameter("City", city);
+	setParameter("City", city);
 }
 
 std::string DescribeSiteMonitorISPCityListRequest::getIsp()const
@@ -46,6 +46,6 @@ std::string DescribeSiteMonitorISPCityListRequest::getIsp()const
 void DescribeSiteMonitorISPCityListRequest::setIsp(const std::string& isp)
 {
 	isp_ = isp;
-	setCoreParameter("Isp", isp);
+	setParameter("Isp", isp);
 }
 

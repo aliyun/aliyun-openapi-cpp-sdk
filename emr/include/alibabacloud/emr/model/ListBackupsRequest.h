@@ -59,8 +59,6 @@ namespace AlibabaCloud
 				void setId(long id);
 				int getCurrentSize()const;
 				void setCurrentSize(int currentSize);
-				std::string getOrderField()const;
-				void setOrderField(const std::string& orderField);
 				std::vector<std::string> getBackupId()const;
 				void setBackupId(const std::vector<std::string>& backupId);
 				std::string getClusterId()const;
@@ -85,7 +83,6 @@ namespace AlibabaCloud
 				std::string serviceName_;
 				long id_;
 				int currentSize_;
-				std::string orderField_;
 				std::vector<std::string> backupId_;
 				std::string clusterId_;
 				std::string metadataType_;

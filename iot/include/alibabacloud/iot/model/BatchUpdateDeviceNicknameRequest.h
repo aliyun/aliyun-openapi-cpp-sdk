@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT BatchUpdateDeviceNicknameRequest : public RpcServiceRequest
 			{
+			public:
 				struct DeviceNicknameInfo
 				{
 					std::string iotId;

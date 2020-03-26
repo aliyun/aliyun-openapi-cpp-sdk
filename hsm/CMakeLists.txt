@@ -33,6 +33,8 @@ set(hsm_public_header_model
 	include/alibabacloud/hsm/model/DescribeRegionsResult.h
 	include/alibabacloud/hsm/model/ModifyInstanceRequest.h
 	include/alibabacloud/hsm/model/ModifyInstanceResult.h
+	include/alibabacloud/hsm/model/MoveResourceGroupRequest.h
+	include/alibabacloud/hsm/model/MoveResourceGroupResult.h
 	include/alibabacloud/hsm/model/ReleaseInstanceRequest.h
 	include/alibabacloud/hsm/model/ReleaseInstanceResult.h
 	include/alibabacloud/hsm/model/RenewInstanceRequest.h
@@ -52,6 +54,8 @@ set(hsm_src
 	src/model/DescribeRegionsResult.cc
 	src/model/ModifyInstanceRequest.cc
 	src/model/ModifyInstanceResult.cc
+	src/model/MoveResourceGroupRequest.cc
+	src/model/MoveResourceGroupResult.cc
 	src/model/ReleaseInstanceRequest.cc
 	src/model/ReleaseInstanceResult.cc
 	src/model/RenewInstanceRequest.cc

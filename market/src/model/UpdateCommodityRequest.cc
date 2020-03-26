@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::UpdateCommodityRequest;
 
 UpdateCommodityRequest::UpdateCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "UpdateCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCommodityRequest::~UpdateCommodityRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateCommodityRequest::getCommodityId()const
 void UpdateCommodityRequest::setCommodityId(const std::string& commodityId)
 {
 	commodityId_ = commodityId;
-	setCoreParameter("CommodityId", commodityId);
+	setParameter("CommodityId", commodityId);
 }
 
 std::string UpdateCommodityRequest::getContent()const
@@ -44,6 +46,6 @@ std::string UpdateCommodityRequest::getContent()const
 void UpdateCommodityRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 

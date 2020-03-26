@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterResourceRequest;
 
 GetClusterResourceRequest::GetClusterResourceRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/resource");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterResourceRequest::~GetClusterResourceRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetClusterResourceRequest::getRegionId()const
 void GetClusterResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetClusterResourceRequest::getClusterId()const
@@ -44,6 +47,6 @@ std::string GetClusterResourceRequest::getClusterId()const
 void GetClusterResourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

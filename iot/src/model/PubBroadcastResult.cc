@@ -45,6 +45,8 @@ void PubBroadcastResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["MessageId"].isNull())
+		messageId_ = std::stol(value["MessageId"].asString());
 
 }
 
@@ -61,5 +63,10 @@ std::string PubBroadcastResult::getCode()const
 bool PubBroadcastResult::getSuccess()const
 {
 	return success_;
+}
+
+long PubBroadcastResult::getMessageId()const
+{
+	return messageId_;
 }
 

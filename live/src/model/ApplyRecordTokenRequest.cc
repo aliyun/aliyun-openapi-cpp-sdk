@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ApplyRecordTokenRequest;
 
 ApplyRecordTokenRequest::ApplyRecordTokenRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ApplyRecordToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyRecordTokenRequest::~ApplyRecordTokenRequest()
 {}
@@ -33,7 +35,7 @@ long ApplyRecordTokenRequest::getOwnerId()const
 void ApplyRecordTokenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ApplyRecordTokenRequest::getAppId()const
@@ -44,6 +46,6 @@ std::string ApplyRecordTokenRequest::getAppId()const
 void ApplyRecordTokenRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

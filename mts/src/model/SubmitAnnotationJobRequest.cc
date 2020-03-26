@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitAnnotationJobRequest;
 
 SubmitAnnotationJobRequest::SubmitAnnotationJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitAnnotationJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitAnnotationJobRequest::~SubmitAnnotationJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitAnnotationJobRequest::getResourceOwnerId()const
 void SubmitAnnotationJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitAnnotationJobRequest::getAnnotationConfig()const
@@ -44,7 +46,7 @@ std::string SubmitAnnotationJobRequest::getAnnotationConfig()const
 void SubmitAnnotationJobRequest::setAnnotationConfig(const std::string& annotationConfig)
 {
 	annotationConfig_ = annotationConfig;
-	setCoreParameter("AnnotationConfig", annotationConfig);
+	setParameter("AnnotationConfig", annotationConfig);
 }
 
 std::string SubmitAnnotationJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitAnnotationJobRequest::getAccessKeyId()const
 void SubmitAnnotationJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitAnnotationJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitAnnotationJobRequest::getUserData()const
 void SubmitAnnotationJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitAnnotationJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitAnnotationJobRequest::getResourceOwnerAccount()const
 void SubmitAnnotationJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitAnnotationJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitAnnotationJobRequest::getOwnerAccount()const
 void SubmitAnnotationJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitAnnotationJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitAnnotationJobRequest::getOwnerId()const
 void SubmitAnnotationJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitAnnotationJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitAnnotationJobRequest::getPipelineId()const
 void SubmitAnnotationJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitAnnotationJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitAnnotationJobRequest::getInput()const
 void SubmitAnnotationJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeGroupedTagsRequest;
 
 DescribeGroupedTagsRequest::DescribeGroupedTagsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeGroupedTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGroupedTagsRequest::~DescribeGroupedTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeGroupedTagsRequest::getMachineTypes()const
 void DescribeGroupedTagsRequest::setMachineTypes(const std::string& machineTypes)
 {
 	machineTypes_ = machineTypes;
-	setCoreParameter("MachineTypes", machineTypes);
+	setParameter("MachineTypes", machineTypes);
 }
 
 std::string DescribeGroupedTagsRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeGroupedTagsRequest::getSourceIp()const
 void DescribeGroupedTagsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

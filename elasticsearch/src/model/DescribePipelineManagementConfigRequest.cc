@@ -22,7 +22,7 @@ DescribePipelineManagementConfigRequest::DescribePipelineManagementConfigRequest
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/logstashes/[InstanceId]//pipeline-management-config");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 DescribePipelineManagementConfigRequest::~DescribePipelineManagementConfigRequest()

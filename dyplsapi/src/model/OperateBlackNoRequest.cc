@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::OperateBlackNoRequest;
 OperateBlackNoRequest::OperateBlackNoRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "OperateBlackNo")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OperateBlackNoRequest::~OperateBlackNoRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::CreateAxgGroupRequest;
 CreateAxgGroupRequest::CreateAxgGroupRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "CreateAxgGroup")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CreateAxgGroupRequest::~CreateAxgGroupRequest()

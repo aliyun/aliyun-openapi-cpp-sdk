@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListEmrAvailableResourceRequest;
 
 ListEmrAvailableResourceRequest::ListEmrAvailableResourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListEmrAvailableResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEmrAvailableResourceRequest::~ListEmrAvailableResourceRequest()
 {}
@@ -33,7 +35,7 @@ long ListEmrAvailableResourceRequest::getResourceOwnerId()const
 void ListEmrAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListEmrAvailableResourceRequest::getDepositType()const
@@ -44,7 +46,7 @@ std::string ListEmrAvailableResourceRequest::getDepositType()const
 void ListEmrAvailableResourceRequest::setDepositType(const std::string& depositType)
 {
 	depositType_ = depositType;
-	setCoreParameter("DepositType", depositType);
+	setParameter("DepositType", depositType);
 }
 
 std::string ListEmrAvailableResourceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListEmrAvailableResourceRequest::getAccessKeyId()const
 void ListEmrAvailableResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListEmrAvailableResourceRequest::getSystemDiskType()const
@@ -66,7 +68,7 @@ std::string ListEmrAvailableResourceRequest::getSystemDiskType()const
 void ListEmrAvailableResourceRequest::setSystemDiskType(const std::string& systemDiskType)
 {
 	systemDiskType_ = systemDiskType;
-	setCoreParameter("SystemDiskType", systemDiskType);
+	setParameter("SystemDiskType", systemDiskType);
 }
 
 std::string ListEmrAvailableResourceRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListEmrAvailableResourceRequest::getRegionId()const
 void ListEmrAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListEmrAvailableResourceRequest::getInstanceType()const
@@ -88,7 +90,7 @@ std::string ListEmrAvailableResourceRequest::getInstanceType()const
 void ListEmrAvailableResourceRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string ListEmrAvailableResourceRequest::getInstanceChargeType()const
@@ -99,7 +101,7 @@ std::string ListEmrAvailableResourceRequest::getInstanceChargeType()const
 void ListEmrAvailableResourceRequest::setInstanceChargeType(const std::string& instanceChargeType)
 {
 	instanceChargeType_ = instanceChargeType;
-	setCoreParameter("InstanceChargeType", instanceChargeType);
+	setParameter("InstanceChargeType", instanceChargeType);
 }
 
 std::string ListEmrAvailableResourceRequest::getClusterId()const
@@ -110,7 +112,7 @@ std::string ListEmrAvailableResourceRequest::getClusterId()const
 void ListEmrAvailableResourceRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListEmrAvailableResourceRequest::getDestinationResource()const
@@ -121,7 +123,7 @@ std::string ListEmrAvailableResourceRequest::getDestinationResource()const
 void ListEmrAvailableResourceRequest::setDestinationResource(const std::string& destinationResource)
 {
 	destinationResource_ = destinationResource;
-	setCoreParameter("DestinationResource", destinationResource);
+	setParameter("DestinationResource", destinationResource);
 }
 
 std::string ListEmrAvailableResourceRequest::getClusterType()const
@@ -132,7 +134,7 @@ std::string ListEmrAvailableResourceRequest::getClusterType()const
 void ListEmrAvailableResourceRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 std::string ListEmrAvailableResourceRequest::getSpotStrategy()const
@@ -143,7 +145,7 @@ std::string ListEmrAvailableResourceRequest::getSpotStrategy()const
 void ListEmrAvailableResourceRequest::setSpotStrategy(const std::string& spotStrategy)
 {
 	spotStrategy_ = spotStrategy;
-	setCoreParameter("SpotStrategy", spotStrategy);
+	setParameter("SpotStrategy", spotStrategy);
 }
 
 std::string ListEmrAvailableResourceRequest::getNetType()const
@@ -154,7 +156,7 @@ std::string ListEmrAvailableResourceRequest::getNetType()const
 void ListEmrAvailableResourceRequest::setNetType(const std::string& netType)
 {
 	netType_ = netType;
-	setCoreParameter("NetType", netType);
+	setParameter("NetType", netType);
 }
 
 std::string ListEmrAvailableResourceRequest::getZoneId()const
@@ -165,7 +167,7 @@ std::string ListEmrAvailableResourceRequest::getZoneId()const
 void ListEmrAvailableResourceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string ListEmrAvailableResourceRequest::getDataDiskType()const
@@ -176,6 +178,6 @@ std::string ListEmrAvailableResourceRequest::getDataDiskType()const
 void ListEmrAvailableResourceRequest::setDataDiskType(const std::string& dataDiskType)
 {
 	dataDiskType_ = dataDiskType;
-	setCoreParameter("DataDiskType", dataDiskType);
+	setParameter("DataDiskType", dataDiskType);
 }
 

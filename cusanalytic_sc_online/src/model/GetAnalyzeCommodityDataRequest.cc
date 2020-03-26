@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetAnalyzeCommodityDataRequest
 
 GetAnalyzeCommodityDataRequest::GetAnalyzeCommodityDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetAnalyzeCommodityData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAnalyzeCommodityDataRequest::~GetAnalyzeCommodityDataRequest()
 {}
@@ -33,7 +35,7 @@ long GetAnalyzeCommodityDataRequest::getStoreId()const
 void GetAnalyzeCommodityDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string GetAnalyzeCommodityDataRequest::getStartDate()const
@@ -44,7 +46,7 @@ std::string GetAnalyzeCommodityDataRequest::getStartDate()const
 void GetAnalyzeCommodityDataRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setBodyParameter("StartDate", startDate);
 }
 
 long GetAnalyzeCommodityDataRequest::getEndUserCount()const
@@ -55,7 +57,7 @@ long GetAnalyzeCommodityDataRequest::getEndUserCount()const
 void GetAnalyzeCommodityDataRequest::setEndUserCount(long endUserCount)
 {
 	endUserCount_ = endUserCount;
-	setCoreParameter("EndUserCount", std::to_string(endUserCount));
+	setBodyParameter("EndUserCount", std::to_string(endUserCount));
 }
 
 int GetAnalyzeCommodityDataRequest::getPageSize()const
@@ -66,7 +68,7 @@ int GetAnalyzeCommodityDataRequest::getPageSize()const
 void GetAnalyzeCommodityDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetAnalyzeCommodityDataRequest::getPageIndex()const
@@ -77,7 +79,7 @@ int GetAnalyzeCommodityDataRequest::getPageIndex()const
 void GetAnalyzeCommodityDataRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setBodyParameter("PageIndex", std::to_string(pageIndex));
 }
 
 long GetAnalyzeCommodityDataRequest::getStayPeriod()const
@@ -88,7 +90,7 @@ long GetAnalyzeCommodityDataRequest::getStayPeriod()const
 void GetAnalyzeCommodityDataRequest::setStayPeriod(long stayPeriod)
 {
 	stayPeriod_ = stayPeriod;
-	setCoreParameter("StayPeriod", std::to_string(stayPeriod));
+	setBodyParameter("StayPeriod", std::to_string(stayPeriod));
 }
 
 long GetAnalyzeCommodityDataRequest::getStartUserCount()const
@@ -99,7 +101,7 @@ long GetAnalyzeCommodityDataRequest::getStartUserCount()const
 void GetAnalyzeCommodityDataRequest::setStartUserCount(long startUserCount)
 {
 	startUserCount_ = startUserCount;
-	setCoreParameter("StartUserCount", std::to_string(startUserCount));
+	setBodyParameter("StartUserCount", std::to_string(startUserCount));
 }
 
 long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
@@ -110,7 +112,7 @@ long GetAnalyzeCommodityDataRequest::getMinSupportCount()const
 void GetAnalyzeCommodityDataRequest::setMinSupportCount(long minSupportCount)
 {
 	minSupportCount_ = minSupportCount;
-	setCoreParameter("MinSupportCount", std::to_string(minSupportCount));
+	setBodyParameter("MinSupportCount", std::to_string(minSupportCount));
 }
 
 std::string GetAnalyzeCommodityDataRequest::getEndDate()const
@@ -121,6 +123,6 @@ std::string GetAnalyzeCommodityDataRequest::getEndDate()const
 void GetAnalyzeCommodityDataRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setBodyParameter("EndDate", endDate);
 }
 

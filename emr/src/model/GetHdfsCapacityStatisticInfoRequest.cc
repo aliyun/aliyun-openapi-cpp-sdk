@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetHdfsCapacityStatisticInfoRequest;
 
 GetHdfsCapacityStatisticInfoRequest::GetHdfsCapacityStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetHdfsCapacityStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHdfsCapacityStatisticInfoRequest::~GetHdfsCapacityStatisticInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetHdfsCapacityStatisticInfoRequest::getFromDatetime()const
 void GetHdfsCapacityStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setParameter("FromDatetime", fromDatetime);
 }
 
 long GetHdfsCapacityStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long GetHdfsCapacityStatisticInfoRequest::getResourceOwnerId()const
 void GetHdfsCapacityStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetHdfsCapacityStatisticInfoRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string GetHdfsCapacityStatisticInfoRequest::getClusterId()const
 void GetHdfsCapacityStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetHdfsCapacityStatisticInfoRequest::getToDatetime()const
@@ -66,7 +68,7 @@ std::string GetHdfsCapacityStatisticInfoRequest::getToDatetime()const
 void GetHdfsCapacityStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setParameter("ToDatetime", toDatetime);
 }
 
 std::string GetHdfsCapacityStatisticInfoRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string GetHdfsCapacityStatisticInfoRequest::getAccessKeyId()const
 void GetHdfsCapacityStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetHdfsCapacityStatisticInfoRequest::getRegionId()const
@@ -88,6 +90,6 @@ std::string GetHdfsCapacityStatisticInfoRequest::getRegionId()const
 void GetHdfsCapacityStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

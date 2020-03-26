@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifySecurityIpsRequest;
 
 ModifySecurityIpsRequest::ModifySecurityIpsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifySecurityIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityIpsRequest::~ModifySecurityIpsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceIPArrayName()const
 void ModifySecurityIpsRequest::setDBInstanceIPArrayName(const std::string& dBInstanceIPArrayName)
 {
 	dBInstanceIPArrayName_ = dBInstanceIPArrayName;
-	setCoreParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
+	setParameter("DBInstanceIPArrayName", dBInstanceIPArrayName);
 }
 
 std::string ModifySecurityIpsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifySecurityIpsRequest::getAccessKeyId()const
 void ModifySecurityIpsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceId()const
@@ -55,7 +57,7 @@ std::string ModifySecurityIpsRequest::getDBInstanceId()const
 void ModifySecurityIpsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifySecurityIpsRequest::getSecurityIPList()const
@@ -66,7 +68,7 @@ std::string ModifySecurityIpsRequest::getSecurityIPList()const
 void ModifySecurityIpsRequest::setSecurityIPList(const std::string& securityIPList)
 {
 	securityIPList_ = securityIPList;
-	setCoreParameter("SecurityIPList", securityIPList);
+	setParameter("SecurityIPList", securityIPList);
 }
 
 std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
@@ -77,6 +79,6 @@ std::string ModifySecurityIpsRequest::getDBInstanceIPArrayAttribute()const
 void ModifySecurityIpsRequest::setDBInstanceIPArrayAttribute(const std::string& dBInstanceIPArrayAttribute)
 {
 	dBInstanceIPArrayAttribute_ = dBInstanceIPArrayAttribute;
-	setCoreParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
+	setParameter("DBInstanceIPArrayAttribute", dBInstanceIPArrayAttribute);
 }
 

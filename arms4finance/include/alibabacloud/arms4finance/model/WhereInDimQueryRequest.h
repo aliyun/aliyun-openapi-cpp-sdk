@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ARMS4FINANCE_EXPORT WhereInDimQueryRequest : public RpcServiceRequest
 			{
+			public:
 				struct Dimensions
 				{
 					std::string value;

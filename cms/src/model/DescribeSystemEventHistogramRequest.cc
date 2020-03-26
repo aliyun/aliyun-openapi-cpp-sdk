@@ -35,7 +35,7 @@ std::string DescribeSystemEventHistogramRequest::getStartTime()const
 void DescribeSystemEventHistogramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSystemEventHistogramRequest::getSearchKeywords()const
@@ -46,7 +46,7 @@ std::string DescribeSystemEventHistogramRequest::getSearchKeywords()const
 void DescribeSystemEventHistogramRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 int DescribeSystemEventHistogramRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeSystemEventHistogramRequest::getPageNumber()const
 void DescribeSystemEventHistogramRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeSystemEventHistogramRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeSystemEventHistogramRequest::getPageSize()const
 void DescribeSystemEventHistogramRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSystemEventHistogramRequest::getProduct()const
@@ -79,7 +79,7 @@ std::string DescribeSystemEventHistogramRequest::getProduct()const
 void DescribeSystemEventHistogramRequest::setProduct(const std::string& product)
 {
 	product_ = product;
-	setCoreParameter("Product", product);
+	setParameter("Product", product);
 }
 
 std::string DescribeSystemEventHistogramRequest::getLevel()const
@@ -90,7 +90,7 @@ std::string DescribeSystemEventHistogramRequest::getLevel()const
 void DescribeSystemEventHistogramRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeSystemEventHistogramRequest::getGroupId()const
@@ -101,7 +101,7 @@ std::string DescribeSystemEventHistogramRequest::getGroupId()const
 void DescribeSystemEventHistogramRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeSystemEventHistogramRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeSystemEventHistogramRequest::getEndTime()const
 void DescribeSystemEventHistogramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSystemEventHistogramRequest::getName()const
@@ -123,7 +123,7 @@ std::string DescribeSystemEventHistogramRequest::getName()const
 void DescribeSystemEventHistogramRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeSystemEventHistogramRequest::getEventType()const
@@ -134,7 +134,7 @@ std::string DescribeSystemEventHistogramRequest::getEventType()const
 void DescribeSystemEventHistogramRequest::setEventType(const std::string& eventType)
 {
 	eventType_ = eventType;
-	setCoreParameter("EventType", eventType);
+	setParameter("EventType", eventType);
 }
 
 std::string DescribeSystemEventHistogramRequest::getStatus()const
@@ -145,6 +145,6 @@ std::string DescribeSystemEventHistogramRequest::getStatus()const
 void DescribeSystemEventHistogramRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

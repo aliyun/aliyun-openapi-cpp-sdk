@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::CancelKeyDeletionRequest;
 CancelKeyDeletionRequest::CancelKeyDeletionRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CancelKeyDeletion")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CancelKeyDeletionRequest::~CancelKeyDeletionRequest()

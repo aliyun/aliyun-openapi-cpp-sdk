@@ -35,7 +35,7 @@ long DeleteCostUnitRequest::getUnitId()const
 void DeleteCostUnitRequest::setUnitId(long unitId)
 {
 	unitId_ = unitId;
-	setCoreParameter("UnitId", std::to_string(unitId));
+	setParameter("UnitId", std::to_string(unitId));
 }
 
 long DeleteCostUnitRequest::getOwnerUid()const
@@ -46,6 +46,6 @@ long DeleteCostUnitRequest::getOwnerUid()const
 void DeleteCostUnitRequest::setOwnerUid(long ownerUid)
 {
 	ownerUid_ = ownerUid;
-	setCoreParameter("OwnerUid", std::to_string(ownerUid));
+	setParameter("OwnerUid", std::to_string(ownerUid));
 }
 

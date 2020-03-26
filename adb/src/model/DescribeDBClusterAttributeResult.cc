@@ -91,6 +91,14 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			itemsObject.commodityCode = valueItemsDBCluster["CommodityCode"].asString();
 		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
 			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
+		if(!valueItemsDBCluster["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBCluster["ConnectionString"].asString();
+		if(!valueItemsDBCluster["Port"].isNull())
+			itemsObject.port = std::stoi(valueItemsDBCluster["Port"].asString());
+		if(!valueItemsDBCluster["RdsInstanceId"].isNull())
+			itemsObject.rdsInstanceId = valueItemsDBCluster["RdsInstanceId"].asString();
+		if(!valueItemsDBCluster["DtsJobId"].isNull())
+			itemsObject.dtsJobId = valueItemsDBCluster["DtsJobId"].asString();
 		auto allTagsNode = allItemsNode["Tags"]["Tag"];
 		for (auto allItemsNodeTagsTag : allTagsNode)
 		{

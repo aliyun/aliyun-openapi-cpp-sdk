@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateSmartAccessGatewaySoftwareRequest;
 
 CreateSmartAccessGatewaySoftwareRequest::CreateSmartAccessGatewaySoftwareRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateSmartAccessGatewaySoftware")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSmartAccessGatewaySoftwareRequest::~CreateSmartAccessGatewaySoftwareRequest()
 {}
@@ -33,7 +35,7 @@ long CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerId()const
 void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getRegionId()const
 void CreateSmartAccessGatewaySoftwareRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
@@ -55,7 +57,7 @@ int CreateSmartAccessGatewaySoftwareRequest::getUserCount()const
 void CreateSmartAccessGatewaySoftwareRequest::setUserCount(int userCount)
 {
 	userCount_ = userCount;
-	setCoreParameter("UserCount", std::to_string(userCount));
+	setParameter("UserCount", std::to_string(userCount));
 }
 
 int CreateSmartAccessGatewaySoftwareRequest::getPeriod()const
@@ -66,7 +68,7 @@ int CreateSmartAccessGatewaySoftwareRequest::getPeriod()const
 void CreateSmartAccessGatewaySoftwareRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 bool CreateSmartAccessGatewaySoftwareRequest::getAutoPay()const
@@ -77,7 +79,7 @@ bool CreateSmartAccessGatewaySoftwareRequest::getAutoPay()const
 void CreateSmartAccessGatewaySoftwareRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getResourceOwnerAccount()co
 void CreateSmartAccessGatewaySoftwareRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getOwnerAccount()const
 void CreateSmartAccessGatewaySoftwareRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long CreateSmartAccessGatewaySoftwareRequest::getOwnerId()const
 void CreateSmartAccessGatewaySoftwareRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateSmartAccessGatewaySoftwareRequest::getChargeType()const
@@ -121,7 +123,7 @@ std::string CreateSmartAccessGatewaySoftwareRequest::getChargeType()const
 void CreateSmartAccessGatewaySoftwareRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 
 long CreateSmartAccessGatewaySoftwareRequest::getDataPlan()const
@@ -132,6 +134,6 @@ long CreateSmartAccessGatewaySoftwareRequest::getDataPlan()const
 void CreateSmartAccessGatewaySoftwareRequest::setDataPlan(long dataPlan)
 {
 	dataPlan_ = dataPlan;
-	setCoreParameter("DataPlan", std::to_string(dataPlan));
+	setParameter("DataPlan", std::to_string(dataPlan));
 }
 

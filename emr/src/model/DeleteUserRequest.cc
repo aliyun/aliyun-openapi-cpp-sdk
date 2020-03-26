@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteUserRequest;
 
 DeleteUserRequest::DeleteUserRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteUserRequest::~DeleteUserRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteUserRequest::getResourceOwnerId()const
 void DeleteUserRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteUserRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DeleteUserRequest::getClusterId()const
 void DeleteUserRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteUserRequest::getType()const
@@ -55,7 +57,7 @@ std::string DeleteUserRequest::getType()const
 void DeleteUserRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DeleteUserRequest::getUserId()const
@@ -66,7 +68,7 @@ std::string DeleteUserRequest::getUserId()const
 void DeleteUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string DeleteUserRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeleteUserRequest::getAccessKeyId()const
 void DeleteUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteUserRequest::getRegionId()const
@@ -88,6 +90,6 @@ std::string DeleteUserRequest::getRegionId()const
 void DeleteUserRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ActivatePhotosRequest;
 
 ActivatePhotosRequest::ActivatePhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ActivatePhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ActivatePhotosRequest::~ActivatePhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string ActivatePhotosRequest::getLibraryId()const
 void ActivatePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::vector<long> ActivatePhotosRequest::getPhotoId()const
@@ -44,8 +46,9 @@ std::vector<long> ActivatePhotosRequest::getPhotoId()const
 void ActivatePhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string ActivatePhotosRequest::getStoreName()const
@@ -56,6 +59,6 @@ std::string ActivatePhotosRequest::getStoreName()const
 void ActivatePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

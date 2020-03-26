@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SearchEditingProjectRequest;
 
 SearchEditingProjectRequest::SearchEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SearchEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchEditingProjectRequest::~SearchEditingProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchEditingProjectRequest::getResourceOwnerId()const
 void SearchEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SearchEditingProjectRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string SearchEditingProjectRequest::getStartTime()const
 void SearchEditingProjectRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string SearchEditingProjectRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string SearchEditingProjectRequest::getTitle()const
 void SearchEditingProjectRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string SearchEditingProjectRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SearchEditingProjectRequest::getAccessKeyId()const
 void SearchEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int SearchEditingProjectRequest::getPageSize()const
@@ -77,7 +79,7 @@ int SearchEditingProjectRequest::getPageSize()const
 void SearchEditingProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchEditingProjectRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SearchEditingProjectRequest::getResourceOwnerAccount()const
 void SearchEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchEditingProjectRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SearchEditingProjectRequest::getOwnerAccount()const
 void SearchEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SearchEditingProjectRequest::getEndTime()const
@@ -110,7 +112,7 @@ std::string SearchEditingProjectRequest::getEndTime()const
 void SearchEditingProjectRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string SearchEditingProjectRequest::getOwnerId()const
@@ -121,7 +123,7 @@ std::string SearchEditingProjectRequest::getOwnerId()const
 void SearchEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 int SearchEditingProjectRequest::getPageNo()const
@@ -132,7 +134,7 @@ int SearchEditingProjectRequest::getPageNo()const
 void SearchEditingProjectRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string SearchEditingProjectRequest::getSortBy()const
@@ -143,7 +145,7 @@ std::string SearchEditingProjectRequest::getSortBy()const
 void SearchEditingProjectRequest::setSortBy(const std::string& sortBy)
 {
 	sortBy_ = sortBy;
-	setCoreParameter("SortBy", sortBy);
+	setParameter("SortBy", sortBy);
 }
 
 std::string SearchEditingProjectRequest::getStatus()const
@@ -154,6 +156,6 @@ std::string SearchEditingProjectRequest::getStatus()const
 void SearchEditingProjectRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

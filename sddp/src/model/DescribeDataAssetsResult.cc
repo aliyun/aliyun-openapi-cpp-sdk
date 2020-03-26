@@ -44,7 +44,7 @@ void DescribeDataAssetsResult::parse(const std::string &payload)
 	{
 		Asset itemsObject;
 		if(!valueItemsAsset["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsAsset["Id"].asString());
+			itemsObject.id = valueItemsAsset["Id"].asString();
 		if(!valueItemsAsset["Name"].isNull())
 			itemsObject.name = valueItemsAsset["Name"].asString();
 		if(!valueItemsAsset["Owner"].isNull())

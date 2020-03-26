@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetAlbumsByNamesRequest;
 
 GetAlbumsByNamesRequest::GetAlbumsByNamesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetAlbumsByNames")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAlbumsByNamesRequest::~GetAlbumsByNamesRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAlbumsByNamesRequest::getLibraryId()const
 void GetAlbumsByNamesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string GetAlbumsByNamesRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string GetAlbumsByNamesRequest::getStoreName()const
 void GetAlbumsByNamesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::vector<std::string> GetAlbumsByNamesRequest::getName()const
@@ -55,7 +57,8 @@ std::vector<std::string> GetAlbumsByNamesRequest::getName()const
 void GetAlbumsByNamesRequest::setName(const std::vector<std::string>& name)
 {
 	name_ = name;
-	for(int i = 0; i!= name.size(); i++)
-		setCoreParameter("Name."+ std::to_string(i), name.at(i));
+	for(int dep1 = 0; dep1!= name.size(); dep1++) {
+		setParameter("Name."+ std::to_string(dep1), name.at(dep1));
+	}
 }
 

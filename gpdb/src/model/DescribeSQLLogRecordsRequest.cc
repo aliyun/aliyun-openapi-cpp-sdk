@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSQLLogRecordsRequest;
 
 DescribeSQLLogRecordsRequest::DescribeSQLLogRecordsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSQLLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLLogRecordsRequest::~DescribeSQLLogRecordsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSQLLogRecordsRequest::getStartTime()const
 void DescribeSQLLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSQLLogRecordsRequest::getQueryKeywords()const
@@ -44,7 +46,7 @@ std::string DescribeSQLLogRecordsRequest::getQueryKeywords()const
 void DescribeSQLLogRecordsRequest::setQueryKeywords(const std::string& queryKeywords)
 {
 	queryKeywords_ = queryKeywords;
-	setCoreParameter("QueryKeywords", queryKeywords);
+	setParameter("QueryKeywords", queryKeywords);
 }
 
 int DescribeSQLLogRecordsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeSQLLogRecordsRequest::getPageNumber()const
 void DescribeSQLLogRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSQLLogRecordsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeSQLLogRecordsRequest::getAccessKeyId()const
 void DescribeSQLLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSQLLogRecordsRequest::getDatabase()const
@@ -77,7 +79,7 @@ std::string DescribeSQLLogRecordsRequest::getDatabase()const
 void DescribeSQLLogRecordsRequest::setDatabase(const std::string& database)
 {
 	database_ = database;
-	setCoreParameter("Database", database);
+	setParameter("Database", database);
 }
 
 int DescribeSQLLogRecordsRequest::getPageSize()const
@@ -88,7 +90,7 @@ int DescribeSQLLogRecordsRequest::getPageSize()const
 void DescribeSQLLogRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSQLLogRecordsRequest::getDBInstanceId()const
@@ -99,7 +101,7 @@ std::string DescribeSQLLogRecordsRequest::getDBInstanceId()const
 void DescribeSQLLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSQLLogRecordsRequest::getEndTime()const
@@ -110,7 +112,7 @@ std::string DescribeSQLLogRecordsRequest::getEndTime()const
 void DescribeSQLLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSQLLogRecordsRequest::getForm()const
@@ -121,7 +123,7 @@ std::string DescribeSQLLogRecordsRequest::getForm()const
 void DescribeSQLLogRecordsRequest::setForm(const std::string& form)
 {
 	form_ = form;
-	setCoreParameter("Form", form);
+	setParameter("Form", form);
 }
 
 std::string DescribeSQLLogRecordsRequest::getUser()const
@@ -132,6 +134,6 @@ std::string DescribeSQLLogRecordsRequest::getUser()const
 void DescribeSQLLogRecordsRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 

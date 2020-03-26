@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::CreateAccessControlListRequest;
 
 CreateAccessControlListRequest::CreateAccessControlListRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "CreateAccessControlList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccessControlListRequest::~CreateAccessControlListRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAccessControlListRequest::getAccess_key_id()const
 void CreateAccessControlListRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long CreateAccessControlListRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateAccessControlListRequest::getResourceOwnerId()const
 void CreateAccessControlListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAccessControlListRequest::getAclName()const
@@ -55,7 +57,7 @@ std::string CreateAccessControlListRequest::getAclName()const
 void CreateAccessControlListRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setCoreParameter("AclName", aclName);
+	setParameter("AclName", aclName);
 }
 
 std::string CreateAccessControlListRequest::getAddressIPVersion()const
@@ -66,7 +68,7 @@ std::string CreateAccessControlListRequest::getAddressIPVersion()const
 void CreateAccessControlListRequest::setAddressIPVersion(const std::string& addressIPVersion)
 {
 	addressIPVersion_ = addressIPVersion;
-	setCoreParameter("AddressIPVersion", addressIPVersion);
+	setParameter("AddressIPVersion", addressIPVersion);
 }
 
 std::string CreateAccessControlListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string CreateAccessControlListRequest::getAccessKeyId()const
 void CreateAccessControlListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAccessControlListRequest::getResourceGroupId()const
@@ -88,7 +90,7 @@ std::string CreateAccessControlListRequest::getResourceGroupId()const
 void CreateAccessControlListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateAccessControlListRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string CreateAccessControlListRequest::getRegionId()const
 void CreateAccessControlListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateAccessControlListRequest::getResourceOwnerAccount()const
 void CreateAccessControlListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateAccessControlListRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateAccessControlListRequest::getOwnerAccount()const
 void CreateAccessControlListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateAccessControlListRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long CreateAccessControlListRequest::getOwnerId()const
 void CreateAccessControlListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAccessControlListRequest::getTags()const
@@ -143,6 +145,6 @@ std::string CreateAccessControlListRequest::getTags()const
 void CreateAccessControlListRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

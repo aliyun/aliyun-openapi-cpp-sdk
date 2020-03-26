@@ -82,3 +82,14 @@ void CreateInstanceRequest::setNluServiceType(const std::string& nluServiceType)
 	setParameter("NluServiceType", nluServiceType);
 }
 
+std::string CreateInstanceRequest::getChatbotName()const
+{
+	return chatbotName_;
+}
+
+void CreateInstanceRequest::setChatbotName(const std::string& chatbotName)
+{
+	chatbotName_ = chatbotName;
+	setParameter("ChatbotName", chatbotName);
+}
+

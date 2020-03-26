@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::UnroutePrivateZoneInCenToVpcRequest;
 
 UnroutePrivateZoneInCenToVpcRequest::UnroutePrivateZoneInCenToVpcRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnroutePrivateZoneInCenToVpcRequest::~UnroutePrivateZoneInCenToVpcRequest()
 {}
@@ -33,7 +35,7 @@ long UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerId()const
 void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getCenId()const
 void UnroutePrivateZoneInCenToVpcRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
@@ -55,7 +57,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
 void UnroutePrivateZoneInCenToVpcRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setParameter("AccessRegionId", accessRegionId);
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
 void UnroutePrivateZoneInCenToVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UnroutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
 void UnroutePrivateZoneInCenToVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnroutePrivateZoneInCenToVpcRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long UnroutePrivateZoneInCenToVpcRequest::getOwnerId()const
 void UnroutePrivateZoneInCenToVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

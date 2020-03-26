@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::EnableVpcClassicLinkRequest;
 
 EnableVpcClassicLinkRequest::EnableVpcClassicLinkRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "EnableVpcClassicLink")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnableVpcClassicLinkRequest::~EnableVpcClassicLinkRequest()
 {}
@@ -33,7 +35,7 @@ long EnableVpcClassicLinkRequest::getResourceOwnerId()const
 void EnableVpcClassicLinkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string EnableVpcClassicLinkRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string EnableVpcClassicLinkRequest::getClientToken()const
 void EnableVpcClassicLinkRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string EnableVpcClassicLinkRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string EnableVpcClassicLinkRequest::getRegionId()const
 void EnableVpcClassicLinkRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string EnableVpcClassicLinkRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string EnableVpcClassicLinkRequest::getResourceOwnerAccount()const
 void EnableVpcClassicLinkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string EnableVpcClassicLinkRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string EnableVpcClassicLinkRequest::getOwnerAccount()const
 void EnableVpcClassicLinkRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long EnableVpcClassicLinkRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long EnableVpcClassicLinkRequest::getOwnerId()const
 void EnableVpcClassicLinkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EnableVpcClassicLinkRequest::getVpcId()const
@@ -99,6 +101,6 @@ std::string EnableVpcClassicLinkRequest::getVpcId()const
 void EnableVpcClassicLinkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

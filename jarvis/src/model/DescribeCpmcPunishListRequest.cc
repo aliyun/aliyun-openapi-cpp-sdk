@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCpmcPunishListRequest;
 
 DescribeCpmcPunishListRequest::DescribeCpmcPunishListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCpmcPunishList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCpmcPunishListRequest::~DescribeCpmcPunishListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCpmcPunishListRequest::getSrcIP()const
 void DescribeCpmcPunishListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishType()const
@@ -44,7 +46,7 @@ std::string DescribeCpmcPunishListRequest::getPunishType()const
 void DescribeCpmcPunishListRequest::setPunishType(const std::string& punishType)
 {
 	punishType_ = punishType;
-	setCoreParameter("PunishType", punishType);
+	setParameter("PunishType", punishType);
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string DescribeCpmcPunishListRequest::getSourceCode()const
 void DescribeCpmcPunishListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeCpmcPunishListRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeCpmcPunishListRequest::getSourceIp()const
 void DescribeCpmcPunishListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeCpmcPunishListRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCpmcPunishListRequest::getPageSize()const
 void DescribeCpmcPunishListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCpmcPunishListRequest::getPunishStatus()const
@@ -88,7 +90,7 @@ std::string DescribeCpmcPunishListRequest::getPunishStatus()const
 void DescribeCpmcPunishListRequest::setPunishStatus(const std::string& punishStatus)
 {
 	punishStatus_ = punishStatus;
-	setCoreParameter("PunishStatus", punishStatus);
+	setParameter("PunishStatus", punishStatus);
 }
 
 std::string DescribeCpmcPunishListRequest::getLang()const
@@ -99,7 +101,7 @@ std::string DescribeCpmcPunishListRequest::getLang()const
 void DescribeCpmcPunishListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeCpmcPunishListRequest::getCurrentPage()const
@@ -110,6 +112,17 @@ int DescribeCpmcPunishListRequest::getCurrentPage()const
 void DescribeCpmcPunishListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeCpmcPunishListRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeCpmcPunishListRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

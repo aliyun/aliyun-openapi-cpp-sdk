@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListAllMediaBucketRequest;
 
 ListAllMediaBucketRequest::ListAllMediaBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListAllMediaBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAllMediaBucketRequest::~ListAllMediaBucketRequest()
 {}
@@ -33,7 +35,7 @@ long ListAllMediaBucketRequest::getResourceOwnerId()const
 void ListAllMediaBucketRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListAllMediaBucketRequest::getNextPageToken()const
@@ -44,7 +46,7 @@ std::string ListAllMediaBucketRequest::getNextPageToken()const
 void ListAllMediaBucketRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string ListAllMediaBucketRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListAllMediaBucketRequest::getAccessKeyId()const
 void ListAllMediaBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAllMediaBucketRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ListAllMediaBucketRequest::getResourceOwnerAccount()const
 void ListAllMediaBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAllMediaBucketRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ListAllMediaBucketRequest::getOwnerAccount()const
 void ListAllMediaBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int ListAllMediaBucketRequest::getMaximumPageSize()const
@@ -88,7 +90,7 @@ int ListAllMediaBucketRequest::getMaximumPageSize()const
 void ListAllMediaBucketRequest::setMaximumPageSize(int maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long ListAllMediaBucketRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long ListAllMediaBucketRequest::getOwnerId()const
 void ListAllMediaBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

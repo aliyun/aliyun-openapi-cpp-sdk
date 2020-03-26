@@ -53,6 +53,8 @@ void QueryTradeMarkApplicationLogsResult::parse(const std::string &payload)
 			dataObject.operateTime = std::stol(valueDataDataItem["OperateTime"].asString());
 		if(!valueDataDataItem["BizStatus"].isNull())
 			dataObject.bizStatus = std::stoi(valueDataDataItem["BizStatus"].asString());
+		if(!valueDataDataItem["ExtendContent"].isNull())
+			dataObject.extendContent = valueDataDataItem["ExtendContent"].asString();
 		data_.push_back(dataObject);
 	}
 

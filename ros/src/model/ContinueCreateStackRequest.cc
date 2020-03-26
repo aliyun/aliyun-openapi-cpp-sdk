@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::ContinueCreateStackRequest;
 
 ContinueCreateStackRequest::ContinueCreateStackRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/continue");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ContinueCreateStackRequest::~ContinueCreateStackRequest()
 {}
@@ -33,7 +36,7 @@ std::string ContinueCreateStackRequest::getStackId()const
 void ContinueCreateStackRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string ContinueCreateStackRequest::getStackName()const
@@ -44,6 +47,6 @@ std::string ContinueCreateStackRequest::getStackName()const
 void ContinueCreateStackRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

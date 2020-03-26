@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::NotifyAddThingTopoRequest;
 
 NotifyAddThingTopoRequest::NotifyAddThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "NotifyAddThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyAddThingTopoRequest::~NotifyAddThingTopoRequest()
 {}
@@ -33,7 +35,7 @@ std::string NotifyAddThingTopoRequest::getGwProductKey()const
 void NotifyAddThingTopoRequest::setGwProductKey(const std::string& gwProductKey)
 {
 	gwProductKey_ = gwProductKey;
-	setCoreParameter("GwProductKey", gwProductKey);
+	setParameter("GwProductKey", gwProductKey);
 }
 
 std::string NotifyAddThingTopoRequest::getDeviceListStr()const
@@ -44,7 +46,7 @@ std::string NotifyAddThingTopoRequest::getDeviceListStr()const
 void NotifyAddThingTopoRequest::setDeviceListStr(const std::string& deviceListStr)
 {
 	deviceListStr_ = deviceListStr;
-	setCoreParameter("DeviceListStr", deviceListStr);
+	setParameter("DeviceListStr", deviceListStr);
 }
 
 std::string NotifyAddThingTopoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string NotifyAddThingTopoRequest::getAccessKeyId()const
 void NotifyAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string NotifyAddThingTopoRequest::getGwDeviceName()const
@@ -66,7 +68,7 @@ std::string NotifyAddThingTopoRequest::getGwDeviceName()const
 void NotifyAddThingTopoRequest::setGwDeviceName(const std::string& gwDeviceName)
 {
 	gwDeviceName_ = gwDeviceName;
-	setCoreParameter("GwDeviceName", gwDeviceName);
+	setParameter("GwDeviceName", gwDeviceName);
 }
 
 std::string NotifyAddThingTopoRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string NotifyAddThingTopoRequest::getIotInstanceId()const
 void NotifyAddThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string NotifyAddThingTopoRequest::getGwIotId()const
@@ -88,6 +90,6 @@ std::string NotifyAddThingTopoRequest::getGwIotId()const
 void NotifyAddThingTopoRequest::setGwIotId(const std::string& gwIotId)
 {
 	gwIotId_ = gwIotId;
-	setCoreParameter("GwIotId", gwIotId);
+	setParameter("GwIotId", gwIotId);
 }
 

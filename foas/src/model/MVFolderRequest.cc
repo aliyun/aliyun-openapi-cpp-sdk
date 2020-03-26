@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::MVFolderRequest;
 
 MVFolderRequest::MVFolderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/folders");
+	setMethod(HttpRequest::Method::Put);
+}
 
 MVFolderRequest::~MVFolderRequest()
 {}
@@ -33,7 +36,7 @@ std::string MVFolderRequest::getProjectName()const
 void MVFolderRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string MVFolderRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string MVFolderRequest::getRegionId()const
 void MVFolderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string MVFolderRequest::getSrcPath()const
@@ -55,7 +58,7 @@ std::string MVFolderRequest::getSrcPath()const
 void MVFolderRequest::setSrcPath(const std::string& srcPath)
 {
 	srcPath_ = srcPath;
-	setCoreParameter("SrcPath", srcPath);
+	setBodyParameter("SrcPath", srcPath);
 }
 
 std::string MVFolderRequest::getDestPath()const
@@ -66,6 +69,6 @@ std::string MVFolderRequest::getDestPath()const
 void MVFolderRequest::setDestPath(const std::string& destPath)
 {
 	destPath_ = destPath;
-	setCoreParameter("DestPath", destPath);
+	setBodyParameter("DestPath", destPath);
 }
 

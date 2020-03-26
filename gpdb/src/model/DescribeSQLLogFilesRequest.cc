@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSQLLogFilesRequest;
 
 DescribeSQLLogFilesRequest::DescribeSQLLogFilesRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSQLLogFiles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSQLLogFilesRequest::~DescribeSQLLogFilesRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeSQLLogFilesRequest::getPageNumber()const
 void DescribeSQLLogFilesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeSQLLogFilesRequest::getAccessKeyId()const
 void DescribeSQLLogFilesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeSQLLogFilesRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeSQLLogFilesRequest::getPageSize()const
 void DescribeSQLLogFilesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSQLLogFilesRequest::getDBInstanceId()const
@@ -66,7 +68,7 @@ std::string DescribeSQLLogFilesRequest::getDBInstanceId()const
 void DescribeSQLLogFilesRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DescribeSQLLogFilesRequest::getFileName()const
@@ -77,6 +79,6 @@ std::string DescribeSQLLogFilesRequest::getFileName()const
 void DescribeSQLLogFilesRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setParameter("FileName", fileName);
 }
 

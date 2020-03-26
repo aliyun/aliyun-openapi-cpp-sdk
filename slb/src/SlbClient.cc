@@ -1131,6 +1131,42 @@ SlbClient::DescribeCACertificatesOutcomeCallable SlbClient::describeCACertificat
 	return task->get_future();
 }
 
+SlbClient::DescribeDomainExtensionAttributeOutcome SlbClient::describeDomainExtensionAttribute(const DescribeDomainExtensionAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainExtensionAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainExtensionAttributeOutcome(DescribeDomainExtensionAttributeResult(outcome.result()));
+	else
+		return DescribeDomainExtensionAttributeOutcome(outcome.error());
+}
+
+void SlbClient::describeDomainExtensionAttributeAsync(const DescribeDomainExtensionAttributeRequest& request, const DescribeDomainExtensionAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainExtensionAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeDomainExtensionAttributeOutcomeCallable SlbClient::describeDomainExtensionAttributeCallable(const DescribeDomainExtensionAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainExtensionAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainExtensionAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::DescribeDomainExtensionsOutcome SlbClient::describeDomainExtensions(const DescribeDomainExtensionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1377,42 @@ SlbClient::DescribeLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::
 			[this, request]()
 			{
 			return this->describeLoadBalancerHTTPSListenerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::DescribeLoadBalancerListenersExOutcome SlbClient::describeLoadBalancerListenersEx(const DescribeLoadBalancerListenersExRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLoadBalancerListenersExOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLoadBalancerListenersExOutcome(DescribeLoadBalancerListenersExResult(outcome.result()));
+	else
+		return DescribeLoadBalancerListenersExOutcome(outcome.error());
+}
+
+void SlbClient::describeLoadBalancerListenersExAsync(const DescribeLoadBalancerListenersExRequest& request, const DescribeLoadBalancerListenersExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLoadBalancerListenersEx(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::DescribeLoadBalancerListenersExOutcomeCallable SlbClient::describeLoadBalancerListenersExCallable(const DescribeLoadBalancerListenersExRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLoadBalancerListenersExOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLoadBalancerListenersEx(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1881,6 +1953,42 @@ SlbClient::DescribeZonesOutcomeCallable SlbClient::describeZonesCallable(const D
 			[this, request]()
 			{
 			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::ListTagResourcesOutcome SlbClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void SlbClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::ListTagResourcesOutcomeCallable SlbClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,6 +2607,42 @@ SlbClient::SetLoadBalancerHTTPSListenerAttributeOutcomeCallable SlbClient::setLo
 	return task->get_future();
 }
 
+SlbClient::SetLoadBalancerListenerAttributeExOutcome SlbClient::setLoadBalancerListenerAttributeEx(const SetLoadBalancerListenerAttributeExRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLoadBalancerListenerAttributeExOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLoadBalancerListenerAttributeExOutcome(SetLoadBalancerListenerAttributeExResult(outcome.result()));
+	else
+		return SetLoadBalancerListenerAttributeExOutcome(outcome.error());
+}
+
+void SlbClient::setLoadBalancerListenerAttributeExAsync(const SetLoadBalancerListenerAttributeExRequest& request, const SetLoadBalancerListenerAttributeExAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLoadBalancerListenerAttributeEx(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::SetLoadBalancerListenerAttributeExOutcomeCallable SlbClient::setLoadBalancerListenerAttributeExCallable(const SetLoadBalancerListenerAttributeExRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLoadBalancerListenerAttributeExOutcome()>>(
+			[this, request]()
+			{
+			return this->setLoadBalancerListenerAttributeEx(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SlbClient::SetLoadBalancerNameOutcome SlbClient::setLoadBalancerName(const SetLoadBalancerNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +2961,78 @@ SlbClient::StopLoadBalancerListenerOutcomeCallable SlbClient::stopLoadBalancerLi
 			[this, request]()
 			{
 			return this->stopLoadBalancerListener(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::TagResourcesOutcome SlbClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void SlbClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::TagResourcesOutcomeCallable SlbClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SlbClient::UntagResourcesOutcome SlbClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void SlbClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SlbClient::UntagResourcesOutcomeCallable SlbClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

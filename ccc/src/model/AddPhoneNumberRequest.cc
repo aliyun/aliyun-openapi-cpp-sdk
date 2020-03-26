@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AddPhoneNumberRequest;
 
 AddPhoneNumberRequest::AddPhoneNumberRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AddPhoneNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddPhoneNumberRequest::~AddPhoneNumberRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddPhoneNumberRequest::getContactFlowId()const
 void AddPhoneNumberRequest::setContactFlowId(const std::string& contactFlowId)
 {
 	contactFlowId_ = contactFlowId;
-	setCoreParameter("ContactFlowId", contactFlowId);
+	setParameter("ContactFlowId", contactFlowId);
 }
 
 std::string AddPhoneNumberRequest::getUsage()const
@@ -44,7 +46,7 @@ std::string AddPhoneNumberRequest::getUsage()const
 void AddPhoneNumberRequest::setUsage(const std::string& usage)
 {
 	usage_ = usage;
-	setCoreParameter("Usage", usage);
+	setParameter("Usage", usage);
 }
 
 std::string AddPhoneNumberRequest::getPhoneNumber()const
@@ -55,7 +57,7 @@ std::string AddPhoneNumberRequest::getPhoneNumber()const
 void AddPhoneNumberRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 std::string AddPhoneNumberRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string AddPhoneNumberRequest::getAccessKeyId()const
 void AddPhoneNumberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddPhoneNumberRequest::getInstanceId()const
@@ -77,6 +79,6 @@ std::string AddPhoneNumberRequest::getInstanceId()const
 void AddPhoneNumberRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

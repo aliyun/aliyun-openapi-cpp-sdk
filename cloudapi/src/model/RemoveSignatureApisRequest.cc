@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveSignatureApisRequest;
 
 RemoveSignatureApisRequest::RemoveSignatureApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveSignatureApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveSignatureApisRequest::~RemoveSignatureApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveSignatureApisRequest::getStageName()const
 void RemoveSignatureApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string RemoveSignatureApisRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string RemoveSignatureApisRequest::getGroupId()const
 void RemoveSignatureApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string RemoveSignatureApisRequest::getSignatureId()const
@@ -55,7 +57,7 @@ std::string RemoveSignatureApisRequest::getSignatureId()const
 void RemoveSignatureApisRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 std::string RemoveSignatureApisRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string RemoveSignatureApisRequest::getAccessKeyId()const
 void RemoveSignatureApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveSignatureApisRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string RemoveSignatureApisRequest::getSecurityToken()const
 void RemoveSignatureApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveSignatureApisRequest::getApiIds()const
@@ -88,6 +90,6 @@ std::string RemoveSignatureApisRequest::getApiIds()const
 void RemoveSignatureApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

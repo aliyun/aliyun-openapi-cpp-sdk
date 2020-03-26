@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddCasterEpisodeRequest;
 
 AddCasterEpisodeRequest::AddCasterEpisodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddCasterEpisode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCasterEpisodeRequest::~AddCasterEpisodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddCasterEpisodeRequest::getEpisodeName()const
 void AddCasterEpisodeRequest::setEpisodeName(const std::string& episodeName)
 {
 	episodeName_ = episodeName;
-	setCoreParameter("EpisodeName", episodeName);
+	setParameter("EpisodeName", episodeName);
 }
 
 std::string AddCasterEpisodeRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string AddCasterEpisodeRequest::getStartTime()const
 void AddCasterEpisodeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string AddCasterEpisodeRequest::getResourceId()const
@@ -55,7 +57,7 @@ std::string AddCasterEpisodeRequest::getResourceId()const
 void AddCasterEpisodeRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::vector<std::string> AddCasterEpisodeRequest::getComponentId()const
@@ -66,8 +68,9 @@ std::vector<std::string> AddCasterEpisodeRequest::getComponentId()const
 void AddCasterEpisodeRequest::setComponentId(const std::vector<std::string>& componentId)
 {
 	componentId_ = componentId;
-	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+	for(int dep1 = 0; dep1!= componentId.size(); dep1++) {
+		setParameter("ComponentId."+ std::to_string(dep1), componentId.at(dep1));
+	}
 }
 
 std::string AddCasterEpisodeRequest::getCasterId()const
@@ -78,7 +81,7 @@ std::string AddCasterEpisodeRequest::getCasterId()const
 void AddCasterEpisodeRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 std::string AddCasterEpisodeRequest::getEpisodeType()const
@@ -89,7 +92,7 @@ std::string AddCasterEpisodeRequest::getEpisodeType()const
 void AddCasterEpisodeRequest::setEpisodeType(const std::string& episodeType)
 {
 	episodeType_ = episodeType;
-	setCoreParameter("EpisodeType", episodeType);
+	setParameter("EpisodeType", episodeType);
 }
 
 std::string AddCasterEpisodeRequest::getEndTime()const
@@ -100,7 +103,7 @@ std::string AddCasterEpisodeRequest::getEndTime()const
 void AddCasterEpisodeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long AddCasterEpisodeRequest::getOwnerId()const
@@ -111,7 +114,7 @@ long AddCasterEpisodeRequest::getOwnerId()const
 void AddCasterEpisodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddCasterEpisodeRequest::getSwitchType()const
@@ -122,6 +125,6 @@ std::string AddCasterEpisodeRequest::getSwitchType()const
 void AddCasterEpisodeRequest::setSwitchType(const std::string& switchType)
 {
 	switchType_ = switchType;
-	setCoreParameter("SwitchType", switchType);
+	setParameter("SwitchType", switchType);
 }
 

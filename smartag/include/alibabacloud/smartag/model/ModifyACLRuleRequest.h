@@ -69,6 +69,8 @@ namespace AlibabaCloud
 				void setAcrId(const std::string& acrId);
 				std::string getDestPortRange()const;
 				void setDestPortRange(const std::string& destPortRange);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				int priority_;
 				std::string acrId_;
 				std::string destPortRange_;
+				std::string name_;
 
 			};
 		}

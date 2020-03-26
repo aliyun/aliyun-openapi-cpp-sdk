@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyDrdsInstanceDescriptionRequest;
 
 ModifyDrdsInstanceDescriptionRequest::ModifyDrdsInstanceDescriptionRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyDrdsInstanceDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDrdsInstanceDescriptionRequest::~ModifyDrdsInstanceDescriptionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDrdsInstanceDescriptionRequest::getDescription()const
 void ModifyDrdsInstanceDescriptionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyDrdsInstanceDescriptionRequest::getDrdsInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyDrdsInstanceDescriptionRequest::getDrdsInstanceId()const
 void ModifyDrdsInstanceDescriptionRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsInstanceDescriptionRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ModifyDrdsInstanceDescriptionRequest::getAccessKeyId()const
 void ModifyDrdsInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

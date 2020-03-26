@@ -35,7 +35,7 @@ std::string DescribeMetricDataRequest::getPeriod()const
 void DescribeMetricDataRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string DescribeMetricDataRequest::getLength()const
@@ -46,7 +46,7 @@ std::string DescribeMetricDataRequest::getLength()const
 void DescribeMetricDataRequest::setLength(const std::string& length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setParameter("Length", length);
 }
 
 std::string DescribeMetricDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeMetricDataRequest::getEndTime()const
 void DescribeMetricDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeMetricDataRequest::getExpress()const
@@ -68,7 +68,7 @@ std::string DescribeMetricDataRequest::getExpress()const
 void DescribeMetricDataRequest::setExpress(const std::string& express)
 {
 	express_ = express;
-	setCoreParameter("Express", express);
+	setParameter("Express", express);
 }
 
 std::string DescribeMetricDataRequest::getStartTime()const
@@ -79,7 +79,7 @@ std::string DescribeMetricDataRequest::getStartTime()const
 void DescribeMetricDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeMetricDataRequest::get_Namespace()const
@@ -90,7 +90,7 @@ std::string DescribeMetricDataRequest::get_Namespace()const
 void DescribeMetricDataRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 std::string DescribeMetricDataRequest::getMetricName()const
@@ -101,7 +101,7 @@ std::string DescribeMetricDataRequest::getMetricName()const
 void DescribeMetricDataRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeMetricDataRequest::getDimensions()const
@@ -112,6 +112,6 @@ std::string DescribeMetricDataRequest::getDimensions()const
 void DescribeMetricDataRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setParameter("Dimensions", dimensions);
 }
 

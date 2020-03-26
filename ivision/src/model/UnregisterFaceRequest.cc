@@ -35,7 +35,7 @@ std::string UnregisterFaceRequest::getShowLog()const
 void UnregisterFaceRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string UnregisterFaceRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string UnregisterFaceRequest::getGroupId()const
 void UnregisterFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 long UnregisterFaceRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long UnregisterFaceRequest::getOwnerId()const
 void UnregisterFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnregisterFaceRequest::getFaceToken()const
@@ -68,6 +68,6 @@ std::string UnregisterFaceRequest::getFaceToken()const
 void UnregisterFaceRequest::setFaceToken(const std::string& faceToken)
 {
 	faceToken_ = faceToken;
-	setCoreParameter("FaceToken", faceToken);
+	setParameter("FaceToken", faceToken);
 }
 

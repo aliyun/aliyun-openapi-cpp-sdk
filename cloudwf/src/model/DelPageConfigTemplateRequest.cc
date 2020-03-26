@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelPageConfigTemplateRequest;
 
 DelPageConfigTemplateRequest::DelPageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelPageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelPageConfigTemplateRequest::~DelPageConfigTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DelPageConfigTemplateRequest::getAccessKeyId()const
 void DelPageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DelPageConfigTemplateRequest::getId()const
@@ -44,6 +46,6 @@ long DelPageConfigTemplateRequest::getId()const
 void DelPageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

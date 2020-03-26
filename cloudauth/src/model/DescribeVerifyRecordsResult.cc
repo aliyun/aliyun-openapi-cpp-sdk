@@ -47,6 +47,8 @@ void DescribeVerifyRecordsResult::parse(const std::string &payload)
 			recordsListObject.bizType = valueRecordsListRecords["BizType"].asString();
 		if(!valueRecordsListRecords["BizId"].isNull())
 			recordsListObject.bizId = valueRecordsListRecords["BizId"].asString();
+		if(!valueRecordsListRecords["DataStats"].isNull())
+			recordsListObject.dataStats = valueRecordsListRecords["DataStats"].asString();
 		if(!valueRecordsListRecords["VerifyId"].isNull())
 			recordsListObject.verifyId = valueRecordsListRecords["VerifyId"].asString();
 		if(!valueRecordsListRecords["FinishTime"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeTablesRequest;
 
 DescribeTablesRequest::DescribeTablesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeTables")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTablesRequest::~DescribeTablesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeTablesRequest::getProductCode()const
 void DescribeTablesRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 long DescribeTablesRequest::getProductId()const
@@ -44,7 +46,18 @@ long DescribeTablesRequest::getProductId()const
 void DescribeTablesRequest::setProductId(long productId)
 {
 	productId_ = productId;
-	setCoreParameter("ProductId", std::to_string(productId));
+	setParameter("ProductId", std::to_string(productId));
+}
+
+std::string DescribeTablesRequest::getRiskLevels()const
+{
+	return riskLevels_;
+}
+
+void DescribeTablesRequest::setRiskLevels(const std::string& riskLevels)
+{
+	riskLevels_ = riskLevels;
+	setParameter("RiskLevels", riskLevels);
 }
 
 long DescribeTablesRequest::getPackageId()const
@@ -55,7 +68,7 @@ long DescribeTablesRequest::getPackageId()const
 void DescribeTablesRequest::setPackageId(long packageId)
 {
 	packageId_ = packageId;
-	setCoreParameter("PackageId", std::to_string(packageId));
+	setParameter("PackageId", std::to_string(packageId));
 }
 
 std::string DescribeTablesRequest::getQueryName()const
@@ -66,7 +79,7 @@ std::string DescribeTablesRequest::getQueryName()const
 void DescribeTablesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setParameter("QueryName", queryName);
 }
 
 long DescribeTablesRequest::getRiskLevelId()const
@@ -77,7 +90,7 @@ long DescribeTablesRequest::getRiskLevelId()const
 void DescribeTablesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeTablesRequest::getSourceIp()const
@@ -88,7 +101,7 @@ std::string DescribeTablesRequest::getSourceIp()const
 void DescribeTablesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeTablesRequest::getPageSize()const
@@ -99,7 +112,7 @@ int DescribeTablesRequest::getPageSize()const
 void DescribeTablesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeTablesRequest::getLang()const
@@ -110,7 +123,7 @@ std::string DescribeTablesRequest::getLang()const
 void DescribeTablesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeTablesRequest::getQueryType()const
@@ -121,7 +134,7 @@ int DescribeTablesRequest::getQueryType()const
 void DescribeTablesRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
 }
 
 int DescribeTablesRequest::getFeatureType()const
@@ -132,7 +145,18 @@ int DescribeTablesRequest::getFeatureType()const
 void DescribeTablesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribeTablesRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribeTablesRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 int DescribeTablesRequest::getCurrentPage()const
@@ -143,7 +167,7 @@ int DescribeTablesRequest::getCurrentPage()const
 void DescribeTablesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribeTablesRequest::getInstanceId()const
@@ -154,7 +178,7 @@ long DescribeTablesRequest::getInstanceId()const
 void DescribeTablesRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribeTablesRequest::getName()const
@@ -165,7 +189,7 @@ std::string DescribeTablesRequest::getName()const
 void DescribeTablesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribeTablesRequest::getRuleId()const
@@ -176,6 +200,6 @@ long DescribeTablesRequest::getRuleId()const
 void DescribeTablesRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

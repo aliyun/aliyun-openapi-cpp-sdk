@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchStopVodDomainRequest;
 
 BatchStopVodDomainRequest::BatchStopVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchStopVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStopVodDomainRequest::~BatchStopVodDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchStopVodDomainRequest::getDomainNames()const
 void BatchStopVodDomainRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 long BatchStopVodDomainRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long BatchStopVodDomainRequest::getOwnerId()const
 void BatchStopVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchStopVodDomainRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string BatchStopVodDomainRequest::getSecurityToken()const
 void BatchStopVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

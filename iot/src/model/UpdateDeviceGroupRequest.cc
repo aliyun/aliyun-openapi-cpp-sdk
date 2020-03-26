@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::UpdateDeviceGroupRequest;
 
 UpdateDeviceGroupRequest::UpdateDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "UpdateDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDeviceGroupRequest::~UpdateDeviceGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateDeviceGroupRequest::getGroupId()const
 void UpdateDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string UpdateDeviceGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateDeviceGroupRequest::getAccessKeyId()const
 void UpdateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateDeviceGroupRequest::getGroupDesc()const
@@ -55,7 +57,7 @@ std::string UpdateDeviceGroupRequest::getGroupDesc()const
 void UpdateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
 {
 	groupDesc_ = groupDesc;
-	setCoreParameter("GroupDesc", groupDesc);
+	setParameter("GroupDesc", groupDesc);
 }
 
 std::string UpdateDeviceGroupRequest::getIotInstanceId()const
@@ -66,6 +68,6 @@ std::string UpdateDeviceGroupRequest::getIotInstanceId()const
 void UpdateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

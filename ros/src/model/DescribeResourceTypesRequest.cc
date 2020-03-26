@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeResourceTypesRequest;
 
 DescribeResourceTypesRequest::DescribeResourceTypesRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/resource_types");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeResourceTypesRequest::~DescribeResourceTypesRequest()
 {}
@@ -33,6 +36,6 @@ std::string DescribeResourceTypesRequest::getSupportStatus()const
 void DescribeResourceTypesRequest::setSupportStatus(const std::string& supportStatus)
 {
 	supportStatus_ = supportStatus;
-	setCoreParameter("SupportStatus", supportStatus);
+	setParameter("SupportStatus", supportStatus);
 }
 

@@ -35,6 +35,6 @@ std::string CreateCoreWordRequest::getCoreWordName()const
 void CreateCoreWordRequest::setCoreWordName(const std::string& coreWordName)
 {
 	coreWordName_ = coreWordName;
-	setCoreParameter("CoreWordName", coreWordName);
+	setParameter("CoreWordName", coreWordName);
 }
 

@@ -35,7 +35,7 @@ std::string JoinMeetingRequest::getUserId()const
 void JoinMeetingRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setBodyParameter("UserId", userId);
 }
 
 std::string JoinMeetingRequest::getMeetingCode()const
@@ -46,6 +46,6 @@ std::string JoinMeetingRequest::getMeetingCode()const
 void JoinMeetingRequest::setMeetingCode(const std::string& meetingCode)
 {
 	meetingCode_ = meetingCode;
-	setCoreParameter("MeetingCode", meetingCode);
+	setBodyParameter("MeetingCode", meetingCode);
 }
 

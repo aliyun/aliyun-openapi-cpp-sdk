@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::CreateRuleRequest;
 
 CreateRuleRequest::CreateRuleRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "CreateRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRuleRequest::~CreateRuleRequest()
 {}
@@ -33,7 +35,7 @@ long CreateRuleRequest::getRiskLevelId()const
 void CreateRuleRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string CreateRuleRequest::getContent()const
@@ -44,7 +46,7 @@ std::string CreateRuleRequest::getContent()const
 void CreateRuleRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string CreateRuleRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateRuleRequest::getSourceIp()const
 void CreateRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateRuleRequest::getLang()const
@@ -66,7 +68,7 @@ std::string CreateRuleRequest::getLang()const
 void CreateRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int CreateRuleRequest::getFeatureType()const
@@ -77,7 +79,7 @@ int CreateRuleRequest::getFeatureType()const
 void CreateRuleRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 long CreateRuleRequest::getCustomType()const
@@ -88,7 +90,7 @@ long CreateRuleRequest::getCustomType()const
 void CreateRuleRequest::setCustomType(long customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setParameter("CustomType", std::to_string(customType));
 }
 
 std::string CreateRuleRequest::getName()const
@@ -99,7 +101,7 @@ std::string CreateRuleRequest::getName()const
 void CreateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int CreateRuleRequest::getCategory()const
@@ -110,6 +112,6 @@ int CreateRuleRequest::getCategory()const
 void CreateRuleRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setParameter("Category", std::to_string(category));
 }
 

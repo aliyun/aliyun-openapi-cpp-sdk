@@ -35,7 +35,7 @@ std::string QueryEvaluateListRequest::getEndSearchTime()const
 void QueryEvaluateListRequest::setEndSearchTime(const std::string& endSearchTime)
 {
 	endSearchTime_ = endSearchTime;
-	setCoreParameter("EndSearchTime", endSearchTime);
+	setParameter("EndSearchTime", endSearchTime);
 }
 
 std::string QueryEvaluateListRequest::getOutBizId()const
@@ -46,7 +46,7 @@ std::string QueryEvaluateListRequest::getOutBizId()const
 void QueryEvaluateListRequest::setOutBizId(const std::string& outBizId)
 {
 	outBizId_ = outBizId;
-	setCoreParameter("OutBizId", outBizId);
+	setParameter("OutBizId", outBizId);
 }
 
 int QueryEvaluateListRequest::getSortType()const
@@ -57,7 +57,7 @@ int QueryEvaluateListRequest::getSortType()const
 void QueryEvaluateListRequest::setSortType(int sortType)
 {
 	sortType_ = sortType;
-	setCoreParameter("SortType", std::to_string(sortType));
+	setParameter("SortType", std::to_string(sortType));
 }
 
 int QueryEvaluateListRequest::getType()const
@@ -68,7 +68,7 @@ int QueryEvaluateListRequest::getType()const
 void QueryEvaluateListRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 int QueryEvaluateListRequest::getPageNum()const
@@ -79,7 +79,7 @@ int QueryEvaluateListRequest::getPageNum()const
 void QueryEvaluateListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryEvaluateListRequest::getPageSize()const
@@ -90,7 +90,7 @@ int QueryEvaluateListRequest::getPageSize()const
 void QueryEvaluateListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long QueryEvaluateListRequest::getEndAmount()const
@@ -101,7 +101,7 @@ long QueryEvaluateListRequest::getEndAmount()const
 void QueryEvaluateListRequest::setEndAmount(long endAmount)
 {
 	endAmount_ = endAmount;
-	setCoreParameter("EndAmount", std::to_string(endAmount));
+	setParameter("EndAmount", std::to_string(endAmount));
 }
 
 std::string QueryEvaluateListRequest::getBillCycle()const
@@ -112,7 +112,7 @@ std::string QueryEvaluateListRequest::getBillCycle()const
 void QueryEvaluateListRequest::setBillCycle(const std::string& billCycle)
 {
 	billCycle_ = billCycle;
-	setCoreParameter("BillCycle", billCycle);
+	setParameter("BillCycle", billCycle);
 }
 
 std::vector<std::string> QueryEvaluateListRequest::getBizTypeList()const
@@ -124,7 +124,7 @@ void QueryEvaluateListRequest::setBizTypeList(const std::vector<std::string>& bi
 {
 	bizTypeList_ = bizTypeList;
 	for(int dep1 = 0; dep1!= bizTypeList.size(); dep1++) {
-		setCoreParameter("BizTypeList."+ std::to_string(dep1), bizTypeList.at(dep1));
+		setParameter("BizTypeList."+ std::to_string(dep1), bizTypeList.at(dep1));
 	}
 }
 
@@ -136,7 +136,7 @@ long QueryEvaluateListRequest::getOwnerId()const
 void QueryEvaluateListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryEvaluateListRequest::getStartSearchTime()const
@@ -147,7 +147,7 @@ std::string QueryEvaluateListRequest::getStartSearchTime()const
 void QueryEvaluateListRequest::setStartSearchTime(const std::string& startSearchTime)
 {
 	startSearchTime_ = startSearchTime;
-	setCoreParameter("StartSearchTime", startSearchTime);
+	setParameter("StartSearchTime", startSearchTime);
 }
 
 std::string QueryEvaluateListRequest::getEndBizTime()const
@@ -158,7 +158,7 @@ std::string QueryEvaluateListRequest::getEndBizTime()const
 void QueryEvaluateListRequest::setEndBizTime(const std::string& endBizTime)
 {
 	endBizTime_ = endBizTime;
-	setCoreParameter("EndBizTime", endBizTime);
+	setParameter("EndBizTime", endBizTime);
 }
 
 long QueryEvaluateListRequest::getStartAmount()const
@@ -169,7 +169,7 @@ long QueryEvaluateListRequest::getStartAmount()const
 void QueryEvaluateListRequest::setStartAmount(long startAmount)
 {
 	startAmount_ = startAmount;
-	setCoreParameter("StartAmount", std::to_string(startAmount));
+	setParameter("StartAmount", std::to_string(startAmount));
 }
 
 std::string QueryEvaluateListRequest::getStartBizTime()const
@@ -180,6 +180,6 @@ std::string QueryEvaluateListRequest::getStartBizTime()const
 void QueryEvaluateListRequest::setStartBizTime(const std::string& startBizTime)
 {
 	startBizTime_ = startBizTime;
-	setCoreParameter("StartBizTime", startBizTime);
+	setParameter("StartBizTime", startBizTime);
 }
 

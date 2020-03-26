@@ -138,6 +138,11 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 		materialDetail_.contactName = materialDetailNode["ContactName"].asString();
 	if(!materialDetailNode["LegalNoticeUrl"].isNull())
 		materialDetail_.legalNoticeUrl = materialDetailNode["LegalNoticeUrl"].asString();
+	if(!materialDetailNode["ReviewApplicationFile"].isNull())
+		materialDetail_.reviewApplicationFile = materialDetailNode["ReviewApplicationFile"].asString();
+		auto allReviewAdditionalFiles = materialDetailNode["ReviewAdditionalFiles"]["ReviewAdditionalFile"];
+		for (auto value : allReviewAdditionalFiles)
+			materialDetail_.reviewAdditionalFiles.push_back(value.asString());
 	auto firstClassificationNode = value["FirstClassification"];
 	if(!firstClassificationNode["Code"].isNull())
 		firstClassification_.code = firstClassificationNode["Code"].asString();
@@ -156,12 +161,27 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 		renewResponse_.registerTime = std::stol(renewResponseNode["RegisterTime"].asString());
 	if(!renewResponseNode["SubmitSbjtime"].isNull())
 		renewResponse_.submitSbjtime = std::stol(renewResponseNode["SubmitSbjtime"].asString());
+	auto reviewOfficialFilesNode = value["ReviewOfficialFiles"];
+	if(!reviewOfficialFilesNode["ReviewAudit"].isNull())
+		reviewOfficialFiles_.reviewAudit = reviewOfficialFilesNode["ReviewAudit"].asString();
+	if(!reviewOfficialFilesNode["ReviewPass"].isNull())
+		reviewOfficialFiles_.reviewPass = reviewOfficialFilesNode["ReviewPass"].asString();
+	if(!reviewOfficialFilesNode["ReviewKeep"].isNull())
+		reviewOfficialFiles_.reviewKeep = reviewOfficialFilesNode["ReviewKeep"].asString();
+	if(!reviewOfficialFilesNode["ReviewPart"].isNull())
+		reviewOfficialFiles_.reviewPart = reviewOfficialFilesNode["ReviewPart"].asString();
+		auto allReviewSupplements = reviewOfficialFilesNode["ReviewSupplements"]["ReviewSupplement"];
+		for (auto value : allReviewSupplements)
+			reviewOfficialFiles_.reviewSupplements.push_back(value.asString());
 	auto allReceiptUrl = value["ReceiptUrl"]["ReceiptUrl"];
 	for (const auto &item : allReceiptUrl)
 		receiptUrl_.push_back(item.asString());
 	auto allJudgeResultUrl = value["JudgeResultUrl"]["JudgeResultUrl"];
 	for (const auto &item : allJudgeResultUrl)
 		judgeResultUrl_.push_back(item.asString());
+	auto allFlags = value["Flags"]["Flag"];
+	for (const auto &item : allFlags)
+		flags_.push_back(item.asString());
 	if(!value["Status"].isNull())
 		status_ = std::stoi(value["Status"].asString());
 	if(!value["LoaUrl"].isNull())
@@ -206,6 +226,14 @@ void QueryTradeMarkApplicationDetailResult::parse(const std::string &payload)
 		totalPrice_ = std::stof(value["TotalPrice"].asString());
 	if(!value["ServicePrice"].isNull())
 		servicePrice_ = std::stof(value["ServicePrice"].asString());
+	if(!value["PartnerCode"].isNull())
+		partnerCode_ = value["PartnerCode"].asString();
+	if(!value["PartnerMobile"].isNull())
+		partnerMobile_ = value["PartnerMobile"].asString();
+	if(!value["NotAcceptUrl"].isNull())
+		notAcceptUrl_ = value["NotAcceptUrl"].asString();
+	if(!value["PartnerName"].isNull())
+		partnerName_ = value["PartnerName"].asString();
 
 }
 
@@ -232,6 +260,11 @@ std::vector<std::string> QueryTradeMarkApplicationDetailResult::getReceiptUrl()c
 std::string QueryTradeMarkApplicationDetailResult::getTmIcon()const
 {
 	return tmIcon_;
+}
+
+std::string QueryTradeMarkApplicationDetailResult::getPartnerCode()const
+{
+	return partnerCode_;
 }
 
 std::string QueryTradeMarkApplicationDetailResult::getAcceptUrl()const
@@ -267,6 +300,11 @@ float QueryTradeMarkApplicationDetailResult::getServicePrice()const
 QueryTradeMarkApplicationDetailResult::AdminUploads QueryTradeMarkApplicationDetailResult::getAdminUploads()const
 {
 	return adminUploads_;
+}
+
+std::string QueryTradeMarkApplicationDetailResult::getNotAcceptUrl()const
+{
+	return notAcceptUrl_;
 }
 
 std::vector<QueryTradeMarkApplicationDetailResult::ThirdClassifications> QueryTradeMarkApplicationDetailResult::getThirdClassification()const
@@ -314,14 +352,29 @@ float QueryTradeMarkApplicationDetailResult::getOrderPrice()const
 	return orderPrice_;
 }
 
+std::vector<std::string> QueryTradeMarkApplicationDetailResult::getFlags()const
+{
+	return flags_;
+}
+
 std::string QueryTradeMarkApplicationDetailResult::getOrderId()const
 {
 	return orderId_;
 }
 
+std::string QueryTradeMarkApplicationDetailResult::getPartnerName()const
+{
+	return partnerName_;
+}
+
 std::vector<QueryTradeMarkApplicationDetailResult::SupplementsItem> QueryTradeMarkApplicationDetailResult::getSupplements()const
 {
 	return supplements_;
+}
+
+QueryTradeMarkApplicationDetailResult::ReviewOfficialFiles QueryTradeMarkApplicationDetailResult::getReviewOfficialFiles()const
+{
+	return reviewOfficialFiles_;
 }
 
 int QueryTradeMarkApplicationDetailResult::getType()const
@@ -357,5 +410,10 @@ long QueryTradeMarkApplicationDetailResult::getUpdateTime()const
 std::string QueryTradeMarkApplicationDetailResult::getBizId()const
 {
 	return bizId_;
+}
+
+std::string QueryTradeMarkApplicationDetailResult::getPartnerMobile()const
+{
+	return partnerMobile_;
 }
 

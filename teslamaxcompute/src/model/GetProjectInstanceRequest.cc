@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetProjectInstanceRequest;
 
 GetProjectInstanceRequest::GetProjectInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetProjectInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetProjectInstanceRequest::~GetProjectInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int GetProjectInstanceRequest::getPageSize()const
 void GetProjectInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetProjectInstanceRequest::getProject()const
@@ -44,7 +46,7 @@ std::string GetProjectInstanceRequest::getProject()const
 void GetProjectInstanceRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 int GetProjectInstanceRequest::getPageNum()const
@@ -55,7 +57,7 @@ int GetProjectInstanceRequest::getPageNum()const
 void GetProjectInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetProjectInstanceRequest::getRegion()const
@@ -66,7 +68,7 @@ std::string GetProjectInstanceRequest::getRegion()const
 void GetProjectInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetProjectInstanceRequest::getStatus()const
@@ -77,6 +79,6 @@ std::string GetProjectInstanceRequest::getStatus()const
 void GetProjectInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

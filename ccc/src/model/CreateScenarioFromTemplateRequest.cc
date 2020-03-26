@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateScenarioFromTemplateRequest;
 
 CreateScenarioFromTemplateRequest::CreateScenarioFromTemplateRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateScenarioFromTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateScenarioFromTemplateRequest::~CreateScenarioFromTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateScenarioFromTemplateRequest::getVariables()const
 void CreateScenarioFromTemplateRequest::setVariables(const std::string& variables)
 {
 	variables_ = variables;
-	setCoreParameter("Variables", variables);
+	setParameter("Variables", variables);
 }
 
 std::string CreateScenarioFromTemplateRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateScenarioFromTemplateRequest::getDescription()const
 void CreateScenarioFromTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateScenarioFromTemplateRequest::getTemplateId()const
@@ -55,7 +57,7 @@ std::string CreateScenarioFromTemplateRequest::getTemplateId()const
 void CreateScenarioFromTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 
 std::string CreateScenarioFromTemplateRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string CreateScenarioFromTemplateRequest::getInstanceId()const
 void CreateScenarioFromTemplateRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateScenarioFromTemplateRequest::getName()const
@@ -77,6 +79,6 @@ std::string CreateScenarioFromTemplateRequest::getName()const
 void CreateScenarioFromTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

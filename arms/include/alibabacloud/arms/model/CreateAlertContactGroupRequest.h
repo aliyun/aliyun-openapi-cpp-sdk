@@ -39,12 +39,15 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getContactGroupName()const;
 				void setContactGroupName(const std::string& contactGroupName);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				std::string getContactIds()const;
 				void setContactIds(const std::string& contactIds);
 
             private:
 				std::string regionId_;
 				std::string contactGroupName_;
+				std::string proxyUserId_;
 				std::string contactIds_;
 
 			};

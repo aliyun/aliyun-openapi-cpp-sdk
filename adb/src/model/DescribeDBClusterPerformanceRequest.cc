@@ -35,7 +35,7 @@ long DescribeDBClusterPerformanceRequest::getResourceOwnerId()const
 void DescribeDBClusterPerformanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterPerformanceRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeDBClusterPerformanceRequest::getStartTime()const
 void DescribeDBClusterPerformanceRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeDBClusterPerformanceRequest::getAccessKeyId()const
 void DescribeDBClusterPerformanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getKey()const
@@ -68,7 +68,7 @@ std::string DescribeDBClusterPerformanceRequest::getKey()const
 void DescribeDBClusterPerformanceRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDBClusterPerformanceRequest::getResourceOwnerAccount()const
 void DescribeDBClusterPerformanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getDBClusterId()const
@@ -90,7 +90,7 @@ std::string DescribeDBClusterPerformanceRequest::getDBClusterId()const
 void DescribeDBClusterPerformanceRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeDBClusterPerformanceRequest::getOwnerAccount()const
 void DescribeDBClusterPerformanceRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeDBClusterPerformanceRequest::getEndTime()const
 void DescribeDBClusterPerformanceRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDBClusterPerformanceRequest::getOwnerId()const
@@ -123,6 +123,6 @@ long DescribeDBClusterPerformanceRequest::getOwnerId()const
 void DescribeDBClusterPerformanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

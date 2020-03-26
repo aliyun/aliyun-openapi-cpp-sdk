@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::StartJobRequest;
 
 StartJobRequest::StartJobRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "StartJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartJobRequest::~StartJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string StartJobRequest::getGroupId()const
 void StartJobRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string StartJobRequest::getJobJson()const
@@ -44,7 +46,7 @@ std::string StartJobRequest::getJobJson()const
 void StartJobRequest::setJobJson(const std::string& jobJson)
 {
 	jobJson_ = jobJson;
-	setCoreParameter("JobJson", jobJson);
+	setParameter("JobJson", jobJson);
 }
 
 std::vector<std::string> StartJobRequest::getCallingNumber()const
@@ -55,8 +57,9 @@ std::vector<std::string> StartJobRequest::getCallingNumber()const
 void StartJobRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string StartJobRequest::getInstanceId()const
@@ -67,7 +70,7 @@ std::string StartJobRequest::getInstanceId()const
 void StartJobRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool StartJobRequest::getSelfHostedCallCenter()const
@@ -78,7 +81,7 @@ bool StartJobRequest::getSelfHostedCallCenter()const
 void StartJobRequest::setSelfHostedCallCenter(bool selfHostedCallCenter)
 {
 	selfHostedCallCenter_ = selfHostedCallCenter;
-	setCoreParameter("SelfHostedCallCenter", selfHostedCallCenter ? "true" : "false");
+	setParameter("SelfHostedCallCenter", selfHostedCallCenter ? "true" : "false");
 }
 
 std::string StartJobRequest::getScenarioId()const
@@ -89,6 +92,6 @@ std::string StartJobRequest::getScenarioId()const
 void StartJobRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

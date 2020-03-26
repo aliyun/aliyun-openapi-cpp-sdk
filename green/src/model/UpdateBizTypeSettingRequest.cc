@@ -20,20 +20,22 @@ using AlibabaCloud::Green::Model::UpdateBizTypeSettingRequest;
 
 UpdateBizTypeSettingRequest::UpdateBizTypeSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateBizTypeSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateBizTypeSettingRequest::~UpdateBizTypeSettingRequest()
 {}
 
-std::string UpdateBizTypeSettingRequest::getResourceType()const
+std::string UpdateBizTypeSettingRequest::getAntispam()const
 {
-	return resourceType_;
+	return antispam_;
 }
 
-void UpdateBizTypeSettingRequest::setResourceType(const std::string& resourceType)
+void UpdateBizTypeSettingRequest::setAntispam(const std::string& antispam)
 {
-	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	antispam_ = antispam;
+	setParameter("Antispam", antispam);
 }
 
 std::string UpdateBizTypeSettingRequest::getPorn()const
@@ -44,7 +46,7 @@ std::string UpdateBizTypeSettingRequest::getPorn()const
 void UpdateBizTypeSettingRequest::setPorn(const std::string& porn)
 {
 	porn_ = porn;
-	setCoreParameter("Porn", porn);
+	setParameter("Porn", porn);
 }
 
 std::string UpdateBizTypeSettingRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string UpdateBizTypeSettingRequest::getSourceIp()const
 void UpdateBizTypeSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateBizTypeSettingRequest::getTerrorism()const
@@ -66,7 +68,7 @@ std::string UpdateBizTypeSettingRequest::getTerrorism()const
 void UpdateBizTypeSettingRequest::setTerrorism(const std::string& terrorism)
 {
 	terrorism_ = terrorism;
-	setCoreParameter("Terrorism", terrorism);
+	setParameter("Terrorism", terrorism);
 }
 
 std::string UpdateBizTypeSettingRequest::getBizTypeName()const
@@ -77,6 +79,28 @@ std::string UpdateBizTypeSettingRequest::getBizTypeName()const
 void UpdateBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", bizTypeName);
+	setParameter("BizTypeName", bizTypeName);
+}
+
+std::string UpdateBizTypeSettingRequest::getAd()const
+{
+	return ad_;
+}
+
+void UpdateBizTypeSettingRequest::setAd(const std::string& ad)
+{
+	ad_ = ad;
+	setParameter("Ad", ad);
+}
+
+std::string UpdateBizTypeSettingRequest::getResourceType()const
+{
+	return resourceType_;
+}
+
+void UpdateBizTypeSettingRequest::setResourceType(const std::string& resourceType)
+{
+	resourceType_ = resourceType;
+	setParameter("ResourceType", resourceType);
 }
 

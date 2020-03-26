@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::RunContactReviewRequest;
 RunContactReviewRequest::RunContactReviewRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "RunContactReview")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 RunContactReviewRequest::~RunContactReviewRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SetEdgeInstanceDriverConfigsRequest;
 
 SetEdgeInstanceDriverConfigsRequest::SetEdgeInstanceDriverConfigsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SetEdgeInstanceDriverConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetEdgeInstanceDriverConfigsRequest::~SetEdgeInstanceDriverConfigsRequest()
 {}
@@ -33,13 +35,12 @@ std::vector<SetEdgeInstanceDriverConfigsRequest::Configs> SetEdgeInstanceDriverC
 void SetEdgeInstanceDriverConfigsRequest::setConfigs(const std::vector<Configs>& configs)
 {
 	configs_ = configs;
-	int i = 0;
-	for(int i = 0; i!= configs.size(); i++)	{
-		auto obj = configs.at(i);
-		std::string str ="Configs."+ std::to_string(i);
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".Content", obj.content);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= configs.size(); dep1++) {
+		auto configsObj = configs.at(dep1);
+		std::string configsObjStr = "Configs." + std::to_string(dep1 + 1);
+		setParameter(configsObjStr + ".Format", configsObj.format);
+		setParameter(configsObjStr + ".Content", configsObj.content);
+		setParameter(configsObjStr + ".Key", configsObj.key);
 	}
 }
 
@@ -51,18 +52,7 @@ std::string SetEdgeInstanceDriverConfigsRequest::getAccessKeyId()const
 void SetEdgeInstanceDriverConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SetEdgeInstanceDriverConfigsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void SetEdgeInstanceDriverConfigsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetEdgeInstanceDriverConfigsRequest::getDriverId()const
@@ -73,7 +63,7 @@ std::string SetEdgeInstanceDriverConfigsRequest::getDriverId()const
 void SetEdgeInstanceDriverConfigsRequest::setDriverId(const std::string& driverId)
 {
 	driverId_ = driverId;
-	setCoreParameter("DriverId", driverId);
+	setParameter("DriverId", driverId);
 }
 
 std::string SetEdgeInstanceDriverConfigsRequest::getIotInstanceId()const
@@ -84,6 +74,39 @@ std::string SetEdgeInstanceDriverConfigsRequest::getIotInstanceId()const
 void SetEdgeInstanceDriverConfigsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string SetEdgeInstanceDriverConfigsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void SetEdgeInstanceDriverConfigsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string SetEdgeInstanceDriverConfigsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void SetEdgeInstanceDriverConfigsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string SetEdgeInstanceDriverConfigsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void SetEdgeInstanceDriverConfigsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

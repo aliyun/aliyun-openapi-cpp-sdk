@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeResetRecordQueryCountRequest;
 
 DescribeResetRecordQueryCountRequest::DescribeResetRecordQueryCountRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeResetRecordQueryCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeResetRecordQueryCountRequest::~DescribeResetRecordQueryCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeResetRecordQueryCountRequest::getSourceCode()const
 void DescribeResetRecordQueryCountRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeResetRecordQueryCountRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeResetRecordQueryCountRequest::getSourceIp()const
 void DescribeResetRecordQueryCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeResetRecordQueryCountRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeResetRecordQueryCountRequest::getLang()const
 void DescribeResetRecordQueryCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

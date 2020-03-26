@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmUnLockSeatRequest;
 
 TaobaoFilmUnLockSeatRequest::TaobaoFilmUnLockSeatRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmUnLockSeat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmUnLockSeatRequest::~TaobaoFilmUnLockSeatRequest()
 {}
@@ -33,7 +35,7 @@ std::string TaobaoFilmUnLockSeatRequest::getLockSeatApplyKey()const
 void TaobaoFilmUnLockSeatRequest::setLockSeatApplyKey(const std::string& lockSeatApplyKey)
 {
 	lockSeatApplyKey_ = lockSeatApplyKey;
-	setCoreParameter("LockSeatApplyKey", lockSeatApplyKey);
+	setParameter("LockSeatApplyKey", lockSeatApplyKey);
 }
 
 std::string TaobaoFilmUnLockSeatRequest::getExtUserId()const
@@ -44,7 +46,7 @@ std::string TaobaoFilmUnLockSeatRequest::getExtUserId()const
 void TaobaoFilmUnLockSeatRequest::setExtUserId(const std::string& extUserId)
 {
 	extUserId_ = extUserId;
-	setCoreParameter("ExtUserId", extUserId);
+	setParameter("ExtUserId", extUserId);
 }
 
 std::string TaobaoFilmUnLockSeatRequest::getParamsJson()const
@@ -55,6 +57,6 @@ std::string TaobaoFilmUnLockSeatRequest::getParamsJson()const
 void TaobaoFilmUnLockSeatRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

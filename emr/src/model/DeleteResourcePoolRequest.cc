@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DeleteResourcePoolRequest;
 
 DeleteResourcePoolRequest::DeleteResourcePoolRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DeleteResourcePool")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteResourcePoolRequest::~DeleteResourcePoolRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteResourcePoolRequest::getResourceOwnerId()const
 void DeleteResourcePoolRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteResourcePoolRequest::getResourcePoolId()const
@@ -44,7 +46,7 @@ std::string DeleteResourcePoolRequest::getResourcePoolId()const
 void DeleteResourcePoolRequest::setResourcePoolId(const std::string& resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", resourcePoolId);
+	setParameter("ResourcePoolId", resourcePoolId);
 }
 
 std::string DeleteResourcePoolRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string DeleteResourcePoolRequest::getClusterId()const
 void DeleteResourcePoolRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DeleteResourcePoolRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteResourcePoolRequest::getAccessKeyId()const
 void DeleteResourcePoolRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteResourcePoolRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string DeleteResourcePoolRequest::getRegionId()const
 void DeleteResourcePoolRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

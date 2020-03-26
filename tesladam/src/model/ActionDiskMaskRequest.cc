@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionDiskMaskRequest;
 
 ActionDiskMaskRequest::ActionDiskMaskRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskMask")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionDiskMaskRequest::~ActionDiskMaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string ActionDiskMaskRequest::getOp()const
 void ActionDiskMaskRequest::setOp(const std::string& op)
 {
 	op_ = op;
-	setCoreParameter("Op", op);
+	setParameter("Op", op);
 }
 
 std::string ActionDiskMaskRequest::getDiskMount()const
@@ -44,7 +46,7 @@ std::string ActionDiskMaskRequest::getDiskMount()const
 void ActionDiskMaskRequest::setDiskMount(const std::string& diskMount)
 {
 	diskMount_ = diskMount;
-	setCoreParameter("DiskMount", diskMount);
+	setParameter("DiskMount", diskMount);
 }
 
 std::string ActionDiskMaskRequest::getIp()const
@@ -55,6 +57,6 @@ std::string ActionDiskMaskRequest::getIp()const
 void ActionDiskMaskRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setParameter("Ip", ip);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateAllEcsWhiteListRequest;
 
 CreateAllEcsWhiteListRequest::CreateAllEcsWhiteListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateAllEcsWhiteList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAllEcsWhiteListRequest::~CreateAllEcsWhiteListRequest()
 {}
@@ -33,7 +35,7 @@ long CreateAllEcsWhiteListRequest::getResourceOwnerId()const
 void CreateAllEcsWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAllEcsWhiteListRequest::getSrcIP()const
@@ -44,7 +46,7 @@ std::string CreateAllEcsWhiteListRequest::getSrcIP()const
 void CreateAllEcsWhiteListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 std::string CreateAllEcsWhiteListRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string CreateAllEcsWhiteListRequest::getSourceCode()const
 void CreateAllEcsWhiteListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateAllEcsWhiteListRequest::getSourceIp()const
@@ -66,6 +68,6 @@ std::string CreateAllEcsWhiteListRequest::getSourceIp()const
 void CreateAllEcsWhiteListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

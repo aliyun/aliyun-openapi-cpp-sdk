@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForDeletingDSRecordRequest;
 
 SaveSingleTaskForDeletingDSRecordRequest::SaveSingleTaskForDeletingDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForDeletingDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForDeletingDSRecordRequest::~SaveSingleTaskForDeletingDSRecordRequest()
 {}
@@ -33,7 +35,7 @@ int SaveSingleTaskForDeletingDSRecordRequest::getKeyTag()const
 void SaveSingleTaskForDeletingDSRecordRequest::setKeyTag(int keyTag)
 {
 	keyTag_ = keyTag;
-	setCoreParameter("KeyTag", std::to_string(keyTag));
+	setParameter("KeyTag", std::to_string(keyTag));
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getDomainName()const
 void SaveSingleTaskForDeletingDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getUserClientIp()const
 void SaveSingleTaskForDeletingDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForDeletingDSRecordRequest::getLang()const
@@ -66,6 +68,6 @@ std::string SaveSingleTaskForDeletingDSRecordRequest::getLang()const
 void SaveSingleTaskForDeletingDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

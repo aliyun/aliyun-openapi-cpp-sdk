@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeLogConfigRequest;
 
 DescribeLogConfigRequest::DescribeLogConfigRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeLogConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLogConfigRequest::~DescribeLogConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLogConfigRequest::getAccessKeyId()const
 void DescribeLogConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLogConfigRequest::getLogType()const
@@ -44,7 +46,7 @@ std::string DescribeLogConfigRequest::getLogType()const
 void DescribeLogConfigRequest::setLogType(const std::string& logType)
 {
 	logType_ = logType;
-	setCoreParameter("LogType", logType);
+	setParameter("LogType", logType);
 }
 
 std::string DescribeLogConfigRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribeLogConfigRequest::getSecurityToken()const
 void DescribeLogConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

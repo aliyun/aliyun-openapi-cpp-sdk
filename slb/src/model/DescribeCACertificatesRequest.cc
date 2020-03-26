@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeCACertificatesRequest;
 
 DescribeCACertificatesRequest::DescribeCACertificatesRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeCACertificates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCACertificatesRequest::~DescribeCACertificatesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCACertificatesRequest::getAccess_key_id()const
 void DescribeCACertificatesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeCACertificatesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeCACertificatesRequest::getResourceOwnerId()const
 void DescribeCACertificatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCACertificatesRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeCACertificatesRequest::getResourceGroupId()const
 void DescribeCACertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeCACertificatesRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeCACertificatesRequest::getRegionId()const
 void DescribeCACertificatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<DescribeCACertificatesRequest::Tag> DescribeCACertificatesRequest::getTag()const
@@ -77,12 +79,11 @@ std::vector<DescribeCACertificatesRequest::Tag> DescribeCACertificatesRequest::g
 void DescribeCACertificatesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -94,7 +95,7 @@ std::string DescribeCACertificatesRequest::getResourceOwnerAccount()const
 void DescribeCACertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCACertificatesRequest::getOwnerAccount()const
@@ -105,7 +106,7 @@ std::string DescribeCACertificatesRequest::getOwnerAccount()const
 void DescribeCACertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCACertificatesRequest::getOwnerId()const
@@ -116,7 +117,7 @@ long DescribeCACertificatesRequest::getOwnerId()const
 void DescribeCACertificatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCACertificatesRequest::getCACertificateId()const
@@ -127,6 +128,6 @@ std::string DescribeCACertificatesRequest::getCACertificateId()const
 void DescribeCACertificatesRequest::setCACertificateId(const std::string& cACertificateId)
 {
 	cACertificateId_ = cACertificateId;
-	setCoreParameter("CACertificateId", cACertificateId);
+	setParameter("CACertificateId", cACertificateId);
 }
 

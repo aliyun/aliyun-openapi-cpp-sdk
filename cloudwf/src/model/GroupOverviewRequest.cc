@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupOverviewRequest;
 
 GroupOverviewRequest::GroupOverviewRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupOverview")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupOverviewRequest::~GroupOverviewRequest()
 {}
@@ -33,7 +35,7 @@ std::string GroupOverviewRequest::getAccessKeyId()const
 void GroupOverviewRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GroupOverviewRequest::getGsid()const
@@ -44,6 +46,6 @@ long GroupOverviewRequest::getGsid()const
 void GroupOverviewRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

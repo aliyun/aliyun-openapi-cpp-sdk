@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DeleteRuleRequest;
 
 DeleteRuleRequest::DeleteRuleRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DeleteRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRuleRequest::~DeleteRuleRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteRuleRequest::getSourceIp()const
 void DeleteRuleRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteRuleRequest::getId()const
@@ -44,7 +46,7 @@ std::string DeleteRuleRequest::getId()const
 void DeleteRuleRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string DeleteRuleRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DeleteRuleRequest::getLang()const
 void DeleteRuleRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -35,7 +35,7 @@ std::string DescribeScdnDomainHitRateDataRequest::getStartTime()const
 void DescribeScdnDomainHitRateDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainHitRateDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainHitRateDataRequest::getDomainName()const
 void DescribeScdnDomainHitRateDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainHitRateDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainHitRateDataRequest::getEndTime()const
 void DescribeScdnDomainHitRateDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainHitRateDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeScdnDomainHitRateDataRequest::getOwnerId()const
 void DescribeScdnDomainHitRateDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnDomainHitRateDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeScdnDomainHitRateDataRequest::getInterval()const
 void DescribeScdnDomainHitRateDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

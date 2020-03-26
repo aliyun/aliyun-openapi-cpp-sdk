@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowCategoryRequest;
 
 ListFlowCategoryRequest::ListFlowCategoryRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowCategoryRequest::~ListFlowCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFlowCategoryRequest::getParentId()const
 void ListFlowCategoryRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 int ListFlowCategoryRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListFlowCategoryRequest::getPageNumber()const
 void ListFlowCategoryRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowCategoryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ListFlowCategoryRequest::getRegionId()const
 void ListFlowCategoryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 bool ListFlowCategoryRequest::getRoot()const
@@ -66,7 +68,7 @@ bool ListFlowCategoryRequest::getRoot()const
 void ListFlowCategoryRequest::setRoot(bool root)
 {
 	root_ = root;
-	setCoreParameter("Root", root ? "true" : "false");
+	setParameter("Root", root ? "true" : "false");
 }
 
 int ListFlowCategoryRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListFlowCategoryRequest::getPageSize()const
 void ListFlowCategoryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowCategoryRequest::getProjectId()const
@@ -88,6 +90,6 @@ std::string ListFlowCategoryRequest::getProjectId()const
 void ListFlowCategoryRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

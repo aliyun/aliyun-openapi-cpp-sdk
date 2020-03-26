@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreateEventRequest;
 
 CreateEventRequest::CreateEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreateEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEventRequest::~CreateEventRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateEventRequest::getStoreName()const
 void CreateEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string CreateEventRequest::getRemark()const
@@ -44,7 +46,7 @@ std::string CreateEventRequest::getRemark()const
 void CreateEventRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string CreateEventRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string CreateEventRequest::getTitle()const
 void CreateEventRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 long CreateEventRequest::getEndAt()const
@@ -66,7 +68,7 @@ long CreateEventRequest::getEndAt()const
 void CreateEventRequest::setEndAt(long endAt)
 {
 	endAt_ = endAt;
-	setCoreParameter("EndAt", std::to_string(endAt));
+	setParameter("EndAt", std::to_string(endAt));
 }
 
 std::string CreateEventRequest::getIdentity()const
@@ -77,7 +79,7 @@ std::string CreateEventRequest::getIdentity()const
 void CreateEventRequest::setIdentity(const std::string& identity)
 {
 	identity_ = identity;
-	setCoreParameter("Identity", identity);
+	setParameter("Identity", identity);
 }
 
 std::string CreateEventRequest::getWatermarkPhotoId()const
@@ -88,7 +90,7 @@ std::string CreateEventRequest::getWatermarkPhotoId()const
 void CreateEventRequest::setWatermarkPhotoId(const std::string& watermarkPhotoId)
 {
 	watermarkPhotoId_ = watermarkPhotoId;
-	setCoreParameter("WatermarkPhotoId", watermarkPhotoId);
+	setParameter("WatermarkPhotoId", watermarkPhotoId);
 }
 
 std::string CreateEventRequest::getSplashPhotoId()const
@@ -99,7 +101,7 @@ std::string CreateEventRequest::getSplashPhotoId()const
 void CreateEventRequest::setSplashPhotoId(const std::string& splashPhotoId)
 {
 	splashPhotoId_ = splashPhotoId;
-	setCoreParameter("SplashPhotoId", splashPhotoId);
+	setParameter("SplashPhotoId", splashPhotoId);
 }
 
 std::string CreateEventRequest::getLibraryId()const
@@ -110,7 +112,7 @@ std::string CreateEventRequest::getLibraryId()const
 void CreateEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string CreateEventRequest::getWeixinTitle()const
@@ -121,7 +123,7 @@ std::string CreateEventRequest::getWeixinTitle()const
 void CreateEventRequest::setWeixinTitle(const std::string& weixinTitle)
 {
 	weixinTitle_ = weixinTitle;
-	setCoreParameter("WeixinTitle", weixinTitle);
+	setParameter("WeixinTitle", weixinTitle);
 }
 
 std::string CreateEventRequest::getBannerPhotoId()const
@@ -132,7 +134,7 @@ std::string CreateEventRequest::getBannerPhotoId()const
 void CreateEventRequest::setBannerPhotoId(const std::string& bannerPhotoId)
 {
 	bannerPhotoId_ = bannerPhotoId;
-	setCoreParameter("BannerPhotoId", bannerPhotoId);
+	setParameter("BannerPhotoId", bannerPhotoId);
 }
 
 long CreateEventRequest::getStartAt()const
@@ -143,6 +145,6 @@ long CreateEventRequest::getStartAt()const
 void CreateEventRequest::setStartAt(long startAt)
 {
 	startAt_ = startAt;
-	setCoreParameter("StartAt", std::to_string(startAt));
+	setParameter("StartAt", std::to_string(startAt));
 }
 

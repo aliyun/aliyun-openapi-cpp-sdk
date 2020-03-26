@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAnnotationJobListRequest;
 
 QueryAnnotationJobListRequest::QueryAnnotationJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAnnotationJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAnnotationJobListRequest::~QueryAnnotationJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryAnnotationJobListRequest::getResourceOwnerId()const
 void QueryAnnotationJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAnnotationJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryAnnotationJobListRequest::getResourceOwnerAccount()const
 void QueryAnnotationJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAnnotationJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryAnnotationJobListRequest::getOwnerAccount()const
 void QueryAnnotationJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAnnotationJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryAnnotationJobListRequest::getOwnerId()const
 void QueryAnnotationJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAnnotationJobListRequest::getAnnotationJobIds()const
@@ -77,7 +79,7 @@ std::string QueryAnnotationJobListRequest::getAnnotationJobIds()const
 void QueryAnnotationJobListRequest::setAnnotationJobIds(const std::string& annotationJobIds)
 {
 	annotationJobIds_ = annotationJobIds;
-	setCoreParameter("AnnotationJobIds", annotationJobIds);
+	setParameter("AnnotationJobIds", annotationJobIds);
 }
 
 std::string QueryAnnotationJobListRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string QueryAnnotationJobListRequest::getAccessKeyId()const
 void QueryAnnotationJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

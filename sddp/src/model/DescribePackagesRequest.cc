@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribePackagesRequest;
 
 DescribePackagesRequest::DescribePackagesRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribePackages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePackagesRequest::~DescribePackagesRequest()
 {}
@@ -33,7 +35,18 @@ long DescribePackagesRequest::getProductId()const
 void DescribePackagesRequest::setProductId(long productId)
 {
 	productId_ = productId;
-	setCoreParameter("ProductId", std::to_string(productId));
+	setParameter("ProductId", std::to_string(productId));
+}
+
+std::string DescribePackagesRequest::getRiskLevels()const
+{
+	return riskLevels_;
+}
+
+void DescribePackagesRequest::setRiskLevels(const std::string& riskLevels)
+{
+	riskLevels_ = riskLevels;
+	setParameter("RiskLevels", riskLevels);
 }
 
 std::string DescribePackagesRequest::getQueryName()const
@@ -44,7 +57,7 @@ std::string DescribePackagesRequest::getQueryName()const
 void DescribePackagesRequest::setQueryName(const std::string& queryName)
 {
 	queryName_ = queryName;
-	setCoreParameter("QueryName", queryName);
+	setParameter("QueryName", queryName);
 }
 
 long DescribePackagesRequest::getRiskLevelId()const
@@ -55,7 +68,7 @@ long DescribePackagesRequest::getRiskLevelId()const
 void DescribePackagesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribePackagesRequest::getSourceIp()const
@@ -66,7 +79,7 @@ std::string DescribePackagesRequest::getSourceIp()const
 void DescribePackagesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePackagesRequest::getPageSize()const
@@ -77,7 +90,7 @@ int DescribePackagesRequest::getPageSize()const
 void DescribePackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePackagesRequest::getLang()const
@@ -88,7 +101,7 @@ std::string DescribePackagesRequest::getLang()const
 void DescribePackagesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribePackagesRequest::getQueryType()const
@@ -99,7 +112,7 @@ int DescribePackagesRequest::getQueryType()const
 void DescribePackagesRequest::setQueryType(int queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", std::to_string(queryType));
+	setParameter("QueryType", std::to_string(queryType));
 }
 
 int DescribePackagesRequest::getFeatureType()const
@@ -110,7 +123,18 @@ int DescribePackagesRequest::getFeatureType()const
 void DescribePackagesRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
+}
+
+std::string DescribePackagesRequest::getOrderBy()const
+{
+	return orderBy_;
+}
+
+void DescribePackagesRequest::setOrderBy(const std::string& orderBy)
+{
+	orderBy_ = orderBy;
+	setParameter("OrderBy", orderBy);
 }
 
 int DescribePackagesRequest::getCurrentPage()const
@@ -121,7 +145,7 @@ int DescribePackagesRequest::getCurrentPage()const
 void DescribePackagesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 long DescribePackagesRequest::getInstanceId()const
@@ -132,7 +156,7 @@ long DescribePackagesRequest::getInstanceId()const
 void DescribePackagesRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string DescribePackagesRequest::getName()const
@@ -143,7 +167,7 @@ std::string DescribePackagesRequest::getName()const
 void DescribePackagesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long DescribePackagesRequest::getRuleId()const
@@ -154,6 +178,6 @@ long DescribePackagesRequest::getRuleId()const
 void DescribePackagesRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

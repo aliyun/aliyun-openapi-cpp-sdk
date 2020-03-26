@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::CreateFlowlogRequest;
 
 CreateFlowlogRequest::CreateFlowlogRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "CreateFlowlog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFlowlogRequest::~CreateFlowlogRequest()
 {}
@@ -33,7 +35,7 @@ long CreateFlowlogRequest::getResourceOwnerId()const
 void CreateFlowlogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateFlowlogRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateFlowlogRequest::getClientToken()const
 void CreateFlowlogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateFlowlogRequest::getCenId()const
@@ -55,7 +57,7 @@ std::string CreateFlowlogRequest::getCenId()const
 void CreateFlowlogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string CreateFlowlogRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string CreateFlowlogRequest::getDescription()const
 void CreateFlowlogRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateFlowlogRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateFlowlogRequest::getRegionId()const
 void CreateFlowlogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateFlowlogRequest::getProjectName()const
@@ -88,7 +90,7 @@ std::string CreateFlowlogRequest::getProjectName()const
 void CreateFlowlogRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CreateFlowlogRequest::getLogStoreName()const
@@ -99,7 +101,7 @@ std::string CreateFlowlogRequest::getLogStoreName()const
 void CreateFlowlogRequest::setLogStoreName(const std::string& logStoreName)
 {
 	logStoreName_ = logStoreName;
-	setCoreParameter("LogStoreName", logStoreName);
+	setParameter("LogStoreName", logStoreName);
 }
 
 std::string CreateFlowlogRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateFlowlogRequest::getResourceOwnerAccount()const
 void CreateFlowlogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateFlowlogRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateFlowlogRequest::getOwnerAccount()const
 void CreateFlowlogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateFlowlogRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long CreateFlowlogRequest::getOwnerId()const
 void CreateFlowlogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateFlowlogRequest::getFlowLogName()const
@@ -143,6 +145,6 @@ std::string CreateFlowlogRequest::getFlowLogName()const
 void CreateFlowlogRequest::setFlowLogName(const std::string& flowLogName)
 {
 	flowLogName_ = flowLogName;
-	setCoreParameter("FlowLogName", flowLogName);
+	setParameter("FlowLogName", flowLogName);
 }
 

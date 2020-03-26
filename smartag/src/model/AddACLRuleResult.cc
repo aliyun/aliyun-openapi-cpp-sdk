@@ -65,6 +65,8 @@ void AddACLRuleResult::parse(const std::string &payload)
 		gmtCreate_ = std::stol(value["GmtCreate"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
@@ -111,6 +113,11 @@ std::string AddACLRuleResult::getDestPortRange()const
 std::string AddACLRuleResult::getDirection()const
 {
 	return direction_;
+}
+
+std::string AddACLRuleResult::getName()const
+{
+	return name_;
 }
 
 long AddACLRuleResult::getGmtCreate()const

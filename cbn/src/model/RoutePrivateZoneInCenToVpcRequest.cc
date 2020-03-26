@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::RoutePrivateZoneInCenToVpcRequest;
 
 RoutePrivateZoneInCenToVpcRequest::RoutePrivateZoneInCenToVpcRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RoutePrivateZoneInCenToVpcRequest::~RoutePrivateZoneInCenToVpcRequest()
 {}
@@ -33,7 +35,7 @@ long RoutePrivateZoneInCenToVpcRequest::getResourceOwnerId()const
 void RoutePrivateZoneInCenToVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getCenId()const
 void RoutePrivateZoneInCenToVpcRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
@@ -55,7 +57,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getAccessRegionId()const
 void RoutePrivateZoneInCenToVpcRequest::setAccessRegionId(const std::string& accessRegionId)
 {
 	accessRegionId_ = accessRegionId;
-	setCoreParameter("AccessRegionId", accessRegionId);
+	setParameter("AccessRegionId", accessRegionId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getHostRegionId()const
@@ -66,7 +68,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getHostRegionId()const
 void RoutePrivateZoneInCenToVpcRequest::setHostRegionId(const std::string& hostRegionId)
 {
 	hostRegionId_ = hostRegionId;
-	setCoreParameter("HostRegionId", hostRegionId);
+	setParameter("HostRegionId", hostRegionId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getHostVpcId()const
@@ -77,7 +79,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getHostVpcId()const
 void RoutePrivateZoneInCenToVpcRequest::setHostVpcId(const std::string& hostVpcId)
 {
 	hostVpcId_ = hostVpcId;
-	setCoreParameter("HostVpcId", hostVpcId);
+	setParameter("HostVpcId", hostVpcId);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getResourceOwnerAccount()const
 void RoutePrivateZoneInCenToVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RoutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string RoutePrivateZoneInCenToVpcRequest::getOwnerAccount()const
 void RoutePrivateZoneInCenToVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RoutePrivateZoneInCenToVpcRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long RoutePrivateZoneInCenToVpcRequest::getOwnerId()const
 void RoutePrivateZoneInCenToVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

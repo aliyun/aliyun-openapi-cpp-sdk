@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ReactivateDomainRequest;
 
 ReactivateDomainRequest::ReactivateDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ReactivateDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReactivateDomainRequest::~ReactivateDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReactivateDomainRequest::getGroupId()const
 void ReactivateDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string ReactivateDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string ReactivateDomainRequest::getDomainName()const
 void ReactivateDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string ReactivateDomainRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ReactivateDomainRequest::getAccessKeyId()const
 void ReactivateDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReactivateDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string ReactivateDomainRequest::getSecurityToken()const
 void ReactivateDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryCensorJobListRequest;
 
 QueryCensorJobListRequest::QueryCensorJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryCensorJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCensorJobListRequest::~QueryCensorJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryCensorJobListRequest::getResourceOwnerId()const
 void QueryCensorJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryCensorJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryCensorJobListRequest::getResourceOwnerAccount()const
 void QueryCensorJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryCensorJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryCensorJobListRequest::getOwnerAccount()const
 void QueryCensorJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryCensorJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryCensorJobListRequest::getOwnerId()const
 void QueryCensorJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryCensorJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryCensorJobListRequest::getAccessKeyId()const
 void QueryCensorJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryCensorJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryCensorJobListRequest::getJobIds()const
 void QueryCensorJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

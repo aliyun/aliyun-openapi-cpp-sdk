@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetVideoInfosRequest;
 
 GetVideoInfosRequest::GetVideoInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetVideoInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoInfosRequest::~GetVideoInfosRequest()
 {}
@@ -33,7 +35,7 @@ long GetVideoInfosRequest::getResourceOwnerId()const
 void GetVideoInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetVideoInfosRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetVideoInfosRequest::getResourceOwnerAccount()const
 void GetVideoInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetVideoInfosRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetVideoInfosRequest::getOwnerId()const
 void GetVideoInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetVideoInfosRequest::getAdditionType()const
@@ -66,7 +68,7 @@ std::string GetVideoInfosRequest::getAdditionType()const
 void GetVideoInfosRequest::setAdditionType(const std::string& additionType)
 {
 	additionType_ = additionType;
-	setCoreParameter("AdditionType", additionType);
+	setParameter("AdditionType", additionType);
 }
 
 std::string GetVideoInfosRequest::getVideoIds()const
@@ -77,6 +79,6 @@ std::string GetVideoInfosRequest::getVideoIds()const
 void GetVideoInfosRequest::setVideoIds(const std::string& videoIds)
 {
 	videoIds_ = videoIds;
-	setCoreParameter("VideoIds", videoIds);
+	setParameter("VideoIds", videoIds);
 }
 

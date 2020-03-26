@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentDomainListRequest;
 
 DescribeDeploymentDomainListRequest::DescribeDeploymentDomainListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentDomainListRequest::~DescribeDeploymentDomainListRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDeploymentDomainListRequest::getCertificateId()const
 void DescribeDeploymentDomainListRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DescribeDeploymentDomainListRequest::getCloudProduct()const
@@ -44,7 +46,7 @@ std::string DescribeDeploymentDomainListRequest::getCloudProduct()const
 void DescribeDeploymentDomainListRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setParameter("CloudProduct", cloudProduct);
 }
 
 std::string DescribeDeploymentDomainListRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeDeploymentDomainListRequest::getResourceGroupId()const
 void DescribeDeploymentDomainListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDeploymentDomainListRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeDeploymentDomainListRequest::getSourceIp()const
 void DescribeDeploymentDomainListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDeploymentDomainListRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeDeploymentDomainListRequest::getLang()const
 void DescribeDeploymentDomainListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

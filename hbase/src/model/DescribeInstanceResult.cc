@@ -121,7 +121,18 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		clusterName_ = value["ClusterName"].asString();
 	if(!value["IsDeletionProtection"].isNull())
 		isDeletionProtection_ = value["IsDeletionProtection"].asString() == "true";
+	if(!value["ParentId"].isNull())
+		parentId_ = value["ParentId"].asString();
+	if(!value["ModuleId"].isNull())
+		moduleId_ = std::stoi(value["ModuleId"].asString());
+	if(!value["ModuleStackVersion"].isNull())
+		moduleStackVersion_ = value["ModuleStackVersion"].asString();
 
+}
+
+std::string DescribeInstanceResult::getModuleStackVersion()const
+{
+	return moduleStackVersion_;
 }
 
 bool DescribeInstanceResult::getIsHa()const
@@ -147,6 +158,11 @@ bool DescribeInstanceResult::getIsDeletionProtection()const
 bool DescribeInstanceResult::getIsLatestVersion()const
 {
 	return isLatestVersion_;
+}
+
+int DescribeInstanceResult::getModuleId()const
+{
+	return moduleId_;
 }
 
 std::string DescribeInstanceResult::getMaintainEndTime()const
@@ -202,6 +218,11 @@ std::string DescribeInstanceResult::getMajorVersion()const
 std::string DescribeInstanceResult::getCoreDiskCount()const
 {
 	return coreDiskCount_;
+}
+
+std::string DescribeInstanceResult::getParentId()const
+{
+	return parentId_;
 }
 
 int DescribeInstanceResult::getMasterDiskSize()const

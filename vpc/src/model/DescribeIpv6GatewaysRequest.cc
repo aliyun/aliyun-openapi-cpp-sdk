@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6GatewaysRequest;
 
 DescribeIpv6GatewaysRequest::DescribeIpv6GatewaysRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6Gateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6GatewaysRequest::~DescribeIpv6GatewaysRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeIpv6GatewaysRequest::getResourceOwnerId()const
 void DescribeIpv6GatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeIpv6GatewaysRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeIpv6GatewaysRequest::getPageNumber()const
 void DescribeIpv6GatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpv6GatewaysRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeIpv6GatewaysRequest::getRegionId()const
 void DescribeIpv6GatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeIpv6GatewaysRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeIpv6GatewaysRequest::getPageSize()const
 void DescribeIpv6GatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpv6GatewaysRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeIpv6GatewaysRequest::getResourceOwnerAccount()const
 void DescribeIpv6GatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6GatewaysRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeIpv6GatewaysRequest::getOwnerAccount()const
 void DescribeIpv6GatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeIpv6GatewaysRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeIpv6GatewaysRequest::getOwnerId()const
 void DescribeIpv6GatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIpv6GatewaysRequest::getVpcId()const
@@ -110,7 +112,7 @@ std::string DescribeIpv6GatewaysRequest::getVpcId()const
 void DescribeIpv6GatewaysRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getIpv6GatewayId()const
@@ -121,7 +123,7 @@ std::string DescribeIpv6GatewaysRequest::getIpv6GatewayId()const
 void DescribeIpv6GatewaysRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 
 std::string DescribeIpv6GatewaysRequest::getName()const
@@ -132,6 +134,6 @@ std::string DescribeIpv6GatewaysRequest::getName()const
 void DescribeIpv6GatewaysRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

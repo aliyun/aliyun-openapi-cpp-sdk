@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetBidRequest;
 
 GetBidRequest::GetBidRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetBid")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetBidRequest::~GetBidRequest()
 {}
@@ -33,7 +35,7 @@ int GetBidRequest::getLength()const
 void GetBidRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string GetBidRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetBidRequest::getAccessKeyId()const
 void GetBidRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int GetBidRequest::getPageIndex()const
@@ -55,6 +57,6 @@ int GetBidRequest::getPageIndex()const
 void GetBidRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeEipGatewayInfoRequest;
 
 DescribeEipGatewayInfoRequest::DescribeEipGatewayInfoRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeEipGatewayInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeEipGatewayInfoRequest::~DescribeEipGatewayInfoRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeEipGatewayInfoRequest::getResourceOwnerId()const
 void DescribeEipGatewayInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeEipGatewayInfoRequest::getResourceOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeEipGatewayInfoRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeEipGatewayInfoRequest::getOwnerAccount()const
 void DescribeEipGatewayInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeEipGatewayInfoRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeEipGatewayInfoRequest::getOwnerId()const
 void DescribeEipGatewayInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeEipGatewayInfoRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string DescribeEipGatewayInfoRequest::getInstanceId()const
 void DescribeEipGatewayInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeEipGatewayInfoRequest::getRegionId()const
@@ -88,6 +90,6 @@ std::string DescribeEipGatewayInfoRequest::getRegionId()const
 void DescribeEipGatewayInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

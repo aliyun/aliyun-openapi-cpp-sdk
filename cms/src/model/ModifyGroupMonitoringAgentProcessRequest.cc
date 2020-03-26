@@ -37,15 +37,15 @@ void ModifyGroupMonitoringAgentProcessRequest::setAlertConfig(const std::vector<
 	alertConfig_ = alertConfig;
 	for(int dep1 = 0; dep1!= alertConfig.size(); dep1++) {
 		auto alertConfigObj = alertConfig.at(dep1);
-		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1);
-		setCoreParameter(alertConfigObjStr + ".Times", alertConfigObj.times);
-		setCoreParameter(alertConfigObjStr + ".NoEffectiveInterval", alertConfigObj.noEffectiveInterval);
-		setCoreParameter(alertConfigObjStr + ".SilenceTime", alertConfigObj.silenceTime);
-		setCoreParameter(alertConfigObjStr + ".Threshold", alertConfigObj.threshold);
-		setCoreParameter(alertConfigObjStr + ".EffectiveInterval", alertConfigObj.effectiveInterval);
-		setCoreParameter(alertConfigObjStr + ".ComparisonOperator", alertConfigObj.comparisonOperator);
-		setCoreParameter(alertConfigObjStr + ".EscalationsLevel", alertConfigObj.escalationsLevel);
-		setCoreParameter(alertConfigObjStr + ".Statistics", alertConfigObj.statistics);
+		std::string alertConfigObjStr = "AlertConfig." + std::to_string(dep1 + 1);
+		setParameter(alertConfigObjStr + ".Times", alertConfigObj.times);
+		setParameter(alertConfigObjStr + ".NoEffectiveInterval", alertConfigObj.noEffectiveInterval);
+		setParameter(alertConfigObjStr + ".SilenceTime", alertConfigObj.silenceTime);
+		setParameter(alertConfigObjStr + ".Threshold", alertConfigObj.threshold);
+		setParameter(alertConfigObjStr + ".EffectiveInterval", alertConfigObj.effectiveInterval);
+		setParameter(alertConfigObjStr + ".ComparisonOperator", alertConfigObj.comparisonOperator);
+		setParameter(alertConfigObjStr + ".EscalationsLevel", alertConfigObj.escalationsLevel);
+		setParameter(alertConfigObjStr + ".Statistics", alertConfigObj.statistics);
 	}
 }
 
@@ -57,7 +57,7 @@ std::string ModifyGroupMonitoringAgentProcessRequest::getGroupId()const
 void ModifyGroupMonitoringAgentProcessRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string ModifyGroupMonitoringAgentProcessRequest::getMatchExpressFilterRelation()const
@@ -68,7 +68,7 @@ std::string ModifyGroupMonitoringAgentProcessRequest::getMatchExpressFilterRelat
 void ModifyGroupMonitoringAgentProcessRequest::setMatchExpressFilterRelation(const std::string& matchExpressFilterRelation)
 {
 	matchExpressFilterRelation_ = matchExpressFilterRelation;
-	setCoreParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
+	setParameter("MatchExpressFilterRelation", matchExpressFilterRelation);
 }
 
 std::string ModifyGroupMonitoringAgentProcessRequest::getId()const
@@ -79,6 +79,6 @@ std::string ModifyGroupMonitoringAgentProcessRequest::getId()const
 void ModifyGroupMonitoringAgentProcessRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

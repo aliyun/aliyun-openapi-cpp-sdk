@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandStatusQueryRequest;
 
 BandStatusQueryRequest::BandStatusQueryRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandStatusQuery")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandStatusQueryRequest::~BandStatusQueryRequest()
 {}
@@ -33,7 +35,7 @@ long BandStatusQueryRequest::getResourceOwnerId()const
 void BandStatusQueryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandStatusQueryRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string BandStatusQueryRequest::getResourceOwnerAccount()const
 void BandStatusQueryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BandStatusQueryRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long BandStatusQueryRequest::getOwnerId()const
 void BandStatusQueryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandStatusQueryRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string BandStatusQueryRequest::getAccessKeyId()const
 void BandStatusQueryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long BandStatusQueryRequest::getBandId()const
@@ -77,6 +79,6 @@ long BandStatusQueryRequest::getBandId()const
 void BandStatusQueryRequest::setBandId(long bandId)
 {
 	bandId_ = bandId;
-	setCoreParameter("BandId", std::to_string(bandId));
+	setParameter("BandId", std::to_string(bandId));
 }
 

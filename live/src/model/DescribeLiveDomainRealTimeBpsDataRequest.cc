@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainRealTimeBpsDataRequest;
 
 DescribeLiveDomainRealTimeBpsDataRequest::DescribeLiveDomainRealTimeBpsDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeLiveDomainRealTimeBpsDataRequest::~DescribeLiveDomainRealTimeBpsDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainRealTimeBpsDataRequest::getLocationNameEn()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeBpsDataRequest::getIspNameEn()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainRealTimeBpsDataRequest::getIspNameEn()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeBpsDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainRealTimeBpsDataRequest::getStartTime()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainRealTimeBpsDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDomainRealTimeBpsDataRequest::getDomainName()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRealTimeBpsDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeLiveDomainRealTimeBpsDataRequest::getEndTime()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainRealTimeBpsDataRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeLiveDomainRealTimeBpsDataRequest::getOwnerId()const
 void DescribeLiveDomainRealTimeBpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

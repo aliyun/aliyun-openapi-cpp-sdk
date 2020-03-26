@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeSlowLogRecordsRequest;
 
 DescribeSlowLogRecordsRequest::DescribeSlowLogRecordsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeSlowLogRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSlowLogRecordsRequest::~DescribeSlowLogRecordsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSlowLogRecordsRequest::getStartTime()const
 void DescribeSlowLogRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeSlowLogRecordsRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeSlowLogRecordsRequest::getPageNumber()const
 void DescribeSlowLogRecordsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeSlowLogRecordsRequest::getAccessKeyId()const
 void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeSlowLogRecordsRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeSlowLogRecordsRequest::getPageSize()const
 void DescribeSlowLogRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
@@ -77,7 +79,7 @@ std::string DescribeSlowLogRecordsRequest::getDBInstanceId()const
 void DescribeSlowLogRecordsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 long DescribeSlowLogRecordsRequest::getSQLId()const
@@ -88,7 +90,7 @@ long DescribeSlowLogRecordsRequest::getSQLId()const
 void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
 {
 	sQLId_ = sQLId;
-	setCoreParameter("SQLId", std::to_string(sQLId));
+	setParameter("SQLId", std::to_string(sQLId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getEndTime()const
@@ -99,7 +101,7 @@ std::string DescribeSlowLogRecordsRequest::getEndTime()const
 void DescribeSlowLogRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeSlowLogRecordsRequest::getDBName()const
@@ -110,6 +112,6 @@ std::string DescribeSlowLogRecordsRequest::getDBName()const
 void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

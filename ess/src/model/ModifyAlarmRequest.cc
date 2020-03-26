@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ModifyAlarmRequest;
 
 ModifyAlarmRequest::ModifyAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ModifyAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAlarmRequest::~ModifyAlarmRequest()
 {}
@@ -33,40 +35,7 @@ std::string ModifyAlarmRequest::getMetricType()const
 void ModifyAlarmRequest::setMetricType(const std::string& metricType)
 {
 	metricType_ = metricType;
-	setCoreParameter("MetricType", metricType);
-}
-
-int ModifyAlarmRequest::getPeriod()const
-{
-	return period_;
-}
-
-void ModifyAlarmRequest::setPeriod(int period)
-{
-	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
-}
-
-std::string ModifyAlarmRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void ModifyAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-int ModifyAlarmRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void ModifyAlarmRequest::setGroupId(int groupId)
-{
-	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("MetricType", metricType);
 }
 
 std::string ModifyAlarmRequest::getDescription()const
@@ -77,7 +46,7 @@ std::string ModifyAlarmRequest::getDescription()const
 void ModifyAlarmRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::vector<std::string> ModifyAlarmRequest::getAlarmAction()const
@@ -88,8 +57,9 @@ std::vector<std::string> ModifyAlarmRequest::getAlarmAction()const
 void ModifyAlarmRequest::setAlarmAction(const std::vector<std::string>& alarmAction)
 {
 	alarmAction_ = alarmAction;
-	for(int i = 0; i!= alarmAction.size(); i++)
-		setCoreParameter("AlarmAction."+ std::to_string(i), alarmAction.at(i));
+	for(int dep1 = 0; dep1!= alarmAction.size(); dep1++) {
+		setParameter("AlarmAction."+ std::to_string(dep1), alarmAction.at(dep1));
+	}
 }
 
 float ModifyAlarmRequest::getThreshold()const
@@ -100,29 +70,7 @@ float ModifyAlarmRequest::getThreshold()const
 void ModifyAlarmRequest::setThreshold(float threshold)
 {
 	threshold_ = threshold;
-	setCoreParameter("Threshold", std::to_string(threshold));
-}
-
-long ModifyAlarmRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyAlarmRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyAlarmRequest::getAlarmTaskId()const
-{
-	return alarmTaskId_;
-}
-
-void ModifyAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
-{
-	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", alarmTaskId);
+	setParameter("Threshold", std::to_string(threshold));
 }
 
 std::string ModifyAlarmRequest::getAccessKeyId()const
@@ -133,7 +81,7 @@ std::string ModifyAlarmRequest::getAccessKeyId()const
 void ModifyAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyAlarmRequest::getRegionId()const
@@ -144,18 +92,7 @@ std::string ModifyAlarmRequest::getRegionId()const
 void ModifyAlarmRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
-}
-
-std::string ModifyAlarmRequest::getName()const
-{
-	return name_;
-}
-
-void ModifyAlarmRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("RegionId", regionId);
 }
 
 int ModifyAlarmRequest::getEvaluationCount()const
@@ -166,7 +103,7 @@ int ModifyAlarmRequest::getEvaluationCount()const
 void ModifyAlarmRequest::setEvaluationCount(int evaluationCount)
 {
 	evaluationCount_ = evaluationCount;
-	setCoreParameter("EvaluationCount", std::to_string(evaluationCount));
+	setParameter("EvaluationCount", std::to_string(evaluationCount));
 }
 
 std::string ModifyAlarmRequest::getMetricName()const
@@ -177,18 +114,7 @@ std::string ModifyAlarmRequest::getMetricName()const
 void ModifyAlarmRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
-}
-
-std::string ModifyAlarmRequest::getComparisonOperator()const
-{
-	return comparisonOperator_;
-}
-
-void ModifyAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
-{
-	comparisonOperator_ = comparisonOperator;
-	setCoreParameter("ComparisonOperator", comparisonOperator);
+	setParameter("MetricName", metricName);
 }
 
 std::vector<ModifyAlarmRequest::Dimension> ModifyAlarmRequest::getDimension()const
@@ -199,13 +125,89 @@ std::vector<ModifyAlarmRequest::Dimension> ModifyAlarmRequest::getDimension()con
 void ModifyAlarmRequest::setDimension(const std::vector<Dimension>& dimension)
 {
 	dimension_ = dimension;
-	int i = 0;
-	for(int i = 0; i!= dimension.size(); i++)	{
-		auto obj = dimension.at(i);
-		std::string str ="Dimension."+ std::to_string(i);
-		setCoreParameter(str + ".DimensionValue", obj.dimensionValue);
-		setCoreParameter(str + ".DimensionKey", obj.dimensionKey);
+	for(int dep1 = 0; dep1!= dimension.size(); dep1++) {
+		auto dimensionObj = dimension.at(dep1);
+		std::string dimensionObjStr = "Dimension." + std::to_string(dep1 + 1);
+		setParameter(dimensionObjStr + ".DimensionValue", dimensionObj.dimensionValue);
+		setParameter(dimensionObjStr + ".DimensionKey", dimensionObj.dimensionKey);
 	}
+}
+
+int ModifyAlarmRequest::getPeriod()const
+{
+	return period_;
+}
+
+void ModifyAlarmRequest::setPeriod(int period)
+{
+	period_ = period;
+	setParameter("Period", std::to_string(period));
+}
+
+std::string ModifyAlarmRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void ModifyAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+int ModifyAlarmRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void ModifyAlarmRequest::setGroupId(int groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", std::to_string(groupId));
+}
+
+long ModifyAlarmRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyAlarmRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyAlarmRequest::getAlarmTaskId()const
+{
+	return alarmTaskId_;
+}
+
+void ModifyAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
+{
+	alarmTaskId_ = alarmTaskId;
+	setParameter("AlarmTaskId", alarmTaskId);
+}
+
+std::string ModifyAlarmRequest::getName()const
+{
+	return name_;
+}
+
+void ModifyAlarmRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::string ModifyAlarmRequest::getComparisonOperator()const
+{
+	return comparisonOperator_;
+}
+
+void ModifyAlarmRequest::setComparisonOperator(const std::string& comparisonOperator)
+{
+	comparisonOperator_ = comparisonOperator;
+	setParameter("ComparisonOperator", comparisonOperator);
 }
 
 std::string ModifyAlarmRequest::getStatistics()const
@@ -216,6 +218,6 @@ std::string ModifyAlarmRequest::getStatistics()const
 void ModifyAlarmRequest::setStatistics(const std::string& statistics)
 {
 	statistics_ = statistics;
-	setCoreParameter("Statistics", statistics);
+	setParameter("Statistics", statistics);
 }
 

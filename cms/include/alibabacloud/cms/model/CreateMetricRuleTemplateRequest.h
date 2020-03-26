@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT CreateMetricRuleTemplateRequest : public RpcServiceRequest
 			{
+			public:
 				struct AlertTemplates
 				{
 					int period;

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateIpv6EgressOnlyRuleRequest;
 
 CreateIpv6EgressOnlyRuleRequest::CreateIpv6EgressOnlyRuleRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateIpv6EgressOnlyRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIpv6EgressOnlyRuleRequest::~CreateIpv6EgressOnlyRuleRequest()
 {}
@@ -33,7 +35,7 @@ long CreateIpv6EgressOnlyRuleRequest::getResourceOwnerId()const
 void CreateIpv6EgressOnlyRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getClientToken()const
 void CreateIpv6EgressOnlyRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getDescription()const
 void CreateIpv6EgressOnlyRuleRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getRegionId()const
 void CreateIpv6EgressOnlyRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getInstanceType()const
@@ -77,7 +79,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getInstanceType()const
 void CreateIpv6EgressOnlyRuleRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getResourceOwnerAccount()const
 void CreateIpv6EgressOnlyRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getOwnerAccount()const
 void CreateIpv6EgressOnlyRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateIpv6EgressOnlyRuleRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long CreateIpv6EgressOnlyRuleRequest::getOwnerId()const
 void CreateIpv6EgressOnlyRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getInstanceId()const
@@ -121,7 +123,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getInstanceId()const
 void CreateIpv6EgressOnlyRuleRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getIpv6GatewayId()const
@@ -132,7 +134,7 @@ std::string CreateIpv6EgressOnlyRuleRequest::getIpv6GatewayId()const
 void CreateIpv6EgressOnlyRuleRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 
 std::string CreateIpv6EgressOnlyRuleRequest::getName()const
@@ -143,6 +145,6 @@ std::string CreateIpv6EgressOnlyRuleRequest::getName()const
 void CreateIpv6EgressOnlyRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

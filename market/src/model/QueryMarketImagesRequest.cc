@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::QueryMarketImagesRequest;
 
 QueryMarketImagesRequest::QueryMarketImagesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "QueryMarketImages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMarketImagesRequest::~QueryMarketImagesRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryMarketImagesRequest::getParam()const
 void QueryMarketImagesRequest::setParam(const std::string& param)
 {
 	param_ = param;
-	setCoreParameter("Param", param);
+	setParameter("Param", param);
 }
 
 std::string QueryMarketImagesRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string QueryMarketImagesRequest::getAccessKeyId()const
 void QueryMarketImagesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

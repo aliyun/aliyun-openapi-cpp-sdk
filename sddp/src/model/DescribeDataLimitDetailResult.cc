@@ -62,6 +62,12 @@ void DescribeDataLimitDetailResult::parse(const std::string &payload)
 		dataLimit_.resourceType = std::stol(dataLimitNode["ResourceType"].asString());
 	if(!dataLimitNode["ResourceTypeCode"].isNull())
 		dataLimit_.resourceTypeCode = dataLimitNode["ResourceTypeCode"].asString();
+	if(!dataLimitNode["AuditStatus"].isNull())
+		dataLimit_.auditStatus = std::stoi(dataLimitNode["AuditStatus"].asString());
+	if(!dataLimitNode["LogStoreDay"].isNull())
+		dataLimit_.logStoreDay = std::stoi(dataLimitNode["LogStoreDay"].asString());
+	if(!dataLimitNode["Port"].isNull())
+		dataLimit_.port = std::stoi(dataLimitNode["Port"].asString());
 
 }
 

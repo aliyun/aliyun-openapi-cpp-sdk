@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportPornJobResultRequest;
 
 ReportPornJobResultRequest::ReportPornJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportPornJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportPornJobResultRequest::~ReportPornJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportPornJobResultRequest::getResourceOwnerId()const
 void ReportPornJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportPornJobResultRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportPornJobResultRequest::getAccessKeyId()const
 void ReportPornJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportPornJobResultRequest::getJobId()const
@@ -55,7 +57,7 @@ std::string ReportPornJobResultRequest::getJobId()const
 void ReportPornJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ReportPornJobResultRequest::getResourceOwnerAccount()const
 void ReportPornJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportPornJobResultRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ReportPornJobResultRequest::getOwnerAccount()const
 void ReportPornJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ReportPornJobResultRequest::getLabel()const
@@ -88,7 +90,7 @@ std::string ReportPornJobResultRequest::getLabel()const
 void ReportPornJobResultRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 
 long ReportPornJobResultRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ReportPornJobResultRequest::getOwnerId()const
 void ReportPornJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ReportPornJobResultRequest::getDetail()const
@@ -110,6 +112,6 @@ std::string ReportPornJobResultRequest::getDetail()const
 void ReportPornJobResultRequest::setDetail(const std::string& detail)
 {
 	detail_ = detail;
-	setCoreParameter("Detail", detail);
+	setParameter("Detail", detail);
 }
 

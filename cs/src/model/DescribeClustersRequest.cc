@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClustersRequest;
 
 DescribeClustersRequest::DescribeClustersRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClustersRequest::~DescribeClustersRequest()
 {}
@@ -33,7 +36,7 @@ std::string DescribeClustersRequest::getClusterType()const
 void DescribeClustersRequest::setClusterType(const std::string& clusterType)
 {
 	clusterType_ = clusterType;
-	setCoreParameter("ClusterType", clusterType);
+	setParameter("ClusterType", clusterType);
 }
 
 std::string DescribeClustersRequest::getName()const
@@ -44,6 +47,6 @@ std::string DescribeClustersRequest::getName()const
 void DescribeClustersRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

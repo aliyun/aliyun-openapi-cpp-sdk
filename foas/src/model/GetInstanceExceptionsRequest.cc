@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceExceptionsRequest;
 
 GetInstanceExceptionsRequest::GetInstanceExceptionsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/exceptions");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceExceptionsRequest::~GetInstanceExceptionsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceExceptionsRequest::getProjectName()const
 void GetInstanceExceptionsRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceExceptionsRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceExceptionsRequest::getInstanceId()const
 void GetInstanceExceptionsRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceExceptionsRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceExceptionsRequest::getRegionId()const
 void GetInstanceExceptionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceExceptionsRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceExceptionsRequest::getJobName()const
 void GetInstanceExceptionsRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

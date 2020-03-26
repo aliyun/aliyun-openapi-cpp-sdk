@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceFileRequest;
 
 QueryDeviceFileRequest::QueryDeviceFileRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceFile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceFileRequest::~QueryDeviceFileRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceFileRequest::getProductKey()const
 void QueryDeviceFileRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceFileRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceFileRequest::getAccessKeyId()const
 void QueryDeviceFileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceFileRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string QueryDeviceFileRequest::getIotId()const
 void QueryDeviceFileRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDeviceFileRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceFileRequest::getIotInstanceId()const
 void QueryDeviceFileRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string QueryDeviceFileRequest::getDeviceName()const
@@ -77,7 +79,7 @@ std::string QueryDeviceFileRequest::getDeviceName()const
 void QueryDeviceFileRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 
 std::string QueryDeviceFileRequest::getFileId()const
@@ -88,6 +90,6 @@ std::string QueryDeviceFileRequest::getFileId()const
 void QueryDeviceFileRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
-	setCoreParameter("FileId", fileId);
+	setParameter("FileId", fileId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileHistoryListRequest;
 
 ProfileHistoryListRequest::ProfileHistoryListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileHistoryList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileHistoryListRequest::~ProfileHistoryListRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProfileHistoryListRequest::getAccessKeyId()const
 void ProfileHistoryListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ProfileHistoryListRequest::getAgsid()const
@@ -44,7 +46,7 @@ long ProfileHistoryListRequest::getAgsid()const
 void ProfileHistoryListRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setParameter("Agsid", std::to_string(agsid));
 }
 
 long ProfileHistoryListRequest::getIdtype()const
@@ -55,7 +57,7 @@ long ProfileHistoryListRequest::getIdtype()const
 void ProfileHistoryListRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
+	setParameter("Idtype", std::to_string(idtype));
 }
 
 int ProfileHistoryListRequest::getPage()const
@@ -66,7 +68,7 @@ int ProfileHistoryListRequest::getPage()const
 void ProfileHistoryListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 int ProfileHistoryListRequest::getPer()const
@@ -77,6 +79,6 @@ int ProfileHistoryListRequest::getPer()const
 void ProfileHistoryListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

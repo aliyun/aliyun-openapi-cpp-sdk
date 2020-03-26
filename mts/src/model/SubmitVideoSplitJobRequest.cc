@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitVideoSplitJobRequest;
 
 SubmitVideoSplitJobRequest::SubmitVideoSplitJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitVideoSplitJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitVideoSplitJobRequest::~SubmitVideoSplitJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitVideoSplitJobRequest::getVideoSplitConfig()const
 void SubmitVideoSplitJobRequest::setVideoSplitConfig(const std::string& videoSplitConfig)
 {
 	videoSplitConfig_ = videoSplitConfig;
-	setCoreParameter("VideoSplitConfig", videoSplitConfig);
+	setParameter("VideoSplitConfig", videoSplitConfig);
 }
 
 long SubmitVideoSplitJobRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SubmitVideoSplitJobRequest::getResourceOwnerId()const
 void SubmitVideoSplitJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitVideoSplitJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitVideoSplitJobRequest::getAccessKeyId()const
 void SubmitVideoSplitJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitVideoSplitJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitVideoSplitJobRequest::getUserData()const
 void SubmitVideoSplitJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitVideoSplitJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitVideoSplitJobRequest::getResourceOwnerAccount()const
 void SubmitVideoSplitJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitVideoSplitJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitVideoSplitJobRequest::getOwnerAccount()const
 void SubmitVideoSplitJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitVideoSplitJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitVideoSplitJobRequest::getOwnerId()const
 void SubmitVideoSplitJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitVideoSplitJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitVideoSplitJobRequest::getPipelineId()const
 void SubmitVideoSplitJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitVideoSplitJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitVideoSplitJobRequest::getInput()const
 void SubmitVideoSplitJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

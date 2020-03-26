@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterLayoutsRequest;
 
 DescribeCasterLayoutsRequest::DescribeCasterLayoutsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterLayouts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterLayoutsRequest::~DescribeCasterLayoutsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCasterLayoutsRequest::getLayoutId()const
 void DescribeCasterLayoutsRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setParameter("LayoutId", layoutId);
 }
 
 std::string DescribeCasterLayoutsRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DescribeCasterLayoutsRequest::getCasterId()const
 void DescribeCasterLayoutsRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DescribeCasterLayoutsRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribeCasterLayoutsRequest::getOwnerId()const
 void DescribeCasterLayoutsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

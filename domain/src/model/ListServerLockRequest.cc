@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ListServerLockRequest;
 
 ListServerLockRequest::ListServerLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ListServerLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListServerLockRequest::~ListServerLockRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListServerLockRequest::getLockProductId()const
 void ListServerLockRequest::setLockProductId(const std::string& lockProductId)
 {
 	lockProductId_ = lockProductId;
-	setCoreParameter("LockProductId", lockProductId);
+	setParameter("LockProductId", lockProductId);
 }
 
 long ListServerLockRequest::getEndExpireDate()const
@@ -44,7 +46,7 @@ long ListServerLockRequest::getEndExpireDate()const
 void ListServerLockRequest::setEndExpireDate(long endExpireDate)
 {
 	endExpireDate_ = endExpireDate;
-	setCoreParameter("EndExpireDate", std::to_string(endExpireDate));
+	setParameter("EndExpireDate", std::to_string(endExpireDate));
 }
 
 int ListServerLockRequest::getPageNum()const
@@ -55,7 +57,7 @@ int ListServerLockRequest::getPageNum()const
 void ListServerLockRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 long ListServerLockRequest::getBeginStartDate()const
@@ -66,7 +68,7 @@ long ListServerLockRequest::getBeginStartDate()const
 void ListServerLockRequest::setBeginStartDate(long beginStartDate)
 {
 	beginStartDate_ = beginStartDate;
-	setCoreParameter("BeginStartDate", std::to_string(beginStartDate));
+	setParameter("BeginStartDate", std::to_string(beginStartDate));
 }
 
 int ListServerLockRequest::getServerLockStatus()const
@@ -77,7 +79,7 @@ int ListServerLockRequest::getServerLockStatus()const
 void ListServerLockRequest::setServerLockStatus(int serverLockStatus)
 {
 	serverLockStatus_ = serverLockStatus;
-	setCoreParameter("ServerLockStatus", std::to_string(serverLockStatus));
+	setParameter("ServerLockStatus", std::to_string(serverLockStatus));
 }
 
 long ListServerLockRequest::getStartExpireDate()const
@@ -88,7 +90,7 @@ long ListServerLockRequest::getStartExpireDate()const
 void ListServerLockRequest::setStartExpireDate(long startExpireDate)
 {
 	startExpireDate_ = startExpireDate;
-	setCoreParameter("StartExpireDate", std::to_string(startExpireDate));
+	setParameter("StartExpireDate", std::to_string(startExpireDate));
 }
 
 int ListServerLockRequest::getPageSize()const
@@ -99,7 +101,7 @@ int ListServerLockRequest::getPageSize()const
 void ListServerLockRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListServerLockRequest::getLang()const
@@ -110,7 +112,7 @@ std::string ListServerLockRequest::getLang()const
 void ListServerLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ListServerLockRequest::getDomainName()const
@@ -121,7 +123,7 @@ std::string ListServerLockRequest::getDomainName()const
 void ListServerLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ListServerLockRequest::getEndStartDate()const
@@ -132,7 +134,7 @@ long ListServerLockRequest::getEndStartDate()const
 void ListServerLockRequest::setEndStartDate(long endStartDate)
 {
 	endStartDate_ = endStartDate;
-	setCoreParameter("EndStartDate", std::to_string(endStartDate));
+	setParameter("EndStartDate", std::to_string(endStartDate));
 }
 
 std::string ListServerLockRequest::getUserClientIp()const
@@ -143,6 +145,6 @@ std::string ListServerLockRequest::getUserClientIp()const
 void ListServerLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 

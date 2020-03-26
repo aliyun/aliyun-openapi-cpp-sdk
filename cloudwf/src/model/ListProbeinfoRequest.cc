@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListProbeinfoRequest;
 
 ListProbeinfoRequest::ListProbeinfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListProbeinfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProbeinfoRequest::~ListProbeinfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListProbeinfoRequest::getOrderCol()const
 void ListProbeinfoRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListProbeinfoRequest::getSearchUserMac()const
@@ -44,7 +46,7 @@ std::string ListProbeinfoRequest::getSearchUserMac()const
 void ListProbeinfoRequest::setSearchUserMac(const std::string& searchUserMac)
 {
 	searchUserMac_ = searchUserMac;
-	setCoreParameter("SearchUserMac", searchUserMac);
+	setParameter("SearchUserMac", searchUserMac);
 }
 
 std::string ListProbeinfoRequest::getSearchSensorMac()const
@@ -55,7 +57,7 @@ std::string ListProbeinfoRequest::getSearchSensorMac()const
 void ListProbeinfoRequest::setSearchSensorMac(const std::string& searchSensorMac)
 {
 	searchSensorMac_ = searchSensorMac;
-	setCoreParameter("SearchSensorMac", searchSensorMac);
+	setParameter("SearchSensorMac", searchSensorMac);
 }
 
 int ListProbeinfoRequest::getLength()const
@@ -66,7 +68,7 @@ int ListProbeinfoRequest::getLength()const
 void ListProbeinfoRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListProbeinfoRequest::getSearchSensorName()const
@@ -77,7 +79,7 @@ std::string ListProbeinfoRequest::getSearchSensorName()const
 void ListProbeinfoRequest::setSearchSensorName(const std::string& searchSensorName)
 {
 	searchSensorName_ = searchSensorName;
-	setCoreParameter("SearchSensorName", searchSensorName);
+	setParameter("SearchSensorName", searchSensorName);
 }
 
 std::string ListProbeinfoRequest::getOrderDir()const
@@ -88,7 +90,7 @@ std::string ListProbeinfoRequest::getOrderDir()const
 void ListProbeinfoRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListProbeinfoRequest::getAccessKeyId()const
@@ -99,7 +101,7 @@ std::string ListProbeinfoRequest::getAccessKeyId()const
 void ListProbeinfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListProbeinfoRequest::getPageIndex()const
@@ -110,6 +112,6 @@ int ListProbeinfoRequest::getPageIndex()const
 void ListProbeinfoRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -44,7 +44,7 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 	{
 		Column itemsObject;
 		if(!valueItemsColumn["Id"].isNull())
-			itemsObject.id = std::stol(valueItemsColumn["Id"].asString());
+			itemsObject.id = valueItemsColumn["Id"].asString();
 		if(!valueItemsColumn["Name"].isNull())
 			itemsObject.name = valueItemsColumn["Name"].asString();
 		if(!valueItemsColumn["RegionId"].isNull())
@@ -58,7 +58,17 @@ void DescribeOssObjectsResult::parse(const std::string &payload)
 		if(!valueItemsColumn["FileId"].isNull())
 			itemsObject.fileId = valueItemsColumn["FileId"].asString();
 		if(!valueItemsColumn["RiskLevelName"].isNull())
-			itemsObject.riskLevelName = std::stol(valueItemsColumn["RiskLevelName"].asString());
+			itemsObject.riskLevelName = valueItemsColumn["RiskLevelName"].asString();
+		if(!valueItemsColumn["Size"].isNull())
+			itemsObject.size = std::stol(valueItemsColumn["Size"].asString());
+		if(!valueItemsColumn["SensitiveCount"].isNull())
+			itemsObject.sensitiveCount = std::stoi(valueItemsColumn["SensitiveCount"].asString());
+		if(!valueItemsColumn["RuleCount"].isNull())
+			itemsObject.ruleCount = std::stoi(valueItemsColumn["RuleCount"].asString());
+		if(!valueItemsColumn["CategoryName"].isNull())
+			itemsObject.categoryName = valueItemsColumn["CategoryName"].asString();
+		if(!valueItemsColumn["BucketName"].isNull())
+			itemsObject.bucketName = valueItemsColumn["BucketName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageSize"].isNull())

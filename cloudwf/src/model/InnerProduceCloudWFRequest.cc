@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::InnerProduceCloudWFRequest;
 
 InnerProduceCloudWFRequest::InnerProduceCloudWFRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "InnerProduceCloudWF")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InnerProduceCloudWFRequest::~InnerProduceCloudWFRequest()
 {}
@@ -33,7 +35,7 @@ std::string InnerProduceCloudWFRequest::getData()const
 void InnerProduceCloudWFRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string InnerProduceCloudWFRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string InnerProduceCloudWFRequest::getAccessKeyId()const
 void InnerProduceCloudWFRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -91,6 +91,9 @@ void DescribeVpcsResult::parse(const std::string &payload)
 		auto allRouterTableIds = value["RouterTableIds"]["RouterTableIds"];
 		for (auto value : allRouterTableIds)
 			vpcsObject.routerTableIds.push_back(value.asString());
+		auto allSecondaryCidrBlocks = value["SecondaryCidrBlocks"]["SecondaryCidrBlock"];
+		for (auto value : allSecondaryCidrBlocks)
+			vpcsObject.secondaryCidrBlocks.push_back(value.asString());
 		vpcs_.push_back(vpcsObject);
 	}
 	if(!value["TotalCount"].isNull())

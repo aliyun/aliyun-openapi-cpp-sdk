@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeScalingRuleRequest;
 
 DescribeScalingRuleRequest::DescribeScalingRuleRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScalingRuleRequest::~DescribeScalingRuleRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeScalingRuleRequest::getResourceOwnerId()const
 void DescribeScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingRuleRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DescribeScalingRuleRequest::getClusterId()const
 void DescribeScalingRuleRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeScalingRuleRequest::getScalingRuleId()const
@@ -55,7 +57,7 @@ std::string DescribeScalingRuleRequest::getScalingRuleId()const
 void DescribeScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setParameter("ScalingRuleId", scalingRuleId);
 }
 
 std::string DescribeScalingRuleRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeScalingRuleRequest::getAccessKeyId()const
 void DescribeScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScalingRuleRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeScalingRuleRequest::getRegionId()const
 void DescribeScalingRuleRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeScalingRuleRequest::getHostGroupId()const
@@ -88,6 +90,6 @@ std::string DescribeScalingRuleRequest::getHostGroupId()const
 void DescribeScalingRuleRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateCasterSceneConfigRequest;
 
 UpdateCasterSceneConfigRequest::UpdateCasterSceneConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateCasterSceneConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCasterSceneConfigRequest::~UpdateCasterSceneConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateCasterSceneConfigRequest::getLayoutId()const
 void UpdateCasterSceneConfigRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setParameter("LayoutId", layoutId);
 }
 
 std::vector<std::string> UpdateCasterSceneConfigRequest::getComponentId()const
@@ -44,8 +46,9 @@ std::vector<std::string> UpdateCasterSceneConfigRequest::getComponentId()const
 void UpdateCasterSceneConfigRequest::setComponentId(const std::vector<std::string>& componentId)
 {
 	componentId_ = componentId;
-	for(int i = 0; i!= componentId.size(); i++)
-		setCoreParameter("ComponentId."+ std::to_string(i), componentId.at(i));
+	for(int dep1 = 0; dep1!= componentId.size(); dep1++) {
+		setParameter("ComponentId."+ std::to_string(dep1), componentId.at(dep1));
+	}
 }
 
 std::string UpdateCasterSceneConfigRequest::getCasterId()const
@@ -56,7 +59,7 @@ std::string UpdateCasterSceneConfigRequest::getCasterId()const
 void UpdateCasterSceneConfigRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long UpdateCasterSceneConfigRequest::getOwnerId()const
@@ -67,7 +70,7 @@ long UpdateCasterSceneConfigRequest::getOwnerId()const
 void UpdateCasterSceneConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateCasterSceneConfigRequest::getSceneId()const
@@ -78,6 +81,6 @@ std::string UpdateCasterSceneConfigRequest::getSceneId()const
 void UpdateCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

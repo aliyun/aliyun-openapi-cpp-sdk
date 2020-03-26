@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::CheckLabelRequest;
 
 CheckLabelRequest::CheckLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "CheckLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckLabelRequest::~CheckLabelRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckLabelRequest::getLabelSeries()const
 void CheckLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setParameter("LabelSeries", labelSeries);
 }
 
 std::string CheckLabelRequest::getPK()const
@@ -44,7 +46,7 @@ std::string CheckLabelRequest::getPK()const
 void CheckLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 
 std::string CheckLabelRequest::getLabelName()const
@@ -55,6 +57,6 @@ std::string CheckLabelRequest::getLabelName()const
 void CheckLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setCoreParameter("LabelName", labelName);
+	setParameter("LabelName", labelName);
 }
 

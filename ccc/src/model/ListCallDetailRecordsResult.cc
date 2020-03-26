@@ -76,6 +76,8 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.skillGroupNames = callDetailRecordsNodeListCallDetailRecord["SkillGroupNames"].asString();
 		if(!callDetailRecordsNodeListCallDetailRecord["InstanceId"].isNull())
 			callDetailRecordObject.instanceId = callDetailRecordsNodeListCallDetailRecord["InstanceId"].asString();
+		if(!callDetailRecordsNodeListCallDetailRecord["SkillGroupIdList"].isNull())
+			callDetailRecordObject.skillGroupIdList = callDetailRecordsNodeListCallDetailRecord["SkillGroupIdList"].asString();
 		auto allAgentsNode = allListNode["Agents"]["CallDetailAgent"];
 		for (auto allListNodeAgentsCallDetailAgent : allAgentsNode)
 		{

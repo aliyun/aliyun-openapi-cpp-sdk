@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UpgradeAPGroupRequest;
 
 UpgradeAPGroupRequest::UpgradeAPGroupRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UpgradeAPGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeAPGroupRequest::~UpgradeAPGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpgradeAPGroupRequest::getAccessKeyId()const
 void UpgradeAPGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<long> UpgradeAPGroupRequest::getIds()const
@@ -44,7 +46,8 @@ std::vector<long> UpgradeAPGroupRequest::getIds()const
 void UpgradeAPGroupRequest::setIds(const std::vector<long>& ids)
 {
 	ids_ = ids;
-	for(int i = 0; i!= ids.size(); i++)
-		setCoreParameter("Ids."+ std::to_string(i), std::to_string(ids.at(i)));
+	for(int dep1 = 0; dep1!= ids.size(); dep1++) {
+		setParameter("Ids."+ std::to_string(dep1), std::to_string(ids.at(dep1)));
+	}
 }
 

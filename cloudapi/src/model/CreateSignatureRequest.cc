@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateSignatureRequest;
 
 CreateSignatureRequest::CreateSignatureRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateSignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSignatureRequest::~CreateSignatureRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateSignatureRequest::getSignatureName()const
 void CreateSignatureRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", signatureName);
+	setParameter("SignatureName", signatureName);
 }
 
 std::string CreateSignatureRequest::getSignatureSecret()const
@@ -44,7 +46,7 @@ std::string CreateSignatureRequest::getSignatureSecret()const
 void CreateSignatureRequest::setSignatureSecret(const std::string& signatureSecret)
 {
 	signatureSecret_ = signatureSecret;
-	setCoreParameter("SignatureSecret", signatureSecret);
+	setParameter("SignatureSecret", signatureSecret);
 }
 
 std::string CreateSignatureRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateSignatureRequest::getAccessKeyId()const
 void CreateSignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateSignatureRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string CreateSignatureRequest::getSecurityToken()const
 void CreateSignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string CreateSignatureRequest::getSignatureKey()const
@@ -77,6 +79,6 @@ std::string CreateSignatureRequest::getSignatureKey()const
 void CreateSignatureRequest::setSignatureKey(const std::string& signatureKey)
 {
 	signatureKey_ = signatureKey;
-	setCoreParameter("SignatureKey", signatureKey);
+	setParameter("SignatureKey", signatureKey);
 }
 

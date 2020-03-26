@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeBizTypeSettingRequest;
 
 DescribeBizTypeSettingRequest::DescribeBizTypeSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeBizTypeSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBizTypeSettingRequest::~DescribeBizTypeSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeBizTypeSettingRequest::getResourceType()const
 void DescribeBizTypeSettingRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeBizTypeSettingRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeBizTypeSettingRequest::getSourceIp()const
 void DescribeBizTypeSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeBizTypeSettingRequest::getBizTypeName()const
@@ -55,6 +57,6 @@ std::string DescribeBizTypeSettingRequest::getBizTypeName()const
 void DescribeBizTypeSettingRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", bizTypeName);
+	setParameter("BizTypeName", bizTypeName);
 }
 

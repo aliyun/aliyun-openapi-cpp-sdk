@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::ImportCredentialsRequest;
 
 ImportCredentialsRequest::ImportCredentialsRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "ImportCredentials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportCredentialsRequest::~ImportCredentialsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ImportCredentialsRequest::getData()const
 void ImportCredentialsRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 long ImportCredentialsRequest::getCsbId()const
@@ -44,6 +46,6 @@ long ImportCredentialsRequest::getCsbId()const
 void ImportCredentialsRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainRealTimeTrafficDataRequest;
 
 DescribeLiveDomainRealTimeTrafficDataRequest::DescribeLiveDomainRealTimeTrafficDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainRealTimeTrafficDataRequest::~DescribeLiveDomainRealTimeTrafficDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainRealTimeTrafficDataRequest::getLocationNameEn()con
 void DescribeLiveDomainRealTimeTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeTrafficDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainRealTimeTrafficDataRequest::getStartTime()const
 void DescribeLiveDomainRealTimeTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainRealTimeTrafficDataRequest::getIspNameEn()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainRealTimeTrafficDataRequest::getIspNameEn()const
 void DescribeLiveDomainRealTimeTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeLiveDomainRealTimeTrafficDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDomainRealTimeTrafficDataRequest::getDomainName()const
 void DescribeLiveDomainRealTimeTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainRealTimeTrafficDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeLiveDomainRealTimeTrafficDataRequest::getEndTime()const
 void DescribeLiveDomainRealTimeTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainRealTimeTrafficDataRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeLiveDomainRealTimeTrafficDataRequest::getOwnerId()const
 void DescribeLiveDomainRealTimeTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

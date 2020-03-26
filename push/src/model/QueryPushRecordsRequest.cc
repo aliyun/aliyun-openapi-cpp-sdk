@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryPushRecordsRequest;
 
 QueryPushRecordsRequest::QueryPushRecordsRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryPushRecords")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPushRecordsRequest::~QueryPushRecordsRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryPushRecordsRequest::getStartTime()const
 void QueryPushRecordsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string QueryPushRecordsRequest::getSource()const
@@ -44,7 +46,7 @@ std::string QueryPushRecordsRequest::getSource()const
 void QueryPushRecordsRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setParameter("Source", source);
 }
 
 std::string QueryPushRecordsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryPushRecordsRequest::getAccessKeyId()const
 void QueryPushRecordsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryPushRecordsRequest::getNextToken()const
@@ -66,7 +68,7 @@ std::string QueryPushRecordsRequest::getNextToken()const
 void QueryPushRecordsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 int QueryPushRecordsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryPushRecordsRequest::getPageSize()const
 void QueryPushRecordsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryPushRecordsRequest::getKeyword()const
@@ -88,7 +90,7 @@ std::string QueryPushRecordsRequest::getKeyword()const
 void QueryPushRecordsRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string QueryPushRecordsRequest::getEndTime()const
@@ -99,7 +101,7 @@ std::string QueryPushRecordsRequest::getEndTime()const
 void QueryPushRecordsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryPushRecordsRequest::getTarget()const
@@ -110,7 +112,7 @@ std::string QueryPushRecordsRequest::getTarget()const
 void QueryPushRecordsRequest::setTarget(const std::string& target)
 {
 	target_ = target;
-	setCoreParameter("Target", target);
+	setParameter("Target", target);
 }
 
 long QueryPushRecordsRequest::getAppKey()const
@@ -121,7 +123,7 @@ long QueryPushRecordsRequest::getAppKey()const
 void QueryPushRecordsRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryPushRecordsRequest::getPushType()const
@@ -132,6 +134,6 @@ std::string QueryPushRecordsRequest::getPushType()const
 void QueryPushRecordsRequest::setPushType(const std::string& pushType)
 {
 	pushType_ = pushType;
-	setCoreParameter("PushType", pushType);
+	setParameter("PushType", pushType);
 }
 

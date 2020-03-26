@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT AssociateNetworkAclRequest : public RpcServiceRequest
 			{
+			public:
 				struct Resource
 				{
 					std::string resourceType;

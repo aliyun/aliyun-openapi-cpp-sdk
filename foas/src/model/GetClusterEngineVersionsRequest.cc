@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterEngineVersionsRequest;
 
 GetClusterEngineVersionsRequest::GetClusterEngineVersionsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/engineversions");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetClusterEngineVersionsRequest::~GetClusterEngineVersionsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetClusterEngineVersionsRequest::getRegionId()const
 void GetClusterEngineVersionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetClusterEngineVersionsRequest::getClusterId()const
@@ -44,6 +47,6 @@ std::string GetClusterEngineVersionsRequest::getClusterId()const
 void GetClusterEngineVersionsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::DeleteOrderListRequest;
 
 DeleteOrderListRequest::DeleteOrderListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "DeleteOrderList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteOrderListRequest::~DeleteOrderListRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteOrderListRequest::getData()const
 void DeleteOrderListRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 

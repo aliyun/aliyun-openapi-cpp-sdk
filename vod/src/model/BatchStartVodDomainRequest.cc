@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::BatchStartVodDomainRequest;
 
 BatchStartVodDomainRequest::BatchStartVodDomainRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "BatchStartVodDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchStartVodDomainRequest::~BatchStartVodDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchStartVodDomainRequest::getDomainNames()const
 void BatchStartVodDomainRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 long BatchStartVodDomainRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long BatchStartVodDomainRequest::getOwnerId()const
 void BatchStartVodDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchStartVodDomainRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string BatchStartVodDomainRequest::getSecurityToken()const
 void BatchStartVodDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

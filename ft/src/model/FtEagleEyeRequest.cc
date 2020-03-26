@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FtEagleEyeRequest;
 FtEagleEyeRequest::FtEagleEyeRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FtEagleEye")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FtEagleEyeRequest::~FtEagleEyeRequest()

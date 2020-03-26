@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteSignatureRequest;
 
 DeleteSignatureRequest::DeleteSignatureRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteSignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSignatureRequest::~DeleteSignatureRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteSignatureRequest::getSignatureId()const
 void DeleteSignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 std::string DeleteSignatureRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteSignatureRequest::getAccessKeyId()const
 void DeleteSignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteSignatureRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteSignatureRequest::getSecurityToken()const
 void DeleteSignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

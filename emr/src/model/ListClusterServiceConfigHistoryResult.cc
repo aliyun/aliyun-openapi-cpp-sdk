@@ -63,6 +63,12 @@ void ListClusterServiceConfigHistoryResult::parse(const std::string &payload)
 			configHistoryListObject.author = valueConfigHistoryListConfigHistory["Author"].asString();
 		if(!valueConfigHistoryListConfigHistory["Comment"].isNull())
 			configHistoryListObject.comment = valueConfigHistoryListConfigHistory["Comment"].asString();
+		if(!valueConfigHistoryListConfigHistory["HostGroupId"].isNull())
+			configHistoryListObject.hostGroupId = valueConfigHistoryListConfigHistory["HostGroupId"].asString();
+		if(!valueConfigHistoryListConfigHistory["HostInstanceId"].isNull())
+			configHistoryListObject.hostInstanceId = valueConfigHistoryListConfigHistory["HostInstanceId"].asString();
+		if(!valueConfigHistoryListConfigHistory["HostName"].isNull())
+			configHistoryListObject.hostName = valueConfigHistoryListConfigHistory["HostName"].asString();
 		configHistoryList_.push_back(configHistoryListObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeNotificationConfigurationsRequest;
 
 DescribeNotificationConfigurationsRequest::DescribeNotificationConfigurationsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeNotificationConfigurations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeNotificationConfigurationsRequest::~DescribeNotificationConfigurationsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeNotificationConfigurationsRequest::getResourceOwnerAccount()
 void DescribeNotificationConfigurationsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeNotificationConfigurationsRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeNotificationConfigurationsRequest::getScalingGroupId()const
 void DescribeNotificationConfigurationsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 long DescribeNotificationConfigurationsRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DescribeNotificationConfigurationsRequest::getOwnerId()const
 void DescribeNotificationConfigurationsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeNotificationConfigurationsRequest::getAccessKeyId()const
@@ -66,6 +68,6 @@ std::string DescribeNotificationConfigurationsRequest::getAccessKeyId()const
 void DescribeNotificationConfigurationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

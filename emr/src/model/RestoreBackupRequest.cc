@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::RestoreBackupRequest;
 
 RestoreBackupRequest::RestoreBackupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "RestoreBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RestoreBackupRequest::~RestoreBackupRequest()
 {}
@@ -33,7 +35,7 @@ long RestoreBackupRequest::getResourceOwnerId()const
 void RestoreBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RestoreBackupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string RestoreBackupRequest::getAccessKeyId()const
 void RestoreBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RestoreBackupRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string RestoreBackupRequest::getRegionId()const
 void RestoreBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RestoreBackupRequest::getBackupPlanId()const
@@ -66,7 +68,7 @@ std::string RestoreBackupRequest::getBackupPlanId()const
 void RestoreBackupRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string RestoreBackupRequest::getBackupId()const
@@ -77,6 +79,6 @@ std::string RestoreBackupRequest::getBackupId()const
 void RestoreBackupRequest::setBackupId(const std::string& backupId)
 {
 	backupId_ = backupId;
-	setCoreParameter("BackupId", backupId);
+	setParameter("BackupId", backupId);
 }
 

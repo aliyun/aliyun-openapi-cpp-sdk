@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BindDriverToEdgeInstanceRequest;
 
 BindDriverToEdgeInstanceRequest::BindDriverToEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BindDriverToEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindDriverToEdgeInstanceRequest::~BindDriverToEdgeInstanceRequest()
 {}
@@ -33,18 +35,7 @@ std::string BindDriverToEdgeInstanceRequest::getAccessKeyId()const
 void BindDriverToEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BindDriverToEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BindDriverToEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindDriverToEdgeInstanceRequest::getDriverId()const
@@ -55,7 +46,7 @@ std::string BindDriverToEdgeInstanceRequest::getDriverId()const
 void BindDriverToEdgeInstanceRequest::setDriverId(const std::string& driverId)
 {
 	driverId_ = driverId;
-	setCoreParameter("DriverId", driverId);
+	setParameter("DriverId", driverId);
 }
 
 std::string BindDriverToEdgeInstanceRequest::getIotInstanceId()const
@@ -66,6 +57,61 @@ std::string BindDriverToEdgeInstanceRequest::getIotInstanceId()const
 void BindDriverToEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BindDriverToEdgeInstanceRequest::getDriverVersion()const
+{
+	return driverVersion_;
+}
+
+void BindDriverToEdgeInstanceRequest::setDriverVersion(const std::string& driverVersion)
+{
+	driverVersion_ = driverVersion;
+	setParameter("DriverVersion", driverVersion);
+}
+
+std::string BindDriverToEdgeInstanceRequest::getOrderId()const
+{
+	return orderId_;
+}
+
+void BindDriverToEdgeInstanceRequest::setOrderId(const std::string& orderId)
+{
+	orderId_ = orderId;
+	setParameter("OrderId", orderId);
+}
+
+std::string BindDriverToEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BindDriverToEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BindDriverToEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BindDriverToEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BindDriverToEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BindDriverToEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

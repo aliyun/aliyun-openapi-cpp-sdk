@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveAppRecordConfigRequest;
 
 DeleteLiveAppRecordConfigRequest::DeleteLiveAppRecordConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveAppRecordConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveAppRecordConfigRequest::~DeleteLiveAppRecordConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveAppRecordConfigRequest::getAppName()const
 void DeleteLiveAppRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DeleteLiveAppRecordConfigRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DeleteLiveAppRecordConfigRequest::getSecurityToken()const
 void DeleteLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveAppRecordConfigRequest::getStreamName()const
@@ -55,7 +57,7 @@ std::string DeleteLiveAppRecordConfigRequest::getStreamName()const
 void DeleteLiveAppRecordConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DeleteLiveAppRecordConfigRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DeleteLiveAppRecordConfigRequest::getDomainName()const
 void DeleteLiveAppRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveAppRecordConfigRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long DeleteLiveAppRecordConfigRequest::getOwnerId()const
 void DeleteLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

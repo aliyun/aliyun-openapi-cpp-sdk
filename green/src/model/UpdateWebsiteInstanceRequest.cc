@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateWebsiteInstanceRequest;
 
 UpdateWebsiteInstanceRequest::UpdateWebsiteInstanceRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateWebsiteInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWebsiteInstanceRequest::~UpdateWebsiteInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateWebsiteInstanceRequest::getIndexPage()const
 void UpdateWebsiteInstanceRequest::setIndexPage(const std::string& indexPage)
 {
 	indexPage_ = indexPage;
-	setCoreParameter("IndexPage", indexPage);
+	setParameter("IndexPage", indexPage);
 }
 
 std::string UpdateWebsiteInstanceRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateWebsiteInstanceRequest::getSourceIp()const
 void UpdateWebsiteInstanceRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateWebsiteInstanceRequest::getLang()const
@@ -55,7 +57,7 @@ std::string UpdateWebsiteInstanceRequest::getLang()const
 void UpdateWebsiteInstanceRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
@@ -66,7 +68,7 @@ int UpdateWebsiteInstanceRequest::getWebsiteScanInterval()const
 void UpdateWebsiteInstanceRequest::setWebsiteScanInterval(int websiteScanInterval)
 {
 	websiteScanInterval_ = websiteScanInterval;
-	setCoreParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
+	setParameter("WebsiteScanInterval", std::to_string(websiteScanInterval));
 }
 
 std::string UpdateWebsiteInstanceRequest::getSiteProtocol()const
@@ -77,7 +79,7 @@ std::string UpdateWebsiteInstanceRequest::getSiteProtocol()const
 void UpdateWebsiteInstanceRequest::setSiteProtocol(const std::string& siteProtocol)
 {
 	siteProtocol_ = siteProtocol;
-	setCoreParameter("SiteProtocol", siteProtocol);
+	setParameter("SiteProtocol", siteProtocol);
 }
 
 std::string UpdateWebsiteInstanceRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string UpdateWebsiteInstanceRequest::getInstanceId()const
 void UpdateWebsiteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWebsiteInstanceRequest::getDomain()const
@@ -99,7 +101,7 @@ std::string UpdateWebsiteInstanceRequest::getDomain()const
 void UpdateWebsiteInstanceRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 
 int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const
@@ -110,6 +112,6 @@ int UpdateWebsiteInstanceRequest::getIndexPageScanInterval()const
 void UpdateWebsiteInstanceRequest::setIndexPageScanInterval(int indexPageScanInterval)
 {
 	indexPageScanInterval_ = indexPageScanInterval;
-	setCoreParameter("IndexPageScanInterval", std::to_string(indexPageScanInterval));
+	setParameter("IndexPageScanInterval", std::to_string(indexPageScanInterval));
 }
 

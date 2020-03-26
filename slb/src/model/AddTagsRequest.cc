@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddTagsRequest;
 
 AddTagsRequest::AddTagsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTagsRequest::~AddTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddTagsRequest::getAccess_key_id()const
 void AddTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long AddTagsRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long AddTagsRequest::getResourceOwnerId()const
 void AddTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddTagsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AddTagsRequest::getRegionId()const
 void AddTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddTagsRequest::getResourceOwnerAccount()const
 void AddTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddTagsRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddTagsRequest::getOwnerAccount()const
 void AddTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddTagsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddTagsRequest::getOwnerId()const
 void AddTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddTagsRequest::getTags()const
@@ -99,7 +101,7 @@ std::string AddTagsRequest::getTags()const
 void AddTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string AddTagsRequest::getLoadBalancerId()const
@@ -110,6 +112,6 @@ std::string AddTagsRequest::getLoadBalancerId()const
 void AddTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

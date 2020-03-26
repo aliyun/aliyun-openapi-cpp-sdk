@@ -35,39 +35,35 @@ ModifyPushAllTaskResult::~ModifyPushAllTaskResult()
 
 void ModifyPushAllTaskResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pushTaskRspNode = value["PushTaskRsp"];
-	auto allPushTaskResultList = value["PushTaskResultList"]["pushTaskResult"];
-	for (auto value : allPushTaskResultList)
+	auto allPushTaskResultListNode = pushTaskRspNode["PushTaskResultList"]["pushTaskResult"];
+	for (auto pushTaskRspNodePushTaskResultListpushTaskResult : allPushTaskResultListNode)
 	{
 		PushTaskRsp::PushTaskResult pushTaskResultObject;
-		if(!value["InstanceId"].isNull())
-			pushTaskResultObject.instanceId = value["InstanceId"].asString();
-		if(!value["OsVersion"].isNull())
-			pushTaskResultObject.osVersion = value["OsVersion"].asString();
-		if(!value["InstanceName"].isNull())
-			pushTaskResultObject.instanceName = value["InstanceName"].asString();
-		if(!value["Success"].isNull())
-			pushTaskResultObject.success = value["Success"].asString() == "true";
-		if(!value["GroupId"].isNull())
-			pushTaskResultObject.groupId = std::stol(value["GroupId"].asString());
-		if(!value["Ip"].isNull())
-			pushTaskResultObject.ip = value["Ip"].asString();
-		if(!value["Online"].isNull())
-			pushTaskResultObject.online = value["Online"].asString() == "true";
-		if(!value["Message"].isNull())
-			pushTaskResultObject.message = value["Message"].asString();
-		if(!value["Region"].isNull())
-			pushTaskResultObject.region = value["Region"].asString();
-		if(!value["Uuid"].isNull())
-			pushTaskResultObject.uuid = value["Uuid"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].isNull())
+			pushTaskResultObject.instanceId = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceId"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].isNull())
+			pushTaskResultObject.osVersion = pushTaskRspNodePushTaskResultListpushTaskResult["OsVersion"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].isNull())
+			pushTaskResultObject.instanceName = pushTaskRspNodePushTaskResultListpushTaskResult["InstanceName"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Success"].isNull())
+			pushTaskResultObject.success = pushTaskRspNodePushTaskResultListpushTaskResult["Success"].asString() == "true";
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["GroupId"].isNull())
+			pushTaskResultObject.groupId = std::stol(pushTaskRspNodePushTaskResultListpushTaskResult["GroupId"].asString());
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].isNull())
+			pushTaskResultObject.ip = pushTaskRspNodePushTaskResultListpushTaskResult["Ip"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Online"].isNull())
+			pushTaskResultObject.online = pushTaskRspNodePushTaskResultListpushTaskResult["Online"].asString() == "true";
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Message"].isNull())
+			pushTaskResultObject.message = pushTaskRspNodePushTaskResultListpushTaskResult["Message"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Region"].isNull())
+			pushTaskResultObject.region = pushTaskRspNodePushTaskResultListpushTaskResult["Region"].asString();
+		if(!pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].isNull())
+			pushTaskResultObject.uuid = pushTaskRspNodePushTaskResultListpushTaskResult["Uuid"].asString();
 		pushTaskRsp_.pushTaskResultList.push_back(pushTaskResultObject);
 	}
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssIncrementCheckSettingRequest;
 
 DescribeOssIncrementCheckSettingRequest::DescribeOssIncrementCheckSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssIncrementCheckSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssIncrementCheckSettingRequest::~DescribeOssIncrementCheckSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOssIncrementCheckSettingRequest::getSourceIp()const
 void DescribeOssIncrementCheckSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOssIncrementCheckSettingRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeOssIncrementCheckSettingRequest::getLang()const
 void DescribeOssIncrementCheckSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

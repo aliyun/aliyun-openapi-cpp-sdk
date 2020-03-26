@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitEditingJobsRequest;
 
 SubmitEditingJobsRequest::SubmitEditingJobsRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitEditingJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitEditingJobsRequest::~SubmitEditingJobsRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitEditingJobsRequest::getResourceOwnerId()const
 void SubmitEditingJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitEditingJobsRequest::getOutputLocation()const
@@ -44,7 +46,7 @@ std::string SubmitEditingJobsRequest::getOutputLocation()const
 void SubmitEditingJobsRequest::setOutputLocation(const std::string& outputLocation)
 {
 	outputLocation_ = outputLocation;
-	setCoreParameter("OutputLocation", outputLocation);
+	setParameter("OutputLocation", outputLocation);
 }
 
 std::string SubmitEditingJobsRequest::getEditingInputs()const
@@ -55,7 +57,7 @@ std::string SubmitEditingJobsRequest::getEditingInputs()const
 void SubmitEditingJobsRequest::setEditingInputs(const std::string& editingInputs)
 {
 	editingInputs_ = editingInputs;
-	setCoreParameter("EditingInputs", editingInputs);
+	setParameter("EditingInputs", editingInputs);
 }
 
 std::string SubmitEditingJobsRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SubmitEditingJobsRequest::getAccessKeyId()const
 void SubmitEditingJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
@@ -77,7 +79,7 @@ std::string SubmitEditingJobsRequest::getEditingJobOutputs()const
 void SubmitEditingJobsRequest::setEditingJobOutputs(const std::string& editingJobOutputs)
 {
 	editingJobOutputs_ = editingJobOutputs;
-	setCoreParameter("EditingJobOutputs", editingJobOutputs);
+	setParameter("EditingJobOutputs", editingJobOutputs);
 }
 
 std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitEditingJobsRequest::getResourceOwnerAccount()const
 void SubmitEditingJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitEditingJobsRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SubmitEditingJobsRequest::getOwnerAccount()const
 void SubmitEditingJobsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitEditingJobsRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long SubmitEditingJobsRequest::getOwnerId()const
 void SubmitEditingJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitEditingJobsRequest::getPipelineId()const
@@ -121,7 +123,7 @@ std::string SubmitEditingJobsRequest::getPipelineId()const
 void SubmitEditingJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitEditingJobsRequest::getOutputBucket()const
@@ -132,6 +134,6 @@ std::string SubmitEditingJobsRequest::getOutputBucket()const
 void SubmitEditingJobsRequest::setOutputBucket(const std::string& outputBucket)
 {
 	outputBucket_ = outputBucket;
-	setCoreParameter("OutputBucket", outputBucket);
+	setParameter("OutputBucket", outputBucket);
 }
 

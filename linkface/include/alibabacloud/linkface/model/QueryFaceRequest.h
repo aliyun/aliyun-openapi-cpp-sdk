@@ -37,9 +37,15 @@ namespace AlibabaCloud
 
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
 				std::string userId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

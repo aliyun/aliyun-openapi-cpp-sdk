@@ -36,74 +36,6 @@ namespace AlibabaCloud
 				{
 					struct Service
 					{
-						struct RouteConf
-						{
-							struct ImportConf
-							{
-								struct InputParameter
-								{
-									int catType;
-									bool optional;
-									int extType;
-									int mapStyle;
-									std::string originalName;
-									std::string targetName;
-									std::string passMethod;
-									int depth;
-									std::string paramType;
-								};
-								struct OutputParameter
-								{
-									int catType;
-									bool optional;
-									int extType;
-									int mapStyle;
-									std::string originalName;
-									std::string targetName;
-									std::string passMethod;
-									int depth;
-									std::string paramType;
-								};
-								std::vector<OutputParameter> outputParameterMap;
-								std::string accessEndpointJSON;
-								std::string provideType;
-								std::vector<InputParameter> inputParameterMap;
-							};
-							struct ImportConfs
-							{
-								struct InputParameter3
-								{
-									int catType;
-									bool optional;
-									int extType;
-									int mapStyle;
-									std::string originalName;
-									std::string targetName;
-									std::string passMethod;
-									int depth;
-									std::string paramType;
-								};
-								struct OutputParameter4
-								{
-									int catType;
-									bool optional;
-									int extType;
-									int mapStyle;
-									std::string originalName;
-									std::string targetName;
-									std::string passMethod;
-									int depth;
-									std::string paramType;
-								};
-								std::vector<OutputParameter4> outputParameterMap2;
-								std::string accessEndpointJSON;
-								std::string provideType;
-								std::vector<InputParameter3> inputParameterMap1;
-							};
-							ImportConfs importConfs;
-							ImportConf importConf;
-							std::string serviceRouteStrategy;
-						};
 						struct ServiceVersion
 						{
 							int status;
@@ -131,7 +63,6 @@ namespace AlibabaCloud
 							long serviceId;
 						};
 						std::string ipWhiteStr;
-						RouteConf routeConf;
 						std::string projectName;
 						std::string approveUserId;
 						std::string serviceOpenRestfulPath;

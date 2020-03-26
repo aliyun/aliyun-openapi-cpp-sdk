@@ -43,7 +43,7 @@ namespace AlibabaCloud
 					std::string title;
 					std::string body;
 					std::string source;
-					long messageId;
+					std::string messageId;
 				};
 
 

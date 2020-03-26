@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceFileListRequest;
 
 QueryDeviceFileListRequest::QueryDeviceFileListRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceFileList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceFileListRequest::~QueryDeviceFileListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryDeviceFileListRequest::getCurrentPage()const
 void QueryDeviceFileListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceFileListRequest::getProductKey()const
@@ -44,7 +46,7 @@ std::string QueryDeviceFileListRequest::getProductKey()const
 void QueryDeviceFileListRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string QueryDeviceFileListRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryDeviceFileListRequest::getAccessKeyId()const
 void QueryDeviceFileListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceFileListRequest::getIotId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceFileListRequest::getIotId()const
 void QueryDeviceFileListRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDeviceFileListRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string QueryDeviceFileListRequest::getIotInstanceId()const
 void QueryDeviceFileListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceFileListRequest::getPageSize()const
@@ -88,7 +90,7 @@ int QueryDeviceFileListRequest::getPageSize()const
 void QueryDeviceFileListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryDeviceFileListRequest::getDeviceName()const
@@ -99,6 +101,6 @@ std::string QueryDeviceFileListRequest::getDeviceName()const
 void QueryDeviceFileListRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

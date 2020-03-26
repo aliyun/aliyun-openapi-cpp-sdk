@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeRouteConflictRequest;
 
 DescribeRouteConflictRequest::DescribeRouteConflictRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeRouteConflict")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouteConflictRequest::~DescribeRouteConflictRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRouteConflictRequest::getResourceOwnerId()const
 void DescribeRouteConflictRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeRouteConflictRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeRouteConflictRequest::getPageNumber()const
 void DescribeRouteConflictRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeRouteConflictRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeRouteConflictRequest::getPageSize()const
 void DescribeRouteConflictRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceRegionId()const
 void DescribeRouteConflictRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string DescribeRouteConflictRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeRouteConflictRequest::getResourceOwnerAccount()const
 void DescribeRouteConflictRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRouteConflictRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeRouteConflictRequest::getOwnerAccount()const
 void DescribeRouteConflictRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeRouteConflictRequest::getDestinationCidrBlock()const
@@ -99,7 +101,7 @@ std::string DescribeRouteConflictRequest::getDestinationCidrBlock()const
 void DescribeRouteConflictRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 long DescribeRouteConflictRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeRouteConflictRequest::getOwnerId()const
 void DescribeRouteConflictRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceType()const
@@ -121,7 +123,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceType()const
 void DescribeRouteConflictRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceId()const
@@ -132,7 +134,7 @@ std::string DescribeRouteConflictRequest::getChildInstanceId()const
 void DescribeRouteConflictRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 
 std::string DescribeRouteConflictRequest::getChildInstanceRouteTableId()const
@@ -143,6 +145,6 @@ std::string DescribeRouteConflictRequest::getChildInstanceRouteTableId()const
 void DescribeRouteConflictRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	setParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetQueueInputStatisticInfoRequest;
 
 GetQueueInputStatisticInfoRequest::GetQueueInputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetQueueInputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetQueueInputStatisticInfoRequest::~GetQueueInputStatisticInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetQueueInputStatisticInfoRequest::getFromDatetime()const
 void GetQueueInputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setParameter("FromDatetime", fromDatetime);
 }
 
 long GetQueueInputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long GetQueueInputStatisticInfoRequest::getResourceOwnerId()const
 void GetQueueInputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetQueueInputStatisticInfoRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string GetQueueInputStatisticInfoRequest::getClusterId()const
 void GetQueueInputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetQueueInputStatisticInfoRequest::getToDatetime()const
@@ -66,7 +68,7 @@ std::string GetQueueInputStatisticInfoRequest::getToDatetime()const
 void GetQueueInputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setParameter("ToDatetime", toDatetime);
 }
 
 std::string GetQueueInputStatisticInfoRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string GetQueueInputStatisticInfoRequest::getAccessKeyId()const
 void GetQueueInputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetQueueInputStatisticInfoRequest::getRegionId()const
@@ -88,6 +90,6 @@ std::string GetQueueInputStatisticInfoRequest::getRegionId()const
 void GetQueueInputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

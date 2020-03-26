@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyCountRequest;
 
 DescribePropertyCountRequest::DescribePropertyCountRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyCountRequest::~DescribePropertyCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePropertyCountRequest::getType()const
 void DescribePropertyCountRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribePropertyCountRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribePropertyCountRequest::getSourceIp()const
 void DescribePropertyCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribePropertyCountRequest::getUuidList()const
@@ -55,6 +57,6 @@ std::string DescribePropertyCountRequest::getUuidList()const
 void DescribePropertyCountRequest::setUuidList(const std::string& uuidList)
 {
 	uuidList_ = uuidList;
-	setCoreParameter("UuidList", uuidList);
+	setParameter("UuidList", uuidList);
 }
 

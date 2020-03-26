@@ -71,6 +71,10 @@ void DescribeSslVpnServersResult::parse(const std::string &payload)
 			sslVpnServersObject.maxConnections = std::stoi(valueSslVpnServersSslVpnServer["MaxConnections"].asString());
 		if(!valueSslVpnServersSslVpnServer["InternetIp"].isNull())
 			sslVpnServersObject.internetIp = valueSslVpnServersSslVpnServer["InternetIp"].asString();
+		if(!valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].isNull())
+			sslVpnServersObject.enableMultiFactorAuth = valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].asString() == "true";
+		if(!valueSslVpnServersSslVpnServer["IDaaSInstanceId"].isNull())
+			sslVpnServersObject.iDaaSInstanceId = valueSslVpnServersSslVpnServer["IDaaSInstanceId"].asString();
 		sslVpnServers_.push_back(sslVpnServersObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterMetaCollectRequest;
 
 ModifyClusterMetaCollectRequest::ModifyClusterMetaCollectRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterMetaCollect")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterMetaCollectRequest::~ModifyClusterMetaCollectRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyClusterMetaCollectRequest::getResourceOwnerId()const
 void ModifyClusterMetaCollectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterMetaCollectRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyClusterMetaCollectRequest::getAccessKeyId()const
 void ModifyClusterMetaCollectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyClusterMetaCollectRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyClusterMetaCollectRequest::getRegionId()const
 void ModifyClusterMetaCollectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterMetaCollectRequest::getClusterId()const
@@ -66,7 +68,7 @@ std::string ModifyClusterMetaCollectRequest::getClusterId()const
 void ModifyClusterMetaCollectRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 bool ModifyClusterMetaCollectRequest::getSwitchOn()const
@@ -77,6 +79,6 @@ bool ModifyClusterMetaCollectRequest::getSwitchOn()const
 void ModifyClusterMetaCollectRequest::setSwitchOn(bool switchOn)
 {
 	switchOn_ = switchOn;
-	setCoreParameter("SwitchOn", switchOn ? "true" : "false");
+	setParameter("SwitchOn", switchOn ? "true" : "false");
 }
 

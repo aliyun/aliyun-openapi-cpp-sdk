@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::CreateUploadImageRequest;
 
 CreateUploadImageRequest::CreateUploadImageRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "CreateUploadImage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUploadImageRequest::~CreateUploadImageRequest()
 {}
@@ -33,7 +35,7 @@ long CreateUploadImageRequest::getResourceOwnerId()const
 void CreateUploadImageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateUploadImageRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateUploadImageRequest::getDescription()const
 void CreateUploadImageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateUploadImageRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string CreateUploadImageRequest::getTitle()const
 void CreateUploadImageRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string CreateUploadImageRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateUploadImageRequest::getAccessKeyId()const
 void CreateUploadImageRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateUploadImageRequest::getStorageLocation()const
@@ -77,7 +79,7 @@ std::string CreateUploadImageRequest::getStorageLocation()const
 void CreateUploadImageRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", storageLocation);
+	setParameter("StorageLocation", storageLocation);
 }
 
 std::string CreateUploadImageRequest::getUserData()const
@@ -88,7 +90,7 @@ std::string CreateUploadImageRequest::getUserData()const
 void CreateUploadImageRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 long CreateUploadImageRequest::getCateId()const
@@ -99,7 +101,7 @@ long CreateUploadImageRequest::getCateId()const
 void CreateUploadImageRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 std::string CreateUploadImageRequest::getImageType()const
@@ -110,7 +112,7 @@ std::string CreateUploadImageRequest::getImageType()const
 void CreateUploadImageRequest::setImageType(const std::string& imageType)
 {
 	imageType_ = imageType;
-	setCoreParameter("ImageType", imageType);
+	setParameter("ImageType", imageType);
 }
 
 std::string CreateUploadImageRequest::getResourceOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateUploadImageRequest::getResourceOwnerAccount()const
 void CreateUploadImageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateUploadImageRequest::getImageExt()const
@@ -132,7 +134,7 @@ std::string CreateUploadImageRequest::getImageExt()const
 void CreateUploadImageRequest::setImageExt(const std::string& imageExt)
 {
 	imageExt_ = imageExt;
-	setCoreParameter("ImageExt", imageExt);
+	setParameter("ImageExt", imageExt);
 }
 
 long CreateUploadImageRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long CreateUploadImageRequest::getOwnerId()const
 void CreateUploadImageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateUploadImageRequest::getTags()const
@@ -154,7 +156,7 @@ std::string CreateUploadImageRequest::getTags()const
 void CreateUploadImageRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string CreateUploadImageRequest::getOriginalFileName()const
@@ -165,7 +167,7 @@ std::string CreateUploadImageRequest::getOriginalFileName()const
 void CreateUploadImageRequest::setOriginalFileName(const std::string& originalFileName)
 {
 	originalFileName_ = originalFileName;
-	setCoreParameter("OriginalFileName", originalFileName);
+	setParameter("OriginalFileName", originalFileName);
 }
 
 std::string CreateUploadImageRequest::getAppId()const
@@ -176,6 +178,6 @@ std::string CreateUploadImageRequest::getAppId()const
 void CreateUploadImageRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

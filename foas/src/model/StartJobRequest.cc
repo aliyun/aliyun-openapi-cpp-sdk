@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::StartJobRequest;
 
 StartJobRequest::StartJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance");
+	setMethod(HttpRequest::Method::Post);
+}
 
 StartJobRequest::~StartJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string StartJobRequest::getProjectName()const
 void StartJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string StartJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string StartJobRequest::getRegionId()const
 void StartJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string StartJobRequest::getParameterJson()const
@@ -55,7 +58,7 @@ std::string StartJobRequest::getParameterJson()const
 void StartJobRequest::setParameterJson(const std::string& parameterJson)
 {
 	parameterJson_ = parameterJson;
-	setCoreParameter("ParameterJson", parameterJson);
+	setBodyParameter("ParameterJson", parameterJson);
 }
 
 std::string StartJobRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string StartJobRequest::getJobName()const
 void StartJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

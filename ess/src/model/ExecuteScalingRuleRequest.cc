@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::ExecuteScalingRuleRequest;
 
 ExecuteScalingRuleRequest::ExecuteScalingRuleRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "ExecuteScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExecuteScalingRuleRequest::~ExecuteScalingRuleRequest()
 {}
@@ -33,7 +35,7 @@ long ExecuteScalingRuleRequest::getResourceOwnerId()const
 void ExecuteScalingRuleRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ExecuteScalingRuleRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ExecuteScalingRuleRequest::getClientToken()const
 void ExecuteScalingRuleRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ExecuteScalingRuleRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ExecuteScalingRuleRequest::getAccessKeyId()const
 void ExecuteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 float ExecuteScalingRuleRequest::getBreachThreshold()const
@@ -66,7 +68,7 @@ float ExecuteScalingRuleRequest::getBreachThreshold()const
 void ExecuteScalingRuleRequest::setBreachThreshold(float breachThreshold)
 {
 	breachThreshold_ = breachThreshold;
-	setCoreParameter("BreachThreshold", std::to_string(breachThreshold));
+	setParameter("BreachThreshold", std::to_string(breachThreshold));
 }
 
 std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ExecuteScalingRuleRequest::getResourceOwnerAccount()const
 void ExecuteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ExecuteScalingRuleRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ExecuteScalingRuleRequest::getOwnerAccount()const
 void ExecuteScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ExecuteScalingRuleRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long ExecuteScalingRuleRequest::getOwnerId()const
 void ExecuteScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 float ExecuteScalingRuleRequest::getMetricValue()const
@@ -110,7 +112,7 @@ float ExecuteScalingRuleRequest::getMetricValue()const
 void ExecuteScalingRuleRequest::setMetricValue(float metricValue)
 {
 	metricValue_ = metricValue;
-	setCoreParameter("MetricValue", std::to_string(metricValue));
+	setParameter("MetricValue", std::to_string(metricValue));
 }
 
 std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
@@ -121,6 +123,6 @@ std::string ExecuteScalingRuleRequest::getScalingRuleAri()const
 void ExecuteScalingRuleRequest::setScalingRuleAri(const std::string& scalingRuleAri)
 {
 	scalingRuleAri_ = scalingRuleAri;
-	setCoreParameter("ScalingRuleAri", scalingRuleAri);
+	setParameter("ScalingRuleAri", scalingRuleAri);
 }
 

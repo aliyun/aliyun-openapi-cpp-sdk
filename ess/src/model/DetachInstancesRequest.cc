@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DetachInstancesRequest;
 
 DetachInstancesRequest::DetachInstancesRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DetachInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetachInstancesRequest::~DetachInstancesRequest()
 {}
@@ -33,7 +35,7 @@ long DetachInstancesRequest::getResourceOwnerId()const
 void DetachInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DetachInstancesRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string DetachInstancesRequest::getScalingGroupId()const
 void DetachInstancesRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DetachInstancesRequest::getAccessKeyId()const
@@ -55,7 +57,18 @@ std::string DetachInstancesRequest::getAccessKeyId()const
 void DetachInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+bool DetachInstancesRequest::getDecreaseDesiredCapacity()const
+{
+	return decreaseDesiredCapacity_;
+}
+
+void DetachInstancesRequest::setDecreaseDesiredCapacity(bool decreaseDesiredCapacity)
+{
+	decreaseDesiredCapacity_ = decreaseDesiredCapacity;
+	setParameter("DecreaseDesiredCapacity", decreaseDesiredCapacity ? "true" : "false");
 }
 
 std::string DetachInstancesRequest::getResourceOwnerAccount()const
@@ -66,7 +79,7 @@ std::string DetachInstancesRequest::getResourceOwnerAccount()const
 void DetachInstancesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DetachInstancesRequest::getOwnerAccount()const
@@ -77,7 +90,7 @@ std::string DetachInstancesRequest::getOwnerAccount()const
 void DetachInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DetachInstancesRequest::getOwnerId()const
@@ -88,7 +101,7 @@ long DetachInstancesRequest::getOwnerId()const
 void DetachInstancesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<std::string> DetachInstancesRequest::getInstanceId()const
@@ -99,7 +112,8 @@ std::vector<std::string> DetachInstancesRequest::getInstanceId()const
 void DetachInstancesRequest::setInstanceId(const std::vector<std::string>& instanceId)
 {
 	instanceId_ = instanceId;
-	for(int i = 0; i!= instanceId.size(); i++)
-		setCoreParameter("InstanceId."+ std::to_string(i), instanceId.at(i));
+	for(int dep1 = 0; dep1!= instanceId.size(); dep1++) {
+		setParameter("InstanceId."+ std::to_string(dep1), instanceId.at(dep1));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::JoinBoardRequest;
 
 JoinBoardRequest::JoinBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "JoinBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 JoinBoardRequest::~JoinBoardRequest()
 {}
@@ -33,7 +35,7 @@ std::string JoinBoardRequest::getBoardId()const
 void JoinBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 
 std::string JoinBoardRequest::getAppUid()const
@@ -44,7 +46,7 @@ std::string JoinBoardRequest::getAppUid()const
 void JoinBoardRequest::setAppUid(const std::string& appUid)
 {
 	appUid_ = appUid;
-	setCoreParameter("AppUid", appUid);
+	setParameter("AppUid", appUid);
 }
 
 long JoinBoardRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long JoinBoardRequest::getOwnerId()const
 void JoinBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string JoinBoardRequest::getAppId()const
@@ -66,6 +68,6 @@ std::string JoinBoardRequest::getAppId()const
 void JoinBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

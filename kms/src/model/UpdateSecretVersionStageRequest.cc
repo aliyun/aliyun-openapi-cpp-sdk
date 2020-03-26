@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateSecretVersionStageRequest;
 UpdateSecretVersionStageRequest::UpdateSecretVersionStageRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateSecretVersionStage")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateSecretVersionStageRequest::~UpdateSecretVersionStageRequest()

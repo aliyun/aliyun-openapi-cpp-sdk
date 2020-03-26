@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListCallEventDetailByContactIdRequest;
 
 ListCallEventDetailByContactIdRequest::ListCallEventDetailByContactIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListCallEventDetailByContactId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListCallEventDetailByContactIdRequest::~ListCallEventDetailByContactIdRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListCallEventDetailByContactIdRequest::getInstanceId()const
 void ListCallEventDetailByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListCallEventDetailByContactIdRequest::getContactId()const
@@ -44,7 +46,7 @@ std::string ListCallEventDetailByContactIdRequest::getContactId()const
 void ListCallEventDetailByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 std::string ListCallEventDetailByContactIdRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ListCallEventDetailByContactIdRequest::getAccessKeyId()const
 void ListCallEventDetailByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

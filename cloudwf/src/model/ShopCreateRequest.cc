@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopCreateRequest;
 
 ShopCreateRequest::ShopCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopCreateRequest::~ShopCreateRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopCreateRequest::getShopProvince()const
 void ShopCreateRequest::setShopProvince(const std::string& shopProvince)
 {
 	shopProvince_ = shopProvince;
-	setCoreParameter("ShopProvince", shopProvince);
+	setParameter("ShopProvince", shopProvince);
 }
 
 int ShopCreateRequest::getShopTopType()const
@@ -44,7 +46,7 @@ int ShopCreateRequest::getShopTopType()const
 void ShopCreateRequest::setShopTopType(int shopTopType)
 {
 	shopTopType_ = shopTopType;
-	setCoreParameter("ShopTopType", std::to_string(shopTopType));
+	setParameter("ShopTopType", std::to_string(shopTopType));
 }
 
 int ShopCreateRequest::getShopType()const
@@ -55,7 +57,7 @@ int ShopCreateRequest::getShopType()const
 void ShopCreateRequest::setShopType(int shopType)
 {
 	shopType_ = shopType;
-	setCoreParameter("ShopType", std::to_string(shopType));
+	setParameter("ShopType", std::to_string(shopType));
 }
 
 std::string ShopCreateRequest::getWarnEmail()const
@@ -66,7 +68,7 @@ std::string ShopCreateRequest::getWarnEmail()const
 void ShopCreateRequest::setWarnEmail(const std::string& warnEmail)
 {
 	warnEmail_ = warnEmail;
-	setCoreParameter("WarnEmail", warnEmail);
+	setParameter("WarnEmail", warnEmail);
 }
 
 std::string ShopCreateRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ShopCreateRequest::getAccessKeyId()const
 void ShopCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ShopCreateRequest::getShopTel()const
@@ -88,7 +90,7 @@ std::string ShopCreateRequest::getShopTel()const
 void ShopCreateRequest::setShopTel(const std::string& shopTel)
 {
 	shopTel_ = shopTel;
-	setCoreParameter("ShopTel", shopTel);
+	setParameter("ShopTel", shopTel);
 }
 
 std::string ShopCreateRequest::getWarnpHone()const
@@ -99,7 +101,7 @@ std::string ShopCreateRequest::getWarnpHone()const
 void ShopCreateRequest::setWarnpHone(const std::string& warnpHone)
 {
 	warnpHone_ = warnpHone;
-	setCoreParameter("WarnpHone", warnpHone);
+	setParameter("WarnpHone", warnpHone);
 }
 
 std::string ShopCreateRequest::getShopCity()const
@@ -110,7 +112,7 @@ std::string ShopCreateRequest::getShopCity()const
 void ShopCreateRequest::setShopCity(const std::string& shopCity)
 {
 	shopCity_ = shopCity;
-	setCoreParameter("ShopCity", shopCity);
+	setParameter("ShopCity", shopCity);
 }
 
 std::string ShopCreateRequest::getShopBrand()const
@@ -121,7 +123,7 @@ std::string ShopCreateRequest::getShopBrand()const
 void ShopCreateRequest::setShopBrand(const std::string& shopBrand)
 {
 	shopBrand_ = shopBrand;
-	setCoreParameter("ShopBrand", shopBrand);
+	setParameter("ShopBrand", shopBrand);
 }
 
 int ShopCreateRequest::getShopCloseWarn()const
@@ -132,7 +134,7 @@ int ShopCreateRequest::getShopCloseWarn()const
 void ShopCreateRequest::setShopCloseWarn(int shopCloseWarn)
 {
 	shopCloseWarn_ = shopCloseWarn;
-	setCoreParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
+	setParameter("ShopCloseWarn", std::to_string(shopCloseWarn));
 }
 
 std::string ShopCreateRequest::getShopBusinessHours()const
@@ -143,7 +145,7 @@ std::string ShopCreateRequest::getShopBusinessHours()const
 void ShopCreateRequest::setShopBusinessHours(const std::string& shopBusinessHours)
 {
 	shopBusinessHours_ = shopBusinessHours;
-	setCoreParameter("ShopBusinessHours", shopBusinessHours);
+	setParameter("ShopBusinessHours", shopBusinessHours);
 }
 
 std::string ShopCreateRequest::getShopCoordinate()const
@@ -154,7 +156,7 @@ std::string ShopCreateRequest::getShopCoordinate()const
 void ShopCreateRequest::setShopCoordinate(const std::string& shopCoordinate)
 {
 	shopCoordinate_ = shopCoordinate;
-	setCoreParameter("ShopCoordinate", shopCoordinate);
+	setParameter("ShopCoordinate", shopCoordinate);
 }
 
 std::string ShopCreateRequest::getShopAddress()const
@@ -165,7 +167,7 @@ std::string ShopCreateRequest::getShopAddress()const
 void ShopCreateRequest::setShopAddress(const std::string& shopAddress)
 {
 	shopAddress_ = shopAddress;
-	setCoreParameter("ShopAddress", shopAddress);
+	setParameter("ShopAddress", shopAddress);
 }
 
 int ShopCreateRequest::getWarn()const
@@ -176,7 +178,7 @@ int ShopCreateRequest::getWarn()const
 void ShopCreateRequest::setWarn(int warn)
 {
 	warn_ = warn;
-	setCoreParameter("Warn", std::to_string(warn));
+	setParameter("Warn", std::to_string(warn));
 }
 
 int ShopCreateRequest::getShopArea()const
@@ -187,7 +189,7 @@ int ShopCreateRequest::getShopArea()const
 void ShopCreateRequest::setShopArea(int shopArea)
 {
 	shopArea_ = shopArea;
-	setCoreParameter("ShopArea", std::to_string(shopArea));
+	setParameter("ShopArea", std::to_string(shopArea));
 }
 
 std::string ShopCreateRequest::getShopRemarks()const
@@ -198,7 +200,7 @@ std::string ShopCreateRequest::getShopRemarks()const
 void ShopCreateRequest::setShopRemarks(const std::string& shopRemarks)
 {
 	shopRemarks_ = shopRemarks;
-	setCoreParameter("ShopRemarks", shopRemarks);
+	setParameter("ShopRemarks", shopRemarks);
 }
 
 int ShopCreateRequest::getShopSubtype()const
@@ -209,7 +211,7 @@ int ShopCreateRequest::getShopSubtype()const
 void ShopCreateRequest::setShopSubtype(int shopSubtype)
 {
 	shopSubtype_ = shopSubtype;
-	setCoreParameter("ShopSubtype", std::to_string(shopSubtype));
+	setParameter("ShopSubtype", std::to_string(shopSubtype));
 }
 
 std::string ShopCreateRequest::getShopName()const
@@ -220,7 +222,7 @@ std::string ShopCreateRequest::getShopName()const
 void ShopCreateRequest::setShopName(const std::string& shopName)
 {
 	shopName_ = shopName;
-	setCoreParameter("ShopName", shopName);
+	setParameter("ShopName", shopName);
 }
 
 long ShopCreateRequest::getBid()const
@@ -231,7 +233,7 @@ long ShopCreateRequest::getBid()const
 void ShopCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 
 std::string ShopCreateRequest::getShopManager()const
@@ -242,6 +244,6 @@ std::string ShopCreateRequest::getShopManager()const
 void ShopCreateRequest::setShopManager(const std::string& shopManager)
 {
 	shopManager_ = shopManager;
-	setCoreParameter("ShopManager", shopManager);
+	setParameter("ShopManager", shopManager);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateCustomOcrTemplateRequest;
 
 UpdateCustomOcrTemplateRequest::UpdateCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCustomOcrTemplateRequest::~UpdateCustomOcrTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateCustomOcrTemplateRequest::getRecognizeArea()const
 void UpdateCustomOcrTemplateRequest::setRecognizeArea(const std::string& recognizeArea)
 {
 	recognizeArea_ = recognizeArea;
-	setCoreParameter("RecognizeArea", recognizeArea);
+	setParameter("RecognizeArea", recognizeArea);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateCustomOcrTemplateRequest::getSourceIp()const
 void UpdateCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getReferArea()const
@@ -55,7 +57,7 @@ std::string UpdateCustomOcrTemplateRequest::getReferArea()const
 void UpdateCustomOcrTemplateRequest::setReferArea(const std::string& referArea)
 {
 	referArea_ = referArea;
-	setCoreParameter("ReferArea", referArea);
+	setParameter("ReferArea", referArea);
 }
 
 std::string UpdateCustomOcrTemplateRequest::getName()const
@@ -66,7 +68,7 @@ std::string UpdateCustomOcrTemplateRequest::getName()const
 void UpdateCustomOcrTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long UpdateCustomOcrTemplateRequest::getId()const
@@ -77,6 +79,6 @@ long UpdateCustomOcrTemplateRequest::getId()const
 void UpdateCustomOcrTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

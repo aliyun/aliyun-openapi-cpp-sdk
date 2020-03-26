@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListUsersRequest;
 
 ListUsersRequest::ListUsersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUsersRequest::~ListUsersRequest()
 {}
@@ -33,7 +35,7 @@ int ListUsersRequest::getPageNumber()const
 void ListUsersRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListUsersRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListUsersRequest::getAccessKeyId()const
 void ListUsersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListUsersRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListUsersRequest::getInstanceId()const
 void ListUsersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListUsersRequest::getPageSize()const
@@ -66,6 +68,6 @@ int ListUsersRequest::getPageSize()const
 void ListUsersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteTopicRouteTableRequest;
 
 DeleteTopicRouteTableRequest::DeleteTopicRouteTableRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteTopicRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTopicRouteTableRequest::~DeleteTopicRouteTableRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> DeleteTopicRouteTableRequest::getDstTopic()const
 void DeleteTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
 {
 	dstTopic_ = dstTopic;
-	for(int i = 0; i!= dstTopic.size(); i++)
-		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
+	for(int dep1 = 0; dep1!= dstTopic.size(); dep1++) {
+		setParameter("DstTopic."+ std::to_string(dep1), dstTopic.at(dep1));
+	}
 }
 
 std::string DeleteTopicRouteTableRequest::getAccessKeyId()const
@@ -45,7 +48,7 @@ std::string DeleteTopicRouteTableRequest::getAccessKeyId()const
 void DeleteTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTopicRouteTableRequest::getRegionId()const
@@ -56,7 +59,7 @@ std::string DeleteTopicRouteTableRequest::getRegionId()const
 void DeleteTopicRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteTopicRouteTableRequest::getIotInstanceId()const
@@ -67,7 +70,7 @@ std::string DeleteTopicRouteTableRequest::getIotInstanceId()const
 void DeleteTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string DeleteTopicRouteTableRequest::getSrcTopic()const
@@ -78,6 +81,6 @@ std::string DeleteTopicRouteTableRequest::getSrcTopic()const
 void DeleteTopicRouteTableRequest::setSrcTopic(const std::string& srcTopic)
 {
 	srcTopic_ = srcTopic;
-	setCoreParameter("SrcTopic", srcTopic);
+	setParameter("SrcTopic", srcTopic);
 }
 

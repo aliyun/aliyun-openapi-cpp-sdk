@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::DescribeDomainsRequest;
 
 DescribeDomainsRequest::DescribeDomainsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "DescribeDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainsRequest::~DescribeDomainsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDomainsRequest::getPageNumber()const
 void DescribeDomainsRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeDomainsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeDomainsRequest::getAccessKeyId()const
 void DescribeDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainsRequest::getAccountId()const
@@ -55,7 +57,7 @@ std::string DescribeDomainsRequest::getAccountId()const
 void DescribeDomainsRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", accountId);
+	setParameter("AccountId", accountId);
 }
 
 long DescribeDomainsRequest::getPageSize()const
@@ -66,6 +68,6 @@ long DescribeDomainsRequest::getPageSize()const
 void DescribeDomainsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

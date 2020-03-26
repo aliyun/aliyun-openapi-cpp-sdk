@@ -35,7 +35,7 @@ long ModifyLogBackupPolicyRequest::getResourceOwnerId()const
 void ModifyLogBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyLogBackupPolicyRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string ModifyLogBackupPolicyRequest::getAccessKeyId()const
 void ModifyLogBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyLogBackupPolicyRequest::getEnableBackupLog()const
@@ -57,7 +57,7 @@ std::string ModifyLogBackupPolicyRequest::getEnableBackupLog()const
 void ModifyLogBackupPolicyRequest::setEnableBackupLog(const std::string& enableBackupLog)
 {
 	enableBackupLog_ = enableBackupLog;
-	setCoreParameter("EnableBackupLog", enableBackupLog);
+	setParameter("EnableBackupLog", enableBackupLog);
 }
 
 std::string ModifyLogBackupPolicyRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string ModifyLogBackupPolicyRequest::getResourceOwnerAccount()const
 void ModifyLogBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyLogBackupPolicyRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string ModifyLogBackupPolicyRequest::getDBClusterId()const
 void ModifyLogBackupPolicyRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string ModifyLogBackupPolicyRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string ModifyLogBackupPolicyRequest::getOwnerAccount()const
 void ModifyLogBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyLogBackupPolicyRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long ModifyLogBackupPolicyRequest::getOwnerId()const
 void ModifyLogBackupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyLogBackupPolicyRequest::getLogBackupRetentionPeriod()const
@@ -112,6 +112,6 @@ std::string ModifyLogBackupPolicyRequest::getLogBackupRetentionPeriod()const
 void ModifyLogBackupPolicyRequest::setLogBackupRetentionPeriod(const std::string& logBackupRetentionPeriod)
 {
 	logBackupRetentionPeriod_ = logBackupRetentionPeriod;
-	setCoreParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
+	setParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod);
 }
 

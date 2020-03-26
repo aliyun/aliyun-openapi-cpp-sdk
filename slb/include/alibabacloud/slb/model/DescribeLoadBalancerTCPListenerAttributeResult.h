@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SLB_EXPORT DescribeLoadBalancerTCPListenerAttributeResult : public ServiceResult
 			{
 			public:
+				struct PortRange
+				{
+					int startPort;
+					int endPort;
+				};
 
 
 				DescribeLoadBalancerTCPListenerAttributeResult();
@@ -46,6 +51,7 @@ namespace AlibabaCloud
 				std::string getHealthCheckURI()const;
 				std::string getHealthCheck()const;
 				int getBackendServerPort()const;
+				int getConnectionDrainTimeout()const;
 				int getPersistenceTimeout()const;
 				int getHealthCheckConnectPort()const;
 				std::string getHealthCheckMethod()const;
@@ -55,14 +61,17 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				int getListenerPort()const;
 				int getHealthCheckInterval()const;
+				std::vector<PortRange> getPortRanges()const;
 				std::string getAclId()const;
 				int getHealthCheckConnectTimeout()const;
+				std::string getConnectionDrain()const;
 				std::string getAclStatus()const;
 				std::string getVpcIds()const;
 				int getHealthyThreshold()const;
 				std::string getHealthCheckDomain()const;
 				std::string getMasterSlaveServerGroupId()const;
 				std::string getAclType()const;
+				std::vector<std::string> getAclIds()const;
 				std::string getHealthCheckType()const;
 
 			protected:
@@ -77,6 +86,7 @@ namespace AlibabaCloud
 				std::string healthCheckURI_;
 				std::string healthCheck_;
 				int backendServerPort_;
+				int connectionDrainTimeout_;
 				int persistenceTimeout_;
 				int healthCheckConnectPort_;
 				std::string healthCheckMethod_;
@@ -86,14 +96,17 @@ namespace AlibabaCloud
 				std::string status_;
 				int listenerPort_;
 				int healthCheckInterval_;
+				std::vector<PortRange> portRanges_;
 				std::string aclId_;
 				int healthCheckConnectTimeout_;
+				std::string connectionDrain_;
 				std::string aclStatus_;
 				std::string vpcIds_;
 				int healthyThreshold_;
 				std::string healthCheckDomain_;
 				std::string masterSlaveServerGroupId_;
 				std::string aclType_;
+				std::vector<std::string> aclIds_;
 				std::string healthCheckType_;
 
 			};

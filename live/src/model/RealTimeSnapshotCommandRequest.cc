@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::RealTimeSnapshotCommandRequest;
 
 RealTimeSnapshotCommandRequest::RealTimeSnapshotCommandRequest() :
 	RpcServiceRequest("live", "2016-11-01", "RealTimeSnapshotCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RealTimeSnapshotCommandRequest::~RealTimeSnapshotCommandRequest()
 {}
@@ -33,7 +35,7 @@ int RealTimeSnapshotCommandRequest::getMode()const
 void RealTimeSnapshotCommandRequest::setMode(int mode)
 {
 	mode_ = mode;
-	setCoreParameter("Mode", std::to_string(mode));
+	setParameter("Mode", std::to_string(mode));
 }
 
 std::string RealTimeSnapshotCommandRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string RealTimeSnapshotCommandRequest::getAppName()const
 void RealTimeSnapshotCommandRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string RealTimeSnapshotCommandRequest::getStreamName()const
@@ -55,7 +57,7 @@ std::string RealTimeSnapshotCommandRequest::getStreamName()const
 void RealTimeSnapshotCommandRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string RealTimeSnapshotCommandRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string RealTimeSnapshotCommandRequest::getDomainName()const
 void RealTimeSnapshotCommandRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long RealTimeSnapshotCommandRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long RealTimeSnapshotCommandRequest::getOwnerId()const
 void RealTimeSnapshotCommandRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RealTimeSnapshotCommandRequest::getCommand()const
@@ -88,7 +90,7 @@ std::string RealTimeSnapshotCommandRequest::getCommand()const
 void RealTimeSnapshotCommandRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setParameter("Command", command);
 }
 
 int RealTimeSnapshotCommandRequest::getInterval()const
@@ -99,6 +101,6 @@ int RealTimeSnapshotCommandRequest::getInterval()const
 void RealTimeSnapshotCommandRequest::setInterval(int interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", std::to_string(interval));
+	setParameter("Interval", std::to_string(interval));
 }
 

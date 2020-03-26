@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeDomainExtensionsRequest;
 
 DescribeDomainExtensionsRequest::DescribeDomainExtensionsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeDomainExtensions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainExtensionsRequest::~DescribeDomainExtensionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDomainExtensionsRequest::getAccess_key_id()const
 void DescribeDomainExtensionsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeDomainExtensionsRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeDomainExtensionsRequest::getResourceOwnerId()const
 void DescribeDomainExtensionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDomainExtensionsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeDomainExtensionsRequest::getRegionId()const
 void DescribeDomainExtensionsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDomainExtensionsRequest::getDomainExtensionId()const
@@ -66,7 +68,7 @@ std::string DescribeDomainExtensionsRequest::getDomainExtensionId()const
 void DescribeDomainExtensionsRequest::setDomainExtensionId(const std::string& domainExtensionId)
 {
 	domainExtensionId_ = domainExtensionId;
-	setCoreParameter("DomainExtensionId", domainExtensionId);
+	setParameter("DomainExtensionId", domainExtensionId);
 }
 
 int DescribeDomainExtensionsRequest::getListenerPort()const
@@ -77,7 +79,7 @@ int DescribeDomainExtensionsRequest::getListenerPort()const
 void DescribeDomainExtensionsRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeDomainExtensionsRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeDomainExtensionsRequest::getResourceOwnerAccount()const
 void DescribeDomainExtensionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDomainExtensionsRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeDomainExtensionsRequest::getOwnerAccount()const
 void DescribeDomainExtensionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDomainExtensionsRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeDomainExtensionsRequest::getOwnerId()const
 void DescribeDomainExtensionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDomainExtensionsRequest::getTags()const
@@ -121,7 +123,7 @@ std::string DescribeDomainExtensionsRequest::getTags()const
 void DescribeDomainExtensionsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeDomainExtensionsRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string DescribeDomainExtensionsRequest::getLoadBalancerId()const
 void DescribeDomainExtensionsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

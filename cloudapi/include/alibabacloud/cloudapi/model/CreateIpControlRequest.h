@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CLOUDAPI_EXPORT CreateIpControlRequest : public RpcServiceRequest
 			{
+			public:
 				struct IpControlPolicys
 				{
 					std::string appId;

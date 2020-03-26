@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetUpgradeImgRequest;
 
 GetUpgradeImgRequest::GetUpgradeImgRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetUpgradeImg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUpgradeImgRequest::~GetUpgradeImgRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetUpgradeImgRequest::getAccessKeyId()const
 void GetUpgradeImgRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetUpgradeImgRequest::getId()const
@@ -44,6 +46,6 @@ long GetUpgradeImgRequest::getId()const
 void GetUpgradeImgRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

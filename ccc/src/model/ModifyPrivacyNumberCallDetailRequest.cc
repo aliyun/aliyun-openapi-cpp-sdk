@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyPrivacyNumberCallDetailRequest;
 
 ModifyPrivacyNumberCallDetailRequest::ModifyPrivacyNumberCallDetailRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyPrivacyNumberCallDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyPrivacyNumberCallDetailRequest::~ModifyPrivacyNumberCallDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyPrivacyNumberCallDetailRequest::getCallId()const
 void ModifyPrivacyNumberCallDetailRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 std::string ModifyPrivacyNumberCallDetailRequest::getContactId()const
@@ -44,7 +46,7 @@ std::string ModifyPrivacyNumberCallDetailRequest::getContactId()const
 void ModifyPrivacyNumberCallDetailRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 std::string ModifyPrivacyNumberCallDetailRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyPrivacyNumberCallDetailRequest::getAccessKeyId()const
 void ModifyPrivacyNumberCallDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyPrivacyNumberCallDetailRequest::getInstanceId()const
@@ -66,6 +68,6 @@ std::string ModifyPrivacyNumberCallDetailRequest::getInstanceId()const
 void ModifyPrivacyNumberCallDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

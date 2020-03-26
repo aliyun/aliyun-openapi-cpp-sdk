@@ -40,7 +40,13 @@ namespace AlibabaCloud
 						{
 							struct SupportedNodeCount
 							{
-								std::string nodeCount;
+								struct NodeCount
+								{
+									std::string maxCount;
+									std::string step;
+									std::string minCount;
+								};
+								NodeCount nodeCount;
 								std::vector<std::string> storageSize;
 							};
 							std::string instanceClass;

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaWorkflowTriggerModeRequest;
 
 UpdateMediaWorkflowTriggerModeRequest::UpdateMediaWorkflowTriggerModeRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaWorkflowTriggerModeRequest::~UpdateMediaWorkflowTriggerModeRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerId()const
 void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getAccessKeyId()const
 void UpdateMediaWorkflowTriggerModeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
@@ -55,7 +57,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getMediaWorkflowId()const
 void UpdateMediaWorkflowTriggerModeRequest::setMediaWorkflowId(const std::string& mediaWorkflowId)
 {
 	mediaWorkflowId_ = mediaWorkflowId;
-	setCoreParameter("MediaWorkflowId", mediaWorkflowId);
+	setParameter("MediaWorkflowId", mediaWorkflowId);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getResourceOwnerAccount()cons
 void UpdateMediaWorkflowTriggerModeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getOwnerAccount()const
 void UpdateMediaWorkflowTriggerModeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long UpdateMediaWorkflowTriggerModeRequest::getOwnerId()const
 void UpdateMediaWorkflowTriggerModeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
@@ -99,6 +101,6 @@ std::string UpdateMediaWorkflowTriggerModeRequest::getTriggerMode()const
 void UpdateMediaWorkflowTriggerModeRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
-	setCoreParameter("TriggerMode", triggerMode);
+	setParameter("TriggerMode", triggerMode);
 }
 

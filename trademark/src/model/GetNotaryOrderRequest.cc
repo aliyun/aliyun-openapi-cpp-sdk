@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::GetNotaryOrderRequest;
 
 GetNotaryOrderRequest::GetNotaryOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "GetNotaryOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNotaryOrderRequest::~GetNotaryOrderRequest()
 {}
@@ -33,6 +35,6 @@ long GetNotaryOrderRequest::getNotaryOrderId()const
 void GetNotaryOrderRequest::setNotaryOrderId(long notaryOrderId)
 {
 	notaryOrderId_ = notaryOrderId;
-	setCoreParameter("NotaryOrderId", std::to_string(notaryOrderId));
+	setParameter("NotaryOrderId", std::to_string(notaryOrderId));
 }
 

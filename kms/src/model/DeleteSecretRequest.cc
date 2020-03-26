@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DeleteSecretRequest;
 DeleteSecretRequest::DeleteSecretRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DeleteSecret")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteSecretRequest::~DeleteSecretRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeExpectationResultRequest;
 
 DescribeExpectationResultRequest::DescribeExpectationResultRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeExpectationResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeExpectationResultRequest::~DescribeExpectationResultRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeExpectationResultRequest::getOrderId()const
 void DescribeExpectationResultRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeExpectationResultRequest::getExpectationType()const
@@ -44,7 +46,7 @@ std::string DescribeExpectationResultRequest::getExpectationType()const
 void DescribeExpectationResultRequest::setExpectationType(const std::string& expectationType)
 {
 	expectationType_ = expectationType;
-	setCoreParameter("ExpectationType", expectationType);
+	setParameter("ExpectationType", expectationType);
 }
 
 std::string DescribeExpectationResultRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeExpectationResultRequest::getResourceGroupId()const
 void DescribeExpectationResultRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeExpectationResultRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeExpectationResultRequest::getSourceIp()const
 void DescribeExpectationResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeExpectationResultRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeExpectationResultRequest::getLang()const
 void DescribeExpectationResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

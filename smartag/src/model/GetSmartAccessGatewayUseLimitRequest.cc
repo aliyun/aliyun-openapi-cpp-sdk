@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::GetSmartAccessGatewayUseLimitRequest;
 
 GetSmartAccessGatewayUseLimitRequest::GetSmartAccessGatewayUseLimitRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "GetSmartAccessGatewayUseLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSmartAccessGatewayUseLimitRequest::~GetSmartAccessGatewayUseLimitRequest()
 {}
@@ -33,7 +35,7 @@ long GetSmartAccessGatewayUseLimitRequest::getResourceOwnerId()const
 void GetSmartAccessGatewayUseLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetSmartAccessGatewayUseLimitRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetSmartAccessGatewayUseLimitRequest::getResourceOwnerAccount()const
 void GetSmartAccessGatewayUseLimitRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetSmartAccessGatewayUseLimitRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string GetSmartAccessGatewayUseLimitRequest::getOwnerAccount()const
 void GetSmartAccessGatewayUseLimitRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long GetSmartAccessGatewayUseLimitRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long GetSmartAccessGatewayUseLimitRequest::getOwnerId()const
 void GetSmartAccessGatewayUseLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetSmartAccessGatewayUseLimitRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string GetSmartAccessGatewayUseLimitRequest::getRegionId()const
 void GetSmartAccessGatewayUseLimitRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

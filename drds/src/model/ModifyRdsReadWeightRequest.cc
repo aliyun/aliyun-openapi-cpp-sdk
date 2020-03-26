@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyRdsReadWeightRequest;
 
 ModifyRdsReadWeightRequest::ModifyRdsReadWeightRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyRdsReadWeight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRdsReadWeightRequest::~ModifyRdsReadWeightRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyRdsReadWeightRequest::getWeights()const
 void ModifyRdsReadWeightRequest::setWeights(const std::string& weights)
 {
 	weights_ = weights;
-	setCoreParameter("Weights", weights);
+	setParameter("Weights", weights);
 }
 
 std::string ModifyRdsReadWeightRequest::getDrdsInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyRdsReadWeightRequest::getDrdsInstanceId()const
 void ModifyRdsReadWeightRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyRdsReadWeightRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ModifyRdsReadWeightRequest::getAccessKeyId()const
 void ModifyRdsReadWeightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyRdsReadWeightRequest::getInstanceNames()const
@@ -66,7 +68,7 @@ std::string ModifyRdsReadWeightRequest::getInstanceNames()const
 void ModifyRdsReadWeightRequest::setInstanceNames(const std::string& instanceNames)
 {
 	instanceNames_ = instanceNames;
-	setCoreParameter("InstanceNames", instanceNames);
+	setParameter("InstanceNames", instanceNames);
 }
 
 std::string ModifyRdsReadWeightRequest::getDbName()const
@@ -77,6 +79,6 @@ std::string ModifyRdsReadWeightRequest::getDbName()const
 void ModifyRdsReadWeightRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

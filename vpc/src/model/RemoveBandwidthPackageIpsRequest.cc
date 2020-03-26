@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::RemoveBandwidthPackageIpsRequest;
 
 RemoveBandwidthPackageIpsRequest::RemoveBandwidthPackageIpsRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "RemoveBandwidthPackageIps")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveBandwidthPackageIpsRequest::~RemoveBandwidthPackageIpsRequest()
 {}
@@ -33,7 +35,7 @@ long RemoveBandwidthPackageIpsRequest::getResourceOwnerId()const
 void RemoveBandwidthPackageIpsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string RemoveBandwidthPackageIpsRequest::getClientToken()const
 void RemoveBandwidthPackageIpsRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string RemoveBandwidthPackageIpsRequest::getRegionId()const
 void RemoveBandwidthPackageIpsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<std::string> RemoveBandwidthPackageIpsRequest::getRemovedIpAddresses()const
@@ -66,8 +68,9 @@ std::vector<std::string> RemoveBandwidthPackageIpsRequest::getRemovedIpAddresses
 void RemoveBandwidthPackageIpsRequest::setRemovedIpAddresses(const std::vector<std::string>& removedIpAddresses)
 {
 	removedIpAddresses_ = removedIpAddresses;
-	for(int i = 0; i!= removedIpAddresses.size(); i++)
-		setCoreParameter("RemovedIpAddresses."+ std::to_string(i), removedIpAddresses.at(i));
+	for(int dep1 = 0; dep1!= removedIpAddresses.size(); dep1++) {
+		setParameter("RemovedIpAddresses."+ std::to_string(dep1), removedIpAddresses.at(dep1));
+	}
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const
@@ -78,7 +81,7 @@ std::string RemoveBandwidthPackageIpsRequest::getBandwidthPackageId()const
 void RemoveBandwidthPackageIpsRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getResourceOwnerAccount()const
@@ -89,7 +92,7 @@ std::string RemoveBandwidthPackageIpsRequest::getResourceOwnerAccount()const
 void RemoveBandwidthPackageIpsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveBandwidthPackageIpsRequest::getOwnerAccount()const
@@ -100,7 +103,7 @@ std::string RemoveBandwidthPackageIpsRequest::getOwnerAccount()const
 void RemoveBandwidthPackageIpsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveBandwidthPackageIpsRequest::getOwnerId()const
@@ -111,6 +114,6 @@ long RemoveBandwidthPackageIpsRequest::getOwnerId()const
 void RemoveBandwidthPackageIpsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

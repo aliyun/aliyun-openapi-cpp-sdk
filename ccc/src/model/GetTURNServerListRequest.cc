@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTURNServerListRequest;
 
 GetTURNServerListRequest::GetTURNServerListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTURNServerList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTURNServerListRequest::~GetTURNServerListRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetTURNServerListRequest::getInstanceId()const
 void GetTURNServerListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetTURNServerListRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetTURNServerListRequest::getAccessKeyId()const
 void GetTURNServerListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

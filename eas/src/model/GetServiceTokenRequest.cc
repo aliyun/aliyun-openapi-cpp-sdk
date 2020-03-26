@@ -22,7 +22,7 @@ GetServiceTokenRequest::GetServiceTokenRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/token");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetServiceTokenRequest::~GetServiceTokenRequest()

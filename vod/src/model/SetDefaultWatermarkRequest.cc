@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetDefaultWatermarkRequest;
 
 SetDefaultWatermarkRequest::SetDefaultWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetDefaultWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDefaultWatermarkRequest::~SetDefaultWatermarkRequest()
 {}
@@ -33,7 +35,7 @@ long SetDefaultWatermarkRequest::getResourceOwnerId()const
 void SetDefaultWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetDefaultWatermarkRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string SetDefaultWatermarkRequest::getResourceOwnerAccount()const
 void SetDefaultWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SetDefaultWatermarkRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long SetDefaultWatermarkRequest::getOwnerId()const
 void SetDefaultWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetDefaultWatermarkRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SetDefaultWatermarkRequest::getAccessKeyId()const
 void SetDefaultWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDefaultWatermarkRequest::getWatermarkId()const
@@ -77,6 +79,6 @@ std::string SetDefaultWatermarkRequest::getWatermarkId()const
 void SetDefaultWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
+	setParameter("WatermarkId", watermarkId);
 }
 

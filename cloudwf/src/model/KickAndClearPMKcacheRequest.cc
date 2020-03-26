@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::KickAndClearPMKcacheRequest;
 
 KickAndClearPMKcacheRequest::KickAndClearPMKcacheRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "KickAndClearPMKcache")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KickAndClearPMKcacheRequest::~KickAndClearPMKcacheRequest()
 {}
@@ -33,7 +35,7 @@ std::string KickAndClearPMKcacheRequest::getAccessKeyId()const
 void KickAndClearPMKcacheRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long KickAndClearPMKcacheRequest::getId()const
@@ -44,6 +46,6 @@ long KickAndClearPMKcacheRequest::getId()const
 void KickAndClearPMKcacheRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

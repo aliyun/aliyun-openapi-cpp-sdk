@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CalcPlanJsonResourceRequest;
 
 CalcPlanJsonResourceRequest::CalcPlanJsonResourceRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/planjson-resource");
+	setMethod(HttpRequest::Method::Get);
+}
 
 CalcPlanJsonResourceRequest::~CalcPlanJsonResourceRequest()
 {}
@@ -33,7 +36,7 @@ std::string CalcPlanJsonResourceRequest::getProjectName()const
 void CalcPlanJsonResourceRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CalcPlanJsonResourceRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string CalcPlanJsonResourceRequest::getRegionId()const
 void CalcPlanJsonResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CalcPlanJsonResourceRequest::getJobName()const
@@ -55,6 +58,6 @@ std::string CalcPlanJsonResourceRequest::getJobName()const
 void CalcPlanJsonResourceRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

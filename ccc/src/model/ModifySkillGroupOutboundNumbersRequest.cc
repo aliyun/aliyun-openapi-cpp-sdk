@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySkillGroupOutboundNumbersRequest;
 
 ModifySkillGroupOutboundNumbersRequest::ModifySkillGroupOutboundNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySkillGroupOutboundNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySkillGroupOutboundNumbersRequest::~ModifySkillGroupOutboundNumbersRequest()
 {}
@@ -33,7 +35,7 @@ int ModifySkillGroupOutboundNumbersRequest::getOperationType()const
 void ModifySkillGroupOutboundNumbersRequest::setOperationType(int operationType)
 {
 	operationType_ = operationType;
-	setCoreParameter("OperationType", std::to_string(operationType));
+	setParameter("OperationType", std::to_string(operationType));
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getAccessKeyId()const
 void ModifySkillGroupOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ModifySkillGroupOutboundNumbersRequest::getInstanceId()const
 void ModifySkillGroupOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhoneNumberId()const
@@ -66,8 +68,9 @@ std::vector<std::string> ModifySkillGroupOutboundNumbersRequest::getOutboundPhon
 void ModifySkillGroupOutboundNumbersRequest::setOutboundPhoneNumberId(const std::vector<std::string>& outboundPhoneNumberId)
 {
 	outboundPhoneNumberId_ = outboundPhoneNumberId;
-	for(int i = 0; i!= outboundPhoneNumberId.size(); i++)
-		setCoreParameter("OutboundPhoneNumberId."+ std::to_string(i), outboundPhoneNumberId.at(i));
+	for(int dep1 = 0; dep1!= outboundPhoneNumberId.size(); dep1++) {
+		setParameter("OutboundPhoneNumberId."+ std::to_string(dep1), outboundPhoneNumberId.at(dep1));
+	}
 }
 
 std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
@@ -78,6 +81,6 @@ std::string ModifySkillGroupOutboundNumbersRequest::getSkillGroupId()const
 void ModifySkillGroupOutboundNumbersRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::DeleteTmMonitorRuleRequest;
 
 DeleteTmMonitorRuleRequest::DeleteTmMonitorRuleRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "DeleteTmMonitorRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTmMonitorRuleRequest::~DeleteTmMonitorRuleRequest()
 {}
@@ -33,6 +35,6 @@ long DeleteTmMonitorRuleRequest::getId()const
 void DeleteTmMonitorRuleRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

@@ -30,8 +30,10 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT AddClusterServiceRequest : public RpcServiceRequest
 			{
+			public:
 				struct Service
 				{
+					std::string serviceVersion;
 					std::string serviceName;
 				};
 

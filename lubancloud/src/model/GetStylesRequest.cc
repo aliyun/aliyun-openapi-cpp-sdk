@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::GetStylesRequest;
 
 GetStylesRequest::GetStylesRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "GetStyles")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetStylesRequest::~GetStylesRequest()
 {}

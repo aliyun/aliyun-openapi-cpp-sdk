@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SavePageConfigTemplateRequest;
 
 SavePageConfigTemplateRequest::SavePageConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SavePageConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SavePageConfigTemplateRequest::~SavePageConfigTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string SavePageConfigTemplateRequest::getTempName()const
 void SavePageConfigTemplateRequest::setTempName(const std::string& tempName)
 {
 	tempName_ = tempName;
-	setCoreParameter("TempName", tempName);
+	setParameter("TempName", tempName);
 }
 
 std::string SavePageConfigTemplateRequest::getTempPermission()const
@@ -44,7 +46,7 @@ std::string SavePageConfigTemplateRequest::getTempPermission()const
 void SavePageConfigTemplateRequest::setTempPermission(const std::string& tempPermission)
 {
 	tempPermission_ = tempPermission;
-	setCoreParameter("TempPermission", tempPermission);
+	setParameter("TempPermission", tempPermission);
 }
 
 std::string SavePageConfigTemplateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SavePageConfigTemplateRequest::getAccessKeyId()const
 void SavePageConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int SavePageConfigTemplateRequest::getTempType()const
@@ -66,7 +68,7 @@ int SavePageConfigTemplateRequest::getTempType()const
 void SavePageConfigTemplateRequest::setTempType(int tempType)
 {
 	tempType_ = tempType;
-	setCoreParameter("TempType", std::to_string(tempType));
+	setParameter("TempType", std::to_string(tempType));
 }
 
 std::string SavePageConfigTemplateRequest::getTempDesc()const
@@ -77,7 +79,7 @@ std::string SavePageConfigTemplateRequest::getTempDesc()const
 void SavePageConfigTemplateRequest::setTempDesc(const std::string& tempDesc)
 {
 	tempDesc_ = tempDesc;
-	setCoreParameter("TempDesc", tempDesc);
+	setParameter("TempDesc", tempDesc);
 }
 
 long SavePageConfigTemplateRequest::getId()const
@@ -88,6 +90,6 @@ long SavePageConfigTemplateRequest::getId()const
 void SavePageConfigTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

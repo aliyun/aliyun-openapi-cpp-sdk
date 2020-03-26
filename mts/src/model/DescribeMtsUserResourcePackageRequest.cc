@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DescribeMtsUserResourcePackageRequest;
 
 DescribeMtsUserResourcePackageRequest::DescribeMtsUserResourcePackageRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DescribeMtsUserResourcePackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeMtsUserResourcePackageRequest::~DescribeMtsUserResourcePackageRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeMtsUserResourcePackageRequest::getOwnerId()const
 void DescribeMtsUserResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeMtsUserResourcePackageRequest::getSecurityToken()const
@@ -44,6 +46,17 @@ std::string DescribeMtsUserResourcePackageRequest::getSecurityToken()const
 void DescribeMtsUserResourcePackageRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+std::string DescribeMtsUserResourcePackageRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeMtsUserResourcePackageRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
 }
 

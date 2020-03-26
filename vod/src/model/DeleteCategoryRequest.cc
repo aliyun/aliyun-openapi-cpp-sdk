@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteCategoryRequest;
 
 DeleteCategoryRequest::DeleteCategoryRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCategoryRequest::~DeleteCategoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCategoryRequest::getResourceOwnerId()const
 void DeleteCategoryRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteCategoryRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteCategoryRequest::getResourceOwnerAccount()const
 void DeleteCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCategoryRequest::getOwnerId()const
@@ -55,7 +57,7 @@ std::string DeleteCategoryRequest::getOwnerId()const
 void DeleteCategoryRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 long DeleteCategoryRequest::getCateId()const
@@ -66,6 +68,6 @@ long DeleteCategoryRequest::getCateId()const
 void DeleteCategoryRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 

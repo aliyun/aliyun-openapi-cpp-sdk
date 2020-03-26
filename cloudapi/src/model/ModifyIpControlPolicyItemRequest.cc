@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifyIpControlPolicyItemRequest;
 
 ModifyIpControlPolicyItemRequest::ModifyIpControlPolicyItemRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyIpControlPolicyItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyIpControlPolicyItemRequest::~ModifyIpControlPolicyItemRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyIpControlPolicyItemRequest::getAccessKeyId()const
 void ModifyIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getIpControlId()const
@@ -44,7 +46,7 @@ std::string ModifyIpControlPolicyItemRequest::getIpControlId()const
 void ModifyIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getPolicyItemId()const
@@ -55,7 +57,7 @@ std::string ModifyIpControlPolicyItemRequest::getPolicyItemId()const
 void ModifyIpControlPolicyItemRequest::setPolicyItemId(const std::string& policyItemId)
 {
 	policyItemId_ = policyItemId;
-	setCoreParameter("PolicyItemId", policyItemId);
+	setParameter("PolicyItemId", policyItemId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string ModifyIpControlPolicyItemRequest::getSecurityToken()const
 void ModifyIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getAppId()const
@@ -77,7 +79,7 @@ std::string ModifyIpControlPolicyItemRequest::getAppId()const
 void ModifyIpControlPolicyItemRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string ModifyIpControlPolicyItemRequest::getCidrIp()const
@@ -88,6 +90,6 @@ std::string ModifyIpControlPolicyItemRequest::getCidrIp()const
 void ModifyIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
 {
 	cidrIp_ = cidrIp;
-	setCoreParameter("CidrIp", cidrIp);
+	setParameter("CidrIp", cidrIp);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateUserRequest;
 
 CreateUserRequest::CreateUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserRequest::~CreateUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateUserRequest::getMobilePhone()const
 void CreateUserRequest::setMobilePhone(const std::string& mobilePhone)
 {
 	mobilePhone_ = mobilePhone;
-	setCoreParameter("MobilePhone", mobilePhone);
+	setParameter("MobilePhone", mobilePhone);
 }
 
 std::string CreateUserRequest::getEmail()const
@@ -44,7 +46,7 @@ std::string CreateUserRequest::getEmail()const
 void CreateUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 
 std::string CreateUserRequest::getComments()const
@@ -55,7 +57,7 @@ std::string CreateUserRequest::getComments()const
 void CreateUserRequest::setComments(const std::string& comments)
 {
 	comments_ = comments;
-	setCoreParameter("Comments", comments);
+	setParameter("Comments", comments);
 }
 
 std::string CreateUserRequest::getDisplayName()const
@@ -66,7 +68,7 @@ std::string CreateUserRequest::getDisplayName()const
 void CreateUserRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setParameter("DisplayName", displayName);
 }
 
 std::string CreateUserRequest::getUserName()const
@@ -77,6 +79,6 @@ std::string CreateUserRequest::getUserName()const
 void CreateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

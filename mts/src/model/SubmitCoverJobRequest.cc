@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitCoverJobRequest;
 
 SubmitCoverJobRequest::SubmitCoverJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitCoverJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCoverJobRequest::~SubmitCoverJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitCoverJobRequest::getResourceOwnerId()const
 void SubmitCoverJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitCoverJobRequest::getCoverConfig()const
@@ -44,7 +46,7 @@ std::string SubmitCoverJobRequest::getCoverConfig()const
 void SubmitCoverJobRequest::setCoverConfig(const std::string& coverConfig)
 {
 	coverConfig_ = coverConfig;
-	setCoreParameter("CoverConfig", coverConfig);
+	setParameter("CoverConfig", coverConfig);
 }
 
 std::string SubmitCoverJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitCoverJobRequest::getAccessKeyId()const
 void SubmitCoverJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitCoverJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitCoverJobRequest::getUserData()const
 void SubmitCoverJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitCoverJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitCoverJobRequest::getResourceOwnerAccount()const
 void SubmitCoverJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitCoverJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitCoverJobRequest::getOwnerAccount()const
 void SubmitCoverJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitCoverJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitCoverJobRequest::getOwnerId()const
 void SubmitCoverJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitCoverJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitCoverJobRequest::getPipelineId()const
 void SubmitCoverJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitCoverJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitCoverJobRequest::getInput()const
 void SubmitCoverJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

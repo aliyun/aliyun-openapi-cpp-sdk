@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeletePipelineRequest;
 
 DeletePipelineRequest::DeletePipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeletePipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePipelineRequest::~DeletePipelineRequest()
 {}
@@ -33,7 +35,7 @@ long DeletePipelineRequest::getResourceOwnerId()const
 void DeletePipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeletePipelineRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeletePipelineRequest::getResourceOwnerAccount()const
 void DeletePipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeletePipelineRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeletePipelineRequest::getOwnerAccount()const
 void DeletePipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeletePipelineRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeletePipelineRequest::getOwnerId()const
 void DeletePipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeletePipelineRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeletePipelineRequest::getAccessKeyId()const
 void DeletePipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeletePipelineRequest::getPipelineId()const
@@ -88,6 +90,6 @@ std::string DeletePipelineRequest::getPipelineId()const
 void DeletePipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 

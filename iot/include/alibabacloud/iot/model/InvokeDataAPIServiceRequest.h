@@ -30,29 +30,37 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT InvokeDataAPIServiceRequest : public RpcServiceRequest
 			{
+			public:
 				struct Param
 				{
-					std::string listParamType;
+					std::string paramType;
 					std::vector<std::string> listParamValue;
-					std::string paramValue;
+					std::string listParamType;
 					std::string paramName;
+					std::string paramValue;
 				};
 
 			public:
 				InvokeDataAPIServiceRequest();
 				~InvokeDataAPIServiceRequest();
 
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getApiSrn()const;
-				void setApiSrn(const std::string& apiSrn);
 				std::vector<Param> getParam()const;
 				void setParam(const std::vector<Param>& param);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getApiSrn()const;
+				void setApiSrn(const std::string& apiSrn);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string accessKeyId_;
-				std::string apiSrn_;
 				std::vector<Param> param_;
+				std::string iotInstanceId_;
+				std::string apiSrn_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

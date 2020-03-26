@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScalingRuleRequest;
 
 DeleteScalingRuleRequest::DeleteScalingRuleRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScalingRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScalingRuleRequest::~DeleteScalingRuleRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteScalingRuleRequest::getResourceOwnerAccount()const
 void DeleteScalingRuleRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScalingRuleRequest::getOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteScalingRuleRequest::getOwnerAccount()const
 void DeleteScalingRuleRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScalingRuleRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteScalingRuleRequest::getOwnerId()const
 void DeleteScalingRuleRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScalingRuleRequest::getScalingRuleId()const
@@ -66,7 +68,7 @@ std::string DeleteScalingRuleRequest::getScalingRuleId()const
 void DeleteScalingRuleRequest::setScalingRuleId(const std::string& scalingRuleId)
 {
 	scalingRuleId_ = scalingRuleId;
-	setCoreParameter("ScalingRuleId", scalingRuleId);
+	setParameter("ScalingRuleId", scalingRuleId);
 }
 
 std::string DeleteScalingRuleRequest::getAccessKeyId()const
@@ -77,6 +79,6 @@ std::string DeleteScalingRuleRequest::getAccessKeyId()const
 void DeleteScalingRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -132,6 +132,8 @@
 #include "model/DescribeUpdatePackageResultResult.h"
 #include "model/DescribeUploadInfoRequest.h"
 #include "model/DescribeUploadInfoResult.h"
+#include "model/DescribeUsageBillRequest.h"
+#include "model/DescribeUsageBillResult.h"
 #include "model/DescribeUserBizTypesRequest.h"
 #include "model/DescribeUserBizTypesResult.h"
 #include "model/DescribeUserStatusRequest.h"
@@ -476,6 +478,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUploadInfoResult> DescribeUploadInfoOutcome;
 			typedef std::future<DescribeUploadInfoOutcome> DescribeUploadInfoOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeUploadInfoRequest&, const DescribeUploadInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUsageBillResult> DescribeUsageBillOutcome;
+			typedef std::future<DescribeUsageBillOutcome> DescribeUsageBillOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeUsageBillRequest&, const DescribeUsageBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageBillAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUserBizTypesResult> DescribeUserBizTypesOutcome;
 			typedef std::future<DescribeUserBizTypesOutcome> DescribeUserBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeUserBizTypesRequest&, const DescribeUserBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBizTypesAsyncHandler;
@@ -901,6 +906,9 @@ namespace AlibabaCloud
 			DescribeUploadInfoOutcome describeUploadInfo(const Model::DescribeUploadInfoRequest &request)const;
 			void describeUploadInfoAsync(const Model::DescribeUploadInfoRequest& request, const DescribeUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUploadInfoOutcomeCallable describeUploadInfoCallable(const Model::DescribeUploadInfoRequest& request) const;
+			DescribeUsageBillOutcome describeUsageBill(const Model::DescribeUsageBillRequest &request)const;
+			void describeUsageBillAsync(const Model::DescribeUsageBillRequest& request, const DescribeUsageBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUsageBillOutcomeCallable describeUsageBillCallable(const Model::DescribeUsageBillRequest& request) const;
 			DescribeUserBizTypesOutcome describeUserBizTypes(const Model::DescribeUserBizTypesRequest &request)const;
 			void describeUserBizTypesAsync(const Model::DescribeUserBizTypesRequest& request, const DescribeUserBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserBizTypesOutcomeCallable describeUserBizTypesCallable(const Model::DescribeUserBizTypesRequest& request) const;

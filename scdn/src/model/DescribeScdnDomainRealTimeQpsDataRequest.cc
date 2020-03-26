@@ -35,7 +35,7 @@ std::string DescribeScdnDomainRealTimeQpsDataRequest::getLocationNameEn()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeScdnDomainRealTimeQpsDataRequest::getIspNameEn()const
@@ -46,7 +46,7 @@ std::string DescribeScdnDomainRealTimeQpsDataRequest::getIspNameEn()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeScdnDomainRealTimeQpsDataRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeScdnDomainRealTimeQpsDataRequest::getStartTime()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeScdnDomainRealTimeQpsDataRequest::getDomainName()const
@@ -68,7 +68,7 @@ std::string DescribeScdnDomainRealTimeQpsDataRequest::getDomainName()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnDomainRealTimeQpsDataRequest::getEndTime()const
@@ -79,7 +79,7 @@ std::string DescribeScdnDomainRealTimeQpsDataRequest::getEndTime()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnDomainRealTimeQpsDataRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeScdnDomainRealTimeQpsDataRequest::getOwnerId()const
 void DescribeScdnDomainRealTimeQpsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

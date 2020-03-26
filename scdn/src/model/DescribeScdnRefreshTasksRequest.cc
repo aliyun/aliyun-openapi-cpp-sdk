@@ -35,7 +35,7 @@ std::string DescribeScdnRefreshTasksRequest::getObjectPath()const
 void DescribeScdnRefreshTasksRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setParameter("ObjectPath", objectPath);
 }
 
 std::string DescribeScdnRefreshTasksRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeScdnRefreshTasksRequest::getStartTime()const
 void DescribeScdnRefreshTasksRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int DescribeScdnRefreshTasksRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeScdnRefreshTasksRequest::getPageNumber()const
 void DescribeScdnRefreshTasksRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeScdnRefreshTasksRequest::getResourceGroupId()const
@@ -68,7 +68,7 @@ std::string DescribeScdnRefreshTasksRequest::getResourceGroupId()const
 void DescribeScdnRefreshTasksRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeScdnRefreshTasksRequest::getSecurityToken()const
@@ -79,7 +79,7 @@ std::string DescribeScdnRefreshTasksRequest::getSecurityToken()const
 void DescribeScdnRefreshTasksRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeScdnRefreshTasksRequest::getPageSize()const
@@ -90,7 +90,7 @@ int DescribeScdnRefreshTasksRequest::getPageSize()const
 void DescribeScdnRefreshTasksRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeScdnRefreshTasksRequest::getObjectType()const
@@ -101,7 +101,7 @@ std::string DescribeScdnRefreshTasksRequest::getObjectType()const
 void DescribeScdnRefreshTasksRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setParameter("ObjectType", objectType);
 }
 
 std::string DescribeScdnRefreshTasksRequest::getTaskId()const
@@ -112,7 +112,7 @@ std::string DescribeScdnRefreshTasksRequest::getTaskId()const
 void DescribeScdnRefreshTasksRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string DescribeScdnRefreshTasksRequest::getDomainName()const
@@ -123,7 +123,7 @@ std::string DescribeScdnRefreshTasksRequest::getDomainName()const
 void DescribeScdnRefreshTasksRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeScdnRefreshTasksRequest::getEndTime()const
@@ -134,7 +134,7 @@ std::string DescribeScdnRefreshTasksRequest::getEndTime()const
 void DescribeScdnRefreshTasksRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeScdnRefreshTasksRequest::getOwnerId()const
@@ -145,7 +145,7 @@ long DescribeScdnRefreshTasksRequest::getOwnerId()const
 void DescribeScdnRefreshTasksRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnRefreshTasksRequest::getStatus()const
@@ -156,6 +156,6 @@ std::string DescribeScdnRefreshTasksRequest::getStatus()const
 void DescribeScdnRefreshTasksRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

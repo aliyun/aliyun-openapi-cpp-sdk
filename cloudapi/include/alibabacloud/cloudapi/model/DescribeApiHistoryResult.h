@@ -68,13 +68,14 @@ namespace AlibabaCloud
 					std::string mockResult;
 					VpcConfig vpcConfig;
 					std::string serviceVpcEnable;
-					int serviceTimeout;
 					int mockStatusCode;
 					std::vector<MockHeader> mockHeaders;
-					std::string serviceProtocol;
 					std::string serviceHttpMethod;
 					std::string servicePath;
 					std::string mock;
+					std::string vpcId;
+					int serviceTimeout;
+					std::string serviceProtocol;
 				};
 				struct OpenIdConnectConfig
 				{
@@ -125,6 +126,7 @@ namespace AlibabaCloud
 				};
 				struct RequestParameter
 				{
+					std::string arrayItemsType;
 					std::string regularExpression;
 					std::string parameterType;
 					std::string jsonScheme;

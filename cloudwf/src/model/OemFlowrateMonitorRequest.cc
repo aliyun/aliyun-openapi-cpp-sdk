@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemFlowrateMonitorRequest;
 
 OemFlowrateMonitorRequest::OemFlowrateMonitorRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemFlowrateMonitor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemFlowrateMonitorRequest::~OemFlowrateMonitorRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemFlowrateMonitorRequest::getAccessKeyId()const
 void OemFlowrateMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemFlowrateMonitorRequest::getGsid()const
@@ -44,6 +46,6 @@ long OemFlowrateMonitorRequest::getGsid()const
 void OemFlowrateMonitorRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

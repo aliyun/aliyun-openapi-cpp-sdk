@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT UpdateCasterSceneAudioRequest : public RpcServiceRequest
 			{
+			public:
 				struct AudioLayer
 				{
 					float volumeRate;

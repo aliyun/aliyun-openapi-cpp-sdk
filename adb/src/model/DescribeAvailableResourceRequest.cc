@@ -27,6 +27,28 @@ DescribeAvailableResourceRequest::DescribeAvailableResourceRequest() :
 DescribeAvailableResourceRequest::~DescribeAvailableResourceRequest()
 {}
 
+long DescribeAvailableResourceRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
+}
+
+void DescribeAvailableResourceRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string DescribeAvailableResourceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string DescribeAvailableResourceRequest::getRegionId()const
 {
 	return regionId_;
@@ -35,7 +57,51 @@ std::string DescribeAvailableResourceRequest::getRegionId()const
 void DescribeAvailableResourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
+}
+
+std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+}
+
+std::string DescribeAvailableResourceRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
+}
+
+void DescribeAvailableResourceRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribeAvailableResourceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeAvailableResourceRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const
@@ -46,7 +112,7 @@ std::string DescribeAvailableResourceRequest::getZoneId()const
 void DescribeAvailableResourceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 
 std::string DescribeAvailableResourceRequest::getChargeType()const
@@ -57,6 +123,6 @@ std::string DescribeAvailableResourceRequest::getChargeType()const
 void DescribeAvailableResourceRequest::setChargeType(const std::string& chargeType)
 {
 	chargeType_ = chargeType;
-	setCoreParameter("ChargeType", chargeType);
+	setParameter("ChargeType", chargeType);
 }
 

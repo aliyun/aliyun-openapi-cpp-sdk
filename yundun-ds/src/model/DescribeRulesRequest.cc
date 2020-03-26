@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeRulesRequest;
 
 DescribeRulesRequest::DescribeRulesRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRulesRequest::~DescribeRulesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRulesRequest::getRiskLevelId()const
 void DescribeRulesRequest::setRiskLevelId(long riskLevelId)
 {
 	riskLevelId_ = riskLevelId;
-	setCoreParameter("RiskLevelId", std::to_string(riskLevelId));
+	setParameter("RiskLevelId", std::to_string(riskLevelId));
 }
 
 std::string DescribeRulesRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeRulesRequest::getSourceIp()const
 void DescribeRulesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeRulesRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeRulesRequest::getPageSize()const
 void DescribeRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRulesRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeRulesRequest::getLang()const
 void DescribeRulesRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeRulesRequest::getCurrentPage()const
@@ -77,7 +79,7 @@ int DescribeRulesRequest::getCurrentPage()const
 void DescribeRulesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeRulesRequest::getCustomType()const
@@ -88,7 +90,7 @@ int DescribeRulesRequest::getCustomType()const
 void DescribeRulesRequest::setCustomType(int customType)
 {
 	customType_ = customType;
-	setCoreParameter("CustomType", std::to_string(customType));
+	setParameter("CustomType", std::to_string(customType));
 }
 
 std::string DescribeRulesRequest::getName()const
@@ -99,7 +101,7 @@ std::string DescribeRulesRequest::getName()const
 void DescribeRulesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int DescribeRulesRequest::getCategory()const
@@ -110,6 +112,6 @@ int DescribeRulesRequest::getCategory()const
 void DescribeRulesRequest::setCategory(int category)
 {
 	category_ = category;
-	setCoreParameter("Category", std::to_string(category));
+	setParameter("Category", std::to_string(category));
 }
 

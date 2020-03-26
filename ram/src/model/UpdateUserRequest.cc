@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateUserRequest;
 
 UpdateUserRequest::UpdateUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateUserRequest::~UpdateUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateUserRequest::getNewUserName()const
 void UpdateUserRequest::setNewUserName(const std::string& newUserName)
 {
 	newUserName_ = newUserName;
-	setCoreParameter("NewUserName", newUserName);
+	setParameter("NewUserName", newUserName);
 }
 
 std::string UpdateUserRequest::getNewMobilePhone()const
@@ -44,7 +46,7 @@ std::string UpdateUserRequest::getNewMobilePhone()const
 void UpdateUserRequest::setNewMobilePhone(const std::string& newMobilePhone)
 {
 	newMobilePhone_ = newMobilePhone;
-	setCoreParameter("NewMobilePhone", newMobilePhone);
+	setParameter("NewMobilePhone", newMobilePhone);
 }
 
 std::string UpdateUserRequest::getNewEmail()const
@@ -55,7 +57,7 @@ std::string UpdateUserRequest::getNewEmail()const
 void UpdateUserRequest::setNewEmail(const std::string& newEmail)
 {
 	newEmail_ = newEmail;
-	setCoreParameter("NewEmail", newEmail);
+	setParameter("NewEmail", newEmail);
 }
 
 std::string UpdateUserRequest::getNewDisplayName()const
@@ -66,7 +68,7 @@ std::string UpdateUserRequest::getNewDisplayName()const
 void UpdateUserRequest::setNewDisplayName(const std::string& newDisplayName)
 {
 	newDisplayName_ = newDisplayName;
-	setCoreParameter("NewDisplayName", newDisplayName);
+	setParameter("NewDisplayName", newDisplayName);
 }
 
 std::string UpdateUserRequest::getNewComments()const
@@ -77,7 +79,7 @@ std::string UpdateUserRequest::getNewComments()const
 void UpdateUserRequest::setNewComments(const std::string& newComments)
 {
 	newComments_ = newComments;
-	setCoreParameter("NewComments", newComments);
+	setParameter("NewComments", newComments);
 }
 
 std::string UpdateUserRequest::getUserName()const
@@ -88,6 +90,6 @@ std::string UpdateUserRequest::getUserName()const
 void UpdateUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

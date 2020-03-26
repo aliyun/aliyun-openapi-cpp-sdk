@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopMarketingListRequest;
 
 ShopMarketingListRequest::ShopMarketingListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopMarketingList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopMarketingListRequest::~ShopMarketingListRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopMarketingListRequest::getAccessKeyId()const
 void ShopMarketingListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopMarketingListRequest::getSid()const
@@ -44,7 +46,7 @@ long ShopMarketingListRequest::getSid()const
 void ShopMarketingListRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string ShopMarketingListRequest::getName()const
@@ -55,7 +57,7 @@ std::string ShopMarketingListRequest::getName()const
 void ShopMarketingListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ShopMarketingListRequest::getPage()const
@@ -66,7 +68,7 @@ int ShopMarketingListRequest::getPage()const
 void ShopMarketingListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 int ShopMarketingListRequest::getPer()const
@@ -77,6 +79,6 @@ int ShopMarketingListRequest::getPer()const
 void ShopMarketingListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

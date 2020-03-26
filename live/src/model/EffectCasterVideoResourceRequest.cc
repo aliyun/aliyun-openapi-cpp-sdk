@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::EffectCasterVideoResourceRequest;
 
 EffectCasterVideoResourceRequest::EffectCasterVideoResourceRequest() :
 	RpcServiceRequest("live", "2016-11-01", "EffectCasterVideoResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EffectCasterVideoResourceRequest::~EffectCasterVideoResourceRequest()
 {}
@@ -33,7 +35,7 @@ std::string EffectCasterVideoResourceRequest::getResourceId()const
 void EffectCasterVideoResourceRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string EffectCasterVideoResourceRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string EffectCasterVideoResourceRequest::getCasterId()const
 void EffectCasterVideoResourceRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long EffectCasterVideoResourceRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long EffectCasterVideoResourceRequest::getOwnerId()const
 void EffectCasterVideoResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EffectCasterVideoResourceRequest::getSceneId()const
@@ -66,6 +68,6 @@ std::string EffectCasterVideoResourceRequest::getSceneId()const
 void EffectCasterVideoResourceRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

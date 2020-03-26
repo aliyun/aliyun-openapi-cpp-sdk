@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTrademarkMonitorResultsRequest;
 
 QueryTrademarkMonitorResultsRequest::QueryTrademarkMonitorResultsRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTrademarkMonitorResults")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTrademarkMonitorResultsRequest::~QueryTrademarkMonitorResultsRequest()
 {}
@@ -33,7 +35,7 @@ int QueryTrademarkMonitorResultsRequest::getActionType()const
 void QueryTrademarkMonitorResultsRequest::setActionType(int actionType)
 {
 	actionType_ = actionType;
-	setCoreParameter("ActionType", std::to_string(actionType));
+	setParameter("ActionType", std::to_string(actionType));
 }
 
 std::string QueryTrademarkMonitorResultsRequest::getTmName()const
@@ -44,7 +46,7 @@ std::string QueryTrademarkMonitorResultsRequest::getTmName()const
 void QueryTrademarkMonitorResultsRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setParameter("TmName", tmName);
 }
 
 std::string QueryTrademarkMonitorResultsRequest::getClassification()const
@@ -55,7 +57,7 @@ std::string QueryTrademarkMonitorResultsRequest::getClassification()const
 void QueryTrademarkMonitorResultsRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setParameter("Classification", classification);
 }
 
 int QueryTrademarkMonitorResultsRequest::getPageNum()const
@@ -66,7 +68,7 @@ int QueryTrademarkMonitorResultsRequest::getPageNum()const
 void QueryTrademarkMonitorResultsRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryTrademarkMonitorResultsRequest::getRegistrationNumber()const
@@ -77,7 +79,7 @@ std::string QueryTrademarkMonitorResultsRequest::getRegistrationNumber()const
 void QueryTrademarkMonitorResultsRequest::setRegistrationNumber(const std::string& registrationNumber)
 {
 	registrationNumber_ = registrationNumber;
-	setCoreParameter("RegistrationNumber", registrationNumber);
+	setParameter("RegistrationNumber", registrationNumber);
 }
 
 std::string QueryTrademarkMonitorResultsRequest::getApplyYear()const
@@ -88,7 +90,7 @@ std::string QueryTrademarkMonitorResultsRequest::getApplyYear()const
 void QueryTrademarkMonitorResultsRequest::setApplyYear(const std::string& applyYear)
 {
 	applyYear_ = applyYear;
-	setCoreParameter("ApplyYear", applyYear);
+	setParameter("ApplyYear", applyYear);
 }
 
 int QueryTrademarkMonitorResultsRequest::getPageSize()const
@@ -99,7 +101,7 @@ int QueryTrademarkMonitorResultsRequest::getPageSize()const
 void QueryTrademarkMonitorResultsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryTrademarkMonitorResultsRequest::getProcedureStatus()const
@@ -110,7 +112,7 @@ int QueryTrademarkMonitorResultsRequest::getProcedureStatus()const
 void QueryTrademarkMonitorResultsRequest::setProcedureStatus(int procedureStatus)
 {
 	procedureStatus_ = procedureStatus;
-	setCoreParameter("ProcedureStatus", std::to_string(procedureStatus));
+	setParameter("ProcedureStatus", std::to_string(procedureStatus));
 }
 
 long QueryTrademarkMonitorResultsRequest::getRuleId()const
@@ -121,6 +123,6 @@ long QueryTrademarkMonitorResultsRequest::getRuleId()const
 void QueryTrademarkMonitorResultsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

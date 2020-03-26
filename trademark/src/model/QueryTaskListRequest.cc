@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTaskListRequest;
 
 QueryTaskListRequest::QueryTaskListRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTaskListRequest::~QueryTaskListRequest()
 {}
@@ -33,6 +35,28 @@ std::string QueryTaskListRequest::getBizType()const
 void QueryTaskListRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
+}
+
+int QueryTaskListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void QueryTaskListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryTaskListRequest::getPageNum()const
+{
+	return pageNum_;
+}
+
+void QueryTaskListRequest::setPageNum(int pageNum)
+{
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
 }
 

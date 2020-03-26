@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ListLocationRequest;
 ListLocationRequest::ListLocationRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ListLocation")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListLocationRequest::~ListLocationRequest()

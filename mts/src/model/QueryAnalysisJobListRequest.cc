@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryAnalysisJobListRequest;
 
 QueryAnalysisJobListRequest::QueryAnalysisJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryAnalysisJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAnalysisJobListRequest::~QueryAnalysisJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryAnalysisJobListRequest::getResourceOwnerId()const
 void QueryAnalysisJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryAnalysisJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryAnalysisJobListRequest::getResourceOwnerAccount()const
 void QueryAnalysisJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryAnalysisJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryAnalysisJobListRequest::getOwnerAccount()const
 void QueryAnalysisJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryAnalysisJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryAnalysisJobListRequest::getOwnerId()const
 void QueryAnalysisJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryAnalysisJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryAnalysisJobListRequest::getAccessKeyId()const
 void QueryAnalysisJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryAnalysisJobListRequest::getAnalysisJobIds()const
@@ -88,6 +90,6 @@ std::string QueryAnalysisJobListRequest::getAnalysisJobIds()const
 void QueryAnalysisJobListRequest::setAnalysisJobIds(const std::string& analysisJobIds)
 {
 	analysisJobIds_ = analysisJobIds;
-	setCoreParameter("AnalysisJobIds", analysisJobIds);
+	setParameter("AnalysisJobIds", analysisJobIds);
 }
 

@@ -63,17 +63,19 @@ namespace AlibabaCloud
 						int interval;
 					};
 					std::string localSubnet;
-					bool effectImmediately;
 					std::string status;
+					std::string customerGatewayId;
+					long createTime;
+					std::string name;
+					bool effectImmediately;
 					VcoHealthCheck vcoHealthCheck;
 					std::string remoteSubnet;
-					std::string customerGatewayId;
 					std::string vpnGatewayId;
 					IpsecConfig ipsecConfig;
-					long createTime;
 					std::string vpnConnectionId;
+					bool enableNatTraversal;
 					IkeConfig ikeConfig;
-					std::string name;
+					bool enableDpd;
 				};
 
 

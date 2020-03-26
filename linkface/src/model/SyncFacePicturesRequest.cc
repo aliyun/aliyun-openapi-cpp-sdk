@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::SyncFacePicturesRequest;
 
 SyncFacePicturesRequest::SyncFacePicturesRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "SyncFacePictures")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SyncFacePicturesRequest::~SyncFacePicturesRequest()
 {}
@@ -33,7 +35,7 @@ std::string SyncFacePicturesRequest::getIotId()const
 void SyncFacePicturesRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setBodyParameter("IotId", iotId);
 }
 
 std::string SyncFacePicturesRequest::getGroupId()const
@@ -44,18 +46,7 @@ std::string SyncFacePicturesRequest::getGroupId()const
 void SyncFacePicturesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
-}
-
-std::string SyncFacePicturesRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void SyncFacePicturesRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("GroupId", groupId);
 }
 
 std::string SyncFacePicturesRequest::getProductKey()const
@@ -66,6 +57,39 @@ std::string SyncFacePicturesRequest::getProductKey()const
 void SyncFacePicturesRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setBodyParameter("ProductKey", productKey);
+}
+
+std::string SyncFacePicturesRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void SyncFacePicturesRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string SyncFacePicturesRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void SyncFacePicturesRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string SyncFacePicturesRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void SyncFacePicturesRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setBodyParameter("DeviceName", deviceName);
 }
 

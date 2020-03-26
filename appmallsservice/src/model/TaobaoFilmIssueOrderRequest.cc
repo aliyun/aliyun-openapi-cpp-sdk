@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmIssueOrderRequest;
 
 TaobaoFilmIssueOrderRequest::TaobaoFilmIssueOrderRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmIssueOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmIssueOrderRequest::~TaobaoFilmIssueOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string TaobaoFilmIssueOrderRequest::getLockSeatApplyKey()const
 void TaobaoFilmIssueOrderRequest::setLockSeatApplyKey(const std::string& lockSeatApplyKey)
 {
 	lockSeatApplyKey_ = lockSeatApplyKey;
-	setCoreParameter("LockSeatApplyKey", lockSeatApplyKey);
+	setParameter("LockSeatApplyKey", lockSeatApplyKey);
 }
 
 std::string TaobaoFilmIssueOrderRequest::getExtUserId()const
@@ -44,7 +46,7 @@ std::string TaobaoFilmIssueOrderRequest::getExtUserId()const
 void TaobaoFilmIssueOrderRequest::setExtUserId(const std::string& extUserId)
 {
 	extUserId_ = extUserId;
-	setCoreParameter("ExtUserId", extUserId);
+	setParameter("ExtUserId", extUserId);
 }
 
 std::string TaobaoFilmIssueOrderRequest::getExtOrderId()const
@@ -55,7 +57,7 @@ std::string TaobaoFilmIssueOrderRequest::getExtOrderId()const
 void TaobaoFilmIssueOrderRequest::setExtOrderId(const std::string& extOrderId)
 {
 	extOrderId_ = extOrderId;
-	setCoreParameter("ExtOrderId", extOrderId);
+	setParameter("ExtOrderId", extOrderId);
 }
 
 long TaobaoFilmIssueOrderRequest::getTotalPrice()const
@@ -66,7 +68,7 @@ long TaobaoFilmIssueOrderRequest::getTotalPrice()const
 void TaobaoFilmIssueOrderRequest::setTotalPrice(long totalPrice)
 {
 	totalPrice_ = totalPrice;
-	setCoreParameter("TotalPrice", std::to_string(totalPrice));
+	setParameter("TotalPrice", std::to_string(totalPrice));
 }
 
 std::string TaobaoFilmIssueOrderRequest::getParamsJson()const
@@ -77,6 +79,6 @@ std::string TaobaoFilmIssueOrderRequest::getParamsJson()const
 void TaobaoFilmIssueOrderRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

@@ -120,6 +120,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		componentJson_ = value["ComponentJson"].asString();
 	if(!value["Constraints"].isNull())
 		constraints_ = value["Constraints"].asString();
+	if(!value["IsTrial"].isNull())
+		isTrial_ = value["IsTrial"].asString() == "true";
 
 }
 
@@ -191,6 +193,11 @@ std::string DescribeInstanceResult::getSupplierName()const
 std::string DescribeInstanceResult::getComponentJson()const
 {
 	return componentJson_;
+}
+
+bool DescribeInstanceResult::getIsTrial()const
+{
+	return isTrial_;
 }
 
 std::string DescribeInstanceResult::getProductSkuCode()const

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DeleteCommodityRequest;
 
 DeleteCommodityRequest::DeleteCommodityRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DeleteCommodity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCommodityRequest::~DeleteCommodityRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeleteCommodityRequest::getCommodityId()const
 void DeleteCommodityRequest::setCommodityId(const std::string& commodityId)
 {
 	commodityId_ = commodityId;
-	setCoreParameter("CommodityId", commodityId);
+	setParameter("CommodityId", commodityId);
 }
 

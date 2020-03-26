@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::MassPushRequest;
 
 MassPushRequest::MassPushRequest() :
 	RpcServiceRequest("push", "2016-08-01", "MassPush")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MassPushRequest::~MassPushRequest()
 {}
@@ -33,7 +35,7 @@ std::string MassPushRequest::getAccessKeyId()const
 void MassPushRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<MassPushRequest::PushTask> MassPushRequest::getPushTask()const
@@ -44,48 +46,47 @@ std::vector<MassPushRequest::PushTask> MassPushRequest::getPushTask()const
 void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 {
 	pushTask_ = pushTask;
-	int i = 0;
-	for(int i = 0; i!= pushTask.size(); i++)	{
-		auto obj = pushTask.at(i);
-		std::string str ="PushTask."+ std::to_string(i);
-		setCoreParameter(str + ".AndroidNotificationBarType", std::to_string(obj.androidNotificationBarType));
-		setCoreParameter(str + ".AndroidExtParameters", obj.androidExtParameters);
-		setCoreParameter(str + ".iOSBadge", std::to_string(obj.iOSBadge));
-		setCoreParameter(str + ".iOSBadgeAutoIncrement", obj.iOSBadgeAutoIncrement ? "true" : "false");
-		setCoreParameter(str + ".AndroidOpenType", obj.androidOpenType);
-		setCoreParameter(str + ".Title", obj.title);
-		setCoreParameter(str + ".Body", obj.body);
-		setCoreParameter(str + ".DeviceType", obj.deviceType);
-		setCoreParameter(str + ".PushTime", obj.pushTime);
-		setCoreParameter(str + ".SendSpeed", std::to_string(obj.sendSpeed));
-		setCoreParameter(str + ".AndroidPopupActivity", obj.androidPopupActivity);
-		setCoreParameter(str + ".iOSRemindBody", obj.iOSRemindBody);
-		setCoreParameter(str + ".iOSExtParameters", obj.iOSExtParameters);
-		setCoreParameter(str + ".AndroidNotifyType", obj.androidNotifyType);
-		setCoreParameter(str + ".AndroidPopupTitle", obj.androidPopupTitle);
-		setCoreParameter(str + ".iOSMusic", obj.iOSMusic);
-		setCoreParameter(str + ".iOSApnsEnv", obj.iOSApnsEnv);
-		setCoreParameter(str + ".iOSMutableContent", obj.iOSMutableContent ? "true" : "false");
-		setCoreParameter(str + ".AndroidNotificationBarPriority", std::to_string(obj.androidNotificationBarPriority));
-		setCoreParameter(str + ".ExpireTime", obj.expireTime);
-		setCoreParameter(str + ".AndroidPopupBody", obj.androidPopupBody);
-		setCoreParameter(str + ".iOSNotificationCategory", obj.iOSNotificationCategory);
-		setCoreParameter(str + ".StoreOffline", obj.storeOffline ? "true" : "false");
-		setCoreParameter(str + ".iOSSilentNotification", obj.iOSSilentNotification ? "true" : "false");
-		setCoreParameter(str + ".JobKey", obj.jobKey);
-		setCoreParameter(str + ".Target", obj.target);
-		setCoreParameter(str + ".AndroidOpenUrl", obj.androidOpenUrl);
-		setCoreParameter(str + ".AndroidNotificationChannel", obj.androidNotificationChannel);
-		setCoreParameter(str + ".AndroidRemind", obj.androidRemind ? "true" : "false");
-		setCoreParameter(str + ".AndroidActivity", obj.androidActivity);
-		setCoreParameter(str + ".AndroidXiaoMiNotifyBody", obj.androidXiaoMiNotifyBody);
-		setCoreParameter(str + ".iOSSubtitle", obj.iOSSubtitle);
-		setCoreParameter(str + ".iOSRemind", obj.iOSRemind ? "true" : "false");
-		setCoreParameter(str + ".TargetValue", obj.targetValue);
-		setCoreParameter(str + ".AndroidMusic", obj.androidMusic);
-		setCoreParameter(str + ".AndroidXiaoMiActivity", obj.androidXiaoMiActivity);
-		setCoreParameter(str + ".AndroidXiaoMiNotifyTitle", obj.androidXiaoMiNotifyTitle);
-		setCoreParameter(str + ".PushType", obj.pushType);
+	for(int dep1 = 0; dep1!= pushTask.size(); dep1++) {
+		auto pushTaskObj = pushTask.at(dep1);
+		std::string pushTaskObjStr = "PushTask." + std::to_string(dep1 + 1);
+		setParameter(pushTaskObjStr + ".AndroidNotificationBarType", std::to_string(pushTaskObj.androidNotificationBarType));
+		setParameter(pushTaskObjStr + ".AndroidExtParameters", pushTaskObj.androidExtParameters);
+		setParameter(pushTaskObjStr + ".IOSBadge", std::to_string(pushTaskObj.iOSBadge));
+		setParameter(pushTaskObjStr + ".IOSBadgeAutoIncrement", pushTaskObj.iOSBadgeAutoIncrement ? "true" : "false");
+		setParameter(pushTaskObjStr + ".AndroidOpenType", pushTaskObj.androidOpenType);
+		setParameter(pushTaskObjStr + ".Title", pushTaskObj.title);
+		setParameter(pushTaskObjStr + ".Body", pushTaskObj.body);
+		setParameter(pushTaskObjStr + ".DeviceType", pushTaskObj.deviceType);
+		setParameter(pushTaskObjStr + ".PushTime", pushTaskObj.pushTime);
+		setParameter(pushTaskObjStr + ".SendSpeed", std::to_string(pushTaskObj.sendSpeed));
+		setParameter(pushTaskObjStr + ".AndroidPopupActivity", pushTaskObj.androidPopupActivity);
+		setParameter(pushTaskObjStr + ".IOSRemindBody", pushTaskObj.iOSRemindBody);
+		setParameter(pushTaskObjStr + ".IOSExtParameters", pushTaskObj.iOSExtParameters);
+		setParameter(pushTaskObjStr + ".AndroidNotifyType", pushTaskObj.androidNotifyType);
+		setParameter(pushTaskObjStr + ".AndroidPopupTitle", pushTaskObj.androidPopupTitle);
+		setParameter(pushTaskObjStr + ".IOSMusic", pushTaskObj.iOSMusic);
+		setParameter(pushTaskObjStr + ".IOSApnsEnv", pushTaskObj.iOSApnsEnv);
+		setParameter(pushTaskObjStr + ".IOSMutableContent", pushTaskObj.iOSMutableContent ? "true" : "false");
+		setParameter(pushTaskObjStr + ".AndroidNotificationBarPriority", std::to_string(pushTaskObj.androidNotificationBarPriority));
+		setParameter(pushTaskObjStr + ".ExpireTime", pushTaskObj.expireTime);
+		setParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
+		setParameter(pushTaskObjStr + ".IOSNotificationCategory", pushTaskObj.iOSNotificationCategory);
+		setParameter(pushTaskObjStr + ".StoreOffline", pushTaskObj.storeOffline ? "true" : "false");
+		setParameter(pushTaskObjStr + ".IOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");
+		setParameter(pushTaskObjStr + ".JobKey", pushTaskObj.jobKey);
+		setParameter(pushTaskObjStr + ".Target", pushTaskObj.target);
+		setParameter(pushTaskObjStr + ".AndroidOpenUrl", pushTaskObj.androidOpenUrl);
+		setParameter(pushTaskObjStr + ".AndroidNotificationChannel", pushTaskObj.androidNotificationChannel);
+		setParameter(pushTaskObjStr + ".AndroidRemind", pushTaskObj.androidRemind ? "true" : "false");
+		setParameter(pushTaskObjStr + ".AndroidActivity", pushTaskObj.androidActivity);
+		setParameter(pushTaskObjStr + ".AndroidXiaoMiNotifyBody", pushTaskObj.androidXiaoMiNotifyBody);
+		setParameter(pushTaskObjStr + ".IOSSubtitle", pushTaskObj.iOSSubtitle);
+		setParameter(pushTaskObjStr + ".IOSRemind", pushTaskObj.iOSRemind ? "true" : "false");
+		setParameter(pushTaskObjStr + ".TargetValue", pushTaskObj.targetValue);
+		setParameter(pushTaskObjStr + ".AndroidMusic", pushTaskObj.androidMusic);
+		setParameter(pushTaskObjStr + ".AndroidXiaoMiActivity", pushTaskObj.androidXiaoMiActivity);
+		setParameter(pushTaskObjStr + ".AndroidXiaoMiNotifyTitle", pushTaskObj.androidXiaoMiNotifyTitle);
+		setParameter(pushTaskObjStr + ".PushType", pushTaskObj.pushType);
 	}
 }
 
@@ -97,6 +98,6 @@ long MassPushRequest::getAppKey()const
 void MassPushRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

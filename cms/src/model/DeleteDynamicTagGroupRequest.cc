@@ -21,7 +21,7 @@ using AlibabaCloud::Cms::Model::DeleteDynamicTagGroupRequest;
 DeleteDynamicTagGroupRequest::DeleteDynamicTagGroupRequest() :
 	RpcServiceRequest("cms", "2019-01-01", "DeleteDynamicTagGroup")
 {
-	setMethod(HttpRequest::Method::Put);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteDynamicTagGroupRequest::~DeleteDynamicTagGroupRequest()
@@ -35,6 +35,6 @@ std::string DeleteDynamicTagGroupRequest::getDynamicTagRuleId()const
 void DeleteDynamicTagGroupRequest::setDynamicTagRuleId(const std::string& dynamicTagRuleId)
 {
 	dynamicTagRuleId_ = dynamicTagRuleId;
-	setCoreParameter("DynamicTagRuleId", dynamicTagRuleId);
+	setParameter("DynamicTagRuleId", dynamicTagRuleId);
 }
 

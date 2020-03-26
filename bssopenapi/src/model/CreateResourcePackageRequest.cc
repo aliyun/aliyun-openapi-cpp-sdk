@@ -35,7 +35,7 @@ std::string CreateResourcePackageRequest::getProductCode()const
 void CreateResourcePackageRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 std::string CreateResourcePackageRequest::getSpecification()const
@@ -46,7 +46,7 @@ std::string CreateResourcePackageRequest::getSpecification()const
 void CreateResourcePackageRequest::setSpecification(const std::string& specification)
 {
 	specification_ = specification;
-	setCoreParameter("Specification", specification);
+	setParameter("Specification", specification);
 }
 
 long CreateResourcePackageRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long CreateResourcePackageRequest::getOwnerId()const
 void CreateResourcePackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateResourcePackageRequest::getEffectiveDate()const
@@ -68,7 +68,7 @@ std::string CreateResourcePackageRequest::getEffectiveDate()const
 void CreateResourcePackageRequest::setEffectiveDate(const std::string& effectiveDate)
 {
 	effectiveDate_ = effectiveDate;
-	setCoreParameter("EffectiveDate", effectiveDate);
+	setParameter("EffectiveDate", effectiveDate);
 }
 
 int CreateResourcePackageRequest::getDuration()const
@@ -79,7 +79,7 @@ int CreateResourcePackageRequest::getDuration()const
 void CreateResourcePackageRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string CreateResourcePackageRequest::getPackageType()const
@@ -90,7 +90,7 @@ std::string CreateResourcePackageRequest::getPackageType()const
 void CreateResourcePackageRequest::setPackageType(const std::string& packageType)
 {
 	packageType_ = packageType;
-	setCoreParameter("PackageType", packageType);
+	setParameter("PackageType", packageType);
 }
 
 std::string CreateResourcePackageRequest::getPricingCycle()const
@@ -101,6 +101,6 @@ std::string CreateResourcePackageRequest::getPricingCycle()const
 void CreateResourcePackageRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

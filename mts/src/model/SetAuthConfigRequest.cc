@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SetAuthConfigRequest;
 
 SetAuthConfigRequest::SetAuthConfigRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SetAuthConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAuthConfigRequest::~SetAuthConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetAuthConfigRequest::getKey1()const
 void SetAuthConfigRequest::setKey1(const std::string& key1)
 {
 	key1_ = key1;
-	setCoreParameter("Key1", key1);
+	setParameter("Key1", key1);
 }
 
 std::string SetAuthConfigRequest::getKey2()const
@@ -44,7 +46,7 @@ std::string SetAuthConfigRequest::getKey2()const
 void SetAuthConfigRequest::setKey2(const std::string& key2)
 {
 	key2_ = key2;
-	setCoreParameter("Key2", key2);
+	setParameter("Key2", key2);
 }
 
 std::string SetAuthConfigRequest::getResourceOwnerId()const
@@ -55,7 +57,7 @@ std::string SetAuthConfigRequest::getResourceOwnerId()const
 void SetAuthConfigRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string SetAuthConfigRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SetAuthConfigRequest::getAccessKeyId()const
 void SetAuthConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetAuthConfigRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SetAuthConfigRequest::getResourceOwnerAccount()const
 void SetAuthConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetAuthConfigRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SetAuthConfigRequest::getOwnerAccount()const
 void SetAuthConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SetAuthConfigRequest::getOwnerId()const
@@ -99,6 +101,6 @@ std::string SetAuthConfigRequest::getOwnerId()const
 void SetAuthConfigRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

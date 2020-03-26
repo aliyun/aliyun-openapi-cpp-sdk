@@ -37,9 +37,12 @@ namespace AlibabaCloud
 
 				std::string getPerspectiveId()const;
 				void setPerspectiveId(const std::string& perspectiveId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				std::string perspectiveId_;
+				std::string accessKeyId_;
 
 			};
 		}

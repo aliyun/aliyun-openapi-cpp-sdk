@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeviceCreateRequest;
 
 DeviceCreateRequest::DeviceCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeviceCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeviceCreateRequest::~DeviceCreateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeviceCreateRequest::getDevicePosition()const
 void DeviceCreateRequest::setDevicePosition(const std::string& devicePosition)
 {
 	devicePosition_ = devicePosition;
-	setCoreParameter("DevicePosition", devicePosition);
+	setParameter("DevicePosition", devicePosition);
 }
 
 int DeviceCreateRequest::getDeviceType()const
@@ -44,7 +46,7 @@ int DeviceCreateRequest::getDeviceType()const
 void DeviceCreateRequest::setDeviceType(int deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", std::to_string(deviceType));
+	setParameter("DeviceType", std::to_string(deviceType));
 }
 
 std::string DeviceCreateRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeviceCreateRequest::getAccessKeyId()const
 void DeviceCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeviceCreateRequest::getSid()const
@@ -66,7 +68,7 @@ long DeviceCreateRequest::getSid()const
 void DeviceCreateRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 
 std::string DeviceCreateRequest::getDeviceNum()const
@@ -77,7 +79,7 @@ std::string DeviceCreateRequest::getDeviceNum()const
 void DeviceCreateRequest::setDeviceNum(const std::string& deviceNum)
 {
 	deviceNum_ = deviceNum;
-	setCoreParameter("DeviceNum", deviceNum);
+	setParameter("DeviceNum", deviceNum);
 }
 
 std::string DeviceCreateRequest::getDeviceName()const
@@ -88,6 +90,6 @@ std::string DeviceCreateRequest::getDeviceName()const
 void DeviceCreateRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

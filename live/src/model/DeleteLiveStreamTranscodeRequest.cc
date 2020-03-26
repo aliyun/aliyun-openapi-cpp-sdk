@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveStreamTranscodeRequest;
 
 DeleteLiveStreamTranscodeRequest::DeleteLiveStreamTranscodeRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveStreamTranscode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveStreamTranscodeRequest::~DeleteLiveStreamTranscodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveStreamTranscodeRequest::get_Template()const
 void DeleteLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", _template);
+	setParameter("_Template", _template);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
 void DeleteLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getApp()const
@@ -55,7 +57,7 @@ std::string DeleteLiveStreamTranscodeRequest::getApp()const
 void DeleteLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
-	setCoreParameter("App", app);
+	setParameter("App", app);
 }
 
 long DeleteLiveStreamTranscodeRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteLiveStreamTranscodeRequest::getOwnerId()const
 void DeleteLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getDomain()const
@@ -77,6 +79,6 @@ std::string DeleteLiveStreamTranscodeRequest::getDomain()const
 void DeleteLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

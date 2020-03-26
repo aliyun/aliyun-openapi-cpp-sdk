@@ -35,7 +35,7 @@ std::string CreateMetricRuleTemplateRequest::getDescription()const
 void CreateMetricRuleTemplateRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateMetricRuleTemplateRequest::getName()const
@@ -46,7 +46,7 @@ std::string CreateMetricRuleTemplateRequest::getName()const
 void CreateMetricRuleTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::vector<CreateMetricRuleTemplateRequest::AlertTemplates> CreateMetricRuleTemplateRequest::getAlertTemplates()const
@@ -59,26 +59,26 @@ void CreateMetricRuleTemplateRequest::setAlertTemplates(const std::vector<AlertT
 	alertTemplates_ = alertTemplates;
 	for(int dep1 = 0; dep1!= alertTemplates.size(); dep1++) {
 		auto alertTemplatesObj = alertTemplates.at(dep1);
-		std::string alertTemplatesObjStr = "AlertTemplates." + std::to_string(dep1);
-		setCoreParameter(alertTemplatesObjStr + ".Period", std::to_string(alertTemplatesObj.period));
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsWarnThreshold", alertTemplatesObj.escalationsWarnThreshold);
-		setCoreParameter(alertTemplatesObjStr + ".Webhook", alertTemplatesObj.webhook);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsWarnComparisonOperator", alertTemplatesObj.escalationsWarnComparisonOperator);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsCriticalStatistics", alertTemplatesObj.escalationsCriticalStatistics);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsInfoTimes", std::to_string(alertTemplatesObj.escalationsInfoTimes));
-		setCoreParameter(alertTemplatesObjStr + ".RuleName", alertTemplatesObj.ruleName);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsInfoStatistics", alertTemplatesObj.escalationsInfoStatistics);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsCriticalTimes", std::to_string(alertTemplatesObj.escalationsCriticalTimes));
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsInfoComparisonOperator", alertTemplatesObj.escalationsInfoComparisonOperator);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsWarnStatistics", alertTemplatesObj.escalationsWarnStatistics);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsInfoThreshold", alertTemplatesObj.escalationsInfoThreshold);
-		setCoreParameter(alertTemplatesObjStr + "._Namespace", alertTemplatesObj._namespace);
-		setCoreParameter(alertTemplatesObjStr + ".Selector", alertTemplatesObj.selector);
-		setCoreParameter(alertTemplatesObjStr + ".MetricName", alertTemplatesObj.metricName);
-		setCoreParameter(alertTemplatesObjStr + ".Category", alertTemplatesObj.category);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsCriticalComparisonOperator", alertTemplatesObj.escalationsCriticalComparisonOperator);
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsWarnTimes", std::to_string(alertTemplatesObj.escalationsWarnTimes));
-		setCoreParameter(alertTemplatesObjStr + ".EscalationsCriticalThreshold", alertTemplatesObj.escalationsCriticalThreshold);
+		std::string alertTemplatesObjStr = "AlertTemplates." + std::to_string(dep1 + 1);
+		setParameter(alertTemplatesObjStr + ".Period", std::to_string(alertTemplatesObj.period));
+		setParameter(alertTemplatesObjStr + ".EscalationsWarnThreshold", alertTemplatesObj.escalationsWarnThreshold);
+		setParameter(alertTemplatesObjStr + ".Webhook", alertTemplatesObj.webhook);
+		setParameter(alertTemplatesObjStr + ".EscalationsWarnComparisonOperator", alertTemplatesObj.escalationsWarnComparisonOperator);
+		setParameter(alertTemplatesObjStr + ".EscalationsCriticalStatistics", alertTemplatesObj.escalationsCriticalStatistics);
+		setParameter(alertTemplatesObjStr + ".EscalationsInfoTimes", std::to_string(alertTemplatesObj.escalationsInfoTimes));
+		setParameter(alertTemplatesObjStr + ".RuleName", alertTemplatesObj.ruleName);
+		setParameter(alertTemplatesObjStr + ".EscalationsInfoStatistics", alertTemplatesObj.escalationsInfoStatistics);
+		setParameter(alertTemplatesObjStr + ".EscalationsCriticalTimes", std::to_string(alertTemplatesObj.escalationsCriticalTimes));
+		setParameter(alertTemplatesObjStr + ".EscalationsInfoComparisonOperator", alertTemplatesObj.escalationsInfoComparisonOperator);
+		setParameter(alertTemplatesObjStr + ".EscalationsWarnStatistics", alertTemplatesObj.escalationsWarnStatistics);
+		setParameter(alertTemplatesObjStr + ".EscalationsInfoThreshold", alertTemplatesObj.escalationsInfoThreshold);
+		setParameter(alertTemplatesObjStr + "._Namespace", alertTemplatesObj._namespace);
+		setParameter(alertTemplatesObjStr + ".Selector", alertTemplatesObj.selector);
+		setParameter(alertTemplatesObjStr + ".MetricName", alertTemplatesObj.metricName);
+		setParameter(alertTemplatesObjStr + ".Category", alertTemplatesObj.category);
+		setParameter(alertTemplatesObjStr + ".EscalationsCriticalComparisonOperator", alertTemplatesObj.escalationsCriticalComparisonOperator);
+		setParameter(alertTemplatesObjStr + ".EscalationsWarnTimes", std::to_string(alertTemplatesObj.escalationsWarnTimes));
+		setParameter(alertTemplatesObjStr + ".EscalationsCriticalThreshold", alertTemplatesObj.escalationsCriticalThreshold);
 	}
 }
 

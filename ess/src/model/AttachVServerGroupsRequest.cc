@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachVServerGroupsRequest;
 
 AttachVServerGroupsRequest::AttachVServerGroupsRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachVServerGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachVServerGroupsRequest::~AttachVServerGroupsRequest()
 {}
@@ -33,7 +35,7 @@ std::string AttachVServerGroupsRequest::getScalingGroupId()const
 void AttachVServerGroupsRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachVServerGroupsRequest::getForceAttach()const
@@ -44,7 +46,7 @@ bool AttachVServerGroupsRequest::getForceAttach()const
 void AttachVServerGroupsRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+	setParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 std::string AttachVServerGroupsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AttachVServerGroupsRequest::getAccessKeyId()const
 void AttachVServerGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AttachVServerGroupsRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string AttachVServerGroupsRequest::getRegionId()const
 void AttachVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AttachVServerGroupsRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AttachVServerGroupsRequest::getResourceOwnerAccount()const
 void AttachVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AttachVServerGroupsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AttachVServerGroupsRequest::getOwnerId()const
 void AttachVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<AttachVServerGroupsRequest::VServerGroup> AttachVServerGroupsRequest::getVServerGroup()const
@@ -99,12 +101,17 @@ std::vector<AttachVServerGroupsRequest::VServerGroup> AttachVServerGroupsRequest
 void AttachVServerGroupsRequest::setVServerGroup(const std::vector<VServerGroup>& vServerGroup)
 {
 	vServerGroup_ = vServerGroup;
-	int i = 0;
-	for(int i = 0; i!= vServerGroup.size(); i++)	{
-		auto obj = vServerGroup.at(i);
-		std::string str ="VServerGroup."+ std::to_string(i);
-		setCoreParameter(str + ".LoadBalancerId", obj.loadBalancerId);
-		setCoreParameter(str + ".VServerGroupAttribute", std::to_string(obj.vServerGroupAttribute));
+	for(int dep1 = 0; dep1!= vServerGroup.size(); dep1++) {
+		auto vServerGroupObj = vServerGroup.at(dep1);
+		std::string vServerGroupObjStr = "VServerGroup." + std::to_string(dep1 + 1);
+		setParameter(vServerGroupObjStr + ".LoadBalancerId", vServerGroupObj.loadBalancerId);
+		for(int dep2 = 0; dep2!= vServerGroupObj.vServerGroupAttribute.size(); dep2++) {
+			auto vServerGroupAttributeObj = vServerGroupObj.vServerGroupAttribute.at(dep2);
+			std::string vServerGroupAttributeObjStr = vServerGroupObjStr + "VServerGroupAttribute." + std::to_string(dep2 + 1);
+			setParameter(vServerGroupAttributeObjStr + ".VServerGroupId", vServerGroupAttributeObj.vServerGroupId);
+			setParameter(vServerGroupAttributeObjStr + ".Port", std::to_string(vServerGroupAttributeObj.port));
+			setParameter(vServerGroupAttributeObjStr + ".Weight", std::to_string(vServerGroupAttributeObj.weight));
+		}
 	}
 }
 

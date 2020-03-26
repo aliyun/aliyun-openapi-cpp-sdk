@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetLiveDomainCertificateRequest;
 
 SetLiveDomainCertificateRequest::SetLiveDomainCertificateRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetLiveDomainCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetLiveDomainCertificateRequest::~SetLiveDomainCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetLiveDomainCertificateRequest::getSSLProtocol()const
 void SetLiveDomainCertificateRequest::setSSLProtocol(const std::string& sSLProtocol)
 {
 	sSLProtocol_ = sSLProtocol;
-	setCoreParameter("SSLProtocol", sSLProtocol);
+	setParameter("SSLProtocol", sSLProtocol);
 }
 
 std::string SetLiveDomainCertificateRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string SetLiveDomainCertificateRequest::getSecurityToken()const
 void SetLiveDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetLiveDomainCertificateRequest::getCertType()const
@@ -55,7 +57,7 @@ std::string SetLiveDomainCertificateRequest::getCertType()const
 void SetLiveDomainCertificateRequest::setCertType(const std::string& certType)
 {
 	certType_ = certType;
-	setCoreParameter("CertType", certType);
+	setParameter("CertType", certType);
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPri()const
@@ -66,7 +68,7 @@ std::string SetLiveDomainCertificateRequest::getSSLPri()const
 void SetLiveDomainCertificateRequest::setSSLPri(const std::string& sSLPri)
 {
 	sSLPri_ = sSLPri;
-	setCoreParameter("SSLPri", sSLPri);
+	setParameter("SSLPri", sSLPri);
 }
 
 std::string SetLiveDomainCertificateRequest::getForceSet()const
@@ -77,7 +79,7 @@ std::string SetLiveDomainCertificateRequest::getForceSet()const
 void SetLiveDomainCertificateRequest::setForceSet(const std::string& forceSet)
 {
 	forceSet_ = forceSet;
-	setCoreParameter("ForceSet", forceSet);
+	setParameter("ForceSet", forceSet);
 }
 
 std::string SetLiveDomainCertificateRequest::getCertName()const
@@ -88,7 +90,7 @@ std::string SetLiveDomainCertificateRequest::getCertName()const
 void SetLiveDomainCertificateRequest::setCertName(const std::string& certName)
 {
 	certName_ = certName;
-	setCoreParameter("CertName", certName);
+	setParameter("CertName", certName);
 }
 
 std::string SetLiveDomainCertificateRequest::getDomainName()const
@@ -99,7 +101,7 @@ std::string SetLiveDomainCertificateRequest::getDomainName()const
 void SetLiveDomainCertificateRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SetLiveDomainCertificateRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long SetLiveDomainCertificateRequest::getOwnerId()const
 void SetLiveDomainCertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetLiveDomainCertificateRequest::getSSLPub()const
@@ -121,6 +123,6 @@ std::string SetLiveDomainCertificateRequest::getSSLPub()const
 void SetLiveDomainCertificateRequest::setSSLPub(const std::string& sSLPub)
 {
 	sSLPub_ = sSLPub;
-	setCoreParameter("SSLPub", sSLPub);
+	setParameter("SSLPub", sSLPub);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileConsumeRequest;
 
 ProfileConsumeRequest::ProfileConsumeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileConsume")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileConsumeRequest::~ProfileConsumeRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProfileConsumeRequest::getBeginDate()const
 void ProfileConsumeRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setParameter("BeginDate", beginDate);
 }
 
 std::string ProfileConsumeRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ProfileConsumeRequest::getAccessKeyId()const
 void ProfileConsumeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ProfileConsumeRequest::getEndDate()const
@@ -55,7 +57,7 @@ std::string ProfileConsumeRequest::getEndDate()const
 void ProfileConsumeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 int ProfileConsumeRequest::getDataType()const
@@ -66,7 +68,7 @@ int ProfileConsumeRequest::getDataType()const
 void ProfileConsumeRequest::setDataType(int dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", std::to_string(dataType));
+	setParameter("DataType", std::to_string(dataType));
 }
 
 long ProfileConsumeRequest::getGsid()const
@@ -77,6 +79,6 @@ long ProfileConsumeRequest::getGsid()const
 void ProfileConsumeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

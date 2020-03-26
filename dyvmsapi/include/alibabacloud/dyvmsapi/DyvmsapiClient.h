@@ -40,10 +40,18 @@
 #include "model/CreateRobotTaskResult.h"
 #include "model/DeleteRobotTaskRequest.h"
 #include "model/DeleteRobotTaskResult.h"
+#include "model/DescribeRecordDataRequest.h"
+#include "model/DescribeRecordDataResult.h"
+#include "model/DoRtcNumberAuthRequest.h"
+#include "model/DoRtcNumberAuthResult.h"
 #include "model/GetRtcTokenRequest.h"
 #include "model/GetRtcTokenResult.h"
 #include "model/IvrCallRequest.h"
 #include "model/IvrCallResult.h"
+#include "model/ListOrderedNumbersRequest.h"
+#include "model/ListOrderedNumbersResult.h"
+#include "model/ListOutboundStrategiesRequest.h"
+#include "model/ListOutboundStrategiesResult.h"
 #include "model/QueryCallDetailByCallIdRequest.h"
 #include "model/QueryCallDetailByCallIdResult.h"
 #include "model/QueryCallDetailByTaskIdRequest.h"
@@ -60,6 +68,8 @@
 #include "model/QueryRobotTaskListResult.h"
 #include "model/QueryRobotv2AllListRequest.h"
 #include "model/QueryRobotv2AllListResult.h"
+#include "model/QueryRtcNumberAuthStatusRequest.h"
+#include "model/QueryRtcNumberAuthStatusResult.h"
 #include "model/QueryVoipNumberBindInfosRequest.h"
 #include "model/QueryVoipNumberBindInfosResult.h"
 #include "model/ReportVoipProblemsRequest.h"
@@ -72,12 +82,16 @@
 #include "model/SmartCallResult.h"
 #include "model/SmartCallOperateRequest.h"
 #include "model/SmartCallOperateResult.h"
+#include "model/StartMicroOutboundRequest.h"
+#include "model/StartMicroOutboundResult.h"
 #include "model/StartRobotTaskRequest.h"
 #include "model/StartRobotTaskResult.h"
 #include "model/StopRobotTaskRequest.h"
 #include "model/StopRobotTaskResult.h"
 #include "model/UnbindNumberAndVoipIdRequest.h"
 #include "model/UnbindNumberAndVoipIdResult.h"
+#include "model/UndoRtcNumberAuthRequest.h"
+#include "model/UndoRtcNumberAuthResult.h"
 #include "model/UploadRobotTaskCalledFileRequest.h"
 #include "model/UploadRobotTaskCalledFileResult.h"
 #include "model/VoipAddAccountRequest.h"
@@ -120,12 +134,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRobotTaskResult> DeleteRobotTaskOutcome;
 			typedef std::future<DeleteRobotTaskOutcome> DeleteRobotTaskOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::DeleteRobotTaskRequest&, const DeleteRobotTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRobotTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecordDataResult> DescribeRecordDataOutcome;
+			typedef std::future<DescribeRecordDataOutcome> DescribeRecordDataOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::DescribeRecordDataRequest&, const DescribeRecordDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordDataAsyncHandler;
+			typedef Outcome<Error, Model::DoRtcNumberAuthResult> DoRtcNumberAuthOutcome;
+			typedef std::future<DoRtcNumberAuthOutcome> DoRtcNumberAuthOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::DoRtcNumberAuthRequest&, const DoRtcNumberAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DoRtcNumberAuthAsyncHandler;
 			typedef Outcome<Error, Model::GetRtcTokenResult> GetRtcTokenOutcome;
 			typedef std::future<GetRtcTokenOutcome> GetRtcTokenOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::GetRtcTokenRequest&, const GetRtcTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRtcTokenAsyncHandler;
 			typedef Outcome<Error, Model::IvrCallResult> IvrCallOutcome;
 			typedef std::future<IvrCallOutcome> IvrCallOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::IvrCallRequest&, const IvrCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IvrCallAsyncHandler;
+			typedef Outcome<Error, Model::ListOrderedNumbersResult> ListOrderedNumbersOutcome;
+			typedef std::future<ListOrderedNumbersOutcome> ListOrderedNumbersOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::ListOrderedNumbersRequest&, const ListOrderedNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrderedNumbersAsyncHandler;
+			typedef Outcome<Error, Model::ListOutboundStrategiesResult> ListOutboundStrategiesOutcome;
+			typedef std::future<ListOutboundStrategiesOutcome> ListOutboundStrategiesOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::ListOutboundStrategiesRequest&, const ListOutboundStrategiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOutboundStrategiesAsyncHandler;
 			typedef Outcome<Error, Model::QueryCallDetailByCallIdResult> QueryCallDetailByCallIdOutcome;
 			typedef std::future<QueryCallDetailByCallIdOutcome> QueryCallDetailByCallIdOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::QueryCallDetailByCallIdRequest&, const QueryCallDetailByCallIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallDetailByCallIdAsyncHandler;
@@ -150,6 +176,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryRobotv2AllListResult> QueryRobotv2AllListOutcome;
 			typedef std::future<QueryRobotv2AllListOutcome> QueryRobotv2AllListOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::QueryRobotv2AllListRequest&, const QueryRobotv2AllListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRobotv2AllListAsyncHandler;
+			typedef Outcome<Error, Model::QueryRtcNumberAuthStatusResult> QueryRtcNumberAuthStatusOutcome;
+			typedef std::future<QueryRtcNumberAuthStatusOutcome> QueryRtcNumberAuthStatusOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::QueryRtcNumberAuthStatusRequest&, const QueryRtcNumberAuthStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRtcNumberAuthStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryVoipNumberBindInfosResult> QueryVoipNumberBindInfosOutcome;
 			typedef std::future<QueryVoipNumberBindInfosOutcome> QueryVoipNumberBindInfosOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::QueryVoipNumberBindInfosRequest&, const QueryVoipNumberBindInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVoipNumberBindInfosAsyncHandler;
@@ -168,6 +197,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SmartCallOperateResult> SmartCallOperateOutcome;
 			typedef std::future<SmartCallOperateOutcome> SmartCallOperateOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::SmartCallOperateRequest&, const SmartCallOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SmartCallOperateAsyncHandler;
+			typedef Outcome<Error, Model::StartMicroOutboundResult> StartMicroOutboundOutcome;
+			typedef std::future<StartMicroOutboundOutcome> StartMicroOutboundOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::StartMicroOutboundRequest&, const StartMicroOutboundOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartMicroOutboundAsyncHandler;
 			typedef Outcome<Error, Model::StartRobotTaskResult> StartRobotTaskOutcome;
 			typedef std::future<StartRobotTaskOutcome> StartRobotTaskOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::StartRobotTaskRequest&, const StartRobotTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartRobotTaskAsyncHandler;
@@ -177,6 +209,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindNumberAndVoipIdResult> UnbindNumberAndVoipIdOutcome;
 			typedef std::future<UnbindNumberAndVoipIdOutcome> UnbindNumberAndVoipIdOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::UnbindNumberAndVoipIdRequest&, const UnbindNumberAndVoipIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNumberAndVoipIdAsyncHandler;
+			typedef Outcome<Error, Model::UndoRtcNumberAuthResult> UndoRtcNumberAuthOutcome;
+			typedef std::future<UndoRtcNumberAuthOutcome> UndoRtcNumberAuthOutcomeCallable;
+			typedef std::function<void(const DyvmsapiClient*, const Model::UndoRtcNumberAuthRequest&, const UndoRtcNumberAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UndoRtcNumberAuthAsyncHandler;
 			typedef Outcome<Error, Model::UploadRobotTaskCalledFileResult> UploadRobotTaskCalledFileOutcome;
 			typedef std::future<UploadRobotTaskCalledFileOutcome> UploadRobotTaskCalledFileOutcomeCallable;
 			typedef std::function<void(const DyvmsapiClient*, const Model::UploadRobotTaskCalledFileRequest&, const UploadRobotTaskCalledFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadRobotTaskCalledFileAsyncHandler;
@@ -218,12 +253,24 @@ namespace AlibabaCloud
 			DeleteRobotTaskOutcome deleteRobotTask(const Model::DeleteRobotTaskRequest &request)const;
 			void deleteRobotTaskAsync(const Model::DeleteRobotTaskRequest& request, const DeleteRobotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRobotTaskOutcomeCallable deleteRobotTaskCallable(const Model::DeleteRobotTaskRequest& request) const;
+			DescribeRecordDataOutcome describeRecordData(const Model::DescribeRecordDataRequest &request)const;
+			void describeRecordDataAsync(const Model::DescribeRecordDataRequest& request, const DescribeRecordDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecordDataOutcomeCallable describeRecordDataCallable(const Model::DescribeRecordDataRequest& request) const;
+			DoRtcNumberAuthOutcome doRtcNumberAuth(const Model::DoRtcNumberAuthRequest &request)const;
+			void doRtcNumberAuthAsync(const Model::DoRtcNumberAuthRequest& request, const DoRtcNumberAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DoRtcNumberAuthOutcomeCallable doRtcNumberAuthCallable(const Model::DoRtcNumberAuthRequest& request) const;
 			GetRtcTokenOutcome getRtcToken(const Model::GetRtcTokenRequest &request)const;
 			void getRtcTokenAsync(const Model::GetRtcTokenRequest& request, const GetRtcTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRtcTokenOutcomeCallable getRtcTokenCallable(const Model::GetRtcTokenRequest& request) const;
 			IvrCallOutcome ivrCall(const Model::IvrCallRequest &request)const;
 			void ivrCallAsync(const Model::IvrCallRequest& request, const IvrCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			IvrCallOutcomeCallable ivrCallCallable(const Model::IvrCallRequest& request) const;
+			ListOrderedNumbersOutcome listOrderedNumbers(const Model::ListOrderedNumbersRequest &request)const;
+			void listOrderedNumbersAsync(const Model::ListOrderedNumbersRequest& request, const ListOrderedNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOrderedNumbersOutcomeCallable listOrderedNumbersCallable(const Model::ListOrderedNumbersRequest& request) const;
+			ListOutboundStrategiesOutcome listOutboundStrategies(const Model::ListOutboundStrategiesRequest &request)const;
+			void listOutboundStrategiesAsync(const Model::ListOutboundStrategiesRequest& request, const ListOutboundStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListOutboundStrategiesOutcomeCallable listOutboundStrategiesCallable(const Model::ListOutboundStrategiesRequest& request) const;
 			QueryCallDetailByCallIdOutcome queryCallDetailByCallId(const Model::QueryCallDetailByCallIdRequest &request)const;
 			void queryCallDetailByCallIdAsync(const Model::QueryCallDetailByCallIdRequest& request, const QueryCallDetailByCallIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCallDetailByCallIdOutcomeCallable queryCallDetailByCallIdCallable(const Model::QueryCallDetailByCallIdRequest& request) const;
@@ -248,6 +295,9 @@ namespace AlibabaCloud
 			QueryRobotv2AllListOutcome queryRobotv2AllList(const Model::QueryRobotv2AllListRequest &request)const;
 			void queryRobotv2AllListAsync(const Model::QueryRobotv2AllListRequest& request, const QueryRobotv2AllListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRobotv2AllListOutcomeCallable queryRobotv2AllListCallable(const Model::QueryRobotv2AllListRequest& request) const;
+			QueryRtcNumberAuthStatusOutcome queryRtcNumberAuthStatus(const Model::QueryRtcNumberAuthStatusRequest &request)const;
+			void queryRtcNumberAuthStatusAsync(const Model::QueryRtcNumberAuthStatusRequest& request, const QueryRtcNumberAuthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryRtcNumberAuthStatusOutcomeCallable queryRtcNumberAuthStatusCallable(const Model::QueryRtcNumberAuthStatusRequest& request) const;
 			QueryVoipNumberBindInfosOutcome queryVoipNumberBindInfos(const Model::QueryVoipNumberBindInfosRequest &request)const;
 			void queryVoipNumberBindInfosAsync(const Model::QueryVoipNumberBindInfosRequest& request, const QueryVoipNumberBindInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryVoipNumberBindInfosOutcomeCallable queryVoipNumberBindInfosCallable(const Model::QueryVoipNumberBindInfosRequest& request) const;
@@ -266,6 +316,9 @@ namespace AlibabaCloud
 			SmartCallOperateOutcome smartCallOperate(const Model::SmartCallOperateRequest &request)const;
 			void smartCallOperateAsync(const Model::SmartCallOperateRequest& request, const SmartCallOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SmartCallOperateOutcomeCallable smartCallOperateCallable(const Model::SmartCallOperateRequest& request) const;
+			StartMicroOutboundOutcome startMicroOutbound(const Model::StartMicroOutboundRequest &request)const;
+			void startMicroOutboundAsync(const Model::StartMicroOutboundRequest& request, const StartMicroOutboundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartMicroOutboundOutcomeCallable startMicroOutboundCallable(const Model::StartMicroOutboundRequest& request) const;
 			StartRobotTaskOutcome startRobotTask(const Model::StartRobotTaskRequest &request)const;
 			void startRobotTaskAsync(const Model::StartRobotTaskRequest& request, const StartRobotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartRobotTaskOutcomeCallable startRobotTaskCallable(const Model::StartRobotTaskRequest& request) const;
@@ -275,6 +328,9 @@ namespace AlibabaCloud
 			UnbindNumberAndVoipIdOutcome unbindNumberAndVoipId(const Model::UnbindNumberAndVoipIdRequest &request)const;
 			void unbindNumberAndVoipIdAsync(const Model::UnbindNumberAndVoipIdRequest& request, const UnbindNumberAndVoipIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindNumberAndVoipIdOutcomeCallable unbindNumberAndVoipIdCallable(const Model::UnbindNumberAndVoipIdRequest& request) const;
+			UndoRtcNumberAuthOutcome undoRtcNumberAuth(const Model::UndoRtcNumberAuthRequest &request)const;
+			void undoRtcNumberAuthAsync(const Model::UndoRtcNumberAuthRequest& request, const UndoRtcNumberAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UndoRtcNumberAuthOutcomeCallable undoRtcNumberAuthCallable(const Model::UndoRtcNumberAuthRequest& request) const;
 			UploadRobotTaskCalledFileOutcome uploadRobotTaskCalledFile(const Model::UploadRobotTaskCalledFileRequest &request)const;
 			void uploadRobotTaskCalledFileAsync(const Model::UploadRobotTaskCalledFileRequest& request, const UploadRobotTaskCalledFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadRobotTaskCalledFileOutcomeCallable uploadRobotTaskCalledFileCallable(const Model::UploadRobotTaskCalledFileRequest& request) const;

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::AddTrafficSpecialControlRequest;
 
 AddTrafficSpecialControlRequest::AddTrafficSpecialControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "AddTrafficSpecialControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTrafficSpecialControlRequest::~AddTrafficSpecialControlRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddTrafficSpecialControlRequest::getTrafficControlId()const
 void AddTrafficSpecialControlRequest::setTrafficControlId(const std::string& trafficControlId)
 {
 	trafficControlId_ = trafficControlId;
-	setCoreParameter("TrafficControlId", trafficControlId);
+	setParameter("TrafficControlId", trafficControlId);
 }
 
 std::string AddTrafficSpecialControlRequest::getSpecialKey()const
@@ -44,7 +46,7 @@ std::string AddTrafficSpecialControlRequest::getSpecialKey()const
 void AddTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKey)
 {
 	specialKey_ = specialKey;
-	setCoreParameter("SpecialKey", specialKey);
+	setParameter("SpecialKey", specialKey);
 }
 
 int AddTrafficSpecialControlRequest::getTrafficValue()const
@@ -55,7 +57,7 @@ int AddTrafficSpecialControlRequest::getTrafficValue()const
 void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue)
 {
 	trafficValue_ = trafficValue;
-	setCoreParameter("TrafficValue", std::to_string(trafficValue));
+	setParameter("TrafficValue", std::to_string(trafficValue));
 }
 
 std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
 void AddTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddTrafficSpecialControlRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string AddTrafficSpecialControlRequest::getSecurityToken()const
 void AddTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddTrafficSpecialControlRequest::getSpecialType()const
@@ -88,6 +90,6 @@ std::string AddTrafficSpecialControlRequest::getSpecialType()const
 void AddTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
 {
 	specialType_ = specialType;
-	setCoreParameter("SpecialType", specialType);
+	setParameter("SpecialType", specialType);
 }
 

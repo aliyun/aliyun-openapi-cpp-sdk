@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchGetDeviceDriverRequest;
 
 BatchGetDeviceDriverRequest::BatchGetDeviceDriverRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchGetDeviceDriver")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetDeviceDriverRequest::~BatchGetDeviceDriverRequest()
 {}
@@ -33,18 +35,7 @@ std::string BatchGetDeviceDriverRequest::getAccessKeyId()const
 void BatchGetDeviceDriverRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BatchGetDeviceDriverRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BatchGetDeviceDriverRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> BatchGetDeviceDriverRequest::getIotIds()const
@@ -55,8 +46,9 @@ std::vector<std::string> BatchGetDeviceDriverRequest::getIotIds()const
 void BatchGetDeviceDriverRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
+		setParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchGetDeviceDriverRequest::getIotInstanceId()const
@@ -67,6 +59,39 @@ std::string BatchGetDeviceDriverRequest::getIotInstanceId()const
 void BatchGetDeviceDriverRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchGetDeviceDriverRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BatchGetDeviceDriverRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BatchGetDeviceDriverRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchGetDeviceDriverRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchGetDeviceDriverRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchGetDeviceDriverRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

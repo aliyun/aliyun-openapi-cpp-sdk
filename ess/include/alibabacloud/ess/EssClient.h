@@ -116,6 +116,12 @@
 #include "model/ExecuteScalingRuleResult.h"
 #include "model/ExitStandbyRequest.h"
 #include "model/ExitStandbyResult.h"
+#include "model/ListTagKeysRequest.h"
+#include "model/ListTagKeysResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
+#include "model/ListTagValuesRequest.h"
+#include "model/ListTagValuesResult.h"
 #include "model/ModifyAlarmRequest.h"
 #include "model/ModifyAlarmResult.h"
 #include "model/ModifyAlertConfigRequest.h"
@@ -138,8 +144,20 @@
 #include "model/RecordLifecycleActionHeartbeatResult.h"
 #include "model/RemoveInstancesRequest.h"
 #include "model/RemoveInstancesResult.h"
+#include "model/ResumeProcessesRequest.h"
+#include "model/ResumeProcessesResult.h"
+#include "model/SetGroupDeletionProtectionRequest.h"
+#include "model/SetGroupDeletionProtectionResult.h"
+#include "model/SetInstanceHealthRequest.h"
+#include "model/SetInstanceHealthResult.h"
 #include "model/SetInstancesProtectionRequest.h"
 #include "model/SetInstancesProtectionResult.h"
+#include "model/SuspendProcessesRequest.h"
+#include "model/SuspendProcessesResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/VerifyAuthenticationRequest.h"
 #include "model/VerifyAuthenticationResult.h"
 #include "model/VerifyUserRequest.h"
@@ -294,6 +312,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExitStandbyResult> ExitStandbyOutcome;
 			typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ExitStandbyRequest&, const ExitStandbyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExitStandbyAsyncHandler;
+			typedef Outcome<Error, Model::ListTagKeysResult> ListTagKeysOutcome;
+			typedef std::future<ListTagKeysOutcome> ListTagKeysOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ListTagKeysRequest&, const ListTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagKeysAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagValuesResult> ListTagValuesOutcome;
+			typedef std::future<ListTagValuesOutcome> ListTagValuesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ListTagValuesRequest&, const ListTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagValuesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAlarmResult> ModifyAlarmOutcome;
 			typedef std::future<ModifyAlarmOutcome> ModifyAlarmOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::ModifyAlarmRequest&, const ModifyAlarmOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmAsyncHandler;
@@ -327,9 +354,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveInstancesResult> RemoveInstancesOutcome;
 			typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::RemoveInstancesRequest&, const RemoveInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ResumeProcessesResult> ResumeProcessesOutcome;
+			typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::ResumeProcessesRequest&, const ResumeProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProcessesAsyncHandler;
+			typedef Outcome<Error, Model::SetGroupDeletionProtectionResult> SetGroupDeletionProtectionOutcome;
+			typedef std::future<SetGroupDeletionProtectionOutcome> SetGroupDeletionProtectionOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::SetGroupDeletionProtectionRequest&, const SetGroupDeletionProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGroupDeletionProtectionAsyncHandler;
+			typedef Outcome<Error, Model::SetInstanceHealthResult> SetInstanceHealthOutcome;
+			typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::SetInstanceHealthRequest&, const SetInstanceHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceHealthAsyncHandler;
 			typedef Outcome<Error, Model::SetInstancesProtectionResult> SetInstancesProtectionOutcome;
 			typedef std::future<SetInstancesProtectionOutcome> SetInstancesProtectionOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::SetInstancesProtectionRequest&, const SetInstancesProtectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetInstancesProtectionAsyncHandler;
+			typedef Outcome<Error, Model::SuspendProcessesResult> SuspendProcessesOutcome;
+			typedef std::future<SuspendProcessesOutcome> SuspendProcessesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::SuspendProcessesRequest&, const SuspendProcessesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendProcessesAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const EssClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::VerifyAuthenticationResult> VerifyAuthenticationOutcome;
 			typedef std::future<VerifyAuthenticationOutcome> VerifyAuthenticationOutcomeCallable;
 			typedef std::function<void(const EssClient*, const Model::VerifyAuthenticationRequest&, const VerifyAuthenticationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyAuthenticationAsyncHandler;
@@ -482,6 +527,15 @@ namespace AlibabaCloud
 			ExitStandbyOutcome exitStandby(const Model::ExitStandbyRequest &request)const;
 			void exitStandbyAsync(const Model::ExitStandbyRequest& request, const ExitStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExitStandbyOutcomeCallable exitStandbyCallable(const Model::ExitStandbyRequest& request) const;
+			ListTagKeysOutcome listTagKeys(const Model::ListTagKeysRequest &request)const;
+			void listTagKeysAsync(const Model::ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagKeysOutcomeCallable listTagKeysCallable(const Model::ListTagKeysRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ListTagValuesOutcome listTagValues(const Model::ListTagValuesRequest &request)const;
+			void listTagValuesAsync(const Model::ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagValuesOutcomeCallable listTagValuesCallable(const Model::ListTagValuesRequest& request) const;
 			ModifyAlarmOutcome modifyAlarm(const Model::ModifyAlarmRequest &request)const;
 			void modifyAlarmAsync(const Model::ModifyAlarmRequest& request, const ModifyAlarmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAlarmOutcomeCallable modifyAlarmCallable(const Model::ModifyAlarmRequest& request) const;
@@ -515,9 +569,27 @@ namespace AlibabaCloud
 			RemoveInstancesOutcome removeInstances(const Model::RemoveInstancesRequest &request)const;
 			void removeInstancesAsync(const Model::RemoveInstancesRequest& request, const RemoveInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveInstancesOutcomeCallable removeInstancesCallable(const Model::RemoveInstancesRequest& request) const;
+			ResumeProcessesOutcome resumeProcesses(const Model::ResumeProcessesRequest &request)const;
+			void resumeProcessesAsync(const Model::ResumeProcessesRequest& request, const ResumeProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResumeProcessesOutcomeCallable resumeProcessesCallable(const Model::ResumeProcessesRequest& request) const;
+			SetGroupDeletionProtectionOutcome setGroupDeletionProtection(const Model::SetGroupDeletionProtectionRequest &request)const;
+			void setGroupDeletionProtectionAsync(const Model::SetGroupDeletionProtectionRequest& request, const SetGroupDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetGroupDeletionProtectionOutcomeCallable setGroupDeletionProtectionCallable(const Model::SetGroupDeletionProtectionRequest& request) const;
+			SetInstanceHealthOutcome setInstanceHealth(const Model::SetInstanceHealthRequest &request)const;
+			void setInstanceHealthAsync(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetInstanceHealthOutcomeCallable setInstanceHealthCallable(const Model::SetInstanceHealthRequest& request) const;
 			SetInstancesProtectionOutcome setInstancesProtection(const Model::SetInstancesProtectionRequest &request)const;
 			void setInstancesProtectionAsync(const Model::SetInstancesProtectionRequest& request, const SetInstancesProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetInstancesProtectionOutcomeCallable setInstancesProtectionCallable(const Model::SetInstancesProtectionRequest& request) const;
+			SuspendProcessesOutcome suspendProcesses(const Model::SuspendProcessesRequest &request)const;
+			void suspendProcessesAsync(const Model::SuspendProcessesRequest& request, const SuspendProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SuspendProcessesOutcomeCallable suspendProcessesCallable(const Model::SuspendProcessesRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			VerifyAuthenticationOutcome verifyAuthentication(const Model::VerifyAuthenticationRequest &request)const;
 			void verifyAuthenticationAsync(const Model::VerifyAuthenticationRequest& request, const VerifyAuthenticationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyAuthenticationOutcomeCallable verifyAuthenticationCallable(const Model::VerifyAuthenticationRequest& request) const;

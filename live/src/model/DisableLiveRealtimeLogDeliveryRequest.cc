@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DisableLiveRealtimeLogDeliveryRequest;
 
 DisableLiveRealtimeLogDeliveryRequest::DisableLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DisableLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DisableLiveRealtimeLogDeliveryRequest::~DisableLiveRealtimeLogDeliveryRequest()
 {}
@@ -33,7 +35,7 @@ std::string DisableLiveRealtimeLogDeliveryRequest::getDomainName()const
 void DisableLiveRealtimeLogDeliveryRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DisableLiveRealtimeLogDeliveryRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DisableLiveRealtimeLogDeliveryRequest::getOwnerId()const
 void DisableLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

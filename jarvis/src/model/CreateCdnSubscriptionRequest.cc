@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCdnSubscriptionRequest;
 
 CreateCdnSubscriptionRequest::CreateCdnSubscriptionRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCdnSubscription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCdnSubscriptionRequest::~CreateCdnSubscriptionRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCdnSubscriptionRequest::getResourceOwnerId()const
 void CreateCdnSubscriptionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCdnSubscriptionRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string CreateCdnSubscriptionRequest::getSourceCode()const
 void CreateCdnSubscriptionRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateCdnSubscriptionRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateCdnSubscriptionRequest::getSourceIp()const
 void CreateCdnSubscriptionRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCdnSubscriptionRequest::getLang()const
@@ -66,7 +68,7 @@ std::string CreateCdnSubscriptionRequest::getLang()const
 void CreateCdnSubscriptionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateCdnSubscriptionRequest::getCdnUidList()const
@@ -77,6 +79,6 @@ std::string CreateCdnSubscriptionRequest::getCdnUidList()const
 void CreateCdnSubscriptionRequest::setCdnUidList(const std::string& cdnUidList)
 {
 	cdnUidList_ = cdnUidList;
-	setCoreParameter("CdnUidList", cdnUidList);
+	setParameter("CdnUidList", cdnUidList);
 }
 

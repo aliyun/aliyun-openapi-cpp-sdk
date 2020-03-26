@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateExecutionPlanRequest : public RpcServiceRequest
 			{
+			public:
 				struct BootstrapAction
 				{
 					std::string path;

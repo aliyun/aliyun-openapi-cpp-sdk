@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::ValidateConnectorRequest;
 
 ValidateConnectorRequest::ValidateConnectorRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "ValidateConnector")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ValidateConnectorRequest::~ValidateConnectorRequest()
 {}
@@ -33,7 +35,7 @@ std::string ValidateConnectorRequest::getParentId()const
 void ValidateConnectorRequest::setParentId(const std::string& parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", parentId);
+	setParameter("ParentId", parentId);
 }
 
 std::string ValidateConnectorRequest::getPassword()const
@@ -44,7 +46,7 @@ std::string ValidateConnectorRequest::getPassword()const
 void ValidateConnectorRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string ValidateConnectorRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string ValidateConnectorRequest::getSourceIp()const
 void ValidateConnectorRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ValidateConnectorRequest::getLang()const
@@ -66,7 +68,7 @@ std::string ValidateConnectorRequest::getLang()const
 void ValidateConnectorRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ValidateConnectorRequest::getServiceRegionId()const
@@ -77,7 +79,7 @@ std::string ValidateConnectorRequest::getServiceRegionId()const
 void ValidateConnectorRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", serviceRegionId);
+	setParameter("ServiceRegionId", serviceRegionId);
 }
 
 int ValidateConnectorRequest::getResourceType()const
@@ -88,7 +90,7 @@ int ValidateConnectorRequest::getResourceType()const
 void ValidateConnectorRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ValidateConnectorRequest::getConnector()const
@@ -99,7 +101,7 @@ std::string ValidateConnectorRequest::getConnector()const
 void ValidateConnectorRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", connector);
+	setParameter("Connector", connector);
 }
 
 std::string ValidateConnectorRequest::getUserName()const
@@ -110,6 +112,6 @@ std::string ValidateConnectorRequest::getUserName()const
 void ValidateConnectorRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

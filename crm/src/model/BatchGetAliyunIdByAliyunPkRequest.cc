@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::BatchGetAliyunIdByAliyunPkRequest;
 
 BatchGetAliyunIdByAliyunPkRequest::BatchGetAliyunIdByAliyunPkRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "BatchGetAliyunIdByAliyunPk")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetAliyunIdByAliyunPkRequest::~BatchGetAliyunIdByAliyunPkRequest()
 {}
@@ -33,7 +35,8 @@ std::vector<std::string> BatchGetAliyunIdByAliyunPkRequest::getPkList()const
 void BatchGetAliyunIdByAliyunPkRequest::setPkList(const std::vector<std::string>& pkList)
 {
 	pkList_ = pkList;
-	for(int i = 0; i!= pkList.size(); i++)
-		setCoreParameter("PkList."+ std::to_string(i), pkList.at(i));
+	for(int dep1 = 0; dep1!= pkList.size(); dep1++) {
+		setParameter("PkList."+ std::to_string(dep1), pkList.at(dep1));
+	}
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceGroupInfoRequest;
 
 QueryDeviceGroupInfoRequest::QueryDeviceGroupInfoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceGroupInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceGroupInfoRequest::~QueryDeviceGroupInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceGroupInfoRequest::getGroupId()const
 void QueryDeviceGroupInfoRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string QueryDeviceGroupInfoRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceGroupInfoRequest::getAccessKeyId()const
 void QueryDeviceGroupInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceGroupInfoRequest::getIotInstanceId()const
@@ -55,6 +57,6 @@ std::string QueryDeviceGroupInfoRequest::getIotInstanceId()const
 void QueryDeviceGroupInfoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

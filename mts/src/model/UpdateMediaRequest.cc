@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateMediaRequest;
 
 UpdateMediaRequest::UpdateMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateMediaRequest::~UpdateMediaRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateMediaRequest::getResourceOwnerId()const
 void UpdateMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateMediaRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string UpdateMediaRequest::getDescription()const
 void UpdateMediaRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string UpdateMediaRequest::getTitle()const
@@ -55,7 +57,7 @@ std::string UpdateMediaRequest::getTitle()const
 void UpdateMediaRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string UpdateMediaRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string UpdateMediaRequest::getAccessKeyId()const
 void UpdateMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateMediaRequest::getCoverURL()const
@@ -77,7 +79,7 @@ std::string UpdateMediaRequest::getCoverURL()const
 void UpdateMediaRequest::setCoverURL(const std::string& coverURL)
 {
 	coverURL_ = coverURL;
-	setCoreParameter("CoverURL", coverURL);
+	setParameter("CoverURL", coverURL);
 }
 
 long UpdateMediaRequest::getCateId()const
@@ -88,7 +90,7 @@ long UpdateMediaRequest::getCateId()const
 void UpdateMediaRequest::setCateId(long cateId)
 {
 	cateId_ = cateId;
-	setCoreParameter("CateId", std::to_string(cateId));
+	setParameter("CateId", std::to_string(cateId));
 }
 
 std::string UpdateMediaRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string UpdateMediaRequest::getResourceOwnerAccount()const
 void UpdateMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateMediaRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string UpdateMediaRequest::getOwnerAccount()const
 void UpdateMediaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UpdateMediaRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long UpdateMediaRequest::getOwnerId()const
 void UpdateMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateMediaRequest::getMediaId()const
@@ -132,7 +134,7 @@ std::string UpdateMediaRequest::getMediaId()const
 void UpdateMediaRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string UpdateMediaRequest::getTags()const
@@ -143,6 +145,6 @@ std::string UpdateMediaRequest::getTags()const
 void UpdateMediaRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

@@ -35,7 +35,7 @@ long DescribeDBClusterNetInfoRequest::getResourceOwnerId()const
 void DescribeDBClusterNetInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterNetInfoRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBClusterNetInfoRequest::getAccessKeyId()const
 void DescribeDBClusterNetInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClusterNetInfoRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeDBClusterNetInfoRequest::getResourceOwnerAccount()const
 void DescribeDBClusterNetInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterNetInfoRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DescribeDBClusterNetInfoRequest::getDBClusterId()const
 void DescribeDBClusterNetInfoRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterNetInfoRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDBClusterNetInfoRequest::getOwnerAccount()const
 void DescribeDBClusterNetInfoRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClusterNetInfoRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDBClusterNetInfoRequest::getOwnerId()const
 void DescribeDBClusterNetInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

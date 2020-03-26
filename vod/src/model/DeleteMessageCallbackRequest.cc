@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMessageCallbackRequest;
 
 DeleteMessageCallbackRequest::DeleteMessageCallbackRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMessageCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMessageCallbackRequest::~DeleteMessageCallbackRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteMessageCallbackRequest::getResourceOwnerId()const
 void DeleteMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long DeleteMessageCallbackRequest::getResourceRealOwnerId()const
 void DeleteMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string DeleteMessageCallbackRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteMessageCallbackRequest::getAccessKeyId()const
 void DeleteMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteMessageCallbackRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteMessageCallbackRequest::getResourceOwnerAccount()const
 void DeleteMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMessageCallbackRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteMessageCallbackRequest::getOwnerAccount()const
 void DeleteMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteMessageCallbackRequest::getOwnerId()const
@@ -88,7 +90,7 @@ std::string DeleteMessageCallbackRequest::getOwnerId()const
 void DeleteMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMessageCallbackRequest::getAppId()const
@@ -99,6 +101,6 @@ std::string DeleteMessageCallbackRequest::getAppId()const
 void DeleteMessageCallbackRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

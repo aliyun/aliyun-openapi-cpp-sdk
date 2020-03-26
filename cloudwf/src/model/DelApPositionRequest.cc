@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DelApPositionRequest;
 
 DelApPositionRequest::DelApPositionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DelApPosition")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DelApPositionRequest::~DelApPositionRequest()
 {}
@@ -33,7 +35,7 @@ std::string DelApPositionRequest::getAccessKeyId()const
 void DelApPositionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DelApPositionRequest::getApAssetId()const
@@ -44,7 +46,7 @@ long DelApPositionRequest::getApAssetId()const
 void DelApPositionRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setParameter("ApAssetId", std::to_string(apAssetId));
 }
 
 long DelApPositionRequest::getMapId()const
@@ -55,6 +57,6 @@ long DelApPositionRequest::getMapId()const
 void DelApPositionRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setParameter("MapId", std::to_string(mapId));
 }
 

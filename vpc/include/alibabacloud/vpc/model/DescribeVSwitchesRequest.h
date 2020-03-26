@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT DescribeVSwitchesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

@@ -60,6 +60,7 @@ namespace AlibabaCloud
 				};
 				struct RequestParameter
 				{
+					std::string arrayItemsType;
 					std::string regularExpression;
 					std::string parameterType;
 					std::string jsonScheme;

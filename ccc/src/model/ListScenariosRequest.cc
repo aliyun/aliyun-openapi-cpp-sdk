@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListScenariosRequest;
 
 ListScenariosRequest::ListScenariosRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListScenarios")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListScenariosRequest::~ListScenariosRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListScenariosRequest::getInstanceId()const
 void ListScenariosRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

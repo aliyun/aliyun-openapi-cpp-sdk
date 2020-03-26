@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIpv6InternetBandwidthRequest;
 
 DeleteIpv6InternetBandwidthRequest::DeleteIpv6InternetBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIpv6InternetBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpv6InternetBandwidthRequest::~DeleteIpv6InternetBandwidthRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIpv6InternetBandwidthRequest::getResourceOwnerId()const
 void DeleteIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId()const
@@ -44,7 +46,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getIpv6InternetBandwidthId()cons
 void DeleteIpv6InternetBandwidthRequest::setIpv6InternetBandwidthId(const std::string& ipv6InternetBandwidthId)
 {
 	ipv6InternetBandwidthId_ = ipv6InternetBandwidthId;
-	setCoreParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
+	setParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getRegionId()const
 void DeleteIpv6InternetBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
 void DeleteIpv6InternetBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteIpv6InternetBandwidthRequest::getOwnerAccount()const
 void DeleteIpv6InternetBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteIpv6InternetBandwidthRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteIpv6InternetBandwidthRequest::getOwnerId()const
 void DeleteIpv6InternetBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteIpv6InternetBandwidthRequest::getIpv6AddressId()const
@@ -99,6 +101,6 @@ std::string DeleteIpv6InternetBandwidthRequest::getIpv6AddressId()const
 void DeleteIpv6InternetBandwidthRequest::setIpv6AddressId(const std::string& ipv6AddressId)
 {
 	ipv6AddressId_ = ipv6AddressId;
-	setCoreParameter("Ipv6AddressId", ipv6AddressId);
+	setParameter("Ipv6AddressId", ipv6AddressId);
 }
 

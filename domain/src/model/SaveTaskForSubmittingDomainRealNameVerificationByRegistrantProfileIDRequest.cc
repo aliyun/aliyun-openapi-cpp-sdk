@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForSubmittingDomainRealNameVerificati
 
 SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::~SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getRegistrantProfileId()const
@@ -44,7 +46,7 @@ long SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getUserClientIp()const
@@ -66,7 +68,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::getLang()const
@@ -77,6 +79,6 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 void SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

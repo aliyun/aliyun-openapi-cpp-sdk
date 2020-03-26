@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveAppRecordConfigRequest;
 
 AddLiveAppRecordConfigRequest::AddLiveAppRecordConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveAppRecordConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveAppRecordConfigRequest::~AddLiveAppRecordConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLiveAppRecordConfigRequest::getOssEndpoint()const
 void AddLiveAppRecordConfigRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
+	setParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string AddLiveAppRecordConfigRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string AddLiveAppRecordConfigRequest::getStartTime()const
 void AddLiveAppRecordConfigRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string AddLiveAppRecordConfigRequest::getAppName()const
@@ -55,7 +57,7 @@ std::string AddLiveAppRecordConfigRequest::getAppName()const
 void AddLiveAppRecordConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string AddLiveAppRecordConfigRequest::getSecurityToken()const
 void AddLiveAppRecordConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int AddLiveAppRecordConfigRequest::getOnDemand()const
@@ -77,7 +79,7 @@ int AddLiveAppRecordConfigRequest::getOnDemand()const
 void AddLiveAppRecordConfigRequest::setOnDemand(int onDemand)
 {
 	onDemand_ = onDemand;
-	setCoreParameter("OnDemand", std::to_string(onDemand));
+	setParameter("OnDemand", std::to_string(onDemand));
 }
 
 std::string AddLiveAppRecordConfigRequest::getStreamName()const
@@ -88,7 +90,7 @@ std::string AddLiveAppRecordConfigRequest::getStreamName()const
 void AddLiveAppRecordConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string AddLiveAppRecordConfigRequest::getOssBucket()const
@@ -99,7 +101,7 @@ std::string AddLiveAppRecordConfigRequest::getOssBucket()const
 void AddLiveAppRecordConfigRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setParameter("OssBucket", ossBucket);
 }
 
 std::string AddLiveAppRecordConfigRequest::getDomainName()const
@@ -110,7 +112,7 @@ std::string AddLiveAppRecordConfigRequest::getDomainName()const
 void AddLiveAppRecordConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string AddLiveAppRecordConfigRequest::getEndTime()const
@@ -121,7 +123,7 @@ std::string AddLiveAppRecordConfigRequest::getEndTime()const
 void AddLiveAppRecordConfigRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long AddLiveAppRecordConfigRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long AddLiveAppRecordConfigRequest::getOwnerId()const
 void AddLiveAppRecordConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<AddLiveAppRecordConfigRequest::RecordFormat> AddLiveAppRecordConfigRequest::getRecordFormat()const
@@ -143,14 +145,13 @@ std::vector<AddLiveAppRecordConfigRequest::RecordFormat> AddLiveAppRecordConfigR
 void AddLiveAppRecordConfigRequest::setRecordFormat(const std::vector<RecordFormat>& recordFormat)
 {
 	recordFormat_ = recordFormat;
-	int i = 0;
-	for(int i = 0; i!= recordFormat.size(); i++)	{
-		auto obj = recordFormat.at(i);
-		std::string str ="RecordFormat."+ std::to_string(i);
-		setCoreParameter(str + ".SliceOssObjectPrefix", obj.sliceOssObjectPrefix);
-		setCoreParameter(str + ".Format", obj.format);
-		setCoreParameter(str + ".OssObjectPrefix", obj.ossObjectPrefix);
-		setCoreParameter(str + ".CycleDuration", std::to_string(obj.cycleDuration));
+	for(int dep1 = 0; dep1!= recordFormat.size(); dep1++) {
+		auto recordFormatObj = recordFormat.at(dep1);
+		std::string recordFormatObjStr = "RecordFormat." + std::to_string(dep1 + 1);
+		setParameter(recordFormatObjStr + ".SliceOssObjectPrefix", recordFormatObj.sliceOssObjectPrefix);
+		setParameter(recordFormatObjStr + ".Format", recordFormatObj.format);
+		setParameter(recordFormatObjStr + ".OssObjectPrefix", recordFormatObj.ossObjectPrefix);
+		setParameter(recordFormatObjStr + ".CycleDuration", std::to_string(recordFormatObj.cycleDuration));
 	}
 }
 

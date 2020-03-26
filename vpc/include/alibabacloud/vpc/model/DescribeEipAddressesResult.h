@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					bool secondLimited;
 					std::string name;
 					std::string reservationOrderType;
+					std::string segmentInstanceId;
 					std::string instanceRegionId;
 					std::string bandwidth;
 					std::string expiredTime;

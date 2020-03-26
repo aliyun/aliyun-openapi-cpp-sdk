@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainBpsDataByTimeStampRequest;
 
 DescribeLiveDomainBpsDataByTimeStampRequest::DescribeLiveDomainBpsDataByTimeStampRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainBpsDataByTimeStampRequest::~DescribeLiveDomainBpsDataByTimeStampRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainBpsDataByTimeStampRequest::getLocationNames()const
 void DescribeLiveDomainBpsDataByTimeStampRequest::setLocationNames(const std::string& locationNames)
 {
 	locationNames_ = locationNames;
-	setCoreParameter("LocationNames", locationNames);
+	setParameter("LocationNames", locationNames);
 }
 
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getIspNames()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainBpsDataByTimeStampRequest::getIspNames()const
 void DescribeLiveDomainBpsDataByTimeStampRequest::setIspNames(const std::string& ispNames)
 {
 	ispNames_ = ispNames;
-	setCoreParameter("IspNames", ispNames);
+	setParameter("IspNames", ispNames);
 }
 
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainBpsDataByTimeStampRequest::getDomainName()const
 void DescribeLiveDomainBpsDataByTimeStampRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveDomainBpsDataByTimeStampRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeLiveDomainBpsDataByTimeStampRequest::getOwnerId()const
 void DescribeLiveDomainBpsDataByTimeStampRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveDomainBpsDataByTimeStampRequest::getTimePoint()const
@@ -77,6 +79,6 @@ std::string DescribeLiveDomainBpsDataByTimeStampRequest::getTimePoint()const
 void DescribeLiveDomainBpsDataByTimeStampRequest::setTimePoint(const std::string& timePoint)
 {
 	timePoint_ = timePoint;
-	setCoreParameter("TimePoint", timePoint);
+	setParameter("TimePoint", timePoint);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::ModifyUidWhiteListAutoShareRequest;
 
 ModifyUidWhiteListAutoShareRequest::ModifyUidWhiteListAutoShareRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "ModifyUidWhiteListAutoShare")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyUidWhiteListAutoShareRequest::~ModifyUidWhiteListAutoShareRequest()
 {}
@@ -33,7 +35,7 @@ int ModifyUidWhiteListAutoShareRequest::getAutoConfig()const
 void ModifyUidWhiteListAutoShareRequest::setAutoConfig(int autoConfig)
 {
 	autoConfig_ = autoConfig;
-	setCoreParameter("AutoConfig", std::to_string(autoConfig));
+	setParameter("AutoConfig", std::to_string(autoConfig));
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getSourceCode()const
 void ModifyUidWhiteListAutoShareRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getSourceIp()const
 void ModifyUidWhiteListAutoShareRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getProductName()const
@@ -66,7 +68,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getProductName()const
 void ModifyUidWhiteListAutoShareRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", productName);
+	setParameter("ProductName", productName);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getLang()const
@@ -77,7 +79,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getLang()const
 void ModifyUidWhiteListAutoShareRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ModifyUidWhiteListAutoShareRequest::getSrcUid()const
@@ -88,7 +90,7 @@ std::string ModifyUidWhiteListAutoShareRequest::getSrcUid()const
 void ModifyUidWhiteListAutoShareRequest::setSrcUid(const std::string& srcUid)
 {
 	srcUid_ = srcUid;
-	setCoreParameter("SrcUid", srcUid);
+	setParameter("SrcUid", srcUid);
 }
 
 int ModifyUidWhiteListAutoShareRequest::getWhiteListType()const
@@ -99,6 +101,6 @@ int ModifyUidWhiteListAutoShareRequest::getWhiteListType()const
 void ModifyUidWhiteListAutoShareRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setParameter("WhiteListType", std::to_string(whiteListType));
 }
 

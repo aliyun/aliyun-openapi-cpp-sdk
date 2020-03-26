@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT CreateGroupMonitoringAgentProcessRequest : public RpcServiceRequest
 			{
+			public:
 				struct AlertConfig
 				{
 					std::string times;

@@ -35,7 +35,7 @@ std::string AddScdnDomainRequest::getSources()const
 void AddScdnDomainRequest::setSources(const std::string& sources)
 {
 	sources_ = sources;
-	setCoreParameter("Sources", sources);
+	setParameter("Sources", sources);
 }
 
 std::string AddScdnDomainRequest::getResourceGroupId()const
@@ -46,7 +46,7 @@ std::string AddScdnDomainRequest::getResourceGroupId()const
 void AddScdnDomainRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string AddScdnDomainRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string AddScdnDomainRequest::getSecurityToken()const
 void AddScdnDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddScdnDomainRequest::getScope()const
@@ -68,7 +68,7 @@ std::string AddScdnDomainRequest::getScope()const
 void AddScdnDomainRequest::setScope(const std::string& scope)
 {
 	scope_ = scope;
-	setCoreParameter("Scope", scope);
+	setParameter("Scope", scope);
 }
 
 std::string AddScdnDomainRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string AddScdnDomainRequest::getOwnerAccount()const
 void AddScdnDomainRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddScdnDomainRequest::getDomainName()const
@@ -90,7 +90,7 @@ std::string AddScdnDomainRequest::getDomainName()const
 void AddScdnDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddScdnDomainRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long AddScdnDomainRequest::getOwnerId()const
 void AddScdnDomainRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddScdnDomainRequest::getCheckUrl()const
@@ -112,6 +112,6 @@ std::string AddScdnDomainRequest::getCheckUrl()const
 void AddScdnDomainRequest::setCheckUrl(const std::string& checkUrl)
 {
 	checkUrl_ = checkUrl;
-	setCoreParameter("CheckUrl", checkUrl);
+	setParameter("CheckUrl", checkUrl);
 }
 

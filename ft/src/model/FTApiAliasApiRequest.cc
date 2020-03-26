@@ -21,7 +21,7 @@ using AlibabaCloud::Ft::Model::FTApiAliasApiRequest;
 FTApiAliasApiRequest::FTApiAliasApiRequest() :
 	RpcServiceRequest("ft", "2018-07-13", "FTApiAliasApi")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 FTApiAliasApiRequest::~FTApiAliasApiRequest()

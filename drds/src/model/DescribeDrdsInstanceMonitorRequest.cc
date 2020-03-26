@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsInstanceMonitorRequest;
 
 DescribeDrdsInstanceMonitorRequest::DescribeDrdsInstanceMonitorRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstanceMonitor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsInstanceMonitorRequest::~DescribeDrdsInstanceMonitorRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDrdsInstanceMonitorRequest::getEndTime()const
 void DescribeDrdsInstanceMonitorRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long DescribeDrdsInstanceMonitorRequest::getStartTime()const
@@ -44,7 +46,7 @@ long DescribeDrdsInstanceMonitorRequest::getStartTime()const
 void DescribeDrdsInstanceMonitorRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
@@ -55,7 +57,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceMonitorRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getAccessKeyId()const
 void DescribeDrdsInstanceMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDrdsInstanceMonitorRequest::getKey()const
@@ -77,7 +79,7 @@ std::string DescribeDrdsInstanceMonitorRequest::getKey()const
 void DescribeDrdsInstanceMonitorRequest::setKey(const std::string& key)
 {
 	key_ = key;
-	setCoreParameter("Key", key);
+	setParameter("Key", key);
 }
 
 int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const
@@ -88,6 +90,6 @@ int DescribeDrdsInstanceMonitorRequest::getPeriodMultiple()const
 void DescribeDrdsInstanceMonitorRequest::setPeriodMultiple(int periodMultiple)
 {
 	periodMultiple_ = periodMultiple;
-	setCoreParameter("PeriodMultiple", std::to_string(periodMultiple));
+	setParameter("PeriodMultiple", std::to_string(periodMultiple));
 }
 

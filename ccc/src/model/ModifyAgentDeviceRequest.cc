@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyAgentDeviceRequest;
 
 ModifyAgentDeviceRequest::ModifyAgentDeviceRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyAgentDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAgentDeviceRequest::~ModifyAgentDeviceRequest()
 {}
@@ -33,7 +35,7 @@ int ModifyAgentDeviceRequest::getIsLogin()const
 void ModifyAgentDeviceRequest::setIsLogin(int isLogin)
 {
 	isLogin_ = isLogin;
-	setCoreParameter("IsLogin", std::to_string(isLogin));
+	setParameter("IsLogin", std::to_string(isLogin));
 }
 
 std::string ModifyAgentDeviceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyAgentDeviceRequest::getAccessKeyId()const
 void ModifyAgentDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ModifyAgentDeviceRequest::getAgentDeviceId()const
@@ -55,7 +57,7 @@ long ModifyAgentDeviceRequest::getAgentDeviceId()const
 void ModifyAgentDeviceRequest::setAgentDeviceId(long agentDeviceId)
 {
 	agentDeviceId_ = agentDeviceId;
-	setCoreParameter("AgentDeviceId", std::to_string(agentDeviceId));
+	setParameter("AgentDeviceId", std::to_string(agentDeviceId));
 }
 
 std::string ModifyAgentDeviceRequest::getInstanceId()const
@@ -66,6 +68,6 @@ std::string ModifyAgentDeviceRequest::getInstanceId()const
 void ModifyAgentDeviceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainDetailRequest;
 
 DescribeVodDomainDetailRequest::DescribeVodDomainDetailRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainDetailRequest::~DescribeVodDomainDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainDetailRequest::getDomainName()const
 void DescribeVodDomainDetailRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeVodDomainDetailRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeVodDomainDetailRequest::getOwnerId()const
 void DescribeVodDomainDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodDomainDetailRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribeVodDomainDetailRequest::getSecurityToken()const
 void DescribeVodDomainDetailRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

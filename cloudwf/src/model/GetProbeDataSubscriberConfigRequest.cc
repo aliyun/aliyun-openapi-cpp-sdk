@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetProbeDataSubscriberConfigRequest;
 
 GetProbeDataSubscriberConfigRequest::GetProbeDataSubscriberConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetProbeDataSubscriberConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetProbeDataSubscriberConfigRequest::~GetProbeDataSubscriberConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetProbeDataSubscriberConfigRequest::getAccessKeyId()const
 void GetProbeDataSubscriberConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetProbeDataSubscriberConfigRequest::getId()const
@@ -44,6 +46,6 @@ long GetProbeDataSubscriberConfigRequest::getId()const
 void GetProbeDataSubscriberConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteVpcRequest;
 
 DeleteVpcRequest::DeleteVpcRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteVpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVpcRequest::~DeleteVpcRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteVpcRequest::getResourceOwnerId()const
 void DeleteVpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteVpcRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteVpcRequest::getRegionId()const
 void DeleteVpcRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteVpcRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteVpcRequest::getResourceOwnerAccount()const
 void DeleteVpcRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteVpcRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteVpcRequest::getOwnerAccount()const
 void DeleteVpcRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteVpcRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DeleteVpcRequest::getOwnerId()const
 void DeleteVpcRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteVpcRequest::getVpcId()const
@@ -88,6 +90,6 @@ std::string DeleteVpcRequest::getVpcId()const
 void DeleteVpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

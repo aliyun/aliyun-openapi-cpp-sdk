@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricDecryptRequest;
 AsymmetricDecryptRequest::AsymmetricDecryptRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricDecrypt")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 AsymmetricDecryptRequest::~AsymmetricDecryptRequest()

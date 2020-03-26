@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					int feedBack;
 					std::string punishType;
 					int dstPort;
+					std::string direction;
 					std::string srcIP;
 					std::string reason;
 					std::string gmtCreate;

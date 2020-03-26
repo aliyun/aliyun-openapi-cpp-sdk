@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					long operateTime;
+					std::string extendContent;
 					std::string note;
 					std::string bizId;
 					int operateType;

@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterRequest;
 
 DeleteCasterRequest::DeleteCasterRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCaster")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterRequest::~DeleteCasterRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterRequest::getCasterId()const
 void DeleteCasterRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteCasterRequest::getOwnerId()const
 void DeleteCasterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCasterRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteCasterRequest::getSecurityToken()const
 void DeleteCasterRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

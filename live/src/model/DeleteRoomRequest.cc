@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteRoomRequest;
 
 DeleteRoomRequest::DeleteRoomRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteRoom")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteRoomRequest::~DeleteRoomRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteRoomRequest::getOwnerId()const
 void DeleteRoomRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteRoomRequest::getRoomId()const
@@ -44,7 +46,7 @@ std::string DeleteRoomRequest::getRoomId()const
 void DeleteRoomRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string DeleteRoomRequest::getAppId()const
@@ -55,6 +57,6 @@ std::string DeleteRoomRequest::getAppId()const
 void DeleteRoomRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

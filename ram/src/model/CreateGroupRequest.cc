@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateGroupRequest;
 
 CreateGroupRequest::CreateGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateGroupRequest::~CreateGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateGroupRequest::getComments()const
 void CreateGroupRequest::setComments(const std::string& comments)
 {
 	comments_ = comments;
-	setCoreParameter("Comments", comments);
+	setParameter("Comments", comments);
 }
 
 std::string CreateGroupRequest::getGroupName()const
@@ -44,6 +46,6 @@ std::string CreateGroupRequest::getGroupName()const
 void CreateGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

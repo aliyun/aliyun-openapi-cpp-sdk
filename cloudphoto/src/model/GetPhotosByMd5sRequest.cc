@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPhotosByMd5sRequest;
 
 GetPhotosByMd5sRequest::GetPhotosByMd5sRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPhotosByMd5s")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPhotosByMd5sRequest::~GetPhotosByMd5sRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPhotosByMd5sRequest::getLibraryId()const
 void GetPhotosByMd5sRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string GetPhotosByMd5sRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string GetPhotosByMd5sRequest::getStoreName()const
 void GetPhotosByMd5sRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string GetPhotosByMd5sRequest::getState()const
@@ -55,7 +57,7 @@ std::string GetPhotosByMd5sRequest::getState()const
 void GetPhotosByMd5sRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::vector<std::string> GetPhotosByMd5sRequest::getMd5()const
@@ -66,7 +68,8 @@ std::vector<std::string> GetPhotosByMd5sRequest::getMd5()const
 void GetPhotosByMd5sRequest::setMd5(const std::vector<std::string>& md5)
 {
 	md5_ = md5;
-	for(int i = 0; i!= md5.size(); i++)
-		setCoreParameter("Md5."+ std::to_string(i), md5.at(i));
+	for(int dep1 = 0; dep1!= md5.size(); dep1++) {
+		setParameter("Md5."+ std::to_string(dep1), md5.at(dep1));
+	}
 }
 

@@ -34,14 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Column
 				{
+					int ruleCount;
 					long category;
 					long instanceId;
-					std::string fileId;
-					long riskLevelName;
-					long id;
-					std::string regionId;
+					long size;
 					long riskLevelId;
 					std::string name;
+					std::string bucketName;
+					std::string categoryName;
+					std::string fileId;
+					std::string riskLevelName;
+					std::string id;
+					std::string regionId;
+					int sensitiveCount;
 				};
 
 

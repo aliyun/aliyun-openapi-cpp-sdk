@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_EMR_EXPORT CreateClusterTemplateRequest : public RpcServiceRequest
 			{
+			public:
 				struct BootstrapAction
 				{
 					std::string path;

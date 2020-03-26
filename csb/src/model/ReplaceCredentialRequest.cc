@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::ReplaceCredentialRequest;
 
 ReplaceCredentialRequest::ReplaceCredentialRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "ReplaceCredential")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReplaceCredentialRequest::~ReplaceCredentialRequest()
 {}
@@ -33,6 +35,6 @@ long ReplaceCredentialRequest::getCredentialId()const
 void ReplaceCredentialRequest::setCredentialId(long credentialId)
 {
 	credentialId_ = credentialId;
-	setCoreParameter("CredentialId", std::to_string(credentialId));
+	setParameter("CredentialId", std::to_string(credentialId));
 }
 

@@ -35,7 +35,7 @@ long GetMobileRequest::getResourceOwnerId()const
 void GetMobileRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMobileRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string GetMobileRequest::getResourceOwnerAccount()const
 void GetMobileRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMobileRequest::getAccessToken()const
@@ -57,7 +57,7 @@ std::string GetMobileRequest::getAccessToken()const
 void GetMobileRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
-	setCoreParameter("AccessToken", accessToken);
+	setParameter("AccessToken", accessToken);
 }
 
 long GetMobileRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long GetMobileRequest::getOwnerId()const
 void GetMobileRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetMobileRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string GetMobileRequest::getAccessKeyId()const
 void GetMobileRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetMobileRequest::getOutId()const
@@ -90,6 +90,6 @@ std::string GetMobileRequest::getOutId()const
 void GetMobileRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
-	setCoreParameter("OutId", outId);
+	setParameter("OutId", outId);
 }
 

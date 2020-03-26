@@ -87,6 +87,42 @@ CSClient::AttachInstancesOutcomeCallable CSClient::attachInstancesCallable(const
 	return task->get_future();
 }
 
+CSClient::CancelWorkflowOutcome CSClient::cancelWorkflow(const CancelWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelWorkflowOutcome(CancelWorkflowResult(outcome.result()));
+	else
+		return CancelWorkflowOutcome(outcome.error());
+}
+
+void CSClient::cancelWorkflowAsync(const CancelWorkflowRequest& request, const CancelWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::CancelWorkflowOutcomeCallable CSClient::cancelWorkflowCallable(const CancelWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::CheckAliyunCSServiceRoleOutcome CSClient::checkAliyunCSServiceRole(const CheckAliyunCSServiceRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ CSClient::CreateClusterByResourcesGroupOutcomeCallable CSClient::createClusterBy
 			[this, request]()
 			{
 			return this->createClusterByResourcesGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::CreateServiceMeshOutcome CSClient::createServiceMesh(const CreateServiceMeshRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateServiceMeshOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateServiceMeshOutcome(CreateServiceMeshResult(outcome.result()));
+	else
+		return CreateServiceMeshOutcome(outcome.error());
+}
+
+void CSClient::createServiceMeshAsync(const CreateServiceMeshRequest& request, const CreateServiceMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createServiceMesh(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::CreateServiceMeshOutcomeCallable CSClient::createServiceMeshCallable(const CreateServiceMeshRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateServiceMeshOutcome()>>(
+			[this, request]()
+			{
+			return this->createServiceMesh(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +375,78 @@ CSClient::DeleteClusterNodesOutcomeCallable CSClient::deleteClusterNodesCallable
 	return task->get_future();
 }
 
+CSClient::DescirbeWorkflowOutcome CSClient::descirbeWorkflow(const DescirbeWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescirbeWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescirbeWorkflowOutcome(DescirbeWorkflowResult(outcome.result()));
+	else
+		return DescirbeWorkflowOutcome(outcome.error());
+}
+
+void CSClient::descirbeWorkflowAsync(const DescirbeWorkflowRequest& request, const DescirbeWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, descirbeWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescirbeWorkflowOutcomeCallable CSClient::descirbeWorkflowCallable(const DescirbeWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescirbeWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->descirbeWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeAddonsOutcome CSClient::describeAddons(const DescribeAddonsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAddonsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAddonsOutcome(DescribeAddonsResult(outcome.result()));
+	else
+		return DescribeAddonsOutcome(outcome.error());
+}
+
+void CSClient::describeAddonsAsync(const DescribeAddonsRequest& request, const DescribeAddonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAddons(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeAddonsOutcomeCallable CSClient::describeAddonsCallable(const DescribeAddonsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAddonsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAddons(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::DescribeApiVersionOutcome CSClient::describeApiVersion(const DescribeApiVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +477,78 @@ CSClient::DescribeApiVersionOutcomeCallable CSClient::describeApiVersionCallable
 			[this, request]()
 			{
 			return this->describeApiVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeClusterAddonUpgradeStatusOutcome CSClient::describeClusterAddonUpgradeStatus(const DescribeClusterAddonUpgradeStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterAddonUpgradeStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterAddonUpgradeStatusOutcome(DescribeClusterAddonUpgradeStatusResult(outcome.result()));
+	else
+		return DescribeClusterAddonUpgradeStatusOutcome(outcome.error());
+}
+
+void CSClient::describeClusterAddonUpgradeStatusAsync(const DescribeClusterAddonUpgradeStatusRequest& request, const DescribeClusterAddonUpgradeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterAddonUpgradeStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClusterAddonUpgradeStatusOutcomeCallable CSClient::describeClusterAddonUpgradeStatusCallable(const DescribeClusterAddonUpgradeStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterAddonUpgradeStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterAddonUpgradeStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeClusterAddonsVersionOutcome CSClient::describeClusterAddonsVersion(const DescribeClusterAddonsVersionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterAddonsVersionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterAddonsVersionOutcome(DescribeClusterAddonsVersionResult(outcome.result()));
+	else
+		return DescribeClusterAddonsVersionOutcome(outcome.error());
+}
+
+void CSClient::describeClusterAddonsVersionAsync(const DescribeClusterAddonsVersionRequest& request, const DescribeClusterAddonsVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterAddonsVersion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClusterAddonsVersionOutcomeCallable CSClient::describeClusterAddonsVersionCallable(const DescribeClusterAddonsVersionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterAddonsVersionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterAddonsVersion(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,6 +879,78 @@ CSClient::DescribeClustersOutcomeCallable CSClient::describeClustersCallable(con
 	return task->get_future();
 }
 
+CSClient::DescribeEdgeClusterAttachScriptsOutcome CSClient::describeEdgeClusterAttachScripts(const DescribeEdgeClusterAttachScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEdgeClusterAttachScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEdgeClusterAttachScriptsOutcome(DescribeEdgeClusterAttachScriptsResult(outcome.result()));
+	else
+		return DescribeEdgeClusterAttachScriptsOutcome(outcome.error());
+}
+
+void CSClient::describeEdgeClusterAttachScriptsAsync(const DescribeEdgeClusterAttachScriptsRequest& request, const DescribeEdgeClusterAttachScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEdgeClusterAttachScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeEdgeClusterAttachScriptsOutcomeCallable CSClient::describeEdgeClusterAttachScriptsCallable(const DescribeEdgeClusterAttachScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEdgeClusterAttachScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEdgeClusterAttachScripts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeWorkflowsOutcome CSClient::describeWorkflows(const DescribeWorkflowsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWorkflowsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWorkflowsOutcome(DescribeWorkflowsResult(outcome.result()));
+	else
+		return DescribeWorkflowsOutcome(outcome.error());
+}
+
+void CSClient::describeWorkflowsAsync(const DescribeWorkflowsRequest& request, const DescribeWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWorkflows(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeWorkflowsOutcomeCallable CSClient::describeWorkflowsCallable(const DescribeWorkflowsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWorkflowsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWorkflows(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::DownloadClusterNodeCertsOutcome CSClient::downloadClusterNodeCerts(const DownloadClusterNodeCertsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +1017,78 @@ CSClient::ModifyClusterOutcomeCallable CSClient::modifyClusterCallable(const Mod
 			[this, request]()
 			{
 			return this->modifyCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ModifyClusterTagsOutcome CSClient::modifyClusterTags(const ModifyClusterTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterTagsOutcome(ModifyClusterTagsResult(outcome.result()));
+	else
+		return ModifyClusterTagsOutcome(outcome.error());
+}
+
+void CSClient::modifyClusterTagsAsync(const ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ModifyClusterTagsOutcomeCallable CSClient::modifyClusterTagsCallable(const ModifyClusterTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::RemoveWorkflowOutcome CSClient::removeWorkflow(const RemoveWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveWorkflowOutcome(RemoveWorkflowResult(outcome.result()));
+	else
+		return RemoveWorkflowOutcome(outcome.error());
+}
+
+void CSClient::removeWorkflowAsync(const RemoveWorkflowRequest& request, const RemoveWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::RemoveWorkflowOutcomeCallable CSClient::removeWorkflowCallable(const RemoveWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->removeWorkflow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +1233,258 @@ CSClient::ScaleOutClusterOutcomeCallable CSClient::scaleOutClusterCallable(const
 			[this, request]()
 			{
 			return this->scaleOutCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ServiceMeshAddClusterOutcome CSClient::serviceMeshAddCluster(const ServiceMeshAddClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ServiceMeshAddClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ServiceMeshAddClusterOutcome(ServiceMeshAddClusterResult(outcome.result()));
+	else
+		return ServiceMeshAddClusterOutcome(outcome.error());
+}
+
+void CSClient::serviceMeshAddClusterAsync(const ServiceMeshAddClusterRequest& request, const ServiceMeshAddClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, serviceMeshAddCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ServiceMeshAddClusterOutcomeCallable CSClient::serviceMeshAddClusterCallable(const ServiceMeshAddClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ServiceMeshAddClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->serviceMeshAddCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ServiceMeshApiServerOutcome CSClient::serviceMeshApiServer(const ServiceMeshApiServerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ServiceMeshApiServerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ServiceMeshApiServerOutcome(ServiceMeshApiServerResult(outcome.result()));
+	else
+		return ServiceMeshApiServerOutcome(outcome.error());
+}
+
+void CSClient::serviceMeshApiServerAsync(const ServiceMeshApiServerRequest& request, const ServiceMeshApiServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, serviceMeshApiServer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ServiceMeshApiServerOutcomeCallable CSClient::serviceMeshApiServerCallable(const ServiceMeshApiServerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ServiceMeshApiServerOutcome()>>(
+			[this, request]()
+			{
+			return this->serviceMeshApiServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ServiceMeshRemoveClusterOutcome CSClient::serviceMeshRemoveCluster(const ServiceMeshRemoveClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ServiceMeshRemoveClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ServiceMeshRemoveClusterOutcome(ServiceMeshRemoveClusterResult(outcome.result()));
+	else
+		return ServiceMeshRemoveClusterOutcome(outcome.error());
+}
+
+void CSClient::serviceMeshRemoveClusterAsync(const ServiceMeshRemoveClusterRequest& request, const ServiceMeshRemoveClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, serviceMeshRemoveCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ServiceMeshRemoveClusterOutcomeCallable CSClient::serviceMeshRemoveClusterCallable(const ServiceMeshRemoveClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ServiceMeshRemoveClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->serviceMeshRemoveCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::StartWorkflowOutcome CSClient::startWorkflow(const StartWorkflowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartWorkflowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartWorkflowOutcome(StartWorkflowResult(outcome.result()));
+	else
+		return StartWorkflowOutcome(outcome.error());
+}
+
+void CSClient::startWorkflowAsync(const StartWorkflowRequest& request, const StartWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startWorkflow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::StartWorkflowOutcomeCallable CSClient::startWorkflowCallable(const StartWorkflowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartWorkflowOutcome()>>(
+			[this, request]()
+			{
+			return this->startWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::UnInstallClusterAddonsOutcome CSClient::unInstallClusterAddons(const UnInstallClusterAddonsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnInstallClusterAddonsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnInstallClusterAddonsOutcome(UnInstallClusterAddonsResult(outcome.result()));
+	else
+		return UnInstallClusterAddonsOutcome(outcome.error());
+}
+
+void CSClient::unInstallClusterAddonsAsync(const UnInstallClusterAddonsRequest& request, const UnInstallClusterAddonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unInstallClusterAddons(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::UnInstallClusterAddonsOutcomeCallable CSClient::unInstallClusterAddonsCallable(const UnInstallClusterAddonsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnInstallClusterAddonsOutcome()>>(
+			[this, request]()
+			{
+			return this->unInstallClusterAddons(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::UpdateK8sClusterUserConfigExpireOutcome CSClient::updateK8sClusterUserConfigExpire(const UpdateK8sClusterUserConfigExpireRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateK8sClusterUserConfigExpireOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateK8sClusterUserConfigExpireOutcome(UpdateK8sClusterUserConfigExpireResult(outcome.result()));
+	else
+		return UpdateK8sClusterUserConfigExpireOutcome(outcome.error());
+}
+
+void CSClient::updateK8sClusterUserConfigExpireAsync(const UpdateK8sClusterUserConfigExpireRequest& request, const UpdateK8sClusterUserConfigExpireAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateK8sClusterUserConfigExpire(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::UpdateK8sClusterUserConfigExpireOutcomeCallable CSClient::updateK8sClusterUserConfigExpireCallable(const UpdateK8sClusterUserConfigExpireRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateK8sClusterUserConfigExpireOutcome()>>(
+			[this, request]()
+			{
+			return this->updateK8sClusterUserConfigExpire(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::UpdateServiceMeshOutcome CSClient::updateServiceMesh(const UpdateServiceMeshRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateServiceMeshOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateServiceMeshOutcome(UpdateServiceMeshResult(outcome.result()));
+	else
+		return UpdateServiceMeshOutcome(outcome.error());
+}
+
+void CSClient::updateServiceMeshAsync(const UpdateServiceMeshRequest& request, const UpdateServiceMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateServiceMesh(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::UpdateServiceMeshOutcomeCallable CSClient::updateServiceMeshCallable(const UpdateServiceMeshRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateServiceMeshOutcome()>>(
+			[this, request]()
+			{
+			return this->updateServiceMesh(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

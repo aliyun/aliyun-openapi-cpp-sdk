@@ -35,11 +35,26 @@ namespace AlibabaCloud
 				AttachInstancesRequest();
 				~AttachInstancesRequest();
 
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
+				bool getKeep_instance_name()const;
+				void setKeep_instance_name(bool keep_instance_name);
+				std::string getKey_pair()const;
+				void setKey_pair(const std::string& key_pair);
+				std::string getCpu_policy()const;
+				void setCpu_policy(const std::string& cpu_policy);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				bool getFormat_disk()const;
+				void setFormat_disk(bool format_disk);
 
             private:
+				std::string password_;
+				bool keep_instance_name_;
+				std::string key_pair_;
+				std::string cpu_policy_;
 				std::string clusterId_;
+				bool format_disk_;
 
 			};
 		}

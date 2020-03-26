@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateCommonBandwidthPackageRequest;
 
 CreateCommonBandwidthPackageRequest::CreateCommonBandwidthPackageRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateCommonBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCommonBandwidthPackageRequest::~CreateCommonBandwidthPackageRequest()
 {}
@@ -33,7 +35,7 @@ long CreateCommonBandwidthPackageRequest::getResourceOwnerId()const
 void CreateCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateCommonBandwidthPackageRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateCommonBandwidthPackageRequest::getClientToken()const
 void CreateCommonBandwidthPackageRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getISP()const
@@ -55,7 +57,7 @@ std::string CreateCommonBandwidthPackageRequest::getISP()const
 void CreateCommonBandwidthPackageRequest::setISP(const std::string& iSP)
 {
 	iSP_ = iSP;
-	setCoreParameter("ISP", iSP);
+	setParameter("ISP", iSP);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string CreateCommonBandwidthPackageRequest::getDescription()const
 void CreateCommonBandwidthPackageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getResourceGroupId()const
@@ -77,7 +79,7 @@ std::string CreateCommonBandwidthPackageRequest::getResourceGroupId()const
 void CreateCommonBandwidthPackageRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string CreateCommonBandwidthPackageRequest::getRegionId()const
 void CreateCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getZone()const
@@ -99,7 +101,7 @@ std::string CreateCommonBandwidthPackageRequest::getZone()const
 void CreateCommonBandwidthPackageRequest::setZone(const std::string& zone)
 {
 	zone_ = zone;
-	setCoreParameter("Zone", zone);
+	setParameter("Zone", zone);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateCommonBandwidthPackageRequest::getResourceOwnerAccount()const
 void CreateCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateCommonBandwidthPackageRequest::getBandwidth()const
@@ -121,7 +123,7 @@ int CreateCommonBandwidthPackageRequest::getBandwidth()const
 void CreateCommonBandwidthPackageRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
@@ -132,7 +134,7 @@ std::string CreateCommonBandwidthPackageRequest::getOwnerAccount()const
 void CreateCommonBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateCommonBandwidthPackageRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long CreateCommonBandwidthPackageRequest::getOwnerId()const
 void CreateCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateCommonBandwidthPackageRequest::getInternetChargeType()const
@@ -154,7 +156,7 @@ std::string CreateCommonBandwidthPackageRequest::getInternetChargeType()const
 void CreateCommonBandwidthPackageRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 std::string CreateCommonBandwidthPackageRequest::getName()const
@@ -165,7 +167,7 @@ std::string CreateCommonBandwidthPackageRequest::getName()const
 void CreateCommonBandwidthPackageRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int CreateCommonBandwidthPackageRequest::getRatio()const
@@ -176,6 +178,6 @@ int CreateCommonBandwidthPackageRequest::getRatio()const
 void CreateCommonBandwidthPackageRequest::setRatio(int ratio)
 {
 	ratio_ = ratio;
-	setCoreParameter("Ratio", std::to_string(ratio));
+	setParameter("Ratio", std::to_string(ratio));
 }
 

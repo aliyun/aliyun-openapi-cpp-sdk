@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::FetchMomentPhotosRequest;
 
 FetchMomentPhotosRequest::FetchMomentPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "FetchMomentPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FetchMomentPhotosRequest::~FetchMomentPhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string FetchMomentPhotosRequest::getLibraryId()const
 void FetchMomentPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string FetchMomentPhotosRequest::getOrderBy()const
@@ -44,7 +46,7 @@ std::string FetchMomentPhotosRequest::getOrderBy()const
 void FetchMomentPhotosRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string FetchMomentPhotosRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string FetchMomentPhotosRequest::getStoreName()const
 void FetchMomentPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long FetchMomentPhotosRequest::getMomentId()const
@@ -66,7 +68,7 @@ long FetchMomentPhotosRequest::getMomentId()const
 void FetchMomentPhotosRequest::setMomentId(long momentId)
 {
 	momentId_ = momentId;
-	setCoreParameter("MomentId", std::to_string(momentId));
+	setParameter("MomentId", std::to_string(momentId));
 }
 
 int FetchMomentPhotosRequest::getSize()const
@@ -77,7 +79,7 @@ int FetchMomentPhotosRequest::getSize()const
 void FetchMomentPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int FetchMomentPhotosRequest::getPage()const
@@ -88,7 +90,7 @@ int FetchMomentPhotosRequest::getPage()const
 void FetchMomentPhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string FetchMomentPhotosRequest::getOrder()const
@@ -99,6 +101,6 @@ std::string FetchMomentPhotosRequest::getOrder()const
 void FetchMomentPhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyClusterHostGroupRequest;
 
 ModifyClusterHostGroupRequest::ModifyClusterHostGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyClusterHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyClusterHostGroupRequest::~ModifyClusterHostGroupRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyClusterHostGroupRequest::getResourceOwnerId()const
 void ModifyClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyClusterHostGroupRequest::getSecurityGroupId()const
@@ -44,7 +46,7 @@ std::string ModifyClusterHostGroupRequest::getSecurityGroupId()const
 void ModifyClusterHostGroupRequest::setSecurityGroupId(const std::string& securityGroupId)
 {
 	securityGroupId_ = securityGroupId;
-	setCoreParameter("SecurityGroupId", securityGroupId);
+	setParameter("SecurityGroupId", securityGroupId);
 }
 
 std::string ModifyClusterHostGroupRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string ModifyClusterHostGroupRequest::getClusterId()const
 void ModifyClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyClusterHostGroupRequest::getHostGroupName()const
@@ -66,7 +68,7 @@ std::string ModifyClusterHostGroupRequest::getHostGroupName()const
 void ModifyClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
 {
 	hostGroupName_ = hostGroupName;
-	setCoreParameter("HostGroupName", hostGroupName);
+	setParameter("HostGroupName", hostGroupName);
 }
 
 std::string ModifyClusterHostGroupRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ModifyClusterHostGroupRequest::getAccessKeyId()const
 void ModifyClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyClusterHostGroupRequest::getVswitchId()const
@@ -88,7 +90,7 @@ std::string ModifyClusterHostGroupRequest::getVswitchId()const
 void ModifyClusterHostGroupRequest::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
+	setParameter("VswitchId", vswitchId);
 }
 
 std::string ModifyClusterHostGroupRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string ModifyClusterHostGroupRequest::getRegionId()const
 void ModifyClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyClusterHostGroupRequest::getHostGroupId()const
@@ -110,7 +112,7 @@ std::string ModifyClusterHostGroupRequest::getHostGroupId()const
 void ModifyClusterHostGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 
 std::string ModifyClusterHostGroupRequest::getComment()const
@@ -121,6 +123,6 @@ std::string ModifyClusterHostGroupRequest::getComment()const
 void ModifyClusterHostGroupRequest::setComment(const std::string& comment)
 {
 	comment_ = comment;
-	setCoreParameter("Comment", comment);
+	setParameter("Comment", comment);
 }
 

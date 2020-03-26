@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string qosId;
 					std::string smartAGIds;
 					std::string qosName;
+					std::string qosDescription;
 				};
 
 

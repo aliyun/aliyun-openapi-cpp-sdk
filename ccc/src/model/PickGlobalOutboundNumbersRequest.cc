@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::PickGlobalOutboundNumbersRequest;
 
 PickGlobalOutboundNumbersRequest::PickGlobalOutboundNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "PickGlobalOutboundNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PickGlobalOutboundNumbersRequest::~PickGlobalOutboundNumbersRequest()
 {}
@@ -33,7 +35,7 @@ bool PickGlobalOutboundNumbersRequest::getIsVirtual()const
 void PickGlobalOutboundNumbersRequest::setIsVirtual(bool isVirtual)
 {
 	isVirtual_ = isVirtual;
-	setCoreParameter("IsVirtual", isVirtual ? "true" : "false");
+	setParameter("IsVirtual", isVirtual ? "true" : "false");
 }
 
 int PickGlobalOutboundNumbersRequest::getCount()const
@@ -44,7 +46,7 @@ int PickGlobalOutboundNumbersRequest::getCount()const
 void PickGlobalOutboundNumbersRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 
 std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string PickGlobalOutboundNumbersRequest::getAccessKeyId()const
 void PickGlobalOutboundNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string PickGlobalOutboundNumbersRequest::getInstanceId()const
 void PickGlobalOutboundNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::vector<std::string> PickGlobalOutboundNumbersRequest::getSkillGroupId()const
@@ -77,8 +79,9 @@ std::vector<std::string> PickGlobalOutboundNumbersRequest::getSkillGroupId()cons
 void PickGlobalOutboundNumbersRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 
 std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const
@@ -89,6 +92,6 @@ std::string PickGlobalOutboundNumbersRequest::getCalleeNumber()const
 void PickGlobalOutboundNumbersRequest::setCalleeNumber(const std::string& calleeNumber)
 {
 	calleeNumber_ = calleeNumber;
-	setCoreParameter("CalleeNumber", calleeNumber);
+	setParameter("CalleeNumber", calleeNumber);
 }
 

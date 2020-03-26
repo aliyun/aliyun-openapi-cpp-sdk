@@ -46,7 +46,7 @@ void QueryPushRecordsResult::parse(const std::string &payload)
 		if(!valuePushInfosPushInfo["AppKey"].isNull())
 			pushInfosObject.appKey = std::stol(valuePushInfosPushInfo["AppKey"].asString());
 		if(!valuePushInfosPushInfo["MessageId"].isNull())
-			pushInfosObject.messageId = std::stol(valuePushInfosPushInfo["MessageId"].asString());
+			pushInfosObject.messageId = valuePushInfosPushInfo["MessageId"].asString();
 		if(!valuePushInfosPushInfo["PushType"].isNull())
 			pushInfosObject.pushType = valuePushInfosPushInfo["PushType"].asString();
 		if(!valuePushInfosPushInfo["DeviceType"].isNull())

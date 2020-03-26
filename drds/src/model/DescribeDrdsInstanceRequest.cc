@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeDrdsInstanceRequest;
 
 DescribeDrdsInstanceRequest::DescribeDrdsInstanceRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeDrdsInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDrdsInstanceRequest::~DescribeDrdsInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDrdsInstanceRequest::getDrdsInstanceId()const
 void DescribeDrdsInstanceRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeDrdsInstanceRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string DescribeDrdsInstanceRequest::getAccessKeyId()const
 void DescribeDrdsInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

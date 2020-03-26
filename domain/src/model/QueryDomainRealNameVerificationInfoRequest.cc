@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainRealNameVerificationInfoRequest;
 
 QueryDomainRealNameVerificationInfoRequest::QueryDomainRealNameVerificationInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainRealNameVerificationInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainRealNameVerificationInfoRequest::~QueryDomainRealNameVerificationInfoRequest()
 {}
@@ -33,7 +35,7 @@ bool QueryDomainRealNameVerificationInfoRequest::getFetchImage()const
 void QueryDomainRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 {
 	fetchImage_ = fetchImage;
-	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
+	setParameter("FetchImage", fetchImage ? "true" : "false");
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string QueryDomainRealNameVerificationInfoRequest::getDomainName()const
 void QueryDomainRealNameVerificationInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryDomainRealNameVerificationInfoRequest::getUserClientIp()const
 void QueryDomainRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainRealNameVerificationInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryDomainRealNameVerificationInfoRequest::getLang()const
 void QueryDomainRealNameVerificationInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

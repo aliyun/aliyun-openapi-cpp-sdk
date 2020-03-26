@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMessageCallbackRequest;
 
 GetMessageCallbackRequest::GetMessageCallbackRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMessageCallback")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMessageCallbackRequest::~GetMessageCallbackRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetMessageCallbackRequest::getResourceOwnerId()const
 void GetMessageCallbackRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long GetMessageCallbackRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long GetMessageCallbackRequest::getResourceRealOwnerId()const
 void GetMessageCallbackRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetMessageCallbackRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetMessageCallbackRequest::getAccessKeyId()const
 void GetMessageCallbackRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string GetMessageCallbackRequest::getResourceOwnerAccount()const
 void GetMessageCallbackRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMessageCallbackRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string GetMessageCallbackRequest::getOwnerAccount()const
 void GetMessageCallbackRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetMessageCallbackRequest::getOwnerId()const
@@ -88,7 +90,7 @@ std::string GetMessageCallbackRequest::getOwnerId()const
 void GetMessageCallbackRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetMessageCallbackRequest::getAppId()const
@@ -99,6 +101,6 @@ std::string GetMessageCallbackRequest::getAppId()const
 void GetMessageCallbackRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

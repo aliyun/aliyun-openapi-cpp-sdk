@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryFpCompareJobListRequest;
 
 QueryFpCompareJobListRequest::QueryFpCompareJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryFpCompareJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFpCompareJobListRequest::~QueryFpCompareJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryFpCompareJobListRequest::getResourceOwnerId()const
 void QueryFpCompareJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryFpCompareJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryFpCompareJobListRequest::getResourceOwnerAccount()const
 void QueryFpCompareJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryFpCompareJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryFpCompareJobListRequest::getOwnerAccount()const
 void QueryFpCompareJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryFpCompareJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryFpCompareJobListRequest::getOwnerId()const
 void QueryFpCompareJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryFpCompareJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryFpCompareJobListRequest::getAccessKeyId()const
 void QueryFpCompareJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryFpCompareJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryFpCompareJobListRequest::getJobIds()const
 void QueryFpCompareJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

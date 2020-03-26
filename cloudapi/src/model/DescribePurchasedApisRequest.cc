@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribePurchasedApisRequest;
 
 DescribePurchasedApisRequest::DescribePurchasedApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribePurchasedApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePurchasedApisRequest::~DescribePurchasedApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePurchasedApisRequest::getStageName()const
 void DescribePurchasedApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribePurchasedApisRequest::getVisibility()const
@@ -44,7 +46,7 @@ std::string DescribePurchasedApisRequest::getVisibility()const
 void DescribePurchasedApisRequest::setVisibility(const std::string& visibility)
 {
 	visibility_ = visibility;
-	setCoreParameter("Visibility", visibility);
+	setParameter("Visibility", visibility);
 }
 
 std::string DescribePurchasedApisRequest::getGroupId()const
@@ -55,7 +57,7 @@ std::string DescribePurchasedApisRequest::getGroupId()const
 void DescribePurchasedApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribePurchasedApisRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribePurchasedApisRequest::getPageNumber()const
 void DescribePurchasedApisRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribePurchasedApisRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DescribePurchasedApisRequest::getAccessKeyId()const
 void DescribePurchasedApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribePurchasedApisRequest::getApiName()const
@@ -88,7 +90,7 @@ std::string DescribePurchasedApisRequest::getApiName()const
 void DescribePurchasedApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setParameter("ApiName", apiName);
 }
 
 std::string DescribePurchasedApisRequest::getSecurityToken()const
@@ -99,7 +101,7 @@ std::string DescribePurchasedApisRequest::getSecurityToken()const
 void DescribePurchasedApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribePurchasedApisRequest::getPageSize()const
@@ -110,7 +112,7 @@ int DescribePurchasedApisRequest::getPageSize()const
 void DescribePurchasedApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePurchasedApisRequest::getApiId()const
@@ -121,6 +123,6 @@ std::string DescribePurchasedApisRequest::getApiId()const
 void DescribePurchasedApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

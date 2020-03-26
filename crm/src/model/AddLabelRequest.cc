@@ -20,7 +20,9 @@ using AlibabaCloud::Crm::Model::AddLabelRequest;
 
 AddLabelRequest::AddLabelRequest() :
 	RpcServiceRequest("crm", "2015-04-08", "AddLabel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLabelRequest::~AddLabelRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLabelRequest::getLabelSeries()const
 void AddLabelRequest::setLabelSeries(const std::string& labelSeries)
 {
 	labelSeries_ = labelSeries;
-	setCoreParameter("LabelSeries", labelSeries);
+	setParameter("LabelSeries", labelSeries);
 }
 
 std::string AddLabelRequest::getOrganization()const
@@ -44,7 +46,7 @@ std::string AddLabelRequest::getOrganization()const
 void AddLabelRequest::setOrganization(const std::string& organization)
 {
 	organization_ = organization;
-	setCoreParameter("Organization", organization);
+	setParameter("Organization", organization);
 }
 
 std::string AddLabelRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string AddLabelRequest::getEndTime()const
 void AddLabelRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string AddLabelRequest::getPK()const
@@ -66,7 +68,7 @@ std::string AddLabelRequest::getPK()const
 void AddLabelRequest::setPK(const std::string& pK)
 {
 	pK_ = pK;
-	setCoreParameter("PK", pK);
+	setParameter("PK", pK);
 }
 
 std::string AddLabelRequest::getLabelName()const
@@ -77,7 +79,7 @@ std::string AddLabelRequest::getLabelName()const
 void AddLabelRequest::setLabelName(const std::string& labelName)
 {
 	labelName_ = labelName;
-	setCoreParameter("LabelName", labelName);
+	setParameter("LabelName", labelName);
 }
 
 std::string AddLabelRequest::getUserName()const
@@ -88,6 +90,6 @@ std::string AddLabelRequest::getUserName()const
 void AddLabelRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

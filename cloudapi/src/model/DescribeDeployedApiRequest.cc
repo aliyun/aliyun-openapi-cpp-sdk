@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeDeployedApiRequest;
 
 DescribeDeployedApiRequest::DescribeDeployedApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeDeployedApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeployedApiRequest::~DescribeDeployedApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDeployedApiRequest::getStageName()const
 void DescribeDeployedApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeDeployedApiRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeDeployedApiRequest::getGroupId()const
 void DescribeDeployedApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeDeployedApiRequest::getAccessKeyId()const
@@ -55,7 +57,18 @@ std::string DescribeDeployedApiRequest::getAccessKeyId()const
 void DescribeDeployedApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeDeployedApiRequest::getResourceOwnerToken()const
+{
+	return resourceOwnerToken_;
+}
+
+void DescribeDeployedApiRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
+{
+	resourceOwnerToken_ = resourceOwnerToken;
+	setParameter("ResourceOwnerToken", resourceOwnerToken);
 }
 
 std::string DescribeDeployedApiRequest::getSecurityToken()const
@@ -66,7 +79,7 @@ std::string DescribeDeployedApiRequest::getSecurityToken()const
 void DescribeDeployedApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeDeployedApiRequest::getApiId()const
@@ -77,6 +90,6 @@ std::string DescribeDeployedApiRequest::getApiId()const
 void DescribeDeployedApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

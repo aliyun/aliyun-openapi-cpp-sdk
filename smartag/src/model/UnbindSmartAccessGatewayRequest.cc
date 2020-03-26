@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnbindSmartAccessGatewayRequest;
 
 UnbindSmartAccessGatewayRequest::UnbindSmartAccessGatewayRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnbindSmartAccessGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindSmartAccessGatewayRequest::~UnbindSmartAccessGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long UnbindSmartAccessGatewayRequest::getResourceOwnerId()const
 void UnbindSmartAccessGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getCcnId()const
@@ -44,7 +46,7 @@ std::string UnbindSmartAccessGatewayRequest::getCcnId()const
 void UnbindSmartAccessGatewayRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setParameter("CcnId", ccnId);
 }
 
 std::string UnbindSmartAccessGatewayRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string UnbindSmartAccessGatewayRequest::getRegionId()const
 void UnbindSmartAccessGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UnbindSmartAccessGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UnbindSmartAccessGatewayRequest::getResourceOwnerAccount()const
 void UnbindSmartAccessGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindSmartAccessGatewayRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UnbindSmartAccessGatewayRequest::getOwnerAccount()const
 void UnbindSmartAccessGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnbindSmartAccessGatewayRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long UnbindSmartAccessGatewayRequest::getOwnerId()const
 void UnbindSmartAccessGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long UnbindSmartAccessGatewayRequest::getSmartAGUid()const
@@ -99,7 +101,7 @@ long UnbindSmartAccessGatewayRequest::getSmartAGUid()const
 void UnbindSmartAccessGatewayRequest::setSmartAGUid(long smartAGUid)
 {
 	smartAGUid_ = smartAGUid;
-	setCoreParameter("SmartAGUid", std::to_string(smartAGUid));
+	setParameter("SmartAGUid", std::to_string(smartAGUid));
 }
 
 std::string UnbindSmartAccessGatewayRequest::getSmartAGId()const
@@ -110,6 +112,6 @@ std::string UnbindSmartAccessGatewayRequest::getSmartAGId()const
 void UnbindSmartAccessGatewayRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

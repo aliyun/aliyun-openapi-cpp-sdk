@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateEdgeInstanceRequest;
 
 CreateEdgeInstanceRequest::CreateEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateEdgeInstanceRequest::~CreateEdgeInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int CreateEdgeInstanceRequest::getSpec()const
 void CreateEdgeInstanceRequest::setSpec(int spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", std::to_string(spec));
+	setParameter("Spec", std::to_string(spec));
 }
 
 std::string CreateEdgeInstanceRequest::getAccessKeyId()const
@@ -44,18 +46,7 @@ std::string CreateEdgeInstanceRequest::getAccessKeyId()const
 void CreateEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string CreateEdgeInstanceRequest::getTags()const
-{
-	return tags_;
-}
-
-void CreateEdgeInstanceRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateEdgeInstanceRequest::getIotInstanceId()const
@@ -66,7 +57,29 @@ std::string CreateEdgeInstanceRequest::getIotInstanceId()const
 void CreateEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateEdgeInstanceRequest::getTags()const
+{
+	return tags_;
+}
+
+void CreateEdgeInstanceRequest::setTags(const std::string& tags)
+{
+	tags_ = tags;
+	setParameter("Tags", tags);
+}
+
+std::string CreateEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
 }
 
 std::string CreateEdgeInstanceRequest::getName()const
@@ -77,6 +90,17 @@ std::string CreateEdgeInstanceRequest::getName()const
 void CreateEdgeInstanceRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
+}
+
+std::string CreateEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

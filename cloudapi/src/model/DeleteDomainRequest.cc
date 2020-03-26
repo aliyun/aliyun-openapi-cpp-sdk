@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteDomainRequest;
 
 DeleteDomainRequest::DeleteDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainRequest::~DeleteDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDomainRequest::getGroupId()const
 void DeleteDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DeleteDomainRequest::getDomainName()const
 void DeleteDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteDomainRequest::getAccessKeyId()const
 void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DeleteDomainRequest::getSecurityToken()const
 void DeleteDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

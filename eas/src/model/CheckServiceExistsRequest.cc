@@ -22,7 +22,7 @@ CheckServiceExistsRequest::CheckServiceExistsRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services/[region]/[service_name]/exists");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 CheckServiceExistsRequest::~CheckServiceExistsRequest()

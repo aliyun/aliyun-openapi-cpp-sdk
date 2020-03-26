@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::BandOfferOrderRequest;
 
 BandOfferOrderRequest::BandOfferOrderRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "BandOfferOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BandOfferOrderRequest::~BandOfferOrderRequest()
 {}
@@ -33,7 +35,7 @@ long BandOfferOrderRequest::getResourceOwnerId()const
 void BandOfferOrderRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string BandOfferOrderRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string BandOfferOrderRequest::getResourceOwnerAccount()const
 void BandOfferOrderRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long BandOfferOrderRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long BandOfferOrderRequest::getOwnerId()const
 void BandOfferOrderRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BandOfferOrderRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string BandOfferOrderRequest::getAccessKeyId()const
 void BandOfferOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BandOfferOrderRequest::getBandId()const
@@ -77,7 +79,7 @@ std::string BandOfferOrderRequest::getBandId()const
 void BandOfferOrderRequest::setBandId(const std::string& bandId)
 {
 	bandId_ = bandId;
-	setCoreParameter("BandId", bandId);
+	setParameter("BandId", bandId);
 }
 
 std::string BandOfferOrderRequest::getOfferId()const
@@ -88,6 +90,6 @@ std::string BandOfferOrderRequest::getOfferId()const
 void BandOfferOrderRequest::setOfferId(const std::string& offerId)
 {
 	offerId_ = offerId;
-	setCoreParameter("OfferId", offerId);
+	setParameter("OfferId", offerId);
 }
 

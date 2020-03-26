@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DescribeCdnIpListRequest;
 
 DescribeCdnIpListRequest::DescribeCdnIpListRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DescribeCdnIpList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCdnIpListRequest::~DescribeCdnIpListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCdnIpListRequest::getSrcIP()const
 void DescribeCdnIpListRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 int DescribeCdnIpListRequest::getWlState()const
@@ -44,7 +46,7 @@ int DescribeCdnIpListRequest::getWlState()const
 void DescribeCdnIpListRequest::setWlState(int wlState)
 {
 	wlState_ = wlState;
-	setCoreParameter("WlState", std::to_string(wlState));
+	setParameter("WlState", std::to_string(wlState));
 }
 
 std::string DescribeCdnIpListRequest::getSourceCode()const
@@ -55,7 +57,7 @@ std::string DescribeCdnIpListRequest::getSourceCode()const
 void DescribeCdnIpListRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DescribeCdnIpListRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeCdnIpListRequest::getSourceIp()const
 void DescribeCdnIpListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeCdnIpListRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCdnIpListRequest::getPageSize()const
 void DescribeCdnIpListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCdnIpListRequest::getLang()const
@@ -88,7 +90,7 @@ std::string DescribeCdnIpListRequest::getLang()const
 void DescribeCdnIpListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeCdnIpListRequest::getCurrentPage()const
@@ -99,6 +101,6 @@ int DescribeCdnIpListRequest::getCurrentPage()const
 void DescribeCdnIpListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

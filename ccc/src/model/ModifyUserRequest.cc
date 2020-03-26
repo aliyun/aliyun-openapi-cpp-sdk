@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifyUserRequest;
 
 ModifyUserRequest::ModifyUserRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifyUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyUserRequest::~ModifyUserRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyUserRequest::getPrivateOutboundNumberId()const
 void ModifyUserRequest::setPrivateOutboundNumberId(const std::string& privateOutboundNumberId)
 {
 	privateOutboundNumberId_ = privateOutboundNumberId;
-	setCoreParameter("PrivateOutboundNumberId", privateOutboundNumberId);
+	setParameter("PrivateOutboundNumberId", privateOutboundNumberId);
 }
 
 std::vector<std::string> ModifyUserRequest::getRoleId()const
@@ -44,8 +46,9 @@ std::vector<std::string> ModifyUserRequest::getRoleId()const
 void ModifyUserRequest::setRoleId(const std::vector<std::string>& roleId)
 {
 	roleId_ = roleId;
-	for(int i = 0; i!= roleId.size(); i++)
-		setCoreParameter("RoleId."+ std::to_string(i), roleId.at(i));
+	for(int dep1 = 0; dep1!= roleId.size(); dep1++) {
+		setParameter("RoleId."+ std::to_string(dep1), roleId.at(dep1));
+	}
 }
 
 std::string ModifyUserRequest::getUserId()const
@@ -56,7 +59,7 @@ std::string ModifyUserRequest::getUserId()const
 void ModifyUserRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string ModifyUserRequest::getAccessKeyId()const
@@ -67,7 +70,7 @@ std::string ModifyUserRequest::getAccessKeyId()const
 void ModifyUserRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<int> ModifyUserRequest::getSkillLevel()const
@@ -78,8 +81,9 @@ std::vector<int> ModifyUserRequest::getSkillLevel()const
 void ModifyUserRequest::setSkillLevel(const std::vector<int>& skillLevel)
 {
 	skillLevel_ = skillLevel;
-	for(int i = 0; i!= skillLevel.size(); i++)
-		setCoreParameter("SkillLevel."+ std::to_string(i), std::to_string(skillLevel.at(i)));
+	for(int dep1 = 0; dep1!= skillLevel.size(); dep1++) {
+		setParameter("SkillLevel."+ std::to_string(dep1), std::to_string(skillLevel.at(dep1)));
+	}
 }
 
 std::string ModifyUserRequest::getInstanceId()const
@@ -90,7 +94,7 @@ std::string ModifyUserRequest::getInstanceId()const
 void ModifyUserRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyUserRequest::getPhone()const
@@ -101,7 +105,7 @@ std::string ModifyUserRequest::getPhone()const
 void ModifyUserRequest::setPhone(const std::string& phone)
 {
 	phone_ = phone;
-	setCoreParameter("Phone", phone);
+	setParameter("Phone", phone);
 }
 
 std::string ModifyUserRequest::getDisplayName()const
@@ -112,7 +116,7 @@ std::string ModifyUserRequest::getDisplayName()const
 void ModifyUserRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setParameter("DisplayName", displayName);
 }
 
 std::vector<std::string> ModifyUserRequest::getSkillGroupId()const
@@ -123,8 +127,9 @@ std::vector<std::string> ModifyUserRequest::getSkillGroupId()const
 void ModifyUserRequest::setSkillGroupId(const std::vector<std::string>& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	for(int i = 0; i!= skillGroupId.size(); i++)
-		setCoreParameter("SkillGroupId."+ std::to_string(i), skillGroupId.at(i));
+	for(int dep1 = 0; dep1!= skillGroupId.size(); dep1++) {
+		setParameter("SkillGroupId."+ std::to_string(dep1), skillGroupId.at(dep1));
+	}
 }
 
 std::string ModifyUserRequest::getEmail()const
@@ -135,6 +140,6 @@ std::string ModifyUserRequest::getEmail()const
 void ModifyUserRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

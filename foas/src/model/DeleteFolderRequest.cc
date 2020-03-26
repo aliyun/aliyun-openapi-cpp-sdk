@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DeleteFolderRequest;
 
 DeleteFolderRequest::DeleteFolderRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/folders");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteFolderRequest::~DeleteFolderRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteFolderRequest::getPath()const
 void DeleteFolderRequest::setPath(const std::string& path)
 {
 	path_ = path;
-	setCoreParameter("Path", path);
+	setParameter("Path", path);
 }
 
 std::string DeleteFolderRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string DeleteFolderRequest::getProjectName()const
 void DeleteFolderRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string DeleteFolderRequest::getRegionId()const
@@ -55,6 +58,6 @@ std::string DeleteFolderRequest::getRegionId()const
 void DeleteFolderRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 

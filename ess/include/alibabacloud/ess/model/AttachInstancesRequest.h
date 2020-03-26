@@ -113,6 +113,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				bool getEntrusted()const;
+				void setEntrusted(bool entrusted);
 				std::string getInstanceId18()const;
 				void setInstanceId18(const std::string& instanceId18);
 				std::string getInstanceId17()const;
@@ -168,6 +170,7 @@ namespace AlibabaCloud
 				std::string instanceId20_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				bool entrusted_;
 				std::string instanceId18_;
 				std::string instanceId17_;
 				std::string instanceId19_;

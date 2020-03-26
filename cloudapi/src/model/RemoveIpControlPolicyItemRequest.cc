@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveIpControlPolicyItemRequest;
 
 RemoveIpControlPolicyItemRequest::RemoveIpControlPolicyItemRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveIpControlPolicyItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveIpControlPolicyItemRequest::~RemoveIpControlPolicyItemRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveIpControlPolicyItemRequest::getAccessKeyId()const
 void RemoveIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getPolicyItemIds()const
@@ -44,7 +46,7 @@ std::string RemoveIpControlPolicyItemRequest::getPolicyItemIds()const
 void RemoveIpControlPolicyItemRequest::setPolicyItemIds(const std::string& policyItemIds)
 {
 	policyItemIds_ = policyItemIds;
-	setCoreParameter("PolicyItemIds", policyItemIds);
+	setParameter("PolicyItemIds", policyItemIds);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getIpControlId()const
@@ -55,7 +57,7 @@ std::string RemoveIpControlPolicyItemRequest::getIpControlId()const
 void RemoveIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string RemoveIpControlPolicyItemRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string RemoveIpControlPolicyItemRequest::getSecurityToken()const
 void RemoveIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

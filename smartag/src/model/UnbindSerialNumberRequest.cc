@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnbindSerialNumberRequest;
 
 UnbindSerialNumberRequest::UnbindSerialNumberRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnbindSerialNumber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindSerialNumberRequest::~UnbindSerialNumberRequest()
 {}
@@ -33,7 +35,7 @@ long UnbindSerialNumberRequest::getResourceOwnerId()const
 void UnbindSerialNumberRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindSerialNumberRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string UnbindSerialNumberRequest::getRegionId()const
 void UnbindSerialNumberRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UnbindSerialNumberRequest::getSerialNumber()const
@@ -55,7 +57,7 @@ std::string UnbindSerialNumberRequest::getSerialNumber()const
 void UnbindSerialNumberRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setParameter("SerialNumber", serialNumber);
 }
 
 std::string UnbindSerialNumberRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UnbindSerialNumberRequest::getResourceOwnerAccount()const
 void UnbindSerialNumberRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindSerialNumberRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UnbindSerialNumberRequest::getOwnerAccount()const
 void UnbindSerialNumberRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnbindSerialNumberRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long UnbindSerialNumberRequest::getOwnerId()const
 void UnbindSerialNumberRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindSerialNumberRequest::getSmartAGId()const
@@ -99,6 +101,6 @@ std::string UnbindSerialNumberRequest::getSmartAGId()const
 void UnbindSerialNumberRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

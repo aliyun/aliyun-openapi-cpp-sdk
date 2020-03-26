@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DisableScalingGroupRequest;
 
 DisableScalingGroupRequest::DisableScalingGroupRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DisableScalingGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DisableScalingGroupRequest::~DisableScalingGroupRequest()
 {}
@@ -33,7 +35,7 @@ long DisableScalingGroupRequest::getResourceOwnerId()const
 void DisableScalingGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DisableScalingGroupRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DisableScalingGroupRequest::getResourceOwnerAccount()const
 void DisableScalingGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DisableScalingGroupRequest::getScalingGroupId()const
@@ -55,7 +57,7 @@ std::string DisableScalingGroupRequest::getScalingGroupId()const
 void DisableScalingGroupRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DisableScalingGroupRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DisableScalingGroupRequest::getOwnerAccount()const
 void DisableScalingGroupRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DisableScalingGroupRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DisableScalingGroupRequest::getOwnerId()const
 void DisableScalingGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DisableScalingGroupRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string DisableScalingGroupRequest::getAccessKeyId()const
 void DisableScalingGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

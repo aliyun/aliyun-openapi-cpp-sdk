@@ -195,6 +195,42 @@ CCCClient::AddPhoneNumberOutcomeCallable CCCClient::addPhoneNumberCallable(const
 	return task->get_future();
 }
 
+CCCClient::AddPhoneTagsOutcome CCCClient::addPhoneTags(const AddPhoneTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddPhoneTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddPhoneTagsOutcome(AddPhoneTagsResult(outcome.result()));
+	else
+		return AddPhoneTagsOutcome(outcome.error());
+}
+
+void CCCClient::addPhoneTagsAsync(const AddPhoneTagsRequest& request, const AddPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addPhoneTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::AddPhoneTagsOutcomeCallable CCCClient::addPhoneTagsCallable(const AddPhoneTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddPhoneTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->addPhoneTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::AssignJobsOutcome CCCClient::assignJobs(const AssignJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +405,42 @@ CCCClient::CancelPredictiveJobsOutcomeCallable CCCClient::cancelPredictiveJobsCa
 			[this, request]()
 			{
 			return this->cancelPredictiveJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::CheckNumberAvaliableOutcome CCCClient::checkNumberAvaliable(const CheckNumberAvaliableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckNumberAvaliableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckNumberAvaliableOutcome(CheckNumberAvaliableResult(outcome.result()));
+	else
+		return CheckNumberAvaliableOutcome(outcome.error());
+}
+
+void CCCClient::checkNumberAvaliableAsync(const CheckNumberAvaliableRequest& request, const CheckNumberAvaliableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkNumberAvaliable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::CheckNumberAvaliableOutcomeCallable CCCClient::checkNumberAvaliableCallable(const CheckNumberAvaliableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckNumberAvaliableOutcome()>>(
+			[this, request]()
+			{
+			return this->checkNumberAvaliable(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1089,6 +1161,42 @@ CCCClient::DeleteMediaOutcomeCallable CCCClient::deleteMediaCallable(const Delet
 			[this, request]()
 			{
 			return this->deleteMedia(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::DeletePhoneTagsOutcome CCCClient::deletePhoneTags(const DeletePhoneTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePhoneTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePhoneTagsOutcome(DeletePhoneTagsResult(outcome.result()));
+	else
+		return DeletePhoneTagsOutcome(outcome.error());
+}
+
+void CCCClient::deletePhoneTagsAsync(const DeletePhoneTagsRequest& request, const DeletePhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePhoneTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::DeletePhoneTagsOutcomeCallable CCCClient::deletePhoneTagsCallable(const DeletePhoneTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePhoneTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePhoneTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2679,6 +2787,42 @@ CCCClient::GetUserOutcomeCallable CCCClient::getUserCallable(const GetUserReques
 	return task->get_future();
 }
 
+CCCClient::InflightTaskTimeoutOutcome CCCClient::inflightTaskTimeout(const InflightTaskTimeoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InflightTaskTimeoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InflightTaskTimeoutOutcome(InflightTaskTimeoutResult(outcome.result()));
+	else
+		return InflightTaskTimeoutOutcome(outcome.error());
+}
+
+void CCCClient::inflightTaskTimeoutAsync(const InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, inflightTaskTimeout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::InflightTaskTimeoutOutcomeCallable CCCClient::inflightTaskTimeoutCallable(const InflightTaskTimeoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InflightTaskTimeoutOutcome()>>(
+			[this, request]()
+			{
+			return this->inflightTaskTimeout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::LaunchAppraiseOutcome CCCClient::launchAppraise(const LaunchAppraiseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3465,6 +3609,42 @@ CCCClient::ListPhoneNumbersOutcomeCallable CCCClient::listPhoneNumbersCallable(c
 			[this, request]()
 			{
 			return this->listPhoneNumbers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ListPhoneTagsOutcome CCCClient::listPhoneTags(const ListPhoneTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPhoneTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPhoneTagsOutcome(ListPhoneTagsResult(outcome.result()));
+	else
+		return ListPhoneTagsOutcome(outcome.error());
+}
+
+void CCCClient::listPhoneTagsAsync(const ListPhoneTagsRequest& request, const ListPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPhoneTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ListPhoneTagsOutcomeCallable CCCClient::listPhoneTagsCallable(const ListPhoneTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPhoneTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPhoneTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4473,6 +4653,42 @@ CCCClient::ModifyPhoneNumberOutcomeCallable CCCClient::modifyPhoneNumberCallable
 			[this, request]()
 			{
 			return this->modifyPhoneNumber(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::ModifyPhoneTagsOutcome CCCClient::modifyPhoneTags(const ModifyPhoneTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPhoneTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPhoneTagsOutcome(ModifyPhoneTagsResult(outcome.result()));
+	else
+		return ModifyPhoneTagsOutcome(outcome.error());
+}
+
+void CCCClient::modifyPhoneTagsAsync(const ModifyPhoneTagsRequest& request, const ModifyPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPhoneTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::ModifyPhoneTagsOutcomeCallable CCCClient::modifyPhoneTagsCallable(const ModifyPhoneTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPhoneTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPhoneTags(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5769,6 +5985,42 @@ CCCClient::SuspendJobsOutcomeCallable CCCClient::suspendJobsCallable(const Suspe
 			[this, request]()
 			{
 			return this->suspendJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CCCClient::TaskPreparingOutcome CCCClient::taskPreparing(const TaskPreparingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TaskPreparingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TaskPreparingOutcome(TaskPreparingResult(outcome.result()));
+	else
+		return TaskPreparingOutcome(outcome.error());
+}
+
+void CCCClient::taskPreparingAsync(const TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, taskPreparing(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::TaskPreparingOutcomeCallable CCCClient::taskPreparingCallable(const TaskPreparingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TaskPreparingOutcome()>>(
+			[this, request]()
+			{
+			return this->taskPreparing(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

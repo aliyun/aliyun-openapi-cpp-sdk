@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryOssResourcesRequest;
 
 QueryOssResourcesRequest::QueryOssResourcesRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryOssResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryOssResourcesRequest::~QueryOssResourcesRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryOssResourcesRequest::getBizId()const
 void QueryOssResourcesRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

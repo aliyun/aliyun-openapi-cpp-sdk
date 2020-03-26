@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryFailReasonForDomainRealNameVerificationR
 
 QueryFailReasonForDomainRealNameVerificationRequest::QueryFailReasonForDomainRealNameVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFailReasonForDomainRealNameVerificationRequest::~QueryFailReasonForDomainRealNameVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryFailReasonForDomainRealNameVerificationRequest::getDomainName()
 void QueryFailReasonForDomainRealNameVerificationRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryFailReasonForDomainRealNameVerificationRequest::getRealNameVerificationAction()const
@@ -44,7 +46,7 @@ std::string QueryFailReasonForDomainRealNameVerificationRequest::getRealNameVeri
 void QueryFailReasonForDomainRealNameVerificationRequest::setRealNameVerificationAction(const std::string& realNameVerificationAction)
 {
 	realNameVerificationAction_ = realNameVerificationAction;
-	setCoreParameter("RealNameVerificationAction", realNameVerificationAction);
+	setParameter("RealNameVerificationAction", realNameVerificationAction);
 }
 
 std::string QueryFailReasonForDomainRealNameVerificationRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryFailReasonForDomainRealNameVerificationRequest::getUserClientIp
 void QueryFailReasonForDomainRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryFailReasonForDomainRealNameVerificationRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryFailReasonForDomainRealNameVerificationRequest::getLang()const
 void QueryFailReasonForDomainRealNameVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitMediaInfoJobRequest;
 
 SubmitMediaInfoJobRequest::SubmitMediaInfoJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitMediaInfoJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitMediaInfoJobRequest::~SubmitMediaInfoJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitMediaInfoJobRequest::getResourceOwnerId()const
 void SubmitMediaInfoJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMediaInfoJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitMediaInfoJobRequest::getAccessKeyId()const
 void SubmitMediaInfoJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMediaInfoJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitMediaInfoJobRequest::getUserData()const
 void SubmitMediaInfoJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitMediaInfoJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitMediaInfoJobRequest::getResourceOwnerAccount()const
 void SubmitMediaInfoJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMediaInfoJobRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitMediaInfoJobRequest::getOwnerAccount()const
 void SubmitMediaInfoJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitMediaInfoJobRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SubmitMediaInfoJobRequest::getOwnerId()const
 void SubmitMediaInfoJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMediaInfoJobRequest::getPipelineId()const
@@ -99,7 +101,7 @@ std::string SubmitMediaInfoJobRequest::getPipelineId()const
 void SubmitMediaInfoJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitMediaInfoJobRequest::getInput()const
@@ -110,7 +112,7 @@ std::string SubmitMediaInfoJobRequest::getInput()const
 void SubmitMediaInfoJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 
 bool SubmitMediaInfoJobRequest::getAsync()const
@@ -121,6 +123,6 @@ bool SubmitMediaInfoJobRequest::getAsync()const
 void SubmitMediaInfoJobRequest::setAsync(bool async)
 {
 	async_ = async;
-	setCoreParameter("Async", async ? "true" : "false");
+	setParameter("Async", async ? "true" : "false");
 }
 

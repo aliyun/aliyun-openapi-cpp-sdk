@@ -52,6 +52,8 @@
 #include "model/DeleteServiceListResult.h"
 #include "model/DeleteUnionCasServiceRequest.h"
 #include "model/DeleteUnionCasServiceResult.h"
+#include "model/DescribeRegionsRequest.h"
+#include "model/DescribeRegionsResult.h"
 #include "model/FindApprovalOrderListRequest.h"
 #include "model/FindApprovalOrderListResult.h"
 #include "model/FindApproveServiceListRequest.h"
@@ -158,6 +160,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUnionCasServiceResult> DeleteUnionCasServiceOutcome;
 			typedef std::future<DeleteUnionCasServiceOutcome> DeleteUnionCasServiceOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::DeleteUnionCasServiceRequest&, const DeleteUnionCasServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUnionCasServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
+			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
 			typedef Outcome<Error, Model::FindApprovalOrderListResult> FindApprovalOrderListOutcome;
 			typedef std::future<FindApprovalOrderListOutcome> FindApprovalOrderListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindApprovalOrderListRequest&, const FindApprovalOrderListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindApprovalOrderListAsyncHandler;
@@ -286,6 +291,9 @@ namespace AlibabaCloud
 			DeleteUnionCasServiceOutcome deleteUnionCasService(const Model::DeleteUnionCasServiceRequest &request)const;
 			void deleteUnionCasServiceAsync(const Model::DeleteUnionCasServiceRequest& request, const DeleteUnionCasServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUnionCasServiceOutcomeCallable deleteUnionCasServiceCallable(const Model::DeleteUnionCasServiceRequest& request) const;
+			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
+			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 			FindApprovalOrderListOutcome findApprovalOrderList(const Model::FindApprovalOrderListRequest &request)const;
 			void findApprovalOrderListAsync(const Model::FindApprovalOrderListRequest& request, const FindApprovalOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindApprovalOrderListOutcomeCallable findApprovalOrderListCallable(const Model::FindApprovalOrderListRequest& request) const;

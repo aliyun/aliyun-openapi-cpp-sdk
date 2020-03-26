@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::BindTagRequest;
 
 BindTagRequest::BindTagRequest() :
 	RpcServiceRequest("push", "2016-08-01", "BindTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindTagRequest::~BindTagRequest()
 {}
@@ -33,7 +35,7 @@ std::string BindTagRequest::getKeyType()const
 void BindTagRequest::setKeyType(const std::string& keyType)
 {
 	keyType_ = keyType;
-	setCoreParameter("KeyType", keyType);
+	setParameter("KeyType", keyType);
 }
 
 std::string BindTagRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string BindTagRequest::getAccessKeyId()const
 void BindTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindTagRequest::getTagName()const
@@ -55,7 +57,7 @@ std::string BindTagRequest::getTagName()const
 void BindTagRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", tagName);
+	setParameter("TagName", tagName);
 }
 
 std::string BindTagRequest::getClientKey()const
@@ -66,7 +68,7 @@ std::string BindTagRequest::getClientKey()const
 void BindTagRequest::setClientKey(const std::string& clientKey)
 {
 	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", clientKey);
+	setParameter("ClientKey", clientKey);
 }
 
 long BindTagRequest::getAppKey()const
@@ -77,6 +79,6 @@ long BindTagRequest::getAppKey()const
 void BindTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

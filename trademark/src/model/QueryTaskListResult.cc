@@ -51,13 +51,47 @@ void QueryTaskListResult::parse(const std::string &payload)
 			dataObject.errMsg = valueDataTaskList["ErrMsg"].asString();
 		if(!valueDataTaskList["Result"].isNull())
 			dataObject.result = valueDataTaskList["Result"].asString();
+		if(!valueDataTaskList["FileName"].isNull())
+			dataObject.fileName = valueDataTaskList["FileName"].asString();
+		if(!valueDataTaskList["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataTaskList["CreateTime"].asString());
+		if(!valueDataTaskList["CompleteTime"].isNull())
+			dataObject.completeTime = std::stol(valueDataTaskList["CompleteTime"].asString());
 		data_.push_back(dataObject);
 	}
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
 
+}
+
+int QueryTaskListResult::getCurrentPageNum()const
+{
+	return currentPageNum_;
+}
+
+int QueryTaskListResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int QueryTaskListResult::getTotalPageNum()const
+{
+	return totalPageNum_;
 }
 
 std::vector<QueryTaskListResult::TaskList> QueryTaskListResult::getData()const
 {
 	return data_;
+}
+
+int QueryTaskListResult::getTotalItemNum()const
+{
+	return totalItemNum_;
 }
 

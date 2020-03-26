@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeDomainRequest;
 
 DescribeDomainRequest::DescribeDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainRequest::~DescribeDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDomainRequest::getGroupId()const
 void DescribeDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeDomainRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeDomainRequest::getDomainName()const
 void DescribeDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeDomainRequest::getAccessKeyId()const
 void DescribeDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDomainRequest::getSecurityToken()const
@@ -66,6 +68,6 @@ std::string DescribeDomainRequest::getSecurityToken()const
 void DescribeDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

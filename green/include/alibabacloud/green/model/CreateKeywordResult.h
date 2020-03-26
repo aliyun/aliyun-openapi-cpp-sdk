@@ -32,21 +32,26 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_GREEN_EXPORT CreateKeywordResult : public ServiceResult
 			{
 			public:
+				struct ValidKeyword
+				{
+					std::string keyword;
+					int id;
+				};
 
 
 				CreateKeywordResult();
 				explicit CreateKeywordResult(const std::string &payload);
 				~CreateKeywordResult();
+				std::vector<ValidKeyword> getvalidKeywordList()const;
 				std::vector<std::string> getInvalidKeywordList()const;
 				int getSuccessCount()const;
-				std::vector<std::string> getValidKeywordList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<ValidKeyword> validKeywordList_;
 				std::vector<std::string> invalidKeywordList_;
 				int successCount_;
-				std::vector<std::string> validKeywordList_;
 
 			};
 		}

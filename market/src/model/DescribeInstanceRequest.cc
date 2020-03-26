@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeInstanceRequest;
 
 DescribeInstanceRequest::DescribeInstanceRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceRequest::~DescribeInstanceRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeInstanceRequest::getOwnerId()const
 void DescribeInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeInstanceRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string DescribeInstanceRequest::getInstanceId()const
 void DescribeInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeInstanceRequest::getOrderType()const
@@ -55,6 +57,6 @@ std::string DescribeInstanceRequest::getOrderType()const
 void DescribeInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

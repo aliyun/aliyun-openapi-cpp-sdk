@@ -35,7 +35,7 @@ long UnbindNumberAndVoipIdRequest::getResourceOwnerId()const
 void UnbindNumberAndVoipIdRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindNumberAndVoipIdRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string UnbindNumberAndVoipIdRequest::getResourceOwnerAccount()const
 void UnbindNumberAndVoipIdRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindNumberAndVoipIdRequest::getPhoneNumber()const
@@ -57,7 +57,7 @@ std::string UnbindNumberAndVoipIdRequest::getPhoneNumber()const
 void UnbindNumberAndVoipIdRequest::setPhoneNumber(const std::string& phoneNumber)
 {
 	phoneNumber_ = phoneNumber;
-	setCoreParameter("PhoneNumber", phoneNumber);
+	setParameter("PhoneNumber", phoneNumber);
 }
 
 long UnbindNumberAndVoipIdRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long UnbindNumberAndVoipIdRequest::getOwnerId()const
 void UnbindNumberAndVoipIdRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindNumberAndVoipIdRequest::getAccessKeyId()const
@@ -79,7 +79,7 @@ std::string UnbindNumberAndVoipIdRequest::getAccessKeyId()const
 void UnbindNumberAndVoipIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindNumberAndVoipIdRequest::getVoipId()const
@@ -90,6 +90,6 @@ std::string UnbindNumberAndVoipIdRequest::getVoipId()const
 void UnbindNumberAndVoipIdRequest::setVoipId(const std::string& voipId)
 {
 	voipId_ = voipId;
-	setCoreParameter("VoipId", voipId);
+	setParameter("VoipId", voipId);
 }
 

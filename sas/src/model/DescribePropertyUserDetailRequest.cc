@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyUserDetailRequest;
 
 DescribePropertyUserDetailRequest::DescribePropertyUserDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyUserDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyUserDetailRequest::~DescribePropertyUserDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePropertyUserDetailRequest::getRemark()const
 void DescribePropertyUserDetailRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribePropertyUserDetailRequest::getUuid()const
@@ -44,7 +46,7 @@ std::string DescribePropertyUserDetailRequest::getUuid()const
 void DescribePropertyUserDetailRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribePropertyUserDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribePropertyUserDetailRequest::getSourceIp()const
 void DescribePropertyUserDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePropertyUserDetailRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribePropertyUserDetailRequest::getPageSize()const
 void DescribePropertyUserDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribePropertyUserDetailRequest::getCurrentPage()const
@@ -77,7 +79,7 @@ int DescribePropertyUserDetailRequest::getCurrentPage()const
 void DescribePropertyUserDetailRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertyUserDetailRequest::getIsRoot()const
@@ -88,7 +90,7 @@ std::string DescribePropertyUserDetailRequest::getIsRoot()const
 void DescribePropertyUserDetailRequest::setIsRoot(const std::string& isRoot)
 {
 	isRoot_ = isRoot;
-	setCoreParameter("IsRoot", isRoot);
+	setParameter("IsRoot", isRoot);
 }
 
 std::string DescribePropertyUserDetailRequest::getUser()const
@@ -99,6 +101,6 @@ std::string DescribePropertyUserDetailRequest::getUser()const
 void DescribePropertyUserDetailRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 

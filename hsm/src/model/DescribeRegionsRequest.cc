@@ -20,21 +20,12 @@ using AlibabaCloud::Hsm::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
-
-long DescribeRegionsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void DescribeRegionsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
 
 std::string DescribeRegionsRequest::getSourceIp()const
 {
@@ -44,6 +35,28 @@ std::string DescribeRegionsRequest::getSourceIp()const
 void DescribeRegionsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string DescribeRegionsRequest::getAcceptLanguage()const
+{
+	return acceptLanguage_;
+}
+
+void DescribeRegionsRequest::setAcceptLanguage(const std::string& acceptLanguage)
+{
+	acceptLanguage_ = acceptLanguage;
+	setParameter("AcceptLanguage", acceptLanguage);
+}
+
+std::string DescribeRegionsRequest::getLang()const
+{
+	return lang_;
+}
+
+void DescribeRegionsRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobListRequest;
 
 GetJobListRequest::GetJobListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobListRequest::~GetJobListRequest()
 {}
@@ -33,7 +35,7 @@ int GetJobListRequest::getPageNumber()const
 void GetJobListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool GetJobListRequest::getQueryAll()const
@@ -44,7 +46,7 @@ bool GetJobListRequest::getQueryAll()const
 void GetJobListRequest::setQueryAll(bool queryAll)
 {
 	queryAll_ = queryAll;
-	setCoreParameter("QueryAll", queryAll ? "true" : "false");
+	setParameter("QueryAll", queryAll ? "true" : "false");
 }
 
 std::string GetJobListRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string GetJobListRequest::getInstanceId()const
 void GetJobListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetJobListRequest::getJobGroupId()const
@@ -66,7 +68,7 @@ std::string GetJobListRequest::getJobGroupId()const
 void GetJobListRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 
 int GetJobListRequest::getPageSize()const
@@ -77,7 +79,7 @@ int GetJobListRequest::getPageSize()const
 void GetJobListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetJobListRequest::getStatus()const
@@ -88,6 +90,6 @@ int GetJobListRequest::getStatus()const
 void GetJobListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

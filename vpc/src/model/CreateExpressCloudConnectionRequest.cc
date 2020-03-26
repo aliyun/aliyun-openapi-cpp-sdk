@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateExpressCloudConnectionRequest;
 
 CreateExpressCloudConnectionRequest::CreateExpressCloudConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateExpressCloudConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateExpressCloudConnectionRequest::~CreateExpressCloudConnectionRequest()
 {}
@@ -33,7 +35,7 @@ long CreateExpressCloudConnectionRequest::getResourceOwnerId()const
 void CreateExpressCloudConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateExpressCloudConnectionRequest::getPortType()const
@@ -44,7 +46,7 @@ std::string CreateExpressCloudConnectionRequest::getPortType()const
 void CreateExpressCloudConnectionRequest::setPortType(const std::string& portType)
 {
 	portType_ = portType;
-	setCoreParameter("PortType", portType);
+	setParameter("PortType", portType);
 }
 
 std::string CreateExpressCloudConnectionRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateExpressCloudConnectionRequest::getDescription()const
 void CreateExpressCloudConnectionRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateExpressCloudConnectionRequest::getRedundantEccId()const
@@ -66,7 +68,7 @@ std::string CreateExpressCloudConnectionRequest::getRedundantEccId()const
 void CreateExpressCloudConnectionRequest::setRedundantEccId(const std::string& redundantEccId)
 {
 	redundantEccId_ = redundantEccId;
-	setCoreParameter("RedundantEccId", redundantEccId);
+	setParameter("RedundantEccId", redundantEccId);
 }
 
 std::string CreateExpressCloudConnectionRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateExpressCloudConnectionRequest::getRegionId()const
 void CreateExpressCloudConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateExpressCloudConnectionRequest::getPeerLocation()const
@@ -88,7 +90,7 @@ std::string CreateExpressCloudConnectionRequest::getPeerLocation()const
 void CreateExpressCloudConnectionRequest::setPeerLocation(const std::string& peerLocation)
 {
 	peerLocation_ = peerLocation;
-	setCoreParameter("PeerLocation", peerLocation);
+	setParameter("PeerLocation", peerLocation);
 }
 
 std::string CreateExpressCloudConnectionRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateExpressCloudConnectionRequest::getResourceOwnerAccount()const
 void CreateExpressCloudConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 int CreateExpressCloudConnectionRequest::getBandwidth()const
@@ -110,7 +112,7 @@ int CreateExpressCloudConnectionRequest::getBandwidth()const
 void CreateExpressCloudConnectionRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string CreateExpressCloudConnectionRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string CreateExpressCloudConnectionRequest::getOwnerAccount()const
 void CreateExpressCloudConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateExpressCloudConnectionRequest::getPeerCity()const
@@ -132,7 +134,7 @@ std::string CreateExpressCloudConnectionRequest::getPeerCity()const
 void CreateExpressCloudConnectionRequest::setPeerCity(const std::string& peerCity)
 {
 	peerCity_ = peerCity;
-	setCoreParameter("PeerCity", peerCity);
+	setParameter("PeerCity", peerCity);
 }
 
 std::string CreateExpressCloudConnectionRequest::getIDCardNo()const
@@ -143,7 +145,7 @@ std::string CreateExpressCloudConnectionRequest::getIDCardNo()const
 void CreateExpressCloudConnectionRequest::setIDCardNo(const std::string& iDCardNo)
 {
 	iDCardNo_ = iDCardNo;
-	setCoreParameter("IDCardNo", iDCardNo);
+	setParameter("IDCardNo", iDCardNo);
 }
 
 long CreateExpressCloudConnectionRequest::getOwnerId()const
@@ -154,7 +156,7 @@ long CreateExpressCloudConnectionRequest::getOwnerId()const
 void CreateExpressCloudConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateExpressCloudConnectionRequest::getContactMail()const
@@ -165,7 +167,7 @@ std::string CreateExpressCloudConnectionRequest::getContactMail()const
 void CreateExpressCloudConnectionRequest::setContactMail(const std::string& contactMail)
 {
 	contactMail_ = contactMail;
-	setCoreParameter("ContactMail", contactMail);
+	setParameter("ContactMail", contactMail);
 }
 
 std::string CreateExpressCloudConnectionRequest::getContactTel()const
@@ -176,7 +178,7 @@ std::string CreateExpressCloudConnectionRequest::getContactTel()const
 void CreateExpressCloudConnectionRequest::setContactTel(const std::string& contactTel)
 {
 	contactTel_ = contactTel;
-	setCoreParameter("ContactTel", contactTel);
+	setParameter("ContactTel", contactTel);
 }
 
 std::string CreateExpressCloudConnectionRequest::getIdcSP()const
@@ -187,7 +189,7 @@ std::string CreateExpressCloudConnectionRequest::getIdcSP()const
 void CreateExpressCloudConnectionRequest::setIdcSP(const std::string& idcSP)
 {
 	idcSP_ = idcSP;
-	setCoreParameter("IdcSP", idcSP);
+	setParameter("IdcSP", idcSP);
 }
 
 std::string CreateExpressCloudConnectionRequest::getName()const
@@ -198,6 +200,6 @@ std::string CreateExpressCloudConnectionRequest::getName()const
 void CreateExpressCloudConnectionRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

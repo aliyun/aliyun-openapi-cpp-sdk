@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitSubtitleJobRequest;
 
 SubmitSubtitleJobRequest::SubmitSubtitleJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitSubtitleJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSubtitleJobRequest::~SubmitSubtitleJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitSubtitleJobRequest::getResourceOwnerId()const
 void SubmitSubtitleJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSubtitleJobRequest::getOutputConfig()const
@@ -44,7 +46,7 @@ std::string SubmitSubtitleJobRequest::getOutputConfig()const
 void SubmitSubtitleJobRequest::setOutputConfig(const std::string& outputConfig)
 {
 	outputConfig_ = outputConfig;
-	setCoreParameter("OutputConfig", outputConfig);
+	setParameter("OutputConfig", outputConfig);
 }
 
 std::string SubmitSubtitleJobRequest::getInputConfig()const
@@ -55,7 +57,7 @@ std::string SubmitSubtitleJobRequest::getInputConfig()const
 void SubmitSubtitleJobRequest::setInputConfig(const std::string& inputConfig)
 {
 	inputConfig_ = inputConfig;
-	setCoreParameter("InputConfig", inputConfig);
+	setParameter("InputConfig", inputConfig);
 }
 
 std::string SubmitSubtitleJobRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SubmitSubtitleJobRequest::getAccessKeyId()const
 void SubmitSubtitleJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSubtitleJobRequest::getUserData()const
@@ -77,7 +79,7 @@ std::string SubmitSubtitleJobRequest::getUserData()const
 void SubmitSubtitleJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitSubtitleJobRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitSubtitleJobRequest::getResourceOwnerAccount()const
 void SubmitSubtitleJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitSubtitleJobRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SubmitSubtitleJobRequest::getOwnerAccount()const
 void SubmitSubtitleJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitSubtitleJobRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long SubmitSubtitleJobRequest::getOwnerId()const
 void SubmitSubtitleJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSubtitleJobRequest::getPipelineId()const
@@ -121,6 +123,6 @@ std::string SubmitSubtitleJobRequest::getPipelineId()const
 void SubmitSubtitleJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 

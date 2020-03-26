@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetEditingProjectRequest;
 
 GetEditingProjectRequest::GetEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEditingProjectRequest::~GetEditingProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetEditingProjectRequest::getResourceOwnerId()const
 void GetEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetEditingProjectRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetEditingProjectRequest::getResourceOwnerAccount()const
 void GetEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetEditingProjectRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string GetEditingProjectRequest::getOwnerAccount()const
 void GetEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetEditingProjectRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string GetEditingProjectRequest::getOwnerId()const
 void GetEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetEditingProjectRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string GetEditingProjectRequest::getAccessKeyId()const
 void GetEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetEditingProjectRequest::getProjectId()const
@@ -88,6 +90,6 @@ std::string GetEditingProjectRequest::getProjectId()const
 void GetEditingProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetAnalyzePlaceDataRequest;
 
 GetAnalyzePlaceDataRequest::GetAnalyzePlaceDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetAnalyzePlaceData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAnalyzePlaceDataRequest::~GetAnalyzePlaceDataRequest()
 {}
@@ -33,18 +35,7 @@ long GetAnalyzePlaceDataRequest::getEndUVCount()const
 void GetAnalyzePlaceDataRequest::setEndUVCount(long endUVCount)
 {
 	endUVCount_ = endUVCount;
-	setCoreParameter("EndUVCount", std::to_string(endUVCount));
-}
-
-long GetAnalyzePlaceDataRequest::getParentAmount()const
-{
-	return parentAmount_;
-}
-
-void GetAnalyzePlaceDataRequest::setParentAmount(long parentAmount)
-{
-	parentAmount_ = parentAmount;
-	setCoreParameter("ParentAmount", std::to_string(parentAmount));
+	setBodyParameter("EndUVCount", std::to_string(endUVCount));
 }
 
 std::string GetAnalyzePlaceDataRequest::getStartDate()const
@@ -55,18 +46,7 @@ std::string GetAnalyzePlaceDataRequest::getStartDate()const
 void GetAnalyzePlaceDataRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
-}
-
-long GetAnalyzePlaceDataRequest::getStartUVCount()const
-{
-	return startUVCount_;
-}
-
-void GetAnalyzePlaceDataRequest::setStartUVCount(long startUVCount)
-{
-	startUVCount_ = startUVCount;
-	setCoreParameter("StartUVCount", std::to_string(startUVCount));
+	setBodyParameter("StartDate", startDate);
 }
 
 long GetAnalyzePlaceDataRequest::getStoreId()const
@@ -77,7 +57,29 @@ long GetAnalyzePlaceDataRequest::getStoreId()const
 void GetAnalyzePlaceDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
+}
+
+long GetAnalyzePlaceDataRequest::getParentAmount()const
+{
+	return parentAmount_;
+}
+
+void GetAnalyzePlaceDataRequest::setParentAmount(long parentAmount)
+{
+	parentAmount_ = parentAmount;
+	setBodyParameter("ParentAmount", std::to_string(parentAmount));
+}
+
+long GetAnalyzePlaceDataRequest::getStartUVCount()const
+{
+	return startUVCount_;
+}
+
+void GetAnalyzePlaceDataRequest::setStartUVCount(long startUVCount)
+{
+	startUVCount_ = startUVCount;
+	setBodyParameter("StartUVCount", std::to_string(startUVCount));
 }
 
 std::string GetAnalyzePlaceDataRequest::getEndDate()const
@@ -88,7 +90,7 @@ std::string GetAnalyzePlaceDataRequest::getEndDate()const
 void GetAnalyzePlaceDataRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setBodyParameter("EndDate", endDate);
 }
 
 long GetAnalyzePlaceDataRequest::getLocationId()const
@@ -99,7 +101,7 @@ long GetAnalyzePlaceDataRequest::getLocationId()const
 void GetAnalyzePlaceDataRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
+	setBodyParameter("LocationId", std::to_string(locationId));
 }
 
 std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
@@ -110,6 +112,6 @@ std::string GetAnalyzePlaceDataRequest::getParentLocationIds()const
 void GetAnalyzePlaceDataRequest::setParentLocationIds(const std::string& parentLocationIds)
 {
 	parentLocationIds_ = parentLocationIds;
-	setCoreParameter("ParentLocationIds", parentLocationIds);
+	setBodyParameter("ParentLocationIds", parentLocationIds);
 }
 

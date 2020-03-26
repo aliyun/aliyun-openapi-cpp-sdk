@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DeleteFailedDrdsDBRequest;
 
 DeleteFailedDrdsDBRequest::DeleteFailedDrdsDBRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DeleteFailedDrdsDB")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFailedDrdsDBRequest::~DeleteFailedDrdsDBRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteFailedDrdsDBRequest::getDrdsInstanceId()const
 void DeleteFailedDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DeleteFailedDrdsDBRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteFailedDrdsDBRequest::getAccessKeyId()const
 void DeleteFailedDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteFailedDrdsDBRequest::getDbName()const
@@ -55,6 +57,6 @@ std::string DeleteFailedDrdsDBRequest::getDbName()const
 void DeleteFailedDrdsDBRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

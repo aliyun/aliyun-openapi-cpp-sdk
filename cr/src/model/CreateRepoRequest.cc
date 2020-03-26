@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CreateRepoRequest;
 
 CreateRepoRequest::CreateRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CreateRepoRequest::~CreateRepoRequest()
 {}

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListExecutionPlanInstancesRequest;
 
 ListExecutionPlanInstancesRequest::ListExecutionPlanInstancesRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListExecutionPlanInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListExecutionPlanInstancesRequest::~ListExecutionPlanInstancesRequest()
 {}
@@ -33,7 +35,7 @@ bool ListExecutionPlanInstancesRequest::getOnlyLastInstance()const
 void ListExecutionPlanInstancesRequest::setOnlyLastInstance(bool onlyLastInstance)
 {
 	onlyLastInstance_ = onlyLastInstance;
-	setCoreParameter("OnlyLastInstance", onlyLastInstance ? "true" : "false");
+	setParameter("OnlyLastInstance", onlyLastInstance ? "true" : "false");
 }
 
 long ListExecutionPlanInstancesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long ListExecutionPlanInstancesRequest::getResourceOwnerId()const
 void ListExecutionPlanInstancesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ListExecutionPlanInstancesRequest::getExecutionPlanIdList()const
@@ -55,8 +57,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getExecutionPlanIdLi
 void ListExecutionPlanInstancesRequest::setExecutionPlanIdList(const std::vector<std::string>& executionPlanIdList)
 {
 	executionPlanIdList_ = executionPlanIdList;
-	for(int i = 0; i!= executionPlanIdList.size(); i++)
-		setCoreParameter("ExecutionPlanIdList."+ std::to_string(i), executionPlanIdList.at(i));
+	for(int dep1 = 0; dep1!= executionPlanIdList.size(); dep1++) {
+		setParameter("ExecutionPlanIdList."+ std::to_string(dep1), executionPlanIdList.at(dep1));
+	}
 }
 
 std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
@@ -67,8 +70,9 @@ std::vector<std::string> ListExecutionPlanInstancesRequest::getStatusList()const
 void ListExecutionPlanInstancesRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 bool ListExecutionPlanInstancesRequest::getIsDesc()const
@@ -79,7 +83,7 @@ bool ListExecutionPlanInstancesRequest::getIsDesc()const
 void ListExecutionPlanInstancesRequest::setIsDesc(bool isDesc)
 {
 	isDesc_ = isDesc;
-	setCoreParameter("IsDesc", isDesc ? "true" : "false");
+	setParameter("IsDesc", isDesc ? "true" : "false");
 }
 
 int ListExecutionPlanInstancesRequest::getPageNumber()const
@@ -90,7 +94,7 @@ int ListExecutionPlanInstancesRequest::getPageNumber()const
 void ListExecutionPlanInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListExecutionPlanInstancesRequest::getAccessKeyId()const
@@ -101,7 +105,7 @@ std::string ListExecutionPlanInstancesRequest::getAccessKeyId()const
 void ListExecutionPlanInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListExecutionPlanInstancesRequest::getRegionId()const
@@ -112,7 +116,7 @@ std::string ListExecutionPlanInstancesRequest::getRegionId()const
 void ListExecutionPlanInstancesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListExecutionPlanInstancesRequest::getPageSize()const
@@ -123,6 +127,6 @@ int ListExecutionPlanInstancesRequest::getPageSize()const
 void ListExecutionPlanInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

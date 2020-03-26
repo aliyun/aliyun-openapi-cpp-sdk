@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateWebsiteInstanceStatusRequest;
 
 UpdateWebsiteInstanceStatusRequest::UpdateWebsiteInstanceStatusRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateWebsiteInstanceStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWebsiteInstanceStatusRequest::~UpdateWebsiteInstanceStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getInstanceId()const
 void UpdateWebsiteInstanceStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getSourceIp()const
 void UpdateWebsiteInstanceStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getLang()const
@@ -55,7 +57,7 @@ std::string UpdateWebsiteInstanceStatusRequest::getLang()const
 void UpdateWebsiteInstanceStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string UpdateWebsiteInstanceStatusRequest::getStatus()const
@@ -66,6 +68,6 @@ std::string UpdateWebsiteInstanceStatusRequest::getStatus()const
 void UpdateWebsiteInstanceStatusRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

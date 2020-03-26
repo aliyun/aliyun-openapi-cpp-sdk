@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CompleteBoardRecordRequest;
 
 CompleteBoardRecordRequest::CompleteBoardRecordRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CompleteBoardRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteBoardRecordRequest::~CompleteBoardRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string CompleteBoardRecordRequest::getEndTime()const
 void CompleteBoardRecordRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long CompleteBoardRecordRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long CompleteBoardRecordRequest::getOwnerId()const
 void CompleteBoardRecordRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CompleteBoardRecordRequest::getRecordId()const
@@ -55,7 +57,7 @@ std::string CompleteBoardRecordRequest::getRecordId()const
 void CompleteBoardRecordRequest::setRecordId(const std::string& recordId)
 {
 	recordId_ = recordId;
-	setCoreParameter("RecordId", recordId);
+	setParameter("RecordId", recordId);
 }
 
 std::string CompleteBoardRecordRequest::getAppId()const
@@ -66,6 +68,6 @@ std::string CompleteBoardRecordRequest::getAppId()const
 void CompleteBoardRecordRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

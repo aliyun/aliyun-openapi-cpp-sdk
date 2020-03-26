@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetScanProbeTimeSerRequest;
 
 GetScanProbeTimeSerRequest::GetScanProbeTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetScanProbeTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetScanProbeTimeSerRequest::~GetScanProbeTimeSerRequest()
 {}
@@ -33,7 +35,7 @@ long GetScanProbeTimeSerRequest::getApgroupId()const
 void GetScanProbeTimeSerRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 long GetScanProbeTimeSerRequest::getStart()const
@@ -44,7 +46,7 @@ long GetScanProbeTimeSerRequest::getStart()const
 void GetScanProbeTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setParameter("Start", std::to_string(start));
 }
 
 std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetScanProbeTimeSerRequest::getAccessKeyId()const
 void GetScanProbeTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetScanProbeTimeSerRequest::getZoomStart()const
@@ -66,7 +68,7 @@ long GetScanProbeTimeSerRequest::getZoomStart()const
 void GetScanProbeTimeSerRequest::setZoomStart(long zoomStart)
 {
 	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+	setParameter("ZoomStart", std::to_string(zoomStart));
 }
 
 long GetScanProbeTimeSerRequest::getCompanyId()const
@@ -77,7 +79,7 @@ long GetScanProbeTimeSerRequest::getCompanyId()const
 void GetScanProbeTimeSerRequest::setCompanyId(long companyId)
 {
 	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
+	setParameter("CompanyId", std::to_string(companyId));
 }
 
 long GetScanProbeTimeSerRequest::getZoomEnd()const
@@ -88,7 +90,7 @@ long GetScanProbeTimeSerRequest::getZoomEnd()const
 void GetScanProbeTimeSerRequest::setZoomEnd(long zoomEnd)
 {
 	zoomEnd_ = zoomEnd;
-	setCoreParameter("ZoomEnd", std::to_string(zoomEnd));
+	setParameter("ZoomEnd", std::to_string(zoomEnd));
 }
 
 long GetScanProbeTimeSerRequest::getEnd()const
@@ -99,6 +101,6 @@ long GetScanProbeTimeSerRequest::getEnd()const
 void GetScanProbeTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setParameter("End", std::to_string(end));
 }
 

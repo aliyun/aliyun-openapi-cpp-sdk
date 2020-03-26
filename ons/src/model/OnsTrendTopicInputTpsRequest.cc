@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTrendTopicInputTpsRequest;
 OnsTrendTopicInputTpsRequest::OnsTrendTopicInputTpsRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTrendTopicInputTps")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsTrendTopicInputTpsRequest::~OnsTrendTopicInputTpsRequest()

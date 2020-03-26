@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				std::string getDaysOfWeek()const;
-				void setDaysOfWeek(const std::string& daysOfWeek);
 				int getEndTime()const;
 				void setEndTime(int endTime);
 				int getStartTime()const;
 				void setStartTime(int startTime);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getDaysOfWeek()const;
+				void setDaysOfWeek(const std::string& daysOfWeek);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
             private:
 				long resourceOwnerId_;
-				std::string sourceIp_;
-				std::string daysOfWeek_;
 				int endTime_;
 				int startTime_;
+				std::string sourceIp_;
+				std::string daysOfWeek_;
 				std::string lang_;
 
 			};

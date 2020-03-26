@@ -83,6 +83,8 @@ void DescribeSuspEventsResult::parse(const std::string &payload)
 			suspEventsObject.alarmEventName = valueSuspEventsWarningSummary["AlarmEventName"].asString();
 		if(!valueSuspEventsWarningSummary["AlarmUniqueInfo"].isNull())
 			suspEventsObject.alarmUniqueInfo = valueSuspEventsWarningSummary["AlarmUniqueInfo"].asString();
+		if(!valueSuspEventsWarningSummary["Advanced"].isNull())
+			suspEventsObject.advanced = valueSuspEventsWarningSummary["Advanced"].asString() == "true";
 		suspEvents_.push_back(suspEventsObject);
 	}
 	if(!value["Count"].isNull())

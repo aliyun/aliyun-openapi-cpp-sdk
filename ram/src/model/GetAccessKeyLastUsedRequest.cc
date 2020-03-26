@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetAccessKeyLastUsedRequest;
 
 GetAccessKeyLastUsedRequest::GetAccessKeyLastUsedRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetAccessKeyLastUsed")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAccessKeyLastUsedRequest::~GetAccessKeyLastUsedRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetAccessKeyLastUsedRequest::getUserAccessKeyId()const
 void GetAccessKeyLastUsedRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setCoreParameter("UserAccessKeyId", userAccessKeyId);
+	setParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string GetAccessKeyLastUsedRequest::getUserName()const
@@ -44,6 +46,6 @@ std::string GetAccessKeyLastUsedRequest::getUserName()const
 void GetAccessKeyLastUsedRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

@@ -35,7 +35,7 @@ std::string ApplyMetricRuleTemplateRequest::getApplyMode()const
 void ApplyMetricRuleTemplateRequest::setApplyMode(const std::string& applyMode)
 {
 	applyMode_ = applyMode;
-	setCoreParameter("ApplyMode", applyMode);
+	setParameter("ApplyMode", applyMode);
 }
 
 std::string ApplyMetricRuleTemplateRequest::getWebhook()const
@@ -46,7 +46,7 @@ std::string ApplyMetricRuleTemplateRequest::getWebhook()const
 void ApplyMetricRuleTemplateRequest::setWebhook(const std::string& webhook)
 {
 	webhook_ = webhook;
-	setCoreParameter("Webhook", webhook);
+	setParameter("Webhook", webhook);
 }
 
 std::string ApplyMetricRuleTemplateRequest::getTemplateIds()const
@@ -57,7 +57,7 @@ std::string ApplyMetricRuleTemplateRequest::getTemplateIds()const
 void ApplyMetricRuleTemplateRequest::setTemplateIds(const std::string& templateIds)
 {
 	templateIds_ = templateIds;
-	setCoreParameter("TemplateIds", templateIds);
+	setParameter("TemplateIds", templateIds);
 }
 
 long ApplyMetricRuleTemplateRequest::getEnableEndTime()const
@@ -68,7 +68,7 @@ long ApplyMetricRuleTemplateRequest::getEnableEndTime()const
 void ApplyMetricRuleTemplateRequest::setEnableEndTime(long enableEndTime)
 {
 	enableEndTime_ = enableEndTime;
-	setCoreParameter("EnableEndTime", std::to_string(enableEndTime));
+	setParameter("EnableEndTime", std::to_string(enableEndTime));
 }
 
 long ApplyMetricRuleTemplateRequest::getGroupId()const
@@ -79,7 +79,7 @@ long ApplyMetricRuleTemplateRequest::getGroupId()const
 void ApplyMetricRuleTemplateRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 long ApplyMetricRuleTemplateRequest::getNotifyLevel()const
@@ -90,7 +90,7 @@ long ApplyMetricRuleTemplateRequest::getNotifyLevel()const
 void ApplyMetricRuleTemplateRequest::setNotifyLevel(long notifyLevel)
 {
 	notifyLevel_ = notifyLevel;
-	setCoreParameter("NotifyLevel", std::to_string(notifyLevel));
+	setParameter("NotifyLevel", std::to_string(notifyLevel));
 }
 
 long ApplyMetricRuleTemplateRequest::getEnableStartTime()const
@@ -101,7 +101,7 @@ long ApplyMetricRuleTemplateRequest::getEnableStartTime()const
 void ApplyMetricRuleTemplateRequest::setEnableStartTime(long enableStartTime)
 {
 	enableStartTime_ = enableStartTime;
-	setCoreParameter("EnableStartTime", std::to_string(enableStartTime));
+	setParameter("EnableStartTime", std::to_string(enableStartTime));
 }
 
 long ApplyMetricRuleTemplateRequest::getSilenceTime()const
@@ -112,6 +112,6 @@ long ApplyMetricRuleTemplateRequest::getSilenceTime()const
 void ApplyMetricRuleTemplateRequest::setSilenceTime(long silenceTime)
 {
 	silenceTime_ = silenceTime;
-	setCoreParameter("SilenceTime", std::to_string(silenceTime));
+	setParameter("SilenceTime", std::to_string(silenceTime));
 }
 

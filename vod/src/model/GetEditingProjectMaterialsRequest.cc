@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetEditingProjectMaterialsRequest;
 
 GetEditingProjectMaterialsRequest::GetEditingProjectMaterialsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetEditingProjectMaterials")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEditingProjectMaterialsRequest::~GetEditingProjectMaterialsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetEditingProjectMaterialsRequest::getResourceOwnerId()const
 void GetEditingProjectMaterialsRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getType()const
@@ -44,7 +46,7 @@ std::string GetEditingProjectMaterialsRequest::getType()const
 void GetEditingProjectMaterialsRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetEditingProjectMaterialsRequest::getAccessKeyId()const
 void GetEditingProjectMaterialsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getMaterialType()const
@@ -66,7 +68,7 @@ std::string GetEditingProjectMaterialsRequest::getMaterialType()const
 void GetEditingProjectMaterialsRequest::setMaterialType(const std::string& materialType)
 {
 	materialType_ = materialType;
-	setCoreParameter("MaterialType", materialType);
+	setParameter("MaterialType", materialType);
 }
 
 std::string GetEditingProjectMaterialsRequest::getProjectId()const
@@ -77,7 +79,7 @@ std::string GetEditingProjectMaterialsRequest::getProjectId()const
 void GetEditingProjectMaterialsRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string GetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string GetEditingProjectMaterialsRequest::getResourceOwnerAccount()const
 void GetEditingProjectMaterialsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetEditingProjectMaterialsRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string GetEditingProjectMaterialsRequest::getOwnerAccount()const
 void GetEditingProjectMaterialsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetEditingProjectMaterialsRequest::getOwnerId()const
@@ -110,6 +112,6 @@ std::string GetEditingProjectMaterialsRequest::getOwnerId()const
 void GetEditingProjectMaterialsRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 

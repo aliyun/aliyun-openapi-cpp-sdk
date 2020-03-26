@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BusinessInfoRequest;
 
 BusinessInfoRequest::BusinessInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BusinessInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BusinessInfoRequest::~BusinessInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string BusinessInfoRequest::getAccessKeyId()const
 void BusinessInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long BusinessInfoRequest::getBid()const
@@ -44,6 +46,6 @@ long BusinessInfoRequest::getBid()const
 void BusinessInfoRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

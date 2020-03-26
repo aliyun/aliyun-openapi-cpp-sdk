@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainUsageDataRequest;
 
 DescribeVodDomainUsageDataRequest::DescribeVodDomainUsageDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainUsageData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainUsageDataRequest::~DescribeVodDomainUsageDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainUsageDataRequest::getStartTime()const
 void DescribeVodDomainUsageDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getType()const
@@ -44,7 +46,7 @@ std::string DescribeVodDomainUsageDataRequest::getType()const
 void DescribeVodDomainUsageDataRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getArea()const
@@ -55,7 +57,7 @@ std::string DescribeVodDomainUsageDataRequest::getArea()const
 void DescribeVodDomainUsageDataRequest::setArea(const std::string& area)
 {
 	area_ = area;
-	setCoreParameter("Area", area);
+	setParameter("Area", area);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeVodDomainUsageDataRequest::getDomainName()const
 void DescribeVodDomainUsageDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeVodDomainUsageDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeVodDomainUsageDataRequest::getEndTime()const
 void DescribeVodDomainUsageDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodDomainUsageDataRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeVodDomainUsageDataRequest::getOwnerId()const
 void DescribeVodDomainUsageDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodDomainUsageDataRequest::getField()const
@@ -99,6 +101,6 @@ std::string DescribeVodDomainUsageDataRequest::getField()const
 void DescribeVodDomainUsageDataRequest::setField(const std::string& field)
 {
 	field_ = field;
-	setCoreParameter("Field", field);
+	setParameter("Field", field);
 }
 

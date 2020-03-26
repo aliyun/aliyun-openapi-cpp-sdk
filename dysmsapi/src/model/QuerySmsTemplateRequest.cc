@@ -35,7 +35,7 @@ long QuerySmsTemplateRequest::getResourceOwnerId()const
 void QuerySmsTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QuerySmsTemplateRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string QuerySmsTemplateRequest::getResourceOwnerAccount()const
 void QuerySmsTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long QuerySmsTemplateRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long QuerySmsTemplateRequest::getOwnerId()const
 void QuerySmsTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QuerySmsTemplateRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string QuerySmsTemplateRequest::getAccessKeyId()const
 void QuerySmsTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QuerySmsTemplateRequest::getTemplateCode()const
@@ -79,6 +79,6 @@ std::string QuerySmsTemplateRequest::getTemplateCode()const
 void QuerySmsTemplateRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
-	setCoreParameter("TemplateCode", templateCode);
+	setParameter("TemplateCode", templateCode);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::ListRuleRequest;
 
 ListRuleRequest::ListRuleRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "ListRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRuleRequest::~ListRuleRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRuleRequest::getSearchName()const
 void ListRuleRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 int ListRuleRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int ListRuleRequest::getCurrentPage()const
 void ListRuleRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string ListRuleRequest::getAccessKeyId()const
@@ -55,7 +57,18 @@ std::string ListRuleRequest::getAccessKeyId()const
 void ListRuleRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListRuleRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ListRuleRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string ListRuleRequest::getIotInstanceId()const
@@ -66,7 +79,7 @@ std::string ListRuleRequest::getIotInstanceId()const
 void ListRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int ListRuleRequest::getPageSize()const
@@ -77,6 +90,6 @@ int ListRuleRequest::getPageSize()const
 void ListRuleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

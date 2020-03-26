@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeThreatTypeLinesRequest;
 
 DescribeThreatTypeLinesRequest::DescribeThreatTypeLinesRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeThreatTypeLines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeThreatTypeLinesRequest::~DescribeThreatTypeLinesRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeThreatTypeLinesRequest::getApiType()const
 void DescribeThreatTypeLinesRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setParameter("ApiType", std::to_string(apiType));
 }
 
 std::string DescribeThreatTypeLinesRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeThreatTypeLinesRequest::getSourceIp()const
 void DescribeThreatTypeLinesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

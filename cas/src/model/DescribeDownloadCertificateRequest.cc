@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDownloadCertificateRequest;
 
 DescribeDownloadCertificateRequest::DescribeDownloadCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDownloadCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDownloadCertificateRequest::~DescribeDownloadCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDownloadCertificateRequest::getServerType()const
 void DescribeDownloadCertificateRequest::setServerType(const std::string& serverType)
 {
 	serverType_ = serverType;
-	setCoreParameter("ServerType", serverType);
+	setParameter("ServerType", serverType);
 }
 
 long DescribeDownloadCertificateRequest::getCertificateId()const
@@ -44,7 +46,7 @@ long DescribeDownloadCertificateRequest::getCertificateId()const
 void DescribeDownloadCertificateRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DescribeDownloadCertificateRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeDownloadCertificateRequest::getResourceGroupId()const
 void DescribeDownloadCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDownloadCertificateRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeDownloadCertificateRequest::getSourceIp()const
 void DescribeDownloadCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDownloadCertificateRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeDownloadCertificateRequest::getLang()const
 void DescribeDownloadCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiQpsDataRequest;
 
 DescribeApiQpsDataRequest::DescribeApiQpsDataRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiQpsData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiQpsDataRequest::~DescribeApiQpsDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiQpsDataRequest::getGroupId()const
 void DescribeApiQpsDataRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiQpsDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribeApiQpsDataRequest::getEndTime()const
 void DescribeApiQpsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeApiQpsDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ std::string DescribeApiQpsDataRequest::getStartTime()const
 void DescribeApiQpsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeApiQpsDataRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeApiQpsDataRequest::getAccessKeyId()const
 void DescribeApiQpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiQpsDataRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string DescribeApiQpsDataRequest::getSecurityToken()const
 void DescribeApiQpsDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiQpsDataRequest::getApiId()const
@@ -88,6 +90,6 @@ std::string DescribeApiQpsDataRequest::getApiId()const
 void DescribeApiQpsDataRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

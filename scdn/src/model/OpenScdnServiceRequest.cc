@@ -35,7 +35,7 @@ std::string OpenScdnServiceRequest::getStartDate()const
 void OpenScdnServiceRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 int OpenScdnServiceRequest::getCcProtection()const
@@ -46,7 +46,7 @@ int OpenScdnServiceRequest::getCcProtection()const
 void OpenScdnServiceRequest::setCcProtection(int ccProtection)
 {
 	ccProtection_ = ccProtection;
-	setCoreParameter("CcProtection", std::to_string(ccProtection));
+	setParameter("CcProtection", std::to_string(ccProtection));
 }
 
 std::string OpenScdnServiceRequest::getSecurityToken()const
@@ -57,7 +57,7 @@ std::string OpenScdnServiceRequest::getSecurityToken()const
 void OpenScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string OpenScdnServiceRequest::getProtectType()const
@@ -68,7 +68,7 @@ std::string OpenScdnServiceRequest::getProtectType()const
 void OpenScdnServiceRequest::setProtectType(const std::string& protectType)
 {
 	protectType_ = protectType;
-	setCoreParameter("ProtectType", protectType);
+	setParameter("ProtectType", protectType);
 }
 
 int OpenScdnServiceRequest::getDDoSBasic()const
@@ -79,7 +79,7 @@ int OpenScdnServiceRequest::getDDoSBasic()const
 void OpenScdnServiceRequest::setDDoSBasic(int dDoSBasic)
 {
 	dDoSBasic_ = dDoSBasic;
-	setCoreParameter("DDoSBasic", std::to_string(dDoSBasic));
+	setParameter("DDoSBasic", std::to_string(dDoSBasic));
 }
 
 int OpenScdnServiceRequest::getBandwidth()const
@@ -90,7 +90,7 @@ int OpenScdnServiceRequest::getBandwidth()const
 void OpenScdnServiceRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 int OpenScdnServiceRequest::getDomainCount()const
@@ -101,7 +101,7 @@ int OpenScdnServiceRequest::getDomainCount()const
 void OpenScdnServiceRequest::setDomainCount(int domainCount)
 {
 	domainCount_ = domainCount;
-	setCoreParameter("DomainCount", std::to_string(domainCount));
+	setParameter("DomainCount", std::to_string(domainCount));
 }
 
 long OpenScdnServiceRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long OpenScdnServiceRequest::getOwnerId()const
 void OpenScdnServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string OpenScdnServiceRequest::getEndDate()const
@@ -123,7 +123,7 @@ std::string OpenScdnServiceRequest::getEndDate()const
 void OpenScdnServiceRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 int OpenScdnServiceRequest::getElasticProtection()const
@@ -134,6 +134,6 @@ int OpenScdnServiceRequest::getElasticProtection()const
 void OpenScdnServiceRequest::setElasticProtection(int elasticProtection)
 {
 	elasticProtection_ = elasticProtection;
-	setCoreParameter("ElasticProtection", std::to_string(elasticProtection));
+	setParameter("ElasticProtection", std::to_string(elasticProtection));
 }
 

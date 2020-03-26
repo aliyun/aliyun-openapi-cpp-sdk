@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsBlockListRequest;
 
 DescribeLiveStreamsBlockListRequest::DescribeLiveStreamsBlockListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsBlockList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsBlockListRequest::~DescribeLiveStreamsBlockListRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeLiveStreamsBlockListRequest::getPageNum()const
 void DescribeLiveStreamsBlockListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveStreamsBlockListRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DescribeLiveStreamsBlockListRequest::getSecurityToken()const
 void DescribeLiveStreamsBlockListRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeLiveStreamsBlockListRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeLiveStreamsBlockListRequest::getPageSize()const
 void DescribeLiveStreamsBlockListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveStreamsBlockListRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveStreamsBlockListRequest::getDomainName()const
 void DescribeLiveStreamsBlockListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamsBlockListRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long DescribeLiveStreamsBlockListRequest::getOwnerId()const
 void DescribeLiveStreamsBlockListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

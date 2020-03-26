@@ -35,7 +35,7 @@ std::string CreateMonitorAgentProcessRequest::getProcessName()const
 void CreateMonitorAgentProcessRequest::setProcessName(const std::string& processName)
 {
 	processName_ = processName;
-	setCoreParameter("ProcessName", processName);
+	setParameter("ProcessName", processName);
 }
 
 std::string CreateMonitorAgentProcessRequest::getInstanceId()const
@@ -46,7 +46,7 @@ std::string CreateMonitorAgentProcessRequest::getInstanceId()const
 void CreateMonitorAgentProcessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateMonitorAgentProcessRequest::getProcessUser()const
@@ -57,6 +57,6 @@ std::string CreateMonitorAgentProcessRequest::getProcessUser()const
 void CreateMonitorAgentProcessRequest::setProcessUser(const std::string& processUser)
 {
 	processUser_ = processUser;
-	setCoreParameter("ProcessUser", processUser);
+	setParameter("ProcessUser", processUser);
 }
 

@@ -22,7 +22,7 @@ ListServicesRequest::ListServicesRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/services");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListServicesRequest::~ListServicesRequest()

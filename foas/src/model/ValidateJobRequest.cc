@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ValidateJobRequest;
 
 ValidateJobRequest::ValidateJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/validate");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ValidateJobRequest::~ValidateJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string ValidateJobRequest::getProjectName()const
 void ValidateJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string ValidateJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string ValidateJobRequest::getRegionId()const
 void ValidateJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ValidateJobRequest::getJobName()const
@@ -55,6 +58,6 @@ std::string ValidateJobRequest::getJobName()const
 void ValidateJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

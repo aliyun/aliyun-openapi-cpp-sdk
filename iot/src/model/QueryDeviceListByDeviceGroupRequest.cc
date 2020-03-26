@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceListByDeviceGroupRequest;
 
 QueryDeviceListByDeviceGroupRequest::QueryDeviceListByDeviceGroupRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceListByDeviceGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceListByDeviceGroupRequest::~QueryDeviceListByDeviceGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
 void QueryDeviceListByDeviceGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
 void QueryDeviceListByDeviceGroupRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const
 void QueryDeviceListByDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceListByDeviceGroupRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceListByDeviceGroupRequest::getIotInstanceId()const
 void QueryDeviceListByDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDeviceListByDeviceGroupRequest::getPageSize()const
@@ -77,6 +79,6 @@ int QueryDeviceListByDeviceGroupRequest::getPageSize()const
 void QueryDeviceListByDeviceGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

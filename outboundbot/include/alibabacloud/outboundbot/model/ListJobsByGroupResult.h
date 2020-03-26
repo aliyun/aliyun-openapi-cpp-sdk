@@ -55,8 +55,8 @@ namespace AlibabaCloud
 						struct SummaryItem
 						{
 							std::string jobGroupId;
-							std::string taskId;
 							std::string category;
+							std::string taskId;
 							std::string conversationDetailId;
 							std::string content;
 							std::string summaryId;
@@ -71,8 +71,8 @@ namespace AlibabaCloud
 						std::string jobGroupId;
 						std::vector<Job::Contact> contacts;
 						std::string referenceId;
-						int systemPriority;
 						std::string failureReason;
+						int systemPriority;
 						std::vector<Job::SummaryItem> summary;
 						std::string jobId;
 						std::vector<std::string> callingNumbers;

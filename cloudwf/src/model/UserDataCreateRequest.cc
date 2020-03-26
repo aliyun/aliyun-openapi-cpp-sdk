@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataCreateRequest;
 
 UserDataCreateRequest::UserDataCreateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataCreate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataCreateRequest::~UserDataCreateRequest()
 {}
@@ -33,7 +35,7 @@ std::string UserDataCreateRequest::getType()const
 void UserDataCreateRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string UserDataCreateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UserDataCreateRequest::getAccessKeyId()const
 void UserDataCreateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UserDataCreateRequest::getUploadFile()const
@@ -55,7 +57,7 @@ std::string UserDataCreateRequest::getUploadFile()const
 void UserDataCreateRequest::setUploadFile(const std::string& uploadFile)
 {
 	uploadFile_ = uploadFile;
-	setCoreParameter("UploadFile", uploadFile);
+	setParameter("UploadFile", uploadFile);
 }
 
 std::string UserDataCreateRequest::getName()const
@@ -66,7 +68,7 @@ std::string UserDataCreateRequest::getName()const
 void UserDataCreateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long UserDataCreateRequest::getBid()const
@@ -77,6 +79,6 @@ long UserDataCreateRequest::getBid()const
 void UserDataCreateRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

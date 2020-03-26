@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteCenBandwidthPackageRequest;
 
 DeleteCenBandwidthPackageRequest::DeleteCenBandwidthPackageRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteCenBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCenBandwidthPackageRequest::~DeleteCenBandwidthPackageRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCenBandwidthPackageRequest::getResourceOwnerId()const
 void DeleteCenBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCenBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteCenBandwidthPackageRequest::getResourceOwnerAccount()const
 void DeleteCenBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCenBandwidthPackageRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteCenBandwidthPackageRequest::getOwnerAccount()const
 void DeleteCenBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCenBandwidthPackageRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteCenBandwidthPackageRequest::getOwnerId()const
 void DeleteCenBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCenBandwidthPackageRequest::getCenBandwidthPackageId()const
@@ -77,6 +79,6 @@ std::string DeleteCenBandwidthPackageRequest::getCenBandwidthPackageId()const
 void DeleteCenBandwidthPackageRequest::setCenBandwidthPackageId(const std::string& cenBandwidthPackageId)
 {
 	cenBandwidthPackageId_ = cenBandwidthPackageId;
-	setCoreParameter("CenBandwidthPackageId", cenBandwidthPackageId);
+	setParameter("CenBandwidthPackageId", cenBandwidthPackageId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryDeviceInfoRequest;
 
 QueryDeviceInfoRequest::QueryDeviceInfoRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryDeviceInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceInfoRequest::~QueryDeviceInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceInfoRequest::getDeviceId()const
 void QueryDeviceInfoRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 std::string QueryDeviceInfoRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceInfoRequest::getAccessKeyId()const
 void QueryDeviceInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryDeviceInfoRequest::getAppKey()const
@@ -55,6 +57,6 @@ long QueryDeviceInfoRequest::getAppKey()const
 void QueryDeviceInfoRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

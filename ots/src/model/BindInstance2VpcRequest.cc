@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::BindInstance2VpcRequest;
 
 BindInstance2VpcRequest::BindInstance2VpcRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "BindInstance2Vpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindInstance2VpcRequest::~BindInstance2VpcRequest()
 {}
-
-std::string BindInstance2VpcRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void BindInstance2VpcRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long BindInstance2VpcRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long BindInstance2VpcRequest::getResourceOwnerId()const
 void BindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string BindInstance2VpcRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BindInstance2VpcRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindInstance2VpcRequest::getVirtualSwitchId()const
@@ -55,7 +57,7 @@ std::string BindInstance2VpcRequest::getVirtualSwitchId()const
 void BindInstance2VpcRequest::setVirtualSwitchId(const std::string& virtualSwitchId)
 {
 	virtualSwitchId_ = virtualSwitchId;
-	setCoreParameter("VirtualSwitchId", virtualSwitchId);
+	setParameter("VirtualSwitchId", virtualSwitchId);
 }
 
 std::string BindInstance2VpcRequest::getRegionNo()const
@@ -66,7 +68,7 @@ std::string BindInstance2VpcRequest::getRegionNo()const
 void BindInstance2VpcRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
+	setParameter("RegionNo", regionNo);
 }
 
 std::string BindInstance2VpcRequest::getNetwork()const
@@ -77,7 +79,7 @@ std::string BindInstance2VpcRequest::getNetwork()const
 void BindInstance2VpcRequest::setNetwork(const std::string& network)
 {
 	network_ = network;
-	setCoreParameter("Network", network);
+	setParameter("Network", network);
 }
 
 std::string BindInstance2VpcRequest::getInstanceVpcName()const
@@ -88,7 +90,7 @@ std::string BindInstance2VpcRequest::getInstanceVpcName()const
 void BindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
 {
 	instanceVpcName_ = instanceVpcName;
-	setCoreParameter("InstanceVpcName", instanceVpcName);
+	setParameter("InstanceVpcName", instanceVpcName);
 }
 
 std::string BindInstance2VpcRequest::getInstanceName()const
@@ -99,7 +101,7 @@ std::string BindInstance2VpcRequest::getInstanceName()const
 void BindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 
 std::string BindInstance2VpcRequest::getVpcId()const
@@ -110,6 +112,6 @@ std::string BindInstance2VpcRequest::getVpcId()const
 void BindInstance2VpcRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

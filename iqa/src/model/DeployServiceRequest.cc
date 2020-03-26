@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::DeployServiceRequest;
 
 DeployServiceRequest::DeployServiceRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "DeployService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeployServiceRequest::~DeployServiceRequest()
 {}
@@ -33,6 +35,6 @@ std::string DeployServiceRequest::getProjectId()const
 void DeployServiceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

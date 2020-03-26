@@ -35,6 +35,6 @@ std::string GetMeetingRequest::getMeetingUUID()const
 void GetMeetingRequest::setMeetingUUID(const std::string& meetingUUID)
 {
 	meetingUUID_ = meetingUUID;
-	setCoreParameter("MeetingUUID", meetingUUID);
+	setBodyParameter("MeetingUUID", meetingUUID);
 }
 

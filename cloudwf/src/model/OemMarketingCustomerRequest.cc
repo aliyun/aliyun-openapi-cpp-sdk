@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemMarketingCustomerRequest;
 
 OemMarketingCustomerRequest::OemMarketingCustomerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemMarketingCustomer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemMarketingCustomerRequest::~OemMarketingCustomerRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemMarketingCustomerRequest::getAccessKeyId()const
 void OemMarketingCustomerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemMarketingCustomerRequest::getBid()const
@@ -44,6 +46,6 @@ long OemMarketingCustomerRequest::getBid()const
 void OemMarketingCustomerRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

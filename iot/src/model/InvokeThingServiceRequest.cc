@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::InvokeThingServiceRequest;
 
 InvokeThingServiceRequest::InvokeThingServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "InvokeThingService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InvokeThingServiceRequest::~InvokeThingServiceRequest()
 {}
@@ -33,7 +35,7 @@ std::string InvokeThingServiceRequest::getIdentifier()const
 void InvokeThingServiceRequest::setIdentifier(const std::string& identifier)
 {
 	identifier_ = identifier;
-	setCoreParameter("Identifier", identifier);
+	setParameter("Identifier", identifier);
 }
 
 std::string InvokeThingServiceRequest::getProductKey()const
@@ -44,7 +46,7 @@ std::string InvokeThingServiceRequest::getProductKey()const
 void InvokeThingServiceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string InvokeThingServiceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string InvokeThingServiceRequest::getAccessKeyId()const
 void InvokeThingServiceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string InvokeThingServiceRequest::getArgs()const
@@ -66,7 +68,7 @@ std::string InvokeThingServiceRequest::getArgs()const
 void InvokeThingServiceRequest::setArgs(const std::string& args)
 {
 	args_ = args;
-	setCoreParameter("Args", args);
+	setParameter("Args", args);
 }
 
 std::string InvokeThingServiceRequest::getIotId()const
@@ -77,7 +79,7 @@ std::string InvokeThingServiceRequest::getIotId()const
 void InvokeThingServiceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string InvokeThingServiceRequest::getIotInstanceId()const
@@ -88,7 +90,7 @@ std::string InvokeThingServiceRequest::getIotInstanceId()const
 void InvokeThingServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string InvokeThingServiceRequest::getDeviceName()const
@@ -99,6 +101,6 @@ std::string InvokeThingServiceRequest::getDeviceName()const
 void InvokeThingServiceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

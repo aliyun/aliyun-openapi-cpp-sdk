@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteSkillGroupRequest;
 
 DeleteSkillGroupRequest::DeleteSkillGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteSkillGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSkillGroupRequest::~DeleteSkillGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteSkillGroupRequest::getInstanceId()const
 void DeleteSkillGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSkillGroupRequest::getSkillGroupId()const
@@ -44,7 +46,7 @@ std::string DeleteSkillGroupRequest::getSkillGroupId()const
 void DeleteSkillGroupRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 std::string DeleteSkillGroupRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string DeleteSkillGroupRequest::getAccessKeyId()const
 void DeleteSkillGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

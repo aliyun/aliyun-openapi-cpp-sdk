@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::UploadNotaryDataRequest;
 
 UploadNotaryDataRequest::UploadNotaryDataRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "UploadNotaryData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadNotaryDataRequest::~UploadNotaryDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadNotaryDataRequest::getUploadContext()const
 void UploadNotaryDataRequest::setUploadContext(const std::string& uploadContext)
 {
 	uploadContext_ = uploadContext;
-	setCoreParameter("UploadContext", uploadContext);
+	setParameter("UploadContext", uploadContext);
 }
 
 std::string UploadNotaryDataRequest::getBizOrderNo()const
@@ -44,7 +46,7 @@ std::string UploadNotaryDataRequest::getBizOrderNo()const
 void UploadNotaryDataRequest::setBizOrderNo(const std::string& bizOrderNo)
 {
 	bizOrderNo_ = bizOrderNo;
-	setCoreParameter("BizOrderNo", bizOrderNo);
+	setParameter("BizOrderNo", bizOrderNo);
 }
 
 int UploadNotaryDataRequest::getNotaryType()const
@@ -55,6 +57,6 @@ int UploadNotaryDataRequest::getNotaryType()const
 void UploadNotaryDataRequest::setNotaryType(int notaryType)
 {
 	notaryType_ = notaryType;
-	setCoreParameter("NotaryType", std::to_string(notaryType));
+	setParameter("NotaryType", std::to_string(notaryType));
 }
 

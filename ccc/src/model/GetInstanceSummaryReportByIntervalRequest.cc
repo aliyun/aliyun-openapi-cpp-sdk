@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceSummaryReportByIntervalRequest;
 
 GetInstanceSummaryReportByIntervalRequest::GetInstanceSummaryReportByIntervalRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceSummaryReportByInterval")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceSummaryReportByIntervalRequest::~GetInstanceSummaryReportByIntervalRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetInstanceSummaryReportByIntervalRequest::getEndTime()const
 void GetInstanceSummaryReportByIntervalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string GetInstanceSummaryReportByIntervalRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string GetInstanceSummaryReportByIntervalRequest::getStartTime()const
 void GetInstanceSummaryReportByIntervalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int GetInstanceSummaryReportByIntervalRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int GetInstanceSummaryReportByIntervalRequest::getPageNumber()const
 void GetInstanceSummaryReportByIntervalRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetInstanceSummaryReportByIntervalRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GetInstanceSummaryReportByIntervalRequest::getAccessKeyId()const
 void GetInstanceSummaryReportByIntervalRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetInstanceSummaryReportByIntervalRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string GetInstanceSummaryReportByIntervalRequest::getInstanceId()const
 void GetInstanceSummaryReportByIntervalRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int GetInstanceSummaryReportByIntervalRequest::getPageSize()const
@@ -88,7 +90,7 @@ int GetInstanceSummaryReportByIntervalRequest::getPageSize()const
 void GetInstanceSummaryReportByIntervalRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetInstanceSummaryReportByIntervalRequest::getInterval()const
@@ -99,6 +101,6 @@ std::string GetInstanceSummaryReportByIntervalRequest::getInterval()const
 void GetInstanceSummaryReportByIntervalRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::CreateAccountRequest;
 
 CreateAccountRequest::CreateAccountRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "CreateAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccountRequest::~CreateAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAccountRequest::getAccountDescription()const
 void CreateAccountRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	setParameter("AccountDescription", accountDescription);
 }
 
 std::string CreateAccountRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateAccountRequest::getAccessKeyId()const
 void CreateAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateAccountRequest::getAccountName()const
@@ -55,7 +57,7 @@ std::string CreateAccountRequest::getAccountName()const
 void CreateAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string CreateAccountRequest::getDBInstanceId()const
@@ -66,7 +68,7 @@ std::string CreateAccountRequest::getDBInstanceId()const
 void CreateAccountRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 long CreateAccountRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long CreateAccountRequest::getOwnerId()const
 void CreateAccountRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateAccountRequest::getAccountPassword()const
@@ -88,7 +90,7 @@ std::string CreateAccountRequest::getAccountPassword()const
 void CreateAccountRequest::setAccountPassword(const std::string& accountPassword)
 {
 	accountPassword_ = accountPassword;
-	setCoreParameter("AccountPassword", accountPassword);
+	setParameter("AccountPassword", accountPassword);
 }
 
 std::string CreateAccountRequest::getDatabaseName()const
@@ -99,6 +101,6 @@ std::string CreateAccountRequest::getDatabaseName()const
 void CreateAccountRequest::setDatabaseName(const std::string& databaseName)
 {
 	databaseName_ = databaseName;
-	setCoreParameter("DatabaseName", databaseName);
+	setParameter("DatabaseName", databaseName);
 }
 

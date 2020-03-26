@@ -20,22 +20,12 @@ using AlibabaCloud::Iot::Model::CreateTopicRouteTableRequest;
 
 CreateTopicRouteTableRequest::CreateTopicRouteTableRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateTopicRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateTopicRouteTableRequest::~CreateTopicRouteTableRequest()
 {}
-
-std::vector<std::string> CreateTopicRouteTableRequest::getDstTopic()const
-{
-	return dstTopic_;
-}
-
-void CreateTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
-{
-	dstTopic_ = dstTopic;
-	for(int i = 0; i!= dstTopic.size(); i++)
-		setCoreParameter("DstTopic."+ std::to_string(i), dstTopic.at(i));
-}
 
 std::string CreateTopicRouteTableRequest::getAccessKeyId()const
 {
@@ -45,7 +35,7 @@ std::string CreateTopicRouteTableRequest::getAccessKeyId()const
 void CreateTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateTopicRouteTableRequest::getRegionId()const
@@ -56,7 +46,7 @@ std::string CreateTopicRouteTableRequest::getRegionId()const
 void CreateTopicRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateTopicRouteTableRequest::getIotInstanceId()const
@@ -67,7 +57,42 @@ std::string CreateTopicRouteTableRequest::getIotInstanceId()const
 void CreateTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::vector<std::string> CreateTopicRouteTableRequest::getDstTopic()const
+{
+	return dstTopic_;
+}
+
+void CreateTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& dstTopic)
+{
+	dstTopic_ = dstTopic;
+	for(int dep1 = 0; dep1!= dstTopic.size(); dep1++) {
+		setParameter("DstTopic."+ std::to_string(dep1), dstTopic.at(dep1));
+	}
+}
+
+std::string CreateTopicRouteTableRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateTopicRouteTableRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateTopicRouteTableRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateTopicRouteTableRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string CreateTopicRouteTableRequest::getSrcTopic()const
@@ -78,6 +103,6 @@ std::string CreateTopicRouteTableRequest::getSrcTopic()const
 void CreateTopicRouteTableRequest::setSrcTopic(const std::string& srcTopic)
 {
 	srcTopic_ = srcTopic;
-	setCoreParameter("SrcTopic", srcTopic);
+	setParameter("SrcTopic", srcTopic);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderTransferRequest;
 
 SaveBatchTaskForCreatingOrderTransferRequest::SaveBatchTaskForCreatingOrderTransferRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderTransfer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderTransferRequest::~SaveBatchTaskForCreatingOrderTransferRequest()
 {}
@@ -33,14 +35,13 @@ std::vector<SaveBatchTaskForCreatingOrderTransferRequest::OrderTransferParam> Sa
 void SaveBatchTaskForCreatingOrderTransferRequest::setOrderTransferParam(const std::vector<OrderTransferParam>& orderTransferParam)
 {
 	orderTransferParam_ = orderTransferParam;
-	int i = 0;
-	for(int i = 0; i!= orderTransferParam.size(); i++)	{
-		auto obj = orderTransferParam.at(i);
-		std::string str ="OrderTransferParam."+ std::to_string(i);
-		setCoreParameter(str + ".PermitPremiumTransfer", obj.permitPremiumTransfer ? "true" : "false");
-		setCoreParameter(str + ".AuthorizationCode", obj.authorizationCode);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
+	for(int dep1 = 0; dep1!= orderTransferParam.size(); dep1++) {
+		auto orderTransferParamObj = orderTransferParam.at(dep1);
+		std::string orderTransferParamObjStr = "OrderTransferParam." + std::to_string(dep1 + 1);
+		setParameter(orderTransferParamObjStr + ".PermitPremiumTransfer", orderTransferParamObj.permitPremiumTransfer ? "true" : "false");
+		setParameter(orderTransferParamObjStr + ".AuthorizationCode", orderTransferParamObj.authorizationCode);
+		setParameter(orderTransferParamObjStr + ".DomainName", orderTransferParamObj.domainName);
+		setParameter(orderTransferParamObjStr + ".RegistrantProfileId", std::to_string(orderTransferParamObj.registrantProfileId));
 	}
 }
 
@@ -52,7 +53,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 bool SaveBatchTaskForCreatingOrderTransferRequest::getUseCoupon()const
@@ -63,7 +64,7 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getPromotionNo()const
@@ -74,7 +75,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getUserClientIp()const
@@ -85,7 +86,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const
@@ -96,7 +97,7 @@ std::string SaveBatchTaskForCreatingOrderTransferRequest::getLang()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForCreatingOrderTransferRequest::getUsePromotion()const
@@ -107,6 +108,6 @@ bool SaveBatchTaskForCreatingOrderTransferRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderTransferRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

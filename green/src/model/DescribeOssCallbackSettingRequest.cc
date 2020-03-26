@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssCallbackSettingRequest;
 
 DescribeOssCallbackSettingRequest::DescribeOssCallbackSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssCallbackSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssCallbackSettingRequest::~DescribeOssCallbackSettingRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeOssCallbackSettingRequest::getSourceIp()const
 void DescribeOssCallbackSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

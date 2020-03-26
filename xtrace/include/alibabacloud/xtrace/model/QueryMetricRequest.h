@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_XTRACE_EXPORT QueryMetricRequest : public RpcServiceRequest
 			{
+			public:
 				struct Filters
 				{
 					std::string value;

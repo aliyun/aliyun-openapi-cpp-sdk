@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveSnapshotDetectPornConfigRequest;
 
 DescribeLiveSnapshotDetectPornConfigRequest::DescribeLiveSnapshotDetectPornConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveSnapshotDetectPornConfigRequest::~DescribeLiveSnapshotDetectPornConfigRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeLiveSnapshotDetectPornConfigRequest::getPageNum()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getAppName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getSecurityToken()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeLiveSnapshotDetectPornConfigRequest::getPageSize()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
@@ -77,7 +79,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getOrder()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
@@ -88,7 +90,7 @@ std::string DescribeLiveSnapshotDetectPornConfigRequest::getDomainName()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DescribeLiveSnapshotDetectPornConfigRequest::getOwnerId()const
 void DescribeLiveSnapshotDetectPornConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

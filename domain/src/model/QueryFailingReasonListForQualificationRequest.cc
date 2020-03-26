@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryFailingReasonListForQualificationRequest
 
 QueryFailingReasonListForQualificationRequest::QueryFailingReasonListForQualificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryFailingReasonListForQualification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFailingReasonListForQualificationRequest::~QueryFailingReasonListForQualificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryFailingReasonListForQualificationRequest::getQualificationType(
 void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string& qualificationType)
 {
 	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
+	setParameter("QualificationType", qualificationType);
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string QueryFailingReasonListForQualificationRequest::getInstanceId()const
 void QueryFailingReasonListForQualificationRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryFailingReasonListForQualificationRequest::getUserClientIp()cons
 void QueryFailingReasonListForQualificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 int QueryFailingReasonListForQualificationRequest::getLimit()const
@@ -66,7 +68,7 @@ int QueryFailingReasonListForQualificationRequest::getLimit()const
 void QueryFailingReasonListForQualificationRequest::setLimit(int limit)
 {
 	limit_ = limit;
-	setCoreParameter("Limit", std::to_string(limit));
+	setParameter("Limit", std::to_string(limit));
 }
 
 std::string QueryFailingReasonListForQualificationRequest::getLang()const
@@ -77,6 +79,6 @@ std::string QueryFailingReasonListForQualificationRequest::getLang()const
 void QueryFailingReasonListForQualificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

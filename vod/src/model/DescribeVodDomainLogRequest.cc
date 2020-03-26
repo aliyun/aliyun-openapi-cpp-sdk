@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodDomainLogRequest;
 
 DescribeVodDomainLogRequest::DescribeVodDomainLogRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodDomainLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodDomainLogRequest::~DescribeVodDomainLogRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodDomainLogRequest::getStartTime()const
 void DescribeVodDomainLogRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeVodDomainLogRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long DescribeVodDomainLogRequest::getPageNumber()const
 void DescribeVodDomainLogRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 long DescribeVodDomainLogRequest::getPageSize()const
@@ -55,7 +57,7 @@ long DescribeVodDomainLogRequest::getPageSize()const
 void DescribeVodDomainLogRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVodDomainLogRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeVodDomainLogRequest::getDomainName()const
 void DescribeVodDomainLogRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeVodDomainLogRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeVodDomainLogRequest::getEndTime()const
 void DescribeVodDomainLogRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodDomainLogRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeVodDomainLogRequest::getOwnerId()const
 void DescribeVodDomainLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

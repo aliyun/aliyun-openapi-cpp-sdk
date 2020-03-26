@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_SMARTAG_EXPORT UnicomSignConfirmRequest : public RpcServiceRequest
 			{
+			public:
 				struct TmsOrder
 				{
 					std::string tmsCode;

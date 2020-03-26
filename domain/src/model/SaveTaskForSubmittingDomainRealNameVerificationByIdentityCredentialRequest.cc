@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveTaskForSubmittingDomainRealNameVerificati
 
 SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::~SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredentialType(const std::string& identityCredentialType)
 {
 	identityCredentialType_ = identityCredentialType;
-	setCoreParameter("IdentityCredentialType", identityCredentialType);
+	setParameter("IdentityCredentialType", identityCredentialType);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getIdentityCredential()const
@@ -44,7 +46,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredential(const std::string& identityCredential)
 {
 	identityCredential_ = identityCredential;
-	setCoreParameter("IdentityCredential", identityCredential);
+	setBodyParameter("IdentityCredential", identityCredential);
 }
 
 std::vector<std::string> SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getDomainName()const
@@ -55,8 +57,9 @@ std::vector<std::string> SaveTaskForSubmittingDomainRealNameVerificationByIdenti
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getUserClientIp()const
@@ -67,7 +70,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getLang()const
@@ -78,7 +81,7 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::getIdentityCredentialNo()const
@@ -89,6 +92,6 @@ std::string SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialR
 void SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest::setIdentityCredentialNo(const std::string& identityCredentialNo)
 {
 	identityCredentialNo_ = identityCredentialNo;
-	setCoreParameter("IdentityCredentialNo", identityCredentialNo);
+	setParameter("IdentityCredentialNo", identityCredentialNo);
 }
 

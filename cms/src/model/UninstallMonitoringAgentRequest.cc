@@ -35,6 +35,6 @@ std::string UninstallMonitoringAgentRequest::getInstanceId()const
 void UninstallMonitoringAgentRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

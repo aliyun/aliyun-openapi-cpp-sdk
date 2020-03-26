@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteBizTypeRequest;
 
 DeleteBizTypeRequest::DeleteBizTypeRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteBizType")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteBizTypeRequest::~DeleteBizTypeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteBizTypeRequest::getSourceIp()const
 void DeleteBizTypeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteBizTypeRequest::getBizTypeName()const
@@ -44,6 +46,6 @@ std::string DeleteBizTypeRequest::getBizTypeName()const
 void DeleteBizTypeRequest::setBizTypeName(const std::string& bizTypeName)
 {
 	bizTypeName_ = bizTypeName;
-	setCoreParameter("BizTypeName", bizTypeName);
+	setParameter("BizTypeName", bizTypeName);
 }
 

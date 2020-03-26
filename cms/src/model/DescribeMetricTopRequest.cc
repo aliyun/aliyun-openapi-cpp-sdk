@@ -35,7 +35,7 @@ std::string DescribeMetricTopRequest::getExpress()const
 void DescribeMetricTopRequest::setExpress(const std::string& express)
 {
 	express_ = express;
-	setCoreParameter("Express", express);
+	setParameter("Express", express);
 }
 
 std::string DescribeMetricTopRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeMetricTopRequest::getStartTime()const
 void DescribeMetricTopRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeMetricTopRequest::getMetricName()const
@@ -57,7 +57,7 @@ std::string DescribeMetricTopRequest::getMetricName()const
 void DescribeMetricTopRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 
 std::string DescribeMetricTopRequest::getPeriod()const
@@ -68,7 +68,7 @@ std::string DescribeMetricTopRequest::getPeriod()const
 void DescribeMetricTopRequest::setPeriod(const std::string& period)
 {
 	period_ = period;
-	setCoreParameter("Period", period);
+	setParameter("Period", period);
 }
 
 std::string DescribeMetricTopRequest::getLength()const
@@ -79,7 +79,7 @@ std::string DescribeMetricTopRequest::getLength()const
 void DescribeMetricTopRequest::setLength(const std::string& length)
 {
 	length_ = length;
-	setCoreParameter("Length", length);
+	setParameter("Length", length);
 }
 
 std::string DescribeMetricTopRequest::getEndTime()const
@@ -90,7 +90,7 @@ std::string DescribeMetricTopRequest::getEndTime()const
 void DescribeMetricTopRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeMetricTopRequest::getOrderby()const
@@ -101,7 +101,7 @@ std::string DescribeMetricTopRequest::getOrderby()const
 void DescribeMetricTopRequest::setOrderby(const std::string& orderby)
 {
 	orderby_ = orderby;
-	setCoreParameter("Orderby", orderby);
+	setParameter("Orderby", orderby);
 }
 
 std::string DescribeMetricTopRequest::getOrderDesc()const
@@ -112,7 +112,7 @@ std::string DescribeMetricTopRequest::getOrderDesc()const
 void DescribeMetricTopRequest::setOrderDesc(const std::string& orderDesc)
 {
 	orderDesc_ = orderDesc;
-	setCoreParameter("OrderDesc", orderDesc);
+	setParameter("OrderDesc", orderDesc);
 }
 
 std::string DescribeMetricTopRequest::get_Namespace()const
@@ -123,7 +123,7 @@ std::string DescribeMetricTopRequest::get_Namespace()const
 void DescribeMetricTopRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 std::string DescribeMetricTopRequest::getDimensions()const
@@ -134,6 +134,6 @@ std::string DescribeMetricTopRequest::getDimensions()const
 void DescribeMetricTopRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setParameter("Dimensions", dimensions);
 }
 

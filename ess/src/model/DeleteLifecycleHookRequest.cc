@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteLifecycleHookRequest;
 
 DeleteLifecycleHookRequest::DeleteLifecycleHookRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteLifecycleHook")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLifecycleHookRequest::~DeleteLifecycleHookRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLifecycleHookRequest::getScalingGroupId()const
 void DeleteLifecycleHookRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 std::string DeleteLifecycleHookRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteLifecycleHookRequest::getAccessKeyId()const
 void DeleteLifecycleHookRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteLifecycleHookRequest::getLifecycleHookName()const
@@ -55,7 +57,7 @@ std::string DeleteLifecycleHookRequest::getLifecycleHookName()const
 void DeleteLifecycleHookRequest::setLifecycleHookName(const std::string& lifecycleHookName)
 {
 	lifecycleHookName_ = lifecycleHookName;
-	setCoreParameter("LifecycleHookName", lifecycleHookName);
+	setParameter("LifecycleHookName", lifecycleHookName);
 }
 
 std::string DeleteLifecycleHookRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteLifecycleHookRequest::getResourceOwnerAccount()const
 void DeleteLifecycleHookRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteLifecycleHookRequest::getLifecycleHookId()const
@@ -77,7 +79,7 @@ std::string DeleteLifecycleHookRequest::getLifecycleHookId()const
 void DeleteLifecycleHookRequest::setLifecycleHookId(const std::string& lifecycleHookId)
 {
 	lifecycleHookId_ = lifecycleHookId;
-	setCoreParameter("LifecycleHookId", lifecycleHookId);
+	setParameter("LifecycleHookId", lifecycleHookId);
 }
 
 std::string DeleteLifecycleHookRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteLifecycleHookRequest::getOwnerAccount()const
 void DeleteLifecycleHookRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteLifecycleHookRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteLifecycleHookRequest::getOwnerId()const
 void DeleteLifecycleHookRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

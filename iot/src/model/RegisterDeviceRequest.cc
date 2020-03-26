@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::RegisterDeviceRequest;
 
 RegisterDeviceRequest::RegisterDeviceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "RegisterDevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RegisterDeviceRequest::~RegisterDeviceRequest()
 {}
@@ -33,7 +35,7 @@ std::string RegisterDeviceRequest::getPinCode()const
 void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
 {
 	pinCode_ = pinCode;
-	setCoreParameter("PinCode", pinCode);
+	setParameter("PinCode", pinCode);
 }
 
 std::string RegisterDeviceRequest::getProductKey()const
@@ -44,7 +46,7 @@ std::string RegisterDeviceRequest::getProductKey()const
 void RegisterDeviceRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string RegisterDeviceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string RegisterDeviceRequest::getAccessKeyId()const
 void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RegisterDeviceRequest::getDevEui()const
@@ -66,7 +68,7 @@ std::string RegisterDeviceRequest::getDevEui()const
 void RegisterDeviceRequest::setDevEui(const std::string& devEui)
 {
 	devEui_ = devEui;
-	setCoreParameter("DevEui", devEui);
+	setParameter("DevEui", devEui);
 }
 
 std::string RegisterDeviceRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string RegisterDeviceRequest::getIotInstanceId()const
 void RegisterDeviceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string RegisterDeviceRequest::getNickname()const
@@ -88,7 +90,7 @@ std::string RegisterDeviceRequest::getNickname()const
 void RegisterDeviceRequest::setNickname(const std::string& nickname)
 {
 	nickname_ = nickname;
-	setCoreParameter("Nickname", nickname);
+	setParameter("Nickname", nickname);
 }
 
 std::string RegisterDeviceRequest::getDeviceName()const
@@ -99,6 +101,6 @@ std::string RegisterDeviceRequest::getDeviceName()const
 void RegisterDeviceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

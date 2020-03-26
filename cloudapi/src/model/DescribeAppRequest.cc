@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeAppRequest;
 
 DescribeAppRequest::DescribeAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAppRequest::~DescribeAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAppRequest::getAccessKeyId()const
 void DescribeAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAppRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DescribeAppRequest::getSecurityToken()const
 void DescribeAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DescribeAppRequest::getAppId()const
@@ -55,6 +57,6 @@ long DescribeAppRequest::getAppId()const
 void DescribeAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 

@@ -22,7 +22,7 @@ DeleteResourceRequest::DeleteResourceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/resources/[cluster_id]/[resource_name]");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteResourceRequest::~DeleteResourceRequest()

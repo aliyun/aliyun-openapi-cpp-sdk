@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteApiRequest;
 
 DeleteApiRequest::DeleteApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApiRequest::~DeleteApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteApiRequest::getGroupId()const
 void DeleteApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteApiRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteApiRequest::getAccessKeyId()const
 void DeleteApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteApiRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DeleteApiRequest::getSecurityToken()const
 void DeleteApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteApiRequest::getApiId()const
@@ -66,6 +68,6 @@ std::string DeleteApiRequest::getApiId()const
 void DeleteApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

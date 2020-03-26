@@ -61,6 +61,10 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DeleteEventRuleTargetsResult.h
 	include/alibabacloud/cms/model/DeleteEventRulesRequest.h
 	include/alibabacloud/cms/model/DeleteEventRulesResult.h
+	include/alibabacloud/cms/model/DeleteExporterOutputRequest.h
+	include/alibabacloud/cms/model/DeleteExporterOutputResult.h
+	include/alibabacloud/cms/model/DeleteExporterRuleRequest.h
+	include/alibabacloud/cms/model/DeleteExporterRuleResult.h
 	include/alibabacloud/cms/model/DeleteGroupMonitoringAgentProcessRequest.h
 	include/alibabacloud/cms/model/DeleteGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/DeleteHostAvailabilityRequest.h
@@ -113,6 +117,12 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/DescribeEventRuleListResult.h
 	include/alibabacloud/cms/model/DescribeEventRuleTargetListRequest.h
 	include/alibabacloud/cms/model/DescribeEventRuleTargetListResult.h
+	include/alibabacloud/cms/model/DescribeExporterOutputListRequest.h
+	include/alibabacloud/cms/model/DescribeExporterOutputListResult.h
+	include/alibabacloud/cms/model/DescribeExporterRuleListRequest.h
+	include/alibabacloud/cms/model/DescribeExporterRuleListResult.h
+	include/alibabacloud/cms/model/DescribeFolderListRequest.h
+	include/alibabacloud/cms/model/DescribeFolderListResult.h
 	include/alibabacloud/cms/model/DescribeGroupMonitoringAgentProcessRequest.h
 	include/alibabacloud/cms/model/DescribeGroupMonitoringAgentProcessResult.h
 	include/alibabacloud/cms/model/DescribeHostAvailabilityListRequest.h
@@ -239,6 +249,10 @@ set(cms_public_header_model
 	include/alibabacloud/cms/model/PutEventRuleResult.h
 	include/alibabacloud/cms/model/PutEventRuleTargetsRequest.h
 	include/alibabacloud/cms/model/PutEventRuleTargetsResult.h
+	include/alibabacloud/cms/model/PutExporterOutputRequest.h
+	include/alibabacloud/cms/model/PutExporterOutputResult.h
+	include/alibabacloud/cms/model/PutExporterRuleRequest.h
+	include/alibabacloud/cms/model/PutExporterRuleResult.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleRequest.h
 	include/alibabacloud/cms/model/PutGroupMetricRuleResult.h
 	include/alibabacloud/cms/model/PutMetricRuleTargetsRequest.h
@@ -300,6 +314,10 @@ set(cms_src
 	src/model/DeleteEventRuleTargetsResult.cc
 	src/model/DeleteEventRulesRequest.cc
 	src/model/DeleteEventRulesResult.cc
+	src/model/DeleteExporterOutputRequest.cc
+	src/model/DeleteExporterOutputResult.cc
+	src/model/DeleteExporterRuleRequest.cc
+	src/model/DeleteExporterRuleResult.cc
 	src/model/DeleteGroupMonitoringAgentProcessRequest.cc
 	src/model/DeleteGroupMonitoringAgentProcessResult.cc
 	src/model/DeleteHostAvailabilityRequest.cc
@@ -352,6 +370,12 @@ set(cms_src
 	src/model/DescribeEventRuleListResult.cc
 	src/model/DescribeEventRuleTargetListRequest.cc
 	src/model/DescribeEventRuleTargetListResult.cc
+	src/model/DescribeExporterOutputListRequest.cc
+	src/model/DescribeExporterOutputListResult.cc
+	src/model/DescribeExporterRuleListRequest.cc
+	src/model/DescribeExporterRuleListResult.cc
+	src/model/DescribeFolderListRequest.cc
+	src/model/DescribeFolderListResult.cc
 	src/model/DescribeGroupMonitoringAgentProcessRequest.cc
 	src/model/DescribeGroupMonitoringAgentProcessResult.cc
 	src/model/DescribeHostAvailabilityListRequest.cc
@@ -478,6 +502,10 @@ set(cms_src
 	src/model/PutEventRuleResult.cc
 	src/model/PutEventRuleTargetsRequest.cc
 	src/model/PutEventRuleTargetsResult.cc
+	src/model/PutExporterOutputRequest.cc
+	src/model/PutExporterOutputResult.cc
+	src/model/PutExporterRuleRequest.cc
+	src/model/PutExporterRuleResult.cc
 	src/model/PutGroupMetricRuleRequest.cc
 	src/model/PutGroupMetricRuleResult.cc
 	src/model/PutMetricRuleTargetsRequest.cc

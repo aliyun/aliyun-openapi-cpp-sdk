@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRealtimeDeliveryAccRequest;
 
 DescribeLiveRealtimeDeliveryAccRequest::DescribeLiveRealtimeDeliveryAccRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRealtimeDeliveryAccRequest::~DescribeLiveRealtimeDeliveryAccRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveRealtimeDeliveryAccRequest::getProject()const
 void DescribeLiveRealtimeDeliveryAccRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 std::string DescribeLiveRealtimeDeliveryAccRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeLiveRealtimeDeliveryAccRequest::getStartTime()const
 void DescribeLiveRealtimeDeliveryAccRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveRealtimeDeliveryAccRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeLiveRealtimeDeliveryAccRequest::getEndTime()const
 void DescribeLiveRealtimeDeliveryAccRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveRealtimeDeliveryAccRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeLiveRealtimeDeliveryAccRequest::getOwnerId()const
 void DescribeLiveRealtimeDeliveryAccRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveRealtimeDeliveryAccRequest::getInterval()const
@@ -77,7 +79,7 @@ std::string DescribeLiveRealtimeDeliveryAccRequest::getInterval()const
 void DescribeLiveRealtimeDeliveryAccRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 
 std::string DescribeLiveRealtimeDeliveryAccRequest::getLogStore()const
@@ -88,6 +90,6 @@ std::string DescribeLiveRealtimeDeliveryAccRequest::getLogStore()const
 void DescribeLiveRealtimeDeliveryAccRequest::setLogStore(const std::string& logStore)
 {
 	logStore_ = logStore;
-	setCoreParameter("LogStore", logStore);
+	setParameter("LogStore", logStore);
 }
 

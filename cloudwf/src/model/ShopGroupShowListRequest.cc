@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopGroupShowListRequest;
 
 ShopGroupShowListRequest::ShopGroupShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopGroupShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopGroupShowListRequest::~ShopGroupShowListRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopGroupShowListRequest::getAccessKeyId()const
 void ShopGroupShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ShopGroupShowListRequest::getPage()const
@@ -44,7 +46,7 @@ int ShopGroupShowListRequest::getPage()const
 void ShopGroupShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 long ShopGroupShowListRequest::getBid()const
@@ -55,7 +57,7 @@ long ShopGroupShowListRequest::getBid()const
 void ShopGroupShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 
 int ShopGroupShowListRequest::getPer()const
@@ -66,6 +68,6 @@ int ShopGroupShowListRequest::getPer()const
 void ShopGroupShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

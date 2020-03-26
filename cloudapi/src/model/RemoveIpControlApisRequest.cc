@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::RemoveIpControlApisRequest;
 
 RemoveIpControlApisRequest::RemoveIpControlApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "RemoveIpControlApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveIpControlApisRequest::~RemoveIpControlApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveIpControlApisRequest::getStageName()const
 void RemoveIpControlApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string RemoveIpControlApisRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string RemoveIpControlApisRequest::getGroupId()const
 void RemoveIpControlApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string RemoveIpControlApisRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string RemoveIpControlApisRequest::getAccessKeyId()const
 void RemoveIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveIpControlApisRequest::getIpControlId()const
@@ -66,7 +68,7 @@ std::string RemoveIpControlApisRequest::getIpControlId()const
 void RemoveIpControlApisRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string RemoveIpControlApisRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string RemoveIpControlApisRequest::getSecurityToken()const
 void RemoveIpControlApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RemoveIpControlApisRequest::getApiIds()const
@@ -88,6 +90,6 @@ std::string RemoveIpControlApisRequest::getApiIds()const
 void RemoveIpControlApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

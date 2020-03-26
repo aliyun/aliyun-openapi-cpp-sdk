@@ -35,6 +35,6 @@ std::string QueryMonthlyBillRequest::getBillingCycle()const
 void QueryMonthlyBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setParameter("BillingCycle", billingCycle);
 }
 

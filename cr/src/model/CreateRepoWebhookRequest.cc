@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::CreateRepoWebhookRequest;
 
 CreateRepoWebhookRequest::CreateRepoWebhookRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/webhooks");
+	setMethod(HttpRequest::Method::Put);
+}
 
 CreateRepoWebhookRequest::~CreateRepoWebhookRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreateRepoWebhookRequest::getRepoNamespace()const
 void CreateRepoWebhookRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string CreateRepoWebhookRequest::getRepoName()const
@@ -44,6 +47,6 @@ std::string CreateRepoWebhookRequest::getRepoName()const
 void CreateRepoWebhookRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

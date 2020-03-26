@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListJobsByGroupRequest;
 
 ListJobsByGroupRequest::ListJobsByGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListJobsByGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListJobsByGroupRequest::~ListJobsByGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListJobsByGroupRequest::getJobStatus()const
 void ListJobsByGroupRequest::setJobStatus(const std::string& jobStatus)
 {
 	jobStatus_ = jobStatus;
-	setCoreParameter("JobStatus", jobStatus);
+	setParameter("JobStatus", jobStatus);
 }
 
 int ListJobsByGroupRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListJobsByGroupRequest::getPageNumber()const
 void ListJobsByGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListJobsByGroupRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListJobsByGroupRequest::getInstanceId()const
 void ListJobsByGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListJobsByGroupRequest::getJobFailureReason()const
@@ -66,7 +68,7 @@ std::string ListJobsByGroupRequest::getJobFailureReason()const
 void ListJobsByGroupRequest::setJobFailureReason(const std::string& jobFailureReason)
 {
 	jobFailureReason_ = jobFailureReason;
-	setCoreParameter("JobFailureReason", jobFailureReason);
+	setParameter("JobFailureReason", jobFailureReason);
 }
 
 std::string ListJobsByGroupRequest::getJobGroupId()const
@@ -77,7 +79,7 @@ std::string ListJobsByGroupRequest::getJobGroupId()const
 void ListJobsByGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 
 int ListJobsByGroupRequest::getPageSize()const
@@ -88,6 +90,6 @@ int ListJobsByGroupRequest::getPageSize()const
 void ListJobsByGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

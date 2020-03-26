@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateCpmcPunishFeedBackRequest;
 
 CreateCpmcPunishFeedBackRequest::CreateCpmcPunishFeedBackRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateCpmcPunishFeedBackRequest::~CreateCpmcPunishFeedBackRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateCpmcPunishFeedBackRequest::getSrcIP()const
 void CreateCpmcPunishFeedBackRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 int CreateCpmcPunishFeedBackRequest::getDstPort()const
@@ -44,7 +46,7 @@ int CreateCpmcPunishFeedBackRequest::getDstPort()const
 void CreateCpmcPunishFeedBackRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setParameter("DstPort", std::to_string(dstPort));
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getProtocolName()const
@@ -55,7 +57,7 @@ std::string CreateCpmcPunishFeedBackRequest::getProtocolName()const
 void CreateCpmcPunishFeedBackRequest::setProtocolName(const std::string& protocolName)
 {
 	protocolName_ = protocolName;
-	setCoreParameter("ProtocolName", protocolName);
+	setParameter("ProtocolName", protocolName);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getPunishType()const
@@ -66,7 +68,7 @@ std::string CreateCpmcPunishFeedBackRequest::getPunishType()const
 void CreateCpmcPunishFeedBackRequest::setPunishType(const std::string& punishType)
 {
 	punishType_ = punishType;
-	setCoreParameter("PunishType", punishType);
+	setParameter("PunishType", punishType);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getSourceCode()const
@@ -77,7 +79,7 @@ std::string CreateCpmcPunishFeedBackRequest::getSourceCode()const
 void CreateCpmcPunishFeedBackRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 int CreateCpmcPunishFeedBackRequest::getFeedBack()const
@@ -88,7 +90,7 @@ int CreateCpmcPunishFeedBackRequest::getFeedBack()const
 void CreateCpmcPunishFeedBackRequest::setFeedBack(int feedBack)
 {
 	feedBack_ = feedBack;
-	setCoreParameter("FeedBack", std::to_string(feedBack));
+	setParameter("FeedBack", std::to_string(feedBack));
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getSourceIp()const
@@ -99,7 +101,7 @@ std::string CreateCpmcPunishFeedBackRequest::getSourceIp()const
 void CreateCpmcPunishFeedBackRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getDstIP()const
@@ -110,7 +112,7 @@ std::string CreateCpmcPunishFeedBackRequest::getDstIP()const
 void CreateCpmcPunishFeedBackRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setParameter("DstIP", dstIP);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getLang()const
@@ -121,7 +123,7 @@ std::string CreateCpmcPunishFeedBackRequest::getLang()const
 void CreateCpmcPunishFeedBackRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateCpmcPunishFeedBackRequest::getGmtCreate()const
@@ -132,7 +134,7 @@ std::string CreateCpmcPunishFeedBackRequest::getGmtCreate()const
 void CreateCpmcPunishFeedBackRequest::setGmtCreate(const std::string& gmtCreate)
 {
 	gmtCreate_ = gmtCreate;
-	setCoreParameter("GmtCreate", gmtCreate);
+	setParameter("GmtCreate", gmtCreate);
 }
 
 int CreateCpmcPunishFeedBackRequest::getSrcPort()const
@@ -143,6 +145,6 @@ int CreateCpmcPunishFeedBackRequest::getSrcPort()const
 void CreateCpmcPunishFeedBackRequest::setSrcPort(int srcPort)
 {
 	srcPort_ = srcPort;
-	setCoreParameter("SrcPort", std::to_string(srcPort));
+	setParameter("SrcPort", std::to_string(srcPort));
 }
 

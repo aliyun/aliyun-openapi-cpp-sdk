@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeUploadInfoRequest;
 
 DescribeUploadInfoRequest::DescribeUploadInfoRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeUploadInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUploadInfoRequest::~DescribeUploadInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUploadInfoRequest::getBiz()const
 void DescribeUploadInfoRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
-	setCoreParameter("Biz", biz);
+	setParameter("Biz", biz);
 }
 
 std::string DescribeUploadInfoRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeUploadInfoRequest::getSourceIp()const
 void DescribeUploadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUploadInfoRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeUploadInfoRequest::getLang()const
 void DescribeUploadInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

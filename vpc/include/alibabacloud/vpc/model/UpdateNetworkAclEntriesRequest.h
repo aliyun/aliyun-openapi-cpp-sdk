@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT UpdateNetworkAclEntriesRequest : public RpcServiceRequest
 			{
+			public:
 				struct EgressAclEntries
 				{
 					std::string networkAclEntryName;

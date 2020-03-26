@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupStatesRequest;
 
 ListSkillGroupStatesRequest::ListSkillGroupStatesRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupStates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupStatesRequest::~ListSkillGroupStatesRequest()
 {}
@@ -33,7 +35,7 @@ int ListSkillGroupStatesRequest::getPageNumber()const
 void ListSkillGroupStatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListSkillGroupStatesRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListSkillGroupStatesRequest::getAccessKeyId()const
 void ListSkillGroupStatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSkillGroupStatesRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListSkillGroupStatesRequest::getInstanceId()const
 void ListSkillGroupStatesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupStatesRequest::getSkillGroupIds()const
@@ -66,7 +68,7 @@ std::string ListSkillGroupStatesRequest::getSkillGroupIds()const
 void ListSkillGroupStatesRequest::setSkillGroupIds(const std::string& skillGroupIds)
 {
 	skillGroupIds_ = skillGroupIds;
-	setCoreParameter("SkillGroupIds", skillGroupIds);
+	setParameter("SkillGroupIds", skillGroupIds);
 }
 
 int ListSkillGroupStatesRequest::getPageSize()const
@@ -77,6 +79,6 @@ int ListSkillGroupStatesRequest::getPageSize()const
 void ListSkillGroupStatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

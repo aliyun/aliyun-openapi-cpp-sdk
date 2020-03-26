@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetSchedulesRequest;
 
 TaobaoFilmGetSchedulesRequest::TaobaoFilmGetSchedulesRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetSchedules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetSchedulesRequest::~TaobaoFilmGetSchedulesRequest()
 {}
@@ -33,7 +35,7 @@ long TaobaoFilmGetSchedulesRequest::getCinemaId()const
 void TaobaoFilmGetSchedulesRequest::setCinemaId(long cinemaId)
 {
 	cinemaId_ = cinemaId;
-	setCoreParameter("CinemaId", std::to_string(cinemaId));
+	setParameter("CinemaId", std::to_string(cinemaId));
 }
 
 std::string TaobaoFilmGetSchedulesRequest::getParamsJson()const
@@ -44,6 +46,6 @@ std::string TaobaoFilmGetSchedulesRequest::getParamsJson()const
 void TaobaoFilmGetSchedulesRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::PubRequest;
 
 PubRequest::PubRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "Pub")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PubRequest::~PubRequest()
 {}
@@ -33,7 +35,7 @@ std::string PubRequest::getTopicFullName()const
 void PubRequest::setTopicFullName(const std::string& topicFullName)
 {
 	topicFullName_ = topicFullName;
-	setCoreParameter("TopicFullName", topicFullName);
+	setParameter("TopicFullName", topicFullName);
 }
 
 std::string PubRequest::getMessageContent()const
@@ -44,7 +46,7 @@ std::string PubRequest::getMessageContent()const
 void PubRequest::setMessageContent(const std::string& messageContent)
 {
 	messageContent_ = messageContent;
-	setCoreParameter("MessageContent", messageContent);
+	setParameter("MessageContent", messageContent);
 }
 
 std::string PubRequest::getProductKey()const
@@ -55,7 +57,7 @@ std::string PubRequest::getProductKey()const
 void PubRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string PubRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string PubRequest::getAccessKeyId()const
 void PubRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int PubRequest::getQos()const
@@ -77,7 +79,7 @@ int PubRequest::getQos()const
 void PubRequest::setQos(int qos)
 {
 	qos_ = qos;
-	setCoreParameter("Qos", std::to_string(qos));
+	setParameter("Qos", std::to_string(qos));
 }
 
 std::string PubRequest::getIotInstanceId()const
@@ -88,6 +90,6 @@ std::string PubRequest::getIotInstanceId()const
 void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

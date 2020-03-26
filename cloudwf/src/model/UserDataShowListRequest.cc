@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UserDataShowListRequest;
 
 UserDataShowListRequest::UserDataShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UserDataShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UserDataShowListRequest::~UserDataShowListRequest()
 {}
@@ -33,7 +35,7 @@ long UserDataShowListRequest::getIid()const
 void UserDataShowListRequest::setIid(long iid)
 {
 	iid_ = iid;
-	setCoreParameter("Iid", std::to_string(iid));
+	setParameter("Iid", std::to_string(iid));
 }
 
 std::string UserDataShowListRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UserDataShowListRequest::getAccessKeyId()const
 void UserDataShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UserDataShowListRequest::getName()const
@@ -55,7 +57,7 @@ std::string UserDataShowListRequest::getName()const
 void UserDataShowListRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int UserDataShowListRequest::getPage()const
@@ -66,7 +68,7 @@ int UserDataShowListRequest::getPage()const
 void UserDataShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 long UserDataShowListRequest::getBid()const
@@ -77,7 +79,7 @@ long UserDataShowListRequest::getBid()const
 void UserDataShowListRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 
 int UserDataShowListRequest::getPer()const
@@ -88,6 +90,6 @@ int UserDataShowListRequest::getPer()const
 void UserDataShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

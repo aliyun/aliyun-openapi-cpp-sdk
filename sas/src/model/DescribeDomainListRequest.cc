@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeDomainListRequest;
 
 DescribeDomainListRequest::DescribeDomainListRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeDomainList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainListRequest::~DescribeDomainListRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeDomainListRequest::getCurrentPage()const
 void DescribeDomainListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeDomainListRequest::getFuzzyDomain()const
@@ -44,7 +46,7 @@ std::string DescribeDomainListRequest::getFuzzyDomain()const
 void DescribeDomainListRequest::setFuzzyDomain(const std::string& fuzzyDomain)
 {
 	fuzzyDomain_ = fuzzyDomain;
-	setCoreParameter("FuzzyDomain", fuzzyDomain);
+	setParameter("FuzzyDomain", fuzzyDomain);
 }
 
 std::string DescribeDomainListRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeDomainListRequest::getSourceIp()const
 void DescribeDomainListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDomainListRequest::getDomainType()const
@@ -66,7 +68,7 @@ std::string DescribeDomainListRequest::getDomainType()const
 void DescribeDomainListRequest::setDomainType(const std::string& domainType)
 {
 	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
+	setParameter("DomainType", domainType);
 }
 
 int DescribeDomainListRequest::getPageSize()const
@@ -77,6 +79,6 @@ int DescribeDomainListRequest::getPageSize()const
 void DescribeDomainListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

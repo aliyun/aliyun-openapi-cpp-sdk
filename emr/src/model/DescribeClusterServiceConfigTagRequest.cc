@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterServiceConfigTagRequest;
 
 DescribeClusterServiceConfigTagRequest::DescribeClusterServiceConfigTagRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterServiceConfigTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterServiceConfigTagRequest::~DescribeClusterServiceConfigTagRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterServiceConfigTagRequest::getResourceOwnerId()const
 void DescribeClusterServiceConfigTagRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterServiceConfigTagRequest::getClusterId()const
 void DescribeClusterServiceConfigTagRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeClusterServiceConfigTagRequest::getAccessKeyId()const
 void DescribeClusterServiceConfigTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeClusterServiceConfigTagRequest::getRegionId()const
 void DescribeClusterServiceConfigTagRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
@@ -77,7 +79,7 @@ std::string DescribeClusterServiceConfigTagRequest::getConfigTag()const
 void DescribeClusterServiceConfigTagRequest::setConfigTag(const std::string& configTag)
 {
 	configTag_ = configTag;
-	setCoreParameter("ConfigTag", configTag);
+	setParameter("ConfigTag", configTag);
 }
 
 std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
@@ -88,6 +90,6 @@ std::string DescribeClusterServiceConfigTagRequest::getServiceName()const
 void DescribeClusterServiceConfigTagRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

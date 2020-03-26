@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteExpressConnectRequest;
 
 DeleteExpressConnectRequest::DeleteExpressConnectRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteExpressConnect")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteExpressConnectRequest::~DeleteExpressConnectRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteExpressConnectRequest::getResourceOwnerId()const
 void DeleteExpressConnectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteExpressConnectRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteExpressConnectRequest::getClientToken()const
 void DeleteExpressConnectRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteExpressConnectRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteExpressConnectRequest::getRegionId()const
 void DeleteExpressConnectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteExpressConnectRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteExpressConnectRequest::getResourceOwnerAccount()const
 void DeleteExpressConnectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteExpressConnectRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteExpressConnectRequest::getOwnerAccount()const
 void DeleteExpressConnectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteExpressConnectRequest::getRouterInterfaceId()const
@@ -88,7 +90,7 @@ std::string DeleteExpressConnectRequest::getRouterInterfaceId()const
 void DeleteExpressConnectRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setParameter("RouterInterfaceId", routerInterfaceId);
 }
 
 long DeleteExpressConnectRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeleteExpressConnectRequest::getOwnerId()const
 void DeleteExpressConnectRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteExpressConnectRequest::getForce()const
@@ -110,6 +112,6 @@ bool DeleteExpressConnectRequest::getForce()const
 void DeleteExpressConnectRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

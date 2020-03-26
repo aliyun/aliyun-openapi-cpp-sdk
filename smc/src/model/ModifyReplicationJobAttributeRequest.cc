@@ -35,7 +35,7 @@ std::string ModifyReplicationJobAttributeRequest::getTargetType()const
 void ModifyReplicationJobAttributeRequest::setTargetType(const std::string& targetType)
 {
 	targetType_ = targetType;
-	setCoreParameter("TargetType", targetType);
+	setParameter("TargetType", targetType);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getDescription()const
@@ -46,7 +46,7 @@ std::string ModifyReplicationJobAttributeRequest::getDescription()const
 void ModifyReplicationJobAttributeRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string ModifyReplicationJobAttributeRequest::getAccessKeyId()const
 void ModifyReplicationJobAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ModifyReplicationJobAttributeRequest::getFrequency()const
@@ -68,7 +68,7 @@ int ModifyReplicationJobAttributeRequest::getFrequency()const
 void ModifyReplicationJobAttributeRequest::setFrequency(int frequency)
 {
 	frequency_ = frequency;
-	setCoreParameter("Frequency", std::to_string(frequency));
+	setParameter("Frequency", std::to_string(frequency));
 }
 
 std::string ModifyReplicationJobAttributeRequest::getJobId()const
@@ -79,7 +79,7 @@ std::string ModifyReplicationJobAttributeRequest::getJobId()const
 void ModifyReplicationJobAttributeRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getImageName()const
@@ -90,7 +90,7 @@ std::string ModifyReplicationJobAttributeRequest::getImageName()const
 void ModifyReplicationJobAttributeRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
-	setCoreParameter("ImageName", imageName);
+	setParameter("ImageName", imageName);
 }
 
 int ModifyReplicationJobAttributeRequest::getSystemDiskSize()const
@@ -101,7 +101,7 @@ int ModifyReplicationJobAttributeRequest::getSystemDiskSize()const
 void ModifyReplicationJobAttributeRequest::setSystemDiskSize(int systemDiskSize)
 {
 	systemDiskSize_ = systemDiskSize;
-	setCoreParameter("SystemDiskSize", std::to_string(systemDiskSize));
+	setParameter("SystemDiskSize", std::to_string(systemDiskSize));
 }
 
 std::string ModifyReplicationJobAttributeRequest::getInstanceType()const
@@ -112,7 +112,18 @@ std::string ModifyReplicationJobAttributeRequest::getInstanceType()const
 void ModifyReplicationJobAttributeRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
+}
+
+std::string ModifyReplicationJobAttributeRequest::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
+}
+
+void ModifyReplicationJobAttributeRequest::setLaunchTemplateId(const std::string& launchTemplateId)
+{
+	launchTemplateId_ = launchTemplateId;
+	setParameter("LaunchTemplateId", launchTemplateId);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getResourceOwnerAccount()const
@@ -123,7 +134,7 @@ std::string ModifyReplicationJobAttributeRequest::getResourceOwnerAccount()const
 void ModifyReplicationJobAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ModifyReplicationJobAttributeRequest::getOwnerId()const
@@ -134,7 +145,7 @@ long ModifyReplicationJobAttributeRequest::getOwnerId()const
 void ModifyReplicationJobAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<ModifyReplicationJobAttributeRequest::DataDisk> ModifyReplicationJobAttributeRequest::getDataDisk()const
@@ -147,10 +158,21 @@ void ModifyReplicationJobAttributeRequest::setDataDisk(const std::vector<DataDis
 	dataDisk_ = dataDisk;
 	for(int dep1 = 0; dep1!= dataDisk.size(); dep1++) {
 		auto dataDiskObj = dataDisk.at(dep1);
-		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1);
-		setCoreParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
-		setCoreParameter(dataDiskObjStr + ".Index", std::to_string(dataDiskObj.index));
+		std::string dataDiskObjStr = "DataDisk." + std::to_string(dep1 + 1);
+		setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+		setParameter(dataDiskObjStr + ".Index", std::to_string(dataDiskObj.index));
 	}
+}
+
+std::string ModifyReplicationJobAttributeRequest::getLaunchTemplateVersion()const
+{
+	return launchTemplateVersion_;
+}
+
+void ModifyReplicationJobAttributeRequest::setLaunchTemplateVersion(const std::string& launchTemplateVersion)
+{
+	launchTemplateVersion_ = launchTemplateVersion;
+	setParameter("LaunchTemplateVersion", launchTemplateVersion);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getScheduledStartTime()const
@@ -161,7 +183,7 @@ std::string ModifyReplicationJobAttributeRequest::getScheduledStartTime()const
 void ModifyReplicationJobAttributeRequest::setScheduledStartTime(const std::string& scheduledStartTime)
 {
 	scheduledStartTime_ = scheduledStartTime;
-	setCoreParameter("ScheduledStartTime", scheduledStartTime);
+	setParameter("ScheduledStartTime", scheduledStartTime);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getInstanceId()const
@@ -172,7 +194,7 @@ std::string ModifyReplicationJobAttributeRequest::getInstanceId()const
 void ModifyReplicationJobAttributeRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ModifyReplicationJobAttributeRequest::getName()const
@@ -183,7 +205,7 @@ std::string ModifyReplicationJobAttributeRequest::getName()const
 void ModifyReplicationJobAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ModifyReplicationJobAttributeRequest::getMaxNumberOfImageToKeep()const
@@ -194,6 +216,6 @@ int ModifyReplicationJobAttributeRequest::getMaxNumberOfImageToKeep()const
 void ModifyReplicationJobAttributeRequest::setMaxNumberOfImageToKeep(int maxNumberOfImageToKeep)
 {
 	maxNumberOfImageToKeep_ = maxNumberOfImageToKeep;
-	setCoreParameter("MaxNumberOfImageToKeep", std::to_string(maxNumberOfImageToKeep));
+	setParameter("MaxNumberOfImageToKeep", std::to_string(maxNumberOfImageToKeep));
 }
 

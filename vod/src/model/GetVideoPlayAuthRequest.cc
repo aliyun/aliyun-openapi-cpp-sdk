@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetVideoPlayAuthRequest;
 
 GetVideoPlayAuthRequest::GetVideoPlayAuthRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetVideoPlayAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoPlayAuthRequest::~GetVideoPlayAuthRequest()
 {}
@@ -33,7 +35,7 @@ long GetVideoPlayAuthRequest::getResourceOwnerId()const
 void GetVideoPlayAuthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetVideoPlayAuthRequest::getReAuthInfo()const
@@ -44,7 +46,7 @@ std::string GetVideoPlayAuthRequest::getReAuthInfo()const
 void GetVideoPlayAuthRequest::setReAuthInfo(const std::string& reAuthInfo)
 {
 	reAuthInfo_ = reAuthInfo;
-	setCoreParameter("ReAuthInfo", reAuthInfo);
+	setParameter("ReAuthInfo", reAuthInfo);
 }
 
 std::string GetVideoPlayAuthRequest::getPlayConfig()const
@@ -55,7 +57,7 @@ std::string GetVideoPlayAuthRequest::getPlayConfig()const
 void GetVideoPlayAuthRequest::setPlayConfig(const std::string& playConfig)
 {
 	playConfig_ = playConfig;
-	setCoreParameter("PlayConfig", playConfig);
+	setParameter("PlayConfig", playConfig);
 }
 
 std::string GetVideoPlayAuthRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string GetVideoPlayAuthRequest::getResourceOwnerAccount()const
 void GetVideoPlayAuthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetVideoPlayAuthRequest::getVideoId()const
@@ -77,7 +79,7 @@ std::string GetVideoPlayAuthRequest::getVideoId()const
 void GetVideoPlayAuthRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 long GetVideoPlayAuthRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long GetVideoPlayAuthRequest::getOwnerId()const
 void GetVideoPlayAuthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 long GetVideoPlayAuthRequest::getAuthInfoTimeout()const
@@ -99,6 +101,6 @@ long GetVideoPlayAuthRequest::getAuthInfoTimeout()const
 void GetVideoPlayAuthRequest::setAuthInfoTimeout(long authInfoTimeout)
 {
 	authInfoTimeout_ = authInfoTimeout;
-	setCoreParameter("AuthInfoTimeout", std::to_string(authInfoTimeout));
+	setParameter("AuthInfoTimeout", std::to_string(authInfoTimeout));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::SubmitCommunicationNoteRequest;
 
 SubmitCommunicationNoteRequest::SubmitCommunicationNoteRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "SubmitCommunicationNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCommunicationNoteRequest::~SubmitCommunicationNoteRequest()
 {}
@@ -33,7 +35,7 @@ std::string SubmitCommunicationNoteRequest::getNote()const
 void SubmitCommunicationNoteRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setParameter("Note", note);
 }
 
 int SubmitCommunicationNoteRequest::getType()const
@@ -44,7 +46,7 @@ int SubmitCommunicationNoteRequest::getType()const
 void SubmitCommunicationNoteRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string SubmitCommunicationNoteRequest::getActionRequestId()const
@@ -55,7 +57,7 @@ std::string SubmitCommunicationNoteRequest::getActionRequestId()const
 void SubmitCommunicationNoteRequest::setActionRequestId(const std::string& actionRequestId)
 {
 	actionRequestId_ = actionRequestId;
-	setCoreParameter("ActionRequestId", actionRequestId);
+	setParameter("ActionRequestId", actionRequestId);
 }
 
 int SubmitCommunicationNoteRequest::getOperatorType()const
@@ -66,7 +68,7 @@ int SubmitCommunicationNoteRequest::getOperatorType()const
 void SubmitCommunicationNoteRequest::setOperatorType(int operatorType)
 {
 	operatorType_ = operatorType;
-	setCoreParameter("OperatorType", std::to_string(operatorType));
+	setParameter("OperatorType", std::to_string(operatorType));
 }
 
 std::string SubmitCommunicationNoteRequest::getBizCode()const
@@ -77,7 +79,7 @@ std::string SubmitCommunicationNoteRequest::getBizCode()const
 void SubmitCommunicationNoteRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 
 std::string SubmitCommunicationNoteRequest::getBizId()const
@@ -88,6 +90,6 @@ std::string SubmitCommunicationNoteRequest::getBizId()const
 void SubmitCommunicationNoteRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

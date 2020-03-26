@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteAppRequest;
 
 DeleteAppRequest::DeleteAppRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAppRequest::~DeleteAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteAppRequest::getAccessKeyId()const
 void DeleteAppRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteAppRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string DeleteAppRequest::getSecurityToken()const
 void DeleteAppRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long DeleteAppRequest::getAppId()const
@@ -55,7 +57,7 @@ long DeleteAppRequest::getAppId()const
 void DeleteAppRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 std::vector<DeleteAppRequest::Tag> DeleteAppRequest::getTag()const
@@ -66,12 +68,11 @@ std::vector<DeleteAppRequest::Tag> DeleteAppRequest::getTag()const
 void DeleteAppRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

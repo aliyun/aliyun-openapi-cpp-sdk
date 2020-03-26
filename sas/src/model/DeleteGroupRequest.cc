@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DeleteGroupRequest;
 
 DeleteGroupRequest::DeleteGroupRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DeleteGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupRequest::~DeleteGroupRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteGroupRequest::getGroupId()const
 void DeleteGroupRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DeleteGroupRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DeleteGroupRequest::getSourceIp()const
 void DeleteGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

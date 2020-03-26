@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemHeatMapRequest;
 
 OemHeatMapRequest::OemHeatMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemHeatMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemHeatMapRequest::~OemHeatMapRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemHeatMapRequest::getAccessKeyId()const
 void OemHeatMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemHeatMapRequest::getGsid()const
@@ -44,6 +46,6 @@ long OemHeatMapRequest::getGsid()const
 void OemHeatMapRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

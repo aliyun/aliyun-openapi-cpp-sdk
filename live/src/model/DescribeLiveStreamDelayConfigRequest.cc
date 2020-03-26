@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamDelayConfigRequest;
 
 DescribeLiveStreamDelayConfigRequest::DescribeLiveStreamDelayConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamDelayConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamDelayConfigRequest::~DescribeLiveStreamDelayConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamDelayConfigRequest::getDomainName()const
 void DescribeLiveStreamDelayConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamDelayConfigRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeLiveStreamDelayConfigRequest::getOwnerId()const
 void DescribeLiveStreamDelayConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::PublishRouteEntriesRequest;
 
 PublishRouteEntriesRequest::PublishRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "PublishRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PublishRouteEntriesRequest::~PublishRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long PublishRouteEntriesRequest::getResourceOwnerId()const
 void PublishRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string PublishRouteEntriesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string PublishRouteEntriesRequest::getCenId()const
 void PublishRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string PublishRouteEntriesRequest::getChildInstanceRegionId()const
@@ -55,7 +57,7 @@ std::string PublishRouteEntriesRequest::getChildInstanceRegionId()const
 void PublishRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string PublishRouteEntriesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string PublishRouteEntriesRequest::getResourceOwnerAccount()const
 void PublishRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string PublishRouteEntriesRequest::getDestinationCidrBlock()const
@@ -77,7 +79,7 @@ std::string PublishRouteEntriesRequest::getDestinationCidrBlock()const
 void PublishRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string PublishRouteEntriesRequest::getChildInstanceType()const
@@ -88,7 +90,7 @@ std::string PublishRouteEntriesRequest::getChildInstanceType()const
 void PublishRouteEntriesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string PublishRouteEntriesRequest::getChildInstanceId()const
@@ -99,7 +101,7 @@ std::string PublishRouteEntriesRequest::getChildInstanceId()const
 void PublishRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 
 std::string PublishRouteEntriesRequest::getChildInstanceRouteTableId()const
@@ -110,6 +112,6 @@ std::string PublishRouteEntriesRequest::getChildInstanceRouteTableId()const
 void PublishRouteEntriesRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	setParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 

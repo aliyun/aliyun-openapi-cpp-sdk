@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ADB_EXPORT DescribeDBClustersRequest : public RpcServiceRequest
 			{
+			public:
 				struct Tag
 				{
 					std::string value;

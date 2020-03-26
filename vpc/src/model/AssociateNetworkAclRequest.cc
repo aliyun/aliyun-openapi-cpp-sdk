@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociateNetworkAclRequest;
 
 AssociateNetworkAclRequest::AssociateNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociateNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociateNetworkAclRequest::~AssociateNetworkAclRequest()
 {}
@@ -33,7 +35,7 @@ long AssociateNetworkAclRequest::getResourceOwnerId()const
 void AssociateNetworkAclRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociateNetworkAclRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string AssociateNetworkAclRequest::getClientToken()const
 void AssociateNetworkAclRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AssociateNetworkAclRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AssociateNetworkAclRequest::getRegionId()const
 void AssociateNetworkAclRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssociateNetworkAclRequest::getNetworkAclId()const
@@ -66,7 +68,7 @@ std::string AssociateNetworkAclRequest::getNetworkAclId()const
 void AssociateNetworkAclRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", networkAclId);
+	setParameter("NetworkAclId", networkAclId);
 }
 
 std::vector<AssociateNetworkAclRequest::Resource> AssociateNetworkAclRequest::getResource()const
@@ -77,12 +79,11 @@ std::vector<AssociateNetworkAclRequest::Resource> AssociateNetworkAclRequest::ge
 void AssociateNetworkAclRequest::setResource(const std::vector<Resource>& resource)
 {
 	resource_ = resource;
-	int i = 0;
-	for(int i = 0; i!= resource.size(); i++)	{
-		auto obj = resource.at(i);
-		std::string str ="Resource."+ std::to_string(i);
-		setCoreParameter(str + ".ResourceType", obj.resourceType);
-		setCoreParameter(str + ".ResourceId", obj.resourceId);
+	for(int dep1 = 0; dep1!= resource.size(); dep1++) {
+		auto resourceObj = resource.at(dep1);
+		std::string resourceObjStr = "Resource." + std::to_string(dep1 + 1);
+		setParameter(resourceObjStr + ".ResourceType", resourceObj.resourceType);
+		setParameter(resourceObjStr + ".ResourceId", resourceObj.resourceId);
 	}
 }
 
@@ -94,7 +95,7 @@ std::string AssociateNetworkAclRequest::getResourceOwnerAccount()const
 void AssociateNetworkAclRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AssociateNetworkAclRequest::getOwnerId()const
@@ -105,6 +106,6 @@ long AssociateNetworkAclRequest::getOwnerId()const
 void AssociateNetworkAclRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

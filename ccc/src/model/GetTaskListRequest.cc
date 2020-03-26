@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetTaskListRequest;
 
 GetTaskListRequest::GetTaskListRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetTaskList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetTaskListRequest::~GetTaskListRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetTaskListRequest::getJobId()const
 void GetTaskListRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string GetTaskListRequest::getInstanceId()const
@@ -44,6 +46,6 @@ std::string GetTaskListRequest::getInstanceId()const
 void GetTaskListRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReportZoneMinuteRequest;
 
 ReportZoneMinuteRequest::ReportZoneMinuteRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReportZoneMinute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportZoneMinuteRequest::~ReportZoneMinuteRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReportZoneMinuteRequest::getBeginDate()const
 void ReportZoneMinuteRequest::setBeginDate(const std::string& beginDate)
 {
 	beginDate_ = beginDate;
-	setCoreParameter("BeginDate", beginDate);
+	setParameter("BeginDate", beginDate);
 }
 
 std::string ReportZoneMinuteRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ReportZoneMinuteRequest::getAccessKeyId()const
 void ReportZoneMinuteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ReportZoneMinuteRequest::getAgsid()const
@@ -55,7 +57,7 @@ long ReportZoneMinuteRequest::getAgsid()const
 void ReportZoneMinuteRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setParameter("Agsid", std::to_string(agsid));
 }
 
 std::string ReportZoneMinuteRequest::getEndDate()const
@@ -66,6 +68,6 @@ std::string ReportZoneMinuteRequest::getEndDate()const
 void ReportZoneMinuteRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 

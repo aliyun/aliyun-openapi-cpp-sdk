@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeSignaturesByApiRequest;
 
 DescribeSignaturesByApiRequest::DescribeSignaturesByApiRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeSignaturesByApi")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignaturesByApiRequest::~DescribeSignaturesByApiRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignaturesByApiRequest::getStageName()const
 void DescribeSignaturesByApiRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeSignaturesByApiRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeSignaturesByApiRequest::getGroupId()const
 void DescribeSignaturesByApiRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeSignaturesByApiRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeSignaturesByApiRequest::getAccessKeyId()const
 void DescribeSignaturesByApiRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSignaturesByApiRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DescribeSignaturesByApiRequest::getSecurityToken()const
 void DescribeSignaturesByApiRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeSignaturesByApiRequest::getApiId()const
@@ -77,6 +79,6 @@ std::string DescribeSignaturesByApiRequest::getApiId()const
 void DescribeSignaturesByApiRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

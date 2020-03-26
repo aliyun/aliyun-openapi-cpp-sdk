@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAllGroupsRequest;
 
 DescribeAllGroupsRequest::DescribeAllGroupsRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAllGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAllGroupsRequest::~DescribeAllGroupsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAllGroupsRequest::getSourceIp()const
 void DescribeAllGroupsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAllGroupsRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeAllGroupsRequest::getLang()const
 void DescribeAllGroupsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

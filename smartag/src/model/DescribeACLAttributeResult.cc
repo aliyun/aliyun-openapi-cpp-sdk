@@ -69,6 +69,8 @@ void DescribeACLAttributeResult::parse(const std::string &payload)
 			acrsObject.aclId = valueAcrsAcr["AclId"].asString();
 		if(!valueAcrsAcr["Type"].isNull())
 			acrsObject.type = valueAcrsAcr["Type"].asString();
+		if(!valueAcrsAcr["Name"].isNull())
+			acrsObject.name = valueAcrsAcr["Name"].asString();
 		acrs_.push_back(acrsObject);
 	}
 	if(!value["TotalCount"].isNull())

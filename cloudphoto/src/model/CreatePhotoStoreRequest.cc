@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::CreatePhotoStoreRequest;
 
 CreatePhotoStoreRequest::CreatePhotoStoreRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "CreatePhotoStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatePhotoStoreRequest::~CreatePhotoStoreRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreatePhotoStoreRequest::getStoreName()const
 void CreatePhotoStoreRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string CreatePhotoStoreRequest::getRemark()const
@@ -44,7 +46,7 @@ std::string CreatePhotoStoreRequest::getRemark()const
 void CreatePhotoStoreRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 long CreatePhotoStoreRequest::getDefaultQuota()const
@@ -55,7 +57,7 @@ long CreatePhotoStoreRequest::getDefaultQuota()const
 void CreatePhotoStoreRequest::setDefaultQuota(long defaultQuota)
 {
 	defaultQuota_ = defaultQuota;
-	setCoreParameter("DefaultQuota", std::to_string(defaultQuota));
+	setParameter("DefaultQuota", std::to_string(defaultQuota));
 }
 
 std::string CreatePhotoStoreRequest::getBucketName()const
@@ -66,6 +68,6 @@ std::string CreatePhotoStoreRequest::getBucketName()const
 void CreatePhotoStoreRequest::setBucketName(const std::string& bucketName)
 {
 	bucketName_ = bucketName;
-	setCoreParameter("BucketName", bucketName);
+	setParameter("BucketName", bucketName);
 }
 

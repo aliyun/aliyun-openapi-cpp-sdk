@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeAuditContentRequest;
 
 DescribeAuditContentRequest::DescribeAuditContentRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeAuditContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAuditContentRequest::~DescribeAuditContentRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAuditContentRequest::getImageId()const
 void DescribeAuditContentRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string DescribeAuditContentRequest::getStartDate()const
@@ -44,7 +46,7 @@ std::string DescribeAuditContentRequest::getStartDate()const
 void DescribeAuditContentRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeAuditContentRequest::getScene()const
@@ -55,7 +57,7 @@ std::string DescribeAuditContentRequest::getScene()const
 void DescribeAuditContentRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string DescribeAuditContentRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeAuditContentRequest::getSourceIp()const
 void DescribeAuditContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAuditContentRequest::getLibType()const
@@ -77,7 +79,7 @@ std::string DescribeAuditContentRequest::getLibType()const
 void DescribeAuditContentRequest::setLibType(const std::string& libType)
 {
 	libType_ = libType;
-	setCoreParameter("LibType", libType);
+	setParameter("LibType", libType);
 }
 
 std::string DescribeAuditContentRequest::getAuditResult()const
@@ -88,7 +90,7 @@ std::string DescribeAuditContentRequest::getAuditResult()const
 void DescribeAuditContentRequest::setAuditResult(const std::string& auditResult)
 {
 	auditResult_ = auditResult;
-	setCoreParameter("AuditResult", auditResult);
+	setParameter("AuditResult", auditResult);
 }
 
 int DescribeAuditContentRequest::getPageSize()const
@@ -99,7 +101,7 @@ int DescribeAuditContentRequest::getPageSize()const
 void DescribeAuditContentRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAuditContentRequest::getLang()const
@@ -110,7 +112,7 @@ std::string DescribeAuditContentRequest::getLang()const
 void DescribeAuditContentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAuditContentRequest::getTaskId()const
@@ -121,7 +123,7 @@ std::string DescribeAuditContentRequest::getTaskId()const
 void DescribeAuditContentRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 int DescribeAuditContentRequest::getTotalCount()const
@@ -132,7 +134,7 @@ int DescribeAuditContentRequest::getTotalCount()const
 void DescribeAuditContentRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeAuditContentRequest::getKeywordId()const
@@ -143,7 +145,7 @@ std::string DescribeAuditContentRequest::getKeywordId()const
 void DescribeAuditContentRequest::setKeywordId(const std::string& keywordId)
 {
 	keywordId_ = keywordId;
-	setCoreParameter("KeywordId", keywordId);
+	setParameter("KeywordId", keywordId);
 }
 
 std::string DescribeAuditContentRequest::getSuggestion()const
@@ -154,7 +156,7 @@ std::string DescribeAuditContentRequest::getSuggestion()const
 void DescribeAuditContentRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setParameter("Suggestion", suggestion);
 }
 
 int DescribeAuditContentRequest::getCurrentPage()const
@@ -165,7 +167,7 @@ int DescribeAuditContentRequest::getCurrentPage()const
 void DescribeAuditContentRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAuditContentRequest::getLabel()const
@@ -176,7 +178,7 @@ std::string DescribeAuditContentRequest::getLabel()const
 void DescribeAuditContentRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 
 std::string DescribeAuditContentRequest::getResourceType()const
@@ -187,7 +189,7 @@ std::string DescribeAuditContentRequest::getResourceType()const
 void DescribeAuditContentRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeAuditContentRequest::getBizType()const
@@ -198,7 +200,7 @@ std::string DescribeAuditContentRequest::getBizType()const
 void DescribeAuditContentRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeAuditContentRequest::getEndDate()const
@@ -209,7 +211,7 @@ std::string DescribeAuditContentRequest::getEndDate()const
 void DescribeAuditContentRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeAuditContentRequest::getDataId()const
@@ -220,6 +222,6 @@ std::string DescribeAuditContentRequest::getDataId()const
 void DescribeAuditContentRequest::setDataId(const std::string& dataId)
 {
 	dataId_ = dataId;
-	setCoreParameter("DataId", dataId);
+	setParameter("DataId", dataId);
 }
 

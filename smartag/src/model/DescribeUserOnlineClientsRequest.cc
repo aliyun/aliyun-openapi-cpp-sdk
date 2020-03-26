@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeUserOnlineClientsRequest;
 
 DescribeUserOnlineClientsRequest::DescribeUserOnlineClientsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeUserOnlineClients")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserOnlineClientsRequest::~DescribeUserOnlineClientsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeUserOnlineClientsRequest::getResourceOwnerId()const
 void DescribeUserOnlineClientsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserOnlineClientsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeUserOnlineClientsRequest::getRegionId()const
 void DescribeUserOnlineClientsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeUserOnlineClientsRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeUserOnlineClientsRequest::getResourceOwnerAccount()const
 void DescribeUserOnlineClientsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeUserOnlineClientsRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeUserOnlineClientsRequest::getOwnerAccount()const
 void DescribeUserOnlineClientsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeUserOnlineClientsRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeUserOnlineClientsRequest::getOwnerId()const
 void DescribeUserOnlineClientsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeUserOnlineClientsRequest::getSmartAGId()const
@@ -88,7 +90,7 @@ std::string DescribeUserOnlineClientsRequest::getSmartAGId()const
 void DescribeUserOnlineClientsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string DescribeUserOnlineClientsRequest::getUserName()const
@@ -99,6 +101,6 @@ std::string DescribeUserOnlineClientsRequest::getUserName()const
 void DescribeUserOnlineClientsRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

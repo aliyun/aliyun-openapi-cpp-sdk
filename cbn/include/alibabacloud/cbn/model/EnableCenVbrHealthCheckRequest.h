@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setCenId(const std::string& cenId);
 				std::string getHealthCheckTargetIp()const;
 				void setHealthCheckTargetIp(const std::string& healthCheckTargetIp);
+				int getHealthyThreshold()const;
+				void setHealthyThreshold(int healthyThreshold);
 				long getVbrInstanceOwnerId()const;
 				void setVbrInstanceOwnerId(long vbrInstanceOwnerId);
 				std::string getVbrInstanceRegionId()const;
@@ -53,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getHealthCheckSourceIp()const;
 				void setHealthCheckSourceIp(const std::string& healthCheckSourceIp);
+				int getHealthCheckInterval()const;
+				void setHealthCheckInterval(int healthCheckInterval);
 				std::string getVbrInstanceId()const;
 				void setVbrInstanceId(const std::string& vbrInstanceId);
 
@@ -60,12 +64,14 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string cenId_;
 				std::string healthCheckTargetIp_;
+				int healthyThreshold_;
 				long vbrInstanceOwnerId_;
 				std::string vbrInstanceRegionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string healthCheckSourceIp_;
+				int healthCheckInterval_;
 				std::string vbrInstanceId_;
 
 			};

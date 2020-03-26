@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ReleaseClusterHostGroupRequest;
 
 ReleaseClusterHostGroupRequest::ReleaseClusterHostGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ReleaseClusterHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseClusterHostGroupRequest::~ReleaseClusterHostGroupRequest()
 {}
@@ -33,7 +35,7 @@ long ReleaseClusterHostGroupRequest::getResourceOwnerId()const
 void ReleaseClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReleaseClusterHostGroupRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string ReleaseClusterHostGroupRequest::getClusterId()const
 void ReleaseClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ReleaseClusterHostGroupRequest::getAccessKeyId()const
 void ReleaseClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ReleaseClusterHostGroupRequest::getRegionId()const
 void ReleaseClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getHostGroupId()const
@@ -77,7 +79,7 @@ std::string ReleaseClusterHostGroupRequest::getHostGroupId()const
 void ReleaseClusterHostGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 
 std::string ReleaseClusterHostGroupRequest::getInstanceIdList()const
@@ -88,6 +90,6 @@ std::string ReleaseClusterHostGroupRequest::getInstanceIdList()const
 void ReleaseClusterHostGroupRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	setParameter("InstanceIdList", instanceIdList);
 }
 

@@ -35,7 +35,7 @@ long DescribeScdnServiceRequest::getOwnerId()const
 void DescribeScdnServiceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScdnServiceRequest::getSecurityToken()const
@@ -46,6 +46,6 @@ std::string DescribeScdnServiceRequest::getSecurityToken()const
 void DescribeScdnServiceRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

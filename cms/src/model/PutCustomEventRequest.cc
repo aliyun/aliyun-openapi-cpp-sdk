@@ -37,11 +37,11 @@ void PutCustomEventRequest::setEventInfo(const std::vector<EventInfo>& eventInfo
 	eventInfo_ = eventInfo;
 	for(int dep1 = 0; dep1!= eventInfo.size(); dep1++) {
 		auto eventInfoObj = eventInfo.at(dep1);
-		std::string eventInfoObjStr = "EventInfo." + std::to_string(dep1);
-		setCoreParameter(eventInfoObjStr + ".GroupId", eventInfoObj.groupId);
-		setCoreParameter(eventInfoObjStr + ".Time", eventInfoObj.time);
-		setCoreParameter(eventInfoObjStr + ".EventName", eventInfoObj.eventName);
-		setCoreParameter(eventInfoObjStr + ".Content", eventInfoObj.content);
+		std::string eventInfoObjStr = "EventInfo." + std::to_string(dep1 + 1);
+		setParameter(eventInfoObjStr + ".GroupId", eventInfoObj.groupId);
+		setParameter(eventInfoObjStr + ".Time", eventInfoObj.time);
+		setParameter(eventInfoObjStr + ".EventName", eventInfoObj.eventName);
+		setParameter(eventInfoObjStr + ".Content", eventInfoObj.content);
 	}
 }
 

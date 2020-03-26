@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetJobLatestAutoScalePlanRequest;
 
 GetJobLatestAutoScalePlanRequest::GetJobLatestAutoScalePlanRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/autoscale/latestplanjson");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetJobLatestAutoScalePlanRequest::~GetJobLatestAutoScalePlanRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetJobLatestAutoScalePlanRequest::getProjectName()const
 void GetJobLatestAutoScalePlanRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetJobLatestAutoScalePlanRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string GetJobLatestAutoScalePlanRequest::getRegionId()const
 void GetJobLatestAutoScalePlanRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetJobLatestAutoScalePlanRequest::getJobName()const
@@ -55,6 +58,6 @@ std::string GetJobLatestAutoScalePlanRequest::getJobName()const
 void GetJobLatestAutoScalePlanRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BatchRegisterApAssetRequest;
 
 BatchRegisterApAssetRequest::BatchRegisterApAssetRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BatchRegisterApAsset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchRegisterApAssetRequest::~BatchRegisterApAssetRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchRegisterApAssetRequest::getJsonData()const
 void BatchRegisterApAssetRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string BatchRegisterApAssetRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string BatchRegisterApAssetRequest::getAccessKeyId()const
 void BatchRegisterApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

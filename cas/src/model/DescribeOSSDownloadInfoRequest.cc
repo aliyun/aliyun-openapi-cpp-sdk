@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeOSSDownloadInfoRequest;
 
 DescribeOSSDownloadInfoRequest::DescribeOSSDownloadInfoRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeOSSDownloadInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOSSDownloadInfoRequest::~DescribeOSSDownloadInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOSSDownloadInfoRequest::getOssKey()const
 void DescribeOSSDownloadInfoRequest::setOssKey(const std::string& ossKey)
 {
 	ossKey_ = ossKey;
-	setCoreParameter("OssKey", ossKey);
+	setParameter("OssKey", ossKey);
 }
 
 std::string DescribeOSSDownloadInfoRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeOSSDownloadInfoRequest::getResourceGroupId()const
 void DescribeOSSDownloadInfoRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeOSSDownloadInfoRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeOSSDownloadInfoRequest::getSourceIp()const
 void DescribeOSSDownloadInfoRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOSSDownloadInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeOSSDownloadInfoRequest::getLang()const
 void DescribeOSSDownloadInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iqa::Model::UploadDocumentRequest;
 
 UploadDocumentRequest::UploadDocumentRequest() :
 	RpcServiceRequest("iqa", "2019-08-13", "UploadDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadDocumentRequest::~UploadDocumentRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadDocumentRequest::getDocumentData()const
 void UploadDocumentRequest::setDocumentData(const std::string& documentData)
 {
 	documentData_ = documentData;
-	setCoreParameter("DocumentData", documentData);
+	setBodyParameter("DocumentData", documentData);
 }
 
 std::string UploadDocumentRequest::getDocumentFileUrl()const
@@ -44,7 +46,7 @@ std::string UploadDocumentRequest::getDocumentFileUrl()const
 void UploadDocumentRequest::setDocumentFileUrl(const std::string& documentFileUrl)
 {
 	documentFileUrl_ = documentFileUrl;
-	setCoreParameter("DocumentFileUrl", documentFileUrl);
+	setBodyParameter("DocumentFileUrl", documentFileUrl);
 }
 
 std::string UploadDocumentRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string UploadDocumentRequest::getProjectId()const
 void UploadDocumentRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setBodyParameter("ProjectId", projectId);
 }
 

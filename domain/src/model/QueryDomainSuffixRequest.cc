@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainSuffixRequest;
 
 QueryDomainSuffixRequest::QueryDomainSuffixRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainSuffix")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainSuffixRequest::~QueryDomainSuffixRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDomainSuffixRequest::getUserClientIp()const
 void QueryDomainSuffixRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainSuffixRequest::getLang()const
@@ -44,6 +46,6 @@ std::string QueryDomainSuffixRequest::getLang()const
 void QueryDomainSuffixRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

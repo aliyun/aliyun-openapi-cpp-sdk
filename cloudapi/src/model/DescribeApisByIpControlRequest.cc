@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApisByIpControlRequest;
 
 DescribeApisByIpControlRequest::DescribeApisByIpControlRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApisByIpControl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApisByIpControlRequest::~DescribeApisByIpControlRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeApisByIpControlRequest::getPageNumber()const
 void DescribeApisByIpControlRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApisByIpControlRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeApisByIpControlRequest::getAccessKeyId()const
 void DescribeApisByIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApisByIpControlRequest::getIpControlId()const
@@ -55,7 +57,7 @@ std::string DescribeApisByIpControlRequest::getIpControlId()const
 void DescribeApisByIpControlRequest::setIpControlId(const std::string& ipControlId)
 {
 	ipControlId_ = ipControlId;
-	setCoreParameter("IpControlId", ipControlId);
+	setParameter("IpControlId", ipControlId);
 }
 
 std::string DescribeApisByIpControlRequest::getSecurityToken()const
@@ -66,7 +68,7 @@ std::string DescribeApisByIpControlRequest::getSecurityToken()const
 void DescribeApisByIpControlRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApisByIpControlRequest::getPageSize()const
@@ -77,6 +79,6 @@ int DescribeApisByIpControlRequest::getPageSize()const
 void DescribeApisByIpControlRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

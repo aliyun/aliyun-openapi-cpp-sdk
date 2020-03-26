@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainOriginTrafficDataRequest::getStartTime()const
 void DescribeDcdnDomainOriginTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeDcdnDomainOriginTrafficDataRequest::getDomainName()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainOriginTrafficDataRequest::getDomainName()const
 void DescribeDcdnDomainOriginTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainOriginTrafficDataRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainOriginTrafficDataRequest::getEndTime()const
 void DescribeDcdnDomainOriginTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeDcdnDomainOriginTrafficDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDcdnDomainOriginTrafficDataRequest::getOwnerId()const
 void DescribeDcdnDomainOriginTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainOriginTrafficDataRequest::getInterval()const
@@ -79,6 +79,6 @@ std::string DescribeDcdnDomainOriginTrafficDataRequest::getInterval()const
 void DescribeDcdnDomainOriginTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::ListRuleActionsRequest;
 
 ListRuleActionsRequest::ListRuleActionsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "ListRuleActions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRuleActionsRequest::~ListRuleActionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRuleActionsRequest::getAccessKeyId()const
 void ListRuleActionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListRuleActionsRequest::getIotInstanceId()const
@@ -44,7 +46,7 @@ std::string ListRuleActionsRequest::getIotInstanceId()const
 void ListRuleActionsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 long ListRuleActionsRequest::getRuleId()const
@@ -55,6 +57,6 @@ long ListRuleActionsRequest::getRuleId()const
 void ListRuleActionsRequest::setRuleId(long ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", std::to_string(ruleId));
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

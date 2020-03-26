@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetInstanceSummaryReportSinceMidnightRequest;
 
 GetInstanceSummaryReportSinceMidnightRequest::GetInstanceSummaryReportSinceMidnightRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetInstanceSummaryReportSinceMidnight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetInstanceSummaryReportSinceMidnightRequest::~GetInstanceSummaryReportSinceMidnightRequest()
 {}
@@ -33,7 +35,7 @@ int GetInstanceSummaryReportSinceMidnightRequest::getPageNumber()const
 void GetInstanceSummaryReportSinceMidnightRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetInstanceSummaryReportSinceMidnightRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetInstanceSummaryReportSinceMidnightRequest::getAccessKeyId()const
 void GetInstanceSummaryReportSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetInstanceSummaryReportSinceMidnightRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string GetInstanceSummaryReportSinceMidnightRequest::getInstanceId()const
 void GetInstanceSummaryReportSinceMidnightRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int GetInstanceSummaryReportSinceMidnightRequest::getPageSize()const
@@ -66,6 +68,6 @@ int GetInstanceSummaryReportSinceMidnightRequest::getPageSize()const
 void GetInstanceSummaryReportSinceMidnightRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

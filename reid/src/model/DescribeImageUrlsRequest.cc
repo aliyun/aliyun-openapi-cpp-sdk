@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeImageUrlsRequest;
 DescribeImageUrlsRequest::DescribeImageUrlsRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeImageUrls")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeImageUrlsRequest::~DescribeImageUrlsRequest()

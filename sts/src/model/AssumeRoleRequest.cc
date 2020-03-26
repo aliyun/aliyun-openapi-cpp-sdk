@@ -20,7 +20,9 @@ using AlibabaCloud::Sts::Model::AssumeRoleRequest;
 
 AssumeRoleRequest::AssumeRoleRequest() :
 	RpcServiceRequest("sts", "2015-04-01", "AssumeRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssumeRoleRequest::~AssumeRoleRequest()
 {}
@@ -33,7 +35,7 @@ std::string AssumeRoleRequest::getRoleSessionName()const
 void AssumeRoleRequest::setRoleSessionName(const std::string& roleSessionName)
 {
 	roleSessionName_ = roleSessionName;
-	setCoreParameter("RoleSessionName", roleSessionName);
+	setParameter("RoleSessionName", roleSessionName);
 }
 
 std::string AssumeRoleRequest::getPolicy()const
@@ -44,7 +46,7 @@ std::string AssumeRoleRequest::getPolicy()const
 void AssumeRoleRequest::setPolicy(const std::string& policy)
 {
 	policy_ = policy;
-	setCoreParameter("Policy", policy);
+	setParameter("Policy", policy);
 }
 
 std::string AssumeRoleRequest::getRoleArn()const
@@ -55,7 +57,7 @@ std::string AssumeRoleRequest::getRoleArn()const
 void AssumeRoleRequest::setRoleArn(const std::string& roleArn)
 {
 	roleArn_ = roleArn;
-	setCoreParameter("RoleArn", roleArn);
+	setParameter("RoleArn", roleArn);
 }
 
 long AssumeRoleRequest::getDurationSeconds()const
@@ -66,6 +68,6 @@ long AssumeRoleRequest::getDurationSeconds()const
 void AssumeRoleRequest::setDurationSeconds(long durationSeconds)
 {
 	durationSeconds_ = durationSeconds;
-	setCoreParameter("DurationSeconds", std::to_string(durationSeconds));
+	setParameter("DurationSeconds", std::to_string(durationSeconds));
 }
 

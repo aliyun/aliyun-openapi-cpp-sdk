@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetVideoCoverRequest;
 
 GetVideoCoverRequest::GetVideoCoverRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetVideoCover")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetVideoCoverRequest::~GetVideoCoverRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetVideoCoverRequest::getLibraryId()const
 void GetVideoCoverRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long GetVideoCoverRequest::getPhotoId()const
@@ -44,7 +46,7 @@ long GetVideoCoverRequest::getPhotoId()const
 void GetVideoCoverRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::string GetVideoCoverRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string GetVideoCoverRequest::getStoreName()const
 void GetVideoCoverRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string GetVideoCoverRequest::getZoomType()const
@@ -66,6 +68,6 @@ std::string GetVideoCoverRequest::getZoomType()const
 void GetVideoCoverRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", zoomType);
+	setParameter("ZoomType", zoomType);
 }
 

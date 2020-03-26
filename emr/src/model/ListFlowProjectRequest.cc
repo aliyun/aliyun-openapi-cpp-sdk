@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowProjectRequest;
 
 ListFlowProjectRequest::ListFlowProjectRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowProjectRequest::~ListFlowProjectRequest()
 {}
@@ -33,7 +35,7 @@ int ListFlowProjectRequest::getPageNumber()const
 void ListFlowProjectRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowProjectRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ListFlowProjectRequest::getRegionId()const
 void ListFlowProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListFlowProjectRequest::getName()const
@@ -55,7 +57,7 @@ std::string ListFlowProjectRequest::getName()const
 void ListFlowProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ListFlowProjectRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListFlowProjectRequest::getPageSize()const
 void ListFlowProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowProjectRequest::getProjectId()const
@@ -77,6 +79,6 @@ std::string ListFlowProjectRequest::getProjectId()const
 void ListFlowProjectRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

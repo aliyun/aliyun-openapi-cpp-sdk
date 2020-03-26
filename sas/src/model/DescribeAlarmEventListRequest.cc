@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeAlarmEventListRequest;
 
 DescribeAlarmEventListRequest::DescribeAlarmEventListRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeAlarmEventList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAlarmEventListRequest::~DescribeAlarmEventListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAlarmEventListRequest::getAlarmEventType()const
 void DescribeAlarmEventListRequest::setAlarmEventType(const std::string& alarmEventType)
 {
 	alarmEventType_ = alarmEventType;
-	setCoreParameter("AlarmEventType", alarmEventType);
+	setParameter("AlarmEventType", alarmEventType);
 }
 
 std::string DescribeAlarmEventListRequest::getRemark()const
@@ -44,7 +46,7 @@ std::string DescribeAlarmEventListRequest::getRemark()const
 void DescribeAlarmEventListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribeAlarmEventListRequest::getAlarmEventName()const
@@ -55,7 +57,7 @@ std::string DescribeAlarmEventListRequest::getAlarmEventName()const
 void DescribeAlarmEventListRequest::setAlarmEventName(const std::string& alarmEventName)
 {
 	alarmEventName_ = alarmEventName;
-	setCoreParameter("AlarmEventName", alarmEventName);
+	setParameter("AlarmEventName", alarmEventName);
 }
 
 std::string DescribeAlarmEventListRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeAlarmEventListRequest::getSourceIp()const
 void DescribeAlarmEventListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeAlarmEventListRequest::getPageSize()const
@@ -77,7 +79,7 @@ std::string DescribeAlarmEventListRequest::getPageSize()const
 void DescribeAlarmEventListRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", pageSize);
 }
 
 std::string DescribeAlarmEventListRequest::getFrom()const
@@ -88,7 +90,7 @@ std::string DescribeAlarmEventListRequest::getFrom()const
 void DescribeAlarmEventListRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string DescribeAlarmEventListRequest::getLang()const
@@ -99,7 +101,7 @@ std::string DescribeAlarmEventListRequest::getLang()const
 void DescribeAlarmEventListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAlarmEventListRequest::getGroupId()const
@@ -110,7 +112,7 @@ std::string DescribeAlarmEventListRequest::getGroupId()const
 void DescribeAlarmEventListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeAlarmEventListRequest::getDealed()const
@@ -121,7 +123,7 @@ std::string DescribeAlarmEventListRequest::getDealed()const
 void DescribeAlarmEventListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setParameter("Dealed", dealed);
 }
 
 int DescribeAlarmEventListRequest::getCurrentPage()const
@@ -132,7 +134,7 @@ int DescribeAlarmEventListRequest::getCurrentPage()const
 void DescribeAlarmEventListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList()const
@@ -143,8 +145,9 @@ std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList(
 void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string>& operateErrorCodeList)
 {
 	operateErrorCodeList_ = operateErrorCodeList;
-	for(int i = 0; i!= operateErrorCodeList.size(); i++)
-		setCoreParameter("OperateErrorCodeList."+ std::to_string(i), operateErrorCodeList.at(i));
+	for(int dep1 = 0; dep1!= operateErrorCodeList.size(); dep1++) {
+		setParameter("OperateErrorCodeList."+ std::to_string(dep1), operateErrorCodeList.at(dep1));
+	}
 }
 
 std::string DescribeAlarmEventListRequest::getLevels()const
@@ -155,6 +158,6 @@ std::string DescribeAlarmEventListRequest::getLevels()const
 void DescribeAlarmEventListRequest::setLevels(const std::string& levels)
 {
 	levels_ = levels;
-	setCoreParameter("Levels", levels);
+	setParameter("Levels", levels);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeBizTypesRequest;
 
 DescribeBizTypesRequest::DescribeBizTypesRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeBizTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBizTypesRequest::~DescribeBizTypesRequest()
 {}
@@ -33,7 +35,7 @@ bool DescribeBizTypesRequest::getImportFlag()const
 void DescribeBizTypesRequest::setImportFlag(bool importFlag)
 {
 	importFlag_ = importFlag;
-	setCoreParameter("ImportFlag", importFlag ? "true" : "false");
+	setParameter("ImportFlag", importFlag ? "true" : "false");
 }
 
 std::string DescribeBizTypesRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeBizTypesRequest::getSourceIp()const
 void DescribeBizTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

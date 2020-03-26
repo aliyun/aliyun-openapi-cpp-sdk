@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeDataSourceRequest;
 
 DescribeDataSourceRequest::DescribeDataSourceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeDataSource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataSourceRequest::~DescribeDataSourceRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDataSourceRequest::getResourceOwnerId()const
 void DescribeDataSourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDataSourceRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeDataSourceRequest::getAccessKeyId()const
 void DescribeDataSourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDataSourceRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeDataSourceRequest::getRegionId()const
 void DescribeDataSourceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeDataSourceRequest::getId()const
@@ -66,6 +68,6 @@ std::string DescribeDataSourceRequest::getId()const
 void DescribeDataSourceRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

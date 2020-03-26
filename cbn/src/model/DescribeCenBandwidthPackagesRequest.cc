@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenBandwidthPackagesRequest;
 
 DescribeCenBandwidthPackagesRequest::DescribeCenBandwidthPackagesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenBandwidthPackages")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenBandwidthPackagesRequest::~DescribeCenBandwidthPackagesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenBandwidthPackagesRequest::getResourceOwnerId()const
 void DescribeCenBandwidthPackagesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeCenBandwidthPackagesRequest::getIncludeReservationData()const
@@ -44,7 +46,7 @@ bool DescribeCenBandwidthPackagesRequest::getIncludeReservationData()const
 void DescribeCenBandwidthPackagesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
 }
 
 int DescribeCenBandwidthPackagesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeCenBandwidthPackagesRequest::getPageNumber()const
 void DescribeCenBandwidthPackagesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 bool DescribeCenBandwidthPackagesRequest::getIsOrKey()const
@@ -66,7 +68,7 @@ bool DescribeCenBandwidthPackagesRequest::getIsOrKey()const
 void DescribeCenBandwidthPackagesRequest::setIsOrKey(bool isOrKey)
 {
 	isOrKey_ = isOrKey;
-	setCoreParameter("IsOrKey", isOrKey ? "true" : "false");
+	setParameter("IsOrKey", isOrKey ? "true" : "false");
 }
 
 int DescribeCenBandwidthPackagesRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCenBandwidthPackagesRequest::getPageSize()const
 void DescribeCenBandwidthPackagesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeCenBandwidthPackagesRequest::getResourceOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeCenBandwidthPackagesRequest::getOwnerAccount()const
 void DescribeCenBandwidthPackagesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenBandwidthPackagesRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeCenBandwidthPackagesRequest::getOwnerId()const
 void DescribeCenBandwidthPackagesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPackagesRequest::getFilter()const
@@ -121,12 +123,13 @@ std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPac
 void DescribeCenBandwidthPackagesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

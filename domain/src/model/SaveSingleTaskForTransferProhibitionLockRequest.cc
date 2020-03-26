@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForTransferProhibitionLockReque
 
 SaveSingleTaskForTransferProhibitionLockRequest::SaveSingleTaskForTransferProhibitionLockRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForTransferProhibitionLockRequest::~SaveSingleTaskForTransferProhibitionLockRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getDomainName()cons
 void SaveSingleTaskForTransferProhibitionLockRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getUserClientIp()co
 void SaveSingleTaskForTransferProhibitionLockRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForTransferProhibitionLockRequest::getLang()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const
@@ -66,6 +68,6 @@ bool SaveSingleTaskForTransferProhibitionLockRequest::getStatus()const
 void SaveSingleTaskForTransferProhibitionLockRequest::setStatus(bool status)
 {
 	status_ = status;
-	setCoreParameter("Status", status ? "true" : "false");
+	setParameter("Status", status ? "true" : "false");
 }
 

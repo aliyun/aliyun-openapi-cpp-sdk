@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::UpdateBoardRequest;
 
 UpdateBoardRequest::UpdateBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "UpdateBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateBoardRequest::~UpdateBoardRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateBoardRequest::getOwnerId()const
 void UpdateBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateBoardRequest::getAppId()const
@@ -44,7 +46,7 @@ std::string UpdateBoardRequest::getAppId()const
 void UpdateBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string UpdateBoardRequest::getBoardData()const
@@ -55,6 +57,6 @@ std::string UpdateBoardRequest::getBoardData()const
 void UpdateBoardRequest::setBoardData(const std::string& boardData)
 {
 	boardData_ = boardData;
-	setCoreParameter("BoardData", boardData);
+	setParameter("BoardData", boardData);
 }
 

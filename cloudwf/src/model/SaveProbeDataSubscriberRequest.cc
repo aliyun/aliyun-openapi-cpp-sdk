@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SaveProbeDataSubscriberRequest;
 
 SaveProbeDataSubscriberRequest::SaveProbeDataSubscriberRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SaveProbeDataSubscriber")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveProbeDataSubscriberRequest::~SaveProbeDataSubscriberRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveProbeDataSubscriberRequest::getParamGenScript()const
 void SaveProbeDataSubscriberRequest::setParamGenScript(const std::string& paramGenScript)
 {
 	paramGenScript_ = paramGenScript;
-	setCoreParameter("ParamGenScript", paramGenScript);
+	setParameter("ParamGenScript", paramGenScript);
 }
 
 std::string SaveProbeDataSubscriberRequest::getHttpMethod()const
@@ -44,7 +46,7 @@ std::string SaveProbeDataSubscriberRequest::getHttpMethod()const
 void SaveProbeDataSubscriberRequest::setHttpMethod(const std::string& httpMethod)
 {
 	httpMethod_ = httpMethod;
-	setCoreParameter("HttpMethod", httpMethod);
+	setParameter("HttpMethod", httpMethod);
 }
 
 std::string SaveProbeDataSubscriberRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string SaveProbeDataSubscriberRequest::getDescription()const
 void SaveProbeDataSubscriberRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int SaveProbeDataSubscriberRequest::getType()const
@@ -66,7 +68,7 @@ int SaveProbeDataSubscriberRequest::getType()const
 void SaveProbeDataSubscriberRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 std::string SaveProbeDataSubscriberRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string SaveProbeDataSubscriberRequest::getAccessKeyId()const
 void SaveProbeDataSubscriberRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SaveProbeDataSubscriberRequest::getApiUrl()const
@@ -88,7 +90,7 @@ std::string SaveProbeDataSubscriberRequest::getApiUrl()const
 void SaveProbeDataSubscriberRequest::setApiUrl(const std::string& apiUrl)
 {
 	apiUrl_ = apiUrl;
-	setCoreParameter("ApiUrl", apiUrl);
+	setParameter("ApiUrl", apiUrl);
 }
 
 std::string SaveProbeDataSubscriberRequest::getName()const
@@ -99,7 +101,7 @@ std::string SaveProbeDataSubscriberRequest::getName()const
 void SaveProbeDataSubscriberRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 long SaveProbeDataSubscriberRequest::getId()const
@@ -110,7 +112,7 @@ long SaveProbeDataSubscriberRequest::getId()const
 void SaveProbeDataSubscriberRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::vector<long> SaveProbeDataSubscriberRequest::getResourceIds()const
@@ -121,7 +123,8 @@ std::vector<long> SaveProbeDataSubscriberRequest::getResourceIds()const
 void SaveProbeDataSubscriberRequest::setResourceIds(const std::vector<long>& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	for(int i = 0; i!= resourceIds.size(); i++)
-		setCoreParameter("ResourceIds."+ std::to_string(i), std::to_string(resourceIds.at(i)));
+	for(int dep1 = 0; dep1!= resourceIds.size(); dep1++) {
+		setParameter("ResourceIds."+ std::to_string(dep1), std::to_string(resourceIds.at(dep1)));
+	}
 }
 

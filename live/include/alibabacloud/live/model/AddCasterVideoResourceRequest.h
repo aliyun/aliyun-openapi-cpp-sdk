@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setMaterialId(const std::string& materialId);
 				std::string getVodUrl()const;
 				void setVodUrl(const std::string& vodUrl);
+				std::string getStreamId()const;
+				void setStreamId(const std::string& streamId);
 				std::string getCasterId()const;
 				void setCasterId(const std::string& casterId);
 				long getOwnerId()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				int endOffset_;
 				std::string materialId_;
 				std::string vodUrl_;
+				std::string streamId_;
 				std::string casterId_;
 				long ownerId_;
 				int beginOffset_;

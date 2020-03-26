@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchUnbindDeviceFromEdgeInstanceRequest;
 
 BatchUnbindDeviceFromEdgeInstanceRequest::BatchUnbindDeviceFromEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchUnbindDeviceFromEdgeInstanceRequest::~BatchUnbindDeviceFromEdgeInstanceRequest()
 {}
@@ -33,18 +35,7 @@ std::string BatchUnbindDeviceFromEdgeInstanceRequest::getAccessKeyId()const
 void BatchUnbindDeviceFromEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BatchUnbindDeviceFromEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BatchUnbindDeviceFromEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> BatchUnbindDeviceFromEdgeInstanceRequest::getIotIds()const
@@ -55,8 +46,9 @@ std::vector<std::string> BatchUnbindDeviceFromEdgeInstanceRequest::getIotIds()co
 void BatchUnbindDeviceFromEdgeInstanceRequest::setIotIds(const std::vector<std::string>& iotIds)
 {
 	iotIds_ = iotIds;
-	for(int i = 0; i!= iotIds.size(); i++)
-		setCoreParameter("IotIds."+ std::to_string(i), iotIds.at(i));
+	for(int dep1 = 0; dep1!= iotIds.size(); dep1++) {
+		setParameter("IotIds."+ std::to_string(dep1), iotIds.at(dep1));
+	}
 }
 
 std::string BatchUnbindDeviceFromEdgeInstanceRequest::getIotInstanceId()const
@@ -67,6 +59,39 @@ std::string BatchUnbindDeviceFromEdgeInstanceRequest::getIotInstanceId()const
 void BatchUnbindDeviceFromEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchUnbindDeviceFromEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BatchUnbindDeviceFromEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BatchUnbindDeviceFromEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchUnbindDeviceFromEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchUnbindDeviceFromEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchUnbindDeviceFromEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

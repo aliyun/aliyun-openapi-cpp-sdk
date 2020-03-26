@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddMediaWorkflowRequest;
 
 AddMediaWorkflowRequest::AddMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddMediaWorkflowRequest::~AddMediaWorkflowRequest()
 {}
@@ -33,7 +35,7 @@ long AddMediaWorkflowRequest::getResourceOwnerId()const
 void AddMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddMediaWorkflowRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddMediaWorkflowRequest::getAccessKeyId()const
 void AddMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string AddMediaWorkflowRequest::getResourceOwnerAccount()const
 void AddMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddMediaWorkflowRequest::getTopology()const
@@ -66,7 +68,7 @@ std::string AddMediaWorkflowRequest::getTopology()const
 void AddMediaWorkflowRequest::setTopology(const std::string& topology)
 {
 	topology_ = topology;
-	setCoreParameter("Topology", topology);
+	setParameter("Topology", topology);
 }
 
 std::string AddMediaWorkflowRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddMediaWorkflowRequest::getOwnerAccount()const
 void AddMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddMediaWorkflowRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddMediaWorkflowRequest::getOwnerId()const
 void AddMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddMediaWorkflowRequest::getTriggerMode()const
@@ -99,7 +101,7 @@ std::string AddMediaWorkflowRequest::getTriggerMode()const
 void AddMediaWorkflowRequest::setTriggerMode(const std::string& triggerMode)
 {
 	triggerMode_ = triggerMode;
-	setCoreParameter("TriggerMode", triggerMode);
+	setParameter("TriggerMode", triggerMode);
 }
 
 std::string AddMediaWorkflowRequest::getName()const
@@ -110,6 +112,6 @@ std::string AddMediaWorkflowRequest::getName()const
 void AddMediaWorkflowRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

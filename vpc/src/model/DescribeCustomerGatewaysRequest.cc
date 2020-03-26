@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeCustomerGatewaysRequest;
 
 DescribeCustomerGatewaysRequest::DescribeCustomerGatewaysRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeCustomerGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCustomerGatewaysRequest::~DescribeCustomerGatewaysRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCustomerGatewaysRequest::getResourceOwnerId()const
 void DescribeCustomerGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCustomerGatewaysRequest::getCustomerGatewayId()const
@@ -44,7 +46,7 @@ std::string DescribeCustomerGatewaysRequest::getCustomerGatewayId()const
 void DescribeCustomerGatewaysRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setParameter("CustomerGatewayId", customerGatewayId);
 }
 
 int DescribeCustomerGatewaysRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeCustomerGatewaysRequest::getPageNumber()const
 void DescribeCustomerGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeCustomerGatewaysRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeCustomerGatewaysRequest::getRegionId()const
 void DescribeCustomerGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeCustomerGatewaysRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeCustomerGatewaysRequest::getPageSize()const
 void DescribeCustomerGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCustomerGatewaysRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeCustomerGatewaysRequest::getResourceOwnerAccount()const
 void DescribeCustomerGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCustomerGatewaysRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeCustomerGatewaysRequest::getOwnerAccount()const
 void DescribeCustomerGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCustomerGatewaysRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long DescribeCustomerGatewaysRequest::getOwnerId()const
 void DescribeCustomerGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

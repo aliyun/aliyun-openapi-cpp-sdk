@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeQosCarsRequest;
 
 DescribeQosCarsRequest::DescribeQosCarsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeQosCars")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeQosCarsRequest::~DescribeQosCarsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeQosCarsRequest::getResourceOwnerId()const
 void DescribeQosCarsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeQosCarsRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string DescribeQosCarsRequest::getDescription()const
 void DescribeQosCarsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 int DescribeQosCarsRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeQosCarsRequest::getPageNumber()const
 void DescribeQosCarsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeQosCarsRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeQosCarsRequest::getRegionId()const
 void DescribeQosCarsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeQosCarsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeQosCarsRequest::getPageSize()const
 void DescribeQosCarsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeQosCarsRequest::getQosId()const
@@ -88,7 +90,7 @@ std::string DescribeQosCarsRequest::getQosId()const
 void DescribeQosCarsRequest::setQosId(const std::string& qosId)
 {
 	qosId_ = qosId;
-	setCoreParameter("QosId", qosId);
+	setParameter("QosId", qosId);
 }
 
 std::string DescribeQosCarsRequest::getOrder()const
@@ -99,7 +101,7 @@ std::string DescribeQosCarsRequest::getOrder()const
 void DescribeQosCarsRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeQosCarsRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeQosCarsRequest::getResourceOwnerAccount()const
 void DescribeQosCarsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeQosCarsRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string DescribeQosCarsRequest::getOwnerAccount()const
 void DescribeQosCarsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeQosCarsRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long DescribeQosCarsRequest::getOwnerId()const
 void DescribeQosCarsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeQosCarsRequest::getQosCarId()const
@@ -143,6 +145,6 @@ std::string DescribeQosCarsRequest::getQosCarId()const
 void DescribeQosCarsRequest::setQosCarId(const std::string& qosCarId)
 {
 	qosCarId_ = qosCarId;
-	setCoreParameter("QosCarId", qosCarId);
+	setParameter("QosCarId", qosCarId);
 }
 

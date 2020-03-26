@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateOrderCancelRequest;
 
 CreateOrderCancelRequest::CreateOrderCancelRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateOrderCancel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateOrderCancelRequest::~CreateOrderCancelRequest()
 {}
@@ -33,7 +35,7 @@ long CreateOrderCancelRequest::getOrderId()const
 void CreateOrderCancelRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string CreateOrderCancelRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateOrderCancelRequest::getResourceGroupId()const
 void CreateOrderCancelRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateOrderCancelRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateOrderCancelRequest::getSourceIp()const
 void CreateOrderCancelRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateOrderCancelRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CreateOrderCancelRequest::getLang()const
 void CreateOrderCancelRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

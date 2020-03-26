@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteSnatEntryRequest;
 
 DeleteSnatEntryRequest::DeleteSnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteSnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSnatEntryRequest::~DeleteSnatEntryRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteSnatEntryRequest::getResourceOwnerId()const
 void DeleteSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSnatEntryRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteSnatEntryRequest::getRegionId()const
 void DeleteSnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteSnatEntryRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteSnatEntryRequest::getResourceOwnerAccount()const
 void DeleteSnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteSnatEntryRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteSnatEntryRequest::getOwnerAccount()const
 void DeleteSnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteSnatEntryRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DeleteSnatEntryRequest::getOwnerId()const
 void DeleteSnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteSnatEntryRequest::getInstanceId()const
@@ -88,7 +90,7 @@ std::string DeleteSnatEntryRequest::getInstanceId()const
 void DeleteSnatEntryRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteSnatEntryRequest::getSmartAGId()const
@@ -99,6 +101,6 @@ std::string DeleteSnatEntryRequest::getSmartAGId()const
 void DeleteSnatEntryRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetNumberRegionInfoRequest;
 
 GetNumberRegionInfoRequest::GetNumberRegionInfoRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetNumberRegionInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNumberRegionInfoRequest::~GetNumberRegionInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetNumberRegionInfoRequest::getNumber()const
 void GetNumberRegionInfoRequest::setNumber(const std::string& number)
 {
 	number_ = number;
-	setCoreParameter("Number", number);
+	setParameter("Number", number);
 }
 
 std::string GetNumberRegionInfoRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string GetNumberRegionInfoRequest::getInstanceId()const
 void GetNumberRegionInfoRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetNumberRegionInfoRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetNumberRegionInfoRequest::getAccessKeyId()const
 void GetNumberRegionInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

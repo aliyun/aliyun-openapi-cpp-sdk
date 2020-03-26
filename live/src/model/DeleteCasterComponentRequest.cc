@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterComponentRequest;
 
 DeleteCasterComponentRequest::DeleteCasterComponentRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterComponent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterComponentRequest::~DeleteCasterComponentRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterComponentRequest::getComponentId()const
 void DeleteCasterComponentRequest::setComponentId(const std::string& componentId)
 {
 	componentId_ = componentId;
-	setCoreParameter("ComponentId", componentId);
+	setParameter("ComponentId", componentId);
 }
 
 std::string DeleteCasterComponentRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DeleteCasterComponentRequest::getCasterId()const
 void DeleteCasterComponentRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterComponentRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DeleteCasterComponentRequest::getOwnerId()const
 void DeleteCasterComponentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

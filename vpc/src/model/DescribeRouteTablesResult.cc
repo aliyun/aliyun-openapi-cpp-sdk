@@ -73,6 +73,8 @@ void DescribeRouteTablesResult::parse(const std::string &payload)
 				routeEntrysObject.nextHopType = allRouteTablesNodeRouteEntrysRouteEntry["NextHopType"].asString();
 			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].isNull())
 				routeEntrysObject.routeEntryName = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryName"].asString();
+			if(!allRouteTablesNodeRouteEntrysRouteEntry["Description"].isNull())
+				routeEntrysObject.description = allRouteTablesNodeRouteEntrysRouteEntry["Description"].asString();
 			if(!allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].isNull())
 				routeEntrysObject.routeEntryId = allRouteTablesNodeRouteEntrysRouteEntry["RouteEntryId"].asString();
 			if(!allRouteTablesNodeRouteEntrysRouteEntry["NextHopRegionId"].isNull())

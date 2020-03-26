@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInResendMailTokenRequest;
 
 TransferInResendMailTokenRequest::TransferInResendMailTokenRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInResendMailToken")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInResendMailTokenRequest::~TransferInResendMailTokenRequest()
 {}
@@ -33,7 +35,7 @@ std::string TransferInResendMailTokenRequest::getDomainName()const
 void TransferInResendMailTokenRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string TransferInResendMailTokenRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string TransferInResendMailTokenRequest::getUserClientIp()const
 void TransferInResendMailTokenRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInResendMailTokenRequest::getLang()const
@@ -55,6 +57,6 @@ std::string TransferInResendMailTokenRequest::getLang()const
 void TransferInResendMailTokenRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

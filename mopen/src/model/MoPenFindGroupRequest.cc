@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenFindGroupRequest;
 
 MoPenFindGroupRequest::MoPenFindGroupRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenFindGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenFindGroupRequest::~MoPenFindGroupRequest()
 {}
@@ -33,6 +35,6 @@ std::string MoPenFindGroupRequest::getCreator()const
 void MoPenFindGroupRequest::setCreator(const std::string& creator)
 {
 	creator_ = creator;
-	setCoreParameter("Creator", creator);
+	setBodyParameter("Creator", creator);
 }
 

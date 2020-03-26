@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceConfigRequest;
 
 GetInstanceConfigRequest::GetInstanceConfigRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/config");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceConfigRequest::~GetInstanceConfigRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceConfigRequest::getProjectName()const
 void GetInstanceConfigRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceConfigRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceConfigRequest::getInstanceId()const
 void GetInstanceConfigRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceConfigRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceConfigRequest::getRegionId()const
 void GetInstanceConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceConfigRequest::getJobName()const
@@ -66,6 +69,6 @@ std::string GetInstanceConfigRequest::getJobName()const
 void GetInstanceConfigRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

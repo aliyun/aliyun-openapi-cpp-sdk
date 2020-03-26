@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteNetworkAclRequest;
 
 DeleteNetworkAclRequest::DeleteNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNetworkAclRequest::~DeleteNetworkAclRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteNetworkAclRequest::getResourceOwnerId()const
 void DeleteNetworkAclRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkAclRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteNetworkAclRequest::getClientToken()const
 void DeleteNetworkAclRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteNetworkAclRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteNetworkAclRequest::getRegionId()const
 void DeleteNetworkAclRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkAclRequest::getNetworkAclId()const
@@ -66,7 +68,7 @@ std::string DeleteNetworkAclRequest::getNetworkAclId()const
 void DeleteNetworkAclRequest::setNetworkAclId(const std::string& networkAclId)
 {
 	networkAclId_ = networkAclId;
-	setCoreParameter("NetworkAclId", networkAclId);
+	setParameter("NetworkAclId", networkAclId);
 }
 
 std::string DeleteNetworkAclRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteNetworkAclRequest::getResourceOwnerAccount()const
 void DeleteNetworkAclRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteNetworkAclRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DeleteNetworkAclRequest::getOwnerId()const
 void DeleteNetworkAclRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

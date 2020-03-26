@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::AddAITemplateRequest;
 
 AddAITemplateRequest::AddAITemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "AddAITemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddAITemplateRequest::~AddAITemplateRequest()
 {}
@@ -33,7 +35,7 @@ long AddAITemplateRequest::getResourceOwnerId()const
 void AddAITemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddAITemplateRequest::getTemplateConfig()const
@@ -44,7 +46,7 @@ std::string AddAITemplateRequest::getTemplateConfig()const
 void AddAITemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setCoreParameter("TemplateConfig", templateConfig);
+	setParameter("TemplateConfig", templateConfig);
 }
 
 std::string AddAITemplateRequest::getTemplateType()const
@@ -55,7 +57,7 @@ std::string AddAITemplateRequest::getTemplateType()const
 void AddAITemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", templateType);
+	setParameter("TemplateType", templateType);
 }
 
 std::string AddAITemplateRequest::getTemplateName()const
@@ -66,7 +68,7 @@ std::string AddAITemplateRequest::getTemplateName()const
 void AddAITemplateRequest::setTemplateName(const std::string& templateName)
 {
 	templateName_ = templateName;
-	setCoreParameter("TemplateName", templateName);
+	setParameter("TemplateName", templateName);
 }
 
 std::string AddAITemplateRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddAITemplateRequest::getResourceOwnerAccount()const
 void AddAITemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AddAITemplateRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long AddAITemplateRequest::getOwnerId()const
 void AddAITemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

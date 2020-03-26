@@ -22,7 +22,7 @@ DeleteSnapshotRepoRequest::DeleteSnapshotRepoRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/snapshot-repos");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteSnapshotRepoRequest::~DeleteSnapshotRepoRequest()

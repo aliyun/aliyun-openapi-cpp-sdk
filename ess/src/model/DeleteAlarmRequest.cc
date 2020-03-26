@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteAlarmRequest;
 
 DeleteAlarmRequest::DeleteAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteAlarmRequest::~DeleteAlarmRequest()
 {}
@@ -33,18 +35,7 @@ std::string DeleteAlarmRequest::getResourceOwnerAccount()const
 void DeleteAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string DeleteAlarmRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DeleteAlarmRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteAlarmRequest::getOwnerId()const
@@ -55,7 +46,7 @@ long DeleteAlarmRequest::getOwnerId()const
 void DeleteAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteAlarmRequest::getAlarmTaskId()const
@@ -66,7 +57,7 @@ std::string DeleteAlarmRequest::getAlarmTaskId()const
 void DeleteAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", alarmTaskId);
+	setParameter("AlarmTaskId", alarmTaskId);
 }
 
 std::string DeleteAlarmRequest::getAccessKeyId()const
@@ -77,6 +68,17 @@ std::string DeleteAlarmRequest::getAccessKeyId()const
 void DeleteAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteAlarmRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DeleteAlarmRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 

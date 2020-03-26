@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::ExportOssResultRequest;
 
 ExportOssResultRequest::ExportOssResultRequest() :
 	RpcServiceRequest("green", "2017-08-23", "ExportOssResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ExportOssResultRequest::~ExportOssResultRequest()
 {}
@@ -33,7 +35,7 @@ float ExportOssResultRequest::getMinScore()const
 void ExportOssResultRequest::setMinScore(float minScore)
 {
 	minScore_ = minScore;
-	setCoreParameter("MinScore", std::to_string(minScore));
+	setParameter("MinScore", std::to_string(minScore));
 }
 
 float ExportOssResultRequest::getMaxScore()const
@@ -44,7 +46,7 @@ float ExportOssResultRequest::getMaxScore()const
 void ExportOssResultRequest::setMaxScore(float maxScore)
 {
 	maxScore_ = maxScore;
-	setCoreParameter("MaxScore", std::to_string(maxScore));
+	setParameter("MaxScore", std::to_string(maxScore));
 }
 
 std::string ExportOssResultRequest::getStartDate()const
@@ -55,7 +57,7 @@ std::string ExportOssResultRequest::getStartDate()const
 void ExportOssResultRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string ExportOssResultRequest::getScene()const
@@ -66,7 +68,7 @@ std::string ExportOssResultRequest::getScene()const
 void ExportOssResultRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string ExportOssResultRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string ExportOssResultRequest::getSourceIp()const
 void ExportOssResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int ExportOssResultRequest::getPageSize()const
@@ -88,7 +90,7 @@ int ExportOssResultRequest::getPageSize()const
 void ExportOssResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ExportOssResultRequest::getLang()const
@@ -99,7 +101,7 @@ std::string ExportOssResultRequest::getLang()const
 void ExportOssResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool ExportOssResultRequest::getStock()const
@@ -110,7 +112,7 @@ bool ExportOssResultRequest::getStock()const
 void ExportOssResultRequest::setStock(bool stock)
 {
 	stock_ = stock;
-	setCoreParameter("Stock", stock ? "true" : "false");
+	setParameter("Stock", stock ? "true" : "false");
 }
 
 int ExportOssResultRequest::getTotalCount()const
@@ -121,7 +123,7 @@ int ExportOssResultRequest::getTotalCount()const
 void ExportOssResultRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string ExportOssResultRequest::getSuggestion()const
@@ -132,7 +134,7 @@ std::string ExportOssResultRequest::getSuggestion()const
 void ExportOssResultRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setParameter("Suggestion", suggestion);
 }
 
 int ExportOssResultRequest::getCurrentPage()const
@@ -143,7 +145,7 @@ int ExportOssResultRequest::getCurrentPage()const
 void ExportOssResultRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string ExportOssResultRequest::getResourceType()const
@@ -154,7 +156,7 @@ std::string ExportOssResultRequest::getResourceType()const
 void ExportOssResultRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string ExportOssResultRequest::getBucket()const
@@ -165,7 +167,7 @@ std::string ExportOssResultRequest::getBucket()const
 void ExportOssResultRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setParameter("Bucket", bucket);
 }
 
 std::string ExportOssResultRequest::getEndDate()const
@@ -176,6 +178,6 @@ std::string ExportOssResultRequest::getEndDate()const
 void ExportOssResultRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 

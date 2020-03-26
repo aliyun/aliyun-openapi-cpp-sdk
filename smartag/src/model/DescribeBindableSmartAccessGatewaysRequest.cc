@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeBindableSmartAccessGatewaysRequest;
 
 DescribeBindableSmartAccessGatewaysRequest::DescribeBindableSmartAccessGatewaysRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeBindableSmartAccessGateways")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBindableSmartAccessGatewaysRequest::~DescribeBindableSmartAccessGatewaysRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerId()const
 void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
@@ -44,18 +46,18 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getCcnId()const
 void DescribeBindableSmartAccessGatewaysRequest::setCcnId(const std::string& ccnId)
 {
 	ccnId_ = ccnId;
-	setCoreParameter("CcnId", ccnId);
+	setParameter("CcnId", ccnId);
 }
 
-std::string DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const
+int DescribeBindableSmartAccessGatewaysRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeBindableSmartAccessGatewaysRequest::setPageNumber(const std::string& pageNumber)
+void DescribeBindableSmartAccessGatewaysRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getRegionId()const
@@ -66,18 +68,18 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getRegionId()const
 void DescribeBindableSmartAccessGatewaysRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
+int DescribeBindableSmartAccessGatewaysRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void DescribeBindableSmartAccessGatewaysRequest::setPageSize(const std::string& pageSize)
+void DescribeBindableSmartAccessGatewaysRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", pageSize);
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getResourceOwnerAccount(
 void DescribeBindableSmartAccessGatewaysRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeBindableSmartAccessGatewaysRequest::getOwnerAccount()const
 void DescribeBindableSmartAccessGatewaysRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeBindableSmartAccessGatewaysRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeBindableSmartAccessGatewaysRequest::getOwnerId()const
 void DescribeBindableSmartAccessGatewaysRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
@@ -121,6 +123,28 @@ bool DescribeBindableSmartAccessGatewaysRequest::getCrossAccount()const
 void DescribeBindableSmartAccessGatewaysRequest::setCrossAccount(bool crossAccount)
 {
 	crossAccount_ = crossAccount;
-	setCoreParameter("CrossAccount", crossAccount ? "true" : "false");
+	setParameter("CrossAccount", crossAccount ? "true" : "false");
+}
+
+std::string DescribeBindableSmartAccessGatewaysRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeBindableSmartAccessGatewaysRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::string DescribeBindableSmartAccessGatewaysRequest::getSmartAGId()const
+{
+	return smartAGId_;
+}
+
+void DescribeBindableSmartAccessGatewaysRequest::setSmartAGId(const std::string& smartAGId)
+{
+	smartAGId_ = smartAGId;
+	setParameter("SmartAGId", smartAGId);
 }
 

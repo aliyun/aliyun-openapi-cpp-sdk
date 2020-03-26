@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetSupportStoreRequest;
 
 GetSupportStoreRequest::GetSupportStoreRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetSupportStore")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSupportStoreRequest::~GetSupportStoreRequest()
 {}

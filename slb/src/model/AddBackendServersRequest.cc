@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::AddBackendServersRequest;
 
 AddBackendServersRequest::AddBackendServersRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "AddBackendServers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddBackendServersRequest::~AddBackendServersRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddBackendServersRequest::getAccess_key_id()const
 void AddBackendServersRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long AddBackendServersRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long AddBackendServersRequest::getResourceOwnerId()const
 void AddBackendServersRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddBackendServersRequest::getBackendServers()const
@@ -55,7 +57,7 @@ std::string AddBackendServersRequest::getBackendServers()const
 void AddBackendServersRequest::setBackendServers(const std::string& backendServers)
 {
 	backendServers_ = backendServers;
-	setCoreParameter("BackendServers", backendServers);
+	setParameter("BackendServers", backendServers);
 }
 
 std::string AddBackendServersRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string AddBackendServersRequest::getRegionId()const
 void AddBackendServersRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddBackendServersRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddBackendServersRequest::getResourceOwnerAccount()const
 void AddBackendServersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddBackendServersRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AddBackendServersRequest::getOwnerAccount()const
 void AddBackendServersRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddBackendServersRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long AddBackendServersRequest::getOwnerId()const
 void AddBackendServersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddBackendServersRequest::getTags()const
@@ -110,7 +112,7 @@ std::string AddBackendServersRequest::getTags()const
 void AddBackendServersRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string AddBackendServersRequest::getLoadBalancerId()const
@@ -121,6 +123,6 @@ std::string AddBackendServersRequest::getLoadBalancerId()const
 void AddBackendServersRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

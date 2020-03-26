@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ModifySignatureRequest;
 
 ModifySignatureRequest::ModifySignatureRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ModifySignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySignatureRequest::~ModifySignatureRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifySignatureRequest::getSignatureName()const
 void ModifySignatureRequest::setSignatureName(const std::string& signatureName)
 {
 	signatureName_ = signatureName;
-	setCoreParameter("SignatureName", signatureName);
+	setParameter("SignatureName", signatureName);
 }
 
 std::string ModifySignatureRequest::getSignatureId()const
@@ -44,7 +46,7 @@ std::string ModifySignatureRequest::getSignatureId()const
 void ModifySignatureRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 std::string ModifySignatureRequest::getSignatureSecret()const
@@ -55,7 +57,7 @@ std::string ModifySignatureRequest::getSignatureSecret()const
 void ModifySignatureRequest::setSignatureSecret(const std::string& signatureSecret)
 {
 	signatureSecret_ = signatureSecret;
-	setCoreParameter("SignatureSecret", signatureSecret);
+	setParameter("SignatureSecret", signatureSecret);
 }
 
 std::string ModifySignatureRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ModifySignatureRequest::getAccessKeyId()const
 void ModifySignatureRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifySignatureRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string ModifySignatureRequest::getSecurityToken()const
 void ModifySignatureRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ModifySignatureRequest::getSignatureKey()const
@@ -88,6 +90,6 @@ std::string ModifySignatureRequest::getSignatureKey()const
 void ModifySignatureRequest::setSignatureKey(const std::string& signatureKey)
 {
 	signatureKey_ = signatureKey;
-	setCoreParameter("SignatureKey", signatureKey);
+	setParameter("SignatureKey", signatureKey);
 }
 

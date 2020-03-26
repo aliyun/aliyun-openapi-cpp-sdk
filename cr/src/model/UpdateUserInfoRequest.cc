@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::UpdateUserInfoRequest;
 
 UpdateUserInfoRequest::UpdateUserInfoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/users");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateUserInfoRequest::~UpdateUserInfoRequest()
 {}

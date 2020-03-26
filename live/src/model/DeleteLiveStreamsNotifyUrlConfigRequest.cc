@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveStreamsNotifyUrlConfigRequest;
 
 DeleteLiveStreamsNotifyUrlConfigRequest::DeleteLiveStreamsNotifyUrlConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveStreamsNotifyUrlConfigRequest::~DeleteLiveStreamsNotifyUrlConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void DeleteLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DeleteLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void DeleteLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

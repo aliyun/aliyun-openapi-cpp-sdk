@@ -35,7 +35,7 @@ std::string DescribeDcdnDomainUvDataRequest::getDomainName()const
 void DescribeDcdnDomainUvDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDcdnDomainUvDataRequest::getEndTime()const
@@ -46,7 +46,7 @@ std::string DescribeDcdnDomainUvDataRequest::getEndTime()const
 void DescribeDcdnDomainUvDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeDcdnDomainUvDataRequest::getStartTime()const
@@ -57,7 +57,7 @@ std::string DescribeDcdnDomainUvDataRequest::getStartTime()const
 void DescribeDcdnDomainUvDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long DescribeDcdnDomainUvDataRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long DescribeDcdnDomainUvDataRequest::getOwnerId()const
 void DescribeDcdnDomainUvDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeDcdnDomainUvDataRequest::getSecurityToken()const
@@ -79,6 +79,6 @@ std::string DescribeDcdnDomainUvDataRequest::getSecurityToken()const
 void DescribeDcdnDomainUvDataRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

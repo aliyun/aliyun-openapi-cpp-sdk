@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCreatingDnsHostRequest;
 
 SaveSingleTaskForCreatingDnsHostRequest::SaveSingleTaskForCreatingDnsHostRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCreatingDnsHostRequest::~SaveSingleTaskForCreatingDnsHostRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> SaveSingleTaskForCreatingDnsHostRequest::getIp()const
 void SaveSingleTaskForCreatingDnsHostRequest::setIp(const std::vector<std::string>& ip)
 {
 	ip_ = ip;
-	for(int i = 0; i!= ip.size(); i++)
-		setCoreParameter("Ip."+ std::to_string(i), ip.at(i));
+	for(int dep1 = 0; dep1!= ip.size(); dep1++) {
+		setParameter("Ip."+ std::to_string(dep1), ip.at(dep1));
+	}
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const
@@ -45,7 +48,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getInstanceId()const
 void SaveSingleTaskForCreatingDnsHostRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getDnsName()const
@@ -56,7 +59,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getDnsName()const
 void SaveSingleTaskForCreatingDnsHostRequest::setDnsName(const std::string& dnsName)
 {
 	dnsName_ = dnsName;
-	setCoreParameter("DnsName", dnsName);
+	setParameter("DnsName", dnsName);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getUserClientIp()const
@@ -67,7 +70,7 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getUserClientIp()const
 void SaveSingleTaskForCreatingDnsHostRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCreatingDnsHostRequest::getLang()const
@@ -78,6 +81,6 @@ std::string SaveSingleTaskForCreatingDnsHostRequest::getLang()const
 void SaveSingleTaskForCreatingDnsHostRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

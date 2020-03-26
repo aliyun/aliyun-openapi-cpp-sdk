@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::SetStackPolicyRequest;
 
 SetStackPolicyRequest::SetStackPolicyRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/policy");
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetStackPolicyRequest::~SetStackPolicyRequest()
 {}
@@ -33,7 +36,7 @@ std::string SetStackPolicyRequest::getStackId()const
 void SetStackPolicyRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string SetStackPolicyRequest::getStackName()const
@@ -44,6 +47,6 @@ std::string SetStackPolicyRequest::getStackName()const
 void SetStackPolicyRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

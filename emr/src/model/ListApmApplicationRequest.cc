@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListApmApplicationRequest;
 
 ListApmApplicationRequest::ListApmApplicationRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListApmApplication")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApmApplicationRequest::~ListApmApplicationRequest()
 {}
@@ -33,7 +35,7 @@ long ListApmApplicationRequest::getResourceOwnerId()const
 void ListApmApplicationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ListApmApplicationRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListApmApplicationRequest::getPageNumber()const
 void ListApmApplicationRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListApmApplicationRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListApmApplicationRequest::getAccessKeyId()const
 void ListApmApplicationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApmApplicationRequest::getFinalStatus()const
@@ -66,7 +68,7 @@ std::string ListApmApplicationRequest::getFinalStatus()const
 void ListApmApplicationRequest::setFinalStatus(const std::string& finalStatus)
 {
 	finalStatus_ = finalStatus;
-	setCoreParameter("FinalStatus", finalStatus);
+	setParameter("FinalStatus", finalStatus);
 }
 
 std::string ListApmApplicationRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string ListApmApplicationRequest::getRegionId()const
 void ListApmApplicationRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListApmApplicationRequest::getPageSize()const
@@ -88,7 +90,7 @@ int ListApmApplicationRequest::getPageSize()const
 void ListApmApplicationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListApmApplicationRequest::getState()const
@@ -99,7 +101,7 @@ std::string ListApmApplicationRequest::getState()const
 void ListApmApplicationRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 long ListApmApplicationRequest::getStartTimeTo()const
@@ -110,7 +112,7 @@ long ListApmApplicationRequest::getStartTimeTo()const
 void ListApmApplicationRequest::setStartTimeTo(long startTimeTo)
 {
 	startTimeTo_ = startTimeTo;
-	setCoreParameter("StartTimeTo", std::to_string(startTimeTo));
+	setParameter("StartTimeTo", std::to_string(startTimeTo));
 }
 
 std::string ListApmApplicationRequest::getDiagnoseResult()const
@@ -121,7 +123,7 @@ std::string ListApmApplicationRequest::getDiagnoseResult()const
 void ListApmApplicationRequest::setDiagnoseResult(const std::string& diagnoseResult)
 {
 	diagnoseResult_ = diagnoseResult;
-	setCoreParameter("DiagnoseResult", diagnoseResult);
+	setParameter("DiagnoseResult", diagnoseResult);
 }
 
 long ListApmApplicationRequest::getEndTimeFrom()const
@@ -132,7 +134,7 @@ long ListApmApplicationRequest::getEndTimeFrom()const
 void ListApmApplicationRequest::setEndTimeFrom(long endTimeFrom)
 {
 	endTimeFrom_ = endTimeFrom;
-	setCoreParameter("EndTimeFrom", std::to_string(endTimeFrom));
+	setParameter("EndTimeFrom", std::to_string(endTimeFrom));
 }
 
 std::string ListApmApplicationRequest::getOrderBy()const
@@ -143,7 +145,7 @@ std::string ListApmApplicationRequest::getOrderBy()const
 void ListApmApplicationRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 std::string ListApmApplicationRequest::getClusterId()const
@@ -154,7 +156,7 @@ std::string ListApmApplicationRequest::getClusterId()const
 void ListApmApplicationRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListApmApplicationRequest::getJobType()const
@@ -165,7 +167,7 @@ std::string ListApmApplicationRequest::getJobType()const
 void ListApmApplicationRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setParameter("JobType", jobType);
 }
 
 long ListApmApplicationRequest::getStartTimeFrom()const
@@ -176,7 +178,7 @@ long ListApmApplicationRequest::getStartTimeFrom()const
 void ListApmApplicationRequest::setStartTimeFrom(long startTimeFrom)
 {
 	startTimeFrom_ = startTimeFrom;
-	setCoreParameter("StartTimeFrom", std::to_string(startTimeFrom));
+	setParameter("StartTimeFrom", std::to_string(startTimeFrom));
 }
 
 std::string ListApmApplicationRequest::getAppId()const
@@ -187,7 +189,7 @@ std::string ListApmApplicationRequest::getAppId()const
 void ListApmApplicationRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string ListApmApplicationRequest::getName()const
@@ -198,7 +200,7 @@ std::string ListApmApplicationRequest::getName()const
 void ListApmApplicationRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ListApmApplicationRequest::getUser()const
@@ -209,7 +211,7 @@ std::string ListApmApplicationRequest::getUser()const
 void ListApmApplicationRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 
 long ListApmApplicationRequest::getEndTimeTo()const
@@ -220,7 +222,7 @@ long ListApmApplicationRequest::getEndTimeTo()const
 void ListApmApplicationRequest::setEndTimeTo(long endTimeTo)
 {
 	endTimeTo_ = endTimeTo;
-	setCoreParameter("EndTimeTo", std::to_string(endTimeTo));
+	setParameter("EndTimeTo", std::to_string(endTimeTo));
 }
 
 std::string ListApmApplicationRequest::getQueue()const
@@ -231,6 +233,6 @@ std::string ListApmApplicationRequest::getQueue()const
 void ListApmApplicationRequest::setQueue(const std::string& queue)
 {
 	queue_ = queue;
-	setCoreParameter("Queue", queue);
+	setParameter("Queue", queue);
 }
 

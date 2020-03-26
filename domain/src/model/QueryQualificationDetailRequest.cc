@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryQualificationDetailRequest;
 
 QueryQualificationDetailRequest::QueryQualificationDetailRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryQualificationDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryQualificationDetailRequest::~QueryQualificationDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryQualificationDetailRequest::getQualificationType()const
 void QueryQualificationDetailRequest::setQualificationType(const std::string& qualificationType)
 {
 	qualificationType_ = qualificationType;
-	setCoreParameter("QualificationType", qualificationType);
+	setParameter("QualificationType", qualificationType);
 }
 
 std::string QueryQualificationDetailRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string QueryQualificationDetailRequest::getInstanceId()const
 void QueryQualificationDetailRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string QueryQualificationDetailRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryQualificationDetailRequest::getUserClientIp()const
 void QueryQualificationDetailRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryQualificationDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryQualificationDetailRequest::getLang()const
 void QueryQualificationDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

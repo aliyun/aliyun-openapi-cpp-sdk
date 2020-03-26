@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::PollTaskResultRequest;
 
 PollTaskResultRequest::PollTaskResultRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "PollTaskResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PollTaskResultRequest::~PollTaskResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string PollTaskResultRequest::getDomainName()const
 void PollTaskResultRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int PollTaskResultRequest::getPageNum()const
@@ -44,7 +46,7 @@ int PollTaskResultRequest::getPageNum()const
 void PollTaskResultRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int PollTaskResultRequest::getTaskResultStatus()const
@@ -55,7 +57,7 @@ int PollTaskResultRequest::getTaskResultStatus()const
 void PollTaskResultRequest::setTaskResultStatus(int taskResultStatus)
 {
 	taskResultStatus_ = taskResultStatus;
-	setCoreParameter("TaskResultStatus", std::to_string(taskResultStatus));
+	setParameter("TaskResultStatus", std::to_string(taskResultStatus));
 }
 
 std::string PollTaskResultRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string PollTaskResultRequest::getInstanceId()const
 void PollTaskResultRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string PollTaskResultRequest::getUserClientIp()const
@@ -77,7 +79,7 @@ std::string PollTaskResultRequest::getUserClientIp()const
 void PollTaskResultRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string PollTaskResultRequest::getTaskNo()const
@@ -88,7 +90,7 @@ std::string PollTaskResultRequest::getTaskNo()const
 void PollTaskResultRequest::setTaskNo(const std::string& taskNo)
 {
 	taskNo_ = taskNo;
-	setCoreParameter("TaskNo", taskNo);
+	setParameter("TaskNo", taskNo);
 }
 
 int PollTaskResultRequest::getPageSize()const
@@ -99,7 +101,7 @@ int PollTaskResultRequest::getPageSize()const
 void PollTaskResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string PollTaskResultRequest::getLang()const
@@ -110,6 +112,6 @@ std::string PollTaskResultRequest::getLang()const
 void PollTaskResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

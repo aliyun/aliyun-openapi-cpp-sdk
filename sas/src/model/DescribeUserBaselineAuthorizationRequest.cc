@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeUserBaselineAuthorizationRequest;
 
 DescribeUserBaselineAuthorizationRequest::DescribeUserBaselineAuthorizationRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeUserBaselineAuthorization")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserBaselineAuthorizationRequest::~DescribeUserBaselineAuthorizationRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeUserBaselineAuthorizationRequest::getResourceOwnerId()const
 void DescribeUserBaselineAuthorizationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeUserBaselineAuthorizationRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeUserBaselineAuthorizationRequest::getSourceIp()const
 void DescribeUserBaselineAuthorizationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUserBaselineAuthorizationRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeUserBaselineAuthorizationRequest::getLang()const
 void DescribeUserBaselineAuthorizationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ResizeClusterV2Request;
 
 ResizeClusterV2Request::ResizeClusterV2Request() :
 	RpcServiceRequest("emr", "2016-04-08", "ResizeClusterV2")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResizeClusterV2Request::~ResizeClusterV2Request()
 {}
@@ -33,7 +35,7 @@ bool ResizeClusterV2Request::getIsOpenPublicIp()const
 void ResizeClusterV2Request::setIsOpenPublicIp(bool isOpenPublicIp)
 {
 	isOpenPublicIp_ = isOpenPublicIp;
-	setCoreParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
+	setParameter("IsOpenPublicIp", isOpenPublicIp ? "true" : "false");
 }
 
 bool ResizeClusterV2Request::getAutoPayOrder()const
@@ -44,7 +46,7 @@ bool ResizeClusterV2Request::getAutoPayOrder()const
 void ResizeClusterV2Request::setAutoPayOrder(bool autoPayOrder)
 {
 	autoPayOrder_ = autoPayOrder;
-	setCoreParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
+	setParameter("AutoPayOrder", autoPayOrder ? "true" : "false");
 }
 
 std::string ResizeClusterV2Request::getClusterId()const
@@ -55,7 +57,7 @@ std::string ResizeClusterV2Request::getClusterId()const
 void ResizeClusterV2Request::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ResizeClusterV2Request::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string ResizeClusterV2Request::getAccessKeyId()const
 void ResizeClusterV2Request::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ResizeClusterV2Request::getVswitchId()const
@@ -77,7 +79,7 @@ std::string ResizeClusterV2Request::getVswitchId()const
 void ResizeClusterV2Request::setVswitchId(const std::string& vswitchId)
 {
 	vswitchId_ = vswitchId;
-	setCoreParameter("VswitchId", vswitchId);
+	setParameter("VswitchId", vswitchId);
 }
 
 std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::getHostComponentInfo()const
@@ -88,13 +90,14 @@ std::vector<ResizeClusterV2Request::HostComponentInfo> ResizeClusterV2Request::g
 void ResizeClusterV2Request::setHostComponentInfo(const std::vector<HostComponentInfo>& hostComponentInfo)
 {
 	hostComponentInfo_ = hostComponentInfo;
-	int i = 0;
-	for(int i = 0; i!= hostComponentInfo.size(); i++)	{
-		auto obj = hostComponentInfo.at(i);
-		std::string str ="HostComponentInfo."+ std::to_string(i);
-		setCoreParameter(str + ".HostName", obj.hostName);
-		for(int i = 0; i!= obj.componentNameList.size(); i++)				setCoreParameter(str + ".ComponentNameList."+ std::to_string(i), obj.componentNameList.at(i));
-		setCoreParameter(str + ".ServiceName", obj.serviceName);
+	for(int dep1 = 0; dep1!= hostComponentInfo.size(); dep1++) {
+		auto hostComponentInfoObj = hostComponentInfo.at(dep1);
+		std::string hostComponentInfoObjStr = "HostComponentInfo." + std::to_string(dep1 + 1);
+		setParameter(hostComponentInfoObjStr + ".HostName", hostComponentInfoObj.hostName);
+		for(int dep2 = 0; dep2!= hostComponentInfoObj.componentNameList.size(); dep2++) {
+			setParameter(hostComponentInfoObjStr + ".ComponentNameList."+ std::to_string(dep2), hostComponentInfoObj.componentNameList.at(dep2));
+		}
+		setParameter(hostComponentInfoObjStr + ".ServiceName", hostComponentInfoObj.serviceName);
 	}
 }
 
@@ -106,7 +109,7 @@ std::string ResizeClusterV2Request::getRegionId()const
 void ResizeClusterV2Request::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<ResizeClusterV2Request::HostGroup> ResizeClusterV2Request::getHostGroup()const
@@ -117,29 +120,28 @@ std::vector<ResizeClusterV2Request::HostGroup> ResizeClusterV2Request::getHostGr
 void ResizeClusterV2Request::setHostGroup(const std::vector<HostGroup>& hostGroup)
 {
 	hostGroup_ = hostGroup;
-	int i = 0;
-	for(int i = 0; i!= hostGroup.size(); i++)	{
-		auto obj = hostGroup.at(i);
-		std::string str ="HostGroup."+ std::to_string(i);
-		setCoreParameter(str + ".Period", std::to_string(obj.period));
-		setCoreParameter(str + ".SysDiskCapacity", std::to_string(obj.sysDiskCapacity));
-		setCoreParameter(str + ".HostKeyPairName", obj.hostKeyPairName);
-		setCoreParameter(str + ".DiskCapacity", std::to_string(obj.diskCapacity));
-		setCoreParameter(str + ".SysDiskType", obj.sysDiskType);
-		setCoreParameter(str + ".ClusterId", obj.clusterId);
-		setCoreParameter(str + ".DiskType", obj.diskType);
-		setCoreParameter(str + ".HostGroupName", obj.hostGroupName);
-		setCoreParameter(str + ".VswitchId", std::to_string(obj.vswitchId));
-		setCoreParameter(str + ".DiskCount", std::to_string(obj.diskCount));
-		setCoreParameter(str + ".AutoRenew", obj.autoRenew ? "true" : "false");
-		setCoreParameter(str + ".HostGroupId", obj.hostGroupId);
-		setCoreParameter(str + ".NodeCount", std::to_string(obj.nodeCount));
-		setCoreParameter(str + ".InstanceType", obj.instanceType);
-		setCoreParameter(str + ".Comment", obj.comment);
-		setCoreParameter(str + ".ChargeType", obj.chargeType);
-		setCoreParameter(str + ".CreateType", obj.createType);
-		setCoreParameter(str + ".HostPassword", obj.hostPassword);
-		setCoreParameter(str + ".HostGroupType", obj.hostGroupType);
+	for(int dep1 = 0; dep1!= hostGroup.size(); dep1++) {
+		auto hostGroupObj = hostGroup.at(dep1);
+		std::string hostGroupObjStr = "HostGroup." + std::to_string(dep1 + 1);
+		setParameter(hostGroupObjStr + ".Period", std::to_string(hostGroupObj.period));
+		setParameter(hostGroupObjStr + ".SysDiskCapacity", std::to_string(hostGroupObj.sysDiskCapacity));
+		setParameter(hostGroupObjStr + ".HostKeyPairName", hostGroupObj.hostKeyPairName);
+		setParameter(hostGroupObjStr + ".DiskCapacity", std::to_string(hostGroupObj.diskCapacity));
+		setParameter(hostGroupObjStr + ".SysDiskType", hostGroupObj.sysDiskType);
+		setParameter(hostGroupObjStr + ".ClusterId", hostGroupObj.clusterId);
+		setParameter(hostGroupObjStr + ".DiskType", hostGroupObj.diskType);
+		setParameter(hostGroupObjStr + ".HostGroupName", hostGroupObj.hostGroupName);
+		setParameter(hostGroupObjStr + ".VswitchId", std::to_string(hostGroupObj.vswitchId));
+		setParameter(hostGroupObjStr + ".DiskCount", std::to_string(hostGroupObj.diskCount));
+		setParameter(hostGroupObjStr + ".AutoRenew", hostGroupObj.autoRenew ? "true" : "false");
+		setParameter(hostGroupObjStr + ".HostGroupId", hostGroupObj.hostGroupId);
+		setParameter(hostGroupObjStr + ".NodeCount", std::to_string(hostGroupObj.nodeCount));
+		setParameter(hostGroupObjStr + ".InstanceType", hostGroupObj.instanceType);
+		setParameter(hostGroupObjStr + ".Comment", hostGroupObj.comment);
+		setParameter(hostGroupObjStr + ".ChargeType", hostGroupObj.chargeType);
+		setParameter(hostGroupObjStr + ".CreateType", hostGroupObj.createType);
+		setParameter(hostGroupObjStr + ".HostPassword", hostGroupObj.hostPassword);
+		setParameter(hostGroupObjStr + ".HostGroupType", hostGroupObj.hostGroupType);
 	}
 }
 

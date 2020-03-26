@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifySecurityCheckScheduleConfigRequest;
 
 ModifySecurityCheckScheduleConfigRequest::ModifySecurityCheckScheduleConfigRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifySecurityCheckScheduleConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySecurityCheckScheduleConfigRequest::~ModifySecurityCheckScheduleConfigRequest()
 {}
@@ -33,29 +35,7 @@ long ModifySecurityCheckScheduleConfigRequest::getResourceOwnerId()const
 void ModifySecurityCheckScheduleConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-std::string ModifySecurityCheckScheduleConfigRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ModifySecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
-}
-
-std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
-{
-	return daysOfWeek_;
-}
-
-void ModifySecurityCheckScheduleConfigRequest::setDaysOfWeek(const std::string& daysOfWeek)
-{
-	daysOfWeek_ = daysOfWeek;
-	setCoreParameter("DaysOfWeek", daysOfWeek);
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int ModifySecurityCheckScheduleConfigRequest::getEndTime()const
@@ -66,7 +46,7 @@ int ModifySecurityCheckScheduleConfigRequest::getEndTime()const
 void ModifySecurityCheckScheduleConfigRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int ModifySecurityCheckScheduleConfigRequest::getStartTime()const
@@ -77,7 +57,29 @@ int ModifySecurityCheckScheduleConfigRequest::getStartTime()const
 void ModifySecurityCheckScheduleConfigRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
+}
+
+std::string ModifySecurityCheckScheduleConfigRequest::getSourceIp()const
+{
+	return sourceIp_;
+}
+
+void ModifySecurityCheckScheduleConfigRequest::setSourceIp(const std::string& sourceIp)
+{
+	sourceIp_ = sourceIp;
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string ModifySecurityCheckScheduleConfigRequest::getDaysOfWeek()const
+{
+	return daysOfWeek_;
+}
+
+void ModifySecurityCheckScheduleConfigRequest::setDaysOfWeek(const std::string& daysOfWeek)
+{
+	daysOfWeek_ = daysOfWeek;
+	setParameter("DaysOfWeek", daysOfWeek);
 }
 
 std::string ModifySecurityCheckScheduleConfigRequest::getLang()const
@@ -88,6 +90,6 @@ std::string ModifySecurityCheckScheduleConfigRequest::getLang()const
 void ModifySecurityCheckScheduleConfigRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

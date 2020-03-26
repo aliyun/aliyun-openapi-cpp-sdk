@@ -35,7 +35,7 @@ std::string GetTokenRequest::getRegionId()const
 void GetTokenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GetTokenRequest::getAppType()const
@@ -46,6 +46,6 @@ std::string GetTokenRequest::getAppType()const
 void GetTokenRequest::setAppType(const std::string& appType)
 {
 	appType_ = appType;
-	setCoreParameter("AppType", appType);
+	setParameter("AppType", appType);
 }
 

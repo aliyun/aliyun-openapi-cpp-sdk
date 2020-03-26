@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchAddDeviceGroupRelationsRequest;
 
 BatchAddDeviceGroupRelationsRequest::BatchAddDeviceGroupRelationsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchAddDeviceGroupRelations")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchAddDeviceGroupRelationsRequest::~BatchAddDeviceGroupRelationsRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchAddDeviceGroupRelationsRequest::getGroupId()const
 void BatchAddDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string BatchAddDeviceGroupRelationsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string BatchAddDeviceGroupRelationsRequest::getAccessKeyId()const
 void BatchAddDeviceGroupRelationsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BatchAddDeviceGroupRelationsRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string BatchAddDeviceGroupRelationsRequest::getIotInstanceId()const
 void BatchAddDeviceGroupRelationsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<BatchAddDeviceGroupRelationsRequest::Device> BatchAddDeviceGroupRelationsRequest::getDevice()const
@@ -66,12 +68,11 @@ std::vector<BatchAddDeviceGroupRelationsRequest::Device> BatchAddDeviceGroupRela
 void BatchAddDeviceGroupRelationsRequest::setDevice(const std::vector<Device>& device)
 {
 	device_ = device;
-	int i = 0;
-	for(int i = 0; i!= device.size(); i++)	{
-		auto obj = device.at(i);
-		std::string str ="Device."+ std::to_string(i);
-		setCoreParameter(str + ".DeviceName", obj.deviceName);
-		setCoreParameter(str + ".ProductKey", obj.productKey);
+	for(int dep1 = 0; dep1!= device.size(); dep1++) {
+		auto deviceObj = device.at(dep1);
+		std::string deviceObjStr = "Device." + std::to_string(dep1 + 1);
+		setParameter(deviceObjStr + ".DeviceName", deviceObj.deviceName);
+		setParameter(deviceObjStr + ".ProductKey", deviceObj.productKey);
 	}
 }
 

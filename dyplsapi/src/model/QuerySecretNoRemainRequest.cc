@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QuerySecretNoRemainRequest;
 QuerySecretNoRemainRequest::QuerySecretNoRemainRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QuerySecretNoRemain")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 QuerySecretNoRemainRequest::~QuerySecretNoRemainRequest()

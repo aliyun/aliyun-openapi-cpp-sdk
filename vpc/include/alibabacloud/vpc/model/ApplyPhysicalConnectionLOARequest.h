@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_VPC_EXPORT ApplyPhysicalConnectionLOARequest : public RpcServiceRequest
 			{
+			public:
 				struct PMInfo
 				{
 					std::string pMCertificateNo;

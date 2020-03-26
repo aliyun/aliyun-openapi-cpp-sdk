@@ -35,7 +35,7 @@ std::string ModifySiteMonitorRequest::getAddress()const
 void ModifySiteMonitorRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string ModifySiteMonitorRequest::getTaskName()const
@@ -46,7 +46,7 @@ std::string ModifySiteMonitorRequest::getTaskName()const
 void ModifySiteMonitorRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string ModifySiteMonitorRequest::getIspCities()const
@@ -57,7 +57,7 @@ std::string ModifySiteMonitorRequest::getIspCities()const
 void ModifySiteMonitorRequest::setIspCities(const std::string& ispCities)
 {
 	ispCities_ = ispCities;
-	setCoreParameter("IspCities", ispCities);
+	setParameter("IspCities", ispCities);
 }
 
 std::string ModifySiteMonitorRequest::getOptionsJson()const
@@ -68,7 +68,7 @@ std::string ModifySiteMonitorRequest::getOptionsJson()const
 void ModifySiteMonitorRequest::setOptionsJson(const std::string& optionsJson)
 {
 	optionsJson_ = optionsJson;
-	setCoreParameter("OptionsJson", optionsJson);
+	setParameter("OptionsJson", optionsJson);
 }
 
 std::string ModifySiteMonitorRequest::getAlertIds()const
@@ -79,7 +79,7 @@ std::string ModifySiteMonitorRequest::getAlertIds()const
 void ModifySiteMonitorRequest::setAlertIds(const std::string& alertIds)
 {
 	alertIds_ = alertIds;
-	setCoreParameter("AlertIds", alertIds);
+	setParameter("AlertIds", alertIds);
 }
 
 std::string ModifySiteMonitorRequest::getInterval()const
@@ -90,7 +90,7 @@ std::string ModifySiteMonitorRequest::getInterval()const
 void ModifySiteMonitorRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 
 std::string ModifySiteMonitorRequest::getTaskId()const
@@ -101,6 +101,6 @@ std::string ModifySiteMonitorRequest::getTaskId()const
 void ModifySiteMonitorRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

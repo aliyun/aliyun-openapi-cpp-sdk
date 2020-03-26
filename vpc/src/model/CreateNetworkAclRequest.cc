@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateNetworkAclRequest;
 
 CreateNetworkAclRequest::CreateNetworkAclRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateNetworkAcl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNetworkAclRequest::~CreateNetworkAclRequest()
 {}
@@ -33,7 +35,7 @@ long CreateNetworkAclRequest::getResourceOwnerId()const
 void CreateNetworkAclRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNetworkAclRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateNetworkAclRequest::getClientToken()const
 void CreateNetworkAclRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateNetworkAclRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateNetworkAclRequest::getDescription()const
 void CreateNetworkAclRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateNetworkAclRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string CreateNetworkAclRequest::getRegionId()const
 void CreateNetworkAclRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateNetworkAclRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string CreateNetworkAclRequest::getResourceOwnerAccount()const
 void CreateNetworkAclRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateNetworkAclRequest::getNetworkAclName()const
@@ -88,7 +90,7 @@ std::string CreateNetworkAclRequest::getNetworkAclName()const
 void CreateNetworkAclRequest::setNetworkAclName(const std::string& networkAclName)
 {
 	networkAclName_ = networkAclName;
-	setCoreParameter("NetworkAclName", networkAclName);
+	setParameter("NetworkAclName", networkAclName);
 }
 
 long CreateNetworkAclRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long CreateNetworkAclRequest::getOwnerId()const
 void CreateNetworkAclRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateNetworkAclRequest::getVpcId()const
@@ -110,6 +112,6 @@ std::string CreateNetworkAclRequest::getVpcId()const
 void CreateNetworkAclRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

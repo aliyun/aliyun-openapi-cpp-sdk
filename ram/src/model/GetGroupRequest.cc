@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetGroupRequest;
 
 GetGroupRequest::GetGroupRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupRequest::~GetGroupRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetGroupRequest::getGroupName()const
 void GetGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 

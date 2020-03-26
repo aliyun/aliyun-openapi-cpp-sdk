@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureTradeDetailRequest;
 
 DescribeSignatureTradeDetailRequest::DescribeSignatureTradeDetailRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureTradeDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureTradeDetailRequest::~DescribeSignatureTradeDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignatureTradeDetailRequest::getTransactionId()const
 void DescribeSignatureTradeDetailRequest::setTransactionId(const std::string& transactionId)
 {
 	transactionId_ = transactionId;
-	setCoreParameter("TransactionId", transactionId);
+	setParameter("TransactionId", transactionId);
 }
 
 std::string DescribeSignatureTradeDetailRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeSignatureTradeDetailRequest::getResourceGroupId()const
 void DescribeSignatureTradeDetailRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSignatureTradeDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeSignatureTradeDetailRequest::getSourceIp()const
 void DescribeSignatureTradeDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSignatureTradeDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeSignatureTradeDetailRequest::getLang()const
 void DescribeSignatureTradeDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

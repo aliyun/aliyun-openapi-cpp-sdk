@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveRealTimeLogLogstoreRequest;
 
 DeleteLiveRealTimeLogLogstoreRequest::DeleteLiveRealTimeLogLogstoreRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 DeleteLiveRealTimeLogLogstoreRequest::~DeleteLiveRealTimeLogLogstoreRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveRealTimeLogLogstoreRequest::getProject()const
 void DeleteLiveRealTimeLogLogstoreRequest::setProject(const std::string& project)
 {
 	project_ = project;
-	setCoreParameter("Project", project);
+	setParameter("Project", project);
 }
 
 long DeleteLiveRealTimeLogLogstoreRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteLiveRealTimeLogLogstoreRequest::getOwnerId()const
 void DeleteLiveRealTimeLogLogstoreRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveRealTimeLogLogstoreRequest::getRegion()const
@@ -55,7 +57,7 @@ std::string DeleteLiveRealTimeLogLogstoreRequest::getRegion()const
 void DeleteLiveRealTimeLogLogstoreRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string DeleteLiveRealTimeLogLogstoreRequest::getLogstore()const
@@ -66,6 +68,6 @@ std::string DeleteLiveRealTimeLogLogstoreRequest::getLogstore()const
 void DeleteLiveRealTimeLogLogstoreRequest::setLogstore(const std::string& logstore)
 {
 	logstore_ = logstore;
-	setCoreParameter("Logstore", logstore);
+	setParameter("Logstore", logstore);
 }
 

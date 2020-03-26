@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteTranscodeTemplateGroupRequest;
 
 DeleteTranscodeTemplateGroupRequest::DeleteTranscodeTemplateGroupRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteTranscodeTemplateGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteTranscodeTemplateGroupRequest::~DeleteTranscodeTemplateGroupRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteTranscodeTemplateGroupRequest::getResourceOwnerId()const
 void DeleteTranscodeTemplateGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
@@ -44,7 +46,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateIds()const
 void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateIds(const std::string& transcodeTemplateIds)
 {
 	transcodeTemplateIds_ = transcodeTemplateIds;
-	setCoreParameter("TranscodeTemplateIds", transcodeTemplateIds);
+	setParameter("TranscodeTemplateIds", transcodeTemplateIds);
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getAccessKeyId()const
 void DeleteTranscodeTemplateGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
@@ -66,7 +68,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getForceDelGroup()const
 void DeleteTranscodeTemplateGroupRequest::setForceDelGroup(const std::string& forceDelGroup)
 {
 	forceDelGroup_ = forceDelGroup;
-	setCoreParameter("ForceDelGroup", forceDelGroup);
+	setParameter("ForceDelGroup", forceDelGroup);
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteTranscodeTemplateGroupRequest::getResourceOwnerAccount()const
 void DeleteTranscodeTemplateGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteTranscodeTemplateGroupRequest::getOwnerId()const
 void DeleteTranscodeTemplateGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()const
@@ -99,6 +101,6 @@ std::string DeleteTranscodeTemplateGroupRequest::getTranscodeTemplateGroupId()co
 void DeleteTranscodeTemplateGroupRequest::setTranscodeTemplateGroupId(const std::string& transcodeTemplateGroupId)
 {
 	transcodeTemplateGroupId_ = transcodeTemplateGroupId;
-	setCoreParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
+	setParameter("TranscodeTemplateGroupId", transcodeTemplateGroupId);
 }
 

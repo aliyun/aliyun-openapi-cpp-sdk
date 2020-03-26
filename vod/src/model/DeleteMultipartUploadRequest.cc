@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteMultipartUploadRequest;
 
 DeleteMultipartUploadRequest::DeleteMultipartUploadRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteMultipartUpload")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMultipartUploadRequest::~DeleteMultipartUploadRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteMultipartUploadRequest::getResourceOwnerId()const
 void DeleteMultipartUploadRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 long DeleteMultipartUploadRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long DeleteMultipartUploadRequest::getResourceRealOwnerId()const
 void DeleteMultipartUploadRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string DeleteMultipartUploadRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DeleteMultipartUploadRequest::getAccessKeyId()const
 void DeleteMultipartUploadRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteMultipartUploadRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteMultipartUploadRequest::getResourceOwnerAccount()const
 void DeleteMultipartUploadRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMultipartUploadRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteMultipartUploadRequest::getOwnerAccount()const
 void DeleteMultipartUploadRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteMultipartUploadRequest::getOwnerId()const
@@ -88,7 +90,7 @@ std::string DeleteMultipartUploadRequest::getOwnerId()const
 void DeleteMultipartUploadRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DeleteMultipartUploadRequest::getMediaId()const
@@ -99,7 +101,7 @@ std::string DeleteMultipartUploadRequest::getMediaId()const
 void DeleteMultipartUploadRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string DeleteMultipartUploadRequest::getMediaType()const
@@ -110,6 +112,6 @@ std::string DeleteMultipartUploadRequest::getMediaType()const
 void DeleteMultipartUploadRequest::setMediaType(const std::string& mediaType)
 {
 	mediaType_ = mediaType;
-	setCoreParameter("MediaType", mediaType);
+	setParameter("MediaType", mediaType);
 }
 

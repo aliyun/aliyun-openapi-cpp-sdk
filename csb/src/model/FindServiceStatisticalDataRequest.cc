@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindServiceStatisticalDataRequest;
 
 FindServiceStatisticalDataRequest::FindServiceStatisticalDataRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindServiceStatisticalData")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindServiceStatisticalDataRequest::~FindServiceStatisticalDataRequest()
 {}
@@ -33,7 +35,7 @@ long FindServiceStatisticalDataRequest::getCsbId()const
 void FindServiceStatisticalDataRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 long FindServiceStatisticalDataRequest::getEndTime()const
@@ -44,7 +46,7 @@ long FindServiceStatisticalDataRequest::getEndTime()const
 void FindServiceStatisticalDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 long FindServiceStatisticalDataRequest::getStartTime()const
@@ -55,7 +57,7 @@ long FindServiceStatisticalDataRequest::getStartTime()const
 void FindServiceStatisticalDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string FindServiceStatisticalDataRequest::getServiceName()const
@@ -66,6 +68,6 @@ std::string FindServiceStatisticalDataRequest::getServiceName()const
 void FindServiceStatisticalDataRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

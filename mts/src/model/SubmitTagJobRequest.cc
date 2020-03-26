@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitTagJobRequest;
 
 SubmitTagJobRequest::SubmitTagJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitTagJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitTagJobRequest::~SubmitTagJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitTagJobRequest::getResourceOwnerId()const
 void SubmitTagJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTagJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitTagJobRequest::getAccessKeyId()const
 void SubmitTagJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTagJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitTagJobRequest::getUserData()const
 void SubmitTagJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitTagJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitTagJobRequest::getResourceOwnerAccount()const
 void SubmitTagJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitTagJobRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitTagJobRequest::getOwnerAccount()const
 void SubmitTagJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string SubmitTagJobRequest::getTagConfig()const
@@ -88,7 +90,7 @@ std::string SubmitTagJobRequest::getTagConfig()const
 void SubmitTagJobRequest::setTagConfig(const std::string& tagConfig)
 {
 	tagConfig_ = tagConfig;
-	setCoreParameter("TagConfig", tagConfig);
+	setParameter("TagConfig", tagConfig);
 }
 
 long SubmitTagJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitTagJobRequest::getOwnerId()const
 void SubmitTagJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTagJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitTagJobRequest::getPipelineId()const
 void SubmitTagJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitTagJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitTagJobRequest::getInput()const
 void SubmitTagJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

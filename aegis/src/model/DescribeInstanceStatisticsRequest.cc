@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::DescribeInstanceStatisticsRequest;
 
 DescribeInstanceStatisticsRequest::DescribeInstanceStatisticsRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "DescribeInstanceStatistics")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeInstanceStatisticsRequest::~DescribeInstanceStatisticsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeInstanceStatisticsRequest::getUuid()const
 void DescribeInstanceStatisticsRequest::setUuid(const std::string& uuid)
 {
 	uuid_ = uuid;
-	setCoreParameter("Uuid", uuid);
+	setParameter("Uuid", uuid);
 }
 
 std::string DescribeInstanceStatisticsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeInstanceStatisticsRequest::getSourceIp()const
 void DescribeInstanceStatisticsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeInstanceStatisticsRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeInstanceStatisticsRequest::getLang()const
 void DescribeInstanceStatisticsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

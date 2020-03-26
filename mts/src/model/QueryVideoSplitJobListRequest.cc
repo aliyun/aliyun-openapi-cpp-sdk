@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryVideoSplitJobListRequest;
 
 QueryVideoSplitJobListRequest::QueryVideoSplitJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryVideoSplitJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryVideoSplitJobListRequest::~QueryVideoSplitJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryVideoSplitJobListRequest::getResourceOwnerId()const
 void QueryVideoSplitJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryVideoSplitJobListRequest::getResourceOwnerAccount()const
 void QueryVideoSplitJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryVideoSplitJobListRequest::getOwnerAccount()const
 void QueryVideoSplitJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryVideoSplitJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryVideoSplitJobListRequest::getOwnerId()const
 void QueryVideoSplitJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryVideoSplitJobListRequest::getAccessKeyId()const
 void QueryVideoSplitJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryVideoSplitJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryVideoSplitJobListRequest::getJobIds()const
 void QueryVideoSplitJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

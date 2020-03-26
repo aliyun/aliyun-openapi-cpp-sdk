@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetOnlineStaTimeSerRequest;
 
 GetOnlineStaTimeSerRequest::GetOnlineStaTimeSerRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetOnlineStaTimeSer")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetOnlineStaTimeSerRequest::~GetOnlineStaTimeSerRequest()
 {}
@@ -33,7 +35,7 @@ long GetOnlineStaTimeSerRequest::getApgroupId()const
 void GetOnlineStaTimeSerRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 long GetOnlineStaTimeSerRequest::getStart()const
@@ -44,7 +46,7 @@ long GetOnlineStaTimeSerRequest::getStart()const
 void GetOnlineStaTimeSerRequest::setStart(long start)
 {
 	start_ = start;
-	setCoreParameter("Start", std::to_string(start));
+	setParameter("Start", std::to_string(start));
 }
 
 std::string GetOnlineStaTimeSerRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetOnlineStaTimeSerRequest::getAccessKeyId()const
 void GetOnlineStaTimeSerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetOnlineStaTimeSerRequest::getZoomStart()const
@@ -66,7 +68,7 @@ long GetOnlineStaTimeSerRequest::getZoomStart()const
 void GetOnlineStaTimeSerRequest::setZoomStart(long zoomStart)
 {
 	zoomStart_ = zoomStart;
-	setCoreParameter("ZoomStart", std::to_string(zoomStart));
+	setParameter("ZoomStart", std::to_string(zoomStart));
 }
 
 long GetOnlineStaTimeSerRequest::getCompanyId()const
@@ -77,7 +79,7 @@ long GetOnlineStaTimeSerRequest::getCompanyId()const
 void GetOnlineStaTimeSerRequest::setCompanyId(long companyId)
 {
 	companyId_ = companyId;
-	setCoreParameter("CompanyId", std::to_string(companyId));
+	setParameter("CompanyId", std::to_string(companyId));
 }
 
 long GetOnlineStaTimeSerRequest::getZoomEnd()const
@@ -88,7 +90,7 @@ long GetOnlineStaTimeSerRequest::getZoomEnd()const
 void GetOnlineStaTimeSerRequest::setZoomEnd(long zoomEnd)
 {
 	zoomEnd_ = zoomEnd;
-	setCoreParameter("ZoomEnd", std::to_string(zoomEnd));
+	setParameter("ZoomEnd", std::to_string(zoomEnd));
 }
 
 long GetOnlineStaTimeSerRequest::getEnd()const
@@ -99,6 +101,6 @@ long GetOnlineStaTimeSerRequest::getEnd()const
 void GetOnlineStaTimeSerRequest::setEnd(long end)
 {
 	end_ = end;
-	setCoreParameter("End", std::to_string(end));
+	setParameter("End", std::to_string(end));
 }
 

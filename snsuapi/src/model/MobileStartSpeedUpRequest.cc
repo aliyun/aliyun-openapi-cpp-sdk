@@ -20,7 +20,9 @@ using AlibabaCloud::Snsuapi::Model::MobileStartSpeedUpRequest;
 
 MobileStartSpeedUpRequest::MobileStartSpeedUpRequest() :
 	RpcServiceRequest("snsuapi", "2018-07-09", "MobileStartSpeedUp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MobileStartSpeedUpRequest::~MobileStartSpeedUpRequest()
 {}
@@ -33,7 +35,7 @@ long MobileStartSpeedUpRequest::getResourceOwnerId()const
 void MobileStartSpeedUpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string MobileStartSpeedUpRequest::getPublicIp()const
@@ -44,7 +46,7 @@ std::string MobileStartSpeedUpRequest::getPublicIp()const
 void MobileStartSpeedUpRequest::setPublicIp(const std::string& publicIp)
 {
 	publicIp_ = publicIp;
-	setCoreParameter("PublicIp", publicIp);
+	setParameter("PublicIp", publicIp);
 }
 
 std::string MobileStartSpeedUpRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string MobileStartSpeedUpRequest::getAccessKeyId()const
 void MobileStartSpeedUpRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MobileStartSpeedUpRequest::getDuration()const
@@ -66,7 +68,7 @@ std::string MobileStartSpeedUpRequest::getDuration()const
 void MobileStartSpeedUpRequest::setDuration(const std::string& duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", duration);
+	setParameter("Duration", duration);
 }
 
 std::string MobileStartSpeedUpRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string MobileStartSpeedUpRequest::getResourceOwnerAccount()const
 void MobileStartSpeedUpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string MobileStartSpeedUpRequest::getIp()const
@@ -88,7 +90,7 @@ std::string MobileStartSpeedUpRequest::getIp()const
 void MobileStartSpeedUpRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setParameter("Ip", ip);
 }
 
 std::string MobileStartSpeedUpRequest::getDestinationIpAddress()const
@@ -99,7 +101,7 @@ std::string MobileStartSpeedUpRequest::getDestinationIpAddress()const
 void MobileStartSpeedUpRequest::setDestinationIpAddress(const std::string& destinationIpAddress)
 {
 	destinationIpAddress_ = destinationIpAddress;
-	setCoreParameter("DestinationIpAddress", destinationIpAddress);
+	setParameter("DestinationIpAddress", destinationIpAddress);
 }
 
 long MobileStartSpeedUpRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long MobileStartSpeedUpRequest::getOwnerId()const
 void MobileStartSpeedUpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MobileStartSpeedUpRequest::getToken()const
@@ -121,7 +123,7 @@ std::string MobileStartSpeedUpRequest::getToken()const
 void MobileStartSpeedUpRequest::setToken(const std::string& token)
 {
 	token_ = token;
-	setCoreParameter("Token", token);
+	setParameter("Token", token);
 }
 
 std::string MobileStartSpeedUpRequest::getPublicPort()const
@@ -132,6 +134,6 @@ std::string MobileStartSpeedUpRequest::getPublicPort()const
 void MobileStartSpeedUpRequest::setPublicPort(const std::string& publicPort)
 {
 	publicPort_ = publicPort;
-	setCoreParameter("PublicPort", publicPort);
+	setParameter("PublicPort", publicPort);
 }
 

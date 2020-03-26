@@ -68,11 +68,13 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string vSwitchId;
 					std::string startTime;
+					std::string launchTemplateId;
 					std::string replicationParameters;
 					std::string imageName;
 					std::string vpcId;
 					std::string statusInfo;
 					std::string creationTime;
+					std::string launchTemplateVersion;
 					int frequency;
 					std::string regionId;
 					std::string scheduledStartTime;

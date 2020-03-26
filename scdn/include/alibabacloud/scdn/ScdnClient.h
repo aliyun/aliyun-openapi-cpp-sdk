@@ -34,10 +34,22 @@
 #include "model/CheckScdnServiceResult.h"
 #include "model/DeleteScdnDomainRequest.h"
 #include "model/DeleteScdnDomainResult.h"
+#include "model/DeleteScdnSpecificConfigRequest.h"
+#include "model/DeleteScdnSpecificConfigResult.h"
+#include "model/DescribeScdnCcQpsInfoRequest.h"
+#include "model/DescribeScdnCcQpsInfoResult.h"
+#include "model/DescribeScdnCcTopIpRequest.h"
+#include "model/DescribeScdnCcTopIpResult.h"
+#include "model/DescribeScdnCcTopUrlRequest.h"
+#include "model/DescribeScdnCcTopUrlResult.h"
 #include "model/DescribeScdnCertificateDetailRequest.h"
 #include "model/DescribeScdnCertificateDetailResult.h"
 #include "model/DescribeScdnCertificateListRequest.h"
 #include "model/DescribeScdnCertificateListResult.h"
+#include "model/DescribeScdnDdosInfoRequest.h"
+#include "model/DescribeScdnDdosInfoResult.h"
+#include "model/DescribeScdnDdosTrafficInfoRequest.h"
+#include "model/DescribeScdnDdosTrafficInfoResult.h"
 #include "model/DescribeScdnDomainBpsDataRequest.h"
 #include "model/DescribeScdnDomainBpsDataResult.h"
 #include "model/DescribeScdnDomainCertificateInfoRequest.h"
@@ -110,6 +122,14 @@
 #include "model/RefreshScdnObjectCachesResult.h"
 #include "model/SetDomainServerCertificateRequest.h"
 #include "model/SetDomainServerCertificateResult.h"
+#include "model/SetScdnBotInfoRequest.h"
+#include "model/SetScdnBotInfoResult.h"
+#include "model/SetScdnCcInfoRequest.h"
+#include "model/SetScdnCcInfoResult.h"
+#include "model/SetScdnDdosInfoRequest.h"
+#include "model/SetScdnDdosInfoResult.h"
+#include "model/SetScdnDomainBizInfoRequest.h"
+#include "model/SetScdnDomainBizInfoResult.h"
 #include "model/SetScdnDomainCertificateRequest.h"
 #include "model/SetScdnDomainCertificateResult.h"
 #include "model/StartScdnDomainRequest.h"
@@ -145,12 +165,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScdnDomainResult> DeleteScdnDomainOutcome;
 			typedef std::future<DeleteScdnDomainOutcome> DeleteScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DeleteScdnDomainRequest&, const DeleteScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::DeleteScdnSpecificConfigResult> DeleteScdnSpecificConfigOutcome;
+			typedef std::future<DeleteScdnSpecificConfigOutcome> DeleteScdnSpecificConfigOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DeleteScdnSpecificConfigRequest&, const DeleteScdnSpecificConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScdnSpecificConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnCcQpsInfoResult> DescribeScdnCcQpsInfoOutcome;
+			typedef std::future<DescribeScdnCcQpsInfoOutcome> DescribeScdnCcQpsInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCcQpsInfoRequest&, const DescribeScdnCcQpsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCcQpsInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnCcTopIpResult> DescribeScdnCcTopIpOutcome;
+			typedef std::future<DescribeScdnCcTopIpOutcome> DescribeScdnCcTopIpOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCcTopIpRequest&, const DescribeScdnCcTopIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCcTopIpAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnCcTopUrlResult> DescribeScdnCcTopUrlOutcome;
+			typedef std::future<DescribeScdnCcTopUrlOutcome> DescribeScdnCcTopUrlOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCcTopUrlRequest&, const DescribeScdnCcTopUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCcTopUrlAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnCertificateDetailResult> DescribeScdnCertificateDetailOutcome;
 			typedef std::future<DescribeScdnCertificateDetailOutcome> DescribeScdnCertificateDetailOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCertificateDetailRequest&, const DescribeScdnCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCertificateDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnCertificateListResult> DescribeScdnCertificateListOutcome;
 			typedef std::future<DescribeScdnCertificateListOutcome> DescribeScdnCertificateListOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnCertificateListRequest&, const DescribeScdnCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnCertificateListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnDdosInfoResult> DescribeScdnDdosInfoOutcome;
+			typedef std::future<DescribeScdnDdosInfoOutcome> DescribeScdnDdosInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDdosInfoRequest&, const DescribeScdnDdosInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDdosInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnDdosTrafficInfoResult> DescribeScdnDdosTrafficInfoOutcome;
+			typedef std::future<DescribeScdnDdosTrafficInfoOutcome> DescribeScdnDdosTrafficInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDdosTrafficInfoRequest&, const DescribeScdnDdosTrafficInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDdosTrafficInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeScdnDomainBpsDataResult> DescribeScdnDomainBpsDataOutcome;
 			typedef std::future<DescribeScdnDomainBpsDataOutcome> DescribeScdnDomainBpsDataOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnDomainBpsDataRequest&, const DescribeScdnDomainBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnDomainBpsDataAsyncHandler;
@@ -259,6 +297,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDomainServerCertificateResult> SetDomainServerCertificateOutcome;
 			typedef std::future<SetDomainServerCertificateOutcome> SetDomainServerCertificateOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::SetDomainServerCertificateRequest&, const SetDomainServerCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDomainServerCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SetScdnBotInfoResult> SetScdnBotInfoOutcome;
+			typedef std::future<SetScdnBotInfoOutcome> SetScdnBotInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::SetScdnBotInfoRequest&, const SetScdnBotInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnBotInfoAsyncHandler;
+			typedef Outcome<Error, Model::SetScdnCcInfoResult> SetScdnCcInfoOutcome;
+			typedef std::future<SetScdnCcInfoOutcome> SetScdnCcInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::SetScdnCcInfoRequest&, const SetScdnCcInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnCcInfoAsyncHandler;
+			typedef Outcome<Error, Model::SetScdnDdosInfoResult> SetScdnDdosInfoOutcome;
+			typedef std::future<SetScdnDdosInfoOutcome> SetScdnDdosInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::SetScdnDdosInfoRequest&, const SetScdnDdosInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDdosInfoAsyncHandler;
+			typedef Outcome<Error, Model::SetScdnDomainBizInfoResult> SetScdnDomainBizInfoOutcome;
+			typedef std::future<SetScdnDomainBizInfoOutcome> SetScdnDomainBizInfoOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::SetScdnDomainBizInfoRequest&, const SetScdnDomainBizInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDomainBizInfoAsyncHandler;
 			typedef Outcome<Error, Model::SetScdnDomainCertificateResult> SetScdnDomainCertificateOutcome;
 			typedef std::future<SetScdnDomainCertificateOutcome> SetScdnDomainCertificateOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::SetScdnDomainCertificateRequest&, const SetScdnDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDomainCertificateAsyncHandler;
@@ -294,12 +344,30 @@ namespace AlibabaCloud
 			DeleteScdnDomainOutcome deleteScdnDomain(const Model::DeleteScdnDomainRequest &request)const;
 			void deleteScdnDomainAsync(const Model::DeleteScdnDomainRequest& request, const DeleteScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScdnDomainOutcomeCallable deleteScdnDomainCallable(const Model::DeleteScdnDomainRequest& request) const;
+			DeleteScdnSpecificConfigOutcome deleteScdnSpecificConfig(const Model::DeleteScdnSpecificConfigRequest &request)const;
+			void deleteScdnSpecificConfigAsync(const Model::DeleteScdnSpecificConfigRequest& request, const DeleteScdnSpecificConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteScdnSpecificConfigOutcomeCallable deleteScdnSpecificConfigCallable(const Model::DeleteScdnSpecificConfigRequest& request) const;
+			DescribeScdnCcQpsInfoOutcome describeScdnCcQpsInfo(const Model::DescribeScdnCcQpsInfoRequest &request)const;
+			void describeScdnCcQpsInfoAsync(const Model::DescribeScdnCcQpsInfoRequest& request, const DescribeScdnCcQpsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnCcQpsInfoOutcomeCallable describeScdnCcQpsInfoCallable(const Model::DescribeScdnCcQpsInfoRequest& request) const;
+			DescribeScdnCcTopIpOutcome describeScdnCcTopIp(const Model::DescribeScdnCcTopIpRequest &request)const;
+			void describeScdnCcTopIpAsync(const Model::DescribeScdnCcTopIpRequest& request, const DescribeScdnCcTopIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnCcTopIpOutcomeCallable describeScdnCcTopIpCallable(const Model::DescribeScdnCcTopIpRequest& request) const;
+			DescribeScdnCcTopUrlOutcome describeScdnCcTopUrl(const Model::DescribeScdnCcTopUrlRequest &request)const;
+			void describeScdnCcTopUrlAsync(const Model::DescribeScdnCcTopUrlRequest& request, const DescribeScdnCcTopUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnCcTopUrlOutcomeCallable describeScdnCcTopUrlCallable(const Model::DescribeScdnCcTopUrlRequest& request) const;
 			DescribeScdnCertificateDetailOutcome describeScdnCertificateDetail(const Model::DescribeScdnCertificateDetailRequest &request)const;
 			void describeScdnCertificateDetailAsync(const Model::DescribeScdnCertificateDetailRequest& request, const DescribeScdnCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnCertificateDetailOutcomeCallable describeScdnCertificateDetailCallable(const Model::DescribeScdnCertificateDetailRequest& request) const;
 			DescribeScdnCertificateListOutcome describeScdnCertificateList(const Model::DescribeScdnCertificateListRequest &request)const;
 			void describeScdnCertificateListAsync(const Model::DescribeScdnCertificateListRequest& request, const DescribeScdnCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnCertificateListOutcomeCallable describeScdnCertificateListCallable(const Model::DescribeScdnCertificateListRequest& request) const;
+			DescribeScdnDdosInfoOutcome describeScdnDdosInfo(const Model::DescribeScdnDdosInfoRequest &request)const;
+			void describeScdnDdosInfoAsync(const Model::DescribeScdnDdosInfoRequest& request, const DescribeScdnDdosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnDdosInfoOutcomeCallable describeScdnDdosInfoCallable(const Model::DescribeScdnDdosInfoRequest& request) const;
+			DescribeScdnDdosTrafficInfoOutcome describeScdnDdosTrafficInfo(const Model::DescribeScdnDdosTrafficInfoRequest &request)const;
+			void describeScdnDdosTrafficInfoAsync(const Model::DescribeScdnDdosTrafficInfoRequest& request, const DescribeScdnDdosTrafficInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnDdosTrafficInfoOutcomeCallable describeScdnDdosTrafficInfoCallable(const Model::DescribeScdnDdosTrafficInfoRequest& request) const;
 			DescribeScdnDomainBpsDataOutcome describeScdnDomainBpsData(const Model::DescribeScdnDomainBpsDataRequest &request)const;
 			void describeScdnDomainBpsDataAsync(const Model::DescribeScdnDomainBpsDataRequest& request, const DescribeScdnDomainBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnDomainBpsDataOutcomeCallable describeScdnDomainBpsDataCallable(const Model::DescribeScdnDomainBpsDataRequest& request) const;
@@ -408,6 +476,18 @@ namespace AlibabaCloud
 			SetDomainServerCertificateOutcome setDomainServerCertificate(const Model::SetDomainServerCertificateRequest &request)const;
 			void setDomainServerCertificateAsync(const Model::SetDomainServerCertificateRequest& request, const SetDomainServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDomainServerCertificateOutcomeCallable setDomainServerCertificateCallable(const Model::SetDomainServerCertificateRequest& request) const;
+			SetScdnBotInfoOutcome setScdnBotInfo(const Model::SetScdnBotInfoRequest &request)const;
+			void setScdnBotInfoAsync(const Model::SetScdnBotInfoRequest& request, const SetScdnBotInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetScdnBotInfoOutcomeCallable setScdnBotInfoCallable(const Model::SetScdnBotInfoRequest& request) const;
+			SetScdnCcInfoOutcome setScdnCcInfo(const Model::SetScdnCcInfoRequest &request)const;
+			void setScdnCcInfoAsync(const Model::SetScdnCcInfoRequest& request, const SetScdnCcInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetScdnCcInfoOutcomeCallable setScdnCcInfoCallable(const Model::SetScdnCcInfoRequest& request) const;
+			SetScdnDdosInfoOutcome setScdnDdosInfo(const Model::SetScdnDdosInfoRequest &request)const;
+			void setScdnDdosInfoAsync(const Model::SetScdnDdosInfoRequest& request, const SetScdnDdosInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetScdnDdosInfoOutcomeCallable setScdnDdosInfoCallable(const Model::SetScdnDdosInfoRequest& request) const;
+			SetScdnDomainBizInfoOutcome setScdnDomainBizInfo(const Model::SetScdnDomainBizInfoRequest &request)const;
+			void setScdnDomainBizInfoAsync(const Model::SetScdnDomainBizInfoRequest& request, const SetScdnDomainBizInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetScdnDomainBizInfoOutcomeCallable setScdnDomainBizInfoCallable(const Model::SetScdnDomainBizInfoRequest& request) const;
 			SetScdnDomainCertificateOutcome setScdnDomainCertificate(const Model::SetScdnDomainCertificateRequest &request)const;
 			void setScdnDomainCertificateAsync(const Model::SetScdnDomainCertificateRequest& request, const SetScdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetScdnDomainCertificateOutcomeCallable setScdnDomainCertificateCallable(const Model::SetScdnDomainCertificateRequest& request) const;

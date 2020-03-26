@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteKeywordLibRequest;
 
 DeleteKeywordLibRequest::DeleteKeywordLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteKeywordLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteKeywordLibRequest::~DeleteKeywordLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteKeywordLibRequest::getSourceIp()const
 void DeleteKeywordLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DeleteKeywordLibRequest::getId()const
@@ -44,7 +46,7 @@ int DeleteKeywordLibRequest::getId()const
 void DeleteKeywordLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DeleteKeywordLibRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DeleteKeywordLibRequest::getLang()const
 void DeleteKeywordLibRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

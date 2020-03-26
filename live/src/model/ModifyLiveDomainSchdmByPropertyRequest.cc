@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ModifyLiveDomainSchdmByPropertyRequest;
 
 ModifyLiveDomainSchdmByPropertyRequest::ModifyLiveDomainSchdmByPropertyRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyLiveDomainSchdmByPropertyRequest::~ModifyLiveDomainSchdmByPropertyRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getProperty()const
 void ModifyLiveDomainSchdmByPropertyRequest::setProperty(const std::string& property)
 {
 	property_ = property;
-	setCoreParameter("Property", property);
+	setParameter("Property", property);
 }
 
 std::string ModifyLiveDomainSchdmByPropertyRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string ModifyLiveDomainSchdmByPropertyRequest::getDomainName()const
 void ModifyLiveDomainSchdmByPropertyRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long ModifyLiveDomainSchdmByPropertyRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long ModifyLiveDomainSchdmByPropertyRequest::getOwnerId()const
 void ModifyLiveDomainSchdmByPropertyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

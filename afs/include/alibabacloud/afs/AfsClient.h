@@ -30,6 +30,14 @@
 #include "model/ConfigurationStyleResult.h"
 #include "model/CreateConfigurationRequest.h"
 #include "model/CreateConfigurationResult.h"
+#include "model/DescribeAfsConfigNameRequest.h"
+#include "model/DescribeAfsConfigNameResult.h"
+#include "model/DescribeAfsOneConfDataRequest.h"
+#include "model/DescribeAfsOneConfDataResult.h"
+#include "model/DescribeAfsTotalConfDataRequest.h"
+#include "model/DescribeAfsTotalConfDataResult.h"
+#include "model/DescribeAfsVerifySigDataRequest.h"
+#include "model/DescribeAfsVerifySigDataResult.h"
 #include "model/DescribeCaptchaDayRequest.h"
 #include "model/DescribeCaptchaDayResult.h"
 #include "model/DescribeCaptchaIpCityRequest.h"
@@ -73,6 +81,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateConfigurationResult> CreateConfigurationOutcome;
 			typedef std::future<CreateConfigurationOutcome> CreateConfigurationOutcomeCallable;
 			typedef std::function<void(const AfsClient*, const Model::CreateConfigurationRequest&, const CreateConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAfsConfigNameResult> DescribeAfsConfigNameOutcome;
+			typedef std::future<DescribeAfsConfigNameOutcome> DescribeAfsConfigNameOutcomeCallable;
+			typedef std::function<void(const AfsClient*, const Model::DescribeAfsConfigNameRequest&, const DescribeAfsConfigNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAfsConfigNameAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAfsOneConfDataResult> DescribeAfsOneConfDataOutcome;
+			typedef std::future<DescribeAfsOneConfDataOutcome> DescribeAfsOneConfDataOutcomeCallable;
+			typedef std::function<void(const AfsClient*, const Model::DescribeAfsOneConfDataRequest&, const DescribeAfsOneConfDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAfsOneConfDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAfsTotalConfDataResult> DescribeAfsTotalConfDataOutcome;
+			typedef std::future<DescribeAfsTotalConfDataOutcome> DescribeAfsTotalConfDataOutcomeCallable;
+			typedef std::function<void(const AfsClient*, const Model::DescribeAfsTotalConfDataRequest&, const DescribeAfsTotalConfDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAfsTotalConfDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAfsVerifySigDataResult> DescribeAfsVerifySigDataOutcome;
+			typedef std::future<DescribeAfsVerifySigDataOutcome> DescribeAfsVerifySigDataOutcomeCallable;
+			typedef std::function<void(const AfsClient*, const Model::DescribeAfsVerifySigDataRequest&, const DescribeAfsVerifySigDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAfsVerifySigDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCaptchaDayResult> DescribeCaptchaDayOutcome;
 			typedef std::future<DescribeCaptchaDayOutcome> DescribeCaptchaDayOutcomeCallable;
 			typedef std::function<void(const AfsClient*, const Model::DescribeCaptchaDayRequest&, const DescribeCaptchaDayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaDayAsyncHandler;
@@ -123,6 +143,18 @@ namespace AlibabaCloud
 			CreateConfigurationOutcome createConfiguration(const Model::CreateConfigurationRequest &request)const;
 			void createConfigurationAsync(const Model::CreateConfigurationRequest& request, const CreateConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConfigurationOutcomeCallable createConfigurationCallable(const Model::CreateConfigurationRequest& request) const;
+			DescribeAfsConfigNameOutcome describeAfsConfigName(const Model::DescribeAfsConfigNameRequest &request)const;
+			void describeAfsConfigNameAsync(const Model::DescribeAfsConfigNameRequest& request, const DescribeAfsConfigNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAfsConfigNameOutcomeCallable describeAfsConfigNameCallable(const Model::DescribeAfsConfigNameRequest& request) const;
+			DescribeAfsOneConfDataOutcome describeAfsOneConfData(const Model::DescribeAfsOneConfDataRequest &request)const;
+			void describeAfsOneConfDataAsync(const Model::DescribeAfsOneConfDataRequest& request, const DescribeAfsOneConfDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAfsOneConfDataOutcomeCallable describeAfsOneConfDataCallable(const Model::DescribeAfsOneConfDataRequest& request) const;
+			DescribeAfsTotalConfDataOutcome describeAfsTotalConfData(const Model::DescribeAfsTotalConfDataRequest &request)const;
+			void describeAfsTotalConfDataAsync(const Model::DescribeAfsTotalConfDataRequest& request, const DescribeAfsTotalConfDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAfsTotalConfDataOutcomeCallable describeAfsTotalConfDataCallable(const Model::DescribeAfsTotalConfDataRequest& request) const;
+			DescribeAfsVerifySigDataOutcome describeAfsVerifySigData(const Model::DescribeAfsVerifySigDataRequest &request)const;
+			void describeAfsVerifySigDataAsync(const Model::DescribeAfsVerifySigDataRequest& request, const DescribeAfsVerifySigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAfsVerifySigDataOutcomeCallable describeAfsVerifySigDataCallable(const Model::DescribeAfsVerifySigDataRequest& request) const;
 			DescribeCaptchaDayOutcome describeCaptchaDay(const Model::DescribeCaptchaDayRequest &request)const;
 			void describeCaptchaDayAsync(const Model::DescribeCaptchaDayRequest& request, const DescribeCaptchaDayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCaptchaDayOutcomeCallable describeCaptchaDayCallable(const Model::DescribeCaptchaDayRequest& request) const;

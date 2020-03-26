@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DescribeScalingActivityDetailRequest;
 
 DescribeScalingActivityDetailRequest::DescribeScalingActivityDetailRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DescribeScalingActivityDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScalingActivityDetailRequest::~DescribeScalingActivityDetailRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeScalingActivityDetailRequest::getResourceOwnerId()const
 void DescribeScalingActivityDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingActivityDetailRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeScalingActivityDetailRequest::getResourceOwnerAccount()const
 void DescribeScalingActivityDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeScalingActivityDetailRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DescribeScalingActivityDetailRequest::getOwnerId()const
 void DescribeScalingActivityDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeScalingActivityDetailRequest::getScalingActivityId()const
@@ -66,7 +68,7 @@ std::string DescribeScalingActivityDetailRequest::getScalingActivityId()const
 void DescribeScalingActivityDetailRequest::setScalingActivityId(const std::string& scalingActivityId)
 {
 	scalingActivityId_ = scalingActivityId;
-	setCoreParameter("ScalingActivityId", scalingActivityId);
+	setParameter("ScalingActivityId", scalingActivityId);
 }
 
 std::string DescribeScalingActivityDetailRequest::getAccessKeyId()const
@@ -77,6 +79,6 @@ std::string DescribeScalingActivityDetailRequest::getAccessKeyId()const
 void DescribeScalingActivityDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

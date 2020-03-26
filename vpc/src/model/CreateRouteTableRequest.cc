@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateRouteTableRequest;
 
 CreateRouteTableRequest::CreateRouteTableRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateRouteTable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRouteTableRequest::~CreateRouteTableRequest()
 {}
@@ -33,7 +35,7 @@ long CreateRouteTableRequest::getResourceOwnerId()const
 void CreateRouteTableRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateRouteTableRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateRouteTableRequest::getClientToken()const
 void CreateRouteTableRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateRouteTableRequest::getDescription()const
@@ -55,7 +57,7 @@ std::string CreateRouteTableRequest::getDescription()const
 void CreateRouteTableRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateRouteTableRequest::getRouteTableName()const
@@ -66,7 +68,7 @@ std::string CreateRouteTableRequest::getRouteTableName()const
 void CreateRouteTableRequest::setRouteTableName(const std::string& routeTableName)
 {
 	routeTableName_ = routeTableName;
-	setCoreParameter("RouteTableName", routeTableName);
+	setParameter("RouteTableName", routeTableName);
 }
 
 std::string CreateRouteTableRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateRouteTableRequest::getRegionId()const
 void CreateRouteTableRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateRouteTableRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string CreateRouteTableRequest::getResourceOwnerAccount()const
 void CreateRouteTableRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateRouteTableRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateRouteTableRequest::getOwnerAccount()const
 void CreateRouteTableRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateRouteTableRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long CreateRouteTableRequest::getOwnerId()const
 void CreateRouteTableRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateRouteTableRequest::getVpcId()const
@@ -121,6 +123,6 @@ std::string CreateRouteTableRequest::getVpcId()const
 void CreateRouteTableRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

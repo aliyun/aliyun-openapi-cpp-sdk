@@ -35,7 +35,18 @@ std::string UpdatePerspectiveRequest::getPerspectiveId()const
 void UpdatePerspectiveRequest::setPerspectiveId(const std::string& perspectiveId)
 {
 	perspectiveId_ = perspectiveId;
-	setCoreParameter("PerspectiveId", perspectiveId);
+	setParameter("PerspectiveId", perspectiveId);
+}
+
+std::string UpdatePerspectiveRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UpdatePerspectiveRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdatePerspectiveRequest::getName()const
@@ -46,6 +57,6 @@ std::string UpdatePerspectiveRequest::getName()const
 void UpdatePerspectiveRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

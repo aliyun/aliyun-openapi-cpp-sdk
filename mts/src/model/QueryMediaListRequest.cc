@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaListRequest;
 
 QueryMediaListRequest::QueryMediaListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaListRequest::~QueryMediaListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryMediaListRequest::getResourceOwnerId()const
 void QueryMediaListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool QueryMediaListRequest::getIncludeSummaryList()const
@@ -44,7 +46,7 @@ bool QueryMediaListRequest::getIncludeSummaryList()const
 void QueryMediaListRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
+	setParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
 }
 
 std::string QueryMediaListRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryMediaListRequest::getAccessKeyId()const
 void QueryMediaListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryMediaListRequest::getMediaIds()const
@@ -66,7 +68,7 @@ std::string QueryMediaListRequest::getMediaIds()const
 void QueryMediaListRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setParameter("MediaIds", mediaIds);
 }
 
 bool QueryMediaListRequest::getIncludePlayList()const
@@ -77,7 +79,7 @@ bool QueryMediaListRequest::getIncludePlayList()const
 void QueryMediaListRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
+	setParameter("IncludePlayList", includePlayList ? "true" : "false");
 }
 
 std::string QueryMediaListRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string QueryMediaListRequest::getResourceOwnerAccount()const
 void QueryMediaListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool QueryMediaListRequest::getIncludeSnapshotList()const
@@ -99,7 +101,7 @@ bool QueryMediaListRequest::getIncludeSnapshotList()const
 void QueryMediaListRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setCoreParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
+	setParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
 }
 
 std::string QueryMediaListRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string QueryMediaListRequest::getOwnerAccount()const
 void QueryMediaListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaListRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long QueryMediaListRequest::getOwnerId()const
 void QueryMediaListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool QueryMediaListRequest::getIncludeMediaInfo()const
@@ -132,6 +134,6 @@ bool QueryMediaListRequest::getIncludeMediaInfo()const
 void QueryMediaListRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setCoreParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
+	setParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListPoliciesForRoleRequest;
 
 ListPoliciesForRoleRequest::ListPoliciesForRoleRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListPoliciesForRole")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPoliciesForRoleRequest::~ListPoliciesForRoleRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListPoliciesForRoleRequest::getRoleName()const
 void ListPoliciesForRoleRequest::setRoleName(const std::string& roleName)
 {
 	roleName_ = roleName;
-	setCoreParameter("RoleName", roleName);
+	setParameter("RoleName", roleName);
 }
 

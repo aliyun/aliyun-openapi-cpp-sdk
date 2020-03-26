@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DeleteNotificationContactsRequest;
 
 DeleteNotificationContactsRequest::DeleteNotificationContactsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DeleteNotificationContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNotificationContactsRequest::~DeleteNotificationContactsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteNotificationContactsRequest::getContactTypes()const
 void DeleteNotificationContactsRequest::setContactTypes(const std::string& contactTypes)
 {
 	contactTypes_ = contactTypes;
-	setCoreParameter("ContactTypes", contactTypes);
+	setParameter("ContactTypes", contactTypes);
 }
 
 std::string DeleteNotificationContactsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DeleteNotificationContactsRequest::getSourceIp()const
 void DeleteNotificationContactsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteNotificationContactsRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DeleteNotificationContactsRequest::getLang()const
 void DeleteNotificationContactsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

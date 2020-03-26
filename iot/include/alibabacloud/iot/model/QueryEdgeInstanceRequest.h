@@ -35,23 +35,29 @@ namespace AlibabaCloud
 				QueryEdgeInstanceRequest();
 				~QueryEdgeInstanceRequest();
 
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				int currentPage_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				int currentPage_;
+				std::string apiProduct_;
 				std::string name_;
+				std::string apiRevision_;
 
 			};
 		}

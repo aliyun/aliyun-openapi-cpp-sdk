@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteEditingProjectRequest;
 
 DeleteEditingProjectRequest::DeleteEditingProjectRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteEditingProject")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteEditingProjectRequest::~DeleteEditingProjectRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteEditingProjectRequest::getResourceOwnerId()const
 void DeleteEditingProjectRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string DeleteEditingProjectRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteEditingProjectRequest::getResourceOwnerAccount()const
 void DeleteEditingProjectRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteEditingProjectRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteEditingProjectRequest::getOwnerAccount()const
 void DeleteEditingProjectRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DeleteEditingProjectRequest::getProjectIds()const
@@ -66,7 +68,7 @@ std::string DeleteEditingProjectRequest::getProjectIds()const
 void DeleteEditingProjectRequest::setProjectIds(const std::string& projectIds)
 {
 	projectIds_ = projectIds;
-	setCoreParameter("ProjectIds", projectIds);
+	setParameter("ProjectIds", projectIds);
 }
 
 std::string DeleteEditingProjectRequest::getOwnerId()const
@@ -77,7 +79,7 @@ std::string DeleteEditingProjectRequest::getOwnerId()const
 void DeleteEditingProjectRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string DeleteEditingProjectRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string DeleteEditingProjectRequest::getAccessKeyId()const
 void DeleteEditingProjectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -35,7 +35,7 @@ std::string QueryRIUtilizationDetailRequest::getDeductedInstanceId()const
 void QueryRIUtilizationDetailRequest::setDeductedInstanceId(const std::string& deductedInstanceId)
 {
 	deductedInstanceId_ = deductedInstanceId;
-	setCoreParameter("DeductedInstanceId", deductedInstanceId);
+	setParameter("DeductedInstanceId", deductedInstanceId);
 }
 
 std::string QueryRIUtilizationDetailRequest::getInstanceSpec()const
@@ -46,7 +46,7 @@ std::string QueryRIUtilizationDetailRequest::getInstanceSpec()const
 void QueryRIUtilizationDetailRequest::setInstanceSpec(const std::string& instanceSpec)
 {
 	instanceSpec_ = instanceSpec;
-	setCoreParameter("InstanceSpec", instanceSpec);
+	setParameter("InstanceSpec", instanceSpec);
 }
 
 std::string QueryRIUtilizationDetailRequest::getEndTime()const
@@ -57,7 +57,7 @@ std::string QueryRIUtilizationDetailRequest::getEndTime()const
 void QueryRIUtilizationDetailRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryRIUtilizationDetailRequest::getRIInstanceId()const
@@ -68,7 +68,7 @@ std::string QueryRIUtilizationDetailRequest::getRIInstanceId()const
 void QueryRIUtilizationDetailRequest::setRIInstanceId(const std::string& rIInstanceId)
 {
 	rIInstanceId_ = rIInstanceId;
-	setCoreParameter("RIInstanceId", rIInstanceId);
+	setParameter("RIInstanceId", rIInstanceId);
 }
 
 std::string QueryRIUtilizationDetailRequest::getStartTime()const
@@ -79,7 +79,7 @@ std::string QueryRIUtilizationDetailRequest::getStartTime()const
 void QueryRIUtilizationDetailRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 int QueryRIUtilizationDetailRequest::getPageNum()const
@@ -90,7 +90,7 @@ int QueryRIUtilizationDetailRequest::getPageNum()const
 void QueryRIUtilizationDetailRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryRIUtilizationDetailRequest::getPageSize()const
@@ -101,7 +101,7 @@ int QueryRIUtilizationDetailRequest::getPageSize()const
 void QueryRIUtilizationDetailRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryRIUtilizationDetailRequest::getRICommodityCode()const
@@ -112,6 +112,6 @@ std::string QueryRIUtilizationDetailRequest::getRICommodityCode()const
 void QueryRIUtilizationDetailRequest::setRICommodityCode(const std::string& rICommodityCode)
 {
 	rICommodityCode_ = rICommodityCode;
-	setCoreParameter("RICommodityCode", rICommodityCode);
+	setParameter("RICommodityCode", rICommodityCode);
 }
 

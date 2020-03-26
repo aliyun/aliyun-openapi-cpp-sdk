@@ -65,7 +65,32 @@ void DescribeShardingNetworkAddressResult::parse(const std::string &payload)
 			networkAddressesObject.role = valueNetworkAddressesNetworkAddress["Role"].asString();
 		networkAddresses_.push_back(networkAddressesObject);
 	}
+	auto allCompatibleConnectionsNode = value["CompatibleConnections"]["CompatibleConnection"];
+	for (auto valueCompatibleConnectionsCompatibleConnection : allCompatibleConnectionsNode)
+	{
+		CompatibleConnection compatibleConnectionsObject;
+		if(!valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].isNull())
+			compatibleConnectionsObject.networkAddress = valueCompatibleConnectionsCompatibleConnection["NetworkAddress"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["IPAddress"].isNull())
+			compatibleConnectionsObject.iPAddress = valueCompatibleConnectionsCompatibleConnection["IPAddress"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["NetworkType"].isNull())
+			compatibleConnectionsObject.networkType = valueCompatibleConnectionsCompatibleConnection["NetworkType"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["Port"].isNull())
+			compatibleConnectionsObject.port = valueCompatibleConnectionsCompatibleConnection["Port"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["VPCId"].isNull())
+			compatibleConnectionsObject.vPCId = valueCompatibleConnectionsCompatibleConnection["VPCId"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["VswitchId"].isNull())
+			compatibleConnectionsObject.vswitchId = valueCompatibleConnectionsCompatibleConnection["VswitchId"].asString();
+		if(!valueCompatibleConnectionsCompatibleConnection["ExpiredTime"].isNull())
+			compatibleConnectionsObject.expiredTime = valueCompatibleConnectionsCompatibleConnection["ExpiredTime"].asString();
+		compatibleConnections_.push_back(compatibleConnectionsObject);
+	}
 
+}
+
+std::vector<DescribeShardingNetworkAddressResult::CompatibleConnection> DescribeShardingNetworkAddressResult::getCompatibleConnections()const
+{
+	return compatibleConnections_;
 }
 
 std::vector<DescribeShardingNetworkAddressResult::NetworkAddress> DescribeShardingNetworkAddressResult::getNetworkAddresses()const

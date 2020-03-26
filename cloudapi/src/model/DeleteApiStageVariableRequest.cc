@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DeleteApiStageVariableRequest;
 
 DeleteApiStageVariableRequest::DeleteApiStageVariableRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DeleteApiStageVariable")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApiStageVariableRequest::~DeleteApiStageVariableRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteApiStageVariableRequest::getGroupId()const
 void DeleteApiStageVariableRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DeleteApiStageVariableRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteApiStageVariableRequest::getAccessKeyId()const
 void DeleteApiStageVariableRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteApiStageVariableRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DeleteApiStageVariableRequest::getSecurityToken()const
 void DeleteApiStageVariableRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteApiStageVariableRequest::getVariableName()const
@@ -66,7 +68,7 @@ std::string DeleteApiStageVariableRequest::getVariableName()const
 void DeleteApiStageVariableRequest::setVariableName(const std::string& variableName)
 {
 	variableName_ = variableName;
-	setCoreParameter("VariableName", variableName);
+	setParameter("VariableName", variableName);
 }
 
 std::string DeleteApiStageVariableRequest::getStageId()const
@@ -77,6 +79,6 @@ std::string DeleteApiStageVariableRequest::getStageId()const
 void DeleteApiStageVariableRequest::setStageId(const std::string& stageId)
 {
 	stageId_ = stageId;
-	setCoreParameter("StageId", stageId);
+	setParameter("StageId", stageId);
 }
 

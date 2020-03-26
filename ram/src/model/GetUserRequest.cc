@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetUserRequest;
 
 GetUserRequest::GetUserRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetUser")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUserRequest::~GetUserRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetUserRequest::getUserName()const
 void GetUserRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

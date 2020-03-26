@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupTrendRequest;
 
 GroupTrendRequest::GroupTrendRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupTrend")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupTrendRequest::~GroupTrendRequest()
 {}
@@ -33,7 +35,7 @@ std::string GroupTrendRequest::getAccessKeyId()const
 void GroupTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GroupTrendRequest::getGsid()const
@@ -44,6 +46,6 @@ long GroupTrendRequest::getGsid()const
 void GroupTrendRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

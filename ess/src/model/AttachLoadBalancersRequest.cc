@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::AttachLoadBalancersRequest;
 
 AttachLoadBalancersRequest::AttachLoadBalancersRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "AttachLoadBalancers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachLoadBalancersRequest::~AttachLoadBalancersRequest()
 {}
@@ -33,7 +35,7 @@ std::string AttachLoadBalancersRequest::getScalingGroupId()const
 void AttachLoadBalancersRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 bool AttachLoadBalancersRequest::getForceAttach()const
@@ -44,7 +46,7 @@ bool AttachLoadBalancersRequest::getForceAttach()const
 void AttachLoadBalancersRequest::setForceAttach(bool forceAttach)
 {
 	forceAttach_ = forceAttach;
-	setCoreParameter("ForceAttach", forceAttach ? "true" : "false");
+	setParameter("ForceAttach", forceAttach ? "true" : "false");
 }
 
 std::string AttachLoadBalancersRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AttachLoadBalancersRequest::getAccessKeyId()const
 void AttachLoadBalancersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<std::string> AttachLoadBalancersRequest::getLoadBalancer()const
@@ -66,8 +68,9 @@ std::vector<std::string> AttachLoadBalancersRequest::getLoadBalancer()const
 void AttachLoadBalancersRequest::setLoadBalancer(const std::vector<std::string>& loadBalancer)
 {
 	loadBalancer_ = loadBalancer;
-	for(int i = 0; i!= loadBalancer.size(); i++)
-		setCoreParameter("LoadBalancer."+ std::to_string(i), loadBalancer.at(i));
+	for(int dep1 = 0; dep1!= loadBalancer.size(); dep1++) {
+		setParameter("LoadBalancer."+ std::to_string(dep1), loadBalancer.at(dep1));
+	}
 }
 
 std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
@@ -78,7 +81,7 @@ std::string AttachLoadBalancersRequest::getResourceOwnerAccount()const
 void AttachLoadBalancersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AttachLoadBalancersRequest::getOwnerId()const
@@ -89,6 +92,6 @@ long AttachLoadBalancersRequest::getOwnerId()const
 void AttachLoadBalancersRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

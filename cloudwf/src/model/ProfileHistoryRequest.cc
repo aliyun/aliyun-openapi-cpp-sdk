@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ProfileHistoryRequest;
 
 ProfileHistoryRequest::ProfileHistoryRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ProfileHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ProfileHistoryRequest::~ProfileHistoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string ProfileHistoryRequest::getAccessKeyId()const
 void ProfileHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ProfileHistoryRequest::getAgsid()const
@@ -44,7 +46,7 @@ long ProfileHistoryRequest::getAgsid()const
 void ProfileHistoryRequest::setAgsid(long agsid)
 {
 	agsid_ = agsid;
-	setCoreParameter("Agsid", std::to_string(agsid));
+	setParameter("Agsid", std::to_string(agsid));
 }
 
 long ProfileHistoryRequest::getIdtype()const
@@ -55,7 +57,7 @@ long ProfileHistoryRequest::getIdtype()const
 void ProfileHistoryRequest::setIdtype(long idtype)
 {
 	idtype_ = idtype;
-	setCoreParameter("Idtype", std::to_string(idtype));
+	setParameter("Idtype", std::to_string(idtype));
 }
 
 std::string ProfileHistoryRequest::getEndMonth()const
@@ -66,7 +68,7 @@ std::string ProfileHistoryRequest::getEndMonth()const
 void ProfileHistoryRequest::setEndMonth(const std::string& endMonth)
 {
 	endMonth_ = endMonth;
-	setCoreParameter("EndMonth", endMonth);
+	setParameter("EndMonth", endMonth);
 }
 
 std::string ProfileHistoryRequest::getBeginMonth()const
@@ -77,6 +79,6 @@ std::string ProfileHistoryRequest::getBeginMonth()const
 void ProfileHistoryRequest::setBeginMonth(const std::string& beginMonth)
 {
 	beginMonth_ = beginMonth;
-	setCoreParameter("BeginMonth", beginMonth);
+	setParameter("BeginMonth", beginMonth);
 }
 

@@ -70,6 +70,8 @@ void ChatResult::parse(const std::string &payload)
 			messagesObject.text.metaData = textNode["MetaData"].asString();
 		if(!textNode["IntentName"].isNull())
 			messagesObject.text.intentName = textNode["IntentName"].asString();
+		if(!textNode["ExternalFlags"].isNull())
+			messagesObject.text.externalFlags = textNode["ExternalFlags"].asString();
 		auto knowledgeNode = value["Knowledge"];
 		if(!knowledgeNode["Id"].isNull())
 			messagesObject.knowledge.id = knowledgeNode["Id"].asString();

@@ -21,7 +21,7 @@ using AlibabaCloud::Geoip::Model::DescribeIpv6LocationRequest;
 DescribeIpv6LocationRequest::DescribeIpv6LocationRequest() :
 	RpcServiceRequest("geoip", "2020-01-01", "DescribeIpv6Location")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeIpv6LocationRequest::~DescribeIpv6LocationRequest()

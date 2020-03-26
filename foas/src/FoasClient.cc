@@ -2247,6 +2247,42 @@ FoasClient::UpdatePackageOutcomeCallable FoasClient::updatePackageCallable(const
 	return task->get_future();
 }
 
+FoasClient::UpdateQueueOutcome FoasClient::updateQueue(const UpdateQueueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateQueueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateQueueOutcome(UpdateQueueResult(outcome.result()));
+	else
+		return UpdateQueueOutcome(outcome.error());
+}
+
+void FoasClient::updateQueueAsync(const UpdateQueueRequest& request, const UpdateQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateQueue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FoasClient::UpdateQueueOutcomeCallable FoasClient::updateQueueCallable(const UpdateQueueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateQueueOutcome()>>(
+			[this, request]()
+			{
+			return this->updateQueue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FoasClient::ValidateJobOutcome FoasClient::validateJob(const ValidateJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -37,9 +37,15 @@ namespace AlibabaCloud
 
 				std::string getBizType()const;
 				void setBizType(const std::string& bizType);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
 
             private:
 				std::string bizType_;
+				int pageSize_;
+				int pageNum_;
 
 			};
 		}

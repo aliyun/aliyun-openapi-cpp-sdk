@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryDeviceStatRequest;
 
 QueryDeviceStatRequest::QueryDeviceStatRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryDeviceStat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceStatRequest::~QueryDeviceStatRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceStatRequest::getEndTime()const
 void QueryDeviceStatRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryDeviceStatRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string QueryDeviceStatRequest::getStartTime()const
 void QueryDeviceStatRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string QueryDeviceStatRequest::getDeviceType()const
@@ -55,7 +57,7 @@ std::string QueryDeviceStatRequest::getDeviceType()const
 void QueryDeviceStatRequest::setDeviceType(const std::string& deviceType)
 {
 	deviceType_ = deviceType;
-	setCoreParameter("DeviceType", deviceType);
+	setParameter("DeviceType", deviceType);
 }
 
 std::string QueryDeviceStatRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string QueryDeviceStatRequest::getAccessKeyId()const
 void QueryDeviceStatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryDeviceStatRequest::getAppKey()const
@@ -77,7 +79,7 @@ long QueryDeviceStatRequest::getAppKey()const
 void QueryDeviceStatRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 std::string QueryDeviceStatRequest::getQueryType()const
@@ -88,6 +90,6 @@ std::string QueryDeviceStatRequest::getQueryType()const
 void QueryDeviceStatRequest::setQueryType(const std::string& queryType)
 {
 	queryType_ = queryType;
-	setCoreParameter("QueryType", queryType);
+	setParameter("QueryType", queryType);
 }
 

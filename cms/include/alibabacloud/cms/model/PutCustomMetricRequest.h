@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutCustomMetricRequest : public RpcServiceRequest
 			{
+			public:
 				struct MetricList
 				{
 					std::string period;

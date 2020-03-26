@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::VerifyAuthenticationRequest;
 
 VerifyAuthenticationRequest::VerifyAuthenticationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "VerifyAuthentication")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyAuthenticationRequest::~VerifyAuthenticationRequest()
 {}
@@ -33,7 +35,7 @@ long VerifyAuthenticationRequest::getResourceOwnerId()const
 void VerifyAuthenticationRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string VerifyAuthenticationRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string VerifyAuthenticationRequest::getResourceOwnerAccount()const
 void VerifyAuthenticationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long VerifyAuthenticationRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long VerifyAuthenticationRequest::getOwnerId()const
 void VerifyAuthenticationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string VerifyAuthenticationRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string VerifyAuthenticationRequest::getAccessKeyId()const
 void VerifyAuthenticationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long VerifyAuthenticationRequest::getUid()const
@@ -77,6 +79,6 @@ long VerifyAuthenticationRequest::getUid()const
 void VerifyAuthenticationRequest::setUid(long uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", std::to_string(uid));
+	setParameter("Uid", std::to_string(uid));
 }
 

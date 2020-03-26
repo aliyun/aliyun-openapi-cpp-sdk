@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getSnatIp()const;
 				void setSnatIp(const std::string& snatIp);
 				std::string getRegionId()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string clientToken_;
 				std::string snatIp_;
 				std::string regionId_;
 				std::string snatEntryId_;

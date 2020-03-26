@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainSnapshotDataRequest;
 
 DescribeLiveDomainSnapshotDataRequest::DescribeLiveDomainSnapshotDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainSnapshotData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainSnapshotDataRequest::~DescribeLiveDomainSnapshotDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getStartTime()const
 void DescribeLiveDomainSnapshotDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainSnapshotDataRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getDomainName()const
 void DescribeLiveDomainSnapshotDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainSnapshotDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainSnapshotDataRequest::getEndTime()const
 void DescribeLiveDomainSnapshotDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainSnapshotDataRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DescribeLiveDomainSnapshotDataRequest::getOwnerId()const
 void DescribeLiveDomainSnapshotDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeDomainDetailRequest;
 
 DescribeDomainDetailRequest::DescribeDomainDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeDomainDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDomainDetailRequest::~DescribeDomainDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeDomainDetailRequest::getDomainName()const
 void DescribeDomainDetailRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeDomainDetailRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeDomainDetailRequest::getSourceIp()const
 void DescribeDomainDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

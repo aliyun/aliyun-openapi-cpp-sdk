@@ -48,7 +48,7 @@ void QueryTradeIntentionUserListResult::parse(const std::string &payload)
 		if(!valueDataTrademark["Classification"].isNull())
 			dataObject.classification = valueDataTrademark["Classification"].asString();
 		if(!valueDataTrademark["Mobile"].isNull())
-			dataObject.mobile = std::stoi(valueDataTrademark["Mobile"].asString());
+			dataObject.mobile = valueDataTrademark["Mobile"].asString();
 		if(!valueDataTrademark["UserName"].isNull())
 			dataObject.userName = valueDataTrademark["UserName"].asString();
 		if(!valueDataTrademark["BizId"].isNull())
@@ -57,6 +57,8 @@ void QueryTradeIntentionUserListResult::parse(const std::string &payload)
 			dataObject.description = valueDataTrademark["Description"].asString();
 		if(!valueDataTrademark["Status"].isNull())
 			dataObject.status = std::stoi(valueDataTrademark["Status"].asString());
+		if(!valueDataTrademark["Type"].isNull())
+			dataObject.type = std::stoi(valueDataTrademark["Type"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

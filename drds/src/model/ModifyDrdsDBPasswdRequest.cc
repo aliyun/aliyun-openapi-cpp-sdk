@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::ModifyDrdsDBPasswdRequest;
 
 ModifyDrdsDBPasswdRequest::ModifyDrdsDBPasswdRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "ModifyDrdsDBPasswd")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDrdsDBPasswdRequest::~ModifyDrdsDBPasswdRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDrdsDBPasswdRequest::getDrdsInstanceId()const
 void ModifyDrdsDBPasswdRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyDrdsDBPasswdRequest::getAccessKeyId()const
 void ModifyDrdsDBPasswdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getNewPasswd()const
@@ -55,7 +57,7 @@ std::string ModifyDrdsDBPasswdRequest::getNewPasswd()const
 void ModifyDrdsDBPasswdRequest::setNewPasswd(const std::string& newPasswd)
 {
 	newPasswd_ = newPasswd;
-	setCoreParameter("NewPasswd", newPasswd);
+	setParameter("NewPasswd", newPasswd);
 }
 
 std::string ModifyDrdsDBPasswdRequest::getDbName()const
@@ -66,6 +68,6 @@ std::string ModifyDrdsDBPasswdRequest::getDbName()const
 void ModifyDrdsDBPasswdRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

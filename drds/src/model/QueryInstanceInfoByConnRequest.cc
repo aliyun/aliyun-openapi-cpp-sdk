@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::QueryInstanceInfoByConnRequest;
 
 QueryInstanceInfoByConnRequest::QueryInstanceInfoByConnRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "QueryInstanceInfoByConn")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryInstanceInfoByConnRequest::~QueryInstanceInfoByConnRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryInstanceInfoByConnRequest::getAccessKeyId()const
 void QueryInstanceInfoByConnRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int QueryInstanceInfoByConnRequest::getPort()const
@@ -44,7 +46,7 @@ int QueryInstanceInfoByConnRequest::getPort()const
 void QueryInstanceInfoByConnRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string QueryInstanceInfoByConnRequest::getHost()const
@@ -55,7 +57,7 @@ std::string QueryInstanceInfoByConnRequest::getHost()const
 void QueryInstanceInfoByConnRequest::setHost(const std::string& host)
 {
 	host_ = host;
-	setCoreParameter("Host", host);
+	setParameter("Host", host);
 }
 
 std::string QueryInstanceInfoByConnRequest::getUserName()const
@@ -66,6 +68,6 @@ std::string QueryInstanceInfoByConnRequest::getUserName()const
 void QueryInstanceInfoByConnRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApisRequest;
 
 DescribeApisRequest::DescribeApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApisRequest::~DescribeApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApisRequest::getVisibility()const
 void DescribeApisRequest::setVisibility(const std::string& visibility)
 {
 	visibility_ = visibility;
-	setCoreParameter("Visibility", visibility);
+	setParameter("Visibility", visibility);
 }
 
 std::string DescribeApisRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApisRequest::getGroupId()const
 void DescribeApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 bool DescribeApisRequest::getEnableTagAuth()const
@@ -55,7 +57,7 @@ bool DescribeApisRequest::getEnableTagAuth()const
 void DescribeApisRequest::setEnableTagAuth(bool enableTagAuth)
 {
 	enableTagAuth_ = enableTagAuth;
-	setCoreParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+	setParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
 }
 
 int DescribeApisRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribeApisRequest::getPageNumber()const
 void DescribeApisRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeApisRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DescribeApisRequest::getAccessKeyId()const
 void DescribeApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApisRequest::getApiName()const
@@ -88,7 +90,7 @@ std::string DescribeApisRequest::getApiName()const
 void DescribeApisRequest::setApiName(const std::string& apiName)
 {
 	apiName_ = apiName;
-	setCoreParameter("ApiName", apiName);
+	setParameter("ApiName", apiName);
 }
 
 std::string DescribeApisRequest::getCatalogId()const
@@ -99,7 +101,7 @@ std::string DescribeApisRequest::getCatalogId()const
 void DescribeApisRequest::setCatalogId(const std::string& catalogId)
 {
 	catalogId_ = catalogId;
-	setCoreParameter("CatalogId", catalogId);
+	setParameter("CatalogId", catalogId);
 }
 
 std::string DescribeApisRequest::getSecurityToken()const
@@ -110,7 +112,7 @@ std::string DescribeApisRequest::getSecurityToken()const
 void DescribeApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int DescribeApisRequest::getPageSize()const
@@ -121,7 +123,7 @@ int DescribeApisRequest::getPageSize()const
 void DescribeApisRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<DescribeApisRequest::Tag> DescribeApisRequest::getTag()const
@@ -132,12 +134,11 @@ std::vector<DescribeApisRequest::Tag> DescribeApisRequest::getTag()const
 void DescribeApisRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -149,6 +150,6 @@ std::string DescribeApisRequest::getApiId()const
 void DescribeApisRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 

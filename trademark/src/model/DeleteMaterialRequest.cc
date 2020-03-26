@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::DeleteMaterialRequest;
 
 DeleteMaterialRequest::DeleteMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "DeleteMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMaterialRequest::~DeleteMaterialRequest()
 {}
@@ -33,6 +35,6 @@ long DeleteMaterialRequest::getId()const
 void DeleteMaterialRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

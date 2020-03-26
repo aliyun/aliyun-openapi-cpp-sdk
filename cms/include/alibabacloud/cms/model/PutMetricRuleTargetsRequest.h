@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutMetricRuleTargetsRequest : public RpcServiceRequest
 			{
+			public:
 				struct Targets
 				{
 					std::string level;

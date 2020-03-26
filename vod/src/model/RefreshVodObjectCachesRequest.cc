@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::RefreshVodObjectCachesRequest;
 
 RefreshVodObjectCachesRequest::RefreshVodObjectCachesRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "RefreshVodObjectCaches")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefreshVodObjectCachesRequest::~RefreshVodObjectCachesRequest()
 {}
@@ -33,7 +35,7 @@ std::string RefreshVodObjectCachesRequest::getObjectPath()const
 void RefreshVodObjectCachesRequest::setObjectPath(const std::string& objectPath)
 {
 	objectPath_ = objectPath;
-	setCoreParameter("ObjectPath", objectPath);
+	setParameter("ObjectPath", objectPath);
 }
 
 long RefreshVodObjectCachesRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long RefreshVodObjectCachesRequest::getOwnerId()const
 void RefreshVodObjectCachesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RefreshVodObjectCachesRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string RefreshVodObjectCachesRequest::getSecurityToken()const
 void RefreshVodObjectCachesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string RefreshVodObjectCachesRequest::getObjectType()const
@@ -66,6 +68,6 @@ std::string RefreshVodObjectCachesRequest::getObjectType()const
 void RefreshVodObjectCachesRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setParameter("ObjectType", objectType);
 }
 

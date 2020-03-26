@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetEventRequest;
 
 GetEventRequest::GetEventRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetEvent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEventRequest::~GetEventRequest()
 {}
@@ -33,7 +35,7 @@ long GetEventRequest::getEventId()const
 void GetEventRequest::setEventId(long eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", std::to_string(eventId));
+	setParameter("EventId", std::to_string(eventId));
 }
 
 std::string GetEventRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string GetEventRequest::getLibraryId()const
 void GetEventRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string GetEventRequest::getStoreName()const
@@ -55,6 +57,6 @@ std::string GetEventRequest::getStoreName()const
 void GetEventRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 

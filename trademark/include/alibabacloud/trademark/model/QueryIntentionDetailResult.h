@@ -38,31 +38,35 @@ namespace AlibabaCloud
 				explicit QueryIntentionDetailResult(const std::string &payload);
 				~QueryIntentionDetailResult();
 				int getStatus()const;
-				std::string getRegisterNumber()const;
-				int getType()const;
 				std::string getDescription()const;
 				std::string getUserName()const;
+				std::string getRelationBizId()const;
+				long getCreateTime()const;
+				std::string getMobile()const;
+				std::string getRegisterNumber()const;
+				int getType()const;
 				std::string getUserId()const;
 				std::string getClassification()const;
-				long getCreateTime()const;
 				long getUpdateTime()const;
 				std::string getBizId()const;
-				std::string getMobile()const;
+				std::string getPartnerMobile()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int status_;
-				std::string registerNumber_;
-				int type_;
 				std::string description_;
 				std::string userName_;
+				std::string relationBizId_;
+				long createTime_;
+				std::string mobile_;
+				std::string registerNumber_;
+				int type_;
 				std::string userId_;
 				std::string classification_;
-				long createTime_;
 				long updateTime_;
 				std::string bizId_;
-				std::string mobile_;
+				std::string partnerMobile_;
 
 			};
 		}

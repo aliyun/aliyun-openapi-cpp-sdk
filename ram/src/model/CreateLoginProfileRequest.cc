@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::CreateLoginProfileRequest;
 
 CreateLoginProfileRequest::CreateLoginProfileRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "CreateLoginProfile")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoginProfileRequest::~CreateLoginProfileRequest()
 {}
@@ -33,7 +35,7 @@ bool CreateLoginProfileRequest::getPasswordResetRequired()const
 void CreateLoginProfileRequest::setPasswordResetRequired(bool passwordResetRequired)
 {
 	passwordResetRequired_ = passwordResetRequired;
-	setCoreParameter("PasswordResetRequired", passwordResetRequired ? "true" : "false");
+	setParameter("PasswordResetRequired", passwordResetRequired ? "true" : "false");
 }
 
 std::string CreateLoginProfileRequest::getPassword()const
@@ -44,7 +46,7 @@ std::string CreateLoginProfileRequest::getPassword()const
 void CreateLoginProfileRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 bool CreateLoginProfileRequest::getMFABindRequired()const
@@ -55,7 +57,7 @@ bool CreateLoginProfileRequest::getMFABindRequired()const
 void CreateLoginProfileRequest::setMFABindRequired(bool mFABindRequired)
 {
 	mFABindRequired_ = mFABindRequired;
-	setCoreParameter("MFABindRequired", mFABindRequired ? "true" : "false");
+	setParameter("MFABindRequired", mFABindRequired ? "true" : "false");
 }
 
 std::string CreateLoginProfileRequest::getUserName()const
@@ -66,6 +68,6 @@ std::string CreateLoginProfileRequest::getUserName()const
 void CreateLoginProfileRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

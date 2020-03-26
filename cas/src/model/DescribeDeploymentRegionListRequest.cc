@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentRegionListRequest;
 
 DescribeDeploymentRegionListRequest::DescribeDeploymentRegionListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentRegionList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentRegionListRequest::~DescribeDeploymentRegionListRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDeploymentRegionListRequest::getCertificateId()const
 void DescribeDeploymentRegionListRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DescribeDeploymentRegionListRequest::getCloudProduct()const
@@ -44,7 +46,7 @@ std::string DescribeDeploymentRegionListRequest::getCloudProduct()const
 void DescribeDeploymentRegionListRequest::setCloudProduct(const std::string& cloudProduct)
 {
 	cloudProduct_ = cloudProduct;
-	setCoreParameter("CloudProduct", cloudProduct);
+	setParameter("CloudProduct", cloudProduct);
 }
 
 std::string DescribeDeploymentRegionListRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeDeploymentRegionListRequest::getResourceGroupId()const
 void DescribeDeploymentRegionListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDeploymentRegionListRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeDeploymentRegionListRequest::getSourceIp()const
 void DescribeDeploymentRegionListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDeploymentRegionListRequest::getLang()const
@@ -77,6 +79,6 @@ std::string DescribeDeploymentRegionListRequest::getLang()const
 void DescribeDeploymentRegionListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun::Model::TodayBackdoorRequest;
 
 TodayBackdoorRequest::TodayBackdoorRequest() :
 	RpcServiceRequest("yundun", "2015-02-27", "TodayBackdoor")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TodayBackdoorRequest::~TodayBackdoorRequest()
 {}

@@ -35,7 +35,7 @@ std::string QueryEntitiesRequest::getEntityName()const
 void QueryEntitiesRequest::setEntityName(const std::string& entityName)
 {
 	entityName_ = entityName;
-	setCoreParameter("EntityName", entityName);
+	setParameter("EntityName", entityName);
 }
 
 long QueryEntitiesRequest::getDialogId()const
@@ -46,7 +46,7 @@ long QueryEntitiesRequest::getDialogId()const
 void QueryEntitiesRequest::setDialogId(long dialogId)
 {
 	dialogId_ = dialogId;
-	setCoreParameter("DialogId", std::to_string(dialogId));
+	setParameter("DialogId", std::to_string(dialogId));
 }
 
 int QueryEntitiesRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int QueryEntitiesRequest::getPageNumber()const
 void QueryEntitiesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int QueryEntitiesRequest::getPageSize()const
@@ -68,6 +68,6 @@ int QueryEntitiesRequest::getPageSize()const
 void QueryEntitiesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeConfigsRequest;
 
 DescribeConfigsRequest::DescribeConfigsRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeConfigsRequest::~DescribeConfigsRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeConfigsRequest::getFeatureType()const
 void DescribeConfigsRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeConfigsRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeConfigsRequest::getSourceIp()const
 void DescribeConfigsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeConfigsRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeConfigsRequest::getLang()const
 void DescribeConfigsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

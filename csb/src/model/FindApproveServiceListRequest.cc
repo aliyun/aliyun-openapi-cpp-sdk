@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindApproveServiceListRequest;
 
 FindApproveServiceListRequest::FindApproveServiceListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindApproveServiceList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindApproveServiceListRequest::~FindApproveServiceListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindApproveServiceListRequest::getProjectName()const
 void FindApproveServiceListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string FindApproveServiceListRequest::getApproveLevel()const
@@ -44,7 +46,7 @@ std::string FindApproveServiceListRequest::getApproveLevel()const
 void FindApproveServiceListRequest::setApproveLevel(const std::string& approveLevel)
 {
 	approveLevel_ = approveLevel;
-	setCoreParameter("ApproveLevel", approveLevel);
+	setParameter("ApproveLevel", approveLevel);
 }
 
 bool FindApproveServiceListRequest::getShowDelService()const
@@ -55,7 +57,7 @@ bool FindApproveServiceListRequest::getShowDelService()const
 void FindApproveServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
+	setParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
 long FindApproveServiceListRequest::getCsbId()const
@@ -66,7 +68,7 @@ long FindApproveServiceListRequest::getCsbId()const
 void FindApproveServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 std::string FindApproveServiceListRequest::getAlias()const
@@ -77,7 +79,7 @@ std::string FindApproveServiceListRequest::getAlias()const
 void FindApproveServiceListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setParameter("Alias", alias);
 }
 
 std::string FindApproveServiceListRequest::getServiceName()const
@@ -88,6 +90,6 @@ std::string FindApproveServiceListRequest::getServiceName()const
 void FindApproveServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

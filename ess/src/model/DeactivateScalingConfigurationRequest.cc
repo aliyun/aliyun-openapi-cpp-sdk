@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeactivateScalingConfigurationRequest;
 
 DeactivateScalingConfigurationRequest::DeactivateScalingConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeactivateScalingConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeactivateScalingConfigurationRequest::~DeactivateScalingConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeactivateScalingConfigurationRequest::getResourceOwnerAccount()cons
 void DeactivateScalingConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeactivateScalingConfigurationRequest::getOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeactivateScalingConfigurationRequest::getOwnerAccount()const
 void DeactivateScalingConfigurationRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeactivateScalingConfigurationRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeactivateScalingConfigurationRequest::getOwnerId()const
 void DeactivateScalingConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeactivateScalingConfigurationRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeactivateScalingConfigurationRequest::getAccessKeyId()const
 void DeactivateScalingConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeactivateScalingConfigurationRequest::getScalingConfigurationId()const
@@ -77,6 +79,6 @@ std::string DeactivateScalingConfigurationRequest::getScalingConfigurationId()co
 void DeactivateScalingConfigurationRequest::setScalingConfigurationId(const std::string& scalingConfigurationId)
 {
 	scalingConfigurationId_ = scalingConfigurationId;
-	setCoreParameter("ScalingConfigurationId", scalingConfigurationId);
+	setParameter("ScalingConfigurationId", scalingConfigurationId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SetDevicePropertyRequest;
 
 SetDevicePropertyRequest::SetDevicePropertyRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SetDeviceProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDevicePropertyRequest::~SetDevicePropertyRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDevicePropertyRequest::getProductKey()const
 void SetDevicePropertyRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string SetDevicePropertyRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SetDevicePropertyRequest::getAccessKeyId()const
 void SetDevicePropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDevicePropertyRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string SetDevicePropertyRequest::getIotId()const
 void SetDevicePropertyRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string SetDevicePropertyRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string SetDevicePropertyRequest::getIotInstanceId()const
 void SetDevicePropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string SetDevicePropertyRequest::getDeviceName()const
@@ -77,7 +79,7 @@ std::string SetDevicePropertyRequest::getDeviceName()const
 void SetDevicePropertyRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 
 std::string SetDevicePropertyRequest::getItems()const
@@ -88,6 +90,6 @@ std::string SetDevicePropertyRequest::getItems()const
 void SetDevicePropertyRequest::setItems(const std::string& items)
 {
 	items_ = items;
-	setCoreParameter("Items", items);
+	setParameter("Items", items);
 }
 

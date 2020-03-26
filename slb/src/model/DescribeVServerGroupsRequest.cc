@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeVServerGroupsRequest;
 
 DescribeVServerGroupsRequest::DescribeVServerGroupsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeVServerGroups")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVServerGroupsRequest::~DescribeVServerGroupsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVServerGroupsRequest::getAccess_key_id()const
 void DescribeVServerGroupsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeVServerGroupsRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeVServerGroupsRequest::getResourceOwnerId()const
 void DescribeVServerGroupsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeVServerGroupsRequest::getIncludeListener()const
@@ -55,7 +57,7 @@ bool DescribeVServerGroupsRequest::getIncludeListener()const
 void DescribeVServerGroupsRequest::setIncludeListener(bool includeListener)
 {
 	includeListener_ = includeListener;
-	setCoreParameter("IncludeListener", includeListener ? "true" : "false");
+	setParameter("IncludeListener", includeListener ? "true" : "false");
 }
 
 bool DescribeVServerGroupsRequest::getIncludeRule()const
@@ -66,7 +68,7 @@ bool DescribeVServerGroupsRequest::getIncludeRule()const
 void DescribeVServerGroupsRequest::setIncludeRule(bool includeRule)
 {
 	includeRule_ = includeRule;
-	setCoreParameter("IncludeRule", includeRule ? "true" : "false");
+	setParameter("IncludeRule", includeRule ? "true" : "false");
 }
 
 std::string DescribeVServerGroupsRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeVServerGroupsRequest::getRegionId()const
 void DescribeVServerGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeVServerGroupsRequest::getResourceOwnerAccount()const
 void DescribeVServerGroupsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeVServerGroupsRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeVServerGroupsRequest::getOwnerAccount()const
 void DescribeVServerGroupsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeVServerGroupsRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeVServerGroupsRequest::getOwnerId()const
 void DescribeVServerGroupsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVServerGroupsRequest::getTags()const
@@ -121,7 +123,7 @@ std::string DescribeVServerGroupsRequest::getTags()const
 void DescribeVServerGroupsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string DescribeVServerGroupsRequest::getLoadBalancerId()const
 void DescribeVServerGroupsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

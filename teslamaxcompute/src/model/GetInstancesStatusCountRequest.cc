@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetInstancesStatusCountRequest;
 
 GetInstancesStatusCountRequest::GetInstancesStatusCountRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetInstancesStatusCount")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstancesStatusCountRequest::~GetInstancesStatusCountRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetInstancesStatusCountRequest::getCluster()const
 void GetInstancesStatusCountRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setParameter("Cluster", cluster);
 }
 
 std::string GetInstancesStatusCountRequest::getQuotaId()const
@@ -44,7 +46,7 @@ std::string GetInstancesStatusCountRequest::getQuotaId()const
 void GetInstancesStatusCountRequest::setQuotaId(const std::string& quotaId)
 {
 	quotaId_ = quotaId;
-	setCoreParameter("QuotaId", quotaId);
+	setParameter("QuotaId", quotaId);
 }
 
 std::string GetInstancesStatusCountRequest::getRegion()const
@@ -55,7 +57,7 @@ std::string GetInstancesStatusCountRequest::getRegion()const
 void GetInstancesStatusCountRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetInstancesStatusCountRequest::getQuotaName()const
@@ -66,6 +68,6 @@ std::string GetInstancesStatusCountRequest::getQuotaName()const
 void GetInstancesStatusCountRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", quotaName);
+	setParameter("QuotaName", quotaName);
 }
 

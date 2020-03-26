@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeScalingActivityRequest;
 
 DescribeScalingActivityRequest::DescribeScalingActivityRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeScalingActivity")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeScalingActivityRequest::~DescribeScalingActivityRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeScalingActivityRequest::getResourceOwnerId()const
 void DescribeScalingActivityRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeScalingActivityRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string DescribeScalingActivityRequest::getClusterId()const
 void DescribeScalingActivityRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string DescribeScalingActivityRequest::getScalingActivityId()const
@@ -55,7 +57,7 @@ std::string DescribeScalingActivityRequest::getScalingActivityId()const
 void DescribeScalingActivityRequest::setScalingActivityId(const std::string& scalingActivityId)
 {
 	scalingActivityId_ = scalingActivityId;
-	setCoreParameter("ScalingActivityId", scalingActivityId);
+	setParameter("ScalingActivityId", scalingActivityId);
 }
 
 std::string DescribeScalingActivityRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DescribeScalingActivityRequest::getAccessKeyId()const
 void DescribeScalingActivityRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeScalingActivityRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeScalingActivityRequest::getRegionId()const
 void DescribeScalingActivityRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeScalingActivityRequest::getHostGroupId()const
@@ -88,6 +90,6 @@ std::string DescribeScalingActivityRequest::getHostGroupId()const
 void DescribeScalingActivityRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 

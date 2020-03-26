@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ModifyMasterSpecRequest;
 
 ModifyMasterSpecRequest::ModifyMasterSpecRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/specification");
+	setMethod(HttpRequest::Method::Put);
+}
 
 ModifyMasterSpecRequest::~ModifyMasterSpecRequest()
 {}
@@ -33,7 +36,7 @@ std::string ModifyMasterSpecRequest::getRegionId()const
 void ModifyMasterSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ModifyMasterSpecRequest::getClusterId()const
@@ -44,7 +47,7 @@ std::string ModifyMasterSpecRequest::getClusterId()const
 void ModifyMasterSpecRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyMasterSpecRequest::getMasterTargetModel()const
@@ -55,6 +58,6 @@ std::string ModifyMasterSpecRequest::getMasterTargetModel()const
 void ModifyMasterSpecRequest::setMasterTargetModel(const std::string& masterTargetModel)
 {
 	masterTargetModel_ = masterTargetModel;
-	setCoreParameter("MasterTargetModel", masterTargetModel);
+	setBodyParameter("MasterTargetModel", masterTargetModel);
 }
 

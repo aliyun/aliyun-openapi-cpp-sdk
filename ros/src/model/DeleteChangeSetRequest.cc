@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DeleteChangeSetRequest;
 
 DeleteChangeSetRequest::DeleteChangeSetRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteChangeSetRequest::~DeleteChangeSetRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteChangeSetRequest::getChangeSetName()const
 void DeleteChangeSetRequest::setChangeSetName(const std::string& changeSetName)
 {
 	changeSetName_ = changeSetName;
-	setCoreParameter("ChangeSetName", changeSetName);
+	setParameter("ChangeSetName", changeSetName);
 }
 
 std::string DeleteChangeSetRequest::getStackId()const
@@ -44,7 +47,7 @@ std::string DeleteChangeSetRequest::getStackId()const
 void DeleteChangeSetRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DeleteChangeSetRequest::getStackName()const
@@ -55,6 +58,6 @@ std::string DeleteChangeSetRequest::getStackName()const
 void DeleteChangeSetRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

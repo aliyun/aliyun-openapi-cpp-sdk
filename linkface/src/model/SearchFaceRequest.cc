@@ -20,7 +20,9 @@ using AlibabaCloud::LinkFace::Model::SearchFaceRequest;
 
 SearchFaceRequest::SearchFaceRequest() :
 	RpcServiceRequest("linkface", "2018-07-20", "SearchFace")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchFaceRequest::~SearchFaceRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchFaceRequest::getImage()const
 void SearchFaceRequest::setImage(const std::string& image)
 {
 	image_ = image;
-	setCoreParameter("Image", image);
+	setBodyParameter("Image", image);
 }
 
 std::string SearchFaceRequest::getGroupId()const
@@ -44,6 +46,28 @@ std::string SearchFaceRequest::getGroupId()const
 void SearchFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setBodyParameter("GroupId", groupId);
+}
+
+std::string SearchFaceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void SearchFaceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string SearchFaceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void SearchFaceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

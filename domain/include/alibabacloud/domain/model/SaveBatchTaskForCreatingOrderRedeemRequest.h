@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForCreatingOrderRedeemRequest : public RpcServiceRequest
 			{
+			public:
 				struct OrderRedeemParam
 				{
 					long currentExpirationDate;

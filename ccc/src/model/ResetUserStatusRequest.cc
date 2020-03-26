@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ResetUserStatusRequest;
 
 ResetUserStatusRequest::ResetUserStatusRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ResetUserStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResetUserStatusRequest::~ResetUserStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResetUserStatusRequest::getInstanceId()const
 void ResetUserStatusRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ResetUserStatusRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ResetUserStatusRequest::getAccessKeyId()const
 void ResetUserStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

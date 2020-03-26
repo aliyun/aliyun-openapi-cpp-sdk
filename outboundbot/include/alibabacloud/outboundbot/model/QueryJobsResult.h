@@ -52,6 +52,17 @@ namespace AlibabaCloud
 							std::string value;
 							std::string key;
 						};
+						struct SummaryItem
+						{
+							std::string category;
+							std::string taskId;
+							std::string conversationDetailId;
+							std::string content;
+							std::string summaryId;
+							std::string summaryName;
+							std::string jobId;
+							std::string groupId;
+						};
 						struct Task
 						{
 							struct Contact1
@@ -69,8 +80,8 @@ namespace AlibabaCloud
 							std::string chatbotId;
 							long planedTime;
 							std::string calledNumber;
-							std::string taskId;
 							std::string scenarioId;
+							std::string taskId;
 							long actualTime;
 							std::string callId;
 							int duration;
@@ -78,17 +89,6 @@ namespace AlibabaCloud
 							std::string callingNumber;
 							Contact1 contact1;
 							std::string jobId;
-						};
-						struct SummaryItem
-						{
-							std::string taskId;
-							std::string category;
-							std::string conversationDetailId;
-							std::string content;
-							std::string summaryId;
-							std::string summaryName;
-							std::string jobId;
-							std::string groupId;
 						};
 						std::string status;
 						std::vector<Job::Task> tasks;

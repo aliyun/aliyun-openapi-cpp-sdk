@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::DescribeHistoryActionDataReque
 
 DescribeHistoryActionDataRequest::DescribeHistoryActionDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "DescribeHistoryActionData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeHistoryActionDataRequest::~DescribeHistoryActionDataRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeHistoryActionDataRequest::getTsEnd()const
 void DescribeHistoryActionDataRequest::setTsEnd(long tsEnd)
 {
 	tsEnd_ = tsEnd;
-	setCoreParameter("TsEnd", std::to_string(tsEnd));
+	setBodyParameter("TsEnd", std::to_string(tsEnd));
 }
 
 std::string DescribeHistoryActionDataRequest::getStoreId()const
@@ -44,7 +46,7 @@ std::string DescribeHistoryActionDataRequest::getStoreId()const
 void DescribeHistoryActionDataRequest::setStoreId(const std::string& storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", storeId);
+	setBodyParameter("StoreId", storeId);
 }
 
 int DescribeHistoryActionDataRequest::getPageLimit()const
@@ -55,7 +57,7 @@ int DescribeHistoryActionDataRequest::getPageLimit()const
 void DescribeHistoryActionDataRequest::setPageLimit(int pageLimit)
 {
 	pageLimit_ = pageLimit;
-	setCoreParameter("PageLimit", std::to_string(pageLimit));
+	setBodyParameter("PageLimit", std::to_string(pageLimit));
 }
 
 int DescribeHistoryActionDataRequest::getPageNo()const
@@ -66,7 +68,7 @@ int DescribeHistoryActionDataRequest::getPageNo()const
 void DescribeHistoryActionDataRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setBodyParameter("PageNo", std::to_string(pageNo));
 }
 
 long DescribeHistoryActionDataRequest::getTsStart()const
@@ -77,6 +79,6 @@ long DescribeHistoryActionDataRequest::getTsStart()const
 void DescribeHistoryActionDataRequest::setTsStart(long tsStart)
 {
 	tsStart_ = tsStart;
-	setCoreParameter("TsStart", std::to_string(tsStart));
+	setBodyParameter("TsStart", std::to_string(tsStart));
 }
 

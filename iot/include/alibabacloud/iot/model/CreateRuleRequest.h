@@ -39,34 +39,37 @@ namespace AlibabaCloud
 				void setSelect(const std::string& select);
 				std::string getRuleDesc()const;
 				void setRuleDesc(const std::string& ruleDesc);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getShortTopic()const;
 				void setShortTopic(const std::string& shortTopic);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getDataType()const;
 				void setDataType(const std::string& dataType);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getWhere()const;
 				void setWhere(const std::string& where);
 				int getTopicType()const;
 				void setTopicType(int topicType);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				std::string select_;
 				std::string ruleDesc_;
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string shortTopic_;
+				std::string resourceGroupId_;
 				std::string dataType_;
 				std::string iotInstanceId_;
-				std::string name_;
 				std::string where_;
 				int topicType_;
+				std::string productKey_;
+				std::string name_;
 
 			};
 		}

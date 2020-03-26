@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMCTemplateRequest;
 
 DeleteMCTemplateRequest::DeleteMCTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMCTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMCTemplateRequest::~DeleteMCTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteMCTemplateRequest::getResourceOwnerId()const
 void DeleteMCTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMCTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteMCTemplateRequest::getResourceOwnerAccount()const
 void DeleteMCTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMCTemplateRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteMCTemplateRequest::getOwnerAccount()const
 void DeleteMCTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMCTemplateRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteMCTemplateRequest::getOwnerId()const
 void DeleteMCTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMCTemplateRequest::getTemplateId()const
@@ -77,7 +79,7 @@ std::string DeleteMCTemplateRequest::getTemplateId()const
 void DeleteMCTemplateRequest::setTemplateId(const std::string& templateId)
 {
 	templateId_ = templateId;
-	setCoreParameter("TemplateId", templateId);
+	setParameter("TemplateId", templateId);
 }
 
 std::string DeleteMCTemplateRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string DeleteMCTemplateRequest::getAccessKeyId()const
 void DeleteMCTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

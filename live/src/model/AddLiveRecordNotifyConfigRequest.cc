@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveRecordNotifyConfigRequest;
 
 AddLiveRecordNotifyConfigRequest::AddLiveRecordNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveRecordNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveRecordNotifyConfigRequest::~AddLiveRecordNotifyConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLiveRecordNotifyConfigRequest::getOnDemandUrl()const
 void AddLiveRecordNotifyConfigRequest::setOnDemandUrl(const std::string& onDemandUrl)
 {
 	onDemandUrl_ = onDemandUrl;
-	setCoreParameter("OnDemandUrl", onDemandUrl);
+	setParameter("OnDemandUrl", onDemandUrl);
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
@@ -44,7 +46,7 @@ std::string AddLiveRecordNotifyConfigRequest::getSecurityToken()const
 void AddLiveRecordNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
@@ -55,7 +57,7 @@ std::string AddLiveRecordNotifyConfigRequest::getNotifyUrl()const
 void AddLiveRecordNotifyConfigRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
+	setParameter("NotifyUrl", notifyUrl);
 }
 
 bool AddLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
@@ -66,7 +68,7 @@ bool AddLiveRecordNotifyConfigRequest::getNeedStatusNotify()const
 void AddLiveRecordNotifyConfigRequest::setNeedStatusNotify(bool needStatusNotify)
 {
 	needStatusNotify_ = needStatusNotify;
-	setCoreParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
+	setParameter("NeedStatusNotify", needStatusNotify ? "true" : "false");
 }
 
 std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string AddLiveRecordNotifyConfigRequest::getDomainName()const
 void AddLiveRecordNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long AddLiveRecordNotifyConfigRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long AddLiveRecordNotifyConfigRequest::getOwnerId()const
 void AddLiveRecordNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

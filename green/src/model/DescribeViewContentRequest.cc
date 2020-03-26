@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeViewContentRequest;
 
 DescribeViewContentRequest::DescribeViewContentRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeViewContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeViewContentRequest::~DescribeViewContentRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeViewContentRequest::getImageId()const
 void DescribeViewContentRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
-	setCoreParameter("ImageId", imageId);
+	setParameter("ImageId", imageId);
 }
 
 std::string DescribeViewContentRequest::getStartDate()const
@@ -44,7 +46,7 @@ std::string DescribeViewContentRequest::getStartDate()const
 void DescribeViewContentRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeViewContentRequest::getScene()const
@@ -55,7 +57,7 @@ std::string DescribeViewContentRequest::getScene()const
 void DescribeViewContentRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string DescribeViewContentRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeViewContentRequest::getSourceIp()const
 void DescribeViewContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeViewContentRequest::getLibType()const
@@ -77,7 +79,7 @@ std::string DescribeViewContentRequest::getLibType()const
 void DescribeViewContentRequest::setLibType(const std::string& libType)
 {
 	libType_ = libType;
-	setCoreParameter("LibType", libType);
+	setParameter("LibType", libType);
 }
 
 std::string DescribeViewContentRequest::getAuditResult()const
@@ -88,7 +90,7 @@ std::string DescribeViewContentRequest::getAuditResult()const
 void DescribeViewContentRequest::setAuditResult(const std::string& auditResult)
 {
 	auditResult_ = auditResult;
-	setCoreParameter("AuditResult", auditResult);
+	setParameter("AuditResult", auditResult);
 }
 
 int DescribeViewContentRequest::getPageSize()const
@@ -99,7 +101,7 @@ int DescribeViewContentRequest::getPageSize()const
 void DescribeViewContentRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeViewContentRequest::getTaskId()const
@@ -110,7 +112,7 @@ std::string DescribeViewContentRequest::getTaskId()const
 void DescribeViewContentRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 int DescribeViewContentRequest::getTotalCount()const
@@ -121,7 +123,7 @@ int DescribeViewContentRequest::getTotalCount()const
 void DescribeViewContentRequest::setTotalCount(int totalCount)
 {
 	totalCount_ = totalCount;
-	setCoreParameter("TotalCount", std::to_string(totalCount));
+	setParameter("TotalCount", std::to_string(totalCount));
 }
 
 std::string DescribeViewContentRequest::getKeywordId()const
@@ -132,7 +134,7 @@ std::string DescribeViewContentRequest::getKeywordId()const
 void DescribeViewContentRequest::setKeywordId(const std::string& keywordId)
 {
 	keywordId_ = keywordId;
-	setCoreParameter("KeywordId", keywordId);
+	setParameter("KeywordId", keywordId);
 }
 
 std::string DescribeViewContentRequest::getSuggestion()const
@@ -143,7 +145,7 @@ std::string DescribeViewContentRequest::getSuggestion()const
 void DescribeViewContentRequest::setSuggestion(const std::string& suggestion)
 {
 	suggestion_ = suggestion;
-	setCoreParameter("Suggestion", suggestion);
+	setParameter("Suggestion", suggestion);
 }
 
 int DescribeViewContentRequest::getCurrentPage()const
@@ -154,7 +156,7 @@ int DescribeViewContentRequest::getCurrentPage()const
 void DescribeViewContentRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeViewContentRequest::getLabel()const
@@ -165,7 +167,7 @@ std::string DescribeViewContentRequest::getLabel()const
 void DescribeViewContentRequest::setLabel(const std::string& label)
 {
 	label_ = label;
-	setCoreParameter("Label", label);
+	setParameter("Label", label);
 }
 
 std::string DescribeViewContentRequest::getResourceType()const
@@ -176,7 +178,7 @@ std::string DescribeViewContentRequest::getResourceType()const
 void DescribeViewContentRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeViewContentRequest::getBizType()const
@@ -187,7 +189,7 @@ std::string DescribeViewContentRequest::getBizType()const
 void DescribeViewContentRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string DescribeViewContentRequest::getEndDate()const
@@ -198,7 +200,7 @@ std::string DescribeViewContentRequest::getEndDate()const
 void DescribeViewContentRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeViewContentRequest::getDataId()const
@@ -209,6 +211,6 @@ std::string DescribeViewContentRequest::getDataId()const
 void DescribeViewContentRequest::setDataId(const std::string& dataId)
 {
 	dataId_ = dataId;
-	setCoreParameter("DataId", dataId);
+	setParameter("DataId", dataId);
 }
 

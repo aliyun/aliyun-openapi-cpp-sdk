@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ListTagResourcesRequest;
 
 ListTagResourcesRequest::ListTagResourcesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ListTagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTagResourcesRequest::~ListTagResourcesRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ListTagResourcesRequest::getResourceId()const
 void ListTagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string ListTagResourcesRequest::getResourceType()const
@@ -45,7 +48,7 @@ std::string ListTagResourcesRequest::getResourceType()const
 void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string ListTagResourcesRequest::getAccessKeyId()const
@@ -56,7 +59,7 @@ std::string ListTagResourcesRequest::getAccessKeyId()const
 void ListTagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListTagResourcesRequest::getSecurityToken()const
@@ -67,7 +70,7 @@ std::string ListTagResourcesRequest::getSecurityToken()const
 void ListTagResourcesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string ListTagResourcesRequest::getNextToken()const
@@ -78,7 +81,7 @@ std::string ListTagResourcesRequest::getNextToken()const
 void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
-	setCoreParameter("NextToken", nextToken);
+	setParameter("NextToken", nextToken);
 }
 
 std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
@@ -89,12 +92,11 @@ std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag()const
 void ListTagResourcesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

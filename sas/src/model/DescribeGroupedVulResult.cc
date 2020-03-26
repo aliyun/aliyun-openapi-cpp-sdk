@@ -43,6 +43,8 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 	for (auto valueGroupedVulItemsGroupedVulItem : allGroupedVulItemsNode)
 	{
 		GroupedVulItem groupedVulItemsObject;
+		if(!valueGroupedVulItemsGroupedVulItem["Name"].isNull())
+			groupedVulItemsObject.name = valueGroupedVulItemsGroupedVulItem["Name"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["AliasName"].isNull())
 			groupedVulItemsObject.aliasName = valueGroupedVulItemsGroupedVulItem["AliasName"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["Type"].isNull())

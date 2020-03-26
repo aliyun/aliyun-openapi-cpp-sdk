@@ -20,7 +20,9 @@ using AlibabaCloud::Ccs::Model::GetHotlineRecordRequest;
 
 GetHotlineRecordRequest::GetHotlineRecordRequest() :
 	RpcServiceRequest("ccs", "2017-10-01", "GetHotlineRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHotlineRecordRequest::~GetHotlineRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetHotlineRecordRequest::getId()const
 void GetHotlineRecordRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 
 std::string GetHotlineRecordRequest::getCcsInstanceId()const
@@ -44,6 +46,6 @@ std::string GetHotlineRecordRequest::getCcsInstanceId()const
 void GetHotlineRecordRequest::setCcsInstanceId(const std::string& ccsInstanceId)
 {
 	ccsInstanceId_ = ccsInstanceId;
-	setCoreParameter("CcsInstanceId", ccsInstanceId);
+	setParameter("CcsInstanceId", ccsInstanceId);
 }
 

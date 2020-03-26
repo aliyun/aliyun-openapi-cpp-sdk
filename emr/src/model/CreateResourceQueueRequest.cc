@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateResourceQueueRequest;
 
 CreateResourceQueueRequest::CreateResourceQueueRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateResourceQueue")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateResourceQueueRequest::~CreateResourceQueueRequest()
 {}
@@ -33,7 +35,7 @@ long CreateResourceQueueRequest::getResourceOwnerId()const
 void CreateResourceQueueRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateResourceQueueRequest::getQualifiedName()const
@@ -44,7 +46,7 @@ std::string CreateResourceQueueRequest::getQualifiedName()const
 void CreateResourceQueueRequest::setQualifiedName(const std::string& qualifiedName)
 {
 	qualifiedName_ = qualifiedName;
-	setCoreParameter("QualifiedName", qualifiedName);
+	setParameter("QualifiedName", qualifiedName);
 }
 
 long CreateResourceQueueRequest::getResourcePoolId()const
@@ -55,7 +57,7 @@ long CreateResourceQueueRequest::getResourcePoolId()const
 void CreateResourceQueueRequest::setResourcePoolId(long resourcePoolId)
 {
 	resourcePoolId_ = resourcePoolId;
-	setCoreParameter("ResourcePoolId", std::to_string(resourcePoolId));
+	setParameter("ResourcePoolId", std::to_string(resourcePoolId));
 }
 
 std::string CreateResourceQueueRequest::getClusterId()const
@@ -66,7 +68,7 @@ std::string CreateResourceQueueRequest::getClusterId()const
 void CreateResourceQueueRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 bool CreateResourceQueueRequest::getLeaf()const
@@ -77,7 +79,7 @@ bool CreateResourceQueueRequest::getLeaf()const
 void CreateResourceQueueRequest::setLeaf(bool leaf)
 {
 	leaf_ = leaf;
-	setCoreParameter("Leaf", leaf ? "true" : "false");
+	setParameter("Leaf", leaf ? "true" : "false");
 }
 
 std::string CreateResourceQueueRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string CreateResourceQueueRequest::getAccessKeyId()const
 void CreateResourceQueueRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long CreateResourceQueueRequest::getParentQueueId()const
@@ -99,7 +101,7 @@ long CreateResourceQueueRequest::getParentQueueId()const
 void CreateResourceQueueRequest::setParentQueueId(long parentQueueId)
 {
 	parentQueueId_ = parentQueueId;
-	setCoreParameter("ParentQueueId", std::to_string(parentQueueId));
+	setParameter("ParentQueueId", std::to_string(parentQueueId));
 }
 
 std::string CreateResourceQueueRequest::getRegionId()const
@@ -110,7 +112,7 @@ std::string CreateResourceQueueRequest::getRegionId()const
 void CreateResourceQueueRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateResourceQueueRequest::getName()const
@@ -121,7 +123,7 @@ std::string CreateResourceQueueRequest::getName()const
 void CreateResourceQueueRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::vector<CreateResourceQueueRequest::Config> CreateResourceQueueRequest::getConfig()const
@@ -132,14 +134,13 @@ std::vector<CreateResourceQueueRequest::Config> CreateResourceQueueRequest::getC
 void CreateResourceQueueRequest::setConfig(const std::vector<Config>& config)
 {
 	config_ = config;
-	int i = 0;
-	for(int i = 0; i!= config.size(); i++)	{
-		auto obj = config.at(i);
-		std::string str ="Config."+ std::to_string(i);
-		setCoreParameter(str + ".ConfigKey", obj.configKey);
-		setCoreParameter(str + ".Note", obj.note);
-		setCoreParameter(str + ".ConfigValue", obj.configValue);
-		setCoreParameter(str + ".Category", obj.category);
+	for(int dep1 = 0; dep1!= config.size(); dep1++) {
+		auto configObj = config.at(dep1);
+		std::string configObjStr = "Config." + std::to_string(dep1 + 1);
+		setParameter(configObjStr + ".ConfigKey", configObj.configKey);
+		setParameter(configObjStr + ".Note", configObj.note);
+		setParameter(configObjStr + ".ConfigValue", configObj.configValue);
+		setParameter(configObjStr + ".Category", configObj.category);
 	}
 }
 

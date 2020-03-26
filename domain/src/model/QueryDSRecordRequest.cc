@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDSRecordRequest;
 
 QueryDSRecordRequest::QueryDSRecordRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDSRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDSRecordRequest::~QueryDSRecordRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDSRecordRequest::getDomainName()const
 void QueryDSRecordRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string QueryDSRecordRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryDSRecordRequest::getUserClientIp()const
 void QueryDSRecordRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDSRecordRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryDSRecordRequest::getLang()const
 void QueryDSRecordRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

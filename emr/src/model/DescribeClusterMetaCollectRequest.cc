@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterMetaCollectRequest;
 
 DescribeClusterMetaCollectRequest::DescribeClusterMetaCollectRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterMetaCollect")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterMetaCollectRequest::~DescribeClusterMetaCollectRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterMetaCollectRequest::getResourceOwnerId()const
 void DescribeClusterMetaCollectRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterMetaCollectRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterMetaCollectRequest::getAccessKeyId()const
 void DescribeClusterMetaCollectRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterMetaCollectRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeClusterMetaCollectRequest::getRegionId()const
 void DescribeClusterMetaCollectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeClusterMetaCollectRequest::getClusterId()const
@@ -66,6 +68,6 @@ std::string DescribeClusterMetaCollectRequest::getClusterId()const
 void DescribeClusterMetaCollectRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

@@ -42,7 +42,10 @@ namespace AlibabaCloud
 						std::string deploymentId;
 						std::string type;
 						std::string description;
+						long gmtCreateTimestamp;
+						long gmtCompletedTimestamp;
 						std::string gmtModified;
+						long gmtModifiedTimestamp;
 					};
 					std::vector<Deployment> deploymentList;
 					int pageSize;

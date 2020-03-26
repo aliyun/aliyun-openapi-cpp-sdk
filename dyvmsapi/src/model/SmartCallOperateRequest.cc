@@ -35,7 +35,7 @@ std::string SmartCallOperateRequest::getCallId()const
 void SmartCallOperateRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 long SmartCallOperateRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long SmartCallOperateRequest::getResourceOwnerId()const
 void SmartCallOperateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SmartCallOperateRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string SmartCallOperateRequest::getAccessKeyId()const
 void SmartCallOperateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SmartCallOperateRequest::getParam()const
@@ -68,7 +68,7 @@ std::string SmartCallOperateRequest::getParam()const
 void SmartCallOperateRequest::setParam(const std::string& param)
 {
 	param_ = param;
-	setCoreParameter("Param", param);
+	setParameter("Param", param);
 }
 
 std::string SmartCallOperateRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string SmartCallOperateRequest::getResourceOwnerAccount()const
 void SmartCallOperateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long SmartCallOperateRequest::getOwnerId()const
@@ -90,7 +90,7 @@ long SmartCallOperateRequest::getOwnerId()const
 void SmartCallOperateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SmartCallOperateRequest::getCommand()const
@@ -101,6 +101,6 @@ std::string SmartCallOperateRequest::getCommand()const
 void SmartCallOperateRequest::setCommand(const std::string& command)
 {
 	command_ = command;
-	setCoreParameter("Command", command);
+	setParameter("Command", command);
 }
 

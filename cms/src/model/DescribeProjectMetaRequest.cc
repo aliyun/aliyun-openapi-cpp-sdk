@@ -35,7 +35,7 @@ int DescribeProjectMetaRequest::getPageSize()const
 void DescribeProjectMetaRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeProjectMetaRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeProjectMetaRequest::getPageNumber()const
 void DescribeProjectMetaRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeProjectMetaRequest::getLabels()const
@@ -57,6 +57,6 @@ std::string DescribeProjectMetaRequest::getLabels()const
 void DescribeProjectMetaRequest::setLabels(const std::string& labels)
 {
 	labels_ = labels;
-	setCoreParameter("Labels", labels);
+	setParameter("Labels", labels);
 }
 

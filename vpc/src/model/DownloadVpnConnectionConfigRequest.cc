@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DownloadVpnConnectionConfigRequest;
 
 DownloadVpnConnectionConfigRequest::DownloadVpnConnectionConfigRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DownloadVpnConnectionConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadVpnConnectionConfigRequest::~DownloadVpnConnectionConfigRequest()
 {}
@@ -33,7 +35,7 @@ long DownloadVpnConnectionConfigRequest::getResourceOwnerId()const
 void DownloadVpnConnectionConfigRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DownloadVpnConnectionConfigRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DownloadVpnConnectionConfigRequest::getRegionId()const
 void DownloadVpnConnectionConfigRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DownloadVpnConnectionConfigRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DownloadVpnConnectionConfigRequest::getResourceOwnerAccount()const
 void DownloadVpnConnectionConfigRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DownloadVpnConnectionConfigRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DownloadVpnConnectionConfigRequest::getOwnerAccount()const
 void DownloadVpnConnectionConfigRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DownloadVpnConnectionConfigRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DownloadVpnConnectionConfigRequest::getOwnerId()const
 void DownloadVpnConnectionConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DownloadVpnConnectionConfigRequest::getVpnConnectionId()const
@@ -88,6 +90,6 @@ std::string DownloadVpnConnectionConfigRequest::getVpnConnectionId()const
 void DownloadVpnConnectionConfigRequest::setVpnConnectionId(const std::string& vpnConnectionId)
 {
 	vpnConnectionId_ = vpnConnectionId;
-	setCoreParameter("VpnConnectionId", vpnConnectionId);
+	setParameter("VpnConnectionId", vpnConnectionId);
 }
 

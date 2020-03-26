@@ -29,6 +29,14 @@ set(afs_public_header_model
 	include/alibabacloud/afs/model/ConfigurationStyleResult.h
 	include/alibabacloud/afs/model/CreateConfigurationRequest.h
 	include/alibabacloud/afs/model/CreateConfigurationResult.h
+	include/alibabacloud/afs/model/DescribeAfsConfigNameRequest.h
+	include/alibabacloud/afs/model/DescribeAfsConfigNameResult.h
+	include/alibabacloud/afs/model/DescribeAfsOneConfDataRequest.h
+	include/alibabacloud/afs/model/DescribeAfsOneConfDataResult.h
+	include/alibabacloud/afs/model/DescribeAfsTotalConfDataRequest.h
+	include/alibabacloud/afs/model/DescribeAfsTotalConfDataResult.h
+	include/alibabacloud/afs/model/DescribeAfsVerifySigDataRequest.h
+	include/alibabacloud/afs/model/DescribeAfsVerifySigDataResult.h
 	include/alibabacloud/afs/model/DescribeCaptchaDayRequest.h
 	include/alibabacloud/afs/model/DescribeCaptchaDayResult.h
 	include/alibabacloud/afs/model/DescribeCaptchaIpCityRequest.h
@@ -62,6 +70,14 @@ set(afs_src
 	src/model/ConfigurationStyleResult.cc
 	src/model/CreateConfigurationRequest.cc
 	src/model/CreateConfigurationResult.cc
+	src/model/DescribeAfsConfigNameRequest.cc
+	src/model/DescribeAfsConfigNameResult.cc
+	src/model/DescribeAfsOneConfDataRequest.cc
+	src/model/DescribeAfsOneConfDataResult.cc
+	src/model/DescribeAfsTotalConfDataRequest.cc
+	src/model/DescribeAfsTotalConfDataResult.cc
+	src/model/DescribeAfsVerifySigDataRequest.cc
+	src/model/DescribeAfsVerifySigDataResult.cc
 	src/model/DescribeCaptchaDayRequest.cc
 	src/model/DescribeCaptchaDayResult.cc
 	src/model/DescribeCaptchaIpCityRequest.cc

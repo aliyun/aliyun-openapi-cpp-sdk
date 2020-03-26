@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::GetJobOutputStatisticInfoRequest;
 
 GetJobOutputStatisticInfoRequest::GetJobOutputStatisticInfoRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "GetJobOutputStatisticInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobOutputStatisticInfoRequest::~GetJobOutputStatisticInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobOutputStatisticInfoRequest::getFromDatetime()const
 void GetJobOutputStatisticInfoRequest::setFromDatetime(const std::string& fromDatetime)
 {
 	fromDatetime_ = fromDatetime;
-	setCoreParameter("FromDatetime", fromDatetime);
+	setParameter("FromDatetime", fromDatetime);
 }
 
 long GetJobOutputStatisticInfoRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long GetJobOutputStatisticInfoRequest::getResourceOwnerId()const
 void GetJobOutputStatisticInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetJobOutputStatisticInfoRequest::getClusterId()const
@@ -55,7 +57,7 @@ std::string GetJobOutputStatisticInfoRequest::getClusterId()const
 void GetJobOutputStatisticInfoRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetJobOutputStatisticInfoRequest::getToDatetime()const
@@ -66,7 +68,7 @@ std::string GetJobOutputStatisticInfoRequest::getToDatetime()const
 void GetJobOutputStatisticInfoRequest::setToDatetime(const std::string& toDatetime)
 {
 	toDatetime_ = toDatetime;
-	setCoreParameter("ToDatetime", toDatetime);
+	setParameter("ToDatetime", toDatetime);
 }
 
 int GetJobOutputStatisticInfoRequest::getPageNumber()const
@@ -77,7 +79,7 @@ int GetJobOutputStatisticInfoRequest::getPageNumber()const
 void GetJobOutputStatisticInfoRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GetJobOutputStatisticInfoRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string GetJobOutputStatisticInfoRequest::getAccessKeyId()const
 void GetJobOutputStatisticInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetJobOutputStatisticInfoRequest::getRegionId()const
@@ -99,7 +101,7 @@ std::string GetJobOutputStatisticInfoRequest::getRegionId()const
 void GetJobOutputStatisticInfoRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int GetJobOutputStatisticInfoRequest::getPageSize()const
@@ -110,6 +112,6 @@ int GetJobOutputStatisticInfoRequest::getPageSize()const
 void GetJobOutputStatisticInfoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

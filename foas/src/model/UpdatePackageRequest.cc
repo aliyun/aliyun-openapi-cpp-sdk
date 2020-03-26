@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::UpdatePackageRequest;
 
 UpdatePackageRequest::UpdatePackageRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages/[packageName]");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdatePackageRequest::~UpdatePackageRequest()
 {}
@@ -33,7 +36,7 @@ std::string UpdatePackageRequest::getProjectName()const
 void UpdatePackageRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string UpdatePackageRequest::getOssBucket()const
@@ -44,7 +47,7 @@ std::string UpdatePackageRequest::getOssBucket()const
 void UpdatePackageRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setBodyParameter("OssBucket", ossBucket);
 }
 
 std::string UpdatePackageRequest::getOssOwner()const
@@ -55,7 +58,7 @@ std::string UpdatePackageRequest::getOssOwner()const
 void UpdatePackageRequest::setOssOwner(const std::string& ossOwner)
 {
 	ossOwner_ = ossOwner;
-	setCoreParameter("OssOwner", ossOwner);
+	setBodyParameter("OssOwner", ossOwner);
 }
 
 std::string UpdatePackageRequest::getRegionId()const
@@ -66,7 +69,7 @@ std::string UpdatePackageRequest::getRegionId()const
 void UpdatePackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string UpdatePackageRequest::getPackageName()const
@@ -77,7 +80,7 @@ std::string UpdatePackageRequest::getPackageName()const
 void UpdatePackageRequest::setPackageName(const std::string& packageName)
 {
 	packageName_ = packageName;
-	setCoreParameter("PackageName", packageName);
+	setParameter("PackageName", packageName);
 }
 
 std::string UpdatePackageRequest::getOssEndpoint()const
@@ -88,7 +91,7 @@ std::string UpdatePackageRequest::getOssEndpoint()const
 void UpdatePackageRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
+	setBodyParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string UpdatePackageRequest::getDescription()const
@@ -99,7 +102,7 @@ std::string UpdatePackageRequest::getDescription()const
 void UpdatePackageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string UpdatePackageRequest::getTag()const
@@ -110,7 +113,7 @@ std::string UpdatePackageRequest::getTag()const
 void UpdatePackageRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setBodyParameter("Tag", tag);
 }
 
 std::string UpdatePackageRequest::getOriginName()const
@@ -121,7 +124,7 @@ std::string UpdatePackageRequest::getOriginName()const
 void UpdatePackageRequest::setOriginName(const std::string& originName)
 {
 	originName_ = originName;
-	setCoreParameter("OriginName", originName);
+	setBodyParameter("OriginName", originName);
 }
 
 std::string UpdatePackageRequest::getOssPath()const
@@ -132,7 +135,7 @@ std::string UpdatePackageRequest::getOssPath()const
 void UpdatePackageRequest::setOssPath(const std::string& ossPath)
 {
 	ossPath_ = ossPath;
-	setCoreParameter("OssPath", ossPath);
+	setBodyParameter("OssPath", ossPath);
 }
 
 std::string UpdatePackageRequest::getMd5()const
@@ -143,6 +146,6 @@ std::string UpdatePackageRequest::getMd5()const
 void UpdatePackageRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setBodyParameter("Md5", md5);
 }
 

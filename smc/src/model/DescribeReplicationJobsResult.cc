@@ -101,6 +101,10 @@ void DescribeReplicationJobsResult::parse(const std::string &payload)
 			replicationJobsObject.maxNumberOfImageToKeep = std::stoi(valueReplicationJobsReplicationJob["MaxNumberOfImageToKeep"].asString());
 		if(!valueReplicationJobsReplicationJob["InstanceType"].isNull())
 			replicationJobsObject.instanceType = valueReplicationJobsReplicationJob["InstanceType"].asString();
+		if(!valueReplicationJobsReplicationJob["LaunchTemplateId"].isNull())
+			replicationJobsObject.launchTemplateId = valueReplicationJobsReplicationJob["LaunchTemplateId"].asString();
+		if(!valueReplicationJobsReplicationJob["LaunchTemplateVersion"].isNull())
+			replicationJobsObject.launchTemplateVersion = valueReplicationJobsReplicationJob["LaunchTemplateVersion"].asString();
 		auto allDataDisksNode = allReplicationJobsNode["DataDisks"]["DataDisk"];
 		for (auto allReplicationJobsNodeDataDisksDataDisk : allDataDisksNode)
 		{

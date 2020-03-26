@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetVpcAccessRequest;
 
 SetVpcAccessRequest::SetVpcAccessRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetVpcAccess")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetVpcAccessRequest::~SetVpcAccessRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetVpcAccessRequest::getAccessKeyId()const
 void SetVpcAccessRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetVpcAccessRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string SetVpcAccessRequest::getInstanceId()const
 void SetVpcAccessRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string SetVpcAccessRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string SetVpcAccessRequest::getSecurityToken()const
 void SetVpcAccessRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 int SetVpcAccessRequest::getPort()const
@@ -66,7 +68,7 @@ int SetVpcAccessRequest::getPort()const
 void SetVpcAccessRequest::setPort(int port)
 {
 	port_ = port;
-	setCoreParameter("Port", std::to_string(port));
+	setParameter("Port", std::to_string(port));
 }
 
 std::string SetVpcAccessRequest::getVpcId()const
@@ -77,7 +79,7 @@ std::string SetVpcAccessRequest::getVpcId()const
 void SetVpcAccessRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string SetVpcAccessRequest::getName()const
@@ -88,6 +90,6 @@ std::string SetVpcAccessRequest::getName()const
 void SetVpcAccessRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

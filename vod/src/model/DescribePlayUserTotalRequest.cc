@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribePlayUserTotalRequest;
 
 DescribePlayUserTotalRequest::DescribePlayUserTotalRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribePlayUserTotal")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePlayUserTotalRequest::~DescribePlayUserTotalRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribePlayUserTotalRequest::getStartTime()const
 void DescribePlayUserTotalRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribePlayUserTotalRequest::getEndTime()const
@@ -44,7 +46,7 @@ std::string DescribePlayUserTotalRequest::getEndTime()const
 void DescribePlayUserTotalRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribePlayUserTotalRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DescribePlayUserTotalRequest::getOwnerId()const
 void DescribePlayUserTotalRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

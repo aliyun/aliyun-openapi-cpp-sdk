@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::ListProductByTagsRequest;
 
 ListProductByTagsRequest::ListProductByTagsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "ListProductByTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListProductByTagsRequest::~ListProductByTagsRequest()
 {}
@@ -33,7 +35,7 @@ int ListProductByTagsRequest::getCurrentPage()const
 void ListProductByTagsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string ListProductByTagsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListProductByTagsRequest::getAccessKeyId()const
 void ListProductByTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::vector<ListProductByTagsRequest::ProductTag> ListProductByTagsRequest::getProductTag()const
@@ -55,12 +57,11 @@ std::vector<ListProductByTagsRequest::ProductTag> ListProductByTagsRequest::getP
 void ListProductByTagsRequest::setProductTag(const std::vector<ProductTag>& productTag)
 {
 	productTag_ = productTag;
-	int i = 0;
-	for(int i = 0; i!= productTag.size(); i++)	{
-		auto obj = productTag.at(i);
-		std::string str ="ProductTag."+ std::to_string(i);
-		setCoreParameter(str + ".TagValue", obj.tagValue);
-		setCoreParameter(str + ".TagKey", obj.tagKey);
+	for(int dep1 = 0; dep1!= productTag.size(); dep1++) {
+		auto productTagObj = productTag.at(dep1);
+		std::string productTagObjStr = "ProductTag." + std::to_string(dep1 + 1);
+		setParameter(productTagObjStr + ".TagValue", productTagObj.tagValue);
+		setParameter(productTagObjStr + ".TagKey", productTagObj.tagKey);
 	}
 }
 
@@ -72,7 +73,7 @@ std::string ListProductByTagsRequest::getIotInstanceId()const
 void ListProductByTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int ListProductByTagsRequest::getPageSize()const
@@ -83,6 +84,6 @@ int ListProductByTagsRequest::getPageSize()const
 void ListProductByTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

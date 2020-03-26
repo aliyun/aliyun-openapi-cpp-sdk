@@ -22,7 +22,7 @@ GetNetworkInterfaceRequest::GetNetworkInterfaceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/resources/[cluster_id]/[resource_name]/network");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetNetworkInterfaceRequest::~GetNetworkInterfaceRequest()

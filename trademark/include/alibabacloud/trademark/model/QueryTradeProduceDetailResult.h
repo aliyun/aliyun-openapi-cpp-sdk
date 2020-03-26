@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					float refundAmount;
 					std::string operateNote;
 					float finalAmount;
+					int source;
 					std::string preOrderId;
 					float paidAmount;
 					bool allowCancel;

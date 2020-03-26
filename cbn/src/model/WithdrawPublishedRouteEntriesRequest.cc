@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::WithdrawPublishedRouteEntriesRequest;
 
 WithdrawPublishedRouteEntriesRequest::WithdrawPublishedRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "WithdrawPublishedRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 WithdrawPublishedRouteEntriesRequest::~WithdrawPublishedRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long WithdrawPublishedRouteEntriesRequest::getResourceOwnerId()const
 void WithdrawPublishedRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getCenId()const
 void WithdrawPublishedRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRegionId()const
@@ -55,7 +57,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRegionId()cons
 void WithdrawPublishedRouteEntriesRequest::setChildInstanceRegionId(const std::string& childInstanceRegionId)
 {
 	childInstanceRegionId_ = childInstanceRegionId;
-	setCoreParameter("ChildInstanceRegionId", childInstanceRegionId);
+	setParameter("ChildInstanceRegionId", childInstanceRegionId);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getResourceOwnerAccount()const
 void WithdrawPublishedRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getDestinationCidrBlock()const
@@ -77,7 +79,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getDestinationCidrBlock()const
 void WithdrawPublishedRouteEntriesRequest::setDestinationCidrBlock(const std::string& destinationCidrBlock)
 {
 	destinationCidrBlock_ = destinationCidrBlock;
-	setCoreParameter("DestinationCidrBlock", destinationCidrBlock);
+	setParameter("DestinationCidrBlock", destinationCidrBlock);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceType()const
@@ -88,7 +90,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceType()const
 void WithdrawPublishedRouteEntriesRequest::setChildInstanceType(const std::string& childInstanceType)
 {
 	childInstanceType_ = childInstanceType;
-	setCoreParameter("ChildInstanceType", childInstanceType);
+	setParameter("ChildInstanceType", childInstanceType);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceId()const
@@ -99,7 +101,7 @@ std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceId()const
 void WithdrawPublishedRouteEntriesRequest::setChildInstanceId(const std::string& childInstanceId)
 {
 	childInstanceId_ = childInstanceId;
-	setCoreParameter("ChildInstanceId", childInstanceId);
+	setParameter("ChildInstanceId", childInstanceId);
 }
 
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRouteTableId()const
@@ -110,6 +112,6 @@ std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceRouteTableId()
 void WithdrawPublishedRouteEntriesRequest::setChildInstanceRouteTableId(const std::string& childInstanceRouteTableId)
 {
 	childInstanceRouteTableId_ = childInstanceRouteTableId;
-	setCoreParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	setParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
 }
 

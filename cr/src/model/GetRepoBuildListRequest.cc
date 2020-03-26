@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoBuildListRequest;
 
 GetRepoBuildListRequest::GetRepoBuildListRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/build");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoBuildListRequest::~GetRepoBuildListRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoBuildListRequest::getRepoNamespace()const
 void GetRepoBuildListRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoBuildListRequest::getRepoName()const
@@ -44,7 +47,7 @@ std::string GetRepoBuildListRequest::getRepoName()const
 void GetRepoBuildListRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 int GetRepoBuildListRequest::getPageSize()const
@@ -55,7 +58,7 @@ int GetRepoBuildListRequest::getPageSize()const
 void GetRepoBuildListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoBuildListRequest::getPage()const
@@ -66,6 +69,6 @@ int GetRepoBuildListRequest::getPage()const
 void GetRepoBuildListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 

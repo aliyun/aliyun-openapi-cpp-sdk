@@ -39,12 +39,14 @@ namespace AlibabaCloud
 						std::string tailSlateList;
 						std::string packageSetting;
 						std::string rotate;
+						std::string userData;
 						std::string definition;
 						std::string transcodeFileRegular;
 						std::vector<std::string> watermarkIds;
 						std::string encryptSetting;
 						std::string clip;
 						std::string container;
+						std::string type;
 						std::string transcodeTemplateId;
 						std::string transConfig;
 						std::string video;

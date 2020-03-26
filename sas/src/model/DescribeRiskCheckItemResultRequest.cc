@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeRiskCheckItemResultRequest;
 
 DescribeRiskCheckItemResultRequest::DescribeRiskCheckItemResultRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeRiskCheckItemResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRiskCheckItemResultRequest::~DescribeRiskCheckItemResultRequest()
 {}
@@ -33,18 +35,7 @@ long DescribeRiskCheckItemResultRequest::getResourceOwnerId()const
 void DescribeRiskCheckItemResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
-int DescribeRiskCheckItemResultRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void DescribeRiskCheckItemResultRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long DescribeRiskCheckItemResultRequest::getItemId()const
@@ -55,7 +46,7 @@ long DescribeRiskCheckItemResultRequest::getItemId()const
 void DescribeRiskCheckItemResultRequest::setItemId(long itemId)
 {
 	itemId_ = itemId;
-	setCoreParameter("ItemId", std::to_string(itemId));
+	setParameter("ItemId", std::to_string(itemId));
 }
 
 std::string DescribeRiskCheckItemResultRequest::getSourceIp()const
@@ -66,7 +57,7 @@ std::string DescribeRiskCheckItemResultRequest::getSourceIp()const
 void DescribeRiskCheckItemResultRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeRiskCheckItemResultRequest::getPageSize()const
@@ -77,7 +68,7 @@ int DescribeRiskCheckItemResultRequest::getPageSize()const
 void DescribeRiskCheckItemResultRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRiskCheckItemResultRequest::getLang()const
@@ -88,6 +79,28 @@ std::string DescribeRiskCheckItemResultRequest::getLang()const
 void DescribeRiskCheckItemResultRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
+}
+
+int DescribeRiskCheckItemResultRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void DescribeRiskCheckItemResultRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string DescribeRiskCheckItemResultRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeRiskCheckItemResultRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 

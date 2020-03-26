@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setCurrentPage(int currentPage);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getRegionId()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				int currentPage_;
 				std::string resourceType_;
+				std::string resourceGroupId_;
 				std::string sourceIp_;
 				std::string regionId_;
 				int pageSize_;

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::TransferInReenterTransferAuthorizationCodeReq
 
 TransferInReenterTransferAuthorizationCodeRequest::TransferInReenterTransferAuthorizationCodeRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "TransferInReenterTransferAuthorizationCode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TransferInReenterTransferAuthorizationCodeRequest::~TransferInReenterTransferAuthorizationCodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getDomainName()co
 void TransferInReenterTransferAuthorizationCodeRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getTransferAuthorizationCode()const
@@ -44,7 +46,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getTransferAuthor
 void TransferInReenterTransferAuthorizationCodeRequest::setTransferAuthorizationCode(const std::string& transferAuthorizationCode)
 {
 	transferAuthorizationCode_ = transferAuthorizationCode;
-	setCoreParameter("TransferAuthorizationCode", transferAuthorizationCode);
+	setParameter("TransferAuthorizationCode", transferAuthorizationCode);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getUserClientIp()
 void TransferInReenterTransferAuthorizationCodeRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string TransferInReenterTransferAuthorizationCodeRequest::getLang()const
@@ -66,6 +68,6 @@ std::string TransferInReenterTransferAuthorizationCodeRequest::getLang()const
 void TransferInReenterTransferAuthorizationCodeRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

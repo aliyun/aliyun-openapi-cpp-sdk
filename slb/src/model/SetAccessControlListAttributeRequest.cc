@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::SetAccessControlListAttributeRequest;
 
 SetAccessControlListAttributeRequest::SetAccessControlListAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "SetAccessControlListAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAccessControlListAttributeRequest::~SetAccessControlListAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetAccessControlListAttributeRequest::getAccess_key_id()const
 void SetAccessControlListAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long SetAccessControlListAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long SetAccessControlListAttributeRequest::getResourceOwnerId()const
 void SetAccessControlListAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SetAccessControlListAttributeRequest::getAclName()const
@@ -55,7 +57,7 @@ std::string SetAccessControlListAttributeRequest::getAclName()const
 void SetAccessControlListAttributeRequest::setAclName(const std::string& aclName)
 {
 	aclName_ = aclName;
-	setCoreParameter("AclName", aclName);
+	setParameter("AclName", aclName);
 }
 
 std::string SetAccessControlListAttributeRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SetAccessControlListAttributeRequest::getAccessKeyId()const
 void SetAccessControlListAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetAccessControlListAttributeRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string SetAccessControlListAttributeRequest::getRegionId()const
 void SetAccessControlListAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SetAccessControlListAttributeRequest::getAclId()const
@@ -88,7 +90,7 @@ std::string SetAccessControlListAttributeRequest::getAclId()const
 void SetAccessControlListAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string SetAccessControlListAttributeRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SetAccessControlListAttributeRequest::getResourceOwnerAccount()const
 void SetAccessControlListAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SetAccessControlListAttributeRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string SetAccessControlListAttributeRequest::getOwnerAccount()const
 void SetAccessControlListAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SetAccessControlListAttributeRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long SetAccessControlListAttributeRequest::getOwnerId()const
 void SetAccessControlListAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SetAccessControlListAttributeRequest::getTags()const
@@ -132,6 +134,6 @@ std::string SetAccessControlListAttributeRequest::getTags()const
 void SetAccessControlListAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

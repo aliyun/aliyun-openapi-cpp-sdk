@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryFailReasonForRegistrantProfileRealNameVe
 
 QueryFailReasonForRegistrantProfileRealNameVerificationRequest::QueryFailReasonForRegistrantProfileRealNameVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryFailReasonForRegistrantProfileRealNameVerificationRequest::~QueryFailReasonForRegistrantProfileRealNameVerificationRequest()
 {}
@@ -33,7 +35,7 @@ long QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getRegistra
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setRegistrantProfileID(long registrantProfileID)
 {
 	registrantProfileID_ = registrantProfileID;
-	setCoreParameter("RegistrantProfileID", std::to_string(registrantProfileID));
+	setParameter("RegistrantProfileID", std::to_string(registrantProfileID));
 }
 
 std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getU
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getLang()const
@@ -55,6 +57,6 @@ std::string QueryFailReasonForRegistrantProfileRealNameVerificationRequest::getL
 void QueryFailReasonForRegistrantProfileRealNameVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

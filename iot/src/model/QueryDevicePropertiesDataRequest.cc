@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDevicePropertiesDataRequest;
 
 QueryDevicePropertiesDataRequest::QueryDevicePropertiesDataRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDevicePropertiesData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDevicePropertiesDataRequest::~QueryDevicePropertiesDataRequest()
 {}
@@ -33,7 +35,7 @@ long QueryDevicePropertiesDataRequest::getStartTime()const
 void QueryDevicePropertiesDataRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string QueryDevicePropertiesDataRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDevicePropertiesDataRequest::getAccessKeyId()const
 void QueryDevicePropertiesDataRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDevicePropertiesDataRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string QueryDevicePropertiesDataRequest::getIotId()const
 void QueryDevicePropertiesDataRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 std::string QueryDevicePropertiesDataRequest::getIotInstanceId()const
@@ -66,7 +68,7 @@ std::string QueryDevicePropertiesDataRequest::getIotInstanceId()const
 void QueryDevicePropertiesDataRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int QueryDevicePropertiesDataRequest::getPageSize()const
@@ -77,7 +79,7 @@ int QueryDevicePropertiesDataRequest::getPageSize()const
 void QueryDevicePropertiesDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::vector<std::string> QueryDevicePropertiesDataRequest::getIdentifier()const
@@ -88,8 +90,9 @@ std::vector<std::string> QueryDevicePropertiesDataRequest::getIdentifier()const
 void QueryDevicePropertiesDataRequest::setIdentifier(const std::vector<std::string>& identifier)
 {
 	identifier_ = identifier;
-	for(int i = 0; i!= identifier.size(); i++)
-		setCoreParameter("Identifier."+ std::to_string(i), identifier.at(i));
+	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
+		setParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
+	}
 }
 
 long QueryDevicePropertiesDataRequest::getEndTime()const
@@ -100,7 +103,7 @@ long QueryDevicePropertiesDataRequest::getEndTime()const
 void QueryDevicePropertiesDataRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string QueryDevicePropertiesDataRequest::getProductKey()const
@@ -111,7 +114,7 @@ std::string QueryDevicePropertiesDataRequest::getProductKey()const
 void QueryDevicePropertiesDataRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 int QueryDevicePropertiesDataRequest::getAsc()const
@@ -122,7 +125,7 @@ int QueryDevicePropertiesDataRequest::getAsc()const
 void QueryDevicePropertiesDataRequest::setAsc(int asc)
 {
 	asc_ = asc;
-	setCoreParameter("Asc", std::to_string(asc));
+	setParameter("Asc", std::to_string(asc));
 }
 
 std::string QueryDevicePropertiesDataRequest::getDeviceName()const
@@ -133,6 +136,6 @@ std::string QueryDevicePropertiesDataRequest::getDeviceName()const
 void QueryDevicePropertiesDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

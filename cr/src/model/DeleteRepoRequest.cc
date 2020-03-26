@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::DeleteRepoRequest;
 
 DeleteRepoRequest::DeleteRepoRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DeleteRepoRequest::~DeleteRepoRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteRepoRequest::getRepoNamespace()const
 void DeleteRepoRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string DeleteRepoRequest::getRepoName()const
@@ -44,6 +47,6 @@ std::string DeleteRepoRequest::getRepoName()const
 void DeleteRepoRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 

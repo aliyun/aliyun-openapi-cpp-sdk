@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListPhoneNumbersRequest;
 
 ListPhoneNumbersRequest::ListPhoneNumbersRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListPhoneNumbers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListPhoneNumbersRequest::~ListPhoneNumbersRequest()
 {}
@@ -33,7 +35,7 @@ bool ListPhoneNumbersRequest::getOutboundOnly()const
 void ListPhoneNumbersRequest::setOutboundOnly(bool outboundOnly)
 {
 	outboundOnly_ = outboundOnly;
-	setCoreParameter("OutboundOnly", outboundOnly ? "true" : "false");
+	setParameter("OutboundOnly", outboundOnly ? "true" : "false");
 }
 
 std::string ListPhoneNumbersRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string ListPhoneNumbersRequest::getInstanceId()const
 void ListPhoneNumbersRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListPhoneNumbersRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ListPhoneNumbersRequest::getAccessKeyId()const
 void ListPhoneNumbersRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

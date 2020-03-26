@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::CompleteBoardRequest;
 
 CompleteBoardRequest::CompleteBoardRequest() :
 	RpcServiceRequest("live", "2016-11-01", "CompleteBoard")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CompleteBoardRequest::~CompleteBoardRequest()
 {}
@@ -33,7 +35,7 @@ long CompleteBoardRequest::getOwnerId()const
 void CompleteBoardRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CompleteBoardRequest::getAppId()const
@@ -44,7 +46,7 @@ std::string CompleteBoardRequest::getAppId()const
 void CompleteBoardRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string CompleteBoardRequest::getBoardId()const
@@ -55,6 +57,6 @@ std::string CompleteBoardRequest::getBoardId()const
 void CompleteBoardRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateVoiceAppraiseRequest;
 
 CreateVoiceAppraiseRequest::CreateVoiceAppraiseRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateVoiceAppraise")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVoiceAppraiseRequest::~CreateVoiceAppraiseRequest()
 {}
@@ -33,7 +35,7 @@ bool CreateVoiceAppraiseRequest::getIsAppraise()const
 void CreateVoiceAppraiseRequest::setIsAppraise(bool isAppraise)
 {
 	isAppraise_ = isAppraise;
-	setCoreParameter("IsAppraise", isAppraise ? "true" : "false");
+	setParameter("IsAppraise", isAppraise ? "true" : "false");
 }
 
 std::string CreateVoiceAppraiseRequest::getContent()const
@@ -44,7 +46,7 @@ std::string CreateVoiceAppraiseRequest::getContent()const
 void CreateVoiceAppraiseRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setBodyParameter("Content", content);
 }
 
 std::string CreateVoiceAppraiseRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string CreateVoiceAppraiseRequest::getAccessKeyId()const
 void CreateVoiceAppraiseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateVoiceAppraiseRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string CreateVoiceAppraiseRequest::getInstanceId()const
 void CreateVoiceAppraiseRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateVoiceAppraiseRequest::getContactFlowVersionId()const
@@ -77,6 +79,6 @@ std::string CreateVoiceAppraiseRequest::getContactFlowVersionId()const
 void CreateVoiceAppraiseRequest::setContactFlowVersionId(const std::string& contactFlowVersionId)
 {
 	contactFlowVersionId_ = contactFlowVersionId;
-	setCoreParameter("ContactFlowVersionId", contactFlowVersionId);
+	setParameter("ContactFlowVersionId", contactFlowVersionId);
 }
 

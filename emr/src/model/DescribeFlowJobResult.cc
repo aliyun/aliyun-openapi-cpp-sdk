@@ -89,6 +89,10 @@ void DescribeFlowJobResult::parse(const std::string &payload)
 		adhoc_ = value["Adhoc"].asString();
 	if(!value["AlertConf"].isNull())
 		alertConf_ = value["AlertConf"].asString();
+	if(!value["EditLockDetail"].isNull())
+		editLockDetail_ = value["EditLockDetail"].asString();
+	if(!value["MaxRunningTimeSec"].isNull())
+		maxRunningTimeSec_ = std::stol(value["MaxRunningTimeSec"].asString());
 
 }
 
@@ -130,6 +134,16 @@ std::string DescribeFlowJobResult::getParams()const
 int DescribeFlowJobResult::getMaxRetry()const
 {
 	return maxRetry_;
+}
+
+std::string DescribeFlowJobResult::getEditLockDetail()const
+{
+	return editLockDetail_;
+}
+
+long DescribeFlowJobResult::getMaxRunningTimeSec()const
+{
+	return maxRunningTimeSec_;
 }
 
 std::string DescribeFlowJobResult::getName()const

@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getQosName()const;
 				void setQosName(const std::string& qosName);
+				std::string getQosDescription()const;
+				void setQosDescription(const std::string& qosDescription);
 
             private:
 				long resourceOwnerId_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string qosName_;
+				std::string qosDescription_;
 
 			};
 		}

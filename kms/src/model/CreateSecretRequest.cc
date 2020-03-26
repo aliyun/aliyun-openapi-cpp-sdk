@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::CreateSecretRequest;
 CreateSecretRequest::CreateSecretRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "CreateSecret")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 CreateSecretRequest::~CreateSecretRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::GrantInstanceToCenRequest;
 
 GrantInstanceToCenRequest::GrantInstanceToCenRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "GrantInstanceToCen")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GrantInstanceToCenRequest::~GrantInstanceToCenRequest()
 {}
@@ -33,7 +35,7 @@ long GrantInstanceToCenRequest::getResourceOwnerId()const
 void GrantInstanceToCenRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GrantInstanceToCenRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string GrantInstanceToCenRequest::getCenId()const
 void GrantInstanceToCenRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string GrantInstanceToCenRequest::getClientToken()const
@@ -55,7 +57,7 @@ std::string GrantInstanceToCenRequest::getClientToken()const
 void GrantInstanceToCenRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 long GrantInstanceToCenRequest::getCenOwnerId()const
@@ -66,7 +68,7 @@ long GrantInstanceToCenRequest::getCenOwnerId()const
 void GrantInstanceToCenRequest::setCenOwnerId(long cenOwnerId)
 {
 	cenOwnerId_ = cenOwnerId;
-	setCoreParameter("CenOwnerId", std::to_string(cenOwnerId));
+	setParameter("CenOwnerId", std::to_string(cenOwnerId));
 }
 
 std::string GrantInstanceToCenRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string GrantInstanceToCenRequest::getRegionId()const
 void GrantInstanceToCenRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GrantInstanceToCenRequest::getInstanceType()const
@@ -88,7 +90,7 @@ std::string GrantInstanceToCenRequest::getInstanceType()const
 void GrantInstanceToCenRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string GrantInstanceToCenRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string GrantInstanceToCenRequest::getResourceOwnerAccount()const
 void GrantInstanceToCenRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GrantInstanceToCenRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string GrantInstanceToCenRequest::getOwnerAccount()const
 void GrantInstanceToCenRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long GrantInstanceToCenRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long GrantInstanceToCenRequest::getOwnerId()const
 void GrantInstanceToCenRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GrantInstanceToCenRequest::getInstanceId()const
@@ -132,6 +134,6 @@ std::string GrantInstanceToCenRequest::getInstanceId()const
 void GrantInstanceToCenRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::UpdateJobRequest;
 
 UpdateJobRequest::UpdateJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]");
+	setMethod(HttpRequest::Method::Put);
+}
 
 UpdateJobRequest::~UpdateJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string UpdateJobRequest::getQueueName()const
 void UpdateJobRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setBodyParameter("QueueName", queueName);
 }
 
 std::string UpdateJobRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string UpdateJobRequest::getProjectName()const
 void UpdateJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string UpdateJobRequest::getCode()const
@@ -55,7 +58,7 @@ std::string UpdateJobRequest::getCode()const
 void UpdateJobRequest::setCode(const std::string& code)
 {
 	code_ = code;
-	setCoreParameter("Code", code);
+	setBodyParameter("Code", code);
 }
 
 std::string UpdateJobRequest::getRegionId()const
@@ -66,7 +69,7 @@ std::string UpdateJobRequest::getRegionId()const
 void UpdateJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string UpdateJobRequest::getDescription()const
@@ -77,7 +80,7 @@ std::string UpdateJobRequest::getDescription()const
 void UpdateJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string UpdateJobRequest::getPlanJson()const
@@ -88,7 +91,7 @@ std::string UpdateJobRequest::getPlanJson()const
 void UpdateJobRequest::setPlanJson(const std::string& planJson)
 {
 	planJson_ = planJson;
-	setCoreParameter("PlanJson", planJson);
+	setBodyParameter("PlanJson", planJson);
 }
 
 std::string UpdateJobRequest::getEngineVersion()const
@@ -99,7 +102,7 @@ std::string UpdateJobRequest::getEngineVersion()const
 void UpdateJobRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setBodyParameter("EngineVersion", engineVersion);
 }
 
 std::string UpdateJobRequest::getClusterId()const
@@ -110,7 +113,7 @@ std::string UpdateJobRequest::getClusterId()const
 void UpdateJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setBodyParameter("ClusterId", clusterId);
 }
 
 std::string UpdateJobRequest::getPackages()const
@@ -121,7 +124,7 @@ std::string UpdateJobRequest::getPackages()const
 void UpdateJobRequest::setPackages(const std::string& packages)
 {
 	packages_ = packages;
-	setCoreParameter("Packages", packages);
+	setBodyParameter("Packages", packages);
 }
 
 long UpdateJobRequest::getFolderId()const
@@ -132,7 +135,7 @@ long UpdateJobRequest::getFolderId()const
 void UpdateJobRequest::setFolderId(long folderId)
 {
 	folderId_ = folderId;
-	setCoreParameter("FolderId", std::to_string(folderId));
+	setBodyParameter("FolderId", std::to_string(folderId));
 }
 
 std::string UpdateJobRequest::getProperties()const
@@ -143,7 +146,7 @@ std::string UpdateJobRequest::getProperties()const
 void UpdateJobRequest::setProperties(const std::string& properties)
 {
 	properties_ = properties;
-	setCoreParameter("Properties", properties);
+	setBodyParameter("Properties", properties);
 }
 
 std::string UpdateJobRequest::getJobName()const
@@ -154,6 +157,6 @@ std::string UpdateJobRequest::getJobName()const
 void UpdateJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTradeProduceListRequest;
 
 QueryTradeProduceListRequest::QueryTradeProduceListRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTradeProduceList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTradeProduceListRequest::~QueryTradeProduceListRequest()
 {}
@@ -33,7 +35,7 @@ int QueryTradeProduceListRequest::getBuyerStatus()const
 void QueryTradeProduceListRequest::setBuyerStatus(int buyerStatus)
 {
 	buyerStatus_ = buyerStatus;
-	setCoreParameter("BuyerStatus", std::to_string(buyerStatus));
+	setParameter("BuyerStatus", std::to_string(buyerStatus));
 }
 
 int QueryTradeProduceListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryTradeProduceListRequest::getPageNum()const
 void QueryTradeProduceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryTradeProduceListRequest::getSortFiled()const
@@ -55,7 +57,7 @@ std::string QueryTradeProduceListRequest::getSortFiled()const
 void QueryTradeProduceListRequest::setSortFiled(const std::string& sortFiled)
 {
 	sortFiled_ = sortFiled;
-	setCoreParameter("SortFiled", sortFiled);
+	setParameter("SortFiled", sortFiled);
 }
 
 int QueryTradeProduceListRequest::getPageSize()const
@@ -66,7 +68,7 @@ int QueryTradeProduceListRequest::getPageSize()const
 void QueryTradeProduceListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTradeProduceListRequest::getPreOrderId()const
@@ -77,7 +79,7 @@ std::string QueryTradeProduceListRequest::getPreOrderId()const
 void QueryTradeProduceListRequest::setPreOrderId(const std::string& preOrderId)
 {
 	preOrderId_ = preOrderId;
-	setCoreParameter("PreOrderId", preOrderId);
+	setParameter("PreOrderId", preOrderId);
 }
 
 std::string QueryTradeProduceListRequest::getBizId()const
@@ -88,7 +90,7 @@ std::string QueryTradeProduceListRequest::getBizId()const
 void QueryTradeProduceListRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string QueryTradeProduceListRequest::getSortOrder()const
@@ -99,7 +101,7 @@ std::string QueryTradeProduceListRequest::getSortOrder()const
 void QueryTradeProduceListRequest::setSortOrder(const std::string& sortOrder)
 {
 	sortOrder_ = sortOrder;
-	setCoreParameter("SortOrder", sortOrder);
+	setParameter("SortOrder", sortOrder);
 }
 
 std::string QueryTradeProduceListRequest::getRegisterNumber()const
@@ -110,6 +112,6 @@ std::string QueryTradeProduceListRequest::getRegisterNumber()const
 void QueryTradeProduceListRequest::setRegisterNumber(const std::string& registerNumber)
 {
 	registerNumber_ = registerNumber;
-	setCoreParameter("RegisterNumber", registerNumber);
+	setParameter("RegisterNumber", registerNumber);
 }
 

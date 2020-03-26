@@ -1743,6 +1743,114 @@ EssClient::ExitStandbyOutcomeCallable EssClient::exitStandbyCallable(const ExitS
 	return task->get_future();
 }
 
+EssClient::ListTagKeysOutcome EssClient::listTagKeys(const ListTagKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagKeysOutcome(ListTagKeysResult(outcome.result()));
+	else
+		return ListTagKeysOutcome(outcome.error());
+}
+
+void EssClient::listTagKeysAsync(const ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ListTagKeysOutcomeCallable EssClient::listTagKeysCallable(const ListTagKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ListTagResourcesOutcome EssClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void EssClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ListTagResourcesOutcomeCallable EssClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::ListTagValuesOutcome EssClient::listTagValues(const ListTagValuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagValuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagValuesOutcome(ListTagValuesResult(outcome.result()));
+	else
+		return ListTagValuesOutcome(outcome.error());
+}
+
+void EssClient::listTagValuesAsync(const ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagValues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ListTagValuesOutcomeCallable EssClient::listTagValuesCallable(const ListTagValuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagValuesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::ModifyAlarmOutcome EssClient::modifyAlarm(const ModifyAlarmRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2139,6 +2247,114 @@ EssClient::RemoveInstancesOutcomeCallable EssClient::removeInstancesCallable(con
 	return task->get_future();
 }
 
+EssClient::ResumeProcessesOutcome EssClient::resumeProcesses(const ResumeProcessesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResumeProcessesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResumeProcessesOutcome(ResumeProcessesResult(outcome.result()));
+	else
+		return ResumeProcessesOutcome(outcome.error());
+}
+
+void EssClient::resumeProcessesAsync(const ResumeProcessesRequest& request, const ResumeProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resumeProcesses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::ResumeProcessesOutcomeCallable EssClient::resumeProcessesCallable(const ResumeProcessesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResumeProcessesOutcome()>>(
+			[this, request]()
+			{
+			return this->resumeProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::SetGroupDeletionProtectionOutcome EssClient::setGroupDeletionProtection(const SetGroupDeletionProtectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetGroupDeletionProtectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetGroupDeletionProtectionOutcome(SetGroupDeletionProtectionResult(outcome.result()));
+	else
+		return SetGroupDeletionProtectionOutcome(outcome.error());
+}
+
+void EssClient::setGroupDeletionProtectionAsync(const SetGroupDeletionProtectionRequest& request, const SetGroupDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setGroupDeletionProtection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::SetGroupDeletionProtectionOutcomeCallable EssClient::setGroupDeletionProtectionCallable(const SetGroupDeletionProtectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetGroupDeletionProtectionOutcome()>>(
+			[this, request]()
+			{
+			return this->setGroupDeletionProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::SetInstanceHealthOutcome EssClient::setInstanceHealth(const SetInstanceHealthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetInstanceHealthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetInstanceHealthOutcome(SetInstanceHealthResult(outcome.result()));
+	else
+		return SetInstanceHealthOutcome(outcome.error());
+}
+
+void EssClient::setInstanceHealthAsync(const SetInstanceHealthRequest& request, const SetInstanceHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setInstanceHealth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::SetInstanceHealthOutcomeCallable EssClient::setInstanceHealthCallable(const SetInstanceHealthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetInstanceHealthOutcome()>>(
+			[this, request]()
+			{
+			return this->setInstanceHealth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EssClient::SetInstancesProtectionOutcome EssClient::setInstancesProtection(const SetInstancesProtectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2385,114 @@ EssClient::SetInstancesProtectionOutcomeCallable EssClient::setInstancesProtecti
 			[this, request]()
 			{
 			return this->setInstancesProtection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::SuspendProcessesOutcome EssClient::suspendProcesses(const SuspendProcessesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SuspendProcessesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SuspendProcessesOutcome(SuspendProcessesResult(outcome.result()));
+	else
+		return SuspendProcessesOutcome(outcome.error());
+}
+
+void EssClient::suspendProcessesAsync(const SuspendProcessesRequest& request, const SuspendProcessesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, suspendProcesses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::SuspendProcessesOutcomeCallable EssClient::suspendProcessesCallable(const SuspendProcessesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SuspendProcessesOutcome()>>(
+			[this, request]()
+			{
+			return this->suspendProcesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::TagResourcesOutcome EssClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void EssClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::TagResourcesOutcomeCallable EssClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EssClient::UntagResourcesOutcome EssClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void EssClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EssClient::UntagResourcesOutcomeCallable EssClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

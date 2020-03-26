@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeAccountsRequest;
 
 DescribeAccountsRequest::DescribeAccountsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeAccounts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccountsRequest::~DescribeAccountsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAccountsRequest::getAccessKeyId()const
 void DescribeAccountsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAccountsRequest::getAccountName()const
@@ -44,7 +46,7 @@ std::string DescribeAccountsRequest::getAccountName()const
 void DescribeAccountsRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string DescribeAccountsRequest::getDBInstanceId()const
@@ -55,6 +57,6 @@ std::string DescribeAccountsRequest::getDBInstanceId()const
 void DescribeAccountsRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

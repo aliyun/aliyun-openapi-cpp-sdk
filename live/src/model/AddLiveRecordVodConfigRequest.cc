@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveRecordVodConfigRequest;
 
 AddLiveRecordVodConfigRequest::AddLiveRecordVodConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveRecordVodConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveRecordVodConfigRequest::~AddLiveRecordVodConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLiveRecordVodConfigRequest::getAutoCompose()const
 void AddLiveRecordVodConfigRequest::setAutoCompose(const std::string& autoCompose)
 {
 	autoCompose_ = autoCompose;
-	setCoreParameter("AutoCompose", autoCompose);
+	setParameter("AutoCompose", autoCompose);
 }
 
 std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
@@ -44,7 +46,7 @@ std::string AddLiveRecordVodConfigRequest::getComposeVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setComposeVodTranscodeGroupId(const std::string& composeVodTranscodeGroupId)
 {
 	composeVodTranscodeGroupId_ = composeVodTranscodeGroupId;
-	setCoreParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
+	setParameter("ComposeVodTranscodeGroupId", composeVodTranscodeGroupId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getStorageLocation()const
@@ -55,7 +57,7 @@ std::string AddLiveRecordVodConfigRequest::getStorageLocation()const
 void AddLiveRecordVodConfigRequest::setStorageLocation(const std::string& storageLocation)
 {
 	storageLocation_ = storageLocation;
-	setCoreParameter("StorageLocation", storageLocation);
+	setParameter("StorageLocation", storageLocation);
 }
 
 std::string AddLiveRecordVodConfigRequest::getAppName()const
@@ -66,7 +68,7 @@ std::string AddLiveRecordVodConfigRequest::getAppName()const
 void AddLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getStreamName()const
@@ -77,7 +79,7 @@ std::string AddLiveRecordVodConfigRequest::getStreamName()const
 void AddLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
@@ -88,7 +90,7 @@ std::string AddLiveRecordVodConfigRequest::getVodTranscodeGroupId()const
 void AddLiveRecordVodConfigRequest::setVodTranscodeGroupId(const std::string& vodTranscodeGroupId)
 {
 	vodTranscodeGroupId_ = vodTranscodeGroupId;
-	setCoreParameter("VodTranscodeGroupId", vodTranscodeGroupId);
+	setParameter("VodTranscodeGroupId", vodTranscodeGroupId);
 }
 
 std::string AddLiveRecordVodConfigRequest::getDomainName()const
@@ -99,7 +101,7 @@ std::string AddLiveRecordVodConfigRequest::getDomainName()const
 void AddLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int AddLiveRecordVodConfigRequest::getCycleDuration()const
@@ -110,7 +112,7 @@ int AddLiveRecordVodConfigRequest::getCycleDuration()const
 void AddLiveRecordVodConfigRequest::setCycleDuration(int cycleDuration)
 {
 	cycleDuration_ = cycleDuration;
-	setCoreParameter("CycleDuration", std::to_string(cycleDuration));
+	setParameter("CycleDuration", std::to_string(cycleDuration));
 }
 
 long AddLiveRecordVodConfigRequest::getOwnerId()const
@@ -121,6 +123,6 @@ long AddLiveRecordVodConfigRequest::getOwnerId()const
 void AddLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

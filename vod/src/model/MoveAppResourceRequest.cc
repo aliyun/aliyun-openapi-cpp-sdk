@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::MoveAppResourceRequest;
 
 MoveAppResourceRequest::MoveAppResourceRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "MoveAppResource")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoveAppResourceRequest::~MoveAppResourceRequest()
 {}
@@ -33,7 +35,7 @@ long MoveAppResourceRequest::getResourceOwnerId()const
 void MoveAppResourceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long MoveAppResourceRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long MoveAppResourceRequest::getResourceRealOwnerId()const
 void MoveAppResourceRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string MoveAppResourceRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string MoveAppResourceRequest::getAccessKeyId()const
 void MoveAppResourceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string MoveAppResourceRequest::getTargetAppId()const
@@ -66,7 +68,7 @@ std::string MoveAppResourceRequest::getTargetAppId()const
 void MoveAppResourceRequest::setTargetAppId(const std::string& targetAppId)
 {
 	targetAppId_ = targetAppId;
-	setCoreParameter("TargetAppId", targetAppId);
+	setParameter("TargetAppId", targetAppId);
 }
 
 std::string MoveAppResourceRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string MoveAppResourceRequest::getResourceOwnerAccount()const
 void MoveAppResourceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long MoveAppResourceRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long MoveAppResourceRequest::getOwnerId()const
 void MoveAppResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string MoveAppResourceRequest::getResourceType()const
@@ -99,7 +101,7 @@ std::string MoveAppResourceRequest::getResourceType()const
 void MoveAppResourceRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string MoveAppResourceRequest::getResourceIds()const
@@ -110,6 +112,6 @@ std::string MoveAppResourceRequest::getResourceIds()const
 void MoveAppResourceRequest::setResourceIds(const std::string& resourceIds)
 {
 	resourceIds_ = resourceIds;
-	setCoreParameter("ResourceIds", resourceIds);
+	setParameter("ResourceIds", resourceIds);
 }
 

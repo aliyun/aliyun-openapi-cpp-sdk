@@ -46,7 +46,7 @@ void DescribeSiteMonitorStatisticsResult::parse(const std::string &payload)
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["Data"].isNull())
-		data_ = std::stol(value["Data"].asString());
+		data_ = value["Data"].asString();
 
 }
 
@@ -55,7 +55,7 @@ std::string DescribeSiteMonitorStatisticsResult::getMessage()const
 	return message_;
 }
 
-long DescribeSiteMonitorStatisticsResult::getData()const
+std::string DescribeSiteMonitorStatisticsResult::getData()const
 {
 	return data_;
 }

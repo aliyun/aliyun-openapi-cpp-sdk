@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::CreateAccessWhiteListGroupRequest;
 
 CreateAccessWhiteListGroupRequest::CreateAccessWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "CreateAccessWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateAccessWhiteListGroupRequest::~CreateAccessWhiteListGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateAccessWhiteListGroupRequest::getNote()const
 void CreateAccessWhiteListGroupRequest::setNote(const std::string& note)
 {
 	note_ = note;
-	setCoreParameter("Note", note);
+	setParameter("Note", note);
 }
 
 long CreateAccessWhiteListGroupRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateAccessWhiteListGroupRequest::getResourceOwnerId()const
 void CreateAccessWhiteListGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSrcIP()const
@@ -55,7 +57,7 @@ std::string CreateAccessWhiteListGroupRequest::getSrcIP()const
 void CreateAccessWhiteListGroupRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 int CreateAccessWhiteListGroupRequest::getDstPort()const
@@ -66,7 +68,7 @@ int CreateAccessWhiteListGroupRequest::getDstPort()const
 void CreateAccessWhiteListGroupRequest::setDstPort(int dstPort)
 {
 	dstPort_ = dstPort;
-	setCoreParameter("DstPort", std::to_string(dstPort));
+	setParameter("DstPort", std::to_string(dstPort));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
@@ -77,7 +79,7 @@ std::string CreateAccessWhiteListGroupRequest::getSourceCode()const
 void CreateAccessWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
@@ -88,7 +90,7 @@ std::string CreateAccessWhiteListGroupRequest::getSourceIp()const
 void CreateAccessWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getProductName()const
@@ -99,7 +101,7 @@ std::string CreateAccessWhiteListGroupRequest::getProductName()const
 void CreateAccessWhiteListGroupRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
-	setCoreParameter("ProductName", productName);
+	setParameter("ProductName", productName);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
@@ -110,7 +112,7 @@ std::string CreateAccessWhiteListGroupRequest::getInstanceInfoList()const
 void CreateAccessWhiteListGroupRequest::setInstanceInfoList(const std::string& instanceInfoList)
 {
 	instanceInfoList_ = instanceInfoList;
-	setCoreParameter("InstanceInfoList", instanceInfoList);
+	setParameter("InstanceInfoList", instanceInfoList);
 }
 
 std::string CreateAccessWhiteListGroupRequest::getLang()const
@@ -121,7 +123,7 @@ std::string CreateAccessWhiteListGroupRequest::getLang()const
 void CreateAccessWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int CreateAccessWhiteListGroupRequest::getWhiteListType()const
@@ -132,7 +134,7 @@ int CreateAccessWhiteListGroupRequest::getWhiteListType()const
 void CreateAccessWhiteListGroupRequest::setWhiteListType(int whiteListType)
 {
 	whiteListType_ = whiteListType;
-	setCoreParameter("WhiteListType", std::to_string(whiteListType));
+	setParameter("WhiteListType", std::to_string(whiteListType));
 }
 
 std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
@@ -143,7 +145,7 @@ std::string CreateAccessWhiteListGroupRequest::getInstanceIdList()const
 void CreateAccessWhiteListGroupRequest::setInstanceIdList(const std::string& instanceIdList)
 {
 	instanceIdList_ = instanceIdList;
-	setCoreParameter("InstanceIdList", instanceIdList);
+	setParameter("InstanceIdList", instanceIdList);
 }
 
 int CreateAccessWhiteListGroupRequest::getLiveTime()const
@@ -154,6 +156,6 @@ int CreateAccessWhiteListGroupRequest::getLiveTime()const
 void CreateAccessWhiteListGroupRequest::setLiveTime(int liveTime)
 {
 	liveTime_ = liveTime;
-	setCoreParameter("LiveTime", std::to_string(liveTime));
+	setParameter("LiveTime", std::to_string(liveTime));
 }
 

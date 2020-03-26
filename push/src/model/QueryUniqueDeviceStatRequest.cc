@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryUniqueDeviceStatRequest;
 
 QueryUniqueDeviceStatRequest::QueryUniqueDeviceStatRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryUniqueDeviceStat")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryUniqueDeviceStatRequest::~QueryUniqueDeviceStatRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryUniqueDeviceStatRequest::getEndTime()const
 void QueryUniqueDeviceStatRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryUniqueDeviceStatRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string QueryUniqueDeviceStatRequest::getStartTime()const
 void QueryUniqueDeviceStatRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string QueryUniqueDeviceStatRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryUniqueDeviceStatRequest::getAccessKeyId()const
 void QueryUniqueDeviceStatRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryUniqueDeviceStatRequest::getGranularity()const
@@ -66,7 +68,7 @@ std::string QueryUniqueDeviceStatRequest::getGranularity()const
 void QueryUniqueDeviceStatRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setParameter("Granularity", granularity);
 }
 
 long QueryUniqueDeviceStatRequest::getAppKey()const
@@ -77,6 +79,6 @@ long QueryUniqueDeviceStatRequest::getAppKey()const
 void QueryUniqueDeviceStatRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

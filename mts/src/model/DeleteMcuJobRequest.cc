@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::DeleteMcuJobRequest;
 
 DeleteMcuJobRequest::DeleteMcuJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "DeleteMcuJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteMcuJobRequest::~DeleteMcuJobRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteMcuJobRequest::getResourceOwnerId()const
 void DeleteMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteMcuJobRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteMcuJobRequest::getResourceOwnerAccount()const
 void DeleteMcuJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteMcuJobRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteMcuJobRequest::getOwnerAccount()const
 void DeleteMcuJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteMcuJobRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DeleteMcuJobRequest::getOwnerId()const
 void DeleteMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteMcuJobRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string DeleteMcuJobRequest::getAccessKeyId()const
 void DeleteMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteMcuJobRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string DeleteMcuJobRequest::getJobIds()const
 void DeleteMcuJobRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

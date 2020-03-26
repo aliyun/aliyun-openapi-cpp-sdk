@@ -35,7 +35,7 @@ std::string DeleteSourceServerRequest::getSourceId()const
 void DeleteSourceServerRequest::setSourceId(const std::string& sourceId)
 {
 	sourceId_ = sourceId;
-	setCoreParameter("SourceId", sourceId);
+	setParameter("SourceId", sourceId);
 }
 
 std::string DeleteSourceServerRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteSourceServerRequest::getResourceOwnerAccount()const
 void DeleteSourceServerRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteSourceServerRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteSourceServerRequest::getOwnerId()const
 void DeleteSourceServerRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteSourceServerRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteSourceServerRequest::getAccessKeyId()const
 void DeleteSourceServerRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 bool DeleteSourceServerRequest::getForce()const
@@ -79,6 +79,6 @@ bool DeleteSourceServerRequest::getForce()const
 void DeleteSourceServerRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

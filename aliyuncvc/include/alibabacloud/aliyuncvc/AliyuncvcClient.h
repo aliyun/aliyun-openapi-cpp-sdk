@@ -36,6 +36,8 @@
 #include "model/DeleteUserResult.h"
 #include "model/GetMeetingRequest.h"
 #include "model/GetMeetingResult.h"
+#include "model/GetMeetingMemberRequest.h"
+#include "model/GetMeetingMemberResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
 #include "model/JoinMeetingRequest.h"
@@ -78,6 +80,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMeetingResult> GetMeetingOutcome;
 			typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetMeetingRequest&, const GetMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMeetingAsyncHandler;
+			typedef Outcome<Error, Model::GetMeetingMemberResult> GetMeetingMemberOutcome;
+			typedef std::future<GetMeetingMemberOutcome> GetMeetingMemberOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetMeetingMemberRequest&, const GetMeetingMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMeetingMemberAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
@@ -122,6 +127,9 @@ namespace AlibabaCloud
 			GetMeetingOutcome getMeeting(const Model::GetMeetingRequest &request)const;
 			void getMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMeetingOutcomeCallable getMeetingCallable(const Model::GetMeetingRequest& request) const;
+			GetMeetingMemberOutcome getMeetingMember(const Model::GetMeetingMemberRequest &request)const;
+			void getMeetingMemberAsync(const Model::GetMeetingMemberRequest& request, const GetMeetingMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMeetingMemberOutcomeCallable getMeetingMemberCallable(const Model::GetMeetingMemberRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;

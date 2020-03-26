@@ -40,17 +40,6 @@ void RemoveParticipantsRequest::setParticipantIds(const std::vector<std::string>
 	}
 }
 
-long RemoveParticipantsRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void RemoveParticipantsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string RemoveParticipantsRequest::getConferenceId()const
 {
 	return conferenceId_;
@@ -60,6 +49,17 @@ void RemoveParticipantsRequest::setConferenceId(const std::string& conferenceId)
 {
 	conferenceId_ = conferenceId;
 	setParameter("ConferenceId", conferenceId);
+}
+
+long RemoveParticipantsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void RemoveParticipantsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveParticipantsRequest::getAppId()const

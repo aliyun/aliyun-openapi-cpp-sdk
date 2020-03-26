@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetAttachedMediaInfoRequest;
 
 GetAttachedMediaInfoRequest::GetAttachedMediaInfoRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetAttachedMediaInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetAttachedMediaInfoRequest::~GetAttachedMediaInfoRequest()
 {}
@@ -33,7 +35,7 @@ long GetAttachedMediaInfoRequest::getResourceOwnerId()const
 void GetAttachedMediaInfoRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long GetAttachedMediaInfoRequest::getResourceRealOwnerId()const
@@ -44,7 +46,7 @@ long GetAttachedMediaInfoRequest::getResourceRealOwnerId()const
 void GetAttachedMediaInfoRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetAttachedMediaInfoRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string GetAttachedMediaInfoRequest::getAccessKeyId()const
 void GetAttachedMediaInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetAttachedMediaInfoRequest::getOutputType()const
@@ -66,7 +68,7 @@ std::string GetAttachedMediaInfoRequest::getOutputType()const
 void GetAttachedMediaInfoRequest::setOutputType(const std::string& outputType)
 {
 	outputType_ = outputType;
-	setCoreParameter("OutputType", outputType);
+	setParameter("OutputType", outputType);
 }
 
 std::string GetAttachedMediaInfoRequest::getMediaIds()const
@@ -77,7 +79,7 @@ std::string GetAttachedMediaInfoRequest::getMediaIds()const
 void GetAttachedMediaInfoRequest::setMediaIds(const std::string& mediaIds)
 {
 	mediaIds_ = mediaIds;
-	setCoreParameter("MediaIds", mediaIds);
+	setParameter("MediaIds", mediaIds);
 }
 
 long GetAttachedMediaInfoRequest::getAuthTimeout()const
@@ -88,7 +90,7 @@ long GetAttachedMediaInfoRequest::getAuthTimeout()const
 void GetAttachedMediaInfoRequest::setAuthTimeout(long authTimeout)
 {
 	authTimeout_ = authTimeout;
-	setCoreParameter("AuthTimeout", std::to_string(authTimeout));
+	setParameter("AuthTimeout", std::to_string(authTimeout));
 }
 
 std::string GetAttachedMediaInfoRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string GetAttachedMediaInfoRequest::getResourceOwnerAccount()const
 void GetAttachedMediaInfoRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetAttachedMediaInfoRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long GetAttachedMediaInfoRequest::getOwnerId()const
 void GetAttachedMediaInfoRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMcuJobRequest;
 
 QueryMcuJobRequest::QueryMcuJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMcuJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMcuJobRequest::~QueryMcuJobRequest()
 {}
@@ -33,7 +35,7 @@ long QueryMcuJobRequest::getResourceOwnerId()const
 void QueryMcuJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryMcuJobRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryMcuJobRequest::getResourceOwnerAccount()const
 void QueryMcuJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryMcuJobRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryMcuJobRequest::getOwnerAccount()const
 void QueryMcuJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMcuJobRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryMcuJobRequest::getOwnerId()const
 void QueryMcuJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryMcuJobRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryMcuJobRequest::getAccessKeyId()const
 void QueryMcuJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryMcuJobRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryMcuJobRequest::getJobIds()const
 void QueryMcuJobRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

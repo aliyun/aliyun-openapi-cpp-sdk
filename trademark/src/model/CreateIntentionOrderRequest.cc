@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::CreateIntentionOrderRequest;
 
 CreateIntentionOrderRequest::CreateIntentionOrderRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "CreateIntentionOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateIntentionOrderRequest::~CreateIntentionOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateIntentionOrderRequest::getChannel()const
 void CreateIntentionOrderRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setParameter("Channel", channel);
 }
 
 std::string CreateIntentionOrderRequest::getIntentionBizId()const
@@ -44,6 +46,6 @@ std::string CreateIntentionOrderRequest::getIntentionBizId()const
 void CreateIntentionOrderRequest::setIntentionBizId(const std::string& intentionBizId)
 {
 	intentionBizId_ = intentionBizId;
-	setCoreParameter("IntentionBizId", intentionBizId);
+	setParameter("IntentionBizId", intentionBizId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::DeleteDomainRequest;
 
 DeleteDomainRequest::DeleteDomainRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "DeleteDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainRequest::~DeleteDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDomainRequest::getDomainName()const
 void DeleteDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DeleteDomainRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDomainRequest::getAccessKeyId()const
 void DeleteDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDomainRequest::getAccountId()const
@@ -55,6 +57,6 @@ std::string DeleteDomainRequest::getAccountId()const
 void DeleteDomainRequest::setAccountId(const std::string& accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", accountId);
+	setParameter("AccountId", accountId);
 }
 

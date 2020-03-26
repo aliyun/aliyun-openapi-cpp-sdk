@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::SetDevicesPropertyRequest;
 
 SetDevicesPropertyRequest::SetDevicesPropertyRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "SetDevicesProperty")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDevicesPropertyRequest::~SetDevicesPropertyRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDevicesPropertyRequest::getProductKey()const
 void SetDevicesPropertyRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string SetDevicesPropertyRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SetDevicesPropertyRequest::getAccessKeyId()const
 void SetDevicesPropertyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDevicesPropertyRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string SetDevicesPropertyRequest::getIotInstanceId()const
 void SetDevicesPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<std::string> SetDevicesPropertyRequest::getDeviceName()const
@@ -66,8 +68,9 @@ std::vector<std::string> SetDevicesPropertyRequest::getDeviceName()const
 void SetDevicesPropertyRequest::setDeviceName(const std::vector<std::string>& deviceName)
 {
 	deviceName_ = deviceName;
-	for(int i = 0; i!= deviceName.size(); i++)
-		setCoreParameter("DeviceName."+ std::to_string(i), deviceName.at(i));
+	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
+		setParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+	}
 }
 
 std::string SetDevicesPropertyRequest::getItems()const
@@ -78,6 +81,6 @@ std::string SetDevicesPropertyRequest::getItems()const
 void SetDevicesPropertyRequest::setItems(const std::string& items)
 {
 	items_ = items;
-	setCoreParameter("Items", items);
+	setParameter("Items", items);
 }
 

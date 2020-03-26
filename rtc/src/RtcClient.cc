@@ -411,6 +411,42 @@ RtcClient::DescribeChannelParticipantsOutcomeCallable RtcClient::describeChannel
 	return task->get_future();
 }
 
+RtcClient::DescribeChannelUsersOutcome RtcClient::describeChannelUsers(const DescribeChannelUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeChannelUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeChannelUsersOutcome(DescribeChannelUsersResult(outcome.result()));
+	else
+		return DescribeChannelUsersOutcome(outcome.error());
+}
+
+void RtcClient::describeChannelUsersAsync(const DescribeChannelUsersRequest& request, const DescribeChannelUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeChannelUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeChannelUsersOutcomeCallable RtcClient::describeChannelUsersCallable(const DescribeChannelUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeChannelUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeChannelUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RtcClient::DescribeConferenceAuthInfoOutcome RtcClient::describeConferenceAuthInfo(const DescribeConferenceAuthInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ RtcClient::DescribeMAURuleOutcomeCallable RtcClient::describeMAURuleCallable(con
 			[this, request]()
 			{
 			return this->describeMAURule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeRTCAppKeyOutcome RtcClient::describeRTCAppKey(const DescribeRTCAppKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTCAppKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTCAppKeyOutcome(DescribeRTCAppKeyResult(outcome.result()));
+	else
+		return DescribeRTCAppKeyOutcome(outcome.error());
+}
+
+void RtcClient::describeRTCAppKeyAsync(const DescribeRTCAppKeyRequest& request, const DescribeRTCAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTCAppKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeRTCAppKeyOutcomeCallable RtcClient::describeRTCAppKeyCallable(const DescribeRTCAppKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTCAppKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTCAppKey(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -837,6 +909,42 @@ RtcClient::DescribeRtcUserListOutcomeCallable RtcClient::describeRtcUserListCall
 			[this, request]()
 			{
 			return this->describeRtcUserList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::DescribeUserInfoInChannelOutcome RtcClient::describeUserInfoInChannel(const DescribeUserInfoInChannelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserInfoInChannelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserInfoInChannelOutcome(DescribeUserInfoInChannelResult(outcome.result()));
+	else
+		return DescribeUserInfoInChannelOutcome(outcome.error());
+}
+
+void RtcClient::describeUserInfoInChannelAsync(const DescribeUserInfoInChannelRequest& request, const DescribeUserInfoInChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserInfoInChannel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::DescribeUserInfoInChannelOutcomeCallable RtcClient::describeUserInfoInChannelCallable(const DescribeUserInfoInChannelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserInfoInChannelOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserInfoInChannel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1233,6 +1341,42 @@ RtcClient::RemoveTerminalsOutcomeCallable RtcClient::removeTerminalsCallable(con
 			[this, request]()
 			{
 			return this->removeTerminals(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RtcClient::SetChannelPropertyOutcome RtcClient::setChannelProperty(const SetChannelPropertyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetChannelPropertyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetChannelPropertyOutcome(SetChannelPropertyResult(outcome.result()));
+	else
+		return SetChannelPropertyOutcome(outcome.error());
+}
+
+void RtcClient::setChannelPropertyAsync(const SetChannelPropertyRequest& request, const SetChannelPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setChannelProperty(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RtcClient::SetChannelPropertyOutcomeCallable RtcClient::setChannelPropertyCallable(const SetChannelPropertyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetChannelPropertyOutcome()>>(
+			[this, request]()
+			{
+			return this->setChannelProperty(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

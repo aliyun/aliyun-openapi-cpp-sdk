@@ -35,7 +35,7 @@ long DescribeDBClusterAccessWhiteListRequest::getResourceOwnerId()const
 void DescribeDBClusterAccessWhiteListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeDBClusterAccessWhiteListRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeDBClusterAccessWhiteListRequest::getAccessKeyId()const
 void DescribeDBClusterAccessWhiteListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeDBClusterAccessWhiteListRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeDBClusterAccessWhiteListRequest::getResourceOwnerAccount()co
 void DescribeDBClusterAccessWhiteListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeDBClusterAccessWhiteListRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DescribeDBClusterAccessWhiteListRequest::getDBClusterId()const
 void DescribeDBClusterAccessWhiteListRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeDBClusterAccessWhiteListRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeDBClusterAccessWhiteListRequest::getOwnerAccount()const
 void DescribeDBClusterAccessWhiteListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeDBClusterAccessWhiteListRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeDBClusterAccessWhiteListRequest::getOwnerId()const
 void DescribeDBClusterAccessWhiteListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

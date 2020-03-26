@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GenerateAgentStatisticReportRequest;
 
 GenerateAgentStatisticReportRequest::GenerateAgentStatisticReportRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GenerateAgentStatisticReport")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GenerateAgentStatisticReportRequest::~GenerateAgentStatisticReportRequest()
 {}
@@ -33,7 +35,7 @@ std::string GenerateAgentStatisticReportRequest::getAgentId()const
 void GenerateAgentStatisticReportRequest::setAgentId(const std::string& agentId)
 {
 	agentId_ = agentId;
-	setCoreParameter("AgentId", agentId);
+	setParameter("AgentId", agentId);
 }
 
 std::string GenerateAgentStatisticReportRequest::getStartDate()const
@@ -44,7 +46,7 @@ std::string GenerateAgentStatisticReportRequest::getStartDate()const
 void GenerateAgentStatisticReportRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 int GenerateAgentStatisticReportRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int GenerateAgentStatisticReportRequest::getPageNumber()const
 void GenerateAgentStatisticReportRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string GenerateAgentStatisticReportRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string GenerateAgentStatisticReportRequest::getAccessKeyId()const
 void GenerateAgentStatisticReportRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GenerateAgentStatisticReportRequest::getInstanceId()const
@@ -77,7 +79,7 @@ std::string GenerateAgentStatisticReportRequest::getInstanceId()const
 void GenerateAgentStatisticReportRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GenerateAgentStatisticReportRequest::getEndDate()const
@@ -88,7 +90,7 @@ std::string GenerateAgentStatisticReportRequest::getEndDate()const
 void GenerateAgentStatisticReportRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 int GenerateAgentStatisticReportRequest::getPageSize()const
@@ -99,6 +101,6 @@ int GenerateAgentStatisticReportRequest::getPageSize()const
 void GenerateAgentStatisticReportRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

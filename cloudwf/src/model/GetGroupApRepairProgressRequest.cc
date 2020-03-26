@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRepairProgressRequest;
 
 GetGroupApRepairProgressRequest::GetGroupApRepairProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRepairProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRepairProgressRequest::~GetGroupApRepairProgressRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetGroupApRepairProgressRequest::getAccessKeyId()const
 void GetGroupApRepairProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetGroupApRepairProgressRequest::getId()const
@@ -44,6 +46,6 @@ long GetGroupApRepairProgressRequest::getId()const
 void GetGroupApRepairProgressRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

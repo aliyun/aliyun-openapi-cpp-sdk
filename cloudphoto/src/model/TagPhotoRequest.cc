@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::TagPhotoRequest;
 
 TagPhotoRequest::TagPhotoRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "TagPhoto")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TagPhotoRequest::~TagPhotoRequest()
 {}
@@ -33,7 +35,7 @@ std::string TagPhotoRequest::getLibraryId()const
 void TagPhotoRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::vector<float> TagPhotoRequest::getConfidence()const
@@ -44,8 +46,9 @@ std::vector<float> TagPhotoRequest::getConfidence()const
 void TagPhotoRequest::setConfidence(const std::vector<float>& confidence)
 {
 	confidence_ = confidence;
-	for(int i = 0; i!= confidence.size(); i++)
-		setCoreParameter("Confidence."+ std::to_string(i), std::to_string(confidence.at(i)));
+	for(int dep1 = 0; dep1!= confidence.size(); dep1++) {
+		setParameter("Confidence."+ std::to_string(dep1), std::to_string(confidence.at(dep1)));
+	}
 }
 
 std::string TagPhotoRequest::getStoreName()const
@@ -56,7 +59,7 @@ std::string TagPhotoRequest::getStoreName()const
 void TagPhotoRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long TagPhotoRequest::getPhotoId()const
@@ -67,7 +70,7 @@ long TagPhotoRequest::getPhotoId()const
 void TagPhotoRequest::setPhotoId(long photoId)
 {
 	photoId_ = photoId;
-	setCoreParameter("PhotoId", std::to_string(photoId));
+	setParameter("PhotoId", std::to_string(photoId));
 }
 
 std::vector<std::string> TagPhotoRequest::getTagKey()const
@@ -78,7 +81,8 @@ std::vector<std::string> TagPhotoRequest::getTagKey()const
 void TagPhotoRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

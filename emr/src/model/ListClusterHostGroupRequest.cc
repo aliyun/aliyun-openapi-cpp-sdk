@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListClusterHostGroupRequest;
 
 ListClusterHostGroupRequest::ListClusterHostGroupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListClusterHostGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListClusterHostGroupRequest::~ListClusterHostGroupRequest()
 {}
@@ -33,7 +35,7 @@ long ListClusterHostGroupRequest::getResourceOwnerId()const
 void ListClusterHostGroupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::vector<std::string> ListClusterHostGroupRequest::getStatusList()const
@@ -44,8 +46,9 @@ std::vector<std::string> ListClusterHostGroupRequest::getStatusList()const
 void ListClusterHostGroupRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 std::string ListClusterHostGroupRequest::getClusterId()const
@@ -56,7 +59,7 @@ std::string ListClusterHostGroupRequest::getClusterId()const
 void ListClusterHostGroupRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListClusterHostGroupRequest::getHostGroupName()const
@@ -67,7 +70,7 @@ std::string ListClusterHostGroupRequest::getHostGroupName()const
 void ListClusterHostGroupRequest::setHostGroupName(const std::string& hostGroupName)
 {
 	hostGroupName_ = hostGroupName;
-	setCoreParameter("HostGroupName", hostGroupName);
+	setParameter("HostGroupName", hostGroupName);
 }
 
 int ListClusterHostGroupRequest::getPageNumber()const
@@ -78,7 +81,7 @@ int ListClusterHostGroupRequest::getPageNumber()const
 void ListClusterHostGroupRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListClusterHostGroupRequest::getAccessKeyId()const
@@ -89,7 +92,7 @@ std::string ListClusterHostGroupRequest::getAccessKeyId()const
 void ListClusterHostGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListClusterHostGroupRequest::getRegionId()const
@@ -100,7 +103,7 @@ std::string ListClusterHostGroupRequest::getRegionId()const
 void ListClusterHostGroupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListClusterHostGroupRequest::getHostGroupId()const
@@ -111,7 +114,7 @@ std::string ListClusterHostGroupRequest::getHostGroupId()const
 void ListClusterHostGroupRequest::setHostGroupId(const std::string& hostGroupId)
 {
 	hostGroupId_ = hostGroupId;
-	setCoreParameter("HostGroupId", hostGroupId);
+	setParameter("HostGroupId", hostGroupId);
 }
 
 int ListClusterHostGroupRequest::getPageSize()const
@@ -122,7 +125,7 @@ int ListClusterHostGroupRequest::getPageSize()const
 void ListClusterHostGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListClusterHostGroupRequest::getHostGroupType()const
@@ -133,6 +136,6 @@ std::string ListClusterHostGroupRequest::getHostGroupType()const
 void ListClusterHostGroupRequest::setHostGroupType(const std::string& hostGroupType)
 {
 	hostGroupType_ = hostGroupType;
-	setCoreParameter("HostGroupType", hostGroupType);
+	setParameter("HostGroupType", hostGroupType);
 }
 

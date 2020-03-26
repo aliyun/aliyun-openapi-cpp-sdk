@@ -20,10 +20,24 @@ using AlibabaCloud::CS::Model::DeleteClusterNodesRequest;
 
 DeleteClusterNodesRequest::DeleteClusterNodesRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]/nodes");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteClusterNodesRequest::~DeleteClusterNodesRequest()
 {}
+
+std::string DeleteClusterNodesRequest::getRelease_node()const
+{
+	return release_node_;
+}
+
+void DeleteClusterNodesRequest::setRelease_node(const std::string& release_node)
+{
+	release_node_ = release_node;
+	setBodyParameter("Release_node", release_node);
+}
 
 std::string DeleteClusterNodesRequest::getClusterId()const
 {
@@ -33,6 +47,6 @@ std::string DeleteClusterNodesRequest::getClusterId()const
 void DeleteClusterNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

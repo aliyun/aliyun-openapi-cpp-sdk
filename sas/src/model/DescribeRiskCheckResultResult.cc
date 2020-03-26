@@ -65,6 +65,8 @@ void DescribeRiskCheckResultResult::parse(const std::string &payload)
 			listObject.type = valueListRiskCheckResultForDisplay["Type"].asString();
 		if(!valueListRiskCheckResultForDisplay["StartStatus"].isNull())
 			listObject.startStatus = valueListRiskCheckResultForDisplay["StartStatus"].asString();
+		if(!valueListRiskCheckResultForDisplay["RepairStatus"].isNull())
+			listObject.repairStatus = valueListRiskCheckResultForDisplay["RepairStatus"].asString();
 		if(!valueListRiskCheckResultForDisplay["RiskAssertType"].isNull())
 			listObject.riskAssertType = valueListRiskCheckResultForDisplay["RiskAssertType"].asString();
 		auto allRiskItemResourcesNode = allListNode["RiskItemResources"]["RiskItemResource"];

@@ -22,7 +22,7 @@ DeleteTaskRequest::DeleteTaskRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/tasks/[region]/[task_name]");
-	setMethod(HttpRequest::Method::DELETE);
+	setMethod(HttpRequest::Method::Delete);
 }
 
 DeleteTaskRequest::~DeleteTaskRequest()

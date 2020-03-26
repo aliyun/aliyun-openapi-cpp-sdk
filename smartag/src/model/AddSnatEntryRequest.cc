@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AddSnatEntryRequest;
 
 AddSnatEntryRequest::AddSnatEntryRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AddSnatEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddSnatEntryRequest::~AddSnatEntryRequest()
 {}
@@ -33,7 +35,7 @@ long AddSnatEntryRequest::getResourceOwnerId()const
 void AddSnatEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddSnatEntryRequest::getSnatIp()const
@@ -44,7 +46,7 @@ std::string AddSnatEntryRequest::getSnatIp()const
 void AddSnatEntryRequest::setSnatIp(const std::string& snatIp)
 {
 	snatIp_ = snatIp;
-	setCoreParameter("SnatIp", snatIp);
+	setParameter("SnatIp", snatIp);
 }
 
 std::string AddSnatEntryRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AddSnatEntryRequest::getRegionId()const
 void AddSnatEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddSnatEntryRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddSnatEntryRequest::getResourceOwnerAccount()const
 void AddSnatEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddSnatEntryRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddSnatEntryRequest::getOwnerAccount()const
 void AddSnatEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddSnatEntryRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddSnatEntryRequest::getOwnerId()const
 void AddSnatEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddSnatEntryRequest::getCidrBlock()const
@@ -99,7 +101,7 @@ std::string AddSnatEntryRequest::getCidrBlock()const
 void AddSnatEntryRequest::setCidrBlock(const std::string& cidrBlock)
 {
 	cidrBlock_ = cidrBlock;
-	setCoreParameter("CidrBlock", cidrBlock);
+	setParameter("CidrBlock", cidrBlock);
 }
 
 std::string AddSnatEntryRequest::getSmartAGId()const
@@ -110,6 +112,6 @@ std::string AddSnatEntryRequest::getSmartAGId()const
 void AddSnatEntryRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

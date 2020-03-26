@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListRecordingsByContactIdRequest;
 
 ListRecordingsByContactIdRequest::ListRecordingsByContactIdRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListRecordingsByContactId")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRecordingsByContactIdRequest::~ListRecordingsByContactIdRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRecordingsByContactIdRequest::getInstanceId()const
 void ListRecordingsByContactIdRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListRecordingsByContactIdRequest::getContactId()const
@@ -44,7 +46,7 @@ std::string ListRecordingsByContactIdRequest::getContactId()const
 void ListRecordingsByContactIdRequest::setContactId(const std::string& contactId)
 {
 	contactId_ = contactId;
-	setCoreParameter("ContactId", contactId);
+	setParameter("ContactId", contactId);
 }
 
 std::string ListRecordingsByContactIdRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ListRecordingsByContactIdRequest::getAccessKeyId()const
 void ListRecordingsByContactIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

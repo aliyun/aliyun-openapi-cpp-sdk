@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchMediaWorkflowRequest;
 
 SearchMediaWorkflowRequest::SearchMediaWorkflowRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchMediaWorkflow")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchMediaWorkflowRequest::~SearchMediaWorkflowRequest()
 {}
@@ -33,7 +35,7 @@ long SearchMediaWorkflowRequest::getResourceOwnerId()const
 void SearchMediaWorkflowRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long SearchMediaWorkflowRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long SearchMediaWorkflowRequest::getPageNumber()const
 void SearchMediaWorkflowRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string SearchMediaWorkflowRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SearchMediaWorkflowRequest::getAccessKeyId()const
 void SearchMediaWorkflowRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SearchMediaWorkflowRequest::getPageSize()const
@@ -66,7 +68,7 @@ long SearchMediaWorkflowRequest::getPageSize()const
 void SearchMediaWorkflowRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchMediaWorkflowRequest::getStateList()const
@@ -77,7 +79,7 @@ std::string SearchMediaWorkflowRequest::getStateList()const
 void SearchMediaWorkflowRequest::setStateList(const std::string& stateList)
 {
 	stateList_ = stateList;
-	setCoreParameter("StateList", stateList);
+	setParameter("StateList", stateList);
 }
 
 std::string SearchMediaWorkflowRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SearchMediaWorkflowRequest::getResourceOwnerAccount()const
 void SearchMediaWorkflowRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchMediaWorkflowRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SearchMediaWorkflowRequest::getOwnerAccount()const
 void SearchMediaWorkflowRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SearchMediaWorkflowRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long SearchMediaWorkflowRequest::getOwnerId()const
 void SearchMediaWorkflowRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

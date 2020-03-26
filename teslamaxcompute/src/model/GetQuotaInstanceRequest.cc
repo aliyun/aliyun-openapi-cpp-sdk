@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetQuotaInstanceRequest;
 
 GetQuotaInstanceRequest::GetQuotaInstanceRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetQuotaInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetQuotaInstanceRequest::~GetQuotaInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetQuotaInstanceRequest::getCluster()const
 void GetQuotaInstanceRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setParameter("Cluster", cluster);
 }
 
 int GetQuotaInstanceRequest::getPageSize()const
@@ -44,7 +46,7 @@ int GetQuotaInstanceRequest::getPageSize()const
 void GetQuotaInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetQuotaInstanceRequest::getQuotaId()const
@@ -55,7 +57,7 @@ std::string GetQuotaInstanceRequest::getQuotaId()const
 void GetQuotaInstanceRequest::setQuotaId(const std::string& quotaId)
 {
 	quotaId_ = quotaId;
-	setCoreParameter("QuotaId", quotaId);
+	setParameter("QuotaId", quotaId);
 }
 
 int GetQuotaInstanceRequest::getPageNum()const
@@ -66,7 +68,7 @@ int GetQuotaInstanceRequest::getPageNum()const
 void GetQuotaInstanceRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string GetQuotaInstanceRequest::getRegion()const
@@ -77,7 +79,7 @@ std::string GetQuotaInstanceRequest::getRegion()const
 void GetQuotaInstanceRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetQuotaInstanceRequest::getQuotaName()const
@@ -88,7 +90,7 @@ std::string GetQuotaInstanceRequest::getQuotaName()const
 void GetQuotaInstanceRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", quotaName);
+	setParameter("QuotaName", quotaName);
 }
 
 std::string GetQuotaInstanceRequest::getStatus()const
@@ -99,6 +101,6 @@ std::string GetQuotaInstanceRequest::getStatus()const
 void GetQuotaInstanceRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

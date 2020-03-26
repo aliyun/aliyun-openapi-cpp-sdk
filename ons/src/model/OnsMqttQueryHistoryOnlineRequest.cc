@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsMqttQueryHistoryOnlineRequest;
 OnsMqttQueryHistoryOnlineRequest::OnsMqttQueryHistoryOnlineRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsMqttQueryHistoryOnline")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsMqttQueryHistoryOnlineRequest::~OnsMqttQueryHistoryOnlineRequest()

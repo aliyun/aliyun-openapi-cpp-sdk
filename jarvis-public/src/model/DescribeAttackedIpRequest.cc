@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis_public::Model::DescribeAttackedIpRequest;
 
 DescribeAttackedIpRequest::DescribeAttackedIpRequest() :
 	RpcServiceRequest("jarvis-public", "2018-06-21", "DescribeAttackedIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAttackedIpRequest::~DescribeAttackedIpRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeAttackedIpRequest::getStartTime()const
 void DescribeAttackedIpRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string DescribeAttackedIpRequest::getProductType()const
@@ -44,7 +46,7 @@ std::string DescribeAttackedIpRequest::getProductType()const
 void DescribeAttackedIpRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 std::string DescribeAttackedIpRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeAttackedIpRequest::getSourceIp()const
 void DescribeAttackedIpRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeAttackedIpRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeAttackedIpRequest::getPageSize()const
 void DescribeAttackedIpRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeAttackedIpRequest::getLang()const
@@ -77,7 +79,7 @@ std::string DescribeAttackedIpRequest::getLang()const
 void DescribeAttackedIpRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeAttackedIpRequest::getServerIpList()const
@@ -88,7 +90,7 @@ std::string DescribeAttackedIpRequest::getServerIpList()const
 void DescribeAttackedIpRequest::setServerIpList(const std::string& serverIpList)
 {
 	serverIpList_ = serverIpList;
-	setCoreParameter("ServerIpList", serverIpList);
+	setParameter("ServerIpList", serverIpList);
 }
 
 int DescribeAttackedIpRequest::getEndTime()const
@@ -99,7 +101,7 @@ int DescribeAttackedIpRequest::getEndTime()const
 void DescribeAttackedIpRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int DescribeAttackedIpRequest::getCurrentPage()const
@@ -110,7 +112,7 @@ int DescribeAttackedIpRequest::getCurrentPage()const
 void DescribeAttackedIpRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeAttackedIpRequest::getRegion()const
@@ -121,6 +123,6 @@ std::string DescribeAttackedIpRequest::getRegion()const
 void DescribeAttackedIpRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

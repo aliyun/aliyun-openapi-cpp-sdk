@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::QueryDeviceGroupTagListRequest;
 
 QueryDeviceGroupTagListRequest::QueryDeviceGroupTagListRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "QueryDeviceGroupTagList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDeviceGroupTagListRequest::~QueryDeviceGroupTagListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryDeviceGroupTagListRequest::getGroupId()const
 void QueryDeviceGroupTagListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
 void QueryDeviceGroupTagListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryDeviceGroupTagListRequest::getIotInstanceId()const
@@ -55,6 +57,6 @@ std::string QueryDeviceGroupTagListRequest::getIotInstanceId()const
 void QueryDeviceGroupTagListRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

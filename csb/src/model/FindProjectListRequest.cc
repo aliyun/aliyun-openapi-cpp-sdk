@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindProjectListRequest;
 
 FindProjectListRequest::FindProjectListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindProjectList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindProjectListRequest::~FindProjectListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindProjectListRequest::getProjectName()const
 void FindProjectListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long FindProjectListRequest::getCsbId()const
@@ -44,7 +46,7 @@ long FindProjectListRequest::getCsbId()const
 void FindProjectListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindProjectListRequest::getPageNum()const
@@ -55,6 +57,6 @@ int FindProjectListRequest::getPageNum()const
 void FindProjectListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::DescribeHeatMapRequest;
 DescribeHeatMapRequest::DescribeHeatMapRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "DescribeHeatMap")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeHeatMapRequest::~DescribeHeatMapRequest()

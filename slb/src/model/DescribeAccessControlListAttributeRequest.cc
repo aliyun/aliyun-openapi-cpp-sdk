@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeAccessControlListAttributeRequest;
 
 DescribeAccessControlListAttributeRequest::DescribeAccessControlListAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeAccessControlListAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeAccessControlListAttributeRequest::~DescribeAccessControlListAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeAccessControlListAttributeRequest::getAccess_key_id()const
 void DescribeAccessControlListAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeAccessControlListAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeAccessControlListAttributeRequest::getResourceOwnerId()const
 void DescribeAccessControlListAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeAccessControlListAttributeRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string DescribeAccessControlListAttributeRequest::getAccessKeyId()const
 void DescribeAccessControlListAttributeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeAccessControlListAttributeRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeAccessControlListAttributeRequest::getRegionId()const
 void DescribeAccessControlListAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeAccessControlListAttributeRequest::getAclId()const
@@ -77,7 +79,7 @@ std::string DescribeAccessControlListAttributeRequest::getAclId()const
 void DescribeAccessControlListAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DescribeAccessControlListAttributeRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeAccessControlListAttributeRequest::getResourceOwnerAccount()
 void DescribeAccessControlListAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeAccessControlListAttributeRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeAccessControlListAttributeRequest::getOwnerAccount()const
 void DescribeAccessControlListAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeAccessControlListAttributeRequest::getAclEntryComment()const
@@ -110,7 +112,7 @@ std::string DescribeAccessControlListAttributeRequest::getAclEntryComment()const
 void DescribeAccessControlListAttributeRequest::setAclEntryComment(const std::string& aclEntryComment)
 {
 	aclEntryComment_ = aclEntryComment;
-	setCoreParameter("AclEntryComment", aclEntryComment);
+	setParameter("AclEntryComment", aclEntryComment);
 }
 
 long DescribeAccessControlListAttributeRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeAccessControlListAttributeRequest::getOwnerId()const
 void DescribeAccessControlListAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeAccessControlListAttributeRequest::getTags()const
@@ -132,6 +134,6 @@ std::string DescribeAccessControlListAttributeRequest::getTags()const
 void DescribeAccessControlListAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

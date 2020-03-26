@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::BindMFADeviceRequest;
 
 BindMFADeviceRequest::BindMFADeviceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "BindMFADevice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindMFADeviceRequest::~BindMFADeviceRequest()
 {}
@@ -33,7 +35,7 @@ std::string BindMFADeviceRequest::getSerialNumber()const
 void BindMFADeviceRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setParameter("SerialNumber", serialNumber);
 }
 
 std::string BindMFADeviceRequest::getAuthenticationCode2()const
@@ -44,7 +46,7 @@ std::string BindMFADeviceRequest::getAuthenticationCode2()const
 void BindMFADeviceRequest::setAuthenticationCode2(const std::string& authenticationCode2)
 {
 	authenticationCode2_ = authenticationCode2;
-	setCoreParameter("AuthenticationCode2", authenticationCode2);
+	setParameter("AuthenticationCode2", authenticationCode2);
 }
 
 std::string BindMFADeviceRequest::getAuthenticationCode1()const
@@ -55,7 +57,7 @@ std::string BindMFADeviceRequest::getAuthenticationCode1()const
 void BindMFADeviceRequest::setAuthenticationCode1(const std::string& authenticationCode1)
 {
 	authenticationCode1_ = authenticationCode1;
-	setCoreParameter("AuthenticationCode1", authenticationCode1);
+	setParameter("AuthenticationCode1", authenticationCode1);
 }
 
 std::string BindMFADeviceRequest::getUserName()const
@@ -66,6 +68,6 @@ std::string BindMFADeviceRequest::getUserName()const
 void BindMFADeviceRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

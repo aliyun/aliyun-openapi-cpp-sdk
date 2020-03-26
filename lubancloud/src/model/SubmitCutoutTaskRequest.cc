@@ -20,7 +20,9 @@ using AlibabaCloud::Lubancloud::Model::SubmitCutoutTaskRequest;
 
 SubmitCutoutTaskRequest::SubmitCutoutTaskRequest() :
 	RpcServiceRequest("lubancloud", "2018-05-09", "SubmitCutoutTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitCutoutTaskRequest::~SubmitCutoutTaskRequest()
 {}
@@ -33,7 +35,8 @@ std::vector<std::string> SubmitCutoutTaskRequest::getPictureUrl()const
 void SubmitCutoutTaskRequest::setPictureUrl(const std::vector<std::string>& pictureUrl)
 {
 	pictureUrl_ = pictureUrl;
-	for(int i = 0; i!= pictureUrl.size(); i++)
-		setCoreParameter("PictureUrl."+ std::to_string(i), pictureUrl.at(i));
+	for(int dep1 = 0; dep1!= pictureUrl.size(); dep1++) {
+		setParameter("PictureUrl."+ std::to_string(dep1), pictureUrl.at(dep1));
+	}
 }
 

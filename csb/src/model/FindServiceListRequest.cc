@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindServiceListRequest;
 
 FindServiceListRequest::FindServiceListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindServiceList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindServiceListRequest::~FindServiceListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindServiceListRequest::getProjectName()const
 void FindServiceListRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 bool FindServiceListRequest::getShowDelService()const
@@ -44,7 +46,7 @@ bool FindServiceListRequest::getShowDelService()const
 void FindServiceListRequest::setShowDelService(bool showDelService)
 {
 	showDelService_ = showDelService;
-	setCoreParameter("ShowDelService", showDelService ? "true" : "false");
+	setParameter("ShowDelService", showDelService ? "true" : "false");
 }
 
 long FindServiceListRequest::getCsbId()const
@@ -55,7 +57,7 @@ long FindServiceListRequest::getCsbId()const
 void FindServiceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindServiceListRequest::getPageNum()const
@@ -66,7 +68,7 @@ int FindServiceListRequest::getPageNum()const
 void FindServiceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int FindServiceListRequest::getCasShowType()const
@@ -77,7 +79,7 @@ int FindServiceListRequest::getCasShowType()const
 void FindServiceListRequest::setCasShowType(int casShowType)
 {
 	casShowType_ = casShowType;
-	setCoreParameter("CasShowType", std::to_string(casShowType));
+	setParameter("CasShowType", std::to_string(casShowType));
 }
 
 std::string FindServiceListRequest::getAlias()const
@@ -88,7 +90,7 @@ std::string FindServiceListRequest::getAlias()const
 void FindServiceListRequest::setAlias(const std::string& alias)
 {
 	alias_ = alias;
-	setCoreParameter("Alias", alias);
+	setParameter("Alias", alias);
 }
 
 std::string FindServiceListRequest::getServiceName()const
@@ -99,6 +101,6 @@ std::string FindServiceListRequest::getServiceName()const
 void FindServiceListRequest::setServiceName(const std::string& serviceName)
 {
 	serviceName_ = serviceName;
-	setCoreParameter("ServiceName", serviceName);
+	setParameter("ServiceName", serviceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::FindApRequest;
 
 FindApRequest::FindApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "FindAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FindApRequest::~FindApRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindApRequest::getAccessKeyId()const
 void FindApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long FindApRequest::getId()const
@@ -44,6 +46,6 @@ long FindApRequest::getId()const
 void FindApRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

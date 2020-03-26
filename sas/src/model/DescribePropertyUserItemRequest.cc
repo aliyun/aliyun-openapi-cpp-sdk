@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribePropertyUserItemRequest;
 
 DescribePropertyUserItemRequest::DescribePropertyUserItemRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribePropertyUserItem")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribePropertyUserItemRequest::~DescribePropertyUserItemRequest()
 {}
@@ -33,7 +35,7 @@ int DescribePropertyUserItemRequest::getCurrentPage()const
 void DescribePropertyUserItemRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribePropertyUserItemRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribePropertyUserItemRequest::getSourceIp()const
 void DescribePropertyUserItemRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribePropertyUserItemRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribePropertyUserItemRequest::getPageSize()const
 void DescribePropertyUserItemRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribePropertyUserItemRequest::getUser()const
@@ -66,7 +68,7 @@ std::string DescribePropertyUserItemRequest::getUser()const
 void DescribePropertyUserItemRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 
 bool DescribePropertyUserItemRequest::getForceFlush()const
@@ -77,6 +79,6 @@ bool DescribePropertyUserItemRequest::getForceFlush()const
 void DescribePropertyUserItemRequest::setForceFlush(bool forceFlush)
 {
 	forceFlush_ = forceFlush;
-	setCoreParameter("ForceFlush", forceFlush ? "true" : "false");
+	setParameter("ForceFlush", forceFlush ? "true" : "false");
 }
 

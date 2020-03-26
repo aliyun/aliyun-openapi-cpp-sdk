@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainTrafficDataRequest;
 
 DescribeLiveDomainTrafficDataRequest::DescribeLiveDomainTrafficDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainTrafficData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainTrafficDataRequest::~DescribeLiveDomainTrafficDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getLocationNameEn()const
 void DescribeLiveDomainTrafficDataRequest::setLocationNameEn(const std::string& locationNameEn)
 {
 	locationNameEn_ = locationNameEn;
-	setCoreParameter("LocationNameEn", locationNameEn);
+	setParameter("LocationNameEn", locationNameEn);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getStartTime()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getStartTime()const
 void DescribeLiveDomainTrafficDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getIspNameEn()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getIspNameEn()const
 void DescribeLiveDomainTrafficDataRequest::setIspNameEn(const std::string& ispNameEn)
 {
 	ispNameEn_ = ispNameEn;
-	setCoreParameter("IspNameEn", ispNameEn);
+	setParameter("IspNameEn", ispNameEn);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getDomainName()const
 void DescribeLiveDomainTrafficDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string DescribeLiveDomainTrafficDataRequest::getEndTime()const
 void DescribeLiveDomainTrafficDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainTrafficDataRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeLiveDomainTrafficDataRequest::getOwnerId()const
 void DescribeLiveDomainTrafficDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
@@ -99,6 +101,6 @@ std::string DescribeLiveDomainTrafficDataRequest::getInterval()const
 void DescribeLiveDomainTrafficDataRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

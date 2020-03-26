@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaStream::Model::BatchGetJobMetricInfoRequest;
 
 BatchGetJobMetricInfoRequest::BatchGetJobMetricInfoRequest() :
 	RpcServiceRequest("teslastream", "2018-01-15", "BatchGetJobMetricInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 BatchGetJobMetricInfoRequest::~BatchGetJobMetricInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string BatchGetJobMetricInfoRequest::getJobInfos()const
 void BatchGetJobMetricInfoRequest::setJobInfos(const std::string& jobInfos)
 {
 	jobInfos_ = jobInfos;
-	setCoreParameter("JobInfos", jobInfos);
+	setParameter("JobInfos", jobInfos);
 }
 

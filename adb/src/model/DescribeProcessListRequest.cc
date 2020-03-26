@@ -35,7 +35,7 @@ long DescribeProcessListRequest::getResourceOwnerId()const
 void DescribeProcessListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeProcessListRequest::getPageNumber()const
@@ -46,7 +46,7 @@ int DescribeProcessListRequest::getPageNumber()const
 void DescribeProcessListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeProcessListRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeProcessListRequest::getAccessKeyId()const
 void DescribeProcessListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int DescribeProcessListRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeProcessListRequest::getPageSize()const
 void DescribeProcessListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 bool DescribeProcessListRequest::getShowFull()const
@@ -79,7 +79,7 @@ bool DescribeProcessListRequest::getShowFull()const
 void DescribeProcessListRequest::setShowFull(bool showFull)
 {
 	showFull_ = showFull;
-	setCoreParameter("ShowFull", showFull ? "true" : "false");
+	setParameter("ShowFull", showFull ? "true" : "false");
 }
 
 int DescribeProcessListRequest::getRunningTime()const
@@ -90,7 +90,7 @@ int DescribeProcessListRequest::getRunningTime()const
 void DescribeProcessListRequest::setRunningTime(int runningTime)
 {
 	runningTime_ = runningTime;
-	setCoreParameter("RunningTime", std::to_string(runningTime));
+	setParameter("RunningTime", std::to_string(runningTime));
 }
 
 std::string DescribeProcessListRequest::getKeyword()const
@@ -101,7 +101,7 @@ std::string DescribeProcessListRequest::getKeyword()const
 void DescribeProcessListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeProcessListRequest::getOrder()const
@@ -112,7 +112,7 @@ std::string DescribeProcessListRequest::getOrder()const
 void DescribeProcessListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeProcessListRequest::getResourceOwnerAccount()const
@@ -123,7 +123,7 @@ std::string DescribeProcessListRequest::getResourceOwnerAccount()const
 void DescribeProcessListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeProcessListRequest::getDBClusterId()const
@@ -134,7 +134,7 @@ std::string DescribeProcessListRequest::getDBClusterId()const
 void DescribeProcessListRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeProcessListRequest::getOwnerAccount()const
@@ -145,7 +145,7 @@ std::string DescribeProcessListRequest::getOwnerAccount()const
 void DescribeProcessListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeProcessListRequest::getOwnerId()const
@@ -156,7 +156,7 @@ long DescribeProcessListRequest::getOwnerId()const
 void DescribeProcessListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeProcessListRequest::getUser()const
@@ -167,6 +167,6 @@ std::string DescribeProcessListRequest::getUser()const
 void DescribeProcessListRequest::setUser(const std::string& user)
 {
 	user_ = user;
-	setCoreParameter("User", user);
+	setParameter("User", user);
 }
 

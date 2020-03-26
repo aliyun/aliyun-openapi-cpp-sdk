@@ -80,6 +80,7 @@ namespace AlibabaCloud
 				std::string getExtendJson()const;
 				std::string getSupplierName()const;
 				std::string getComponentJson()const;
+				bool getIsTrial()const;
 				std::string getProductSkuCode()const;
 				long getCreatedOn()const;
 				std::string getHostJson()const;
@@ -102,6 +103,7 @@ namespace AlibabaCloud
 				std::string extendJson_;
 				std::string supplierName_;
 				std::string componentJson_;
+				bool isTrial_;
 				std::string productSkuCode_;
 				long createdOn_;
 				std::string hostJson_;

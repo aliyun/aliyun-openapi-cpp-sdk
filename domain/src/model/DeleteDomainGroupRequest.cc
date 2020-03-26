@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::DeleteDomainGroupRequest;
 
 DeleteDomainGroupRequest::DeleteDomainGroupRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "DeleteDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDomainGroupRequest::~DeleteDomainGroupRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteDomainGroupRequest::getDomainGroupId()const
 void DeleteDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 
 std::string DeleteDomainGroupRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string DeleteDomainGroupRequest::getUserClientIp()const
 void DeleteDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string DeleteDomainGroupRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DeleteDomainGroupRequest::getLang()const
 void DeleteDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

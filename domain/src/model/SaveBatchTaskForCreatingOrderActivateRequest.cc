@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveBatchTaskForCreatingOrderActivateRequest;
 
 SaveBatchTaskForCreatingOrderActivateRequest::SaveBatchTaskForCreatingOrderActivateRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveBatchTaskForCreatingOrderActivateRequest::~SaveBatchTaskForCreatingOrderActivateRequest()
 {}
@@ -33,36 +35,35 @@ std::vector<SaveBatchTaskForCreatingOrderActivateRequest::OrderActivateParam> Sa
 void SaveBatchTaskForCreatingOrderActivateRequest::setOrderActivateParam(const std::vector<OrderActivateParam>& orderActivateParam)
 {
 	orderActivateParam_ = orderActivateParam;
-	int i = 0;
-	for(int i = 0; i!= orderActivateParam.size(); i++)	{
-		auto obj = orderActivateParam.at(i);
-		std::string str ="OrderActivateParam."+ std::to_string(i);
-		setCoreParameter(str + ".Country", obj.country);
-		setCoreParameter(str + ".SubscriptionDuration", std::to_string(obj.subscriptionDuration));
-		setCoreParameter(str + ".PermitPremiumActivation", obj.permitPremiumActivation ? "true" : "false");
-		setCoreParameter(str + ".City", obj.city);
-		setCoreParameter(str + ".Dns2", obj.dns2);
-		setCoreParameter(str + ".Dns1", obj.dns1);
-		setCoreParameter(str + ".RegistrantProfileId", std::to_string(obj.registrantProfileId));
-		setCoreParameter(str + ".AliyunDns", obj.aliyunDns ? "true" : "false");
-		setCoreParameter(str + ".ZhCity", obj.zhCity);
-		setCoreParameter(str + ".TelExt", obj.telExt);
-		setCoreParameter(str + ".ZhRegistrantName", obj.zhRegistrantName);
-		setCoreParameter(str + ".Province", obj.province);
-		setCoreParameter(str + ".PostalCode", obj.postalCode);
-		setCoreParameter(str + ".Email", obj.email);
-		setCoreParameter(str + ".ZhRegistrantOrganization", obj.zhRegistrantOrganization);
-		setCoreParameter(str + ".Address", obj.address);
-		setCoreParameter(str + ".TelArea", obj.telArea);
-		setCoreParameter(str + ".DomainName", obj.domainName);
-		setCoreParameter(str + ".ZhAddress", obj.zhAddress);
-		setCoreParameter(str + ".RegistrantType", obj.registrantType);
-		setCoreParameter(str + ".Telephone", obj.telephone);
-		setCoreParameter(str + ".TrademarkDomainActivation", obj.trademarkDomainActivation ? "true" : "false");
-		setCoreParameter(str + ".ZhProvince", obj.zhProvince);
-		setCoreParameter(str + ".RegistrantOrganization", obj.registrantOrganization);
-		setCoreParameter(str + ".EnableDomainProxy", obj.enableDomainProxy ? "true" : "false");
-		setCoreParameter(str + ".RegistrantName", obj.registrantName);
+	for(int dep1 = 0; dep1!= orderActivateParam.size(); dep1++) {
+		auto orderActivateParamObj = orderActivateParam.at(dep1);
+		std::string orderActivateParamObjStr = "OrderActivateParam." + std::to_string(dep1 + 1);
+		setParameter(orderActivateParamObjStr + ".Country", orderActivateParamObj.country);
+		setParameter(orderActivateParamObjStr + ".SubscriptionDuration", std::to_string(orderActivateParamObj.subscriptionDuration));
+		setParameter(orderActivateParamObjStr + ".PermitPremiumActivation", orderActivateParamObj.permitPremiumActivation ? "true" : "false");
+		setParameter(orderActivateParamObjStr + ".City", orderActivateParamObj.city);
+		setParameter(orderActivateParamObjStr + ".Dns2", orderActivateParamObj.dns2);
+		setParameter(orderActivateParamObjStr + ".Dns1", orderActivateParamObj.dns1);
+		setParameter(orderActivateParamObjStr + ".RegistrantProfileId", std::to_string(orderActivateParamObj.registrantProfileId));
+		setParameter(orderActivateParamObjStr + ".AliyunDns", orderActivateParamObj.aliyunDns ? "true" : "false");
+		setParameter(orderActivateParamObjStr + ".ZhCity", orderActivateParamObj.zhCity);
+		setParameter(orderActivateParamObjStr + ".TelExt", orderActivateParamObj.telExt);
+		setParameter(orderActivateParamObjStr + ".ZhRegistrantName", orderActivateParamObj.zhRegistrantName);
+		setParameter(orderActivateParamObjStr + ".Province", orderActivateParamObj.province);
+		setParameter(orderActivateParamObjStr + ".PostalCode", orderActivateParamObj.postalCode);
+		setParameter(orderActivateParamObjStr + ".Email", orderActivateParamObj.email);
+		setParameter(orderActivateParamObjStr + ".ZhRegistrantOrganization", orderActivateParamObj.zhRegistrantOrganization);
+		setParameter(orderActivateParamObjStr + ".Address", orderActivateParamObj.address);
+		setParameter(orderActivateParamObjStr + ".TelArea", orderActivateParamObj.telArea);
+		setParameter(orderActivateParamObjStr + ".DomainName", orderActivateParamObj.domainName);
+		setParameter(orderActivateParamObjStr + ".ZhAddress", orderActivateParamObj.zhAddress);
+		setParameter(orderActivateParamObjStr + ".RegistrantType", orderActivateParamObj.registrantType);
+		setParameter(orderActivateParamObjStr + ".Telephone", orderActivateParamObj.telephone);
+		setParameter(orderActivateParamObjStr + ".TrademarkDomainActivation", orderActivateParamObj.trademarkDomainActivation ? "true" : "false");
+		setParameter(orderActivateParamObjStr + ".ZhProvince", orderActivateParamObj.zhProvince);
+		setParameter(orderActivateParamObjStr + ".RegistrantOrganization", orderActivateParamObj.registrantOrganization);
+		setParameter(orderActivateParamObjStr + ".EnableDomainProxy", orderActivateParamObj.enableDomainProxy ? "true" : "false");
+		setParameter(orderActivateParamObjStr + ".RegistrantName", orderActivateParamObj.registrantName);
 	}
 }
 
@@ -74,7 +75,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getCouponNo()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setCouponNo(const std::string& couponNo)
 {
 	couponNo_ = couponNo;
-	setCoreParameter("CouponNo", couponNo);
+	setParameter("CouponNo", couponNo);
 }
 
 bool SaveBatchTaskForCreatingOrderActivateRequest::getUseCoupon()const
@@ -85,7 +86,7 @@ bool SaveBatchTaskForCreatingOrderActivateRequest::getUseCoupon()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUseCoupon(bool useCoupon)
 {
 	useCoupon_ = useCoupon;
-	setCoreParameter("UseCoupon", useCoupon ? "true" : "false");
+	setParameter("UseCoupon", useCoupon ? "true" : "false");
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getPromotionNo()const
@@ -96,7 +97,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getPromotionNo()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setPromotionNo(const std::string& promotionNo)
 {
 	promotionNo_ = promotionNo;
-	setCoreParameter("PromotionNo", promotionNo);
+	setParameter("PromotionNo", promotionNo);
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
@@ -107,7 +108,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getUserClientIp()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveBatchTaskForCreatingOrderActivateRequest::getLang()const
@@ -118,7 +119,7 @@ std::string SaveBatchTaskForCreatingOrderActivateRequest::getLang()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 bool SaveBatchTaskForCreatingOrderActivateRequest::getUsePromotion()const
@@ -129,6 +130,6 @@ bool SaveBatchTaskForCreatingOrderActivateRequest::getUsePromotion()const
 void SaveBatchTaskForCreatingOrderActivateRequest::setUsePromotion(bool usePromotion)
 {
 	usePromotion_ = usePromotion;
-	setCoreParameter("UsePromotion", usePromotion ? "true" : "false");
+	setParameter("UsePromotion", usePromotion ? "true" : "false");
 }
 

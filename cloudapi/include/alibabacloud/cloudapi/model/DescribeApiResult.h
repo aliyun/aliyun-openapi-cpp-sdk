@@ -129,6 +129,7 @@ namespace AlibabaCloud
 				};
 				struct RequestParameter
 				{
+					std::string arrayItemsType;
 					std::string regularExpression;
 					std::string parameterType;
 					std::string jsonScheme;
@@ -178,6 +179,7 @@ namespace AlibabaCloud
 				std::string getMock()const;
 				std::vector<RequestParameter> getRequestParameters()const;
 				std::vector<ServiceParameterMap> getServiceParametersMap()const;
+				std::string getAppCodeAuthType()const;
 				std::string getResultBodyModel()const;
 				std::string getModifiedTime()const;
 				ServiceConfig getServiceConfig()const;
@@ -214,6 +216,7 @@ namespace AlibabaCloud
 				std::string mock_;
 				std::vector<RequestParameter> requestParameters_;
 				std::vector<ServiceParameterMap> serviceParametersMap_;
+				std::string appCodeAuthType_;
 				std::string resultBodyModel_;
 				std::string modifiedTime_;
 				ServiceConfig serviceConfig_;

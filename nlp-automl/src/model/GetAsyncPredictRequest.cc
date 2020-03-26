@@ -21,7 +21,7 @@ using AlibabaCloud::Nlp_automl::Model::GetAsyncPredictRequest;
 GetAsyncPredictRequest::GetAsyncPredictRequest() :
 	RpcServiceRequest("nlp-automl", "2019-11-11", "GetAsyncPredict")
 {
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 GetAsyncPredictRequest::~GetAsyncPredictRequest()

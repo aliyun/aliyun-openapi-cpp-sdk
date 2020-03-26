@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::SearchTraceAppByPageRequest;
 
 SearchTraceAppByPageRequest::SearchTraceAppByPageRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "SearchTraceAppByPage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchTraceAppByPageRequest::~SearchTraceAppByPageRequest()
 {}
@@ -33,7 +35,7 @@ std::string SearchTraceAppByPageRequest::getRegionId()const
 void SearchTraceAppByPageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string SearchTraceAppByPageRequest::getTraceAppName()const
@@ -44,7 +46,7 @@ std::string SearchTraceAppByPageRequest::getTraceAppName()const
 void SearchTraceAppByPageRequest::setTraceAppName(const std::string& traceAppName)
 {
 	traceAppName_ = traceAppName;
-	setCoreParameter("TraceAppName", traceAppName);
+	setParameter("TraceAppName", traceAppName);
 }
 
 int SearchTraceAppByPageRequest::getPageSize()const
@@ -55,7 +57,7 @@ int SearchTraceAppByPageRequest::getPageSize()const
 void SearchTraceAppByPageRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int SearchTraceAppByPageRequest::getPageNumber()const
@@ -66,6 +68,6 @@ int SearchTraceAppByPageRequest::getPageNumber()const
 void SearchTraceAppByPageRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

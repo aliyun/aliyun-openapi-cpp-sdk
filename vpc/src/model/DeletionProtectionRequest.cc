@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeletionProtectionRequest;
 
 DeletionProtectionRequest::DeletionProtectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeletionProtection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletionProtectionRequest::~DeletionProtectionRequest()
 {}
@@ -33,7 +35,7 @@ long DeletionProtectionRequest::getResourceOwnerId()const
 void DeletionProtectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeletionProtectionRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeletionProtectionRequest::getClientToken()const
 void DeletionProtectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 bool DeletionProtectionRequest::getProtectionEnable()const
@@ -55,7 +57,7 @@ bool DeletionProtectionRequest::getProtectionEnable()const
 void DeletionProtectionRequest::setProtectionEnable(bool protectionEnable)
 {
 	protectionEnable_ = protectionEnable;
-	setCoreParameter("ProtectionEnable", protectionEnable ? "true" : "false");
+	setParameter("ProtectionEnable", protectionEnable ? "true" : "false");
 }
 
 std::string DeletionProtectionRequest::getType()const
@@ -66,7 +68,7 @@ std::string DeletionProtectionRequest::getType()const
 void DeletionProtectionRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DeletionProtectionRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DeletionProtectionRequest::getRegionId()const
 void DeletionProtectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeletionProtectionRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeletionProtectionRequest::getResourceOwnerAccount()const
 void DeletionProtectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeletionProtectionRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeletionProtectionRequest::getOwnerId()const
 void DeletionProtectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeletionProtectionRequest::getInstanceId()const
@@ -110,6 +112,6 @@ std::string DeletionProtectionRequest::getInstanceId()const
 void DeletionProtectionRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 

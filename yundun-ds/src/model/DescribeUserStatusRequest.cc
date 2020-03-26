@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeUserStatusRequest;
 
 DescribeUserStatusRequest::DescribeUserStatusRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeUserStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserStatusRequest::~DescribeUserStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeUserStatusRequest::getSourceIp()const
 void DescribeUserStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeUserStatusRequest::getLang()const
@@ -44,6 +46,6 @@ std::string DescribeUserStatusRequest::getLang()const
 void DescribeUserStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

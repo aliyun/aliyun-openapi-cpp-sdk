@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowClusterHostRequest;
 
 ListFlowClusterHostRequest::ListFlowClusterHostRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowClusterHost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowClusterHostRequest::~ListFlowClusterHostRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListFlowClusterHostRequest::getClusterId()const
 void ListFlowClusterHostRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListFlowClusterHostRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string ListFlowClusterHostRequest::getRegionId()const
 void ListFlowClusterHostRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ListFlowClusterHostRequest::getProjectId()const
@@ -55,6 +57,6 @@ std::string ListFlowClusterHostRequest::getProjectId()const
 void ListFlowClusterHostRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

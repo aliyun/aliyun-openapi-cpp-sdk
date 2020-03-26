@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::UpdateAccessKeyRequest;
 
 UpdateAccessKeyRequest::UpdateAccessKeyRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "UpdateAccessKey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAccessKeyRequest::~UpdateAccessKeyRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateAccessKeyRequest::getUserAccessKeyId()const
 void UpdateAccessKeyRequest::setUserAccessKeyId(const std::string& userAccessKeyId)
 {
 	userAccessKeyId_ = userAccessKeyId;
-	setCoreParameter("UserAccessKeyId", userAccessKeyId);
+	setParameter("UserAccessKeyId", userAccessKeyId);
 }
 
 std::string UpdateAccessKeyRequest::getUserName()const
@@ -44,7 +46,7 @@ std::string UpdateAccessKeyRequest::getUserName()const
 void UpdateAccessKeyRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 
 std::string UpdateAccessKeyRequest::getStatus()const
@@ -55,6 +57,6 @@ std::string UpdateAccessKeyRequest::getStatus()const
 void UpdateAccessKeyRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

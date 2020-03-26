@@ -35,7 +35,7 @@ long DescribeSlowLogTrendRequest::getResourceOwnerId()const
 void DescribeSlowLogTrendRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSlowLogTrendRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeSlowLogTrendRequest::getStartTime()const
 void DescribeSlowLogTrendRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeSlowLogTrendRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string DescribeSlowLogTrendRequest::getAccessKeyId()const
 void DescribeSlowLogTrendRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeSlowLogTrendRequest::getResourceOwnerAccount()const
@@ -68,7 +68,7 @@ std::string DescribeSlowLogTrendRequest::getResourceOwnerAccount()const
 void DescribeSlowLogTrendRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSlowLogTrendRequest::getDBClusterId()const
@@ -79,7 +79,7 @@ std::string DescribeSlowLogTrendRequest::getDBClusterId()const
 void DescribeSlowLogTrendRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeSlowLogTrendRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeSlowLogTrendRequest::getOwnerAccount()const
 void DescribeSlowLogTrendRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string DescribeSlowLogTrendRequest::getEndTime()const
@@ -101,7 +101,7 @@ std::string DescribeSlowLogTrendRequest::getEndTime()const
 void DescribeSlowLogTrendRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeSlowLogTrendRequest::getOwnerId()const
@@ -112,7 +112,7 @@ long DescribeSlowLogTrendRequest::getOwnerId()const
 void DescribeSlowLogTrendRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSlowLogTrendRequest::getDBName()const
@@ -123,6 +123,6 @@ std::string DescribeSlowLogTrendRequest::getDBName()const
 void DescribeSlowLogTrendRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

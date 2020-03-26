@@ -35,7 +35,7 @@ long DescribeLoghubDetailRequest::getResourceOwnerId()const
 void DescribeLoghubDetailRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeLoghubDetailRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeLoghubDetailRequest::getAccessKeyId()const
 void DescribeLoghubDetailRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeLoghubDetailRequest::getRegionId()const
@@ -57,7 +57,7 @@ std::string DescribeLoghubDetailRequest::getRegionId()const
 void DescribeLoghubDetailRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeLoghubDetailRequest::getProjectName()const
@@ -68,7 +68,7 @@ std::string DescribeLoghubDetailRequest::getProjectName()const
 void DescribeLoghubDetailRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string DescribeLoghubDetailRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeLoghubDetailRequest::getResourceOwnerAccount()const
 void DescribeLoghubDetailRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeLoghubDetailRequest::getOwnerAccount()const
@@ -90,7 +90,7 @@ std::string DescribeLoghubDetailRequest::getOwnerAccount()const
 void DescribeLoghubDetailRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeLoghubDetailRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long DescribeLoghubDetailRequest::getOwnerId()const
 void DescribeLoghubDetailRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeLoghubDetailRequest::getExportName()const
@@ -112,6 +112,6 @@ std::string DescribeLoghubDetailRequest::getExportName()const
 void DescribeLoghubDetailRequest::setExportName(const std::string& exportName)
 {
 	exportName_ = exportName;
-	setCoreParameter("ExportName", exportName);
+	setParameter("ExportName", exportName);
 }
 

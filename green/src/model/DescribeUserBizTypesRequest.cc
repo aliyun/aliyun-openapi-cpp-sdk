@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeUserBizTypesRequest;
 
 DescribeUserBizTypesRequest::DescribeUserBizTypesRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeUserBizTypes")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeUserBizTypesRequest::~DescribeUserBizTypesRequest()
 {}
@@ -33,7 +35,7 @@ bool DescribeUserBizTypesRequest::getCustomized()const
 void DescribeUserBizTypesRequest::setCustomized(bool customized)
 {
 	customized_ = customized;
-	setCoreParameter("Customized", customized ? "true" : "false");
+	setParameter("Customized", customized ? "true" : "false");
 }
 
 std::string DescribeUserBizTypesRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeUserBizTypesRequest::getSourceIp()const
 void DescribeUserBizTypesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

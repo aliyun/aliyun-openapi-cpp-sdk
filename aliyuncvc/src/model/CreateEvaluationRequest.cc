@@ -35,7 +35,7 @@ long CreateEvaluationRequest::getCreateTime()const
 void CreateEvaluationRequest::setCreateTime(long createTime)
 {
 	createTime_ = createTime;
-	setCoreParameter("CreateTime", std::to_string(createTime));
+	setParameter("CreateTime", std::to_string(createTime));
 }
 
 std::string CreateEvaluationRequest::getMemo()const
@@ -46,7 +46,7 @@ std::string CreateEvaluationRequest::getMemo()const
 void CreateEvaluationRequest::setMemo(const std::string& memo)
 {
 	memo_ = memo;
-	setCoreParameter("Memo", memo);
+	setParameter("Memo", memo);
 }
 
 std::string CreateEvaluationRequest::getDescription()const
@@ -57,7 +57,7 @@ std::string CreateEvaluationRequest::getDescription()const
 void CreateEvaluationRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateEvaluationRequest::getMemberUUID()const
@@ -68,7 +68,7 @@ std::string CreateEvaluationRequest::getMemberUUID()const
 void CreateEvaluationRequest::setMemberUUID(const std::string& memberUUID)
 {
 	memberUUID_ = memberUUID;
-	setCoreParameter("MemberUUID", memberUUID);
+	setParameter("MemberUUID", memberUUID);
 }
 
 std::string CreateEvaluationRequest::getUserId()const
@@ -79,7 +79,7 @@ std::string CreateEvaluationRequest::getUserId()const
 void CreateEvaluationRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", userId);
+	setParameter("UserId", userId);
 }
 
 std::string CreateEvaluationRequest::getEvaluation()const
@@ -90,7 +90,7 @@ std::string CreateEvaluationRequest::getEvaluation()const
 void CreateEvaluationRequest::setEvaluation(const std::string& evaluation)
 {
 	evaluation_ = evaluation;
-	setCoreParameter("Evaluation", evaluation);
+	setParameter("Evaluation", evaluation);
 }
 
 std::string CreateEvaluationRequest::getScore()const
@@ -101,7 +101,7 @@ std::string CreateEvaluationRequest::getScore()const
 void CreateEvaluationRequest::setScore(const std::string& score)
 {
 	score_ = score;
-	setCoreParameter("Score", score);
+	setParameter("Score", score);
 }
 
 std::string CreateEvaluationRequest::getMeetingUUID()const
@@ -112,7 +112,7 @@ std::string CreateEvaluationRequest::getMeetingUUID()const
 void CreateEvaluationRequest::setMeetingUUID(const std::string& meetingUUID)
 {
 	meetingUUID_ = meetingUUID;
-	setCoreParameter("MeetingUUID", meetingUUID);
+	setParameter("MeetingUUID", meetingUUID);
 }
 
 std::string CreateEvaluationRequest::getAppId()const
@@ -123,6 +123,6 @@ std::string CreateEvaluationRequest::getAppId()const
 void CreateEvaluationRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

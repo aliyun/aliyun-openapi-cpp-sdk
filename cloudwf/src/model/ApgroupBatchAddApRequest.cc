@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ApgroupBatchAddApRequest;
 
 ApgroupBatchAddApRequest::ApgroupBatchAddApRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ApgroupBatchAddAp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApgroupBatchAddApRequest::~ApgroupBatchAddApRequest()
 {}
@@ -33,7 +35,7 @@ long ApgroupBatchAddApRequest::getApgroupId()const
 void ApgroupBatchAddApRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string ApgroupBatchAddApRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ApgroupBatchAddApRequest::getAccessKeyId()const
 void ApgroupBatchAddApRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ApgroupBatchAddApRequest::getApAssetIds()const
@@ -55,6 +57,6 @@ std::string ApgroupBatchAddApRequest::getApAssetIds()const
 void ApgroupBatchAddApRequest::setApAssetIds(const std::string& apAssetIds)
 {
 	apAssetIds_ = apAssetIds;
-	setCoreParameter("ApAssetIds", apAssetIds);
+	setParameter("ApAssetIds", apAssetIds);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetClusterMetricsRequest;
 
 GetClusterMetricsRequest::GetClusterMetricsRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]/metrics");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetClusterMetricsRequest::~GetClusterMetricsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetClusterMetricsRequest::getRegionId()const
 void GetClusterMetricsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetClusterMetricsRequest::getClusterId()const
@@ -44,7 +47,7 @@ std::string GetClusterMetricsRequest::getClusterId()const
 void GetClusterMetricsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string GetClusterMetricsRequest::getMetricJson()const
@@ -55,6 +58,6 @@ std::string GetClusterMetricsRequest::getMetricJson()const
 void GetClusterMetricsRequest::setMetricJson(const std::string& metricJson)
 {
 	metricJson_ = metricJson;
-	setCoreParameter("MetricJson", metricJson);
+	setBodyParameter("MetricJson", metricJson);
 }
 

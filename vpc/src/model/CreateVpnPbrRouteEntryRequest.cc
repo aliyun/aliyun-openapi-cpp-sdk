@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateVpnPbrRouteEntryRequest;
 
 CreateVpnPbrRouteEntryRequest::CreateVpnPbrRouteEntryRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateVpnPbrRouteEntry")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVpnPbrRouteEntryRequest::~CreateVpnPbrRouteEntryRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRouteSource()const
 void CreateVpnPbrRouteEntryRequest::setRouteSource(const std::string& routeSource)
 {
 	routeSource_ = routeSource;
-	setCoreParameter("RouteSource", routeSource);
+	setParameter("RouteSource", routeSource);
 }
 
 long CreateVpnPbrRouteEntryRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateVpnPbrRouteEntryRequest::getResourceOwnerId()const
 void CreateVpnPbrRouteEntryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getClientToken()const
@@ -55,7 +57,7 @@ std::string CreateVpnPbrRouteEntryRequest::getClientToken()const
 void CreateVpnPbrRouteEntryRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string CreateVpnPbrRouteEntryRequest::getDescription()const
 void CreateVpnPbrRouteEntryRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
@@ -77,7 +79,7 @@ bool CreateVpnPbrRouteEntryRequest::getPublishVpc()const
 void CreateVpnPbrRouteEntryRequest::setPublishVpc(bool publishVpc)
 {
 	publishVpc_ = publishVpc;
-	setCoreParameter("PublishVpc", publishVpc ? "true" : "false");
+	setParameter("PublishVpc", publishVpc ? "true" : "false");
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRegionId()const
 void CreateVpnPbrRouteEntryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string CreateVpnPbrRouteEntryRequest::getResourceOwnerAccount()const
 void CreateVpnPbrRouteEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string CreateVpnPbrRouteEntryRequest::getOwnerAccount()const
 void CreateVpnPbrRouteEntryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 int CreateVpnPbrRouteEntryRequest::getWeight()const
@@ -121,7 +123,7 @@ int CreateVpnPbrRouteEntryRequest::getWeight()const
 void CreateVpnPbrRouteEntryRequest::setWeight(int weight)
 {
 	weight_ = weight;
-	setCoreParameter("Weight", std::to_string(weight));
+	setParameter("Weight", std::to_string(weight));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getVpnGatewayId()const
@@ -132,7 +134,7 @@ std::string CreateVpnPbrRouteEntryRequest::getVpnGatewayId()const
 void CreateVpnPbrRouteEntryRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long CreateVpnPbrRouteEntryRequest::getOwnerId()const
@@ -143,7 +145,7 @@ long CreateVpnPbrRouteEntryRequest::getOwnerId()const
 void CreateVpnPbrRouteEntryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getRouteDest()const
@@ -154,7 +156,7 @@ std::string CreateVpnPbrRouteEntryRequest::getRouteDest()const
 void CreateVpnPbrRouteEntryRequest::setRouteDest(const std::string& routeDest)
 {
 	routeDest_ = routeDest;
-	setCoreParameter("RouteDest", routeDest);
+	setParameter("RouteDest", routeDest);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getNextHop()const
@@ -165,7 +167,7 @@ std::string CreateVpnPbrRouteEntryRequest::getNextHop()const
 void CreateVpnPbrRouteEntryRequest::setNextHop(const std::string& nextHop)
 {
 	nextHop_ = nextHop;
-	setCoreParameter("NextHop", nextHop);
+	setParameter("NextHop", nextHop);
 }
 
 std::string CreateVpnPbrRouteEntryRequest::getOverlayMode()const
@@ -176,6 +178,6 @@ std::string CreateVpnPbrRouteEntryRequest::getOverlayMode()const
 void CreateVpnPbrRouteEntryRequest::setOverlayMode(const std::string& overlayMode)
 {
 	overlayMode_ = overlayMode;
-	setCoreParameter("OverlayMode", overlayMode);
+	setParameter("OverlayMode", overlayMode);
 }
 

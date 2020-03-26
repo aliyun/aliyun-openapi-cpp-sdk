@@ -46,6 +46,8 @@
 #include "model/ChangeDomainGroupResult.h"
 #include "model/ChangeDomainOfDnsProductRequest.h"
 #include "model/ChangeDomainOfDnsProductResult.h"
+#include "model/CopyGtmConfigRequest.h"
+#include "model/CopyGtmConfigResult.h"
 #include "model/DeleteCustomLinesRequest.h"
 #include "model/DeleteCustomLinesResult.h"
 #include "model/DeleteDomainRequest.h"
@@ -239,6 +241,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeDomainOfDnsProductResult> ChangeDomainOfDnsProductOutcome;
 			typedef std::future<ChangeDomainOfDnsProductOutcome> ChangeDomainOfDnsProductOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ChangeDomainOfDnsProductRequest&, const ChangeDomainOfDnsProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeDomainOfDnsProductAsyncHandler;
+			typedef Outcome<Error, Model::CopyGtmConfigResult> CopyGtmConfigOutcome;
+			typedef std::future<CopyGtmConfigOutcome> CopyGtmConfigOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::CopyGtmConfigRequest&, const CopyGtmConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyGtmConfigAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCustomLinesResult> DeleteCustomLinesOutcome;
 			typedef std::future<DeleteCustomLinesOutcome> DeleteCustomLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DeleteCustomLinesRequest&, const DeleteCustomLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomLinesAsyncHandler;
@@ -502,6 +507,9 @@ namespace AlibabaCloud
 			ChangeDomainOfDnsProductOutcome changeDomainOfDnsProduct(const Model::ChangeDomainOfDnsProductRequest &request)const;
 			void changeDomainOfDnsProductAsync(const Model::ChangeDomainOfDnsProductRequest& request, const ChangeDomainOfDnsProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeDomainOfDnsProductOutcomeCallable changeDomainOfDnsProductCallable(const Model::ChangeDomainOfDnsProductRequest& request) const;
+			CopyGtmConfigOutcome copyGtmConfig(const Model::CopyGtmConfigRequest &request)const;
+			void copyGtmConfigAsync(const Model::CopyGtmConfigRequest& request, const CopyGtmConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyGtmConfigOutcomeCallable copyGtmConfigCallable(const Model::CopyGtmConfigRequest& request) const;
 			DeleteCustomLinesOutcome deleteCustomLines(const Model::DeleteCustomLinesRequest &request)const;
 			void deleteCustomLinesAsync(const Model::DeleteCustomLinesRequest& request, const DeleteCustomLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomLinesOutcomeCallable deleteCustomLinesCallable(const Model::DeleteCustomLinesRequest& request) const;

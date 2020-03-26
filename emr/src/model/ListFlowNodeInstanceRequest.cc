@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ListFlowNodeInstanceRequest;
 
 ListFlowNodeInstanceRequest::ListFlowNodeInstanceRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ListFlowNodeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListFlowNodeInstanceRequest::~ListFlowNodeInstanceRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ListFlowNodeInstanceRequest::getStatusList()const
 void ListFlowNodeInstanceRequest::setStatusList(const std::vector<std::string>& statusList)
 {
 	statusList_ = statusList;
-	for(int i = 0; i!= statusList.size(); i++)
-		setCoreParameter("StatusList."+ std::to_string(i), statusList.at(i));
+	for(int dep1 = 0; dep1!= statusList.size(); dep1++) {
+		setParameter("StatusList."+ std::to_string(dep1), statusList.at(dep1));
+	}
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderBy()const
@@ -45,7 +48,7 @@ std::string ListFlowNodeInstanceRequest::getOrderBy()const
 void ListFlowNodeInstanceRequest::setOrderBy(const std::string& orderBy)
 {
 	orderBy_ = orderBy;
-	setCoreParameter("OrderBy", orderBy);
+	setParameter("OrderBy", orderBy);
 }
 
 long ListFlowNodeInstanceRequest::getStartTime()const
@@ -56,7 +59,7 @@ long ListFlowNodeInstanceRequest::getStartTime()const
 void ListFlowNodeInstanceRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 int ListFlowNodeInstanceRequest::getPageNumber()const
@@ -67,7 +70,7 @@ int ListFlowNodeInstanceRequest::getPageNumber()const
 void ListFlowNodeInstanceRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListFlowNodeInstanceRequest::getRegionId()const
@@ -78,7 +81,7 @@ std::string ListFlowNodeInstanceRequest::getRegionId()const
 void ListFlowNodeInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int ListFlowNodeInstanceRequest::getPageSize()const
@@ -89,7 +92,7 @@ int ListFlowNodeInstanceRequest::getPageSize()const
 void ListFlowNodeInstanceRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListFlowNodeInstanceRequest::getProjectId()const
@@ -100,7 +103,7 @@ std::string ListFlowNodeInstanceRequest::getProjectId()const
 void ListFlowNodeInstanceRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 
 std::string ListFlowNodeInstanceRequest::getOrderType()const
@@ -111,6 +114,6 @@ std::string ListFlowNodeInstanceRequest::getOrderType()const
 void ListFlowNodeInstanceRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

@@ -35,7 +35,7 @@ long AddSmsTemplateRequest::getResourceOwnerId()const
 void AddSmsTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddSmsTemplateRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string AddSmsTemplateRequest::getRemark()const
 void AddSmsTemplateRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string AddSmsTemplateRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AddSmsTemplateRequest::getAccessKeyId()const
 void AddSmsTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int AddSmsTemplateRequest::getTemplateType()const
@@ -68,7 +68,7 @@ int AddSmsTemplateRequest::getTemplateType()const
 void AddSmsTemplateRequest::setTemplateType(int templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", std::to_string(templateType));
+	setParameter("TemplateType", std::to_string(templateType));
 }
 
 std::string AddSmsTemplateRequest::getTemplateName()const
@@ -79,7 +79,7 @@ std::string AddSmsTemplateRequest::getTemplateName()const
 void AddSmsTemplateRequest::setTemplateName(const std::string& templateName)
 {
 	templateName_ = templateName;
-	setCoreParameter("TemplateName", templateName);
+	setParameter("TemplateName", templateName);
 }
 
 std::string AddSmsTemplateRequest::getResourceOwnerAccount()const
@@ -90,7 +90,7 @@ std::string AddSmsTemplateRequest::getResourceOwnerAccount()const
 void AddSmsTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AddSmsTemplateRequest::getOwnerId()const
@@ -101,7 +101,7 @@ long AddSmsTemplateRequest::getOwnerId()const
 void AddSmsTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddSmsTemplateRequest::getTemplateContent()const
@@ -112,6 +112,6 @@ std::string AddSmsTemplateRequest::getTemplateContent()const
 void AddSmsTemplateRequest::setTemplateContent(const std::string& templateContent)
 {
 	templateContent_ = templateContent;
-	setCoreParameter("TemplateContent", templateContent);
+	setParameter("TemplateContent", templateContent);
 }
 

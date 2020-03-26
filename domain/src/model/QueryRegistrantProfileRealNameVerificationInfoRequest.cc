@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryRegistrantProfileRealNameVerificationInf
 
 QueryRegistrantProfileRealNameVerificationInfoRequest::QueryRegistrantProfileRealNameVerificationInfoRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryRegistrantProfileRealNameVerificationInfoRequest::~QueryRegistrantProfileRealNameVerificationInfoRequest()
 {}
@@ -33,7 +35,7 @@ bool QueryRegistrantProfileRealNameVerificationInfoRequest::getFetchImage()const
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
 {
 	fetchImage_ = fetchImage;
-	setCoreParameter("FetchImage", fetchImage ? "true" : "false");
+	setParameter("FetchImage", fetchImage ? "true" : "false");
 }
 
 long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfileId()const
@@ -44,7 +46,7 @@ long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfile
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setRegistrantProfileId(long registrantProfileId)
 {
 	registrantProfileId_ = registrantProfileId;
-	setCoreParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
 }
 
 std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClientIp()const
@@ -55,7 +57,7 @@ std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClient
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang()cons
 void QueryRegistrantProfileRealNameVerificationInfoRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

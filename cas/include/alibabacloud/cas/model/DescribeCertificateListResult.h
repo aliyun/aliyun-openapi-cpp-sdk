@@ -34,16 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Certificate
 				{
-					long afterDate;
 					bool showRefund;
-					std::string instanceId;
 					std::string sourceType;
-					int showDeployment;
 					std::string certType;
 					int remainingDays;
 					std::string partnerOrderId;
 					std::string newBuyCertType;
-					long orderId;
 					std::string statusCode;
 					int newBuyDomainCount;
 					std::string name;
@@ -51,13 +47,18 @@ namespace AlibabaCloud
 					std::string newBuyBrand;
 					bool isFree;
 					std::string orderType;
+					long beforeDate;
+					long afterDate;
+					std::string instanceId;
+					int showDeployment;
+					long orderId;
 					int year;
 					int accessDownload;
 					long id;
 					std::string deploymentCloudProduct;
 					std::string domain;
 					std::string newBuyDomainType;
-					long beforeDate;
+					int expireRenew;
 				};
 
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateNoteRequest;
 
 CreateNoteRequest::CreateNoteRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateNote")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateNoteRequest::~CreateNoteRequest()
 {}
@@ -33,7 +35,7 @@ long CreateNoteRequest::getResourceOwnerId()const
 void CreateNoteRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateNoteRequest::getClusterId()const
@@ -44,7 +46,7 @@ std::string CreateNoteRequest::getClusterId()const
 void CreateNoteRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string CreateNoteRequest::getType()const
@@ -55,7 +57,7 @@ std::string CreateNoteRequest::getType()const
 void CreateNoteRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string CreateNoteRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateNoteRequest::getAccessKeyId()const
 void CreateNoteRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateNoteRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string CreateNoteRequest::getRegionId()const
 void CreateNoteRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateNoteRequest::getName()const
@@ -88,6 +90,6 @@ std::string CreateNoteRequest::getName()const
 void CreateNoteRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCloudCenterInstancesRequest;
 
 DescribeCloudCenterInstancesRequest::DescribeCloudCenterInstancesRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCloudCenterInstances")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCloudCenterInstancesRequest::~DescribeCloudCenterInstancesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCloudCenterInstancesRequest::getCriteria()const
 void DescribeCloudCenterInstancesRequest::setCriteria(const std::string& criteria)
 {
 	criteria_ = criteria;
-	setCoreParameter("Criteria", criteria);
+	setParameter("Criteria", criteria);
 }
 
 std::string DescribeCloudCenterInstancesRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCloudCenterInstancesRequest::getSourceIp()const
 void DescribeCloudCenterInstancesRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 bool DescribeCloudCenterInstancesRequest::getNoPage()const
@@ -55,7 +57,7 @@ bool DescribeCloudCenterInstancesRequest::getNoPage()const
 void DescribeCloudCenterInstancesRequest::setNoPage(bool noPage)
 {
 	noPage_ = noPage;
-	setCoreParameter("NoPage", noPage ? "true" : "false");
+	setParameter("NoPage", noPage ? "true" : "false");
 }
 
 int DescribeCloudCenterInstancesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeCloudCenterInstancesRequest::getPageSize()const
 void DescribeCloudCenterInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCloudCenterInstancesRequest::getLogicalExp()const
@@ -77,7 +79,7 @@ std::string DescribeCloudCenterInstancesRequest::getLogicalExp()const
 void DescribeCloudCenterInstancesRequest::setLogicalExp(const std::string& logicalExp)
 {
 	logicalExp_ = logicalExp;
-	setCoreParameter("LogicalExp", logicalExp);
+	setParameter("LogicalExp", logicalExp);
 }
 
 int DescribeCloudCenterInstancesRequest::getCurrentPage()const
@@ -88,7 +90,7 @@ int DescribeCloudCenterInstancesRequest::getCurrentPage()const
 void DescribeCloudCenterInstancesRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeCloudCenterInstancesRequest::getMachineTypes()const
@@ -99,6 +101,6 @@ std::string DescribeCloudCenterInstancesRequest::getMachineTypes()const
 void DescribeCloudCenterInstancesRequest::setMachineTypes(const std::string& machineTypes)
 {
 	machineTypes_ = machineTypes;
-	setCoreParameter("MachineTypes", machineTypes);
+	setParameter("MachineTypes", machineTypes);
 }
 

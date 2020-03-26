@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyRouterInterfaceSpecRequest;
 
 ModifyRouterInterfaceSpecRequest::ModifyRouterInterfaceSpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyRouterInterfaceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyRouterInterfaceSpecRequest::~ModifyRouterInterfaceSpecRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyRouterInterfaceSpecRequest::getResourceOwnerId()const
 void ModifyRouterInterfaceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ModifyRouterInterfaceSpecRequest::getClientToken()const
 void ModifyRouterInterfaceSpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getSpec()const
@@ -55,7 +57,7 @@ std::string ModifyRouterInterfaceSpecRequest::getSpec()const
 void ModifyRouterInterfaceSpecRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setParameter("Spec", spec);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ModifyRouterInterfaceSpecRequest::getRegionId()const
 void ModifyRouterInterfaceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ModifyRouterInterfaceSpecRequest::getResourceOwnerAccount()const
 void ModifyRouterInterfaceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyRouterInterfaceSpecRequest::getOwnerAccount()const
 void ModifyRouterInterfaceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ModifyRouterInterfaceSpecRequest::getRouterInterfaceId()const
@@ -99,7 +101,7 @@ std::string ModifyRouterInterfaceSpecRequest::getRouterInterfaceId()const
 void ModifyRouterInterfaceSpecRequest::setRouterInterfaceId(const std::string& routerInterfaceId)
 {
 	routerInterfaceId_ = routerInterfaceId;
-	setCoreParameter("RouterInterfaceId", routerInterfaceId);
+	setParameter("RouterInterfaceId", routerInterfaceId);
 }
 
 long ModifyRouterInterfaceSpecRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ModifyRouterInterfaceSpecRequest::getOwnerId()const
 void ModifyRouterInterfaceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

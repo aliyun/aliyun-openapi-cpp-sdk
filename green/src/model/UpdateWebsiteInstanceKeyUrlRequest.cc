@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateWebsiteInstanceKeyUrlRequest;
 
 UpdateWebsiteInstanceKeyUrlRequest::UpdateWebsiteInstanceKeyUrlRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateWebsiteInstanceKeyUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateWebsiteInstanceKeyUrlRequest::~UpdateWebsiteInstanceKeyUrlRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getUrls()const
 void UpdateWebsiteInstanceKeyUrlRequest::setUrls(const std::string& urls)
 {
 	urls_ = urls;
-	setCoreParameter("Urls", urls);
+	setParameter("Urls", urls);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getInstanceId()const
 void UpdateWebsiteInstanceKeyUrlRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getSourceIp()const
 void UpdateWebsiteInstanceKeyUrlRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateWebsiteInstanceKeyUrlRequest::getLang()const
@@ -66,6 +68,6 @@ std::string UpdateWebsiteInstanceKeyUrlRequest::getLang()const
 void UpdateWebsiteInstanceKeyUrlRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

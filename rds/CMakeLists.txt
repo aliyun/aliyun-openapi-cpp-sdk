@@ -209,6 +209,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeLocalAvailableRecoveryTimeResult.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesRequest.h
 	include/alibabacloud/rds/model/DescribeLogBackupFilesResult.h
+	include/alibabacloud/rds/model/DescribeMigrateTaskByIdRequest.h
+	include/alibabacloud/rds/model/DescribeMigrateTaskByIdResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksRequest.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksResult.h
 	include/alibabacloud/rds/model/DescribeMigrateTasksForSQLServerRequest.h
@@ -616,6 +618,8 @@ set(rds_src
 	src/model/DescribeLocalAvailableRecoveryTimeResult.cc
 	src/model/DescribeLogBackupFilesRequest.cc
 	src/model/DescribeLogBackupFilesResult.cc
+	src/model/DescribeMigrateTaskByIdRequest.cc
+	src/model/DescribeMigrateTaskByIdResult.cc
 	src/model/DescribeMigrateTasksRequest.cc
 	src/model/DescribeMigrateTasksResult.cc
 	src/model/DescribeMigrateTasksForSQLServerRequest.cc

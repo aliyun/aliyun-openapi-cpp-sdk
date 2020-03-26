@@ -47,7 +47,16 @@ void DescribeGtmInstanceStatusResult::parse(const std::string &payload)
 		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
 	if(!value["StrategyNotAvailableNum"].isNull())
 		strategyNotAvailableNum_ = std::stoi(value["StrategyNotAvailableNum"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["StatusReason"].isNull())
+		statusReason_ = value["StatusReason"].asString();
 
+}
+
+std::string DescribeGtmInstanceStatusResult::getStatus()const
+{
+	return status_;
 }
 
 int DescribeGtmInstanceStatusResult::getStrategyNotAvailableNum()const
@@ -58,6 +67,11 @@ int DescribeGtmInstanceStatusResult::getStrategyNotAvailableNum()const
 int DescribeGtmInstanceStatusResult::getSwitchToFailoverStrategyNum()const
 {
 	return switchToFailoverStrategyNum_;
+}
+
+std::string DescribeGtmInstanceStatusResult::getStatusReason()const
+{
+	return statusReason_;
 }
 
 int DescribeGtmInstanceStatusResult::getAddrNotAvailableNum()const

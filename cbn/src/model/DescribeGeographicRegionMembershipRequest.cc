@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeGeographicRegionMembershipRequest;
 
 DescribeGeographicRegionMembershipRequest::DescribeGeographicRegionMembershipRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeGeographicRegionMembership")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeGeographicRegionMembershipRequest::~DescribeGeographicRegionMembershipRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeGeographicRegionMembershipRequest::getResourceOwnerId()const
 void DescribeGeographicRegionMembershipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeGeographicRegionMembershipRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeGeographicRegionMembershipRequest::getPageNumber()const
 void DescribeGeographicRegionMembershipRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeGeographicRegionMembershipRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeGeographicRegionMembershipRequest::getPageSize()const
 void DescribeGeographicRegionMembershipRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeGeographicRegionMembershipRequest::getResourceOwnerAccount()
 void DescribeGeographicRegionMembershipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeGeographicRegionMembershipRequest::getOwnerAccount()const
 void DescribeGeographicRegionMembershipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeGeographicRegionMembershipRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeGeographicRegionMembershipRequest::getOwnerId()const
 void DescribeGeographicRegionMembershipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeGeographicRegionMembershipRequest::getGeographicRegionId()const
@@ -99,6 +101,6 @@ std::string DescribeGeographicRegionMembershipRequest::getGeographicRegionId()co
 void DescribeGeographicRegionMembershipRequest::setGeographicRegionId(const std::string& geographicRegionId)
 {
 	geographicRegionId_ = geographicRegionId;
-	setCoreParameter("GeographicRegionId", geographicRegionId);
+	setParameter("GeographicRegionId", geographicRegionId);
 }
 

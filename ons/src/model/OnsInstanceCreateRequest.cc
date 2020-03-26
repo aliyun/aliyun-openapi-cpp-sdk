@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsInstanceCreateRequest;
 OnsInstanceCreateRequest::OnsInstanceCreateRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceCreate")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsInstanceCreateRequest::~OnsInstanceCreateRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::UpLoadMapRequest;
 
 UpLoadMapRequest::UpLoadMapRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "UpLoadMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpLoadMapRequest::~UpLoadMapRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpLoadMapRequest::getUploadId()const
 void UpLoadMapRequest::setUploadId(const std::string& uploadId)
 {
 	uploadId_ = uploadId;
-	setCoreParameter("UploadId", uploadId);
+	setParameter("UploadId", uploadId);
 }
 
 std::string UpLoadMapRequest::getObjectName()const
@@ -44,7 +46,7 @@ std::string UpLoadMapRequest::getObjectName()const
 void UpLoadMapRequest::setObjectName(const std::string& objectName)
 {
 	objectName_ = objectName;
-	setCoreParameter("ObjectName", objectName);
+	setParameter("ObjectName", objectName);
 }
 
 std::string UpLoadMapRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string UpLoadMapRequest::getAccessKeyId()const
 void UpLoadMapRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpLoadMapRequest::getFileName()const
@@ -66,7 +68,7 @@ std::string UpLoadMapRequest::getFileName()const
 void UpLoadMapRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setParameter("FileName", fileName);
 }
 
 int UpLoadMapRequest::getChunkIndex()const
@@ -77,7 +79,7 @@ int UpLoadMapRequest::getChunkIndex()const
 void UpLoadMapRequest::setChunkIndex(int chunkIndex)
 {
 	chunkIndex_ = chunkIndex;
-	setCoreParameter("ChunkIndex", std::to_string(chunkIndex));
+	setParameter("ChunkIndex", std::to_string(chunkIndex));
 }
 
 int UpLoadMapRequest::getChunkCnt()const
@@ -88,6 +90,6 @@ int UpLoadMapRequest::getChunkCnt()const
 void UpLoadMapRequest::setChunkCnt(int chunkCnt)
 {
 	chunkCnt_ = chunkCnt;
-	setCoreParameter("ChunkCnt", std::to_string(chunkCnt));
+	setParameter("ChunkCnt", std::to_string(chunkCnt));
 }
 

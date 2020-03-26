@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeClusterTemplateRequest;
 
 DescribeClusterTemplateRequest::DescribeClusterTemplateRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeClusterTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeClusterTemplateRequest::~DescribeClusterTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeClusterTemplateRequest::getResourceOwnerId()const
 void DescribeClusterTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeClusterTemplateRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeClusterTemplateRequest::getAccessKeyId()const
 void DescribeClusterTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeClusterTemplateRequest::getBizId()const
@@ -55,6 +57,6 @@ std::string DescribeClusterTemplateRequest::getBizId()const
 void DescribeClusterTemplateRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 

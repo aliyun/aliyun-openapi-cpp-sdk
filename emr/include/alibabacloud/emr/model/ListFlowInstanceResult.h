@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					long duration;
 					std::string flowId;
 					long gmtCreate;
+					long scheduleTime;
 					std::string flowName;
 					std::string id;
 				};

@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetNodesAddingTaskRequest;
 
 GetNodesAddingTaskRequest::GetNodesAddingTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetNodesAddingTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetNodesAddingTaskRequest::~GetNodesAddingTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetNodesAddingTaskRequest::getAccessKeyId()const
 void GetNodesAddingTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetNodesAddingTaskRequest::getIotInstanceId()const
@@ -44,7 +46,7 @@ std::string GetNodesAddingTaskRequest::getIotInstanceId()const
 void GetNodesAddingTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string GetNodesAddingTaskRequest::getTaskId()const
@@ -55,6 +57,6 @@ std::string GetNodesAddingTaskRequest::getTaskId()const
 void GetNodesAddingTaskRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

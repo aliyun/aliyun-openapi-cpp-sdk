@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateProductTopicRequest;
 
 CreateProductTopicRequest::CreateProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateProductTopicRequest::~CreateProductTopicRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateProductTopicRequest::getProductKey()const
 void CreateProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string CreateProductTopicRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateProductTopicRequest::getAccessKeyId()const
 void CreateProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateProductTopicRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string CreateProductTopicRequest::getIotInstanceId()const
 void CreateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::string CreateProductTopicRequest::getTopicShortName()const
@@ -66,7 +68,7 @@ std::string CreateProductTopicRequest::getTopicShortName()const
 void CreateProductTopicRequest::setTopicShortName(const std::string& topicShortName)
 {
 	topicShortName_ = topicShortName;
-	setCoreParameter("TopicShortName", topicShortName);
+	setParameter("TopicShortName", topicShortName);
 }
 
 std::string CreateProductTopicRequest::getOperation()const
@@ -77,7 +79,7 @@ std::string CreateProductTopicRequest::getOperation()const
 void CreateProductTopicRequest::setOperation(const std::string& operation)
 {
 	operation_ = operation;
-	setCoreParameter("Operation", operation);
+	setParameter("Operation", operation);
 }
 
 std::string CreateProductTopicRequest::getDesc()const
@@ -88,6 +90,6 @@ std::string CreateProductTopicRequest::getDesc()const
 void CreateProductTopicRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setParameter("Desc", desc);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DescribeShardDBsRequest;
 
 DescribeShardDBsRequest::DescribeShardDBsRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DescribeShardDBs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeShardDBsRequest::~DescribeShardDBsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeShardDBsRequest::getDrdsInstanceId()const
 void DescribeShardDBsRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DescribeShardDBsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeShardDBsRequest::getAccessKeyId()const
 void DescribeShardDBsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeShardDBsRequest::getDbName()const
@@ -55,6 +57,6 @@ std::string DescribeShardDBsRequest::getDbName()const
 void DescribeShardDBsRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitMediaDetailJobRequest;
 
 SubmitMediaDetailJobRequest::SubmitMediaDetailJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitMediaDetailJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitMediaDetailJobRequest::~SubmitMediaDetailJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitMediaDetailJobRequest::getResourceOwnerId()const
 void SubmitMediaDetailJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitMediaDetailJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitMediaDetailJobRequest::getAccessKeyId()const
 void SubmitMediaDetailJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitMediaDetailJobRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitMediaDetailJobRequest::getUserData()const
 void SubmitMediaDetailJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitMediaDetailJobRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitMediaDetailJobRequest::getResourceOwnerAccount()const
 void SubmitMediaDetailJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitMediaDetailJobRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitMediaDetailJobRequest::getOwnerAccount()const
 void SubmitMediaDetailJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitMediaDetailJobRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long SubmitMediaDetailJobRequest::getOwnerId()const
 void SubmitMediaDetailJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitMediaDetailJobRequest::getPipelineId()const
@@ -99,7 +101,7 @@ std::string SubmitMediaDetailJobRequest::getPipelineId()const
 void SubmitMediaDetailJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitMediaDetailJobRequest::getInput()const
@@ -110,7 +112,7 @@ std::string SubmitMediaDetailJobRequest::getInput()const
 void SubmitMediaDetailJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 
 std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
@@ -121,6 +123,6 @@ std::string SubmitMediaDetailJobRequest::getMediaDetailConfig()const
 void SubmitMediaDetailJobRequest::setMediaDetailConfig(const std::string& mediaDetailConfig)
 {
 	mediaDetailConfig_ = mediaDetailConfig;
-	setCoreParameter("MediaDetailConfig", mediaDetailConfig);
+	setParameter("MediaDetailConfig", mediaDetailConfig);
 }
 

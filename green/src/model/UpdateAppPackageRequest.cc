@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateAppPackageRequest;
 
 UpdateAppPackageRequest::UpdateAppPackageRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateAppPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateAppPackageRequest::~UpdateAppPackageRequest()
 {}
@@ -33,7 +35,7 @@ bool UpdateAppPackageRequest::getDebug()const
 void UpdateAppPackageRequest::setDebug(bool debug)
 {
 	debug_ = debug;
-	setCoreParameter("Debug", debug ? "true" : "false");
+	setParameter("Debug", debug ? "true" : "false");
 }
 
 std::string UpdateAppPackageRequest::getPlatform()const
@@ -44,7 +46,7 @@ std::string UpdateAppPackageRequest::getPlatform()const
 void UpdateAppPackageRequest::setPlatform(const std::string& platform)
 {
 	platform_ = platform;
-	setCoreParameter("Platform", platform);
+	setParameter("Platform", platform);
 }
 
 std::string UpdateAppPackageRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string UpdateAppPackageRequest::getSourceIp()const
 void UpdateAppPackageRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateAppPackageRequest::getPackageUrl()const
@@ -66,7 +68,7 @@ std::string UpdateAppPackageRequest::getPackageUrl()const
 void UpdateAppPackageRequest::setPackageUrl(const std::string& packageUrl)
 {
 	packageUrl_ = packageUrl;
-	setCoreParameter("PackageUrl", packageUrl);
+	setParameter("PackageUrl", packageUrl);
 }
 
 long UpdateAppPackageRequest::getId()const
@@ -77,7 +79,7 @@ long UpdateAppPackageRequest::getId()const
 void UpdateAppPackageRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string UpdateAppPackageRequest::getLang()const
@@ -88,6 +90,6 @@ std::string UpdateAppPackageRequest::getLang()const
 void UpdateAppPackageRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

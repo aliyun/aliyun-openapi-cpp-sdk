@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClusterUserKubeconfigRequest;
 
 DescribeClusterUserKubeconfigRequest::DescribeClusterUserKubeconfigRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/k8s/[ClusterId]/user_config");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClusterUserKubeconfigRequest::~DescribeClusterUserKubeconfigRequest()
 {}
@@ -33,7 +36,7 @@ bool DescribeClusterUserKubeconfigRequest::getPrivateIpAddress()const
 void DescribeClusterUserKubeconfigRequest::setPrivateIpAddress(bool privateIpAddress)
 {
 	privateIpAddress_ = privateIpAddress;
-	setCoreParameter("PrivateIpAddress", privateIpAddress ? "true" : "false");
+	setParameter("PrivateIpAddress", privateIpAddress ? "true" : "false");
 }
 
 std::string DescribeClusterUserKubeconfigRequest::getClusterId()const
@@ -44,6 +47,6 @@ std::string DescribeClusterUserKubeconfigRequest::getClusterId()const
 void DescribeClusterUserKubeconfigRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

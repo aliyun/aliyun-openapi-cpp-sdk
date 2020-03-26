@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreateJobRequest;
 
 CreateJobRequest::CreateJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateJobRequest::~CreateJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreateJobRequest::getQueueName()const
 void CreateJobRequest::setQueueName(const std::string& queueName)
 {
 	queueName_ = queueName;
-	setCoreParameter("QueueName", queueName);
+	setBodyParameter("QueueName", queueName);
 }
 
 std::string CreateJobRequest::getProjectName()const
@@ -44,7 +47,7 @@ std::string CreateJobRequest::getProjectName()const
 void CreateJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CreateJobRequest::getCode()const
@@ -55,7 +58,7 @@ std::string CreateJobRequest::getCode()const
 void CreateJobRequest::setCode(const std::string& code)
 {
 	code_ = code;
-	setCoreParameter("Code", code);
+	setBodyParameter("Code", code);
 }
 
 std::string CreateJobRequest::getDescription()const
@@ -66,7 +69,7 @@ std::string CreateJobRequest::getDescription()const
 void CreateJobRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreateJobRequest::getEngineVersion()const
@@ -77,7 +80,7 @@ std::string CreateJobRequest::getEngineVersion()const
 void CreateJobRequest::setEngineVersion(const std::string& engineVersion)
 {
 	engineVersion_ = engineVersion;
-	setCoreParameter("EngineVersion", engineVersion);
+	setBodyParameter("EngineVersion", engineVersion);
 }
 
 std::string CreateJobRequest::getClusterId()const
@@ -88,7 +91,7 @@ std::string CreateJobRequest::getClusterId()const
 void CreateJobRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setBodyParameter("ClusterId", clusterId);
 }
 
 std::string CreateJobRequest::getPackages()const
@@ -99,7 +102,7 @@ std::string CreateJobRequest::getPackages()const
 void CreateJobRequest::setPackages(const std::string& packages)
 {
 	packages_ = packages;
-	setCoreParameter("Packages", packages);
+	setBodyParameter("Packages", packages);
 }
 
 std::string CreateJobRequest::getJobType()const
@@ -110,7 +113,7 @@ std::string CreateJobRequest::getJobType()const
 void CreateJobRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setBodyParameter("JobType", jobType);
 }
 
 std::string CreateJobRequest::getApiType()const
@@ -121,7 +124,7 @@ std::string CreateJobRequest::getApiType()const
 void CreateJobRequest::setApiType(const std::string& apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", apiType);
+	setBodyParameter("ApiType", apiType);
 }
 
 long CreateJobRequest::getFolderId()const
@@ -132,7 +135,7 @@ long CreateJobRequest::getFolderId()const
 void CreateJobRequest::setFolderId(long folderId)
 {
 	folderId_ = folderId;
-	setCoreParameter("FolderId", std::to_string(folderId));
+	setBodyParameter("FolderId", std::to_string(folderId));
 }
 
 std::string CreateJobRequest::getRegionId()const
@@ -143,7 +146,7 @@ std::string CreateJobRequest::getRegionId()const
 void CreateJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CreateJobRequest::getPlanJson()const
@@ -154,7 +157,7 @@ std::string CreateJobRequest::getPlanJson()const
 void CreateJobRequest::setPlanJson(const std::string& planJson)
 {
 	planJson_ = planJson;
-	setCoreParameter("PlanJson", planJson);
+	setBodyParameter("PlanJson", planJson);
 }
 
 std::string CreateJobRequest::getProperties()const
@@ -165,7 +168,7 @@ std::string CreateJobRequest::getProperties()const
 void CreateJobRequest::setProperties(const std::string& properties)
 {
 	properties_ = properties;
-	setCoreParameter("Properties", properties);
+	setBodyParameter("Properties", properties);
 }
 
 std::string CreateJobRequest::getJobName()const
@@ -176,6 +179,6 @@ std::string CreateJobRequest::getJobName()const
 void CreateJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setBodyParameter("JobName", jobName);
 }
 

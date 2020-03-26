@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6EgressOnlyRulesRequest;
 
 DescribeIpv6EgressOnlyRulesRequest::DescribeIpv6EgressOnlyRulesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6EgressOnlyRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6EgressOnlyRulesRequest::~DescribeIpv6EgressOnlyRulesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerId()const
 void DescribeIpv6EgressOnlyRulesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeIpv6EgressOnlyRulesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeIpv6EgressOnlyRulesRequest::getPageNumber()const
 void DescribeIpv6EgressOnlyRulesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6EgressOnlyRuleId()const
@@ -55,7 +57,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6EgressOnlyRuleId()const
 void DescribeIpv6EgressOnlyRulesRequest::setIpv6EgressOnlyRuleId(const std::string& ipv6EgressOnlyRuleId)
 {
 	ipv6EgressOnlyRuleId_ = ipv6EgressOnlyRuleId;
-	setCoreParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
+	setParameter("Ipv6EgressOnlyRuleId", ipv6EgressOnlyRuleId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getRegionId()const
 void DescribeIpv6EgressOnlyRulesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeIpv6EgressOnlyRulesRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeIpv6EgressOnlyRulesRequest::getPageSize()const
 void DescribeIpv6EgressOnlyRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceType()const
@@ -88,7 +90,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceType()const
 void DescribeIpv6EgressOnlyRulesRequest::setInstanceType(const std::string& instanceType)
 {
 	instanceType_ = instanceType;
-	setCoreParameter("InstanceType", instanceType);
+	setParameter("InstanceType", instanceType);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getResourceOwnerAccount()const
 void DescribeIpv6EgressOnlyRulesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getOwnerAccount()const
 void DescribeIpv6EgressOnlyRulesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeIpv6EgressOnlyRulesRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long DescribeIpv6EgressOnlyRulesRequest::getOwnerId()const
 void DescribeIpv6EgressOnlyRulesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceId()const
@@ -132,7 +134,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getInstanceId()const
 void DescribeIpv6EgressOnlyRulesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6GatewayId()const
@@ -143,7 +145,7 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getIpv6GatewayId()const
 void DescribeIpv6EgressOnlyRulesRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 
 std::string DescribeIpv6EgressOnlyRulesRequest::getName()const
@@ -154,6 +156,6 @@ std::string DescribeIpv6EgressOnlyRulesRequest::getName()const
 void DescribeIpv6EgressOnlyRulesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

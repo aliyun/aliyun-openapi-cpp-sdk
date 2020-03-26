@@ -35,7 +35,7 @@ std::string QueryUserOmsDataRequest::getEndTime()const
 void QueryUserOmsDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string QueryUserOmsDataRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string QueryUserOmsDataRequest::getStartTime()const
 void QueryUserOmsDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 long QueryUserOmsDataRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long QueryUserOmsDataRequest::getOwnerId()const
 void QueryUserOmsDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryUserOmsDataRequest::getDataType()const
@@ -68,7 +68,7 @@ std::string QueryUserOmsDataRequest::getDataType()const
 void QueryUserOmsDataRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
+	setParameter("DataType", dataType);
 }
 
 std::string QueryUserOmsDataRequest::getMarker()const
@@ -79,7 +79,7 @@ std::string QueryUserOmsDataRequest::getMarker()const
 void QueryUserOmsDataRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 int QueryUserOmsDataRequest::getPageSize()const
@@ -90,7 +90,7 @@ int QueryUserOmsDataRequest::getPageSize()const
 void QueryUserOmsDataRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryUserOmsDataRequest::getTable()const
@@ -101,6 +101,6 @@ std::string QueryUserOmsDataRequest::getTable()const
 void QueryUserOmsDataRequest::setTable(const std::string& table)
 {
 	table_ = table;
-	setCoreParameter("Table", table);
+	setParameter("Table", table);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryEmailVerificationRequest;
 
 QueryEmailVerificationRequest::QueryEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEmailVerificationRequest::~QueryEmailVerificationRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryEmailVerificationRequest::getUserClientIp()const
 void QueryEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryEmailVerificationRequest::getLang()const
@@ -44,7 +46,7 @@ std::string QueryEmailVerificationRequest::getLang()const
 void QueryEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string QueryEmailVerificationRequest::getEmail()const
@@ -55,6 +57,6 @@ std::string QueryEmailVerificationRequest::getEmail()const
 void QueryEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

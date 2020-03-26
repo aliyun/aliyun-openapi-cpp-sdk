@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindInstanceListRequest;
 
 FindInstanceListRequest::FindInstanceListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindInstanceList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindInstanceListRequest::~FindInstanceListRequest()
 {}
@@ -33,7 +35,7 @@ long FindInstanceListRequest::getCsbId()const
 void FindInstanceListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 
 int FindInstanceListRequest::getPageNum()const
@@ -44,7 +46,7 @@ int FindInstanceListRequest::getPageNum()const
 void FindInstanceListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string FindInstanceListRequest::getSearchTxt()const
@@ -55,7 +57,7 @@ std::string FindInstanceListRequest::getSearchTxt()const
 void FindInstanceListRequest::setSearchTxt(const std::string& searchTxt)
 {
 	searchTxt_ = searchTxt;
-	setCoreParameter("SearchTxt", searchTxt);
+	setParameter("SearchTxt", searchTxt);
 }
 
 int FindInstanceListRequest::getStatus()const
@@ -66,6 +68,6 @@ int FindInstanceListRequest::getStatus()const
 void FindInstanceListRequest::setStatus(int status)
 {
 	status_ = status;
-	setCoreParameter("Status", std::to_string(status));
+	setParameter("Status", std::to_string(status));
 }
 

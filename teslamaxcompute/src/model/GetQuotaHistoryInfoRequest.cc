@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaMaxCompute::Model::GetQuotaHistoryInfoRequest;
 
 GetQuotaHistoryInfoRequest::GetQuotaHistoryInfoRequest() :
 	RpcServiceRequest("teslamaxcompute", "2018-01-04", "GetQuotaHistoryInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetQuotaHistoryInfoRequest::~GetQuotaHistoryInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetQuotaHistoryInfoRequest::getCluster()const
 void GetQuotaHistoryInfoRequest::setCluster(const std::string& cluster)
 {
 	cluster_ = cluster;
-	setCoreParameter("Cluster", cluster);
+	setParameter("Cluster", cluster);
 }
 
 int GetQuotaHistoryInfoRequest::getEndTime()const
@@ -44,7 +46,7 @@ int GetQuotaHistoryInfoRequest::getEndTime()const
 void GetQuotaHistoryInfoRequest::setEndTime(int endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 int GetQuotaHistoryInfoRequest::getStartTime()const
@@ -55,7 +57,7 @@ int GetQuotaHistoryInfoRequest::getStartTime()const
 void GetQuotaHistoryInfoRequest::setStartTime(int startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string GetQuotaHistoryInfoRequest::getRegion()const
@@ -66,7 +68,7 @@ std::string GetQuotaHistoryInfoRequest::getRegion()const
 void GetQuotaHistoryInfoRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string GetQuotaHistoryInfoRequest::getQuotaName()const
@@ -77,6 +79,6 @@ std::string GetQuotaHistoryInfoRequest::getQuotaName()const
 void GetQuotaHistoryInfoRequest::setQuotaName(const std::string& quotaName)
 {
 	quotaName_ = quotaName;
-	setCoreParameter("QuotaName", quotaName);
+	setParameter("QuotaName", quotaName);
 }
 

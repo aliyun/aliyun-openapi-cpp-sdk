@@ -25,18 +25,30 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/AddUserHdfsInfoResult.h
 	include/alibabacloud/hbase/model/ConvertInstanceRequest.h
 	include/alibabacloud/hbase/model/ConvertInstanceResult.h
+	include/alibabacloud/hbase/model/CreateBackupPlanRequest.h
+	include/alibabacloud/hbase/model/CreateBackupPlanResult.h
 	include/alibabacloud/hbase/model/CreateClusterRequest.h
 	include/alibabacloud/hbase/model/CreateClusterResult.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/CreateInstanceRequest.h
 	include/alibabacloud/hbase/model/CreateInstanceResult.h
+	include/alibabacloud/hbase/model/CreateRestorePlanRequest.h
+	include/alibabacloud/hbase/model/CreateRestorePlanResult.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/DeleteInstanceRequest.h
 	include/alibabacloud/hbase/model/DeleteInstanceResult.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoRequest.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoResult.h
+	include/alibabacloud/hbase/model/DescribeBackupPlanConfigRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupPlanConfigResult.h
+	include/alibabacloud/hbase/model/DescribeBackupStatusRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupStatusResult.h
+	include/alibabacloud/hbase/model/DescribeBackupSummaryRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupSummaryResult.h
+	include/alibabacloud/hbase/model/DescribeBackupTablesRequest.h
+	include/alibabacloud/hbase/model/DescribeBackupTablesResult.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageRequest.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageResult.h
 	include/alibabacloud/hbase/model/DescribeEndpointsRequest.h
@@ -49,14 +61,24 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeInstancesResult.h
 	include/alibabacloud/hbase/model/DescribeIpWhitelistRequest.h
 	include/alibabacloud/hbase/model/DescribeIpWhitelistResult.h
+	include/alibabacloud/hbase/model/DescribeRecoverableTimeRangeRequest.h
+	include/alibabacloud/hbase/model/DescribeRecoverableTimeRangeResult.h
 	include/alibabacloud/hbase/model/DescribeRegionsRequest.h
 	include/alibabacloud/hbase/model/DescribeRegionsResult.h
+	include/alibabacloud/hbase/model/DescribeRestoreSummaryRequest.h
+	include/alibabacloud/hbase/model/DescribeRestoreSummaryResult.h
+	include/alibabacloud/hbase/model/DescribeRestoreTablesRequest.h
+	include/alibabacloud/hbase/model/DescribeRestoreTablesResult.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsRequest.h
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsResult.h
+	include/alibabacloud/hbase/model/EnableHBaseueBackupRequest.h
+	include/alibabacloud/hbase/model/EnableHBaseueBackupResult.h
 	include/alibabacloud/hbase/model/ListTagResourcesRequest.h
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
 	include/alibabacloud/hbase/model/ListTagsRequest.h
 	include/alibabacloud/hbase/model/ListTagsResult.h
+	include/alibabacloud/hbase/model/ModifyBackupPlanConfigRequest.h
+	include/alibabacloud/hbase/model/ModifyBackupPlanConfigResult.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionRequest.h
 	include/alibabacloud/hbase/model/ModifyClusterDeletionProtectionResult.h
 	include/alibabacloud/hbase/model/ModifyInstanceMaintainTimeRequest.h
@@ -96,18 +118,30 @@ set(hbase_src
 	src/model/AddUserHdfsInfoResult.cc
 	src/model/ConvertInstanceRequest.cc
 	src/model/ConvertInstanceResult.cc
+	src/model/CreateBackupPlanRequest.cc
+	src/model/CreateBackupPlanResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
 	src/model/CreateHbaseHaSlbRequest.cc
 	src/model/CreateHbaseHaSlbResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
+	src/model/CreateRestorePlanRequest.cc
+	src/model/CreateRestorePlanResult.cc
 	src/model/DeleteHbaseHaSlbRequest.cc
 	src/model/DeleteHbaseHaSlbResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
 	src/model/DeleteUserHdfsInfoRequest.cc
 	src/model/DeleteUserHdfsInfoResult.cc
+	src/model/DescribeBackupPlanConfigRequest.cc
+	src/model/DescribeBackupPlanConfigResult.cc
+	src/model/DescribeBackupStatusRequest.cc
+	src/model/DescribeBackupStatusResult.cc
+	src/model/DescribeBackupSummaryRequest.cc
+	src/model/DescribeBackupSummaryResult.cc
+	src/model/DescribeBackupTablesRequest.cc
+	src/model/DescribeBackupTablesResult.cc
 	src/model/DescribeDBInstanceUsageRequest.cc
 	src/model/DescribeDBInstanceUsageResult.cc
 	src/model/DescribeEndpointsRequest.cc
@@ -120,14 +154,24 @@ set(hbase_src
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeIpWhitelistRequest.cc
 	src/model/DescribeIpWhitelistResult.cc
+	src/model/DescribeRecoverableTimeRangeRequest.cc
+	src/model/DescribeRecoverableTimeRangeResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeRestoreSummaryRequest.cc
+	src/model/DescribeRestoreSummaryResult.cc
+	src/model/DescribeRestoreTablesRequest.cc
+	src/model/DescribeRestoreTablesResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
 	src/model/DescribeSecurityGroupsResult.cc
+	src/model/EnableHBaseueBackupRequest.cc
+	src/model/EnableHBaseueBackupResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc
 	src/model/ListTagsResult.cc
+	src/model/ModifyBackupPlanConfigRequest.cc
+	src/model/ModifyBackupPlanConfigResult.cc
 	src/model/ModifyClusterDeletionProtectionRequest.cc
 	src/model/ModifyClusterDeletionProtectionResult.cc
 	src/model/ModifyInstanceMaintainTimeRequest.cc

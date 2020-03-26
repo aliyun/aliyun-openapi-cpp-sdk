@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AllowPushStreamRequest;
 
 AllowPushStreamRequest::AllowPushStreamRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AllowPushStream")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllowPushStreamRequest::~AllowPushStreamRequest()
 {}
@@ -33,7 +35,7 @@ long AllowPushStreamRequest::getOwnerId()const
 void AllowPushStreamRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllowPushStreamRequest::getRoomId()const
@@ -44,7 +46,7 @@ std::string AllowPushStreamRequest::getRoomId()const
 void AllowPushStreamRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string AllowPushStreamRequest::getAppId()const
@@ -55,6 +57,6 @@ std::string AllowPushStreamRequest::getAppId()const
 void AllowPushStreamRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

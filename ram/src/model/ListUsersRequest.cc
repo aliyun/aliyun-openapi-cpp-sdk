@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::ListUsersRequest;
 
 ListUsersRequest::ListUsersRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "ListUsers")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUsersRequest::~ListUsersRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListUsersRequest::getMarker()const
 void ListUsersRequest::setMarker(const std::string& marker)
 {
 	marker_ = marker;
-	setCoreParameter("Marker", marker);
+	setParameter("Marker", marker);
 }
 
 int ListUsersRequest::getMaxItems()const
@@ -44,6 +46,6 @@ int ListUsersRequest::getMaxItems()const
 void ListUsersRequest::setMaxItems(int maxItems)
 {
 	maxItems_ = maxItems;
-	setCoreParameter("MaxItems", std::to_string(maxItems));
+	setParameter("MaxItems", std::to_string(maxItems));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryDomainGroupListRequest;
 
 QueryDomainGroupListRequest::QueryDomainGroupListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryDomainGroupList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryDomainGroupListRequest::~QueryDomainGroupListRequest()
 {}
@@ -33,7 +35,7 @@ bool QueryDomainGroupListRequest::getShowDeletingGroup()const
 void QueryDomainGroupListRequest::setShowDeletingGroup(bool showDeletingGroup)
 {
 	showDeletingGroup_ = showDeletingGroup;
-	setCoreParameter("ShowDeletingGroup", showDeletingGroup ? "true" : "false");
+	setParameter("ShowDeletingGroup", showDeletingGroup ? "true" : "false");
 }
 
 std::string QueryDomainGroupListRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string QueryDomainGroupListRequest::getUserClientIp()const
 void QueryDomainGroupListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryDomainGroupListRequest::getDomainGroupName()const
@@ -55,7 +57,7 @@ std::string QueryDomainGroupListRequest::getDomainGroupName()const
 void QueryDomainGroupListRequest::setDomainGroupName(const std::string& domainGroupName)
 {
 	domainGroupName_ = domainGroupName;
-	setCoreParameter("DomainGroupName", domainGroupName);
+	setParameter("DomainGroupName", domainGroupName);
 }
 
 std::string QueryDomainGroupListRequest::getLang()const
@@ -66,6 +68,6 @@ std::string QueryDomainGroupListRequest::getLang()const
 void QueryDomainGroupListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

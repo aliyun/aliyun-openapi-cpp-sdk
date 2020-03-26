@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::ListLiveRealtimeLogDeliveryRequest;
 
 ListLiveRealtimeLogDeliveryRequest::ListLiveRealtimeLogDeliveryRequest() :
 	RpcServiceRequest("live", "2016-11-01", "ListLiveRealtimeLogDelivery")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListLiveRealtimeLogDeliveryRequest::~ListLiveRealtimeLogDeliveryRequest()
 {}
@@ -33,7 +35,7 @@ long ListLiveRealtimeLogDeliveryRequest::getOwnerId()const
 void ListLiveRealtimeLogDeliveryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListLiveRealtimeLogDeliveryRequest::getLiveOpenapiReserve()const
@@ -44,6 +46,6 @@ std::string ListLiveRealtimeLogDeliveryRequest::getLiveOpenapiReserve()const
 void ListLiveRealtimeLogDeliveryRequest::setLiveOpenapiReserve(const std::string& liveOpenapiReserve)
 {
 	liveOpenapiReserve_ = liveOpenapiReserve;
-	setCoreParameter("LiveOpenapiReserve", liveOpenapiReserve);
+	setParameter("LiveOpenapiReserve", liveOpenapiReserve);
 }
 

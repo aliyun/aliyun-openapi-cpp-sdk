@@ -35,20 +35,26 @@ namespace AlibabaCloud
 				RegisterFaceRequest();
 				~RegisterFaceRequest();
 
-				std::string getImage()const;
-				void setImage(const std::string& image);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getUserInfo()const;
 				void setUserInfo(const std::string& userInfo);
+				std::string getImage()const;
+				void setImage(const std::string& image);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string image_;
-				std::string groupId_;
 				std::string userId_;
 				std::string userInfo_;
+				std::string image_;
+				std::string groupId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

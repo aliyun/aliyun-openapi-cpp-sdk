@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AssociatePhysicalConnectionToVirtualBorderRouter
 
 AssociatePhysicalConnectionToVirtualBorderRouterRequest::AssociatePhysicalConnectionToVirtualBorderRouterRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssociatePhysicalConnectionToVirtualBorderRouterRequest::~AssociatePhysicalConnectionToVirtualBorderRouterRequest()
 {}
@@ -33,7 +35,7 @@ long AssociatePhysicalConnectionToVirtualBorderRouterRequest::getResourceOwnerId
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getCircuitCode()const
@@ -44,7 +46,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getCircuitC
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setCircuitCode(const std::string& circuitCode)
 {
 	circuitCode_ = circuitCode;
-	setCoreParameter("CircuitCode", circuitCode);
+	setParameter("CircuitCode", circuitCode);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getVlanId()const
@@ -55,7 +57,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getVlanId()
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setVlanId(const std::string& vlanId)
 {
 	vlanId_ = vlanId;
-	setCoreParameter("VlanId", vlanId);
+	setParameter("VlanId", vlanId);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getClientToken()const
@@ -66,7 +68,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getClientTo
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getVbrId()const
@@ -77,7 +79,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getVbrId()c
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setVbrId(const std::string& vbrId)
 {
 	vbrId_ = vbrId;
-	setCoreParameter("VbrId", vbrId);
+	setParameter("VbrId", vbrId);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeerGatewayIp()const
@@ -88,7 +90,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeerGate
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPeerGatewayIp(const std::string& peerGatewayIp)
 {
 	peerGatewayIp_ = peerGatewayIp;
-	setCoreParameter("PeerGatewayIp", peerGatewayIp);
+	setParameter("PeerGatewayIp", peerGatewayIp);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeeringSubnetMask()const
@@ -99,7 +101,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPeeringS
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPeeringSubnetMask(const std::string& peeringSubnetMask)
 {
 	peeringSubnetMask_ = peeringSubnetMask;
-	setCoreParameter("PeeringSubnetMask", peeringSubnetMask);
+	setParameter("PeeringSubnetMask", peeringSubnetMask);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getRegionId()const
@@ -110,7 +112,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getRegionId
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getLocalGatewayIp()const
@@ -121,7 +123,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getLocalGat
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setLocalGatewayIp(const std::string& localGatewayIp)
 {
 	localGatewayIp_ = localGatewayIp;
-	setCoreParameter("LocalGatewayIp", localGatewayIp);
+	setParameter("LocalGatewayIp", localGatewayIp);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getResourceOwnerAccount()const
@@ -132,7 +134,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getResource
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getOwnerAccount()const
@@ -143,7 +145,7 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getOwnerAcc
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AssociatePhysicalConnectionToVirtualBorderRouterRequest::getOwnerId()const
@@ -154,7 +156,7 @@ long AssociatePhysicalConnectionToVirtualBorderRouterRequest::getOwnerId()const
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPhysicalConnectionId()const
@@ -165,6 +167,6 @@ std::string AssociatePhysicalConnectionToVirtualBorderRouterRequest::getPhysical
 void AssociatePhysicalConnectionToVirtualBorderRouterRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

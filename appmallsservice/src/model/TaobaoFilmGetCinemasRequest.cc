@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetCinemasRequest;
 
 TaobaoFilmGetCinemasRequest::TaobaoFilmGetCinemasRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetCinemas")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetCinemasRequest::~TaobaoFilmGetCinemasRequest()
 {}
@@ -33,7 +35,7 @@ long TaobaoFilmGetCinemasRequest::getPageIndex()const
 void TaobaoFilmGetCinemasRequest::setPageIndex(long pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string TaobaoFilmGetCinemasRequest::getParamsJson()const
@@ -44,6 +46,6 @@ std::string TaobaoFilmGetCinemasRequest::getParamsJson()const
 void TaobaoFilmGetCinemasRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

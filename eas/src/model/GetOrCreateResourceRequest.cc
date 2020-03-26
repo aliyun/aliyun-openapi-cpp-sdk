@@ -22,7 +22,7 @@ GetOrCreateResourceRequest::GetOrCreateResourceRequest() :
 	RoaServiceRequest("eas", "2018-05-22")
 {
 	setResourcePath("/api/resources");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetOrCreateResourceRequest::~GetOrCreateResourceRequest()

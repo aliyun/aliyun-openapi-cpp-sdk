@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::ApplyNotaryPostRequest;
 
 ApplyNotaryPostRequest::ApplyNotaryPostRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "ApplyNotaryPost")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ApplyNotaryPostRequest::~ApplyNotaryPostRequest()
 {}
@@ -33,7 +35,7 @@ std::string ApplyNotaryPostRequest::getReceiverName()const
 void ApplyNotaryPostRequest::setReceiverName(const std::string& receiverName)
 {
 	receiverName_ = receiverName;
-	setCoreParameter("ReceiverName", receiverName);
+	setParameter("ReceiverName", receiverName);
 }
 
 std::string ApplyNotaryPostRequest::getReceiverPhone()const
@@ -44,7 +46,7 @@ std::string ApplyNotaryPostRequest::getReceiverPhone()const
 void ApplyNotaryPostRequest::setReceiverPhone(const std::string& receiverPhone)
 {
 	receiverPhone_ = receiverPhone;
-	setCoreParameter("ReceiverPhone", receiverPhone);
+	setParameter("ReceiverPhone", receiverPhone);
 }
 
 long ApplyNotaryPostRequest::getNotaryOrderId()const
@@ -55,7 +57,7 @@ long ApplyNotaryPostRequest::getNotaryOrderId()const
 void ApplyNotaryPostRequest::setNotaryOrderId(long notaryOrderId)
 {
 	notaryOrderId_ = notaryOrderId;
-	setCoreParameter("NotaryOrderId", std::to_string(notaryOrderId));
+	setParameter("NotaryOrderId", std::to_string(notaryOrderId));
 }
 
 std::string ApplyNotaryPostRequest::getReceiverAddress()const
@@ -66,6 +68,6 @@ std::string ApplyNotaryPostRequest::getReceiverAddress()const
 void ApplyNotaryPostRequest::setReceiverAddress(const std::string& receiverAddress)
 {
 	receiverAddress_ = receiverAddress;
-	setCoreParameter("ReceiverAddress", receiverAddress);
+	setParameter("ReceiverAddress", receiverAddress);
 }
 

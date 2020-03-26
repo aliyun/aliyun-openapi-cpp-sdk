@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyDBInstanceDescriptionRequest;
 
 ModifyDBInstanceDescriptionRequest::ModifyDBInstanceDescriptionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyDBInstanceDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDBInstanceDescriptionRequest::~ModifyDBInstanceDescriptionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyDBInstanceDescriptionRequest::getAccessKeyId()const
 void ModifyDBInstanceDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceId()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
@@ -55,6 +57,6 @@ std::string ModifyDBInstanceDescriptionRequest::getDBInstanceDescription()const
 void ModifyDBInstanceDescriptionRequest::setDBInstanceDescription(const std::string& dBInstanceDescription)
 {
 	dBInstanceDescription_ = dBInstanceDescription;
-	setCoreParameter("DBInstanceDescription", dBInstanceDescription);
+	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 

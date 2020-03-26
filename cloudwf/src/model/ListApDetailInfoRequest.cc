@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApDetailInfoRequest;
 
 ListApDetailInfoRequest::ListApDetailInfoRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApDetailInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApDetailInfoRequest::~ListApDetailInfoRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApDetailInfoRequest::getAccessKeyId()const
 void ListApDetailInfoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ListApDetailInfoRequest::getApAssetId()const
@@ -44,6 +46,6 @@ long ListApDetailInfoRequest::getApAssetId()const
 void ListApDetailInfoRequest::setApAssetId(long apAssetId)
 {
 	apAssetId_ = apAssetId;
-	setCoreParameter("ApAssetId", std::to_string(apAssetId));
+	setParameter("ApAssetId", std::to_string(apAssetId));
 }
 

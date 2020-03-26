@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getIsAutoStart()const;
 				void setIsAutoStart(bool isAutoStart);
+				std::string getProxyUserId()const;
+				void setProxyUserId(const std::string& proxyUserId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getContactGroupIds()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				bool isAutoStart_;
+				std::string proxyUserId_;
 				std::string regionId_;
 				std::string contactGroupIds_;
 				std::string pids_;

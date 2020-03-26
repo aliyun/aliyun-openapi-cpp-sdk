@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_IOT_EXPORT QueryAppDeviceListRequest : public RpcServiceRequest
 			{
+			public:
 				struct TagList
 				{
 					std::string tagName;

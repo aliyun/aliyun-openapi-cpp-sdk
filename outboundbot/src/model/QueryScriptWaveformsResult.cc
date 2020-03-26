@@ -43,26 +43,26 @@ void QueryScriptWaveformsResult::parse(const std::string &payload)
 	for (auto valueScriptWaveformsScriptWaveform : allScriptWaveformsNode)
 	{
 		ScriptWaveform scriptWaveformsObject;
-		if(!valueScriptWaveformsScriptWaveform["ScriptWaveformId"].isNull())
-			scriptWaveformsObject.scriptWaveformId = valueScriptWaveformsScriptWaveform["ScriptWaveformId"].asString();
-		if(!valueScriptWaveformsScriptWaveform["ScriptId"].isNull())
-			scriptWaveformsObject.scriptId = valueScriptWaveformsScriptWaveform["ScriptId"].asString();
-		if(!valueScriptWaveformsScriptWaveform["ScriptContent"].isNull())
-			scriptWaveformsObject.scriptContent = valueScriptWaveformsScriptWaveform["ScriptContent"].asString();
 		if(!valueScriptWaveformsScriptWaveform["FileId"].isNull())
 			scriptWaveformsObject.fileId = valueScriptWaveformsScriptWaveform["FileId"].asString();
 		if(!valueScriptWaveformsScriptWaveform["FileName"].isNull())
 			scriptWaveformsObject.fileName = valueScriptWaveformsScriptWaveform["FileName"].asString();
+		if(!valueScriptWaveformsScriptWaveform["ScriptContent"].isNull())
+			scriptWaveformsObject.scriptContent = valueScriptWaveformsScriptWaveform["ScriptContent"].asString();
+		if(!valueScriptWaveformsScriptWaveform["ScriptId"].isNull())
+			scriptWaveformsObject.scriptId = valueScriptWaveformsScriptWaveform["ScriptId"].asString();
+		if(!valueScriptWaveformsScriptWaveform["ScriptWaveformId"].isNull())
+			scriptWaveformsObject.scriptWaveformId = valueScriptWaveformsScriptWaveform["ScriptWaveformId"].asString();
 		scriptWaveforms_.push_back(scriptWaveformsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

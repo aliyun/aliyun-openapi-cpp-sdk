@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DescribeVodAIDataRequest;
 
 DescribeVodAIDataRequest::DescribeVodAIDataRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DescribeVodAIData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVodAIDataRequest::~DescribeVodAIDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeVodAIDataRequest::getStartTime()const
 void DescribeVodAIDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeVodAIDataRequest::getAIType()const
@@ -44,7 +46,7 @@ std::string DescribeVodAIDataRequest::getAIType()const
 void DescribeVodAIDataRequest::setAIType(const std::string& aIType)
 {
 	aIType_ = aIType;
-	setCoreParameter("AIType", aIType);
+	setParameter("AIType", aIType);
 }
 
 std::string DescribeVodAIDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeVodAIDataRequest::getEndTime()const
 void DescribeVodAIDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeVodAIDataRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeVodAIDataRequest::getOwnerId()const
 void DescribeVodAIDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeVodAIDataRequest::getRegion()const
@@ -77,6 +79,6 @@ std::string DescribeVodAIDataRequest::getRegion()const
 void DescribeVodAIDataRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

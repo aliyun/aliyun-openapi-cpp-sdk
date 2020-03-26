@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ReleaseInstanceRequest;
 
 ReleaseInstanceRequest::ReleaseInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ReleaseInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseInstanceRequest::~ReleaseInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReleaseInstanceRequest::getTraceId()const
 void ReleaseInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setParameter("TraceId", traceId);
 }
 
 std::string ReleaseInstanceRequest::getSpMsg()const
@@ -44,7 +46,7 @@ std::string ReleaseInstanceRequest::getSpMsg()const
 void ReleaseInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setCoreParameter("SpMsg", spMsg);
+	setParameter("SpMsg", spMsg);
 }
 
 std::string ReleaseInstanceRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ReleaseInstanceRequest::getAccessKeyId()const
 void ReleaseInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

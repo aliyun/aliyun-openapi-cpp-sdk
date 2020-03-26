@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricSignRequest;
 AsymmetricSignRequest::AsymmetricSignRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricSign")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 AsymmetricSignRequest::~AsymmetricSignRequest()

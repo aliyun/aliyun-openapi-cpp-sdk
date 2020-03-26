@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryTransferInListRequest;
 
 QueryTransferInListRequest::QueryTransferInListRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "QueryTransferInList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTransferInListRequest::~QueryTransferInListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryTransferInListRequest::getSubmissionStartDate()const
 void QueryTransferInListRequest::setSubmissionStartDate(long submissionStartDate)
 {
 	submissionStartDate_ = submissionStartDate;
-	setCoreParameter("SubmissionStartDate", std::to_string(submissionStartDate));
+	setParameter("SubmissionStartDate", std::to_string(submissionStartDate));
 }
 
 long QueryTransferInListRequest::getSubmissionEndDate()const
@@ -44,7 +46,7 @@ long QueryTransferInListRequest::getSubmissionEndDate()const
 void QueryTransferInListRequest::setSubmissionEndDate(long submissionEndDate)
 {
 	submissionEndDate_ = submissionEndDate;
-	setCoreParameter("SubmissionEndDate", std::to_string(submissionEndDate));
+	setParameter("SubmissionEndDate", std::to_string(submissionEndDate));
 }
 
 std::string QueryTransferInListRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string QueryTransferInListRequest::getDomainName()const
 void QueryTransferInListRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 int QueryTransferInListRequest::getPageNum()const
@@ -66,7 +68,7 @@ int QueryTransferInListRequest::getPageNum()const
 void QueryTransferInListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryTransferInListRequest::getUserClientIp()const
@@ -77,7 +79,7 @@ std::string QueryTransferInListRequest::getUserClientIp()const
 void QueryTransferInListRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
@@ -88,7 +90,7 @@ std::string QueryTransferInListRequest::getSimpleTransferInStatus()const
 void QueryTransferInListRequest::setSimpleTransferInStatus(const std::string& simpleTransferInStatus)
 {
 	simpleTransferInStatus_ = simpleTransferInStatus;
-	setCoreParameter("SimpleTransferInStatus", simpleTransferInStatus);
+	setParameter("SimpleTransferInStatus", simpleTransferInStatus);
 }
 
 int QueryTransferInListRequest::getPageSize()const
@@ -99,7 +101,7 @@ int QueryTransferInListRequest::getPageSize()const
 void QueryTransferInListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTransferInListRequest::getLang()const
@@ -110,6 +112,6 @@ std::string QueryTransferInListRequest::getLang()const
 void QueryTransferInListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

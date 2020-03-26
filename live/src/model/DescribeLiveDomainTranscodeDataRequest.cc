@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveDomainTranscodeDataRequest;
 
 DescribeLiveDomainTranscodeDataRequest::DescribeLiveDomainTranscodeDataRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveDomainTranscodeData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveDomainTranscodeDataRequest::~DescribeLiveDomainTranscodeDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveDomainTranscodeDataRequest::getStartTime()const
 void DescribeLiveDomainTranscodeDataRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeLiveDomainTranscodeDataRequest::getDomainName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveDomainTranscodeDataRequest::getDomainName()const
 void DescribeLiveDomainTranscodeDataRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string DescribeLiveDomainTranscodeDataRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeLiveDomainTranscodeDataRequest::getEndTime()const
 void DescribeLiveDomainTranscodeDataRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeLiveDomainTranscodeDataRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DescribeLiveDomainTranscodeDataRequest::getOwnerId()const
 void DescribeLiveDomainTranscodeDataRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

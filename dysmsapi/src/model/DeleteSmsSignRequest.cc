@@ -35,7 +35,7 @@ long DeleteSmsSignRequest::getResourceOwnerId()const
 void DeleteSmsSignRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteSmsSignRequest::getResourceOwnerAccount()const
@@ -46,7 +46,7 @@ std::string DeleteSmsSignRequest::getResourceOwnerAccount()const
 void DeleteSmsSignRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteSmsSignRequest::getOwnerId()const
@@ -57,7 +57,7 @@ long DeleteSmsSignRequest::getOwnerId()const
 void DeleteSmsSignRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteSmsSignRequest::getAccessKeyId()const
@@ -68,7 +68,7 @@ std::string DeleteSmsSignRequest::getAccessKeyId()const
 void DeleteSmsSignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteSmsSignRequest::getSignName()const
@@ -79,6 +79,6 @@ std::string DeleteSmsSignRequest::getSignName()const
 void DeleteSmsSignRequest::setSignName(const std::string& signName)
 {
 	signName_ = signName;
-	setCoreParameter("SignName", signName);
+	setParameter("SignName", signName);
 }
 

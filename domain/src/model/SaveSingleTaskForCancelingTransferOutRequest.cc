@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForCancelingTransferOutRequest;
 
 SaveSingleTaskForCancelingTransferOutRequest::SaveSingleTaskForCancelingTransferOutRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForCancelingTransferOut")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForCancelingTransferOutRequest::~SaveSingleTaskForCancelingTransferOutRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForCancelingTransferOutRequest::getDomainName()const
 void SaveSingleTaskForCancelingTransferOutRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForCancelingTransferOutRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForCancelingTransferOutRequest::getUserClientIp()const
 void SaveSingleTaskForCancelingTransferOutRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string SaveSingleTaskForCancelingTransferOutRequest::getLang()const
@@ -55,6 +57,6 @@ std::string SaveSingleTaskForCancelingTransferOutRequest::getLang()const
 void SaveSingleTaskForCancelingTransferOutRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

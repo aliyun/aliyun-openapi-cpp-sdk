@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::SetAllowIPRequest;
 
 SetAllowIPRequest::SetAllowIPRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "SetAllowIP")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAllowIPRequest::~SetAllowIPRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetAllowIPRequest::getRegionID()const
 void SetAllowIPRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 long SetAllowIPRequest::getUserID()const
@@ -44,7 +46,7 @@ long SetAllowIPRequest::getUserID()const
 void SetAllowIPRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setCoreParameter("UserID", std::to_string(userID));
+	setBodyParameter("UserID", std::to_string(userID));
 }
 
 std::string SetAllowIPRequest::getNetworkType()const
@@ -55,7 +57,7 @@ std::string SetAllowIPRequest::getNetworkType()const
 void SetAllowIPRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setBodyParameter("NetworkType", networkType);
 }
 
 std::string SetAllowIPRequest::getAllowIP()const
@@ -66,7 +68,7 @@ std::string SetAllowIPRequest::getAllowIP()const
 void SetAllowIPRequest::setAllowIP(const std::string& allowIP)
 {
 	allowIP_ = allowIP;
-	setCoreParameter("AllowIP", allowIP);
+	setBodyParameter("AllowIP", allowIP);
 }
 
 bool SetAllowIPRequest::getAppend()const
@@ -77,6 +79,6 @@ bool SetAllowIPRequest::getAppend()const
 void SetAllowIPRequest::setAppend(bool append)
 {
 	append_ = append;
-	setCoreParameter("Append", append ? "true" : "false");
+	setBodyParameter("Append", append ? "true" : "false");
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::DescribeOssIncrementStatsRequest;
 
 DescribeOssIncrementStatsRequest::DescribeOssIncrementStatsRequest() :
 	RpcServiceRequest("green", "2017-08-23", "DescribeOssIncrementStats")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOssIncrementStatsRequest::~DescribeOssIncrementStatsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeOssIncrementStatsRequest::getStartDate()const
 void DescribeOssIncrementStatsRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 std::string DescribeOssIncrementStatsRequest::getResourceType()const
@@ -44,7 +46,7 @@ std::string DescribeOssIncrementStatsRequest::getResourceType()const
 void DescribeOssIncrementStatsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string DescribeOssIncrementStatsRequest::getScene()const
@@ -55,7 +57,7 @@ std::string DescribeOssIncrementStatsRequest::getScene()const
 void DescribeOssIncrementStatsRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string DescribeOssIncrementStatsRequest::getEndDate()const
@@ -66,7 +68,7 @@ std::string DescribeOssIncrementStatsRequest::getEndDate()const
 void DescribeOssIncrementStatsRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeOssIncrementStatsRequest::getSourceIp()const
@@ -77,7 +79,7 @@ std::string DescribeOssIncrementStatsRequest::getSourceIp()const
 void DescribeOssIncrementStatsRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeOssIncrementStatsRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DescribeOssIncrementStatsRequest::getLang()const
 void DescribeOssIncrementStatsRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

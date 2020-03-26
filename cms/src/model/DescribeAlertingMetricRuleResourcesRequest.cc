@@ -35,7 +35,7 @@ std::string DescribeAlertingMetricRuleResourcesRequest::getGroupId()const
 void DescribeAlertingMetricRuleResourcesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeAlertingMetricRuleResourcesRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeAlertingMetricRuleResourcesRequest::getPageSize()const
 void DescribeAlertingMetricRuleResourcesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeAlertingMetricRuleResourcesRequest::getPage()const
@@ -57,7 +57,7 @@ int DescribeAlertingMetricRuleResourcesRequest::getPage()const
 void DescribeAlertingMetricRuleResourcesRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string DescribeAlertingMetricRuleResourcesRequest::getRuleId()const
@@ -68,6 +68,6 @@ std::string DescribeAlertingMetricRuleResourcesRequest::getRuleId()const
 void DescribeAlertingMetricRuleResourcesRequest::setRuleId(const std::string& ruleId)
 {
 	ruleId_ = ruleId;
-	setCoreParameter("RuleId", ruleId);
+	setParameter("RuleId", ruleId);
 }
 

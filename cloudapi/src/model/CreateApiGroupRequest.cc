@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::CreateApiGroupRequest;
 
 CreateApiGroupRequest::CreateApiGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "CreateApiGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateApiGroupRequest::~CreateApiGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateApiGroupRequest::getDescription()const
 void CreateApiGroupRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateApiGroupRequest::getSource()const
@@ -44,7 +46,7 @@ std::string CreateApiGroupRequest::getSource()const
 void CreateApiGroupRequest::setSource(const std::string& source)
 {
 	source_ = source;
-	setCoreParameter("Source", source);
+	setParameter("Source", source);
 }
 
 std::string CreateApiGroupRequest::getGroupName()const
@@ -55,7 +57,7 @@ std::string CreateApiGroupRequest::getGroupName()const
 void CreateApiGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
-	setCoreParameter("GroupName", groupName);
+	setParameter("GroupName", groupName);
 }
 
 std::string CreateApiGroupRequest::getAccessKeyId()const
@@ -66,7 +68,18 @@ std::string CreateApiGroupRequest::getAccessKeyId()const
 void CreateApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateApiGroupRequest::getResourceOwnerToken()const
+{
+	return resourceOwnerToken_;
+}
+
+void CreateApiGroupRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
+{
+	resourceOwnerToken_ = resourceOwnerToken;
+	setParameter("ResourceOwnerToken", resourceOwnerToken);
 }
 
 std::string CreateApiGroupRequest::getInstanceId()const
@@ -77,7 +90,7 @@ std::string CreateApiGroupRequest::getInstanceId()const
 void CreateApiGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string CreateApiGroupRequest::getSecurityToken()const
@@ -88,7 +101,7 @@ std::string CreateApiGroupRequest::getSecurityToken()const
 void CreateApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
@@ -99,12 +112,11 @@ std::vector<CreateApiGroupRequest::Tag> CreateApiGroupRequest::getTag()const
 void CreateApiGroupRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

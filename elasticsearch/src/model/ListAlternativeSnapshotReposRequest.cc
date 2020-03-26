@@ -22,7 +22,7 @@ ListAlternativeSnapshotReposRequest::ListAlternativeSnapshotReposRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/alternative-snapshot-repos");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListAlternativeSnapshotReposRequest::~ListAlternativeSnapshotReposRequest()

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::CreateMcuTemplateRequest;
 
 CreateMcuTemplateRequest::CreateMcuTemplateRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "CreateMcuTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateMcuTemplateRequest::~CreateMcuTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateMcuTemplateRequest::get_Template()const
 void CreateMcuTemplateRequest::set_Template(const std::string& _template)
 {
 	_template_ = _template;
-	setCoreParameter("_Template", _template);
+	setParameter("_Template", _template);
 }
 
 long CreateMcuTemplateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateMcuTemplateRequest::getResourceOwnerId()const
 void CreateMcuTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateMcuTemplateRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string CreateMcuTemplateRequest::getResourceOwnerAccount()const
 void CreateMcuTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateMcuTemplateRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CreateMcuTemplateRequest::getOwnerAccount()const
 void CreateMcuTemplateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateMcuTemplateRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long CreateMcuTemplateRequest::getOwnerId()const
 void CreateMcuTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateMcuTemplateRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string CreateMcuTemplateRequest::getAccessKeyId()const
 void CreateMcuTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateFilingSignatureDocumentRequest;
 
 CreateFilingSignatureDocumentRequest::CreateFilingSignatureDocumentRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateFilingSignatureDocument")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateFilingSignatureDocumentRequest::~CreateFilingSignatureDocumentRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateFilingSignatureDocumentRequest::getDocId()const
 void CreateFilingSignatureDocumentRequest::setDocId(const std::string& docId)
 {
 	docId_ = docId;
-	setCoreParameter("DocId", docId);
+	setParameter("DocId", docId);
 }
 
 std::string CreateFilingSignatureDocumentRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string CreateFilingSignatureDocumentRequest::getResourceGroupId()const
 void CreateFilingSignatureDocumentRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateFilingSignatureDocumentRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateFilingSignatureDocumentRequest::getSourceIp()const
 void CreateFilingSignatureDocumentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateFilingSignatureDocumentRequest::getLang()const
@@ -66,6 +68,6 @@ std::string CreateFilingSignatureDocumentRequest::getLang()const
 void CreateFilingSignatureDocumentRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

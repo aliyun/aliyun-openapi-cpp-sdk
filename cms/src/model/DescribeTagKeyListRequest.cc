@@ -35,7 +35,7 @@ int DescribeTagKeyListRequest::getPageNumber()const
 void DescribeTagKeyListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeTagKeyListRequest::getPageSize()const
@@ -46,6 +46,6 @@ int DescribeTagKeyListRequest::getPageSize()const
 void DescribeTagKeyListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

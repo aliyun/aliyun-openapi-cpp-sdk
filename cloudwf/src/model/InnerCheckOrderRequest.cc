@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::InnerCheckOrderRequest;
 
 InnerCheckOrderRequest::InnerCheckOrderRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "InnerCheckOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InnerCheckOrderRequest::~InnerCheckOrderRequest()
 {}
@@ -33,7 +35,7 @@ std::string InnerCheckOrderRequest::getData()const
 void InnerCheckOrderRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setParameter("Data", data);
 }
 
 std::string InnerCheckOrderRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string InnerCheckOrderRequest::getAccessKeyId()const
 void InnerCheckOrderRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

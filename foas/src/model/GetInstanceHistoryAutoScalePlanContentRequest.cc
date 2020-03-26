@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetInstanceHistoryAutoScalePlanContentRequest;
 
 GetInstanceHistoryAutoScalePlanContentRequest::GetInstanceHistoryAutoScalePlanContentRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]/instance/[instanceId]/autoscale/plancontent");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceHistoryAutoScalePlanContentRequest::~GetInstanceHistoryAutoScalePlanContentRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetInstanceHistoryAutoScalePlanContentRequest::getProjectName()const
 void GetInstanceHistoryAutoScalePlanContentRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 long GetInstanceHistoryAutoScalePlanContentRequest::getInstanceId()const
@@ -44,7 +47,7 @@ long GetInstanceHistoryAutoScalePlanContentRequest::getInstanceId()const
 void GetInstanceHistoryAutoScalePlanContentRequest::setInstanceId(long instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", std::to_string(instanceId));
+	setParameter("InstanceId", std::to_string(instanceId));
 }
 
 std::string GetInstanceHistoryAutoScalePlanContentRequest::getRegionId()const
@@ -55,7 +58,7 @@ std::string GetInstanceHistoryAutoScalePlanContentRequest::getRegionId()const
 void GetInstanceHistoryAutoScalePlanContentRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetInstanceHistoryAutoScalePlanContentRequest::getPlanName()const
@@ -66,7 +69,7 @@ std::string GetInstanceHistoryAutoScalePlanContentRequest::getPlanName()const
 void GetInstanceHistoryAutoScalePlanContentRequest::setPlanName(const std::string& planName)
 {
 	planName_ = planName;
-	setCoreParameter("PlanName", planName);
+	setParameter("PlanName", planName);
 }
 
 std::string GetInstanceHistoryAutoScalePlanContentRequest::getJobName()const
@@ -77,6 +80,6 @@ std::string GetInstanceHistoryAutoScalePlanContentRequest::getJobName()const
 void GetInstanceHistoryAutoScalePlanContentRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddTerrorismPipelineRequest;
 
 AddTerrorismPipelineRequest::AddTerrorismPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddTerrorismPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddTerrorismPipelineRequest::~AddTerrorismPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long AddTerrorismPipelineRequest::getResourceOwnerId()const
 void AddTerrorismPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddTerrorismPipelineRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string AddTerrorismPipelineRequest::getAccessKeyId()const
 void AddTerrorismPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddTerrorismPipelineRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string AddTerrorismPipelineRequest::getResourceOwnerAccount()const
 void AddTerrorismPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddTerrorismPipelineRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddTerrorismPipelineRequest::getOwnerAccount()const
 void AddTerrorismPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string AddTerrorismPipelineRequest::getNotifyConfig()const
@@ -77,7 +79,7 @@ std::string AddTerrorismPipelineRequest::getNotifyConfig()const
 void AddTerrorismPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setParameter("NotifyConfig", notifyConfig);
 }
 
 long AddTerrorismPipelineRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddTerrorismPipelineRequest::getOwnerId()const
 void AddTerrorismPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddTerrorismPipelineRequest::getPriority()const
@@ -99,7 +101,7 @@ int AddTerrorismPipelineRequest::getPriority()const
 void AddTerrorismPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string AddTerrorismPipelineRequest::getName()const
@@ -110,6 +112,6 @@ std::string AddTerrorismPipelineRequest::getName()const
 void AddTerrorismPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

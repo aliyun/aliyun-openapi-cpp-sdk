@@ -35,7 +35,7 @@ std::string DescribeMonitorGroupNotifyPolicyListRequest::getPolicyType()const
 void DescribeMonitorGroupNotifyPolicyListRequest::setPolicyType(const std::string& policyType)
 {
 	policyType_ = policyType;
-	setCoreParameter("PolicyType", policyType);
+	setParameter("PolicyType", policyType);
 }
 
 std::string DescribeMonitorGroupNotifyPolicyListRequest::getGroupId()const
@@ -46,7 +46,7 @@ std::string DescribeMonitorGroupNotifyPolicyListRequest::getGroupId()const
 void DescribeMonitorGroupNotifyPolicyListRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int DescribeMonitorGroupNotifyPolicyListRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeMonitorGroupNotifyPolicyListRequest::getPageNumber()const
 void DescribeMonitorGroupNotifyPolicyListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeMonitorGroupNotifyPolicyListRequest::getPageSize()const
@@ -68,6 +68,6 @@ int DescribeMonitorGroupNotifyPolicyListRequest::getPageSize()const
 void DescribeMonitorGroupNotifyPolicyListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

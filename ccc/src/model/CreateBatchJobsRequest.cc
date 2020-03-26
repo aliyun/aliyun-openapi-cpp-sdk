@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateBatchJobsRequest;
 
 CreateBatchJobsRequest::CreateBatchJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateBatchJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBatchJobsRequest::~CreateBatchJobsRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateBatchJobsRequest::getDescription()const
 void CreateBatchJobsRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateBatchJobsRequest::getJobFilePath()const
@@ -44,7 +46,7 @@ std::string CreateBatchJobsRequest::getJobFilePath()const
 void CreateBatchJobsRequest::setJobFilePath(const std::string& jobFilePath)
 {
 	jobFilePath_ = jobFilePath;
-	setCoreParameter("JobFilePath", jobFilePath);
+	setParameter("JobFilePath", jobFilePath);
 }
 
 std::vector<std::string> CreateBatchJobsRequest::getCallingNumber()const
@@ -55,8 +57,9 @@ std::vector<std::string> CreateBatchJobsRequest::getCallingNumber()const
 void CreateBatchJobsRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string CreateBatchJobsRequest::getInstanceId()const
@@ -67,7 +70,7 @@ std::string CreateBatchJobsRequest::getInstanceId()const
 void CreateBatchJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 bool CreateBatchJobsRequest::getSubmitted()const
@@ -78,7 +81,7 @@ bool CreateBatchJobsRequest::getSubmitted()const
 void CreateBatchJobsRequest::setSubmitted(bool submitted)
 {
 	submitted_ = submitted;
-	setCoreParameter("Submitted", submitted ? "true" : "false");
+	setParameter("Submitted", submitted ? "true" : "false");
 }
 
 std::string CreateBatchJobsRequest::getStrategyJson()const
@@ -89,7 +92,7 @@ std::string CreateBatchJobsRequest::getStrategyJson()const
 void CreateBatchJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setParameter("StrategyJson", strategyJson);
 }
 
 std::string CreateBatchJobsRequest::getName()const
@@ -100,7 +103,7 @@ std::string CreateBatchJobsRequest::getName()const
 void CreateBatchJobsRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateBatchJobsRequest::getScenarioId()const
@@ -111,6 +114,6 @@ std::string CreateBatchJobsRequest::getScenarioId()const
 void CreateBatchJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

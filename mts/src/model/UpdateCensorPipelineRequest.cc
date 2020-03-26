@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UpdateCensorPipelineRequest;
 
 UpdateCensorPipelineRequest::UpdateCensorPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UpdateCensorPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateCensorPipelineRequest::~UpdateCensorPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateCensorPipelineRequest::getResourceOwnerId()const
 void UpdateCensorPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateCensorPipelineRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UpdateCensorPipelineRequest::getAccessKeyId()const
 void UpdateCensorPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpdateCensorPipelineRequest::getState()const
@@ -55,7 +57,7 @@ std::string UpdateCensorPipelineRequest::getState()const
 void UpdateCensorPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string UpdateCensorPipelineRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateCensorPipelineRequest::getResourceOwnerAccount()const
 void UpdateCensorPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UpdateCensorPipelineRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string UpdateCensorPipelineRequest::getOwnerAccount()const
 void UpdateCensorPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string UpdateCensorPipelineRequest::getNotifyConfig()const
@@ -88,7 +90,7 @@ std::string UpdateCensorPipelineRequest::getNotifyConfig()const
 void UpdateCensorPipelineRequest::setNotifyConfig(const std::string& notifyConfig)
 {
 	notifyConfig_ = notifyConfig;
-	setCoreParameter("NotifyConfig", notifyConfig);
+	setParameter("NotifyConfig", notifyConfig);
 }
 
 long UpdateCensorPipelineRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long UpdateCensorPipelineRequest::getOwnerId()const
 void UpdateCensorPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpdateCensorPipelineRequest::getPriority()const
@@ -110,7 +112,7 @@ int UpdateCensorPipelineRequest::getPriority()const
 void UpdateCensorPipelineRequest::setPriority(int priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", std::to_string(priority));
+	setParameter("Priority", std::to_string(priority));
 }
 
 std::string UpdateCensorPipelineRequest::getPipelineId()const
@@ -121,7 +123,7 @@ std::string UpdateCensorPipelineRequest::getPipelineId()const
 void UpdateCensorPipelineRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string UpdateCensorPipelineRequest::getName()const
@@ -132,6 +134,6 @@ std::string UpdateCensorPipelineRequest::getName()const
 void UpdateCensorPipelineRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

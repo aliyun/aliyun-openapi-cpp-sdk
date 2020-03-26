@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				QueryScriptsByStatusRequest();
 				~QueryScriptsByStatusRequest();
 
+				std::vector<std::string> getStatusList()const;
+				void setStatusList(const std::vector<std::string>& statusList);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
 
             private:
+				std::vector<std::string> statusList_;
 				int pageNumber_;
 				std::string instanceId_;
 				int pageSize_;
-				std::string status_;
 
 			};
 		}

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::DeleteDrdsDBRequest;
 
 DeleteDrdsDBRequest::DeleteDrdsDBRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "DeleteDrdsDB")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDrdsDBRequest::~DeleteDrdsDBRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDrdsDBRequest::getDrdsInstanceId()const
 void DeleteDrdsDBRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string DeleteDrdsDBRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DeleteDrdsDBRequest::getAccessKeyId()const
 void DeleteDrdsDBRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDrdsDBRequest::getDbName()const
@@ -55,6 +57,6 @@ std::string DeleteDrdsDBRequest::getDbName()const
 void DeleteDrdsDBRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 

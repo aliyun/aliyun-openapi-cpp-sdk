@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateRoleRequest();
 				~CreateRoleRequest();
 
+				long getMaxSessionDuration()const;
+				void setMaxSessionDuration(long maxSessionDuration);
 				std::string getRoleName()const;
 				void setRoleName(const std::string& roleName);
 				std::string getDescription()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setAssumeRolePolicyDocument(const std::string& assumeRolePolicyDocument);
 
             private:
+				long maxSessionDuration_;
 				std::string roleName_;
 				std::string description_;
 				std::string assumeRolePolicyDocument_;

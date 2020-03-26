@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::SetCasterChannelRequest;
 
 SetCasterChannelRequest::SetCasterChannelRequest() :
 	RpcServiceRequest("live", "2016-11-01", "SetCasterChannel")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetCasterChannelRequest::~SetCasterChannelRequest()
 {}
@@ -33,7 +35,7 @@ int SetCasterChannelRequest::getSeekOffset()const
 void SetCasterChannelRequest::setSeekOffset(int seekOffset)
 {
 	seekOffset_ = seekOffset;
-	setCoreParameter("SeekOffset", std::to_string(seekOffset));
+	setParameter("SeekOffset", std::to_string(seekOffset));
 }
 
 int SetCasterChannelRequest::getPlayStatus()const
@@ -44,7 +46,7 @@ int SetCasterChannelRequest::getPlayStatus()const
 void SetCasterChannelRequest::setPlayStatus(int playStatus)
 {
 	playStatus_ = playStatus;
-	setCoreParameter("PlayStatus", std::to_string(playStatus));
+	setParameter("PlayStatus", std::to_string(playStatus));
 }
 
 std::string SetCasterChannelRequest::getResourceId()const
@@ -55,7 +57,7 @@ std::string SetCasterChannelRequest::getResourceId()const
 void SetCasterChannelRequest::setResourceId(const std::string& resourceId)
 {
 	resourceId_ = resourceId;
-	setCoreParameter("ResourceId", resourceId);
+	setParameter("ResourceId", resourceId);
 }
 
 std::string SetCasterChannelRequest::getCasterId()const
@@ -66,7 +68,7 @@ std::string SetCasterChannelRequest::getCasterId()const
 void SetCasterChannelRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long SetCasterChannelRequest::getOwnerId()const
@@ -77,7 +79,18 @@ long SetCasterChannelRequest::getOwnerId()const
 void SetCasterChannelRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int SetCasterChannelRequest::getReloadFlag()const
+{
+	return reloadFlag_;
+}
+
+void SetCasterChannelRequest::setReloadFlag(int reloadFlag)
+{
+	reloadFlag_ = reloadFlag;
+	setParameter("ReloadFlag", std::to_string(reloadFlag));
 }
 
 std::string SetCasterChannelRequest::getChannelId()const
@@ -88,6 +101,6 @@ std::string SetCasterChannelRequest::getChannelId()const
 void SetCasterChannelRequest::setChannelId(const std::string& channelId)
 {
 	channelId_ = channelId;
-	setCoreParameter("ChannelId", channelId);
+	setParameter("ChannelId", channelId);
 }
 

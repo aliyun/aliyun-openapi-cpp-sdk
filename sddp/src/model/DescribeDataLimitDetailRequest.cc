@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::DescribeDataLimitDetailRequest;
 
 DescribeDataLimitDetailRequest::DescribeDataLimitDetailRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "DescribeDataLimitDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDataLimitDetailRequest::~DescribeDataLimitDetailRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeDataLimitDetailRequest::getNetworkType()const
 void DescribeDataLimitDetailRequest::setNetworkType(int networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", std::to_string(networkType));
+	setParameter("NetworkType", std::to_string(networkType));
 }
 
 std::string DescribeDataLimitDetailRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeDataLimitDetailRequest::getSourceIp()const
 void DescribeDataLimitDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long DescribeDataLimitDetailRequest::getId()const
@@ -55,7 +57,7 @@ long DescribeDataLimitDetailRequest::getId()const
 void DescribeDataLimitDetailRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string DescribeDataLimitDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeDataLimitDetailRequest::getLang()const
 void DescribeDataLimitDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

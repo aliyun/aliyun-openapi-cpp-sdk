@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitSnapshotJobRequest;
 
 SubmitSnapshotJobRequest::SubmitSnapshotJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitSnapshotJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitSnapshotJobRequest::~SubmitSnapshotJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitSnapshotJobRequest::getResourceOwnerId()const
 void SubmitSnapshotJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitSnapshotJobRequest::getSnapshotConfig()const
@@ -44,7 +46,7 @@ std::string SubmitSnapshotJobRequest::getSnapshotConfig()const
 void SubmitSnapshotJobRequest::setSnapshotConfig(const std::string& snapshotConfig)
 {
 	snapshotConfig_ = snapshotConfig;
-	setCoreParameter("SnapshotConfig", snapshotConfig);
+	setParameter("SnapshotConfig", snapshotConfig);
 }
 
 std::string SubmitSnapshotJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitSnapshotJobRequest::getAccessKeyId()const
 void SubmitSnapshotJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitSnapshotJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitSnapshotJobRequest::getUserData()const
 void SubmitSnapshotJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string SubmitSnapshotJobRequest::getResourceOwnerAccount()const
 void SubmitSnapshotJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitSnapshotJobRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SubmitSnapshotJobRequest::getOwnerAccount()const
 void SubmitSnapshotJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitSnapshotJobRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitSnapshotJobRequest::getOwnerId()const
 void SubmitSnapshotJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitSnapshotJobRequest::getPipelineId()const
@@ -110,7 +112,7 @@ std::string SubmitSnapshotJobRequest::getPipelineId()const
 void SubmitSnapshotJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitSnapshotJobRequest::getInput()const
@@ -121,6 +123,6 @@ std::string SubmitSnapshotJobRequest::getInput()const
 void SubmitSnapshotJobRequest::setInput(const std::string& input)
 {
 	input_ = input;
-	setCoreParameter("Input", input);
+	setParameter("Input", input);
 }
 

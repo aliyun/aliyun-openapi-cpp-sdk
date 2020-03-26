@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApStaStatusRequest;
 
 ListApStaStatusRequest::ListApStaStatusRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApStaStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApStaStatusRequest::~ListApStaStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApStaStatusRequest::getOrderCol()const
 void ListApStaStatusRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 int ListApStaStatusRequest::getLength()const
@@ -44,7 +46,7 @@ int ListApStaStatusRequest::getLength()const
 void ListApStaStatusRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListApStaStatusRequest::getSearchUsername()const
@@ -55,7 +57,7 @@ std::string ListApStaStatusRequest::getSearchUsername()const
 void ListApStaStatusRequest::setSearchUsername(const std::string& searchUsername)
 {
 	searchUsername_ = searchUsername;
-	setCoreParameter("SearchUsername", searchUsername);
+	setParameter("SearchUsername", searchUsername);
 }
 
 std::string ListApStaStatusRequest::getOrderDir()const
@@ -66,7 +68,7 @@ std::string ListApStaStatusRequest::getOrderDir()const
 void ListApStaStatusRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListApStaStatusRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListApStaStatusRequest::getAccessKeyId()const
 void ListApStaStatusRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApStaStatusRequest::getSearchProtocal()const
@@ -88,7 +90,7 @@ std::string ListApStaStatusRequest::getSearchProtocal()const
 void ListApStaStatusRequest::setSearchProtocal(const std::string& searchProtocal)
 {
 	searchProtocal_ = searchProtocal;
-	setCoreParameter("SearchProtocal", searchProtocal);
+	setParameter("SearchProtocal", searchProtocal);
 }
 
 std::string ListApStaStatusRequest::getSearchSsid()const
@@ -99,7 +101,7 @@ std::string ListApStaStatusRequest::getSearchSsid()const
 void ListApStaStatusRequest::setSearchSsid(const std::string& searchSsid)
 {
 	searchSsid_ = searchSsid;
-	setCoreParameter("SearchSsid", searchSsid);
+	setParameter("SearchSsid", searchSsid);
 }
 
 std::string ListApStaStatusRequest::getSearchIp()const
@@ -110,7 +112,7 @@ std::string ListApStaStatusRequest::getSearchIp()const
 void ListApStaStatusRequest::setSearchIp(const std::string& searchIp)
 {
 	searchIp_ = searchIp;
-	setCoreParameter("SearchIp", searchIp);
+	setParameter("SearchIp", searchIp);
 }
 
 std::string ListApStaStatusRequest::getSearchMac()const
@@ -121,7 +123,7 @@ std::string ListApStaStatusRequest::getSearchMac()const
 void ListApStaStatusRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 int ListApStaStatusRequest::getPageIndex()const
@@ -132,7 +134,7 @@ int ListApStaStatusRequest::getPageIndex()const
 void ListApStaStatusRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 long ListApStaStatusRequest::getId()const
@@ -143,6 +145,6 @@ long ListApStaStatusRequest::getId()const
 void ListApStaStatusRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

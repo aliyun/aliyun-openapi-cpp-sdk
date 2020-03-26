@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateNotificationSettingRequest;
 
 UpdateNotificationSettingRequest::UpdateNotificationSettingRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateNotificationSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateNotificationSettingRequest::~UpdateNotificationSettingRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateNotificationSettingRequest::getRealtimeMessageList()const
 void UpdateNotificationSettingRequest::setRealtimeMessageList(const std::string& realtimeMessageList)
 {
 	realtimeMessageList_ = realtimeMessageList;
-	setCoreParameter("RealtimeMessageList", realtimeMessageList);
+	setParameter("RealtimeMessageList", realtimeMessageList);
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTime()const
@@ -44,7 +46,7 @@ int UpdateNotificationSettingRequest::getScheduleMessageTime()const
 void UpdateNotificationSettingRequest::setScheduleMessageTime(int scheduleMessageTime)
 {
 	scheduleMessageTime_ = scheduleMessageTime;
-	setCoreParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
+	setParameter("ScheduleMessageTime", std::to_string(scheduleMessageTime));
 }
 
 std::string UpdateNotificationSettingRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string UpdateNotificationSettingRequest::getSourceIp()const
 void UpdateNotificationSettingRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string UpdateNotificationSettingRequest::getReminderModeList()const
@@ -66,7 +68,7 @@ std::string UpdateNotificationSettingRequest::getReminderModeList()const
 void UpdateNotificationSettingRequest::setReminderModeList(const std::string& reminderModeList)
 {
 	reminderModeList_ = reminderModeList;
-	setCoreParameter("ReminderModeList", reminderModeList);
+	setParameter("ReminderModeList", reminderModeList);
 }
 
 std::string UpdateNotificationSettingRequest::getLang()const
@@ -77,7 +79,7 @@ std::string UpdateNotificationSettingRequest::getLang()const
 void UpdateNotificationSettingRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const
@@ -88,6 +90,6 @@ int UpdateNotificationSettingRequest::getScheduleMessageTimeZone()const
 void UpdateNotificationSettingRequest::setScheduleMessageTimeZone(int scheduleMessageTimeZone)
 {
 	scheduleMessageTimeZone_ = scheduleMessageTimeZone;
-	setCoreParameter("ScheduleMessageTimeZone", std::to_string(scheduleMessageTimeZone));
+	setParameter("ScheduleMessageTimeZone", std::to_string(scheduleMessageTimeZone));
 }
 

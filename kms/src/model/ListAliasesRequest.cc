@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::ListAliasesRequest;
 ListAliasesRequest::ListAliasesRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "ListAliases")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListAliasesRequest::~ListAliasesRequest()

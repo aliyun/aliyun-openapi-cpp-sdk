@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getCenId()const;
 				void setCenId(const std::string& cenId);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				long getUpdateInterval()const;
 				void setUpdateInterval(long updateInterval);
 				std::string getHost()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string cenId_;
+				std::string description_;
 				long updateInterval_;
 				std::string host_;
 				std::string hostRegionId_;

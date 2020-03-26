@@ -20,7 +20,9 @@ using AlibabaCloud::Ram::Model::GetSecurityPreferenceRequest;
 
 GetSecurityPreferenceRequest::GetSecurityPreferenceRequest() :
 	RpcServiceRequest("ram", "2015-05-01", "GetSecurityPreference")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSecurityPreferenceRequest::~GetSecurityPreferenceRequest()
 {}

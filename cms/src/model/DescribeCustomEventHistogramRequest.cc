@@ -35,7 +35,7 @@ std::string DescribeCustomEventHistogramRequest::getEventId()const
 void DescribeCustomEventHistogramRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", eventId);
+	setParameter("EventId", eventId);
 }
 
 std::string DescribeCustomEventHistogramRequest::getLevel()const
@@ -46,7 +46,7 @@ std::string DescribeCustomEventHistogramRequest::getLevel()const
 void DescribeCustomEventHistogramRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeCustomEventHistogramRequest::getGroupId()const
@@ -57,7 +57,7 @@ std::string DescribeCustomEventHistogramRequest::getGroupId()const
 void DescribeCustomEventHistogramRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeCustomEventHistogramRequest::getEndTime()const
@@ -68,7 +68,7 @@ std::string DescribeCustomEventHistogramRequest::getEndTime()const
 void DescribeCustomEventHistogramRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeCustomEventHistogramRequest::getStartTime()const
@@ -79,7 +79,7 @@ std::string DescribeCustomEventHistogramRequest::getStartTime()const
 void DescribeCustomEventHistogramRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeCustomEventHistogramRequest::getSearchKeywords()const
@@ -90,7 +90,7 @@ std::string DescribeCustomEventHistogramRequest::getSearchKeywords()const
 void DescribeCustomEventHistogramRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 std::string DescribeCustomEventHistogramRequest::getName()const
@@ -101,6 +101,6 @@ std::string DescribeCustomEventHistogramRequest::getName()const
 void DescribeCustomEventHistogramRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

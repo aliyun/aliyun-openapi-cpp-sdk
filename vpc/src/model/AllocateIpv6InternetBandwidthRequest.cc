@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AllocateIpv6InternetBandwidthRequest;
 
 AllocateIpv6InternetBandwidthRequest::AllocateIpv6InternetBandwidthRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AllocateIpv6InternetBandwidth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AllocateIpv6InternetBandwidthRequest::~AllocateIpv6InternetBandwidthRequest()
 {}
@@ -33,7 +35,7 @@ long AllocateIpv6InternetBandwidthRequest::getResourceOwnerId()const
 void AllocateIpv6InternetBandwidthRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getClientToken()const
 void AllocateIpv6InternetBandwidthRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getRegionId()const
 void AllocateIpv6InternetBandwidthRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int AllocateIpv6InternetBandwidthRequest::getBandwidth()const
@@ -66,7 +68,7 @@ int AllocateIpv6InternetBandwidthRequest::getBandwidth()const
 void AllocateIpv6InternetBandwidthRequest::setBandwidth(int bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", std::to_string(bandwidth));
+	setParameter("Bandwidth", std::to_string(bandwidth));
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getResourceOwnerAccount()const
 void AllocateIpv6InternetBandwidthRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getOwnerAccount()const
 void AllocateIpv6InternetBandwidthRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AllocateIpv6InternetBandwidthRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long AllocateIpv6InternetBandwidthRequest::getOwnerId()const
 void AllocateIpv6InternetBandwidthRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getIpv6AddressId()const
@@ -110,7 +112,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getIpv6AddressId()const
 void AllocateIpv6InternetBandwidthRequest::setIpv6AddressId(const std::string& ipv6AddressId)
 {
 	ipv6AddressId_ = ipv6AddressId;
-	setCoreParameter("Ipv6AddressId", ipv6AddressId);
+	setParameter("Ipv6AddressId", ipv6AddressId);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getInternetChargeType()const
@@ -121,7 +123,7 @@ std::string AllocateIpv6InternetBandwidthRequest::getInternetChargeType()const
 void AllocateIpv6InternetBandwidthRequest::setInternetChargeType(const std::string& internetChargeType)
 {
 	internetChargeType_ = internetChargeType;
-	setCoreParameter("InternetChargeType", internetChargeType);
+	setParameter("InternetChargeType", internetChargeType);
 }
 
 std::string AllocateIpv6InternetBandwidthRequest::getIpv6GatewayId()const
@@ -132,6 +134,6 @@ std::string AllocateIpv6InternetBandwidthRequest::getIpv6GatewayId()const
 void AllocateIpv6InternetBandwidthRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 

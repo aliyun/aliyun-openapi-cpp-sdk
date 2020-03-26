@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveRecordVodConfigsRequest;
 
 DescribeLiveRecordVodConfigsRequest::DescribeLiveRecordVodConfigsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveRecordVodConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveRecordVodConfigsRequest::~DescribeLiveRecordVodConfigsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeLiveRecordVodConfigsRequest::getPageNum()const
 void DescribeLiveRecordVodConfigsRequest::setPageNum(long pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string DescribeLiveRecordVodConfigsRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string DescribeLiveRecordVodConfigsRequest::getAppName()const
 void DescribeLiveRecordVodConfigsRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 long DescribeLiveRecordVodConfigsRequest::getPageSize()const
@@ -55,7 +57,7 @@ long DescribeLiveRecordVodConfigsRequest::getPageSize()const
 void DescribeLiveRecordVodConfigsRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeLiveRecordVodConfigsRequest::getStreamName()const
@@ -66,7 +68,7 @@ std::string DescribeLiveRecordVodConfigsRequest::getStreamName()const
 void DescribeLiveRecordVodConfigsRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DescribeLiveRecordVodConfigsRequest::getDomainName()const
@@ -77,7 +79,7 @@ std::string DescribeLiveRecordVodConfigsRequest::getDomainName()const
 void DescribeLiveRecordVodConfigsRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveRecordVodConfigsRequest::getOwnerId()const
@@ -88,6 +90,6 @@ long DescribeLiveRecordVodConfigsRequest::getOwnerId()const
 void DescribeLiveRecordVodConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

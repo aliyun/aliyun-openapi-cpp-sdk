@@ -55,6 +55,12 @@ void DescribeEmgVulGroupResult::parse(const std::string &payload)
 			emgVulGroupListObject.description = valueEmgVulGroupListEmgVulGroup["Description"].asString();
 		if(!valueEmgVulGroupListEmgVulGroup["Type"].isNull())
 			emgVulGroupListObject.type = valueEmgVulGroupListEmgVulGroup["Type"].asString();
+		if(!valueEmgVulGroupListEmgVulGroup["Status"].isNull())
+			emgVulGroupListObject.status = std::stoi(valueEmgVulGroupListEmgVulGroup["Status"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["Progress"].isNull())
+			emgVulGroupListObject.progress = std::stoi(valueEmgVulGroupListEmgVulGroup["Progress"].asString());
+		if(!valueEmgVulGroupListEmgVulGroup["GmtLastCheck"].isNull())
+			emgVulGroupListObject.gmtLastCheck = std::stol(valueEmgVulGroupListEmgVulGroup["GmtLastCheck"].asString());
 		emgVulGroupList_.push_back(emgVulGroupListObject);
 	}
 	if(!value["TotalCount"].isNull())

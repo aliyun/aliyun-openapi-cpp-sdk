@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setFaceGroupId(const std::string& faceGroupId);
 				std::string getStreamId()const;
 				void setStreamId(const std::string& streamId);
+				std::string getPredictTemplateId()const;
+				void setPredictTemplateId(const std::string& predictTemplateId);
 				std::string getDetectIntervals()const;
 				void setDetectIntervals(const std::string& detectIntervals);
 				long getOwnerId()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string streamType_;
 				std::string faceGroupId_;
 				std::string streamId_;
+				std::string predictTemplateId_;
 				std::string detectIntervals_;
 				long ownerId_;
 				std::string probabilityThresholds_;

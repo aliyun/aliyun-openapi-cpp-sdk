@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::InsertTmMonitorRuleRequest;
 
 InsertTmMonitorRuleRequest::InsertTmMonitorRuleRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "InsertTmMonitorRule")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 InsertTmMonitorRuleRequest::~InsertTmMonitorRuleRequest()
 {}
@@ -33,7 +35,7 @@ std::string InsertTmMonitorRuleRequest::getStartApplyDate()const
 void InsertTmMonitorRuleRequest::setStartApplyDate(const std::string& startApplyDate)
 {
 	startApplyDate_ = startApplyDate;
-	setCoreParameter("StartApplyDate", startApplyDate);
+	setParameter("StartApplyDate", startApplyDate);
 }
 
 int InsertTmMonitorRuleRequest::getRuleType()const
@@ -44,7 +46,7 @@ int InsertTmMonitorRuleRequest::getRuleType()const
 void InsertTmMonitorRuleRequest::setRuleType(int ruleType)
 {
 	ruleType_ = ruleType;
-	setCoreParameter("RuleType", std::to_string(ruleType));
+	setParameter("RuleType", std::to_string(ruleType));
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleSource()const
@@ -55,7 +57,7 @@ std::string InsertTmMonitorRuleRequest::getRuleSource()const
 void InsertTmMonitorRuleRequest::setRuleSource(const std::string& ruleSource)
 {
 	ruleSource_ = ruleSource;
-	setCoreParameter("RuleSource", ruleSource);
+	setParameter("RuleSource", ruleSource);
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleName()const
@@ -66,7 +68,7 @@ std::string InsertTmMonitorRuleRequest::getRuleName()const
 void InsertTmMonitorRuleRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 std::string InsertTmMonitorRuleRequest::getClassification()const
@@ -77,7 +79,7 @@ std::string InsertTmMonitorRuleRequest::getClassification()const
 void InsertTmMonitorRuleRequest::setClassification(const std::string& classification)
 {
 	classification_ = classification;
-	setCoreParameter("Classification", classification);
+	setParameter("Classification", classification);
 }
 
 std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
@@ -88,7 +90,7 @@ std::string InsertTmMonitorRuleRequest::getNotifyStatus()const
 void InsertTmMonitorRuleRequest::setNotifyStatus(const std::string& notifyStatus)
 {
 	notifyStatus_ = notifyStatus;
-	setCoreParameter("NotifyStatus", notifyStatus);
+	setParameter("NotifyStatus", notifyStatus);
 }
 
 std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
@@ -99,7 +101,7 @@ std::string InsertTmMonitorRuleRequest::getEndApplyDate()const
 void InsertTmMonitorRuleRequest::setEndApplyDate(const std::string& endApplyDate)
 {
 	endApplyDate_ = endApplyDate;
-	setCoreParameter("EndApplyDate", endApplyDate);
+	setParameter("EndApplyDate", endApplyDate);
 }
 
 std::string InsertTmMonitorRuleRequest::getRuleKeyword()const
@@ -110,6 +112,6 @@ std::string InsertTmMonitorRuleRequest::getRuleKeyword()const
 void InsertTmMonitorRuleRequest::setRuleKeyword(const std::string& ruleKeyword)
 {
 	ruleKeyword_ = ruleKeyword;
-	setCoreParameter("RuleKeyword", ruleKeyword);
+	setParameter("RuleKeyword", ruleKeyword);
 }
 

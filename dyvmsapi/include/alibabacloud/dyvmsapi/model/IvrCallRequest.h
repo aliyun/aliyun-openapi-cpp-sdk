@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_DYVMSAPI_EXPORT IvrCallRequest : public RpcServiceRequest
 			{
+			public:
 				struct MenuKeyMap
 				{
 					std::string code;

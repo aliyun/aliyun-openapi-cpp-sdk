@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::EditPhotosRequest;
 
 EditPhotosRequest::EditPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "EditPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EditPhotosRequest::~EditPhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string EditPhotosRequest::getLibraryId()const
 void EditPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::vector<long> EditPhotosRequest::getPhotoId()const
@@ -44,8 +46,9 @@ std::vector<long> EditPhotosRequest::getPhotoId()const
 void EditPhotosRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string EditPhotosRequest::getStoreName()const
@@ -56,7 +59,7 @@ std::string EditPhotosRequest::getStoreName()const
 void EditPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string EditPhotosRequest::getRemark()const
@@ -67,7 +70,7 @@ std::string EditPhotosRequest::getRemark()const
 void EditPhotosRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string EditPhotosRequest::getTitle()const
@@ -78,7 +81,7 @@ std::string EditPhotosRequest::getTitle()const
 void EditPhotosRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 long EditPhotosRequest::getTakenAt()const
@@ -89,7 +92,7 @@ long EditPhotosRequest::getTakenAt()const
 void EditPhotosRequest::setTakenAt(long takenAt)
 {
 	takenAt_ = takenAt;
-	setCoreParameter("TakenAt", std::to_string(takenAt));
+	setParameter("TakenAt", std::to_string(takenAt));
 }
 
 long EditPhotosRequest::getShareExpireTime()const
@@ -100,6 +103,6 @@ long EditPhotosRequest::getShareExpireTime()const
 void EditPhotosRequest::setShareExpireTime(long shareExpireTime)
 {
 	shareExpireTime_ = shareExpireTime;
-	setCoreParameter("ShareExpireTime", std::to_string(shareExpireTime));
+	setParameter("ShareExpireTime", std::to_string(shareExpireTime));
 }
 

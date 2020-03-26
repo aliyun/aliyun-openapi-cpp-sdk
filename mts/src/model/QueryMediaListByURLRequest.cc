@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryMediaListByURLRequest;
 
 QueryMediaListByURLRequest::QueryMediaListByURLRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryMediaListByURL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMediaListByURLRequest::~QueryMediaListByURLRequest()
 {}
@@ -33,7 +35,7 @@ long QueryMediaListByURLRequest::getResourceOwnerId()const
 void QueryMediaListByURLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool QueryMediaListByURLRequest::getIncludeSummaryList()const
@@ -44,7 +46,7 @@ bool QueryMediaListByURLRequest::getIncludeSummaryList()const
 void QueryMediaListByURLRequest::setIncludeSummaryList(bool includeSummaryList)
 {
 	includeSummaryList_ = includeSummaryList;
-	setCoreParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
+	setParameter("IncludeSummaryList", includeSummaryList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string QueryMediaListByURLRequest::getAccessKeyId()const
 void QueryMediaListByURLRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryMediaListByURLRequest::getFileURLs()const
@@ -66,7 +68,7 @@ std::string QueryMediaListByURLRequest::getFileURLs()const
 void QueryMediaListByURLRequest::setFileURLs(const std::string& fileURLs)
 {
 	fileURLs_ = fileURLs;
-	setCoreParameter("FileURLs", fileURLs);
+	setParameter("FileURLs", fileURLs);
 }
 
 bool QueryMediaListByURLRequest::getIncludePlayList()const
@@ -77,7 +79,7 @@ bool QueryMediaListByURLRequest::getIncludePlayList()const
 void QueryMediaListByURLRequest::setIncludePlayList(bool includePlayList)
 {
 	includePlayList_ = includePlayList;
-	setCoreParameter("IncludePlayList", includePlayList ? "true" : "false");
+	setParameter("IncludePlayList", includePlayList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string QueryMediaListByURLRequest::getResourceOwnerAccount()const
 void QueryMediaListByURLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
@@ -99,7 +101,7 @@ bool QueryMediaListByURLRequest::getIncludeSnapshotList()const
 void QueryMediaListByURLRequest::setIncludeSnapshotList(bool includeSnapshotList)
 {
 	includeSnapshotList_ = includeSnapshotList;
-	setCoreParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
+	setParameter("IncludeSnapshotList", includeSnapshotList ? "true" : "false");
 }
 
 std::string QueryMediaListByURLRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string QueryMediaListByURLRequest::getOwnerAccount()const
 void QueryMediaListByURLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryMediaListByURLRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long QueryMediaListByURLRequest::getOwnerId()const
 void QueryMediaListByURLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
@@ -132,6 +134,6 @@ bool QueryMediaListByURLRequest::getIncludeMediaInfo()const
 void QueryMediaListByURLRequest::setIncludeMediaInfo(bool includeMediaInfo)
 {
 	includeMediaInfo_ = includeMediaInfo;
-	setCoreParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
+	setParameter("IncludeMediaInfo", includeMediaInfo ? "true" : "false");
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::DeleteWatermarkRequest;
 
 DeleteWatermarkRequest::DeleteWatermarkRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "DeleteWatermark")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWatermarkRequest::~DeleteWatermarkRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteWatermarkRequest::getResourceOwnerId()const
 void DeleteWatermarkRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteWatermarkRequest::getResourceOwnerAccount()const
 void DeleteWatermarkRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DeleteWatermarkRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteWatermarkRequest::getOwnerId()const
 void DeleteWatermarkRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteWatermarkRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteWatermarkRequest::getAccessKeyId()const
 void DeleteWatermarkRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteWatermarkRequest::getWatermarkId()const
@@ -77,6 +79,6 @@ std::string DeleteWatermarkRequest::getWatermarkId()const
 void DeleteWatermarkRequest::setWatermarkId(const std::string& watermarkId)
 {
 	watermarkId_ = watermarkId;
-	setCoreParameter("WatermarkId", watermarkId);
+	setParameter("WatermarkId", watermarkId);
 }
 

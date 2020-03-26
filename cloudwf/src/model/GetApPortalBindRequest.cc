@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApPortalBindRequest;
 
 GetApPortalBindRequest::GetApPortalBindRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApPortalBind")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApPortalBindRequest::~GetApPortalBindRequest()
 {}
@@ -33,7 +35,7 @@ int GetApPortalBindRequest::getConfigType()const
 void GetApPortalBindRequest::setConfigType(int configType)
 {
 	configType_ = configType;
-	setCoreParameter("ConfigType", std::to_string(configType));
+	setParameter("ConfigType", std::to_string(configType));
 }
 
 long GetApPortalBindRequest::getBindId()const
@@ -44,7 +46,7 @@ long GetApPortalBindRequest::getBindId()const
 void GetApPortalBindRequest::setBindId(long bindId)
 {
 	bindId_ = bindId;
-	setCoreParameter("BindId", std::to_string(bindId));
+	setParameter("BindId", std::to_string(bindId));
 }
 
 std::string GetApPortalBindRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string GetApPortalBindRequest::getAccessKeyId()const
 void GetApPortalBindRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

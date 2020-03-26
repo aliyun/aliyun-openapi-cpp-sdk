@@ -53,6 +53,8 @@ void ListFlowProjectUserResult::parse(const std::string &payload)
 			usersObject.ownerId = valueUsersUser["OwnerId"].asString();
 		if(!valueUsersUser["UserName"].isNull())
 			usersObject.userName = valueUsersUser["UserName"].asString();
+		if(!valueUsersUser["AccountUserId"].isNull())
+			usersObject.accountUserId = valueUsersUser["AccountUserId"].asString();
 		users_.push_back(usersObject);
 	}
 	if(!value["PageNumber"].isNull())

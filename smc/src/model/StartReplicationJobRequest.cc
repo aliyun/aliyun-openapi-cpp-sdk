@@ -35,7 +35,7 @@ std::string StartReplicationJobRequest::getResourceOwnerAccount()const
 void StartReplicationJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long StartReplicationJobRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long StartReplicationJobRequest::getOwnerId()const
 void StartReplicationJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string StartReplicationJobRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string StartReplicationJobRequest::getAccessKeyId()const
 void StartReplicationJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string StartReplicationJobRequest::getJobId()const
@@ -68,6 +68,6 @@ std::string StartReplicationJobRequest::getJobId()const
 void StartReplicationJobRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 

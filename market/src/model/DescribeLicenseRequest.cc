@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeLicenseRequest;
 
 DescribeLicenseRequest::DescribeLicenseRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeLicense")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLicenseRequest::~DescribeLicenseRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeLicenseRequest::getLicenseCode()const
 void DescribeLicenseRequest::setLicenseCode(const std::string& licenseCode)
 {
 	licenseCode_ = licenseCode;
-	setCoreParameter("LicenseCode", licenseCode);
+	setParameter("LicenseCode", licenseCode);
 }
 

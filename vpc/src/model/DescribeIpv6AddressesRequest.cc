@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6AddressesRequest;
 
 DescribeIpv6AddressesRequest::DescribeIpv6AddressesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6Addresses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6AddressesRequest::~DescribeIpv6AddressesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeIpv6AddressesRequest::getResourceOwnerId()const
 void DescribeIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeIpv6AddressesRequest::getIpv6InternetBandwidthId()const
@@ -44,7 +46,7 @@ std::string DescribeIpv6AddressesRequest::getIpv6InternetBandwidthId()const
 void DescribeIpv6AddressesRequest::setIpv6InternetBandwidthId(const std::string& ipv6InternetBandwidthId)
 {
 	ipv6InternetBandwidthId_ = ipv6InternetBandwidthId;
-	setCoreParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
+	setParameter("Ipv6InternetBandwidthId", ipv6InternetBandwidthId);
 }
 
 std::string DescribeIpv6AddressesRequest::getNetworkType()const
@@ -55,7 +57,7 @@ std::string DescribeIpv6AddressesRequest::getNetworkType()const
 void DescribeIpv6AddressesRequest::setNetworkType(const std::string& networkType)
 {
 	networkType_ = networkType;
-	setCoreParameter("NetworkType", networkType);
+	setParameter("NetworkType", networkType);
 }
 
 int DescribeIpv6AddressesRequest::getPageNumber()const
@@ -66,7 +68,7 @@ int DescribeIpv6AddressesRequest::getPageNumber()const
 void DescribeIpv6AddressesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeIpv6AddressesRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeIpv6AddressesRequest::getRegionId()const
 void DescribeIpv6AddressesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeIpv6AddressesRequest::getAssociatedInstanceType()const
@@ -88,7 +90,7 @@ std::string DescribeIpv6AddressesRequest::getAssociatedInstanceType()const
 void DescribeIpv6AddressesRequest::setAssociatedInstanceType(const std::string& associatedInstanceType)
 {
 	associatedInstanceType_ = associatedInstanceType;
-	setCoreParameter("AssociatedInstanceType", associatedInstanceType);
+	setParameter("AssociatedInstanceType", associatedInstanceType);
 }
 
 int DescribeIpv6AddressesRequest::getPageSize()const
@@ -99,7 +101,7 @@ int DescribeIpv6AddressesRequest::getPageSize()const
 void DescribeIpv6AddressesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeIpv6AddressesRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeIpv6AddressesRequest::getResourceOwnerAccount()const
 void DescribeIpv6AddressesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6AddressesRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string DescribeIpv6AddressesRequest::getOwnerAccount()const
 void DescribeIpv6AddressesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeIpv6AddressesRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long DescribeIpv6AddressesRequest::getOwnerId()const
 void DescribeIpv6AddressesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIpv6AddressesRequest::getVSwitchId()const
@@ -143,7 +145,7 @@ std::string DescribeIpv6AddressesRequest::getVSwitchId()const
 void DescribeIpv6AddressesRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string DescribeIpv6AddressesRequest::getIpv6AddressId()const
@@ -154,7 +156,7 @@ std::string DescribeIpv6AddressesRequest::getIpv6AddressId()const
 void DescribeIpv6AddressesRequest::setIpv6AddressId(const std::string& ipv6AddressId)
 {
 	ipv6AddressId_ = ipv6AddressId;
-	setCoreParameter("Ipv6AddressId", ipv6AddressId);
+	setParameter("Ipv6AddressId", ipv6AddressId);
 }
 
 std::string DescribeIpv6AddressesRequest::getVpcId()const
@@ -165,7 +167,7 @@ std::string DescribeIpv6AddressesRequest::getVpcId()const
 void DescribeIpv6AddressesRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 
 std::string DescribeIpv6AddressesRequest::getName()const
@@ -176,7 +178,7 @@ std::string DescribeIpv6AddressesRequest::getName()const
 void DescribeIpv6AddressesRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string DescribeIpv6AddressesRequest::getIpv6Address()const
@@ -187,7 +189,7 @@ std::string DescribeIpv6AddressesRequest::getIpv6Address()const
 void DescribeIpv6AddressesRequest::setIpv6Address(const std::string& ipv6Address)
 {
 	ipv6Address_ = ipv6Address;
-	setCoreParameter("Ipv6Address", ipv6Address);
+	setParameter("Ipv6Address", ipv6Address);
 }
 
 std::string DescribeIpv6AddressesRequest::getAssociatedInstanceId()const
@@ -198,6 +200,6 @@ std::string DescribeIpv6AddressesRequest::getAssociatedInstanceId()const
 void DescribeIpv6AddressesRequest::setAssociatedInstanceId(const std::string& associatedInstanceId)
 {
 	associatedInstanceId_ = associatedInstanceId;
-	setCoreParameter("AssociatedInstanceId", associatedInstanceId);
+	setParameter("AssociatedInstanceId", associatedInstanceId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SearchPipelineRequest;
 
 SearchPipelineRequest::SearchPipelineRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SearchPipeline")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SearchPipelineRequest::~SearchPipelineRequest()
 {}
@@ -33,7 +35,7 @@ long SearchPipelineRequest::getResourceOwnerId()const
 void SearchPipelineRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long SearchPipelineRequest::getPageNumber()const
@@ -44,7 +46,7 @@ long SearchPipelineRequest::getPageNumber()const
 void SearchPipelineRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string SearchPipelineRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SearchPipelineRequest::getAccessKeyId()const
 void SearchPipelineRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long SearchPipelineRequest::getPageSize()const
@@ -66,7 +68,7 @@ long SearchPipelineRequest::getPageSize()const
 void SearchPipelineRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string SearchPipelineRequest::getState()const
@@ -77,7 +79,7 @@ std::string SearchPipelineRequest::getState()const
 void SearchPipelineRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string SearchPipelineRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string SearchPipelineRequest::getResourceOwnerAccount()const
 void SearchPipelineRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SearchPipelineRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SearchPipelineRequest::getOwnerAccount()const
 void SearchPipelineRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SearchPipelineRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long SearchPipelineRequest::getOwnerId()const
 void SearchPipelineRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

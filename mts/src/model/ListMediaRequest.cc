@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ListMediaRequest;
 
 ListMediaRequest::ListMediaRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ListMedia")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMediaRequest::~ListMediaRequest()
 {}
@@ -33,7 +35,7 @@ long ListMediaRequest::getResourceOwnerId()const
 void ListMediaRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListMediaRequest::getNextPageToken()const
@@ -44,7 +46,7 @@ std::string ListMediaRequest::getNextPageToken()const
 void ListMediaRequest::setNextPageToken(const std::string& nextPageToken)
 {
 	nextPageToken_ = nextPageToken;
-	setCoreParameter("NextPageToken", nextPageToken);
+	setParameter("NextPageToken", nextPageToken);
 }
 
 std::string ListMediaRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListMediaRequest::getAccessKeyId()const
 void ListMediaRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListMediaRequest::getFrom()const
@@ -66,7 +68,7 @@ std::string ListMediaRequest::getFrom()const
 void ListMediaRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setCoreParameter("From", from);
+	setParameter("From", from);
 }
 
 std::string ListMediaRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string ListMediaRequest::getResourceOwnerAccount()const
 void ListMediaRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListMediaRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ListMediaRequest::getOwnerAccount()const
 void ListMediaRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ListMediaRequest::getMaximumPageSize()const
@@ -99,7 +101,7 @@ long ListMediaRequest::getMaximumPageSize()const
 void ListMediaRequest::setMaximumPageSize(long maximumPageSize)
 {
 	maximumPageSize_ = maximumPageSize;
-	setCoreParameter("MaximumPageSize", std::to_string(maximumPageSize));
+	setParameter("MaximumPageSize", std::to_string(maximumPageSize));
 }
 
 long ListMediaRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long ListMediaRequest::getOwnerId()const
 void ListMediaRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListMediaRequest::getTo()const
@@ -121,6 +123,6 @@ std::string ListMediaRequest::getTo()const
 void ListMediaRequest::setTo(const std::string& to)
 {
 	to_ = to;
-	setCoreParameter("To", to);
+	setParameter("To", to);
 }
 

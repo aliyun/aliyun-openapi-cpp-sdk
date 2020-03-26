@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::CreateSurveyRequest;
 
 CreateSurveyRequest::CreateSurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "CreateSurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSurveyRequest::~CreateSurveyRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateSurveyRequest::getRole()const
 void CreateSurveyRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setParameter("Role", role);
 }
 
 std::string CreateSurveyRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string CreateSurveyRequest::getDescription()const
 void CreateSurveyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string CreateSurveyRequest::getSpeechOptimizationParam()const
@@ -55,7 +57,7 @@ std::string CreateSurveyRequest::getSpeechOptimizationParam()const
 void CreateSurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
 {
 	speechOptimizationParam_ = speechOptimizationParam;
-	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
+	setParameter("SpeechOptimizationParam", speechOptimizationParam);
 }
 
 std::string CreateSurveyRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string CreateSurveyRequest::getInstanceId()const
 void CreateSurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int CreateSurveyRequest::getRound()const
@@ -77,7 +79,7 @@ int CreateSurveyRequest::getRound()const
 void CreateSurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setCoreParameter("Round", std::to_string(round));
+	setParameter("Round", std::to_string(round));
 }
 
 std::string CreateSurveyRequest::getFlowJson()const
@@ -88,7 +90,7 @@ std::string CreateSurveyRequest::getFlowJson()const
 void CreateSurveyRequest::setFlowJson(const std::string& flowJson)
 {
 	flowJson_ = flowJson;
-	setCoreParameter("FlowJson", flowJson);
+	setParameter("FlowJson", flowJson);
 }
 
 std::string CreateSurveyRequest::getName()const
@@ -99,7 +101,7 @@ std::string CreateSurveyRequest::getName()const
 void CreateSurveyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string CreateSurveyRequest::getGlobalQuestions()const
@@ -110,7 +112,7 @@ std::string CreateSurveyRequest::getGlobalQuestions()const
 void CreateSurveyRequest::setGlobalQuestions(const std::string& globalQuestions)
 {
 	globalQuestions_ = globalQuestions;
-	setCoreParameter("GlobalQuestions", globalQuestions);
+	setParameter("GlobalQuestions", globalQuestions);
 }
 
 std::string CreateSurveyRequest::getCorpora()const
@@ -121,7 +123,7 @@ std::string CreateSurveyRequest::getCorpora()const
 void CreateSurveyRequest::setCorpora(const std::string& corpora)
 {
 	corpora_ = corpora;
-	setCoreParameter("Corpora", corpora);
+	setParameter("Corpora", corpora);
 }
 
 std::string CreateSurveyRequest::getScenarioId()const
@@ -132,6 +134,6 @@ std::string CreateSurveyRequest::getScenarioId()const
 void CreateSurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

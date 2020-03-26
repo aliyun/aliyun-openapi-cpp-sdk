@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListBusinessesRequest;
 
 ListBusinessesRequest::ListBusinessesRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListBusinesses")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListBusinessesRequest::~ListBusinessesRequest()
 {}
@@ -33,6 +35,6 @@ std::string ListBusinessesRequest::getAccessKeyId()const
 void ListBusinessesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

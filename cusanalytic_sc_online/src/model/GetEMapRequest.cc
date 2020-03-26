@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetEMapRequest;
 
 GetEMapRequest::GetEMapRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetEMap")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetEMapRequest::~GetEMapRequest()
 {}
@@ -33,7 +35,7 @@ long GetEMapRequest::getStoreId()const
 void GetEMapRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 long GetEMapRequest::getLocationId()const
@@ -44,6 +46,6 @@ long GetEMapRequest::getLocationId()const
 void GetEMapRequest::setLocationId(long locationId)
 {
 	locationId_ = locationId;
-	setCoreParameter("LocationId", std::to_string(locationId));
+	setBodyParameter("LocationId", std::to_string(locationId));
 }
 

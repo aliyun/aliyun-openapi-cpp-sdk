@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveStreamsNotifyUrlConfigRequest;
 
 DescribeLiveStreamsNotifyUrlConfigRequest::DescribeLiveStreamsNotifyUrlConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveStreamsNotifyUrlConfigRequest::~DescribeLiveStreamsNotifyUrlConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveStreamsNotifyUrlConfigRequest::getDomainName()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
@@ -44,6 +46,6 @@ long DescribeLiveStreamsNotifyUrlConfigRequest::getOwnerId()const
 void DescribeLiveStreamsNotifyUrlConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

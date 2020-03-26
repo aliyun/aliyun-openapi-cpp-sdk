@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::GetPublicAccessUrlsRequest;
 
 GetPublicAccessUrlsRequest::GetPublicAccessUrlsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "GetPublicAccessUrls")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPublicAccessUrlsRequest::~GetPublicAccessUrlsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPublicAccessUrlsRequest::getLibraryId()const
 void GetPublicAccessUrlsRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::vector<long> GetPublicAccessUrlsRequest::getPhotoId()const
@@ -44,8 +46,9 @@ std::vector<long> GetPublicAccessUrlsRequest::getPhotoId()const
 void GetPublicAccessUrlsRequest::setPhotoId(const std::vector<long>& photoId)
 {
 	photoId_ = photoId;
-	for(int i = 0; i!= photoId.size(); i++)
-		setCoreParameter("PhotoId."+ std::to_string(i), std::to_string(photoId.at(i)));
+	for(int dep1 = 0; dep1!= photoId.size(); dep1++) {
+		setParameter("PhotoId."+ std::to_string(dep1), std::to_string(photoId.at(dep1)));
+	}
 }
 
 std::string GetPublicAccessUrlsRequest::getStoreName()const
@@ -56,7 +59,7 @@ std::string GetPublicAccessUrlsRequest::getStoreName()const
 void GetPublicAccessUrlsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string GetPublicAccessUrlsRequest::getZoomType()const
@@ -67,7 +70,7 @@ std::string GetPublicAccessUrlsRequest::getZoomType()const
 void GetPublicAccessUrlsRequest::setZoomType(const std::string& zoomType)
 {
 	zoomType_ = zoomType;
-	setCoreParameter("ZoomType", zoomType);
+	setParameter("ZoomType", zoomType);
 }
 
 std::string GetPublicAccessUrlsRequest::getDomainType()const
@@ -78,6 +81,6 @@ std::string GetPublicAccessUrlsRequest::getDomainType()const
 void GetPublicAccessUrlsRequest::setDomainType(const std::string& domainType)
 {
 	domainType_ = domainType;
-	setCoreParameter("DomainType", domainType);
+	setParameter("DomainType", domainType);
 }
 

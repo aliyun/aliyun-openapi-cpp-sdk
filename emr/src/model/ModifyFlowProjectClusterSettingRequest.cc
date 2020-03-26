@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::ModifyFlowProjectClusterSettingRequest;
 
 ModifyFlowProjectClusterSettingRequest::ModifyFlowProjectClusterSettingRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "ModifyFlowProjectClusterSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyFlowProjectClusterSettingRequest::~ModifyFlowProjectClusterSettingRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getUserList()co
 void ModifyFlowProjectClusterSettingRequest::setUserList(const std::vector<std::string>& userList)
 {
 	userList_ = userList;
-	for(int i = 0; i!= userList.size(); i++)
-		setCoreParameter("UserList."+ std::to_string(i), userList.at(i));
+	for(int dep1 = 0; dep1!= userList.size(); dep1++) {
+		setParameter("UserList."+ std::to_string(dep1), userList.at(dep1));
+	}
 }
 
 std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getHostList()const
@@ -45,8 +48,9 @@ std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getHostList()co
 void ModifyFlowProjectClusterSettingRequest::setHostList(const std::vector<std::string>& hostList)
 {
 	hostList_ = hostList;
-	for(int i = 0; i!= hostList.size(); i++)
-		setCoreParameter("HostList."+ std::to_string(i), hostList.at(i));
+	for(int dep1 = 0; dep1!= hostList.size(); dep1++) {
+		setParameter("HostList."+ std::to_string(dep1), hostList.at(dep1));
+	}
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getClusterId()const
@@ -57,7 +61,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getClusterId()const
 void ModifyFlowProjectClusterSettingRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getDefaultQueue()const
@@ -68,7 +72,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getDefaultQueue()const
 void ModifyFlowProjectClusterSettingRequest::setDefaultQueue(const std::string& defaultQueue)
 {
 	defaultQueue_ = defaultQueue;
-	setCoreParameter("DefaultQueue", defaultQueue);
+	setParameter("DefaultQueue", defaultQueue);
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getDefaultUser()const
@@ -79,7 +83,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getDefaultUser()const
 void ModifyFlowProjectClusterSettingRequest::setDefaultUser(const std::string& defaultUser)
 {
 	defaultUser_ = defaultUser;
-	setCoreParameter("DefaultUser", defaultUser);
+	setParameter("DefaultUser", defaultUser);
 }
 
 std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getQueueList()const
@@ -90,8 +94,9 @@ std::vector<std::string> ModifyFlowProjectClusterSettingRequest::getQueueList()c
 void ModifyFlowProjectClusterSettingRequest::setQueueList(const std::vector<std::string>& queueList)
 {
 	queueList_ = queueList;
-	for(int i = 0; i!= queueList.size(); i++)
-		setCoreParameter("QueueList."+ std::to_string(i), queueList.at(i));
+	for(int dep1 = 0; dep1!= queueList.size(); dep1++) {
+		setParameter("QueueList."+ std::to_string(dep1), queueList.at(dep1));
+	}
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getRegionId()const
@@ -102,7 +107,7 @@ std::string ModifyFlowProjectClusterSettingRequest::getRegionId()const
 void ModifyFlowProjectClusterSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyFlowProjectClusterSettingRequest::getProjectId()const
@@ -113,6 +118,6 @@ std::string ModifyFlowProjectClusterSettingRequest::getProjectId()const
 void ModifyFlowProjectClusterSettingRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

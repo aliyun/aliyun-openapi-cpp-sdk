@@ -63,8 +63,13 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 				for (auto allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount : allSupportedNodeCountListNode)
 				{
 					AvailableZone::SupportedSerial::SupportedInstanceClass::SupportedNodeCount supportedNodeCountListObject;
-					if(!allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount["NodeCount"].isNull())
-						supportedNodeCountListObject.nodeCount = allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount["NodeCount"].asString();
+					auto nodeCountNode = value["NodeCount"];
+					if(!nodeCountNode["MinCount"].isNull())
+						supportedNodeCountListObject.nodeCount.minCount = nodeCountNode["MinCount"].asString();
+					if(!nodeCountNode["MaxCount"].isNull())
+						supportedNodeCountListObject.nodeCount.maxCount = nodeCountNode["MaxCount"].asString();
+					if(!nodeCountNode["Step"].isNull())
+						supportedNodeCountListObject.nodeCount.step = nodeCountNode["Step"].asString();
 					auto allStorageSize = value["StorageSize"]["StorageSize"];
 					for (auto value : allStorageSize)
 						supportedNodeCountListObject.storageSize.push_back(value.asString());

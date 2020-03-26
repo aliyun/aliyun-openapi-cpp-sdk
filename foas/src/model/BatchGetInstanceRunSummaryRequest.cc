@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::BatchGetInstanceRunSummaryRequest;
 
 BatchGetInstanceRunSummaryRequest::BatchGetInstanceRunSummaryRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/runsummary");
+	setMethod(HttpRequest::Method::Get);
+}
 
 BatchGetInstanceRunSummaryRequest::~BatchGetInstanceRunSummaryRequest()
 {}
@@ -33,7 +36,7 @@ std::string BatchGetInstanceRunSummaryRequest::getProjectName()const
 void BatchGetInstanceRunSummaryRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string BatchGetInstanceRunSummaryRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string BatchGetInstanceRunSummaryRequest::getRegionId()const
 void BatchGetInstanceRunSummaryRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string BatchGetInstanceRunSummaryRequest::getJobNames()const
@@ -55,7 +58,7 @@ std::string BatchGetInstanceRunSummaryRequest::getJobNames()const
 void BatchGetInstanceRunSummaryRequest::setJobNames(const std::string& jobNames)
 {
 	jobNames_ = jobNames;
-	setCoreParameter("JobNames", jobNames);
+	setParameter("JobNames", jobNames);
 }
 
 std::string BatchGetInstanceRunSummaryRequest::getJobType()const
@@ -66,6 +69,6 @@ std::string BatchGetInstanceRunSummaryRequest::getJobType()const
 void BatchGetInstanceRunSummaryRequest::setJobType(const std::string& jobType)
 {
 	jobType_ = jobType;
-	setCoreParameter("JobType", jobType);
+	setParameter("JobType", jobType);
 }
 

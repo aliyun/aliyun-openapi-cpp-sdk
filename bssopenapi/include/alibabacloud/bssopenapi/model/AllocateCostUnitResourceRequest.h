@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_BSSOPENAPI_EXPORT AllocateCostUnitResourceRequest : public RpcServiceRequest
 			{
+			public:
 				struct ResourceInstanceList
 				{
 					std::string resourceId;

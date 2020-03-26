@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ModifyAccountDescription")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyAccountDescriptionRequest::getAccountDescription()const
 void ModifyAccountDescriptionRequest::setAccountDescription(const std::string& accountDescription)
 {
 	accountDescription_ = accountDescription;
-	setCoreParameter("AccountDescription", accountDescription);
+	setParameter("AccountDescription", accountDescription);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ModifyAccountDescriptionRequest::getAccessKeyId()const
 void ModifyAccountDescriptionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ModifyAccountDescriptionRequest::getAccountName()const
@@ -55,7 +57,7 @@ std::string ModifyAccountDescriptionRequest::getAccountName()const
 void ModifyAccountDescriptionRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 
 std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
@@ -66,6 +68,6 @@ std::string ModifyAccountDescriptionRequest::getDBInstanceId()const
 void ModifyAccountDescriptionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 

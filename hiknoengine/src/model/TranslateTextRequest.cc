@@ -35,7 +35,7 @@ std::string TranslateTextRequest::getFromLang()const
 void TranslateTextRequest::setFromLang(const std::string& fromLang)
 {
 	fromLang_ = fromLang;
-	setCoreParameter("FromLang", fromLang);
+	setBodyParameter("FromLang", fromLang);
 }
 
 std::string TranslateTextRequest::getToLang()const
@@ -46,7 +46,7 @@ std::string TranslateTextRequest::getToLang()const
 void TranslateTextRequest::setToLang(const std::string& toLang)
 {
 	toLang_ = toLang;
-	setCoreParameter("ToLang", toLang);
+	setBodyParameter("ToLang", toLang);
 }
 
 std::string TranslateTextRequest::getText()const
@@ -57,6 +57,6 @@ std::string TranslateTextRequest::getText()const
 void TranslateTextRequest::setText(const std::string& text)
 {
 	text_ = text;
-	setCoreParameter("Text", text);
+	setBodyParameter("Text", text);
 }
 

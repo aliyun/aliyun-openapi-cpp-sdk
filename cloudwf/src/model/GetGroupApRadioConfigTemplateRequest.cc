@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetGroupApRadioConfigTemplateRequest;
 
 GetGroupApRadioConfigTemplateRequest::GetGroupApRadioConfigTemplateRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetGroupApRadioConfigTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupApRadioConfigTemplateRequest::~GetGroupApRadioConfigTemplateRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetGroupApRadioConfigTemplateRequest::getAccessKeyId()const
 void GetGroupApRadioConfigTemplateRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

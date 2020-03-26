@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeRoomListRequest;
 
 DescribeRoomListRequest::DescribeRoomListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeRoomList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRoomListRequest::~DescribeRoomListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRoomListRequest::getStartTime()const
 void DescribeRoomListRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeRoomListRequest::getAnchorId()const
@@ -44,7 +46,7 @@ std::string DescribeRoomListRequest::getAnchorId()const
 void DescribeRoomListRequest::setAnchorId(const std::string& anchorId)
 {
 	anchorId_ = anchorId;
-	setCoreParameter("AnchorId", anchorId);
+	setParameter("AnchorId", anchorId);
 }
 
 int DescribeRoomListRequest::getPageNum()const
@@ -55,7 +57,7 @@ int DescribeRoomListRequest::getPageNum()const
 void DescribeRoomListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeRoomListRequest::getRoomStatus()const
@@ -66,7 +68,7 @@ int DescribeRoomListRequest::getRoomStatus()const
 void DescribeRoomListRequest::setRoomStatus(int roomStatus)
 {
 	roomStatus_ = roomStatus;
-	setCoreParameter("RoomStatus", std::to_string(roomStatus));
+	setParameter("RoomStatus", std::to_string(roomStatus));
 }
 
 int DescribeRoomListRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeRoomListRequest::getPageSize()const
 void DescribeRoomListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRoomListRequest::getOrder()const
@@ -88,7 +90,7 @@ std::string DescribeRoomListRequest::getOrder()const
 void DescribeRoomListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeRoomListRequest::getEndTime()const
@@ -99,7 +101,7 @@ std::string DescribeRoomListRequest::getEndTime()const
 void DescribeRoomListRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeRoomListRequest::getOwnerId()const
@@ -110,7 +112,7 @@ long DescribeRoomListRequest::getOwnerId()const
 void DescribeRoomListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRoomListRequest::getRoomId()const
@@ -121,7 +123,7 @@ std::string DescribeRoomListRequest::getRoomId()const
 void DescribeRoomListRequest::setRoomId(const std::string& roomId)
 {
 	roomId_ = roomId;
-	setCoreParameter("RoomId", roomId);
+	setParameter("RoomId", roomId);
 }
 
 std::string DescribeRoomListRequest::getAppId()const
@@ -132,6 +134,6 @@ std::string DescribeRoomListRequest::getAppId()const
 void DescribeRoomListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

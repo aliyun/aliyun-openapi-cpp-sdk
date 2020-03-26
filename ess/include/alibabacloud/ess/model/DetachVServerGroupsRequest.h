@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ESS_EXPORT DetachVServerGroupsRequest : public RpcServiceRequest
 			{
+			public:
 				struct VServerGroup
 				{
 					std::string loadBalancerId;
@@ -38,7 +39,7 @@ namespace AlibabaCloud
 						std::string vServerGroupId;
 						int port;
 					};
-					VServerGroupAttribute vServerGroupAttribute;
+					std::vector<VServerGroupAttribute> vServerGroupAttribute;
 				};
 
 			public:

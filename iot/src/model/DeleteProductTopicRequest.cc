@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::DeleteProductTopicRequest;
 
 DeleteProductTopicRequest::DeleteProductTopicRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "DeleteProductTopic")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteProductTopicRequest::~DeleteProductTopicRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteProductTopicRequest::getAccessKeyId()const
 void DeleteProductTopicRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteProductTopicRequest::getTopicId()const
@@ -44,7 +46,7 @@ std::string DeleteProductTopicRequest::getTopicId()const
 void DeleteProductTopicRequest::setTopicId(const std::string& topicId)
 {
 	topicId_ = topicId;
-	setCoreParameter("TopicId", topicId);
+	setParameter("TopicId", topicId);
 }
 
 std::string DeleteProductTopicRequest::getIotInstanceId()const
@@ -55,6 +57,6 @@ std::string DeleteProductTopicRequest::getIotInstanceId()const
 void DeleteProductTopicRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 

@@ -21,7 +21,7 @@ using AlibabaCloud::Reid::Model::ImportSpecialPersonnelRequest;
 ImportSpecialPersonnelRequest::ImportSpecialPersonnelRequest() :
 	RpcServiceRequest("reid", "2019-09-28", "ImportSpecialPersonnel")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ImportSpecialPersonnelRequest::~ImportSpecialPersonnelRequest()

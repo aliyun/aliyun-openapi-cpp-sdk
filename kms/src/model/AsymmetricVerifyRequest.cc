@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::AsymmetricVerifyRequest;
 AsymmetricVerifyRequest::AsymmetricVerifyRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "AsymmetricVerify")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 AsymmetricVerifyRequest::~AsymmetricVerifyRequest()

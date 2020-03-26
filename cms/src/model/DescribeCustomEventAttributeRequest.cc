@@ -35,7 +35,7 @@ std::string DescribeCustomEventAttributeRequest::getEventId()const
 void DescribeCustomEventAttributeRequest::setEventId(const std::string& eventId)
 {
 	eventId_ = eventId;
-	setCoreParameter("EventId", eventId);
+	setParameter("EventId", eventId);
 }
 
 std::string DescribeCustomEventAttributeRequest::getStartTime()const
@@ -46,7 +46,7 @@ std::string DescribeCustomEventAttributeRequest::getStartTime()const
 void DescribeCustomEventAttributeRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeCustomEventAttributeRequest::getSearchKeywords()const
@@ -57,7 +57,7 @@ std::string DescribeCustomEventAttributeRequest::getSearchKeywords()const
 void DescribeCustomEventAttributeRequest::setSearchKeywords(const std::string& searchKeywords)
 {
 	searchKeywords_ = searchKeywords;
-	setCoreParameter("SearchKeywords", searchKeywords);
+	setParameter("SearchKeywords", searchKeywords);
 }
 
 int DescribeCustomEventAttributeRequest::getPageNumber()const
@@ -68,7 +68,7 @@ int DescribeCustomEventAttributeRequest::getPageNumber()const
 void DescribeCustomEventAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCustomEventAttributeRequest::getPageSize()const
@@ -79,7 +79,7 @@ int DescribeCustomEventAttributeRequest::getPageSize()const
 void DescribeCustomEventAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCustomEventAttributeRequest::getLevel()const
@@ -90,7 +90,7 @@ std::string DescribeCustomEventAttributeRequest::getLevel()const
 void DescribeCustomEventAttributeRequest::setLevel(const std::string& level)
 {
 	level_ = level;
-	setCoreParameter("Level", level);
+	setParameter("Level", level);
 }
 
 std::string DescribeCustomEventAttributeRequest::getGroupId()const
@@ -101,7 +101,7 @@ std::string DescribeCustomEventAttributeRequest::getGroupId()const
 void DescribeCustomEventAttributeRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeCustomEventAttributeRequest::getEndTime()const
@@ -112,7 +112,7 @@ std::string DescribeCustomEventAttributeRequest::getEndTime()const
 void DescribeCustomEventAttributeRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 std::string DescribeCustomEventAttributeRequest::getName()const
@@ -123,6 +123,6 @@ std::string DescribeCustomEventAttributeRequest::getName()const
 void DescribeCustomEventAttributeRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

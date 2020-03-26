@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::VerifyCustomOcrTemplateRequest;
 
 VerifyCustomOcrTemplateRequest::VerifyCustomOcrTemplateRequest() :
 	RpcServiceRequest("green", "2017-08-23", "VerifyCustomOcrTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 VerifyCustomOcrTemplateRequest::~VerifyCustomOcrTemplateRequest()
 {}
@@ -33,7 +35,7 @@ std::string VerifyCustomOcrTemplateRequest::getTestImgUrl()const
 void VerifyCustomOcrTemplateRequest::setTestImgUrl(const std::string& testImgUrl)
 {
 	testImgUrl_ = testImgUrl;
-	setCoreParameter("TestImgUrl", testImgUrl);
+	setParameter("TestImgUrl", testImgUrl);
 }
 
 std::string VerifyCustomOcrTemplateRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string VerifyCustomOcrTemplateRequest::getSourceIp()const
 void VerifyCustomOcrTemplateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long VerifyCustomOcrTemplateRequest::getId()const
@@ -55,6 +57,6 @@ long VerifyCustomOcrTemplateRequest::getId()const
 void VerifyCustomOcrTemplateRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

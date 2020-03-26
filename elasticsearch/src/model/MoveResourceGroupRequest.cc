@@ -22,7 +22,7 @@ MoveResourceGroupRequest::MoveResourceGroupRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/resourcegroup");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 MoveResourceGroupRequest::~MoveResourceGroupRequest()

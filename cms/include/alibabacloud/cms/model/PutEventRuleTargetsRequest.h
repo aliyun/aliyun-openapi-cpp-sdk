@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT PutEventRuleTargetsRequest : public RpcServiceRequest
 			{
+			public:
 				struct WebhookParameters
 				{
 					std::string protocol;

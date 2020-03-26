@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ShopSetfiltermacRequest;
 
 ShopSetfiltermacRequest::ShopSetfiltermacRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ShopSetfiltermac")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ShopSetfiltermacRequest::~ShopSetfiltermacRequest()
 {}
@@ -33,7 +35,7 @@ std::string ShopSetfiltermacRequest::getMac()const
 void ShopSetfiltermacRequest::setMac(const std::string& mac)
 {
 	mac_ = mac;
-	setCoreParameter("Mac", mac);
+	setParameter("Mac", mac);
 }
 
 std::string ShopSetfiltermacRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ShopSetfiltermacRequest::getAccessKeyId()const
 void ShopSetfiltermacRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long ShopSetfiltermacRequest::getSid()const
@@ -55,6 +57,6 @@ long ShopSetfiltermacRequest::getSid()const
 void ShopSetfiltermacRequest::setSid(long sid)
 {
 	sid_ = sid;
-	setCoreParameter("Sid", std::to_string(sid));
+	setParameter("Sid", std::to_string(sid));
 }
 

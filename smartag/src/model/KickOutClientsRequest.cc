@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::KickOutClientsRequest;
 
 KickOutClientsRequest::KickOutClientsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "KickOutClients")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 KickOutClientsRequest::~KickOutClientsRequest()
 {}
@@ -33,7 +35,7 @@ long KickOutClientsRequest::getResourceOwnerId()const
 void KickOutClientsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string KickOutClientsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string KickOutClientsRequest::getRegionId()const
 void KickOutClientsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string KickOutClientsRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string KickOutClientsRequest::getResourceOwnerAccount()const
 void KickOutClientsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string KickOutClientsRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string KickOutClientsRequest::getOwnerAccount()const
 void KickOutClientsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long KickOutClientsRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long KickOutClientsRequest::getOwnerId()const
 void KickOutClientsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string KickOutClientsRequest::getSmartAGId()const
@@ -88,7 +90,7 @@ std::string KickOutClientsRequest::getSmartAGId()const
 void KickOutClientsRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 
 std::string KickOutClientsRequest::getUsername()const
@@ -99,6 +101,6 @@ std::string KickOutClientsRequest::getUsername()const
 void KickOutClientsRequest::setUsername(const std::string& username)
 {
 	username_ = username;
-	setCoreParameter("Username", username);
+	setParameter("Username", username);
 }
 

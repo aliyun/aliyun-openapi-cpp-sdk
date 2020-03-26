@@ -35,7 +35,7 @@ long DescribeBackupPolicyRequest::getResourceOwnerId()const
 void DescribeBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeBackupPolicyRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeBackupPolicyRequest::getAccessKeyId()const
 void DescribeBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 void DescribeBackupPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeBackupPolicyRequest::getDBClusterId()const
@@ -68,7 +68,7 @@ std::string DescribeBackupPolicyRequest::getDBClusterId()const
 void DescribeBackupPolicyRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeBackupPolicyRequest::getOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeBackupPolicyRequest::getOwnerAccount()const
 void DescribeBackupPolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeBackupPolicyRequest::getOwnerId()const
@@ -90,6 +90,6 @@ long DescribeBackupPolicyRequest::getOwnerId()const
 void DescribeBackupPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

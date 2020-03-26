@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DeleteDatabaseRequest;
 
 DeleteDatabaseRequest::DeleteDatabaseRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DeleteDatabase")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteDatabaseRequest::~DeleteDatabaseRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteDatabaseRequest::getAccessKeyId()const
 void DeleteDatabaseRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteDatabaseRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string DeleteDatabaseRequest::getDBInstanceId()const
 void DeleteDatabaseRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string DeleteDatabaseRequest::getDBName()const
@@ -55,6 +57,6 @@ std::string DeleteDatabaseRequest::getDBName()const
 void DeleteDatabaseRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
-	setCoreParameter("DBName", dBName);
+	setParameter("DBName", dBName);
 }
 

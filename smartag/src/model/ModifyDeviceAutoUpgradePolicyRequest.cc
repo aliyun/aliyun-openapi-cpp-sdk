@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::ModifyDeviceAutoUpgradePolicyRequest;
 
 ModifyDeviceAutoUpgradePolicyRequest::ModifyDeviceAutoUpgradePolicyRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "ModifyDeviceAutoUpgradePolicy")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDeviceAutoUpgradePolicyRequest::~ModifyDeviceAutoUpgradePolicyRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyDeviceAutoUpgradePolicyRequest::getResourceOwnerId()const
 void ModifyDeviceAutoUpgradePolicyRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getCronExpression()const
@@ -44,7 +46,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getCronExpression()const
 void ModifyDeviceAutoUpgradePolicyRequest::setCronExpression(const std::string& cronExpression)
 {
 	cronExpression_ = cronExpression;
-	setCoreParameter("CronExpression", cronExpression);
+	setParameter("CronExpression", cronExpression);
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getTimeZone()const
@@ -55,7 +57,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getTimeZone()const
 void ModifyDeviceAutoUpgradePolicyRequest::setTimeZone(const std::string& timeZone)
 {
 	timeZone_ = timeZone;
-	setCoreParameter("TimeZone", timeZone);
+	setParameter("TimeZone", timeZone);
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getUpgradeType()const
@@ -66,7 +68,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getUpgradeType()const
 void ModifyDeviceAutoUpgradePolicyRequest::setUpgradeType(const std::string& upgradeType)
 {
 	upgradeType_ = upgradeType;
-	setCoreParameter("UpgradeType", upgradeType);
+	setParameter("UpgradeType", upgradeType);
 }
 
 int ModifyDeviceAutoUpgradePolicyRequest::getDuration()const
@@ -77,7 +79,7 @@ int ModifyDeviceAutoUpgradePolicyRequest::getDuration()const
 void ModifyDeviceAutoUpgradePolicyRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getRegionId()const
@@ -88,7 +90,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getRegionId()const
 void ModifyDeviceAutoUpgradePolicyRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getSerialNumber()const
@@ -99,7 +101,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getSerialNumber()const
 void ModifyDeviceAutoUpgradePolicyRequest::setSerialNumber(const std::string& serialNumber)
 {
 	serialNumber_ = serialNumber;
-	setCoreParameter("SerialNumber", serialNumber);
+	setParameter("SerialNumber", serialNumber);
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getResourceOwnerAccount()const
 void ModifyDeviceAutoUpgradePolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getOwnerAccount()const
 void ModifyDeviceAutoUpgradePolicyRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyDeviceAutoUpgradePolicyRequest::getOwnerId()const
@@ -132,7 +134,7 @@ long ModifyDeviceAutoUpgradePolicyRequest::getOwnerId()const
 void ModifyDeviceAutoUpgradePolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyDeviceAutoUpgradePolicyRequest::getSmartAGId()const
@@ -143,6 +145,6 @@ std::string ModifyDeviceAutoUpgradePolicyRequest::getSmartAGId()const
 void ModifyDeviceAutoUpgradePolicyRequest::setSmartAGId(const std::string& smartAGId)
 {
 	smartAGId_ = smartAGId;
-	setCoreParameter("SmartAGId", smartAGId);
+	setParameter("SmartAGId", smartAGId);
 }
 

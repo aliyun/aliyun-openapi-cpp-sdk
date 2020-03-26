@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::MarkAuditContentRequest;
 
 MarkAuditContentRequest::MarkAuditContentRequest() :
 	RpcServiceRequest("green", "2017-08-23", "MarkAuditContent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MarkAuditContentRequest::~MarkAuditContentRequest()
 {}
@@ -33,7 +35,7 @@ std::string MarkAuditContentRequest::getAuditIllegalReasons()const
 void MarkAuditContentRequest::setAuditIllegalReasons(const std::string& auditIllegalReasons)
 {
 	auditIllegalReasons_ = auditIllegalReasons;
-	setCoreParameter("AuditIllegalReasons", auditIllegalReasons);
+	setParameter("AuditIllegalReasons", auditIllegalReasons);
 }
 
 std::string MarkAuditContentRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string MarkAuditContentRequest::getSourceIp()const
 void MarkAuditContentRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string MarkAuditContentRequest::getAuditResult()const
@@ -55,7 +57,7 @@ std::string MarkAuditContentRequest::getAuditResult()const
 void MarkAuditContentRequest::setAuditResult(const std::string& auditResult)
 {
 	auditResult_ = auditResult;
-	setCoreParameter("AuditResult", auditResult);
+	setParameter("AuditResult", auditResult);
 }
 
 std::string MarkAuditContentRequest::getIds()const
@@ -66,6 +68,6 @@ std::string MarkAuditContentRequest::getIds()const
 void MarkAuditContentRequest::setIds(const std::string& ids)
 {
 	ids_ = ids;
-	setCoreParameter("Ids", ids);
+	setParameter("Ids", ids);
 }
 

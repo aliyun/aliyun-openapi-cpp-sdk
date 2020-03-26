@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeRouterInterfacesRequest;
 
 DescribeRouterInterfacesRequest::DescribeRouterInterfacesRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeRouterInterfaces")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRouterInterfacesRequest::~DescribeRouterInterfacesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRouterInterfacesRequest::getResourceOwnerId()const
 void DescribeRouterInterfacesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
@@ -44,7 +46,7 @@ bool DescribeRouterInterfacesRequest::getIncludeReservationData()const
 void DescribeRouterInterfacesRequest::setIncludeReservationData(bool includeReservationData)
 {
 	includeReservationData_ = includeReservationData;
-	setCoreParameter("IncludeReservationData", includeReservationData ? "true" : "false");
+	setParameter("IncludeReservationData", includeReservationData ? "true" : "false");
 }
 
 int DescribeRouterInterfacesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeRouterInterfacesRequest::getPageNumber()const
 void DescribeRouterInterfacesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeRouterInterfacesRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeRouterInterfacesRequest::getRegionId()const
 void DescribeRouterInterfacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeRouterInterfacesRequest::getPageSize()const
@@ -77,7 +79,7 @@ int DescribeRouterInterfacesRequest::getPageSize()const
 void DescribeRouterInterfacesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeRouterInterfacesRequest::getResourceOwnerAccount()const
 void DescribeRouterInterfacesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long DescribeRouterInterfacesRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeRouterInterfacesRequest::getOwnerId()const
 void DescribeRouterInterfacesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesRequest::getFilter()const
@@ -110,12 +112,13 @@ std::vector<DescribeRouterInterfacesRequest::Filter> DescribeRouterInterfacesReq
 void DescribeRouterInterfacesRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		for(int i = 0; i!= obj.value.size(); i++)				setCoreParameter(str + ".Value."+ std::to_string(i), obj.value.at(i));
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		for(int dep2 = 0; dep2!= filterObj.value.size(); dep2++) {
+			setParameter(filterObjStr + ".Value."+ std::to_string(dep2), filterObj.value.at(dep2));
+		}
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 

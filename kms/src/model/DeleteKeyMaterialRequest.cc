@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::DeleteKeyMaterialRequest;
 DeleteKeyMaterialRequest::DeleteKeyMaterialRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "DeleteKeyMaterial")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteKeyMaterialRequest::~DeleteKeyMaterialRequest()

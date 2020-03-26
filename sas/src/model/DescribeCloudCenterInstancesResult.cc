@@ -91,6 +91,8 @@ void DescribeCloudCenterInstancesResult::parse(const std::string &payload)
 			instancesObject.safeEventCount = std::stoi(valueInstancesInstance["SafeEventCount"].asString());
 		if(!valueInstancesInstance["RegionId"].isNull())
 			instancesObject.regionId = valueInstancesInstance["RegionId"].asString();
+		if(!valueInstancesInstance["GroupId"].isNull())
+			instancesObject.groupId = valueInstancesInstance["GroupId"].asString();
 		instances_.push_back(instancesObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

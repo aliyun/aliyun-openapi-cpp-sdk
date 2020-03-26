@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::AddCommonBandwidthPackageIpRequest;
 
 AddCommonBandwidthPackageIpRequest::AddCommonBandwidthPackageIpRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "AddCommonBandwidthPackageIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCommonBandwidthPackageIpRequest::~AddCommonBandwidthPackageIpRequest()
 {}
@@ -33,7 +35,7 @@ long AddCommonBandwidthPackageIpRequest::getResourceOwnerId()const
 void AddCommonBandwidthPackageIpRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string AddCommonBandwidthPackageIpRequest::getRegionId()const
 void AddCommonBandwidthPackageIpRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getBandwidthPackageId()const
@@ -55,7 +57,7 @@ std::string AddCommonBandwidthPackageIpRequest::getBandwidthPackageId()const
 void AddCommonBandwidthPackageIpRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string AddCommonBandwidthPackageIpRequest::getResourceOwnerAccount()const
 void AddCommonBandwidthPackageIpRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddCommonBandwidthPackageIpRequest::getOwnerAccount()const
 void AddCommonBandwidthPackageIpRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddCommonBandwidthPackageIpRequest::getOwnerId()const
@@ -88,7 +90,18 @@ long AddCommonBandwidthPackageIpRequest::getOwnerId()const
 void AddCommonBandwidthPackageIpRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string AddCommonBandwidthPackageIpRequest::getIpType()const
+{
+	return ipType_;
+}
+
+void AddCommonBandwidthPackageIpRequest::setIpType(const std::string& ipType)
+{
+	ipType_ = ipType;
+	setParameter("IpType", ipType);
 }
 
 std::string AddCommonBandwidthPackageIpRequest::getIpInstanceId()const
@@ -99,6 +112,6 @@ std::string AddCommonBandwidthPackageIpRequest::getIpInstanceId()const
 void AddCommonBandwidthPackageIpRequest::setIpInstanceId(const std::string& ipInstanceId)
 {
 	ipInstanceId_ = ipInstanceId;
-	setCoreParameter("IpInstanceId", ipInstanceId);
+	setParameter("IpInstanceId", ipInstanceId);
 }
 

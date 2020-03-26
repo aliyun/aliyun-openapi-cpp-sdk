@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::FetchLibrariesRequest;
 
 FetchLibrariesRequest::FetchLibrariesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "FetchLibraries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FetchLibrariesRequest::~FetchLibrariesRequest()
 {}
@@ -33,7 +35,7 @@ bool FetchLibrariesRequest::getNeedQuota()const
 void FetchLibrariesRequest::setNeedQuota(bool needQuota)
 {
 	needQuota_ = needQuota;
-	setCoreParameter("NeedQuota", needQuota ? "true" : "false");
+	setParameter("NeedQuota", needQuota ? "true" : "false");
 }
 
 std::string FetchLibrariesRequest::getStoreName()const
@@ -44,7 +46,7 @@ std::string FetchLibrariesRequest::getStoreName()const
 void FetchLibrariesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int FetchLibrariesRequest::getSize()const
@@ -55,7 +57,7 @@ int FetchLibrariesRequest::getSize()const
 void FetchLibrariesRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int FetchLibrariesRequest::getPage()const
@@ -66,6 +68,6 @@ int FetchLibrariesRequest::getPage()const
 void FetchLibrariesRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 

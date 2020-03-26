@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::AttachNetworkOptimizationSagsRequest;
 
 AttachNetworkOptimizationSagsRequest::AttachNetworkOptimizationSagsRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "AttachNetworkOptimizationSags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AttachNetworkOptimizationSagsRequest::~AttachNetworkOptimizationSagsRequest()
 {}
@@ -33,7 +35,7 @@ long AttachNetworkOptimizationSagsRequest::getResourceOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string AttachNetworkOptimizationSagsRequest::getRegionId()const
 void AttachNetworkOptimizationSagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getNetworkOptId()const
@@ -55,7 +57,7 @@ std::string AttachNetworkOptimizationSagsRequest::getNetworkOptId()const
 void AttachNetworkOptimizationSagsRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setParameter("NetworkOptId", networkOptId);
 }
 
 std::vector<std::string> AttachNetworkOptimizationSagsRequest::getSmartAGIds()const
@@ -66,8 +68,9 @@ std::vector<std::string> AttachNetworkOptimizationSagsRequest::getSmartAGIds()co
 void AttachNetworkOptimizationSagsRequest::setSmartAGIds(const std::vector<std::string>& smartAGIds)
 {
 	smartAGIds_ = smartAGIds;
-	for(int i = 0; i!= smartAGIds.size(); i++)
-		setCoreParameter("SmartAGIds."+ std::to_string(i), smartAGIds.at(i));
+	for(int dep1 = 0; dep1!= smartAGIds.size(); dep1++) {
+		setParameter("SmartAGIds."+ std::to_string(dep1), smartAGIds.at(dep1));
+	}
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
@@ -78,7 +81,7 @@ std::string AttachNetworkOptimizationSagsRequest::getResourceOwnerAccount()const
 void AttachNetworkOptimizationSagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AttachNetworkOptimizationSagsRequest::getOwnerAccount()const
@@ -89,7 +92,7 @@ std::string AttachNetworkOptimizationSagsRequest::getOwnerAccount()const
 void AttachNetworkOptimizationSagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AttachNetworkOptimizationSagsRequest::getOwnerId()const
@@ -100,6 +103,6 @@ long AttachNetworkOptimizationSagsRequest::getOwnerId()const
 void AttachNetworkOptimizationSagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

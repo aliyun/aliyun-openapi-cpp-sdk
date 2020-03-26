@@ -20,21 +20,12 @@ using AlibabaCloud::Iot::Model::CreateDataAPIServiceRequest;
 
 CreateDataAPIServiceRequest::CreateDataAPIServiceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateDataAPIService")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateDataAPIServiceRequest::~CreateDataAPIServiceRequest()
 {}
-
-std::string CreateDataAPIServiceRequest::getApiPath()const
-{
-	return apiPath_;
-}
-
-void CreateDataAPIServiceRequest::setApiPath(const std::string& apiPath)
-{
-	apiPath_ = apiPath;
-	setCoreParameter("ApiPath", apiPath);
-}
 
 std::vector<CreateDataAPIServiceRequest::RequestParam> CreateDataAPIServiceRequest::getRequestParam()const
 {
@@ -44,15 +35,14 @@ std::vector<CreateDataAPIServiceRequest::RequestParam> CreateDataAPIServiceReque
 void CreateDataAPIServiceRequest::setRequestParam(const std::vector<RequestParam>& requestParam)
 {
 	requestParam_ = requestParam;
-	int i = 0;
-	for(int i = 0; i!= requestParam.size(); i++)	{
-		auto obj = requestParam.at(i);
-		std::string str ="RequestParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+	for(int dep1 = 0; dep1!= requestParam.size(); dep1++) {
+		auto requestParamObj = requestParam.at(dep1);
+		std::string requestParamObjStr = "RequestParam." + std::to_string(dep1 + 1);
+		setParameter(requestParamObjStr + ".Name", requestParamObj.name);
+		setParameter(requestParamObjStr + ".Type", requestParamObj.type);
+		setParameter(requestParamObjStr + ".Desc", requestParamObj.desc);
+		setParameter(requestParamObjStr + ".Example", requestParamObj.example);
+		setParameter(requestParamObjStr + ".Required", requestParamObj.required ? "true" : "false");
 	}
 }
 
@@ -64,7 +54,29 @@ std::string CreateDataAPIServiceRequest::getFolderId()const
 void CreateDataAPIServiceRequest::setFolderId(const std::string& folderId)
 {
 	folderId_ = folderId;
-	setCoreParameter("FolderId", folderId);
+	setBodyParameter("FolderId", folderId);
+}
+
+std::string CreateDataAPIServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateDataAPIServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setBodyParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateDataAPIServiceRequest::getApiPath()const
+{
+	return apiPath_;
+}
+
+void CreateDataAPIServiceRequest::setApiPath(const std::string& apiPath)
+{
+	apiPath_ = apiPath;
+	setBodyParameter("ApiPath", apiPath);
 }
 
 std::string CreateDataAPIServiceRequest::getTemplateSql()const
@@ -75,18 +87,7 @@ std::string CreateDataAPIServiceRequest::getTemplateSql()const
 void CreateDataAPIServiceRequest::setTemplateSql(const std::string& templateSql)
 {
 	templateSql_ = templateSql;
-	setCoreParameter("TemplateSql", templateSql);
-}
-
-std::string CreateDataAPIServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void CreateDataAPIServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setBodyParameter("TemplateSql", templateSql);
 }
 
 std::vector<CreateDataAPIServiceRequest::ResponseParam> CreateDataAPIServiceRequest::getResponseParam()const
@@ -97,15 +98,14 @@ std::vector<CreateDataAPIServiceRequest::ResponseParam> CreateDataAPIServiceRequ
 void CreateDataAPIServiceRequest::setResponseParam(const std::vector<ResponseParam>& responseParam)
 {
 	responseParam_ = responseParam;
-	int i = 0;
-	for(int i = 0; i!= responseParam.size(); i++)	{
-		auto obj = responseParam.at(i);
-		std::string str ="ResponseParam."+ std::to_string(i);
-		setCoreParameter(str + ".Name", obj.name);
-		setCoreParameter(str + ".Type", obj.type);
-		setCoreParameter(str + ".Required", obj.required ? "true" : "false");
-		setCoreParameter(str + ".Desc", obj.desc);
-		setCoreParameter(str + ".Example", obj.example);
+	for(int dep1 = 0; dep1!= responseParam.size(); dep1++) {
+		auto responseParamObj = responseParam.at(dep1);
+		std::string responseParamObjStr = "ResponseParam." + std::to_string(dep1 + 1);
+		setParameter(responseParamObjStr + ".Name", responseParamObj.name);
+		setParameter(responseParamObjStr + ".Type", responseParamObj.type);
+		setParameter(responseParamObjStr + ".Desc", responseParamObj.desc);
+		setParameter(responseParamObjStr + ".Example", responseParamObj.example);
+		setParameter(responseParamObjStr + ".Required", responseParamObj.required ? "true" : "false");
 	}
 }
 
@@ -117,7 +117,7 @@ std::string CreateDataAPIServiceRequest::getOriginSql()const
 void CreateDataAPIServiceRequest::setOriginSql(const std::string& originSql)
 {
 	originSql_ = originSql;
-	setCoreParameter("OriginSql", originSql);
+	setBodyParameter("OriginSql", originSql);
 }
 
 std::string CreateDataAPIServiceRequest::getDisplayName()const
@@ -128,7 +128,29 @@ std::string CreateDataAPIServiceRequest::getDisplayName()const
 void CreateDataAPIServiceRequest::setDisplayName(const std::string& displayName)
 {
 	displayName_ = displayName;
-	setCoreParameter("DisplayName", displayName);
+	setBodyParameter("DisplayName", displayName);
+}
+
+std::string CreateDataAPIServiceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateDataAPIServiceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateDataAPIServiceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateDataAPIServiceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string CreateDataAPIServiceRequest::getDesc()const
@@ -139,6 +161,6 @@ std::string CreateDataAPIServiceRequest::getDesc()const
 void CreateDataAPIServiceRequest::setDesc(const std::string& desc)
 {
 	desc_ = desc;
-	setCoreParameter("Desc", desc);
+	setBodyParameter("Desc", desc);
 }
 

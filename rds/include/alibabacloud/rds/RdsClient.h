@@ -210,6 +210,8 @@
 #include "model/DescribeLocalAvailableRecoveryTimeResult.h"
 #include "model/DescribeLogBackupFilesRequest.h"
 #include "model/DescribeLogBackupFilesResult.h"
+#include "model/DescribeMigrateTaskByIdRequest.h"
+#include "model/DescribeMigrateTaskByIdResult.h"
 #include "model/DescribeMigrateTasksRequest.h"
 #include "model/DescribeMigrateTasksResult.h"
 #include "model/DescribeMigrateTasksForSQLServerRequest.h"
@@ -717,6 +719,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLogBackupFilesResult> DescribeLogBackupFilesOutcome;
 			typedef std::future<DescribeLogBackupFilesOutcome> DescribeLogBackupFilesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeLogBackupFilesRequest&, const DescribeLogBackupFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupFilesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMigrateTaskByIdResult> DescribeMigrateTaskByIdOutcome;
+			typedef std::future<DescribeMigrateTaskByIdOutcome> DescribeMigrateTaskByIdOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeMigrateTaskByIdRequest&, const DescribeMigrateTaskByIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateTaskByIdAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMigrateTasksResult> DescribeMigrateTasksOutcome;
 			typedef std::future<DescribeMigrateTasksOutcome> DescribeMigrateTasksOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeMigrateTasksRequest&, const DescribeMigrateTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateTasksAsyncHandler;
@@ -1328,6 +1333,9 @@ namespace AlibabaCloud
 			DescribeLogBackupFilesOutcome describeLogBackupFiles(const Model::DescribeLogBackupFilesRequest &request)const;
 			void describeLogBackupFilesAsync(const Model::DescribeLogBackupFilesRequest& request, const DescribeLogBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLogBackupFilesOutcomeCallable describeLogBackupFilesCallable(const Model::DescribeLogBackupFilesRequest& request) const;
+			DescribeMigrateTaskByIdOutcome describeMigrateTaskById(const Model::DescribeMigrateTaskByIdRequest &request)const;
+			void describeMigrateTaskByIdAsync(const Model::DescribeMigrateTaskByIdRequest& request, const DescribeMigrateTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMigrateTaskByIdOutcomeCallable describeMigrateTaskByIdCallable(const Model::DescribeMigrateTaskByIdRequest& request) const;
 			DescribeMigrateTasksOutcome describeMigrateTasks(const Model::DescribeMigrateTasksRequest &request)const;
 			void describeMigrateTasksAsync(const Model::DescribeMigrateTasksRequest& request, const DescribeMigrateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMigrateTasksOutcomeCallable describeMigrateTasksCallable(const Model::DescribeMigrateTasksRequest& request) const;

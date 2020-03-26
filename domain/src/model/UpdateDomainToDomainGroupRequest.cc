@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::UpdateDomainToDomainGroupRequest;
 
 UpdateDomainToDomainGroupRequest::UpdateDomainToDomainGroupRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "UpdateDomainToDomainGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateDomainToDomainGroupRequest::~UpdateDomainToDomainGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateDomainToDomainGroupRequest::getFileToUpload()const
 void UpdateDomainToDomainGroupRequest::setFileToUpload(const std::string& fileToUpload)
 {
 	fileToUpload_ = fileToUpload;
-	setCoreParameter("FileToUpload", fileToUpload);
+	setBodyParameter("FileToUpload", fileToUpload);
 }
 
 std::vector<std::string> UpdateDomainToDomainGroupRequest::getDomainName()const
@@ -44,8 +46,9 @@ std::vector<std::string> UpdateDomainToDomainGroupRequest::getDomainName()const
 void UpdateDomainToDomainGroupRequest::setDomainName(const std::vector<std::string>& domainName)
 {
 	domainName_ = domainName;
-	for(int i = 0; i!= domainName.size(); i++)
-		setCoreParameter("DomainName."+ std::to_string(i), domainName.at(i));
+	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
+		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
+	}
 }
 
 bool UpdateDomainToDomainGroupRequest::getReplace()const
@@ -56,7 +59,7 @@ bool UpdateDomainToDomainGroupRequest::getReplace()const
 void UpdateDomainToDomainGroupRequest::setReplace(bool replace)
 {
 	replace_ = replace;
-	setCoreParameter("Replace", replace ? "true" : "false");
+	setParameter("Replace", replace ? "true" : "false");
 }
 
 long UpdateDomainToDomainGroupRequest::getDomainGroupId()const
@@ -67,7 +70,7 @@ long UpdateDomainToDomainGroupRequest::getDomainGroupId()const
 void UpdateDomainToDomainGroupRequest::setDomainGroupId(long domainGroupId)
 {
 	domainGroupId_ = domainGroupId;
-	setCoreParameter("DomainGroupId", std::to_string(domainGroupId));
+	setParameter("DomainGroupId", std::to_string(domainGroupId));
 }
 
 int UpdateDomainToDomainGroupRequest::getDataSource()const
@@ -78,7 +81,7 @@ int UpdateDomainToDomainGroupRequest::getDataSource()const
 void UpdateDomainToDomainGroupRequest::setDataSource(int dataSource)
 {
 	dataSource_ = dataSource;
-	setCoreParameter("DataSource", std::to_string(dataSource));
+	setParameter("DataSource", std::to_string(dataSource));
 }
 
 std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
@@ -89,7 +92,7 @@ std::string UpdateDomainToDomainGroupRequest::getUserClientIp()const
 void UpdateDomainToDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string UpdateDomainToDomainGroupRequest::getLang()const
@@ -100,6 +103,6 @@ std::string UpdateDomainToDomainGroupRequest::getLang()const
 void UpdateDomainToDomainGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

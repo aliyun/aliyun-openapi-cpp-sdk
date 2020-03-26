@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLivePullStreamInfoConfigRequest;
 
 AddLivePullStreamInfoConfigRequest::AddLivePullStreamInfoConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLivePullStreamInfoConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLivePullStreamInfoConfigRequest::~AddLivePullStreamInfoConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string AddLivePullStreamInfoConfigRequest::getStartTime()const
 void AddLivePullStreamInfoConfigRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getAppName()const
@@ -44,7 +46,7 @@ std::string AddLivePullStreamInfoConfigRequest::getAppName()const
 void AddLivePullStreamInfoConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getStreamName()const
@@ -55,7 +57,7 @@ std::string AddLivePullStreamInfoConfigRequest::getStreamName()const
 void AddLivePullStreamInfoConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string AddLivePullStreamInfoConfigRequest::getDomainName()const
 void AddLivePullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getEndTime()const
@@ -77,7 +79,7 @@ std::string AddLivePullStreamInfoConfigRequest::getEndTime()const
 void AddLivePullStreamInfoConfigRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long AddLivePullStreamInfoConfigRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long AddLivePullStreamInfoConfigRequest::getOwnerId()const
 void AddLivePullStreamInfoConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLivePullStreamInfoConfigRequest::getSourceUrl()const
@@ -99,6 +101,6 @@ std::string AddLivePullStreamInfoConfigRequest::getSourceUrl()const
 void AddLivePullStreamInfoConfigRequest::setSourceUrl(const std::string& sourceUrl)
 {
 	sourceUrl_ = sourceUrl;
-	setCoreParameter("SourceUrl", sourceUrl);
+	setParameter("SourceUrl", sourceUrl);
 }
 

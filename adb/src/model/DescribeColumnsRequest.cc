@@ -35,7 +35,7 @@ long DescribeColumnsRequest::getResourceOwnerId()const
 void DescribeColumnsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeColumnsRequest::getAccessKeyId()const
@@ -46,7 +46,7 @@ std::string DescribeColumnsRequest::getAccessKeyId()const
 void DescribeColumnsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeColumnsRequest::getTableName()const
@@ -57,7 +57,7 @@ std::string DescribeColumnsRequest::getTableName()const
 void DescribeColumnsRequest::setTableName(const std::string& tableName)
 {
 	tableName_ = tableName;
-	setCoreParameter("TableName", tableName);
+	setParameter("TableName", tableName);
 }
 
 std::string DescribeColumnsRequest::getSchemaName()const
@@ -68,7 +68,7 @@ std::string DescribeColumnsRequest::getSchemaName()const
 void DescribeColumnsRequest::setSchemaName(const std::string& schemaName)
 {
 	schemaName_ = schemaName;
-	setCoreParameter("SchemaName", schemaName);
+	setParameter("SchemaName", schemaName);
 }
 
 std::string DescribeColumnsRequest::getResourceOwnerAccount()const
@@ -79,7 +79,7 @@ std::string DescribeColumnsRequest::getResourceOwnerAccount()const
 void DescribeColumnsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeColumnsRequest::getDBClusterId()const
@@ -90,7 +90,7 @@ std::string DescribeColumnsRequest::getDBClusterId()const
 void DescribeColumnsRequest::setDBClusterId(const std::string& dBClusterId)
 {
 	dBClusterId_ = dBClusterId;
-	setCoreParameter("DBClusterId", dBClusterId);
+	setParameter("DBClusterId", dBClusterId);
 }
 
 std::string DescribeColumnsRequest::getOwnerAccount()const
@@ -101,7 +101,7 @@ std::string DescribeColumnsRequest::getOwnerAccount()const
 void DescribeColumnsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeColumnsRequest::getOwnerId()const
@@ -112,6 +112,6 @@ long DescribeColumnsRequest::getOwnerId()const
 void DescribeColumnsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteScheduledTaskRequest;
 
 DeleteScheduledTaskRequest::DeleteScheduledTaskRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteScheduledTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteScheduledTaskRequest::~DeleteScheduledTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteScheduledTaskRequest::getResourceOwnerAccount()const
 void DeleteScheduledTaskRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteScheduledTaskRequest::getOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DeleteScheduledTaskRequest::getOwnerAccount()const
 void DeleteScheduledTaskRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteScheduledTaskRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteScheduledTaskRequest::getOwnerId()const
 void DeleteScheduledTaskRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteScheduledTaskRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteScheduledTaskRequest::getAccessKeyId()const
 void DeleteScheduledTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteScheduledTaskRequest::getScheduledTaskId()const
@@ -77,6 +79,6 @@ std::string DeleteScheduledTaskRequest::getScheduledTaskId()const
 void DeleteScheduledTaskRequest::setScheduledTaskId(const std::string& scheduledTaskId)
 {
 	scheduledTaskId_ = scheduledTaskId;
-	setCoreParameter("ScheduledTaskId", scheduledTaskId);
+	setParameter("ScheduledTaskId", scheduledTaskId);
 }
 

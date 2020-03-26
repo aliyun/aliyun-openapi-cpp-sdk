@@ -83,6 +83,8 @@ namespace AlibabaCloud
 				void setHaType(const std::string& haType);
 				std::string getName()const;
 				void setName(const std::string& name);
+				bool getAlreadyHaveSag()const;
+				void setAlreadyHaveSag(bool alreadyHaveSag);
 				std::string getReceiverCountry()const;
 				void setReceiverCountry(const std::string& receiverCountry);
 				std::string getChargeType()const;
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				std::string receiverName_;
 				std::string haType_;
 				std::string name_;
+				bool alreadyHaveSag_;
 				std::string receiverCountry_;
 				std::string chargeType_;
 				long dataPlan_;

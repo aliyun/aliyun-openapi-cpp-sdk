@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMediaDNAResultRequest;
 
 GetMediaDNAResultRequest::GetMediaDNAResultRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMediaDNAResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaDNAResultRequest::~GetMediaDNAResultRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetMediaDNAResultRequest::getResourceOwnerId()const
 void GetMediaDNAResultRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string GetMediaDNAResultRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetMediaDNAResultRequest::getResourceOwnerAccount()const
 void GetMediaDNAResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetMediaDNAResultRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string GetMediaDNAResultRequest::getOwnerAccount()const
 void GetMediaDNAResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string GetMediaDNAResultRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string GetMediaDNAResultRequest::getOwnerId()const
 void GetMediaDNAResultRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaDNAResultRequest::getMediaId()const
@@ -77,7 +79,7 @@ std::string GetMediaDNAResultRequest::getMediaId()const
 void GetMediaDNAResultRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string GetMediaDNAResultRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string GetMediaDNAResultRequest::getAccessKeyId()const
 void GetMediaDNAResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

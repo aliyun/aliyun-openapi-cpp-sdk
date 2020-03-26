@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::CreateBackupRequest;
 
 CreateBackupRequest::CreateBackupRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "CreateBackup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateBackupRequest::~CreateBackupRequest()
 {}
@@ -33,7 +35,7 @@ long CreateBackupRequest::getResourceOwnerId()const
 void CreateBackupRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateBackupRequest::getBackupPlanId()const
@@ -44,7 +46,7 @@ std::string CreateBackupRequest::getBackupPlanId()const
 void CreateBackupRequest::setBackupPlanId(const std::string& backupPlanId)
 {
 	backupPlanId_ = backupPlanId;
-	setCoreParameter("BackupPlanId", backupPlanId);
+	setParameter("BackupPlanId", backupPlanId);
 }
 
 std::string CreateBackupRequest::getMetadataType()const
@@ -55,7 +57,7 @@ std::string CreateBackupRequest::getMetadataType()const
 void CreateBackupRequest::setMetadataType(const std::string& metadataType)
 {
 	metadataType_ = metadataType;
-	setCoreParameter("MetadataType", metadataType);
+	setParameter("MetadataType", metadataType);
 }
 
 std::string CreateBackupRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string CreateBackupRequest::getAccessKeyId()const
 void CreateBackupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateBackupRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string CreateBackupRequest::getRegionId()const
 void CreateBackupRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

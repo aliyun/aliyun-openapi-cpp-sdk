@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::UntagResourcesRequest;
 
 UntagResourcesRequest::UntagResourcesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "UntagResources")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
@@ -33,7 +35,7 @@ bool UntagResourcesRequest::getAll()const
 void UntagResourcesRequest::setAll(bool all)
 {
 	all_ = all;
-	setCoreParameter("All", all ? "true" : "false");
+	setParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId()const
@@ -44,8 +46,9 @@ std::vector<std::string> UntagResourcesRequest::getResourceId()const
 void UntagResourcesRequest::setResourceId(const std::vector<std::string>& resourceId)
 {
 	resourceId_ = resourceId;
-	for(int i = 0; i!= resourceId.size(); i++)
-		setCoreParameter("ResourceId."+ std::to_string(i), resourceId.at(i));
+	for(int dep1 = 0; dep1!= resourceId.size(); dep1++) {
+		setParameter("ResourceId."+ std::to_string(dep1), resourceId.at(dep1));
+	}
 }
 
 std::string UntagResourcesRequest::getResourceType()const
@@ -56,7 +59,7 @@ std::string UntagResourcesRequest::getResourceType()const
 void UntagResourcesRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", resourceType);
+	setParameter("ResourceType", resourceType);
 }
 
 std::string UntagResourcesRequest::getAccessKeyId()const
@@ -67,7 +70,7 @@ std::string UntagResourcesRequest::getAccessKeyId()const
 void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UntagResourcesRequest::getSecurityToken()const
@@ -78,7 +81,7 @@ std::string UntagResourcesRequest::getSecurityToken()const
 void UntagResourcesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::vector<std::string> UntagResourcesRequest::getTagKey()const
@@ -89,7 +92,8 @@ std::vector<std::string> UntagResourcesRequest::getTagKey()const
 void UntagResourcesRequest::setTagKey(const std::vector<std::string>& tagKey)
 {
 	tagKey_ = tagKey;
-	for(int i = 0; i!= tagKey.size(); i++)
-		setCoreParameter("TagKey."+ std::to_string(i), tagKey.at(i));
+	for(int dep1 = 0; dep1!= tagKey.size(); dep1++) {
+		setParameter("TagKey."+ std::to_string(dep1), tagKey.at(dep1));
+	}
 }
 

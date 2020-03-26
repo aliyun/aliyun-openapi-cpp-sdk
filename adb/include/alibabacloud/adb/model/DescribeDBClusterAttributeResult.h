@@ -40,10 +40,12 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string category;
+					int port;
 					std::string dBClusterId;
 					std::string dBClusterNetworkType;
 					std::string dBClusterType;
 					std::string dBVersion;
+					std::string dtsJobId;
 					long dBNodeCount;
 					std::string commodityCode;
 					std::string lockReason;
@@ -64,6 +66,8 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string regionId;
 					std::string expireTime;
+					std::string connectionString;
+					std::string rdsInstanceId;
 				};
 
 

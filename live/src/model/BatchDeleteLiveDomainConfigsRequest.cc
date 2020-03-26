@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::BatchDeleteLiveDomainConfigsRequest;
 
 BatchDeleteLiveDomainConfigsRequest::BatchDeleteLiveDomainConfigsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "BatchDeleteLiveDomainConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchDeleteLiveDomainConfigsRequest::~BatchDeleteLiveDomainConfigsRequest()
 {}
@@ -33,7 +35,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getFunctionNames()const
 void BatchDeleteLiveDomainConfigsRequest::setFunctionNames(const std::string& functionNames)
 {
 	functionNames_ = functionNames;
-	setCoreParameter("FunctionNames", functionNames);
+	setParameter("FunctionNames", functionNames);
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
@@ -44,7 +46,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getDomainNames()const
 void BatchDeleteLiveDomainConfigsRequest::setDomainNames(const std::string& domainNames)
 {
 	domainNames_ = domainNames;
-	setCoreParameter("DomainNames", domainNames);
+	setParameter("DomainNames", domainNames);
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string BatchDeleteLiveDomainConfigsRequest::getOwnerAccount()const
 void BatchDeleteLiveDomainConfigsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long BatchDeleteLiveDomainConfigsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long BatchDeleteLiveDomainConfigsRequest::getOwnerId()const
 void BatchDeleteLiveDomainConfigsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
@@ -77,6 +79,6 @@ std::string BatchDeleteLiveDomainConfigsRequest::getSecurityToken()const
 void BatchDeleteLiveDomainConfigsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

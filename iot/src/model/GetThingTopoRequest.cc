@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::GetThingTopoRequest;
 
 GetThingTopoRequest::GetThingTopoRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "GetThingTopo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetThingTopoRequest::~GetThingTopoRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetThingTopoRequest::getProductKey()const
 void GetThingTopoRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string GetThingTopoRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetThingTopoRequest::getAccessKeyId()const
 void GetThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetThingTopoRequest::getIotId()const
@@ -55,7 +57,7 @@ std::string GetThingTopoRequest::getIotId()const
 void GetThingTopoRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
+	setParameter("IotId", iotId);
 }
 
 int GetThingTopoRequest::getPageNo()const
@@ -66,7 +68,7 @@ int GetThingTopoRequest::getPageNo()const
 void GetThingTopoRequest::setPageNo(int pageNo)
 {
 	pageNo_ = pageNo;
-	setCoreParameter("PageNo", std::to_string(pageNo));
+	setParameter("PageNo", std::to_string(pageNo));
 }
 
 std::string GetThingTopoRequest::getIotInstanceId()const
@@ -77,7 +79,7 @@ std::string GetThingTopoRequest::getIotInstanceId()const
 void GetThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 int GetThingTopoRequest::getPageSize()const
@@ -88,7 +90,7 @@ int GetThingTopoRequest::getPageSize()const
 void GetThingTopoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string GetThingTopoRequest::getDeviceName()const
@@ -99,6 +101,6 @@ std::string GetThingTopoRequest::getDeviceName()const
 void GetThingTopoRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

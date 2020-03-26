@@ -20,7 +20,9 @@ using AlibabaCloud::ARMS::Model::CreateRetcodeAppRequest;
 
 CreateRetcodeAppRequest::CreateRetcodeAppRequest() :
 	RpcServiceRequest("arms", "2019-08-08", "CreateRetcodeApp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateRetcodeAppRequest::~CreateRetcodeAppRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateRetcodeAppRequest::getRegionId()const
 void CreateRetcodeAppRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateRetcodeAppRequest::getRetcodeAppName()const
@@ -44,7 +46,7 @@ std::string CreateRetcodeAppRequest::getRetcodeAppName()const
 void CreateRetcodeAppRequest::setRetcodeAppName(const std::string& retcodeAppName)
 {
 	retcodeAppName_ = retcodeAppName;
-	setCoreParameter("RetcodeAppName", retcodeAppName);
+	setParameter("RetcodeAppName", retcodeAppName);
 }
 
 std::string CreateRetcodeAppRequest::getRetcodeAppType()const
@@ -55,6 +57,6 @@ std::string CreateRetcodeAppRequest::getRetcodeAppType()const
 void CreateRetcodeAppRequest::setRetcodeAppType(const std::string& retcodeAppType)
 {
 	retcodeAppType_ = retcodeAppType;
-	setCoreParameter("RetcodeAppType", retcodeAppType);
+	setParameter("RetcodeAppType", retcodeAppType);
 }
 

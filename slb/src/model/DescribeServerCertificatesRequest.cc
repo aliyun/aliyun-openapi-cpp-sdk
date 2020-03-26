@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeServerCertificatesRequest;
 
 DescribeServerCertificatesRequest::DescribeServerCertificatesRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeServerCertificates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeServerCertificatesRequest::~DescribeServerCertificatesRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeServerCertificatesRequest::getAccess_key_id()const
 void DescribeServerCertificatesRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeServerCertificatesRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeServerCertificatesRequest::getResourceOwnerId()const
 void DescribeServerCertificatesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeServerCertificatesRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string DescribeServerCertificatesRequest::getResourceGroupId()const
 void DescribeServerCertificatesRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeServerCertificatesRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DescribeServerCertificatesRequest::getRegionId()const
 void DescribeServerCertificatesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::vector<DescribeServerCertificatesRequest::Tag> DescribeServerCertificatesRequest::getTag()const
@@ -77,12 +79,11 @@ std::vector<DescribeServerCertificatesRequest::Tag> DescribeServerCertificatesRe
 void DescribeServerCertificatesRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 
@@ -94,7 +95,7 @@ std::string DescribeServerCertificatesRequest::getResourceOwnerAccount()const
 void DescribeServerCertificatesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeServerCertificatesRequest::getOwnerAccount()const
@@ -105,7 +106,7 @@ std::string DescribeServerCertificatesRequest::getOwnerAccount()const
 void DescribeServerCertificatesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeServerCertificatesRequest::getOwnerId()const
@@ -116,7 +117,7 @@ long DescribeServerCertificatesRequest::getOwnerId()const
 void DescribeServerCertificatesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeServerCertificatesRequest::getServerCertificateId()const
@@ -127,7 +128,7 @@ std::string DescribeServerCertificatesRequest::getServerCertificateId()const
 void DescribeServerCertificatesRequest::setServerCertificateId(const std::string& serverCertificateId)
 {
 	serverCertificateId_ = serverCertificateId;
-	setCoreParameter("ServerCertificateId", serverCertificateId);
+	setParameter("ServerCertificateId", serverCertificateId);
 }
 
 std::string DescribeServerCertificatesRequest::getTags()const
@@ -138,6 +139,6 @@ std::string DescribeServerCertificatesRequest::getTags()const
 void DescribeServerCertificatesRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 

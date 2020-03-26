@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetMediaAuditResultRequest;
 
 GetMediaAuditResultRequest::GetMediaAuditResultRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetMediaAuditResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMediaAuditResultRequest::~GetMediaAuditResultRequest()
 {}
@@ -33,7 +35,7 @@ long GetMediaAuditResultRequest::getResourceOwnerId()const
 void GetMediaAuditResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetMediaAuditResultRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetMediaAuditResultRequest::getResourceOwnerAccount()const
 void GetMediaAuditResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetMediaAuditResultRequest::getResourceRealOwnerId()const
@@ -55,7 +57,7 @@ long GetMediaAuditResultRequest::getResourceRealOwnerId()const
 void GetMediaAuditResultRequest::setResourceRealOwnerId(long resourceRealOwnerId)
 {
 	resourceRealOwnerId_ = resourceRealOwnerId;
-	setCoreParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
+	setParameter("ResourceRealOwnerId", std::to_string(resourceRealOwnerId));
 }
 
 std::string GetMediaAuditResultRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string GetMediaAuditResultRequest::getOwnerId()const
 void GetMediaAuditResultRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string GetMediaAuditResultRequest::getMediaId()const
@@ -77,7 +79,7 @@ std::string GetMediaAuditResultRequest::getMediaId()const
 void GetMediaAuditResultRequest::setMediaId(const std::string& mediaId)
 {
 	mediaId_ = mediaId;
-	setCoreParameter("MediaId", mediaId);
+	setParameter("MediaId", mediaId);
 }
 
 std::string GetMediaAuditResultRequest::getAccessKeyId()const
@@ -88,6 +90,6 @@ std::string GetMediaAuditResultRequest::getAccessKeyId()const
 void GetMediaAuditResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

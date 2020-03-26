@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserDomainsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeLiveUserDomainsRequest();
@@ -43,6 +49,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getRegionName()const;
 				void setRegionName(const std::string& regionName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
@@ -59,6 +67,7 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				int pageSize_;
 				std::string regionName_;
+				std::vector<Tag> tag_;
 				std::string domainName_;
 				long ownerId_;
 				std::string domainStatus_;

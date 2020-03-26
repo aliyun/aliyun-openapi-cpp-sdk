@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListTimeLinePhotosRequest;
 
 ListTimeLinePhotosRequest::ListTimeLinePhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListTimeLinePhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTimeLinePhotosRequest::~ListTimeLinePhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListTimeLinePhotosRequest::getLibraryId()const
 void ListTimeLinePhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long ListTimeLinePhotosRequest::getEndTime()const
@@ -44,7 +46,7 @@ long ListTimeLinePhotosRequest::getEndTime()const
 void ListTimeLinePhotosRequest::setEndTime(long endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", std::to_string(endTime));
+	setParameter("EndTime", std::to_string(endTime));
 }
 
 std::string ListTimeLinePhotosRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string ListTimeLinePhotosRequest::getStoreName()const
 void ListTimeLinePhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 long ListTimeLinePhotosRequest::getStartTime()const
@@ -66,7 +68,7 @@ long ListTimeLinePhotosRequest::getStartTime()const
 void ListTimeLinePhotosRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", std::to_string(startTime));
+	setParameter("StartTime", std::to_string(startTime));
 }
 
 std::string ListTimeLinePhotosRequest::getFilterBy()const
@@ -77,7 +79,7 @@ std::string ListTimeLinePhotosRequest::getFilterBy()const
 void ListTimeLinePhotosRequest::setFilterBy(const std::string& filterBy)
 {
 	filterBy_ = filterBy;
-	setCoreParameter("FilterBy", filterBy);
+	setParameter("FilterBy", filterBy);
 }
 
 int ListTimeLinePhotosRequest::getSize()const
@@ -88,7 +90,7 @@ int ListTimeLinePhotosRequest::getSize()const
 void ListTimeLinePhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 int ListTimeLinePhotosRequest::getPage()const
@@ -99,7 +101,7 @@ int ListTimeLinePhotosRequest::getPage()const
 void ListTimeLinePhotosRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string ListTimeLinePhotosRequest::getDirection()const
@@ -110,7 +112,7 @@ std::string ListTimeLinePhotosRequest::getDirection()const
 void ListTimeLinePhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 std::string ListTimeLinePhotosRequest::getOrder()const
@@ -121,6 +123,6 @@ std::string ListTimeLinePhotosRequest::getOrder()const
 void ListTimeLinePhotosRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 

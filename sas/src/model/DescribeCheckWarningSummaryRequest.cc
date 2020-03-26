@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeCheckWarningSummaryRequest;
 
 DescribeCheckWarningSummaryRequest::DescribeCheckWarningSummaryRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeCheckWarningSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCheckWarningSummaryRequest::~DescribeCheckWarningSummaryRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCheckWarningSummaryRequest::getRiskName()const
 void DescribeCheckWarningSummaryRequest::setRiskName(const std::string& riskName)
 {
 	riskName_ = riskName;
-	setCoreParameter("RiskName", riskName);
+	setParameter("RiskName", riskName);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeCheckWarningSummaryRequest::getSourceIp()const
 void DescribeCheckWarningSummaryRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeCheckWarningSummaryRequest::getPageSize()const
@@ -55,7 +57,7 @@ int DescribeCheckWarningSummaryRequest::getPageSize()const
 void DescribeCheckWarningSummaryRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeCheckWarningSummaryRequest::getLang()const
 void DescribeCheckWarningSummaryRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int DescribeCheckWarningSummaryRequest::getCurrentPage()const
@@ -77,7 +79,7 @@ int DescribeCheckWarningSummaryRequest::getCurrentPage()const
 void DescribeCheckWarningSummaryRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 int DescribeCheckWarningSummaryRequest::getRiskStatus()const
@@ -88,7 +90,7 @@ int DescribeCheckWarningSummaryRequest::getRiskStatus()const
 void DescribeCheckWarningSummaryRequest::setRiskStatus(int riskStatus)
 {
 	riskStatus_ = riskStatus;
-	setCoreParameter("RiskStatus", std::to_string(riskStatus));
+	setParameter("RiskStatus", std::to_string(riskStatus));
 }
 
 long DescribeCheckWarningSummaryRequest::getStrategyId()const
@@ -99,7 +101,7 @@ long DescribeCheckWarningSummaryRequest::getStrategyId()const
 void DescribeCheckWarningSummaryRequest::setStrategyId(long strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setParameter("StrategyId", std::to_string(strategyId));
 }
 
 std::string DescribeCheckWarningSummaryRequest::getTypeName()const
@@ -110,7 +112,7 @@ std::string DescribeCheckWarningSummaryRequest::getTypeName()const
 void DescribeCheckWarningSummaryRequest::setTypeName(const std::string& typeName)
 {
 	typeName_ = typeName;
-	setCoreParameter("TypeName", typeName);
+	setParameter("TypeName", typeName);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getStatus()const
@@ -121,7 +123,7 @@ std::string DescribeCheckWarningSummaryRequest::getStatus()const
 void DescribeCheckWarningSummaryRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 
 std::string DescribeCheckWarningSummaryRequest::getUuids()const
@@ -132,6 +134,6 @@ std::string DescribeCheckWarningSummaryRequest::getUuids()const
 void DescribeCheckWarningSummaryRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

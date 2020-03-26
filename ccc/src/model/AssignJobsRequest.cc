@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::AssignJobsRequest;
 
 AssignJobsRequest::AssignJobsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "AssignJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AssignJobsRequest::~AssignJobsRequest()
 {}
@@ -33,7 +35,7 @@ std::string AssignJobsRequest::getGroupId()const
 void AssignJobsRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::vector<std::string> AssignJobsRequest::getJobsJson()const
@@ -44,8 +46,9 @@ std::vector<std::string> AssignJobsRequest::getJobsJson()const
 void AssignJobsRequest::setJobsJson(const std::vector<std::string>& jobsJson)
 {
 	jobsJson_ = jobsJson;
-	for(int i = 0; i!= jobsJson.size(); i++)
-		setCoreParameter("JobsJson."+ std::to_string(i), jobsJson.at(i));
+	for(int dep1 = 0; dep1!= jobsJson.size(); dep1++) {
+		setParameter("JobsJson."+ std::to_string(dep1), jobsJson.at(dep1));
+	}
 }
 
 std::vector<std::string> AssignJobsRequest::getCallingNumber()const
@@ -56,8 +59,9 @@ std::vector<std::string> AssignJobsRequest::getCallingNumber()const
 void AssignJobsRequest::setCallingNumber(const std::vector<std::string>& callingNumber)
 {
 	callingNumber_ = callingNumber;
-	for(int i = 0; i!= callingNumber.size(); i++)
-		setCoreParameter("CallingNumber."+ std::to_string(i), callingNumber.at(i));
+	for(int dep1 = 0; dep1!= callingNumber.size(); dep1++) {
+		setParameter("CallingNumber."+ std::to_string(dep1), callingNumber.at(dep1));
+	}
 }
 
 std::string AssignJobsRequest::getInstanceId()const
@@ -68,7 +72,7 @@ std::string AssignJobsRequest::getInstanceId()const
 void AssignJobsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string AssignJobsRequest::getStrategyJson()const
@@ -79,7 +83,7 @@ std::string AssignJobsRequest::getStrategyJson()const
 void AssignJobsRequest::setStrategyJson(const std::string& strategyJson)
 {
 	strategyJson_ = strategyJson;
-	setCoreParameter("StrategyJson", strategyJson);
+	setParameter("StrategyJson", strategyJson);
 }
 
 std::string AssignJobsRequest::getScenarioId()const
@@ -90,6 +94,6 @@ std::string AssignJobsRequest::getScenarioId()const
 void AssignJobsRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 

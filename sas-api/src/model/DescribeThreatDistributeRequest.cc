@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeThreatDistributeRequest;
 
 DescribeThreatDistributeRequest::DescribeThreatDistributeRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeThreatDistribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeThreatDistributeRequest::~DescribeThreatDistributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeThreatDistributeRequest::getStartDate()const
 void DescribeThreatDistributeRequest::setStartDate(const std::string& startDate)
 {
 	startDate_ = startDate;
-	setCoreParameter("StartDate", startDate);
+	setParameter("StartDate", startDate);
 }
 
 int DescribeThreatDistributeRequest::getApiType()const
@@ -44,7 +46,7 @@ int DescribeThreatDistributeRequest::getApiType()const
 void DescribeThreatDistributeRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setParameter("ApiType", std::to_string(apiType));
 }
 
 std::string DescribeThreatDistributeRequest::getEndDate()const
@@ -55,7 +57,7 @@ std::string DescribeThreatDistributeRequest::getEndDate()const
 void DescribeThreatDistributeRequest::setEndDate(const std::string& endDate)
 {
 	endDate_ = endDate;
-	setCoreParameter("EndDate", endDate);
+	setParameter("EndDate", endDate);
 }
 
 std::string DescribeThreatDistributeRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string DescribeThreatDistributeRequest::getSourceIp()const
 void DescribeThreatDistributeRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeThreatDistributeRequest::getHitDay()const
@@ -77,6 +79,6 @@ int DescribeThreatDistributeRequest::getHitDay()const
 void DescribeThreatDistributeRequest::setHitDay(int hitDay)
 {
 	hitDay_ = hitDay;
-	setCoreParameter("HitDay", std::to_string(hitDay));
+	setParameter("HitDay", std::to_string(hitDay));
 }
 

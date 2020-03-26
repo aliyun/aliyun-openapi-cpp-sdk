@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsTopicListRequest;
 OnsTopicListRequest::OnsTopicListRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsTopicList")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsTopicListRequest::~OnsTopicListRequest()

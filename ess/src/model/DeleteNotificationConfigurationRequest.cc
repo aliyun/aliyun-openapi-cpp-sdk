@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::DeleteNotificationConfigurationRequest;
 
 DeleteNotificationConfigurationRequest::DeleteNotificationConfigurationRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "DeleteNotificationConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNotificationConfigurationRequest::~DeleteNotificationConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteNotificationConfigurationRequest::getResourceOwnerAccount()con
 void DeleteNotificationConfigurationRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNotificationConfigurationRequest::getScalingGroupId()const
@@ -44,7 +46,7 @@ std::string DeleteNotificationConfigurationRequest::getScalingGroupId()const
 void DeleteNotificationConfigurationRequest::setScalingGroupId(const std::string& scalingGroupId)
 {
 	scalingGroupId_ = scalingGroupId;
-	setCoreParameter("ScalingGroupId", scalingGroupId);
+	setParameter("ScalingGroupId", scalingGroupId);
 }
 
 long DeleteNotificationConfigurationRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long DeleteNotificationConfigurationRequest::getOwnerId()const
 void DeleteNotificationConfigurationRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteNotificationConfigurationRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string DeleteNotificationConfigurationRequest::getAccessKeyId()const
 void DeleteNotificationConfigurationRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
@@ -77,6 +79,6 @@ std::string DeleteNotificationConfigurationRequest::getNotificationArn()const
 void DeleteNotificationConfigurationRequest::setNotificationArn(const std::string& notificationArn)
 {
 	notificationArn_ = notificationArn;
-	setCoreParameter("NotificationArn", notificationArn);
+	setParameter("NotificationArn", notificationArn);
 }
 

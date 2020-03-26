@@ -98,6 +98,10 @@ void DescribeVpnConnectionResult::parse(const std::string &payload)
 		effectImmediately_ = value["EffectImmediately"].asString() == "true";
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["EnableDpd"].isNull())
+		enableDpd_ = value["EnableDpd"].asString() == "true";
+	if(!value["EnableNatTraversal"].isNull())
+		enableNatTraversal_ = value["EnableNatTraversal"].asString() == "true";
 
 }
 
@@ -106,14 +110,29 @@ std::string DescribeVpnConnectionResult::getLocalSubnet()const
 	return localSubnet_;
 }
 
-bool DescribeVpnConnectionResult::getEffectImmediately()const
-{
-	return effectImmediately_;
-}
-
 std::string DescribeVpnConnectionResult::getStatus()const
 {
 	return status_;
+}
+
+std::string DescribeVpnConnectionResult::getCustomerGatewayId()const
+{
+	return customerGatewayId_;
+}
+
+long DescribeVpnConnectionResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeVpnConnectionResult::getName()const
+{
+	return name_;
+}
+
+bool DescribeVpnConnectionResult::getEffectImmediately()const
+{
+	return effectImmediately_;
 }
 
 DescribeVpnConnectionResult::VcoHealthCheck DescribeVpnConnectionResult::getVcoHealthCheck()const
@@ -126,11 +145,6 @@ std::string DescribeVpnConnectionResult::getRemoteSubnet()const
 	return remoteSubnet_;
 }
 
-std::string DescribeVpnConnectionResult::getCustomerGatewayId()const
-{
-	return customerGatewayId_;
-}
-
 std::string DescribeVpnConnectionResult::getVpnGatewayId()const
 {
 	return vpnGatewayId_;
@@ -141,14 +155,14 @@ DescribeVpnConnectionResult::IpsecConfig DescribeVpnConnectionResult::getIpsecCo
 	return ipsecConfig_;
 }
 
-long DescribeVpnConnectionResult::getCreateTime()const
-{
-	return createTime_;
-}
-
 std::string DescribeVpnConnectionResult::getVpnConnectionId()const
 {
 	return vpnConnectionId_;
+}
+
+bool DescribeVpnConnectionResult::getEnableNatTraversal()const
+{
+	return enableNatTraversal_;
 }
 
 DescribeVpnConnectionResult::IkeConfig DescribeVpnConnectionResult::getIkeConfig()const
@@ -156,8 +170,8 @@ DescribeVpnConnectionResult::IkeConfig DescribeVpnConnectionResult::getIkeConfig
 	return ikeConfig_;
 }
 
-std::string DescribeVpnConnectionResult::getName()const
+bool DescribeVpnConnectionResult::getEnableDpd()const
 {
-	return name_;
+	return enableDpd_;
 }
 

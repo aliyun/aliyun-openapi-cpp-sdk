@@ -44,9 +44,9 @@ void DescribeEipMonitorDataResult::parse(const std::string &payload)
 	{
 		EipMonitorData eipMonitorDatasObject;
 		if(!valueEipMonitorDatasEipMonitorData["EipRX"].isNull())
-			eipMonitorDatasObject.eipRX = std::stoi(valueEipMonitorDatasEipMonitorData["EipRX"].asString());
+			eipMonitorDatasObject.eipRX = std::stol(valueEipMonitorDatasEipMonitorData["EipRX"].asString());
 		if(!valueEipMonitorDatasEipMonitorData["EipTX"].isNull())
-			eipMonitorDatasObject.eipTX = std::stoi(valueEipMonitorDatasEipMonitorData["EipTX"].asString());
+			eipMonitorDatasObject.eipTX = std::stol(valueEipMonitorDatasEipMonitorData["EipTX"].asString());
 		if(!valueEipMonitorDatasEipMonitorData["EipFlow"].isNull())
 			eipMonitorDatasObject.eipFlow = std::stoi(valueEipMonitorDatasEipMonitorData["EipFlow"].asString());
 		if(!valueEipMonitorDatasEipMonitorData["EipBandwidth"].isNull())

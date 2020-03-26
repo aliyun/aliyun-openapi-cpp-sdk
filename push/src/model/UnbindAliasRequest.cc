@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindAliasRequest;
 
 UnbindAliasRequest::UnbindAliasRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindAlias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindAliasRequest::~UnbindAliasRequest()
 {}
@@ -33,7 +35,7 @@ std::string UnbindAliasRequest::getDeviceId()const
 void UnbindAliasRequest::setDeviceId(const std::string& deviceId)
 {
 	deviceId_ = deviceId;
-	setCoreParameter("DeviceId", deviceId);
+	setParameter("DeviceId", deviceId);
 }
 
 std::string UnbindAliasRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UnbindAliasRequest::getAccessKeyId()const
 void UnbindAliasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindAliasRequest::getAliasName()const
@@ -55,7 +57,7 @@ std::string UnbindAliasRequest::getAliasName()const
 void UnbindAliasRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
 }
 
 long UnbindAliasRequest::getAppKey()const
@@ -66,7 +68,7 @@ long UnbindAliasRequest::getAppKey()const
 void UnbindAliasRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 
 bool UnbindAliasRequest::getUnbindAll()const
@@ -77,6 +79,6 @@ bool UnbindAliasRequest::getUnbindAll()const
 void UnbindAliasRequest::setUnbindAll(bool unbindAll)
 {
 	unbindAll_ = unbindAll;
-	setCoreParameter("UnbindAll", unbindAll ? "true" : "false");
+	setParameter("UnbindAll", unbindAll ? "true" : "false");
 }
 

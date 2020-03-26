@@ -20,7 +20,9 @@ using AlibabaCloud::Companyreg::Model::SendVcodeRequest;
 
 SendVcodeRequest::SendVcodeRequest() :
 	RpcServiceRequest("companyreg", "2019-05-08", "SendVcode")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SendVcodeRequest::~SendVcodeRequest()
 {}
@@ -33,7 +35,7 @@ std::string SendVcodeRequest::getMobile()const
 void SendVcodeRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setParameter("Mobile", mobile);
 }
 
 std::string SendVcodeRequest::getBizCode()const
@@ -44,6 +46,6 @@ std::string SendVcodeRequest::getBizCode()const
 void SendVcodeRequest::setBizCode(const std::string& bizCode)
 {
 	bizCode_ = bizCode;
-	setCoreParameter("BizCode", bizCode);
+	setParameter("BizCode", bizCode);
 }
 

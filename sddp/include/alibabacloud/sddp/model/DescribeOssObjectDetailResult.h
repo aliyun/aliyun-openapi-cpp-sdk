@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Rule
 					{
+						int category;
 						long count;
 						std::string ruleName;
 					};

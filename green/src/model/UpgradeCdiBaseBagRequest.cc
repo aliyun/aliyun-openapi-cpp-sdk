@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpgradeCdiBaseBagRequest;
 
 UpgradeCdiBaseBagRequest::UpgradeCdiBaseBagRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpgradeCdiBaseBag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeCdiBaseBagRequest::~UpgradeCdiBaseBagRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpgradeCdiBaseBagRequest::getInstanceId()const
 void UpgradeCdiBaseBagRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string UpgradeCdiBaseBagRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string UpgradeCdiBaseBagRequest::getClientToken()const
 void UpgradeCdiBaseBagRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string UpgradeCdiBaseBagRequest::getCommodityCode()const
@@ -55,7 +57,7 @@ std::string UpgradeCdiBaseBagRequest::getCommodityCode()const
 void UpgradeCdiBaseBagRequest::setCommodityCode(const std::string& commodityCode)
 {
 	commodityCode_ = commodityCode;
-	setCoreParameter("CommodityCode", commodityCode);
+	setParameter("CommodityCode", commodityCode);
 }
 
 long UpgradeCdiBaseBagRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long UpgradeCdiBaseBagRequest::getOwnerId()const
 void UpgradeCdiBaseBagRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int UpgradeCdiBaseBagRequest::getFlowOutSpec()const
@@ -77,7 +79,7 @@ int UpgradeCdiBaseBagRequest::getFlowOutSpec()const
 void UpgradeCdiBaseBagRequest::setFlowOutSpec(int flowOutSpec)
 {
 	flowOutSpec_ = flowOutSpec;
-	setCoreParameter("FlowOutSpec", std::to_string(flowOutSpec));
+	setParameter("FlowOutSpec", std::to_string(flowOutSpec));
 }
 
 std::string UpgradeCdiBaseBagRequest::getOrderType()const
@@ -88,6 +90,6 @@ std::string UpgradeCdiBaseBagRequest::getOrderType()const
 void UpgradeCdiBaseBagRequest::setOrderType(const std::string& orderType)
 {
 	orderType_ = orderType;
-	setCoreParameter("OrderType", orderType);
+	setParameter("OrderType", orderType);
 }
 

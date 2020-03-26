@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::DeleteApgroupConfigRequest;
 
 DeleteApgroupConfigRequest::DeleteApgroupConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "DeleteApgroupConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteApgroupConfigRequest::~DeleteApgroupConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteApgroupConfigRequest::getAccessKeyId()const
 void DeleteApgroupConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long DeleteApgroupConfigRequest::getId()const
@@ -44,6 +46,6 @@ long DeleteApgroupConfigRequest::getId()const
 void DeleteApgroupConfigRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

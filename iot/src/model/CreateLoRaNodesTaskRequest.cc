@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::CreateLoRaNodesTaskRequest;
 
 CreateLoRaNodesTaskRequest::CreateLoRaNodesTaskRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "CreateLoRaNodesTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateLoRaNodesTaskRequest::~CreateLoRaNodesTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateLoRaNodesTaskRequest::getProductKey()const
 void CreateLoRaNodesTaskRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
+	setParameter("ProductKey", productKey);
 }
 
 std::string CreateLoRaNodesTaskRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string CreateLoRaNodesTaskRequest::getAccessKeyId()const
 void CreateLoRaNodesTaskRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string CreateLoRaNodesTaskRequest::getIotInstanceId()const
@@ -55,7 +57,7 @@ std::string CreateLoRaNodesTaskRequest::getIotInstanceId()const
 void CreateLoRaNodesTaskRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
 }
 
 std::vector<CreateLoRaNodesTaskRequest::DeviceInfo> CreateLoRaNodesTaskRequest::getDeviceInfo()const
@@ -66,12 +68,11 @@ std::vector<CreateLoRaNodesTaskRequest::DeviceInfo> CreateLoRaNodesTaskRequest::
 void CreateLoRaNodesTaskRequest::setDeviceInfo(const std::vector<DeviceInfo>& deviceInfo)
 {
 	deviceInfo_ = deviceInfo;
-	int i = 0;
-	for(int i = 0; i!= deviceInfo.size(); i++)	{
-		auto obj = deviceInfo.at(i);
-		std::string str ="DeviceInfo."+ std::to_string(i);
-		setCoreParameter(str + ".PinCode", obj.pinCode);
-		setCoreParameter(str + ".DevEui", obj.devEui);
+	for(int dep1 = 0; dep1!= deviceInfo.size(); dep1++) {
+		auto deviceInfoObj = deviceInfo.at(dep1);
+		std::string deviceInfoObjStr = "DeviceInfo." + std::to_string(dep1 + 1);
+		setParameter(deviceInfoObjStr + ".PinCode", deviceInfoObj.pinCode);
+		setParameter(deviceInfoObjStr + ".DevEui", deviceInfoObj.devEui);
 	}
 }
 

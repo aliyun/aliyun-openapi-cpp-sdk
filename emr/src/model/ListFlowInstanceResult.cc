@@ -61,6 +61,8 @@ void ListFlowInstanceResult::parse(const std::string &payload)
 			flowInstancesObject.clusterId = valueFlowInstancesFlowInstance["ClusterId"].asString();
 		if(!valueFlowInstancesFlowInstance["Owner"].isNull())
 			flowInstancesObject.owner = valueFlowInstancesFlowInstance["Owner"].asString();
+		if(!valueFlowInstancesFlowInstance["ScheduleTime"].isNull())
+			flowInstancesObject.scheduleTime = std::stol(valueFlowInstancesFlowInstance["ScheduleTime"].asString());
 		if(!valueFlowInstancesFlowInstance["StartTime"].isNull())
 			flowInstancesObject.startTime = std::stol(valueFlowInstancesFlowInstance["StartTime"].asString());
 		if(!valueFlowInstancesFlowInstance["EndTime"].isNull())

@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListAIJobRequest;
 
 ListAIJobRequest::ListAIJobRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListAIJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAIJobRequest::~ListAIJobRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAIJobRequest::getResourceOwnerId()const
 void ListAIJobRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 std::string ListAIJobRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string ListAIJobRequest::getResourceOwnerAccount()const
 void ListAIJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ListAIJobRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string ListAIJobRequest::getOwnerAccount()const
 void ListAIJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string ListAIJobRequest::getOwnerId()const
@@ -66,7 +68,7 @@ std::string ListAIJobRequest::getOwnerId()const
 void ListAIJobRequest::setOwnerId(const std::string& ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", ownerId);
+	setParameter("OwnerId", ownerId);
 }
 
 std::string ListAIJobRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListAIJobRequest::getAccessKeyId()const
 void ListAIJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAIJobRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string ListAIJobRequest::getJobIds()const
 void ListAIJobRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

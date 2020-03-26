@@ -20,7 +20,9 @@ using AlibabaCloud::CSB::Model::FindProjectsNameListRequest;
 
 FindProjectsNameListRequest::FindProjectsNameListRequest() :
 	RpcServiceRequest("csb", "2017-11-18", "FindProjectsNameList")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 FindProjectsNameListRequest::~FindProjectsNameListRequest()
 {}
@@ -33,7 +35,7 @@ std::string FindProjectsNameListRequest::getOperationFlag()const
 void FindProjectsNameListRequest::setOperationFlag(const std::string& operationFlag)
 {
 	operationFlag_ = operationFlag;
-	setCoreParameter("OperationFlag", operationFlag);
+	setParameter("OperationFlag", operationFlag);
 }
 
 long FindProjectsNameListRequest::getCsbId()const
@@ -44,6 +46,6 @@ long FindProjectsNameListRequest::getCsbId()const
 void FindProjectsNameListRequest::setCsbId(long csbId)
 {
 	csbId_ = csbId;
-	setCoreParameter("CsbId", std::to_string(csbId));
+	setParameter("CsbId", std::to_string(csbId));
 }
 

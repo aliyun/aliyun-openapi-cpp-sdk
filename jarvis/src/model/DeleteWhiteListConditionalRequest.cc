@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteWhiteListConditionalRequest;
 
 DeleteWhiteListConditionalRequest::DeleteWhiteListConditionalRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteWhiteListConditional")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteWhiteListConditionalRequest::~DeleteWhiteListConditionalRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteWhiteListConditionalRequest::getSrcIP()const
 void DeleteWhiteListConditionalRequest::setSrcIP(const std::string& srcIP)
 {
 	srcIP_ = srcIP;
-	setCoreParameter("SrcIP", srcIP);
+	setParameter("SrcIP", srcIP);
 }
 
 std::string DeleteWhiteListConditionalRequest::getSourceCode()const
@@ -44,7 +46,7 @@ std::string DeleteWhiteListConditionalRequest::getSourceCode()const
 void DeleteWhiteListConditionalRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteWhiteListConditionalRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteWhiteListConditionalRequest::getSourceIp()const
 void DeleteWhiteListConditionalRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteWhiteListConditionalRequest::getQueryProduct()const
@@ -66,7 +68,7 @@ std::string DeleteWhiteListConditionalRequest::getQueryProduct()const
 void DeleteWhiteListConditionalRequest::setQueryProduct(const std::string& queryProduct)
 {
 	queryProduct_ = queryProduct;
-	setCoreParameter("QueryProduct", queryProduct);
+	setParameter("QueryProduct", queryProduct);
 }
 
 std::string DeleteWhiteListConditionalRequest::getDstIP()const
@@ -77,7 +79,7 @@ std::string DeleteWhiteListConditionalRequest::getDstIP()const
 void DeleteWhiteListConditionalRequest::setDstIP(const std::string& dstIP)
 {
 	dstIP_ = dstIP;
-	setCoreParameter("DstIP", dstIP);
+	setParameter("DstIP", dstIP);
 }
 
 std::string DeleteWhiteListConditionalRequest::getLang()const
@@ -88,6 +90,6 @@ std::string DeleteWhiteListConditionalRequest::getLang()const
 void DeleteWhiteListConditionalRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

@@ -22,7 +22,7 @@ ListPluginsRequest::ListPluginsRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/plugins");
-	setMethod(HttpRequest::Method::GET);
+	setMethod(HttpRequest::Method::Get);
 }
 
 ListPluginsRequest::~ListPluginsRequest()

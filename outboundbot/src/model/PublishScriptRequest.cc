@@ -60,3 +60,14 @@ void PublishScriptRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+long PublishScriptRequest::getInstanceOwnerId()const
+{
+	return instanceOwnerId_;
+}
+
+void PublishScriptRequest::setInstanceOwnerId(long instanceOwnerId)
+{
+	instanceOwnerId_ = instanceOwnerId;
+	setParameter("InstanceOwnerId", std::to_string(instanceOwnerId));
+}
+

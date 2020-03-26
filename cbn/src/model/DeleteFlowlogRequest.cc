@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DeleteFlowlogRequest;
 
 DeleteFlowlogRequest::DeleteFlowlogRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DeleteFlowlog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowlogRequest::~DeleteFlowlogRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteFlowlogRequest::getResourceOwnerId()const
 void DeleteFlowlogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteFlowlogRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteFlowlogRequest::getClientToken()const
 void DeleteFlowlogRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteFlowlogRequest::getCenId()const
@@ -55,7 +57,7 @@ std::string DeleteFlowlogRequest::getCenId()const
 void DeleteFlowlogRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 std::string DeleteFlowlogRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string DeleteFlowlogRequest::getRegionId()const
 void DeleteFlowlogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteFlowlogRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteFlowlogRequest::getResourceOwnerAccount()const
 void DeleteFlowlogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteFlowlogRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteFlowlogRequest::getOwnerAccount()const
 void DeleteFlowlogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteFlowlogRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeleteFlowlogRequest::getOwnerId()const
 void DeleteFlowlogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteFlowlogRequest::getFlowLogId()const
@@ -110,6 +112,6 @@ std::string DeleteFlowlogRequest::getFlowLogId()const
 void DeleteFlowlogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setParameter("FlowLogId", flowLogId);
 }
 

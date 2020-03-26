@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteHaVipRequest;
 
 DeleteHaVipRequest::DeleteHaVipRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteHaVip")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteHaVipRequest::~DeleteHaVipRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteHaVipRequest::getResourceOwnerId()const
 void DeleteHaVipRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteHaVipRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteHaVipRequest::getClientToken()const
 void DeleteHaVipRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteHaVipRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteHaVipRequest::getRegionId()const
 void DeleteHaVipRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteHaVipRequest::getHaVipId()const
@@ -66,7 +68,7 @@ std::string DeleteHaVipRequest::getHaVipId()const
 void DeleteHaVipRequest::setHaVipId(const std::string& haVipId)
 {
 	haVipId_ = haVipId;
-	setCoreParameter("HaVipId", haVipId);
+	setParameter("HaVipId", haVipId);
 }
 
 std::string DeleteHaVipRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteHaVipRequest::getResourceOwnerAccount()const
 void DeleteHaVipRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteHaVipRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteHaVipRequest::getOwnerAccount()const
 void DeleteHaVipRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteHaVipRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteHaVipRequest::getOwnerId()const
 void DeleteHaVipRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

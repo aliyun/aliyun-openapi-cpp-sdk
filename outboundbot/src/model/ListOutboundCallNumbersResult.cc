@@ -40,34 +40,34 @@ void ListOutboundCallNumbersResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto outboundCallNumbersNode = value["OutboundCallNumbers"];
-	if(!outboundCallNumbersNode["TotalCount"].isNull())
-		outboundCallNumbers_.totalCount = std::stoi(outboundCallNumbersNode["TotalCount"].asString());
 	if(!outboundCallNumbersNode["PageNumber"].isNull())
 		outboundCallNumbers_.pageNumber = std::stoi(outboundCallNumbersNode["PageNumber"].asString());
 	if(!outboundCallNumbersNode["PageSize"].isNull())
 		outboundCallNumbers_.pageSize = std::stoi(outboundCallNumbersNode["PageSize"].asString());
+	if(!outboundCallNumbersNode["TotalCount"].isNull())
+		outboundCallNumbers_.totalCount = std::stoi(outboundCallNumbersNode["TotalCount"].asString());
 	auto allListNode = outboundCallNumbersNode["List"]["OutboundCallNumber"];
 	for (auto outboundCallNumbersNodeListOutboundCallNumber : allListNode)
 	{
 		OutboundCallNumbers::OutboundCallNumber outboundCallNumberObject;
-		if(!outboundCallNumbersNodeListOutboundCallNumber["OutboundCallNumberId"].isNull())
-			outboundCallNumberObject.outboundCallNumberId = outboundCallNumbersNodeListOutboundCallNumber["OutboundCallNumberId"].asString();
 		if(!outboundCallNumbersNodeListOutboundCallNumber["Number"].isNull())
 			outboundCallNumberObject.number = outboundCallNumbersNodeListOutboundCallNumber["Number"].asString();
-		if(!outboundCallNumbersNodeListOutboundCallNumber["RateLimitPeriod"].isNull())
-			outboundCallNumberObject.rateLimitPeriod = outboundCallNumbersNodeListOutboundCallNumber["RateLimitPeriod"].asString();
+		if(!outboundCallNumbersNodeListOutboundCallNumber["OutboundCallNumberId"].isNull())
+			outboundCallNumberObject.outboundCallNumberId = outboundCallNumbersNodeListOutboundCallNumber["OutboundCallNumberId"].asString();
 		if(!outboundCallNumbersNodeListOutboundCallNumber["RateLimitCount"].isNull())
 			outboundCallNumberObject.rateLimitCount = outboundCallNumbersNodeListOutboundCallNumber["RateLimitCount"].asString();
+		if(!outboundCallNumbersNodeListOutboundCallNumber["RateLimitPeriod"].isNull())
+			outboundCallNumberObject.rateLimitPeriod = outboundCallNumbersNodeListOutboundCallNumber["RateLimitPeriod"].asString();
 		outboundCallNumbers_.list.push_back(outboundCallNumberObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

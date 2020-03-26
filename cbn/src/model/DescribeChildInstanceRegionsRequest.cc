@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeChildInstanceRegionsRequest;
 
 DescribeChildInstanceRegionsRequest::DescribeChildInstanceRegionsRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeChildInstanceRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeChildInstanceRegionsRequest::~DescribeChildInstanceRegionsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeChildInstanceRegionsRequest::getResourceOwnerId()const
 void DescribeChildInstanceRegionsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeChildInstanceRegionsRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeChildInstanceRegionsRequest::getResourceOwnerAccount()const
 void DescribeChildInstanceRegionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeChildInstanceRegionsRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeChildInstanceRegionsRequest::getOwnerAccount()const
 void DescribeChildInstanceRegionsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeChildInstanceRegionsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeChildInstanceRegionsRequest::getOwnerId()const
 void DescribeChildInstanceRegionsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeChildInstanceRegionsRequest::getProductType()const
@@ -77,6 +79,6 @@ std::string DescribeChildInstanceRegionsRequest::getProductType()const
 void DescribeChildInstanceRegionsRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 

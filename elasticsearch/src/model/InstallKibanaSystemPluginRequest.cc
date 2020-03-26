@@ -22,7 +22,7 @@ InstallKibanaSystemPluginRequest::InstallKibanaSystemPluginRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
 	setResourcePath("/openapi/instances/[InstanceId]/kibana-plugins/system/actions/install");
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 InstallKibanaSystemPluginRequest::~InstallKibanaSystemPluginRequest()

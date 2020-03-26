@@ -52,7 +52,6 @@ namespace AlibabaCloud
 					std::string value;
 					std::string webhooks;
 					std::string level;
-					std::string id;
 					std::string preLevel;
 					long lastTime;
 					std::string ruleName;

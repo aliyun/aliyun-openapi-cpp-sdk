@@ -3435,6 +3435,42 @@ RdsClient::DescribeLogBackupFilesOutcomeCallable RdsClient::describeLogBackupFil
 	return task->get_future();
 }
 
+RdsClient::DescribeMigrateTaskByIdOutcome RdsClient::describeMigrateTaskById(const DescribeMigrateTaskByIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMigrateTaskByIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMigrateTaskByIdOutcome(DescribeMigrateTaskByIdResult(outcome.result()));
+	else
+		return DescribeMigrateTaskByIdOutcome(outcome.error());
+}
+
+void RdsClient::describeMigrateTaskByIdAsync(const DescribeMigrateTaskByIdRequest& request, const DescribeMigrateTaskByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMigrateTaskById(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeMigrateTaskByIdOutcomeCallable RdsClient::describeMigrateTaskByIdCallable(const DescribeMigrateTaskByIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMigrateTaskByIdOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMigrateTaskById(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeMigrateTasksOutcome RdsClient::describeMigrateTasks(const DescribeMigrateTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

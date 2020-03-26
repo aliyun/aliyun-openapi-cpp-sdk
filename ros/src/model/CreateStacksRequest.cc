@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::CreateStacksRequest;
 
 CreateStacksRequest::CreateStacksRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateStacksRequest::~CreateStacksRequest()
 {}

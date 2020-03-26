@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::QuerySubsIdRequest;
 QuerySubsIdRequest::QuerySubsIdRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "QuerySubsId")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 QuerySubsIdRequest::~QuerySubsIdRequest()

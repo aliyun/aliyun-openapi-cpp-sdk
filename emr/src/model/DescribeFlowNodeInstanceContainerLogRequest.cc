@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeFlowNodeInstanceContainerLogRequest;
 
 DescribeFlowNodeInstanceContainerLogRequest::DescribeFlowNodeInstanceContainerLogRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeFlowNodeInstanceContainerLogRequest::~DescribeFlowNodeInstanceContainerLogRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getOffset()const
 void DescribeFlowNodeInstanceContainerLogRequest::setOffset(int offset)
 {
 	offset_ = offset;
-	setCoreParameter("Offset", std::to_string(offset));
+	setParameter("Offset", std::to_string(offset));
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getLogName()const
@@ -44,7 +46,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getLogName()const
 void DescribeFlowNodeInstanceContainerLogRequest::setLogName(const std::string& logName)
 {
 	logName_ = logName;
-	setCoreParameter("LogName", logName);
+	setParameter("LogName", logName);
 }
 
 int DescribeFlowNodeInstanceContainerLogRequest::getLength()const
@@ -55,7 +57,7 @@ int DescribeFlowNodeInstanceContainerLogRequest::getLength()const
 void DescribeFlowNodeInstanceContainerLogRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getNodeInstanceId()const
@@ -66,7 +68,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getNodeInstanceId()cons
 void DescribeFlowNodeInstanceContainerLogRequest::setNodeInstanceId(const std::string& nodeInstanceId)
 {
 	nodeInstanceId_ = nodeInstanceId;
-	setCoreParameter("NodeInstanceId", nodeInstanceId);
+	setParameter("NodeInstanceId", nodeInstanceId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getRegionId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getAppId()const
@@ -88,7 +90,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getAppId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getContainerId()const
@@ -99,7 +101,7 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getContainerId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setContainerId(const std::string& containerId)
 {
 	containerId_ = containerId;
-	setCoreParameter("ContainerId", containerId);
+	setParameter("ContainerId", containerId);
 }
 
 std::string DescribeFlowNodeInstanceContainerLogRequest::getProjectId()const
@@ -110,6 +112,6 @@ std::string DescribeFlowNodeInstanceContainerLogRequest::getProjectId()const
 void DescribeFlowNodeInstanceContainerLogRequest::setProjectId(const std::string& projectId)
 {
 	projectId_ = projectId;
-	setCoreParameter("ProjectId", projectId);
+	setParameter("ProjectId", projectId);
 }
 

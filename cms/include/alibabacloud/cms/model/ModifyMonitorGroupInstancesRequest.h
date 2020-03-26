@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT ModifyMonitorGroupInstancesRequest : public RpcServiceRequest
 			{
+			public:
 				struct Instances
 				{
 					std::string instanceId;

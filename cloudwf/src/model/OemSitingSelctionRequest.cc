@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::OemSitingSelctionRequest;
 
 OemSitingSelctionRequest::OemSitingSelctionRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "OemSitingSelction")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 OemSitingSelctionRequest::~OemSitingSelctionRequest()
 {}
@@ -33,7 +35,7 @@ std::string OemSitingSelctionRequest::getAccessKeyId()const
 void OemSitingSelctionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long OemSitingSelctionRequest::getBid()const
@@ -44,6 +46,6 @@ long OemSitingSelctionRequest::getBid()const
 void OemSitingSelctionRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

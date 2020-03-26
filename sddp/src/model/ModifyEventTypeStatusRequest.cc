@@ -20,7 +20,9 @@ using AlibabaCloud::Sddp::Model::ModifyEventTypeStatusRequest;
 
 ModifyEventTypeStatusRequest::ModifyEventTypeStatusRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyEventTypeStatus")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyEventTypeStatusRequest::~ModifyEventTypeStatusRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyEventTypeStatusRequest::getSubTypeIds()const
 void ModifyEventTypeStatusRequest::setSubTypeIds(const std::string& subTypeIds)
 {
 	subTypeIds_ = subTypeIds;
-	setCoreParameter("SubTypeIds", subTypeIds);
+	setParameter("SubTypeIds", subTypeIds);
 }
 
 std::string ModifyEventTypeStatusRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string ModifyEventTypeStatusRequest::getSourceIp()const
 void ModifyEventTypeStatusRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string ModifyEventTypeStatusRequest::getLang()const
@@ -55,6 +57,6 @@ std::string ModifyEventTypeStatusRequest::getLang()const
 void ModifyEventTypeStatusRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

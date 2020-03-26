@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeCasterSceneAudioRequest;
 
 DescribeCasterSceneAudioRequest::DescribeCasterSceneAudioRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeCasterSceneAudio")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCasterSceneAudioRequest::~DescribeCasterSceneAudioRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeCasterSceneAudioRequest::getCasterId()const
 void DescribeCasterSceneAudioRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DescribeCasterSceneAudioRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DescribeCasterSceneAudioRequest::getOwnerId()const
 void DescribeCasterSceneAudioRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCasterSceneAudioRequest::getSceneId()const
@@ -55,6 +57,6 @@ std::string DescribeCasterSceneAudioRequest::getSceneId()const
 void DescribeCasterSceneAudioRequest::setSceneId(const std::string& sceneId)
 {
 	sceneId_ = sceneId;
-	setCoreParameter("SceneId", sceneId);
+	setParameter("SceneId", sceneId);
 }
 

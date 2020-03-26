@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::UploadCACertificateRequest;
 
 UploadCACertificateRequest::UploadCACertificateRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "UploadCACertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadCACertificateRequest::~UploadCACertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string UploadCACertificateRequest::getAccess_key_id()const
 void UploadCACertificateRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long UploadCACertificateRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long UploadCACertificateRequest::getResourceOwnerId()const
 void UploadCACertificateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UploadCACertificateRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string UploadCACertificateRequest::getResourceGroupId()const
 void UploadCACertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string UploadCACertificateRequest::getCACertificateName()const
@@ -66,7 +68,7 @@ std::string UploadCACertificateRequest::getCACertificateName()const
 void UploadCACertificateRequest::setCACertificateName(const std::string& cACertificateName)
 {
 	cACertificateName_ = cACertificateName;
-	setCoreParameter("CACertificateName", cACertificateName);
+	setParameter("CACertificateName", cACertificateName);
 }
 
 std::string UploadCACertificateRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string UploadCACertificateRequest::getRegionId()const
 void UploadCACertificateRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UploadCACertificateRequest::getCACertificate()const
@@ -88,7 +90,7 @@ std::string UploadCACertificateRequest::getCACertificate()const
 void UploadCACertificateRequest::setCACertificate(const std::string& cACertificate)
 {
 	cACertificate_ = cACertificate;
-	setCoreParameter("CACertificate", cACertificate);
+	setParameter("CACertificate", cACertificate);
 }
 
 std::string UploadCACertificateRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string UploadCACertificateRequest::getResourceOwnerAccount()const
 void UploadCACertificateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UploadCACertificateRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string UploadCACertificateRequest::getOwnerAccount()const
 void UploadCACertificateRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UploadCACertificateRequest::getOwnerId()const
@@ -121,6 +123,6 @@ long UploadCACertificateRequest::getOwnerId()const
 void UploadCACertificateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

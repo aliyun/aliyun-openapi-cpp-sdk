@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeForbidPushStreamRoomListRequest;
 
 DescribeForbidPushStreamRoomListRequest::DescribeForbidPushStreamRoomListRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeForbidPushStreamRoomList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeForbidPushStreamRoomListRequest::~DescribeForbidPushStreamRoomListRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageNum()const
 void DescribeForbidPushStreamRoomListRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int DescribeForbidPushStreamRoomListRequest::getPageSize()const
@@ -44,7 +46,7 @@ int DescribeForbidPushStreamRoomListRequest::getPageSize()const
 void DescribeForbidPushStreamRoomListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getOrder()const
@@ -55,7 +57,7 @@ std::string DescribeForbidPushStreamRoomListRequest::getOrder()const
 void DescribeForbidPushStreamRoomListRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 long DescribeForbidPushStreamRoomListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeForbidPushStreamRoomListRequest::getOwnerId()const
 void DescribeForbidPushStreamRoomListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeForbidPushStreamRoomListRequest::getAppId()const
@@ -77,6 +79,6 @@ std::string DescribeForbidPushStreamRoomListRequest::getAppId()const
 void DescribeForbidPushStreamRoomListRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

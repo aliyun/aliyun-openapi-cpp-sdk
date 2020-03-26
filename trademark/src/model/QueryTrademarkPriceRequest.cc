@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTrademarkPriceRequest;
 
 QueryTrademarkPriceRequest::QueryTrademarkPriceRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTrademarkPrice")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTrademarkPriceRequest::~QueryTrademarkPriceRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTrademarkPriceRequest::getTmName()const
 void QueryTrademarkPriceRequest::setTmName(const std::string& tmName)
 {
 	tmName_ = tmName;
-	setCoreParameter("TmName", tmName);
+	setParameter("TmName", tmName);
 }
 
 std::string QueryTrademarkPriceRequest::getOrderData()const
@@ -44,7 +46,7 @@ std::string QueryTrademarkPriceRequest::getOrderData()const
 void QueryTrademarkPriceRequest::setOrderData(const std::string& orderData)
 {
 	orderData_ = orderData;
-	setCoreParameter("OrderData", orderData);
+	setParameter("OrderData", orderData);
 }
 
 int QueryTrademarkPriceRequest::getType()const
@@ -55,7 +57,7 @@ int QueryTrademarkPriceRequest::getType()const
 void QueryTrademarkPriceRequest::setType(int type)
 {
 	type_ = type;
-	setCoreParameter("Type", std::to_string(type));
+	setParameter("Type", std::to_string(type));
 }
 
 long QueryTrademarkPriceRequest::getUserId()const
@@ -66,7 +68,7 @@ long QueryTrademarkPriceRequest::getUserId()const
 void QueryTrademarkPriceRequest::setUserId(long userId)
 {
 	userId_ = userId;
-	setCoreParameter("UserId", std::to_string(userId));
+	setParameter("UserId", std::to_string(userId));
 }
 
 std::string QueryTrademarkPriceRequest::getTmIcon()const
@@ -77,6 +79,6 @@ std::string QueryTrademarkPriceRequest::getTmIcon()const
 void QueryTrademarkPriceRequest::setTmIcon(const std::string& tmIcon)
 {
 	tmIcon_ = tmIcon;
-	setCoreParameter("TmIcon", tmIcon);
+	setParameter("TmIcon", tmIcon);
 }
 

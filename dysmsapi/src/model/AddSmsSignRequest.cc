@@ -35,7 +35,7 @@ long AddSmsSignRequest::getResourceOwnerId()const
 void AddSmsSignRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string AddSmsSignRequest::getRemark()const
@@ -46,7 +46,7 @@ std::string AddSmsSignRequest::getRemark()const
 void AddSmsSignRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string AddSmsSignRequest::getAccessKeyId()const
@@ -57,7 +57,7 @@ std::string AddSmsSignRequest::getAccessKeyId()const
 void AddSmsSignRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddSmsSignRequest::getSignName()const
@@ -68,7 +68,7 @@ std::string AddSmsSignRequest::getSignName()const
 void AddSmsSignRequest::setSignName(const std::string& signName)
 {
 	signName_ = signName;
-	setCoreParameter("SignName", signName);
+	setParameter("SignName", signName);
 }
 
 std::vector<AddSmsSignRequest::SignFileList> AddSmsSignRequest::getSignFileList()const
@@ -81,9 +81,9 @@ void AddSmsSignRequest::setSignFileList(const std::vector<SignFileList>& signFil
 	signFileList_ = signFileList;
 	for(int dep1 = 0; dep1!= signFileList.size(); dep1++) {
 		auto signFileListObj = signFileList.at(dep1);
-		std::string signFileListObjStr = "SignFileList." + std::to_string(dep1);
-		setCoreParameter(signFileListObjStr + ".FileContents", signFileListObj.fileContents);
-		setCoreParameter(signFileListObjStr + ".FileSuffix", signFileListObj.fileSuffix);
+		std::string signFileListObjStr = "SignFileList." + std::to_string(dep1 + 1);
+		setParameter(signFileListObjStr + ".FileContents", signFileListObj.fileContents);
+		setParameter(signFileListObjStr + ".FileSuffix", signFileListObj.fileSuffix);
 	}
 }
 
@@ -95,7 +95,7 @@ std::string AddSmsSignRequest::getResourceOwnerAccount()const
 void AddSmsSignRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long AddSmsSignRequest::getOwnerId()const
@@ -106,7 +106,7 @@ long AddSmsSignRequest::getOwnerId()const
 void AddSmsSignRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int AddSmsSignRequest::getSignSource()const
@@ -117,6 +117,6 @@ int AddSmsSignRequest::getSignSource()const
 void AddSmsSignRequest::setSignSource(int signSource)
 {
 	signSource_ = signSource;
-	setCoreParameter("SignSource", std::to_string(signSource));
+	setParameter("SignSource", std::to_string(signSource));
 }
 

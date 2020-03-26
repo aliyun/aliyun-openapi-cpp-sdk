@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ListEmailVerificationRequest;
 
 ListEmailVerificationRequest::ListEmailVerificationRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "ListEmailVerification")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListEmailVerificationRequest::~ListEmailVerificationRequest()
 {}
@@ -33,7 +35,7 @@ long ListEmailVerificationRequest::getEndCreateTime()const
 void ListEmailVerificationRequest::setEndCreateTime(long endCreateTime)
 {
 	endCreateTime_ = endCreateTime;
-	setCoreParameter("EndCreateTime", std::to_string(endCreateTime));
+	setParameter("EndCreateTime", std::to_string(endCreateTime));
 }
 
 int ListEmailVerificationRequest::getPageNum()const
@@ -44,7 +46,7 @@ int ListEmailVerificationRequest::getPageNum()const
 void ListEmailVerificationRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int ListEmailVerificationRequest::getVerificationStatus()const
@@ -55,7 +57,7 @@ int ListEmailVerificationRequest::getVerificationStatus()const
 void ListEmailVerificationRequest::setVerificationStatus(int verificationStatus)
 {
 	verificationStatus_ = verificationStatus;
-	setCoreParameter("VerificationStatus", std::to_string(verificationStatus));
+	setParameter("VerificationStatus", std::to_string(verificationStatus));
 }
 
 long ListEmailVerificationRequest::getBeginCreateTime()const
@@ -66,7 +68,7 @@ long ListEmailVerificationRequest::getBeginCreateTime()const
 void ListEmailVerificationRequest::setBeginCreateTime(long beginCreateTime)
 {
 	beginCreateTime_ = beginCreateTime;
-	setCoreParameter("BeginCreateTime", std::to_string(beginCreateTime));
+	setParameter("BeginCreateTime", std::to_string(beginCreateTime));
 }
 
 int ListEmailVerificationRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListEmailVerificationRequest::getPageSize()const
 void ListEmailVerificationRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListEmailVerificationRequest::getUserClientIp()const
@@ -88,7 +90,7 @@ std::string ListEmailVerificationRequest::getUserClientIp()const
 void ListEmailVerificationRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string ListEmailVerificationRequest::getLang()const
@@ -99,7 +101,7 @@ std::string ListEmailVerificationRequest::getLang()const
 void ListEmailVerificationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ListEmailVerificationRequest::getEmail()const
@@ -110,6 +112,6 @@ std::string ListEmailVerificationRequest::getEmail()const
 void ListEmailVerificationRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 

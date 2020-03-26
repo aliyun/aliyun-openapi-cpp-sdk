@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::GetCloudConnectNetworkUseLimitRequest;
 
 GetCloudConnectNetworkUseLimitRequest::GetCloudConnectNetworkUseLimitRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetCloudConnectNetworkUseLimitRequest::~GetCloudConnectNetworkUseLimitRequest()
 {}
@@ -33,7 +35,7 @@ long GetCloudConnectNetworkUseLimitRequest::getResourceOwnerId()const
 void GetCloudConnectNetworkUseLimitRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetCloudConnectNetworkUseLimitRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetCloudConnectNetworkUseLimitRequest::getResourceOwnerAccount()cons
 void GetCloudConnectNetworkUseLimitRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string GetCloudConnectNetworkUseLimitRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string GetCloudConnectNetworkUseLimitRequest::getOwnerAccount()const
 void GetCloudConnectNetworkUseLimitRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long GetCloudConnectNetworkUseLimitRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long GetCloudConnectNetworkUseLimitRequest::getOwnerId()const
 void GetCloudConnectNetworkUseLimitRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetCloudConnectNetworkUseLimitRequest::getRegionId()const
@@ -77,6 +79,6 @@ std::string GetCloudConnectNetworkUseLimitRequest::getRegionId()const
 void GetCloudConnectNetworkUseLimitRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 

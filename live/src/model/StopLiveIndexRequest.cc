@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::StopLiveIndexRequest;
 
 StopLiveIndexRequest::StopLiveIndexRequest() :
 	RpcServiceRequest("live", "2016-11-01", "StopLiveIndex")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 StopLiveIndexRequest::~StopLiveIndexRequest()
 {}
@@ -33,7 +35,7 @@ std::string StopLiveIndexRequest::getAppName()const
 void StopLiveIndexRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string StopLiveIndexRequest::getStreamName()const
@@ -44,7 +46,7 @@ std::string StopLiveIndexRequest::getStreamName()const
 void StopLiveIndexRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string StopLiveIndexRequest::getTaskId()const
@@ -55,7 +57,7 @@ std::string StopLiveIndexRequest::getTaskId()const
 void StopLiveIndexRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 
 std::string StopLiveIndexRequest::getDomainName()const
@@ -66,7 +68,7 @@ std::string StopLiveIndexRequest::getDomainName()const
 void StopLiveIndexRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long StopLiveIndexRequest::getOwnerId()const
@@ -77,6 +79,6 @@ long StopLiveIndexRequest::getOwnerId()const
 void StopLiveIndexRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

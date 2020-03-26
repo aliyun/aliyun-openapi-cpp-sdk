@@ -37,17 +37,17 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getParticipantIds()const;
 				void setParticipantIds(const std::vector<std::string>& participantIds);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getConferenceId()const;
 				void setConferenceId(const std::string& conferenceId);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
 				std::vector<std::string> participantIds_;
-				long ownerId_;
 				std::string conferenceId_;
+				long ownerId_;
 				std::string appId_;
 
 			};

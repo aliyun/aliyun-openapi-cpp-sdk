@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::GetResolveCountSummaryRequest;
 
 GetResolveCountSummaryRequest::GetResolveCountSummaryRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "GetResolveCountSummary")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetResolveCountSummaryRequest::~GetResolveCountSummaryRequest()
 {}
@@ -33,7 +35,7 @@ int GetResolveCountSummaryRequest::getTimeSpan()const
 void GetResolveCountSummaryRequest::setTimeSpan(int timeSpan)
 {
 	timeSpan_ = timeSpan;
-	setCoreParameter("TimeSpan", std::to_string(timeSpan));
+	setParameter("TimeSpan", std::to_string(timeSpan));
 }
 
 std::string GetResolveCountSummaryRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string GetResolveCountSummaryRequest::getAccessKeyId()const
 void GetResolveCountSummaryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetResolveCountSummaryRequest::getGranularity()const
@@ -55,6 +57,6 @@ std::string GetResolveCountSummaryRequest::getGranularity()const
 void GetResolveCountSummaryRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setParameter("Granularity", granularity);
 }
 

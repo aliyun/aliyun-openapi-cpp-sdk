@@ -143,6 +143,8 @@ set(foas_public_header_model
 	include/alibabacloud/foas/model/UpdateJobResult.h
 	include/alibabacloud/foas/model/UpdatePackageRequest.h
 	include/alibabacloud/foas/model/UpdatePackageResult.h
+	include/alibabacloud/foas/model/UpdateQueueRequest.h
+	include/alibabacloud/foas/model/UpdateQueueResult.h
 	include/alibabacloud/foas/model/ValidateJobRequest.h
 	include/alibabacloud/foas/model/ValidateJobResult.h )
 
@@ -270,6 +272,8 @@ set(foas_src
 	src/model/UpdateJobResult.cc
 	src/model/UpdatePackageRequest.cc
 	src/model/UpdatePackageResult.cc
+	src/model/UpdateQueueRequest.cc
+	src/model/UpdateQueueResult.cc
 	src/model/ValidateJobRequest.cc
 	src/model/ValidateJobResult.cc )
 

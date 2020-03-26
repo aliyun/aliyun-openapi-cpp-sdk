@@ -20,7 +20,9 @@ using AlibabaCloud::Cbn::Model::DescribeCenRegionDomainRouteEntriesRequest;
 
 DescribeCenRegionDomainRouteEntriesRequest::DescribeCenRegionDomainRouteEntriesRequest() :
 	RpcServiceRequest("cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeCenRegionDomainRouteEntriesRequest::~DescribeCenRegionDomainRouteEntriesRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeCenRegionDomainRouteEntriesRequest::getResourceOwnerId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getCenId()const
@@ -44,7 +46,7 @@ std::string DescribeCenRegionDomainRouteEntriesRequest::getCenId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setCenId(const std::string& cenId)
 {
 	cenId_ = cenId;
-	setCoreParameter("CenId", cenId);
+	setParameter("CenId", cenId);
 }
 
 int DescribeCenRegionDomainRouteEntriesRequest::getPageNumber()const
@@ -55,7 +57,7 @@ int DescribeCenRegionDomainRouteEntriesRequest::getPageNumber()const
 void DescribeCenRegionDomainRouteEntriesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeCenRegionDomainRouteEntriesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeCenRegionDomainRouteEntriesRequest::getPageSize()const
 void DescribeCenRegionDomainRouteEntriesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeCenRegionDomainRouteEntriesRequest::getResourceOwnerAccount(
 void DescribeCenRegionDomainRouteEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeCenRegionDomainRouteEntriesRequest::getOwnerAccount()const
 void DescribeCenRegionDomainRouteEntriesRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeCenRegionDomainRouteEntriesRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeCenRegionDomainRouteEntriesRequest::getOwnerId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getCenRegionId()const
@@ -110,7 +112,7 @@ std::string DescribeCenRegionDomainRouteEntriesRequest::getCenRegionId()const
 void DescribeCenRegionDomainRouteEntriesRequest::setCenRegionId(const std::string& cenRegionId)
 {
 	cenRegionId_ = cenRegionId;
-	setCoreParameter("CenRegionId", cenRegionId);
+	setParameter("CenRegionId", cenRegionId);
 }
 
 std::string DescribeCenRegionDomainRouteEntriesRequest::getStatus()const
@@ -121,6 +123,6 @@ std::string DescribeCenRegionDomainRouteEntriesRequest::getStatus()const
 void DescribeCenRegionDomainRouteEntriesRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setCoreParameter("Status", status);
+	setParameter("Status", status);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiHistoryRequest;
 
 DescribeApiHistoryRequest::DescribeApiHistoryRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiHistory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiHistoryRequest::~DescribeApiHistoryRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiHistoryRequest::getStageName()const
 void DescribeApiHistoryRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string DescribeApiHistoryRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeApiHistoryRequest::getGroupId()const
 void DescribeApiHistoryRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiHistoryRequest::getAccessKeyId()const
@@ -55,7 +57,18 @@ std::string DescribeApiHistoryRequest::getAccessKeyId()const
 void DescribeApiHistoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeApiHistoryRequest::getResourceOwnerToken()const
+{
+	return resourceOwnerToken_;
+}
+
+void DescribeApiHistoryRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
+{
+	resourceOwnerToken_ = resourceOwnerToken;
+	setParameter("ResourceOwnerToken", resourceOwnerToken);
 }
 
 std::string DescribeApiHistoryRequest::getSecurityToken()const
@@ -66,7 +79,7 @@ std::string DescribeApiHistoryRequest::getSecurityToken()const
 void DescribeApiHistoryRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeApiHistoryRequest::getApiId()const
@@ -77,7 +90,7 @@ std::string DescribeApiHistoryRequest::getApiId()const
 void DescribeApiHistoryRequest::setApiId(const std::string& apiId)
 {
 	apiId_ = apiId;
-	setCoreParameter("ApiId", apiId);
+	setParameter("ApiId", apiId);
 }
 
 std::string DescribeApiHistoryRequest::getHistoryVersion()const
@@ -88,6 +101,6 @@ std::string DescribeApiHistoryRequest::getHistoryVersion()const
 void DescribeApiHistoryRequest::setHistoryVersion(const std::string& historyVersion)
 {
 	historyVersion_ = historyVersion;
-	setCoreParameter("HistoryVersion", historyVersion);
+	setParameter("HistoryVersion", historyVersion);
 }
 

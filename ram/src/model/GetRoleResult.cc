@@ -54,6 +54,8 @@ void GetRoleResult::parse(const std::string &payload)
 		role_.createDate = roleNode["CreateDate"].asString();
 	if(!roleNode["UpdateDate"].isNull())
 		role_.updateDate = roleNode["UpdateDate"].asString();
+	if(!roleNode["MaxSessionDuration"].isNull())
+		role_.maxSessionDuration = std::stol(roleNode["MaxSessionDuration"].asString());
 
 }
 

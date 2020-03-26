@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::TerminatePhysicalConnectionRequest;
 
 TerminatePhysicalConnectionRequest::TerminatePhysicalConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "TerminatePhysicalConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TerminatePhysicalConnectionRequest::~TerminatePhysicalConnectionRequest()
 {}
@@ -33,7 +35,7 @@ long TerminatePhysicalConnectionRequest::getResourceOwnerId()const
 void TerminatePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string TerminatePhysicalConnectionRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string TerminatePhysicalConnectionRequest::getClientToken()const
 void TerminatePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string TerminatePhysicalConnectionRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string TerminatePhysicalConnectionRequest::getRegionId()const
 void TerminatePhysicalConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string TerminatePhysicalConnectionRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string TerminatePhysicalConnectionRequest::getResourceOwnerAccount()const
 void TerminatePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string TerminatePhysicalConnectionRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string TerminatePhysicalConnectionRequest::getOwnerAccount()const
 void TerminatePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long TerminatePhysicalConnectionRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long TerminatePhysicalConnectionRequest::getOwnerId()const
 void TerminatePhysicalConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string TerminatePhysicalConnectionRequest::getPhysicalConnectionId()const
@@ -99,6 +101,6 @@ std::string TerminatePhysicalConnectionRequest::getPhysicalConnectionId()const
 void TerminatePhysicalConnectionRequest::setPhysicalConnectionId(const std::string& physicalConnectionId)
 {
 	physicalConnectionId_ = physicalConnectionId;
-	setCoreParameter("PhysicalConnectionId", physicalConnectionId);
+	setParameter("PhysicalConnectionId", physicalConnectionId);
 }
 

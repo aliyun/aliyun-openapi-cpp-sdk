@@ -35,7 +35,7 @@ std::string SearchFaceRequest::getContent()const
 void SearchFaceRequest::setContent(const std::string& content)
 {
 	content_ = content;
-	setCoreParameter("Content", content);
+	setParameter("Content", content);
 }
 
 std::string SearchFaceRequest::getDataType()const
@@ -46,7 +46,7 @@ std::string SearchFaceRequest::getDataType()const
 void SearchFaceRequest::setDataType(const std::string& dataType)
 {
 	dataType_ = dataType;
-	setCoreParameter("DataType", dataType);
+	setParameter("DataType", dataType);
 }
 
 float SearchFaceRequest::getProbabilityThreshold()const
@@ -57,7 +57,7 @@ float SearchFaceRequest::getProbabilityThreshold()const
 void SearchFaceRequest::setProbabilityThreshold(float probabilityThreshold)
 {
 	probabilityThreshold_ = probabilityThreshold;
-	setCoreParameter("ProbabilityThreshold", std::to_string(probabilityThreshold));
+	setParameter("ProbabilityThreshold", std::to_string(probabilityThreshold));
 }
 
 std::string SearchFaceRequest::getShowLog()const
@@ -68,7 +68,7 @@ std::string SearchFaceRequest::getShowLog()const
 void SearchFaceRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 std::string SearchFaceRequest::getGroupId()const
@@ -79,7 +79,7 @@ std::string SearchFaceRequest::getGroupId()const
 void SearchFaceRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 int SearchFaceRequest::getCount()const
@@ -90,7 +90,7 @@ int SearchFaceRequest::getCount()const
 void SearchFaceRequest::setCount(int count)
 {
 	count_ = count;
-	setCoreParameter("Count", std::to_string(count));
+	setParameter("Count", std::to_string(count));
 }
 
 long SearchFaceRequest::getOwnerId()const
@@ -101,6 +101,6 @@ long SearchFaceRequest::getOwnerId()const
 void SearchFaceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

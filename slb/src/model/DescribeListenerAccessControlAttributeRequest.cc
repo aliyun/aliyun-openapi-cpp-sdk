@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::DescribeListenerAccessControlAttributeRequest;
 
 DescribeListenerAccessControlAttributeRequest::DescribeListenerAccessControlAttributeRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "DescribeListenerAccessControlAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeListenerAccessControlAttributeRequest::~DescribeListenerAccessControlAttributeRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getAccess_key_id()con
 void DescribeListenerAccessControlAttributeRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long DescribeListenerAccessControlAttributeRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long DescribeListenerAccessControlAttributeRequest::getResourceOwnerId()const
 void DescribeListenerAccessControlAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getRegionId()const
 void DescribeListenerAccessControlAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
@@ -66,7 +68,7 @@ int DescribeListenerAccessControlAttributeRequest::getListenerPort()const
 void DescribeListenerAccessControlAttributeRequest::setListenerPort(int listenerPort)
 {
 	listenerPort_ = listenerPort;
-	setCoreParameter("ListenerPort", std::to_string(listenerPort));
+	setParameter("ListenerPort", std::to_string(listenerPort));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getResourceOwnerAccou
 void DescribeListenerAccessControlAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getOwnerAccount()cons
 void DescribeListenerAccessControlAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeListenerAccessControlAttributeRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DescribeListenerAccessControlAttributeRequest::getOwnerId()const
 void DescribeListenerAccessControlAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getListenerProtocol()const
@@ -110,7 +112,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getListenerProtocol()
 void DescribeListenerAccessControlAttributeRequest::setListenerProtocol(const std::string& listenerProtocol)
 {
 	listenerProtocol_ = listenerProtocol;
-	setCoreParameter("ListenerProtocol", listenerProtocol);
+	setParameter("ListenerProtocol", listenerProtocol);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getTags()const
@@ -121,7 +123,7 @@ std::string DescribeListenerAccessControlAttributeRequest::getTags()const
 void DescribeListenerAccessControlAttributeRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()const
@@ -132,6 +134,6 @@ std::string DescribeListenerAccessControlAttributeRequest::getLoadBalancerId()co
 void DescribeListenerAccessControlAttributeRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

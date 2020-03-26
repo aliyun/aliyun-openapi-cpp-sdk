@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeApiGroupRequest;
 
 DescribeApiGroupRequest::DescribeApiGroupRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeApiGroupRequest::~DescribeApiGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeApiGroupRequest::getGroupId()const
 void DescribeApiGroupRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string DescribeApiGroupRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeApiGroupRequest::getAccessKeyId()const
 void DescribeApiGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeApiGroupRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeApiGroupRequest::getSecurityToken()const
 void DescribeApiGroupRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::vector<DescribeApiGroupRequest::Tag> DescribeApiGroupRequest::getTag()const
@@ -66,12 +68,11 @@ std::vector<DescribeApiGroupRequest::Tag> DescribeApiGroupRequest::getTag()const
 void DescribeApiGroupRequest::setTag(const std::vector<Tag>& tag)
 {
 	tag_ = tag;
-	int i = 0;
-	for(int i = 0; i!= tag.size(); i++)	{
-		auto obj = tag.at(i);
-		std::string str ="Tag."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
 }
 

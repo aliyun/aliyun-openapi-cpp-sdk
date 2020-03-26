@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DownloadRecordingRequest;
 
 DownloadRecordingRequest::DownloadRecordingRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DownloadRecording")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DownloadRecordingRequest::~DownloadRecordingRequest()
 {}
@@ -33,7 +35,7 @@ std::string DownloadRecordingRequest::getChannel()const
 void DownloadRecordingRequest::setChannel(const std::string& channel)
 {
 	channel_ = channel;
-	setCoreParameter("Channel", channel);
+	setParameter("Channel", channel);
 }
 
 std::string DownloadRecordingRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DownloadRecordingRequest::getAccessKeyId()const
 void DownloadRecordingRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DownloadRecordingRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string DownloadRecordingRequest::getInstanceId()const
 void DownloadRecordingRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DownloadRecordingRequest::getFileName()const
@@ -66,6 +68,6 @@ std::string DownloadRecordingRequest::getFileName()const
 void DownloadRecordingRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setParameter("FileName", fileName);
 }
 

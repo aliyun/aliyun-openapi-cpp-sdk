@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::ModifyCreateVulWhitelistRequest;
 
 ModifyCreateVulWhitelistRequest::ModifyCreateVulWhitelistRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "ModifyCreateVulWhitelist")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyCreateVulWhitelistRequest::~ModifyCreateVulWhitelistRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifyCreateVulWhitelistRequest::getReason()const
 void ModifyCreateVulWhitelistRequest::setReason(const std::string& reason)
 {
 	reason_ = reason;
-	setCoreParameter("Reason", reason);
+	setParameter("Reason", reason);
 }
 
 std::string ModifyCreateVulWhitelistRequest::getWhitelist()const
@@ -44,7 +46,7 @@ std::string ModifyCreateVulWhitelistRequest::getWhitelist()const
 void ModifyCreateVulWhitelistRequest::setWhitelist(const std::string& whitelist)
 {
 	whitelist_ = whitelist;
-	setCoreParameter("Whitelist", whitelist);
+	setParameter("Whitelist", whitelist);
 }
 
 std::string ModifyCreateVulWhitelistRequest::getSourceIp()const
@@ -55,6 +57,6 @@ std::string ModifyCreateVulWhitelistRequest::getSourceIp()const
 void ModifyCreateVulWhitelistRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

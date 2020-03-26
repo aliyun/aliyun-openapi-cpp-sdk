@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::QueryVideoGifJobListRequest;
 
 QueryVideoGifJobListRequest::QueryVideoGifJobListRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "QueryVideoGifJobList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryVideoGifJobListRequest::~QueryVideoGifJobListRequest()
 {}
@@ -33,7 +35,7 @@ long QueryVideoGifJobListRequest::getResourceOwnerId()const
 void QueryVideoGifJobListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string QueryVideoGifJobListRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string QueryVideoGifJobListRequest::getResourceOwnerAccount()const
 void QueryVideoGifJobListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string QueryVideoGifJobListRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string QueryVideoGifJobListRequest::getOwnerAccount()const
 void QueryVideoGifJobListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long QueryVideoGifJobListRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long QueryVideoGifJobListRequest::getOwnerId()const
 void QueryVideoGifJobListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string QueryVideoGifJobListRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string QueryVideoGifJobListRequest::getAccessKeyId()const
 void QueryVideoGifJobListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string QueryVideoGifJobListRequest::getJobIds()const
@@ -88,6 +90,6 @@ std::string QueryVideoGifJobListRequest::getJobIds()const
 void QueryVideoGifJobListRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 

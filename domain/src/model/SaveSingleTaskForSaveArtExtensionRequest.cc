@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::SaveSingleTaskForSaveArtExtensionRequest;
 
 SaveSingleTaskForSaveArtExtensionRequest::SaveSingleTaskForSaveArtExtensionRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveSingleTaskForSaveArtExtensionRequest::~SaveSingleTaskForSaveArtExtensionRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getSubject()const
 void SaveSingleTaskForSaveArtExtensionRequest::setSubject(const std::string& subject)
 {
 	subject_ = subject;
-	setCoreParameter("Subject", subject);
+	setParameter("Subject", subject);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getTitle()const
@@ -44,7 +46,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getTitle()const
 void SaveSingleTaskForSaveArtExtensionRequest::setTitle(const std::string& title)
 {
 	title_ = title;
-	setCoreParameter("Title", title);
+	setParameter("Title", title);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getDateOrPeriod()const
@@ -55,7 +57,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getDateOrPeriod()const
 void SaveSingleTaskForSaveArtExtensionRequest::setDateOrPeriod(const std::string& dateOrPeriod)
 {
 	dateOrPeriod_ = dateOrPeriod;
-	setCoreParameter("DateOrPeriod", dateOrPeriod);
+	setParameter("DateOrPeriod", dateOrPeriod);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getReference()const
@@ -66,7 +68,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getReference()const
 void SaveSingleTaskForSaveArtExtensionRequest::setReference(const std::string& reference)
 {
 	reference_ = reference;
-	setCoreParameter("Reference", reference);
+	setParameter("Reference", reference);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getFeatures()const
@@ -77,7 +79,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getFeatures()const
 void SaveSingleTaskForSaveArtExtensionRequest::setFeatures(const std::string& features)
 {
 	features_ = features;
-	setCoreParameter("Features", features);
+	setParameter("Features", features);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getInscriptionsAndMarkings()const
@@ -88,7 +90,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getInscriptionsAndMarkings
 void SaveSingleTaskForSaveArtExtensionRequest::setInscriptionsAndMarkings(const std::string& inscriptionsAndMarkings)
 {
 	inscriptionsAndMarkings_ = inscriptionsAndMarkings;
-	setCoreParameter("InscriptionsAndMarkings", inscriptionsAndMarkings);
+	setParameter("InscriptionsAndMarkings", inscriptionsAndMarkings);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getObjectType()const
@@ -99,7 +101,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getObjectType()const
 void SaveSingleTaskForSaveArtExtensionRequest::setObjectType(const std::string& objectType)
 {
 	objectType_ = objectType;
-	setCoreParameter("ObjectType", objectType);
+	setParameter("ObjectType", objectType);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getLang()const
@@ -110,7 +112,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getLang()const
 void SaveSingleTaskForSaveArtExtensionRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getDomainName()const
@@ -121,7 +123,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getDomainName()const
 void SaveSingleTaskForSaveArtExtensionRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getMaker()const
@@ -132,7 +134,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getMaker()const
 void SaveSingleTaskForSaveArtExtensionRequest::setMaker(const std::string& maker)
 {
 	maker_ = maker;
-	setCoreParameter("Maker", maker);
+	setParameter("Maker", maker);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getMaterialsAndTechniques()const
@@ -143,7 +145,7 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getMaterialsAndTechniques(
 void SaveSingleTaskForSaveArtExtensionRequest::setMaterialsAndTechniques(const std::string& materialsAndTechniques)
 {
 	materialsAndTechniques_ = materialsAndTechniques;
-	setCoreParameter("MaterialsAndTechniques", materialsAndTechniques);
+	setParameter("MaterialsAndTechniques", materialsAndTechniques);
 }
 
 std::string SaveSingleTaskForSaveArtExtensionRequest::getDimensions()const
@@ -154,6 +156,6 @@ std::string SaveSingleTaskForSaveArtExtensionRequest::getDimensions()const
 void SaveSingleTaskForSaveArtExtensionRequest::setDimensions(const std::string& dimensions)
 {
 	dimensions_ = dimensions;
-	setCoreParameter("Dimensions", dimensions);
+	setParameter("Dimensions", dimensions);
 }
 

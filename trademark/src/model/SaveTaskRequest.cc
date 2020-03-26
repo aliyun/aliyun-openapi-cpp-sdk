@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::SaveTaskRequest;
 
 SaveTaskRequest::SaveTaskRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "SaveTask")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SaveTaskRequest::~SaveTaskRequest()
 {}
@@ -33,7 +35,7 @@ std::string SaveTaskRequest::getBizType()const
 void SaveTaskRequest::setBizType(const std::string& bizType)
 {
 	bizType_ = bizType;
-	setCoreParameter("BizType", bizType);
+	setParameter("BizType", bizType);
 }
 
 std::string SaveTaskRequest::getRequest()const
@@ -44,6 +46,6 @@ std::string SaveTaskRequest::getRequest()const
 void SaveTaskRequest::setRequest(const std::string& request)
 {
 	request_ = request;
-	setCoreParameter("Request", request);
+	setParameter("Request", request);
 }
 

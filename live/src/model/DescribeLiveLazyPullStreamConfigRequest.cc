@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeLiveLazyPullStreamConfigRequest;
 
 DescribeLiveLazyPullStreamConfigRequest::DescribeLiveLazyPullStreamConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeLiveLazyPullStreamConfigRequest::~DescribeLiveLazyPullStreamConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getAppName()const
 void DescribeLiveLazyPullStreamConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getLiveapiRequestFrom()const
@@ -44,7 +46,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getLiveapiRequestFrom()cons
 void DescribeLiveLazyPullStreamConfigRequest::setLiveapiRequestFrom(const std::string& liveapiRequestFrom)
 {
 	liveapiRequestFrom_ = liveapiRequestFrom;
-	setCoreParameter("LiveapiRequestFrom", liveapiRequestFrom);
+	setParameter("LiveapiRequestFrom", liveapiRequestFrom);
 }
 
 std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DescribeLiveLazyPullStreamConfigRequest::getDomainName()const
 void DescribeLiveLazyPullStreamConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DescribeLiveLazyPullStreamConfigRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DescribeLiveLazyPullStreamConfigRequest::getOwnerId()const
 void DescribeLiveLazyPullStreamConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

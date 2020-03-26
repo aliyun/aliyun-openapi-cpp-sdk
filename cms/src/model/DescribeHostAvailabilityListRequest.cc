@@ -35,7 +35,7 @@ long DescribeHostAvailabilityListRequest::getGroupId()const
 void DescribeHostAvailabilityListRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setParameter("GroupId", std::to_string(groupId));
 }
 
 std::string DescribeHostAvailabilityListRequest::getTaskName()const
@@ -46,7 +46,7 @@ std::string DescribeHostAvailabilityListRequest::getTaskName()const
 void DescribeHostAvailabilityListRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 int DescribeHostAvailabilityListRequest::getPageNumber()const
@@ -57,7 +57,7 @@ int DescribeHostAvailabilityListRequest::getPageNumber()const
 void DescribeHostAvailabilityListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 int DescribeHostAvailabilityListRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeHostAvailabilityListRequest::getPageSize()const
 void DescribeHostAvailabilityListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 long DescribeHostAvailabilityListRequest::getId()const
@@ -79,6 +79,6 @@ long DescribeHostAvailabilityListRequest::getId()const
 void DescribeHostAvailabilityListRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

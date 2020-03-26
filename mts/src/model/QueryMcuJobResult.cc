@@ -113,6 +113,18 @@ void QueryMcuJobResult::parse(const std::string &payload)
 			}
 			jobResultObject.faceResult.push_back(faceResultObject);
 		}
+		auto allSubTaskInfoNode = allJobResultNode["SubTaskInfo"]["SubTask"];
+		for (auto allJobResultNodeSubTaskInfoSubTask : allSubTaskInfoNode)
+		{
+			Job::SubTask subTaskInfoObject;
+			if(!allJobResultNodeSubTaskInfoSubTask["Type"].isNull())
+				subTaskInfoObject.type = allJobResultNodeSubTaskInfoSubTask["Type"].asString();
+			if(!allJobResultNodeSubTaskInfoSubTask["Code"].isNull())
+				subTaskInfoObject.code = allJobResultNodeSubTaskInfoSubTask["Code"].asString();
+			if(!allJobResultNodeSubTaskInfoSubTask["Message"].isNull())
+				subTaskInfoObject.message = allJobResultNodeSubTaskInfoSubTask["Message"].asString();
+			jobResultObject.subTaskInfo.push_back(subTaskInfoObject);
+		}
 		auto inputNode = value["Input"];
 		if(!inputNode["Bucket"].isNull())
 			jobResultObject.input.bucket = inputNode["Bucket"].asString();

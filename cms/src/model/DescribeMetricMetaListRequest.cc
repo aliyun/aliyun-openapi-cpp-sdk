@@ -35,7 +35,7 @@ int DescribeMetricMetaListRequest::getPageNumber()const
 void DescribeMetricMetaListRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeMetricMetaListRequest::getLabels()const
@@ -46,7 +46,7 @@ std::string DescribeMetricMetaListRequest::getLabels()const
 void DescribeMetricMetaListRequest::setLabels(const std::string& labels)
 {
 	labels_ = labels;
-	setCoreParameter("Labels", labels);
+	setParameter("Labels", labels);
 }
 
 std::string DescribeMetricMetaListRequest::get_Namespace()const
@@ -57,7 +57,7 @@ std::string DescribeMetricMetaListRequest::get_Namespace()const
 void DescribeMetricMetaListRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 int DescribeMetricMetaListRequest::getPageSize()const
@@ -68,7 +68,7 @@ int DescribeMetricMetaListRequest::getPageSize()const
 void DescribeMetricMetaListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeMetricMetaListRequest::getMetricName()const
@@ -79,6 +79,6 @@ std::string DescribeMetricMetaListRequest::getMetricName()const
 void DescribeMetricMetaListRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 

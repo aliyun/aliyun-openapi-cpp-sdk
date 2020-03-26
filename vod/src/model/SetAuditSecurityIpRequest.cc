@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SetAuditSecurityIpRequest;
 
 SetAuditSecurityIpRequest::SetAuditSecurityIpRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SetAuditSecurityIp")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetAuditSecurityIpRequest::~SetAuditSecurityIpRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetAuditSecurityIpRequest::getSecurityGroupName()const
 void SetAuditSecurityIpRequest::setSecurityGroupName(const std::string& securityGroupName)
 {
 	securityGroupName_ = securityGroupName;
-	setCoreParameter("SecurityGroupName", securityGroupName);
+	setParameter("SecurityGroupName", securityGroupName);
 }
 
 std::string SetAuditSecurityIpRequest::getOperateMode()const
@@ -44,7 +46,7 @@ std::string SetAuditSecurityIpRequest::getOperateMode()const
 void SetAuditSecurityIpRequest::setOperateMode(const std::string& operateMode)
 {
 	operateMode_ = operateMode;
-	setCoreParameter("OperateMode", operateMode);
+	setParameter("OperateMode", operateMode);
 }
 
 std::string SetAuditSecurityIpRequest::getIps()const
@@ -55,6 +57,6 @@ std::string SetAuditSecurityIpRequest::getIps()const
 void SetAuditSecurityIpRequest::setIps(const std::string& ips)
 {
 	ips_ = ips;
-	setCoreParameter("Ips", ips);
+	setParameter("Ips", ips);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::QueryTrademarkMonitorRulesRequest;
 
 QueryTrademarkMonitorRulesRequest::QueryTrademarkMonitorRulesRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "QueryTrademarkMonitorRules")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryTrademarkMonitorRulesRequest::~QueryTrademarkMonitorRulesRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryTrademarkMonitorRulesRequest::getRuleName()const
 void QueryTrademarkMonitorRulesRequest::setRuleName(const std::string& ruleName)
 {
 	ruleName_ = ruleName;
-	setCoreParameter("RuleName", ruleName);
+	setParameter("RuleName", ruleName);
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageNum()const
@@ -44,7 +46,7 @@ int QueryTrademarkMonitorRulesRequest::getPageNum()const
 void QueryTrademarkMonitorRulesRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 int QueryTrademarkMonitorRulesRequest::getNotifyUpdate()const
@@ -55,7 +57,7 @@ int QueryTrademarkMonitorRulesRequest::getNotifyUpdate()const
 void QueryTrademarkMonitorRulesRequest::setNotifyUpdate(int notifyUpdate)
 {
 	notifyUpdate_ = notifyUpdate;
-	setCoreParameter("NotifyUpdate", std::to_string(notifyUpdate));
+	setParameter("NotifyUpdate", std::to_string(notifyUpdate));
 }
 
 int QueryTrademarkMonitorRulesRequest::getPageSize()const
@@ -66,7 +68,7 @@ int QueryTrademarkMonitorRulesRequest::getPageSize()const
 void QueryTrademarkMonitorRulesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string QueryTrademarkMonitorRulesRequest::getId()const
@@ -77,6 +79,6 @@ std::string QueryTrademarkMonitorRulesRequest::getId()const
 void QueryTrademarkMonitorRulesRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Hsm::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -33,7 +35,7 @@ int CreateInstanceRequest::getPeriod()const
 void CreateInstanceRequest::setPeriod(int period)
 {
 	period_ = period;
-	setCoreParameter("Period", std::to_string(period));
+	setParameter("Period", std::to_string(period));
 }
 
 std::string CreateInstanceRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ std::string CreateInstanceRequest::getResourceOwnerId()const
 void CreateInstanceRequest::setResourceOwnerId(const std::string& resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", resourceOwnerId);
+	setParameter("ResourceOwnerId", resourceOwnerId);
 }
 
 int CreateInstanceRequest::getQuantity()const
@@ -55,7 +57,7 @@ int CreateInstanceRequest::getQuantity()const
 void CreateInstanceRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setParameter("Quantity", std::to_string(quantity));
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -66,7 +68,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateInstanceRequest::getHsmOem()const
@@ -77,7 +79,7 @@ std::string CreateInstanceRequest::getHsmOem()const
 void CreateInstanceRequest::setHsmOem(const std::string& hsmOem)
 {
 	hsmOem_ = hsmOem;
-	setCoreParameter("HsmOem", hsmOem);
+	setParameter("HsmOem", hsmOem);
 }
 
 std::string CreateInstanceRequest::getPeriodUnit()const
@@ -88,7 +90,7 @@ std::string CreateInstanceRequest::getPeriodUnit()const
 void CreateInstanceRequest::setPeriodUnit(const std::string& periodUnit)
 {
 	periodUnit_ = periodUnit;
-	setCoreParameter("PeriodUnit", periodUnit);
+	setParameter("PeriodUnit", periodUnit);
 }
 
 std::string CreateInstanceRequest::getHsmDeviceType()const
@@ -99,7 +101,7 @@ std::string CreateInstanceRequest::getHsmDeviceType()const
 void CreateInstanceRequest::setHsmDeviceType(const std::string& hsmDeviceType)
 {
 	hsmDeviceType_ = hsmDeviceType;
-	setCoreParameter("HsmDeviceType", hsmDeviceType);
+	setParameter("HsmDeviceType", hsmDeviceType);
 }
 
 std::string CreateInstanceRequest::getZoneId()const
@@ -110,6 +112,6 @@ std::string CreateInstanceRequest::getZoneId()const
 void CreateInstanceRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

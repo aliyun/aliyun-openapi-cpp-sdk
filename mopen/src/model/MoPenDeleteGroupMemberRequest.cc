@@ -20,7 +20,9 @@ using AlibabaCloud::MoPen::Model::MoPenDeleteGroupMemberRequest;
 
 MoPenDeleteGroupMemberRequest::MoPenDeleteGroupMemberRequest() :
 	RpcServiceRequest("mopen", "2018-02-11", "MoPenDeleteGroupMember")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 MoPenDeleteGroupMemberRequest::~MoPenDeleteGroupMemberRequest()
 {}
@@ -33,7 +35,7 @@ long MoPenDeleteGroupMemberRequest::getGroupId()const
 void MoPenDeleteGroupMemberRequest::setGroupId(long groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", std::to_string(groupId));
+	setBodyParameter("GroupId", std::to_string(groupId));
 }
 
 std::string MoPenDeleteGroupMemberRequest::getDeviceName()const
@@ -44,6 +46,6 @@ std::string MoPenDeleteGroupMemberRequest::getDeviceName()const
 void MoPenDeleteGroupMemberRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setBodyParameter("DeviceName", deviceName);
 }
 

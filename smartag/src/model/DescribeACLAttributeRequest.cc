@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeACLAttributeRequest;
 
 DescribeACLAttributeRequest::DescribeACLAttributeRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeACLAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeACLAttributeRequest::~DescribeACLAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeACLAttributeRequest::getResourceOwnerId()const
 void DescribeACLAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 int DescribeACLAttributeRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int DescribeACLAttributeRequest::getPageNumber()const
 void DescribeACLAttributeRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeACLAttributeRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeACLAttributeRequest::getRegionId()const
 void DescribeACLAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 int DescribeACLAttributeRequest::getPageSize()const
@@ -66,7 +68,7 @@ int DescribeACLAttributeRequest::getPageSize()const
 void DescribeACLAttributeRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeACLAttributeRequest::getDirection()const
@@ -77,7 +79,7 @@ std::string DescribeACLAttributeRequest::getDirection()const
 void DescribeACLAttributeRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 std::string DescribeACLAttributeRequest::getOrder()const
@@ -88,7 +90,7 @@ std::string DescribeACLAttributeRequest::getOrder()const
 void DescribeACLAttributeRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 
 std::string DescribeACLAttributeRequest::getAclId()const
@@ -99,7 +101,7 @@ std::string DescribeACLAttributeRequest::getAclId()const
 void DescribeACLAttributeRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DescribeACLAttributeRequest::getResourceOwnerAccount()const
@@ -110,7 +112,7 @@ std::string DescribeACLAttributeRequest::getResourceOwnerAccount()const
 void DescribeACLAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeACLAttributeRequest::getOwnerAccount()const
@@ -121,7 +123,7 @@ std::string DescribeACLAttributeRequest::getOwnerAccount()const
 void DescribeACLAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeACLAttributeRequest::getOwnerId()const
@@ -132,6 +134,17 @@ long DescribeACLAttributeRequest::getOwnerId()const
 void DescribeACLAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeACLAttributeRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeACLAttributeRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
 }
 

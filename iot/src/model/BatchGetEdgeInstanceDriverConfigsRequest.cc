@@ -20,7 +20,9 @@ using AlibabaCloud::Iot::Model::BatchGetEdgeInstanceDriverConfigsRequest;
 
 BatchGetEdgeInstanceDriverConfigsRequest::BatchGetEdgeInstanceDriverConfigsRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BatchGetEdgeInstanceDriverConfigsRequest::~BatchGetEdgeInstanceDriverConfigsRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> BatchGetEdgeInstanceDriverConfigsRequest::getDriverIds(
 void BatchGetEdgeInstanceDriverConfigsRequest::setDriverIds(const std::vector<std::string>& driverIds)
 {
 	driverIds_ = driverIds;
-	for(int i = 0; i!= driverIds.size(); i++)
-		setCoreParameter("DriverIds."+ std::to_string(i), driverIds.at(i));
+	for(int dep1 = 0; dep1!= driverIds.size(); dep1++) {
+		setParameter("DriverIds."+ std::to_string(dep1), driverIds.at(dep1));
+	}
 }
 
 std::string BatchGetEdgeInstanceDriverConfigsRequest::getAccessKeyId()const
@@ -45,18 +48,7 @@ std::string BatchGetEdgeInstanceDriverConfigsRequest::getAccessKeyId()const
 void BatchGetEdgeInstanceDriverConfigsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
-}
-
-std::string BatchGetEdgeInstanceDriverConfigsRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BatchGetEdgeInstanceDriverConfigsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BatchGetEdgeInstanceDriverConfigsRequest::getIotInstanceId()const
@@ -67,6 +59,39 @@ std::string BatchGetEdgeInstanceDriverConfigsRequest::getIotInstanceId()const
 void BatchGetEdgeInstanceDriverConfigsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchGetEdgeInstanceDriverConfigsRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BatchGetEdgeInstanceDriverConfigsRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BatchGetEdgeInstanceDriverConfigsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchGetEdgeInstanceDriverConfigsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchGetEdgeInstanceDriverConfigsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchGetEdgeInstanceDriverConfigsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

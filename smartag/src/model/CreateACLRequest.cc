@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::CreateACLRequest;
 
 CreateACLRequest::CreateACLRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "CreateACL")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateACLRequest::~CreateACLRequest()
 {}
@@ -33,7 +35,7 @@ long CreateACLRequest::getResourceOwnerId()const
 void CreateACLRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CreateACLRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string CreateACLRequest::getRegionId()const
 void CreateACLRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateACLRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string CreateACLRequest::getResourceOwnerAccount()const
 void CreateACLRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateACLRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string CreateACLRequest::getOwnerAccount()const
 void CreateACLRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long CreateACLRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long CreateACLRequest::getOwnerId()const
 void CreateACLRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateACLRequest::getName()const
@@ -88,6 +90,6 @@ std::string CreateACLRequest::getName()const
 void CreateACLRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

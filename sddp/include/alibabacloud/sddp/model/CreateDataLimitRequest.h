@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setParentId(const std::string& parentId);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				bool getBatchCreate()const;
+				void setBatchCreate(bool batchCreate);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getDataLimitList()const;
@@ -47,22 +49,38 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				std::string getServiceRegionId()const;
 				void setServiceRegionId(const std::string& serviceRegionId);
+				std::string getEngineType()const;
+				void setEngineType(const std::string& engineType);
+				int getAuditStatus()const;
+				void setAuditStatus(int auditStatus);
+				int getAutoScan()const;
+				void setAutoScan(int autoScan);
+				int getLogStoreDay()const;
+				void setLogStoreDay(int logStoreDay);
 				int getResourceType()const;
 				void setResourceType(int resourceType);
 				std::string getConnector()const;
 				void setConnector(const std::string& connector);
+				int getPort()const;
+				void setPort(int port);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
 				std::string parentId_;
 				std::string password_;
+				bool batchCreate_;
 				std::string sourceIp_;
 				std::string dataLimitList_;
 				std::string lang_;
 				std::string serviceRegionId_;
+				std::string engineType_;
+				int auditStatus_;
+				int autoScan_;
+				int logStoreDay_;
 				int resourceType_;
 				std::string connector_;
+				int port_;
 				std::string userName_;
 
 			};

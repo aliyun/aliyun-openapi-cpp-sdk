@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::CreateVpnConnectionRequest;
 
 CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "CreateVpnConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateVpnConnectionRequest::~CreateVpnConnectionRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateVpnConnectionRequest::getIkeConfig()const
 void CreateVpnConnectionRequest::setIkeConfig(const std::string& ikeConfig)
 {
 	ikeConfig_ = ikeConfig;
-	setCoreParameter("IkeConfig", ikeConfig);
+	setParameter("IkeConfig", ikeConfig);
 }
 
 long CreateVpnConnectionRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long CreateVpnConnectionRequest::getResourceOwnerId()const
 void CreateVpnConnectionRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 bool CreateVpnConnectionRequest::getAutoConfigRoute()const
@@ -55,7 +57,7 @@ bool CreateVpnConnectionRequest::getAutoConfigRoute()const
 void CreateVpnConnectionRequest::setAutoConfigRoute(bool autoConfigRoute)
 {
 	autoConfigRoute_ = autoConfigRoute;
-	setCoreParameter("AutoConfigRoute", autoConfigRoute ? "true" : "false");
+	setParameter("AutoConfigRoute", autoConfigRoute ? "true" : "false");
 }
 
 std::string CreateVpnConnectionRequest::getClientToken()const
@@ -66,7 +68,7 @@ std::string CreateVpnConnectionRequest::getClientToken()const
 void CreateVpnConnectionRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateVpnConnectionRequest::getIpsecConfig()const
@@ -77,7 +79,7 @@ std::string CreateVpnConnectionRequest::getIpsecConfig()const
 void CreateVpnConnectionRequest::setIpsecConfig(const std::string& ipsecConfig)
 {
 	ipsecConfig_ = ipsecConfig;
-	setCoreParameter("IpsecConfig", ipsecConfig);
+	setParameter("IpsecConfig", ipsecConfig);
 }
 
 std::string CreateVpnConnectionRequest::getHealthCheckConfig()const
@@ -88,7 +90,7 @@ std::string CreateVpnConnectionRequest::getHealthCheckConfig()const
 void CreateVpnConnectionRequest::setHealthCheckConfig(const std::string& healthCheckConfig)
 {
 	healthCheckConfig_ = healthCheckConfig;
-	setCoreParameter("HealthCheckConfig", healthCheckConfig);
+	setParameter("HealthCheckConfig", healthCheckConfig);
 }
 
 std::string CreateVpnConnectionRequest::getCustomerGatewayId()const
@@ -99,7 +101,7 @@ std::string CreateVpnConnectionRequest::getCustomerGatewayId()const
 void CreateVpnConnectionRequest::setCustomerGatewayId(const std::string& customerGatewayId)
 {
 	customerGatewayId_ = customerGatewayId;
-	setCoreParameter("CustomerGatewayId", customerGatewayId);
+	setParameter("CustomerGatewayId", customerGatewayId);
 }
 
 std::string CreateVpnConnectionRequest::getLocalSubnet()const
@@ -110,7 +112,7 @@ std::string CreateVpnConnectionRequest::getLocalSubnet()const
 void CreateVpnConnectionRequest::setLocalSubnet(const std::string& localSubnet)
 {
 	localSubnet_ = localSubnet;
-	setCoreParameter("LocalSubnet", localSubnet);
+	setParameter("LocalSubnet", localSubnet);
 }
 
 std::string CreateVpnConnectionRequest::getRegionId()const
@@ -121,7 +123,7 @@ std::string CreateVpnConnectionRequest::getRegionId()const
 void CreateVpnConnectionRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string CreateVpnConnectionRequest::getRemoteSubnet()const
@@ -132,7 +134,7 @@ std::string CreateVpnConnectionRequest::getRemoteSubnet()const
 void CreateVpnConnectionRequest::setRemoteSubnet(const std::string& remoteSubnet)
 {
 	remoteSubnet_ = remoteSubnet;
-	setCoreParameter("RemoteSubnet", remoteSubnet);
+	setParameter("RemoteSubnet", remoteSubnet);
 }
 
 bool CreateVpnConnectionRequest::getEffectImmediately()const
@@ -143,7 +145,7 @@ bool CreateVpnConnectionRequest::getEffectImmediately()const
 void CreateVpnConnectionRequest::setEffectImmediately(bool effectImmediately)
 {
 	effectImmediately_ = effectImmediately;
-	setCoreParameter("EffectImmediately", effectImmediately ? "true" : "false");
+	setParameter("EffectImmediately", effectImmediately ? "true" : "false");
 }
 
 std::string CreateVpnConnectionRequest::getResourceOwnerAccount()const
@@ -154,7 +156,7 @@ std::string CreateVpnConnectionRequest::getResourceOwnerAccount()const
 void CreateVpnConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string CreateVpnConnectionRequest::getOwnerAccount()const
@@ -165,7 +167,7 @@ std::string CreateVpnConnectionRequest::getOwnerAccount()const
 void CreateVpnConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::string CreateVpnConnectionRequest::getVpnGatewayId()const
@@ -176,7 +178,7 @@ std::string CreateVpnConnectionRequest::getVpnGatewayId()const
 void CreateVpnConnectionRequest::setVpnGatewayId(const std::string& vpnGatewayId)
 {
 	vpnGatewayId_ = vpnGatewayId;
-	setCoreParameter("VpnGatewayId", vpnGatewayId);
+	setParameter("VpnGatewayId", vpnGatewayId);
 }
 
 long CreateVpnConnectionRequest::getOwnerId()const
@@ -187,7 +189,18 @@ long CreateVpnConnectionRequest::getOwnerId()const
 void CreateVpnConnectionRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+bool CreateVpnConnectionRequest::getEnableDpd()const
+{
+	return enableDpd_;
+}
+
+void CreateVpnConnectionRequest::setEnableDpd(bool enableDpd)
+{
+	enableDpd_ = enableDpd;
+	setParameter("EnableDpd", enableDpd ? "true" : "false");
 }
 
 std::string CreateVpnConnectionRequest::getName()const
@@ -198,6 +211,17 @@ std::string CreateVpnConnectionRequest::getName()const
 void CreateVpnConnectionRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
+}
+
+bool CreateVpnConnectionRequest::getEnableNatTraversal()const
+{
+	return enableNatTraversal_;
+}
+
+void CreateVpnConnectionRequest::setEnableNatTraversal(bool enableNatTraversal)
+{
+	enableNatTraversal_ = enableNatTraversal;
+	setParameter("EnableNatTraversal", enableNatTraversal ? "true" : "false");
 }
 

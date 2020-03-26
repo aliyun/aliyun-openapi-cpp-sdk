@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ModifySurveyRequest;
 
 ModifySurveyRequest::ModifySurveyRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ModifySurvey")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifySurveyRequest::~ModifySurveyRequest()
 {}
@@ -33,7 +35,7 @@ std::string ModifySurveyRequest::getRole()const
 void ModifySurveyRequest::setRole(const std::string& role)
 {
 	role_ = role;
-	setCoreParameter("Role", role);
+	setParameter("Role", role);
 }
 
 std::string ModifySurveyRequest::getDescription()const
@@ -44,7 +46,7 @@ std::string ModifySurveyRequest::getDescription()const
 void ModifySurveyRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string ModifySurveyRequest::getFlowJson()const
@@ -55,7 +57,7 @@ std::string ModifySurveyRequest::getFlowJson()const
 void ModifySurveyRequest::setFlowJson(const std::string& flowJson)
 {
 	flowJson_ = flowJson;
-	setCoreParameter("FlowJson", flowJson);
+	setParameter("FlowJson", flowJson);
 }
 
 std::string ModifySurveyRequest::getGlobalQuestions()const
@@ -66,7 +68,7 @@ std::string ModifySurveyRequest::getGlobalQuestions()const
 void ModifySurveyRequest::setGlobalQuestions(const std::string& globalQuestions)
 {
 	globalQuestions_ = globalQuestions;
-	setCoreParameter("GlobalQuestions", globalQuestions);
+	setParameter("GlobalQuestions", globalQuestions);
 }
 
 std::string ModifySurveyRequest::getCorpora()const
@@ -77,7 +79,7 @@ std::string ModifySurveyRequest::getCorpora()const
 void ModifySurveyRequest::setCorpora(const std::string& corpora)
 {
 	corpora_ = corpora;
-	setCoreParameter("Corpora", corpora);
+	setParameter("Corpora", corpora);
 }
 
 std::string ModifySurveyRequest::getScenarioId()const
@@ -88,7 +90,7 @@ std::string ModifySurveyRequest::getScenarioId()const
 void ModifySurveyRequest::setScenarioId(const std::string& scenarioId)
 {
 	scenarioId_ = scenarioId;
-	setCoreParameter("ScenarioId", scenarioId);
+	setParameter("ScenarioId", scenarioId);
 }
 
 std::string ModifySurveyRequest::getSurveyId()const
@@ -99,7 +101,7 @@ std::string ModifySurveyRequest::getSurveyId()const
 void ModifySurveyRequest::setSurveyId(const std::string& surveyId)
 {
 	surveyId_ = surveyId;
-	setCoreParameter("SurveyId", surveyId);
+	setParameter("SurveyId", surveyId);
 }
 
 std::string ModifySurveyRequest::getSpeechOptimizationParam()const
@@ -110,7 +112,7 @@ std::string ModifySurveyRequest::getSpeechOptimizationParam()const
 void ModifySurveyRequest::setSpeechOptimizationParam(const std::string& speechOptimizationParam)
 {
 	speechOptimizationParam_ = speechOptimizationParam;
-	setCoreParameter("SpeechOptimizationParam", speechOptimizationParam);
+	setParameter("SpeechOptimizationParam", speechOptimizationParam);
 }
 
 std::string ModifySurveyRequest::getInstanceId()const
@@ -121,7 +123,7 @@ std::string ModifySurveyRequest::getInstanceId()const
 void ModifySurveyRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ModifySurveyRequest::getRound()const
@@ -132,7 +134,7 @@ int ModifySurveyRequest::getRound()const
 void ModifySurveyRequest::setRound(int round)
 {
 	round_ = round;
-	setCoreParameter("Round", std::to_string(round));
+	setParameter("Round", std::to_string(round));
 }
 
 std::string ModifySurveyRequest::getName()const
@@ -143,7 +145,7 @@ std::string ModifySurveyRequest::getName()const
 void ModifySurveyRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string ModifySurveyRequest::getFlowId()const
@@ -154,6 +156,6 @@ std::string ModifySurveyRequest::getFlowId()const
 void ModifySurveyRequest::setFlowId(const std::string& flowId)
 {
 	flowId_ = flowId;
-	setCoreParameter("FlowId", flowId);
+	setParameter("FlowId", flowId);
 }
 

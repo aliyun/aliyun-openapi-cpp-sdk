@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteNetworkOptimizationSettingRequest;
 
 DeleteNetworkOptimizationSettingRequest::DeleteNetworkOptimizationSettingRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteNetworkOptimizationSetting")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNetworkOptimizationSettingRequest::~DeleteNetworkOptimizationSettingRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteNetworkOptimizationSettingRequest::getResourceOwnerId()const
 void DeleteNetworkOptimizationSettingRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getType()const
@@ -44,7 +46,7 @@ std::string DeleteNetworkOptimizationSettingRequest::getType()const
 void DeleteNetworkOptimizationSettingRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteNetworkOptimizationSettingRequest::getRegionId()const
 void DeleteNetworkOptimizationSettingRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getNetworkOptId()const
@@ -66,7 +68,7 @@ std::string DeleteNetworkOptimizationSettingRequest::getNetworkOptId()const
 void DeleteNetworkOptimizationSettingRequest::setNetworkOptId(const std::string& networkOptId)
 {
 	networkOptId_ = networkOptId;
-	setCoreParameter("NetworkOptId", networkOptId);
+	setParameter("NetworkOptId", networkOptId);
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteNetworkOptimizationSettingRequest::getResourceOwnerAccount()co
 void DeleteNetworkOptimizationSettingRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteNetworkOptimizationSettingRequest::getOwnerAccount()const
 void DeleteNetworkOptimizationSettingRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteNetworkOptimizationSettingRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long DeleteNetworkOptimizationSettingRequest::getOwnerId()const
 void DeleteNetworkOptimizationSettingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteNetworkOptimizationSettingRequest::getDomain()const
@@ -110,6 +112,6 @@ std::string DeleteNetworkOptimizationSettingRequest::getDomain()const
 void DeleteNetworkOptimizationSettingRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
-	setCoreParameter("Domain", domain);
+	setParameter("Domain", domain);
 }
 

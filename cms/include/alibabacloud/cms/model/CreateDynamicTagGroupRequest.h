@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_CMS_EXPORT CreateDynamicTagGroupRequest : public RpcServiceRequest
 			{
+			public:
 				struct MatchExpress
 				{
 					std::string tagValue;

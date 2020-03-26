@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIpv6GatewayRequest;
 
 DeleteIpv6GatewayRequest::DeleteIpv6GatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIpv6Gateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIpv6GatewayRequest::~DeleteIpv6GatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIpv6GatewayRequest::getResourceOwnerId()const
 void DeleteIpv6GatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIpv6GatewayRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteIpv6GatewayRequest::getRegionId()const
 void DeleteIpv6GatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteIpv6GatewayRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteIpv6GatewayRequest::getResourceOwnerAccount()const
 void DeleteIpv6GatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIpv6GatewayRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteIpv6GatewayRequest::getOwnerAccount()const
 void DeleteIpv6GatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteIpv6GatewayRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DeleteIpv6GatewayRequest::getOwnerId()const
 void DeleteIpv6GatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteIpv6GatewayRequest::getIpv6GatewayId()const
@@ -88,6 +90,6 @@ std::string DeleteIpv6GatewayRequest::getIpv6GatewayId()const
 void DeleteIpv6GatewayRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 

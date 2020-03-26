@@ -20,7 +20,9 @@ using AlibabaCloud::Sas_api::Model::DescribeTotalAndRateLineRequest;
 
 DescribeTotalAndRateLineRequest::DescribeTotalAndRateLineRequest() :
 	RpcServiceRequest("sas-api", "2017-07-05", "DescribeTotalAndRateLine")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTotalAndRateLineRequest::~DescribeTotalAndRateLineRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeTotalAndRateLineRequest::getApiType()const
 void DescribeTotalAndRateLineRequest::setApiType(int apiType)
 {
 	apiType_ = apiType;
-	setCoreParameter("ApiType", std::to_string(apiType));
+	setParameter("ApiType", std::to_string(apiType));
 }
 
 std::string DescribeTotalAndRateLineRequest::getSourceIp()const
@@ -44,6 +46,6 @@ std::string DescribeTotalAndRateLineRequest::getSourceIp()const
 void DescribeTotalAndRateLineRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 

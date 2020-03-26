@@ -20,7 +20,9 @@ using AlibabaCloud::Emr::Model::DescribeJobRequest;
 
 DescribeJobRequest::DescribeJobRequest() :
 	RpcServiceRequest("emr", "2016-04-08", "DescribeJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeJobRequest::~DescribeJobRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeJobRequest::getResourceOwnerId()const
 void DescribeJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeJobRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeJobRequest::getAccessKeyId()const
 void DescribeJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeJobRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DescribeJobRequest::getRegionId()const
 void DescribeJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeJobRequest::getId()const
@@ -66,6 +68,6 @@ std::string DescribeJobRequest::getId()const
 void DescribeJobRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

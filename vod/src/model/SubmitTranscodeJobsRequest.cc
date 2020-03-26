@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::SubmitTranscodeJobsRequest;
 
 SubmitTranscodeJobsRequest::SubmitTranscodeJobsRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "SubmitTranscodeJobs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitTranscodeJobsRequest::~SubmitTranscodeJobsRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitTranscodeJobsRequest::getResourceOwnerId()const
 void SubmitTranscodeJobsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string SubmitTranscodeJobsRequest::getAccessKeyId()const
 void SubmitTranscodeJobsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitTranscodeJobsRequest::getUserData()const
@@ -55,7 +57,7 @@ std::string SubmitTranscodeJobsRequest::getUserData()const
 void SubmitTranscodeJobsRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string SubmitTranscodeJobsRequest::getResourceOwnerAccount()const
 void SubmitTranscodeJobsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitTranscodeJobsRequest::getVideoId()const
@@ -77,7 +79,7 @@ std::string SubmitTranscodeJobsRequest::getVideoId()const
 void SubmitTranscodeJobsRequest::setVideoId(const std::string& videoId)
 {
 	videoId_ = videoId;
-	setCoreParameter("VideoId", videoId);
+	setParameter("VideoId", videoId);
 }
 
 std::string SubmitTranscodeJobsRequest::getOverrideParams()const
@@ -88,7 +90,7 @@ std::string SubmitTranscodeJobsRequest::getOverrideParams()const
 void SubmitTranscodeJobsRequest::setOverrideParams(const std::string& overrideParams)
 {
 	overrideParams_ = overrideParams;
-	setCoreParameter("OverrideParams", overrideParams);
+	setParameter("OverrideParams", overrideParams);
 }
 
 long SubmitTranscodeJobsRequest::getOwnerId()const
@@ -99,7 +101,7 @@ long SubmitTranscodeJobsRequest::getOwnerId()const
 void SubmitTranscodeJobsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitTranscodeJobsRequest::getPriority()const
@@ -110,7 +112,7 @@ std::string SubmitTranscodeJobsRequest::getPriority()const
 void SubmitTranscodeJobsRequest::setPriority(const std::string& priority)
 {
 	priority_ = priority;
-	setCoreParameter("Priority", priority);
+	setParameter("Priority", priority);
 }
 
 std::string SubmitTranscodeJobsRequest::getPipelineId()const
@@ -121,7 +123,7 @@ std::string SubmitTranscodeJobsRequest::getPipelineId()const
 void SubmitTranscodeJobsRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
@@ -132,7 +134,7 @@ std::string SubmitTranscodeJobsRequest::getTemplateGroupId()const
 void SubmitTranscodeJobsRequest::setTemplateGroupId(const std::string& templateGroupId)
 {
 	templateGroupId_ = templateGroupId;
-	setCoreParameter("TemplateGroupId", templateGroupId);
+	setParameter("TemplateGroupId", templateGroupId);
 }
 
 std::string SubmitTranscodeJobsRequest::getFileUrl()const
@@ -143,7 +145,7 @@ std::string SubmitTranscodeJobsRequest::getFileUrl()const
 void SubmitTranscodeJobsRequest::setFileUrl(const std::string& fileUrl)
 {
 	fileUrl_ = fileUrl;
-	setCoreParameter("FileUrl", fileUrl);
+	setParameter("FileUrl", fileUrl);
 }
 
 std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
@@ -154,6 +156,6 @@ std::string SubmitTranscodeJobsRequest::getEncryptConfig()const
 void SubmitTranscodeJobsRequest::setEncryptConfig(const std::string& encryptConfig)
 {
 	encryptConfig_ = encryptConfig;
-	setCoreParameter("EncryptConfig", encryptConfig);
+	setParameter("EncryptConfig", encryptConfig);
 }
 

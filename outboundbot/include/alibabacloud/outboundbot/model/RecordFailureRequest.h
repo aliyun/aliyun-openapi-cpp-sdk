@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setDispositionCode(const std::string& dispositionCode);
 				std::string getCalledNumber()const;
 				void setCalledNumber(const std::string& calledNumber);
+				std::string getInstanceOwnerId()const;
+				void setInstanceOwnerId(const std::string& instanceOwnerId);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 
@@ -57,6 +59,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				std::string dispositionCode_;
 				std::string calledNumber_;
+				std::string instanceOwnerId_;
 				std::string taskId_;
 
 			};

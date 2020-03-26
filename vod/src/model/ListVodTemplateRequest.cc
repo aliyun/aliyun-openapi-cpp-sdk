@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::ListVodTemplateRequest;
 
 ListVodTemplateRequest::ListVodTemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "ListVodTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVodTemplateRequest::~ListVodTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long ListVodTemplateRequest::getResourceOwnerId()const
 void ListVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ListVodTemplateRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string ListVodTemplateRequest::getResourceOwnerAccount()const
 void ListVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long ListVodTemplateRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long ListVodTemplateRequest::getOwnerId()const
 void ListVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ListVodTemplateRequest::getTemplateType()const
@@ -66,7 +68,7 @@ std::string ListVodTemplateRequest::getTemplateType()const
 void ListVodTemplateRequest::setTemplateType(const std::string& templateType)
 {
 	templateType_ = templateType;
-	setCoreParameter("TemplateType", templateType);
+	setParameter("TemplateType", templateType);
 }
 
 std::string ListVodTemplateRequest::getAppId()const
@@ -77,6 +79,6 @@ std::string ListVodTemplateRequest::getAppId()const
 void ListVodTemplateRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

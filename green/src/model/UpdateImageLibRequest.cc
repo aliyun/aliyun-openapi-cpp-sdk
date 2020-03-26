@@ -20,7 +20,9 @@ using AlibabaCloud::Green::Model::UpdateImageLibRequest;
 
 UpdateImageLibRequest::UpdateImageLibRequest() :
 	RpcServiceRequest("green", "2017-08-23", "UpdateImageLib")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateImageLibRequest::~UpdateImageLibRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpdateImageLibRequest::getScene()const
 void UpdateImageLibRequest::setScene(const std::string& scene)
 {
 	scene_ = scene;
-	setCoreParameter("Scene", scene);
+	setParameter("Scene", scene);
 }
 
 std::string UpdateImageLibRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string UpdateImageLibRequest::getSourceIp()const
 void UpdateImageLibRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 bool UpdateImageLibRequest::getEnable()const
@@ -55,7 +57,7 @@ bool UpdateImageLibRequest::getEnable()const
 void UpdateImageLibRequest::setEnable(bool enable)
 {
 	enable_ = enable;
-	setCoreParameter("Enable", enable ? "true" : "false");
+	setParameter("Enable", enable ? "true" : "false");
 }
 
 int UpdateImageLibRequest::getId()const
@@ -66,7 +68,7 @@ int UpdateImageLibRequest::getId()const
 void UpdateImageLibRequest::setId(int id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string UpdateImageLibRequest::getBizTypes()const
@@ -77,7 +79,7 @@ std::string UpdateImageLibRequest::getBizTypes()const
 void UpdateImageLibRequest::setBizTypes(const std::string& bizTypes)
 {
 	bizTypes_ = bizTypes;
-	setCoreParameter("BizTypes", bizTypes);
+	setParameter("BizTypes", bizTypes);
 }
 
 std::string UpdateImageLibRequest::getName()const
@@ -88,7 +90,7 @@ std::string UpdateImageLibRequest::getName()const
 void UpdateImageLibRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 std::string UpdateImageLibRequest::getCategory()const
@@ -99,6 +101,6 @@ std::string UpdateImageLibRequest::getCategory()const
 void UpdateImageLibRequest::setCategory(const std::string& category)
 {
 	category_ = category;
-	setCoreParameter("Category", category);
+	setParameter("Category", category);
 }
 

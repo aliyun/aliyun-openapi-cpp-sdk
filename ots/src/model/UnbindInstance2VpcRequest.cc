@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::UnbindInstance2VpcRequest;
 
 UnbindInstance2VpcRequest::UnbindInstance2VpcRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "UnbindInstance2Vpc")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindInstance2VpcRequest::~UnbindInstance2VpcRequest()
 {}
-
-std::string UnbindInstance2VpcRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void UnbindInstance2VpcRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long UnbindInstance2VpcRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long UnbindInstance2VpcRequest::getResourceOwnerId()const
 void UnbindInstance2VpcRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string UnbindInstance2VpcRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void UnbindInstance2VpcRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindInstance2VpcRequest::getRegionNo()const
@@ -55,7 +57,7 @@ std::string UnbindInstance2VpcRequest::getRegionNo()const
 void UnbindInstance2VpcRequest::setRegionNo(const std::string& regionNo)
 {
 	regionNo_ = regionNo;
-	setCoreParameter("RegionNo", regionNo);
+	setParameter("RegionNo", regionNo);
 }
 
 std::string UnbindInstance2VpcRequest::getInstanceVpcName()const
@@ -66,7 +68,7 @@ std::string UnbindInstance2VpcRequest::getInstanceVpcName()const
 void UnbindInstance2VpcRequest::setInstanceVpcName(const std::string& instanceVpcName)
 {
 	instanceVpcName_ = instanceVpcName;
-	setCoreParameter("InstanceVpcName", instanceVpcName);
+	setParameter("InstanceVpcName", instanceVpcName);
 }
 
 std::string UnbindInstance2VpcRequest::getInstanceName()const
@@ -77,6 +79,6 @@ std::string UnbindInstance2VpcRequest::getInstanceName()const
 void UnbindInstance2VpcRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

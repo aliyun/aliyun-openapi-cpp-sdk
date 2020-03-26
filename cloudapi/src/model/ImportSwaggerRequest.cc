@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::ImportSwaggerRequest;
 
 ImportSwaggerRequest::ImportSwaggerRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "ImportSwagger")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImportSwaggerRequest::~ImportSwaggerRequest()
 {}
@@ -33,7 +35,7 @@ std::string ImportSwaggerRequest::getDataFormat()const
 void ImportSwaggerRequest::setDataFormat(const std::string& dataFormat)
 {
 	dataFormat_ = dataFormat;
-	setCoreParameter("DataFormat", dataFormat);
+	setParameter("DataFormat", dataFormat);
 }
 
 std::string ImportSwaggerRequest::getData()const
@@ -44,7 +46,7 @@ std::string ImportSwaggerRequest::getData()const
 void ImportSwaggerRequest::setData(const std::string& data)
 {
 	data_ = data;
-	setCoreParameter("Data", data);
+	setBodyParameter("Data", data);
 }
 
 std::string ImportSwaggerRequest::getGroupId()const
@@ -55,7 +57,7 @@ std::string ImportSwaggerRequest::getGroupId()const
 void ImportSwaggerRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 bool ImportSwaggerRequest::getOverwrite()const
@@ -66,6 +68,6 @@ bool ImportSwaggerRequest::getOverwrite()const
 void ImportSwaggerRequest::setOverwrite(bool overwrite)
 {
 	overwrite_ = overwrite;
-	setCoreParameter("Overwrite", overwrite ? "true" : "false");
+	setParameter("Overwrite", overwrite ? "true" : "false");
 }
 

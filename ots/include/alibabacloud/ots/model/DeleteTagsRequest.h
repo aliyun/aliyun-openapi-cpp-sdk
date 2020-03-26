@@ -30,6 +30,7 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_OTS_EXPORT DeleteTagsRequest : public RpcServiceRequest
 			{
+			public:
 				struct TagInfo
 				{
 					std::string tagValue;
@@ -40,18 +41,18 @@ namespace AlibabaCloud
 				DeleteTagsRequest();
 				~DeleteTagsRequest();
 
-				std::string getAccess_key_id()const;
-				void setAccess_key_id(const std::string& access_key_id);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getInstanceName()const;
 				void setInstanceName(const std::string& instanceName);
 				std::vector<TagInfo> getTagInfo()const;
 				void setTagInfo(const std::vector<TagInfo>& tagInfo);
 
             private:
-				std::string access_key_id_;
 				long resourceOwnerId_;
+				std::string accessKeyId_;
 				std::string instanceName_;
 				std::vector<TagInfo> tagInfo_;
 

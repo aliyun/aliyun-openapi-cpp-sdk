@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::ReportFacerecogJobResultRequest;
 
 ReportFacerecogJobResultRequest::ReportFacerecogJobResultRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "ReportFacerecogJobResult")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReportFacerecogJobResultRequest::~ReportFacerecogJobResultRequest()
 {}
@@ -33,7 +35,7 @@ long ReportFacerecogJobResultRequest::getResourceOwnerId()const
 void ReportFacerecogJobResultRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ReportFacerecogJobResultRequest::getFacerecog()const
@@ -44,7 +46,7 @@ std::string ReportFacerecogJobResultRequest::getFacerecog()const
 void ReportFacerecogJobResultRequest::setFacerecog(const std::string& facerecog)
 {
 	facerecog_ = facerecog;
-	setCoreParameter("Facerecog", facerecog);
+	setParameter("Facerecog", facerecog);
 }
 
 std::string ReportFacerecogJobResultRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ReportFacerecogJobResultRequest::getAccessKeyId()const
 void ReportFacerecogJobResultRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReportFacerecogJobResultRequest::getJobId()const
@@ -66,7 +68,7 @@ std::string ReportFacerecogJobResultRequest::getJobId()const
 void ReportFacerecogJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
-	setCoreParameter("JobId", jobId);
+	setParameter("JobId", jobId);
 }
 
 std::string ReportFacerecogJobResultRequest::getDetails()const
@@ -77,7 +79,7 @@ std::string ReportFacerecogJobResultRequest::getDetails()const
 void ReportFacerecogJobResultRequest::setDetails(const std::string& details)
 {
 	details_ = details;
-	setCoreParameter("Details", details);
+	setParameter("Details", details);
 }
 
 std::string ReportFacerecogJobResultRequest::getResourceOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ReportFacerecogJobResultRequest::getResourceOwnerAccount()const
 void ReportFacerecogJobResultRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ReportFacerecogJobResultRequest::getOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ReportFacerecogJobResultRequest::getOwnerAccount()const
 void ReportFacerecogJobResultRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ReportFacerecogJobResultRequest::getOwnerId()const
@@ -110,6 +112,6 @@ long ReportFacerecogJobResultRequest::getOwnerId()const
 void ReportFacerecogJobResultRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

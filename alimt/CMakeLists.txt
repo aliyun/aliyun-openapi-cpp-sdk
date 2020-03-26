@@ -23,6 +23,8 @@ set(alimt_public_header
 set(alimt_public_header_model 
 	include/alibabacloud/alimt/model/CreateDocTranslateTaskRequest.h
 	include/alibabacloud/alimt/model/CreateDocTranslateTaskResult.h
+	include/alibabacloud/alimt/model/GetDetectLanguageRequest.h
+	include/alibabacloud/alimt/model/GetDetectLanguageResult.h
 	include/alibabacloud/alimt/model/GetDocTranslateTaskRequest.h
 	include/alibabacloud/alimt/model/GetDocTranslateTaskResult.h
 	include/alibabacloud/alimt/model/TranslateRequest.h
@@ -38,6 +40,8 @@ set(alimt_src
 	src/AlimtClient.cc
 	src/model/CreateDocTranslateTaskRequest.cc
 	src/model/CreateDocTranslateTaskResult.cc
+	src/model/GetDetectLanguageRequest.cc
+	src/model/GetDetectLanguageResult.cc
 	src/model/GetDocTranslateTaskRequest.cc
 	src/model/GetDocTranslateTaskResult.cc
 	src/model/TranslateRequest.cc

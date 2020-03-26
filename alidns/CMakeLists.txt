@@ -45,6 +45,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/ChangeDomainGroupResult.h
 	include/alibabacloud/alidns/model/ChangeDomainOfDnsProductRequest.h
 	include/alibabacloud/alidns/model/ChangeDomainOfDnsProductResult.h
+	include/alibabacloud/alidns/model/CopyGtmConfigRequest.h
+	include/alibabacloud/alidns/model/CopyGtmConfigResult.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesRequest.h
 	include/alibabacloud/alidns/model/DeleteCustomLinesResult.h
 	include/alibabacloud/alidns/model/DeleteDomainRequest.h
@@ -220,6 +222,8 @@ set(alidns_src
 	src/model/ChangeDomainGroupResult.cc
 	src/model/ChangeDomainOfDnsProductRequest.cc
 	src/model/ChangeDomainOfDnsProductResult.cc
+	src/model/CopyGtmConfigRequest.cc
+	src/model/CopyGtmConfigResult.cc
 	src/model/DeleteCustomLinesRequest.cc
 	src/model/DeleteCustomLinesResult.cc
 	src/model/DeleteDomainRequest.cc

@@ -20,21 +20,12 @@ using AlibabaCloud::Iot::Model::BindGatewayToEdgeInstanceRequest;
 
 BindGatewayToEdgeInstanceRequest::BindGatewayToEdgeInstanceRequest() :
 	RpcServiceRequest("iot", "2018-01-20", "BindGatewayToEdgeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindGatewayToEdgeInstanceRequest::~BindGatewayToEdgeInstanceRequest()
 {}
-
-std::string BindGatewayToEdgeInstanceRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void BindGatewayToEdgeInstanceRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setCoreParameter("ProductKey", productKey);
-}
 
 std::string BindGatewayToEdgeInstanceRequest::getAccessKeyId()const
 {
@@ -44,7 +35,7 @@ std::string BindGatewayToEdgeInstanceRequest::getAccessKeyId()const
 void BindGatewayToEdgeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string BindGatewayToEdgeInstanceRequest::getIotId()const
@@ -55,18 +46,7 @@ std::string BindGatewayToEdgeInstanceRequest::getIotId()const
 void BindGatewayToEdgeInstanceRequest::setIotId(const std::string& iotId)
 {
 	iotId_ = iotId;
-	setCoreParameter("IotId", iotId);
-}
-
-std::string BindGatewayToEdgeInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void BindGatewayToEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("IotId", iotId);
 }
 
 std::string BindGatewayToEdgeInstanceRequest::getIotInstanceId()const
@@ -77,7 +57,51 @@ std::string BindGatewayToEdgeInstanceRequest::getIotInstanceId()const
 void BindGatewayToEdgeInstanceRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
-	setCoreParameter("IotInstanceId", iotInstanceId);
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BindGatewayToEdgeInstanceRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void BindGatewayToEdgeInstanceRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string BindGatewayToEdgeInstanceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void BindGatewayToEdgeInstanceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string BindGatewayToEdgeInstanceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BindGatewayToEdgeInstanceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BindGatewayToEdgeInstanceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BindGatewayToEdgeInstanceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string BindGatewayToEdgeInstanceRequest::getDeviceName()const
@@ -88,6 +112,6 @@ std::string BindGatewayToEdgeInstanceRequest::getDeviceName()const
 void BindGatewayToEdgeInstanceRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
-	setCoreParameter("DeviceName", deviceName);
+	setParameter("DeviceName", deviceName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Drds::Model::RemoveReadOnlyAccountRequest;
 
 RemoveReadOnlyAccountRequest::RemoveReadOnlyAccountRequest() :
 	RpcServiceRequest("drds", "2017-10-16", "RemoveReadOnlyAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveReadOnlyAccountRequest::~RemoveReadOnlyAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveReadOnlyAccountRequest::getDrdsInstanceId()const
 void RemoveReadOnlyAccountRequest::setDrdsInstanceId(const std::string& drdsInstanceId)
 {
 	drdsInstanceId_ = drdsInstanceId;
-	setCoreParameter("DrdsInstanceId", drdsInstanceId);
+	setParameter("DrdsInstanceId", drdsInstanceId);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string RemoveReadOnlyAccountRequest::getAccessKeyId()const
 void RemoveReadOnlyAccountRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string RemoveReadOnlyAccountRequest::getDbName()const
@@ -55,7 +57,7 @@ std::string RemoveReadOnlyAccountRequest::getDbName()const
 void RemoveReadOnlyAccountRequest::setDbName(const std::string& dbName)
 {
 	dbName_ = dbName;
-	setCoreParameter("DbName", dbName);
+	setParameter("DbName", dbName);
 }
 
 std::string RemoveReadOnlyAccountRequest::getAccountName()const
@@ -66,6 +68,6 @@ std::string RemoveReadOnlyAccountRequest::getAccountName()const
 void RemoveReadOnlyAccountRequest::setAccountName(const std::string& accountName)
 {
 	accountName_ = accountName;
-	setCoreParameter("AccountName", accountName);
+	setParameter("AccountName", accountName);
 }
 

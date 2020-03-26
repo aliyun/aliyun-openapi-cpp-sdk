@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::DenySupplementRequest;
 
 DenySupplementRequest::DenySupplementRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "DenySupplement")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DenySupplementRequest::~DenySupplementRequest()
 {}
@@ -33,6 +35,6 @@ long DenySupplementRequest::getId()const
 void DenySupplementRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 

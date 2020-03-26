@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateSignaturePeopleCertificateRequest;
 
 CreateSignaturePeopleCertificateRequest::CreateSignaturePeopleCertificateRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateSignaturePeopleCertificate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateSignaturePeopleCertificateRequest::~CreateSignaturePeopleCertificateRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateSignaturePeopleCertificateRequest::getIdentityNumber()const
 void CreateSignaturePeopleCertificateRequest::setIdentityNumber(const std::string& identityNumber)
 {
 	identityNumber_ = identityNumber;
-	setCoreParameter("IdentityNumber", identityNumber);
+	setParameter("IdentityNumber", identityNumber);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getPeopleName()const
@@ -44,7 +46,7 @@ std::string CreateSignaturePeopleCertificateRequest::getPeopleName()const
 void CreateSignaturePeopleCertificateRequest::setPeopleName(const std::string& peopleName)
 {
 	peopleName_ = peopleName;
-	setCoreParameter("PeopleName", peopleName);
+	setParameter("PeopleName", peopleName);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateSignaturePeopleCertificateRequest::getResourceGroupId()const
 void CreateSignaturePeopleCertificateRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateSignaturePeopleCertificateRequest::getSourceIp()const
 void CreateSignaturePeopleCertificateRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getLang()const
@@ -77,7 +79,7 @@ std::string CreateSignaturePeopleCertificateRequest::getLang()const
 void CreateSignaturePeopleCertificateRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getEmail()const
@@ -88,7 +90,7 @@ std::string CreateSignaturePeopleCertificateRequest::getEmail()const
 void CreateSignaturePeopleCertificateRequest::setEmail(const std::string& email)
 {
 	email_ = email;
-	setCoreParameter("Email", email);
+	setParameter("Email", email);
 }
 
 std::string CreateSignaturePeopleCertificateRequest::getMobile()const
@@ -99,6 +101,6 @@ std::string CreateSignaturePeopleCertificateRequest::getMobile()const
 void CreateSignaturePeopleCertificateRequest::setMobile(const std::string& mobile)
 {
 	mobile_ = mobile;
-	setCoreParameter("Mobile", mobile);
+	setParameter("Mobile", mobile);
 }
 

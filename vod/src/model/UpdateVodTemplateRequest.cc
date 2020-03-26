@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::UpdateVodTemplateRequest;
 
 UpdateVodTemplateRequest::UpdateVodTemplateRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "UpdateVodTemplate")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpdateVodTemplateRequest::~UpdateVodTemplateRequest()
 {}
@@ -33,7 +35,7 @@ long UpdateVodTemplateRequest::getResourceOwnerId()const
 void UpdateVodTemplateRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UpdateVodTemplateRequest::getTemplateConfig()const
@@ -44,7 +46,7 @@ std::string UpdateVodTemplateRequest::getTemplateConfig()const
 void UpdateVodTemplateRequest::setTemplateConfig(const std::string& templateConfig)
 {
 	templateConfig_ = templateConfig;
-	setCoreParameter("TemplateConfig", templateConfig);
+	setParameter("TemplateConfig", templateConfig);
 }
 
 std::string UpdateVodTemplateRequest::getVodTemplateId()const
@@ -55,7 +57,7 @@ std::string UpdateVodTemplateRequest::getVodTemplateId()const
 void UpdateVodTemplateRequest::setVodTemplateId(const std::string& vodTemplateId)
 {
 	vodTemplateId_ = vodTemplateId;
-	setCoreParameter("VodTemplateId", vodTemplateId);
+	setParameter("VodTemplateId", vodTemplateId);
 }
 
 std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string UpdateVodTemplateRequest::getResourceOwnerAccount()const
 void UpdateVodTemplateRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long UpdateVodTemplateRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long UpdateVodTemplateRequest::getOwnerId()const
 void UpdateVodTemplateRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpdateVodTemplateRequest::getName()const
@@ -88,6 +90,6 @@ std::string UpdateVodTemplateRequest::getName()const
 void UpdateVodTemplateRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::CreatePackageRequest;
 
 CreatePackageRequest::CreatePackageRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages");
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreatePackageRequest::~CreatePackageRequest()
 {}
@@ -33,7 +36,7 @@ std::string CreatePackageRequest::getProjectName()const
 void CreatePackageRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string CreatePackageRequest::getOssBucket()const
@@ -44,7 +47,7 @@ std::string CreatePackageRequest::getOssBucket()const
 void CreatePackageRequest::setOssBucket(const std::string& ossBucket)
 {
 	ossBucket_ = ossBucket;
-	setCoreParameter("OssBucket", ossBucket);
+	setBodyParameter("OssBucket", ossBucket);
 }
 
 std::string CreatePackageRequest::getOssOwner()const
@@ -55,7 +58,7 @@ std::string CreatePackageRequest::getOssOwner()const
 void CreatePackageRequest::setOssOwner(const std::string& ossOwner)
 {
 	ossOwner_ = ossOwner;
-	setCoreParameter("OssOwner", ossOwner);
+	setBodyParameter("OssOwner", ossOwner);
 }
 
 std::string CreatePackageRequest::getRegionId()const
@@ -66,7 +69,7 @@ std::string CreatePackageRequest::getRegionId()const
 void CreatePackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string CreatePackageRequest::getPackageName()const
@@ -77,7 +80,7 @@ std::string CreatePackageRequest::getPackageName()const
 void CreatePackageRequest::setPackageName(const std::string& packageName)
 {
 	packageName_ = packageName;
-	setCoreParameter("PackageName", packageName);
+	setBodyParameter("PackageName", packageName);
 }
 
 std::string CreatePackageRequest::getOssEndpoint()const
@@ -88,7 +91,7 @@ std::string CreatePackageRequest::getOssEndpoint()const
 void CreatePackageRequest::setOssEndpoint(const std::string& ossEndpoint)
 {
 	ossEndpoint_ = ossEndpoint;
-	setCoreParameter("OssEndpoint", ossEndpoint);
+	setBodyParameter("OssEndpoint", ossEndpoint);
 }
 
 std::string CreatePackageRequest::getDescription()const
@@ -99,7 +102,7 @@ std::string CreatePackageRequest::getDescription()const
 void CreatePackageRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setBodyParameter("Description", description);
 }
 
 std::string CreatePackageRequest::getTag()const
@@ -110,7 +113,7 @@ std::string CreatePackageRequest::getTag()const
 void CreatePackageRequest::setTag(const std::string& tag)
 {
 	tag_ = tag;
-	setCoreParameter("Tag", tag);
+	setBodyParameter("Tag", tag);
 }
 
 std::string CreatePackageRequest::getOriginName()const
@@ -121,7 +124,7 @@ std::string CreatePackageRequest::getOriginName()const
 void CreatePackageRequest::setOriginName(const std::string& originName)
 {
 	originName_ = originName;
-	setCoreParameter("OriginName", originName);
+	setBodyParameter("OriginName", originName);
 }
 
 std::string CreatePackageRequest::getType()const
@@ -132,7 +135,7 @@ std::string CreatePackageRequest::getType()const
 void CreatePackageRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setBodyParameter("Type", type);
 }
 
 std::string CreatePackageRequest::getOssPath()const
@@ -143,7 +146,7 @@ std::string CreatePackageRequest::getOssPath()const
 void CreatePackageRequest::setOssPath(const std::string& ossPath)
 {
 	ossPath_ = ossPath;
-	setCoreParameter("OssPath", ossPath);
+	setBodyParameter("OssPath", ossPath);
 }
 
 std::string CreatePackageRequest::getMd5()const
@@ -154,6 +157,6 @@ std::string CreatePackageRequest::getMd5()const
 void CreatePackageRequest::setMd5(const std::string& md5)
 {
 	md5_ = md5;
-	setCoreParameter("Md5", md5);
+	setBodyParameter("Md5", md5);
 }
 

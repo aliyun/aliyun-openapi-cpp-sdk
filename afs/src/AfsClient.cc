@@ -195,6 +195,150 @@ AfsClient::CreateConfigurationOutcomeCallable AfsClient::createConfigurationCall
 	return task->get_future();
 }
 
+AfsClient::DescribeAfsConfigNameOutcome AfsClient::describeAfsConfigName(const DescribeAfsConfigNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAfsConfigNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAfsConfigNameOutcome(DescribeAfsConfigNameResult(outcome.result()));
+	else
+		return DescribeAfsConfigNameOutcome(outcome.error());
+}
+
+void AfsClient::describeAfsConfigNameAsync(const DescribeAfsConfigNameRequest& request, const DescribeAfsConfigNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAfsConfigName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeAfsConfigNameOutcomeCallable AfsClient::describeAfsConfigNameCallable(const DescribeAfsConfigNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAfsConfigNameOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAfsConfigName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeAfsOneConfDataOutcome AfsClient::describeAfsOneConfData(const DescribeAfsOneConfDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAfsOneConfDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAfsOneConfDataOutcome(DescribeAfsOneConfDataResult(outcome.result()));
+	else
+		return DescribeAfsOneConfDataOutcome(outcome.error());
+}
+
+void AfsClient::describeAfsOneConfDataAsync(const DescribeAfsOneConfDataRequest& request, const DescribeAfsOneConfDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAfsOneConfData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeAfsOneConfDataOutcomeCallable AfsClient::describeAfsOneConfDataCallable(const DescribeAfsOneConfDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAfsOneConfDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAfsOneConfData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeAfsTotalConfDataOutcome AfsClient::describeAfsTotalConfData(const DescribeAfsTotalConfDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAfsTotalConfDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAfsTotalConfDataOutcome(DescribeAfsTotalConfDataResult(outcome.result()));
+	else
+		return DescribeAfsTotalConfDataOutcome(outcome.error());
+}
+
+void AfsClient::describeAfsTotalConfDataAsync(const DescribeAfsTotalConfDataRequest& request, const DescribeAfsTotalConfDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAfsTotalConfData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeAfsTotalConfDataOutcomeCallable AfsClient::describeAfsTotalConfDataCallable(const DescribeAfsTotalConfDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAfsTotalConfDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAfsTotalConfData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AfsClient::DescribeAfsVerifySigDataOutcome AfsClient::describeAfsVerifySigData(const DescribeAfsVerifySigDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAfsVerifySigDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAfsVerifySigDataOutcome(DescribeAfsVerifySigDataResult(outcome.result()));
+	else
+		return DescribeAfsVerifySigDataOutcome(outcome.error());
+}
+
+void AfsClient::describeAfsVerifySigDataAsync(const DescribeAfsVerifySigDataRequest& request, const DescribeAfsVerifySigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAfsVerifySigData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AfsClient::DescribeAfsVerifySigDataOutcomeCallable AfsClient::describeAfsVerifySigDataCallable(const DescribeAfsVerifySigDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAfsVerifySigDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAfsVerifySigData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AfsClient::DescribeCaptchaDayOutcome AfsClient::describeCaptchaDay(const DescribeCaptchaDayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

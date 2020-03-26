@@ -20,7 +20,9 @@ using AlibabaCloud::Aegis::Model::CreateInstanceRequest;
 
 CreateInstanceRequest::CreateInstanceRequest() :
 	RpcServiceRequest("aegis", "2016-11-11", "CreateInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateInstanceRequest::~CreateInstanceRequest()
 {}
@@ -33,7 +35,7 @@ bool CreateInstanceRequest::getIsAutoRenew()const
 void CreateInstanceRequest::setIsAutoRenew(bool isAutoRenew)
 {
 	isAutoRenew_ = isAutoRenew;
-	setCoreParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
+	setParameter("IsAutoRenew", isAutoRenew ? "true" : "false");
 }
 
 std::string CreateInstanceRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string CreateInstanceRequest::getClientToken()const
 void CreateInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 int CreateInstanceRequest::getVmNumber()const
@@ -55,7 +57,7 @@ int CreateInstanceRequest::getVmNumber()const
 void CreateInstanceRequest::setVmNumber(int vmNumber)
 {
 	vmNumber_ = vmNumber;
-	setCoreParameter("VmNumber", std::to_string(vmNumber));
+	setParameter("VmNumber", std::to_string(vmNumber));
 }
 
 long CreateInstanceRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long CreateInstanceRequest::getOwnerId()const
 void CreateInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int CreateInstanceRequest::getAutoRenewDuration()const
@@ -77,7 +79,7 @@ int CreateInstanceRequest::getAutoRenewDuration()const
 void CreateInstanceRequest::setAutoRenewDuration(int autoRenewDuration)
 {
 	autoRenewDuration_ = autoRenewDuration;
-	setCoreParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
+	setParameter("AutoRenewDuration", std::to_string(autoRenewDuration));
 }
 
 int CreateInstanceRequest::getDuration()const
@@ -88,7 +90,7 @@ int CreateInstanceRequest::getDuration()const
 void CreateInstanceRequest::setDuration(int duration)
 {
 	duration_ = duration;
-	setCoreParameter("Duration", std::to_string(duration));
+	setParameter("Duration", std::to_string(duration));
 }
 
 int CreateInstanceRequest::getVersionCode()const
@@ -99,7 +101,7 @@ int CreateInstanceRequest::getVersionCode()const
 void CreateInstanceRequest::setVersionCode(int versionCode)
 {
 	versionCode_ = versionCode;
-	setCoreParameter("VersionCode", std::to_string(versionCode));
+	setParameter("VersionCode", std::to_string(versionCode));
 }
 
 std::string CreateInstanceRequest::getPricingCycle()const
@@ -110,6 +112,6 @@ std::string CreateInstanceRequest::getPricingCycle()const
 void CreateInstanceRequest::setPricingCycle(const std::string& pricingCycle)
 {
 	pricingCycle_ = pricingCycle;
-	setCoreParameter("PricingCycle", pricingCycle);
+	setParameter("PricingCycle", pricingCycle);
 }
 

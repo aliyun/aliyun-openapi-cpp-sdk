@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListRegisteredTagsRequest;
 
 ListRegisteredTagsRequest::ListRegisteredTagsRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListRegisteredTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRegisteredTagsRequest::~ListRegisteredTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRegisteredTagsRequest::getStoreName()const
 void ListRegisteredTagsRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::vector<std::string> ListRegisteredTagsRequest::getLang()const
@@ -44,7 +46,8 @@ std::vector<std::string> ListRegisteredTagsRequest::getLang()const
 void ListRegisteredTagsRequest::setLang(const std::vector<std::string>& lang)
 {
 	lang_ = lang;
-	for(int i = 0; i!= lang.size(); i++)
-		setCoreParameter("Lang."+ std::to_string(i), lang.at(i));
+	for(int dep1 = 0; dep1!= lang.size(); dep1++) {
+		setParameter("Lang."+ std::to_string(dep1), lang.at(dep1));
+	}
 }
 

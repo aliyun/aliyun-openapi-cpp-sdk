@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeSignatureTradeListRequest;
 
 DescribeSignatureTradeListRequest::DescribeSignatureTradeListRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeSignatureTradeList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSignatureTradeListRequest::~DescribeSignatureTradeListRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeSignatureTradeListRequest::getResourceGroupId()const
 void DescribeSignatureTradeListRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeSignatureTradeListRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeSignatureTradeListRequest::getSourceIp()const
 void DescribeSignatureTradeListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchType()const
@@ -55,7 +57,7 @@ std::string DescribeSignatureTradeListRequest::getSearchType()const
 void DescribeSignatureTradeListRequest::setSearchType(const std::string& searchType)
 {
 	searchType_ = searchType;
-	setCoreParameter("SearchType", searchType);
+	setParameter("SearchType", searchType);
 }
 
 std::string DescribeSignatureTradeListRequest::getLang()const
@@ -66,7 +68,7 @@ std::string DescribeSignatureTradeListRequest::getLang()const
 void DescribeSignatureTradeListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeSignatureTradeListRequest::getSearchValue()const
@@ -77,7 +79,7 @@ std::string DescribeSignatureTradeListRequest::getSearchValue()const
 void DescribeSignatureTradeListRequest::setSearchValue(const std::string& searchValue)
 {
 	searchValue_ = searchValue;
-	setCoreParameter("SearchValue", searchValue);
+	setParameter("SearchValue", searchValue);
 }
 
 int DescribeSignatureTradeListRequest::getShowSize()const
@@ -88,7 +90,7 @@ int DescribeSignatureTradeListRequest::getShowSize()const
 void DescribeSignatureTradeListRequest::setShowSize(int showSize)
 {
 	showSize_ = showSize;
-	setCoreParameter("ShowSize", std::to_string(showSize));
+	setParameter("ShowSize", std::to_string(showSize));
 }
 
 int DescribeSignatureTradeListRequest::getCurrentPage()const
@@ -99,6 +101,6 @@ int DescribeSignatureTradeListRequest::getCurrentPage()const
 void DescribeSignatureTradeListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 

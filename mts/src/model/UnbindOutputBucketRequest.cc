@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::UnbindOutputBucketRequest;
 
 UnbindOutputBucketRequest::UnbindOutputBucketRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "UnbindOutputBucket")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindOutputBucketRequest::~UnbindOutputBucketRequest()
 {}
@@ -33,7 +35,7 @@ long UnbindOutputBucketRequest::getResourceOwnerId()const
 void UnbindOutputBucketRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnbindOutputBucketRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string UnbindOutputBucketRequest::getResourceOwnerAccount()const
 void UnbindOutputBucketRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnbindOutputBucketRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string UnbindOutputBucketRequest::getOwnerAccount()const
 void UnbindOutputBucketRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long UnbindOutputBucketRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long UnbindOutputBucketRequest::getOwnerId()const
 void UnbindOutputBucketRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UnbindOutputBucketRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string UnbindOutputBucketRequest::getAccessKeyId()const
 void UnbindOutputBucketRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindOutputBucketRequest::getBucket()const
@@ -88,6 +90,6 @@ std::string UnbindOutputBucketRequest::getBucket()const
 void UnbindOutputBucketRequest::setBucket(const std::string& bucket)
 {
 	bucket_ = bucket;
-	setCoreParameter("Bucket", bucket);
+	setParameter("Bucket", bucket);
 }
 

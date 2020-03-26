@@ -35,7 +35,7 @@ std::string CancelCallRequest::getCallId()const
 void CancelCallRequest::setCallId(const std::string& callId)
 {
 	callId_ = callId;
-	setCoreParameter("CallId", callId);
+	setParameter("CallId", callId);
 }
 
 long CancelCallRequest::getResourceOwnerId()const
@@ -46,7 +46,7 @@ long CancelCallRequest::getResourceOwnerId()const
 void CancelCallRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string CancelCallRequest::getResourceOwnerAccount()const
@@ -57,7 +57,7 @@ std::string CancelCallRequest::getResourceOwnerAccount()const
 void CancelCallRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long CancelCallRequest::getOwnerId()const
@@ -68,7 +68,7 @@ long CancelCallRequest::getOwnerId()const
 void CancelCallRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CancelCallRequest::getAccessKeyId()const
@@ -79,6 +79,6 @@ std::string CancelCallRequest::getAccessKeyId()const
 void CancelCallRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

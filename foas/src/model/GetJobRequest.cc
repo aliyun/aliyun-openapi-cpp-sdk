@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetJobRequest;
 
 GetJobRequest::GetJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/jobs/[jobName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetJobRequest::~GetJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetJobRequest::getProjectName()const
 void GetJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string GetJobRequest::getRegionId()const
 void GetJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetJobRequest::getJobName()const
@@ -55,6 +58,6 @@ std::string GetJobRequest::getJobName()const
 void GetJobRequest::setJobName(const std::string& jobName)
 {
 	jobName_ = jobName;
-	setCoreParameter("JobName", jobName);
+	setParameter("JobName", jobName);
 }
 

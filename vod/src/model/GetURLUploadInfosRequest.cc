@@ -20,7 +20,9 @@ using AlibabaCloud::Vod::Model::GetURLUploadInfosRequest;
 
 GetURLUploadInfosRequest::GetURLUploadInfosRequest() :
 	RpcServiceRequest("vod", "2017-03-21", "GetURLUploadInfos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetURLUploadInfosRequest::~GetURLUploadInfosRequest()
 {}
@@ -33,7 +35,7 @@ long GetURLUploadInfosRequest::getResourceOwnerId()const
 void GetURLUploadInfosRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string GetURLUploadInfosRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string GetURLUploadInfosRequest::getResourceOwnerAccount()const
 void GetURLUploadInfosRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long GetURLUploadInfosRequest::getOwnerId()const
@@ -55,7 +57,7 @@ long GetURLUploadInfosRequest::getOwnerId()const
 void GetURLUploadInfosRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string GetURLUploadInfosRequest::getJobIds()const
@@ -66,7 +68,7 @@ std::string GetURLUploadInfosRequest::getJobIds()const
 void GetURLUploadInfosRequest::setJobIds(const std::string& jobIds)
 {
 	jobIds_ = jobIds;
-	setCoreParameter("JobIds", jobIds);
+	setParameter("JobIds", jobIds);
 }
 
 std::string GetURLUploadInfosRequest::getUploadURLs()const
@@ -77,6 +79,6 @@ std::string GetURLUploadInfosRequest::getUploadURLs()const
 void GetURLUploadInfosRequest::setUploadURLs(const std::string& uploadURLs)
 {
 	uploadURLs_ = uploadURLs;
-	setCoreParameter("UploadURLs", uploadURLs);
+	setParameter("UploadURLs", uploadURLs);
 }
 

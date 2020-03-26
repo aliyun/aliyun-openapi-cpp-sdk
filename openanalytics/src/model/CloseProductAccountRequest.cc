@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::CloseProductAccountRequest;
 
 CloseProductAccountRequest::CloseProductAccountRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "CloseProductAccount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CloseProductAccountRequest::~CloseProductAccountRequest()
 {}
@@ -33,7 +35,7 @@ std::string CloseProductAccountRequest::getRegionID()const
 void CloseProductAccountRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 std::string CloseProductAccountRequest::getProductCode()const
@@ -44,7 +46,7 @@ std::string CloseProductAccountRequest::getProductCode()const
 void CloseProductAccountRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setBodyParameter("ProductCode", productCode);
 }
 
 std::string CloseProductAccountRequest::getProductAccessKey()const
@@ -55,7 +57,7 @@ std::string CloseProductAccountRequest::getProductAccessKey()const
 void CloseProductAccountRequest::setProductAccessKey(const std::string& productAccessKey)
 {
 	productAccessKey_ = productAccessKey;
-	setCoreParameter("ProductAccessKey", productAccessKey);
+	setBodyParameter("ProductAccessKey", productAccessKey);
 }
 
 std::string CloseProductAccountRequest::getTargetUid()const
@@ -66,7 +68,7 @@ std::string CloseProductAccountRequest::getTargetUid()const
 void CloseProductAccountRequest::setTargetUid(const std::string& targetUid)
 {
 	targetUid_ = targetUid;
-	setCoreParameter("TargetUid", targetUid);
+	setBodyParameter("TargetUid", targetUid);
 }
 
 std::string CloseProductAccountRequest::getTargetArnRole()const
@@ -77,6 +79,6 @@ std::string CloseProductAccountRequest::getTargetArnRole()const
 void CloseProductAccountRequest::setTargetArnRole(const std::string& targetArnRole)
 {
 	targetArnRole_ = targetArnRole;
-	setCoreParameter("TargetArnRole", targetArnRole);
+	setBodyParameter("TargetArnRole", targetArnRole);
 }
 

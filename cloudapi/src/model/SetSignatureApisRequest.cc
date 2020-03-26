@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetSignatureApisRequest;
 
 SetSignatureApisRequest::SetSignatureApisRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetSignatureApis")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetSignatureApisRequest::~SetSignatureApisRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetSignatureApisRequest::getStageName()const
 void SetSignatureApisRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string SetSignatureApisRequest::getGroupId()const
@@ -44,7 +46,7 @@ std::string SetSignatureApisRequest::getGroupId()const
 void SetSignatureApisRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetSignatureApisRequest::getSignatureId()const
@@ -55,7 +57,7 @@ std::string SetSignatureApisRequest::getSignatureId()const
 void SetSignatureApisRequest::setSignatureId(const std::string& signatureId)
 {
 	signatureId_ = signatureId;
-	setCoreParameter("SignatureId", signatureId);
+	setParameter("SignatureId", signatureId);
 }
 
 std::string SetSignatureApisRequest::getAccessKeyId()const
@@ -66,7 +68,7 @@ std::string SetSignatureApisRequest::getAccessKeyId()const
 void SetSignatureApisRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetSignatureApisRequest::getSecurityToken()const
@@ -77,7 +79,7 @@ std::string SetSignatureApisRequest::getSecurityToken()const
 void SetSignatureApisRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string SetSignatureApisRequest::getApiIds()const
@@ -88,6 +90,6 @@ std::string SetSignatureApisRequest::getApiIds()const
 void SetSignatureApisRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::HeadquartersToolsContrastRequest;
 
 HeadquartersToolsContrastRequest::HeadquartersToolsContrastRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "HeadquartersToolsContrast")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 HeadquartersToolsContrastRequest::~HeadquartersToolsContrastRequest()
 {}
@@ -33,7 +35,7 @@ std::string HeadquartersToolsContrastRequest::getAccessKeyId()const
 void HeadquartersToolsContrastRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long HeadquartersToolsContrastRequest::getBid()const
@@ -44,6 +46,6 @@ long HeadquartersToolsContrastRequest::getBid()const
 void HeadquartersToolsContrastRequest::setBid(long bid)
 {
 	bid_ = bid;
-	setCoreParameter("Bid", std::to_string(bid));
+	setParameter("Bid", std::to_string(bid));
 }
 

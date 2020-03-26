@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveRecordVodConfigRequest;
 
 DeleteLiveRecordVodConfigRequest::DeleteLiveRecordVodConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveRecordVodConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveRecordVodConfigRequest::~DeleteLiveRecordVodConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveRecordVodConfigRequest::getAppName()const
 void DeleteLiveRecordVodConfigRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
-	setCoreParameter("AppName", appName);
+	setParameter("AppName", appName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
@@ -44,7 +46,7 @@ std::string DeleteLiveRecordVodConfigRequest::getStreamName()const
 void DeleteLiveRecordVodConfigRequest::setStreamName(const std::string& streamName)
 {
 	streamName_ = streamName;
-	setCoreParameter("StreamName", streamName);
+	setParameter("StreamName", streamName);
 }
 
 std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
@@ -55,7 +57,7 @@ std::string DeleteLiveRecordVodConfigRequest::getDomainName()const
 void DeleteLiveRecordVodConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveRecordVodConfigRequest::getOwnerId()const
@@ -66,6 +68,6 @@ long DeleteLiveRecordVodConfigRequest::getOwnerId()const
 void DeleteLiveRecordVodConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

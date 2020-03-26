@@ -55,6 +55,8 @@ void DescribeColumnsResult::parse(const std::string &payload)
 			itemsObject.type = valueItemsColumn["Type"].asString();
 		if(!valueItemsColumn["PrimaryKey"].isNull())
 			itemsObject.primaryKey = valueItemsColumn["PrimaryKey"].asString() == "true";
+		if(!valueItemsColumn["AutoIncrementColumn"].isNull())
+			itemsObject.autoIncrementColumn = valueItemsColumn["AutoIncrementColumn"].asString() == "true";
 		items_.push_back(itemsObject);
 	}
 

@@ -35,7 +35,7 @@ std::string DescribeSiteMonitorListRequest::getTaskType()const
 void DescribeSiteMonitorListRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setParameter("TaskType", taskType);
 }
 
 int DescribeSiteMonitorListRequest::getPageSize()const
@@ -46,7 +46,7 @@ int DescribeSiteMonitorListRequest::getPageSize()const
 void DescribeSiteMonitorListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeSiteMonitorListRequest::getPage()const
@@ -57,7 +57,7 @@ int DescribeSiteMonitorListRequest::getPage()const
 void DescribeSiteMonitorListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 std::string DescribeSiteMonitorListRequest::getKeyword()const
@@ -68,7 +68,7 @@ std::string DescribeSiteMonitorListRequest::getKeyword()const
 void DescribeSiteMonitorListRequest::setKeyword(const std::string& keyword)
 {
 	keyword_ = keyword;
-	setCoreParameter("Keyword", keyword);
+	setParameter("Keyword", keyword);
 }
 
 std::string DescribeSiteMonitorListRequest::getTaskId()const
@@ -79,6 +79,6 @@ std::string DescribeSiteMonitorListRequest::getTaskId()const
 void DescribeSiteMonitorListRequest::setTaskId(const std::string& taskId)
 {
 	taskId_ = taskId;
-	setCoreParameter("TaskId", taskId);
+	setParameter("TaskId", taskId);
 }
 

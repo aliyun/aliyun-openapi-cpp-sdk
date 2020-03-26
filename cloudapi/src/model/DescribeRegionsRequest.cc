@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeRegions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRegionsRequest::~DescribeRegionsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeRegionsRequest::getLanguage()const
 void DescribeRegionsRequest::setLanguage(const std::string& language)
 {
 	language_ = language;
-	setCoreParameter("Language", language);
+	setParameter("Language", language);
 }
 
 std::string DescribeRegionsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeRegionsRequest::getAccessKeyId()const
 void DescribeRegionsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRegionsRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DescribeRegionsRequest::getSecurityToken()const
 void DescribeRegionsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

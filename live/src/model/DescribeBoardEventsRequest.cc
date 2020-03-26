@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeBoardEventsRequest;
 
 DescribeBoardEventsRequest::DescribeBoardEventsRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeBoardEvents")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBoardEventsRequest::~DescribeBoardEventsRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeBoardEventsRequest::getStartTime()const
 void DescribeBoardEventsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setParameter("StartTime", startTime);
 }
 
 std::string DescribeBoardEventsRequest::getBoardId()const
@@ -44,7 +46,7 @@ std::string DescribeBoardEventsRequest::getBoardId()const
 void DescribeBoardEventsRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 
 std::string DescribeBoardEventsRequest::getEndTime()const
@@ -55,7 +57,7 @@ std::string DescribeBoardEventsRequest::getEndTime()const
 void DescribeBoardEventsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setParameter("EndTime", endTime);
 }
 
 long DescribeBoardEventsRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeBoardEventsRequest::getOwnerId()const
 void DescribeBoardEventsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBoardEventsRequest::getAppId()const
@@ -77,6 +79,6 @@ std::string DescribeBoardEventsRequest::getAppId()const
 void DescribeBoardEventsRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 

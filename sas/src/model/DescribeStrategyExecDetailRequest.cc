@@ -20,7 +20,9 @@ using AlibabaCloud::Sas::Model::DescribeStrategyExecDetailRequest;
 
 DescribeStrategyExecDetailRequest::DescribeStrategyExecDetailRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeStrategyExecDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeStrategyExecDetailRequest::~DescribeStrategyExecDetailRequest()
 {}
@@ -33,7 +35,7 @@ std::string DescribeStrategyExecDetailRequest::getSourceIp()const
 void DescribeStrategyExecDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeStrategyExecDetailRequest::getStrategyId()const
@@ -44,6 +46,6 @@ int DescribeStrategyExecDetailRequest::getStrategyId()const
 void DescribeStrategyExecDetailRequest::setStrategyId(int strategyId)
 {
 	strategyId_ = strategyId;
-	setCoreParameter("StrategyId", std::to_string(strategyId));
+	setParameter("StrategyId", std::to_string(strategyId));
 }
 

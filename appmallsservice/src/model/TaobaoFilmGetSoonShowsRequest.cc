@@ -20,7 +20,9 @@ using AlibabaCloud::AppMallsService::Model::TaobaoFilmGetSoonShowsRequest;
 
 TaobaoFilmGetSoonShowsRequest::TaobaoFilmGetSoonShowsRequest() :
 	RpcServiceRequest("appmallsservice", "2018-02-24", "TaobaoFilmGetSoonShows")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 TaobaoFilmGetSoonShowsRequest::~TaobaoFilmGetSoonShowsRequest()
 {}
@@ -33,7 +35,7 @@ long TaobaoFilmGetSoonShowsRequest::getCityCode()const
 void TaobaoFilmGetSoonShowsRequest::setCityCode(long cityCode)
 {
 	cityCode_ = cityCode;
-	setCoreParameter("CityCode", std::to_string(cityCode));
+	setParameter("CityCode", std::to_string(cityCode));
 }
 
 std::string TaobaoFilmGetSoonShowsRequest::getParamsJson()const
@@ -44,6 +46,6 @@ std::string TaobaoFilmGetSoonShowsRequest::getParamsJson()const
 void TaobaoFilmGetSoonShowsRequest::setParamsJson(const std::string& paramsJson)
 {
 	paramsJson_ = paramsJson;
-	setCoreParameter("ParamsJson", paramsJson);
+	setParameter("ParamsJson", paramsJson);
 }
 

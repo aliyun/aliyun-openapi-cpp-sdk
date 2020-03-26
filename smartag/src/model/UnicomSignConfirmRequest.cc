@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::UnicomSignConfirmRequest;
 
 UnicomSignConfirmRequest::UnicomSignConfirmRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "UnicomSignConfirm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnicomSignConfirmRequest::~UnicomSignConfirmRequest()
 {}
@@ -33,7 +35,7 @@ long UnicomSignConfirmRequest::getResourceOwnerId()const
 void UnicomSignConfirmRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string UnicomSignConfirmRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string UnicomSignConfirmRequest::getResourceOwnerAccount()const
 void UnicomSignConfirmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string UnicomSignConfirmRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string UnicomSignConfirmRequest::getOwnerAccount()const
 void UnicomSignConfirmRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 std::vector<UnicomSignConfirmRequest::TmsOrder> UnicomSignConfirmRequest::getTmsOrder()const
@@ -66,14 +68,13 @@ std::vector<UnicomSignConfirmRequest::TmsOrder> UnicomSignConfirmRequest::getTms
 void UnicomSignConfirmRequest::setTmsOrder(const std::vector<TmsOrder>& tmsOrder)
 {
 	tmsOrder_ = tmsOrder;
-	int i = 0;
-	for(int i = 0; i!= tmsOrder.size(); i++)	{
-		auto obj = tmsOrder.at(i);
-		std::string str ="TmsOrder."+ std::to_string(i);
-		setCoreParameter(str + ".TmsCode", obj.tmsCode);
-		setCoreParameter(str + ".SigningTime", obj.signingTime);
-		setCoreParameter(str + ".TmsOrderCode", obj.tmsOrderCode);
-		setCoreParameter(str + ".TradeId", obj.tradeId);
+	for(int dep1 = 0; dep1!= tmsOrder.size(); dep1++) {
+		auto tmsOrderObj = tmsOrder.at(dep1);
+		std::string tmsOrderObjStr = "TmsOrder." + std::to_string(dep1 + 1);
+		setParameter(tmsOrderObjStr + ".TmsCode", tmsOrderObj.tmsCode);
+		setParameter(tmsOrderObjStr + ".SigningTime", tmsOrderObj.signingTime);
+		setParameter(tmsOrderObjStr + ".TmsOrderCode", tmsOrderObj.tmsOrderCode);
+		setParameter(tmsOrderObjStr + ".TradeId", tmsOrderObj.tradeId);
 	}
 }
 
@@ -85,6 +86,6 @@ long UnicomSignConfirmRequest::getOwnerId()const
 void UnicomSignConfirmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

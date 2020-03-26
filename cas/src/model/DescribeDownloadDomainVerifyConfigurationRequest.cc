@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDownloadDomainVerifyConfigurationRequest
 
 DescribeDownloadDomainVerifyConfigurationRequest::DescribeDownloadDomainVerifyConfigurationRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDownloadDomainVerifyConfiguration")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDownloadDomainVerifyConfigurationRequest::~DescribeDownloadDomainVerifyConfigurationRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDownloadDomainVerifyConfigurationRequest::getOrderId()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setOrderId(long orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", std::to_string(orderId));
+	setParameter("OrderId", std::to_string(orderId));
 }
 
 std::string DescribeDownloadDomainVerifyConfigurationRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeDownloadDomainVerifyConfigurationRequest::getResourceGroupId
 void DescribeDownloadDomainVerifyConfigurationRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDownloadDomainVerifyConfigurationRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeDownloadDomainVerifyConfigurationRequest::getSourceIp()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDownloadDomainVerifyConfigurationRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeDownloadDomainVerifyConfigurationRequest::getLang()const
 void DescribeDownloadDomainVerifyConfigurationRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

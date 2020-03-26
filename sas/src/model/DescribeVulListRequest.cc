@@ -20,10 +20,23 @@ using AlibabaCloud::Sas::Model::DescribeVulListRequest;
 
 DescribeVulListRequest::DescribeVulListRequest() :
 	RpcServiceRequest("sas", "2018-12-03", "DescribeVulList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeVulListRequest::~DescribeVulListRequest()
 {}
+
+std::string DescribeVulListRequest::getStatusList()const
+{
+	return statusList_;
+}
+
+void DescribeVulListRequest::setStatusList(const std::string& statusList)
+{
+	statusList_ = statusList;
+	setParameter("StatusList", statusList);
+}
 
 std::string DescribeVulListRequest::getRemark()const
 {
@@ -33,7 +46,7 @@ std::string DescribeVulListRequest::getRemark()const
 void DescribeVulListRequest::setRemark(const std::string& remark)
 {
 	remark_ = remark;
-	setCoreParameter("Remark", remark);
+	setParameter("Remark", remark);
 }
 
 std::string DescribeVulListRequest::getType()const
@@ -44,7 +57,7 @@ std::string DescribeVulListRequest::getType()const
 void DescribeVulListRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setCoreParameter("Type", type);
+	setParameter("Type", type);
 }
 
 std::string DescribeVulListRequest::getSourceIp()const
@@ -55,7 +68,7 @@ std::string DescribeVulListRequest::getSourceIp()const
 void DescribeVulListRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 int DescribeVulListRequest::getPageSize()const
@@ -66,7 +79,7 @@ int DescribeVulListRequest::getPageSize()const
 void DescribeVulListRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeVulListRequest::getLang()const
@@ -77,7 +90,7 @@ std::string DescribeVulListRequest::getLang()const
 void DescribeVulListRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string DescribeVulListRequest::getDealed()const
@@ -88,7 +101,7 @@ std::string DescribeVulListRequest::getDealed()const
 void DescribeVulListRequest::setDealed(const std::string& dealed)
 {
 	dealed_ = dealed;
-	setCoreParameter("Dealed", dealed);
+	setParameter("Dealed", dealed);
 }
 
 int DescribeVulListRequest::getCurrentPage()const
@@ -99,7 +112,7 @@ int DescribeVulListRequest::getCurrentPage()const
 void DescribeVulListRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setCoreParameter("CurrentPage", std::to_string(currentPage));
+	setParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string DescribeVulListRequest::getAliasName()const
@@ -110,7 +123,29 @@ std::string DescribeVulListRequest::getAliasName()const
 void DescribeVulListRequest::setAliasName(const std::string& aliasName)
 {
 	aliasName_ = aliasName;
-	setCoreParameter("AliasName", aliasName);
+	setParameter("AliasName", aliasName);
+}
+
+std::string DescribeVulListRequest::getName()const
+{
+	return name_;
+}
+
+void DescribeVulListRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::string DescribeVulListRequest::getIds()const
+{
+	return ids_;
+}
+
+void DescribeVulListRequest::setIds(const std::string& ids)
+{
+	ids_ = ids;
+	setParameter("Ids", ids);
 }
 
 std::string DescribeVulListRequest::getNecessity()const
@@ -121,7 +156,7 @@ std::string DescribeVulListRequest::getNecessity()const
 void DescribeVulListRequest::setNecessity(const std::string& necessity)
 {
 	necessity_ = necessity;
-	setCoreParameter("Necessity", necessity);
+	setParameter("Necessity", necessity);
 }
 
 std::string DescribeVulListRequest::getUuids()const
@@ -132,6 +167,6 @@ std::string DescribeVulListRequest::getUuids()const
 void DescribeVulListRequest::setUuids(const std::string& uuids)
 {
 	uuids_ = uuids;
-	setCoreParameter("Uuids", uuids);
+	setParameter("Uuids", uuids);
 }
 

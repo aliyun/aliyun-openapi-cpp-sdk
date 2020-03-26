@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetApStaMiscAggRequest;
 
 GetApStaMiscAggRequest::GetApStaMiscAggRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetApStaMiscAgg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetApStaMiscAggRequest::~GetApStaMiscAggRequest()
 {}
@@ -33,7 +35,7 @@ long GetApStaMiscAggRequest::getApgroupId()const
 void GetApStaMiscAggRequest::setApgroupId(long apgroupId)
 {
 	apgroupId_ = apgroupId;
-	setCoreParameter("ApgroupId", std::to_string(apgroupId));
+	setParameter("ApgroupId", std::to_string(apgroupId));
 }
 
 std::string GetApStaMiscAggRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string GetApStaMiscAggRequest::getAccessKeyId()const
 void GetApStaMiscAggRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

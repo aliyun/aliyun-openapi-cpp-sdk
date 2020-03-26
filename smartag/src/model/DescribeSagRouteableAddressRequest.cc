@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DescribeSagRouteableAddressRequest;
 
 DescribeSagRouteableAddressRequest::DescribeSagRouteableAddressRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DescribeSagRouteableAddress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeSagRouteableAddressRequest::~DescribeSagRouteableAddressRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeSagRouteableAddressRequest::getResourceOwnerId()const
 void DescribeSagRouteableAddressRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeSagRouteableAddressRequest::getResourceOwnerAccount()const
@@ -44,7 +46,7 @@ std::string DescribeSagRouteableAddressRequest::getResourceOwnerAccount()const
 void DescribeSagRouteableAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSagRouteableAddressRequest::getOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeSagRouteableAddressRequest::getOwnerAccount()const
 void DescribeSagRouteableAddressRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeSagRouteableAddressRequest::getOwnerId()const
@@ -66,7 +68,7 @@ long DescribeSagRouteableAddressRequest::getOwnerId()const
 void DescribeSagRouteableAddressRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeSagRouteableAddressRequest::getRegionId()const
@@ -77,7 +79,7 @@ std::string DescribeSagRouteableAddressRequest::getRegionId()const
 void DescribeSagRouteableAddressRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeSagRouteableAddressRequest::getSagId()const
@@ -88,6 +90,6 @@ std::string DescribeSagRouteableAddressRequest::getSagId()const
 void DescribeSagRouteableAddressRequest::setSagId(const std::string& sagId)
 {
 	sagId_ = sagId;
-	setCoreParameter("SagId", sagId);
+	setParameter("SagId", sagId);
 }
 

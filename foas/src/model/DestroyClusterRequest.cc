@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::DestroyClusterRequest;
 
 DestroyClusterRequest::DestroyClusterRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/clusters/[clusterId]");
+	setMethod(HttpRequest::Method::Delete);
+}
 
 DestroyClusterRequest::~DestroyClusterRequest()
 {}
@@ -33,7 +36,7 @@ std::string DestroyClusterRequest::getRegionId()const
 void DestroyClusterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string DestroyClusterRequest::getClusterId()const
@@ -44,6 +47,6 @@ std::string DestroyClusterRequest::getClusterId()const
 void DestroyClusterRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

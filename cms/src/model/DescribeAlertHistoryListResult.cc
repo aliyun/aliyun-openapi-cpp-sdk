@@ -43,8 +43,6 @@ void DescribeAlertHistoryListResult::parse(const std::string &payload)
 	for (auto valueAlarmHistoryListAlarmHistory : allAlarmHistoryListNode)
 	{
 		AlarmHistory alarmHistoryListObject;
-		if(!valueAlarmHistoryListAlarmHistory["Id"].isNull())
-			alarmHistoryListObject.id = valueAlarmHistoryListAlarmHistory["Id"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["RuleId"].isNull())
 			alarmHistoryListObject.ruleId = valueAlarmHistoryListAlarmHistory["RuleId"].asString();
 		if(!valueAlarmHistoryListAlarmHistory["GroupId"].isNull())

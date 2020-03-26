@@ -37,10 +37,38 @@ namespace AlibabaCloud
 				DescribeClustersResult();
 				explicit DescribeClustersResult(const std::string &payload);
 				~DescribeClustersResult();
+				std::string getCluster_id()const;
+				std::string getExternal_loadbalancer_id()const;
+				std::string getUpdated()const;
+				std::string getRegion_id()const;
+				std::string getSize()const;
+				std::string getVpc_id()const;
+				std::string getNetwork_mode()const;
+				std::string getSecurity_group_id()const;
+				std::string getCreated()const;
+				std::string getName()const;
+				std::string getAgent_version()const;
+				std::string getState()const;
+				std::string getVpc_id1()const;
+				std::string getMaster_url()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string cluster_id_;
+				std::string external_loadbalancer_id_;
+				std::string updated_;
+				std::string region_id_;
+				std::string size_;
+				std::string vpc_id_;
+				std::string network_mode_;
+				std::string security_group_id_;
+				std::string created_;
+				std::string name_;
+				std::string agent_version_;
+				std::string state_;
+				std::string vpc_id1_;
+				std::string master_url_;
 
 			};
 		}

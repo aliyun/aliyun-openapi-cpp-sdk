@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::DeleteJobGroupRequest;
 
 DeleteJobGroupRequest::DeleteJobGroupRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "DeleteJobGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteJobGroupRequest::~DeleteJobGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteJobGroupRequest::getInstanceId()const
 void DeleteJobGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DeleteJobGroupRequest::getJobGroupId()const
@@ -44,6 +46,6 @@ std::string DeleteJobGroupRequest::getJobGroupId()const
 void DeleteJobGroupRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 

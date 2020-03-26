@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::SubmitImageSearchJobRequest;
 
 SubmitImageSearchJobRequest::SubmitImageSearchJobRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "SubmitImageSearchJob")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SubmitImageSearchJobRequest::~SubmitImageSearchJobRequest()
 {}
@@ -33,7 +35,7 @@ long SubmitImageSearchJobRequest::getResourceOwnerId()const
 void SubmitImageSearchJobRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string SubmitImageSearchJobRequest::getFpDBId()const
@@ -44,7 +46,7 @@ std::string SubmitImageSearchJobRequest::getFpDBId()const
 void SubmitImageSearchJobRequest::setFpDBId(const std::string& fpDBId)
 {
 	fpDBId_ = fpDBId;
-	setCoreParameter("FpDBId", fpDBId);
+	setParameter("FpDBId", fpDBId);
 }
 
 std::string SubmitImageSearchJobRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string SubmitImageSearchJobRequest::getAccessKeyId()const
 void SubmitImageSearchJobRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SubmitImageSearchJobRequest::getUserData()const
@@ -66,7 +68,7 @@ std::string SubmitImageSearchJobRequest::getUserData()const
 void SubmitImageSearchJobRequest::setUserData(const std::string& userData)
 {
 	userData_ = userData;
-	setCoreParameter("UserData", userData);
+	setParameter("UserData", userData);
 }
 
 std::string SubmitImageSearchJobRequest::getInputVideo()const
@@ -77,7 +79,7 @@ std::string SubmitImageSearchJobRequest::getInputVideo()const
 void SubmitImageSearchJobRequest::setInputVideo(const std::string& inputVideo)
 {
 	inputVideo_ = inputVideo;
-	setCoreParameter("InputVideo", inputVideo);
+	setParameter("InputVideo", inputVideo);
 }
 
 std::string SubmitImageSearchJobRequest::getInputImage()const
@@ -88,7 +90,7 @@ std::string SubmitImageSearchJobRequest::getInputImage()const
 void SubmitImageSearchJobRequest::setInputImage(const std::string& inputImage)
 {
 	inputImage_ = inputImage;
-	setCoreParameter("InputImage", inputImage);
+	setParameter("InputImage", inputImage);
 }
 
 std::string SubmitImageSearchJobRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string SubmitImageSearchJobRequest::getResourceOwnerAccount()const
 void SubmitImageSearchJobRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string SubmitImageSearchJobRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string SubmitImageSearchJobRequest::getOwnerAccount()const
 void SubmitImageSearchJobRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long SubmitImageSearchJobRequest::getOwnerId()const
@@ -121,7 +123,7 @@ long SubmitImageSearchJobRequest::getOwnerId()const
 void SubmitImageSearchJobRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string SubmitImageSearchJobRequest::getPipelineId()const
@@ -132,7 +134,7 @@ std::string SubmitImageSearchJobRequest::getPipelineId()const
 void SubmitImageSearchJobRequest::setPipelineId(const std::string& pipelineId)
 {
 	pipelineId_ = pipelineId;
-	setCoreParameter("PipelineId", pipelineId);
+	setParameter("PipelineId", pipelineId);
 }
 
 std::string SubmitImageSearchJobRequest::getConfig()const
@@ -143,6 +145,6 @@ std::string SubmitImageSearchJobRequest::getConfig()const
 void SubmitImageSearchJobRequest::setConfig(const std::string& config)
 {
 	config_ = config;
-	setCoreParameter("Config", config);
+	setParameter("Config", config);
 }
 

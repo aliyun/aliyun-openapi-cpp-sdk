@@ -60,6 +60,17 @@ void ModifyAutoRenewAttributeRequest::setDuration(const std::string& duration)
 	setParameter("Duration", duration);
 }
 
+std::string ModifyAutoRenewAttributeRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ModifyAutoRenewAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ModifyAutoRenewAttributeRequest::getRegionId()const
 {
 	return regionId_;

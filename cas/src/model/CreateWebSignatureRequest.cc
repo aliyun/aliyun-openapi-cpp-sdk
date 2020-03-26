@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::CreateWebSignatureRequest;
 
 CreateWebSignatureRequest::CreateWebSignatureRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "CreateWebSignature")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateWebSignatureRequest::~CreateWebSignatureRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateWebSignatureRequest::getHandSignImg()const
 void CreateWebSignatureRequest::setHandSignImg(const std::string& handSignImg)
 {
 	handSignImg_ = handSignImg;
-	setCoreParameter("HandSignImg", handSignImg);
+	setParameter("HandSignImg", handSignImg);
 }
 
 std::string CreateWebSignatureRequest::getCustomApi()const
@@ -44,7 +46,7 @@ std::string CreateWebSignatureRequest::getCustomApi()const
 void CreateWebSignatureRequest::setCustomApi(const std::string& customApi)
 {
 	customApi_ = customApi;
-	setCoreParameter("CustomApi", customApi);
+	setParameter("CustomApi", customApi);
 }
 
 std::string CreateWebSignatureRequest::getResourceGroupId()const
@@ -55,7 +57,7 @@ std::string CreateWebSignatureRequest::getResourceGroupId()const
 void CreateWebSignatureRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string CreateWebSignatureRequest::getSourceIp()const
@@ -66,7 +68,7 @@ std::string CreateWebSignatureRequest::getSourceIp()const
 void CreateWebSignatureRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateWebSignatureRequest::getSignKeyword()const
@@ -77,7 +79,7 @@ std::string CreateWebSignatureRequest::getSignKeyword()const
 void CreateWebSignatureRequest::setSignKeyword(const std::string& signKeyword)
 {
 	signKeyword_ = signKeyword;
-	setCoreParameter("SignKeyword", signKeyword);
+	setParameter("SignKeyword", signKeyword);
 }
 
 std::string CreateWebSignatureRequest::getNotifyUrl()const
@@ -88,7 +90,7 @@ std::string CreateWebSignatureRequest::getNotifyUrl()const
 void CreateWebSignatureRequest::setNotifyUrl(const std::string& notifyUrl)
 {
 	notifyUrl_ = notifyUrl;
-	setCoreParameter("NotifyUrl", notifyUrl);
+	setParameter("NotifyUrl", notifyUrl);
 }
 
 std::string CreateWebSignatureRequest::getLang()const
@@ -99,7 +101,7 @@ std::string CreateWebSignatureRequest::getLang()const
 void CreateWebSignatureRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 int CreateWebSignatureRequest::getQuantity()const
@@ -110,7 +112,7 @@ int CreateWebSignatureRequest::getQuantity()const
 void CreateWebSignatureRequest::setQuantity(int quantity)
 {
 	quantity_ = quantity;
-	setCoreParameter("Quantity", std::to_string(quantity));
+	setParameter("Quantity", std::to_string(quantity));
 }
 
 std::string CreateWebSignatureRequest::getDocId()const
@@ -121,7 +123,7 @@ std::string CreateWebSignatureRequest::getDocId()const
 void CreateWebSignatureRequest::setDocId(const std::string& docId)
 {
 	docId_ = docId;
-	setCoreParameter("DocId", docId);
+	setParameter("DocId", docId);
 }
 
 int CreateWebSignatureRequest::getPositionPage()const
@@ -132,7 +134,7 @@ int CreateWebSignatureRequest::getPositionPage()const
 void CreateWebSignatureRequest::setPositionPage(int positionPage)
 {
 	positionPage_ = positionPage;
-	setCoreParameter("PositionPage", std::to_string(positionPage));
+	setParameter("PositionPage", std::to_string(positionPage));
 }
 
 std::string CreateWebSignatureRequest::getDocTitle()const
@@ -143,7 +145,7 @@ std::string CreateWebSignatureRequest::getDocTitle()const
 void CreateWebSignatureRequest::setDocTitle(const std::string& docTitle)
 {
 	docTitle_ = docTitle;
-	setCoreParameter("DocTitle", docTitle);
+	setParameter("DocTitle", docTitle);
 }
 
 int CreateWebSignatureRequest::getPositionX()const
@@ -154,7 +156,7 @@ int CreateWebSignatureRequest::getPositionX()const
 void CreateWebSignatureRequest::setPositionX(int positionX)
 {
 	positionX_ = positionX;
-	setCoreParameter("PositionX", std::to_string(positionX));
+	setParameter("PositionX", std::to_string(positionX));
 }
 
 int CreateWebSignatureRequest::getPositionY()const
@@ -165,7 +167,7 @@ int CreateWebSignatureRequest::getPositionY()const
 void CreateWebSignatureRequest::setPositionY(int positionY)
 {
 	positionY_ = positionY;
-	setCoreParameter("PositionY", std::to_string(positionY));
+	setParameter("PositionY", std::to_string(positionY));
 }
 
 std::string CreateWebSignatureRequest::getPeopleId()const
@@ -176,7 +178,7 @@ std::string CreateWebSignatureRequest::getPeopleId()const
 void CreateWebSignatureRequest::setPeopleId(const std::string& peopleId)
 {
 	peopleId_ = peopleId;
-	setCoreParameter("PeopleId", peopleId);
+	setParameter("PeopleId", peopleId);
 }
 
 int CreateWebSignatureRequest::getPositionType()const
@@ -187,7 +189,7 @@ int CreateWebSignatureRequest::getPositionType()const
 void CreateWebSignatureRequest::setPositionType(int positionType)
 {
 	positionType_ = positionType;
-	setCoreParameter("PositionType", std::to_string(positionType));
+	setParameter("PositionType", std::to_string(positionType));
 }
 
 int CreateWebSignatureRequest::getValidity()const
@@ -198,7 +200,7 @@ int CreateWebSignatureRequest::getValidity()const
 void CreateWebSignatureRequest::setValidity(int validity)
 {
 	validity_ = validity;
-	setCoreParameter("Validity", std::to_string(validity));
+	setParameter("Validity", std::to_string(validity));
 }
 
 std::string CreateWebSignatureRequest::getReturnUrl()const
@@ -209,7 +211,7 @@ std::string CreateWebSignatureRequest::getReturnUrl()const
 void CreateWebSignatureRequest::setReturnUrl(const std::string& returnUrl)
 {
 	returnUrl_ = returnUrl;
-	setCoreParameter("ReturnUrl", returnUrl);
+	setParameter("ReturnUrl", returnUrl);
 }
 
 int CreateWebSignatureRequest::getKeywordStrategy()const
@@ -220,6 +222,6 @@ int CreateWebSignatureRequest::getKeywordStrategy()const
 void CreateWebSignatureRequest::setKeywordStrategy(int keywordStrategy)
 {
 	keywordStrategy_ = keywordStrategy;
-	setCoreParameter("KeywordStrategy", std::to_string(keywordStrategy));
+	setParameter("KeywordStrategy", std::to_string(keywordStrategy));
 }
 

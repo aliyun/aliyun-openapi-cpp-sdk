@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::UnbindTagRequest;
 
 UnbindTagRequest::UnbindTagRequest() :
 	RpcServiceRequest("push", "2016-08-01", "UnbindTag")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UnbindTagRequest::~UnbindTagRequest()
 {}
@@ -33,7 +35,7 @@ std::string UnbindTagRequest::getKeyType()const
 void UnbindTagRequest::setKeyType(const std::string& keyType)
 {
 	keyType_ = keyType;
-	setCoreParameter("KeyType", keyType);
+	setParameter("KeyType", keyType);
 }
 
 std::string UnbindTagRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string UnbindTagRequest::getAccessKeyId()const
 void UnbindTagRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UnbindTagRequest::getTagName()const
@@ -55,7 +57,7 @@ std::string UnbindTagRequest::getTagName()const
 void UnbindTagRequest::setTagName(const std::string& tagName)
 {
 	tagName_ = tagName;
-	setCoreParameter("TagName", tagName);
+	setParameter("TagName", tagName);
 }
 
 std::string UnbindTagRequest::getClientKey()const
@@ -66,7 +68,7 @@ std::string UnbindTagRequest::getClientKey()const
 void UnbindTagRequest::setClientKey(const std::string& clientKey)
 {
 	clientKey_ = clientKey;
-	setCoreParameter("ClientKey", clientKey);
+	setParameter("ClientKey", clientKey);
 }
 
 long UnbindTagRequest::getAppKey()const
@@ -77,6 +79,6 @@ long UnbindTagRequest::getAppKey()const
 void UnbindTagRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

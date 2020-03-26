@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyNatGatewaySpecRequest;
 
 ModifyNatGatewaySpecRequest::ModifyNatGatewaySpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyNatGatewaySpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyNatGatewaySpecRequest::~ModifyNatGatewaySpecRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyNatGatewaySpecRequest::getResourceOwnerId()const
 void ModifyNatGatewaySpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyNatGatewaySpecRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string ModifyNatGatewaySpecRequest::getClientToken()const
 void ModifyNatGatewaySpecRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string ModifyNatGatewaySpecRequest::getSpec()const
@@ -55,7 +57,7 @@ std::string ModifyNatGatewaySpecRequest::getSpec()const
 void ModifyNatGatewaySpecRequest::setSpec(const std::string& spec)
 {
 	spec_ = spec;
-	setCoreParameter("Spec", spec);
+	setParameter("Spec", spec);
 }
 
 std::string ModifyNatGatewaySpecRequest::getRegionId()const
@@ -66,7 +68,7 @@ std::string ModifyNatGatewaySpecRequest::getRegionId()const
 void ModifyNatGatewaySpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
@@ -77,7 +79,7 @@ std::string ModifyNatGatewaySpecRequest::getNatGatewayId()const
 void ModifyNatGatewaySpecRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setParameter("NatGatewayId", natGatewayId);
 }
 
 bool ModifyNatGatewaySpecRequest::getAutoPay()const
@@ -88,7 +90,7 @@ bool ModifyNatGatewaySpecRequest::getAutoPay()const
 void ModifyNatGatewaySpecRequest::setAutoPay(bool autoPay)
 {
 	autoPay_ = autoPay;
-	setCoreParameter("AutoPay", autoPay ? "true" : "false");
+	setParameter("AutoPay", autoPay ? "true" : "false");
 }
 
 std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
@@ -99,7 +101,7 @@ std::string ModifyNatGatewaySpecRequest::getResourceOwnerAccount()const
 void ModifyNatGatewaySpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
@@ -110,7 +112,7 @@ std::string ModifyNatGatewaySpecRequest::getOwnerAccount()const
 void ModifyNatGatewaySpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyNatGatewaySpecRequest::getOwnerId()const
@@ -121,6 +123,6 @@ long ModifyNatGatewaySpecRequest::getOwnerId()const
 void ModifyNatGatewaySpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

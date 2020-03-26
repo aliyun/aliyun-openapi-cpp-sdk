@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ResumeInstanceRequest;
 
 ResumeInstanceRequest::ResumeInstanceRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ResumeInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ResumeInstanceRequest::~ResumeInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string ResumeInstanceRequest::getTraceId()const
 void ResumeInstanceRequest::setTraceId(const std::string& traceId)
 {
 	traceId_ = traceId;
-	setCoreParameter("TraceId", traceId);
+	setParameter("TraceId", traceId);
 }
 
 std::string ResumeInstanceRequest::getSpMsg()const
@@ -44,7 +46,7 @@ std::string ResumeInstanceRequest::getSpMsg()const
 void ResumeInstanceRequest::setSpMsg(const std::string& spMsg)
 {
 	spMsg_ = spMsg;
-	setCoreParameter("SpMsg", spMsg);
+	setParameter("SpMsg", spMsg);
 }
 
 std::string ResumeInstanceRequest::getAccessKeyId()const
@@ -55,6 +57,6 @@ std::string ResumeInstanceRequest::getAccessKeyId()const
 void ResumeInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

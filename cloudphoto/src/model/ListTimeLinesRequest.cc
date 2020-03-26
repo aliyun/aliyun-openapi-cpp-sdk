@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListTimeLinesRequest;
 
 ListTimeLinesRequest::ListTimeLinesRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListTimeLines")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListTimeLinesRequest::~ListTimeLinesRequest()
 {}
@@ -33,7 +35,7 @@ long ListTimeLinesRequest::getCursor()const
 void ListTimeLinesRequest::setCursor(long cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", std::to_string(cursor));
+	setParameter("Cursor", std::to_string(cursor));
 }
 
 std::string ListTimeLinesRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string ListTimeLinesRequest::getLibraryId()const
 void ListTimeLinesRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 std::string ListTimeLinesRequest::getStoreName()const
@@ -55,7 +57,7 @@ std::string ListTimeLinesRequest::getStoreName()const
 void ListTimeLinesRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 std::string ListTimeLinesRequest::getFilterBy()const
@@ -66,7 +68,7 @@ std::string ListTimeLinesRequest::getFilterBy()const
 void ListTimeLinesRequest::setFilterBy(const std::string& filterBy)
 {
 	filterBy_ = filterBy;
-	setCoreParameter("FilterBy", filterBy);
+	setParameter("FilterBy", filterBy);
 }
 
 int ListTimeLinesRequest::getPhotoSize()const
@@ -77,7 +79,7 @@ int ListTimeLinesRequest::getPhotoSize()const
 void ListTimeLinesRequest::setPhotoSize(int photoSize)
 {
 	photoSize_ = photoSize;
-	setCoreParameter("PhotoSize", std::to_string(photoSize));
+	setParameter("PhotoSize", std::to_string(photoSize));
 }
 
 int ListTimeLinesRequest::getTimeLineCount()const
@@ -88,7 +90,7 @@ int ListTimeLinesRequest::getTimeLineCount()const
 void ListTimeLinesRequest::setTimeLineCount(int timeLineCount)
 {
 	timeLineCount_ = timeLineCount;
-	setCoreParameter("TimeLineCount", std::to_string(timeLineCount));
+	setParameter("TimeLineCount", std::to_string(timeLineCount));
 }
 
 std::string ListTimeLinesRequest::getTimeLineUnit()const
@@ -99,7 +101,7 @@ std::string ListTimeLinesRequest::getTimeLineUnit()const
 void ListTimeLinesRequest::setTimeLineUnit(const std::string& timeLineUnit)
 {
 	timeLineUnit_ = timeLineUnit;
-	setCoreParameter("TimeLineUnit", timeLineUnit);
+	setParameter("TimeLineUnit", timeLineUnit);
 }
 
 std::string ListTimeLinesRequest::getDirection()const
@@ -110,7 +112,7 @@ std::string ListTimeLinesRequest::getDirection()const
 void ListTimeLinesRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 
 std::string ListTimeLinesRequest::getOrder()const
@@ -121,6 +123,6 @@ std::string ListTimeLinesRequest::getOrder()const
 void ListTimeLinesRequest::setOrder(const std::string& order)
 {
 	order_ = order;
-	setCoreParameter("Order", order);
+	setParameter("Order", order);
 }
 

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setRiskLevels(const std::string& riskLevels);
 				std::string getQueryName()const;
 				void setQueryName(const std::string& queryName);
+				long getRiskLevelId()const;
+				void setRiskLevelId(long riskLevelId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				int getPageSize()const;
@@ -51,6 +53,8 @@ namespace AlibabaCloud
 				void setLang(const std::string& lang);
 				int getFeatureType()const;
 				void setFeatureType(int featureType);
+				std::string getOrderBy()const;
+				void setOrderBy(const std::string& orderBy);
 				int getCurrentPage()const;
 				void setCurrentPage(int currentPage);
 				long getInstanceId()const;
@@ -64,11 +68,13 @@ namespace AlibabaCloud
 				std::string productCode_;
 				std::string riskLevels_;
 				std::string queryName_;
+				long riskLevelId_;
 				std::string sourceIp_;
 				int pageSize_;
 				long tableId_;
 				std::string lang_;
 				int featureType_;
+				std::string orderBy_;
 				int currentPage_;
 				long instanceId_;
 				std::string name_;

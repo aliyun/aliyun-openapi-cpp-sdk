@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GroupIntimeRequest;
 
 GroupIntimeRequest::GroupIntimeRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GroupIntime")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GroupIntimeRequest::~GroupIntimeRequest()
 {}
@@ -33,7 +35,7 @@ std::string GroupIntimeRequest::getAccessKeyId()const
 void GroupIntimeRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GroupIntimeRequest::getGsid()const
@@ -44,6 +46,6 @@ long GroupIntimeRequest::getGsid()const
 void GroupIntimeRequest::setGsid(long gsid)
 {
 	gsid_ = gsid;
-	setCoreParameter("Gsid", std::to_string(gsid));
+	setParameter("Gsid", std::to_string(gsid));
 }
 

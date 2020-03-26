@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListAgentStatesRequest;
 
 ListAgentStatesRequest::ListAgentStatesRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListAgentStates")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAgentStatesRequest::~ListAgentStatesRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAgentStatesRequest::getAgentIds()const
 void ListAgentStatesRequest::setAgentIds(const std::string& agentIds)
 {
 	agentIds_ = agentIds;
-	setCoreParameter("AgentIds", agentIds);
+	setParameter("AgentIds", agentIds);
 }
 
 int ListAgentStatesRequest::getPageNumber()const
@@ -44,7 +46,7 @@ int ListAgentStatesRequest::getPageNumber()const
 void ListAgentStatesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListAgentStatesRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string ListAgentStatesRequest::getAccessKeyId()const
 void ListAgentStatesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListAgentStatesRequest::getInstanceId()const
@@ -66,7 +68,7 @@ std::string ListAgentStatesRequest::getInstanceId()const
 void ListAgentStatesRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListAgentStatesRequest::getSkillGroupId()const
@@ -77,7 +79,7 @@ std::string ListAgentStatesRequest::getSkillGroupId()const
 void ListAgentStatesRequest::setSkillGroupId(const std::string& skillGroupId)
 {
 	skillGroupId_ = skillGroupId;
-	setCoreParameter("SkillGroupId", skillGroupId);
+	setParameter("SkillGroupId", skillGroupId);
 }
 
 int ListAgentStatesRequest::getPageSize()const
@@ -88,7 +90,7 @@ int ListAgentStatesRequest::getPageSize()const
 void ListAgentStatesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListAgentStatesRequest::getState()const
@@ -99,6 +101,6 @@ std::string ListAgentStatesRequest::getState()const
 void ListAgentStatesRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeProductsRequest;
 
 DescribeProductsRequest::DescribeProductsRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeProducts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeProductsRequest::~DescribeProductsRequest()
 {}
@@ -33,12 +35,11 @@ std::vector<DescribeProductsRequest::Filter> DescribeProductsRequest::getFilter(
 void DescribeProductsRequest::setFilter(const std::vector<Filter>& filter)
 {
 	filter_ = filter;
-	int i = 0;
-	for(int i = 0; i!= filter.size(); i++)	{
-		auto obj = filter.at(i);
-		std::string str ="Filter."+ std::to_string(i);
-		setCoreParameter(str + ".Value", obj.value);
-		setCoreParameter(str + ".Key", obj.key);
+	for(int dep1 = 0; dep1!= filter.size(); dep1++) {
+		auto filterObj = filter.at(dep1);
+		std::string filterObjStr = "Filter." + std::to_string(dep1 + 1);
+		setParameter(filterObjStr + ".Value", filterObj.value);
+		setParameter(filterObjStr + ".Key", filterObj.key);
 	}
 }
 
@@ -50,7 +51,7 @@ std::string DescribeProductsRequest::getSearchTerm()const
 void DescribeProductsRequest::setSearchTerm(const std::string& searchTerm)
 {
 	searchTerm_ = searchTerm;
-	setCoreParameter("SearchTerm", searchTerm);
+	setParameter("SearchTerm", searchTerm);
 }
 
 int DescribeProductsRequest::getPageSize()const
@@ -61,7 +62,7 @@ int DescribeProductsRequest::getPageSize()const
 void DescribeProductsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int DescribeProductsRequest::getPageNumber()const
@@ -72,6 +73,6 @@ int DescribeProductsRequest::getPageNumber()const
 void DescribeProductsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 

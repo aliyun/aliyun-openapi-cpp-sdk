@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetDomainRequest;
 
 SetDomainRequest::SetDomainRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetDomainRequest::~SetDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetDomainRequest::getGroupId()const
 void SetDomainRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetDomainRequest::getDomainName()const
@@ -44,7 +46,18 @@ std::string SetDomainRequest::getDomainName()const
 void SetDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
+}
+
+std::string SetDomainRequest::getBindStageName()const
+{
+	return bindStageName_;
+}
+
+void SetDomainRequest::setBindStageName(const std::string& bindStageName)
+{
+	bindStageName_ = bindStageName;
+	setParameter("BindStageName", bindStageName);
 }
 
 std::string SetDomainRequest::getAccessKeyId()const
@@ -55,7 +68,7 @@ std::string SetDomainRequest::getAccessKeyId()const
 void SetDomainRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetDomainRequest::getSecurityToken()const
@@ -66,6 +79,17 @@ std::string SetDomainRequest::getSecurityToken()const
 void SetDomainRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
+}
+
+bool SetDomainRequest::getIsForce()const
+{
+	return isForce_;
+}
+
+void SetDomainRequest::setIsForce(bool isForce)
+{
+	isForce_ = isForce;
+	setParameter("IsForce", isForce ? "true" : "false");
 }
 

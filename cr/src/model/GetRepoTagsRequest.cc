@@ -20,7 +20,10 @@ using AlibabaCloud::Cr::Model::GetRepoTagsRequest;
 
 GetRepoTagsRequest::GetRepoTagsRequest() :
 	RoaServiceRequest("cr", "2016-06-07")
-{}
+{
+	setResourcePath("/repos/[RepoNamespace]/[RepoName]/tags");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRepoTagsRequest::~GetRepoTagsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRepoTagsRequest::getRepoNamespace()const
 void GetRepoTagsRequest::setRepoNamespace(const std::string& repoNamespace)
 {
 	repoNamespace_ = repoNamespace;
-	setCoreParameter("RepoNamespace", repoNamespace);
+	setParameter("RepoNamespace", repoNamespace);
 }
 
 std::string GetRepoTagsRequest::getRepoName()const
@@ -44,7 +47,7 @@ std::string GetRepoTagsRequest::getRepoName()const
 void GetRepoTagsRequest::setRepoName(const std::string& repoName)
 {
 	repoName_ = repoName;
-	setCoreParameter("RepoName", repoName);
+	setParameter("RepoName", repoName);
 }
 
 int GetRepoTagsRequest::getPageSize()const
@@ -55,7 +58,7 @@ int GetRepoTagsRequest::getPageSize()const
 void GetRepoTagsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRepoTagsRequest::getPage()const
@@ -66,6 +69,6 @@ int GetRepoTagsRequest::getPage()const
 void GetRepoTagsRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 

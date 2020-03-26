@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::QueryMarketCategoriesRequest;
 
 QueryMarketCategoriesRequest::QueryMarketCategoriesRequest() :
 	RpcServiceRequest("market", "2015-11-01", "QueryMarketCategories")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryMarketCategoriesRequest::~QueryMarketCategoriesRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryMarketCategoriesRequest::getAccessKeyId()const
 void QueryMarketCategoriesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

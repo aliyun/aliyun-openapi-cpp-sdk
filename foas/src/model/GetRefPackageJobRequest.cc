@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetRefPackageJobRequest;
 
 GetRefPackageJobRequest::GetRefPackageJobRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]/packages/[packageName]/jobs");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetRefPackageJobRequest::~GetRefPackageJobRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetRefPackageJobRequest::getProjectName()const
 void GetRefPackageJobRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetRefPackageJobRequest::getRegionId()const
@@ -44,7 +47,7 @@ std::string GetRefPackageJobRequest::getRegionId()const
 void GetRefPackageJobRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string GetRefPackageJobRequest::getPackageName()const
@@ -55,7 +58,7 @@ std::string GetRefPackageJobRequest::getPackageName()const
 void GetRefPackageJobRequest::setPackageName(const std::string& packageName)
 {
 	packageName_ = packageName;
-	setCoreParameter("PackageName", packageName);
+	setParameter("PackageName", packageName);
 }
 
 int GetRefPackageJobRequest::getPageSize()const
@@ -66,7 +69,7 @@ int GetRefPackageJobRequest::getPageSize()const
 void GetRefPackageJobRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int GetRefPackageJobRequest::getPageIndex()const
@@ -77,6 +80,6 @@ int GetRefPackageJobRequest::getPageIndex()const
 void GetRefPackageJobRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::ListVisitorsRequest;
 
 ListVisitorsRequest::ListVisitorsRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "ListVisitors")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListVisitorsRequest::~ListVisitorsRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListVisitorsRequest::getGender()const
 void ListVisitorsRequest::setGender(const std::string& gender)
 {
 	gender_ = gender;
-	setCoreParameter("Gender", gender);
+	setBodyParameter("Gender", gender);
 }
 
 long ListVisitorsRequest::getUkId()const
@@ -44,7 +46,7 @@ long ListVisitorsRequest::getUkId()const
 void ListVisitorsRequest::setUkId(long ukId)
 {
 	ukId_ = ukId;
-	setCoreParameter("UkId", std::to_string(ukId));
+	setBodyParameter("UkId", std::to_string(ukId));
 }
 
 std::string ListVisitorsRequest::getLocationIds()const
@@ -55,7 +57,7 @@ std::string ListVisitorsRequest::getLocationIds()const
 void ListVisitorsRequest::setLocationIds(const std::string& locationIds)
 {
 	locationIds_ = locationIds;
-	setCoreParameter("LocationIds", locationIds);
+	setBodyParameter("LocationIds", locationIds);
 }
 
 std::string ListVisitorsRequest::getStartTime()const
@@ -66,7 +68,7 @@ std::string ListVisitorsRequest::getStartTime()const
 void ListVisitorsRequest::setStartTime(const std::string& startTime)
 {
 	startTime_ = startTime;
-	setCoreParameter("StartTime", startTime);
+	setBodyParameter("StartTime", startTime);
 }
 
 int ListVisitorsRequest::getPageSize()const
@@ -77,7 +79,7 @@ int ListVisitorsRequest::getPageSize()const
 void ListVisitorsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListVisitorsRequest::getEnterCount()const
@@ -88,7 +90,7 @@ long ListVisitorsRequest::getEnterCount()const
 void ListVisitorsRequest::setEnterCount(long enterCount)
 {
 	enterCount_ = enterCount;
-	setCoreParameter("EnterCount", std::to_string(enterCount));
+	setBodyParameter("EnterCount", std::to_string(enterCount));
 }
 
 int ListVisitorsRequest::getPageIndex()const
@@ -99,7 +101,7 @@ int ListVisitorsRequest::getPageIndex()const
 void ListVisitorsRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setBodyParameter("PageIndex", std::to_string(pageIndex));
 }
 
 long ListVisitorsRequest::getAgeStart()const
@@ -110,7 +112,7 @@ long ListVisitorsRequest::getAgeStart()const
 void ListVisitorsRequest::setAgeStart(long ageStart)
 {
 	ageStart_ = ageStart;
-	setCoreParameter("AgeStart", std::to_string(ageStart));
+	setBodyParameter("AgeStart", std::to_string(ageStart));
 }
 
 long ListVisitorsRequest::getAgeEnd()const
@@ -121,7 +123,7 @@ long ListVisitorsRequest::getAgeEnd()const
 void ListVisitorsRequest::setAgeEnd(long ageEnd)
 {
 	ageEnd_ = ageEnd;
-	setCoreParameter("AgeEnd", std::to_string(ageEnd));
+	setBodyParameter("AgeEnd", std::to_string(ageEnd));
 }
 
 std::string ListVisitorsRequest::getPkId()const
@@ -132,7 +134,7 @@ std::string ListVisitorsRequest::getPkId()const
 void ListVisitorsRequest::setPkId(const std::string& pkId)
 {
 	pkId_ = pkId;
-	setCoreParameter("PkId", pkId);
+	setBodyParameter("PkId", pkId);
 }
 
 std::string ListVisitorsRequest::getEndTime()const
@@ -143,7 +145,7 @@ std::string ListVisitorsRequest::getEndTime()const
 void ListVisitorsRequest::setEndTime(const std::string& endTime)
 {
 	endTime_ = endTime;
-	setCoreParameter("EndTime", endTime);
+	setBodyParameter("EndTime", endTime);
 }
 
 std::string ListVisitorsRequest::getStoreIds()const
@@ -154,6 +156,6 @@ std::string ListVisitorsRequest::getStoreIds()const
 void ListVisitorsRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setBodyParameter("StoreIds", storeIds);
 }
 

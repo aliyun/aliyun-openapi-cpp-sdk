@@ -35,7 +35,7 @@ std::string CreateSiteMonitorRequest::getAddress()const
 void CreateSiteMonitorRequest::setAddress(const std::string& address)
 {
 	address_ = address;
-	setCoreParameter("Address", address);
+	setParameter("Address", address);
 }
 
 std::string CreateSiteMonitorRequest::getTaskType()const
@@ -46,7 +46,7 @@ std::string CreateSiteMonitorRequest::getTaskType()const
 void CreateSiteMonitorRequest::setTaskType(const std::string& taskType)
 {
 	taskType_ = taskType;
-	setCoreParameter("TaskType", taskType);
+	setParameter("TaskType", taskType);
 }
 
 std::string CreateSiteMonitorRequest::getTaskName()const
@@ -57,7 +57,7 @@ std::string CreateSiteMonitorRequest::getTaskName()const
 void CreateSiteMonitorRequest::setTaskName(const std::string& taskName)
 {
 	taskName_ = taskName;
-	setCoreParameter("TaskName", taskName);
+	setParameter("TaskName", taskName);
 }
 
 std::string CreateSiteMonitorRequest::getIspCities()const
@@ -68,7 +68,7 @@ std::string CreateSiteMonitorRequest::getIspCities()const
 void CreateSiteMonitorRequest::setIspCities(const std::string& ispCities)
 {
 	ispCities_ = ispCities;
-	setCoreParameter("IspCities", ispCities);
+	setParameter("IspCities", ispCities);
 }
 
 std::string CreateSiteMonitorRequest::getOptionsJson()const
@@ -79,7 +79,7 @@ std::string CreateSiteMonitorRequest::getOptionsJson()const
 void CreateSiteMonitorRequest::setOptionsJson(const std::string& optionsJson)
 {
 	optionsJson_ = optionsJson;
-	setCoreParameter("OptionsJson", optionsJson);
+	setParameter("OptionsJson", optionsJson);
 }
 
 std::string CreateSiteMonitorRequest::getAlertIds()const
@@ -90,7 +90,7 @@ std::string CreateSiteMonitorRequest::getAlertIds()const
 void CreateSiteMonitorRequest::setAlertIds(const std::string& alertIds)
 {
 	alertIds_ = alertIds;
-	setCoreParameter("AlertIds", alertIds);
+	setParameter("AlertIds", alertIds);
 }
 
 std::string CreateSiteMonitorRequest::getInterval()const
@@ -101,6 +101,6 @@ std::string CreateSiteMonitorRequest::getInterval()const
 void CreateSiteMonitorRequest::setInterval(const std::string& interval)
 {
 	interval_ = interval;
-	setCoreParameter("Interval", interval);
+	setParameter("Interval", interval);
 }
 

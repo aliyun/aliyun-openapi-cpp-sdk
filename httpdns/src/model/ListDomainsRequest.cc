@@ -20,7 +20,9 @@ using AlibabaCloud::Httpdns::Model::ListDomainsRequest;
 
 ListDomainsRequest::ListDomainsRequest() :
 	RpcServiceRequest("httpdns", "2016-02-01", "ListDomains")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListDomainsRequest::~ListDomainsRequest()
 {}
@@ -33,7 +35,7 @@ int ListDomainsRequest::getPageNumber()const
 void ListDomainsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListDomainsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListDomainsRequest::getAccessKeyId()const
 void ListDomainsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int ListDomainsRequest::getPageSize()const
@@ -55,6 +57,6 @@ int ListDomainsRequest::getPageSize()const
 void ListDomainsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

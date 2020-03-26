@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::DescribeOrderRequest;
 
 DescribeOrderRequest::DescribeOrderRequest() :
 	RpcServiceRequest("market", "2015-11-01", "DescribeOrder")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeOrderRequest::~DescribeOrderRequest()
 {}
@@ -33,6 +35,6 @@ std::string DescribeOrderRequest::getOrderId()const
 void DescribeOrderRequest::setOrderId(const std::string& orderId)
 {
 	orderId_ = orderId;
-	setCoreParameter("OrderId", orderId);
+	setParameter("OrderId", orderId);
 }
 

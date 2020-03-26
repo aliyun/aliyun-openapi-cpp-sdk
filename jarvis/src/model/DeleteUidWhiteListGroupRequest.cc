@@ -20,7 +20,9 @@ using AlibabaCloud::Jarvis::Model::DeleteUidWhiteListGroupRequest;
 
 DeleteUidWhiteListGroupRequest::DeleteUidWhiteListGroupRequest() :
 	RpcServiceRequest("jarvis", "2018-02-06", "DeleteUidWhiteListGroup")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteUidWhiteListGroupRequest::~DeleteUidWhiteListGroupRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteUidWhiteListGroupRequest::getSourceCode()const
 void DeleteUidWhiteListGroupRequest::setSourceCode(const std::string& sourceCode)
 {
 	sourceCode_ = sourceCode;
-	setCoreParameter("SourceCode", sourceCode);
+	setParameter("SourceCode", sourceCode);
 }
 
 std::string DeleteUidWhiteListGroupRequest::getGroupIdList()const
@@ -44,7 +46,7 @@ std::string DeleteUidWhiteListGroupRequest::getGroupIdList()const
 void DeleteUidWhiteListGroupRequest::setGroupIdList(const std::string& groupIdList)
 {
 	groupIdList_ = groupIdList;
-	setCoreParameter("GroupIdList", groupIdList);
+	setParameter("GroupIdList", groupIdList);
 }
 
 std::string DeleteUidWhiteListGroupRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DeleteUidWhiteListGroupRequest::getSourceIp()const
 void DeleteUidWhiteListGroupRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DeleteUidWhiteListGroupRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DeleteUidWhiteListGroupRequest::getLang()const
 void DeleteUidWhiteListGroupRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

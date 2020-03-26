@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::DescribeTotalCountRequest;
 
 DescribeTotalCountRequest::DescribeTotalCountRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "DescribeTotalCount")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeTotalCountRequest::~DescribeTotalCountRequest()
 {}
@@ -33,7 +35,7 @@ int DescribeTotalCountRequest::getFeatureType()const
 void DescribeTotalCountRequest::setFeatureType(int featureType)
 {
 	featureType_ = featureType;
-	setCoreParameter("FeatureType", std::to_string(featureType));
+	setParameter("FeatureType", std::to_string(featureType));
 }
 
 std::string DescribeTotalCountRequest::getSourceIp()const
@@ -44,7 +46,7 @@ std::string DescribeTotalCountRequest::getSourceIp()const
 void DescribeTotalCountRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeTotalCountRequest::getLang()const
@@ -55,6 +57,6 @@ std::string DescribeTotalCountRequest::getLang()const
 void DescribeTotalCountRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

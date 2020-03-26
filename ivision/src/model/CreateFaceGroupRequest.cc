@@ -35,7 +35,7 @@ std::string CreateFaceGroupRequest::getShowLog()const
 void CreateFaceGroupRequest::setShowLog(const std::string& showLog)
 {
 	showLog_ = showLog;
-	setCoreParameter("ShowLog", showLog);
+	setParameter("ShowLog", showLog);
 }
 
 long CreateFaceGroupRequest::getOwnerId()const
@@ -46,7 +46,7 @@ long CreateFaceGroupRequest::getOwnerId()const
 void CreateFaceGroupRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string CreateFaceGroupRequest::getName()const
@@ -57,6 +57,6 @@ std::string CreateFaceGroupRequest::getName()const
 void CreateFaceGroupRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 

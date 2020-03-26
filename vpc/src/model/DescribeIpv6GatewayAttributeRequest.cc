@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DescribeIpv6GatewayAttributeRequest;
 
 DescribeIpv6GatewayAttributeRequest::DescribeIpv6GatewayAttributeRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DescribeIpv6GatewayAttribute")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeIpv6GatewayAttributeRequest::~DescribeIpv6GatewayAttributeRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeIpv6GatewayAttributeRequest::getResourceOwnerId()const
 void DescribeIpv6GatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeIpv6GatewayAttributeRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DescribeIpv6GatewayAttributeRequest::getRegionId()const
 void DescribeIpv6GatewayAttributeRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DescribeIpv6GatewayAttributeRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DescribeIpv6GatewayAttributeRequest::getResourceOwnerAccount()const
 void DescribeIpv6GatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeIpv6GatewayAttributeRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeIpv6GatewayAttributeRequest::getOwnerAccount()const
 void DescribeIpv6GatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeIpv6GatewayAttributeRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DescribeIpv6GatewayAttributeRequest::getOwnerId()const
 void DescribeIpv6GatewayAttributeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeIpv6GatewayAttributeRequest::getIpv6GatewayId()const
@@ -88,6 +90,6 @@ std::string DescribeIpv6GatewayAttributeRequest::getIpv6GatewayId()const
 void DescribeIpv6GatewayAttributeRequest::setIpv6GatewayId(const std::string& ipv6GatewayId)
 {
 	ipv6GatewayId_ = ipv6GatewayId;
-	setCoreParameter("Ipv6GatewayId", ipv6GatewayId);
+	setParameter("Ipv6GatewayId", ipv6GatewayId);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::CloudAPI::Model::SetApisAuthoritiesRequest;
 
 SetApisAuthoritiesRequest::SetApisAuthoritiesRequest() :
 	RpcServiceRequest("cloudapi", "2016-07-14", "SetApisAuthorities")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SetApisAuthoritiesRequest::~SetApisAuthoritiesRequest()
 {}
@@ -33,7 +35,7 @@ std::string SetApisAuthoritiesRequest::getAuthVaildTime()const
 void SetApisAuthoritiesRequest::setAuthVaildTime(const std::string& authVaildTime)
 {
 	authVaildTime_ = authVaildTime;
-	setCoreParameter("AuthVaildTime", authVaildTime);
+	setParameter("AuthVaildTime", authVaildTime);
 }
 
 std::string SetApisAuthoritiesRequest::getStageName()const
@@ -44,7 +46,7 @@ std::string SetApisAuthoritiesRequest::getStageName()const
 void SetApisAuthoritiesRequest::setStageName(const std::string& stageName)
 {
 	stageName_ = stageName;
-	setCoreParameter("StageName", stageName);
+	setParameter("StageName", stageName);
 }
 
 std::string SetApisAuthoritiesRequest::getGroupId()const
@@ -55,7 +57,7 @@ std::string SetApisAuthoritiesRequest::getGroupId()const
 void SetApisAuthoritiesRequest::setGroupId(const std::string& groupId)
 {
 	groupId_ = groupId;
-	setCoreParameter("GroupId", groupId);
+	setParameter("GroupId", groupId);
 }
 
 std::string SetApisAuthoritiesRequest::getDescription()const
@@ -66,7 +68,7 @@ std::string SetApisAuthoritiesRequest::getDescription()const
 void SetApisAuthoritiesRequest::setDescription(const std::string& description)
 {
 	description_ = description;
-	setCoreParameter("Description", description);
+	setParameter("Description", description);
 }
 
 std::string SetApisAuthoritiesRequest::getAuthValidTime()const
@@ -77,7 +79,7 @@ std::string SetApisAuthoritiesRequest::getAuthValidTime()const
 void SetApisAuthoritiesRequest::setAuthValidTime(const std::string& authValidTime)
 {
 	authValidTime_ = authValidTime;
-	setCoreParameter("AuthValidTime", authValidTime);
+	setParameter("AuthValidTime", authValidTime);
 }
 
 std::string SetApisAuthoritiesRequest::getAccessKeyId()const
@@ -88,7 +90,7 @@ std::string SetApisAuthoritiesRequest::getAccessKeyId()const
 void SetApisAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string SetApisAuthoritiesRequest::getSecurityToken()const
@@ -99,7 +101,7 @@ std::string SetApisAuthoritiesRequest::getSecurityToken()const
 void SetApisAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 long SetApisAuthoritiesRequest::getAppId()const
@@ -110,7 +112,7 @@ long SetApisAuthoritiesRequest::getAppId()const
 void SetApisAuthoritiesRequest::setAppId(long appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", std::to_string(appId));
+	setParameter("AppId", std::to_string(appId));
 }
 
 std::string SetApisAuthoritiesRequest::getApiIds()const
@@ -121,6 +123,6 @@ std::string SetApisAuthoritiesRequest::getApiIds()const
 void SetApisAuthoritiesRequest::setApiIds(const std::string& apiIds)
 {
 	apiIds_ = apiIds;
-	setCoreParameter("ApiIds", apiIds);
+	setParameter("ApiIds", apiIds);
 }
 

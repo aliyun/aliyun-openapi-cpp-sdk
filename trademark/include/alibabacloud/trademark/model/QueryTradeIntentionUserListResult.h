@@ -36,10 +36,11 @@ namespace AlibabaCloud
 				{
 					int status;
 					std::string registerNumber;
+					int type;
 					std::string userName;
 					std::string description;
 					std::string classification;
-					int mobile;
+					std::string mobile;
 					std::string bizId;
 				};
 

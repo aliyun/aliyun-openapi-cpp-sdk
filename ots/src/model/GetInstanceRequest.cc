@@ -20,21 +20,12 @@ using AlibabaCloud::Ots::Model::GetInstanceRequest;
 
 GetInstanceRequest::GetInstanceRequest() :
 	RpcServiceRequest("ots", "2016-06-20", "GetInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetInstanceRequest::~GetInstanceRequest()
 {}
-
-std::string GetInstanceRequest::getAccess_key_id()const
-{
-	return access_key_id_;
-}
-
-void GetInstanceRequest::setAccess_key_id(const std::string& access_key_id)
-{
-	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
-}
 
 long GetInstanceRequest::getResourceOwnerId()const
 {
@@ -44,7 +35,18 @@ long GetInstanceRequest::getResourceOwnerId()const
 void GetInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+}
+
+std::string GetInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void GetInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string GetInstanceRequest::getInstanceName()const
@@ -55,6 +57,6 @@ std::string GetInstanceRequest::getInstanceName()const
 void GetInstanceRequest::setInstanceName(const std::string& instanceName)
 {
 	instanceName_ = instanceName;
-	setCoreParameter("InstanceName", instanceName);
+	setParameter("InstanceName", instanceName);
 }
 

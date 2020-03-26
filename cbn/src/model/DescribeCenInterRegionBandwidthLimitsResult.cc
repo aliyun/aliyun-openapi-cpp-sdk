@@ -55,6 +55,8 @@ void DescribeCenInterRegionBandwidthLimitsResult::parse(const std::string &paylo
 			cenInterRegionBandwidthLimitsObject.bandwidthLimit = std::stol(valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthLimit"].asString());
 		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].isNull())
 			cenInterRegionBandwidthLimitsObject.status = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["Status"].asString();
+		if(!valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].isNull())
+			cenInterRegionBandwidthLimitsObject.bandwidthPackageId = valueCenInterRegionBandwidthLimitsCenInterRegionBandwidthLimit["BandwidthPackageId"].asString();
 		cenInterRegionBandwidthLimits_.push_back(cenInterRegionBandwidthLimitsObject);
 	}
 	if(!value["TotalCount"].isNull())

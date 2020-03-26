@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DoActionsRequest;
 
 DoActionsRequest::DoActionsRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/actions");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DoActionsRequest::~DoActionsRequest()
 {}
@@ -33,7 +36,7 @@ std::string DoActionsRequest::getStackId()const
 void DoActionsRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DoActionsRequest::getStackName()const
@@ -44,6 +47,6 @@ std::string DoActionsRequest::getStackName()const
 void DoActionsRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

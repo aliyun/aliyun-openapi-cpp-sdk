@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setCertificateBody(const std::string& certificateBody);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCaCertificateBody()const;
+				void setCaCertificateBody(const std::string& caCertificateBody);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getCertificateName()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string certificateBody_;
 				std::string accessKeyId_;
+				std::string caCertificateBody_;
 				std::string securityToken_;
 				std::string certificateName_;
 

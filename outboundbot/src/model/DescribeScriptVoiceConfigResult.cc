@@ -40,28 +40,28 @@ void DescribeScriptVoiceConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto scriptVoiceConfigNode = value["ScriptVoiceConfig"];
-	if(!scriptVoiceConfigNode["ScriptVoiceConfigId"].isNull())
-		scriptVoiceConfig_.scriptVoiceConfigId = scriptVoiceConfigNode["ScriptVoiceConfigId"].asString();
 	if(!scriptVoiceConfigNode["InstanceId"].isNull())
 		scriptVoiceConfig_.instanceId = scriptVoiceConfigNode["InstanceId"].asString();
-	if(!scriptVoiceConfigNode["ScriptId"].isNull())
-		scriptVoiceConfig_.scriptId = scriptVoiceConfigNode["ScriptId"].asString();
 	if(!scriptVoiceConfigNode["ScriptContent"].isNull())
 		scriptVoiceConfig_.scriptContent = scriptVoiceConfigNode["ScriptContent"].asString();
+	if(!scriptVoiceConfigNode["ScriptId"].isNull())
+		scriptVoiceConfig_.scriptId = scriptVoiceConfigNode["ScriptId"].asString();
+	if(!scriptVoiceConfigNode["ScriptVoiceConfigId"].isNull())
+		scriptVoiceConfig_.scriptVoiceConfigId = scriptVoiceConfigNode["ScriptVoiceConfigId"].asString();
+	if(!scriptVoiceConfigNode["ScriptWaveformRelation"].isNull())
+		scriptVoiceConfig_.scriptWaveformRelation = scriptVoiceConfigNode["ScriptWaveformRelation"].asString();
 	if(!scriptVoiceConfigNode["Source"].isNull())
 		scriptVoiceConfig_.source = scriptVoiceConfigNode["Source"].asString();
 	if(!scriptVoiceConfigNode["Type"].isNull())
 		scriptVoiceConfig_.type = scriptVoiceConfigNode["Type"].asString();
-	if(!scriptVoiceConfigNode["ScriptWaveformRelation"].isNull())
-		scriptVoiceConfig_.scriptWaveformRelation = scriptVoiceConfigNode["ScriptWaveformRelation"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

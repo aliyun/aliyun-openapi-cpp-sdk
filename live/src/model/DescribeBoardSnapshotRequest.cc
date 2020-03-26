@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DescribeBoardSnapshotRequest;
 
 DescribeBoardSnapshotRequest::DescribeBoardSnapshotRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DescribeBoardSnapshot")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeBoardSnapshotRequest::~DescribeBoardSnapshotRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeBoardSnapshotRequest::getOwnerId()const
 void DescribeBoardSnapshotRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeBoardSnapshotRequest::getAppId()const
@@ -44,7 +46,7 @@ std::string DescribeBoardSnapshotRequest::getAppId()const
 void DescribeBoardSnapshotRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
-	setCoreParameter("AppId", appId);
+	setParameter("AppId", appId);
 }
 
 std::string DescribeBoardSnapshotRequest::getBoardId()const
@@ -55,6 +57,6 @@ std::string DescribeBoardSnapshotRequest::getBoardId()const
 void DescribeBoardSnapshotRequest::setBoardId(const std::string& boardId)
 {
 	boardId_ = boardId;
-	setCoreParameter("BoardId", boardId);
+	setParameter("BoardId", boardId);
 }
 

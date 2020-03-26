@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::BusinessShowListRequest;
 
 BusinessShowListRequest::BusinessShowListRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "BusinessShowList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BusinessShowListRequest::~BusinessShowListRequest()
 {}
@@ -33,7 +35,7 @@ std::string BusinessShowListRequest::getAccessKeyId()const
 void BusinessShowListRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 int BusinessShowListRequest::getPage()const
@@ -44,7 +46,7 @@ int BusinessShowListRequest::getPage()const
 void BusinessShowListRequest::setPage(int page)
 {
 	page_ = page;
-	setCoreParameter("Page", std::to_string(page));
+	setParameter("Page", std::to_string(page));
 }
 
 int BusinessShowListRequest::getPer()const
@@ -55,6 +57,6 @@ int BusinessShowListRequest::getPer()const
 void BusinessShowListRequest::setPer(int per)
 {
 	per_ = per;
-	setCoreParameter("Per", std::to_string(per));
+	setParameter("Per", std::to_string(per));
 }
 

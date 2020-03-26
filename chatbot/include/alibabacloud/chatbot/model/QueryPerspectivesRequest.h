@@ -35,8 +35,11 @@ namespace AlibabaCloud
 				QueryPerspectivesRequest();
 				~QueryPerspectivesRequest();
 
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
+				std::string accessKeyId_;
 
 			};
 		}

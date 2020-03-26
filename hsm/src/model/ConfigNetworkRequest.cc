@@ -20,20 +20,44 @@ using AlibabaCloud::Hsm::Model::ConfigNetworkRequest;
 
 ConfigNetworkRequest::ConfigNetworkRequest() :
 	RpcServiceRequest("hsm", "2018-01-11", "ConfigNetwork")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ConfigNetworkRequest::~ConfigNetworkRequest()
 {}
 
-long ConfigNetworkRequest::getResourceOwnerId()const
+std::string ConfigNetworkRequest::getSourceIp()const
 {
-	return resourceOwnerId_;
+	return sourceIp_;
 }
 
-void ConfigNetworkRequest::setResourceOwnerId(long resourceOwnerId)
+void ConfigNetworkRequest::setSourceIp(const std::string& sourceIp)
 {
-	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	sourceIp_ = sourceIp;
+	setParameter("SourceIp", sourceIp);
+}
+
+std::string ConfigNetworkRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ConfigNetworkRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string ConfigNetworkRequest::getLang()const
+{
+	return lang_;
+}
+
+void ConfigNetworkRequest::setLang(const std::string& lang)
+{
+	lang_ = lang;
+	setParameter("Lang", lang);
 }
 
 std::string ConfigNetworkRequest::getIp()const
@@ -44,7 +68,7 @@ std::string ConfigNetworkRequest::getIp()const
 void ConfigNetworkRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setParameter("Ip", ip);
 }
 
 std::string ConfigNetworkRequest::getVSwitchId()const
@@ -55,7 +79,7 @@ std::string ConfigNetworkRequest::getVSwitchId()const
 void ConfigNetworkRequest::setVSwitchId(const std::string& vSwitchId)
 {
 	vSwitchId_ = vSwitchId;
-	setCoreParameter("VSwitchId", vSwitchId);
+	setParameter("VSwitchId", vSwitchId);
 }
 
 std::string ConfigNetworkRequest::getInstanceId()const
@@ -66,18 +90,7 @@ std::string ConfigNetworkRequest::getInstanceId()const
 void ConfigNetworkRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
-}
-
-std::string ConfigNetworkRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void ConfigNetworkRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ConfigNetworkRequest::getVpcId()const
@@ -88,6 +101,6 @@ std::string ConfigNetworkRequest::getVpcId()const
 void ConfigNetworkRequest::setVpcId(const std::string& vpcId)
 {
 	vpcId_ = vpcId;
-	setCoreParameter("VpcId", vpcId);
+	setParameter("VpcId", vpcId);
 }
 

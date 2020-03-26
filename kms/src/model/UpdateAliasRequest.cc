@@ -21,7 +21,7 @@ using AlibabaCloud::Kms::Model::UpdateAliasRequest;
 UpdateAliasRequest::UpdateAliasRequest() :
 	RpcServiceRequest("kms", "2016-01-20", "UpdateAlias")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 UpdateAliasRequest::~UpdateAliasRequest()

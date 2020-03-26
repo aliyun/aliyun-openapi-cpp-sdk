@@ -20,7 +20,9 @@ using AlibabaCloud::Ubsms::Model::NotifyUserBusinessCommandRequest;
 
 NotifyUserBusinessCommandRequest::NotifyUserBusinessCommandRequest() :
 	RpcServiceRequest("ubsms", "2015-06-23", "NotifyUserBusinessCommand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 NotifyUserBusinessCommandRequest::~NotifyUserBusinessCommandRequest()
 {}
@@ -33,7 +35,7 @@ std::string NotifyUserBusinessCommandRequest::getUid()const
 void NotifyUserBusinessCommandRequest::setUid(const std::string& uid)
 {
 	uid_ = uid;
-	setCoreParameter("Uid", uid);
+	setParameter("Uid", uid);
 }
 
 std::string NotifyUserBusinessCommandRequest::getPassword()const
@@ -44,7 +46,7 @@ std::string NotifyUserBusinessCommandRequest::getPassword()const
 void NotifyUserBusinessCommandRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string NotifyUserBusinessCommandRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string NotifyUserBusinessCommandRequest::getInstanceId()const
 void NotifyUserBusinessCommandRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string NotifyUserBusinessCommandRequest::getServiceCode()const
@@ -66,7 +68,7 @@ std::string NotifyUserBusinessCommandRequest::getServiceCode()const
 void NotifyUserBusinessCommandRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
-	setCoreParameter("ServiceCode", serviceCode);
+	setParameter("ServiceCode", serviceCode);
 }
 
 std::string NotifyUserBusinessCommandRequest::getClientToken()const
@@ -77,7 +79,7 @@ std::string NotifyUserBusinessCommandRequest::getClientToken()const
 void NotifyUserBusinessCommandRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string NotifyUserBusinessCommandRequest::getCmd()const
@@ -88,7 +90,7 @@ std::string NotifyUserBusinessCommandRequest::getCmd()const
 void NotifyUserBusinessCommandRequest::setCmd(const std::string& cmd)
 {
 	cmd_ = cmd;
-	setCoreParameter("Cmd", cmd);
+	setParameter("Cmd", cmd);
 }
 
 std::string NotifyUserBusinessCommandRequest::getRegion()const
@@ -99,6 +101,6 @@ std::string NotifyUserBusinessCommandRequest::getRegion()const
 void NotifyUserBusinessCommandRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 

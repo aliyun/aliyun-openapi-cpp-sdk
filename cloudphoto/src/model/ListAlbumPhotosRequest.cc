@@ -20,7 +20,9 @@ using AlibabaCloud::CloudPhoto::Model::ListAlbumPhotosRequest;
 
 ListAlbumPhotosRequest::ListAlbumPhotosRequest() :
 	RpcServiceRequest("cloudphoto", "2017-07-11", "ListAlbumPhotos")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListAlbumPhotosRequest::~ListAlbumPhotosRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListAlbumPhotosRequest::getCursor()const
 void ListAlbumPhotosRequest::setCursor(const std::string& cursor)
 {
 	cursor_ = cursor;
-	setCoreParameter("Cursor", cursor);
+	setParameter("Cursor", cursor);
 }
 
 std::string ListAlbumPhotosRequest::getLibraryId()const
@@ -44,7 +46,7 @@ std::string ListAlbumPhotosRequest::getLibraryId()const
 void ListAlbumPhotosRequest::setLibraryId(const std::string& libraryId)
 {
 	libraryId_ = libraryId;
-	setCoreParameter("LibraryId", libraryId);
+	setParameter("LibraryId", libraryId);
 }
 
 long ListAlbumPhotosRequest::getAlbumId()const
@@ -55,7 +57,7 @@ long ListAlbumPhotosRequest::getAlbumId()const
 void ListAlbumPhotosRequest::setAlbumId(long albumId)
 {
 	albumId_ = albumId;
-	setCoreParameter("AlbumId", std::to_string(albumId));
+	setParameter("AlbumId", std::to_string(albumId));
 }
 
 std::string ListAlbumPhotosRequest::getStoreName()const
@@ -66,7 +68,7 @@ std::string ListAlbumPhotosRequest::getStoreName()const
 void ListAlbumPhotosRequest::setStoreName(const std::string& storeName)
 {
 	storeName_ = storeName;
-	setCoreParameter("StoreName", storeName);
+	setParameter("StoreName", storeName);
 }
 
 int ListAlbumPhotosRequest::getSize()const
@@ -77,7 +79,7 @@ int ListAlbumPhotosRequest::getSize()const
 void ListAlbumPhotosRequest::setSize(int size)
 {
 	size_ = size;
-	setCoreParameter("Size", std::to_string(size));
+	setParameter("Size", std::to_string(size));
 }
 
 std::string ListAlbumPhotosRequest::getState()const
@@ -88,7 +90,7 @@ std::string ListAlbumPhotosRequest::getState()const
 void ListAlbumPhotosRequest::setState(const std::string& state)
 {
 	state_ = state;
-	setCoreParameter("State", state);
+	setParameter("State", state);
 }
 
 std::string ListAlbumPhotosRequest::getDirection()const
@@ -99,6 +101,6 @@ std::string ListAlbumPhotosRequest::getDirection()const
 void ListAlbumPhotosRequest::setDirection(const std::string& direction)
 {
 	direction_ = direction;
-	setCoreParameter("Direction", direction);
+	setParameter("Direction", direction);
 }
 

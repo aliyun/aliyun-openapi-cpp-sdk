@@ -21,7 +21,7 @@ using AlibabaCloud::Ons::Model::OnsGroupDeleteRequest;
 OnsGroupDeleteRequest::OnsGroupDeleteRequest() :
 	RpcServiceRequest("ons", "2019-02-14", "OnsGroupDelete")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OnsGroupDeleteRequest::~OnsGroupDeleteRequest()

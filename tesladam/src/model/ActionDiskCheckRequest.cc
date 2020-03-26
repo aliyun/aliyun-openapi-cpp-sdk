@@ -20,7 +20,9 @@ using AlibabaCloud::TeslaDam::Model::ActionDiskCheckRequest;
 
 ActionDiskCheckRequest::ActionDiskCheckRequest() :
 	RpcServiceRequest("tesladam", "2018-01-18", "ActionDiskCheck")
-{}
+{
+	setMethod(HttpRequest::Method::Get);
+}
 
 ActionDiskCheckRequest::~ActionDiskCheckRequest()
 {}
@@ -33,7 +35,7 @@ std::string ActionDiskCheckRequest::getDiskMount()const
 void ActionDiskCheckRequest::setDiskMount(const std::string& diskMount)
 {
 	diskMount_ = diskMount;
-	setCoreParameter("DiskMount", diskMount);
+	setParameter("DiskMount", diskMount);
 }
 
 std::string ActionDiskCheckRequest::getIp()const
@@ -44,6 +46,6 @@ std::string ActionDiskCheckRequest::getIp()const
 void ActionDiskCheckRequest::setIp(const std::string& ip)
 {
 	ip_ = ip;
-	setCoreParameter("Ip", ip);
+	setParameter("Ip", ip);
 }
 

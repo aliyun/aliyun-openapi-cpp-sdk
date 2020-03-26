@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetPortrayalRequest;
 
 GetPortrayalRequest::GetPortrayalRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetPortrayal")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPortrayalRequest::~GetPortrayalRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetPortrayalRequest::getDate()const
 void GetPortrayalRequest::setDate(const std::string& date)
 {
 	date_ = date;
-	setCoreParameter("Date", date);
+	setBodyParameter("Date", date);
 }
 
 std::string GetPortrayalRequest::getLocationIds()const
@@ -44,7 +46,7 @@ std::string GetPortrayalRequest::getLocationIds()const
 void GetPortrayalRequest::setLocationIds(const std::string& locationIds)
 {
 	locationIds_ = locationIds;
-	setCoreParameter("LocationIds", locationIds);
+	setBodyParameter("LocationIds", locationIds);
 }
 
 std::string GetPortrayalRequest::getStoreIds()const
@@ -55,6 +57,6 @@ std::string GetPortrayalRequest::getStoreIds()const
 void GetPortrayalRequest::setStoreIds(const std::string& storeIds)
 {
 	storeIds_ = storeIds;
-	setCoreParameter("StoreIds", storeIds);
+	setBodyParameter("StoreIds", storeIds);
 }
 

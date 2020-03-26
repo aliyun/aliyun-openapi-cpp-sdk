@@ -30,6 +30,8 @@
 #include "model/AddNumberToSkillGroupResult.h"
 #include "model/AddPhoneNumberRequest.h"
 #include "model/AddPhoneNumberResult.h"
+#include "model/AddPhoneTagsRequest.h"
+#include "model/AddPhoneTagsResult.h"
 #include "model/AssignJobsRequest.h"
 #include "model/AssignJobsResult.h"
 #include "model/AssignUsersRequest.h"
@@ -40,6 +42,8 @@
 #include "model/CancelJobsResult.h"
 #include "model/CancelPredictiveJobsRequest.h"
 #include "model/CancelPredictiveJobsResult.h"
+#include "model/CheckNumberAvaliableRequest.h"
+#include "model/CheckNumberAvaliableResult.h"
 #include "model/CommitContactFlowVersionModificationRequest.h"
 #include "model/CommitContactFlowVersionModificationResult.h"
 #include "model/CreateBatchJobsRequest.h"
@@ -80,6 +84,8 @@
 #include "model/DeleteJobGroupResult.h"
 #include "model/DeleteMediaRequest.h"
 #include "model/DeleteMediaResult.h"
+#include "model/DeletePhoneTagsRequest.h"
+#include "model/DeletePhoneTagsResult.h"
 #include "model/DeleteSkillGroupRequest.h"
 #include "model/DeleteSkillGroupResult.h"
 #include "model/DeleteSurveyRequest.h"
@@ -168,6 +174,8 @@
 #include "model/GetTaskListResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
+#include "model/InflightTaskTimeoutRequest.h"
+#include "model/InflightTaskTimeoutResult.h"
 #include "model/LaunchAppraiseRequest.h"
 #include "model/LaunchAppraiseResult.h"
 #include "model/LaunchShortMessageAppraiseRequest.h"
@@ -212,6 +220,8 @@
 #include "model/ListOutboundPhoneNumberOfUserResult.h"
 #include "model/ListPhoneNumbersRequest.h"
 #include "model/ListPhoneNumbersResult.h"
+#include "model/ListPhoneTagsRequest.h"
+#include "model/ListPhoneTagsResult.h"
 #include "model/ListPredictiveJobGroupsRequest.h"
 #include "model/ListPredictiveJobGroupsResult.h"
 #include "model/ListPredictiveJobStatusRequest.h"
@@ -268,6 +278,8 @@
 #include "model/ModifyNotificationConfigResult.h"
 #include "model/ModifyPhoneNumberRequest.h"
 #include "model/ModifyPhoneNumberResult.h"
+#include "model/ModifyPhoneTagsRequest.h"
+#include "model/ModifyPhoneTagsResult.h"
 #include "model/ModifyPrivacyNumberCallDetailRequest.h"
 #include "model/ModifyPrivacyNumberCallDetailResult.h"
 #include "model/ModifyScenarioRequest.h"
@@ -340,6 +352,8 @@
 #include "model/SubmitCabRecordingResult.h"
 #include "model/SuspendJobsRequest.h"
 #include "model/SuspendJobsResult.h"
+#include "model/TaskPreparingRequest.h"
+#include "model/TaskPreparingResult.h"
 #include "model/TwoPartiesCallRequest.h"
 #include "model/TwoPartiesCallResult.h"
 
@@ -363,6 +377,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddPhoneNumberResult> AddPhoneNumberOutcome;
 			typedef std::future<AddPhoneNumberOutcome> AddPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AddPhoneNumberRequest&, const AddPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPhoneNumberAsyncHandler;
+			typedef Outcome<Error, Model::AddPhoneTagsResult> AddPhoneTagsOutcome;
+			typedef std::future<AddPhoneTagsOutcome> AddPhoneTagsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::AddPhoneTagsRequest&, const AddPhoneTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPhoneTagsAsyncHandler;
 			typedef Outcome<Error, Model::AssignJobsResult> AssignJobsOutcome;
 			typedef std::future<AssignJobsOutcome> AssignJobsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AssignJobsRequest&, const AssignJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AssignJobsAsyncHandler;
@@ -378,6 +395,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelPredictiveJobsResult> CancelPredictiveJobsOutcome;
 			typedef std::future<CancelPredictiveJobsOutcome> CancelPredictiveJobsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CancelPredictiveJobsRequest&, const CancelPredictiveJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPredictiveJobsAsyncHandler;
+			typedef Outcome<Error, Model::CheckNumberAvaliableResult> CheckNumberAvaliableOutcome;
+			typedef std::future<CheckNumberAvaliableOutcome> CheckNumberAvaliableOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::CheckNumberAvaliableRequest&, const CheckNumberAvaliableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckNumberAvaliableAsyncHandler;
 			typedef Outcome<Error, Model::CommitContactFlowVersionModificationResult> CommitContactFlowVersionModificationOutcome;
 			typedef std::future<CommitContactFlowVersionModificationOutcome> CommitContactFlowVersionModificationOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CommitContactFlowVersionModificationRequest&, const CommitContactFlowVersionModificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CommitContactFlowVersionModificationAsyncHandler;
@@ -438,6 +458,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMediaResult> DeleteMediaOutcome;
 			typedef std::future<DeleteMediaOutcome> DeleteMediaOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::DeleteMediaRequest&, const DeleteMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMediaAsyncHandler;
+			typedef Outcome<Error, Model::DeletePhoneTagsResult> DeletePhoneTagsOutcome;
+			typedef std::future<DeletePhoneTagsOutcome> DeletePhoneTagsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::DeletePhoneTagsRequest&, const DeletePhoneTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePhoneTagsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSkillGroupResult> DeleteSkillGroupOutcome;
 			typedef std::future<DeleteSkillGroupOutcome> DeleteSkillGroupOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::DeleteSkillGroupRequest&, const DeleteSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSkillGroupAsyncHandler;
@@ -570,6 +593,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::InflightTaskTimeoutResult> InflightTaskTimeoutOutcome;
+			typedef std::future<InflightTaskTimeoutOutcome> InflightTaskTimeoutOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::InflightTaskTimeoutRequest&, const InflightTaskTimeoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InflightTaskTimeoutAsyncHandler;
 			typedef Outcome<Error, Model::LaunchAppraiseResult> LaunchAppraiseOutcome;
 			typedef std::future<LaunchAppraiseOutcome> LaunchAppraiseOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::LaunchAppraiseRequest&, const LaunchAppraiseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LaunchAppraiseAsyncHandler;
@@ -636,6 +662,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPhoneNumbersResult> ListPhoneNumbersOutcome;
 			typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListPhoneNumbersRequest&, const ListPhoneNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhoneNumbersAsyncHandler;
+			typedef Outcome<Error, Model::ListPhoneTagsResult> ListPhoneTagsOutcome;
+			typedef std::future<ListPhoneTagsOutcome> ListPhoneTagsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ListPhoneTagsRequest&, const ListPhoneTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhoneTagsAsyncHandler;
 			typedef Outcome<Error, Model::ListPredictiveJobGroupsResult> ListPredictiveJobGroupsOutcome;
 			typedef std::future<ListPredictiveJobGroupsOutcome> ListPredictiveJobGroupsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListPredictiveJobGroupsRequest&, const ListPredictiveJobGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPredictiveJobGroupsAsyncHandler;
@@ -720,6 +749,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyPhoneNumberResult> ModifyPhoneNumberOutcome;
 			typedef std::future<ModifyPhoneNumberOutcome> ModifyPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ModifyPhoneNumberRequest&, const ModifyPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneNumberAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPhoneTagsResult> ModifyPhoneTagsOutcome;
+			typedef std::future<ModifyPhoneTagsOutcome> ModifyPhoneTagsOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::ModifyPhoneTagsRequest&, const ModifyPhoneTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneTagsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPrivacyNumberCallDetailResult> ModifyPrivacyNumberCallDetailOutcome;
 			typedef std::future<ModifyPrivacyNumberCallDetailOutcome> ModifyPrivacyNumberCallDetailOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ModifyPrivacyNumberCallDetailRequest&, const ModifyPrivacyNumberCallDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrivacyNumberCallDetailAsyncHandler;
@@ -828,6 +860,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SuspendJobsResult> SuspendJobsOutcome;
 			typedef std::future<SuspendJobsOutcome> SuspendJobsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::SuspendJobsRequest&, const SuspendJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendJobsAsyncHandler;
+			typedef Outcome<Error, Model::TaskPreparingResult> TaskPreparingOutcome;
+			typedef std::future<TaskPreparingOutcome> TaskPreparingOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::TaskPreparingRequest&, const TaskPreparingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskPreparingAsyncHandler;
 			typedef Outcome<Error, Model::TwoPartiesCallResult> TwoPartiesCallOutcome;
 			typedef std::future<TwoPartiesCallOutcome> TwoPartiesCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::TwoPartiesCallRequest&, const TwoPartiesCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TwoPartiesCallAsyncHandler;
@@ -848,6 +883,9 @@ namespace AlibabaCloud
 			AddPhoneNumberOutcome addPhoneNumber(const Model::AddPhoneNumberRequest &request)const;
 			void addPhoneNumberAsync(const Model::AddPhoneNumberRequest& request, const AddPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddPhoneNumberOutcomeCallable addPhoneNumberCallable(const Model::AddPhoneNumberRequest& request) const;
+			AddPhoneTagsOutcome addPhoneTags(const Model::AddPhoneTagsRequest &request)const;
+			void addPhoneTagsAsync(const Model::AddPhoneTagsRequest& request, const AddPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddPhoneTagsOutcomeCallable addPhoneTagsCallable(const Model::AddPhoneTagsRequest& request) const;
 			AssignJobsOutcome assignJobs(const Model::AssignJobsRequest &request)const;
 			void assignJobsAsync(const Model::AssignJobsRequest& request, const AssignJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AssignJobsOutcomeCallable assignJobsCallable(const Model::AssignJobsRequest& request) const;
@@ -863,6 +901,9 @@ namespace AlibabaCloud
 			CancelPredictiveJobsOutcome cancelPredictiveJobs(const Model::CancelPredictiveJobsRequest &request)const;
 			void cancelPredictiveJobsAsync(const Model::CancelPredictiveJobsRequest& request, const CancelPredictiveJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPredictiveJobsOutcomeCallable cancelPredictiveJobsCallable(const Model::CancelPredictiveJobsRequest& request) const;
+			CheckNumberAvaliableOutcome checkNumberAvaliable(const Model::CheckNumberAvaliableRequest &request)const;
+			void checkNumberAvaliableAsync(const Model::CheckNumberAvaliableRequest& request, const CheckNumberAvaliableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckNumberAvaliableOutcomeCallable checkNumberAvaliableCallable(const Model::CheckNumberAvaliableRequest& request) const;
 			CommitContactFlowVersionModificationOutcome commitContactFlowVersionModification(const Model::CommitContactFlowVersionModificationRequest &request)const;
 			void commitContactFlowVersionModificationAsync(const Model::CommitContactFlowVersionModificationRequest& request, const CommitContactFlowVersionModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CommitContactFlowVersionModificationOutcomeCallable commitContactFlowVersionModificationCallable(const Model::CommitContactFlowVersionModificationRequest& request) const;
@@ -923,6 +964,9 @@ namespace AlibabaCloud
 			DeleteMediaOutcome deleteMedia(const Model::DeleteMediaRequest &request)const;
 			void deleteMediaAsync(const Model::DeleteMediaRequest& request, const DeleteMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMediaOutcomeCallable deleteMediaCallable(const Model::DeleteMediaRequest& request) const;
+			DeletePhoneTagsOutcome deletePhoneTags(const Model::DeletePhoneTagsRequest &request)const;
+			void deletePhoneTagsAsync(const Model::DeletePhoneTagsRequest& request, const DeletePhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeletePhoneTagsOutcomeCallable deletePhoneTagsCallable(const Model::DeletePhoneTagsRequest& request) const;
 			DeleteSkillGroupOutcome deleteSkillGroup(const Model::DeleteSkillGroupRequest &request)const;
 			void deleteSkillGroupAsync(const Model::DeleteSkillGroupRequest& request, const DeleteSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSkillGroupOutcomeCallable deleteSkillGroupCallable(const Model::DeleteSkillGroupRequest& request) const;
@@ -1055,6 +1099,9 @@ namespace AlibabaCloud
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			InflightTaskTimeoutOutcome inflightTaskTimeout(const Model::InflightTaskTimeoutRequest &request)const;
+			void inflightTaskTimeoutAsync(const Model::InflightTaskTimeoutRequest& request, const InflightTaskTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InflightTaskTimeoutOutcomeCallable inflightTaskTimeoutCallable(const Model::InflightTaskTimeoutRequest& request) const;
 			LaunchAppraiseOutcome launchAppraise(const Model::LaunchAppraiseRequest &request)const;
 			void launchAppraiseAsync(const Model::LaunchAppraiseRequest& request, const LaunchAppraiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LaunchAppraiseOutcomeCallable launchAppraiseCallable(const Model::LaunchAppraiseRequest& request) const;
@@ -1121,6 +1168,9 @@ namespace AlibabaCloud
 			ListPhoneNumbersOutcome listPhoneNumbers(const Model::ListPhoneNumbersRequest &request)const;
 			void listPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPhoneNumbersOutcomeCallable listPhoneNumbersCallable(const Model::ListPhoneNumbersRequest& request) const;
+			ListPhoneTagsOutcome listPhoneTags(const Model::ListPhoneTagsRequest &request)const;
+			void listPhoneTagsAsync(const Model::ListPhoneTagsRequest& request, const ListPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPhoneTagsOutcomeCallable listPhoneTagsCallable(const Model::ListPhoneTagsRequest& request) const;
 			ListPredictiveJobGroupsOutcome listPredictiveJobGroups(const Model::ListPredictiveJobGroupsRequest &request)const;
 			void listPredictiveJobGroupsAsync(const Model::ListPredictiveJobGroupsRequest& request, const ListPredictiveJobGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPredictiveJobGroupsOutcomeCallable listPredictiveJobGroupsCallable(const Model::ListPredictiveJobGroupsRequest& request) const;
@@ -1205,6 +1255,9 @@ namespace AlibabaCloud
 			ModifyPhoneNumberOutcome modifyPhoneNumber(const Model::ModifyPhoneNumberRequest &request)const;
 			void modifyPhoneNumberAsync(const Model::ModifyPhoneNumberRequest& request, const ModifyPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhoneNumberOutcomeCallable modifyPhoneNumberCallable(const Model::ModifyPhoneNumberRequest& request) const;
+			ModifyPhoneTagsOutcome modifyPhoneTags(const Model::ModifyPhoneTagsRequest &request)const;
+			void modifyPhoneTagsAsync(const Model::ModifyPhoneTagsRequest& request, const ModifyPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPhoneTagsOutcomeCallable modifyPhoneTagsCallable(const Model::ModifyPhoneTagsRequest& request) const;
 			ModifyPrivacyNumberCallDetailOutcome modifyPrivacyNumberCallDetail(const Model::ModifyPrivacyNumberCallDetailRequest &request)const;
 			void modifyPrivacyNumberCallDetailAsync(const Model::ModifyPrivacyNumberCallDetailRequest& request, const ModifyPrivacyNumberCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPrivacyNumberCallDetailOutcomeCallable modifyPrivacyNumberCallDetailCallable(const Model::ModifyPrivacyNumberCallDetailRequest& request) const;
@@ -1313,6 +1366,9 @@ namespace AlibabaCloud
 			SuspendJobsOutcome suspendJobs(const Model::SuspendJobsRequest &request)const;
 			void suspendJobsAsync(const Model::SuspendJobsRequest& request, const SuspendJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuspendJobsOutcomeCallable suspendJobsCallable(const Model::SuspendJobsRequest& request) const;
+			TaskPreparingOutcome taskPreparing(const Model::TaskPreparingRequest &request)const;
+			void taskPreparingAsync(const Model::TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TaskPreparingOutcomeCallable taskPreparingCallable(const Model::TaskPreparingRequest& request) const;
 			TwoPartiesCallOutcome twoPartiesCall(const Model::TwoPartiesCallRequest &request)const;
 			void twoPartiesCallAsync(const Model::TwoPartiesCallRequest& request, const TwoPartiesCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TwoPartiesCallOutcomeCallable twoPartiesCallCallable(const Model::TwoPartiesCallRequest& request) const;

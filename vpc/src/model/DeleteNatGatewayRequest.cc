@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteNatGatewayRequest;
 
 DeleteNatGatewayRequest::DeleteNatGatewayRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteNatGateway")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteNatGatewayRequest::~DeleteNatGatewayRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteNatGatewayRequest::getResourceOwnerId()const
 void DeleteNatGatewayRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteNatGatewayRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteNatGatewayRequest::getRegionId()const
 void DeleteNatGatewayRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteNatGatewayRequest::getNatGatewayId()const
@@ -55,7 +57,7 @@ std::string DeleteNatGatewayRequest::getNatGatewayId()const
 void DeleteNatGatewayRequest::setNatGatewayId(const std::string& natGatewayId)
 {
 	natGatewayId_ = natGatewayId;
-	setCoreParameter("NatGatewayId", natGatewayId);
+	setParameter("NatGatewayId", natGatewayId);
 }
 
 std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteNatGatewayRequest::getResourceOwnerAccount()const
 void DeleteNatGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteNatGatewayRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteNatGatewayRequest::getOwnerAccount()const
 void DeleteNatGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteNatGatewayRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteNatGatewayRequest::getOwnerId()const
 void DeleteNatGatewayRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 bool DeleteNatGatewayRequest::getForce()const
@@ -99,6 +101,6 @@ bool DeleteNatGatewayRequest::getForce()const
 void DeleteNatGatewayRequest::setForce(bool force)
 {
 	force_ = force;
-	setCoreParameter("Force", force ? "true" : "false");
+	setParameter("Force", force ? "true" : "false");
 }
 

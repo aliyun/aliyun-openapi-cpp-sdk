@@ -35,7 +35,7 @@ std::string QueryInstanceBillRequest::getProductCode()const
 void QueryInstanceBillRequest::setProductCode(const std::string& productCode)
 {
 	productCode_ = productCode;
-	setCoreParameter("ProductCode", productCode);
+	setParameter("ProductCode", productCode);
 }
 
 bool QueryInstanceBillRequest::getIsHideZeroCharge()const
@@ -46,7 +46,7 @@ bool QueryInstanceBillRequest::getIsHideZeroCharge()const
 void QueryInstanceBillRequest::setIsHideZeroCharge(bool isHideZeroCharge)
 {
 	isHideZeroCharge_ = isHideZeroCharge;
-	setCoreParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
+	setParameter("IsHideZeroCharge", isHideZeroCharge ? "true" : "false");
 }
 
 std::string QueryInstanceBillRequest::getSubscriptionType()const
@@ -57,7 +57,7 @@ std::string QueryInstanceBillRequest::getSubscriptionType()const
 void QueryInstanceBillRequest::setSubscriptionType(const std::string& subscriptionType)
 {
 	subscriptionType_ = subscriptionType;
-	setCoreParameter("SubscriptionType", subscriptionType);
+	setParameter("SubscriptionType", subscriptionType);
 }
 
 std::string QueryInstanceBillRequest::getBillingCycle()const
@@ -68,7 +68,7 @@ std::string QueryInstanceBillRequest::getBillingCycle()const
 void QueryInstanceBillRequest::setBillingCycle(const std::string& billingCycle)
 {
 	billingCycle_ = billingCycle;
-	setCoreParameter("BillingCycle", billingCycle);
+	setParameter("BillingCycle", billingCycle);
 }
 
 long QueryInstanceBillRequest::getOwnerId()const
@@ -79,7 +79,7 @@ long QueryInstanceBillRequest::getOwnerId()const
 void QueryInstanceBillRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 int QueryInstanceBillRequest::getPageNum()const
@@ -90,7 +90,7 @@ int QueryInstanceBillRequest::getPageNum()const
 void QueryInstanceBillRequest::setPageNum(int pageNum)
 {
 	pageNum_ = pageNum;
-	setCoreParameter("PageNum", std::to_string(pageNum));
+	setParameter("PageNum", std::to_string(pageNum));
 }
 
 std::string QueryInstanceBillRequest::getBillingDate()const
@@ -101,7 +101,7 @@ std::string QueryInstanceBillRequest::getBillingDate()const
 void QueryInstanceBillRequest::setBillingDate(const std::string& billingDate)
 {
 	billingDate_ = billingDate;
-	setCoreParameter("BillingDate", billingDate);
+	setParameter("BillingDate", billingDate);
 }
 
 std::string QueryInstanceBillRequest::getProductType()const
@@ -112,7 +112,7 @@ std::string QueryInstanceBillRequest::getProductType()const
 void QueryInstanceBillRequest::setProductType(const std::string& productType)
 {
 	productType_ = productType;
-	setCoreParameter("ProductType", productType);
+	setParameter("ProductType", productType);
 }
 
 bool QueryInstanceBillRequest::getIsBillingItem()const
@@ -123,7 +123,7 @@ bool QueryInstanceBillRequest::getIsBillingItem()const
 void QueryInstanceBillRequest::setIsBillingItem(bool isBillingItem)
 {
 	isBillingItem_ = isBillingItem;
-	setCoreParameter("IsBillingItem", isBillingItem ? "true" : "false");
+	setParameter("IsBillingItem", isBillingItem ? "true" : "false");
 }
 
 std::string QueryInstanceBillRequest::getGranularity()const
@@ -134,7 +134,7 @@ std::string QueryInstanceBillRequest::getGranularity()const
 void QueryInstanceBillRequest::setGranularity(const std::string& granularity)
 {
 	granularity_ = granularity;
-	setCoreParameter("Granularity", granularity);
+	setParameter("Granularity", granularity);
 }
 
 int QueryInstanceBillRequest::getPageSize()const
@@ -145,6 +145,6 @@ int QueryInstanceBillRequest::getPageSize()const
 void QueryInstanceBillRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

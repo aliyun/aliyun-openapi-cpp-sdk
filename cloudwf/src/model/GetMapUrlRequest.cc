@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetMapUrlRequest;
 
 GetMapUrlRequest::GetMapUrlRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetMapUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetMapUrlRequest::~GetMapUrlRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetMapUrlRequest::getAccessKeyId()const
 void GetMapUrlRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long GetMapUrlRequest::getMapId()const
@@ -44,6 +46,6 @@ long GetMapUrlRequest::getMapId()const
 void GetMapUrlRequest::setMapId(long mapId)
 {
 	mapId_ = mapId;
-	setCoreParameter("MapId", std::to_string(mapId));
+	setParameter("MapId", std::to_string(mapId));
 }
 

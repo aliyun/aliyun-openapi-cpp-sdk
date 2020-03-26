@@ -35,7 +35,7 @@ std::string DescribeMetricRuleCountRequest::get_Namespace()const
 void DescribeMetricRuleCountRequest::set_Namespace(const std::string& _namespace)
 {
 	_namespace_ = _namespace;
-	setCoreParameter("_Namespace", _namespace);
+	setParameter("_Namespace", _namespace);
 }
 
 std::string DescribeMetricRuleCountRequest::getMetricName()const
@@ -46,6 +46,6 @@ std::string DescribeMetricRuleCountRequest::getMetricName()const
 void DescribeMetricRuleCountRequest::setMetricName(const std::string& metricName)
 {
 	metricName_ = metricName;
-	setCoreParameter("MetricName", metricName);
+	setParameter("MetricName", metricName);
 }
 

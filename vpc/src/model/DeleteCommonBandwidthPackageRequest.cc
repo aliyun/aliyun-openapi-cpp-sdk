@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteCommonBandwidthPackageRequest;
 
 DeleteCommonBandwidthPackageRequest::DeleteCommonBandwidthPackageRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteCommonBandwidthPackage")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCommonBandwidthPackageRequest::~DeleteCommonBandwidthPackageRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteCommonBandwidthPackageRequest::getResourceOwnerId()const
 void DeleteCommonBandwidthPackageRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteCommonBandwidthPackageRequest::getRegionId()const
 void DeleteCommonBandwidthPackageRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getBandwidthPackageId()const
@@ -55,7 +57,7 @@ std::string DeleteCommonBandwidthPackageRequest::getBandwidthPackageId()const
 void DeleteCommonBandwidthPackageRequest::setBandwidthPackageId(const std::string& bandwidthPackageId)
 {
 	bandwidthPackageId_ = bandwidthPackageId;
-	setCoreParameter("BandwidthPackageId", bandwidthPackageId);
+	setParameter("BandwidthPackageId", bandwidthPackageId);
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteCommonBandwidthPackageRequest::getResourceOwnerAccount()const
 void DeleteCommonBandwidthPackageRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteCommonBandwidthPackageRequest::getOwnerAccount()const
 void DeleteCommonBandwidthPackageRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteCommonBandwidthPackageRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DeleteCommonBandwidthPackageRequest::getOwnerId()const
 void DeleteCommonBandwidthPackageRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteCommonBandwidthPackageRequest::getForce()const
@@ -99,6 +101,6 @@ std::string DeleteCommonBandwidthPackageRequest::getForce()const
 void DeleteCommonBandwidthPackageRequest::setForce(const std::string& force)
 {
 	force_ = force;
-	setCoreParameter("Force", force);
+	setParameter("Force", force);
 }
 

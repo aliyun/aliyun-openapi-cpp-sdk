@@ -20,7 +20,9 @@ using AlibabaCloud::Market::Model::PushMeteringDataRequest;
 
 PushMeteringDataRequest::PushMeteringDataRequest() :
 	RpcServiceRequest("market", "2015-11-01", "PushMeteringData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 PushMeteringDataRequest::~PushMeteringDataRequest()
 {}
@@ -33,6 +35,6 @@ std::string PushMeteringDataRequest::getMetering()const
 void PushMeteringDataRequest::setMetering(const std::string& metering)
 {
 	metering_ = metering;
-	setCoreParameter("Metering", metering);
+	setParameter("Metering", metering);
 }
 

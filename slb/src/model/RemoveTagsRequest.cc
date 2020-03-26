@@ -20,7 +20,9 @@ using AlibabaCloud::Slb::Model::RemoveTagsRequest;
 
 RemoveTagsRequest::RemoveTagsRequest() :
 	RpcServiceRequest("slb", "2014-05-15", "RemoveTags")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RemoveTagsRequest::~RemoveTagsRequest()
 {}
@@ -33,7 +35,7 @@ std::string RemoveTagsRequest::getAccess_key_id()const
 void RemoveTagsRequest::setAccess_key_id(const std::string& access_key_id)
 {
 	access_key_id_ = access_key_id;
-	setCoreParameter("Access_key_id", access_key_id);
+	setParameter("Access_key_id", access_key_id);
 }
 
 long RemoveTagsRequest::getResourceOwnerId()const
@@ -44,7 +46,7 @@ long RemoveTagsRequest::getResourceOwnerId()const
 void RemoveTagsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string RemoveTagsRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string RemoveTagsRequest::getRegionId()const
 void RemoveTagsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string RemoveTagsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string RemoveTagsRequest::getResourceOwnerAccount()const
 void RemoveTagsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RemoveTagsRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string RemoveTagsRequest::getOwnerAccount()const
 void RemoveTagsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long RemoveTagsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long RemoveTagsRequest::getOwnerId()const
 void RemoveTagsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string RemoveTagsRequest::getTags()const
@@ -99,7 +101,7 @@ std::string RemoveTagsRequest::getTags()const
 void RemoveTagsRequest::setTags(const std::string& tags)
 {
 	tags_ = tags;
-	setCoreParameter("Tags", tags);
+	setParameter("Tags", tags);
 }
 
 std::string RemoveTagsRequest::getLoadBalancerId()const
@@ -110,6 +112,6 @@ std::string RemoveTagsRequest::getLoadBalancerId()const
 void RemoveTagsRequest::setLoadBalancerId(const std::string& loadBalancerId)
 {
 	loadBalancerId_ = loadBalancerId;
-	setCoreParameter("LoadBalancerId", loadBalancerId);
+	setParameter("LoadBalancerId", loadBalancerId);
 }
 

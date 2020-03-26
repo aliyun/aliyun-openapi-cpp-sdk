@@ -20,7 +20,10 @@ using AlibabaCloud::Xspace::Model::QueryCustomerByIdRequest;
 
 QueryCustomerByIdRequest::QueryCustomerByIdRequest() :
 	RoaServiceRequest("xspace", "2017-07-20")
-{}
+{
+	setResourcePath("/customer");
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryCustomerByIdRequest::~QueryCustomerByIdRequest()
 {}
@@ -33,6 +36,6 @@ std::string QueryCustomerByIdRequest::getId()const
 void QueryCustomerByIdRequest::setId(const std::string& id)
 {
 	id_ = id;
-	setCoreParameter("Id", id);
+	setParameter("Id", id);
 }
 

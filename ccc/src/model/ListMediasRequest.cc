@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListMediasRequest;
 
 ListMediasRequest::ListMediasRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListMedias")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListMediasRequest::~ListMediasRequest()
 {}
@@ -33,7 +35,7 @@ int ListMediasRequest::getPageNumber()const
 void ListMediasRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListMediasRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListMediasRequest::getAccessKeyId()const
 void ListMediasRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListMediasRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListMediasRequest::getInstanceId()const
 void ListMediasRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 int ListMediasRequest::getPageSize()const
@@ -66,7 +68,7 @@ int ListMediasRequest::getPageSize()const
 void ListMediasRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string ListMediasRequest::getNamePrefix()const
@@ -77,6 +79,6 @@ std::string ListMediasRequest::getNamePrefix()const
 void ListMediasRequest::setNamePrefix(const std::string& namePrefix)
 {
 	namePrefix_ = namePrefix;
-	setCoreParameter("NamePrefix", namePrefix);
+	setParameter("NamePrefix", namePrefix);
 }
 

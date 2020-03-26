@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::ListProjectRequest;
 
 ListProjectRequest::ListProjectRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ListProjectRequest::~ListProjectRequest()
 {}
@@ -33,7 +36,7 @@ std::string ListProjectRequest::getRegionId()const
 void ListProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 
 std::string ListProjectRequest::getName()const
@@ -44,7 +47,7 @@ std::string ListProjectRequest::getName()const
 void ListProjectRequest::setName(const std::string& name)
 {
 	name_ = name;
-	setCoreParameter("Name", name);
+	setParameter("Name", name);
 }
 
 int ListProjectRequest::getPageSize()const
@@ -55,7 +58,7 @@ int ListProjectRequest::getPageSize()const
 void ListProjectRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 int ListProjectRequest::getPageIndex()const
@@ -66,7 +69,7 @@ int ListProjectRequest::getPageIndex()const
 void ListProjectRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListProjectRequest::getClusterId()const
@@ -77,7 +80,7 @@ std::string ListProjectRequest::getClusterId()const
 void ListProjectRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 
 std::string ListProjectRequest::getRegion()const
@@ -88,7 +91,7 @@ std::string ListProjectRequest::getRegion()const
 void ListProjectRequest::setRegion(const std::string& region)
 {
 	region_ = region;
-	setCoreParameter("Region", region);
+	setParameter("Region", region);
 }
 
 std::string ListProjectRequest::getDeployType()const
@@ -99,6 +102,6 @@ std::string ListProjectRequest::getDeployType()const
 void ListProjectRequest::setDeployType(const std::string& deployType)
 {
 	deployType_ = deployType;
-	setCoreParameter("DeployType", deployType);
+	setParameter("DeployType", deployType);
 }
 

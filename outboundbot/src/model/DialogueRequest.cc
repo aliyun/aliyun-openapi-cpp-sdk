@@ -38,39 +38,6 @@ void DialogueRequest::setCallId(const std::string& callId)
 	setParameter("CallId", callId);
 }
 
-std::string DialogueRequest::getActionParams()const
-{
-	return actionParams_;
-}
-
-void DialogueRequest::setActionParams(const std::string& actionParams)
-{
-	actionParams_ = actionParams;
-	setParameter("ActionParams", actionParams);
-}
-
-std::string DialogueRequest::getCallingNumber()const
-{
-	return callingNumber_;
-}
-
-void DialogueRequest::setCallingNumber(const std::string& callingNumber)
-{
-	callingNumber_ = callingNumber;
-	setParameter("CallingNumber", callingNumber);
-}
-
-std::string DialogueRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void DialogueRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 long DialogueRequest::getInstanceOwnerId()const
 {
 	return instanceOwnerId_;
@@ -91,17 +58,6 @@ void DialogueRequest::setCalledNumber(const std::string& calledNumber)
 {
 	calledNumber_ = calledNumber;
 	setParameter("CalledNumber", calledNumber);
-}
-
-std::string DialogueRequest::getActionKey()const
-{
-	return actionKey_;
-}
-
-void DialogueRequest::setActionKey(const std::string& actionKey)
-{
-	actionKey_ = actionKey;
-	setParameter("ActionKey", actionKey);
 }
 
 std::string DialogueRequest::getCallType()const
@@ -146,5 +102,49 @@ void DialogueRequest::setUtterance(const std::string& utterance)
 {
 	utterance_ = utterance;
 	setParameter("Utterance", utterance);
+}
+
+std::string DialogueRequest::getActionParams()const
+{
+	return actionParams_;
+}
+
+void DialogueRequest::setActionParams(const std::string& actionParams)
+{
+	actionParams_ = actionParams;
+	setParameter("ActionParams", actionParams);
+}
+
+std::string DialogueRequest::getCallingNumber()const
+{
+	return callingNumber_;
+}
+
+void DialogueRequest::setCallingNumber(const std::string& callingNumber)
+{
+	callingNumber_ = callingNumber;
+	setParameter("CallingNumber", callingNumber);
+}
+
+std::string DialogueRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DialogueRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+std::string DialogueRequest::getActionKey()const
+{
+	return actionKey_;
+}
+
+void DialogueRequest::setActionKey(const std::string& actionKey)
+{
+	actionKey_ = actionKey;
+	setParameter("ActionKey", actionKey);
 }
 

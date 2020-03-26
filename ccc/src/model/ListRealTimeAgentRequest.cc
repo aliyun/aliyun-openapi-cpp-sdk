@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListRealTimeAgentRequest;
 
 ListRealTimeAgentRequest::ListRealTimeAgentRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListRealTimeAgent")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListRealTimeAgentRequest::~ListRealTimeAgentRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListRealTimeAgentRequest::getInstanceId()const
 void ListRealTimeAgentRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListRealTimeAgentRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string ListRealTimeAgentRequest::getAccessKeyId()const
 void ListRealTimeAgentRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

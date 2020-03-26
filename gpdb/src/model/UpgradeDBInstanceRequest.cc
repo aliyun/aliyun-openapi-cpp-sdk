@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::UpgradeDBInstanceRequest;
 
 UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "UpgradeDBInstance")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 UpgradeDBInstanceRequest::~UpgradeDBInstanceRequest()
 {}
@@ -33,7 +35,7 @@ std::string UpgradeDBInstanceRequest::getAccessKeyId()const
 void UpgradeDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string UpgradeDBInstanceRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string UpgradeDBInstanceRequest::getRegionId()const
 void UpgradeDBInstanceRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceId()const
@@ -55,7 +57,7 @@ std::string UpgradeDBInstanceRequest::getDBInstanceId()const
 void UpgradeDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceGroupCount()const
@@ -66,7 +68,7 @@ std::string UpgradeDBInstanceRequest::getDBInstanceGroupCount()const
 void UpgradeDBInstanceRequest::setDBInstanceGroupCount(const std::string& dBInstanceGroupCount)
 {
 	dBInstanceGroupCount_ = dBInstanceGroupCount;
-	setCoreParameter("DBInstanceGroupCount", dBInstanceGroupCount);
+	setParameter("DBInstanceGroupCount", dBInstanceGroupCount);
 }
 
 long UpgradeDBInstanceRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long UpgradeDBInstanceRequest::getOwnerId()const
 void UpgradeDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string UpgradeDBInstanceRequest::getDBInstanceClass()const
@@ -88,7 +90,7 @@ std::string UpgradeDBInstanceRequest::getDBInstanceClass()const
 void UpgradeDBInstanceRequest::setDBInstanceClass(const std::string& dBInstanceClass)
 {
 	dBInstanceClass_ = dBInstanceClass;
-	setCoreParameter("DBInstanceClass", dBInstanceClass);
+	setParameter("DBInstanceClass", dBInstanceClass);
 }
 
 std::string UpgradeDBInstanceRequest::getPayType()const
@@ -99,6 +101,6 @@ std::string UpgradeDBInstanceRequest::getPayType()const
 void UpgradeDBInstanceRequest::setPayType(const std::string& payType)
 {
 	payType_ = payType;
-	setCoreParameter("PayType", payType);
+	setParameter("PayType", payType);
 }
 

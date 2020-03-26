@@ -20,7 +20,10 @@ using AlibabaCloud::ROS::Model::DescribeTemplateRequest;
 
 DescribeTemplateRequest::DescribeTemplateRequest() :
 	RoaServiceRequest("ros", "2015-09-01")
-{}
+{
+	setResourcePath("/stacks/[StackName]/[StackId]/template");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeTemplateRequest::~DescribeTemplateRequest()
 {}
@@ -33,7 +36,7 @@ std::string DescribeTemplateRequest::getStackId()const
 void DescribeTemplateRequest::setStackId(const std::string& stackId)
 {
 	stackId_ = stackId;
-	setCoreParameter("StackId", stackId);
+	setParameter("StackId", stackId);
 }
 
 std::string DescribeTemplateRequest::getStackName()const
@@ -44,6 +47,6 @@ std::string DescribeTemplateRequest::getStackName()const
 void DescribeTemplateRequest::setStackName(const std::string& stackName)
 {
 	stackName_ = stackName;
-	setCoreParameter("StackName", stackName);
+	setParameter("StackName", stackName);
 }
 

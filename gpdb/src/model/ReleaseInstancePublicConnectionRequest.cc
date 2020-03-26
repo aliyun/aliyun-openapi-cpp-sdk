@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::ReleaseInstancePublicConnectionRequest;
 
 ReleaseInstancePublicConnectionRequest::ReleaseInstancePublicConnectionRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "ReleaseInstancePublicConnection")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReleaseInstancePublicConnectionRequest::~ReleaseInstancePublicConnectionRequest()
 {}
@@ -33,7 +35,7 @@ std::string ReleaseInstancePublicConnectionRequest::getAccessKeyId()const
 void ReleaseInstancePublicConnectionRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
@@ -44,7 +46,7 @@ std::string ReleaseInstancePublicConnectionRequest::getDBInstanceId()const
 void ReleaseInstancePublicConnectionRequest::setDBInstanceId(const std::string& dBInstanceId)
 {
 	dBInstanceId_ = dBInstanceId;
-	setCoreParameter("DBInstanceId", dBInstanceId);
+	setParameter("DBInstanceId", dBInstanceId);
 }
 
 std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()const
@@ -55,6 +57,6 @@ std::string ReleaseInstancePublicConnectionRequest::getCurrentConnectionString()
 void ReleaseInstancePublicConnectionRequest::setCurrentConnectionString(const std::string& currentConnectionString)
 {
 	currentConnectionString_ = currentConnectionString;
-	setCoreParameter("CurrentConnectionString", currentConnectionString);
+	setParameter("CurrentConnectionString", currentConnectionString);
 }
 

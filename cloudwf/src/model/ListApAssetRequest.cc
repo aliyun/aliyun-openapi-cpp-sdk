@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::ListApAssetRequest;
 
 ListApAssetRequest::ListApAssetRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "ListApAsset")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListApAssetRequest::~ListApAssetRequest()
 {}
@@ -33,7 +35,7 @@ std::string ListApAssetRequest::getOrderCol()const
 void ListApAssetRequest::setOrderCol(const std::string& orderCol)
 {
 	orderCol_ = orderCol;
-	setCoreParameter("OrderCol", orderCol);
+	setParameter("OrderCol", orderCol);
 }
 
 std::string ListApAssetRequest::getSearchName()const
@@ -44,7 +46,7 @@ std::string ListApAssetRequest::getSearchName()const
 void ListApAssetRequest::setSearchName(const std::string& searchName)
 {
 	searchName_ = searchName;
-	setCoreParameter("SearchName", searchName);
+	setParameter("SearchName", searchName);
 }
 
 int ListApAssetRequest::getLength()const
@@ -55,7 +57,7 @@ int ListApAssetRequest::getLength()const
 void ListApAssetRequest::setLength(int length)
 {
 	length_ = length;
-	setCoreParameter("Length", std::to_string(length));
+	setParameter("Length", std::to_string(length));
 }
 
 std::string ListApAssetRequest::getOrderDir()const
@@ -66,7 +68,7 @@ std::string ListApAssetRequest::getOrderDir()const
 void ListApAssetRequest::setOrderDir(const std::string& orderDir)
 {
 	orderDir_ = orderDir;
-	setCoreParameter("OrderDir", orderDir);
+	setParameter("OrderDir", orderDir);
 }
 
 std::string ListApAssetRequest::getAccessKeyId()const
@@ -77,7 +79,7 @@ std::string ListApAssetRequest::getAccessKeyId()const
 void ListApAssetRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListApAssetRequest::getSearchSerialNo()const
@@ -88,7 +90,7 @@ std::string ListApAssetRequest::getSearchSerialNo()const
 void ListApAssetRequest::setSearchSerialNo(const std::string& searchSerialNo)
 {
 	searchSerialNo_ = searchSerialNo;
-	setCoreParameter("SearchSerialNo", searchSerialNo);
+	setParameter("SearchSerialNo", searchSerialNo);
 }
 
 int ListApAssetRequest::getPageIndex()const
@@ -99,7 +101,7 @@ int ListApAssetRequest::getPageIndex()const
 void ListApAssetRequest::setPageIndex(int pageIndex)
 {
 	pageIndex_ = pageIndex;
-	setCoreParameter("PageIndex", std::to_string(pageIndex));
+	setParameter("PageIndex", std::to_string(pageIndex));
 }
 
 std::string ListApAssetRequest::getSearchMac()const
@@ -110,7 +112,7 @@ std::string ListApAssetRequest::getSearchMac()const
 void ListApAssetRequest::setSearchMac(const std::string& searchMac)
 {
 	searchMac_ = searchMac;
-	setCoreParameter("SearchMac", searchMac);
+	setParameter("SearchMac", searchMac);
 }
 
 std::string ListApAssetRequest::getSearchModel()const
@@ -121,6 +123,6 @@ std::string ListApAssetRequest::getSearchModel()const
 void ListApAssetRequest::setSearchModel(const std::string& searchModel)
 {
 	searchModel_ = searchModel;
-	setCoreParameter("SearchModel", searchModel);
+	setParameter("SearchModel", searchModel);
 }
 

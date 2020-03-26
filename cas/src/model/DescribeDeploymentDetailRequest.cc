@@ -20,7 +20,9 @@ using AlibabaCloud::Cas::Model::DescribeDeploymentDetailRequest;
 
 DescribeDeploymentDetailRequest::DescribeDeploymentDetailRequest() :
 	RpcServiceRequest("cas", "2018-08-13", "DescribeDeploymentDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeDeploymentDetailRequest::~DescribeDeploymentDetailRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeDeploymentDetailRequest::getCertificateId()const
 void DescribeDeploymentDetailRequest::setCertificateId(long certificateId)
 {
 	certificateId_ = certificateId;
-	setCoreParameter("CertificateId", std::to_string(certificateId));
+	setParameter("CertificateId", std::to_string(certificateId));
 }
 
 std::string DescribeDeploymentDetailRequest::getResourceGroupId()const
@@ -44,7 +46,7 @@ std::string DescribeDeploymentDetailRequest::getResourceGroupId()const
 void DescribeDeploymentDetailRequest::setResourceGroupId(const std::string& resourceGroupId)
 {
 	resourceGroupId_ = resourceGroupId;
-	setCoreParameter("ResourceGroupId", resourceGroupId);
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
 std::string DescribeDeploymentDetailRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string DescribeDeploymentDetailRequest::getSourceIp()const
 void DescribeDeploymentDetailRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string DescribeDeploymentDetailRequest::getLang()const
@@ -66,6 +68,6 @@ std::string DescribeDeploymentDetailRequest::getLang()const
 void DescribeDeploymentDetailRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

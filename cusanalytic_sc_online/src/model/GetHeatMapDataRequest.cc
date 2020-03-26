@@ -20,7 +20,9 @@ using AlibabaCloud::Cusanalytic_sc_online::Model::GetHeatMapDataRequest;
 
 GetHeatMapDataRequest::GetHeatMapDataRequest() :
 	RpcServiceRequest("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetHeatMapDataRequest::~GetHeatMapDataRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetHeatMapDataRequest::getEMapName()const
 void GetHeatMapDataRequest::setEMapName(const std::string& eMapName)
 {
 	eMapName_ = eMapName;
-	setCoreParameter("EMapName", eMapName);
+	setBodyParameter("EMapName", eMapName);
 }
 
 long GetHeatMapDataRequest::getStoreId()const
@@ -44,7 +46,7 @@ long GetHeatMapDataRequest::getStoreId()const
 void GetHeatMapDataRequest::setStoreId(long storeId)
 {
 	storeId_ = storeId;
-	setCoreParameter("StoreId", std::to_string(storeId));
+	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
 std::string GetHeatMapDataRequest::getStatDate()const
@@ -55,6 +57,6 @@ std::string GetHeatMapDataRequest::getStatDate()const
 void GetHeatMapDataRequest::setStatDate(const std::string& statDate)
 {
 	statDate_ = statDate;
-	setCoreParameter("StatDate", statDate);
+	setBodyParameter("StatDate", statDate);
 }
 

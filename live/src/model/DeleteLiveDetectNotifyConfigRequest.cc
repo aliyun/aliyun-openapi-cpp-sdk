@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteLiveDetectNotifyConfigRequest;
 
 DeleteLiveDetectNotifyConfigRequest::DeleteLiveDetectNotifyConfigRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteLiveDetectNotifyConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteLiveDetectNotifyConfigRequest::~DeleteLiveDetectNotifyConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteLiveDetectNotifyConfigRequest::getDomainName()const
 void DeleteLiveDetectNotifyConfigRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 long DeleteLiveDetectNotifyConfigRequest::getOwnerId()const
@@ -44,7 +46,7 @@ long DeleteLiveDetectNotifyConfigRequest::getOwnerId()const
 void DeleteLiveDetectNotifyConfigRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteLiveDetectNotifyConfigRequest::getSecurityToken()const
@@ -55,6 +57,6 @@ std::string DeleteLiveDetectNotifyConfigRequest::getSecurityToken()const
 void DeleteLiveDetectNotifyConfigRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 

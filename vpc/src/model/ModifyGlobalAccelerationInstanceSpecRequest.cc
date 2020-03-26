@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::ModifyGlobalAccelerationInstanceSpecRequest;
 
 ModifyGlobalAccelerationInstanceSpecRequest::ModifyGlobalAccelerationInstanceSpecRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyGlobalAccelerationInstanceSpecRequest::~ModifyGlobalAccelerationInstanceSpecRequest()
 {}
@@ -33,7 +35,7 @@ long ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerId()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getGlobalAccelerationInstanceId()const
@@ -44,7 +46,7 @@ std::string ModifyGlobalAccelerationInstanceSpecRequest::getGlobalAccelerationIn
 void ModifyGlobalAccelerationInstanceSpecRequest::setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId)
 {
 	globalAccelerationInstanceId_ = globalAccelerationInstanceId;
-	setCoreParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
+	setParameter("GlobalAccelerationInstanceId", globalAccelerationInstanceId);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string ModifyGlobalAccelerationInstanceSpecRequest::getRegionId()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string ModifyGlobalAccelerationInstanceSpecRequest::getResourceOwnerAccount
 void ModifyGlobalAccelerationInstanceSpecRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getBandwidth()const
@@ -77,7 +79,7 @@ std::string ModifyGlobalAccelerationInstanceSpecRequest::getBandwidth()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setBandwidth(const std::string& bandwidth)
 {
 	bandwidth_ = bandwidth;
-	setCoreParameter("Bandwidth", bandwidth);
+	setParameter("Bandwidth", bandwidth);
 }
 
 std::string ModifyGlobalAccelerationInstanceSpecRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string ModifyGlobalAccelerationInstanceSpecRequest::getOwnerAccount()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long ModifyGlobalAccelerationInstanceSpecRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long ModifyGlobalAccelerationInstanceSpecRequest::getOwnerId()const
 void ModifyGlobalAccelerationInstanceSpecRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

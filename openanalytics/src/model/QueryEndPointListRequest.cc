@@ -20,7 +20,9 @@ using AlibabaCloud::Openanalytics::Model::QueryEndPointListRequest;
 
 QueryEndPointListRequest::QueryEndPointListRequest() :
 	RpcServiceRequest("openanalytics", "2018-03-01", "QueryEndPointList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryEndPointListRequest::~QueryEndPointListRequest()
 {}
@@ -33,7 +35,7 @@ std::string QueryEndPointListRequest::getRegionID()const
 void QueryEndPointListRequest::setRegionID(const std::string& regionID)
 {
 	regionID_ = regionID;
-	setCoreParameter("RegionID", regionID);
+	setBodyParameter("RegionID", regionID);
 }
 
 long QueryEndPointListRequest::getUserID()const
@@ -44,6 +46,6 @@ long QueryEndPointListRequest::getUserID()const
 void QueryEndPointListRequest::setUserID(long userID)
 {
 	userID_ = userID;
-	setCoreParameter("UserID", std::to_string(userID));
+	setBodyParameter("UserID", std::to_string(userID));
 }
 

@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				long getGmtModified()const;
 				bool getPeriodic()const;
 				std::string getCronExpr()const;
+				std::string getEditLockDetail()const;
 				std::string getName()const;
 				std::string getAlertDingDingGroupBizId()const;
 				std::string getAlertUserGroupBizId()const;
@@ -77,6 +78,7 @@ namespace AlibabaCloud
 				long gmtModified_;
 				bool periodic_;
 				std::string cronExpr_;
+				std::string editLockDetail_;
 				std::string name_;
 				std::string alertDingDingGroupBizId_;
 				std::string alertUserGroupBizId_;

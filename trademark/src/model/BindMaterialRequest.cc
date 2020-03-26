@@ -20,7 +20,9 @@ using AlibabaCloud::Trademark::Model::BindMaterialRequest;
 
 BindMaterialRequest::BindMaterialRequest() :
 	RpcServiceRequest("trademark", "2018-07-24", "BindMaterial")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BindMaterialRequest::~BindMaterialRequest()
 {}
@@ -33,7 +35,7 @@ std::string BindMaterialRequest::getBizId()const
 void BindMaterialRequest::setBizId(const std::string& bizId)
 {
 	bizId_ = bizId;
-	setCoreParameter("BizId", bizId);
+	setParameter("BizId", bizId);
 }
 
 std::string BindMaterialRequest::getMaterialId()const
@@ -44,7 +46,7 @@ std::string BindMaterialRequest::getMaterialId()const
 void BindMaterialRequest::setMaterialId(const std::string& materialId)
 {
 	materialId_ = materialId;
-	setCoreParameter("MaterialId", materialId);
+	setParameter("MaterialId", materialId);
 }
 
 std::string BindMaterialRequest::getLoaOssKey()const
@@ -55,6 +57,6 @@ std::string BindMaterialRequest::getLoaOssKey()const
 void BindMaterialRequest::setLoaOssKey(const std::string& loaOssKey)
 {
 	loaOssKey_ = loaOssKey;
-	setCoreParameter("LoaOssKey", loaOssKey);
+	setParameter("LoaOssKey", loaOssKey);
 }
 

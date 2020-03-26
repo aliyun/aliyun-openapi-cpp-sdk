@@ -20,7 +20,10 @@ using AlibabaCloud::Foas::Model::GetProjectRequest;
 
 GetProjectRequest::GetProjectRequest() :
 	RoaServiceRequest("foas", "2018-11-11")
-{}
+{
+	setResourcePath("/api/v2/projects/[projectName]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 GetProjectRequest::~GetProjectRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetProjectRequest::getProjectName()const
 void GetProjectRequest::setProjectName(const std::string& projectName)
 {
 	projectName_ = projectName;
-	setCoreParameter("ProjectName", projectName);
+	setParameter("ProjectName", projectName);
 }
 
 std::string GetProjectRequest::getRegionId()const
@@ -44,6 +47,6 @@ std::string GetProjectRequest::getRegionId()const
 void GetProjectRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setHeader("RegionId", regionId);
 }
 

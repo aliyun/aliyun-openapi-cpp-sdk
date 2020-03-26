@@ -20,7 +20,9 @@ using AlibabaCloud::Mts::Model::AddCategoryRequest;
 
 AddCategoryRequest::AddCategoryRequest() :
 	RpcServiceRequest("mts", "2014-06-18", "AddCategory")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddCategoryRequest::~AddCategoryRequest()
 {}
@@ -33,7 +35,7 @@ long AddCategoryRequest::getResourceOwnerId()const
 void AddCategoryRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 long AddCategoryRequest::getParentId()const
@@ -44,7 +46,7 @@ long AddCategoryRequest::getParentId()const
 void AddCategoryRequest::setParentId(long parentId)
 {
 	parentId_ = parentId;
-	setCoreParameter("ParentId", std::to_string(parentId));
+	setParameter("ParentId", std::to_string(parentId));
 }
 
 std::string AddCategoryRequest::getAccessKeyId()const
@@ -55,7 +57,7 @@ std::string AddCategoryRequest::getAccessKeyId()const
 void AddCategoryRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string AddCategoryRequest::getCateName()const
@@ -66,7 +68,7 @@ std::string AddCategoryRequest::getCateName()const
 void AddCategoryRequest::setCateName(const std::string& cateName)
 {
 	cateName_ = cateName;
-	setCoreParameter("CateName", cateName);
+	setParameter("CateName", cateName);
 }
 
 std::string AddCategoryRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string AddCategoryRequest::getResourceOwnerAccount()const
 void AddCategoryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string AddCategoryRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string AddCategoryRequest::getOwnerAccount()const
 void AddCategoryRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long AddCategoryRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long AddCategoryRequest::getOwnerId()const
 void AddCategoryRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

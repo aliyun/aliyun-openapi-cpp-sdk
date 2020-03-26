@@ -20,7 +20,9 @@ using AlibabaCloud::Ess::Model::EnableAlarmRequest;
 
 EnableAlarmRequest::EnableAlarmRequest() :
 	RpcServiceRequest("ess", "2014-08-28", "EnableAlarm")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 EnableAlarmRequest::~EnableAlarmRequest()
 {}
@@ -33,18 +35,7 @@ std::string EnableAlarmRequest::getResourceOwnerAccount()const
 void EnableAlarmRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
-std::string EnableAlarmRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void EnableAlarmRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 long EnableAlarmRequest::getOwnerId()const
@@ -55,7 +46,7 @@ long EnableAlarmRequest::getOwnerId()const
 void EnableAlarmRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string EnableAlarmRequest::getAlarmTaskId()const
@@ -66,7 +57,7 @@ std::string EnableAlarmRequest::getAlarmTaskId()const
 void EnableAlarmRequest::setAlarmTaskId(const std::string& alarmTaskId)
 {
 	alarmTaskId_ = alarmTaskId;
-	setCoreParameter("AlarmTaskId", alarmTaskId);
+	setParameter("AlarmTaskId", alarmTaskId);
 }
 
 std::string EnableAlarmRequest::getAccessKeyId()const
@@ -77,6 +68,17 @@ std::string EnableAlarmRequest::getAccessKeyId()const
 void EnableAlarmRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string EnableAlarmRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void EnableAlarmRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 

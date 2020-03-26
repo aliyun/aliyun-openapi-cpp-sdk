@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::GetJobDataUploadParamsRequest;
 
 GetJobDataUploadParamsRequest::GetJobDataUploadParamsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "GetJobDataUploadParams")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetJobDataUploadParamsRequest::~GetJobDataUploadParamsRequest()
 {}
@@ -33,7 +35,7 @@ std::string GetJobDataUploadParamsRequest::getInstanceId()const
 void GetJobDataUploadParamsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string GetJobDataUploadParamsRequest::getFileName()const
@@ -44,6 +46,6 @@ std::string GetJobDataUploadParamsRequest::getFileName()const
 void GetJobDataUploadParamsRequest::setFileName(const std::string& fileName)
 {
 	fileName_ = fileName;
-	setCoreParameter("FileName", fileName);
+	setParameter("FileName", fileName);
 }
 

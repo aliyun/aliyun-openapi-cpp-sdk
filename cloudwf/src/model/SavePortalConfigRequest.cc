@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::SavePortalConfigRequest;
 
 SavePortalConfigRequest::SavePortalConfigRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "SavePortalConfig")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 SavePortalConfigRequest::~SavePortalConfigRequest()
 {}
@@ -33,7 +35,7 @@ std::string SavePortalConfigRequest::getJsonData()const
 void SavePortalConfigRequest::setJsonData(const std::string& jsonData)
 {
 	jsonData_ = jsonData;
-	setCoreParameter("JsonData", jsonData);
+	setParameter("JsonData", jsonData);
 }
 
 std::string SavePortalConfigRequest::getAccessKeyId()const
@@ -44,6 +46,6 @@ std::string SavePortalConfigRequest::getAccessKeyId()const
 void SavePortalConfigRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

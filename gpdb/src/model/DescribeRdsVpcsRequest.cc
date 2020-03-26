@@ -20,7 +20,9 @@ using AlibabaCloud::Gpdb::Model::DescribeRdsVpcsRequest;
 
 DescribeRdsVpcsRequest::DescribeRdsVpcsRequest() :
 	RpcServiceRequest("gpdb", "2016-05-03", "DescribeRdsVpcs")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DescribeRdsVpcsRequest::~DescribeRdsVpcsRequest()
 {}
@@ -33,7 +35,7 @@ long DescribeRdsVpcsRequest::getResourceOwnerId()const
 void DescribeRdsVpcsRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DescribeRdsVpcsRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string DescribeRdsVpcsRequest::getAccessKeyId()const
 void DescribeRdsVpcsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string DescribeRdsVpcsRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string DescribeRdsVpcsRequest::getSecurityToken()const
 void DescribeRdsVpcsRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string DescribeRdsVpcsRequest::getResourceOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DescribeRdsVpcsRequest::getResourceOwnerAccount()const
 void DescribeRdsVpcsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeRdsVpcsRequest::getOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DescribeRdsVpcsRequest::getOwnerAccount()const
 void DescribeRdsVpcsRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DescribeRdsVpcsRequest::getOwnerId()const
@@ -88,7 +90,7 @@ long DescribeRdsVpcsRequest::getOwnerId()const
 void DescribeRdsVpcsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeRdsVpcsRequest::getZoneId()const
@@ -99,6 +101,6 @@ std::string DescribeRdsVpcsRequest::getZoneId()const
 void DescribeRdsVpcsRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
-	setCoreParameter("ZoneId", zoneId);
+	setParameter("ZoneId", zoneId);
 }
 

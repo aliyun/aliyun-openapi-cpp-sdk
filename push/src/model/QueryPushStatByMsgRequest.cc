@@ -20,7 +20,9 @@ using AlibabaCloud::Push::Model::QueryPushStatByMsgRequest;
 
 QueryPushStatByMsgRequest::QueryPushStatByMsgRequest() :
 	RpcServiceRequest("push", "2016-08-01", "QueryPushStatByMsg")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryPushStatByMsgRequest::~QueryPushStatByMsgRequest()
 {}
@@ -33,7 +35,7 @@ long QueryPushStatByMsgRequest::getMessageId()const
 void QueryPushStatByMsgRequest::setMessageId(long messageId)
 {
 	messageId_ = messageId;
-	setCoreParameter("MessageId", std::to_string(messageId));
+	setParameter("MessageId", std::to_string(messageId));
 }
 
 std::string QueryPushStatByMsgRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string QueryPushStatByMsgRequest::getAccessKeyId()const
 void QueryPushStatByMsgRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 long QueryPushStatByMsgRequest::getAppKey()const
@@ -55,6 +57,6 @@ long QueryPushStatByMsgRequest::getAppKey()const
 void QueryPushStatByMsgRequest::setAppKey(long appKey)
 {
 	appKey_ = appKey;
-	setCoreParameter("AppKey", std::to_string(appKey));
+	setParameter("AppKey", std::to_string(appKey));
 }
 

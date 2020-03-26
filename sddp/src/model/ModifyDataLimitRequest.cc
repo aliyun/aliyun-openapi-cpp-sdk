@@ -20,10 +20,23 @@ using AlibabaCloud::Sddp::Model::ModifyDataLimitRequest;
 
 ModifyDataLimitRequest::ModifyDataLimitRequest() :
 	RpcServiceRequest("sddp", "2019-01-03", "ModifyDataLimit")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ModifyDataLimitRequest::~ModifyDataLimitRequest()
 {}
+
+bool ModifyDataLimitRequest::getModifyPassword()const
+{
+	return modifyPassword_;
+}
+
+void ModifyDataLimitRequest::setModifyPassword(bool modifyPassword)
+{
+	modifyPassword_ = modifyPassword;
+	setParameter("ModifyPassword", modifyPassword ? "true" : "false");
+}
 
 std::string ModifyDataLimitRequest::getPassword()const
 {
@@ -33,7 +46,7 @@ std::string ModifyDataLimitRequest::getPassword()const
 void ModifyDataLimitRequest::setPassword(const std::string& password)
 {
 	password_ = password;
-	setCoreParameter("Password", password);
+	setParameter("Password", password);
 }
 
 std::string ModifyDataLimitRequest::getSourceIp()const
@@ -44,7 +57,7 @@ std::string ModifyDataLimitRequest::getSourceIp()const
 void ModifyDataLimitRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 long ModifyDataLimitRequest::getId()const
@@ -55,7 +68,7 @@ long ModifyDataLimitRequest::getId()const
 void ModifyDataLimitRequest::setId(long id)
 {
 	id_ = id;
-	setCoreParameter("Id", std::to_string(id));
+	setParameter("Id", std::to_string(id));
 }
 
 std::string ModifyDataLimitRequest::getLang()const
@@ -66,7 +79,7 @@ std::string ModifyDataLimitRequest::getLang()const
 void ModifyDataLimitRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 
 std::string ModifyDataLimitRequest::getServiceRegionId()const
@@ -77,7 +90,51 @@ std::string ModifyDataLimitRequest::getServiceRegionId()const
 void ModifyDataLimitRequest::setServiceRegionId(const std::string& serviceRegionId)
 {
 	serviceRegionId_ = serviceRegionId;
-	setCoreParameter("ServiceRegionId", serviceRegionId);
+	setParameter("ServiceRegionId", serviceRegionId);
+}
+
+std::string ModifyDataLimitRequest::getEngineType()const
+{
+	return engineType_;
+}
+
+void ModifyDataLimitRequest::setEngineType(const std::string& engineType)
+{
+	engineType_ = engineType;
+	setParameter("EngineType", engineType);
+}
+
+int ModifyDataLimitRequest::getAuditStatus()const
+{
+	return auditStatus_;
+}
+
+void ModifyDataLimitRequest::setAuditStatus(int auditStatus)
+{
+	auditStatus_ = auditStatus;
+	setParameter("AuditStatus", std::to_string(auditStatus));
+}
+
+int ModifyDataLimitRequest::getAutoScan()const
+{
+	return autoScan_;
+}
+
+void ModifyDataLimitRequest::setAutoScan(int autoScan)
+{
+	autoScan_ = autoScan;
+	setParameter("AutoScan", std::to_string(autoScan));
+}
+
+int ModifyDataLimitRequest::getLogStoreDay()const
+{
+	return logStoreDay_;
+}
+
+void ModifyDataLimitRequest::setLogStoreDay(int logStoreDay)
+{
+	logStoreDay_ = logStoreDay;
+	setParameter("LogStoreDay", std::to_string(logStoreDay));
 }
 
 int ModifyDataLimitRequest::getResourceType()const
@@ -88,7 +145,7 @@ int ModifyDataLimitRequest::getResourceType()const
 void ModifyDataLimitRequest::setResourceType(int resourceType)
 {
 	resourceType_ = resourceType;
-	setCoreParameter("ResourceType", std::to_string(resourceType));
+	setParameter("ResourceType", std::to_string(resourceType));
 }
 
 std::string ModifyDataLimitRequest::getConnector()const
@@ -99,7 +156,18 @@ std::string ModifyDataLimitRequest::getConnector()const
 void ModifyDataLimitRequest::setConnector(const std::string& connector)
 {
 	connector_ = connector;
-	setCoreParameter("Connector", connector);
+	setParameter("Connector", connector);
+}
+
+int ModifyDataLimitRequest::getPort()const
+{
+	return port_;
+}
+
+void ModifyDataLimitRequest::setPort(int port)
+{
+	port_ = port;
+	setParameter("Port", std::to_string(port));
 }
 
 std::string ModifyDataLimitRequest::getUserName()const
@@ -110,6 +178,6 @@ std::string ModifyDataLimitRequest::getUserName()const
 void ModifyDataLimitRequest::setUserName(const std::string& userName)
 {
 	userName_ = userName;
-	setCoreParameter("UserName", userName);
+	setParameter("UserName", userName);
 }
 

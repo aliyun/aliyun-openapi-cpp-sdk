@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListUnreachableContactsRequest;
 
 ListUnreachableContactsRequest::ListUnreachableContactsRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListUnreachableContacts")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListUnreachableContactsRequest::~ListUnreachableContactsRequest()
 {}
@@ -33,7 +35,7 @@ int ListUnreachableContactsRequest::getPageNumber()const
 void ListUnreachableContactsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListUnreachableContactsRequest::getInstanceId()const
@@ -44,7 +46,7 @@ std::string ListUnreachableContactsRequest::getInstanceId()const
 void ListUnreachableContactsRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListUnreachableContactsRequest::getJobGroupId()const
@@ -55,7 +57,7 @@ std::string ListUnreachableContactsRequest::getJobGroupId()const
 void ListUnreachableContactsRequest::setJobGroupId(const std::string& jobGroupId)
 {
 	jobGroupId_ = jobGroupId;
-	setCoreParameter("JobGroupId", jobGroupId);
+	setParameter("JobGroupId", jobGroupId);
 }
 
 int ListUnreachableContactsRequest::getPageSize()const
@@ -66,6 +68,6 @@ int ListUnreachableContactsRequest::getPageSize()const
 void ListUnreachableContactsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

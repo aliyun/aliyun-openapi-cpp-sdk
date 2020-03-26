@@ -21,7 +21,7 @@ using AlibabaCloud::Dyplsapi::Model::OperateAxgGroupRequest;
 OperateAxgGroupRequest::OperateAxgGroupRequest() :
 	RpcServiceRequest("dyplsapi", "2017-05-25", "OperateAxgGroup")
 {
-	setMethod(HttpRequest::Method::POST);
+	setMethod(HttpRequest::Method::Post);
 }
 
 OperateAxgGroupRequest::~OperateAxgGroupRequest()

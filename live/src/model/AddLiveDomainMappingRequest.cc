@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::AddLiveDomainMappingRequest;
 
 AddLiveDomainMappingRequest::AddLiveDomainMappingRequest() :
 	RpcServiceRequest("live", "2016-11-01", "AddLiveDomainMapping")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddLiveDomainMappingRequest::~AddLiveDomainMappingRequest()
 {}
@@ -33,7 +35,7 @@ long AddLiveDomainMappingRequest::getOwnerId()const
 void AddLiveDomainMappingRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string AddLiveDomainMappingRequest::getPullDomain()const
@@ -44,7 +46,7 @@ std::string AddLiveDomainMappingRequest::getPullDomain()const
 void AddLiveDomainMappingRequest::setPullDomain(const std::string& pullDomain)
 {
 	pullDomain_ = pullDomain;
-	setCoreParameter("PullDomain", pullDomain);
+	setParameter("PullDomain", pullDomain);
 }
 
 std::string AddLiveDomainMappingRequest::getSecurityToken()const
@@ -55,7 +57,7 @@ std::string AddLiveDomainMappingRequest::getSecurityToken()const
 void AddLiveDomainMappingRequest::setSecurityToken(const std::string& securityToken)
 {
 	securityToken_ = securityToken;
-	setCoreParameter("SecurityToken", securityToken);
+	setParameter("SecurityToken", securityToken);
 }
 
 std::string AddLiveDomainMappingRequest::getPushDomain()const
@@ -66,6 +68,6 @@ std::string AddLiveDomainMappingRequest::getPushDomain()const
 void AddLiveDomainMappingRequest::setPushDomain(const std::string& pushDomain)
 {
 	pushDomain_ = pushDomain;
-	setCoreParameter("PushDomain", pushDomain);
+	setParameter("PushDomain", pushDomain);
 }
 

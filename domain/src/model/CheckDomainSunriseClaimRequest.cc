@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::CheckDomainSunriseClaimRequest;
 
 CheckDomainSunriseClaimRequest::CheckDomainSunriseClaimRequest() :
 	RpcServiceRequest("domain", "2018-01-29", "CheckDomainSunriseClaim")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CheckDomainSunriseClaimRequest::~CheckDomainSunriseClaimRequest()
 {}
@@ -33,7 +35,7 @@ std::string CheckDomainSunriseClaimRequest::getDomainName()const
 void CheckDomainSunriseClaimRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setCoreParameter("DomainName", domainName);
+	setParameter("DomainName", domainName);
 }
 
 std::string CheckDomainSunriseClaimRequest::getUserClientIp()const
@@ -44,7 +46,7 @@ std::string CheckDomainSunriseClaimRequest::getUserClientIp()const
 void CheckDomainSunriseClaimRequest::setUserClientIp(const std::string& userClientIp)
 {
 	userClientIp_ = userClientIp;
-	setCoreParameter("UserClientIp", userClientIp);
+	setParameter("UserClientIp", userClientIp);
 }
 
 std::string CheckDomainSunriseClaimRequest::getLang()const
@@ -55,6 +57,6 @@ std::string CheckDomainSunriseClaimRequest::getLang()const
 void CheckDomainSunriseClaimRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

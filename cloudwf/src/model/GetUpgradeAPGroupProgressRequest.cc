@@ -20,7 +20,9 @@ using AlibabaCloud::Cloudwf::Model::GetUpgradeAPGroupProgressRequest;
 
 GetUpgradeAPGroupProgressRequest::GetUpgradeAPGroupProgressRequest() :
 	RpcServiceRequest("cloudwf", "2017-03-28", "GetUpgradeAPGroupProgress")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetUpgradeAPGroupProgressRequest::~GetUpgradeAPGroupProgressRequest()
 {}
@@ -33,6 +35,6 @@ std::string GetUpgradeAPGroupProgressRequest::getAccessKeyId()const
 void GetUpgradeAPGroupProgressRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 

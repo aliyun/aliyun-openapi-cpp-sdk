@@ -20,7 +20,9 @@ using AlibabaCloud::Live::Model::DeleteCasterLayoutRequest;
 
 DeleteCasterLayoutRequest::DeleteCasterLayoutRequest() :
 	RpcServiceRequest("live", "2016-11-01", "DeleteCasterLayout")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteCasterLayoutRequest::~DeleteCasterLayoutRequest()
 {}
@@ -33,7 +35,7 @@ std::string DeleteCasterLayoutRequest::getLayoutId()const
 void DeleteCasterLayoutRequest::setLayoutId(const std::string& layoutId)
 {
 	layoutId_ = layoutId;
-	setCoreParameter("LayoutId", layoutId);
+	setParameter("LayoutId", layoutId);
 }
 
 std::string DeleteCasterLayoutRequest::getCasterId()const
@@ -44,7 +46,7 @@ std::string DeleteCasterLayoutRequest::getCasterId()const
 void DeleteCasterLayoutRequest::setCasterId(const std::string& casterId)
 {
 	casterId_ = casterId;
-	setCoreParameter("CasterId", casterId);
+	setParameter("CasterId", casterId);
 }
 
 long DeleteCasterLayoutRequest::getOwnerId()const
@@ -55,6 +57,6 @@ long DeleteCasterLayoutRequest::getOwnerId()const
 void DeleteCasterLayoutRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

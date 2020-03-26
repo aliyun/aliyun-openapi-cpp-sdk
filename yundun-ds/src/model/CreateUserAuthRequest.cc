@@ -20,7 +20,9 @@ using AlibabaCloud::Yundun_ds::Model::CreateUserAuthRequest;
 
 CreateUserAuthRequest::CreateUserAuthRequest() :
 	RpcServiceRequest("yundun-ds", "2019-01-03", "CreateUserAuth")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 CreateUserAuthRequest::~CreateUserAuthRequest()
 {}
@@ -33,7 +35,7 @@ std::string CreateUserAuthRequest::getAccessKeySecret()const
 void CreateUserAuthRequest::setAccessKeySecret(const std::string& accessKeySecret)
 {
 	accessKeySecret_ = accessKeySecret;
-	setCoreParameter("AccessKeySecret", accessKeySecret);
+	setParameter("AccessKeySecret", accessKeySecret);
 }
 
 long CreateUserAuthRequest::getAccountId()const
@@ -44,7 +46,7 @@ long CreateUserAuthRequest::getAccountId()const
 void CreateUserAuthRequest::setAccountId(long accountId)
 {
 	accountId_ = accountId;
-	setCoreParameter("AccountId", std::to_string(accountId));
+	setParameter("AccountId", std::to_string(accountId));
 }
 
 std::string CreateUserAuthRequest::getSourceIp()const
@@ -55,7 +57,7 @@ std::string CreateUserAuthRequest::getSourceIp()const
 void CreateUserAuthRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
-	setCoreParameter("SourceIp", sourceIp);
+	setParameter("SourceIp", sourceIp);
 }
 
 std::string CreateUserAuthRequest::getAccessKey()const
@@ -66,7 +68,7 @@ std::string CreateUserAuthRequest::getAccessKey()const
 void CreateUserAuthRequest::setAccessKey(const std::string& accessKey)
 {
 	accessKey_ = accessKey;
-	setCoreParameter("AccessKey", accessKey);
+	setParameter("AccessKey", accessKey);
 }
 
 std::string CreateUserAuthRequest::getLang()const
@@ -77,6 +79,6 @@ std::string CreateUserAuthRequest::getLang()const
 void CreateUserAuthRequest::setLang(const std::string& lang)
 {
 	lang_ = lang;
-	setCoreParameter("Lang", lang);
+	setParameter("Lang", lang);
 }
 

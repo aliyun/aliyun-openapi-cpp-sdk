@@ -20,7 +20,9 @@ using AlibabaCloud::CCC::Model::ListSkillGroupSummaryReportsSinceMidnightRequest
 
 ListSkillGroupSummaryReportsSinceMidnightRequest::ListSkillGroupSummaryReportsSinceMidnightRequest() :
 	RpcServiceRequest("ccc", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ListSkillGroupSummaryReportsSinceMidnightRequest::~ListSkillGroupSummaryReportsSinceMidnightRequest()
 {}
@@ -33,7 +35,7 @@ int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageNumber()const
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setCoreParameter("PageNumber", std::to_string(pageNumber));
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getAccessKeyId()const
@@ -44,7 +46,7 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getAccessKeyId()co
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
-	setCoreParameter("AccessKeyId", accessKeyId);
+	setParameter("AccessKeyId", accessKeyId);
 }
 
 std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getInstanceId()const
@@ -55,7 +57,7 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getInstanceId()con
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
-	setCoreParameter("InstanceId", instanceId);
+	setParameter("InstanceId", instanceId);
 }
 
 std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getSkillGroups()const
@@ -66,7 +68,7 @@ std::string ListSkillGroupSummaryReportsSinceMidnightRequest::getSkillGroups()co
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setSkillGroups(const std::string& skillGroups)
 {
 	skillGroups_ = skillGroups;
-	setCoreParameter("SkillGroups", skillGroups);
+	setParameter("SkillGroups", skillGroups);
 }
 
 int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageSize()const
@@ -77,6 +79,6 @@ int ListSkillGroupSummaryReportsSinceMidnightRequest::getPageSize()const
 void ListSkillGroupSummaryReportsSinceMidnightRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setCoreParameter("PageSize", std::to_string(pageSize));
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

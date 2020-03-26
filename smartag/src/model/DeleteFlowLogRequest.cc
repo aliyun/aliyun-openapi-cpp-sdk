@@ -20,7 +20,9 @@ using AlibabaCloud::Smartag::Model::DeleteFlowLogRequest;
 
 DeleteFlowLogRequest::DeleteFlowLogRequest() :
 	RpcServiceRequest("smartag", "2018-03-13", "DeleteFlowLog")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFlowLogRequest::~DeleteFlowLogRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteFlowLogRequest::getResourceOwnerId()const
 void DeleteFlowLogRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteFlowLogRequest::getRegionId()const
@@ -44,7 +46,7 @@ std::string DeleteFlowLogRequest::getRegionId()const
 void DeleteFlowLogRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteFlowLogRequest::getResourceOwnerAccount()const
@@ -55,7 +57,7 @@ std::string DeleteFlowLogRequest::getResourceOwnerAccount()const
 void DeleteFlowLogRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteFlowLogRequest::getOwnerAccount()const
@@ -66,7 +68,7 @@ std::string DeleteFlowLogRequest::getOwnerAccount()const
 void DeleteFlowLogRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteFlowLogRequest::getOwnerId()const
@@ -77,7 +79,7 @@ long DeleteFlowLogRequest::getOwnerId()const
 void DeleteFlowLogRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DeleteFlowLogRequest::getFlowLogId()const
@@ -88,6 +90,6 @@ std::string DeleteFlowLogRequest::getFlowLogId()const
 void DeleteFlowLogRequest::setFlowLogId(const std::string& flowLogId)
 {
 	flowLogId_ = flowLogId;
-	setCoreParameter("FlowLogId", flowLogId);
+	setParameter("FlowLogId", flowLogId);
 }
 

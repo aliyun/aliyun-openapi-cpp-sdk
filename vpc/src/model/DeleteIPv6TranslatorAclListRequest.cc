@@ -20,7 +20,9 @@ using AlibabaCloud::Vpc::Model::DeleteIPv6TranslatorAclListRequest;
 
 DeleteIPv6TranslatorAclListRequest::DeleteIPv6TranslatorAclListRequest() :
 	RpcServiceRequest("vpc", "2016-04-28", "DeleteIPv6TranslatorAclList")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteIPv6TranslatorAclListRequest::~DeleteIPv6TranslatorAclListRequest()
 {}
@@ -33,7 +35,7 @@ long DeleteIPv6TranslatorAclListRequest::getResourceOwnerId()const
 void DeleteIPv6TranslatorAclListRequest::setResourceOwnerId(long resourceOwnerId)
 {
 	resourceOwnerId_ = resourceOwnerId;
-	setCoreParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
 std::string DeleteIPv6TranslatorAclListRequest::getClientToken()const
@@ -44,7 +46,7 @@ std::string DeleteIPv6TranslatorAclListRequest::getClientToken()const
 void DeleteIPv6TranslatorAclListRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
-	setCoreParameter("ClientToken", clientToken);
+	setParameter("ClientToken", clientToken);
 }
 
 std::string DeleteIPv6TranslatorAclListRequest::getRegionId()const
@@ -55,7 +57,7 @@ std::string DeleteIPv6TranslatorAclListRequest::getRegionId()const
 void DeleteIPv6TranslatorAclListRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteIPv6TranslatorAclListRequest::getAclId()const
@@ -66,7 +68,7 @@ std::string DeleteIPv6TranslatorAclListRequest::getAclId()const
 void DeleteIPv6TranslatorAclListRequest::setAclId(const std::string& aclId)
 {
 	aclId_ = aclId;
-	setCoreParameter("AclId", aclId);
+	setParameter("AclId", aclId);
 }
 
 std::string DeleteIPv6TranslatorAclListRequest::getResourceOwnerAccount()const
@@ -77,7 +79,7 @@ std::string DeleteIPv6TranslatorAclListRequest::getResourceOwnerAccount()const
 void DeleteIPv6TranslatorAclListRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
 {
 	resourceOwnerAccount_ = resourceOwnerAccount;
-	setCoreParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DeleteIPv6TranslatorAclListRequest::getOwnerAccount()const
@@ -88,7 +90,7 @@ std::string DeleteIPv6TranslatorAclListRequest::getOwnerAccount()const
 void DeleteIPv6TranslatorAclListRequest::setOwnerAccount(const std::string& ownerAccount)
 {
 	ownerAccount_ = ownerAccount;
-	setCoreParameter("OwnerAccount", ownerAccount);
+	setParameter("OwnerAccount", ownerAccount);
 }
 
 long DeleteIPv6TranslatorAclListRequest::getOwnerId()const
@@ -99,6 +101,6 @@ long DeleteIPv6TranslatorAclListRequest::getOwnerId()const
 void DeleteIPv6TranslatorAclListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
-	setCoreParameter("OwnerId", std::to_string(ownerId));
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
