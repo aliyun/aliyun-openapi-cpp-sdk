@@ -78,7 +78,7 @@ sudo make install
 
 ```bash
 cd aliyun-openapi-cpp-sdk
-sudo sh easyinstall.sh
+sudo sh easyinstall.sh <lower name of product (like 'ecs')>
 ```
 
 **The Alibaba Cloud SDK for C++ will be installed to `/usr`.**
