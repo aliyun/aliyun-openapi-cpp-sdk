@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeParametersResult : public ServiceResult
 			{
 			public:
-				struct Parameter
+				struct _Parameter
 				{
 					bool modifiableStatus;
 					std::string checkingCode;
@@ -46,17 +46,17 @@ namespace AlibabaCloud
 				DescribeParametersResult();
 				explicit DescribeParametersResult(const std::string &payload);
 				~DescribeParametersResult();
-				std::vector<Parameter> getRunningParameters()const;
+				std::vector<_Parameter> getRunningParameters()const;
 				std::string getEngineVersion()const;
-				std::vector<Parameter> getConfigParameters()const;
+				std::vector<_Parameter> getConfigParameters()const;
 				std::string getEngine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Parameter> runningParameters_;
+				std::vector<_Parameter> runningParameters_;
 				std::string engineVersion_;
-				std::vector<Parameter> configParameters_;
+				std::vector<_Parameter> configParameters_;
 				std::string engine_;
 
 			};

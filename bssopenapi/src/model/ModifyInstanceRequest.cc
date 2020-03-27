@@ -104,19 +104,19 @@ void ModifyInstanceRequest::setModifyType(const std::string& modifyType)
 	setParameter("ModifyType", modifyType);
 }
 
-std::vector<ModifyInstanceRequest::Parameter> ModifyInstanceRequest::getParameter()const
+std::vector<ModifyInstanceRequest::_Parameter> ModifyInstanceRequest::get_Parameter()const
 {
-	return parameter_;
+	return _parameter_;
 }
 
-void ModifyInstanceRequest::setParameter(const std::vector<Parameter>& parameter)
+void ModifyInstanceRequest::set_Parameter(const std::vector<_Parameter>& _parameter)
 {
-	parameter_ = parameter;
-	for(int dep1 = 0; dep1!= parameter.size(); dep1++) {
-		auto parameterObj = parameter.at(dep1);
-		std::string parameterObjStr = "Parameter." + std::to_string(dep1 + 1);
-		setParameter(parameterObjStr + ".Code", parameterObj.code);
-		setParameter(parameterObjStr + ".Value", parameterObj.value);
+	_parameter_ = _parameter;
+	for(int dep1 = 0; dep1!= _parameter.size(); dep1++) {
+		auto _parameterObj = _parameter.at(dep1);
+		std::string _parameterObjStr = "Parameter." + std::to_string(dep1 + 1);
+		setParameter(_parameterObjStr + ".Code", _parameterObj.code);
+		setParameter(_parameterObjStr + ".Value", _parameterObj.value);
 	}
 }
 

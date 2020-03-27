@@ -42,7 +42,7 @@ void DescribeParametersResult::parse(const std::string &payload)
 	auto allConfigParametersNode = value["ConfigParameters"]["Parameter"];
 	for (auto valueConfigParametersParameter : allConfigParametersNode)
 	{
-		Parameter configParametersObject;
+		_Parameter configParametersObject;
 		if(!valueConfigParametersParameter["ParameterName"].isNull())
 			configParametersObject.parameterName = valueConfigParametersParameter["ParameterName"].asString();
 		if(!valueConfigParametersParameter["ParameterValue"].isNull())
@@ -60,7 +60,7 @@ void DescribeParametersResult::parse(const std::string &payload)
 	auto allRunningParametersNode = value["RunningParameters"]["Parameter"];
 	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
-		Parameter runningParametersObject;
+		_Parameter runningParametersObject;
 		if(!valueRunningParametersParameter["ParameterName"].isNull())
 			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
 		if(!valueRunningParametersParameter["ParameterValue"].isNull())
@@ -82,7 +82,7 @@ void DescribeParametersResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeParametersResult::Parameter> DescribeParametersResult::getRunningParameters()const
+std::vector<DescribeParametersResult::_Parameter> DescribeParametersResult::getRunningParameters()const
 {
 	return runningParameters_;
 }
@@ -92,7 +92,7 @@ std::string DescribeParametersResult::getEngineVersion()const
 	return engineVersion_;
 }
 
-std::vector<DescribeParametersResult::Parameter> DescribeParametersResult::getConfigParameters()const
+std::vector<DescribeParametersResult::_Parameter> DescribeParametersResult::getConfigParameters()const
 {
 	return configParameters_;
 }

@@ -42,7 +42,7 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 	auto allRunningParametersNode = value["RunningParameters"]["Parameter"];
 	for (auto valueRunningParametersParameter : allRunningParametersNode)
 	{
-		Parameter runningParametersObject;
+		_Parameter runningParametersObject;
 		if(!valueRunningParametersParameter["ParameterName"].isNull())
 			runningParametersObject.parameterName = valueRunningParametersParameter["ParameterName"].asString();
 		if(!valueRunningParametersParameter["DataType"].isNull())
@@ -72,7 +72,7 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeDBClusterParametersResult::Parameter> DescribeDBClusterParametersResult::getRunningParameters()const
+std::vector<DescribeDBClusterParametersResult::_Parameter> DescribeDBClusterParametersResult::getRunningParameters()const
 {
 	return runningParameters_;
 }

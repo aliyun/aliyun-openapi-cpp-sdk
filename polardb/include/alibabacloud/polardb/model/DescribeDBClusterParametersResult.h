@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterParametersResult : public ServiceResult
 			{
 			public:
-				struct Parameter
+				struct _Parameter
 				{
 					std::string defaultParameterValue;
 					bool isModifiable;
@@ -49,7 +49,7 @@ namespace AlibabaCloud
 				DescribeDBClusterParametersResult();
 				explicit DescribeDBClusterParametersResult(const std::string &payload);
 				~DescribeDBClusterParametersResult();
-				std::vector<Parameter> getRunningParameters()const;
+				std::vector<_Parameter> getRunningParameters()const;
 				std::string getDBVersion()const;
 				std::string getDBType()const;
 				std::string getEngine()const;
@@ -57,7 +57,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Parameter> runningParameters_;
+				std::vector<_Parameter> runningParameters_;
 				std::string dBVersion_;
 				std::string dBType_;
 				std::string engine_;
