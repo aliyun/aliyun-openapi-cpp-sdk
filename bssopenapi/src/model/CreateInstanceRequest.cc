@@ -104,19 +104,19 @@ void CreateInstanceRequest::setRenewPeriod(int renewPeriod)
 	setParameter("RenewPeriod", std::to_string(renewPeriod));
 }
 
-std::vector<CreateInstanceRequest::Parameter> CreateInstanceRequest::getParameter()const
+std::vector<CreateInstanceRequest::_Parameter> CreateInstanceRequest::get_Parameter()const
 {
-	return parameter_;
+	return _parameter_;
 }
 
-void CreateInstanceRequest::setParameter(const std::vector<Parameter>& parameter)
+void CreateInstanceRequest::set_Parameter(const std::vector<_Parameter>& _parameter)
 {
-	parameter_ = parameter;
-	for(int dep1 = 0; dep1!= parameter.size(); dep1++) {
-		auto parameterObj = parameter.at(dep1);
-		std::string parameterObjStr = "Parameter." + std::to_string(dep1 + 1);
-		setParameter(parameterObjStr + ".Code", parameterObj.code);
-		setParameter(parameterObjStr + ".Value", parameterObj.value);
+	_parameter_ = _parameter;
+	for(int dep1 = 0; dep1!= _parameter.size(); dep1++) {
+		auto _parameterObj = _parameter.at(dep1);
+		std::string _parameterObjStr = "Parameter." + std::to_string(dep1 + 1);
+		setParameter(_parameterObjStr + ".Code", _parameterObj.code);
+		setParameter(_parameterObjStr + ".Value", _parameterObj.value);
 	}
 }
 

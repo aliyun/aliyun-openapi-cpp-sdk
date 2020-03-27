@@ -31,7 +31,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_BSSOPENAPI_EXPORT CreateInstanceRequest : public RpcServiceRequest
 			{
 			public:
-				struct Parameter
+				struct _Parameter
 				{
 					std::string code;
 					std::string value;
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				void setProductType(const std::string& productType);
 				int getRenewPeriod()const;
 				void setRenewPeriod(int renewPeriod);
-				std::vector<Parameter> getParameter()const;
-				void setParameter(const std::vector<Parameter>& parameter);
+				std::vector<_Parameter> get_Parameter()const;
+				void set_Parameter(const std::vector<_Parameter>& _parameter);
 				std::string getRenewalStatus()const;
 				void setRenewalStatus(const std::string& renewalStatus);
 
@@ -68,7 +68,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string productType_;
 				int renewPeriod_;
-				std::vector<Parameter> parameter_;
+				std::vector<_Parameter> _parameter_;
 				std::string renewalStatus_;
 
 			};
