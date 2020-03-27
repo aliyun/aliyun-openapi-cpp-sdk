@@ -21,9 +21,9 @@ If you have any problem while using Alibaba Cloud SDK for C++, please submit an 
 
 - To use this SDK, you must have an Alibaba Cloud account and an AccessKey.
 
-	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
+  The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
-	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+  >**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
 - To use this SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
@@ -79,6 +79,10 @@ sudo make install
 ```bash
 cd aliyun-openapi-cpp-sdk
 sudo sh easyinstall.sh <lower name of product (like 'ecs')>
+
+# example
+sudo sh easyinstall.sh core
+sudo sh easyinstall.sh ecs
 ```
 
 **The Alibaba Cloud SDK for C++ will be installed to `/usr`.**
