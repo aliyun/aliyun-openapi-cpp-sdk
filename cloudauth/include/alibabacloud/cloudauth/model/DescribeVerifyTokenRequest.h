@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setSourceIp(const std::string& sourceIp);
 				std::string getCallbackSeed()const;
 				void setCallbackSeed(const std::string& callbackSeed);
+				std::string getUserIp()const;
+				void setUserIp(const std::string& userIp);
 				std::string getIdCardBackImageUrl()const;
 				void setIdCardBackImageUrl(const std::string& idCardBackImageUrl);
 				std::string getIdCardNumber()const;
@@ -53,10 +55,14 @@ namespace AlibabaCloud
 				void setBizType(const std::string& bizType);
 				std::string getPassedRedirectUrl()const;
 				void setPassedRedirectUrl(const std::string& passedRedirectUrl);
+				long getUserRegistTime()const;
+				void setUserRegistTime(long userRegistTime);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getUserPhoneNumber()const;
+				void setUserPhoneNumber(const std::string& userPhoneNumber);
 				std::string getCallbackUrl()const;
 				void setCallbackUrl(const std::string& callbackUrl);
 				std::string getFailedRedirectUrl()const;
@@ -67,13 +73,16 @@ namespace AlibabaCloud
 				std::string userId_;
 				std::string sourceIp_;
 				std::string callbackSeed_;
+				std::string userIp_;
 				std::string idCardBackImageUrl_;
 				std::string idCardNumber_;
 				std::string idCardFrontImageUrl_;
 				std::string bizType_;
 				std::string passedRedirectUrl_;
+				long userRegistTime_;
 				std::string bizId_;
 				std::string name_;
+				std::string userPhoneNumber_;
 				std::string callbackUrl_;
 				std::string failedRedirectUrl_;
 

@@ -71,6 +71,17 @@ void DescribeVerifyTokenRequest::setCallbackSeed(const std::string& callbackSeed
 	setParameter("CallbackSeed", callbackSeed);
 }
 
+std::string DescribeVerifyTokenRequest::getUserIp()const
+{
+	return userIp_;
+}
+
+void DescribeVerifyTokenRequest::setUserIp(const std::string& userIp)
+{
+	userIp_ = userIp;
+	setParameter("UserIp", userIp);
+}
+
 std::string DescribeVerifyTokenRequest::getIdCardBackImageUrl()const
 {
 	return idCardBackImageUrl_;
@@ -126,6 +137,17 @@ void DescribeVerifyTokenRequest::setPassedRedirectUrl(const std::string& passedR
 	setParameter("PassedRedirectUrl", passedRedirectUrl);
 }
 
+long DescribeVerifyTokenRequest::getUserRegistTime()const
+{
+	return userRegistTime_;
+}
+
+void DescribeVerifyTokenRequest::setUserRegistTime(long userRegistTime)
+{
+	userRegistTime_ = userRegistTime;
+	setParameter("UserRegistTime", std::to_string(userRegistTime));
+}
+
 std::string DescribeVerifyTokenRequest::getBizId()const
 {
 	return bizId_;
@@ -146,6 +168,17 @@ void DescribeVerifyTokenRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string DescribeVerifyTokenRequest::getUserPhoneNumber()const
+{
+	return userPhoneNumber_;
+}
+
+void DescribeVerifyTokenRequest::setUserPhoneNumber(const std::string& userPhoneNumber)
+{
+	userPhoneNumber_ = userPhoneNumber;
+	setParameter("UserPhoneNumber", userPhoneNumber);
 }
 
 std::string DescribeVerifyTokenRequest::getCallbackUrl()const
