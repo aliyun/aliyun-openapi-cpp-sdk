@@ -38,6 +38,17 @@ void DescribeExecutionRequest::setExecutionName(const std::string& executionName
 	setParameter("ExecutionName", executionName);
 }
 
+int DescribeExecutionRequest::getWaitTimeSeconds()const
+{
+	return waitTimeSeconds_;
+}
+
+void DescribeExecutionRequest::setWaitTimeSeconds(int waitTimeSeconds)
+{
+	waitTimeSeconds_ = waitTimeSeconds;
+	setParameter("WaitTimeSeconds", std::to_string(waitTimeSeconds));
+}
+
 std::string DescribeExecutionRequest::getRequestId()const
 {
 	return requestId_;

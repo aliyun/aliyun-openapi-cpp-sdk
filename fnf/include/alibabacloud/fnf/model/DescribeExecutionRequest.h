@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getExecutionName()const;
 				void setExecutionName(const std::string& executionName);
+				int getWaitTimeSeconds()const;
+				void setWaitTimeSeconds(int waitTimeSeconds);
 				std::string getRequestId()const;
 				void setRequestId(const std::string& requestId);
 				std::string getFlowName()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string executionName_;
+				int waitTimeSeconds_;
 				std::string requestId_;
 				std::string flowName_;
 
