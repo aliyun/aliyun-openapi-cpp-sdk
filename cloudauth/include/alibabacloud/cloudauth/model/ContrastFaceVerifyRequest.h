@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_CONTRASTFACEVERIFYREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_CONTRASTFACEVERIFYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT InitFaceVerifyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT ContrastFaceVerifyRequest : public RpcServiceRequest
 			{
 
 			public:
-				InitFaceVerifyRequest();
-				~InitFaceVerifyRequest();
+				ContrastFaceVerifyRequest();
+				~ContrastFaceVerifyRequest();
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
+				std::string getOssObjectName()const;
+				void setOssObjectName(const std::string& ossObjectName);
 				std::string getFaceContrastPicture()const;
 				void setFaceContrastPicture(const std::string& faceContrastPicture);
+				std::string getCertName()const;
+				void setCertName(const std::string& certName);
+				std::string getIp()const;
+				void setIp(const std::string& ip);
+				std::string getMobile()const;
+				void setMobile(const std::string& mobile);
+				std::string getDeviceToken()const;
+				void setDeviceToken(const std::string& deviceToken);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getCertifyId()const;
@@ -51,43 +61,30 @@ namespace AlibabaCloud
 				void setCertType(const std::string& certType);
 				std::string getFaceContrastPictureUrl()const;
 				void setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl);
-				std::string getMetaInfo()const;
-				void setMetaInfo(const std::string& metaInfo);
-				std::string getOssObjectName()const;
-				void setOssObjectName(const std::string& ossObjectName);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
-				std::string getIp()const;
-				void setIp(const std::string& ip);
-				std::string getMobile()const;
-				void setMobile(const std::string& mobile);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
 				void setOssBucketName(const std::string& ossBucketName);
-				std::string getReturnUrl()const;
-				void setReturnUrl(const std::string& returnUrl);
 
             private:
 				std::string productCode_;
+				std::string ossObjectName_;
 				std::string faceContrastPicture_;
+				std::string certName_;
+				std::string ip_;
+				std::string mobile_;
+				std::string deviceToken_;
 				std::string userId_;
 				std::string certifyId_;
 				std::string certNo_;
 				std::string outerOrderNo_;
 				std::string certType_;
 				std::string faceContrastPictureUrl_;
-				std::string metaInfo_;
-				std::string ossObjectName_;
-				std::string certName_;
-				std::string ip_;
-				std::string mobile_;
 				long sceneId_;
 				std::string ossBucketName_;
-				std::string returnUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_INITFACEVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_CONTRASTFACEVERIFYREQUEST_H_

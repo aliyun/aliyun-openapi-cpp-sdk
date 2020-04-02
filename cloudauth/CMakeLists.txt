@@ -23,6 +23,8 @@ set(cloudauth_public_header
 set(cloudauth_public_header_model 
 	include/alibabacloud/cloudauth/model/CompareFacesRequest.h
 	include/alibabacloud/cloudauth/model/CompareFacesResult.h
+	include/alibabacloud/cloudauth/model/ContrastFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/ContrastFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyRequest.h
 	include/alibabacloud/cloudauth/model/CreateAuthKeyResult.h
 	include/alibabacloud/cloudauth/model/CreateRPSDKRequest.h
@@ -76,6 +78,8 @@ set(cloudauth_src
 	src/CloudauthClient.cc
 	src/model/CompareFacesRequest.cc
 	src/model/CompareFacesResult.cc
+	src/model/ContrastFaceVerifyRequest.cc
+	src/model/ContrastFaceVerifyResult.cc
 	src/model/CreateAuthKeyRequest.cc
 	src/model/CreateAuthKeyResult.cc
 	src/model/CreateRPSDKRequest.cc

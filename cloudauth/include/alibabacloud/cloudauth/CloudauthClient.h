@@ -24,6 +24,8 @@
 #include "CloudauthExport.h"
 #include "model/CompareFacesRequest.h"
 #include "model/CompareFacesResult.h"
+#include "model/ContrastFaceVerifyRequest.h"
+#include "model/ContrastFaceVerifyResult.h"
 #include "model/CreateAuthKeyRequest.h"
 #include "model/CreateAuthKeyResult.h"
 #include "model/CreateRPSDKRequest.h"
@@ -84,6 +86,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CompareFacesResult> CompareFacesOutcome;
 			typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CompareFacesRequest&, const CompareFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFacesAsyncHandler;
+			typedef Outcome<Error, Model::ContrastFaceVerifyResult> ContrastFaceVerifyOutcome;
+			typedef std::future<ContrastFaceVerifyOutcome> ContrastFaceVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::ContrastFaceVerifyRequest&, const ContrastFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContrastFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::CreateAuthKeyResult> CreateAuthKeyOutcome;
 			typedef std::future<CreateAuthKeyOutcome> CreateAuthKeyOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CreateAuthKeyRequest&, const CreateAuthKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthKeyAsyncHandler;
@@ -164,6 +169,9 @@ namespace AlibabaCloud
 			CompareFacesOutcome compareFaces(const Model::CompareFacesRequest &request)const;
 			void compareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFacesOutcomeCallable compareFacesCallable(const Model::CompareFacesRequest& request) const;
+			ContrastFaceVerifyOutcome contrastFaceVerify(const Model::ContrastFaceVerifyRequest &request)const;
+			void contrastFaceVerifyAsync(const Model::ContrastFaceVerifyRequest& request, const ContrastFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ContrastFaceVerifyOutcomeCallable contrastFaceVerifyCallable(const Model::ContrastFaceVerifyRequest& request) const;
 			CreateAuthKeyOutcome createAuthKey(const Model::CreateAuthKeyRequest &request)const;
 			void createAuthKeyAsync(const Model::CreateAuthKeyRequest& request, const CreateAuthKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAuthKeyOutcomeCallable createAuthKeyCallable(const Model::CreateAuthKeyRequest& request) const;

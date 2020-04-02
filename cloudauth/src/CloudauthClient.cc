@@ -87,6 +87,42 @@ CloudauthClient::CompareFacesOutcomeCallable CloudauthClient::compareFacesCallab
 	return task->get_future();
 }
 
+CloudauthClient::ContrastFaceVerifyOutcome CloudauthClient::contrastFaceVerify(const ContrastFaceVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ContrastFaceVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ContrastFaceVerifyOutcome(ContrastFaceVerifyResult(outcome.result()));
+	else
+		return ContrastFaceVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::contrastFaceVerifyAsync(const ContrastFaceVerifyRequest& request, const ContrastFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, contrastFaceVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::ContrastFaceVerifyOutcomeCallable CloudauthClient::contrastFaceVerifyCallable(const ContrastFaceVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ContrastFaceVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->contrastFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::CreateAuthKeyOutcome CloudauthClient::createAuthKey(const CreateAuthKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
