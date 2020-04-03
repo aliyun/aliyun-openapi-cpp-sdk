@@ -1,3 +1,7 @@
+2020-04-03 Version: 1.36.340
+- Add trace api.
+- Add prometheus api.
+
 2020-04-03 Version: 1.36.339
 - Support shelf type for planogram position.
 

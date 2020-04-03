@@ -303,6 +303,42 @@ ARMSClient::DeleteRetcodeAppOutcomeCallable ARMSClient::deleteRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::GetPrometheusApiTokenOutcome ARMSClient::getPrometheusApiToken(const GetPrometheusApiTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPrometheusApiTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPrometheusApiTokenOutcome(GetPrometheusApiTokenResult(outcome.result()));
+	else
+		return GetPrometheusApiTokenOutcome(outcome.error());
+}
+
+void ARMSClient::getPrometheusApiTokenAsync(const GetPrometheusApiTokenRequest& request, const GetPrometheusApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPrometheusApiToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetPrometheusApiTokenOutcomeCallable ARMSClient::getPrometheusApiTokenCallable(const GetPrometheusApiTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPrometheusApiTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getPrometheusApiToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetRetcodeShareUrlOutcome ARMSClient::getRetcodeShareUrl(const GetRetcodeShareUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ ARMSClient::GetRetcodeShareUrlOutcomeCallable ARMSClient::getRetcodeShareUrlCall
 			[this, request]()
 			{
 			return this->getRetcodeShareUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetTraceOutcome ARMSClient::getTrace(const GetTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTraceOutcome(GetTraceResult(outcome.result()));
+	else
+		return GetTraceOutcome(outcome.error());
+}
+
+void ARMSClient::getTraceAsync(const GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetTraceOutcomeCallable ARMSClient::getTraceCallable(const GetTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->getTrace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -405,6 +477,42 @@ ARMSClient::ImportCustomAlertRulesOutcomeCallable ARMSClient::importCustomAlertR
 			[this, request]()
 			{
 			return this->importCustomAlertRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListClusterFromGrafanaOutcome ARMSClient::listClusterFromGrafana(const ListClusterFromGrafanaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListClusterFromGrafanaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListClusterFromGrafanaOutcome(ListClusterFromGrafanaResult(outcome.result()));
+	else
+		return ListClusterFromGrafanaOutcome(outcome.error());
+}
+
+void ARMSClient::listClusterFromGrafanaAsync(const ListClusterFromGrafanaRequest& request, const ListClusterFromGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listClusterFromGrafana(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListClusterFromGrafanaOutcomeCallable ARMSClient::listClusterFromGrafanaCallable(const ListClusterFromGrafanaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListClusterFromGrafanaOutcome()>>(
+			[this, request]()
+			{
+			return this->listClusterFromGrafana(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +981,42 @@ ARMSClient::SearchTraceAppByPageOutcomeCallable ARMSClient::searchTraceAppByPage
 			[this, request]()
 			{
 			return this->searchTraceAppByPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SearchTracesOutcome ARMSClient::searchTraces(const SearchTracesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchTracesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchTracesOutcome(SearchTracesResult(outcome.result()));
+	else
+		return SearchTracesOutcome(outcome.error());
+}
+
+void ARMSClient::searchTracesAsync(const SearchTracesRequest& request, const SearchTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchTraces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SearchTracesOutcomeCallable ARMSClient::searchTracesCallable(const SearchTracesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchTracesOutcome()>>(
+			[this, request]()
+			{
+			return this->searchTraces(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

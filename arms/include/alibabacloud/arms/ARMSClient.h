@@ -36,12 +36,18 @@
 #include "model/DeleteAlertRulesResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
+#include "model/GetPrometheusApiTokenRequest.h"
+#include "model/GetPrometheusApiTokenResult.h"
 #include "model/GetRetcodeShareUrlRequest.h"
 #include "model/GetRetcodeShareUrlResult.h"
+#include "model/GetTraceRequest.h"
+#include "model/GetTraceResult.h"
 #include "model/ImportAppAlertRulesRequest.h"
 #include "model/ImportAppAlertRulesResult.h"
 #include "model/ImportCustomAlertRulesRequest.h"
 #include "model/ImportCustomAlertRulesResult.h"
+#include "model/ListClusterFromGrafanaRequest.h"
+#include "model/ListClusterFromGrafanaResult.h"
 #include "model/ListPromClustersRequest.h"
 #include "model/ListPromClustersResult.h"
 #include "model/ListRetcodeAppsRequest.h"
@@ -68,6 +74,8 @@
 #include "model/SearchTraceAppByNameResult.h"
 #include "model/SearchTraceAppByPageRequest.h"
 #include "model/SearchTraceAppByPageResult.h"
+#include "model/SearchTracesRequest.h"
+#include "model/SearchTracesResult.h"
 #include "model/SetRetcodeShareStatusRequest.h"
 #include "model/SetRetcodeShareStatusResult.h"
 #include "model/StartAlertRequest.h"
@@ -110,15 +118,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::GetPrometheusApiTokenResult> GetPrometheusApiTokenOutcome;
+			typedef std::future<GetPrometheusApiTokenOutcome> GetPrometheusApiTokenOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetPrometheusApiTokenRequest&, const GetPrometheusApiTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrometheusApiTokenAsyncHandler;
 			typedef Outcome<Error, Model::GetRetcodeShareUrlResult> GetRetcodeShareUrlOutcome;
 			typedef std::future<GetRetcodeShareUrlOutcome> GetRetcodeShareUrlOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetRetcodeShareUrlRequest&, const GetRetcodeShareUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRetcodeShareUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetTraceResult> GetTraceOutcome;
+			typedef std::future<GetTraceOutcome> GetTraceOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetTraceRequest&, const GetTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAsyncHandler;
 			typedef Outcome<Error, Model::ImportAppAlertRulesResult> ImportAppAlertRulesOutcome;
 			typedef std::future<ImportAppAlertRulesOutcome> ImportAppAlertRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ImportAppAlertRulesRequest&, const ImportAppAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportAppAlertRulesAsyncHandler;
 			typedef Outcome<Error, Model::ImportCustomAlertRulesResult> ImportCustomAlertRulesOutcome;
 			typedef std::future<ImportCustomAlertRulesOutcome> ImportCustomAlertRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ImportCustomAlertRulesRequest&, const ImportCustomAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportCustomAlertRulesAsyncHandler;
+			typedef Outcome<Error, Model::ListClusterFromGrafanaResult> ListClusterFromGrafanaOutcome;
+			typedef std::future<ListClusterFromGrafanaOutcome> ListClusterFromGrafanaOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ListClusterFromGrafanaRequest&, const ListClusterFromGrafanaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterFromGrafanaAsyncHandler;
 			typedef Outcome<Error, Model::ListPromClustersResult> ListPromClustersOutcome;
 			typedef std::future<ListPromClustersOutcome> ListPromClustersOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListPromClustersRequest&, const ListPromClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPromClustersAsyncHandler;
@@ -158,6 +175,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchTraceAppByPageResult> SearchTraceAppByPageOutcome;
 			typedef std::future<SearchTraceAppByPageOutcome> SearchTraceAppByPageOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchTraceAppByPageRequest&, const SearchTraceAppByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTraceAppByPageAsyncHandler;
+			typedef Outcome<Error, Model::SearchTracesResult> SearchTracesOutcome;
+			typedef std::future<SearchTracesOutcome> SearchTracesOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::SearchTracesRequest&, const SearchTracesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTracesAsyncHandler;
 			typedef Outcome<Error, Model::SetRetcodeShareStatusResult> SetRetcodeShareStatusOutcome;
 			typedef std::future<SetRetcodeShareStatusOutcome> SetRetcodeShareStatusOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SetRetcodeShareStatusRequest&, const SetRetcodeShareStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRetcodeShareStatusAsyncHandler;
@@ -202,15 +222,24 @@ namespace AlibabaCloud
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
+			GetPrometheusApiTokenOutcome getPrometheusApiToken(const Model::GetPrometheusApiTokenRequest &request)const;
+			void getPrometheusApiTokenAsync(const Model::GetPrometheusApiTokenRequest& request, const GetPrometheusApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPrometheusApiTokenOutcomeCallable getPrometheusApiTokenCallable(const Model::GetPrometheusApiTokenRequest& request) const;
 			GetRetcodeShareUrlOutcome getRetcodeShareUrl(const Model::GetRetcodeShareUrlRequest &request)const;
 			void getRetcodeShareUrlAsync(const Model::GetRetcodeShareUrlRequest& request, const GetRetcodeShareUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRetcodeShareUrlOutcomeCallable getRetcodeShareUrlCallable(const Model::GetRetcodeShareUrlRequest& request) const;
+			GetTraceOutcome getTrace(const Model::GetTraceRequest &request)const;
+			void getTraceAsync(const Model::GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTraceOutcomeCallable getTraceCallable(const Model::GetTraceRequest& request) const;
 			ImportAppAlertRulesOutcome importAppAlertRules(const Model::ImportAppAlertRulesRequest &request)const;
 			void importAppAlertRulesAsync(const Model::ImportAppAlertRulesRequest& request, const ImportAppAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportAppAlertRulesOutcomeCallable importAppAlertRulesCallable(const Model::ImportAppAlertRulesRequest& request) const;
 			ImportCustomAlertRulesOutcome importCustomAlertRules(const Model::ImportCustomAlertRulesRequest &request)const;
 			void importCustomAlertRulesAsync(const Model::ImportCustomAlertRulesRequest& request, const ImportCustomAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportCustomAlertRulesOutcomeCallable importCustomAlertRulesCallable(const Model::ImportCustomAlertRulesRequest& request) const;
+			ListClusterFromGrafanaOutcome listClusterFromGrafana(const Model::ListClusterFromGrafanaRequest &request)const;
+			void listClusterFromGrafanaAsync(const Model::ListClusterFromGrafanaRequest& request, const ListClusterFromGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListClusterFromGrafanaOutcomeCallable listClusterFromGrafanaCallable(const Model::ListClusterFromGrafanaRequest& request) const;
 			ListPromClustersOutcome listPromClusters(const Model::ListPromClustersRequest &request)const;
 			void listPromClustersAsync(const Model::ListPromClustersRequest& request, const ListPromClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPromClustersOutcomeCallable listPromClustersCallable(const Model::ListPromClustersRequest& request) const;
@@ -250,6 +279,9 @@ namespace AlibabaCloud
 			SearchTraceAppByPageOutcome searchTraceAppByPage(const Model::SearchTraceAppByPageRequest &request)const;
 			void searchTraceAppByPageAsync(const Model::SearchTraceAppByPageRequest& request, const SearchTraceAppByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchTraceAppByPageOutcomeCallable searchTraceAppByPageCallable(const Model::SearchTraceAppByPageRequest& request) const;
+			SearchTracesOutcome searchTraces(const Model::SearchTracesRequest &request)const;
+			void searchTracesAsync(const Model::SearchTracesRequest& request, const SearchTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchTracesOutcomeCallable searchTracesCallable(const Model::SearchTracesRequest& request) const;
 			SetRetcodeShareStatusOutcome setRetcodeShareStatus(const Model::SetRetcodeShareStatusRequest &request)const;
 			void setRetcodeShareStatusAsync(const Model::SetRetcodeShareStatusRequest& request, const SetRetcodeShareStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetRetcodeShareStatusOutcomeCallable setRetcodeShareStatusCallable(const Model::SetRetcodeShareStatusRequest& request) const;
