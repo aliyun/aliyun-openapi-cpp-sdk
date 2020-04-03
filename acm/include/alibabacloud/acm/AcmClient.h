@@ -36,6 +36,8 @@
 #include "model/DescribeConfigurationResult.h"
 #include "model/DescribeNamespaceRequest.h"
 #include "model/DescribeNamespaceResult.h"
+#include "model/DescribeNamespacesRequest.h"
+#include "model/DescribeNamespacesResult.h"
 #include "model/UpdateNamespaceRequest.h"
 #include "model/UpdateNamespaceResult.h"
 
@@ -68,6 +70,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNamespaceResult> DescribeNamespaceOutcome;
 			typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
 			typedef std::function<void(const AcmClient*, const Model::DescribeNamespaceRequest&, const DescribeNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespaceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNamespacesResult> DescribeNamespacesOutcome;
+			typedef std::future<DescribeNamespacesOutcome> DescribeNamespacesOutcomeCallable;
+			typedef std::function<void(const AcmClient*, const Model::DescribeNamespacesRequest&, const DescribeNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateNamespaceResult> UpdateNamespaceOutcome;
 			typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
 			typedef std::function<void(const AcmClient*, const Model::UpdateNamespaceRequest&, const UpdateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
@@ -97,6 +102,9 @@ namespace AlibabaCloud
 			DescribeNamespaceOutcome describeNamespace(const Model::DescribeNamespaceRequest &request)const;
 			void describeNamespaceAsync(const Model::DescribeNamespaceRequest& request, const DescribeNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNamespaceOutcomeCallable describeNamespaceCallable(const Model::DescribeNamespaceRequest& request) const;
+			DescribeNamespacesOutcome describeNamespaces(const Model::DescribeNamespacesRequest &request)const;
+			void describeNamespacesAsync(const Model::DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNamespacesOutcomeCallable describeNamespacesCallable(const Model::DescribeNamespacesRequest& request) const;
 			UpdateNamespaceOutcome updateNamespace(const Model::UpdateNamespaceRequest &request)const;
 			void updateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNamespaceOutcomeCallable updateNamespaceCallable(const Model::UpdateNamespaceRequest& request) const;

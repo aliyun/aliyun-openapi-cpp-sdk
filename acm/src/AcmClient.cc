@@ -303,6 +303,42 @@ AcmClient::DescribeNamespaceOutcomeCallable AcmClient::describeNamespaceCallable
 	return task->get_future();
 }
 
+AcmClient::DescribeNamespacesOutcome AcmClient::describeNamespaces(const DescribeNamespacesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNamespacesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNamespacesOutcome(DescribeNamespacesResult(outcome.result()));
+	else
+		return DescribeNamespacesOutcome(outcome.error());
+}
+
+void AcmClient::describeNamespacesAsync(const DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNamespaces(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AcmClient::DescribeNamespacesOutcomeCallable AcmClient::describeNamespacesCallable(const DescribeNamespacesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNamespacesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNamespaces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AcmClient::UpdateNamespaceOutcome AcmClient::updateNamespace(const UpdateNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

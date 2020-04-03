@@ -35,6 +35,8 @@ set(acm_public_header_model
 	include/alibabacloud/acm/model/DescribeConfigurationResult.h
 	include/alibabacloud/acm/model/DescribeNamespaceRequest.h
 	include/alibabacloud/acm/model/DescribeNamespaceResult.h
+	include/alibabacloud/acm/model/DescribeNamespacesRequest.h
+	include/alibabacloud/acm/model/DescribeNamespacesResult.h
 	include/alibabacloud/acm/model/UpdateNamespaceRequest.h
 	include/alibabacloud/acm/model/UpdateNamespaceResult.h )
 
@@ -54,6 +56,8 @@ set(acm_src
 	src/model/DescribeConfigurationResult.cc
 	src/model/DescribeNamespaceRequest.cc
 	src/model/DescribeNamespaceResult.cc
+	src/model/DescribeNamespacesRequest.cc
+	src/model/DescribeNamespacesResult.cc
 	src/model/UpdateNamespaceRequest.cc
 	src/model/UpdateNamespaceResult.cc )
 
