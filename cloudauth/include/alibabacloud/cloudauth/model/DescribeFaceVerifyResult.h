@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string deviceToken;
 					std::string identityInfo;
 					std::string materialInfo;
+					std::string subCode;
 				};
 
 
