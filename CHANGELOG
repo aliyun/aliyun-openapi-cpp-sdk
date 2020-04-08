@@ -1,3 +1,6 @@
+2020-04-08 Version: 1.36.341
+- Generated 2019-01-01 for `Cassandra`.
+
 2020-04-03 Version: 1.36.340
 - Add trace api.
 - Add prometheus api.
