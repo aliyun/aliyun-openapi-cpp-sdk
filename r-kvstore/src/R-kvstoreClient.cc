@@ -1167,6 +1167,42 @@ R_kvstoreClient::DescribeParametersOutcomeCallable R_kvstoreClient::describePara
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribePriceOutcome R_kvstoreClient::describePrice(const DescribePriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePriceOutcome(DescribePriceResult(outcome.result()));
+	else
+		return DescribePriceOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describePriceAsync(const DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribePriceOutcomeCallable R_kvstoreClient::describePriceCallable(const DescribePriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeRegionsOutcome R_kvstoreClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
