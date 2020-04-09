@@ -96,6 +96,8 @@
 #include "model/DescribeParameterTemplatesResult.h"
 #include "model/DescribeParametersRequest.h"
 #include "model/DescribeParametersResult.h"
+#include "model/DescribePriceRequest.h"
+#include "model/DescribePriceResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRenewalPriceRequest.h"
@@ -308,6 +310,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeParametersResult> DescribeParametersOutcome;
 			typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeParametersRequest&, const DescribeParametersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParametersAsyncHandler;
+			typedef Outcome<Error, Model::DescribePriceResult> DescribePriceOutcome;
+			typedef std::future<DescribePriceOutcome> DescribePriceOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribePriceRequest&, const DescribePriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePriceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -562,6 +567,9 @@ namespace AlibabaCloud
 			DescribeParametersOutcome describeParameters(const Model::DescribeParametersRequest &request)const;
 			void describeParametersAsync(const Model::DescribeParametersRequest& request, const DescribeParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParametersOutcomeCallable describeParametersCallable(const Model::DescribeParametersRequest& request) const;
+			DescribePriceOutcome describePrice(const Model::DescribePriceRequest &request)const;
+			void describePriceAsync(const Model::DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePriceOutcomeCallable describePriceCallable(const Model::DescribePriceRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;

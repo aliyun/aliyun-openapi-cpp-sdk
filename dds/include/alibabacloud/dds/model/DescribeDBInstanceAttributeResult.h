@@ -115,6 +115,7 @@ namespace AlibabaCloud
 					int maxIOPS;
 					std::string chargeType;
 					std::string currentKernelVersion;
+					std::string protocolType;
 					std::string vpcAuthMode;
 					std::string creationTime;
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;

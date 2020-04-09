@@ -1383,6 +1383,42 @@ DdsClient::DescribeParametersOutcomeCallable DdsClient::describeParametersCallab
 	return task->get_future();
 }
 
+DdsClient::DescribePriceOutcome DdsClient::describePrice(const DescribePriceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePriceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePriceOutcome(DescribePriceResult(outcome.result()));
+	else
+		return DescribePriceOutcome(outcome.error());
+}
+
+void DdsClient::describePriceAsync(const DescribePriceRequest& request, const DescribePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePrice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribePriceOutcomeCallable DdsClient::describePriceCallable(const DescribePriceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePriceOutcome()>>(
+			[this, request]()
+			{
+			return this->describePrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeRegionsOutcome DdsClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

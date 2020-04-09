@@ -95,6 +95,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeParameterTemplatesResult.h
 	include/alibabacloud/dds/model/DescribeParametersRequest.h
 	include/alibabacloud/dds/model/DescribeParametersResult.h
+	include/alibabacloud/dds/model/DescribePriceRequest.h
+	include/alibabacloud/dds/model/DescribePriceResult.h
 	include/alibabacloud/dds/model/DescribeRegionsRequest.h
 	include/alibabacloud/dds/model/DescribeRegionsResult.h
 	include/alibabacloud/dds/model/DescribeRenewalPriceRequest.h
@@ -264,6 +266,8 @@ set(dds_src
 	src/model/DescribeParameterTemplatesResult.cc
 	src/model/DescribeParametersRequest.cc
 	src/model/DescribeParametersResult.cc
+	src/model/DescribePriceRequest.cc
+	src/model/DescribePriceResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRenewalPriceRequest.cc

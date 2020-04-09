@@ -103,6 +103,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.maxConnections = std::stoi(valueDBInstancesDBInstance["MaxConnections"].asString());
 		if(!valueDBInstancesDBInstance["CurrentKernelVersion"].isNull())
 			dBInstancesObject.currentKernelVersion = valueDBInstancesDBInstance["CurrentKernelVersion"].asString();
+		if(!valueDBInstancesDBInstance["ProtocolType"].isNull())
+			dBInstancesObject.protocolType = valueDBInstancesDBInstance["ProtocolType"].asString();
 		if(!valueDBInstancesDBInstance["VpcAuthMode"].isNull())
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
 		auto allMongosListNode = allDBInstancesNode["MongosList"]["MongosAttribute"];
