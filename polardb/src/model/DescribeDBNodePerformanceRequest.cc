@@ -93,6 +93,17 @@ void DescribeDBNodePerformanceRequest::setResourceOwnerAccount(const std::string
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+std::string DescribeDBNodePerformanceRequest::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+void DescribeDBNodePerformanceRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setParameter("DBClusterId", dBClusterId);
+}
+
 std::string DescribeDBNodePerformanceRequest::getOwnerAccount()const
 {
 	return ownerAccount_;

@@ -43,6 +43,10 @@ namespace AlibabaCloud
 				void setDBEndpointId(const std::string& dBEndpointId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getPrivateZoneName()const;
+				void setPrivateZoneName(const std::string& privateZoneName);
+				std::string getPrivateZoneAddressPrefix()const;
+				void setPrivateZoneAddressPrefix(const std::string& privateZoneAddressPrefix);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -59,6 +63,8 @@ namespace AlibabaCloud
 				std::string connectionStringPrefix_;
 				std::string dBEndpointId_;
 				std::string accessKeyId_;
+				std::string privateZoneName_;
+				std::string privateZoneAddressPrefix_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;

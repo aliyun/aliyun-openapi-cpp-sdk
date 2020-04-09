@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Address
 					{
+						std::string privateZoneConnectionString;
 						std::string vPCId;
 						std::string port;
 						std::string vSwitchId;

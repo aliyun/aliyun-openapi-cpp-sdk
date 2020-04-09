@@ -73,6 +73,8 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 				addressItemsObject.vSwitchId = allItemsNodeAddressItemsAddress["VSwitchId"].asString();
 			if(!allItemsNodeAddressItemsAddress["VpcInstanceId"].isNull())
 				addressItemsObject.vpcInstanceId = allItemsNodeAddressItemsAddress["VpcInstanceId"].asString();
+			if(!allItemsNodeAddressItemsAddress["PrivateZoneConnectionString"].isNull())
+				addressItemsObject.privateZoneConnectionString = allItemsNodeAddressItemsAddress["PrivateZoneConnectionString"].asString();
 			itemsObject.addressItems.push_back(addressItemsObject);
 		}
 		items_.push_back(itemsObject);

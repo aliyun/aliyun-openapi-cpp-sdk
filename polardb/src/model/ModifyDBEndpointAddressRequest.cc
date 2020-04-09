@@ -71,6 +71,28 @@ void ModifyDBEndpointAddressRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBEndpointAddressRequest::getPrivateZoneName()const
+{
+	return privateZoneName_;
+}
+
+void ModifyDBEndpointAddressRequest::setPrivateZoneName(const std::string& privateZoneName)
+{
+	privateZoneName_ = privateZoneName;
+	setParameter("PrivateZoneName", privateZoneName);
+}
+
+std::string ModifyDBEndpointAddressRequest::getPrivateZoneAddressPrefix()const
+{
+	return privateZoneAddressPrefix_;
+}
+
+void ModifyDBEndpointAddressRequest::setPrivateZoneAddressPrefix(const std::string& privateZoneAddressPrefix)
+{
+	privateZoneAddressPrefix_ = privateZoneAddressPrefix;
+	setParameter("PrivateZoneAddressPrefix", privateZoneAddressPrefix);
+}
+
 std::string ModifyDBEndpointAddressRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
