@@ -46,98 +46,98 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
-	auto allAlertRulesNode = pageBeanNode["AlertRules"]["AlertRule"];
-	for (auto pageBeanNodeAlertRulesAlertRule : allAlertRulesNode)
+	auto allAlertRulesNode = pageBeanNode["AlertRules"]["AlertRuleEntity"];
+	for (auto pageBeanNodeAlertRulesAlertRuleEntity : allAlertRulesNode)
 	{
-		PageBean::AlertRule alertRuleObject;
-		if(!pageBeanNodeAlertRulesAlertRule["AlertTitle"].isNull())
-			alertRuleObject.alertTitle = pageBeanNodeAlertRulesAlertRule["AlertTitle"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["AlertLevel"].isNull())
-			alertRuleObject.alertLevel = pageBeanNodeAlertRulesAlertRule["AlertLevel"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["AlertType"].isNull())
-			alertRuleObject.alertType = std::stoi(pageBeanNodeAlertRulesAlertRule["AlertType"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["AlertVersion"].isNull())
-			alertRuleObject.alertVersion = std::stoi(pageBeanNodeAlertRulesAlertRule["AlertVersion"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["Config"].isNull())
-			alertRuleObject.config = pageBeanNodeAlertRulesAlertRule["Config"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["ContactGroupIdList"].isNull())
-			alertRuleObject.contactGroupIdList = pageBeanNodeAlertRulesAlertRule["ContactGroupIdList"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["CreateTime"].isNull())
-			alertRuleObject.createTime = std::stol(pageBeanNodeAlertRulesAlertRule["CreateTime"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["Id"].isNull())
-			alertRuleObject.id = std::stol(pageBeanNodeAlertRulesAlertRule["Id"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["RegionId"].isNull())
-			alertRuleObject.regionId = pageBeanNodeAlertRulesAlertRule["RegionId"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["Status"].isNull())
-			alertRuleObject.status = pageBeanNodeAlertRulesAlertRule["Status"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["TaskId"].isNull())
-			alertRuleObject.taskId = std::stol(pageBeanNodeAlertRulesAlertRule["TaskId"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["TaskStatus"].isNull())
-			alertRuleObject.taskStatus = pageBeanNodeAlertRulesAlertRule["TaskStatus"].asString();
-		if(!pageBeanNodeAlertRulesAlertRule["UpdateTime"].isNull())
-			alertRuleObject.updateTime = std::stol(pageBeanNodeAlertRulesAlertRule["UpdateTime"].asString());
-		if(!pageBeanNodeAlertRulesAlertRule["UserId"].isNull())
-			alertRuleObject.userId = pageBeanNodeAlertRulesAlertRule["UserId"].asString();
+		PageBean::AlertRuleEntity alertRuleEntityObject;
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["AlertTitle"].isNull())
+			alertRuleEntityObject.alertTitle = pageBeanNodeAlertRulesAlertRuleEntity["AlertTitle"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["AlertLevel"].isNull())
+			alertRuleEntityObject.alertLevel = pageBeanNodeAlertRulesAlertRuleEntity["AlertLevel"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["AlertType"].isNull())
+			alertRuleEntityObject.alertType = std::stoi(pageBeanNodeAlertRulesAlertRuleEntity["AlertType"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["AlertVersion"].isNull())
+			alertRuleEntityObject.alertVersion = std::stoi(pageBeanNodeAlertRulesAlertRuleEntity["AlertVersion"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["Config"].isNull())
+			alertRuleEntityObject.config = pageBeanNodeAlertRulesAlertRuleEntity["Config"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIdList"].isNull())
+			alertRuleEntityObject.contactGroupIdList = pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIdList"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["CreateTime"].isNull())
+			alertRuleEntityObject.createTime = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["CreateTime"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["Id"].isNull())
+			alertRuleEntityObject.id = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["Id"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["RegionId"].isNull())
+			alertRuleEntityObject.regionId = pageBeanNodeAlertRulesAlertRuleEntity["RegionId"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["Status"].isNull())
+			alertRuleEntityObject.status = pageBeanNodeAlertRulesAlertRuleEntity["Status"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["TaskId"].isNull())
+			alertRuleEntityObject.taskId = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["TaskId"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["TaskStatus"].isNull())
+			alertRuleEntityObject.taskStatus = pageBeanNodeAlertRulesAlertRuleEntity["TaskStatus"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["UpdateTime"].isNull())
+			alertRuleEntityObject.updateTime = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["UpdateTime"].asString());
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["UserId"].isNull())
+			alertRuleEntityObject.userId = pageBeanNodeAlertRulesAlertRuleEntity["UserId"].asString();
 		auto alarmContextNode = value["AlarmContext"];
 		if(!alarmContextNode["AlarmContentTemplate"].isNull())
-			alertRuleObject.alarmContext.alarmContentTemplate = alarmContextNode["AlarmContentTemplate"].asString();
+			alertRuleEntityObject.alarmContext.alarmContentTemplate = alarmContextNode["AlarmContentTemplate"].asString();
 		if(!alarmContextNode["AlarmContentSubTitle"].isNull())
-			alertRuleObject.alarmContext.alarmContentSubTitle = alarmContextNode["AlarmContentSubTitle"].asString();
-		auto alertRule1Node = value["AlertRule"];
-		if(!alertRule1Node["Operator"].isNull())
-			alertRuleObject.alertRule1._operator = alertRule1Node["Operator"].asString();
-		auto allRulesNode = alertRule1Node["Rules"]["Rule"];
-		for (auto alertRule1NodeRulesRule : allRulesNode)
+			alertRuleEntityObject.alarmContext.alarmContentSubTitle = alarmContextNode["AlarmContentSubTitle"].asString();
+		auto alertRuleNode = value["AlertRule"];
+		if(!alertRuleNode["Operator"].isNull())
+			alertRuleEntityObject.alertRule._operator = alertRuleNode["Operator"].asString();
+		auto allRulesNode = alertRuleNode["Rules"]["Rule"];
+		for (auto alertRuleNodeRulesRule : allRulesNode)
 		{
-			PageBean::AlertRule::AlertRule1::Rule ruleObject;
-			if(!alertRule1NodeRulesRule["Aggregates"].isNull())
-				ruleObject.aggregates = alertRule1NodeRulesRule["Aggregates"].asString();
-			if(!alertRule1NodeRulesRule["Alias"].isNull())
-				ruleObject.alias = alertRule1NodeRulesRule["Alias"].asString();
-			if(!alertRule1NodeRulesRule["Measure"].isNull())
-				ruleObject.measure = alertRule1NodeRulesRule["Measure"].asString();
-			if(!alertRule1NodeRulesRule["NValue"].isNull())
-				ruleObject.nValue = std::stoi(alertRule1NodeRulesRule["NValue"].asString());
-			if(!alertRule1NodeRulesRule["Operator"].isNull())
-				ruleObject._operator = alertRule1NodeRulesRule["Operator"].asString();
-			if(!alertRule1NodeRulesRule["Value"].isNull())
-				ruleObject.value = std::stof(alertRule1NodeRulesRule["Value"].asString());
-			alertRuleObject.alertRule1.rules.push_back(ruleObject);
+			PageBean::AlertRuleEntity::AlertRule::Rule ruleObject;
+			if(!alertRuleNodeRulesRule["Aggregates"].isNull())
+				ruleObject.aggregates = alertRuleNodeRulesRule["Aggregates"].asString();
+			if(!alertRuleNodeRulesRule["Alias"].isNull())
+				ruleObject.alias = alertRuleNodeRulesRule["Alias"].asString();
+			if(!alertRuleNodeRulesRule["Measure"].isNull())
+				ruleObject.measure = alertRuleNodeRulesRule["Measure"].asString();
+			if(!alertRuleNodeRulesRule["NValue"].isNull())
+				ruleObject.nValue = std::stoi(alertRuleNodeRulesRule["NValue"].asString());
+			if(!alertRuleNodeRulesRule["Operator"].isNull())
+				ruleObject._operator = alertRuleNodeRulesRule["Operator"].asString();
+			if(!alertRuleNodeRulesRule["Value"].isNull())
+				ruleObject.value = std::stof(alertRuleNodeRulesRule["Value"].asString());
+			alertRuleEntityObject.alertRule.rules.push_back(ruleObject);
 		}
 		auto metricParamNode = value["MetricParam"];
 		if(!metricParamNode["AppGroupId"].isNull())
-			alertRuleObject.metricParam.appGroupId = metricParamNode["AppGroupId"].asString();
+			alertRuleEntityObject.metricParam.appGroupId = metricParamNode["AppGroupId"].asString();
 		if(!metricParamNode["AppId"].isNull())
-			alertRuleObject.metricParam.appId = metricParamNode["AppId"].asString();
+			alertRuleEntityObject.metricParam.appId = metricParamNode["AppId"].asString();
 		if(!metricParamNode["Pid"].isNull())
-			alertRuleObject.metricParam.pid = metricParamNode["Pid"].asString();
+			alertRuleEntityObject.metricParam.pid = metricParamNode["Pid"].asString();
 		if(!metricParamNode["Type"].isNull())
-			alertRuleObject.metricParam.type = metricParamNode["Type"].asString();
+			alertRuleEntityObject.metricParam.type = metricParamNode["Type"].asString();
 		auto allDimensionsNode = metricParamNode["Dimensions"]["Dimension"];
 		for (auto metricParamNodeDimensionsDimension : allDimensionsNode)
 		{
-			PageBean::AlertRule::MetricParam::Dimension dimensionObject;
+			PageBean::AlertRuleEntity::MetricParam::Dimension dimensionObject;
 			if(!metricParamNodeDimensionsDimension["Key"].isNull())
 				dimensionObject.key = metricParamNodeDimensionsDimension["Key"].asString();
 			if(!metricParamNodeDimensionsDimension["Type"].isNull())
 				dimensionObject.type = metricParamNodeDimensionsDimension["Type"].asString();
 			if(!metricParamNodeDimensionsDimension["Value"].isNull())
 				dimensionObject.value = metricParamNodeDimensionsDimension["Value"].asString();
-			alertRuleObject.metricParam.dimensions.push_back(dimensionObject);
+			alertRuleEntityObject.metricParam.dimensions.push_back(dimensionObject);
 		}
 		auto noticeNode = value["Notice"];
 		if(!noticeNode["EndTime"].isNull())
-			alertRuleObject.notice.endTime = std::stol(noticeNode["EndTime"].asString());
+			alertRuleEntityObject.notice.endTime = std::stol(noticeNode["EndTime"].asString());
 		if(!noticeNode["NoticeEndTime"].isNull())
-			alertRuleObject.notice.noticeEndTime = std::stol(noticeNode["NoticeEndTime"].asString());
+			alertRuleEntityObject.notice.noticeEndTime = std::stol(noticeNode["NoticeEndTime"].asString());
 		if(!noticeNode["NoticeStartTime"].isNull())
-			alertRuleObject.notice.noticeStartTime = std::stol(noticeNode["NoticeStartTime"].asString());
+			alertRuleEntityObject.notice.noticeStartTime = std::stol(noticeNode["NoticeStartTime"].asString());
 		if(!noticeNode["StartTime"].isNull())
-			alertRuleObject.notice.startTime = std::stol(noticeNode["StartTime"].asString());
+			alertRuleEntityObject.notice.startTime = std::stol(noticeNode["StartTime"].asString());
 		auto allAlertWays = value["AlertWays"]["AlertWay"];
 		for (auto value : allAlertWays)
-			alertRuleObject.alertWays.push_back(value.asString());
-		pageBean_.alertRules.push_back(alertRuleObject);
+			alertRuleEntityObject.alertWays.push_back(value.asString());
+		pageBean_.alertRules.push_back(alertRuleEntityObject);
 	}
 
 }

@@ -1,3 +1,6 @@
+2020-04-09 Version: 1.36.348
+- Add prometheus api AddGrafana and AddIntegration.
+
 2020-04-09 Version: 1.36.347
 - Generated 2018-03-13 for `retailcloud`.
 

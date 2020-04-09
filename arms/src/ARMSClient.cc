@@ -51,6 +51,78 @@ ARMSClient::ARMSClient(const std::string & accessKeyId, const std::string & acce
 ARMSClient::~ARMSClient()
 {}
 
+ARMSClient::AddGrafanaOutcome ARMSClient::addGrafana(const AddGrafanaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddGrafanaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddGrafanaOutcome(AddGrafanaResult(outcome.result()));
+	else
+		return AddGrafanaOutcome(outcome.error());
+}
+
+void ARMSClient::addGrafanaAsync(const AddGrafanaRequest& request, const AddGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addGrafana(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::AddGrafanaOutcomeCallable ARMSClient::addGrafanaCallable(const AddGrafanaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddGrafanaOutcome()>>(
+			[this, request]()
+			{
+			return this->addGrafana(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::AddIntegrationOutcome ARMSClient::addIntegration(const AddIntegrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddIntegrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddIntegrationOutcome(AddIntegrationResult(outcome.result()));
+	else
+		return AddIntegrationOutcome(outcome.error());
+}
+
+void ARMSClient::addIntegrationAsync(const AddIntegrationRequest& request, const AddIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addIntegration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::AddIntegrationOutcomeCallable ARMSClient::addIntegrationCallable(const AddIntegrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddIntegrationOutcome()>>(
+			[this, request]()
+			{
+			return this->addIntegration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateAlertContactOutcome ARMSClient::createAlertContact(const CreateAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

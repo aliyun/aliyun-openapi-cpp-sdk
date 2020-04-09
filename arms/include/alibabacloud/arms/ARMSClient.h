@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "ARMSExport.h"
+#include "model/AddGrafanaRequest.h"
+#include "model/AddGrafanaResult.h"
+#include "model/AddIntegrationRequest.h"
+#include "model/AddIntegrationResult.h"
 #include "model/CreateAlertContactRequest.h"
 #include "model/CreateAlertContactResult.h"
 #include "model/CreateAlertContactGroupRequest.h"
@@ -97,6 +101,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ARMS_EXPORT ARMSClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddGrafanaResult> AddGrafanaOutcome;
+			typedef std::future<AddGrafanaOutcome> AddGrafanaOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::AddGrafanaRequest&, const AddGrafanaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddGrafanaAsyncHandler;
+			typedef Outcome<Error, Model::AddIntegrationResult> AddIntegrationOutcome;
+			typedef std::future<AddIntegrationOutcome> AddIntegrationOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::AddIntegrationRequest&, const AddIntegrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIntegrationAsyncHandler;
 			typedef Outcome<Error, Model::CreateAlertContactResult> CreateAlertContactOutcome;
 			typedef std::future<CreateAlertContactOutcome> CreateAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateAlertContactRequest&, const CreateAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertContactAsyncHandler;
@@ -201,6 +211,12 @@ namespace AlibabaCloud
 			ARMSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			ARMSClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~ARMSClient();
+			AddGrafanaOutcome addGrafana(const Model::AddGrafanaRequest &request)const;
+			void addGrafanaAsync(const Model::AddGrafanaRequest& request, const AddGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddGrafanaOutcomeCallable addGrafanaCallable(const Model::AddGrafanaRequest& request) const;
+			AddIntegrationOutcome addIntegration(const Model::AddIntegrationRequest &request)const;
+			void addIntegrationAsync(const Model::AddIntegrationRequest& request, const AddIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddIntegrationOutcomeCallable addIntegrationCallable(const Model::AddIntegrationRequest& request) const;
 			CreateAlertContactOutcome createAlertContact(const Model::CreateAlertContactRequest &request)const;
 			void createAlertContactAsync(const Model::CreateAlertContactRequest& request, const CreateAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlertContactOutcomeCallable createAlertContactCallable(const Model::CreateAlertContactRequest& request) const;

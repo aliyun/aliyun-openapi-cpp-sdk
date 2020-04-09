@@ -21,6 +21,10 @@ set(arms_public_header
 	include/alibabacloud/arms/ARMSExport.h )
 
 set(arms_public_header_model 
+	include/alibabacloud/arms/model/AddGrafanaRequest.h
+	include/alibabacloud/arms/model/AddGrafanaResult.h
+	include/alibabacloud/arms/model/AddIntegrationRequest.h
+	include/alibabacloud/arms/model/AddIntegrationResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
@@ -90,6 +94,10 @@ set(arms_public_header_model
 
 set(arms_src 
 	src/ARMSClient.cc
+	src/model/AddGrafanaRequest.cc
+	src/model/AddGrafanaResult.cc
+	src/model/AddIntegrationRequest.cc
+	src/model/AddIntegrationResult.cc
 	src/model/CreateAlertContactRequest.cc
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc

@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct PageBean
 				{
-					struct AlertRule
+					struct AlertRuleEntity
 					{
 						struct AlarmContext
 						{
 							std::string alarmContentTemplate;
 							std::string alarmContentSubTitle;
 						};
-						struct AlertRule1
+						struct AlertRule
 						{
 							struct Rule
 							{
@@ -89,16 +89,16 @@ namespace AlibabaCloud
 						std::string contactGroupIdList;
 						Notice notice;
 						std::string userId;
-						AlertRule1 alertRule1;
 						std::string alertTitle;
 						long updateTime;
 						std::string alertLevel;
 						long id;
 						std::string regionId;
+						AlertRule alertRule;
 					};
 					int totalCount;
 					int pageSize;
-					std::vector<AlertRule> alertRules;
+					std::vector<AlertRuleEntity> alertRules;
 					int pageNumber;
 				};
 
