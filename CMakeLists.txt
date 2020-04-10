@@ -9,12 +9,14 @@ project(alibabacloud-sdk VERSION ${version})
 message(STATUS "Project version: ${PROJECT_VERSION}")
 
 set(TARGET_OUTPUT_NAME_PREFIX "alibabacloud-sdk-" CACHE STRING "The target's output name prefix")
+set(BUILD_PRODUCT "" CACHE STRING "Build by lower name of product")
+
 option(BUILD_SHARED_LIBS  "Enable shared library" ON)
 option(BUILD_UNIT_TESTS "Enable unit tests" OFF)
 option(BUILD_FUNCTION_TESTS "Enable function test" OFF)
-option(BUILD_PRODUCT "Build by lower name of product" OFF)
 
 set(LIB_TYPE STATIC)
+
 if(BUILD_SHARED_LIBS)
 	set(LIB_TYPE SHARED)
 	add_definitions(-DALIBABACLOUD_SHARED)
@@ -57,9 +59,10 @@ if(BUILD_FUNCTION_TESTS)
   add_subdirectory(test/function_test/vpc)
 endif()
 
-if(NOT BUILD_PRODUCT)
-  message(WARNING   "INVALID FOLDER 'BUILD_PRODUCT'=${BUILD_PRODUCT}")
+if(BUILD_PRODUCT STREQUAL "")
+  message(WARNING   "Please set the value of 'BUILD_PRODUCT'")
 else()
+  add_subdirectory(core)
   add_subdirectory(${BUILD_PRODUCT})
   message(STATUS   "'BUILD_PRODUCT'=${BUILD_PRODUCT}")
 endif()
