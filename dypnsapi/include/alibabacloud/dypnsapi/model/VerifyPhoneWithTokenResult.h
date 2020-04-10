@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYRESULT_H_
-#define ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYRESULT_H_
+#ifndef ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYPHONEWITHTOKENRESULT_H_
+#define ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYPHONEWITHTOKENRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPNSAPI_EXPORT TwiceTelVerifyResult : public ServiceResult
+			class ALIBABACLOUD_DYPNSAPI_EXPORT VerifyPhoneWithTokenResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct GateVerify
 				{
-					std::string carrier;
-					int verifyResult;
+					std::string verifyResult;
+					std::string verifyId;
 				};
 
 
-				TwiceTelVerifyResult();
-				explicit TwiceTelVerifyResult(const std::string &payload);
-				~TwiceTelVerifyResult();
+				VerifyPhoneWithTokenResult();
+				explicit VerifyPhoneWithTokenResult(const std::string &payload);
+				~VerifyPhoneWithTokenResult();
 				std::string getMessage()const;
-				Result getTwiceTelVerifyResult()const;
+				GateVerify getGateVerify()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Result twiceTelVerifyResult_;
+				GateVerify gateVerify_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_TWICETELVERIFYRESULT_H_
+#endif // !ALIBABACLOUD_DYPNSAPI_MODEL_VERIFYPHONEWITHTOKENRESULT_H_

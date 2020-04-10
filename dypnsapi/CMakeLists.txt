@@ -32,7 +32,9 @@ set(dypnsapi_public_header_model
 	include/alibabacloud/dypnsapi/model/TwiceTelVerifyRequest.h
 	include/alibabacloud/dypnsapi/model/TwiceTelVerifyResult.h
 	include/alibabacloud/dypnsapi/model/VerifyMobileRequest.h
-	include/alibabacloud/dypnsapi/model/VerifyMobileResult.h )
+	include/alibabacloud/dypnsapi/model/VerifyMobileResult.h
+	include/alibabacloud/dypnsapi/model/VerifyPhoneWithTokenRequest.h
+	include/alibabacloud/dypnsapi/model/VerifyPhoneWithTokenResult.h )
 
 set(dypnsapi_src 
 	src/DypnsapiClient.cc
@@ -47,7 +49,9 @@ set(dypnsapi_src
 	src/model/TwiceTelVerifyRequest.cc
 	src/model/TwiceTelVerifyResult.cc
 	src/model/VerifyMobileRequest.cc
-	src/model/VerifyMobileResult.cc )
+	src/model/VerifyMobileResult.cc
+	src/model/VerifyPhoneWithTokenRequest.cc
+	src/model/VerifyPhoneWithTokenResult.cc )
 
 add_library(dypnsapi ${LIB_TYPE}
 	${dypnsapi_public_header}

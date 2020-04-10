@@ -31,21 +31,21 @@ DypnsapiClient::DypnsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DypnsapiClient::DypnsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DypnsapiClient::DypnsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DypnsapiClient::~DypnsapiClient()
@@ -261,6 +261,42 @@ DypnsapiClient::VerifyMobileOutcomeCallable DypnsapiClient::verifyMobileCallable
 			[this, request]()
 			{
 			return this->verifyMobile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::VerifyPhoneWithTokenOutcome DypnsapiClient::verifyPhoneWithToken(const VerifyPhoneWithTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyPhoneWithTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyPhoneWithTokenOutcome(VerifyPhoneWithTokenResult(outcome.result()));
+	else
+		return VerifyPhoneWithTokenOutcome(outcome.error());
+}
+
+void DypnsapiClient::verifyPhoneWithTokenAsync(const VerifyPhoneWithTokenRequest& request, const VerifyPhoneWithTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyPhoneWithToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::VerifyPhoneWithTokenOutcomeCallable DypnsapiClient::verifyPhoneWithTokenCallable(const VerifyPhoneWithTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyPhoneWithTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyPhoneWithToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

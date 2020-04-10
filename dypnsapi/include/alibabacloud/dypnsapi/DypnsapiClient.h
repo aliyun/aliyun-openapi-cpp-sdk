@@ -34,6 +34,8 @@
 #include "model/TwiceTelVerifyResult.h"
 #include "model/VerifyMobileRequest.h"
 #include "model/VerifyMobileResult.h"
+#include "model/VerifyPhoneWithTokenRequest.h"
+#include "model/VerifyPhoneWithTokenResult.h"
 
 
 namespace AlibabaCloud
@@ -61,6 +63,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VerifyMobileResult> VerifyMobileOutcome;
 			typedef std::future<VerifyMobileOutcome> VerifyMobileOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::VerifyMobileRequest&, const VerifyMobileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyMobileAsyncHandler;
+			typedef Outcome<Error, Model::VerifyPhoneWithTokenResult> VerifyPhoneWithTokenOutcome;
+			typedef std::future<VerifyPhoneWithTokenOutcome> VerifyPhoneWithTokenOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::VerifyPhoneWithTokenRequest&, const VerifyPhoneWithTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPhoneWithTokenAsyncHandler;
 
 			DypnsapiClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DypnsapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -84,6 +89,9 @@ namespace AlibabaCloud
 			VerifyMobileOutcome verifyMobile(const Model::VerifyMobileRequest &request)const;
 			void verifyMobileAsync(const Model::VerifyMobileRequest& request, const VerifyMobileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyMobileOutcomeCallable verifyMobileCallable(const Model::VerifyMobileRequest& request) const;
+			VerifyPhoneWithTokenOutcome verifyPhoneWithToken(const Model::VerifyPhoneWithTokenRequest &request)const;
+			void verifyPhoneWithTokenAsync(const Model::VerifyPhoneWithTokenRequest& request, const VerifyPhoneWithTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyPhoneWithTokenOutcomeCallable verifyPhoneWithTokenCallable(const Model::VerifyPhoneWithTokenRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
