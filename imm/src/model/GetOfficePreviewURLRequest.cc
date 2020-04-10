@@ -60,15 +60,15 @@ void GetOfficePreviewURLRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-bool GetOfficePreviewURLRequest::getUseHTTPS()const
+bool GetOfficePreviewURLRequest::getUseOldURL()const
 {
-	return useHTTPS_;
+	return useOldURL_;
 }
 
-void GetOfficePreviewURLRequest::setUseHTTPS(bool useHTTPS)
+void GetOfficePreviewURLRequest::setUseOldURL(bool useOldURL)
 {
-	useHTTPS_ = useHTTPS;
-	setParameter("UseHTTPS", useHTTPS ? "true" : "false");
+	useOldURL_ = useOldURL;
+	setParameter("UseOldURL", useOldURL ? "true" : "false");
 }
 
 std::string GetOfficePreviewURLRequest::getSrcUri()const

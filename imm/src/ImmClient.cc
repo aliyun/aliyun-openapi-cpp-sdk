@@ -1599,6 +1599,42 @@ ImmClient::GetOfficeConversionTaskOutcomeCallable ImmClient::getOfficeConversion
 	return task->get_future();
 }
 
+ImmClient::GetOfficeEditURLOutcome ImmClient::getOfficeEditURL(const GetOfficeEditURLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOfficeEditURLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOfficeEditURLOutcome(GetOfficeEditURLResult(outcome.result()));
+	else
+		return GetOfficeEditURLOutcome(outcome.error());
+}
+
+void ImmClient::getOfficeEditURLAsync(const GetOfficeEditURLRequest& request, const GetOfficeEditURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOfficeEditURL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetOfficeEditURLOutcomeCallable ImmClient::getOfficeEditURLCallable(const GetOfficeEditURLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOfficeEditURLOutcome()>>(
+			[this, request]()
+			{
+			return this->getOfficeEditURL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::GetOfficePreviewURLOutcome ImmClient::getOfficePreviewURL(const GetOfficePreviewURLRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2349,42 @@ ImmClient::PutProjectOutcomeCallable ImmClient::putProjectCallable(const PutProj
 			[this, request]()
 			{
 			return this->putProject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::RefreshOfficeEditTokenOutcome ImmClient::refreshOfficeEditToken(const RefreshOfficeEditTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshOfficeEditTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshOfficeEditTokenOutcome(RefreshOfficeEditTokenResult(outcome.result()));
+	else
+		return RefreshOfficeEditTokenOutcome(outcome.error());
+}
+
+void ImmClient::refreshOfficeEditTokenAsync(const RefreshOfficeEditTokenRequest& request, const RefreshOfficeEditTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshOfficeEditToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::RefreshOfficeEditTokenOutcomeCallable ImmClient::refreshOfficeEditTokenCallable(const RefreshOfficeEditTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshOfficeEditTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshOfficeEditToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

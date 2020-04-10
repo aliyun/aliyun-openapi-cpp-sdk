@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
-#define ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_GETOFFICEEDITURLREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_GETOFFICEEDITURLREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetOfficePreviewURLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMM_EXPORT GetOfficeEditURLRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetOfficePreviewURLRequest();
-				~GetOfficePreviewURLRequest();
+				GetOfficeEditURLRequest();
+				~GetOfficeEditURLRequest();
 
 				std::string getSrcType()const;
 				void setSrcType(const std::string& srcType);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getUserID()const;
+				void setUserID(const std::string& userID);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getUseOldURL()const;
-				void setUseOldURL(bool useOldURL);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getFileID()const;
+				void setFileID(const std::string& fileID);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
+				std::string getFileName()const;
+				void setFileName(const std::string& fileName);
 				std::string getSrcUri()const;
 				void setSrcUri(const std::string& srcUri);
+				std::string getTgtUri()const;
+				void setTgtUri(const std::string& tgtUri);
+				std::string getUserName()const;
+				void setUserName(const std::string& userName);
 
             private:
 				std::string srcType_;
 				std::string project_;
+				std::string userID_;
 				std::string accessKeyId_;
-				bool useOldURL_;
+				std::string notifyEndpoint_;
+				std::string fileID_;
+				std::string notifyTopicName_;
+				std::string fileName_;
 				std::string srcUri_;
+				std::string tgtUri_;
+				std::string userName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_GETOFFICEEDITURLREQUEST_H_

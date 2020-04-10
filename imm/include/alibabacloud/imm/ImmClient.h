@@ -108,6 +108,8 @@
 #include "model/GetMediaMetaResult.h"
 #include "model/GetOfficeConversionTaskRequest.h"
 #include "model/GetOfficeConversionTaskResult.h"
+#include "model/GetOfficeEditURLRequest.h"
+#include "model/GetOfficeEditURLResult.h"
 #include "model/GetOfficePreviewURLRequest.h"
 #include "model/GetOfficePreviewURLResult.h"
 #include "model/GetProjectRequest.h"
@@ -148,6 +150,8 @@
 #include "model/ListVideosResult.h"
 #include "model/PutProjectRequest.h"
 #include "model/PutProjectResult.h"
+#include "model/RefreshOfficeEditTokenRequest.h"
+#include "model/RefreshOfficeEditTokenResult.h"
 #include "model/RefreshOfficePreviewTokenRequest.h"
 #include "model/RefreshOfficePreviewTokenResult.h"
 #include "model/SearchDocIndexRequest.h"
@@ -300,6 +304,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOfficeConversionTaskResult> GetOfficeConversionTaskOutcome;
 			typedef std::future<GetOfficeConversionTaskOutcome> GetOfficeConversionTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetOfficeConversionTaskRequest&, const GetOfficeConversionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficeConversionTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetOfficeEditURLResult> GetOfficeEditURLOutcome;
+			typedef std::future<GetOfficeEditURLOutcome> GetOfficeEditURLOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetOfficeEditURLRequest&, const GetOfficeEditURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficeEditURLAsyncHandler;
 			typedef Outcome<Error, Model::GetOfficePreviewURLResult> GetOfficePreviewURLOutcome;
 			typedef std::future<GetOfficePreviewURLOutcome> GetOfficePreviewURLOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetOfficePreviewURLRequest&, const GetOfficePreviewURLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOfficePreviewURLAsyncHandler;
@@ -360,6 +367,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutProjectResult> PutProjectOutcome;
 			typedef std::future<PutProjectOutcome> PutProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::PutProjectRequest&, const PutProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutProjectAsyncHandler;
+			typedef Outcome<Error, Model::RefreshOfficeEditTokenResult> RefreshOfficeEditTokenOutcome;
+			typedef std::future<RefreshOfficeEditTokenOutcome> RefreshOfficeEditTokenOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::RefreshOfficeEditTokenRequest&, const RefreshOfficeEditTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshOfficeEditTokenAsyncHandler;
 			typedef Outcome<Error, Model::RefreshOfficePreviewTokenResult> RefreshOfficePreviewTokenOutcome;
 			typedef std::future<RefreshOfficePreviewTokenOutcome> RefreshOfficePreviewTokenOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::RefreshOfficePreviewTokenRequest&, const RefreshOfficePreviewTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshOfficePreviewTokenAsyncHandler;
@@ -515,6 +525,9 @@ namespace AlibabaCloud
 			GetOfficeConversionTaskOutcome getOfficeConversionTask(const Model::GetOfficeConversionTaskRequest &request)const;
 			void getOfficeConversionTaskAsync(const Model::GetOfficeConversionTaskRequest& request, const GetOfficeConversionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOfficeConversionTaskOutcomeCallable getOfficeConversionTaskCallable(const Model::GetOfficeConversionTaskRequest& request) const;
+			GetOfficeEditURLOutcome getOfficeEditURL(const Model::GetOfficeEditURLRequest &request)const;
+			void getOfficeEditURLAsync(const Model::GetOfficeEditURLRequest& request, const GetOfficeEditURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOfficeEditURLOutcomeCallable getOfficeEditURLCallable(const Model::GetOfficeEditURLRequest& request) const;
 			GetOfficePreviewURLOutcome getOfficePreviewURL(const Model::GetOfficePreviewURLRequest &request)const;
 			void getOfficePreviewURLAsync(const Model::GetOfficePreviewURLRequest& request, const GetOfficePreviewURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOfficePreviewURLOutcomeCallable getOfficePreviewURLCallable(const Model::GetOfficePreviewURLRequest& request) const;
@@ -575,6 +588,9 @@ namespace AlibabaCloud
 			PutProjectOutcome putProject(const Model::PutProjectRequest &request)const;
 			void putProjectAsync(const Model::PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutProjectOutcomeCallable putProjectCallable(const Model::PutProjectRequest& request) const;
+			RefreshOfficeEditTokenOutcome refreshOfficeEditToken(const Model::RefreshOfficeEditTokenRequest &request)const;
+			void refreshOfficeEditTokenAsync(const Model::RefreshOfficeEditTokenRequest& request, const RefreshOfficeEditTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshOfficeEditTokenOutcomeCallable refreshOfficeEditTokenCallable(const Model::RefreshOfficeEditTokenRequest& request) const;
 			RefreshOfficePreviewTokenOutcome refreshOfficePreviewToken(const Model::RefreshOfficePreviewTokenRequest &request)const;
 			void refreshOfficePreviewTokenAsync(const Model::RefreshOfficePreviewTokenRequest& request, const RefreshOfficePreviewTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshOfficePreviewTokenOutcomeCallable refreshOfficePreviewTokenCallable(const Model::RefreshOfficePreviewTokenRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
-#define ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEEDITTOKENREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEEDITTOKENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetOfficePreviewURLRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMM_EXPORT RefreshOfficeEditTokenRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetOfficePreviewURLRequest();
-				~GetOfficePreviewURLRequest();
+				RefreshOfficeEditTokenRequest();
+				~RefreshOfficeEditTokenRequest();
 
-				std::string getSrcType()const;
-				void setSrcType(const std::string& srcType);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getAccessToken()const;
+				void setAccessToken(const std::string& accessToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getUseOldURL()const;
-				void setUseOldURL(bool useOldURL);
-				std::string getSrcUri()const;
-				void setSrcUri(const std::string& srcUri);
+				std::string getRefreshToken()const;
+				void setRefreshToken(const std::string& refreshToken);
 
             private:
-				std::string srcType_;
 				std::string project_;
+				std::string accessToken_;
 				std::string accessKeyId_;
-				bool useOldURL_;
-				std::string srcUri_;
+				std::string refreshToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETOFFICEPREVIEWURLREQUEST_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_REFRESHOFFICEEDITTOKENREQUEST_H_
