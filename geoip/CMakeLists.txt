@@ -27,6 +27,8 @@ set(geoip_public_header_model
 	include/alibabacloud/geoip/model/DescribeGeoipInstanceStatisticsResult.h
 	include/alibabacloud/geoip/model/DescribeGeoipInstancesRequest.h
 	include/alibabacloud/geoip/model/DescribeGeoipInstancesResult.h
+	include/alibabacloud/geoip/model/DescribeIpv4LocationRequest.h
+	include/alibabacloud/geoip/model/DescribeIpv4LocationResult.h
 	include/alibabacloud/geoip/model/DescribeIpv6LocationRequest.h
 	include/alibabacloud/geoip/model/DescribeIpv6LocationResult.h )
 
@@ -38,6 +40,8 @@ set(geoip_src
 	src/model/DescribeGeoipInstanceStatisticsResult.cc
 	src/model/DescribeGeoipInstancesRequest.cc
 	src/model/DescribeGeoipInstancesResult.cc
+	src/model/DescribeIpv4LocationRequest.cc
+	src/model/DescribeIpv4LocationResult.cc
 	src/model/DescribeIpv6LocationRequest.cc
 	src/model/DescribeIpv6LocationResult.cc )
 

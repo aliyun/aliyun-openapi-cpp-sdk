@@ -159,6 +159,42 @@ GeoipClient::DescribeGeoipInstancesOutcomeCallable GeoipClient::describeGeoipIns
 	return task->get_future();
 }
 
+GeoipClient::DescribeIpv4LocationOutcome GeoipClient::describeIpv4Location(const DescribeIpv4LocationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpv4LocationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpv4LocationOutcome(DescribeIpv4LocationResult(outcome.result()));
+	else
+		return DescribeIpv4LocationOutcome(outcome.error());
+}
+
+void GeoipClient::describeIpv4LocationAsync(const DescribeIpv4LocationRequest& request, const DescribeIpv4LocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpv4Location(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GeoipClient::DescribeIpv4LocationOutcomeCallable GeoipClient::describeIpv4LocationCallable(const DescribeIpv4LocationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpv4LocationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpv4Location(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GeoipClient::DescribeIpv6LocationOutcome GeoipClient::describeIpv6Location(const DescribeIpv6LocationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

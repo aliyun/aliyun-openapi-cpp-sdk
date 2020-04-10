@@ -28,6 +28,8 @@
 #include "model/DescribeGeoipInstanceStatisticsResult.h"
 #include "model/DescribeGeoipInstancesRequest.h"
 #include "model/DescribeGeoipInstancesResult.h"
+#include "model/DescribeIpv4LocationRequest.h"
+#include "model/DescribeIpv4LocationResult.h"
 #include "model/DescribeIpv6LocationRequest.h"
 #include "model/DescribeIpv6LocationResult.h"
 
@@ -48,6 +50,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGeoipInstancesResult> DescribeGeoipInstancesOutcome;
 			typedef std::future<DescribeGeoipInstancesOutcome> DescribeGeoipInstancesOutcomeCallable;
 			typedef std::function<void(const GeoipClient*, const Model::DescribeGeoipInstancesRequest&, const DescribeGeoipInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeoipInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpv4LocationResult> DescribeIpv4LocationOutcome;
+			typedef std::future<DescribeIpv4LocationOutcome> DescribeIpv4LocationOutcomeCallable;
+			typedef std::function<void(const GeoipClient*, const Model::DescribeIpv4LocationRequest&, const DescribeIpv4LocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv4LocationAsyncHandler;
 			typedef Outcome<Error, Model::DescribeIpv6LocationResult> DescribeIpv6LocationOutcome;
 			typedef std::future<DescribeIpv6LocationOutcome> DescribeIpv6LocationOutcomeCallable;
 			typedef std::function<void(const GeoipClient*, const Model::DescribeIpv6LocationRequest&, const DescribeIpv6LocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpv6LocationAsyncHandler;
@@ -65,6 +70,9 @@ namespace AlibabaCloud
 			DescribeGeoipInstancesOutcome describeGeoipInstances(const Model::DescribeGeoipInstancesRequest &request)const;
 			void describeGeoipInstancesAsync(const Model::DescribeGeoipInstancesRequest& request, const DescribeGeoipInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGeoipInstancesOutcomeCallable describeGeoipInstancesCallable(const Model::DescribeGeoipInstancesRequest& request) const;
+			DescribeIpv4LocationOutcome describeIpv4Location(const Model::DescribeIpv4LocationRequest &request)const;
+			void describeIpv4LocationAsync(const Model::DescribeIpv4LocationRequest& request, const DescribeIpv4LocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpv4LocationOutcomeCallable describeIpv4LocationCallable(const Model::DescribeIpv4LocationRequest& request) const;
 			DescribeIpv6LocationOutcome describeIpv6Location(const Model::DescribeIpv6LocationRequest &request)const;
 			void describeIpv6LocationAsync(const Model::DescribeIpv6LocationRequest& request, const DescribeIpv6LocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIpv6LocationOutcomeCallable describeIpv6LocationCallable(const Model::DescribeIpv6LocationRequest& request) const;
