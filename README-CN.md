@@ -103,6 +103,7 @@ sudo sh easyinstall.sh ecs
   * 选择 `Browse Source` 为 `源代码目录(aliyun-openapi-cpp-sdk)`
   * 选择 `Browse build` 为 `构建目录(sdk_build)`
   * 点击 `configure`
+  * 使用小写的产品名称，设置 `BUILD_PRODUCT` 参数的值
   * 点击 `generate`, 构建 VS 解决方案。
 
 4. 编译安装 C++ SDK

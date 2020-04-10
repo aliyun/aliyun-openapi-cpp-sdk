@@ -109,6 +109,8 @@ git clone https://github.com/aliyun/aliyun-openapi-cpp-sdk.git
 
   - `Configure`
 
+  - use the lower name of product to set the value of `BUILD_PRODUCT`
+
   - `Generate`
 
 4. Build and Install C++ SDK
