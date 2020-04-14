@@ -23,10 +23,16 @@ set(ivpd_public_header
 set(ivpd_public_header_model 
 	include/alibabacloud/ivpd/model/ChangeImageSizeRequest.h
 	include/alibabacloud/ivpd/model/ChangeImageSizeResult.h
+	include/alibabacloud/ivpd/model/CreateSegmentBodyJobRequest.h
+	include/alibabacloud/ivpd/model/CreateSegmentBodyJobResult.h
 	include/alibabacloud/ivpd/model/DetectImageElementsRequest.h
 	include/alibabacloud/ivpd/model/DetectImageElementsResult.h
 	include/alibabacloud/ivpd/model/ExtendImageStyleRequest.h
 	include/alibabacloud/ivpd/model/ExtendImageStyleResult.h
+	include/alibabacloud/ivpd/model/GetJobResultRequest.h
+	include/alibabacloud/ivpd/model/GetJobResultResult.h
+	include/alibabacloud/ivpd/model/GetJobStatusRequest.h
+	include/alibabacloud/ivpd/model/GetJobStatusResult.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageRequest.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageResult.h
 	include/alibabacloud/ivpd/model/RecognizeImageColorRequest.h
@@ -44,10 +50,16 @@ set(ivpd_src
 	src/IvpdClient.cc
 	src/model/ChangeImageSizeRequest.cc
 	src/model/ChangeImageSizeResult.cc
+	src/model/CreateSegmentBodyJobRequest.cc
+	src/model/CreateSegmentBodyJobResult.cc
 	src/model/DetectImageElementsRequest.cc
 	src/model/DetectImageElementsResult.cc
 	src/model/ExtendImageStyleRequest.cc
 	src/model/ExtendImageStyleResult.cc
+	src/model/GetJobResultRequest.cc
+	src/model/GetJobResultResult.cc
+	src/model/GetJobStatusRequest.cc
+	src/model/GetJobStatusResult.cc
 	src/model/MakeSuperResolutionImageRequest.cc
 	src/model/MakeSuperResolutionImageResult.cc
 	src/model/RecognizeImageColorRequest.cc

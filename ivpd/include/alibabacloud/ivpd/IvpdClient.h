@@ -24,10 +24,16 @@
 #include "IvpdExport.h"
 #include "model/ChangeImageSizeRequest.h"
 #include "model/ChangeImageSizeResult.h"
+#include "model/CreateSegmentBodyJobRequest.h"
+#include "model/CreateSegmentBodyJobResult.h"
 #include "model/DetectImageElementsRequest.h"
 #include "model/DetectImageElementsResult.h"
 #include "model/ExtendImageStyleRequest.h"
 #include "model/ExtendImageStyleResult.h"
+#include "model/GetJobResultRequest.h"
+#include "model/GetJobResultResult.h"
+#include "model/GetJobStatusRequest.h"
+#include "model/GetJobStatusResult.h"
 #include "model/MakeSuperResolutionImageRequest.h"
 #include "model/MakeSuperResolutionImageResult.h"
 #include "model/RecognizeImageColorRequest.h"
@@ -52,12 +58,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ChangeImageSizeResult> ChangeImageSizeOutcome;
 			typedef std::future<ChangeImageSizeOutcome> ChangeImageSizeOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::ChangeImageSizeRequest&, const ChangeImageSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeImageSizeAsyncHandler;
+			typedef Outcome<Error, Model::CreateSegmentBodyJobResult> CreateSegmentBodyJobOutcome;
+			typedef std::future<CreateSegmentBodyJobOutcome> CreateSegmentBodyJobOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::CreateSegmentBodyJobRequest&, const CreateSegmentBodyJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSegmentBodyJobAsyncHandler;
 			typedef Outcome<Error, Model::DetectImageElementsResult> DetectImageElementsOutcome;
 			typedef std::future<DetectImageElementsOutcome> DetectImageElementsOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::DetectImageElementsRequest&, const DetectImageElementsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageElementsAsyncHandler;
 			typedef Outcome<Error, Model::ExtendImageStyleResult> ExtendImageStyleOutcome;
 			typedef std::future<ExtendImageStyleOutcome> ExtendImageStyleOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::ExtendImageStyleRequest&, const ExtendImageStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtendImageStyleAsyncHandler;
+			typedef Outcome<Error, Model::GetJobResultResult> GetJobResultOutcome;
+			typedef std::future<GetJobResultOutcome> GetJobResultOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::GetJobResultRequest&, const GetJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobResultAsyncHandler;
+			typedef Outcome<Error, Model::GetJobStatusResult> GetJobStatusOutcome;
+			typedef std::future<GetJobStatusOutcome> GetJobStatusOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::GetJobStatusRequest&, const GetJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobStatusAsyncHandler;
 			typedef Outcome<Error, Model::MakeSuperResolutionImageResult> MakeSuperResolutionImageOutcome;
 			typedef std::future<MakeSuperResolutionImageOutcome> MakeSuperResolutionImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::MakeSuperResolutionImageRequest&, const MakeSuperResolutionImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MakeSuperResolutionImageAsyncHandler;
@@ -84,12 +99,21 @@ namespace AlibabaCloud
 			ChangeImageSizeOutcome changeImageSize(const Model::ChangeImageSizeRequest &request)const;
 			void changeImageSizeAsync(const Model::ChangeImageSizeRequest& request, const ChangeImageSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ChangeImageSizeOutcomeCallable changeImageSizeCallable(const Model::ChangeImageSizeRequest& request) const;
+			CreateSegmentBodyJobOutcome createSegmentBodyJob(const Model::CreateSegmentBodyJobRequest &request)const;
+			void createSegmentBodyJobAsync(const Model::CreateSegmentBodyJobRequest& request, const CreateSegmentBodyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSegmentBodyJobOutcomeCallable createSegmentBodyJobCallable(const Model::CreateSegmentBodyJobRequest& request) const;
 			DetectImageElementsOutcome detectImageElements(const Model::DetectImageElementsRequest &request)const;
 			void detectImageElementsAsync(const Model::DetectImageElementsRequest& request, const DetectImageElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageElementsOutcomeCallable detectImageElementsCallable(const Model::DetectImageElementsRequest& request) const;
 			ExtendImageStyleOutcome extendImageStyle(const Model::ExtendImageStyleRequest &request)const;
 			void extendImageStyleAsync(const Model::ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtendImageStyleOutcomeCallable extendImageStyleCallable(const Model::ExtendImageStyleRequest& request) const;
+			GetJobResultOutcome getJobResult(const Model::GetJobResultRequest &request)const;
+			void getJobResultAsync(const Model::GetJobResultRequest& request, const GetJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobResultOutcomeCallable getJobResultCallable(const Model::GetJobResultRequest& request) const;
+			GetJobStatusOutcome getJobStatus(const Model::GetJobStatusRequest &request)const;
+			void getJobStatusAsync(const Model::GetJobStatusRequest& request, const GetJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobStatusOutcomeCallable getJobStatusCallable(const Model::GetJobStatusRequest& request) const;
 			MakeSuperResolutionImageOutcome makeSuperResolutionImage(const Model::MakeSuperResolutionImageRequest &request)const;
 			void makeSuperResolutionImageAsync(const Model::MakeSuperResolutionImageRequest& request, const MakeSuperResolutionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MakeSuperResolutionImageOutcomeCallable makeSuperResolutionImageCallable(const Model::MakeSuperResolutionImageRequest& request) const;

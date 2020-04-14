@@ -31,21 +31,21 @@ IvpdClient::IvpdClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::IvpdClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::IvpdClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::~IvpdClient()
@@ -81,6 +81,42 @@ IvpdClient::ChangeImageSizeOutcomeCallable IvpdClient::changeImageSizeCallable(c
 			[this, request]()
 			{
 			return this->changeImageSize(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::CreateSegmentBodyJobOutcome IvpdClient::createSegmentBodyJob(const CreateSegmentBodyJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSegmentBodyJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSegmentBodyJobOutcome(CreateSegmentBodyJobResult(outcome.result()));
+	else
+		return CreateSegmentBodyJobOutcome(outcome.error());
+}
+
+void IvpdClient::createSegmentBodyJobAsync(const CreateSegmentBodyJobRequest& request, const CreateSegmentBodyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSegmentBodyJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::CreateSegmentBodyJobOutcomeCallable IvpdClient::createSegmentBodyJobCallable(const CreateSegmentBodyJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSegmentBodyJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createSegmentBodyJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -153,6 +189,78 @@ IvpdClient::ExtendImageStyleOutcomeCallable IvpdClient::extendImageStyleCallable
 			[this, request]()
 			{
 			return this->extendImageStyle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::GetJobResultOutcome IvpdClient::getJobResult(const GetJobResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobResultOutcome(GetJobResultResult(outcome.result()));
+	else
+		return GetJobResultOutcome(outcome.error());
+}
+
+void IvpdClient::getJobResultAsync(const GetJobResultRequest& request, const GetJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::GetJobResultOutcomeCallable IvpdClient::getJobResultCallable(const GetJobResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::GetJobStatusOutcome IvpdClient::getJobStatus(const GetJobStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobStatusOutcome(GetJobStatusResult(outcome.result()));
+	else
+		return GetJobStatusOutcome(outcome.error());
+}
+
+void IvpdClient::getJobStatusAsync(const GetJobStatusRequest& request, const GetJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::GetJobStatusOutcomeCallable IvpdClient::getJobStatusCallable(const GetJobStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
