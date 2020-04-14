@@ -81,6 +81,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListLogicTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersRequest.h
 	include/alibabacloud/dms-enterprise/model/ListOrdersResult.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsResult.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/ListSensitiveColumnsDetailResult.h
 	include/alibabacloud/dms-enterprise/model/ListTablesRequest.h
 	include/alibabacloud/dms-enterprise/model/ListTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsRequest.h
@@ -176,6 +180,10 @@ set(dms-enterprise_src
 	src/model/ListLogicTablesResult.cc
 	src/model/ListOrdersRequest.cc
 	src/model/ListOrdersResult.cc
+	src/model/ListSensitiveColumnsRequest.cc
+	src/model/ListSensitiveColumnsResult.cc
+	src/model/ListSensitiveColumnsDetailRequest.cc
+	src/model/ListSensitiveColumnsDetailResult.cc
 	src/model/ListTablesRequest.cc
 	src/model/ListTablesResult.cc
 	src/model/ListUserPermissionsRequest.cc

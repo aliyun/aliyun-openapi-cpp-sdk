@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListUsersResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitiveColumnsDetailResult : public ServiceResult
 			{
 			public:
-				struct User
+				struct SensitiveColumnsDetail
 				{
-					std::vector<std::string> roleNameList;
-					std::string nickName;
-					std::string mobile;
-					long maxExecuteCount;
-					long uid;
-					std::string lastLoginTime;
-					long curResultCount;
-					std::vector<std::string> roleIdList;
-					long maxResultCount;
-					std::string userId;
-					std::string state;
-					long curExecuteCount;
-					long parentUid;
+					std::string tableName;
+					std::string columnName;
+					std::string columnType;
+					std::string searchName;
+					std::string columnDescription;
+					long dbId;
+					bool logic;
+					std::string schemaName;
+					std::string envType;
+					std::string dbType;
 				};
 
 
-				ListUsersResult();
-				explicit ListUsersResult(const std::string &payload);
-				~ListUsersResult();
-				long getTotalCount()const;
+				ListSensitiveColumnsDetailResult();
+				explicit ListSensitiveColumnsDetailResult(const std::string &payload);
+				~ListSensitiveColumnsDetailResult();
+				std::vector<SensitiveColumnsDetail> getSensitiveColumnsDetailList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
-				std::vector<User> getUserList()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
+				std::vector<SensitiveColumnsDetail> sensitiveColumnsDetailList_;
 				std::string errorCode_;
 				std::string errorMessage_;
-				std::vector<User> userList_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILRESULT_H_

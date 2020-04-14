@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListUsersResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitiveColumnsResult : public ServiceResult
 			{
 			public:
-				struct User
+				struct SensitiveColumn
 				{
-					std::vector<std::string> roleNameList;
-					std::string nickName;
-					std::string mobile;
-					long maxExecuteCount;
-					long uid;
-					std::string lastLoginTime;
-					long curResultCount;
-					std::vector<std::string> roleIdList;
-					long maxResultCount;
-					std::string userId;
-					std::string state;
-					long curExecuteCount;
-					long parentUid;
+					std::string tableName;
+					std::string columnName;
+					long columnCount;
+					std::string securityLevel;
+					std::string functionType;
+					std::string schemaName;
 				};
 
 
-				ListUsersResult();
-				explicit ListUsersResult(const std::string &payload);
-				~ListUsersResult();
+				ListSensitiveColumnsResult();
+				explicit ListSensitiveColumnsResult(const std::string &payload);
+				~ListSensitiveColumnsResult();
 				long getTotalCount()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
-				std::vector<User> getUserList()const;
+				std::vector<SensitiveColumn> getSensitiveColumnList()const;
 				bool getSuccess()const;
 
 			protected:
@@ -65,11 +58,11 @@ namespace AlibabaCloud
 				long totalCount_;
 				std::string errorCode_;
 				std::string errorMessage_;
-				std::vector<User> userList_;
+				std::vector<SensitiveColumn> sensitiveColumnList_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTUSERSRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSRESULT_H_

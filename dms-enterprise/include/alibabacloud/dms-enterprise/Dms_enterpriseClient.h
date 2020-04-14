@@ -82,6 +82,10 @@
 #include "model/ListLogicTablesResult.h"
 #include "model/ListOrdersRequest.h"
 #include "model/ListOrdersResult.h"
+#include "model/ListSensitiveColumnsRequest.h"
+#include "model/ListSensitiveColumnsResult.h"
+#include "model/ListSensitiveColumnsDetailRequest.h"
+#include "model/ListSensitiveColumnsDetailResult.h"
 #include "model/ListTablesRequest.h"
 #include "model/ListTablesResult.h"
 #include "model/ListUserPermissionsRequest.h"
@@ -213,6 +217,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListOrdersResult> ListOrdersOutcome;
 			typedef std::future<ListOrdersOutcome> ListOrdersOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListOrdersRequest&, const ListOrdersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOrdersAsyncHandler;
+			typedef Outcome<Error, Model::ListSensitiveColumnsResult> ListSensitiveColumnsOutcome;
+			typedef std::future<ListSensitiveColumnsOutcome> ListSensitiveColumnsOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListSensitiveColumnsRequest&, const ListSensitiveColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSensitiveColumnsAsyncHandler;
+			typedef Outcome<Error, Model::ListSensitiveColumnsDetailResult> ListSensitiveColumnsDetailOutcome;
+			typedef std::future<ListSensitiveColumnsDetailOutcome> ListSensitiveColumnsDetailOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListSensitiveColumnsDetailRequest&, const ListSensitiveColumnsDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSensitiveColumnsDetailAsyncHandler;
 			typedef Outcome<Error, Model::ListTablesResult> ListTablesOutcome;
 			typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListTablesRequest&, const ListTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
@@ -356,6 +366,12 @@ namespace AlibabaCloud
 			ListOrdersOutcome listOrders(const Model::ListOrdersRequest &request)const;
 			void listOrdersAsync(const Model::ListOrdersRequest& request, const ListOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOrdersOutcomeCallable listOrdersCallable(const Model::ListOrdersRequest& request) const;
+			ListSensitiveColumnsOutcome listSensitiveColumns(const Model::ListSensitiveColumnsRequest &request)const;
+			void listSensitiveColumnsAsync(const Model::ListSensitiveColumnsRequest& request, const ListSensitiveColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSensitiveColumnsOutcomeCallable listSensitiveColumnsCallable(const Model::ListSensitiveColumnsRequest& request) const;
+			ListSensitiveColumnsDetailOutcome listSensitiveColumnsDetail(const Model::ListSensitiveColumnsDetailRequest &request)const;
+			void listSensitiveColumnsDetailAsync(const Model::ListSensitiveColumnsDetailRequest& request, const ListSensitiveColumnsDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSensitiveColumnsDetailOutcomeCallable listSensitiveColumnsDetailCallable(const Model::ListSensitiveColumnsDetailRequest& request) const;
 			ListTablesOutcome listTables(const Model::ListTablesRequest &request)const;
 			void listTablesAsync(const Model::ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTablesOutcomeCallable listTablesCallable(const Model::ListTablesRequest& request) const;

@@ -55,6 +55,16 @@ void ListUsersResult::parse(const std::string &payload)
 			userListObject.parentUid = std::stol(valueUserListUser["ParentUid"].asString());
 		if(!valueUserListUser["State"].isNull())
 			userListObject.state = valueUserListUser["State"].asString();
+		if(!valueUserListUser["LastLoginTime"].isNull())
+			userListObject.lastLoginTime = valueUserListUser["LastLoginTime"].asString();
+		if(!valueUserListUser["CurExecuteCount"].isNull())
+			userListObject.curExecuteCount = std::stol(valueUserListUser["CurExecuteCount"].asString());
+		if(!valueUserListUser["CurResultCount"].isNull())
+			userListObject.curResultCount = std::stol(valueUserListUser["CurResultCount"].asString());
+		if(!valueUserListUser["MaxExecuteCount"].isNull())
+			userListObject.maxExecuteCount = std::stol(valueUserListUser["MaxExecuteCount"].asString());
+		if(!valueUserListUser["MaxResultCount"].isNull())
+			userListObject.maxResultCount = std::stol(valueUserListUser["MaxResultCount"].asString());
 		auto allRoleIdList = value["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			userListObject.roleIdList.push_back(value.asString());

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_UPDATEUSERREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_UPDATEUSERREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT UpdateUserRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitiveColumnsDetailRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateUserRequest();
-				~UpdateUserRequest();
+				ListSensitiveColumnsDetailRequest();
+				~ListSensitiveColumnsDetailRequest();
 
-				std::string getRoleNames()const;
-				void setRoleNames(const std::string& roleNames);
-				long getUid()const;
-				void setUid(long uid);
-				long getMaxResultCount()const;
-				void setMaxResultCount(long maxResultCount);
-				long getMaxExecuteCount()const;
-				void setMaxExecuteCount(long maxExecuteCount);
-				std::string getUserNick()const;
-				void setUserNick(const std::string& userNick);
-				std::string getMobile()const;
-				void setMobile(const std::string& mobile);
+				std::string getSchemaName()const;
+				void setSchemaName(const std::string& schemaName);
+				std::string getTableName()const;
+				void setTableName(const std::string& tableName);
+				std::string getColumnName()const;
+				void setColumnName(const std::string& columnName);
 				long getTid()const;
 				void setTid(long tid);
 
             private:
-				std::string roleNames_;
-				long uid_;
-				long maxResultCount_;
-				long maxExecuteCount_;
-				std::string userNick_;
-				std::string mobile_;
+				std::string schemaName_;
+				std::string tableName_;
+				std::string columnName_;
 				long tid_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_UPDATEUSERREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTSENSITIVECOLUMNSDETAILREQUEST_H_

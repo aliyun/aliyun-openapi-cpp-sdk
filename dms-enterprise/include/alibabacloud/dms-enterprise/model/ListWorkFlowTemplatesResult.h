@@ -41,11 +41,13 @@ namespace AlibabaCloud
 						int position;
 						std::string nodeType;
 						long nodeId;
+						long createUserId;
 						long templateId;
 					};
 					std::string comment;
 					std::string templateName;
 					std::string enabled;
+					long createUserId;
 					int isSystem;
 					std::vector<WorkFlowTemplate::WorkflowNode> workflowNodes;
 					long templateId;

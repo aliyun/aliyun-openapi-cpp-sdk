@@ -49,6 +49,28 @@ void UpdateUserRequest::setUid(long uid)
 	setParameter("Uid", std::to_string(uid));
 }
 
+long UpdateUserRequest::getMaxResultCount()const
+{
+	return maxResultCount_;
+}
+
+void UpdateUserRequest::setMaxResultCount(long maxResultCount)
+{
+	maxResultCount_ = maxResultCount;
+	setParameter("MaxResultCount", std::to_string(maxResultCount));
+}
+
+long UpdateUserRequest::getMaxExecuteCount()const
+{
+	return maxExecuteCount_;
+}
+
+void UpdateUserRequest::setMaxExecuteCount(long maxExecuteCount)
+{
+	maxExecuteCount_ = maxExecuteCount;
+	setParameter("MaxExecuteCount", std::to_string(maxExecuteCount));
+}
+
 std::string UpdateUserRequest::getUserNick()const
 {
 	return userNick_;
