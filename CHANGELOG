@@ -1,3 +1,6 @@
+2020-04-15 Version: 1.36.356
+- Vision-poc response modified.
+
 2020-04-14 Version: 1.36.355
 - Support ListSensitiveColumns, ListSensitiveColumnsDetail API.
 - ListUsers API return user execute query count information.
