@@ -41,7 +41,14 @@ void CreateNodeResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
+	if(!value["NodeId"].isNull())
+		nodeId_ = value["NodeId"].asString();
 
+}
+
+std::string CreateNodeResult::getNodeId()const
+{
+	return nodeId_;
 }
 
 std::string CreateNodeResult::getOrderId()const
