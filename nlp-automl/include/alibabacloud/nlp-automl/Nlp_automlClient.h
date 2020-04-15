@@ -30,6 +30,8 @@
 #include "model/GetPredictResultResult.h"
 #include "model/RunContactReviewRequest.h"
 #include "model/RunContactReviewResult.h"
+#include "model/RunPreTrainServiceRequest.h"
+#include "model/RunPreTrainServiceResult.h"
 
 
 namespace AlibabaCloud
@@ -51,6 +53,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunContactReviewResult> RunContactReviewOutcome;
 			typedef std::future<RunContactReviewOutcome> RunContactReviewOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::RunContactReviewRequest&, const RunContactReviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunContactReviewAsyncHandler;
+			typedef Outcome<Error, Model::RunPreTrainServiceResult> RunPreTrainServiceOutcome;
+			typedef std::future<RunPreTrainServiceOutcome> RunPreTrainServiceOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::RunPreTrainServiceRequest&, const RunPreTrainServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunPreTrainServiceAsyncHandler;
 
 			Nlp_automlClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Nlp_automlClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -68,6 +73,9 @@ namespace AlibabaCloud
 			RunContactReviewOutcome runContactReview(const Model::RunContactReviewRequest &request)const;
 			void runContactReviewAsync(const Model::RunContactReviewRequest& request, const RunContactReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunContactReviewOutcomeCallable runContactReviewCallable(const Model::RunContactReviewRequest& request) const;
+			RunPreTrainServiceOutcome runPreTrainService(const Model::RunPreTrainServiceRequest &request)const;
+			void runPreTrainServiceAsync(const Model::RunPreTrainServiceRequest& request, const RunPreTrainServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunPreTrainServiceOutcomeCallable runPreTrainServiceCallable(const Model::RunPreTrainServiceRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

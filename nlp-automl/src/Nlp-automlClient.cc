@@ -195,3 +195,39 @@ Nlp_automlClient::RunContactReviewOutcomeCallable Nlp_automlClient::runContactRe
 	return task->get_future();
 }
 
+Nlp_automlClient::RunPreTrainServiceOutcome Nlp_automlClient::runPreTrainService(const RunPreTrainServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunPreTrainServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunPreTrainServiceOutcome(RunPreTrainServiceResult(outcome.result()));
+	else
+		return RunPreTrainServiceOutcome(outcome.error());
+}
+
+void Nlp_automlClient::runPreTrainServiceAsync(const RunPreTrainServiceRequest& request, const RunPreTrainServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runPreTrainService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::RunPreTrainServiceOutcomeCallable Nlp_automlClient::runPreTrainServiceCallable(const RunPreTrainServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunPreTrainServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->runPreTrainService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
