@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StartInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT CopySnapshotResult : public ServiceResult
 			{
 			public:
-				struct InstanceResponse
-				{
-					std::string message;
-					std::string instanceId;
-					std::string previousStatus;
-					std::string currentStatus;
-					std::string code;
-				};
 
 
-				StartInstancesResult();
-				explicit StartInstancesResult(const std::string &payload);
-				~StartInstancesResult();
-				std::vector<InstanceResponse> getInstanceResponses()const;
+				CopySnapshotResult();
+				explicit CopySnapshotResult(const std::string &payload);
+				~CopySnapshotResult();
+				std::string getSnapshotId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceResponse> instanceResponses_;
+				std::string snapshotId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTRESULT_H_

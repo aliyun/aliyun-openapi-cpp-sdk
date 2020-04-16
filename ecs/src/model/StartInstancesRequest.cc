@@ -49,6 +49,17 @@ void StartInstancesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string StartInstancesRequest::getBatchOptimization()const
+{
+	return batchOptimization_;
+}
+
+void StartInstancesRequest::setBatchOptimization(const std::string& batchOptimization)
+{
+	batchOptimization_ = batchOptimization;
+	setParameter("BatchOptimization", batchOptimization);
+}
+
 bool StartInstancesRequest::getDryRun()const
 {
 	return dryRun_;

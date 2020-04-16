@@ -71,6 +71,17 @@ void StopInstancesRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string StopInstancesRequest::getBatchOptimization()const
+{
+	return batchOptimization_;
+}
+
+void StopInstancesRequest::setBatchOptimization(const std::string& batchOptimization)
+{
+	batchOptimization_ = batchOptimization;
+	setParameter("BatchOptimization", batchOptimization);
+}
+
 bool StopInstancesRequest::getDryRun()const
 {
 	return dryRun_;

@@ -39,6 +39,27 @@ void RebootInstancesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allInstanceResponsesNode = value["InstanceResponses"]["InstanceResponse"];
+	for (auto valueInstanceResponsesInstanceResponse : allInstanceResponsesNode)
+	{
+		InstanceResponse instanceResponsesObject;
+		if(!valueInstanceResponsesInstanceResponse["InstanceId"].isNull())
+			instanceResponsesObject.instanceId = valueInstanceResponsesInstanceResponse["InstanceId"].asString();
+		if(!valueInstanceResponsesInstanceResponse["PreviousStatus"].isNull())
+			instanceResponsesObject.previousStatus = valueInstanceResponsesInstanceResponse["PreviousStatus"].asString();
+		if(!valueInstanceResponsesInstanceResponse["CurrentStatus"].isNull())
+			instanceResponsesObject.currentStatus = valueInstanceResponsesInstanceResponse["CurrentStatus"].asString();
+		if(!valueInstanceResponsesInstanceResponse["Code"].isNull())
+			instanceResponsesObject.code = valueInstanceResponsesInstanceResponse["Code"].asString();
+		if(!valueInstanceResponsesInstanceResponse["Message"].isNull())
+			instanceResponsesObject.message = valueInstanceResponsesInstanceResponse["Message"].asString();
+		instanceResponses_.push_back(instanceResponsesObject);
+	}
 
+}
+
+std::vector<RebootInstancesResult::InstanceResponse> RebootInstancesResult::getInstanceResponses()const
+{
+	return instanceResponses_;
 }
 

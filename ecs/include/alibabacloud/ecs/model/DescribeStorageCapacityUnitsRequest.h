@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESTORAGECAPACITYUNITSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBESTORAGECAPACITYUNITSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StopInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeStorageCapacityUnitsRequest : public RpcServiceRequest
 			{
 
 			public:
-				StopInstancesRequest();
-				~StopInstancesRequest();
+				DescribeStorageCapacityUnitsRequest();
+				~DescribeStorageCapacityUnitsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStoppedMode()const;
-				void setStoppedMode(const std::string& stoppedMode);
-				bool getForceStop()const;
-				void setForceStop(bool forceStop);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getCapacity()const;
+				void setCapacity(int capacity);
+				std::vector<std::string> getStorageCapacityUnitId()const;
+				void setStorageCapacityUnitId(const std::vector<std::string>& storageCapacityUnitId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getBatchOptimization()const;
-				void setBatchOptimization(const std::string& batchOptimization);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
+				std::vector<std::string> getStatus()const;
+				void setStatus(const std::vector<std::string>& status);
 
             private:
 				long resourceOwnerId_;
-				std::string stoppedMode_;
-				bool forceStop_;
+				int pageNumber_;
+				int capacity_;
+				std::vector<std::string> storageCapacityUnitId_;
 				std::string regionId_;
-				std::string batchOptimization_;
-				bool dryRun_;
+				int pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
+				std::string name_;
+				std::vector<std::string> status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESTORAGECAPACITYUNITSREQUEST_H_

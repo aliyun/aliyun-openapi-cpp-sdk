@@ -76,6 +76,8 @@
 #include "model/ConvertNatPublicIpToEipResult.h"
 #include "model/CopyImageRequest.h"
 #include "model/CopyImageResult.h"
+#include "model/CopySnapshotRequest.h"
+#include "model/CopySnapshotResult.h"
 #include "model/CreateAutoProvisioningGroupRequest.h"
 #include "model/CreateAutoProvisioningGroupResult.h"
 #include "model/CreateAutoSnapshotPolicyRequest.h"
@@ -336,6 +338,8 @@
 #include "model/DescribeSnapshotsUsageResult.h"
 #include "model/DescribeSpotPriceHistoryRequest.h"
 #include "model/DescribeSpotPriceHistoryResult.h"
+#include "model/DescribeStorageCapacityUnitsRequest.h"
+#include "model/DescribeStorageCapacityUnitsResult.h"
 #include "model/DescribeStorageSetDetailsRequest.h"
 #include "model/DescribeStorageSetDetailsResult.h"
 #include "model/DescribeStorageSetsRequest.h"
@@ -422,6 +426,8 @@
 #include "model/ModifyDedicatedHostAutoReleaseTimeResult.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeRequest.h"
 #include "model/ModifyDedicatedHostAutoRenewAttributeResult.h"
+#include "model/ModifyDedicatedHostsChargeTypeRequest.h"
+#include "model/ModifyDedicatedHostsChargeTypeResult.h"
 #include "model/ModifyDemandRequest.h"
 #include "model/ModifyDemandResult.h"
 #include "model/ModifyDeploymentSetAttributeRequest.h"
@@ -494,6 +500,8 @@
 #include "model/ModifySecurityGroupRuleResult.h"
 #include "model/ModifySnapshotAttributeRequest.h"
 #include "model/ModifySnapshotAttributeResult.h"
+#include "model/ModifyStorageCapacityUnitAttributeRequest.h"
+#include "model/ModifyStorageCapacityUnitAttributeResult.h"
 #include "model/ModifyStorageSetAttributeRequest.h"
 #include "model/ModifyStorageSetAttributeResult.h"
 #include "model/ModifyUserBusinessBehaviorRequest.h"
@@ -508,6 +516,8 @@
 #include "model/ModifyVpcAttributeResult.h"
 #include "model/PurchaseReservedInstancesOfferingRequest.h"
 #include "model/PurchaseReservedInstancesOfferingResult.h"
+#include "model/PurchaseStorageCapacityUnitRequest.h"
+#include "model/PurchaseStorageCapacityUnitResult.h"
 #include "model/ReActivateInstancesRequest.h"
 #include "model/ReActivateInstancesResult.h"
 #include "model/ReInitDiskRequest.h"
@@ -668,6 +678,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CopyImageResult> CopyImageOutcome;
 			typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CopyImageRequest&, const CopyImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyImageAsyncHandler;
+			typedef Outcome<Error, Model::CopySnapshotResult> CopySnapshotOutcome;
+			typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CopySnapshotRequest&, const CopySnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopySnapshotAsyncHandler;
 			typedef Outcome<Error, Model::CreateAutoProvisioningGroupResult> CreateAutoProvisioningGroupOutcome;
 			typedef std::future<CreateAutoProvisioningGroupOutcome> CreateAutoProvisioningGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateAutoProvisioningGroupRequest&, const CreateAutoProvisioningGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoProvisioningGroupAsyncHandler;
@@ -1058,6 +1071,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSpotPriceHistoryResult> DescribeSpotPriceHistoryOutcome;
 			typedef std::future<DescribeSpotPriceHistoryOutcome> DescribeSpotPriceHistoryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeSpotPriceHistoryRequest&, const DescribeSpotPriceHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpotPriceHistoryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeStorageCapacityUnitsResult> DescribeStorageCapacityUnitsOutcome;
+			typedef std::future<DescribeStorageCapacityUnitsOutcome> DescribeStorageCapacityUnitsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeStorageCapacityUnitsRequest&, const DescribeStorageCapacityUnitsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageCapacityUnitsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeStorageSetDetailsResult> DescribeStorageSetDetailsOutcome;
 			typedef std::future<DescribeStorageSetDetailsOutcome> DescribeStorageSetDetailsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeStorageSetDetailsRequest&, const DescribeStorageSetDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageSetDetailsAsyncHandler;
@@ -1187,6 +1203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDedicatedHostAutoRenewAttributeResult> ModifyDedicatedHostAutoRenewAttributeOutcome;
 			typedef std::future<ModifyDedicatedHostAutoRenewAttributeOutcome> ModifyDedicatedHostAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostAutoRenewAttributeRequest&, const ModifyDedicatedHostAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostAutoRenewAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDedicatedHostsChargeTypeResult> ModifyDedicatedHostsChargeTypeOutcome;
+			typedef std::future<ModifyDedicatedHostsChargeTypeOutcome> ModifyDedicatedHostsChargeTypeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyDedicatedHostsChargeTypeRequest&, const ModifyDedicatedHostsChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostsChargeTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDemandResult> ModifyDemandOutcome;
 			typedef std::future<ModifyDemandOutcome> ModifyDemandOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDemandRequest&, const ModifyDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDemandAsyncHandler;
@@ -1295,6 +1314,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifySnapshotAttributeResult> ModifySnapshotAttributeOutcome;
 			typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifySnapshotAttributeRequest&, const ModifySnapshotAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyStorageCapacityUnitAttributeResult> ModifyStorageCapacityUnitAttributeOutcome;
+			typedef std::future<ModifyStorageCapacityUnitAttributeOutcome> ModifyStorageCapacityUnitAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyStorageCapacityUnitAttributeRequest&, const ModifyStorageCapacityUnitAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageCapacityUnitAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyStorageSetAttributeResult> ModifyStorageSetAttributeOutcome;
 			typedef std::future<ModifyStorageSetAttributeOutcome> ModifyStorageSetAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyStorageSetAttributeRequest&, const ModifyStorageSetAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageSetAttributeAsyncHandler;
@@ -1316,6 +1338,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PurchaseReservedInstancesOfferingResult> PurchaseReservedInstancesOfferingOutcome;
 			typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::PurchaseReservedInstancesOfferingRequest&, const PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
+			typedef Outcome<Error, Model::PurchaseStorageCapacityUnitResult> PurchaseStorageCapacityUnitOutcome;
+			typedef std::future<PurchaseStorageCapacityUnitOutcome> PurchaseStorageCapacityUnitOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::PurchaseStorageCapacityUnitRequest&, const PurchaseStorageCapacityUnitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseStorageCapacityUnitAsyncHandler;
 			typedef Outcome<Error, Model::ReActivateInstancesResult> ReActivateInstancesOutcome;
 			typedef std::future<ReActivateInstancesOutcome> ReActivateInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ReActivateInstancesRequest&, const ReActivateInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReActivateInstancesAsyncHandler;
@@ -1507,6 +1532,9 @@ namespace AlibabaCloud
 			CopyImageOutcome copyImage(const Model::CopyImageRequest &request)const;
 			void copyImageAsync(const Model::CopyImageRequest& request, const CopyImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyImageOutcomeCallable copyImageCallable(const Model::CopyImageRequest& request) const;
+			CopySnapshotOutcome copySnapshot(const Model::CopySnapshotRequest &request)const;
+			void copySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopySnapshotOutcomeCallable copySnapshotCallable(const Model::CopySnapshotRequest& request) const;
 			CreateAutoProvisioningGroupOutcome createAutoProvisioningGroup(const Model::CreateAutoProvisioningGroupRequest &request)const;
 			void createAutoProvisioningGroupAsync(const Model::CreateAutoProvisioningGroupRequest& request, const CreateAutoProvisioningGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAutoProvisioningGroupOutcomeCallable createAutoProvisioningGroupCallable(const Model::CreateAutoProvisioningGroupRequest& request) const;
@@ -1897,6 +1925,9 @@ namespace AlibabaCloud
 			DescribeSpotPriceHistoryOutcome describeSpotPriceHistory(const Model::DescribeSpotPriceHistoryRequest &request)const;
 			void describeSpotPriceHistoryAsync(const Model::DescribeSpotPriceHistoryRequest& request, const DescribeSpotPriceHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSpotPriceHistoryOutcomeCallable describeSpotPriceHistoryCallable(const Model::DescribeSpotPriceHistoryRequest& request) const;
+			DescribeStorageCapacityUnitsOutcome describeStorageCapacityUnits(const Model::DescribeStorageCapacityUnitsRequest &request)const;
+			void describeStorageCapacityUnitsAsync(const Model::DescribeStorageCapacityUnitsRequest& request, const DescribeStorageCapacityUnitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeStorageCapacityUnitsOutcomeCallable describeStorageCapacityUnitsCallable(const Model::DescribeStorageCapacityUnitsRequest& request) const;
 			DescribeStorageSetDetailsOutcome describeStorageSetDetails(const Model::DescribeStorageSetDetailsRequest &request)const;
 			void describeStorageSetDetailsAsync(const Model::DescribeStorageSetDetailsRequest& request, const DescribeStorageSetDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeStorageSetDetailsOutcomeCallable describeStorageSetDetailsCallable(const Model::DescribeStorageSetDetailsRequest& request) const;
@@ -2026,6 +2057,9 @@ namespace AlibabaCloud
 			ModifyDedicatedHostAutoRenewAttributeOutcome modifyDedicatedHostAutoRenewAttribute(const Model::ModifyDedicatedHostAutoRenewAttributeRequest &request)const;
 			void modifyDedicatedHostAutoRenewAttributeAsync(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request, const ModifyDedicatedHostAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostAutoRenewAttributeOutcomeCallable modifyDedicatedHostAutoRenewAttributeCallable(const Model::ModifyDedicatedHostAutoRenewAttributeRequest& request) const;
+			ModifyDedicatedHostsChargeTypeOutcome modifyDedicatedHostsChargeType(const Model::ModifyDedicatedHostsChargeTypeRequest &request)const;
+			void modifyDedicatedHostsChargeTypeAsync(const Model::ModifyDedicatedHostsChargeTypeRequest& request, const ModifyDedicatedHostsChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDedicatedHostsChargeTypeOutcomeCallable modifyDedicatedHostsChargeTypeCallable(const Model::ModifyDedicatedHostsChargeTypeRequest& request) const;
 			ModifyDemandOutcome modifyDemand(const Model::ModifyDemandRequest &request)const;
 			void modifyDemandAsync(const Model::ModifyDemandRequest& request, const ModifyDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDemandOutcomeCallable modifyDemandCallable(const Model::ModifyDemandRequest& request) const;
@@ -2134,6 +2168,9 @@ namespace AlibabaCloud
 			ModifySnapshotAttributeOutcome modifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request)const;
 			void modifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySnapshotAttributeOutcomeCallable modifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request) const;
+			ModifyStorageCapacityUnitAttributeOutcome modifyStorageCapacityUnitAttribute(const Model::ModifyStorageCapacityUnitAttributeRequest &request)const;
+			void modifyStorageCapacityUnitAttributeAsync(const Model::ModifyStorageCapacityUnitAttributeRequest& request, const ModifyStorageCapacityUnitAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyStorageCapacityUnitAttributeOutcomeCallable modifyStorageCapacityUnitAttributeCallable(const Model::ModifyStorageCapacityUnitAttributeRequest& request) const;
 			ModifyStorageSetAttributeOutcome modifyStorageSetAttribute(const Model::ModifyStorageSetAttributeRequest &request)const;
 			void modifyStorageSetAttributeAsync(const Model::ModifyStorageSetAttributeRequest& request, const ModifyStorageSetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyStorageSetAttributeOutcomeCallable modifyStorageSetAttributeCallable(const Model::ModifyStorageSetAttributeRequest& request) const;
@@ -2155,6 +2192,9 @@ namespace AlibabaCloud
 			PurchaseReservedInstancesOfferingOutcome purchaseReservedInstancesOffering(const Model::PurchaseReservedInstancesOfferingRequest &request)const;
 			void purchaseReservedInstancesOfferingAsync(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PurchaseReservedInstancesOfferingOutcomeCallable purchaseReservedInstancesOfferingCallable(const Model::PurchaseReservedInstancesOfferingRequest& request) const;
+			PurchaseStorageCapacityUnitOutcome purchaseStorageCapacityUnit(const Model::PurchaseStorageCapacityUnitRequest &request)const;
+			void purchaseStorageCapacityUnitAsync(const Model::PurchaseStorageCapacityUnitRequest& request, const PurchaseStorageCapacityUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PurchaseStorageCapacityUnitOutcomeCallable purchaseStorageCapacityUnitCallable(const Model::PurchaseStorageCapacityUnitRequest& request) const;
 			ReActivateInstancesOutcome reActivateInstances(const Model::ReActivateInstancesRequest &request)const;
 			void reActivateInstancesAsync(const Model::ReActivateInstancesRequest& request, const ReActivateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReActivateInstancesOutcomeCallable reActivateInstancesCallable(const Model::ReActivateInstancesRequest& request) const;

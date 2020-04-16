@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_PURCHASESTORAGECAPACITYUNITRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_PURCHASESTORAGECAPACITYUNITRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StartInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT PurchaseStorageCapacityUnitResult : public ServiceResult
 			{
 			public:
-				struct InstanceResponse
-				{
-					std::string message;
-					std::string instanceId;
-					std::string previousStatus;
-					std::string currentStatus;
-					std::string code;
-				};
 
 
-				StartInstancesResult();
-				explicit StartInstancesResult(const std::string &payload);
-				~StartInstancesResult();
-				std::vector<InstanceResponse> getInstanceResponses()const;
+				PurchaseStorageCapacityUnitResult();
+				explicit PurchaseStorageCapacityUnitResult(const std::string &payload);
+				~PurchaseStorageCapacityUnitResult();
+				std::vector<std::string> getStorageCapacityUnitIds()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceResponse> instanceResponses_;
+				std::vector<std::string> storageCapacityUnitIds_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_PURCHASESTORAGECAPACITYUNITRESULT_H_

@@ -32,15 +32,25 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT StopInstancesResult : public ServiceResult
 			{
 			public:
+				struct InstanceResponse
+				{
+					std::string message;
+					std::string instanceId;
+					std::string previousStatus;
+					std::string currentStatus;
+					std::string code;
+				};
 
 
 				StopInstancesResult();
 				explicit StopInstancesResult(const std::string &payload);
 				~StopInstancesResult();
+				std::vector<InstanceResponse> getInstanceResponses()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<InstanceResponse> instanceResponses_;
 
 			};
 		}

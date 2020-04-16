@@ -115,6 +115,17 @@ void ModifyImageAttributeRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyImageAttributeRequest::getImageFamily()const
+{
+	return imageFamily_;
+}
+
+void ModifyImageAttributeRequest::setImageFamily(const std::string& imageFamily)
+{
+	imageFamily_ = imageFamily;
+	setParameter("ImageFamily", imageFamily);
+}
+
 std::string ModifyImageAttributeRequest::getStatus()const
 {
 	return status_;

@@ -1023,6 +1023,42 @@ EcsClient::CopyImageOutcomeCallable EcsClient::copyImageCallable(const CopyImage
 	return task->get_future();
 }
 
+EcsClient::CopySnapshotOutcome EcsClient::copySnapshot(const CopySnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopySnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopySnapshotOutcome(CopySnapshotResult(outcome.result()));
+	else
+		return CopySnapshotOutcome(outcome.error());
+}
+
+void EcsClient::copySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copySnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CopySnapshotOutcomeCallable EcsClient::copySnapshotCallable(const CopySnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopySnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->copySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateAutoProvisioningGroupOutcome EcsClient::createAutoProvisioningGroup(const CreateAutoProvisioningGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5703,6 +5739,42 @@ EcsClient::DescribeSpotPriceHistoryOutcomeCallable EcsClient::describeSpotPriceH
 	return task->get_future();
 }
 
+EcsClient::DescribeStorageCapacityUnitsOutcome EcsClient::describeStorageCapacityUnits(const DescribeStorageCapacityUnitsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeStorageCapacityUnitsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeStorageCapacityUnitsOutcome(DescribeStorageCapacityUnitsResult(outcome.result()));
+	else
+		return DescribeStorageCapacityUnitsOutcome(outcome.error());
+}
+
+void EcsClient::describeStorageCapacityUnitsAsync(const DescribeStorageCapacityUnitsRequest& request, const DescribeStorageCapacityUnitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeStorageCapacityUnits(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeStorageCapacityUnitsOutcomeCallable EcsClient::describeStorageCapacityUnitsCallable(const DescribeStorageCapacityUnitsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeStorageCapacityUnitsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeStorageCapacityUnits(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeStorageSetDetailsOutcome EcsClient::describeStorageSetDetails(const DescribeStorageSetDetailsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7251,6 +7323,42 @@ EcsClient::ModifyDedicatedHostAutoRenewAttributeOutcomeCallable EcsClient::modif
 	return task->get_future();
 }
 
+EcsClient::ModifyDedicatedHostsChargeTypeOutcome EcsClient::modifyDedicatedHostsChargeType(const ModifyDedicatedHostsChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDedicatedHostsChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDedicatedHostsChargeTypeOutcome(ModifyDedicatedHostsChargeTypeResult(outcome.result()));
+	else
+		return ModifyDedicatedHostsChargeTypeOutcome(outcome.error());
+}
+
+void EcsClient::modifyDedicatedHostsChargeTypeAsync(const ModifyDedicatedHostsChargeTypeRequest& request, const ModifyDedicatedHostsChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDedicatedHostsChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDedicatedHostsChargeTypeOutcomeCallable EcsClient::modifyDedicatedHostsChargeTypeCallable(const ModifyDedicatedHostsChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDedicatedHostsChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDedicatedHostsChargeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyDemandOutcome EcsClient::modifyDemand(const ModifyDemandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8547,6 +8655,42 @@ EcsClient::ModifySnapshotAttributeOutcomeCallable EcsClient::modifySnapshotAttri
 	return task->get_future();
 }
 
+EcsClient::ModifyStorageCapacityUnitAttributeOutcome EcsClient::modifyStorageCapacityUnitAttribute(const ModifyStorageCapacityUnitAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyStorageCapacityUnitAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyStorageCapacityUnitAttributeOutcome(ModifyStorageCapacityUnitAttributeResult(outcome.result()));
+	else
+		return ModifyStorageCapacityUnitAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyStorageCapacityUnitAttributeAsync(const ModifyStorageCapacityUnitAttributeRequest& request, const ModifyStorageCapacityUnitAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyStorageCapacityUnitAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyStorageCapacityUnitAttributeOutcomeCallable EcsClient::modifyStorageCapacityUnitAttributeCallable(const ModifyStorageCapacityUnitAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyStorageCapacityUnitAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyStorageCapacityUnitAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyStorageSetAttributeOutcome EcsClient::modifyStorageSetAttribute(const ModifyStorageSetAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8793,6 +8937,42 @@ EcsClient::PurchaseReservedInstancesOfferingOutcomeCallable EcsClient::purchaseR
 			[this, request]()
 			{
 			return this->purchaseReservedInstancesOffering(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::PurchaseStorageCapacityUnitOutcome EcsClient::purchaseStorageCapacityUnit(const PurchaseStorageCapacityUnitRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PurchaseStorageCapacityUnitOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PurchaseStorageCapacityUnitOutcome(PurchaseStorageCapacityUnitResult(outcome.result()));
+	else
+		return PurchaseStorageCapacityUnitOutcome(outcome.error());
+}
+
+void EcsClient::purchaseStorageCapacityUnitAsync(const PurchaseStorageCapacityUnitRequest& request, const PurchaseStorageCapacityUnitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, purchaseStorageCapacityUnit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::PurchaseStorageCapacityUnitOutcomeCallable EcsClient::purchaseStorageCapacityUnitCallable(const PurchaseStorageCapacityUnitRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PurchaseStorageCapacityUnitOutcome()>>(
+			[this, request]()
+			{
+			return this->purchaseStorageCapacityUnit(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

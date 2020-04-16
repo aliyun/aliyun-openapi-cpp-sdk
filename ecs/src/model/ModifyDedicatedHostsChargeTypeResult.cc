@@ -1,0 +1,68 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Ecs;
+using namespace AlibabaCloud::Ecs::Model;
+
+ModifyDedicatedHostsChargeTypeResult::ModifyDedicatedHostsChargeTypeResult() :
+	ServiceResult()
+{}
+
+ModifyDedicatedHostsChargeTypeResult::ModifyDedicatedHostsChargeTypeResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ModifyDedicatedHostsChargeTypeResult::~ModifyDedicatedHostsChargeTypeResult()
+{}
+
+void ModifyDedicatedHostsChargeTypeResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allFeeOfInstancesNode = value["FeeOfInstances"]["FeeOfInstance"];
+	for (auto valueFeeOfInstancesFeeOfInstance : allFeeOfInstancesNode)
+	{
+		FeeOfInstance feeOfInstancesObject;
+		if(!valueFeeOfInstancesFeeOfInstance["InstanceId"].isNull())
+			feeOfInstancesObject.instanceId = valueFeeOfInstancesFeeOfInstance["InstanceId"].asString();
+		if(!valueFeeOfInstancesFeeOfInstance["Fee"].isNull())
+			feeOfInstancesObject.fee = valueFeeOfInstancesFeeOfInstance["Fee"].asString();
+		if(!valueFeeOfInstancesFeeOfInstance["Currency"].isNull())
+			feeOfInstancesObject.currency = valueFeeOfInstancesFeeOfInstance["Currency"].asString();
+		feeOfInstances_.push_back(feeOfInstancesObject);
+	}
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
+
+}
+
+std::vector<ModifyDedicatedHostsChargeTypeResult::FeeOfInstance> ModifyDedicatedHostsChargeTypeResult::getFeeOfInstances()const
+{
+	return feeOfInstances_;
+}
+
+std::string ModifyDedicatedHostsChargeTypeResult::getOrderId()const
+{
+	return orderId_;
+}
+

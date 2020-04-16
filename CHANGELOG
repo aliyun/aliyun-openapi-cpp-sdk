@@ -1,3 +1,11 @@
+2020-04-16 Version: 1.36.360
+- Add BatchOptimization param in Stop and Start Instances.
+- Add RemoveSymbols in GetInstanceConsoleOutput.
+- Add ImageFamily in ModifyImageAttribute.
+- Customize InstanceType on DedicatedHosts is supported.
+- Add StorageCapacityUnit interfaces.
+- Add param Tag in CreateAutoSnapshotPolicy.
+
 2020-04-16 Version: 1.36.359
 - Add features for open api.
 

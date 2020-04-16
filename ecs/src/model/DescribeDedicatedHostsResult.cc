@@ -138,6 +138,9 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostsObject.supportedInstanceTypeFamilies.push_back(value.asString());
+		auto allSupportedCustomInstanceTypeFamilies = value["SupportedCustomInstanceTypeFamilies"]["SupportedCustomInstanceTypeFamily"];
+		for (auto value : allSupportedCustomInstanceTypeFamilies)
+			dedicatedHostsObject.supportedCustomInstanceTypeFamilies.push_back(value.asString());
 		auto allSupportedInstanceTypesList = value["SupportedInstanceTypesList"]["SupportedInstanceTypesList"];
 		for (auto value : allSupportedInstanceTypesList)
 			dedicatedHostsObject.supportedInstanceTypesList.push_back(value.asString());

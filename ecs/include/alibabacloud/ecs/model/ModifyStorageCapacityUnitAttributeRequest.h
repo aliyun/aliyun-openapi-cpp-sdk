@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYSTORAGECAPACITYUNITATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYSTORAGECAPACITYUNITATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StopInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyStorageCapacityUnitAttributeRequest : public RpcServiceRequest
 			{
 
 			public:
-				StopInstancesRequest();
-				~StopInstancesRequest();
+				ModifyStorageCapacityUnitAttributeRequest();
+				~ModifyStorageCapacityUnitAttributeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStoppedMode()const;
-				void setStoppedMode(const std::string& stoppedMode);
-				bool getForceStop()const;
-				void setForceStop(bool forceStop);
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
+				std::string getStorageCapacityUnitId()const;
+				void setStorageCapacityUnitId(const std::string& storageCapacityUnitId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getBatchOptimization()const;
-				void setBatchOptimization(const std::string& batchOptimization);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
-				std::string stoppedMode_;
-				bool forceStop_;
+				std::string description_;
+				std::string storageCapacityUnitId_;
 				std::string regionId_;
-				std::string batchOptimization_;
-				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYSTORAGECAPACITYUNITATTRIBUTEREQUEST_H_

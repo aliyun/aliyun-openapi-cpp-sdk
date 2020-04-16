@@ -70,6 +70,7 @@ namespace AlibabaCloud
 					std::string dedicatedHostId;
 					std::string description;
 					std::string resourceGroupId;
+					std::vector<std::string> supportedCustomInstanceTypeFamilies;
 					NetworkAttributes networkAttributes;
 					std::string gPUSpec;
 					Capacity capacity;

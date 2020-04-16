@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPERESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StartInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT ModifyDedicatedHostsChargeTypeResult : public ServiceResult
 			{
 			public:
-				struct InstanceResponse
+				struct FeeOfInstance
 				{
-					std::string message;
 					std::string instanceId;
-					std::string previousStatus;
-					std::string currentStatus;
-					std::string code;
+					std::string fee;
+					std::string currency;
 				};
 
 
-				StartInstancesResult();
-				explicit StartInstancesResult(const std::string &payload);
-				~StartInstancesResult();
-				std::vector<InstanceResponse> getInstanceResponses()const;
+				ModifyDedicatedHostsChargeTypeResult();
+				explicit ModifyDedicatedHostsChargeTypeResult(const std::string &payload);
+				~ModifyDedicatedHostsChargeTypeResult();
+				std::vector<FeeOfInstance> getFeeOfInstances()const;
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceResponse> instanceResponses_;
+				std::vector<FeeOfInstance> feeOfInstances_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STARTINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPERESULT_H_

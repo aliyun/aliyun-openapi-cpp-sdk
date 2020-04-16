@@ -75,6 +75,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ConvertNatPublicIpToEipResult.h
 	include/alibabacloud/ecs/model/CopyImageRequest.h
 	include/alibabacloud/ecs/model/CopyImageResult.h
+	include/alibabacloud/ecs/model/CopySnapshotRequest.h
+	include/alibabacloud/ecs/model/CopySnapshotResult.h
 	include/alibabacloud/ecs/model/CreateAutoProvisioningGroupRequest.h
 	include/alibabacloud/ecs/model/CreateAutoProvisioningGroupResult.h
 	include/alibabacloud/ecs/model/CreateAutoSnapshotPolicyRequest.h
@@ -335,6 +337,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSnapshotsUsageResult.h
 	include/alibabacloud/ecs/model/DescribeSpotPriceHistoryRequest.h
 	include/alibabacloud/ecs/model/DescribeSpotPriceHistoryResult.h
+	include/alibabacloud/ecs/model/DescribeStorageCapacityUnitsRequest.h
+	include/alibabacloud/ecs/model/DescribeStorageCapacityUnitsResult.h
 	include/alibabacloud/ecs/model/DescribeStorageSetDetailsRequest.h
 	include/alibabacloud/ecs/model/DescribeStorageSetDetailsResult.h
 	include/alibabacloud/ecs/model/DescribeStorageSetsRequest.h
@@ -421,6 +425,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoReleaseTimeResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeRequest.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeResult.h
 	include/alibabacloud/ecs/model/ModifyDemandRequest.h
 	include/alibabacloud/ecs/model/ModifyDemandResult.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeRequest.h
@@ -493,6 +499,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifySecurityGroupRuleResult.h
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifySnapshotAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyStorageCapacityUnitAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyStorageCapacityUnitAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyStorageSetAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyStorageSetAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyUserBusinessBehaviorRequest.h
@@ -507,6 +515,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyVpcAttributeResult.h
 	include/alibabacloud/ecs/model/PurchaseReservedInstancesOfferingRequest.h
 	include/alibabacloud/ecs/model/PurchaseReservedInstancesOfferingResult.h
+	include/alibabacloud/ecs/model/PurchaseStorageCapacityUnitRequest.h
+	include/alibabacloud/ecs/model/PurchaseStorageCapacityUnitResult.h
 	include/alibabacloud/ecs/model/ReActivateInstancesRequest.h
 	include/alibabacloud/ecs/model/ReActivateInstancesResult.h
 	include/alibabacloud/ecs/model/ReInitDiskRequest.h
@@ -634,6 +644,8 @@ set(ecs_src
 	src/model/ConvertNatPublicIpToEipResult.cc
 	src/model/CopyImageRequest.cc
 	src/model/CopyImageResult.cc
+	src/model/CopySnapshotRequest.cc
+	src/model/CopySnapshotResult.cc
 	src/model/CreateAutoProvisioningGroupRequest.cc
 	src/model/CreateAutoProvisioningGroupResult.cc
 	src/model/CreateAutoSnapshotPolicyRequest.cc
@@ -894,6 +906,8 @@ set(ecs_src
 	src/model/DescribeSnapshotsUsageResult.cc
 	src/model/DescribeSpotPriceHistoryRequest.cc
 	src/model/DescribeSpotPriceHistoryResult.cc
+	src/model/DescribeStorageCapacityUnitsRequest.cc
+	src/model/DescribeStorageCapacityUnitsResult.cc
 	src/model/DescribeStorageSetDetailsRequest.cc
 	src/model/DescribeStorageSetDetailsResult.cc
 	src/model/DescribeStorageSetsRequest.cc
@@ -980,6 +994,8 @@ set(ecs_src
 	src/model/ModifyDedicatedHostAutoReleaseTimeResult.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeRequest.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeResult.cc
+	src/model/ModifyDedicatedHostsChargeTypeRequest.cc
+	src/model/ModifyDedicatedHostsChargeTypeResult.cc
 	src/model/ModifyDemandRequest.cc
 	src/model/ModifyDemandResult.cc
 	src/model/ModifyDeploymentSetAttributeRequest.cc
@@ -1052,6 +1068,8 @@ set(ecs_src
 	src/model/ModifySecurityGroupRuleResult.cc
 	src/model/ModifySnapshotAttributeRequest.cc
 	src/model/ModifySnapshotAttributeResult.cc
+	src/model/ModifyStorageCapacityUnitAttributeRequest.cc
+	src/model/ModifyStorageCapacityUnitAttributeResult.cc
 	src/model/ModifyStorageSetAttributeRequest.cc
 	src/model/ModifyStorageSetAttributeResult.cc
 	src/model/ModifyUserBusinessBehaviorRequest.cc
@@ -1066,6 +1084,8 @@ set(ecs_src
 	src/model/ModifyVpcAttributeResult.cc
 	src/model/PurchaseReservedInstancesOfferingRequest.cc
 	src/model/PurchaseReservedInstancesOfferingResult.cc
+	src/model/PurchaseStorageCapacityUnitRequest.cc
+	src/model/PurchaseStorageCapacityUnitResult.cc
 	src/model/ReActivateInstancesRequest.cc
 	src/model/ReActivateInstancesResult.cc
 	src/model/ReInitDiskRequest.cc

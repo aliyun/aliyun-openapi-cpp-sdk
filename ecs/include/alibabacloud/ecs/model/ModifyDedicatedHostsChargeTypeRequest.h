@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StopInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT ModifyDedicatedHostsChargeTypeRequest : public RpcServiceRequest
 			{
 
 			public:
-				StopInstancesRequest();
-				~StopInstancesRequest();
+				ModifyDedicatedHostsChargeTypeRequest();
+				~ModifyDedicatedHostsChargeTypeRequest();
 
+				std::string getDedicatedHostIds()const;
+				void setDedicatedHostIds(const std::string& dedicatedHostIds);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStoppedMode()const;
-				void setStoppedMode(const std::string& stoppedMode);
-				bool getForceStop()const;
-				void setForceStop(bool forceStop);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				std::string getDedicatedHostChargeType()const;
+				void setDedicatedHostChargeType(const std::string& dedicatedHostChargeType);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getBatchOptimization()const;
-				void setBatchOptimization(const std::string& batchOptimization);
+				int getPeriod()const;
+				void setPeriod(int period);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
+				bool getAutoPay()const;
+				void setAutoPay(bool autoPay);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				bool getDetailFee()const;
+				void setDetailFee(bool detailFee);
+				std::string getPeriodUnit()const;
+				void setPeriodUnit(const std::string& periodUnit);
 
             private:
+				std::string dedicatedHostIds_;
 				long resourceOwnerId_;
-				std::string stoppedMode_;
-				bool forceStop_;
+				std::string clientToken_;
+				std::string dedicatedHostChargeType_;
 				std::string regionId_;
-				std::string batchOptimization_;
+				int period_;
 				bool dryRun_;
+				bool autoPay_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
+				bool detailFee_;
+				std::string periodUnit_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDEDICATEDHOSTSCHARGETYPEREQUEST_H_

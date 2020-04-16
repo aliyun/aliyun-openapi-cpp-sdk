@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT StopInstancesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT CopySnapshotRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
-				StopInstancesRequest();
-				~StopInstancesRequest();
+				CopySnapshotRequest();
+				~CopySnapshotRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStoppedMode()const;
-				void setStoppedMode(const std::string& stoppedMode);
-				bool getForceStop()const;
-				void setForceStop(bool forceStop);
+				std::string getSnapshotId()const;
+				void setSnapshotId(const std::string& snapshotId);
+				std::string getDestinationRegionId()const;
+				void setDestinationRegionId(const std::string& destinationRegionId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getBatchOptimization()const;
-				void setBatchOptimization(const std::string& batchOptimization);
-				bool getDryRun()const;
-				void setDryRun(bool dryRun);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getInstanceId()const;
-				void setInstanceId(const std::vector<std::string>& instanceId);
+				std::string getDestinationSnapshotName()const;
+				void setDestinationSnapshotName(const std::string& destinationSnapshotName);
+				std::string getDestinationSnapshotDescription()const;
+				void setDestinationSnapshotDescription(const std::string& destinationSnapshotDescription);
+				int getRetentionDays()const;
+				void setRetentionDays(int retentionDays);
 
             private:
 				long resourceOwnerId_;
-				std::string stoppedMode_;
-				bool forceStop_;
+				std::string snapshotId_;
+				std::string destinationRegionId_;
 				std::string regionId_;
-				std::string batchOptimization_;
-				bool dryRun_;
+				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
 				long ownerId_;
-				std::vector<std::string> instanceId_;
+				std::string destinationSnapshotName_;
+				std::string destinationSnapshotDescription_;
+				int retentionDays_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_STOPINSTANCESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_COPYSNAPSHOTREQUEST_H_

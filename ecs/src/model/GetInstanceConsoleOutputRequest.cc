@@ -38,6 +38,17 @@ void GetInstanceConsoleOutputRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool GetInstanceConsoleOutputRequest::getRemoveSymbols()const
+{
+	return removeSymbols_;
+}
+
+void GetInstanceConsoleOutputRequest::setRemoveSymbols(bool removeSymbols)
+{
+	removeSymbols_ = removeSymbols;
+	setParameter("RemoveSymbols", removeSymbols ? "true" : "false");
+}
+
 std::string GetInstanceConsoleOutputRequest::getRegionId()const
 {
 	return regionId_;

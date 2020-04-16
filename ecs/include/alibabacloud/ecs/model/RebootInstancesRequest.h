@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getBatchOptimization()const;
+				void setBatchOptimization(const std::string& batchOptimization);
 				bool getDryRun()const;
 				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string regionId_;
+				std::string batchOptimization_;
 				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
