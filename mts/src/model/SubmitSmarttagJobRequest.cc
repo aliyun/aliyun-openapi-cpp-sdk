@@ -159,6 +159,17 @@ void SubmitSmarttagJobRequest::setContentType(const std::string& contentType)
 	setParameter("ContentType", contentType);
 }
 
+std::string SubmitSmarttagJobRequest::getInput()const
+{
+	return input_;
+}
+
+void SubmitSmarttagJobRequest::setInput(const std::string& input)
+{
+	input_ = input;
+	setParameter("Input", input);
+}
+
 std::string SubmitSmarttagJobRequest::getContentAddr()const
 {
 	return contentAddr_;

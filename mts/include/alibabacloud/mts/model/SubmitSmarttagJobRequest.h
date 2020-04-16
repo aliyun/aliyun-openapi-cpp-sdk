@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setPipelineId(const std::string& pipelineId);
 				std::string getContentType()const;
 				void setContentType(const std::string& contentType);
+				std::string getInput()const;
+				void setInput(const std::string& input);
 				std::string getContentAddr()const;
 				void setContentAddr(const std::string& contentAddr);
 
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string params_;
 				std::string pipelineId_;
 				std::string contentType_;
+				std::string input_;
 				std::string contentAddr_;
 
 			};
