@@ -36,55 +36,20 @@ namespace AlibabaCloud
 				{
 					struct PhoneNumber
 					{
-						struct ContactFlow
-						{
-							std::string type;
-							std::string contactFlowId;
-							std::string instanceId;
-							std::string contactFlowName;
-							std::string contactFlowDescription;
-						};
-						struct PrivacyNumber
-						{
-							std::string regionNameCity;
-							std::string type;
-							std::string subId;
-							std::string poolId;
-							std::string extra;
-							std::string poolName;
-							std::string phoneNumber;
-							std::string telX;
-							std::string bizId;
-						};
-						struct SkillGroup
-						{
-							std::string skillGroupName;
-							std::string skillGroupId;
-						};
-						std::string assignee;
 						std::string usage;
-						bool testOnly;
-						bool allowOutbound;
-						std::string numberGroupId;
 						std::string instanceId;
+						std::string contactFlowId;
 						std::string serviceTag;
 						long createTime;
-						int remainingTime;
-						std::vector<PhoneNumber::SkillGroup> skillGroups;
-						int trunks;
 						std::string city;
 						std::string phoneNumberId;
 						std::string province;
 						std::string phoneNumberDescription;
 						std::string provider;
 						int type;
-						std::string sipTelX;
 						std::string number;
 						int concurrency;
-						PrivacyNumber privacyNumber;
-						int numberCommodityStatus;
-						ContactFlow contactFlow;
-						std::string numberGroupName;
+						std::vector<std::string> skillGroupIdList;
 					};
 					int totalCount;
 					int pageSize;

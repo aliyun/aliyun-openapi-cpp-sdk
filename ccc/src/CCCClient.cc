@@ -31,21 +31,21 @@ CCCClient::CCCClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ccc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::CCCClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ccc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::CCCClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ccc");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CCCClient::~CCCClient()
@@ -117,42 +117,6 @@ CCCClient::AddBulkPhoneNumbersOutcomeCallable CCCClient::addBulkPhoneNumbersCall
 			[this, request]()
 			{
 			return this->addBulkPhoneNumbers(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::AddNumberToSkillGroupOutcome CCCClient::addNumberToSkillGroup(const AddNumberToSkillGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddNumberToSkillGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddNumberToSkillGroupOutcome(AddNumberToSkillGroupResult(outcome.result()));
-	else
-		return AddNumberToSkillGroupOutcome(outcome.error());
-}
-
-void CCCClient::addNumberToSkillGroupAsync(const AddNumberToSkillGroupRequest& request, const AddNumberToSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addNumberToSkillGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::AddNumberToSkillGroupOutcomeCallable CCCClient::addNumberToSkillGroupCallable(const AddNumberToSkillGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddNumberToSkillGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->addNumberToSkillGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,42 +339,6 @@ CCCClient::CancelJobsOutcomeCallable CCCClient::cancelJobsCallable(const CancelJ
 	return task->get_future();
 }
 
-CCCClient::CancelPredictiveJobsOutcome CCCClient::cancelPredictiveJobs(const CancelPredictiveJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CancelPredictiveJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CancelPredictiveJobsOutcome(CancelPredictiveJobsResult(outcome.result()));
-	else
-		return CancelPredictiveJobsOutcome(outcome.error());
-}
-
-void CCCClient::cancelPredictiveJobsAsync(const CancelPredictiveJobsRequest& request, const CancelPredictiveJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, cancelPredictiveJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::CancelPredictiveJobsOutcomeCallable CCCClient::cancelPredictiveJobsCallable(const CancelPredictiveJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CancelPredictiveJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->cancelPredictiveJobs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::CheckNumberAvaliableOutcome CCCClient::checkNumberAvaliable(const CheckNumberAvaliableRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +441,6 @@ CCCClient::CreateBatchJobsOutcomeCallable CCCClient::createBatchJobsCallable(con
 			[this, request]()
 			{
 			return this->createBatchJobs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::CreateCCCPostOrderOutcome CCCClient::createCCCPostOrder(const CreateCCCPostOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateCCCPostOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateCCCPostOrderOutcome(CreateCCCPostOrderResult(outcome.result()));
-	else
-		return CreateCCCPostOrderOutcome(outcome.error());
-}
-
-void CCCClient::createCCCPostOrderAsync(const CreateCCCPostOrderRequest& request, const CreateCCCPostOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createCCCPostOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::CreateCCCPostOrderOutcomeCallable CCCClient::createCCCPostOrderCallable(const CreateCCCPostOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateCCCPostOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->createCCCPostOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,78 +657,6 @@ CCCClient::CreateMediaOutcomeCallable CCCClient::createMediaCallable(const Creat
 			[this, request]()
 			{
 			return this->createMedia(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::CreatePredictiveJobGroupOutcome CCCClient::createPredictiveJobGroup(const CreatePredictiveJobGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreatePredictiveJobGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreatePredictiveJobGroupOutcome(CreatePredictiveJobGroupResult(outcome.result()));
-	else
-		return CreatePredictiveJobGroupOutcome(outcome.error());
-}
-
-void CCCClient::createPredictiveJobGroupAsync(const CreatePredictiveJobGroupRequest& request, const CreatePredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createPredictiveJobGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::CreatePredictiveJobGroupOutcomeCallable CCCClient::createPredictiveJobGroupCallable(const CreatePredictiveJobGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreatePredictiveJobGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createPredictiveJobGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::CreatePredictiveJobsOutcome CCCClient::createPredictiveJobs(const CreatePredictiveJobsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreatePredictiveJobsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreatePredictiveJobsOutcome(CreatePredictiveJobsResult(outcome.result()));
-	else
-		return CreatePredictiveJobsOutcome(outcome.error());
-}
-
-void CCCClient::createPredictiveJobsAsync(const CreatePredictiveJobsRequest& request, const CreatePredictiveJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createPredictiveJobs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::CreatePredictiveJobsOutcomeCallable CCCClient::createPredictiveJobsCallable(const CreatePredictiveJobsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreatePredictiveJobsOutcome()>>(
-			[this, request]()
-			{
-			return this->createPredictiveJobs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,42 +1455,6 @@ CCCClient::GetAgentDataOutcomeCallable CCCClient::getAgentDataCallable(const Get
 	return task->get_future();
 }
 
-CCCClient::GetAgentStateOutcome CCCClient::getAgentState(const GetAgentStateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetAgentStateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetAgentStateOutcome(GetAgentStateResult(outcome.result()));
-	else
-		return GetAgentStateOutcome(outcome.error());
-}
-
-void CCCClient::getAgentStateAsync(const GetAgentStateRequest& request, const GetAgentStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getAgentState(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetAgentStateOutcomeCallable CCCClient::getAgentStateCallable(const GetAgentStateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetAgentStateOutcome()>>(
-			[this, request]()
-			{
-			return this->getAgentState(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::GetCallMeasureSummaryReportOutcome CCCClient::getCallMeasureSummaryReport(const GetCallMeasureSummaryReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,78 +1521,6 @@ CCCClient::GetConfigOutcomeCallable CCCClient::getConfigCallable(const GetConfig
 			[this, request]()
 			{
 			return this->getConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::GetContactIdentifyByOutBoundTaskIdOutcome CCCClient::getContactIdentifyByOutBoundTaskId(const GetContactIdentifyByOutBoundTaskIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetContactIdentifyByOutBoundTaskIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetContactIdentifyByOutBoundTaskIdOutcome(GetContactIdentifyByOutBoundTaskIdResult(outcome.result()));
-	else
-		return GetContactIdentifyByOutBoundTaskIdOutcome(outcome.error());
-}
-
-void CCCClient::getContactIdentifyByOutBoundTaskIdAsync(const GetContactIdentifyByOutBoundTaskIdRequest& request, const GetContactIdentifyByOutBoundTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getContactIdentifyByOutBoundTaskId(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetContactIdentifyByOutBoundTaskIdOutcomeCallable CCCClient::getContactIdentifyByOutBoundTaskIdCallable(const GetContactIdentifyByOutBoundTaskIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetContactIdentifyByOutBoundTaskIdOutcome()>>(
-			[this, request]()
-			{
-			return this->getContactIdentifyByOutBoundTaskId(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::GetContactInfoByOutboundTaskIdOutcome CCCClient::getContactInfoByOutboundTaskId(const GetContactInfoByOutboundTaskIdRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetContactInfoByOutboundTaskIdOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetContactInfoByOutboundTaskIdOutcome(GetContactInfoByOutboundTaskIdResult(outcome.result()));
-	else
-		return GetContactInfoByOutboundTaskIdOutcome(outcome.error());
-}
-
-void CCCClient::getContactInfoByOutboundTaskIdAsync(const GetContactInfoByOutboundTaskIdRequest& request, const GetContactInfoByOutboundTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getContactInfoByOutboundTaskId(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetContactInfoByOutboundTaskIdOutcomeCallable CCCClient::getContactInfoByOutboundTaskIdCallable(const GetContactInfoByOutboundTaskIdRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetContactInfoByOutboundTaskIdOutcome()>>(
-			[this, request]()
-			{
-			return this->getContactInfoByOutboundTaskId(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,42 +1851,6 @@ CCCClient::GetJobDataUploadParamsOutcomeCallable CCCClient::getJobDataUploadPara
 	return task->get_future();
 }
 
-CCCClient::GetJobFileUploadUrlOutcome CCCClient::getJobFileUploadUrl(const GetJobFileUploadUrlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetJobFileUploadUrlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetJobFileUploadUrlOutcome(GetJobFileUploadUrlResult(outcome.result()));
-	else
-		return GetJobFileUploadUrlOutcome(outcome.error());
-}
-
-void CCCClient::getJobFileUploadUrlAsync(const GetJobFileUploadUrlRequest& request, const GetJobFileUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getJobFileUploadUrl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetJobFileUploadUrlOutcomeCallable CCCClient::getJobFileUploadUrlCallable(const GetJobFileUploadUrlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetJobFileUploadUrlOutcome()>>(
-			[this, request]()
-			{
-			return this->getJobFileUploadUrl(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::GetJobGroupOutcome CCCClient::getJobGroup(const GetJobGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,42 +1995,6 @@ CCCClient::GetJobTemplateDownloadParamsOutcomeCallable CCCClient::getJobTemplate
 	return task->get_future();
 }
 
-CCCClient::GetJobsProgressOutcome CCCClient::getJobsProgress(const GetJobsProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetJobsProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetJobsProgressOutcome(GetJobsProgressResult(outcome.result()));
-	else
-		return GetJobsProgressOutcome(outcome.error());
-}
-
-void CCCClient::getJobsProgressAsync(const GetJobsProgressRequest& request, const GetJobsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getJobsProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetJobsProgressOutcomeCallable CCCClient::getJobsProgressCallable(const GetJobsProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetJobsProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->getJobsProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::GetNumberRegionInfoOutcome CCCClient::getNumberRegionInfo(const GetNumberRegionInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2385,42 +2025,6 @@ CCCClient::GetNumberRegionInfoOutcomeCallable CCCClient::getNumberRegionInfoCall
 			[this, request]()
 			{
 			return this->getNumberRegionInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::GetPredictiveJobOutcome CCCClient::getPredictiveJob(const GetPredictiveJobRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetPredictiveJobOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetPredictiveJobOutcome(GetPredictiveJobResult(outcome.result()));
-	else
-		return GetPredictiveJobOutcome(outcome.error());
-}
-
-void CCCClient::getPredictiveJobAsync(const GetPredictiveJobRequest& request, const GetPredictiveJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getPredictiveJob(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::GetPredictiveJobOutcomeCallable CCCClient::getPredictiveJobCallable(const GetPredictiveJobRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetPredictiveJobOutcome()>>(
-			[this, request]()
-			{
-			return this->getPredictiveJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3651,150 +3255,6 @@ CCCClient::ListPhoneTagsOutcomeCallable CCCClient::listPhoneTagsCallable(const L
 	return task->get_future();
 }
 
-CCCClient::ListPredictiveJobGroupsOutcome CCCClient::listPredictiveJobGroups(const ListPredictiveJobGroupsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPredictiveJobGroupsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPredictiveJobGroupsOutcome(ListPredictiveJobGroupsResult(outcome.result()));
-	else
-		return ListPredictiveJobGroupsOutcome(outcome.error());
-}
-
-void CCCClient::listPredictiveJobGroupsAsync(const ListPredictiveJobGroupsRequest& request, const ListPredictiveJobGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPredictiveJobGroups(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ListPredictiveJobGroupsOutcomeCallable CCCClient::listPredictiveJobGroupsCallable(const ListPredictiveJobGroupsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPredictiveJobGroupsOutcome()>>(
-			[this, request]()
-			{
-			return this->listPredictiveJobGroups(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::ListPredictiveJobStatusOutcome CCCClient::listPredictiveJobStatus(const ListPredictiveJobStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPredictiveJobStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPredictiveJobStatusOutcome(ListPredictiveJobStatusResult(outcome.result()));
-	else
-		return ListPredictiveJobStatusOutcome(outcome.error());
-}
-
-void CCCClient::listPredictiveJobStatusAsync(const ListPredictiveJobStatusRequest& request, const ListPredictiveJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPredictiveJobStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ListPredictiveJobStatusOutcomeCallable CCCClient::listPredictiveJobStatusCallable(const ListPredictiveJobStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPredictiveJobStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->listPredictiveJobStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::ListPrivacyNumberCallDetailsOutcome CCCClient::listPrivacyNumberCallDetails(const ListPrivacyNumberCallDetailsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPrivacyNumberCallDetailsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPrivacyNumberCallDetailsOutcome(ListPrivacyNumberCallDetailsResult(outcome.result()));
-	else
-		return ListPrivacyNumberCallDetailsOutcome(outcome.error());
-}
-
-void CCCClient::listPrivacyNumberCallDetailsAsync(const ListPrivacyNumberCallDetailsRequest& request, const ListPrivacyNumberCallDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPrivacyNumberCallDetails(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ListPrivacyNumberCallDetailsOutcomeCallable CCCClient::listPrivacyNumberCallDetailsCallable(const ListPrivacyNumberCallDetailsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPrivacyNumberCallDetailsOutcome()>>(
-			[this, request]()
-			{
-			return this->listPrivacyNumberCallDetails(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::ListPrivilegesOfUserOutcome CCCClient::listPrivilegesOfUser(const ListPrivilegesOfUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListPrivilegesOfUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListPrivilegesOfUserOutcome(ListPrivilegesOfUserResult(outcome.result()));
-	else
-		return ListPrivilegesOfUserOutcome(outcome.error());
-}
-
-void CCCClient::listPrivilegesOfUserAsync(const ListPrivilegesOfUserRequest& request, const ListPrivilegesOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listPrivilegesOfUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ListPrivilegesOfUserOutcomeCallable CCCClient::listPrivilegesOfUserCallable(const ListPrivilegesOfUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListPrivilegesOfUserOutcome()>>(
-			[this, request]()
-			{
-			return this->listPrivilegesOfUser(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::ListRealTimeAgentOutcome CCCClient::listRealTimeAgent(const ListRealTimeAgentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4551,78 +4011,6 @@ CCCClient::ModifyCabInstanceOutcomeCallable CCCClient::modifyCabInstanceCallable
 	return task->get_future();
 }
 
-CCCClient::ModifyMediaOutcome CCCClient::modifyMedia(const ModifyMediaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyMediaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyMediaOutcome(ModifyMediaResult(outcome.result()));
-	else
-		return ModifyMediaOutcome(outcome.error());
-}
-
-void CCCClient::modifyMediaAsync(const ModifyMediaRequest& request, const ModifyMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyMedia(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ModifyMediaOutcomeCallable CCCClient::modifyMediaCallable(const ModifyMediaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyMediaOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyMedia(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::ModifyNotificationConfigOutcome CCCClient::modifyNotificationConfig(const ModifyNotificationConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyNotificationConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyNotificationConfigOutcome(ModifyNotificationConfigResult(outcome.result()));
-	else
-		return ModifyNotificationConfigOutcome(outcome.error());
-}
-
-void CCCClient::modifyNotificationConfigAsync(const ModifyNotificationConfigRequest& request, const ModifyNotificationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyNotificationConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::ModifyNotificationConfigOutcomeCallable CCCClient::modifyNotificationConfigCallable(const ModifyNotificationConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyNotificationConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyNotificationConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::ModifyPhoneNumberOutcome CCCClient::modifyPhoneNumber(const ModifyPhoneNumberRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5055,186 +4443,6 @@ CCCClient::PickOutboundNumbersOutcomeCallable CCCClient::pickOutboundNumbersCall
 	return task->get_future();
 }
 
-CCCClient::PickOutboundNumbersByTagsOutcome CCCClient::pickOutboundNumbersByTags(const PickOutboundNumbersByTagsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PickOutboundNumbersByTagsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PickOutboundNumbersByTagsOutcome(PickOutboundNumbersByTagsResult(outcome.result()));
-	else
-		return PickOutboundNumbersByTagsOutcome(outcome.error());
-}
-
-void CCCClient::pickOutboundNumbersByTagsAsync(const PickOutboundNumbersByTagsRequest& request, const PickOutboundNumbersByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, pickOutboundNumbersByTags(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PickOutboundNumbersByTagsOutcomeCallable CCCClient::pickOutboundNumbersByTagsCallable(const PickOutboundNumbersByTagsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PickOutboundNumbersByTagsOutcome()>>(
-			[this, request]()
-			{
-			return this->pickOutboundNumbersByTags(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::PreCreateMediaOutcome CCCClient::preCreateMedia(const PreCreateMediaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PreCreateMediaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PreCreateMediaOutcome(PreCreateMediaResult(outcome.result()));
-	else
-		return PreCreateMediaOutcome(outcome.error());
-}
-
-void CCCClient::preCreateMediaAsync(const PreCreateMediaRequest& request, const PreCreateMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, preCreateMedia(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PreCreateMediaOutcomeCallable CCCClient::preCreateMediaCallable(const PreCreateMediaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PreCreateMediaOutcome()>>(
-			[this, request]()
-			{
-			return this->preCreateMedia(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::PreModifyMediaOutcome CCCClient::preModifyMedia(const PreModifyMediaRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PreModifyMediaOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PreModifyMediaOutcome(PreModifyMediaResult(outcome.result()));
-	else
-		return PreModifyMediaOutcome(outcome.error());
-}
-
-void CCCClient::preModifyMediaAsync(const PreModifyMediaRequest& request, const PreModifyMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, preModifyMedia(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PreModifyMediaOutcomeCallable CCCClient::preModifyMediaCallable(const PreModifyMediaRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PreModifyMediaOutcome()>>(
-			[this, request]()
-			{
-			return this->preModifyMedia(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::PredictiveRecordFailureOutcome CCCClient::predictiveRecordFailure(const PredictiveRecordFailureRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PredictiveRecordFailureOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PredictiveRecordFailureOutcome(PredictiveRecordFailureResult(outcome.result()));
-	else
-		return PredictiveRecordFailureOutcome(outcome.error());
-}
-
-void CCCClient::predictiveRecordFailureAsync(const PredictiveRecordFailureRequest& request, const PredictiveRecordFailureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, predictiveRecordFailure(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PredictiveRecordFailureOutcomeCallable CCCClient::predictiveRecordFailureCallable(const PredictiveRecordFailureRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PredictiveRecordFailureOutcome()>>(
-			[this, request]()
-			{
-			return this->predictiveRecordFailure(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::PredictiveRecordSuccessOutcome CCCClient::predictiveRecordSuccess(const PredictiveRecordSuccessRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PredictiveRecordSuccessOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PredictiveRecordSuccessOutcome(PredictiveRecordSuccessResult(outcome.result()));
-	else
-		return PredictiveRecordSuccessOutcome(outcome.error());
-}
-
-void CCCClient::predictiveRecordSuccessAsync(const PredictiveRecordSuccessRequest& request, const PredictiveRecordSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, predictiveRecordSuccess(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PredictiveRecordSuccessOutcomeCallable CCCClient::predictiveRecordSuccessCallable(const PredictiveRecordSuccessRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PredictiveRecordSuccessOutcome()>>(
-			[this, request]()
-			{
-			return this->predictiveRecordSuccess(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::PublishContactFlowVersionOutcome CCCClient::publishContactFlowVersion(const PublishContactFlowVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5265,42 +4473,6 @@ CCCClient::PublishContactFlowVersionOutcomeCallable CCCClient::publishContactFlo
 			[this, request]()
 			{
 			return this->publishContactFlowVersion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::PublishPredictiveJobGroupOutcome CCCClient::publishPredictiveJobGroup(const PublishPredictiveJobGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PublishPredictiveJobGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PublishPredictiveJobGroupOutcome(PublishPredictiveJobGroupResult(outcome.result()));
-	else
-		return PublishPredictiveJobGroupOutcome(outcome.error());
-}
-
-void CCCClient::publishPredictiveJobGroupAsync(const PublishPredictiveJobGroupRequest& request, const PublishPredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, publishPredictiveJobGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::PublishPredictiveJobGroupOutcomeCallable CCCClient::publishPredictiveJobGroupCallable(const PublishPredictiveJobGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PublishPredictiveJobGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->publishPredictiveJobGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5343,42 +4515,6 @@ CCCClient::PublishSurveyOutcomeCallable CCCClient::publishSurveyCallable(const P
 	return task->get_future();
 }
 
-CCCClient::QueryRedialIndicatorOutcome CCCClient::queryRedialIndicator(const QueryRedialIndicatorRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryRedialIndicatorOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryRedialIndicatorOutcome(QueryRedialIndicatorResult(outcome.result()));
-	else
-		return QueryRedialIndicatorOutcome(outcome.error());
-}
-
-void CCCClient::queryRedialIndicatorAsync(const QueryRedialIndicatorRequest& request, const QueryRedialIndicatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryRedialIndicator(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::QueryRedialIndicatorOutcomeCallable CCCClient::queryRedialIndicatorCallable(const QueryRedialIndicatorRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryRedialIndicatorOutcome()>>(
-			[this, request]()
-			{
-			return this->queryRedialIndicator(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::RefreshTokenOutcome CCCClient::refreshToken(const RefreshTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5409,42 +4545,6 @@ CCCClient::RefreshTokenOutcomeCallable CCCClient::refreshTokenCallable(const Ref
 			[this, request]()
 			{
 			return this->refreshToken(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::RemoveNumberFromSkillGroupOutcome CCCClient::removeNumberFromSkillGroup(const RemoveNumberFromSkillGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RemoveNumberFromSkillGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RemoveNumberFromSkillGroupOutcome(RemoveNumberFromSkillGroupResult(outcome.result()));
-	else
-		return RemoveNumberFromSkillGroupOutcome(outcome.error());
-}
-
-void CCCClient::removeNumberFromSkillGroupAsync(const RemoveNumberFromSkillGroupRequest& request, const RemoveNumberFromSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, removeNumberFromSkillGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::RemoveNumberFromSkillGroupOutcomeCallable CCCClient::removeNumberFromSkillGroupCallable(const RemoveNumberFromSkillGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RemoveNumberFromSkillGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->removeNumberFromSkillGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5775,42 +4875,6 @@ CCCClient::SendPredefinedShortMessageOutcomeCallable CCCClient::sendPredefinedSh
 	return task->get_future();
 }
 
-CCCClient::SimpleDialOutcome CCCClient::simpleDial(const SimpleDialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SimpleDialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SimpleDialOutcome(SimpleDialResult(outcome.result()));
-	else
-		return SimpleDialOutcome(outcome.error());
-}
-
-void CCCClient::simpleDialAsync(const SimpleDialRequest& request, const SimpleDialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, simpleDial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::SimpleDialOutcomeCallable CCCClient::simpleDialCallable(const SimpleDialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SimpleDialOutcome()>>(
-			[this, request]()
-			{
-			return this->simpleDial(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CCCClient::StartBack2BackCallOutcome CCCClient::startBack2BackCall(const StartBack2BackCallRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6021,42 +5085,6 @@ CCCClient::TaskPreparingOutcomeCallable CCCClient::taskPreparingCallable(const T
 			[this, request]()
 			{
 			return this->taskPreparing(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CCCClient::TwoPartiesCallOutcome CCCClient::twoPartiesCall(const TwoPartiesCallRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TwoPartiesCallOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TwoPartiesCallOutcome(TwoPartiesCallResult(outcome.result()));
-	else
-		return TwoPartiesCallOutcome(outcome.error());
-}
-
-void CCCClient::twoPartiesCallAsync(const TwoPartiesCallRequest& request, const TwoPartiesCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, twoPartiesCall(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CCCClient::TwoPartiesCallOutcomeCallable CCCClient::twoPartiesCallCallable(const TwoPartiesCallRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TwoPartiesCallOutcome()>>(
-			[this, request]()
-			{
-			return this->twoPartiesCall(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

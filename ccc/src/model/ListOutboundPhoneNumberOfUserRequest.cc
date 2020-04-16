@@ -27,17 +27,6 @@ ListOutboundPhoneNumberOfUserRequest::ListOutboundPhoneNumberOfUserRequest() :
 ListOutboundPhoneNumberOfUserRequest::~ListOutboundPhoneNumberOfUserRequest()
 {}
 
-std::string ListOutboundPhoneNumberOfUserRequest::getInstanceId()const
-{
-	return instanceId_;
-}
-
-void ListOutboundPhoneNumberOfUserRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
-}
-
 std::string ListOutboundPhoneNumberOfUserRequest::getUserId()const
 {
 	return userId_;
@@ -49,6 +38,17 @@ void ListOutboundPhoneNumberOfUserRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+int ListOutboundPhoneNumberOfUserRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListOutboundPhoneNumberOfUserRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListOutboundPhoneNumberOfUserRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +58,27 @@ void ListOutboundPhoneNumberOfUserRequest::setAccessKeyId(const std::string& acc
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ListOutboundPhoneNumberOfUserRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void ListOutboundPhoneNumberOfUserRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
+}
+
+int ListOutboundPhoneNumberOfUserRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListOutboundPhoneNumberOfUserRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 

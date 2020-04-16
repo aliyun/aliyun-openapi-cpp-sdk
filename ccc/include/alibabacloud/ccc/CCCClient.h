@@ -26,8 +26,6 @@
 #include "model/AddAgentDeviceResult.h"
 #include "model/AddBulkPhoneNumbersRequest.h"
 #include "model/AddBulkPhoneNumbersResult.h"
-#include "model/AddNumberToSkillGroupRequest.h"
-#include "model/AddNumberToSkillGroupResult.h"
 #include "model/AddPhoneNumberRequest.h"
 #include "model/AddPhoneNumberResult.h"
 #include "model/AddPhoneTagsRequest.h"
@@ -40,16 +38,12 @@
 #include "model/CallOnlinePrivacyNumberResult.h"
 #include "model/CancelJobsRequest.h"
 #include "model/CancelJobsResult.h"
-#include "model/CancelPredictiveJobsRequest.h"
-#include "model/CancelPredictiveJobsResult.h"
 #include "model/CheckNumberAvaliableRequest.h"
 #include "model/CheckNumberAvaliableResult.h"
 #include "model/CommitContactFlowVersionModificationRequest.h"
 #include "model/CommitContactFlowVersionModificationResult.h"
 #include "model/CreateBatchJobsRequest.h"
 #include "model/CreateBatchJobsResult.h"
-#include "model/CreateCCCPostOrderRequest.h"
-#include "model/CreateCCCPostOrderResult.h"
 #include "model/CreateCabInstanceRequest.h"
 #include "model/CreateCabInstanceResult.h"
 #include "model/CreateContactFlowRequest.h"
@@ -62,10 +56,6 @@
 #include "model/CreateJobGroupResult.h"
 #include "model/CreateMediaRequest.h"
 #include "model/CreateMediaResult.h"
-#include "model/CreatePredictiveJobGroupRequest.h"
-#include "model/CreatePredictiveJobGroupResult.h"
-#include "model/CreatePredictiveJobsRequest.h"
-#include "model/CreatePredictiveJobsResult.h"
 #include "model/CreateScenarioRequest.h"
 #include "model/CreateScenarioResult.h"
 #include "model/CreateScenarioFromTemplateRequest.h"
@@ -110,16 +100,10 @@
 #include "model/GenerateAgentStatisticReportResult.h"
 #include "model/GetAgentDataRequest.h"
 #include "model/GetAgentDataResult.h"
-#include "model/GetAgentStateRequest.h"
-#include "model/GetAgentStateResult.h"
 #include "model/GetCallMeasureSummaryReportRequest.h"
 #include "model/GetCallMeasureSummaryReportResult.h"
 #include "model/GetConfigRequest.h"
 #include "model/GetConfigResult.h"
-#include "model/GetContactIdentifyByOutBoundTaskIdRequest.h"
-#include "model/GetContactIdentifyByOutBoundTaskIdResult.h"
-#include "model/GetContactInfoByOutboundTaskIdRequest.h"
-#include "model/GetContactInfoByOutboundTaskIdResult.h"
 #include "model/GetConversationDetailByContactIdRequest.h"
 #include "model/GetConversationDetailByContactIdResult.h"
 #include "model/GetConversationListRequest.h"
@@ -138,8 +122,6 @@
 #include "model/GetJobResult.h"
 #include "model/GetJobDataUploadParamsRequest.h"
 #include "model/GetJobDataUploadParamsResult.h"
-#include "model/GetJobFileUploadUrlRequest.h"
-#include "model/GetJobFileUploadUrlResult.h"
 #include "model/GetJobGroupRequest.h"
 #include "model/GetJobGroupResult.h"
 #include "model/GetJobListRequest.h"
@@ -148,12 +130,8 @@
 #include "model/GetJobStatusByCallIdResult.h"
 #include "model/GetJobTemplateDownloadParamsRequest.h"
 #include "model/GetJobTemplateDownloadParamsResult.h"
-#include "model/GetJobsProgressRequest.h"
-#include "model/GetJobsProgressResult.h"
 #include "model/GetNumberRegionInfoRequest.h"
 #include "model/GetNumberRegionInfoResult.h"
-#include "model/GetPredictiveJobRequest.h"
-#include "model/GetPredictiveJobResult.h"
 #include "model/GetRecordOssUploadParamRequest.h"
 #include "model/GetRecordOssUploadParamResult.h"
 #include "model/GetRoutePointRequest.h"
@@ -222,14 +200,6 @@
 #include "model/ListPhoneNumbersResult.h"
 #include "model/ListPhoneTagsRequest.h"
 #include "model/ListPhoneTagsResult.h"
-#include "model/ListPredictiveJobGroupsRequest.h"
-#include "model/ListPredictiveJobGroupsResult.h"
-#include "model/ListPredictiveJobStatusRequest.h"
-#include "model/ListPredictiveJobStatusResult.h"
-#include "model/ListPrivacyNumberCallDetailsRequest.h"
-#include "model/ListPrivacyNumberCallDetailsResult.h"
-#include "model/ListPrivilegesOfUserRequest.h"
-#include "model/ListPrivilegesOfUserResult.h"
 #include "model/ListRealTimeAgentRequest.h"
 #include "model/ListRealTimeAgentResult.h"
 #include "model/ListRecentCallRecordsRequest.h"
@@ -272,10 +242,6 @@
 #include "model/ModifyAgentDeviceResult.h"
 #include "model/ModifyCabInstanceRequest.h"
 #include "model/ModifyCabInstanceResult.h"
-#include "model/ModifyMediaRequest.h"
-#include "model/ModifyMediaResult.h"
-#include "model/ModifyNotificationConfigRequest.h"
-#include "model/ModifyNotificationConfigResult.h"
 #include "model/ModifyPhoneNumberRequest.h"
 #include "model/ModifyPhoneNumberResult.h"
 #include "model/ModifyPhoneTagsRequest.h"
@@ -300,28 +266,12 @@
 #include "model/PickLocalNumberResult.h"
 #include "model/PickOutboundNumbersRequest.h"
 #include "model/PickOutboundNumbersResult.h"
-#include "model/PickOutboundNumbersByTagsRequest.h"
-#include "model/PickOutboundNumbersByTagsResult.h"
-#include "model/PreCreateMediaRequest.h"
-#include "model/PreCreateMediaResult.h"
-#include "model/PreModifyMediaRequest.h"
-#include "model/PreModifyMediaResult.h"
-#include "model/PredictiveRecordFailureRequest.h"
-#include "model/PredictiveRecordFailureResult.h"
-#include "model/PredictiveRecordSuccessRequest.h"
-#include "model/PredictiveRecordSuccessResult.h"
 #include "model/PublishContactFlowVersionRequest.h"
 #include "model/PublishContactFlowVersionResult.h"
-#include "model/PublishPredictiveJobGroupRequest.h"
-#include "model/PublishPredictiveJobGroupResult.h"
 #include "model/PublishSurveyRequest.h"
 #include "model/PublishSurveyResult.h"
-#include "model/QueryRedialIndicatorRequest.h"
-#include "model/QueryRedialIndicatorResult.h"
 #include "model/RefreshTokenRequest.h"
 #include "model/RefreshTokenResult.h"
-#include "model/RemoveNumberFromSkillGroupRequest.h"
-#include "model/RemoveNumberFromSkillGroupResult.h"
 #include "model/RemovePhoneNumberRequest.h"
 #include "model/RemovePhoneNumberResult.h"
 #include "model/RemoveUsersRequest.h"
@@ -340,8 +290,6 @@
 #include "model/SaveWebRTCStatsResult.h"
 #include "model/SendPredefinedShortMessageRequest.h"
 #include "model/SendPredefinedShortMessageResult.h"
-#include "model/SimpleDialRequest.h"
-#include "model/SimpleDialResult.h"
 #include "model/StartBack2BackCallRequest.h"
 #include "model/StartBack2BackCallResult.h"
 #include "model/StartJobRequest.h"
@@ -354,8 +302,6 @@
 #include "model/SuspendJobsResult.h"
 #include "model/TaskPreparingRequest.h"
 #include "model/TaskPreparingResult.h"
-#include "model/TwoPartiesCallRequest.h"
-#include "model/TwoPartiesCallResult.h"
 
 
 namespace AlibabaCloud
@@ -371,9 +317,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddBulkPhoneNumbersResult> AddBulkPhoneNumbersOutcome;
 			typedef std::future<AddBulkPhoneNumbersOutcome> AddBulkPhoneNumbersOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AddBulkPhoneNumbersRequest&, const AddBulkPhoneNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddBulkPhoneNumbersAsyncHandler;
-			typedef Outcome<Error, Model::AddNumberToSkillGroupResult> AddNumberToSkillGroupOutcome;
-			typedef std::future<AddNumberToSkillGroupOutcome> AddNumberToSkillGroupOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::AddNumberToSkillGroupRequest&, const AddNumberToSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddNumberToSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::AddPhoneNumberResult> AddPhoneNumberOutcome;
 			typedef std::future<AddPhoneNumberOutcome> AddPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::AddPhoneNumberRequest&, const AddPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddPhoneNumberAsyncHandler;
@@ -392,9 +335,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelJobsResult> CancelJobsOutcome;
 			typedef std::future<CancelJobsOutcome> CancelJobsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CancelJobsRequest&, const CancelJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelJobsAsyncHandler;
-			typedef Outcome<Error, Model::CancelPredictiveJobsResult> CancelPredictiveJobsOutcome;
-			typedef std::future<CancelPredictiveJobsOutcome> CancelPredictiveJobsOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::CancelPredictiveJobsRequest&, const CancelPredictiveJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPredictiveJobsAsyncHandler;
 			typedef Outcome<Error, Model::CheckNumberAvaliableResult> CheckNumberAvaliableOutcome;
 			typedef std::future<CheckNumberAvaliableOutcome> CheckNumberAvaliableOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CheckNumberAvaliableRequest&, const CheckNumberAvaliableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckNumberAvaliableAsyncHandler;
@@ -404,9 +344,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateBatchJobsResult> CreateBatchJobsOutcome;
 			typedef std::future<CreateBatchJobsOutcome> CreateBatchJobsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CreateBatchJobsRequest&, const CreateBatchJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchJobsAsyncHandler;
-			typedef Outcome<Error, Model::CreateCCCPostOrderResult> CreateCCCPostOrderOutcome;
-			typedef std::future<CreateCCCPostOrderOutcome> CreateCCCPostOrderOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::CreateCCCPostOrderRequest&, const CreateCCCPostOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCCCPostOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateCabInstanceResult> CreateCabInstanceOutcome;
 			typedef std::future<CreateCabInstanceOutcome> CreateCabInstanceOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CreateCabInstanceRequest&, const CreateCabInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCabInstanceAsyncHandler;
@@ -425,12 +362,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMediaResult> CreateMediaOutcome;
 			typedef std::future<CreateMediaOutcome> CreateMediaOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CreateMediaRequest&, const CreateMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaAsyncHandler;
-			typedef Outcome<Error, Model::CreatePredictiveJobGroupResult> CreatePredictiveJobGroupOutcome;
-			typedef std::future<CreatePredictiveJobGroupOutcome> CreatePredictiveJobGroupOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::CreatePredictiveJobGroupRequest&, const CreatePredictiveJobGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePredictiveJobGroupAsyncHandler;
-			typedef Outcome<Error, Model::CreatePredictiveJobsResult> CreatePredictiveJobsOutcome;
-			typedef std::future<CreatePredictiveJobsOutcome> CreatePredictiveJobsOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::CreatePredictiveJobsRequest&, const CreatePredictiveJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePredictiveJobsAsyncHandler;
 			typedef Outcome<Error, Model::CreateScenarioResult> CreateScenarioOutcome;
 			typedef std::future<CreateScenarioOutcome> CreateScenarioOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::CreateScenarioRequest&, const CreateScenarioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScenarioAsyncHandler;
@@ -497,21 +428,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAgentDataResult> GetAgentDataOutcome;
 			typedef std::future<GetAgentDataOutcome> GetAgentDataOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetAgentDataRequest&, const GetAgentDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentDataAsyncHandler;
-			typedef Outcome<Error, Model::GetAgentStateResult> GetAgentStateOutcome;
-			typedef std::future<GetAgentStateOutcome> GetAgentStateOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetAgentStateRequest&, const GetAgentStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAgentStateAsyncHandler;
 			typedef Outcome<Error, Model::GetCallMeasureSummaryReportResult> GetCallMeasureSummaryReportOutcome;
 			typedef std::future<GetCallMeasureSummaryReportOutcome> GetCallMeasureSummaryReportOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetCallMeasureSummaryReportRequest&, const GetCallMeasureSummaryReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCallMeasureSummaryReportAsyncHandler;
 			typedef Outcome<Error, Model::GetConfigResult> GetConfigOutcome;
 			typedef std::future<GetConfigOutcome> GetConfigOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetConfigRequest&, const GetConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConfigAsyncHandler;
-			typedef Outcome<Error, Model::GetContactIdentifyByOutBoundTaskIdResult> GetContactIdentifyByOutBoundTaskIdOutcome;
-			typedef std::future<GetContactIdentifyByOutBoundTaskIdOutcome> GetContactIdentifyByOutBoundTaskIdOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetContactIdentifyByOutBoundTaskIdRequest&, const GetContactIdentifyByOutBoundTaskIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContactIdentifyByOutBoundTaskIdAsyncHandler;
-			typedef Outcome<Error, Model::GetContactInfoByOutboundTaskIdResult> GetContactInfoByOutboundTaskIdOutcome;
-			typedef std::future<GetContactInfoByOutboundTaskIdOutcome> GetContactInfoByOutboundTaskIdOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetContactInfoByOutboundTaskIdRequest&, const GetContactInfoByOutboundTaskIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContactInfoByOutboundTaskIdAsyncHandler;
 			typedef Outcome<Error, Model::GetConversationDetailByContactIdResult> GetConversationDetailByContactIdOutcome;
 			typedef std::future<GetConversationDetailByContactIdOutcome> GetConversationDetailByContactIdOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetConversationDetailByContactIdRequest&, const GetConversationDetailByContactIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConversationDetailByContactIdAsyncHandler;
@@ -539,9 +461,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobDataUploadParamsResult> GetJobDataUploadParamsOutcome;
 			typedef std::future<GetJobDataUploadParamsOutcome> GetJobDataUploadParamsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetJobDataUploadParamsRequest&, const GetJobDataUploadParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobDataUploadParamsAsyncHandler;
-			typedef Outcome<Error, Model::GetJobFileUploadUrlResult> GetJobFileUploadUrlOutcome;
-			typedef std::future<GetJobFileUploadUrlOutcome> GetJobFileUploadUrlOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetJobFileUploadUrlRequest&, const GetJobFileUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobFileUploadUrlAsyncHandler;
 			typedef Outcome<Error, Model::GetJobGroupResult> GetJobGroupOutcome;
 			typedef std::future<GetJobGroupOutcome> GetJobGroupOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetJobGroupRequest&, const GetJobGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobGroupAsyncHandler;
@@ -554,15 +473,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobTemplateDownloadParamsResult> GetJobTemplateDownloadParamsOutcome;
 			typedef std::future<GetJobTemplateDownloadParamsOutcome> GetJobTemplateDownloadParamsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetJobTemplateDownloadParamsRequest&, const GetJobTemplateDownloadParamsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobTemplateDownloadParamsAsyncHandler;
-			typedef Outcome<Error, Model::GetJobsProgressResult> GetJobsProgressOutcome;
-			typedef std::future<GetJobsProgressOutcome> GetJobsProgressOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetJobsProgressRequest&, const GetJobsProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobsProgressAsyncHandler;
 			typedef Outcome<Error, Model::GetNumberRegionInfoResult> GetNumberRegionInfoOutcome;
 			typedef std::future<GetNumberRegionInfoOutcome> GetNumberRegionInfoOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetNumberRegionInfoRequest&, const GetNumberRegionInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNumberRegionInfoAsyncHandler;
-			typedef Outcome<Error, Model::GetPredictiveJobResult> GetPredictiveJobOutcome;
-			typedef std::future<GetPredictiveJobOutcome> GetPredictiveJobOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::GetPredictiveJobRequest&, const GetPredictiveJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPredictiveJobAsyncHandler;
 			typedef Outcome<Error, Model::GetRecordOssUploadParamResult> GetRecordOssUploadParamOutcome;
 			typedef std::future<GetRecordOssUploadParamOutcome> GetRecordOssUploadParamOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetRecordOssUploadParamRequest&, const GetRecordOssUploadParamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRecordOssUploadParamAsyncHandler;
@@ -665,18 +578,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPhoneTagsResult> ListPhoneTagsOutcome;
 			typedef std::future<ListPhoneTagsOutcome> ListPhoneTagsOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListPhoneTagsRequest&, const ListPhoneTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPhoneTagsAsyncHandler;
-			typedef Outcome<Error, Model::ListPredictiveJobGroupsResult> ListPredictiveJobGroupsOutcome;
-			typedef std::future<ListPredictiveJobGroupsOutcome> ListPredictiveJobGroupsOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ListPredictiveJobGroupsRequest&, const ListPredictiveJobGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPredictiveJobGroupsAsyncHandler;
-			typedef Outcome<Error, Model::ListPredictiveJobStatusResult> ListPredictiveJobStatusOutcome;
-			typedef std::future<ListPredictiveJobStatusOutcome> ListPredictiveJobStatusOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ListPredictiveJobStatusRequest&, const ListPredictiveJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPredictiveJobStatusAsyncHandler;
-			typedef Outcome<Error, Model::ListPrivacyNumberCallDetailsResult> ListPrivacyNumberCallDetailsOutcome;
-			typedef std::future<ListPrivacyNumberCallDetailsOutcome> ListPrivacyNumberCallDetailsOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ListPrivacyNumberCallDetailsRequest&, const ListPrivacyNumberCallDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPrivacyNumberCallDetailsAsyncHandler;
-			typedef Outcome<Error, Model::ListPrivilegesOfUserResult> ListPrivilegesOfUserOutcome;
-			typedef std::future<ListPrivilegesOfUserOutcome> ListPrivilegesOfUserOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ListPrivilegesOfUserRequest&, const ListPrivilegesOfUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPrivilegesOfUserAsyncHandler;
 			typedef Outcome<Error, Model::ListRealTimeAgentResult> ListRealTimeAgentOutcome;
 			typedef std::future<ListRealTimeAgentOutcome> ListRealTimeAgentOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ListRealTimeAgentRequest&, const ListRealTimeAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRealTimeAgentAsyncHandler;
@@ -740,12 +641,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyCabInstanceResult> ModifyCabInstanceOutcome;
 			typedef std::future<ModifyCabInstanceOutcome> ModifyCabInstanceOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ModifyCabInstanceRequest&, const ModifyCabInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCabInstanceAsyncHandler;
-			typedef Outcome<Error, Model::ModifyMediaResult> ModifyMediaOutcome;
-			typedef std::future<ModifyMediaOutcome> ModifyMediaOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ModifyMediaRequest&, const ModifyMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMediaAsyncHandler;
-			typedef Outcome<Error, Model::ModifyNotificationConfigResult> ModifyNotificationConfigOutcome;
-			typedef std::future<ModifyNotificationConfigOutcome> ModifyNotificationConfigOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::ModifyNotificationConfigRequest&, const ModifyNotificationConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotificationConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyPhoneNumberResult> ModifyPhoneNumberOutcome;
 			typedef std::future<ModifyPhoneNumberOutcome> ModifyPhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::ModifyPhoneNumberRequest&, const ModifyPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneNumberAsyncHandler;
@@ -782,39 +677,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PickOutboundNumbersResult> PickOutboundNumbersOutcome;
 			typedef std::future<PickOutboundNumbersOutcome> PickOutboundNumbersOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::PickOutboundNumbersRequest&, const PickOutboundNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PickOutboundNumbersAsyncHandler;
-			typedef Outcome<Error, Model::PickOutboundNumbersByTagsResult> PickOutboundNumbersByTagsOutcome;
-			typedef std::future<PickOutboundNumbersByTagsOutcome> PickOutboundNumbersByTagsOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PickOutboundNumbersByTagsRequest&, const PickOutboundNumbersByTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PickOutboundNumbersByTagsAsyncHandler;
-			typedef Outcome<Error, Model::PreCreateMediaResult> PreCreateMediaOutcome;
-			typedef std::future<PreCreateMediaOutcome> PreCreateMediaOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PreCreateMediaRequest&, const PreCreateMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreCreateMediaAsyncHandler;
-			typedef Outcome<Error, Model::PreModifyMediaResult> PreModifyMediaOutcome;
-			typedef std::future<PreModifyMediaOutcome> PreModifyMediaOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PreModifyMediaRequest&, const PreModifyMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreModifyMediaAsyncHandler;
-			typedef Outcome<Error, Model::PredictiveRecordFailureResult> PredictiveRecordFailureOutcome;
-			typedef std::future<PredictiveRecordFailureOutcome> PredictiveRecordFailureOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PredictiveRecordFailureRequest&, const PredictiveRecordFailureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PredictiveRecordFailureAsyncHandler;
-			typedef Outcome<Error, Model::PredictiveRecordSuccessResult> PredictiveRecordSuccessOutcome;
-			typedef std::future<PredictiveRecordSuccessOutcome> PredictiveRecordSuccessOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PredictiveRecordSuccessRequest&, const PredictiveRecordSuccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PredictiveRecordSuccessAsyncHandler;
 			typedef Outcome<Error, Model::PublishContactFlowVersionResult> PublishContactFlowVersionOutcome;
 			typedef std::future<PublishContactFlowVersionOutcome> PublishContactFlowVersionOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::PublishContactFlowVersionRequest&, const PublishContactFlowVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishContactFlowVersionAsyncHandler;
-			typedef Outcome<Error, Model::PublishPredictiveJobGroupResult> PublishPredictiveJobGroupOutcome;
-			typedef std::future<PublishPredictiveJobGroupOutcome> PublishPredictiveJobGroupOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::PublishPredictiveJobGroupRequest&, const PublishPredictiveJobGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishPredictiveJobGroupAsyncHandler;
 			typedef Outcome<Error, Model::PublishSurveyResult> PublishSurveyOutcome;
 			typedef std::future<PublishSurveyOutcome> PublishSurveyOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::PublishSurveyRequest&, const PublishSurveyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishSurveyAsyncHandler;
-			typedef Outcome<Error, Model::QueryRedialIndicatorResult> QueryRedialIndicatorOutcome;
-			typedef std::future<QueryRedialIndicatorOutcome> QueryRedialIndicatorOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::QueryRedialIndicatorRequest&, const QueryRedialIndicatorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRedialIndicatorAsyncHandler;
 			typedef Outcome<Error, Model::RefreshTokenResult> RefreshTokenOutcome;
 			typedef std::future<RefreshTokenOutcome> RefreshTokenOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::RefreshTokenRequest&, const RefreshTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshTokenAsyncHandler;
-			typedef Outcome<Error, Model::RemoveNumberFromSkillGroupResult> RemoveNumberFromSkillGroupOutcome;
-			typedef std::future<RemoveNumberFromSkillGroupOutcome> RemoveNumberFromSkillGroupOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::RemoveNumberFromSkillGroupRequest&, const RemoveNumberFromSkillGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNumberFromSkillGroupAsyncHandler;
 			typedef Outcome<Error, Model::RemovePhoneNumberResult> RemovePhoneNumberOutcome;
 			typedef std::future<RemovePhoneNumberOutcome> RemovePhoneNumberOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::RemovePhoneNumberRequest&, const RemovePhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemovePhoneNumberAsyncHandler;
@@ -842,9 +713,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendPredefinedShortMessageResult> SendPredefinedShortMessageOutcome;
 			typedef std::future<SendPredefinedShortMessageOutcome> SendPredefinedShortMessageOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::SendPredefinedShortMessageRequest&, const SendPredefinedShortMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendPredefinedShortMessageAsyncHandler;
-			typedef Outcome<Error, Model::SimpleDialResult> SimpleDialOutcome;
-			typedef std::future<SimpleDialOutcome> SimpleDialOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::SimpleDialRequest&, const SimpleDialOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SimpleDialAsyncHandler;
 			typedef Outcome<Error, Model::StartBack2BackCallResult> StartBack2BackCallOutcome;
 			typedef std::future<StartBack2BackCallOutcome> StartBack2BackCallOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::StartBack2BackCallRequest&, const StartBack2BackCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBack2BackCallAsyncHandler;
@@ -863,9 +731,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TaskPreparingResult> TaskPreparingOutcome;
 			typedef std::future<TaskPreparingOutcome> TaskPreparingOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::TaskPreparingRequest&, const TaskPreparingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TaskPreparingAsyncHandler;
-			typedef Outcome<Error, Model::TwoPartiesCallResult> TwoPartiesCallOutcome;
-			typedef std::future<TwoPartiesCallOutcome> TwoPartiesCallOutcomeCallable;
-			typedef std::function<void(const CCCClient*, const Model::TwoPartiesCallRequest&, const TwoPartiesCallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TwoPartiesCallAsyncHandler;
 
 			CCCClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CCCClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -877,9 +742,6 @@ namespace AlibabaCloud
 			AddBulkPhoneNumbersOutcome addBulkPhoneNumbers(const Model::AddBulkPhoneNumbersRequest &request)const;
 			void addBulkPhoneNumbersAsync(const Model::AddBulkPhoneNumbersRequest& request, const AddBulkPhoneNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddBulkPhoneNumbersOutcomeCallable addBulkPhoneNumbersCallable(const Model::AddBulkPhoneNumbersRequest& request) const;
-			AddNumberToSkillGroupOutcome addNumberToSkillGroup(const Model::AddNumberToSkillGroupRequest &request)const;
-			void addNumberToSkillGroupAsync(const Model::AddNumberToSkillGroupRequest& request, const AddNumberToSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddNumberToSkillGroupOutcomeCallable addNumberToSkillGroupCallable(const Model::AddNumberToSkillGroupRequest& request) const;
 			AddPhoneNumberOutcome addPhoneNumber(const Model::AddPhoneNumberRequest &request)const;
 			void addPhoneNumberAsync(const Model::AddPhoneNumberRequest& request, const AddPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddPhoneNumberOutcomeCallable addPhoneNumberCallable(const Model::AddPhoneNumberRequest& request) const;
@@ -898,9 +760,6 @@ namespace AlibabaCloud
 			CancelJobsOutcome cancelJobs(const Model::CancelJobsRequest &request)const;
 			void cancelJobsAsync(const Model::CancelJobsRequest& request, const CancelJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelJobsOutcomeCallable cancelJobsCallable(const Model::CancelJobsRequest& request) const;
-			CancelPredictiveJobsOutcome cancelPredictiveJobs(const Model::CancelPredictiveJobsRequest &request)const;
-			void cancelPredictiveJobsAsync(const Model::CancelPredictiveJobsRequest& request, const CancelPredictiveJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CancelPredictiveJobsOutcomeCallable cancelPredictiveJobsCallable(const Model::CancelPredictiveJobsRequest& request) const;
 			CheckNumberAvaliableOutcome checkNumberAvaliable(const Model::CheckNumberAvaliableRequest &request)const;
 			void checkNumberAvaliableAsync(const Model::CheckNumberAvaliableRequest& request, const CheckNumberAvaliableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckNumberAvaliableOutcomeCallable checkNumberAvaliableCallable(const Model::CheckNumberAvaliableRequest& request) const;
@@ -910,9 +769,6 @@ namespace AlibabaCloud
 			CreateBatchJobsOutcome createBatchJobs(const Model::CreateBatchJobsRequest &request)const;
 			void createBatchJobsAsync(const Model::CreateBatchJobsRequest& request, const CreateBatchJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBatchJobsOutcomeCallable createBatchJobsCallable(const Model::CreateBatchJobsRequest& request) const;
-			CreateCCCPostOrderOutcome createCCCPostOrder(const Model::CreateCCCPostOrderRequest &request)const;
-			void createCCCPostOrderAsync(const Model::CreateCCCPostOrderRequest& request, const CreateCCCPostOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateCCCPostOrderOutcomeCallable createCCCPostOrderCallable(const Model::CreateCCCPostOrderRequest& request) const;
 			CreateCabInstanceOutcome createCabInstance(const Model::CreateCabInstanceRequest &request)const;
 			void createCabInstanceAsync(const Model::CreateCabInstanceRequest& request, const CreateCabInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCabInstanceOutcomeCallable createCabInstanceCallable(const Model::CreateCabInstanceRequest& request) const;
@@ -931,12 +787,6 @@ namespace AlibabaCloud
 			CreateMediaOutcome createMedia(const Model::CreateMediaRequest &request)const;
 			void createMediaAsync(const Model::CreateMediaRequest& request, const CreateMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMediaOutcomeCallable createMediaCallable(const Model::CreateMediaRequest& request) const;
-			CreatePredictiveJobGroupOutcome createPredictiveJobGroup(const Model::CreatePredictiveJobGroupRequest &request)const;
-			void createPredictiveJobGroupAsync(const Model::CreatePredictiveJobGroupRequest& request, const CreatePredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreatePredictiveJobGroupOutcomeCallable createPredictiveJobGroupCallable(const Model::CreatePredictiveJobGroupRequest& request) const;
-			CreatePredictiveJobsOutcome createPredictiveJobs(const Model::CreatePredictiveJobsRequest &request)const;
-			void createPredictiveJobsAsync(const Model::CreatePredictiveJobsRequest& request, const CreatePredictiveJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreatePredictiveJobsOutcomeCallable createPredictiveJobsCallable(const Model::CreatePredictiveJobsRequest& request) const;
 			CreateScenarioOutcome createScenario(const Model::CreateScenarioRequest &request)const;
 			void createScenarioAsync(const Model::CreateScenarioRequest& request, const CreateScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateScenarioOutcomeCallable createScenarioCallable(const Model::CreateScenarioRequest& request) const;
@@ -1003,21 +853,12 @@ namespace AlibabaCloud
 			GetAgentDataOutcome getAgentData(const Model::GetAgentDataRequest &request)const;
 			void getAgentDataAsync(const Model::GetAgentDataRequest& request, const GetAgentDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAgentDataOutcomeCallable getAgentDataCallable(const Model::GetAgentDataRequest& request) const;
-			GetAgentStateOutcome getAgentState(const Model::GetAgentStateRequest &request)const;
-			void getAgentStateAsync(const Model::GetAgentStateRequest& request, const GetAgentStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAgentStateOutcomeCallable getAgentStateCallable(const Model::GetAgentStateRequest& request) const;
 			GetCallMeasureSummaryReportOutcome getCallMeasureSummaryReport(const Model::GetCallMeasureSummaryReportRequest &request)const;
 			void getCallMeasureSummaryReportAsync(const Model::GetCallMeasureSummaryReportRequest& request, const GetCallMeasureSummaryReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCallMeasureSummaryReportOutcomeCallable getCallMeasureSummaryReportCallable(const Model::GetCallMeasureSummaryReportRequest& request) const;
 			GetConfigOutcome getConfig(const Model::GetConfigRequest &request)const;
 			void getConfigAsync(const Model::GetConfigRequest& request, const GetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConfigOutcomeCallable getConfigCallable(const Model::GetConfigRequest& request) const;
-			GetContactIdentifyByOutBoundTaskIdOutcome getContactIdentifyByOutBoundTaskId(const Model::GetContactIdentifyByOutBoundTaskIdRequest &request)const;
-			void getContactIdentifyByOutBoundTaskIdAsync(const Model::GetContactIdentifyByOutBoundTaskIdRequest& request, const GetContactIdentifyByOutBoundTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetContactIdentifyByOutBoundTaskIdOutcomeCallable getContactIdentifyByOutBoundTaskIdCallable(const Model::GetContactIdentifyByOutBoundTaskIdRequest& request) const;
-			GetContactInfoByOutboundTaskIdOutcome getContactInfoByOutboundTaskId(const Model::GetContactInfoByOutboundTaskIdRequest &request)const;
-			void getContactInfoByOutboundTaskIdAsync(const Model::GetContactInfoByOutboundTaskIdRequest& request, const GetContactInfoByOutboundTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetContactInfoByOutboundTaskIdOutcomeCallable getContactInfoByOutboundTaskIdCallable(const Model::GetContactInfoByOutboundTaskIdRequest& request) const;
 			GetConversationDetailByContactIdOutcome getConversationDetailByContactId(const Model::GetConversationDetailByContactIdRequest &request)const;
 			void getConversationDetailByContactIdAsync(const Model::GetConversationDetailByContactIdRequest& request, const GetConversationDetailByContactIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConversationDetailByContactIdOutcomeCallable getConversationDetailByContactIdCallable(const Model::GetConversationDetailByContactIdRequest& request) const;
@@ -1045,9 +886,6 @@ namespace AlibabaCloud
 			GetJobDataUploadParamsOutcome getJobDataUploadParams(const Model::GetJobDataUploadParamsRequest &request)const;
 			void getJobDataUploadParamsAsync(const Model::GetJobDataUploadParamsRequest& request, const GetJobDataUploadParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobDataUploadParamsOutcomeCallable getJobDataUploadParamsCallable(const Model::GetJobDataUploadParamsRequest& request) const;
-			GetJobFileUploadUrlOutcome getJobFileUploadUrl(const Model::GetJobFileUploadUrlRequest &request)const;
-			void getJobFileUploadUrlAsync(const Model::GetJobFileUploadUrlRequest& request, const GetJobFileUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetJobFileUploadUrlOutcomeCallable getJobFileUploadUrlCallable(const Model::GetJobFileUploadUrlRequest& request) const;
 			GetJobGroupOutcome getJobGroup(const Model::GetJobGroupRequest &request)const;
 			void getJobGroupAsync(const Model::GetJobGroupRequest& request, const GetJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobGroupOutcomeCallable getJobGroupCallable(const Model::GetJobGroupRequest& request) const;
@@ -1060,15 +898,9 @@ namespace AlibabaCloud
 			GetJobTemplateDownloadParamsOutcome getJobTemplateDownloadParams(const Model::GetJobTemplateDownloadParamsRequest &request)const;
 			void getJobTemplateDownloadParamsAsync(const Model::GetJobTemplateDownloadParamsRequest& request, const GetJobTemplateDownloadParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobTemplateDownloadParamsOutcomeCallable getJobTemplateDownloadParamsCallable(const Model::GetJobTemplateDownloadParamsRequest& request) const;
-			GetJobsProgressOutcome getJobsProgress(const Model::GetJobsProgressRequest &request)const;
-			void getJobsProgressAsync(const Model::GetJobsProgressRequest& request, const GetJobsProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetJobsProgressOutcomeCallable getJobsProgressCallable(const Model::GetJobsProgressRequest& request) const;
 			GetNumberRegionInfoOutcome getNumberRegionInfo(const Model::GetNumberRegionInfoRequest &request)const;
 			void getNumberRegionInfoAsync(const Model::GetNumberRegionInfoRequest& request, const GetNumberRegionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNumberRegionInfoOutcomeCallable getNumberRegionInfoCallable(const Model::GetNumberRegionInfoRequest& request) const;
-			GetPredictiveJobOutcome getPredictiveJob(const Model::GetPredictiveJobRequest &request)const;
-			void getPredictiveJobAsync(const Model::GetPredictiveJobRequest& request, const GetPredictiveJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetPredictiveJobOutcomeCallable getPredictiveJobCallable(const Model::GetPredictiveJobRequest& request) const;
 			GetRecordOssUploadParamOutcome getRecordOssUploadParam(const Model::GetRecordOssUploadParamRequest &request)const;
 			void getRecordOssUploadParamAsync(const Model::GetRecordOssUploadParamRequest& request, const GetRecordOssUploadParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRecordOssUploadParamOutcomeCallable getRecordOssUploadParamCallable(const Model::GetRecordOssUploadParamRequest& request) const;
@@ -1171,18 +1003,6 @@ namespace AlibabaCloud
 			ListPhoneTagsOutcome listPhoneTags(const Model::ListPhoneTagsRequest &request)const;
 			void listPhoneTagsAsync(const Model::ListPhoneTagsRequest& request, const ListPhoneTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPhoneTagsOutcomeCallable listPhoneTagsCallable(const Model::ListPhoneTagsRequest& request) const;
-			ListPredictiveJobGroupsOutcome listPredictiveJobGroups(const Model::ListPredictiveJobGroupsRequest &request)const;
-			void listPredictiveJobGroupsAsync(const Model::ListPredictiveJobGroupsRequest& request, const ListPredictiveJobGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPredictiveJobGroupsOutcomeCallable listPredictiveJobGroupsCallable(const Model::ListPredictiveJobGroupsRequest& request) const;
-			ListPredictiveJobStatusOutcome listPredictiveJobStatus(const Model::ListPredictiveJobStatusRequest &request)const;
-			void listPredictiveJobStatusAsync(const Model::ListPredictiveJobStatusRequest& request, const ListPredictiveJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPredictiveJobStatusOutcomeCallable listPredictiveJobStatusCallable(const Model::ListPredictiveJobStatusRequest& request) const;
-			ListPrivacyNumberCallDetailsOutcome listPrivacyNumberCallDetails(const Model::ListPrivacyNumberCallDetailsRequest &request)const;
-			void listPrivacyNumberCallDetailsAsync(const Model::ListPrivacyNumberCallDetailsRequest& request, const ListPrivacyNumberCallDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPrivacyNumberCallDetailsOutcomeCallable listPrivacyNumberCallDetailsCallable(const Model::ListPrivacyNumberCallDetailsRequest& request) const;
-			ListPrivilegesOfUserOutcome listPrivilegesOfUser(const Model::ListPrivilegesOfUserRequest &request)const;
-			void listPrivilegesOfUserAsync(const Model::ListPrivilegesOfUserRequest& request, const ListPrivilegesOfUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPrivilegesOfUserOutcomeCallable listPrivilegesOfUserCallable(const Model::ListPrivilegesOfUserRequest& request) const;
 			ListRealTimeAgentOutcome listRealTimeAgent(const Model::ListRealTimeAgentRequest &request)const;
 			void listRealTimeAgentAsync(const Model::ListRealTimeAgentRequest& request, const ListRealTimeAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRealTimeAgentOutcomeCallable listRealTimeAgentCallable(const Model::ListRealTimeAgentRequest& request) const;
@@ -1246,12 +1066,6 @@ namespace AlibabaCloud
 			ModifyCabInstanceOutcome modifyCabInstance(const Model::ModifyCabInstanceRequest &request)const;
 			void modifyCabInstanceAsync(const Model::ModifyCabInstanceRequest& request, const ModifyCabInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCabInstanceOutcomeCallable modifyCabInstanceCallable(const Model::ModifyCabInstanceRequest& request) const;
-			ModifyMediaOutcome modifyMedia(const Model::ModifyMediaRequest &request)const;
-			void modifyMediaAsync(const Model::ModifyMediaRequest& request, const ModifyMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyMediaOutcomeCallable modifyMediaCallable(const Model::ModifyMediaRequest& request) const;
-			ModifyNotificationConfigOutcome modifyNotificationConfig(const Model::ModifyNotificationConfigRequest &request)const;
-			void modifyNotificationConfigAsync(const Model::ModifyNotificationConfigRequest& request, const ModifyNotificationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyNotificationConfigOutcomeCallable modifyNotificationConfigCallable(const Model::ModifyNotificationConfigRequest& request) const;
 			ModifyPhoneNumberOutcome modifyPhoneNumber(const Model::ModifyPhoneNumberRequest &request)const;
 			void modifyPhoneNumberAsync(const Model::ModifyPhoneNumberRequest& request, const ModifyPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyPhoneNumberOutcomeCallable modifyPhoneNumberCallable(const Model::ModifyPhoneNumberRequest& request) const;
@@ -1288,39 +1102,15 @@ namespace AlibabaCloud
 			PickOutboundNumbersOutcome pickOutboundNumbers(const Model::PickOutboundNumbersRequest &request)const;
 			void pickOutboundNumbersAsync(const Model::PickOutboundNumbersRequest& request, const PickOutboundNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PickOutboundNumbersOutcomeCallable pickOutboundNumbersCallable(const Model::PickOutboundNumbersRequest& request) const;
-			PickOutboundNumbersByTagsOutcome pickOutboundNumbersByTags(const Model::PickOutboundNumbersByTagsRequest &request)const;
-			void pickOutboundNumbersByTagsAsync(const Model::PickOutboundNumbersByTagsRequest& request, const PickOutboundNumbersByTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PickOutboundNumbersByTagsOutcomeCallable pickOutboundNumbersByTagsCallable(const Model::PickOutboundNumbersByTagsRequest& request) const;
-			PreCreateMediaOutcome preCreateMedia(const Model::PreCreateMediaRequest &request)const;
-			void preCreateMediaAsync(const Model::PreCreateMediaRequest& request, const PreCreateMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PreCreateMediaOutcomeCallable preCreateMediaCallable(const Model::PreCreateMediaRequest& request) const;
-			PreModifyMediaOutcome preModifyMedia(const Model::PreModifyMediaRequest &request)const;
-			void preModifyMediaAsync(const Model::PreModifyMediaRequest& request, const PreModifyMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PreModifyMediaOutcomeCallable preModifyMediaCallable(const Model::PreModifyMediaRequest& request) const;
-			PredictiveRecordFailureOutcome predictiveRecordFailure(const Model::PredictiveRecordFailureRequest &request)const;
-			void predictiveRecordFailureAsync(const Model::PredictiveRecordFailureRequest& request, const PredictiveRecordFailureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PredictiveRecordFailureOutcomeCallable predictiveRecordFailureCallable(const Model::PredictiveRecordFailureRequest& request) const;
-			PredictiveRecordSuccessOutcome predictiveRecordSuccess(const Model::PredictiveRecordSuccessRequest &request)const;
-			void predictiveRecordSuccessAsync(const Model::PredictiveRecordSuccessRequest& request, const PredictiveRecordSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PredictiveRecordSuccessOutcomeCallable predictiveRecordSuccessCallable(const Model::PredictiveRecordSuccessRequest& request) const;
 			PublishContactFlowVersionOutcome publishContactFlowVersion(const Model::PublishContactFlowVersionRequest &request)const;
 			void publishContactFlowVersionAsync(const Model::PublishContactFlowVersionRequest& request, const PublishContactFlowVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishContactFlowVersionOutcomeCallable publishContactFlowVersionCallable(const Model::PublishContactFlowVersionRequest& request) const;
-			PublishPredictiveJobGroupOutcome publishPredictiveJobGroup(const Model::PublishPredictiveJobGroupRequest &request)const;
-			void publishPredictiveJobGroupAsync(const Model::PublishPredictiveJobGroupRequest& request, const PublishPredictiveJobGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			PublishPredictiveJobGroupOutcomeCallable publishPredictiveJobGroupCallable(const Model::PublishPredictiveJobGroupRequest& request) const;
 			PublishSurveyOutcome publishSurvey(const Model::PublishSurveyRequest &request)const;
 			void publishSurveyAsync(const Model::PublishSurveyRequest& request, const PublishSurveyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishSurveyOutcomeCallable publishSurveyCallable(const Model::PublishSurveyRequest& request) const;
-			QueryRedialIndicatorOutcome queryRedialIndicator(const Model::QueryRedialIndicatorRequest &request)const;
-			void queryRedialIndicatorAsync(const Model::QueryRedialIndicatorRequest& request, const QueryRedialIndicatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryRedialIndicatorOutcomeCallable queryRedialIndicatorCallable(const Model::QueryRedialIndicatorRequest& request) const;
 			RefreshTokenOutcome refreshToken(const Model::RefreshTokenRequest &request)const;
 			void refreshTokenAsync(const Model::RefreshTokenRequest& request, const RefreshTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RefreshTokenOutcomeCallable refreshTokenCallable(const Model::RefreshTokenRequest& request) const;
-			RemoveNumberFromSkillGroupOutcome removeNumberFromSkillGroup(const Model::RemoveNumberFromSkillGroupRequest &request)const;
-			void removeNumberFromSkillGroupAsync(const Model::RemoveNumberFromSkillGroupRequest& request, const RemoveNumberFromSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RemoveNumberFromSkillGroupOutcomeCallable removeNumberFromSkillGroupCallable(const Model::RemoveNumberFromSkillGroupRequest& request) const;
 			RemovePhoneNumberOutcome removePhoneNumber(const Model::RemovePhoneNumberRequest &request)const;
 			void removePhoneNumberAsync(const Model::RemovePhoneNumberRequest& request, const RemovePhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemovePhoneNumberOutcomeCallable removePhoneNumberCallable(const Model::RemovePhoneNumberRequest& request) const;
@@ -1348,9 +1138,6 @@ namespace AlibabaCloud
 			SendPredefinedShortMessageOutcome sendPredefinedShortMessage(const Model::SendPredefinedShortMessageRequest &request)const;
 			void sendPredefinedShortMessageAsync(const Model::SendPredefinedShortMessageRequest& request, const SendPredefinedShortMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendPredefinedShortMessageOutcomeCallable sendPredefinedShortMessageCallable(const Model::SendPredefinedShortMessageRequest& request) const;
-			SimpleDialOutcome simpleDial(const Model::SimpleDialRequest &request)const;
-			void simpleDialAsync(const Model::SimpleDialRequest& request, const SimpleDialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SimpleDialOutcomeCallable simpleDialCallable(const Model::SimpleDialRequest& request) const;
 			StartBack2BackCallOutcome startBack2BackCall(const Model::StartBack2BackCallRequest &request)const;
 			void startBack2BackCallAsync(const Model::StartBack2BackCallRequest& request, const StartBack2BackCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartBack2BackCallOutcomeCallable startBack2BackCallCallable(const Model::StartBack2BackCallRequest& request) const;
@@ -1369,9 +1156,6 @@ namespace AlibabaCloud
 			TaskPreparingOutcome taskPreparing(const Model::TaskPreparingRequest &request)const;
 			void taskPreparingAsync(const Model::TaskPreparingRequest& request, const TaskPreparingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TaskPreparingOutcomeCallable taskPreparingCallable(const Model::TaskPreparingRequest& request) const;
-			TwoPartiesCallOutcome twoPartiesCall(const Model::TwoPartiesCallRequest &request)const;
-			void twoPartiesCallAsync(const Model::TwoPartiesCallRequest& request, const TwoPartiesCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TwoPartiesCallOutcomeCallable twoPartiesCallCallable(const Model::TwoPartiesCallRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

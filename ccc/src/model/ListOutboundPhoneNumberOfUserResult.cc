@@ -90,6 +90,9 @@ void ListOutboundPhoneNumberOfUserResult::parse(const std::string &payload)
 			outboundPhoneNumbersObject.privacyNumber.regionNameCity = privacyNumberNode["RegionNameCity"].asString();
 		outboundPhoneNumbers_.push_back(outboundPhoneNumbersObject);
 	}
+	auto allNumberList = value["NumberList"]["Number"];
+	for (const auto &item : allNumberList)
+		numberList_.push_back(item.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -109,6 +112,11 @@ std::string ListOutboundPhoneNumberOfUserResult::getMessage()const
 int ListOutboundPhoneNumberOfUserResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::vector<std::string> ListOutboundPhoneNumberOfUserResult::getNumberList()const
+{
+	return numberList_;
 }
 
 std::vector<ListOutboundPhoneNumberOfUserResult::PhoneNumber> ListOutboundPhoneNumberOfUserResult::getOutboundPhoneNumbers()const

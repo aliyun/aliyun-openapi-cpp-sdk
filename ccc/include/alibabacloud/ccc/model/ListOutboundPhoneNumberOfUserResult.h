@@ -68,6 +68,7 @@ namespace AlibabaCloud
 				~ListOutboundPhoneNumberOfUserResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				std::vector<std::string> getNumberList()const;
 				std::vector<PhoneNumber> getOutboundPhoneNumbers()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -77,6 +78,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
+				std::vector<std::string> numberList_;
 				std::vector<PhoneNumber> outboundPhoneNumbers_;
 				std::string code_;
 				bool success_;
