@@ -1,3 +1,6 @@
+2020-04-16 Version: 1.36.361
+- Add ModifyWhiteIps.
+
 2020-04-16 Version: 1.36.360
 - Add BatchOptimization param in Stop and Start Instances.
 - Add RemoveSymbols in GetInstanceConsoleOutput.

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_GETREGIONCONFIGURATIONREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_GETREGIONCONFIGURATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/elasticsearch/ElasticsearchExport.h>
 
 namespace AlibabaCloud
@@ -28,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT GetRegionConfigurationRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ModifyWhiteIpsResult : public ServiceResult
 			{
-
 			public:
-				GetRegionConfigurationRequest();
-				~GetRegionConfigurationRequest();
 
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
 
-            private:
-				std::string zoneId_;
+				ModifyWhiteIpsResult();
+				explicit ModifyWhiteIpsResult(const std::string &payload);
+				~ModifyWhiteIpsResult();
+				bool getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				bool result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_GETREGIONCONFIGURATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_MODIFYWHITEIPSRESULT_H_

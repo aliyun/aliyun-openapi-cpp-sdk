@@ -63,6 +63,8 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.advancedDedicateMaster = valueResultInstance["advancedDedicateMaster"].asString() == "true";
 		if(!valueResultInstance["dedicateMaster"].isNull())
 			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
+		if(!valueResultInstance["resourceGroupId"].isNull())
+			resultObject.resourceGroupId = valueResultInstance["resourceGroupId"].asString();
 		auto alltagsNode = allResultNode["tags"]["Tag"];
 		for (auto allResultNodetagsTag : alltagsNode)
 		{

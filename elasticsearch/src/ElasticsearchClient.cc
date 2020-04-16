@@ -1563,6 +1563,42 @@ ElasticsearchClient::ListTagResourcesOutcomeCallable ElasticsearchClient::listTa
 	return task->get_future();
 }
 
+ElasticsearchClient::ModifyWhiteIpsOutcome ElasticsearchClient::modifyWhiteIps(const ModifyWhiteIpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyWhiteIpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyWhiteIpsOutcome(ModifyWhiteIpsResult(outcome.result()));
+	else
+		return ModifyWhiteIpsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::modifyWhiteIpsAsync(const ModifyWhiteIpsRequest& request, const ModifyWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyWhiteIps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ModifyWhiteIpsOutcomeCallable ElasticsearchClient::modifyWhiteIpsCallable(const ModifyWhiteIpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyWhiteIpsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyWhiteIps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::MoveResourceGroupOutcome ElasticsearchClient::moveResourceGroup(const MoveResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

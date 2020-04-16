@@ -28,3 +28,14 @@ GetRegionConfigurationRequest::GetRegionConfigurationRequest() :
 GetRegionConfigurationRequest::~GetRegionConfigurationRequest()
 {}
 
+std::string GetRegionConfigurationRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void GetRegionConfigurationRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+

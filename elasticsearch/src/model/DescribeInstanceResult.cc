@@ -90,6 +90,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.enableKibanaPublicNetwork = resultNode["enableKibanaPublicNetwork"].asString() == "true";
 	if(!resultNode["haveKibana"].isNull())
 		result_.haveKibana = resultNode["haveKibana"].asString() == "true";
+	if(!resultNode["resourceGroupId"].isNull())
+		result_.resourceGroupId = resultNode["resourceGroupId"].asString();
 	auto alldictListNode = resultNode["dictList"]["DictListItem"];
 	for (auto resultNodedictListDictListItem : alldictListNode)
 	{

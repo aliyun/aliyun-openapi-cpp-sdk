@@ -112,6 +112,7 @@ namespace AlibabaCloud
 					};
 					MasterConfiguration masterConfiguration;
 					std::string description;
+					std::string resourceGroupId;
 					bool dedicateMaster;
 					std::vector<std::string> esIPBlacklist;
 					std::vector<ZoneInfo> zoneInfos;

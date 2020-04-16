@@ -73,6 +73,7 @@ namespace AlibabaCloud
 					MasterConfiguration masterConfiguration;
 					std::string status;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceId;
 					bool dedicateMaster;
 					std::string createdAt;
