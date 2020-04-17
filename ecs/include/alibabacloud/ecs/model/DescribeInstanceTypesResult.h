@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					int eniIpv6AddressQuantity;
 					int cpuCoreCount;
 					long localStorageCapacity;
+					int totalEniQueueQuantity;
 					std::string instanceTypeFamily;
 					long instancePpsRx;
 					int initialCredit;

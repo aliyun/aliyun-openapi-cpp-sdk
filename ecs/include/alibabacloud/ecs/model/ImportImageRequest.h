@@ -40,6 +40,11 @@ namespace AlibabaCloud
 					std::string oSSObject;
 					int diskImageSize;
 				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				ImportImageRequest();
@@ -53,10 +58,14 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getPlatform()const;
 				void setPlatform(const std::string& platform);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getImageName()const;
 				void setImageName(const std::string& imageName);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getArchitecture()const;
 				void setArchitecture(const std::string& architecture);
 				std::string getLicenseType()const;
@@ -75,8 +84,10 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string description_;
 				std::string platform_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string imageName_;
+				std::vector<Tag> tag_;
 				std::string architecture_;
 				std::string licenseType_;
 				std::string resourceOwnerAccount_;

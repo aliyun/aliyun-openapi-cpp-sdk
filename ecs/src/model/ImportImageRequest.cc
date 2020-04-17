@@ -80,6 +80,17 @@ void ImportImageRequest::setPlatform(const std::string& platform)
 	setParameter("Platform", platform);
 }
 
+std::string ImportImageRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ImportImageRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ImportImageRequest::getRegionId()const
 {
 	return regionId_;
@@ -100,6 +111,22 @@ void ImportImageRequest::setImageName(const std::string& imageName)
 {
 	imageName_ = imageName;
 	setParameter("ImageName", imageName);
+}
+
+std::vector<ImportImageRequest::Tag> ImportImageRequest::getTag()const
+{
+	return tag_;
+}
+
+void ImportImageRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
 std::string ImportImageRequest::getArchitecture()const

@@ -81,6 +81,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.instancePpsTx = std::stol(valueInstanceTypesInstanceType["InstancePpsTx"].asString());
 		if(!valueInstanceTypesInstanceType["InstanceFamilyLevel"].isNull())
 			instanceTypesObject.instanceFamilyLevel = valueInstanceTypesInstanceType["InstanceFamilyLevel"].asString();
+		if(!valueInstanceTypesInstanceType["TotalEniQueueQuantity"].isNull())
+			instanceTypesObject.totalEniQueueQuantity = std::stoi(valueInstanceTypesInstanceType["TotalEniQueueQuantity"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 
