@@ -34,6 +34,8 @@
 #include "model/CreateVerifySDKResult.h"
 #include "model/CreateVerifySettingRequest.h"
 #include "model/CreateVerifySettingResult.h"
+#include "model/DescribeAppInfoRequest.h"
+#include "model/DescribeAppInfoResult.h"
 #include "model/DescribeDeviceInfoRequest.h"
 #include "model/DescribeDeviceInfoResult.h"
 #include "model/DescribeFaceUsageRequest.h"
@@ -44,6 +46,10 @@
 #include "model/DescribeOssUploadTokenResult.h"
 #include "model/DescribeRPSDKRequest.h"
 #include "model/DescribeRPSDKResult.h"
+#include "model/DescribeSdkUrlRequest.h"
+#include "model/DescribeSdkUrlResult.h"
+#include "model/DescribeUpdatePackageResultRequest.h"
+#include "model/DescribeUpdatePackageResultResult.h"
 #include "model/DescribeUploadInfoRequest.h"
 #include "model/DescribeUploadInfoResult.h"
 #include "model/DescribeUserStatusRequest.h"
@@ -68,6 +74,8 @@
 #include "model/InitFaceVerifyResult.h"
 #include "model/ModifyDeviceInfoRequest.h"
 #include "model/ModifyDeviceInfoResult.h"
+#include "model/UpdateAppPackageRequest.h"
+#include "model/UpdateAppPackageResult.h"
 #include "model/UpdateVerifySettingRequest.h"
 #include "model/UpdateVerifySettingResult.h"
 #include "model/VerifyDeviceRequest.h"
@@ -101,6 +109,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVerifySettingResult> CreateVerifySettingOutcome;
 			typedef std::future<CreateVerifySettingOutcome> CreateVerifySettingOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CreateVerifySettingRequest&, const CreateVerifySettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVerifySettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppInfoResult> DescribeAppInfoOutcome;
+			typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DescribeAppInfoRequest&, const DescribeAppInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDeviceInfoResult> DescribeDeviceInfoOutcome;
 			typedef std::future<DescribeDeviceInfoOutcome> DescribeDeviceInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeDeviceInfoRequest&, const DescribeDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceInfoAsyncHandler;
@@ -116,6 +127,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRPSDKResult> DescribeRPSDKOutcome;
 			typedef std::future<DescribeRPSDKOutcome> DescribeRPSDKOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeRPSDKRequest&, const DescribeRPSDKOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRPSDKAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSdkUrlResult> DescribeSdkUrlOutcome;
+			typedef std::future<DescribeSdkUrlOutcome> DescribeSdkUrlOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DescribeSdkUrlRequest&, const DescribeSdkUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSdkUrlAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUpdatePackageResultResult> DescribeUpdatePackageResultOutcome;
+			typedef std::future<DescribeUpdatePackageResultOutcome> DescribeUpdatePackageResultOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::DescribeUpdatePackageResultRequest&, const DescribeUpdatePackageResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpdatePackageResultAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUploadInfoResult> DescribeUploadInfoOutcome;
 			typedef std::future<DescribeUploadInfoOutcome> DescribeUploadInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::DescribeUploadInfoRequest&, const DescribeUploadInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadInfoAsyncHandler;
@@ -152,6 +169,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDeviceInfoResult> ModifyDeviceInfoOutcome;
 			typedef std::future<ModifyDeviceInfoOutcome> ModifyDeviceInfoOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::ModifyDeviceInfoRequest&, const ModifyDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceInfoAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAppPackageResult> UpdateAppPackageOutcome;
+			typedef std::future<UpdateAppPackageOutcome> UpdateAppPackageOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::UpdateAppPackageRequest&, const UpdateAppPackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppPackageAsyncHandler;
 			typedef Outcome<Error, Model::UpdateVerifySettingResult> UpdateVerifySettingOutcome;
 			typedef std::future<UpdateVerifySettingOutcome> UpdateVerifySettingOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::UpdateVerifySettingRequest&, const UpdateVerifySettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVerifySettingAsyncHandler;
@@ -184,6 +204,9 @@ namespace AlibabaCloud
 			CreateVerifySettingOutcome createVerifySetting(const Model::CreateVerifySettingRequest &request)const;
 			void createVerifySettingAsync(const Model::CreateVerifySettingRequest& request, const CreateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVerifySettingOutcomeCallable createVerifySettingCallable(const Model::CreateVerifySettingRequest& request) const;
+			DescribeAppInfoOutcome describeAppInfo(const Model::DescribeAppInfoRequest &request)const;
+			void describeAppInfoAsync(const Model::DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppInfoOutcomeCallable describeAppInfoCallable(const Model::DescribeAppInfoRequest& request) const;
 			DescribeDeviceInfoOutcome describeDeviceInfo(const Model::DescribeDeviceInfoRequest &request)const;
 			void describeDeviceInfoAsync(const Model::DescribeDeviceInfoRequest& request, const DescribeDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeviceInfoOutcomeCallable describeDeviceInfoCallable(const Model::DescribeDeviceInfoRequest& request) const;
@@ -199,6 +222,12 @@ namespace AlibabaCloud
 			DescribeRPSDKOutcome describeRPSDK(const Model::DescribeRPSDKRequest &request)const;
 			void describeRPSDKAsync(const Model::DescribeRPSDKRequest& request, const DescribeRPSDKAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRPSDKOutcomeCallable describeRPSDKCallable(const Model::DescribeRPSDKRequest& request) const;
+			DescribeSdkUrlOutcome describeSdkUrl(const Model::DescribeSdkUrlRequest &request)const;
+			void describeSdkUrlAsync(const Model::DescribeSdkUrlRequest& request, const DescribeSdkUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSdkUrlOutcomeCallable describeSdkUrlCallable(const Model::DescribeSdkUrlRequest& request) const;
+			DescribeUpdatePackageResultOutcome describeUpdatePackageResult(const Model::DescribeUpdatePackageResultRequest &request)const;
+			void describeUpdatePackageResultAsync(const Model::DescribeUpdatePackageResultRequest& request, const DescribeUpdatePackageResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUpdatePackageResultOutcomeCallable describeUpdatePackageResultCallable(const Model::DescribeUpdatePackageResultRequest& request) const;
 			DescribeUploadInfoOutcome describeUploadInfo(const Model::DescribeUploadInfoRequest &request)const;
 			void describeUploadInfoAsync(const Model::DescribeUploadInfoRequest& request, const DescribeUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUploadInfoOutcomeCallable describeUploadInfoCallable(const Model::DescribeUploadInfoRequest& request) const;
@@ -235,6 +264,9 @@ namespace AlibabaCloud
 			ModifyDeviceInfoOutcome modifyDeviceInfo(const Model::ModifyDeviceInfoRequest &request)const;
 			void modifyDeviceInfoAsync(const Model::ModifyDeviceInfoRequest& request, const ModifyDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeviceInfoOutcomeCallable modifyDeviceInfoCallable(const Model::ModifyDeviceInfoRequest& request) const;
+			UpdateAppPackageOutcome updateAppPackage(const Model::UpdateAppPackageRequest &request)const;
+			void updateAppPackageAsync(const Model::UpdateAppPackageRequest& request, const UpdateAppPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAppPackageOutcomeCallable updateAppPackageCallable(const Model::UpdateAppPackageRequest& request) const;
 			UpdateVerifySettingOutcome updateVerifySetting(const Model::UpdateVerifySettingRequest &request)const;
 			void updateVerifySettingAsync(const Model::UpdateVerifySettingRequest& request, const UpdateVerifySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVerifySettingOutcomeCallable updateVerifySettingCallable(const Model::UpdateVerifySettingRequest& request) const;

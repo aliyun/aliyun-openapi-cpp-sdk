@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPDATEPACKAGERESULTREQUEST_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPDATEPACKAGERESULTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeUploadInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeUpdatePackageResultRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeUploadInfoRequest();
-				~DescribeUploadInfoRequest();
+				DescribeUpdatePackageResultRequest();
+				~DescribeUpdatePackageResultRequest();
 
-				std::string getBiz()const;
-				void setBiz(const std::string& biz);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 
             private:
-				std::string biz_;
 				std::string sourceIp_;
+				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPDATEPACKAGERESULTREQUEST_H_

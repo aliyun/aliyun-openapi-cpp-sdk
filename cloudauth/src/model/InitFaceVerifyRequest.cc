@@ -46,7 +46,7 @@ std::string InitFaceVerifyRequest::getFaceContrastPicture()const
 void InitFaceVerifyRequest::setFaceContrastPicture(const std::string& faceContrastPicture)
 {
 	faceContrastPicture_ = faceContrastPicture;
-	setParameter("FaceContrastPicture", faceContrastPicture);
+	setBodyParameter("FaceContrastPicture", faceContrastPicture);
 }
 
 std::string InitFaceVerifyRequest::getUserId()const

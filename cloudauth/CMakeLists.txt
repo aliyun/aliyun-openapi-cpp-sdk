@@ -33,6 +33,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/CreateVerifySDKResult.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/CreateVerifySettingResult.h
+	include/alibabacloud/cloudauth/model/DescribeAppInfoRequest.h
+	include/alibabacloud/cloudauth/model/DescribeAppInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeFaceUsageRequest.h
@@ -43,6 +45,10 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeOssUploadTokenResult.h
 	include/alibabacloud/cloudauth/model/DescribeRPSDKRequest.h
 	include/alibabacloud/cloudauth/model/DescribeRPSDKResult.h
+	include/alibabacloud/cloudauth/model/DescribeSdkUrlRequest.h
+	include/alibabacloud/cloudauth/model/DescribeSdkUrlResult.h
+	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultRequest.h
+	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultResult.h
 	include/alibabacloud/cloudauth/model/DescribeUploadInfoRequest.h
 	include/alibabacloud/cloudauth/model/DescribeUploadInfoResult.h
 	include/alibabacloud/cloudauth/model/DescribeUserStatusRequest.h
@@ -67,6 +73,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
+	include/alibabacloud/cloudauth/model/UpdateAppPackageRequest.h
+	include/alibabacloud/cloudauth/model/UpdateAppPackageResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingResult.h
 	include/alibabacloud/cloudauth/model/VerifyDeviceRequest.h
@@ -88,6 +96,8 @@ set(cloudauth_src
 	src/model/CreateVerifySDKResult.cc
 	src/model/CreateVerifySettingRequest.cc
 	src/model/CreateVerifySettingResult.cc
+	src/model/DescribeAppInfoRequest.cc
+	src/model/DescribeAppInfoResult.cc
 	src/model/DescribeDeviceInfoRequest.cc
 	src/model/DescribeDeviceInfoResult.cc
 	src/model/DescribeFaceUsageRequest.cc
@@ -98,6 +108,10 @@ set(cloudauth_src
 	src/model/DescribeOssUploadTokenResult.cc
 	src/model/DescribeRPSDKRequest.cc
 	src/model/DescribeRPSDKResult.cc
+	src/model/DescribeSdkUrlRequest.cc
+	src/model/DescribeSdkUrlResult.cc
+	src/model/DescribeUpdatePackageResultRequest.cc
+	src/model/DescribeUpdatePackageResultResult.cc
 	src/model/DescribeUploadInfoRequest.cc
 	src/model/DescribeUploadInfoResult.cc
 	src/model/DescribeUserStatusRequest.cc
@@ -122,6 +136,8 @@ set(cloudauth_src
 	src/model/InitFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
+	src/model/UpdateAppPackageRequest.cc
+	src/model/UpdateAppPackageResult.cc
 	src/model/UpdateVerifySettingRequest.cc
 	src/model/UpdateVerifySettingResult.cc
 	src/model/VerifyDeviceRequest.cc

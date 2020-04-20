@@ -267,6 +267,42 @@ CloudauthClient::CreateVerifySettingOutcomeCallable CloudauthClient::createVerif
 	return task->get_future();
 }
 
+CloudauthClient::DescribeAppInfoOutcome CloudauthClient::describeAppInfo(const DescribeAppInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAppInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAppInfoOutcome(DescribeAppInfoResult(outcome.result()));
+	else
+		return DescribeAppInfoOutcome(outcome.error());
+}
+
+void CloudauthClient::describeAppInfoAsync(const DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAppInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeAppInfoOutcomeCallable CloudauthClient::describeAppInfoCallable(const DescribeAppInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAppInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAppInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::DescribeDeviceInfoOutcome CloudauthClient::describeDeviceInfo(const DescribeDeviceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +477,78 @@ CloudauthClient::DescribeRPSDKOutcomeCallable CloudauthClient::describeRPSDKCall
 			[this, request]()
 			{
 			return this->describeRPSDK(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeSdkUrlOutcome CloudauthClient::describeSdkUrl(const DescribeSdkUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSdkUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSdkUrlOutcome(DescribeSdkUrlResult(outcome.result()));
+	else
+		return DescribeSdkUrlOutcome(outcome.error());
+}
+
+void CloudauthClient::describeSdkUrlAsync(const DescribeSdkUrlRequest& request, const DescribeSdkUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSdkUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeSdkUrlOutcomeCallable CloudauthClient::describeSdkUrlCallable(const DescribeSdkUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSdkUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSdkUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::DescribeUpdatePackageResultOutcome CloudauthClient::describeUpdatePackageResult(const DescribeUpdatePackageResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUpdatePackageResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUpdatePackageResultOutcome(DescribeUpdatePackageResultResult(outcome.result()));
+	else
+		return DescribeUpdatePackageResultOutcome(outcome.error());
+}
+
+void CloudauthClient::describeUpdatePackageResultAsync(const DescribeUpdatePackageResultRequest& request, const DescribeUpdatePackageResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUpdatePackageResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeUpdatePackageResultOutcomeCallable CloudauthClient::describeUpdatePackageResultCallable(const DescribeUpdatePackageResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUpdatePackageResultOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUpdatePackageResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +981,42 @@ CloudauthClient::ModifyDeviceInfoOutcomeCallable CloudauthClient::modifyDeviceIn
 			[this, request]()
 			{
 			return this->modifyDeviceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::UpdateAppPackageOutcome CloudauthClient::updateAppPackage(const UpdateAppPackageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAppPackageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAppPackageOutcome(UpdateAppPackageResult(outcome.result()));
+	else
+		return UpdateAppPackageOutcome(outcome.error());
+}
+
+void CloudauthClient::updateAppPackageAsync(const UpdateAppPackageRequest& request, const UpdateAppPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAppPackage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::UpdateAppPackageOutcomeCallable CloudauthClient::updateAppPackageCallable(const UpdateAppPackageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAppPackageOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAppPackage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

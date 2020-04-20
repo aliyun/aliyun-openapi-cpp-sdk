@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_UPDATEAPPPACKAGERESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_UPDATEAPPPACKAGERESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cloudauth/CloudauthExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeUploadInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT UpdateAppPackageResult : public ServiceResult
 			{
-
 			public:
-				DescribeUploadInfoRequest();
-				~DescribeUploadInfoRequest();
 
-				std::string getBiz()const;
-				void setBiz(const std::string& biz);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 
-            private:
-				std::string biz_;
-				std::string sourceIp_;
+				UpdateAppPackageResult();
+				explicit UpdateAppPackageResult(const std::string &payload);
+				~UpdateAppPackageResult();
+				std::string getTaskId()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_UPDATEAPPPACKAGERESULT_H_

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESDKURLRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESDKURLRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cloudauth/CloudauthExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeUploadInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeSdkUrlResult : public ServiceResult
 			{
-
 			public:
-				DescribeUploadInfoRequest();
-				~DescribeUploadInfoRequest();
 
-				std::string getBiz()const;
-				void setBiz(const std::string& biz);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 
-            private:
-				std::string biz_;
-				std::string sourceIp_;
+				DescribeSdkUrlResult();
+				explicit DescribeSdkUrlResult(const std::string &payload);
+				~DescribeSdkUrlResult();
+				std::string getSdkUrl()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string sdkUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBEUPLOADINFOREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESDKURLRESULT_H_

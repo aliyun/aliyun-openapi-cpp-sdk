@@ -14,38 +14,49 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/DescribeUploadInfoRequest.h>
+#include <alibabacloud/cloudauth/model/DescribeSdkUrlRequest.h>
 
-using AlibabaCloud::Cloudauth::Model::DescribeUploadInfoRequest;
+using AlibabaCloud::Cloudauth::Model::DescribeSdkUrlRequest;
 
-DescribeUploadInfoRequest::DescribeUploadInfoRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "DescribeUploadInfo")
+DescribeSdkUrlRequest::DescribeSdkUrlRequest() :
+	RpcServiceRequest("cloudauth", "2019-03-07", "DescribeSdkUrl")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeUploadInfoRequest::~DescribeUploadInfoRequest()
+DescribeSdkUrlRequest::~DescribeSdkUrlRequest()
 {}
 
-std::string DescribeUploadInfoRequest::getBiz()const
+bool DescribeSdkUrlRequest::getDebug()const
 {
-	return biz_;
+	return debug_;
 }
 
-void DescribeUploadInfoRequest::setBiz(const std::string& biz)
+void DescribeSdkUrlRequest::setDebug(bool debug)
 {
-	biz_ = biz;
-	setParameter("Biz", biz);
+	debug_ = debug;
+	setParameter("Debug", debug ? "true" : "false");
 }
 
-std::string DescribeUploadInfoRequest::getSourceIp()const
+std::string DescribeSdkUrlRequest::getSourceIp()const
 {
 	return sourceIp_;
 }
 
-void DescribeUploadInfoRequest::setSourceIp(const std::string& sourceIp)
+void DescribeSdkUrlRequest::setSourceIp(const std::string& sourceIp)
 {
 	sourceIp_ = sourceIp;
 	setParameter("SourceIp", sourceIp);
+}
+
+long DescribeSdkUrlRequest::getId()const
+{
+	return id_;
+}
+
+void DescribeSdkUrlRequest::setId(long id)
+{
+	id_ = id;
+	setParameter("Id", std::to_string(id));
 }
 
