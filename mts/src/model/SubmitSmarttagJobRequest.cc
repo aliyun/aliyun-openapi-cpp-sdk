@@ -137,6 +137,17 @@ void SubmitSmarttagJobRequest::setParams(const std::string& params)
 	setParameter("Params", params);
 }
 
+std::string SubmitSmarttagJobRequest::getTemplateId()const
+{
+	return templateId_;
+}
+
+void SubmitSmarttagJobRequest::setTemplateId(const std::string& templateId)
+{
+	templateId_ = templateId;
+	setParameter("TemplateId", templateId);
+}
+
 std::string SubmitSmarttagJobRequest::getPipelineId()const
 {
 	return pipelineId_;

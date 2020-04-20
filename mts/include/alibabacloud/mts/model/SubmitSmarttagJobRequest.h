@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getParams()const;
 				void setParams(const std::string& params);
+				std::string getTemplateId()const;
+				void setTemplateId(const std::string& templateId);
 				std::string getPipelineId()const;
 				void setPipelineId(const std::string& pipelineId);
 				std::string getContentType()const;
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string params_;
+				std::string templateId_;
 				std::string pipelineId_;
 				std::string contentType_;
 				std::string input_;
