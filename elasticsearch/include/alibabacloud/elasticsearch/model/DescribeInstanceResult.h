@@ -118,6 +118,7 @@ namespace AlibabaCloud
 					std::vector<ZoneInfo> zoneInfos;
 					std::string createdAt;
 					int port;
+					std::vector<std::string> kibanaPrivateIPWhitelist;
 					bool enablePublic;
 					KibanaConfiguration kibanaConfiguration;
 					bool advancedDedicateMaster;
@@ -135,6 +136,7 @@ namespace AlibabaCloud
 					int nodeAmount;
 					std::string esVersion;
 					std::string updatedAt;
+					bool enableKibanaPrivateNetwork;
 					std::vector<DictListItem> dictList;
 					std::string kibanaDomain;
 					std::vector<Tag> tags;

@@ -92,6 +92,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		result_.haveKibana = resultNode["haveKibana"].asString() == "true";
 	if(!resultNode["resourceGroupId"].isNull())
 		result_.resourceGroupId = resultNode["resourceGroupId"].asString();
+	if(!resultNode["enableKibanaPrivateNetwork"].isNull())
+		result_.enableKibanaPrivateNetwork = resultNode["enableKibanaPrivateNetwork"].asString() == "true";
 	auto alldictListNode = resultNode["dictList"]["DictListItem"];
 	for (auto resultNodedictListDictListItem : alldictListNode)
 	{
@@ -224,6 +226,9 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		auto allPrivateNetworkIpWhiteList = resultNode["privateNetworkIpWhiteList"]["PrivateNetworkIpWhiteList"];
 		for (auto value : allPrivateNetworkIpWhiteList)
 			result_.privateNetworkIpWhiteList.push_back(value.asString());
+		auto allKibanaPrivateIPWhitelist = resultNode["kibanaPrivateIPWhitelist"]["WhiteIP"];
+		for (auto value : allKibanaPrivateIPWhitelist)
+			result_.kibanaPrivateIPWhitelist.push_back(value.asString());
 
 }
 
