@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/csb/model/FindServiceStatisticalDataResult.h>
+#include <alibabacloud/csb/model/FindServiceCredentialStatisticalDataResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CSB;
 using namespace AlibabaCloud::CSB::Model;
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult() :
+FindServiceCredentialStatisticalDataResult::FindServiceCredentialStatisticalDataResult() :
 	ServiceResult()
 {}
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult(const std::string &payload) :
+FindServiceCredentialStatisticalDataResult::FindServiceCredentialStatisticalDataResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-FindServiceStatisticalDataResult::~FindServiceStatisticalDataResult()
+FindServiceCredentialStatisticalDataResult::~FindServiceCredentialStatisticalDataResult()
 {}
 
-void FindServiceStatisticalDataResult::parse(const std::string &payload)
+void FindServiceCredentialStatisticalDataResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -58,6 +58,8 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 			serviceStatisticDataObject.minRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].asString());
 		if(!dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].isNull())
 			serviceStatisticDataObject.serviceName = dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].asString();
+		if(!dataNodeMonitorStatisticDataServiceStatisticData["CredentialName"].isNull())
+			serviceStatisticDataObject.credentialName = dataNodeMonitorStatisticDataServiceStatisticData["CredentialName"].asString();
 		auto totalNode = value["Total"];
 		if(!totalNode["Total"].isNull())
 			serviceStatisticDataObject.total.total = std::stol(totalNode["Total"].asString());
@@ -72,17 +74,17 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 
 }
 
-std::string FindServiceStatisticalDataResult::getMessage()const
+std::string FindServiceCredentialStatisticalDataResult::getMessage()const
 {
 	return message_;
 }
 
-FindServiceStatisticalDataResult::Data FindServiceStatisticalDataResult::getData()const
+FindServiceCredentialStatisticalDataResult::Data FindServiceCredentialStatisticalDataResult::getData()const
 {
 	return data_;
 }
 
-int FindServiceStatisticalDataResult::getCode()const
+int FindServiceCredentialStatisticalDataResult::getCode()const
 {
 	return code_;
 }

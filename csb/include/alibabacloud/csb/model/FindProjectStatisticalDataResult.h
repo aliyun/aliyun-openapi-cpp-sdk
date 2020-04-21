@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATARESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceStatisticalDataResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT FindProjectStatisticalDataResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -41,7 +41,11 @@ namespace AlibabaCloud
 							long total;
 							long errorNum;
 						};
-						std::string serviceName;
+						struct ProjectInfoData
+						{
+							std::string projectName;
+						};
+						ProjectInfoData projectInfoData;
 						Total total;
 						float minRt;
 						float maxRt;
@@ -54,9 +58,9 @@ namespace AlibabaCloud
 				};
 
 
-				FindServiceStatisticalDataResult();
-				explicit FindServiceStatisticalDataResult(const std::string &payload);
-				~FindServiceStatisticalDataResult();
+				FindProjectStatisticalDataResult();
+				explicit FindProjectStatisticalDataResult(const std::string &payload);
+				~FindProjectStatisticalDataResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -72,4 +76,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATARESULT_H_

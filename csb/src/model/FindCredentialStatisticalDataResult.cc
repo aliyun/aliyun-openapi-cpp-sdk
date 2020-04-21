@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/csb/model/FindServiceStatisticalDataResult.h>
+#include <alibabacloud/csb/model/FindCredentialStatisticalDataResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CSB;
 using namespace AlibabaCloud::CSB::Model;
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult() :
+FindCredentialStatisticalDataResult::FindCredentialStatisticalDataResult() :
 	ServiceResult()
 {}
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult(const std::string &payload) :
+FindCredentialStatisticalDataResult::FindCredentialStatisticalDataResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-FindServiceStatisticalDataResult::~FindServiceStatisticalDataResult()
+FindCredentialStatisticalDataResult::~FindCredentialStatisticalDataResult()
 {}
 
-void FindServiceStatisticalDataResult::parse(const std::string &payload)
+void FindCredentialStatisticalDataResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -56,13 +56,16 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 			serviceStatisticDataObject.maxRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MaxRt"].asString());
 		if(!dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].isNull())
 			serviceStatisticDataObject.minRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].asString());
-		if(!dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].isNull())
-			serviceStatisticDataObject.serviceName = dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].asString();
 		auto totalNode = value["Total"];
 		if(!totalNode["Total"].isNull())
 			serviceStatisticDataObject.total.total = std::stol(totalNode["Total"].asString());
 		if(!totalNode["ErrorNum"].isNull())
 			serviceStatisticDataObject.total.errorNum = std::stol(totalNode["ErrorNum"].asString());
+		auto credentialInfoDataNode = value["CredentialInfoData"];
+		if(!credentialInfoDataNode["CurrentAk"].isNull())
+			serviceStatisticDataObject.credentialInfoData.currentAk = credentialInfoDataNode["CurrentAk"].asString();
+		if(!credentialInfoDataNode["CredentialName"].isNull())
+			serviceStatisticDataObject.credentialInfoData.credentialName = credentialInfoDataNode["CredentialName"].asString();
 		data_.monitorStatisticData.push_back(serviceStatisticDataObject);
 	}
 	if(!value["Code"].isNull())
@@ -72,17 +75,17 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 
 }
 
-std::string FindServiceStatisticalDataResult::getMessage()const
+std::string FindCredentialStatisticalDataResult::getMessage()const
 {
 	return message_;
 }
 
-FindServiceStatisticalDataResult::Data FindServiceStatisticalDataResult::getData()const
+FindCredentialStatisticalDataResult::Data FindCredentialStatisticalDataResult::getData()const
 {
 	return data_;
 }
 
-int FindServiceStatisticalDataResult::getCode()const
+int FindCredentialStatisticalDataResult::getCode()const
 {
 	return code_;
 }

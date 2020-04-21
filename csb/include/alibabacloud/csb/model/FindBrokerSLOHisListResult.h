@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTRESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceStatisticalDataResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT FindBrokerSLOHisListResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct ServiceStatisticData
-					{
-						struct Total
-						{
-							long total;
-							long errorNum;
-						};
-						std::string serviceName;
-						Total total;
-						float minRt;
-						float maxRt;
-						float avgRt;
-					};
-					int currentPage;
-					int pageNumber;
-					long total;
-					std::vector<ServiceStatisticData> monitorStatisticData;
-				};
 
 
-				FindServiceStatisticalDataResult();
-				explicit FindServiceStatisticalDataResult(const std::string &payload);
-				~FindServiceStatisticalDataResult();
+				FindBrokerSLOHisListResult();
+				explicit FindBrokerSLOHisListResult(const std::string &payload);
+				~FindBrokerSLOHisListResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getData()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTRESULT_H_

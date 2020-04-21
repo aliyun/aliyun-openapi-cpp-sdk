@@ -53,28 +53,46 @@ set(csb_public_header_model
 	include/alibabacloud/csb/model/DeleteUnionCasServiceResult.h
 	include/alibabacloud/csb/model/DescribeRegionsRequest.h
 	include/alibabacloud/csb/model/DescribeRegionsResult.h
+	include/alibabacloud/csb/model/FindAllLinkRuleRequest.h
+	include/alibabacloud/csb/model/FindAllLinkRuleResult.h
 	include/alibabacloud/csb/model/FindApprovalOrderListRequest.h
 	include/alibabacloud/csb/model/FindApprovalOrderListResult.h
 	include/alibabacloud/csb/model/FindApproveServiceListRequest.h
 	include/alibabacloud/csb/model/FindApproveServiceListResult.h
+	include/alibabacloud/csb/model/FindBrokerSLOHisListRequest.h
+	include/alibabacloud/csb/model/FindBrokerSLOHisListResult.h
+	include/alibabacloud/csb/model/FindBrokerSLOListRequest.h
+	include/alibabacloud/csb/model/FindBrokerSLOListResult.h
+	include/alibabacloud/csb/model/FindCredentialStatisticalDataRequest.h
+	include/alibabacloud/csb/model/FindCredentialStatisticalDataResult.h
 	include/alibabacloud/csb/model/FindCredentialsListRequest.h
 	include/alibabacloud/csb/model/FindCredentialsListResult.h
 	include/alibabacloud/csb/model/FindInstanceListRequest.h
 	include/alibabacloud/csb/model/FindInstanceListResult.h
+	include/alibabacloud/csb/model/FindInstanceNodeListRequest.h
+	include/alibabacloud/csb/model/FindInstanceNodeListResult.h
 	include/alibabacloud/csb/model/FindOrderableListRequest.h
 	include/alibabacloud/csb/model/FindOrderableListResult.h
 	include/alibabacloud/csb/model/FindOrderedListRequest.h
 	include/alibabacloud/csb/model/FindOrderedListResult.h
 	include/alibabacloud/csb/model/FindProjectListRequest.h
 	include/alibabacloud/csb/model/FindProjectListResult.h
+	include/alibabacloud/csb/model/FindProjectStatisticalDataRequest.h
+	include/alibabacloud/csb/model/FindProjectStatisticalDataResult.h
 	include/alibabacloud/csb/model/FindProjectsNameListRequest.h
 	include/alibabacloud/csb/model/FindProjectsNameListResult.h
+	include/alibabacloud/csb/model/FindServiceCredentialStatisticalDataRequest.h
+	include/alibabacloud/csb/model/FindServiceCredentialStatisticalDataResult.h
 	include/alibabacloud/csb/model/FindServiceListRequest.h
 	include/alibabacloud/csb/model/FindServiceListResult.h
 	include/alibabacloud/csb/model/FindServiceStatisticalDataRequest.h
 	include/alibabacloud/csb/model/FindServiceStatisticalDataResult.h
+	include/alibabacloud/csb/model/GetConsoleSLORequest.h
+	include/alibabacloud/csb/model/GetConsoleSLOResult.h
 	include/alibabacloud/csb/model/GetInstanceRequest.h
 	include/alibabacloud/csb/model/GetInstanceResult.h
+	include/alibabacloud/csb/model/GetMetaServerSLORequest.h
+	include/alibabacloud/csb/model/GetMetaServerSLOResult.h
 	include/alibabacloud/csb/model/GetOrderRequest.h
 	include/alibabacloud/csb/model/GetOrderResult.h
 	include/alibabacloud/csb/model/GetProjectRequest.h
@@ -140,28 +158,46 @@ set(csb_src
 	src/model/DeleteUnionCasServiceResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/FindAllLinkRuleRequest.cc
+	src/model/FindAllLinkRuleResult.cc
 	src/model/FindApprovalOrderListRequest.cc
 	src/model/FindApprovalOrderListResult.cc
 	src/model/FindApproveServiceListRequest.cc
 	src/model/FindApproveServiceListResult.cc
+	src/model/FindBrokerSLOHisListRequest.cc
+	src/model/FindBrokerSLOHisListResult.cc
+	src/model/FindBrokerSLOListRequest.cc
+	src/model/FindBrokerSLOListResult.cc
+	src/model/FindCredentialStatisticalDataRequest.cc
+	src/model/FindCredentialStatisticalDataResult.cc
 	src/model/FindCredentialsListRequest.cc
 	src/model/FindCredentialsListResult.cc
 	src/model/FindInstanceListRequest.cc
 	src/model/FindInstanceListResult.cc
+	src/model/FindInstanceNodeListRequest.cc
+	src/model/FindInstanceNodeListResult.cc
 	src/model/FindOrderableListRequest.cc
 	src/model/FindOrderableListResult.cc
 	src/model/FindOrderedListRequest.cc
 	src/model/FindOrderedListResult.cc
 	src/model/FindProjectListRequest.cc
 	src/model/FindProjectListResult.cc
+	src/model/FindProjectStatisticalDataRequest.cc
+	src/model/FindProjectStatisticalDataResult.cc
 	src/model/FindProjectsNameListRequest.cc
 	src/model/FindProjectsNameListResult.cc
+	src/model/FindServiceCredentialStatisticalDataRequest.cc
+	src/model/FindServiceCredentialStatisticalDataResult.cc
 	src/model/FindServiceListRequest.cc
 	src/model/FindServiceListResult.cc
 	src/model/FindServiceStatisticalDataRequest.cc
 	src/model/FindServiceStatisticalDataResult.cc
+	src/model/GetConsoleSLORequest.cc
+	src/model/GetConsoleSLOResult.cc
 	src/model/GetInstanceRequest.cc
 	src/model/GetInstanceResult.cc
+	src/model/GetMetaServerSLORequest.cc
+	src/model/GetMetaServerSLOResult.cc
 	src/model/GetOrderRequest.cc
 	src/model/GetOrderResult.cc
 	src/model/GetProjectRequest.cc

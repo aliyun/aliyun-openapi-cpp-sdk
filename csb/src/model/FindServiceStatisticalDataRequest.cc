@@ -60,14 +60,14 @@ void FindServiceStatisticalDataRequest::setStartTime(long startTime)
 	setParameter("StartTime", std::to_string(startTime));
 }
 
-std::string FindServiceStatisticalDataRequest::getServiceName()const
+std::string FindServiceStatisticalDataRequest::getServiceNameVersion()const
 {
-	return serviceName_;
+	return serviceNameVersion_;
 }
 
-void FindServiceStatisticalDataRequest::setServiceName(const std::string& serviceName)
+void FindServiceStatisticalDataRequest::setServiceNameVersion(const std::string& serviceNameVersion)
 {
-	serviceName_ = serviceName;
-	setParameter("ServiceName", serviceName);
+	serviceNameVersion_ = serviceNameVersion;
+	setParameter("ServiceNameVersion", serviceNameVersion);
 }
 

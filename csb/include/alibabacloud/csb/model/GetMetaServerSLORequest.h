@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_GETMETASERVERSLOREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_GETMETASERVERSLOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceStatisticalDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT GetMetaServerSLORequest : public RpcServiceRequest
 			{
 
 			public:
-				FindServiceStatisticalDataRequest();
-				~FindServiceStatisticalDataRequest();
+				GetMetaServerSLORequest();
+				~GetMetaServerSLORequest();
 
-				long getCsbId()const;
-				void setCsbId(long csbId);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getServiceNameVersion()const;
-				void setServiceNameVersion(const std::string& serviceNameVersion);
 
             private:
-				long csbId_;
-				long endTime_;
-				long startTime_;
-				std::string serviceNameVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_GETMETASERVERSLOREQUEST_H_

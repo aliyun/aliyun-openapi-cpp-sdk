@@ -54,28 +54,46 @@
 #include "model/DeleteUnionCasServiceResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/FindAllLinkRuleRequest.h"
+#include "model/FindAllLinkRuleResult.h"
 #include "model/FindApprovalOrderListRequest.h"
 #include "model/FindApprovalOrderListResult.h"
 #include "model/FindApproveServiceListRequest.h"
 #include "model/FindApproveServiceListResult.h"
+#include "model/FindBrokerSLOHisListRequest.h"
+#include "model/FindBrokerSLOHisListResult.h"
+#include "model/FindBrokerSLOListRequest.h"
+#include "model/FindBrokerSLOListResult.h"
+#include "model/FindCredentialStatisticalDataRequest.h"
+#include "model/FindCredentialStatisticalDataResult.h"
 #include "model/FindCredentialsListRequest.h"
 #include "model/FindCredentialsListResult.h"
 #include "model/FindInstanceListRequest.h"
 #include "model/FindInstanceListResult.h"
+#include "model/FindInstanceNodeListRequest.h"
+#include "model/FindInstanceNodeListResult.h"
 #include "model/FindOrderableListRequest.h"
 #include "model/FindOrderableListResult.h"
 #include "model/FindOrderedListRequest.h"
 #include "model/FindOrderedListResult.h"
 #include "model/FindProjectListRequest.h"
 #include "model/FindProjectListResult.h"
+#include "model/FindProjectStatisticalDataRequest.h"
+#include "model/FindProjectStatisticalDataResult.h"
 #include "model/FindProjectsNameListRequest.h"
 #include "model/FindProjectsNameListResult.h"
+#include "model/FindServiceCredentialStatisticalDataRequest.h"
+#include "model/FindServiceCredentialStatisticalDataResult.h"
 #include "model/FindServiceListRequest.h"
 #include "model/FindServiceListResult.h"
 #include "model/FindServiceStatisticalDataRequest.h"
 #include "model/FindServiceStatisticalDataResult.h"
+#include "model/GetConsoleSLORequest.h"
+#include "model/GetConsoleSLOResult.h"
 #include "model/GetInstanceRequest.h"
 #include "model/GetInstanceResult.h"
+#include "model/GetMetaServerSLORequest.h"
+#include "model/GetMetaServerSLOResult.h"
 #include "model/GetOrderRequest.h"
 #include "model/GetOrderResult.h"
 #include "model/GetProjectRequest.h"
@@ -163,18 +181,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::FindAllLinkRuleResult> FindAllLinkRuleOutcome;
+			typedef std::future<FindAllLinkRuleOutcome> FindAllLinkRuleOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindAllLinkRuleRequest&, const FindAllLinkRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindAllLinkRuleAsyncHandler;
 			typedef Outcome<Error, Model::FindApprovalOrderListResult> FindApprovalOrderListOutcome;
 			typedef std::future<FindApprovalOrderListOutcome> FindApprovalOrderListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindApprovalOrderListRequest&, const FindApprovalOrderListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindApprovalOrderListAsyncHandler;
 			typedef Outcome<Error, Model::FindApproveServiceListResult> FindApproveServiceListOutcome;
 			typedef std::future<FindApproveServiceListOutcome> FindApproveServiceListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindApproveServiceListRequest&, const FindApproveServiceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindApproveServiceListAsyncHandler;
+			typedef Outcome<Error, Model::FindBrokerSLOHisListResult> FindBrokerSLOHisListOutcome;
+			typedef std::future<FindBrokerSLOHisListOutcome> FindBrokerSLOHisListOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindBrokerSLOHisListRequest&, const FindBrokerSLOHisListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindBrokerSLOHisListAsyncHandler;
+			typedef Outcome<Error, Model::FindBrokerSLOListResult> FindBrokerSLOListOutcome;
+			typedef std::future<FindBrokerSLOListOutcome> FindBrokerSLOListOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindBrokerSLOListRequest&, const FindBrokerSLOListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindBrokerSLOListAsyncHandler;
+			typedef Outcome<Error, Model::FindCredentialStatisticalDataResult> FindCredentialStatisticalDataOutcome;
+			typedef std::future<FindCredentialStatisticalDataOutcome> FindCredentialStatisticalDataOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindCredentialStatisticalDataRequest&, const FindCredentialStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindCredentialStatisticalDataAsyncHandler;
 			typedef Outcome<Error, Model::FindCredentialsListResult> FindCredentialsListOutcome;
 			typedef std::future<FindCredentialsListOutcome> FindCredentialsListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindCredentialsListRequest&, const FindCredentialsListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindCredentialsListAsyncHandler;
 			typedef Outcome<Error, Model::FindInstanceListResult> FindInstanceListOutcome;
 			typedef std::future<FindInstanceListOutcome> FindInstanceListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindInstanceListRequest&, const FindInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindInstanceListAsyncHandler;
+			typedef Outcome<Error, Model::FindInstanceNodeListResult> FindInstanceNodeListOutcome;
+			typedef std::future<FindInstanceNodeListOutcome> FindInstanceNodeListOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindInstanceNodeListRequest&, const FindInstanceNodeListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindInstanceNodeListAsyncHandler;
 			typedef Outcome<Error, Model::FindOrderableListResult> FindOrderableListOutcome;
 			typedef std::future<FindOrderableListOutcome> FindOrderableListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindOrderableListRequest&, const FindOrderableListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindOrderableListAsyncHandler;
@@ -184,18 +217,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FindProjectListResult> FindProjectListOutcome;
 			typedef std::future<FindProjectListOutcome> FindProjectListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindProjectListRequest&, const FindProjectListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindProjectListAsyncHandler;
+			typedef Outcome<Error, Model::FindProjectStatisticalDataResult> FindProjectStatisticalDataOutcome;
+			typedef std::future<FindProjectStatisticalDataOutcome> FindProjectStatisticalDataOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindProjectStatisticalDataRequest&, const FindProjectStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindProjectStatisticalDataAsyncHandler;
 			typedef Outcome<Error, Model::FindProjectsNameListResult> FindProjectsNameListOutcome;
 			typedef std::future<FindProjectsNameListOutcome> FindProjectsNameListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindProjectsNameListRequest&, const FindProjectsNameListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindProjectsNameListAsyncHandler;
+			typedef Outcome<Error, Model::FindServiceCredentialStatisticalDataResult> FindServiceCredentialStatisticalDataOutcome;
+			typedef std::future<FindServiceCredentialStatisticalDataOutcome> FindServiceCredentialStatisticalDataOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindServiceCredentialStatisticalDataRequest&, const FindServiceCredentialStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindServiceCredentialStatisticalDataAsyncHandler;
 			typedef Outcome<Error, Model::FindServiceListResult> FindServiceListOutcome;
 			typedef std::future<FindServiceListOutcome> FindServiceListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindServiceListRequest&, const FindServiceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindServiceListAsyncHandler;
 			typedef Outcome<Error, Model::FindServiceStatisticalDataResult> FindServiceStatisticalDataOutcome;
 			typedef std::future<FindServiceStatisticalDataOutcome> FindServiceStatisticalDataOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindServiceStatisticalDataRequest&, const FindServiceStatisticalDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindServiceStatisticalDataAsyncHandler;
+			typedef Outcome<Error, Model::GetConsoleSLOResult> GetConsoleSLOOutcome;
+			typedef std::future<GetConsoleSLOOutcome> GetConsoleSLOOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::GetConsoleSLORequest&, const GetConsoleSLOOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsoleSLOAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceResult> GetInstanceOutcome;
 			typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::GetInstanceRequest&, const GetInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetMetaServerSLOResult> GetMetaServerSLOOutcome;
+			typedef std::future<GetMetaServerSLOOutcome> GetMetaServerSLOOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::GetMetaServerSLORequest&, const GetMetaServerSLOOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaServerSLOAsyncHandler;
 			typedef Outcome<Error, Model::GetOrderResult> GetOrderOutcome;
 			typedef std::future<GetOrderOutcome> GetOrderOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::GetOrderRequest&, const GetOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderAsyncHandler;
@@ -294,18 +339,33 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			FindAllLinkRuleOutcome findAllLinkRule(const Model::FindAllLinkRuleRequest &request)const;
+			void findAllLinkRuleAsync(const Model::FindAllLinkRuleRequest& request, const FindAllLinkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindAllLinkRuleOutcomeCallable findAllLinkRuleCallable(const Model::FindAllLinkRuleRequest& request) const;
 			FindApprovalOrderListOutcome findApprovalOrderList(const Model::FindApprovalOrderListRequest &request)const;
 			void findApprovalOrderListAsync(const Model::FindApprovalOrderListRequest& request, const FindApprovalOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindApprovalOrderListOutcomeCallable findApprovalOrderListCallable(const Model::FindApprovalOrderListRequest& request) const;
 			FindApproveServiceListOutcome findApproveServiceList(const Model::FindApproveServiceListRequest &request)const;
 			void findApproveServiceListAsync(const Model::FindApproveServiceListRequest& request, const FindApproveServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindApproveServiceListOutcomeCallable findApproveServiceListCallable(const Model::FindApproveServiceListRequest& request) const;
+			FindBrokerSLOHisListOutcome findBrokerSLOHisList(const Model::FindBrokerSLOHisListRequest &request)const;
+			void findBrokerSLOHisListAsync(const Model::FindBrokerSLOHisListRequest& request, const FindBrokerSLOHisListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindBrokerSLOHisListOutcomeCallable findBrokerSLOHisListCallable(const Model::FindBrokerSLOHisListRequest& request) const;
+			FindBrokerSLOListOutcome findBrokerSLOList(const Model::FindBrokerSLOListRequest &request)const;
+			void findBrokerSLOListAsync(const Model::FindBrokerSLOListRequest& request, const FindBrokerSLOListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindBrokerSLOListOutcomeCallable findBrokerSLOListCallable(const Model::FindBrokerSLOListRequest& request) const;
+			FindCredentialStatisticalDataOutcome findCredentialStatisticalData(const Model::FindCredentialStatisticalDataRequest &request)const;
+			void findCredentialStatisticalDataAsync(const Model::FindCredentialStatisticalDataRequest& request, const FindCredentialStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindCredentialStatisticalDataOutcomeCallable findCredentialStatisticalDataCallable(const Model::FindCredentialStatisticalDataRequest& request) const;
 			FindCredentialsListOutcome findCredentialsList(const Model::FindCredentialsListRequest &request)const;
 			void findCredentialsListAsync(const Model::FindCredentialsListRequest& request, const FindCredentialsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindCredentialsListOutcomeCallable findCredentialsListCallable(const Model::FindCredentialsListRequest& request) const;
 			FindInstanceListOutcome findInstanceList(const Model::FindInstanceListRequest &request)const;
 			void findInstanceListAsync(const Model::FindInstanceListRequest& request, const FindInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindInstanceListOutcomeCallable findInstanceListCallable(const Model::FindInstanceListRequest& request) const;
+			FindInstanceNodeListOutcome findInstanceNodeList(const Model::FindInstanceNodeListRequest &request)const;
+			void findInstanceNodeListAsync(const Model::FindInstanceNodeListRequest& request, const FindInstanceNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindInstanceNodeListOutcomeCallable findInstanceNodeListCallable(const Model::FindInstanceNodeListRequest& request) const;
 			FindOrderableListOutcome findOrderableList(const Model::FindOrderableListRequest &request)const;
 			void findOrderableListAsync(const Model::FindOrderableListRequest& request, const FindOrderableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindOrderableListOutcomeCallable findOrderableListCallable(const Model::FindOrderableListRequest& request) const;
@@ -315,18 +375,30 @@ namespace AlibabaCloud
 			FindProjectListOutcome findProjectList(const Model::FindProjectListRequest &request)const;
 			void findProjectListAsync(const Model::FindProjectListRequest& request, const FindProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindProjectListOutcomeCallable findProjectListCallable(const Model::FindProjectListRequest& request) const;
+			FindProjectStatisticalDataOutcome findProjectStatisticalData(const Model::FindProjectStatisticalDataRequest &request)const;
+			void findProjectStatisticalDataAsync(const Model::FindProjectStatisticalDataRequest& request, const FindProjectStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindProjectStatisticalDataOutcomeCallable findProjectStatisticalDataCallable(const Model::FindProjectStatisticalDataRequest& request) const;
 			FindProjectsNameListOutcome findProjectsNameList(const Model::FindProjectsNameListRequest &request)const;
 			void findProjectsNameListAsync(const Model::FindProjectsNameListRequest& request, const FindProjectsNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindProjectsNameListOutcomeCallable findProjectsNameListCallable(const Model::FindProjectsNameListRequest& request) const;
+			FindServiceCredentialStatisticalDataOutcome findServiceCredentialStatisticalData(const Model::FindServiceCredentialStatisticalDataRequest &request)const;
+			void findServiceCredentialStatisticalDataAsync(const Model::FindServiceCredentialStatisticalDataRequest& request, const FindServiceCredentialStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindServiceCredentialStatisticalDataOutcomeCallable findServiceCredentialStatisticalDataCallable(const Model::FindServiceCredentialStatisticalDataRequest& request) const;
 			FindServiceListOutcome findServiceList(const Model::FindServiceListRequest &request)const;
 			void findServiceListAsync(const Model::FindServiceListRequest& request, const FindServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindServiceListOutcomeCallable findServiceListCallable(const Model::FindServiceListRequest& request) const;
 			FindServiceStatisticalDataOutcome findServiceStatisticalData(const Model::FindServiceStatisticalDataRequest &request)const;
 			void findServiceStatisticalDataAsync(const Model::FindServiceStatisticalDataRequest& request, const FindServiceStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindServiceStatisticalDataOutcomeCallable findServiceStatisticalDataCallable(const Model::FindServiceStatisticalDataRequest& request) const;
+			GetConsoleSLOOutcome getConsoleSLO(const Model::GetConsoleSLORequest &request)const;
+			void getConsoleSLOAsync(const Model::GetConsoleSLORequest& request, const GetConsoleSLOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetConsoleSLOOutcomeCallable getConsoleSLOCallable(const Model::GetConsoleSLORequest& request) const;
 			GetInstanceOutcome getInstance(const Model::GetInstanceRequest &request)const;
 			void getInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceOutcomeCallable getInstanceCallable(const Model::GetInstanceRequest& request) const;
+			GetMetaServerSLOOutcome getMetaServerSLO(const Model::GetMetaServerSLORequest &request)const;
+			void getMetaServerSLOAsync(const Model::GetMetaServerSLORequest& request, const GetMetaServerSLOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMetaServerSLOOutcomeCallable getMetaServerSLOCallable(const Model::GetMetaServerSLORequest& request) const;
 			GetOrderOutcome getOrder(const Model::GetOrderRequest &request)const;
 			void getOrderAsync(const Model::GetOrderRequest& request, const GetOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOrderOutcomeCallable getOrderCallable(const Model::GetOrderRequest& request) const;

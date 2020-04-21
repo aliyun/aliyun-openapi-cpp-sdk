@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATAREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT FindProjectStatisticalDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				FindServiceListRequest();
-				~FindServiceListRequest();
+				FindProjectStatisticalDataRequest();
+				~FindProjectStatisticalDataRequest();
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
-				bool getShowDelService()const;
-				void setShowDelService(bool showDelService);
 				long getCsbId()const;
 				void setCsbId(long csbId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
-				int getCasShowType()const;
-				void setCasShowType(int casShowType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getAlias()const;
-				void setAlias(const std::string& alias);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
+				long getEndTime()const;
+				void setEndTime(long endTime);
+				long getStartTime()const;
+				void setStartTime(long startTime);
 
             private:
 				std::string projectName_;
-				bool showDelService_;
 				long csbId_;
-				int pageNum_;
-				int casShowType_;
-				int pageSize_;
-				std::string alias_;
-				std::string serviceName_;
+				long endTime_;
+				long startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDPROJECTSTATISTICALDATAREQUEST_H_

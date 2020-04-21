@@ -82,6 +82,17 @@ void FindServiceListRequest::setCasShowType(int casShowType)
 	setParameter("CasShowType", std::to_string(casShowType));
 }
 
+int FindServiceListRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void FindServiceListRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
 std::string FindServiceListRequest::getAlias()const
 {
 	return alias_;

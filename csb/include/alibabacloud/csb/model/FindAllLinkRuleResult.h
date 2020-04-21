@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDALLLINKRULERESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDALLLINKRULERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceStatisticalDataResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT FindAllLinkRuleResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct ServiceStatisticData
+					struct LinkRuleListItem
 					{
-						struct Total
-						{
-							long total;
-							long errorNum;
-						};
-						std::string serviceName;
-						Total total;
-						float minRt;
-						float maxRt;
-						float avgRt;
+						std::string originName;
+						long gmtCreate;
+						std::string ownerId;
+						long csbId;
+						long gmtModified;
+						long id;
+						int deleted;
+						std::string targetName;
 					};
-					int currentPage;
-					int pageNumber;
-					long total;
-					std::vector<ServiceStatisticData> monitorStatisticData;
+					std::vector<LinkRuleListItem> linkRuleList;
 				};
 
 
-				FindServiceStatisticalDataResult();
-				explicit FindServiceStatisticalDataResult(const std::string &payload);
-				~FindServiceStatisticalDataResult();
+				FindAllLinkRuleResult();
+				explicit FindAllLinkRuleResult(const std::string &payload);
+				~FindAllLinkRuleResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -72,4 +67,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATARESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDALLLINKRULERESULT_H_

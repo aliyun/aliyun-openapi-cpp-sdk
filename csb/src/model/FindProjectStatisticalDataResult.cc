@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/csb/model/FindServiceStatisticalDataResult.h>
+#include <alibabacloud/csb/model/FindProjectStatisticalDataResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CSB;
 using namespace AlibabaCloud::CSB::Model;
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult() :
+FindProjectStatisticalDataResult::FindProjectStatisticalDataResult() :
 	ServiceResult()
 {}
 
-FindServiceStatisticalDataResult::FindServiceStatisticalDataResult(const std::string &payload) :
+FindProjectStatisticalDataResult::FindProjectStatisticalDataResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-FindServiceStatisticalDataResult::~FindServiceStatisticalDataResult()
+FindProjectStatisticalDataResult::~FindProjectStatisticalDataResult()
 {}
 
-void FindServiceStatisticalDataResult::parse(const std::string &payload)
+void FindProjectStatisticalDataResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -56,13 +56,14 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 			serviceStatisticDataObject.maxRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MaxRt"].asString());
 		if(!dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].isNull())
 			serviceStatisticDataObject.minRt = std::stof(dataNodeMonitorStatisticDataServiceStatisticData["MinRt"].asString());
-		if(!dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].isNull())
-			serviceStatisticDataObject.serviceName = dataNodeMonitorStatisticDataServiceStatisticData["ServiceName"].asString();
 		auto totalNode = value["Total"];
 		if(!totalNode["Total"].isNull())
 			serviceStatisticDataObject.total.total = std::stol(totalNode["Total"].asString());
 		if(!totalNode["ErrorNum"].isNull())
 			serviceStatisticDataObject.total.errorNum = std::stol(totalNode["ErrorNum"].asString());
+		auto projectInfoDataNode = value["ProjectInfoData"];
+		if(!projectInfoDataNode["ProjectName"].isNull())
+			serviceStatisticDataObject.projectInfoData.projectName = projectInfoDataNode["ProjectName"].asString();
 		data_.monitorStatisticData.push_back(serviceStatisticDataObject);
 	}
 	if(!value["Code"].isNull())
@@ -72,17 +73,17 @@ void FindServiceStatisticalDataResult::parse(const std::string &payload)
 
 }
 
-std::string FindServiceStatisticalDataResult::getMessage()const
+std::string FindProjectStatisticalDataResult::getMessage()const
 {
 	return message_;
 }
 
-FindServiceStatisticalDataResult::Data FindServiceStatisticalDataResult::getData()const
+FindProjectStatisticalDataResult::Data FindProjectStatisticalDataResult::getData()const
 {
 	return data_;
 }
 
-int FindServiceStatisticalDataResult::getCode()const
+int FindProjectStatisticalDataResult::getCode()const
 {
 	return code_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT FindInstanceNodeListRequest : public RpcServiceRequest
 			{
 
 			public:
-				FindServiceListRequest();
-				~FindServiceListRequest();
+				FindInstanceNodeListRequest();
+				~FindInstanceNodeListRequest();
 
-				std::string getProjectName()const;
-				void setProjectName(const std::string& projectName);
-				bool getShowDelService()const;
-				void setShowDelService(bool showDelService);
-				long getCsbId()const;
-				void setCsbId(long csbId);
+				bool getOnlyImported()const;
+				void setOnlyImported(bool onlyImported);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
-				int getCasShowType()const;
-				void setCasShowType(int casShowType);
+				std::string getInstanceName()const;
+				void setInstanceName(const std::string& instanceName);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getAlias()const;
-				void setAlias(const std::string& alias);
-				std::string getServiceName()const;
-				void setServiceName(const std::string& serviceName);
 
             private:
-				std::string projectName_;
-				bool showDelService_;
-				long csbId_;
+				bool onlyImported_;
 				int pageNum_;
-				int casShowType_;
+				std::string instanceName_;
 				int pageSize_;
-				std::string alias_;
-				std::string serviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICELISTREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTREQUEST_H_

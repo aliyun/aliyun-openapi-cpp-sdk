@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDSERVICECREDENTIALSTATISTICALDATAREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDSERVICECREDENTIALSTATISTICALDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindServiceStatisticalDataRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT FindServiceCredentialStatisticalDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				FindServiceStatisticalDataRequest();
-				~FindServiceStatisticalDataRequest();
+				FindServiceCredentialStatisticalDataRequest();
+				~FindServiceCredentialStatisticalDataRequest();
 
 				long getCsbId()const;
 				void setCsbId(long csbId);
@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getCredentialName()const;
+				void setCredentialName(const std::string& credentialName);
 				std::string getServiceNameVersion()const;
 				void setServiceNameVersion(const std::string& serviceNameVersion);
 
@@ -48,10 +50,11 @@ namespace AlibabaCloud
 				long csbId_;
 				long endTime_;
 				long startTime_;
+				std::string credentialName_;
 				std::string serviceNameVersion_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICESTATISTICALDATAREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDSERVICECREDENTIALSTATISTICALDATAREQUEST_H_

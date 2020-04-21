@@ -31,21 +31,21 @@ CSBClient::CSBClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::CSBClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::CSBClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "csb");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CSBClient::~CSBClient()
@@ -627,6 +627,42 @@ CSBClient::DescribeRegionsOutcomeCallable CSBClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+CSBClient::FindAllLinkRuleOutcome CSBClient::findAllLinkRule(const FindAllLinkRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindAllLinkRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindAllLinkRuleOutcome(FindAllLinkRuleResult(outcome.result()));
+	else
+		return FindAllLinkRuleOutcome(outcome.error());
+}
+
+void CSBClient::findAllLinkRuleAsync(const FindAllLinkRuleRequest& request, const FindAllLinkRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findAllLinkRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindAllLinkRuleOutcomeCallable CSBClient::findAllLinkRuleCallable(const FindAllLinkRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindAllLinkRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->findAllLinkRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::FindApprovalOrderListOutcome CSBClient::findApprovalOrderList(const FindApprovalOrderListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,6 +735,114 @@ CSBClient::FindApproveServiceListOutcomeCallable CSBClient::findApproveServiceLi
 	return task->get_future();
 }
 
+CSBClient::FindBrokerSLOHisListOutcome CSBClient::findBrokerSLOHisList(const FindBrokerSLOHisListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindBrokerSLOHisListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindBrokerSLOHisListOutcome(FindBrokerSLOHisListResult(outcome.result()));
+	else
+		return FindBrokerSLOHisListOutcome(outcome.error());
+}
+
+void CSBClient::findBrokerSLOHisListAsync(const FindBrokerSLOHisListRequest& request, const FindBrokerSLOHisListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findBrokerSLOHisList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindBrokerSLOHisListOutcomeCallable CSBClient::findBrokerSLOHisListCallable(const FindBrokerSLOHisListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindBrokerSLOHisListOutcome()>>(
+			[this, request]()
+			{
+			return this->findBrokerSLOHisList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindBrokerSLOListOutcome CSBClient::findBrokerSLOList(const FindBrokerSLOListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindBrokerSLOListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindBrokerSLOListOutcome(FindBrokerSLOListResult(outcome.result()));
+	else
+		return FindBrokerSLOListOutcome(outcome.error());
+}
+
+void CSBClient::findBrokerSLOListAsync(const FindBrokerSLOListRequest& request, const FindBrokerSLOListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findBrokerSLOList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindBrokerSLOListOutcomeCallable CSBClient::findBrokerSLOListCallable(const FindBrokerSLOListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindBrokerSLOListOutcome()>>(
+			[this, request]()
+			{
+			return this->findBrokerSLOList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindCredentialStatisticalDataOutcome CSBClient::findCredentialStatisticalData(const FindCredentialStatisticalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindCredentialStatisticalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindCredentialStatisticalDataOutcome(FindCredentialStatisticalDataResult(outcome.result()));
+	else
+		return FindCredentialStatisticalDataOutcome(outcome.error());
+}
+
+void CSBClient::findCredentialStatisticalDataAsync(const FindCredentialStatisticalDataRequest& request, const FindCredentialStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findCredentialStatisticalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindCredentialStatisticalDataOutcomeCallable CSBClient::findCredentialStatisticalDataCallable(const FindCredentialStatisticalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindCredentialStatisticalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->findCredentialStatisticalData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::FindCredentialsListOutcome CSBClient::findCredentialsList(const FindCredentialsListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +909,42 @@ CSBClient::FindInstanceListOutcomeCallable CSBClient::findInstanceListCallable(c
 			[this, request]()
 			{
 			return this->findInstanceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindInstanceNodeListOutcome CSBClient::findInstanceNodeList(const FindInstanceNodeListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindInstanceNodeListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindInstanceNodeListOutcome(FindInstanceNodeListResult(outcome.result()));
+	else
+		return FindInstanceNodeListOutcome(outcome.error());
+}
+
+void CSBClient::findInstanceNodeListAsync(const FindInstanceNodeListRequest& request, const FindInstanceNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findInstanceNodeList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindInstanceNodeListOutcomeCallable CSBClient::findInstanceNodeListCallable(const FindInstanceNodeListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindInstanceNodeListOutcome()>>(
+			[this, request]()
+			{
+			return this->findInstanceNodeList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,6 +1059,42 @@ CSBClient::FindProjectListOutcomeCallable CSBClient::findProjectListCallable(con
 	return task->get_future();
 }
 
+CSBClient::FindProjectStatisticalDataOutcome CSBClient::findProjectStatisticalData(const FindProjectStatisticalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindProjectStatisticalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindProjectStatisticalDataOutcome(FindProjectStatisticalDataResult(outcome.result()));
+	else
+		return FindProjectStatisticalDataOutcome(outcome.error());
+}
+
+void CSBClient::findProjectStatisticalDataAsync(const FindProjectStatisticalDataRequest& request, const FindProjectStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findProjectStatisticalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindProjectStatisticalDataOutcomeCallable CSBClient::findProjectStatisticalDataCallable(const FindProjectStatisticalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindProjectStatisticalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->findProjectStatisticalData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::FindProjectsNameListOutcome CSBClient::findProjectsNameList(const FindProjectsNameListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +1125,42 @@ CSBClient::FindProjectsNameListOutcomeCallable CSBClient::findProjectsNameListCa
 			[this, request]()
 			{
 			return this->findProjectsNameList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindServiceCredentialStatisticalDataOutcome CSBClient::findServiceCredentialStatisticalData(const FindServiceCredentialStatisticalDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindServiceCredentialStatisticalDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindServiceCredentialStatisticalDataOutcome(FindServiceCredentialStatisticalDataResult(outcome.result()));
+	else
+		return FindServiceCredentialStatisticalDataOutcome(outcome.error());
+}
+
+void CSBClient::findServiceCredentialStatisticalDataAsync(const FindServiceCredentialStatisticalDataRequest& request, const FindServiceCredentialStatisticalDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findServiceCredentialStatisticalData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindServiceCredentialStatisticalDataOutcomeCallable CSBClient::findServiceCredentialStatisticalDataCallable(const FindServiceCredentialStatisticalDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindServiceCredentialStatisticalDataOutcome()>>(
+			[this, request]()
+			{
+			return this->findServiceCredentialStatisticalData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1239,42 @@ CSBClient::FindServiceStatisticalDataOutcomeCallable CSBClient::findServiceStati
 	return task->get_future();
 }
 
+CSBClient::GetConsoleSLOOutcome CSBClient::getConsoleSLO(const GetConsoleSLORequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConsoleSLOOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConsoleSLOOutcome(GetConsoleSLOResult(outcome.result()));
+	else
+		return GetConsoleSLOOutcome(outcome.error());
+}
+
+void CSBClient::getConsoleSLOAsync(const GetConsoleSLORequest& request, const GetConsoleSLOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConsoleSLO(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::GetConsoleSLOOutcomeCallable CSBClient::getConsoleSLOCallable(const GetConsoleSLORequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConsoleSLOOutcome()>>(
+			[this, request]()
+			{
+			return this->getConsoleSLO(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::GetInstanceOutcome CSBClient::getInstance(const GetInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1305,42 @@ CSBClient::GetInstanceOutcomeCallable CSBClient::getInstanceCallable(const GetIn
 			[this, request]()
 			{
 			return this->getInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::GetMetaServerSLOOutcome CSBClient::getMetaServerSLO(const GetMetaServerSLORequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMetaServerSLOOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMetaServerSLOOutcome(GetMetaServerSLOResult(outcome.result()));
+	else
+		return GetMetaServerSLOOutcome(outcome.error());
+}
+
+void CSBClient::getMetaServerSLOAsync(const GetMetaServerSLORequest& request, const GetMetaServerSLOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMetaServerSLO(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::GetMetaServerSLOOutcomeCallable CSBClient::getMetaServerSLOCallable(const GetMetaServerSLORequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMetaServerSLOOutcome()>>(
+			[this, request]()
+			{
+			return this->getMetaServerSLO(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
