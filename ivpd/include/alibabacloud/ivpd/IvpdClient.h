@@ -34,14 +34,22 @@
 #include "model/GetJobResultResult.h"
 #include "model/GetJobStatusRequest.h"
 #include "model/GetJobStatusResult.h"
+#include "model/GetRenderResultRequest.h"
+#include "model/GetRenderResultResult.h"
+#include "model/ListPackageDesignModelTypesRequest.h"
+#include "model/ListPackageDesignModelTypesResult.h"
 #include "model/MakeSuperResolutionImageRequest.h"
 #include "model/MakeSuperResolutionImageResult.h"
+#include "model/PreviewModelForPackageDesignRequest.h"
+#include "model/PreviewModelForPackageDesignResult.h"
 #include "model/RecognizeImageColorRequest.h"
 #include "model/RecognizeImageColorResult.h"
 #include "model/RecognizeImageStyleRequest.h"
 #include "model/RecognizeImageStyleResult.h"
 #include "model/RecolorImageRequest.h"
 #include "model/RecolorImageResult.h"
+#include "model/RenderImageForPackageDesignRequest.h"
+#include "model/RenderImageForPackageDesignResult.h"
 #include "model/SegmentBodyRequest.h"
 #include "model/SegmentBodyResult.h"
 #include "model/SegmentImageRequest.h"
@@ -73,9 +81,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobStatusResult> GetJobStatusOutcome;
 			typedef std::future<GetJobStatusOutcome> GetJobStatusOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::GetJobStatusRequest&, const GetJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetRenderResultResult> GetRenderResultOutcome;
+			typedef std::future<GetRenderResultOutcome> GetRenderResultOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::GetRenderResultRequest&, const GetRenderResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRenderResultAsyncHandler;
+			typedef Outcome<Error, Model::ListPackageDesignModelTypesResult> ListPackageDesignModelTypesOutcome;
+			typedef std::future<ListPackageDesignModelTypesOutcome> ListPackageDesignModelTypesOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::ListPackageDesignModelTypesRequest&, const ListPackageDesignModelTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPackageDesignModelTypesAsyncHandler;
 			typedef Outcome<Error, Model::MakeSuperResolutionImageResult> MakeSuperResolutionImageOutcome;
 			typedef std::future<MakeSuperResolutionImageOutcome> MakeSuperResolutionImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::MakeSuperResolutionImageRequest&, const MakeSuperResolutionImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MakeSuperResolutionImageAsyncHandler;
+			typedef Outcome<Error, Model::PreviewModelForPackageDesignResult> PreviewModelForPackageDesignOutcome;
+			typedef std::future<PreviewModelForPackageDesignOutcome> PreviewModelForPackageDesignOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::PreviewModelForPackageDesignRequest&, const PreviewModelForPackageDesignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreviewModelForPackageDesignAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageColorResult> RecognizeImageColorOutcome;
 			typedef std::future<RecognizeImageColorOutcome> RecognizeImageColorOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::RecognizeImageColorRequest&, const RecognizeImageColorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageColorAsyncHandler;
@@ -85,6 +102,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecolorImageResult> RecolorImageOutcome;
 			typedef std::future<RecolorImageOutcome> RecolorImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::RecolorImageRequest&, const RecolorImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecolorImageAsyncHandler;
+			typedef Outcome<Error, Model::RenderImageForPackageDesignResult> RenderImageForPackageDesignOutcome;
+			typedef std::future<RenderImageForPackageDesignOutcome> RenderImageForPackageDesignOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::RenderImageForPackageDesignRequest&, const RenderImageForPackageDesignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenderImageForPackageDesignAsyncHandler;
 			typedef Outcome<Error, Model::SegmentBodyResult> SegmentBodyOutcome;
 			typedef std::future<SegmentBodyOutcome> SegmentBodyOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::SegmentBodyRequest&, const SegmentBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentBodyAsyncHandler;
@@ -114,9 +134,18 @@ namespace AlibabaCloud
 			GetJobStatusOutcome getJobStatus(const Model::GetJobStatusRequest &request)const;
 			void getJobStatusAsync(const Model::GetJobStatusRequest& request, const GetJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobStatusOutcomeCallable getJobStatusCallable(const Model::GetJobStatusRequest& request) const;
+			GetRenderResultOutcome getRenderResult(const Model::GetRenderResultRequest &request)const;
+			void getRenderResultAsync(const Model::GetRenderResultRequest& request, const GetRenderResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRenderResultOutcomeCallable getRenderResultCallable(const Model::GetRenderResultRequest& request) const;
+			ListPackageDesignModelTypesOutcome listPackageDesignModelTypes(const Model::ListPackageDesignModelTypesRequest &request)const;
+			void listPackageDesignModelTypesAsync(const Model::ListPackageDesignModelTypesRequest& request, const ListPackageDesignModelTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPackageDesignModelTypesOutcomeCallable listPackageDesignModelTypesCallable(const Model::ListPackageDesignModelTypesRequest& request) const;
 			MakeSuperResolutionImageOutcome makeSuperResolutionImage(const Model::MakeSuperResolutionImageRequest &request)const;
 			void makeSuperResolutionImageAsync(const Model::MakeSuperResolutionImageRequest& request, const MakeSuperResolutionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MakeSuperResolutionImageOutcomeCallable makeSuperResolutionImageCallable(const Model::MakeSuperResolutionImageRequest& request) const;
+			PreviewModelForPackageDesignOutcome previewModelForPackageDesign(const Model::PreviewModelForPackageDesignRequest &request)const;
+			void previewModelForPackageDesignAsync(const Model::PreviewModelForPackageDesignRequest& request, const PreviewModelForPackageDesignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PreviewModelForPackageDesignOutcomeCallable previewModelForPackageDesignCallable(const Model::PreviewModelForPackageDesignRequest& request) const;
 			RecognizeImageColorOutcome recognizeImageColor(const Model::RecognizeImageColorRequest &request)const;
 			void recognizeImageColorAsync(const Model::RecognizeImageColorRequest& request, const RecognizeImageColorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageColorOutcomeCallable recognizeImageColorCallable(const Model::RecognizeImageColorRequest& request) const;
@@ -126,6 +155,9 @@ namespace AlibabaCloud
 			RecolorImageOutcome recolorImage(const Model::RecolorImageRequest &request)const;
 			void recolorImageAsync(const Model::RecolorImageRequest& request, const RecolorImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecolorImageOutcomeCallable recolorImageCallable(const Model::RecolorImageRequest& request) const;
+			RenderImageForPackageDesignOutcome renderImageForPackageDesign(const Model::RenderImageForPackageDesignRequest &request)const;
+			void renderImageForPackageDesignAsync(const Model::RenderImageForPackageDesignRequest& request, const RenderImageForPackageDesignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenderImageForPackageDesignOutcomeCallable renderImageForPackageDesignCallable(const Model::RenderImageForPackageDesignRequest& request) const;
 			SegmentBodyOutcome segmentBody(const Model::SegmentBodyRequest &request)const;
 			void segmentBodyAsync(const Model::SegmentBodyRequest& request, const SegmentBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentBodyOutcomeCallable segmentBodyCallable(const Model::SegmentBodyRequest& request) const;

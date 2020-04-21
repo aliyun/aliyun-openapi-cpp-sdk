@@ -33,14 +33,22 @@ set(ivpd_public_header_model
 	include/alibabacloud/ivpd/model/GetJobResultResult.h
 	include/alibabacloud/ivpd/model/GetJobStatusRequest.h
 	include/alibabacloud/ivpd/model/GetJobStatusResult.h
+	include/alibabacloud/ivpd/model/GetRenderResultRequest.h
+	include/alibabacloud/ivpd/model/GetRenderResultResult.h
+	include/alibabacloud/ivpd/model/ListPackageDesignModelTypesRequest.h
+	include/alibabacloud/ivpd/model/ListPackageDesignModelTypesResult.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageRequest.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageResult.h
+	include/alibabacloud/ivpd/model/PreviewModelForPackageDesignRequest.h
+	include/alibabacloud/ivpd/model/PreviewModelForPackageDesignResult.h
 	include/alibabacloud/ivpd/model/RecognizeImageColorRequest.h
 	include/alibabacloud/ivpd/model/RecognizeImageColorResult.h
 	include/alibabacloud/ivpd/model/RecognizeImageStyleRequest.h
 	include/alibabacloud/ivpd/model/RecognizeImageStyleResult.h
 	include/alibabacloud/ivpd/model/RecolorImageRequest.h
 	include/alibabacloud/ivpd/model/RecolorImageResult.h
+	include/alibabacloud/ivpd/model/RenderImageForPackageDesignRequest.h
+	include/alibabacloud/ivpd/model/RenderImageForPackageDesignResult.h
 	include/alibabacloud/ivpd/model/SegmentBodyRequest.h
 	include/alibabacloud/ivpd/model/SegmentBodyResult.h
 	include/alibabacloud/ivpd/model/SegmentImageRequest.h
@@ -60,14 +68,22 @@ set(ivpd_src
 	src/model/GetJobResultResult.cc
 	src/model/GetJobStatusRequest.cc
 	src/model/GetJobStatusResult.cc
+	src/model/GetRenderResultRequest.cc
+	src/model/GetRenderResultResult.cc
+	src/model/ListPackageDesignModelTypesRequest.cc
+	src/model/ListPackageDesignModelTypesResult.cc
 	src/model/MakeSuperResolutionImageRequest.cc
 	src/model/MakeSuperResolutionImageResult.cc
+	src/model/PreviewModelForPackageDesignRequest.cc
+	src/model/PreviewModelForPackageDesignResult.cc
 	src/model/RecognizeImageColorRequest.cc
 	src/model/RecognizeImageColorResult.cc
 	src/model/RecognizeImageStyleRequest.cc
 	src/model/RecognizeImageStyleResult.cc
 	src/model/RecolorImageRequest.cc
 	src/model/RecolorImageResult.cc
+	src/model/RenderImageForPackageDesignRequest.cc
+	src/model/RenderImageForPackageDesignResult.cc
 	src/model/SegmentBodyRequest.cc
 	src/model/SegmentBodyResult.cc
 	src/model/SegmentImageRequest.cc

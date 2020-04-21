@@ -267,6 +267,78 @@ IvpdClient::GetJobStatusOutcomeCallable IvpdClient::getJobStatusCallable(const G
 	return task->get_future();
 }
 
+IvpdClient::GetRenderResultOutcome IvpdClient::getRenderResult(const GetRenderResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRenderResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRenderResultOutcome(GetRenderResultResult(outcome.result()));
+	else
+		return GetRenderResultOutcome(outcome.error());
+}
+
+void IvpdClient::getRenderResultAsync(const GetRenderResultRequest& request, const GetRenderResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRenderResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::GetRenderResultOutcomeCallable IvpdClient::getRenderResultCallable(const GetRenderResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRenderResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getRenderResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::ListPackageDesignModelTypesOutcome IvpdClient::listPackageDesignModelTypes(const ListPackageDesignModelTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPackageDesignModelTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPackageDesignModelTypesOutcome(ListPackageDesignModelTypesResult(outcome.result()));
+	else
+		return ListPackageDesignModelTypesOutcome(outcome.error());
+}
+
+void IvpdClient::listPackageDesignModelTypesAsync(const ListPackageDesignModelTypesRequest& request, const ListPackageDesignModelTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPackageDesignModelTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::ListPackageDesignModelTypesOutcomeCallable IvpdClient::listPackageDesignModelTypesCallable(const ListPackageDesignModelTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPackageDesignModelTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->listPackageDesignModelTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvpdClient::MakeSuperResolutionImageOutcome IvpdClient::makeSuperResolutionImage(const MakeSuperResolutionImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +369,42 @@ IvpdClient::MakeSuperResolutionImageOutcomeCallable IvpdClient::makeSuperResolut
 			[this, request]()
 			{
 			return this->makeSuperResolutionImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::PreviewModelForPackageDesignOutcome IvpdClient::previewModelForPackageDesign(const PreviewModelForPackageDesignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PreviewModelForPackageDesignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PreviewModelForPackageDesignOutcome(PreviewModelForPackageDesignResult(outcome.result()));
+	else
+		return PreviewModelForPackageDesignOutcome(outcome.error());
+}
+
+void IvpdClient::previewModelForPackageDesignAsync(const PreviewModelForPackageDesignRequest& request, const PreviewModelForPackageDesignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, previewModelForPackageDesign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::PreviewModelForPackageDesignOutcomeCallable IvpdClient::previewModelForPackageDesignCallable(const PreviewModelForPackageDesignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PreviewModelForPackageDesignOutcome()>>(
+			[this, request]()
+			{
+			return this->previewModelForPackageDesign(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -405,6 +513,42 @@ IvpdClient::RecolorImageOutcomeCallable IvpdClient::recolorImageCallable(const R
 			[this, request]()
 			{
 			return this->recolorImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::RenderImageForPackageDesignOutcome IvpdClient::renderImageForPackageDesign(const RenderImageForPackageDesignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenderImageForPackageDesignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenderImageForPackageDesignOutcome(RenderImageForPackageDesignResult(outcome.result()));
+	else
+		return RenderImageForPackageDesignOutcome(outcome.error());
+}
+
+void IvpdClient::renderImageForPackageDesignAsync(const RenderImageForPackageDesignRequest& request, const RenderImageForPackageDesignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renderImageForPackageDesign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::RenderImageForPackageDesignOutcomeCallable IvpdClient::renderImageForPackageDesignCallable(const RenderImageForPackageDesignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenderImageForPackageDesignOutcome()>>(
+			[this, request]()
+			{
+			return this->renderImageForPackageDesign(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
