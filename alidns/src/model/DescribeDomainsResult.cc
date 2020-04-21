@@ -77,6 +77,16 @@ void DescribeDomainsResult::parse(const std::string &payload)
 			domainsObject.createTime = valueDomainsDomain["CreateTime"].asString();
 		if(!valueDomainsDomain["CreateTimestamp"].isNull())
 			domainsObject.createTimestamp = std::stol(valueDomainsDomain["CreateTimestamp"].asString());
+		auto allTagsNode = allDomainsNode["Tags"]["Tag"];
+		for (auto allDomainsNodeTagsTag : allTagsNode)
+		{
+			Domain::Tag tagsObject;
+			if(!allDomainsNodeTagsTag["Key"].isNull())
+				tagsObject.key = allDomainsNodeTagsTag["Key"].asString();
+			if(!allDomainsNodeTagsTag["Value"].isNull())
+				tagsObject.value = allDomainsNodeTagsTag["Value"].asString();
+			domainsObject.tags.push_back(tagsObject);
+		}
 		auto allDnsServers = value["DnsServers"]["DnsServer"];
 		for (auto value : allDnsServers)
 			domainsObject.dnsServers.push_back(value.asString());

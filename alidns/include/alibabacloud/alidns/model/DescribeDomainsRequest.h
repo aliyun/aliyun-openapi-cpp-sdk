@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ALIDNS_EXPORT DescribeDomainsRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				DescribeDomainsRequest();
@@ -43,6 +49,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 				std::string getKeyWord()const;
@@ -67,6 +75,7 @@ namespace AlibabaCloud
 				long pageNumber_;
 				std::string resourceGroupId_;
 				long pageSize_;
+				std::vector<Tag> tag_;
 				std::string lang_;
 				std::string keyWord_;
 				std::string direction_;

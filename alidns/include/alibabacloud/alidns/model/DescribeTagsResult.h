@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEDOMAINSRESULT_H_
-#define ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEDOMAINSRESULT_H_
+#ifndef ALIBABACLOUD_ALIDNS_MODEL_DESCRIBETAGSRESULT_H_
+#define ALIBABACLOUD_ALIDNS_MODEL_DESCRIBETAGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,56 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIDNS_EXPORT DescribeDomainsResult : public ServiceResult
+			class ALIBABACLOUD_ALIDNS_EXPORT DescribeTagsResult : public ServiceResult
 			{
 			public:
-				struct Domain
+				struct Tag
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string groupName;
-					bool aliDomain;
-					std::string domainName;
-					std::string instanceId;
-					std::string createTime;
-					std::string punyCode;
-					std::vector<std::string> dnsServers;
-					bool starmark;
-					std::string remark;
-					std::string groupId;
-					std::string versionCode;
-					std::string domainId;
-					std::string versionName;
-					std::string registrantEmail;
-					std::string instanceEndTime;
-					bool instanceExpired;
-					long recordCount;
-					long createTimestamp;
-					std::vector<Domain::Tag> tags;
+					std::vector<std::string> values;
+					std::string key;
 				};
 
 
-				DescribeDomainsResult();
-				explicit DescribeDomainsResult(const std::string &payload);
-				~DescribeDomainsResult();
-				std::vector<Domain> getDomains()const;
+				DescribeTagsResult();
+				explicit DescribeTagsResult(const std::string &payload);
+				~DescribeTagsResult();
 				long getTotalCount()const;
 				long getPageSize()const;
 				long getPageNumber()const;
+				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Domain> domains_;
 				long totalCount_;
 				long pageSize_;
 				long pageNumber_;
+				std::vector<Tag> tags_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEDOMAINSRESULT_H_
+#endif // !ALIBABACLOUD_ALIDNS_MODEL_DESCRIBETAGSRESULT_H_

@@ -1,3 +1,9 @@
+2020-04-21 Version: 1.36.370
+- Supported API for DescribeTags.
+- Supported API for ListTagResources.
+- Supported API for TagResources.
+- Supported API for UntagResources.
+
 2020-04-21 Version: 1.36.369
 - Supported PackageDesign Apis.
 - Supported Api ListPackageDesignModelTypes.

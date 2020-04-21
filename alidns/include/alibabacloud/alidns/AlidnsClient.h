@@ -142,6 +142,8 @@
 #include "model/DescribeSubDomainRecordsResult.h"
 #include "model/DescribeSupportLinesRequest.h"
 #include "model/DescribeSupportLinesResult.h"
+#include "model/DescribeTagsRequest.h"
+#include "model/DescribeTagsResult.h"
 #include "model/DescribeTransferDomainsRequest.h"
 #include "model/DescribeTransferDomainsResult.h"
 #include "model/ExecuteGtmRecoveryPlanRequest.h"
@@ -150,6 +152,8 @@
 #include "model/GetMainDomainNameResult.h"
 #include "model/GetTxtRecordForVerifyRequest.h"
 #include "model/GetTxtRecordForVerifyResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ModifyHichinaDomainDNSRequest.h"
 #include "model/ModifyHichinaDomainDNSResult.h"
 #include "model/OperateBatchDomainRequest.h"
@@ -170,10 +174,14 @@
 #include "model/SetGtmAccessModeResult.h"
 #include "model/SetGtmMonitorStatusRequest.h"
 #include "model/SetGtmMonitorStatusResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/TransferDomainRequest.h"
 #include "model/TransferDomainResult.h"
 #include "model/UnbindInstanceDomainsRequest.h"
 #include "model/UnbindInstanceDomainsResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateCustomLineRequest.h"
 #include "model/UpdateCustomLineResult.h"
 #include "model/UpdateDNSSLBWeightRequest.h"
@@ -385,6 +393,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSupportLinesResult> DescribeSupportLinesOutcome;
 			typedef std::future<DescribeSupportLinesOutcome> DescribeSupportLinesOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeSupportLinesRequest&, const DescribeSupportLinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportLinesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTagsResult> DescribeTagsOutcome;
+			typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeTagsRequest&, const DescribeTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTransferDomainsResult> DescribeTransferDomainsOutcome;
 			typedef std::future<DescribeTransferDomainsOutcome> DescribeTransferDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeTransferDomainsRequest&, const DescribeTransferDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransferDomainsAsyncHandler;
@@ -397,6 +408,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTxtRecordForVerifyResult> GetTxtRecordForVerifyOutcome;
 			typedef std::future<GetTxtRecordForVerifyOutcome> GetTxtRecordForVerifyOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::GetTxtRecordForVerifyRequest&, const GetTxtRecordForVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTxtRecordForVerifyAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyHichinaDomainDNSResult> ModifyHichinaDomainDNSOutcome;
 			typedef std::future<ModifyHichinaDomainDNSOutcome> ModifyHichinaDomainDNSOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ModifyHichinaDomainDNSRequest&, const ModifyHichinaDomainDNSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHichinaDomainDNSAsyncHandler;
@@ -427,12 +441,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetGtmMonitorStatusResult> SetGtmMonitorStatusOutcome;
 			typedef std::future<SetGtmMonitorStatusOutcome> SetGtmMonitorStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetGtmMonitorStatusRequest&, const SetGtmMonitorStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmMonitorStatusAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::TransferDomainResult> TransferDomainOutcome;
 			typedef std::future<TransferDomainOutcome> TransferDomainOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::TransferDomainRequest&, const TransferDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferDomainAsyncHandler;
 			typedef Outcome<Error, Model::UnbindInstanceDomainsResult> UnbindInstanceDomainsOutcome;
 			typedef std::future<UnbindInstanceDomainsOutcome> UnbindInstanceDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UnbindInstanceDomainsRequest&, const UnbindInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindInstanceDomainsAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCustomLineResult> UpdateCustomLineOutcome;
 			typedef std::future<UpdateCustomLineOutcome> UpdateCustomLineOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateCustomLineRequest&, const UpdateCustomLineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomLineAsyncHandler;
@@ -651,6 +671,9 @@ namespace AlibabaCloud
 			DescribeSupportLinesOutcome describeSupportLines(const Model::DescribeSupportLinesRequest &request)const;
 			void describeSupportLinesAsync(const Model::DescribeSupportLinesRequest& request, const DescribeSupportLinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSupportLinesOutcomeCallable describeSupportLinesCallable(const Model::DescribeSupportLinesRequest& request) const;
+			DescribeTagsOutcome describeTags(const Model::DescribeTagsRequest &request)const;
+			void describeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTagsOutcomeCallable describeTagsCallable(const Model::DescribeTagsRequest& request) const;
 			DescribeTransferDomainsOutcome describeTransferDomains(const Model::DescribeTransferDomainsRequest &request)const;
 			void describeTransferDomainsAsync(const Model::DescribeTransferDomainsRequest& request, const DescribeTransferDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTransferDomainsOutcomeCallable describeTransferDomainsCallable(const Model::DescribeTransferDomainsRequest& request) const;
@@ -663,6 +686,9 @@ namespace AlibabaCloud
 			GetTxtRecordForVerifyOutcome getTxtRecordForVerify(const Model::GetTxtRecordForVerifyRequest &request)const;
 			void getTxtRecordForVerifyAsync(const Model::GetTxtRecordForVerifyRequest& request, const GetTxtRecordForVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTxtRecordForVerifyOutcomeCallable getTxtRecordForVerifyCallable(const Model::GetTxtRecordForVerifyRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ModifyHichinaDomainDNSOutcome modifyHichinaDomainDNS(const Model::ModifyHichinaDomainDNSRequest &request)const;
 			void modifyHichinaDomainDNSAsync(const Model::ModifyHichinaDomainDNSRequest& request, const ModifyHichinaDomainDNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyHichinaDomainDNSOutcomeCallable modifyHichinaDomainDNSCallable(const Model::ModifyHichinaDomainDNSRequest& request) const;
@@ -693,12 +719,18 @@ namespace AlibabaCloud
 			SetGtmMonitorStatusOutcome setGtmMonitorStatus(const Model::SetGtmMonitorStatusRequest &request)const;
 			void setGtmMonitorStatusAsync(const Model::SetGtmMonitorStatusRequest& request, const SetGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGtmMonitorStatusOutcomeCallable setGtmMonitorStatusCallable(const Model::SetGtmMonitorStatusRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			TransferDomainOutcome transferDomain(const Model::TransferDomainRequest &request)const;
 			void transferDomainAsync(const Model::TransferDomainRequest& request, const TransferDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransferDomainOutcomeCallable transferDomainCallable(const Model::TransferDomainRequest& request) const;
 			UnbindInstanceDomainsOutcome unbindInstanceDomains(const Model::UnbindInstanceDomainsRequest &request)const;
 			void unbindInstanceDomainsAsync(const Model::UnbindInstanceDomainsRequest& request, const UnbindInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindInstanceDomainsOutcomeCallable unbindInstanceDomainsCallable(const Model::UnbindInstanceDomainsRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateCustomLineOutcome updateCustomLine(const Model::UpdateCustomLineRequest &request)const;
 			void updateCustomLineAsync(const Model::UpdateCustomLineRequest& request, const UpdateCustomLineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCustomLineOutcomeCallable updateCustomLineCallable(const Model::UpdateCustomLineRequest& request) const;

@@ -141,6 +141,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeSubDomainRecordsResult.h
 	include/alibabacloud/alidns/model/DescribeSupportLinesRequest.h
 	include/alibabacloud/alidns/model/DescribeSupportLinesResult.h
+	include/alibabacloud/alidns/model/DescribeTagsRequest.h
+	include/alibabacloud/alidns/model/DescribeTagsResult.h
 	include/alibabacloud/alidns/model/DescribeTransferDomainsRequest.h
 	include/alibabacloud/alidns/model/DescribeTransferDomainsResult.h
 	include/alibabacloud/alidns/model/ExecuteGtmRecoveryPlanRequest.h
@@ -149,6 +151,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/GetMainDomainNameResult.h
 	include/alibabacloud/alidns/model/GetTxtRecordForVerifyRequest.h
 	include/alibabacloud/alidns/model/GetTxtRecordForVerifyResult.h
+	include/alibabacloud/alidns/model/ListTagResourcesRequest.h
+	include/alibabacloud/alidns/model/ListTagResourcesResult.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSRequest.h
 	include/alibabacloud/alidns/model/ModifyHichinaDomainDNSResult.h
 	include/alibabacloud/alidns/model/OperateBatchDomainRequest.h
@@ -169,10 +173,14 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/SetGtmAccessModeResult.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusRequest.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusResult.h
+	include/alibabacloud/alidns/model/TagResourcesRequest.h
+	include/alibabacloud/alidns/model/TagResourcesResult.h
 	include/alibabacloud/alidns/model/TransferDomainRequest.h
 	include/alibabacloud/alidns/model/TransferDomainResult.h
 	include/alibabacloud/alidns/model/UnbindInstanceDomainsRequest.h
 	include/alibabacloud/alidns/model/UnbindInstanceDomainsResult.h
+	include/alibabacloud/alidns/model/UntagResourcesRequest.h
+	include/alibabacloud/alidns/model/UntagResourcesResult.h
 	include/alibabacloud/alidns/model/UpdateCustomLineRequest.h
 	include/alibabacloud/alidns/model/UpdateCustomLineResult.h
 	include/alibabacloud/alidns/model/UpdateDNSSLBWeightRequest.h
@@ -318,6 +326,8 @@ set(alidns_src
 	src/model/DescribeSubDomainRecordsResult.cc
 	src/model/DescribeSupportLinesRequest.cc
 	src/model/DescribeSupportLinesResult.cc
+	src/model/DescribeTagsRequest.cc
+	src/model/DescribeTagsResult.cc
 	src/model/DescribeTransferDomainsRequest.cc
 	src/model/DescribeTransferDomainsResult.cc
 	src/model/ExecuteGtmRecoveryPlanRequest.cc
@@ -326,6 +336,8 @@ set(alidns_src
 	src/model/GetMainDomainNameResult.cc
 	src/model/GetTxtRecordForVerifyRequest.cc
 	src/model/GetTxtRecordForVerifyResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyHichinaDomainDNSRequest.cc
 	src/model/ModifyHichinaDomainDNSResult.cc
 	src/model/OperateBatchDomainRequest.cc
@@ -346,10 +358,14 @@ set(alidns_src
 	src/model/SetGtmAccessModeResult.cc
 	src/model/SetGtmMonitorStatusRequest.cc
 	src/model/SetGtmMonitorStatusResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/TransferDomainRequest.cc
 	src/model/TransferDomainResult.cc
 	src/model/UnbindInstanceDomainsRequest.cc
 	src/model/UnbindInstanceDomainsResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateCustomLineRequest.cc
 	src/model/UpdateCustomLineResult.cc
 	src/model/UpdateDNSSLBWeightRequest.cc
