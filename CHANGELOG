@@ -1,3 +1,6 @@
+2020-04-22 Version: 1.36.371
+- Generated 2019-01-01 for `Cassandra`.
+
 2020-04-21 Version: 1.36.370
 - Supported API for DescribeTags.
 - Supported API for ListTagResources.

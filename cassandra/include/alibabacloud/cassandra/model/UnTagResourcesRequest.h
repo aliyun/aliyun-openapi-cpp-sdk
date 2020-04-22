@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERSREQUEST_H_
-#define ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERSREQUEST_H_
+#ifndef ALIBABACLOUD_CASSANDRA_MODEL_UNTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_CASSANDRA_MODEL_UNTAGRESOURCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CASSANDRA_EXPORT DescribeClustersRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CASSANDRA_EXPORT UnTagResourcesRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				DescribeClustersRequest();
-				~DescribeClustersRequest();
+				UnTagResourcesRequest();
+				~UnTagResourcesRequest();
 
-				std::string getClusterName()const;
-				void setClusterName(const std::string& clusterName);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
+				bool getAll()const;
+				void setAll(bool all);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
+				std::vector<std::string> getTagKey()const;
+				void setTagKey(const std::vector<std::string>& tagKey);
 
             private:
-				std::string clusterName_;
-				int pageNumber_;
 				std::string regionId_;
-				int pageSize_;
-				std::vector<Tag> tag_;
+				bool all_;
+				std::vector<std::string> resourceId_;
+				std::vector<std::string> tagKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERSREQUEST_H_
+#endif // !ALIBABACLOUD_CASSANDRA_MODEL_UNTAGRESOURCESREQUEST_H_

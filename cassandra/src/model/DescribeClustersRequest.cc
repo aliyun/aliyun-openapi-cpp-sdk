@@ -27,6 +27,17 @@ DescribeClustersRequest::DescribeClustersRequest() :
 DescribeClustersRequest::~DescribeClustersRequest()
 {}
 
+std::string DescribeClustersRequest::getClusterName()const
+{
+	return clusterName_;
+}
+
+void DescribeClustersRequest::setClusterName(const std::string& clusterName)
+{
+	clusterName_ = clusterName;
+	setParameter("ClusterName", clusterName);
+}
+
 int DescribeClustersRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -58,5 +69,21 @@ void DescribeClustersRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::vector<DescribeClustersRequest::Tag> DescribeClustersRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeClustersRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 

@@ -82,6 +82,10 @@
 #include "model/ExecuteNodeToolResult.h"
 #include "model/GetCmsUrlRequest.h"
 #include "model/GetCmsUrlResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
+#include "model/ListTagsRequest.h"
+#include "model/ListTagsResult.h"
 #include "model/ModifyAccountPasswordRequest.h"
 #include "model/ModifyAccountPasswordResult.h"
 #include "model/ModifyBackupPlanRequest.h"
@@ -112,6 +116,10 @@
 #include "model/ResizeDiskSizeResult.h"
 #include "model/ResizeNodeCountRequest.h"
 #include "model/ResizeNodeCountResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UnTagResourcesRequest.h"
+#include "model/UnTagResourcesResult.h"
 #include "model/UpgradeClusterVersionRequest.h"
 #include "model/UpgradeClusterVersionResult.h"
 
@@ -213,6 +221,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCmsUrlResult> GetCmsUrlOutcome;
 			typedef std::future<GetCmsUrlOutcome> GetCmsUrlOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::GetCmsUrlRequest&, const GetCmsUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCmsUrlAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagsResult> ListTagsOutcome;
+			typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::ListTagsRequest&, const ListTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountPasswordResult> ModifyAccountPasswordOutcome;
 			typedef std::future<ModifyAccountPasswordOutcome> ModifyAccountPasswordOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::ModifyAccountPasswordRequest&, const ModifyAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountPasswordAsyncHandler;
@@ -258,6 +272,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResizeNodeCountResult> ResizeNodeCountOutcome;
 			typedef std::future<ResizeNodeCountOutcome> ResizeNodeCountOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::ResizeNodeCountRequest&, const ResizeNodeCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeNodeCountAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UnTagResourcesResult> UnTagResourcesOutcome;
+			typedef std::future<UnTagResourcesOutcome> UnTagResourcesOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::UnTagResourcesRequest&, const UnTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeClusterVersionResult> UpgradeClusterVersionOutcome;
 			typedef std::future<UpgradeClusterVersionOutcome> UpgradeClusterVersionOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::UpgradeClusterVersionRequest&, const UpgradeClusterVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterVersionAsyncHandler;
@@ -356,6 +376,12 @@ namespace AlibabaCloud
 			GetCmsUrlOutcome getCmsUrl(const Model::GetCmsUrlRequest &request)const;
 			void getCmsUrlAsync(const Model::GetCmsUrlRequest& request, const GetCmsUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCmsUrlOutcomeCallable getCmsUrlCallable(const Model::GetCmsUrlRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ListTagsOutcome listTags(const Model::ListTagsRequest &request)const;
+			void listTagsAsync(const Model::ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagsOutcomeCallable listTagsCallable(const Model::ListTagsRequest& request) const;
 			ModifyAccountPasswordOutcome modifyAccountPassword(const Model::ModifyAccountPasswordRequest &request)const;
 			void modifyAccountPasswordAsync(const Model::ModifyAccountPasswordRequest& request, const ModifyAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountPasswordOutcomeCallable modifyAccountPasswordCallable(const Model::ModifyAccountPasswordRequest& request) const;
@@ -401,6 +427,12 @@ namespace AlibabaCloud
 			ResizeNodeCountOutcome resizeNodeCount(const Model::ResizeNodeCountRequest &request)const;
 			void resizeNodeCountAsync(const Model::ResizeNodeCountRequest& request, const ResizeNodeCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResizeNodeCountOutcomeCallable resizeNodeCountCallable(const Model::ResizeNodeCountRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UnTagResourcesOutcome unTagResources(const Model::UnTagResourcesRequest &request)const;
+			void unTagResourcesAsync(const Model::UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnTagResourcesOutcomeCallable unTagResourcesCallable(const Model::UnTagResourcesRequest& request) const;
 			UpgradeClusterVersionOutcome upgradeClusterVersion(const Model::UpgradeClusterVersionRequest &request)const;
 			void upgradeClusterVersionAsync(const Model::UpgradeClusterVersionRequest& request, const UpgradeClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeClusterVersionOutcomeCallable upgradeClusterVersionCallable(const Model::UpgradeClusterVersionRequest& request) const;

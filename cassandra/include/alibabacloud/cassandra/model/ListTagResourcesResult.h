@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERRESULT_H_
-#define ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_CASSANDRA_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_CASSANDRA_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CASSANDRA_EXPORT DescribeClusterResult : public ServiceResult
+			class ALIBABACLOUD_CASSANDRA_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
-				struct Cluster
+				struct TagResource
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string status;
-					std::string majorVersion;
-					std::string createdTime;
-					std::string clusterId;
-					std::string minorVersion;
-					std::string payType;
-					std::string lockMode;
-					bool isLatestVersion;
-					std::string maintainEndTime;
-					int dataCenterCount;
-					std::string clusterName;
-					std::string expireTime;
-					std::vector<Tag> tags;
-					std::string maintainStartTime;
+					std::string resourceId;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
 				};
 
 
-				DescribeClusterResult();
-				explicit DescribeClusterResult(const std::string &payload);
-				~DescribeClusterResult();
-				Cluster getCluster()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResource> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Cluster cluster_;
+				std::string nextToken_;
+				std::vector<TagResource> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBECLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_CASSANDRA_MODEL_LISTTAGRESOURCESRESULT_H_

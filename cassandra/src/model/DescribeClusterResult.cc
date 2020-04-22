@@ -66,6 +66,16 @@ void DescribeClusterResult::parse(const std::string &payload)
 		cluster_.maintainEndTime = clusterNode["MaintainEndTime"].asString();
 	if(!clusterNode["LockMode"].isNull())
 		cluster_.lockMode = clusterNode["LockMode"].asString();
+	auto allTagsNode = clusterNode["Tags"]["Tag"];
+	for (auto clusterNodeTagsTag : allTagsNode)
+	{
+		Cluster::Tag tagObject;
+		if(!clusterNodeTagsTag["Key"].isNull())
+			tagObject.key = clusterNodeTagsTag["Key"].asString();
+		if(!clusterNodeTagsTag["Value"].isNull())
+			tagObject.value = clusterNodeTagsTag["Value"].asString();
+		cluster_.tags.push_back(tagObject);
+	}
 
 }
 

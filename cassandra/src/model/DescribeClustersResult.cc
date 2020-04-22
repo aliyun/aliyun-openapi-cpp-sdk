@@ -63,6 +63,16 @@ void DescribeClustersResult::parse(const std::string &payload)
 			clustersObject.dataCenterCount = std::stoi(valueClustersCluster["DataCenterCount"].asString());
 		if(!valueClustersCluster["LockMode"].isNull())
 			clustersObject.lockMode = valueClustersCluster["LockMode"].asString();
+		auto allTagsNode = allClustersNode["Tags"]["Tag"];
+		for (auto allClustersNodeTagsTag : allTagsNode)
+		{
+			Cluster::Tag tagsObject;
+			if(!allClustersNodeTagsTag["Key"].isNull())
+				tagsObject.key = allClustersNodeTagsTag["Key"].asString();
+			if(!allClustersNodeTagsTag["Value"].isNull())
+				tagsObject.value = allClustersNodeTagsTag["Value"].asString();
+			clustersObject.tags.push_back(tagsObject);
+		}
 		clusters_.push_back(clustersObject);
 	}
 	if(!value["TotalCount"].isNull())

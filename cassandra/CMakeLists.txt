@@ -81,6 +81,10 @@ set(cassandra_public_header_model
 	include/alibabacloud/cassandra/model/ExecuteNodeToolResult.h
 	include/alibabacloud/cassandra/model/GetCmsUrlRequest.h
 	include/alibabacloud/cassandra/model/GetCmsUrlResult.h
+	include/alibabacloud/cassandra/model/ListTagResourcesRequest.h
+	include/alibabacloud/cassandra/model/ListTagResourcesResult.h
+	include/alibabacloud/cassandra/model/ListTagsRequest.h
+	include/alibabacloud/cassandra/model/ListTagsResult.h
 	include/alibabacloud/cassandra/model/ModifyAccountPasswordRequest.h
 	include/alibabacloud/cassandra/model/ModifyAccountPasswordResult.h
 	include/alibabacloud/cassandra/model/ModifyBackupPlanRequest.h
@@ -111,6 +115,10 @@ set(cassandra_public_header_model
 	include/alibabacloud/cassandra/model/ResizeDiskSizeResult.h
 	include/alibabacloud/cassandra/model/ResizeNodeCountRequest.h
 	include/alibabacloud/cassandra/model/ResizeNodeCountResult.h
+	include/alibabacloud/cassandra/model/TagResourcesRequest.h
+	include/alibabacloud/cassandra/model/TagResourcesResult.h
+	include/alibabacloud/cassandra/model/UnTagResourcesRequest.h
+	include/alibabacloud/cassandra/model/UnTagResourcesResult.h
 	include/alibabacloud/cassandra/model/UpgradeClusterVersionRequest.h
 	include/alibabacloud/cassandra/model/UpgradeClusterVersionResult.h )
 
@@ -176,6 +184,10 @@ set(cassandra_src
 	src/model/ExecuteNodeToolResult.cc
 	src/model/GetCmsUrlRequest.cc
 	src/model/GetCmsUrlResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ListTagsRequest.cc
+	src/model/ListTagsResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
 	src/model/ModifyAccountPasswordResult.cc
 	src/model/ModifyBackupPlanRequest.cc
@@ -206,6 +218,10 @@ set(cassandra_src
 	src/model/ResizeDiskSizeResult.cc
 	src/model/ResizeNodeCountRequest.cc
 	src/model/ResizeNodeCountResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UnTagResourcesRequest.cc
+	src/model/UnTagResourcesResult.cc
 	src/model/UpgradeClusterVersionRequest.cc
 	src/model/UpgradeClusterVersionResult.cc )
 

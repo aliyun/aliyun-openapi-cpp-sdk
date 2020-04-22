@@ -1131,6 +1131,78 @@ CassandraClient::GetCmsUrlOutcomeCallable CassandraClient::getCmsUrlCallable(con
 	return task->get_future();
 }
 
+CassandraClient::ListTagResourcesOutcome CassandraClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void CassandraClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::ListTagResourcesOutcomeCallable CassandraClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CassandraClient::ListTagsOutcome CassandraClient::listTags(const ListTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagsOutcome(ListTagsResult(outcome.result()));
+	else
+		return ListTagsOutcome(outcome.error());
+}
+
+void CassandraClient::listTagsAsync(const ListTagsRequest& request, const ListTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::ListTagsOutcomeCallable CassandraClient::listTagsCallable(const ListTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CassandraClient::ModifyAccountPasswordOutcome CassandraClient::modifyAccountPassword(const ModifyAccountPasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1737,78 @@ CassandraClient::ResizeNodeCountOutcomeCallable CassandraClient::resizeNodeCount
 			[this, request]()
 			{
 			return this->resizeNodeCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CassandraClient::TagResourcesOutcome CassandraClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void CassandraClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::TagResourcesOutcomeCallable CassandraClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CassandraClient::UnTagResourcesOutcome CassandraClient::unTagResources(const UnTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnTagResourcesOutcome(UnTagResourcesResult(outcome.result()));
+	else
+		return UnTagResourcesOutcome(outcome.error());
+}
+
+void CassandraClient::unTagResourcesAsync(const UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::UnTagResourcesOutcomeCallable CassandraClient::unTagResourcesCallable(const UnTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->unTagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

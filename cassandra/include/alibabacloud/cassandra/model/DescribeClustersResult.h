@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Cluster
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string majorVersion;
 					std::string createdTime;
@@ -44,6 +49,7 @@ namespace AlibabaCloud
 					std::string payType;
 					std::string lockMode;
 					std::string expireTime;
+					std::vector<Cluster::Tag> tags;
 				};
 
 
