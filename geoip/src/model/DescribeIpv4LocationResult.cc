@@ -51,7 +51,29 @@ void DescribeIpv4LocationResult::parse(const std::string &payload)
 		county_ = value["County"].asString();
 	if(!value["Isp"].isNull())
 		isp_ = value["Isp"].asString();
+	if(!value["CountryCode"].isNull())
+		countryCode_ = value["CountryCode"].asString();
+	if(!value["CountryEn"].isNull())
+		countryEn_ = value["CountryEn"].asString();
+	if(!value["ProvinceEn"].isNull())
+		provinceEn_ = value["ProvinceEn"].asString();
+	if(!value["CityEn"].isNull())
+		cityEn_ = value["CityEn"].asString();
+	if(!value["Longitude"].isNull())
+		longitude_ = value["Longitude"].asString();
+	if(!value["Latitude"].isNull())
+		latitude_ = value["Latitude"].asString();
 
+}
+
+std::string DescribeIpv4LocationResult::getProvinceEn()const
+{
+	return provinceEn_;
+}
+
+std::string DescribeIpv4LocationResult::getCityEn()const
+{
+	return cityEn_;
 }
 
 std::string DescribeIpv4LocationResult::getIp()const
@@ -69,9 +91,19 @@ std::string DescribeIpv4LocationResult::getCountry()const
 	return country_;
 }
 
+std::string DescribeIpv4LocationResult::getLatitude()const
+{
+	return latitude_;
+}
+
 std::string DescribeIpv4LocationResult::getCity()const
 {
 	return city_;
+}
+
+std::string DescribeIpv4LocationResult::getCountryCode()const
+{
+	return countryCode_;
 }
 
 std::string DescribeIpv4LocationResult::getCounty()const
@@ -79,8 +111,18 @@ std::string DescribeIpv4LocationResult::getCounty()const
 	return county_;
 }
 
+std::string DescribeIpv4LocationResult::getLongitude()const
+{
+	return longitude_;
+}
+
 std::string DescribeIpv4LocationResult::getProvince()const
 {
 	return province_;
+}
+
+std::string DescribeIpv4LocationResult::getCountryEn()const
+{
+	return countryEn_;
 }
 

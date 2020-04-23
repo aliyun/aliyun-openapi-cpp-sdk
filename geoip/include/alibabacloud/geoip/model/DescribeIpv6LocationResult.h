@@ -37,22 +37,34 @@ namespace AlibabaCloud
 				DescribeIpv6LocationResult();
 				explicit DescribeIpv6LocationResult(const std::string &payload);
 				~DescribeIpv6LocationResult();
+				std::string getProvinceEn()const;
+				std::string getCityEn()const;
 				std::string getIp()const;
 				std::string getIsp()const;
 				std::string getCountry()const;
+				std::string getLatitude()const;
 				std::string getCity()const;
+				std::string getCountryCode()const;
 				std::string getCounty()const;
+				std::string getLongitude()const;
 				std::string getProvince()const;
+				std::string getCountryEn()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string provinceEn_;
+				std::string cityEn_;
 				std::string ip_;
 				std::string isp_;
 				std::string country_;
+				std::string latitude_;
 				std::string city_;
+				std::string countryCode_;
 				std::string county_;
+				std::string longitude_;
 				std::string province_;
+				std::string countryEn_;
 
 			};
 		}
