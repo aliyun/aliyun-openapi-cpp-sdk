@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetInstanceRequest;
 GetInstanceRequest::GetInstanceRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetInstance")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetInstanceRequest::~GetInstanceRequest()

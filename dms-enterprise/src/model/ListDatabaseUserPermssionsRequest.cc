@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::ListDatabaseUserPermssionsRequest;
 ListDatabaseUserPermssionsRequest::ListDatabaseUserPermssionsRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListDatabaseUserPermssionsRequest::~ListDatabaseUserPermssionsRequest()

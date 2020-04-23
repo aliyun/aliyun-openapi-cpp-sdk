@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetDatabaseRequest;
 GetDatabaseRequest::GetDatabaseRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetDatabase")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetDatabaseRequest::~GetDatabaseRequest()

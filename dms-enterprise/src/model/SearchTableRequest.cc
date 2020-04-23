@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::SearchTableRequest;
 SearchTableRequest::SearchTableRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "SearchTable")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 SearchTableRequest::~SearchTableRequest()

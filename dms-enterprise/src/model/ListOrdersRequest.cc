@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::ListOrdersRequest;
 ListOrdersRequest::ListOrdersRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListOrders")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListOrdersRequest::~ListOrdersRequest()

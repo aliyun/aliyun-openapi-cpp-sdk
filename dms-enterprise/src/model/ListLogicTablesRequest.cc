@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::ListLogicTablesRequest;
 ListLogicTablesRequest::ListLogicTablesRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListLogicTables")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListLogicTablesRequest::~ListLogicTablesRequest()

@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetUserRequest;
 GetUserRequest::GetUserRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetUser")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetUserRequest::~GetUserRequest()

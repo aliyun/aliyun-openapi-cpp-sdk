@@ -34,13 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct User
 				{
-					long uid;
-					std::vector<std::string> roleIdList;
-					std::string userId;
-					std::string state;
 					std::vector<std::string> roleNameList;
 					std::string nickName;
 					std::string mobile;
+					long maxExecuteCount;
+					long uid;
+					std::string lastLoginTime;
+					long curResultCount;
+					std::vector<std::string> roleIdList;
+					long maxResultCount;
+					std::string userId;
+					std::string state;
+					long curExecuteCount;
 					long parentUid;
 				};
 

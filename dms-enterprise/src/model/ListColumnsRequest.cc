@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::ListColumnsRequest;
 ListColumnsRequest::ListColumnsRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListColumns")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListColumnsRequest::~ListColumnsRequest()

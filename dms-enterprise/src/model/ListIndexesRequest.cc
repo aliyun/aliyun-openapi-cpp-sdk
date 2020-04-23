@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::ListIndexesRequest;
 ListIndexesRequest::ListIndexesRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "ListIndexes")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 ListIndexesRequest::~ListIndexesRequest()

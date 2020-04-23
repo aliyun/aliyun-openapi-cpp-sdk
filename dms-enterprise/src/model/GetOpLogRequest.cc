@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetOpLogRequest;
 GetOpLogRequest::GetOpLogRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetOpLog")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetOpLogRequest::~GetOpLogRequest()

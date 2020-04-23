@@ -52,6 +52,16 @@ void GetUserResult::parse(const std::string &payload)
 		user_.parentUid = std::stol(userNode["ParentUid"].asString());
 	if(!userNode["State"].isNull())
 		user_.state = userNode["State"].asString();
+	if(!userNode["LastLoginTime"].isNull())
+		user_.lastLoginTime = userNode["LastLoginTime"].asString();
+	if(!userNode["CurExecuteCount"].isNull())
+		user_.curExecuteCount = std::stol(userNode["CurExecuteCount"].asString());
+	if(!userNode["CurResultCount"].isNull())
+		user_.curResultCount = std::stol(userNode["CurResultCount"].asString());
+	if(!userNode["MaxExecuteCount"].isNull())
+		user_.maxExecuteCount = std::stol(userNode["MaxExecuteCount"].asString());
+	if(!userNode["MaxResultCount"].isNull())
+		user_.maxResultCount = std::stol(userNode["MaxResultCount"].asString());
 		auto allRoleIdList = userNode["RoleIdList"]["RoleIds"];
 		for (auto value : allRoleIdList)
 			user_.roleIdList.push_back(value.asString());

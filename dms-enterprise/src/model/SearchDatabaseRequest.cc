@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::SearchDatabaseRequest;
 SearchDatabaseRequest::SearchDatabaseRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "SearchDatabase")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 SearchDatabaseRequest::~SearchDatabaseRequest()

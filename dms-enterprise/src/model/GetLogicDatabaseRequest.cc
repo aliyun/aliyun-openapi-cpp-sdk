@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetLogicDatabaseRequest;
 GetLogicDatabaseRequest::GetLogicDatabaseRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetLogicDatabase")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetLogicDatabaseRequest::~GetLogicDatabaseRequest()

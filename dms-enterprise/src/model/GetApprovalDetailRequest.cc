@@ -21,7 +21,7 @@ using AlibabaCloud::Dms_enterprise::Model::GetApprovalDetailRequest;
 GetApprovalDetailRequest::GetApprovalDetailRequest() :
 	RpcServiceRequest("dms-enterprise", "2018-11-01", "GetApprovalDetail")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetApprovalDetailRequest::~GetApprovalDetailRequest()
