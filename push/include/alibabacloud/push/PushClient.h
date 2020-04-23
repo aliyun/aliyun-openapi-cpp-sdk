@@ -38,8 +38,6 @@
 #include "model/CompleteContinuouslyPushResult.h"
 #include "model/ContinuouslyPushRequest.h"
 #include "model/ContinuouslyPushResult.h"
-#include "model/ListPushRecordsRequest.h"
-#include "model/ListPushRecordsResult.h"
 #include "model/ListSummaryAppsRequest.h"
 #include "model/ListSummaryAppsResult.h"
 #include "model/ListTagsRequest.h"
@@ -66,8 +64,6 @@
 #include "model/QueryDevicesByAccountResult.h"
 #include "model/QueryDevicesByAliasRequest.h"
 #include "model/QueryDevicesByAliasResult.h"
-#include "model/QueryPushListRequest.h"
-#include "model/QueryPushListResult.h"
 #include "model/QueryPushRecordsRequest.h"
 #include "model/QueryPushRecordsResult.h"
 #include "model/QueryPushStatByAppRequest.h"
@@ -119,9 +115,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ContinuouslyPushResult> ContinuouslyPushOutcome;
 			typedef std::future<ContinuouslyPushOutcome> ContinuouslyPushOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::ContinuouslyPushRequest&, const ContinuouslyPushOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContinuouslyPushAsyncHandler;
-			typedef Outcome<Error, Model::ListPushRecordsResult> ListPushRecordsOutcome;
-			typedef std::future<ListPushRecordsOutcome> ListPushRecordsOutcomeCallable;
-			typedef std::function<void(const PushClient*, const Model::ListPushRecordsRequest&, const ListPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPushRecordsAsyncHandler;
 			typedef Outcome<Error, Model::ListSummaryAppsResult> ListSummaryAppsOutcome;
 			typedef std::future<ListSummaryAppsOutcome> ListSummaryAppsOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::ListSummaryAppsRequest&, const ListSummaryAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSummaryAppsAsyncHandler;
@@ -161,9 +154,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDevicesByAliasResult> QueryDevicesByAliasOutcome;
 			typedef std::future<QueryDevicesByAliasOutcome> QueryDevicesByAliasOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryDevicesByAliasRequest&, const QueryDevicesByAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevicesByAliasAsyncHandler;
-			typedef Outcome<Error, Model::QueryPushListResult> QueryPushListOutcome;
-			typedef std::future<QueryPushListOutcome> QueryPushListOutcomeCallable;
-			typedef std::function<void(const PushClient*, const Model::QueryPushListRequest&, const QueryPushListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushListAsyncHandler;
 			typedef Outcome<Error, Model::QueryPushRecordsResult> QueryPushRecordsOutcome;
 			typedef std::future<QueryPushRecordsOutcome> QueryPushRecordsOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryPushRecordsRequest&, const QueryPushRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPushRecordsAsyncHandler;
@@ -220,9 +210,6 @@ namespace AlibabaCloud
 			ContinuouslyPushOutcome continuouslyPush(const Model::ContinuouslyPushRequest &request)const;
 			void continuouslyPushAsync(const Model::ContinuouslyPushRequest& request, const ContinuouslyPushAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ContinuouslyPushOutcomeCallable continuouslyPushCallable(const Model::ContinuouslyPushRequest& request) const;
-			ListPushRecordsOutcome listPushRecords(const Model::ListPushRecordsRequest &request)const;
-			void listPushRecordsAsync(const Model::ListPushRecordsRequest& request, const ListPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListPushRecordsOutcomeCallable listPushRecordsCallable(const Model::ListPushRecordsRequest& request) const;
 			ListSummaryAppsOutcome listSummaryApps(const Model::ListSummaryAppsRequest &request)const;
 			void listSummaryAppsAsync(const Model::ListSummaryAppsRequest& request, const ListSummaryAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSummaryAppsOutcomeCallable listSummaryAppsCallable(const Model::ListSummaryAppsRequest& request) const;
@@ -262,9 +249,6 @@ namespace AlibabaCloud
 			QueryDevicesByAliasOutcome queryDevicesByAlias(const Model::QueryDevicesByAliasRequest &request)const;
 			void queryDevicesByAliasAsync(const Model::QueryDevicesByAliasRequest& request, const QueryDevicesByAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDevicesByAliasOutcomeCallable queryDevicesByAliasCallable(const Model::QueryDevicesByAliasRequest& request) const;
-			QueryPushListOutcome queryPushList(const Model::QueryPushListRequest &request)const;
-			void queryPushListAsync(const Model::QueryPushListRequest& request, const QueryPushListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryPushListOutcomeCallable queryPushListCallable(const Model::QueryPushListRequest& request) const;
 			QueryPushRecordsOutcome queryPushRecords(const Model::QueryPushRecordsRequest &request)const;
 			void queryPushRecordsAsync(const Model::QueryPushRecordsRequest& request, const QueryPushRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPushRecordsOutcomeCallable queryPushRecordsCallable(const Model::QueryPushRecordsRequest& request) const;

@@ -37,8 +37,6 @@ set(push_public_header_model
 	include/alibabacloud/push/model/CompleteContinuouslyPushResult.h
 	include/alibabacloud/push/model/ContinuouslyPushRequest.h
 	include/alibabacloud/push/model/ContinuouslyPushResult.h
-	include/alibabacloud/push/model/ListPushRecordsRequest.h
-	include/alibabacloud/push/model/ListPushRecordsResult.h
 	include/alibabacloud/push/model/ListSummaryAppsRequest.h
 	include/alibabacloud/push/model/ListSummaryAppsResult.h
 	include/alibabacloud/push/model/ListTagsRequest.h
@@ -65,8 +63,6 @@ set(push_public_header_model
 	include/alibabacloud/push/model/QueryDevicesByAccountResult.h
 	include/alibabacloud/push/model/QueryDevicesByAliasRequest.h
 	include/alibabacloud/push/model/QueryDevicesByAliasResult.h
-	include/alibabacloud/push/model/QueryPushListRequest.h
-	include/alibabacloud/push/model/QueryPushListResult.h
 	include/alibabacloud/push/model/QueryPushRecordsRequest.h
 	include/alibabacloud/push/model/QueryPushRecordsResult.h
 	include/alibabacloud/push/model/QueryPushStatByAppRequest.h
@@ -104,8 +100,6 @@ set(push_src
 	src/model/CompleteContinuouslyPushResult.cc
 	src/model/ContinuouslyPushRequest.cc
 	src/model/ContinuouslyPushResult.cc
-	src/model/ListPushRecordsRequest.cc
-	src/model/ListPushRecordsResult.cc
 	src/model/ListSummaryAppsRequest.cc
 	src/model/ListSummaryAppsResult.cc
 	src/model/ListTagsRequest.cc
@@ -132,8 +126,6 @@ set(push_src
 	src/model/QueryDevicesByAccountResult.cc
 	src/model/QueryDevicesByAliasRequest.cc
 	src/model/QueryDevicesByAliasResult.cc
-	src/model/QueryPushListRequest.cc
-	src/model/QueryPushListResult.cc
 	src/model/QueryPushRecordsRequest.cc
 	src/model/QueryPushRecordsResult.cc
 	src/model/QueryPushStatByAppRequest.cc
