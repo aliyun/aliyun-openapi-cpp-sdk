@@ -1,3 +1,9 @@
+2020-04-24 Version: 1.36.376
+- Publish apis for ledger instances.
+- Publish apis for members.
+- Publish apis for time anchors.
+- Publish apis for endpoints.
+
 2020-04-23 Version: 1.36.375
 - GetUser API return user execute query count information.
 
