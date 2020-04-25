@@ -38,6 +38,17 @@ void RestartInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool RestartInstanceRequest::getUpgradeMinorVersion()const
+{
+	return upgradeMinorVersion_;
+}
+
+void RestartInstanceRequest::setUpgradeMinorVersion(bool upgradeMinorVersion)
+{
+	upgradeMinorVersion_ = upgradeMinorVersion;
+	setParameter("UpgradeMinorVersion", upgradeMinorVersion ? "true" : "false");
+}
+
 std::string RestartInstanceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

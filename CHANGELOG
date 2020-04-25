@@ -1,3 +1,7 @@
+2020-04-25 Version: 1.36.378
+- Generated 2015-01-01 for `R-kvstore`.
+- Add RestoreTime for CreateInstance API.
+
 2020-04-24 Version: 1.36.377
 - Publish apis for ledger instances.
 - Publish apis for members.

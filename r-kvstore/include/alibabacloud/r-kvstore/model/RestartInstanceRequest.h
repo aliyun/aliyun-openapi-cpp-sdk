@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				bool getUpgradeMinorVersion()const;
+				void setUpgradeMinorVersion(bool upgradeMinorVersion);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				bool upgradeMinorVersion_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string effectiveTime_;
