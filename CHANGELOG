@@ -1,3 +1,6 @@
+2020-04-26 Version: 1.36.379
+- New api publish.
+
 2020-04-25 Version: 1.36.378
 - Generated 2015-01-01 for `R-kvstore`.
 - Add RestoreTime for CreateInstance API.
