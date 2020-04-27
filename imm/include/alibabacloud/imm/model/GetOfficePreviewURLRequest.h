@@ -39,19 +39,37 @@ namespace AlibabaCloud
 				void setSrcType(const std::string& srcType);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				int getWatermarkVertical()const;
+				void setWatermarkVertical(int watermarkVertical);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getUseOldURL()const;
-				void setUseOldURL(bool useOldURL);
+				int getWatermarkType()const;
+				void setWatermarkType(int watermarkType);
+				float getWatermarkRotate()const;
+				void setWatermarkRotate(float watermarkRotate);
+				std::string getWatermarkValue()const;
+				void setWatermarkValue(const std::string& watermarkValue);
+				std::string getWatermarkFont()const;
+				void setWatermarkFont(const std::string& watermarkFont);
+				int getWatermarkHorizontal()const;
+				void setWatermarkHorizontal(int watermarkHorizontal);
 				std::string getSrcUri()const;
 				void setSrcUri(const std::string& srcUri);
+				std::string getWatermarkFillStyle()const;
+				void setWatermarkFillStyle(const std::string& watermarkFillStyle);
 
             private:
 				std::string srcType_;
 				std::string project_;
+				int watermarkVertical_;
 				std::string accessKeyId_;
-				bool useOldURL_;
+				int watermarkType_;
+				float watermarkRotate_;
+				std::string watermarkValue_;
+				std::string watermarkFont_;
+				int watermarkHorizontal_;
 				std::string srcUri_;
+				std::string watermarkFillStyle_;
 
 			};
 		}

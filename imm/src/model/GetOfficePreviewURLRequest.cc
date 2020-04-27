@@ -49,6 +49,17 @@ void GetOfficePreviewURLRequest::setProject(const std::string& project)
 	setParameter("Project", project);
 }
 
+int GetOfficePreviewURLRequest::getWatermarkVertical()const
+{
+	return watermarkVertical_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkVertical(int watermarkVertical)
+{
+	watermarkVertical_ = watermarkVertical;
+	setParameter("WatermarkVertical", std::to_string(watermarkVertical));
+}
+
 std::string GetOfficePreviewURLRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,15 +71,59 @@ void GetOfficePreviewURLRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-bool GetOfficePreviewURLRequest::getUseOldURL()const
+int GetOfficePreviewURLRequest::getWatermarkType()const
 {
-	return useOldURL_;
+	return watermarkType_;
 }
 
-void GetOfficePreviewURLRequest::setUseOldURL(bool useOldURL)
+void GetOfficePreviewURLRequest::setWatermarkType(int watermarkType)
 {
-	useOldURL_ = useOldURL;
-	setParameter("UseOldURL", useOldURL ? "true" : "false");
+	watermarkType_ = watermarkType;
+	setParameter("WatermarkType", std::to_string(watermarkType));
+}
+
+float GetOfficePreviewURLRequest::getWatermarkRotate()const
+{
+	return watermarkRotate_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkRotate(float watermarkRotate)
+{
+	watermarkRotate_ = watermarkRotate;
+	setParameter("WatermarkRotate", std::to_string(watermarkRotate));
+}
+
+std::string GetOfficePreviewURLRequest::getWatermarkValue()const
+{
+	return watermarkValue_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkValue(const std::string& watermarkValue)
+{
+	watermarkValue_ = watermarkValue;
+	setParameter("WatermarkValue", watermarkValue);
+}
+
+std::string GetOfficePreviewURLRequest::getWatermarkFont()const
+{
+	return watermarkFont_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkFont(const std::string& watermarkFont)
+{
+	watermarkFont_ = watermarkFont;
+	setParameter("WatermarkFont", watermarkFont);
+}
+
+int GetOfficePreviewURLRequest::getWatermarkHorizontal()const
+{
+	return watermarkHorizontal_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkHorizontal(int watermarkHorizontal)
+{
+	watermarkHorizontal_ = watermarkHorizontal;
+	setParameter("WatermarkHorizontal", std::to_string(watermarkHorizontal));
 }
 
 std::string GetOfficePreviewURLRequest::getSrcUri()const
@@ -80,5 +135,16 @@ void GetOfficePreviewURLRequest::setSrcUri(const std::string& srcUri)
 {
 	srcUri_ = srcUri;
 	setParameter("SrcUri", srcUri);
+}
+
+std::string GetOfficePreviewURLRequest::getWatermarkFillStyle()const
+{
+	return watermarkFillStyle_;
+}
+
+void GetOfficePreviewURLRequest::setWatermarkFillStyle(const std::string& watermarkFillStyle)
+{
+	watermarkFillStyle_ = watermarkFillStyle;
+	setParameter("WatermarkFillStyle", watermarkFillStyle);
 }
 
