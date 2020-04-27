@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string passed;
 					std::string identityInfo;
 					std::string materialInfo;
+					std::string subCode;
 				};
 
 
