@@ -21,6 +21,8 @@ set(cloudauth_public_header
 	include/alibabacloud/cloudauth/CloudauthExport.h )
 
 set(cloudauth_public_header_model 
+	include/alibabacloud/cloudauth/model/CompareFaceVerifyRequest.h
+	include/alibabacloud/cloudauth/model/CompareFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/CompareFacesRequest.h
 	include/alibabacloud/cloudauth/model/CompareFacesResult.h
 	include/alibabacloud/cloudauth/model/ContrastFaceVerifyRequest.h
@@ -84,6 +86,8 @@ set(cloudauth_public_header_model
 
 set(cloudauth_src 
 	src/CloudauthClient.cc
+	src/model/CompareFaceVerifyRequest.cc
+	src/model/CompareFaceVerifyResult.cc
 	src/model/CompareFacesRequest.cc
 	src/model/CompareFacesResult.cc
 	src/model/ContrastFaceVerifyRequest.cc

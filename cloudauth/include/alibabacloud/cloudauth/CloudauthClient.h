@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CloudauthExport.h"
+#include "model/CompareFaceVerifyRequest.h"
+#include "model/CompareFaceVerifyResult.h"
 #include "model/CompareFacesRequest.h"
 #include "model/CompareFacesResult.h"
 #include "model/ContrastFaceVerifyRequest.h"
@@ -91,6 +93,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CLOUDAUTH_EXPORT CloudauthClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CompareFaceVerifyResult> CompareFaceVerifyOutcome;
+			typedef std::future<CompareFaceVerifyOutcome> CompareFaceVerifyOutcomeCallable;
+			typedef std::function<void(const CloudauthClient*, const Model::CompareFaceVerifyRequest&, const CompareFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::CompareFacesResult> CompareFacesOutcome;
 			typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
 			typedef std::function<void(const CloudauthClient*, const Model::CompareFacesRequest&, const CompareFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFacesAsyncHandler;
@@ -186,6 +191,9 @@ namespace AlibabaCloud
 			CloudauthClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CloudauthClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CloudauthClient();
+			CompareFaceVerifyOutcome compareFaceVerify(const Model::CompareFaceVerifyRequest &request)const;
+			void compareFaceVerifyAsync(const Model::CompareFaceVerifyRequest& request, const CompareFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompareFaceVerifyOutcomeCallable compareFaceVerifyCallable(const Model::CompareFaceVerifyRequest& request) const;
 			CompareFacesOutcome compareFaces(const Model::CompareFacesRequest &request)const;
 			void compareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFacesOutcomeCallable compareFacesCallable(const Model::CompareFacesRequest& request) const;

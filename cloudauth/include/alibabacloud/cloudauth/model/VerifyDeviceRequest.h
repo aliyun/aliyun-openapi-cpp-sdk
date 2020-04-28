@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				VerifyDeviceRequest();
 				~VerifyDeviceRequest();
 
+				std::string getExtInfo()const;
+				void setExtInfo(const std::string& extInfo);
 				std::string getCertifyData()const;
 				void setCertifyData(const std::string& certifyData);
 				std::string getAppVersion()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setCertifyId(const std::string& certifyId);
 
             private:
+				std::string extInfo_;
 				std::string certifyData_;
 				std::string appVersion_;
 				std::string certifyId_;

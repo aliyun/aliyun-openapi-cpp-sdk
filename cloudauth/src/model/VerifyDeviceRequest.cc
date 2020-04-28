@@ -27,6 +27,17 @@ VerifyDeviceRequest::VerifyDeviceRequest() :
 VerifyDeviceRequest::~VerifyDeviceRequest()
 {}
 
+std::string VerifyDeviceRequest::getExtInfo()const
+{
+	return extInfo_;
+}
+
+void VerifyDeviceRequest::setExtInfo(const std::string& extInfo)
+{
+	extInfo_ = extInfo;
+	setBodyParameter("ExtInfo", extInfo);
+}
+
 std::string VerifyDeviceRequest::getCertifyData()const
 {
 	return certifyData_;
