@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string definition;
 					std::string lastModifiedTime;
 					std::string id;
+					std::string externalStorageLocation;
 					std::string roleArn;
 					std::string name;
 				};

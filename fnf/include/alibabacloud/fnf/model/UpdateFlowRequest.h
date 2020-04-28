@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getDefinition()const;
 				void setDefinition(const std::string& definition);
+				std::string getExternalStorageLocation()const;
+				void setExternalStorageLocation(const std::string& externalStorageLocation);
 
             private:
 				std::string description_;
@@ -55,6 +57,7 @@ namespace AlibabaCloud
 				std::string roleArn_;
 				std::string name_;
 				std::string definition_;
+				std::string externalStorageLocation_;
 
 			};
 		}

@@ -42,7 +42,9 @@ namespace AlibabaCloud
 				std::string getStoppedTime()const;
 				std::string getFlowName()const;
 				std::string getOutput()const;
+				std::string getExternalOutputUri()const;
 				std::string getStartedTime()const;
+				std::string getExternalInputUri()const;
 				std::string getFlowDefinition()const;
 				std::string getName()const;
 
@@ -54,7 +56,9 @@ namespace AlibabaCloud
 				std::string stoppedTime_;
 				std::string flowName_;
 				std::string output_;
+				std::string externalOutputUri_;
 				std::string startedTime_;
+				std::string externalInputUri_;
 				std::string flowDefinition_;
 				std::string name_;
 

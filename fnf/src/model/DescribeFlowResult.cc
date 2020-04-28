@@ -55,6 +55,8 @@ void DescribeFlowResult::parse(const std::string &payload)
 		createdTime_ = value["CreatedTime"].asString();
 	if(!value["LastModifiedTime"].isNull())
 		lastModifiedTime_ = value["LastModifiedTime"].asString();
+	if(!value["ExternalStorageLocation"].isNull())
+		externalStorageLocation_ = value["ExternalStorageLocation"].asString();
 
 }
 
@@ -86,6 +88,11 @@ std::string DescribeFlowResult::getLastModifiedTime()const
 std::string DescribeFlowResult::getId()const
 {
 	return id_;
+}
+
+std::string DescribeFlowResult::getExternalStorageLocation()const
+{
+	return externalStorageLocation_;
 }
 
 std::string DescribeFlowResult::getRoleArn()const

@@ -55,6 +55,10 @@ void StopExecutionResult::parse(const std::string &payload)
 		startedTime_ = value["StartedTime"].asString();
 	if(!value["StoppedTime"].isNull())
 		stoppedTime_ = value["StoppedTime"].asString();
+	if(!value["ExternalInputUri"].isNull())
+		externalInputUri_ = value["ExternalInputUri"].asString();
+	if(!value["ExternalOutputUri"].isNull())
+		externalOutputUri_ = value["ExternalOutputUri"].asString();
 
 }
 
@@ -83,9 +87,19 @@ std::string StopExecutionResult::getOutput()const
 	return output_;
 }
 
+std::string StopExecutionResult::getExternalOutputUri()const
+{
+	return externalOutputUri_;
+}
+
 std::string StopExecutionResult::getStartedTime()const
 {
 	return startedTime_;
+}
+
+std::string StopExecutionResult::getExternalInputUri()const
+{
+	return externalInputUri_;
 }
 
 std::string StopExecutionResult::getFlowDefinition()const

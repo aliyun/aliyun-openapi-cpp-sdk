@@ -59,6 +59,8 @@ void ListFlowsResult::parse(const std::string &payload)
 			flowsObject.createdTime = valueFlowsFlowsItem["CreatedTime"].asString();
 		if(!valueFlowsFlowsItem["LastModifiedTime"].isNull())
 			flowsObject.lastModifiedTime = valueFlowsFlowsItem["LastModifiedTime"].asString();
+		if(!valueFlowsFlowsItem["ExternalStorageLocation"].isNull())
+			flowsObject.externalStorageLocation = valueFlowsFlowsItem["ExternalStorageLocation"].asString();
 		flows_.push_back(flowsObject);
 	}
 	if(!value["NextToken"].isNull())

@@ -93,3 +93,14 @@ void UpdateFlowRequest::setDefinition(const std::string& definition)
 	setBodyParameter("Definition", definition);
 }
 
+std::string UpdateFlowRequest::getExternalStorageLocation()const
+{
+	return externalStorageLocation_;
+}
+
+void UpdateFlowRequest::setExternalStorageLocation(const std::string& externalStorageLocation)
+{
+	externalStorageLocation_ = externalStorageLocation;
+	setBodyParameter("ExternalStorageLocation", externalStorageLocation);
+}
+

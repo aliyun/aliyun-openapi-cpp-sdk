@@ -39,7 +39,9 @@ namespace AlibabaCloud
 					std::string stoppedTime;
 					std::string flowName;
 					std::string output;
+					std::string externalOutputUri;
 					std::string startedTime;
+					std::string externalInputUri;
 					std::string flowDefinition;
 					std::string name;
 				};

@@ -59,6 +59,10 @@ void ListExecutionsResult::parse(const std::string &payload)
 			executionsObject.startedTime = valueExecutionsExecutionsItem["StartedTime"].asString();
 		if(!valueExecutionsExecutionsItem["StoppedTime"].isNull())
 			executionsObject.stoppedTime = valueExecutionsExecutionsItem["StoppedTime"].asString();
+		if(!valueExecutionsExecutionsItem["ExternalInputUri"].isNull())
+			executionsObject.externalInputUri = valueExecutionsExecutionsItem["ExternalInputUri"].asString();
+		if(!valueExecutionsExecutionsItem["ExternalOutputUri"].isNull())
+			executionsObject.externalOutputUri = valueExecutionsExecutionsItem["ExternalOutputUri"].asString();
 		executions_.push_back(executionsObject);
 	}
 	if(!value["NextToken"].isNull())
