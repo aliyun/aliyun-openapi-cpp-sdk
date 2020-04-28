@@ -19,6 +19,9 @@
 #include <iomanip>
 #include <json/json.h>
 #include <sstream>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
 #ifndef WIN32
 #include "LocalEndpoints.h"
@@ -39,7 +42,10 @@ namespace
 #include <strings.h>
 #endif
 
+std::mutex mutex;
+std::condition_variable cv;
 bool local_endpoints_loaded = false;
+bool local_endpoints_loading = false;
 typedef std::string productType;
 typedef std::string regionType;
 typedef std::string endpointType;
@@ -60,6 +66,8 @@ static void LoadLocalEndpoints()
 {
   Json::Reader reader;
   Json::Value value;
+  std::unique_lock<std::mutex> lock(mutex);
+
   if (local_endpoints_loaded)
   {
     return;
@@ -75,6 +83,10 @@ static void LoadLocalEndpoints()
   {
     return;
   }
+
+  cv.wait(lock, [] { return !local_endpoints_loading; });// continue if loading completed
+
+  local_endpoints_loading = true;
 
   auto regions = value["regions"];
   for (const auto &region : regions)
@@ -107,6 +119,10 @@ static void LoadLocalEndpoints()
     allLocalEndpoints[product] = p;
   }
   local_endpoints_loaded = true;
+  local_endpoints_loading = false;
+
+  lock.unlock();
+  cv.notify_one();
 }
 
 } // namespace

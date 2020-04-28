@@ -139,7 +139,7 @@ HttpMessage::HeaderValueType HttpMessage::header(KnownHeader header)const {
 
 void HttpMessage::setBody(const char *data, size_t size) {
   if (body_)
-    delete body_;
+    delete[] body_;
   body_ = nullptr;
   bodySize_ = 0;
   if (size) {

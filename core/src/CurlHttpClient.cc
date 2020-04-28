@@ -221,6 +221,7 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
           HttpMethodToString(request.method()) + " " + request.url().toString()));
     }
   }
+  curl_slist_free_all(list);
 }
 
 }  // namespace AlibabaCloud
