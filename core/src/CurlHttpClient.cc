@@ -194,6 +194,7 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
   }
 
   CURLcode res = curl_easy_perform(curlHandle_);
+  curl_slist_free_all(list);
   switch (res) {
     case CURLE_OK: {
       long response_code;
@@ -221,7 +222,6 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
           HttpMethodToString(request.method()) + " " + request.url().toString()));
     }
   }
-  curl_slist_free_all(list);
 }
 
 }  // namespace AlibabaCloud
