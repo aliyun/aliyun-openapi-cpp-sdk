@@ -27,6 +27,17 @@ QueryMetricRequest::QueryMetricRequest() :
 QueryMetricRequest::~QueryMetricRequest()
 {}
 
+std::string QueryMetricRequest::getConsistencyQueryStrategy()const
+{
+	return consistencyQueryStrategy_;
+}
+
+void QueryMetricRequest::setConsistencyQueryStrategy(const std::string& consistencyQueryStrategy)
+{
+	consistencyQueryStrategy_ = consistencyQueryStrategy;
+	setParameter("ConsistencyQueryStrategy", consistencyQueryStrategy);
+}
+
 long QueryMetricRequest::getEndTime()const
 {
 	return endTime_;
@@ -74,6 +85,17 @@ void QueryMetricRequest::setFilters(const std::vector<Filters>& filters)
 		setParameter(filtersObjStr + ".Value", filtersObj.value);
 		setParameter(filtersObjStr + ".Key", filtersObj.key);
 	}
+}
+
+std::string QueryMetricRequest::getConsistencyDataKey()const
+{
+	return consistencyDataKey_;
+}
+
+void QueryMetricRequest::setConsistencyDataKey(const std::string& consistencyDataKey)
+{
+	consistencyDataKey_ = consistencyDataKey;
+	setParameter("ConsistencyDataKey", consistencyDataKey);
 }
 
 std::string QueryMetricRequest::getProxyUserId()const

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				QueryMetricRequest();
 				~QueryMetricRequest();
 
+				std::string getConsistencyQueryStrategy()const;
+				void setConsistencyQueryStrategy(const std::string& consistencyQueryStrategy);
 				long getEndTime()const;
 				void setEndTime(long endTime);
 				std::string getOrderBy()const;
@@ -49,6 +51,8 @@ namespace AlibabaCloud
 				void setStartTime(long startTime);
 				std::vector<Filters> getFilters()const;
 				void setFilters(const std::vector<Filters>& filters);
+				std::string getConsistencyDataKey()const;
+				void setConsistencyDataKey(const std::string& consistencyDataKey);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
 				std::vector<std::string> getMeasures()const;
@@ -65,10 +69,12 @@ namespace AlibabaCloud
 				void setOrder(const std::string& order);
 
             private:
+				std::string consistencyQueryStrategy_;
 				long endTime_;
 				std::string orderBy_;
 				long startTime_;
 				std::vector<Filters> filters_;
+				std::string consistencyDataKey_;
 				std::string proxyUserId_;
 				std::vector<std::string> measures_;
 				int intervalInSec_;

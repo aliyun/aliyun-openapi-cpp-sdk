@@ -1,3 +1,6 @@
+2020-04-29 Version: 1.36.395
+- Add prometheus ListDashboards api.
+
 2020-04-29 Version: 1.36.394
 - Supported VideoProduce.
 

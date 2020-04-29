@@ -26,6 +26,8 @@
 #include "model/AddGrafanaResult.h"
 #include "model/AddIntegrationRequest.h"
 #include "model/AddIntegrationResult.h"
+#include "model/CheckDataConsistencyRequest.h"
+#include "model/CheckDataConsistencyResult.h"
 #include "model/CreateAlertContactRequest.h"
 #include "model/CreateAlertContactResult.h"
 #include "model/CreateAlertContactGroupRequest.h"
@@ -40,6 +42,8 @@
 #include "model/DeleteAlertRulesResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
+#include "model/GetConsistencySnapshotRequest.h"
+#include "model/GetConsistencySnapshotResult.h"
 #include "model/GetPrometheusApiTokenRequest.h"
 #include "model/GetPrometheusApiTokenResult.h"
 #include "model/GetRetcodeShareUrlRequest.h"
@@ -52,6 +56,8 @@
 #include "model/ImportCustomAlertRulesResult.h"
 #include "model/ListClusterFromGrafanaRequest.h"
 #include "model/ListClusterFromGrafanaResult.h"
+#include "model/ListDashboardsRequest.h"
+#include "model/ListDashboardsResult.h"
 #include "model/ListPromClustersRequest.h"
 #include "model/ListPromClustersResult.h"
 #include "model/ListRetcodeAppsRequest.h"
@@ -107,6 +113,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddIntegrationResult> AddIntegrationOutcome;
 			typedef std::future<AddIntegrationOutcome> AddIntegrationOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::AddIntegrationRequest&, const AddIntegrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddIntegrationAsyncHandler;
+			typedef Outcome<Error, Model::CheckDataConsistencyResult> CheckDataConsistencyOutcome;
+			typedef std::future<CheckDataConsistencyOutcome> CheckDataConsistencyOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::CheckDataConsistencyRequest&, const CheckDataConsistencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDataConsistencyAsyncHandler;
 			typedef Outcome<Error, Model::CreateAlertContactResult> CreateAlertContactOutcome;
 			typedef std::future<CreateAlertContactOutcome> CreateAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateAlertContactRequest&, const CreateAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertContactAsyncHandler;
@@ -128,6 +137,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::GetConsistencySnapshotResult> GetConsistencySnapshotOutcome;
+			typedef std::future<GetConsistencySnapshotOutcome> GetConsistencySnapshotOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetConsistencySnapshotRequest&, const GetConsistencySnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsistencySnapshotAsyncHandler;
 			typedef Outcome<Error, Model::GetPrometheusApiTokenResult> GetPrometheusApiTokenOutcome;
 			typedef std::future<GetPrometheusApiTokenOutcome> GetPrometheusApiTokenOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetPrometheusApiTokenRequest&, const GetPrometheusApiTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrometheusApiTokenAsyncHandler;
@@ -146,6 +158,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListClusterFromGrafanaResult> ListClusterFromGrafanaOutcome;
 			typedef std::future<ListClusterFromGrafanaOutcome> ListClusterFromGrafanaOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListClusterFromGrafanaRequest&, const ListClusterFromGrafanaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListClusterFromGrafanaAsyncHandler;
+			typedef Outcome<Error, Model::ListDashboardsResult> ListDashboardsOutcome;
+			typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ListDashboardsRequest&, const ListDashboardsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDashboardsAsyncHandler;
 			typedef Outcome<Error, Model::ListPromClustersResult> ListPromClustersOutcome;
 			typedef std::future<ListPromClustersOutcome> ListPromClustersOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ListPromClustersRequest&, const ListPromClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPromClustersAsyncHandler;
@@ -217,6 +232,9 @@ namespace AlibabaCloud
 			AddIntegrationOutcome addIntegration(const Model::AddIntegrationRequest &request)const;
 			void addIntegrationAsync(const Model::AddIntegrationRequest& request, const AddIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddIntegrationOutcomeCallable addIntegrationCallable(const Model::AddIntegrationRequest& request) const;
+			CheckDataConsistencyOutcome checkDataConsistency(const Model::CheckDataConsistencyRequest &request)const;
+			void checkDataConsistencyAsync(const Model::CheckDataConsistencyRequest& request, const CheckDataConsistencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDataConsistencyOutcomeCallable checkDataConsistencyCallable(const Model::CheckDataConsistencyRequest& request) const;
 			CreateAlertContactOutcome createAlertContact(const Model::CreateAlertContactRequest &request)const;
 			void createAlertContactAsync(const Model::CreateAlertContactRequest& request, const CreateAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlertContactOutcomeCallable createAlertContactCallable(const Model::CreateAlertContactRequest& request) const;
@@ -238,6 +256,9 @@ namespace AlibabaCloud
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
+			GetConsistencySnapshotOutcome getConsistencySnapshot(const Model::GetConsistencySnapshotRequest &request)const;
+			void getConsistencySnapshotAsync(const Model::GetConsistencySnapshotRequest& request, const GetConsistencySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetConsistencySnapshotOutcomeCallable getConsistencySnapshotCallable(const Model::GetConsistencySnapshotRequest& request) const;
 			GetPrometheusApiTokenOutcome getPrometheusApiToken(const Model::GetPrometheusApiTokenRequest &request)const;
 			void getPrometheusApiTokenAsync(const Model::GetPrometheusApiTokenRequest& request, const GetPrometheusApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrometheusApiTokenOutcomeCallable getPrometheusApiTokenCallable(const Model::GetPrometheusApiTokenRequest& request) const;
@@ -256,6 +277,9 @@ namespace AlibabaCloud
 			ListClusterFromGrafanaOutcome listClusterFromGrafana(const Model::ListClusterFromGrafanaRequest &request)const;
 			void listClusterFromGrafanaAsync(const Model::ListClusterFromGrafanaRequest& request, const ListClusterFromGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListClusterFromGrafanaOutcomeCallable listClusterFromGrafanaCallable(const Model::ListClusterFromGrafanaRequest& request) const;
+			ListDashboardsOutcome listDashboards(const Model::ListDashboardsRequest &request)const;
+			void listDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDashboardsOutcomeCallable listDashboardsCallable(const Model::ListDashboardsRequest& request) const;
 			ListPromClustersOutcome listPromClusters(const Model::ListPromClustersRequest &request)const;
 			void listPromClustersAsync(const Model::ListPromClustersRequest& request, const ListPromClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPromClustersOutcomeCallable listPromClustersCallable(const Model::ListPromClustersRequest& request) const;

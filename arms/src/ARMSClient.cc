@@ -123,6 +123,42 @@ ARMSClient::AddIntegrationOutcomeCallable ARMSClient::addIntegrationCallable(con
 	return task->get_future();
 }
 
+ARMSClient::CheckDataConsistencyOutcome ARMSClient::checkDataConsistency(const CheckDataConsistencyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckDataConsistencyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckDataConsistencyOutcome(CheckDataConsistencyResult(outcome.result()));
+	else
+		return CheckDataConsistencyOutcome(outcome.error());
+}
+
+void ARMSClient::checkDataConsistencyAsync(const CheckDataConsistencyRequest& request, const CheckDataConsistencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkDataConsistency(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CheckDataConsistencyOutcomeCallable ARMSClient::checkDataConsistencyCallable(const CheckDataConsistencyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckDataConsistencyOutcome()>>(
+			[this, request]()
+			{
+			return this->checkDataConsistency(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateAlertContactOutcome ARMSClient::createAlertContact(const CreateAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,6 +411,42 @@ ARMSClient::DeleteRetcodeAppOutcomeCallable ARMSClient::deleteRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::GetConsistencySnapshotOutcome ARMSClient::getConsistencySnapshot(const GetConsistencySnapshotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetConsistencySnapshotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetConsistencySnapshotOutcome(GetConsistencySnapshotResult(outcome.result()));
+	else
+		return GetConsistencySnapshotOutcome(outcome.error());
+}
+
+void ARMSClient::getConsistencySnapshotAsync(const GetConsistencySnapshotRequest& request, const GetConsistencySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getConsistencySnapshot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetConsistencySnapshotOutcomeCallable ARMSClient::getConsistencySnapshotCallable(const GetConsistencySnapshotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetConsistencySnapshotOutcome()>>(
+			[this, request]()
+			{
+			return this->getConsistencySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetPrometheusApiTokenOutcome ARMSClient::getPrometheusApiToken(const GetPrometheusApiTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +657,42 @@ ARMSClient::ListClusterFromGrafanaOutcomeCallable ARMSClient::listClusterFromGra
 			[this, request]()
 			{
 			return this->listClusterFromGrafana(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::ListDashboardsOutcome ARMSClient::listDashboards(const ListDashboardsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDashboardsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDashboardsOutcome(ListDashboardsResult(outcome.result()));
+	else
+		return ListDashboardsOutcome(outcome.error());
+}
+
+void ARMSClient::listDashboardsAsync(const ListDashboardsRequest& request, const ListDashboardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDashboards(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ListDashboardsOutcomeCallable ARMSClient::listDashboardsCallable(const ListDashboardsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDashboardsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDashboards(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

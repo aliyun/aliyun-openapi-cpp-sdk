@@ -25,6 +25,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/AddGrafanaResult.h
 	include/alibabacloud/arms/model/AddIntegrationRequest.h
 	include/alibabacloud/arms/model/AddIntegrationResult.h
+	include/alibabacloud/arms/model/CheckDataConsistencyRequest.h
+	include/alibabacloud/arms/model/CheckDataConsistencyResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
@@ -39,6 +41,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
+	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
+	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenRequest.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenResult.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlRequest.h
@@ -51,6 +55,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/ImportCustomAlertRulesResult.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaRequest.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaResult.h
+	include/alibabacloud/arms/model/ListDashboardsRequest.h
+	include/alibabacloud/arms/model/ListDashboardsResult.h
 	include/alibabacloud/arms/model/ListPromClustersRequest.h
 	include/alibabacloud/arms/model/ListPromClustersResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
@@ -98,6 +104,8 @@ set(arms_src
 	src/model/AddGrafanaResult.cc
 	src/model/AddIntegrationRequest.cc
 	src/model/AddIntegrationResult.cc
+	src/model/CheckDataConsistencyRequest.cc
+	src/model/CheckDataConsistencyResult.cc
 	src/model/CreateAlertContactRequest.cc
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc
@@ -112,6 +120,8 @@ set(arms_src
 	src/model/DeleteAlertRulesResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
+	src/model/GetConsistencySnapshotRequest.cc
+	src/model/GetConsistencySnapshotResult.cc
 	src/model/GetPrometheusApiTokenRequest.cc
 	src/model/GetPrometheusApiTokenResult.cc
 	src/model/GetRetcodeShareUrlRequest.cc
@@ -124,6 +134,8 @@ set(arms_src
 	src/model/ImportCustomAlertRulesResult.cc
 	src/model/ListClusterFromGrafanaRequest.cc
 	src/model/ListClusterFromGrafanaResult.cc
+	src/model/ListDashboardsRequest.cc
+	src/model/ListDashboardsResult.cc
 	src/model/ListPromClustersRequest.cc
 	src/model/ListPromClustersResult.cc
 	src/model/ListRetcodeAppsRequest.cc
