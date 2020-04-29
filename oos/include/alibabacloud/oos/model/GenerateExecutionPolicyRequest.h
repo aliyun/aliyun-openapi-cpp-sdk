@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				GenerateExecutionPolicyRequest();
 				~GenerateExecutionPolicyRequest();
 
+				std::string getTemplateVersion()const;
+				void setTemplateVersion(const std::string& templateVersion);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getTemplateName()const;
 				void setTemplateName(const std::string& templateName);
 
             private:
+				std::string templateVersion_;
 				std::string regionId_;
 				std::string templateName_;
 

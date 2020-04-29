@@ -71,3 +71,14 @@ void CreateTemplateRequest::setTemplateName(const std::string& templateName)
 	setParameter("TemplateName", templateName);
 }
 
+std::string CreateTemplateRequest::getVersionName()const
+{
+	return versionName_;
+}
+
+void CreateTemplateRequest::setVersionName(const std::string& versionName)
+{
+	versionName_ = versionName;
+	setParameter("VersionName", versionName);
+}
+

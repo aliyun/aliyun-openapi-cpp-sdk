@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getTemplateName()const;
 				void setTemplateName(const std::string& templateName);
+				std::string getVersionName()const;
+				void setVersionName(const std::string& versionName);
 
             private:
 				std::string content_;
 				std::map<std::string, std::string> tags_;
 				std::string regionId_;
 				std::string templateName_;
+				std::string versionName_;
 
 			};
 		}

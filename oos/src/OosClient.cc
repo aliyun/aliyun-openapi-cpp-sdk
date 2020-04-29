@@ -663,6 +663,42 @@ OosClient::ListTaskExecutionsOutcomeCallable OosClient::listTaskExecutionsCallab
 	return task->get_future();
 }
 
+OosClient::ListTemplateVersionsOutcome OosClient::listTemplateVersions(const ListTemplateVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTemplateVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTemplateVersionsOutcome(ListTemplateVersionsResult(outcome.result()));
+	else
+		return ListTemplateVersionsOutcome(outcome.error());
+}
+
+void OosClient::listTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTemplateVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListTemplateVersionsOutcomeCallable OosClient::listTemplateVersionsCallable(const ListTemplateVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTemplateVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTemplateVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::ListTemplatesOutcome OosClient::listTemplates(const ListTemplatesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

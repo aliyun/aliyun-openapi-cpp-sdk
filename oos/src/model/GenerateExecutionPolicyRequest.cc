@@ -27,6 +27,17 @@ GenerateExecutionPolicyRequest::GenerateExecutionPolicyRequest() :
 GenerateExecutionPolicyRequest::~GenerateExecutionPolicyRequest()
 {}
 
+std::string GenerateExecutionPolicyRequest::getTemplateVersion()const
+{
+	return templateVersion_;
+}
+
+void GenerateExecutionPolicyRequest::setTemplateVersion(const std::string& templateVersion)
+{
+	templateVersion_ = templateVersion;
+	setParameter("TemplateVersion", templateVersion);
+}
+
 std::string GenerateExecutionPolicyRequest::getRegionId()const
 {
 	return regionId_;

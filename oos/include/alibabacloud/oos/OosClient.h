@@ -56,6 +56,8 @@
 #include "model/ListTagValuesResult.h"
 #include "model/ListTaskExecutionsRequest.h"
 #include "model/ListTaskExecutionsResult.h"
+#include "model/ListTemplateVersionsRequest.h"
+#include "model/ListTemplateVersionsResult.h"
 #include "model/ListTemplatesRequest.h"
 #include "model/ListTemplatesResult.h"
 #include "model/NotifyExecutionRequest.h"
@@ -132,6 +134,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTaskExecutionsResult> ListTaskExecutionsOutcome;
 			typedef std::future<ListTaskExecutionsOutcome> ListTaskExecutionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListTaskExecutionsRequest&, const ListTaskExecutionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskExecutionsAsyncHandler;
+			typedef Outcome<Error, Model::ListTemplateVersionsResult> ListTemplateVersionsOutcome;
+			typedef std::future<ListTemplateVersionsOutcome> ListTemplateVersionsOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ListTemplateVersionsRequest&, const ListTemplateVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTemplateVersionsAsyncHandler;
 			typedef Outcome<Error, Model::ListTemplatesResult> ListTemplatesOutcome;
 			typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListTemplatesRequest&, const ListTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTemplatesAsyncHandler;
@@ -212,6 +217,9 @@ namespace AlibabaCloud
 			ListTaskExecutionsOutcome listTaskExecutions(const Model::ListTaskExecutionsRequest &request)const;
 			void listTaskExecutionsAsync(const Model::ListTaskExecutionsRequest& request, const ListTaskExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTaskExecutionsOutcomeCallable listTaskExecutionsCallable(const Model::ListTaskExecutionsRequest& request) const;
+			ListTemplateVersionsOutcome listTemplateVersions(const Model::ListTemplateVersionsRequest &request)const;
+			void listTemplateVersionsAsync(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTemplateVersionsOutcomeCallable listTemplateVersionsCallable(const Model::ListTemplateVersionsRequest& request) const;
 			ListTemplatesOutcome listTemplates(const Model::ListTemplatesRequest &request)const;
 			void listTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTemplatesOutcomeCallable listTemplatesCallable(const Model::ListTemplatesRequest& request) const;

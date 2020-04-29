@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setCreatedBy(const std::string& createdBy);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
+				std::string getTemplateType()const;
+				void setTemplateType(const std::string& templateType);
 				std::string getTemplateName()const;
 				void setTemplateName(const std::string& templateName);
 				std::string getSortOrder()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string createdBy_;
 				std::string nextToken_;
+				std::string templateType_;
 				std::string templateName_;
 				std::string sortOrder_;
 				std::string shareType_;

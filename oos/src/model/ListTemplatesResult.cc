@@ -75,6 +75,8 @@ void ListTemplatesResult::parse(const std::string &payload)
 			templatesObject.tags = valueTemplatesTemplate["Tags"].asString();
 		if(!valueTemplatesTemplate["Category"].isNull())
 			templatesObject.category = valueTemplatesTemplate["Category"].asString();
+		if(!valueTemplatesTemplate["TemplateType"].isNull())
+			templatesObject.templateType = valueTemplatesTemplate["TemplateType"].asString();
 		templates_.push_back(templatesObject);
 	}
 	if(!value["MaxResults"].isNull())

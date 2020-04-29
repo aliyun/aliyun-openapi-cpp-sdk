@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_CREATETEMPLATEREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_CREATETEMPLATEREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT CreateTemplateRequest : public RpcServiceRequest
+			class ALIBABACLOUD_OOS_EXPORT ListTemplateVersionsRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateTemplateRequest();
-				~CreateTemplateRequest();
+				ListTemplateVersionsRequest();
+				~ListTemplateVersionsRequest();
 
-				std::string getContent()const;
-				void setContent(const std::string& content);
-				std::map<std::string, std::string> getTags()const;
-				void setTags(const std::map<std::string, std::string>& tags);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 				std::string getTemplateName()const;
 				void setTemplateName(const std::string& templateName);
-				std::string getVersionName()const;
-				void setVersionName(const std::string& versionName);
+				std::string getShareType()const;
+				void setShareType(const std::string& shareType);
 
             private:
-				std::string content_;
-				std::map<std::string, std::string> tags_;
 				std::string regionId_;
+				std::string nextToken_;
+				int maxResults_;
 				std::string templateName_;
-				std::string versionName_;
+				std::string shareType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_CREATETEMPLATEREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSREQUEST_H_

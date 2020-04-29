@@ -71,6 +71,17 @@ void ListTemplatesRequest::setNextToken(const std::string& nextToken)
 	setParameter("NextToken", nextToken);
 }
 
+std::string ListTemplatesRequest::getTemplateType()const
+{
+	return templateType_;
+}
+
+void ListTemplatesRequest::setTemplateType(const std::string& templateType)
+{
+	templateType_ = templateType;
+	setParameter("TemplateType", templateType);
+}
+
 std::string ListTemplatesRequest::getTemplateName()const
 {
 	return templateName_;

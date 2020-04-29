@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_CREATETEMPLATERESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_CREATETEMPLATERESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT CreateTemplateResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT ListTemplateVersionsResult : public ServiceResult
 			{
 			public:
-				struct _Template
+				struct TemplateVersion
 				{
-					std::string createdBy;
+					std::string updatedBy;
 					std::string description;
 					std::string templateFormat;
 					std::string updatedDate;
 					std::string templateVersion;
-					std::string hash;
-					std::string updatedBy;
-					bool hasTrigger;
-					std::string createdDate;
-					std::string templateName;
-					std::string templateId;
-					std::string tags;
-					std::string shareType;
+					std::string versionName;
 				};
 
 
-				CreateTemplateResult();
-				explicit CreateTemplateResult(const std::string &payload);
-				~CreateTemplateResult();
-				_Template get_Template()const;
-				std::string getTemplateType()const;
+				ListTemplateVersionsResult();
+				explicit ListTemplateVersionsResult(const std::string &payload);
+				~ListTemplateVersionsResult();
+				std::string getNextToken()const;
+				int getMaxResults()const;
+				std::vector<TemplateVersion> getTemplateVersions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				_Template _template_;
-				std::string templateType_;
+				std::string nextToken_;
+				int maxResults_;
+				std::vector<TemplateVersion> templateVersions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_CREATETEMPLATERESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTTEMPLATEVERSIONSRESULT_H_

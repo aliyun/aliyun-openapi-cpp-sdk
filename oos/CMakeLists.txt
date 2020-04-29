@@ -55,6 +55,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListTagValuesResult.h
 	include/alibabacloud/oos/model/ListTaskExecutionsRequest.h
 	include/alibabacloud/oos/model/ListTaskExecutionsResult.h
+	include/alibabacloud/oos/model/ListTemplateVersionsRequest.h
+	include/alibabacloud/oos/model/ListTemplateVersionsResult.h
 	include/alibabacloud/oos/model/ListTemplatesRequest.h
 	include/alibabacloud/oos/model/ListTemplatesResult.h
 	include/alibabacloud/oos/model/NotifyExecutionRequest.h
@@ -108,6 +110,8 @@ set(oos_src
 	src/model/ListTagValuesResult.cc
 	src/model/ListTaskExecutionsRequest.cc
 	src/model/ListTaskExecutionsResult.cc
+	src/model/ListTemplateVersionsRequest.cc
+	src/model/ListTemplateVersionsResult.cc
 	src/model/ListTemplatesRequest.cc
 	src/model/ListTemplatesResult.cc
 	src/model/NotifyExecutionRequest.cc

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string updatedDate;
 					int popularity;
 					std::string templateVersion;
+					std::string templateType;
 					std::string hash;
 					std::string updatedBy;
 					bool hasTrigger;

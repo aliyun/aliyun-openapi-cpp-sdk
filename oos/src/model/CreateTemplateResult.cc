@@ -66,11 +66,18 @@ void CreateTemplateResult::parse(const std::string &payload)
 		_template_.hasTrigger = _templateNode["HasTrigger"].asString() == "true";
 	if(!_templateNode["Tags"].isNull())
 		_template_.tags = _templateNode["Tags"].asString();
+	if(!value["TemplateType"].isNull())
+		templateType_ = value["TemplateType"].asString();
 
 }
 
 CreateTemplateResult::_Template CreateTemplateResult::get_Template()const
 {
 	return _template_;
+}
+
+std::string CreateTemplateResult::getTemplateType()const
+{
+	return templateType_;
 }
 
