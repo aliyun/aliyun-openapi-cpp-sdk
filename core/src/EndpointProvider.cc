@@ -42,10 +42,8 @@ namespace
 #include <strings.h>
 #endif
 
-std::mutex mutex;
-std::condition_variable cv;
+std::mutex local_endpoints_mutex;
 bool local_endpoints_loaded = false;
-bool local_endpoints_loading = false;
 typedef std::string productType;
 typedef std::string regionType;
 typedef std::string endpointType;
@@ -66,8 +64,13 @@ static void LoadLocalEndpoints()
 {
   Json::Reader reader;
   Json::Value value;
-  std::unique_lock<std::mutex> lock(mutex);
 
+  if (local_endpoints_loaded)
+  {
+    return;
+  }
+
+  std::lock_guard<std::mutex> locker(local_endpoints_mutex);
   if (local_endpoints_loaded)
   {
     return;
@@ -83,10 +86,6 @@ static void LoadLocalEndpoints()
   {
     return;
   }
-
-  cv.wait(lock, [] { return !local_endpoints_loading; });// continue if loading completed
-
-  local_endpoints_loading = true;
 
   auto regions = value["regions"];
   for (const auto &region : regions)
@@ -119,10 +118,6 @@ static void LoadLocalEndpoints()
     allLocalEndpoints[product] = p;
   }
   local_endpoints_loaded = true;
-  local_endpoints_loading = false;
-
-  lock.unlock();
-  cv.notify_one();
 }
 
 } // namespace
