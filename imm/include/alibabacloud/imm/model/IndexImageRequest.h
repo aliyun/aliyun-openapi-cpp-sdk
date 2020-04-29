@@ -55,6 +55,10 @@ namespace AlibabaCloud
 				void setRemarksA(const std::string& remarksA);
 				std::string getImageUri()const;
 				void setImageUri(const std::string& imageUri);
+				std::string getRemarksArrayA()const;
+				void setRemarksArrayA(const std::string& remarksArrayA);
+				std::string getRemarksArrayB()const;
+				void setRemarksArrayB(const std::string& remarksArrayB);
 				std::string getSourceUri()const;
 				void setSourceUri(const std::string& sourceUri);
 				std::string getSourcePosition()const;
@@ -77,6 +81,8 @@ namespace AlibabaCloud
 				std::string remarksB_;
 				std::string remarksA_;
 				std::string imageUri_;
+				std::string remarksArrayA_;
+				std::string remarksArrayB_;
 				std::string sourceUri_;
 				std::string sourcePosition_;
 				std::string remarksD_;

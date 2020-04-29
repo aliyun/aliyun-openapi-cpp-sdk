@@ -137,6 +137,28 @@ void IndexImageRequest::setImageUri(const std::string& imageUri)
 	setParameter("ImageUri", imageUri);
 }
 
+std::string IndexImageRequest::getRemarksArrayA()const
+{
+	return remarksArrayA_;
+}
+
+void IndexImageRequest::setRemarksArrayA(const std::string& remarksArrayA)
+{
+	remarksArrayA_ = remarksArrayA;
+	setParameter("RemarksArrayA", remarksArrayA);
+}
+
+std::string IndexImageRequest::getRemarksArrayB()const
+{
+	return remarksArrayB_;
+}
+
+void IndexImageRequest::setRemarksArrayB(const std::string& remarksArrayB)
+{
+	remarksArrayB_ = remarksArrayB;
+	setParameter("RemarksArrayB", remarksArrayB);
+}
+
 std::string IndexImageRequest::getSourceUri()const
 {
 	return sourceUri_;

@@ -111,6 +111,10 @@ void FindImagesByTagNamesResult::parse(const std::string &payload)
 			imagesObject.addressStatus = valueImagesFrames["AddressStatus"].asString();
 		if(!valueImagesFrames["AddressFailReason"].isNull())
 			imagesObject.addressFailReason = valueImagesFrames["AddressFailReason"].asString();
+		if(!valueImagesFrames["RemarksArrayA"].isNull())
+			imagesObject.remarksArrayA = valueImagesFrames["RemarksArrayA"].asString();
+		if(!valueImagesFrames["RemarksArrayB"].isNull())
+			imagesObject.remarksArrayB = valueImagesFrames["RemarksArrayB"].asString();
 		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
 		for (auto allImagesNodeFacesFacesItem : allFacesNode)
 		{

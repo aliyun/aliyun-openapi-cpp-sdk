@@ -591,6 +591,42 @@ ImmClient::CreateVideoCompressTaskOutcomeCallable ImmClient::createVideoCompress
 	return task->get_future();
 }
 
+ImmClient::CreateVideoProduceTaskOutcome ImmClient::createVideoProduceTask(const CreateVideoProduceTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVideoProduceTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVideoProduceTaskOutcome(CreateVideoProduceTaskResult(outcome.result()));
+	else
+		return CreateVideoProduceTaskOutcome(outcome.error());
+}
+
+void ImmClient::createVideoProduceTaskAsync(const CreateVideoProduceTaskRequest& request, const CreateVideoProduceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVideoProduceTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::CreateVideoProduceTaskOutcomeCallable ImmClient::createVideoProduceTaskCallable(const CreateVideoProduceTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVideoProduceTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createVideoProduceTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::DecodeBlindWatermarkOutcome ImmClient::decodeBlindWatermark(const DecodeBlindWatermarkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

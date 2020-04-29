@@ -143,6 +143,7 @@ namespace AlibabaCloud
 				std::string getAddressModifyTime()const;
 				std::string getImageFormat()const;
 				std::string getTagsFailReason()const;
+				std::string getRemarksArrayB()const;
 				std::string getExif()const;
 				std::string getFacesModifyTime()const;
 				std::string getRemarksC()const;
@@ -150,6 +151,7 @@ namespace AlibabaCloud
 				int getImageWidth()const;
 				std::vector<CelebrityItem> getCelebrity()const;
 				std::string getSourcePosition()const;
+				std::string getRemarksArrayA()const;
 				std::vector<FacesItem> getFaces()const;
 				std::vector<TagsItem> getTags()const;
 				std::string getAddressStatus()const;
@@ -187,6 +189,7 @@ namespace AlibabaCloud
 				std::string addressModifyTime_;
 				std::string imageFormat_;
 				std::string tagsFailReason_;
+				std::string remarksArrayB_;
 				std::string exif_;
 				std::string facesModifyTime_;
 				std::string remarksC_;
@@ -194,6 +197,7 @@ namespace AlibabaCloud
 				int imageWidth_;
 				std::vector<CelebrityItem> celebrity_;
 				std::string sourcePosition_;
+				std::string remarksArrayA_;
 				std::vector<FacesItem> faces_;
 				std::vector<TagsItem> tags_;
 				std::string addressStatus_;

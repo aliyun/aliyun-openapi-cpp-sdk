@@ -140,6 +140,7 @@ namespace AlibabaCloud
 					std::string addressModifyTime;
 					std::string imageFormat;
 					std::string tagsFailReason;
+					std::string remarksArrayB;
 					std::string facesModifyTime;
 					std::string exif;
 					std::string remarksC;
@@ -147,6 +148,7 @@ namespace AlibabaCloud
 					int imageWidth;
 					std::vector<Frames::CelebrityItem> celebrity;
 					std::string sourcePosition;
+					std::string remarksArrayA;
 					std::vector<Frames::FacesItem> faces;
 					std::vector<Frames::TagsItem> tags;
 					std::string addressStatus;

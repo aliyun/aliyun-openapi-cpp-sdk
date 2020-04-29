@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				IndexImageResult();
 				explicit IndexImageResult(const std::string &payload);
 				~IndexImageResult();
+				std::string getRemarksArrayB()const;
 				std::string getModifyTime()const;
 				std::string getRemarksC()const;
 				std::string getRemarksD()const;
 				std::string getCreateTime()const;
 				std::string getExternalId()const;
+				std::string getRemarksArrayA()const;
 				std::string getSetId()const;
 				std::string getImageUri()const;
 				std::string getRemarksA()const;
@@ -50,11 +52,13 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string remarksArrayB_;
 				std::string modifyTime_;
 				std::string remarksC_;
 				std::string remarksD_;
 				std::string createTime_;
 				std::string externalId_;
+				std::string remarksArrayA_;
 				std::string setId_;
 				std::string imageUri_;
 				std::string remarksA_;

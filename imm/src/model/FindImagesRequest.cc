@@ -27,6 +27,17 @@ FindImagesRequest::FindImagesRequest() :
 FindImagesRequest::~FindImagesRequest()
 {}
 
+std::string FindImagesRequest::getRemarksArrayBIn()const
+{
+	return remarksArrayBIn_;
+}
+
+void FindImagesRequest::setRemarksArrayBIn(const std::string& remarksArrayBIn)
+{
+	remarksArrayBIn_ = remarksArrayBIn;
+	setParameter("RemarksArrayBIn", remarksArrayBIn);
+}
+
 std::string FindImagesRequest::getProject()const
 {
 	return project_;
@@ -201,6 +212,17 @@ void FindImagesRequest::setGender(const std::string& gender)
 {
 	gender_ = gender;
 	setParameter("Gender", gender);
+}
+
+std::string FindImagesRequest::getRemarksArrayAIn()const
+{
+	return remarksArrayAIn_;
+}
+
+void FindImagesRequest::setRemarksArrayAIn(const std::string& remarksArrayAIn)
+{
+	remarksArrayAIn_ = remarksArrayAIn;
+	setParameter("RemarksArrayAIn", remarksArrayAIn);
 }
 
 std::string FindImagesRequest::getImageSizeRange()const

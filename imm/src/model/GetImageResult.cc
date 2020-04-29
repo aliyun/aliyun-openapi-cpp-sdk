@@ -252,6 +252,10 @@ void GetImageResult::parse(const std::string &payload)
 		addressStatus_ = value["AddressStatus"].asString();
 	if(!value["AddressFailReason"].isNull())
 		addressFailReason_ = value["AddressFailReason"].asString();
+	if(!value["RemarksArrayA"].isNull())
+		remarksArrayA_ = value["RemarksArrayA"].asString();
+	if(!value["RemarksArrayB"].isNull())
+		remarksArrayB_ = value["RemarksArrayB"].asString();
 
 }
 
@@ -310,6 +314,11 @@ std::string GetImageResult::getTagsFailReason()const
 	return tagsFailReason_;
 }
 
+std::string GetImageResult::getRemarksArrayB()const
+{
+	return remarksArrayB_;
+}
+
 std::string GetImageResult::getExif()const
 {
 	return exif_;
@@ -343,6 +352,11 @@ std::vector<GetImageResult::CelebrityItem> GetImageResult::getCelebrity()const
 std::string GetImageResult::getSourcePosition()const
 {
 	return sourcePosition_;
+}
+
+std::string GetImageResult::getRemarksArrayA()const
+{
+	return remarksArrayA_;
 }
 
 std::vector<GetImageResult::FacesItem> GetImageResult::getFaces()const

@@ -51,6 +51,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/CreateVideoAnalyseTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoCompressTaskRequest.h
 	include/alibabacloud/imm/model/CreateVideoCompressTaskResult.h
+	include/alibabacloud/imm/model/CreateVideoProduceTaskRequest.h
+	include/alibabacloud/imm/model/CreateVideoProduceTaskResult.h
 	include/alibabacloud/imm/model/DecodeBlindWatermarkRequest.h
 	include/alibabacloud/imm/model/DecodeBlindWatermarkResult.h
 	include/alibabacloud/imm/model/DeleteDocIndexRequest.h
@@ -198,6 +200,8 @@ set(imm_src
 	src/model/CreateVideoAnalyseTaskResult.cc
 	src/model/CreateVideoCompressTaskRequest.cc
 	src/model/CreateVideoCompressTaskResult.cc
+	src/model/CreateVideoProduceTaskRequest.cc
+	src/model/CreateVideoProduceTaskResult.cc
 	src/model/DecodeBlindWatermarkRequest.cc
 	src/model/DecodeBlindWatermarkResult.cc
 	src/model/DeleteDocIndexRequest.cc

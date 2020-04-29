@@ -111,6 +111,10 @@ void FindImagesResult::parse(const std::string &payload)
 			imagesObject.addressStatus = valueImagesImagesItem["AddressStatus"].asString();
 		if(!valueImagesImagesItem["AddressFailReason"].isNull())
 			imagesObject.addressFailReason = valueImagesImagesItem["AddressFailReason"].asString();
+		if(!valueImagesImagesItem["RemarksArrayB"].isNull())
+			imagesObject.remarksArrayB = valueImagesImagesItem["RemarksArrayB"].asString();
+		if(!valueImagesImagesItem["RemarksArrayA"].isNull())
+			imagesObject.remarksArrayA = valueImagesImagesItem["RemarksArrayA"].asString();
 		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
 		for (auto allImagesNodeFacesFacesItem : allFacesNode)
 		{

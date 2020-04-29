@@ -52,6 +52,8 @@
 #include "model/CreateVideoAnalyseTaskResult.h"
 #include "model/CreateVideoCompressTaskRequest.h"
 #include "model/CreateVideoCompressTaskResult.h"
+#include "model/CreateVideoProduceTaskRequest.h"
+#include "model/CreateVideoProduceTaskResult.h"
 #include "model/DecodeBlindWatermarkRequest.h"
 #include "model/DecodeBlindWatermarkResult.h"
 #include "model/DeleteDocIndexRequest.h"
@@ -220,6 +222,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVideoCompressTaskResult> CreateVideoCompressTaskOutcome;
 			typedef std::future<CreateVideoCompressTaskOutcome> CreateVideoCompressTaskOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::CreateVideoCompressTaskRequest&, const CreateVideoCompressTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoCompressTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateVideoProduceTaskResult> CreateVideoProduceTaskOutcome;
+			typedef std::future<CreateVideoProduceTaskOutcome> CreateVideoProduceTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::CreateVideoProduceTaskRequest&, const CreateVideoProduceTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoProduceTaskAsyncHandler;
 			typedef Outcome<Error, Model::DecodeBlindWatermarkResult> DecodeBlindWatermarkOutcome;
 			typedef std::future<DecodeBlindWatermarkOutcome> DecodeBlindWatermarkOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::DecodeBlindWatermarkRequest&, const DecodeBlindWatermarkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DecodeBlindWatermarkAsyncHandler;
@@ -441,6 +446,9 @@ namespace AlibabaCloud
 			CreateVideoCompressTaskOutcome createVideoCompressTask(const Model::CreateVideoCompressTaskRequest &request)const;
 			void createVideoCompressTaskAsync(const Model::CreateVideoCompressTaskRequest& request, const CreateVideoCompressTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoCompressTaskOutcomeCallable createVideoCompressTaskCallable(const Model::CreateVideoCompressTaskRequest& request) const;
+			CreateVideoProduceTaskOutcome createVideoProduceTask(const Model::CreateVideoProduceTaskRequest &request)const;
+			void createVideoProduceTaskAsync(const Model::CreateVideoProduceTaskRequest& request, const CreateVideoProduceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateVideoProduceTaskOutcomeCallable createVideoProduceTaskCallable(const Model::CreateVideoProduceTaskRequest& request) const;
 			DecodeBlindWatermarkOutcome decodeBlindWatermark(const Model::DecodeBlindWatermarkRequest &request)const;
 			void decodeBlindWatermarkAsync(const Model::DecodeBlindWatermarkRequest& request, const DecodeBlindWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DecodeBlindWatermarkOutcomeCallable decodeBlindWatermarkCallable(const Model::DecodeBlindWatermarkRequest& request) const;

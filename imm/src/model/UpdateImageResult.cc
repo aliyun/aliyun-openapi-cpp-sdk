@@ -57,7 +57,16 @@ void UpdateImageResult::parse(const std::string &payload)
 		remarksD_ = value["RemarksD"].asString();
 	if(!value["ExternalId"].isNull())
 		externalId_ = value["ExternalId"].asString();
+	if(!value["RemarksArrayA"].isNull())
+		remarksArrayA_ = value["RemarksArrayA"].asString();
+	if(!value["RemarksArrayB"].isNull())
+		remarksArrayB_ = value["RemarksArrayB"].asString();
 
+}
+
+std::string UpdateImageResult::getRemarksArrayB()const
+{
+	return remarksArrayB_;
 }
 
 std::string UpdateImageResult::getModifyTime()const
@@ -83,6 +92,11 @@ std::string UpdateImageResult::getCreateTime()const
 std::string UpdateImageResult::getExternalId()const
 {
 	return externalId_;
+}
+
+std::string UpdateImageResult::getRemarksArrayA()const
+{
+	return remarksArrayA_;
 }
 
 std::string UpdateImageResult::getSetId()const
