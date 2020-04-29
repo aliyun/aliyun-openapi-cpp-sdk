@@ -128,10 +128,10 @@
 #include "model/DescribeDomainBpsDataResult.h"
 #include "model/DescribeDomainBpsDataByTimeStampRequest.h"
 #include "model/DescribeDomainBpsDataByTimeStampResult.h"
+#include "model/DescribeDomainCcActivityLogRequest.h"
+#include "model/DescribeDomainCcActivityLogResult.h"
 #include "model/DescribeDomainCertificateInfoRequest.h"
 #include "model/DescribeDomainCertificateInfoResult.h"
-#include "model/DescribeDomainCnameRequest.h"
-#include "model/DescribeDomainCnameResult.h"
 #include "model/DescribeDomainConfigsRequest.h"
 #include "model/DescribeDomainConfigsResult.h"
 #include "model/DescribeDomainCustomLogConfigRequest.h"
@@ -576,12 +576,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainBpsDataByTimeStampResult> DescribeDomainBpsDataByTimeStampOutcome;
 			typedef std::future<DescribeDomainBpsDataByTimeStampOutcome> DescribeDomainBpsDataByTimeStampOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainBpsDataByTimeStampRequest&, const DescribeDomainBpsDataByTimeStampOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBpsDataByTimeStampAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainCcActivityLogResult> DescribeDomainCcActivityLogOutcome;
+			typedef std::future<DescribeDomainCcActivityLogOutcome> DescribeDomainCcActivityLogOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeDomainCcActivityLogRequest&, const DescribeDomainCcActivityLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCcActivityLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainCertificateInfoResult> DescribeDomainCertificateInfoOutcome;
 			typedef std::future<DescribeDomainCertificateInfoOutcome> DescribeDomainCertificateInfoOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainCertificateInfoRequest&, const DescribeDomainCertificateInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCertificateInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainCnameResult> DescribeDomainCnameOutcome;
-			typedef std::future<DescribeDomainCnameOutcome> DescribeDomainCnameOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::DescribeDomainCnameRequest&, const DescribeDomainCnameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainCnameAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainConfigsResult> DescribeDomainConfigsOutcome;
 			typedef std::future<DescribeDomainConfigsOutcome> DescribeDomainConfigsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainConfigsRequest&, const DescribeDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainConfigsAsyncHandler;
@@ -1160,12 +1160,12 @@ namespace AlibabaCloud
 			DescribeDomainBpsDataByTimeStampOutcome describeDomainBpsDataByTimeStamp(const Model::DescribeDomainBpsDataByTimeStampRequest &request)const;
 			void describeDomainBpsDataByTimeStampAsync(const Model::DescribeDomainBpsDataByTimeStampRequest& request, const DescribeDomainBpsDataByTimeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainBpsDataByTimeStampOutcomeCallable describeDomainBpsDataByTimeStampCallable(const Model::DescribeDomainBpsDataByTimeStampRequest& request) const;
+			DescribeDomainCcActivityLogOutcome describeDomainCcActivityLog(const Model::DescribeDomainCcActivityLogRequest &request)const;
+			void describeDomainCcActivityLogAsync(const Model::DescribeDomainCcActivityLogRequest& request, const DescribeDomainCcActivityLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainCcActivityLogOutcomeCallable describeDomainCcActivityLogCallable(const Model::DescribeDomainCcActivityLogRequest& request) const;
 			DescribeDomainCertificateInfoOutcome describeDomainCertificateInfo(const Model::DescribeDomainCertificateInfoRequest &request)const;
 			void describeDomainCertificateInfoAsync(const Model::DescribeDomainCertificateInfoRequest& request, const DescribeDomainCertificateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainCertificateInfoOutcomeCallable describeDomainCertificateInfoCallable(const Model::DescribeDomainCertificateInfoRequest& request) const;
-			DescribeDomainCnameOutcome describeDomainCname(const Model::DescribeDomainCnameRequest &request)const;
-			void describeDomainCnameAsync(const Model::DescribeDomainCnameRequest& request, const DescribeDomainCnameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainCnameOutcomeCallable describeDomainCnameCallable(const Model::DescribeDomainCnameRequest& request) const;
 			DescribeDomainConfigsOutcome describeDomainConfigs(const Model::DescribeDomainConfigsRequest &request)const;
 			void describeDomainConfigsAsync(const Model::DescribeDomainConfigsRequest& request, const DescribeDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainConfigsOutcomeCallable describeDomainConfigsCallable(const Model::DescribeDomainConfigsRequest& request) const;

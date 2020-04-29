@@ -127,10 +127,10 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampResult.h
+	include/alibabacloud/cdn/model/DescribeDomainCcActivityLogRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainCcActivityLogResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainCertificateInfoResult.h
-	include/alibabacloud/cdn/model/DescribeDomainCnameRequest.h
-	include/alibabacloud/cdn/model/DescribeDomainCnameResult.h
 	include/alibabacloud/cdn/model/DescribeDomainConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainConfigsResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCustomLogConfigRequest.h
@@ -516,10 +516,10 @@ set(cdn_src
 	src/model/DescribeDomainBpsDataResult.cc
 	src/model/DescribeDomainBpsDataByTimeStampRequest.cc
 	src/model/DescribeDomainBpsDataByTimeStampResult.cc
+	src/model/DescribeDomainCcActivityLogRequest.cc
+	src/model/DescribeDomainCcActivityLogResult.cc
 	src/model/DescribeDomainCertificateInfoRequest.cc
 	src/model/DescribeDomainCertificateInfoResult.cc
-	src/model/DescribeDomainCnameRequest.cc
-	src/model/DescribeDomainCnameResult.cc
 	src/model/DescribeDomainConfigsRequest.cc
 	src/model/DescribeDomainConfigsResult.cc
 	src/model/DescribeDomainCustomLogConfigRequest.cc

@@ -37,23 +37,23 @@ namespace AlibabaCloud
 
 				std::string get_Template()const;
 				void set_Template(const std::string& _template);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getApp()const;
 				void setApp(const std::string& app);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
 
             private:
 				std::string _template_;
+				std::string securityToken_;
 				std::string app_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string securityToken_;
 				std::string domain_;
 
 			};

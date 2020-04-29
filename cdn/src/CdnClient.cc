@@ -1959,6 +1959,42 @@ CdnClient::DescribeDomainBpsDataByTimeStampOutcomeCallable CdnClient::describeDo
 	return task->get_future();
 }
 
+CdnClient::DescribeDomainCcActivityLogOutcome CdnClient::describeDomainCcActivityLog(const DescribeDomainCcActivityLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainCcActivityLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainCcActivityLogOutcome(DescribeDomainCcActivityLogResult(outcome.result()));
+	else
+		return DescribeDomainCcActivityLogOutcome(outcome.error());
+}
+
+void CdnClient::describeDomainCcActivityLogAsync(const DescribeDomainCcActivityLogRequest& request, const DescribeDomainCcActivityLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainCcActivityLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainCcActivityLogOutcomeCallable CdnClient::describeDomainCcActivityLogCallable(const DescribeDomainCcActivityLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainCcActivityLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainCcActivityLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeDomainCertificateInfoOutcome CdnClient::describeDomainCertificateInfo(const DescribeDomainCertificateInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,42 +2025,6 @@ CdnClient::DescribeDomainCertificateInfoOutcomeCallable CdnClient::describeDomai
 			[this, request]()
 			{
 			return this->describeDomainCertificateInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::DescribeDomainCnameOutcome CdnClient::describeDomainCname(const DescribeDomainCnameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainCnameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainCnameOutcome(DescribeDomainCnameResult(outcome.result()));
-	else
-		return DescribeDomainCnameOutcome(outcome.error());
-}
-
-void CdnClient::describeDomainCnameAsync(const DescribeDomainCnameRequest& request, const DescribeDomainCnameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainCname(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::DescribeDomainCnameOutcomeCallable CdnClient::describeDomainCnameCallable(const DescribeDomainCnameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainCnameOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainCname(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

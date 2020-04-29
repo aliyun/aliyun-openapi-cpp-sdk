@@ -38,6 +38,17 @@ void DeleteLiveStreamTranscodeRequest::set_Template(const std::string& _template
 	setParameter("_Template", _template);
 }
 
+std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string DeleteLiveStreamTranscodeRequest::getApp()const
 {
 	return app_;
@@ -69,17 +80,6 @@ void DeleteLiveStreamTranscodeRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DeleteLiveStreamTranscodeRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 
 std::string DeleteLiveStreamTranscodeRequest::getDomain()const

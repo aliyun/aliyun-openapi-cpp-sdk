@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCNAMERESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCNAMERESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCCACTIVITYLOGRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCCACTIVITYLOGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeDomainCnameResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeDomainCcActivityLogResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct LogInfo
 				{
-					int status;
-					std::string domain;
-					std::string cname;
+					std::string action;
+					std::string domainName;
+					std::string value;
+					std::string triggerObject;
+					long ttl;
+					std::string timeStamp;
+					std::string ruleName;
 				};
 
 
-				DescribeDomainCnameResult();
-				explicit DescribeDomainCnameResult(const std::string &payload);
-				~DescribeDomainCnameResult();
-				std::vector<Data> getCnameDatas()const;
+				DescribeDomainCcActivityLogResult();
+				explicit DescribeDomainCcActivityLogResult(const std::string &payload);
+				~DescribeDomainCcActivityLogResult();
+				long getPageSize()const;
+				long getTotal()const;
+				std::vector<LogInfo> getActivityLog()const;
+				long getPageIndex()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Data> cnameDatas_;
+				long pageSize_;
+				long total_;
+				std::vector<LogInfo> activityLog_;
+				long pageIndex_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCNAMERESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINCCACTIVITYLOGRESULT_H_
