@@ -48,14 +48,18 @@ namespace AlibabaCloud
 				DescribeRestoreSummaryResult();
 				explicit DescribeRestoreSummaryResult(const std::string &payload);
 				~DescribeRestoreSummaryResult();
-				int getRestoreRecordSize()const;
+				int getPageSize()const;
+				int getPageNumber()const;
+				int getTotal()const;
 				int getHasMoreRestoreRecord()const;
 				std::vector<Rescord> getRescords()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int restoreRecordSize_;
+				int pageSize_;
+				int pageNumber_;
+				int total_;
 				int hasMoreRestoreRecord_;
 				std::vector<Rescord> rescords_;
 

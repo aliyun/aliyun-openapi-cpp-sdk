@@ -32,17 +32,83 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_HBASE_EXPORT DescribeRestoreTablesResult : public ServiceResult
 			{
 			public:
+				struct RestoreSummary
+				{
+					std::string endTime;
+					std::string targetCluster;
+					std::string state;
+					std::string startTime;
+					std::string restoreToDate;
+					std::string recordId;
+				};
+				struct RestoreSchema
+				{
+					struct RestoreSchemaDetail
+					{
+						std::string table;
+						std::string endTime;
+						std::string message;
+						std::string state;
+						std::string startTime;
+					};
+					int pageSize;
+					int pageNumber;
+					long total;
+					std::vector<RestoreSchemaDetail> restoreSchemaDetails;
+					int succeed;
+					int fail;
+				};
+				struct RestoreFull
+				{
+					struct RestoreFullDetail
+					{
+						std::string speed;
+						std::string table;
+						std::string endTime;
+						std::string message;
+						std::string state;
+						std::string dataSize;
+						std::string startTime;
+						std::string process;
+					};
+					std::vector<RestoreFullDetail> restoreFullDetails;
+					std::string speed;
+					int pageSize;
+					int pageNumber;
+					std::string dataSize;
+					long total;
+					int succeed;
+					int fail;
+				};
+				struct RestoreIncrDetail
+				{
+					std::string endTime;
+					std::string restoreDelay;
+					std::string restoreStartTs;
+					std::string state;
+					std::string startTime;
+					std::string restoredTs;
+					std::string process;
+				};
 
 
 				DescribeRestoreTablesResult();
 				explicit DescribeRestoreTablesResult(const std::string &payload);
 				~DescribeRestoreTablesResult();
+				RestoreSchema getRestoreSchema()const;
+				RestoreFull getRestoreFull()const;
+				RestoreSummary getRestoreSummary()const;
 				std::vector<std::string> getTables()const;
+				RestoreIncrDetail getRestoreIncrDetail()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				RestoreSchema restoreSchema_;
+				RestoreFull restoreFull_;
+				RestoreSummary restoreSummary_;
 				std::vector<std::string> tables_;
+				RestoreIncrDetail restoreIncrDetail_;
 
 			};
 		}

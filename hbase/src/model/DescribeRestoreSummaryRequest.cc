@@ -38,3 +38,25 @@ void DescribeRestoreSummaryRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+int DescribeRestoreSummaryRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void DescribeRestoreSummaryRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int DescribeRestoreSummaryRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeRestoreSummaryRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+

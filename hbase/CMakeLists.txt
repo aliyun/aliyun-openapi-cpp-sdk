@@ -65,6 +65,12 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeRecoverableTimeRangeResult.h
 	include/alibabacloud/hbase/model/DescribeRegionsRequest.h
 	include/alibabacloud/hbase/model/DescribeRegionsResult.h
+	include/alibabacloud/hbase/model/DescribeRestoreFullDetailsRequest.h
+	include/alibabacloud/hbase/model/DescribeRestoreFullDetailsResult.h
+	include/alibabacloud/hbase/model/DescribeRestoreIncrDetailRequest.h
+	include/alibabacloud/hbase/model/DescribeRestoreIncrDetailResult.h
+	include/alibabacloud/hbase/model/DescribeRestoreSchemaDetailsRequest.h
+	include/alibabacloud/hbase/model/DescribeRestoreSchemaDetailsResult.h
 	include/alibabacloud/hbase/model/DescribeRestoreSummaryRequest.h
 	include/alibabacloud/hbase/model/DescribeRestoreSummaryResult.h
 	include/alibabacloud/hbase/model/DescribeRestoreTablesRequest.h
@@ -158,6 +164,12 @@ set(hbase_src
 	src/model/DescribeRecoverableTimeRangeResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeRestoreFullDetailsRequest.cc
+	src/model/DescribeRestoreFullDetailsResult.cc
+	src/model/DescribeRestoreIncrDetailRequest.cc
+	src/model/DescribeRestoreIncrDetailResult.cc
+	src/model/DescribeRestoreSchemaDetailsRequest.cc
+	src/model/DescribeRestoreSchemaDetailsResult.cc
 	src/model/DescribeRestoreSummaryRequest.cc
 	src/model/DescribeRestoreSummaryResult.cc
 	src/model/DescribeRestoreTablesRequest.cc

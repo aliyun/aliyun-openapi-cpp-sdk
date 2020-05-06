@@ -55,10 +55,14 @@ void DescribeBackupSummaryResult::parse(const std::string &payload)
 	auto fullNode = value["Full"];
 	if(!fullNode["HasMore"].isNull())
 		full_.hasMore = fullNode["HasMore"].asString();
-	if(!fullNode["RecordSize"].isNull())
-		full_.recordSize = fullNode["RecordSize"].asString();
 	if(!fullNode["NextFullBackupDate"].isNull())
 		full_.nextFullBackupDate = fullNode["NextFullBackupDate"].asString();
+	if(!fullNode["PageNumber"].isNull())
+		full_.pageNumber = std::stoi(fullNode["PageNumber"].asString());
+	if(!fullNode["PageSize"].isNull())
+		full_.pageSize = std::stoi(fullNode["PageSize"].asString());
+	if(!fullNode["Total"].isNull())
+		full_.total = std::stoi(fullNode["Total"].asString());
 	auto allRecordsNode = fullNode["Records"]["Record"];
 	for (auto fullNodeRecordsRecord : allRecordsNode)
 	{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
-#define ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DescribeBackupTablesResult : public ServiceResult
+			class ALIBABACLOUD_HBASE_EXPORT DescribeRestoreFullDetailsResult : public ServiceResult
 			{
 			public:
-				struct BackupRecord
+				struct RestoreFull
 				{
+					struct RestoreFullDetail
+					{
+						std::string speed;
+						std::string table;
+						std::string endTime;
+						std::string message;
+						std::string state;
+						std::string dataSize;
+						std::string startTime;
+						std::string process;
+					};
+					std::vector<RestoreFullDetail> restoreFullDetails;
 					std::string speed;
-					std::string table;
-					std::string endTime;
-					std::string message;
-					std::string state;
+					int pageSize;
+					int pageNumber;
 					std::string dataSize;
-					std::string startTime;
-					std::string process;
+					long total;
+					int succeed;
+					int fail;
 				};
 
 
-				DescribeBackupTablesResult();
-				explicit DescribeBackupTablesResult(const std::string &payload);
-				~DescribeBackupTablesResult();
-				std::vector<BackupRecord> getBackupRecords()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				long getTotal()const;
-				std::vector<std::string> getTables()const;
+				DescribeRestoreFullDetailsResult();
+				explicit DescribeRestoreFullDetailsResult(const std::string &payload);
+				~DescribeRestoreFullDetailsResult();
+				RestoreFull getRestoreFull()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<BackupRecord> backupRecords_;
-				int pageSize_;
-				int pageNumber_;
-				long total_;
-				std::vector<std::string> tables_;
+				RestoreFull restoreFull_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSRESULT_H_

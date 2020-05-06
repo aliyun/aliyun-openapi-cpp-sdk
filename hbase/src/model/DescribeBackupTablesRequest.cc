@@ -27,15 +27,26 @@ DescribeBackupTablesRequest::DescribeBackupTablesRequest() :
 DescribeBackupTablesRequest::~DescribeBackupTablesRequest()
 {}
 
-std::string DescribeBackupTablesRequest::getClusterId()const
+int DescribeBackupTablesRequest::getPageNumber()const
 {
-	return clusterId_;
+	return pageNumber_;
 }
 
-void DescribeBackupTablesRequest::setClusterId(const std::string& clusterId)
+void DescribeBackupTablesRequest::setPageNumber(int pageNumber)
 {
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+int DescribeBackupTablesRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void DescribeBackupTablesRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
 std::string DescribeBackupTablesRequest::getBackupRecordId()const
@@ -47,5 +58,16 @@ void DescribeBackupTablesRequest::setBackupRecordId(const std::string& backupRec
 {
 	backupRecordId_ = backupRecordId;
 	setParameter("BackupRecordId", backupRecordId);
+}
+
+std::string DescribeBackupTablesRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void DescribeBackupTablesRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
 }
 

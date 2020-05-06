@@ -61,16 +61,30 @@ void DescribeRestoreSummaryResult::parse(const std::string &payload)
 			rescordsObject.logProcess = valueRescordsRescord["LogProcess"].asString();
 		rescords_.push_back(rescordsObject);
 	}
-	if(!value["RestoreRecordSize"].isNull())
-		restoreRecordSize_ = std::stoi(value["RestoreRecordSize"].asString());
 	if(!value["HasMoreRestoreRecord"].isNull())
 		hasMoreRestoreRecord_ = std::stoi(value["HasMoreRestoreRecord"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
-int DescribeRestoreSummaryResult::getRestoreRecordSize()const
+int DescribeRestoreSummaryResult::getPageSize()const
 {
-	return restoreRecordSize_;
+	return pageSize_;
+}
+
+int DescribeRestoreSummaryResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+int DescribeRestoreSummaryResult::getTotal()const
+{
+	return total_;
 }
 
 int DescribeRestoreSummaryResult::getHasMoreRestoreRecord()const

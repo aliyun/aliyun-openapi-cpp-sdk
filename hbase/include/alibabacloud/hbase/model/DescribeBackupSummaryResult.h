@@ -54,9 +54,11 @@ namespace AlibabaCloud
 						std::string recordId;
 					};
 					std::string hasMore;
+					int pageSize;
+					int pageNumber;
 					std::string nextFullBackupDate;
+					int total;
 					std::vector<Record> records;
-					std::string recordSize;
 				};
 
 

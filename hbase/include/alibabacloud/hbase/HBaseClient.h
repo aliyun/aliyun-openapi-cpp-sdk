@@ -66,6 +66,12 @@
 #include "model/DescribeRecoverableTimeRangeResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeRestoreFullDetailsRequest.h"
+#include "model/DescribeRestoreFullDetailsResult.h"
+#include "model/DescribeRestoreIncrDetailRequest.h"
+#include "model/DescribeRestoreIncrDetailResult.h"
+#include "model/DescribeRestoreSchemaDetailsRequest.h"
+#include "model/DescribeRestoreSchemaDetailsResult.h"
 #include "model/DescribeRestoreSummaryRequest.h"
 #include "model/DescribeRestoreSummaryResult.h"
 #include "model/DescribeRestoreTablesRequest.h"
@@ -187,6 +193,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreFullDetailsResult> DescribeRestoreFullDetailsOutcome;
+			typedef std::future<DescribeRestoreFullDetailsOutcome> DescribeRestoreFullDetailsOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreFullDetailsRequest&, const DescribeRestoreFullDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreFullDetailsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreIncrDetailResult> DescribeRestoreIncrDetailOutcome;
+			typedef std::future<DescribeRestoreIncrDetailOutcome> DescribeRestoreIncrDetailOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreIncrDetailRequest&, const DescribeRestoreIncrDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreIncrDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRestoreSchemaDetailsResult> DescribeRestoreSchemaDetailsOutcome;
+			typedef std::future<DescribeRestoreSchemaDetailsOutcome> DescribeRestoreSchemaDetailsOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreSchemaDetailsRequest&, const DescribeRestoreSchemaDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreSchemaDetailsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRestoreSummaryResult> DescribeRestoreSummaryOutcome;
 			typedef std::future<DescribeRestoreSummaryOutcome> DescribeRestoreSummaryOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeRestoreSummaryRequest&, const DescribeRestoreSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreSummaryAsyncHandler;
@@ -327,6 +342,15 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeRestoreFullDetailsOutcome describeRestoreFullDetails(const Model::DescribeRestoreFullDetailsRequest &request)const;
+			void describeRestoreFullDetailsAsync(const Model::DescribeRestoreFullDetailsRequest& request, const DescribeRestoreFullDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreFullDetailsOutcomeCallable describeRestoreFullDetailsCallable(const Model::DescribeRestoreFullDetailsRequest& request) const;
+			DescribeRestoreIncrDetailOutcome describeRestoreIncrDetail(const Model::DescribeRestoreIncrDetailRequest &request)const;
+			void describeRestoreIncrDetailAsync(const Model::DescribeRestoreIncrDetailRequest& request, const DescribeRestoreIncrDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreIncrDetailOutcomeCallable describeRestoreIncrDetailCallable(const Model::DescribeRestoreIncrDetailRequest& request) const;
+			DescribeRestoreSchemaDetailsOutcome describeRestoreSchemaDetails(const Model::DescribeRestoreSchemaDetailsRequest &request)const;
+			void describeRestoreSchemaDetailsAsync(const Model::DescribeRestoreSchemaDetailsRequest& request, const DescribeRestoreSchemaDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRestoreSchemaDetailsOutcomeCallable describeRestoreSchemaDetailsCallable(const Model::DescribeRestoreSchemaDetailsRequest& request) const;
 			DescribeRestoreSummaryOutcome describeRestoreSummary(const Model::DescribeRestoreSummaryRequest &request)const;
 			void describeRestoreSummaryAsync(const Model::DescribeRestoreSummaryRequest& request, const DescribeRestoreSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreSummaryOutcomeCallable describeRestoreSummaryCallable(const Model::DescribeRestoreSummaryRequest& request) const;

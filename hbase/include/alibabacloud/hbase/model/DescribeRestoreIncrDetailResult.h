@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
-#define ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREINCRDETAILRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREINCRDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DescribeBackupTablesResult : public ServiceResult
+			class ALIBABACLOUD_HBASE_EXPORT DescribeRestoreIncrDetailResult : public ServiceResult
 			{
 			public:
-				struct BackupRecord
+				struct RestoreIncrDetail
 				{
-					std::string speed;
-					std::string table;
 					std::string endTime;
-					std::string message;
+					std::string restoreDelay;
+					std::string restoreStartTs;
 					std::string state;
-					std::string dataSize;
 					std::string startTime;
+					std::string restoredTs;
 					std::string process;
 				};
 
 
-				DescribeBackupTablesResult();
-				explicit DescribeBackupTablesResult(const std::string &payload);
-				~DescribeBackupTablesResult();
-				std::vector<BackupRecord> getBackupRecords()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				long getTotal()const;
-				std::vector<std::string> getTables()const;
+				DescribeRestoreIncrDetailResult();
+				explicit DescribeRestoreIncrDetailResult(const std::string &payload);
+				~DescribeRestoreIncrDetailResult();
+				RestoreIncrDetail getRestoreIncrDetail()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<BackupRecord> backupRecords_;
-				int pageSize_;
-				int pageNumber_;
-				long total_;
-				std::vector<std::string> tables_;
+				RestoreIncrDetail restoreIncrDetail_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPTABLESRESULT_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREINCRDETAILRESULT_H_

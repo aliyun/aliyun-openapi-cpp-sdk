@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				DescribeBackupTablesRequest();
 				~DescribeBackupTablesRequest();
 
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getBackupRecordId()const;
 				void setBackupRecordId(const std::string& backupRecordId);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 
             private:
-				std::string clusterId_;
+				int pageNumber_;
+				int pageSize_;
 				std::string backupRecordId_;
+				std::string clusterId_;
 
 			};
 		}

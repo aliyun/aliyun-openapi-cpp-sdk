@@ -843,6 +843,114 @@ HBaseClient::DescribeRegionsOutcomeCallable HBaseClient::describeRegionsCallable
 	return task->get_future();
 }
 
+HBaseClient::DescribeRestoreFullDetailsOutcome HBaseClient::describeRestoreFullDetails(const DescribeRestoreFullDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreFullDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreFullDetailsOutcome(DescribeRestoreFullDetailsResult(outcome.result()));
+	else
+		return DescribeRestoreFullDetailsOutcome(outcome.error());
+}
+
+void HBaseClient::describeRestoreFullDetailsAsync(const DescribeRestoreFullDetailsRequest& request, const DescribeRestoreFullDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreFullDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRestoreFullDetailsOutcomeCallable HBaseClient::describeRestoreFullDetailsCallable(const DescribeRestoreFullDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreFullDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreFullDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeRestoreIncrDetailOutcome HBaseClient::describeRestoreIncrDetail(const DescribeRestoreIncrDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreIncrDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreIncrDetailOutcome(DescribeRestoreIncrDetailResult(outcome.result()));
+	else
+		return DescribeRestoreIncrDetailOutcome(outcome.error());
+}
+
+void HBaseClient::describeRestoreIncrDetailAsync(const DescribeRestoreIncrDetailRequest& request, const DescribeRestoreIncrDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreIncrDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRestoreIncrDetailOutcomeCallable HBaseClient::describeRestoreIncrDetailCallable(const DescribeRestoreIncrDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreIncrDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreIncrDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DescribeRestoreSchemaDetailsOutcome HBaseClient::describeRestoreSchemaDetails(const DescribeRestoreSchemaDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRestoreSchemaDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRestoreSchemaDetailsOutcome(DescribeRestoreSchemaDetailsResult(outcome.result()));
+	else
+		return DescribeRestoreSchemaDetailsOutcome(outcome.error());
+}
+
+void HBaseClient::describeRestoreSchemaDetailsAsync(const DescribeRestoreSchemaDetailsRequest& request, const DescribeRestoreSchemaDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRestoreSchemaDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeRestoreSchemaDetailsOutcomeCallable HBaseClient::describeRestoreSchemaDetailsCallable(const DescribeRestoreSchemaDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRestoreSchemaDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRestoreSchemaDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeRestoreSummaryOutcome HBaseClient::describeRestoreSummary(const DescribeRestoreSummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

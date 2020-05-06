@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPSUMMARYREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPSUMMARYREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DescribeBackupSummaryRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT DescribeRestoreFullDetailsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBackupSummaryRequest();
-				~DescribeBackupSummaryRequest();
+				DescribeRestoreFullDetailsRequest();
+				~DescribeRestoreFullDetailsRequest();
 
-				std::string getClusterId()const;
-				void setClusterId(const std::string& clusterId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
+				std::string getRestoreRecordId()const;
+				void setRestoreRecordId(const std::string& restoreRecordId);
 
             private:
-				std::string clusterId_;
 				int pageNumber_;
 				int pageSize_;
+				std::string clusterId_;
+				std::string restoreRecordId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBEBACKUPSUMMARYREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBERESTOREFULLDETAILSREQUEST_H_

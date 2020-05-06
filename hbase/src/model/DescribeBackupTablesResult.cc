@@ -39,10 +39,58 @@ void DescribeBackupTablesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allBackupRecordsNode = value["BackupRecords"]["BackupRecord"];
+	for (auto valueBackupRecordsBackupRecord : allBackupRecordsNode)
+	{
+		BackupRecord backupRecordsObject;
+		if(!valueBackupRecordsBackupRecord["Table"].isNull())
+			backupRecordsObject.table = valueBackupRecordsBackupRecord["Table"].asString();
+		if(!valueBackupRecordsBackupRecord["State"].isNull())
+			backupRecordsObject.state = valueBackupRecordsBackupRecord["State"].asString();
+		if(!valueBackupRecordsBackupRecord["StartTime"].isNull())
+			backupRecordsObject.startTime = valueBackupRecordsBackupRecord["StartTime"].asString();
+		if(!valueBackupRecordsBackupRecord["EndTime"].isNull())
+			backupRecordsObject.endTime = valueBackupRecordsBackupRecord["EndTime"].asString();
+		if(!valueBackupRecordsBackupRecord["Process"].isNull())
+			backupRecordsObject.process = valueBackupRecordsBackupRecord["Process"].asString();
+		if(!valueBackupRecordsBackupRecord["DataSize"].isNull())
+			backupRecordsObject.dataSize = valueBackupRecordsBackupRecord["DataSize"].asString();
+		if(!valueBackupRecordsBackupRecord["Speed"].isNull())
+			backupRecordsObject.speed = valueBackupRecordsBackupRecord["Speed"].asString();
+		if(!valueBackupRecordsBackupRecord["Message"].isNull())
+			backupRecordsObject.message = valueBackupRecordsBackupRecord["Message"].asString();
+		backupRecords_.push_back(backupRecordsObject);
+	}
 	auto allTables = value["Tables"]["Table"];
 	for (const auto &item : allTables)
 		tables_.push_back(item.asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
+}
+
+std::vector<DescribeBackupTablesResult::BackupRecord> DescribeBackupTablesResult::getBackupRecords()const
+{
+	return backupRecords_;
+}
+
+int DescribeBackupTablesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeBackupTablesResult::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+long DescribeBackupTablesResult::getTotal()const
+{
+	return total_;
 }
 
 std::vector<std::string> DescribeBackupTablesResult::getTables()const
