@@ -24,6 +24,8 @@
 #include "SafExport.h"
 #include "model/ExecuteRequestRequest.h"
 #include "model/ExecuteRequestResult.h"
+#include "model/ExecuteRequestSGRequest.h"
+#include "model/ExecuteRequestSGResult.h"
 
 
 namespace AlibabaCloud
@@ -36,6 +38,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteRequestResult> ExecuteRequestOutcome;
 			typedef std::future<ExecuteRequestOutcome> ExecuteRequestOutcomeCallable;
 			typedef std::function<void(const SafClient*, const Model::ExecuteRequestRequest&, const ExecuteRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestAsyncHandler;
+			typedef Outcome<Error, Model::ExecuteRequestSGResult> ExecuteRequestSGOutcome;
+			typedef std::future<ExecuteRequestSGOutcome> ExecuteRequestSGOutcomeCallable;
+			typedef std::function<void(const SafClient*, const Model::ExecuteRequestSGRequest&, const ExecuteRequestSGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestSGAsyncHandler;
 
 			SafClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SafClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -44,6 +49,9 @@ namespace AlibabaCloud
 			ExecuteRequestOutcome executeRequest(const Model::ExecuteRequestRequest &request)const;
 			void executeRequestAsync(const Model::ExecuteRequestRequest& request, const ExecuteRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteRequestOutcomeCallable executeRequestCallable(const Model::ExecuteRequestRequest& request) const;
+			ExecuteRequestSGOutcome executeRequestSG(const Model::ExecuteRequestSGRequest &request)const;
+			void executeRequestSGAsync(const Model::ExecuteRequestSGRequest& request, const ExecuteRequestSGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExecuteRequestSGOutcomeCallable executeRequestSGCallable(const Model::ExecuteRequestSGRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

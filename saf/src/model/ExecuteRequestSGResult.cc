@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/saf/model/ExecuteRequestResult.h>
+#include <alibabacloud/saf/model/ExecuteRequestSGResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Saf;
 using namespace AlibabaCloud::Saf::Model;
 
-ExecuteRequestResult::ExecuteRequestResult() :
+ExecuteRequestSGResult::ExecuteRequestSGResult() :
 	ServiceResult()
 {}
 
-ExecuteRequestResult::ExecuteRequestResult(const std::string &payload) :
+ExecuteRequestSGResult::ExecuteRequestSGResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ExecuteRequestResult::~ExecuteRequestResult()
+ExecuteRequestSGResult::~ExecuteRequestSGResult()
 {}
 
-void ExecuteRequestResult::parse(const std::string &payload)
+void ExecuteRequestSGResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -48,17 +48,17 @@ void ExecuteRequestResult::parse(const std::string &payload)
 
 }
 
-std::string ExecuteRequestResult::getMessage()const
+std::string ExecuteRequestSGResult::getMessage()const
 {
 	return message_;
 }
 
-std::string ExecuteRequestResult::getData()const
+std::string ExecuteRequestSGResult::getData()const
 {
 	return data_;
 }
 
-int ExecuteRequestResult::getCode()const
+int ExecuteRequestSGResult::getCode()const
 {
 	return code_;
 }

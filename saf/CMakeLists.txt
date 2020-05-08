@@ -22,12 +22,16 @@ set(saf_public_header
 
 set(saf_public_header_model 
 	include/alibabacloud/saf/model/ExecuteRequestRequest.h
-	include/alibabacloud/saf/model/ExecuteRequestResult.h )
+	include/alibabacloud/saf/model/ExecuteRequestResult.h
+	include/alibabacloud/saf/model/ExecuteRequestSGRequest.h
+	include/alibabacloud/saf/model/ExecuteRequestSGResult.h )
 
 set(saf_src 
 	src/SafClient.cc
 	src/model/ExecuteRequestRequest.cc
-	src/model/ExecuteRequestResult.cc )
+	src/model/ExecuteRequestResult.cc
+	src/model/ExecuteRequestSGRequest.cc
+	src/model/ExecuteRequestSGResult.cc )
 
 add_library(saf ${LIB_TYPE}
 	${saf_public_header}

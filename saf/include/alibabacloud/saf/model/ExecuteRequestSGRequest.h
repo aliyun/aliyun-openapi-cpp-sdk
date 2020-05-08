@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
-#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
+#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGREQUEST_H_
+#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/saf/SafExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestResult : public ServiceResult
+			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestSGRequest : public RpcServiceRequest
 			{
+
 			public:
+				ExecuteRequestSGRequest();
+				~ExecuteRequestSGRequest();
 
+				std::string getServiceParameters()const;
+				void setServiceParameters(const std::string& serviceParameters);
+				std::string getService()const;
+				void setService(const std::string& service);
 
-				ExecuteRequestResult();
-				explicit ExecuteRequestResult(const std::string &payload);
-				~ExecuteRequestResult();
-				std::string getMessage()const;
-				std::string getData()const;
-				int getCode()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				std::string data_;
-				int code_;
+            private:
+				std::string serviceParameters_;
+				std::string service_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
+#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGREQUEST_H_

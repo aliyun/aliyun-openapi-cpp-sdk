@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
-#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
+#ifndef ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGRESULT_H_
+#define ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestResult : public ServiceResult
+			class ALIBABACLOUD_SAF_EXPORT ExecuteRequestSGResult : public ServiceResult
 			{
 			public:
 
 
-				ExecuteRequestResult();
-				explicit ExecuteRequestResult(const std::string &payload);
-				~ExecuteRequestResult();
+				ExecuteRequestSGResult();
+				explicit ExecuteRequestSGResult(const std::string &payload);
+				~ExecuteRequestSGResult();
 				std::string getMessage()const;
 				std::string getData()const;
 				int getCode()const;
@@ -52,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTRESULT_H_
+#endif // !ALIBABACLOUD_SAF_MODEL_EXECUTEREQUESTSGRESULT_H_

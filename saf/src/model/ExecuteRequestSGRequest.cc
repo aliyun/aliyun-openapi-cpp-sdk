@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/saf/model/ExecuteRequestRequest.h>
+#include <alibabacloud/saf/model/ExecuteRequestSGRequest.h>
 
-using AlibabaCloud::Saf::Model::ExecuteRequestRequest;
+using AlibabaCloud::Saf::Model::ExecuteRequestSGRequest;
 
-ExecuteRequestRequest::ExecuteRequestRequest() :
-	RpcServiceRequest("saf", "2019-05-21", "ExecuteRequest")
+ExecuteRequestSGRequest::ExecuteRequestSGRequest() :
+	RpcServiceRequest("saf", "2019-05-21", "ExecuteRequestSG")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-ExecuteRequestRequest::~ExecuteRequestRequest()
+ExecuteRequestSGRequest::~ExecuteRequestSGRequest()
 {}
 
-std::string ExecuteRequestRequest::getServiceParameters()const
+std::string ExecuteRequestSGRequest::getServiceParameters()const
 {
 	return serviceParameters_;
 }
 
-void ExecuteRequestRequest::setServiceParameters(const std::string& serviceParameters)
+void ExecuteRequestSGRequest::setServiceParameters(const std::string& serviceParameters)
 {
 	serviceParameters_ = serviceParameters;
 	setParameter("ServiceParameters", serviceParameters);
 }
 
-std::string ExecuteRequestRequest::getService()const
+std::string ExecuteRequestSGRequest::getService()const
 {
 	return service_;
 }
 
-void ExecuteRequestRequest::setService(const std::string& service)
+void ExecuteRequestSGRequest::setService(const std::string& service)
 {
 	service_ = service;
 	setParameter("Service", service);

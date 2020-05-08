@@ -87,3 +87,39 @@ SafClient::ExecuteRequestOutcomeCallable SafClient::executeRequestCallable(const
 	return task->get_future();
 }
 
+SafClient::ExecuteRequestSGOutcome SafClient::executeRequestSG(const ExecuteRequestSGRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteRequestSGOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteRequestSGOutcome(ExecuteRequestSGResult(outcome.result()));
+	else
+		return ExecuteRequestSGOutcome(outcome.error());
+}
+
+void SafClient::executeRequestSGAsync(const ExecuteRequestSGRequest& request, const ExecuteRequestSGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeRequestSG(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SafClient::ExecuteRequestSGOutcomeCallable SafClient::executeRequestSGCallable(const ExecuteRequestSGRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteRequestSGOutcome()>>(
+			[this, request]()
+			{
+			return this->executeRequestSG(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
