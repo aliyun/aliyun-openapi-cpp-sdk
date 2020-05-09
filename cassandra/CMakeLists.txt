@@ -57,6 +57,8 @@ set(cassandra_public_header_model
 	include/alibabacloud/cassandra/model/DescribeClustersResult.h
 	include/alibabacloud/cassandra/model/DescribeContactPointsRequest.h
 	include/alibabacloud/cassandra/model/DescribeContactPointsResult.h
+	include/alibabacloud/cassandra/model/DescribeDataCenterRequest.h
+	include/alibabacloud/cassandra/model/DescribeDataCenterResult.h
 	include/alibabacloud/cassandra/model/DescribeDataCentersRequest.h
 	include/alibabacloud/cassandra/model/DescribeDataCentersResult.h
 	include/alibabacloud/cassandra/model/DescribeDeletedClustersRequest.h
@@ -160,6 +162,8 @@ set(cassandra_src
 	src/model/DescribeClustersResult.cc
 	src/model/DescribeContactPointsRequest.cc
 	src/model/DescribeContactPointsResult.cc
+	src/model/DescribeDataCenterRequest.cc
+	src/model/DescribeDataCenterResult.cc
 	src/model/DescribeDataCentersRequest.cc
 	src/model/DescribeDataCentersResult.cc
 	src/model/DescribeDeletedClustersRequest.cc

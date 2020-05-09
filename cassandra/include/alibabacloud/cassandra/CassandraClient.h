@@ -58,6 +58,8 @@
 #include "model/DescribeClustersResult.h"
 #include "model/DescribeContactPointsRequest.h"
 #include "model/DescribeContactPointsResult.h"
+#include "model/DescribeDataCenterRequest.h"
+#include "model/DescribeDataCenterResult.h"
 #include "model/DescribeDataCentersRequest.h"
 #include "model/DescribeDataCentersResult.h"
 #include "model/DescribeDeletedClustersRequest.h"
@@ -185,6 +187,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeContactPointsResult> DescribeContactPointsOutcome;
 			typedef std::future<DescribeContactPointsOutcome> DescribeContactPointsOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::DescribeContactPointsRequest&, const DescribeContactPointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContactPointsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDataCenterResult> DescribeDataCenterOutcome;
+			typedef std::future<DescribeDataCenterOutcome> DescribeDataCenterOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::DescribeDataCenterRequest&, const DescribeDataCenterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCenterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDataCentersResult> DescribeDataCentersOutcome;
 			typedef std::future<DescribeDataCentersOutcome> DescribeDataCentersOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::DescribeDataCentersRequest&, const DescribeDataCentersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCentersAsyncHandler;
@@ -340,6 +345,9 @@ namespace AlibabaCloud
 			DescribeContactPointsOutcome describeContactPoints(const Model::DescribeContactPointsRequest &request)const;
 			void describeContactPointsAsync(const Model::DescribeContactPointsRequest& request, const DescribeContactPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeContactPointsOutcomeCallable describeContactPointsCallable(const Model::DescribeContactPointsRequest& request) const;
+			DescribeDataCenterOutcome describeDataCenter(const Model::DescribeDataCenterRequest &request)const;
+			void describeDataCenterAsync(const Model::DescribeDataCenterRequest& request, const DescribeDataCenterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDataCenterOutcomeCallable describeDataCenterCallable(const Model::DescribeDataCenterRequest& request) const;
 			DescribeDataCentersOutcome describeDataCenters(const Model::DescribeDataCentersRequest &request)const;
 			void describeDataCentersAsync(const Model::DescribeDataCentersRequest& request, const DescribeDataCentersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDataCentersOutcomeCallable describeDataCentersCallable(const Model::DescribeDataCentersRequest& request) const;
