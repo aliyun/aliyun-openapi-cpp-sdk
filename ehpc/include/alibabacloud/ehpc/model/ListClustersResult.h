@@ -65,6 +65,8 @@ namespace AlibabaCloud
 					std::string imageOwnerAlias;
 					std::string description;
 					std::string nodePrefix;
+					std::string instanceChargeType;
+					float computeSpotPriceLimit;
 					std::string nodeSuffix;
 					int count;
 					std::string name;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 					std::string vSwitchId;
 					std::string createTime;
 					std::string schedulerType;
+					std::string computeSpotStrategy;
 					std::string accountType;
 					std::string ehpcVersion;
 					std::string baseOsTag;

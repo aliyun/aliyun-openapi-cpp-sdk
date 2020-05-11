@@ -1,3 +1,6 @@
+2020-05-11 Version: 1.36.403
+- Add new openapi ApplyNodes.
+
 2020-05-11 Version: 1.36.402
 - Support CreationCategory for CreateDBCluster.
 

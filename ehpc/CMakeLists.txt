@@ -31,6 +31,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/AddQueueResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
+	include/alibabacloud/ehpc/model/ApplyNodesRequest.h
+	include/alibabacloud/ehpc/model/ApplyNodesResult.h
 	include/alibabacloud/ehpc/model/BindAccountToClusterUserRequest.h
 	include/alibabacloud/ehpc/model/BindAccountToClusterUserResult.h
 	include/alibabacloud/ehpc/model/CreateClusterRequest.h
@@ -258,6 +260,8 @@ set(ehpc_src
 	src/model/AddQueueResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
+	src/model/ApplyNodesRequest.cc
+	src/model/ApplyNodesResult.cc
 	src/model/BindAccountToClusterUserRequest.cc
 	src/model/BindAccountToClusterUserResult.cc
 	src/model/CreateClusterRequest.cc

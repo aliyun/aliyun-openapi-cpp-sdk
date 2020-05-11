@@ -32,6 +32,8 @@
 #include "model/AddQueueResult.h"
 #include "model/AddUsersRequest.h"
 #include "model/AddUsersResult.h"
+#include "model/ApplyNodesRequest.h"
+#include "model/ApplyNodesResult.h"
 #include "model/BindAccountToClusterUserRequest.h"
 #include "model/BindAccountToClusterUserResult.h"
 #include "model/CreateClusterRequest.h"
@@ -270,6 +272,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddUsersResult> AddUsersOutcome;
 			typedef std::future<AddUsersOutcome> AddUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddUsersRequest&, const AddUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersAsyncHandler;
+			typedef Outcome<Error, Model::ApplyNodesResult> ApplyNodesOutcome;
+			typedef std::future<ApplyNodesOutcome> ApplyNodesOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ApplyNodesRequest&, const ApplyNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyNodesAsyncHandler;
 			typedef Outcome<Error, Model::BindAccountToClusterUserResult> BindAccountToClusterUserOutcome;
 			typedef std::future<BindAccountToClusterUserOutcome> BindAccountToClusterUserOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::BindAccountToClusterUserRequest&, const BindAccountToClusterUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAccountToClusterUserAsyncHandler;
@@ -611,6 +616,9 @@ namespace AlibabaCloud
 			AddUsersOutcome addUsers(const Model::AddUsersRequest &request)const;
 			void addUsersAsync(const Model::AddUsersRequest& request, const AddUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUsersOutcomeCallable addUsersCallable(const Model::AddUsersRequest& request) const;
+			ApplyNodesOutcome applyNodes(const Model::ApplyNodesRequest &request)const;
+			void applyNodesAsync(const Model::ApplyNodesRequest& request, const ApplyNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyNodesOutcomeCallable applyNodesCallable(const Model::ApplyNodesRequest& request) const;
 			BindAccountToClusterUserOutcome bindAccountToClusterUser(const Model::BindAccountToClusterUserRequest &request)const;
 			void bindAccountToClusterUserAsync(const Model::BindAccountToClusterUserRequest& request, const BindAccountToClusterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindAccountToClusterUserOutcomeCallable bindAccountToClusterUserCallable(const Model::BindAccountToClusterUserRequest& request) const;

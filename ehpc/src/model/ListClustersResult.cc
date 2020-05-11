@@ -89,6 +89,12 @@ void ListClustersResult::parse(const std::string &payload)
 			clustersObject.nodeSuffix = valueClustersClusterInfoSimple["NodeSuffix"].asString();
 		if(!valueClustersClusterInfoSimple["BaseOsTag"].isNull())
 			clustersObject.baseOsTag = valueClustersClusterInfoSimple["BaseOsTag"].asString();
+		if(!valueClustersClusterInfoSimple["InstanceChargeType"].isNull())
+			clustersObject.instanceChargeType = valueClustersClusterInfoSimple["InstanceChargeType"].asString();
+		if(!valueClustersClusterInfoSimple["ComputeSpotStrategy"].isNull())
+			clustersObject.computeSpotStrategy = valueClustersClusterInfoSimple["ComputeSpotStrategy"].asString();
+		if(!valueClustersClusterInfoSimple["ComputeSpotPriceLimit"].isNull())
+			clustersObject.computeSpotPriceLimit = std::stof(valueClustersClusterInfoSimple["ComputeSpotPriceLimit"].asString());
 		auto managersNode = value["Managers"];
 		if(!managersNode["Total"].isNull())
 			clustersObject.managers.total = std::stoi(managersNode["Total"].asString());

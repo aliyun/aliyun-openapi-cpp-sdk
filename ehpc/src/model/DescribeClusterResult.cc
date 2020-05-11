@@ -94,6 +94,8 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.location = clusterInfoNode["Location"].asString();
 	if(!clusterInfoNode["BaseOsTag"].isNull())
 		clusterInfo_.baseOsTag = clusterInfoNode["BaseOsTag"].asString();
+	if(!clusterInfoNode["ImageName"].isNull())
+		clusterInfo_.imageName = clusterInfoNode["ImageName"].asString();
 	auto allApplicationsNode = clusterInfoNode["Applications"]["ApplicationInfo"];
 	for (auto clusterInfoNodeApplicationsApplicationInfo : allApplicationsNode)
 	{

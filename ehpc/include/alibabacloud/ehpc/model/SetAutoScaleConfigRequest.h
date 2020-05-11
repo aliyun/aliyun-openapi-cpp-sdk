@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				{
 					std::string spotStrategy;
 					std::string queueName;
+					int minNodesInQueue;
 					struct InstanceTypes
 					{
 						std::string spotStrategy;

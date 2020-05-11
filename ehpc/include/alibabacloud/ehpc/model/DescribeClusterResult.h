@@ -88,6 +88,7 @@ namespace AlibabaCloud
 					std::string accountType;
 					std::string volumeMountpoint;
 					std::string baseOsTag;
+					std::string imageName;
 					std::string vpcId;
 					EcsInfo ecsInfo;
 					bool haEnable;

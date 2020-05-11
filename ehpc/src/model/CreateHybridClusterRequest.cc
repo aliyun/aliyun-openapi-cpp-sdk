@@ -27,6 +27,198 @@ CreateHybridClusterRequest::CreateHybridClusterRequest() :
 CreateHybridClusterRequest::~CreateHybridClusterRequest()
 {}
 
+std::string CreateHybridClusterRequest::getKeyPairName()const
+{
+	return keyPairName_;
+}
+
+void CreateHybridClusterRequest::setKeyPairName(const std::string& keyPairName)
+{
+	keyPairName_ = keyPairName;
+	setParameter("KeyPairName", keyPairName);
+}
+
+std::string CreateHybridClusterRequest::getSecurityGroupName()const
+{
+	return securityGroupName_;
+}
+
+void CreateHybridClusterRequest::setSecurityGroupName(const std::string& securityGroupName)
+{
+	securityGroupName_ = securityGroupName;
+	setParameter("SecurityGroupName", securityGroupName);
+}
+
+std::string CreateHybridClusterRequest::getOnPremiseVolumeRemotePath()const
+{
+	return onPremiseVolumeRemotePath_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeRemotePath(const std::string& onPremiseVolumeRemotePath)
+{
+	onPremiseVolumeRemotePath_ = onPremiseVolumeRemotePath;
+	setParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
+}
+
+std::string CreateHybridClusterRequest::getImageOwnerAlias()const
+{
+	return imageOwnerAlias_;
+}
+
+void CreateHybridClusterRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
+{
+	imageOwnerAlias_ = imageOwnerAlias;
+	setParameter("ImageOwnerAlias", imageOwnerAlias);
+}
+
+std::string CreateHybridClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateHybridClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateHybridClusterRequest::getPassword()const
+{
+	return password_;
+}
+
+void CreateHybridClusterRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setParameter("Password", password);
+}
+
+float CreateHybridClusterRequest::getComputeSpotPriceLimit()const
+{
+	return computeSpotPriceLimit_;
+}
+
+void CreateHybridClusterRequest::setComputeSpotPriceLimit(float computeSpotPriceLimit)
+{
+	computeSpotPriceLimit_ = computeSpotPriceLimit;
+	setParameter("ComputeSpotPriceLimit", std::to_string(computeSpotPriceLimit));
+}
+
+std::string CreateHybridClusterRequest::getOnPremiseVolumeLocalPath()const
+{
+	return onPremiseVolumeLocalPath_;
+}
+
+void CreateHybridClusterRequest::setOnPremiseVolumeLocalPath(const std::string& onPremiseVolumeLocalPath)
+{
+	onPremiseVolumeLocalPath_ = onPremiseVolumeLocalPath;
+	setParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
+}
+
+std::string CreateHybridClusterRequest::getRemoteDirectory()const
+{
+	return remoteDirectory_;
+}
+
+void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
+{
+	remoteDirectory_ = remoteDirectory;
+	setParameter("RemoteDirectory", remoteDirectory);
+}
+
+std::string CreateHybridClusterRequest::getComputeSpotStrategy()const
+{
+	return computeSpotStrategy_;
+}
+
+void CreateHybridClusterRequest::setComputeSpotStrategy(const std::string& computeSpotStrategy)
+{
+	computeSpotStrategy_ = computeSpotStrategy;
+	setParameter("ComputeSpotStrategy", computeSpotStrategy);
+}
+
+std::vector<CreateHybridClusterRequest::PostInstallScript> CreateHybridClusterRequest::getPostInstallScript()const
+{
+	return postInstallScript_;
+}
+
+void CreateHybridClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
+{
+	postInstallScript_ = postInstallScript;
+	for(int dep1 = 0; dep1!= postInstallScript.size(); dep1++) {
+		auto postInstallScriptObj = postInstallScript.at(dep1);
+		std::string postInstallScriptObjStr = "PostInstallScript." + std::to_string(dep1 + 1);
+		setParameter(postInstallScriptObjStr + ".Args", postInstallScriptObj.args);
+		setParameter(postInstallScriptObjStr + ".Url", postInstallScriptObj.url);
+	}
+}
+
+std::string CreateHybridClusterRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
+std::string CreateHybridClusterRequest::getDomain()const
+{
+	return domain_;
+}
+
+void CreateHybridClusterRequest::setDomain(const std::string& domain)
+{
+	domain_ = domain;
+	setParameter("Domain", domain);
+}
+
+std::string CreateHybridClusterRequest::getName()const
+{
+	return name_;
+}
+
+void CreateHybridClusterRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
+std::string CreateHybridClusterRequest::getVolumeId()const
+{
+	return volumeId_;
+}
+
+void CreateHybridClusterRequest::setVolumeId(const std::string& volumeId)
+{
+	volumeId_ = volumeId;
+	setParameter("VolumeId", volumeId);
+}
+
+std::string CreateHybridClusterRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void CreateHybridClusterRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
+}
+
+std::string CreateHybridClusterRequest::getImageId()const
+{
+	return imageId_;
+}
+
+void CreateHybridClusterRequest::setImageId(const std::string& imageId)
+{
+	imageId_ = imageId;
+	setParameter("ImageId", imageId);
+}
+
 std::string CreateHybridClusterRequest::getEhpcVersion()const
 {
 	return ehpcVersion_;
@@ -60,28 +252,6 @@ void CreateHybridClusterRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::string CreateHybridClusterRequest::getKeyPairName()const
-{
-	return keyPairName_;
-}
-
-void CreateHybridClusterRequest::setKeyPairName(const std::string& keyPairName)
-{
-	keyPairName_ = keyPairName;
-	setParameter("KeyPairName", keyPairName);
-}
-
-std::string CreateHybridClusterRequest::getSecurityGroupName()const
-{
-	return securityGroupName_;
-}
-
-void CreateHybridClusterRequest::setSecurityGroupName(const std::string& securityGroupName)
-{
-	securityGroupName_ = securityGroupName;
-	setParameter("SecurityGroupName", securityGroupName);
-}
-
 std::string CreateHybridClusterRequest::getEcsOrderComputeInstanceType()const
 {
 	return ecsOrderComputeInstanceType_;
@@ -91,17 +261,6 @@ void CreateHybridClusterRequest::setEcsOrderComputeInstanceType(const std::strin
 {
 	ecsOrderComputeInstanceType_ = ecsOrderComputeInstanceType;
 	setParameter("EcsOrderComputeInstanceType", ecsOrderComputeInstanceType);
-}
-
-std::string CreateHybridClusterRequest::getOnPremiseVolumeRemotePath()const
-{
-	return onPremiseVolumeRemotePath_;
-}
-
-void CreateHybridClusterRequest::setOnPremiseVolumeRemotePath(const std::string& onPremiseVolumeRemotePath)
-{
-	onPremiseVolumeRemotePath_ = onPremiseVolumeRemotePath;
-	setParameter("OnPremiseVolumeRemotePath", onPremiseVolumeRemotePath);
 }
 
 std::string CreateHybridClusterRequest::getJobQueue()const
@@ -137,28 +296,6 @@ void CreateHybridClusterRequest::setVolumeType(const std::string& volumeType)
 	setParameter("VolumeType", volumeType);
 }
 
-std::string CreateHybridClusterRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-void CreateHybridClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
-}
-
-std::string CreateHybridClusterRequest::getPassword()const
-{
-	return password_;
-}
-
-void CreateHybridClusterRequest::setPassword(const std::string& password)
-{
-	password_ = password;
-	setParameter("Password", password);
-}
-
 std::string CreateHybridClusterRequest::getOnPremiseVolumeMountPoint()const
 {
 	return onPremiseVolumeMountPoint_;
@@ -192,17 +329,6 @@ void CreateHybridClusterRequest::setVolumeProtocol(const std::string& volumeProt
 	setParameter("VolumeProtocol", volumeProtocol);
 }
 
-std::string CreateHybridClusterRequest::getOnPremiseVolumeLocalPath()const
-{
-	return onPremiseVolumeLocalPath_;
-}
-
-void CreateHybridClusterRequest::setOnPremiseVolumeLocalPath(const std::string& onPremiseVolumeLocalPath)
-{
-	onPremiseVolumeLocalPath_ = onPremiseVolumeLocalPath;
-	setParameter("OnPremiseVolumeLocalPath", onPremiseVolumeLocalPath);
-}
-
 std::string CreateHybridClusterRequest::getClientVersion()const
 {
 	return clientVersion_;
@@ -223,44 +349,6 @@ void CreateHybridClusterRequest::setOsTag(const std::string& osTag)
 {
 	osTag_ = osTag;
 	setParameter("OsTag", osTag);
-}
-
-std::string CreateHybridClusterRequest::getRemoteDirectory()const
-{
-	return remoteDirectory_;
-}
-
-void CreateHybridClusterRequest::setRemoteDirectory(const std::string& remoteDirectory)
-{
-	remoteDirectory_ = remoteDirectory;
-	setParameter("RemoteDirectory", remoteDirectory);
-}
-
-std::vector<CreateHybridClusterRequest::PostInstallScript> CreateHybridClusterRequest::getPostInstallScript()const
-{
-	return postInstallScript_;
-}
-
-void CreateHybridClusterRequest::setPostInstallScript(const std::vector<PostInstallScript>& postInstallScript)
-{
-	postInstallScript_ = postInstallScript;
-	for(int dep1 = 0; dep1!= postInstallScript.size(); dep1++) {
-		auto postInstallScriptObj = postInstallScript.at(dep1);
-		std::string postInstallScriptObjStr = "PostInstallScript." + std::to_string(dep1 + 1);
-		setParameter(postInstallScriptObjStr + ".Args", postInstallScriptObj.args);
-		setParameter(postInstallScriptObjStr + ".Url", postInstallScriptObj.url);
-	}
-}
-
-std::string CreateHybridClusterRequest::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
-void CreateHybridClusterRequest::setVSwitchId(const std::string& vSwitchId)
-{
-	vSwitchId_ = vSwitchId;
-	setParameter("VSwitchId", vSwitchId);
 }
 
 std::vector<CreateHybridClusterRequest::Nodes> CreateHybridClusterRequest::getNodes()const
@@ -297,17 +385,6 @@ void CreateHybridClusterRequest::setApplication(const std::vector<Application>& 
 	}
 }
 
-std::string CreateHybridClusterRequest::getDomain()const
-{
-	return domain_;
-}
-
-void CreateHybridClusterRequest::setDomain(const std::string& domain)
-{
-	domain_ = domain;
-	setParameter("Domain", domain);
-}
-
 std::string CreateHybridClusterRequest::getVpcId()const
 {
 	return vpcId_;
@@ -319,28 +396,6 @@ void CreateHybridClusterRequest::setVpcId(const std::string& vpcId)
 	setParameter("VpcId", vpcId);
 }
 
-std::string CreateHybridClusterRequest::getName()const
-{
-	return name_;
-}
-
-void CreateHybridClusterRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
-}
-
-std::string CreateHybridClusterRequest::getVolumeId()const
-{
-	return volumeId_;
-}
-
-void CreateHybridClusterRequest::setVolumeId(const std::string& volumeId)
-{
-	volumeId_ = volumeId;
-	setParameter("VolumeId", volumeId);
-}
-
 std::string CreateHybridClusterRequest::getVolumeMountpoint()const
 {
 	return volumeMountpoint_;
@@ -350,17 +405,6 @@ void CreateHybridClusterRequest::setVolumeMountpoint(const std::string& volumeMo
 {
 	volumeMountpoint_ = volumeMountpoint;
 	setParameter("VolumeMountpoint", volumeMountpoint);
-}
-
-std::string CreateHybridClusterRequest::getZoneId()const
-{
-	return zoneId_;
-}
-
-void CreateHybridClusterRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
 }
 
 bool CreateHybridClusterRequest::getSchedulerPreInstall()const

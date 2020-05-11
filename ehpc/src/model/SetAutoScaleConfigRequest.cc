@@ -183,6 +183,7 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 		std::string queuesObjStr = "Queues." + std::to_string(dep1 + 1);
 		setParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
 		setParameter(queuesObjStr + ".QueueName", queuesObj.queueName);
+		setParameter(queuesObjStr + ".MinNodesInQueue", std::to_string(queuesObj.minNodesInQueue));
 		for(int dep2 = 0; dep2!= queuesObj.instanceTypes.size(); dep2++) {
 			auto instanceTypesObj = queuesObj.instanceTypes.at(dep2);
 			std::string instanceTypesObjStr = queuesObjStr + "InstanceTypes." + std::to_string(dep2 + 1);

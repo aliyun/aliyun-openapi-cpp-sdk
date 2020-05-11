@@ -27,6 +27,17 @@ ModifyClusterAttributesRequest::ModifyClusterAttributesRequest() :
 ModifyClusterAttributesRequest::~ModifyClusterAttributesRequest()
 {}
 
+std::string ModifyClusterAttributesRequest::getImageId()const
+{
+	return imageId_;
+}
+
+void ModifyClusterAttributesRequest::setImageId(const std::string& imageId)
+{
+	imageId_ = imageId;
+	setParameter("ImageId", imageId);
+}
+
 std::string ModifyClusterAttributesRequest::getDescription()const
 {
 	return description_;
@@ -58,6 +69,17 @@ void ModifyClusterAttributesRequest::setAccessKeyId(const std::string& accessKey
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string ModifyClusterAttributesRequest::getImageOwnerAlias()const
+{
+	return imageOwnerAlias_;
+}
+
+void ModifyClusterAttributesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
+{
+	imageOwnerAlias_ = imageOwnerAlias;
+	setParameter("ImageOwnerAlias", imageOwnerAlias);
 }
 
 std::string ModifyClusterAttributesRequest::getName()const
