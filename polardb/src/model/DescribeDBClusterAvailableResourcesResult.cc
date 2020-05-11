@@ -59,6 +59,8 @@ void DescribeDBClusterAvailableResourcesResult::parse(const std::string &payload
 				AvailableZone::SupportedEngine::AvailableResource availableResourcesObject;
 				if(!allSupportedEnginesNodeAvailableResourcesAvailableResource["DBNodeClass"].isNull())
 					availableResourcesObject.dBNodeClass = allSupportedEnginesNodeAvailableResourcesAvailableResource["DBNodeClass"].asString();
+				if(!allSupportedEnginesNodeAvailableResourcesAvailableResource["Category"].isNull())
+					availableResourcesObject.category = allSupportedEnginesNodeAvailableResourcesAvailableResource["Category"].asString();
 				supportedEnginesObject.availableResources.push_back(availableResourcesObject);
 			}
 			availableZonesObject.supportedEngines.push_back(supportedEnginesObject);

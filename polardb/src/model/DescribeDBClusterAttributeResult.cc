@@ -119,6 +119,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["DataLevel1BackupChainSize"].isNull())
+		dataLevel1BackupChainSize_ = std::stol(value["DataLevel1BackupChainSize"].asString());
 
 }
 
@@ -130,6 +132,11 @@ int DescribeDBClusterAttributeResult::getDeletionLock()const
 std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+long DescribeDBClusterAttributeResult::getDataLevel1BackupChainSize()const
+{
+	return dataLevel1BackupChainSize_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBClusterId()const

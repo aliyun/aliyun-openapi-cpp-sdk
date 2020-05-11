@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DELETEDBCLUSTERREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DELETEDBCLUSTERREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSWITHBACKUPSREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSWITHBACKUPSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,57 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DeleteDBClusterRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClustersWithBackupsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteDBClusterRequest();
-				~DeleteDBClusterRequest();
+				DescribeDBClustersWithBackupsRequest();
+				~DescribeDBClustersWithBackupsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getDBClusterDescription()const;
+				void setDBClusterDescription(const std::string& dBClusterDescription);
+				int getIsDeleted()const;
+				void setIsDeleted(int isDeleted);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getBackupRetentionPolicyOnClusterDeletion()const;
-				void setBackupRetentionPolicyOnClusterDeletion(const std::string& backupRetentionPolicyOnClusterDeletion);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBClusterId()const;
-				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getDBType()const;
+				void setDBType(const std::string& dBType);
+				std::string getDBVersion()const;
+				void setDBVersion(const std::string& dBVersion);
+				std::string getDBClusterIds()const;
+				void setDBClusterIds(const std::string& dBClusterIds);
 
             private:
 				long resourceOwnerId_;
+				std::string dBClusterDescription_;
+				int isDeleted_;
+				int pageNumber_;
 				std::string accessKeyId_;
-				std::string backupRetentionPolicyOnClusterDeletion_;
+				std::string regionId_;
+				int pageSize_;
 				std::string resourceOwnerAccount_;
-				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string dBType_;
+				std::string dBVersion_;
+				std::string dBClusterIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DELETEDBCLUSTERREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSWITHBACKUPSREQUEST_H_

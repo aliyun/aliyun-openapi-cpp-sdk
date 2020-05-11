@@ -56,6 +56,7 @@ namespace AlibabaCloud
 				~DescribeDBClusterAttributeResult();
 				int getDeletionLock()const;
 				std::string getResourceGroupId()const;
+				long getDataLevel1BackupChainSize()const;
 				std::string getDBClusterId()const;
 				std::string getDBClusterNetworkType()const;
 				std::string getDBType()const;
@@ -85,6 +86,7 @@ namespace AlibabaCloud
 			private:
 				int deletionLock_;
 				std::string resourceGroupId_;
+				long dataLevel1BackupChainSize_;
 				std::string dBClusterId_;
 				std::string dBClusterNetworkType_;
 				std::string dBType_;

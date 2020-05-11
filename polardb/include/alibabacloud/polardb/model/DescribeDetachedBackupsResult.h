@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEBACKUPSRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEBACKUPSRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDETACHEDBACKUPSRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDETACHEDBACKUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeBackupsResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDetachedBackupsResult : public ServiceResult
 			{
 			public:
 				struct Backup
@@ -50,9 +50,9 @@ namespace AlibabaCloud
 				};
 
 
-				DescribeBackupsResult();
-				explicit DescribeBackupsResult(const std::string &payload);
-				~DescribeBackupsResult();
+				DescribeDetachedBackupsResult();
+				explicit DescribeDetachedBackupsResult(const std::string &payload);
+				~DescribeDetachedBackupsResult();
 				std::string getTotalRecordCount()const;
 				std::string getPageRecordCount()const;
 				std::string getPageNumber()const;
@@ -70,4 +70,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEBACKUPSRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDETACHEDBACKUPSRESULT_H_

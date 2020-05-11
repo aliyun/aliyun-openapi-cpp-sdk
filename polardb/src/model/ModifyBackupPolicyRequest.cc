@@ -38,6 +38,17 @@ void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyBackupPolicyRequest::getDataLevel2BackupRetentionPeriod()const
+{
+	return dataLevel2BackupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setDataLevel2BackupRetentionPeriod(const std::string& dataLevel2BackupRetentionPeriod)
+{
+	dataLevel2BackupRetentionPeriod_ = dataLevel2BackupRetentionPeriod;
+	setParameter("DataLevel2BackupRetentionPeriod", dataLevel2BackupRetentionPeriod);
+}
+
 std::string ModifyBackupPolicyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +69,28 @@ void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string& pref
 {
 	preferredBackupPeriod_ = preferredBackupPeriod;
 	setParameter("PreferredBackupPeriod", preferredBackupPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getDataLevel1BackupRetentionPeriod()const
+{
+	return dataLevel1BackupRetentionPeriod_;
+}
+
+void ModifyBackupPolicyRequest::setDataLevel1BackupRetentionPeriod(const std::string& dataLevel1BackupRetentionPeriod)
+{
+	dataLevel1BackupRetentionPeriod_ = dataLevel1BackupRetentionPeriod;
+	setParameter("DataLevel1BackupRetentionPeriod", dataLevel1BackupRetentionPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getBackupRetentionPolicyOnClusterDeletion()const
+{
+	return backupRetentionPolicyOnClusterDeletion_;
+}
+
+void ModifyBackupPolicyRequest::setBackupRetentionPolicyOnClusterDeletion(const std::string& backupRetentionPolicyOnClusterDeletion)
+{
+	backupRetentionPolicyOnClusterDeletion_ = backupRetentionPolicyOnClusterDeletion;
+	setParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
 }
 
 std::string ModifyBackupPolicyRequest::getResourceOwnerAccount()const

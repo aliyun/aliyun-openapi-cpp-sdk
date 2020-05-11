@@ -49,6 +49,17 @@ void DeleteDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DeleteDBClusterRequest::getBackupRetentionPolicyOnClusterDeletion()const
+{
+	return backupRetentionPolicyOnClusterDeletion_;
+}
+
+void DeleteDBClusterRequest::setBackupRetentionPolicyOnClusterDeletion(const std::string& backupRetentionPolicyOnClusterDeletion)
+{
+	backupRetentionPolicyOnClusterDeletion_ = backupRetentionPolicyOnClusterDeletion;
+	setParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
+}
+
 std::string DeleteDBClusterRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

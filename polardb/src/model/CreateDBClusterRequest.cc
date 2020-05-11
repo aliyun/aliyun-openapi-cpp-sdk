@@ -71,6 +71,17 @@ void CreateDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CreateDBClusterRequest::getCreationCategory()const
+{
+	return creationCategory_;
+}
+
+void CreateDBClusterRequest::setCreationCategory(const std::string& creationCategory)
+{
+	creationCategory_ = creationCategory;
+	setParameter("CreationCategory", creationCategory);
+}
+
 std::string CreateDBClusterRequest::getClusterNetworkType()const
 {
 	return clusterNetworkType_;

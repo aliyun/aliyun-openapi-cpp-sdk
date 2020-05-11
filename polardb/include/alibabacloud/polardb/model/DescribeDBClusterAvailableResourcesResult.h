@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						struct AvailableResource
 						{
+							std::string category;
 							std::string dBNodeClass;
 						};
 						std::vector<SupportedEngine::AvailableResource> availableResources;

@@ -1131,6 +1131,42 @@ PolardbClient::DescribeDBClustersOutcomeCallable PolardbClient::describeDBCluste
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBClustersWithBackupsOutcome PolardbClient::describeDBClustersWithBackups(const DescribeDBClustersWithBackupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClustersWithBackupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClustersWithBackupsOutcome(DescribeDBClustersWithBackupsResult(outcome.result()));
+	else
+		return DescribeDBClustersWithBackupsOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBClustersWithBackupsAsync(const DescribeDBClustersWithBackupsRequest& request, const DescribeDBClustersWithBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClustersWithBackups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBClustersWithBackupsOutcomeCallable PolardbClient::describeDBClustersWithBackupsCallable(const DescribeDBClustersWithBackupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClustersWithBackupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClustersWithBackups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBNodePerformanceOutcome PolardbClient::describeDBNodePerformance(const DescribeDBNodePerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1233,78 @@ PolardbClient::DescribeDatabasesOutcomeCallable PolardbClient::describeDatabases
 			[this, request]()
 			{
 			return this->describeDatabases(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeDetachedBackupsOutcome PolardbClient::describeDetachedBackups(const DescribeDetachedBackupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDetachedBackupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDetachedBackupsOutcome(DescribeDetachedBackupsResult(outcome.result()));
+	else
+		return DescribeDetachedBackupsOutcome(outcome.error());
+}
+
+void PolardbClient::describeDetachedBackupsAsync(const DescribeDetachedBackupsRequest& request, const DescribeDetachedBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDetachedBackups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDetachedBackupsOutcomeCallable PolardbClient::describeDetachedBackupsCallable(const DescribeDetachedBackupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDetachedBackupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDetachedBackups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeLogBackupPolicyOutcome PolardbClient::describeLogBackupPolicy(const DescribeLogBackupPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLogBackupPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLogBackupPolicyOutcome(DescribeLogBackupPolicyResult(outcome.result()));
+	else
+		return DescribeLogBackupPolicyOutcome(outcome.error());
+}
+
+void PolardbClient::describeLogBackupPolicyAsync(const DescribeLogBackupPolicyRequest& request, const DescribeLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLogBackupPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeLogBackupPolicyOutcomeCallable PolardbClient::describeLogBackupPolicyCallable(const DescribeLogBackupPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLogBackupPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLogBackupPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1953,6 +2061,42 @@ PolardbClient::ModifyDBNodeClassOutcomeCallable PolardbClient::modifyDBNodeClass
 			[this, request]()
 			{
 			return this->modifyDBNodeClass(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ModifyLogBackupPolicyOutcome PolardbClient::modifyLogBackupPolicy(const ModifyLogBackupPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLogBackupPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLogBackupPolicyOutcome(ModifyLogBackupPolicyResult(outcome.result()));
+	else
+		return ModifyLogBackupPolicyOutcome(outcome.error());
+}
+
+void PolardbClient::modifyLogBackupPolicyAsync(const ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLogBackupPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyLogBackupPolicyOutcomeCallable PolardbClient::modifyLogBackupPolicyCallable(const ModifyLogBackupPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLogBackupPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLogBackupPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

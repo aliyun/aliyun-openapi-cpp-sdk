@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/polardb/model/DescribeBackupsResult.h>
+#include <alibabacloud/polardb/model/DescribeDetachedBackupsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Polardb;
 using namespace AlibabaCloud::Polardb::Model;
 
-DescribeBackupsResult::DescribeBackupsResult() :
+DescribeDetachedBackupsResult::DescribeDetachedBackupsResult() :
 	ServiceResult()
 {}
 
-DescribeBackupsResult::DescribeBackupsResult(const std::string &payload) :
+DescribeDetachedBackupsResult::DescribeDetachedBackupsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeBackupsResult::~DescribeBackupsResult()
+DescribeDetachedBackupsResult::~DescribeDetachedBackupsResult()
 {}
 
-void DescribeBackupsResult::parse(const std::string &payload)
+void DescribeDetachedBackupsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -80,22 +80,22 @@ void DescribeBackupsResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeBackupsResult::getTotalRecordCount()const
+std::string DescribeDetachedBackupsResult::getTotalRecordCount()const
 {
 	return totalRecordCount_;
 }
 
-std::string DescribeBackupsResult::getPageRecordCount()const
+std::string DescribeDetachedBackupsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
 }
 
-std::string DescribeBackupsResult::getPageNumber()const
+std::string DescribeDetachedBackupsResult::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-std::vector<DescribeBackupsResult::Backup> DescribeBackupsResult::getItems()const
+std::vector<DescribeDetachedBackupsResult::Backup> DescribeDetachedBackupsResult::getItems()const
 {
 	return items_;
 }

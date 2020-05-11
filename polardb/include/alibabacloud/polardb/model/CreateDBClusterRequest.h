@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getCreationCategory()const;
+				void setCreationCategory(const std::string& creationCategory);
 				std::string getClusterNetworkType()const;
 				void setClusterNetworkType(const std::string& clusterNetworkType);
 				std::string getResourceGroupId()const;
@@ -93,6 +95,7 @@ namespace AlibabaCloud
 				std::string dBClusterDescription_;
 				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string creationCategory_;
 				std::string clusterNetworkType_;
 				std::string resourceGroupId_;
 				std::string dBNodeClass_;

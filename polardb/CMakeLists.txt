@@ -81,10 +81,16 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterSSLResult.h
 	include/alibabacloud/polardb/model/DescribeDBClustersRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClustersResult.h
+	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClustersWithBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceRequest.h
 	include/alibabacloud/polardb/model/DescribeDBNodePerformanceResult.h
 	include/alibabacloud/polardb/model/DescribeDatabasesRequest.h
 	include/alibabacloud/polardb/model/DescribeDatabasesResult.h
+	include/alibabacloud/polardb/model/DescribeDetachedBackupsRequest.h
+	include/alibabacloud/polardb/model/DescribeDetachedBackupsResult.h
+	include/alibabacloud/polardb/model/DescribeLogBackupPolicyRequest.h
+	include/alibabacloud/polardb/model/DescribeLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/DescribeRegionsRequest.h
 	include/alibabacloud/polardb/model/DescribeRegionsResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsRequest.h
@@ -127,6 +133,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
+	include/alibabacloud/polardb/model/ModifyLogBackupPolicyRequest.h
+	include/alibabacloud/polardb/model/ModifyLogBackupPolicyResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
 	include/alibabacloud/polardb/model/ResetAccountResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
@@ -200,10 +208,16 @@ set(polardb_src
 	src/model/DescribeDBClusterSSLResult.cc
 	src/model/DescribeDBClustersRequest.cc
 	src/model/DescribeDBClustersResult.cc
+	src/model/DescribeDBClustersWithBackupsRequest.cc
+	src/model/DescribeDBClustersWithBackupsResult.cc
 	src/model/DescribeDBNodePerformanceRequest.cc
 	src/model/DescribeDBNodePerformanceResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
+	src/model/DescribeDetachedBackupsRequest.cc
+	src/model/DescribeDetachedBackupsResult.cc
+	src/model/DescribeLogBackupPolicyRequest.cc
+	src/model/DescribeLogBackupPolicyResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeSlowLogRecordsRequest.cc
@@ -246,6 +260,8 @@ set(polardb_src
 	src/model/ModifyDBEndpointAddressResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
+	src/model/ModifyLogBackupPolicyRequest.cc
+	src/model/ModifyLogBackupPolicyResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
 	src/model/RestartDBNodeRequest.cc
