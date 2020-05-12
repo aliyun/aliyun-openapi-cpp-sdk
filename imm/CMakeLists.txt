@@ -97,6 +97,10 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/FindImagesByTagNamesResult.h
 	include/alibabacloud/imm/model/FindSimilarFacesRequest.h
 	include/alibabacloud/imm/model/FindSimilarFacesResult.h
+	include/alibabacloud/imm/model/GetContentKeyRequest.h
+	include/alibabacloud/imm/model/GetContentKeyResult.h
+	include/alibabacloud/imm/model/GetDRMLicenseRequest.h
+	include/alibabacloud/imm/model/GetDRMLicenseResult.h
 	include/alibabacloud/imm/model/GetDocIndexRequest.h
 	include/alibabacloud/imm/model/GetDocIndexResult.h
 	include/alibabacloud/imm/model/GetDocIndexTaskRequest.h
@@ -157,6 +161,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h
 	include/alibabacloud/imm/model/SearchDocIndexRequest.h
 	include/alibabacloud/imm/model/SearchDocIndexResult.h
+	include/alibabacloud/imm/model/StopStreamAnalyseTaskRequest.h
+	include/alibabacloud/imm/model/StopStreamAnalyseTaskResult.h
 	include/alibabacloud/imm/model/UpdateDocIndexMetaRequest.h
 	include/alibabacloud/imm/model/UpdateDocIndexMetaResult.h
 	include/alibabacloud/imm/model/UpdateFaceGroupRequest.h
@@ -246,6 +252,10 @@ set(imm_src
 	src/model/FindImagesByTagNamesResult.cc
 	src/model/FindSimilarFacesRequest.cc
 	src/model/FindSimilarFacesResult.cc
+	src/model/GetContentKeyRequest.cc
+	src/model/GetContentKeyResult.cc
+	src/model/GetDRMLicenseRequest.cc
+	src/model/GetDRMLicenseResult.cc
 	src/model/GetDocIndexRequest.cc
 	src/model/GetDocIndexResult.cc
 	src/model/GetDocIndexTaskRequest.cc
@@ -306,6 +316,8 @@ set(imm_src
 	src/model/RefreshOfficePreviewTokenResult.cc
 	src/model/SearchDocIndexRequest.cc
 	src/model/SearchDocIndexResult.cc
+	src/model/StopStreamAnalyseTaskRequest.cc
+	src/model/StopStreamAnalyseTaskResult.cc
 	src/model/UpdateDocIndexMetaRequest.cc
 	src/model/UpdateDocIndexMetaResult.cc
 	src/model/UpdateFaceGroupRequest.cc

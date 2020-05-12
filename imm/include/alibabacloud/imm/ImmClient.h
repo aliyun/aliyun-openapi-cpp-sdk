@@ -98,6 +98,10 @@
 #include "model/FindImagesByTagNamesResult.h"
 #include "model/FindSimilarFacesRequest.h"
 #include "model/FindSimilarFacesResult.h"
+#include "model/GetContentKeyRequest.h"
+#include "model/GetContentKeyResult.h"
+#include "model/GetDRMLicenseRequest.h"
+#include "model/GetDRMLicenseResult.h"
 #include "model/GetDocIndexRequest.h"
 #include "model/GetDocIndexResult.h"
 #include "model/GetDocIndexTaskRequest.h"
@@ -158,6 +162,8 @@
 #include "model/RefreshOfficePreviewTokenResult.h"
 #include "model/SearchDocIndexRequest.h"
 #include "model/SearchDocIndexResult.h"
+#include "model/StopStreamAnalyseTaskRequest.h"
+#include "model/StopStreamAnalyseTaskResult.h"
 #include "model/UpdateDocIndexMetaRequest.h"
 #include "model/UpdateDocIndexMetaResult.h"
 #include "model/UpdateFaceGroupRequest.h"
@@ -291,6 +297,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FindSimilarFacesResult> FindSimilarFacesOutcome;
 			typedef std::future<FindSimilarFacesOutcome> FindSimilarFacesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FindSimilarFacesRequest&, const FindSimilarFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindSimilarFacesAsyncHandler;
+			typedef Outcome<Error, Model::GetContentKeyResult> GetContentKeyOutcome;
+			typedef std::future<GetContentKeyOutcome> GetContentKeyOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetContentKeyRequest&, const GetContentKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContentKeyAsyncHandler;
+			typedef Outcome<Error, Model::GetDRMLicenseResult> GetDRMLicenseOutcome;
+			typedef std::future<GetDRMLicenseOutcome> GetDRMLicenseOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetDRMLicenseRequest&, const GetDRMLicenseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDRMLicenseAsyncHandler;
 			typedef Outcome<Error, Model::GetDocIndexResult> GetDocIndexOutcome;
 			typedef std::future<GetDocIndexOutcome> GetDocIndexOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetDocIndexRequest&, const GetDocIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDocIndexAsyncHandler;
@@ -381,6 +393,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchDocIndexResult> SearchDocIndexOutcome;
 			typedef std::future<SearchDocIndexOutcome> SearchDocIndexOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::SearchDocIndexRequest&, const SearchDocIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchDocIndexAsyncHandler;
+			typedef Outcome<Error, Model::StopStreamAnalyseTaskResult> StopStreamAnalyseTaskOutcome;
+			typedef std::future<StopStreamAnalyseTaskOutcome> StopStreamAnalyseTaskOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::StopStreamAnalyseTaskRequest&, const StopStreamAnalyseTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamAnalyseTaskAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDocIndexMetaResult> UpdateDocIndexMetaOutcome;
 			typedef std::future<UpdateDocIndexMetaOutcome> UpdateDocIndexMetaOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::UpdateDocIndexMetaRequest&, const UpdateDocIndexMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDocIndexMetaAsyncHandler;
@@ -515,6 +530,12 @@ namespace AlibabaCloud
 			FindSimilarFacesOutcome findSimilarFaces(const Model::FindSimilarFacesRequest &request)const;
 			void findSimilarFacesAsync(const Model::FindSimilarFacesRequest& request, const FindSimilarFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindSimilarFacesOutcomeCallable findSimilarFacesCallable(const Model::FindSimilarFacesRequest& request) const;
+			GetContentKeyOutcome getContentKey(const Model::GetContentKeyRequest &request)const;
+			void getContentKeyAsync(const Model::GetContentKeyRequest& request, const GetContentKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetContentKeyOutcomeCallable getContentKeyCallable(const Model::GetContentKeyRequest& request) const;
+			GetDRMLicenseOutcome getDRMLicense(const Model::GetDRMLicenseRequest &request)const;
+			void getDRMLicenseAsync(const Model::GetDRMLicenseRequest& request, const GetDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDRMLicenseOutcomeCallable getDRMLicenseCallable(const Model::GetDRMLicenseRequest& request) const;
 			GetDocIndexOutcome getDocIndex(const Model::GetDocIndexRequest &request)const;
 			void getDocIndexAsync(const Model::GetDocIndexRequest& request, const GetDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDocIndexOutcomeCallable getDocIndexCallable(const Model::GetDocIndexRequest& request) const;
@@ -605,6 +626,9 @@ namespace AlibabaCloud
 			SearchDocIndexOutcome searchDocIndex(const Model::SearchDocIndexRequest &request)const;
 			void searchDocIndexAsync(const Model::SearchDocIndexRequest& request, const SearchDocIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchDocIndexOutcomeCallable searchDocIndexCallable(const Model::SearchDocIndexRequest& request) const;
+			StopStreamAnalyseTaskOutcome stopStreamAnalyseTask(const Model::StopStreamAnalyseTaskRequest &request)const;
+			void stopStreamAnalyseTaskAsync(const Model::StopStreamAnalyseTaskRequest& request, const StopStreamAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopStreamAnalyseTaskOutcomeCallable stopStreamAnalyseTaskCallable(const Model::StopStreamAnalyseTaskRequest& request) const;
 			UpdateDocIndexMetaOutcome updateDocIndexMeta(const Model::UpdateDocIndexMetaRequest &request)const;
 			void updateDocIndexMetaAsync(const Model::UpdateDocIndexMetaRequest& request, const UpdateDocIndexMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDocIndexMetaOutcomeCallable updateDocIndexMetaCallable(const Model::UpdateDocIndexMetaRequest& request) const;

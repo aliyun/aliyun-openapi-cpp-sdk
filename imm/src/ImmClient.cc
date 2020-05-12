@@ -1419,6 +1419,78 @@ ImmClient::FindSimilarFacesOutcomeCallable ImmClient::findSimilarFacesCallable(c
 	return task->get_future();
 }
 
+ImmClient::GetContentKeyOutcome ImmClient::getContentKey(const GetContentKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetContentKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetContentKeyOutcome(GetContentKeyResult(outcome.result()));
+	else
+		return GetContentKeyOutcome(outcome.error());
+}
+
+void ImmClient::getContentKeyAsync(const GetContentKeyRequest& request, const GetContentKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getContentKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetContentKeyOutcomeCallable ImmClient::getContentKeyCallable(const GetContentKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetContentKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->getContentKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::GetDRMLicenseOutcome ImmClient::getDRMLicense(const GetDRMLicenseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDRMLicenseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDRMLicenseOutcome(GetDRMLicenseResult(outcome.result()));
+	else
+		return GetDRMLicenseOutcome(outcome.error());
+}
+
+void ImmClient::getDRMLicenseAsync(const GetDRMLicenseRequest& request, const GetDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDRMLicense(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetDRMLicenseOutcomeCallable ImmClient::getDRMLicenseCallable(const GetDRMLicenseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDRMLicenseOutcome()>>(
+			[this, request]()
+			{
+			return this->getDRMLicense(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::GetDocIndexOutcome ImmClient::getDocIndex(const GetDocIndexRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2565,42 @@ ImmClient::SearchDocIndexOutcomeCallable ImmClient::searchDocIndexCallable(const
 			[this, request]()
 			{
 			return this->searchDocIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::StopStreamAnalyseTaskOutcome ImmClient::stopStreamAnalyseTask(const StopStreamAnalyseTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopStreamAnalyseTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopStreamAnalyseTaskOutcome(StopStreamAnalyseTaskResult(outcome.result()));
+	else
+		return StopStreamAnalyseTaskOutcome(outcome.error());
+}
+
+void ImmClient::stopStreamAnalyseTaskAsync(const StopStreamAnalyseTaskRequest& request, const StopStreamAnalyseTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopStreamAnalyseTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::StopStreamAnalyseTaskOutcomeCallable ImmClient::stopStreamAnalyseTaskCallable(const StopStreamAnalyseTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopStreamAnalyseTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->stopStreamAnalyseTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
