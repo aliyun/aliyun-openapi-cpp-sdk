@@ -57,6 +57,10 @@ void DescribeDevicesResult::parse(const std::string &payload)
 			devicesObject.agentMac = valueDevicesDevice["AgentMac"].asString();
 		if(!valueDevicesDevice["IpcReceiveTime"].isNull())
 			devicesObject.ipcReceiveTime = std::stol(valueDevicesDevice["IpcReceiveTime"].asString());
+		if(!valueDevicesDevice["IpcId"].isNull())
+			devicesObject.ipcId = std::stol(valueDevicesDevice["IpcId"].asString());
+		if(!valueDevicesDevice["IpcName"].isNull())
+			devicesObject.ipcName = valueDevicesDevice["IpcName"].asString();
 		devices_.push_back(devicesObject);
 	}
 	if(!value["ErrorCode"].isNull())

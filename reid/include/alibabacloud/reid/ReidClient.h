@@ -36,12 +36,16 @@
 #include "model/DescribeHeatMapResult.h"
 #include "model/DescribeImageUrlsRequest.h"
 #include "model/DescribeImageUrlsResult.h"
+#include "model/DescribeIpcLiveAddressRequest.h"
+#include "model/DescribeIpcLiveAddressResult.h"
 #include "model/DescribeOverviewDataRequest.h"
 #include "model/DescribeOverviewDataResult.h"
 #include "model/ImportSpecialPersonnelRequest.h"
 #include "model/ImportSpecialPersonnelResult.h"
 #include "model/ListActionDataRequest.h"
 #include "model/ListActionDataResult.h"
+#include "model/ListDevicesImagesRequest.h"
+#include "model/ListDevicesImagesResult.h"
 #include "model/ListEmapRequest.h"
 #include "model/ListEmapResult.h"
 #include "model/ListLocationRequest.h"
@@ -84,6 +88,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeImageUrlsResult> DescribeImageUrlsOutcome;
 			typedef std::future<DescribeImageUrlsOutcome> DescribeImageUrlsOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeImageUrlsRequest&, const DescribeImageUrlsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageUrlsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIpcLiveAddressResult> DescribeIpcLiveAddressOutcome;
+			typedef std::future<DescribeIpcLiveAddressOutcome> DescribeIpcLiveAddressOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::DescribeIpcLiveAddressRequest&, const DescribeIpcLiveAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpcLiveAddressAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOverviewDataResult> DescribeOverviewDataOutcome;
 			typedef std::future<DescribeOverviewDataOutcome> DescribeOverviewDataOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeOverviewDataRequest&, const DescribeOverviewDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDataAsyncHandler;
@@ -93,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListActionDataResult> ListActionDataOutcome;
 			typedef std::future<ListActionDataOutcome> ListActionDataOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::ListActionDataRequest&, const ListActionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListActionDataAsyncHandler;
+			typedef Outcome<Error, Model::ListDevicesImagesResult> ListDevicesImagesOutcome;
+			typedef std::future<ListDevicesImagesOutcome> ListDevicesImagesOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::ListDevicesImagesRequest&, const ListDevicesImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesImagesAsyncHandler;
 			typedef Outcome<Error, Model::ListEmapResult> ListEmapOutcome;
 			typedef std::future<ListEmapOutcome> ListEmapOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::ListEmapRequest&, const ListEmapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEmapAsyncHandler;
@@ -137,6 +147,9 @@ namespace AlibabaCloud
 			DescribeImageUrlsOutcome describeImageUrls(const Model::DescribeImageUrlsRequest &request)const;
 			void describeImageUrlsAsync(const Model::DescribeImageUrlsRequest& request, const DescribeImageUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageUrlsOutcomeCallable describeImageUrlsCallable(const Model::DescribeImageUrlsRequest& request) const;
+			DescribeIpcLiveAddressOutcome describeIpcLiveAddress(const Model::DescribeIpcLiveAddressRequest &request)const;
+			void describeIpcLiveAddressAsync(const Model::DescribeIpcLiveAddressRequest& request, const DescribeIpcLiveAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIpcLiveAddressOutcomeCallable describeIpcLiveAddressCallable(const Model::DescribeIpcLiveAddressRequest& request) const;
 			DescribeOverviewDataOutcome describeOverviewData(const Model::DescribeOverviewDataRequest &request)const;
 			void describeOverviewDataAsync(const Model::DescribeOverviewDataRequest& request, const DescribeOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOverviewDataOutcomeCallable describeOverviewDataCallable(const Model::DescribeOverviewDataRequest& request) const;
@@ -146,6 +159,9 @@ namespace AlibabaCloud
 			ListActionDataOutcome listActionData(const Model::ListActionDataRequest &request)const;
 			void listActionDataAsync(const Model::ListActionDataRequest& request, const ListActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListActionDataOutcomeCallable listActionDataCallable(const Model::ListActionDataRequest& request) const;
+			ListDevicesImagesOutcome listDevicesImages(const Model::ListDevicesImagesRequest &request)const;
+			void listDevicesImagesAsync(const Model::ListDevicesImagesRequest& request, const ListDevicesImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDevicesImagesOutcomeCallable listDevicesImagesCallable(const Model::ListDevicesImagesRequest& request) const;
 			ListEmapOutcome listEmap(const Model::ListEmapRequest &request)const;
 			void listEmapAsync(const Model::ListEmapRequest& request, const ListEmapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEmapOutcomeCallable listEmapCallable(const Model::ListEmapRequest& request) const;

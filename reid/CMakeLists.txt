@@ -35,12 +35,16 @@ set(reid_public_header_model
 	include/alibabacloud/reid/model/DescribeHeatMapResult.h
 	include/alibabacloud/reid/model/DescribeImageUrlsRequest.h
 	include/alibabacloud/reid/model/DescribeImageUrlsResult.h
+	include/alibabacloud/reid/model/DescribeIpcLiveAddressRequest.h
+	include/alibabacloud/reid/model/DescribeIpcLiveAddressResult.h
 	include/alibabacloud/reid/model/DescribeOverviewDataRequest.h
 	include/alibabacloud/reid/model/DescribeOverviewDataResult.h
 	include/alibabacloud/reid/model/ImportSpecialPersonnelRequest.h
 	include/alibabacloud/reid/model/ImportSpecialPersonnelResult.h
 	include/alibabacloud/reid/model/ListActionDataRequest.h
 	include/alibabacloud/reid/model/ListActionDataResult.h
+	include/alibabacloud/reid/model/ListDevicesImagesRequest.h
+	include/alibabacloud/reid/model/ListDevicesImagesResult.h
 	include/alibabacloud/reid/model/ListEmapRequest.h
 	include/alibabacloud/reid/model/ListEmapResult.h
 	include/alibabacloud/reid/model/ListLocationRequest.h
@@ -70,12 +74,16 @@ set(reid_src
 	src/model/DescribeHeatMapResult.cc
 	src/model/DescribeImageUrlsRequest.cc
 	src/model/DescribeImageUrlsResult.cc
+	src/model/DescribeIpcLiveAddressRequest.cc
+	src/model/DescribeIpcLiveAddressResult.cc
 	src/model/DescribeOverviewDataRequest.cc
 	src/model/DescribeOverviewDataResult.cc
 	src/model/ImportSpecialPersonnelRequest.cc
 	src/model/ImportSpecialPersonnelResult.cc
 	src/model/ListActionDataRequest.cc
 	src/model/ListActionDataResult.cc
+	src/model/ListDevicesImagesRequest.cc
+	src/model/ListDevicesImagesResult.cc
 	src/model/ListEmapRequest.cc
 	src/model/ListEmapResult.cc
 	src/model/ListLocationRequest.cc

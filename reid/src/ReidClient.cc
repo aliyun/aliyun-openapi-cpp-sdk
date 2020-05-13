@@ -31,21 +31,21 @@ ReidClient::ReidClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ReidClient::ReidClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ReidClient::ReidClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.2");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 ReidClient::~ReidClient()
@@ -303,6 +303,42 @@ ReidClient::DescribeImageUrlsOutcomeCallable ReidClient::describeImageUrlsCallab
 	return task->get_future();
 }
 
+ReidClient::DescribeIpcLiveAddressOutcome ReidClient::describeIpcLiveAddress(const DescribeIpcLiveAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIpcLiveAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIpcLiveAddressOutcome(DescribeIpcLiveAddressResult(outcome.result()));
+	else
+		return DescribeIpcLiveAddressOutcome(outcome.error());
+}
+
+void ReidClient::describeIpcLiveAddressAsync(const DescribeIpcLiveAddressRequest& request, const DescribeIpcLiveAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIpcLiveAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::DescribeIpcLiveAddressOutcomeCallable ReidClient::describeIpcLiveAddressCallable(const DescribeIpcLiveAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIpcLiveAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIpcLiveAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ReidClient::DescribeOverviewDataOutcome ReidClient::describeOverviewData(const DescribeOverviewDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ ReidClient::ListActionDataOutcomeCallable ReidClient::listActionDataCallable(con
 			[this, request]()
 			{
 			return this->listActionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::ListDevicesImagesOutcome ReidClient::listDevicesImages(const ListDevicesImagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDevicesImagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDevicesImagesOutcome(ListDevicesImagesResult(outcome.result()));
+	else
+		return ListDevicesImagesOutcome(outcome.error());
+}
+
+void ReidClient::listDevicesImagesAsync(const ListDevicesImagesRequest& request, const ListDevicesImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDevicesImages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::ListDevicesImagesOutcomeCallable ReidClient::listDevicesImagesCallable(const ListDevicesImagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDevicesImagesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDevicesImages(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

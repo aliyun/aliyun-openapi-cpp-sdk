@@ -51,6 +51,8 @@ void DescribeCameraStatisticsResult::parse(const std::string &payload)
 			pvStatisticResultsObject.pvCount = std::stol(valuePvStatisticResultsPvStatisticResult["PvCount"].asString());
 		if(!valuePvStatisticResultsPvStatisticResult["LocationId"].isNull())
 			pvStatisticResultsObject.locationId = std::stol(valuePvStatisticResultsPvStatisticResult["LocationId"].asString());
+		if(!valuePvStatisticResultsPvStatisticResult["PvType"].isNull())
+			pvStatisticResultsObject.pvType = valuePvStatisticResultsPvStatisticResult["PvType"].asString();
 		auto allPvRectsNode = allPvStatisticResultsNode["PvRects"]["Rect"];
 		for (auto allPvStatisticResultsNodePvRectsRect : allPvRectsNode)
 		{

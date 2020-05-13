@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::vector<PvStatisticResult::Rect> pvRects;
 					long locationId;
 					long processCursor;
+					std::string pvType;
 					long pvCount;
 					long ipcId;
 				};
