@@ -69,12 +69,22 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeVerifyUsageResult.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesRequest.h
 	include/alibabacloud/cloudauth/model/DetectFaceAttributesResult.h
+	include/alibabacloud/cloudauth/model/GetMaterialsRequest.h
+	include/alibabacloud/cloudauth/model/GetMaterialsResult.h
+	include/alibabacloud/cloudauth/model/GetStatusRequest.h
+	include/alibabacloud/cloudauth/model/GetStatusResult.h
+	include/alibabacloud/cloudauth/model/GetVerifyTokenRequest.h
+	include/alibabacloud/cloudauth/model/GetVerifyTokenResult.h
 	include/alibabacloud/cloudauth/model/InitDeviceRequest.h
 	include/alibabacloud/cloudauth/model/InitDeviceResult.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
+	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
+	include/alibabacloud/cloudauth/model/SubmitMaterialsResult.h
+	include/alibabacloud/cloudauth/model/SubmitVerificationRequest.h
+	include/alibabacloud/cloudauth/model/SubmitVerificationResult.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageRequest.h
 	include/alibabacloud/cloudauth/model/UpdateAppPackageResult.h
 	include/alibabacloud/cloudauth/model/UpdateVerifySettingRequest.h
@@ -134,12 +144,22 @@ set(cloudauth_src
 	src/model/DescribeVerifyUsageResult.cc
 	src/model/DetectFaceAttributesRequest.cc
 	src/model/DetectFaceAttributesResult.cc
+	src/model/GetMaterialsRequest.cc
+	src/model/GetMaterialsResult.cc
+	src/model/GetStatusRequest.cc
+	src/model/GetStatusResult.cc
+	src/model/GetVerifyTokenRequest.cc
+	src/model/GetVerifyTokenResult.cc
 	src/model/InitDeviceRequest.cc
 	src/model/InitDeviceResult.cc
 	src/model/InitFaceVerifyRequest.cc
 	src/model/InitFaceVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
+	src/model/SubmitMaterialsRequest.cc
+	src/model/SubmitMaterialsResult.cc
+	src/model/SubmitVerificationRequest.cc
+	src/model/SubmitVerificationResult.cc
 	src/model/UpdateAppPackageRequest.cc
 	src/model/UpdateAppPackageResult.cc
 	src/model/UpdateVerifySettingRequest.cc

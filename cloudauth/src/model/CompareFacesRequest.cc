@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::CompareFacesRequest;
 
 CompareFacesRequest::CompareFacesRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "CompareFaces")
+	RpcServiceRequest("cloudauth", "2018-09-16", "CompareFaces")
 {
 	setMethod(HttpRequest::Method::Post);
 }

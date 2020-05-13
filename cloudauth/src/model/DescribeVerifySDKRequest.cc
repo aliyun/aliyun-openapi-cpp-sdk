@@ -19,7 +19,7 @@
 using AlibabaCloud::Cloudauth::Model::DescribeVerifySDKRequest;
 
 DescribeVerifySDKRequest::DescribeVerifySDKRequest() :
-	RpcServiceRequest("cloudauth", "2019-03-07", "DescribeVerifySDK")
+	RpcServiceRequest("cloudauth", "2018-09-16", "DescribeVerifySDK")
 {
 	setMethod(HttpRequest::Method::Post);
 }
