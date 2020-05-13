@@ -125,6 +125,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainAverageResponseTimeResult.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainBpsDataByLayerRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainBpsDataByLayerResult.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainBpsDataByTimeStampResult.h
 	include/alibabacloud/cdn/model/DescribeDomainCcActivityLogRequest.h
@@ -143,6 +145,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeDomainHitRateDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainHttpCodeDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainHttpCodeDataResult.h
+	include/alibabacloud/cdn/model/DescribeDomainHttpCodeDataByLayerRequest.h
+	include/alibabacloud/cdn/model/DescribeDomainHttpCodeDataByLayerResult.h
 	include/alibabacloud/cdn/model/DescribeDomainISPDataRequest.h
 	include/alibabacloud/cdn/model/DescribeDomainISPDataResult.h
 	include/alibabacloud/cdn/model/DescribeDomainMax95BpsDataRequest.h
@@ -514,6 +518,8 @@ set(cdn_src
 	src/model/DescribeDomainAverageResponseTimeResult.cc
 	src/model/DescribeDomainBpsDataRequest.cc
 	src/model/DescribeDomainBpsDataResult.cc
+	src/model/DescribeDomainBpsDataByLayerRequest.cc
+	src/model/DescribeDomainBpsDataByLayerResult.cc
 	src/model/DescribeDomainBpsDataByTimeStampRequest.cc
 	src/model/DescribeDomainBpsDataByTimeStampResult.cc
 	src/model/DescribeDomainCcActivityLogRequest.cc
@@ -532,6 +538,8 @@ set(cdn_src
 	src/model/DescribeDomainHitRateDataResult.cc
 	src/model/DescribeDomainHttpCodeDataRequest.cc
 	src/model/DescribeDomainHttpCodeDataResult.cc
+	src/model/DescribeDomainHttpCodeDataByLayerRequest.cc
+	src/model/DescribeDomainHttpCodeDataByLayerResult.cc
 	src/model/DescribeDomainISPDataRequest.cc
 	src/model/DescribeDomainISPDataResult.cc
 	src/model/DescribeDomainMax95BpsDataRequest.cc

@@ -1923,6 +1923,42 @@ CdnClient::DescribeDomainBpsDataOutcomeCallable CdnClient::describeDomainBpsData
 	return task->get_future();
 }
 
+CdnClient::DescribeDomainBpsDataByLayerOutcome CdnClient::describeDomainBpsDataByLayer(const DescribeDomainBpsDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainBpsDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainBpsDataByLayerOutcome(DescribeDomainBpsDataByLayerResult(outcome.result()));
+	else
+		return DescribeDomainBpsDataByLayerOutcome(outcome.error());
+}
+
+void CdnClient::describeDomainBpsDataByLayerAsync(const DescribeDomainBpsDataByLayerRequest& request, const DescribeDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainBpsDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainBpsDataByLayerOutcomeCallable CdnClient::describeDomainBpsDataByLayerCallable(const DescribeDomainBpsDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainBpsDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainBpsDataByLayer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeDomainBpsDataByTimeStampOutcome CdnClient::describeDomainBpsDataByTimeStamp(const DescribeDomainBpsDataByTimeStampRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2277,42 @@ CdnClient::DescribeDomainHttpCodeDataOutcomeCallable CdnClient::describeDomainHt
 			[this, request]()
 			{
 			return this->describeDomainHttpCodeData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::DescribeDomainHttpCodeDataByLayerOutcome CdnClient::describeDomainHttpCodeDataByLayer(const DescribeDomainHttpCodeDataByLayerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainHttpCodeDataByLayerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainHttpCodeDataByLayerOutcome(DescribeDomainHttpCodeDataByLayerResult(outcome.result()));
+	else
+		return DescribeDomainHttpCodeDataByLayerOutcome(outcome.error());
+}
+
+void CdnClient::describeDomainHttpCodeDataByLayerAsync(const DescribeDomainHttpCodeDataByLayerRequest& request, const DescribeDomainHttpCodeDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainHttpCodeDataByLayer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeDomainHttpCodeDataByLayerOutcomeCallable CdnClient::describeDomainHttpCodeDataByLayerCallable(const DescribeDomainHttpCodeDataByLayerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainHttpCodeDataByLayerOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainHttpCodeDataByLayer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

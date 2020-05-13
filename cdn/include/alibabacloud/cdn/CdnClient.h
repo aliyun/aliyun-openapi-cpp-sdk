@@ -126,6 +126,8 @@
 #include "model/DescribeDomainAverageResponseTimeResult.h"
 #include "model/DescribeDomainBpsDataRequest.h"
 #include "model/DescribeDomainBpsDataResult.h"
+#include "model/DescribeDomainBpsDataByLayerRequest.h"
+#include "model/DescribeDomainBpsDataByLayerResult.h"
 #include "model/DescribeDomainBpsDataByTimeStampRequest.h"
 #include "model/DescribeDomainBpsDataByTimeStampResult.h"
 #include "model/DescribeDomainCcActivityLogRequest.h"
@@ -144,6 +146,8 @@
 #include "model/DescribeDomainHitRateDataResult.h"
 #include "model/DescribeDomainHttpCodeDataRequest.h"
 #include "model/DescribeDomainHttpCodeDataResult.h"
+#include "model/DescribeDomainHttpCodeDataByLayerRequest.h"
+#include "model/DescribeDomainHttpCodeDataByLayerResult.h"
 #include "model/DescribeDomainISPDataRequest.h"
 #include "model/DescribeDomainISPDataResult.h"
 #include "model/DescribeDomainMax95BpsDataRequest.h"
@@ -573,6 +577,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainBpsDataResult> DescribeDomainBpsDataOutcome;
 			typedef std::future<DescribeDomainBpsDataOutcome> DescribeDomainBpsDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainBpsDataRequest&, const DescribeDomainBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainBpsDataByLayerResult> DescribeDomainBpsDataByLayerOutcome;
+			typedef std::future<DescribeDomainBpsDataByLayerOutcome> DescribeDomainBpsDataByLayerOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeDomainBpsDataByLayerRequest&, const DescribeDomainBpsDataByLayerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBpsDataByLayerAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainBpsDataByTimeStampResult> DescribeDomainBpsDataByTimeStampOutcome;
 			typedef std::future<DescribeDomainBpsDataByTimeStampOutcome> DescribeDomainBpsDataByTimeStampOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainBpsDataByTimeStampRequest&, const DescribeDomainBpsDataByTimeStampOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainBpsDataByTimeStampAsyncHandler;
@@ -600,6 +607,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainHttpCodeDataResult> DescribeDomainHttpCodeDataOutcome;
 			typedef std::future<DescribeDomainHttpCodeDataOutcome> DescribeDomainHttpCodeDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainHttpCodeDataRequest&, const DescribeDomainHttpCodeDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainHttpCodeDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainHttpCodeDataByLayerResult> DescribeDomainHttpCodeDataByLayerOutcome;
+			typedef std::future<DescribeDomainHttpCodeDataByLayerOutcome> DescribeDomainHttpCodeDataByLayerOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeDomainHttpCodeDataByLayerRequest&, const DescribeDomainHttpCodeDataByLayerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainHttpCodeDataByLayerAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainISPDataResult> DescribeDomainISPDataOutcome;
 			typedef std::future<DescribeDomainISPDataOutcome> DescribeDomainISPDataOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeDomainISPDataRequest&, const DescribeDomainISPDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainISPDataAsyncHandler;
@@ -1157,6 +1167,9 @@ namespace AlibabaCloud
 			DescribeDomainBpsDataOutcome describeDomainBpsData(const Model::DescribeDomainBpsDataRequest &request)const;
 			void describeDomainBpsDataAsync(const Model::DescribeDomainBpsDataRequest& request, const DescribeDomainBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainBpsDataOutcomeCallable describeDomainBpsDataCallable(const Model::DescribeDomainBpsDataRequest& request) const;
+			DescribeDomainBpsDataByLayerOutcome describeDomainBpsDataByLayer(const Model::DescribeDomainBpsDataByLayerRequest &request)const;
+			void describeDomainBpsDataByLayerAsync(const Model::DescribeDomainBpsDataByLayerRequest& request, const DescribeDomainBpsDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainBpsDataByLayerOutcomeCallable describeDomainBpsDataByLayerCallable(const Model::DescribeDomainBpsDataByLayerRequest& request) const;
 			DescribeDomainBpsDataByTimeStampOutcome describeDomainBpsDataByTimeStamp(const Model::DescribeDomainBpsDataByTimeStampRequest &request)const;
 			void describeDomainBpsDataByTimeStampAsync(const Model::DescribeDomainBpsDataByTimeStampRequest& request, const DescribeDomainBpsDataByTimeStampAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainBpsDataByTimeStampOutcomeCallable describeDomainBpsDataByTimeStampCallable(const Model::DescribeDomainBpsDataByTimeStampRequest& request) const;
@@ -1184,6 +1197,9 @@ namespace AlibabaCloud
 			DescribeDomainHttpCodeDataOutcome describeDomainHttpCodeData(const Model::DescribeDomainHttpCodeDataRequest &request)const;
 			void describeDomainHttpCodeDataAsync(const Model::DescribeDomainHttpCodeDataRequest& request, const DescribeDomainHttpCodeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainHttpCodeDataOutcomeCallable describeDomainHttpCodeDataCallable(const Model::DescribeDomainHttpCodeDataRequest& request) const;
+			DescribeDomainHttpCodeDataByLayerOutcome describeDomainHttpCodeDataByLayer(const Model::DescribeDomainHttpCodeDataByLayerRequest &request)const;
+			void describeDomainHttpCodeDataByLayerAsync(const Model::DescribeDomainHttpCodeDataByLayerRequest& request, const DescribeDomainHttpCodeDataByLayerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainHttpCodeDataByLayerOutcomeCallable describeDomainHttpCodeDataByLayerCallable(const Model::DescribeDomainHttpCodeDataByLayerRequest& request) const;
 			DescribeDomainISPDataOutcome describeDomainISPData(const Model::DescribeDomainISPDataRequest &request)const;
 			void describeDomainISPDataAsync(const Model::DescribeDomainISPDataRequest& request, const DescribeDomainISPDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainISPDataOutcomeCallable describeDomainISPDataCallable(const Model::DescribeDomainISPDataRequest& request) const;
