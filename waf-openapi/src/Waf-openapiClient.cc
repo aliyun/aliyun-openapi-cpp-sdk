@@ -267,6 +267,42 @@ Waf_openapiClient::DeleteDomainOutcomeCallable Waf_openapiClient::deleteDomainCa
 	return task->get_future();
 }
 
+Waf_openapiClient::DeleteInstanceOutcome Waf_openapiClient::deleteInstance(const DeleteInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteInstanceOutcome(DeleteInstanceResult(outcome.result()));
+	else
+		return DeleteInstanceOutcome(outcome.error());
+}
+
+void Waf_openapiClient::deleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DeleteInstanceOutcomeCallable Waf_openapiClient::deleteInstanceCallable(const DeleteInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Waf_openapiClient::DescribeCertMatchStatusOutcome Waf_openapiClient::describeCertMatchStatus(const DescribeCertMatchStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +765,42 @@ Waf_openapiClient::DescribeProtectionModuleRulesOutcomeCallable Waf_openapiClien
 			[this, request]()
 			{
 			return this->describeProtectionModuleRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Waf_openapiClient::DescribeProtectionModuleRulesByIdListOutcome Waf_openapiClient::describeProtectionModuleRulesByIdList(const DescribeProtectionModuleRulesByIdListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProtectionModuleRulesByIdListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProtectionModuleRulesByIdListOutcome(DescribeProtectionModuleRulesByIdListResult(outcome.result()));
+	else
+		return DescribeProtectionModuleRulesByIdListOutcome(outcome.error());
+}
+
+void Waf_openapiClient::describeProtectionModuleRulesByIdListAsync(const DescribeProtectionModuleRulesByIdListRequest& request, const DescribeProtectionModuleRulesByIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProtectionModuleRulesByIdList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DescribeProtectionModuleRulesByIdListOutcomeCallable Waf_openapiClient::describeProtectionModuleRulesByIdListCallable(const DescribeProtectionModuleRulesByIdListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProtectionModuleRulesByIdListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProtectionModuleRulesByIdList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

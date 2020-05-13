@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINRESULT_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINRESULT_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULERULESBYIDLISTRESULT_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULERULESBYIDLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainResult : public ServiceResult
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeProtectionModuleRulesByIdListResult : public ServiceResult
 			{
 			public:
-				struct Domain
+				struct Rule
 				{
-					struct LogHeader
-					{
-						std::string v;
-						std::string k;
-					};
-					int httpToUserIp;
-					std::vector<std::string> httpPort;
-					int isAccessProduct;
-					std::string resourceGroupId;
-					int readTime;
-					std::vector<std::string> sourceIps;
-					int clusterType;
-					int loadBalancing;
-					std::string cname;
-					std::vector<LogHeader> logHeaders;
-					int writeTime;
-					std::vector<std::string> http2Port;
+					long status;
+					std::string origin;
 					long version;
-					int httpsRedirect;
-					int connectionTime;
-					std::vector<std::string> httpsPort;
+					std::string content;
+					long ruleId;
+					int enabled;
+					long time;
+					std::string scene;
+					std::string name;
 				};
 
 
-				DescribeDomainResult();
-				explicit DescribeDomainResult(const std::string &payload);
-				~DescribeDomainResult();
-				Domain getDomain()const;
+				DescribeProtectionModuleRulesByIdListResult();
+				explicit DescribeProtectionModuleRulesByIdListResult(const std::string &payload);
+				~DescribeProtectionModuleRulesByIdListResult();
+				int getTotalCount()const;
+				std::vector<Rule> getRules()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Domain domain_;
+				int totalCount_;
+				std::vector<Rule> rules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINRESULT_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEPROTECTIONMODULERULESBYIDLISTRESULT_H_

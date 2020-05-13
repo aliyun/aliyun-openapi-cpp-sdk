@@ -33,6 +33,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/CreateProtectionModuleRuleResult.h
 	include/alibabacloud/waf-openapi/model/DeleteDomainRequest.h
 	include/alibabacloud/waf-openapi/model/DeleteDomainResult.h
+	include/alibabacloud/waf-openapi/model/DeleteInstanceRequest.h
+	include/alibabacloud/waf-openapi/model/DeleteInstanceResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeCertMatchStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeCertificatesRequest.h
@@ -59,6 +61,8 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesResult.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesByIdListRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesByIdListResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeRealProtectSummaryRequest.h
@@ -104,6 +108,8 @@ set(waf-openapi_src
 	src/model/CreateProtectionModuleRuleResult.cc
 	src/model/DeleteDomainRequest.cc
 	src/model/DeleteDomainResult.cc
+	src/model/DeleteInstanceRequest.cc
+	src/model/DeleteInstanceResult.cc
 	src/model/DescribeCertMatchStatusRequest.cc
 	src/model/DescribeCertMatchStatusResult.cc
 	src/model/DescribeCertificatesRequest.cc
@@ -130,6 +136,8 @@ set(waf-openapi_src
 	src/model/DescribeProtectionModuleModeResult.cc
 	src/model/DescribeProtectionModuleRulesRequest.cc
 	src/model/DescribeProtectionModuleRulesResult.cc
+	src/model/DescribeProtectionModuleRulesByIdListRequest.cc
+	src/model/DescribeProtectionModuleRulesByIdListResult.cc
 	src/model/DescribeProtectionModuleStatusRequest.cc
 	src/model/DescribeProtectionModuleStatusResult.cc
 	src/model/DescribeRealProtectSummaryRequest.cc

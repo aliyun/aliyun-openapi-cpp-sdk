@@ -34,6 +34,8 @@
 #include "model/CreateProtectionModuleRuleResult.h"
 #include "model/DeleteDomainRequest.h"
 #include "model/DeleteDomainResult.h"
+#include "model/DeleteInstanceRequest.h"
+#include "model/DeleteInstanceResult.h"
 #include "model/DescribeCertMatchStatusRequest.h"
 #include "model/DescribeCertMatchStatusResult.h"
 #include "model/DescribeCertificatesRequest.h"
@@ -60,6 +62,8 @@
 #include "model/DescribeProtectionModuleModeResult.h"
 #include "model/DescribeProtectionModuleRulesRequest.h"
 #include "model/DescribeProtectionModuleRulesResult.h"
+#include "model/DescribeProtectionModuleRulesByIdListRequest.h"
+#include "model/DescribeProtectionModuleRulesByIdListResult.h"
 #include "model/DescribeProtectionModuleStatusRequest.h"
 #include "model/DescribeProtectionModuleStatusResult.h"
 #include "model/DescribeRealProtectSummaryRequest.h"
@@ -117,6 +121,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDomainResult> DeleteDomainOutcome;
 			typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteDomainRequest&, const DeleteDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
+			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
+			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertMatchStatusResult> DescribeCertMatchStatusOutcome;
 			typedef std::future<DescribeCertMatchStatusOutcome> DescribeCertMatchStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeCertMatchStatusRequest&, const DescribeCertMatchStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertMatchStatusAsyncHandler;
@@ -156,6 +163,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeProtectionModuleRulesResult> DescribeProtectionModuleRulesOutcome;
 			typedef std::future<DescribeProtectionModuleRulesOutcome> DescribeProtectionModuleRulesOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesRequest&, const DescribeProtectionModuleRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeProtectionModuleRulesByIdListResult> DescribeProtectionModuleRulesByIdListOutcome;
+			typedef std::future<DescribeProtectionModuleRulesByIdListOutcome> DescribeProtectionModuleRulesByIdListOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesByIdListRequest&, const DescribeProtectionModuleRulesByIdListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesByIdListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleStatusResult> DescribeProtectionModuleStatusOutcome;
 			typedef std::future<DescribeProtectionModuleStatusOutcome> DescribeProtectionModuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleStatusRequest&, const DescribeProtectionModuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleStatusAsyncHandler;
@@ -224,6 +234,9 @@ namespace AlibabaCloud
 			DeleteDomainOutcome deleteDomain(const Model::DeleteDomainRequest &request)const;
 			void deleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDomainOutcomeCallable deleteDomainCallable(const Model::DeleteDomainRequest& request) const;
+			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
+			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
 			DescribeCertMatchStatusOutcome describeCertMatchStatus(const Model::DescribeCertMatchStatusRequest &request)const;
 			void describeCertMatchStatusAsync(const Model::DescribeCertMatchStatusRequest& request, const DescribeCertMatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertMatchStatusOutcomeCallable describeCertMatchStatusCallable(const Model::DescribeCertMatchStatusRequest& request) const;
@@ -263,6 +276,9 @@ namespace AlibabaCloud
 			DescribeProtectionModuleRulesOutcome describeProtectionModuleRules(const Model::DescribeProtectionModuleRulesRequest &request)const;
 			void describeProtectionModuleRulesAsync(const Model::DescribeProtectionModuleRulesRequest& request, const DescribeProtectionModuleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleRulesOutcomeCallable describeProtectionModuleRulesCallable(const Model::DescribeProtectionModuleRulesRequest& request) const;
+			DescribeProtectionModuleRulesByIdListOutcome describeProtectionModuleRulesByIdList(const Model::DescribeProtectionModuleRulesByIdListRequest &request)const;
+			void describeProtectionModuleRulesByIdListAsync(const Model::DescribeProtectionModuleRulesByIdListRequest& request, const DescribeProtectionModuleRulesByIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeProtectionModuleRulesByIdListOutcomeCallable describeProtectionModuleRulesByIdListCallable(const Model::DescribeProtectionModuleRulesByIdListRequest& request) const;
 			DescribeProtectionModuleStatusOutcome describeProtectionModuleStatus(const Model::DescribeProtectionModuleStatusRequest &request)const;
 			void describeProtectionModuleStatusAsync(const Model::DescribeProtectionModuleStatusRequest& request, const DescribeProtectionModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleStatusOutcomeCallable describeProtectionModuleStatusCallable(const Model::DescribeProtectionModuleStatusRequest& request) const;

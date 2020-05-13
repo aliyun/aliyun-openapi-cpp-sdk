@@ -71,14 +71,3 @@ void ModifyDomainClusterTypeRequest::setDomain(const std::string& domain)
 	setParameter("Domain", domain);
 }
 
-std::string ModifyDomainClusterTypeRequest::getRegion()const
-{
-	return region_;
-}
-
-void ModifyDomainClusterTypeRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
-}
-

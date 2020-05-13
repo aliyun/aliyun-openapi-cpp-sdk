@@ -52,8 +52,6 @@ void DescribeDomainResult::parse(const std::string &payload)
 		domain_.isAccessProduct = std::stoi(domainNode["IsAccessProduct"].asString());
 	if(!domainNode["Version"].isNull())
 		domain_.version = std::stol(domainNode["Version"].asString());
-	if(!domainNode["LogHeaders"].isNull())
-		domain_.logHeaders = domainNode["LogHeaders"].asString();
 	if(!domainNode["ClusterType"].isNull())
 		domain_.clusterType = std::stoi(domainNode["ClusterType"].asString());
 	if(!domainNode["ConnectionTime"].isNull())
@@ -62,6 +60,18 @@ void DescribeDomainResult::parse(const std::string &payload)
 		domain_.readTime = std::stoi(domainNode["ReadTime"].asString());
 	if(!domainNode["WriteTime"].isNull())
 		domain_.writeTime = std::stoi(domainNode["WriteTime"].asString());
+	if(!domainNode["ResourceGroupId"].isNull())
+		domain_.resourceGroupId = domainNode["ResourceGroupId"].asString();
+	auto allLogHeadersNode = domainNode["LogHeaders"]["LogHeader"];
+	for (auto domainNodeLogHeadersLogHeader : allLogHeadersNode)
+	{
+		Domain::LogHeader logHeaderObject;
+		if(!domainNodeLogHeadersLogHeader["v"].isNull())
+			logHeaderObject.v = domainNodeLogHeadersLogHeader["v"].asString();
+		if(!domainNodeLogHeadersLogHeader["k"].isNull())
+			logHeaderObject.k = domainNodeLogHeadersLogHeader["k"].asString();
+		domain_.logHeaders.push_back(logHeaderObject);
+	}
 		auto allSourceIps = domainNode["SourceIps"]["SourceIp"];
 		for (auto value : allSourceIps)
 			domain_.sourceIps.push_back(value.asString());
