@@ -30,6 +30,8 @@
 #include "model/BindNodeLabelResult.h"
 #include "model/CloseDeployOrderRequest.h"
 #include "model/CloseDeployOrderResult.h"
+#include "model/CreateAccountRequest.h"
+#include "model/CreateAccountResult.h"
 #include "model/CreateAppRequest.h"
 #include "model/CreateAppResult.h"
 #include "model/CreateAppResourceAllocRequest.h"
@@ -148,6 +150,8 @@
 #include "model/QueryClusterDetailResult.h"
 #include "model/RemoveClusterNodeRequest.h"
 #include "model/RemoveClusterNodeResult.h"
+#include "model/ResetAccountPasswordRequest.h"
+#include "model/ResetAccountPasswordResult.h"
 #include "model/ResourceStatusNotifyRequest.h"
 #include "model/ResourceStatusNotifyResult.h"
 #include "model/ResumeDeployRequest.h"
@@ -185,6 +189,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CloseDeployOrderResult> CloseDeployOrderOutcome;
 			typedef std::future<CloseDeployOrderOutcome> CloseDeployOrderOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::CloseDeployOrderRequest&, const CloseDeployOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseDeployOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateAccountResult> CreateAccountOutcome;
+			typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::CreateAccountRequest&, const CreateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
 			typedef Outcome<Error, Model::CreateAppResult> CreateAppOutcome;
 			typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::CreateAppRequest&, const CreateAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
@@ -362,6 +369,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveClusterNodeResult> RemoveClusterNodeOutcome;
 			typedef std::future<RemoveClusterNodeOutcome> RemoveClusterNodeOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::RemoveClusterNodeRequest&, const RemoveClusterNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveClusterNodeAsyncHandler;
+			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
+			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
 			typedef Outcome<Error, Model::ResourceStatusNotifyResult> ResourceStatusNotifyOutcome;
 			typedef std::future<ResourceStatusNotifyOutcome> ResourceStatusNotifyOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::ResourceStatusNotifyRequest&, const ResourceStatusNotifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResourceStatusNotifyAsyncHandler;
@@ -403,6 +413,9 @@ namespace AlibabaCloud
 			CloseDeployOrderOutcome closeDeployOrder(const Model::CloseDeployOrderRequest &request)const;
 			void closeDeployOrderAsync(const Model::CloseDeployOrderRequest& request, const CloseDeployOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseDeployOrderOutcomeCallable closeDeployOrderCallable(const Model::CloseDeployOrderRequest& request) const;
+			CreateAccountOutcome createAccount(const Model::CreateAccountRequest &request)const;
+			void createAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAccountOutcomeCallable createAccountCallable(const Model::CreateAccountRequest& request) const;
 			CreateAppOutcome createApp(const Model::CreateAppRequest &request)const;
 			void createAppAsync(const Model::CreateAppRequest& request, const CreateAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAppOutcomeCallable createAppCallable(const Model::CreateAppRequest& request) const;
@@ -580,6 +593,9 @@ namespace AlibabaCloud
 			RemoveClusterNodeOutcome removeClusterNode(const Model::RemoveClusterNodeRequest &request)const;
 			void removeClusterNodeAsync(const Model::RemoveClusterNodeRequest& request, const RemoveClusterNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveClusterNodeOutcomeCallable removeClusterNodeCallable(const Model::RemoveClusterNodeRequest& request) const;
+			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
+			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;
 			ResourceStatusNotifyOutcome resourceStatusNotify(const Model::ResourceStatusNotifyRequest &request)const;
 			void resourceStatusNotifyAsync(const Model::ResourceStatusNotifyRequest& request, const ResourceStatusNotifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResourceStatusNotifyOutcomeCallable resourceStatusNotifyCallable(const Model::ResourceStatusNotifyRequest& request) const;

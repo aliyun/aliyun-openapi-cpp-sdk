@@ -195,6 +195,42 @@ RetailcloudClient::CloseDeployOrderOutcomeCallable RetailcloudClient::closeDeplo
 	return task->get_future();
 }
 
+RetailcloudClient::CreateAccountOutcome RetailcloudClient::createAccount(const CreateAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccountOutcome(CreateAccountResult(outcome.result()));
+	else
+		return CreateAccountOutcome(outcome.error());
+}
+
+void RetailcloudClient::createAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::CreateAccountOutcomeCallable RetailcloudClient::createAccountCallable(const CreateAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::CreateAppOutcome RetailcloudClient::createApp(const CreateAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2349,42 @@ RetailcloudClient::RemoveClusterNodeOutcomeCallable RetailcloudClient::removeClu
 			[this, request]()
 			{
 			return this->removeClusterNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::ResetAccountPasswordOutcome RetailcloudClient::resetAccountPassword(const ResetAccountPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetAccountPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetAccountPasswordOutcome(ResetAccountPasswordResult(outcome.result()));
+	else
+		return ResetAccountPasswordOutcome(outcome.error());
+}
+
+void RetailcloudClient::resetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetAccountPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::ResetAccountPasswordOutcomeCallable RetailcloudClient::resetAccountPasswordCallable(const ResetAccountPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->resetAccountPassword(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

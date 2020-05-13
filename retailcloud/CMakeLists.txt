@@ -29,6 +29,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/BindNodeLabelResult.h
 	include/alibabacloud/retailcloud/model/CloseDeployOrderRequest.h
 	include/alibabacloud/retailcloud/model/CloseDeployOrderResult.h
+	include/alibabacloud/retailcloud/model/CreateAccountRequest.h
+	include/alibabacloud/retailcloud/model/CreateAccountResult.h
 	include/alibabacloud/retailcloud/model/CreateAppRequest.h
 	include/alibabacloud/retailcloud/model/CreateAppResult.h
 	include/alibabacloud/retailcloud/model/CreateAppResourceAllocRequest.h
@@ -147,6 +149,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/QueryClusterDetailResult.h
 	include/alibabacloud/retailcloud/model/RemoveClusterNodeRequest.h
 	include/alibabacloud/retailcloud/model/RemoveClusterNodeResult.h
+	include/alibabacloud/retailcloud/model/ResetAccountPasswordRequest.h
+	include/alibabacloud/retailcloud/model/ResetAccountPasswordResult.h
 	include/alibabacloud/retailcloud/model/ResourceStatusNotifyRequest.h
 	include/alibabacloud/retailcloud/model/ResourceStatusNotifyResult.h
 	include/alibabacloud/retailcloud/model/ResumeDeployRequest.h
@@ -174,6 +178,8 @@ set(retailcloud_src
 	src/model/BindNodeLabelResult.cc
 	src/model/CloseDeployOrderRequest.cc
 	src/model/CloseDeployOrderResult.cc
+	src/model/CreateAccountRequest.cc
+	src/model/CreateAccountResult.cc
 	src/model/CreateAppRequest.cc
 	src/model/CreateAppResult.cc
 	src/model/CreateAppResourceAllocRequest.cc
@@ -292,6 +298,8 @@ set(retailcloud_src
 	src/model/QueryClusterDetailResult.cc
 	src/model/RemoveClusterNodeRequest.cc
 	src/model/RemoveClusterNodeResult.cc
+	src/model/ResetAccountPasswordRequest.cc
+	src/model/ResetAccountPasswordResult.cc
 	src/model/ResourceStatusNotifyRequest.cc
 	src/model/ResourceStatusNotifyResult.cc
 	src/model/ResumeDeployRequest.cc
