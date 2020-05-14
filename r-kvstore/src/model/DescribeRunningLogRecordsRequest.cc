@@ -71,6 +71,17 @@ void DescribeRunningLogRecordsRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeRunningLogRecordsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeRunningLogRecordsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeRunningLogRecordsRequest::getSecurityToken()const
 {
 	return securityToken_;

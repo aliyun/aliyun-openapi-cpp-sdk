@@ -60,6 +60,28 @@ void ModifyInstanceAttributeRequest::setSecurityToken(const std::string& securit
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyInstanceAttributeRequest::getProduct()const
+{
+	return product_;
+}
+
+void ModifyInstanceAttributeRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
+bool ModifyInstanceAttributeRequest::getInstanceReleaseProtection()const
+{
+	return instanceReleaseProtection_;
+}
+
+void ModifyInstanceAttributeRequest::setInstanceReleaseProtection(bool instanceReleaseProtection)
+{
+	instanceReleaseProtection_ = instanceReleaseProtection;
+	setParameter("InstanceReleaseProtection", instanceReleaseProtection ? "true" : "false");
+}
+
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -124,5 +146,16 @@ void ModifyInstanceAttributeRequest::setInstanceName(const std::string& instance
 {
 	instanceName_ = instanceName;
 	setParameter("InstanceName", instanceName);
+}
+
+std::string ModifyInstanceAttributeRequest::getCategory()const
+{
+	return category_;
+}
+
+void ModifyInstanceAttributeRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 

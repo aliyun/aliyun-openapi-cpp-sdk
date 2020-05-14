@@ -38,15 +38,15 @@ void DescribeUserClusterHostRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeUserClusterHostRequest::getPageNumber()const
+int DescribeUserClusterHostRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void DescribeUserClusterHostRequest::setPageNumber(const std::string& pageNumber)
+void DescribeUserClusterHostRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", pageNumber);
+	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string DescribeUserClusterHostRequest::getAccessKeyId()const
@@ -115,15 +115,15 @@ void DescribeUserClusterHostRequest::setOwnerAccount(const std::string& ownerAcc
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeUserClusterHostRequest::getMaxRecordsPerPage()const
+int DescribeUserClusterHostRequest::getMaxRecordsPerPage()const
 {
 	return maxRecordsPerPage_;
 }
 
-void DescribeUserClusterHostRequest::setMaxRecordsPerPage(const std::string& maxRecordsPerPage)
+void DescribeUserClusterHostRequest::setMaxRecordsPerPage(int maxRecordsPerPage)
 {
 	maxRecordsPerPage_ = maxRecordsPerPage;
-	setParameter("MaxRecordsPerPage", maxRecordsPerPage);
+	setParameter("MaxRecordsPerPage", std::to_string(maxRecordsPerPage));
 }
 
 std::string DescribeUserClusterHostRequest::getClusterId()const

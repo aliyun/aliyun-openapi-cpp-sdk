@@ -37,8 +37,8 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getMaxRecordsPerPage()const;
-				void setMaxRecordsPerPage(const std::string& maxRecordsPerPage);
+				int getMaxRecordsPerPage()const;
+				void setMaxRecordsPerPage(int maxRecordsPerPage);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				long getOwnerId()const;
@@ -62,14 +62,14 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
-				std::string pageNumber_;
+				int pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string regionId_;
 				std::string engine_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string maxRecordsPerPage_;
+				int maxRecordsPerPage_;
 				std::string clusterId_;
 				long ownerId_;
 				std::string zoneId_;

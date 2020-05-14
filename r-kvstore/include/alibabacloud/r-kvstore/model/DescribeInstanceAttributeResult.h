@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					long bandwidth;
 					std::string packageType;
+					bool instanceReleaseProtection;
 					std::string instanceType;
 					std::string availabilityValue;
 					std::vector<DBInstanceAttribute::Tag> tags;

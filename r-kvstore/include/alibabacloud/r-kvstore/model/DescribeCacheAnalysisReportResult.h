@@ -38,9 +38,9 @@ namespace AlibabaCloud
 				explicit DescribeCacheAnalysisReportResult(const std::string &payload);
 				~DescribeCacheAnalysisReportResult();
 				int getTotalRecordCount()const;
-				std::string getHotKeys()const;
+				std::vector<std::string> getHotKeys()const;
+				std::vector<std::string> getBigKeys()const;
 				int getPageRecordCount()const;
-				std::string getBigKeys()const;
 				int getPageSize()const;
 				int getPageNumber()const;
 
@@ -48,9 +48,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int totalRecordCount_;
-				std::string hotKeys_;
+				std::vector<std::string> hotKeys_;
+				std::vector<std::string> bigKeys_;
 				int pageRecordCount_;
-				std::string bigKeys_;
 				int pageSize_;
 				int pageNumber_;
 

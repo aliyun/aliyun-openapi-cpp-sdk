@@ -119,6 +119,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.replicationMode = valueInstancesDBInstanceAttribute["ReplicationMode"].asString();
 		if(!valueInstancesDBInstanceAttribute["VpcCloudInstanceId"].isNull())
 			instancesObject.vpcCloudInstanceId = valueInstancesDBInstanceAttribute["VpcCloudInstanceId"].asString();
+		if(!valueInstancesDBInstanceAttribute["InstanceReleaseProtection"].isNull())
+			instancesObject.instanceReleaseProtection = valueInstancesDBInstanceAttribute["InstanceReleaseProtection"].asString() == "true";
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

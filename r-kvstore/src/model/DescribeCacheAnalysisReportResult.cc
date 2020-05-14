@@ -39,6 +39,12 @@ void DescribeCacheAnalysisReportResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allHotKeys = value["HotKeys"]["HotKeys"];
+	for (const auto &item : allHotKeys)
+		hotKeys_.push_back(item.asString());
+	auto allBigKeys = value["BigKeys"]["BigKeys"];
+	for (const auto &item : allBigKeys)
+		bigKeys_.push_back(item.asString());
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
 	if(!value["PageSize"].isNull())
@@ -47,10 +53,6 @@ void DescribeCacheAnalysisReportResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
-	if(!value["HotKeys"].isNull())
-		hotKeys_ = value["HotKeys"].asString();
-	if(!value["BigKeys"].isNull())
-		bigKeys_ = value["BigKeys"].asString();
 
 }
 
@@ -59,19 +61,19 @@ int DescribeCacheAnalysisReportResult::getTotalRecordCount()const
 	return totalRecordCount_;
 }
 
-std::string DescribeCacheAnalysisReportResult::getHotKeys()const
+std::vector<std::string> DescribeCacheAnalysisReportResult::getHotKeys()const
 {
 	return hotKeys_;
+}
+
+std::vector<std::string> DescribeCacheAnalysisReportResult::getBigKeys()const
+{
+	return bigKeys_;
 }
 
 int DescribeCacheAnalysisReportResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
-}
-
-std::string DescribeCacheAnalysisReportResult::getBigKeys()const
-{
-	return bigKeys_;
 }
 
 int DescribeCacheAnalysisReportResult::getPageSize()const
