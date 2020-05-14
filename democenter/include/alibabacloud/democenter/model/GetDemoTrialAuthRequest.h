@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DEMOCENTER_MODEL_CREATEDEMOACCESSTOKENREQUEST_H_
-#define ALIBABACLOUD_DEMOCENTER_MODEL_CREATEDEMOACCESSTOKENREQUEST_H_
+#ifndef ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHREQUEST_H_
+#define ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DEMOCENTER_EXPORT CreateDemoAccessTokenRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DEMOCENTER_EXPORT GetDemoTrialAuthRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDemoAccessTokenRequest();
-				~CreateDemoAccessTokenRequest();
+				GetDemoTrialAuthRequest();
+				~GetDemoTrialAuthRequest();
 
-				int getEdition()const;
-				void setEdition(int edition);
 				long getDemoId()const;
 				void setDemoId(long demoId);
 
             private:
-				int edition_;
 				long demoId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DEMOCENTER_MODEL_CREATEDEMOACCESSTOKENREQUEST_H_
+#endif // !ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHREQUEST_H_

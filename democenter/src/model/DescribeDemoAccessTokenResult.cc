@@ -49,6 +49,8 @@ void DescribeDemoAccessTokenResult::parse(const std::string &payload)
 		demoTrialPage_ = value["DemoTrialPage"].asString();
 	if(!value["DemoDetailPage"].isNull())
 		demoDetailPage_ = value["DemoDetailPage"].asString();
+	if(!value["Edition"].isNull())
+		edition_ = value["Edition"].asString();
 
 }
 
@@ -75,5 +77,10 @@ std::string DescribeDemoAccessTokenResult::getDemoAccessToken()const
 std::string DescribeDemoAccessTokenResult::getOpenUserId()const
 {
 	return openUserId_;
+}
+
+std::string DescribeDemoAccessTokenResult::getEdition()const
+{
+	return edition_;
 }
 

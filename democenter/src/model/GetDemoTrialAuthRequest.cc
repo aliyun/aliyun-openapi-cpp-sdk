@@ -14,36 +14,25 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/democenter/model/CreateDemoAccessTokenRequest.h>
+#include <alibabacloud/democenter/model/GetDemoTrialAuthRequest.h>
 
-using AlibabaCloud::DemoCenter::Model::CreateDemoAccessTokenRequest;
+using AlibabaCloud::DemoCenter::Model::GetDemoTrialAuthRequest;
 
-CreateDemoAccessTokenRequest::CreateDemoAccessTokenRequest() :
-	RpcServiceRequest("democenter", "2020-01-21", "CreateDemoAccessToken")
+GetDemoTrialAuthRequest::GetDemoTrialAuthRequest() :
+	RpcServiceRequest("democenter", "2020-01-21", "GetDemoTrialAuth")
 {
-	setMethod(HttpRequest::Method::Post);
+	setMethod(HttpRequest::Method::Get);
 }
 
-CreateDemoAccessTokenRequest::~CreateDemoAccessTokenRequest()
+GetDemoTrialAuthRequest::~GetDemoTrialAuthRequest()
 {}
 
-int CreateDemoAccessTokenRequest::getEdition()const
-{
-	return edition_;
-}
-
-void CreateDemoAccessTokenRequest::setEdition(int edition)
-{
-	edition_ = edition;
-	setBodyParameter("Edition", std::to_string(edition));
-}
-
-long CreateDemoAccessTokenRequest::getDemoId()const
+long GetDemoTrialAuthRequest::getDemoId()const
 {
 	return demoId_;
 }
 
-void CreateDemoAccessTokenRequest::setDemoId(long demoId)
+void GetDemoTrialAuthRequest::setDemoId(long demoId)
 {
 	demoId_ = demoId;
 	setBodyParameter("DemoId", std::to_string(demoId));

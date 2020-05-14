@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DEMOCENTER_MODEL_DESCRIBEDEMOACCESSTOKENRESULT_H_
-#define ALIBABACLOUD_DEMOCENTER_MODEL_DESCRIBEDEMOACCESSTOKENRESULT_H_
+#ifndef ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHRESULT_H_
+#define ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DEMOCENTER_EXPORT DescribeDemoAccessTokenResult : public ServiceResult
+			class ALIBABACLOUD_DEMOCENTER_EXPORT GetDemoTrialAuthResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeDemoAccessTokenResult();
-				explicit DescribeDemoAccessTokenResult(const std::string &payload);
-				~DescribeDemoAccessTokenResult();
-				std::string getDemoTrialPage()const;
-				std::string getDemoDetailPage()const;
-				std::string getExpiredDate()const;
-				std::string getDemoAccessToken()const;
-				std::string getOpenUserId()const;
-				std::string getEdition()const;
+				GetDemoTrialAuthResult();
+				explicit GetDemoTrialAuthResult(const std::string &payload);
+				~GetDemoTrialAuthResult();
+				std::string getAuthorization()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string demoTrialPage_;
-				std::string demoDetailPage_;
-				std::string expiredDate_;
-				std::string demoAccessToken_;
-				std::string openUserId_;
-				std::string edition_;
+				std::string authorization_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DEMOCENTER_MODEL_DESCRIBEDEMOACCESSTOKENRESULT_H_
+#endif // !ALIBABACLOUD_DEMOCENTER_MODEL_GETDEMOTRIALAUTHRESULT_H_

@@ -31,21 +31,21 @@ DemoCenterClient::DemoCenterClient(const Credentials &credentials, const ClientC
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "DemoCenter");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DemoCenterClient::DemoCenterClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "DemoCenter");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DemoCenterClient::DemoCenterClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "DemoCenter");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DemoCenterClient::~DemoCenterClient()
@@ -153,6 +153,42 @@ DemoCenterClient::ExpireDemoAccessTokenOutcomeCallable DemoCenterClient::expireD
 			[this, request]()
 			{
 			return this->expireDemoAccessToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DemoCenterClient::GetDemoTrialAuthOutcome DemoCenterClient::getDemoTrialAuth(const GetDemoTrialAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDemoTrialAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDemoTrialAuthOutcome(GetDemoTrialAuthResult(outcome.result()));
+	else
+		return GetDemoTrialAuthOutcome(outcome.error());
+}
+
+void DemoCenterClient::getDemoTrialAuthAsync(const GetDemoTrialAuthRequest& request, const GetDemoTrialAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDemoTrialAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DemoCenterClient::GetDemoTrialAuthOutcomeCallable DemoCenterClient::getDemoTrialAuthCallable(const GetDemoTrialAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDemoTrialAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->getDemoTrialAuth(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

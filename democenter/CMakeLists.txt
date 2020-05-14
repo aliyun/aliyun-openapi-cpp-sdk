@@ -26,7 +26,9 @@ set(democenter_public_header_model
 	include/alibabacloud/democenter/model/DescribeDemoAccessTokenRequest.h
 	include/alibabacloud/democenter/model/DescribeDemoAccessTokenResult.h
 	include/alibabacloud/democenter/model/ExpireDemoAccessTokenRequest.h
-	include/alibabacloud/democenter/model/ExpireDemoAccessTokenResult.h )
+	include/alibabacloud/democenter/model/ExpireDemoAccessTokenResult.h
+	include/alibabacloud/democenter/model/GetDemoTrialAuthRequest.h
+	include/alibabacloud/democenter/model/GetDemoTrialAuthResult.h )
 
 set(democenter_src 
 	src/DemoCenterClient.cc
@@ -35,7 +37,9 @@ set(democenter_src
 	src/model/DescribeDemoAccessTokenRequest.cc
 	src/model/DescribeDemoAccessTokenResult.cc
 	src/model/ExpireDemoAccessTokenRequest.cc
-	src/model/ExpireDemoAccessTokenResult.cc )
+	src/model/ExpireDemoAccessTokenResult.cc
+	src/model/GetDemoTrialAuthRequest.cc
+	src/model/GetDemoTrialAuthResult.cc )
 
 add_library(democenter ${LIB_TYPE}
 	${democenter_public_header}

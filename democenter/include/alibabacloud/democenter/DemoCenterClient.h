@@ -28,6 +28,8 @@
 #include "model/DescribeDemoAccessTokenResult.h"
 #include "model/ExpireDemoAccessTokenRequest.h"
 #include "model/ExpireDemoAccessTokenResult.h"
+#include "model/GetDemoTrialAuthRequest.h"
+#include "model/GetDemoTrialAuthResult.h"
 
 
 namespace AlibabaCloud
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExpireDemoAccessTokenResult> ExpireDemoAccessTokenOutcome;
 			typedef std::future<ExpireDemoAccessTokenOutcome> ExpireDemoAccessTokenOutcomeCallable;
 			typedef std::function<void(const DemoCenterClient*, const Model::ExpireDemoAccessTokenRequest&, const ExpireDemoAccessTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExpireDemoAccessTokenAsyncHandler;
+			typedef Outcome<Error, Model::GetDemoTrialAuthResult> GetDemoTrialAuthOutcome;
+			typedef std::future<GetDemoTrialAuthOutcome> GetDemoTrialAuthOutcomeCallable;
+			typedef std::function<void(const DemoCenterClient*, const Model::GetDemoTrialAuthRequest&, const GetDemoTrialAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDemoTrialAuthAsyncHandler;
 
 			DemoCenterClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			DemoCenterClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -60,6 +65,9 @@ namespace AlibabaCloud
 			ExpireDemoAccessTokenOutcome expireDemoAccessToken(const Model::ExpireDemoAccessTokenRequest &request)const;
 			void expireDemoAccessTokenAsync(const Model::ExpireDemoAccessTokenRequest& request, const ExpireDemoAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExpireDemoAccessTokenOutcomeCallable expireDemoAccessTokenCallable(const Model::ExpireDemoAccessTokenRequest& request) const;
+			GetDemoTrialAuthOutcome getDemoTrialAuth(const Model::GetDemoTrialAuthRequest &request)const;
+			void getDemoTrialAuthAsync(const Model::GetDemoTrialAuthRequest& request, const GetDemoTrialAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDemoTrialAuthOutcomeCallable getDemoTrialAuthCallable(const Model::GetDemoTrialAuthRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
