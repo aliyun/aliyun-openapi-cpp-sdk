@@ -1,3 +1,6 @@
+2020-05-17 Version: 1.36.414
+- Open API publish.
+
 2020-05-14 Version: 1.36.413
 - Generated 2015-01-01 for `R-kvstore`.
 - Fix DescribeCacheAnalysisReport return empty BigKeys because of wrong type defination.
