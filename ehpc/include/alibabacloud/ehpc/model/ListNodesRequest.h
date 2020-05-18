@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSequence()const;
+				void setSequence(const std::string& sequence);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				int getPageSize()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string clusterId_;
 				int pageNumber_;
 				std::string accessKeyId_;
+				std::string sequence_;
 				std::string hostName_;
 				int pageSize_;
 

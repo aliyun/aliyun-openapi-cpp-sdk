@@ -279,3 +279,14 @@ void ApplyNodesRequest::setTargetCapacity(int targetCapacity)
 	setParameter("TargetCapacity", std::to_string(targetCapacity));
 }
 
+bool ApplyNodesRequest::getStrictSatisfiedTargetCapacity()const
+{
+	return strictSatisfiedTargetCapacity_;
+}
+
+void ApplyNodesRequest::setStrictSatisfiedTargetCapacity(bool strictSatisfiedTargetCapacity)
+{
+	strictSatisfiedTargetCapacity_ = strictSatisfiedTargetCapacity;
+	setParameter("StrictSatisfiedTargetCapacity", strictSatisfiedTargetCapacity ? "true" : "false");
+}
+

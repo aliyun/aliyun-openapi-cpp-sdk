@@ -71,6 +71,17 @@ void ListNodesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListNodesRequest::getSequence()const
+{
+	return sequence_;
+}
+
+void ListNodesRequest::setSequence(const std::string& sequence)
+{
+	sequence_ = sequence;
+	setParameter("Sequence", sequence);
+}
+
 std::string ListNodesRequest::getHostName()const
 {
 	return hostName_;

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getSequence()const;
+				void setSequence(const std::string& sequence);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				bool getOnlyDetached()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string role_;
 				std::string clusterId_;
 				std::string accessKeyId_;
+				std::string sequence_;
 				std::string hostName_;
 				bool onlyDetached_;
 

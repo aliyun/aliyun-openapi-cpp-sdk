@@ -60,6 +60,17 @@ void ListNodesNoPagingRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ListNodesNoPagingRequest::getSequence()const
+{
+	return sequence_;
+}
+
+void ListNodesNoPagingRequest::setSequence(const std::string& sequence)
+{
+	sequence_ = sequence;
+	setParameter("Sequence", sequence);
+}
+
 std::string ListNodesNoPagingRequest::getHostName()const
 {
 	return hostName_;

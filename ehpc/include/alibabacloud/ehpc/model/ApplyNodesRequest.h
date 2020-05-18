@@ -90,6 +90,8 @@ namespace AlibabaCloud
 				void setInternetMaxBandWidthIn(int internetMaxBandWidthIn);
 				int getTargetCapacity()const;
 				void setTargetCapacity(int targetCapacity);
+				bool getStrictSatisfiedTargetCapacity()const;
+				void setStrictSatisfiedTargetCapacity(bool strictSatisfiedTargetCapacity);
 
             private:
 				std::string imageId_;
@@ -114,6 +116,7 @@ namespace AlibabaCloud
 				std::vector<InstanceTypeModel> instanceTypeModel_;
 				int internetMaxBandWidthIn_;
 				int targetCapacity_;
+				bool strictSatisfiedTargetCapacity_;
 
 			};
 		}
