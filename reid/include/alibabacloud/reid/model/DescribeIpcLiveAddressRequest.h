@@ -39,10 +39,13 @@ namespace AlibabaCloud
 				void setIpcId(long ipcId);
 				long getStoreId()const;
 				void setStoreId(long storeId);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
 
             private:
 				long ipcId_;
 				long storeId_;
+				std::string protocolType_;
 
 			};
 		}

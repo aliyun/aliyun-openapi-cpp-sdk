@@ -49,3 +49,14 @@ void DescribeIpcLiveAddressRequest::setStoreId(long storeId)
 	setBodyParameter("StoreId", std::to_string(storeId));
 }
 
+std::string DescribeIpcLiveAddressRequest::getProtocolType()const
+{
+	return protocolType_;
+}
+
+void DescribeIpcLiveAddressRequest::setProtocolType(const std::string& protocolType)
+{
+	protocolType_ = protocolType;
+	setBodyParameter("ProtocolType", protocolType);
+}
+
