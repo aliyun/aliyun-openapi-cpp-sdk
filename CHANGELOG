@@ -1,3 +1,6 @@
+2020-05-19 Version: 1.36.422
+- Initial version.
+
 2020-05-18 Version: 1.36.421
 - Support sequence for listNodes.
 - Support StrictSatisfiedTargetCapacity for applyNodes.

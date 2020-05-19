@@ -57,15 +57,15 @@ void SearchFaceResult::parse(const std::string &payload)
 		if(!dataNodeRecordsRecord["ImageUrl"].isNull())
 			recordObject.imageUrl = dataNodeRecordsRecord["ImageUrl"].asString();
 		if(!dataNodeRecordsRecord["LeftTopX"].isNull())
-			recordObject.leftTopX = std::stoi(dataNodeRecordsRecord["LeftTopX"].asString());
+			recordObject.leftTopX = std::stof(dataNodeRecordsRecord["LeftTopX"].asString());
 		if(!dataNodeRecordsRecord["LeftTopY"].isNull())
-			recordObject.leftTopY = std::stoi(dataNodeRecordsRecord["LeftTopY"].asString());
+			recordObject.leftTopY = std::stof(dataNodeRecordsRecord["LeftTopY"].asString());
 		if(!dataNodeRecordsRecord["RightBottomX"].isNull())
-			recordObject.rightBottomX = std::stoi(dataNodeRecordsRecord["RightBottomX"].asString());
+			recordObject.rightBottomX = std::stof(dataNodeRecordsRecord["RightBottomX"].asString());
 		if(!dataNodeRecordsRecord["RightBottomY"].isNull())
-			recordObject.rightBottomY = std::stoi(dataNodeRecordsRecord["RightBottomY"].asString());
+			recordObject.rightBottomY = std::stof(dataNodeRecordsRecord["RightBottomY"].asString());
 		if(!dataNodeRecordsRecord["Score"].isNull())
-			recordObject.score = std::stoi(dataNodeRecordsRecord["Score"].asString());
+			recordObject.score = std::stof(dataNodeRecordsRecord["Score"].asString());
 		if(!dataNodeRecordsRecord["TargetImageUrl"].isNull())
 			recordObject.targetImageUrl = dataNodeRecordsRecord["TargetImageUrl"].asString();
 		data_.records.push_back(recordObject);

@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					struct Record
 					{
 						std::string targetImageUrl;
-						int score;
-						int rightBottomX;
-						int rightBottomY;
+						float score;
+						float rightBottomX;
+						float rightBottomY;
 						std::string gbId;
 						std::string imageUrl;
-						int leftTopY;
-						int leftTopX;
+						float leftTopY;
+						float leftTopX;
 					};
 					int totalCount;
 					int pageSize;
