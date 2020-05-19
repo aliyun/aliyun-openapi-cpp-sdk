@@ -39,15 +39,14 @@ void GetMeetingMemberResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allMembers = value["Members"]["Data"];
-	for (const auto &item : allMembers)
-		members_.push_back(item.asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
+	if(!value["Members"].isNull())
+		members_ = value["Members"].asString();
 
 }
 
@@ -61,13 +60,13 @@ int GetMeetingMemberResult::getErrorCode()const
 	return errorCode_;
 }
 
-std::vector<std::string> GetMeetingMemberResult::getMembers()const
-{
-	return members_;
-}
-
 bool GetMeetingMemberResult::getSuccess()const
 {
 	return success_;
+}
+
+std::string GetMeetingMemberResult::getMembers()const
+{
+	return members_;
 }
 

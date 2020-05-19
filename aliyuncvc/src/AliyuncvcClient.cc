@@ -51,6 +51,42 @@ AliyuncvcClient::AliyuncvcClient(const std::string & accessKeyId, const std::str
 AliyuncvcClient::~AliyuncvcClient()
 {}
 
+AliyuncvcClient::ActiveDeviceOutcome AliyuncvcClient::activeDevice(const ActiveDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ActiveDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ActiveDeviceOutcome(ActiveDeviceResult(outcome.result()));
+	else
+		return ActiveDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::activeDeviceAsync(const ActiveDeviceRequest& request, const ActiveDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, activeDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ActiveDeviceOutcomeCallable AliyuncvcClient::activeDeviceCallable(const ActiveDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ActiveDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->activeDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::ActiveMeetingOutcome AliyuncvcClient::activeMeeting(const ActiveMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,78 @@ AliyuncvcClient::ActiveMeetingOutcomeCallable AliyuncvcClient::activeMeetingCall
 			[this, request]()
 			{
 			return this->activeMeeting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::BatchCreateDeviceOutcome AliyuncvcClient::batchCreateDevice(const BatchCreateDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCreateDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCreateDeviceOutcome(BatchCreateDeviceResult(outcome.result()));
+	else
+		return BatchCreateDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::batchCreateDeviceAsync(const BatchCreateDeviceRequest& request, const BatchCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCreateDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::BatchCreateDeviceOutcomeCallable AliyuncvcClient::batchCreateDeviceCallable(const BatchCreateDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCreateDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCreateDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::CreateDeviceMeetingOutcome AliyuncvcClient::createDeviceMeeting(const CreateDeviceMeetingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDeviceMeetingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDeviceMeetingOutcome(CreateDeviceMeetingResult(outcome.result()));
+	else
+		return CreateDeviceMeetingOutcome(outcome.error());
+}
+
+void AliyuncvcClient::createDeviceMeetingAsync(const CreateDeviceMeetingRequest& request, const CreateDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDeviceMeeting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CreateDeviceMeetingOutcomeCallable AliyuncvcClient::createDeviceMeetingCallable(const CreateDeviceMeetingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDeviceMeetingOutcome()>>(
+			[this, request]()
+			{
+			return this->createDeviceMeeting(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -123,6 +231,42 @@ AliyuncvcClient::CreateEvaluationOutcomeCallable AliyuncvcClient::createEvaluati
 	return task->get_future();
 }
 
+AliyuncvcClient::CreateLiveOutcome AliyuncvcClient::createLive(const CreateLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveOutcome(CreateLiveResult(outcome.result()));
+	else
+		return CreateLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::createLiveAsync(const CreateLiveRequest& request, const CreateLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CreateLiveOutcomeCallable AliyuncvcClient::createLiveCallable(const CreateLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->createLive(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::CreateMeetingOutcome AliyuncvcClient::createMeeting(const CreateMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -159,6 +303,42 @@ AliyuncvcClient::CreateMeetingOutcomeCallable AliyuncvcClient::createMeetingCall
 	return task->get_future();
 }
 
+AliyuncvcClient::CreateMeetingInternationalOutcome AliyuncvcClient::createMeetingInternational(const CreateMeetingInternationalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMeetingInternationalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMeetingInternationalOutcome(CreateMeetingInternationalResult(outcome.result()));
+	else
+		return CreateMeetingInternationalOutcome(outcome.error());
+}
+
+void AliyuncvcClient::createMeetingInternationalAsync(const CreateMeetingInternationalRequest& request, const CreateMeetingInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMeetingInternational(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CreateMeetingInternationalOutcomeCallable AliyuncvcClient::createMeetingInternationalCallable(const CreateMeetingInternationalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMeetingInternationalOutcome()>>(
+			[this, request]()
+			{
+			return this->createMeetingInternational(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::CreateUserOutcome AliyuncvcClient::createUser(const CreateUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +369,114 @@ AliyuncvcClient::CreateUserOutcomeCallable AliyuncvcClient::createUserCallable(c
 			[this, request]()
 			{
 			return this->createUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::CreateUserInternationalOutcome AliyuncvcClient::createUserInternational(const CreateUserInternationalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserInternationalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserInternationalOutcome(CreateUserInternationalResult(outcome.result()));
+	else
+		return CreateUserInternationalOutcome(outcome.error());
+}
+
+void AliyuncvcClient::createUserInternationalAsync(const CreateUserInternationalRequest& request, const CreateUserInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUserInternational(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CreateUserInternationalOutcomeCallable AliyuncvcClient::createUserInternationalCallable(const CreateUserInternationalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserInternationalOutcome()>>(
+			[this, request]()
+			{
+			return this->createUserInternational(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::DeleteDeviceOutcome AliyuncvcClient::deleteDevice(const DeleteDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDeviceOutcome(DeleteDeviceResult(outcome.result()));
+	else
+		return DeleteDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::deleteDeviceAsync(const DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::DeleteDeviceOutcomeCallable AliyuncvcClient::deleteDeviceCallable(const DeleteDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::DeleteLiveOutcome AliyuncvcClient::deleteLive(const DeleteLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveOutcome(DeleteLiveResult(outcome.result()));
+	else
+		return DeleteLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::deleteLiveAsync(const DeleteLiveRequest& request, const DeleteLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::DeleteLiveOutcomeCallable AliyuncvcClient::deleteLiveCallable(const DeleteLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLive(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,6 +555,150 @@ AliyuncvcClient::DeleteUserOutcomeCallable AliyuncvcClient::deleteUserCallable(c
 	return task->get_future();
 }
 
+AliyuncvcClient::EndDeviceMeetingOutcome AliyuncvcClient::endDeviceMeeting(const EndDeviceMeetingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EndDeviceMeetingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EndDeviceMeetingOutcome(EndDeviceMeetingResult(outcome.result()));
+	else
+		return EndDeviceMeetingOutcome(outcome.error());
+}
+
+void AliyuncvcClient::endDeviceMeetingAsync(const EndDeviceMeetingRequest& request, const EndDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, endDeviceMeeting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::EndDeviceMeetingOutcomeCallable AliyuncvcClient::endDeviceMeetingCallable(const EndDeviceMeetingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EndDeviceMeetingOutcome()>>(
+			[this, request]()
+			{
+			return this->endDeviceMeeting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::EndLiveOutcome AliyuncvcClient::endLive(const EndLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EndLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EndLiveOutcome(EndLiveResult(outcome.result()));
+	else
+		return EndLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::endLiveAsync(const EndLiveRequest& request, const EndLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, endLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::EndLiveOutcomeCallable AliyuncvcClient::endLiveCallable(const EndLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EndLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->endLive(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::GetDeviceActiveCodeOutcome AliyuncvcClient::getDeviceActiveCode(const GetDeviceActiveCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceActiveCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceActiveCodeOutcome(GetDeviceActiveCodeResult(outcome.result()));
+	else
+		return GetDeviceActiveCodeOutcome(outcome.error());
+}
+
+void AliyuncvcClient::getDeviceActiveCodeAsync(const GetDeviceActiveCodeRequest& request, const GetDeviceActiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceActiveCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::GetDeviceActiveCodeOutcomeCallable AliyuncvcClient::getDeviceActiveCodeCallable(const GetDeviceActiveCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceActiveCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceActiveCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::GetDeviceTokenOutcome AliyuncvcClient::getDeviceToken(const GetDeviceTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceTokenOutcome(GetDeviceTokenResult(outcome.result()));
+	else
+		return GetDeviceTokenOutcome(outcome.error());
+}
+
+void AliyuncvcClient::getDeviceTokenAsync(const GetDeviceTokenRequest& request, const GetDeviceTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::GetDeviceTokenOutcomeCallable AliyuncvcClient::getDeviceTokenCallable(const GetDeviceTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::GetMeetingOutcome AliyuncvcClient::getMeeting(const GetMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +729,42 @@ AliyuncvcClient::GetMeetingOutcomeCallable AliyuncvcClient::getMeetingCallable(c
 			[this, request]()
 			{
 			return this->getMeeting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::GetMeetingInternationalOutcome AliyuncvcClient::getMeetingInternational(const GetMeetingInternationalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMeetingInternationalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMeetingInternationalOutcome(GetMeetingInternationalResult(outcome.result()));
+	else
+		return GetMeetingInternationalOutcome(outcome.error());
+}
+
+void AliyuncvcClient::getMeetingInternationalAsync(const GetMeetingInternationalRequest& request, const GetMeetingInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMeetingInternational(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::GetMeetingInternationalOutcomeCallable AliyuncvcClient::getMeetingInternationalCallable(const GetMeetingInternationalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMeetingInternationalOutcome()>>(
+			[this, request]()
+			{
+			return this->getMeetingInternational(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +843,78 @@ AliyuncvcClient::GetUserOutcomeCallable AliyuncvcClient::getUserCallable(const G
 	return task->get_future();
 }
 
+AliyuncvcClient::JoinDeviceMeetingOutcome AliyuncvcClient::joinDeviceMeeting(const JoinDeviceMeetingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return JoinDeviceMeetingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return JoinDeviceMeetingOutcome(JoinDeviceMeetingResult(outcome.result()));
+	else
+		return JoinDeviceMeetingOutcome(outcome.error());
+}
+
+void AliyuncvcClient::joinDeviceMeetingAsync(const JoinDeviceMeetingRequest& request, const JoinDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, joinDeviceMeeting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::JoinDeviceMeetingOutcomeCallable AliyuncvcClient::joinDeviceMeetingCallable(const JoinDeviceMeetingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<JoinDeviceMeetingOutcome()>>(
+			[this, request]()
+			{
+			return this->joinDeviceMeeting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::JoinLiveOutcome AliyuncvcClient::joinLive(const JoinLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return JoinLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return JoinLiveOutcome(JoinLiveResult(outcome.result()));
+	else
+		return JoinLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::joinLiveAsync(const JoinLiveRequest& request, const JoinLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, joinLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::JoinLiveOutcomeCallable AliyuncvcClient::joinLiveCallable(const JoinLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<JoinLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->joinLive(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::JoinMeetingOutcome AliyuncvcClient::joinMeeting(const JoinMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +945,78 @@ AliyuncvcClient::JoinMeetingOutcomeCallable AliyuncvcClient::joinMeetingCallable
 			[this, request]()
 			{
 			return this->joinMeeting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::JoinMeetingInternationalOutcome AliyuncvcClient::joinMeetingInternational(const JoinMeetingInternationalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return JoinMeetingInternationalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return JoinMeetingInternationalOutcome(JoinMeetingInternationalResult(outcome.result()));
+	else
+		return JoinMeetingInternationalOutcome(outcome.error());
+}
+
+void AliyuncvcClient::joinMeetingInternationalAsync(const JoinMeetingInternationalRequest& request, const JoinMeetingInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, joinMeetingInternational(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::JoinMeetingInternationalOutcomeCallable AliyuncvcClient::joinMeetingInternationalCallable(const JoinMeetingInternationalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<JoinMeetingInternationalOutcome()>>(
+			[this, request]()
+			{
+			return this->joinMeetingInternational(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::ListDeviceIpOutcome AliyuncvcClient::listDeviceIp(const ListDeviceIpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceIpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceIpOutcome(ListDeviceIpResult(outcome.result()));
+	else
+		return ListDeviceIpOutcome(outcome.error());
+}
+
+void AliyuncvcClient::listDeviceIpAsync(const ListDeviceIpRequest& request, const ListDeviceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceIp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ListDeviceIpOutcomeCallable AliyuncvcClient::listDeviceIpCallable(const ListDeviceIpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceIpOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceIp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +1161,258 @@ AliyuncvcClient::ListUsersOutcomeCallable AliyuncvcClient::listUsersCallable(con
 			[this, request]()
 			{
 			return this->listUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::ModifyMeetingPasswordOutcome AliyuncvcClient::modifyMeetingPassword(const ModifyMeetingPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyMeetingPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyMeetingPasswordOutcome(ModifyMeetingPasswordResult(outcome.result()));
+	else
+		return ModifyMeetingPasswordOutcome(outcome.error());
+}
+
+void AliyuncvcClient::modifyMeetingPasswordAsync(const ModifyMeetingPasswordRequest& request, const ModifyMeetingPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyMeetingPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ModifyMeetingPasswordOutcomeCallable AliyuncvcClient::modifyMeetingPasswordCallable(const ModifyMeetingPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyMeetingPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyMeetingPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::ModifyMeetingPasswordInternationalOutcome AliyuncvcClient::modifyMeetingPasswordInternational(const ModifyMeetingPasswordInternationalRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyMeetingPasswordInternationalOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyMeetingPasswordInternationalOutcome(ModifyMeetingPasswordInternationalResult(outcome.result()));
+	else
+		return ModifyMeetingPasswordInternationalOutcome(outcome.error());
+}
+
+void AliyuncvcClient::modifyMeetingPasswordInternationalAsync(const ModifyMeetingPasswordInternationalRequest& request, const ModifyMeetingPasswordInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyMeetingPasswordInternational(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ModifyMeetingPasswordInternationalOutcomeCallable AliyuncvcClient::modifyMeetingPasswordInternationalCallable(const ModifyMeetingPasswordInternationalRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyMeetingPasswordInternationalOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyMeetingPasswordInternational(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::RegisterDeviceOutcome AliyuncvcClient::registerDevice(const RegisterDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterDeviceOutcome(RegisterDeviceResult(outcome.result()));
+	else
+		return RegisterDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::registerDeviceAsync(const RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::RegisterDeviceOutcomeCallable AliyuncvcClient::registerDeviceCallable(const RegisterDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->registerDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::RegisterUemDeviceOutcome AliyuncvcClient::registerUemDevice(const RegisterUemDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterUemDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterUemDeviceOutcome(RegisterUemDeviceResult(outcome.result()));
+	else
+		return RegisterUemDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::registerUemDeviceAsync(const RegisterUemDeviceRequest& request, const RegisterUemDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerUemDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::RegisterUemDeviceOutcomeCallable AliyuncvcClient::registerUemDeviceCallable(const RegisterUemDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterUemDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->registerUemDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::StartLiveOutcome AliyuncvcClient::startLive(const StartLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartLiveOutcome(StartLiveResult(outcome.result()));
+	else
+		return StartLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::startLiveAsync(const StartLiveRequest& request, const StartLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::StartLiveOutcomeCallable AliyuncvcClient::startLiveCallable(const StartLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->startLive(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::UpdateDeviceHeartBeatOutcome AliyuncvcClient::updateDeviceHeartBeat(const UpdateDeviceHeartBeatRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDeviceHeartBeatOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDeviceHeartBeatOutcome(UpdateDeviceHeartBeatResult(outcome.result()));
+	else
+		return UpdateDeviceHeartBeatOutcome(outcome.error());
+}
+
+void AliyuncvcClient::updateDeviceHeartBeatAsync(const UpdateDeviceHeartBeatRequest& request, const UpdateDeviceHeartBeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDeviceHeartBeat(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::UpdateDeviceHeartBeatOutcomeCallable AliyuncvcClient::updateDeviceHeartBeatCallable(const UpdateDeviceHeartBeatRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDeviceHeartBeatOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDeviceHeartBeat(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::UpdateLivePasswordOutcome AliyuncvcClient::updateLivePassword(const UpdateLivePasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLivePasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLivePasswordOutcome(UpdateLivePasswordResult(outcome.result()));
+	else
+		return UpdateLivePasswordOutcome(outcome.error());
+}
+
+void AliyuncvcClient::updateLivePasswordAsync(const UpdateLivePasswordRequest& request, const UpdateLivePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLivePassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::UpdateLivePasswordOutcomeCallable AliyuncvcClient::updateLivePasswordCallable(const UpdateLivePasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLivePasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLivePassword(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

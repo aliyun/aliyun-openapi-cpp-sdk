@@ -39,10 +39,22 @@ namespace AlibabaCloud
 				void setMeetingName(const std::string& meetingName);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
+				bool getOpenPasswordFlag()const;
+				void setOpenPasswordFlag(bool openPasswordFlag);
+				std::string getPassword()const;
+				void setPassword(const std::string& password);
+				bool getMasterEnableFlag()const;
+				void setMasterEnableFlag(bool masterEnableFlag);
+				std::string getMeetingMode()const;
+				void setMeetingMode(const std::string& meetingMode);
 
             private:
 				std::string meetingName_;
 				std::string userId_;
+				bool openPasswordFlag_;
+				std::string password_;
+				bool masterEnableFlag_;
+				std::string meetingMode_;
 
 			};
 		}

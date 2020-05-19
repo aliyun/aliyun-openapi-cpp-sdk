@@ -52,6 +52,8 @@ void GetMeetingResult::parse(const std::string &payload)
 		meetingInfo_.userId = meetingInfoNode["UserId"].asString();
 	if(!meetingInfoNode["MeetingUUID"].isNull())
 		meetingInfo_.meetingUUID = meetingInfoNode["MeetingUUID"].asString();
+	if(!meetingInfoNode["Password"].isNull())
+		meetingInfo_.password = meetingInfoNode["Password"].asString();
 	auto allMemberListNode = meetingInfoNode["MemberList"]["MemberListItem"];
 	for (auto meetingInfoNodeMemberListMemberListItem : allMemberListNode)
 	{

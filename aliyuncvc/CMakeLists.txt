@@ -21,26 +21,60 @@ set(aliyuncvc_public_header
 	include/alibabacloud/aliyuncvc/AliyuncvcExport.h )
 
 set(aliyuncvc_public_header_model 
+	include/alibabacloud/aliyuncvc/model/ActiveDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/ActiveDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/ActiveMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/ActiveMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/BatchCreateDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/BatchCreateDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/CreateEvaluationRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateEvaluationResult.h
+	include/alibabacloud/aliyuncvc/model/CreateLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/CreateLiveResult.h
 	include/alibabacloud/aliyuncvc/model/CreateMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/CreateMeetingInternationalRequest.h
+	include/alibabacloud/aliyuncvc/model/CreateMeetingInternationalResult.h
 	include/alibabacloud/aliyuncvc/model/CreateUserRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateUserResult.h
+	include/alibabacloud/aliyuncvc/model/CreateUserInternationalRequest.h
+	include/alibabacloud/aliyuncvc/model/CreateUserInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/DeleteDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/DeleteDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/DeleteLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/DeleteLiveResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserResult.h
+	include/alibabacloud/aliyuncvc/model/EndDeviceMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/EndDeviceMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/EndLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/EndLiveResult.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeRequest.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeResult.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceTokenRequest.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceTokenResult.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/GetMeetingInternationalRequest.h
+	include/alibabacloud/aliyuncvc/model/GetMeetingInternationalResult.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberRequest.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberResult.h
 	include/alibabacloud/aliyuncvc/model/GetUserRequest.h
 	include/alibabacloud/aliyuncvc/model/GetUserResult.h
+	include/alibabacloud/aliyuncvc/model/JoinDeviceMeetingRequest.h
+	include/alibabacloud/aliyuncvc/model/JoinDeviceMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/JoinLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/JoinLiveResult.h
 	include/alibabacloud/aliyuncvc/model/JoinMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/JoinMeetingResult.h
+	include/alibabacloud/aliyuncvc/model/JoinMeetingInternationalRequest.h
+	include/alibabacloud/aliyuncvc/model/JoinMeetingInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/ListDeviceIpRequest.h
+	include/alibabacloud/aliyuncvc/model/ListDeviceIpResult.h
 	include/alibabacloud/aliyuncvc/model/ListEvaluationsRequest.h
 	include/alibabacloud/aliyuncvc/model/ListEvaluationsResult.h
 	include/alibabacloud/aliyuncvc/model/ListIsvStatisticsRequest.h
@@ -48,30 +82,78 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/ListMembersRequest.h
 	include/alibabacloud/aliyuncvc/model/ListMembersResult.h
 	include/alibabacloud/aliyuncvc/model/ListUsersRequest.h
-	include/alibabacloud/aliyuncvc/model/ListUsersResult.h )
+	include/alibabacloud/aliyuncvc/model/ListUsersResult.h
+	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordRequest.h
+	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordResult.h
+	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalRequest.h
+	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/RegisterDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/RegisterDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/StartLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/StartLiveResult.h
+	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatRequest.h
+	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatResult.h
+	include/alibabacloud/aliyuncvc/model/UpdateLivePasswordRequest.h
+	include/alibabacloud/aliyuncvc/model/UpdateLivePasswordResult.h )
 
 set(aliyuncvc_src 
 	src/AliyuncvcClient.cc
+	src/model/ActiveDeviceRequest.cc
+	src/model/ActiveDeviceResult.cc
 	src/model/ActiveMeetingRequest.cc
 	src/model/ActiveMeetingResult.cc
+	src/model/BatchCreateDeviceRequest.cc
+	src/model/BatchCreateDeviceResult.cc
+	src/model/CreateDeviceMeetingRequest.cc
+	src/model/CreateDeviceMeetingResult.cc
 	src/model/CreateEvaluationRequest.cc
 	src/model/CreateEvaluationResult.cc
+	src/model/CreateLiveRequest.cc
+	src/model/CreateLiveResult.cc
 	src/model/CreateMeetingRequest.cc
 	src/model/CreateMeetingResult.cc
+	src/model/CreateMeetingInternationalRequest.cc
+	src/model/CreateMeetingInternationalResult.cc
 	src/model/CreateUserRequest.cc
 	src/model/CreateUserResult.cc
+	src/model/CreateUserInternationalRequest.cc
+	src/model/CreateUserInternationalResult.cc
+	src/model/DeleteDeviceRequest.cc
+	src/model/DeleteDeviceResult.cc
+	src/model/DeleteLiveRequest.cc
+	src/model/DeleteLiveResult.cc
 	src/model/DeleteMeetingRequest.cc
 	src/model/DeleteMeetingResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
+	src/model/EndDeviceMeetingRequest.cc
+	src/model/EndDeviceMeetingResult.cc
+	src/model/EndLiveRequest.cc
+	src/model/EndLiveResult.cc
+	src/model/GetDeviceActiveCodeRequest.cc
+	src/model/GetDeviceActiveCodeResult.cc
+	src/model/GetDeviceTokenRequest.cc
+	src/model/GetDeviceTokenResult.cc
 	src/model/GetMeetingRequest.cc
 	src/model/GetMeetingResult.cc
+	src/model/GetMeetingInternationalRequest.cc
+	src/model/GetMeetingInternationalResult.cc
 	src/model/GetMeetingMemberRequest.cc
 	src/model/GetMeetingMemberResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/JoinDeviceMeetingRequest.cc
+	src/model/JoinDeviceMeetingResult.cc
+	src/model/JoinLiveRequest.cc
+	src/model/JoinLiveResult.cc
 	src/model/JoinMeetingRequest.cc
 	src/model/JoinMeetingResult.cc
+	src/model/JoinMeetingInternationalRequest.cc
+	src/model/JoinMeetingInternationalResult.cc
+	src/model/ListDeviceIpRequest.cc
+	src/model/ListDeviceIpResult.cc
 	src/model/ListEvaluationsRequest.cc
 	src/model/ListEvaluationsResult.cc
 	src/model/ListIsvStatisticsRequest.cc
@@ -79,7 +161,21 @@ set(aliyuncvc_src
 	src/model/ListMembersRequest.cc
 	src/model/ListMembersResult.cc
 	src/model/ListUsersRequest.cc
-	src/model/ListUsersResult.cc )
+	src/model/ListUsersResult.cc
+	src/model/ModifyMeetingPasswordRequest.cc
+	src/model/ModifyMeetingPasswordResult.cc
+	src/model/ModifyMeetingPasswordInternationalRequest.cc
+	src/model/ModifyMeetingPasswordInternationalResult.cc
+	src/model/RegisterDeviceRequest.cc
+	src/model/RegisterDeviceResult.cc
+	src/model/RegisterUemDeviceRequest.cc
+	src/model/RegisterUemDeviceResult.cc
+	src/model/StartLiveRequest.cc
+	src/model/StartLiveResult.cc
+	src/model/UpdateDeviceHeartBeatRequest.cc
+	src/model/UpdateDeviceHeartBeatResult.cc
+	src/model/UpdateLivePasswordRequest.cc
+	src/model/UpdateLivePasswordResult.cc )
 
 add_library(aliyuncvc ${LIB_TYPE}
 	${aliyuncvc_public_header}

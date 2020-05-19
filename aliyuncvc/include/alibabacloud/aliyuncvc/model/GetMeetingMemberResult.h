@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				~GetMeetingMemberResult();
 				std::string getMessage()const;
 				int getErrorCode()const;
-				std::vector<std::string> getMembers()const;
 				bool getSuccess()const;
+				std::string getMembers()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
 				int errorCode_;
-				std::vector<std::string> members_;
 				bool success_;
+				std::string members_;
 
 			};
 		}

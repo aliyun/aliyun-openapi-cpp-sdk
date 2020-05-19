@@ -38,6 +38,17 @@ void JoinMeetingRequest::setUserId(const std::string& userId)
 	setBodyParameter("UserId", userId);
 }
 
+std::string JoinMeetingRequest::getPassword()const
+{
+	return password_;
+}
+
+void JoinMeetingRequest::setPassword(const std::string& password)
+{
+	password_ = password;
+	setBodyParameter("Password", password);
+}
+
 std::string JoinMeetingRequest::getMeetingCode()const
 {
 	return meetingCode_;
