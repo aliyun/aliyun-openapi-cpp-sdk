@@ -69,7 +69,7 @@ void DescribeDomainAdvanceConfigsResult::parse(const std::string &payload)
 		if(!profileNode["ClusterType"].isNull())
 			domainConfigsObject.profile.clusterType = std::stoi(profileNode["ClusterType"].asString());
 		if(!profileNode["GSLBStatus"].isNull())
-			domainConfigsObject.profile.gSLBStatus = std::stoi(profileNode["GSLBStatus"].asString());
+			domainConfigsObject.profile.gSLBStatus = profileNode["GSLBStatus"].asString();
 		domainConfigs_.push_back(domainConfigsObject);
 	}
 

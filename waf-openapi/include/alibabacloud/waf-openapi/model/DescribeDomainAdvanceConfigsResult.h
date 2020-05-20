@@ -38,7 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string httpPort;
 						std::string rs;
-						int gSLBStatus;
+						std::string gSLBStatus;
 						int vipServiceStatus;
 						std::string http2Port;
 						int certStatus;
