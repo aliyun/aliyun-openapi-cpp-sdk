@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_GETCONSISTENCYSNAPSHOTRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_GETCONSISTENCYSNAPSHOTRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_CHECKSERVICELINKEDROLEFORDELETINGRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_CHECKSERVICELINKEDROLEFORDELETINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT GetConsistencySnapshotResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT CheckServiceLinkedRoleForDeletingResult : public ServiceResult
 			{
 			public:
+				struct RoleUsagesItem
+				{
+					std::string region;
+					std::vector<std::string> resources;
+				};
 
 
-				GetConsistencySnapshotResult();
-				explicit GetConsistencySnapshotResult(const std::string &payload);
-				~GetConsistencySnapshotResult();
-				std::string getConsistencyResultJsonStr()const;
+				CheckServiceLinkedRoleForDeletingResult();
+				explicit CheckServiceLinkedRoleForDeletingResult(const std::string &payload);
+				~CheckServiceLinkedRoleForDeletingResult();
+				bool getDeletable()const;
+				std::vector<RoleUsagesItem> getRoleUsages()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string consistencyResultJsonStr_;
+				bool deletable_;
+				std::vector<RoleUsagesItem> roleUsages_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_GETCONSISTENCYSNAPSHOTRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_CHECKSERVICELINKEDROLEFORDELETINGRESULT_H_

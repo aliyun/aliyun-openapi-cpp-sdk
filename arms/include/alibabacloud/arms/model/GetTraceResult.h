@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::string operationName;
 					std::string serviceName;
 					std::string rpcId;
+					int rpcType;
 					std::string traceID;
 					long duration;
 					std::vector<Span::TagEntry> tagEntryList;

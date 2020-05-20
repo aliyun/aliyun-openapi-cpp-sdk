@@ -159,6 +159,42 @@ ARMSClient::CheckDataConsistencyOutcomeCallable ARMSClient::checkDataConsistency
 	return task->get_future();
 }
 
+ARMSClient::CheckServiceLinkedRoleForDeletingOutcome ARMSClient::checkServiceLinkedRoleForDeleting(const CheckServiceLinkedRoleForDeletingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckServiceLinkedRoleForDeletingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckServiceLinkedRoleForDeletingOutcome(CheckServiceLinkedRoleForDeletingResult(outcome.result()));
+	else
+		return CheckServiceLinkedRoleForDeletingOutcome(outcome.error());
+}
+
+void ARMSClient::checkServiceLinkedRoleForDeletingAsync(const CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkServiceLinkedRoleForDeleting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CheckServiceLinkedRoleForDeletingOutcomeCallable ARMSClient::checkServiceLinkedRoleForDeletingCallable(const CheckServiceLinkedRoleForDeletingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckServiceLinkedRoleForDeletingOutcome()>>(
+			[this, request]()
+			{
+			return this->checkServiceLinkedRoleForDeleting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateAlertContactOutcome ARMSClient::createAlertContact(const CreateAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

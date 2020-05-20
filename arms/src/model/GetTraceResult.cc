@@ -61,6 +61,8 @@ void GetTraceResult::parse(const std::string &payload)
 			spansObject.resultCode = valueSpansSpan["ResultCode"].asString();
 		if(!valueSpansSpan["HaveStack"].isNull())
 			spansObject.haveStack = valueSpansSpan["HaveStack"].asString() == "true";
+		if(!valueSpansSpan["RpcType"].isNull())
+			spansObject.rpcType = std::stoi(valueSpansSpan["RpcType"].asString());
 		auto allTagEntryListNode = allSpansNode["TagEntryList"]["TagEntry"];
 		for (auto allSpansNodeTagEntryListTagEntry : allTagEntryListNode)
 		{

@@ -28,6 +28,8 @@
 #include "model/AddIntegrationResult.h"
 #include "model/CheckDataConsistencyRequest.h"
 #include "model/CheckDataConsistencyResult.h"
+#include "model/CheckServiceLinkedRoleForDeletingRequest.h"
+#include "model/CheckServiceLinkedRoleForDeletingResult.h"
 #include "model/CreateAlertContactRequest.h"
 #include "model/CreateAlertContactResult.h"
 #include "model/CreateAlertContactGroupRequest.h"
@@ -116,6 +118,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckDataConsistencyResult> CheckDataConsistencyOutcome;
 			typedef std::future<CheckDataConsistencyOutcome> CheckDataConsistencyOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CheckDataConsistencyRequest&, const CheckDataConsistencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDataConsistencyAsyncHandler;
+			typedef Outcome<Error, Model::CheckServiceLinkedRoleForDeletingResult> CheckServiceLinkedRoleForDeletingOutcome;
+			typedef std::future<CheckServiceLinkedRoleForDeletingOutcome> CheckServiceLinkedRoleForDeletingOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::CheckServiceLinkedRoleForDeletingRequest&, const CheckServiceLinkedRoleForDeletingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleForDeletingAsyncHandler;
 			typedef Outcome<Error, Model::CreateAlertContactResult> CreateAlertContactOutcome;
 			typedef std::future<CreateAlertContactOutcome> CreateAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateAlertContactRequest&, const CreateAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertContactAsyncHandler;
@@ -235,6 +240,9 @@ namespace AlibabaCloud
 			CheckDataConsistencyOutcome checkDataConsistency(const Model::CheckDataConsistencyRequest &request)const;
 			void checkDataConsistencyAsync(const Model::CheckDataConsistencyRequest& request, const CheckDataConsistencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDataConsistencyOutcomeCallable checkDataConsistencyCallable(const Model::CheckDataConsistencyRequest& request) const;
+			CheckServiceLinkedRoleForDeletingOutcome checkServiceLinkedRoleForDeleting(const Model::CheckServiceLinkedRoleForDeletingRequest &request)const;
+			void checkServiceLinkedRoleForDeletingAsync(const Model::CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckServiceLinkedRoleForDeletingOutcomeCallable checkServiceLinkedRoleForDeletingCallable(const Model::CheckServiceLinkedRoleForDeletingRequest& request) const;
 			CreateAlertContactOutcome createAlertContact(const Model::CreateAlertContactRequest &request)const;
 			void createAlertContactAsync(const Model::CreateAlertContactRequest& request, const CreateAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlertContactOutcomeCallable createAlertContactCallable(const Model::CreateAlertContactRequest& request) const;
