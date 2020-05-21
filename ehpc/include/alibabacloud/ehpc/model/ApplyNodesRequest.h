@@ -68,8 +68,8 @@ namespace AlibabaCloud
 				void setZoneInfos(const std::vector<ZoneInfos>& zoneInfos);
 				std::string getHostNamePrefix()const;
 				void setHostNamePrefix(const std::string& hostNamePrefix);
-				std::string getComputeSpotPriceLimit()const;
-				void setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit);
+				float getComputeSpotPriceLimit()const;
+				void setComputeSpotPriceLimit(float computeSpotPriceLimit);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getComputeSpotStrategy()const;
@@ -80,8 +80,6 @@ namespace AlibabaCloud
 				void setPriorityStrategy(const std::string& priorityStrategy);
 				std::string getInstanceFamilyLevel()const;
 				void setInstanceFamilyLevel(const std::string& instanceFamilyLevel);
-				std::string getEcsChargeType()const;
-				void setEcsChargeType(const std::string& ecsChargeType);
 				std::string getInternetChargeType()const;
 				void setInternetChargeType(const std::string& internetChargeType);
 				std::vector<InstanceTypeModel> getInstanceTypeModel()const;
@@ -105,13 +103,12 @@ namespace AlibabaCloud
 				int systemDiskSize_;
 				std::vector<ZoneInfos> zoneInfos_;
 				std::string hostNamePrefix_;
-				std::string computeSpotPriceLimit_;
+				float computeSpotPriceLimit_;
 				std::string clusterId_;
 				std::string computeSpotStrategy_;
 				std::string hostNameSuffix_;
 				std::string priorityStrategy_;
 				std::string instanceFamilyLevel_;
-				std::string ecsChargeType_;
 				std::string internetChargeType_;
 				std::vector<InstanceTypeModel> instanceTypeModel_;
 				int internetMaxBandWidthIn_;

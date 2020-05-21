@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				ApplyNodesResult();
 				explicit ApplyNodesResult(const std::string &payload);
 				~ApplyNodesResult();
+				int getSatisfiedAmount()const;
 				std::vector<std::string> getInstanceIds()const;
 				std::string getDetail()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int satisfiedAmount_;
 				std::vector<std::string> instanceIds_;
 				std::string detail_;
 

@@ -153,15 +153,15 @@ void ApplyNodesRequest::setHostNamePrefix(const std::string& hostNamePrefix)
 	setParameter("HostNamePrefix", hostNamePrefix);
 }
 
-std::string ApplyNodesRequest::getComputeSpotPriceLimit()const
+float ApplyNodesRequest::getComputeSpotPriceLimit()const
 {
 	return computeSpotPriceLimit_;
 }
 
-void ApplyNodesRequest::setComputeSpotPriceLimit(const std::string& computeSpotPriceLimit)
+void ApplyNodesRequest::setComputeSpotPriceLimit(float computeSpotPriceLimit)
 {
 	computeSpotPriceLimit_ = computeSpotPriceLimit;
-	setParameter("ComputeSpotPriceLimit", computeSpotPriceLimit);
+	setParameter("ComputeSpotPriceLimit", std::to_string(computeSpotPriceLimit));
 }
 
 std::string ApplyNodesRequest::getClusterId()const
@@ -217,17 +217,6 @@ void ApplyNodesRequest::setInstanceFamilyLevel(const std::string& instanceFamily
 {
 	instanceFamilyLevel_ = instanceFamilyLevel;
 	setParameter("InstanceFamilyLevel", instanceFamilyLevel);
-}
-
-std::string ApplyNodesRequest::getEcsChargeType()const
-{
-	return ecsChargeType_;
-}
-
-void ApplyNodesRequest::setEcsChargeType(const std::string& ecsChargeType)
-{
-	ecsChargeType_ = ecsChargeType;
-	setParameter("EcsChargeType", ecsChargeType);
 }
 
 std::string ApplyNodesRequest::getInternetChargeType()const

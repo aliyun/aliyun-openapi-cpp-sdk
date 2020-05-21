@@ -44,7 +44,14 @@ void ApplyNodesResult::parse(const std::string &payload)
 		instanceIds_.push_back(item.asString());
 	if(!value["Detail"].isNull())
 		detail_ = value["Detail"].asString();
+	if(!value["SatisfiedAmount"].isNull())
+		satisfiedAmount_ = std::stoi(value["SatisfiedAmount"].asString());
 
+}
+
+int ApplyNodesResult::getSatisfiedAmount()const
+{
+	return satisfiedAmount_;
 }
 
 std::vector<std::string> ApplyNodesResult::getInstanceIds()const
