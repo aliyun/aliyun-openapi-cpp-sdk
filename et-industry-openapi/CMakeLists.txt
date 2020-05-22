@@ -22,16 +22,12 @@ set(et-industry-openapi_public_header
 
 set(et-industry-openapi_public_header_model 
 	include/alibabacloud/et-industry-openapi/model/UploadDeviceDataRequest.h
-	include/alibabacloud/et-industry-openapi/model/UploadDeviceDataResult.h
-	include/alibabacloud/et-industry-openapi/model/UploadDeviceDataDCRequest.h
-	include/alibabacloud/et-industry-openapi/model/UploadDeviceDataDCResult.h )
+	include/alibabacloud/et-industry-openapi/model/UploadDeviceDataResult.h )
 
 set(et-industry-openapi_src 
 	src/Et-industry-openapiClient.cc
 	src/model/UploadDeviceDataRequest.cc
-	src/model/UploadDeviceDataResult.cc
-	src/model/UploadDeviceDataDCRequest.cc
-	src/model/UploadDeviceDataDCResult.cc )
+	src/model/UploadDeviceDataResult.cc )
 
 add_library(et-industry-openapi ${LIB_TYPE}
 	${et-industry-openapi_public_header}

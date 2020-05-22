@@ -24,8 +24,6 @@
 #include "Et_industry_openapiExport.h"
 #include "model/UploadDeviceDataRequest.h"
 #include "model/UploadDeviceDataResult.h"
-#include "model/UploadDeviceDataDCRequest.h"
-#include "model/UploadDeviceDataDCResult.h"
 
 
 namespace AlibabaCloud
@@ -38,9 +36,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UploadDeviceDataResult> UploadDeviceDataOutcome;
 			typedef std::future<UploadDeviceDataOutcome> UploadDeviceDataOutcomeCallable;
 			typedef std::function<void(const Et_industry_openapiClient*, const Model::UploadDeviceDataRequest&, const UploadDeviceDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadDeviceDataAsyncHandler;
-			typedef Outcome<Error, Model::UploadDeviceDataDCResult> UploadDeviceDataDCOutcome;
-			typedef std::future<UploadDeviceDataDCOutcome> UploadDeviceDataDCOutcomeCallable;
-			typedef std::function<void(const Et_industry_openapiClient*, const Model::UploadDeviceDataDCRequest&, const UploadDeviceDataDCOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadDeviceDataDCAsyncHandler;
 
 			Et_industry_openapiClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Et_industry_openapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -49,9 +44,6 @@ namespace AlibabaCloud
 			UploadDeviceDataOutcome uploadDeviceData(const Model::UploadDeviceDataRequest &request)const;
 			void uploadDeviceDataAsync(const Model::UploadDeviceDataRequest& request, const UploadDeviceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadDeviceDataOutcomeCallable uploadDeviceDataCallable(const Model::UploadDeviceDataRequest& request) const;
-			UploadDeviceDataDCOutcome uploadDeviceDataDC(const Model::UploadDeviceDataDCRequest &request)const;
-			void uploadDeviceDataDCAsync(const Model::UploadDeviceDataDCRequest& request, const UploadDeviceDataDCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UploadDeviceDataDCOutcomeCallable uploadDeviceDataDCCallable(const Model::UploadDeviceDataDCRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
