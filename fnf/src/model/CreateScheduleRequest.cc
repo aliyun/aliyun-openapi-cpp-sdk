@@ -1,0 +1,106 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/fnf/model/CreateScheduleRequest.h>
+
+using AlibabaCloud::Fnf::Model::CreateScheduleRequest;
+
+CreateScheduleRequest::CreateScheduleRequest() :
+	RpcServiceRequest("fnf", "2019-03-15", "CreateSchedule")
+{
+	setMethod(HttpRequest::Method::Post);
+}
+
+CreateScheduleRequest::~CreateScheduleRequest()
+{}
+
+std::string CreateScheduleRequest::getScheduleName()const
+{
+	return scheduleName_;
+}
+
+void CreateScheduleRequest::setScheduleName(const std::string& scheduleName)
+{
+	scheduleName_ = scheduleName;
+	setBodyParameter("ScheduleName", scheduleName);
+}
+
+std::string CreateScheduleRequest::getCronExpression()const
+{
+	return cronExpression_;
+}
+
+void CreateScheduleRequest::setCronExpression(const std::string& cronExpression)
+{
+	cronExpression_ = cronExpression;
+	setBodyParameter("CronExpression", cronExpression);
+}
+
+std::string CreateScheduleRequest::getPayload()const
+{
+	return payload_;
+}
+
+void CreateScheduleRequest::setPayload(const std::string& payload)
+{
+	payload_ = payload;
+	setBodyParameter("Payload", payload);
+}
+
+std::string CreateScheduleRequest::getRequestId()const
+{
+	return requestId_;
+}
+
+void CreateScheduleRequest::setRequestId(const std::string& requestId)
+{
+	requestId_ = requestId;
+	setParameter("RequestId", requestId);
+}
+
+bool CreateScheduleRequest::getEnable()const
+{
+	return enable_;
+}
+
+void CreateScheduleRequest::setEnable(bool enable)
+{
+	enable_ = enable;
+	setBodyParameter("Enable", enable ? "true" : "false");
+}
+
+std::string CreateScheduleRequest::getDescription()const
+{
+	return description_;
+}
+
+void CreateScheduleRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setBodyParameter("Description", description);
+}
+
+std::string CreateScheduleRequest::getFlowName()const
+{
+	return flowName_;
+}
+
+void CreateScheduleRequest::setFlowName(const std::string& flowName)
+{
+	flowName_ = flowName;
+	setBodyParameter("FlowName", flowName);
+}
+

@@ -31,21 +31,21 @@ FnfClient::FnfClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "fnf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FnfClient::FnfClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "fnf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FnfClient::FnfClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "fnf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FnfClient::~FnfClient()
@@ -87,6 +87,42 @@ FnfClient::CreateFlowOutcomeCallable FnfClient::createFlowCallable(const CreateF
 	return task->get_future();
 }
 
+FnfClient::CreateScheduleOutcome FnfClient::createSchedule(const CreateScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateScheduleOutcome(CreateScheduleResult(outcome.result()));
+	else
+		return CreateScheduleOutcome(outcome.error());
+}
+
+void FnfClient::createScheduleAsync(const CreateScheduleRequest& request, const CreateScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::CreateScheduleOutcomeCallable FnfClient::createScheduleCallable(const CreateScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->createSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FnfClient::DeleteFlowOutcome FnfClient::deleteFlow(const DeleteFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +153,42 @@ FnfClient::DeleteFlowOutcomeCallable FnfClient::deleteFlowCallable(const DeleteF
 			[this, request]()
 			{
 			return this->deleteFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::DeleteScheduleOutcome FnfClient::deleteSchedule(const DeleteScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScheduleOutcome(DeleteScheduleResult(outcome.result()));
+	else
+		return DeleteScheduleOutcome(outcome.error());
+}
+
+void FnfClient::deleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::DeleteScheduleOutcomeCallable FnfClient::deleteScheduleCallable(const DeleteScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -189,6 +261,42 @@ FnfClient::DescribeFlowOutcomeCallable FnfClient::describeFlowCallable(const Des
 			[this, request]()
 			{
 			return this->describeFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::DescribeScheduleOutcome FnfClient::describeSchedule(const DescribeScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScheduleOutcome(DescribeScheduleResult(outcome.result()));
+	else
+		return DescribeScheduleOutcome(outcome.error());
+}
+
+void FnfClient::describeScheduleAsync(const DescribeScheduleRequest& request, const DescribeScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::DescribeScheduleOutcomeCallable FnfClient::describeScheduleCallable(const DescribeScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -297,6 +405,42 @@ FnfClient::ListFlowsOutcomeCallable FnfClient::listFlowsCallable(const ListFlows
 			[this, request]()
 			{
 			return this->listFlows(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::ListSchedulesOutcome FnfClient::listSchedules(const ListSchedulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSchedulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSchedulesOutcome(ListSchedulesResult(outcome.result()));
+	else
+		return ListSchedulesOutcome(outcome.error());
+}
+
+void FnfClient::listSchedulesAsync(const ListSchedulesRequest& request, const ListSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSchedules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::ListSchedulesOutcomeCallable FnfClient::listSchedulesCallable(const ListSchedulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSchedulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSchedules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -477,6 +621,42 @@ FnfClient::UpdateFlowOutcomeCallable FnfClient::updateFlowCallable(const UpdateF
 			[this, request]()
 			{
 			return this->updateFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FnfClient::UpdateScheduleOutcome FnfClient::updateSchedule(const UpdateScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateScheduleOutcome(UpdateScheduleResult(outcome.result()));
+	else
+		return UpdateScheduleOutcome(outcome.error());
+}
+
+void FnfClient::updateScheduleAsync(const UpdateScheduleRequest& request, const UpdateScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FnfClient::UpdateScheduleOutcomeCallable FnfClient::updateScheduleCallable(const UpdateScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSchedule(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
