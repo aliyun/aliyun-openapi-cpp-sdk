@@ -82,6 +82,17 @@ void ModifySecurityIpsRequest::setSecurityToken(const std::string& securityToken
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifySecurityIpsRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifySecurityIpsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string ModifySecurityIpsRequest::getModifyMode()const
 {
 	return modifyMode_;

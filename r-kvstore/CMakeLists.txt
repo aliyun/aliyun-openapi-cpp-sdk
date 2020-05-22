@@ -145,6 +145,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifyInstanceVpcAuthModeResult.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyIntranetAttributeResult.h
+	include/alibabacloud/r-kvstore/model/ModifyResourceGroupRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyResourceGroupResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationRequest.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityGroupConfigurationResult.h
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsRequest.h
@@ -298,6 +300,8 @@ set(r-kvstore_src
 	src/model/ModifyInstanceVpcAuthModeResult.cc
 	src/model/ModifyIntranetAttributeRequest.cc
 	src/model/ModifyIntranetAttributeResult.cc
+	src/model/ModifyResourceGroupRequest.cc
+	src/model/ModifyResourceGroupResult.cc
 	src/model/ModifySecurityGroupConfigurationRequest.cc
 	src/model/ModifySecurityGroupConfigurationResult.cc
 	src/model/ModifySecurityIpsRequest.cc

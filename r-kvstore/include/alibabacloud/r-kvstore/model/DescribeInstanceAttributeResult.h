@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					long connections;
 					std::string endTime;
+					std::string resourceGroupId;
 					std::string config;
 					long port;
 					std::string hasRenewChangeOrder;

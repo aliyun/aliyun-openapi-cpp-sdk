@@ -2283,6 +2283,42 @@ R_kvstoreClient::ModifyIntranetAttributeOutcomeCallable R_kvstoreClient::modifyI
 	return task->get_future();
 }
 
+R_kvstoreClient::ModifyResourceGroupOutcome R_kvstoreClient::modifyResourceGroup(const ModifyResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyResourceGroupOutcome(ModifyResourceGroupResult(outcome.result()));
+	else
+		return ModifyResourceGroupOutcome(outcome.error());
+}
+
+void R_kvstoreClient::modifyResourceGroupAsync(const ModifyResourceGroupRequest& request, const ModifyResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ModifyResourceGroupOutcomeCallable R_kvstoreClient::modifyResourceGroupCallable(const ModifyResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ModifySecurityGroupConfigurationOutcome R_kvstoreClient::modifySecurityGroupConfiguration(const ModifySecurityGroupConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -121,6 +121,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 			instancesObject.vpcCloudInstanceId = valueInstancesDBInstanceAttribute["VpcCloudInstanceId"].asString();
 		if(!valueInstancesDBInstanceAttribute["InstanceReleaseProtection"].isNull())
 			instancesObject.instanceReleaseProtection = valueInstancesDBInstanceAttribute["InstanceReleaseProtection"].asString() == "true";
+		if(!valueInstancesDBInstanceAttribute["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesDBInstanceAttribute["ResourceGroupId"].asString();
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{
