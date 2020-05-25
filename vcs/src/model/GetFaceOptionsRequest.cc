@@ -14,38 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h>
+#include <alibabacloud/vcs/model/GetFaceOptionsRequest.h>
 
-using AlibabaCloud::Vcs::Model::GetDeviceLiveUrlRequest;
+using AlibabaCloud::Vcs::Model::GetFaceOptionsRequest;
 
-GetDeviceLiveUrlRequest::GetDeviceLiveUrlRequest() :
-	RpcServiceRequest("vcs", "2020-05-15", "GetDeviceLiveUrl")
+GetFaceOptionsRequest::GetFaceOptionsRequest() :
+	RpcServiceRequest("vcs", "2020-05-15", "GetFaceOptions")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetDeviceLiveUrlRequest::~GetDeviceLiveUrlRequest()
+GetFaceOptionsRequest::~GetFaceOptionsRequest()
 {}
 
-std::string GetDeviceLiveUrlRequest::getCorpId()const
+std::string GetFaceOptionsRequest::getCorpId()const
 {
 	return corpId_;
 }
 
-void GetDeviceLiveUrlRequest::setCorpId(const std::string& corpId)
+void GetFaceOptionsRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
-}
-
-std::string GetDeviceLiveUrlRequest::getGbId()const
-{
-	return gbId_;
-}
-
-void GetDeviceLiveUrlRequest::setGbId(const std::string& gbId)
-{
-	gbId_ = gbId;
-	setBodyParameter("GbId", gbId);
 }
 

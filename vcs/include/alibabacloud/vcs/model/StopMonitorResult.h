@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
-#define ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_STOPMONITORRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_STOPMONITORRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/vcs/VcsExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetDeviceLiveUrlRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VCS_EXPORT StopMonitorResult : public ServiceResult
 			{
-
 			public:
-				GetDeviceLiveUrlRequest();
-				~GetDeviceLiveUrlRequest();
 
-				std::string getCorpId()const;
-				void setCorpId(const std::string& corpId);
-				std::string getGbId()const;
-				void setGbId(const std::string& gbId);
 
-            private:
-				std::string corpId_;
-				std::string gbId_;
+				StopMonitorResult();
+				explicit StopMonitorResult(const std::string &payload);
+				~StopMonitorResult();
+				std::string getMessage()const;
+				std::string getData()const;
+				std::string getCode()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				std::string data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_STOPMONITORRESULT_H_

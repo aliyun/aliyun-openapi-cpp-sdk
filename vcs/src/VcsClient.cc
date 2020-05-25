@@ -87,6 +87,42 @@ VcsClient::AddDeviceOutcomeCallable VcsClient::addDeviceCallable(const AddDevice
 	return task->get_future();
 }
 
+VcsClient::AddMonitorOutcome VcsClient::addMonitor(const AddMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddMonitorOutcome(AddMonitorResult(outcome.result()));
+	else
+		return AddMonitorOutcome(outcome.error());
+}
+
+void VcsClient::addMonitorAsync(const AddMonitorRequest& request, const AddMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::AddMonitorOutcomeCallable VcsClient::addMonitorCallable(const AddMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->addMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::CreateCorpOutcome VcsClient::createCorp(const CreateCorpRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -159,6 +195,42 @@ VcsClient::DeleteDeviceOutcomeCallable VcsClient::deleteDeviceCallable(const Del
 	return task->get_future();
 }
 
+VcsClient::GetBodyOptionsOutcome VcsClient::getBodyOptions(const GetBodyOptionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetBodyOptionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetBodyOptionsOutcome(GetBodyOptionsResult(outcome.result()));
+	else
+		return GetBodyOptionsOutcome(outcome.error());
+}
+
+void VcsClient::getBodyOptionsAsync(const GetBodyOptionsRequest& request, const GetBodyOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getBodyOptions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetBodyOptionsOutcomeCallable VcsClient::getBodyOptionsCallable(const GetBodyOptionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetBodyOptionsOutcome()>>(
+			[this, request]()
+			{
+			return this->getBodyOptions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetDeviceLiveUrlOutcome VcsClient::getDeviceLiveUrl(const GetDeviceLiveUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,6 +267,78 @@ VcsClient::GetDeviceLiveUrlOutcomeCallable VcsClient::getDeviceLiveUrlCallable(c
 	return task->get_future();
 }
 
+VcsClient::GetDeviceVideoUrlOutcome VcsClient::getDeviceVideoUrl(const GetDeviceVideoUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceVideoUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceVideoUrlOutcome(GetDeviceVideoUrlResult(outcome.result()));
+	else
+		return GetDeviceVideoUrlOutcome(outcome.error());
+}
+
+void VcsClient::getDeviceVideoUrlAsync(const GetDeviceVideoUrlRequest& request, const GetDeviceVideoUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceVideoUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetDeviceVideoUrlOutcomeCallable VcsClient::getDeviceVideoUrlCallable(const GetDeviceVideoUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceVideoUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceVideoUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetFaceOptionsOutcome VcsClient::getFaceOptions(const GetFaceOptionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFaceOptionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFaceOptionsOutcome(GetFaceOptionsResult(outcome.result()));
+	else
+		return GetFaceOptionsOutcome(outcome.error());
+}
+
+void VcsClient::getFaceOptionsAsync(const GetFaceOptionsRequest& request, const GetFaceOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFaceOptions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetFaceOptionsOutcomeCallable VcsClient::getFaceOptionsCallable(const GetFaceOptionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFaceOptionsOutcome()>>(
+			[this, request]()
+			{
+			return this->getFaceOptions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetInventoryOutcome VcsClient::getInventory(const GetInventoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +369,42 @@ VcsClient::GetInventoryOutcomeCallable VcsClient::getInventoryCallable(const Get
 			[this, request]()
 			{
 			return this->getInventory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetMonitorResultOutcome VcsClient::getMonitorResult(const GetMonitorResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMonitorResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMonitorResultOutcome(GetMonitorResultResult(outcome.result()));
+	else
+		return GetMonitorResultOutcome(outcome.error());
+}
+
+void VcsClient::getMonitorResultAsync(const GetMonitorResultRequest& request, const GetMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMonitorResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetMonitorResultOutcomeCallable VcsClient::getMonitorResultCallable(const GetMonitorResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMonitorResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getMonitorResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +519,42 @@ VcsClient::RecognizeImageOutcomeCallable VcsClient::recognizeImageCallable(const
 	return task->get_future();
 }
 
+VcsClient::SearchBodyOutcome VcsClient::searchBody(const SearchBodyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchBodyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchBodyOutcome(SearchBodyResult(outcome.result()));
+	else
+		return SearchBodyOutcome(outcome.error());
+}
+
+void VcsClient::searchBodyAsync(const SearchBodyRequest& request, const SearchBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchBody(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SearchBodyOutcomeCallable VcsClient::searchBodyCallable(const SearchBodyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchBodyOutcome()>>(
+			[this, request]()
+			{
+			return this->searchBody(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::SearchFaceOutcome VcsClient::searchFace(const SearchFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +585,42 @@ VcsClient::SearchFaceOutcomeCallable VcsClient::searchFaceCallable(const SearchF
 			[this, request]()
 			{
 			return this->searchFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::StopMonitorOutcome VcsClient::stopMonitor(const StopMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopMonitorOutcome(StopMonitorResult(outcome.result()));
+	else
+		return StopMonitorOutcome(outcome.error());
+}
+
+void VcsClient::stopMonitorAsync(const StopMonitorRequest& request, const StopMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::StopMonitorOutcomeCallable VcsClient::stopMonitorCallable(const StopMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->stopMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,6 +693,42 @@ VcsClient::UpdateDeviceOutcomeCallable VcsClient::updateDeviceCallable(const Upd
 			[this, request]()
 			{
 			return this->updateDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UpdateMonitorOutcome VcsClient::updateMonitor(const UpdateMonitorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMonitorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMonitorOutcome(UpdateMonitorResult(outcome.result()));
+	else
+		return UpdateMonitorOutcome(outcome.error());
+}
+
+void VcsClient::updateMonitorAsync(const UpdateMonitorRequest& request, const UpdateMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMonitor(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UpdateMonitorOutcomeCallable VcsClient::updateMonitorCallable(const UpdateMonitorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMonitorOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMonitor(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

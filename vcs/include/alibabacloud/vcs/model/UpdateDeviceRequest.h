@@ -41,10 +41,10 @@ namespace AlibabaCloud
 				void setCorpId(const std::string& corpId);
 				std::string getGbId()const;
 				void setGbId(const std::string& gbId);
+				std::string getBitRate()const;
+				void setBitRate(const std::string& bitRate);
 				std::string getDeviceDirection()const;
 				void setDeviceDirection(const std::string& deviceDirection);
-				std::string getDeviceRate()const;
-				void setDeviceRate(const std::string& deviceRate);
 				std::string getDeviceAddress()const;
 				void setDeviceAddress(const std::string& deviceAddress);
 				std::string getDeviceType()const;
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				std::string deviceSite_;
 				std::string corpId_;
 				std::string gbId_;
+				std::string bitRate_;
 				std::string deviceDirection_;
-				std::string deviceRate_;
 				std::string deviceAddress_;
 				std::string deviceType_;
 				std::string deviceResolution_;

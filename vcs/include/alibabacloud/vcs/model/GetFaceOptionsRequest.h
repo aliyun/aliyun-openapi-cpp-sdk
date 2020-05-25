@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
-#define ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_GETFACEOPTIONSREQUEST_H_
+#define ALIBABACLOUD_VCS_MODEL_GETFACEOPTIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetDeviceLiveUrlRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VCS_EXPORT GetFaceOptionsRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetDeviceLiveUrlRequest();
-				~GetDeviceLiveUrlRequest();
+				GetFaceOptionsRequest();
+				~GetFaceOptionsRequest();
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getGbId()const;
-				void setGbId(const std::string& gbId);
 
             private:
 				std::string corpId_;
-				std::string gbId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETDEVICELIVEURLREQUEST_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_GETFACEOPTIONSREQUEST_H_

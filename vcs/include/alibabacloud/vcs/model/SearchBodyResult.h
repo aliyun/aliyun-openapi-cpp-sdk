@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_SEARCHBODYRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_SEARCHBODYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListDevicesResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT SearchBodyResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
 					struct Record
 					{
-						int status;
-						std::string accessProtocolType;
-						std::string coverImageUrl;
-						std::string sipServerIp;
-						std::string createTime;
-						std::string latitude;
-						std::string vendor;
-						std::string longitude;
-						std::string sipGBId;
-						std::string deviceDirection;
-						std::string sipPassword;
-						std::string deviceType;
-						std::string deviceAddress;
+						std::string targetImageUrl;
+						float score;
+						float rightBottomX;
+						float rightBottomY;
 						std::string gbId;
-						std::string bitRate;
-						std::string deviceSite;
-						std::string sipServerPort;
-						std::string deviceName;
-						std::string resolution;
+						std::string imageUrl;
+						float leftTopY;
+						float leftTopX;
 					};
 					int totalCount;
 					int pageSize;
 					int totalPage;
-					int pageNumber;
+					int pageNo;
 					std::vector<Record> records;
 				};
 
 
-				ListDevicesResult();
-				explicit ListDevicesResult(const std::string &payload);
-				~ListDevicesResult();
+				SearchBodyResult();
+				explicit SearchBodyResult(const std::string &payload);
+				~SearchBodyResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -82,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_SEARCHBODYRESULT_H_

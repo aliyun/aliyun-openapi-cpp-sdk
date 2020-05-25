@@ -58,8 +58,8 @@ void ListDevicesResult::parse(const std::string &payload)
 			recordObject.bitRate = dataNodeRecordsRecord["BitRate"].asString();
 		if(!dataNodeRecordsRecord["CoverImageUrl"].isNull())
 			recordObject.coverImageUrl = dataNodeRecordsRecord["CoverImageUrl"].asString();
-		if(!dataNodeRecordsRecord["GBid"].isNull())
-			recordObject.gBid = dataNodeRecordsRecord["GBid"].asString();
+		if(!dataNodeRecordsRecord["GbId"].isNull())
+			recordObject.gbId = dataNodeRecordsRecord["GbId"].asString();
 		if(!dataNodeRecordsRecord["DeviceAddress"].isNull())
 			recordObject.deviceAddress = dataNodeRecordsRecord["DeviceAddress"].asString();
 		if(!dataNodeRecordsRecord["DeviceDirection"].isNull())

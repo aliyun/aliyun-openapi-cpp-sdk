@@ -60,6 +60,17 @@ void AddDeviceRequest::setGbId(const std::string& gbId)
 	setBodyParameter("GbId", gbId);
 }
 
+std::string AddDeviceRequest::getBitRate()const
+{
+	return bitRate_;
+}
+
+void AddDeviceRequest::setBitRate(const std::string& bitRate)
+{
+	bitRate_ = bitRate;
+	setBodyParameter("BitRate", bitRate);
+}
+
 std::string AddDeviceRequest::getDeviceDirection()const
 {
 	return deviceDirection_;
@@ -69,17 +80,6 @@ void AddDeviceRequest::setDeviceDirection(const std::string& deviceDirection)
 {
 	deviceDirection_ = deviceDirection;
 	setBodyParameter("DeviceDirection", deviceDirection);
-}
-
-std::string AddDeviceRequest::getDeviceRate()const
-{
-	return deviceRate_;
-}
-
-void AddDeviceRequest::setDeviceRate(const std::string& deviceRate)
-{
-	deviceRate_ = deviceRate;
-	setBodyParameter("DeviceRate", deviceRate);
 }
 
 std::string AddDeviceRequest::getDeviceAddress()const

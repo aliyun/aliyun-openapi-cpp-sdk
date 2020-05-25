@@ -14,38 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h>
+#include <alibabacloud/vcs/model/StopMonitorRequest.h>
 
-using AlibabaCloud::Vcs::Model::GetDeviceLiveUrlRequest;
+using AlibabaCloud::Vcs::Model::StopMonitorRequest;
 
-GetDeviceLiveUrlRequest::GetDeviceLiveUrlRequest() :
-	RpcServiceRequest("vcs", "2020-05-15", "GetDeviceLiveUrl")
+StopMonitorRequest::StopMonitorRequest() :
+	RpcServiceRequest("vcs", "2020-05-15", "StopMonitor")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetDeviceLiveUrlRequest::~GetDeviceLiveUrlRequest()
+StopMonitorRequest::~StopMonitorRequest()
 {}
 
-std::string GetDeviceLiveUrlRequest::getCorpId()const
+std::string StopMonitorRequest::getTaskId()const
 {
-	return corpId_;
+	return taskId_;
 }
 
-void GetDeviceLiveUrlRequest::setCorpId(const std::string& corpId)
+void StopMonitorRequest::setTaskId(const std::string& taskId)
 {
-	corpId_ = corpId;
-	setBodyParameter("CorpId", corpId);
-}
-
-std::string GetDeviceLiveUrlRequest::getGbId()const
-{
-	return gbId_;
-}
-
-void GetDeviceLiveUrlRequest::setGbId(const std::string& gbId)
-{
-	gbId_ = gbId;
-	setBodyParameter("GbId", gbId);
+	taskId_ = taskId;
+	setBodyParameter("TaskId", taskId);
 }
 

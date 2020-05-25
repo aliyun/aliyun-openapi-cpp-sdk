@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,57 +29,50 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListDevicesResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT GetMonitorResultResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Record
-					{
-						int status;
-						std::string accessProtocolType;
-						std::string coverImageUrl;
-						std::string sipServerIp;
-						std::string createTime;
-						std::string latitude;
-						std::string vendor;
-						std::string longitude;
-						std::string sipGBId;
-						std::string deviceDirection;
-						std::string sipPassword;
-						std::string deviceType;
-						std::string deviceAddress;
-						std::string gbId;
-						std::string bitRate;
-						std::string deviceSite;
-						std::string sipServerPort;
-						std::string deviceName;
-						std::string resolution;
-					};
-					int totalCount;
-					int pageSize;
-					int totalPage;
-					int pageNumber;
-					std::vector<Record> records;
+					std::string maxRecordId;
+				};
+				struct RecordsItem
+				{
+					std::string shotPicUrl;
+					std::string gbId;
+					std::string monitorPicUrl;
+					std::string shotTime;
 				};
 
 
-				ListDevicesResult();
-				explicit ListDevicesResult(const std::string &payload);
-				~ListDevicesResult();
+				GetMonitorResultResult();
+				explicit GetMonitorResultResult(const std::string &payload);
+				~GetMonitorResultResult();
+				std::string getScore()const;
 				std::string getMessage()const;
+				std::string getRightBottomX()const;
+				std::string getRightBottomY()const;
 				Data getData()const;
+				std::string getLeftTopY()const;
+				std::vector<RecordsItem> getRecords()const;
 				std::string getCode()const;
+				std::string getLeftTopX()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string score_;
 				std::string message_;
+				std::string rightBottomX_;
+				std::string rightBottomY_;
 				Data data_;
+				std::string leftTopY_;
+				std::vector<RecordsItem> records_;
 				std::string code_;
+				std::string leftTopX_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTDEVICESRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
