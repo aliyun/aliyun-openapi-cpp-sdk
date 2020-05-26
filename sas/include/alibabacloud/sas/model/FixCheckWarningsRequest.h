@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ModifyConcernNecessityRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_EXPORT FixCheckWarningsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyConcernNecessityRequest();
-				~ModifyConcernNecessityRequest();
+				FixCheckWarningsRequest();
+				~FixCheckWarningsRequest();
 
+				long getRiskId()const;
+				void setRiskId(long riskId);
+				std::string getCheckParams()const;
+				void setCheckParams(const std::string& checkParams);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
-				std::string getConcernNecessity()const;
-				void setConcernNecessity(const std::string& concernNecessity);
+				std::string getUuids()const;
+				void setUuids(const std::string& uuids);
 
             private:
+				long riskId_;
+				std::string checkParams_;
 				std::string sourceIp_;
 				std::string lang_;
-				std::string concernNecessity_;
+				std::string uuids_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSREQUEST_H_

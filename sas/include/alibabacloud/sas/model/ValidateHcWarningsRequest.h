@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/sas/SasExport.h>
 
 namespace AlibabaCloud
@@ -29,21 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ModifyAutoDelConfigResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ValidateHcWarningsRequest : public RpcServiceRequest
 			{
+
 			public:
+				ValidateHcWarningsRequest();
+				~ValidateHcWarningsRequest();
 
+				std::string getRiskIds()const;
+				void setRiskIds(const std::string& riskIds);
+				std::string getSourceIp()const;
+				void setSourceIp(const std::string& sourceIp);
+				std::string getUuids()const;
+				void setUuids(const std::string& uuids);
 
-				ModifyAutoDelConfigResult();
-				explicit ModifyAutoDelConfigResult(const std::string &payload);
-				~ModifyAutoDelConfigResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
+				std::string riskIds_;
+				std::string sourceIp_;
+				std::string uuids_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSREQUEST_H_

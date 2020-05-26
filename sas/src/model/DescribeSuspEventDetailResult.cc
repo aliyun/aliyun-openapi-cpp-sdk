@@ -87,6 +87,8 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		eventName_ = value["EventName"].asString();
 	if(!value["CanBeDealOnLine"].isNull())
 		canBeDealOnLine_ = value["CanBeDealOnLine"].asString() == "true";
+	if(!value["OperateErrorCode"].isNull())
+		operateErrorCode_ = value["OperateErrorCode"].asString();
 
 }
 
@@ -98,6 +100,11 @@ std::string DescribeSuspEventDetailResult::getEventDesc()const
 std::string DescribeSuspEventDetailResult::getEventTypeDesc()const
 {
 	return eventTypeDesc_;
+}
+
+std::string DescribeSuspEventDetailResult::getOperateErrorCode()const
+{
+	return operateErrorCode_;
 }
 
 std::string DescribeSuspEventDetailResult::getEventStatus()const

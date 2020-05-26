@@ -164,6 +164,8 @@
 #include "model/DescribeWarningMachinesResult.h"
 #include "model/ExportRecordRequest.h"
 #include "model/ExportRecordResult.h"
+#include "model/FixCheckWarningsRequest.h"
+#include "model/FixCheckWarningsResult.h"
 #include "model/GetIOCsRequest.h"
 #include "model/GetIOCsResult.h"
 #include "model/GetIncIOCsRequest.h"
@@ -172,14 +174,8 @@
 #include "model/HandleSimilarSecurityEventsResult.h"
 #include "model/ModifyAntiBruteForceRuleRequest.h"
 #include "model/ModifyAntiBruteForceRuleResult.h"
-#include "model/ModifyAutoDelConfigRequest.h"
-#include "model/ModifyAutoDelConfigResult.h"
-#include "model/ModifyConcernNecessityRequest.h"
-#include "model/ModifyConcernNecessityResult.h"
 #include "model/ModifyCreateVulWhitelistRequest.h"
 #include "model/ModifyCreateVulWhitelistResult.h"
-#include "model/ModifyDeleteVulWhitelistRequest.h"
-#include "model/ModifyDeleteVulWhitelistResult.h"
 #include "model/ModifyEmgVulSubmitRequest.h"
 #include "model/ModifyEmgVulSubmitResult.h"
 #include "model/ModifyGroupPropertyRequest.h"
@@ -216,6 +212,8 @@
 #include "model/SasInstallCodeResult.h"
 #include "model/StartBaselineSecurityCheckRequest.h"
 #include "model/StartBaselineSecurityCheckResult.h"
+#include "model/ValidateHcWarningsRequest.h"
+#include "model/ValidateHcWarningsResult.h"
 
 
 namespace AlibabaCloud
@@ -438,6 +436,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExportRecordResult> ExportRecordOutcome;
 			typedef std::future<ExportRecordOutcome> ExportRecordOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ExportRecordRequest&, const ExportRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportRecordAsyncHandler;
+			typedef Outcome<Error, Model::FixCheckWarningsResult> FixCheckWarningsOutcome;
+			typedef std::future<FixCheckWarningsOutcome> FixCheckWarningsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::FixCheckWarningsRequest&, const FixCheckWarningsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FixCheckWarningsAsyncHandler;
 			typedef Outcome<Error, Model::GetIOCsResult> GetIOCsOutcome;
 			typedef std::future<GetIOCsOutcome> GetIOCsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetIOCsRequest&, const GetIOCsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIOCsAsyncHandler;
@@ -450,18 +451,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAntiBruteForceRuleResult> ModifyAntiBruteForceRuleOutcome;
 			typedef std::future<ModifyAntiBruteForceRuleOutcome> ModifyAntiBruteForceRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyAntiBruteForceRuleRequest&, const ModifyAntiBruteForceRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAntiBruteForceRuleAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAutoDelConfigResult> ModifyAutoDelConfigOutcome;
-			typedef std::future<ModifyAutoDelConfigOutcome> ModifyAutoDelConfigOutcomeCallable;
-			typedef std::function<void(const SasClient*, const Model::ModifyAutoDelConfigRequest&, const ModifyAutoDelConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoDelConfigAsyncHandler;
-			typedef Outcome<Error, Model::ModifyConcernNecessityResult> ModifyConcernNecessityOutcome;
-			typedef std::future<ModifyConcernNecessityOutcome> ModifyConcernNecessityOutcomeCallable;
-			typedef std::function<void(const SasClient*, const Model::ModifyConcernNecessityRequest&, const ModifyConcernNecessityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConcernNecessityAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCreateVulWhitelistResult> ModifyCreateVulWhitelistOutcome;
 			typedef std::future<ModifyCreateVulWhitelistOutcome> ModifyCreateVulWhitelistOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyCreateVulWhitelistRequest&, const ModifyCreateVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCreateVulWhitelistAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDeleteVulWhitelistResult> ModifyDeleteVulWhitelistOutcome;
-			typedef std::future<ModifyDeleteVulWhitelistOutcome> ModifyDeleteVulWhitelistOutcomeCallable;
-			typedef std::function<void(const SasClient*, const Model::ModifyDeleteVulWhitelistRequest&, const ModifyDeleteVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeleteVulWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::ModifyEmgVulSubmitResult> ModifyEmgVulSubmitOutcome;
 			typedef std::future<ModifyEmgVulSubmitOutcome> ModifyEmgVulSubmitOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyEmgVulSubmitRequest&, const ModifyEmgVulSubmitOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEmgVulSubmitAsyncHandler;
@@ -516,6 +508,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartBaselineSecurityCheckResult> StartBaselineSecurityCheckOutcome;
 			typedef std::future<StartBaselineSecurityCheckOutcome> StartBaselineSecurityCheckOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::StartBaselineSecurityCheckRequest&, const StartBaselineSecurityCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBaselineSecurityCheckAsyncHandler;
+			typedef Outcome<Error, Model::ValidateHcWarningsResult> ValidateHcWarningsOutcome;
+			typedef std::future<ValidateHcWarningsOutcome> ValidateHcWarningsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ValidateHcWarningsRequest&, const ValidateHcWarningsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateHcWarningsAsyncHandler;
 
 			SasClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SasClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -734,6 +729,9 @@ namespace AlibabaCloud
 			ExportRecordOutcome exportRecord(const Model::ExportRecordRequest &request)const;
 			void exportRecordAsync(const Model::ExportRecordRequest& request, const ExportRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportRecordOutcomeCallable exportRecordCallable(const Model::ExportRecordRequest& request) const;
+			FixCheckWarningsOutcome fixCheckWarnings(const Model::FixCheckWarningsRequest &request)const;
+			void fixCheckWarningsAsync(const Model::FixCheckWarningsRequest& request, const FixCheckWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FixCheckWarningsOutcomeCallable fixCheckWarningsCallable(const Model::FixCheckWarningsRequest& request) const;
 			GetIOCsOutcome getIOCs(const Model::GetIOCsRequest &request)const;
 			void getIOCsAsync(const Model::GetIOCsRequest& request, const GetIOCsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetIOCsOutcomeCallable getIOCsCallable(const Model::GetIOCsRequest& request) const;
@@ -746,18 +744,9 @@ namespace AlibabaCloud
 			ModifyAntiBruteForceRuleOutcome modifyAntiBruteForceRule(const Model::ModifyAntiBruteForceRuleRequest &request)const;
 			void modifyAntiBruteForceRuleAsync(const Model::ModifyAntiBruteForceRuleRequest& request, const ModifyAntiBruteForceRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAntiBruteForceRuleOutcomeCallable modifyAntiBruteForceRuleCallable(const Model::ModifyAntiBruteForceRuleRequest& request) const;
-			ModifyAutoDelConfigOutcome modifyAutoDelConfig(const Model::ModifyAutoDelConfigRequest &request)const;
-			void modifyAutoDelConfigAsync(const Model::ModifyAutoDelConfigRequest& request, const ModifyAutoDelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAutoDelConfigOutcomeCallable modifyAutoDelConfigCallable(const Model::ModifyAutoDelConfigRequest& request) const;
-			ModifyConcernNecessityOutcome modifyConcernNecessity(const Model::ModifyConcernNecessityRequest &request)const;
-			void modifyConcernNecessityAsync(const Model::ModifyConcernNecessityRequest& request, const ModifyConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyConcernNecessityOutcomeCallable modifyConcernNecessityCallable(const Model::ModifyConcernNecessityRequest& request) const;
 			ModifyCreateVulWhitelistOutcome modifyCreateVulWhitelist(const Model::ModifyCreateVulWhitelistRequest &request)const;
 			void modifyCreateVulWhitelistAsync(const Model::ModifyCreateVulWhitelistRequest& request, const ModifyCreateVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCreateVulWhitelistOutcomeCallable modifyCreateVulWhitelistCallable(const Model::ModifyCreateVulWhitelistRequest& request) const;
-			ModifyDeleteVulWhitelistOutcome modifyDeleteVulWhitelist(const Model::ModifyDeleteVulWhitelistRequest &request)const;
-			void modifyDeleteVulWhitelistAsync(const Model::ModifyDeleteVulWhitelistRequest& request, const ModifyDeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDeleteVulWhitelistOutcomeCallable modifyDeleteVulWhitelistCallable(const Model::ModifyDeleteVulWhitelistRequest& request) const;
 			ModifyEmgVulSubmitOutcome modifyEmgVulSubmit(const Model::ModifyEmgVulSubmitRequest &request)const;
 			void modifyEmgVulSubmitAsync(const Model::ModifyEmgVulSubmitRequest& request, const ModifyEmgVulSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyEmgVulSubmitOutcomeCallable modifyEmgVulSubmitCallable(const Model::ModifyEmgVulSubmitRequest& request) const;
@@ -812,6 +801,9 @@ namespace AlibabaCloud
 			StartBaselineSecurityCheckOutcome startBaselineSecurityCheck(const Model::StartBaselineSecurityCheckRequest &request)const;
 			void startBaselineSecurityCheckAsync(const Model::StartBaselineSecurityCheckRequest& request, const StartBaselineSecurityCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartBaselineSecurityCheckOutcomeCallable startBaselineSecurityCheckCallable(const Model::StartBaselineSecurityCheckRequest& request) const;
+			ValidateHcWarningsOutcome validateHcWarnings(const Model::ValidateHcWarningsRequest &request)const;
+			void validateHcWarningsAsync(const Model::ValidateHcWarningsRequest& request, const ValidateHcWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateHcWarningsOutcomeCallable validateHcWarningsCallable(const Model::ValidateHcWarningsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -27,6 +27,17 @@ GetIOCsRequest::GetIOCsRequest() :
 GetIOCsRequest::~GetIOCsRequest()
 {}
 
+std::string GetIOCsRequest::getDate()const
+{
+	return date_;
+}
+
+void GetIOCsRequest::setDate(const std::string& date)
+{
+	date_ = date;
+	setParameter("Date", date);
+}
+
 std::string GetIOCsRequest::getType()const
 {
 	return type_;

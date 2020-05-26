@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				~DescribeSuspEventDetailResult();
 				std::string getEventDesc()const;
 				std::string getEventTypeDesc()const;
+				std::string getOperateErrorCode()const;
 				std::string getEventStatus()const;
 				std::string getEventName()const;
 				std::string getSaleVersion()const;
@@ -68,6 +69,7 @@ namespace AlibabaCloud
 			private:
 				std::string eventDesc_;
 				std::string eventTypeDesc_;
+				std::string operateErrorCode_;
 				std::string eventStatus_;
 				std::string eventName_;
 				std::string saleVersion_;

@@ -14,35 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/ModifyDeleteVulWhitelistResult.h>
+#include <alibabacloud/sas/model/FixCheckWarningsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-ModifyDeleteVulWhitelistResult::ModifyDeleteVulWhitelistResult() :
+FixCheckWarningsResult::FixCheckWarningsResult() :
 	ServiceResult()
 {}
 
-ModifyDeleteVulWhitelistResult::ModifyDeleteVulWhitelistResult(const std::string &payload) :
+FixCheckWarningsResult::FixCheckWarningsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyDeleteVulWhitelistResult::~ModifyDeleteVulWhitelistResult()
+FixCheckWarningsResult::~FixCheckWarningsResult()
 {}
 
-void ModifyDeleteVulWhitelistResult::parse(const std::string &payload)
+void FixCheckWarningsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["BatchId"].isNull())
+		batchId_ = std::stol(value["BatchId"].asString());
 
+}
+
+long FixCheckWarningsResult::getBatchId()const
+{
+	return batchId_;
 }
 

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/sas/SasExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ModifyAutoDelConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SAS_EXPORT FixCheckWarningsResult : public ServiceResult
 			{
-
 			public:
-				ModifyAutoDelConfigRequest();
-				~ModifyAutoDelConfigRequest();
 
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
-				int getDays()const;
-				void setDays(int days);
 
-            private:
-				std::string sourceIp_;
-				int days_;
+				FixCheckWarningsResult();
+				explicit FixCheckWarningsResult(const std::string &payload);
+				~FixCheckWarningsResult();
+				long getBatchId()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				long batchId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYAUTODELCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_FIXCHECKWARNINGSRESULT_H_

@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				GetIOCsRequest();
 				~GetIOCsRequest();
 
+				std::string getDate()const;
+				void setDate(const std::string& date);
 				std::string getType()const;
 				void setType(const std::string& type);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 
             private:
+				std::string date_;
 				std::string type_;
 				std::string sourceIp_;
 

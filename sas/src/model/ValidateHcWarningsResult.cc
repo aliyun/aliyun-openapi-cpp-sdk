@@ -14,34 +14,30 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/ModifyAutoDelConfigResult.h>
+#include <alibabacloud/sas/model/ValidateHcWarningsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-ModifyAutoDelConfigResult::ModifyAutoDelConfigResult() :
+ValidateHcWarningsResult::ValidateHcWarningsResult() :
 	ServiceResult()
 {}
 
-ModifyAutoDelConfigResult::ModifyAutoDelConfigResult(const std::string &payload) :
+ValidateHcWarningsResult::ValidateHcWarningsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyAutoDelConfigResult::~ModifyAutoDelConfigResult()
+ValidateHcWarningsResult::~ValidateHcWarningsResult()
 {}
 
-void ModifyAutoDelConfigResult::parse(const std::string &payload)
+void ValidateHcWarningsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 
 }

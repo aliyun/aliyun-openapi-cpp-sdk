@@ -163,6 +163,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeWarningMachinesResult.h
 	include/alibabacloud/sas/model/ExportRecordRequest.h
 	include/alibabacloud/sas/model/ExportRecordResult.h
+	include/alibabacloud/sas/model/FixCheckWarningsRequest.h
+	include/alibabacloud/sas/model/FixCheckWarningsResult.h
 	include/alibabacloud/sas/model/GetIOCsRequest.h
 	include/alibabacloud/sas/model/GetIOCsResult.h
 	include/alibabacloud/sas/model/GetIncIOCsRequest.h
@@ -171,14 +173,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/HandleSimilarSecurityEventsResult.h
 	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleRequest.h
 	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleResult.h
-	include/alibabacloud/sas/model/ModifyAutoDelConfigRequest.h
-	include/alibabacloud/sas/model/ModifyAutoDelConfigResult.h
-	include/alibabacloud/sas/model/ModifyConcernNecessityRequest.h
-	include/alibabacloud/sas/model/ModifyConcernNecessityResult.h
 	include/alibabacloud/sas/model/ModifyCreateVulWhitelistRequest.h
 	include/alibabacloud/sas/model/ModifyCreateVulWhitelistResult.h
-	include/alibabacloud/sas/model/ModifyDeleteVulWhitelistRequest.h
-	include/alibabacloud/sas/model/ModifyDeleteVulWhitelistResult.h
 	include/alibabacloud/sas/model/ModifyEmgVulSubmitRequest.h
 	include/alibabacloud/sas/model/ModifyEmgVulSubmitResult.h
 	include/alibabacloud/sas/model/ModifyGroupPropertyRequest.h
@@ -214,7 +210,9 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/SasInstallCodeRequest.h
 	include/alibabacloud/sas/model/SasInstallCodeResult.h
 	include/alibabacloud/sas/model/StartBaselineSecurityCheckRequest.h
-	include/alibabacloud/sas/model/StartBaselineSecurityCheckResult.h )
+	include/alibabacloud/sas/model/StartBaselineSecurityCheckResult.h
+	include/alibabacloud/sas/model/ValidateHcWarningsRequest.h
+	include/alibabacloud/sas/model/ValidateHcWarningsResult.h )
 
 set(sas_src 
 	src/SasClient.cc
@@ -360,6 +358,8 @@ set(sas_src
 	src/model/DescribeWarningMachinesResult.cc
 	src/model/ExportRecordRequest.cc
 	src/model/ExportRecordResult.cc
+	src/model/FixCheckWarningsRequest.cc
+	src/model/FixCheckWarningsResult.cc
 	src/model/GetIOCsRequest.cc
 	src/model/GetIOCsResult.cc
 	src/model/GetIncIOCsRequest.cc
@@ -368,14 +368,8 @@ set(sas_src
 	src/model/HandleSimilarSecurityEventsResult.cc
 	src/model/ModifyAntiBruteForceRuleRequest.cc
 	src/model/ModifyAntiBruteForceRuleResult.cc
-	src/model/ModifyAutoDelConfigRequest.cc
-	src/model/ModifyAutoDelConfigResult.cc
-	src/model/ModifyConcernNecessityRequest.cc
-	src/model/ModifyConcernNecessityResult.cc
 	src/model/ModifyCreateVulWhitelistRequest.cc
 	src/model/ModifyCreateVulWhitelistResult.cc
-	src/model/ModifyDeleteVulWhitelistRequest.cc
-	src/model/ModifyDeleteVulWhitelistResult.cc
 	src/model/ModifyEmgVulSubmitRequest.cc
 	src/model/ModifyEmgVulSubmitResult.cc
 	src/model/ModifyGroupPropertyRequest.cc
@@ -411,7 +405,9 @@ set(sas_src
 	src/model/SasInstallCodeRequest.cc
 	src/model/SasInstallCodeResult.cc
 	src/model/StartBaselineSecurityCheckRequest.cc
-	src/model/StartBaselineSecurityCheckResult.cc )
+	src/model/StartBaselineSecurityCheckResult.cc
+	src/model/ValidateHcWarningsRequest.cc
+	src/model/ValidateHcWarningsResult.cc )
 
 add_library(sas ${LIB_TYPE}
 	${sas_public_header}

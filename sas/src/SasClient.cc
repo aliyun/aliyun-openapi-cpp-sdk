@@ -2607,6 +2607,42 @@ SasClient::ExportRecordOutcomeCallable SasClient::exportRecordCallable(const Exp
 	return task->get_future();
 }
 
+SasClient::FixCheckWarningsOutcome SasClient::fixCheckWarnings(const FixCheckWarningsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FixCheckWarningsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FixCheckWarningsOutcome(FixCheckWarningsResult(outcome.result()));
+	else
+		return FixCheckWarningsOutcome(outcome.error());
+}
+
+void SasClient::fixCheckWarningsAsync(const FixCheckWarningsRequest& request, const FixCheckWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, fixCheckWarnings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::FixCheckWarningsOutcomeCallable SasClient::fixCheckWarningsCallable(const FixCheckWarningsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FixCheckWarningsOutcome()>>(
+			[this, request]()
+			{
+			return this->fixCheckWarnings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::GetIOCsOutcome SasClient::getIOCs(const GetIOCsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2751,78 +2787,6 @@ SasClient::ModifyAntiBruteForceRuleOutcomeCallable SasClient::modifyAntiBruteFor
 	return task->get_future();
 }
 
-SasClient::ModifyAutoDelConfigOutcome SasClient::modifyAutoDelConfig(const ModifyAutoDelConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAutoDelConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAutoDelConfigOutcome(ModifyAutoDelConfigResult(outcome.result()));
-	else
-		return ModifyAutoDelConfigOutcome(outcome.error());
-}
-
-void SasClient::modifyAutoDelConfigAsync(const ModifyAutoDelConfigRequest& request, const ModifyAutoDelConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAutoDelConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyAutoDelConfigOutcomeCallable SasClient::modifyAutoDelConfigCallable(const ModifyAutoDelConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAutoDelConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAutoDelConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::ModifyConcernNecessityOutcome SasClient::modifyConcernNecessity(const ModifyConcernNecessityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyConcernNecessityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyConcernNecessityOutcome(ModifyConcernNecessityResult(outcome.result()));
-	else
-		return ModifyConcernNecessityOutcome(outcome.error());
-}
-
-void SasClient::modifyConcernNecessityAsync(const ModifyConcernNecessityRequest& request, const ModifyConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyConcernNecessity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyConcernNecessityOutcomeCallable SasClient::modifyConcernNecessityCallable(const ModifyConcernNecessityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyConcernNecessityOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyConcernNecessity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::ModifyCreateVulWhitelistOutcome SasClient::modifyCreateVulWhitelist(const ModifyCreateVulWhitelistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2853,42 +2817,6 @@ SasClient::ModifyCreateVulWhitelistOutcomeCallable SasClient::modifyCreateVulWhi
 			[this, request]()
 			{
 			return this->modifyCreateVulWhitelist(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::ModifyDeleteVulWhitelistOutcome SasClient::modifyDeleteVulWhitelist(const ModifyDeleteVulWhitelistRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDeleteVulWhitelistOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDeleteVulWhitelistOutcome(ModifyDeleteVulWhitelistResult(outcome.result()));
-	else
-		return ModifyDeleteVulWhitelistOutcome(outcome.error());
-}
-
-void SasClient::modifyDeleteVulWhitelistAsync(const ModifyDeleteVulWhitelistRequest& request, const ModifyDeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDeleteVulWhitelist(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ModifyDeleteVulWhitelistOutcomeCallable SasClient::modifyDeleteVulWhitelistCallable(const ModifyDeleteVulWhitelistRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDeleteVulWhitelistOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDeleteVulWhitelist(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3537,6 +3465,42 @@ SasClient::StartBaselineSecurityCheckOutcomeCallable SasClient::startBaselineSec
 			[this, request]()
 			{
 			return this->startBaselineSecurityCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ValidateHcWarningsOutcome SasClient::validateHcWarnings(const ValidateHcWarningsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ValidateHcWarningsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ValidateHcWarningsOutcome(ValidateHcWarningsResult(outcome.result()));
+	else
+		return ValidateHcWarningsOutcome(outcome.error());
+}
+
+void SasClient::validateHcWarningsAsync(const ValidateHcWarningsRequest& request, const ValidateHcWarningsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, validateHcWarnings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ValidateHcWarningsOutcomeCallable SasClient::validateHcWarningsCallable(const ValidateHcWarningsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ValidateHcWarningsOutcome()>>(
+			[this, request]()
+			{
+			return this->validateHcWarnings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

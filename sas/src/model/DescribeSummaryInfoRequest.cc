@@ -49,3 +49,14 @@ void DescribeSummaryInfoRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeSummaryInfoRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeSummaryInfoRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+

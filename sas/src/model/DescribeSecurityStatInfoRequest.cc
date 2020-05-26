@@ -49,3 +49,14 @@ void DescribeSecurityStatInfoRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeSecurityStatInfoRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeSecurityStatInfoRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+

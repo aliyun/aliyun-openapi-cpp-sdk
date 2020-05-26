@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ModifyConcernNecessityResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ValidateHcWarningsResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyConcernNecessityResult();
-				explicit ModifyConcernNecessityResult(const std::string &payload);
-				~ModifyConcernNecessityResult();
+				ValidateHcWarningsResult();
+				explicit ValidateHcWarningsResult(const std::string &payload);
+				~ValidateHcWarningsResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_MODIFYCONCERNNECESSITYRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_VALIDATEHCWARNINGSRESULT_H_

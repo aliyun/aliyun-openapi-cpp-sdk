@@ -60,3 +60,14 @@ void DescribeRiskCheckSummaryRequest::setLang(const std::string& lang)
 	setParameter("Lang", lang);
 }
 
+std::string DescribeRiskCheckSummaryRequest::getResourceDirectoryAccountId()const
+{
+	return resourceDirectoryAccountId_;
+}
+
+void DescribeRiskCheckSummaryRequest::setResourceDirectoryAccountId(const std::string& resourceDirectoryAccountId)
+{
+	resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+	setParameter("ResourceDirectoryAccountId", resourceDirectoryAccountId);
+}
+
