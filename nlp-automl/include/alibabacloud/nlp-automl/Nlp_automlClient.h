@@ -32,6 +32,8 @@
 #include "model/RunContactReviewResult.h"
 #include "model/RunPreTrainServiceRequest.h"
 #include "model/RunPreTrainServiceResult.h"
+#include "model/RunSmartCallServiceRequest.h"
+#include "model/RunSmartCallServiceResult.h"
 
 
 namespace AlibabaCloud
@@ -56,6 +58,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunPreTrainServiceResult> RunPreTrainServiceOutcome;
 			typedef std::future<RunPreTrainServiceOutcome> RunPreTrainServiceOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::RunPreTrainServiceRequest&, const RunPreTrainServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunPreTrainServiceAsyncHandler;
+			typedef Outcome<Error, Model::RunSmartCallServiceResult> RunSmartCallServiceOutcome;
+			typedef std::future<RunSmartCallServiceOutcome> RunSmartCallServiceOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::RunSmartCallServiceRequest&, const RunSmartCallServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunSmartCallServiceAsyncHandler;
 
 			Nlp_automlClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Nlp_automlClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -76,6 +81,9 @@ namespace AlibabaCloud
 			RunPreTrainServiceOutcome runPreTrainService(const Model::RunPreTrainServiceRequest &request)const;
 			void runPreTrainServiceAsync(const Model::RunPreTrainServiceRequest& request, const RunPreTrainServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunPreTrainServiceOutcomeCallable runPreTrainServiceCallable(const Model::RunPreTrainServiceRequest& request) const;
+			RunSmartCallServiceOutcome runSmartCallService(const Model::RunSmartCallServiceRequest &request)const;
+			void runSmartCallServiceAsync(const Model::RunSmartCallServiceRequest& request, const RunSmartCallServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunSmartCallServiceOutcomeCallable runSmartCallServiceCallable(const Model::RunSmartCallServiceRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

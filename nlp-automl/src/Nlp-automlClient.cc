@@ -231,3 +231,39 @@ Nlp_automlClient::RunPreTrainServiceOutcomeCallable Nlp_automlClient::runPreTrai
 	return task->get_future();
 }
 
+Nlp_automlClient::RunSmartCallServiceOutcome Nlp_automlClient::runSmartCallService(const RunSmartCallServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunSmartCallServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunSmartCallServiceOutcome(RunSmartCallServiceResult(outcome.result()));
+	else
+		return RunSmartCallServiceOutcome(outcome.error());
+}
+
+void Nlp_automlClient::runSmartCallServiceAsync(const RunSmartCallServiceRequest& request, const RunSmartCallServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runSmartCallService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::RunSmartCallServiceOutcomeCallable Nlp_automlClient::runSmartCallServiceCallable(const RunSmartCallServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunSmartCallServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->runSmartCallService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
