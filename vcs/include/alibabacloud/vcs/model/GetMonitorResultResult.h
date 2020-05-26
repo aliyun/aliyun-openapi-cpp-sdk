@@ -34,42 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string maxRecordId;
-				};
-				struct RecordsItem
-				{
-					std::string shotPicUrl;
-					std::string gbId;
-					std::string monitorPicUrl;
-					std::string shotTime;
+					struct RecordsItem
+					{
+						std::string leftUpX;
+						std::string leftUpY;
+						std::string score;
+						std::string rightBottomX;
+						std::string rightBottomY;
+						std::string gbId;
+						std::string monitorPicUrl;
+						std::string shotTime;
+						std::string picUrl;
+					};
+					std::string maxId;
+					std::vector<RecordsItem> records;
 				};
 
 
 				GetMonitorResultResult();
 				explicit GetMonitorResultResult(const std::string &payload);
 				~GetMonitorResultResult();
-				std::string getScore()const;
 				std::string getMessage()const;
-				std::string getRightBottomX()const;
-				std::string getRightBottomY()const;
 				Data getData()const;
-				std::string getLeftTopY()const;
-				std::vector<RecordsItem> getRecords()const;
 				std::string getCode()const;
-				std::string getLeftTopX()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string score_;
 				std::string message_;
-				std::string rightBottomX_;
-				std::string rightBottomY_;
 				Data data_;
-				std::string leftTopY_;
-				std::vector<RecordsItem> records_;
 				std::string code_;
-				std::string leftTopX_;
 
 			};
 		}

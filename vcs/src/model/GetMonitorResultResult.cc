@@ -39,43 +39,38 @@ void GetMonitorResultResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRecordsNode = value["Records"]["RecordsItem"];
-	for (auto valueRecordsRecordsItem : allRecordsNode)
-	{
-		RecordsItem recordsObject;
-		if(!valueRecordsRecordsItem["GbId"].isNull())
-			recordsObject.gbId = valueRecordsRecordsItem["GbId"].asString();
-		if(!valueRecordsRecordsItem["ShotTime"].isNull())
-			recordsObject.shotTime = valueRecordsRecordsItem["ShotTime"].asString();
-		if(!valueRecordsRecordsItem["MonitorPicUrl"].isNull())
-			recordsObject.monitorPicUrl = valueRecordsRecordsItem["MonitorPicUrl"].asString();
-		if(!valueRecordsRecordsItem["ShotPicUrl"].isNull())
-			recordsObject.shotPicUrl = valueRecordsRecordsItem["ShotPicUrl"].asString();
-		records_.push_back(recordsObject);
-	}
 	auto dataNode = value["Data"];
-	if(!dataNode["MaxRecordId"].isNull())
-		data_.maxRecordId = dataNode["MaxRecordId"].asString();
+	if(!dataNode["MaxId"].isNull())
+		data_.maxId = dataNode["MaxId"].asString();
+	auto allRecordsNode = dataNode["Records"]["RecordsItem"];
+	for (auto dataNodeRecordsRecordsItem : allRecordsNode)
+	{
+		Data::RecordsItem recordsItemObject;
+		if(!dataNodeRecordsRecordsItem["RightBottomY"].isNull())
+			recordsItemObject.rightBottomY = dataNodeRecordsRecordsItem["RightBottomY"].asString();
+		if(!dataNodeRecordsRecordsItem["RightBottomX"].isNull())
+			recordsItemObject.rightBottomX = dataNodeRecordsRecordsItem["RightBottomX"].asString();
+		if(!dataNodeRecordsRecordsItem["LeftUpY"].isNull())
+			recordsItemObject.leftUpY = dataNodeRecordsRecordsItem["LeftUpY"].asString();
+		if(!dataNodeRecordsRecordsItem["LeftUpX"].isNull())
+			recordsItemObject.leftUpX = dataNodeRecordsRecordsItem["LeftUpX"].asString();
+		if(!dataNodeRecordsRecordsItem["GbId"].isNull())
+			recordsItemObject.gbId = dataNodeRecordsRecordsItem["GbId"].asString();
+		if(!dataNodeRecordsRecordsItem["Score"].isNull())
+			recordsItemObject.score = dataNodeRecordsRecordsItem["Score"].asString();
+		if(!dataNodeRecordsRecordsItem["PicUrl"].isNull())
+			recordsItemObject.picUrl = dataNodeRecordsRecordsItem["PicUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["ShotTime"].isNull())
+			recordsItemObject.shotTime = dataNodeRecordsRecordsItem["ShotTime"].asString();
+		if(!dataNodeRecordsRecordsItem["MonitorPicUrl"].isNull())
+			recordsItemObject.monitorPicUrl = dataNodeRecordsRecordsItem["MonitorPicUrl"].asString();
+		data_.records.push_back(recordsItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Score"].isNull())
-		score_ = value["Score"].asString();
-	if(!value["LeftTopX"].isNull())
-		leftTopX_ = value["LeftTopX"].asString();
-	if(!value["LeftTopY"].isNull())
-		leftTopY_ = value["LeftTopY"].asString();
-	if(!value["RightBottomX"].isNull())
-		rightBottomX_ = value["RightBottomX"].asString();
-	if(!value["RightBottomY"].isNull())
-		rightBottomY_ = value["RightBottomY"].asString();
 
-}
-
-std::string GetMonitorResultResult::getScore()const
-{
-	return score_;
 }
 
 std::string GetMonitorResultResult::getMessage()const
@@ -83,38 +78,13 @@ std::string GetMonitorResultResult::getMessage()const
 	return message_;
 }
 
-std::string GetMonitorResultResult::getRightBottomX()const
-{
-	return rightBottomX_;
-}
-
-std::string GetMonitorResultResult::getRightBottomY()const
-{
-	return rightBottomY_;
-}
-
 GetMonitorResultResult::Data GetMonitorResultResult::getData()const
 {
 	return data_;
 }
 
-std::string GetMonitorResultResult::getLeftTopY()const
-{
-	return leftTopY_;
-}
-
-std::vector<GetMonitorResultResult::RecordsItem> GetMonitorResultResult::getRecords()const
-{
-	return records_;
-}
-
 std::string GetMonitorResultResult::getCode()const
 {
 	return code_;
-}
-
-std::string GetMonitorResultResult::getLeftTopX()const
-{
-	return leftTopX_;
 }
 
