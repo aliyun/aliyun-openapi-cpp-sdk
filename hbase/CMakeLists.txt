@@ -31,12 +31,16 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/CreateClusterResult.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/CreateHbaseHaSlbResult.h
+	include/alibabacloud/hbase/model/CreateMultiZoneClusterRequest.h
+	include/alibabacloud/hbase/model/CreateMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/CreateRestorePlanRequest.h
 	include/alibabacloud/hbase/model/CreateRestorePlanResult.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/DeleteInstanceRequest.h
 	include/alibabacloud/hbase/model/DeleteInstanceResult.h
+	include/alibabacloud/hbase/model/DeleteMultiZoneClusterRequest.h
+	include/alibabacloud/hbase/model/DeleteMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoRequest.h
 	include/alibabacloud/hbase/model/DeleteUserHdfsInfoResult.h
 	include/alibabacloud/hbase/model/DescribeAvailableResourceRequest.h
@@ -130,12 +134,16 @@ set(hbase_src
 	src/model/CreateClusterResult.cc
 	src/model/CreateHbaseHaSlbRequest.cc
 	src/model/CreateHbaseHaSlbResult.cc
+	src/model/CreateMultiZoneClusterRequest.cc
+	src/model/CreateMultiZoneClusterResult.cc
 	src/model/CreateRestorePlanRequest.cc
 	src/model/CreateRestorePlanResult.cc
 	src/model/DeleteHbaseHaSlbRequest.cc
 	src/model/DeleteHbaseHaSlbResult.cc
 	src/model/DeleteInstanceRequest.cc
 	src/model/DeleteInstanceResult.cc
+	src/model/DeleteMultiZoneClusterRequest.cc
+	src/model/DeleteMultiZoneClusterResult.cc
 	src/model/DeleteUserHdfsInfoRequest.cc
 	src/model/DeleteUserHdfsInfoResult.cc
 	src/model/DescribeAvailableResourceRequest.cc

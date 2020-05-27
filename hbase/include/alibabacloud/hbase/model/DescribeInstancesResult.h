@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string majorVersion;
 					std::string parentId;
+					std::string coreDiskCount;
 					int masterDiskSize;
 					std::string expireTimeUTC;
 					std::string zoneId;

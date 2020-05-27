@@ -32,12 +32,16 @@
 #include "model/CreateClusterResult.h"
 #include "model/CreateHbaseHaSlbRequest.h"
 #include "model/CreateHbaseHaSlbResult.h"
+#include "model/CreateMultiZoneClusterRequest.h"
+#include "model/CreateMultiZoneClusterResult.h"
 #include "model/CreateRestorePlanRequest.h"
 #include "model/CreateRestorePlanResult.h"
 #include "model/DeleteHbaseHaSlbRequest.h"
 #include "model/DeleteHbaseHaSlbResult.h"
 #include "model/DeleteInstanceRequest.h"
 #include "model/DeleteInstanceResult.h"
+#include "model/DeleteMultiZoneClusterRequest.h"
+#include "model/DeleteMultiZoneClusterResult.h"
 #include "model/DeleteUserHdfsInfoRequest.h"
 #include "model/DeleteUserHdfsInfoResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -142,6 +146,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateHbaseHaSlbResult> CreateHbaseHaSlbOutcome;
 			typedef std::future<CreateHbaseHaSlbOutcome> CreateHbaseHaSlbOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateHbaseHaSlbRequest&, const CreateHbaseHaSlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHbaseHaSlbAsyncHandler;
+			typedef Outcome<Error, Model::CreateMultiZoneClusterResult> CreateMultiZoneClusterOutcome;
+			typedef std::future<CreateMultiZoneClusterOutcome> CreateMultiZoneClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::CreateMultiZoneClusterRequest&, const CreateMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiZoneClusterAsyncHandler;
 			typedef Outcome<Error, Model::CreateRestorePlanResult> CreateRestorePlanOutcome;
 			typedef std::future<CreateRestorePlanOutcome> CreateRestorePlanOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateRestorePlanRequest&, const CreateRestorePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestorePlanAsyncHandler;
@@ -151,6 +158,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteInstanceResult> DeleteInstanceOutcome;
 			typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteInstanceRequest&, const DeleteInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteMultiZoneClusterResult> DeleteMultiZoneClusterOutcome;
+			typedef std::future<DeleteMultiZoneClusterOutcome> DeleteMultiZoneClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DeleteMultiZoneClusterRequest&, const DeleteMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMultiZoneClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUserHdfsInfoResult> DeleteUserHdfsInfoOutcome;
 			typedef std::future<DeleteUserHdfsInfoOutcome> DeleteUserHdfsInfoOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteUserHdfsInfoRequest&, const DeleteUserHdfsInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserHdfsInfoAsyncHandler;
@@ -291,6 +301,9 @@ namespace AlibabaCloud
 			CreateHbaseHaSlbOutcome createHbaseHaSlb(const Model::CreateHbaseHaSlbRequest &request)const;
 			void createHbaseHaSlbAsync(const Model::CreateHbaseHaSlbRequest& request, const CreateHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateHbaseHaSlbOutcomeCallable createHbaseHaSlbCallable(const Model::CreateHbaseHaSlbRequest& request) const;
+			CreateMultiZoneClusterOutcome createMultiZoneCluster(const Model::CreateMultiZoneClusterRequest &request)const;
+			void createMultiZoneClusterAsync(const Model::CreateMultiZoneClusterRequest& request, const CreateMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateMultiZoneClusterOutcomeCallable createMultiZoneClusterCallable(const Model::CreateMultiZoneClusterRequest& request) const;
 			CreateRestorePlanOutcome createRestorePlan(const Model::CreateRestorePlanRequest &request)const;
 			void createRestorePlanAsync(const Model::CreateRestorePlanRequest& request, const CreateRestorePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRestorePlanOutcomeCallable createRestorePlanCallable(const Model::CreateRestorePlanRequest& request) const;
@@ -300,6 +313,9 @@ namespace AlibabaCloud
 			DeleteInstanceOutcome deleteInstance(const Model::DeleteInstanceRequest &request)const;
 			void deleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteInstanceOutcomeCallable deleteInstanceCallable(const Model::DeleteInstanceRequest& request) const;
+			DeleteMultiZoneClusterOutcome deleteMultiZoneCluster(const Model::DeleteMultiZoneClusterRequest &request)const;
+			void deleteMultiZoneClusterAsync(const Model::DeleteMultiZoneClusterRequest& request, const DeleteMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteMultiZoneClusterOutcomeCallable deleteMultiZoneClusterCallable(const Model::DeleteMultiZoneClusterRequest& request) const;
 			DeleteUserHdfsInfoOutcome deleteUserHdfsInfo(const Model::DeleteUserHdfsInfoRequest &request)const;
 			void deleteUserHdfsInfoAsync(const Model::DeleteUserHdfsInfoRequest& request, const DeleteUserHdfsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserHdfsInfoOutcomeCallable deleteUserHdfsInfoCallable(const Model::DeleteUserHdfsInfoRequest& request) const;

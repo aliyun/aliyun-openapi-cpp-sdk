@@ -109,6 +109,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.moduleId = std::stoi(valueInstancesInstance["ModuleId"].asString());
 		if(!valueInstancesInstance["ModuleStackVersion"].isNull())
 			instancesObject.moduleStackVersion = valueInstancesInstance["ModuleStackVersion"].asString();
+		if(!valueInstancesInstance["CoreDiskCount"].isNull())
+			instancesObject.coreDiskCount = valueInstancesInstance["CoreDiskCount"].asString();
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

@@ -58,6 +58,7 @@ namespace AlibabaCloud
 										InstanceTypeDetail instanceTypeDetail;
 										DBInstanceStorageRange dBInstanceStorageRange;
 										std::string instanceType;
+										int maxCoreCount;
 									};
 									std::string storageType;
 									std::vector<SupportedStorageType::CoreResource> coreResources;

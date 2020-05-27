@@ -77,6 +77,8 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 							AvailableZone::SupportedEngine::SupportedEngineVersion::SupportedCategoriesItem::SupportedStorageType::CoreResource coreResourcesObject;
 							if(!allSupportedStorageTypesNodeCoreResourcesCoreResource["InstanceType"].isNull())
 								coreResourcesObject.instanceType = allSupportedStorageTypesNodeCoreResourcesCoreResource["InstanceType"].asString();
+							if(!allSupportedStorageTypesNodeCoreResourcesCoreResource["MaxCoreCount"].isNull())
+								coreResourcesObject.maxCoreCount = std::stoi(allSupportedStorageTypesNodeCoreResourcesCoreResource["MaxCoreCount"].asString());
 							auto dBInstanceStorageRangeNode = value["DBInstanceStorageRange"];
 							if(!dBInstanceStorageRangeNode["MaxSize"].isNull())
 								coreResourcesObject.dBInstanceStorageRange.maxSize = std::stoi(dBInstanceStorageRangeNode["MaxSize"].asString());

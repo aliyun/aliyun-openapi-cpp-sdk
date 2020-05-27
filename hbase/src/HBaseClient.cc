@@ -231,6 +231,42 @@ HBaseClient::CreateHbaseHaSlbOutcomeCallable HBaseClient::createHbaseHaSlbCallab
 	return task->get_future();
 }
 
+HBaseClient::CreateMultiZoneClusterOutcome HBaseClient::createMultiZoneCluster(const CreateMultiZoneClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMultiZoneClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMultiZoneClusterOutcome(CreateMultiZoneClusterResult(outcome.result()));
+	else
+		return CreateMultiZoneClusterOutcome(outcome.error());
+}
+
+void HBaseClient::createMultiZoneClusterAsync(const CreateMultiZoneClusterRequest& request, const CreateMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMultiZoneCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateMultiZoneClusterOutcomeCallable HBaseClient::createMultiZoneClusterCallable(const CreateMultiZoneClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMultiZoneClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createMultiZoneCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::CreateRestorePlanOutcome HBaseClient::createRestorePlan(const CreateRestorePlanRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ HBaseClient::DeleteInstanceOutcomeCallable HBaseClient::deleteInstanceCallable(c
 			[this, request]()
 			{
 			return this->deleteInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::DeleteMultiZoneClusterOutcome HBaseClient::deleteMultiZoneCluster(const DeleteMultiZoneClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMultiZoneClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMultiZoneClusterOutcome(DeleteMultiZoneClusterResult(outcome.result()));
+	else
+		return DeleteMultiZoneClusterOutcome(outcome.error());
+}
+
+void HBaseClient::deleteMultiZoneClusterAsync(const DeleteMultiZoneClusterRequest& request, const DeleteMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMultiZoneCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DeleteMultiZoneClusterOutcomeCallable HBaseClient::deleteMultiZoneClusterCallable(const DeleteMultiZoneClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMultiZoneClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMultiZoneCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
