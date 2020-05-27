@@ -71,6 +71,17 @@ void DescribeTagsRequest::setNextToken(const std::string& nextToken)
 	setParameter("NextToken", nextToken);
 }
 
+std::string DescribeTagsRequest::getProduct()const
+{
+	return product_;
+}
+
+void DescribeTagsRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -113,5 +124,16 @@ void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setParameter("ResourceType", resourceType);
+}
+
+std::string DescribeTagsRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeTagsRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 
