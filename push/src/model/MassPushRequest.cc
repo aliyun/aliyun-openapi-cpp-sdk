@@ -71,6 +71,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".ExpireTime", pushTaskObj.expireTime);
 		setParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
 		setParameter(pushTaskObjStr + ".IOSNotificationCategory", pushTaskObj.iOSNotificationCategory);
+		setParameter(pushTaskObjStr + ".AndroidNotificationXiaomiChannel", pushTaskObj.androidNotificationXiaomiChannel);
 		setParameter(pushTaskObjStr + ".StoreOffline", pushTaskObj.storeOffline ? "true" : "false");
 		setParameter(pushTaskObjStr + ".IOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");
 		setParameter(pushTaskObjStr + ".JobKey", pushTaskObj.jobKey);

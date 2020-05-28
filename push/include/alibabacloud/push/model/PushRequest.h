@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setExpireTime(const std::string& expireTime);
 				std::string getIOSNotificationCategory()const;
 				void setIOSNotificationCategory(const std::string& iOSNotificationCategory);
+				std::string getAndroidNotificationXiaomiChannel()const;
+				void setAndroidNotificationXiaomiChannel(const std::string& androidNotificationXiaomiChannel);
 				bool getStoreOffline()const;
 				void setStoreOffline(bool storeOffline);
 				std::string getSmsParams()const;
@@ -143,6 +145,7 @@ namespace AlibabaCloud
 				int androidNotificationBarPriority_;
 				std::string expireTime_;
 				std::string iOSNotificationCategory_;
+				std::string androidNotificationXiaomiChannel_;
 				bool storeOffline_;
 				std::string smsParams_;
 				std::string jobKey_;

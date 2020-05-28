@@ -1,3 +1,6 @@
+2020-05-28 Version: 1.36.440
+- Supported AndroidNotificationXiaomiChannel for Push and MassPush.
+
 2020-05-27 Version: 1.36.439
 - Added cn-heyuan endpoint url.
 - Added cn-wulanchabu endpoint url.

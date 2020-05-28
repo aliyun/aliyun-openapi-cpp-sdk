@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::string expireTime;
 					std::string androidPopupBody;
 					std::string iOSNotificationCategory;
+					std::string androidNotificationXiaomiChannel;
 					bool storeOffline;
 					bool iOSSilentNotification;
 					std::string jobKey;

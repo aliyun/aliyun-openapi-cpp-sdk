@@ -203,6 +203,17 @@ void PushRequest::setIOSNotificationCategory(const std::string& iOSNotificationC
 	setParameter("IOSNotificationCategory", iOSNotificationCategory);
 }
 
+std::string PushRequest::getAndroidNotificationXiaomiChannel()const
+{
+	return androidNotificationXiaomiChannel_;
+}
+
+void PushRequest::setAndroidNotificationXiaomiChannel(const std::string& androidNotificationXiaomiChannel)
+{
+	androidNotificationXiaomiChannel_ = androidNotificationXiaomiChannel;
+	setParameter("AndroidNotificationXiaomiChannel", androidNotificationXiaomiChannel);
+}
+
 bool PushRequest::getStoreOffline()const
 {
 	return storeOffline_;
