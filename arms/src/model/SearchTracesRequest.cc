@@ -82,6 +82,22 @@ void SearchTracesRequest::setServiceIp(const std::string& serviceIp)
 	setParameter("ServiceIp", serviceIp);
 }
 
+std::vector<SearchTracesRequest::ExclusionFilters> SearchTracesRequest::getExclusionFilters()const
+{
+	return exclusionFilters_;
+}
+
+void SearchTracesRequest::setExclusionFilters(const std::vector<ExclusionFilters>& exclusionFilters)
+{
+	exclusionFilters_ = exclusionFilters;
+	for(int dep1 = 0; dep1!= exclusionFilters.size(); dep1++) {
+		auto exclusionFiltersObj = exclusionFilters.at(dep1);
+		std::string exclusionFiltersObjStr = "ExclusionFilters." + std::to_string(dep1 + 1);
+		setParameter(exclusionFiltersObjStr + ".Value", exclusionFiltersObj.value);
+		setParameter(exclusionFiltersObjStr + ".Key", exclusionFiltersObj.key);
+	}
+}
+
 std::string SearchTracesRequest::getRegionId()const
 {
 	return regionId_;

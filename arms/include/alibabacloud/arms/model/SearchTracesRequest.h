@@ -31,6 +31,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ARMS_EXPORT SearchTracesRequest : public RpcServiceRequest
 			{
 			public:
+				struct ExclusionFilters
+				{
+					std::string value;
+					std::string key;
+				};
 				struct Tag
 				{
 					std::string value;
@@ -51,6 +56,8 @@ namespace AlibabaCloud
 				void setMinDuration(long minDuration);
 				std::string getServiceIp()const;
 				void setServiceIp(const std::string& serviceIp);
+				std::vector<ExclusionFilters> getExclusionFilters()const;
+				void setExclusionFilters(const std::vector<ExclusionFilters>& exclusionFilters);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getOperationName()const;
@@ -66,6 +73,7 @@ namespace AlibabaCloud
 				bool reverse_;
 				long minDuration_;
 				std::string serviceIp_;
+				std::vector<ExclusionFilters> exclusionFilters_;
 				std::string regionId_;
 				std::string operationName_;
 				std::string serviceName_;
