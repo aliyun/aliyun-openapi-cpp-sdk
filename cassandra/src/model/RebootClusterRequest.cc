@@ -27,6 +27,17 @@ RebootClusterRequest::RebootClusterRequest() :
 RebootClusterRequest::~RebootClusterRequest()
 {}
 
+std::string RebootClusterRequest::getDataCenterId()const
+{
+	return dataCenterId_;
+}
+
+void RebootClusterRequest::setDataCenterId(const std::string& dataCenterId)
+{
+	dataCenterId_ = dataCenterId;
+	setParameter("DataCenterId", dataCenterId);
+}
+
 std::string RebootClusterRequest::getClusterId()const
 {
 	return clusterId_;

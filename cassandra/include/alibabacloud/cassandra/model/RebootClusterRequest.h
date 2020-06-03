@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				RebootClusterRequest();
 				~RebootClusterRequest();
 
+				std::string getDataCenterId()const;
+				void setDataCenterId(const std::string& dataCenterId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 
             private:
+				std::string dataCenterId_;
 				std::string clusterId_;
 
 			};

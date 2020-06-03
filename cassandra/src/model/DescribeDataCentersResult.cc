@@ -77,6 +77,10 @@ void DescribeDataCentersResult::parse(const std::string &payload)
 			dataCentersObject.expireTime = valueDataCentersDataCenter["ExpireTime"].asString();
 		if(!valueDataCentersDataCenter["LockMode"].isNull())
 			dataCentersObject.lockMode = valueDataCentersDataCenter["LockMode"].asString();
+		if(!valueDataCentersDataCenter["AutoRenewal"].isNull())
+			dataCentersObject.autoRenewal = valueDataCentersDataCenter["AutoRenewal"].asString() == "true";
+		if(!valueDataCentersDataCenter["AutoRenewPeriod"].isNull())
+			dataCentersObject.autoRenewPeriod = std::stoi(valueDataCentersDataCenter["AutoRenewPeriod"].asString());
 		dataCenters_.push_back(dataCentersObject);
 	}
 

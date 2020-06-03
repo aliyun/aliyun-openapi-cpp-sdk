@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DataCenter
 				{
 					std::string status;
+					int autoRenewPeriod;
 					std::string dataCenterId;
 					std::string createdTime;
 					std::string commodityInstance;
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 					std::string vswitchId;
 					std::string diskType;
 					std::string vpcId;
+					bool autoRenewal;
 					int diskSize;
 					std::string regionId;
 					std::string instanceType;

@@ -66,6 +66,10 @@ void DescribeClusterResult::parse(const std::string &payload)
 		cluster_.maintainEndTime = clusterNode["MaintainEndTime"].asString();
 	if(!clusterNode["LockMode"].isNull())
 		cluster_.lockMode = clusterNode["LockMode"].asString();
+	if(!clusterNode["AutoRenewal"].isNull())
+		cluster_.autoRenewal = clusterNode["AutoRenewal"].asString() == "true";
+	if(!clusterNode["AutoRenewPeriod"].isNull())
+		cluster_.autoRenewPeriod = std::stoi(clusterNode["AutoRenewPeriod"].asString());
 	auto allTagsNode = clusterNode["Tags"]["Tag"];
 	for (auto clusterNodeTagsTag : allTagsNode)
 	{

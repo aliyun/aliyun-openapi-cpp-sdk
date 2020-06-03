@@ -41,13 +41,15 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string majorVersion;
+					int autoRenewPeriod;
 					std::string createdTime;
 					std::string clusterId;
-					int dataCenterCount;
-					std::string clusterName;
 					std::string minorVersion;
 					std::string payType;
 					std::string lockMode;
+					bool autoRenewal;
+					int dataCenterCount;
+					std::string clusterName;
 					std::string expireTime;
 					std::vector<Cluster::Tag> tags;
 				};

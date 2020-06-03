@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeDataCenterResult(const std::string &payload);
 				~DescribeDataCenterResult();
 				std::string getStatus()const;
+				int getAutoRenewPeriod()const;
 				std::string getDataCenterId()const;
 				std::string getCreatedTime()const;
 				std::string getCommodityInstance()const;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::string getVswitchId()const;
 				std::string getDiskType()const;
 				std::string getVpcId()const;
+				bool getAutoRenewal()const;
 				int getDiskSize()const;
 				std::string getRegionId()const;
 				std::string getInstanceType()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				int autoRenewPeriod_;
 				std::string dataCenterId_;
 				std::string createdTime_;
 				std::string commodityInstance_;
@@ -71,6 +74,7 @@ namespace AlibabaCloud
 				std::string vswitchId_;
 				std::string diskType_;
 				std::string vpcId_;
+				bool autoRenewal_;
 				int diskSize_;
 				std::string regionId_;
 				std::string instanceType_;

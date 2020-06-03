@@ -63,6 +63,10 @@ void DescribeClustersResult::parse(const std::string &payload)
 			clustersObject.dataCenterCount = std::stoi(valueClustersCluster["DataCenterCount"].asString());
 		if(!valueClustersCluster["LockMode"].isNull())
 			clustersObject.lockMode = valueClustersCluster["LockMode"].asString();
+		if(!valueClustersCluster["AutoRenewal"].isNull())
+			clustersObject.autoRenewal = valueClustersCluster["AutoRenewal"].asString() == "true";
+		if(!valueClustersCluster["AutoRenewPeriod"].isNull())
+			clustersObject.autoRenewPeriod = std::stoi(valueClustersCluster["AutoRenewPeriod"].asString());
 		auto allTagsNode = allClustersNode["Tags"]["Tag"];
 		for (auto allClustersNodeTagsTag : allTagsNode)
 		{

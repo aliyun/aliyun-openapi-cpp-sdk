@@ -73,12 +73,21 @@ void DescribeDataCenterResult::parse(const std::string &payload)
 		expireTime_ = value["ExpireTime"].asString();
 	if(!value["LockMode"].isNull())
 		lockMode_ = value["LockMode"].asString();
+	if(!value["AutoRenewal"].isNull())
+		autoRenewal_ = value["AutoRenewal"].asString() == "true";
+	if(!value["AutoRenewPeriod"].isNull())
+		autoRenewPeriod_ = std::stoi(value["AutoRenewPeriod"].asString());
 
 }
 
 std::string DescribeDataCenterResult::getStatus()const
 {
 	return status_;
+}
+
+int DescribeDataCenterResult::getAutoRenewPeriod()const
+{
+	return autoRenewPeriod_;
 }
 
 std::string DescribeDataCenterResult::getDataCenterId()const
@@ -139,6 +148,11 @@ std::string DescribeDataCenterResult::getDiskType()const
 std::string DescribeDataCenterResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+bool DescribeDataCenterResult::getAutoRenewal()const
+{
+	return autoRenewal_;
 }
 
 int DescribeDataCenterResult::getDiskSize()const

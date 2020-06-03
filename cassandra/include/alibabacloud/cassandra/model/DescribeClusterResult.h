@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string majorVersion;
+					int autoRenewPeriod;
 					std::string createdTime;
 					std::string clusterId;
 					std::string minorVersion;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 					std::string lockMode;
 					bool isLatestVersion;
 					std::string maintainEndTime;
+					bool autoRenewal;
 					int dataCenterCount;
 					std::string clusterName;
 					std::string expireTime;
