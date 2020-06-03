@@ -53,6 +53,8 @@ void DescribeCameraStatisticsResult::parse(const std::string &payload)
 			pvStatisticResultsObject.locationId = std::stol(valuePvStatisticResultsPvStatisticResult["LocationId"].asString());
 		if(!valuePvStatisticResultsPvStatisticResult["PvType"].isNull())
 			pvStatisticResultsObject.pvType = valuePvStatisticResultsPvStatisticResult["PvType"].asString();
+		if(!valuePvStatisticResultsPvStatisticResult["MaxDataTime"].isNull())
+			pvStatisticResultsObject.maxDataTime = std::stol(valuePvStatisticResultsPvStatisticResult["MaxDataTime"].asString());
 		auto allPvRectsNode = allPvStatisticResultsNode["PvRects"]["Rect"];
 		for (auto allPvStatisticResultsNodePvRectsRect : allPvRectsNode)
 		{

@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						float right;
 						float bottom;
 					};
+					long maxDataTime;
 					std::vector<PvStatisticResult::Rect> pvRects;
 					long locationId;
 					long processCursor;
