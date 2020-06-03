@@ -111,6 +111,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.moduleStackVersion = valueInstancesInstance["ModuleStackVersion"].asString();
 		if(!valueInstancesInstance["CoreDiskCount"].isNull())
 			instancesObject.coreDiskCount = valueInstancesInstance["CoreDiskCount"].asString();
+		if(!valueInstancesInstance["AutoRenewal"].isNull())
+			instancesObject.autoRenewal = valueInstancesInstance["AutoRenewal"].asString() == "true";
+		if(!valueInstancesInstance["Duration"].isNull())
+			instancesObject.duration = std::stoi(valueInstancesInstance["Duration"].asString());
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBEINSTANCESRESULT_H_
-#define ALIBABACLOUD_HBASE_MODEL_DESCRIBEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_DESCRIBEDELETEDINSTANCESRESULT_H_
+#define ALIBABACLOUD_HBASE_MODEL_DESCRIBEDELETEDINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,59 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT DescribeInstancesResult : public ServiceResult
+			class ALIBABACLOUD_HBASE_EXPORT DescribeDeletedInstancesResult : public ServiceResult
 			{
 			public:
 				struct Instance
 				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string moduleStackVersion;
-					bool isHa;
-					std::string createdTime;
-					std::string masterInstanceType;
-					bool isDeletionProtection;
-					int moduleId;
-					std::string networkType;
-					std::string coreInstanceType;
-					std::string clusterName;
-					std::string masterDiskType;
-					std::vector<Instance::Tag> tags;
-					std::string engine;
+					std::string instanceName;
 					std::string status;
 					std::string majorVersion;
+					std::string moduleStackVersion;
 					std::string parentId;
-					std::string coreDiskCount;
-					int masterDiskSize;
-					std::string expireTimeUTC;
+					std::string createdTime;
 					std::string zoneId;
 					std::string instanceId;
-					int coreNodeCount;
-					std::string clusterId;
-					std::string coldStorageStatus;
-					std::string createdTimeUTC;
-					int duration;
-					std::string payType;
-					std::string clusterType;
-					std::string vswitchId;
-					std::string instanceName;
-					int masterNodeCount;
-					std::string vpcId;
-					bool autoRenewal;
-					std::string coreDiskType;
+					std::string deleteTime;
 					std::string regionId;
-					std::string expireTime;
-					int coreDiskSize;
-					std::string backupStatus;
+					std::string clusterType;
+					std::string engine;
 				};
 
 
-				DescribeInstancesResult();
-				explicit DescribeInstancesResult(const std::string &payload);
-				~DescribeInstancesResult();
+				DescribeDeletedInstancesResult();
+				explicit DescribeDeletedInstancesResult(const std::string &payload);
+				~DescribeDeletedInstancesResult();
 				std::vector<Instance> getInstances()const;
 				long getTotalCount()const;
 				int getPageSize()const;
@@ -99,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_DESCRIBEDELETEDINSTANCESRESULT_H_

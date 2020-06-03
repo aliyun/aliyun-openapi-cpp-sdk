@@ -56,6 +56,8 @@
 #include "model/DescribeBackupTablesResult.h"
 #include "model/DescribeDBInstanceUsageRequest.h"
 #include "model/DescribeDBInstanceUsageResult.h"
+#include "model/DescribeDeletedInstancesRequest.h"
+#include "model/DescribeDeletedInstancesResult.h"
 #include "model/DescribeEndpointsRequest.h"
 #include "model/DescribeEndpointsResult.h"
 #include "model/DescribeInstanceRequest.h"
@@ -102,6 +104,8 @@
 #include "model/ModifySecurityGroupsResult.h"
 #include "model/ModifyUIAccountPasswordRequest.h"
 #include "model/ModifyUIAccountPasswordResult.h"
+#include "model/PurgeInstanceRequest.h"
+#include "model/PurgeInstanceResult.h"
 #include "model/QueryHBaseHaDBRequest.h"
 #include "model/QueryHBaseHaDBResult.h"
 #include "model/QueryXpackRelateDBRequest.h"
@@ -182,6 +186,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBInstanceUsageResult> DescribeDBInstanceUsageOutcome;
 			typedef std::future<DescribeDBInstanceUsageOutcome> DescribeDBInstanceUsageOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeDBInstanceUsageRequest&, const DescribeDBInstanceUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceUsageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDeletedInstancesResult> DescribeDeletedInstancesOutcome;
+			typedef std::future<DescribeDeletedInstancesOutcome> DescribeDeletedInstancesOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeDeletedInstancesRequest&, const DescribeDeletedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeletedInstancesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEndpointsResult> DescribeEndpointsOutcome;
 			typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeEndpointsRequest&, const DescribeEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEndpointsAsyncHandler;
@@ -251,6 +258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyUIAccountPasswordResult> ModifyUIAccountPasswordOutcome;
 			typedef std::future<ModifyUIAccountPasswordOutcome> ModifyUIAccountPasswordOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyUIAccountPasswordRequest&, const ModifyUIAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUIAccountPasswordAsyncHandler;
+			typedef Outcome<Error, Model::PurgeInstanceResult> PurgeInstanceOutcome;
+			typedef std::future<PurgeInstanceOutcome> PurgeInstanceOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::PurgeInstanceRequest&, const PurgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PurgeInstanceAsyncHandler;
 			typedef Outcome<Error, Model::QueryHBaseHaDBResult> QueryHBaseHaDBOutcome;
 			typedef std::future<QueryHBaseHaDBOutcome> QueryHBaseHaDBOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::QueryHBaseHaDBRequest&, const QueryHBaseHaDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryHBaseHaDBAsyncHandler;
@@ -337,6 +347,9 @@ namespace AlibabaCloud
 			DescribeDBInstanceUsageOutcome describeDBInstanceUsage(const Model::DescribeDBInstanceUsageRequest &request)const;
 			void describeDBInstanceUsageAsync(const Model::DescribeDBInstanceUsageRequest& request, const DescribeDBInstanceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBInstanceUsageOutcomeCallable describeDBInstanceUsageCallable(const Model::DescribeDBInstanceUsageRequest& request) const;
+			DescribeDeletedInstancesOutcome describeDeletedInstances(const Model::DescribeDeletedInstancesRequest &request)const;
+			void describeDeletedInstancesAsync(const Model::DescribeDeletedInstancesRequest& request, const DescribeDeletedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDeletedInstancesOutcomeCallable describeDeletedInstancesCallable(const Model::DescribeDeletedInstancesRequest& request) const;
 			DescribeEndpointsOutcome describeEndpoints(const Model::DescribeEndpointsRequest &request)const;
 			void describeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEndpointsOutcomeCallable describeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
@@ -406,6 +419,9 @@ namespace AlibabaCloud
 			ModifyUIAccountPasswordOutcome modifyUIAccountPassword(const Model::ModifyUIAccountPasswordRequest &request)const;
 			void modifyUIAccountPasswordAsync(const Model::ModifyUIAccountPasswordRequest& request, const ModifyUIAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUIAccountPasswordOutcomeCallable modifyUIAccountPasswordCallable(const Model::ModifyUIAccountPasswordRequest& request) const;
+			PurgeInstanceOutcome purgeInstance(const Model::PurgeInstanceRequest &request)const;
+			void purgeInstanceAsync(const Model::PurgeInstanceRequest& request, const PurgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PurgeInstanceOutcomeCallable purgeInstanceCallable(const Model::PurgeInstanceRequest& request) const;
 			QueryHBaseHaDBOutcome queryHBaseHaDB(const Model::QueryHBaseHaDBRequest &request)const;
 			void queryHBaseHaDBAsync(const Model::QueryHBaseHaDBRequest& request, const QueryHBaseHaDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryHBaseHaDBOutcomeCallable queryHBaseHaDBCallable(const Model::QueryHBaseHaDBRequest& request) const;

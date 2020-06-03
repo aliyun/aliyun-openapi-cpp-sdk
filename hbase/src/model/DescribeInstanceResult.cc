@@ -127,6 +127,10 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		moduleId_ = std::stoi(value["ModuleId"].asString());
 	if(!value["ModuleStackVersion"].isNull())
 		moduleStackVersion_ = value["ModuleStackVersion"].asString();
+	if(!value["AutoRenewal"].isNull())
+		autoRenewal_ = value["AutoRenewal"].asString() == "true";
+	if(!value["Duration"].isNull())
+		duration_ = std::stoi(value["Duration"].asString());
 
 }
 
@@ -270,6 +274,11 @@ std::string DescribeInstanceResult::getCreatedTimeUTC()const
 	return createdTimeUTC_;
 }
 
+int DescribeInstanceResult::getDuration()const
+{
+	return duration_;
+}
+
 std::string DescribeInstanceResult::getPayType()const
 {
 	return payType_;
@@ -303,6 +312,11 @@ int DescribeInstanceResult::getMasterNodeCount()const
 std::string DescribeInstanceResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+bool DescribeInstanceResult::getAutoRenewal()const
+{
+	return autoRenewal_;
 }
 
 std::string DescribeInstanceResult::getCoreDiskType()const

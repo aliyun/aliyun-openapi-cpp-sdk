@@ -663,6 +663,42 @@ HBaseClient::DescribeDBInstanceUsageOutcomeCallable HBaseClient::describeDBInsta
 	return task->get_future();
 }
 
+HBaseClient::DescribeDeletedInstancesOutcome HBaseClient::describeDeletedInstances(const DescribeDeletedInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDeletedInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDeletedInstancesOutcome(DescribeDeletedInstancesResult(outcome.result()));
+	else
+		return DescribeDeletedInstancesOutcome(outcome.error());
+}
+
+void HBaseClient::describeDeletedInstancesAsync(const DescribeDeletedInstancesRequest& request, const DescribeDeletedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDeletedInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::DescribeDeletedInstancesOutcomeCallable HBaseClient::describeDeletedInstancesCallable(const DescribeDeletedInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDeletedInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDeletedInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DescribeEndpointsOutcome HBaseClient::describeEndpoints(const DescribeEndpointsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,6 +1521,42 @@ HBaseClient::ModifyUIAccountPasswordOutcomeCallable HBaseClient::modifyUIAccount
 			[this, request]()
 			{
 			return this->modifyUIAccountPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::PurgeInstanceOutcome HBaseClient::purgeInstance(const PurgeInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PurgeInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PurgeInstanceOutcome(PurgeInstanceResult(outcome.result()));
+	else
+		return PurgeInstanceOutcome(outcome.error());
+}
+
+void HBaseClient::purgeInstanceAsync(const PurgeInstanceRequest& request, const PurgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, purgeInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::PurgeInstanceOutcomeCallable HBaseClient::purgeInstanceCallable(const PurgeInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PurgeInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->purgeInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

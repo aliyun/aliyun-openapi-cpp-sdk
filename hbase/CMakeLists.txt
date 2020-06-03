@@ -55,6 +55,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeBackupTablesResult.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageRequest.h
 	include/alibabacloud/hbase/model/DescribeDBInstanceUsageResult.h
+	include/alibabacloud/hbase/model/DescribeDeletedInstancesRequest.h
+	include/alibabacloud/hbase/model/DescribeDeletedInstancesResult.h
 	include/alibabacloud/hbase/model/DescribeEndpointsRequest.h
 	include/alibabacloud/hbase/model/DescribeEndpointsResult.h
 	include/alibabacloud/hbase/model/DescribeInstanceRequest.h
@@ -101,6 +103,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ModifySecurityGroupsResult.h
 	include/alibabacloud/hbase/model/ModifyUIAccountPasswordRequest.h
 	include/alibabacloud/hbase/model/ModifyUIAccountPasswordResult.h
+	include/alibabacloud/hbase/model/PurgeInstanceRequest.h
+	include/alibabacloud/hbase/model/PurgeInstanceResult.h
 	include/alibabacloud/hbase/model/QueryHBaseHaDBRequest.h
 	include/alibabacloud/hbase/model/QueryHBaseHaDBResult.h
 	include/alibabacloud/hbase/model/QueryXpackRelateDBRequest.h
@@ -158,6 +162,8 @@ set(hbase_src
 	src/model/DescribeBackupTablesResult.cc
 	src/model/DescribeDBInstanceUsageRequest.cc
 	src/model/DescribeDBInstanceUsageResult.cc
+	src/model/DescribeDeletedInstancesRequest.cc
+	src/model/DescribeDeletedInstancesResult.cc
 	src/model/DescribeEndpointsRequest.cc
 	src/model/DescribeEndpointsResult.cc
 	src/model/DescribeInstanceRequest.cc
@@ -204,6 +210,8 @@ set(hbase_src
 	src/model/ModifySecurityGroupsResult.cc
 	src/model/ModifyUIAccountPasswordRequest.cc
 	src/model/ModifyUIAccountPasswordResult.cc
+	src/model/PurgeInstanceRequest.cc
+	src/model/PurgeInstanceResult.cc
 	src/model/QueryHBaseHaDBRequest.cc
 	src/model/QueryHBaseHaDBResult.cc
 	src/model/QueryXpackRelateDBRequest.cc

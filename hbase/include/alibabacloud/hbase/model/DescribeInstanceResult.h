@@ -70,6 +70,7 @@ namespace AlibabaCloud
 				std::string getColdStorageStatus()const;
 				std::string getMinorVersion()const;
 				std::string getCreatedTimeUTC()const;
+				int getDuration()const;
 				std::string getPayType()const;
 				bool getIsMultiModel()const;
 				std::string getClusterType()const;
@@ -77,6 +78,7 @@ namespace AlibabaCloud
 				std::string getInstanceName()const;
 				int getMasterNodeCount()const;
 				std::string getVpcId()const;
+				bool getAutoRenewal()const;
 				std::string getCoreDiskType()const;
 				std::string getRegionId()const;
 				std::string getExpireTime()const;
@@ -114,6 +116,7 @@ namespace AlibabaCloud
 				std::string coldStorageStatus_;
 				std::string minorVersion_;
 				std::string createdTimeUTC_;
+				int duration_;
 				std::string payType_;
 				bool isMultiModel_;
 				std::string clusterType_;
@@ -121,6 +124,7 @@ namespace AlibabaCloud
 				std::string instanceName_;
 				int masterNodeCount_;
 				std::string vpcId_;
+				bool autoRenewal_;
 				std::string coreDiskType_;
 				std::string regionId_;
 				std::string expireTime_;
