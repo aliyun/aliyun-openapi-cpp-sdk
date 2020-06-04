@@ -64,6 +64,42 @@ void GetMediaAuditResultTimelineResult::parse(const std::string &payload)
 			terrorismItemObject.timestamp = mediaAuditResultTimelineNodeTerrorismTerrorismItem["Timestamp"].asString();
 		mediaAuditResultTimeline_.terrorism.push_back(terrorismItemObject);
 	}
+	auto allLogoNode = mediaAuditResultTimelineNode["Logo"]["LogoItem"];
+	for (auto mediaAuditResultTimelineNodeLogoLogoItem : allLogoNode)
+	{
+		MediaAuditResultTimeline::LogoItem logoItemObject;
+		if(!mediaAuditResultTimelineNodeLogoLogoItem["Label"].isNull())
+			logoItemObject.label = mediaAuditResultTimelineNodeLogoLogoItem["Label"].asString();
+		if(!mediaAuditResultTimelineNodeLogoLogoItem["Score"].isNull())
+			logoItemObject.score = mediaAuditResultTimelineNodeLogoLogoItem["Score"].asString();
+		if(!mediaAuditResultTimelineNodeLogoLogoItem["Timestamp"].isNull())
+			logoItemObject.timestamp = mediaAuditResultTimelineNodeLogoLogoItem["Timestamp"].asString();
+		mediaAuditResultTimeline_.logo.push_back(logoItemObject);
+	}
+	auto allLiveNode = mediaAuditResultTimelineNode["Live"]["LiveItem"];
+	for (auto mediaAuditResultTimelineNodeLiveLiveItem : allLiveNode)
+	{
+		MediaAuditResultTimeline::LiveItem liveItemObject;
+		if(!mediaAuditResultTimelineNodeLiveLiveItem["Label"].isNull())
+			liveItemObject.label = mediaAuditResultTimelineNodeLiveLiveItem["Label"].asString();
+		if(!mediaAuditResultTimelineNodeLiveLiveItem["Score"].isNull())
+			liveItemObject.score = mediaAuditResultTimelineNodeLiveLiveItem["Score"].asString();
+		if(!mediaAuditResultTimelineNodeLiveLiveItem["Timestamp"].isNull())
+			liveItemObject.timestamp = mediaAuditResultTimelineNodeLiveLiveItem["Timestamp"].asString();
+		mediaAuditResultTimeline_.live.push_back(liveItemObject);
+	}
+	auto allAdNode = mediaAuditResultTimelineNode["Ad"]["AdItem"];
+	for (auto mediaAuditResultTimelineNodeAdAdItem : allAdNode)
+	{
+		MediaAuditResultTimeline::AdItem adItemObject;
+		if(!mediaAuditResultTimelineNodeAdAdItem["Label"].isNull())
+			adItemObject.label = mediaAuditResultTimelineNodeAdAdItem["Label"].asString();
+		if(!mediaAuditResultTimelineNodeAdAdItem["Score"].isNull())
+			adItemObject.score = mediaAuditResultTimelineNodeAdAdItem["Score"].asString();
+		if(!mediaAuditResultTimelineNodeAdAdItem["Timestamp"].isNull())
+			adItemObject.timestamp = mediaAuditResultTimelineNodeAdAdItem["Timestamp"].asString();
+		mediaAuditResultTimeline_.ad.push_back(adItemObject);
+	}
 
 }
 

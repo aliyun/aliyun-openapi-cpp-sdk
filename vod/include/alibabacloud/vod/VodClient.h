@@ -146,6 +146,8 @@
 #include "model/GetEditingProjectMaterialsResult.h"
 #include "model/GetImageInfoRequest.h"
 #include "model/GetImageInfoResult.h"
+#include "model/GetMediaAuditAudioResultDetailRequest.h"
+#include "model/GetMediaAuditAudioResultDetailResult.h"
 #include "model/GetMediaAuditResultRequest.h"
 #include "model/GetMediaAuditResultResult.h"
 #include "model/GetMediaAuditResultDetailRequest.h"
@@ -194,6 +196,8 @@
 #include "model/ListAuditSecurityIpResult.h"
 #include "model/ListLiveRecordVideoRequest.h"
 #include "model/ListLiveRecordVideoResult.h"
+#include "model/ListMediaDNADeleteJobRequest.h"
+#include "model/ListMediaDNADeleteJobResult.h"
 #include "model/ListSnapshotsRequest.h"
 #include "model/ListSnapshotsResult.h"
 #include "model/ListTranscodeTaskRequest.h"
@@ -240,6 +244,8 @@
 #include "model/SubmitAIMediaAuditJobResult.h"
 #include "model/SubmitDynamicImageJobRequest.h"
 #include "model/SubmitDynamicImageJobResult.h"
+#include "model/SubmitMediaDNADeleteJobRequest.h"
+#include "model/SubmitMediaDNADeleteJobResult.h"
 #include "model/SubmitPreprocessJobsRequest.h"
 #include "model/SubmitPreprocessJobsResult.h"
 #include "model/SubmitSnapshotJobRequest.h"
@@ -469,6 +475,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetImageInfoResult> GetImageInfoOutcome;
 			typedef std::future<GetImageInfoOutcome> GetImageInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetImageInfoRequest&, const GetImageInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetMediaAuditAudioResultDetailResult> GetMediaAuditAudioResultDetailOutcome;
+			typedef std::future<GetMediaAuditAudioResultDetailOutcome> GetMediaAuditAudioResultDetailOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetMediaAuditAudioResultDetailRequest&, const GetMediaAuditAudioResultDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaAuditAudioResultDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetMediaAuditResultResult> GetMediaAuditResultOutcome;
 			typedef std::future<GetMediaAuditResultOutcome> GetMediaAuditResultOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetMediaAuditResultRequest&, const GetMediaAuditResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaAuditResultAsyncHandler;
@@ -541,6 +550,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListLiveRecordVideoResult> ListLiveRecordVideoOutcome;
 			typedef std::future<ListLiveRecordVideoOutcome> ListLiveRecordVideoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListLiveRecordVideoRequest&, const ListLiveRecordVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLiveRecordVideoAsyncHandler;
+			typedef Outcome<Error, Model::ListMediaDNADeleteJobResult> ListMediaDNADeleteJobOutcome;
+			typedef std::future<ListMediaDNADeleteJobOutcome> ListMediaDNADeleteJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::ListMediaDNADeleteJobRequest&, const ListMediaDNADeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMediaDNADeleteJobAsyncHandler;
 			typedef Outcome<Error, Model::ListSnapshotsResult> ListSnapshotsOutcome;
 			typedef std::future<ListSnapshotsOutcome> ListSnapshotsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListSnapshotsRequest&, const ListSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotsAsyncHandler;
@@ -610,6 +622,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitDynamicImageJobResult> SubmitDynamicImageJobOutcome;
 			typedef std::future<SubmitDynamicImageJobOutcome> SubmitDynamicImageJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitDynamicImageJobRequest&, const SubmitDynamicImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDynamicImageJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitMediaDNADeleteJobResult> SubmitMediaDNADeleteJobOutcome;
+			typedef std::future<SubmitMediaDNADeleteJobOutcome> SubmitMediaDNADeleteJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SubmitMediaDNADeleteJobRequest&, const SubmitMediaDNADeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMediaDNADeleteJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitPreprocessJobsResult> SubmitPreprocessJobsOutcome;
 			typedef std::future<SubmitPreprocessJobsOutcome> SubmitPreprocessJobsOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitPreprocessJobsRequest&, const SubmitPreprocessJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPreprocessJobsAsyncHandler;
@@ -852,6 +867,9 @@ namespace AlibabaCloud
 			GetImageInfoOutcome getImageInfo(const Model::GetImageInfoRequest &request)const;
 			void getImageInfoAsync(const Model::GetImageInfoRequest& request, const GetImageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageInfoOutcomeCallable getImageInfoCallable(const Model::GetImageInfoRequest& request) const;
+			GetMediaAuditAudioResultDetailOutcome getMediaAuditAudioResultDetail(const Model::GetMediaAuditAudioResultDetailRequest &request)const;
+			void getMediaAuditAudioResultDetailAsync(const Model::GetMediaAuditAudioResultDetailRequest& request, const GetMediaAuditAudioResultDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMediaAuditAudioResultDetailOutcomeCallable getMediaAuditAudioResultDetailCallable(const Model::GetMediaAuditAudioResultDetailRequest& request) const;
 			GetMediaAuditResultOutcome getMediaAuditResult(const Model::GetMediaAuditResultRequest &request)const;
 			void getMediaAuditResultAsync(const Model::GetMediaAuditResultRequest& request, const GetMediaAuditResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMediaAuditResultOutcomeCallable getMediaAuditResultCallable(const Model::GetMediaAuditResultRequest& request) const;
@@ -924,6 +942,9 @@ namespace AlibabaCloud
 			ListLiveRecordVideoOutcome listLiveRecordVideo(const Model::ListLiveRecordVideoRequest &request)const;
 			void listLiveRecordVideoAsync(const Model::ListLiveRecordVideoRequest& request, const ListLiveRecordVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLiveRecordVideoOutcomeCallable listLiveRecordVideoCallable(const Model::ListLiveRecordVideoRequest& request) const;
+			ListMediaDNADeleteJobOutcome listMediaDNADeleteJob(const Model::ListMediaDNADeleteJobRequest &request)const;
+			void listMediaDNADeleteJobAsync(const Model::ListMediaDNADeleteJobRequest& request, const ListMediaDNADeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMediaDNADeleteJobOutcomeCallable listMediaDNADeleteJobCallable(const Model::ListMediaDNADeleteJobRequest& request) const;
 			ListSnapshotsOutcome listSnapshots(const Model::ListSnapshotsRequest &request)const;
 			void listSnapshotsAsync(const Model::ListSnapshotsRequest& request, const ListSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotsOutcomeCallable listSnapshotsCallable(const Model::ListSnapshotsRequest& request) const;
@@ -993,6 +1014,9 @@ namespace AlibabaCloud
 			SubmitDynamicImageJobOutcome submitDynamicImageJob(const Model::SubmitDynamicImageJobRequest &request)const;
 			void submitDynamicImageJobAsync(const Model::SubmitDynamicImageJobRequest& request, const SubmitDynamicImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitDynamicImageJobOutcomeCallable submitDynamicImageJobCallable(const Model::SubmitDynamicImageJobRequest& request) const;
+			SubmitMediaDNADeleteJobOutcome submitMediaDNADeleteJob(const Model::SubmitMediaDNADeleteJobRequest &request)const;
+			void submitMediaDNADeleteJobAsync(const Model::SubmitMediaDNADeleteJobRequest& request, const SubmitMediaDNADeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitMediaDNADeleteJobOutcomeCallable submitMediaDNADeleteJobCallable(const Model::SubmitMediaDNADeleteJobRequest& request) const;
 			SubmitPreprocessJobsOutcome submitPreprocessJobs(const Model::SubmitPreprocessJobsRequest &request)const;
 			void submitPreprocessJobsAsync(const Model::SubmitPreprocessJobsRequest& request, const SubmitPreprocessJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitPreprocessJobsOutcomeCallable submitPreprocessJobsCallable(const Model::SubmitPreprocessJobsRequest& request) const;

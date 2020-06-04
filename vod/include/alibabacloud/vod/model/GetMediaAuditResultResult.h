@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					struct VideoResult
 					{
-						struct TerrorismResult
+						struct PornResult
 						{
 							struct CounterListItem
 							{
@@ -57,7 +57,7 @@ namespace AlibabaCloud
 							std::string label;
 							std::vector<CounterListItem> counterList;
 						};
-						struct PornResult
+						struct AdResult
 						{
 							struct CounterListItem3
 							{
@@ -78,10 +78,83 @@ namespace AlibabaCloud
 							std::string label;
 							std::vector<TopListItem4> topList2;
 						};
+						struct LogoResult
+						{
+							struct CounterListItem7
+							{
+								std::string label;
+								int count;
+							};
+							struct TopListItem8
+							{
+								std::string score;
+								std::string label;
+								std::string timestamp;
+								std::string url;
+							};
+							std::string suggestion;
+							std::string maxScore;
+							std::string averageScore;
+							std::vector<TopListItem8> topList6;
+							std::string label;
+							std::vector<CounterListItem7> counterList5;
+						};
+						struct LiveResult
+						{
+							struct CounterListItem11
+							{
+								std::string label;
+								int count;
+							};
+							struct TopListItem12
+							{
+								std::string score;
+								std::string label;
+								std::string timestamp;
+								std::string url;
+							};
+							std::string suggestion;
+							std::string maxScore;
+							std::string averageScore;
+							std::string label;
+							std::vector<CounterListItem11> counterList9;
+							std::vector<TopListItem12> topList10;
+						};
+						struct TerrorismResult
+						{
+							struct CounterListItem15
+							{
+								std::string label;
+								int count;
+							};
+							struct TopListItem16
+							{
+								std::string score;
+								std::string label;
+								std::string timestamp;
+								std::string url;
+							};
+							std::string suggestion;
+							std::string maxScore;
+							std::string averageScore;
+							std::vector<TopListItem16> topList14;
+							std::string label;
+							std::vector<CounterListItem15> counterList13;
+						};
+						LogoResult logoResult;
 						std::string suggestion;
+						LiveResult liveResult;
 						TerrorismResult terrorismResult;
 						std::string label;
 						PornResult pornResult;
+						AdResult adResult;
+					};
+					struct AudioResultItem
+					{
+						std::string suggestion;
+						std::string score;
+						std::string label;
+						std::string scene;
 					};
 					struct ImageResultItem
 					{
@@ -113,6 +186,7 @@ namespace AlibabaCloud
 					std::vector<ImageResultItem> imageResult;
 					std::string abnormalModules;
 					std::string label;
+					std::vector<AudioResultItem> audioResult;
 				};
 
 

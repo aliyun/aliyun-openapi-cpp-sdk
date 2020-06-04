@@ -145,6 +145,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetEditingProjectMaterialsResult.h
 	include/alibabacloud/vod/model/GetImageInfoRequest.h
 	include/alibabacloud/vod/model/GetImageInfoResult.h
+	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailRequest.h
+	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailResult.h
 	include/alibabacloud/vod/model/GetMediaAuditResultRequest.h
 	include/alibabacloud/vod/model/GetMediaAuditResultResult.h
 	include/alibabacloud/vod/model/GetMediaAuditResultDetailRequest.h
@@ -193,6 +195,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoResult.h
+	include/alibabacloud/vod/model/ListMediaDNADeleteJobRequest.h
+	include/alibabacloud/vod/model/ListMediaDNADeleteJobResult.h
 	include/alibabacloud/vod/model/ListSnapshotsRequest.h
 	include/alibabacloud/vod/model/ListSnapshotsResult.h
 	include/alibabacloud/vod/model/ListTranscodeTaskRequest.h
@@ -239,6 +243,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SubmitAIMediaAuditJobResult.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobRequest.h
 	include/alibabacloud/vod/model/SubmitDynamicImageJobResult.h
+	include/alibabacloud/vod/model/SubmitMediaDNADeleteJobRequest.h
+	include/alibabacloud/vod/model/SubmitMediaDNADeleteJobResult.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsRequest.h
 	include/alibabacloud/vod/model/SubmitPreprocessJobsResult.h
 	include/alibabacloud/vod/model/SubmitSnapshotJobRequest.h
@@ -400,6 +406,8 @@ set(vod_src
 	src/model/GetEditingProjectMaterialsResult.cc
 	src/model/GetImageInfoRequest.cc
 	src/model/GetImageInfoResult.cc
+	src/model/GetMediaAuditAudioResultDetailRequest.cc
+	src/model/GetMediaAuditAudioResultDetailResult.cc
 	src/model/GetMediaAuditResultRequest.cc
 	src/model/GetMediaAuditResultResult.cc
 	src/model/GetMediaAuditResultDetailRequest.cc
@@ -448,6 +456,8 @@ set(vod_src
 	src/model/ListAuditSecurityIpResult.cc
 	src/model/ListLiveRecordVideoRequest.cc
 	src/model/ListLiveRecordVideoResult.cc
+	src/model/ListMediaDNADeleteJobRequest.cc
+	src/model/ListMediaDNADeleteJobResult.cc
 	src/model/ListSnapshotsRequest.cc
 	src/model/ListSnapshotsResult.cc
 	src/model/ListTranscodeTaskRequest.cc
@@ -494,6 +504,8 @@ set(vod_src
 	src/model/SubmitAIMediaAuditJobResult.cc
 	src/model/SubmitDynamicImageJobRequest.cc
 	src/model/SubmitDynamicImageJobResult.cc
+	src/model/SubmitMediaDNADeleteJobRequest.cc
+	src/model/SubmitMediaDNADeleteJobResult.cc
 	src/model/SubmitPreprocessJobsRequest.cc
 	src/model/SubmitPreprocessJobsResult.cc
 	src/model/SubmitSnapshotJobRequest.cc

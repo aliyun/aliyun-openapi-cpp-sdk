@@ -46,8 +46,29 @@ namespace AlibabaCloud
 						std::string label;
 						std::string timestamp;
 					};
+					struct LogoItem
+					{
+						std::string score;
+						std::string label;
+						std::string timestamp;
+					};
+					struct LiveItem
+					{
+						std::string score;
+						std::string label;
+						std::string timestamp;
+					};
+					struct AdItem
+					{
+						std::string score;
+						std::string label;
+						std::string timestamp;
+					};
+					std::vector<AdItem> ad;
 					std::vector<TerrorismItem> terrorism;
+					std::vector<LiveItem> live;
 					std::vector<PornItem> porn;
+					std::vector<LogoItem> logo;
 				};
 
 

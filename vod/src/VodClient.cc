@@ -2283,6 +2283,42 @@ VodClient::GetImageInfoOutcomeCallable VodClient::getImageInfoCallable(const Get
 	return task->get_future();
 }
 
+VodClient::GetMediaAuditAudioResultDetailOutcome VodClient::getMediaAuditAudioResultDetail(const GetMediaAuditAudioResultDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMediaAuditAudioResultDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMediaAuditAudioResultDetailOutcome(GetMediaAuditAudioResultDetailResult(outcome.result()));
+	else
+		return GetMediaAuditAudioResultDetailOutcome(outcome.error());
+}
+
+void VodClient::getMediaAuditAudioResultDetailAsync(const GetMediaAuditAudioResultDetailRequest& request, const GetMediaAuditAudioResultDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMediaAuditAudioResultDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetMediaAuditAudioResultDetailOutcomeCallable VodClient::getMediaAuditAudioResultDetailCallable(const GetMediaAuditAudioResultDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMediaAuditAudioResultDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getMediaAuditAudioResultDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GetMediaAuditResultOutcome VodClient::getMediaAuditResult(const GetMediaAuditResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3147,6 +3183,42 @@ VodClient::ListLiveRecordVideoOutcomeCallable VodClient::listLiveRecordVideoCall
 	return task->get_future();
 }
 
+VodClient::ListMediaDNADeleteJobOutcome VodClient::listMediaDNADeleteJob(const ListMediaDNADeleteJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMediaDNADeleteJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMediaDNADeleteJobOutcome(ListMediaDNADeleteJobResult(outcome.result()));
+	else
+		return ListMediaDNADeleteJobOutcome(outcome.error());
+}
+
+void VodClient::listMediaDNADeleteJobAsync(const ListMediaDNADeleteJobRequest& request, const ListMediaDNADeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMediaDNADeleteJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::ListMediaDNADeleteJobOutcomeCallable VodClient::listMediaDNADeleteJobCallable(const ListMediaDNADeleteJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMediaDNADeleteJobOutcome()>>(
+			[this, request]()
+			{
+			return this->listMediaDNADeleteJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::ListSnapshotsOutcome VodClient::listSnapshots(const ListSnapshotsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3969,6 +4041,42 @@ VodClient::SubmitDynamicImageJobOutcomeCallable VodClient::submitDynamicImageJob
 			[this, request]()
 			{
 			return this->submitDynamicImageJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::SubmitMediaDNADeleteJobOutcome VodClient::submitMediaDNADeleteJob(const SubmitMediaDNADeleteJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitMediaDNADeleteJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitMediaDNADeleteJobOutcome(SubmitMediaDNADeleteJobResult(outcome.result()));
+	else
+		return SubmitMediaDNADeleteJobOutcome(outcome.error());
+}
+
+void VodClient::submitMediaDNADeleteJobAsync(const SubmitMediaDNADeleteJobRequest& request, const SubmitMediaDNADeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitMediaDNADeleteJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::SubmitMediaDNADeleteJobOutcomeCallable VodClient::submitMediaDNADeleteJobCallable(const SubmitMediaDNADeleteJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitMediaDNADeleteJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitMediaDNADeleteJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
