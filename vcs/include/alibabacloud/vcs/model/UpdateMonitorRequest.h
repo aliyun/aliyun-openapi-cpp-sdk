@@ -35,12 +35,8 @@ namespace AlibabaCloud
 				UpdateMonitorRequest();
 				~UpdateMonitorRequest();
 
-				std::string getDeviceOperateType()const;
-				void setDeviceOperateType(const std::string& deviceOperateType);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getPicList()const;
-				void setPicList(const std::string& picList);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				std::string getRuleName()const;
@@ -49,27 +45,34 @@ namespace AlibabaCloud
 				void setPicOperateType(const std::string& picOperateType);
 				std::string getAttributeName()const;
 				void setAttributeName(const std::string& attributeName);
+				std::string getAttributeOperateType()const;
+				void setAttributeOperateType(const std::string& attributeOperateType);
+				std::string getRuleExpression()const;
+				void setRuleExpression(const std::string& ruleExpression);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
+				std::string getDeviceOperateType()const;
+				void setDeviceOperateType(const std::string& deviceOperateType);
+				std::string getPicList()const;
+				void setPicList(const std::string& picList);
 				std::string getAttributeValueList()const;
 				void setAttributeValueList(const std::string& attributeValueList);
 				std::string getDeviceList()const;
 				void setDeviceList(const std::string& deviceList);
-				std::string getAttributeOperateType()const;
-				void setAttributeOperateType(const std::string& attributeOperateType);
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
 
             private:
-				std::string deviceOperateType_;
 				std::string corpId_;
-				std::string picList_;
 				std::string description_;
 				std::string ruleName_;
 				std::string picOperateType_;
 				std::string attributeName_;
+				std::string attributeOperateType_;
+				std::string ruleExpression_;
+				std::string taskId_;
+				std::string deviceOperateType_;
+				std::string picList_;
 				std::string attributeValueList_;
 				std::string deviceList_;
-				std::string attributeOperateType_;
-				std::string taskId_;
 
 			};
 		}

@@ -39,12 +39,13 @@ void AddMonitorResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["TaskId"].isNull())
+		data_.taskId = dataNode["TaskId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
 
 }
 
@@ -53,7 +54,7 @@ std::string AddMonitorResult::getMessage()const
 	return message_;
 }
 
-std::string AddMonitorResult::getData()const
+AddMonitorResult::Data AddMonitorResult::getData()const
 {
 	return data_;
 }

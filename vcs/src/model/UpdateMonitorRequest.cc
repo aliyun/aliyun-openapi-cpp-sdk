@@ -27,17 +27,6 @@ UpdateMonitorRequest::UpdateMonitorRequest() :
 UpdateMonitorRequest::~UpdateMonitorRequest()
 {}
 
-std::string UpdateMonitorRequest::getDeviceOperateType()const
-{
-	return deviceOperateType_;
-}
-
-void UpdateMonitorRequest::setDeviceOperateType(const std::string& deviceOperateType)
-{
-	deviceOperateType_ = deviceOperateType;
-	setBodyParameter("DeviceOperateType", deviceOperateType);
-}
-
 std::string UpdateMonitorRequest::getCorpId()const
 {
 	return corpId_;
@@ -47,17 +36,6 @@ void UpdateMonitorRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
-}
-
-std::string UpdateMonitorRequest::getPicList()const
-{
-	return picList_;
-}
-
-void UpdateMonitorRequest::setPicList(const std::string& picList)
-{
-	picList_ = picList;
-	setBodyParameter("PicList", picList);
 }
 
 std::string UpdateMonitorRequest::getDescription()const
@@ -104,6 +82,61 @@ void UpdateMonitorRequest::setAttributeName(const std::string& attributeName)
 	setBodyParameter("AttributeName", attributeName);
 }
 
+std::string UpdateMonitorRequest::getAttributeOperateType()const
+{
+	return attributeOperateType_;
+}
+
+void UpdateMonitorRequest::setAttributeOperateType(const std::string& attributeOperateType)
+{
+	attributeOperateType_ = attributeOperateType;
+	setBodyParameter("AttributeOperateType", attributeOperateType);
+}
+
+std::string UpdateMonitorRequest::getRuleExpression()const
+{
+	return ruleExpression_;
+}
+
+void UpdateMonitorRequest::setRuleExpression(const std::string& ruleExpression)
+{
+	ruleExpression_ = ruleExpression;
+	setBodyParameter("RuleExpression", ruleExpression);
+}
+
+std::string UpdateMonitorRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void UpdateMonitorRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setBodyParameter("TaskId", taskId);
+}
+
+std::string UpdateMonitorRequest::getDeviceOperateType()const
+{
+	return deviceOperateType_;
+}
+
+void UpdateMonitorRequest::setDeviceOperateType(const std::string& deviceOperateType)
+{
+	deviceOperateType_ = deviceOperateType;
+	setBodyParameter("DeviceOperateType", deviceOperateType);
+}
+
+std::string UpdateMonitorRequest::getPicList()const
+{
+	return picList_;
+}
+
+void UpdateMonitorRequest::setPicList(const std::string& picList)
+{
+	picList_ = picList;
+	setBodyParameter("PicList", picList);
+}
+
 std::string UpdateMonitorRequest::getAttributeValueList()const
 {
 	return attributeValueList_;
@@ -124,27 +157,5 @@ void UpdateMonitorRequest::setDeviceList(const std::string& deviceList)
 {
 	deviceList_ = deviceList;
 	setBodyParameter("DeviceList", deviceList);
-}
-
-std::string UpdateMonitorRequest::getAttributeOperateType()const
-{
-	return attributeOperateType_;
-}
-
-void UpdateMonitorRequest::setAttributeOperateType(const std::string& attributeOperateType)
-{
-	attributeOperateType_ = attributeOperateType;
-	setBodyParameter("AttributeOperateType", attributeOperateType);
-}
-
-std::string UpdateMonitorRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void UpdateMonitorRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setBodyParameter("TaskId", taskId);
 }
 

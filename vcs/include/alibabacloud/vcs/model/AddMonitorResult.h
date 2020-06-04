@@ -32,20 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VCS_EXPORT AddMonitorResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string taskId;
+				};
 
 
 				AddMonitorResult();
 				explicit AddMonitorResult(const std::string &payload);
 				~AddMonitorResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				Data data_;
 				std::string code_;
 
 			};
