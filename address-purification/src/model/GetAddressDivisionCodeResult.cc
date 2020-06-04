@@ -14,52 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/address-purification/model/GetReportResult.h>
+#include <alibabacloud/address-purification/model/GetAddressDivisionCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Address_purification;
 using namespace AlibabaCloud::Address_purification::Model;
 
-GetReportResult::GetReportResult() :
+GetAddressDivisionCodeResult::GetAddressDivisionCodeResult() :
 	ServiceResult()
 {}
 
-GetReportResult::GetReportResult(const std::string &payload) :
+GetAddressDivisionCodeResult::GetAddressDivisionCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetReportResult::~GetReportResult()
+GetAddressDivisionCodeResult::~GetAddressDivisionCodeResult()
 {}
 
-void GetReportResult::parse(const std::string &payload)
+void GetAddressDivisionCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
 
 }
 
-std::string GetReportResult::getData()const
+std::string GetAddressDivisionCodeResult::getData()const
 {
 	return data_;
-}
-
-std::string GetReportResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string GetReportResult::getErrCode()const
-{
-	return errCode_;
 }
 

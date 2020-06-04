@@ -14,47 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/address-purification/model/GetAlgorithmResultRequest.h>
+#include <alibabacloud/address-purification/model/UpdateProjectRequest.h>
 
-using AlibabaCloud::Address_purification::Model::GetAlgorithmResultRequest;
+using AlibabaCloud::Address_purification::Model::UpdateProjectRequest;
 
-GetAlgorithmResultRequest::GetAlgorithmResultRequest() :
-	RpcServiceRequest("address-purification", "2019-11-18", "GetAlgorithmResult")
+UpdateProjectRequest::UpdateProjectRequest() :
+	RpcServiceRequest("address-purification", "2019-11-18", "UpdateProject")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-GetAlgorithmResultRequest::~GetAlgorithmResultRequest()
+UpdateProjectRequest::~UpdateProjectRequest()
 {}
 
-std::string GetAlgorithmResultRequest::getServiceCode()const
+std::string UpdateProjectRequest::getServiceCode()const
 {
 	return serviceCode_;
 }
 
-void GetAlgorithmResultRequest::setServiceCode(const std::string& serviceCode)
+void UpdateProjectRequest::setServiceCode(const std::string& serviceCode)
 {
 	serviceCode_ = serviceCode;
 	setBodyParameter("ServiceCode", serviceCode);
 }
 
-std::string GetAlgorithmResultRequest::getApiCode()const
-{
-	return apiCode_;
-}
-
-void GetAlgorithmResultRequest::setApiCode(const std::string& apiCode)
-{
-	apiCode_ = apiCode;
-	setBodyParameter("ApiCode", apiCode);
-}
-
-std::string GetAlgorithmResultRequest::getParameters()const
+std::string UpdateProjectRequest::getParameters()const
 {
 	return parameters_;
 }
 
-void GetAlgorithmResultRequest::setParameters(const std::string& parameters)
+void UpdateProjectRequest::setParameters(const std::string& parameters)
 {
 	parameters_ = parameters;
 	setBodyParameter("Parameters", parameters);

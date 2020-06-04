@@ -22,16 +22,28 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Address_purificationExport.h"
-#include "model/DescribeProductRequest.h"
-#include "model/DescribeProductResult.h"
-#include "model/GetAlgorithmResultRequest.h"
-#include "model/GetAlgorithmResultResult.h"
-#include "model/GetConsoleResultRequest.h"
-#include "model/GetConsoleResultResult.h"
-#include "model/GetReportRequest.h"
-#include "model/GetReportResult.h"
-#include "model/GetUserInfomationRequest.h"
-#include "model/GetUserInfomationResult.h"
+#include "model/ClassifyPOIRequest.h"
+#include "model/ClassifyPOIResult.h"
+#include "model/CompleteAddressRequest.h"
+#include "model/CompleteAddressResult.h"
+#include "model/CorrectAddressRequest.h"
+#include "model/CorrectAddressResult.h"
+#include "model/ExtractAddressRequest.h"
+#include "model/ExtractAddressResult.h"
+#include "model/ExtractNameRequest.h"
+#include "model/ExtractNameResult.h"
+#include "model/ExtractPhoneRequest.h"
+#include "model/ExtractPhoneResult.h"
+#include "model/GetAddressDivisionCodeRequest.h"
+#include "model/GetAddressDivisionCodeResult.h"
+#include "model/GetAddressSimilarityRequest.h"
+#include "model/GetAddressSimilarityResult.h"
+#include "model/GetZipcodeRequest.h"
+#include "model/GetZipcodeResult.h"
+#include "model/StructureAddressRequest.h"
+#include "model/StructureAddressResult.h"
+#include "model/UpdateProjectRequest.h"
+#include "model/UpdateProjectResult.h"
 
 
 namespace AlibabaCloud
@@ -41,41 +53,77 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT Address_purificationClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::DescribeProductResult> DescribeProductOutcome;
-			typedef std::future<DescribeProductOutcome> DescribeProductOutcomeCallable;
-			typedef std::function<void(const Address_purificationClient*, const Model::DescribeProductRequest&, const DescribeProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductAsyncHandler;
-			typedef Outcome<Error, Model::GetAlgorithmResultResult> GetAlgorithmResultOutcome;
-			typedef std::future<GetAlgorithmResultOutcome> GetAlgorithmResultOutcomeCallable;
-			typedef std::function<void(const Address_purificationClient*, const Model::GetAlgorithmResultRequest&, const GetAlgorithmResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAlgorithmResultAsyncHandler;
-			typedef Outcome<Error, Model::GetConsoleResultResult> GetConsoleResultOutcome;
-			typedef std::future<GetConsoleResultOutcome> GetConsoleResultOutcomeCallable;
-			typedef std::function<void(const Address_purificationClient*, const Model::GetConsoleResultRequest&, const GetConsoleResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsoleResultAsyncHandler;
-			typedef Outcome<Error, Model::GetReportResult> GetReportOutcome;
-			typedef std::future<GetReportOutcome> GetReportOutcomeCallable;
-			typedef std::function<void(const Address_purificationClient*, const Model::GetReportRequest&, const GetReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetReportAsyncHandler;
-			typedef Outcome<Error, Model::GetUserInfomationResult> GetUserInfomationOutcome;
-			typedef std::future<GetUserInfomationOutcome> GetUserInfomationOutcomeCallable;
-			typedef std::function<void(const Address_purificationClient*, const Model::GetUserInfomationRequest&, const GetUserInfomationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserInfomationAsyncHandler;
+			typedef Outcome<Error, Model::ClassifyPOIResult> ClassifyPOIOutcome;
+			typedef std::future<ClassifyPOIOutcome> ClassifyPOIOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::ClassifyPOIRequest&, const ClassifyPOIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyPOIAsyncHandler;
+			typedef Outcome<Error, Model::CompleteAddressResult> CompleteAddressOutcome;
+			typedef std::future<CompleteAddressOutcome> CompleteAddressOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::CompleteAddressRequest&, const CompleteAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteAddressAsyncHandler;
+			typedef Outcome<Error, Model::CorrectAddressResult> CorrectAddressOutcome;
+			typedef std::future<CorrectAddressOutcome> CorrectAddressOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::CorrectAddressRequest&, const CorrectAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CorrectAddressAsyncHandler;
+			typedef Outcome<Error, Model::ExtractAddressResult> ExtractAddressOutcome;
+			typedef std::future<ExtractAddressOutcome> ExtractAddressOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::ExtractAddressRequest&, const ExtractAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractAddressAsyncHandler;
+			typedef Outcome<Error, Model::ExtractNameResult> ExtractNameOutcome;
+			typedef std::future<ExtractNameOutcome> ExtractNameOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::ExtractNameRequest&, const ExtractNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractNameAsyncHandler;
+			typedef Outcome<Error, Model::ExtractPhoneResult> ExtractPhoneOutcome;
+			typedef std::future<ExtractPhoneOutcome> ExtractPhoneOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::ExtractPhoneRequest&, const ExtractPhoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPhoneAsyncHandler;
+			typedef Outcome<Error, Model::GetAddressDivisionCodeResult> GetAddressDivisionCodeOutcome;
+			typedef std::future<GetAddressDivisionCodeOutcome> GetAddressDivisionCodeOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::GetAddressDivisionCodeRequest&, const GetAddressDivisionCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddressDivisionCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetAddressSimilarityResult> GetAddressSimilarityOutcome;
+			typedef std::future<GetAddressSimilarityOutcome> GetAddressSimilarityOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::GetAddressSimilarityRequest&, const GetAddressSimilarityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAddressSimilarityAsyncHandler;
+			typedef Outcome<Error, Model::GetZipcodeResult> GetZipcodeOutcome;
+			typedef std::future<GetZipcodeOutcome> GetZipcodeOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::GetZipcodeRequest&, const GetZipcodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetZipcodeAsyncHandler;
+			typedef Outcome<Error, Model::StructureAddressResult> StructureAddressOutcome;
+			typedef std::future<StructureAddressOutcome> StructureAddressOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::StructureAddressRequest&, const StructureAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StructureAddressAsyncHandler;
+			typedef Outcome<Error, Model::UpdateProjectResult> UpdateProjectOutcome;
+			typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+			typedef std::function<void(const Address_purificationClient*, const Model::UpdateProjectRequest&, const UpdateProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
 
 			Address_purificationClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Address_purificationClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Address_purificationClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Address_purificationClient();
-			DescribeProductOutcome describeProduct(const Model::DescribeProductRequest &request)const;
-			void describeProductAsync(const Model::DescribeProductRequest& request, const DescribeProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeProductOutcomeCallable describeProductCallable(const Model::DescribeProductRequest& request) const;
-			GetAlgorithmResultOutcome getAlgorithmResult(const Model::GetAlgorithmResultRequest &request)const;
-			void getAlgorithmResultAsync(const Model::GetAlgorithmResultRequest& request, const GetAlgorithmResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAlgorithmResultOutcomeCallable getAlgorithmResultCallable(const Model::GetAlgorithmResultRequest& request) const;
-			GetConsoleResultOutcome getConsoleResult(const Model::GetConsoleResultRequest &request)const;
-			void getConsoleResultAsync(const Model::GetConsoleResultRequest& request, const GetConsoleResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetConsoleResultOutcomeCallable getConsoleResultCallable(const Model::GetConsoleResultRequest& request) const;
-			GetReportOutcome getReport(const Model::GetReportRequest &request)const;
-			void getReportAsync(const Model::GetReportRequest& request, const GetReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetReportOutcomeCallable getReportCallable(const Model::GetReportRequest& request) const;
-			GetUserInfomationOutcome getUserInfomation(const Model::GetUserInfomationRequest &request)const;
-			void getUserInfomationAsync(const Model::GetUserInfomationRequest& request, const GetUserInfomationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetUserInfomationOutcomeCallable getUserInfomationCallable(const Model::GetUserInfomationRequest& request) const;
+			ClassifyPOIOutcome classifyPOI(const Model::ClassifyPOIRequest &request)const;
+			void classifyPOIAsync(const Model::ClassifyPOIRequest& request, const ClassifyPOIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClassifyPOIOutcomeCallable classifyPOICallable(const Model::ClassifyPOIRequest& request) const;
+			CompleteAddressOutcome completeAddress(const Model::CompleteAddressRequest &request)const;
+			void completeAddressAsync(const Model::CompleteAddressRequest& request, const CompleteAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompleteAddressOutcomeCallable completeAddressCallable(const Model::CompleteAddressRequest& request) const;
+			CorrectAddressOutcome correctAddress(const Model::CorrectAddressRequest &request)const;
+			void correctAddressAsync(const Model::CorrectAddressRequest& request, const CorrectAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CorrectAddressOutcomeCallable correctAddressCallable(const Model::CorrectAddressRequest& request) const;
+			ExtractAddressOutcome extractAddress(const Model::ExtractAddressRequest &request)const;
+			void extractAddressAsync(const Model::ExtractAddressRequest& request, const ExtractAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExtractAddressOutcomeCallable extractAddressCallable(const Model::ExtractAddressRequest& request) const;
+			ExtractNameOutcome extractName(const Model::ExtractNameRequest &request)const;
+			void extractNameAsync(const Model::ExtractNameRequest& request, const ExtractNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExtractNameOutcomeCallable extractNameCallable(const Model::ExtractNameRequest& request) const;
+			ExtractPhoneOutcome extractPhone(const Model::ExtractPhoneRequest &request)const;
+			void extractPhoneAsync(const Model::ExtractPhoneRequest& request, const ExtractPhoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExtractPhoneOutcomeCallable extractPhoneCallable(const Model::ExtractPhoneRequest& request) const;
+			GetAddressDivisionCodeOutcome getAddressDivisionCode(const Model::GetAddressDivisionCodeRequest &request)const;
+			void getAddressDivisionCodeAsync(const Model::GetAddressDivisionCodeRequest& request, const GetAddressDivisionCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAddressDivisionCodeOutcomeCallable getAddressDivisionCodeCallable(const Model::GetAddressDivisionCodeRequest& request) const;
+			GetAddressSimilarityOutcome getAddressSimilarity(const Model::GetAddressSimilarityRequest &request)const;
+			void getAddressSimilarityAsync(const Model::GetAddressSimilarityRequest& request, const GetAddressSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAddressSimilarityOutcomeCallable getAddressSimilarityCallable(const Model::GetAddressSimilarityRequest& request) const;
+			GetZipcodeOutcome getZipcode(const Model::GetZipcodeRequest &request)const;
+			void getZipcodeAsync(const Model::GetZipcodeRequest& request, const GetZipcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetZipcodeOutcomeCallable getZipcodeCallable(const Model::GetZipcodeRequest& request) const;
+			StructureAddressOutcome structureAddress(const Model::StructureAddressRequest &request)const;
+			void structureAddressAsync(const Model::StructureAddressRequest& request, const StructureAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StructureAddressOutcomeCallable structureAddressCallable(const Model::StructureAddressRequest& request) const;
+			UpdateProjectOutcome updateProject(const Model::UpdateProjectRequest &request)const;
+			void updateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateProjectOutcomeCallable updateProjectCallable(const Model::UpdateProjectRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

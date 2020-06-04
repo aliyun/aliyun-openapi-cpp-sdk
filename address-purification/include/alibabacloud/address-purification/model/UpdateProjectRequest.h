@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETCONSOLERESULTREQUEST_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETCONSOLERESULTREQUEST_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_UPDATEPROJECTREQUEST_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_UPDATEPROJECTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT GetConsoleResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT UpdateProjectRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetConsoleResultRequest();
-				~GetConsoleResultRequest();
+				UpdateProjectRequest();
+				~UpdateProjectRequest();
 
-				std::string getProductCode()const;
-				void setProductCode(const std::string& productCode);
-				std::string getApiCode()const;
-				void setApiCode(const std::string& apiCode);
-				std::string getCommodityCode()const;
-				void setCommodityCode(const std::string& commodityCode);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
 				std::string getParameters()const;
 				void setParameters(const std::string& parameters);
 
             private:
-				std::string productCode_;
-				std::string apiCode_;
-				std::string commodityCode_;
+				std::string serviceCode_;
 				std::string parameters_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETCONSOLERESULTREQUEST_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_UPDATEPROJECTREQUEST_H_

@@ -21,29 +21,53 @@ set(address-purification_public_header
 	include/alibabacloud/address-purification/Address_purificationExport.h )
 
 set(address-purification_public_header_model 
-	include/alibabacloud/address-purification/model/DescribeProductRequest.h
-	include/alibabacloud/address-purification/model/DescribeProductResult.h
-	include/alibabacloud/address-purification/model/GetAlgorithmResultRequest.h
-	include/alibabacloud/address-purification/model/GetAlgorithmResultResult.h
-	include/alibabacloud/address-purification/model/GetConsoleResultRequest.h
-	include/alibabacloud/address-purification/model/GetConsoleResultResult.h
-	include/alibabacloud/address-purification/model/GetReportRequest.h
-	include/alibabacloud/address-purification/model/GetReportResult.h
-	include/alibabacloud/address-purification/model/GetUserInfomationRequest.h
-	include/alibabacloud/address-purification/model/GetUserInfomationResult.h )
+	include/alibabacloud/address-purification/model/ClassifyPOIRequest.h
+	include/alibabacloud/address-purification/model/ClassifyPOIResult.h
+	include/alibabacloud/address-purification/model/CompleteAddressRequest.h
+	include/alibabacloud/address-purification/model/CompleteAddressResult.h
+	include/alibabacloud/address-purification/model/CorrectAddressRequest.h
+	include/alibabacloud/address-purification/model/CorrectAddressResult.h
+	include/alibabacloud/address-purification/model/ExtractAddressRequest.h
+	include/alibabacloud/address-purification/model/ExtractAddressResult.h
+	include/alibabacloud/address-purification/model/ExtractNameRequest.h
+	include/alibabacloud/address-purification/model/ExtractNameResult.h
+	include/alibabacloud/address-purification/model/ExtractPhoneRequest.h
+	include/alibabacloud/address-purification/model/ExtractPhoneResult.h
+	include/alibabacloud/address-purification/model/GetAddressDivisionCodeRequest.h
+	include/alibabacloud/address-purification/model/GetAddressDivisionCodeResult.h
+	include/alibabacloud/address-purification/model/GetAddressSimilarityRequest.h
+	include/alibabacloud/address-purification/model/GetAddressSimilarityResult.h
+	include/alibabacloud/address-purification/model/GetZipcodeRequest.h
+	include/alibabacloud/address-purification/model/GetZipcodeResult.h
+	include/alibabacloud/address-purification/model/StructureAddressRequest.h
+	include/alibabacloud/address-purification/model/StructureAddressResult.h
+	include/alibabacloud/address-purification/model/UpdateProjectRequest.h
+	include/alibabacloud/address-purification/model/UpdateProjectResult.h )
 
 set(address-purification_src 
 	src/Address-purificationClient.cc
-	src/model/DescribeProductRequest.cc
-	src/model/DescribeProductResult.cc
-	src/model/GetAlgorithmResultRequest.cc
-	src/model/GetAlgorithmResultResult.cc
-	src/model/GetConsoleResultRequest.cc
-	src/model/GetConsoleResultResult.cc
-	src/model/GetReportRequest.cc
-	src/model/GetReportResult.cc
-	src/model/GetUserInfomationRequest.cc
-	src/model/GetUserInfomationResult.cc )
+	src/model/ClassifyPOIRequest.cc
+	src/model/ClassifyPOIResult.cc
+	src/model/CompleteAddressRequest.cc
+	src/model/CompleteAddressResult.cc
+	src/model/CorrectAddressRequest.cc
+	src/model/CorrectAddressResult.cc
+	src/model/ExtractAddressRequest.cc
+	src/model/ExtractAddressResult.cc
+	src/model/ExtractNameRequest.cc
+	src/model/ExtractNameResult.cc
+	src/model/ExtractPhoneRequest.cc
+	src/model/ExtractPhoneResult.cc
+	src/model/GetAddressDivisionCodeRequest.cc
+	src/model/GetAddressDivisionCodeResult.cc
+	src/model/GetAddressSimilarityRequest.cc
+	src/model/GetAddressSimilarityResult.cc
+	src/model/GetZipcodeRequest.cc
+	src/model/GetZipcodeResult.cc
+	src/model/StructureAddressRequest.cc
+	src/model/StructureAddressResult.cc
+	src/model/UpdateProjectRequest.cc
+	src/model/UpdateProjectResult.cc )
 
 add_library(address-purification ${LIB_TYPE}
 	${address-purification_public_header}

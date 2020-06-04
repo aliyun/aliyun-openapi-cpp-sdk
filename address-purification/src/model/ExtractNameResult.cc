@@ -14,52 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/address-purification/model/GetUserInfomationResult.h>
+#include <alibabacloud/address-purification/model/ExtractNameResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Address_purification;
 using namespace AlibabaCloud::Address_purification::Model;
 
-GetUserInfomationResult::GetUserInfomationResult() :
+ExtractNameResult::ExtractNameResult() :
 	ServiceResult()
 {}
 
-GetUserInfomationResult::GetUserInfomationResult(const std::string &payload) :
+ExtractNameResult::ExtractNameResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetUserInfomationResult::~GetUserInfomationResult()
+ExtractNameResult::~ExtractNameResult()
 {}
 
-void GetUserInfomationResult::parse(const std::string &payload)
+void ExtractNameResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
 
 }
 
-std::string GetUserInfomationResult::getData()const
+std::string ExtractNameResult::getData()const
 {
 	return data_;
-}
-
-std::string GetUserInfomationResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string GetUserInfomationResult::getErrCode()const
-{
-	return errCode_;
 }
 

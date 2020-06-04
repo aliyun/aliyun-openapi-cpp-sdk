@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTRESULT_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTRESULT_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_CLASSIFYPOIRESULT_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_CLASSIFYPOIRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT DescribeProductResult : public ServiceResult
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT ClassifyPOIResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeProductResult();
-				explicit DescribeProductResult(const std::string &payload);
-				~DescribeProductResult();
+				ClassifyPOIResult();
+				explicit ClassifyPOIResult(const std::string &payload);
+				~ClassifyPOIResult();
 				std::string getData()const;
-				std::string getErrMessage()const;
-				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string data_;
-				std::string errMessage_;
-				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTRESULT_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_CLASSIFYPOIRESULT_H_

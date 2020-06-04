@@ -14,59 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/address-purification/model/GetAlgorithmResultResult.h>
+#include <alibabacloud/address-purification/model/CompleteAddressResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Address_purification;
 using namespace AlibabaCloud::Address_purification::Model;
 
-GetAlgorithmResultResult::GetAlgorithmResultResult() :
+CompleteAddressResult::CompleteAddressResult() :
 	ServiceResult()
 {}
 
-GetAlgorithmResultResult::GetAlgorithmResultResult(const std::string &payload) :
+CompleteAddressResult::CompleteAddressResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetAlgorithmResultResult::~GetAlgorithmResultResult()
+CompleteAddressResult::~CompleteAddressResult()
 {}
 
-void GetAlgorithmResultResult::parse(const std::string &payload)
+void CompleteAddressResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
 
 }
 
-std::string GetAlgorithmResultResult::getData()const
+std::string CompleteAddressResult::getData()const
 {
 	return data_;
-}
-
-std::string GetAlgorithmResultResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string GetAlgorithmResultResult::getCode()const
-{
-	return code_;
-}
-
-bool GetAlgorithmResultResult::getSuccess()const
-{
-	return success_;
 }
 

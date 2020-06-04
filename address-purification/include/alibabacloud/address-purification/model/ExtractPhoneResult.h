@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTRESULT_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTRESULT_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONERESULT_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT GetAlgorithmResultResult : public ServiceResult
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT ExtractPhoneResult : public ServiceResult
 			{
 			public:
 
 
-				GetAlgorithmResultResult();
-				explicit GetAlgorithmResultResult(const std::string &payload);
-				~GetAlgorithmResultResult();
+				ExtractPhoneResult();
+				explicit ExtractPhoneResult(const std::string &payload);
+				~ExtractPhoneResult();
 				std::string getData()const;
-				std::string getErrMessage()const;
-				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string data_;
-				std::string errMessage_;
-				std::string code_;
-				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTRESULT_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONERESULT_H_

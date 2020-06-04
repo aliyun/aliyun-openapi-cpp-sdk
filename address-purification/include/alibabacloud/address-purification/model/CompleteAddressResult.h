@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETREPORTRESULT_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETREPORTRESULT_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_COMPLETEADDRESSRESULT_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_COMPLETEADDRESSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT GetReportResult : public ServiceResult
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT CompleteAddressResult : public ServiceResult
 			{
 			public:
 
 
-				GetReportResult();
-				explicit GetReportResult(const std::string &payload);
-				~GetReportResult();
+				CompleteAddressResult();
+				explicit CompleteAddressResult(const std::string &payload);
+				~CompleteAddressResult();
 				std::string getData()const;
-				std::string getErrMessage()const;
-				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string data_;
-				std::string errMessage_;
-				std::string errCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETREPORTRESULT_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_COMPLETEADDRESSRESULT_H_

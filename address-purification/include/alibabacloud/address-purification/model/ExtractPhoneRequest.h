@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTREQUEST_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTREQUEST_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONEREQUEST_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT DescribeProductRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT ExtractPhoneRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeProductRequest();
-				~DescribeProductRequest();
+				ExtractPhoneRequest();
+				~ExtractPhoneRequest();
 
+				std::string getDefaultProvince()const;
+				void setDefaultProvince(const std::string& defaultProvince);
 				std::string getServiceCode()const;
 				void setServiceCode(const std::string& serviceCode);
-				std::string getParameters()const;
-				void setParameters(const std::string& parameters);
+				std::string getDefaultCity()const;
+				void setDefaultCity(const std::string& defaultCity);
+				std::string getDefaultDistrict()const;
+				void setDefaultDistrict(const std::string& defaultDistrict);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
+				std::string getText()const;
+				void setText(const std::string& text);
 
             private:
+				std::string defaultProvince_;
 				std::string serviceCode_;
-				std::string parameters_;
+				std::string defaultCity_;
+				std::string defaultDistrict_;
+				std::string appKey_;
+				std::string text_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_DESCRIBEPRODUCTREQUEST_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTPHONEREQUEST_H_

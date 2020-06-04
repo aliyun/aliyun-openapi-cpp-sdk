@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETUSERINFOMATIONREQUEST_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETUSERINFOMATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_STRUCTUREADDRESSRESULT_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_STRUCTUREADDRESSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/address-purification/Address_purificationExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT GetUserInfomationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT StructureAddressResult : public ServiceResult
 			{
-
 			public:
-				GetUserInfomationRequest();
-				~GetUserInfomationRequest();
 
-				std::string getProductCode()const;
-				void setProductCode(const std::string& productCode);
-				std::string getParameters()const;
-				void setParameters(const std::string& parameters);
 
-            private:
-				std::string productCode_;
-				std::string parameters_;
+				StructureAddressResult();
+				explicit StructureAddressResult(const std::string &payload);
+				~StructureAddressResult();
+				std::string getData()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETUSERINFOMATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_STRUCTUREADDRESSRESULT_H_

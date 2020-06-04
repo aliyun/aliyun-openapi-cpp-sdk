@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTREQUEST_H_
-#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTREQUEST_H_
+#ifndef ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTNAMEREQUEST_H_
+#define ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTNAMEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT GetAlgorithmResultRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADDRESS_PURIFICATION_EXPORT ExtractNameRequest : public RpcServiceRequest
 			{
 
 			public:
-				GetAlgorithmResultRequest();
-				~GetAlgorithmResultRequest();
+				ExtractNameRequest();
+				~ExtractNameRequest();
 
+				std::string getDefaultProvince()const;
+				void setDefaultProvince(const std::string& defaultProvince);
 				std::string getServiceCode()const;
 				void setServiceCode(const std::string& serviceCode);
-				std::string getApiCode()const;
-				void setApiCode(const std::string& apiCode);
-				std::string getParameters()const;
-				void setParameters(const std::string& parameters);
+				std::string getDefaultCity()const;
+				void setDefaultCity(const std::string& defaultCity);
+				std::string getDefaultDistrict()const;
+				void setDefaultDistrict(const std::string& defaultDistrict);
+				std::string getAppKey()const;
+				void setAppKey(const std::string& appKey);
+				std::string getText()const;
+				void setText(const std::string& text);
 
             private:
+				std::string defaultProvince_;
 				std::string serviceCode_;
-				std::string apiCode_;
-				std::string parameters_;
+				std::string defaultCity_;
+				std::string defaultDistrict_;
+				std::string appKey_;
+				std::string text_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_GETALGORITHMRESULTREQUEST_H_
+#endif // !ALIBABACLOUD_ADDRESS_PURIFICATION_MODEL_EXTRACTNAMEREQUEST_H_

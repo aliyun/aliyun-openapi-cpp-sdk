@@ -14,59 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/address-purification/model/DescribeProductResult.h>
+#include <alibabacloud/address-purification/model/CorrectAddressResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Address_purification;
 using namespace AlibabaCloud::Address_purification::Model;
 
-DescribeProductResult::DescribeProductResult() :
+CorrectAddressResult::CorrectAddressResult() :
 	ServiceResult()
 {}
 
-DescribeProductResult::DescribeProductResult(const std::string &payload) :
+CorrectAddressResult::CorrectAddressResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeProductResult::~DescribeProductResult()
+CorrectAddressResult::~CorrectAddressResult()
 {}
 
-void DescribeProductResult::parse(const std::string &payload)
+void CorrectAddressResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
 
 }
 
-std::string DescribeProductResult::getData()const
+std::string CorrectAddressResult::getData()const
 {
 	return data_;
-}
-
-std::string DescribeProductResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
-std::string DescribeProductResult::getCode()const
-{
-	return code_;
-}
-
-std::string DescribeProductResult::getSuccess()const
-{
-	return success_;
 }
 
