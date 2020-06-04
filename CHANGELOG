@@ -1,3 +1,6 @@
+2020-06-04 Version: 1.36.449
+- Update monitor related API.
+
 2020-06-04 Version: 1.36.448
 - Add SubmitMediaDNADeleteJob and ListMediaDNADeleteJob.
 - Modify GetMediaAuditResult interface, support ad logo and live result.
