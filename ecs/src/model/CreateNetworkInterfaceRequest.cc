@@ -115,6 +115,17 @@ void CreateNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateNetworkInterfaceRequest::getInstanceType()const
+{
+	return instanceType_;
+}
+
+void CreateNetworkInterfaceRequest::setInstanceType(const std::string& instanceType)
+{
+	instanceType_ = instanceType;
+	setParameter("InstanceType", instanceType);
+}
+
 std::vector<CreateNetworkInterfaceRequest::Tag> CreateNetworkInterfaceRequest::getTag()const
 {
 	return tag_;

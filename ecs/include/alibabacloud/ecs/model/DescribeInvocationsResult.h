@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						std::string stopTime;
 					};
 					std::string commandContent;
+					std::string invocationStatus;
 					std::string invokeStatus;
 					std::string parameters;
 					std::string commandType;

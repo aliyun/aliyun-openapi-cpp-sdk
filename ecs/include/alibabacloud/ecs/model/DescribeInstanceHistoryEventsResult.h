@@ -63,6 +63,7 @@ namespace AlibabaCloud
 					std::string eventPublishTime;
 					EventType eventType;
 					std::string instanceId;
+					std::string impactLevel;
 					ExtendedAttribute extendedAttribute;
 					std::string eventId;
 					std::string notBefore;

@@ -61,6 +61,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.timed = valueInvocationsInvocation["Timed"].asString() == "true";
 		if(!valueInvocationsInvocation["InvokeStatus"].isNull())
 			invocationsObject.invokeStatus = valueInvocationsInvocation["InvokeStatus"].asString();
+		if(!valueInvocationsInvocation["InvocationStatus"].isNull())
+			invocationsObject.invocationStatus = valueInvocationsInvocation["InvocationStatus"].asString();
 		if(!valueInvocationsInvocation["Parameters"].isNull())
 			invocationsObject.parameters = valueInvocationsInvocation["Parameters"].asString();
 		auto allInvokeInstancesNode = allInvocationsNode["InvokeInstances"]["InvokeInstance"];

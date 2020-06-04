@@ -57,6 +57,8 @@ void DescribeInstancesFullStatusResult::parse(const std::string &payload)
 				scheduledSystemEventSetObject.notBefore = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["NotBefore"].asString();
 			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["Reason"].isNull())
 				scheduledSystemEventSetObject.reason = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["Reason"].asString();
+			if(!allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].isNull())
+				scheduledSystemEventSetObject.impactLevel = allInstanceFullStatusSetNodeScheduledSystemEventSetScheduledSystemEventType["ImpactLevel"].asString();
 			auto eventCycleStatusNode = value["EventCycleStatus"];
 			if(!eventCycleStatusNode["Code"].isNull())
 				scheduledSystemEventSetObject.eventCycleStatus.code = std::stoi(eventCycleStatusNode["Code"].asString());

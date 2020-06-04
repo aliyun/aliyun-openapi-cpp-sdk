@@ -61,6 +61,10 @@ void DescribeSecurityGroupsResult::parse(const std::string &payload)
 			securityGroupsObject.ecsCount = std::stoi(valueSecurityGroupsSecurityGroup["EcsCount"].asString());
 		if(!valueSecurityGroupsSecurityGroup["ResourceGroupId"].isNull())
 			securityGroupsObject.resourceGroupId = valueSecurityGroupsSecurityGroup["ResourceGroupId"].asString();
+		if(!valueSecurityGroupsSecurityGroup["ServiceID"].isNull())
+			securityGroupsObject.serviceID = std::stol(valueSecurityGroupsSecurityGroup["ServiceID"].asString());
+		if(!valueSecurityGroupsSecurityGroup["ServiceManaged"].isNull())
+			securityGroupsObject.serviceManaged = valueSecurityGroupsSecurityGroup["ServiceManaged"].asString() == "true";
 		auto allTagsNode = allSecurityGroupsNode["Tags"]["Tag"];
 		for (auto allSecurityGroupsNodeTagsTag : allTagsNode)
 		{

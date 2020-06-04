@@ -83,6 +83,10 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.instanceFamilyLevel = valueInstanceTypesInstanceType["InstanceFamilyLevel"].asString();
 		if(!valueInstanceTypesInstanceType["TotalEniQueueQuantity"].isNull())
 			instanceTypesObject.totalEniQueueQuantity = std::stoi(valueInstanceTypesInstanceType["TotalEniQueueQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["EniTrunkSupported"].isNull())
+			instanceTypesObject.eniTrunkSupported = valueInstanceTypesInstanceType["EniTrunkSupported"].asString() == "true";
+		if(!valueInstanceTypesInstanceType["EniTotalQuantity"].isNull())
+			instanceTypesObject.eniTotalQuantity = std::stoi(valueInstanceTypesInstanceType["EniTotalQuantity"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

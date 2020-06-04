@@ -63,6 +63,12 @@ void DescribeAutoSnapshotPolicyExResult::parse(const std::string &payload)
 			autoSnapshotPoliciesObject.creationTime = valueAutoSnapshotPoliciesAutoSnapshotPolicy["CreationTime"].asString();
 		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].isNull())
 			autoSnapshotPoliciesObject.status = valueAutoSnapshotPoliciesAutoSnapshotPolicy["Status"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].isNull())
+			autoSnapshotPoliciesObject.enableCrossRegionCopy = valueAutoSnapshotPoliciesAutoSnapshotPolicy["EnableCrossRegionCopy"].asString() == "true";
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["TargetCopyRegions"].isNull())
+			autoSnapshotPoliciesObject.targetCopyRegions = valueAutoSnapshotPoliciesAutoSnapshotPolicy["TargetCopyRegions"].asString();
+		if(!valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].isNull())
+			autoSnapshotPoliciesObject.copiedSnapshotsRetentionDays = std::stoi(valueAutoSnapshotPoliciesAutoSnapshotPolicy["CopiedSnapshotsRetentionDays"].asString());
 		auto allTagsNode = allAutoSnapshotPoliciesNode["Tags"]["Tag"];
 		for (auto allAutoSnapshotPoliciesNodeTagsTag : allTagsNode)
 		{

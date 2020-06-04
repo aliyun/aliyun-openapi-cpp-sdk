@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getInstanceType()const;
+				void setInstanceType(const std::string& instanceType);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getNetworkInterfaceName()const;
@@ -87,6 +89,7 @@ namespace AlibabaCloud
 				std::string businessType_;
 				std::string resourceGroupId_;
 				std::string regionId_;
+				std::string instanceType_;
 				std::vector<Tag> tag_;
 				std::string networkInterfaceName_;
 				bool visible_;

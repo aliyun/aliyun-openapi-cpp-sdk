@@ -49,6 +49,17 @@ void DetachNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string DetachNetworkInterfaceRequest::getTrunkNetworkInstanceId()const
+{
+	return trunkNetworkInstanceId_;
+}
+
+void DetachNetworkInterfaceRequest::setTrunkNetworkInstanceId(const std::string& trunkNetworkInstanceId)
+{
+	trunkNetworkInstanceId_ = trunkNetworkInstanceId;
+	setParameter("TrunkNetworkInstanceId", trunkNetworkInstanceId);
+}
+
 std::string DetachNetworkInterfaceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

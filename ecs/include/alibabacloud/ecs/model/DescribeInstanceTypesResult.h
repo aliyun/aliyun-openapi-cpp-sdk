@@ -40,6 +40,8 @@ namespace AlibabaCloud
 					int cpuCoreCount;
 					long localStorageCapacity;
 					int totalEniQueueQuantity;
+					int eniTotalQuantity;
+					bool eniTrunkSupported;
 					std::string instanceTypeFamily;
 					long instancePpsRx;
 					int initialCredit;

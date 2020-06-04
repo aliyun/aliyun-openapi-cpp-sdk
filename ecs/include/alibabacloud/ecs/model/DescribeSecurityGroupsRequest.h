@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getSecurityGroupIds()const;
 				void setSecurityGroupIds(const std::string& securityGroupIds);
+				std::string getSecurityGroupType()const;
+				void setSecurityGroupType(const std::string& securityGroupType);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 
@@ -93,6 +95,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string securityGroupIds_;
+				std::string securityGroupType_;
 				std::string vpcId_;
 
 			};

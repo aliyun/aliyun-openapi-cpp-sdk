@@ -42,14 +42,17 @@ namespace AlibabaCloud
 					std::string status;
 					std::string timePoints;
 					int volumeNums;
-					std::string creationTime;
 					std::string autoSnapshotPolicyId;
 					int retentionDays;
-					std::string regionId;
 					std::string repeatWeekdays;
+					int diskNums;
+					int copiedSnapshotsRetentionDays;
+					std::string targetCopyRegions;
+					bool enableCrossRegionCopy;
+					std::string creationTime;
+					std::string regionId;
 					std::string autoSnapshotPolicyName;
 					std::vector<AutoSnapshotPolicy::Tag> tags;
-					int diskNums;
 				};
 
 

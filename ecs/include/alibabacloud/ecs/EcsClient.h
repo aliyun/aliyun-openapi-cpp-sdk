@@ -294,6 +294,8 @@
 #include "model/DescribeLimitationResult.h"
 #include "model/DescribeNatGatewaysRequest.h"
 #include "model/DescribeNatGatewaysResult.h"
+#include "model/DescribeNetworkInterfaceAttributeRequest.h"
+#include "model/DescribeNetworkInterfaceAttributeResult.h"
 #include "model/DescribeNetworkInterfacePermissionsRequest.h"
 #include "model/DescribeNetworkInterfacePermissionsResult.h"
 #include "model/DescribeNetworkInterfacesRequest.h"
@@ -1005,6 +1007,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNatGatewaysResult> DescribeNatGatewaysOutcome;
 			typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeNatGatewaysRequest&, const DescribeNatGatewaysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNetworkInterfaceAttributeResult> DescribeNetworkInterfaceAttributeOutcome;
+			typedef std::future<DescribeNetworkInterfaceAttributeOutcome> DescribeNetworkInterfaceAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeNetworkInterfaceAttributeRequest&, const DescribeNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfaceAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNetworkInterfacePermissionsResult> DescribeNetworkInterfacePermissionsOutcome;
 			typedef std::future<DescribeNetworkInterfacePermissionsOutcome> DescribeNetworkInterfacePermissionsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeNetworkInterfacePermissionsRequest&, const DescribeNetworkInterfacePermissionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkInterfacePermissionsAsyncHandler;
@@ -1859,6 +1864,9 @@ namespace AlibabaCloud
 			DescribeNatGatewaysOutcome describeNatGateways(const Model::DescribeNatGatewaysRequest &request)const;
 			void describeNatGatewaysAsync(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNatGatewaysOutcomeCallable describeNatGatewaysCallable(const Model::DescribeNatGatewaysRequest& request) const;
+			DescribeNetworkInterfaceAttributeOutcome describeNetworkInterfaceAttribute(const Model::DescribeNetworkInterfaceAttributeRequest &request)const;
+			void describeNetworkInterfaceAttributeAsync(const Model::DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNetworkInterfaceAttributeOutcomeCallable describeNetworkInterfaceAttributeCallable(const Model::DescribeNetworkInterfaceAttributeRequest& request) const;
 			DescribeNetworkInterfacePermissionsOutcome describeNetworkInterfacePermissions(const Model::DescribeNetworkInterfacePermissionsRequest &request)const;
 			void describeNetworkInterfacePermissionsAsync(const Model::DescribeNetworkInterfacePermissionsRequest& request, const DescribeNetworkInterfacePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNetworkInterfacePermissionsOutcomeCallable describeNetworkInterfacePermissionsCallable(const Model::DescribeNetworkInterfacePermissionsRequest& request) const;

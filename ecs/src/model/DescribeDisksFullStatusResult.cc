@@ -59,6 +59,8 @@ void DescribeDisksFullStatusResult::parse(const std::string &payload)
 				diskEventSetObject.eventTime = allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventTime"].asString();
 			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventEndTime"].isNull())
 				diskEventSetObject.eventEndTime = allDiskFullStatusSetNodeDiskEventSetDiskEventType["EventEndTime"].asString();
+			if(!allDiskFullStatusSetNodeDiskEventSetDiskEventType["ImpactLevel"].isNull())
+				diskEventSetObject.impactLevel = allDiskFullStatusSetNodeDiskEventSetDiskEventType["ImpactLevel"].asString();
 			auto eventTypeNode = value["EventType"];
 			if(!eventTypeNode["Code"].isNull())
 				diskEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());

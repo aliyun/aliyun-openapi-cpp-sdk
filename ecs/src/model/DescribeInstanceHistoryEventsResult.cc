@@ -55,6 +55,8 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.eventFinishTime = valueInstanceSystemEventSetInstanceSystemEventType["EventFinishTime"].asString();
 		if(!valueInstanceSystemEventSetInstanceSystemEventType["Reason"].isNull())
 			instanceSystemEventSetObject.reason = valueInstanceSystemEventSetInstanceSystemEventType["Reason"].asString();
+		if(!valueInstanceSystemEventSetInstanceSystemEventType["ImpactLevel"].isNull())
+			instanceSystemEventSetObject.impactLevel = valueInstanceSystemEventSetInstanceSystemEventType["ImpactLevel"].asString();
 		auto eventTypeNode = value["EventType"];
 		if(!eventTypeNode["Code"].isNull())
 			instanceSystemEventSetObject.eventType.code = std::stoi(eventTypeNode["Code"].asString());

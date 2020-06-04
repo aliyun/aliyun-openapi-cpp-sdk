@@ -53,6 +53,7 @@ namespace AlibabaCloud
 						};
 						EventType eventType;
 						std::string eventTime;
+						std::string impactLevel;
 						std::string eventId;
 						std::string eventEndTime;
 					};

@@ -4947,6 +4947,42 @@ EcsClient::DescribeNatGatewaysOutcomeCallable EcsClient::describeNatGatewaysCall
 	return task->get_future();
 }
 
+EcsClient::DescribeNetworkInterfaceAttributeOutcome EcsClient::describeNetworkInterfaceAttribute(const DescribeNetworkInterfaceAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNetworkInterfaceAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNetworkInterfaceAttributeOutcome(DescribeNetworkInterfaceAttributeResult(outcome.result()));
+	else
+		return DescribeNetworkInterfaceAttributeOutcome(outcome.error());
+}
+
+void EcsClient::describeNetworkInterfaceAttributeAsync(const DescribeNetworkInterfaceAttributeRequest& request, const DescribeNetworkInterfaceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNetworkInterfaceAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeNetworkInterfaceAttributeOutcomeCallable EcsClient::describeNetworkInterfaceAttributeCallable(const DescribeNetworkInterfaceAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNetworkInterfaceAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNetworkInterfaceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeNetworkInterfacePermissionsOutcome EcsClient::describeNetworkInterfacePermissions(const DescribeNetworkInterfacePermissionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

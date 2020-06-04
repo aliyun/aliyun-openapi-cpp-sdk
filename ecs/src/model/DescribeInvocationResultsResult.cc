@@ -58,14 +58,26 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 			invocationResultObject.instanceId = invocationNodeInvocationResultsInvocationResult["InstanceId"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["StartTime"].isNull())
 			invocationResultObject.startTime = invocationNodeInvocationResultsInvocationResult["StartTime"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["StopTime"].isNull())
+			invocationResultObject.stopTime = invocationNodeInvocationResultsInvocationResult["StopTime"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["FinishedTime"].isNull())
 			invocationResultObject.finishedTime = invocationNodeInvocationResultsInvocationResult["FinishedTime"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["Repeats"].isNull())
+			invocationResultObject.repeats = std::stoi(invocationNodeInvocationResultsInvocationResult["Repeats"].asString());
 		if(!invocationNodeInvocationResultsInvocationResult["Output"].isNull())
 			invocationResultObject.output = invocationNodeInvocationResultsInvocationResult["Output"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["Dropped"].isNull())
+			invocationResultObject.dropped = std::stoi(invocationNodeInvocationResultsInvocationResult["Dropped"].asString());
 		if(!invocationNodeInvocationResultsInvocationResult["InvokeRecordStatus"].isNull())
 			invocationResultObject.invokeRecordStatus = invocationNodeInvocationResultsInvocationResult["InvokeRecordStatus"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["InvocationStatus"].isNull())
+			invocationResultObject.invocationStatus = invocationNodeInvocationResultsInvocationResult["InvocationStatus"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["ExitCode"].isNull())
 			invocationResultObject.exitCode = std::stol(invocationNodeInvocationResultsInvocationResult["ExitCode"].asString());
+		if(!invocationNodeInvocationResultsInvocationResult["ErrorCode"].isNull())
+			invocationResultObject.errorCode = invocationNodeInvocationResultsInvocationResult["ErrorCode"].asString();
+		if(!invocationNodeInvocationResultsInvocationResult["ErrorInfo"].isNull())
+			invocationResultObject.errorInfo = invocationNodeInvocationResultsInvocationResult["ErrorInfo"].asString();
 		invocation_.invocationResults.push_back(invocationResultObject);
 	}
 

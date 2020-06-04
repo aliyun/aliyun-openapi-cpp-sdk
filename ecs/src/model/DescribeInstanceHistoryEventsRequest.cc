@@ -73,6 +73,17 @@ void DescribeInstanceHistoryEventsRequest::setPageNumber(int pageNumber)
 	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string DescribeInstanceHistoryEventsRequest::getImpactLevel()const
+{
+	return impactLevel_;
+}
+
+void DescribeInstanceHistoryEventsRequest::setImpactLevel(const std::string& impactLevel)
+{
+	impactLevel_ = impactLevel;
+	setParameter("ImpactLevel", impactLevel);
+}
+
 std::string DescribeInstanceHistoryEventsRequest::getRegionId()const
 {
 	return regionId_;

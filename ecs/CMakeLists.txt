@@ -293,6 +293,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeLimitationResult.h
 	include/alibabacloud/ecs/model/DescribeNatGatewaysRequest.h
 	include/alibabacloud/ecs/model/DescribeNatGatewaysResult.h
+	include/alibabacloud/ecs/model/DescribeNetworkInterfaceAttributeRequest.h
+	include/alibabacloud/ecs/model/DescribeNetworkInterfaceAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacePermissionsRequest.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacePermissionsResult.h
 	include/alibabacloud/ecs/model/DescribeNetworkInterfacesRequest.h
@@ -862,6 +864,8 @@ set(ecs_src
 	src/model/DescribeLimitationResult.cc
 	src/model/DescribeNatGatewaysRequest.cc
 	src/model/DescribeNatGatewaysResult.cc
+	src/model/DescribeNetworkInterfaceAttributeRequest.cc
+	src/model/DescribeNetworkInterfaceAttributeResult.cc
 	src/model/DescribeNetworkInterfacePermissionsRequest.cc
 	src/model/DescribeNetworkInterfacePermissionsResult.cc
 	src/model/DescribeNetworkInterfacesRequest.cc

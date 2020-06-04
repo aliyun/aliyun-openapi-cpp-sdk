@@ -60,6 +60,17 @@ void ModifyImageAttributeRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
+std::string ModifyImageAttributeRequest::getBootMode()const
+{
+	return bootMode_;
+}
+
+void ModifyImageAttributeRequest::setBootMode(const std::string& bootMode)
+{
+	bootMode_ = bootMode;
+	setParameter("BootMode", bootMode);
+}
+
 std::string ModifyImageAttributeRequest::getRegionId()const
 {
 	return regionId_;

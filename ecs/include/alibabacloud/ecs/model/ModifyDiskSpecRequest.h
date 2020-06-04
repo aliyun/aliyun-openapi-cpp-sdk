@@ -37,8 +37,12 @@ namespace AlibabaCloud
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getDiskCategory()const;
+				void setDiskCategory(const std::string& diskCategory);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getPerformanceLevel()const;
@@ -50,7 +54,9 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				std::string diskCategory_;
 				std::string diskId_;
+				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string performanceLevel_;
 				std::string ownerAccount_;

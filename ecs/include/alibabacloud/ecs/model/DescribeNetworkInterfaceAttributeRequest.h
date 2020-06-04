@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ATTACHNETWORKINTERFACEREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ATTACHNETWORKINTERFACEREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBENETWORKINTERFACEATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBENETWORKINTERFACEATTRIBUTEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AttachNetworkInterfaceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeNetworkInterfaceAttributeRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
-				AttachNetworkInterfaceRequest();
-				~AttachNetworkInterfaceRequest();
+				DescribeNetworkInterfaceAttributeRequest();
+				~DescribeNetworkInterfaceAttributeRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getTrunkNetworkInstanceId()const;
-				void setTrunkNetworkInstanceId(const std::string& trunkNetworkInstanceId);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
+				std::string getAttribute()const;
+				void setAttribute(const std::string& attribute);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 				std::string getNetworkInterfaceId()const;
 				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
             private:
 				long resourceOwnerId_;
 				std::string regionId_;
-				std::string trunkNetworkInstanceId_;
+				std::vector<Tag> tag_;
+				std::string attribute_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string instanceId_;
 				std::string networkInterfaceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ATTACHNETWORKINTERFACEREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBENETWORKINTERFACEATTRIBUTEREQUEST_H_

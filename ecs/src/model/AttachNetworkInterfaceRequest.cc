@@ -49,6 +49,17 @@ void AttachNetworkInterfaceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string AttachNetworkInterfaceRequest::getTrunkNetworkInstanceId()const
+{
+	return trunkNetworkInstanceId_;
+}
+
+void AttachNetworkInterfaceRequest::setTrunkNetworkInstanceId(const std::string& trunkNetworkInstanceId)
+{
+	trunkNetworkInstanceId_ = trunkNetworkInstanceId;
+	setParameter("TrunkNetworkInstanceId", trunkNetworkInstanceId);
+}
+
 std::string AttachNetworkInterfaceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

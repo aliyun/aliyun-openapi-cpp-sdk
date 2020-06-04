@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setSnapshotType(const std::string& snapshotType);
 				std::string getKMSKeyId()const;
 				void setKMSKeyId(const std::string& kMSKeyId);
+				std::string getCategory()const;
+				void setCategory(const std::string& category);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -117,6 +119,7 @@ namespace AlibabaCloud
 				bool encrypted_;
 				std::string snapshotType_;
 				std::string kMSKeyId_;
+				std::string category_;
 				std::string status_;
 
 			};

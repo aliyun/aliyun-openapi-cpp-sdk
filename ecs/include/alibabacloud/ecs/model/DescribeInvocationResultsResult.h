@@ -36,14 +36,20 @@ namespace AlibabaCloud
 				{
 					struct InvocationResult
 					{
+						int dropped;
+						std::string invocationStatus;
 						std::string instanceId;
-						std::string output;
 						long exitCode;
+						std::string errorInfo;
 						std::string startTime;
-						std::string commandId;
+						int repeats;
 						std::string invokeRecordStatus;
 						std::string finishedTime;
+						std::string output;
+						std::string commandId;
+						std::string errorCode;
 						std::string invokeId;
+						std::string stopTime;
 					};
 					std::vector<InvocationResult> invocationResults;
 					long totalCount;

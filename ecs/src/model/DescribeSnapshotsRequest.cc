@@ -296,6 +296,17 @@ void DescribeSnapshotsRequest::setKMSKeyId(const std::string& kMSKeyId)
 	setParameter("KMSKeyId", kMSKeyId);
 }
 
+std::string DescribeSnapshotsRequest::getCategory()const
+{
+	return category_;
+}
+
+void DescribeSnapshotsRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+
 std::string DescribeSnapshotsRequest::getStatus()const
 {
 	return status_;

@@ -38,6 +38,17 @@ void ModifyDiskSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDiskSpecRequest::getDiskCategory()const
+{
+	return diskCategory_;
+}
+
+void ModifyDiskSpecRequest::setDiskCategory(const std::string& diskCategory)
+{
+	diskCategory_ = diskCategory;
+	setParameter("DiskCategory", diskCategory);
+}
+
 std::string ModifyDiskSpecRequest::getDiskId()const
 {
 	return diskId_;
@@ -47,6 +58,17 @@ void ModifyDiskSpecRequest::setDiskId(const std::string& diskId)
 {
 	diskId_ = diskId;
 	setParameter("DiskId", diskId);
+}
+
+bool ModifyDiskSpecRequest::getDryRun()const
+{
+	return dryRun_;
+}
+
+void ModifyDiskSpecRequest::setDryRun(bool dryRun)
+{
+	dryRun_ = dryRun;
+	setParameter("DryRun", dryRun ? "true" : "false");
 }
 
 std::string ModifyDiskSpecRequest::getResourceOwnerAccount()const

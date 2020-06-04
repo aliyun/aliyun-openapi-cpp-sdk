@@ -39,6 +39,12 @@ namespace AlibabaCloud
 						std::string publicIpAddress;
 						std::string allocationId;
 					};
+					struct Attachment
+					{
+						std::string instanceId;
+						int deviceIndex;
+						std::string trunkNetworkInterfaceId;
+					};
 					struct PrivateIpSet
 					{
 						struct AssociatedPublicIp1
@@ -68,6 +74,7 @@ namespace AlibabaCloud
 					std::string instanceId;
 					std::string vSwitchId;
 					std::string networkInterfaceName;
+					Attachment attachment;
 					std::string networkInterfaceId;
 					std::string macAddress;
 					std::vector<std::string> securityGroupIds;

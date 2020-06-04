@@ -38,6 +38,19 @@ void ModifyInstanceVpcAttributeRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::vector<std::string> ModifyInstanceVpcAttributeRequest::getSecurityGroupId()const
+{
+	return securityGroupId_;
+}
+
+void ModifyInstanceVpcAttributeRequest::setSecurityGroupId(const std::vector<std::string>& securityGroupId)
+{
+	securityGroupId_ = securityGroupId;
+	for(int dep1 = 0; dep1!= securityGroupId.size(); dep1++) {
+		setParameter("SecurityGroupId."+ std::to_string(dep1), securityGroupId.at(dep1));
+	}
+}
+
 std::string ModifyInstanceVpcAttributeRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -102,5 +115,16 @@ void ModifyInstanceVpcAttributeRequest::setInstanceId(const std::string& instanc
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyInstanceVpcAttributeRequest::getVpcId()const
+{
+	return vpcId_;
+}
+
+void ModifyInstanceVpcAttributeRequest::setVpcId(const std::string& vpcId)
+{
+	vpcId_ = vpcId;
+	setParameter("VpcId", vpcId);
 }
 

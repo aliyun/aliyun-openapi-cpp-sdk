@@ -115,6 +115,13 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.associatedPublicIp.publicIpAddress = associatedPublicIpNode["PublicIpAddress"].asString();
 		if(!associatedPublicIpNode["AllocationId"].isNull())
 			networkInterfaceSetsObject.associatedPublicIp.allocationId = associatedPublicIpNode["AllocationId"].asString();
+		auto attachmentNode = value["Attachment"];
+		if(!attachmentNode["InstanceId"].isNull())
+			networkInterfaceSetsObject.attachment.instanceId = attachmentNode["InstanceId"].asString();
+		if(!attachmentNode["TrunkNetworkInterfaceId"].isNull())
+			networkInterfaceSetsObject.attachment.trunkNetworkInterfaceId = attachmentNode["TrunkNetworkInterfaceId"].asString();
+		if(!attachmentNode["DeviceIndex"].isNull())
+			networkInterfaceSetsObject.attachment.deviceIndex = std::stoi(attachmentNode["DeviceIndex"].asString());
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());

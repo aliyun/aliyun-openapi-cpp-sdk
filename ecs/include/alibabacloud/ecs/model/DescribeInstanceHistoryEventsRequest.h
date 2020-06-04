@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setEventCycleStatus(const std::string& eventCycleStatus);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getImpactLevel()const;
+				void setImpactLevel(const std::string& impactLevel);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				int getPageSize()const;
@@ -75,6 +77,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string eventCycleStatus_;
 				int pageNumber_;
+				std::string impactLevel_;
 				std::string regionId_;
 				int pageSize_;
 				std::vector<std::string> instanceEventCycleStatus_;

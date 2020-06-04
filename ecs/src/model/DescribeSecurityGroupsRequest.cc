@@ -208,6 +208,17 @@ void DescribeSecurityGroupsRequest::setSecurityGroupIds(const std::string& secur
 	setParameter("SecurityGroupIds", securityGroupIds);
 }
 
+std::string DescribeSecurityGroupsRequest::getSecurityGroupType()const
+{
+	return securityGroupType_;
+}
+
+void DescribeSecurityGroupsRequest::setSecurityGroupType(const std::string& securityGroupType)
+{
+	securityGroupType_ = securityGroupType;
+	setParameter("SecurityGroupType", securityGroupType);
+}
+
 std::string DescribeSecurityGroupsRequest::getVpcId()const
 {
 	return vpcId_;

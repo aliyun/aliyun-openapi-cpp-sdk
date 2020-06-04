@@ -49,6 +49,17 @@ void ModifyAutoSnapshotPolicyExRequest::setAutoSnapshotPolicyId(const std::strin
 	setParameter("AutoSnapshotPolicyId", autoSnapshotPolicyId);
 }
 
+int ModifyAutoSnapshotPolicyExRequest::getCopiedSnapshotsRetentionDays()const
+{
+	return copiedSnapshotsRetentionDays_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setCopiedSnapshotsRetentionDays(int copiedSnapshotsRetentionDays)
+{
+	copiedSnapshotsRetentionDays_ = copiedSnapshotsRetentionDays;
+	setParameter("CopiedSnapshotsRetentionDays", std::to_string(copiedSnapshotsRetentionDays));
+}
+
 std::string ModifyAutoSnapshotPolicyExRequest::getTimePoints()const
 {
 	return timePoints_;
@@ -80,6 +91,17 @@ void ModifyAutoSnapshotPolicyExRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+bool ModifyAutoSnapshotPolicyExRequest::getEnableCrossRegionCopy()const
+{
+	return enableCrossRegionCopy_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setEnableCrossRegionCopy(bool enableCrossRegionCopy)
+{
+	enableCrossRegionCopy_ = enableCrossRegionCopy;
+	setParameter("EnableCrossRegionCopy", enableCrossRegionCopy ? "true" : "false");
 }
 
 std::string ModifyAutoSnapshotPolicyExRequest::getResourceOwnerAccount()const
@@ -124,5 +146,16 @@ void ModifyAutoSnapshotPolicyExRequest::setRetentionDays(int retentionDays)
 {
 	retentionDays_ = retentionDays;
 	setParameter("RetentionDays", std::to_string(retentionDays));
+}
+
+std::string ModifyAutoSnapshotPolicyExRequest::getTargetCopyRegions()const
+{
+	return targetCopyRegions_;
+}
+
+void ModifyAutoSnapshotPolicyExRequest::setTargetCopyRegions(const std::string& targetCopyRegions)
+{
+	targetCopyRegions_ = targetCopyRegions;
+	setParameter("TargetCopyRegions", targetCopyRegions);
 }
 
