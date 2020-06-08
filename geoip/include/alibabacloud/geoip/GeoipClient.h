@@ -24,6 +24,10 @@
 #include "GeoipExport.h"
 #include "model/DescribeGeoipInstanceRequest.h"
 #include "model/DescribeGeoipInstanceResult.h"
+#include "model/DescribeGeoipInstanceDataInfosRequest.h"
+#include "model/DescribeGeoipInstanceDataInfosResult.h"
+#include "model/DescribeGeoipInstanceDataUrlRequest.h"
+#include "model/DescribeGeoipInstanceDataUrlResult.h"
 #include "model/DescribeGeoipInstanceStatisticsRequest.h"
 #include "model/DescribeGeoipInstanceStatisticsResult.h"
 #include "model/DescribeGeoipInstancesRequest.h"
@@ -44,6 +48,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGeoipInstanceResult> DescribeGeoipInstanceOutcome;
 			typedef std::future<DescribeGeoipInstanceOutcome> DescribeGeoipInstanceOutcomeCallable;
 			typedef std::function<void(const GeoipClient*, const Model::DescribeGeoipInstanceRequest&, const DescribeGeoipInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeoipInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGeoipInstanceDataInfosResult> DescribeGeoipInstanceDataInfosOutcome;
+			typedef std::future<DescribeGeoipInstanceDataInfosOutcome> DescribeGeoipInstanceDataInfosOutcomeCallable;
+			typedef std::function<void(const GeoipClient*, const Model::DescribeGeoipInstanceDataInfosRequest&, const DescribeGeoipInstanceDataInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeoipInstanceDataInfosAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGeoipInstanceDataUrlResult> DescribeGeoipInstanceDataUrlOutcome;
+			typedef std::future<DescribeGeoipInstanceDataUrlOutcome> DescribeGeoipInstanceDataUrlOutcomeCallable;
+			typedef std::function<void(const GeoipClient*, const Model::DescribeGeoipInstanceDataUrlRequest&, const DescribeGeoipInstanceDataUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeoipInstanceDataUrlAsyncHandler;
 			typedef Outcome<Error, Model::DescribeGeoipInstanceStatisticsResult> DescribeGeoipInstanceStatisticsOutcome;
 			typedef std::future<DescribeGeoipInstanceStatisticsOutcome> DescribeGeoipInstanceStatisticsOutcomeCallable;
 			typedef std::function<void(const GeoipClient*, const Model::DescribeGeoipInstanceStatisticsRequest&, const DescribeGeoipInstanceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeoipInstanceStatisticsAsyncHandler;
@@ -64,6 +74,12 @@ namespace AlibabaCloud
 			DescribeGeoipInstanceOutcome describeGeoipInstance(const Model::DescribeGeoipInstanceRequest &request)const;
 			void describeGeoipInstanceAsync(const Model::DescribeGeoipInstanceRequest& request, const DescribeGeoipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGeoipInstanceOutcomeCallable describeGeoipInstanceCallable(const Model::DescribeGeoipInstanceRequest& request) const;
+			DescribeGeoipInstanceDataInfosOutcome describeGeoipInstanceDataInfos(const Model::DescribeGeoipInstanceDataInfosRequest &request)const;
+			void describeGeoipInstanceDataInfosAsync(const Model::DescribeGeoipInstanceDataInfosRequest& request, const DescribeGeoipInstanceDataInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGeoipInstanceDataInfosOutcomeCallable describeGeoipInstanceDataInfosCallable(const Model::DescribeGeoipInstanceDataInfosRequest& request) const;
+			DescribeGeoipInstanceDataUrlOutcome describeGeoipInstanceDataUrl(const Model::DescribeGeoipInstanceDataUrlRequest &request)const;
+			void describeGeoipInstanceDataUrlAsync(const Model::DescribeGeoipInstanceDataUrlRequest& request, const DescribeGeoipInstanceDataUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGeoipInstanceDataUrlOutcomeCallable describeGeoipInstanceDataUrlCallable(const Model::DescribeGeoipInstanceDataUrlRequest& request) const;
 			DescribeGeoipInstanceStatisticsOutcome describeGeoipInstanceStatistics(const Model::DescribeGeoipInstanceStatisticsRequest &request)const;
 			void describeGeoipInstanceStatisticsAsync(const Model::DescribeGeoipInstanceStatisticsRequest& request, const DescribeGeoipInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGeoipInstanceStatisticsOutcomeCallable describeGeoipInstanceStatisticsCallable(const Model::DescribeGeoipInstanceStatisticsRequest& request) const;

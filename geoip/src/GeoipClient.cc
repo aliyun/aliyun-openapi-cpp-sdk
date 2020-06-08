@@ -87,6 +87,78 @@ GeoipClient::DescribeGeoipInstanceOutcomeCallable GeoipClient::describeGeoipInst
 	return task->get_future();
 }
 
+GeoipClient::DescribeGeoipInstanceDataInfosOutcome GeoipClient::describeGeoipInstanceDataInfos(const DescribeGeoipInstanceDataInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGeoipInstanceDataInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGeoipInstanceDataInfosOutcome(DescribeGeoipInstanceDataInfosResult(outcome.result()));
+	else
+		return DescribeGeoipInstanceDataInfosOutcome(outcome.error());
+}
+
+void GeoipClient::describeGeoipInstanceDataInfosAsync(const DescribeGeoipInstanceDataInfosRequest& request, const DescribeGeoipInstanceDataInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGeoipInstanceDataInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GeoipClient::DescribeGeoipInstanceDataInfosOutcomeCallable GeoipClient::describeGeoipInstanceDataInfosCallable(const DescribeGeoipInstanceDataInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGeoipInstanceDataInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGeoipInstanceDataInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+GeoipClient::DescribeGeoipInstanceDataUrlOutcome GeoipClient::describeGeoipInstanceDataUrl(const DescribeGeoipInstanceDataUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGeoipInstanceDataUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGeoipInstanceDataUrlOutcome(DescribeGeoipInstanceDataUrlResult(outcome.result()));
+	else
+		return DescribeGeoipInstanceDataUrlOutcome(outcome.error());
+}
+
+void GeoipClient::describeGeoipInstanceDataUrlAsync(const DescribeGeoipInstanceDataUrlRequest& request, const DescribeGeoipInstanceDataUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGeoipInstanceDataUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+GeoipClient::DescribeGeoipInstanceDataUrlOutcomeCallable GeoipClient::describeGeoipInstanceDataUrlCallable(const DescribeGeoipInstanceDataUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGeoipInstanceDataUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGeoipInstanceDataUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 GeoipClient::DescribeGeoipInstanceStatisticsOutcome GeoipClient::describeGeoipInstanceStatistics(const DescribeGeoipInstanceStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
