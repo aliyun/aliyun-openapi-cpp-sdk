@@ -95,6 +95,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/StartLiveResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatRequest.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatResult.h
+	include/alibabacloud/aliyuncvc/model/UpdateGonggeLayoutRequest.h
+	include/alibabacloud/aliyuncvc/model/UpdateGonggeLayoutResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateLivePasswordRequest.h
 	include/alibabacloud/aliyuncvc/model/UpdateLivePasswordResult.h )
 
@@ -174,6 +176,8 @@ set(aliyuncvc_src
 	src/model/StartLiveResult.cc
 	src/model/UpdateDeviceHeartBeatRequest.cc
 	src/model/UpdateDeviceHeartBeatResult.cc
+	src/model/UpdateGonggeLayoutRequest.cc
+	src/model/UpdateGonggeLayoutResult.cc
 	src/model/UpdateLivePasswordRequest.cc
 	src/model/UpdateLivePasswordResult.cc )
 

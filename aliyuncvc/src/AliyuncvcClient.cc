@@ -1383,6 +1383,42 @@ AliyuncvcClient::UpdateDeviceHeartBeatOutcomeCallable AliyuncvcClient::updateDev
 	return task->get_future();
 }
 
+AliyuncvcClient::UpdateGonggeLayoutOutcome AliyuncvcClient::updateGonggeLayout(const UpdateGonggeLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGonggeLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGonggeLayoutOutcome(UpdateGonggeLayoutResult(outcome.result()));
+	else
+		return UpdateGonggeLayoutOutcome(outcome.error());
+}
+
+void AliyuncvcClient::updateGonggeLayoutAsync(const UpdateGonggeLayoutRequest& request, const UpdateGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGonggeLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::UpdateGonggeLayoutOutcomeCallable AliyuncvcClient::updateGonggeLayoutCallable(const UpdateGonggeLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGonggeLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGonggeLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::UpdateLivePasswordOutcome AliyuncvcClient::updateLivePassword(const UpdateLivePasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

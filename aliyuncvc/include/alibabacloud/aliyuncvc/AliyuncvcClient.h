@@ -96,6 +96,8 @@
 #include "model/StartLiveResult.h"
 #include "model/UpdateDeviceHeartBeatRequest.h"
 #include "model/UpdateDeviceHeartBeatResult.h"
+#include "model/UpdateGonggeLayoutRequest.h"
+#include "model/UpdateGonggeLayoutResult.h"
 #include "model/UpdateLivePasswordRequest.h"
 #include "model/UpdateLivePasswordResult.h"
 
@@ -218,6 +220,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDeviceHeartBeatResult> UpdateDeviceHeartBeatOutcome;
 			typedef std::future<UpdateDeviceHeartBeatOutcome> UpdateDeviceHeartBeatOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateDeviceHeartBeatRequest&, const UpdateDeviceHeartBeatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceHeartBeatAsyncHandler;
+			typedef Outcome<Error, Model::UpdateGonggeLayoutResult> UpdateGonggeLayoutOutcome;
+			typedef std::future<UpdateGonggeLayoutOutcome> UpdateGonggeLayoutOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateGonggeLayoutRequest&, const UpdateGonggeLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGonggeLayoutAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLivePasswordResult> UpdateLivePasswordOutcome;
 			typedef std::future<UpdateLivePasswordOutcome> UpdateLivePasswordOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateLivePasswordRequest&, const UpdateLivePasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLivePasswordAsyncHandler;
@@ -337,6 +342,9 @@ namespace AlibabaCloud
 			UpdateDeviceHeartBeatOutcome updateDeviceHeartBeat(const Model::UpdateDeviceHeartBeatRequest &request)const;
 			void updateDeviceHeartBeatAsync(const Model::UpdateDeviceHeartBeatRequest& request, const UpdateDeviceHeartBeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDeviceHeartBeatOutcomeCallable updateDeviceHeartBeatCallable(const Model::UpdateDeviceHeartBeatRequest& request) const;
+			UpdateGonggeLayoutOutcome updateGonggeLayout(const Model::UpdateGonggeLayoutRequest &request)const;
+			void updateGonggeLayoutAsync(const Model::UpdateGonggeLayoutRequest& request, const UpdateGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateGonggeLayoutOutcomeCallable updateGonggeLayoutCallable(const Model::UpdateGonggeLayoutRequest& request) const;
 			UpdateLivePasswordOutcome updateLivePassword(const Model::UpdateLivePasswordRequest &request)const;
 			void updateLivePasswordAsync(const Model::UpdateLivePasswordRequest& request, const UpdateLivePasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLivePasswordOutcomeCallable updateLivePasswordCallable(const Model::UpdateLivePasswordRequest& request) const;
