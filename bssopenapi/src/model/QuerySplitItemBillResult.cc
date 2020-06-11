@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryInstanceBillResult.h>
+#include <alibabacloud/bssopenapi/model/QuerySplitItemBillResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-QueryInstanceBillResult::QueryInstanceBillResult() :
+QuerySplitItemBillResult::QuerySplitItemBillResult() :
 	ServiceResult()
 {}
 
-QueryInstanceBillResult::QueryInstanceBillResult(const std::string &payload) :
+QuerySplitItemBillResult::QuerySplitItemBillResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryInstanceBillResult::~QueryInstanceBillResult()
+QuerySplitItemBillResult::~QuerySplitItemBillResult()
 {}
 
-void QueryInstanceBillResult::parse(const std::string &payload)
+void QuerySplitItemBillResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -128,8 +128,10 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 			itemObject.servicePeriod = dataNodeItemsItem["ServicePeriod"].asString();
 		if(!dataNodeItemsItem["BillingDate"].isNull())
 			itemObject.billingDate = dataNodeItemsItem["BillingDate"].asString();
-		if(!dataNodeItemsItem["ServicePeriodUnit"].isNull())
-			itemObject.servicePeriodUnit = dataNodeItemsItem["ServicePeriodUnit"].asString();
+		if(!dataNodeItemsItem["SplitItemID"].isNull())
+			itemObject.splitItemID = dataNodeItemsItem["SplitItemID"].asString();
+		if(!dataNodeItemsItem["SplitItemName"].isNull())
+			itemObject.splitItemName = dataNodeItemsItem["SplitItemName"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())
@@ -141,22 +143,22 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 
 }
 
-std::string QueryInstanceBillResult::getMessage()const
+std::string QuerySplitItemBillResult::getMessage()const
 {
 	return message_;
 }
 
-QueryInstanceBillResult::Data QueryInstanceBillResult::getData()const
+QuerySplitItemBillResult::Data QuerySplitItemBillResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryInstanceBillResult::getCode()const
+std::string QuerySplitItemBillResult::getCode()const
 {
 	return code_;
 }
 
-bool QueryInstanceBillResult::getSuccess()const
+bool QuerySplitItemBillResult::getSuccess()const
 {
 	return success_;
 }

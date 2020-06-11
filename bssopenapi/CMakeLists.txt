@@ -115,6 +115,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
 	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h
+	include/alibabacloud/bssopenapi/model/QuerySplitItemBillRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySplitItemBillResult.h
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataResult.h
 	include/alibabacloud/bssopenapi/model/RenewInstanceRequest.h
@@ -232,6 +234,8 @@ set(bssopenapi_src
 	src/model/QueryResourcePackageInstancesResult.cc
 	src/model/QuerySettlementBillRequest.cc
 	src/model/QuerySettlementBillResult.cc
+	src/model/QuerySplitItemBillRequest.cc
+	src/model/QuerySplitItemBillResult.cc
 	src/model/QueryUserOmsDataRequest.cc
 	src/model/QueryUserOmsDataResult.cc
 	src/model/RenewInstanceRequest.cc

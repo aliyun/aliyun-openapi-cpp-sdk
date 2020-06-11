@@ -1743,6 +1743,42 @@ BssOpenApiClient::QuerySettlementBillOutcomeCallable BssOpenApiClient::querySett
 	return task->get_future();
 }
 
+BssOpenApiClient::QuerySplitItemBillOutcome BssOpenApiClient::querySplitItemBill(const QuerySplitItemBillRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySplitItemBillOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySplitItemBillOutcome(QuerySplitItemBillResult(outcome.result()));
+	else
+		return QuerySplitItemBillOutcome(outcome.error());
+}
+
+void BssOpenApiClient::querySplitItemBillAsync(const QuerySplitItemBillRequest& request, const QuerySplitItemBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySplitItemBill(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QuerySplitItemBillOutcomeCallable BssOpenApiClient::querySplitItemBillCallable(const QuerySplitItemBillRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySplitItemBillOutcome()>>(
+			[this, request]()
+			{
+			return this->querySplitItemBill(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryUserOmsDataOutcome BssOpenApiClient::queryUserOmsData(const QueryUserOmsDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

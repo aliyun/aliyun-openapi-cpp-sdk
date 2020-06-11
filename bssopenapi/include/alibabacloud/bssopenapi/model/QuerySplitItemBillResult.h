@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINSTANCEBILLRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINSTANCEBILLRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryInstanceBillResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySplitItemBillResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						float paymentAmount;
 						float deductedByPrepaidCard;
 						float invoiceDiscount;
+						std::string splitItemName;
 						std::string subscriptionType;
 						std::string item;
 						float pretaxGrossAmount;
@@ -64,8 +65,8 @@ namespace AlibabaCloud
 						std::string billingItem;
 						std::string nickName;
 						std::string intranetIP;
-						std::string servicePeriodUnit;
 						std::string servicePeriod;
+						std::string splitItemID;
 						std::string deductedByResourcePackage;
 						std::string usageUnit;
 						std::string ownerID;
@@ -84,9 +85,9 @@ namespace AlibabaCloud
 				};
 
 
-				QueryInstanceBillResult();
-				explicit QueryInstanceBillResult(const std::string &payload);
-				~QueryInstanceBillResult();
+				QuerySplitItemBillResult();
+				explicit QuerySplitItemBillResult(const std::string &payload);
+				~QuerySplitItemBillResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -104,4 +105,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYINSTANCEBILLRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLRESULT_H_

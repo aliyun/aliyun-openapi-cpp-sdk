@@ -116,6 +116,8 @@
 #include "model/QueryResourcePackageInstancesResult.h"
 #include "model/QuerySettlementBillRequest.h"
 #include "model/QuerySettlementBillResult.h"
+#include "model/QuerySplitItemBillRequest.h"
+#include "model/QuerySplitItemBillResult.h"
 #include "model/QueryUserOmsDataRequest.h"
 #include "model/QueryUserOmsDataResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -286,6 +288,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySettlementBillResult> QuerySettlementBillOutcome;
 			typedef std::future<QuerySettlementBillOutcome> QuerySettlementBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySettlementBillRequest&, const QuerySettlementBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySettlementBillAsyncHandler;
+			typedef Outcome<Error, Model::QuerySplitItemBillResult> QuerySplitItemBillOutcome;
+			typedef std::future<QuerySplitItemBillOutcome> QuerySplitItemBillOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySplitItemBillRequest&, const QuerySplitItemBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySplitItemBillAsyncHandler;
 			typedef Outcome<Error, Model::QueryUserOmsDataResult> QueryUserOmsDataOutcome;
 			typedef std::future<QueryUserOmsDataOutcome> QueryUserOmsDataOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryUserOmsDataRequest&, const QueryUserOmsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserOmsDataAsyncHandler;
@@ -462,6 +467,9 @@ namespace AlibabaCloud
 			QuerySettlementBillOutcome querySettlementBill(const Model::QuerySettlementBillRequest &request)const;
 			void querySettlementBillAsync(const Model::QuerySettlementBillRequest& request, const QuerySettlementBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySettlementBillOutcomeCallable querySettlementBillCallable(const Model::QuerySettlementBillRequest& request) const;
+			QuerySplitItemBillOutcome querySplitItemBill(const Model::QuerySplitItemBillRequest &request)const;
+			void querySplitItemBillAsync(const Model::QuerySplitItemBillRequest& request, const QuerySplitItemBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySplitItemBillOutcomeCallable querySplitItemBillCallable(const Model::QuerySplitItemBillRequest& request) const;
 			QueryUserOmsDataOutcome queryUserOmsData(const Model::QueryUserOmsDataRequest &request)const;
 			void queryUserOmsDataAsync(const Model::QueryUserOmsDataRequest& request, const QueryUserOmsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryUserOmsDataOutcomeCallable queryUserOmsDataCallable(const Model::QueryUserOmsDataRequest& request) const;
