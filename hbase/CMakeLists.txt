@@ -85,6 +85,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeSecurityGroupsResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupRequest.h
 	include/alibabacloud/hbase/model/EnableHBaseueBackupResult.h
+	include/alibabacloud/hbase/model/EnableHBaseueModuleRequest.h
+	include/alibabacloud/hbase/model/EnableHBaseueModuleResult.h
 	include/alibabacloud/hbase/model/ListTagResourcesRequest.h
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
 	include/alibabacloud/hbase/model/ListTagsRequest.h
@@ -192,6 +194,8 @@ set(hbase_src
 	src/model/DescribeSecurityGroupsResult.cc
 	src/model/EnableHBaseueBackupRequest.cc
 	src/model/EnableHBaseueBackupResult.cc
+	src/model/EnableHBaseueModuleRequest.cc
+	src/model/EnableHBaseueModuleResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc

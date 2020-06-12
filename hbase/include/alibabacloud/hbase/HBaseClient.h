@@ -86,6 +86,8 @@
 #include "model/DescribeSecurityGroupsResult.h"
 #include "model/EnableHBaseueBackupRequest.h"
 #include "model/EnableHBaseueBackupResult.h"
+#include "model/EnableHBaseueModuleRequest.h"
+#include "model/EnableHBaseueModuleResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
@@ -231,6 +233,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableHBaseueBackupResult> EnableHBaseueBackupOutcome;
 			typedef std::future<EnableHBaseueBackupOutcome> EnableHBaseueBackupOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::EnableHBaseueBackupRequest&, const EnableHBaseueBackupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableHBaseueBackupAsyncHandler;
+			typedef Outcome<Error, Model::EnableHBaseueModuleResult> EnableHBaseueModuleOutcome;
+			typedef std::future<EnableHBaseueModuleOutcome> EnableHBaseueModuleOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::EnableHBaseueModuleRequest&, const EnableHBaseueModuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableHBaseueModuleAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -392,6 +397,9 @@ namespace AlibabaCloud
 			EnableHBaseueBackupOutcome enableHBaseueBackup(const Model::EnableHBaseueBackupRequest &request)const;
 			void enableHBaseueBackupAsync(const Model::EnableHBaseueBackupRequest& request, const EnableHBaseueBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableHBaseueBackupOutcomeCallable enableHBaseueBackupCallable(const Model::EnableHBaseueBackupRequest& request) const;
+			EnableHBaseueModuleOutcome enableHBaseueModule(const Model::EnableHBaseueModuleRequest &request)const;
+			void enableHBaseueModuleAsync(const Model::EnableHBaseueModuleRequest& request, const EnableHBaseueModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableHBaseueModuleOutcomeCallable enableHBaseueModuleCallable(const Model::EnableHBaseueModuleRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;

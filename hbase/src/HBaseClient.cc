@@ -1203,6 +1203,42 @@ HBaseClient::EnableHBaseueBackupOutcomeCallable HBaseClient::enableHBaseueBackup
 	return task->get_future();
 }
 
+HBaseClient::EnableHBaseueModuleOutcome HBaseClient::enableHBaseueModule(const EnableHBaseueModuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableHBaseueModuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableHBaseueModuleOutcome(EnableHBaseueModuleResult(outcome.result()));
+	else
+		return EnableHBaseueModuleOutcome(outcome.error());
+}
+
+void HBaseClient::enableHBaseueModuleAsync(const EnableHBaseueModuleRequest& request, const EnableHBaseueModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableHBaseueModule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::EnableHBaseueModuleOutcomeCallable HBaseClient::enableHBaseueModuleCallable(const EnableHBaseueModuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableHBaseueModuleOutcome()>>(
+			[this, request]()
+			{
+			return this->enableHBaseueModule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::ListTagResourcesOutcome HBaseClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
