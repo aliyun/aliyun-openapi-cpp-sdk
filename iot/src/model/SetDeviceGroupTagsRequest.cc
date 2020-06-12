@@ -27,6 +27,28 @@ SetDeviceGroupTagsRequest::SetDeviceGroupTagsRequest() :
 SetDeviceGroupTagsRequest::~SetDeviceGroupTagsRequest()
 {}
 
+std::string SetDeviceGroupTagsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void SetDeviceGroupTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string SetDeviceGroupTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void SetDeviceGroupTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string SetDeviceGroupTagsRequest::getTagString()const
 {
 	return tagString_;
@@ -49,25 +71,25 @@ void SetDeviceGroupTagsRequest::setGroupId(const std::string& groupId)
 	setParameter("GroupId", groupId);
 }
 
-std::string SetDeviceGroupTagsRequest::getAccessKeyId()const
+std::string SetDeviceGroupTagsRequest::getApiProduct()const
 {
-	return accessKeyId_;
+	return apiProduct_;
 }
 
-void SetDeviceGroupTagsRequest::setAccessKeyId(const std::string& accessKeyId)
+void SetDeviceGroupTagsRequest::setApiProduct(const std::string& apiProduct)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
 }
 
-std::string SetDeviceGroupTagsRequest::getIotInstanceId()const
+std::string SetDeviceGroupTagsRequest::getApiRevision()const
 {
-	return iotInstanceId_;
+	return apiRevision_;
 }
 
-void SetDeviceGroupTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+void SetDeviceGroupTagsRequest::setApiRevision(const std::string& apiRevision)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -27,6 +27,17 @@ UpdateThingModelRequest::UpdateThingModelRequest() :
 UpdateThingModelRequest::~UpdateThingModelRequest()
 {}
 
+std::string UpdateThingModelRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateThingModelRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string UpdateThingModelRequest::getIdentifier()const
 {
 	return identifier_;

@@ -27,17 +27,6 @@ PubBroadcastRequest::PubBroadcastRequest() :
 PubBroadcastRequest::~PubBroadcastRequest()
 {}
 
-std::string PubBroadcastRequest::getTopicFullName()const
-{
-	return topicFullName_;
-}
-
-void PubBroadcastRequest::setTopicFullName(const std::string& topicFullName)
-{
-	topicFullName_ = topicFullName;
-	setParameter("TopicFullName", topicFullName);
-}
-
 std::string PubBroadcastRequest::getMessageContent()const
 {
 	return messageContent_;
@@ -47,17 +36,6 @@ void PubBroadcastRequest::setMessageContent(const std::string& messageContent)
 {
 	messageContent_ = messageContent;
 	setParameter("MessageContent", messageContent);
-}
-
-std::string PubBroadcastRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void PubBroadcastRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
 }
 
 std::string PubBroadcastRequest::getAccessKeyId()const
@@ -80,5 +58,49 @@ void PubBroadcastRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string PubBroadcastRequest::getTopicFullName()const
+{
+	return topicFullName_;
+}
+
+void PubBroadcastRequest::setTopicFullName(const std::string& topicFullName)
+{
+	topicFullName_ = topicFullName;
+	setParameter("TopicFullName", topicFullName);
+}
+
+std::string PubBroadcastRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void PubBroadcastRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string PubBroadcastRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void PubBroadcastRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string PubBroadcastRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void PubBroadcastRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

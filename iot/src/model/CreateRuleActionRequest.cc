@@ -71,17 +71,6 @@ void CreateRuleActionRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
-long CreateRuleActionRequest::getRuleId()const
-{
-	return ruleId_;
-}
-
-void CreateRuleActionRequest::setRuleId(long ruleId)
-{
-	ruleId_ = ruleId;
-	setParameter("RuleId", std::to_string(ruleId));
-}
-
 bool CreateRuleActionRequest::getErrorActionFlag()const
 {
 	return errorActionFlag_;
@@ -91,5 +80,38 @@ void CreateRuleActionRequest::setErrorActionFlag(bool errorActionFlag)
 {
 	errorActionFlag_ = errorActionFlag;
 	setParameter("ErrorActionFlag", errorActionFlag ? "true" : "false");
+}
+
+std::string CreateRuleActionRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateRuleActionRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateRuleActionRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateRuleActionRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+long CreateRuleActionRequest::getRuleId()const
+{
+	return ruleId_;
+}
+
+void CreateRuleActionRequest::setRuleId(long ruleId)
+{
+	ruleId_ = ruleId;
+	setParameter("RuleId", std::to_string(ruleId));
 }
 

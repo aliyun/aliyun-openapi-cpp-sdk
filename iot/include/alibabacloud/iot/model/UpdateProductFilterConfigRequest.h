@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				bool getPropertyTimestampFilter()const;
 				void setPropertyTimestampFilter(bool propertyTimestampFilter);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				bool propertyTimestampFilter_;
+				std::string iotInstanceId_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;

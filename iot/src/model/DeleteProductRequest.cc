@@ -27,17 +27,6 @@ DeleteProductRequest::DeleteProductRequest() :
 DeleteProductRequest::~DeleteProductRequest()
 {}
 
-std::string DeleteProductRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteProductRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string DeleteProductRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void DeleteProductRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string DeleteProductRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteProductRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteProductRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteProductRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

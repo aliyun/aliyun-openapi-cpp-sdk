@@ -27,17 +27,6 @@ QueryPageByApplyIdRequest::QueryPageByApplyIdRequest() :
 QueryPageByApplyIdRequest::~QueryPageByApplyIdRequest()
 {}
 
-int QueryPageByApplyIdRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryPageByApplyIdRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryPageByApplyIdRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,17 +36,6 @@ void QueryPageByApplyIdRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-long QueryPageByApplyIdRequest::getApplyId()const
-{
-	return applyId_;
-}
-
-void QueryPageByApplyIdRequest::setApplyId(long applyId)
-{
-	applyId_ = applyId;
-	setParameter("ApplyId", std::to_string(applyId));
 }
 
 std::string QueryPageByApplyIdRequest::getIotInstanceId()const
@@ -80,5 +58,49 @@ void QueryPageByApplyIdRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryPageByApplyIdRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryPageByApplyIdRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+long QueryPageByApplyIdRequest::getApplyId()const
+{
+	return applyId_;
+}
+
+void QueryPageByApplyIdRequest::setApplyId(long applyId)
+{
+	applyId_ = applyId;
+	setParameter("ApplyId", std::to_string(applyId));
+}
+
+std::string QueryPageByApplyIdRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryPageByApplyIdRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryPageByApplyIdRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryPageByApplyIdRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

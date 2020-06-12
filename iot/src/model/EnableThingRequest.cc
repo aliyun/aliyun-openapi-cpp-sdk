@@ -27,17 +27,6 @@ EnableThingRequest::EnableThingRequest() :
 EnableThingRequest::~EnableThingRequest()
 {}
 
-std::string EnableThingRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void EnableThingRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string EnableThingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void EnableThingRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string EnableThingRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void EnableThingRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string EnableThingRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void EnableThingRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string EnableThingRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void EnableThingRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string EnableThingRequest::getDeviceName()const

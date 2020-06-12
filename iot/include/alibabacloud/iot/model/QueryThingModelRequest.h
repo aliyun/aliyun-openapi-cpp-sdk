@@ -35,22 +35,28 @@ namespace AlibabaCloud
 				QueryThingModelRequest();
 				~QueryThingModelRequest();
 
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getModelVersion()const;
 				void setModelVersion(const std::string& modelVersion);
 
             private:
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
 				std::string iotInstanceId_;
+				std::string productKey_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string modelVersion_;
 
 			};

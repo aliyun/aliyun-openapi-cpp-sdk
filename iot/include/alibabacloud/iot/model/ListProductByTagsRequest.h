@@ -41,23 +41,29 @@ namespace AlibabaCloud
 				ListProductByTagsRequest();
 				~ListProductByTagsRequest();
 
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::vector<ProductTag> getProductTag()const;
-				void setProductTag(const std::vector<ProductTag>& productTag);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::vector<ProductTag> getProductTag()const;
+				void setProductTag(const std::vector<ProductTag>& productTag);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				int currentPage_;
 				std::string accessKeyId_;
-				std::vector<ProductTag> productTag_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				int currentPage_;
+				std::vector<ProductTag> productTag_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

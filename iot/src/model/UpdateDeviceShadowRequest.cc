@@ -38,17 +38,6 @@ void UpdateDeviceShadowRequest::setShadowMessage(const std::string& shadowMessag
 	setParameter("ShadowMessage", shadowMessage);
 }
 
-std::string UpdateDeviceShadowRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void UpdateDeviceShadowRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string UpdateDeviceShadowRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void UpdateDeviceShadowRequest::setIotInstanceId(const std::string& iotInstanceI
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateDeviceShadowRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateDeviceShadowRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string UpdateDeviceShadowRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UpdateDeviceShadowRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateDeviceShadowRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateDeviceShadowRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string UpdateDeviceShadowRequest::getDeviceName()const

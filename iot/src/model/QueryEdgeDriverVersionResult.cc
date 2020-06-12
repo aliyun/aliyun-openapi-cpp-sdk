@@ -72,6 +72,8 @@ void QueryEdgeDriverVersionResult::parse(const std::string &payload)
 			driverVersionObject.gmtCreateTimestamp = std::stol(dataNodeDriverVersionListDriverVersion["GmtCreateTimestamp"].asString());
 		if(!dataNodeDriverVersionListDriverVersion["GmtModifiedTimestamp"].isNull())
 			driverVersionObject.gmtModifiedTimestamp = std::stol(dataNodeDriverVersionListDriverVersion["GmtModifiedTimestamp"].asString());
+		if(!dataNodeDriverVersionListDriverVersion["Argument"].isNull())
+			driverVersionObject.argument = dataNodeDriverVersionListDriverVersion["Argument"].asString();
 		data_.driverVersionList.push_back(driverVersionObject);
 	}
 	if(!value["Success"].isNull())

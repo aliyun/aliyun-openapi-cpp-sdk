@@ -60,17 +60,6 @@ void NotifyAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string NotifyAddThingTopoRequest::getGwDeviceName()const
-{
-	return gwDeviceName_;
-}
-
-void NotifyAddThingTopoRequest::setGwDeviceName(const std::string& gwDeviceName)
-{
-	gwDeviceName_ = gwDeviceName;
-	setParameter("GwDeviceName", gwDeviceName);
-}
-
 std::string NotifyAddThingTopoRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -91,5 +80,38 @@ void NotifyAddThingTopoRequest::setGwIotId(const std::string& gwIotId)
 {
 	gwIotId_ = gwIotId;
 	setParameter("GwIotId", gwIotId);
+}
+
+std::string NotifyAddThingTopoRequest::getGwDeviceName()const
+{
+	return gwDeviceName_;
+}
+
+void NotifyAddThingTopoRequest::setGwDeviceName(const std::string& gwDeviceName)
+{
+	gwDeviceName_ = gwDeviceName;
+	setParameter("GwDeviceName", gwDeviceName);
+}
+
+std::string NotifyAddThingTopoRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void NotifyAddThingTopoRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string NotifyAddThingTopoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void NotifyAddThingTopoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

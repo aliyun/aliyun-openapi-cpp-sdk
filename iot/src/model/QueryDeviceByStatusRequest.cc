@@ -27,28 +27,6 @@ QueryDeviceByStatusRequest::QueryDeviceByStatusRequest() :
 QueryDeviceByStatusRequest::~QueryDeviceByStatusRequest()
 {}
 
-int QueryDeviceByStatusRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryDeviceByStatusRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
-std::string QueryDeviceByStatusRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceByStatusRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryDeviceByStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -91,6 +69,50 @@ void QueryDeviceByStatusRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int QueryDeviceByStatusRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceByStatusRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceByStatusRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceByStatusRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceByStatusRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceByStatusRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceByStatusRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceByStatusRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryDeviceByStatusRequest::getBizTenantId()const

@@ -128,6 +128,28 @@ void QueryDevicePropertiesDataRequest::setAsc(int asc)
 	setParameter("Asc", std::to_string(asc));
 }
 
+std::string QueryDevicePropertiesDataRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDevicePropertiesDataRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDevicePropertiesDataRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDevicePropertiesDataRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
 std::string QueryDevicePropertiesDataRequest::getDeviceName()const
 {
 	return deviceName_;

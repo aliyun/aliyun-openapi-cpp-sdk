@@ -27,28 +27,6 @@ GetDeviceShadowRequest::GetDeviceShadowRequest() :
 GetDeviceShadowRequest::~GetDeviceShadowRequest()
 {}
 
-std::string GetDeviceShadowRequest::getShadowMessage()const
-{
-	return shadowMessage_;
-}
-
-void GetDeviceShadowRequest::setShadowMessage(const std::string& shadowMessage)
-{
-	shadowMessage_ = shadowMessage;
-	setParameter("ShadowMessage", shadowMessage);
-}
-
-std::string GetDeviceShadowRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void GetDeviceShadowRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string GetDeviceShadowRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +47,39 @@ void GetDeviceShadowRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetDeviceShadowRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetDeviceShadowRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string GetDeviceShadowRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetDeviceShadowRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetDeviceShadowRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetDeviceShadowRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string GetDeviceShadowRequest::getDeviceName()const

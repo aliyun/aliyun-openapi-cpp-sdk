@@ -60,3 +60,25 @@ void DeleteProductTopicRequest::setIotInstanceId(const std::string& iotInstanceI
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string DeleteProductTopicRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteProductTopicRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteProductTopicRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteProductTopicRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

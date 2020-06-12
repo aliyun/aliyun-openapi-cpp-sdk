@@ -49,6 +49,28 @@ void StartRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string StartRuleRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void StartRuleRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string StartRuleRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void StartRuleRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
 long StartRuleRequest::getRuleId()const
 {
 	return ruleId_;

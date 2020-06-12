@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getConfigCheckRule()const;
 				void setConfigCheckRule(const std::string& configCheckRule);
+				std::string getArgument()const;
+				void setArgument(const std::string& argument);
 				std::string getEdgeVersion()const;
 				void setEdgeVersion(const std::string& edgeVersion);
 				std::string getDescription()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 
             private:
 				std::string configCheckRule_;
+				std::string argument_;
 				std::string edgeVersion_;
 				std::string description_;
 				std::string accessKeyId_;

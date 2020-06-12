@@ -53,10 +53,14 @@ namespace AlibabaCloud
 				void setProductKey(const std::string& productKey);
 				int getAsc()const;
 				void setAsc(int asc);
-				std::string getEventType()const;
-				void setEventType(const std::string& eventType);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
+				std::string getEventType()const;
+				void setEventType(const std::string& eventType);
 
             private:
 				long startTime_;
@@ -68,8 +72,10 @@ namespace AlibabaCloud
 				long endTime_;
 				std::string productKey_;
 				int asc_;
-				std::string eventType_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string deviceName_;
+				std::string eventType_;
 
 			};
 		}

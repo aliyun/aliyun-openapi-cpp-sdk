@@ -27,24 +27,6 @@ BatchUpdateDeviceNicknameRequest::BatchUpdateDeviceNicknameRequest() :
 BatchUpdateDeviceNicknameRequest::~BatchUpdateDeviceNicknameRequest()
 {}
 
-std::vector<BatchUpdateDeviceNicknameRequest::DeviceNicknameInfo> BatchUpdateDeviceNicknameRequest::getDeviceNicknameInfo()const
-{
-	return deviceNicknameInfo_;
-}
-
-void BatchUpdateDeviceNicknameRequest::setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo)
-{
-	deviceNicknameInfo_ = deviceNicknameInfo;
-	for(int dep1 = 0; dep1!= deviceNicknameInfo.size(); dep1++) {
-		auto deviceNicknameInfoObj = deviceNicknameInfo.at(dep1);
-		std::string deviceNicknameInfoObjStr = "DeviceNicknameInfo." + std::to_string(dep1 + 1);
-		setParameter(deviceNicknameInfoObjStr + ".IotId", deviceNicknameInfoObj.iotId);
-		setParameter(deviceNicknameInfoObjStr + ".Nickname", deviceNicknameInfoObj.nickname);
-		setParameter(deviceNicknameInfoObjStr + ".DeviceName", deviceNicknameInfoObj.deviceName);
-		setParameter(deviceNicknameInfoObjStr + ".ProductKey", deviceNicknameInfoObj.productKey);
-	}
-}
-
 std::string BatchUpdateDeviceNicknameRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -65,5 +47,45 @@ void BatchUpdateDeviceNicknameRequest::setIotInstanceId(const std::string& iotIn
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::vector<BatchUpdateDeviceNicknameRequest::DeviceNicknameInfo> BatchUpdateDeviceNicknameRequest::getDeviceNicknameInfo()const
+{
+	return deviceNicknameInfo_;
+}
+
+void BatchUpdateDeviceNicknameRequest::setDeviceNicknameInfo(const std::vector<DeviceNicknameInfo>& deviceNicknameInfo)
+{
+	deviceNicknameInfo_ = deviceNicknameInfo;
+	for(int dep1 = 0; dep1!= deviceNicknameInfo.size(); dep1++) {
+		auto deviceNicknameInfoObj = deviceNicknameInfo.at(dep1);
+		std::string deviceNicknameInfoObjStr = "DeviceNicknameInfo." + std::to_string(dep1 + 1);
+		setParameter(deviceNicknameInfoObjStr + ".IotId", deviceNicknameInfoObj.iotId);
+		setParameter(deviceNicknameInfoObjStr + ".Nickname", deviceNicknameInfoObj.nickname);
+		setParameter(deviceNicknameInfoObjStr + ".DeviceName", deviceNicknameInfoObj.deviceName);
+		setParameter(deviceNicknameInfoObjStr + ".ProductKey", deviceNicknameInfoObj.productKey);
+	}
+}
+
+std::string BatchUpdateDeviceNicknameRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchUpdateDeviceNicknameRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchUpdateDeviceNicknameRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchUpdateDeviceNicknameRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

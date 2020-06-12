@@ -49,3 +49,25 @@ void QueryLoRaJoinPermissionsRequest::setIotInstanceId(const std::string& iotIns
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string QueryLoRaJoinPermissionsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryLoRaJoinPermissionsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryLoRaJoinPermissionsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryLoRaJoinPermissionsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

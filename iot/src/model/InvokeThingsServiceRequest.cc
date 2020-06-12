@@ -27,6 +27,28 @@ InvokeThingsServiceRequest::InvokeThingsServiceRequest() :
 InvokeThingsServiceRequest::~InvokeThingsServiceRequest()
 {}
 
+std::string InvokeThingsServiceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string InvokeThingsServiceRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void InvokeThingsServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string InvokeThingsServiceRequest::getIdentifier()const
 {
 	return identifier_;
@@ -49,17 +71,6 @@ void InvokeThingsServiceRequest::setProductKey(const std::string& productKey)
 	setParameter("ProductKey", productKey);
 }
 
-std::string InvokeThingsServiceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void InvokeThingsServiceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string InvokeThingsServiceRequest::getArgs()const
 {
 	return args_;
@@ -71,15 +82,26 @@ void InvokeThingsServiceRequest::setArgs(const std::string& args)
 	setParameter("Args", args);
 }
 
-std::string InvokeThingsServiceRequest::getIotInstanceId()const
+std::string InvokeThingsServiceRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void InvokeThingsServiceRequest::setIotInstanceId(const std::string& iotInstanceId)
+void InvokeThingsServiceRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string InvokeThingsServiceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void InvokeThingsServiceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::vector<std::string> InvokeThingsServiceRequest::getDeviceName()const

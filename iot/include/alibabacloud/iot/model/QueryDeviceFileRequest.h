@@ -35,26 +35,32 @@ namespace AlibabaCloud
 				QueryDeviceFileRequest();
 				~QueryDeviceFileRequest();
 
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 				std::string getFileId()const;
 				void setFileId(const std::string& fileId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string iotId_;
 				std::string iotInstanceId_;
-				std::string deviceName_;
 				std::string fileId_;
+				std::string productKey_;
+				std::string apiProduct_;
+				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}

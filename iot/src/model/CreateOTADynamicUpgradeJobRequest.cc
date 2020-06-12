@@ -38,28 +38,6 @@ void CreateOTADynamicUpgradeJobRequest::setRetryCount(int retryCount)
 	setParameter("RetryCount", std::to_string(retryCount));
 }
 
-std::string CreateOTADynamicUpgradeJobRequest::getFirmwareId()const
-{
-	return firmwareId_;
-}
-
-void CreateOTADynamicUpgradeJobRequest::setFirmwareId(const std::string& firmwareId)
-{
-	firmwareId_ = firmwareId;
-	setParameter("FirmwareId", firmwareId);
-}
-
-std::string CreateOTADynamicUpgradeJobRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void CreateOTADynamicUpgradeJobRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 int CreateOTADynamicUpgradeJobRequest::getTimeoutInMinutes()const
 {
 	return timeoutInMinutes_;
@@ -80,6 +58,39 @@ void CreateOTADynamicUpgradeJobRequest::setAccessKeyId(const std::string& access
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateOTADynamicUpgradeJobRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateOTADynamicUpgradeJobRequest::getFirmwareId()const
+{
+	return firmwareId_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setFirmwareId(const std::string& firmwareId)
+{
+	firmwareId_ = firmwareId;
+	setParameter("FirmwareId", firmwareId);
+}
+
+std::string CreateOTADynamicUpgradeJobRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 int CreateOTADynamicUpgradeJobRequest::getRetryInterval()const
@@ -106,15 +117,26 @@ void CreateOTADynamicUpgradeJobRequest::setSrcVersion(const std::vector<std::str
 	}
 }
 
-std::string CreateOTADynamicUpgradeJobRequest::getIotInstanceId()const
+std::string CreateOTADynamicUpgradeJobRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void CreateOTADynamicUpgradeJobRequest::setIotInstanceId(const std::string& iotInstanceId)
+void CreateOTADynamicUpgradeJobRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateOTADynamicUpgradeJobRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateOTADynamicUpgradeJobRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 int CreateOTADynamicUpgradeJobRequest::getMaximumPerMinute()const

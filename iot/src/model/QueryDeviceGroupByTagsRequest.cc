@@ -27,17 +27,6 @@ QueryDeviceGroupByTagsRequest::QueryDeviceGroupByTagsRequest() :
 QueryDeviceGroupByTagsRequest::~QueryDeviceGroupByTagsRequest()
 {}
 
-int QueryDeviceGroupByTagsRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryDeviceGroupByTagsRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryDeviceGroupByTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -85,5 +74,38 @@ void QueryDeviceGroupByTagsRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(tagObjStr + ".TagValue", tagObj.tagValue);
 		setParameter(tagObjStr + ".TagKey", tagObj.tagKey);
 	}
+}
+
+int QueryDeviceGroupByTagsRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceGroupByTagsRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceGroupByTagsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceGroupByTagsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceGroupByTagsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceGroupByTagsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

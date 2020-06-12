@@ -41,19 +41,25 @@ namespace AlibabaCloud
 				BatchAddDeviceGroupRelationsRequest();
 				~BatchAddDeviceGroupRelationsRequest();
 
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::vector<Device> getDevice()const;
 				void setDevice(const std::vector<Device>& device);
 
             private:
-				std::string groupId_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
+				std::string groupId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::vector<Device> device_;
 
 			};

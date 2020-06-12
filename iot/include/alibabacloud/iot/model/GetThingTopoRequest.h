@@ -35,28 +35,34 @@ namespace AlibabaCloud
 				GetThingTopoRequest();
 				~GetThingTopoRequest();
 
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
-				int getPageNo()const;
-				void setPageNo(int pageNo);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				int getPageNo()const;
+				void setPageNo(int pageNo);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string iotId_;
-				int pageNo_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				std::string productKey_;
+				int pageNo_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string deviceName_;
 
 			};

@@ -49,6 +49,28 @@ void DeleteRuleRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string DeleteRuleRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteRuleRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteRuleRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteRuleRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
 long DeleteRuleRequest::getRuleId()const
 {
 	return ruleId_;

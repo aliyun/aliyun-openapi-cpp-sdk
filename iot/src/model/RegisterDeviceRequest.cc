@@ -27,28 +27,6 @@ RegisterDeviceRequest::RegisterDeviceRequest() :
 RegisterDeviceRequest::~RegisterDeviceRequest()
 {}
 
-std::string RegisterDeviceRequest::getPinCode()const
-{
-	return pinCode_;
-}
-
-void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
-{
-	pinCode_ = pinCode;
-	setParameter("PinCode", pinCode);
-}
-
-std::string RegisterDeviceRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void RegisterDeviceRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string RegisterDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,17 +36,6 @@ void RegisterDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RegisterDeviceRequest::getDevEui()const
-{
-	return devEui_;
-}
-
-void RegisterDeviceRequest::setDevEui(const std::string& devEui)
-{
-	devEui_ = devEui;
-	setParameter("DevEui", devEui);
 }
 
 std::string RegisterDeviceRequest::getIotInstanceId()const
@@ -91,6 +58,61 @@ void RegisterDeviceRequest::setNickname(const std::string& nickname)
 {
 	nickname_ = nickname;
 	setParameter("Nickname", nickname);
+}
+
+std::string RegisterDeviceRequest::getPinCode()const
+{
+	return pinCode_;
+}
+
+void RegisterDeviceRequest::setPinCode(const std::string& pinCode)
+{
+	pinCode_ = pinCode;
+	setParameter("PinCode", pinCode);
+}
+
+std::string RegisterDeviceRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void RegisterDeviceRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string RegisterDeviceRequest::getDevEui()const
+{
+	return devEui_;
+}
+
+void RegisterDeviceRequest::setDevEui(const std::string& devEui)
+{
+	devEui_ = devEui;
+	setParameter("DevEui", devEui);
+}
+
+std::string RegisterDeviceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void RegisterDeviceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string RegisterDeviceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void RegisterDeviceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string RegisterDeviceRequest::getDeviceName()const

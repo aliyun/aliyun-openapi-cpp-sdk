@@ -37,20 +37,26 @@ namespace AlibabaCloud
 
 				std::string getShadowMessage()const;
 				void setShadowMessage(const std::string& shadowMessage);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 
             private:
 				std::string shadowMessage_;
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
+				std::string productKey_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string deviceName_;
 
 			};

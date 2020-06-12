@@ -60,3 +60,25 @@ void GetRuleActionRequest::setActionId(long actionId)
 	setParameter("ActionId", std::to_string(actionId));
 }
 
+std::string GetRuleActionRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetRuleActionRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetRuleActionRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetRuleActionRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

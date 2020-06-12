@@ -27,17 +27,6 @@ ListThingModelVersionRequest::ListThingModelVersionRequest() :
 ListThingModelVersionRequest::~ListThingModelVersionRequest()
 {}
 
-std::string ListThingModelVersionRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void ListThingModelVersionRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string ListThingModelVersionRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,5 +58,38 @@ void ListThingModelVersionRequest::setIotInstanceId(const std::string& iotInstan
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string ListThingModelVersionRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void ListThingModelVersionRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string ListThingModelVersionRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void ListThingModelVersionRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string ListThingModelVersionRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void ListThingModelVersionRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

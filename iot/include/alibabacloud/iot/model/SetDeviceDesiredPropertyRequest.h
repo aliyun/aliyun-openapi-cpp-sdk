@@ -35,27 +35,33 @@ namespace AlibabaCloud
 				SetDeviceDesiredPropertyRequest();
 				~SetDeviceDesiredPropertyRequest();
 
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
-				std::string getVersions()const;
-				void setVersions(const std::string& versions);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getVersions()const;
+				void setVersions(const std::string& versions);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
 				std::string getItems()const;
 				void setItems(const std::string& items);
 
             private:
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string iotId_;
-				std::string versions_;
 				std::string iotInstanceId_;
+				std::string productKey_;
+				std::string versions_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string deviceName_;
 				std::string items_;
 

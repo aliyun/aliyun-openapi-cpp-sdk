@@ -38,6 +38,17 @@ void UpdateEdgeDriverVersionRequest::setConfigCheckRule(const std::string& confi
 	setParameter("ConfigCheckRule", configCheckRule);
 }
 
+std::string UpdateEdgeDriverVersionRequest::getArgument()const
+{
+	return argument_;
+}
+
+void UpdateEdgeDriverVersionRequest::setArgument(const std::string& argument)
+{
+	argument_ = argument;
+	setParameter("Argument", argument);
+}
+
 std::string UpdateEdgeDriverVersionRequest::getEdgeVersion()const
 {
 	return edgeVersion_;

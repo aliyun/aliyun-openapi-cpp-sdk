@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string driverId;
 						std::string description;
 						std::string driverVersion;
+						std::string argument;
 						long gmtCreateTimestamp;
 						std::string sourceConfig;
 						std::string driverConfig;

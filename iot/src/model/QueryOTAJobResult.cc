@@ -80,43 +80,16 @@ void QueryOTAJobResult::parse(const std::string &payload)
 		data_.maximumPerMinute = std::stoi(dataNode["MaximumPerMinute"].asString());
 	if(!dataNode["DestVersion"].isNull())
 		data_.destVersion = dataNode["DestVersion"].asString();
-	if(!dataNode["SrcVersions"].isNull())
-		data_.srcVersions = dataNode["SrcVersions"].asString();
+		auto allSrcVersions = dataNode["SrcVersions"]["SrcVersion"];
+		for (auto value : allSrcVersions)
+			data_.srcVersions.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PageCount"].isNull())
-		pageCount_ = std::stoi(value["PageCount"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
 
-}
-
-int QueryOTAJobResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int QueryOTAJobResult::getPageCount()const
-{
-	return pageCount_;
-}
-
-int QueryOTAJobResult::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-int QueryOTAJobResult::getTotal()const
-{
-	return total_;
 }
 
 QueryOTAJobResult::Data QueryOTAJobResult::getData()const

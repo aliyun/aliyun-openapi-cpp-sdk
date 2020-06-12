@@ -27,17 +27,6 @@ ImportThingModelTslRequest::ImportThingModelTslRequest() :
 ImportThingModelTslRequest::~ImportThingModelTslRequest()
 {}
 
-std::string ImportThingModelTslRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void ImportThingModelTslRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string ImportThingModelTslRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void ImportThingModelTslRequest::setIotInstanceId(const std::string& iotInstance
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string ImportThingModelTslRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void ImportThingModelTslRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string ImportThingModelTslRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void ImportThingModelTslRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string ImportThingModelTslRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void ImportThingModelTslRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string ImportThingModelTslRequest::getTslUrl()const

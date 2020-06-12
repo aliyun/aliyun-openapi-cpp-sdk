@@ -43,18 +43,24 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				long getRuleId()const;
-				void setRuleId(long ruleId);
 				bool getErrorActionFlag()const;
 				void setErrorActionFlag(bool errorActionFlag);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
+				long getRuleId()const;
+				void setRuleId(long ruleId);
 
             private:
 				std::string configuration_;
 				std::string type_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
-				long ruleId_;
 				bool errorActionFlag_;
+				std::string apiProduct_;
+				std::string apiRevision_;
+				long ruleId_;
 
 			};
 		}

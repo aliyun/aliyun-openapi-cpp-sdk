@@ -27,28 +27,6 @@ QueryDeviceListByDeviceGroupRequest::QueryDeviceListByDeviceGroupRequest() :
 QueryDeviceListByDeviceGroupRequest::~QueryDeviceListByDeviceGroupRequest()
 {}
 
-std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void QueryDeviceListByDeviceGroupRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
-int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryDeviceListByDeviceGroupRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryDeviceListByDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -80,5 +58,49 @@ void QueryDeviceListByDeviceGroupRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string QueryDeviceListByDeviceGroupRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+int QueryDeviceListByDeviceGroupRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryDeviceListByDeviceGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceListByDeviceGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceListByDeviceGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

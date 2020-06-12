@@ -71,3 +71,25 @@ void GetThingTemplateRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string GetThingTemplateRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetThingTemplateRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetThingTemplateRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetThingTemplateRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

@@ -27,17 +27,6 @@ QueryDeviceGroupInfoRequest::QueryDeviceGroupInfoRequest() :
 QueryDeviceGroupInfoRequest::~QueryDeviceGroupInfoRequest()
 {}
 
-std::string QueryDeviceGroupInfoRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void QueryDeviceGroupInfoRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string QueryDeviceGroupInfoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void QueryDeviceGroupInfoRequest::setIotInstanceId(const std::string& iotInstanc
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceGroupInfoRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryDeviceGroupInfoRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+std::string QueryDeviceGroupInfoRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceGroupInfoRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceGroupInfoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceGroupInfoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

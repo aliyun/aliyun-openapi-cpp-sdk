@@ -27,17 +27,6 @@ CreateLoRaNodesTaskRequest::CreateLoRaNodesTaskRequest() :
 CreateLoRaNodesTaskRequest::~CreateLoRaNodesTaskRequest()
 {}
 
-std::string CreateLoRaNodesTaskRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void CreateLoRaNodesTaskRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string CreateLoRaNodesTaskRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -74,5 +63,38 @@ void CreateLoRaNodesTaskRequest::setDeviceInfo(const std::vector<DeviceInfo>& de
 		setParameter(deviceInfoObjStr + ".PinCode", deviceInfoObj.pinCode);
 		setParameter(deviceInfoObjStr + ".DevEui", deviceInfoObj.devEui);
 	}
+}
+
+std::string CreateLoRaNodesTaskRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateLoRaNodesTaskRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string CreateLoRaNodesTaskRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateLoRaNodesTaskRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateLoRaNodesTaskRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateLoRaNodesTaskRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -62,6 +62,8 @@ void GetEdgeDriverVersionResult::parse(const std::string &payload)
 		data_.gmtCreateTimestamp = std::stol(dataNode["GmtCreateTimestamp"].asString());
 	if(!dataNode["GmtModifiedTimestamp"].isNull())
 		data_.gmtModifiedTimestamp = std::stol(dataNode["GmtModifiedTimestamp"].asString());
+	if(!dataNode["Argument"].isNull())
+		data_.argument = dataNode["Argument"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

@@ -35,20 +35,26 @@ namespace AlibabaCloud
 				SetDeviceGroupTagsRequest();
 				~SetDeviceGroupTagsRequest();
 
-				std::string getTagString()const;
-				void setTagString(const std::string& tagString);
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getTagString()const;
+				void setTagString(const std::string& tagString);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string tagString_;
-				std::string groupId_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
+				std::string tagString_;
+				std::string groupId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

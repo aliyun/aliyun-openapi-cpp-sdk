@@ -37,32 +37,38 @@ namespace AlibabaCloud
 
 				int getRetryCount()const;
 				void setRetryCount(int retryCount);
-				std::string getFirmwareId()const;
-				void setFirmwareId(const std::string& firmwareId);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				int getTimeoutInMinutes()const;
 				void setTimeoutInMinutes(int timeoutInMinutes);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getFirmwareId()const;
+				void setFirmwareId(const std::string& firmwareId);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				int getRetryInterval()const;
 				void setRetryInterval(int retryInterval);
 				std::vector<std::string> getSrcVersion()const;
 				void setSrcVersion(const std::vector<std::string>& srcVersion);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				int getMaximumPerMinute()const;
 				void setMaximumPerMinute(int maximumPerMinute);
 
             private:
 				int retryCount_;
-				std::string firmwareId_;
-				std::string productKey_;
 				int timeoutInMinutes_;
 				std::string accessKeyId_;
+				std::string iotInstanceId_;
+				std::string firmwareId_;
+				std::string productKey_;
 				int retryInterval_;
 				std::vector<std::string> srcVersion_;
-				std::string iotInstanceId_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				int maximumPerMinute_;
 
 			};

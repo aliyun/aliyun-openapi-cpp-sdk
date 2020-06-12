@@ -38,17 +38,6 @@ void PublishThingModelRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::string PublishThingModelRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void PublishThingModelRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string PublishThingModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -80,6 +69,39 @@ void PublishThingModelRequest::setIotInstanceId(const std::string& iotInstanceId
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string PublishThingModelRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void PublishThingModelRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string PublishThingModelRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void PublishThingModelRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string PublishThingModelRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void PublishThingModelRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string PublishThingModelRequest::getModelVersion()const

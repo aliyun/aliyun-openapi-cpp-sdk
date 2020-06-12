@@ -60,3 +60,25 @@ void ListThingTemplatesRequest::setIotInstanceId(const std::string& iotInstanceI
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string ListThingTemplatesRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void ListThingTemplatesRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string ListThingTemplatesRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void ListThingTemplatesRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

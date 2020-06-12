@@ -192,6 +192,28 @@ void CreateProductRequest::setNetType(const std::string& netType)
 	setParameter("NetType", netType);
 }
 
+std::string CreateProductRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateProductRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateProductRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateProductRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
 std::string CreateProductRequest::getProtocolType()const
 {
 	return protocolType_;

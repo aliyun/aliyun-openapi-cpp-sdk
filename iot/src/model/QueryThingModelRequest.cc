@@ -27,17 +27,6 @@ QueryThingModelRequest::QueryThingModelRequest() :
 QueryThingModelRequest::~QueryThingModelRequest()
 {}
 
-std::string QueryThingModelRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryThingModelRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryThingModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void QueryThingModelRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryThingModelRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryThingModelRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryThingModelRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryThingModelRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryThingModelRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryThingModelRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryThingModelRequest::getModelVersion()const

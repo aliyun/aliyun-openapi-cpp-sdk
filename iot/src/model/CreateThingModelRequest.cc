@@ -27,6 +27,17 @@ CreateThingModelRequest::CreateThingModelRequest() :
 CreateThingModelRequest::~CreateThingModelRequest()
 {}
 
+std::string CreateThingModelRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateThingModelRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string CreateThingModelRequest::getProductKey()const
 {
 	return productKey_;

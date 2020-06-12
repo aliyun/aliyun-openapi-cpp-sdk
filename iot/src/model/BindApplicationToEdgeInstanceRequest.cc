@@ -71,17 +71,6 @@ void BindApplicationToEdgeInstanceRequest::setApplicationId(const std::string& a
 	setParameter("ApplicationId", applicationId);
 }
 
-std::string BindApplicationToEdgeInstanceRequest::getApplicationConfig()const
-{
-	return applicationConfig_;
-}
-
-void BindApplicationToEdgeInstanceRequest::setApplicationConfig(const std::string& applicationConfig)
-{
-	applicationConfig_ = applicationConfig;
-	setParameter("ApplicationConfig", applicationConfig);
-}
-
 std::string BindApplicationToEdgeInstanceRequest::getInstanceId()const
 {
 	return instanceId_;

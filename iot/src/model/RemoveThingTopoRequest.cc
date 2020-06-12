@@ -27,17 +27,6 @@ RemoveThingTopoRequest::RemoveThingTopoRequest() :
 RemoveThingTopoRequest::~RemoveThingTopoRequest()
 {}
 
-std::string RemoveThingTopoRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void RemoveThingTopoRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string RemoveThingTopoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void RemoveThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string RemoveThingTopoRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void RemoveThingTopoRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string RemoveThingTopoRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void RemoveThingTopoRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string RemoveThingTopoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void RemoveThingTopoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string RemoveThingTopoRequest::getDeviceName()const

@@ -60,3 +60,25 @@ void GetNodesAddingTaskRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::string GetNodesAddingTaskRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetNodesAddingTaskRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetNodesAddingTaskRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetNodesAddingTaskRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

@@ -46,17 +46,6 @@ void CreateDataAPIServiceRequest::setRequestParam(const std::vector<RequestParam
 	}
 }
 
-std::string CreateDataAPIServiceRequest::getFolderId()const
-{
-	return folderId_;
-}
-
-void CreateDataAPIServiceRequest::setFolderId(const std::string& folderId)
-{
-	folderId_ = folderId;
-	setBodyParameter("FolderId", folderId);
-}
-
 std::string CreateDataAPIServiceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

@@ -27,17 +27,6 @@ BatchDeleteDeviceGroupRelationsRequest::BatchDeleteDeviceGroupRelationsRequest()
 BatchDeleteDeviceGroupRelationsRequest::~BatchDeleteDeviceGroupRelationsRequest()
 {}
 
-std::string BatchDeleteDeviceGroupRelationsRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void BatchDeleteDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string BatchDeleteDeviceGroupRelationsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +47,39 @@ void BatchDeleteDeviceGroupRelationsRequest::setIotInstanceId(const std::string&
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchDeleteDeviceGroupRelationsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void BatchDeleteDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+std::string BatchDeleteDeviceGroupRelationsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchDeleteDeviceGroupRelationsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchDeleteDeviceGroupRelationsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchDeleteDeviceGroupRelationsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::vector<BatchDeleteDeviceGroupRelationsRequest::Device> BatchDeleteDeviceGroupRelationsRequest::getDevice()const

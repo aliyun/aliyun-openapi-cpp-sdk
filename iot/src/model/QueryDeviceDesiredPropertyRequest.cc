@@ -27,30 +27,6 @@ QueryDeviceDesiredPropertyRequest::QueryDeviceDesiredPropertyRequest() :
 QueryDeviceDesiredPropertyRequest::~QueryDeviceDesiredPropertyRequest()
 {}
 
-std::vector<std::string> QueryDeviceDesiredPropertyRequest::getIdentifier()const
-{
-	return identifier_;
-}
-
-void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::string>& identifier)
-{
-	identifier_ = identifier;
-	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
-		setParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
-	}
-}
-
-std::string QueryDeviceDesiredPropertyRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryDeviceDesiredPropertyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -82,6 +58,52 @@ void QueryDeviceDesiredPropertyRequest::setIotInstanceId(const std::string& iotI
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::vector<std::string> QueryDeviceDesiredPropertyRequest::getIdentifier()const
+{
+	return identifier_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setIdentifier(const std::vector<std::string>& identifier)
+{
+	identifier_ = identifier;
+	for(int dep1 = 0; dep1!= identifier.size(); dep1++) {
+		setParameter("Identifier."+ std::to_string(dep1), identifier.at(dep1));
+	}
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceDesiredPropertyRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceDesiredPropertyRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryDeviceDesiredPropertyRequest::getDeviceName()const

@@ -27,17 +27,6 @@ BatchAddDeviceGroupRelationsRequest::BatchAddDeviceGroupRelationsRequest() :
 BatchAddDeviceGroupRelationsRequest::~BatchAddDeviceGroupRelationsRequest()
 {}
 
-std::string BatchAddDeviceGroupRelationsRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void BatchAddDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string BatchAddDeviceGroupRelationsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +47,39 @@ void BatchAddDeviceGroupRelationsRequest::setIotInstanceId(const std::string& io
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchAddDeviceGroupRelationsRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+std::string BatchAddDeviceGroupRelationsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchAddDeviceGroupRelationsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchAddDeviceGroupRelationsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::vector<BatchAddDeviceGroupRelationsRequest::Device> BatchAddDeviceGroupRelationsRequest::getDevice()const

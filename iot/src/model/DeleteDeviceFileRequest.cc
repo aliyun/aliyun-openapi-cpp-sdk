@@ -27,17 +27,6 @@ DeleteDeviceFileRequest::DeleteDeviceFileRequest() :
 DeleteDeviceFileRequest::~DeleteDeviceFileRequest()
 {}
 
-std::string DeleteDeviceFileRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteDeviceFileRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string DeleteDeviceFileRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -71,17 +60,6 @@ void DeleteDeviceFileRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string DeleteDeviceFileRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void DeleteDeviceFileRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
-}
-
 std::string DeleteDeviceFileRequest::getFileId()const
 {
 	return fileId_;
@@ -91,5 +69,49 @@ void DeleteDeviceFileRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
 	setParameter("FileId", fileId);
+}
+
+std::string DeleteDeviceFileRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteDeviceFileRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string DeleteDeviceFileRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteDeviceFileRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteDeviceFileRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteDeviceFileRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string DeleteDeviceFileRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void DeleteDeviceFileRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
 }
 

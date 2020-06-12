@@ -27,17 +27,6 @@ QueryDeviceFileRequest::QueryDeviceFileRequest() :
 QueryDeviceFileRequest::~QueryDeviceFileRequest()
 {}
 
-std::string QueryDeviceFileRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceFileRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryDeviceFileRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -71,17 +60,6 @@ void QueryDeviceFileRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string QueryDeviceFileRequest::getDeviceName()const
-{
-	return deviceName_;
-}
-
-void QueryDeviceFileRequest::setDeviceName(const std::string& deviceName)
-{
-	deviceName_ = deviceName;
-	setParameter("DeviceName", deviceName);
-}
-
 std::string QueryDeviceFileRequest::getFileId()const
 {
 	return fileId_;
@@ -91,5 +69,49 @@ void QueryDeviceFileRequest::setFileId(const std::string& fileId)
 {
 	fileId_ = fileId;
 	setParameter("FileId", fileId);
+}
+
+std::string QueryDeviceFileRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceFileRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceFileRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceFileRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceFileRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceFileRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string QueryDeviceFileRequest::getDeviceName()const
+{
+	return deviceName_;
+}
+
+void QueryDeviceFileRequest::setDeviceName(const std::string& deviceName)
+{
+	deviceName_ = deviceName;
+	setParameter("DeviceName", deviceName);
 }
 

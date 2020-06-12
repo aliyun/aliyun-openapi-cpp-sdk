@@ -27,17 +27,6 @@ SaveDevicePropRequest::SaveDevicePropRequest() :
 SaveDevicePropRequest::~SaveDevicePropRequest()
 {}
 
-std::string SaveDevicePropRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void SaveDevicePropRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string SaveDevicePropRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,17 +36,6 @@ void SaveDevicePropRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string SaveDevicePropRequest::getProps()const
-{
-	return props_;
-}
-
-void SaveDevicePropRequest::setProps(const std::string& props)
-{
-	props_ = props;
-	setParameter("Props", props);
 }
 
 std::string SaveDevicePropRequest::getIotId()const
@@ -80,6 +58,50 @@ void SaveDevicePropRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string SaveDevicePropRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void SaveDevicePropRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string SaveDevicePropRequest::getProps()const
+{
+	return props_;
+}
+
+void SaveDevicePropRequest::setProps(const std::string& props)
+{
+	props_ = props;
+	setParameter("Props", props);
+}
+
+std::string SaveDevicePropRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void SaveDevicePropRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string SaveDevicePropRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void SaveDevicePropRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string SaveDevicePropRequest::getDeviceName()const

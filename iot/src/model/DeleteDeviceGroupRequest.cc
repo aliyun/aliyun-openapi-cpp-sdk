@@ -27,17 +27,6 @@ DeleteDeviceGroupRequest::DeleteDeviceGroupRequest() :
 DeleteDeviceGroupRequest::~DeleteDeviceGroupRequest()
 {}
 
-std::string DeleteDeviceGroupRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string DeleteDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void DeleteDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DeleteDeviceGroupRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void DeleteDeviceGroupRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+std::string DeleteDeviceGroupRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteDeviceGroupRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteDeviceGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteDeviceGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

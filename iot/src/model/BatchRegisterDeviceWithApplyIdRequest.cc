@@ -27,17 +27,6 @@ BatchRegisterDeviceWithApplyIdRequest::BatchRegisterDeviceWithApplyIdRequest() :
 BatchRegisterDeviceWithApplyIdRequest::~BatchRegisterDeviceWithApplyIdRequest()
 {}
 
-std::string BatchRegisterDeviceWithApplyIdRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void BatchRegisterDeviceWithApplyIdRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string BatchRegisterDeviceWithApplyIdRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +36,28 @@ void BatchRegisterDeviceWithApplyIdRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 long BatchRegisterDeviceWithApplyIdRequest::getApplyId()const
@@ -60,14 +71,25 @@ void BatchRegisterDeviceWithApplyIdRequest::setApplyId(long applyId)
 	setParameter("ApplyId", std::to_string(applyId));
 }
 
-std::string BatchRegisterDeviceWithApplyIdRequest::getIotInstanceId()const
+std::string BatchRegisterDeviceWithApplyIdRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void BatchRegisterDeviceWithApplyIdRequest::setIotInstanceId(const std::string& iotInstanceId)
+void BatchRegisterDeviceWithApplyIdRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchRegisterDeviceWithApplyIdRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchRegisterDeviceWithApplyIdRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

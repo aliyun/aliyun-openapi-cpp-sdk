@@ -27,17 +27,6 @@ ListProductTagsRequest::ListProductTagsRequest() :
 ListProductTagsRequest::~ListProductTagsRequest()
 {}
 
-std::string ListProductTagsRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void ListProductTagsRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string ListProductTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void ListProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string ListProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void ListProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string ListProductTagsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void ListProductTagsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string ListProductTagsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void ListProductTagsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

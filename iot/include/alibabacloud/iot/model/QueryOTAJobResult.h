@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string utcStartTime;
 					std::string utcEndTime;
-					std::string srcVersions;
+					std::vector<std::string> srcVersions;
 					std::string firmwareId;
 					std::string name;
 					std::string jobStatus;
@@ -61,10 +61,6 @@ namespace AlibabaCloud
 				QueryOTAJobResult();
 				explicit QueryOTAJobResult(const std::string &payload);
 				~QueryOTAJobResult();
-				int getPageSize()const;
-				int getPageCount()const;
-				int getCurrentPage()const;
-				int getTotal()const;
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -73,10 +69,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageCount_;
-				int currentPage_;
-				int total_;
 				Data data_;
 				std::string errorMessage_;
 				std::string code_;

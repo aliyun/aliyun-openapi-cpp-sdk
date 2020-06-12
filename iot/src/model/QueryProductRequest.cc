@@ -27,17 +27,6 @@ QueryProductRequest::QueryProductRequest() :
 QueryProductRequest::~QueryProductRequest()
 {}
 
-std::string QueryProductRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryProductRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryProductRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void QueryProductRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryProductRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryProductRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryProductRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryProductRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

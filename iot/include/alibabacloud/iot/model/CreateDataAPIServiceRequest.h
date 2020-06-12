@@ -54,8 +54,6 @@ namespace AlibabaCloud
 
 				std::vector<RequestParam> getRequestParam()const;
 				void setRequestParam(const std::vector<RequestParam>& requestParam);
-				std::string getFolderId()const;
-				void setFolderId(const std::string& folderId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getApiPath()const;
@@ -77,7 +75,6 @@ namespace AlibabaCloud
 
             private:
 				std::vector<RequestParam> requestParam_;
-				std::string folderId_;
 				std::string iotInstanceId_;
 				std::string apiPath_;
 				std::string templateSql_;

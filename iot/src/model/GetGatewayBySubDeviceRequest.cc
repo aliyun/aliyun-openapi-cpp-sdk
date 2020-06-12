@@ -27,17 +27,6 @@ GetGatewayBySubDeviceRequest::GetGatewayBySubDeviceRequest() :
 GetGatewayBySubDeviceRequest::~GetGatewayBySubDeviceRequest()
 {}
 
-std::string GetGatewayBySubDeviceRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void GetGatewayBySubDeviceRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string GetGatewayBySubDeviceRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void GetGatewayBySubDeviceRequest::setIotInstanceId(const std::string& iotInstan
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetGatewayBySubDeviceRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetGatewayBySubDeviceRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string GetGatewayBySubDeviceRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetGatewayBySubDeviceRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetGatewayBySubDeviceRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetGatewayBySubDeviceRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string GetGatewayBySubDeviceRequest::getDeviceName()const

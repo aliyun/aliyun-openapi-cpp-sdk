@@ -27,17 +27,6 @@ BatchGetDeviceStateRequest::BatchGetDeviceStateRequest() :
 BatchGetDeviceStateRequest::~BatchGetDeviceStateRequest()
 {}
 
-std::string BatchGetDeviceStateRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void BatchGetDeviceStateRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string BatchGetDeviceStateRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -71,6 +60,39 @@ void BatchGetDeviceStateRequest::setIotInstanceId(const std::string& iotInstance
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchGetDeviceStateRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void BatchGetDeviceStateRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string BatchGetDeviceStateRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void BatchGetDeviceStateRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchGetDeviceStateRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchGetDeviceStateRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::vector<std::string> BatchGetDeviceStateRequest::getDeviceName()const

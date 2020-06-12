@@ -38,17 +38,6 @@ void ListRuleRequest::setSearchName(const std::string& searchName)
 	setParameter("SearchName", searchName);
 }
 
-int ListRuleRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void ListRuleRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string ListRuleRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -91,5 +80,38 @@ void ListRuleRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+int ListRuleRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void ListRuleRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string ListRuleRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void ListRuleRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string ListRuleRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void ListRuleRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

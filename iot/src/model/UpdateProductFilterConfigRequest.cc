@@ -38,6 +38,17 @@ void UpdateProductFilterConfigRequest::setPropertyTimestampFilter(bool propertyT
 	setParameter("PropertyTimestampFilter", propertyTimestampFilter ? "true" : "false");
 }
 
+std::string UpdateProductFilterConfigRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductFilterConfigRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::string UpdateProductFilterConfigRequest::getProductKey()const
 {
 	return productKey_;

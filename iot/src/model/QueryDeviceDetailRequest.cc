@@ -27,17 +27,6 @@ QueryDeviceDetailRequest::QueryDeviceDetailRequest() :
 QueryDeviceDetailRequest::~QueryDeviceDetailRequest()
 {}
 
-std::string QueryDeviceDetailRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryDeviceDetailRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryDeviceDetailRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void QueryDeviceDetailRequest::setIotInstanceId(const std::string& iotInstanceId
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceDetailRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryDeviceDetailRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string QueryDeviceDetailRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceDetailRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceDetailRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceDetailRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryDeviceDetailRequest::getDeviceName()const

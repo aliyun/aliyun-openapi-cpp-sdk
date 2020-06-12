@@ -27,17 +27,6 @@ SetDeviceDesiredPropertyRequest::SetDeviceDesiredPropertyRequest() :
 SetDeviceDesiredPropertyRequest::~SetDeviceDesiredPropertyRequest()
 {}
 
-std::string SetDeviceDesiredPropertyRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void SetDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string SetDeviceDesiredPropertyRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,6 +49,28 @@ void SetDeviceDesiredPropertyRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
+std::string SetDeviceDesiredPropertyRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void SetDeviceDesiredPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void SetDeviceDesiredPropertyRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
 std::string SetDeviceDesiredPropertyRequest::getVersions()const
 {
 	return versions_;
@@ -71,15 +82,26 @@ void SetDeviceDesiredPropertyRequest::setVersions(const std::string& versions)
 	setParameter("Versions", versions);
 }
 
-std::string SetDeviceDesiredPropertyRequest::getIotInstanceId()const
+std::string SetDeviceDesiredPropertyRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void SetDeviceDesiredPropertyRequest::setIotInstanceId(const std::string& iotInstanceId)
+void SetDeviceDesiredPropertyRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string SetDeviceDesiredPropertyRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void SetDeviceDesiredPropertyRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string SetDeviceDesiredPropertyRequest::getDeviceName()const

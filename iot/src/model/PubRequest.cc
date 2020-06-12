@@ -27,17 +27,6 @@ PubRequest::PubRequest() :
 PubRequest::~PubRequest()
 {}
 
-std::string PubRequest::getTopicFullName()const
-{
-	return topicFullName_;
-}
-
-void PubRequest::setTopicFullName(const std::string& topicFullName)
-{
-	topicFullName_ = topicFullName;
-	setParameter("TopicFullName", topicFullName);
-}
-
 std::string PubRequest::getMessageContent()const
 {
 	return messageContent_;
@@ -47,17 +36,6 @@ void PubRequest::setMessageContent(const std::string& messageContent)
 {
 	messageContent_ = messageContent;
 	setParameter("MessageContent", messageContent);
-}
-
-std::string PubRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void PubRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
 }
 
 std::string PubRequest::getAccessKeyId()const
@@ -91,5 +69,49 @@ void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string PubRequest::getTopicFullName()const
+{
+	return topicFullName_;
+}
+
+void PubRequest::setTopicFullName(const std::string& topicFullName)
+{
+	topicFullName_ = topicFullName;
+	setParameter("TopicFullName", topicFullName);
+}
+
+std::string PubRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void PubRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string PubRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void PubRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string PubRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void PubRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateThingModelRequest();
 				~UpdateThingModelRequest();
 
+				std::string getIotInstanceId()const;
+				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getIdentifier()const;
 				void setIdentifier(const std::string& identifier);
 				std::string getProductKey()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 
             private:
+				std::string iotInstanceId_;
 				std::string identifier_;
 				std::string productKey_;
 				std::string apiProduct_;

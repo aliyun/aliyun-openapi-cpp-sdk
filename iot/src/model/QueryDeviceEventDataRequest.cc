@@ -126,15 +126,26 @@ void QueryDeviceEventDataRequest::setAsc(int asc)
 	setParameter("Asc", std::to_string(asc));
 }
 
-std::string QueryDeviceEventDataRequest::getEventType()const
+std::string QueryDeviceEventDataRequest::getApiProduct()const
 {
-	return eventType_;
+	return apiProduct_;
 }
 
-void QueryDeviceEventDataRequest::setEventType(const std::string& eventType)
+void QueryDeviceEventDataRequest::setApiProduct(const std::string& apiProduct)
 {
-	eventType_ = eventType;
-	setParameter("EventType", eventType);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceEventDataRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceEventDataRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string QueryDeviceEventDataRequest::getDeviceName()const
@@ -146,5 +157,16 @@ void QueryDeviceEventDataRequest::setDeviceName(const std::string& deviceName)
 {
 	deviceName_ = deviceName;
 	setParameter("DeviceName", deviceName);
+}
+
+std::string QueryDeviceEventDataRequest::getEventType()const
+{
+	return eventType_;
+}
+
+void QueryDeviceEventDataRequest::setEventType(const std::string& eventType)
+{
+	eventType_ = eventType;
+	setParameter("EventType", eventType);
 }
 

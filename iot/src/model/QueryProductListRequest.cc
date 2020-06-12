@@ -27,17 +27,6 @@ QueryProductListRequest::QueryProductListRequest() :
 QueryProductListRequest::~QueryProductListRequest()
 {}
 
-int QueryProductListRequest::getCurrentPage()const
-{
-	return currentPage_;
-}
-
-void QueryProductListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
-}
-
 std::string QueryProductListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -91,5 +80,38 @@ void QueryProductListRequest::setAliyunCommodityCode(const std::string& aliyunCo
 {
 	aliyunCommodityCode_ = aliyunCommodityCode;
 	setParameter("AliyunCommodityCode", aliyunCommodityCode);
+}
+
+int QueryProductListRequest::getCurrentPage()const
+{
+	return currentPage_;
+}
+
+void QueryProductListRequest::setCurrentPage(int currentPage)
+{
+	currentPage_ = currentPage;
+	setParameter("CurrentPage", std::to_string(currentPage));
+}
+
+std::string QueryProductListRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryProductListRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryProductListRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryProductListRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

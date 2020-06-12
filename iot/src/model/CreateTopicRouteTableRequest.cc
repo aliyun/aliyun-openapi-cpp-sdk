@@ -38,17 +38,6 @@ void CreateTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateTopicRouteTableRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void CreateTopicRouteTableRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string CreateTopicRouteTableRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

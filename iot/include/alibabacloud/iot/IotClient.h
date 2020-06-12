@@ -34,14 +34,22 @@
 #include "model/BatchClearEdgeInstanceDeviceConfigResult.h"
 #include "model/BatchDeleteDeviceGroupRelationsRequest.h"
 #include "model/BatchDeleteDeviceGroupRelationsResult.h"
-#include "model/BatchGetDeviceDriverRequest.h"
-#include "model/BatchGetDeviceDriverResult.h"
+#include "model/BatchDeleteEdgeInstanceChannelRequest.h"
+#include "model/BatchDeleteEdgeInstanceChannelResult.h"
+#include "model/BatchGetDeviceBindStatusRequest.h"
+#include "model/BatchGetDeviceBindStatusResult.h"
 #include "model/BatchGetDeviceStateRequest.h"
 #include "model/BatchGetDeviceStateResult.h"
 #include "model/BatchGetEdgeDriverRequest.h"
 #include "model/BatchGetEdgeDriverResult.h"
+#include "model/BatchGetEdgeInstanceChannelRequest.h"
+#include "model/BatchGetEdgeInstanceChannelResult.h"
+#include "model/BatchGetEdgeInstanceDeviceChannelRequest.h"
+#include "model/BatchGetEdgeInstanceDeviceChannelResult.h"
 #include "model/BatchGetEdgeInstanceDeviceConfigRequest.h"
 #include "model/BatchGetEdgeInstanceDeviceConfigResult.h"
+#include "model/BatchGetEdgeInstanceDeviceDriverRequest.h"
+#include "model/BatchGetEdgeInstanceDeviceDriverResult.h"
 #include "model/BatchGetEdgeInstanceDriverConfigsRequest.h"
 #include "model/BatchGetEdgeInstanceDriverConfigsResult.h"
 #include "model/BatchQueryDeviceDetailRequest.h"
@@ -50,6 +58,8 @@
 #include "model/BatchRegisterDeviceResult.h"
 #include "model/BatchRegisterDeviceWithApplyIdRequest.h"
 #include "model/BatchRegisterDeviceWithApplyIdResult.h"
+#include "model/BatchSetEdgeInstanceDeviceChannelRequest.h"
+#include "model/BatchSetEdgeInstanceDeviceChannelResult.h"
 #include "model/BatchSetEdgeInstanceDeviceConfigRequest.h"
 #include "model/BatchSetEdgeInstanceDeviceConfigResult.h"
 #include "model/BatchUnbindDeviceFromEdgeInstanceRequest.h"
@@ -62,6 +72,8 @@
 #include "model/BindDriverToEdgeInstanceResult.h"
 #include "model/BindGatewayToEdgeInstanceRequest.h"
 #include "model/BindGatewayToEdgeInstanceResult.h"
+#include "model/BindSceneRuleToEdgeInstanceRequest.h"
+#include "model/BindSceneRuleToEdgeInstanceResult.h"
 #include "model/CancelOTAStrategyByJobRequest.h"
 #include "model/CancelOTAStrategyByJobResult.h"
 #include "model/CancelOTATaskByDeviceRequest.h"
@@ -74,6 +86,10 @@
 #include "model/CloseEdgeInstanceDeploymentResult.h"
 #include "model/CopyThingModelRequest.h"
 #include "model/CopyThingModelResult.h"
+#include "model/CreateConsumerGroupRequest.h"
+#include "model/CreateConsumerGroupResult.h"
+#include "model/CreateConsumerGroupSubscribeRelationRequest.h"
+#include "model/CreateConsumerGroupSubscribeRelationResult.h"
 #include "model/CreateDataAPIServiceRequest.h"
 #include "model/CreateDataAPIServiceResult.h"
 #include "model/CreateDeviceGroupRequest.h"
@@ -84,6 +100,8 @@
 #include "model/CreateEdgeDriverVersionResult.h"
 #include "model/CreateEdgeInstanceRequest.h"
 #include "model/CreateEdgeInstanceResult.h"
+#include "model/CreateEdgeInstanceChannelRequest.h"
+#include "model/CreateEdgeInstanceChannelResult.h"
 #include "model/CreateEdgeInstanceDeploymentRequest.h"
 #include "model/CreateEdgeInstanceDeploymentResult.h"
 #include "model/CreateEdgeOssPreSignedAddressRequest.h"
@@ -108,10 +126,18 @@
 #include "model/CreateRuleResult.h"
 #include "model/CreateRuleActionRequest.h"
 #include "model/CreateRuleActionResult.h"
+#include "model/CreateSceneRuleRequest.h"
+#include "model/CreateSceneRuleResult.h"
+#include "model/CreateSubscribeRelationRequest.h"
+#include "model/CreateSubscribeRelationResult.h"
 #include "model/CreateThingModelRequest.h"
 #include "model/CreateThingModelResult.h"
 #include "model/CreateTopicRouteTableRequest.h"
 #include "model/CreateTopicRouteTableResult.h"
+#include "model/DeleteConsumerGroupRequest.h"
+#include "model/DeleteConsumerGroupResult.h"
+#include "model/DeleteConsumerGroupSubscribeRelationRequest.h"
+#include "model/DeleteConsumerGroupSubscribeRelationResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteDeviceFileRequest.h"
@@ -138,12 +164,20 @@
 #include "model/DeleteRuleResult.h"
 #include "model/DeleteRuleActionRequest.h"
 #include "model/DeleteRuleActionResult.h"
+#include "model/DeleteSceneRuleRequest.h"
+#include "model/DeleteSceneRuleResult.h"
+#include "model/DeleteSubscribeRelationRequest.h"
+#include "model/DeleteSubscribeRelationResult.h"
 #include "model/DeleteThingModelRequest.h"
 #include "model/DeleteThingModelResult.h"
 #include "model/DeleteTopicRouteTableRequest.h"
 #include "model/DeleteTopicRouteTableResult.h"
+#include "model/DisableSceneRuleRequest.h"
+#include "model/DisableSceneRuleResult.h"
 #include "model/DisableThingRequest.h"
 #include "model/DisableThingResult.h"
+#include "model/EnableSceneRuleRequest.h"
+#include "model/EnableSceneRuleResult.h"
 #include "model/EnableThingRequest.h"
 #include "model/EnableThingResult.h"
 #include "model/GenerateOTAUploadURLRequest.h"
@@ -170,6 +204,8 @@
 #include "model/GetRuleResult.h"
 #include "model/GetRuleActionRequest.h"
 #include "model/GetRuleActionResult.h"
+#include "model/GetSceneRuleRequest.h"
+#include "model/GetSceneRuleResult.h"
 #include "model/GetThingModelTslRequest.h"
 #include "model/GetThingModelTslResult.h"
 #include "model/GetThingTemplateRequest.h"
@@ -218,10 +254,16 @@
 #include "model/QueryBatchRegisterDeviceStatusResult.h"
 #include "model/QueryCertUrlByApplyIdRequest.h"
 #include "model/QueryCertUrlByApplyIdResult.h"
+#include "model/QueryConsumerGroupByGroupIdRequest.h"
+#include "model/QueryConsumerGroupByGroupIdResult.h"
+#include "model/QueryConsumerGroupListRequest.h"
+#include "model/QueryConsumerGroupListResult.h"
+#include "model/QueryConsumerGroupStatusRequest.h"
+#include "model/QueryConsumerGroupStatusResult.h"
+#include "model/QueryDetailSceneRuleLogRequest.h"
+#include "model/QueryDetailSceneRuleLogResult.h"
 #include "model/QueryDeviceRequest.h"
 #include "model/QueryDeviceResult.h"
-#include "model/QueryDeviceByDriverRequest.h"
-#include "model/QueryDeviceByDriverResult.h"
 #include "model/QueryDeviceByStatusRequest.h"
 #include "model/QueryDeviceByStatusResult.h"
 #include "model/QueryDeviceByTagsRequest.h"
@@ -268,14 +310,20 @@
 #include "model/QueryEdgeDriverVersionResult.h"
 #include "model/QueryEdgeInstanceRequest.h"
 #include "model/QueryEdgeInstanceResult.h"
+#include "model/QueryEdgeInstanceChannelRequest.h"
+#include "model/QueryEdgeInstanceChannelResult.h"
 #include "model/QueryEdgeInstanceDeviceRequest.h"
 #include "model/QueryEdgeInstanceDeviceResult.h"
+#include "model/QueryEdgeInstanceDeviceByDriverRequest.h"
+#include "model/QueryEdgeInstanceDeviceByDriverResult.h"
 #include "model/QueryEdgeInstanceDriverRequest.h"
 #include "model/QueryEdgeInstanceDriverResult.h"
 #include "model/QueryEdgeInstanceGatewayRequest.h"
 #include "model/QueryEdgeInstanceGatewayResult.h"
 #include "model/QueryEdgeInstanceHistoricDeploymentRequest.h"
 #include "model/QueryEdgeInstanceHistoricDeploymentResult.h"
+#include "model/QueryEdgeInstanceSceneRuleRequest.h"
+#include "model/QueryEdgeInstanceSceneRuleResult.h"
 #include "model/QueryLoRaJoinPermissionsRequest.h"
 #include "model/QueryLoRaJoinPermissionsResult.h"
 #include "model/QueryOTAFirmwareRequest.h"
@@ -292,6 +340,12 @@
 #include "model/QueryProductListResult.h"
 #include "model/QueryProductTopicRequest.h"
 #include "model/QueryProductTopicResult.h"
+#include "model/QuerySceneRuleRequest.h"
+#include "model/QuerySceneRuleResult.h"
+#include "model/QuerySubscribeRelationRequest.h"
+#include "model/QuerySubscribeRelationResult.h"
+#include "model/QuerySummarySceneRuleLogRequest.h"
+#include "model/QuerySummarySceneRuleLogResult.h"
 #include "model/QuerySuperDeviceGroupRequest.h"
 #include "model/QuerySuperDeviceGroupResult.h"
 #include "model/QueryThingModelRequest.h"
@@ -304,8 +358,14 @@
 #include "model/RRpcResult.h"
 #include "model/RegisterDeviceRequest.h"
 #include "model/RegisterDeviceResult.h"
+#include "model/ReleaseEdgeDriverVersionRequest.h"
+#include "model/ReleaseEdgeDriverVersionResult.h"
 #include "model/RemoveThingTopoRequest.h"
 #include "model/RemoveThingTopoResult.h"
+#include "model/ReplaceEdgeInstanceGatewayRequest.h"
+#include "model/ReplaceEdgeInstanceGatewayResult.h"
+#include "model/ResetConsumerGroupPositionRequest.h"
+#include "model/ResetConsumerGroupPositionResult.h"
 #include "model/ResetThingRequest.h"
 #include "model/ResetThingResult.h"
 #include "model/SaveDevicePropRequest.h"
@@ -326,10 +386,16 @@
 #include "model/StartRuleResult.h"
 #include "model/StopRuleRequest.h"
 #include "model/StopRuleResult.h"
+#include "model/TriggerSceneRuleRequest.h"
+#include "model/TriggerSceneRuleResult.h"
 #include "model/UnbindApplicationFromEdgeInstanceRequest.h"
 #include "model/UnbindApplicationFromEdgeInstanceResult.h"
 #include "model/UnbindDriverFromEdgeInstanceRequest.h"
 #include "model/UnbindDriverFromEdgeInstanceResult.h"
+#include "model/UnbindSceneRuleFromEdgeInstanceRequest.h"
+#include "model/UnbindSceneRuleFromEdgeInstanceResult.h"
+#include "model/UpdateConsumerGroupRequest.h"
+#include "model/UpdateConsumerGroupResult.h"
 #include "model/UpdateDeviceGroupRequest.h"
 #include "model/UpdateDeviceGroupResult.h"
 #include "model/UpdateDeviceShadowRequest.h"
@@ -338,6 +404,8 @@
 #include "model/UpdateEdgeDriverVersionResult.h"
 #include "model/UpdateEdgeInstanceRequest.h"
 #include "model/UpdateEdgeInstanceResult.h"
+#include "model/UpdateEdgeInstanceChannelRequest.h"
+#include "model/UpdateEdgeInstanceChannelResult.h"
 #include "model/UpdateProductRequest.h"
 #include "model/UpdateProductResult.h"
 #include "model/UpdateProductFilterConfigRequest.h"
@@ -350,6 +418,10 @@
 #include "model/UpdateRuleResult.h"
 #include "model/UpdateRuleActionRequest.h"
 #include "model/UpdateRuleActionResult.h"
+#include "model/UpdateSceneRuleRequest.h"
+#include "model/UpdateSceneRuleResult.h"
+#include "model/UpdateSubscribeRelationRequest.h"
+#include "model/UpdateSubscribeRelationResult.h"
 #include "model/UpdateThingModelRequest.h"
 #include "model/UpdateThingModelResult.h"
 
@@ -379,18 +451,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchDeleteDeviceGroupRelationsResult> BatchDeleteDeviceGroupRelationsOutcome;
 			typedef std::future<BatchDeleteDeviceGroupRelationsOutcome> BatchDeleteDeviceGroupRelationsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchDeleteDeviceGroupRelationsRequest&, const BatchDeleteDeviceGroupRelationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteDeviceGroupRelationsAsyncHandler;
-			typedef Outcome<Error, Model::BatchGetDeviceDriverResult> BatchGetDeviceDriverOutcome;
-			typedef std::future<BatchGetDeviceDriverOutcome> BatchGetDeviceDriverOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::BatchGetDeviceDriverRequest&, const BatchGetDeviceDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetDeviceDriverAsyncHandler;
+			typedef Outcome<Error, Model::BatchDeleteEdgeInstanceChannelResult> BatchDeleteEdgeInstanceChannelOutcome;
+			typedef std::future<BatchDeleteEdgeInstanceChannelOutcome> BatchDeleteEdgeInstanceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchDeleteEdgeInstanceChannelRequest&, const BatchDeleteEdgeInstanceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteEdgeInstanceChannelAsyncHandler;
+			typedef Outcome<Error, Model::BatchGetDeviceBindStatusResult> BatchGetDeviceBindStatusOutcome;
+			typedef std::future<BatchGetDeviceBindStatusOutcome> BatchGetDeviceBindStatusOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchGetDeviceBindStatusRequest&, const BatchGetDeviceBindStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetDeviceBindStatusAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetDeviceStateResult> BatchGetDeviceStateOutcome;
 			typedef std::future<BatchGetDeviceStateOutcome> BatchGetDeviceStateOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchGetDeviceStateRequest&, const BatchGetDeviceStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetDeviceStateAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetEdgeDriverResult> BatchGetEdgeDriverOutcome;
 			typedef std::future<BatchGetEdgeDriverOutcome> BatchGetEdgeDriverOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeDriverRequest&, const BatchGetEdgeDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeDriverAsyncHandler;
+			typedef Outcome<Error, Model::BatchGetEdgeInstanceChannelResult> BatchGetEdgeInstanceChannelOutcome;
+			typedef std::future<BatchGetEdgeInstanceChannelOutcome> BatchGetEdgeInstanceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeInstanceChannelRequest&, const BatchGetEdgeInstanceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeInstanceChannelAsyncHandler;
+			typedef Outcome<Error, Model::BatchGetEdgeInstanceDeviceChannelResult> BatchGetEdgeInstanceDeviceChannelOutcome;
+			typedef std::future<BatchGetEdgeInstanceDeviceChannelOutcome> BatchGetEdgeInstanceDeviceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeInstanceDeviceChannelRequest&, const BatchGetEdgeInstanceDeviceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeInstanceDeviceChannelAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetEdgeInstanceDeviceConfigResult> BatchGetEdgeInstanceDeviceConfigOutcome;
 			typedef std::future<BatchGetEdgeInstanceDeviceConfigOutcome> BatchGetEdgeInstanceDeviceConfigOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeInstanceDeviceConfigRequest&, const BatchGetEdgeInstanceDeviceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeInstanceDeviceConfigAsyncHandler;
+			typedef Outcome<Error, Model::BatchGetEdgeInstanceDeviceDriverResult> BatchGetEdgeInstanceDeviceDriverOutcome;
+			typedef std::future<BatchGetEdgeInstanceDeviceDriverOutcome> BatchGetEdgeInstanceDeviceDriverOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeInstanceDeviceDriverRequest&, const BatchGetEdgeInstanceDeviceDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeInstanceDeviceDriverAsyncHandler;
 			typedef Outcome<Error, Model::BatchGetEdgeInstanceDriverConfigsResult> BatchGetEdgeInstanceDriverConfigsOutcome;
 			typedef std::future<BatchGetEdgeInstanceDriverConfigsOutcome> BatchGetEdgeInstanceDriverConfigsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchGetEdgeInstanceDriverConfigsRequest&, const BatchGetEdgeInstanceDriverConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetEdgeInstanceDriverConfigsAsyncHandler;
@@ -403,6 +487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchRegisterDeviceWithApplyIdResult> BatchRegisterDeviceWithApplyIdOutcome;
 			typedef std::future<BatchRegisterDeviceWithApplyIdOutcome> BatchRegisterDeviceWithApplyIdOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchRegisterDeviceWithApplyIdRequest&, const BatchRegisterDeviceWithApplyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterDeviceWithApplyIdAsyncHandler;
+			typedef Outcome<Error, Model::BatchSetEdgeInstanceDeviceChannelResult> BatchSetEdgeInstanceDeviceChannelOutcome;
+			typedef std::future<BatchSetEdgeInstanceDeviceChannelOutcome> BatchSetEdgeInstanceDeviceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchSetEdgeInstanceDeviceChannelRequest&, const BatchSetEdgeInstanceDeviceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetEdgeInstanceDeviceChannelAsyncHandler;
 			typedef Outcome<Error, Model::BatchSetEdgeInstanceDeviceConfigResult> BatchSetEdgeInstanceDeviceConfigOutcome;
 			typedef std::future<BatchSetEdgeInstanceDeviceConfigOutcome> BatchSetEdgeInstanceDeviceConfigOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchSetEdgeInstanceDeviceConfigRequest&, const BatchSetEdgeInstanceDeviceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetEdgeInstanceDeviceConfigAsyncHandler;
@@ -421,6 +508,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindGatewayToEdgeInstanceResult> BindGatewayToEdgeInstanceOutcome;
 			typedef std::future<BindGatewayToEdgeInstanceOutcome> BindGatewayToEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BindGatewayToEdgeInstanceRequest&, const BindGatewayToEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindGatewayToEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::BindSceneRuleToEdgeInstanceResult> BindSceneRuleToEdgeInstanceOutcome;
+			typedef std::future<BindSceneRuleToEdgeInstanceOutcome> BindSceneRuleToEdgeInstanceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BindSceneRuleToEdgeInstanceRequest&, const BindSceneRuleToEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindSceneRuleToEdgeInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CancelOTAStrategyByJobResult> CancelOTAStrategyByJobOutcome;
 			typedef std::future<CancelOTAStrategyByJobOutcome> CancelOTAStrategyByJobOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CancelOTAStrategyByJobRequest&, const CancelOTAStrategyByJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelOTAStrategyByJobAsyncHandler;
@@ -439,6 +529,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CopyThingModelResult> CopyThingModelOutcome;
 			typedef std::future<CopyThingModelOutcome> CopyThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CopyThingModelRequest&, const CopyThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyThingModelAsyncHandler;
+			typedef Outcome<Error, Model::CreateConsumerGroupResult> CreateConsumerGroupOutcome;
+			typedef std::future<CreateConsumerGroupOutcome> CreateConsumerGroupOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateConsumerGroupRequest&, const CreateConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateConsumerGroupSubscribeRelationResult> CreateConsumerGroupSubscribeRelationOutcome;
+			typedef std::future<CreateConsumerGroupSubscribeRelationOutcome> CreateConsumerGroupSubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateConsumerGroupSubscribeRelationRequest&, const CreateConsumerGroupSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerGroupSubscribeRelationAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataAPIServiceResult> CreateDataAPIServiceOutcome;
 			typedef std::future<CreateDataAPIServiceOutcome> CreateDataAPIServiceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDataAPIServiceRequest&, const CreateDataAPIServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataAPIServiceAsyncHandler;
@@ -454,6 +550,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateEdgeInstanceResult> CreateEdgeInstanceOutcome;
 			typedef std::future<CreateEdgeInstanceOutcome> CreateEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateEdgeInstanceRequest&, const CreateEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateEdgeInstanceChannelResult> CreateEdgeInstanceChannelOutcome;
+			typedef std::future<CreateEdgeInstanceChannelOutcome> CreateEdgeInstanceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateEdgeInstanceChannelRequest&, const CreateEdgeInstanceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeInstanceChannelAsyncHandler;
 			typedef Outcome<Error, Model::CreateEdgeInstanceDeploymentResult> CreateEdgeInstanceDeploymentOutcome;
 			typedef std::future<CreateEdgeInstanceDeploymentOutcome> CreateEdgeInstanceDeploymentOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateEdgeInstanceDeploymentRequest&, const CreateEdgeInstanceDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeInstanceDeploymentAsyncHandler;
@@ -490,12 +589,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRuleActionResult> CreateRuleActionOutcome;
 			typedef std::future<CreateRuleActionOutcome> CreateRuleActionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateRuleActionRequest&, const CreateRuleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleActionAsyncHandler;
+			typedef Outcome<Error, Model::CreateSceneRuleResult> CreateSceneRuleOutcome;
+			typedef std::future<CreateSceneRuleOutcome> CreateSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateSceneRuleRequest&, const CreateSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateSubscribeRelationResult> CreateSubscribeRelationOutcome;
+			typedef std::future<CreateSubscribeRelationOutcome> CreateSubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateSubscribeRelationRequest&, const CreateSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubscribeRelationAsyncHandler;
 			typedef Outcome<Error, Model::CreateThingModelResult> CreateThingModelOutcome;
 			typedef std::future<CreateThingModelOutcome> CreateThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateThingModelRequest&, const CreateThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateThingModelAsyncHandler;
 			typedef Outcome<Error, Model::CreateTopicRouteTableResult> CreateTopicRouteTableOutcome;
 			typedef std::future<CreateTopicRouteTableOutcome> CreateTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateTopicRouteTableRequest&, const CreateTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::DeleteConsumerGroupResult> DeleteConsumerGroupOutcome;
+			typedef std::future<DeleteConsumerGroupOutcome> DeleteConsumerGroupOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteConsumerGroupRequest&, const DeleteConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteConsumerGroupSubscribeRelationResult> DeleteConsumerGroupSubscribeRelationOutcome;
+			typedef std::future<DeleteConsumerGroupSubscribeRelationOutcome> DeleteConsumerGroupSubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteConsumerGroupSubscribeRelationRequest&, const DeleteConsumerGroupSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerGroupSubscribeRelationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -535,15 +646,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRuleActionResult> DeleteRuleActionOutcome;
 			typedef std::future<DeleteRuleActionOutcome> DeleteRuleActionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteRuleActionRequest&, const DeleteRuleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleActionAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSceneRuleResult> DeleteSceneRuleOutcome;
+			typedef std::future<DeleteSceneRuleOutcome> DeleteSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteSceneRuleRequest&, const DeleteSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSubscribeRelationResult> DeleteSubscribeRelationOutcome;
+			typedef std::future<DeleteSubscribeRelationOutcome> DeleteSubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DeleteSubscribeRelationRequest&, const DeleteSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubscribeRelationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteThingModelResult> DeleteThingModelOutcome;
 			typedef std::future<DeleteThingModelOutcome> DeleteThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteThingModelRequest&, const DeleteThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteThingModelAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTopicRouteTableResult> DeleteTopicRouteTableOutcome;
 			typedef std::future<DeleteTopicRouteTableOutcome> DeleteTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DeleteTopicRouteTableRequest&, const DeleteTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::DisableSceneRuleResult> DisableSceneRuleOutcome;
+			typedef std::future<DisableSceneRuleOutcome> DisableSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::DisableSceneRuleRequest&, const DisableSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableSceneRuleAsyncHandler;
 			typedef Outcome<Error, Model::DisableThingResult> DisableThingOutcome;
 			typedef std::future<DisableThingOutcome> DisableThingOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::DisableThingRequest&, const DisableThingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableThingAsyncHandler;
+			typedef Outcome<Error, Model::EnableSceneRuleResult> EnableSceneRuleOutcome;
+			typedef std::future<EnableSceneRuleOutcome> EnableSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::EnableSceneRuleRequest&, const EnableSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableSceneRuleAsyncHandler;
 			typedef Outcome<Error, Model::EnableThingResult> EnableThingOutcome;
 			typedef std::future<EnableThingOutcome> EnableThingOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::EnableThingRequest&, const EnableThingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableThingAsyncHandler;
@@ -583,6 +706,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRuleActionResult> GetRuleActionOutcome;
 			typedef std::future<GetRuleActionOutcome> GetRuleActionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetRuleActionRequest&, const GetRuleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleActionAsyncHandler;
+			typedef Outcome<Error, Model::GetSceneRuleResult> GetSceneRuleOutcome;
+			typedef std::future<GetSceneRuleOutcome> GetSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetSceneRuleRequest&, const GetSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSceneRuleAsyncHandler;
 			typedef Outcome<Error, Model::GetThingModelTslResult> GetThingModelTslOutcome;
 			typedef std::future<GetThingModelTslOutcome> GetThingModelTslOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetThingModelTslRequest&, const GetThingModelTslOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetThingModelTslAsyncHandler;
@@ -655,12 +781,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryCertUrlByApplyIdResult> QueryCertUrlByApplyIdOutcome;
 			typedef std::future<QueryCertUrlByApplyIdOutcome> QueryCertUrlByApplyIdOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryCertUrlByApplyIdRequest&, const QueryCertUrlByApplyIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCertUrlByApplyIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryConsumerGroupByGroupIdResult> QueryConsumerGroupByGroupIdOutcome;
+			typedef std::future<QueryConsumerGroupByGroupIdOutcome> QueryConsumerGroupByGroupIdOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryConsumerGroupByGroupIdRequest&, const QueryConsumerGroupByGroupIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryConsumerGroupByGroupIdAsyncHandler;
+			typedef Outcome<Error, Model::QueryConsumerGroupListResult> QueryConsumerGroupListOutcome;
+			typedef std::future<QueryConsumerGroupListOutcome> QueryConsumerGroupListOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryConsumerGroupListRequest&, const QueryConsumerGroupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryConsumerGroupListAsyncHandler;
+			typedef Outcome<Error, Model::QueryConsumerGroupStatusResult> QueryConsumerGroupStatusOutcome;
+			typedef std::future<QueryConsumerGroupStatusOutcome> QueryConsumerGroupStatusOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryConsumerGroupStatusRequest&, const QueryConsumerGroupStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryConsumerGroupStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryDetailSceneRuleLogResult> QueryDetailSceneRuleLogOutcome;
+			typedef std::future<QueryDetailSceneRuleLogOutcome> QueryDetailSceneRuleLogOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDetailSceneRuleLogRequest&, const QueryDetailSceneRuleLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDetailSceneRuleLogAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceResult> QueryDeviceOutcome;
 			typedef std::future<QueryDeviceOutcome> QueryDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceRequest&, const QueryDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceAsyncHandler;
-			typedef Outcome<Error, Model::QueryDeviceByDriverResult> QueryDeviceByDriverOutcome;
-			typedef std::future<QueryDeviceByDriverOutcome> QueryDeviceByDriverOutcomeCallable;
-			typedef std::function<void(const IotClient*, const Model::QueryDeviceByDriverRequest&, const QueryDeviceByDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceByDriverAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceByStatusResult> QueryDeviceByStatusOutcome;
 			typedef std::future<QueryDeviceByStatusOutcome> QueryDeviceByStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceByStatusRequest&, const QueryDeviceByStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceByStatusAsyncHandler;
@@ -730,9 +865,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryEdgeInstanceResult> QueryEdgeInstanceOutcome;
 			typedef std::future<QueryEdgeInstanceOutcome> QueryEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceRequest&, const QueryEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::QueryEdgeInstanceChannelResult> QueryEdgeInstanceChannelOutcome;
+			typedef std::future<QueryEdgeInstanceChannelOutcome> QueryEdgeInstanceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceChannelRequest&, const QueryEdgeInstanceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceChannelAsyncHandler;
 			typedef Outcome<Error, Model::QueryEdgeInstanceDeviceResult> QueryEdgeInstanceDeviceOutcome;
 			typedef std::future<QueryEdgeInstanceDeviceOutcome> QueryEdgeInstanceDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceDeviceRequest&, const QueryEdgeInstanceDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceDeviceAsyncHandler;
+			typedef Outcome<Error, Model::QueryEdgeInstanceDeviceByDriverResult> QueryEdgeInstanceDeviceByDriverOutcome;
+			typedef std::future<QueryEdgeInstanceDeviceByDriverOutcome> QueryEdgeInstanceDeviceByDriverOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceDeviceByDriverRequest&, const QueryEdgeInstanceDeviceByDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceDeviceByDriverAsyncHandler;
 			typedef Outcome<Error, Model::QueryEdgeInstanceDriverResult> QueryEdgeInstanceDriverOutcome;
 			typedef std::future<QueryEdgeInstanceDriverOutcome> QueryEdgeInstanceDriverOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceDriverRequest&, const QueryEdgeInstanceDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceDriverAsyncHandler;
@@ -742,6 +883,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryEdgeInstanceHistoricDeploymentResult> QueryEdgeInstanceHistoricDeploymentOutcome;
 			typedef std::future<QueryEdgeInstanceHistoricDeploymentOutcome> QueryEdgeInstanceHistoricDeploymentOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceHistoricDeploymentRequest&, const QueryEdgeInstanceHistoricDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceHistoricDeploymentAsyncHandler;
+			typedef Outcome<Error, Model::QueryEdgeInstanceSceneRuleResult> QueryEdgeInstanceSceneRuleOutcome;
+			typedef std::future<QueryEdgeInstanceSceneRuleOutcome> QueryEdgeInstanceSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryEdgeInstanceSceneRuleRequest&, const QueryEdgeInstanceSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEdgeInstanceSceneRuleAsyncHandler;
 			typedef Outcome<Error, Model::QueryLoRaJoinPermissionsResult> QueryLoRaJoinPermissionsOutcome;
 			typedef std::future<QueryLoRaJoinPermissionsOutcome> QueryLoRaJoinPermissionsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryLoRaJoinPermissionsRequest&, const QueryLoRaJoinPermissionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLoRaJoinPermissionsAsyncHandler;
@@ -766,6 +910,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryProductTopicResult> QueryProductTopicOutcome;
 			typedef std::future<QueryProductTopicOutcome> QueryProductTopicOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryProductTopicRequest&, const QueryProductTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryProductTopicAsyncHandler;
+			typedef Outcome<Error, Model::QuerySceneRuleResult> QuerySceneRuleOutcome;
+			typedef std::future<QuerySceneRuleOutcome> QuerySceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySceneRuleRequest&, const QuerySceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::QuerySubscribeRelationResult> QuerySubscribeRelationOutcome;
+			typedef std::future<QuerySubscribeRelationOutcome> QuerySubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySubscribeRelationRequest&, const QuerySubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySubscribeRelationAsyncHandler;
+			typedef Outcome<Error, Model::QuerySummarySceneRuleLogResult> QuerySummarySceneRuleLogOutcome;
+			typedef std::future<QuerySummarySceneRuleLogOutcome> QuerySummarySceneRuleLogOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySummarySceneRuleLogRequest&, const QuerySummarySceneRuleLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySummarySceneRuleLogAsyncHandler;
 			typedef Outcome<Error, Model::QuerySuperDeviceGroupResult> QuerySuperDeviceGroupOutcome;
 			typedef std::future<QuerySuperDeviceGroupOutcome> QuerySuperDeviceGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySuperDeviceGroupRequest&, const QuerySuperDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySuperDeviceGroupAsyncHandler;
@@ -784,9 +937,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RegisterDeviceResult> RegisterDeviceOutcome;
 			typedef std::future<RegisterDeviceOutcome> RegisterDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::RegisterDeviceRequest&, const RegisterDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseEdgeDriverVersionResult> ReleaseEdgeDriverVersionOutcome;
+			typedef std::future<ReleaseEdgeDriverVersionOutcome> ReleaseEdgeDriverVersionOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ReleaseEdgeDriverVersionRequest&, const ReleaseEdgeDriverVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseEdgeDriverVersionAsyncHandler;
 			typedef Outcome<Error, Model::RemoveThingTopoResult> RemoveThingTopoOutcome;
 			typedef std::future<RemoveThingTopoOutcome> RemoveThingTopoOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::RemoveThingTopoRequest&, const RemoveThingTopoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveThingTopoAsyncHandler;
+			typedef Outcome<Error, Model::ReplaceEdgeInstanceGatewayResult> ReplaceEdgeInstanceGatewayOutcome;
+			typedef std::future<ReplaceEdgeInstanceGatewayOutcome> ReplaceEdgeInstanceGatewayOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ReplaceEdgeInstanceGatewayRequest&, const ReplaceEdgeInstanceGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceEdgeInstanceGatewayAsyncHandler;
+			typedef Outcome<Error, Model::ResetConsumerGroupPositionResult> ResetConsumerGroupPositionOutcome;
+			typedef std::future<ResetConsumerGroupPositionOutcome> ResetConsumerGroupPositionOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ResetConsumerGroupPositionRequest&, const ResetConsumerGroupPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetConsumerGroupPositionAsyncHandler;
 			typedef Outcome<Error, Model::ResetThingResult> ResetThingOutcome;
 			typedef std::future<ResetThingOutcome> ResetThingOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ResetThingRequest&, const ResetThingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetThingAsyncHandler;
@@ -817,12 +979,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopRuleResult> StopRuleOutcome;
 			typedef std::future<StopRuleOutcome> StopRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::StopRuleRequest&, const StopRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopRuleAsyncHandler;
+			typedef Outcome<Error, Model::TriggerSceneRuleResult> TriggerSceneRuleOutcome;
+			typedef std::future<TriggerSceneRuleOutcome> TriggerSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::TriggerSceneRuleRequest&, const TriggerSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TriggerSceneRuleAsyncHandler;
 			typedef Outcome<Error, Model::UnbindApplicationFromEdgeInstanceResult> UnbindApplicationFromEdgeInstanceOutcome;
 			typedef std::future<UnbindApplicationFromEdgeInstanceOutcome> UnbindApplicationFromEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UnbindApplicationFromEdgeInstanceRequest&, const UnbindApplicationFromEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindApplicationFromEdgeInstanceAsyncHandler;
 			typedef Outcome<Error, Model::UnbindDriverFromEdgeInstanceResult> UnbindDriverFromEdgeInstanceOutcome;
 			typedef std::future<UnbindDriverFromEdgeInstanceOutcome> UnbindDriverFromEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UnbindDriverFromEdgeInstanceRequest&, const UnbindDriverFromEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDriverFromEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UnbindSceneRuleFromEdgeInstanceResult> UnbindSceneRuleFromEdgeInstanceOutcome;
+			typedef std::future<UnbindSceneRuleFromEdgeInstanceOutcome> UnbindSceneRuleFromEdgeInstanceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UnbindSceneRuleFromEdgeInstanceRequest&, const UnbindSceneRuleFromEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindSceneRuleFromEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateConsumerGroupResult> UpdateConsumerGroupOutcome;
+			typedef std::future<UpdateConsumerGroupOutcome> UpdateConsumerGroupOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateConsumerGroupRequest&, const UpdateConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConsumerGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDeviceGroupResult> UpdateDeviceGroupOutcome;
 			typedef std::future<UpdateDeviceGroupOutcome> UpdateDeviceGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateDeviceGroupRequest&, const UpdateDeviceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceGroupAsyncHandler;
@@ -835,6 +1006,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateEdgeInstanceResult> UpdateEdgeInstanceOutcome;
 			typedef std::future<UpdateEdgeInstanceOutcome> UpdateEdgeInstanceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateEdgeInstanceRequest&, const UpdateEdgeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEdgeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateEdgeInstanceChannelResult> UpdateEdgeInstanceChannelOutcome;
+			typedef std::future<UpdateEdgeInstanceChannelOutcome> UpdateEdgeInstanceChannelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateEdgeInstanceChannelRequest&, const UpdateEdgeInstanceChannelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEdgeInstanceChannelAsyncHandler;
 			typedef Outcome<Error, Model::UpdateProductResult> UpdateProductOutcome;
 			typedef std::future<UpdateProductOutcome> UpdateProductOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateProductRequest&, const UpdateProductOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProductAsyncHandler;
@@ -853,6 +1027,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateRuleActionResult> UpdateRuleActionOutcome;
 			typedef std::future<UpdateRuleActionOutcome> UpdateRuleActionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateRuleActionRequest&, const UpdateRuleActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRuleActionAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSceneRuleResult> UpdateSceneRuleOutcome;
+			typedef std::future<UpdateSceneRuleOutcome> UpdateSceneRuleOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateSceneRuleRequest&, const UpdateSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSubscribeRelationResult> UpdateSubscribeRelationOutcome;
+			typedef std::future<UpdateSubscribeRelationOutcome> UpdateSubscribeRelationOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateSubscribeRelationRequest&, const UpdateSubscribeRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSubscribeRelationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateThingModelResult> UpdateThingModelOutcome;
 			typedef std::future<UpdateThingModelOutcome> UpdateThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateThingModelRequest&, const UpdateThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingModelAsyncHandler;
@@ -879,18 +1059,30 @@ namespace AlibabaCloud
 			BatchDeleteDeviceGroupRelationsOutcome batchDeleteDeviceGroupRelations(const Model::BatchDeleteDeviceGroupRelationsRequest &request)const;
 			void batchDeleteDeviceGroupRelationsAsync(const Model::BatchDeleteDeviceGroupRelationsRequest& request, const BatchDeleteDeviceGroupRelationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchDeleteDeviceGroupRelationsOutcomeCallable batchDeleteDeviceGroupRelationsCallable(const Model::BatchDeleteDeviceGroupRelationsRequest& request) const;
-			BatchGetDeviceDriverOutcome batchGetDeviceDriver(const Model::BatchGetDeviceDriverRequest &request)const;
-			void batchGetDeviceDriverAsync(const Model::BatchGetDeviceDriverRequest& request, const BatchGetDeviceDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BatchGetDeviceDriverOutcomeCallable batchGetDeviceDriverCallable(const Model::BatchGetDeviceDriverRequest& request) const;
+			BatchDeleteEdgeInstanceChannelOutcome batchDeleteEdgeInstanceChannel(const Model::BatchDeleteEdgeInstanceChannelRequest &request)const;
+			void batchDeleteEdgeInstanceChannelAsync(const Model::BatchDeleteEdgeInstanceChannelRequest& request, const BatchDeleteEdgeInstanceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDeleteEdgeInstanceChannelOutcomeCallable batchDeleteEdgeInstanceChannelCallable(const Model::BatchDeleteEdgeInstanceChannelRequest& request) const;
+			BatchGetDeviceBindStatusOutcome batchGetDeviceBindStatus(const Model::BatchGetDeviceBindStatusRequest &request)const;
+			void batchGetDeviceBindStatusAsync(const Model::BatchGetDeviceBindStatusRequest& request, const BatchGetDeviceBindStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchGetDeviceBindStatusOutcomeCallable batchGetDeviceBindStatusCallable(const Model::BatchGetDeviceBindStatusRequest& request) const;
 			BatchGetDeviceStateOutcome batchGetDeviceState(const Model::BatchGetDeviceStateRequest &request)const;
 			void batchGetDeviceStateAsync(const Model::BatchGetDeviceStateRequest& request, const BatchGetDeviceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetDeviceStateOutcomeCallable batchGetDeviceStateCallable(const Model::BatchGetDeviceStateRequest& request) const;
 			BatchGetEdgeDriverOutcome batchGetEdgeDriver(const Model::BatchGetEdgeDriverRequest &request)const;
 			void batchGetEdgeDriverAsync(const Model::BatchGetEdgeDriverRequest& request, const BatchGetEdgeDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetEdgeDriverOutcomeCallable batchGetEdgeDriverCallable(const Model::BatchGetEdgeDriverRequest& request) const;
+			BatchGetEdgeInstanceChannelOutcome batchGetEdgeInstanceChannel(const Model::BatchGetEdgeInstanceChannelRequest &request)const;
+			void batchGetEdgeInstanceChannelAsync(const Model::BatchGetEdgeInstanceChannelRequest& request, const BatchGetEdgeInstanceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchGetEdgeInstanceChannelOutcomeCallable batchGetEdgeInstanceChannelCallable(const Model::BatchGetEdgeInstanceChannelRequest& request) const;
+			BatchGetEdgeInstanceDeviceChannelOutcome batchGetEdgeInstanceDeviceChannel(const Model::BatchGetEdgeInstanceDeviceChannelRequest &request)const;
+			void batchGetEdgeInstanceDeviceChannelAsync(const Model::BatchGetEdgeInstanceDeviceChannelRequest& request, const BatchGetEdgeInstanceDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchGetEdgeInstanceDeviceChannelOutcomeCallable batchGetEdgeInstanceDeviceChannelCallable(const Model::BatchGetEdgeInstanceDeviceChannelRequest& request) const;
 			BatchGetEdgeInstanceDeviceConfigOutcome batchGetEdgeInstanceDeviceConfig(const Model::BatchGetEdgeInstanceDeviceConfigRequest &request)const;
 			void batchGetEdgeInstanceDeviceConfigAsync(const Model::BatchGetEdgeInstanceDeviceConfigRequest& request, const BatchGetEdgeInstanceDeviceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetEdgeInstanceDeviceConfigOutcomeCallable batchGetEdgeInstanceDeviceConfigCallable(const Model::BatchGetEdgeInstanceDeviceConfigRequest& request) const;
+			BatchGetEdgeInstanceDeviceDriverOutcome batchGetEdgeInstanceDeviceDriver(const Model::BatchGetEdgeInstanceDeviceDriverRequest &request)const;
+			void batchGetEdgeInstanceDeviceDriverAsync(const Model::BatchGetEdgeInstanceDeviceDriverRequest& request, const BatchGetEdgeInstanceDeviceDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchGetEdgeInstanceDeviceDriverOutcomeCallable batchGetEdgeInstanceDeviceDriverCallable(const Model::BatchGetEdgeInstanceDeviceDriverRequest& request) const;
 			BatchGetEdgeInstanceDriverConfigsOutcome batchGetEdgeInstanceDriverConfigs(const Model::BatchGetEdgeInstanceDriverConfigsRequest &request)const;
 			void batchGetEdgeInstanceDriverConfigsAsync(const Model::BatchGetEdgeInstanceDriverConfigsRequest& request, const BatchGetEdgeInstanceDriverConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchGetEdgeInstanceDriverConfigsOutcomeCallable batchGetEdgeInstanceDriverConfigsCallable(const Model::BatchGetEdgeInstanceDriverConfigsRequest& request) const;
@@ -903,6 +1095,9 @@ namespace AlibabaCloud
 			BatchRegisterDeviceWithApplyIdOutcome batchRegisterDeviceWithApplyId(const Model::BatchRegisterDeviceWithApplyIdRequest &request)const;
 			void batchRegisterDeviceWithApplyIdAsync(const Model::BatchRegisterDeviceWithApplyIdRequest& request, const BatchRegisterDeviceWithApplyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchRegisterDeviceWithApplyIdOutcomeCallable batchRegisterDeviceWithApplyIdCallable(const Model::BatchRegisterDeviceWithApplyIdRequest& request) const;
+			BatchSetEdgeInstanceDeviceChannelOutcome batchSetEdgeInstanceDeviceChannel(const Model::BatchSetEdgeInstanceDeviceChannelRequest &request)const;
+			void batchSetEdgeInstanceDeviceChannelAsync(const Model::BatchSetEdgeInstanceDeviceChannelRequest& request, const BatchSetEdgeInstanceDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchSetEdgeInstanceDeviceChannelOutcomeCallable batchSetEdgeInstanceDeviceChannelCallable(const Model::BatchSetEdgeInstanceDeviceChannelRequest& request) const;
 			BatchSetEdgeInstanceDeviceConfigOutcome batchSetEdgeInstanceDeviceConfig(const Model::BatchSetEdgeInstanceDeviceConfigRequest &request)const;
 			void batchSetEdgeInstanceDeviceConfigAsync(const Model::BatchSetEdgeInstanceDeviceConfigRequest& request, const BatchSetEdgeInstanceDeviceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetEdgeInstanceDeviceConfigOutcomeCallable batchSetEdgeInstanceDeviceConfigCallable(const Model::BatchSetEdgeInstanceDeviceConfigRequest& request) const;
@@ -921,6 +1116,9 @@ namespace AlibabaCloud
 			BindGatewayToEdgeInstanceOutcome bindGatewayToEdgeInstance(const Model::BindGatewayToEdgeInstanceRequest &request)const;
 			void bindGatewayToEdgeInstanceAsync(const Model::BindGatewayToEdgeInstanceRequest& request, const BindGatewayToEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindGatewayToEdgeInstanceOutcomeCallable bindGatewayToEdgeInstanceCallable(const Model::BindGatewayToEdgeInstanceRequest& request) const;
+			BindSceneRuleToEdgeInstanceOutcome bindSceneRuleToEdgeInstance(const Model::BindSceneRuleToEdgeInstanceRequest &request)const;
+			void bindSceneRuleToEdgeInstanceAsync(const Model::BindSceneRuleToEdgeInstanceRequest& request, const BindSceneRuleToEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindSceneRuleToEdgeInstanceOutcomeCallable bindSceneRuleToEdgeInstanceCallable(const Model::BindSceneRuleToEdgeInstanceRequest& request) const;
 			CancelOTAStrategyByJobOutcome cancelOTAStrategyByJob(const Model::CancelOTAStrategyByJobRequest &request)const;
 			void cancelOTAStrategyByJobAsync(const Model::CancelOTAStrategyByJobRequest& request, const CancelOTAStrategyByJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelOTAStrategyByJobOutcomeCallable cancelOTAStrategyByJobCallable(const Model::CancelOTAStrategyByJobRequest& request) const;
@@ -939,6 +1137,12 @@ namespace AlibabaCloud
 			CopyThingModelOutcome copyThingModel(const Model::CopyThingModelRequest &request)const;
 			void copyThingModelAsync(const Model::CopyThingModelRequest& request, const CopyThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyThingModelOutcomeCallable copyThingModelCallable(const Model::CopyThingModelRequest& request) const;
+			CreateConsumerGroupOutcome createConsumerGroup(const Model::CreateConsumerGroupRequest &request)const;
+			void createConsumerGroupAsync(const Model::CreateConsumerGroupRequest& request, const CreateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateConsumerGroupOutcomeCallable createConsumerGroupCallable(const Model::CreateConsumerGroupRequest& request) const;
+			CreateConsumerGroupSubscribeRelationOutcome createConsumerGroupSubscribeRelation(const Model::CreateConsumerGroupSubscribeRelationRequest &request)const;
+			void createConsumerGroupSubscribeRelationAsync(const Model::CreateConsumerGroupSubscribeRelationRequest& request, const CreateConsumerGroupSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateConsumerGroupSubscribeRelationOutcomeCallable createConsumerGroupSubscribeRelationCallable(const Model::CreateConsumerGroupSubscribeRelationRequest& request) const;
 			CreateDataAPIServiceOutcome createDataAPIService(const Model::CreateDataAPIServiceRequest &request)const;
 			void createDataAPIServiceAsync(const Model::CreateDataAPIServiceRequest& request, const CreateDataAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataAPIServiceOutcomeCallable createDataAPIServiceCallable(const Model::CreateDataAPIServiceRequest& request) const;
@@ -954,6 +1158,9 @@ namespace AlibabaCloud
 			CreateEdgeInstanceOutcome createEdgeInstance(const Model::CreateEdgeInstanceRequest &request)const;
 			void createEdgeInstanceAsync(const Model::CreateEdgeInstanceRequest& request, const CreateEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEdgeInstanceOutcomeCallable createEdgeInstanceCallable(const Model::CreateEdgeInstanceRequest& request) const;
+			CreateEdgeInstanceChannelOutcome createEdgeInstanceChannel(const Model::CreateEdgeInstanceChannelRequest &request)const;
+			void createEdgeInstanceChannelAsync(const Model::CreateEdgeInstanceChannelRequest& request, const CreateEdgeInstanceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateEdgeInstanceChannelOutcomeCallable createEdgeInstanceChannelCallable(const Model::CreateEdgeInstanceChannelRequest& request) const;
 			CreateEdgeInstanceDeploymentOutcome createEdgeInstanceDeployment(const Model::CreateEdgeInstanceDeploymentRequest &request)const;
 			void createEdgeInstanceDeploymentAsync(const Model::CreateEdgeInstanceDeploymentRequest& request, const CreateEdgeInstanceDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEdgeInstanceDeploymentOutcomeCallable createEdgeInstanceDeploymentCallable(const Model::CreateEdgeInstanceDeploymentRequest& request) const;
@@ -990,12 +1197,24 @@ namespace AlibabaCloud
 			CreateRuleActionOutcome createRuleAction(const Model::CreateRuleActionRequest &request)const;
 			void createRuleActionAsync(const Model::CreateRuleActionRequest& request, const CreateRuleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRuleActionOutcomeCallable createRuleActionCallable(const Model::CreateRuleActionRequest& request) const;
+			CreateSceneRuleOutcome createSceneRule(const Model::CreateSceneRuleRequest &request)const;
+			void createSceneRuleAsync(const Model::CreateSceneRuleRequest& request, const CreateSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSceneRuleOutcomeCallable createSceneRuleCallable(const Model::CreateSceneRuleRequest& request) const;
+			CreateSubscribeRelationOutcome createSubscribeRelation(const Model::CreateSubscribeRelationRequest &request)const;
+			void createSubscribeRelationAsync(const Model::CreateSubscribeRelationRequest& request, const CreateSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSubscribeRelationOutcomeCallable createSubscribeRelationCallable(const Model::CreateSubscribeRelationRequest& request) const;
 			CreateThingModelOutcome createThingModel(const Model::CreateThingModelRequest &request)const;
 			void createThingModelAsync(const Model::CreateThingModelRequest& request, const CreateThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateThingModelOutcomeCallable createThingModelCallable(const Model::CreateThingModelRequest& request) const;
 			CreateTopicRouteTableOutcome createTopicRouteTable(const Model::CreateTopicRouteTableRequest &request)const;
 			void createTopicRouteTableAsync(const Model::CreateTopicRouteTableRequest& request, const CreateTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTopicRouteTableOutcomeCallable createTopicRouteTableCallable(const Model::CreateTopicRouteTableRequest& request) const;
+			DeleteConsumerGroupOutcome deleteConsumerGroup(const Model::DeleteConsumerGroupRequest &request)const;
+			void deleteConsumerGroupAsync(const Model::DeleteConsumerGroupRequest& request, const DeleteConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteConsumerGroupOutcomeCallable deleteConsumerGroupCallable(const Model::DeleteConsumerGroupRequest& request) const;
+			DeleteConsumerGroupSubscribeRelationOutcome deleteConsumerGroupSubscribeRelation(const Model::DeleteConsumerGroupSubscribeRelationRequest &request)const;
+			void deleteConsumerGroupSubscribeRelationAsync(const Model::DeleteConsumerGroupSubscribeRelationRequest& request, const DeleteConsumerGroupSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteConsumerGroupSubscribeRelationOutcomeCallable deleteConsumerGroupSubscribeRelationCallable(const Model::DeleteConsumerGroupSubscribeRelationRequest& request) const;
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
@@ -1035,15 +1254,27 @@ namespace AlibabaCloud
 			DeleteRuleActionOutcome deleteRuleAction(const Model::DeleteRuleActionRequest &request)const;
 			void deleteRuleActionAsync(const Model::DeleteRuleActionRequest& request, const DeleteRuleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRuleActionOutcomeCallable deleteRuleActionCallable(const Model::DeleteRuleActionRequest& request) const;
+			DeleteSceneRuleOutcome deleteSceneRule(const Model::DeleteSceneRuleRequest &request)const;
+			void deleteSceneRuleAsync(const Model::DeleteSceneRuleRequest& request, const DeleteSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSceneRuleOutcomeCallable deleteSceneRuleCallable(const Model::DeleteSceneRuleRequest& request) const;
+			DeleteSubscribeRelationOutcome deleteSubscribeRelation(const Model::DeleteSubscribeRelationRequest &request)const;
+			void deleteSubscribeRelationAsync(const Model::DeleteSubscribeRelationRequest& request, const DeleteSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSubscribeRelationOutcomeCallable deleteSubscribeRelationCallable(const Model::DeleteSubscribeRelationRequest& request) const;
 			DeleteThingModelOutcome deleteThingModel(const Model::DeleteThingModelRequest &request)const;
 			void deleteThingModelAsync(const Model::DeleteThingModelRequest& request, const DeleteThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteThingModelOutcomeCallable deleteThingModelCallable(const Model::DeleteThingModelRequest& request) const;
 			DeleteTopicRouteTableOutcome deleteTopicRouteTable(const Model::DeleteTopicRouteTableRequest &request)const;
 			void deleteTopicRouteTableAsync(const Model::DeleteTopicRouteTableRequest& request, const DeleteTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTopicRouteTableOutcomeCallable deleteTopicRouteTableCallable(const Model::DeleteTopicRouteTableRequest& request) const;
+			DisableSceneRuleOutcome disableSceneRule(const Model::DisableSceneRuleRequest &request)const;
+			void disableSceneRuleAsync(const Model::DisableSceneRuleRequest& request, const DisableSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableSceneRuleOutcomeCallable disableSceneRuleCallable(const Model::DisableSceneRuleRequest& request) const;
 			DisableThingOutcome disableThing(const Model::DisableThingRequest &request)const;
 			void disableThingAsync(const Model::DisableThingRequest& request, const DisableThingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableThingOutcomeCallable disableThingCallable(const Model::DisableThingRequest& request) const;
+			EnableSceneRuleOutcome enableSceneRule(const Model::EnableSceneRuleRequest &request)const;
+			void enableSceneRuleAsync(const Model::EnableSceneRuleRequest& request, const EnableSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableSceneRuleOutcomeCallable enableSceneRuleCallable(const Model::EnableSceneRuleRequest& request) const;
 			EnableThingOutcome enableThing(const Model::EnableThingRequest &request)const;
 			void enableThingAsync(const Model::EnableThingRequest& request, const EnableThingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableThingOutcomeCallable enableThingCallable(const Model::EnableThingRequest& request) const;
@@ -1083,6 +1314,9 @@ namespace AlibabaCloud
 			GetRuleActionOutcome getRuleAction(const Model::GetRuleActionRequest &request)const;
 			void getRuleActionAsync(const Model::GetRuleActionRequest& request, const GetRuleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRuleActionOutcomeCallable getRuleActionCallable(const Model::GetRuleActionRequest& request) const;
+			GetSceneRuleOutcome getSceneRule(const Model::GetSceneRuleRequest &request)const;
+			void getSceneRuleAsync(const Model::GetSceneRuleRequest& request, const GetSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSceneRuleOutcomeCallable getSceneRuleCallable(const Model::GetSceneRuleRequest& request) const;
 			GetThingModelTslOutcome getThingModelTsl(const Model::GetThingModelTslRequest &request)const;
 			void getThingModelTslAsync(const Model::GetThingModelTslRequest& request, const GetThingModelTslAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetThingModelTslOutcomeCallable getThingModelTslCallable(const Model::GetThingModelTslRequest& request) const;
@@ -1155,12 +1389,21 @@ namespace AlibabaCloud
 			QueryCertUrlByApplyIdOutcome queryCertUrlByApplyId(const Model::QueryCertUrlByApplyIdRequest &request)const;
 			void queryCertUrlByApplyIdAsync(const Model::QueryCertUrlByApplyIdRequest& request, const QueryCertUrlByApplyIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryCertUrlByApplyIdOutcomeCallable queryCertUrlByApplyIdCallable(const Model::QueryCertUrlByApplyIdRequest& request) const;
+			QueryConsumerGroupByGroupIdOutcome queryConsumerGroupByGroupId(const Model::QueryConsumerGroupByGroupIdRequest &request)const;
+			void queryConsumerGroupByGroupIdAsync(const Model::QueryConsumerGroupByGroupIdRequest& request, const QueryConsumerGroupByGroupIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryConsumerGroupByGroupIdOutcomeCallable queryConsumerGroupByGroupIdCallable(const Model::QueryConsumerGroupByGroupIdRequest& request) const;
+			QueryConsumerGroupListOutcome queryConsumerGroupList(const Model::QueryConsumerGroupListRequest &request)const;
+			void queryConsumerGroupListAsync(const Model::QueryConsumerGroupListRequest& request, const QueryConsumerGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryConsumerGroupListOutcomeCallable queryConsumerGroupListCallable(const Model::QueryConsumerGroupListRequest& request) const;
+			QueryConsumerGroupStatusOutcome queryConsumerGroupStatus(const Model::QueryConsumerGroupStatusRequest &request)const;
+			void queryConsumerGroupStatusAsync(const Model::QueryConsumerGroupStatusRequest& request, const QueryConsumerGroupStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryConsumerGroupStatusOutcomeCallable queryConsumerGroupStatusCallable(const Model::QueryConsumerGroupStatusRequest& request) const;
+			QueryDetailSceneRuleLogOutcome queryDetailSceneRuleLog(const Model::QueryDetailSceneRuleLogRequest &request)const;
+			void queryDetailSceneRuleLogAsync(const Model::QueryDetailSceneRuleLogRequest& request, const QueryDetailSceneRuleLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDetailSceneRuleLogOutcomeCallable queryDetailSceneRuleLogCallable(const Model::QueryDetailSceneRuleLogRequest& request) const;
 			QueryDeviceOutcome queryDevice(const Model::QueryDeviceRequest &request)const;
 			void queryDeviceAsync(const Model::QueryDeviceRequest& request, const QueryDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceOutcomeCallable queryDeviceCallable(const Model::QueryDeviceRequest& request) const;
-			QueryDeviceByDriverOutcome queryDeviceByDriver(const Model::QueryDeviceByDriverRequest &request)const;
-			void queryDeviceByDriverAsync(const Model::QueryDeviceByDriverRequest& request, const QueryDeviceByDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryDeviceByDriverOutcomeCallable queryDeviceByDriverCallable(const Model::QueryDeviceByDriverRequest& request) const;
 			QueryDeviceByStatusOutcome queryDeviceByStatus(const Model::QueryDeviceByStatusRequest &request)const;
 			void queryDeviceByStatusAsync(const Model::QueryDeviceByStatusRequest& request, const QueryDeviceByStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceByStatusOutcomeCallable queryDeviceByStatusCallable(const Model::QueryDeviceByStatusRequest& request) const;
@@ -1230,9 +1473,15 @@ namespace AlibabaCloud
 			QueryEdgeInstanceOutcome queryEdgeInstance(const Model::QueryEdgeInstanceRequest &request)const;
 			void queryEdgeInstanceAsync(const Model::QueryEdgeInstanceRequest& request, const QueryEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEdgeInstanceOutcomeCallable queryEdgeInstanceCallable(const Model::QueryEdgeInstanceRequest& request) const;
+			QueryEdgeInstanceChannelOutcome queryEdgeInstanceChannel(const Model::QueryEdgeInstanceChannelRequest &request)const;
+			void queryEdgeInstanceChannelAsync(const Model::QueryEdgeInstanceChannelRequest& request, const QueryEdgeInstanceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEdgeInstanceChannelOutcomeCallable queryEdgeInstanceChannelCallable(const Model::QueryEdgeInstanceChannelRequest& request) const;
 			QueryEdgeInstanceDeviceOutcome queryEdgeInstanceDevice(const Model::QueryEdgeInstanceDeviceRequest &request)const;
 			void queryEdgeInstanceDeviceAsync(const Model::QueryEdgeInstanceDeviceRequest& request, const QueryEdgeInstanceDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEdgeInstanceDeviceOutcomeCallable queryEdgeInstanceDeviceCallable(const Model::QueryEdgeInstanceDeviceRequest& request) const;
+			QueryEdgeInstanceDeviceByDriverOutcome queryEdgeInstanceDeviceByDriver(const Model::QueryEdgeInstanceDeviceByDriverRequest &request)const;
+			void queryEdgeInstanceDeviceByDriverAsync(const Model::QueryEdgeInstanceDeviceByDriverRequest& request, const QueryEdgeInstanceDeviceByDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEdgeInstanceDeviceByDriverOutcomeCallable queryEdgeInstanceDeviceByDriverCallable(const Model::QueryEdgeInstanceDeviceByDriverRequest& request) const;
 			QueryEdgeInstanceDriverOutcome queryEdgeInstanceDriver(const Model::QueryEdgeInstanceDriverRequest &request)const;
 			void queryEdgeInstanceDriverAsync(const Model::QueryEdgeInstanceDriverRequest& request, const QueryEdgeInstanceDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEdgeInstanceDriverOutcomeCallable queryEdgeInstanceDriverCallable(const Model::QueryEdgeInstanceDriverRequest& request) const;
@@ -1242,6 +1491,9 @@ namespace AlibabaCloud
 			QueryEdgeInstanceHistoricDeploymentOutcome queryEdgeInstanceHistoricDeployment(const Model::QueryEdgeInstanceHistoricDeploymentRequest &request)const;
 			void queryEdgeInstanceHistoricDeploymentAsync(const Model::QueryEdgeInstanceHistoricDeploymentRequest& request, const QueryEdgeInstanceHistoricDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEdgeInstanceHistoricDeploymentOutcomeCallable queryEdgeInstanceHistoricDeploymentCallable(const Model::QueryEdgeInstanceHistoricDeploymentRequest& request) const;
+			QueryEdgeInstanceSceneRuleOutcome queryEdgeInstanceSceneRule(const Model::QueryEdgeInstanceSceneRuleRequest &request)const;
+			void queryEdgeInstanceSceneRuleAsync(const Model::QueryEdgeInstanceSceneRuleRequest& request, const QueryEdgeInstanceSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryEdgeInstanceSceneRuleOutcomeCallable queryEdgeInstanceSceneRuleCallable(const Model::QueryEdgeInstanceSceneRuleRequest& request) const;
 			QueryLoRaJoinPermissionsOutcome queryLoRaJoinPermissions(const Model::QueryLoRaJoinPermissionsRequest &request)const;
 			void queryLoRaJoinPermissionsAsync(const Model::QueryLoRaJoinPermissionsRequest& request, const QueryLoRaJoinPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLoRaJoinPermissionsOutcomeCallable queryLoRaJoinPermissionsCallable(const Model::QueryLoRaJoinPermissionsRequest& request) const;
@@ -1266,6 +1518,15 @@ namespace AlibabaCloud
 			QueryProductTopicOutcome queryProductTopic(const Model::QueryProductTopicRequest &request)const;
 			void queryProductTopicAsync(const Model::QueryProductTopicRequest& request, const QueryProductTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryProductTopicOutcomeCallable queryProductTopicCallable(const Model::QueryProductTopicRequest& request) const;
+			QuerySceneRuleOutcome querySceneRule(const Model::QuerySceneRuleRequest &request)const;
+			void querySceneRuleAsync(const Model::QuerySceneRuleRequest& request, const QuerySceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySceneRuleOutcomeCallable querySceneRuleCallable(const Model::QuerySceneRuleRequest& request) const;
+			QuerySubscribeRelationOutcome querySubscribeRelation(const Model::QuerySubscribeRelationRequest &request)const;
+			void querySubscribeRelationAsync(const Model::QuerySubscribeRelationRequest& request, const QuerySubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySubscribeRelationOutcomeCallable querySubscribeRelationCallable(const Model::QuerySubscribeRelationRequest& request) const;
+			QuerySummarySceneRuleLogOutcome querySummarySceneRuleLog(const Model::QuerySummarySceneRuleLogRequest &request)const;
+			void querySummarySceneRuleLogAsync(const Model::QuerySummarySceneRuleLogRequest& request, const QuerySummarySceneRuleLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySummarySceneRuleLogOutcomeCallable querySummarySceneRuleLogCallable(const Model::QuerySummarySceneRuleLogRequest& request) const;
 			QuerySuperDeviceGroupOutcome querySuperDeviceGroup(const Model::QuerySuperDeviceGroupRequest &request)const;
 			void querySuperDeviceGroupAsync(const Model::QuerySuperDeviceGroupRequest& request, const QuerySuperDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySuperDeviceGroupOutcomeCallable querySuperDeviceGroupCallable(const Model::QuerySuperDeviceGroupRequest& request) const;
@@ -1284,9 +1545,18 @@ namespace AlibabaCloud
 			RegisterDeviceOutcome registerDevice(const Model::RegisterDeviceRequest &request)const;
 			void registerDeviceAsync(const Model::RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterDeviceOutcomeCallable registerDeviceCallable(const Model::RegisterDeviceRequest& request) const;
+			ReleaseEdgeDriverVersionOutcome releaseEdgeDriverVersion(const Model::ReleaseEdgeDriverVersionRequest &request)const;
+			void releaseEdgeDriverVersionAsync(const Model::ReleaseEdgeDriverVersionRequest& request, const ReleaseEdgeDriverVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseEdgeDriverVersionOutcomeCallable releaseEdgeDriverVersionCallable(const Model::ReleaseEdgeDriverVersionRequest& request) const;
 			RemoveThingTopoOutcome removeThingTopo(const Model::RemoveThingTopoRequest &request)const;
 			void removeThingTopoAsync(const Model::RemoveThingTopoRequest& request, const RemoveThingTopoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveThingTopoOutcomeCallable removeThingTopoCallable(const Model::RemoveThingTopoRequest& request) const;
+			ReplaceEdgeInstanceGatewayOutcome replaceEdgeInstanceGateway(const Model::ReplaceEdgeInstanceGatewayRequest &request)const;
+			void replaceEdgeInstanceGatewayAsync(const Model::ReplaceEdgeInstanceGatewayRequest& request, const ReplaceEdgeInstanceGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReplaceEdgeInstanceGatewayOutcomeCallable replaceEdgeInstanceGatewayCallable(const Model::ReplaceEdgeInstanceGatewayRequest& request) const;
+			ResetConsumerGroupPositionOutcome resetConsumerGroupPosition(const Model::ResetConsumerGroupPositionRequest &request)const;
+			void resetConsumerGroupPositionAsync(const Model::ResetConsumerGroupPositionRequest& request, const ResetConsumerGroupPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetConsumerGroupPositionOutcomeCallable resetConsumerGroupPositionCallable(const Model::ResetConsumerGroupPositionRequest& request) const;
 			ResetThingOutcome resetThing(const Model::ResetThingRequest &request)const;
 			void resetThingAsync(const Model::ResetThingRequest& request, const ResetThingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetThingOutcomeCallable resetThingCallable(const Model::ResetThingRequest& request) const;
@@ -1317,12 +1587,21 @@ namespace AlibabaCloud
 			StopRuleOutcome stopRule(const Model::StopRuleRequest &request)const;
 			void stopRuleAsync(const Model::StopRuleRequest& request, const StopRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopRuleOutcomeCallable stopRuleCallable(const Model::StopRuleRequest& request) const;
+			TriggerSceneRuleOutcome triggerSceneRule(const Model::TriggerSceneRuleRequest &request)const;
+			void triggerSceneRuleAsync(const Model::TriggerSceneRuleRequest& request, const TriggerSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TriggerSceneRuleOutcomeCallable triggerSceneRuleCallable(const Model::TriggerSceneRuleRequest& request) const;
 			UnbindApplicationFromEdgeInstanceOutcome unbindApplicationFromEdgeInstance(const Model::UnbindApplicationFromEdgeInstanceRequest &request)const;
 			void unbindApplicationFromEdgeInstanceAsync(const Model::UnbindApplicationFromEdgeInstanceRequest& request, const UnbindApplicationFromEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindApplicationFromEdgeInstanceOutcomeCallable unbindApplicationFromEdgeInstanceCallable(const Model::UnbindApplicationFromEdgeInstanceRequest& request) const;
 			UnbindDriverFromEdgeInstanceOutcome unbindDriverFromEdgeInstance(const Model::UnbindDriverFromEdgeInstanceRequest &request)const;
 			void unbindDriverFromEdgeInstanceAsync(const Model::UnbindDriverFromEdgeInstanceRequest& request, const UnbindDriverFromEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindDriverFromEdgeInstanceOutcomeCallable unbindDriverFromEdgeInstanceCallable(const Model::UnbindDriverFromEdgeInstanceRequest& request) const;
+			UnbindSceneRuleFromEdgeInstanceOutcome unbindSceneRuleFromEdgeInstance(const Model::UnbindSceneRuleFromEdgeInstanceRequest &request)const;
+			void unbindSceneRuleFromEdgeInstanceAsync(const Model::UnbindSceneRuleFromEdgeInstanceRequest& request, const UnbindSceneRuleFromEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindSceneRuleFromEdgeInstanceOutcomeCallable unbindSceneRuleFromEdgeInstanceCallable(const Model::UnbindSceneRuleFromEdgeInstanceRequest& request) const;
+			UpdateConsumerGroupOutcome updateConsumerGroup(const Model::UpdateConsumerGroupRequest &request)const;
+			void updateConsumerGroupAsync(const Model::UpdateConsumerGroupRequest& request, const UpdateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateConsumerGroupOutcomeCallable updateConsumerGroupCallable(const Model::UpdateConsumerGroupRequest& request) const;
 			UpdateDeviceGroupOutcome updateDeviceGroup(const Model::UpdateDeviceGroupRequest &request)const;
 			void updateDeviceGroupAsync(const Model::UpdateDeviceGroupRequest& request, const UpdateDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDeviceGroupOutcomeCallable updateDeviceGroupCallable(const Model::UpdateDeviceGroupRequest& request) const;
@@ -1335,6 +1614,9 @@ namespace AlibabaCloud
 			UpdateEdgeInstanceOutcome updateEdgeInstance(const Model::UpdateEdgeInstanceRequest &request)const;
 			void updateEdgeInstanceAsync(const Model::UpdateEdgeInstanceRequest& request, const UpdateEdgeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateEdgeInstanceOutcomeCallable updateEdgeInstanceCallable(const Model::UpdateEdgeInstanceRequest& request) const;
+			UpdateEdgeInstanceChannelOutcome updateEdgeInstanceChannel(const Model::UpdateEdgeInstanceChannelRequest &request)const;
+			void updateEdgeInstanceChannelAsync(const Model::UpdateEdgeInstanceChannelRequest& request, const UpdateEdgeInstanceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateEdgeInstanceChannelOutcomeCallable updateEdgeInstanceChannelCallable(const Model::UpdateEdgeInstanceChannelRequest& request) const;
 			UpdateProductOutcome updateProduct(const Model::UpdateProductRequest &request)const;
 			void updateProductAsync(const Model::UpdateProductRequest& request, const UpdateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateProductOutcomeCallable updateProductCallable(const Model::UpdateProductRequest& request) const;
@@ -1353,6 +1635,12 @@ namespace AlibabaCloud
 			UpdateRuleActionOutcome updateRuleAction(const Model::UpdateRuleActionRequest &request)const;
 			void updateRuleActionAsync(const Model::UpdateRuleActionRequest& request, const UpdateRuleActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateRuleActionOutcomeCallable updateRuleActionCallable(const Model::UpdateRuleActionRequest& request) const;
+			UpdateSceneRuleOutcome updateSceneRule(const Model::UpdateSceneRuleRequest &request)const;
+			void updateSceneRuleAsync(const Model::UpdateSceneRuleRequest& request, const UpdateSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSceneRuleOutcomeCallable updateSceneRuleCallable(const Model::UpdateSceneRuleRequest& request) const;
+			UpdateSubscribeRelationOutcome updateSubscribeRelation(const Model::UpdateSubscribeRelationRequest &request)const;
+			void updateSubscribeRelationAsync(const Model::UpdateSubscribeRelationRequest& request, const UpdateSubscribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSubscribeRelationOutcomeCallable updateSubscribeRelationCallable(const Model::UpdateSubscribeRelationRequest& request) const;
 			UpdateThingModelOutcome updateThingModel(const Model::UpdateThingModelRequest &request)const;
 			void updateThingModelAsync(const Model::UpdateThingModelRequest& request, const UpdateThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateThingModelOutcomeCallable updateThingModelCallable(const Model::UpdateThingModelRequest& request) const;

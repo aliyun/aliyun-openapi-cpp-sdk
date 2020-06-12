@@ -27,17 +27,6 @@ UpdateDeviceGroupRequest::UpdateDeviceGroupRequest() :
 UpdateDeviceGroupRequest::~UpdateDeviceGroupRequest()
 {}
 
-std::string UpdateDeviceGroupRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void UpdateDeviceGroupRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string UpdateDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +36,28 @@ void UpdateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateDeviceGroupRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateDeviceGroupRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void UpdateDeviceGroupRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
 }
 
 std::string UpdateDeviceGroupRequest::getGroupDesc()const
@@ -60,14 +71,25 @@ void UpdateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
 	setParameter("GroupDesc", groupDesc);
 }
 
-std::string UpdateDeviceGroupRequest::getIotInstanceId()const
+std::string UpdateDeviceGroupRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void UpdateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+void UpdateDeviceGroupRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateDeviceGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateDeviceGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

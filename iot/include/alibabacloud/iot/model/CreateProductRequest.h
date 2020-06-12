@@ -65,6 +65,10 @@ namespace AlibabaCloud
 				void setId2(bool id2);
 				std::string getNetType()const;
 				void setNetType(const std::string& netType);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::string getProtocolType()const;
 				void setProtocolType(const std::string& protocolType);
 
@@ -84,6 +88,8 @@ namespace AlibabaCloud
 				int dataFormat_;
 				bool id2_;
 				std::string netType_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::string protocolType_;
 
 			};

@@ -27,17 +27,6 @@ BatchAddThingTopoRequest::BatchAddThingTopoRequest() :
 BatchAddThingTopoRequest::~BatchAddThingTopoRequest()
 {}
 
-std::string BatchAddThingTopoRequest::getExt()const
-{
-	return ext_;
-}
-
-void BatchAddThingTopoRequest::setExt(const std::string& ext)
-{
-	ext_ = ext;
-	setParameter("Ext", ext);
-}
-
 std::string BatchAddThingTopoRequest::getGwProductKey()const
 {
 	return gwProductKey_;
@@ -47,6 +36,39 @@ void BatchAddThingTopoRequest::setGwProductKey(const std::string& gwProductKey)
 {
 	gwProductKey_ = gwProductKey;
 	setParameter("GwProductKey", gwProductKey);
+}
+
+std::string BatchAddThingTopoRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void BatchAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string BatchAddThingTopoRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void BatchAddThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string BatchAddThingTopoRequest::getExt()const
+{
+	return ext_;
+}
+
+void BatchAddThingTopoRequest::setExt(const std::string& ext)
+{
+	ext_ = ext;
+	setParameter("Ext", ext);
 }
 
 std::vector<BatchAddThingTopoRequest::TopoAddItem> BatchAddThingTopoRequest::getTopoAddItem()const
@@ -69,17 +91,6 @@ void BatchAddThingTopoRequest::setTopoAddItem(const std::vector<TopoAddItem>& to
 	}
 }
 
-std::string BatchAddThingTopoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchAddThingTopoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string BatchAddThingTopoRequest::getGwDeviceName()const
 {
 	return gwDeviceName_;
@@ -91,14 +102,25 @@ void BatchAddThingTopoRequest::setGwDeviceName(const std::string& gwDeviceName)
 	setParameter("GwDeviceName", gwDeviceName);
 }
 
-std::string BatchAddThingTopoRequest::getIotInstanceId()const
+std::string BatchAddThingTopoRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void BatchAddThingTopoRequest::setIotInstanceId(const std::string& iotInstanceId)
+void BatchAddThingTopoRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string BatchAddThingTopoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void BatchAddThingTopoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -27,28 +27,6 @@ RRpcRequest::RRpcRequest() :
 RRpcRequest::~RRpcRequest()
 {}
 
-std::string RRpcRequest::getRequestBase64Byte()const
-{
-	return requestBase64Byte_;
-}
-
-void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
-{
-	requestBase64Byte_ = requestBase64Byte;
-	setParameter("RequestBase64Byte", requestBase64Byte);
-}
-
-std::string RRpcRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void RRpcRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 int RRpcRequest::getTimeout()const
 {
 	return timeout_;
@@ -82,6 +60,39 @@ void RRpcRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string RRpcRequest::getRequestBase64Byte()const
+{
+	return requestBase64Byte_;
+}
+
+void RRpcRequest::setRequestBase64Byte(const std::string& requestBase64Byte)
+{
+	requestBase64Byte_ = requestBase64Byte;
+	setParameter("RequestBase64Byte", requestBase64Byte);
+}
+
+std::string RRpcRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void RRpcRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string RRpcRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void RRpcRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
 std::string RRpcRequest::getTopic()const
 {
 	return topic_;
@@ -91,6 +102,17 @@ void RRpcRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setParameter("Topic", topic);
+}
+
+std::string RRpcRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void RRpcRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string RRpcRequest::getDeviceName()const

@@ -51,8 +51,12 @@ namespace AlibabaCloud
 				void setTopicType(int topicType);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
 				std::string getName()const;
 				void setName(const std::string& name);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				long getRuleId()const;
 				void setRuleId(long ruleId);
 
@@ -65,7 +69,9 @@ namespace AlibabaCloud
 				std::string where_;
 				int topicType_;
 				std::string productKey_;
+				std::string apiProduct_;
 				std::string name_;
+				std::string apiRevision_;
 				long ruleId_;
 
 			};

@@ -60,3 +60,25 @@ void DeleteRuleActionRequest::setActionId(long actionId)
 	setParameter("ActionId", std::to_string(actionId));
 }
 
+std::string DeleteRuleActionRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteRuleActionRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteRuleActionRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteRuleActionRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+

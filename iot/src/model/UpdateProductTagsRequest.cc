@@ -27,17 +27,6 @@ UpdateProductTagsRequest::UpdateProductTagsRequest() :
 UpdateProductTagsRequest::~UpdateProductTagsRequest()
 {}
 
-std::string UpdateProductTagsRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void UpdateProductTagsRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string UpdateProductTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +36,28 @@ void UpdateProductTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string UpdateProductTagsRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void UpdateProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string UpdateProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 std::vector<UpdateProductTagsRequest::ProductTag> UpdateProductTagsRequest::getProductTag()const
@@ -65,14 +76,25 @@ void UpdateProductTagsRequest::setProductTag(const std::vector<ProductTag>& prod
 	}
 }
 
-std::string UpdateProductTagsRequest::getIotInstanceId()const
+std::string UpdateProductTagsRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void UpdateProductTagsRequest::setIotInstanceId(const std::string& iotInstanceId)
+void UpdateProductTagsRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateProductTagsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateProductTagsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -60,6 +60,17 @@ void QueryTopicReverseRouteTableRequest::setIotInstanceId(const std::string& iot
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string QueryTopicReverseRouteTableRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryTopicReverseRouteTableRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
 std::string QueryTopicReverseRouteTableRequest::getTopic()const
 {
 	return topic_;
@@ -69,5 +80,16 @@ void QueryTopicReverseRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setParameter("Topic", topic);
+}
+
+std::string QueryTopicReverseRouteTableRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryTopicReverseRouteTableRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

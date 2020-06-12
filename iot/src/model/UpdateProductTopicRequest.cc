@@ -60,17 +60,6 @@ void UpdateProductTopicRequest::setIotInstanceId(const std::string& iotInstanceI
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string UpdateProductTopicRequest::getOperation()const
-{
-	return operation_;
-}
-
-void UpdateProductTopicRequest::setOperation(const std::string& operation)
-{
-	operation_ = operation;
-	setParameter("Operation", operation);
-}
-
 std::string UpdateProductTopicRequest::getTopicShortName()const
 {
 	return topicShortName_;
@@ -80,6 +69,39 @@ void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortN
 {
 	topicShortName_ = topicShortName;
 	setParameter("TopicShortName", topicShortName);
+}
+
+std::string UpdateProductTopicRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UpdateProductTopicRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateProductTopicRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateProductTopicRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string UpdateProductTopicRequest::getOperation()const
+{
+	return operation_;
+}
+
+void UpdateProductTopicRequest::setOperation(const std::string& operation)
+{
+	operation_ = operation;
+	setParameter("Operation", operation);
 }
 
 std::string UpdateProductTopicRequest::getDesc()const

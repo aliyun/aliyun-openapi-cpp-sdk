@@ -27,17 +27,6 @@ DisableThingRequest::DisableThingRequest() :
 DisableThingRequest::~DisableThingRequest()
 {}
 
-std::string DisableThingRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DisableThingRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string DisableThingRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void DisableThingRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string DisableThingRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DisableThingRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string DisableThingRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DisableThingRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DisableThingRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DisableThingRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string DisableThingRequest::getDeviceName()const

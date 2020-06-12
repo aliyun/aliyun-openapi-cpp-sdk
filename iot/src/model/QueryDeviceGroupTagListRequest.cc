@@ -27,17 +27,6 @@ QueryDeviceGroupTagListRequest::QueryDeviceGroupTagListRequest() :
 QueryDeviceGroupTagListRequest::~QueryDeviceGroupTagListRequest()
 {}
 
-std::string QueryDeviceGroupTagListRequest::getGroupId()const
-{
-	return groupId_;
-}
-
-void QueryDeviceGroupTagListRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
-}
-
 std::string QueryDeviceGroupTagListRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,5 +47,38 @@ void QueryDeviceGroupTagListRequest::setIotInstanceId(const std::string& iotInst
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryDeviceGroupTagListRequest::getGroupId()const
+{
+	return groupId_;
+}
+
+void QueryDeviceGroupTagListRequest::setGroupId(const std::string& groupId)
+{
+	groupId_ = groupId;
+	setParameter("GroupId", groupId);
+}
+
+std::string QueryDeviceGroupTagListRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryDeviceGroupTagListRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryDeviceGroupTagListRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryDeviceGroupTagListRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

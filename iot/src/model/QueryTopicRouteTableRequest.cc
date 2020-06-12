@@ -38,17 +38,6 @@ void QueryTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string QueryTopicRouteTableRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void QueryTopicRouteTableRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string QueryTopicRouteTableRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -60,6 +49,17 @@ void QueryTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanc
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+std::string QueryTopicRouteTableRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void QueryTopicRouteTableRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
 std::string QueryTopicRouteTableRequest::getTopic()const
 {
 	return topic_;
@@ -69,5 +69,16 @@ void QueryTopicRouteTableRequest::setTopic(const std::string& topic)
 {
 	topic_ = topic;
 	setParameter("Topic", topic);
+}
+
+std::string QueryTopicRouteTableRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryTopicRouteTableRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

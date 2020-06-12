@@ -45,26 +45,32 @@ namespace AlibabaCloud
 				BatchAddThingTopoRequest();
 				~BatchAddThingTopoRequest();
 
-				std::string getExt()const;
-				void setExt(const std::string& ext);
 				std::string getGwProductKey()const;
 				void setGwProductKey(const std::string& gwProductKey);
-				std::vector<TopoAddItem> getTopoAddItem()const;
-				void setTopoAddItem(const std::vector<TopoAddItem>& topoAddItem);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getGwDeviceName()const;
-				void setGwDeviceName(const std::string& gwDeviceName);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::string getExt()const;
+				void setExt(const std::string& ext);
+				std::vector<TopoAddItem> getTopoAddItem()const;
+				void setTopoAddItem(const std::vector<TopoAddItem>& topoAddItem);
+				std::string getGwDeviceName()const;
+				void setGwDeviceName(const std::string& gwDeviceName);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string ext_;
 				std::string gwProductKey_;
-				std::vector<TopoAddItem> topoAddItem_;
 				std::string accessKeyId_;
-				std::string gwDeviceName_;
 				std::string iotInstanceId_;
+				std::string ext_;
+				std::vector<TopoAddItem> topoAddItem_;
+				std::string gwDeviceName_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

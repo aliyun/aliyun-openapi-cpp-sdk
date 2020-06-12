@@ -27,30 +27,6 @@ DeleteThingModelRequest::DeleteThingModelRequest() :
 DeleteThingModelRequest::~DeleteThingModelRequest()
 {}
 
-std::vector<std::string> DeleteThingModelRequest::getServiceIdentifier()const
-{
-	return serviceIdentifier_;
-}
-
-void DeleteThingModelRequest::setServiceIdentifier(const std::vector<std::string>& serviceIdentifier)
-{
-	serviceIdentifier_ = serviceIdentifier;
-	for(int dep1 = 0; dep1!= serviceIdentifier.size(); dep1++) {
-		setParameter("ServiceIdentifier."+ std::to_string(dep1), serviceIdentifier.at(dep1));
-	}
-}
-
-std::string DeleteThingModelRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteThingModelRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string DeleteThingModelRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -95,6 +71,52 @@ void DeleteThingModelRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::vector<std::string> DeleteThingModelRequest::getServiceIdentifier()const
+{
+	return serviceIdentifier_;
+}
+
+void DeleteThingModelRequest::setServiceIdentifier(const std::vector<std::string>& serviceIdentifier)
+{
+	serviceIdentifier_ = serviceIdentifier;
+	for(int dep1 = 0; dep1!= serviceIdentifier.size(); dep1++) {
+		setParameter("ServiceIdentifier."+ std::to_string(dep1), serviceIdentifier.at(dep1));
+	}
+}
+
+std::string DeleteThingModelRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteThingModelRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string DeleteThingModelRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteThingModelRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteThingModelRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteThingModelRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::vector<std::string> DeleteThingModelRequest::getEventIdentifier()const

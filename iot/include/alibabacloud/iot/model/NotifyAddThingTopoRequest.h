@@ -41,20 +41,26 @@ namespace AlibabaCloud
 				void setDeviceListStr(const std::string& deviceListStr);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getGwDeviceName()const;
-				void setGwDeviceName(const std::string& gwDeviceName);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getGwIotId()const;
 				void setGwIotId(const std::string& gwIotId);
+				std::string getGwDeviceName()const;
+				void setGwDeviceName(const std::string& gwDeviceName);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
 				std::string gwProductKey_;
 				std::string deviceListStr_;
 				std::string accessKeyId_;
-				std::string gwDeviceName_;
 				std::string iotInstanceId_;
 				std::string gwIotId_;
+				std::string gwDeviceName_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

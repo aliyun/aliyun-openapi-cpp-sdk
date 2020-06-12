@@ -38,17 +38,6 @@ void CreateDeviceGroupRequest::setSuperGroupId(const std::string& superGroupId)
 	setParameter("SuperGroupId", superGroupId);
 }
 
-std::string CreateDeviceGroupRequest::getGroupName()const
-{
-	return groupName_;
-}
-
-void CreateDeviceGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
-}
-
 std::string CreateDeviceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -58,6 +47,28 @@ void CreateDeviceGroupRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDeviceGroupRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void CreateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string CreateDeviceGroupRequest::getGroupName()const
+{
+	return groupName_;
+}
+
+void CreateDeviceGroupRequest::setGroupName(const std::string& groupName)
+{
+	groupName_ = groupName;
+	setParameter("GroupName", groupName);
 }
 
 std::string CreateDeviceGroupRequest::getGroupDesc()const
@@ -71,14 +82,25 @@ void CreateDeviceGroupRequest::setGroupDesc(const std::string& groupDesc)
 	setParameter("GroupDesc", groupDesc);
 }
 
-std::string CreateDeviceGroupRequest::getIotInstanceId()const
+std::string CreateDeviceGroupRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void CreateDeviceGroupRequest::setIotInstanceId(const std::string& iotInstanceId)
+void CreateDeviceGroupRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateDeviceGroupRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateDeviceGroupRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

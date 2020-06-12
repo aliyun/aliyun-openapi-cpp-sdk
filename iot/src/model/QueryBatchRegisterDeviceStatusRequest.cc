@@ -27,17 +27,6 @@ QueryBatchRegisterDeviceStatusRequest::QueryBatchRegisterDeviceStatusRequest() :
 QueryBatchRegisterDeviceStatusRequest::~QueryBatchRegisterDeviceStatusRequest()
 {}
 
-std::string QueryBatchRegisterDeviceStatusRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void QueryBatchRegisterDeviceStatusRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string QueryBatchRegisterDeviceStatusRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -47,6 +36,28 @@ void QueryBatchRegisterDeviceStatusRequest::setAccessKeyId(const std::string& ac
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 long QueryBatchRegisterDeviceStatusRequest::getApplyId()const
@@ -60,14 +71,25 @@ void QueryBatchRegisterDeviceStatusRequest::setApplyId(long applyId)
 	setParameter("ApplyId", std::to_string(applyId));
 }
 
-std::string QueryBatchRegisterDeviceStatusRequest::getIotInstanceId()const
+std::string QueryBatchRegisterDeviceStatusRequest::getApiProduct()const
 {
-	return iotInstanceId_;
+	return apiProduct_;
 }
 
-void QueryBatchRegisterDeviceStatusRequest::setIotInstanceId(const std::string& iotInstanceId)
+void QueryBatchRegisterDeviceStatusRequest::setApiProduct(const std::string& apiProduct)
 {
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string QueryBatchRegisterDeviceStatusRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void QueryBatchRegisterDeviceStatusRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

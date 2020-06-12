@@ -35,23 +35,29 @@ namespace AlibabaCloud
 				QueryDeviceListByDeviceGroupRequest();
 				~QueryDeviceListByDeviceGroupRequest();
 
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				int getCurrentPage()const;
-				void setCurrentPage(int currentPage);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getGroupId()const;
+				void setGroupId(const std::string& groupId);
+				int getCurrentPage()const;
+				void setCurrentPage(int currentPage);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 
             private:
-				std::string groupId_;
-				int currentPage_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
 				int pageSize_;
+				std::string groupId_;
+				int currentPage_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 
 			};
 		}

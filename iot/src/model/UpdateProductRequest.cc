@@ -38,17 +38,6 @@ void UpdateProductRequest::setDescription(const std::string& description)
 	setParameter("Description", description);
 }
 
-std::string UpdateProductRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void UpdateProductRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string UpdateProductRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -80,5 +69,38 @@ void UpdateProductRequest::setProductName(const std::string& productName)
 {
 	productName_ = productName;
 	setParameter("ProductName", productName);
+}
+
+std::string UpdateProductRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void UpdateProductRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string UpdateProductRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void UpdateProductRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string UpdateProductRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void UpdateProductRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

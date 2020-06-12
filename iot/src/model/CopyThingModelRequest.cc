@@ -27,17 +27,6 @@ CopyThingModelRequest::CopyThingModelRequest() :
 CopyThingModelRequest::~CopyThingModelRequest()
 {}
 
-std::string CopyThingModelRequest::getSourceProductKey()const
-{
-	return sourceProductKey_;
-}
-
-void CopyThingModelRequest::setSourceProductKey(const std::string& sourceProductKey)
-{
-	sourceProductKey_ = sourceProductKey;
-	setParameter("SourceProductKey", sourceProductKey);
-}
-
 std::string CopyThingModelRequest::getTargetProductKey()const
 {
 	return targetProductKey_;
@@ -91,5 +80,38 @@ void CopyThingModelRequest::setSourceModelVersion(const std::string& sourceModel
 {
 	sourceModelVersion_ = sourceModelVersion;
 	setParameter("SourceModelVersion", sourceModelVersion);
+}
+
+std::string CopyThingModelRequest::getSourceProductKey()const
+{
+	return sourceProductKey_;
+}
+
+void CopyThingModelRequest::setSourceProductKey(const std::string& sourceProductKey)
+{
+	sourceProductKey_ = sourceProductKey;
+	setParameter("SourceProductKey", sourceProductKey);
+}
+
+std::string CopyThingModelRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CopyThingModelRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CopyThingModelRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CopyThingModelRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

@@ -27,6 +27,28 @@ DeleteTopicRouteTableRequest::DeleteTopicRouteTableRequest() :
 DeleteTopicRouteTableRequest::~DeleteTopicRouteTableRequest()
 {}
 
+std::string DeleteTopicRouteTableRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteTopicRouteTableRequest::getIotInstanceId()const
+{
+	return iotInstanceId_;
+}
+
+void DeleteTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
+{
+	iotInstanceId_ = iotInstanceId;
+	setParameter("IotInstanceId", iotInstanceId);
+}
+
 std::vector<std::string> DeleteTopicRouteTableRequest::getDstTopic()const
 {
 	return dstTopic_;
@@ -40,37 +62,26 @@ void DeleteTopicRouteTableRequest::setDstTopic(const std::vector<std::string>& d
 	}
 }
 
-std::string DeleteTopicRouteTableRequest::getAccessKeyId()const
+std::string DeleteTopicRouteTableRequest::getApiProduct()const
 {
-	return accessKeyId_;
+	return apiProduct_;
 }
 
-void DeleteTopicRouteTableRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteTopicRouteTableRequest::setApiProduct(const std::string& apiProduct)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
 }
 
-std::string DeleteTopicRouteTableRequest::getRegionId()const
+std::string DeleteTopicRouteTableRequest::getApiRevision()const
 {
-	return regionId_;
+	return apiRevision_;
 }
 
-void DeleteTopicRouteTableRequest::setRegionId(const std::string& regionId)
+void DeleteTopicRouteTableRequest::setApiRevision(const std::string& apiRevision)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
-std::string DeleteTopicRouteTableRequest::getIotInstanceId()const
-{
-	return iotInstanceId_;
-}
-
-void DeleteTopicRouteTableRequest::setIotInstanceId(const std::string& iotInstanceId)
-{
-	iotInstanceId_ = iotInstanceId;
-	setParameter("IotInstanceId", iotInstanceId);
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string DeleteTopicRouteTableRequest::getSrcTopic()const

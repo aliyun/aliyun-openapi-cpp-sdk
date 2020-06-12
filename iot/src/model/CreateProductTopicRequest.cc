@@ -27,17 +27,6 @@ CreateProductTopicRequest::CreateProductTopicRequest() :
 CreateProductTopicRequest::~CreateProductTopicRequest()
 {}
 
-std::string CreateProductTopicRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void CreateProductTopicRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string CreateProductTopicRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +58,39 @@ void CreateProductTopicRequest::setTopicShortName(const std::string& topicShortN
 {
 	topicShortName_ = topicShortName;
 	setParameter("TopicShortName", topicShortName);
+}
+
+std::string CreateProductTopicRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void CreateProductTopicRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string CreateProductTopicRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateProductTopicRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string CreateProductTopicRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateProductTopicRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string CreateProductTopicRequest::getOperation()const

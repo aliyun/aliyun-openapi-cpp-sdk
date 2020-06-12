@@ -27,17 +27,6 @@ GetThingTopoRequest::GetThingTopoRequest() :
 GetThingTopoRequest::~GetThingTopoRequest()
 {}
 
-std::string GetThingTopoRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void GetThingTopoRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string GetThingTopoRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,17 +49,6 @@ void GetThingTopoRequest::setIotId(const std::string& iotId)
 	setParameter("IotId", iotId);
 }
 
-int GetThingTopoRequest::getPageNo()const
-{
-	return pageNo_;
-}
-
-void GetThingTopoRequest::setPageNo(int pageNo)
-{
-	pageNo_ = pageNo;
-	setParameter("PageNo", std::to_string(pageNo));
-}
-
 std::string GetThingTopoRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -91,6 +69,50 @@ void GetThingTopoRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
 	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string GetThingTopoRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetThingTopoRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+int GetThingTopoRequest::getPageNo()const
+{
+	return pageNo_;
+}
+
+void GetThingTopoRequest::setPageNo(int pageNo)
+{
+	pageNo_ = pageNo;
+	setParameter("PageNo", std::to_string(pageNo));
+}
+
+std::string GetThingTopoRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void GetThingTopoRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string GetThingTopoRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void GetThingTopoRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
 std::string GetThingTopoRequest::getDeviceName()const

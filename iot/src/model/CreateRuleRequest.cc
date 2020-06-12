@@ -137,6 +137,17 @@ void CreateRuleRequest::setProductKey(const std::string& productKey)
 	setParameter("ProductKey", productKey);
 }
 
+std::string CreateRuleRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void CreateRuleRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
 std::string CreateRuleRequest::getName()const
 {
 	return name_;
@@ -146,5 +157,16 @@ void CreateRuleRequest::setName(const std::string& name)
 {
 	name_ = name;
 	setParameter("Name", name);
+}
+
+std::string CreateRuleRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void CreateRuleRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 

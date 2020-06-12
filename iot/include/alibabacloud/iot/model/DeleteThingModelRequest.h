@@ -35,10 +35,6 @@ namespace AlibabaCloud
 				DeleteThingModelRequest();
 				~DeleteThingModelRequest();
 
-				std::vector<std::string> getServiceIdentifier()const;
-				void setServiceIdentifier(const std::vector<std::string>& serviceIdentifier);
-				std::string getProductKey()const;
-				void setProductKey(const std::string& productKey);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceGroupId()const;
@@ -47,16 +43,26 @@ namespace AlibabaCloud
 				void setPropertyIdentifier(const std::vector<std::string>& propertyIdentifier);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				std::vector<std::string> getServiceIdentifier()const;
+				void setServiceIdentifier(const std::vector<std::string>& serviceIdentifier);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
+				std::string getApiProduct()const;
+				void setApiProduct(const std::string& apiProduct);
+				std::string getApiRevision()const;
+				void setApiRevision(const std::string& apiRevision);
 				std::vector<std::string> getEventIdentifier()const;
 				void setEventIdentifier(const std::vector<std::string>& eventIdentifier);
 
             private:
-				std::vector<std::string> serviceIdentifier_;
-				std::string productKey_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
 				std::vector<std::string> propertyIdentifier_;
 				std::string iotInstanceId_;
+				std::vector<std::string> serviceIdentifier_;
+				std::string productKey_;
+				std::string apiProduct_;
+				std::string apiRevision_;
 				std::vector<std::string> eventIdentifier_;
 
 			};

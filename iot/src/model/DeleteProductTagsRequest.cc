@@ -27,17 +27,6 @@ DeleteProductTagsRequest::DeleteProductTagsRequest() :
 DeleteProductTagsRequest::~DeleteProductTagsRequest()
 {}
 
-std::string DeleteProductTagsRequest::getProductKey()const
-{
-	return productKey_;
-}
-
-void DeleteProductTagsRequest::setProductKey(const std::string& productKey)
-{
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
-}
-
 std::string DeleteProductTagsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -71,5 +60,38 @@ void DeleteProductTagsRequest::setProductTagKey(const std::vector<std::string>& 
 	for(int dep1 = 0; dep1!= productTagKey.size(); dep1++) {
 		setParameter("ProductTagKey."+ std::to_string(dep1), productTagKey.at(dep1));
 	}
+}
+
+std::string DeleteProductTagsRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void DeleteProductTagsRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
+}
+
+std::string DeleteProductTagsRequest::getApiProduct()const
+{
+	return apiProduct_;
+}
+
+void DeleteProductTagsRequest::setApiProduct(const std::string& apiProduct)
+{
+	apiProduct_ = apiProduct;
+	setBodyParameter("ApiProduct", apiProduct);
+}
+
+std::string DeleteProductTagsRequest::getApiRevision()const
+{
+	return apiRevision_;
+}
+
+void DeleteProductTagsRequest::setApiRevision(const std::string& apiRevision)
+{
+	apiRevision_ = apiRevision;
+	setBodyParameter("ApiRevision", apiRevision);
 }
 
