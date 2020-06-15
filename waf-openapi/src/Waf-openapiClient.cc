@@ -159,42 +159,6 @@ Waf_openapiClient::CreateDomainOutcomeCallable Waf_openapiClient::createDomainCa
 	return task->get_future();
 }
 
-Waf_openapiClient::CreateIPBlockOutcome Waf_openapiClient::createIPBlock(const CreateIPBlockRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateIPBlockOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateIPBlockOutcome(CreateIPBlockResult(outcome.result()));
-	else
-		return CreateIPBlockOutcome(outcome.error());
-}
-
-void Waf_openapiClient::createIPBlockAsync(const CreateIPBlockRequest& request, const CreateIPBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createIPBlock(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::CreateIPBlockOutcomeCallable Waf_openapiClient::createIPBlockCallable(const CreateIPBlockRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateIPBlockOutcome()>>(
-			[this, request]()
-			{
-			return this->createIPBlock(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::CreateProtectionModuleRuleOutcome Waf_openapiClient::createProtectionModuleRule(const CreateProtectionModuleRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -555,42 +519,6 @@ Waf_openapiClient::DescribeDomainRuleGroupOutcomeCallable Waf_openapiClient::des
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribeDomainStatusOutcome Waf_openapiClient::describeDomainStatus(const DescribeDomainStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainStatusOutcome(DescribeDomainStatusResult(outcome.result()));
-	else
-		return DescribeDomainStatusOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeDomainStatusAsync(const DescribeDomainStatusRequest& request, const DescribeDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeDomainStatusOutcomeCallable Waf_openapiClient::describeDomainStatusCallable(const DescribeDomainStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeInstanceInfoOutcome Waf_openapiClient::describeInstanceInfo(const DescribeInstanceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +555,42 @@ Waf_openapiClient::DescribeInstanceInfoOutcomeCallable Waf_openapiClient::descri
 	return task->get_future();
 }
 
+Waf_openapiClient::DescribeInstanceInfosOutcome Waf_openapiClient::describeInstanceInfos(const DescribeInstanceInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceInfosOutcome(DescribeInstanceInfosResult(outcome.result()));
+	else
+		return DescribeInstanceInfosOutcome(outcome.error());
+}
+
+void Waf_openapiClient::describeInstanceInfosAsync(const DescribeInstanceInfosRequest& request, const DescribeInstanceInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Waf_openapiClient::DescribeInstanceInfosOutcomeCallable Waf_openapiClient::describeInstanceInfosCallable(const DescribeInstanceInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Waf_openapiClient::DescribeInstanceSpecInfoOutcome Waf_openapiClient::describeInstanceSpecInfo(const DescribeInstanceSpecInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,42 +621,6 @@ Waf_openapiClient::DescribeInstanceSpecInfoOutcomeCallable Waf_openapiClient::de
 			[this, request]()
 			{
 			return this->describeInstanceSpecInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeProtectBlockSummaryOutcome Waf_openapiClient::describeProtectBlockSummary(const DescribeProtectBlockSummaryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeProtectBlockSummaryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeProtectBlockSummaryOutcome(DescribeProtectBlockSummaryResult(outcome.result()));
-	else
-		return DescribeProtectBlockSummaryOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeProtectBlockSummaryAsync(const DescribeProtectBlockSummaryRequest& request, const DescribeProtectBlockSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeProtectBlockSummary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeProtectBlockSummaryOutcomeCallable Waf_openapiClient::describeProtectBlockSummaryCallable(const DescribeProtectBlockSummaryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeProtectBlockSummaryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeProtectBlockSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -771,42 +699,6 @@ Waf_openapiClient::DescribeProtectionModuleRulesOutcomeCallable Waf_openapiClien
 	return task->get_future();
 }
 
-Waf_openapiClient::DescribeProtectionModuleRulesByIdListOutcome Waf_openapiClient::describeProtectionModuleRulesByIdList(const DescribeProtectionModuleRulesByIdListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeProtectionModuleRulesByIdListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeProtectionModuleRulesByIdListOutcome(DescribeProtectionModuleRulesByIdListResult(outcome.result()));
-	else
-		return DescribeProtectionModuleRulesByIdListOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeProtectionModuleRulesByIdListAsync(const DescribeProtectionModuleRulesByIdListRequest& request, const DescribeProtectionModuleRulesByIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeProtectionModuleRulesByIdList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeProtectionModuleRulesByIdListOutcomeCallable Waf_openapiClient::describeProtectionModuleRulesByIdListCallable(const DescribeProtectionModuleRulesByIdListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeProtectionModuleRulesByIdListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeProtectionModuleRulesByIdList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 Waf_openapiClient::DescribeProtectionModuleStatusOutcome Waf_openapiClient::describeProtectionModuleStatus(const DescribeProtectionModuleStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -837,114 +729,6 @@ Waf_openapiClient::DescribeProtectionModuleStatusOutcomeCallable Waf_openapiClie
 			[this, request]()
 			{
 			return this->describeProtectionModuleStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeRealProtectSummaryOutcome Waf_openapiClient::describeRealProtectSummary(const DescribeRealProtectSummaryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRealProtectSummaryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRealProtectSummaryOutcome(DescribeRealProtectSummaryResult(outcome.result()));
-	else
-		return DescribeRealProtectSummaryOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeRealProtectSummaryAsync(const DescribeRealProtectSummaryRequest& request, const DescribeRealProtectSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRealProtectSummary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeRealProtectSummaryOutcomeCallable Waf_openapiClient::describeRealProtectSummaryCallable(const DescribeRealProtectSummaryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRealProtectSummaryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRealProtectSummary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeRuleMonitorOutcome Waf_openapiClient::describeRuleMonitor(const DescribeRuleMonitorRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRuleMonitorOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRuleMonitorOutcome(DescribeRuleMonitorResult(outcome.result()));
-	else
-		return DescribeRuleMonitorOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeRuleMonitorAsync(const DescribeRuleMonitorRequest& request, const DescribeRuleMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRuleMonitor(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeRuleMonitorOutcomeCallable Waf_openapiClient::describeRuleMonitorCallable(const DescribeRuleMonitorRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRuleMonitorOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRuleMonitor(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Waf_openapiClient::DescribeRuleSummaryOutcome Waf_openapiClient::describeRuleSummary(const DescribeRuleSummaryRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRuleSummaryOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRuleSummaryOutcome(DescribeRuleSummaryResult(outcome.result()));
-	else
-		return DescribeRuleSummaryOutcome(outcome.error());
-}
-
-void Waf_openapiClient::describeRuleSummaryAsync(const DescribeRuleSummaryRequest& request, const DescribeRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRuleSummary(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Waf_openapiClient::DescribeRuleSummaryOutcomeCallable Waf_openapiClient::describeRuleSummaryCallable(const DescribeRuleSummaryRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRuleSummaryOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRuleSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

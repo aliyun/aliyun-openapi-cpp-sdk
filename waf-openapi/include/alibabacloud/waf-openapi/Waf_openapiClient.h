@@ -28,8 +28,6 @@
 #include "model/CreateCertificateByCertificateIdResult.h"
 #include "model/CreateDomainRequest.h"
 #include "model/CreateDomainResult.h"
-#include "model/CreateIPBlockRequest.h"
-#include "model/CreateIPBlockResult.h"
 #include "model/CreateProtectionModuleRuleRequest.h"
 #include "model/CreateProtectionModuleRuleResult.h"
 #include "model/DeleteDomainRequest.h"
@@ -50,28 +48,18 @@
 #include "model/DescribeDomainNamesResult.h"
 #include "model/DescribeDomainRuleGroupRequest.h"
 #include "model/DescribeDomainRuleGroupResult.h"
-#include "model/DescribeDomainStatusRequest.h"
-#include "model/DescribeDomainStatusResult.h"
 #include "model/DescribeInstanceInfoRequest.h"
 #include "model/DescribeInstanceInfoResult.h"
+#include "model/DescribeInstanceInfosRequest.h"
+#include "model/DescribeInstanceInfosResult.h"
 #include "model/DescribeInstanceSpecInfoRequest.h"
 #include "model/DescribeInstanceSpecInfoResult.h"
-#include "model/DescribeProtectBlockSummaryRequest.h"
-#include "model/DescribeProtectBlockSummaryResult.h"
 #include "model/DescribeProtectionModuleModeRequest.h"
 #include "model/DescribeProtectionModuleModeResult.h"
 #include "model/DescribeProtectionModuleRulesRequest.h"
 #include "model/DescribeProtectionModuleRulesResult.h"
-#include "model/DescribeProtectionModuleRulesByIdListRequest.h"
-#include "model/DescribeProtectionModuleRulesByIdListResult.h"
 #include "model/DescribeProtectionModuleStatusRequest.h"
 #include "model/DescribeProtectionModuleStatusResult.h"
-#include "model/DescribeRealProtectSummaryRequest.h"
-#include "model/DescribeRealProtectSummaryResult.h"
-#include "model/DescribeRuleMonitorRequest.h"
-#include "model/DescribeRuleMonitorResult.h"
-#include "model/DescribeRuleSummaryRequest.h"
-#include "model/DescribeRuleSummaryResult.h"
 #include "model/ModifyDomainRequest.h"
 #include "model/ModifyDomainResult.h"
 #include "model/ModifyDomainClusterTypeRequest.h"
@@ -112,9 +100,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDomainResult> CreateDomainOutcome;
 			typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::CreateDomainRequest&, const CreateDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDomainAsyncHandler;
-			typedef Outcome<Error, Model::CreateIPBlockResult> CreateIPBlockOutcome;
-			typedef std::future<CreateIPBlockOutcome> CreateIPBlockOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::CreateIPBlockRequest&, const CreateIPBlockOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIPBlockAsyncHandler;
 			typedef Outcome<Error, Model::CreateProtectionModuleRuleResult> CreateProtectionModuleRuleOutcome;
 			typedef std::future<CreateProtectionModuleRuleOutcome> CreateProtectionModuleRuleOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::CreateProtectionModuleRuleRequest&, const CreateProtectionModuleRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectionModuleRuleAsyncHandler;
@@ -145,39 +130,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainRuleGroupResult> DescribeDomainRuleGroupOutcome;
 			typedef std::future<DescribeDomainRuleGroupOutcome> DescribeDomainRuleGroupOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainRuleGroupRequest&, const DescribeDomainRuleGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainRuleGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDomainStatusResult> DescribeDomainStatusOutcome;
-			typedef std::future<DescribeDomainStatusOutcome> DescribeDomainStatusOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeDomainStatusRequest&, const DescribeDomainStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceInfoResult> DescribeInstanceInfoOutcome;
 			typedef std::future<DescribeInstanceInfoOutcome> DescribeInstanceInfoOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceInfoRequest&, const DescribeInstanceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceInfosResult> DescribeInstanceInfosOutcome;
+			typedef std::future<DescribeInstanceInfosOutcome> DescribeInstanceInfosOutcomeCallable;
+			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceInfosRequest&, const DescribeInstanceInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceInfosAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceSpecInfoResult> DescribeInstanceSpecInfoOutcome;
 			typedef std::future<DescribeInstanceSpecInfoOutcome> DescribeInstanceSpecInfoOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeInstanceSpecInfoRequest&, const DescribeInstanceSpecInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecInfoAsyncHandler;
-			typedef Outcome<Error, Model::DescribeProtectBlockSummaryResult> DescribeProtectBlockSummaryOutcome;
-			typedef std::future<DescribeProtectBlockSummaryOutcome> DescribeProtectBlockSummaryOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectBlockSummaryRequest&, const DescribeProtectBlockSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectBlockSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleModeResult> DescribeProtectionModuleModeOutcome;
 			typedef std::future<DescribeProtectionModuleModeOutcome> DescribeProtectionModuleModeOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleModeRequest&, const DescribeProtectionModuleModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleModeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleRulesResult> DescribeProtectionModuleRulesOutcome;
 			typedef std::future<DescribeProtectionModuleRulesOutcome> DescribeProtectionModuleRulesOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesRequest&, const DescribeProtectionModuleRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeProtectionModuleRulesByIdListResult> DescribeProtectionModuleRulesByIdListOutcome;
-			typedef std::future<DescribeProtectionModuleRulesByIdListOutcome> DescribeProtectionModuleRulesByIdListOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleRulesByIdListRequest&, const DescribeProtectionModuleRulesByIdListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleRulesByIdListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeProtectionModuleStatusResult> DescribeProtectionModuleStatusOutcome;
 			typedef std::future<DescribeProtectionModuleStatusOutcome> DescribeProtectionModuleStatusOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeProtectionModuleStatusRequest&, const DescribeProtectionModuleStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModuleStatusAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRealProtectSummaryResult> DescribeRealProtectSummaryOutcome;
-			typedef std::future<DescribeRealProtectSummaryOutcome> DescribeRealProtectSummaryOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRealProtectSummaryRequest&, const DescribeRealProtectSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealProtectSummaryAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRuleMonitorResult> DescribeRuleMonitorOutcome;
-			typedef std::future<DescribeRuleMonitorOutcome> DescribeRuleMonitorOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRuleMonitorRequest&, const DescribeRuleMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleMonitorAsyncHandler;
-			typedef Outcome<Error, Model::DescribeRuleSummaryResult> DescribeRuleSummaryOutcome;
-			typedef std::future<DescribeRuleSummaryOutcome> DescribeRuleSummaryOutcomeCallable;
-			typedef std::function<void(const Waf_openapiClient*, const Model::DescribeRuleSummaryRequest&, const DescribeRuleSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleSummaryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDomainResult> ModifyDomainOutcome;
 			typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
 			typedef std::function<void(const Waf_openapiClient*, const Model::ModifyDomainRequest&, const ModifyDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
@@ -225,9 +195,6 @@ namespace AlibabaCloud
 			CreateDomainOutcome createDomain(const Model::CreateDomainRequest &request)const;
 			void createDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDomainOutcomeCallable createDomainCallable(const Model::CreateDomainRequest& request) const;
-			CreateIPBlockOutcome createIPBlock(const Model::CreateIPBlockRequest &request)const;
-			void createIPBlockAsync(const Model::CreateIPBlockRequest& request, const CreateIPBlockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateIPBlockOutcomeCallable createIPBlockCallable(const Model::CreateIPBlockRequest& request) const;
 			CreateProtectionModuleRuleOutcome createProtectionModuleRule(const Model::CreateProtectionModuleRuleRequest &request)const;
 			void createProtectionModuleRuleAsync(const Model::CreateProtectionModuleRuleRequest& request, const CreateProtectionModuleRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateProtectionModuleRuleOutcomeCallable createProtectionModuleRuleCallable(const Model::CreateProtectionModuleRuleRequest& request) const;
@@ -258,39 +225,24 @@ namespace AlibabaCloud
 			DescribeDomainRuleGroupOutcome describeDomainRuleGroup(const Model::DescribeDomainRuleGroupRequest &request)const;
 			void describeDomainRuleGroupAsync(const Model::DescribeDomainRuleGroupRequest& request, const DescribeDomainRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainRuleGroupOutcomeCallable describeDomainRuleGroupCallable(const Model::DescribeDomainRuleGroupRequest& request) const;
-			DescribeDomainStatusOutcome describeDomainStatus(const Model::DescribeDomainStatusRequest &request)const;
-			void describeDomainStatusAsync(const Model::DescribeDomainStatusRequest& request, const DescribeDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDomainStatusOutcomeCallable describeDomainStatusCallable(const Model::DescribeDomainStatusRequest& request) const;
 			DescribeInstanceInfoOutcome describeInstanceInfo(const Model::DescribeInstanceInfoRequest &request)const;
 			void describeInstanceInfoAsync(const Model::DescribeInstanceInfoRequest& request, const DescribeInstanceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceInfoOutcomeCallable describeInstanceInfoCallable(const Model::DescribeInstanceInfoRequest& request) const;
+			DescribeInstanceInfosOutcome describeInstanceInfos(const Model::DescribeInstanceInfosRequest &request)const;
+			void describeInstanceInfosAsync(const Model::DescribeInstanceInfosRequest& request, const DescribeInstanceInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceInfosOutcomeCallable describeInstanceInfosCallable(const Model::DescribeInstanceInfosRequest& request) const;
 			DescribeInstanceSpecInfoOutcome describeInstanceSpecInfo(const Model::DescribeInstanceSpecInfoRequest &request)const;
 			void describeInstanceSpecInfoAsync(const Model::DescribeInstanceSpecInfoRequest& request, const DescribeInstanceSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSpecInfoOutcomeCallable describeInstanceSpecInfoCallable(const Model::DescribeInstanceSpecInfoRequest& request) const;
-			DescribeProtectBlockSummaryOutcome describeProtectBlockSummary(const Model::DescribeProtectBlockSummaryRequest &request)const;
-			void describeProtectBlockSummaryAsync(const Model::DescribeProtectBlockSummaryRequest& request, const DescribeProtectBlockSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeProtectBlockSummaryOutcomeCallable describeProtectBlockSummaryCallable(const Model::DescribeProtectBlockSummaryRequest& request) const;
 			DescribeProtectionModuleModeOutcome describeProtectionModuleMode(const Model::DescribeProtectionModuleModeRequest &request)const;
 			void describeProtectionModuleModeAsync(const Model::DescribeProtectionModuleModeRequest& request, const DescribeProtectionModuleModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleModeOutcomeCallable describeProtectionModuleModeCallable(const Model::DescribeProtectionModuleModeRequest& request) const;
 			DescribeProtectionModuleRulesOutcome describeProtectionModuleRules(const Model::DescribeProtectionModuleRulesRequest &request)const;
 			void describeProtectionModuleRulesAsync(const Model::DescribeProtectionModuleRulesRequest& request, const DescribeProtectionModuleRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleRulesOutcomeCallable describeProtectionModuleRulesCallable(const Model::DescribeProtectionModuleRulesRequest& request) const;
-			DescribeProtectionModuleRulesByIdListOutcome describeProtectionModuleRulesByIdList(const Model::DescribeProtectionModuleRulesByIdListRequest &request)const;
-			void describeProtectionModuleRulesByIdListAsync(const Model::DescribeProtectionModuleRulesByIdListRequest& request, const DescribeProtectionModuleRulesByIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeProtectionModuleRulesByIdListOutcomeCallable describeProtectionModuleRulesByIdListCallable(const Model::DescribeProtectionModuleRulesByIdListRequest& request) const;
 			DescribeProtectionModuleStatusOutcome describeProtectionModuleStatus(const Model::DescribeProtectionModuleStatusRequest &request)const;
 			void describeProtectionModuleStatusAsync(const Model::DescribeProtectionModuleStatusRequest& request, const DescribeProtectionModuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeProtectionModuleStatusOutcomeCallable describeProtectionModuleStatusCallable(const Model::DescribeProtectionModuleStatusRequest& request) const;
-			DescribeRealProtectSummaryOutcome describeRealProtectSummary(const Model::DescribeRealProtectSummaryRequest &request)const;
-			void describeRealProtectSummaryAsync(const Model::DescribeRealProtectSummaryRequest& request, const DescribeRealProtectSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRealProtectSummaryOutcomeCallable describeRealProtectSummaryCallable(const Model::DescribeRealProtectSummaryRequest& request) const;
-			DescribeRuleMonitorOutcome describeRuleMonitor(const Model::DescribeRuleMonitorRequest &request)const;
-			void describeRuleMonitorAsync(const Model::DescribeRuleMonitorRequest& request, const DescribeRuleMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRuleMonitorOutcomeCallable describeRuleMonitorCallable(const Model::DescribeRuleMonitorRequest& request) const;
-			DescribeRuleSummaryOutcome describeRuleSummary(const Model::DescribeRuleSummaryRequest &request)const;
-			void describeRuleSummaryAsync(const Model::DescribeRuleSummaryRequest& request, const DescribeRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeRuleSummaryOutcomeCallable describeRuleSummaryCallable(const Model::DescribeRuleSummaryRequest& request) const;
 			ModifyDomainOutcome modifyDomain(const Model::ModifyDomainRequest &request)const;
 			void modifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDomainOutcomeCallable modifyDomainCallable(const Model::ModifyDomainRequest& request) const;

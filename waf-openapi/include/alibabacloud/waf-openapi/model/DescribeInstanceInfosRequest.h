@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINSTATUSREQUEST_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINSTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSREQUEST_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeDomainStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeInstanceInfosRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeDomainStatusRequest();
-				~DescribeDomainStatusRequest();
+				DescribeInstanceInfosRequest();
+				~DescribeInstanceInfosRequest();
 
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
-				std::string getDomain()const;
-				void setDomain(const std::string& domain);
+				std::string getInstanceSource()const;
+				void setInstanceSource(const std::string& instanceSource);
 				std::string getLang()const;
 				void setLang(const std::string& lang);
 
@@ -50,11 +50,11 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string instanceId_;
 				std::string sourceIp_;
-				std::string domain_;
+				std::string instanceSource_;
 				std::string lang_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEDOMAINSTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSREQUEST_H_

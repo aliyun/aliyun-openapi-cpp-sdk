@@ -27,8 +27,6 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/CreateCertificateByCertificateIdResult.h
 	include/alibabacloud/waf-openapi/model/CreateDomainRequest.h
 	include/alibabacloud/waf-openapi/model/CreateDomainResult.h
-	include/alibabacloud/waf-openapi/model/CreateIPBlockRequest.h
-	include/alibabacloud/waf-openapi/model/CreateIPBlockResult.h
 	include/alibabacloud/waf-openapi/model/CreateProtectionModuleRuleRequest.h
 	include/alibabacloud/waf-openapi/model/CreateProtectionModuleRuleResult.h
 	include/alibabacloud/waf-openapi/model/DeleteDomainRequest.h
@@ -49,28 +47,18 @@ set(waf-openapi_public_header_model
 	include/alibabacloud/waf-openapi/model/DescribeDomainNamesResult.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainRuleGroupRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeDomainRuleGroupResult.h
-	include/alibabacloud/waf-openapi/model/DescribeDomainStatusRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeDomainStatusResult.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceInfoRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceInfoResult.h
+	include/alibabacloud/waf-openapi/model/DescribeInstanceInfosRequest.h
+	include/alibabacloud/waf-openapi/model/DescribeInstanceInfosResult.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeInstanceSpecInfoResult.h
-	include/alibabacloud/waf-openapi/model/DescribeProtectBlockSummaryRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeProtectBlockSummaryResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleModeResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesResult.h
-	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesByIdListRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleRulesByIdListResult.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusRequest.h
 	include/alibabacloud/waf-openapi/model/DescribeProtectionModuleStatusResult.h
-	include/alibabacloud/waf-openapi/model/DescribeRealProtectSummaryRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeRealProtectSummaryResult.h
-	include/alibabacloud/waf-openapi/model/DescribeRuleMonitorRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeRuleMonitorResult.h
-	include/alibabacloud/waf-openapi/model/DescribeRuleSummaryRequest.h
-	include/alibabacloud/waf-openapi/model/DescribeRuleSummaryResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainRequest.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainResult.h
 	include/alibabacloud/waf-openapi/model/ModifyDomainClusterTypeRequest.h
@@ -102,8 +90,6 @@ set(waf-openapi_src
 	src/model/CreateCertificateByCertificateIdResult.cc
 	src/model/CreateDomainRequest.cc
 	src/model/CreateDomainResult.cc
-	src/model/CreateIPBlockRequest.cc
-	src/model/CreateIPBlockResult.cc
 	src/model/CreateProtectionModuleRuleRequest.cc
 	src/model/CreateProtectionModuleRuleResult.cc
 	src/model/DeleteDomainRequest.cc
@@ -124,28 +110,18 @@ set(waf-openapi_src
 	src/model/DescribeDomainNamesResult.cc
 	src/model/DescribeDomainRuleGroupRequest.cc
 	src/model/DescribeDomainRuleGroupResult.cc
-	src/model/DescribeDomainStatusRequest.cc
-	src/model/DescribeDomainStatusResult.cc
 	src/model/DescribeInstanceInfoRequest.cc
 	src/model/DescribeInstanceInfoResult.cc
+	src/model/DescribeInstanceInfosRequest.cc
+	src/model/DescribeInstanceInfosResult.cc
 	src/model/DescribeInstanceSpecInfoRequest.cc
 	src/model/DescribeInstanceSpecInfoResult.cc
-	src/model/DescribeProtectBlockSummaryRequest.cc
-	src/model/DescribeProtectBlockSummaryResult.cc
 	src/model/DescribeProtectionModuleModeRequest.cc
 	src/model/DescribeProtectionModuleModeResult.cc
 	src/model/DescribeProtectionModuleRulesRequest.cc
 	src/model/DescribeProtectionModuleRulesResult.cc
-	src/model/DescribeProtectionModuleRulesByIdListRequest.cc
-	src/model/DescribeProtectionModuleRulesByIdListResult.cc
 	src/model/DescribeProtectionModuleStatusRequest.cc
 	src/model/DescribeProtectionModuleStatusResult.cc
-	src/model/DescribeRealProtectSummaryRequest.cc
-	src/model/DescribeRealProtectSummaryResult.cc
-	src/model/DescribeRuleMonitorRequest.cc
-	src/model/DescribeRuleMonitorResult.cc
-	src/model/DescribeRuleSummaryRequest.cc
-	src/model/DescribeRuleSummaryResult.cc
 	src/model/ModifyDomainRequest.cc
 	src/model/ModifyDomainResult.cc
 	src/model/ModifyDomainClusterTypeRequest.cc

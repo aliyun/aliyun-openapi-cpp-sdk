@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEREALPROTECTSUMMARYRESULT_H_
-#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEREALPROTECTSUMMARYRESULT_H_
+#ifndef ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSRESULT_H_
+#define ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeRealProtectSummaryResult : public ServiceResult
+			class ALIBABACLOUD_WAF_OPENAPI_EXPORT DescribeInstanceInfosResult : public ServiceResult
 			{
 			public:
-				struct Item
+				struct InstanceInfo
 				{
-					long sdkPv;
-					long jsinjectPv;
-					long qps;
-					long intelligencePv;
-					long algorithmPv;
-					long index;
+					int status;
+					std::string subscriptionType;
+					int trial;
+					std::string instanceId;
+					int inDebt;
+					std::string region;
+					int remainDay;
+					int payType;
+					long endDate;
 				};
 
 
-				DescribeRealProtectSummaryResult();
-				explicit DescribeRealProtectSummaryResult(const std::string &payload);
-				~DescribeRealProtectSummaryResult();
-				std::vector<Item> getRealProtectSummarys()const;
+				DescribeInstanceInfosResult();
+				explicit DescribeInstanceInfosResult(const std::string &payload);
+				~DescribeInstanceInfosResult();
+				std::vector<InstanceInfo> getInstanceInfos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Item> realProtectSummarys_;
+				std::vector<InstanceInfo> instanceInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEREALPROTECTSUMMARYRESULT_H_
+#endif // !ALIBABACLOUD_WAF_OPENAPI_MODEL_DESCRIBEINSTANCEINFOSRESULT_H_
