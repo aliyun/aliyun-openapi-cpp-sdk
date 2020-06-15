@@ -159,3 +159,14 @@ void UpdateMonitorRequest::setDeviceList(const std::string& deviceList)
 	setBodyParameter("DeviceList", deviceList);
 }
 
+std::string UpdateMonitorRequest::getAlgorithmVendor()const
+{
+	return algorithmVendor_;
+}
+
+void UpdateMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+{
+	algorithmVendor_ = algorithmVendor;
+	setBodyParameter("AlgorithmVendor", algorithmVendor);
+}
+

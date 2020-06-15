@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				StopMonitorRequest();
 				~StopMonitorRequest();
 
+				std::string getAlgorithmVendor()const;
+				void setAlgorithmVendor(const std::string& algorithmVendor);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 
             private:
+				std::string algorithmVendor_;
 				std::string taskId_;
 
 			};

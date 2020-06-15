@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getAlgorithmVendor()const;
+				void setAlgorithmVendor(const std::string& algorithmVendor);
 				std::string getMinRecordId()const;
 				void setMinRecordId(const std::string& minRecordId);
 				std::string getTaskId()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 				std::string corpId_;
 				long endTime_;
 				long startTime_;
+				std::string algorithmVendor_;
 				std::string minRecordId_;
 				std::string taskId_;
 

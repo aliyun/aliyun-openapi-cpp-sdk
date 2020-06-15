@@ -43,12 +43,15 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				int getBatchIndicator()const;
 				void setBatchIndicator(int batchIndicator);
+				std::string getAlgorithmVendor()const;
+				void setAlgorithmVendor(const std::string& algorithmVendor);
 
             private:
 				std::string monitorType_;
 				std::string corpId_;
 				std::string description_;
 				int batchIndicator_;
+				std::string algorithmVendor_;
 
 			};
 		}

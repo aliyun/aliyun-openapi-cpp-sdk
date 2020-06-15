@@ -60,6 +60,17 @@ void GetMonitorResultRequest::setStartTime(long startTime)
 	setBodyParameter("StartTime", std::to_string(startTime));
 }
 
+std::string GetMonitorResultRequest::getAlgorithmVendor()const
+{
+	return algorithmVendor_;
+}
+
+void GetMonitorResultRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+{
+	algorithmVendor_ = algorithmVendor;
+	setBodyParameter("AlgorithmVendor", algorithmVendor);
+}
+
 std::string GetMonitorResultRequest::getMinRecordId()const
 {
 	return minRecordId_;

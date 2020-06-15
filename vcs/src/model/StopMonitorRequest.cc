@@ -27,6 +27,17 @@ StopMonitorRequest::StopMonitorRequest() :
 StopMonitorRequest::~StopMonitorRequest()
 {}
 
+std::string StopMonitorRequest::getAlgorithmVendor()const
+{
+	return algorithmVendor_;
+}
+
+void StopMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+{
+	algorithmVendor_ = algorithmVendor;
+	setBodyParameter("AlgorithmVendor", algorithmVendor);
+}
+
 std::string StopMonitorRequest::getTaskId()const
 {
 	return taskId_;

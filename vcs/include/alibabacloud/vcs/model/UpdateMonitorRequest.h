@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setAttributeValueList(const std::string& attributeValueList);
 				std::string getDeviceList()const;
 				void setDeviceList(const std::string& deviceList);
+				std::string getAlgorithmVendor()const;
+				void setAlgorithmVendor(const std::string& algorithmVendor);
 
             private:
 				std::string corpId_;
@@ -73,6 +75,7 @@ namespace AlibabaCloud
 				std::string picList_;
 				std::string attributeValueList_;
 				std::string deviceList_;
+				std::string algorithmVendor_;
 
 			};
 		}

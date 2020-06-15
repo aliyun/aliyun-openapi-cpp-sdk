@@ -71,3 +71,14 @@ void AddMonitorRequest::setBatchIndicator(int batchIndicator)
 	setBodyParameter("BatchIndicator", std::to_string(batchIndicator));
 }
 
+std::string AddMonitorRequest::getAlgorithmVendor()const
+{
+	return algorithmVendor_;
+}
+
+void AddMonitorRequest::setAlgorithmVendor(const std::string& algorithmVendor)
+{
+	algorithmVendor_ = algorithmVendor;
+	setBodyParameter("AlgorithmVendor", algorithmVendor);
+}
+
