@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				struct InstanceTypeModel
 				{
 					float maxPrice;
+					std::string targetImageId;
 					std::string instanceType;
 				};
 

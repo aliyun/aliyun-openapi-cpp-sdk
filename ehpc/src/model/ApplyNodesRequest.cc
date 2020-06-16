@@ -242,6 +242,7 @@ void ApplyNodesRequest::setInstanceTypeModel(const std::vector<InstanceTypeModel
 		auto instanceTypeModelObj = instanceTypeModel.at(dep1);
 		std::string instanceTypeModelObjStr = "InstanceTypeModel." + std::to_string(dep1 + 1);
 		setParameter(instanceTypeModelObjStr + ".MaxPrice", std::to_string(instanceTypeModelObj.maxPrice));
+		setParameter(instanceTypeModelObjStr + ".TargetImageId", instanceTypeModelObj.targetImageId);
 		setParameter(instanceTypeModelObjStr + ".InstanceType", instanceTypeModelObj.instanceType);
 	}
 }
