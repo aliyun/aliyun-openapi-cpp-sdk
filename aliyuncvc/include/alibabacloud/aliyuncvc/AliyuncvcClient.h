@@ -28,6 +28,10 @@
 #include "model/ActiveMeetingResult.h"
 #include "model/BatchCreateDeviceRequest.h"
 #include "model/BatchCreateDeviceResult.h"
+#include "model/BatchDeleteDevicesRequest.h"
+#include "model/BatchDeleteDevicesResult.h"
+#include "model/CallDeviceRequest.h"
+#include "model/CallDeviceResult.h"
 #include "model/CreateDeviceMeetingRequest.h"
 #include "model/CreateDeviceMeetingResult.h"
 #include "model/CreateEvaluationRequest.h"
@@ -64,6 +68,8 @@
 #include "model/GetMeetingInternationalResult.h"
 #include "model/GetMeetingMemberRequest.h"
 #include "model/GetMeetingMemberResult.h"
+#include "model/GetMembersRequest.h"
+#include "model/GetMembersResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
 #include "model/JoinDeviceMeetingRequest.h"
@@ -118,6 +124,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchCreateDeviceResult> BatchCreateDeviceOutcome;
 			typedef std::future<BatchCreateDeviceOutcome> BatchCreateDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::BatchCreateDeviceRequest&, const BatchCreateDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateDeviceAsyncHandler;
+			typedef Outcome<Error, Model::BatchDeleteDevicesResult> BatchDeleteDevicesOutcome;
+			typedef std::future<BatchDeleteDevicesOutcome> BatchDeleteDevicesOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::BatchDeleteDevicesRequest&, const BatchDeleteDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteDevicesAsyncHandler;
+			typedef Outcome<Error, Model::CallDeviceResult> CallDeviceOutcome;
+			typedef std::future<CallDeviceOutcome> CallDeviceOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::CallDeviceRequest&, const CallDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceMeetingResult> CreateDeviceMeetingOutcome;
 			typedef std::future<CreateDeviceMeetingOutcome> CreateDeviceMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CreateDeviceMeetingRequest&, const CreateDeviceMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceMeetingAsyncHandler;
@@ -172,6 +184,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMeetingMemberResult> GetMeetingMemberOutcome;
 			typedef std::future<GetMeetingMemberOutcome> GetMeetingMemberOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetMeetingMemberRequest&, const GetMeetingMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMeetingMemberAsyncHandler;
+			typedef Outcome<Error, Model::GetMembersResult> GetMembersOutcome;
+			typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetMembersRequest&, const GetMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMembersAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
@@ -240,6 +255,12 @@ namespace AlibabaCloud
 			BatchCreateDeviceOutcome batchCreateDevice(const Model::BatchCreateDeviceRequest &request)const;
 			void batchCreateDeviceAsync(const Model::BatchCreateDeviceRequest& request, const BatchCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchCreateDeviceOutcomeCallable batchCreateDeviceCallable(const Model::BatchCreateDeviceRequest& request) const;
+			BatchDeleteDevicesOutcome batchDeleteDevices(const Model::BatchDeleteDevicesRequest &request)const;
+			void batchDeleteDevicesAsync(const Model::BatchDeleteDevicesRequest& request, const BatchDeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDeleteDevicesOutcomeCallable batchDeleteDevicesCallable(const Model::BatchDeleteDevicesRequest& request) const;
+			CallDeviceOutcome callDevice(const Model::CallDeviceRequest &request)const;
+			void callDeviceAsync(const Model::CallDeviceRequest& request, const CallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CallDeviceOutcomeCallable callDeviceCallable(const Model::CallDeviceRequest& request) const;
 			CreateDeviceMeetingOutcome createDeviceMeeting(const Model::CreateDeviceMeetingRequest &request)const;
 			void createDeviceMeetingAsync(const Model::CreateDeviceMeetingRequest& request, const CreateDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceMeetingOutcomeCallable createDeviceMeetingCallable(const Model::CreateDeviceMeetingRequest& request) const;
@@ -294,6 +315,9 @@ namespace AlibabaCloud
 			GetMeetingMemberOutcome getMeetingMember(const Model::GetMeetingMemberRequest &request)const;
 			void getMeetingMemberAsync(const Model::GetMeetingMemberRequest& request, const GetMeetingMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMeetingMemberOutcomeCallable getMeetingMemberCallable(const Model::GetMeetingMemberRequest& request) const;
+			GetMembersOutcome getMembers(const Model::GetMembersRequest &request)const;
+			void getMembersAsync(const Model::GetMembersRequest& request, const GetMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMembersOutcomeCallable getMembersCallable(const Model::GetMembersRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;

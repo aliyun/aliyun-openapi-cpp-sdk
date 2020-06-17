@@ -159,6 +159,78 @@ AliyuncvcClient::BatchCreateDeviceOutcomeCallable AliyuncvcClient::batchCreateDe
 	return task->get_future();
 }
 
+AliyuncvcClient::BatchDeleteDevicesOutcome AliyuncvcClient::batchDeleteDevices(const BatchDeleteDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteDevicesOutcome(BatchDeleteDevicesResult(outcome.result()));
+	else
+		return BatchDeleteDevicesOutcome(outcome.error());
+}
+
+void AliyuncvcClient::batchDeleteDevicesAsync(const BatchDeleteDevicesRequest& request, const BatchDeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::BatchDeleteDevicesOutcomeCallable AliyuncvcClient::batchDeleteDevicesCallable(const BatchDeleteDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::CallDeviceOutcome AliyuncvcClient::callDevice(const CallDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CallDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CallDeviceOutcome(CallDeviceResult(outcome.result()));
+	else
+		return CallDeviceOutcome(outcome.error());
+}
+
+void AliyuncvcClient::callDeviceAsync(const CallDeviceRequest& request, const CallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, callDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CallDeviceOutcomeCallable AliyuncvcClient::callDeviceCallable(const CallDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CallDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->callDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::CreateDeviceMeetingOutcome AliyuncvcClient::createDeviceMeeting(const CreateDeviceMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -801,6 +873,42 @@ AliyuncvcClient::GetMeetingMemberOutcomeCallable AliyuncvcClient::getMeetingMemb
 			[this, request]()
 			{
 			return this->getMeetingMember(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::GetMembersOutcome AliyuncvcClient::getMembers(const GetMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMembersOutcome(GetMembersResult(outcome.result()));
+	else
+		return GetMembersOutcome(outcome.error());
+}
+
+void AliyuncvcClient::getMembersAsync(const GetMembersRequest& request, const GetMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::GetMembersOutcomeCallable AliyuncvcClient::getMembersCallable(const GetMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->getMembers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

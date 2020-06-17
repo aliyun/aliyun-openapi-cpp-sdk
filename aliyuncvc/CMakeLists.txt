@@ -27,6 +27,10 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/ActiveMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/BatchCreateDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/BatchCreateDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/BatchDeleteDevicesRequest.h
+	include/alibabacloud/aliyuncvc/model/BatchDeleteDevicesResult.h
+	include/alibabacloud/aliyuncvc/model/CallDeviceRequest.h
+	include/alibabacloud/aliyuncvc/model/CallDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/CreateEvaluationRequest.h
@@ -63,6 +67,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/GetMeetingInternationalResult.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberRequest.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberResult.h
+	include/alibabacloud/aliyuncvc/model/GetMembersRequest.h
+	include/alibabacloud/aliyuncvc/model/GetMembersResult.h
 	include/alibabacloud/aliyuncvc/model/GetUserRequest.h
 	include/alibabacloud/aliyuncvc/model/GetUserResult.h
 	include/alibabacloud/aliyuncvc/model/JoinDeviceMeetingRequest.h
@@ -108,6 +114,10 @@ set(aliyuncvc_src
 	src/model/ActiveMeetingResult.cc
 	src/model/BatchCreateDeviceRequest.cc
 	src/model/BatchCreateDeviceResult.cc
+	src/model/BatchDeleteDevicesRequest.cc
+	src/model/BatchDeleteDevicesResult.cc
+	src/model/CallDeviceRequest.cc
+	src/model/CallDeviceResult.cc
 	src/model/CreateDeviceMeetingRequest.cc
 	src/model/CreateDeviceMeetingResult.cc
 	src/model/CreateEvaluationRequest.cc
@@ -144,6 +154,8 @@ set(aliyuncvc_src
 	src/model/GetMeetingInternationalResult.cc
 	src/model/GetMeetingMemberRequest.cc
 	src/model/GetMeetingMemberResult.cc
+	src/model/GetMembersRequest.cc
+	src/model/GetMembersResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
 	src/model/JoinDeviceMeetingRequest.cc
