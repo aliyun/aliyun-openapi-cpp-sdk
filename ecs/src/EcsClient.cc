@@ -3687,6 +3687,42 @@ EcsClient::DescribeDemandsOutcomeCallable EcsClient::describeDemandsCallable(con
 	return task->get_future();
 }
 
+EcsClient::DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome EcsClient::describeDeploymentSetSupportedInstanceTypeFamily(const DescribeDeploymentSetSupportedInstanceTypeFamilyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome(DescribeDeploymentSetSupportedInstanceTypeFamilyResult(outcome.result()));
+	else
+		return DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome(outcome.error());
+}
+
+void EcsClient::describeDeploymentSetSupportedInstanceTypeFamilyAsync(const DescribeDeploymentSetSupportedInstanceTypeFamilyRequest& request, const DescribeDeploymentSetSupportedInstanceTypeFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDeploymentSetSupportedInstanceTypeFamily(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDeploymentSetSupportedInstanceTypeFamilyOutcomeCallable EcsClient::describeDeploymentSetSupportedInstanceTypeFamilyCallable(const DescribeDeploymentSetSupportedInstanceTypeFamilyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDeploymentSetSupportedInstanceTypeFamily(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeDeploymentSetsOutcome EcsClient::describeDeploymentSets(const DescribeDeploymentSetsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

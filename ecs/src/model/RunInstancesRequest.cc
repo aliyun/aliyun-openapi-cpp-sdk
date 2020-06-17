@@ -170,6 +170,17 @@ void RunInstancesRequest::setPassword(const std::string& password)
 	setParameter("Password", password);
 }
 
+int RunInstancesRequest::getDeploymentSetGroupNo()const
+{
+	return deploymentSetGroupNo_;
+}
+
+void RunInstancesRequest::setDeploymentSetGroupNo(int deploymentSetGroupNo)
+{
+	deploymentSetGroupNo_ = deploymentSetGroupNo;
+	setParameter("DeploymentSetGroupNo", std::to_string(deploymentSetGroupNo));
+}
+
 int RunInstancesRequest::getStorageSetPartitionNumber()const
 {
 	return storageSetPartitionNumber_;

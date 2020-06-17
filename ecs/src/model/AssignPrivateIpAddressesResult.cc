@@ -39,6 +39,17 @@ void AssignPrivateIpAddressesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto assignedPrivateIpAddressesSetNode = value["AssignedPrivateIpAddressesSet"];
+	if(!assignedPrivateIpAddressesSetNode["NetworkInterfaceId"].isNull())
+		assignedPrivateIpAddressesSet_.networkInterfaceId = assignedPrivateIpAddressesSetNode["NetworkInterfaceId"].asString();
+		auto allPrivateIpSet = assignedPrivateIpAddressesSetNode["PrivateIpSet"]["PrivateIpAddress"];
+		for (auto value : allPrivateIpSet)
+			assignedPrivateIpAddressesSet_.privateIpSet.push_back(value.asString());
 
+}
+
+AssignPrivateIpAddressesResult::AssignedPrivateIpAddressesSet AssignPrivateIpAddressesResult::getAssignedPrivateIpAddressesSet()const
+{
+	return assignedPrivateIpAddressesSet_;
 }
 

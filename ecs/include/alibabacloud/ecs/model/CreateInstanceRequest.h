@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
+				int getDeploymentSetGroupNo()const;
+				void setDeploymentSetGroupNo(int deploymentSetGroupNo);
 				int getStorageSetPartitionNumber()const;
 				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
@@ -201,6 +203,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string hostName_;
 				std::string password_;
+				int deploymentSetGroupNo_;
 				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
 				int autoRenewPeriod_;

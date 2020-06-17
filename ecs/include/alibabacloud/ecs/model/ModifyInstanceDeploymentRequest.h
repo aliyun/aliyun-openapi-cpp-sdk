@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				int getDeploymentSetGroupNo()const;
+				void setDeploymentSetGroupNo(int deploymentSetGroupNo);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
 				std::string getDeploymentSetId()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string regionId_;
+				int deploymentSetGroupNo_;
 				std::string instanceType_;
 				std::string deploymentSetId_;
 				std::string resourceOwnerAccount_;

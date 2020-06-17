@@ -57,6 +57,8 @@ void DescribeDeploymentSetsResult::parse(const std::string &payload)
 			deploymentSetsObject.domain = valueDeploymentSetsDeploymentSet["Domain"].asString();
 		if(!valueDeploymentSetsDeploymentSet["Granularity"].isNull())
 			deploymentSetsObject.granularity = valueDeploymentSetsDeploymentSet["Granularity"].asString();
+		if(!valueDeploymentSetsDeploymentSet["GroupCount"].isNull())
+			deploymentSetsObject.groupCount = std::stoi(valueDeploymentSetsDeploymentSet["GroupCount"].asString());
 		if(!valueDeploymentSetsDeploymentSet["InstanceAmount"].isNull())
 			deploymentSetsObject.instanceAmount = std::stoi(valueDeploymentSetsDeploymentSet["InstanceAmount"].asString());
 		if(!valueDeploymentSetsDeploymentSet["CreationTime"].isNull())

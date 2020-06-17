@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AssignPrivateIpAddressesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeDeploymentSetSupportedInstanceTypeFamilyRequest : public RpcServiceRequest
 			{
 
 			public:
-				AssignPrivateIpAddressesRequest();
-				~AssignPrivateIpAddressesRequest();
+				DescribeDeploymentSetSupportedInstanceTypeFamilyRequest();
+				~DescribeDeploymentSetSupportedInstanceTypeFamilyRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				int getSecondaryPrivateIpAddressCount()const;
-				void setSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
@@ -49,24 +45,16 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::vector<std::string> getPrivateIpAddress()const;
-				void setPrivateIpAddress(const std::vector<std::string>& privateIpAddress);
-				std::string getNetworkInterfaceId()const;
-				void setNetworkInterfaceId(const std::string& networkInterfaceId);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				int secondaryPrivateIpAddressCount_;
 				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::vector<std::string> privateIpAddress_;
-				std::string networkInterfaceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYREQUEST_H_

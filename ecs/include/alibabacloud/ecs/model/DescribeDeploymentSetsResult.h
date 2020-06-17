@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string deploymentSetId;
 					std::string deploymentSetDescription;
 					int instanceAmount;
+					int groupCount;
 					std::string creationTime;
 					std::string strategy;
 					std::string deploymentSetName;

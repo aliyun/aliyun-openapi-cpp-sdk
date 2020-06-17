@@ -137,6 +137,17 @@ void CreateInstanceRequest::setPassword(const std::string& password)
 	setParameter("Password", password);
 }
 
+int CreateInstanceRequest::getDeploymentSetGroupNo()const
+{
+	return deploymentSetGroupNo_;
+}
+
+void CreateInstanceRequest::setDeploymentSetGroupNo(int deploymentSetGroupNo)
+{
+	deploymentSetGroupNo_ = deploymentSetGroupNo;
+	setParameter("DeploymentSetGroupNo", std::to_string(deploymentSetGroupNo));
+}
+
 int CreateInstanceRequest::getStorageSetPartitionNumber()const
 {
 	return storageSetPartitionNumber_;

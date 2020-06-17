@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT AssignPrivateIpAddressesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeDeploymentSetSupportedInstanceTypeFamilyResult : public ServiceResult
 			{
 			public:
-				struct AssignedPrivateIpAddressesSet
-				{
-					std::vector<std::string> privateIpSet;
-					std::string networkInterfaceId;
-				};
 
 
-				AssignPrivateIpAddressesResult();
-				explicit AssignPrivateIpAddressesResult(const std::string &payload);
-				~AssignPrivateIpAddressesResult();
-				AssignedPrivateIpAddressesSet getAssignedPrivateIpAddressesSet()const;
+				DescribeDeploymentSetSupportedInstanceTypeFamilyResult();
+				explicit DescribeDeploymentSetSupportedInstanceTypeFamilyResult(const std::string &payload);
+				~DescribeDeploymentSetSupportedInstanceTypeFamilyResult();
+				std::string getInstanceTypeFamilies()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet_;
+				std::string instanceTypeFamilies_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_ASSIGNPRIVATEIPADDRESSESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDEPLOYMENTSETSUPPORTEDINSTANCETYPEFAMILYRESULT_H_

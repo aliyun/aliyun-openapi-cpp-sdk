@@ -73,6 +73,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.hostName = valueInstancesInstance["HostName"].asString();
 		if(!valueInstancesInstance["DeploymentSetId"].isNull())
 			instancesObject.deploymentSetId = valueInstancesInstance["DeploymentSetId"].asString();
+		if(!valueInstancesInstance["DeploymentSetGroupNo"].isNull())
+			instancesObject.deploymentSetGroupNo = std::stoi(valueInstancesInstance["DeploymentSetGroupNo"].asString());
 		if(!valueInstancesInstance["Status"].isNull())
 			instancesObject.status = valueInstancesInstance["Status"].asString();
 		if(!valueInstancesInstance["SerialNumber"].isNull())

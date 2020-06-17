@@ -223,6 +223,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDedicatedHostsResult.h
 	include/alibabacloud/ecs/model/DescribeDemandsRequest.h
 	include/alibabacloud/ecs/model/DescribeDemandsResult.h
+	include/alibabacloud/ecs/model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.h
+	include/alibabacloud/ecs/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsRequest.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
@@ -794,6 +796,8 @@ set(ecs_src
 	src/model/DescribeDedicatedHostsResult.cc
 	src/model/DescribeDemandsRequest.cc
 	src/model/DescribeDemandsResult.cc
+	src/model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.cc
+	src/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.cc
 	src/model/DescribeDeploymentSetsRequest.cc
 	src/model/DescribeDeploymentSetsResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc

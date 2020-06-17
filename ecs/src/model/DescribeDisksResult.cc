@@ -115,6 +115,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 			disksObject.performanceLevel = valueDisksDisk["PerformanceLevel"].asString();
 		if(!valueDisksDisk["BdfId"].isNull())
 			disksObject.bdfId = valueDisksDisk["BdfId"].asString();
+		if(!valueDisksDisk["SerialNumber"].isNull())
+			disksObject.serialNumber = valueDisksDisk["SerialNumber"].asString();
 		auto allOperationLocksNode = allDisksNode["OperationLocks"]["OperationLock"];
 		for (auto allDisksNodeOperationLocksOperationLock : allOperationLocksNode)
 		{

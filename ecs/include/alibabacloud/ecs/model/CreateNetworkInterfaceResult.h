@@ -32,17 +32,59 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT CreateNetworkInterfaceResult : public ServiceResult
 			{
 			public:
+				struct PrivateIpSet
+				{
+					std::string privateIpAddress;
+					bool primary;
+				};
+				struct Tag
+				{
+					std::string tagKey;
+					std::string tagValue;
+				};
 
 
 				CreateNetworkInterfaceResult();
 				explicit CreateNetworkInterfaceResult(const std::string &payload);
 				~CreateNetworkInterfaceResult();
+				std::string getStatus()const;
+				std::string getPrivateIpAddress()const;
+				std::string getDescription()const;
+				std::string getZoneId()const;
+				std::string getResourceGroupId()const;
+				bool getServiceManaged()const;
+				std::string getVSwitchId()const;
+				std::string getNetworkInterfaceName()const;
 				std::string getNetworkInterfaceId()const;
+				std::string getMacAddress()const;
+				std::vector<std::string> getSecurityGroupIds()const;
+				long getServiceID()const;
+				std::string getType()const;
+				std::string getVpcId()const;
+				std::string getOwnerId()const;
+				std::vector<Tag> getTags()const;
+				std::vector<PrivateIpSet> getPrivateIpSets()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
+				std::string privateIpAddress_;
+				std::string description_;
+				std::string zoneId_;
+				std::string resourceGroupId_;
+				bool serviceManaged_;
+				std::string vSwitchId_;
+				std::string networkInterfaceName_;
 				std::string networkInterfaceId_;
+				std::string macAddress_;
+				std::vector<std::string> securityGroupIds_;
+				long serviceID_;
+				std::string type_;
+				std::string vpcId_;
+				std::string ownerId_;
+				std::vector<Tag> tags_;
+				std::vector<PrivateIpSet> privateIpSets_;
 
 			};
 		}

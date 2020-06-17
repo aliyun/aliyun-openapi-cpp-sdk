@@ -38,6 +38,17 @@ void AssignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string AssignPrivateIpAddressesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AssignPrivateIpAddressesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 int AssignPrivateIpAddressesRequest::getSecondaryPrivateIpAddressCount()const
 {
 	return secondaryPrivateIpAddressCount_;

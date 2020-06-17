@@ -49,6 +49,17 @@ void ModifyInstanceDeploymentRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+int ModifyInstanceDeploymentRequest::getDeploymentSetGroupNo()const
+{
+	return deploymentSetGroupNo_;
+}
+
+void ModifyInstanceDeploymentRequest::setDeploymentSetGroupNo(int deploymentSetGroupNo)
+{
+	deploymentSetGroupNo_ = deploymentSetGroupNo;
+	setParameter("DeploymentSetGroupNo", std::to_string(deploymentSetGroupNo));
+}
+
 std::string ModifyInstanceDeploymentRequest::getInstanceType()const
 {
 	return instanceType_;

@@ -71,6 +71,17 @@ void CreateDeploymentSetRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+long CreateDeploymentSetRequest::getGroupCount()const
+{
+	return groupCount_;
+}
+
+void CreateDeploymentSetRequest::setGroupCount(long groupCount)
+{
+	groupCount_ = groupCount;
+	setParameter("GroupCount", std::to_string(groupCount));
+}
+
 std::string CreateDeploymentSetRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

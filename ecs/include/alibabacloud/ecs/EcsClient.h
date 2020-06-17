@@ -224,6 +224,8 @@
 #include "model/DescribeDedicatedHostsResult.h"
 #include "model/DescribeDemandsRequest.h"
 #include "model/DescribeDemandsResult.h"
+#include "model/DescribeDeploymentSetSupportedInstanceTypeFamilyRequest.h"
+#include "model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h"
 #include "model/DescribeDeploymentSetsRequest.h"
 #include "model/DescribeDeploymentSetsResult.h"
 #include "model/DescribeDiskMonitorDataRequest.h"
@@ -902,6 +904,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDemandsResult> DescribeDemandsOutcome;
 			typedef std::future<DescribeDemandsOutcome> DescribeDemandsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDemandsRequest&, const DescribeDemandsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDemandsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDeploymentSetSupportedInstanceTypeFamilyResult> DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome;
+			typedef std::future<DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome> DescribeDeploymentSetSupportedInstanceTypeFamilyOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest&, const DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentSetSupportedInstanceTypeFamilyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDeploymentSetsResult> DescribeDeploymentSetsOutcome;
 			typedef std::future<DescribeDeploymentSetsOutcome> DescribeDeploymentSetsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDeploymentSetsRequest&, const DescribeDeploymentSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentSetsAsyncHandler;
@@ -1759,6 +1764,9 @@ namespace AlibabaCloud
 			DescribeDemandsOutcome describeDemands(const Model::DescribeDemandsRequest &request)const;
 			void describeDemandsAsync(const Model::DescribeDemandsRequest& request, const DescribeDemandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDemandsOutcomeCallable describeDemandsCallable(const Model::DescribeDemandsRequest& request) const;
+			DescribeDeploymentSetSupportedInstanceTypeFamilyOutcome describeDeploymentSetSupportedInstanceTypeFamily(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest &request)const;
+			void describeDeploymentSetSupportedInstanceTypeFamilyAsync(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest& request, const DescribeDeploymentSetSupportedInstanceTypeFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDeploymentSetSupportedInstanceTypeFamilyOutcomeCallable describeDeploymentSetSupportedInstanceTypeFamilyCallable(const Model::DescribeDeploymentSetSupportedInstanceTypeFamilyRequest& request) const;
 			DescribeDeploymentSetsOutcome describeDeploymentSets(const Model::DescribeDeploymentSetsRequest &request)const;
 			void describeDeploymentSetsAsync(const Model::DescribeDeploymentSetsRequest& request, const DescribeDeploymentSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeploymentSetsOutcomeCallable describeDeploymentSetsCallable(const Model::DescribeDeploymentSetsRequest& request) const;

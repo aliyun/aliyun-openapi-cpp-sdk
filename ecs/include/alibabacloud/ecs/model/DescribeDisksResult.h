@@ -84,6 +84,7 @@ namespace AlibabaCloud
 					bool portable;
 					std::string type;
 					int mountInstanceNum;
+					std::string serialNumber;
 					std::vector<Disk::MountInstance> mountInstances;
 					std::string creationTime;
 					std::string regionId;
