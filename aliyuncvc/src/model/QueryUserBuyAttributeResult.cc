@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/QueryUserBuyAttributeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+QueryUserBuyAttributeResult::QueryUserBuyAttributeResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+QueryUserBuyAttributeResult::QueryUserBuyAttributeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+QueryUserBuyAttributeResult::~QueryUserBuyAttributeResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void QueryUserBuyAttributeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -45,20 +45,27 @@ void CreateUserResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["UserBuyAttribute"].isNull())
+		userBuyAttribute_ = value["UserBuyAttribute"].asString() == "true";
 
 }
 
-std::string CreateUserResult::getMessage()const
+std::string QueryUserBuyAttributeResult::getMessage()const
 {
 	return message_;
 }
 
-int CreateUserResult::getErrorCode()const
+bool QueryUserBuyAttributeResult::getUserBuyAttribute()const
+{
+	return userBuyAttribute_;
+}
+
+int QueryUserBuyAttributeResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+bool QueryUserBuyAttributeResult::getSuccess()const
 {
 	return success_;
 }

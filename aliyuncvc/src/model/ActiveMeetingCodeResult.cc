@@ -14,31 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/ActiveMeetingCodeResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+ActiveMeetingCodeResult::ActiveMeetingCodeResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+ActiveMeetingCodeResult::ActiveMeetingCodeResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+ActiveMeetingCodeResult::~ActiveMeetingCodeResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void ActiveMeetingCodeResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto meetingInfoNode = value["MeetingInfo"];
+	if(!meetingInfoNode["ValidDate"].isNull())
+		meetingInfo_.validDate = std::stol(meetingInfoNode["ValidDate"].asString());
+	if(!meetingInfoNode["MeetingCode"].isNull())
+		meetingInfo_.meetingCode = meetingInfoNode["MeetingCode"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
@@ -48,17 +53,22 @@ void CreateUserResult::parse(const std::string &payload)
 
 }
 
-std::string CreateUserResult::getMessage()const
+ActiveMeetingCodeResult::MeetingInfo ActiveMeetingCodeResult::getMeetingInfo()const
+{
+	return meetingInfo_;
+}
+
+std::string ActiveMeetingCodeResult::getMessage()const
 {
 	return message_;
 }
 
-int CreateUserResult::getErrorCode()const
+int ActiveMeetingCodeResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+bool ActiveMeetingCodeResult::getSuccess()const
 {
 	return success_;
 }

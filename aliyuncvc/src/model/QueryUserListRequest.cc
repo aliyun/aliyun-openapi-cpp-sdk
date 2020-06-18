@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/DeleteUserRequest.h>
+#include <alibabacloud/aliyuncvc/model/QueryUserListRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::DeleteUserRequest;
+using AlibabaCloud::Aliyuncvc::Model::QueryUserListRequest;
 
-DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "DeleteUser")
+QueryUserListRequest::QueryUserListRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-09-19", "QueryUserList")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteUserRequest::~DeleteUserRequest()
+QueryUserListRequest::~QueryUserListRequest()
 {}
 
-int DeleteUserRequest::getCount()const
+int QueryUserListRequest::getPageSize()const
 {
-	return count_;
+	return pageSize_;
 }
 
-void DeleteUserRequest::setCount(int count)
+void QueryUserListRequest::setPageSize(int pageSize)
 {
-	count_ = count;
-	setBodyParameter("Count", std::to_string(count));
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
 }
 
-std::string DeleteUserRequest::getUserInfo()const
+int QueryUserListRequest::getPageNum()const
 {
-	return userInfo_;
+	return pageNum_;
 }
 
-void DeleteUserRequest::setUserInfo(const std::string& userInfo)
+void QueryUserListRequest::setPageNum(int pageNum)
 {
-	userInfo_ = userInfo;
-	setBodyParameter("UserInfo", userInfo);
+	pageNum_ = pageNum;
+	setParameter("PageNum", std::to_string(pageNum));
 }
 

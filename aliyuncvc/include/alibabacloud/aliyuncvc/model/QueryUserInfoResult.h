@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSERINFORESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSERINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,15 +29,22 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT QueryUserInfoResult : public ServiceResult
 			{
 			public:
+				struct UserInfo
+				{
+					int maxNum;
+					int memberConcurrentMax;
+					int curNum;
+				};
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				QueryUserInfoResult();
+				explicit QueryUserInfoResult(const std::string &payload);
+				~QueryUserInfoResult();
 				std::string getMessage()const;
+				UserInfo getUserInfo()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +52,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				UserInfo userInfo_;
 				int errorCode_;
 				bool success_;
 
@@ -52,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSERINFORESULT_H_

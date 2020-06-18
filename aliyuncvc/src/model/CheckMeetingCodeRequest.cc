@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateMeetingRequest.h>
+#include <alibabacloud/aliyuncvc/model/CheckMeetingCodeRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::CreateMeetingRequest;
+using AlibabaCloud::Aliyuncvc::Model::CheckMeetingCodeRequest;
 
-CreateMeetingRequest::CreateMeetingRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "CreateMeeting")
+CheckMeetingCodeRequest::CheckMeetingCodeRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-09-19", "CheckMeetingCode")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-CreateMeetingRequest::~CreateMeetingRequest()
+CheckMeetingCodeRequest::~CheckMeetingCodeRequest()
 {}
 
-std::string CreateMeetingRequest::getMeetingName()const
+std::string CheckMeetingCodeRequest::getMeetingCode()const
 {
-	return meetingName_;
+	return meetingCode_;
 }
 
-void CreateMeetingRequest::setMeetingName(const std::string& meetingName)
+void CheckMeetingCodeRequest::setMeetingCode(const std::string& meetingCode)
 {
-	meetingName_ = meetingName;
-	setBodyParameter("MeetingName", meetingName);
+	meetingCode_ = meetingCode;
+	setBodyParameter("MeetingCode", meetingCode);
 }
 
-std::string CreateMeetingRequest::getUserId()const
+std::string CheckMeetingCodeRequest::getUserId()const
 {
 	return userId_;
 }
 
-void CreateMeetingRequest::setUserId(const std::string& userId)
+void CheckMeetingCodeRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setBodyParameter("UserId", userId);

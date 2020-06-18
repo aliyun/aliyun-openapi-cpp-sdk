@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTCOMMODITIESREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTCOMMODITIESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateMeetingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListCommoditiesRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateMeetingRequest();
-				~CreateMeetingRequest();
+				ListCommoditiesRequest();
+				~ListCommoditiesRequest();
 
-				std::string getMeetingName()const;
-				void setMeetingName(const std::string& meetingName);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				std::string meetingName_;
-				std::string userId_;
+				std::string endTime_;
+				std::string startTime_;
+				int pageNumber_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTCOMMODITIESREQUEST_H_

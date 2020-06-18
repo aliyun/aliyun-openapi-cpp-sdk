@@ -14,31 +14,33 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/QueryUserEvaluationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+QueryUserEvaluationResult::QueryUserEvaluationResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+QueryUserEvaluationResult::QueryUserEvaluationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+QueryUserEvaluationResult::~QueryUserEvaluationResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void QueryUserEvaluationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["UserEvaluation"].isNull())
+		userEvaluation_ = value["UserEvaluation"].asString();
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
@@ -48,17 +50,22 @@ void CreateUserResult::parse(const std::string &payload)
 
 }
 
-std::string CreateUserResult::getMessage()const
+std::string QueryUserEvaluationResult::getMessage()const
 {
 	return message_;
 }
 
-int CreateUserResult::getErrorCode()const
+int QueryUserEvaluationResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+std::string QueryUserEvaluationResult::getUserEvaluation()const
+{
+	return userEvaluation_;
+}
+
+bool QueryUserEvaluationResult::getSuccess()const
 {
 	return success_;
 }

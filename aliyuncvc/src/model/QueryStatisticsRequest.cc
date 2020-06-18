@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/DeleteUserRequest.h>
+#include <alibabacloud/aliyuncvc/model/QueryStatisticsRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::DeleteUserRequest;
+using AlibabaCloud::Aliyuncvc::Model::QueryStatisticsRequest;
 
-DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "DeleteUser")
+QueryStatisticsRequest::QueryStatisticsRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-09-19", "QueryStatistics")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteUserRequest::~DeleteUserRequest()
+QueryStatisticsRequest::~QueryStatisticsRequest()
 {}
 
-int DeleteUserRequest::getCount()const
+std::string QueryStatisticsRequest::getEndTime()const
 {
-	return count_;
+	return endTime_;
 }
 
-void DeleteUserRequest::setCount(int count)
+void QueryStatisticsRequest::setEndTime(const std::string& endTime)
 {
-	count_ = count;
-	setBodyParameter("Count", std::to_string(count));
+	endTime_ = endTime;
+	setParameter("EndTime", endTime);
 }
 
-std::string DeleteUserRequest::getUserInfo()const
+std::string QueryStatisticsRequest::getStartTime()const
 {
-	return userInfo_;
+	return startTime_;
 }
 
-void DeleteUserRequest::setUserInfo(const std::string& userInfo)
+void QueryStatisticsRequest::setStartTime(const std::string& startTime)
 {
-	userInfo_ = userInfo;
-	setBodyParameter("UserInfo", userInfo);
+	startTime_ = startTime;
+	setParameter("StartTime", startTime);
 }
 

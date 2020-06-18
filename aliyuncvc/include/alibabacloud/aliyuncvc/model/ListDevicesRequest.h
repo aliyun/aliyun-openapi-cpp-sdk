@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,24 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateMeetingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListDevicesRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateMeetingRequest();
-				~CreateMeetingRequest();
+				ListDevicesRequest();
+				~ListDevicesRequest();
 
-				std::string getMeetingName()const;
-				void setMeetingName(const std::string& meetingName);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
+				std::string getCastScreenCode()const;
+				void setCastScreenCode(const std::string& castScreenCode);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getSN()const;
+				void setSN(const std::string& sN);
 
             private:
-				std::string meetingName_;
-				std::string userId_;
+				std::string castScreenCode_;
+				int pageNumber_;
+				int pageSize_;
+				std::string sN_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESREQUEST_H_

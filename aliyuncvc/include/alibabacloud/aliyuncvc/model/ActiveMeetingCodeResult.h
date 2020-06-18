@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGCODERESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ActiveMeetingCodeResult : public ServiceResult
 			{
 			public:
+				struct MeetingInfo
+				{
+					std::string meetingCode;
+					long validDate;
+				};
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				ActiveMeetingCodeResult();
+				explicit ActiveMeetingCodeResult(const std::string &payload);
+				~ActiveMeetingCodeResult();
+				MeetingInfo getMeetingInfo()const;
 				std::string getMessage()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
@@ -44,6 +50,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				MeetingInfo meetingInfo_;
 				std::string message_;
 				int errorCode_;
 				bool success_;
@@ -52,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_ACTIVEMEETINGCODERESULT_H_

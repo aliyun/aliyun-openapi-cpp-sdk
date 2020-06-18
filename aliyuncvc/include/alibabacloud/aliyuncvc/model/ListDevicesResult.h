@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,15 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListDevicesResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct Data
+					{
+						std::string status;
+						std::string castScreenCode;
+						std::string createTime;
+						std::string pictureUrl;
+						std::string sN;
+						std::string conferenceName;
+						std::string activationCode;
+						std::string conferenceCode;
+					};
+					int pageSize;
+					int pageNumber;
+					int total;
+					std::vector<Data> devices;
+				};
 
 
-				CreateUserResult();
-				explicit CreateUserResult(const std::string &payload);
-				~CreateUserResult();
+				ListDevicesResult();
+				explicit ListDevicesResult(const std::string &payload);
+				~ListDevicesResult();
 				std::string getMessage()const;
+				Data getData()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +64,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				Data data_;
 				int errorCode_;
 				bool success_;
 
@@ -52,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_LISTDEVICESRESULT_H_

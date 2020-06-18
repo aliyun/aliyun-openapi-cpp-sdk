@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSEREVALUATIONRESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSEREVALUATIONRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/aliyuncvc/AliyuncvcExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateMeetingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT QueryUserEvaluationResult : public ServiceResult
 			{
-
 			public:
-				CreateMeetingRequest();
-				~CreateMeetingRequest();
 
-				std::string getMeetingName()const;
-				void setMeetingName(const std::string& meetingName);
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
 
-            private:
-				std::string meetingName_;
-				std::string userId_;
+				QueryUserEvaluationResult();
+				explicit QueryUserEvaluationResult(const std::string &payload);
+				~QueryUserEvaluationResult();
+				std::string getMessage()const;
+				int getErrorCode()const;
+				std::string getUserEvaluation()const;
+				bool getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string message_;
+				int errorCode_;
+				std::string userEvaluation_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATEMEETINGREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_QUERYUSEREVALUATIONRESULT_H_

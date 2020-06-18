@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/RemoveMeetingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+RemoveMeetingResult::RemoveMeetingResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+RemoveMeetingResult::RemoveMeetingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+RemoveMeetingResult::~RemoveMeetingResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void RemoveMeetingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -48,17 +48,17 @@ void CreateUserResult::parse(const std::string &payload)
 
 }
 
-std::string CreateUserResult::getMessage()const
+std::string RemoveMeetingResult::getMessage()const
 {
 	return message_;
 }
 
-int CreateUserResult::getErrorCode()const
+int RemoveMeetingResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+bool RemoveMeetingResult::getSuccess()const
 {
 	return success_;
 }

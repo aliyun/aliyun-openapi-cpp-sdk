@@ -14,38 +14,27 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/DeleteUserRequest.h>
+#include <alibabacloud/aliyuncvc/model/QueryMemberRecordRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::DeleteUserRequest;
+using AlibabaCloud::Aliyuncvc::Model::QueryMemberRecordRequest;
 
-DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "DeleteUser")
+QueryMemberRecordRequest::QueryMemberRecordRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-09-19", "QueryMemberRecord")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteUserRequest::~DeleteUserRequest()
+QueryMemberRecordRequest::~QueryMemberRecordRequest()
 {}
 
-int DeleteUserRequest::getCount()const
+std::string QueryMemberRecordRequest::getMeetingUUID()const
 {
-	return count_;
+	return meetingUUID_;
 }
 
-void DeleteUserRequest::setCount(int count)
+void QueryMemberRecordRequest::setMeetingUUID(const std::string& meetingUUID)
 {
-	count_ = count;
-	setBodyParameter("Count", std::to_string(count));
-}
-
-std::string DeleteUserRequest::getUserInfo()const
-{
-	return userInfo_;
-}
-
-void DeleteUserRequest::setUserInfo(const std::string& userInfo)
-{
-	userInfo_ = userInfo;
-	setBodyParameter("UserInfo", userInfo);
+	meetingUUID_ = meetingUUID;
+	setParameter("MeetingUUID", meetingUUID);
 }
 

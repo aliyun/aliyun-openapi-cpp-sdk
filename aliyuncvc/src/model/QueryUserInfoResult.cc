@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateUserResult.h>
+#include <alibabacloud/aliyuncvc/model/QueryUserInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Aliyuncvc;
 using namespace AlibabaCloud::Aliyuncvc::Model;
 
-CreateUserResult::CreateUserResult() :
+QueryUserInfoResult::QueryUserInfoResult() :
 	ServiceResult()
 {}
 
-CreateUserResult::CreateUserResult(const std::string &payload) :
+QueryUserInfoResult::QueryUserInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateUserResult::~CreateUserResult()
+QueryUserInfoResult::~QueryUserInfoResult()
 {}
 
-void CreateUserResult::parse(const std::string &payload)
+void QueryUserInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto userInfoNode = value["UserInfo"];
+	if(!userInfoNode["CurNum"].isNull())
+		userInfo_.curNum = std::stoi(userInfoNode["CurNum"].asString());
+	if(!userInfoNode["MemberConcurrentMax"].isNull())
+		userInfo_.memberConcurrentMax = std::stoi(userInfoNode["MemberConcurrentMax"].asString());
+	if(!userInfoNode["MaxNum"].isNull())
+		userInfo_.maxNum = std::stoi(userInfoNode["MaxNum"].asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
@@ -48,17 +55,22 @@ void CreateUserResult::parse(const std::string &payload)
 
 }
 
-std::string CreateUserResult::getMessage()const
+std::string QueryUserInfoResult::getMessage()const
 {
 	return message_;
 }
 
-int CreateUserResult::getErrorCode()const
+QueryUserInfoResult::UserInfo QueryUserInfoResult::getUserInfo()const
+{
+	return userInfo_;
+}
+
+int QueryUserInfoResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-bool CreateUserResult::getSuccess()const
+bool QueryUserInfoResult::getSuccess()const
 {
 	return success_;
 }
