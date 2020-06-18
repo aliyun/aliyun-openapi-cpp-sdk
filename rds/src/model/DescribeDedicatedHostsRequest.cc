@@ -60,6 +60,17 @@ void DescribeDedicatedHostsRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDedicatedHostsRequest::getHostStatus()const
+{
+	return hostStatus_;
+}
+
+void DescribeDedicatedHostsRequest::setHostStatus(const std::string& hostStatus)
+{
+	hostStatus_ = hostStatus;
+	setParameter("HostStatus", hostStatus);
+}
+
 std::string DescribeDedicatedHostsRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,6 +80,17 @@ void DescribeDedicatedHostsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string DescribeDedicatedHostsRequest::getAllocationStatus()const
+{
+	return allocationStatus_;
+}
+
+void DescribeDedicatedHostsRequest::setAllocationStatus(const std::string& allocationStatus)
+{
+	allocationStatus_ = allocationStatus;
+	setParameter("AllocationStatus", allocationStatus);
 }
 
 std::string DescribeDedicatedHostsRequest::getDedicatedHostGroupId()const
@@ -113,5 +135,16 @@ void DescribeDedicatedHostsRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeDedicatedHostsRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void DescribeDedicatedHostsRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 

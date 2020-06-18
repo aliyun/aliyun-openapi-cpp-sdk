@@ -126,6 +126,17 @@ void ModifyDBInstanceSpecRequest::setSourceBiz(const std::string& sourceBiz)
 	setParameter("SourceBiz", sourceBiz);
 }
 
+std::string ModifyDBInstanceSpecRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void ModifyDBInstanceSpecRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+}
+
 std::string ModifyDBInstanceSpecRequest::getDirection()const
 {
 	return direction_;
@@ -179,6 +190,17 @@ void ModifyDBInstanceSpecRequest::setDBInstanceClass(const std::string& dBInstan
 {
 	dBInstanceClass_ = dBInstanceClass;
 	setParameter("DBInstanceClass", dBInstanceClass);
+}
+
+std::string ModifyDBInstanceSpecRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void ModifyDBInstanceSpecRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
 std::string ModifyDBInstanceSpecRequest::getPayType()const

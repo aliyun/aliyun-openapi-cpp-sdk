@@ -236,6 +236,17 @@ void DescribeDBInstancesRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+int DescribeDBInstancesRequest::getInstanceLevel()const
+{
+	return instanceLevel_;
+}
+
+void DescribeDBInstancesRequest::setInstanceLevel(int instanceLevel)
+{
+	instanceLevel_ = instanceLevel;
+	setParameter("InstanceLevel", std::to_string(instanceLevel));
+}
+
 std::string DescribeDBInstancesRequest::getSearchKey()const
 {
 	return searchKey_;

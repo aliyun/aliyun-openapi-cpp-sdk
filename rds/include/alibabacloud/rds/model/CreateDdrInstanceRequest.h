@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDBInstanceStorage(int dBInstanceStorage);
 				std::string getSystemDBCharset()const;
 				void setSystemDBCharset(const std::string& systemDBCharset);
+				std::string getBinlogRole()const;
+				void setBinlogRole(const std::string& binlogRole);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getUserBakSetURL()const;
@@ -65,6 +67,8 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPrivateIpAddress()const;
 				void setPrivateIpAddress(const std::string& privateIpAddress);
+				std::string getBinlogName()const;
+				void setBinlogName(const std::string& binlogName);
 				std::string getTunnelId()const;
 				void setTunnelId(const std::string& tunnelId);
 				std::string getZoneId()const;
@@ -101,6 +105,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getUsedTime()const;
 				void setUsedTime(const std::string& usedTime);
+				std::string getBinlogPosition()const;
+				void setBinlogPosition(const std::string& binlogPosition);
 				std::string getRestoreType()const;
 				void setRestoreType(const std::string& restoreType);
 				std::string getVPCId()const;
@@ -114,6 +120,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string systemDBCharset_;
+				std::string binlogRole_;
 				std::string engineVersion_;
 				std::string userBakSetURL_;
 				std::string resourceGroupId_;
@@ -126,6 +133,7 @@ namespace AlibabaCloud
 				std::string securityIPList_;
 				std::string vSwitchId_;
 				std::string privateIpAddress_;
+				std::string binlogName_;
 				std::string tunnelId_;
 				std::string zoneId_;
 				std::string instanceNetworkType_;
@@ -144,6 +152,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string usedTime_;
+				std::string binlogPosition_;
 				std::string restoreType_;
 				std::string vPCId_;
 				std::string payType_;

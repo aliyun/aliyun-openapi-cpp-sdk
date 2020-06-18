@@ -60,6 +60,28 @@ void MigrateDBInstanceRequest::setTargetDedicatedHostIdForSlave(const std::strin
 	setParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
 }
 
+std::string MigrateDBInstanceRequest::getZoneIdSlave1()const
+{
+	return zoneIdSlave1_;
+}
+
+void MigrateDBInstanceRequest::setZoneIdSlave1(const std::string& zoneIdSlave1)
+{
+	zoneIdSlave1_ = zoneIdSlave1;
+	setParameter("ZoneIdSlave1", zoneIdSlave1);
+}
+
+std::string MigrateDBInstanceRequest::getZoneIdSlave2()const
+{
+	return zoneIdSlave2_;
+}
+
+void MigrateDBInstanceRequest::setZoneIdSlave2(const std::string& zoneIdSlave2)
+{
+	zoneIdSlave2_ = zoneIdSlave2;
+	setParameter("ZoneIdSlave2", zoneIdSlave2);
+}
+
 std::string MigrateDBInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;

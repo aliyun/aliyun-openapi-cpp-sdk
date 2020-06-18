@@ -126,6 +126,17 @@ void DescribeAvailableResourceRequest::setInstanceChargeType(const std::string& 
 	setParameter("InstanceChargeType", instanceChargeType);
 }
 
+int DescribeAvailableResourceRequest::getDispenseMode()const
+{
+	return dispenseMode_;
+}
+
+void DescribeAvailableResourceRequest::setDispenseMode(int dispenseMode)
+{
+	dispenseMode_ = dispenseMode;
+	setParameter("DispenseMode", std::to_string(dispenseMode));
+}
+
 std::string DescribeAvailableResourceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

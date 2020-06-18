@@ -41,6 +41,10 @@ namespace AlibabaCloud
 				void setSpecifiedTime(const std::string& specifiedTime);
 				std::string getTargetDedicatedHostIdForSlave()const;
 				void setTargetDedicatedHostIdForSlave(const std::string& targetDedicatedHostIdForSlave);
+				std::string getZoneIdSlave1()const;
+				void setZoneIdSlave1(const std::string& zoneIdSlave1);
+				std::string getZoneIdSlave2()const;
+				void setZoneIdSlave2(const std::string& zoneIdSlave2);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				int getStorage()const;
@@ -76,6 +80,8 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string specifiedTime_;
 				std::string targetDedicatedHostIdForSlave_;
+				std::string zoneIdSlave1_;
+				std::string zoneIdSlave2_;
 				std::string engineVersion_;
 				int storage_;
 				std::string accessKeyId_;

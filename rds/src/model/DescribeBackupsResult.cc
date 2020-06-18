@@ -87,6 +87,10 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.consistentTime = std::stol(valueItemsBackup["ConsistentTime"].asString());
 		if(!valueItemsBackup["BackupInitiator"].isNull())
 			itemsObject.backupInitiator = valueItemsBackup["BackupInitiator"].asString();
+		if(!valueItemsBackup["CopyOnlyBackup"].isNull())
+			itemsObject.copyOnlyBackup = valueItemsBackup["CopyOnlyBackup"].asString();
+		if(!valueItemsBackup["StorageClass"].isNull())
+			itemsObject.storageClass = valueItemsBackup["StorageClass"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())
@@ -97,6 +101,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 		pageRecordCount_ = value["PageRecordCount"].asString();
 	if(!value["TotalBackupSize"].isNull())
 		totalBackupSize_ = std::stol(value["TotalBackupSize"].asString());
+	if(!value["TotalEcsSnapshotSize"].isNull())
+		totalEcsSnapshotSize_ = std::stol(value["TotalEcsSnapshotSize"].asString());
 
 }
 
@@ -108,6 +114,11 @@ std::string DescribeBackupsResult::getTotalRecordCount()const
 std::string DescribeBackupsResult::getPageRecordCount()const
 {
 	return pageRecordCount_;
+}
+
+long DescribeBackupsResult::getTotalEcsSnapshotSize()const
+{
+	return totalEcsSnapshotSize_;
 }
 
 std::string DescribeBackupsResult::getPageNumber()const

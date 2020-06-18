@@ -170,6 +170,17 @@ void DescribeAvailableClassesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool DescribeAvailableClassesRequest::getEvaluateResource()const
+{
+	return evaluateResource_;
+}
+
+void DescribeAvailableClassesRequest::setEvaluateResource(bool evaluateResource)
+{
+	evaluateResource_ = evaluateResource;
+	setParameter("EvaluateResource", evaluateResource ? "true" : "false");
+}
+
 std::string DescribeAvailableClassesRequest::getZoneId()const
 {
 	return zoneId_;

@@ -59,7 +59,35 @@ void DescribeResourceUsageResult::parse(const std::string &payload)
 		sQLSize_ = std::stol(value["SQLSize"].asString());
 	if(!value["ColdBackupSize"].isNull())
 		coldBackupSize_ = std::stol(value["ColdBackupSize"].asString());
+	if(!value["BackupDataSize"].isNull())
+		backupDataSize_ = std::stol(value["BackupDataSize"].asString());
+	if(!value["BackupLogSize"].isNull())
+		backupLogSize_ = std::stol(value["BackupLogSize"].asString());
+	if(!value["PaidBackupSize"].isNull())
+		paidBackupSize_ = std::stol(value["PaidBackupSize"].asString());
+	if(!value["ArchiveBackupSize"].isNull())
+		archiveBackupSize_ = std::stol(value["ArchiveBackupSize"].asString());
 
+}
+
+long DescribeResourceUsageResult::getPaidBackupSize()const
+{
+	return paidBackupSize_;
+}
+
+long DescribeResourceUsageResult::getBackupSize()const
+{
+	return backupSize_;
+}
+
+long DescribeResourceUsageResult::getArchiveBackupSize()const
+{
+	return archiveBackupSize_;
+}
+
+long DescribeResourceUsageResult::getColdBackupSize()const
+{
+	return coldBackupSize_;
 }
 
 long DescribeResourceUsageResult::getLogSize()const
@@ -77,14 +105,19 @@ std::string DescribeResourceUsageResult::getDBInstanceId()const
 	return dBInstanceId_;
 }
 
+long DescribeResourceUsageResult::getBackupDataSize()const
+{
+	return backupDataSize_;
+}
+
 long DescribeResourceUsageResult::getDataSize()const
 {
 	return dataSize_;
 }
 
-long DescribeResourceUsageResult::getBackupSize()const
+long DescribeResourceUsageResult::getBackupLogSize()const
 {
-	return backupSize_;
+	return backupLogSize_;
 }
 
 long DescribeResourceUsageResult::getBackupOssDataSize()const
@@ -105,10 +138,5 @@ long DescribeResourceUsageResult::getDiskUsed()const
 std::string DescribeResourceUsageResult::getEngine()const
 {
 	return engine_;
-}
-
-long DescribeResourceUsageResult::getColdBackupSize()const
-{
-	return coldBackupSize_;
 }
 

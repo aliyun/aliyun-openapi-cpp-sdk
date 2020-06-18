@@ -104,6 +104,17 @@ void DescribeAvailableZonesRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+bool DescribeAvailableZonesRequest::getEvaluateResource()const
+{
+	return evaluateResource_;
+}
+
+void DescribeAvailableZonesRequest::setEvaluateResource(bool evaluateResource)
+{
+	evaluateResource_ = evaluateResource;
+	setParameter("EvaluateResource", evaluateResource ? "true" : "false");
+}
+
 std::string DescribeAvailableZonesRequest::getZoneId()const
 {
 	return zoneId_;

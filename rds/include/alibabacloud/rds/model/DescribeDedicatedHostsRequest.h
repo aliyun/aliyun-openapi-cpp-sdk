@@ -41,8 +41,12 @@ namespace AlibabaCloud
 				void setHostType(const std::string& hostType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getHostStatus()const;
+				void setHostStatus(const std::string& hostStatus);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getAllocationStatus()const;
+				void setAllocationStatus(const std::string& allocationStatus);
 				std::string getDedicatedHostGroupId()const;
 				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getResourceOwnerAccount()const;
@@ -51,16 +55,21 @@ namespace AlibabaCloud
 				void setOrderId(long orderId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 
             private:
 				long resourceOwnerId_;
 				std::string hostType_;
 				std::string accessKeyId_;
+				std::string hostStatus_;
 				std::string regionId_;
+				std::string allocationStatus_;
 				std::string dedicatedHostGroupId_;
 				std::string resourceOwnerAccount_;
 				long orderId_;
 				long ownerId_;
+				std::string zoneId_;
 
 			};
 		}

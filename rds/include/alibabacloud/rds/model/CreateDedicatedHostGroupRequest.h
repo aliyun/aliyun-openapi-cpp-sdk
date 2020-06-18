@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				int getDiskAllocationRatio()const;
 				void setDiskAllocationRatio(int diskAllocationRatio);
+				int getOpenPermission()const;
+				void setOpenPermission(int openPermission);
 				int getMemAllocationRatio()const;
 				void setMemAllocationRatio(int memAllocationRatio);
 				long getOwnerId()const;
@@ -71,6 +73,7 @@ namespace AlibabaCloud
 				std::string engine_;
 				std::string resourceOwnerAccount_;
 				int diskAllocationRatio_;
+				int openPermission_;
 				int memAllocationRatio_;
 				long ownerId_;
 				std::string hostReplacePolicy_;

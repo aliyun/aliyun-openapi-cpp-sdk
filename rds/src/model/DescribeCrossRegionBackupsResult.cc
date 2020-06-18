@@ -79,6 +79,8 @@ void DescribeCrossRegionBackupsResult::parse(const std::string &payload)
 			itemsObject.category = valueItemsItem["Category"].asString();
 		if(!valueItemsItem["ConsistentTime"].isNull())
 			itemsObject.consistentTime = valueItemsItem["ConsistentTime"].asString();
+		if(!valueItemsItem["HasBackupTableMeta"].isNull())
+			itemsObject.hasBackupTableMeta = valueItemsItem["HasBackupTableMeta"].asString();
 		auto allRestoreRegions = value["RestoreRegions"]["RestoreRegion"];
 		for (auto value : allRestoreRegions)
 			itemsObject.restoreRegions.push_back(value.asString());

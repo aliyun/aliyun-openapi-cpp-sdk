@@ -60,6 +60,17 @@ void DescribeDedicatedHostGroupsRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeDedicatedHostGroupsRequest::getImageCategory()const
+{
+	return imageCategory_;
+}
+
+void DescribeDedicatedHostGroupsRequest::setImageCategory(const std::string& imageCategory)
+{
+	imageCategory_ = imageCategory;
+	setParameter("ImageCategory", imageCategory);
+}
+
 std::string DescribeDedicatedHostGroupsRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

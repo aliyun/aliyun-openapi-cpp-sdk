@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getTargetDedicatedHostIdForMaster()const;
+				void setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getDBInstanceDescription()const;
@@ -88,6 +90,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
 				std::string regionId_;
+				std::string targetDedicatedHostIdForMaster_;
 				std::string dBInstanceId_;
 				std::string dBInstanceDescription_;
 				std::string dBInstanceStorageType_;

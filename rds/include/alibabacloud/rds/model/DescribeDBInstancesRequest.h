@@ -73,6 +73,8 @@ namespace AlibabaCloud
 				void setConnectionMode(const std::string& connectionMode);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				int getInstanceLevel()const;
+				void setInstanceLevel(int instanceLevel);
 				std::string getSearchKey()const;
 				void setSearchKey(const std::string& searchKey);
 				int getPageNumber()const;
@@ -132,6 +134,7 @@ namespace AlibabaCloud
 				std::string instanceNetworkType_;
 				std::string connectionMode_;
 				std::string clientToken_;
+				int instanceLevel_;
 				std::string searchKey_;
 				int pageNumber_;
 				std::string accessKeyId_;

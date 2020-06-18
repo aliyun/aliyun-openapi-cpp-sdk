@@ -100,6 +100,7 @@ namespace AlibabaCloud
 					int dBMaxQuantity;
 					std::string category;
 					std::string dBInstanceNetType;
+					std::string superPermissionMode;
 					int tempUpgradeRecoveryCpu;
 					std::string dedicatedHostGroupId;
 					std::string tempDBInstanceId;

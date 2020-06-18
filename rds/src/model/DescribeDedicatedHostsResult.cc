@@ -81,6 +81,20 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.openPermission = valueDedicatedHostsDedicatedHostsItem["OpenPermission"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["AccountName"].isNull())
 			dedicatedHostsObject.accountName = valueDedicatedHostsDedicatedHostsItem["AccountName"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostCPU"].isNull())
+			dedicatedHostsObject.hostCPU = valueDedicatedHostsDedicatedHostsItem["HostCPU"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostMem"].isNull())
+			dedicatedHostsObject.hostMem = valueDedicatedHostsDedicatedHostsItem["HostMem"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["HostStorage"].isNull())
+			dedicatedHostsObject.hostStorage = valueDedicatedHostsDedicatedHostsItem["HostStorage"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["CpuUsed"].isNull())
+			dedicatedHostsObject.cpuUsed = valueDedicatedHostsDedicatedHostsItem["CpuUsed"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["MemoryUsed"].isNull())
+			dedicatedHostsObject.memoryUsed = valueDedicatedHostsDedicatedHostsItem["MemoryUsed"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["StorageUsed"].isNull())
+			dedicatedHostsObject.storageUsed = valueDedicatedHostsDedicatedHostsItem["StorageUsed"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["ImageCategory"].isNull())
+			dedicatedHostsObject.imageCategory = valueDedicatedHostsDedicatedHostsItem["ImageCategory"].asString();
 		dedicatedHosts_.push_back(dedicatedHostsObject);
 	}
 	if(!value["DedicatedHostGroupId"].isNull())

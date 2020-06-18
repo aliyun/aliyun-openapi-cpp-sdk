@@ -49,6 +49,17 @@ void DescribeSQLCollectorRetentionRequest::setAccessKeyId(const std::string& acc
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeSQLCollectorRetentionRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSQLCollectorRetentionRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSQLCollectorRetentionRequest::getSecurityToken()const
 {
 	return securityToken_;

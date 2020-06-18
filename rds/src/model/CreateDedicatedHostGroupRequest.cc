@@ -115,6 +115,17 @@ void CreateDedicatedHostGroupRequest::setDiskAllocationRatio(int diskAllocationR
 	setParameter("DiskAllocationRatio", std::to_string(diskAllocationRatio));
 }
 
+int CreateDedicatedHostGroupRequest::getOpenPermission()const
+{
+	return openPermission_;
+}
+
+void CreateDedicatedHostGroupRequest::setOpenPermission(int openPermission)
+{
+	openPermission_ = openPermission;
+	setParameter("OpenPermission", std::to_string(openPermission));
+}
+
 int CreateDedicatedHostGroupRequest::getMemAllocationRatio()const
 {
 	return memAllocationRatio_;

@@ -189,6 +189,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.originConfiguration = valueItemsDBInstanceAttribute["OriginConfiguration"].asString();
 		if(!valueItemsDBInstanceAttribute["DedicatedHostGroupId"].isNull())
 			itemsObject.dedicatedHostGroupId = valueItemsDBInstanceAttribute["DedicatedHostGroupId"].asString();
+		if(!valueItemsDBInstanceAttribute["SuperPermissionMode"].isNull())
+			itemsObject.superPermissionMode = valueItemsDBInstanceAttribute["SuperPermissionMode"].asString();
 		auto allSlaveZonesNode = allItemsNode["SlaveZones"]["SlaveZone"];
 		for (auto allItemsNodeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

@@ -101,6 +101,8 @@ void DescribeDedicatedHostAttributeResult::parse(const std::string &payload)
 		accountName_ = value["AccountName"].asString();
 	if(!value["OpenPermission"].isNull())
 		openPermission_ = value["OpenPermission"].asString();
+	if(!value["ImageCategory"].isNull())
+		imageCategory_ = value["ImageCategory"].asString();
 
 }
 
@@ -137,6 +139,11 @@ std::string DescribeDedicatedHostAttributeResult::getDedicatedHostGroupId()const
 std::string DescribeDedicatedHostAttributeResult::getAutoRenew()const
 {
 	return autoRenew_;
+}
+
+std::string DescribeDedicatedHostAttributeResult::getImageCategory()const
+{
+	return imageCategory_;
 }
 
 int DescribeDedicatedHostAttributeResult::getHostStorage()const

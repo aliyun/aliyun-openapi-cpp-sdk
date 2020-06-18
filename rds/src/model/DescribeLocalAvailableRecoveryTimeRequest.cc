@@ -21,7 +21,7 @@ using AlibabaCloud::Rds::Model::DescribeLocalAvailableRecoveryTimeRequest;
 DescribeLocalAvailableRecoveryTimeRequest::DescribeLocalAvailableRecoveryTimeRequest() :
 	RpcServiceRequest("rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 DescribeLocalAvailableRecoveryTimeRequest::~DescribeLocalAvailableRecoveryTimeRequest()
@@ -80,5 +80,16 @@ void DescribeLocalAvailableRecoveryTimeRequest::setDBInstanceId(const std::strin
 {
 	dBInstanceId_ = dBInstanceId;
 	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeLocalAvailableRecoveryTimeRequest::getRegion()const
+{
+	return region_;
+}
+
+void DescribeLocalAvailableRecoveryTimeRequest::setRegion(const std::string& region)
+{
+	region_ = region;
+	setParameter("Region", region);
 }
 

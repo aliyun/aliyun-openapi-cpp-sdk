@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSQLCollectorStatus()const;
 				void setSQLCollectorStatus(const std::string& sQLCollectorStatus);
 				std::string getDBInstanceId()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				int storagePeriod_;
 				std::string clientToken_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string sQLCollectorStatus_;
 				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;

@@ -104,6 +104,17 @@ void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
+{
+	return targetDedicatedHostIdForMaster_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setTargetDedicatedHostIdForMaster(const std::string& targetDedicatedHostIdForMaster)
+{
+	targetDedicatedHostIdForMaster_ = targetDedicatedHostIdForMaster;
+	setParameter("TargetDedicatedHostIdForMaster", targetDedicatedHostIdForMaster);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getDBInstanceId()const
 {
 	return dBInstanceId_;

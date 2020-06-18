@@ -60,6 +60,17 @@ void CreateDdrInstanceRequest::setSystemDBCharset(const std::string& systemDBCha
 	setParameter("SystemDBCharset", systemDBCharset);
 }
 
+std::string CreateDdrInstanceRequest::getBinlogRole()const
+{
+	return binlogRole_;
+}
+
+void CreateDdrInstanceRequest::setBinlogRole(const std::string& binlogRole)
+{
+	binlogRole_ = binlogRole;
+	setParameter("BinlogRole", binlogRole);
+}
+
 std::string CreateDdrInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -190,6 +201,17 @@ void CreateDdrInstanceRequest::setPrivateIpAddress(const std::string& privateIpA
 {
 	privateIpAddress_ = privateIpAddress;
 	setParameter("PrivateIpAddress", privateIpAddress);
+}
+
+std::string CreateDdrInstanceRequest::getBinlogName()const
+{
+	return binlogName_;
+}
+
+void CreateDdrInstanceRequest::setBinlogName(const std::string& binlogName)
+{
+	binlogName_ = binlogName;
+	setParameter("BinlogName", binlogName);
 }
 
 std::string CreateDdrInstanceRequest::getTunnelId()const
@@ -388,6 +410,17 @@ void CreateDdrInstanceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
 	setParameter("UsedTime", usedTime);
+}
+
+std::string CreateDdrInstanceRequest::getBinlogPosition()const
+{
+	return binlogPosition_;
+}
+
+void CreateDdrInstanceRequest::setBinlogPosition(const std::string& binlogPosition)
+{
+	binlogPosition_ = binlogPosition;
+	setParameter("BinlogPosition", binlogPosition);
 }
 
 std::string CreateDdrInstanceRequest::getRestoreType()const

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string backupExtractionStatus;
 					std::string backupInitiator;
 					std::string backupIntranetDownloadURL;
+					std::string storageClass;
 					std::string backupMode;
 					long backupSize;
 					std::string backupId;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 					std::string dBInstanceId;
 					std::string backupDownloadURL;
 					std::string backupEndTime;
+					std::string copyOnlyBackup;
 					std::string backupStartTime;
 					long consistentTime;
 					std::string backupType;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				~DescribeBackupsResult();
 				std::string getTotalRecordCount()const;
 				std::string getPageRecordCount()const;
+				long getTotalEcsSnapshotSize()const;
 				std::string getPageNumber()const;
 				std::vector<Backup> getItems()const;
 				long getTotalBackupSize()const;
@@ -73,6 +76,7 @@ namespace AlibabaCloud
 			private:
 				std::string totalRecordCount_;
 				std::string pageRecordCount_;
+				long totalEcsSnapshotSize_;
 				std::string pageNumber_;
 				std::vector<Backup> items_;
 				long totalBackupSize_;

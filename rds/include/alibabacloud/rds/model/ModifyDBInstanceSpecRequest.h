@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setDBInstanceStorageType(const std::string& dBInstanceStorageType);
 				std::string getSourceBiz()const;
 				void setSourceBiz(const std::string& sourceBiz);
+				std::string getDedicatedHostGroupId()const;
+				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getDirection()const;
 				void setDirection(const std::string& direction);
 				std::string getResourceOwnerAccount()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
+				std::string getZoneId()const;
+				void setZoneId(const std::string& zoneId);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 
@@ -76,11 +80,13 @@ namespace AlibabaCloud
 				std::string dBInstanceId_;
 				std::string dBInstanceStorageType_;
 				std::string sourceBiz_;
+				std::string dedicatedHostGroupId_;
 				std::string direction_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string dBInstanceClass_;
+				std::string zoneId_;
 				std::string payType_;
 
 			};

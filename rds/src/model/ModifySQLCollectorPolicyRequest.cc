@@ -71,6 +71,17 @@ void ModifySQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifySQLCollectorPolicyRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void ModifySQLCollectorPolicyRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string ModifySQLCollectorPolicyRequest::getSQLCollectorStatus()const
 {
 	return sQLCollectorStatus_;

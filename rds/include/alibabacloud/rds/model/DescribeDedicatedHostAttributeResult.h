@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				std::string getCreatedTime()const;
 				std::string getDedicatedHostGroupId()const;
 				std::string getAutoRenew()const;
+				std::string getImageCategory()const;
 				int getHostStorage()const;
 				int getInstanceNumberSlave()const;
 				std::string getOpenPermission()const;
@@ -79,6 +80,7 @@ namespace AlibabaCloud
 				std::string createdTime_;
 				std::string dedicatedHostGroupId_;
 				std::string autoRenew_;
+				std::string imageCategory_;
 				int hostStorage_;
 				int instanceNumberSlave_;
 				std::string openPermission_;

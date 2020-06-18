@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					int backupSetScale;
 					std::string crossBackupSetFile;
 					long crossBackupSetSize;
+					std::string hasBackupTableMeta;
 					std::vector<std::string> restoreRegions;
 					std::string backupEndTime;
 					std::string backupStartTime;

@@ -38,17 +38,6 @@ void DescribeSQLCollectorPolicyRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeSQLCollectorPolicyRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void DescribeSQLCollectorPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string DescribeSQLCollectorPolicyRequest::getClientToken()const
 {
 	return clientToken_;
@@ -58,6 +47,50 @@ void DescribeSQLCollectorPolicyRequest::setClientToken(const std::string& client
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string DescribeSQLCollectorPolicyRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DescribeSQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DescribeSQLCollectorPolicyRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSQLCollectorPolicyRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void DescribeSQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string DescribeSQLCollectorPolicyRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void DescribeSQLCollectorPolicyRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string DescribeSQLCollectorPolicyRequest::getOwnerAccount()const
@@ -80,27 +113,5 @@ void DescribeSQLCollectorPolicyRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string DescribeSQLCollectorPolicyRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void DescribeSQLCollectorPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string DescribeSQLCollectorPolicyRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void DescribeSQLCollectorPolicyRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
 }
 
