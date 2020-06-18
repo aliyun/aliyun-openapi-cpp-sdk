@@ -28,6 +28,8 @@
 #include "model/DeleteVerifySchemeResult.h"
 #include "model/DescribeVerifySchemeRequest.h"
 #include "model/DescribeVerifySchemeResult.h"
+#include "model/GetAuthTokenRequest.h"
+#include "model/GetAuthTokenResult.h"
 #include "model/GetMobileRequest.h"
 #include "model/GetMobileResult.h"
 #include "model/TwiceTelVerifyRequest.h"
@@ -54,6 +56,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVerifySchemeResult> DescribeVerifySchemeOutcome;
 			typedef std::future<DescribeVerifySchemeOutcome> DescribeVerifySchemeOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::DescribeVerifySchemeRequest&, const DescribeVerifySchemeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVerifySchemeAsyncHandler;
+			typedef Outcome<Error, Model::GetAuthTokenResult> GetAuthTokenOutcome;
+			typedef std::future<GetAuthTokenOutcome> GetAuthTokenOutcomeCallable;
+			typedef std::function<void(const DypnsapiClient*, const Model::GetAuthTokenRequest&, const GetAuthTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthTokenAsyncHandler;
 			typedef Outcome<Error, Model::GetMobileResult> GetMobileOutcome;
 			typedef std::future<GetMobileOutcome> GetMobileOutcomeCallable;
 			typedef std::function<void(const DypnsapiClient*, const Model::GetMobileRequest&, const GetMobileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMobileAsyncHandler;
@@ -80,6 +85,9 @@ namespace AlibabaCloud
 			DescribeVerifySchemeOutcome describeVerifyScheme(const Model::DescribeVerifySchemeRequest &request)const;
 			void describeVerifySchemeAsync(const Model::DescribeVerifySchemeRequest& request, const DescribeVerifySchemeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVerifySchemeOutcomeCallable describeVerifySchemeCallable(const Model::DescribeVerifySchemeRequest& request) const;
+			GetAuthTokenOutcome getAuthToken(const Model::GetAuthTokenRequest &request)const;
+			void getAuthTokenAsync(const Model::GetAuthTokenRequest& request, const GetAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAuthTokenOutcomeCallable getAuthTokenCallable(const Model::GetAuthTokenRequest& request) const;
 			GetMobileOutcome getMobile(const Model::GetMobileRequest &request)const;
 			void getMobileAsync(const Model::GetMobileRequest& request, const GetMobileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMobileOutcomeCallable getMobileCallable(const Model::GetMobileRequest& request) const;

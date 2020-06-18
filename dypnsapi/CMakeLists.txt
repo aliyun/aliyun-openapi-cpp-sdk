@@ -27,6 +27,8 @@ set(dypnsapi_public_header_model
 	include/alibabacloud/dypnsapi/model/DeleteVerifySchemeResult.h
 	include/alibabacloud/dypnsapi/model/DescribeVerifySchemeRequest.h
 	include/alibabacloud/dypnsapi/model/DescribeVerifySchemeResult.h
+	include/alibabacloud/dypnsapi/model/GetAuthTokenRequest.h
+	include/alibabacloud/dypnsapi/model/GetAuthTokenResult.h
 	include/alibabacloud/dypnsapi/model/GetMobileRequest.h
 	include/alibabacloud/dypnsapi/model/GetMobileResult.h
 	include/alibabacloud/dypnsapi/model/TwiceTelVerifyRequest.h
@@ -44,6 +46,8 @@ set(dypnsapi_src
 	src/model/DeleteVerifySchemeResult.cc
 	src/model/DescribeVerifySchemeRequest.cc
 	src/model/DescribeVerifySchemeResult.cc
+	src/model/GetAuthTokenRequest.cc
+	src/model/GetAuthTokenResult.cc
 	src/model/GetMobileRequest.cc
 	src/model/GetMobileResult.cc
 	src/model/TwiceTelVerifyRequest.cc

@@ -31,21 +31,21 @@ DypnsapiClient::DypnsapiClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
 }
 
 DypnsapiClient::DypnsapiClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
 }
 
 DypnsapiClient::DypnsapiClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dypns");
 }
 
 DypnsapiClient::~DypnsapiClient()
@@ -153,6 +153,42 @@ DypnsapiClient::DescribeVerifySchemeOutcomeCallable DypnsapiClient::describeVeri
 			[this, request]()
 			{
 			return this->describeVerifyScheme(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DypnsapiClient::GetAuthTokenOutcome DypnsapiClient::getAuthToken(const GetAuthTokenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAuthTokenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAuthTokenOutcome(GetAuthTokenResult(outcome.result()));
+	else
+		return GetAuthTokenOutcome(outcome.error());
+}
+
+void DypnsapiClient::getAuthTokenAsync(const GetAuthTokenRequest& request, const GetAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAuthToken(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DypnsapiClient::GetAuthTokenOutcomeCallable DypnsapiClient::getAuthTokenCallable(const GetAuthTokenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAuthTokenOutcome()>>(
+			[this, request]()
+			{
+			return this->getAuthToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
