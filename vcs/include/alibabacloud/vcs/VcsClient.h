@@ -42,10 +42,14 @@
 #include "model/GetInventoryResult.h"
 #include "model/GetMonitorResultRequest.h"
 #include "model/GetMonitorResultResult.h"
+#include "model/GetPersonDetailRequest.h"
+#include "model/GetPersonDetailResult.h"
 #include "model/ListCorpsRequest.h"
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
 #include "model/ListDevicesResult.h"
+#include "model/ListPersonsRequest.h"
+#include "model/ListPersonsResult.h"
 #include "model/RecognizeImageRequest.h"
 #include "model/RecognizeImageResult.h"
 #include "model/SearchBodyRequest.h"
@@ -99,12 +103,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMonitorResultResult> GetMonitorResultOutcome;
 			typedef std::future<GetMonitorResultOutcome> GetMonitorResultOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetMonitorResultRequest&, const GetMonitorResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorResultAsyncHandler;
+			typedef Outcome<Error, Model::GetPersonDetailResult> GetPersonDetailOutcome;
+			typedef std::future<GetPersonDetailOutcome> GetPersonDetailOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetPersonDetailRequest&, const GetPersonDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonDetailAsyncHandler;
 			typedef Outcome<Error, Model::ListCorpsResult> ListCorpsOutcome;
 			typedef std::future<ListCorpsOutcome> ListCorpsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpsRequest&, const ListCorpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpsAsyncHandler;
 			typedef Outcome<Error, Model::ListDevicesResult> ListDevicesOutcome;
 			typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListDevicesRequest&, const ListDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
+			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
+			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageResult> RecognizeImageOutcome;
 			typedef std::future<RecognizeImageOutcome> RecognizeImageOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::RecognizeImageRequest&, const RecognizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageAsyncHandler;
@@ -161,12 +171,18 @@ namespace AlibabaCloud
 			GetMonitorResultOutcome getMonitorResult(const Model::GetMonitorResultRequest &request)const;
 			void getMonitorResultAsync(const Model::GetMonitorResultRequest& request, const GetMonitorResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMonitorResultOutcomeCallable getMonitorResultCallable(const Model::GetMonitorResultRequest& request) const;
+			GetPersonDetailOutcome getPersonDetail(const Model::GetPersonDetailRequest &request)const;
+			void getPersonDetailAsync(const Model::GetPersonDetailRequest& request, const GetPersonDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPersonDetailOutcomeCallable getPersonDetailCallable(const Model::GetPersonDetailRequest& request) const;
 			ListCorpsOutcome listCorps(const Model::ListCorpsRequest &request)const;
 			void listCorpsAsync(const Model::ListCorpsRequest& request, const ListCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpsOutcomeCallable listCorpsCallable(const Model::ListCorpsRequest& request) const;
 			ListDevicesOutcome listDevices(const Model::ListDevicesRequest &request)const;
 			void listDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevicesOutcomeCallable listDevicesCallable(const Model::ListDevicesRequest& request) const;
+			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
+			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
 			RecognizeImageOutcome recognizeImage(const Model::RecognizeImageRequest &request)const;
 			void recognizeImageAsync(const Model::RecognizeImageRequest& request, const RecognizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageOutcomeCallable recognizeImageCallable(const Model::RecognizeImageRequest& request) const;

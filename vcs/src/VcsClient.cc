@@ -411,6 +411,42 @@ VcsClient::GetMonitorResultOutcomeCallable VcsClient::getMonitorResultCallable(c
 	return task->get_future();
 }
 
+VcsClient::GetPersonDetailOutcome VcsClient::getPersonDetail(const GetPersonDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPersonDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPersonDetailOutcome(GetPersonDetailResult(outcome.result()));
+	else
+		return GetPersonDetailOutcome(outcome.error());
+}
+
+void VcsClient::getPersonDetailAsync(const GetPersonDetailRequest& request, const GetPersonDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPersonDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetPersonDetailOutcomeCallable VcsClient::getPersonDetailCallable(const GetPersonDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPersonDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getPersonDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListCorpsOutcome VcsClient::listCorps(const ListCorpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ VcsClient::ListDevicesOutcomeCallable VcsClient::listDevicesCallable(const ListD
 			[this, request]()
 			{
 			return this->listDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListPersonsOutcome VcsClient::listPersons(const ListPersonsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPersonsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPersonsOutcome(ListPersonsResult(outcome.result()));
+	else
+		return ListPersonsOutcome(outcome.error());
+}
+
+void VcsClient::listPersonsAsync(const ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPersons(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListPersonsOutcomeCallable VcsClient::listPersonsCallable(const ListPersonsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPersonsOutcome()>>(
+			[this, request]()
+			{
+			return this->listPersons(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

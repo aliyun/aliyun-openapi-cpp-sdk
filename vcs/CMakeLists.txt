@@ -41,10 +41,14 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetInventoryResult.h
 	include/alibabacloud/vcs/model/GetMonitorResultRequest.h
 	include/alibabacloud/vcs/model/GetMonitorResultResult.h
+	include/alibabacloud/vcs/model/GetPersonDetailRequest.h
+	include/alibabacloud/vcs/model/GetPersonDetailResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
 	include/alibabacloud/vcs/model/ListDevicesResult.h
+	include/alibabacloud/vcs/model/ListPersonsRequest.h
+	include/alibabacloud/vcs/model/ListPersonsResult.h
 	include/alibabacloud/vcs/model/RecognizeImageRequest.h
 	include/alibabacloud/vcs/model/RecognizeImageResult.h
 	include/alibabacloud/vcs/model/SearchBodyRequest.h
@@ -82,10 +86,14 @@ set(vcs_src
 	src/model/GetInventoryResult.cc
 	src/model/GetMonitorResultRequest.cc
 	src/model/GetMonitorResultResult.cc
+	src/model/GetPersonDetailRequest.cc
+	src/model/GetPersonDetailResult.cc
 	src/model/ListCorpsRequest.cc
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListPersonsRequest.cc
+	src/model/ListPersonsResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
 	src/model/SearchBodyRequest.cc
