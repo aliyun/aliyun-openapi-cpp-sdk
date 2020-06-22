@@ -66,6 +66,7 @@ namespace AlibabaCloud
 						std::string lang;
 						std::string pixFmt;
 						std::string codecName;
+						std::string bitrate;
 						std::string profile;
 						std::string avgFPS;
 						std::string timebase;
