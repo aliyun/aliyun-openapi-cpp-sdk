@@ -1,3 +1,8 @@
+2020-06-22 Version: 1.36.470
+- Add GetMultipleTrace api.
+- Add SearchTracesByPage api.
+- Add GetStack api.
+
 2020-06-21 Version: 1.36.469
 - Add persons API.
 

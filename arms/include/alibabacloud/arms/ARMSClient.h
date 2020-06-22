@@ -44,12 +44,22 @@
 #include "model/DeleteAlertRulesResult.h"
 #include "model/DeleteRetcodeAppRequest.h"
 #include "model/DeleteRetcodeAppResult.h"
+#include "model/DeleteTraceAppRequest.h"
+#include "model/DeleteTraceAppResult.h"
+#include "model/DescribeTraceLicenseKeyRequest.h"
+#include "model/DescribeTraceLicenseKeyResult.h"
+#include "model/DescribeTraceLocationRequest.h"
+#include "model/DescribeTraceLocationResult.h"
 #include "model/GetConsistencySnapshotRequest.h"
 #include "model/GetConsistencySnapshotResult.h"
+#include "model/GetMultipleTraceRequest.h"
+#include "model/GetMultipleTraceResult.h"
 #include "model/GetPrometheusApiTokenRequest.h"
 #include "model/GetPrometheusApiTokenResult.h"
 #include "model/GetRetcodeShareUrlRequest.h"
 #include "model/GetRetcodeShareUrlResult.h"
+#include "model/GetStackRequest.h"
+#include "model/GetStackResult.h"
 #include "model/GetTraceRequest.h"
 #include "model/GetTraceResult.h"
 #include "model/ImportAppAlertRulesRequest.h"
@@ -88,6 +98,8 @@
 #include "model/SearchTraceAppByPageResult.h"
 #include "model/SearchTracesRequest.h"
 #include "model/SearchTracesResult.h"
+#include "model/SearchTracesByPageRequest.h"
+#include "model/SearchTracesByPageResult.h"
 #include "model/SetRetcodeShareStatusRequest.h"
 #include "model/SetRetcodeShareStatusResult.h"
 #include "model/StartAlertRequest.h"
@@ -142,15 +154,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRetcodeAppResult> DeleteRetcodeAppOutcome;
 			typedef std::future<DeleteRetcodeAppOutcome> DeleteRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteRetcodeAppRequest&, const DeleteRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::DeleteTraceAppResult> DeleteTraceAppOutcome;
+			typedef std::future<DeleteTraceAppOutcome> DeleteTraceAppOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DeleteTraceAppRequest&, const DeleteTraceAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTraceAppAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTraceLicenseKeyResult> DescribeTraceLicenseKeyOutcome;
+			typedef std::future<DescribeTraceLicenseKeyOutcome> DescribeTraceLicenseKeyOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DescribeTraceLicenseKeyRequest&, const DescribeTraceLicenseKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceLicenseKeyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTraceLocationResult> DescribeTraceLocationOutcome;
+			typedef std::future<DescribeTraceLocationOutcome> DescribeTraceLocationOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::DescribeTraceLocationRequest&, const DescribeTraceLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceLocationAsyncHandler;
 			typedef Outcome<Error, Model::GetConsistencySnapshotResult> GetConsistencySnapshotOutcome;
 			typedef std::future<GetConsistencySnapshotOutcome> GetConsistencySnapshotOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetConsistencySnapshotRequest&, const GetConsistencySnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsistencySnapshotAsyncHandler;
+			typedef Outcome<Error, Model::GetMultipleTraceResult> GetMultipleTraceOutcome;
+			typedef std::future<GetMultipleTraceOutcome> GetMultipleTraceOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetMultipleTraceRequest&, const GetMultipleTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMultipleTraceAsyncHandler;
 			typedef Outcome<Error, Model::GetPrometheusApiTokenResult> GetPrometheusApiTokenOutcome;
 			typedef std::future<GetPrometheusApiTokenOutcome> GetPrometheusApiTokenOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetPrometheusApiTokenRequest&, const GetPrometheusApiTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPrometheusApiTokenAsyncHandler;
 			typedef Outcome<Error, Model::GetRetcodeShareUrlResult> GetRetcodeShareUrlOutcome;
 			typedef std::future<GetRetcodeShareUrlOutcome> GetRetcodeShareUrlOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetRetcodeShareUrlRequest&, const GetRetcodeShareUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRetcodeShareUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetStackResult> GetStackOutcome;
+			typedef std::future<GetStackOutcome> GetStackOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetStackRequest&, const GetStackOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStackAsyncHandler;
 			typedef Outcome<Error, Model::GetTraceResult> GetTraceOutcome;
 			typedef std::future<GetTraceOutcome> GetTraceOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetTraceRequest&, const GetTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAsyncHandler;
@@ -208,6 +235,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchTracesResult> SearchTracesOutcome;
 			typedef std::future<SearchTracesOutcome> SearchTracesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchTracesRequest&, const SearchTracesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTracesAsyncHandler;
+			typedef Outcome<Error, Model::SearchTracesByPageResult> SearchTracesByPageOutcome;
+			typedef std::future<SearchTracesByPageOutcome> SearchTracesByPageOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::SearchTracesByPageRequest&, const SearchTracesByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchTracesByPageAsyncHandler;
 			typedef Outcome<Error, Model::SetRetcodeShareStatusResult> SetRetcodeShareStatusOutcome;
 			typedef std::future<SetRetcodeShareStatusOutcome> SetRetcodeShareStatusOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SetRetcodeShareStatusRequest&, const SetRetcodeShareStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetRetcodeShareStatusAsyncHandler;
@@ -264,15 +294,30 @@ namespace AlibabaCloud
 			DeleteRetcodeAppOutcome deleteRetcodeApp(const Model::DeleteRetcodeAppRequest &request)const;
 			void deleteRetcodeAppAsync(const Model::DeleteRetcodeAppRequest& request, const DeleteRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRetcodeAppOutcomeCallable deleteRetcodeAppCallable(const Model::DeleteRetcodeAppRequest& request) const;
+			DeleteTraceAppOutcome deleteTraceApp(const Model::DeleteTraceAppRequest &request)const;
+			void deleteTraceAppAsync(const Model::DeleteTraceAppRequest& request, const DeleteTraceAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteTraceAppOutcomeCallable deleteTraceAppCallable(const Model::DeleteTraceAppRequest& request) const;
+			DescribeTraceLicenseKeyOutcome describeTraceLicenseKey(const Model::DescribeTraceLicenseKeyRequest &request)const;
+			void describeTraceLicenseKeyAsync(const Model::DescribeTraceLicenseKeyRequest& request, const DescribeTraceLicenseKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTraceLicenseKeyOutcomeCallable describeTraceLicenseKeyCallable(const Model::DescribeTraceLicenseKeyRequest& request) const;
+			DescribeTraceLocationOutcome describeTraceLocation(const Model::DescribeTraceLocationRequest &request)const;
+			void describeTraceLocationAsync(const Model::DescribeTraceLocationRequest& request, const DescribeTraceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTraceLocationOutcomeCallable describeTraceLocationCallable(const Model::DescribeTraceLocationRequest& request) const;
 			GetConsistencySnapshotOutcome getConsistencySnapshot(const Model::GetConsistencySnapshotRequest &request)const;
 			void getConsistencySnapshotAsync(const Model::GetConsistencySnapshotRequest& request, const GetConsistencySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConsistencySnapshotOutcomeCallable getConsistencySnapshotCallable(const Model::GetConsistencySnapshotRequest& request) const;
+			GetMultipleTraceOutcome getMultipleTrace(const Model::GetMultipleTraceRequest &request)const;
+			void getMultipleTraceAsync(const Model::GetMultipleTraceRequest& request, const GetMultipleTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMultipleTraceOutcomeCallable getMultipleTraceCallable(const Model::GetMultipleTraceRequest& request) const;
 			GetPrometheusApiTokenOutcome getPrometheusApiToken(const Model::GetPrometheusApiTokenRequest &request)const;
 			void getPrometheusApiTokenAsync(const Model::GetPrometheusApiTokenRequest& request, const GetPrometheusApiTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPrometheusApiTokenOutcomeCallable getPrometheusApiTokenCallable(const Model::GetPrometheusApiTokenRequest& request) const;
 			GetRetcodeShareUrlOutcome getRetcodeShareUrl(const Model::GetRetcodeShareUrlRequest &request)const;
 			void getRetcodeShareUrlAsync(const Model::GetRetcodeShareUrlRequest& request, const GetRetcodeShareUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRetcodeShareUrlOutcomeCallable getRetcodeShareUrlCallable(const Model::GetRetcodeShareUrlRequest& request) const;
+			GetStackOutcome getStack(const Model::GetStackRequest &request)const;
+			void getStackAsync(const Model::GetStackRequest& request, const GetStackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetStackOutcomeCallable getStackCallable(const Model::GetStackRequest& request) const;
 			GetTraceOutcome getTrace(const Model::GetTraceRequest &request)const;
 			void getTraceAsync(const Model::GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTraceOutcomeCallable getTraceCallable(const Model::GetTraceRequest& request) const;
@@ -330,6 +375,9 @@ namespace AlibabaCloud
 			SearchTracesOutcome searchTraces(const Model::SearchTracesRequest &request)const;
 			void searchTracesAsync(const Model::SearchTracesRequest& request, const SearchTracesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchTracesOutcomeCallable searchTracesCallable(const Model::SearchTracesRequest& request) const;
+			SearchTracesByPageOutcome searchTracesByPage(const Model::SearchTracesByPageRequest &request)const;
+			void searchTracesByPageAsync(const Model::SearchTracesByPageRequest& request, const SearchTracesByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchTracesByPageOutcomeCallable searchTracesByPageCallable(const Model::SearchTracesByPageRequest& request) const;
 			SetRetcodeShareStatusOutcome setRetcodeShareStatus(const Model::SetRetcodeShareStatusRequest &request)const;
 			void setRetcodeShareStatusAsync(const Model::SetRetcodeShareStatusRequest& request, const SetRetcodeShareStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetRetcodeShareStatusOutcomeCallable setRetcodeShareStatusCallable(const Model::SetRetcodeShareStatusRequest& request) const;

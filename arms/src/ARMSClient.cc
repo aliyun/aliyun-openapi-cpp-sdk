@@ -447,6 +447,114 @@ ARMSClient::DeleteRetcodeAppOutcomeCallable ARMSClient::deleteRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::DeleteTraceAppOutcome ARMSClient::deleteTraceApp(const DeleteTraceAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTraceAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTraceAppOutcome(DeleteTraceAppResult(outcome.result()));
+	else
+		return DeleteTraceAppOutcome(outcome.error());
+}
+
+void ARMSClient::deleteTraceAppAsync(const DeleteTraceAppRequest& request, const DeleteTraceAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTraceApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DeleteTraceAppOutcomeCallable ARMSClient::deleteTraceAppCallable(const DeleteTraceAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTraceAppOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTraceApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeTraceLicenseKeyOutcome ARMSClient::describeTraceLicenseKey(const DescribeTraceLicenseKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTraceLicenseKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTraceLicenseKeyOutcome(DescribeTraceLicenseKeyResult(outcome.result()));
+	else
+		return DescribeTraceLicenseKeyOutcome(outcome.error());
+}
+
+void ARMSClient::describeTraceLicenseKeyAsync(const DescribeTraceLicenseKeyRequest& request, const DescribeTraceLicenseKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTraceLicenseKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeTraceLicenseKeyOutcomeCallable ARMSClient::describeTraceLicenseKeyCallable(const DescribeTraceLicenseKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTraceLicenseKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTraceLicenseKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::DescribeTraceLocationOutcome ARMSClient::describeTraceLocation(const DescribeTraceLocationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTraceLocationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTraceLocationOutcome(DescribeTraceLocationResult(outcome.result()));
+	else
+		return DescribeTraceLocationOutcome(outcome.error());
+}
+
+void ARMSClient::describeTraceLocationAsync(const DescribeTraceLocationRequest& request, const DescribeTraceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTraceLocation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::DescribeTraceLocationOutcomeCallable ARMSClient::describeTraceLocationCallable(const DescribeTraceLocationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTraceLocationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTraceLocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetConsistencySnapshotOutcome ARMSClient::getConsistencySnapshot(const GetConsistencySnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +585,42 @@ ARMSClient::GetConsistencySnapshotOutcomeCallable ARMSClient::getConsistencySnap
 			[this, request]()
 			{
 			return this->getConsistencySnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetMultipleTraceOutcome ARMSClient::getMultipleTrace(const GetMultipleTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMultipleTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMultipleTraceOutcome(GetMultipleTraceResult(outcome.result()));
+	else
+		return GetMultipleTraceOutcome(outcome.error());
+}
+
+void ARMSClient::getMultipleTraceAsync(const GetMultipleTraceRequest& request, const GetMultipleTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMultipleTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetMultipleTraceOutcomeCallable ARMSClient::getMultipleTraceCallable(const GetMultipleTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMultipleTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->getMultipleTrace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -549,6 +693,42 @@ ARMSClient::GetRetcodeShareUrlOutcomeCallable ARMSClient::getRetcodeShareUrlCall
 			[this, request]()
 			{
 			return this->getRetcodeShareUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::GetStackOutcome ARMSClient::getStack(const GetStackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetStackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetStackOutcome(GetStackResult(outcome.result()));
+	else
+		return GetStackOutcome(outcome.error());
+}
+
+void ARMSClient::getStackAsync(const GetStackRequest& request, const GetStackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getStack(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetStackOutcomeCallable ARMSClient::getStackCallable(const GetStackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetStackOutcome()>>(
+			[this, request]()
+			{
+			return this->getStack(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1233,6 +1413,42 @@ ARMSClient::SearchTracesOutcomeCallable ARMSClient::searchTracesCallable(const S
 			[this, request]()
 			{
 			return this->searchTraces(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::SearchTracesByPageOutcome ARMSClient::searchTracesByPage(const SearchTracesByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchTracesByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchTracesByPageOutcome(SearchTracesByPageResult(outcome.result()));
+	else
+		return SearchTracesByPageOutcome(outcome.error());
+}
+
+void ARMSClient::searchTracesByPageAsync(const SearchTracesByPageRequest& request, const SearchTracesByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchTracesByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SearchTracesByPageOutcomeCallable ARMSClient::searchTracesByPageCallable(const SearchTracesByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchTracesByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->searchTracesByPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

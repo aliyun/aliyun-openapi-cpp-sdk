@@ -43,12 +43,22 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
+	include/alibabacloud/arms/model/DeleteTraceAppRequest.h
+	include/alibabacloud/arms/model/DeleteTraceAppResult.h
+	include/alibabacloud/arms/model/DescribeTraceLicenseKeyRequest.h
+	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
+	include/alibabacloud/arms/model/DescribeTraceLocationRequest.h
+	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
+	include/alibabacloud/arms/model/GetMultipleTraceRequest.h
+	include/alibabacloud/arms/model/GetMultipleTraceResult.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenRequest.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenResult.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlRequest.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlResult.h
+	include/alibabacloud/arms/model/GetStackRequest.h
+	include/alibabacloud/arms/model/GetStackResult.h
 	include/alibabacloud/arms/model/GetTraceRequest.h
 	include/alibabacloud/arms/model/GetTraceResult.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesRequest.h
@@ -87,6 +97,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/SearchTraceAppByPageResult.h
 	include/alibabacloud/arms/model/SearchTracesRequest.h
 	include/alibabacloud/arms/model/SearchTracesResult.h
+	include/alibabacloud/arms/model/SearchTracesByPageRequest.h
+	include/alibabacloud/arms/model/SearchTracesByPageResult.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusRequest.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusResult.h
 	include/alibabacloud/arms/model/StartAlertRequest.h
@@ -124,12 +136,22 @@ set(arms_src
 	src/model/DeleteAlertRulesResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
+	src/model/DeleteTraceAppRequest.cc
+	src/model/DeleteTraceAppResult.cc
+	src/model/DescribeTraceLicenseKeyRequest.cc
+	src/model/DescribeTraceLicenseKeyResult.cc
+	src/model/DescribeTraceLocationRequest.cc
+	src/model/DescribeTraceLocationResult.cc
 	src/model/GetConsistencySnapshotRequest.cc
 	src/model/GetConsistencySnapshotResult.cc
+	src/model/GetMultipleTraceRequest.cc
+	src/model/GetMultipleTraceResult.cc
 	src/model/GetPrometheusApiTokenRequest.cc
 	src/model/GetPrometheusApiTokenResult.cc
 	src/model/GetRetcodeShareUrlRequest.cc
 	src/model/GetRetcodeShareUrlResult.cc
+	src/model/GetStackRequest.cc
+	src/model/GetStackResult.cc
 	src/model/GetTraceRequest.cc
 	src/model/GetTraceResult.cc
 	src/model/ImportAppAlertRulesRequest.cc
@@ -168,6 +190,8 @@ set(arms_src
 	src/model/SearchTraceAppByPageResult.cc
 	src/model/SearchTracesRequest.cc
 	src/model/SearchTracesResult.cc
+	src/model/SearchTracesByPageRequest.cc
+	src/model/SearchTracesByPageResult.cc
 	src/model/SetRetcodeShareStatusRequest.cc
 	src/model/SetRetcodeShareStatusResult.cc
 	src/model/StartAlertRequest.cc
