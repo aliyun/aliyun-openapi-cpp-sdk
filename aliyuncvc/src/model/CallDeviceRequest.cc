@@ -27,6 +27,17 @@ CallDeviceRequest::CallDeviceRequest() :
 CallDeviceRequest::~CallDeviceRequest()
 {}
 
+std::string CallDeviceRequest::getInviteName()const
+{
+	return inviteName_;
+}
+
+void CallDeviceRequest::setInviteName(const std::string& inviteName)
+{
+	inviteName_ = inviteName;
+	setBodyParameter("InviteName", inviteName);
+}
+
 std::string CallDeviceRequest::getOperateUserId()const
 {
 	return operateUserId_;

@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CallDeviceRequest();
 				~CallDeviceRequest();
 
+				std::string getInviteName()const;
+				void setInviteName(const std::string& inviteName);
 				std::string getOperateUserId()const;
 				void setOperateUserId(const std::string& operateUserId);
 				bool getJoinMeetingFlag()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setSN(const std::string& sN);
 
             private:
+				std::string inviteName_;
 				std::string operateUserId_;
 				bool joinMeetingFlag_;
 				std::string meetingCode_;
