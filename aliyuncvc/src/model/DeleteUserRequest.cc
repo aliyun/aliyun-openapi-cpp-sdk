@@ -19,7 +19,7 @@
 using AlibabaCloud::Aliyuncvc::Model::DeleteUserRequest;
 
 DeleteUserRequest::DeleteUserRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "DeleteUser")
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "DeleteUser")
 {
 	setMethod(HttpRequest::Method::Post);
 }

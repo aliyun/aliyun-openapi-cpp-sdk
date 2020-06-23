@@ -45,12 +45,19 @@ void CreateUserResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
 
 }
 
 std::string CreateUserResult::getMessage()const
 {
 	return message_;
+}
+
+std::string CreateUserResult::getUserId()const
+{
+	return userId_;
 }
 
 int CreateUserResult::getErrorCode()const

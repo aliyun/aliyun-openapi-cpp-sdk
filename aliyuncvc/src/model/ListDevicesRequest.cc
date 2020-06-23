@@ -19,7 +19,7 @@
 using AlibabaCloud::Aliyuncvc::Model::ListDevicesRequest;
 
 ListDevicesRequest::ListDevicesRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-09-19", "ListDevices")
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "ListDevices")
 {
 	setMethod(HttpRequest::Method::Post);
 }

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit CreateUserResult(const std::string &payload);
 				~CreateUserResult();
 				std::string getMessage()const;
+				std::string getUserId()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string userId_;
 				int errorCode_;
 				bool success_;
 
