@@ -32,10 +32,14 @@
 #include "model/BidDomainResult.h"
 #include "model/CancelDomainVerificationRequest.h"
 #include "model/CancelDomainVerificationResult.h"
+#include "model/CancelOperationAuditRequest.h"
+#include "model/CancelOperationAuditResult.h"
 #include "model/CancelQualificationVerificationRequest.h"
 #include "model/CancelQualificationVerificationResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
+#include "model/ChangeAuctionRequest.h"
+#include "model/ChangeAuctionResult.h"
 #include "model/CheckDomainRequest.h"
 #include "model/CheckDomainResult.h"
 #include "model/CheckDomainSunriseClaimRequest.h"
@@ -62,6 +66,8 @@
 #include "model/FinishDemandResult.h"
 #include "model/FuzzyMatchDomainSensitiveWordRequest.h"
 #include "model/FuzzyMatchDomainSensitiveWordResult.h"
+#include "model/GetOperationOssUploadPolicyRequest.h"
+#include "model/GetOperationOssUploadPolicyResult.h"
 #include "model/GetQualificationUploadPolicyRequest.h"
 #include "model/GetQualificationUploadPolicyResult.h"
 #include "model/GetReserveDomainUrlRequest.h"
@@ -112,6 +118,8 @@
 #include "model/QueryDomainRealNameVerificationInfoResult.h"
 #include "model/QueryDomainSuffixRequest.h"
 #include "model/QueryDomainSuffixResult.h"
+#include "model/QueryDomainTransferStatusRequest.h"
+#include "model/QueryDomainTransferStatusResult.h"
 #include "model/QueryEmailVerificationRequest.h"
 #include "model/QueryEmailVerificationResult.h"
 #include "model/QueryEnsAssociationRequest.h"
@@ -124,6 +132,10 @@
 #include "model/QueryFailingReasonListForQualificationResult.h"
 #include "model/QueryLocalEnsAssociationRequest.h"
 #include "model/QueryLocalEnsAssociationResult.h"
+#include "model/QueryOperationAuditInfoDetailRequest.h"
+#include "model/QueryOperationAuditInfoDetailResult.h"
+#include "model/QueryOperationAuditInfoListRequest.h"
+#include "model/QueryOperationAuditInfoListResult.h"
 #include "model/QueryQualificationDetailRequest.h"
 #include "model/QueryQualificationDetailResult.h"
 #include "model/QueryRegistrantProfileRealNameVerificationInfoRequest.h"
@@ -246,6 +258,10 @@
 #include "model/ScrollDomainListResult.h"
 #include "model/SubmitEmailVerificationRequest.h"
 #include "model/SubmitEmailVerificationResult.h"
+#include "model/SubmitOperationAuditInfoRequest.h"
+#include "model/SubmitOperationAuditInfoResult.h"
+#include "model/SubmitOperationCredentialsRequest.h"
+#include "model/SubmitOperationCredentialsResult.h"
 #include "model/TransferInCheckMailTokenRequest.h"
 #include "model/TransferInCheckMailTokenResult.h"
 #include "model/TransferInReenterTransferAuthorizationCodeRequest.h"
@@ -284,12 +300,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelDomainVerificationResult> CancelDomainVerificationOutcome;
 			typedef std::future<CancelDomainVerificationOutcome> CancelDomainVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CancelDomainVerificationRequest&, const CancelDomainVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDomainVerificationAsyncHandler;
+			typedef Outcome<Error, Model::CancelOperationAuditResult> CancelOperationAuditOutcome;
+			typedef std::future<CancelOperationAuditOutcome> CancelOperationAuditOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::CancelOperationAuditRequest&, const CancelOperationAuditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelOperationAuditAsyncHandler;
 			typedef Outcome<Error, Model::CancelQualificationVerificationResult> CancelQualificationVerificationOutcome;
 			typedef std::future<CancelQualificationVerificationOutcome> CancelQualificationVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CancelQualificationVerificationRequest&, const CancelQualificationVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelQualificationVerificationAsyncHandler;
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
+			typedef Outcome<Error, Model::ChangeAuctionResult> ChangeAuctionOutcome;
+			typedef std::future<ChangeAuctionOutcome> ChangeAuctionOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::ChangeAuctionRequest&, const ChangeAuctionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAuctionAsyncHandler;
 			typedef Outcome<Error, Model::CheckDomainResult> CheckDomainOutcome;
 			typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CheckDomainRequest&, const CheckDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
@@ -329,6 +351,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FuzzyMatchDomainSensitiveWordResult> FuzzyMatchDomainSensitiveWordOutcome;
 			typedef std::future<FuzzyMatchDomainSensitiveWordOutcome> FuzzyMatchDomainSensitiveWordOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::FuzzyMatchDomainSensitiveWordRequest&, const FuzzyMatchDomainSensitiveWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FuzzyMatchDomainSensitiveWordAsyncHandler;
+			typedef Outcome<Error, Model::GetOperationOssUploadPolicyResult> GetOperationOssUploadPolicyOutcome;
+			typedef std::future<GetOperationOssUploadPolicyOutcome> GetOperationOssUploadPolicyOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::GetOperationOssUploadPolicyRequest&, const GetOperationOssUploadPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOperationOssUploadPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetQualificationUploadPolicyResult> GetQualificationUploadPolicyOutcome;
 			typedef std::future<GetQualificationUploadPolicyOutcome> GetQualificationUploadPolicyOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::GetQualificationUploadPolicyRequest&, const GetQualificationUploadPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQualificationUploadPolicyAsyncHandler;
@@ -404,6 +429,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDomainSuffixResult> QueryDomainSuffixOutcome;
 			typedef std::future<QueryDomainSuffixOutcome> QueryDomainSuffixOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryDomainSuffixRequest&, const QueryDomainSuffixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainSuffixAsyncHandler;
+			typedef Outcome<Error, Model::QueryDomainTransferStatusResult> QueryDomainTransferStatusOutcome;
+			typedef std::future<QueryDomainTransferStatusOutcome> QueryDomainTransferStatusOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::QueryDomainTransferStatusRequest&, const QueryDomainTransferStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainTransferStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryEmailVerificationResult> QueryEmailVerificationOutcome;
 			typedef std::future<QueryEmailVerificationOutcome> QueryEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryEmailVerificationRequest&, const QueryEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmailVerificationAsyncHandler;
@@ -422,6 +450,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryLocalEnsAssociationResult> QueryLocalEnsAssociationOutcome;
 			typedef std::future<QueryLocalEnsAssociationOutcome> QueryLocalEnsAssociationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryLocalEnsAssociationRequest&, const QueryLocalEnsAssociationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryLocalEnsAssociationAsyncHandler;
+			typedef Outcome<Error, Model::QueryOperationAuditInfoDetailResult> QueryOperationAuditInfoDetailOutcome;
+			typedef std::future<QueryOperationAuditInfoDetailOutcome> QueryOperationAuditInfoDetailOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::QueryOperationAuditInfoDetailRequest&, const QueryOperationAuditInfoDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOperationAuditInfoDetailAsyncHandler;
+			typedef Outcome<Error, Model::QueryOperationAuditInfoListResult> QueryOperationAuditInfoListOutcome;
+			typedef std::future<QueryOperationAuditInfoListOutcome> QueryOperationAuditInfoListOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::QueryOperationAuditInfoListRequest&, const QueryOperationAuditInfoListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOperationAuditInfoListAsyncHandler;
 			typedef Outcome<Error, Model::QueryQualificationDetailResult> QueryQualificationDetailOutcome;
 			typedef std::future<QueryQualificationDetailOutcome> QueryQualificationDetailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryQualificationDetailRequest&, const QueryQualificationDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryQualificationDetailAsyncHandler;
@@ -605,6 +639,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitEmailVerificationResult> SubmitEmailVerificationOutcome;
 			typedef std::future<SubmitEmailVerificationOutcome> SubmitEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::SubmitEmailVerificationRequest&, const SubmitEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitEmailVerificationAsyncHandler;
+			typedef Outcome<Error, Model::SubmitOperationAuditInfoResult> SubmitOperationAuditInfoOutcome;
+			typedef std::future<SubmitOperationAuditInfoOutcome> SubmitOperationAuditInfoOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SubmitOperationAuditInfoRequest&, const SubmitOperationAuditInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOperationAuditInfoAsyncHandler;
+			typedef Outcome<Error, Model::SubmitOperationCredentialsResult> SubmitOperationCredentialsOutcome;
+			typedef std::future<SubmitOperationCredentialsOutcome> SubmitOperationCredentialsOutcomeCallable;
+			typedef std::function<void(const DomainClient*, const Model::SubmitOperationCredentialsRequest&, const SubmitOperationCredentialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitOperationCredentialsAsyncHandler;
 			typedef Outcome<Error, Model::TransferInCheckMailTokenResult> TransferInCheckMailTokenOutcome;
 			typedef std::future<TransferInCheckMailTokenOutcome> TransferInCheckMailTokenOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::TransferInCheckMailTokenRequest&, const TransferInCheckMailTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TransferInCheckMailTokenAsyncHandler;
@@ -646,12 +686,18 @@ namespace AlibabaCloud
 			CancelDomainVerificationOutcome cancelDomainVerification(const Model::CancelDomainVerificationRequest &request)const;
 			void cancelDomainVerificationAsync(const Model::CancelDomainVerificationRequest& request, const CancelDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelDomainVerificationOutcomeCallable cancelDomainVerificationCallable(const Model::CancelDomainVerificationRequest& request) const;
+			CancelOperationAuditOutcome cancelOperationAudit(const Model::CancelOperationAuditRequest &request)const;
+			void cancelOperationAuditAsync(const Model::CancelOperationAuditRequest& request, const CancelOperationAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelOperationAuditOutcomeCallable cancelOperationAuditCallable(const Model::CancelOperationAuditRequest& request) const;
 			CancelQualificationVerificationOutcome cancelQualificationVerification(const Model::CancelQualificationVerificationRequest &request)const;
 			void cancelQualificationVerificationAsync(const Model::CancelQualificationVerificationRequest& request, const CancelQualificationVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelQualificationVerificationOutcomeCallable cancelQualificationVerificationCallable(const Model::CancelQualificationVerificationRequest& request) const;
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
+			ChangeAuctionOutcome changeAuction(const Model::ChangeAuctionRequest &request)const;
+			void changeAuctionAsync(const Model::ChangeAuctionRequest& request, const ChangeAuctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeAuctionOutcomeCallable changeAuctionCallable(const Model::ChangeAuctionRequest& request) const;
 			CheckDomainOutcome checkDomain(const Model::CheckDomainRequest &request)const;
 			void checkDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDomainOutcomeCallable checkDomainCallable(const Model::CheckDomainRequest& request) const;
@@ -691,6 +737,9 @@ namespace AlibabaCloud
 			FuzzyMatchDomainSensitiveWordOutcome fuzzyMatchDomainSensitiveWord(const Model::FuzzyMatchDomainSensitiveWordRequest &request)const;
 			void fuzzyMatchDomainSensitiveWordAsync(const Model::FuzzyMatchDomainSensitiveWordRequest& request, const FuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FuzzyMatchDomainSensitiveWordOutcomeCallable fuzzyMatchDomainSensitiveWordCallable(const Model::FuzzyMatchDomainSensitiveWordRequest& request) const;
+			GetOperationOssUploadPolicyOutcome getOperationOssUploadPolicy(const Model::GetOperationOssUploadPolicyRequest &request)const;
+			void getOperationOssUploadPolicyAsync(const Model::GetOperationOssUploadPolicyRequest& request, const GetOperationOssUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOperationOssUploadPolicyOutcomeCallable getOperationOssUploadPolicyCallable(const Model::GetOperationOssUploadPolicyRequest& request) const;
 			GetQualificationUploadPolicyOutcome getQualificationUploadPolicy(const Model::GetQualificationUploadPolicyRequest &request)const;
 			void getQualificationUploadPolicyAsync(const Model::GetQualificationUploadPolicyRequest& request, const GetQualificationUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetQualificationUploadPolicyOutcomeCallable getQualificationUploadPolicyCallable(const Model::GetQualificationUploadPolicyRequest& request) const;
@@ -766,6 +815,9 @@ namespace AlibabaCloud
 			QueryDomainSuffixOutcome queryDomainSuffix(const Model::QueryDomainSuffixRequest &request)const;
 			void queryDomainSuffixAsync(const Model::QueryDomainSuffixRequest& request, const QueryDomainSuffixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDomainSuffixOutcomeCallable queryDomainSuffixCallable(const Model::QueryDomainSuffixRequest& request) const;
+			QueryDomainTransferStatusOutcome queryDomainTransferStatus(const Model::QueryDomainTransferStatusRequest &request)const;
+			void queryDomainTransferStatusAsync(const Model::QueryDomainTransferStatusRequest& request, const QueryDomainTransferStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDomainTransferStatusOutcomeCallable queryDomainTransferStatusCallable(const Model::QueryDomainTransferStatusRequest& request) const;
 			QueryEmailVerificationOutcome queryEmailVerification(const Model::QueryEmailVerificationRequest &request)const;
 			void queryEmailVerificationAsync(const Model::QueryEmailVerificationRequest& request, const QueryEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEmailVerificationOutcomeCallable queryEmailVerificationCallable(const Model::QueryEmailVerificationRequest& request) const;
@@ -784,6 +836,12 @@ namespace AlibabaCloud
 			QueryLocalEnsAssociationOutcome queryLocalEnsAssociation(const Model::QueryLocalEnsAssociationRequest &request)const;
 			void queryLocalEnsAssociationAsync(const Model::QueryLocalEnsAssociationRequest& request, const QueryLocalEnsAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryLocalEnsAssociationOutcomeCallable queryLocalEnsAssociationCallable(const Model::QueryLocalEnsAssociationRequest& request) const;
+			QueryOperationAuditInfoDetailOutcome queryOperationAuditInfoDetail(const Model::QueryOperationAuditInfoDetailRequest &request)const;
+			void queryOperationAuditInfoDetailAsync(const Model::QueryOperationAuditInfoDetailRequest& request, const QueryOperationAuditInfoDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryOperationAuditInfoDetailOutcomeCallable queryOperationAuditInfoDetailCallable(const Model::QueryOperationAuditInfoDetailRequest& request) const;
+			QueryOperationAuditInfoListOutcome queryOperationAuditInfoList(const Model::QueryOperationAuditInfoListRequest &request)const;
+			void queryOperationAuditInfoListAsync(const Model::QueryOperationAuditInfoListRequest& request, const QueryOperationAuditInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryOperationAuditInfoListOutcomeCallable queryOperationAuditInfoListCallable(const Model::QueryOperationAuditInfoListRequest& request) const;
 			QueryQualificationDetailOutcome queryQualificationDetail(const Model::QueryQualificationDetailRequest &request)const;
 			void queryQualificationDetailAsync(const Model::QueryQualificationDetailRequest& request, const QueryQualificationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryQualificationDetailOutcomeCallable queryQualificationDetailCallable(const Model::QueryQualificationDetailRequest& request) const;
@@ -967,6 +1025,12 @@ namespace AlibabaCloud
 			SubmitEmailVerificationOutcome submitEmailVerification(const Model::SubmitEmailVerificationRequest &request)const;
 			void submitEmailVerificationAsync(const Model::SubmitEmailVerificationRequest& request, const SubmitEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitEmailVerificationOutcomeCallable submitEmailVerificationCallable(const Model::SubmitEmailVerificationRequest& request) const;
+			SubmitOperationAuditInfoOutcome submitOperationAuditInfo(const Model::SubmitOperationAuditInfoRequest &request)const;
+			void submitOperationAuditInfoAsync(const Model::SubmitOperationAuditInfoRequest& request, const SubmitOperationAuditInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitOperationAuditInfoOutcomeCallable submitOperationAuditInfoCallable(const Model::SubmitOperationAuditInfoRequest& request) const;
+			SubmitOperationCredentialsOutcome submitOperationCredentials(const Model::SubmitOperationCredentialsRequest &request)const;
+			void submitOperationCredentialsAsync(const Model::SubmitOperationCredentialsRequest& request, const SubmitOperationCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitOperationCredentialsOutcomeCallable submitOperationCredentialsCallable(const Model::SubmitOperationCredentialsRequest& request) const;
 			TransferInCheckMailTokenOutcome transferInCheckMailToken(const Model::TransferInCheckMailTokenRequest &request)const;
 			void transferInCheckMailTokenAsync(const Model::TransferInCheckMailTokenRequest& request, const TransferInCheckMailTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TransferInCheckMailTokenOutcomeCallable transferInCheckMailTokenCallable(const Model::TransferInCheckMailTokenRequest& request) const;

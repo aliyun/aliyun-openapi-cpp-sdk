@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::GetReserveDomainUrlRequest;
 
 GetReserveDomainUrlRequest::GetReserveDomainUrlRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "GetReserveDomainUrl")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetReserveDomainUrlRequest::~GetReserveDomainUrlRequest()
 {}

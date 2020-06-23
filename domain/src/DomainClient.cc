@@ -231,6 +231,42 @@ DomainClient::CancelDomainVerificationOutcomeCallable DomainClient::cancelDomain
 	return task->get_future();
 }
 
+DomainClient::CancelOperationAuditOutcome DomainClient::cancelOperationAudit(const CancelOperationAuditRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelOperationAuditOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelOperationAuditOutcome(CancelOperationAuditResult(outcome.result()));
+	else
+		return CancelOperationAuditOutcome(outcome.error());
+}
+
+void DomainClient::cancelOperationAuditAsync(const CancelOperationAuditRequest& request, const CancelOperationAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelOperationAudit(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::CancelOperationAuditOutcomeCallable DomainClient::cancelOperationAuditCallable(const CancelOperationAuditRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelOperationAuditOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelOperationAudit(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::CancelQualificationVerificationOutcome DomainClient::cancelQualificationVerification(const CancelQualificationVerificationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ DomainClient::CancelTaskOutcomeCallable DomainClient::cancelTaskCallable(const C
 			[this, request]()
 			{
 			return this->cancelTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::ChangeAuctionOutcome DomainClient::changeAuction(const ChangeAuctionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeAuctionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeAuctionOutcome(ChangeAuctionResult(outcome.result()));
+	else
+		return ChangeAuctionOutcome(outcome.error());
+}
+
+void DomainClient::changeAuctionAsync(const ChangeAuctionRequest& request, const ChangeAuctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeAuction(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::ChangeAuctionOutcomeCallable DomainClient::changeAuctionCallable(const ChangeAuctionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeAuctionOutcome()>>(
+			[this, request]()
+			{
+			return this->changeAuction(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +837,42 @@ DomainClient::FuzzyMatchDomainSensitiveWordOutcomeCallable DomainClient::fuzzyMa
 			[this, request]()
 			{
 			return this->fuzzyMatchDomainSensitiveWord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::GetOperationOssUploadPolicyOutcome DomainClient::getOperationOssUploadPolicy(const GetOperationOssUploadPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOperationOssUploadPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOperationOssUploadPolicyOutcome(GetOperationOssUploadPolicyResult(outcome.result()));
+	else
+		return GetOperationOssUploadPolicyOutcome(outcome.error());
+}
+
+void DomainClient::getOperationOssUploadPolicyAsync(const GetOperationOssUploadPolicyRequest& request, const GetOperationOssUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOperationOssUploadPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::GetOperationOssUploadPolicyOutcomeCallable DomainClient::getOperationOssUploadPolicyCallable(const GetOperationOssUploadPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOperationOssUploadPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getOperationOssUploadPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1671,6 +1779,42 @@ DomainClient::QueryDomainSuffixOutcomeCallable DomainClient::queryDomainSuffixCa
 	return task->get_future();
 }
 
+DomainClient::QueryDomainTransferStatusOutcome DomainClient::queryDomainTransferStatus(const QueryDomainTransferStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDomainTransferStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDomainTransferStatusOutcome(QueryDomainTransferStatusResult(outcome.result()));
+	else
+		return QueryDomainTransferStatusOutcome(outcome.error());
+}
+
+void DomainClient::queryDomainTransferStatusAsync(const QueryDomainTransferStatusRequest& request, const QueryDomainTransferStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDomainTransferStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryDomainTransferStatusOutcomeCallable DomainClient::queryDomainTransferStatusCallable(const QueryDomainTransferStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDomainTransferStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDomainTransferStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DomainClient::QueryEmailVerificationOutcome DomainClient::queryEmailVerification(const QueryEmailVerificationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +2025,78 @@ DomainClient::QueryLocalEnsAssociationOutcomeCallable DomainClient::queryLocalEn
 			[this, request]()
 			{
 			return this->queryLocalEnsAssociation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryOperationAuditInfoDetailOutcome DomainClient::queryOperationAuditInfoDetail(const QueryOperationAuditInfoDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryOperationAuditInfoDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryOperationAuditInfoDetailOutcome(QueryOperationAuditInfoDetailResult(outcome.result()));
+	else
+		return QueryOperationAuditInfoDetailOutcome(outcome.error());
+}
+
+void DomainClient::queryOperationAuditInfoDetailAsync(const QueryOperationAuditInfoDetailRequest& request, const QueryOperationAuditInfoDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryOperationAuditInfoDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryOperationAuditInfoDetailOutcomeCallable DomainClient::queryOperationAuditInfoDetailCallable(const QueryOperationAuditInfoDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryOperationAuditInfoDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->queryOperationAuditInfoDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::QueryOperationAuditInfoListOutcome DomainClient::queryOperationAuditInfoList(const QueryOperationAuditInfoListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryOperationAuditInfoListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryOperationAuditInfoListOutcome(QueryOperationAuditInfoListResult(outcome.result()));
+	else
+		return QueryOperationAuditInfoListOutcome(outcome.error());
+}
+
+void DomainClient::queryOperationAuditInfoListAsync(const QueryOperationAuditInfoListRequest& request, const QueryOperationAuditInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryOperationAuditInfoList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::QueryOperationAuditInfoListOutcomeCallable DomainClient::queryOperationAuditInfoListCallable(const QueryOperationAuditInfoListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryOperationAuditInfoListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryOperationAuditInfoList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4077,6 +4293,78 @@ DomainClient::SubmitEmailVerificationOutcomeCallable DomainClient::submitEmailVe
 			[this, request]()
 			{
 			return this->submitEmailVerification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SubmitOperationAuditInfoOutcome DomainClient::submitOperationAuditInfo(const SubmitOperationAuditInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitOperationAuditInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitOperationAuditInfoOutcome(SubmitOperationAuditInfoResult(outcome.result()));
+	else
+		return SubmitOperationAuditInfoOutcome(outcome.error());
+}
+
+void DomainClient::submitOperationAuditInfoAsync(const SubmitOperationAuditInfoRequest& request, const SubmitOperationAuditInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitOperationAuditInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SubmitOperationAuditInfoOutcomeCallable DomainClient::submitOperationAuditInfoCallable(const SubmitOperationAuditInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitOperationAuditInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->submitOperationAuditInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DomainClient::SubmitOperationCredentialsOutcome DomainClient::submitOperationCredentials(const SubmitOperationCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitOperationCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitOperationCredentialsOutcome(SubmitOperationCredentialsResult(outcome.result()));
+	else
+		return SubmitOperationCredentialsOutcome(outcome.error());
+}
+
+void DomainClient::submitOperationCredentialsAsync(const SubmitOperationCredentialsRequest& request, const SubmitOperationCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitOperationCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DomainClient::SubmitOperationCredentialsOutcomeCallable DomainClient::submitOperationCredentialsCallable(const SubmitOperationCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitOperationCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->submitOperationCredentials(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

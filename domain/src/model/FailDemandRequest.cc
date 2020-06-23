@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::FailDemandRequest;
 
 FailDemandRequest::FailDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "FailDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FailDemandRequest::~FailDemandRequest()
 {}

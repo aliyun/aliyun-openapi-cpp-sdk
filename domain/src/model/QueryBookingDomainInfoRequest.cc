@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryBookingDomainInfoRequest;
 
 QueryBookingDomainInfoRequest::QueryBookingDomainInfoRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "QueryBookingDomainInfo")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBookingDomainInfoRequest::~QueryBookingDomainInfoRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryBookingDomainInfoRequest::getDomainName()const
 void QueryBookingDomainInfoRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setBodyParameter("DomainName", domainName);
 }
 

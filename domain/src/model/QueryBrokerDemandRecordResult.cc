@@ -38,18 +38,17 @@ void QueryBrokerDemandRecordResult::parse(const std::string &payload)
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["BrokerDemandRecord"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["BrokerDemandRecord"];
+	for (auto valueDataBrokerDemandRecord : allDataNode)
 	{
 		BrokerDemandRecord dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["Description"].isNull())
-			dataObject.description = value["Description"].asString();
-		if(!value["CreateTime"].isNull())
-			dataObject.createTime = std::stol(value["CreateTime"].asString());
+		if(!valueDataBrokerDemandRecord["BizId"].isNull())
+			dataObject.bizId = valueDataBrokerDemandRecord["BizId"].asString();
+		if(!valueDataBrokerDemandRecord["Description"].isNull())
+			dataObject.description = valueDataBrokerDemandRecord["Description"].asString();
+		if(!valueDataBrokerDemandRecord["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataBrokerDemandRecord["CreateTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

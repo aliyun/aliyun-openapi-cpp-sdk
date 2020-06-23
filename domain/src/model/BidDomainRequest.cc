@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::BidDomainRequest;
 
 BidDomainRequest::BidDomainRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "BidDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 BidDomainRequest::~BidDomainRequest()
 {}
@@ -33,7 +35,7 @@ std::string BidDomainRequest::getAuctionId()const
 void BidDomainRequest::setAuctionId(const std::string& auctionId)
 {
 	auctionId_ = auctionId;
-	setParameter("AuctionId", auctionId);
+	setBodyParameter("AuctionId", auctionId);
 }
 
 float BidDomainRequest::getMaxBid()const
@@ -44,7 +46,7 @@ float BidDomainRequest::getMaxBid()const
 void BidDomainRequest::setMaxBid(float maxBid)
 {
 	maxBid_ = maxBid;
-	setParameter("MaxBid", std::to_string(maxBid));
+	setBodyParameter("MaxBid", std::to_string(maxBid));
 }
 
 std::string BidDomainRequest::getCurrency()const
@@ -55,6 +57,6 @@ std::string BidDomainRequest::getCurrency()const
 void BidDomainRequest::setCurrency(const std::string& currency)
 {
 	currency_ = currency;
-	setParameter("Currency", currency);
+	setBodyParameter("Currency", currency);
 }
 

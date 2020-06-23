@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::RequestPayDemandRequest;
 
 RequestPayDemandRequest::RequestPayDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "RequestPayDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RequestPayDemandRequest::~RequestPayDemandRequest()
 {}

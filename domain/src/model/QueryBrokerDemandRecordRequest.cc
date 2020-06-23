@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryBrokerDemandRecordRequest;
 
 QueryBrokerDemandRecordRequest::QueryBrokerDemandRecordRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "QueryBrokerDemandRecord")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryBrokerDemandRecordRequest::~QueryBrokerDemandRecordRequest()
 {}

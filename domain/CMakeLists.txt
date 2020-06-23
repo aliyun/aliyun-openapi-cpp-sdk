@@ -31,10 +31,14 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/BidDomainResult.h
 	include/alibabacloud/domain/model/CancelDomainVerificationRequest.h
 	include/alibabacloud/domain/model/CancelDomainVerificationResult.h
+	include/alibabacloud/domain/model/CancelOperationAuditRequest.h
+	include/alibabacloud/domain/model/CancelOperationAuditResult.h
 	include/alibabacloud/domain/model/CancelQualificationVerificationRequest.h
 	include/alibabacloud/domain/model/CancelQualificationVerificationResult.h
 	include/alibabacloud/domain/model/CancelTaskRequest.h
 	include/alibabacloud/domain/model/CancelTaskResult.h
+	include/alibabacloud/domain/model/ChangeAuctionRequest.h
+	include/alibabacloud/domain/model/ChangeAuctionResult.h
 	include/alibabacloud/domain/model/CheckDomainRequest.h
 	include/alibabacloud/domain/model/CheckDomainResult.h
 	include/alibabacloud/domain/model/CheckDomainSunriseClaimRequest.h
@@ -61,6 +65,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/FinishDemandResult.h
 	include/alibabacloud/domain/model/FuzzyMatchDomainSensitiveWordRequest.h
 	include/alibabacloud/domain/model/FuzzyMatchDomainSensitiveWordResult.h
+	include/alibabacloud/domain/model/GetOperationOssUploadPolicyRequest.h
+	include/alibabacloud/domain/model/GetOperationOssUploadPolicyResult.h
 	include/alibabacloud/domain/model/GetQualificationUploadPolicyRequest.h
 	include/alibabacloud/domain/model/GetQualificationUploadPolicyResult.h
 	include/alibabacloud/domain/model/GetReserveDomainUrlRequest.h
@@ -111,6 +117,8 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryDomainRealNameVerificationInfoResult.h
 	include/alibabacloud/domain/model/QueryDomainSuffixRequest.h
 	include/alibabacloud/domain/model/QueryDomainSuffixResult.h
+	include/alibabacloud/domain/model/QueryDomainTransferStatusRequest.h
+	include/alibabacloud/domain/model/QueryDomainTransferStatusResult.h
 	include/alibabacloud/domain/model/QueryEmailVerificationRequest.h
 	include/alibabacloud/domain/model/QueryEmailVerificationResult.h
 	include/alibabacloud/domain/model/QueryEnsAssociationRequest.h
@@ -123,6 +131,10 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/QueryFailingReasonListForQualificationResult.h
 	include/alibabacloud/domain/model/QueryLocalEnsAssociationRequest.h
 	include/alibabacloud/domain/model/QueryLocalEnsAssociationResult.h
+	include/alibabacloud/domain/model/QueryOperationAuditInfoDetailRequest.h
+	include/alibabacloud/domain/model/QueryOperationAuditInfoDetailResult.h
+	include/alibabacloud/domain/model/QueryOperationAuditInfoListRequest.h
+	include/alibabacloud/domain/model/QueryOperationAuditInfoListResult.h
 	include/alibabacloud/domain/model/QueryQualificationDetailRequest.h
 	include/alibabacloud/domain/model/QueryQualificationDetailResult.h
 	include/alibabacloud/domain/model/QueryRegistrantProfileRealNameVerificationInfoRequest.h
@@ -245,6 +257,10 @@ set(domain_public_header_model
 	include/alibabacloud/domain/model/ScrollDomainListResult.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationRequest.h
 	include/alibabacloud/domain/model/SubmitEmailVerificationResult.h
+	include/alibabacloud/domain/model/SubmitOperationAuditInfoRequest.h
+	include/alibabacloud/domain/model/SubmitOperationAuditInfoResult.h
+	include/alibabacloud/domain/model/SubmitOperationCredentialsRequest.h
+	include/alibabacloud/domain/model/SubmitOperationCredentialsResult.h
 	include/alibabacloud/domain/model/TransferInCheckMailTokenRequest.h
 	include/alibabacloud/domain/model/TransferInCheckMailTokenResult.h
 	include/alibabacloud/domain/model/TransferInReenterTransferAuthorizationCodeRequest.h
@@ -272,10 +288,14 @@ set(domain_src
 	src/model/BidDomainResult.cc
 	src/model/CancelDomainVerificationRequest.cc
 	src/model/CancelDomainVerificationResult.cc
+	src/model/CancelOperationAuditRequest.cc
+	src/model/CancelOperationAuditResult.cc
 	src/model/CancelQualificationVerificationRequest.cc
 	src/model/CancelQualificationVerificationResult.cc
 	src/model/CancelTaskRequest.cc
 	src/model/CancelTaskResult.cc
+	src/model/ChangeAuctionRequest.cc
+	src/model/ChangeAuctionResult.cc
 	src/model/CheckDomainRequest.cc
 	src/model/CheckDomainResult.cc
 	src/model/CheckDomainSunriseClaimRequest.cc
@@ -302,6 +322,8 @@ set(domain_src
 	src/model/FinishDemandResult.cc
 	src/model/FuzzyMatchDomainSensitiveWordRequest.cc
 	src/model/FuzzyMatchDomainSensitiveWordResult.cc
+	src/model/GetOperationOssUploadPolicyRequest.cc
+	src/model/GetOperationOssUploadPolicyResult.cc
 	src/model/GetQualificationUploadPolicyRequest.cc
 	src/model/GetQualificationUploadPolicyResult.cc
 	src/model/GetReserveDomainUrlRequest.cc
@@ -352,6 +374,8 @@ set(domain_src
 	src/model/QueryDomainRealNameVerificationInfoResult.cc
 	src/model/QueryDomainSuffixRequest.cc
 	src/model/QueryDomainSuffixResult.cc
+	src/model/QueryDomainTransferStatusRequest.cc
+	src/model/QueryDomainTransferStatusResult.cc
 	src/model/QueryEmailVerificationRequest.cc
 	src/model/QueryEmailVerificationResult.cc
 	src/model/QueryEnsAssociationRequest.cc
@@ -364,6 +388,10 @@ set(domain_src
 	src/model/QueryFailingReasonListForQualificationResult.cc
 	src/model/QueryLocalEnsAssociationRequest.cc
 	src/model/QueryLocalEnsAssociationResult.cc
+	src/model/QueryOperationAuditInfoDetailRequest.cc
+	src/model/QueryOperationAuditInfoDetailResult.cc
+	src/model/QueryOperationAuditInfoListRequest.cc
+	src/model/QueryOperationAuditInfoListResult.cc
 	src/model/QueryQualificationDetailRequest.cc
 	src/model/QueryQualificationDetailResult.cc
 	src/model/QueryRegistrantProfileRealNameVerificationInfoRequest.cc
@@ -486,6 +514,10 @@ set(domain_src
 	src/model/ScrollDomainListResult.cc
 	src/model/SubmitEmailVerificationRequest.cc
 	src/model/SubmitEmailVerificationResult.cc
+	src/model/SubmitOperationAuditInfoRequest.cc
+	src/model/SubmitOperationAuditInfoResult.cc
+	src/model/SubmitOperationCredentialsRequest.cc
+	src/model/SubmitOperationCredentialsResult.cc
 	src/model/TransferInCheckMailTokenRequest.cc
 	src/model/TransferInCheckMailTokenResult.cc
 	src/model/TransferInReenterTransferAuthorizationCodeRequest.cc

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::AcceptDemandRequest;
 
 AcceptDemandRequest::AcceptDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "AcceptDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 AcceptDemandRequest::~AcceptDemandRequest()
 {}

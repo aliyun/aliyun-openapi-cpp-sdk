@@ -38,34 +38,39 @@ void QueryBrokerDemandResult::parse(const std::string &payload)
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["Demand"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["Demand"];
+	for (auto valueDataDemand : allDataNode)
 	{
 		Demand dataObject;
-		if(!value["BizId"].isNull())
-			dataObject.bizId = value["BizId"].asString();
-		if(!value["Status"].isNull())
-			dataObject.status = value["Status"].asString();
-		if(!value["DemandDomain"].isNull())
-			dataObject.demandDomain = value["DemandDomain"].asString();
-		if(!value["DemandPrice"].isNull())
-			dataObject.demandPrice = std::stof(value["DemandPrice"].asString());
-		if(!value["Mobile"].isNull())
-			dataObject.mobile = value["Mobile"].asString();
-		if(!value["Description"].isNull())
-			dataObject.description = value["Description"].asString();
-		if(!value["PublishTime"].isNull())
-			dataObject.publishTime = std::stol(value["PublishTime"].asString());
-		if(!value["PayDomain"].isNull())
-			dataObject.payDomain = value["PayDomain"].asString();
-		if(!value["PayPrice"].isNull())
-			dataObject.payPrice = std::stof(value["PayPrice"].asString());
-		if(!value["PayTime"].isNull())
-			dataObject.payTime = std::stol(value["PayTime"].asString());
-		if(!value["ProduceType"].isNull())
-			dataObject.produceType = std::stoi(value["ProduceType"].asString());
+		if(!valueDataDemand["BizId"].isNull())
+			dataObject.bizId = valueDataDemand["BizId"].asString();
+		if(!valueDataDemand["Status"].isNull())
+			dataObject.status = valueDataDemand["Status"].asString();
+		if(!valueDataDemand["DemandDomain"].isNull())
+			dataObject.demandDomain = valueDataDemand["DemandDomain"].asString();
+		if(!valueDataDemand["DemandPrice"].isNull())
+			dataObject.demandPrice = std::stof(valueDataDemand["DemandPrice"].asString());
+		if(!valueDataDemand["Mobile"].isNull())
+			dataObject.mobile = valueDataDemand["Mobile"].asString();
+		if(!valueDataDemand["Description"].isNull())
+			dataObject.description = valueDataDemand["Description"].asString();
+		if(!valueDataDemand["PublishTime"].isNull())
+			dataObject.publishTime = std::stol(valueDataDemand["PublishTime"].asString());
+		if(!valueDataDemand["PayDomain"].isNull())
+			dataObject.payDomain = valueDataDemand["PayDomain"].asString();
+		if(!valueDataDemand["PayPrice"].isNull())
+			dataObject.payPrice = std::stof(valueDataDemand["PayPrice"].asString());
+		if(!valueDataDemand["PayTime"].isNull())
+			dataObject.payTime = std::stol(valueDataDemand["PayTime"].asString());
+		if(!valueDataDemand["ProduceType"].isNull())
+			dataObject.produceType = std::stoi(valueDataDemand["ProduceType"].asString());
+		if(!valueDataDemand["BargainSellerPrice"].isNull())
+			dataObject.bargainSellerPrice = std::stof(valueDataDemand["BargainSellerPrice"].asString());
+		if(!valueDataDemand["BargainSellerMobile"].isNull())
+			dataObject.bargainSellerMobile = valueDataDemand["BargainSellerMobile"].asString();
+		if(!valueDataDemand["ServicePayPrice"].isNull())
+			dataObject.servicePayPrice = std::stof(valueDataDemand["ServicePayPrice"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

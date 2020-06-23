@@ -38,22 +38,21 @@ void QueryBidRecordsResult::parse(const std::string &payload)
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
-
 	setRequestId(value["RequestId"].asString());
-	auto allData = value["Data"]["BidRecord"];
-	for (auto value : allData)
+	auto allDataNode = value["Data"]["BidRecord"];
+	for (auto valueDataBidRecord : allDataNode)
 	{
 		BidRecord dataObject;
-		if(!value["DomainName"].isNull())
-			dataObject.domainName = value["DomainName"].asString();
-		if(!value["Currency"].isNull())
-			dataObject.currency = value["Currency"].asString();
-		if(!value["Bid"].isNull())
-			dataObject.bid = std::stof(value["Bid"].asString());
-		if(!value["BidTime"].isNull())
-			dataObject.bidTime = std::stol(value["BidTime"].asString());
-		if(!value["Bidder"].isNull())
-			dataObject.bidder = value["Bidder"].asString();
+		if(!valueDataBidRecord["DomainName"].isNull())
+			dataObject.domainName = valueDataBidRecord["DomainName"].asString();
+		if(!valueDataBidRecord["Currency"].isNull())
+			dataObject.currency = valueDataBidRecord["Currency"].asString();
+		if(!valueDataBidRecord["Bid"].isNull())
+			dataObject.bid = std::stof(valueDataBidRecord["Bid"].asString());
+		if(!valueDataBidRecord["BidTime"].isNull())
+			dataObject.bidTime = std::stol(valueDataBidRecord["BidTime"].asString());
+		if(!valueDataBidRecord["Bidder"].isNull())
+			dataObject.bidder = valueDataBidRecord["Bidder"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalItemNum"].isNull())

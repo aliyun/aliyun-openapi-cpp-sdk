@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::ReserveDomainRequest;
 
 ReserveDomainRequest::ReserveDomainRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "ReserveDomain")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 ReserveDomainRequest::~ReserveDomainRequest()
 {}
@@ -33,8 +35,9 @@ std::vector<std::string> ReserveDomainRequest::getChannels()const
 void ReserveDomainRequest::setChannels(const std::vector<std::string>& channels)
 {
 	channels_ = channels;
-	for(int i = 0; i!= channels.size(); i++)
-		setParameter("Channels."+ std::to_string(i), channels.at(i));
+	for(int dep1 = 0; dep1!= channels.size(); dep1++) {
+		setBodyParameter("Channels."+ std::to_string(dep1), channels.at(dep1));
+	}
 }
 
 std::string ReserveDomainRequest::getDomainName()const
@@ -45,6 +48,6 @@ std::string ReserveDomainRequest::getDomainName()const
 void ReserveDomainRequest::setDomainName(const std::string& domainName)
 {
 	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+	setBodyParameter("DomainName", domainName);
 }
 

@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::RecordDemandRequest;
 
 RecordDemandRequest::RecordDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "RecordDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RecordDemandRequest::~RecordDemandRequest()
 {}

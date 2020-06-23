@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryAuctionDetailRequest;
 
 QueryAuctionDetailRequest::QueryAuctionDetailRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "QueryAuctionDetail")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuctionDetailRequest::~QueryAuctionDetailRequest()
 {}
@@ -33,6 +35,6 @@ std::string QueryAuctionDetailRequest::getAuctionId()const
 void QueryAuctionDetailRequest::setAuctionId(const std::string& auctionId)
 {
 	auctionId_ = auctionId;
-	setParameter("AuctionId", auctionId);
+	setBodyParameter("AuctionId", auctionId);
 }
 

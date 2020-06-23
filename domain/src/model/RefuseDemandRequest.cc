@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::RefuseDemandRequest;
 
 RefuseDemandRequest::RefuseDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "RefuseDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 RefuseDemandRequest::~RefuseDemandRequest()
 {}

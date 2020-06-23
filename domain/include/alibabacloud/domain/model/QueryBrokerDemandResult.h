@@ -35,16 +35,19 @@ namespace AlibabaCloud
 				struct Demand
 				{
 					std::string status;
-					float payPrice;
 					float demandPrice;
 					std::string description;
+					std::string demandDomain;
+					std::string mobile;
+					float payPrice;
+					float bargainSellerPrice;
+					float servicePayPrice;
 					std::string payDomain;
 					int produceType;
-					std::string demandDomain;
+					std::string bargainSellerMobile;
 					long publishTime;
 					long payTime;
 					std::string bizId;
-					std::string mobile;
 				};
 
 

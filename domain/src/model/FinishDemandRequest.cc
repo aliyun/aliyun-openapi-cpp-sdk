@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::FinishDemandRequest;
 
 FinishDemandRequest::FinishDemandRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "FinishDemand")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 FinishDemandRequest::~FinishDemandRequest()
 {}

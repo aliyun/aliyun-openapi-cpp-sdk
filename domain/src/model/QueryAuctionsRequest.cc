@@ -20,7 +20,9 @@ using AlibabaCloud::Domain::Model::QueryAuctionsRequest;
 
 QueryAuctionsRequest::QueryAuctionsRequest() :
 	RpcServiceRequest("domain", "2018-02-08", "QueryAuctions")
-{}
+{
+	setMethod(HttpRequest::Method::Post);
+}
 
 QueryAuctionsRequest::~QueryAuctionsRequest()
 {}
@@ -33,7 +35,7 @@ int QueryAuctionsRequest::getPageSize()const
 void QueryAuctionsRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
 int QueryAuctionsRequest::getCurrentPage()const
@@ -44,7 +46,7 @@ int QueryAuctionsRequest::getCurrentPage()const
 void QueryAuctionsRequest::setCurrentPage(int currentPage)
 {
 	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+	setBodyParameter("CurrentPage", std::to_string(currentPage));
 }
 
 std::string QueryAuctionsRequest::getStatus()const
@@ -55,6 +57,6 @@ std::string QueryAuctionsRequest::getStatus()const
 void QueryAuctionsRequest::setStatus(const std::string& status)
 {
 	status_ = status;
-	setParameter("Status", status);
+	setBodyParameter("Status", status);
 }
 
