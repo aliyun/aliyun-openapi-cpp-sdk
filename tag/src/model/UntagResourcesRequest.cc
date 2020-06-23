@@ -27,17 +27,6 @@ UntagResourcesRequest::UntagResourcesRequest() :
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
 
-long UntagResourcesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void UntagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string UntagResourcesRequest::getRegionId()const
 {
 	return regionId_;

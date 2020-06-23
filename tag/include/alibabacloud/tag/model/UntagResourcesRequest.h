@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				UntagResourcesRequest();
 				~UntagResourcesRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<std::string> getResourceARN()const;
@@ -51,7 +49,6 @@ namespace AlibabaCloud
 				void setTagKey(const std::vector<std::string>& tagKey);
 
             private:
-				long resourceOwnerId_;
 				std::string regionId_;
 				std::vector<std::string> resourceARN_;
 				std::string resourceOwnerAccount_;

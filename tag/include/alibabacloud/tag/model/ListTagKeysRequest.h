@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_TAG_MODEL_LISTTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_TAG_MODEL_LISTTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSREQUEST_H_
+#define ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_TAG_EXPORT ListTagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_TAG_EXPORT ListTagKeysRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListTagResourcesRequest();
-				~ListTagResourcesRequest();
+				ListTagKeysRequest();
+				~ListTagKeysRequest();
 
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
@@ -41,16 +41,14 @@ namespace AlibabaCloud
 				void setNextToken(const std::string& nextToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::vector<std::string> getResourceARN()const;
-				void setResourceARN(const std::vector<std::string>& resourceARN);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTags()const;
-				void setTags(const std::string& tags);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
 
@@ -58,15 +56,14 @@ namespace AlibabaCloud
 				std::string regionId_;
 				std::string nextToken_;
 				int pageSize_;
-				std::vector<std::string> resourceARN_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string tags_;
+				std::string resourceType_;
 				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_TAG_MODEL_LISTTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_TAG_MODEL_LISTTAGKEYSREQUEST_H_

@@ -21,8 +21,12 @@ set(tag_public_header
 	include/alibabacloud/tag/TagExport.h )
 
 set(tag_public_header_model 
+	include/alibabacloud/tag/model/ListTagKeysRequest.h
+	include/alibabacloud/tag/model/ListTagKeysResult.h
 	include/alibabacloud/tag/model/ListTagResourcesRequest.h
 	include/alibabacloud/tag/model/ListTagResourcesResult.h
+	include/alibabacloud/tag/model/ListTagValuesRequest.h
+	include/alibabacloud/tag/model/ListTagValuesResult.h
 	include/alibabacloud/tag/model/TagResourcesRequest.h
 	include/alibabacloud/tag/model/TagResourcesResult.h
 	include/alibabacloud/tag/model/UntagResourcesRequest.h
@@ -30,8 +34,12 @@ set(tag_public_header_model
 
 set(tag_src 
 	src/TagClient.cc
+	src/model/ListTagKeysRequest.cc
+	src/model/ListTagKeysResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ListTagValuesRequest.cc
+	src/model/ListTagValuesResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UntagResourcesRequest.cc

@@ -27,17 +27,6 @@ TagResourcesRequest::TagResourcesRequest() :
 TagResourcesRequest::~TagResourcesRequest()
 {}
 
-long TagResourcesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string TagResourcesRequest::getRegionId()const
 {
 	return regionId_;

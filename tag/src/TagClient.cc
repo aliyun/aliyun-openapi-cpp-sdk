@@ -51,6 +51,42 @@ TagClient::TagClient(const std::string & accessKeyId, const std::string & access
 TagClient::~TagClient()
 {}
 
+TagClient::ListTagKeysOutcome TagClient::listTagKeys(const ListTagKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagKeysOutcome(ListTagKeysResult(outcome.result()));
+	else
+		return ListTagKeysOutcome(outcome.error());
+}
+
+void TagClient::listTagKeysAsync(const ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::ListTagKeysOutcomeCallable TagClient::listTagKeysCallable(const ListTagKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 TagClient::ListTagResourcesOutcome TagClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +117,42 @@ TagClient::ListTagResourcesOutcomeCallable TagClient::listTagResourcesCallable(c
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+TagClient::ListTagValuesOutcome TagClient::listTagValues(const ListTagValuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagValuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagValuesOutcome(ListTagValuesResult(outcome.result()));
+	else
+		return ListTagValuesOutcome(outcome.error());
+}
+
+void TagClient::listTagValuesAsync(const ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagValues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+TagClient::ListTagValuesOutcomeCallable TagClient::listTagValuesCallable(const ListTagValuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagValuesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagValues(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
