@@ -68,6 +68,8 @@ void SearchFaceResult::parse(const std::string &payload)
 			recordObject.score = std::stof(dataNodeRecordsRecord["Score"].asString());
 		if(!dataNodeRecordsRecord["TargetImageUrl"].isNull())
 			recordObject.targetImageUrl = dataNodeRecordsRecord["TargetImageUrl"].asString();
+		if(!dataNodeRecordsRecord["MatchSuggestion"].isNull())
+			recordObject.matchSuggestion = dataNodeRecordsRecord["MatchSuggestion"].asString();
 		data_.records.push_back(recordObject);
 	}
 	if(!value["Code"].isNull())

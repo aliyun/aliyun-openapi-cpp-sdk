@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					struct Record
 					{
 						std::string targetImageUrl;
+						std::string matchSuggestion;
 						float score;
 						float rightBottomX;
 						float rightBottomY;
