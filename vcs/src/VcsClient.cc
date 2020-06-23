@@ -195,6 +195,42 @@ VcsClient::DeleteDeviceOutcomeCallable VcsClient::deleteDeviceCallable(const Del
 	return task->get_future();
 }
 
+VcsClient::DeleteRecordsOutcome VcsClient::deleteRecords(const DeleteRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRecordsOutcome(DeleteRecordsResult(outcome.result()));
+	else
+		return DeleteRecordsOutcome(outcome.error());
+}
+
+void VcsClient::deleteRecordsAsync(const DeleteRecordsRequest& request, const DeleteRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteRecordsOutcomeCallable VcsClient::deleteRecordsCallable(const DeleteRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetBodyOptionsOutcome VcsClient::getBodyOptions(const GetBodyOptionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +585,42 @@ VcsClient::ListPersonsOutcomeCallable VcsClient::listPersonsCallable(const ListP
 			[this, request]()
 			{
 			return this->listPersons(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::RecognizeFaceQualityOutcome VcsClient::recognizeFaceQuality(const RecognizeFaceQualityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecognizeFaceQualityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecognizeFaceQualityOutcome(RecognizeFaceQualityResult(outcome.result()));
+	else
+		return RecognizeFaceQualityOutcome(outcome.error());
+}
+
+void VcsClient::recognizeFaceQualityAsync(const RecognizeFaceQualityRequest& request, const RecognizeFaceQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recognizeFaceQuality(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::RecognizeFaceQualityOutcomeCallable VcsClient::recognizeFaceQualityCallable(const RecognizeFaceQualityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecognizeFaceQualityOutcome()>>(
+			[this, request]()
+			{
+			return this->recognizeFaceQuality(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -30,6 +30,8 @@
 #include "model/CreateCorpResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
+#include "model/DeleteRecordsRequest.h"
+#include "model/DeleteRecordsResult.h"
 #include "model/GetBodyOptionsRequest.h"
 #include "model/GetBodyOptionsResult.h"
 #include "model/GetDeviceLiveUrlRequest.h"
@@ -50,6 +52,8 @@
 #include "model/ListDevicesResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
+#include "model/RecognizeFaceQualityRequest.h"
+#include "model/RecognizeFaceQualityResult.h"
 #include "model/RecognizeImageRequest.h"
 #include "model/RecognizeImageResult.h"
 #include "model/SearchBodyRequest.h"
@@ -85,6 +89,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRecordsResult> DeleteRecordsOutcome;
+			typedef std::future<DeleteRecordsOutcome> DeleteRecordsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::DeleteRecordsRequest&, const DeleteRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordsAsyncHandler;
 			typedef Outcome<Error, Model::GetBodyOptionsResult> GetBodyOptionsOutcome;
 			typedef std::future<GetBodyOptionsOutcome> GetBodyOptionsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetBodyOptionsRequest&, const GetBodyOptionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBodyOptionsAsyncHandler;
@@ -115,6 +122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
+			typedef Outcome<Error, Model::RecognizeFaceQualityResult> RecognizeFaceQualityOutcome;
+			typedef std::future<RecognizeFaceQualityOutcome> RecognizeFaceQualityOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::RecognizeFaceQualityRequest&, const RecognizeFaceQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFaceQualityAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeImageResult> RecognizeImageOutcome;
 			typedef std::future<RecognizeImageOutcome> RecognizeImageOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::RecognizeImageRequest&, const RecognizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageAsyncHandler;
@@ -153,6 +163,9 @@ namespace AlibabaCloud
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
+			DeleteRecordsOutcome deleteRecords(const Model::DeleteRecordsRequest &request)const;
+			void deleteRecordsAsync(const Model::DeleteRecordsRequest& request, const DeleteRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRecordsOutcomeCallable deleteRecordsCallable(const Model::DeleteRecordsRequest& request) const;
 			GetBodyOptionsOutcome getBodyOptions(const Model::GetBodyOptionsRequest &request)const;
 			void getBodyOptionsAsync(const Model::GetBodyOptionsRequest& request, const GetBodyOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBodyOptionsOutcomeCallable getBodyOptionsCallable(const Model::GetBodyOptionsRequest& request) const;
@@ -183,6 +196,9 @@ namespace AlibabaCloud
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
+			RecognizeFaceQualityOutcome recognizeFaceQuality(const Model::RecognizeFaceQualityRequest &request)const;
+			void recognizeFaceQualityAsync(const Model::RecognizeFaceQualityRequest& request, const RecognizeFaceQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RecognizeFaceQualityOutcomeCallable recognizeFaceQualityCallable(const Model::RecognizeFaceQualityRequest& request) const;
 			RecognizeImageOutcome recognizeImage(const Model::RecognizeImageRequest &request)const;
 			void recognizeImageAsync(const Model::RecognizeImageRequest& request, const RecognizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageOutcomeCallable recognizeImageCallable(const Model::RecognizeImageRequest& request) const;

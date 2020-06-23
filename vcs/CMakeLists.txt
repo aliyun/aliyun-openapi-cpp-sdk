@@ -29,6 +29,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/CreateCorpResult.h
 	include/alibabacloud/vcs/model/DeleteDeviceRequest.h
 	include/alibabacloud/vcs/model/DeleteDeviceResult.h
+	include/alibabacloud/vcs/model/DeleteRecordsRequest.h
+	include/alibabacloud/vcs/model/DeleteRecordsResult.h
 	include/alibabacloud/vcs/model/GetBodyOptionsRequest.h
 	include/alibabacloud/vcs/model/GetBodyOptionsResult.h
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h
@@ -49,6 +51,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListDevicesResult.h
 	include/alibabacloud/vcs/model/ListPersonsRequest.h
 	include/alibabacloud/vcs/model/ListPersonsResult.h
+	include/alibabacloud/vcs/model/RecognizeFaceQualityRequest.h
+	include/alibabacloud/vcs/model/RecognizeFaceQualityResult.h
 	include/alibabacloud/vcs/model/RecognizeImageRequest.h
 	include/alibabacloud/vcs/model/RecognizeImageResult.h
 	include/alibabacloud/vcs/model/SearchBodyRequest.h
@@ -74,6 +78,8 @@ set(vcs_src
 	src/model/CreateCorpResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
+	src/model/DeleteRecordsRequest.cc
+	src/model/DeleteRecordsResult.cc
 	src/model/GetBodyOptionsRequest.cc
 	src/model/GetBodyOptionsResult.cc
 	src/model/GetDeviceLiveUrlRequest.cc
@@ -94,6 +100,8 @@ set(vcs_src
 	src/model/ListDevicesResult.cc
 	src/model/ListPersonsRequest.cc
 	src/model/ListPersonsResult.cc
+	src/model/RecognizeFaceQualityRequest.cc
+	src/model/RecognizeFaceQualityResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
 	src/model/SearchBodyRequest.cc
