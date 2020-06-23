@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClusterDetailRequest;
 
 DescribeClusterDetailRequest::DescribeClusterDetailRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClusterDetailRequest::~DescribeClusterDetailRequest()
 {}
@@ -33,6 +36,6 @@ std::string DescribeClusterDetailRequest::getClusterId()const
 void DescribeClusterDetailRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
-	setCoreParameter("ClusterId", clusterId);
+	setParameter("ClusterId", clusterId);
 }
 

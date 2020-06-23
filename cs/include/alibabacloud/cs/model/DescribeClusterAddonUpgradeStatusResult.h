@@ -32,40 +32,29 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClusterAddonUpgradeStatusResult : public ServiceResult
 			{
 			public:
-				struct ComponentId
+				struct Addon_info
 				{
-					struct Addon_info
-					{
-						std::string message;
-						std::string version;
-						std::string ready_to_upgrade;
-						std::string component_name;
-						std::string yaml;
-					};
-					struct Tasks
-					{
-						std::string status;
-						std::string master_url;
-						std::string finished_at;
-						std::string created_at;
-					};
-					Tasks tasks;
-					std::string _template;
-					bool can_upgrade;
-					Addon_info addon_info;
-					std::string changed;
+					std::string category;
+					std::string message;
+					std::string version;
+					std::string component_name;
+					std::string yaml;
 				};
 
 
 				DescribeClusterAddonUpgradeStatusResult();
 				explicit DescribeClusterAddonUpgradeStatusResult(const std::string &payload);
 				~DescribeClusterAddonUpgradeStatusResult();
-				ComponentId getComponentId()const;
+				std::string get_Template()const;
+				bool getCan_upgrade()const;
+				Addon_info getAddon_info()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ComponentId componentId_;
+				std::string _template_;
+				bool can_upgrade_;
+				Addon_info addon_info_;
 
 			};
 		}

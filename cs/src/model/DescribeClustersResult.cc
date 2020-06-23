@@ -39,104 +39,73 @@ void DescribeClustersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["agent_version"].isNull())
-		agent_version_ = value["agent_version"].asString();
-	if(!value["cluster_id"].isNull())
-		cluster_id_ = value["cluster_id"].asString();
-	if(!value["created"].isNull())
-		created_ = value["created"].asString();
-	if(!value["external_loadbalancer_id"].isNull())
-		external_loadbalancer_id_ = value["external_loadbalancer_id"].asString();
-	if(!value["master_url"].isNull())
-		master_url_ = value["master_url"].asString();
-	if(!value["name"].isNull())
-		name_ = value["name"].asString();
-	if(!value["network_mode"].isNull())
-		network_mode_ = value["network_mode"].asString();
-	if(!value["region_id"].isNull())
-		region_id_ = value["region_id"].asString();
-	if(!value["security_group_id"].isNull())
-		security_group_id_ = value["security_group_id"].asString();
-	if(!value["size"].isNull())
-		size_ = value["size"].asString();
-	if(!value["state"].isNull())
-		state_ = value["state"].asString();
-	if(!value["updated"].isNull())
-		updated_ = value["updated"].asString();
-	if(!value["vpc_id"].isNull())
-		vpc_id_ = value["vpc_id"].asString();
-	if(!value["vpc_id"].isNull())
-		vpc_id1_ = value["vpc_id"].asString();
+	auto allclustersNode = value["clusters"]["clusterDetail"];
+	for (auto valueclustersclusterDetail : allclustersNode)
+	{
+		ClusterDetail clustersObject;
+		if(!valueclustersclusterDetail["name"].isNull())
+			clustersObject.name = valueclustersclusterDetail["name"].asString();
+		if(!valueclustersclusterDetail["cluster_id"].isNull())
+			clustersObject.cluster_id = valueclustersclusterDetail["cluster_id"].asString();
+		if(!valueclustersclusterDetail["region_id"].isNull())
+			clustersObject.region_id = valueclustersclusterDetail["region_id"].asString();
+		if(!valueclustersclusterDetail["state"].isNull())
+			clustersObject.state = valueclustersclusterDetail["state"].asString();
+		if(!valueclustersclusterDetail["cluster_type"].isNull())
+			clustersObject.cluster_type = valueclustersclusterDetail["cluster_type"].asString();
+		if(!valueclustersclusterDetail["current_version"].isNull())
+			clustersObject.current_version = valueclustersclusterDetail["current_version"].asString();
+		if(!valueclustersclusterDetail["meta_data"].isNull())
+			clustersObject.meta_data = valueclustersclusterDetail["meta_data"].asString();
+		if(!valueclustersclusterDetail["resource_group_id"].isNull())
+			clustersObject.resource_group_id = valueclustersclusterDetail["resource_group_id"].asString();
+		if(!valueclustersclusterDetail["vpc_id"].isNull())
+			clustersObject.vpc_id = valueclustersclusterDetail["vpc_id"].asString();
+		if(!valueclustersclusterDetail["vswitch_id"].isNull())
+			clustersObject.vswitch_id = valueclustersclusterDetail["vswitch_id"].asString();
+		if(!valueclustersclusterDetail["vswitch_cidr"].isNull())
+			clustersObject.vswitch_cidr = valueclustersclusterDetail["vswitch_cidr"].asString();
+		if(!valueclustersclusterDetail["data_disk_size"].isNull())
+			clustersObject.data_disk_size = std::stoi(valueclustersclusterDetail["data_disk_size"].asString());
+		if(!valueclustersclusterDetail["data_disk_category"].isNull())
+			clustersObject.data_disk_category = valueclustersclusterDetail["data_disk_category"].asString();
+		if(!valueclustersclusterDetail["security_group_id"].isNull())
+			clustersObject.security_group_id = valueclustersclusterDetail["security_group_id"].asString();
+		if(!valueclustersclusterDetail["zone_id"].isNull())
+			clustersObject.zone_id = valueclustersclusterDetail["zone_id"].asString();
+		if(!valueclustersclusterDetail["network_mode"].isNull())
+			clustersObject.network_mode = valueclustersclusterDetail["network_mode"].asString();
+		if(!valueclustersclusterDetail["master_url"].isNull())
+			clustersObject.master_url = valueclustersclusterDetail["master_url"].asString();
+		if(!valueclustersclusterDetail["docker_version"].isNull())
+			clustersObject.docker_version = valueclustersclusterDetail["docker_version"].asString();
+		if(!valueclustersclusterDetail["deletion_protection"].isNull())
+			clustersObject.deletion_protection = valueclustersclusterDetail["deletion_protection"].asString() == "true";
+		if(!valueclustersclusterDetail["external_loadbalancer_id"].isNull())
+			clustersObject.external_loadbalancer_id = valueclustersclusterDetail["external_loadbalancer_id"].asString();
+		if(!valueclustersclusterDetail["created"].isNull())
+			clustersObject.created = valueclustersclusterDetail["created"].asString();
+		if(!valueclustersclusterDetail["updated"].isNull())
+			clustersObject.updated = valueclustersclusterDetail["updated"].asString();
+		if(!valueclustersclusterDetail["size"].isNull())
+			clustersObject.size = valueclustersclusterDetail["size"].asString();
+		auto alltagsNode = allclustersNode["tags"]["tagsItem"];
+		for (auto allclustersNodetagstagsItem : alltagsNode)
+		{
+			ClusterDetail::TagsItem tagsObject;
+			if(!allclustersNodetagstagsItem["key"].isNull())
+				tagsObject.key = allclustersNodetagstagsItem["key"].asString();
+			if(!allclustersNodetagstagsItem["value"].isNull())
+				tagsObject.value = allclustersNodetagstagsItem["value"].asString();
+			clustersObject.tags.push_back(tagsObject);
+		}
+		clusters_.push_back(clustersObject);
+	}
 
 }
 
-std::string DescribeClustersResult::getCluster_id()const
+std::vector<DescribeClustersResult::ClusterDetail> DescribeClustersResult::getclusters()const
 {
-	return cluster_id_;
-}
-
-std::string DescribeClustersResult::getExternal_loadbalancer_id()const
-{
-	return external_loadbalancer_id_;
-}
-
-std::string DescribeClustersResult::getUpdated()const
-{
-	return updated_;
-}
-
-std::string DescribeClustersResult::getRegion_id()const
-{
-	return region_id_;
-}
-
-std::string DescribeClustersResult::getSize()const
-{
-	return size_;
-}
-
-std::string DescribeClustersResult::getVpc_id()const
-{
-	return vpc_id_;
-}
-
-std::string DescribeClustersResult::getNetwork_mode()const
-{
-	return network_mode_;
-}
-
-std::string DescribeClustersResult::getSecurity_group_id()const
-{
-	return security_group_id_;
-}
-
-std::string DescribeClustersResult::getCreated()const
-{
-	return created_;
-}
-
-std::string DescribeClustersResult::getName()const
-{
-	return name_;
-}
-
-std::string DescribeClustersResult::getAgent_version()const
-{
-	return agent_version_;
-}
-
-std::string DescribeClustersResult::getState()const
-{
-	return state_;
-}
-
-std::string DescribeClustersResult::getVpc_id1()const
-{
-	return vpc_id1_;
-}
-
-std::string DescribeClustersResult::getMaster_url()const
-{
-	return master_url_;
+	return clusters_;
 }
 

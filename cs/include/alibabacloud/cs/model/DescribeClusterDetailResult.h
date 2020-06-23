@@ -32,15 +32,68 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClusterDetailResult : public ServiceResult
 			{
 			public:
+				struct TagsItem
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeClusterDetailResult();
 				explicit DescribeClusterDetailResult(const std::string &payload);
 				~DescribeClusterDetailResult();
+				std::string getCluster_type()const;
+				std::string getResource_group_id()const;
+				std::string getData_disk_category()const;
+				std::string getDocker_version()const;
+				std::string getCluster_id()const;
+				std::string getExternal_loadbalancer_id()const;
+				std::string getUpdated()const;
+				std::string getRegion_id()const;
+				std::string getSize()const;
+				std::string getVpc_id()const;
+				std::string getVswitch_id()const;
+				std::string getMeta_data()const;
+				bool getDeletion_protection()const;
+				std::string getNetwork_mode()const;
+				std::string getSecurity_group_id()const;
+				std::vector<TagsItem> gettags()const;
+				std::string getName()const;
+				int getData_disk_size()const;
+				std::string getCreated()const;
+				std::string getState()const;
+				std::string getZone_id()const;
+				std::string getVswitch_cidr()const;
+				std::string getCurrent_version()const;
+				std::string getInstance_type()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string cluster_type_;
+				std::string resource_group_id_;
+				std::string data_disk_category_;
+				std::string docker_version_;
+				std::string cluster_id_;
+				std::string external_loadbalancer_id_;
+				std::string updated_;
+				std::string region_id_;
+				std::string size_;
+				std::string vpc_id_;
+				std::string vswitch_id_;
+				std::string meta_data_;
+				bool deletion_protection_;
+				std::string network_mode_;
+				std::string security_group_id_;
+				std::vector<TagsItem> tags_;
+				std::string name_;
+				int data_disk_size_;
+				std::string created_;
+				std::string state_;
+				std::string zone_id_;
+				std::string vswitch_cidr_;
+				std::string current_version_;
+				std::string instance_type_;
 
 			};
 		}

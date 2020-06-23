@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeApiVersionRequest;
 
 DescribeApiVersionRequest::DescribeApiVersionRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/version");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeApiVersionRequest::~DescribeApiVersionRequest()
 {}

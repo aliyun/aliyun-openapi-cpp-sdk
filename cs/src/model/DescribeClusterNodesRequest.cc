@@ -20,7 +20,10 @@ using AlibabaCloud::CS::Model::DescribeClusterNodesRequest;
 
 DescribeClusterNodesRequest::DescribeClusterNodesRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
-{}
+{
+	setResourcePath("/clusters/[ClusterId]/nodes");
+	setMethod(HttpRequest::Method::Get);
+}
 
 DescribeClusterNodesRequest::~DescribeClusterNodesRequest()
 {}
@@ -45,6 +48,28 @@ void DescribeClusterNodesRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
+}
+
+std::string DescribeClusterNodesRequest::getState()const
+{
+	return state_;
+}
+
+void DescribeClusterNodesRequest::setState(const std::string& state)
+{
+	state_ = state;
+	setParameter("State", state);
+}
+
+std::string DescribeClusterNodesRequest::getNodepool_id()const
+{
+	return nodepool_id_;
+}
+
+void DescribeClusterNodesRequest::setNodepool_id(const std::string& nodepool_id)
+{
+	nodepool_id_ = nodepool_id;
+	setParameter("Nodepool_id", nodepool_id);
 }
 
 std::string DescribeClusterNodesRequest::getPageNumber()const

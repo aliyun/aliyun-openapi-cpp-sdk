@@ -28,6 +28,17 @@ DescribeAddonsRequest::DescribeAddonsRequest() :
 DescribeAddonsRequest::~DescribeAddonsRequest()
 {}
 
+std::string DescribeAddonsRequest::getCluster_type()const
+{
+	return cluster_type_;
+}
+
+void DescribeAddonsRequest::setCluster_type(const std::string& cluster_type)
+{
+	cluster_type_ = cluster_type;
+	setParameter("Cluster_type", cluster_type);
+}
+
 std::string DescribeAddonsRequest::getRegion()const
 {
 	return region_;

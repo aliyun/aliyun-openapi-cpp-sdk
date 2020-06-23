@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				DescribeAddonsRequest();
 				~DescribeAddonsRequest();
 
+				std::string getCluster_type()const;
+				void setCluster_type(const std::string& cluster_type);
 				std::string getRegion()const;
 				void setRegion(const std::string& region);
 
             private:
+				std::string cluster_type_;
 				std::string region_;
 
 			};

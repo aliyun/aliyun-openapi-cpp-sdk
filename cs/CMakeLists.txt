@@ -23,22 +23,26 @@ set(cs_public_header
 set(cs_public_header_model 
 	include/alibabacloud/cs/model/AttachInstancesRequest.h
 	include/alibabacloud/cs/model/AttachInstancesResult.h
+	include/alibabacloud/cs/model/CancelClusterUpgradeRequest.h
+	include/alibabacloud/cs/model/CancelClusterUpgradeResult.h
+	include/alibabacloud/cs/model/CancelComponentUpgradeRequest.h
+	include/alibabacloud/cs/model/CancelComponentUpgradeResult.h
 	include/alibabacloud/cs/model/CancelWorkflowRequest.h
 	include/alibabacloud/cs/model/CancelWorkflowResult.h
-	include/alibabacloud/cs/model/CheckAliyunCSServiceRoleRequest.h
-	include/alibabacloud/cs/model/CheckAliyunCSServiceRoleResult.h
 	include/alibabacloud/cs/model/CreateClusterRequest.h
 	include/alibabacloud/cs/model/CreateClusterResult.h
-	include/alibabacloud/cs/model/CreateClusterByResourcesGroupRequest.h
-	include/alibabacloud/cs/model/CreateClusterByResourcesGroupResult.h
-	include/alibabacloud/cs/model/CreateServiceMeshRequest.h
-	include/alibabacloud/cs/model/CreateServiceMeshResult.h
+	include/alibabacloud/cs/model/CreateTemplateRequest.h
+	include/alibabacloud/cs/model/CreateTemplateResult.h
+	include/alibabacloud/cs/model/CreateTriggerHookRequest.h
+	include/alibabacloud/cs/model/CreateTriggerHookResult.h
 	include/alibabacloud/cs/model/DeleteClusterRequest.h
 	include/alibabacloud/cs/model/DeleteClusterResult.h
-	include/alibabacloud/cs/model/DeleteClusterNodeRequest.h
-	include/alibabacloud/cs/model/DeleteClusterNodeResult.h
 	include/alibabacloud/cs/model/DeleteClusterNodesRequest.h
 	include/alibabacloud/cs/model/DeleteClusterNodesResult.h
+	include/alibabacloud/cs/model/DeleteTemplateRequest.h
+	include/alibabacloud/cs/model/DeleteTemplateResult.h
+	include/alibabacloud/cs/model/DeleteTriggerHookRequest.h
+	include/alibabacloud/cs/model/DeleteTriggerHookResult.h
 	include/alibabacloud/cs/model/DescirbeWorkflowRequest.h
 	include/alibabacloud/cs/model/DescirbeWorkflowResult.h
 	include/alibabacloud/cs/model/DescribeAddonsRequest.h
@@ -51,77 +55,89 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/DescribeClusterAddonsVersionResult.h
 	include/alibabacloud/cs/model/DescribeClusterAttachScriptsRequest.h
 	include/alibabacloud/cs/model/DescribeClusterAttachScriptsResult.h
-	include/alibabacloud/cs/model/DescribeClusterCertsRequest.h
-	include/alibabacloud/cs/model/DescribeClusterCertsResult.h
 	include/alibabacloud/cs/model/DescribeClusterDetailRequest.h
 	include/alibabacloud/cs/model/DescribeClusterDetailResult.h
-	include/alibabacloud/cs/model/DescribeClusterEndpointsRequest.h
-	include/alibabacloud/cs/model/DescribeClusterEndpointsResult.h
 	include/alibabacloud/cs/model/DescribeClusterLogsRequest.h
 	include/alibabacloud/cs/model/DescribeClusterLogsResult.h
 	include/alibabacloud/cs/model/DescribeClusterNodesRequest.h
 	include/alibabacloud/cs/model/DescribeClusterNodesResult.h
+	include/alibabacloud/cs/model/DescribeClusterResourcesRequest.h
+	include/alibabacloud/cs/model/DescribeClusterResourcesResult.h
 	include/alibabacloud/cs/model/DescribeClusterUserKubeconfigRequest.h
 	include/alibabacloud/cs/model/DescribeClusterUserKubeconfigResult.h
 	include/alibabacloud/cs/model/DescribeClusterV2UserKubeconfigRequest.h
 	include/alibabacloud/cs/model/DescribeClusterV2UserKubeconfigResult.h
 	include/alibabacloud/cs/model/DescribeClustersRequest.h
 	include/alibabacloud/cs/model/DescribeClustersResult.h
-	include/alibabacloud/cs/model/DescribeEdgeClusterAttachScriptsRequest.h
-	include/alibabacloud/cs/model/DescribeEdgeClusterAttachScriptsResult.h
+	include/alibabacloud/cs/model/DescribeExternalAgentRequest.h
+	include/alibabacloud/cs/model/DescribeExternalAgentResult.h
+	include/alibabacloud/cs/model/DescribeTemplatesRequest.h
+	include/alibabacloud/cs/model/DescribeTemplatesResult.h
+	include/alibabacloud/cs/model/DescribeUserQuotaRequest.h
+	include/alibabacloud/cs/model/DescribeUserQuotaResult.h
 	include/alibabacloud/cs/model/DescribeWorkflowsRequest.h
 	include/alibabacloud/cs/model/DescribeWorkflowsResult.h
-	include/alibabacloud/cs/model/DownloadClusterNodeCertsRequest.h
-	include/alibabacloud/cs/model/DownloadClusterNodeCertsResult.h
+	include/alibabacloud/cs/model/GetUpgradeStatusRequest.h
+	include/alibabacloud/cs/model/GetUpgradeStatusResult.h
+	include/alibabacloud/cs/model/InstallClusterAddonsRequest.h
+	include/alibabacloud/cs/model/InstallClusterAddonsResult.h
+	include/alibabacloud/cs/model/ListTagResourcesRequest.h
+	include/alibabacloud/cs/model/ListTagResourcesResult.h
 	include/alibabacloud/cs/model/ModifyClusterRequest.h
 	include/alibabacloud/cs/model/ModifyClusterResult.h
 	include/alibabacloud/cs/model/ModifyClusterTagsRequest.h
 	include/alibabacloud/cs/model/ModifyClusterTagsResult.h
+	include/alibabacloud/cs/model/PauseClusterUpgradeRequest.h
+	include/alibabacloud/cs/model/PauseClusterUpgradeResult.h
+	include/alibabacloud/cs/model/PauseComponentUpgradeRequest.h
+	include/alibabacloud/cs/model/PauseComponentUpgradeResult.h
+	include/alibabacloud/cs/model/RemoveClusterNodesRequest.h
+	include/alibabacloud/cs/model/RemoveClusterNodesResult.h
 	include/alibabacloud/cs/model/RemoveWorkflowRequest.h
 	include/alibabacloud/cs/model/RemoveWorkflowResult.h
-	include/alibabacloud/cs/model/ResetClusterNodeRequest.h
-	include/alibabacloud/cs/model/ResetClusterNodeResult.h
-	include/alibabacloud/cs/model/RevokeClusterTokenRequest.h
-	include/alibabacloud/cs/model/RevokeClusterTokenResult.h
+	include/alibabacloud/cs/model/ResumeComponentUpgradeRequest.h
+	include/alibabacloud/cs/model/ResumeComponentUpgradeResult.h
+	include/alibabacloud/cs/model/ResumeUpgradeClusterRequest.h
+	include/alibabacloud/cs/model/ResumeUpgradeClusterResult.h
 	include/alibabacloud/cs/model/ScaleClusterRequest.h
 	include/alibabacloud/cs/model/ScaleClusterResult.h
 	include/alibabacloud/cs/model/ScaleOutClusterRequest.h
 	include/alibabacloud/cs/model/ScaleOutClusterResult.h
-	include/alibabacloud/cs/model/ServiceMeshAddClusterRequest.h
-	include/alibabacloud/cs/model/ServiceMeshAddClusterResult.h
-	include/alibabacloud/cs/model/ServiceMeshApiServerRequest.h
-	include/alibabacloud/cs/model/ServiceMeshApiServerResult.h
-	include/alibabacloud/cs/model/ServiceMeshRemoveClusterRequest.h
-	include/alibabacloud/cs/model/ServiceMeshRemoveClusterResult.h
 	include/alibabacloud/cs/model/StartWorkflowRequest.h
 	include/alibabacloud/cs/model/StartWorkflowResult.h
 	include/alibabacloud/cs/model/UnInstallClusterAddonsRequest.h
 	include/alibabacloud/cs/model/UnInstallClusterAddonsResult.h
 	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireRequest.h
 	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireResult.h
-	include/alibabacloud/cs/model/UpdateServiceMeshRequest.h
-	include/alibabacloud/cs/model/UpdateServiceMeshResult.h )
+	include/alibabacloud/cs/model/UpgradeClusterRequest.h
+	include/alibabacloud/cs/model/UpgradeClusterResult.h
+	include/alibabacloud/cs/model/UpgradeClusterAddonsRequest.h
+	include/alibabacloud/cs/model/UpgradeClusterAddonsResult.h )
 
 set(cs_src 
 	src/CSClient.cc
 	src/model/AttachInstancesRequest.cc
 	src/model/AttachInstancesResult.cc
+	src/model/CancelClusterUpgradeRequest.cc
+	src/model/CancelClusterUpgradeResult.cc
+	src/model/CancelComponentUpgradeRequest.cc
+	src/model/CancelComponentUpgradeResult.cc
 	src/model/CancelWorkflowRequest.cc
 	src/model/CancelWorkflowResult.cc
-	src/model/CheckAliyunCSServiceRoleRequest.cc
-	src/model/CheckAliyunCSServiceRoleResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
-	src/model/CreateClusterByResourcesGroupRequest.cc
-	src/model/CreateClusterByResourcesGroupResult.cc
-	src/model/CreateServiceMeshRequest.cc
-	src/model/CreateServiceMeshResult.cc
+	src/model/CreateTemplateRequest.cc
+	src/model/CreateTemplateResult.cc
+	src/model/CreateTriggerHookRequest.cc
+	src/model/CreateTriggerHookResult.cc
 	src/model/DeleteClusterRequest.cc
 	src/model/DeleteClusterResult.cc
-	src/model/DeleteClusterNodeRequest.cc
-	src/model/DeleteClusterNodeResult.cc
 	src/model/DeleteClusterNodesRequest.cc
 	src/model/DeleteClusterNodesResult.cc
+	src/model/DeleteTemplateRequest.cc
+	src/model/DeleteTemplateResult.cc
+	src/model/DeleteTriggerHookRequest.cc
+	src/model/DeleteTriggerHookResult.cc
 	src/model/DescirbeWorkflowRequest.cc
 	src/model/DescirbeWorkflowResult.cc
 	src/model/DescribeAddonsRequest.cc
@@ -134,56 +150,64 @@ set(cs_src
 	src/model/DescribeClusterAddonsVersionResult.cc
 	src/model/DescribeClusterAttachScriptsRequest.cc
 	src/model/DescribeClusterAttachScriptsResult.cc
-	src/model/DescribeClusterCertsRequest.cc
-	src/model/DescribeClusterCertsResult.cc
 	src/model/DescribeClusterDetailRequest.cc
 	src/model/DescribeClusterDetailResult.cc
-	src/model/DescribeClusterEndpointsRequest.cc
-	src/model/DescribeClusterEndpointsResult.cc
 	src/model/DescribeClusterLogsRequest.cc
 	src/model/DescribeClusterLogsResult.cc
 	src/model/DescribeClusterNodesRequest.cc
 	src/model/DescribeClusterNodesResult.cc
+	src/model/DescribeClusterResourcesRequest.cc
+	src/model/DescribeClusterResourcesResult.cc
 	src/model/DescribeClusterUserKubeconfigRequest.cc
 	src/model/DescribeClusterUserKubeconfigResult.cc
 	src/model/DescribeClusterV2UserKubeconfigRequest.cc
 	src/model/DescribeClusterV2UserKubeconfigResult.cc
 	src/model/DescribeClustersRequest.cc
 	src/model/DescribeClustersResult.cc
-	src/model/DescribeEdgeClusterAttachScriptsRequest.cc
-	src/model/DescribeEdgeClusterAttachScriptsResult.cc
+	src/model/DescribeExternalAgentRequest.cc
+	src/model/DescribeExternalAgentResult.cc
+	src/model/DescribeTemplatesRequest.cc
+	src/model/DescribeTemplatesResult.cc
+	src/model/DescribeUserQuotaRequest.cc
+	src/model/DescribeUserQuotaResult.cc
 	src/model/DescribeWorkflowsRequest.cc
 	src/model/DescribeWorkflowsResult.cc
-	src/model/DownloadClusterNodeCertsRequest.cc
-	src/model/DownloadClusterNodeCertsResult.cc
+	src/model/GetUpgradeStatusRequest.cc
+	src/model/GetUpgradeStatusResult.cc
+	src/model/InstallClusterAddonsRequest.cc
+	src/model/InstallClusterAddonsResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ModifyClusterRequest.cc
 	src/model/ModifyClusterResult.cc
 	src/model/ModifyClusterTagsRequest.cc
 	src/model/ModifyClusterTagsResult.cc
+	src/model/PauseClusterUpgradeRequest.cc
+	src/model/PauseClusterUpgradeResult.cc
+	src/model/PauseComponentUpgradeRequest.cc
+	src/model/PauseComponentUpgradeResult.cc
+	src/model/RemoveClusterNodesRequest.cc
+	src/model/RemoveClusterNodesResult.cc
 	src/model/RemoveWorkflowRequest.cc
 	src/model/RemoveWorkflowResult.cc
-	src/model/ResetClusterNodeRequest.cc
-	src/model/ResetClusterNodeResult.cc
-	src/model/RevokeClusterTokenRequest.cc
-	src/model/RevokeClusterTokenResult.cc
+	src/model/ResumeComponentUpgradeRequest.cc
+	src/model/ResumeComponentUpgradeResult.cc
+	src/model/ResumeUpgradeClusterRequest.cc
+	src/model/ResumeUpgradeClusterResult.cc
 	src/model/ScaleClusterRequest.cc
 	src/model/ScaleClusterResult.cc
 	src/model/ScaleOutClusterRequest.cc
 	src/model/ScaleOutClusterResult.cc
-	src/model/ServiceMeshAddClusterRequest.cc
-	src/model/ServiceMeshAddClusterResult.cc
-	src/model/ServiceMeshApiServerRequest.cc
-	src/model/ServiceMeshApiServerResult.cc
-	src/model/ServiceMeshRemoveClusterRequest.cc
-	src/model/ServiceMeshRemoveClusterResult.cc
 	src/model/StartWorkflowRequest.cc
 	src/model/StartWorkflowResult.cc
 	src/model/UnInstallClusterAddonsRequest.cc
 	src/model/UnInstallClusterAddonsResult.cc
 	src/model/UpdateK8sClusterUserConfigExpireRequest.cc
 	src/model/UpdateK8sClusterUserConfigExpireResult.cc
-	src/model/UpdateServiceMeshRequest.cc
-	src/model/UpdateServiceMeshResult.cc )
+	src/model/UpgradeClusterRequest.cc
+	src/model/UpgradeClusterResult.cc
+	src/model/UpgradeClusterAddonsRequest.cc
+	src/model/UpgradeClusterAddonsResult.cc )
 
 add_library(cs ${LIB_TYPE}
 	${cs_public_header}

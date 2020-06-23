@@ -32,43 +32,49 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClustersResult : public ServiceResult
 			{
 			public:
+				struct ClusterDetail
+				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
+					std::string cluster_type;
+					std::string resource_group_id;
+					std::string data_disk_category;
+					std::string docker_version;
+					std::string cluster_id;
+					std::string external_loadbalancer_id;
+					std::string updated;
+					std::string region_id;
+					std::string size;
+					std::string vpc_id;
+					std::string vswitch_id;
+					std::string meta_data;
+					bool deletion_protection;
+					std::string network_mode;
+					std::string security_group_id;
+					std::vector<ClusterDetail::TagsItem> tags;
+					std::string name;
+					int data_disk_size;
+					std::string created;
+					std::string state;
+					std::string zone_id;
+					std::string vswitch_cidr;
+					std::string master_url;
+					std::string current_version;
+				};
 
 
 				DescribeClustersResult();
 				explicit DescribeClustersResult(const std::string &payload);
 				~DescribeClustersResult();
-				std::string getCluster_id()const;
-				std::string getExternal_loadbalancer_id()const;
-				std::string getUpdated()const;
-				std::string getRegion_id()const;
-				std::string getSize()const;
-				std::string getVpc_id()const;
-				std::string getNetwork_mode()const;
-				std::string getSecurity_group_id()const;
-				std::string getCreated()const;
-				std::string getName()const;
-				std::string getAgent_version()const;
-				std::string getState()const;
-				std::string getVpc_id1()const;
-				std::string getMaster_url()const;
+				std::vector<ClusterDetail> getclusters()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string cluster_id_;
-				std::string external_loadbalancer_id_;
-				std::string updated_;
-				std::string region_id_;
-				std::string size_;
-				std::string vpc_id_;
-				std::string network_mode_;
-				std::string security_group_id_;
-				std::string created_;
-				std::string name_;
-				std::string agent_version_;
-				std::string state_;
-				std::string vpc_id1_;
-				std::string master_url_;
+				std::vector<ClusterDetail> clusters_;
 
 			};
 		}

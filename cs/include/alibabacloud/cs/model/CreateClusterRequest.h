@@ -99,10 +99,10 @@ namespace AlibabaCloud
 				void setWorker_auto_renew_period(int worker_auto_renew_period);
 				int getMaster_auto_renew_period()const;
 				void setMaster_auto_renew_period(int master_auto_renew_period);
-				int getTimeout_mins()const;
-				void setTimeout_mins(int timeout_mins);
 				int getWorker_period()const;
 				void setWorker_period(int worker_period);
+				int getTimeout_mins()const;
+				void setTimeout_mins(int timeout_mins);
 				int getWorker_system_disk_size()const;
 				void setWorker_system_disk_size(int worker_system_disk_size);
 				std::string getOs_type()const;
@@ -151,8 +151,8 @@ namespace AlibabaCloud
 				std::string node_cidr_mask_;
 				int worker_auto_renew_period_;
 				int master_auto_renew_period_;
-				int timeout_mins_;
 				int worker_period_;
+				int timeout_mins_;
 				int worker_system_disk_size_;
 				std::string os_type_;
 				std::string cpu_policy_;

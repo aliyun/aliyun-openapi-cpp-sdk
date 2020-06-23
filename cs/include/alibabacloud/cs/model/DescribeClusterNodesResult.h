@@ -32,15 +32,47 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClusterNodesResult : public ServiceResult
 			{
 			public:
+				struct Page
+				{
+					int page_size;
+					int page_number;
+					int total_count;
+				};
+				struct Node
+				{
+					std::string instance_name;
+					std::string error_message;
+					std::string creation_time;
+					std::string image_id;
+					std::string instance_status;
+					std::string instance_type_family;
+					std::string host_name;
+					std::string source;
+					std::string instance_charge_type;
+					std::vector<std::string> ip_address;
+					std::string state;
+					std::string instance_role;
+					std::string nodepool_id;
+					std::string node_status;
+					std::string instance_id;
+					std::string node_name;
+					std::string instance_type;
+					std::string expired_time;
+					bool is_aliyun_node;
+				};
 
 
 				DescribeClusterNodesResult();
 				explicit DescribeClusterNodesResult(const std::string &payload);
 				~DescribeClusterNodesResult();
+				std::vector<Node> getnodes()const;
+				Page getPage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<Node> nodes_;
+				Page page_;
 
 			};
 		}

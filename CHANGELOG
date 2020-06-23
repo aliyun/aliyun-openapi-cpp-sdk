@@ -1,3 +1,6 @@
+2020-06-23 Version: 1.36.477
+- Generated 2015-12-15 for `CS`.
+
 2020-06-23 Version: 1.36.476
 - Support SubmitOperationAuditInfo for Support self-service submission of approval information.
 - Support SubmitOperationCredentials for self-service submission of certificate information.

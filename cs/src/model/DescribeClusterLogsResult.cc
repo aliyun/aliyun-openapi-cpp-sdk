@@ -35,14 +35,38 @@ DescribeClusterLogsResult::~DescribeClusterLogsResult()
 
 void DescribeClusterLogsResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["cluster_id"].isNull())
+		cluster_id_ = value["cluster_id"].asString();
+	if(!value["cluster_log"].isNull())
+		cluster_log_ = value["cluster_log"].asString();
+	if(!value["log_level"].isNull())
+		log_level_ = value["log_level"].asString();
+	if(!value["created"].isNull())
+		created_ = value["created"].asString();
 
+}
+
+std::string DescribeClusterLogsResult::getCluster_id()const
+{
+	return cluster_id_;
+}
+
+std::string DescribeClusterLogsResult::getLog_level()const
+{
+	return log_level_;
+}
+
+std::string DescribeClusterLogsResult::getCluster_log()const
+{
+	return cluster_log_;
+}
+
+std::string DescribeClusterLogsResult::getCreated()const
+{
+	return created_;
 }
 

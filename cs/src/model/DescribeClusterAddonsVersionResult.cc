@@ -41,8 +41,6 @@ void DescribeClusterAddonsVersionResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["template"].isNull())
 		_template_ = value["template"].asString();
-	if(!value["ready_to_upgrade"].isNull())
-		ready_to_upgrade_ = value["ready_to_upgrade"].asString();
 	if(!value["next_version"].isNull())
 		next_version_ = value["next_version"].asString();
 	if(!value["can_upgrade"].isNull())
@@ -55,20 +53,9 @@ void DescribeClusterAddonsVersionResult::parse(const std::string &payload)
 		changed_ = value["changed"].asString();
 	if(!value["message"].isNull())
 		message_ = value["message"].asString();
-	if(!value["policy"].isNull())
-		policy_ = value["policy"].asString();
-	if(!value["force"].isNull())
-		force_ = value["force"].asString() == "true";
 	if(!value["required"].isNull())
 		required_ = value["required"].asString() == "true";
-	if(!value["exist"].isNull())
-		exist_ = value["exist"].asString() == "true";
 
-}
-
-std::string DescribeClusterAddonsVersionResult::getPolicy()const
-{
-	return policy_;
 }
 
 std::string DescribeClusterAddonsVersionResult::getNext_version()const
@@ -86,11 +73,6 @@ bool DescribeClusterAddonsVersionResult::getCan_upgrade()const
 	return can_upgrade_;
 }
 
-bool DescribeClusterAddonsVersionResult::getExist()const
-{
-	return exist_;
-}
-
 std::string DescribeClusterAddonsVersionResult::getMessage()const
 {
 	return message_;
@@ -104,16 +86,6 @@ bool DescribeClusterAddonsVersionResult::getRequired()const
 std::string DescribeClusterAddonsVersionResult::getVersion()const
 {
 	return version_;
-}
-
-bool DescribeClusterAddonsVersionResult::getForce()const
-{
-	return force_;
-}
-
-std::string DescribeClusterAddonsVersionResult::getReady_to_upgrade()const
-{
-	return ready_to_upgrade_;
 }
 
 std::string DescribeClusterAddonsVersionResult::getChanged()const

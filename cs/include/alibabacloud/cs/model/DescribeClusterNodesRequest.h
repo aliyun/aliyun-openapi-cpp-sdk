@@ -39,12 +39,18 @@ namespace AlibabaCloud
 				void setPageSize(const std::string& pageSize);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getState()const;
+				void setState(const std::string& state);
+				std::string getNodepool_id()const;
+				void setNodepool_id(const std::string& nodepool_id);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
 
             private:
 				std::string pageSize_;
 				std::string clusterId_;
+				std::string state_;
+				std::string nodepool_id_;
 				std::string pageNumber_;
 
 			};

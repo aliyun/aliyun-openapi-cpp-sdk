@@ -35,14 +35,38 @@ DescribeApiVersionResult::~DescribeApiVersionResult()
 
 void DescribeApiVersionResult::parse(const std::string &payload)
 {
-	Json::CharReaderBuilder builder;
-	Json::CharReader *reader = builder.newCharReader();
-	Json::Value *val;
+	Json::Reader reader;
 	Json::Value value;
-	JSONCPP_STRING *errs;
-	reader->parse(payload.data(), payload.data() + payload.size(), val, errs);
-	value = *val;
+	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["version"].isNull())
+		version_ = value["version"].asString();
+	if(!value["build"].isNull())
+		build_ = value["build"].asString();
+	if(!value["docker_version"].isNull())
+		docker_version_ = value["docker_version"].asString();
+	if(!value["docker_region_versions"].isNull())
+		docker_region_versions_ = value["docker_region_versions"].asString();
 
+}
+
+std::string DescribeApiVersionResult::getDocker_version()const
+{
+	return docker_version_;
+}
+
+std::string DescribeApiVersionResult::getVersion()const
+{
+	return version_;
+}
+
+std::string DescribeApiVersionResult::getBuild()const
+{
+	return build_;
+}
+
+std::string DescribeApiVersionResult::getDocker_region_versions()const
+{
+	return docker_region_versions_;
 }
 

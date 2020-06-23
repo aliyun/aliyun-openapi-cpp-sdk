@@ -380,17 +380,6 @@ void CreateClusterRequest::setMaster_auto_renew_period(int master_auto_renew_per
 	setBodyParameter("Master_auto_renew_period", std::to_string(master_auto_renew_period));
 }
 
-int CreateClusterRequest::getTimeout_mins()const
-{
-	return timeout_mins_;
-}
-
-void CreateClusterRequest::setTimeout_mins(int timeout_mins)
-{
-	timeout_mins_ = timeout_mins;
-	setBodyParameter("Timeout_mins", std::to_string(timeout_mins));
-}
-
 int CreateClusterRequest::getWorker_period()const
 {
 	return worker_period_;
@@ -400,6 +389,17 @@ void CreateClusterRequest::setWorker_period(int worker_period)
 {
 	worker_period_ = worker_period;
 	setBodyParameter("Worker_period", std::to_string(worker_period));
+}
+
+int CreateClusterRequest::getTimeout_mins()const
+{
+	return timeout_mins_;
+}
+
+void CreateClusterRequest::setTimeout_mins(int timeout_mins)
+{
+	timeout_mins_ = timeout_mins;
+	setBodyParameter("Timeout_mins", std::to_string(timeout_mins));
 }
 
 int CreateClusterRequest::getWorker_system_disk_size()const

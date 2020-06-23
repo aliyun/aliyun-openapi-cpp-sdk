@@ -39,6 +39,34 @@ void ModifyClusterResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["cluster_id"].isNull())
+		cluster_id_ = value["cluster_id"].asString();
+	if(!value["request_id"].isNull())
+		request_id_ = value["request_id"].asString();
+	if(!value["task_id"].isNull())
+		task_id_ = value["task_id"].asString();
+	if(!value["instanceId"].isNull())
+		instanceId_ = value["instanceId"].asString();
 
+}
+
+std::string ModifyClusterResult::getRequest_id()const
+{
+	return request_id_;
+}
+
+std::string ModifyClusterResult::getCluster_id()const
+{
+	return cluster_id_;
+}
+
+std::string ModifyClusterResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+std::string ModifyClusterResult::getTask_id()const
+{
+	return task_id_;
 }
 

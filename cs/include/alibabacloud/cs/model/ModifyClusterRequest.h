@@ -35,11 +35,29 @@ namespace AlibabaCloud
 				ModifyClusterRequest();
 				~ModifyClusterRequest();
 
+				bool getApi_server_eip()const;
+				void setApi_server_eip(bool api_server_eip);
+				std::string getResource_group_id()const;
+				void setResource_group_id(const std::string& resource_group_id);
+				std::string getIngress_domain_rebinding()const;
+				void setIngress_domain_rebinding(const std::string& ingress_domain_rebinding);
+				bool getDeletion_protection()const;
+				void setDeletion_protection(bool deletion_protection);
+				std::string getIngress_loadbalancer_id()const;
+				void setIngress_loadbalancer_id(const std::string& ingress_loadbalancer_id);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getApi_server_eip_id()const;
+				void setApi_server_eip_id(const std::string& api_server_eip_id);
 
             private:
+				bool api_server_eip_;
+				std::string resource_group_id_;
+				std::string ingress_domain_rebinding_;
+				bool deletion_protection_;
+				std::string ingress_loadbalancer_id_;
 				std::string clusterId_;
+				std::string api_server_eip_id_;
 
 			};
 		}

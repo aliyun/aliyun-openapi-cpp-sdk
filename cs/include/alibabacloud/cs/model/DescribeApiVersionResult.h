@@ -37,10 +37,18 @@ namespace AlibabaCloud
 				DescribeApiVersionResult();
 				explicit DescribeApiVersionResult(const std::string &payload);
 				~DescribeApiVersionResult();
+				std::string getDocker_version()const;
+				std::string getVersion()const;
+				std::string getBuild()const;
+				std::string getDocker_region_versions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string docker_version_;
+				std::string version_;
+				std::string build_;
+				std::string docker_region_versions_;
 
 			};
 		}
