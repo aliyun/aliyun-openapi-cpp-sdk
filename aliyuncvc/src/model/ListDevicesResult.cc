@@ -46,27 +46,27 @@ void ListDevicesResult::parse(const std::string &payload)
 		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["PageNumber"].isNull())
 		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allDevicesNode = dataNode["Devices"]["data"];
-	for (auto dataNodeDevicesdata : allDevicesNode)
+	auto allDevicesNode = dataNode["Devices"]["Device"];
+	for (auto dataNodeDevicesDevice : allDevicesNode)
 	{
-		Data::Data dataObject;
-		if(!dataNodeDevicesdata["ActivationCode"].isNull())
-			dataObject.activationCode = dataNodeDevicesdata["ActivationCode"].asString();
-		if(!dataNodeDevicesdata["ConferenceCode"].isNull())
-			dataObject.conferenceCode = dataNodeDevicesdata["ConferenceCode"].asString();
-		if(!dataNodeDevicesdata["ConferenceName"].isNull())
-			dataObject.conferenceName = dataNodeDevicesdata["ConferenceName"].asString();
-		if(!dataNodeDevicesdata["CreateTime"].isNull())
-			dataObject.createTime = dataNodeDevicesdata["CreateTime"].asString();
-		if(!dataNodeDevicesdata["PictureUrl"].isNull())
-			dataObject.pictureUrl = dataNodeDevicesdata["PictureUrl"].asString();
-		if(!dataNodeDevicesdata["SN"].isNull())
-			dataObject.sN = dataNodeDevicesdata["SN"].asString();
-		if(!dataNodeDevicesdata["Status"].isNull())
-			dataObject.status = dataNodeDevicesdata["Status"].asString();
-		if(!dataNodeDevicesdata["CastScreenCode"].isNull())
-			dataObject.castScreenCode = dataNodeDevicesdata["CastScreenCode"].asString();
-		data_.devices.push_back(dataObject);
+		Data::Device deviceObject;
+		if(!dataNodeDevicesDevice["ActivationCode"].isNull())
+			deviceObject.activationCode = dataNodeDevicesDevice["ActivationCode"].asString();
+		if(!dataNodeDevicesDevice["ConferenceCode"].isNull())
+			deviceObject.conferenceCode = dataNodeDevicesDevice["ConferenceCode"].asString();
+		if(!dataNodeDevicesDevice["ConferenceName"].isNull())
+			deviceObject.conferenceName = dataNodeDevicesDevice["ConferenceName"].asString();
+		if(!dataNodeDevicesDevice["CreateTime"].isNull())
+			deviceObject.createTime = dataNodeDevicesDevice["CreateTime"].asString();
+		if(!dataNodeDevicesDevice["PictureUrl"].isNull())
+			deviceObject.pictureUrl = dataNodeDevicesDevice["PictureUrl"].asString();
+		if(!dataNodeDevicesDevice["SN"].isNull())
+			deviceObject.sN = dataNodeDevicesDevice["SN"].asString();
+		if(!dataNodeDevicesDevice["Status"].isNull())
+			deviceObject.status = dataNodeDevicesDevice["Status"].asString();
+		if(!dataNodeDevicesDevice["CastScreenCode"].isNull())
+			deviceObject.castScreenCode = dataNodeDevicesDevice["CastScreenCode"].asString();
+		data_.devices.push_back(deviceObject);
 	}
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());

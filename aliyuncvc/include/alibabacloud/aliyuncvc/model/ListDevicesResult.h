@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct Data
+					struct Device
 					{
 						std::string status;
 						std::string castScreenCode;
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 					int pageSize;
 					int pageNumber;
 					int total;
-					std::vector<Data> devices;
+					std::vector<Device> devices;
 				};
 
 
