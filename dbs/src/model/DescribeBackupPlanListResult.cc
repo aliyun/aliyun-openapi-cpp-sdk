@@ -105,6 +105,12 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 			itemsObject.backupSetDownloadFullDataFormat = valueItemsBackupPlanDetail["BackupSetDownloadFullDataFormat"].asString();
 		if(!valueItemsBackupPlanDetail["BackupSetDownloadIncrementDataFormat"].isNull())
 			itemsObject.backupSetDownloadIncrementDataFormat = valueItemsBackupPlanDetail["BackupSetDownloadIncrementDataFormat"].asString();
+		if(!valueItemsBackupPlanDetail["CrossAliyunId"].isNull())
+			itemsObject.crossAliyunId = valueItemsBackupPlanDetail["CrossAliyunId"].asString();
+		if(!valueItemsBackupPlanDetail["CrossRoleName"].isNull())
+			itemsObject.crossRoleName = valueItemsBackupPlanDetail["CrossRoleName"].asString();
+		if(!valueItemsBackupPlanDetail["BackupStorageType"].isNull())
+			itemsObject.backupStorageType = valueItemsBackupPlanDetail["BackupStorageType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

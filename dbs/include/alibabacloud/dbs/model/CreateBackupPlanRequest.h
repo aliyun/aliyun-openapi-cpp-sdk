@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setInstanceType(const std::string& instanceType);
 				std::string getPeriod()const;
 				void setPeriod(const std::string& period);
+				std::string getFromApp()const;
+				void setFromApp(const std::string& fromApp);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
 				int getUsedTime()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				std::string databaseRegion_;
 				std::string instanceType_;
 				std::string period_;
+				std::string fromApp_;
 				std::string ownerId_;
 				int usedTime_;
 				std::string backupMethod_;

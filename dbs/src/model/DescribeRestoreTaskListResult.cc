@@ -87,6 +87,10 @@ void DescribeRestoreTaskListResult::parse(const std::string &payload)
 			itemsObject.continuousRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["ContinuousRestoreProgress"].asString());
 		if(!valueItemsRestoreTaskDetail["FullStruAfterRestoreProgress"].isNull())
 			itemsObject.fullStruAfterRestoreProgress = std::stoi(valueItemsRestoreTaskDetail["FullStruAfterRestoreProgress"].asString());
+		if(!valueItemsRestoreTaskDetail["CrossAliyunId"].isNull())
+			itemsObject.crossAliyunId = valueItemsRestoreTaskDetail["CrossAliyunId"].asString();
+		if(!valueItemsRestoreTaskDetail["CrossRoleName"].isNull())
+			itemsObject.crossRoleName = valueItemsRestoreTaskDetail["CrossRoleName"].asString();
 		if(!valueItemsRestoreTaskDetail["ErrMessage"].isNull())
 			itemsObject.errMessage = valueItemsRestoreTaskDetail["ErrMessage"].asString();
 		items_.push_back(itemsObject);

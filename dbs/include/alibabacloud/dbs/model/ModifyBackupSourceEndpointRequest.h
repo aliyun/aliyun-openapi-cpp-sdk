@@ -51,6 +51,10 @@ namespace AlibabaCloud
 				void setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName);
 				std::string getSourceEndpointIP()const;
 				void setSourceEndpointIP(const std::string& sourceEndpointIP);
+				std::string getCrossRoleName()const;
+				void setCrossRoleName(const std::string& crossRoleName);
+				std::string getCrossAliyunId()const;
+				void setCrossAliyunId(const std::string& crossAliyunId);
 				std::string getSourceEndpointPassword()const;
 				void setSourceEndpointPassword(const std::string& sourceEndpointPassword);
 				std::string getBackupObjects()const;
@@ -73,6 +77,8 @@ namespace AlibabaCloud
 				std::string backupPlanId_;
 				std::string sourceEndpointDatabaseName_;
 				std::string sourceEndpointIP_;
+				std::string crossRoleName_;
+				std::string crossAliyunId_;
 				std::string sourceEndpointPassword_;
 				std::string backupObjects_;
 				std::string ownerId_;

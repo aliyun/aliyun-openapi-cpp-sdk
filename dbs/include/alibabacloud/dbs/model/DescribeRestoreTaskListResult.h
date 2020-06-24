@@ -34,29 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct RestoreTaskDetail
 				{
-					std::string restoreDir;
 					int fullStruAfterRestoreProgress;
-					int fullStruforeRestoreProgress;
+					std::string crossAliyunId;
 					std::string destinationEndpointOracleSID;
-					std::string backupSetId;
 					std::string restoreStatus;
-					std::string errMessage;
-					std::string destinationEndpointInstanceType;
 					long restoreTime;
 					std::string destinationEndpointRegion;
 					int fullDataRestoreProgress;
 					std::string destinationEndpointDatabaseName;
-					std::string restoreTaskId;
 					int continuousRestoreProgress;
 					std::string destinationEndpointIpPort;
-					std::string destinationEndpointUserName;
 					std::string restoreObjects;
 					std::string restoreTaskName;
 					std::string backupPlanId;
-					long restoreTaskCreateTime;
 					long backupGatewayId;
-					std::string destinationEndpointInstanceID;
 					long restoreTaskFinishTime;
+					std::string crossRoleName;
+					std::string restoreDir;
+					int fullStruforeRestoreProgress;
+					std::string backupSetId;
+					std::string errMessage;
+					std::string destinationEndpointInstanceType;
+					std::string restoreTaskId;
+					std::string destinationEndpointUserName;
+					long restoreTaskCreateTime;
+					std::string destinationEndpointInstanceID;
 				};
 
 

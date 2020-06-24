@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setBackupPeriod(const std::string& backupPeriod);
 				std::string getBackupStartTime()const;
 				void setBackupStartTime(const std::string& backupStartTime);
+				std::string getBackupStrategyType()const;
+				void setBackupStrategyType(const std::string& backupStrategyType);
 
             private:
 				std::string clientToken_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string ownerId_;
 				std::string backupPeriod_;
 				std::string backupStartTime_;
+				std::string backupStrategyType_;
 
 			};
 		}

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setBackupPlanId(const std::string& backupPlanId);
 				std::string getDestinationEndpointRegion()const;
 				void setDestinationEndpointRegion(const std::string& destinationEndpointRegion);
+				std::string getCrossRoleName()const;
+				void setCrossRoleName(const std::string& crossRoleName);
 				std::string getDestinationEndpointUserName()const;
 				void setDestinationEndpointUserName(const std::string& destinationEndpointUserName);
 				std::string getRestoreObjects()const;
@@ -57,6 +59,8 @@ namespace AlibabaCloud
 				void setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID);
 				long getRestoreTime()const;
 				void setRestoreTime(long restoreTime);
+				std::string getCrossAliyunId()const;
+				void setCrossAliyunId(const std::string& crossAliyunId);
 				std::string getDestinationEndpointInstanceID()const;
 				void setDestinationEndpointInstanceID(const std::string& destinationEndpointInstanceID);
 				int getDestinationEndpointPort()const;
@@ -82,12 +86,14 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string destinationEndpointRegion_;
+				std::string crossRoleName_;
 				std::string destinationEndpointUserName_;
 				std::string restoreObjects_;
 				std::string restoreTaskName_;
 				std::string restoreHome_;
 				std::string destinationEndpointOracleSID_;
 				long restoreTime_;
+				std::string crossAliyunId_;
 				std::string destinationEndpointInstanceID_;
 				int destinationEndpointPort_;
 				std::string backupSetId_;

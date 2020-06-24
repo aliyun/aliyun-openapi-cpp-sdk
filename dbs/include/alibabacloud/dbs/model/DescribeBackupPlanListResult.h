@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string backupObjects;
 					std::string backupSetDownloadDir;
 					std::string sourceEndpointInstanceID;
+					std::string crossAliyunId;
 					std::string sourceEndpointDatabaseName;
 					std::string oSSBucketRegion;
 					long beginTimestampForRestore;
@@ -50,7 +51,9 @@ namespace AlibabaCloud
 					std::string sourceEndpointInstanceType;
 					long backupGatewayId;
 					std::string sourceEndpointUserName;
+					std::string backupStorageType;
 					int duplicationInfrequentAccessPeriod;
+					std::string crossRoleName;
 					std::string backupMethod;
 					std::string backupSetDownloadFullDataFormat;
 					std::string backupPeriod;

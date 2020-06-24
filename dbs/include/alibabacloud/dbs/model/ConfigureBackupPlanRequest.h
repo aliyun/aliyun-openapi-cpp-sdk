@@ -55,12 +55,16 @@ namespace AlibabaCloud
 				void setBackupStartTime(const std::string& backupStartTime);
 				std::string getSourceEndpointIP()const;
 				void setSourceEndpointIP(const std::string& sourceEndpointIP);
+				std::string getCrossRoleName()const;
+				void setCrossRoleName(const std::string& crossRoleName);
 				bool getEnableBackupLog()const;
 				void setEnableBackupLog(bool enableBackupLog);
 				std::string getBackupStorageType()const;
 				void setBackupStorageType(const std::string& backupStorageType);
 				int getDuplicationArchivePeriod()const;
 				void setDuplicationArchivePeriod(int duplicationArchivePeriod);
+				std::string getCrossAliyunId()const;
+				void setCrossAliyunId(const std::string& crossAliyunId);
 				std::string getSourceEndpointPassword()const;
 				void setSourceEndpointPassword(const std::string& sourceEndpointPassword);
 				std::string getBackupObjects()const;
@@ -73,6 +77,8 @@ namespace AlibabaCloud
 				void setBackupRetentionPeriod(int backupRetentionPeriod);
 				std::string getBackupPeriod()const;
 				void setBackupPeriod(const std::string& backupPeriod);
+				long getBackupSpeedLimit()const;
+				void setBackupSpeedLimit(long backupSpeedLimit);
 				std::string getSourceEndpointInstanceType()const;
 				void setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType);
 				std::string getBackupPlanName()const;
@@ -81,6 +87,8 @@ namespace AlibabaCloud
 				void setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID);
 				std::string getOSSBucketName()const;
 				void setOSSBucketName(const std::string& oSSBucketName);
+				std::string getBackupStrategyType()const;
+				void setBackupStrategyType(const std::string& backupStrategyType);
 
             private:
 				std::string sourceEndpointRegion_;
@@ -93,19 +101,23 @@ namespace AlibabaCloud
 				int duplicationInfrequentAccessPeriod_;
 				std::string backupStartTime_;
 				std::string sourceEndpointIP_;
+				std::string crossRoleName_;
 				bool enableBackupLog_;
 				std::string backupStorageType_;
 				int duplicationArchivePeriod_;
+				std::string crossAliyunId_;
 				std::string sourceEndpointPassword_;
 				std::string backupObjects_;
 				std::string ownerId_;
 				int sourceEndpointPort_;
 				int backupRetentionPeriod_;
 				std::string backupPeriod_;
+				long backupSpeedLimit_;
 				std::string sourceEndpointInstanceType_;
 				std::string backupPlanName_;
 				std::string sourceEndpointOracleSID_;
 				std::string oSSBucketName_;
+				std::string backupStrategyType_;
 
 			};
 		}

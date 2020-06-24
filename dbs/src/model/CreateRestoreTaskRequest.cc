@@ -82,6 +82,17 @@ void CreateRestoreTaskRequest::setDestinationEndpointRegion(const std::string& d
 	setParameter("DestinationEndpointRegion", destinationEndpointRegion);
 }
 
+std::string CreateRestoreTaskRequest::getCrossRoleName()const
+{
+	return crossRoleName_;
+}
+
+void CreateRestoreTaskRequest::setCrossRoleName(const std::string& crossRoleName)
+{
+	crossRoleName_ = crossRoleName;
+	setParameter("CrossRoleName", crossRoleName);
+}
+
 std::string CreateRestoreTaskRequest::getDestinationEndpointUserName()const
 {
 	return destinationEndpointUserName_;
@@ -146,6 +157,17 @@ void CreateRestoreTaskRequest::setRestoreTime(long restoreTime)
 {
 	restoreTime_ = restoreTime;
 	setParameter("RestoreTime", std::to_string(restoreTime));
+}
+
+std::string CreateRestoreTaskRequest::getCrossAliyunId()const
+{
+	return crossAliyunId_;
+}
+
+void CreateRestoreTaskRequest::setCrossAliyunId(const std::string& crossAliyunId)
+{
+	crossAliyunId_ = crossAliyunId;
+	setParameter("CrossAliyunId", crossAliyunId);
 }
 
 std::string CreateRestoreTaskRequest::getDestinationEndpointInstanceID()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANLISTREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANLISTREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANBILLINGREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANBILLINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT DescribeBackupPlanListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT DescribeBackupPlanBillingRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBackupPlanListRequest();
-				~DescribeBackupPlanListRequest();
+				DescribeBackupPlanBillingRequest();
+				~DescribeBackupPlanBillingRequest();
 
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getBackupPlanStatus()const;
-				void setBackupPlanStatus(const std::string& backupPlanStatus);
-				std::string getBackupPlanName()const;
-				void setBackupPlanName(const std::string& backupPlanName);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
+				bool getShowStorageType()const;
+				void setShowStorageType(bool showStorageType);
 
             private:
 				std::string clientToken_;
 				std::string backupPlanId_;
-				int pageNum_;
 				std::string ownerId_;
-				std::string backupPlanStatus_;
-				std::string backupPlanName_;
-				int pageSize_;
-				std::string region_;
+				bool showStorageType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANLISTREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEBACKUPPLANBILLINGREQUEST_H_

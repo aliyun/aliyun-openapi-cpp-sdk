@@ -115,6 +115,28 @@ void ModifyBackupSourceEndpointRequest::setSourceEndpointIP(const std::string& s
 	setParameter("SourceEndpointIP", sourceEndpointIP);
 }
 
+std::string ModifyBackupSourceEndpointRequest::getCrossRoleName()const
+{
+	return crossRoleName_;
+}
+
+void ModifyBackupSourceEndpointRequest::setCrossRoleName(const std::string& crossRoleName)
+{
+	crossRoleName_ = crossRoleName;
+	setParameter("CrossRoleName", crossRoleName);
+}
+
+std::string ModifyBackupSourceEndpointRequest::getCrossAliyunId()const
+{
+	return crossAliyunId_;
+}
+
+void ModifyBackupSourceEndpointRequest::setCrossAliyunId(const std::string& crossAliyunId)
+{
+	crossAliyunId_ = crossAliyunId;
+	setParameter("CrossAliyunId", crossAliyunId);
+}
+
 std::string ModifyBackupSourceEndpointRequest::getSourceEndpointPassword()const
 {
 	return sourceEndpointPassword_;

@@ -33,6 +33,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/CreateRestoreTaskResult.h
 	include/alibabacloud/dbs/model/DescribeBackupGatewayListRequest.h
 	include/alibabacloud/dbs/model/DescribeBackupGatewayListResult.h
+	include/alibabacloud/dbs/model/DescribeBackupPlanBillingRequest.h
+	include/alibabacloud/dbs/model/DescribeBackupPlanBillingResult.h
 	include/alibabacloud/dbs/model/DescribeBackupPlanListRequest.h
 	include/alibabacloud/dbs/model/DescribeBackupPlanListResult.h
 	include/alibabacloud/dbs/model/DescribeBackupSetDownloadTaskListRequest.h
@@ -88,6 +90,8 @@ set(dbs_src
 	src/model/CreateRestoreTaskResult.cc
 	src/model/DescribeBackupGatewayListRequest.cc
 	src/model/DescribeBackupGatewayListResult.cc
+	src/model/DescribeBackupPlanBillingRequest.cc
+	src/model/DescribeBackupPlanBillingResult.cc
 	src/model/DescribeBackupPlanListRequest.cc
 	src/model/DescribeBackupPlanListResult.cc
 	src/model/DescribeBackupSetDownloadTaskListRequest.cc

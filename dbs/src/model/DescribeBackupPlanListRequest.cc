@@ -71,6 +71,28 @@ void DescribeBackupPlanListRequest::setOwnerId(const std::string& ownerId)
 	setParameter("OwnerId", ownerId);
 }
 
+std::string DescribeBackupPlanListRequest::getBackupPlanStatus()const
+{
+	return backupPlanStatus_;
+}
+
+void DescribeBackupPlanListRequest::setBackupPlanStatus(const std::string& backupPlanStatus)
+{
+	backupPlanStatus_ = backupPlanStatus;
+	setParameter("BackupPlanStatus", backupPlanStatus);
+}
+
+std::string DescribeBackupPlanListRequest::getBackupPlanName()const
+{
+	return backupPlanName_;
+}
+
+void DescribeBackupPlanListRequest::setBackupPlanName(const std::string& backupPlanName)
+{
+	backupPlanName_ = backupPlanName;
+	setParameter("BackupPlanName", backupPlanName);
+}
+
 int DescribeBackupPlanListRequest::getPageSize()const
 {
 	return pageSize_;

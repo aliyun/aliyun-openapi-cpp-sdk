@@ -104,6 +104,17 @@ void CreateBackupPlanRequest::setPeriod(const std::string& period)
 	setParameter("Period", period);
 }
 
+std::string CreateBackupPlanRequest::getFromApp()const
+{
+	return fromApp_;
+}
+
+void CreateBackupPlanRequest::setFromApp(const std::string& fromApp)
+{
+	fromApp_ = fromApp;
+	setParameter("FromApp", fromApp);
+}
+
 std::string CreateBackupPlanRequest::getOwnerId()const
 {
 	return ownerId_;

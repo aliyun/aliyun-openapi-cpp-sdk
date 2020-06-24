@@ -82,3 +82,14 @@ void ModifyBackupStrategyRequest::setBackupStartTime(const std::string& backupSt
 	setParameter("BackupStartTime", backupStartTime);
 }
 
+std::string ModifyBackupStrategyRequest::getBackupStrategyType()const
+{
+	return backupStrategyType_;
+}
+
+void ModifyBackupStrategyRequest::setBackupStrategyType(const std::string& backupStrategyType)
+{
+	backupStrategyType_ = backupStrategyType;
+	setParameter("BackupStrategyType", backupStrategyType);
+}
+

@@ -34,6 +34,8 @@
 #include "model/CreateRestoreTaskResult.h"
 #include "model/DescribeBackupGatewayListRequest.h"
 #include "model/DescribeBackupGatewayListResult.h"
+#include "model/DescribeBackupPlanBillingRequest.h"
+#include "model/DescribeBackupPlanBillingResult.h"
 #include "model/DescribeBackupPlanListRequest.h"
 #include "model/DescribeBackupPlanListResult.h"
 #include "model/DescribeBackupSetDownloadTaskListRequest.h"
@@ -101,6 +103,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupGatewayListResult> DescribeBackupGatewayListOutcome;
 			typedef std::future<DescribeBackupGatewayListOutcome> DescribeBackupGatewayListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeBackupGatewayListRequest&, const DescribeBackupGatewayListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupGatewayListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupPlanBillingResult> DescribeBackupPlanBillingOutcome;
+			typedef std::future<DescribeBackupPlanBillingOutcome> DescribeBackupPlanBillingOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeBackupPlanBillingRequest&, const DescribeBackupPlanBillingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPlanBillingAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupPlanListResult> DescribeBackupPlanListOutcome;
 			typedef std::future<DescribeBackupPlanListOutcome> DescribeBackupPlanListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeBackupPlanListRequest&, const DescribeBackupPlanListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPlanListAsyncHandler;
@@ -184,6 +189,9 @@ namespace AlibabaCloud
 			DescribeBackupGatewayListOutcome describeBackupGatewayList(const Model::DescribeBackupGatewayListRequest &request)const;
 			void describeBackupGatewayListAsync(const Model::DescribeBackupGatewayListRequest& request, const DescribeBackupGatewayListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupGatewayListOutcomeCallable describeBackupGatewayListCallable(const Model::DescribeBackupGatewayListRequest& request) const;
+			DescribeBackupPlanBillingOutcome describeBackupPlanBilling(const Model::DescribeBackupPlanBillingRequest &request)const;
+			void describeBackupPlanBillingAsync(const Model::DescribeBackupPlanBillingRequest& request, const DescribeBackupPlanBillingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupPlanBillingOutcomeCallable describeBackupPlanBillingCallable(const Model::DescribeBackupPlanBillingRequest& request) const;
 			DescribeBackupPlanListOutcome describeBackupPlanList(const Model::DescribeBackupPlanListRequest &request)const;
 			void describeBackupPlanListAsync(const Model::DescribeBackupPlanListRequest& request, const DescribeBackupPlanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupPlanListOutcomeCallable describeBackupPlanListCallable(const Model::DescribeBackupPlanListRequest& request) const;

@@ -137,6 +137,17 @@ void ConfigureBackupPlanRequest::setSourceEndpointIP(const std::string& sourceEn
 	setParameter("SourceEndpointIP", sourceEndpointIP);
 }
 
+std::string ConfigureBackupPlanRequest::getCrossRoleName()const
+{
+	return crossRoleName_;
+}
+
+void ConfigureBackupPlanRequest::setCrossRoleName(const std::string& crossRoleName)
+{
+	crossRoleName_ = crossRoleName;
+	setParameter("CrossRoleName", crossRoleName);
+}
+
 bool ConfigureBackupPlanRequest::getEnableBackupLog()const
 {
 	return enableBackupLog_;
@@ -168,6 +179,17 @@ void ConfigureBackupPlanRequest::setDuplicationArchivePeriod(int duplicationArch
 {
 	duplicationArchivePeriod_ = duplicationArchivePeriod;
 	setParameter("DuplicationArchivePeriod", std::to_string(duplicationArchivePeriod));
+}
+
+std::string ConfigureBackupPlanRequest::getCrossAliyunId()const
+{
+	return crossAliyunId_;
+}
+
+void ConfigureBackupPlanRequest::setCrossAliyunId(const std::string& crossAliyunId)
+{
+	crossAliyunId_ = crossAliyunId;
+	setParameter("CrossAliyunId", crossAliyunId);
 }
 
 std::string ConfigureBackupPlanRequest::getSourceEndpointPassword()const
@@ -236,6 +258,17 @@ void ConfigureBackupPlanRequest::setBackupPeriod(const std::string& backupPeriod
 	setParameter("BackupPeriod", backupPeriod);
 }
 
+long ConfigureBackupPlanRequest::getBackupSpeedLimit()const
+{
+	return backupSpeedLimit_;
+}
+
+void ConfigureBackupPlanRequest::setBackupSpeedLimit(long backupSpeedLimit)
+{
+	backupSpeedLimit_ = backupSpeedLimit;
+	setParameter("BackupSpeedLimit", std::to_string(backupSpeedLimit));
+}
+
 std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceType()const
 {
 	return sourceEndpointInstanceType_;
@@ -278,5 +311,16 @@ void ConfigureBackupPlanRequest::setOSSBucketName(const std::string& oSSBucketNa
 {
 	oSSBucketName_ = oSSBucketName;
 	setParameter("OSSBucketName", oSSBucketName);
+}
+
+std::string ConfigureBackupPlanRequest::getBackupStrategyType()const
+{
+	return backupStrategyType_;
+}
+
+void ConfigureBackupPlanRequest::setBackupStrategyType(const std::string& backupStrategyType)
+{
+	backupStrategyType_ = backupStrategyType;
+	setParameter("BackupStrategyType", backupStrategyType);
 }
 

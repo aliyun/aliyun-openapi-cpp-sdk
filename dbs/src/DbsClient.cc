@@ -267,6 +267,42 @@ DbsClient::DescribeBackupGatewayListOutcomeCallable DbsClient::describeBackupGat
 	return task->get_future();
 }
 
+DbsClient::DescribeBackupPlanBillingOutcome DbsClient::describeBackupPlanBilling(const DescribeBackupPlanBillingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackupPlanBillingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackupPlanBillingOutcome(DescribeBackupPlanBillingResult(outcome.result()));
+	else
+		return DescribeBackupPlanBillingOutcome(outcome.error());
+}
+
+void DbsClient::describeBackupPlanBillingAsync(const DescribeBackupPlanBillingRequest& request, const DescribeBackupPlanBillingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackupPlanBilling(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::DescribeBackupPlanBillingOutcomeCallable DbsClient::describeBackupPlanBillingCallable(const DescribeBackupPlanBillingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackupPlanBillingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackupPlanBilling(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::DescribeBackupPlanListOutcome DbsClient::describeBackupPlanList(const DescribeBackupPlanListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
