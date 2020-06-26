@@ -27,8 +27,12 @@ set(ivpd_public_header_model
 	include/alibabacloud/ivpd/model/CreateSegmentBodyJobResult.h
 	include/alibabacloud/ivpd/model/DetectImageElementsRequest.h
 	include/alibabacloud/ivpd/model/DetectImageElementsResult.h
+	include/alibabacloud/ivpd/model/EraseLogoInVideoRequest.h
+	include/alibabacloud/ivpd/model/EraseLogoInVideoResult.h
 	include/alibabacloud/ivpd/model/ExtendImageStyleRequest.h
 	include/alibabacloud/ivpd/model/ExtendImageStyleResult.h
+	include/alibabacloud/ivpd/model/GetAsyncResultRequest.h
+	include/alibabacloud/ivpd/model/GetAsyncResultResult.h
 	include/alibabacloud/ivpd/model/GetJobResultRequest.h
 	include/alibabacloud/ivpd/model/GetJobResultResult.h
 	include/alibabacloud/ivpd/model/GetJobStatusRequest.h
@@ -62,8 +66,12 @@ set(ivpd_src
 	src/model/CreateSegmentBodyJobResult.cc
 	src/model/DetectImageElementsRequest.cc
 	src/model/DetectImageElementsResult.cc
+	src/model/EraseLogoInVideoRequest.cc
+	src/model/EraseLogoInVideoResult.cc
 	src/model/ExtendImageStyleRequest.cc
 	src/model/ExtendImageStyleResult.cc
+	src/model/GetAsyncResultRequest.cc
+	src/model/GetAsyncResultResult.cc
 	src/model/GetJobResultRequest.cc
 	src/model/GetJobResultResult.cc
 	src/model/GetJobStatusRequest.cc

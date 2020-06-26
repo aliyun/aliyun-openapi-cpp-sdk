@@ -28,8 +28,12 @@
 #include "model/CreateSegmentBodyJobResult.h"
 #include "model/DetectImageElementsRequest.h"
 #include "model/DetectImageElementsResult.h"
+#include "model/EraseLogoInVideoRequest.h"
+#include "model/EraseLogoInVideoResult.h"
 #include "model/ExtendImageStyleRequest.h"
 #include "model/ExtendImageStyleResult.h"
+#include "model/GetAsyncResultRequest.h"
+#include "model/GetAsyncResultResult.h"
 #include "model/GetJobResultRequest.h"
 #include "model/GetJobResultResult.h"
 #include "model/GetJobStatusRequest.h"
@@ -72,9 +76,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectImageElementsResult> DetectImageElementsOutcome;
 			typedef std::future<DetectImageElementsOutcome> DetectImageElementsOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::DetectImageElementsRequest&, const DetectImageElementsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectImageElementsAsyncHandler;
+			typedef Outcome<Error, Model::EraseLogoInVideoResult> EraseLogoInVideoOutcome;
+			typedef std::future<EraseLogoInVideoOutcome> EraseLogoInVideoOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::EraseLogoInVideoRequest&, const EraseLogoInVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EraseLogoInVideoAsyncHandler;
 			typedef Outcome<Error, Model::ExtendImageStyleResult> ExtendImageStyleOutcome;
 			typedef std::future<ExtendImageStyleOutcome> ExtendImageStyleOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::ExtendImageStyleRequest&, const ExtendImageStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtendImageStyleAsyncHandler;
+			typedef Outcome<Error, Model::GetAsyncResultResult> GetAsyncResultOutcome;
+			typedef std::future<GetAsyncResultOutcome> GetAsyncResultOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::GetAsyncResultRequest&, const GetAsyncResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncResultAsyncHandler;
 			typedef Outcome<Error, Model::GetJobResultResult> GetJobResultOutcome;
 			typedef std::future<GetJobResultOutcome> GetJobResultOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::GetJobResultRequest&, const GetJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobResultAsyncHandler;
@@ -125,9 +135,15 @@ namespace AlibabaCloud
 			DetectImageElementsOutcome detectImageElements(const Model::DetectImageElementsRequest &request)const;
 			void detectImageElementsAsync(const Model::DetectImageElementsRequest& request, const DetectImageElementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectImageElementsOutcomeCallable detectImageElementsCallable(const Model::DetectImageElementsRequest& request) const;
+			EraseLogoInVideoOutcome eraseLogoInVideo(const Model::EraseLogoInVideoRequest &request)const;
+			void eraseLogoInVideoAsync(const Model::EraseLogoInVideoRequest& request, const EraseLogoInVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EraseLogoInVideoOutcomeCallable eraseLogoInVideoCallable(const Model::EraseLogoInVideoRequest& request) const;
 			ExtendImageStyleOutcome extendImageStyle(const Model::ExtendImageStyleRequest &request)const;
 			void extendImageStyleAsync(const Model::ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtendImageStyleOutcomeCallable extendImageStyleCallable(const Model::ExtendImageStyleRequest& request) const;
+			GetAsyncResultOutcome getAsyncResult(const Model::GetAsyncResultRequest &request)const;
+			void getAsyncResultAsync(const Model::GetAsyncResultRequest& request, const GetAsyncResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAsyncResultOutcomeCallable getAsyncResultCallable(const Model::GetAsyncResultRequest& request) const;
 			GetJobResultOutcome getJobResult(const Model::GetJobResultRequest &request)const;
 			void getJobResultAsync(const Model::GetJobResultRequest& request, const GetJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobResultOutcomeCallable getJobResultCallable(const Model::GetJobResultRequest& request) const;

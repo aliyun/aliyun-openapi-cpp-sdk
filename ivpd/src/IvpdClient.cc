@@ -31,21 +31,21 @@ IvpdClient::IvpdClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
 }
 
 IvpdClient::IvpdClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
 }
 
 IvpdClient::IvpdClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
 }
 
 IvpdClient::~IvpdClient()
@@ -159,6 +159,42 @@ IvpdClient::DetectImageElementsOutcomeCallable IvpdClient::detectImageElementsCa
 	return task->get_future();
 }
 
+IvpdClient::EraseLogoInVideoOutcome IvpdClient::eraseLogoInVideo(const EraseLogoInVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EraseLogoInVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EraseLogoInVideoOutcome(EraseLogoInVideoResult(outcome.result()));
+	else
+		return EraseLogoInVideoOutcome(outcome.error());
+}
+
+void IvpdClient::eraseLogoInVideoAsync(const EraseLogoInVideoRequest& request, const EraseLogoInVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, eraseLogoInVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::EraseLogoInVideoOutcomeCallable IvpdClient::eraseLogoInVideoCallable(const EraseLogoInVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EraseLogoInVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->eraseLogoInVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvpdClient::ExtendImageStyleOutcome IvpdClient::extendImageStyle(const ExtendImageStyleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ IvpdClient::ExtendImageStyleOutcomeCallable IvpdClient::extendImageStyleCallable
 			[this, request]()
 			{
 			return this->extendImageStyle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::GetAsyncResultOutcome IvpdClient::getAsyncResult(const GetAsyncResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAsyncResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAsyncResultOutcome(GetAsyncResultResult(outcome.result()));
+	else
+		return GetAsyncResultOutcome(outcome.error());
+}
+
+void IvpdClient::getAsyncResultAsync(const GetAsyncResultRequest& request, const GetAsyncResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAsyncResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::GetAsyncResultOutcomeCallable IvpdClient::getAsyncResultCallable(const GetAsyncResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAsyncResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getAsyncResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
