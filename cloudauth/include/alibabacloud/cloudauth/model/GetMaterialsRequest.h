@@ -35,19 +35,13 @@ namespace AlibabaCloud
 				GetMaterialsRequest();
 				~GetMaterialsRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getBiz()const;
 				void setBiz(const std::string& biz);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getTicketId()const;
 				void setTicketId(const std::string& ticketId);
 
             private:
-				long resourceOwnerId_;
 				std::string biz_;
-				std::string sourceIp_;
 				std::string ticketId_;
 
 			};

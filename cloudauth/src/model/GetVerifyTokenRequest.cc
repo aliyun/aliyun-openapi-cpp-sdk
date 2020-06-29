@@ -27,17 +27,6 @@ GetVerifyTokenRequest::GetVerifyTokenRequest() :
 GetVerifyTokenRequest::~GetVerifyTokenRequest()
 {}
 
-long GetVerifyTokenRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetVerifyTokenRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetVerifyTokenRequest::getBinding()const
 {
 	return binding_;
@@ -80,17 +69,6 @@ void GetVerifyTokenRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
 	setParameter("Biz", biz);
-}
-
-std::string GetVerifyTokenRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void GetVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
 }
 
 std::string GetVerifyTokenRequest::getTicketId()const

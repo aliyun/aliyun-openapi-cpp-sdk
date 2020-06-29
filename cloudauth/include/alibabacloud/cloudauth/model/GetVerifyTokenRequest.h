@@ -35,8 +35,6 @@ namespace AlibabaCloud
 				GetVerifyTokenRequest();
 				~GetVerifyTokenRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
 				std::string getBinding()const;
 				void setBinding(const std::string& binding);
 				std::string getVerifyConfigs()const;
@@ -45,18 +43,14 @@ namespace AlibabaCloud
 				void setUserData(const std::string& userData);
 				std::string getBiz()const;
 				void setBiz(const std::string& biz);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getTicketId()const;
 				void setTicketId(const std::string& ticketId);
 
             private:
-				long resourceOwnerId_;
 				std::string binding_;
 				std::string verifyConfigs_;
 				std::string userData_;
 				std::string biz_;
-				std::string sourceIp_;
 				std::string ticketId_;
 
 			};

@@ -37,14 +37,11 @@ namespace AlibabaCloud
 
 				std::string getBizType()const;
 				void setBizType(const std::string& bizType);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
 
             private:
 				std::string bizType_;
-				std::string sourceIp_;
 				std::string bizId_;
 
 			};

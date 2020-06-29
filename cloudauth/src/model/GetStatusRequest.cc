@@ -27,17 +27,6 @@ GetStatusRequest::GetStatusRequest() :
 GetStatusRequest::~GetStatusRequest()
 {}
 
-long GetStatusRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetStatusRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetStatusRequest::getBiz()const
 {
 	return biz_;
@@ -47,17 +36,6 @@ void GetStatusRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
 	setParameter("Biz", biz);
-}
-
-std::string GetStatusRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void GetStatusRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
 }
 
 std::string GetStatusRequest::getTicketId()const

@@ -115,6 +115,17 @@ void InitFaceVerifyRequest::setFaceContrastPictureUrl(const std::string& faceCon
 	setParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
 }
 
+std::string InitFaceVerifyRequest::getModel()const
+{
+	return model_;
+}
+
+void InitFaceVerifyRequest::setModel(const std::string& model)
+{
+	model_ = model;
+	setBodyParameter("Model", model);
+}
+
 std::string InitFaceVerifyRequest::getMetaInfo()const
 {
 	return metaInfo_;

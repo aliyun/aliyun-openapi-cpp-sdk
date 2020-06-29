@@ -38,17 +38,6 @@ void DescribeVerifyResultRequest::setBizType(const std::string& bizType)
 	setParameter("BizType", bizType);
 }
 
-std::string DescribeVerifyResultRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeVerifyResultRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeVerifyResultRequest::getBizId()const
 {
 	return bizId_;

@@ -49,17 +49,6 @@ void DescribeVerifyTokenRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
-std::string DescribeVerifyTokenRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void DescribeVerifyTokenRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
-}
-
 std::string DescribeVerifyTokenRequest::getCallbackSeed()const
 {
 	return callbackSeed_;

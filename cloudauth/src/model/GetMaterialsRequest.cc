@@ -27,17 +27,6 @@ GetMaterialsRequest::GetMaterialsRequest() :
 GetMaterialsRequest::~GetMaterialsRequest()
 {}
 
-long GetMaterialsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
-}
-
-void GetMaterialsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
-}
-
 std::string GetMaterialsRequest::getBiz()const
 {
 	return biz_;
@@ -47,17 +36,6 @@ void GetMaterialsRequest::setBiz(const std::string& biz)
 {
 	biz_ = biz;
 	setParameter("Biz", biz);
-}
-
-std::string GetMaterialsRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void GetMaterialsRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
 }
 
 std::string GetMaterialsRequest::getTicketId()const

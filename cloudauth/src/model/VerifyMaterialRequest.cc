@@ -49,17 +49,6 @@ void VerifyMaterialRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
-std::string VerifyMaterialRequest::getSourceIp()const
-{
-	return sourceIp_;
-}
-
-void VerifyMaterialRequest::setSourceIp(const std::string& sourceIp)
-{
-	sourceIp_ = sourceIp;
-	setParameter("SourceIp", sourceIp);
-}
-
 std::string VerifyMaterialRequest::getIdCardBackImageUrl()const
 {
 	return idCardBackImageUrl_;

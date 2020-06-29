@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setCertType(const std::string& certType);
 				std::string getFaceContrastPictureUrl()const;
 				void setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl);
+				std::string getModel()const;
+				void setModel(const std::string& model);
 				std::string getMetaInfo()const;
 				void setMetaInfo(const std::string& metaInfo);
 				std::string getOssObjectName()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				std::string outerOrderNo_;
 				std::string certType_;
 				std::string faceContrastPictureUrl_;
+				std::string model_;
 				std::string metaInfo_;
 				std::string ossObjectName_;
 				std::string certName_;

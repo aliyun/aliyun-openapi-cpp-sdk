@@ -39,8 +39,6 @@ namespace AlibabaCloud
 				void setFaceImageUrl(const std::string& faceImageUrl);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
-				std::string getSourceIp()const;
-				void setSourceIp(const std::string& sourceIp);
 				std::string getIdCardBackImageUrl()const;
 				void setIdCardBackImageUrl(const std::string& idCardBackImageUrl);
 				std::string getIdCardNumber()const;
@@ -57,7 +55,6 @@ namespace AlibabaCloud
             private:
 				std::string faceImageUrl_;
 				std::string userId_;
-				std::string sourceIp_;
 				std::string idCardBackImageUrl_;
 				std::string idCardNumber_;
 				std::string idCardFrontImageUrl_;
