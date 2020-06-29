@@ -1347,42 +1347,6 @@ ImmClient::FindImagesOutcomeCallable ImmClient::findImagesCallable(const FindIma
 	return task->get_future();
 }
 
-ImmClient::FindImagesByTagNamesOutcome ImmClient::findImagesByTagNames(const FindImagesByTagNamesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return FindImagesByTagNamesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return FindImagesByTagNamesOutcome(FindImagesByTagNamesResult(outcome.result()));
-	else
-		return FindImagesByTagNamesOutcome(outcome.error());
-}
-
-void ImmClient::findImagesByTagNamesAsync(const FindImagesByTagNamesRequest& request, const FindImagesByTagNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, findImagesByTagNames(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::FindImagesByTagNamesOutcomeCallable ImmClient::findImagesByTagNamesCallable(const FindImagesByTagNamesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<FindImagesByTagNamesOutcome()>>(
-			[this, request]()
-			{
-			return this->findImagesByTagNames(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::FindSimilarFacesOutcome ImmClient::findSimilarFaces(const FindSimilarFacesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

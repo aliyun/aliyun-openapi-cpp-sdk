@@ -32,6 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT GetImageResult : public ServiceResult
 			{
 			public:
+				struct ImageQuality
+				{
+					float clarityScore;
+					float compositionScore;
+					float contrastScore;
+					float color;
+					float exposure;
+					float overallScore;
+					float clarity;
+					float contrast;
+					float exposureScore;
+					float colorScore;
+				};
 				struct Address
 				{
 					std::string township;
@@ -40,6 +53,19 @@ namespace AlibabaCloud
 					std::string city;
 					std::string district;
 					std::string province;
+				};
+				struct CroppingSuggestionItem
+				{
+					struct CroppingBoundary
+					{
+						int left;
+						int top;
+						int height;
+						int width;
+					};
+					std::string aspectRatio;
+					float score;
+					CroppingBoundary croppingBoundary;
 				};
 				struct FacesItem
 				{
@@ -132,22 +158,16 @@ namespace AlibabaCloud
 				GetImageResult();
 				explicit GetImageResult(const std::string &payload);
 				~GetImageResult();
-				std::string getModifyTime()const;
+				ImageQuality getImageQuality()const;
 				Address getAddress()const;
 				std::string getSourceType()const;
 				std::string getSourceUri()const;
 				std::string getFacesFailReason()const;
-				std::string getRemarksA()const;
+				std::string getCroppingSuggestionFailReason()const;
 				std::string getAddressFailReason()const;
-				std::string getRemarksB()const;
-				std::string getAddressModifyTime()const;
 				std::string getImageFormat()const;
-				std::string getTagsFailReason()const;
 				std::string getRemarksArrayB()const;
 				std::string getExif()const;
-				std::string getFacesModifyTime()const;
-				std::string getRemarksC()const;
-				std::string getRemarksD()const;
 				int getImageWidth()const;
 				std::vector<CelebrityItem> getCelebrity()const;
 				std::string getSourcePosition()const;
@@ -155,45 +175,53 @@ namespace AlibabaCloud
 				std::vector<FacesItem> getFaces()const;
 				std::vector<TagsItem> getTags()const;
 				std::string getAddressStatus()const;
+				std::string getImageQualityModifyTime()const;
+				std::vector<CroppingSuggestionItem> getCroppingSuggestion()const;
+				std::string getImageQualityFailReason()const;
+				std::string getImageUri()const;
+				std::string getOrientation()const;
+				std::string getImageTime()const;
+				std::string getCroppingSuggestionModifyTime()const;
+				std::string getCelebrityModifyTime()const;
+				int getImageHeight()const;
+				std::string getTagsStatus()const;
+				std::string getImageQualityStatus()const;
+				std::string getCelebrityFailReason()const;
+				std::string getSetId()const;
+				std::string getCelebrityStatus()const;
+				int getFileSize()const;
+				std::string getModifyTime()const;
+				std::string getCroppingSuggestionStatus()const;
+				std::string getRemarksA()const;
+				std::string getRemarksB()const;
+				std::string getAddressModifyTime()const;
+				std::string getTagsFailReason()const;
+				std::string getFacesModifyTime()const;
+				std::string getRemarksC()const;
+				std::string getRemarksD()const;
 				std::string getFacesStatus()const;
 				std::string getCreateTime()const;
 				std::string getTagsModifyTime()const;
 				std::string getExternalId()const;
-				std::string getImageUri()const;
-				std::string getOrientation()const;
 				std::string getOCRStatus()const;
 				std::string getOCRModifyTime()const;
-				std::string getImageTime()const;
-				std::string getCelebrityModifyTime()const;
-				int getImageHeight()const;
-				std::string getTagsStatus()const;
 				std::string getOCRFailReason()const;
-				std::string getCelebrityFailReason()const;
-				std::string getSetId()const;
-				std::string getCelebrityStatus()const;
 				std::vector<OCRItem> getOCR()const;
-				int getFileSize()const;
 				std::string getLocation()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string modifyTime_;
+				ImageQuality imageQuality_;
 				Address address_;
 				std::string sourceType_;
 				std::string sourceUri_;
 				std::string facesFailReason_;
-				std::string remarksA_;
+				std::string croppingSuggestionFailReason_;
 				std::string addressFailReason_;
-				std::string remarksB_;
-				std::string addressModifyTime_;
 				std::string imageFormat_;
-				std::string tagsFailReason_;
 				std::string remarksArrayB_;
 				std::string exif_;
-				std::string facesModifyTime_;
-				std::string remarksC_;
-				std::string remarksD_;
 				int imageWidth_;
 				std::vector<CelebrityItem> celebrity_;
 				std::string sourcePosition_;
@@ -201,24 +229,38 @@ namespace AlibabaCloud
 				std::vector<FacesItem> faces_;
 				std::vector<TagsItem> tags_;
 				std::string addressStatus_;
+				std::string imageQualityModifyTime_;
+				std::vector<CroppingSuggestionItem> croppingSuggestion_;
+				std::string imageQualityFailReason_;
+				std::string imageUri_;
+				std::string orientation_;
+				std::string imageTime_;
+				std::string croppingSuggestionModifyTime_;
+				std::string celebrityModifyTime_;
+				int imageHeight_;
+				std::string tagsStatus_;
+				std::string imageQualityStatus_;
+				std::string celebrityFailReason_;
+				std::string setId_;
+				std::string celebrityStatus_;
+				int fileSize_;
+				std::string modifyTime_;
+				std::string croppingSuggestionStatus_;
+				std::string remarksA_;
+				std::string remarksB_;
+				std::string addressModifyTime_;
+				std::string tagsFailReason_;
+				std::string facesModifyTime_;
+				std::string remarksC_;
+				std::string remarksD_;
 				std::string facesStatus_;
 				std::string createTime_;
 				std::string tagsModifyTime_;
 				std::string externalId_;
-				std::string imageUri_;
-				std::string orientation_;
 				std::string oCRStatus_;
 				std::string oCRModifyTime_;
-				std::string imageTime_;
-				std::string celebrityModifyTime_;
-				int imageHeight_;
-				std::string tagsStatus_;
 				std::string oCRFailReason_;
-				std::string celebrityFailReason_;
-				std::string setId_;
-				std::string celebrityStatus_;
 				std::vector<OCRItem> oCR_;
-				int fileSize_;
 				std::string location_;
 
 			};

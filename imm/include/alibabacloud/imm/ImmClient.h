@@ -94,8 +94,6 @@
 #include "model/EncodeBlindWatermarkResult.h"
 #include "model/FindImagesRequest.h"
 #include "model/FindImagesResult.h"
-#include "model/FindImagesByTagNamesRequest.h"
-#include "model/FindImagesByTagNamesResult.h"
 #include "model/FindSimilarFacesRequest.h"
 #include "model/FindSimilarFacesResult.h"
 #include "model/GetContentKeyRequest.h"
@@ -291,9 +289,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FindImagesResult> FindImagesOutcome;
 			typedef std::future<FindImagesOutcome> FindImagesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FindImagesRequest&, const FindImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindImagesAsyncHandler;
-			typedef Outcome<Error, Model::FindImagesByTagNamesResult> FindImagesByTagNamesOutcome;
-			typedef std::future<FindImagesByTagNamesOutcome> FindImagesByTagNamesOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::FindImagesByTagNamesRequest&, const FindImagesByTagNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindImagesByTagNamesAsyncHandler;
 			typedef Outcome<Error, Model::FindSimilarFacesResult> FindSimilarFacesOutcome;
 			typedef std::future<FindSimilarFacesOutcome> FindSimilarFacesOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FindSimilarFacesRequest&, const FindSimilarFacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindSimilarFacesAsyncHandler;
@@ -524,9 +519,6 @@ namespace AlibabaCloud
 			FindImagesOutcome findImages(const Model::FindImagesRequest &request)const;
 			void findImagesAsync(const Model::FindImagesRequest& request, const FindImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindImagesOutcomeCallable findImagesCallable(const Model::FindImagesRequest& request) const;
-			FindImagesByTagNamesOutcome findImagesByTagNames(const Model::FindImagesByTagNamesRequest &request)const;
-			void findImagesByTagNamesAsync(const Model::FindImagesByTagNamesRequest& request, const FindImagesByTagNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			FindImagesByTagNamesOutcomeCallable findImagesByTagNamesCallable(const Model::FindImagesByTagNamesRequest& request) const;
 			FindSimilarFacesOutcome findSimilarFaces(const Model::FindSimilarFacesRequest &request)const;
 			void findSimilarFacesAsync(const Model::FindSimilarFacesRequest& request, const FindSimilarFacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindSimilarFacesOutcomeCallable findSimilarFacesCallable(const Model::FindSimilarFacesRequest& request) const;

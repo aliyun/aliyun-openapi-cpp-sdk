@@ -64,6 +64,7 @@ namespace AlibabaCloud
 							std::string codecTag;
 							std::string frames;
 							std::string codecTimeBase;
+							std::string rotate;
 							std::string sampleAspectRatio;
 							std::string startTime;
 							int index;

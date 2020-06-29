@@ -123,6 +123,8 @@ void GetMediaMetaResult::parse(const std::string &payload)
 			videoStreamObject.bitrate = mediaStreamsNodeVideoStreamsVideoStream["Bitrate"].asString();
 		if(!mediaStreamsNodeVideoStreamsVideoStream["Frames"].isNull())
 			videoStreamObject.frames = mediaStreamsNodeVideoStreamsVideoStream["Frames"].asString();
+		if(!mediaStreamsNodeVideoStreamsVideoStream["Rotate"].isNull())
+			videoStreamObject.rotate = mediaStreamsNodeVideoStreamsVideoStream["Rotate"].asString();
 		mediaMeta_.mediaStreams.videoStreams.push_back(videoStreamObject);
 	}
 	auto allAudioStreamsNode = mediaStreamsNode["AudioStreams"]["AudioStream"];

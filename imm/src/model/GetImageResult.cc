@@ -39,6 +39,25 @@ void GetImageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allCroppingSuggestionNode = value["CroppingSuggestion"]["CroppingSuggestionItem"];
+	for (auto valueCroppingSuggestionCroppingSuggestionItem : allCroppingSuggestionNode)
+	{
+		CroppingSuggestionItem croppingSuggestionObject;
+		if(!valueCroppingSuggestionCroppingSuggestionItem["AspectRatio"].isNull())
+			croppingSuggestionObject.aspectRatio = valueCroppingSuggestionCroppingSuggestionItem["AspectRatio"].asString();
+		if(!valueCroppingSuggestionCroppingSuggestionItem["Score"].isNull())
+			croppingSuggestionObject.score = std::stof(valueCroppingSuggestionCroppingSuggestionItem["Score"].asString());
+		auto croppingBoundaryNode = value["CroppingBoundary"];
+		if(!croppingBoundaryNode["Width"].isNull())
+			croppingSuggestionObject.croppingBoundary.width = std::stoi(croppingBoundaryNode["Width"].asString());
+		if(!croppingBoundaryNode["Height"].isNull())
+			croppingSuggestionObject.croppingBoundary.height = std::stoi(croppingBoundaryNode["Height"].asString());
+		if(!croppingBoundaryNode["Left"].isNull())
+			croppingSuggestionObject.croppingBoundary.left = std::stoi(croppingBoundaryNode["Left"].asString());
+		if(!croppingBoundaryNode["Top"].isNull())
+			croppingSuggestionObject.croppingBoundary.top = std::stoi(croppingBoundaryNode["Top"].asString());
+		croppingSuggestion_.push_back(croppingSuggestionObject);
+	}
 	auto allFacesNode = value["Faces"]["FacesItem"];
 	for (auto valueFacesFacesItem : allFacesNode)
 	{
@@ -169,6 +188,27 @@ void GetImageResult::parse(const std::string &payload)
 			celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
 		celebrity_.push_back(celebrityObject);
 	}
+	auto imageQualityNode = value["ImageQuality"];
+	if(!imageQualityNode["OverallScore"].isNull())
+		imageQuality_.overallScore = std::stof(imageQualityNode["OverallScore"].asString());
+	if(!imageQualityNode["ClarityScore"].isNull())
+		imageQuality_.clarityScore = std::stof(imageQualityNode["ClarityScore"].asString());
+	if(!imageQualityNode["Clarity"].isNull())
+		imageQuality_.clarity = std::stof(imageQualityNode["Clarity"].asString());
+	if(!imageQualityNode["ExposureScore"].isNull())
+		imageQuality_.exposureScore = std::stof(imageQualityNode["ExposureScore"].asString());
+	if(!imageQualityNode["Exposure"].isNull())
+		imageQuality_.exposure = std::stof(imageQualityNode["Exposure"].asString());
+	if(!imageQualityNode["ContrastScore"].isNull())
+		imageQuality_.contrastScore = std::stof(imageQualityNode["ContrastScore"].asString());
+	if(!imageQualityNode["Contrast"].isNull())
+		imageQuality_.contrast = std::stof(imageQualityNode["Contrast"].asString());
+	if(!imageQualityNode["ColorScore"].isNull())
+		imageQuality_.colorScore = std::stof(imageQualityNode["ColorScore"].asString());
+	if(!imageQualityNode["Color"].isNull())
+		imageQuality_.color = std::stof(imageQualityNode["Color"].asString());
+	if(!imageQualityNode["CompositionScore"].isNull())
+		imageQuality_.compositionScore = std::stof(imageQualityNode["CompositionScore"].asString());
 	auto addressNode = value["Address"];
 	if(!addressNode["AddressLine"].isNull())
 		address_.addressLine = addressNode["AddressLine"].asString();
@@ -256,12 +296,24 @@ void GetImageResult::parse(const std::string &payload)
 		remarksArrayA_ = value["RemarksArrayA"].asString();
 	if(!value["RemarksArrayB"].isNull())
 		remarksArrayB_ = value["RemarksArrayB"].asString();
+	if(!value["ImageQualityModifyTime"].isNull())
+		imageQualityModifyTime_ = value["ImageQualityModifyTime"].asString();
+	if(!value["ImageQualityFailReason"].isNull())
+		imageQualityFailReason_ = value["ImageQualityFailReason"].asString();
+	if(!value["ImageQualityStatus"].isNull())
+		imageQualityStatus_ = value["ImageQualityStatus"].asString();
+	if(!value["CroppingSuggestionStatus"].isNull())
+		croppingSuggestionStatus_ = value["CroppingSuggestionStatus"].asString();
+	if(!value["CroppingSuggestionFailReason"].isNull())
+		croppingSuggestionFailReason_ = value["CroppingSuggestionFailReason"].asString();
+	if(!value["CroppingSuggestionModifyTime"].isNull())
+		croppingSuggestionModifyTime_ = value["CroppingSuggestionModifyTime"].asString();
 
 }
 
-std::string GetImageResult::getModifyTime()const
+GetImageResult::ImageQuality GetImageResult::getImageQuality()const
 {
-	return modifyTime_;
+	return imageQuality_;
 }
 
 GetImageResult::Address GetImageResult::getAddress()const
@@ -284,9 +336,9 @@ std::string GetImageResult::getFacesFailReason()const
 	return facesFailReason_;
 }
 
-std::string GetImageResult::getRemarksA()const
+std::string GetImageResult::getCroppingSuggestionFailReason()const
 {
-	return remarksA_;
+	return croppingSuggestionFailReason_;
 }
 
 std::string GetImageResult::getAddressFailReason()const
@@ -294,24 +346,9 @@ std::string GetImageResult::getAddressFailReason()const
 	return addressFailReason_;
 }
 
-std::string GetImageResult::getRemarksB()const
-{
-	return remarksB_;
-}
-
-std::string GetImageResult::getAddressModifyTime()const
-{
-	return addressModifyTime_;
-}
-
 std::string GetImageResult::getImageFormat()const
 {
 	return imageFormat_;
-}
-
-std::string GetImageResult::getTagsFailReason()const
-{
-	return tagsFailReason_;
 }
 
 std::string GetImageResult::getRemarksArrayB()const
@@ -322,21 +359,6 @@ std::string GetImageResult::getRemarksArrayB()const
 std::string GetImageResult::getExif()const
 {
 	return exif_;
-}
-
-std::string GetImageResult::getFacesModifyTime()const
-{
-	return facesModifyTime_;
-}
-
-std::string GetImageResult::getRemarksC()const
-{
-	return remarksC_;
-}
-
-std::string GetImageResult::getRemarksD()const
-{
-	return remarksD_;
 }
 
 int GetImageResult::getImageWidth()const
@@ -374,6 +396,126 @@ std::string GetImageResult::getAddressStatus()const
 	return addressStatus_;
 }
 
+std::string GetImageResult::getImageQualityModifyTime()const
+{
+	return imageQualityModifyTime_;
+}
+
+std::vector<GetImageResult::CroppingSuggestionItem> GetImageResult::getCroppingSuggestion()const
+{
+	return croppingSuggestion_;
+}
+
+std::string GetImageResult::getImageQualityFailReason()const
+{
+	return imageQualityFailReason_;
+}
+
+std::string GetImageResult::getImageUri()const
+{
+	return imageUri_;
+}
+
+std::string GetImageResult::getOrientation()const
+{
+	return orientation_;
+}
+
+std::string GetImageResult::getImageTime()const
+{
+	return imageTime_;
+}
+
+std::string GetImageResult::getCroppingSuggestionModifyTime()const
+{
+	return croppingSuggestionModifyTime_;
+}
+
+std::string GetImageResult::getCelebrityModifyTime()const
+{
+	return celebrityModifyTime_;
+}
+
+int GetImageResult::getImageHeight()const
+{
+	return imageHeight_;
+}
+
+std::string GetImageResult::getTagsStatus()const
+{
+	return tagsStatus_;
+}
+
+std::string GetImageResult::getImageQualityStatus()const
+{
+	return imageQualityStatus_;
+}
+
+std::string GetImageResult::getCelebrityFailReason()const
+{
+	return celebrityFailReason_;
+}
+
+std::string GetImageResult::getSetId()const
+{
+	return setId_;
+}
+
+std::string GetImageResult::getCelebrityStatus()const
+{
+	return celebrityStatus_;
+}
+
+int GetImageResult::getFileSize()const
+{
+	return fileSize_;
+}
+
+std::string GetImageResult::getModifyTime()const
+{
+	return modifyTime_;
+}
+
+std::string GetImageResult::getCroppingSuggestionStatus()const
+{
+	return croppingSuggestionStatus_;
+}
+
+std::string GetImageResult::getRemarksA()const
+{
+	return remarksA_;
+}
+
+std::string GetImageResult::getRemarksB()const
+{
+	return remarksB_;
+}
+
+std::string GetImageResult::getAddressModifyTime()const
+{
+	return addressModifyTime_;
+}
+
+std::string GetImageResult::getTagsFailReason()const
+{
+	return tagsFailReason_;
+}
+
+std::string GetImageResult::getFacesModifyTime()const
+{
+	return facesModifyTime_;
+}
+
+std::string GetImageResult::getRemarksC()const
+{
+	return remarksC_;
+}
+
+std::string GetImageResult::getRemarksD()const
+{
+	return remarksD_;
+}
+
 std::string GetImageResult::getFacesStatus()const
 {
 	return facesStatus_;
@@ -394,16 +536,6 @@ std::string GetImageResult::getExternalId()const
 	return externalId_;
 }
 
-std::string GetImageResult::getImageUri()const
-{
-	return imageUri_;
-}
-
-std::string GetImageResult::getOrientation()const
-{
-	return orientation_;
-}
-
 std::string GetImageResult::getOCRStatus()const
 {
 	return oCRStatus_;
@@ -414,54 +546,14 @@ std::string GetImageResult::getOCRModifyTime()const
 	return oCRModifyTime_;
 }
 
-std::string GetImageResult::getImageTime()const
-{
-	return imageTime_;
-}
-
-std::string GetImageResult::getCelebrityModifyTime()const
-{
-	return celebrityModifyTime_;
-}
-
-int GetImageResult::getImageHeight()const
-{
-	return imageHeight_;
-}
-
-std::string GetImageResult::getTagsStatus()const
-{
-	return tagsStatus_;
-}
-
 std::string GetImageResult::getOCRFailReason()const
 {
 	return oCRFailReason_;
 }
 
-std::string GetImageResult::getCelebrityFailReason()const
-{
-	return celebrityFailReason_;
-}
-
-std::string GetImageResult::getSetId()const
-{
-	return setId_;
-}
-
-std::string GetImageResult::getCelebrityStatus()const
-{
-	return celebrityStatus_;
-}
-
 std::vector<GetImageResult::OCRItem> GetImageResult::getOCR()const
 {
 	return oCR_;
-}
-
-int GetImageResult::getFileSize()const
-{
-	return fileSize_;
 }
 
 std::string GetImageResult::getLocation()const

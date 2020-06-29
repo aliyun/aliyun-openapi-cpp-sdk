@@ -34,6 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct ImagesItem
 				{
+					struct ImageQuality
+					{
+						float clarityScore;
+						float compositionScore;
+						float contrastScore;
+						float color;
+						float exposure;
+						float overallScore;
+						float clarity;
+						float contrast;
+						float exposureScore;
+						float colorScore;
+					};
 					struct Address
 					{
 						std::string township;
@@ -42,6 +55,19 @@ namespace AlibabaCloud
 						std::string city;
 						std::string district;
 						std::string province;
+					};
+					struct CroppingSuggestionItem
+					{
+						struct CroppingBoundary
+						{
+							int left;
+							int top;
+							int height;
+							int width;
+						};
+						std::string aspectRatio;
+						float score;
+						CroppingBoundary croppingBoundary;
 					};
 					struct FacesItem
 					{
@@ -129,22 +155,16 @@ namespace AlibabaCloud
 						std::string celebrityLibraryName;
 						float celebrityConfidence;
 					};
-					std::string modifyTime;
+					ImageQuality imageQuality;
 					Address address;
 					std::string sourceType;
 					std::string sourceUri;
 					std::string facesFailReason;
-					std::string remarksA;
+					std::string croppingSuggestionFailReason;
 					std::string addressFailReason;
-					std::string remarksB;
-					std::string addressModifyTime;
 					std::string imageFormat;
-					std::string tagsFailReason;
 					std::string remarksArrayB;
-					std::string facesModifyTime;
 					std::string exif;
-					std::string remarksC;
-					std::string remarksD;
 					int imageWidth;
 					std::vector<ImagesItem::CelebrityItem> celebrity;
 					std::string sourcePosition;
@@ -152,23 +172,37 @@ namespace AlibabaCloud
 					std::vector<ImagesItem::FacesItem> faces;
 					std::vector<ImagesItem::TagsItem> tags;
 					std::string addressStatus;
+					std::string imageQualityModifyTime;
+					std::vector<ImagesItem::CroppingSuggestionItem> croppingSuggestion;
+					std::string imageQualityFailReason;
+					std::string imageUri;
+					std::string orientation;
+					std::string imageTime;
+					std::string croppingSuggestionModifyTime;
+					std::string celebrityModifyTime;
+					int imageHeight;
+					std::string tagsStatus;
+					std::string imageQualityStatus;
+					std::string celebrityFailReason;
+					std::string celebrityStatus;
+					int fileSize;
+					std::string modifyTime;
+					std::string croppingSuggestionStatus;
+					std::string remarksA;
+					std::string remarksB;
+					std::string addressModifyTime;
+					std::string tagsFailReason;
+					std::string facesModifyTime;
+					std::string remarksC;
+					std::string remarksD;
 					std::string facesStatus;
 					std::string createTime;
 					std::string tagsModifyTime;
 					std::string externalId;
-					std::string imageUri;
-					std::string orientation;
 					std::string oCRStatus;
 					std::string oCRModifyTime;
-					std::string imageTime;
-					std::string celebrityModifyTime;
-					int imageHeight;
-					std::string tagsStatus;
 					std::string oCRFailReason;
-					std::string celebrityFailReason;
-					std::string celebrityStatus;
 					std::vector<ImagesItem::OCRItem> oCR;
-					int fileSize;
 					std::string location;
 				};
 

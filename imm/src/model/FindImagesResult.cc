@@ -115,6 +115,37 @@ void FindImagesResult::parse(const std::string &payload)
 			imagesObject.remarksArrayB = valueImagesImagesItem["RemarksArrayB"].asString();
 		if(!valueImagesImagesItem["RemarksArrayA"].isNull())
 			imagesObject.remarksArrayA = valueImagesImagesItem["RemarksArrayA"].asString();
+		if(!valueImagesImagesItem["ImageQualityStatus"].isNull())
+			imagesObject.imageQualityStatus = valueImagesImagesItem["ImageQualityStatus"].asString();
+		if(!valueImagesImagesItem["ImageQualityFailReason"].isNull())
+			imagesObject.imageQualityFailReason = valueImagesImagesItem["ImageQualityFailReason"].asString();
+		if(!valueImagesImagesItem["ImageQualityModifyTime"].isNull())
+			imagesObject.imageQualityModifyTime = valueImagesImagesItem["ImageQualityModifyTime"].asString();
+		if(!valueImagesImagesItem["CroppingSuggestionStatus"].isNull())
+			imagesObject.croppingSuggestionStatus = valueImagesImagesItem["CroppingSuggestionStatus"].asString();
+		if(!valueImagesImagesItem["CroppingSuggestionFailReason"].isNull())
+			imagesObject.croppingSuggestionFailReason = valueImagesImagesItem["CroppingSuggestionFailReason"].asString();
+		if(!valueImagesImagesItem["CroppingSuggestionModifyTime"].isNull())
+			imagesObject.croppingSuggestionModifyTime = valueImagesImagesItem["CroppingSuggestionModifyTime"].asString();
+		auto allCroppingSuggestionNode = allImagesNode["CroppingSuggestion"]["CroppingSuggestionItem"];
+		for (auto allImagesNodeCroppingSuggestionCroppingSuggestionItem : allCroppingSuggestionNode)
+		{
+			ImagesItem::CroppingSuggestionItem croppingSuggestionObject;
+			if(!allImagesNodeCroppingSuggestionCroppingSuggestionItem["AspectRatio"].isNull())
+				croppingSuggestionObject.aspectRatio = allImagesNodeCroppingSuggestionCroppingSuggestionItem["AspectRatio"].asString();
+			if(!allImagesNodeCroppingSuggestionCroppingSuggestionItem["Score"].isNull())
+				croppingSuggestionObject.score = std::stof(allImagesNodeCroppingSuggestionCroppingSuggestionItem["Score"].asString());
+			auto croppingBoundaryNode = value["CroppingBoundary"];
+			if(!croppingBoundaryNode["Width"].isNull())
+				croppingSuggestionObject.croppingBoundary.width = std::stoi(croppingBoundaryNode["Width"].asString());
+			if(!croppingBoundaryNode["Height"].isNull())
+				croppingSuggestionObject.croppingBoundary.height = std::stoi(croppingBoundaryNode["Height"].asString());
+			if(!croppingBoundaryNode["Left"].isNull())
+				croppingSuggestionObject.croppingBoundary.left = std::stoi(croppingBoundaryNode["Left"].asString());
+			if(!croppingBoundaryNode["Top"].isNull())
+				croppingSuggestionObject.croppingBoundary.top = std::stoi(croppingBoundaryNode["Top"].asString());
+			imagesObject.croppingSuggestion.push_back(croppingSuggestionObject);
+		}
 		auto allFacesNode = allImagesNode["Faces"]["FacesItem"];
 		for (auto allImagesNodeFacesFacesItem : allFacesNode)
 		{
@@ -245,6 +276,27 @@ void FindImagesResult::parse(const std::string &payload)
 				celebrityObject.celebrityBoundary.height = std::stoi(celebrityBoundaryNode["Height"].asString());
 			imagesObject.celebrity.push_back(celebrityObject);
 		}
+		auto imageQualityNode = value["ImageQuality"];
+		if(!imageQualityNode["OverallScore"].isNull())
+			imagesObject.imageQuality.overallScore = std::stof(imageQualityNode["OverallScore"].asString());
+		if(!imageQualityNode["ClarityScore"].isNull())
+			imagesObject.imageQuality.clarityScore = std::stof(imageQualityNode["ClarityScore"].asString());
+		if(!imageQualityNode["Clarity"].isNull())
+			imagesObject.imageQuality.clarity = std::stof(imageQualityNode["Clarity"].asString());
+		if(!imageQualityNode["ExposureScore"].isNull())
+			imagesObject.imageQuality.exposureScore = std::stof(imageQualityNode["ExposureScore"].asString());
+		if(!imageQualityNode["Exposure"].isNull())
+			imagesObject.imageQuality.exposure = std::stof(imageQualityNode["Exposure"].asString());
+		if(!imageQualityNode["ContrastScore"].isNull())
+			imagesObject.imageQuality.contrastScore = std::stof(imageQualityNode["ContrastScore"].asString());
+		if(!imageQualityNode["Contrast"].isNull())
+			imagesObject.imageQuality.contrast = std::stof(imageQualityNode["Contrast"].asString());
+		if(!imageQualityNode["ColorScore"].isNull())
+			imagesObject.imageQuality.colorScore = std::stof(imageQualityNode["ColorScore"].asString());
+		if(!imageQualityNode["Color"].isNull())
+			imagesObject.imageQuality.color = std::stof(imageQualityNode["Color"].asString());
+		if(!imageQualityNode["CompositionScore"].isNull())
+			imagesObject.imageQuality.compositionScore = std::stof(imageQualityNode["CompositionScore"].asString());
 		auto addressNode = value["Address"];
 		if(!addressNode["AddressLine"].isNull())
 			imagesObject.address.addressLine = addressNode["AddressLine"].asString();

@@ -93,8 +93,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/EncodeBlindWatermarkResult.h
 	include/alibabacloud/imm/model/FindImagesRequest.h
 	include/alibabacloud/imm/model/FindImagesResult.h
-	include/alibabacloud/imm/model/FindImagesByTagNamesRequest.h
-	include/alibabacloud/imm/model/FindImagesByTagNamesResult.h
 	include/alibabacloud/imm/model/FindSimilarFacesRequest.h
 	include/alibabacloud/imm/model/FindSimilarFacesResult.h
 	include/alibabacloud/imm/model/GetContentKeyRequest.h
@@ -248,8 +246,6 @@ set(imm_src
 	src/model/EncodeBlindWatermarkResult.cc
 	src/model/FindImagesRequest.cc
 	src/model/FindImagesResult.cc
-	src/model/FindImagesByTagNamesRequest.cc
-	src/model/FindImagesByTagNamesResult.cc
 	src/model/FindSimilarFacesRequest.cc
 	src/model/FindSimilarFacesResult.cc
 	src/model/GetContentKeyRequest.cc
