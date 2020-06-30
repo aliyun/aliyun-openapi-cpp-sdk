@@ -555,6 +555,42 @@ VcsClient::ListDevicesOutcomeCallable VcsClient::listDevicesCallable(const ListD
 	return task->get_future();
 }
 
+VcsClient::ListMetricsOutcome VcsClient::listMetrics(const ListMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMetricsOutcome(ListMetricsResult(outcome.result()));
+	else
+		return ListMetricsOutcome(outcome.error());
+}
+
+void VcsClient::listMetricsAsync(const ListMetricsRequest& request, const ListMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListMetricsOutcomeCallable VcsClient::listMetricsCallable(const ListMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListPersonsOutcome VcsClient::listPersons(const ListPersonsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

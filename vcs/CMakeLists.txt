@@ -49,6 +49,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
 	include/alibabacloud/vcs/model/ListDevicesResult.h
+	include/alibabacloud/vcs/model/ListMetricsRequest.h
+	include/alibabacloud/vcs/model/ListMetricsResult.h
 	include/alibabacloud/vcs/model/ListPersonsRequest.h
 	include/alibabacloud/vcs/model/ListPersonsResult.h
 	include/alibabacloud/vcs/model/RecognizeFaceQualityRequest.h
@@ -98,6 +100,8 @@ set(vcs_src
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListMetricsRequest.cc
+	src/model/ListMetricsResult.cc
 	src/model/ListPersonsRequest.cc
 	src/model/ListPersonsResult.cc
 	src/model/RecognizeFaceQualityRequest.cc

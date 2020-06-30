@@ -50,6 +50,8 @@
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
 #include "model/ListDevicesResult.h"
+#include "model/ListMetricsRequest.h"
+#include "model/ListMetricsResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
 #include "model/RecognizeFaceQualityRequest.h"
@@ -119,6 +121,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDevicesResult> ListDevicesOutcome;
 			typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListDevicesRequest&, const ListDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
+			typedef Outcome<Error, Model::ListMetricsResult> ListMetricsOutcome;
+			typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListMetricsRequest&, const ListMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
@@ -193,6 +198,9 @@ namespace AlibabaCloud
 			ListDevicesOutcome listDevices(const Model::ListDevicesRequest &request)const;
 			void listDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevicesOutcomeCallable listDevicesCallable(const Model::ListDevicesRequest& request) const;
+			ListMetricsOutcome listMetrics(const Model::ListMetricsRequest &request)const;
+			void listMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListMetricsOutcomeCallable listMetricsCallable(const Model::ListMetricsRequest& request) const;
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
