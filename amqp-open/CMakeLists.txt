@@ -37,6 +37,8 @@ set(amqp-open_public_header_model
 	include/alibabacloud/amqp-open/model/DeleteQueueResult.h
 	include/alibabacloud/amqp-open/model/DeleteVirtualHostRequest.h
 	include/alibabacloud/amqp-open/model/DeleteVirtualHostResult.h
+	include/alibabacloud/amqp-open/model/GetMetadataAmountRequest.h
+	include/alibabacloud/amqp-open/model/GetMetadataAmountResult.h
 	include/alibabacloud/amqp-open/model/ListBindingsRequest.h
 	include/alibabacloud/amqp-open/model/ListBindingsResult.h
 	include/alibabacloud/amqp-open/model/ListDownStreamBindingsRequest.h
@@ -47,6 +49,8 @@ set(amqp-open_public_header_model
 	include/alibabacloud/amqp-open/model/ListExchangesResult.h
 	include/alibabacloud/amqp-open/model/ListInstancesRequest.h
 	include/alibabacloud/amqp-open/model/ListInstancesResult.h
+	include/alibabacloud/amqp-open/model/ListQueueConsumersRequest.h
+	include/alibabacloud/amqp-open/model/ListQueueConsumersResult.h
 	include/alibabacloud/amqp-open/model/ListQueueUpStreamBindingsRequest.h
 	include/alibabacloud/amqp-open/model/ListQueueUpStreamBindingsResult.h
 	include/alibabacloud/amqp-open/model/ListQueuesRequest.h
@@ -72,6 +76,8 @@ set(amqp-open_src
 	src/model/DeleteQueueResult.cc
 	src/model/DeleteVirtualHostRequest.cc
 	src/model/DeleteVirtualHostResult.cc
+	src/model/GetMetadataAmountRequest.cc
+	src/model/GetMetadataAmountResult.cc
 	src/model/ListBindingsRequest.cc
 	src/model/ListBindingsResult.cc
 	src/model/ListDownStreamBindingsRequest.cc
@@ -82,6 +88,8 @@ set(amqp-open_src
 	src/model/ListExchangesResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
+	src/model/ListQueueConsumersRequest.cc
+	src/model/ListQueueConsumersResult.cc
 	src/model/ListQueueUpStreamBindingsRequest.cc
 	src/model/ListQueueUpStreamBindingsResult.cc
 	src/model/ListQueuesRequest.cc

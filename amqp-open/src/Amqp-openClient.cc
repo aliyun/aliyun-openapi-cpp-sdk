@@ -339,6 +339,42 @@ Amqp_openClient::DeleteVirtualHostOutcomeCallable Amqp_openClient::deleteVirtual
 	return task->get_future();
 }
 
+Amqp_openClient::GetMetadataAmountOutcome Amqp_openClient::getMetadataAmount(const GetMetadataAmountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMetadataAmountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMetadataAmountOutcome(GetMetadataAmountResult(outcome.result()));
+	else
+		return GetMetadataAmountOutcome(outcome.error());
+}
+
+void Amqp_openClient::getMetadataAmountAsync(const GetMetadataAmountRequest& request, const GetMetadataAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMetadataAmount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::GetMetadataAmountOutcomeCallable Amqp_openClient::getMetadataAmountCallable(const GetMetadataAmountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMetadataAmountOutcome()>>(
+			[this, request]()
+			{
+			return this->getMetadataAmount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Amqp_openClient::ListBindingsOutcome Amqp_openClient::listBindings(const ListBindingsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +549,42 @@ Amqp_openClient::ListInstancesOutcomeCallable Amqp_openClient::listInstancesCall
 			[this, request]()
 			{
 			return this->listInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Amqp_openClient::ListQueueConsumersOutcome Amqp_openClient::listQueueConsumers(const ListQueueConsumersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQueueConsumersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQueueConsumersOutcome(ListQueueConsumersResult(outcome.result()));
+	else
+		return ListQueueConsumersOutcome(outcome.error());
+}
+
+void Amqp_openClient::listQueueConsumersAsync(const ListQueueConsumersRequest& request, const ListQueueConsumersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQueueConsumers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Amqp_openClient::ListQueueConsumersOutcomeCallable Amqp_openClient::listQueueConsumersCallable(const ListQueueConsumersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQueueConsumersOutcome()>>(
+			[this, request]()
+			{
+			return this->listQueueConsumers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -38,6 +38,8 @@
 #include "model/DeleteQueueResult.h"
 #include "model/DeleteVirtualHostRequest.h"
 #include "model/DeleteVirtualHostResult.h"
+#include "model/GetMetadataAmountRequest.h"
+#include "model/GetMetadataAmountResult.h"
 #include "model/ListBindingsRequest.h"
 #include "model/ListBindingsResult.h"
 #include "model/ListDownStreamBindingsRequest.h"
@@ -48,6 +50,8 @@
 #include "model/ListExchangesResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
+#include "model/ListQueueConsumersRequest.h"
+#include "model/ListQueueConsumersResult.h"
 #include "model/ListQueueUpStreamBindingsRequest.h"
 #include "model/ListQueueUpStreamBindingsResult.h"
 #include "model/ListQueuesRequest.h"
@@ -87,6 +91,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVirtualHostResult> DeleteVirtualHostOutcome;
 			typedef std::future<DeleteVirtualHostOutcome> DeleteVirtualHostOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::DeleteVirtualHostRequest&, const DeleteVirtualHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVirtualHostAsyncHandler;
+			typedef Outcome<Error, Model::GetMetadataAmountResult> GetMetadataAmountOutcome;
+			typedef std::future<GetMetadataAmountOutcome> GetMetadataAmountOutcomeCallable;
+			typedef std::function<void(const Amqp_openClient*, const Model::GetMetadataAmountRequest&, const GetMetadataAmountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetadataAmountAsyncHandler;
 			typedef Outcome<Error, Model::ListBindingsResult> ListBindingsOutcome;
 			typedef std::future<ListBindingsOutcome> ListBindingsOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::ListBindingsRequest&, const ListBindingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBindingsAsyncHandler;
@@ -102,6 +109,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListQueueConsumersResult> ListQueueConsumersOutcome;
+			typedef std::future<ListQueueConsumersOutcome> ListQueueConsumersOutcomeCallable;
+			typedef std::function<void(const Amqp_openClient*, const Model::ListQueueConsumersRequest&, const ListQueueConsumersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueueConsumersAsyncHandler;
 			typedef Outcome<Error, Model::ListQueueUpStreamBindingsResult> ListQueueUpStreamBindingsOutcome;
 			typedef std::future<ListQueueUpStreamBindingsOutcome> ListQueueUpStreamBindingsOutcomeCallable;
 			typedef std::function<void(const Amqp_openClient*, const Model::ListQueueUpStreamBindingsRequest&, const ListQueueUpStreamBindingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueueUpStreamBindingsAsyncHandler;
@@ -140,6 +150,9 @@ namespace AlibabaCloud
 			DeleteVirtualHostOutcome deleteVirtualHost(const Model::DeleteVirtualHostRequest &request)const;
 			void deleteVirtualHostAsync(const Model::DeleteVirtualHostRequest& request, const DeleteVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVirtualHostOutcomeCallable deleteVirtualHostCallable(const Model::DeleteVirtualHostRequest& request) const;
+			GetMetadataAmountOutcome getMetadataAmount(const Model::GetMetadataAmountRequest &request)const;
+			void getMetadataAmountAsync(const Model::GetMetadataAmountRequest& request, const GetMetadataAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMetadataAmountOutcomeCallable getMetadataAmountCallable(const Model::GetMetadataAmountRequest& request) const;
 			ListBindingsOutcome listBindings(const Model::ListBindingsRequest &request)const;
 			void listBindingsAsync(const Model::ListBindingsRequest& request, const ListBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListBindingsOutcomeCallable listBindingsCallable(const Model::ListBindingsRequest& request) const;
@@ -155,6 +168,9 @@ namespace AlibabaCloud
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
+			ListQueueConsumersOutcome listQueueConsumers(const Model::ListQueueConsumersRequest &request)const;
+			void listQueueConsumersAsync(const Model::ListQueueConsumersRequest& request, const ListQueueConsumersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQueueConsumersOutcomeCallable listQueueConsumersCallable(const Model::ListQueueConsumersRequest& request) const;
 			ListQueueUpStreamBindingsOutcome listQueueUpStreamBindings(const Model::ListQueueUpStreamBindingsRequest &request)const;
 			void listQueueUpStreamBindingsAsync(const Model::ListQueueUpStreamBindingsRequest& request, const ListQueueUpStreamBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQueueUpStreamBindingsOutcomeCallable listQueueUpStreamBindingsCallable(const Model::ListQueueUpStreamBindingsRequest& request) const;
