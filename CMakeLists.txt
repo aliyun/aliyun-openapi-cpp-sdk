@@ -61,6 +61,8 @@ endif()
 
 if(BUILD_PRODUCT STREQUAL "")
   message(WARNING   "Please set the value of 'BUILD_PRODUCT'")
+elseif(BUILD_PRODUCT STREQUAL "core")
+  add_subdirectory(core)
 else()
   add_subdirectory(core)
   add_subdirectory(${BUILD_PRODUCT})
