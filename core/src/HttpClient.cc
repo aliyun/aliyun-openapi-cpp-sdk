@@ -36,4 +36,12 @@ void HttpClient::setProxy(const NetworkProxy &proxy) {
   proxy_ = proxy;
 }
 
+bool HttpClient::rejectUnauthorized()const{
+    return rejectUnauthorized_;
+}
+
+void HttpClient::setRejectUnauthorized(const bool &rejectUnauthorized) {
+    rejectUnauthorized_ = rejectUnauthorized;
+}
+
 }  // namespace AlibabaCloud

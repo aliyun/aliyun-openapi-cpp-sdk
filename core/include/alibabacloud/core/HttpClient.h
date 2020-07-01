@@ -34,9 +34,12 @@ class HttpClient {
   virtual HttpResponseOutcome makeRequest(const HttpRequest &request) = 0;
   NetworkProxy proxy()const;
   void setProxy(const NetworkProxy &proxy);
+  bool rejectUnauthorized()const;
+  void setRejectUnauthorized(const bool &rejectUnauthorized);
 
  private:
   NetworkProxy proxy_;
+  bool rejectUnauthorized_;
 };
 }  // namespace AlibabaCloud
 #endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_

@@ -163,8 +163,13 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
   }
 
   curl_easy_setopt(curlHandle_, CURLOPT_URL, url.c_str());
-  curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYPEER, 1L);
-  curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYHOST, 2L);
+  if (rejectUnauthorized()) {
+    curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYPEER, 1L);
+    curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYHOST, 2L);
+  } else {
+    curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYPEER, 0L);
+    curl_easy_setopt(curlHandle_, CURLOPT_SSL_VERIFYHOST, 0L);
+  }
   curl_easy_setopt(curlHandle_, CURLOPT_HEADERDATA, &response);
   curl_easy_setopt(curlHandle_, CURLOPT_HEADERFUNCTION, recvHeaders);
 
