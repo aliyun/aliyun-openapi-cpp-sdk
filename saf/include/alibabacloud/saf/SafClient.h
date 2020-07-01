@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "SafExport.h"
+#include "model/ExecuteExtendServiceRequest.h"
+#include "model/ExecuteExtendServiceResult.h"
 #include "model/ExecuteRequestRequest.h"
 #include "model/ExecuteRequestResult.h"
 #include "model/ExecuteRequestSGRequest.h"
@@ -35,6 +37,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_SAF_EXPORT SafClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ExecuteExtendServiceResult> ExecuteExtendServiceOutcome;
+			typedef std::future<ExecuteExtendServiceOutcome> ExecuteExtendServiceOutcomeCallable;
+			typedef std::function<void(const SafClient*, const Model::ExecuteExtendServiceRequest&, const ExecuteExtendServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteExtendServiceAsyncHandler;
 			typedef Outcome<Error, Model::ExecuteRequestResult> ExecuteRequestOutcome;
 			typedef std::future<ExecuteRequestOutcome> ExecuteRequestOutcomeCallable;
 			typedef std::function<void(const SafClient*, const Model::ExecuteRequestRequest&, const ExecuteRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestAsyncHandler;
@@ -46,6 +51,9 @@ namespace AlibabaCloud
 			SafClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			SafClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~SafClient();
+			ExecuteExtendServiceOutcome executeExtendService(const Model::ExecuteExtendServiceRequest &request)const;
+			void executeExtendServiceAsync(const Model::ExecuteExtendServiceRequest& request, const ExecuteExtendServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExecuteExtendServiceOutcomeCallable executeExtendServiceCallable(const Model::ExecuteExtendServiceRequest& request) const;
 			ExecuteRequestOutcome executeRequest(const Model::ExecuteRequestRequest &request)const;
 			void executeRequestAsync(const Model::ExecuteRequestRequest& request, const ExecuteRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteRequestOutcomeCallable executeRequestCallable(const Model::ExecuteRequestRequest& request) const;

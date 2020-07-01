@@ -31,25 +31,61 @@ SafClient::SafClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
 }
 
 SafClient::SafClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
 }
 
 SafClient::SafClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
 }
 
 SafClient::~SafClient()
 {}
+
+SafClient::ExecuteExtendServiceOutcome SafClient::executeExtendService(const ExecuteExtendServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteExtendServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteExtendServiceOutcome(ExecuteExtendServiceResult(outcome.result()));
+	else
+		return ExecuteExtendServiceOutcome(outcome.error());
+}
+
+void SafClient::executeExtendServiceAsync(const ExecuteExtendServiceRequest& request, const ExecuteExtendServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeExtendService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SafClient::ExecuteExtendServiceOutcomeCallable SafClient::executeExtendServiceCallable(const ExecuteExtendServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteExtendServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->executeExtendService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
 
 SafClient::ExecuteRequestOutcome SafClient::executeRequest(const ExecuteRequestRequest &request) const
 {

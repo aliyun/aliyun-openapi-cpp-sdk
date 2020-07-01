@@ -21,6 +21,8 @@ set(saf_public_header
 	include/alibabacloud/saf/SafExport.h )
 
 set(saf_public_header_model 
+	include/alibabacloud/saf/model/ExecuteExtendServiceRequest.h
+	include/alibabacloud/saf/model/ExecuteExtendServiceResult.h
 	include/alibabacloud/saf/model/ExecuteRequestRequest.h
 	include/alibabacloud/saf/model/ExecuteRequestResult.h
 	include/alibabacloud/saf/model/ExecuteRequestSGRequest.h
@@ -28,6 +30,8 @@ set(saf_public_header_model
 
 set(saf_src 
 	src/SafClient.cc
+	src/model/ExecuteExtendServiceRequest.cc
+	src/model/ExecuteExtendServiceResult.cc
 	src/model/ExecuteRequestRequest.cc
 	src/model/ExecuteRequestResult.cc
 	src/model/ExecuteRequestSGRequest.cc
