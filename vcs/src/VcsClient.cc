@@ -555,6 +555,42 @@ VcsClient::ListDevicesOutcomeCallable VcsClient::listDevicesCallable(const ListD
 	return task->get_future();
 }
 
+VcsClient::ListFaceAlgorithmResultsOutcome VcsClient::listFaceAlgorithmResults(const ListFaceAlgorithmResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFaceAlgorithmResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFaceAlgorithmResultsOutcome(ListFaceAlgorithmResultsResult(outcome.result()));
+	else
+		return ListFaceAlgorithmResultsOutcome(outcome.error());
+}
+
+void VcsClient::listFaceAlgorithmResultsAsync(const ListFaceAlgorithmResultsRequest& request, const ListFaceAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFaceAlgorithmResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListFaceAlgorithmResultsOutcomeCallable VcsClient::listFaceAlgorithmResultsCallable(const ListFaceAlgorithmResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFaceAlgorithmResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->listFaceAlgorithmResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListMetricsOutcome VcsClient::listMetrics(const ListMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +621,42 @@ VcsClient::ListMetricsOutcomeCallable VcsClient::listMetricsCallable(const ListM
 			[this, request]()
 			{
 			return this->listMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListMotorAlgorithmResultsOutcome VcsClient::listMotorAlgorithmResults(const ListMotorAlgorithmResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMotorAlgorithmResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMotorAlgorithmResultsOutcome(ListMotorAlgorithmResultsResult(outcome.result()));
+	else
+		return ListMotorAlgorithmResultsOutcome(outcome.error());
+}
+
+void VcsClient::listMotorAlgorithmResultsAsync(const ListMotorAlgorithmResultsRequest& request, const ListMotorAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMotorAlgorithmResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListMotorAlgorithmResultsOutcomeCallable VcsClient::listMotorAlgorithmResultsCallable(const ListMotorAlgorithmResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMotorAlgorithmResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMotorAlgorithmResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
