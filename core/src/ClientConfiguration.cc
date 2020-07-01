@@ -71,4 +71,12 @@ void ClientConfiguration::setReadTimeout(const long readTimeout) {
   readTimeout_ = readTimeout;
 }
 
+bool ClientConfiguration::rejectUnauthorized() const {
+    return rejectUnauthorized_;
+}
+
+void ClientConfiguration::setRejectUnauthorized(const bool rejectUnauthorized) {
+    rejectUnauthorized_ = rejectUnauthorized;
+}
+
 }  // namespace AlibabaCloud

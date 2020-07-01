@@ -43,12 +43,16 @@ class ALIBABACLOUD_CORE_EXPORT ClientConfiguration {
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
 
+  bool rejectUnauthorized() const;
+  void setRejectUnauthorized(const bool rejectUnauthorized);
+
  private:
   std::string endpoint_;
   NetworkProxy proxy_;
   std::string regionId_;
   long connectTimeout_;
   long readTimeout_;
+  bool rejectUnauthorized_ = true;
 };
 }  // namespace AlibabaCloud
 

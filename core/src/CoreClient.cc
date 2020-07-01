@@ -33,6 +33,7 @@ CoreClient::CoreClient(const std::string &servicename,
     : serviceName_(servicename), configuration_(configuration),
       httpClient_(new CurlHttpClient) {
   httpClient_->setProxy(configuration.proxy());
+  httpClient_->setRejectUnauthorized(configuration.rejectUnauthorized());
 }
 
 CoreClient::~CoreClient() { delete httpClient_; }
