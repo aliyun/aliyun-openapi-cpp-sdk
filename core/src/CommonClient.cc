@@ -1,81 +1,73 @@
 /*
-* Copyright 1999-2019 Alibaba Cloud All rights reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
+#include <algorithm>
 #include <alibabacloud/core/AlibabaCloud.h>
 #include <alibabacloud/core/CommonClient.h>
-#include <alibabacloud/core/location/LocationClient.h>
 #include <alibabacloud/core/SimpleCredentialsProvider.h>
+#include <alibabacloud/core/location/LocationClient.h>
 #include <ctime>
-#include <algorithm>
 #include <iomanip>
 #include <sstream>
 
 #include <alibabacloud/core/Utils.h>
 
-namespace AlibabaCloud
-{
+namespace AlibabaCloud {
 
-namespace
-{
+namespace {
 const std::string SERVICE_NAME = "Common";
 }
 
 CommonClient::CommonClient(const Credentials &credentials,
-                           const ClientConfiguration &configuration) : CoreClient(SERVICE_NAME, configuration),
-                                                                       credentialsProvider_(
-                                                                           std::make_shared<SimpleCredentialsProvider>(credentials)),
-                                                                       signer_(std::make_shared<HmacSha1Signer>())
-{
-}
+                           const ClientConfiguration &configuration)
+    : CoreClient(SERVICE_NAME, configuration),
+      credentialsProvider_(
+          std::make_shared<SimpleCredentialsProvider>(credentials)),
+      signer_(std::make_shared<HmacSha1Signer>()) {}
 
 CommonClient::CommonClient(
     const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-    const ClientConfiguration &configuration) : CoreClient(SERVICE_NAME, configuration),
-                                                credentialsProvider_(credentialsProvider),
-                                                signer_(std::make_shared<HmacSha1Signer>())
-{
-}
+    const ClientConfiguration &configuration)
+    : CoreClient(SERVICE_NAME, configuration),
+      credentialsProvider_(credentialsProvider),
+      signer_(std::make_shared<HmacSha1Signer>()) {}
 
 CommonClient::CommonClient(const std::string &accessKeyId,
                            const std::string &accessKeySecret,
-                           const ClientConfiguration &configuration) : CoreClient(SERVICE_NAME, configuration),
-                                                                       credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(accessKeyId,
-                                                                                                                                        accessKeySecret)),
-                                                                       signer_(std::make_shared<HmacSha1Signer>())
-{
-}
+                           const ClientConfiguration &configuration)
+    : CoreClient(SERVICE_NAME, configuration),
+      credentialsProvider_(std::make_shared<SimpleCredentialsProvider>(
+          accessKeyId, accessKeySecret)),
+      signer_(std::make_shared<HmacSha1Signer>()) {}
 
-CommonClient::~CommonClient()
-{
-}
+CommonClient::~CommonClient() {}
 
-CommonClient::JsonOutcome CommonClient::makeRequest(const std::string &endpoint,
-                                                    const CommonRequest &msg, HttpRequest::Method method) const
-{
+CommonClient::JsonOutcome
+CommonClient::makeRequest(const std::string &endpoint, const CommonRequest &msg,
+                          HttpRequest::Method method) const {
   auto outcome = AttemptRequest(endpoint, msg, method);
   if (outcome.isSuccess())
-    return JsonOutcome(std::string(outcome.result().body(),
-                                   outcome.result().bodySize()));
+    return JsonOutcome(
+        std::string(outcome.result().body(), outcome.result().bodySize()));
   else
     return JsonOutcome(outcome.error());
 }
 
-CommonClient::CommonResponseOutcome CommonClient::commonResponse(
-    const CommonRequest &request) const
-{
+CommonClient::CommonResponseOutcome
+CommonClient::commonResponse(const CommonRequest &request) const {
   auto outcome = makeRequest(request.domain(), request, request.httpMethod());
   if (outcome.isSuccess())
     return CommonResponseOutcome(CommonResponse(outcome.result()));
@@ -83,10 +75,9 @@ CommonClient::CommonResponseOutcome CommonClient::commonResponse(
     return CommonResponseOutcome(Error(outcome.error()));
 }
 
-void CommonClient::commonResponseAsync(const CommonRequest &request,
-                                       const CommonResponseAsyncHandler &handler,
-                                       const std::shared_ptr<const AsyncCallerContext> &context) const
-{
+void CommonClient::commonResponseAsync(
+    const CommonRequest &request, const CommonResponseAsyncHandler &handler,
+    const std::shared_ptr<const AsyncCallerContext> &context) const {
   auto fn = [this, request, handler, context]() {
     handler(this, request, commonResponse(request), context);
   };
@@ -95,45 +86,40 @@ void CommonClient::commonResponseAsync(const CommonRequest &request,
 }
 
 CommonClient::CommonResponseOutcomeCallable
-CommonClient::commonResponseCallable(const CommonRequest &request) const
-{
+CommonClient::commonResponseCallable(const CommonRequest &request) const {
   auto task = std::make_shared<std::packaged_task<CommonResponseOutcome()>>(
-      [this, request]() {
-        return this->commonResponse(request);
-      });
+      [this, request]() { return this->commonResponse(request); });
 
   asyncExecute(new Runnable([task]() { (*task)(); }));
   return task->get_future();
 }
 
 HttpRequest CommonClient::buildHttpRequest(const std::string &endpoint,
-                                           const ServiceRequest &msg, HttpRequest::Method method) const
-{
-  return buildHttpRequest(endpoint,
-                          dynamic_cast<const CommonRequest &>(msg), method);
+                                           const ServiceRequest &msg,
+                                           HttpRequest::Method method) const {
+  return buildHttpRequest(endpoint, dynamic_cast<const CommonRequest &>(msg),
+                          method);
 }
 
 HttpRequest CommonClient::buildHttpRequest(const std::string &endpoint,
-                                           const CommonRequest &msg, HttpRequest::Method method) const
-{
+                                           const CommonRequest &msg,
+                                           HttpRequest::Method method) const {
   if (msg.requestPattern() == CommonRequest::RpcPattern)
     return buildRpcHttpRequest(endpoint, msg, method);
   else
     return buildRoaHttpRequest(endpoint, msg, method);
 }
 
-HttpRequest CommonClient::buildRoaHttpRequest(const std::string &endpoint,
-                                              const CommonRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest
+CommonClient::buildRoaHttpRequest(const std::string &endpoint,
+                                  const CommonRequest &msg,
+                                  HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
-  if (msg.scheme().empty())
-  {
+  if (msg.scheme().empty()) {
     url.setScheme("https");
-  }
-  else
-  {
+  } else {
     url.setScheme(msg.scheme());
   }
   url.setHost(endpoint);
@@ -141,17 +127,14 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string &endpoint,
 
   auto params = msg.headerParameters();
   std::map<std::string, std::string> queryParams;
-  for (const auto &p : params)
-  {
+  for (const auto &p : params) {
     if (!p.second.empty())
       queryParams[p.first] = p.second;
   }
 
-  if (!queryParams.empty())
-  {
+  if (!queryParams.empty()) {
     std::stringstream queryString;
-    for (const auto &p : queryParams)
-    {
+    for (const auto &p : queryParams) {
       if (p.second.empty())
         queryString << "&" << p.first;
       else
@@ -163,42 +146,30 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string &endpoint,
   HttpRequest request(url);
   request.setMethod(method);
 
-  if (msg.connectTimeout() != kInvalidTimeout)
-  {
+  if (msg.connectTimeout() != kInvalidTimeout) {
     request.setConnectTimeout(msg.connectTimeout());
-  }
-  else
-  {
+  } else {
     request.setConnectTimeout(configuration().connectTimeout());
   }
 
-  if (msg.readTimeout() != kInvalidTimeout)
-  {
+  if (msg.readTimeout() != kInvalidTimeout) {
     request.setReadTimeout(msg.readTimeout());
-  }
-  else
-  {
+  } else {
     request.setReadTimeout(configuration().readTimeout());
   }
 
-  if (msg.headerParameter("Accept").empty())
-  {
+  if (msg.headerParameter("Accept").empty()) {
     request.setHeader("Accept", "application/json");
-  }
-  else
-  {
+  } else {
     request.setHeader("Accept", msg.headerParameter("Accept"));
   }
 
   std::stringstream ss;
   ss << msg.contentSize();
   request.setHeader("Content-Length", ss.str());
-  if (msg.headerParameter("Content-Type").empty())
-  {
+  if (msg.headerParameter("Content-Type").empty()) {
     request.setHeader("Content-Type", "application/octet-stream");
-  }
-  else
-  {
+  } else {
     request.setHeader("Content-Type", msg.headerParameter("Content-Type"));
   }
   request.setHeader("Content-MD5",
@@ -239,26 +210,22 @@ HttpRequest CommonClient::buildRoaHttpRequest(const std::string &endpoint,
     plaintext << url.path() << "?" << url.query();
 
   std::stringstream sign;
-  sign << "acs "
-       << credentials.accessKeyId()
-       << ":"
+  sign << "acs " << credentials.accessKeyId() << ":"
        << signer_->generate(plaintext.str(), credentials.accessKeySecret());
   request.setHeader("Authorization", sign.str());
   return request;
 }
 
-HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
-                                              const CommonRequest &msg, HttpRequest::Method method) const
-{
+HttpRequest
+CommonClient::buildRpcHttpRequest(const std::string &endpoint,
+                                  const CommonRequest &msg,
+                                  HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
-  if (msg.scheme().empty())
-  {
+  if (msg.scheme().empty()) {
     url.setScheme("https");
-  }
-  else
-  {
+  } else {
     url.setScheme(msg.scheme());
   }
   url.setHost(endpoint);
@@ -266,8 +233,7 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
 
   auto params = msg.queryParameters();
   std::map<std::string, std::string> queryParams;
-  for (const auto &p : params)
-  {
+  for (const auto &p : params) {
     if (!p.second.empty())
       queryParams[p.first] = p.second;
   }
@@ -294,21 +260,17 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   std::string bodyParamString;
   auto signParams = queryParams;
   auto bodyParams = msg.bodyParameters();
-  for (const auto &p : bodyParams)
-  {
+  for (const auto &p : bodyParams) {
     bodyParamString += "&";
     bodyParamString += (p.first + "=" + UrlEncode(p.second));
     signParams[p.first] = p.second;
   }
 
   std::stringstream plaintext;
-  plaintext << HttpMethodToString(method)
-            << "&"
-            << UrlEncode(url.path())
-            << "&"
+  plaintext << HttpMethodToString(method) << "&" << UrlEncode(url.path()) << "&"
             << UrlEncode(canonicalizedQuery(signParams));
-  queryParams["Signature"] = signer_->generate(plaintext.str(),
-                                               credentials.accessKeySecret() + "&");
+  queryParams["Signature"] =
+      signer_->generate(plaintext.str(), credentials.accessKeySecret() + "&");
 
   std::stringstream queryString;
   for (const auto &p : queryParams)
@@ -316,21 +278,15 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   url.setQuery(queryString.str().substr(1));
 
   HttpRequest request(url);
-  if (msg.connectTimeout() != kInvalidTimeout)
-  {
+  if (msg.connectTimeout() != kInvalidTimeout) {
     request.setConnectTimeout(msg.connectTimeout());
-  }
-  else
-  {
+  } else {
     request.setConnectTimeout(configuration().connectTimeout());
   }
 
-  if (msg.readTimeout() != kInvalidTimeout)
-  {
+  if (msg.readTimeout() != kInvalidTimeout) {
     request.setReadTimeout(msg.readTimeout());
-  }
-  else
-  {
+  } else {
     request.setReadTimeout(configuration().readTimeout());
   }
 
@@ -339,8 +295,7 @@ HttpRequest CommonClient::buildRpcHttpRequest(const std::string &endpoint,
   request.setHeader("x-sdk-client",
                     std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
 
-  if (!bodyParamString.empty())
-  {
+  if (!bodyParamString.empty()) {
     request.setBody(bodyParamString.c_str() + 1, bodyParamString.size() - 1);
   }
   return request;

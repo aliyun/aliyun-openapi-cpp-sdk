@@ -19,22 +19,15 @@
 namespace AlibabaCloud {
 
 SimpleCredentialsProvider::SimpleCredentialsProvider(
-  const Credentials &credentials):
-  CredentialsProvider(),
-  credentials_(credentials) {
-}
+    const Credentials &credentials)
+    : CredentialsProvider(), credentials_(credentials) {}
 
 SimpleCredentialsProvider::SimpleCredentialsProvider(
-  const std::string & accessKeyId, const std::string & accessKeySecret) :
-  CredentialsProvider(),
-  credentials_(accessKeyId, accessKeySecret) {
-}
+    const std::string &accessKeyId, const std::string &accessKeySecret)
+    : CredentialsProvider(), credentials_(accessKeyId, accessKeySecret) {}
 
-SimpleCredentialsProvider::~SimpleCredentialsProvider() {
-}
+SimpleCredentialsProvider::~SimpleCredentialsProvider() {}
 
-Credentials SimpleCredentialsProvider::getCredentials() {
-  return credentials_;
-}
+Credentials SimpleCredentialsProvider::getCredentials() { return credentials_; }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

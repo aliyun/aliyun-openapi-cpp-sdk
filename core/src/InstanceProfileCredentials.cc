@@ -18,11 +18,9 @@
 
 namespace AlibabaCloud {
 
-InstanceProfileCredentials::InstanceProfileCredentials() :
-  BasicSessionCredentials(Credentials::InstanceProfile) {
-}
+InstanceProfileCredentials::InstanceProfileCredentials()
+    : BasicSessionCredentials(Credentials::InstanceProfile) {}
 
-InstanceProfileCredentials::~InstanceProfileCredentials() {
-}
+InstanceProfileCredentials::~InstanceProfileCredentials() {}
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

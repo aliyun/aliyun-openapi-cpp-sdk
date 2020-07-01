@@ -18,19 +18,14 @@
 
 namespace AlibabaCloud {
 
-ServiceResult::ServiceResult() :
-  requestId_() {
-}
+ServiceResult::ServiceResult() : requestId_() {}
 
-ServiceResult::~ServiceResult() {
-}
+ServiceResult::~ServiceResult() {}
 
-std::string ServiceResult::requestId() const {
-  return requestId_;
-}
+std::string ServiceResult::requestId() const { return requestId_; }
 
-void ServiceResult::setRequestId(const std::string & requestId) {
+void ServiceResult::setRequestId(const std::string &requestId) {
   requestId_ = requestId;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

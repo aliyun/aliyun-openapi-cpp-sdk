@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/AlibabaCloud.h>
 #include "Executor.h"
+#include <alibabacloud/core/AlibabaCloud.h>
 
-static AlibabaCloud::Executor * executor = nullptr;
+static AlibabaCloud::Executor *executor = nullptr;
 
 void AlibabaCloud::InitializeSdk() {
   if (IsSdkInitialized())
@@ -27,9 +27,7 @@ void AlibabaCloud::InitializeSdk() {
   executor->start();
 }
 
-bool AlibabaCloud::IsSdkInitialized() {
-  return executor != nullptr;
-}
+bool AlibabaCloud::IsSdkInitialized() { return executor != nullptr; }
 
 void AlibabaCloud::ShutdownSdk() {
   if (!IsSdkInitialized())
