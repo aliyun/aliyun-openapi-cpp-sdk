@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+cmake_minimum_required(VERSION 3.1)
+project(core)
+
 # coverage option
 OPTION (ENABLE_COVERAGE "Use gcov" OFF)
 MESSAGE(STATUS ENABLE_COVERAGE=${ENABLE_COVERAGE})
@@ -24,6 +27,10 @@ IF(ENABLE_COVERAGE)
 ENDIF()
 
 configure_file(src/Config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/include/alibabacloud/core/Config.h @ONLY)
+
+if(NOT DEFINED ${LIB_TYPE})
+	set(LIB_TYPE STATIC)
+endif()
 
 set(core_public_header
 	include/alibabacloud/core/AlibabaCloud.h
