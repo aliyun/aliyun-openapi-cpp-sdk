@@ -16,9 +16,9 @@
 
 #include "CurlHttpClient.h"
 #include "Executor.h"
-#include <alibabacloud/core/Utils.h>
 #include <alibabacloud/core/CoreClient.h>
 #include <alibabacloud/core/Signer.h>
+#include <alibabacloud/core/Utils.h>
 #include <json/json.h>
 
 /*!
@@ -63,14 +63,10 @@ CoreClient::AttemptRequest(const std::string &endpoint,
 Error CoreClient::buildCoreError(const HttpResponse &response) const {
   Json::Reader reader;
   Json::Value value;
-  if (!reader.parse(std::string(response.body(), response.bodySize()), value))
-  {
-    if (response.bodySize() > 0)
-    {
+  if (!reader.parse(std::string(response.body(), response.bodySize()), value)) {
+    if (response.bodySize() > 0) {
       return Error("InvalidResponse", response.body());
-    }
-    else
-    {
+    } else {
       return Error("InvalidResponse", "body is empty");
     }
   }
@@ -80,8 +76,7 @@ Error CoreClient::buildCoreError(const HttpResponse &response) const {
   error.setErrorMessage(value["Message"].asString());
   error.setHost(value["HostId"].asString());
   error.setRequestId(value["RequestId"].asString());
-  if (value["Code"].asString().empty() || value["Message"].asString().empty())
-  {
+  if (value["Code"].asString().empty() || value["Message"].asString().empty()) {
     error.setDetail(std::string(response.body()));
   }
   return error;

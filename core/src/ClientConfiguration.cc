@@ -14,36 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/ClientConfiguration.h>
 #include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/core/ClientConfiguration.h>
 
 namespace AlibabaCloud {
 
 ClientConfiguration::ClientConfiguration(const std::string &regionId,
-  const NetworkProxy &proxy):
-  regionId_(regionId),
-  proxy_(proxy),
-  endpoint_(),
-  connectTimeout_(kDefaultConnectTimeout),
-  readTimeout_(kDefaultReadTimeout) {
-}
+                                         const NetworkProxy &proxy)
+    : regionId_(regionId), proxy_(proxy), endpoint_(),
+      connectTimeout_(kDefaultConnectTimeout),
+      readTimeout_(kDefaultReadTimeout) {}
 
-ClientConfiguration::~ClientConfiguration() {
-}
+ClientConfiguration::~ClientConfiguration() {}
 
-std::string ClientConfiguration::endpoint() const {
-  return endpoint_;
-}
+std::string ClientConfiguration::endpoint() const { return endpoint_; }
 
-NetworkProxy ClientConfiguration::proxy()const {
-  return proxy_;
-}
+NetworkProxy ClientConfiguration::proxy() const { return proxy_; }
 
-std::string ClientConfiguration::regionId()const {
-  return regionId_;
-}
+std::string ClientConfiguration::regionId() const { return regionId_; }
 
-void ClientConfiguration::setEndpoint(const std::string & endpoint) {
+void ClientConfiguration::setEndpoint(const std::string &endpoint) {
   endpoint_ = endpoint;
 }
 
@@ -55,13 +45,9 @@ void ClientConfiguration::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
 }
 
-long ClientConfiguration::connectTimeout() const {
-  return connectTimeout_;
-}
+long ClientConfiguration::connectTimeout() const { return connectTimeout_; }
 
-long ClientConfiguration::readTimeout() const {
-  return readTimeout_;
-}
+long ClientConfiguration::readTimeout() const { return readTimeout_; }
 
 void ClientConfiguration::setConnectTimeout(const long connectTimeout) {
   connectTimeout_ = connectTimeout;
@@ -72,11 +58,11 @@ void ClientConfiguration::setReadTimeout(const long readTimeout) {
 }
 
 bool ClientConfiguration::rejectUnauthorized() const {
-    return rejectUnauthorized_;
+  return rejectUnauthorized_;
 }
 
 void ClientConfiguration::setRejectUnauthorized(const bool rejectUnauthorized) {
-    rejectUnauthorized_ = rejectUnauthorized;
+  rejectUnauthorized_ = rejectUnauthorized;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

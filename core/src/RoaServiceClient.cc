@@ -14,51 +14,53 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/AlibabaCloud.h>
-#include <alibabacloud/core/RoaServiceClient.h>
-#include <alibabacloud/core/HmacSha1Signer.h>
 #include <algorithm>
+#include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/core/HmacSha1Signer.h>
+#include <alibabacloud/core/RoaServiceClient.h>
+#include <alibabacloud/core/Utils.h>
 #include <iomanip>
 #include <sstream>
-#include <alibabacloud/core/Utils.h>
 
 namespace AlibabaCloud {
 
-RoaServiceClient::RoaServiceClient(const std::string & servicename,
-  const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-  const ClientConfiguration &configuration,
-  const std::shared_ptr<Signer> &signer) :
-  CoreClient(servicename, configuration),
-  credentialsProvider_(credentialsProvider),
-  signer_(signer) {
-}
+RoaServiceClient::RoaServiceClient(
+    const std::string &servicename,
+    const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+    const ClientConfiguration &configuration,
+    const std::shared_ptr<Signer> &signer)
+    : CoreClient(servicename, configuration),
+      credentialsProvider_(credentialsProvider), signer_(signer) {}
 
-RoaServiceClient::~RoaServiceClient() {
-}
+RoaServiceClient::~RoaServiceClient() {}
 
-RoaServiceClient::JsonOutcome RoaServiceClient::makeRequest(
-    const std::string &endpoint,
-    const RoaServiceRequest &request, HttpRequest::Method method) const
-{
-  if(method == HttpRequest::Method::Get){
+RoaServiceClient::JsonOutcome
+RoaServiceClient::makeRequest(const std::string &endpoint,
+                              const RoaServiceRequest &request,
+                              HttpRequest::Method method) const {
+  if (method == HttpRequest::Method::Get) {
     method = request.method();
   }
   auto outcome = AttemptRequest(endpoint, request, method);
   if (outcome.isSuccess())
-    return JsonOutcome(std::string(outcome.result().body(),
-      outcome.result().bodySize()));
+    return JsonOutcome(
+        std::string(outcome.result().body(), outcome.result().bodySize()));
   else
     return JsonOutcome(outcome.error());
 }
 
-HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
-  const ServiceRequest &msg, HttpRequest::Method method)const {
+HttpRequest
+RoaServiceClient::buildHttpRequest(const std::string &endpoint,
+                                   const ServiceRequest &msg,
+                                   HttpRequest::Method method) const {
   return buildHttpRequest(endpoint,
-    dynamic_cast<const RoaServiceRequest& >(msg), method);
+                          dynamic_cast<const RoaServiceRequest &>(msg), method);
 }
 
-HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
-  const RoaServiceRequest &msg, HttpRequest::Method method) const {
+HttpRequest
+RoaServiceClient::buildHttpRequest(const std::string &endpoint,
+                                   const RoaServiceRequest &msg,
+                                   HttpRequest::Method method) const {
   const Credentials credentials = credentialsProvider_->getCredentials();
 
   Url url;
@@ -71,7 +73,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
   url.setPath(msg.resourcePath());
 
   auto params = msg.parameters();
-  std::map <std::string, std::string> queryParams;
+  std::map<std::string, std::string> queryParams;
   for (const auto &p : params) {
     if (!p.second.empty())
       queryParams[p.first] = p.second;
@@ -102,10 +104,10 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
     request.setReadTimeout(configuration().readTimeout());
   }
 
-  for(const auto &h : msg.headers()){
-      if(!h.second.empty()){
-          request.setHeader(h.first, h.second);
-      }
+  for (const auto &h : msg.headers()) {
+    if (!h.second.empty()) {
+      request.setHeader(h.first, h.second);
+    }
   }
 
   if (msg.parameter("Accept").empty()) {
@@ -124,7 +126,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
       request.setHeader("Content-Type", msg.parameter("Content-Type"));
     }
     request.setHeader("Content-MD5",
-      ComputeContentMD5(msg.content(), msg.contentSize()));
+                      ComputeContentMD5(msg.content(), msg.contentSize()));
     request.setBody(msg.content(), msg.contentSize());
   }
 
@@ -140,7 +142,7 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
   request.setHeader("Date", date.str());
   request.setHeader("Host", url.host());
   request.setHeader("x-sdk-client",
-    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
+                    std::string("CPP/").append(ALIBABACLOUD_VERSION_STR));
   request.setHeader("x-acs-region-id", configuration().regionId());
   if (!credentials.sessionToken().empty())
     request.setHeader("x-acs-security-token", credentials.sessionToken());
@@ -151,23 +153,21 @@ HttpRequest RoaServiceClient::buildHttpRequest(const std::string & endpoint,
 
   std::stringstream plaintext;
   plaintext << HttpMethodToString(method) << "\n"
-    << request.header("Accept") << "\n"
-    << request.header("Content-MD5") << "\n"
-    << request.header("Content-Type") << "\n"
-    << request.header("Date") << "\n"
-    << canonicalizedHeaders(request.headers());
+            << request.header("Accept") << "\n"
+            << request.header("Content-MD5") << "\n"
+            << request.header("Content-Type") << "\n"
+            << request.header("Date") << "\n"
+            << canonicalizedHeaders(request.headers());
   if (!url.hasQuery())
     plaintext << url.path();
   else
     plaintext << url.path() << "?" << url.query();
 
   std::stringstream sign;
-  sign << "acs "
-    << credentials.accessKeyId()
-    << ":"
-    << signer_->generate(plaintext.str(), credentials.accessKeySecret());
+  sign << "acs " << credentials.accessKeyId() << ":"
+       << signer_->generate(plaintext.str(), credentials.accessKeySecret());
   request.setHeader("Authorization", sign.str());
   return request;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

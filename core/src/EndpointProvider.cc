@@ -16,12 +16,12 @@
 
 #include <algorithm>
 #include <alibabacloud/core/EndpointProvider.h>
+#include <condition_variable>
 #include <iomanip>
 #include <json/json.h>
+#include <mutex>
 #include <sstream>
 #include <thread>
-#include <mutex>
-#include <condition_variable>
 
 #ifndef WIN32
 #include "LocalEndpoints.h"
@@ -30,11 +30,9 @@
 #include "LocalEndpointsForWindows.h"
 #endif
 
-namespace AlibabaCloud
-{
+namespace AlibabaCloud {
 
-namespace
-{
+namespace {
 #if defined(WIN32) && defined(_MSC_VER)
 #define strcasecmp _stricmp
 #define strncasecmp _strnicmp
@@ -52,8 +50,7 @@ typedef std::string endpointType;
 typedef std::string mappingType;
 typedef std::vector<regionType> regionsType;
 typedef std::map<productType, endpointType> regionalType;
-typedef struct
-{
+typedef struct {
   regionsType regions;
   regionalType regional;
 } productInfoType;
@@ -62,14 +59,12 @@ static std::vector<regionType> allRegions;
 static std::vector<productType> allProductsInLocalEndpoints;
 static std::map<productType, productInfoType> allLocalEndpoints;
 
-static void LoadLocalEndpoints()
-{
+static void LoadLocalEndpoints() {
   Json::Reader reader;
   Json::Value value;
   std::unique_lock<std::mutex> lock(mutex);
 
-  if (local_endpoints_loaded)
-  {
+  if (local_endpoints_loaded) {
     return;
   }
 
@@ -79,42 +74,38 @@ static void LoadLocalEndpoints()
                                        WIN_LOCAL_ENDPOINTS_CONFIG_3;
 #endif
 
-  if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value))
-  {
+  if (!reader.parse(LOCAL_ENDPOINTS_CONFIG, value)) {
     return;
   }
 
-  cv.wait(lock, [] { return !local_endpoints_loading; });// continue if loading completed
+  cv.wait(lock, [] {
+    return !local_endpoints_loading;
+  }); // continue if loading completed
 
   local_endpoints_loading = true;
 
   auto regions = value["regions"];
-  for (const auto &region : regions)
-  {
+  for (const auto &region : regions) {
     allRegions.push_back(region.asString());
   }
 
   auto products = value["products"];
-  for (const auto &product : products)
-  {
+  for (const auto &product : products) {
     allProductsInLocalEndpoints.push_back(product.asString());
   }
 
   auto endpoints = value["endpoints"];
-  for (auto &product : allProductsInLocalEndpoints)
-  {
+  for (auto &product : allProductsInLocalEndpoints) {
     auto endpoint_per_product = endpoints[product];
     productInfoType p;
 
     auto regions = endpoint_per_product["regions"];
     auto regional = endpoint_per_product["regional"];
 
-    for (auto &r : regions)
-    {
+    for (auto &r : regions) {
       const std::string region = r.asString();
       p.regions.push_back(region);
-      p.regional[region] =
-          endpoint_per_product["regional"][region].asString();
+      p.regional[region] = endpoint_per_product["regional"][region].asString();
     }
     allLocalEndpoints[product] = p;
   }
@@ -133,8 +124,7 @@ EndpointProvider::EndpointProvider(
     const std::string serviceCode, int durationSeconds)
     : LocationClient(locationClient), regionId_(regionId), product_(product),
       serviceCode_(serviceCode), durationSeconds_(durationSeconds),
-      cachedMutex_(), cachedEndpoint_(), expiry_()
-{
+      cachedMutex_(), cachedEndpoint_(), expiry_() {
   transform(product_.begin(), product_.end(), product_.begin(), ::tolower);
   loadLocalProductsInfo();
 }
@@ -148,34 +138,29 @@ EndpointProvider::EndpointProvider(const Credentials &credentials,
     : LocationClient(credentials, configuration), regionId_(regionId),
       product_(product), serviceCode_(serviceCode),
       durationSeconds_(durationSeconds), cachedMutex_(), cachedEndpoint_(),
-      expiry_()
-{
+      expiry_() {
   transform(product_.begin(), product_.end(), product_.begin(), ::tolower);
   loadLocalProductsInfo();
 }
 
 EndpointProvider::~EndpointProvider() {}
 
-bool EndpointProvider::loadLocalProductsInfo()
-{
+bool EndpointProvider::loadLocalProductsInfo() {
   LoadLocalEndpoints();
   return true;
 }
 
 std::string EndpointProvider::localEndpoint(const std::string regionId,
-                                            const std::string product)
-{
+                                            const std::string product) {
 
-  if (!local_endpoints_loaded)
-  {
+  if (!local_endpoints_loaded) {
     // impossible
     return std::string();
   }
 
   std::vector<regionType>::iterator allRegionsit;
   allRegionsit = std::find(allRegions.begin(), allRegions.end(), regionId);
-  if (allRegionsit == allRegions.end())
-  {
+  if (allRegionsit == allRegions.end()) {
     return std::string();
   }
 
@@ -183,47 +168,40 @@ std::string EndpointProvider::localEndpoint(const std::string regionId,
   allProductsInLocalEndpointsit =
       std::find(allProductsInLocalEndpoints.begin(),
                 allProductsInLocalEndpoints.end(), product);
-  if (allProductsInLocalEndpointsit == allProductsInLocalEndpoints.end())
-  {
+  if (allProductsInLocalEndpointsit == allProductsInLocalEndpoints.end()) {
     return std::string();
   }
 
   std::vector<regionType> vec = allLocalEndpoints[product].regions;
   std::vector<regionType>::iterator it;
   it = std::find(vec.begin(), vec.end(), regionId);
-  if (it == vec.end())
-  {
+  if (it == vec.end()) {
     return std::string();
   }
   return allLocalEndpoints[product].regional[regionId];
 }
 
-bool EndpointProvider::checkExpiry() const
-{
+bool EndpointProvider::checkExpiry() const {
   auto now = std::chrono::system_clock::now();
   auto diff =
       std::chrono::duration_cast<std::chrono::seconds>(now - expiry_).count();
   return (diff > 0 - 60);
 }
 
-EndpointProvider::EndpointOutcome EndpointProvider::getEndpoint()
-{
+EndpointProvider::EndpointOutcome EndpointProvider::getEndpoint() {
   // 1st priority: user specified via configuration
-  if (!configuration().endpoint().empty())
-  {
+  if (!configuration().endpoint().empty()) {
     return EndpointOutcome(configuration().endpoint());
   }
 
   // 2nd priority: local configuration
   std::string endpoint = localEndpoint(regionId_, product_);
-  if (!endpoint.empty())
-  {
+  if (!endpoint.empty()) {
     return EndpointOutcome(endpoint);
   }
 
   // service code is mandatory for location service.
-  if (serviceCode_.empty())
-  {
+  if (serviceCode_.empty()) {
     return EndpointOutcome(
         Error("InvalidRegionId", "Product[" + product_ + "] at region[" +
                                      regionId_ + "] does not exist."));
@@ -231,26 +209,21 @@ EndpointProvider::EndpointOutcome EndpointProvider::getEndpoint()
 
   // 3rd priority: request from location service
   EndpointOutcome outcome = loadRemoteEndpoint();
-  if (outcome.isSuccess())
-  {
+  if (outcome.isSuccess()) {
     return outcome;
   }
 
-  if (outcome.error().errorCode() == "Illegal Parameter")
-  {
+  if (outcome.error().errorCode() == "Illegal Parameter") {
     return EndpointOutcome(Error("InvalidProduct", "Prodcut[" + serviceCode_ +
                                                        "] does not exist."));
   }
   return outcome;
 }
 
-EndpointProvider::EndpointOutcome EndpointProvider::loadRemoteEndpoint()
-{
-  if (checkExpiry())
-  {
+EndpointProvider::EndpointOutcome EndpointProvider::loadRemoteEndpoint() {
+  if (checkExpiry()) {
     std::lock_guard<std::mutex> locker(cachedMutex_);
-    if (checkExpiry())
-    {
+    if (checkExpiry()) {
       Location::Model::DescribeEndpointsRequest request;
       request.setId(regionId_);
       request.setServiceCode(serviceCode_);

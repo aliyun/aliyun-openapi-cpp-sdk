@@ -19,23 +19,16 @@
 namespace AlibabaCloud {
 
 Credentials::Credentials(const std::string &accessKeyId,
-    const std::string &accessKeySecret,
-    const std::string &sessionToken) :
-  accessKeyId_(accessKeyId),
-  accessKeySecret_(accessKeySecret),
-  sessionToken_(sessionToken) {
-}
+                         const std::string &accessKeySecret,
+                         const std::string &sessionToken)
+    : accessKeyId_(accessKeyId), accessKeySecret_(accessKeySecret),
+      sessionToken_(sessionToken) {}
 
-Credentials::~Credentials() {
-}
+Credentials::~Credentials() {}
 
-std::string Credentials::accessKeyId() const {
-  return accessKeyId_;
-}
+std::string Credentials::accessKeyId() const { return accessKeyId_; }
 
-std::string Credentials::accessKeySecret() const {
-  return accessKeySecret_;
-}
+std::string Credentials::accessKeySecret() const { return accessKeySecret_; }
 
 void Credentials::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
@@ -49,8 +42,6 @@ void Credentials::setSessionToken(const std::string &sessionToken) {
   sessionToken_ = sessionToken;
 }
 
-std::string Credentials::sessionToken() const {
-  return sessionToken_;
-}
+std::string Credentials::sessionToken() const { return sessionToken_; }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

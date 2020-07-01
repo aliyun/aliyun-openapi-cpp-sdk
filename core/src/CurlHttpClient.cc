@@ -18,9 +18,9 @@
 #include <alibabacloud/core/Utils.h>
 #include <cassert>
 #include <sstream>
+#include <string.h>
 #include <string>
 #include <vector>
-#include <string.h>
 
 namespace AlibabaCloud {
 
@@ -52,13 +52,13 @@ static size_t readCallback(void *ptr, size_t size, size_t nmemb, void *stream) {
 }
 
 size_t recvBody(char *ptr, size_t size, size_t nmemb, void *userdata) {
-  std::ostringstream &out = *static_cast<std::ostringstream*>(userdata);
-  out << std::string(ptr, nmemb*size);
+  std::ostringstream &out = *static_cast<std::ostringstream *>(userdata);
+  out << std::string(ptr, nmemb * size);
   return nmemb * size;
 }
 
 size_t recvHeaders(char *buffer, size_t size, size_t nitems, void *userdata) {
-  HttpResponse *response = static_cast<HttpResponse*>(userdata);
+  HttpResponse *response = static_cast<HttpResponse *>(userdata);
   std::string line(buffer);
   auto pos = line.find(':');
   if (pos != line.npos) {
@@ -98,16 +98,12 @@ void setCUrlProxy(CURL *curlHandle, const NetworkProxy &proxy) {
     curl_easy_setopt(curlHandle, CURLOPT_PROXYUSERPWD, out.str().c_str());
   }
 }
-}  // namespace
+} // namespace
 
-CurlHttpClient::CurlHttpClient() :
-  HttpClient(),
-  curlHandle_(curl_easy_init()) {
-}
+CurlHttpClient::CurlHttpClient()
+    : HttpClient(), curlHandle_(curl_easy_init()) {}
 
-CurlHttpClient::~CurlHttpClient() {
-  curl_easy_cleanup(curlHandle_);
-}
+CurlHttpClient::~CurlHttpClient() { curl_easy_cleanup(curlHandle_); }
 
 HttpClient::HttpResponseOutcome
 CurlHttpClient::makeRequest(const HttpRequest &request) {
@@ -119,46 +115,43 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
 
   std::string url = request.url().toString();
   switch (request.method()) {
-    case HttpRequest::Method::Get:
+  case HttpRequest::Method::Get:
     break;
-    case HttpRequest::Method::Post: {
-      if (request.bodySize() > 0) {
-        curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
-      } else {
-        curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
-      }
+  case HttpRequest::Method::Post: {
+    if (request.bodySize() > 0) {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
+    } else {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
     }
-    break;
+  } break;
 
-    case HttpRequest::Method::Put: {
-      uploadContext* ctx = (uploadContext *)malloc(sizeof(uploadContext));
-      // this is impossible, as the size is 24 Bytes
-      if (ctx == nullptr) {
-        return HttpResponseOutcome(
+  case HttpRequest::Method::Put: {
+    uploadContext *ctx = (uploadContext *)malloc(sizeof(uploadContext));
+    // this is impossible, as the size is 24 Bytes
+    if (ctx == nullptr) {
+      return HttpResponseOutcome(
           Error("MemoryAllocateError",
-            "There is not enough memory for http transfer."));
-      }
-      ctx->data = request.body();
-      ctx->pos = request.body();
-      ctx->last = ctx->pos + request.bodySize();
-
-      curl_easy_setopt(curlHandle_, CURLOPT_READFUNCTION, readCallback);
-      curl_easy_setopt(curlHandle_, CURLOPT_UPLOAD, 1L);
-      curl_easy_setopt(curlHandle_, CURLOPT_READDATA, ctx);
+                "There is not enough memory for http transfer."));
     }
-    break;
+    ctx->data = request.body();
+    ctx->pos = request.body();
+    ctx->last = ctx->pos + request.bodySize();
 
-    case HttpRequest::Method::Delete: {
-      curl_easy_setopt(curlHandle_, CURLOPT_CUSTOMREQUEST, "DELETE");
-      if (request.bodySize() > 0) {
-        curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
-      } else {
-        curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
-      }
+    curl_easy_setopt(curlHandle_, CURLOPT_READFUNCTION, readCallback);
+    curl_easy_setopt(curlHandle_, CURLOPT_UPLOAD, 1L);
+    curl_easy_setopt(curlHandle_, CURLOPT_READDATA, ctx);
+  } break;
+
+  case HttpRequest::Method::Delete: {
+    curl_easy_setopt(curlHandle_, CURLOPT_CUSTOMREQUEST, "DELETE");
+    if (request.bodySize() > 0) {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, request.body());
+    } else {
+      curl_easy_setopt(curlHandle_, CURLOPT_POSTFIELDS, "");
     }
-    break;
+  } break;
 
-    default:
+  default:
     break;
   }
 
@@ -200,33 +193,34 @@ CurlHttpClient::makeRequest(const HttpRequest &request) {
 
   CURLcode res = curl_easy_perform(curlHandle_);
   switch (res) {
-    case CURLE_OK: {
-      long response_code;
-      curl_easy_getinfo(curlHandle_, CURLINFO_RESPONSE_CODE, &response_code);
-      response.setStatusCode(response_code);
-      response.setBody(out.str().c_str(), out.str().length());
-      return HttpResponseOutcome(response);
-    }
-    case CURLE_SSL_CONNECT_ERROR:
-      return HttpResponseOutcome(
+  case CURLE_OK: {
+    long response_code;
+    curl_easy_getinfo(curlHandle_, CURLINFO_RESPONSE_CODE, &response_code);
+    response.setStatusCode(response_code);
+    response.setBody(out.str().c_str(), out.str().length());
+    return HttpResponseOutcome(response);
+  }
+  case CURLE_SSL_CONNECT_ERROR:
+    return HttpResponseOutcome(
         Error("SSLConnectError",
-          "A problem occurred somewhere in the SSL/TLS handshake."));
-    case CURLE_OPERATION_TIMEDOUT:
-      return HttpResponseOutcome(
+              "A problem occurred somewhere in the SSL/TLS handshake."));
+  case CURLE_OPERATION_TIMEDOUT:
+    return HttpResponseOutcome(
         Error("OperationTimeoutError",
-          "Timeout (connectTimeout: " +
-          std::to_string(connect_timeout) + "ms, readTimeout: " +
-          std::to_string(read_timeout) + "ms) when connect or read data: " +
-          HttpMethodToString(request.method()) + " " + request.url().toString()));
+              "Timeout (connectTimeout: " + std::to_string(connect_timeout) +
+                  "ms, readTimeout: " + std::to_string(read_timeout) +
+                  "ms) when connect or read data: " +
+                  HttpMethodToString(request.method()) + " " +
+                  request.url().toString()));
 
-    default: {
-      return HttpResponseOutcome(
-        Error("NetworkError",
-          "Failed to connect to host or proxy: " +
-          HttpMethodToString(request.method()) + " " + request.url().toString()));
-    }
+  default: {
+    return HttpResponseOutcome(
+        Error("NetworkError", "Failed to connect to host or proxy: " +
+                                  HttpMethodToString(request.method()) + " " +
+                                  request.url().toString()));
+  }
   }
   curl_slist_free_all(list);
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

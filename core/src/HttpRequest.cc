@@ -14,46 +14,29 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/HttpRequest.h>
 #include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/core/HttpRequest.h>
 
 namespace AlibabaCloud {
 
-HttpRequest::HttpRequest(const Url &url, Method method) :
-  HttpMessage(),
-  url_(url),
-  method_(method),
-  connectTimeout_(kDefaultConnectTimeout),
-  readTimeout_(kDefaultReadTimeout) {
-}
+HttpRequest::HttpRequest(const Url &url, Method method)
+    : HttpMessage(), url_(url), method_(method),
+      connectTimeout_(kDefaultConnectTimeout),
+      readTimeout_(kDefaultReadTimeout) {}
 
-HttpRequest::~HttpRequest() {
-}
+HttpRequest::~HttpRequest() {}
 
-HttpRequest::Method HttpRequest::method() const {
-  return method_;
-}
+HttpRequest::Method HttpRequest::method() const { return method_; }
 
+void HttpRequest::setMethod(Method method) { method_ = method; }
 
-void HttpRequest::setMethod(Method method) {
-  method_ = method;
-}
+void HttpRequest::setUrl(const Url &url) { url_ = url; }
 
-void HttpRequest::setUrl(const Url &url) {
-  url_ = url;
-}
+Url HttpRequest::url() const { return url_; }
 
-Url HttpRequest::url()const {
-  return url_;
-}
+long HttpRequest::connectTimeout() const { return connectTimeout_; }
 
-long HttpRequest::connectTimeout() const {
-  return connectTimeout_;
-}
-
-long HttpRequest::readTimeout() const {
-  return readTimeout_;
-}
+long HttpRequest::readTimeout() const { return readTimeout_; }
 
 void HttpRequest::setConnectTimeout(const long connectTimeout) {
   connectTimeout_ = connectTimeout;
@@ -63,4 +46,4 @@ void HttpRequest::setReadTimeout(const long readTimeout) {
   readTimeout_ = readTimeout;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

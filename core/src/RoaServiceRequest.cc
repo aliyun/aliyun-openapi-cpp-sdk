@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/RoaServiceRequest.h>
 #include <algorithm>
+#include <alibabacloud/core/RoaServiceRequest.h>
+#include <alibabacloud/core/Utils.h>
 #include <iomanip>
 #include <sstream>
-#include <alibabacloud/core/Utils.h>
 
-namespace AlibabaCloud
-{
+namespace AlibabaCloud {
 
 RoaServiceRequest::RoaServiceRequest(const std::string &product,
-                                     const std::string &version) : ServiceRequest(product, version)
-{
-}
+                                     const std::string &version)
+    : ServiceRequest(product, version) {}
 
-RoaServiceRequest::~RoaServiceRequest()
-{
-}
+RoaServiceRequest::~RoaServiceRequest() {}
 
 } // namespace AlibabaCloud

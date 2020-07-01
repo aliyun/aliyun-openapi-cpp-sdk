@@ -14,49 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/ServiceRequest.h>
 #include <alibabacloud/core/AlibabaCloud.h>
+#include <alibabacloud/core/ServiceRequest.h>
 #include <alibabacloud/core/Utils.h>
 
-namespace AlibabaCloud
-{
+namespace AlibabaCloud {
 
 ServiceRequest::ServiceRequest(const std::string &product,
-                               const std::string &version) : content_(nullptr),
-                                                             contentSize_(0),
-                                                             params_(),
-                                                             product_(product),
-                                                             resourcePath_("/"),
-                                                             version_(version),
-                                                             scheme_("https"),
-                                                             connectTimeout_(kInvalidTimeout),
-                                                             readTimeout_(kInvalidTimeout),
-                                                             method_(HttpRequest::Method::Get)
-{
-}
+                               const std::string &version)
+    : content_(nullptr), contentSize_(0), params_(), product_(product),
+      resourcePath_("/"), version_(version), scheme_("https"),
+      connectTimeout_(kInvalidTimeout), readTimeout_(kInvalidTimeout),
+      method_(HttpRequest::Method::Get) {}
 
-ServiceRequest::ServiceRequest(const ServiceRequest &other) : content_(nullptr),
-                                                              contentSize_(other.contentSize_),
-                                                              params_(other.params_),
-                                                              product_(other.product_),
-                                                              resourcePath_(other.resourcePath_),
-                                                              version_(other.version_),
-                                                              scheme_(other.scheme_),
-                                                              connectTimeout_(other.connectTimeout_),
-                                                              readTimeout_(other.readTimeout_)
-{
+ServiceRequest::ServiceRequest(const ServiceRequest &other)
+    : content_(nullptr), contentSize_(other.contentSize_),
+      params_(other.params_), product_(other.product_),
+      resourcePath_(other.resourcePath_), version_(other.version_),
+      scheme_(other.scheme_), connectTimeout_(other.connectTimeout_),
+      readTimeout_(other.readTimeout_) {
   setContent(other.content_, other.contentSize_);
 }
 
-ServiceRequest::ServiceRequest(ServiceRequest &&other)
-{
+ServiceRequest::ServiceRequest(ServiceRequest &&other) {
   *this = std::move(other);
 }
 
-ServiceRequest &ServiceRequest::operator=(const ServiceRequest &other)
-{
-  if (this != &other)
-  {
+ServiceRequest &ServiceRequest::operator=(const ServiceRequest &other) {
+  if (this != &other) {
     content_ = nullptr;
     contentSize_ = 0;
     params_ = other.params_;
@@ -67,42 +52,29 @@ ServiceRequest &ServiceRequest::operator=(const ServiceRequest &other)
   return *this;
 }
 
-ServiceRequest &ServiceRequest::operator=(ServiceRequest &&other)
-{
+ServiceRequest &ServiceRequest::operator=(ServiceRequest &&other) {
   if (this != &other)
     *this = std::move(other);
   return *this;
 }
 
-ServiceRequest::~ServiceRequest()
-{
+ServiceRequest::~ServiceRequest() {
   if (content_)
     delete content_;
 }
 
-const char *ServiceRequest::content() const
-{
-  return content_;
-}
+const char *ServiceRequest::content() const { return content_; }
 
-size_t ServiceRequest::contentSize() const
-{
-  return contentSize_;
-}
+size_t ServiceRequest::contentSize() const { return contentSize_; }
 
-bool ServiceRequest::hasContent() const
-{
-  return (contentSize_ != 0);
-}
+bool ServiceRequest::hasContent() const { return (contentSize_ != 0); }
 
-void ServiceRequest::setContent(const char *data, size_t size)
-{
+void ServiceRequest::setContent(const char *data, size_t size) {
   if (content_)
     delete content_;
   content_ = nullptr;
   contentSize_ = 0;
-  if (size)
-  {
+  if (size) {
     contentSize_ = size;
     content_ = new char[size];
     std::copy(data, data + size, content_);
@@ -110,160 +82,119 @@ void ServiceRequest::setContent(const char *data, size_t size)
 }
 
 void ServiceRequest::addParameter(const ParameterNameType &name,
-                                  const ParameterValueType &value)
-{
+                                  const ParameterValueType &value) {
   setParameter(name, value);
 }
 
-ServiceRequest::ParameterValueType ServiceRequest::parameter(
-    const ParameterNameType &name) const
-{
+ServiceRequest::ParameterValueType
+ServiceRequest::parameter(const ParameterNameType &name) const {
   ParameterCollection::const_iterator it = params_.find(name);
-  if (it == params_.end())
-  {
+  if (it == params_.end()) {
     return ParameterValueType("");
   }
   return it->second;
 }
 
-ServiceRequest::ParameterValueType ServiceRequest::coreParameter(
-    const ParameterNameType &name) const
-{
+ServiceRequest::ParameterValueType
+ServiceRequest::coreParameter(const ParameterNameType &name) const {
   return parameter(name);
 }
 
-ServiceRequest::ParameterCollection ServiceRequest::parameters() const
-{
+ServiceRequest::ParameterCollection ServiceRequest::parameters() const {
   return params_;
 }
 
-
-ServiceRequest::ParameterCollection ServiceRequest::bodyParameters() const
-{
+ServiceRequest::ParameterCollection ServiceRequest::bodyParameters() const {
   return body_params_;
 }
 
-void ServiceRequest::removeParameter(const ParameterNameType &name)
-{
+void ServiceRequest::removeParameter(const ParameterNameType &name) {
   params_.erase(name);
 }
 
 void ServiceRequest::setParameter(const ParameterNameType &name,
-                                  const ParameterValueType &value)
-{
+                                  const ParameterValueType &value) {
   params_[name] = value;
 }
 
-void ServiceRequest::setCoreParameter(const ParameterNameType &name, const ParameterValueType &value)
-{
+void ServiceRequest::setCoreParameter(const ParameterNameType &name,
+                                      const ParameterValueType &value) {
   setParameter(name, value);
 }
 
-void ServiceRequest::setBodyParameter(const ParameterNameType &name, const ParameterValueType &value)
-{
+void ServiceRequest::setBodyParameter(const ParameterNameType &name,
+                                      const ParameterValueType &value) {
   body_params_[name] = value;
 }
 
-void ServiceRequest::setParameters(const ParameterCollection &params)
-{
+void ServiceRequest::setParameters(const ParameterCollection &params) {
   params_ = params;
 }
 
-void ServiceRequest::setJsonParameters(const ParameterNameType &name, const ParameterCollection &params)
-{
+void ServiceRequest::setJsonParameters(const ParameterNameType &name,
+                                       const ParameterCollection &params) {
   params_ = params;
   params_ = params;
   setParameter(name, AlibabaCloud::MapToJson(params));
 }
 
-std::string ServiceRequest::version() const
-{
-  return version_;
-}
+std::string ServiceRequest::version() const { return version_; }
 
-HttpRequest::Method ServiceRequest::method() const
-{
-  return method_;
-}
+HttpRequest::Method ServiceRequest::method() const { return method_; }
 
-void ServiceRequest::setVersion(const std::string &version)
-{
+void ServiceRequest::setVersion(const std::string &version) {
   version_ = version;
 }
 
-std::string ServiceRequest::product() const
-{
-  return product_;
-}
+std::string ServiceRequest::product() const { return product_; }
 
-void ServiceRequest::setProduct(const std::string &product)
-{
+void ServiceRequest::setProduct(const std::string &product) {
   product_ = product;
 }
 
-std::string ServiceRequest::resourcePath() const
-{
-  return resourcePath_;
-}
+std::string ServiceRequest::resourcePath() const { return resourcePath_; }
 
-void ServiceRequest::setResourcePath(const std::string &path)
-{
+void ServiceRequest::setResourcePath(const std::string &path) {
   resourcePath_ = path;
 }
 
-void ServiceRequest::setScheme(const std::string scheme)
-{
-  scheme_ = scheme;
-}
+void ServiceRequest::setScheme(const std::string scheme) { scheme_ = scheme; }
 
-std::string ServiceRequest::scheme() const
-{
-  return scheme_;
-}
+std::string ServiceRequest::scheme() const { return scheme_; }
 
-long ServiceRequest::connectTimeout() const
-{
-  return connectTimeout_;
-}
+long ServiceRequest::connectTimeout() const { return connectTimeout_; }
 
-long ServiceRequest::readTimeout() const
-{
-  return readTimeout_;
-}
+long ServiceRequest::readTimeout() const { return readTimeout_; }
 
-void ServiceRequest::setConnectTimeout(const long connectTimeout)
-{
+void ServiceRequest::setConnectTimeout(const long connectTimeout) {
   connectTimeout_ = connectTimeout;
 }
 
-void ServiceRequest::setReadTimeout(const long readTimeout)
-{
+void ServiceRequest::setReadTimeout(const long readTimeout) {
   readTimeout_ = readTimeout;
 }
 
-void ServiceRequest::setMethod(const HttpRequest::Method method)
-{
+void ServiceRequest::setMethod(const HttpRequest::Method method) {
   method_ = method;
 }
 
-void ServiceRequest::setHeader(const ServiceRequest::ParameterNameType &name,
-                               const ServiceRequest::ParameterValueType &value)
-{
+void ServiceRequest::setHeader(
+    const ServiceRequest::ParameterNameType &name,
+    const ServiceRequest::ParameterValueType &value) {
   headers_[name] = value;
 }
 
-ServiceRequest::ParameterValueType ServiceRequest::getHeader(const ServiceRequest::ParameterNameType &name)
-{
+ServiceRequest::ParameterValueType
+ServiceRequest::getHeader(const ServiceRequest::ParameterNameType &name) {
   return headers_[name];
 }
 
-void ServiceRequest::removeHeader(const ServiceRequest::ParameterNameType &name)
-{
+void ServiceRequest::removeHeader(
+    const ServiceRequest::ParameterNameType &name) {
   headers_.erase(name);
 }
 
-ServiceRequest::ParameterCollection ServiceRequest::headers() const
-{
+ServiceRequest::ParameterCollection ServiceRequest::headers() const {
   return headers_;
 }
 

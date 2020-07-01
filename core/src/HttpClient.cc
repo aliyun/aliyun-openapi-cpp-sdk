@@ -16,32 +16,23 @@
 
 #include <alibabacloud/core/HttpClient.h>
 #include <cassert>
-#include <vector>
 #include <sstream>
+#include <vector>
 
 namespace AlibabaCloud {
 
-HttpClient::HttpClient() :
-  proxy_() {
-}
+HttpClient::HttpClient() : proxy_() {}
 
-HttpClient::~HttpClient() {
-}
+HttpClient::~HttpClient() {}
 
-NetworkProxy HttpClient::proxy()const {
-  return proxy_;
-}
+NetworkProxy HttpClient::proxy() const { return proxy_; }
 
-void HttpClient::setProxy(const NetworkProxy &proxy) {
-  proxy_ = proxy;
-}
+void HttpClient::setProxy(const NetworkProxy &proxy) { proxy_ = proxy; }
 
-bool HttpClient::rejectUnauthorized()const{
-    return rejectUnauthorized_;
-}
+bool HttpClient::rejectUnauthorized() const { return rejectUnauthorized_; }
 
 void HttpClient::setRejectUnauthorized(const bool &rejectUnauthorized) {
-    rejectUnauthorized_ = rejectUnauthorized;
+  rejectUnauthorized_ = rejectUnauthorized;
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

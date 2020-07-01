@@ -1,18 +1,18 @@
 /*
-* Copyright 1999-2019 Alibaba Cloud All rights reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright 1999-2019 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 #include "Executor.h"
 #include <alibabacloud/core/Runnable.h>
@@ -21,12 +21,9 @@ namespace AlibabaCloud {
 
 Executor *Executor::self_ = nullptr;
 
-Executor::Executor() :
-  cvMutex_(),
-  shutdown_(true),
-  tasksQueue_(),
-  tasksQueueMutex_(),
-  thread_() {
+Executor::Executor()
+    : cvMutex_(), shutdown_(true), tasksQueue_(), tasksQueueMutex_(),
+      thread_() {
   self_ = this;
 }
 
@@ -35,9 +32,7 @@ Executor::~Executor() {
   shutdown();
 }
 
-Executor * Executor::instance() {
-  return self_;
-}
+Executor *Executor::instance() { return self_; }
 
 bool Executor::start() {
   if (!isShutdown())
@@ -73,11 +68,9 @@ bool Executor::start() {
   return true;
 }
 
-bool Executor::isShutdown()const {
-  return shutdown_;
-}
+bool Executor::isShutdown() const { return shutdown_; }
 
-void Executor::execute(Runnable* task) {
+void Executor::execute(Runnable *task) {
   if (isShutdown())
     return;
 
@@ -111,4 +104,4 @@ void Executor::shutdown() {
     thread_.join();
 }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

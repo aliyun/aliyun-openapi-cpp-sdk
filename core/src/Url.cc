@@ -14,46 +14,33 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/core/Url.h>
 #include <algorithm>
+#include <alibabacloud/core/Url.h>
 #include <sstream>
 
 namespace AlibabaCloud {
 
 namespace {
 #define INVALID_PORT -1
-}
+} // namespace
 
-Url::Url(const std::string & url) :
-  scheme_(),
-  userName_(),
-  password_(),
-  host_(),
-  path_(),
-  port_(INVALID_PORT),
-  query_(),
-  fragment_() {
+Url::Url(const std::string &url)
+    : scheme_(), userName_(), password_(), host_(), path_(),
+      port_(INVALID_PORT), query_(), fragment_() {
   if (!url.empty())
     fromString(url);
 }
 
-Url::~Url() {
-}
+Url::~Url() {}
 
 bool Url::operator==(const Url &url) const {
-  return scheme_ == url.scheme_
-    && userName_ == url.userName_
-    && password_ == url.password_
-    && host_ == url.host_
-    && path_ == url.path_
-    && port_ == url.port_
-    && query_ == url.query_
-    && fragment_ == url.fragment_;
+  return scheme_ == url.scheme_ && userName_ == url.userName_ &&
+         password_ == url.password_ && host_ == url.host_ &&
+         path_ == url.path_ && port_ == url.port_ && query_ == url.query_ &&
+         fragment_ == url.fragment_;
 }
 
-bool Url::operator!=(const Url &url) const {
-  return !(*this == url);
-}
+bool Url::operator!=(const Url &url) const { return !(*this == url); }
 
 std::string Url::authority() const {
   if (!isValid())
@@ -80,11 +67,9 @@ void Url::clear() {
   fragment_.clear();
 }
 
-std::string Url::fragment() const {
-  return fragment_;
-}
+std::string Url::fragment() const { return fragment_; }
 
-void Url::fromString(const std::string & url) {
+void Url::fromString(const std::string &url) {
   clear();
   if (url.empty())
     return;
@@ -128,27 +113,16 @@ void Url::fromString(const std::string & url) {
   setFragment(fragment);
 }
 
-bool Url::hasFragment() const {
-  return !fragment_.empty();
-}
+bool Url::hasFragment() const { return !fragment_.empty(); }
 
-bool Url::hasQuery() const {
-  return !query_.empty();
-}
+bool Url::hasQuery() const { return !query_.empty(); }
 
-std::string Url::host() const {
-  return host_;
-}
+std::string Url::host() const { return host_; }
 
 bool Url::isEmpty() const {
-  return scheme_.empty()
-    && userName_.empty()
-    && password_.empty()
-    && host_.empty()
-    && path_.empty()
-    && (port_ == INVALID_PORT)
-    && query_.empty()
-    && fragment_.empty();
+  return scheme_.empty() && userName_.empty() && password_.empty() &&
+         host_.empty() && path_.empty() && (port_ == INVALID_PORT) &&
+         query_.empty() && fragment_.empty();
 }
 
 bool Url::isValid() const {
@@ -164,27 +138,17 @@ bool Url::isValid() const {
   return valid;
 }
 
-int Url::port() const {
-  return port_;
-}
+int Url::port() const { return port_; }
 
-std::string Url::password() const {
-  return password_;
-}
+std::string Url::password() const { return password_; }
 
-std::string Url::path() const {
-  return path_;
-}
+std::string Url::path() const { return path_; }
 
-std::string Url::query() const {
-  return query_;
-}
+std::string Url::query() const { return query_; }
 
-std::string Url::scheme() const {
-  return scheme_;
-}
+std::string Url::scheme() const { return scheme_; }
 
-void Url::setAuthority(const std::string & authority) {
+void Url::setAuthority(const std::string &authority) {
   if (authority.empty()) {
     setUserInfo("");
     setHost("");
@@ -213,14 +177,12 @@ void Url::setAuthority(const std::string & authority) {
 
   setUserInfo(userinfo);
   setHost(host);
-  setPort(!port.empty() ? atoi(port.c_str()): INVALID_PORT);
+  setPort(!port.empty() ? atoi(port.c_str()) : INVALID_PORT);
 }
 
-void Url::setFragment(const std::string & fragment) {
-  fragment_ = fragment;
-}
+void Url::setFragment(const std::string &fragment) { fragment_ = fragment; }
 
-void Url::setHost(const std::string & host) {
+void Url::setHost(const std::string &host) {
   if (host.empty()) {
     host_.clear();
     return;
@@ -229,23 +191,15 @@ void Url::setHost(const std::string & host) {
   std::transform(host_.begin(), host_.end(), host_.begin(), ::tolower);
 }
 
-void Url::setPassword(const std::string & password) {
-  password_ = password;
-}
+void Url::setPassword(const std::string &password) { password_ = password; }
 
-void Url::setPath(const std::string & path) {
-  path_ = path;
-}
+void Url::setPath(const std::string &path) { path_ = path; }
 
-void Url::setPort(int port) {
-  port_ = port;
-}
+void Url::setPort(int port) { port_ = port; }
 
-void Url::setQuery(const std::string & query) {
-  query_ = query;
-}
+void Url::setQuery(const std::string &query) { query_ = query; }
 
-void Url::setScheme(const std::string & scheme) {
+void Url::setScheme(const std::string &scheme) {
   if (scheme.empty()) {
     scheme_.clear();
     return;
@@ -254,7 +208,7 @@ void Url::setScheme(const std::string & scheme) {
   std::transform(scheme_.begin(), scheme_.end(), scheme_.begin(), ::tolower);
 }
 
-void Url::setUserInfo(const std::string & userInfo) {
+void Url::setUserInfo(const std::string &userInfo) {
   if (userInfo.empty()) {
     userName_.clear();
     password_.clear();
@@ -270,9 +224,7 @@ void Url::setUserInfo(const std::string & userInfo) {
   }
 }
 
-void Url::setUserName(const std::string & userName) {
-  userName_ = userName;
-}
+void Url::setUserName(const std::string &userName) { userName_ = userName; }
 
 std::string Url::toString() const {
   if (!isValid())
@@ -306,8 +258,6 @@ std::string Url::userInfo() const {
   return out.str();
 }
 
-std::string Url::userName() const {
-  return userName_;
-}
+std::string Url::userName() const { return userName_; }
 
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud

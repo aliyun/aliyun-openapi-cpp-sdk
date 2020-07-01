@@ -15,9 +15,9 @@
  */
 
 #include <algorithm>
+#include <alibabacloud/core/Utils.h>
 #include <sstream>
 #include <stdlib.h>
-#include <alibabacloud/core/Utils.h>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -29,8 +29,7 @@
 #include <curl/curl.h>
 #include <json/json.h>
 
-std::string AlibabaCloud::GenerateUuid()
-{
+std::string AlibabaCloud::GenerateUuid() {
 #ifdef _WIN32
   char *data;
   UUID uuidhandle;
@@ -48,8 +47,7 @@ std::string AlibabaCloud::GenerateUuid()
 #endif
 }
 
-std::string AlibabaCloud::UrlEncode(const std::string &src)
-{
+std::string AlibabaCloud::UrlEncode(const std::string &src) {
   CURL *curl = curl_easy_init();
   char *output = curl_easy_escape(curl, src.c_str(), src.size());
   std::string result(output);
@@ -58,8 +56,7 @@ std::string AlibabaCloud::UrlEncode(const std::string &src)
   return result;
 }
 
-std::string AlibabaCloud::UrlDecode(const std::string &src)
-{
+std::string AlibabaCloud::UrlDecode(const std::string &src) {
   CURL *curl = curl_easy_init();
   int outlength = 0;
   char *output = curl_easy_unescape(curl, src.c_str(), src.size(), &outlength);
@@ -69,8 +66,7 @@ std::string AlibabaCloud::UrlDecode(const std::string &src)
   return result;
 }
 
-std::string AlibabaCloud::ComputeContentMD5(const char *data, size_t size)
-{
+std::string AlibabaCloud::ComputeContentMD5(const char *data, size_t size) {
 #ifdef _WIN32
   HCRYPTPROV hProv = 0;
   HCRYPTHASH hHash = 0;
@@ -108,20 +104,16 @@ std::string AlibabaCloud::ComputeContentMD5(const char *data, size_t size)
 }
 
 void AlibabaCloud::StringReplace(std::string &src, const std::string &s1,
-                                 const std::string &s2)
-{
+                                 const std::string &s2) {
   std::string::size_type pos = 0;
-  while ((pos = src.find(s1, pos)) != std::string::npos)
-  {
+  while ((pos = src.find(s1, pos)) != std::string::npos) {
     src.replace(pos, s1.length(), s2);
     pos += s2.length();
   }
 }
 
-std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method)
-{
-  switch (method)
-  {
+std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method) {
+  switch (method) {
   case HttpRequest::Method::Head:
     return "HEAD";
     break;
@@ -154,14 +146,12 @@ std::string AlibabaCloud::HttpMethodToString(HttpRequest::Method method)
 }
 
 std::string AlibabaCloud::canonicalizedQuery(
-    const std::map<std::string, std::string> &params)
-{
+    const std::map<std::string, std::string> &params) {
   if (params.empty())
     return std::string();
 
   std::stringstream ss;
-  for (const auto &p : params)
-  {
+  for (const auto &p : params) {
     std::string key = UrlEncode(p.first);
     StringReplace(key, "+", "%20");
     StringReplace(key, "*", "%2A");
@@ -176,11 +166,9 @@ std::string AlibabaCloud::canonicalizedQuery(
 }
 
 std::string AlibabaCloud::canonicalizedHeaders(
-    const HttpMessage::HeaderCollection &headers)
-{
+    const HttpMessage::HeaderCollection &headers) {
   std::map<std::string, std::string> materials;
-  for (const auto &p : headers)
-  {
+  for (const auto &p : headers) {
     std::string key = p.first;
     std::transform(key.begin(), key.end(), key.begin(), ::tolower);
     if (key.find("x-acs-") != 0)
@@ -203,91 +191,78 @@ std::string AlibabaCloud::canonicalizedHeaders(
   return ss.str();
 }
 
-std::string AlibabaCloud::GetEnv(const std::string env)
-{
+std::string AlibabaCloud::GetEnv(const std::string env) {
 #ifdef _WIN32
   char *buf = nullptr;
   size_t sz = 0;
-  if (_dupenv_s(&buf, &sz, env.c_str()) == 0 && buf != nullptr)
-  {
+  if (_dupenv_s(&buf, &sz, env.c_str()) == 0 && buf != nullptr) {
     std::string var(buf);
     free(buf);
     return var;
-  }
-  else
-  {
-    if (buf)
-    {
+  } else {
+    if (buf) {
       free(buf);
     }
     return std::string();
   }
 #else
   char *var = getenv(env.c_str());
-  if (var)
-  {
+  if (var) {
     return std::string(var);
   }
   return std::string();
 #endif
 }
 
-std::string AlibabaCloud::MapToJson(const std::map<std::string, std::string> &maps)
-{
+std::string
+AlibabaCloud::MapToJson(const std::map<std::string, std::string> &maps) {
   Json::Value jsonObject;
-  Json::FastWriter writer; 
-  for (std::map<std::string, std::string>::const_iterator iter = maps.begin(); iter != maps.end(); ++iter)
-  {
+  Json::FastWriter writer;
+  for (std::map<std::string, std::string>::const_iterator iter = maps.begin();
+       iter != maps.end(); ++iter) {
     jsonObject[iter->first] = iter->second;
   }
   std::string unformat_str = writer.write(jsonObject);
   return unformat_str.substr(0, unformat_str.length() - 1);
 }
 
-std::map<std::string, std::string> AlibabaCloud::JsonToMap(const std::string &json)
-{
+std::map<std::string, std::string>
+AlibabaCloud::JsonToMap(const std::string &json) {
   Json::Reader reader;
   Json::Value value;
   std::map<std::string, std::string> maps;
 
-  if (json.length() > 0)
-  {
-    if (reader.parse(json, value))
-    {
+  if (json.length() > 0) {
+    if (reader.parse(json, value)) {
       Json::Value::Members members = value.getMemberNames();
-      for (Json::Value::Members::iterator it = members.begin(); it != members.end(); it++)
-      {
+      for (Json::Value::Members::iterator it = members.begin();
+           it != members.end(); ++it) {
         Json::ValueType vt = value[*it].type();
-        switch (vt)
-        {
-        case Json::stringValue:
-        {
-          maps.insert(std::pair<std::string, std::string>(*it, value[*it].asString()));
+        switch (vt) {
+        case Json::stringValue: {
+          maps.insert(
+              std::pair<std::string, std::string>(*it, value[*it].asString()));
           break;
         }
-        case Json::intValue:
-        {
+        case Json::intValue: {
           int inttmp = value[*it].asInt();
-          maps.insert(std::pair<std::string, std::string>(*it, std::to_string(inttmp)));
+          maps.insert(
+              std::pair<std::string, std::string>(*it, std::to_string(inttmp)));
           break;
         }
-        case Json::arrayValue:
-        {
+        case Json::arrayValue: {
           std::string strid;
-          for (unsigned int i = 0; i < value[*it].size(); i++)
-          {
+          for (unsigned int i = 0; i < value[*it].size(); i++) {
             strid += value[*it][i].asString();
             strid += ",";
           }
-          if (!strid.empty())
-          {
+          if (!strid.empty()) {
             strid = strid.substr(0, strid.size() - 1);
           }
           maps.insert(std::pair<std::string, std::string>(*it, strid));
           break;
         }
-        default:
-        {
+        default: {
           break;
         }
         }
