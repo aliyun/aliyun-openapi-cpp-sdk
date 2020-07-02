@@ -1,3 +1,6 @@
+2020-07-02 Version: 1.36.492
+- Update endpoint.
+
 2020-07-02 Version: 1.36.491
 - CreateShardingDBInstance add ProtocolType, to support DynamoDB.
 - DescribeDBInstances add return ResourceGroupId.
