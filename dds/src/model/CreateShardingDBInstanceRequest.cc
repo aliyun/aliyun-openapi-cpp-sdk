@@ -305,6 +305,17 @@ void CreateShardingDBInstanceRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+std::string CreateShardingDBInstanceRequest::getProtocolType()const
+{
+	return protocolType_;
+}
+
+void CreateShardingDBInstanceRequest::setProtocolType(const std::string& protocolType)
+{
+	protocolType_ = protocolType;
+	setParameter("ProtocolType", protocolType);
+}
+
 std::string CreateShardingDBInstanceRequest::getChargeType()const
 {
 	return chargeType_;

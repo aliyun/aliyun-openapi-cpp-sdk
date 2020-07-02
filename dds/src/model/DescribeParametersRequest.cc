@@ -115,3 +115,14 @@ void DescribeParametersRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeParametersRequest::getCharacterType()const
+{
+	return characterType_;
+}
+
+void DescribeParametersRequest::setCharacterType(const std::string& characterType)
+{
+	characterType_ = characterType;
+	setParameter("CharacterType", characterType);
+}
+

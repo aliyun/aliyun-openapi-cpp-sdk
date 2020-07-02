@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct LogRecords
 				{
+					std::string tableName;
 					std::string queryTimes;
 					std::string executionStartTime;
 					long returnRowCounts;

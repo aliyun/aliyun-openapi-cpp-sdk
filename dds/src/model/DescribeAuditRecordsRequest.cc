@@ -203,3 +203,14 @@ void DescribeAuditRecordsRequest::setUser(const std::string& user)
 	setParameter("User", user);
 }
 
+std::string DescribeAuditRecordsRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void DescribeAuditRecordsRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setParameter("OrderType", orderType);
+}
+

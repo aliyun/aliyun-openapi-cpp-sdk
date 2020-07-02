@@ -61,6 +61,8 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.executionStartTime = valueItemsLogRecords["ExecutionStartTime"].asString();
 		if(!valueItemsLogRecords["AccountName"].isNull())
 			itemsObject.accountName = valueItemsLogRecords["AccountName"].asString();
+		if(!valueItemsLogRecords["TableName"].isNull())
+			itemsObject.tableName = valueItemsLogRecords["TableName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Engine"].isNull())

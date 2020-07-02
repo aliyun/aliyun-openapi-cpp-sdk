@@ -126,3 +126,14 @@ void ModifyParametersRequest::setParameters(const std::string& parameters)
 	setParameter("Parameters", parameters);
 }
 
+std::string ModifyParametersRequest::getCharacterType()const
+{
+	return characterType_;
+}
+
+void ModifyParametersRequest::setCharacterType(const std::string& characterType)
+{
+	characterType_ = characterType;
+	setParameter("CharacterType", characterType);
+}
+

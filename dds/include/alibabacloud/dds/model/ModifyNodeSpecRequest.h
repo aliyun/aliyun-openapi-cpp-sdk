@@ -63,6 +63,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
@@ -79,6 +81,7 @@ namespace AlibabaCloud
 				int nodeStorage_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string orderType_;
 
 			};
 		}

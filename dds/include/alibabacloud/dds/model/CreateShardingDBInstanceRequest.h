@@ -98,6 +98,8 @@ namespace AlibabaCloud
 				void setVpcId(const std::string& vpcId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getProtocolType()const;
+				void setProtocolType(const std::string& protocolType);
 				std::string getChargeType()const;
 				void setChargeType(const std::string& chargeType);
 
@@ -126,6 +128,7 @@ namespace AlibabaCloud
 				std::string autoRenew_;
 				std::string vpcId_;
 				std::string zoneId_;
+				std::string protocolType_;
 				std::string chargeType_;
 
 			};

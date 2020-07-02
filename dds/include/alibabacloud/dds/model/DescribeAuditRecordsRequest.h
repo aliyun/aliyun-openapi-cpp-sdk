@@ -67,6 +67,8 @@ namespace AlibabaCloud
 				void setForm(const std::string& form);
 				std::string getUser()const;
 				void setUser(const std::string& user);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
@@ -85,6 +87,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string form_;
 				std::string user_;
+				std::string orderType_;
 
 			};
 		}

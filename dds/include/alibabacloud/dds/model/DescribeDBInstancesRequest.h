@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setReplicationFactor(const std::string& replicationFactor);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getExpired()const;
 				void setExpired(const std::string& expired);
 				std::string getSecurityToken()const;
@@ -97,6 +99,7 @@ namespace AlibabaCloud
 				int pageNumber_;
 				std::string replicationFactor_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string expired_;
 				std::string securityToken_;
 				std::string engine_;

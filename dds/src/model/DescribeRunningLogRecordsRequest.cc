@@ -192,3 +192,14 @@ void DescribeRunningLogRecordsRequest::setDBName(const std::string& dBName)
 	setParameter("DBName", dBName);
 }
 
+std::string DescribeRunningLogRecordsRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void DescribeRunningLogRecordsRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setParameter("OrderType", orderType);
+}
+

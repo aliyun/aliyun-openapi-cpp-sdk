@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCharacterType()const;
+				void setCharacterType(const std::string& characterType);
 
             private:
 				long resourceOwnerId_;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string ownerAccount_;
 				std::string endTime_;
 				long ownerId_;
+				std::string characterType_;
 
 			};
 		}

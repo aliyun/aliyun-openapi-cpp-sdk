@@ -101,6 +101,7 @@ namespace AlibabaCloud
 					std::string engine;
 					std::string maintainStartTime;
 					std::string replacateId;
+					bool dBInstanceReleaseProtection;
 					std::string engineVersion;
 					std::string zoneId;
 					std::string dBInstanceStatus;

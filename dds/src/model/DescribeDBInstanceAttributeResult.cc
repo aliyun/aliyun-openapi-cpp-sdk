@@ -107,6 +107,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.protocolType = valueDBInstancesDBInstance["ProtocolType"].asString();
 		if(!valueDBInstancesDBInstance["VpcAuthMode"].isNull())
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceReleaseProtection"].isNull())
+			dBInstancesObject.dBInstanceReleaseProtection = valueDBInstancesDBInstance["DBInstanceReleaseProtection"].asString() == "true";
 		auto allMongosListNode = allDBInstancesNode["MongosList"]["MongosAttribute"];
 		for (auto allDBInstancesNodeMongosListMongosAttribute : allMongosListNode)
 		{

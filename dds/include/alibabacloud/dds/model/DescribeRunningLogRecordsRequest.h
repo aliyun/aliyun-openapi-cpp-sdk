@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getDBName()const;
 				void setDBName(const std::string& dBName);
+				std::string getOrderType()const;
+				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				long ownerId_;
 				std::string dBName_;
+				std::string orderType_;
 
 			};
 		}

@@ -181,3 +181,14 @@ void DescribeSlowLogRecordsRequest::setDBName(const std::string& dBName)
 	setParameter("DBName", dBName);
 }
 
+std::string DescribeSlowLogRecordsRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void DescribeSlowLogRecordsRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setParameter("OrderType", orderType);
+}
+
