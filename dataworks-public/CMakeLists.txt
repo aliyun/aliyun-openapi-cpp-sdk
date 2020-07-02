@@ -1,0 +1,506 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(dataworks-public_public_header 
+	include/alibabacloud/dataworks-public/Dataworks_publicClient.h
+	include/alibabacloud/dataworks-public/Dataworks_publicExport.h )
+
+set(dataworks-public_public_header_model 
+	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/AddToMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/CheckMetaPartitionRequest.h
+	include/alibabacloud/dataworks-public/model/CheckMetaPartitionResult.h
+	include/alibabacloud/dataworks-public/model/CheckMetaTableRequest.h
+	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
+	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
+	include/alibabacloud/dataworks-public/model/CreateConnectionResult.h
+	include/alibabacloud/dataworks-public/model/CreateDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/CreateDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/CreateFileRequest.h
+	include/alibabacloud/dataworks-public/model/CreateFileResult.h
+	include/alibabacloud/dataworks-public/model/CreateFolderRequest.h
+	include/alibabacloud/dataworks-public/model/CreateFolderResult.h
+	include/alibabacloud/dataworks-public/model/CreateMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/CreateMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/CreateNodeComplementRequest.h
+	include/alibabacloud/dataworks-public/model/CreateNodeComplementResult.h
+	include/alibabacloud/dataworks-public/model/CreateNodeTestRequest.h
+	include/alibabacloud/dataworks-public/model/CreateNodeTestResult.h
+	include/alibabacloud/dataworks-public/model/CreateQualityEntityRequest.h
+	include/alibabacloud/dataworks-public/model/CreateQualityEntityResult.h
+	include/alibabacloud/dataworks-public/model/CreateQualityFollowerRequest.h
+	include/alibabacloud/dataworks-public/model/CreateQualityFollowerResult.h
+	include/alibabacloud/dataworks-public/model/CreateQualityRelativeNodeRequest.h
+	include/alibabacloud/dataworks-public/model/CreateQualityRelativeNodeResult.h
+	include/alibabacloud/dataworks-public/model/CreateQualityRuleRequest.h
+	include/alibabacloud/dataworks-public/model/CreateQualityRuleResult.h
+	include/alibabacloud/dataworks-public/model/CreateRemindRequest.h
+	include/alibabacloud/dataworks-public/model/CreateRemindResult.h
+	include/alibabacloud/dataworks-public/model/CreateUdfFileRequest.h
+	include/alibabacloud/dataworks-public/model/CreateUdfFileResult.h
+	include/alibabacloud/dataworks-public/model/DeleteBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteBusinessResult.h
+	include/alibabacloud/dataworks-public/model/DeleteConnectionRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteConnectionResult.h
+	include/alibabacloud/dataworks-public/model/DeleteDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/DeleteFileRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteFileResult.h
+	include/alibabacloud/dataworks-public/model/DeleteFolderRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteFolderResult.h
+	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityEntityRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityEntityResult.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityFollowerRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityFollowerResult.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityRelativeNodeRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityRelativeNodeResult.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityRuleRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteQualityRuleResult.h
+	include/alibabacloud/dataworks-public/model/DeleteRemindRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteRemindResult.h
+	include/alibabacloud/dataworks-public/model/DeployFileRequest.h
+	include/alibabacloud/dataworks-public/model/DeployFileResult.h
+	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/EstablishRelationTableToBusinessResult.h
+	include/alibabacloud/dataworks-public/model/GetBaselineConfigRequest.h
+	include/alibabacloud/dataworks-public/model/GetBaselineConfigResult.h
+	include/alibabacloud/dataworks-public/model/GetBaselineKeyPathRequest.h
+	include/alibabacloud/dataworks-public/model/GetBaselineKeyPathResult.h
+	include/alibabacloud/dataworks-public/model/GetBaselineStatusRequest.h
+	include/alibabacloud/dataworks-public/model/GetBaselineStatusResult.h
+	include/alibabacloud/dataworks-public/model/GetBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/GetBusinessResult.h
+	include/alibabacloud/dataworks-public/model/GetDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/GetDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/GetDataServiceApplicationRequest.h
+	include/alibabacloud/dataworks-public/model/GetDataServiceApplicationResult.h
+	include/alibabacloud/dataworks-public/model/GetDataServicePublishedApiRequest.h
+	include/alibabacloud/dataworks-public/model/GetDataServicePublishedApiResult.h
+	include/alibabacloud/dataworks-public/model/GetDeploymentRequest.h
+	include/alibabacloud/dataworks-public/model/GetDeploymentResult.h
+	include/alibabacloud/dataworks-public/model/GetFileRequest.h
+	include/alibabacloud/dataworks-public/model/GetFileResult.h
+	include/alibabacloud/dataworks-public/model/GetFileVersionRequest.h
+	include/alibabacloud/dataworks-public/model/GetFileVersionResult.h
+	include/alibabacloud/dataworks-public/model/GetFolderRequest.h
+	include/alibabacloud/dataworks-public/model/GetFolderResult.h
+	include/alibabacloud/dataworks-public/model/GetInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/GetInstanceResult.h
+	include/alibabacloud/dataworks-public/model/GetInstanceLogRequest.h
+	include/alibabacloud/dataworks-public/model/GetInstanceLogResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaColumnLineageRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaColumnLineageResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaDBInfoRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaDBInfoResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaDBTableListRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaDBTableListResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableBasicInfoRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableBasicInfoResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableChangeLogRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableChangeLogResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableColumnRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableColumnResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableFullInfoRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableFullInfoResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableIntroWikiRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableIntroWikiResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableLineageRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableLineageResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableListByCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableListByCategoryResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableOutputRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableOutputResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTablePartitionRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTablePartitionResult.h
+	include/alibabacloud/dataworks-public/model/GetNodeRequest.h
+	include/alibabacloud/dataworks-public/model/GetNodeResult.h
+	include/alibabacloud/dataworks-public/model/GetNodeCodeRequest.h
+	include/alibabacloud/dataworks-public/model/GetNodeCodeResult.h
+	include/alibabacloud/dataworks-public/model/GetNodeOnBaselineRequest.h
+	include/alibabacloud/dataworks-public/model/GetNodeOnBaselineResult.h
+	include/alibabacloud/dataworks-public/model/GetProjectDetailRequest.h
+	include/alibabacloud/dataworks-public/model/GetProjectDetailResult.h
+	include/alibabacloud/dataworks-public/model/GetQualityEntityRequest.h
+	include/alibabacloud/dataworks-public/model/GetQualityEntityResult.h
+	include/alibabacloud/dataworks-public/model/GetQualityFollowerRequest.h
+	include/alibabacloud/dataworks-public/model/GetQualityFollowerResult.h
+	include/alibabacloud/dataworks-public/model/GetQualityRuleRequest.h
+	include/alibabacloud/dataworks-public/model/GetQualityRuleResult.h
+	include/alibabacloud/dataworks-public/model/GetRemindRequest.h
+	include/alibabacloud/dataworks-public/model/GetRemindResult.h
+	include/alibabacloud/dataworks-public/model/GetTopicRequest.h
+	include/alibabacloud/dataworks-public/model/GetTopicResult.h
+	include/alibabacloud/dataworks-public/model/GetTopicInfluenceRequest.h
+	include/alibabacloud/dataworks-public/model/GetTopicInfluenceResult.h
+	include/alibabacloud/dataworks-public/model/ListAlertMessagesRequest.h
+	include/alibabacloud/dataworks-public/model/ListAlertMessagesResult.h
+	include/alibabacloud/dataworks-public/model/ListBaselineConfigsRequest.h
+	include/alibabacloud/dataworks-public/model/ListBaselineConfigsResult.h
+	include/alibabacloud/dataworks-public/model/ListBaselineStatusesRequest.h
+	include/alibabacloud/dataworks-public/model/ListBaselineStatusesResult.h
+	include/alibabacloud/dataworks-public/model/ListBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/ListBusinessResult.h
+	include/alibabacloud/dataworks-public/model/ListCalcEnginesRequest.h
+	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
+	include/alibabacloud/dataworks-public/model/ListConnectionsRequest.h
+	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApiAuthoritiesRequest.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApiAuthoritiesResult.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApisRequest.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApisResult.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApplicationsRequest.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceApplicationsResult.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceAuthorizedApisRequest.h
+	include/alibabacloud/dataworks-public/model/ListDataServiceAuthorizedApisResult.h
+	include/alibabacloud/dataworks-public/model/ListDataServicePublishedApisRequest.h
+	include/alibabacloud/dataworks-public/model/ListDataServicePublishedApisResult.h
+	include/alibabacloud/dataworks-public/model/ListFileVersionsRequest.h
+	include/alibabacloud/dataworks-public/model/ListFileVersionsResult.h
+	include/alibabacloud/dataworks-public/model/ListFilesRequest.h
+	include/alibabacloud/dataworks-public/model/ListFilesResult.h
+	include/alibabacloud/dataworks-public/model/ListFoldersRequest.h
+	include/alibabacloud/dataworks-public/model/ListFoldersResult.h
+	include/alibabacloud/dataworks-public/model/ListInstancesRequest.h
+	include/alibabacloud/dataworks-public/model/ListInstancesResult.h
+	include/alibabacloud/dataworks-public/model/ListNodeIORequest.h
+	include/alibabacloud/dataworks-public/model/ListNodeIOResult.h
+	include/alibabacloud/dataworks-public/model/ListNodesRequest.h
+	include/alibabacloud/dataworks-public/model/ListNodesResult.h
+	include/alibabacloud/dataworks-public/model/ListQualityRulesRequest.h
+	include/alibabacloud/dataworks-public/model/ListQualityRulesResult.h
+	include/alibabacloud/dataworks-public/model/ListRemindsRequest.h
+	include/alibabacloud/dataworks-public/model/ListRemindsResult.h
+	include/alibabacloud/dataworks-public/model/ListResourceGroupsRequest.h
+	include/alibabacloud/dataworks-public/model/ListResourceGroupsResult.h
+	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
+	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
+	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/PublishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/RestartInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/RestartInstanceResult.h
+	include/alibabacloud/dataworks-public/model/ResumeInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/ResumeInstanceResult.h
+	include/alibabacloud/dataworks-public/model/SearchMetaTablesRequest.h
+	include/alibabacloud/dataworks-public/model/SearchMetaTablesResult.h
+	include/alibabacloud/dataworks-public/model/SetSuccessInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/SetSuccessInstanceResult.h
+	include/alibabacloud/dataworks-public/model/StopInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/StopInstanceResult.h
+	include/alibabacloud/dataworks-public/model/SubmitFileRequest.h
+	include/alibabacloud/dataworks-public/model/SubmitFileResult.h
+	include/alibabacloud/dataworks-public/model/SuspendInstanceRequest.h
+	include/alibabacloud/dataworks-public/model/SuspendInstanceResult.h
+	include/alibabacloud/dataworks-public/model/UpdateBusinessRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateBusinessResult.h
+	include/alibabacloud/dataworks-public/model/UpdateConnectionRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateConnectionResult.h
+	include/alibabacloud/dataworks-public/model/UpdateDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/UpdateFileRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateFileResult.h
+	include/alibabacloud/dataworks-public/model/UpdateFolderRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateFolderResult.h
+	include/alibabacloud/dataworks-public/model/UpdateMetaCategoryRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateQualityFollowerResult.h
+	include/alibabacloud/dataworks-public/model/UpdateQualityRuleRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateQualityRuleResult.h
+	include/alibabacloud/dataworks-public/model/UpdateRemindRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateRemindResult.h
+	include/alibabacloud/dataworks-public/model/UpdateUdfFileRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateUdfFileResult.h )
+
+set(dataworks-public_src 
+	src/Dataworks-publicClient.cc
+	src/model/AbolishDataServiceApiRequest.cc
+	src/model/AbolishDataServiceApiResult.cc
+	src/model/AddToMetaCategoryRequest.cc
+	src/model/AddToMetaCategoryResult.cc
+	src/model/CheckMetaPartitionRequest.cc
+	src/model/CheckMetaPartitionResult.cc
+	src/model/CheckMetaTableRequest.cc
+	src/model/CheckMetaTableResult.cc
+	src/model/CreateConnectionRequest.cc
+	src/model/CreateConnectionResult.cc
+	src/model/CreateDataServiceApiRequest.cc
+	src/model/CreateDataServiceApiResult.cc
+	src/model/CreateFileRequest.cc
+	src/model/CreateFileResult.cc
+	src/model/CreateFolderRequest.cc
+	src/model/CreateFolderResult.cc
+	src/model/CreateMetaCategoryRequest.cc
+	src/model/CreateMetaCategoryResult.cc
+	src/model/CreateNodeComplementRequest.cc
+	src/model/CreateNodeComplementResult.cc
+	src/model/CreateNodeTestRequest.cc
+	src/model/CreateNodeTestResult.cc
+	src/model/CreateQualityEntityRequest.cc
+	src/model/CreateQualityEntityResult.cc
+	src/model/CreateQualityFollowerRequest.cc
+	src/model/CreateQualityFollowerResult.cc
+	src/model/CreateQualityRelativeNodeRequest.cc
+	src/model/CreateQualityRelativeNodeResult.cc
+	src/model/CreateQualityRuleRequest.cc
+	src/model/CreateQualityRuleResult.cc
+	src/model/CreateRemindRequest.cc
+	src/model/CreateRemindResult.cc
+	src/model/CreateUdfFileRequest.cc
+	src/model/CreateUdfFileResult.cc
+	src/model/DeleteBusinessRequest.cc
+	src/model/DeleteBusinessResult.cc
+	src/model/DeleteConnectionRequest.cc
+	src/model/DeleteConnectionResult.cc
+	src/model/DeleteDataServiceApiRequest.cc
+	src/model/DeleteDataServiceApiResult.cc
+	src/model/DeleteFileRequest.cc
+	src/model/DeleteFileResult.cc
+	src/model/DeleteFolderRequest.cc
+	src/model/DeleteFolderResult.cc
+	src/model/DeleteFromMetaCategoryRequest.cc
+	src/model/DeleteFromMetaCategoryResult.cc
+	src/model/DeleteMetaCategoryRequest.cc
+	src/model/DeleteMetaCategoryResult.cc
+	src/model/DeleteQualityEntityRequest.cc
+	src/model/DeleteQualityEntityResult.cc
+	src/model/DeleteQualityFollowerRequest.cc
+	src/model/DeleteQualityFollowerResult.cc
+	src/model/DeleteQualityRelativeNodeRequest.cc
+	src/model/DeleteQualityRelativeNodeResult.cc
+	src/model/DeleteQualityRuleRequest.cc
+	src/model/DeleteQualityRuleResult.cc
+	src/model/DeleteRemindRequest.cc
+	src/model/DeleteRemindResult.cc
+	src/model/DeployFileRequest.cc
+	src/model/DeployFileResult.cc
+	src/model/EstablishRelationTableToBusinessRequest.cc
+	src/model/EstablishRelationTableToBusinessResult.cc
+	src/model/GetBaselineConfigRequest.cc
+	src/model/GetBaselineConfigResult.cc
+	src/model/GetBaselineKeyPathRequest.cc
+	src/model/GetBaselineKeyPathResult.cc
+	src/model/GetBaselineStatusRequest.cc
+	src/model/GetBaselineStatusResult.cc
+	src/model/GetBusinessRequest.cc
+	src/model/GetBusinessResult.cc
+	src/model/GetDataServiceApiRequest.cc
+	src/model/GetDataServiceApiResult.cc
+	src/model/GetDataServiceApplicationRequest.cc
+	src/model/GetDataServiceApplicationResult.cc
+	src/model/GetDataServicePublishedApiRequest.cc
+	src/model/GetDataServicePublishedApiResult.cc
+	src/model/GetDeploymentRequest.cc
+	src/model/GetDeploymentResult.cc
+	src/model/GetFileRequest.cc
+	src/model/GetFileResult.cc
+	src/model/GetFileVersionRequest.cc
+	src/model/GetFileVersionResult.cc
+	src/model/GetFolderRequest.cc
+	src/model/GetFolderResult.cc
+	src/model/GetInstanceRequest.cc
+	src/model/GetInstanceResult.cc
+	src/model/GetInstanceLogRequest.cc
+	src/model/GetInstanceLogResult.cc
+	src/model/GetMetaCategoryRequest.cc
+	src/model/GetMetaCategoryResult.cc
+	src/model/GetMetaColumnLineageRequest.cc
+	src/model/GetMetaColumnLineageResult.cc
+	src/model/GetMetaDBInfoRequest.cc
+	src/model/GetMetaDBInfoResult.cc
+	src/model/GetMetaDBTableListRequest.cc
+	src/model/GetMetaDBTableListResult.cc
+	src/model/GetMetaTableBasicInfoRequest.cc
+	src/model/GetMetaTableBasicInfoResult.cc
+	src/model/GetMetaTableChangeLogRequest.cc
+	src/model/GetMetaTableChangeLogResult.cc
+	src/model/GetMetaTableColumnRequest.cc
+	src/model/GetMetaTableColumnResult.cc
+	src/model/GetMetaTableFullInfoRequest.cc
+	src/model/GetMetaTableFullInfoResult.cc
+	src/model/GetMetaTableIntroWikiRequest.cc
+	src/model/GetMetaTableIntroWikiResult.cc
+	src/model/GetMetaTableLineageRequest.cc
+	src/model/GetMetaTableLineageResult.cc
+	src/model/GetMetaTableListByCategoryRequest.cc
+	src/model/GetMetaTableListByCategoryResult.cc
+	src/model/GetMetaTableOutputRequest.cc
+	src/model/GetMetaTableOutputResult.cc
+	src/model/GetMetaTablePartitionRequest.cc
+	src/model/GetMetaTablePartitionResult.cc
+	src/model/GetNodeRequest.cc
+	src/model/GetNodeResult.cc
+	src/model/GetNodeCodeRequest.cc
+	src/model/GetNodeCodeResult.cc
+	src/model/GetNodeOnBaselineRequest.cc
+	src/model/GetNodeOnBaselineResult.cc
+	src/model/GetProjectDetailRequest.cc
+	src/model/GetProjectDetailResult.cc
+	src/model/GetQualityEntityRequest.cc
+	src/model/GetQualityEntityResult.cc
+	src/model/GetQualityFollowerRequest.cc
+	src/model/GetQualityFollowerResult.cc
+	src/model/GetQualityRuleRequest.cc
+	src/model/GetQualityRuleResult.cc
+	src/model/GetRemindRequest.cc
+	src/model/GetRemindResult.cc
+	src/model/GetTopicRequest.cc
+	src/model/GetTopicResult.cc
+	src/model/GetTopicInfluenceRequest.cc
+	src/model/GetTopicInfluenceResult.cc
+	src/model/ListAlertMessagesRequest.cc
+	src/model/ListAlertMessagesResult.cc
+	src/model/ListBaselineConfigsRequest.cc
+	src/model/ListBaselineConfigsResult.cc
+	src/model/ListBaselineStatusesRequest.cc
+	src/model/ListBaselineStatusesResult.cc
+	src/model/ListBusinessRequest.cc
+	src/model/ListBusinessResult.cc
+	src/model/ListCalcEnginesRequest.cc
+	src/model/ListCalcEnginesResult.cc
+	src/model/ListConnectionsRequest.cc
+	src/model/ListConnectionsResult.cc
+	src/model/ListDataServiceApiAuthoritiesRequest.cc
+	src/model/ListDataServiceApiAuthoritiesResult.cc
+	src/model/ListDataServiceApisRequest.cc
+	src/model/ListDataServiceApisResult.cc
+	src/model/ListDataServiceApplicationsRequest.cc
+	src/model/ListDataServiceApplicationsResult.cc
+	src/model/ListDataServiceAuthorizedApisRequest.cc
+	src/model/ListDataServiceAuthorizedApisResult.cc
+	src/model/ListDataServicePublishedApisRequest.cc
+	src/model/ListDataServicePublishedApisResult.cc
+	src/model/ListFileVersionsRequest.cc
+	src/model/ListFileVersionsResult.cc
+	src/model/ListFilesRequest.cc
+	src/model/ListFilesResult.cc
+	src/model/ListFoldersRequest.cc
+	src/model/ListFoldersResult.cc
+	src/model/ListInstancesRequest.cc
+	src/model/ListInstancesResult.cc
+	src/model/ListNodeIORequest.cc
+	src/model/ListNodeIOResult.cc
+	src/model/ListNodesRequest.cc
+	src/model/ListNodesResult.cc
+	src/model/ListQualityRulesRequest.cc
+	src/model/ListQualityRulesResult.cc
+	src/model/ListRemindsRequest.cc
+	src/model/ListRemindsResult.cc
+	src/model/ListResourceGroupsRequest.cc
+	src/model/ListResourceGroupsResult.cc
+	src/model/ListTopicsRequest.cc
+	src/model/ListTopicsResult.cc
+	src/model/PublishDataServiceApiRequest.cc
+	src/model/PublishDataServiceApiResult.cc
+	src/model/RestartInstanceRequest.cc
+	src/model/RestartInstanceResult.cc
+	src/model/ResumeInstanceRequest.cc
+	src/model/ResumeInstanceResult.cc
+	src/model/SearchMetaTablesRequest.cc
+	src/model/SearchMetaTablesResult.cc
+	src/model/SetSuccessInstanceRequest.cc
+	src/model/SetSuccessInstanceResult.cc
+	src/model/StopInstanceRequest.cc
+	src/model/StopInstanceResult.cc
+	src/model/SubmitFileRequest.cc
+	src/model/SubmitFileResult.cc
+	src/model/SuspendInstanceRequest.cc
+	src/model/SuspendInstanceResult.cc
+	src/model/UpdateBusinessRequest.cc
+	src/model/UpdateBusinessResult.cc
+	src/model/UpdateConnectionRequest.cc
+	src/model/UpdateConnectionResult.cc
+	src/model/UpdateDataServiceApiRequest.cc
+	src/model/UpdateDataServiceApiResult.cc
+	src/model/UpdateFileRequest.cc
+	src/model/UpdateFileResult.cc
+	src/model/UpdateFolderRequest.cc
+	src/model/UpdateFolderResult.cc
+	src/model/UpdateMetaCategoryRequest.cc
+	src/model/UpdateMetaCategoryResult.cc
+	src/model/UpdateQualityFollowerRequest.cc
+	src/model/UpdateQualityFollowerResult.cc
+	src/model/UpdateQualityRuleRequest.cc
+	src/model/UpdateQualityRuleResult.cc
+	src/model/UpdateRemindRequest.cc
+	src/model/UpdateRemindResult.cc
+	src/model/UpdateUdfFileRequest.cc
+	src/model/UpdateUdfFileResult.cc )
+
+add_library(dataworks-public ${LIB_TYPE}
+	${dataworks-public_public_header}
+	${dataworks-public_public_header_model}
+	${dataworks-public_src})
+
+set_target_properties(dataworks-public
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}dataworks-public
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(dataworks-public
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_DATAWORKS_PUBLIC_LIBRARY)
+endif()
+
+target_include_directories(dataworks-public
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(dataworks-public
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(dataworks-public
+		jsoncpp)
+	target_include_directories(dataworks-public
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(dataworks-public
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(dataworks-public
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(dataworks-public
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(dataworks-public
+		jsoncpp)
+endif()
+
+install(FILES ${dataworks-public_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/dataworks-public)
+install(FILES ${dataworks-public_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/dataworks-public/model)
+install(TARGETS dataworks-public
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
