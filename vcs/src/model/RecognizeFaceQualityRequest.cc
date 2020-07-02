@@ -38,6 +38,17 @@ void RecognizeFaceQualityRequest::setCorpId(const std::string& corpId)
 	setBodyParameter("CorpId", corpId);
 }
 
+std::string RecognizeFaceQualityRequest::getPicUrl()const
+{
+	return picUrl_;
+}
+
+void RecognizeFaceQualityRequest::setPicUrl(const std::string& picUrl)
+{
+	picUrl_ = picUrl;
+	setBodyParameter("PicUrl", picUrl);
+}
+
 std::string RecognizeFaceQualityRequest::getPicContent()const
 {
 	return picContent_;

@@ -38,6 +38,17 @@ void RecognizeImageRequest::setCorpId(const std::string& corpId)
 	setBodyParameter("CorpId", corpId);
 }
 
+std::string RecognizeImageRequest::getPicUrl()const
+{
+	return picUrl_;
+}
+
+void RecognizeImageRequest::setPicUrl(const std::string& picUrl)
+{
+	picUrl_ = picUrl;
+	setBodyParameter("PicUrl", picUrl);
+}
+
 std::string RecognizeImageRequest::getPicContent()const
 {
 	return picContent_;

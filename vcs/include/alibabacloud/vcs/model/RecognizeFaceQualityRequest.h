@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getPicUrl()const;
+				void setPicUrl(const std::string& picUrl);
 				std::string getPicContent()const;
 				void setPicContent(const std::string& picContent);
 				std::string getPicFormat()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string corpId_;
+				std::string picUrl_;
 				std::string picContent_;
 				std::string picFormat_;
 
