@@ -39,6 +39,8 @@ set(reid_public_header_model
 	include/alibabacloud/reid/model/DescribeIpcLiveAddressResult.h
 	include/alibabacloud/reid/model/DescribeOverviewDataRequest.h
 	include/alibabacloud/reid/model/DescribeOverviewDataResult.h
+	include/alibabacloud/reid/model/GetFootwearPositionRequest.h
+	include/alibabacloud/reid/model/GetFootwearPositionResult.h
 	include/alibabacloud/reid/model/ImportSpecialPersonnelRequest.h
 	include/alibabacloud/reid/model/ImportSpecialPersonnelResult.h
 	include/alibabacloud/reid/model/ListActionDataRequest.h
@@ -56,7 +58,11 @@ set(reid_public_header_model
 	include/alibabacloud/reid/model/ListStoreRequest.h
 	include/alibabacloud/reid/model/ListStoreResult.h
 	include/alibabacloud/reid/model/PullActionDataRequest.h
-	include/alibabacloud/reid/model/PullActionDataResult.h )
+	include/alibabacloud/reid/model/PullActionDataResult.h
+	include/alibabacloud/reid/model/PullTakeShoesEventRequest.h
+	include/alibabacloud/reid/model/PullTakeShoesEventResult.h
+	include/alibabacloud/reid/model/PullTryOnShoesEventRequest.h
+	include/alibabacloud/reid/model/PullTryOnShoesEventResult.h )
 
 set(reid_src 
 	src/ReidClient.cc
@@ -78,6 +84,8 @@ set(reid_src
 	src/model/DescribeIpcLiveAddressResult.cc
 	src/model/DescribeOverviewDataRequest.cc
 	src/model/DescribeOverviewDataResult.cc
+	src/model/GetFootwearPositionRequest.cc
+	src/model/GetFootwearPositionResult.cc
 	src/model/ImportSpecialPersonnelRequest.cc
 	src/model/ImportSpecialPersonnelResult.cc
 	src/model/ListActionDataRequest.cc
@@ -95,7 +103,11 @@ set(reid_src
 	src/model/ListStoreRequest.cc
 	src/model/ListStoreResult.cc
 	src/model/PullActionDataRequest.cc
-	src/model/PullActionDataResult.cc )
+	src/model/PullActionDataResult.cc
+	src/model/PullTakeShoesEventRequest.cc
+	src/model/PullTakeShoesEventResult.cc
+	src/model/PullTryOnShoesEventRequest.cc
+	src/model/PullTryOnShoesEventResult.cc )
 
 add_library(reid ${LIB_TYPE}
 	${reid_public_header}

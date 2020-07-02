@@ -40,6 +40,8 @@
 #include "model/DescribeIpcLiveAddressResult.h"
 #include "model/DescribeOverviewDataRequest.h"
 #include "model/DescribeOverviewDataResult.h"
+#include "model/GetFootwearPositionRequest.h"
+#include "model/GetFootwearPositionResult.h"
 #include "model/ImportSpecialPersonnelRequest.h"
 #include "model/ImportSpecialPersonnelResult.h"
 #include "model/ListActionDataRequest.h"
@@ -58,6 +60,10 @@
 #include "model/ListStoreResult.h"
 #include "model/PullActionDataRequest.h"
 #include "model/PullActionDataResult.h"
+#include "model/PullTakeShoesEventRequest.h"
+#include "model/PullTakeShoesEventResult.h"
+#include "model/PullTryOnShoesEventRequest.h"
+#include "model/PullTryOnShoesEventResult.h"
 
 
 namespace AlibabaCloud
@@ -94,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOverviewDataResult> DescribeOverviewDataOutcome;
 			typedef std::future<DescribeOverviewDataOutcome> DescribeOverviewDataOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeOverviewDataRequest&, const DescribeOverviewDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDataAsyncHandler;
+			typedef Outcome<Error, Model::GetFootwearPositionResult> GetFootwearPositionOutcome;
+			typedef std::future<GetFootwearPositionOutcome> GetFootwearPositionOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::GetFootwearPositionRequest&, const GetFootwearPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFootwearPositionAsyncHandler;
 			typedef Outcome<Error, Model::ImportSpecialPersonnelResult> ImportSpecialPersonnelOutcome;
 			typedef std::future<ImportSpecialPersonnelOutcome> ImportSpecialPersonnelOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::ImportSpecialPersonnelRequest&, const ImportSpecialPersonnelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportSpecialPersonnelAsyncHandler;
@@ -121,6 +130,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PullActionDataResult> PullActionDataOutcome;
 			typedef std::future<PullActionDataOutcome> PullActionDataOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::PullActionDataRequest&, const PullActionDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PullActionDataAsyncHandler;
+			typedef Outcome<Error, Model::PullTakeShoesEventResult> PullTakeShoesEventOutcome;
+			typedef std::future<PullTakeShoesEventOutcome> PullTakeShoesEventOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::PullTakeShoesEventRequest&, const PullTakeShoesEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PullTakeShoesEventAsyncHandler;
+			typedef Outcome<Error, Model::PullTryOnShoesEventResult> PullTryOnShoesEventOutcome;
+			typedef std::future<PullTryOnShoesEventOutcome> PullTryOnShoesEventOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::PullTryOnShoesEventRequest&, const PullTryOnShoesEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PullTryOnShoesEventAsyncHandler;
 
 			ReidClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ReidClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -153,6 +168,9 @@ namespace AlibabaCloud
 			DescribeOverviewDataOutcome describeOverviewData(const Model::DescribeOverviewDataRequest &request)const;
 			void describeOverviewDataAsync(const Model::DescribeOverviewDataRequest& request, const DescribeOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOverviewDataOutcomeCallable describeOverviewDataCallable(const Model::DescribeOverviewDataRequest& request) const;
+			GetFootwearPositionOutcome getFootwearPosition(const Model::GetFootwearPositionRequest &request)const;
+			void getFootwearPositionAsync(const Model::GetFootwearPositionRequest& request, const GetFootwearPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFootwearPositionOutcomeCallable getFootwearPositionCallable(const Model::GetFootwearPositionRequest& request) const;
 			ImportSpecialPersonnelOutcome importSpecialPersonnel(const Model::ImportSpecialPersonnelRequest &request)const;
 			void importSpecialPersonnelAsync(const Model::ImportSpecialPersonnelRequest& request, const ImportSpecialPersonnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportSpecialPersonnelOutcomeCallable importSpecialPersonnelCallable(const Model::ImportSpecialPersonnelRequest& request) const;
@@ -180,6 +198,12 @@ namespace AlibabaCloud
 			PullActionDataOutcome pullActionData(const Model::PullActionDataRequest &request)const;
 			void pullActionDataAsync(const Model::PullActionDataRequest& request, const PullActionDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PullActionDataOutcomeCallable pullActionDataCallable(const Model::PullActionDataRequest& request) const;
+			PullTakeShoesEventOutcome pullTakeShoesEvent(const Model::PullTakeShoesEventRequest &request)const;
+			void pullTakeShoesEventAsync(const Model::PullTakeShoesEventRequest& request, const PullTakeShoesEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PullTakeShoesEventOutcomeCallable pullTakeShoesEventCallable(const Model::PullTakeShoesEventRequest& request) const;
+			PullTryOnShoesEventOutcome pullTryOnShoesEvent(const Model::PullTryOnShoesEventRequest &request)const;
+			void pullTryOnShoesEventAsync(const Model::PullTryOnShoesEventRequest& request, const PullTryOnShoesEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PullTryOnShoesEventOutcomeCallable pullTryOnShoesEventCallable(const Model::PullTryOnShoesEventRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

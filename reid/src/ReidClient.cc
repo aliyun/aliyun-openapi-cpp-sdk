@@ -375,6 +375,42 @@ ReidClient::DescribeOverviewDataOutcomeCallable ReidClient::describeOverviewData
 	return task->get_future();
 }
 
+ReidClient::GetFootwearPositionOutcome ReidClient::getFootwearPosition(const GetFootwearPositionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFootwearPositionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFootwearPositionOutcome(GetFootwearPositionResult(outcome.result()));
+	else
+		return GetFootwearPositionOutcome(outcome.error());
+}
+
+void ReidClient::getFootwearPositionAsync(const GetFootwearPositionRequest& request, const GetFootwearPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFootwearPosition(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::GetFootwearPositionOutcomeCallable ReidClient::getFootwearPositionCallable(const GetFootwearPositionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFootwearPositionOutcome()>>(
+			[this, request]()
+			{
+			return this->getFootwearPosition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ReidClient::ImportSpecialPersonnelOutcome ReidClient::importSpecialPersonnel(const ImportSpecialPersonnelRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +729,78 @@ ReidClient::PullActionDataOutcomeCallable ReidClient::pullActionDataCallable(con
 			[this, request]()
 			{
 			return this->pullActionData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::PullTakeShoesEventOutcome ReidClient::pullTakeShoesEvent(const PullTakeShoesEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PullTakeShoesEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PullTakeShoesEventOutcome(PullTakeShoesEventResult(outcome.result()));
+	else
+		return PullTakeShoesEventOutcome(outcome.error());
+}
+
+void ReidClient::pullTakeShoesEventAsync(const PullTakeShoesEventRequest& request, const PullTakeShoesEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pullTakeShoesEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::PullTakeShoesEventOutcomeCallable ReidClient::pullTakeShoesEventCallable(const PullTakeShoesEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PullTakeShoesEventOutcome()>>(
+			[this, request]()
+			{
+			return this->pullTakeShoesEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::PullTryOnShoesEventOutcome ReidClient::pullTryOnShoesEvent(const PullTryOnShoesEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PullTryOnShoesEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PullTryOnShoesEventOutcome(PullTryOnShoesEventResult(outcome.result()));
+	else
+		return PullTryOnShoesEventOutcome(outcome.error());
+}
+
+void ReidClient::pullTryOnShoesEventAsync(const PullTryOnShoesEventRequest& request, const PullTryOnShoesEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pullTryOnShoesEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::PullTryOnShoesEventOutcomeCallable ReidClient::pullTryOnShoesEventCallable(const PullTryOnShoesEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PullTryOnShoesEventOutcome()>>(
+			[this, request]()
+			{
+			return this->pullTryOnShoesEvent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
