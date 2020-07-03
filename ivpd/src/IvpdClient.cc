@@ -31,21 +31,21 @@ IvpdClient::IvpdClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::IvpdClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::IvpdClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ivpd");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IvpdClient::~IvpdClient()
@@ -375,6 +375,42 @@ IvpdClient::GetRenderResultOutcomeCallable IvpdClient::getRenderResultCallable(c
 	return task->get_future();
 }
 
+IvpdClient::GetUserBucketConfigOutcome IvpdClient::getUserBucketConfig(const GetUserBucketConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserBucketConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserBucketConfigOutcome(GetUserBucketConfigResult(outcome.result()));
+	else
+		return GetUserBucketConfigOutcome(outcome.error());
+}
+
+void IvpdClient::getUserBucketConfigAsync(const GetUserBucketConfigRequest& request, const GetUserBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserBucketConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::GetUserBucketConfigOutcomeCallable IvpdClient::getUserBucketConfigCallable(const GetUserBucketConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserBucketConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserBucketConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IvpdClient::ListPackageDesignModelTypesOutcome IvpdClient::listPackageDesignModelTypes(const ListPackageDesignModelTypesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ IvpdClient::ListPackageDesignModelTypesOutcomeCallable IvpdClient::listPackageDe
 			[this, request]()
 			{
 			return this->listPackageDesignModelTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::ListUserBucketsOutcome IvpdClient::listUserBuckets(const ListUserBucketsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserBucketsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserBucketsOutcome(ListUserBucketsResult(outcome.result()));
+	else
+		return ListUserBucketsOutcome(outcome.error());
+}
+
+void IvpdClient::listUserBucketsAsync(const ListUserBucketsRequest& request, const ListUserBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserBuckets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::ListUserBucketsOutcomeCallable IvpdClient::listUserBucketsCallable(const ListUserBucketsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserBucketsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserBuckets(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -693,6 +765,42 @@ IvpdClient::SegmentImageOutcomeCallable IvpdClient::segmentImageCallable(const S
 			[this, request]()
 			{
 			return this->segmentImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IvpdClient::UpdateUserBucketConfigOutcome IvpdClient::updateUserBucketConfig(const UpdateUserBucketConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserBucketConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserBucketConfigOutcome(UpdateUserBucketConfigResult(outcome.result()));
+	else
+		return UpdateUserBucketConfigOutcome(outcome.error());
+}
+
+void IvpdClient::updateUserBucketConfigAsync(const UpdateUserBucketConfigRequest& request, const UpdateUserBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUserBucketConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IvpdClient::UpdateUserBucketConfigOutcomeCallable IvpdClient::updateUserBucketConfigCallable(const UpdateUserBucketConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserBucketConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUserBucketConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

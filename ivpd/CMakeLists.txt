@@ -39,8 +39,12 @@ set(ivpd_public_header_model
 	include/alibabacloud/ivpd/model/GetJobStatusResult.h
 	include/alibabacloud/ivpd/model/GetRenderResultRequest.h
 	include/alibabacloud/ivpd/model/GetRenderResultResult.h
+	include/alibabacloud/ivpd/model/GetUserBucketConfigRequest.h
+	include/alibabacloud/ivpd/model/GetUserBucketConfigResult.h
 	include/alibabacloud/ivpd/model/ListPackageDesignModelTypesRequest.h
 	include/alibabacloud/ivpd/model/ListPackageDesignModelTypesResult.h
+	include/alibabacloud/ivpd/model/ListUserBucketsRequest.h
+	include/alibabacloud/ivpd/model/ListUserBucketsResult.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageRequest.h
 	include/alibabacloud/ivpd/model/MakeSuperResolutionImageResult.h
 	include/alibabacloud/ivpd/model/PreviewModelForPackageDesignRequest.h
@@ -56,7 +60,9 @@ set(ivpd_public_header_model
 	include/alibabacloud/ivpd/model/SegmentBodyRequest.h
 	include/alibabacloud/ivpd/model/SegmentBodyResult.h
 	include/alibabacloud/ivpd/model/SegmentImageRequest.h
-	include/alibabacloud/ivpd/model/SegmentImageResult.h )
+	include/alibabacloud/ivpd/model/SegmentImageResult.h
+	include/alibabacloud/ivpd/model/UpdateUserBucketConfigRequest.h
+	include/alibabacloud/ivpd/model/UpdateUserBucketConfigResult.h )
 
 set(ivpd_src 
 	src/IvpdClient.cc
@@ -78,8 +84,12 @@ set(ivpd_src
 	src/model/GetJobStatusResult.cc
 	src/model/GetRenderResultRequest.cc
 	src/model/GetRenderResultResult.cc
+	src/model/GetUserBucketConfigRequest.cc
+	src/model/GetUserBucketConfigResult.cc
 	src/model/ListPackageDesignModelTypesRequest.cc
 	src/model/ListPackageDesignModelTypesResult.cc
+	src/model/ListUserBucketsRequest.cc
+	src/model/ListUserBucketsResult.cc
 	src/model/MakeSuperResolutionImageRequest.cc
 	src/model/MakeSuperResolutionImageResult.cc
 	src/model/PreviewModelForPackageDesignRequest.cc
@@ -95,7 +105,9 @@ set(ivpd_src
 	src/model/SegmentBodyRequest.cc
 	src/model/SegmentBodyResult.cc
 	src/model/SegmentImageRequest.cc
-	src/model/SegmentImageResult.cc )
+	src/model/SegmentImageResult.cc
+	src/model/UpdateUserBucketConfigRequest.cc
+	src/model/UpdateUserBucketConfigResult.cc )
 
 add_library(ivpd ${LIB_TYPE}
 	${ivpd_public_header}

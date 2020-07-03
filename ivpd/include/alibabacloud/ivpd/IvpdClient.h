@@ -40,8 +40,12 @@
 #include "model/GetJobStatusResult.h"
 #include "model/GetRenderResultRequest.h"
 #include "model/GetRenderResultResult.h"
+#include "model/GetUserBucketConfigRequest.h"
+#include "model/GetUserBucketConfigResult.h"
 #include "model/ListPackageDesignModelTypesRequest.h"
 #include "model/ListPackageDesignModelTypesResult.h"
+#include "model/ListUserBucketsRequest.h"
+#include "model/ListUserBucketsResult.h"
 #include "model/MakeSuperResolutionImageRequest.h"
 #include "model/MakeSuperResolutionImageResult.h"
 #include "model/PreviewModelForPackageDesignRequest.h"
@@ -58,6 +62,8 @@
 #include "model/SegmentBodyResult.h"
 #include "model/SegmentImageRequest.h"
 #include "model/SegmentImageResult.h"
+#include "model/UpdateUserBucketConfigRequest.h"
+#include "model/UpdateUserBucketConfigResult.h"
 
 
 namespace AlibabaCloud
@@ -94,9 +100,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetRenderResultResult> GetRenderResultOutcome;
 			typedef std::future<GetRenderResultOutcome> GetRenderResultOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::GetRenderResultRequest&, const GetRenderResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRenderResultAsyncHandler;
+			typedef Outcome<Error, Model::GetUserBucketConfigResult> GetUserBucketConfigOutcome;
+			typedef std::future<GetUserBucketConfigOutcome> GetUserBucketConfigOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::GetUserBucketConfigRequest&, const GetUserBucketConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserBucketConfigAsyncHandler;
 			typedef Outcome<Error, Model::ListPackageDesignModelTypesResult> ListPackageDesignModelTypesOutcome;
 			typedef std::future<ListPackageDesignModelTypesOutcome> ListPackageDesignModelTypesOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::ListPackageDesignModelTypesRequest&, const ListPackageDesignModelTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPackageDesignModelTypesAsyncHandler;
+			typedef Outcome<Error, Model::ListUserBucketsResult> ListUserBucketsOutcome;
+			typedef std::future<ListUserBucketsOutcome> ListUserBucketsOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::ListUserBucketsRequest&, const ListUserBucketsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserBucketsAsyncHandler;
 			typedef Outcome<Error, Model::MakeSuperResolutionImageResult> MakeSuperResolutionImageOutcome;
 			typedef std::future<MakeSuperResolutionImageOutcome> MakeSuperResolutionImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::MakeSuperResolutionImageRequest&, const MakeSuperResolutionImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MakeSuperResolutionImageAsyncHandler;
@@ -121,6 +133,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentImageResult> SegmentImageOutcome;
 			typedef std::future<SegmentImageOutcome> SegmentImageOutcomeCallable;
 			typedef std::function<void(const IvpdClient*, const Model::SegmentImageRequest&, const SegmentImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentImageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserBucketConfigResult> UpdateUserBucketConfigOutcome;
+			typedef std::future<UpdateUserBucketConfigOutcome> UpdateUserBucketConfigOutcomeCallable;
+			typedef std::function<void(const IvpdClient*, const Model::UpdateUserBucketConfigRequest&, const UpdateUserBucketConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserBucketConfigAsyncHandler;
 
 			IvpdClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			IvpdClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -153,9 +168,15 @@ namespace AlibabaCloud
 			GetRenderResultOutcome getRenderResult(const Model::GetRenderResultRequest &request)const;
 			void getRenderResultAsync(const Model::GetRenderResultRequest& request, const GetRenderResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRenderResultOutcomeCallable getRenderResultCallable(const Model::GetRenderResultRequest& request) const;
+			GetUserBucketConfigOutcome getUserBucketConfig(const Model::GetUserBucketConfigRequest &request)const;
+			void getUserBucketConfigAsync(const Model::GetUserBucketConfigRequest& request, const GetUserBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserBucketConfigOutcomeCallable getUserBucketConfigCallable(const Model::GetUserBucketConfigRequest& request) const;
 			ListPackageDesignModelTypesOutcome listPackageDesignModelTypes(const Model::ListPackageDesignModelTypesRequest &request)const;
 			void listPackageDesignModelTypesAsync(const Model::ListPackageDesignModelTypesRequest& request, const ListPackageDesignModelTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPackageDesignModelTypesOutcomeCallable listPackageDesignModelTypesCallable(const Model::ListPackageDesignModelTypesRequest& request) const;
+			ListUserBucketsOutcome listUserBuckets(const Model::ListUserBucketsRequest &request)const;
+			void listUserBucketsAsync(const Model::ListUserBucketsRequest& request, const ListUserBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserBucketsOutcomeCallable listUserBucketsCallable(const Model::ListUserBucketsRequest& request) const;
 			MakeSuperResolutionImageOutcome makeSuperResolutionImage(const Model::MakeSuperResolutionImageRequest &request)const;
 			void makeSuperResolutionImageAsync(const Model::MakeSuperResolutionImageRequest& request, const MakeSuperResolutionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			MakeSuperResolutionImageOutcomeCallable makeSuperResolutionImageCallable(const Model::MakeSuperResolutionImageRequest& request) const;
@@ -180,6 +201,9 @@ namespace AlibabaCloud
 			SegmentImageOutcome segmentImage(const Model::SegmentImageRequest &request)const;
 			void segmentImageAsync(const Model::SegmentImageRequest& request, const SegmentImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentImageOutcomeCallable segmentImageCallable(const Model::SegmentImageRequest& request) const;
+			UpdateUserBucketConfigOutcome updateUserBucketConfig(const Model::UpdateUserBucketConfigRequest &request)const;
+			void updateUserBucketConfigAsync(const Model::UpdateUserBucketConfigRequest& request, const UpdateUserBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserBucketConfigOutcomeCallable updateUserBucketConfigCallable(const Model::UpdateUserBucketConfigRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
