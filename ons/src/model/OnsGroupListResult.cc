@@ -59,6 +59,16 @@ void OnsGroupListResult::parse(const std::string &payload)
 			dataObject.createTime = std::stol(valueDataSubscribeInfoDo["CreateTime"].asString());
 		if(!valueDataSubscribeInfoDo["GroupType"].isNull())
 			dataObject.groupType = valueDataSubscribeInfoDo["GroupType"].asString();
+		auto allTagsNode = allDataNode["Tags"]["Tag"];
+		for (auto allDataNodeTagsTag : allTagsNode)
+		{
+			SubscribeInfoDo::Tag tagsObject;
+			if(!allDataNodeTagsTag["Key"].isNull())
+				tagsObject.key = allDataNodeTagsTag["Key"].asString();
+			if(!allDataNodeTagsTag["Value"].isNull())
+				tagsObject.value = allDataNodeTagsTag["Value"].asString();
+			dataObject.tags.push_back(tagsObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["HelpUrl"].isNull())

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ONS_MODEL_ONSGROUPLISTREQUEST_H_
-#define ALIBABACLOUD_ONS_MODEL_ONSGROUPLISTREQUEST_H_
+#ifndef ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ONS_EXPORT OnsGroupListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ONS_EXPORT UntagResourcesRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				OnsGroupListRequest();
-				~OnsGroupListRequest();
+				UntagResourcesRequest();
+				~UntagResourcesRequest();
 
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
+				bool getAll()const;
+				void setAll(bool all);
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getGroupType()const;
-				void setGroupType(const std::string& groupType);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
+				std::vector<std::string> getTagKey()const;
+				void setTagKey(const std::vector<std::string>& tagKey);
 
             private:
-				std::string groupId_;
+				bool all_;
+				std::vector<std::string> resourceId_;
+				std::string resourceType_;
 				std::string instanceId_;
-				std::string groupType_;
-				std::vector<Tag> tag_;
+				std::vector<std::string> tagKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ONS_MODEL_ONSGROUPLISTREQUEST_H_
+#endif // !ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESREQUEST_H_

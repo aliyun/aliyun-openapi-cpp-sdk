@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "OnsExport.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/OnsConsumerAccumulateRequest.h"
 #include "model/OnsConsumerAccumulateResult.h"
 #include "model/OnsConsumerGetConnectionRequest.h"
@@ -114,6 +116,10 @@
 #include "model/OnsWarnCreateResult.h"
 #include "model/OnsWarnDeleteRequest.h"
 #include "model/OnsWarnDeleteResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 
 
 namespace AlibabaCloud
@@ -123,6 +129,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ONS_EXPORT OnsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const OnsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::OnsConsumerAccumulateResult> OnsConsumerAccumulateOutcome;
 			typedef std::future<OnsConsumerAccumulateOutcome> OnsConsumerAccumulateOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsConsumerAccumulateRequest&, const OnsConsumerAccumulateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsConsumerAccumulateAsyncHandler;
@@ -261,11 +270,20 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OnsWarnDeleteResult> OnsWarnDeleteOutcome;
 			typedef std::future<OnsWarnDeleteOutcome> OnsWarnDeleteOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsWarnDeleteRequest&, const OnsWarnDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsWarnDeleteAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const OnsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const OnsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 
 			OnsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			OnsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OnsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OnsClient();
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			OnsConsumerAccumulateOutcome onsConsumerAccumulate(const Model::OnsConsumerAccumulateRequest &request)const;
 			void onsConsumerAccumulateAsync(const Model::OnsConsumerAccumulateRequest& request, const OnsConsumerAccumulateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsConsumerAccumulateOutcomeCallable onsConsumerAccumulateCallable(const Model::OnsConsumerAccumulateRequest& request) const;
@@ -404,6 +422,12 @@ namespace AlibabaCloud
 			OnsWarnDeleteOutcome onsWarnDelete(const Model::OnsWarnDeleteRequest &request)const;
 			void onsWarnDeleteAsync(const Model::OnsWarnDeleteRequest& request, const OnsWarnDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsWarnDeleteOutcomeCallable onsWarnDeleteCallable(const Model::OnsWarnDeleteRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

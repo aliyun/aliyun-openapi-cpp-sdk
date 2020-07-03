@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct PublishInfoDo
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string owner;
 					int relation;
 					std::string instanceId;
@@ -41,6 +46,7 @@ namespace AlibabaCloud
 					std::string relationName;
 					bool independentNaming;
 					std::string topic;
+					std::vector<PublishInfoDo::Tag> tags;
 					int messageType;
 					std::string remark;
 				};

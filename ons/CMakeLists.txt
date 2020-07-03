@@ -21,6 +21,8 @@ set(ons_public_header
 	include/alibabacloud/ons/OnsExport.h )
 
 set(ons_public_header_model 
+	include/alibabacloud/ons/model/ListTagResourcesRequest.h
+	include/alibabacloud/ons/model/ListTagResourcesResult.h
 	include/alibabacloud/ons/model/OnsConsumerAccumulateRequest.h
 	include/alibabacloud/ons/model/OnsConsumerAccumulateResult.h
 	include/alibabacloud/ons/model/OnsConsumerGetConnectionRequest.h
@@ -112,10 +114,16 @@ set(ons_public_header_model
 	include/alibabacloud/ons/model/OnsWarnCreateRequest.h
 	include/alibabacloud/ons/model/OnsWarnCreateResult.h
 	include/alibabacloud/ons/model/OnsWarnDeleteRequest.h
-	include/alibabacloud/ons/model/OnsWarnDeleteResult.h )
+	include/alibabacloud/ons/model/OnsWarnDeleteResult.h
+	include/alibabacloud/ons/model/TagResourcesRequest.h
+	include/alibabacloud/ons/model/TagResourcesResult.h
+	include/alibabacloud/ons/model/UntagResourcesRequest.h
+	include/alibabacloud/ons/model/UntagResourcesResult.h )
 
 set(ons_src 
 	src/OnsClient.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/OnsConsumerAccumulateRequest.cc
 	src/model/OnsConsumerAccumulateResult.cc
 	src/model/OnsConsumerGetConnectionRequest.cc
@@ -207,7 +215,11 @@ set(ons_src
 	src/model/OnsWarnCreateRequest.cc
 	src/model/OnsWarnCreateResult.cc
 	src/model/OnsWarnDeleteRequest.cc
-	src/model/OnsWarnDeleteResult.cc )
+	src/model/OnsWarnDeleteResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc )
 
 add_library(ons ${LIB_TYPE}
 	${ons_public_header}

@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ONS_EXPORT OnsTopicListRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 			public:
 				OnsTopicListRequest();
@@ -39,10 +45,13 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getTopic()const;
 				void setTopic(const std::string& topic);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 
             private:
 				std::string instanceId_;
 				std::string topic_;
+				std::vector<Tag> tag_;
 
 			};
 		}

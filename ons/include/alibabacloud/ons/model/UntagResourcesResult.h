@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
-#define ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
+#ifndef ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ONS_EXPORT OnsInstanceInServiceListResult : public ServiceResult
+			class ALIBABACLOUD_ONS_EXPORT UntagResourcesResult : public ServiceResult
 			{
 			public:
-				struct InstanceVO
-				{
-					struct Tag
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string instanceName;
-					std::string instanceId;
-					long releaseTime;
-					int instanceStatus;
-					bool independentNaming;
-					int instanceType;
-					std::vector<InstanceVO::Tag> tags;
-				};
 
 
-				OnsInstanceInServiceListResult();
-				explicit OnsInstanceInServiceListResult(const std::string &payload);
-				~OnsInstanceInServiceListResult();
-				std::vector<InstanceVO> getData()const;
-				std::string getHelpUrl()const;
+				UntagResourcesResult();
+				explicit UntagResourcesResult(const std::string &payload);
+				~UntagResourcesResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceVO> data_;
-				std::string helpUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
+#endif // !ALIBABACLOUD_ONS_MODEL_UNTAGRESOURCESRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTREQUEST_H_
-#define ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTREQUEST_H_
+#ifndef ALIBABACLOUD_ONS_MODEL_TAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_ONS_MODEL_TAGRESOURCESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ONS_EXPORT OnsInstanceInServiceListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ONS_EXPORT TagResourcesRequest : public RpcServiceRequest
 			{
 			public:
 				struct Tag
@@ -38,17 +38,26 @@ namespace AlibabaCloud
 				};
 
 			public:
-				OnsInstanceInServiceListRequest();
-				~OnsInstanceInServiceListRequest();
+				TagResourcesRequest();
+				~TagResourcesRequest();
 
+				std::vector<std::string> getResourceId()const;
+				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getResourceType()const;
+				void setResourceType(const std::string& resourceType);
+				std::string getInstanceId()const;
+				void setInstanceId(const std::string& instanceId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 
             private:
+				std::vector<std::string> resourceId_;
+				std::string resourceType_;
+				std::string instanceId_;
 				std::vector<Tag> tag_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTREQUEST_H_
+#endif // !ALIBABACLOUD_ONS_MODEL_TAGRESOURCESREQUEST_H_

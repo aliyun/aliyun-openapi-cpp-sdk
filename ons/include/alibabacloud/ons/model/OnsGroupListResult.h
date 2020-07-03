@@ -34,12 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct SubscribeInfoDo
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string owner;
 					std::string groupType;
 					std::string instanceId;
 					long createTime;
 					long updateTime;
 					bool independentNaming;
+					std::vector<SubscribeInfoDo::Tag> tags;
 					std::string groupId;
 					std::string remark;
 				};
