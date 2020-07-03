@@ -68,6 +68,8 @@ void GetTemplateResult::parse(const std::string &payload)
 		_template_.tags = _templateNode["Tags"].asString();
 	if(!_templateNode["TemplateType"].isNull())
 		_template_.templateType = _templateNode["TemplateType"].asString();
+	if(!_templateNode["VersionName"].isNull())
+		_template_.versionName = _templateNode["VersionName"].asString();
 	if(!value["Content"].isNull())
 		content_ = value["Content"].asString();
 

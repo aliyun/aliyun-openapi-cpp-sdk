@@ -137,6 +137,17 @@ void ListExecutionsRequest::setSortOrder(const std::string& sortOrder)
 	setParameter("SortOrder", sortOrder);
 }
 
+std::string ListExecutionsRequest::getResourceId()const
+{
+	return resourceId_;
+}
+
+void ListExecutionsRequest::setResourceId(const std::string& resourceId)
+{
+	resourceId_ = resourceId;
+	setParameter("ResourceId", resourceId);
+}
+
 std::string ListExecutionsRequest::getStartDateAfter()const
 {
 	return startDateAfter_;
@@ -223,6 +234,17 @@ void ListExecutionsRequest::setCategory(const std::string& category)
 {
 	category_ = category;
 	setParameter("Category", category);
+}
+
+std::string ListExecutionsRequest::getResourceTemplateName()const
+{
+	return resourceTemplateName_;
+}
+
+void ListExecutionsRequest::setResourceTemplateName(const std::string& resourceTemplateName)
+{
+	resourceTemplateName_ = resourceTemplateName;
+	setParameter("ResourceTemplateName", resourceTemplateName);
 }
 
 std::string ListExecutionsRequest::getStatus()const

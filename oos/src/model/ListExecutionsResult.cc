@@ -91,6 +91,16 @@ void ListExecutionsResult::parse(const std::string &payload)
 			executionsObject.tags = valueExecutionsExecution["Tags"].asString();
 		if(!valueExecutionsExecution["Description"].isNull())
 			executionsObject.description = valueExecutionsExecution["Description"].asString();
+		if(!valueExecutionsExecution["Targets"].isNull())
+			executionsObject.targets = valueExecutionsExecution["Targets"].asString();
+		if(!valueExecutionsExecution["LastTriggerTime"].isNull())
+			executionsObject.lastTriggerTime = valueExecutionsExecution["LastTriggerTime"].asString();
+		if(!valueExecutionsExecution["LastTriggerStatus"].isNull())
+			executionsObject.lastTriggerStatus = valueExecutionsExecution["LastTriggerStatus"].asString();
+		if(!valueExecutionsExecution["LastSuccessfulTriggerTime"].isNull())
+			executionsObject.lastSuccessfulTriggerTime = valueExecutionsExecution["LastSuccessfulTriggerTime"].asString();
+		if(!valueExecutionsExecution["ResourceStatus"].isNull())
+			executionsObject.resourceStatus = valueExecutionsExecution["ResourceStatus"].asString();
 		auto allCurrentTasksNode = allExecutionsNode["CurrentTasks"]["CurrentTask"];
 		for (auto allExecutionsNodeCurrentTasksCurrentTask : allCurrentTasksNode)
 		{

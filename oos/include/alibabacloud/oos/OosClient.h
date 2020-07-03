@@ -48,6 +48,8 @@
 #include "model/ListExecutionRiskyTasksResult.h"
 #include "model/ListExecutionsRequest.h"
 #include "model/ListExecutionsResult.h"
+#include "model/ListResourceExecutionStatusRequest.h"
+#include "model/ListResourceExecutionStatusResult.h"
 #include "model/ListTagKeysRequest.h"
 #include "model/ListTagKeysResult.h"
 #include "model/ListTagResourcesRequest.h"
@@ -122,6 +124,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListExecutionsResult> ListExecutionsOutcome;
 			typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListExecutionsRequest&, const ListExecutionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExecutionsAsyncHandler;
+			typedef Outcome<Error, Model::ListResourceExecutionStatusResult> ListResourceExecutionStatusOutcome;
+			typedef std::future<ListResourceExecutionStatusOutcome> ListResourceExecutionStatusOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ListResourceExecutionStatusRequest&, const ListResourceExecutionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceExecutionStatusAsyncHandler;
 			typedef Outcome<Error, Model::ListTagKeysResult> ListTagKeysOutcome;
 			typedef std::future<ListTagKeysOutcome> ListTagKeysOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListTagKeysRequest&, const ListTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagKeysAsyncHandler;
@@ -205,6 +210,9 @@ namespace AlibabaCloud
 			ListExecutionsOutcome listExecutions(const Model::ListExecutionsRequest &request)const;
 			void listExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListExecutionsOutcomeCallable listExecutionsCallable(const Model::ListExecutionsRequest& request) const;
+			ListResourceExecutionStatusOutcome listResourceExecutionStatus(const Model::ListResourceExecutionStatusRequest &request)const;
+			void listResourceExecutionStatusAsync(const Model::ListResourceExecutionStatusRequest& request, const ListResourceExecutionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourceExecutionStatusOutcomeCallable listResourceExecutionStatusCallable(const Model::ListResourceExecutionStatusRequest& request) const;
 			ListTagKeysOutcome listTagKeys(const Model::ListTagKeysRequest &request)const;
 			void listTagKeysAsync(const Model::ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagKeysOutcomeCallable listTagKeysCallable(const Model::ListTagKeysRequest& request) const;

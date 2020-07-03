@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_GETTEMPLATERESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_GETTEMPLATERESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTRESOURCEEXECUTIONSTATUSRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTRESOURCEEXECUTIONSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT GetTemplateResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT ListResourceExecutionStatusResult : public ServiceResult
 			{
 			public:
-				struct _Template
+				struct Status
 				{
-					std::string createdBy;
-					std::string description;
-					std::string templateFormat;
-					std::string updatedDate;
-					std::string templateVersion;
-					std::string templateType;
-					std::string hash;
-					std::string updatedBy;
-					bool hasTrigger;
-					std::string createdDate;
-					std::string templateName;
-					std::string versionName;
-					std::string templateId;
-					std::string tags;
-					std::string shareType;
+					std::string status;
+					std::string executionTime;
+					std::string resourceId;
+					std::string outputs;
+					std::string executionId;
 				};
 
 
-				GetTemplateResult();
-				explicit GetTemplateResult(const std::string &payload);
-				~GetTemplateResult();
-				_Template get_Template()const;
-				std::string getContent()const;
+				ListResourceExecutionStatusResult();
+				explicit ListResourceExecutionStatusResult(const std::string &payload);
+				~ListResourceExecutionStatusResult();
+				std::string getNextToken()const;
+				std::vector<Status> getResourceExecutionStatus()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				_Template _template_;
-				std::string content_;
+				std::string nextToken_;
+				std::vector<Status> resourceExecutionStatus_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_GETTEMPLATERESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTRESOURCEEXECUTIONSTATUSRESULT_H_

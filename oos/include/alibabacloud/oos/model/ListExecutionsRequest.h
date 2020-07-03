@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setEndDateBefore(const std::string& endDateBefore);
 				std::string getSortOrder()const;
 				void setSortOrder(const std::string& sortOrder);
+				std::string getResourceId()const;
+				void setResourceId(const std::string& resourceId);
 				std::string getStartDateAfter()const;
 				void setStartDateAfter(const std::string& startDateAfter);
 				std::string getStartDateBefore()const;
@@ -71,6 +73,8 @@ namespace AlibabaCloud
 				void setSortField(const std::string& sortField);
 				std::string getCategory()const;
 				void setCategory(const std::string& category);
+				std::string getResourceTemplateName()const;
+				void setResourceTemplateName(const std::string& resourceTemplateName);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 
@@ -85,6 +89,7 @@ namespace AlibabaCloud
 				std::string templateName_;
 				std::string endDateBefore_;
 				std::string sortOrder_;
+				std::string resourceId_;
 				std::string startDateAfter_;
 				std::string startDateBefore_;
 				std::map<std::string, std::string> tags_;
@@ -93,6 +98,7 @@ namespace AlibabaCloud
 				int maxResults_;
 				std::string sortField_;
 				std::string category_;
+				std::string resourceTemplateName_;
 				std::string status_;
 
 			};

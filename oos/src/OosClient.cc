@@ -31,21 +31,21 @@ OosClient::OosClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OosClient::OosClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OosClient::OosClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OosClient::~OosClient()
@@ -513,6 +513,42 @@ OosClient::ListExecutionsOutcomeCallable OosClient::listExecutionsCallable(const
 			[this, request]()
 			{
 			return this->listExecutions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListResourceExecutionStatusOutcome OosClient::listResourceExecutionStatus(const ListResourceExecutionStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListResourceExecutionStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListResourceExecutionStatusOutcome(ListResourceExecutionStatusResult(outcome.result()));
+	else
+		return ListResourceExecutionStatusOutcome(outcome.error());
+}
+
+void OosClient::listResourceExecutionStatusAsync(const ListResourceExecutionStatusRequest& request, const ListResourceExecutionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listResourceExecutionStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListResourceExecutionStatusOutcomeCallable OosClient::listResourceExecutionStatusCallable(const ListResourceExecutionStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListResourceExecutionStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->listResourceExecutionStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

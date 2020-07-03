@@ -48,7 +48,10 @@ namespace AlibabaCloud
 					std::string createDate;
 					std::string startDate;
 					std::string updateDate;
+					std::string lastTriggerTime;
 					std::string templateName;
+					std::string lastSuccessfulTriggerTime;
+					std::string resourceStatus;
 					std::string templateId;
 					std::string executedBy;
 					std::string tags;
@@ -57,6 +60,7 @@ namespace AlibabaCloud
 					std::string statusReason;
 					bool isParent;
 					std::string mode;
+					std::string targets;
 					std::string endDate;
 					std::string waitingStatus;
 					std::string statusMessage;
@@ -64,6 +68,7 @@ namespace AlibabaCloud
 					std::string outputs;
 					std::string ramRole;
 					std::string counters;
+					std::string lastTriggerStatus;
 					std::string executionId;
 				};
 

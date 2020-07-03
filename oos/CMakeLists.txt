@@ -47,6 +47,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListExecutionRiskyTasksResult.h
 	include/alibabacloud/oos/model/ListExecutionsRequest.h
 	include/alibabacloud/oos/model/ListExecutionsResult.h
+	include/alibabacloud/oos/model/ListResourceExecutionStatusRequest.h
+	include/alibabacloud/oos/model/ListResourceExecutionStatusResult.h
 	include/alibabacloud/oos/model/ListTagKeysRequest.h
 	include/alibabacloud/oos/model/ListTagKeysResult.h
 	include/alibabacloud/oos/model/ListTagResourcesRequest.h
@@ -102,6 +104,8 @@ set(oos_src
 	src/model/ListExecutionRiskyTasksResult.cc
 	src/model/ListExecutionsRequest.cc
 	src/model/ListExecutionsResult.cc
+	src/model/ListResourceExecutionStatusRequest.cc
+	src/model/ListResourceExecutionStatusResult.cc
 	src/model/ListTagKeysRequest.cc
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagResourcesRequest.cc
