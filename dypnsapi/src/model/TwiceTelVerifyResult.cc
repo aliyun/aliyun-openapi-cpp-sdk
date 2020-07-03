@@ -41,9 +41,9 @@ void TwiceTelVerifyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto twiceTelVerifyResultNode = value["TwiceTelVerifyResult"];
 	if(!twiceTelVerifyResultNode["Carrier"].isNull())
-		twiceTelVerifyResult_.carrier = twiceTelVerifyResultNode["Carrier"].asString();
+		result_.carrier = twiceTelVerifyResultNode["Carrier"].asString();
 	if(!twiceTelVerifyResultNode["VerifyResult"].isNull())
-		twiceTelVerifyResult_.verifyResult = std::stoi(twiceTelVerifyResultNode["VerifyResult"].asString());
+		result_.verifyResult = std::stoi(twiceTelVerifyResultNode["VerifyResult"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
@@ -56,7 +56,7 @@ std::string TwiceTelVerifyResult::getMessage()const
 	return message_;
 }
 
-TwiceTelVerifyResult::TwiceTelVerifyResult TwiceTelVerifyResult::getTwiceTelVerifyResult()const
+TwiceTelVerifyResult::Result TwiceTelVerifyResult::getTwiceTelVerifyResult()const
 {
 	return twiceTelVerifyResult_;
 }
