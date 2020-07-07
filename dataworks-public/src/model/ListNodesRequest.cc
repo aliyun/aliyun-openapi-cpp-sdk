@@ -27,6 +27,17 @@ ListNodesRequest::ListNodesRequest() :
 ListNodesRequest::~ListNodesRequest()
 {}
 
+std::string ListNodesRequest::getOwner()const
+{
+	return owner_;
+}
+
+void ListNodesRequest::setOwner(const std::string& owner)
+{
+	owner_ = owner;
+	setBodyParameter("Owner", owner);
+}
+
 std::string ListNodesRequest::getProjectEnv()const
 {
 	return projectEnv_;
@@ -47,17 +58,6 @@ void ListNodesRequest::setBizName(const std::string& bizName)
 {
 	bizName_ = bizName;
 	setBodyParameter("BizName", bizName);
-}
-
-std::string ListNodesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListNodesRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setBodyParameter("OwnerId", ownerId);
 }
 
 int ListNodesRequest::getPageNumber()const

@@ -60,7 +60,7 @@ void GetFileResult::parse(const std::string &payload)
 	if(!fileNode["FileType"].isNull())
 		data_.file.fileType = std::stoi(fileNode["FileType"].asString());
 	if(!fileNode["UseType"].isNull())
-		data_.file.useType = std::stoi(fileNode["UseType"].asString());
+		data_.file.useType = fileNode["UseType"].asString();
 	if(!fileNode["FileDescription"].isNull())
 		data_.file.fileDescription = fileNode["FileDescription"].asString();
 	if(!fileNode["Content"].isNull())
@@ -78,10 +78,10 @@ void GetFileResult::parse(const std::string &payload)
 	if(!fileNode["CommitStatus"].isNull())
 		data_.file.commitStatus = std::stoi(fileNode["CommitStatus"].asString());
 	auto nodeConfigurationNode = dataNode["NodeConfiguration"];
-	if(!nodeConfigurationNode["TaskRerunTime"].isNull())
-		data_.nodeConfiguration.taskRerunTime = std::stoi(nodeConfigurationNode["TaskRerunTime"].asString());
-	if(!nodeConfigurationNode["TaskRerunIntervalMillis"].isNull())
-		data_.nodeConfiguration.taskRerunIntervalMillis = std::stoi(nodeConfigurationNode["TaskRerunIntervalMillis"].asString());
+	if(!nodeConfigurationNode["AutoRerunTimes"].isNull())
+		data_.nodeConfiguration.autoRerunTimes = std::stoi(nodeConfigurationNode["AutoRerunTimes"].asString());
+	if(!nodeConfigurationNode["AutoRerunIntervalMillis"].isNull())
+		data_.nodeConfiguration.autoRerunIntervalMillis = std::stoi(nodeConfigurationNode["AutoRerunIntervalMillis"].asString());
 	if(!nodeConfigurationNode["RerunMode"].isNull())
 		data_.nodeConfiguration.rerunMode = nodeConfigurationNode["RerunMode"].asString();
 	if(!nodeConfigurationNode["Stop"].isNull())

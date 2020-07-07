@@ -31,6 +31,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionResult.h
+	include/alibabacloud/dataworks-public/model/CreateDagComplementRequest.h
+	include/alibabacloud/dataworks-public/model/CreateDagComplementResult.h
+	include/alibabacloud/dataworks-public/model/CreateDagTestRequest.h
+	include/alibabacloud/dataworks-public/model/CreateDagTestResult.h
 	include/alibabacloud/dataworks-public/model/CreateDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/CreateDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/CreateFileRequest.h
@@ -39,10 +43,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateFolderResult.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryResult.h
-	include/alibabacloud/dataworks-public/model/CreateNodeComplementRequest.h
-	include/alibabacloud/dataworks-public/model/CreateNodeComplementResult.h
-	include/alibabacloud/dataworks-public/model/CreateNodeTestRequest.h
-	include/alibabacloud/dataworks-public/model/CreateNodeTestResult.h
 	include/alibabacloud/dataworks-public/model/CreateQualityEntityRequest.h
 	include/alibabacloud/dataworks-public/model/CreateQualityEntityResult.h
 	include/alibabacloud/dataworks-public/model/CreateQualityFollowerRequest.h
@@ -246,6 +246,10 @@ set(dataworks-public_src
 	src/model/CheckMetaTableResult.cc
 	src/model/CreateConnectionRequest.cc
 	src/model/CreateConnectionResult.cc
+	src/model/CreateDagComplementRequest.cc
+	src/model/CreateDagComplementResult.cc
+	src/model/CreateDagTestRequest.cc
+	src/model/CreateDagTestResult.cc
 	src/model/CreateDataServiceApiRequest.cc
 	src/model/CreateDataServiceApiResult.cc
 	src/model/CreateFileRequest.cc
@@ -254,10 +258,6 @@ set(dataworks-public_src
 	src/model/CreateFolderResult.cc
 	src/model/CreateMetaCategoryRequest.cc
 	src/model/CreateMetaCategoryResult.cc
-	src/model/CreateNodeComplementRequest.cc
-	src/model/CreateNodeComplementResult.cc
-	src/model/CreateNodeTestRequest.cc
-	src/model/CreateNodeTestResult.cc
 	src/model/CreateQualityEntityRequest.cc
 	src/model/CreateQualityEntityResult.cc
 	src/model/CreateQualityFollowerRequest.cc

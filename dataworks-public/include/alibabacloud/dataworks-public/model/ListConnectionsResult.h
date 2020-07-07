@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						std::string name;
 						std::string gmtCreate;
 						long tenantId;
+						std::string content;
 						int id;
 					};
 					std::vector<ConnectionsItem> connections;

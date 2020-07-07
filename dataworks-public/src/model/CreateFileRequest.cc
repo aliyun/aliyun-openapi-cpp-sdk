@@ -38,6 +38,17 @@ void CreateFileRequest::setFileType(int fileType)
 	setBodyParameter("FileType", std::to_string(fileType));
 }
 
+std::string CreateFileRequest::getDependentNodeIdList()const
+{
+	return dependentNodeIdList_;
+}
+
+void CreateFileRequest::setDependentNodeIdList(const std::string& dependentNodeIdList)
+{
+	dependentNodeIdList_ = dependentNodeIdList;
+	setBodyParameter("DependentNodeIdList", dependentNodeIdList);
+}
+
 std::string CreateFileRequest::getContent()const
 {
 	return content_;
@@ -113,17 +124,6 @@ void CreateFileRequest::setAutoRerunIntervalMillis(int autoRerunIntervalMillis)
 {
 	autoRerunIntervalMillis_ = autoRerunIntervalMillis;
 	setBodyParameter("AutoRerunIntervalMillis", std::to_string(autoRerunIntervalMillis));
-}
-
-std::string CreateFileRequest::getDependentCloudUuidList()const
-{
-	return dependentCloudUuidList_;
-}
-
-void CreateFileRequest::setDependentCloudUuidList(const std::string& dependentCloudUuidList)
-{
-	dependentCloudUuidList_ = dependentCloudUuidList;
-	setBodyParameter("DependentCloudUuidList", dependentCloudUuidList);
 }
 
 std::string CreateFileRequest::getInputList()const

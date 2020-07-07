@@ -231,6 +231,78 @@ Dataworks_publicClient::CreateConnectionOutcomeCallable Dataworks_publicClient::
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateDagComplementOutcome Dataworks_publicClient::createDagComplement(const CreateDagComplementRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDagComplementOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDagComplementOutcome(CreateDagComplementResult(outcome.result()));
+	else
+		return CreateDagComplementOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createDagComplementAsync(const CreateDagComplementRequest& request, const CreateDagComplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDagComplement(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateDagComplementOutcomeCallable Dataworks_publicClient::createDagComplementCallable(const CreateDagComplementRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDagComplementOutcome()>>(
+			[this, request]()
+			{
+			return this->createDagComplement(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CreateDagTestOutcome Dataworks_publicClient::createDagTest(const CreateDagTestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDagTestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDagTestOutcome(CreateDagTestResult(outcome.result()));
+	else
+		return CreateDagTestOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createDagTestAsync(const CreateDagTestRequest& request, const CreateDagTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDagTest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateDagTestOutcomeCallable Dataworks_publicClient::createDagTestCallable(const CreateDagTestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDagTestOutcome()>>(
+			[this, request]()
+			{
+			return this->createDagTest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreateDataServiceApiOutcome Dataworks_publicClient::createDataServiceApi(const CreateDataServiceApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,78 +441,6 @@ Dataworks_publicClient::CreateMetaCategoryOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->createMetaCategory(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dataworks_publicClient::CreateNodeComplementOutcome Dataworks_publicClient::createNodeComplement(const CreateNodeComplementRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateNodeComplementOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateNodeComplementOutcome(CreateNodeComplementResult(outcome.result()));
-	else
-		return CreateNodeComplementOutcome(outcome.error());
-}
-
-void Dataworks_publicClient::createNodeComplementAsync(const CreateNodeComplementRequest& request, const CreateNodeComplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createNodeComplement(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dataworks_publicClient::CreateNodeComplementOutcomeCallable Dataworks_publicClient::createNodeComplementCallable(const CreateNodeComplementRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateNodeComplementOutcome()>>(
-			[this, request]()
-			{
-			return this->createNodeComplement(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-Dataworks_publicClient::CreateNodeTestOutcome Dataworks_publicClient::createNodeTest(const CreateNodeTestRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateNodeTestOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateNodeTestOutcome(CreateNodeTestResult(outcome.result()));
-	else
-		return CreateNodeTestOutcome(outcome.error());
-}
-
-void Dataworks_publicClient::createNodeTestAsync(const CreateNodeTestRequest& request, const CreateNodeTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createNodeTest(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-Dataworks_publicClient::CreateNodeTestOutcomeCallable Dataworks_publicClient::createNodeTestCallable(const CreateNodeTestRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateNodeTestOutcome()>>(
-			[this, request]()
-			{
-			return this->createNodeTest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,31 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/CreateNodeComplementResult.h>
+#include <alibabacloud/dataworks-public/model/CreateDagComplementResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-CreateNodeComplementResult::CreateNodeComplementResult() :
+CreateDagComplementResult::CreateDagComplementResult() :
 	ServiceResult()
 {}
 
-CreateNodeComplementResult::CreateNodeComplementResult(const std::string &payload) :
+CreateDagComplementResult::CreateDagComplementResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateNodeComplementResult::~CreateNodeComplementResult()
+CreateDagComplementResult::~CreateDagComplementResult()
 {}
 
-void CreateNodeComplementResult::parse(const std::string &payload)
+void CreateDagComplementResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allData = value["Data"]["dagId"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
@@ -47,32 +50,30 @@ void CreateNodeComplementResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["Data"].isNull())
-		data_ = std::stol(value["Data"].asString());
 
 }
 
-int CreateNodeComplementResult::getHttpStatusCode()const
+int CreateDagComplementResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-long CreateNodeComplementResult::getData()const
+std::vector<std::string> CreateDagComplementResult::getData()const
 {
 	return data_;
 }
 
-std::string CreateNodeComplementResult::getErrorCode()const
+std::string CreateDagComplementResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string CreateNodeComplementResult::getErrorMessage()const
+std::string CreateDagComplementResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool CreateNodeComplementResult::getSuccess()const
+bool CreateDagComplementResult::getSuccess()const
 {
 	return success_;
 }

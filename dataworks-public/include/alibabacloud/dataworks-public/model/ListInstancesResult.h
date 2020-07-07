@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					struct InstancesItem
+					struct Instance
 					{
 						std::string status;
 						long modifyTime;
@@ -52,7 +52,7 @@ namespace AlibabaCloud
 						int nodeId;
 						long beginWaitResTime;
 					};
-					std::vector<InstancesItem> instances;
+					std::vector<Instance> instances;
 					int totalCount;
 					int pageSize;
 					int pageNumber;

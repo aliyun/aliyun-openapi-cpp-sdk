@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						std::string owner;
 						long createTime;
 						std::string fileName;
-						int useType;
+						std::string useType;
 						int currentVersion;
 						std::string createUser;
 						bool isMaxCompute;

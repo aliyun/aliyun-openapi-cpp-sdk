@@ -51,8 +51,8 @@ namespace AlibabaCloud
 				void setKeyword(const std::string& keyword);
 				long getProjectId()const;
 				void setProjectId(long projectId);
-				int getUseType()const;
-				void setUseType(int useType);
+				std::string getUseType()const;
+				void setUseType(const std::string& useType);
 
             private:
 				std::string owner_;
@@ -63,7 +63,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				std::string keyword_;
 				long projectId_;
-				int useType_;
+				std::string useType_;
 
 			};
 		}

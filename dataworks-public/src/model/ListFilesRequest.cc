@@ -115,14 +115,14 @@ void ListFilesRequest::setProjectId(long projectId)
 	setBodyParameter("ProjectId", std::to_string(projectId));
 }
 
-int ListFilesRequest::getUseType()const
+std::string ListFilesRequest::getUseType()const
 {
 	return useType_;
 }
 
-void ListFilesRequest::setUseType(int useType)
+void ListFilesRequest::setUseType(const std::string& useType)
 {
 	useType_ = useType;
-	setBodyParameter("UseType", std::to_string(useType));
+	setBodyParameter("UseType", useType);
 }
 

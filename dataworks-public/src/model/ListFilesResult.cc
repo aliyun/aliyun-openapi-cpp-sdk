@@ -69,7 +69,7 @@ void ListFilesResult::parse(const std::string &payload)
 		if(!dataNodeFilesFile["FileType"].isNull())
 			fileObject.fileType = std::stoi(dataNodeFilesFile["FileType"].asString());
 		if(!dataNodeFilesFile["UseType"].isNull())
-			fileObject.useType = std::stoi(dataNodeFilesFile["UseType"].asString());
+			fileObject.useType = dataNodeFilesFile["UseType"].asString();
 		if(!dataNodeFilesFile["FileDescription"].isNull())
 			fileObject.fileDescription = dataNodeFilesFile["FileDescription"].asString();
 		if(!dataNodeFilesFile["Content"].isNull())

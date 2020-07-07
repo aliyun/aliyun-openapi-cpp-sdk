@@ -38,6 +38,17 @@ void ListInstancesRequest::setProjectEnv(const std::string& projectEnv)
 	setBodyParameter("ProjectEnv", projectEnv);
 }
 
+std::string ListInstancesRequest::getOwner()const
+{
+	return owner_;
+}
+
+void ListInstancesRequest::setOwner(const std::string& owner)
+{
+	owner_ = owner;
+	setBodyParameter("Owner", owner);
+}
+
 std::string ListInstancesRequest::getBizName()const
 {
 	return bizName_;
@@ -49,17 +60,6 @@ void ListInstancesRequest::setBizName(const std::string& bizName)
 	setBodyParameter("BizName", bizName);
 }
 
-std::string ListInstancesRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ListInstancesRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setBodyParameter("OwnerId", ownerId);
-}
-
 int ListInstancesRequest::getPageNumber()const
 {
 	return pageNumber_;
@@ -68,7 +68,7 @@ int ListInstancesRequest::getPageNumber()const
 void ListInstancesRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListInstancesRequest::getNodeName()const
@@ -101,7 +101,7 @@ int ListInstancesRequest::getPageSize()const
 void ListInstancesRequest::setPageSize(int pageSize)
 {
 	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
 long ListInstancesRequest::getNodeId()const

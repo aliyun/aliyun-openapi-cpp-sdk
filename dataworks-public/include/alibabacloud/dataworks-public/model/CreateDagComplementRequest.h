@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateNodeComplementRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateDagComplementRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateNodeComplementRequest();
-				~CreateNodeComplementRequest();
+				CreateDagComplementRequest();
+				~CreateDagComplementRequest();
 
 				std::string getProjectEnv()const;
 				void setProjectEnv(const std::string& projectEnv);
@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setStartBizDate(const std::string& startBizDate);
 				bool getParallelism()const;
 				void setParallelism(bool parallelism);
+				long getRootNodeId()const;
+				void setRootNodeId(long rootNodeId);
 				std::string getBizBeginTime()const;
 				void setBizBeginTime(const std::string& bizBeginTime);
 				std::string getEndBizDate()const;
@@ -53,26 +55,24 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::string getExcludeNodeIds()const;
 				void setExcludeNodeIds(const std::string& excludeNodeIds);
-				long getNodeId()const;
-				void setNodeId(long nodeId);
-				long getNodeProjectId()const;
-				void setNodeProjectId(long nodeProjectId);
+				std::string getNodeParams()const;
+				void setNodeParams(const std::string& nodeParams);
 
             private:
 				std::string projectEnv_;
 				std::string startBizDate_;
 				bool parallelism_;
+				long rootNodeId_;
 				std::string bizBeginTime_;
 				std::string endBizDate_;
 				std::string includeNodeIds_;
 				std::string bizEndTime_;
 				std::string name_;
 				std::string excludeNodeIds_;
-				long nodeId_;
-				long nodeProjectId_;
+				std::string nodeParams_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTREQUEST_H_

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/CreateNodeTestResult.h>
+#include <alibabacloud/dataworks-public/model/CreateDagTestResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dataworks_public;
 using namespace AlibabaCloud::Dataworks_public::Model;
 
-CreateNodeTestResult::CreateNodeTestResult() :
+CreateDagTestResult::CreateDagTestResult() :
 	ServiceResult()
 {}
 
-CreateNodeTestResult::CreateNodeTestResult(const std::string &payload) :
+CreateDagTestResult::CreateDagTestResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateNodeTestResult::~CreateNodeTestResult()
+CreateDagTestResult::~CreateDagTestResult()
 {}
 
-void CreateNodeTestResult::parse(const std::string &payload)
+void CreateDagTestResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -52,27 +52,27 @@ void CreateNodeTestResult::parse(const std::string &payload)
 
 }
 
-int CreateNodeTestResult::getHttpStatusCode()const
+int CreateDagTestResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-long CreateNodeTestResult::getData()const
+long CreateDagTestResult::getData()const
 {
 	return data_;
 }
 
-std::string CreateNodeTestResult::getErrorCode()const
+std::string CreateDagTestResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
-std::string CreateNodeTestResult::getErrorMessage()const
+std::string CreateDagTestResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-bool CreateNodeTestResult::getSuccess()const
+bool CreateDagTestResult::getSuccess()const
 {
 	return success_;
 }

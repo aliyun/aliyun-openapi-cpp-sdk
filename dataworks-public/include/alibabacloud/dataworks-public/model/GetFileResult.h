@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						std::string owner;
 						long createTime;
 						std::string fileName;
-						int useType;
+						std::string useType;
 						int currentVersion;
 						std::string createUser;
 						bool isMaxCompute;
@@ -66,16 +66,16 @@ namespace AlibabaCloud
 							std::string output;
 							std::string refTableName;
 						};
-						int taskRerunTime;
-						int taskRerunIntervalMillis;
 						std::string cycleType;
 						std::vector<NodeInputOutput> inputList;
 						bool stop;
 						std::string dependentType;
 						std::string cronExpress;
 						long endEffectDate;
+						int autoRerunIntervalMillis;
 						std::string dependentNodeIdList;
 						long startEffectDate;
+						int autoRerunTimes;
 						std::string rerunMode;
 						std::string paraValue;
 						std::vector<NodeInputOutput1> outputList;

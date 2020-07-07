@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				ListNodesRequest();
 				~ListNodesRequest();
 
+				std::string getOwner()const;
+				void setOwner(const std::string& owner);
 				std::string getProjectEnv()const;
 				void setProjectEnv(const std::string& projectEnv);
 				std::string getBizName()const;
 				void setBizName(const std::string& bizName);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getNodeName()const;
@@ -53,9 +53,9 @@ namespace AlibabaCloud
 				void setProjectId(long projectId);
 
             private:
+				std::string owner_;
 				std::string projectEnv_;
 				std::string bizName_;
-				std::string ownerId_;
 				int pageNumber_;
 				std::string nodeName_;
 				std::string programType_;

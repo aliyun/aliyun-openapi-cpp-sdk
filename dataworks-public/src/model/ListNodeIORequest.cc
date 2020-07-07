@@ -38,17 +38,6 @@ void ListNodeIORequest::setProjectEnv(const std::string& projectEnv)
 	setBodyParameter("ProjectEnv", projectEnv);
 }
 
-std::string ListNodeIORequest::getType()const
-{
-	return type_;
-}
-
-void ListNodeIORequest::setType(const std::string& type)
-{
-	type_ = type;
-	setBodyParameter("Type", type);
-}
-
 long ListNodeIORequest::getNodeId()const
 {
 	return nodeId_;
@@ -58,5 +47,16 @@ void ListNodeIORequest::setNodeId(long nodeId)
 {
 	nodeId_ = nodeId;
 	setBodyParameter("NodeId", std::to_string(nodeId));
+}
+
+std::string ListNodeIORequest::getIoType()const
+{
+	return ioType_;
+}
+
+void ListNodeIORequest::setIoType(const std::string& ioType)
+{
+	ioType_ = ioType;
+	setBodyParameter("IoType", ioType);
 }
 

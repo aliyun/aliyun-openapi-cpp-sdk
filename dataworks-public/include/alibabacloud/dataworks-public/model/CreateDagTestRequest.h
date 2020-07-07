@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateNodeTestRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateDagTestRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateNodeTestRequest();
-				~CreateNodeTestRequest();
+				CreateDagTestRequest();
+				~CreateDagTestRequest();
 
 				std::string getProjectEnv()const;
 				void setProjectEnv(const std::string& projectEnv);
-				bool getParallelism()const;
-				void setParallelism(bool parallelism);
-				std::string getBizBeginTime()const;
-				void setBizBeginTime(const std::string& bizBeginTime);
-				std::string getIncludeNodeIds()const;
-				void setIncludeNodeIds(const std::string& includeNodeIds);
 				std::string getBizdate()const;
 				void setBizdate(const std::string& bizdate);
-				std::string getBizEndTime()const;
-				void setBizEndTime(const std::string& bizEndTime);
 				std::string getName()const;
 				void setName(const std::string& name);
-				std::string getExcludeNodeIds()const;
-				void setExcludeNodeIds(const std::string& excludeNodeIds);
+				std::string getNodeParams()const;
+				void setNodeParams(const std::string& nodeParams);
 				long getNodeId()const;
 				void setNodeId(long nodeId);
-				long getNodeProjectId()const;
-				void setNodeProjectId(long nodeProjectId);
 
             private:
 				std::string projectEnv_;
-				bool parallelism_;
-				std::string bizBeginTime_;
-				std::string includeNodeIds_;
 				std::string bizdate_;
-				std::string bizEndTime_;
 				std::string name_;
-				std::string excludeNodeIds_;
+				std::string nodeParams_;
 				long nodeId_;
-				long nodeProjectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTREQUEST_H_

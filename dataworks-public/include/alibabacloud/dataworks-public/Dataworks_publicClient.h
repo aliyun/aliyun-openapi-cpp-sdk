@@ -32,6 +32,10 @@
 #include "model/CheckMetaTableResult.h"
 #include "model/CreateConnectionRequest.h"
 #include "model/CreateConnectionResult.h"
+#include "model/CreateDagComplementRequest.h"
+#include "model/CreateDagComplementResult.h"
+#include "model/CreateDagTestRequest.h"
+#include "model/CreateDagTestResult.h"
 #include "model/CreateDataServiceApiRequest.h"
 #include "model/CreateDataServiceApiResult.h"
 #include "model/CreateFileRequest.h"
@@ -40,10 +44,6 @@
 #include "model/CreateFolderResult.h"
 #include "model/CreateMetaCategoryRequest.h"
 #include "model/CreateMetaCategoryResult.h"
-#include "model/CreateNodeComplementRequest.h"
-#include "model/CreateNodeComplementResult.h"
-#include "model/CreateNodeTestRequest.h"
-#include "model/CreateNodeTestResult.h"
 #include "model/CreateQualityEntityRequest.h"
 #include "model/CreateQualityEntityResult.h"
 #include "model/CreateQualityFollowerRequest.h"
@@ -258,6 +258,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateConnectionResult> CreateConnectionOutcome;
 			typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateConnectionRequest&, const CreateConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectionAsyncHandler;
+			typedef Outcome<Error, Model::CreateDagComplementResult> CreateDagComplementOutcome;
+			typedef std::future<CreateDagComplementOutcome> CreateDagComplementOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateDagComplementRequest&, const CreateDagComplementOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDagComplementAsyncHandler;
+			typedef Outcome<Error, Model::CreateDagTestResult> CreateDagTestOutcome;
+			typedef std::future<CreateDagTestOutcome> CreateDagTestOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateDagTestRequest&, const CreateDagTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDagTestAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataServiceApiResult> CreateDataServiceApiOutcome;
 			typedef std::future<CreateDataServiceApiOutcome> CreateDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateDataServiceApiRequest&, const CreateDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataServiceApiAsyncHandler;
@@ -270,12 +276,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMetaCategoryResult> CreateMetaCategoryOutcome;
 			typedef std::future<CreateMetaCategoryOutcome> CreateMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateMetaCategoryRequest&, const CreateMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaCategoryAsyncHandler;
-			typedef Outcome<Error, Model::CreateNodeComplementResult> CreateNodeComplementOutcome;
-			typedef std::future<CreateNodeComplementOutcome> CreateNodeComplementOutcomeCallable;
-			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateNodeComplementRequest&, const CreateNodeComplementOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeComplementAsyncHandler;
-			typedef Outcome<Error, Model::CreateNodeTestResult> CreateNodeTestOutcome;
-			typedef std::future<CreateNodeTestOutcome> CreateNodeTestOutcomeCallable;
-			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateNodeTestRequest&, const CreateNodeTestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeTestAsyncHandler;
 			typedef Outcome<Error, Model::CreateQualityEntityResult> CreateQualityEntityOutcome;
 			typedef std::future<CreateQualityEntityOutcome> CreateQualityEntityOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateQualityEntityRequest&, const CreateQualityEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityEntityAsyncHandler;
@@ -581,6 +581,12 @@ namespace AlibabaCloud
 			CreateConnectionOutcome createConnection(const Model::CreateConnectionRequest &request)const;
 			void createConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConnectionOutcomeCallable createConnectionCallable(const Model::CreateConnectionRequest& request) const;
+			CreateDagComplementOutcome createDagComplement(const Model::CreateDagComplementRequest &request)const;
+			void createDagComplementAsync(const Model::CreateDagComplementRequest& request, const CreateDagComplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDagComplementOutcomeCallable createDagComplementCallable(const Model::CreateDagComplementRequest& request) const;
+			CreateDagTestOutcome createDagTest(const Model::CreateDagTestRequest &request)const;
+			void createDagTestAsync(const Model::CreateDagTestRequest& request, const CreateDagTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDagTestOutcomeCallable createDagTestCallable(const Model::CreateDagTestRequest& request) const;
 			CreateDataServiceApiOutcome createDataServiceApi(const Model::CreateDataServiceApiRequest &request)const;
 			void createDataServiceApiAsync(const Model::CreateDataServiceApiRequest& request, const CreateDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataServiceApiOutcomeCallable createDataServiceApiCallable(const Model::CreateDataServiceApiRequest& request) const;
@@ -593,12 +599,6 @@ namespace AlibabaCloud
 			CreateMetaCategoryOutcome createMetaCategory(const Model::CreateMetaCategoryRequest &request)const;
 			void createMetaCategoryAsync(const Model::CreateMetaCategoryRequest& request, const CreateMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMetaCategoryOutcomeCallable createMetaCategoryCallable(const Model::CreateMetaCategoryRequest& request) const;
-			CreateNodeComplementOutcome createNodeComplement(const Model::CreateNodeComplementRequest &request)const;
-			void createNodeComplementAsync(const Model::CreateNodeComplementRequest& request, const CreateNodeComplementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNodeComplementOutcomeCallable createNodeComplementCallable(const Model::CreateNodeComplementRequest& request) const;
-			CreateNodeTestOutcome createNodeTest(const Model::CreateNodeTestRequest &request)const;
-			void createNodeTestAsync(const Model::CreateNodeTestRequest& request, const CreateNodeTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNodeTestOutcomeCallable createNodeTestCallable(const Model::CreateNodeTestRequest& request) const;
 			CreateQualityEntityOutcome createQualityEntity(const Model::CreateQualityEntityRequest &request)const;
 			void createQualityEntityAsync(const Model::CreateQualityEntityRequest& request, const CreateQualityEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateQualityEntityOutcomeCallable createQualityEntityCallable(const Model::CreateQualityEntityRequest& request) const;

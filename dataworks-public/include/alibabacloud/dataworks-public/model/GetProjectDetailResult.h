@@ -34,32 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					int destination;
+					std::string projectIdentifier;
+					int status;
 					std::string projectOwnerBaseId;
+					int schedulerMaxRetryTimes;
 					std::string projectName;
 					int isAllowDownload;
 					std::string gmtModified;
-					int developmentType;
-					bool disableDevelopment;
-					bool baseProject;
-					int projectMode;
-					std::string projectDescription;
-					std::string devStorageQuota;
-					int isDefault;
-					std::string projectIdentifier;
-					int status;
-					int schedulerMaxRetryTimes;
 					int projectId;
+					int developmentType;
 					std::string residentArea;
-					bool useProxyOdpsAccount;
 					std::string gmtCreate;
 					long tenantId;
-					int maxFlowNode;
 					int protectedMode;
-					std::string appkey;
-					int tablePrivacyMode;
-					std::string prodStorageQuota;
 					std::string defaultDiResourceGroupIdentifier;
+					int projectMode;
+					std::string projectDescription;
 					std::vector<std::string> envTypes;
 					int schedulerRetryInterval;
 				};

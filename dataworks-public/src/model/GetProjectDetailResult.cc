@@ -42,46 +42,26 @@ void GetProjectDetailResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["GmtModified"].isNull())
 		data_.gmtModified = dataNode["GmtModified"].asString();
-	if(!dataNode["MaxFlowNode"].isNull())
-		data_.maxFlowNode = std::stoi(dataNode["MaxFlowNode"].asString());
 	if(!dataNode["DefaultDiResourceGroupIdentifier"].isNull())
 		data_.defaultDiResourceGroupIdentifier = dataNode["DefaultDiResourceGroupIdentifier"].asString();
-	if(!dataNode["Destination"].isNull())
-		data_.destination = std::stoi(dataNode["Destination"].asString());
 	if(!dataNode["IsAllowDownload"].isNull())
 		data_.isAllowDownload = std::stoi(dataNode["IsAllowDownload"].asString());
-	if(!dataNode["ProdStorageQuota"].isNull())
-		data_.prodStorageQuota = dataNode["ProdStorageQuota"].asString();
 	if(!dataNode["SchedulerRetryInterval"].isNull())
 		data_.schedulerRetryInterval = std::stoi(dataNode["SchedulerRetryInterval"].asString());
 	if(!dataNode["ResidentArea"].isNull())
 		data_.residentArea = dataNode["ResidentArea"].asString();
-	if(!dataNode["TablePrivacyMode"].isNull())
-		data_.tablePrivacyMode = std::stoi(dataNode["TablePrivacyMode"].asString());
 	if(!dataNode["ProjectOwnerBaseId"].isNull())
 		data_.projectOwnerBaseId = dataNode["ProjectOwnerBaseId"].asString();
-	if(!dataNode["UseProxyOdpsAccount"].isNull())
-		data_.useProxyOdpsAccount = dataNode["UseProxyOdpsAccount"].asString() == "true";
-	if(!dataNode["DisableDevelopment"].isNull())
-		data_.disableDevelopment = dataNode["DisableDevelopment"].asString() == "true";
 	if(!dataNode["ProjectMode"].isNull())
 		data_.projectMode = std::stoi(dataNode["ProjectMode"].asString());
 	if(!dataNode["GmtCreate"].isNull())
 		data_.gmtCreate = dataNode["GmtCreate"].asString();
-	if(!dataNode["DevStorageQuota"].isNull())
-		data_.devStorageQuota = dataNode["DevStorageQuota"].asString();
-	if(!dataNode["IsDefault"].isNull())
-		data_.isDefault = std::stoi(dataNode["IsDefault"].asString());
 	if(!dataNode["ProtectedMode"].isNull())
 		data_.protectedMode = std::stoi(dataNode["ProtectedMode"].asString());
-	if(!dataNode["BaseProject"].isNull())
-		data_.baseProject = dataNode["BaseProject"].asString() == "true";
 	if(!dataNode["TenantId"].isNull())
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
 	if(!dataNode["ProjectDescription"].isNull())
 		data_.projectDescription = dataNode["ProjectDescription"].asString();
-	if(!dataNode["Appkey"].isNull())
-		data_.appkey = dataNode["Appkey"].asString();
 	if(!dataNode["SchedulerMaxRetryTimes"].isNull())
 		data_.schedulerMaxRetryTimes = std::stoi(dataNode["SchedulerMaxRetryTimes"].asString());
 	if(!dataNode["ProjectName"].isNull())

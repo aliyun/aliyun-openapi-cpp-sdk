@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				int getFileType()const;
 				void setFileType(int fileType);
+				std::string getDependentNodeIdList()const;
+				void setDependentNodeIdList(const std::string& dependentNodeIdList);
 				std::string getContent()const;
 				void setContent(const std::string& content);
 				std::string getProjectIdentifier()const;
@@ -51,8 +53,6 @@ namespace AlibabaCloud
 				void setOwner(const std::string& owner);
 				int getAutoRerunIntervalMillis()const;
 				void setAutoRerunIntervalMillis(int autoRerunIntervalMillis);
-				std::string getDependentCloudUuidList()const;
-				void setDependentCloudUuidList(const std::string& dependentCloudUuidList);
 				std::string getInputList()const;
 				void setInputList(const std::string& inputList);
 				std::string getRerunMode()const;
@@ -78,6 +78,7 @@ namespace AlibabaCloud
 
             private:
 				int fileType_;
+				std::string dependentNodeIdList_;
 				std::string content_;
 				std::string projectIdentifier_;
 				long projectId_;
@@ -85,7 +86,6 @@ namespace AlibabaCloud
 				std::string cycleType_;
 				std::string owner_;
 				int autoRerunIntervalMillis_;
-				std::string dependentCloudUuidList_;
 				std::string inputList_;
 				std::string rerunMode_;
 				std::string paraValue_;

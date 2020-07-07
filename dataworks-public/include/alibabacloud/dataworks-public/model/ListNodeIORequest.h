@@ -37,15 +37,15 @@ namespace AlibabaCloud
 
 				std::string getProjectEnv()const;
 				void setProjectEnv(const std::string& projectEnv);
-				std::string getType()const;
-				void setType(const std::string& type);
 				long getNodeId()const;
 				void setNodeId(long nodeId);
+				std::string getIoType()const;
+				void setIoType(const std::string& ioType);
 
             private:
 				std::string projectEnv_;
-				std::string type_;
 				long nodeId_;
+				std::string ioType_;
 
 			};
 		}

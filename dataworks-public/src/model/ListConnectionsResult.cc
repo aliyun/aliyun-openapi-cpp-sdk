@@ -84,6 +84,8 @@ void ListConnectionsResult::parse(const std::string &payload)
 			connectionsItemObject.projectId = std::stoi(dataNodeConnectionsConnectionsItem["ProjectId"].asString());
 		if(!dataNodeConnectionsConnectionsItem["Status"].isNull())
 			connectionsItemObject.status = std::stoi(dataNodeConnectionsConnectionsItem["Status"].asString());
+		if(!dataNodeConnectionsConnectionsItem["Content"].isNull())
+			connectionsItemObject.content = dataNodeConnectionsConnectionsItem["Content"].asString();
 		data_.connections.push_back(connectionsItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

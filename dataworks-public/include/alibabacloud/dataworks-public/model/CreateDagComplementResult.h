@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateNodeTestResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateDagComplementResult : public ServiceResult
 			{
 			public:
 
 
-				CreateNodeTestResult();
-				explicit CreateNodeTestResult(const std::string &payload);
-				~CreateNodeTestResult();
+				CreateDagComplementResult();
+				explicit CreateDagComplementResult(const std::string &payload);
+				~CreateDagComplementResult();
 				int getHttpStatusCode()const;
-				long getData()const;
+				std::vector<std::string> getData()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -47,7 +47,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				int httpStatusCode_;
-				long data_;
+				std::vector<std::string> data_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -56,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODETESTRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGCOMPLEMENTRESULT_H_

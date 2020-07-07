@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateNodeComplementResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateDagTestResult : public ServiceResult
 			{
 			public:
 
 
-				CreateNodeComplementResult();
-				explicit CreateNodeComplementResult(const std::string &payload);
-				~CreateNodeComplementResult();
+				CreateDagTestResult();
+				explicit CreateDagTestResult(const std::string &payload);
+				~CreateDagTestResult();
 				int getHttpStatusCode()const;
 				long getData()const;
 				std::string getErrorCode()const;
@@ -56,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATENODECOMPLEMENTRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEDAGTESTRESULT_H_
