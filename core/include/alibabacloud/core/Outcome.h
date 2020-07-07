@@ -20,24 +20,15 @@
 #include <utility>
 
 namespace AlibabaCloud {
-template<typename E, typename R>
-class Outcome {
- public:
-  Outcome() :
-    success_(true), e_(), r_() { }
-  explicit Outcome(const E &e) :
-    e_(e), success_(false), r_() { }
-  explicit Outcome(const R &r) :
-    r_(r), success_(true), e_() { }
-  Outcome(const Outcome &other) :
-    success_(other.success_),
-    e_(other.e_),
-    r_(other.r_)
-  { }
-  Outcome(Outcome &&other) {
-    *this = std::move(other);
-  }
-  Outcome & operator=(const Outcome &other) {
+template <typename E, typename R> class Outcome {
+public:
+  Outcome() : success_(true), e_(), r_() {}
+  explicit Outcome(const E &e) : e_(e), success_(false), r_() {}
+  explicit Outcome(const R &r) : r_(r), success_(true), e_() {}
+  Outcome(const Outcome &other)
+      : success_(other.success_), e_(other.e_), r_(other.r_) {}
+  Outcome(Outcome &&other) { *this = std::move(other); }
+  Outcome &operator=(const Outcome &other) {
     if (this != &other) {
       success_ = other.success_;
       e_ = other.e_;
@@ -45,7 +36,7 @@ class Outcome {
     }
     return *this;
   }
-  Outcome & operator=(Outcome &&other) {
+  Outcome &operator=(Outcome &&other) {
     if (this != &other) {
       success_ = other.success_;
       r_ = other.r_;
@@ -54,14 +45,14 @@ class Outcome {
     return *this;
   }
 
-  bool isSuccess()const { return success_; }
-  E error()const { return e_; }
-  R result()const { return r_; }
+  bool isSuccess() const { return success_; }
+  E error() const { return e_; }
+  R result() const { return r_; }
 
- private:
+private:
   bool success_;
   E e_;
   R r_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_OUTCOME_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_OUTCOME_H_

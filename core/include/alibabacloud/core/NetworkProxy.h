@@ -17,26 +17,20 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_NETWORKPROXY_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_NETWORKPROXY_H_
 
-#include <string>
 #include "CoreExport.h"
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT NetworkProxy {
- public:
-  enum Type {
-    None = 0,
-    Http,
-    Socks5
-  };
-  NetworkProxy(Type type = None,
-    const std::string &hostName = "",
-    uint16_t port = 0,
-    const std::string &user = "",
-    const std::string &password = "");
+public:
+  enum Type { None = 0, Http, Socks5 };
+  NetworkProxy(Type type = None, const std::string &hostName = "",
+               uint16_t port = 0, const std::string &user = "",
+               const std::string &password = "");
   ~NetworkProxy();
 
-  std::string  hostName() const;
-  std::string  password() const;
+  std::string hostName() const;
+  std::string password() const;
   uint16_t port() const;
   void setHostName(const std::string &hostName);
   void setPassword(const std::string &password);
@@ -44,14 +38,14 @@ class ALIBABACLOUD_CORE_EXPORT NetworkProxy {
   void setType(Type type);
   void setUser(const std::string &user);
   Type type() const;
-  std::string  user() const;
+  std::string user() const;
 
- private:
+private:
   std::string hostName_;
   std::string password_;
   uint16_t port_;
   Type type_;
   std::string user_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_NETWORKPROXY_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_NETWORKPROXY_H_

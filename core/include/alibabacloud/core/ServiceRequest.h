@@ -18,10 +18,10 @@
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICEREQUEST_H_
 
 #include "CoreExport.h"
+#include "HttpRequest.h"
 #include "Url.h"
 #include <map>
 #include <string>
-#include "HttpRequest.h"
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT ServiceRequest {
@@ -47,11 +47,13 @@ public:
   void setConnectTimeout(const long connectTimeout);
   void setReadTimeout(const long readTimeout);
   void setMethod(const HttpRequest::Method method);
-  void setHeader(const ParameterNameType &name, const ParameterValueType &value);
+  void setHeader(const ParameterNameType &name,
+                 const ParameterValueType &value);
   ParameterValueType getHeader(const ParameterNameType &name);
   void removeHeader(const ParameterNameType &name);
   ParameterCollection headers() const;
-  void setBodyParameter(const ParameterNameType &name, const ParameterValueType &value);
+  void setBodyParameter(const ParameterNameType &name,
+                        const ParameterValueType &value);
 
 protected:
   ServiceRequest(const std::string &product, const std::string &version);
@@ -73,7 +75,8 @@ protected:
                         const ParameterValueType &value);
 
   void setParameters(const ParameterCollection &params);
-  void setJsonParameters(const ParameterNameType &name, const ParameterCollection &params);
+  void setJsonParameters(const ParameterNameType &name,
+                         const ParameterCollection &params);
   void setResourcePath(const std::string &path);
   void setProduct(const std::string &product);
   void setVersion(const std::string &version);

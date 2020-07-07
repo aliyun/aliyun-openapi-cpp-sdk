@@ -17,29 +17,29 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_
 
+#include <alibabacloud/core/Error.h>
 #include <alibabacloud/core/HttpRequest.h>
 #include <alibabacloud/core/HttpResponse.h>
 #include <alibabacloud/core/NetworkProxy.h>
 #include <alibabacloud/core/Outcome.h>
-#include <alibabacloud/core/Error.h>
 
 namespace AlibabaCloud {
 class HttpClient {
- public:
+public:
   typedef Outcome<Error, HttpResponse> HttpResponseOutcome;
 
   HttpClient();
   virtual ~HttpClient();
 
   virtual HttpResponseOutcome makeRequest(const HttpRequest &request) = 0;
-  NetworkProxy proxy()const;
+  NetworkProxy proxy() const;
   void setProxy(const NetworkProxy &proxy);
-  bool rejectUnauthorized()const;
+  bool rejectUnauthorized() const;
   void setRejectUnauthorized(const bool &rejectUnauthorized);
 
- private:
+private:
   NetworkProxy proxy_;
   bool rejectUnauthorized_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPCLIENT_H_

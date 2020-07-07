@@ -17,26 +17,26 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_
 
-#include <string>
 #include "CoreExport.h"
 #include "HttpMessage.h"
 #include "HttpRequest.h"
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT HttpResponse : public HttpMessage {
- public:
+public:
   HttpResponse();
-  explicit HttpResponse(const HttpRequest & request);
+  explicit HttpResponse(const HttpRequest &request);
   ~HttpResponse();
 
-  HttpRequest request()const;
+  HttpRequest request() const;
   void setStatusCode(int code);
-  int statusCode()const;
+  int statusCode() const;
 
- private:
+private:
   int statusCode_;
   HttpRequest request_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_HTTPRESPONSE_H_

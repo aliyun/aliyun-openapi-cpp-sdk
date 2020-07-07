@@ -22,12 +22,12 @@
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT CredentialsProvider {
- public:
+public:
   CredentialsProvider() = default;
-  virtual  ~CredentialsProvider() = default;
+  virtual ~CredentialsProvider() = default;
   virtual Credentials getCredentials() = 0;
 
- private:
+private:
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_CREDENTIALSPROVIDER_H_

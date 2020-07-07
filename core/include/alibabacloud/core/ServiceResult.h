@@ -17,23 +17,23 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
 
-#include <string>
 #include "CoreExport.h"
+#include <string>
 
 namespace AlibabaCloud {
 class PayloadReader;
 class ALIBABACLOUD_CORE_EXPORT ServiceResult {
- public:
+public:
   ServiceResult();
   virtual ~ServiceResult();
-  std::string requestId()const;
+  std::string requestId() const;
 
- protected:
+protected:
   void setRequestId(const std::string &requestId);
 
- private:
+private:
   std::string requestId_;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_SERVICERESULT_H_
