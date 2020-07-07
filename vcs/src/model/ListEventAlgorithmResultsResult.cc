@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vcs/model/ListMotorAlgorithmResultsResult.h>
+#include <alibabacloud/vcs/model/ListEventAlgorithmResultsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vcs;
 using namespace AlibabaCloud::Vcs::Model;
 
-ListMotorAlgorithmResultsResult::ListMotorAlgorithmResultsResult() :
+ListEventAlgorithmResultsResult::ListEventAlgorithmResultsResult() :
 	ServiceResult()
 {}
 
-ListMotorAlgorithmResultsResult::ListMotorAlgorithmResultsResult(const std::string &payload) :
+ListEventAlgorithmResultsResult::ListEventAlgorithmResultsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListMotorAlgorithmResultsResult::~ListMotorAlgorithmResultsResult()
+ListEventAlgorithmResultsResult::~ListEventAlgorithmResultsResult()
 {}
 
-void ListMotorAlgorithmResultsResult::parse(const std::string &payload)
+void ListEventAlgorithmResultsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -52,32 +52,22 @@ void ListMotorAlgorithmResultsResult::parse(const std::string &payload)
 	for (auto dataNodeRecordsRecordsItem : allRecordsNode)
 	{
 		Data::RecordsItem recordsItemObject;
+		if(!dataNodeRecordsRecordsItem["CapStyle"].isNull())
+			recordsItemObject.capStyle = dataNodeRecordsRecordsItem["CapStyle"].asString();
 		if(!dataNodeRecordsRecordsItem["CorpId"].isNull())
 			recordsItemObject.corpId = dataNodeRecordsRecordsItem["CorpId"].asString();
 		if(!dataNodeRecordsRecordsItem["DataSourceId"].isNull())
 			recordsItemObject.dataSourceId = dataNodeRecordsRecordsItem["DataSourceId"].asString();
-		if(!dataNodeRecordsRecordsItem["LeftTopX"].isNull())
-			recordsItemObject.leftTopX = std::stof(dataNodeRecordsRecordsItem["LeftTopX"].asString());
-		if(!dataNodeRecordsRecordsItem["LeftTopY"].isNull())
-			recordsItemObject.leftTopY = std::stof(dataNodeRecordsRecordsItem["LeftTopY"].asString());
-		if(!dataNodeRecordsRecordsItem["MotorId"].isNull())
-			recordsItemObject.motorId = dataNodeRecordsRecordsItem["MotorId"].asString();
+		if(!dataNodeRecordsRecordsItem["EventType"].isNull())
+			recordsItemObject.eventType = dataNodeRecordsRecordsItem["EventType"].asString();
+		if(!dataNodeRecordsRecordsItem["FaceCount"].isNull())
+			recordsItemObject.faceCount = dataNodeRecordsRecordsItem["FaceCount"].asString();
 		if(!dataNodeRecordsRecordsItem["PicUrlPath"].isNull())
 			recordsItemObject.picUrlPath = dataNodeRecordsRecordsItem["PicUrlPath"].asString();
-		if(!dataNodeRecordsRecordsItem["PlateNumber"].isNull())
-			recordsItemObject.plateNumber = dataNodeRecordsRecordsItem["PlateNumber"].asString();
-		if(!dataNodeRecordsRecordsItem["RightBottomX"].isNull())
-			recordsItemObject.rightBottomX = std::stof(dataNodeRecordsRecordsItem["RightBottomX"].asString());
-		if(!dataNodeRecordsRecordsItem["RightBottomY"].isNull())
-			recordsItemObject.rightBottomY = std::stof(dataNodeRecordsRecordsItem["RightBottomY"].asString());
 		if(!dataNodeRecordsRecordsItem["ShotTime"].isNull())
 			recordsItemObject.shotTime = dataNodeRecordsRecordsItem["ShotTime"].asString();
 		if(!dataNodeRecordsRecordsItem["TargetPicUrlPath"].isNull())
 			recordsItemObject.targetPicUrlPath = dataNodeRecordsRecordsItem["TargetPicUrlPath"].asString();
-		if(!dataNodeRecordsRecordsItem["MotorStyle"].isNull())
-			recordsItemObject.motorStyle = dataNodeRecordsRecordsItem["MotorStyle"].asString();
-		if(!dataNodeRecordsRecordsItem["MotorModel"].isNull())
-			recordsItemObject.motorModel = dataNodeRecordsRecordsItem["MotorModel"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())
@@ -87,17 +77,17 @@ void ListMotorAlgorithmResultsResult::parse(const std::string &payload)
 
 }
 
-std::string ListMotorAlgorithmResultsResult::getMessage()const
+std::string ListEventAlgorithmResultsResult::getMessage()const
 {
 	return message_;
 }
 
-ListMotorAlgorithmResultsResult::Data ListMotorAlgorithmResultsResult::getData()const
+ListEventAlgorithmResultsResult::Data ListEventAlgorithmResultsResult::getData()const
 {
 	return data_;
 }
 
-std::string ListMotorAlgorithmResultsResult::getCode()const
+std::string ListEventAlgorithmResultsResult::getCode()const
 {
 	return code_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_LISTEVENTALGORITHMRESULTSRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_LISTEVENTALGORITHMRESULTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListMotorAlgorithmResultsResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT ListEventAlgorithmResultsResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -37,17 +37,12 @@ namespace AlibabaCloud
 					struct RecordsItem
 					{
 						std::string picUrlPath;
-						std::string plateNumber;
 						std::string corpId;
-						float rightBottomX;
-						float rightBottomY;
+						std::string eventType;
 						std::string targetPicUrlPath;
-						float leftTopY;
-						std::string motorModel;
-						float leftTopX;
-						std::string motorId;
-						std::string motorStyle;
 						std::string shotTime;
+						std::string capStyle;
+						std::string faceCount;
 						std::string dataSourceId;
 					};
 					int totalCount;
@@ -58,9 +53,9 @@ namespace AlibabaCloud
 				};
 
 
-				ListMotorAlgorithmResultsResult();
-				explicit ListMotorAlgorithmResultsResult(const std::string &payload);
-				~ListMotorAlgorithmResultsResult();
+				ListEventAlgorithmResultsResult();
+				explicit ListEventAlgorithmResultsResult(const std::string &payload);
+				~ListEventAlgorithmResultsResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -76,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_LISTEVENTALGORITHMRESULTSRESULT_H_

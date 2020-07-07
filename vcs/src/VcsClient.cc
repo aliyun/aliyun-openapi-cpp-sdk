@@ -51,6 +51,42 @@ VcsClient::VcsClient(const std::string & accessKeyId, const std::string & access
 VcsClient::~VcsClient()
 {}
 
+VcsClient::AddDataSourceOutcome VcsClient::addDataSource(const AddDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDataSourceOutcome(AddDataSourceResult(outcome.result()));
+	else
+		return AddDataSourceOutcome(outcome.error());
+}
+
+void VcsClient::addDataSourceAsync(const AddDataSourceRequest& request, const AddDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::AddDataSourceOutcomeCallable VcsClient::addDataSourceCallable(const AddDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->addDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::AddDeviceOutcome VcsClient::addDevice(const AddDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -159,6 +195,114 @@ VcsClient::CreateCorpOutcomeCallable VcsClient::createCorpCallable(const CreateC
 	return task->get_future();
 }
 
+VcsClient::CreateVideoComposeTaskOutcome VcsClient::createVideoComposeTask(const CreateVideoComposeTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVideoComposeTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVideoComposeTaskOutcome(CreateVideoComposeTaskResult(outcome.result()));
+	else
+		return CreateVideoComposeTaskOutcome(outcome.error());
+}
+
+void VcsClient::createVideoComposeTaskAsync(const CreateVideoComposeTaskRequest& request, const CreateVideoComposeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVideoComposeTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::CreateVideoComposeTaskOutcomeCallable VcsClient::createVideoComposeTaskCallable(const CreateVideoComposeTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVideoComposeTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createVideoComposeTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::CreateVideoSummaryTaskOutcome VcsClient::createVideoSummaryTask(const CreateVideoSummaryTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateVideoSummaryTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateVideoSummaryTaskOutcome(CreateVideoSummaryTaskResult(outcome.result()));
+	else
+		return CreateVideoSummaryTaskOutcome(outcome.error());
+}
+
+void VcsClient::createVideoSummaryTaskAsync(const CreateVideoSummaryTaskRequest& request, const CreateVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createVideoSummaryTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::CreateVideoSummaryTaskOutcomeCallable VcsClient::createVideoSummaryTaskCallable(const CreateVideoSummaryTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateVideoSummaryTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createVideoSummaryTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteDataSourceOutcome VcsClient::deleteDataSource(const DeleteDataSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDataSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.result()));
+	else
+		return DeleteDataSourceOutcome(outcome.error());
+}
+
+void VcsClient::deleteDataSourceAsync(const DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteDataSourceOutcomeCallable VcsClient::deleteDataSourceCallable(const DeleteDataSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDataSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataSource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::DeleteDeviceOutcome VcsClient::deleteDevice(const DeleteDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +369,42 @@ VcsClient::DeleteRecordsOutcomeCallable VcsClient::deleteRecordsCallable(const D
 			[this, request]()
 			{
 			return this->deleteRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteVideoSummaryTaskOutcome VcsClient::deleteVideoSummaryTask(const DeleteVideoSummaryTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteVideoSummaryTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteVideoSummaryTaskOutcome(DeleteVideoSummaryTaskResult(outcome.result()));
+	else
+		return DeleteVideoSummaryTaskOutcome(outcome.error());
+}
+
+void VcsClient::deleteVideoSummaryTaskAsync(const DeleteVideoSummaryTaskRequest& request, const DeleteVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteVideoSummaryTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteVideoSummaryTaskOutcomeCallable VcsClient::deleteVideoSummaryTaskCallable(const DeleteVideoSummaryTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteVideoSummaryTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteVideoSummaryTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +663,78 @@ VcsClient::GetPersonDetailOutcomeCallable VcsClient::getPersonDetailCallable(con
 	return task->get_future();
 }
 
+VcsClient::GetVideoComposeResultOutcome VcsClient::getVideoComposeResult(const GetVideoComposeResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVideoComposeResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVideoComposeResultOutcome(GetVideoComposeResultResult(outcome.result()));
+	else
+		return GetVideoComposeResultOutcome(outcome.error());
+}
+
+void VcsClient::getVideoComposeResultAsync(const GetVideoComposeResultRequest& request, const GetVideoComposeResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVideoComposeResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetVideoComposeResultOutcomeCallable VcsClient::getVideoComposeResultCallable(const GetVideoComposeResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVideoComposeResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getVideoComposeResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetVideoSummaryTaskResultOutcome VcsClient::getVideoSummaryTaskResult(const GetVideoSummaryTaskResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVideoSummaryTaskResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVideoSummaryTaskResultOutcome(GetVideoSummaryTaskResultResult(outcome.result()));
+	else
+		return GetVideoSummaryTaskResultOutcome(outcome.error());
+}
+
+void VcsClient::getVideoSummaryTaskResultAsync(const GetVideoSummaryTaskResultRequest& request, const GetVideoSummaryTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVideoSummaryTaskResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetVideoSummaryTaskResultOutcomeCallable VcsClient::getVideoSummaryTaskResultCallable(const GetVideoSummaryTaskResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVideoSummaryTaskResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getVideoSummaryTaskResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListCorpsOutcome VcsClient::listCorps(const ListCorpsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +801,42 @@ VcsClient::ListDevicesOutcomeCallable VcsClient::listDevicesCallable(const ListD
 			[this, request]()
 			{
 			return this->listDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListEventAlgorithmResultsOutcome VcsClient::listEventAlgorithmResults(const ListEventAlgorithmResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEventAlgorithmResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEventAlgorithmResultsOutcome(ListEventAlgorithmResultsResult(outcome.result()));
+	else
+		return ListEventAlgorithmResultsOutcome(outcome.error());
+}
+
+void VcsClient::listEventAlgorithmResultsAsync(const ListEventAlgorithmResultsRequest& request, const ListEventAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEventAlgorithmResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListEventAlgorithmResultsOutcomeCallable VcsClient::listEventAlgorithmResultsCallable(const ListEventAlgorithmResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEventAlgorithmResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEventAlgorithmResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -981,6 +1269,42 @@ VcsClient::UpdateMonitorOutcomeCallable VcsClient::updateMonitorCallable(const U
 			[this, request]()
 			{
 			return this->updateMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UploadFileOutcome VcsClient::uploadFile(const UploadFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadFileOutcome(UploadFileResult(outcome.result()));
+	else
+		return UploadFileOutcome(outcome.error());
+}
+
+void VcsClient::uploadFileAsync(const UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UploadFileOutcomeCallable VcsClient::uploadFileCallable(const UploadFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadFileOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_ADDDATASOURCERESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_ADDDATASOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListMotorAlgorithmResultsResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT AddDataSourceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct RecordsItem
-					{
-						std::string picUrlPath;
-						std::string plateNumber;
-						std::string corpId;
-						float rightBottomX;
-						float rightBottomY;
-						std::string targetPicUrlPath;
-						float leftTopY;
-						std::string motorModel;
-						float leftTopX;
-						std::string motorId;
-						std::string motorStyle;
-						std::string shotTime;
-						std::string dataSourceId;
-					};
-					int totalCount;
-					int pageSize;
-					int totalPage;
-					int pageNumber;
-					std::vector<RecordsItem> records;
+					std::string kafkaTopic;
+					std::string ossPath;
+					std::string dataSourceId;
 				};
 
 
-				ListMotorAlgorithmResultsResult();
-				explicit ListMotorAlgorithmResultsResult(const std::string &payload);
-				~ListMotorAlgorithmResultsResult();
+				AddDataSourceResult();
+				explicit AddDataSourceResult(const std::string &payload);
+				~AddDataSourceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -76,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTMOTORALGORITHMRESULTSRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_ADDDATASOURCERESULT_H_

@@ -21,16 +21,26 @@ set(vcs_public_header
 	include/alibabacloud/vcs/VcsExport.h )
 
 set(vcs_public_header_model 
+	include/alibabacloud/vcs/model/AddDataSourceRequest.h
+	include/alibabacloud/vcs/model/AddDataSourceResult.h
 	include/alibabacloud/vcs/model/AddDeviceRequest.h
 	include/alibabacloud/vcs/model/AddDeviceResult.h
 	include/alibabacloud/vcs/model/AddMonitorRequest.h
 	include/alibabacloud/vcs/model/AddMonitorResult.h
 	include/alibabacloud/vcs/model/CreateCorpRequest.h
 	include/alibabacloud/vcs/model/CreateCorpResult.h
+	include/alibabacloud/vcs/model/CreateVideoComposeTaskRequest.h
+	include/alibabacloud/vcs/model/CreateVideoComposeTaskResult.h
+	include/alibabacloud/vcs/model/CreateVideoSummaryTaskRequest.h
+	include/alibabacloud/vcs/model/CreateVideoSummaryTaskResult.h
+	include/alibabacloud/vcs/model/DeleteDataSourceRequest.h
+	include/alibabacloud/vcs/model/DeleteDataSourceResult.h
 	include/alibabacloud/vcs/model/DeleteDeviceRequest.h
 	include/alibabacloud/vcs/model/DeleteDeviceResult.h
 	include/alibabacloud/vcs/model/DeleteRecordsRequest.h
 	include/alibabacloud/vcs/model/DeleteRecordsResult.h
+	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskRequest.h
+	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskResult.h
 	include/alibabacloud/vcs/model/GetBodyOptionsRequest.h
 	include/alibabacloud/vcs/model/GetBodyOptionsResult.h
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h
@@ -45,10 +55,16 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetMonitorResultResult.h
 	include/alibabacloud/vcs/model/GetPersonDetailRequest.h
 	include/alibabacloud/vcs/model/GetPersonDetailResult.h
+	include/alibabacloud/vcs/model/GetVideoComposeResultRequest.h
+	include/alibabacloud/vcs/model/GetVideoComposeResultResult.h
+	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultRequest.h
+	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
 	include/alibabacloud/vcs/model/ListDevicesResult.h
+	include/alibabacloud/vcs/model/ListEventAlgorithmResultsRequest.h
+	include/alibabacloud/vcs/model/ListEventAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListFaceAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListFaceAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListMetricsRequest.h
@@ -72,20 +88,32 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/UpdateDeviceRequest.h
 	include/alibabacloud/vcs/model/UpdateDeviceResult.h
 	include/alibabacloud/vcs/model/UpdateMonitorRequest.h
-	include/alibabacloud/vcs/model/UpdateMonitorResult.h )
+	include/alibabacloud/vcs/model/UpdateMonitorResult.h
+	include/alibabacloud/vcs/model/UploadFileRequest.h
+	include/alibabacloud/vcs/model/UploadFileResult.h )
 
 set(vcs_src 
 	src/VcsClient.cc
+	src/model/AddDataSourceRequest.cc
+	src/model/AddDataSourceResult.cc
 	src/model/AddDeviceRequest.cc
 	src/model/AddDeviceResult.cc
 	src/model/AddMonitorRequest.cc
 	src/model/AddMonitorResult.cc
 	src/model/CreateCorpRequest.cc
 	src/model/CreateCorpResult.cc
+	src/model/CreateVideoComposeTaskRequest.cc
+	src/model/CreateVideoComposeTaskResult.cc
+	src/model/CreateVideoSummaryTaskRequest.cc
+	src/model/CreateVideoSummaryTaskResult.cc
+	src/model/DeleteDataSourceRequest.cc
+	src/model/DeleteDataSourceResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
 	src/model/DeleteRecordsRequest.cc
 	src/model/DeleteRecordsResult.cc
+	src/model/DeleteVideoSummaryTaskRequest.cc
+	src/model/DeleteVideoSummaryTaskResult.cc
 	src/model/GetBodyOptionsRequest.cc
 	src/model/GetBodyOptionsResult.cc
 	src/model/GetDeviceLiveUrlRequest.cc
@@ -100,10 +128,16 @@ set(vcs_src
 	src/model/GetMonitorResultResult.cc
 	src/model/GetPersonDetailRequest.cc
 	src/model/GetPersonDetailResult.cc
+	src/model/GetVideoComposeResultRequest.cc
+	src/model/GetVideoComposeResultResult.cc
+	src/model/GetVideoSummaryTaskResultRequest.cc
+	src/model/GetVideoSummaryTaskResultResult.cc
 	src/model/ListCorpsRequest.cc
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListEventAlgorithmResultsRequest.cc
+	src/model/ListEventAlgorithmResultsResult.cc
 	src/model/ListFaceAlgorithmResultsRequest.cc
 	src/model/ListFaceAlgorithmResultsResult.cc
 	src/model/ListMetricsRequest.cc
@@ -127,7 +161,9 @@ set(vcs_src
 	src/model/UpdateDeviceRequest.cc
 	src/model/UpdateDeviceResult.cc
 	src/model/UpdateMonitorRequest.cc
-	src/model/UpdateMonitorResult.cc )
+	src/model/UpdateMonitorResult.cc
+	src/model/UploadFileRequest.cc
+	src/model/UploadFileResult.cc )
 
 add_library(vcs ${LIB_TYPE}
 	${vcs_public_header}
