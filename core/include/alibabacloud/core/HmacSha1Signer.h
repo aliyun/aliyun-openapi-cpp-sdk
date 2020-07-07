@@ -22,13 +22,13 @@
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT HmacSha1Signer : public Signer {
- public:
+public:
   HmacSha1Signer();
   ~HmacSha1Signer();
 
   std::string generate(const std::string &src,
-    const std::string &secret)  const override;
+                       const std::string &secret) const override;
 };
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_HMACSHA1SIGNER_H_

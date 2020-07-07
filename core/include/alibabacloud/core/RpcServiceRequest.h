@@ -22,17 +22,17 @@
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT RpcServiceRequest : public ServiceRequest {
- public:
+public:
   RpcServiceRequest(const std::string &product, const std::string &version,
-    const std::string & action);
+                    const std::string &action);
   virtual ~RpcServiceRequest();
 
-  std::string actionName()const;
+  std::string actionName() const;
   using ServiceRequest::setMethod;
   using ServiceRequest::setScheme;
 
 protected:
   void setActionName(const std::string &name);
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICEREQUEST_H_

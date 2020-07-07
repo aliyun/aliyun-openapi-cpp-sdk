@@ -30,6 +30,6 @@ const long kDefaultReadTimeout = 10000;
 ALIBABACLOUD_CORE_EXPORT void InitializeSdk();
 ALIBABACLOUD_CORE_EXPORT bool IsSdkInitialized();
 ALIBABACLOUD_CORE_EXPORT void ShutdownSdk();
-}  // namespace AlibabaCloud
+} // namespace AlibabaCloud
 
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_ALIBABACLOUD_H_

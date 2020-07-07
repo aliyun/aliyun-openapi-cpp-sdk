@@ -19,33 +19,27 @@
 using namespace AlibabaCloud::Location;
 using namespace AlibabaCloud::Location::Model;
 
-DescribeEndpointsRequest::DescribeEndpointsRequest() :
-  LocationRequest("DescribeEndpoints")
-{}
+DescribeEndpointsRequest::DescribeEndpointsRequest()
+    : LocationRequest("DescribeEndpoints") {}
 
-DescribeEndpointsRequest::~DescribeEndpointsRequest()
-{}
+DescribeEndpointsRequest::~DescribeEndpointsRequest() {}
 
-std::string DescribeEndpointsRequest::serviceCode()const {
+std::string DescribeEndpointsRequest::serviceCode() const {
   return parameter("ServiceCode");
 }
 
-void DescribeEndpointsRequest::setServiceCode(const std::string & serviceCode) {
+void DescribeEndpointsRequest::setServiceCode(const std::string &serviceCode) {
   setParameter("ServiceCode", serviceCode);
 }
 
-std::string DescribeEndpointsRequest::id()const {
-  return parameter("Id");
-}
+std::string DescribeEndpointsRequest::id() const { return parameter("Id"); }
 
-void DescribeEndpointsRequest::setId(const std::string & id) {
+void DescribeEndpointsRequest::setId(const std::string &id) {
   setParameter("Id", id);
 }
 
-std::string DescribeEndpointsRequest::type()const {
-  return parameter("Type");
-}
+std::string DescribeEndpointsRequest::type() const { return parameter("Type"); }
 
-void DescribeEndpointsRequest::setType(const std::string & type) {
+void DescribeEndpointsRequest::setType(const std::string &type) {
   setParameter("Type", type);
 }

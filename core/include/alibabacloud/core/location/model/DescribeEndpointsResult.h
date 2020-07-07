@@ -19,14 +19,14 @@
 
 #include <alibabacloud/core/ServiceResult.h>
 #include <string>
-#include <vector>
 #include <utility>
+#include <vector>
 
 namespace AlibabaCloud {
 namespace Location {
 namespace Model {
 class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult {
- public:
+public:
   struct Endpoint {
     std::string endpoint;
     std::string id;
@@ -40,20 +40,20 @@ class ALIBABACLOUD_CORE_EXPORT DescribeEndpointsResult : public ServiceResult {
   explicit DescribeEndpointsResult(const std::string &payload);
   ~DescribeEndpointsResult();
 
-  std::vector<Endpoint> endpoints()const;
+  std::vector<Endpoint> endpoints() const;
   void setEndpoints(const std::vector<Endpoint> &endpoints);
 
-  bool success()const;
+  bool success() const;
   void setSuccess(const bool &success);
 
- protected:
+protected:
   void parse(const std::string &payload);
 
- private:
+private:
   std::vector<Endpoint> endpoints_;
   bool success_;
 };
-}  // namespace Model
-}  // namespace Location
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_
+} // namespace Model
+} // namespace Location
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_LOCATION_MODEL_DESCRIBEENDPOINTSRESULT_H_

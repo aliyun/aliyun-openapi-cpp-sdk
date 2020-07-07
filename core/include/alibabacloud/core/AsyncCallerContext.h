@@ -17,21 +17,21 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
 
-#include <string>
 #include "CoreExport.h"
+#include <string>
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT AsyncCallerContext {
- public:
+public:
   AsyncCallerContext();
   explicit AsyncCallerContext(const std::string &uuid);
   virtual ~AsyncCallerContext();
 
-  std::string uuid()const;
+  std::string uuid() const;
   void setUuid(const std::string &uuid);
 
- private:
+private:
   std::string uuid_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_ASYNCCALLERCONTEXT_H_

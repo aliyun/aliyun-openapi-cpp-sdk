@@ -17,47 +17,51 @@
 #ifndef CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICECLIENT_H_
 #define CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICECLIENT_H_
 
-#include <map>
-#include <memory>
-#include <string>
 #include "CoreClient.h"
 #include "CredentialsProvider.h"
 #include "HmacSha1Signer.h"
 #include "HttpRequest.h"
-#include "RpcServiceRequest.h"
 #include "Outcome.h"
+#include "RpcServiceRequest.h"
+#include <map>
+#include <memory>
+#include <string>
 
 namespace AlibabaCloud {
 class RpcErrorMarshaller;
 class RpcServiceRequest;
 class ALIBABACLOUD_CORE_EXPORT RpcServiceClient : public CoreClient {
- public:
+public:
   typedef Outcome<Error, std::string> JsonOutcome;
 
-  RpcServiceClient(const std::string & servicename,
-    const std::shared_ptr<CredentialsProvider> &credentialsProvider,
-    const ClientConfiguration &configuration,
-    const std::shared_ptr<Signer> &signer =
-    std::make_shared<HmacSha1Signer>());
+  RpcServiceClient(
+      const std::string &servicename,
+      const std::shared_ptr<CredentialsProvider> &credentialsProvider,
+      const ClientConfiguration &configuration,
+      const std::shared_ptr<Signer> &signer =
+          std::make_shared<HmacSha1Signer>());
   virtual ~RpcServiceClient();
 
   std::shared_ptr<CredentialsProvider> credentialsProvider() {
     return credentialsProvider_;
   }
-  using CoreClient::configuration;
   using CoreClient::AttemptRequest;
+  using CoreClient::configuration;
 
- protected:
-   virtual JsonOutcome makeRequest(const std::string &endpoint,
-                                   const RpcServiceRequest &msg, HttpRequest::Method method = HttpRequest::Method::Get) const;
-   HttpRequest buildHttpRequest(const std::string &endpoint,
-                                const ServiceRequest &msg, HttpRequest::Method method) const override;
-   HttpRequest buildHttpRequest(const std::string &endpoint,
-                                const RpcServiceRequest &msg, HttpRequest::Method method) const;
+protected:
+  virtual JsonOutcome
+  makeRequest(const std::string &endpoint, const RpcServiceRequest &msg,
+              HttpRequest::Method method = HttpRequest::Method::Get) const;
+  HttpRequest buildHttpRequest(const std::string &endpoint,
+                               const ServiceRequest &msg,
+                               HttpRequest::Method method) const override;
+  HttpRequest buildHttpRequest(const std::string &endpoint,
+                               const RpcServiceRequest &msg,
+                               HttpRequest::Method method) const;
 
- private:
+private:
   std::shared_ptr<CredentialsProvider> credentialsProvider_;
   std::shared_ptr<Signer> signer_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICECLIENT_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_RPCSERVICECLIENT_H_

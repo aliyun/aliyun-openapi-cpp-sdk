@@ -23,8 +23,7 @@
 #include <map>
 #include <string>
 
-namespace AlibabaCloud
-{
+namespace AlibabaCloud {
 std::string ComputeContentMD5(const char *data, size_t size);
 std::string GenerateUuid();
 std::string HttpMethodToString(HttpRequest::Method method);

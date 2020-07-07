@@ -22,13 +22,13 @@
 
 namespace AlibabaCloud {
 class ALIBABACLOUD_CORE_EXPORT Url {
- public:
+public:
   explicit Url(const std::string &url = "");
   Url(const Url &other) = default;
   Url(Url &&other) = default;
   ~Url();
-  Url & operator=(const Url &url) = default;
-  Url & operator=(Url &&other) = default;
+  Url &operator=(const Url &url) = default;
+  Url &operator=(Url &&other) = default;
   bool operator==(const Url &url) const;
   bool operator!=(const Url &url) const;
 
@@ -38,11 +38,11 @@ class ALIBABACLOUD_CORE_EXPORT Url {
   void fromString(const std::string &url);
   bool hasFragment() const;
   bool hasQuery() const;
-  std::string host()const;
+  std::string host() const;
   bool isEmpty() const;
   bool isValid() const;
-  int port()const;
-  std::string  password() const;
+  int port() const;
+  std::string password() const;
   std::string path() const;
   std::string query() const;
   std::string scheme() const;
@@ -58,9 +58,9 @@ class ALIBABACLOUD_CORE_EXPORT Url {
   void setUserName(const std::string &userName);
   std::string toString() const;
   std::string userInfo() const;
-  std::string  userName() const;
+  std::string userName() const;
 
- private:
+private:
   std::string scheme_;
   std::string userName_;
   std::string password_;
@@ -70,5 +70,5 @@ class ALIBABACLOUD_CORE_EXPORT Url {
   std::string query_;
   std::string fragment_;
 };
-}  // namespace AlibabaCloud
-#endif  // CORE_INCLUDE_ALIBABACLOUD_CORE_URL_H_
+} // namespace AlibabaCloud
+#endif // CORE_INCLUDE_ALIBABACLOUD_CORE_URL_H_

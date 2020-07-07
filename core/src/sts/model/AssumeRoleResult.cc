@@ -25,25 +25,21 @@ AssumeRoleResult::AssumeRoleResult()
     : ServiceResult(), assumedRoleUser_(), credentials_() {}
 
 AssumeRoleResult::AssumeRoleResult(const std::string &payload)
-    : ServiceResult(), assumedRoleUser_(), credentials_()
-{
+    : ServiceResult(), assumedRoleUser_(), credentials_() {
   parse(payload);
 }
 
 AssumeRoleResult::~AssumeRoleResult() {}
 
-AssumeRoleResult::AssumedRoleUser AssumeRoleResult::assumedRoleUser() const
-{
+AssumeRoleResult::AssumedRoleUser AssumeRoleResult::assumedRoleUser() const {
   return assumedRoleUser_;
 }
 
-AssumeRoleResult::Credentials AssumeRoleResult::credentials() const
-{
+AssumeRoleResult::Credentials AssumeRoleResult::credentials() const {
   return credentials_;
 }
 
-void AssumeRoleResult::parse(const std::string &payload)
-{
+void AssumeRoleResult::parse(const std::string &payload) {
   Json::Reader reader;
   Json::Value value;
   reader.parse(payload, value);
