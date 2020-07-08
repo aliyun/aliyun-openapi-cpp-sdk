@@ -39,6 +39,8 @@ set(reid_public_header_model
 	include/alibabacloud/reid/model/DescribeIpcLiveAddressResult.h
 	include/alibabacloud/reid/model/DescribeOverviewDataRequest.h
 	include/alibabacloud/reid/model/DescribeOverviewDataResult.h
+	include/alibabacloud/reid/model/GetFootwearEventRequest.h
+	include/alibabacloud/reid/model/GetFootwearEventResult.h
 	include/alibabacloud/reid/model/GetFootwearPositionRequest.h
 	include/alibabacloud/reid/model/GetFootwearPositionResult.h
 	include/alibabacloud/reid/model/ImportSpecialPersonnelRequest.h
@@ -84,6 +86,8 @@ set(reid_src
 	src/model/DescribeIpcLiveAddressResult.cc
 	src/model/DescribeOverviewDataRequest.cc
 	src/model/DescribeOverviewDataResult.cc
+	src/model/GetFootwearEventRequest.cc
+	src/model/GetFootwearEventResult.cc
 	src/model/GetFootwearPositionRequest.cc
 	src/model/GetFootwearPositionResult.cc
 	src/model/ImportSpecialPersonnelRequest.cc

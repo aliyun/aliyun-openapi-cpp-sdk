@@ -31,21 +31,21 @@ ReidClient::ReidClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8.2");
 }
 
 ReidClient::ReidClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8.2");
 }
 
 ReidClient::ReidClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "1.1.8.2");
 }
 
 ReidClient::~ReidClient()
@@ -369,6 +369,42 @@ ReidClient::DescribeOverviewDataOutcomeCallable ReidClient::describeOverviewData
 			[this, request]()
 			{
 			return this->describeOverviewData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ReidClient::GetFootwearEventOutcome ReidClient::getFootwearEvent(const GetFootwearEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFootwearEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFootwearEventOutcome(GetFootwearEventResult(outcome.result()));
+	else
+		return GetFootwearEventOutcome(outcome.error());
+}
+
+void ReidClient::getFootwearEventAsync(const GetFootwearEventRequest& request, const GetFootwearEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFootwearEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ReidClient::GetFootwearEventOutcomeCallable ReidClient::getFootwearEventCallable(const GetFootwearEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFootwearEventOutcome()>>(
+			[this, request]()
+			{
+			return this->getFootwearEvent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

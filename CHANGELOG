@@ -1,3 +1,8 @@
+2020-07-08 Version: 1.36.509
+- Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.
+- Add GetFootwearEvent.
+- Please ignore the pd s pot.
+
 2020-07-08 Version: 1.36.508
 - Generated 2020-05-18 for `dataworks-public`.
 

@@ -40,6 +40,8 @@
 #include "model/DescribeIpcLiveAddressResult.h"
 #include "model/DescribeOverviewDataRequest.h"
 #include "model/DescribeOverviewDataResult.h"
+#include "model/GetFootwearEventRequest.h"
+#include "model/GetFootwearEventResult.h"
 #include "model/GetFootwearPositionRequest.h"
 #include "model/GetFootwearPositionResult.h"
 #include "model/ImportSpecialPersonnelRequest.h"
@@ -100,6 +102,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeOverviewDataResult> DescribeOverviewDataOutcome;
 			typedef std::future<DescribeOverviewDataOutcome> DescribeOverviewDataOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::DescribeOverviewDataRequest&, const DescribeOverviewDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewDataAsyncHandler;
+			typedef Outcome<Error, Model::GetFootwearEventResult> GetFootwearEventOutcome;
+			typedef std::future<GetFootwearEventOutcome> GetFootwearEventOutcomeCallable;
+			typedef std::function<void(const ReidClient*, const Model::GetFootwearEventRequest&, const GetFootwearEventOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFootwearEventAsyncHandler;
 			typedef Outcome<Error, Model::GetFootwearPositionResult> GetFootwearPositionOutcome;
 			typedef std::future<GetFootwearPositionOutcome> GetFootwearPositionOutcomeCallable;
 			typedef std::function<void(const ReidClient*, const Model::GetFootwearPositionRequest&, const GetFootwearPositionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFootwearPositionAsyncHandler;
@@ -168,6 +173,9 @@ namespace AlibabaCloud
 			DescribeOverviewDataOutcome describeOverviewData(const Model::DescribeOverviewDataRequest &request)const;
 			void describeOverviewDataAsync(const Model::DescribeOverviewDataRequest& request, const DescribeOverviewDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOverviewDataOutcomeCallable describeOverviewDataCallable(const Model::DescribeOverviewDataRequest& request) const;
+			GetFootwearEventOutcome getFootwearEvent(const Model::GetFootwearEventRequest &request)const;
+			void getFootwearEventAsync(const Model::GetFootwearEventRequest& request, const GetFootwearEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFootwearEventOutcomeCallable getFootwearEventCallable(const Model::GetFootwearEventRequest& request) const;
 			GetFootwearPositionOutcome getFootwearPosition(const Model::GetFootwearPositionRequest &request)const;
 			void getFootwearPositionAsync(const Model::GetFootwearPositionRequest& request, const GetFootwearPositionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFootwearPositionOutcomeCallable getFootwearPositionCallable(const Model::GetFootwearPositionRequest& request) const;
