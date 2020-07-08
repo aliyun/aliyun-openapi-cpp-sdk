@@ -43,12 +43,26 @@ void GetVideoComposeResultResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["VideoUrl"].isNull())
 		videoUrl_ = value["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 
+}
+
+std::string GetVideoComposeResultResult::getStatus()const
+{
+	return status_;
 }
 
 std::string GetVideoComposeResultResult::getMessage()const
 {
 	return message_;
+}
+
+std::string GetVideoComposeResultResult::getCode()const
+{
+	return code_;
 }
 
 std::string GetVideoComposeResultResult::getVideoUrl()const

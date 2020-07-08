@@ -39,16 +39,20 @@ void CreateVideoComposeTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["DomainName"].isNull())
-		data_.domainName = std::stoi(dataNode["DomainName"].asString());
-	if(!dataNode["BucketName"].isNull())
-		data_.bucketName = std::stoi(dataNode["BucketName"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["BucketName"].isNull())
+		bucketName_ = value["BucketName"].asString();
 
+}
+
+std::string CreateVideoComposeTaskResult::getBucketName()const
+{
+	return bucketName_;
 }
 
 std::string CreateVideoComposeTaskResult::getMessage()const
@@ -56,9 +60,9 @@ std::string CreateVideoComposeTaskResult::getMessage()const
 	return message_;
 }
 
-CreateVideoComposeTaskResult::Data CreateVideoComposeTaskResult::getData()const
+std::string CreateVideoComposeTaskResult::getDomainName()const
 {
-	return data_;
+	return domainName_;
 }
 
 std::string CreateVideoComposeTaskResult::getCode()const

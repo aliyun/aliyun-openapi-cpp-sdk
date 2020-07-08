@@ -32,25 +32,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VCS_EXPORT CreateVideoComposeTaskResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					int bucketName;
-					int domainName;
-				};
 
 
 				CreateVideoComposeTaskResult();
 				explicit CreateVideoComposeTaskResult(const std::string &payload);
 				~CreateVideoComposeTaskResult();
+				std::string getBucketName()const;
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getDomainName()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string bucketName_;
 				std::string message_;
-				Data data_;
+				std::string domainName_;
 				std::string code_;
 
 			};

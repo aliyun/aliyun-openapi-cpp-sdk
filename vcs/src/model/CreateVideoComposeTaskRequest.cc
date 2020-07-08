@@ -49,26 +49,37 @@ void CreateVideoComposeTaskRequest::setDomainName(const std::string& domainName)
 	setBodyParameter("DomainName", domainName);
 }
 
-std::string CreateVideoComposeTaskRequest::getPicUrlList()const
+int CreateVideoComposeTaskRequest::getVideoFrameRate()const
 {
-	return picUrlList_;
+	return videoFrameRate_;
 }
 
-void CreateVideoComposeTaskRequest::setPicUrlList(const std::string& picUrlList)
+void CreateVideoComposeTaskRequest::setVideoFrameRate(int videoFrameRate)
 {
-	picUrlList_ = picUrlList;
-	setBodyParameter("PicUrlList", picUrlList);
+	videoFrameRate_ = videoFrameRate;
+	setBodyParameter("VideoFrameRate", std::to_string(videoFrameRate));
 }
 
-std::string CreateVideoComposeTaskRequest::getAudioUrl()const
+std::string CreateVideoComposeTaskRequest::getImageFileNames()const
 {
-	return audioUrl_;
+	return imageFileNames_;
 }
 
-void CreateVideoComposeTaskRequest::setAudioUrl(const std::string& audioUrl)
+void CreateVideoComposeTaskRequest::setImageFileNames(const std::string& imageFileNames)
 {
-	audioUrl_ = audioUrl;
-	setBodyParameter("AudioUrl", audioUrl);
+	imageFileNames_ = imageFileNames;
+	setBodyParameter("ImageFileNames", imageFileNames);
+}
+
+std::string CreateVideoComposeTaskRequest::getAudioFileName()const
+{
+	return audioFileName_;
+}
+
+void CreateVideoComposeTaskRequest::setAudioFileName(const std::string& audioFileName)
+{
+	audioFileName_ = audioFileName;
+	setBodyParameter("AudioFileName", audioFileName);
 }
 
 std::string CreateVideoComposeTaskRequest::getBucketName()const
@@ -91,17 +102,6 @@ void CreateVideoComposeTaskRequest::setImageParameters(const std::string& imageP
 {
 	imageParameters_ = imageParameters;
 	setBodyParameter("ImageParameters", imageParameters);
-}
-
-std::string CreateVideoComposeTaskRequest::getVideoRate()const
-{
-	return videoRate_;
-}
-
-void CreateVideoComposeTaskRequest::setVideoRate(const std::string& videoRate)
-{
-	videoRate_ = videoRate;
-	setBodyParameter("VideoRate", videoRate);
 }
 
 std::string CreateVideoComposeTaskRequest::getVideoFormat()const

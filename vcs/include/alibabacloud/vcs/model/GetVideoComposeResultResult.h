@@ -37,13 +37,17 @@ namespace AlibabaCloud
 				GetVideoComposeResultResult();
 				explicit GetVideoComposeResultResult(const std::string &payload);
 				~GetVideoComposeResultResult();
+				std::string getStatus()const;
 				std::string getMessage()const;
+				std::string getCode()const;
 				std::string getVideoUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				std::string message_;
+				std::string code_;
 				std::string videoUrl_;
 
 			};

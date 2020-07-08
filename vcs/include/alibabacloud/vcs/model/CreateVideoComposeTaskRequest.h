@@ -39,27 +39,27 @@ namespace AlibabaCloud
 				void setCorpId(const std::string& corpId);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
-				std::string getPicUrlList()const;
-				void setPicUrlList(const std::string& picUrlList);
-				std::string getAudioUrl()const;
-				void setAudioUrl(const std::string& audioUrl);
+				int getVideoFrameRate()const;
+				void setVideoFrameRate(int videoFrameRate);
+				std::string getImageFileNames()const;
+				void setImageFileNames(const std::string& imageFileNames);
+				std::string getAudioFileName()const;
+				void setAudioFileName(const std::string& audioFileName);
 				std::string getBucketName()const;
 				void setBucketName(const std::string& bucketName);
 				std::string getImageParameters()const;
 				void setImageParameters(const std::string& imageParameters);
-				std::string getVideoRate()const;
-				void setVideoRate(const std::string& videoRate);
 				std::string getVideoFormat()const;
 				void setVideoFormat(const std::string& videoFormat);
 
             private:
 				std::string corpId_;
 				std::string domainName_;
-				std::string picUrlList_;
-				std::string audioUrl_;
+				int videoFrameRate_;
+				std::string imageFileNames_;
+				std::string audioFileName_;
 				std::string bucketName_;
 				std::string imageParameters_;
-				std::string videoRate_;
 				std::string videoFormat_;
 
 			};
