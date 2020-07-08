@@ -39,7 +39,7 @@ namespace AlibabaCloud
 				~DeleteQualityEntityResult();
 				int getHttpStatusCode()const;
 				bool getData()const;
-				bool getErrorCode()const;
+				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
 
@@ -48,7 +48,7 @@ namespace AlibabaCloud
 			private:
 				int httpStatusCode_;
 				bool data_;
-				bool errorCode_;
+				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
 

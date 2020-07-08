@@ -42,7 +42,7 @@ void DeleteQualityEntityResult::parse(const std::string &payload)
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
-		errorCode_ = value["ErrorCode"].asString() == "true";
+		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -62,7 +62,7 @@ bool DeleteQualityEntityResult::getData()const
 	return data_;
 }
 
-bool DeleteQualityEntityResult::getErrorCode()const
+std::string DeleteQualityEntityResult::getErrorCode()const
 {
 	return errorCode_;
 }
