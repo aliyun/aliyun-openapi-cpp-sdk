@@ -1,3 +1,6 @@
+2020-07-10 Version: 1.36.510
+- Add ListBodyAlgorithmResult API.
+
 2020-07-08 Version: 1.36.509
 - Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.
 - Add GetFootwearEvent.

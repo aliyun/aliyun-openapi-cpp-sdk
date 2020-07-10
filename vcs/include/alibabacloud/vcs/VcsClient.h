@@ -60,6 +60,8 @@
 #include "model/GetVideoComposeResultResult.h"
 #include "model/GetVideoSummaryTaskResultRequest.h"
 #include "model/GetVideoSummaryTaskResultResult.h"
+#include "model/ListBodyAlgorithmResultsRequest.h"
+#include "model/ListBodyAlgorithmResultsResult.h"
 #include "model/ListCorpsRequest.h"
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
@@ -158,6 +160,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVideoSummaryTaskResultResult> GetVideoSummaryTaskResultOutcome;
 			typedef std::future<GetVideoSummaryTaskResultOutcome> GetVideoSummaryTaskResultOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetVideoSummaryTaskResultRequest&, const GetVideoSummaryTaskResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoSummaryTaskResultAsyncHandler;
+			typedef Outcome<Error, Model::ListBodyAlgorithmResultsResult> ListBodyAlgorithmResultsOutcome;
+			typedef std::future<ListBodyAlgorithmResultsOutcome> ListBodyAlgorithmResultsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListBodyAlgorithmResultsRequest&, const ListBodyAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyAlgorithmResultsAsyncHandler;
 			typedef Outcome<Error, Model::ListCorpsResult> ListCorpsOutcome;
 			typedef std::future<ListCorpsOutcome> ListCorpsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpsRequest&, const ListCorpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpsAsyncHandler;
@@ -268,6 +273,9 @@ namespace AlibabaCloud
 			GetVideoSummaryTaskResultOutcome getVideoSummaryTaskResult(const Model::GetVideoSummaryTaskResultRequest &request)const;
 			void getVideoSummaryTaskResultAsync(const Model::GetVideoSummaryTaskResultRequest& request, const GetVideoSummaryTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoSummaryTaskResultOutcomeCallable getVideoSummaryTaskResultCallable(const Model::GetVideoSummaryTaskResultRequest& request) const;
+			ListBodyAlgorithmResultsOutcome listBodyAlgorithmResults(const Model::ListBodyAlgorithmResultsRequest &request)const;
+			void listBodyAlgorithmResultsAsync(const Model::ListBodyAlgorithmResultsRequest& request, const ListBodyAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBodyAlgorithmResultsOutcomeCallable listBodyAlgorithmResultsCallable(const Model::ListBodyAlgorithmResultsRequest& request) const;
 			ListCorpsOutcome listCorps(const Model::ListCorpsRequest &request)const;
 			void listCorpsAsync(const Model::ListCorpsRequest& request, const ListCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpsOutcomeCallable listCorpsCallable(const Model::ListCorpsRequest& request) const;

@@ -59,6 +59,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetVideoComposeResultResult.h
 	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultRequest.h
 	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultResult.h
+	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsRequest.h
+	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
@@ -132,6 +134,8 @@ set(vcs_src
 	src/model/GetVideoComposeResultResult.cc
 	src/model/GetVideoSummaryTaskResultRequest.cc
 	src/model/GetVideoSummaryTaskResultResult.cc
+	src/model/ListBodyAlgorithmResultsRequest.cc
+	src/model/ListBodyAlgorithmResultsResult.cc
 	src/model/ListCorpsRequest.cc
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc

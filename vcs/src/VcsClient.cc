@@ -31,21 +31,21 @@ VcsClient::VcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::~VcsClient()
@@ -729,6 +729,42 @@ VcsClient::GetVideoSummaryTaskResultOutcomeCallable VcsClient::getVideoSummaryTa
 			[this, request]()
 			{
 			return this->getVideoSummaryTaskResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListBodyAlgorithmResultsOutcome VcsClient::listBodyAlgorithmResults(const ListBodyAlgorithmResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListBodyAlgorithmResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListBodyAlgorithmResultsOutcome(ListBodyAlgorithmResultsResult(outcome.result()));
+	else
+		return ListBodyAlgorithmResultsOutcome(outcome.error());
+}
+
+void VcsClient::listBodyAlgorithmResultsAsync(const ListBodyAlgorithmResultsRequest& request, const ListBodyAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listBodyAlgorithmResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListBodyAlgorithmResultsOutcomeCallable VcsClient::listBodyAlgorithmResultsCallable(const ListBodyAlgorithmResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListBodyAlgorithmResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->listBodyAlgorithmResults(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
