@@ -34,8 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Attributes
+					{
+						std::string faceQuality;
+						int rightBottomX;
+						int rightBottomY;
+						std::string faceStyle;
+						int leftTopY;
+						int leftTopX;
+						std::string targetImageStoragePath;
+						std::string faceScore;
+					};
 					std::string description;
 					std::string qualityScore;
+					Attributes attributes;
 				};
 
 

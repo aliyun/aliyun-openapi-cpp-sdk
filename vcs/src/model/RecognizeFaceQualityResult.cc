@@ -44,6 +44,23 @@ void RecognizeFaceQualityResult::parse(const std::string &payload)
 		data_.qualityScore = dataNode["QualityScore"].asString();
 	if(!dataNode["Description"].isNull())
 		data_.description = dataNode["Description"].asString();
+	auto attributesNode = dataNode["Attributes"];
+	if(!attributesNode["LeftTopX"].isNull())
+		data_.attributes.leftTopX = std::stoi(attributesNode["LeftTopX"].asString());
+	if(!attributesNode["LeftTopY"].isNull())
+		data_.attributes.leftTopY = std::stoi(attributesNode["LeftTopY"].asString());
+	if(!attributesNode["RightBottomX"].isNull())
+		data_.attributes.rightBottomX = std::stoi(attributesNode["RightBottomX"].asString());
+	if(!attributesNode["RightBottomY"].isNull())
+		data_.attributes.rightBottomY = std::stoi(attributesNode["RightBottomY"].asString());
+	if(!attributesNode["TargetImageStoragePath"].isNull())
+		data_.attributes.targetImageStoragePath = attributesNode["TargetImageStoragePath"].asString();
+	if(!attributesNode["FaceStyle"].isNull())
+		data_.attributes.faceStyle = attributesNode["FaceStyle"].asString();
+	if(!attributesNode["FaceQuality"].isNull())
+		data_.attributes.faceQuality = attributesNode["FaceQuality"].asString();
+	if(!attributesNode["FaceScore"].isNull())
+		data_.attributes.faceScore = attributesNode["FaceScore"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
