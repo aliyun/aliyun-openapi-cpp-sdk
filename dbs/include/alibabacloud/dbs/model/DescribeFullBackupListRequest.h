@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
+				std::string getBackupSetId()const;
+				void setBackupSetId(const std::string& backupSetId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
 				std::string getOwnerId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string clientToken_;
 				std::string backupPlanId_;
+				std::string backupSetId_;
 				int pageNum_;
 				std::string ownerId_;
 				bool showStorageType_;

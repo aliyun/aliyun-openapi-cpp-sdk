@@ -82,3 +82,14 @@ void DescribeRestoreRangeInfoRequest::setOwnerId(const std::string& ownerId)
 	setParameter("OwnerId", ownerId);
 }
 
+bool DescribeRestoreRangeInfoRequest::getRecentlyRestore()const
+{
+	return recentlyRestore_;
+}
+
+void DescribeRestoreRangeInfoRequest::setRecentlyRestore(bool recentlyRestore)
+{
+	recentlyRestore_ = recentlyRestore;
+	setParameter("RecentlyRestore", recentlyRestore ? "true" : "false");
+}
+

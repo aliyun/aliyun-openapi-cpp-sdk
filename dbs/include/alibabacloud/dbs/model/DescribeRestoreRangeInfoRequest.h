@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setBackupPlanId(const std::string& backupPlanId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
+				bool getRecentlyRestore()const;
+				void setRecentlyRestore(bool recentlyRestore);
 
             private:
 				long beginTimestampForRestore_;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;
+				bool recentlyRestore_;
 
 			};
 		}

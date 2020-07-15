@@ -192,6 +192,17 @@ void ConfigureBackupPlanRequest::setCrossAliyunId(const std::string& crossAliyun
 	setParameter("CrossAliyunId", crossAliyunId);
 }
 
+bool ConfigureBackupPlanRequest::getAutoStartBackup()const
+{
+	return autoStartBackup_;
+}
+
+void ConfigureBackupPlanRequest::setAutoStartBackup(bool autoStartBackup)
+{
+	autoStartBackup_ = autoStartBackup;
+	setParameter("AutoStartBackup", autoStartBackup ? "true" : "false");
+}
+
 std::string ConfigureBackupPlanRequest::getSourceEndpointPassword()const
 {
 	return sourceEndpointPassword_;

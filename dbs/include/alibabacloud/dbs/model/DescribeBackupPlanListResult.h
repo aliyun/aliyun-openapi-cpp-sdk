@@ -60,6 +60,7 @@ namespace AlibabaCloud
 					std::string instanceClass;
 					std::string backupSetDownloadIncrementDataFormat;
 					long endTimestampForRestore;
+					std::string errMessage;
 					std::string backupSetDownloadTargetType;
 					int duplicationArchivePeriod;
 					std::string oSSBucketName;

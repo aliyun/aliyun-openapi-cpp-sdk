@@ -111,6 +111,8 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 			itemsObject.crossRoleName = valueItemsBackupPlanDetail["CrossRoleName"].asString();
 		if(!valueItemsBackupPlanDetail["BackupStorageType"].isNull())
 			itemsObject.backupStorageType = valueItemsBackupPlanDetail["BackupStorageType"].asString();
+		if(!valueItemsBackupPlanDetail["ErrMessage"].isNull())
+			itemsObject.errMessage = valueItemsBackupPlanDetail["ErrMessage"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Success"].isNull())

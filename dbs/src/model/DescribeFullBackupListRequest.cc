@@ -49,6 +49,17 @@ void DescribeFullBackupListRequest::setBackupPlanId(const std::string& backupPla
 	setParameter("BackupPlanId", backupPlanId);
 }
 
+std::string DescribeFullBackupListRequest::getBackupSetId()const
+{
+	return backupSetId_;
+}
+
+void DescribeFullBackupListRequest::setBackupSetId(const std::string& backupSetId)
+{
+	backupSetId_ = backupSetId;
+	setParameter("BackupSetId", backupSetId);
+}
+
 int DescribeFullBackupListRequest::getPageNum()const
 {
 	return pageNum_;
