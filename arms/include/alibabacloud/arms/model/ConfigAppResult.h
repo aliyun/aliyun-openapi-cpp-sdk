@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_SEARCHTRACEAPPBYPAGERESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_SEARCHTRACEAPPBYPAGERESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_CONFIGAPPRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_CONFIGAPPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT SearchTraceAppByPageResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT ConfigAppResult : public ServiceResult
 			{
 			public:
-				struct PageBean
-				{
-					struct TraceApp
-					{
-						std::string type;
-						long appId;
-						std::string userId;
-						long createTime;
-						long updateTime;
-						std::string pid;
-						bool show;
-						std::string regionId;
-						std::string appName;
-					};
-					std::vector<TraceApp> traceApps;
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-				};
 
 
-				SearchTraceAppByPageResult();
-				explicit SearchTraceAppByPageResult(const std::string &payload);
-				~SearchTraceAppByPageResult();
-				PageBean getPageBean()const;
+				ConfigAppResult();
+				explicit ConfigAppResult(const std::string &payload);
+				~ConfigAppResult();
+				std::string getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				PageBean pageBean_;
+				std::string data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_SEARCHTRACEAPPBYPAGERESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_CONFIGAPPRESULT_H_

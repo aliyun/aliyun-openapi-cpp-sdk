@@ -59,6 +59,8 @@ void ListTraceAppsResult::parse(const std::string &payload)
 			traceAppsObject.updateTime = std::stol(valueTraceAppsTraceApp["UpdateTime"].asString());
 		if(!valueTraceAppsTraceApp["RegionId"].isNull())
 			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
+		if(!valueTraceAppsTraceApp["Show"].isNull())
+			traceAppsObject.show = valueTraceAppsTraceApp["Show"].asString() == "true";
 		traceApps_.push_back(traceAppsObject);
 	}
 	if(!value["Success"].isNull())

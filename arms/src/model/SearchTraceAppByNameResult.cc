@@ -59,6 +59,8 @@ void SearchTraceAppByNameResult::parse(const std::string &payload)
 			traceAppsObject.createTime = std::stol(valueTraceAppsTraceApp["CreateTime"].asString());
 		if(!valueTraceAppsTraceApp["UpdateTime"].isNull())
 			traceAppsObject.updateTime = std::stol(valueTraceAppsTraceApp["UpdateTime"].asString());
+		if(!valueTraceAppsTraceApp["Show"].isNull())
+			traceAppsObject.show = valueTraceAppsTraceApp["Show"].asString() == "true";
 		traceApps_.push_back(traceAppsObject);
 	}
 

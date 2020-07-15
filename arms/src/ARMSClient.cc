@@ -195,6 +195,42 @@ ARMSClient::CheckServiceLinkedRoleForDeletingOutcomeCallable ARMSClient::checkSe
 	return task->get_future();
 }
 
+ARMSClient::ConfigAppOutcome ARMSClient::configApp(const ConfigAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConfigAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConfigAppOutcome(ConfigAppResult(outcome.result()));
+	else
+		return ConfigAppOutcome(outcome.error());
+}
+
+void ARMSClient::configAppAsync(const ConfigAppRequest& request, const ConfigAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, configApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::ConfigAppOutcomeCallable ARMSClient::configAppCallable(const ConfigAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConfigAppOutcome()>>(
+			[this, request]()
+			{
+			return this->configApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::CreateAlertContactOutcome ARMSClient::createAlertContact(const CreateAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

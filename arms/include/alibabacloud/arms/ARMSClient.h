@@ -30,6 +30,8 @@
 #include "model/CheckDataConsistencyResult.h"
 #include "model/CheckServiceLinkedRoleForDeletingRequest.h"
 #include "model/CheckServiceLinkedRoleForDeletingResult.h"
+#include "model/ConfigAppRequest.h"
+#include "model/ConfigAppResult.h"
 #include "model/CreateAlertContactRequest.h"
 #include "model/CreateAlertContactResult.h"
 #include "model/CreateAlertContactGroupRequest.h"
@@ -133,6 +135,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckServiceLinkedRoleForDeletingResult> CheckServiceLinkedRoleForDeletingOutcome;
 			typedef std::future<CheckServiceLinkedRoleForDeletingOutcome> CheckServiceLinkedRoleForDeletingOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CheckServiceLinkedRoleForDeletingRequest&, const CheckServiceLinkedRoleForDeletingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceLinkedRoleForDeletingAsyncHandler;
+			typedef Outcome<Error, Model::ConfigAppResult> ConfigAppOutcome;
+			typedef std::future<ConfigAppOutcome> ConfigAppOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::ConfigAppRequest&, const ConfigAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigAppAsyncHandler;
 			typedef Outcome<Error, Model::CreateAlertContactResult> CreateAlertContactOutcome;
 			typedef std::future<CreateAlertContactOutcome> CreateAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateAlertContactRequest&, const CreateAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertContactAsyncHandler;
@@ -273,6 +278,9 @@ namespace AlibabaCloud
 			CheckServiceLinkedRoleForDeletingOutcome checkServiceLinkedRoleForDeleting(const Model::CheckServiceLinkedRoleForDeletingRequest &request)const;
 			void checkServiceLinkedRoleForDeletingAsync(const Model::CheckServiceLinkedRoleForDeletingRequest& request, const CheckServiceLinkedRoleForDeletingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckServiceLinkedRoleForDeletingOutcomeCallable checkServiceLinkedRoleForDeletingCallable(const Model::CheckServiceLinkedRoleForDeletingRequest& request) const;
+			ConfigAppOutcome configApp(const Model::ConfigAppRequest &request)const;
+			void configAppAsync(const Model::ConfigAppRequest& request, const ConfigAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConfigAppOutcomeCallable configAppCallable(const Model::ConfigAppRequest& request) const;
 			CreateAlertContactOutcome createAlertContact(const Model::CreateAlertContactRequest &request)const;
 			void createAlertContactAsync(const Model::CreateAlertContactRequest& request, const CreateAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAlertContactOutcomeCallable createAlertContactCallable(const Model::CreateAlertContactRequest& request) const;

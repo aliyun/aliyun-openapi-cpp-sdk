@@ -29,6 +29,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CheckDataConsistencyResult.h
 	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingRequest.h
 	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingResult.h
+	include/alibabacloud/arms/model/ConfigAppRequest.h
+	include/alibabacloud/arms/model/ConfigAppResult.h
 	include/alibabacloud/arms/model/CreateAlertContactRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
@@ -122,6 +124,8 @@ set(arms_src
 	src/model/CheckDataConsistencyResult.cc
 	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
 	src/model/CheckServiceLinkedRoleForDeletingResult.cc
+	src/model/ConfigAppRequest.cc
+	src/model/ConfigAppResult.cc
 	src/model/CreateAlertContactRequest.cc
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc
