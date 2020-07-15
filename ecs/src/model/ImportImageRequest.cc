@@ -91,6 +91,17 @@ void ImportImageRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string ImportImageRequest::getBootMode()const
+{
+	return bootMode_;
+}
+
+void ImportImageRequest::setBootMode(const std::string& bootMode)
+{
+	bootMode_ = bootMode;
+	setParameter("BootMode", bootMode);
+}
+
 std::string ImportImageRequest::getRegionId()const
 {
 	return regionId_;

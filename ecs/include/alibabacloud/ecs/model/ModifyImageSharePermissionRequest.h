@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setImageId(const std::string& imageId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getLaunchPermission()const;
+				void setLaunchPermission(const std::string& launchPermission);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string imageId_;
 				std::string regionId_;
+				std::string launchPermission_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

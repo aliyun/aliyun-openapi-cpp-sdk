@@ -60,6 +60,17 @@ void ModifyImageSharePermissionRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string ModifyImageSharePermissionRequest::getLaunchPermission()const
+{
+	return launchPermission_;
+}
+
+void ModifyImageSharePermissionRequest::setLaunchPermission(const std::string& launchPermission)
+{
+	launchPermission_ = launchPermission;
+	setParameter("LaunchPermission", launchPermission);
+}
+
 std::string ModifyImageSharePermissionRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
