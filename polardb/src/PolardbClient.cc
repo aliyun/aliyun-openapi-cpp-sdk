@@ -843,6 +843,42 @@ PolardbClient::DescribeDBClusterAttributeOutcomeCallable PolardbClient::describe
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBClusterAuditLogCollectorOutcome PolardbClient::describeDBClusterAuditLogCollector(const DescribeDBClusterAuditLogCollectorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClusterAuditLogCollectorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClusterAuditLogCollectorOutcome(DescribeDBClusterAuditLogCollectorResult(outcome.result()));
+	else
+		return DescribeDBClusterAuditLogCollectorOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBClusterAuditLogCollectorAsync(const DescribeDBClusterAuditLogCollectorRequest& request, const DescribeDBClusterAuditLogCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClusterAuditLogCollector(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBClusterAuditLogCollectorOutcomeCallable PolardbClient::describeDBClusterAuditLogCollectorCallable(const DescribeDBClusterAuditLogCollectorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterAuditLogCollectorOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClusterAuditLogCollector(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBClusterAvailableResourcesOutcome PolardbClient::describeDBClusterAvailableResources(const DescribeDBClusterAvailableResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1701,6 +1737,42 @@ PolardbClient::ModifyDBClusterAccessWhitelistOutcomeCallable PolardbClient::modi
 			[this, request]()
 			{
 			return this->modifyDBClusterAccessWhitelist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ModifyDBClusterAuditLogCollectorOutcome PolardbClient::modifyDBClusterAuditLogCollector(const ModifyDBClusterAuditLogCollectorRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBClusterAuditLogCollectorOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBClusterAuditLogCollectorOutcome(ModifyDBClusterAuditLogCollectorResult(outcome.result()));
+	else
+		return ModifyDBClusterAuditLogCollectorOutcome(outcome.error());
+}
+
+void PolardbClient::modifyDBClusterAuditLogCollectorAsync(const ModifyDBClusterAuditLogCollectorRequest& request, const ModifyDBClusterAuditLogCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBClusterAuditLogCollector(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyDBClusterAuditLogCollectorOutcomeCallable PolardbClient::modifyDBClusterAuditLogCollectorCallable(const ModifyDBClusterAuditLogCollectorRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBClusterAuditLogCollectorOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBClusterAuditLogCollector(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

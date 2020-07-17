@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getSourceRDSDBInstanceId()const;
 				void setSourceRDSDBInstanceId(const std::string& sourceRDSDBInstanceId);
+				std::string getSwapConnectionString()const;
+				void setSwapConnectionString(const std::string& swapConnectionString);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				std::string sourceRDSDBInstanceId_;
+				std::string swapConnectionString_;
 				long ownerId_;
 
 			};

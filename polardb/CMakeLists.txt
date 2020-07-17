@@ -65,6 +65,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeDBClusterAccessWhitelistResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAttributeResult.h
+	include/alibabacloud/polardb/model/DescribeDBClusterAuditLogCollectorRequest.h
+	include/alibabacloud/polardb/model/DescribeDBClusterAuditLogCollectorResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAvailableResourcesRequest.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAvailableResourcesResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterEndpointsRequest.h
@@ -113,6 +115,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterAccessWhitelistRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterAccessWhitelistResult.h
+	include/alibabacloud/polardb/model/ModifyDBClusterAuditLogCollectorRequest.h
+	include/alibabacloud/polardb/model/ModifyDBClusterAuditLogCollectorResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterDescriptionRequest.h
 	include/alibabacloud/polardb/model/ModifyDBClusterDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyDBClusterEndpointRequest.h
@@ -192,6 +196,8 @@ set(polardb_src
 	src/model/DescribeDBClusterAccessWhitelistResult.cc
 	src/model/DescribeDBClusterAttributeRequest.cc
 	src/model/DescribeDBClusterAttributeResult.cc
+	src/model/DescribeDBClusterAuditLogCollectorRequest.cc
+	src/model/DescribeDBClusterAuditLogCollectorResult.cc
 	src/model/DescribeDBClusterAvailableResourcesRequest.cc
 	src/model/DescribeDBClusterAvailableResourcesResult.cc
 	src/model/DescribeDBClusterEndpointsRequest.cc
@@ -240,6 +246,8 @@ set(polardb_src
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBClusterAccessWhitelistRequest.cc
 	src/model/ModifyDBClusterAccessWhitelistResult.cc
+	src/model/ModifyDBClusterAuditLogCollectorRequest.cc
+	src/model/ModifyDBClusterAuditLogCollectorResult.cc
 	src/model/ModifyDBClusterDescriptionRequest.cc
 	src/model/ModifyDBClusterDescriptionResult.cc
 	src/model/ModifyDBClusterEndpointRequest.cc

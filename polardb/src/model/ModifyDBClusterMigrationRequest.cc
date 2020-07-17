@@ -115,6 +115,17 @@ void ModifyDBClusterMigrationRequest::setSourceRDSDBInstanceId(const std::string
 	setParameter("SourceRDSDBInstanceId", sourceRDSDBInstanceId);
 }
 
+std::string ModifyDBClusterMigrationRequest::getSwapConnectionString()const
+{
+	return swapConnectionString_;
+}
+
+void ModifyDBClusterMigrationRequest::setSwapConnectionString(const std::string& swapConnectionString)
+{
+	swapConnectionString_ = swapConnectionString;
+	setParameter("SwapConnectionString", swapConnectionString);
+}
+
 long ModifyDBClusterMigrationRequest::getOwnerId()const
 {
 	return ownerId_;

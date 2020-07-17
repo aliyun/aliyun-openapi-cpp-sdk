@@ -66,6 +66,8 @@
 #include "model/DescribeDBClusterAccessWhitelistResult.h"
 #include "model/DescribeDBClusterAttributeRequest.h"
 #include "model/DescribeDBClusterAttributeResult.h"
+#include "model/DescribeDBClusterAuditLogCollectorRequest.h"
+#include "model/DescribeDBClusterAuditLogCollectorResult.h"
 #include "model/DescribeDBClusterAvailableResourcesRequest.h"
 #include "model/DescribeDBClusterAvailableResourcesResult.h"
 #include "model/DescribeDBClusterEndpointsRequest.h"
@@ -114,6 +116,8 @@
 #include "model/ModifyBackupPolicyResult.h"
 #include "model/ModifyDBClusterAccessWhitelistRequest.h"
 #include "model/ModifyDBClusterAccessWhitelistResult.h"
+#include "model/ModifyDBClusterAuditLogCollectorRequest.h"
+#include "model/ModifyDBClusterAuditLogCollectorResult.h"
 #include "model/ModifyDBClusterDescriptionRequest.h"
 #include "model/ModifyDBClusterDescriptionResult.h"
 #include "model/ModifyDBClusterEndpointRequest.h"
@@ -221,6 +225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterAttributeResult> DescribeDBClusterAttributeOutcome;
 			typedef std::future<DescribeDBClusterAttributeOutcome> DescribeDBClusterAttributeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAttributeRequest&, const DescribeDBClusterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAttributeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterAuditLogCollectorResult> DescribeDBClusterAuditLogCollectorOutcome;
+			typedef std::future<DescribeDBClusterAuditLogCollectorOutcome> DescribeDBClusterAuditLogCollectorOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAuditLogCollectorRequest&, const DescribeDBClusterAuditLogCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAuditLogCollectorAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterAvailableResourcesResult> DescribeDBClusterAvailableResourcesOutcome;
 			typedef std::future<DescribeDBClusterAvailableResourcesOutcome> DescribeDBClusterAvailableResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAvailableResourcesRequest&, const DescribeDBClusterAvailableResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAvailableResourcesAsyncHandler;
@@ -293,6 +300,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBClusterAccessWhitelistResult> ModifyDBClusterAccessWhitelistOutcome;
 			typedef std::future<ModifyDBClusterAccessWhitelistOutcome> ModifyDBClusterAccessWhitelistOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterAccessWhitelistRequest&, const ModifyDBClusterAccessWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAccessWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterAuditLogCollectorResult> ModifyDBClusterAuditLogCollectorOutcome;
+			typedef std::future<ModifyDBClusterAuditLogCollectorOutcome> ModifyDBClusterAuditLogCollectorOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterAuditLogCollectorRequest&, const ModifyDBClusterAuditLogCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAuditLogCollectorAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterDescriptionResult> ModifyDBClusterDescriptionOutcome;
 			typedef std::future<ModifyDBClusterDescriptionOutcome> ModifyDBClusterDescriptionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterDescriptionRequest&, const ModifyDBClusterDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterDescriptionAsyncHandler;
@@ -412,6 +422,9 @@ namespace AlibabaCloud
 			DescribeDBClusterAttributeOutcome describeDBClusterAttribute(const Model::DescribeDBClusterAttributeRequest &request)const;
 			void describeDBClusterAttributeAsync(const Model::DescribeDBClusterAttributeRequest& request, const DescribeDBClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAttributeOutcomeCallable describeDBClusterAttributeCallable(const Model::DescribeDBClusterAttributeRequest& request) const;
+			DescribeDBClusterAuditLogCollectorOutcome describeDBClusterAuditLogCollector(const Model::DescribeDBClusterAuditLogCollectorRequest &request)const;
+			void describeDBClusterAuditLogCollectorAsync(const Model::DescribeDBClusterAuditLogCollectorRequest& request, const DescribeDBClusterAuditLogCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterAuditLogCollectorOutcomeCallable describeDBClusterAuditLogCollectorCallable(const Model::DescribeDBClusterAuditLogCollectorRequest& request) const;
 			DescribeDBClusterAvailableResourcesOutcome describeDBClusterAvailableResources(const Model::DescribeDBClusterAvailableResourcesRequest &request)const;
 			void describeDBClusterAvailableResourcesAsync(const Model::DescribeDBClusterAvailableResourcesRequest& request, const DescribeDBClusterAvailableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAvailableResourcesOutcomeCallable describeDBClusterAvailableResourcesCallable(const Model::DescribeDBClusterAvailableResourcesRequest& request) const;
@@ -484,6 +497,9 @@ namespace AlibabaCloud
 			ModifyDBClusterAccessWhitelistOutcome modifyDBClusterAccessWhitelist(const Model::ModifyDBClusterAccessWhitelistRequest &request)const;
 			void modifyDBClusterAccessWhitelistAsync(const Model::ModifyDBClusterAccessWhitelistRequest& request, const ModifyDBClusterAccessWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterAccessWhitelistOutcomeCallable modifyDBClusterAccessWhitelistCallable(const Model::ModifyDBClusterAccessWhitelistRequest& request) const;
+			ModifyDBClusterAuditLogCollectorOutcome modifyDBClusterAuditLogCollector(const Model::ModifyDBClusterAuditLogCollectorRequest &request)const;
+			void modifyDBClusterAuditLogCollectorAsync(const Model::ModifyDBClusterAuditLogCollectorRequest& request, const ModifyDBClusterAuditLogCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterAuditLogCollectorOutcomeCallable modifyDBClusterAuditLogCollectorCallable(const Model::ModifyDBClusterAuditLogCollectorRequest& request) const;
 			ModifyDBClusterDescriptionOutcome modifyDBClusterDescription(const Model::ModifyDBClusterDescriptionRequest &request)const;
 			void modifyDBClusterDescriptionAsync(const Model::ModifyDBClusterDescriptionRequest& request, const ModifyDBClusterDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterDescriptionOutcomeCallable modifyDBClusterDescriptionCallable(const Model::ModifyDBClusterDescriptionRequest& request) const;

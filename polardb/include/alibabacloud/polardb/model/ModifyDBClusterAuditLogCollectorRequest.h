@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBClusterMonitorRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBClusterAuditLogCollectorRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBClusterMonitorRequest();
-				~ModifyDBClusterMonitorRequest();
+				ModifyDBClusterAuditLogCollectorRequest();
+				~ModifyDBClusterAuditLogCollectorRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
 				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getCollectorStatus()const;
+				void setCollectorStatus(const std::string& collectorStatus);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 
             private:
 				long resourceOwnerId_;
-				std::string accessKeyId_;
-				std::string period_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
+				std::string collectorStatus_;
 				long ownerId_;
+				std::string accessKeyId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_

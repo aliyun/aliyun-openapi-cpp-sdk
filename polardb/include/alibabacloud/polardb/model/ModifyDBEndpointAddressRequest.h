@@ -55,6 +55,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPort()const;
+				void setPort(const std::string& port);
 				std::string getNetType()const;
 				void setNetType(const std::string& netType);
 
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string port_;
 				std::string netType_;
 
 			};

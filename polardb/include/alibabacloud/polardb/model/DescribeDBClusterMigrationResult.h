@@ -32,11 +32,42 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterMigrationResult : public ServiceResult
 			{
 			public:
+				struct DBClusterEndpoint
+				{
+					struct Address
+					{
+						std::string vPCId;
+						std::string port;
+						std::string vSwitchId;
+						std::string connectionString;
+						std::string iPAddress;
+						std::string netType;
+					};
+					std::string dBEndpointId;
+					std::string endpointType;
+					std::vector<DBClusterEndpoint::Address> addressItems;
+				};
+				struct RdsEndpoint
+				{
+					struct Address2
+					{
+						std::string vPCId;
+						std::string port;
+						std::string vSwitchId;
+						std::string connectionString;
+						std::string iPAddress;
+						std::string netType;
+					};
+					std::string dBEndpointId;
+					std::string endpointType;
+					std::vector<RdsEndpoint::Address2> addressItems1;
+				};
 
 
 				DescribeDBClusterMigrationResult();
 				explicit DescribeDBClusterMigrationResult(const std::string &payload);
 				~DescribeDBClusterMigrationResult();
+				std::vector<DBClusterEndpoint> getDBClusterEndpointList()const;
 				std::string getComment()const;
 				std::string getExpiredTime()const;
 				std::string getDBClusterId()const;
@@ -46,10 +77,12 @@ namespace AlibabaCloud
 				int getDelayedSeconds()const;
 				std::string getDBClusterReadWriteMode()const;
 				std::string getMigrationStatus()const;
+				std::vector<RdsEndpoint> getRdsEndpointList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<DBClusterEndpoint> dBClusterEndpointList_;
 				std::string comment_;
 				std::string expiredTime_;
 				std::string dBClusterId_;
@@ -59,6 +92,7 @@ namespace AlibabaCloud
 				int delayedSeconds_;
 				std::string dBClusterReadWriteMode_;
 				std::string migrationStatus_;
+				std::vector<RdsEndpoint> rdsEndpointList_;
 
 			};
 		}

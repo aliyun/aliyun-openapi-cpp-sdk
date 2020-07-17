@@ -137,6 +137,17 @@ void ModifyDBEndpointAddressRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string ModifyDBEndpointAddressRequest::getPort()const
+{
+	return port_;
+}
+
+void ModifyDBEndpointAddressRequest::setPort(const std::string& port)
+{
+	port_ = port;
+	setParameter("Port", port);
+}
+
 std::string ModifyDBEndpointAddressRequest::getNetType()const
 {
 	return netType_;

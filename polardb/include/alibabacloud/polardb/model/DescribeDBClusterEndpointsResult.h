@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string netType;
 					};
 					std::string dBEndpointId;
+					std::string nodeWithRoles;
 					std::string autoAddNewNodes;
 					std::string endpointType;
 					std::vector<DBEndpoint::Address> addressItems;

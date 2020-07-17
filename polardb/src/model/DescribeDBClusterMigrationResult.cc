@@ -39,6 +39,62 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allDBClusterEndpointListNode = value["DBClusterEndpointList"]["DBClusterEndpoint"];
+	for (auto valueDBClusterEndpointListDBClusterEndpoint : allDBClusterEndpointListNode)
+	{
+		DBClusterEndpoint dBClusterEndpointListObject;
+		if(!valueDBClusterEndpointListDBClusterEndpoint["DBEndpointId"].isNull())
+			dBClusterEndpointListObject.dBEndpointId = valueDBClusterEndpointListDBClusterEndpoint["DBEndpointId"].asString();
+		if(!valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].isNull())
+			dBClusterEndpointListObject.endpointType = valueDBClusterEndpointListDBClusterEndpoint["EndpointType"].asString();
+		auto allAddressItemsNode = allDBClusterEndpointListNode["AddressItems"]["Address"];
+		for (auto allDBClusterEndpointListNodeAddressItemsAddress : allAddressItemsNode)
+		{
+			DBClusterEndpoint::Address addressItemsObject;
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["ConnectionString"].isNull())
+				addressItemsObject.connectionString = allDBClusterEndpointListNodeAddressItemsAddress["ConnectionString"].asString();
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["IPAddress"].isNull())
+				addressItemsObject.iPAddress = allDBClusterEndpointListNodeAddressItemsAddress["IPAddress"].asString();
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["NetType"].isNull())
+				addressItemsObject.netType = allDBClusterEndpointListNodeAddressItemsAddress["NetType"].asString();
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["Port"].isNull())
+				addressItemsObject.port = allDBClusterEndpointListNodeAddressItemsAddress["Port"].asString();
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["VPCId"].isNull())
+				addressItemsObject.vPCId = allDBClusterEndpointListNodeAddressItemsAddress["VPCId"].asString();
+			if(!allDBClusterEndpointListNodeAddressItemsAddress["VSwitchId"].isNull())
+				addressItemsObject.vSwitchId = allDBClusterEndpointListNodeAddressItemsAddress["VSwitchId"].asString();
+			dBClusterEndpointListObject.addressItems.push_back(addressItemsObject);
+		}
+		dBClusterEndpointList_.push_back(dBClusterEndpointListObject);
+	}
+	auto allRdsEndpointListNode = value["RdsEndpointList"]["RdsEndpoint"];
+	for (auto valueRdsEndpointListRdsEndpoint : allRdsEndpointListNode)
+	{
+		RdsEndpoint rdsEndpointListObject;
+		if(!valueRdsEndpointListRdsEndpoint["DBEndpointId"].isNull())
+			rdsEndpointListObject.dBEndpointId = valueRdsEndpointListRdsEndpoint["DBEndpointId"].asString();
+		if(!valueRdsEndpointListRdsEndpoint["EndpointType"].isNull())
+			rdsEndpointListObject.endpointType = valueRdsEndpointListRdsEndpoint["EndpointType"].asString();
+		auto allAddressItems1Node = allRdsEndpointListNode["AddressItems"]["Address"];
+		for (auto allRdsEndpointListNodeAddressItemsAddress : allAddressItems1Node)
+		{
+			RdsEndpoint::Address2 addressItems1Object;
+			if(!allRdsEndpointListNodeAddressItemsAddress["ConnectionString"].isNull())
+				addressItems1Object.connectionString = allRdsEndpointListNodeAddressItemsAddress["ConnectionString"].asString();
+			if(!allRdsEndpointListNodeAddressItemsAddress["IPAddress"].isNull())
+				addressItems1Object.iPAddress = allRdsEndpointListNodeAddressItemsAddress["IPAddress"].asString();
+			if(!allRdsEndpointListNodeAddressItemsAddress["NetType"].isNull())
+				addressItems1Object.netType = allRdsEndpointListNodeAddressItemsAddress["NetType"].asString();
+			if(!allRdsEndpointListNodeAddressItemsAddress["Port"].isNull())
+				addressItems1Object.port = allRdsEndpointListNodeAddressItemsAddress["Port"].asString();
+			if(!allRdsEndpointListNodeAddressItemsAddress["VPCId"].isNull())
+				addressItems1Object.vPCId = allRdsEndpointListNodeAddressItemsAddress["VPCId"].asString();
+			if(!allRdsEndpointListNodeAddressItemsAddress["VSwitchId"].isNull())
+				addressItems1Object.vSwitchId = allRdsEndpointListNodeAddressItemsAddress["VSwitchId"].asString();
+			rdsEndpointListObject.addressItems1.push_back(addressItems1Object);
+		}
+		rdsEndpointList_.push_back(rdsEndpointListObject);
+	}
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
 	if(!value["SourceRDSDBInstanceId"].isNull())
@@ -58,6 +114,11 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 	if(!value["Comment"].isNull())
 		comment_ = value["Comment"].asString();
 
+}
+
+std::vector<DescribeDBClusterMigrationResult::DBClusterEndpoint> DescribeDBClusterMigrationResult::getDBClusterEndpointList()const
+{
+	return dBClusterEndpointList_;
 }
 
 std::string DescribeDBClusterMigrationResult::getComment()const
@@ -103,5 +164,10 @@ std::string DescribeDBClusterMigrationResult::getDBClusterReadWriteMode()const
 std::string DescribeDBClusterMigrationResult::getMigrationStatus()const
 {
 	return migrationStatus_;
+}
+
+std::vector<DescribeDBClusterMigrationResult::RdsEndpoint> DescribeDBClusterMigrationResult::getRdsEndpointList()const
+{
+	return rdsEndpointList_;
 }
 

@@ -38,6 +38,17 @@ void ModifyDBClusterMonitorRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterMonitorRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void ModifyDBClusterMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
 std::string ModifyDBClusterMonitorRequest::getPeriod()const
 {
 	return period_;
@@ -91,16 +102,5 @@ void ModifyDBClusterMonitorRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string ModifyDBClusterMonitorRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ModifyDBClusterMonitorRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
 }
 

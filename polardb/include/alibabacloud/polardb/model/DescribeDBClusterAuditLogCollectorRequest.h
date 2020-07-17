@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,19 +28,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT ModifyDBClusterMonitorRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterAuditLogCollectorRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyDBClusterMonitorRequest();
-				~ModifyDBClusterMonitorRequest();
+				DescribeDBClusterAuditLogCollectorRequest();
+				~DescribeDBClusterAuditLogCollectorRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getPeriod()const;
-				void setPeriod(const std::string& period);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -53,7 +51,6 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string period_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
@@ -63,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBCLUSTERMONITORREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERAUDITLOGCOLLECTORREQUEST_H_
