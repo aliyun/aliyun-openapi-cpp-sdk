@@ -50,6 +50,8 @@
 #include "model/DescribeNodeCidrListResult.h"
 #include "model/DescribePreCheckProgressListRequest.h"
 #include "model/DescribePreCheckProgressListResult.h"
+#include "model/DescribeRegionsRequest.h"
+#include "model/DescribeRegionsResult.h"
 #include "model/DescribeRestoreRangeInfoRequest.h"
 #include "model/DescribeRestoreRangeInfoResult.h"
 #include "model/DescribeRestoreTaskListRequest.h"
@@ -127,6 +129,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePreCheckProgressListResult> DescribePreCheckProgressListOutcome;
 			typedef std::future<DescribePreCheckProgressListOutcome> DescribePreCheckProgressListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribePreCheckProgressListRequest&, const DescribePreCheckProgressListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCheckProgressListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
+			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRestoreRangeInfoResult> DescribeRestoreRangeInfoOutcome;
 			typedef std::future<DescribeRestoreRangeInfoOutcome> DescribeRestoreRangeInfoOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreRangeInfoRequest&, const DescribeRestoreRangeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreRangeInfoAsyncHandler;
@@ -213,6 +218,9 @@ namespace AlibabaCloud
 			DescribePreCheckProgressListOutcome describePreCheckProgressList(const Model::DescribePreCheckProgressListRequest &request)const;
 			void describePreCheckProgressListAsync(const Model::DescribePreCheckProgressListRequest& request, const DescribePreCheckProgressListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePreCheckProgressListOutcomeCallable describePreCheckProgressListCallable(const Model::DescribePreCheckProgressListRequest& request) const;
+			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
+			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 			DescribeRestoreRangeInfoOutcome describeRestoreRangeInfo(const Model::DescribeRestoreRangeInfoRequest &request)const;
 			void describeRestoreRangeInfoAsync(const Model::DescribeRestoreRangeInfoRequest& request, const DescribeRestoreRangeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreRangeInfoOutcomeCallable describeRestoreRangeInfoCallable(const Model::DescribeRestoreRangeInfoRequest& request) const;
