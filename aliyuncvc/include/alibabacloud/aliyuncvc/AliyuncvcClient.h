@@ -46,6 +46,8 @@
 #include "model/CreateUserResult.h"
 #include "model/CreateUserInternationalRequest.h"
 #include "model/CreateUserInternationalResult.h"
+#include "model/CustomGonggeLayoutRequest.h"
+#include "model/CustomGonggeLayoutResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteLiveRequest.h"
@@ -153,6 +155,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateUserInternationalResult> CreateUserInternationalOutcome;
 			typedef std::future<CreateUserInternationalOutcome> CreateUserInternationalOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CreateUserInternationalRequest&, const CreateUserInternationalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserInternationalAsyncHandler;
+			typedef Outcome<Error, Model::CustomGonggeLayoutResult> CustomGonggeLayoutOutcome;
+			typedef std::future<CustomGonggeLayoutOutcome> CustomGonggeLayoutOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::CustomGonggeLayoutRequest&, const CustomGonggeLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CustomGonggeLayoutAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -287,6 +292,9 @@ namespace AlibabaCloud
 			CreateUserInternationalOutcome createUserInternational(const Model::CreateUserInternationalRequest &request)const;
 			void createUserInternationalAsync(const Model::CreateUserInternationalRequest& request, const CreateUserInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateUserInternationalOutcomeCallable createUserInternationalCallable(const Model::CreateUserInternationalRequest& request) const;
+			CustomGonggeLayoutOutcome customGonggeLayout(const Model::CustomGonggeLayoutRequest &request)const;
+			void customGonggeLayoutAsync(const Model::CustomGonggeLayoutRequest& request, const CustomGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CustomGonggeLayoutOutcomeCallable customGonggeLayoutCallable(const Model::CustomGonggeLayoutRequest& request) const;
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;

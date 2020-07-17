@@ -483,6 +483,42 @@ AliyuncvcClient::CreateUserInternationalOutcomeCallable AliyuncvcClient::createU
 	return task->get_future();
 }
 
+AliyuncvcClient::CustomGonggeLayoutOutcome AliyuncvcClient::customGonggeLayout(const CustomGonggeLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CustomGonggeLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CustomGonggeLayoutOutcome(CustomGonggeLayoutResult(outcome.result()));
+	else
+		return CustomGonggeLayoutOutcome(outcome.error());
+}
+
+void AliyuncvcClient::customGonggeLayoutAsync(const CustomGonggeLayoutRequest& request, const CustomGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, customGonggeLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CustomGonggeLayoutOutcomeCallable AliyuncvcClient::customGonggeLayoutCallable(const CustomGonggeLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CustomGonggeLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->customGonggeLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::DeleteDeviceOutcome AliyuncvcClient::deleteDevice(const DeleteDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

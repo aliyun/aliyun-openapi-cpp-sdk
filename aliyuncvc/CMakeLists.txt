@@ -45,6 +45,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/CreateUserResult.h
 	include/alibabacloud/aliyuncvc/model/CreateUserInternationalRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateUserInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/CustomGonggeLayoutRequest.h
+	include/alibabacloud/aliyuncvc/model/CustomGonggeLayoutResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteLiveRequest.h
@@ -134,6 +136,8 @@ set(aliyuncvc_src
 	src/model/CreateUserResult.cc
 	src/model/CreateUserInternationalRequest.cc
 	src/model/CreateUserInternationalResult.cc
+	src/model/CustomGonggeLayoutRequest.cc
+	src/model/CustomGonggeLayoutResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
 	src/model/DeleteLiveRequest.cc
