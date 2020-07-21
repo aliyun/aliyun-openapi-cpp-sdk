@@ -1095,6 +1095,42 @@ VcsClient::RecognizeImageOutcomeCallable VcsClient::recognizeImageCallable(const
 	return task->get_future();
 }
 
+VcsClient::SaveVideoSummaryTaskVideoOutcome VcsClient::saveVideoSummaryTaskVideo(const SaveVideoSummaryTaskVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveVideoSummaryTaskVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveVideoSummaryTaskVideoOutcome(SaveVideoSummaryTaskVideoResult(outcome.result()));
+	else
+		return SaveVideoSummaryTaskVideoOutcome(outcome.error());
+}
+
+void VcsClient::saveVideoSummaryTaskVideoAsync(const SaveVideoSummaryTaskVideoRequest& request, const SaveVideoSummaryTaskVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveVideoSummaryTaskVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SaveVideoSummaryTaskVideoOutcomeCallable VcsClient::saveVideoSummaryTaskVideoCallable(const SaveVideoSummaryTaskVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveVideoSummaryTaskVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->saveVideoSummaryTaskVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::SearchBodyOutcome VcsClient::searchBody(const SearchBodyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -14,60 +14,51 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vcs/model/UploadFileResult.h>
+#include <alibabacloud/vcs/model/SaveVideoSummaryTaskVideoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vcs;
 using namespace AlibabaCloud::Vcs::Model;
 
-UploadFileResult::UploadFileResult() :
+SaveVideoSummaryTaskVideoResult::SaveVideoSummaryTaskVideoResult() :
 	ServiceResult()
 {}
 
-UploadFileResult::UploadFileResult(const std::string &payload) :
+SaveVideoSummaryTaskVideoResult::SaveVideoSummaryTaskVideoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UploadFileResult::~UploadFileResult()
+SaveVideoSummaryTaskVideoResult::~SaveVideoSummaryTaskVideoResult()
 {}
 
-void UploadFileResult::parse(const std::string &payload)
+void SaveVideoSummaryTaskVideoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	auto allRecordsNode = dataNode["Records"]["OssPath"];
-	for (auto dataNodeRecordsOssPath : allRecordsNode)
-	{
-		Data::OssPath ossPathObject;
-		if(!dataNodeRecordsOssPath["OssPath"].isNull())
-			ossPathObject.ossPath = dataNodeRecordsOssPath["OssPath"].asString();
-		if(!dataNodeRecordsOssPath["SourceId"].isNull())
-			ossPathObject.sourceId = dataNodeRecordsOssPath["SourceId"].asString();
-		data_.records.push_back(ossPathObject);
-	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 
 }
 
-std::string UploadFileResult::getMessage()const
+std::string SaveVideoSummaryTaskVideoResult::getMessage()const
 {
 	return message_;
 }
 
-UploadFileResult::Data UploadFileResult::getData()const
+std::string SaveVideoSummaryTaskVideoResult::getData()const
 {
 	return data_;
 }
 
-std::string UploadFileResult::getCode()const
+std::string SaveVideoSummaryTaskVideoResult::getCode()const
 {
 	return code_;
 }

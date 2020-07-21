@@ -80,6 +80,8 @@
 #include "model/RecognizeFaceQualityResult.h"
 #include "model/RecognizeImageRequest.h"
 #include "model/RecognizeImageResult.h"
+#include "model/SaveVideoSummaryTaskVideoRequest.h"
+#include "model/SaveVideoSummaryTaskVideoResult.h"
 #include "model/SearchBodyRequest.h"
 #include "model/SearchBodyResult.h"
 #include "model/SearchFaceRequest.h"
@@ -190,6 +192,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeImageResult> RecognizeImageOutcome;
 			typedef std::future<RecognizeImageOutcome> RecognizeImageOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::RecognizeImageRequest&, const RecognizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageAsyncHandler;
+			typedef Outcome<Error, Model::SaveVideoSummaryTaskVideoResult> SaveVideoSummaryTaskVideoOutcome;
+			typedef std::future<SaveVideoSummaryTaskVideoOutcome> SaveVideoSummaryTaskVideoOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::SaveVideoSummaryTaskVideoRequest&, const SaveVideoSummaryTaskVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveVideoSummaryTaskVideoAsyncHandler;
 			typedef Outcome<Error, Model::SearchBodyResult> SearchBodyOutcome;
 			typedef std::future<SearchBodyOutcome> SearchBodyOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::SearchBodyRequest&, const SearchBodyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchBodyAsyncHandler;
@@ -303,6 +308,9 @@ namespace AlibabaCloud
 			RecognizeImageOutcome recognizeImage(const Model::RecognizeImageRequest &request)const;
 			void recognizeImageAsync(const Model::RecognizeImageRequest& request, const RecognizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageOutcomeCallable recognizeImageCallable(const Model::RecognizeImageRequest& request) const;
+			SaveVideoSummaryTaskVideoOutcome saveVideoSummaryTaskVideo(const Model::SaveVideoSummaryTaskVideoRequest &request)const;
+			void saveVideoSummaryTaskVideoAsync(const Model::SaveVideoSummaryTaskVideoRequest& request, const SaveVideoSummaryTaskVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveVideoSummaryTaskVideoOutcomeCallable saveVideoSummaryTaskVideoCallable(const Model::SaveVideoSummaryTaskVideoRequest& request) const;
 			SearchBodyOutcome searchBody(const Model::SearchBodyRequest &request)const;
 			void searchBodyAsync(const Model::SearchBodyRequest& request, const SearchBodyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchBodyOutcomeCallable searchBodyCallable(const Model::SearchBodyRequest& request) const;

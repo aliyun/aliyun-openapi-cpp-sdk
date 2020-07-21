@@ -71,3 +71,14 @@ void AddDataSourceRequest::setDataSourceName(const std::string& dataSourceName)
 	setBodyParameter("DataSourceName", dataSourceName);
 }
 
+int AddDataSourceRequest::getFileRetentionDays()const
+{
+	return fileRetentionDays_;
+}
+
+void AddDataSourceRequest::setFileRetentionDays(int fileRetentionDays)
+{
+	fileRetentionDays_ = fileRetentionDays;
+	setBodyParameter("FileRetentionDays", std::to_string(fileRetentionDays));
+}
+

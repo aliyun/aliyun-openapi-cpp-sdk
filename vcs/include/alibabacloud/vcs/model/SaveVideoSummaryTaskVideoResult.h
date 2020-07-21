@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_UPLOADFILERESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_UPLOADFILERESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEORESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT UploadFileResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT SaveVideoSummaryTaskVideoResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct OssPath
-					{
-						std::string ossPath;
-						std::string sourceId;
-					};
-					std::vector<OssPath> records;
-				};
 
 
-				UploadFileResult();
-				explicit UploadFileResult(const std::string &payload);
-				~UploadFileResult();
+				SaveVideoSummaryTaskVideoResult();
+				explicit SaveVideoSummaryTaskVideoResult(const std::string &payload);
+				~SaveVideoSummaryTaskVideoResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_UPLOADFILERESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEORESULT_H_

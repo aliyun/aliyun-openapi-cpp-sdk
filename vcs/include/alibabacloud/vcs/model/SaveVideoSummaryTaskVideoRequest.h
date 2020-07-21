@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_ADDDATASOURCEREQUEST_H_
-#define ALIBABACLOUD_VCS_MODEL_ADDDATASOURCEREQUEST_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEOREQUEST_H_
+#define ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEOREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT AddDataSourceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VCS_EXPORT SaveVideoSummaryTaskVideoRequest : public RpcServiceRequest
 			{
 
 			public:
-				AddDataSourceRequest();
-				~AddDataSourceRequest();
+				SaveVideoSummaryTaskVideoRequest();
+				~SaveVideoSummaryTaskVideoRequest();
 
-				std::string getDataSourceType()const;
-				void setDataSourceType(const std::string& dataSourceType);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getDataSourceName()const;
-				void setDataSourceName(const std::string& dataSourceName);
-				int getFileRetentionDays()const;
-				void setFileRetentionDays(int fileRetentionDays);
+				bool getSaveVideo()const;
+				void setSaveVideo(bool saveVideo);
+				long getTaskId()const;
+				void setTaskId(long taskId);
 
             private:
-				std::string dataSourceType_;
 				std::string corpId_;
-				std::string description_;
-				std::string dataSourceName_;
-				int fileRetentionDays_;
+				bool saveVideo_;
+				long taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_ADDDATASOURCEREQUEST_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_SAVEVIDEOSUMMARYTASKVIDEOREQUEST_H_

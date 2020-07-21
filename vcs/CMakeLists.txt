@@ -79,6 +79,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/RecognizeFaceQualityResult.h
 	include/alibabacloud/vcs/model/RecognizeImageRequest.h
 	include/alibabacloud/vcs/model/RecognizeImageResult.h
+	include/alibabacloud/vcs/model/SaveVideoSummaryTaskVideoRequest.h
+	include/alibabacloud/vcs/model/SaveVideoSummaryTaskVideoResult.h
 	include/alibabacloud/vcs/model/SearchBodyRequest.h
 	include/alibabacloud/vcs/model/SearchBodyResult.h
 	include/alibabacloud/vcs/model/SearchFaceRequest.h
@@ -154,6 +156,8 @@ set(vcs_src
 	src/model/RecognizeFaceQualityResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
+	src/model/SaveVideoSummaryTaskVideoRequest.cc
+	src/model/SaveVideoSummaryTaskVideoResult.cc
 	src/model/SearchBodyRequest.cc
 	src/model/SearchBodyResult.cc
 	src/model/SearchFaceRequest.cc
