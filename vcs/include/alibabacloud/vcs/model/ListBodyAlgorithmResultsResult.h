@@ -46,9 +46,15 @@ namespace AlibabaCloud
 						float leftTopY;
 						std::string capStyle;
 						float leftTopX;
+						std::string trousersStyle;
+						std::string coatStyle;
 						std::string minAge;
+						std::string trousersLength;
 						std::string personId;
+						std::string coatLength;
 						std::string shotTime;
+						std::string coatColor;
+						std::string trousersColor;
 						std::string dataSourceId;
 						std::string hairStyle;
 					};

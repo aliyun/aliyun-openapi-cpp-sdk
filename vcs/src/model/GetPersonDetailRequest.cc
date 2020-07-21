@@ -27,6 +27,17 @@ GetPersonDetailRequest::GetPersonDetailRequest() :
 GetPersonDetailRequest::~GetPersonDetailRequest()
 {}
 
+std::string GetPersonDetailRequest::getAlgorithmType()const
+{
+	return algorithmType_;
+}
+
+void GetPersonDetailRequest::setAlgorithmType(const std::string& algorithmType)
+{
+	algorithmType_ = algorithmType;
+	setBodyParameter("AlgorithmType", algorithmType);
+}
+
 std::string GetPersonDetailRequest::getCorpId()const
 {
 	return corpId_;

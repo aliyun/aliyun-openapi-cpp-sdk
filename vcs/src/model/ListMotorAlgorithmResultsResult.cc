@@ -78,6 +78,20 @@ void ListMotorAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.motorStyle = dataNodeRecordsRecordsItem["MotorStyle"].asString();
 		if(!dataNodeRecordsRecordsItem["MotorModel"].isNull())
 			recordsItemObject.motorModel = dataNodeRecordsRecordsItem["MotorModel"].asString();
+		if(!dataNodeRecordsRecordsItem["MotorColor"].isNull())
+			recordsItemObject.motorColor = dataNodeRecordsRecordsItem["MotorColor"].asString();
+		if(!dataNodeRecordsRecordsItem["MotorClass"].isNull())
+			recordsItemObject.motorClass = dataNodeRecordsRecordsItem["MotorClass"].asString();
+		if(!dataNodeRecordsRecordsItem["MotorBrand"].isNull())
+			recordsItemObject.motorBrand = dataNodeRecordsRecordsItem["MotorBrand"].asString();
+		if(!dataNodeRecordsRecordsItem["PlateColor"].isNull())
+			recordsItemObject.plateColor = dataNodeRecordsRecordsItem["PlateColor"].asString();
+		if(!dataNodeRecordsRecordsItem["PlateClass"].isNull())
+			recordsItemObject.plateClass = dataNodeRecordsRecordsItem["PlateClass"].asString();
+		if(!dataNodeRecordsRecordsItem["SafetyBelt"].isNull())
+			recordsItemObject.safetyBelt = dataNodeRecordsRecordsItem["SafetyBelt"].asString();
+		if(!dataNodeRecordsRecordsItem["Calling"].isNull())
+			recordsItemObject.calling = dataNodeRecordsRecordsItem["Calling"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

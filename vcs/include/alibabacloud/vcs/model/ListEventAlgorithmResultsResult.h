@@ -41,6 +41,7 @@ namespace AlibabaCloud
 						std::string eventType;
 						std::string targetPicUrlPath;
 						std::string shotTime;
+						std::string recordId;
 						std::string capStyle;
 						std::string faceCount;
 						std::string dataSourceId;

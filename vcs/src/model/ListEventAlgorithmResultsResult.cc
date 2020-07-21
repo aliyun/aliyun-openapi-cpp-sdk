@@ -68,6 +68,8 @@ void ListEventAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.shotTime = dataNodeRecordsRecordsItem["ShotTime"].asString();
 		if(!dataNodeRecordsRecordsItem["TargetPicUrlPath"].isNull())
 			recordsItemObject.targetPicUrlPath = dataNodeRecordsRecordsItem["TargetPicUrlPath"].asString();
+		if(!dataNodeRecordsRecordsItem["RecordId"].isNull())
+			recordsItemObject.recordId = dataNodeRecordsRecordsItem["RecordId"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

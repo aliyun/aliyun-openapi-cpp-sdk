@@ -49,15 +49,15 @@ void CreateVideoSummaryTaskRequest::setLiveVideoSummary(const std::string& liveV
 	setBodyParameter("LiveVideoSummary", liveVideoSummary);
 }
 
-std::string CreateVideoSummaryTaskRequest::getStartTimeStamp()const
+long CreateVideoSummaryTaskRequest::getStartTimeStamp()const
 {
 	return startTimeStamp_;
 }
 
-void CreateVideoSummaryTaskRequest::setStartTimeStamp(const std::string& startTimeStamp)
+void CreateVideoSummaryTaskRequest::setStartTimeStamp(long startTimeStamp)
 {
 	startTimeStamp_ = startTimeStamp;
-	setBodyParameter("StartTimeStamp", startTimeStamp);
+	setBodyParameter("StartTimeStamp", std::to_string(startTimeStamp));
 }
 
 std::string CreateVideoSummaryTaskRequest::getDeviceId()const
@@ -71,15 +71,15 @@ void CreateVideoSummaryTaskRequest::setDeviceId(const std::string& deviceId)
 	setBodyParameter("DeviceId", deviceId);
 }
 
-std::string CreateVideoSummaryTaskRequest::getEndTimeStamp()const
+long CreateVideoSummaryTaskRequest::getEndTimeStamp()const
 {
 	return endTimeStamp_;
 }
 
-void CreateVideoSummaryTaskRequest::setEndTimeStamp(const std::string& endTimeStamp)
+void CreateVideoSummaryTaskRequest::setEndTimeStamp(long endTimeStamp)
 {
 	endTimeStamp_ = endTimeStamp;
-	setBodyParameter("EndTimeStamp", endTimeStamp);
+	setBodyParameter("EndTimeStamp", std::to_string(endTimeStamp));
 }
 
 std::string CreateVideoSummaryTaskRequest::getOptionList()const

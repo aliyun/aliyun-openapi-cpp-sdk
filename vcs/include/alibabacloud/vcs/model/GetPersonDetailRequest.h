@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				GetPersonDetailRequest();
 				~GetPersonDetailRequest();
 
+				std::string getAlgorithmType()const;
+				void setAlgorithmType(const std::string& algorithmType);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				std::string getPersonID()const;
 				void setPersonID(const std::string& personID);
 
             private:
+				std::string algorithmType_;
 				std::string corpId_;
 				std::string personID_;
 

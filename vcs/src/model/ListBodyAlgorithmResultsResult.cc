@@ -82,6 +82,18 @@ void ListBodyAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.shotTime = dataNodeRecordsRecordsItem["ShotTime"].asString();
 		if(!dataNodeRecordsRecordsItem["TargetPicUrlPath"].isNull())
 			recordsItemObject.targetPicUrlPath = dataNodeRecordsRecordsItem["TargetPicUrlPath"].asString();
+		if(!dataNodeRecordsRecordsItem["CoatLength"].isNull())
+			recordsItemObject.coatLength = dataNodeRecordsRecordsItem["CoatLength"].asString();
+		if(!dataNodeRecordsRecordsItem["CoatStyle"].isNull())
+			recordsItemObject.coatStyle = dataNodeRecordsRecordsItem["CoatStyle"].asString();
+		if(!dataNodeRecordsRecordsItem["TrousersLength"].isNull())
+			recordsItemObject.trousersLength = dataNodeRecordsRecordsItem["TrousersLength"].asString();
+		if(!dataNodeRecordsRecordsItem["TrousersStyle"].isNull())
+			recordsItemObject.trousersStyle = dataNodeRecordsRecordsItem["TrousersStyle"].asString();
+		if(!dataNodeRecordsRecordsItem["CoatColor"].isNull())
+			recordsItemObject.coatColor = dataNodeRecordsRecordsItem["CoatColor"].asString();
+		if(!dataNodeRecordsRecordsItem["TrousersColor"].isNull())
+			recordsItemObject.trousersColor = dataNodeRecordsRecordsItem["TrousersColor"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

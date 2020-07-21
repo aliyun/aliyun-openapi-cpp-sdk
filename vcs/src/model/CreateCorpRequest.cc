@@ -27,6 +27,17 @@ CreateCorpRequest::CreateCorpRequest() :
 CreateCorpRequest::~CreateCorpRequest()
 {}
 
+std::string CreateCorpRequest::getAlgorithmType()const
+{
+	return algorithmType_;
+}
+
+void CreateCorpRequest::setAlgorithmType(const std::string& algorithmType)
+{
+	algorithmType_ = algorithmType;
+	setBodyParameter("AlgorithmType", algorithmType);
+}
+
 std::string CreateCorpRequest::getParentCorpId()const
 {
 	return parentCorpId_;

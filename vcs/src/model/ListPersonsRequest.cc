@@ -27,6 +27,17 @@ ListPersonsRequest::ListPersonsRequest() :
 ListPersonsRequest::~ListPersonsRequest()
 {}
 
+std::string ListPersonsRequest::getAlgorithmType()const
+{
+	return algorithmType_;
+}
+
+void ListPersonsRequest::setAlgorithmType(const std::string& algorithmType)
+{
+	algorithmType_ = algorithmType;
+	setBodyParameter("AlgorithmType", algorithmType);
+}
+
 std::string ListPersonsRequest::getCorpId()const
 {
 	return corpId_;
@@ -36,6 +47,28 @@ void ListPersonsRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
+}
+
+std::string ListPersonsRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void ListPersonsRequest::setEndTime(const std::string& endTime)
+{
+	endTime_ = endTime;
+	setBodyParameter("EndTime", endTime);
+}
+
+std::string ListPersonsRequest::getStartTime()const
+{
+	return startTime_;
+}
+
+void ListPersonsRequest::setStartTime(const std::string& startTime)
+{
+	startTime_ = startTime;
+	setBodyParameter("StartTime", startTime);
 }
 
 std::string ListPersonsRequest::getPageNo()const

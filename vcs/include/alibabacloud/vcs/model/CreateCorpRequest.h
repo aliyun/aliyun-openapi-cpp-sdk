@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateCorpRequest();
 				~CreateCorpRequest();
 
+				std::string getAlgorithmType()const;
+				void setAlgorithmType(const std::string& algorithmType);
 				std::string getParentCorpId()const;
 				void setParentCorpId(const std::string& parentCorpId);
 				std::string getDescription()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setCorpName(const std::string& corpName);
 
             private:
+				std::string algorithmType_;
 				std::string parentCorpId_;
 				std::string description_;
 				std::string appName_;

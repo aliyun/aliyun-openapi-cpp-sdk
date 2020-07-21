@@ -39,21 +39,21 @@ namespace AlibabaCloud
 				void setCorpId(const std::string& corpId);
 				std::string getLiveVideoSummary()const;
 				void setLiveVideoSummary(const std::string& liveVideoSummary);
-				std::string getStartTimeStamp()const;
-				void setStartTimeStamp(const std::string& startTimeStamp);
+				long getStartTimeStamp()const;
+				void setStartTimeStamp(long startTimeStamp);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
-				std::string getEndTimeStamp()const;
-				void setEndTimeStamp(const std::string& endTimeStamp);
+				long getEndTimeStamp()const;
+				void setEndTimeStamp(long endTimeStamp);
 				std::string getOptionList()const;
 				void setOptionList(const std::string& optionList);
 
             private:
 				std::string corpId_;
 				std::string liveVideoSummary_;
-				std::string startTimeStamp_;
+				long startTimeStamp_;
 				std::string deviceId_;
-				std::string endTimeStamp_;
+				long endTimeStamp_;
 				std::string optionList_;
 
 			};
