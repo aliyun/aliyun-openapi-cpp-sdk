@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeLogStoreKeysResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT ModifyAuditLogConfigResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeLogStoreKeysResult();
-				explicit DescribeLogStoreKeysResult(const std::string &payload);
-				~DescribeLogStoreKeysResult();
-				std::vector<std::string> getLogStoreKeys()const;
+				ModifyAuditLogConfigResult();
+				explicit ModifyAuditLogConfigResult(const std::string &payload);
+				~ModifyAuditLogConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<std::string> logStoreKeys_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_

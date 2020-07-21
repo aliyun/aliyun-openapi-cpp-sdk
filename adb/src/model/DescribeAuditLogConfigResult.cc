@@ -14,39 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/adb/model/DescribeLogStoreKeysResult.h>
+#include <alibabacloud/adb/model/DescribeAuditLogConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Adb;
 using namespace AlibabaCloud::Adb::Model;
 
-DescribeLogStoreKeysResult::DescribeLogStoreKeysResult() :
+DescribeAuditLogConfigResult::DescribeAuditLogConfigResult() :
 	ServiceResult()
 {}
 
-DescribeLogStoreKeysResult::DescribeLogStoreKeysResult(const std::string &payload) :
+DescribeAuditLogConfigResult::DescribeAuditLogConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeLogStoreKeysResult::~DescribeLogStoreKeysResult()
+DescribeAuditLogConfigResult::~DescribeAuditLogConfigResult()
 {}
 
-void DescribeLogStoreKeysResult::parse(const std::string &payload)
+void DescribeAuditLogConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allLogStoreKeys = value["LogStoreKeys"]["LogStoreKey"];
-	for (const auto &item : allLogStoreKeys)
-		logStoreKeys_.push_back(item.asString());
+	if(!value["AuditLogStatus"].isNull())
+		auditLogStatus_ = value["AuditLogStatus"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
-std::vector<std::string> DescribeLogStoreKeysResult::getLogStoreKeys()const
+std::string DescribeAuditLogConfigResult::getAuditLogStatus()const
 {
-	return logStoreKeys_;
+	return auditLogStatus_;
+}
+
+std::string DescribeAuditLogConfigResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 

@@ -39,8 +39,12 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getStorageResource()const;
+				void setStorageResource(const std::string& storageResource);
 				std::string getDBNodeClass()const;
 				void setDBNodeClass(const std::string& dBNodeClass);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getDBClusterId()const;
@@ -53,20 +57,28 @@ namespace AlibabaCloud
 				void setDBNodeGroupCount(const std::string& dBNodeGroupCount);
 				std::string getDBNodeStorage()const;
 				void setDBNodeStorage(const std::string& dBNodeStorage);
+				std::string getExecutorCount()const;
+				void setExecutorCount(const std::string& executorCount);
 				std::string getModifyType()const;
 				void setModifyType(const std::string& modifyType);
+				std::string getComputeResource()const;
+				void setComputeResource(const std::string& computeResource);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string storageResource_;
 				std::string dBNodeClass_;
+				std::string regionId_;
 				std::string resourceOwnerAccount_;
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string dBNodeGroupCount_;
 				std::string dBNodeStorage_;
+				std::string executorCount_;
 				std::string modifyType_;
+				std::string computeResource_;
 
 			};
 		}

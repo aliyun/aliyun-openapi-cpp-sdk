@@ -41,8 +41,16 @@ namespace AlibabaCloud
 				void setDBClusterDescription(const std::string& dBClusterDescription);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getStorageType()const;
+				void setStorageType(const std::string& storageType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getMode()const;
+				void setMode(const std::string& mode);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getStorageResource()const;
+				void setStorageResource(const std::string& storageResource);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getDBClusterCategory()const;
@@ -69,10 +77,14 @@ namespace AlibabaCloud
 				void setVSwitchId(const std::string& vSwitchId);
 				std::string getDBNodeStorage()const;
 				void setDBNodeStorage(const std::string& dBNodeStorage);
+				std::string getExecutorCount()const;
+				void setExecutorCount(const std::string& executorCount);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getComputeResource()const;
+				void setComputeResource(const std::string& computeResource);
 				std::string getPayType()const;
 				void setPayType(const std::string& payType);
 
@@ -80,7 +92,11 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string dBClusterDescription_;
 				std::string clientToken_;
+				std::string storageType_;
 				std::string accessKeyId_;
+				std::string mode_;
+				std::string resourceGroupId_;
+				std::string storageResource_;
 				std::string regionId_;
 				std::string dBClusterCategory_;
 				std::string dBClusterNetworkType_;
@@ -94,8 +110,10 @@ namespace AlibabaCloud
 				std::string usedTime_;
 				std::string vSwitchId_;
 				std::string dBNodeStorage_;
+				std::string executorCount_;
 				std::string vPCId_;
 				std::string zoneId_;
+				std::string computeResource_;
 				std::string payType_;
 
 			};

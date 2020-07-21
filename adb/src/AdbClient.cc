@@ -303,6 +303,78 @@ AdbClient::DescribeAllDataSourceOutcomeCallable AdbClient::describeAllDataSource
 	return task->get_future();
 }
 
+AdbClient::DescribeAuditLogConfigOutcome AdbClient::describeAuditLogConfig(const DescribeAuditLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuditLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuditLogConfigOutcome(DescribeAuditLogConfigResult(outcome.result()));
+	else
+		return DescribeAuditLogConfigOutcome(outcome.error());
+}
+
+void AdbClient::describeAuditLogConfigAsync(const DescribeAuditLogConfigRequest& request, const DescribeAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuditLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeAuditLogConfigOutcomeCallable AdbClient::describeAuditLogConfigCallable(const DescribeAuditLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuditLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuditLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::DescribeAuditLogRecordsOutcome AdbClient::describeAuditLogRecords(const DescribeAuditLogRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAuditLogRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAuditLogRecordsOutcome(DescribeAuditLogRecordsResult(outcome.result()));
+	else
+		return DescribeAuditLogRecordsOutcome(outcome.error());
+}
+
+void AdbClient::describeAuditLogRecordsAsync(const DescribeAuditLogRecordsRequest& request, const DescribeAuditLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAuditLogRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeAuditLogRecordsOutcomeCallable AdbClient::describeAuditLogRecordsCallable(const DescribeAuditLogRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAuditLogRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAuditLogRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::DescribeAutoRenewAttributeOutcome AdbClient::describeAutoRenewAttribute(const DescribeAutoRenewAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,78 +771,6 @@ AdbClient::DescribeInclinedTablesOutcomeCallable AdbClient::describeInclinedTabl
 	return task->get_future();
 }
 
-AdbClient::DescribeLogStoreKeysOutcome AdbClient::describeLogStoreKeys(const DescribeLogStoreKeysRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLogStoreKeysOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLogStoreKeysOutcome(DescribeLogStoreKeysResult(outcome.result()));
-	else
-		return DescribeLogStoreKeysOutcome(outcome.error());
-}
-
-void AdbClient::describeLogStoreKeysAsync(const DescribeLogStoreKeysRequest& request, const DescribeLogStoreKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLogStoreKeys(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeLogStoreKeysOutcomeCallable AdbClient::describeLogStoreKeysCallable(const DescribeLogStoreKeysRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLogStoreKeysOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLogStoreKeys(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeLoghubDetailOutcome AdbClient::describeLoghubDetail(const DescribeLoghubDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoghubDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoghubDetailOutcome(DescribeLoghubDetailResult(outcome.result()));
-	else
-		return DescribeLoghubDetailOutcome(outcome.error());
-}
-
-void AdbClient::describeLoghubDetailAsync(const DescribeLoghubDetailRequest& request, const DescribeLoghubDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoghubDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeLoghubDetailOutcomeCallable AdbClient::describeLoghubDetailCallable(const DescribeLoghubDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoghubDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoghubDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DescribeOperatorPermissionOutcome AdbClient::describeOperatorPermission(const DescribeOperatorPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,6 +1023,42 @@ AdbClient::DescribeTableDetailOutcomeCallable AdbClient::describeTableDetailCall
 	return task->get_future();
 }
 
+AdbClient::DescribeTablePartitionDiagnoseOutcome AdbClient::describeTablePartitionDiagnose(const DescribeTablePartitionDiagnoseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTablePartitionDiagnoseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTablePartitionDiagnoseOutcome(DescribeTablePartitionDiagnoseResult(outcome.result()));
+	else
+		return DescribeTablePartitionDiagnoseOutcome(outcome.error());
+}
+
+void AdbClient::describeTablePartitionDiagnoseAsync(const DescribeTablePartitionDiagnoseRequest& request, const DescribeTablePartitionDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTablePartitionDiagnose(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeTablePartitionDiagnoseOutcomeCallable AdbClient::describeTablePartitionDiagnoseCallable(const DescribeTablePartitionDiagnoseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTablePartitionDiagnoseOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTablePartitionDiagnose(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::DescribeTablesOutcome AdbClient::describeTables(const DescribeTablesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1269,42 @@ AdbClient::ModifyAccountDescriptionOutcomeCallable AdbClient::modifyAccountDescr
 			[this, request]()
 			{
 			return this->modifyAccountDescription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ModifyAuditLogConfigOutcome AdbClient::modifyAuditLogConfig(const ModifyAuditLogConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAuditLogConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAuditLogConfigOutcome(ModifyAuditLogConfigResult(outcome.result()));
+	else
+		return ModifyAuditLogConfigOutcome(outcome.error());
+}
+
+void AdbClient::modifyAuditLogConfigAsync(const ModifyAuditLogConfigRequest& request, const ModifyAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAuditLogConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ModifyAuditLogConfigOutcomeCallable AdbClient::modifyAuditLogConfigCallable(const ModifyAuditLogConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAuditLogConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAuditLogConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

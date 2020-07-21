@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT CreateDBClusterResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeAuditLogConfigResult : public ServiceResult
 			{
 			public:
 
 
-				CreateDBClusterResult();
-				explicit CreateDBClusterResult(const std::string &payload);
-				~CreateDBClusterResult();
-				std::string getResourceGroupId()const;
+				DescribeAuditLogConfigResult();
+				explicit DescribeAuditLogConfigResult(const std::string &payload);
+				~DescribeAuditLogConfigResult();
+				std::string getAuditLogStatus()const;
 				std::string getDBClusterId()const;
-				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string resourceGroupId_;
+				std::string auditLogStatus_;
 				std::string dBClusterId_;
-				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGRESULT_H_

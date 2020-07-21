@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBETABLEPARTITIONDIAGNOSEREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBETABLEPARTITIONDIAGNOSEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,25 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeLogStoreKeysRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT DescribeTablePartitionDiagnoseRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLogStoreKeysRequest();
-				~DescribeLogStoreKeysRequest();
+				DescribeTablePartitionDiagnoseRequest();
+				~DescribeTablePartitionDiagnoseRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getProjectName()const;
-				void setProjectName(const std::string& projectName);
-				std::string getLogStoreName()const;
-				void setLogStoreName(const std::string& logStoreName);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
@@ -54,11 +56,12 @@ namespace AlibabaCloud
 
             private:
 				long resourceOwnerId_;
+				int pageNumber_;
 				std::string accessKeyId_;
 				std::string regionId_;
-				std::string projectName_;
-				std::string logStoreName_;
+				int pageSize_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
 
@@ -66,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBELOGSTOREKEYSREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBETABLEPARTITIONDIAGNOSEREQUEST_H_

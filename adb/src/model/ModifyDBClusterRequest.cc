@@ -49,6 +49,17 @@ void ModifyDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyDBClusterRequest::getStorageResource()const
+{
+	return storageResource_;
+}
+
+void ModifyDBClusterRequest::setStorageResource(const std::string& storageResource)
+{
+	storageResource_ = storageResource;
+	setParameter("StorageResource", storageResource);
+}
+
 std::string ModifyDBClusterRequest::getDBNodeClass()const
 {
 	return dBNodeClass_;
@@ -58,6 +69,17 @@ void ModifyDBClusterRequest::setDBNodeClass(const std::string& dBNodeClass)
 {
 	dBNodeClass_ = dBNodeClass;
 	setParameter("DBNodeClass", dBNodeClass);
+}
+
+std::string ModifyDBClusterRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void ModifyDBClusterRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
 std::string ModifyDBClusterRequest::getResourceOwnerAccount()const
@@ -126,6 +148,17 @@ void ModifyDBClusterRequest::setDBNodeStorage(const std::string& dBNodeStorage)
 	setParameter("DBNodeStorage", dBNodeStorage);
 }
 
+std::string ModifyDBClusterRequest::getExecutorCount()const
+{
+	return executorCount_;
+}
+
+void ModifyDBClusterRequest::setExecutorCount(const std::string& executorCount)
+{
+	executorCount_ = executorCount;
+	setParameter("ExecutorCount", executorCount);
+}
+
 std::string ModifyDBClusterRequest::getModifyType()const
 {
 	return modifyType_;
@@ -135,5 +168,16 @@ void ModifyDBClusterRequest::setModifyType(const std::string& modifyType)
 {
 	modifyType_ = modifyType;
 	setParameter("ModifyType", modifyType);
+}
+
+std::string ModifyDBClusterRequest::getComputeResource()const
+{
+	return computeResource_;
+}
+
+void ModifyDBClusterRequest::setComputeResource(const std::string& computeResource)
+{
+	computeResource_ = computeResource;
+	setParameter("ComputeResource", computeResource);
 }
 

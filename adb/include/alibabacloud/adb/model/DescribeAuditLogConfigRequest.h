@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEAUTORENEWATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_ADB_MODEL_DESCRIBEAUTORENEWATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGREQUEST_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT DescribeAutoRenewAttributeRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ADB_EXPORT DescribeAuditLogConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeAutoRenewAttributeRequest();
-				~DescribeAutoRenewAttributeRequest();
+				DescribeAuditLogConfigRequest();
+				~DescribeAuditLogConfigRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getDBClusterId()const;
+				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getDBClusterIds()const;
-				void setDBClusterIds(const std::string& dBClusterIds);
 
             private:
 				long resourceOwnerId_;
-				int pageNumber_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string regionId_;
-				int pageSize_;
 				std::string resourceOwnerAccount_;
+				std::string dBClusterId_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string dBClusterIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEAUTORENEWATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGCONFIGREQUEST_H_

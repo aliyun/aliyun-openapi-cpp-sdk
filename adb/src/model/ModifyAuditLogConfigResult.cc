@@ -14,52 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/adb/model/CreateDBClusterResult.h>
+#include <alibabacloud/adb/model/ModifyAuditLogConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Adb;
 using namespace AlibabaCloud::Adb::Model;
 
-CreateDBClusterResult::CreateDBClusterResult() :
+ModifyAuditLogConfigResult::ModifyAuditLogConfigResult() :
 	ServiceResult()
 {}
 
-CreateDBClusterResult::CreateDBClusterResult(const std::string &payload) :
+ModifyAuditLogConfigResult::ModifyAuditLogConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateDBClusterResult::~CreateDBClusterResult()
+ModifyAuditLogConfigResult::~ModifyAuditLogConfigResult()
 {}
 
-void CreateDBClusterResult::parse(const std::string &payload)
+void ModifyAuditLogConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DBClusterId"].isNull())
-		dBClusterId_ = value["DBClusterId"].asString();
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
 
-}
-
-std::string CreateDBClusterResult::getResourceGroupId()const
-{
-	return resourceGroupId_;
-}
-
-std::string CreateDBClusterResult::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
-std::string CreateDBClusterResult::getOrderId()const
-{
-	return orderId_;
 }
 

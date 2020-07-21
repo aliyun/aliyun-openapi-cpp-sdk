@@ -35,6 +35,10 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeAccountsResult.h
 	include/alibabacloud/adb/model/DescribeAllDataSourceRequest.h
 	include/alibabacloud/adb/model/DescribeAllDataSourceResult.h
+	include/alibabacloud/adb/model/DescribeAuditLogConfigRequest.h
+	include/alibabacloud/adb/model/DescribeAuditLogConfigResult.h
+	include/alibabacloud/adb/model/DescribeAuditLogRecordsRequest.h
+	include/alibabacloud/adb/model/DescribeAuditLogRecordsResult.h
 	include/alibabacloud/adb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/adb/model/DescribeAutoRenewAttributeResult.h
 	include/alibabacloud/adb/model/DescribeAvailableResourceRequest.h
@@ -57,10 +61,6 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeDBClustersResult.h
 	include/alibabacloud/adb/model/DescribeInclinedTablesRequest.h
 	include/alibabacloud/adb/model/DescribeInclinedTablesResult.h
-	include/alibabacloud/adb/model/DescribeLogStoreKeysRequest.h
-	include/alibabacloud/adb/model/DescribeLogStoreKeysResult.h
-	include/alibabacloud/adb/model/DescribeLoghubDetailRequest.h
-	include/alibabacloud/adb/model/DescribeLoghubDetailResult.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionRequest.h
 	include/alibabacloud/adb/model/DescribeOperatorPermissionResult.h
 	include/alibabacloud/adb/model/DescribeProcessListRequest.h
@@ -75,6 +75,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DescribeSlowLogTrendResult.h
 	include/alibabacloud/adb/model/DescribeTableDetailRequest.h
 	include/alibabacloud/adb/model/DescribeTableDetailResult.h
+	include/alibabacloud/adb/model/DescribeTablePartitionDiagnoseRequest.h
+	include/alibabacloud/adb/model/DescribeTablePartitionDiagnoseResult.h
 	include/alibabacloud/adb/model/DescribeTablesRequest.h
 	include/alibabacloud/adb/model/DescribeTablesResult.h
 	include/alibabacloud/adb/model/DescribeTaskInfoRequest.h
@@ -87,6 +89,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/ListTagResourcesResult.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/adb/model/ModifyAccountDescriptionResult.h
+	include/alibabacloud/adb/model/ModifyAuditLogConfigRequest.h
+	include/alibabacloud/adb/model/ModifyAuditLogConfigResult.h
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/adb/model/ModifyAutoRenewAttributeResult.h
 	include/alibabacloud/adb/model/ModifyBackupPolicyRequest.h
@@ -130,6 +134,10 @@ set(adb_src
 	src/model/DescribeAccountsResult.cc
 	src/model/DescribeAllDataSourceRequest.cc
 	src/model/DescribeAllDataSourceResult.cc
+	src/model/DescribeAuditLogConfigRequest.cc
+	src/model/DescribeAuditLogConfigResult.cc
+	src/model/DescribeAuditLogRecordsRequest.cc
+	src/model/DescribeAuditLogRecordsResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
 	src/model/DescribeAvailableResourceRequest.cc
@@ -152,10 +160,6 @@ set(adb_src
 	src/model/DescribeDBClustersResult.cc
 	src/model/DescribeInclinedTablesRequest.cc
 	src/model/DescribeInclinedTablesResult.cc
-	src/model/DescribeLogStoreKeysRequest.cc
-	src/model/DescribeLogStoreKeysResult.cc
-	src/model/DescribeLoghubDetailRequest.cc
-	src/model/DescribeLoghubDetailResult.cc
 	src/model/DescribeOperatorPermissionRequest.cc
 	src/model/DescribeOperatorPermissionResult.cc
 	src/model/DescribeProcessListRequest.cc
@@ -170,6 +174,8 @@ set(adb_src
 	src/model/DescribeSlowLogTrendResult.cc
 	src/model/DescribeTableDetailRequest.cc
 	src/model/DescribeTableDetailResult.cc
+	src/model/DescribeTablePartitionDiagnoseRequest.cc
+	src/model/DescribeTablePartitionDiagnoseResult.cc
 	src/model/DescribeTablesRequest.cc
 	src/model/DescribeTablesResult.cc
 	src/model/DescribeTaskInfoRequest.cc
@@ -182,6 +188,8 @@ set(adb_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
+	src/model/ModifyAuditLogConfigRequest.cc
+	src/model/ModifyAuditLogConfigResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc

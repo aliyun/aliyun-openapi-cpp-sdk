@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
-#define ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
+#ifndef ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGRECORDSRESULT_H_
+#define ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGRECORDSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ADB_EXPORT CreateDBClusterResult : public ServiceResult
+			class ALIBABACLOUD_ADB_EXPORT DescribeAuditLogRecordsResult : public ServiceResult
 			{
 			public:
+				struct SlowLogRecord
+				{
+					std::string connId;
+					std::string executeTime;
+					std::string totalTime;
+					std::string dBName;
+					std::string processID;
+					std::string hostAddress;
+					std::string sQLType;
+					std::string sQLText;
+					std::string succeed;
+				};
 
 
-				CreateDBClusterResult();
-				explicit CreateDBClusterResult(const std::string &payload);
-				~CreateDBClusterResult();
-				std::string getResourceGroupId()const;
+				DescribeAuditLogRecordsResult();
+				explicit DescribeAuditLogRecordsResult(const std::string &payload);
+				~DescribeAuditLogRecordsResult();
+				std::string getTotalCount()const;
+				std::string getPageSize()const;
+				std::string getPageNumber()const;
 				std::string getDBClusterId()const;
-				std::string getOrderId()const;
+				std::vector<SlowLogRecord> getItems()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string resourceGroupId_;
+				std::string totalCount_;
+				std::string pageSize_;
+				std::string pageNumber_;
 				std::string dBClusterId_;
-				std::string orderId_;
+				std::vector<SlowLogRecord> items_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ADB_MODEL_CREATEDBCLUSTERRESULT_H_
+#endif // !ALIBABACLOUD_ADB_MODEL_DESCRIBEAUDITLOGRECORDSRESULT_H_

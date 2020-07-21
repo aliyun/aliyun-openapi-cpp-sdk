@@ -36,6 +36,10 @@
 #include "model/DescribeAccountsResult.h"
 #include "model/DescribeAllDataSourceRequest.h"
 #include "model/DescribeAllDataSourceResult.h"
+#include "model/DescribeAuditLogConfigRequest.h"
+#include "model/DescribeAuditLogConfigResult.h"
+#include "model/DescribeAuditLogRecordsRequest.h"
+#include "model/DescribeAuditLogRecordsResult.h"
 #include "model/DescribeAutoRenewAttributeRequest.h"
 #include "model/DescribeAutoRenewAttributeResult.h"
 #include "model/DescribeAvailableResourceRequest.h"
@@ -58,10 +62,6 @@
 #include "model/DescribeDBClustersResult.h"
 #include "model/DescribeInclinedTablesRequest.h"
 #include "model/DescribeInclinedTablesResult.h"
-#include "model/DescribeLogStoreKeysRequest.h"
-#include "model/DescribeLogStoreKeysResult.h"
-#include "model/DescribeLoghubDetailRequest.h"
-#include "model/DescribeLoghubDetailResult.h"
 #include "model/DescribeOperatorPermissionRequest.h"
 #include "model/DescribeOperatorPermissionResult.h"
 #include "model/DescribeProcessListRequest.h"
@@ -76,6 +76,8 @@
 #include "model/DescribeSlowLogTrendResult.h"
 #include "model/DescribeTableDetailRequest.h"
 #include "model/DescribeTableDetailResult.h"
+#include "model/DescribeTablePartitionDiagnoseRequest.h"
+#include "model/DescribeTablePartitionDiagnoseResult.h"
 #include "model/DescribeTablesRequest.h"
 #include "model/DescribeTablesResult.h"
 #include "model/DescribeTaskInfoRequest.h"
@@ -88,6 +90,8 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
+#include "model/ModifyAuditLogConfigRequest.h"
+#include "model/ModifyAuditLogConfigResult.h"
 #include "model/ModifyAutoRenewAttributeRequest.h"
 #include "model/ModifyAutoRenewAttributeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
@@ -144,6 +148,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAllDataSourceResult> DescribeAllDataSourceOutcome;
 			typedef std::future<DescribeAllDataSourceOutcome> DescribeAllDataSourceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAllDataSourceRequest&, const DescribeAllDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAuditLogConfigResult> DescribeAuditLogConfigOutcome;
+			typedef std::future<DescribeAuditLogConfigOutcome> DescribeAuditLogConfigOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAuditLogConfigRequest&, const DescribeAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAuditLogRecordsResult> DescribeAuditLogRecordsOutcome;
+			typedef std::future<DescribeAuditLogRecordsOutcome> DescribeAuditLogRecordsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAuditLogRecordsRequest&, const DescribeAuditLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogRecordsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAutoRenewAttributeResult> DescribeAutoRenewAttributeOutcome;
 			typedef std::future<DescribeAutoRenewAttributeOutcome> DescribeAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAutoRenewAttributeRequest&, const DescribeAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoRenewAttributeAsyncHandler;
@@ -177,12 +187,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInclinedTablesResult> DescribeInclinedTablesOutcome;
 			typedef std::future<DescribeInclinedTablesOutcome> DescribeInclinedTablesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeInclinedTablesRequest&, const DescribeInclinedTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInclinedTablesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLogStoreKeysResult> DescribeLogStoreKeysOutcome;
-			typedef std::future<DescribeLogStoreKeysOutcome> DescribeLogStoreKeysOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeLogStoreKeysRequest&, const DescribeLogStoreKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStoreKeysAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLoghubDetailResult> DescribeLoghubDetailOutcome;
-			typedef std::future<DescribeLoghubDetailOutcome> DescribeLoghubDetailOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeLoghubDetailRequest&, const DescribeLoghubDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoghubDetailAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOperatorPermissionResult> DescribeOperatorPermissionOutcome;
 			typedef std::future<DescribeOperatorPermissionOutcome> DescribeOperatorPermissionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeOperatorPermissionRequest&, const DescribeOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperatorPermissionAsyncHandler;
@@ -204,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTableDetailResult> DescribeTableDetailOutcome;
 			typedef std::future<DescribeTableDetailOutcome> DescribeTableDetailOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTableDetailRequest&, const DescribeTableDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeTablePartitionDiagnoseResult> DescribeTablePartitionDiagnoseOutcome;
+			typedef std::future<DescribeTablePartitionDiagnoseOutcome> DescribeTablePartitionDiagnoseOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeTablePartitionDiagnoseRequest&, const DescribeTablePartitionDiagnoseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablePartitionDiagnoseAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
 			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -222,6 +229,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAuditLogConfigResult> ModifyAuditLogConfigOutcome;
+			typedef std::future<ModifyAuditLogConfigOutcome> ModifyAuditLogConfigOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyAuditLogConfigRequest&, const ModifyAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAutoRenewAttributeResult> ModifyAutoRenewAttributeOutcome;
 			typedef std::future<ModifyAutoRenewAttributeOutcome> ModifyAutoRenewAttributeOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyAutoRenewAttributeRequest&, const ModifyAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewAttributeAsyncHandler;
@@ -287,6 +297,12 @@ namespace AlibabaCloud
 			DescribeAllDataSourceOutcome describeAllDataSource(const Model::DescribeAllDataSourceRequest &request)const;
 			void describeAllDataSourceAsync(const Model::DescribeAllDataSourceRequest& request, const DescribeAllDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAllDataSourceOutcomeCallable describeAllDataSourceCallable(const Model::DescribeAllDataSourceRequest& request) const;
+			DescribeAuditLogConfigOutcome describeAuditLogConfig(const Model::DescribeAuditLogConfigRequest &request)const;
+			void describeAuditLogConfigAsync(const Model::DescribeAuditLogConfigRequest& request, const DescribeAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAuditLogConfigOutcomeCallable describeAuditLogConfigCallable(const Model::DescribeAuditLogConfigRequest& request) const;
+			DescribeAuditLogRecordsOutcome describeAuditLogRecords(const Model::DescribeAuditLogRecordsRequest &request)const;
+			void describeAuditLogRecordsAsync(const Model::DescribeAuditLogRecordsRequest& request, const DescribeAuditLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAuditLogRecordsOutcomeCallable describeAuditLogRecordsCallable(const Model::DescribeAuditLogRecordsRequest& request) const;
 			DescribeAutoRenewAttributeOutcome describeAutoRenewAttribute(const Model::DescribeAutoRenewAttributeRequest &request)const;
 			void describeAutoRenewAttributeAsync(const Model::DescribeAutoRenewAttributeRequest& request, const DescribeAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAutoRenewAttributeOutcomeCallable describeAutoRenewAttributeCallable(const Model::DescribeAutoRenewAttributeRequest& request) const;
@@ -320,12 +336,6 @@ namespace AlibabaCloud
 			DescribeInclinedTablesOutcome describeInclinedTables(const Model::DescribeInclinedTablesRequest &request)const;
 			void describeInclinedTablesAsync(const Model::DescribeInclinedTablesRequest& request, const DescribeInclinedTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInclinedTablesOutcomeCallable describeInclinedTablesCallable(const Model::DescribeInclinedTablesRequest& request) const;
-			DescribeLogStoreKeysOutcome describeLogStoreKeys(const Model::DescribeLogStoreKeysRequest &request)const;
-			void describeLogStoreKeysAsync(const Model::DescribeLogStoreKeysRequest& request, const DescribeLogStoreKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLogStoreKeysOutcomeCallable describeLogStoreKeysCallable(const Model::DescribeLogStoreKeysRequest& request) const;
-			DescribeLoghubDetailOutcome describeLoghubDetail(const Model::DescribeLoghubDetailRequest &request)const;
-			void describeLoghubDetailAsync(const Model::DescribeLoghubDetailRequest& request, const DescribeLoghubDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLoghubDetailOutcomeCallable describeLoghubDetailCallable(const Model::DescribeLoghubDetailRequest& request) const;
 			DescribeOperatorPermissionOutcome describeOperatorPermission(const Model::DescribeOperatorPermissionRequest &request)const;
 			void describeOperatorPermissionAsync(const Model::DescribeOperatorPermissionRequest& request, const DescribeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOperatorPermissionOutcomeCallable describeOperatorPermissionCallable(const Model::DescribeOperatorPermissionRequest& request) const;
@@ -347,6 +357,9 @@ namespace AlibabaCloud
 			DescribeTableDetailOutcome describeTableDetail(const Model::DescribeTableDetailRequest &request)const;
 			void describeTableDetailAsync(const Model::DescribeTableDetailRequest& request, const DescribeTableDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTableDetailOutcomeCallable describeTableDetailCallable(const Model::DescribeTableDetailRequest& request) const;
+			DescribeTablePartitionDiagnoseOutcome describeTablePartitionDiagnose(const Model::DescribeTablePartitionDiagnoseRequest &request)const;
+			void describeTablePartitionDiagnoseAsync(const Model::DescribeTablePartitionDiagnoseRequest& request, const DescribeTablePartitionDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeTablePartitionDiagnoseOutcomeCallable describeTablePartitionDiagnoseCallable(const Model::DescribeTablePartitionDiagnoseRequest& request) const;
 			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
 			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
@@ -365,6 +378,9 @@ namespace AlibabaCloud
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
+			ModifyAuditLogConfigOutcome modifyAuditLogConfig(const Model::ModifyAuditLogConfigRequest &request)const;
+			void modifyAuditLogConfigAsync(const Model::ModifyAuditLogConfigRequest& request, const ModifyAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAuditLogConfigOutcomeCallable modifyAuditLogConfigCallable(const Model::ModifyAuditLogConfigRequest& request) const;
 			ModifyAutoRenewAttributeOutcome modifyAutoRenewAttribute(const Model::ModifyAutoRenewAttributeRequest &request)const;
 			void modifyAutoRenewAttributeAsync(const Model::ModifyAutoRenewAttributeRequest& request, const ModifyAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAutoRenewAttributeOutcomeCallable modifyAutoRenewAttributeCallable(const Model::ModifyAutoRenewAttributeRequest& request) const;

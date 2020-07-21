@@ -60,6 +60,17 @@ void CreateDBClusterRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateDBClusterRequest::getStorageType()const
+{
+	return storageType_;
+}
+
+void CreateDBClusterRequest::setStorageType(const std::string& storageType)
+{
+	storageType_ = storageType;
+	setParameter("StorageType", storageType);
+}
+
 std::string CreateDBClusterRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -69,6 +80,39 @@ void CreateDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
 {
 	accessKeyId_ = accessKeyId;
 	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string CreateDBClusterRequest::getMode()const
+{
+	return mode_;
+}
+
+void CreateDBClusterRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setParameter("Mode", mode);
+}
+
+std::string CreateDBClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateDBClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
+std::string CreateDBClusterRequest::getStorageResource()const
+{
+	return storageResource_;
+}
+
+void CreateDBClusterRequest::setStorageResource(const std::string& storageResource)
+{
+	storageResource_ = storageResource;
+	setParameter("StorageResource", storageResource);
 }
 
 std::string CreateDBClusterRequest::getRegionId()const
@@ -214,6 +258,17 @@ void CreateDBClusterRequest::setDBNodeStorage(const std::string& dBNodeStorage)
 	setParameter("DBNodeStorage", dBNodeStorage);
 }
 
+std::string CreateDBClusterRequest::getExecutorCount()const
+{
+	return executorCount_;
+}
+
+void CreateDBClusterRequest::setExecutorCount(const std::string& executorCount)
+{
+	executorCount_ = executorCount;
+	setParameter("ExecutorCount", executorCount);
+}
+
 std::string CreateDBClusterRequest::getVPCId()const
 {
 	return vPCId_;
@@ -234,6 +289,17 @@ void CreateDBClusterRequest::setZoneId(const std::string& zoneId)
 {
 	zoneId_ = zoneId;
 	setParameter("ZoneId", zoneId);
+}
+
+std::string CreateDBClusterRequest::getComputeResource()const
+{
+	return computeResource_;
+}
+
+void CreateDBClusterRequest::setComputeResource(const std::string& computeResource)
+{
+	computeResource_ = computeResource;
+	setParameter("ComputeResource", computeResource);
 }
 
 std::string CreateDBClusterRequest::getPayType()const

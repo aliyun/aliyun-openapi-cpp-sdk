@@ -82,6 +82,17 @@ void DescribeDBClustersRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDBClustersRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDBClustersRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeDBClustersRequest::getRegionId()const
 {
 	return regionId_;

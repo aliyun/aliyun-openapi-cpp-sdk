@@ -34,30 +34,53 @@ namespace AlibabaCloud
 			public:
 				struct AvailableZone
 				{
-					struct SupportedSerial
+					struct SupportedModeItem
 					{
-						struct SupportedInstanceClass
+						struct SupportedSerialListItem
 						{
-							struct SupportedNodeCount
+							struct SupportedFlexibleResourceItem
 							{
-								struct NodeCount
-								{
-									std::string maxCount;
-									std::string step;
-									std::string minCount;
-								};
-								NodeCount nodeCount;
-								std::vector<std::string> storageSize;
+								std::string storageType;
+								std::vector<std::string> supportedStorageResource;
+								std::vector<std::string> supportedComputeResource;
 							};
-							std::string instanceClass;
-							std::vector<SupportedInstanceClass::SupportedNodeCount> supportedNodeCountList;
-							std::string tips;
+							struct SupportedInstanceClass
+							{
+								struct SupportedNodeCount
+								{
+									struct NodeCount
+									{
+										std::string maxCount;
+										std::string step;
+										std::string minCount;
+									};
+									NodeCount nodeCount;
+									std::vector<std::string> storageSize;
+								};
+								struct SupportedExecutor
+								{
+									struct NodeCount1
+									{
+										std::string maxCount;
+										std::string step;
+										std::string minCount;
+									};
+									NodeCount1 nodeCount1;
+								};
+								std::vector<SupportedInstanceClass::SupportedExecutor> supportedExecutorList;
+								std::string instanceClass;
+								std::vector<SupportedInstanceClass::SupportedNodeCount> supportedNodeCountList;
+								std::string tips;
+							};
+							std::string serial;
+							std::vector<SupportedSerialListItem::SupportedFlexibleResourceItem> supportedFlexibleResource;
+							std::vector<SupportedSerialListItem::SupportedInstanceClass> supportedInstanceClassList;
 						};
-						std::string serial;
-						std::vector<SupportedSerial::SupportedInstanceClass> supportedInstanceClassList;
+						std::string mode;
+						std::vector<SupportedModeItem::SupportedSerialListItem> supportedSerialList;
 					};
 					std::string zoneId;
-					std::vector<AvailableZone::SupportedSerial> supportedSerialList;
+					std::vector<AvailableZone::SupportedModeItem> supportedMode;
 				};
 
 

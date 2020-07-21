@@ -81,6 +81,34 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.rdsInstanceId = valueItemsDBCluster["RdsInstanceId"].asString();
 		if(!valueItemsDBCluster["DtsJobId"].isNull())
 			itemsObject.dtsJobId = valueItemsDBCluster["DtsJobId"].asString();
+		if(!valueItemsDBCluster["ExecutorCount"].isNull())
+			itemsObject.executorCount = valueItemsDBCluster["ExecutorCount"].asString();
+		if(!valueItemsDBCluster["DiskType"].isNull())
+			itemsObject.diskType = valueItemsDBCluster["DiskType"].asString();
+		if(!valueItemsDBCluster["VPCCloudInstanceId"].isNull())
+			itemsObject.vPCCloudInstanceId = valueItemsDBCluster["VPCCloudInstanceId"].asString();
+		if(!valueItemsDBCluster["Engine"].isNull())
+			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
+		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
+			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
+		if(!valueItemsDBCluster["VPCId"].isNull())
+			itemsObject.vPCId = valueItemsDBCluster["VPCId"].asString();
+		if(!valueItemsDBCluster["VSwitchId"].isNull())
+			itemsObject.vSwitchId = valueItemsDBCluster["VSwitchId"].asString();
+		if(!valueItemsDBCluster["ZoneId"].isNull())
+			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
+		if(!valueItemsDBCluster["ConnectionString"].isNull())
+			itemsObject.connectionString = valueItemsDBCluster["ConnectionString"].asString();
+		if(!valueItemsDBCluster["Port"].isNull())
+			itemsObject.port = valueItemsDBCluster["Port"].asString();
+		if(!valueItemsDBCluster["ComputeResource"].isNull())
+			itemsObject.computeResource = valueItemsDBCluster["ComputeResource"].asString();
+		if(!valueItemsDBCluster["StorageResource"].isNull())
+			itemsObject.storageResource = valueItemsDBCluster["StorageResource"].asString();
+		if(!valueItemsDBCluster["Mode"].isNull())
+			itemsObject.mode = valueItemsDBCluster["Mode"].asString();
+		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		auto allTagsNode = allItemsNode["Tags"]["Tag"];
 		for (auto allItemsNodeTagsTag : allTagsNode)
 		{

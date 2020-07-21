@@ -45,39 +45,74 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 		AvailableZone availableZoneListObject;
 		if(!valueAvailableZoneListAvailableZone["ZoneId"].isNull())
 			availableZoneListObject.zoneId = valueAvailableZoneListAvailableZone["ZoneId"].asString();
-		auto allSupportedSerialListNode = allAvailableZoneListNode["SupportedSerialList"]["SupportedSerial"];
-		for (auto allAvailableZoneListNodeSupportedSerialListSupportedSerial : allSupportedSerialListNode)
+		auto allSupportedModeNode = allAvailableZoneListNode["SupportedMode"]["SupportedModeItem"];
+		for (auto allAvailableZoneListNodeSupportedModeSupportedModeItem : allSupportedModeNode)
 		{
-			AvailableZone::SupportedSerial supportedSerialListObject;
-			if(!allAvailableZoneListNodeSupportedSerialListSupportedSerial["Serial"].isNull())
-				supportedSerialListObject.serial = allAvailableZoneListNodeSupportedSerialListSupportedSerial["Serial"].asString();
-			auto allSupportedInstanceClassListNode = allSupportedSerialListNode["SupportedInstanceClassList"]["SupportedInstanceClass"];
-			for (auto allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass : allSupportedInstanceClassListNode)
+			AvailableZone::SupportedModeItem supportedModeObject;
+			if(!allAvailableZoneListNodeSupportedModeSupportedModeItem["Mode"].isNull())
+				supportedModeObject.mode = allAvailableZoneListNodeSupportedModeSupportedModeItem["Mode"].asString();
+			auto allSupportedSerialListNode = allSupportedModeNode["SupportedSerialList"]["SupportedSerialListItem"];
+			for (auto allSupportedModeNodeSupportedSerialListSupportedSerialListItem : allSupportedSerialListNode)
 			{
-				AvailableZone::SupportedSerial::SupportedInstanceClass supportedInstanceClassListObject;
-				if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].isNull())
-					supportedInstanceClassListObject.instanceClass = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].asString();
-				if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].isNull())
-					supportedInstanceClassListObject.tips = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].asString();
-				auto allSupportedNodeCountListNode = allSupportedInstanceClassListNode["SupportedNodeCountList"]["SupportedNodeCount"];
-				for (auto allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount : allSupportedNodeCountListNode)
+				AvailableZone::SupportedModeItem::SupportedSerialListItem supportedSerialListObject;
+				if(!allSupportedModeNodeSupportedSerialListSupportedSerialListItem["Serial"].isNull())
+					supportedSerialListObject.serial = allSupportedModeNodeSupportedSerialListSupportedSerialListItem["Serial"].asString();
+				auto allSupportedFlexibleResourceNode = allSupportedSerialListNode["SupportedFlexibleResource"]["SupportedFlexibleResourceItem"];
+				for (auto allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem : allSupportedFlexibleResourceNode)
 				{
-					AvailableZone::SupportedSerial::SupportedInstanceClass::SupportedNodeCount supportedNodeCountListObject;
-					auto nodeCountNode = value["NodeCount"];
-					if(!nodeCountNode["MinCount"].isNull())
-						supportedNodeCountListObject.nodeCount.minCount = nodeCountNode["MinCount"].asString();
-					if(!nodeCountNode["MaxCount"].isNull())
-						supportedNodeCountListObject.nodeCount.maxCount = nodeCountNode["MaxCount"].asString();
-					if(!nodeCountNode["Step"].isNull())
-						supportedNodeCountListObject.nodeCount.step = nodeCountNode["Step"].asString();
-					auto allStorageSize = value["StorageSize"]["StorageSize"];
-					for (auto value : allStorageSize)
-						supportedNodeCountListObject.storageSize.push_back(value.asString());
-					supportedInstanceClassListObject.supportedNodeCountList.push_back(supportedNodeCountListObject);
+					AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedFlexibleResourceItem supportedFlexibleResourceObject;
+					if(!allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].isNull())
+						supportedFlexibleResourceObject.storageType = allSupportedSerialListNodeSupportedFlexibleResourceSupportedFlexibleResourceItem["StorageType"].asString();
+					auto allSupportedStorageResource = value["SupportedStorageResource"]["SupportedStorageResource"];
+					for (auto value : allSupportedStorageResource)
+						supportedFlexibleResourceObject.supportedStorageResource.push_back(value.asString());
+					auto allSupportedComputeResource = value["SupportedComputeResource"]["SupportedComputeResource"];
+					for (auto value : allSupportedComputeResource)
+						supportedFlexibleResourceObject.supportedComputeResource.push_back(value.asString());
+					supportedSerialListObject.supportedFlexibleResource.push_back(supportedFlexibleResourceObject);
 				}
-				supportedSerialListObject.supportedInstanceClassList.push_back(supportedInstanceClassListObject);
+				auto allSupportedInstanceClassListNode = allSupportedSerialListNode["SupportedInstanceClassList"]["SupportedInstanceClass"];
+				for (auto allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass : allSupportedInstanceClassListNode)
+				{
+					AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass supportedInstanceClassListObject;
+					if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].isNull())
+						supportedInstanceClassListObject.instanceClass = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["InstanceClass"].asString();
+					if(!allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].isNull())
+						supportedInstanceClassListObject.tips = allSupportedSerialListNodeSupportedInstanceClassListSupportedInstanceClass["Tips"].asString();
+					auto allSupportedNodeCountListNode = allSupportedInstanceClassListNode["SupportedNodeCountList"]["SupportedNodeCount"];
+					for (auto allSupportedInstanceClassListNodeSupportedNodeCountListSupportedNodeCount : allSupportedNodeCountListNode)
+					{
+						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedNodeCount supportedNodeCountListObject;
+						auto nodeCountNode = value["NodeCount"];
+						if(!nodeCountNode["MinCount"].isNull())
+							supportedNodeCountListObject.nodeCount.minCount = nodeCountNode["MinCount"].asString();
+						if(!nodeCountNode["MaxCount"].isNull())
+							supportedNodeCountListObject.nodeCount.maxCount = nodeCountNode["MaxCount"].asString();
+						if(!nodeCountNode["Step"].isNull())
+							supportedNodeCountListObject.nodeCount.step = nodeCountNode["Step"].asString();
+						auto allStorageSize = value["StorageSize"]["StorageSize"];
+						for (auto value : allStorageSize)
+							supportedNodeCountListObject.storageSize.push_back(value.asString());
+						supportedInstanceClassListObject.supportedNodeCountList.push_back(supportedNodeCountListObject);
+					}
+					auto allSupportedExecutorListNode = allSupportedInstanceClassListNode["SupportedExecutorList"]["SupportedExecutor"];
+					for (auto allSupportedInstanceClassListNodeSupportedExecutorListSupportedExecutor : allSupportedExecutorListNode)
+					{
+						AvailableZone::SupportedModeItem::SupportedSerialListItem::SupportedInstanceClass::SupportedExecutor supportedExecutorListObject;
+						auto nodeCount1Node = value["NodeCount"];
+						if(!nodeCount1Node["MinCount"].isNull())
+							supportedExecutorListObject.nodeCount1.minCount = nodeCount1Node["MinCount"].asString();
+						if(!nodeCount1Node["MaxCount"].isNull())
+							supportedExecutorListObject.nodeCount1.maxCount = nodeCount1Node["MaxCount"].asString();
+						if(!nodeCount1Node["Step"].isNull())
+							supportedExecutorListObject.nodeCount1.step = nodeCount1Node["Step"].asString();
+						supportedInstanceClassListObject.supportedExecutorList.push_back(supportedExecutorListObject);
+					}
+					supportedSerialListObject.supportedInstanceClassList.push_back(supportedInstanceClassListObject);
+				}
+				supportedModeObject.supportedSerialList.push_back(supportedSerialListObject);
 			}
-			availableZoneListObject.supportedSerialList.push_back(supportedSerialListObject);
+			availableZoneListObject.supportedMode.push_back(supportedModeObject);
 		}
 		availableZoneList_.push_back(availableZoneListObject);
 	}

@@ -99,6 +99,18 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			itemsObject.rdsInstanceId = valueItemsDBCluster["RdsInstanceId"].asString();
 		if(!valueItemsDBCluster["DtsJobId"].isNull())
 			itemsObject.dtsJobId = valueItemsDBCluster["DtsJobId"].asString();
+		if(!valueItemsDBCluster["ExecutorCount"].isNull())
+			itemsObject.executorCount = valueItemsDBCluster["ExecutorCount"].asString();
+		if(!valueItemsDBCluster["DiskType"].isNull())
+			itemsObject.diskType = valueItemsDBCluster["DiskType"].asString();
+		if(!valueItemsDBCluster["ComputeResource"].isNull())
+			itemsObject.computeResource = valueItemsDBCluster["ComputeResource"].asString();
+		if(!valueItemsDBCluster["StorageResource"].isNull())
+			itemsObject.storageResource = valueItemsDBCluster["StorageResource"].asString();
+		if(!valueItemsDBCluster["Mode"].isNull())
+			itemsObject.mode = valueItemsDBCluster["Mode"].asString();
+		if(!valueItemsDBCluster["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		auto allTagsNode = allItemsNode["Tags"]["Tag"];
 		for (auto allItemsNodeTagsTag : allTagsNode)
 		{
