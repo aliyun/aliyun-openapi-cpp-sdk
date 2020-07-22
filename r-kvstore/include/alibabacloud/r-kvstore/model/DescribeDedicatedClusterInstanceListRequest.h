@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBERUNNINGLOGRECORDSREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBERUNNINGLOGRECORDSREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,75 +28,66 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeRunningLogRecordsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeDedicatedClusterInstanceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeRunningLogRecordsRequest();
-				~DescribeRunningLogRecordsRequest();
+				DescribeDedicatedClusterInstanceListRequest();
+				~DescribeDedicatedClusterInstanceListRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getEngineVersion()const;
+				void setEngineVersion(const std::string& engineVersion);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getResourceGroupId()const;
-				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getEngine()const;
+				void setEngine(const std::string& engine);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
-				std::string getRoleType()const;
-				void setRoleType(const std::string& roleType);
-				std::string getNodeId()const;
-				void setNodeId(const std::string& nodeId);
-				long getSQLId()const;
-				void setSQLId(long sQLId);
+				int getInstanceStatus()const;
+				void setInstanceStatus(int instanceStatus);
+				std::string getDedicatedHostName()const;
+				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getQueryKeyword()const;
-				void setQueryKeyword(const std::string& queryKeyword);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
+				std::string getInstanceNetType()const;
+				void setInstanceNetType(const std::string& instanceNetType);
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getDBName()const;
-				void setDBName(const std::string& dBName);
-				std::string getCharacterType()const;
-				void setCharacterType(const std::string& characterType);
-				std::string getOrderType()const;
-				void setOrderType(const std::string& orderType);
 
             private:
 				long resourceOwnerId_;
-				std::string startTime_;
+				std::string engineVersion_;
 				int pageNumber_;
 				std::string accessKeyId_;
-				std::string resourceGroupId_;
 				std::string securityToken_;
+				std::string regionId_;
+				std::string engine_;
 				int pageSize_;
-				std::string roleType_;
-				std::string nodeId_;
-				long sQLId_;
+				int instanceStatus_;
+				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string queryKeyword_;
-				std::string endTime_;
+				std::string instanceNetType_;
+				std::string clusterId_;
 				long ownerId_;
 				std::string instanceId_;
-				std::string dBName_;
-				std::string characterType_;
-				std::string orderType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBERUNNINGLOGRECORDSREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEDEDICATEDCLUSTERINSTANCELISTREQUEST_H_

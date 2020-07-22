@@ -807,6 +807,42 @@ R_kvstoreClient::DescribeDBInstanceNetInfoOutcomeCallable R_kvstoreClient::descr
 	return task->get_future();
 }
 
+R_kvstoreClient::DescribeDedicatedClusterInstanceListOutcome R_kvstoreClient::describeDedicatedClusterInstanceList(const DescribeDedicatedClusterInstanceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDedicatedClusterInstanceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDedicatedClusterInstanceListOutcome(DescribeDedicatedClusterInstanceListResult(outcome.result()));
+	else
+		return DescribeDedicatedClusterInstanceListOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeDedicatedClusterInstanceListAsync(const DescribeDedicatedClusterInstanceListRequest& request, const DescribeDedicatedClusterInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDedicatedClusterInstanceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeDedicatedClusterInstanceListOutcomeCallable R_kvstoreClient::describeDedicatedClusterInstanceListCallable(const DescribeDedicatedClusterInstanceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterInstanceListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDedicatedClusterInstanceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::DescribeDedicatedUserClusterOutcome R_kvstoreClient::describeDedicatedUserCluster(const DescribeDedicatedUserClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1707,36 +1743,36 @@ R_kvstoreClient::ModifyAccountDescriptionOutcomeCallable R_kvstoreClient::modify
 	return task->get_future();
 }
 
-R_kvstoreClient::ModifyAuditLogConfigOutcome R_kvstoreClient::modifyAuditLogConfig(const ModifyAuditLogConfigRequest &request) const
+R_kvstoreClient::ModifyAccountPasswordOutcome R_kvstoreClient::modifyAccountPassword(const ModifyAccountPasswordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyAuditLogConfigOutcome(endpointOutcome.error());
+		return ModifyAccountPasswordOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyAuditLogConfigOutcome(ModifyAuditLogConfigResult(outcome.result()));
+		return ModifyAccountPasswordOutcome(ModifyAccountPasswordResult(outcome.result()));
 	else
-		return ModifyAuditLogConfigOutcome(outcome.error());
+		return ModifyAccountPasswordOutcome(outcome.error());
 }
 
-void R_kvstoreClient::modifyAuditLogConfigAsync(const ModifyAuditLogConfigRequest& request, const ModifyAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void R_kvstoreClient::modifyAccountPasswordAsync(const ModifyAccountPasswordRequest& request, const ModifyAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyAuditLogConfig(request), context);
+		handler(this, request, modifyAccountPassword(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-R_kvstoreClient::ModifyAuditLogConfigOutcomeCallable R_kvstoreClient::modifyAuditLogConfigCallable(const ModifyAuditLogConfigRequest &request) const
+R_kvstoreClient::ModifyAccountPasswordOutcomeCallable R_kvstoreClient::modifyAccountPasswordCallable(const ModifyAccountPasswordRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyAuditLogConfigOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ModifyAccountPasswordOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyAuditLogConfig(request);
+			return this->modifyAccountPassword(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2673,6 +2709,42 @@ R_kvstoreClient::SwitchNetworkOutcomeCallable R_kvstoreClient::switchNetworkCall
 			[this, request]()
 			{
 			return this->switchNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::SyncDtsStatusOutcome R_kvstoreClient::syncDtsStatus(const SyncDtsStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncDtsStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncDtsStatusOutcome(SyncDtsStatusResult(outcome.result()));
+	else
+		return SyncDtsStatusOutcome(outcome.error());
+}
+
+void R_kvstoreClient::syncDtsStatusAsync(const SyncDtsStatusRequest& request, const SyncDtsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncDtsStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::SyncDtsStatusOutcomeCallable R_kvstoreClient::syncDtsStatusCallable(const SyncDtsStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncDtsStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->syncDtsStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,23 +28,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyAuditLogConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyAccountPasswordRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyAuditLogConfigRequest();
-				~ModifyAuditLogConfigRequest();
+				ModifyAccountPasswordRequest();
+				~ModifyAccountPasswordRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getAccountName()const;
+				void setAccountName(const std::string& accountName);
+				std::string getNewAccountPassword()const;
+				void setNewAccountPassword(const std::string& newAccountPassword);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
-				std::string getAuditCommand()const;
-				void setAuditCommand(const std::string& auditCommand);
-				std::string getRetention()const;
-				void setRetention(const std::string& retention);
+				std::string getOldAccountPassword()const;
+				void setOldAccountPassword(const std::string& oldAccountPassword);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -57,9 +59,10 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string accountName_;
+				std::string newAccountPassword_;
 				std::string securityToken_;
-				std::string auditCommand_;
-				std::string retention_;
+				std::string oldAccountPassword_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
@@ -69,4 +72,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDREQUEST_H_

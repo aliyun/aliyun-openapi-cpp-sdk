@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDRESULT_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyAuditLogConfigResult : public ServiceResult
+			class ALIBABACLOUD_R_KVSTORE_EXPORT ModifyAccountPasswordResult : public ServiceResult
 			{
 			public:
 
 
-				ModifyAuditLogConfigResult();
-				explicit ModifyAuditLogConfigResult(const std::string &payload);
-				~ModifyAuditLogConfigResult();
+				ModifyAccountPasswordResult();
+				explicit ModifyAccountPasswordResult(const std::string &payload);
+				~ModifyAccountPasswordResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYAUDITLOGCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_MODIFYACCOUNTPASSWORDRESULT_H_

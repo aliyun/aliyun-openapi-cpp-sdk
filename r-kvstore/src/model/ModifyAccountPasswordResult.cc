@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/r-kvstore/model/ModifyAuditLogConfigResult.h>
+#include <alibabacloud/r-kvstore/model/ModifyAccountPasswordResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::R_kvstore;
 using namespace AlibabaCloud::R_kvstore::Model;
 
-ModifyAuditLogConfigResult::ModifyAuditLogConfigResult() :
+ModifyAccountPasswordResult::ModifyAccountPasswordResult() :
 	ServiceResult()
 {}
 
-ModifyAuditLogConfigResult::ModifyAuditLogConfigResult(const std::string &payload) :
+ModifyAccountPasswordResult::ModifyAccountPasswordResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ModifyAuditLogConfigResult::~ModifyAuditLogConfigResult()
+ModifyAccountPasswordResult::~ModifyAccountPasswordResult()
 {}
 
-void ModifyAuditLogConfigResult::parse(const std::string &payload)
+void ModifyAccountPasswordResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

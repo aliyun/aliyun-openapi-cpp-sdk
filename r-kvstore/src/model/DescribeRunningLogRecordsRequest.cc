@@ -159,6 +159,17 @@ void DescribeRunningLogRecordsRequest::setOwnerAccount(const std::string& ownerA
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeRunningLogRecordsRequest::getQueryKeyword()const
+{
+	return queryKeyword_;
+}
+
+void DescribeRunningLogRecordsRequest::setQueryKeyword(const std::string& queryKeyword)
+{
+	queryKeyword_ = queryKeyword;
+	setParameter("QueryKeyword", queryKeyword);
+}
+
 std::string DescribeRunningLogRecordsRequest::getEndTime()const
 {
 	return endTime_;
@@ -201,5 +212,27 @@ void DescribeRunningLogRecordsRequest::setDBName(const std::string& dBName)
 {
 	dBName_ = dBName;
 	setParameter("DBName", dBName);
+}
+
+std::string DescribeRunningLogRecordsRequest::getCharacterType()const
+{
+	return characterType_;
+}
+
+void DescribeRunningLogRecordsRequest::setCharacterType(const std::string& characterType)
+{
+	characterType_ = characterType;
+	setParameter("CharacterType", characterType);
+}
+
+std::string DescribeRunningLogRecordsRequest::getOrderType()const
+{
+	return orderType_;
+}
+
+void DescribeRunningLogRecordsRequest::setOrderType(const std::string& orderType)
+{
+	orderType_ = orderType;
+	setParameter("OrderType", orderType);
 }
 

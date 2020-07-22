@@ -280,6 +280,17 @@ void CreateInstanceRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
+std::string CreateInstanceRequest::getDedicatedHostGroupId()const
+{
+	return dedicatedHostGroupId_;
+}
+
+void CreateInstanceRequest::setDedicatedHostGroupId(const std::string& dedicatedHostGroupId)
+{
+	dedicatedHostGroupId_ = dedicatedHostGroupId;
+	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+}
+
 std::string CreateInstanceRequest::getRestoreTime()const
 {
 	return restoreTime_;

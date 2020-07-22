@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setCapacity(long capacity);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getDedicatedHostGroupId()const;
+				void setDedicatedHostGroupId(const std::string& dedicatedHostGroupId);
 				std::string getRestoreTime()const;
 				void setRestoreTime(const std::string& restoreTime);
 				std::string getResourceOwnerAccount()const;
@@ -122,6 +124,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				long capacity_;
 				std::string instanceType_;
+				std::string dedicatedHostGroupId_;
 				std::string restoreTime_;
 				std::string resourceOwnerAccount_;
 				std::string srcDBInstanceId_;

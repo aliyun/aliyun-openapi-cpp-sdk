@@ -109,6 +109,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.connectionMode = valueInstancesKVStoreInstance["ConnectionMode"].asString();
 		if(!valueInstancesKVStoreInstance["VpcCloudInstanceId"].isNull())
 			instancesObject.vpcCloudInstanceId = valueInstancesKVStoreInstance["VpcCloudInstanceId"].asString();
+		if(!valueInstancesKVStoreInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesKVStoreInstance["ResourceGroupId"].asString();
 		auto allTagsNode = allInstancesNode["Tags"]["Tag"];
 		for (auto allInstancesNodeTagsTag : allTagsNode)
 		{

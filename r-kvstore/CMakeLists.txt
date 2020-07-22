@@ -63,6 +63,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeCacheAnalysisReportListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDBInstanceNetInfoResult.h
+	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterResult.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesRequest.h
@@ -113,8 +115,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneResult.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyAccountDescriptionResult.h
-	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigRequest.h
-	include/alibabacloud/r-kvstore/model/ModifyAuditLogConfigResult.h
+	include/alibabacloud/r-kvstore/model/ModifyAccountPasswordRequest.h
+	include/alibabacloud/r-kvstore/model/ModifyAccountPasswordResult.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyBackupPolicyResult.h
 	include/alibabacloud/r-kvstore/model/ModifyDBInstanceConnectionStringRequest.h
@@ -167,6 +169,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/RestoreInstanceResult.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkRequest.h
 	include/alibabacloud/r-kvstore/model/SwitchNetworkResult.h
+	include/alibabacloud/r-kvstore/model/SyncDtsStatusRequest.h
+	include/alibabacloud/r-kvstore/model/SyncDtsStatusResult.h
 	include/alibabacloud/r-kvstore/model/TagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/TagResourcesResult.h
 	include/alibabacloud/r-kvstore/model/TransformToPrePaidRequest.h
@@ -218,6 +222,8 @@ set(r-kvstore_src
 	src/model/DescribeCacheAnalysisReportListResult.cc
 	src/model/DescribeDBInstanceNetInfoRequest.cc
 	src/model/DescribeDBInstanceNetInfoResult.cc
+	src/model/DescribeDedicatedClusterInstanceListRequest.cc
+	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeDedicatedUserClusterRequest.cc
 	src/model/DescribeDedicatedUserClusterResult.cc
 	src/model/DescribeHistoryMonitorValuesRequest.cc
@@ -268,8 +274,8 @@ set(r-kvstore_src
 	src/model/MigrateToOtherZoneResult.cc
 	src/model/ModifyAccountDescriptionRequest.cc
 	src/model/ModifyAccountDescriptionResult.cc
-	src/model/ModifyAuditLogConfigRequest.cc
-	src/model/ModifyAuditLogConfigResult.cc
+	src/model/ModifyAccountPasswordRequest.cc
+	src/model/ModifyAccountPasswordResult.cc
 	src/model/ModifyBackupPolicyRequest.cc
 	src/model/ModifyBackupPolicyResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
@@ -322,6 +328,8 @@ set(r-kvstore_src
 	src/model/RestoreInstanceResult.cc
 	src/model/SwitchNetworkRequest.cc
 	src/model/SwitchNetworkResult.cc
+	src/model/SyncDtsStatusRequest.cc
+	src/model/SyncDtsStatusResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/TransformToPrePaidRequest.cc

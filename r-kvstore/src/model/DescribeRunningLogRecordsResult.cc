@@ -55,6 +55,8 @@ void DescribeRunningLogRecordsResult::parse(const std::string &payload)
 			itemsObject.connInfo = valueItemsLogRecords["ConnInfo"].asString();
 		if(!valueItemsLogRecords["Content"].isNull())
 			itemsObject.content = valueItemsLogRecords["Content"].asString();
+		if(!valueItemsLogRecords["InstanceId"].isNull())
+			itemsObject.instanceId = valueItemsLogRecords["InstanceId"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["InstanceId"].isNull())
