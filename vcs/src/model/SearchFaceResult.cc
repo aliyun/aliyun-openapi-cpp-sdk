@@ -60,6 +60,8 @@ void SearchFaceResult::parse(const std::string &payload)
 			recordObject.leftTopX = std::stof(dataNodeRecordsRecord["LeftTopX"].asString());
 		if(!dataNodeRecordsRecord["LeftTopY"].isNull())
 			recordObject.leftTopY = std::stof(dataNodeRecordsRecord["LeftTopY"].asString());
+		if(!dataNodeRecordsRecord["MatchSuggestion"].isNull())
+			recordObject.matchSuggestion = dataNodeRecordsRecord["MatchSuggestion"].asString();
 		if(!dataNodeRecordsRecord["RightBottomX"].isNull())
 			recordObject.rightBottomX = std::stof(dataNodeRecordsRecord["RightBottomX"].asString());
 		if(!dataNodeRecordsRecord["RightBottomY"].isNull())
@@ -68,8 +70,8 @@ void SearchFaceResult::parse(const std::string &payload)
 			recordObject.score = std::stof(dataNodeRecordsRecord["Score"].asString());
 		if(!dataNodeRecordsRecord["TargetImageUrl"].isNull())
 			recordObject.targetImageUrl = dataNodeRecordsRecord["TargetImageUrl"].asString();
-		if(!dataNodeRecordsRecord["MatchSuggestion"].isNull())
-			recordObject.matchSuggestion = dataNodeRecordsRecord["MatchSuggestion"].asString();
+		if(!dataNodeRecordsRecord["SourceId"].isNull())
+			recordObject.sourceId = dataNodeRecordsRecord["SourceId"].asString();
 		data_.records.push_back(recordObject);
 	}
 	if(!value["Code"].isNull())
