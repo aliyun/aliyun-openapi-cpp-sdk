@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_SHRINKNODEREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_SHRINKNODEREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGREQUEST_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT ShrinkNodeRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeSnapshotSettingRequest : public RoaServiceRequest
 			{
 
 			public:
-				ShrinkNodeRequest();
-				~ShrinkNodeRequest();
+				DescribeSnapshotSettingRequest();
+				~DescribeSnapshotSettingRequest();
 
-				bool getIgnoreStatus()const;
-				void setIgnoreStatus(bool ignoreStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				std::string getNodeType()const;
-				void setNodeType(const std::string& nodeType);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 
             private:
-				bool ignoreStatus_;
 				std::string instanceId_;
-				std::string nodeType_;
-				std::string clientToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_SHRINKNODEREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGREQUEST_H_

@@ -63,6 +63,10 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/DescribePipelineManagementConfigResult.h
 	include/alibabacloud/elasticsearch/model/DescribeRegionsRequest.h
 	include/alibabacloud/elasticsearch/model/DescribeRegionsResult.h
+	include/alibabacloud/elasticsearch/model/DescribeSnapshotSettingRequest.h
+	include/alibabacloud/elasticsearch/model/DescribeSnapshotSettingResult.h
+	include/alibabacloud/elasticsearch/model/GetElastictaskRequest.h
+	include/alibabacloud/elasticsearch/model/GetElastictaskResult.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationRequest.h
 	include/alibabacloud/elasticsearch/model/GetRegionConfigurationResult.h
 	include/alibabacloud/elasticsearch/model/GetSuggestShrinkableNodesRequest.h
@@ -105,6 +109,8 @@ set(elasticsearch_public_header_model
 	include/alibabacloud/elasticsearch/model/ListSnapshotReposByInstanceIdResult.h
 	include/alibabacloud/elasticsearch/model/ListTagResourcesRequest.h
 	include/alibabacloud/elasticsearch/model/ListTagResourcesResult.h
+	include/alibabacloud/elasticsearch/model/ModifyElastictaskRequest.h
+	include/alibabacloud/elasticsearch/model/ModifyElastictaskResult.h
 	include/alibabacloud/elasticsearch/model/ModifyWhiteIpsRequest.h
 	include/alibabacloud/elasticsearch/model/ModifyWhiteIpsResult.h
 	include/alibabacloud/elasticsearch/model/MoveResourceGroupRequest.h
@@ -240,6 +246,10 @@ set(elasticsearch_src
 	src/model/DescribePipelineManagementConfigResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSnapshotSettingRequest.cc
+	src/model/DescribeSnapshotSettingResult.cc
+	src/model/GetElastictaskRequest.cc
+	src/model/GetElastictaskResult.cc
 	src/model/GetRegionConfigurationRequest.cc
 	src/model/GetRegionConfigurationResult.cc
 	src/model/GetSuggestShrinkableNodesRequest.cc
@@ -282,6 +292,8 @@ set(elasticsearch_src
 	src/model/ListSnapshotReposByInstanceIdResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
+	src/model/ModifyElastictaskRequest.cc
+	src/model/ModifyElastictaskResult.cc
 	src/model/ModifyWhiteIpsRequest.cc
 	src/model/ModifyWhiteIpsResult.cc
 	src/model/MoveResourceGroupRequest.cc

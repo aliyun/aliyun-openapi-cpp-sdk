@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				ValidateShrinkNodesRequest();
 				~ValidateShrinkNodesRequest();
 
+				bool getIgnoreStatus()const;
+				void setIgnoreStatus(bool ignoreStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNodeType()const;
 				void setNodeType(const std::string& nodeType);
 
             private:
+				bool ignoreStatus_;
 				std::string instanceId_;
 				std::string nodeType_;
 

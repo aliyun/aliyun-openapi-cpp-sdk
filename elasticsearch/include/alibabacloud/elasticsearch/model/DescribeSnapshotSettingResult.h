@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETESNAPSHOTREPOREQUEST_H_
-#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETESNAPSHOTREPOREQUEST_H_
+#ifndef ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGRESULT_H_
+#define ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/elasticsearch/ElasticsearchExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DeleteSnapshotRepoRequest : public RoaServiceRequest
+			class ALIBABACLOUD_ELASTICSEARCH_EXPORT DescribeSnapshotSettingResult : public ServiceResult
 			{
-
 			public:
-				DeleteSnapshotRepoRequest();
-				~DeleteSnapshotRepoRequest();
+				struct Result
+				{
+					bool enable;
+					std::string quartzRegex;
+				};
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getRepoPath()const;
-				void setRepoPath(const std::string& repoPath);
 
-            private:
-				std::string instanceId_;
-				std::string clientToken_;
-				std::string repoPath_;
+				DescribeSnapshotSettingResult();
+				explicit DescribeSnapshotSettingResult(const std::string &payload);
+				~DescribeSnapshotSettingResult();
+				Result getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DELETESNAPSHOTREPOREQUEST_H_
+#endif // !ALIBABACLOUD_ELASTICSEARCH_MODEL_DESCRIBESNAPSHOTSETTINGRESULT_H_

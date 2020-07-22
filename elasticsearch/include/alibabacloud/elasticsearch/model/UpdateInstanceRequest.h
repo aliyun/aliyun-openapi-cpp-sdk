@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				UpdateInstanceRequest();
 				~UpdateInstanceRequest();
 
+				bool getIgnoreStatus()const;
+				void setIgnoreStatus(bool ignoreStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 
             private:
+				bool ignoreStatus_;
 				std::string instanceId_;
 				std::string clientToken_;
 

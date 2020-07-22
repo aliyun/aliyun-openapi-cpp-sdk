@@ -64,6 +64,10 @@
 #include "model/DescribePipelineManagementConfigResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeSnapshotSettingRequest.h"
+#include "model/DescribeSnapshotSettingResult.h"
+#include "model/GetElastictaskRequest.h"
+#include "model/GetElastictaskResult.h"
 #include "model/GetRegionConfigurationRequest.h"
 #include "model/GetRegionConfigurationResult.h"
 #include "model/GetSuggestShrinkableNodesRequest.h"
@@ -106,6 +110,8 @@
 #include "model/ListSnapshotReposByInstanceIdResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/ModifyElastictaskRequest.h"
+#include "model/ModifyElastictaskResult.h"
 #include "model/ModifyWhiteIpsRequest.h"
 #include "model/ModifyWhiteIpsResult.h"
 #include "model/MoveResourceGroupRequest.h"
@@ -268,6 +274,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSnapshotSettingResult> DescribeSnapshotSettingOutcome;
+			typedef std::future<DescribeSnapshotSettingOutcome> DescribeSnapshotSettingOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeSnapshotSettingRequest&, const DescribeSnapshotSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotSettingAsyncHandler;
+			typedef Outcome<Error, Model::GetElastictaskResult> GetElastictaskOutcome;
+			typedef std::future<GetElastictaskOutcome> GetElastictaskOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::GetElastictaskRequest&, const GetElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetElastictaskAsyncHandler;
 			typedef Outcome<Error, Model::GetRegionConfigurationResult> GetRegionConfigurationOutcome;
 			typedef std::future<GetRegionConfigurationOutcome> GetRegionConfigurationOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::GetRegionConfigurationRequest&, const GetRegionConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRegionConfigurationAsyncHandler;
@@ -331,6 +343,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyElastictaskResult> ModifyElastictaskOutcome;
+			typedef std::future<ModifyElastictaskOutcome> ModifyElastictaskOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyElastictaskRequest&, const ModifyElastictaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElastictaskAsyncHandler;
 			typedef Outcome<Error, Model::ModifyWhiteIpsResult> ModifyWhiteIpsOutcome;
 			typedef std::future<ModifyWhiteIpsOutcome> ModifyWhiteIpsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ModifyWhiteIpsRequest&, const ModifyWhiteIpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWhiteIpsAsyncHandler;
@@ -534,6 +549,12 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeSnapshotSettingOutcome describeSnapshotSetting(const Model::DescribeSnapshotSettingRequest &request)const;
+			void describeSnapshotSettingAsync(const Model::DescribeSnapshotSettingRequest& request, const DescribeSnapshotSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSnapshotSettingOutcomeCallable describeSnapshotSettingCallable(const Model::DescribeSnapshotSettingRequest& request) const;
+			GetElastictaskOutcome getElastictask(const Model::GetElastictaskRequest &request)const;
+			void getElastictaskAsync(const Model::GetElastictaskRequest& request, const GetElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetElastictaskOutcomeCallable getElastictaskCallable(const Model::GetElastictaskRequest& request) const;
 			GetRegionConfigurationOutcome getRegionConfiguration(const Model::GetRegionConfigurationRequest &request)const;
 			void getRegionConfigurationAsync(const Model::GetRegionConfigurationRequest& request, const GetRegionConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRegionConfigurationOutcomeCallable getRegionConfigurationCallable(const Model::GetRegionConfigurationRequest& request) const;
@@ -597,6 +618,9 @@ namespace AlibabaCloud
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ModifyElastictaskOutcome modifyElastictask(const Model::ModifyElastictaskRequest &request)const;
+			void modifyElastictaskAsync(const Model::ModifyElastictaskRequest& request, const ModifyElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyElastictaskOutcomeCallable modifyElastictaskCallable(const Model::ModifyElastictaskRequest& request) const;
 			ModifyWhiteIpsOutcome modifyWhiteIps(const Model::ModifyWhiteIpsRequest &request)const;
 			void modifyWhiteIpsAsync(const Model::ModifyWhiteIpsRequest& request, const ModifyWhiteIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyWhiteIpsOutcomeCallable modifyWhiteIpsCallable(const Model::ModifyWhiteIpsRequest& request) const;

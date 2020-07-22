@@ -28,6 +28,17 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
 UpdateInstanceRequest::~UpdateInstanceRequest()
 {}
 
+bool UpdateInstanceRequest::getIgnoreStatus()const
+{
+	return ignoreStatus_;
+}
+
+void UpdateInstanceRequest::setIgnoreStatus(bool ignoreStatus)
+{
+	ignoreStatus_ = ignoreStatus;
+	setParameter("IgnoreStatus", ignoreStatus ? "true" : "false");
+}
+
 std::string UpdateInstanceRequest::getInstanceId()const
 {
 	return instanceId_;

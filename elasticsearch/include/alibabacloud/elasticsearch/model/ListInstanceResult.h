@@ -65,6 +65,21 @@ namespace AlibabaCloud
 						std::string spec;
 						int disk;
 					};
+					struct ElasticDataNodeConfiguration
+					{
+						std::string diskType;
+						bool diskEncryption;
+						int amount;
+						std::string spec;
+						int disk;
+					};
+					struct ClientNodeConfiguration
+					{
+						std::string diskType;
+						int amount;
+						std::string spec;
+						int disk;
+					};
 					struct Tag
 					{
 						std::string tagKey;
@@ -74,6 +89,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::string resourceGroupId;
+					ElasticDataNodeConfiguration elasticDataNodeConfiguration;
 					std::string instanceId;
 					bool dedicateMaster;
 					std::string createdAt;
@@ -86,6 +102,7 @@ namespace AlibabaCloud
 					bool advancedDedicateMaster;
 					NodeSpec nodeSpec;
 					std::string paymentType;
+					ClientNodeConfiguration clientNodeConfiguration;
 				};
 
 

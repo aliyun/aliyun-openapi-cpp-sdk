@@ -14,39 +14,28 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/elasticsearch/model/UpdateLogstashRequest.h>
+#include <alibabacloud/elasticsearch/model/GetElastictaskRequest.h>
 
-using AlibabaCloud::Elasticsearch::Model::UpdateLogstashRequest;
+using AlibabaCloud::Elasticsearch::Model::GetElastictaskRequest;
 
-UpdateLogstashRequest::UpdateLogstashRequest() :
+GetElastictaskRequest::GetElastictaskRequest() :
 	RoaServiceRequest("elasticsearch", "2017-06-13")
 {
-	setResourcePath("/openapi/logstashes/[InstanceId]");
-	setMethod(HttpRequest::Method::Put);
+	setResourcePath("/openapi/instances/[InstanceId]/elastic-task");
+	setMethod(HttpRequest::Method::Get);
 }
 
-UpdateLogstashRequest::~UpdateLogstashRequest()
+GetElastictaskRequest::~GetElastictaskRequest()
 {}
 
-std::string UpdateLogstashRequest::getInstanceId()const
+std::string GetElastictaskRequest::getInstanceId()const
 {
 	return instanceId_;
 }
 
-void UpdateLogstashRequest::setInstanceId(const std::string& instanceId)
+void GetElastictaskRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-std::string UpdateLogstashRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void UpdateLogstashRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
 }
 

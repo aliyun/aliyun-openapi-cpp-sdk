@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				GetSuggestShrinkableNodesRequest();
 				~GetSuggestShrinkableNodesRequest();
 
+				bool getIgnoreStatus()const;
+				void setIgnoreStatus(bool ignoreStatus);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
 				std::string getNodeType()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setCount(int count);
 
             private:
+				bool ignoreStatus_;
 				std::string instanceId_;
 				std::string nodeType_;
 				int count_;

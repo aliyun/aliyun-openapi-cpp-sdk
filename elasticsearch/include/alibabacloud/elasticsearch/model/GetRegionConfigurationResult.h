@@ -62,6 +62,7 @@ namespace AlibabaCloud
 							std::string diskType;
 							int minSize;
 							int scaleLimit;
+							bool diskEncryption;
 							std::vector<std::string> valueLimitSet2;
 							int maxSize;
 						};
@@ -78,6 +79,26 @@ namespace AlibabaCloud
 						};
 						AmountRange4 amountRange4;
 						std::vector<std::string> spec3;
+					};
+					struct ElasticNodeProperties
+					{
+						struct AmountRange6
+						{
+							int minAmount;
+							int maxAmount;
+						};
+						struct Disk8
+						{
+							std::string diskType;
+							int minSize;
+							int scaleLimit;
+							std::vector<std::string> valueLimitSet9;
+							bool diskEncryption;
+							int maxSize;
+						};
+						AmountRange6 amountRange6;
+						std::vector<Disk8> diskList7;
+						std::vector<std::string> spec5;
 					};
 					struct DataDiskListItem
 					{
@@ -127,6 +148,7 @@ namespace AlibabaCloud
 					std::vector<CategoryEntity> supportVersions;
 					WarmNodeProperties warmNodeProperties;
 					std::vector<Disk> clientNodeDiskList;
+					ElasticNodeProperties elasticNodeProperties;
 					std::vector<EsVersionsLatestListItem> esVersionsLatestList;
 					std::string env;
 					std::vector<std::string> clientNodeSpec;
@@ -137,6 +159,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::vector<std::string> esVersions;
 					std::vector<std::string> masterSpec;
+					std::vector<std::string> instanceSupportNodes;
 				};
 
 

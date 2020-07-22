@@ -165,34 +165,64 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 		Result::WarmNodeProperties::Disk1 disk1Object;
 		if(!warmNodePropertiesNodediskListdisk["diskType"].isNull())
 			disk1Object.diskType = warmNodePropertiesNodediskListdisk["diskType"].asString();
-		if(!warmNodePropertiesNodediskListdisk["minSize"].isNull())
-			disk1Object.minSize = std::stoi(warmNodePropertiesNodediskListdisk["minSize"].asString());
 		if(!warmNodePropertiesNodediskListdisk["maxSize"].isNull())
 			disk1Object.maxSize = std::stoi(warmNodePropertiesNodediskListdisk["maxSize"].asString());
+		if(!warmNodePropertiesNodediskListdisk["minSize"].isNull())
+			disk1Object.minSize = std::stoi(warmNodePropertiesNodediskListdisk["minSize"].asString());
 		if(!warmNodePropertiesNodediskListdisk["scaleLimit"].isNull())
 			disk1Object.scaleLimit = std::stoi(warmNodePropertiesNodediskListdisk["scaleLimit"].asString());
+		if(!warmNodePropertiesNodediskListdisk["diskEncryption"].isNull())
+			disk1Object.diskEncryption = warmNodePropertiesNodediskListdisk["diskEncryption"].asString() == "true";
 		auto allValueLimitSet2 = value["valueLimitSet"]["valueLimitSet"];
 		for (auto value : allValueLimitSet2)
 			disk1Object.valueLimitSet2.push_back(value.asString());
 		result_.warmNodeProperties.diskList.push_back(disk1Object);
 	}
 	auto amountRangeNode = warmNodePropertiesNode["amountRange"];
-	if(!amountRangeNode["minAmount"].isNull())
-		result_.warmNodeProperties.amountRange.minAmount = std::stoi(amountRangeNode["minAmount"].asString());
 	if(!amountRangeNode["maxAmount"].isNull())
 		result_.warmNodeProperties.amountRange.maxAmount = std::stoi(amountRangeNode["maxAmount"].asString());
+	if(!amountRangeNode["minAmount"].isNull())
+		result_.warmNodeProperties.amountRange.minAmount = std::stoi(amountRangeNode["minAmount"].asString());
 		auto allSpec = warmNodePropertiesNode["spec"]["spec"];
 		for (auto value : allSpec)
 			result_.warmNodeProperties.spec.push_back(value.asString());
 	auto kibanaNodePropertiesNode = resultNode["kibanaNodeProperties"];
 	auto amountRange4Node = kibanaNodePropertiesNode["amountRange"];
-	if(!amountRange4Node["minAmount"].isNull())
-		result_.kibanaNodeProperties.amountRange4.minAmount = std::stoi(amountRange4Node["minAmount"].asString());
 	if(!amountRange4Node["maxAmount"].isNull())
 		result_.kibanaNodeProperties.amountRange4.maxAmount = std::stoi(amountRange4Node["maxAmount"].asString());
+	if(!amountRange4Node["minAmount"].isNull())
+		result_.kibanaNodeProperties.amountRange4.minAmount = std::stoi(amountRange4Node["minAmount"].asString());
 		auto allSpec3 = kibanaNodePropertiesNode["spec"]["spec"];
 		for (auto value : allSpec3)
 			result_.kibanaNodeProperties.spec3.push_back(value.asString());
+	auto elasticNodePropertiesNode = resultNode["elasticNodeProperties"];
+	auto alldiskList7Node = elasticNodePropertiesNode["diskList"]["disk"];
+	for (auto elasticNodePropertiesNodediskListdisk : alldiskList7Node)
+	{
+		Result::ElasticNodeProperties::Disk8 disk8Object;
+		if(!elasticNodePropertiesNodediskListdisk["diskType"].isNull())
+			disk8Object.diskType = elasticNodePropertiesNodediskListdisk["diskType"].asString();
+		if(!elasticNodePropertiesNodediskListdisk["maxSize"].isNull())
+			disk8Object.maxSize = std::stoi(elasticNodePropertiesNodediskListdisk["maxSize"].asString());
+		if(!elasticNodePropertiesNodediskListdisk["minSize"].isNull())
+			disk8Object.minSize = std::stoi(elasticNodePropertiesNodediskListdisk["minSize"].asString());
+		if(!elasticNodePropertiesNodediskListdisk["scaleLimit"].isNull())
+			disk8Object.scaleLimit = std::stoi(elasticNodePropertiesNodediskListdisk["scaleLimit"].asString());
+		if(!elasticNodePropertiesNodediskListdisk["diskEncryption"].isNull())
+			disk8Object.diskEncryption = elasticNodePropertiesNodediskListdisk["diskEncryption"].asString() == "true";
+		auto allValueLimitSet9 = value["valueLimitSet"]["valueLimitSet"];
+		for (auto value : allValueLimitSet9)
+			disk8Object.valueLimitSet9.push_back(value.asString());
+		result_.elasticNodeProperties.diskList7.push_back(disk8Object);
+	}
+	auto amountRange6Node = elasticNodePropertiesNode["amountRange"];
+	if(!amountRange6Node["maxAmount"].isNull())
+		result_.elasticNodeProperties.amountRange6.maxAmount = std::stoi(amountRange6Node["maxAmount"].asString());
+	if(!amountRange6Node["minAmount"].isNull())
+		result_.elasticNodeProperties.amountRange6.minAmount = std::stoi(amountRange6Node["minAmount"].asString());
+		auto allSpec5 = elasticNodePropertiesNode["spec"]["spec"];
+		for (auto value : allSpec5)
+			result_.elasticNodeProperties.spec5.push_back(value.asString());
 		auto allZones = resultNode["zones"]["zones"];
 		for (auto value : allZones)
 			result_.zones.push_back(value.asString());
@@ -205,6 +235,9 @@ void GetRegionConfigurationResult::parse(const std::string &payload)
 		auto allClientNodeSpec = resultNode["clientNodeSpec"]["spec"];
 		for (auto value : allClientNodeSpec)
 			result_.clientNodeSpec.push_back(value.asString());
+		auto allInstanceSupportNodes = resultNode["instanceSupportNodes"]["instanceSupportNodes"];
+		for (auto value : allInstanceSupportNodes)
+			result_.instanceSupportNodes.push_back(value.asString());
 
 }
 

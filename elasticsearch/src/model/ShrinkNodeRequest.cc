@@ -28,6 +28,17 @@ ShrinkNodeRequest::ShrinkNodeRequest() :
 ShrinkNodeRequest::~ShrinkNodeRequest()
 {}
 
+bool ShrinkNodeRequest::getIgnoreStatus()const
+{
+	return ignoreStatus_;
+}
+
+void ShrinkNodeRequest::setIgnoreStatus(bool ignoreStatus)
+{
+	ignoreStatus_ = ignoreStatus;
+	setParameter("IgnoreStatus", ignoreStatus ? "true" : "false");
+}
+
 std::string ShrinkNodeRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -807,6 +807,78 @@ ElasticsearchClient::DescribeRegionsOutcomeCallable ElasticsearchClient::describ
 	return task->get_future();
 }
 
+ElasticsearchClient::DescribeSnapshotSettingOutcome ElasticsearchClient::describeSnapshotSetting(const DescribeSnapshotSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSnapshotSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSnapshotSettingOutcome(DescribeSnapshotSettingResult(outcome.result()));
+	else
+		return DescribeSnapshotSettingOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeSnapshotSettingAsync(const DescribeSnapshotSettingRequest& request, const DescribeSnapshotSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSnapshotSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeSnapshotSettingOutcomeCallable ElasticsearchClient::describeSnapshotSettingCallable(const DescribeSnapshotSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSnapshotSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSnapshotSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::GetElastictaskOutcome ElasticsearchClient::getElastictask(const GetElastictaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetElastictaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetElastictaskOutcome(GetElastictaskResult(outcome.result()));
+	else
+		return GetElastictaskOutcome(outcome.error());
+}
+
+void ElasticsearchClient::getElastictaskAsync(const GetElastictaskRequest& request, const GetElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getElastictask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::GetElastictaskOutcomeCallable ElasticsearchClient::getElastictaskCallable(const GetElastictaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetElastictaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getElastictask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::GetRegionConfigurationOutcome ElasticsearchClient::getRegionConfiguration(const GetRegionConfigurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,6 +1629,42 @@ ElasticsearchClient::ListTagResourcesOutcomeCallable ElasticsearchClient::listTa
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ModifyElastictaskOutcome ElasticsearchClient::modifyElastictask(const ModifyElastictaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyElastictaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyElastictaskOutcome(ModifyElastictaskResult(outcome.result()));
+	else
+		return ModifyElastictaskOutcome(outcome.error());
+}
+
+void ElasticsearchClient::modifyElastictaskAsync(const ModifyElastictaskRequest& request, const ModifyElastictaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyElastictask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ModifyElastictaskOutcomeCallable ElasticsearchClient::modifyElastictaskCallable(const ModifyElastictaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyElastictaskOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyElastictask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

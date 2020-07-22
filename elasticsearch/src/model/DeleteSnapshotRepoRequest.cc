@@ -39,6 +39,17 @@ void DeleteSnapshotRepoRequest::setInstanceId(const std::string& instanceId)
 	setParameter("InstanceId", instanceId);
 }
 
+std::string DeleteSnapshotRepoRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void DeleteSnapshotRepoRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string DeleteSnapshotRepoRequest::getRepoPath()const
 {
 	return repoPath_;

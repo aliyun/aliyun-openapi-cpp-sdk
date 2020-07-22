@@ -109,6 +109,26 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.kibanaConfiguration.amount = std::stoi(kibanaConfigurationNode["amount"].asString());
 		if(!kibanaConfigurationNode["diskType"].isNull())
 			resultObject.kibanaConfiguration.diskType = kibanaConfigurationNode["diskType"].asString();
+		auto elasticDataNodeConfigurationNode = value["elasticDataNodeConfiguration"];
+		if(!elasticDataNodeConfigurationNode["spec"].isNull())
+			resultObject.elasticDataNodeConfiguration.spec = elasticDataNodeConfigurationNode["spec"].asString();
+		if(!elasticDataNodeConfigurationNode["amount"].isNull())
+			resultObject.elasticDataNodeConfiguration.amount = std::stoi(elasticDataNodeConfigurationNode["amount"].asString());
+		if(!elasticDataNodeConfigurationNode["diskType"].isNull())
+			resultObject.elasticDataNodeConfiguration.diskType = elasticDataNodeConfigurationNode["diskType"].asString();
+		if(!elasticDataNodeConfigurationNode["disk"].isNull())
+			resultObject.elasticDataNodeConfiguration.disk = std::stoi(elasticDataNodeConfigurationNode["disk"].asString());
+		if(!elasticDataNodeConfigurationNode["diskEncryption"].isNull())
+			resultObject.elasticDataNodeConfiguration.diskEncryption = elasticDataNodeConfigurationNode["diskEncryption"].asString() == "true";
+		auto clientNodeConfigurationNode = value["clientNodeConfiguration"];
+		if(!clientNodeConfigurationNode["spec"].isNull())
+			resultObject.clientNodeConfiguration.spec = clientNodeConfigurationNode["spec"].asString();
+		if(!clientNodeConfigurationNode["amount"].isNull())
+			resultObject.clientNodeConfiguration.amount = std::stoi(clientNodeConfigurationNode["amount"].asString());
+		if(!clientNodeConfigurationNode["diskType"].isNull())
+			resultObject.clientNodeConfiguration.diskType = clientNodeConfigurationNode["diskType"].asString();
+		if(!clientNodeConfigurationNode["disk"].isNull())
+			resultObject.clientNodeConfiguration.disk = std::stoi(clientNodeConfigurationNode["disk"].asString());
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

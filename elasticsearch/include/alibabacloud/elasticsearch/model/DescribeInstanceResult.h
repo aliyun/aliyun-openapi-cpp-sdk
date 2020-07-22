@@ -79,6 +79,14 @@ namespace AlibabaCloud
 					{
 						std::string gcName;
 					};
+					struct ElasticDataNodeConfiguration
+					{
+						std::string diskType;
+						bool diskEncryption;
+						int amount;
+						std::string spec;
+						int disk;
+					};
 					struct DictListItem
 					{
 						std::string type;
@@ -113,6 +121,7 @@ namespace AlibabaCloud
 					MasterConfiguration masterConfiguration;
 					std::string description;
 					std::string resourceGroupId;
+					ElasticDataNodeConfiguration elasticDataNodeConfiguration;
 					bool dedicateMaster;
 					std::vector<std::string> esIPBlacklist;
 					std::vector<ZoneInfo> zoneInfos;

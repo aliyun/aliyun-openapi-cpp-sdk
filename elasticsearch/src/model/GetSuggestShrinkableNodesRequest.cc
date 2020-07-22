@@ -28,6 +28,17 @@ GetSuggestShrinkableNodesRequest::GetSuggestShrinkableNodesRequest() :
 GetSuggestShrinkableNodesRequest::~GetSuggestShrinkableNodesRequest()
 {}
 
+bool GetSuggestShrinkableNodesRequest::getIgnoreStatus()const
+{
+	return ignoreStatus_;
+}
+
+void GetSuggestShrinkableNodesRequest::setIgnoreStatus(bool ignoreStatus)
+{
+	ignoreStatus_ = ignoreStatus;
+	setParameter("IgnoreStatus", ignoreStatus ? "true" : "false");
+}
+
 std::string GetSuggestShrinkableNodesRequest::getInstanceId()const
 {
 	return instanceId_;

@@ -211,6 +211,17 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	auto advancedSettingNode = resultNode["advancedSetting"];
 	if(!advancedSettingNode["gcName"].isNull())
 		result_.advancedSetting.gcName = advancedSettingNode["gcName"].asString();
+	auto elasticDataNodeConfigurationNode = resultNode["elasticDataNodeConfiguration"];
+	if(!elasticDataNodeConfigurationNode["spec"].isNull())
+		result_.elasticDataNodeConfiguration.spec = elasticDataNodeConfigurationNode["spec"].asString();
+	if(!elasticDataNodeConfigurationNode["amount"].isNull())
+		result_.elasticDataNodeConfiguration.amount = std::stoi(elasticDataNodeConfigurationNode["amount"].asString());
+	if(!elasticDataNodeConfigurationNode["diskType"].isNull())
+		result_.elasticDataNodeConfiguration.diskType = elasticDataNodeConfigurationNode["diskType"].asString();
+	if(!elasticDataNodeConfigurationNode["disk"].isNull())
+		result_.elasticDataNodeConfiguration.disk = std::stoi(elasticDataNodeConfigurationNode["disk"].asString());
+	if(!elasticDataNodeConfigurationNode["diskEncryption"].isNull())
+		result_.elasticDataNodeConfiguration.diskEncryption = elasticDataNodeConfigurationNode["diskEncryption"].asString() == "true";
 		auto allEsIPWhitelist = resultNode["esIPWhitelist"]["EsIPWhitelist"];
 		for (auto value : allEsIPWhitelist)
 			result_.esIPWhitelist.push_back(value.asString());

@@ -28,6 +28,17 @@ ValidateShrinkNodesRequest::ValidateShrinkNodesRequest() :
 ValidateShrinkNodesRequest::~ValidateShrinkNodesRequest()
 {}
 
+bool ValidateShrinkNodesRequest::getIgnoreStatus()const
+{
+	return ignoreStatus_;
+}
+
+void ValidateShrinkNodesRequest::setIgnoreStatus(bool ignoreStatus)
+{
+	ignoreStatus_ = ignoreStatus;
+	setParameter("IgnoreStatus", ignoreStatus ? "true" : "false");
+}
+
 std::string ValidateShrinkNodesRequest::getInstanceId()const
 {
 	return instanceId_;
