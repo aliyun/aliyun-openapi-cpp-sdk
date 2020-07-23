@@ -1,3 +1,6 @@
+2020-07-23 Version: 1.36.531
+- Add GenerateAndExportDataKey, ExportDataKey, ReEncrypt api.
+
 2020-07-23 Version: 1.36.530
 - Add GenerateAndExportDataKey, ExportDataKey, ReEncrypt api.
 
