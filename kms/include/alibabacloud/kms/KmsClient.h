@@ -64,6 +64,10 @@
 #include "model/EnableKeyResult.h"
 #include "model/EncryptRequest.h"
 #include "model/EncryptResult.h"
+#include "model/ExportDataKeyRequest.h"
+#include "model/ExportDataKeyResult.h"
+#include "model/GenerateAndExportDataKeyRequest.h"
+#include "model/GenerateAndExportDataKeyResult.h"
 #include "model/GenerateDataKeyRequest.h"
 #include "model/GenerateDataKeyResult.h"
 #include "model/GenerateDataKeyWithoutPlaintextRequest.h"
@@ -94,6 +98,8 @@
 #include "model/ListSecretsResult.h"
 #include "model/PutSecretValueRequest.h"
 #include "model/PutSecretValueResult.h"
+#include "model/ReEncryptRequest.h"
+#include "model/ReEncryptResult.h"
 #include "model/RestoreSecretRequest.h"
 #include "model/RestoreSecretResult.h"
 #include "model/ScheduleKeyDeletionRequest.h"
@@ -184,6 +190,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EncryptResult> EncryptOutcome;
 			typedef std::future<EncryptOutcome> EncryptOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::EncryptRequest&, const EncryptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EncryptAsyncHandler;
+			typedef Outcome<Error, Model::ExportDataKeyResult> ExportDataKeyOutcome;
+			typedef std::future<ExportDataKeyOutcome> ExportDataKeyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ExportDataKeyRequest&, const ExportDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportDataKeyAsyncHandler;
+			typedef Outcome<Error, Model::GenerateAndExportDataKeyResult> GenerateAndExportDataKeyOutcome;
+			typedef std::future<GenerateAndExportDataKeyOutcome> GenerateAndExportDataKeyOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::GenerateAndExportDataKeyRequest&, const GenerateAndExportDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAndExportDataKeyAsyncHandler;
 			typedef Outcome<Error, Model::GenerateDataKeyResult> GenerateDataKeyOutcome;
 			typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::GenerateDataKeyRequest&, const GenerateDataKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDataKeyAsyncHandler;
@@ -229,6 +241,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PutSecretValueResult> PutSecretValueOutcome;
 			typedef std::future<PutSecretValueOutcome> PutSecretValueOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::PutSecretValueRequest&, const PutSecretValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutSecretValueAsyncHandler;
+			typedef Outcome<Error, Model::ReEncryptResult> ReEncryptOutcome;
+			typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ReEncryptRequest&, const ReEncryptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReEncryptAsyncHandler;
 			typedef Outcome<Error, Model::RestoreSecretResult> RestoreSecretOutcome;
 			typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::RestoreSecretRequest&, const RestoreSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreSecretAsyncHandler;
@@ -324,6 +339,12 @@ namespace AlibabaCloud
 			EncryptOutcome encrypt(const Model::EncryptRequest &request)const;
 			void encryptAsync(const Model::EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EncryptOutcomeCallable encryptCallable(const Model::EncryptRequest& request) const;
+			ExportDataKeyOutcome exportDataKey(const Model::ExportDataKeyRequest &request)const;
+			void exportDataKeyAsync(const Model::ExportDataKeyRequest& request, const ExportDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExportDataKeyOutcomeCallable exportDataKeyCallable(const Model::ExportDataKeyRequest& request) const;
+			GenerateAndExportDataKeyOutcome generateAndExportDataKey(const Model::GenerateAndExportDataKeyRequest &request)const;
+			void generateAndExportDataKeyAsync(const Model::GenerateAndExportDataKeyRequest& request, const GenerateAndExportDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateAndExportDataKeyOutcomeCallable generateAndExportDataKeyCallable(const Model::GenerateAndExportDataKeyRequest& request) const;
 			GenerateDataKeyOutcome generateDataKey(const Model::GenerateDataKeyRequest &request)const;
 			void generateDataKeyAsync(const Model::GenerateDataKeyRequest& request, const GenerateDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateDataKeyOutcomeCallable generateDataKeyCallable(const Model::GenerateDataKeyRequest& request) const;
@@ -369,6 +390,9 @@ namespace AlibabaCloud
 			PutSecretValueOutcome putSecretValue(const Model::PutSecretValueRequest &request)const;
 			void putSecretValueAsync(const Model::PutSecretValueRequest& request, const PutSecretValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutSecretValueOutcomeCallable putSecretValueCallable(const Model::PutSecretValueRequest& request) const;
+			ReEncryptOutcome reEncrypt(const Model::ReEncryptRequest &request)const;
+			void reEncryptAsync(const Model::ReEncryptRequest& request, const ReEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReEncryptOutcomeCallable reEncryptCallable(const Model::ReEncryptRequest& request) const;
 			RestoreSecretOutcome restoreSecret(const Model::RestoreSecretRequest &request)const;
 			void restoreSecretAsync(const Model::RestoreSecretRequest& request, const RestoreSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestoreSecretOutcomeCallable restoreSecretCallable(const Model::RestoreSecretRequest& request) const;

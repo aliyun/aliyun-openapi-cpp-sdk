@@ -31,21 +31,21 @@ KmsClient::KmsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
 }
 
 KmsClient::KmsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
 }
 
 KmsClient::KmsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "kms-service");
 }
 
 KmsClient::~KmsClient()
@@ -807,6 +807,78 @@ KmsClient::EncryptOutcomeCallable KmsClient::encryptCallable(const EncryptReques
 	return task->get_future();
 }
 
+KmsClient::ExportDataKeyOutcome KmsClient::exportDataKey(const ExportDataKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExportDataKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExportDataKeyOutcome(ExportDataKeyResult(outcome.result()));
+	else
+		return ExportDataKeyOutcome(outcome.error());
+}
+
+void KmsClient::exportDataKeyAsync(const ExportDataKeyRequest& request, const ExportDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, exportDataKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ExportDataKeyOutcomeCallable KmsClient::exportDataKeyCallable(const ExportDataKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExportDataKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->exportDataKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::GenerateAndExportDataKeyOutcome KmsClient::generateAndExportDataKey(const GenerateAndExportDataKeyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateAndExportDataKeyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateAndExportDataKeyOutcome(GenerateAndExportDataKeyResult(outcome.result()));
+	else
+		return GenerateAndExportDataKeyOutcome(outcome.error());
+}
+
+void KmsClient::generateAndExportDataKeyAsync(const GenerateAndExportDataKeyRequest& request, const GenerateAndExportDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateAndExportDataKey(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::GenerateAndExportDataKeyOutcomeCallable KmsClient::generateAndExportDataKeyCallable(const GenerateAndExportDataKeyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateAndExportDataKeyOutcome()>>(
+			[this, request]()
+			{
+			return this->generateAndExportDataKey(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::GenerateDataKeyOutcome KmsClient::generateDataKey(const GenerateDataKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1413,42 @@ KmsClient::PutSecretValueOutcomeCallable KmsClient::putSecretValueCallable(const
 			[this, request]()
 			{
 			return this->putSecretValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::ReEncryptOutcome KmsClient::reEncrypt(const ReEncryptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReEncryptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReEncryptOutcome(ReEncryptResult(outcome.result()));
+	else
+		return ReEncryptOutcome(outcome.error());
+}
+
+void KmsClient::reEncryptAsync(const ReEncryptRequest& request, const ReEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reEncrypt(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ReEncryptOutcomeCallable KmsClient::reEncryptCallable(const ReEncryptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReEncryptOutcome()>>(
+			[this, request]()
+			{
+			return this->reEncrypt(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

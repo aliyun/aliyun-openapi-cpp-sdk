@@ -63,6 +63,10 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/EnableKeyResult.h
 	include/alibabacloud/kms/model/EncryptRequest.h
 	include/alibabacloud/kms/model/EncryptResult.h
+	include/alibabacloud/kms/model/ExportDataKeyRequest.h
+	include/alibabacloud/kms/model/ExportDataKeyResult.h
+	include/alibabacloud/kms/model/GenerateAndExportDataKeyRequest.h
+	include/alibabacloud/kms/model/GenerateAndExportDataKeyResult.h
 	include/alibabacloud/kms/model/GenerateDataKeyRequest.h
 	include/alibabacloud/kms/model/GenerateDataKeyResult.h
 	include/alibabacloud/kms/model/GenerateDataKeyWithoutPlaintextRequest.h
@@ -93,6 +97,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListSecretsResult.h
 	include/alibabacloud/kms/model/PutSecretValueRequest.h
 	include/alibabacloud/kms/model/PutSecretValueResult.h
+	include/alibabacloud/kms/model/ReEncryptRequest.h
+	include/alibabacloud/kms/model/ReEncryptResult.h
 	include/alibabacloud/kms/model/RestoreSecretRequest.h
 	include/alibabacloud/kms/model/RestoreSecretResult.h
 	include/alibabacloud/kms/model/ScheduleKeyDeletionRequest.h
@@ -156,6 +162,10 @@ set(kms_src
 	src/model/EnableKeyResult.cc
 	src/model/EncryptRequest.cc
 	src/model/EncryptResult.cc
+	src/model/ExportDataKeyRequest.cc
+	src/model/ExportDataKeyResult.cc
+	src/model/GenerateAndExportDataKeyRequest.cc
+	src/model/GenerateAndExportDataKeyResult.cc
 	src/model/GenerateDataKeyRequest.cc
 	src/model/GenerateDataKeyResult.cc
 	src/model/GenerateDataKeyWithoutPlaintextRequest.cc
@@ -186,6 +196,8 @@ set(kms_src
 	src/model/ListSecretsResult.cc
 	src/model/PutSecretValueRequest.cc
 	src/model/PutSecretValueResult.cc
+	src/model/ReEncryptRequest.cc
+	src/model/ReEncryptResult.cc
 	src/model/RestoreSecretRequest.cc
 	src/model/RestoreSecretResult.cc
 	src/model/ScheduleKeyDeletionRequest.cc
