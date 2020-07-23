@@ -90,6 +90,8 @@
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDeployOrderDetailRequest.h"
 #include "model/DescribeDeployOrderDetailResult.h"
+#include "model/DescribeJobLogRequest.h"
+#include "model/DescribeJobLogResult.h"
 #include "model/DescribePodEventsRequest.h"
 #include "model/DescribePodEventsResult.h"
 #include "model/DescribePodLogRequest.h"
@@ -126,6 +128,8 @@
 #include "model/ListDeployConfigResult.h"
 #include "model/ListDeployOrdersRequest.h"
 #include "model/ListDeployOrdersResult.h"
+#include "model/ListJobHistoriesRequest.h"
+#include "model/ListJobHistoriesResult.h"
 #include "model/ListNodeLabelBindingsRequest.h"
 #include "model/ListNodeLabelBindingsResult.h"
 #include "model/ListNodeLabelsRequest.h"
@@ -148,6 +152,8 @@
 #include "model/ModifySlbAPResult.h"
 #include "model/QueryClusterDetailRequest.h"
 #include "model/QueryClusterDetailResult.h"
+#include "model/RebuildAppInstanceRequest.h"
+#include "model/RebuildAppInstanceResult.h"
 #include "model/RemoveClusterNodeRequest.h"
 #include "model/RemoveClusterNodeResult.h"
 #include "model/ResetAccountPasswordRequest.h"
@@ -279,6 +285,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDeployOrderDetailResult> DescribeDeployOrderDetailOutcome;
 			typedef std::future<DescribeDeployOrderDetailOutcome> DescribeDeployOrderDetailOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribeDeployOrderDetailRequest&, const DescribeDeployOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobLogResult> DescribeJobLogOutcome;
+			typedef std::future<DescribeJobLogOutcome> DescribeJobLogOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::DescribeJobLogRequest&, const DescribeJobLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobLogAsyncHandler;
 			typedef Outcome<Error, Model::DescribePodEventsResult> DescribePodEventsOutcome;
 			typedef std::future<DescribePodEventsOutcome> DescribePodEventsOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::DescribePodEventsRequest&, const DescribePodEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodEventsAsyncHandler;
@@ -333,6 +342,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDeployOrdersResult> ListDeployOrdersOutcome;
 			typedef std::future<ListDeployOrdersOutcome> ListDeployOrdersOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::ListDeployOrdersRequest&, const ListDeployOrdersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeployOrdersAsyncHandler;
+			typedef Outcome<Error, Model::ListJobHistoriesResult> ListJobHistoriesOutcome;
+			typedef std::future<ListJobHistoriesOutcome> ListJobHistoriesOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::ListJobHistoriesRequest&, const ListJobHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobHistoriesAsyncHandler;
 			typedef Outcome<Error, Model::ListNodeLabelBindingsResult> ListNodeLabelBindingsOutcome;
 			typedef std::future<ListNodeLabelBindingsOutcome> ListNodeLabelBindingsOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::ListNodeLabelBindingsRequest&, const ListNodeLabelBindingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodeLabelBindingsAsyncHandler;
@@ -366,6 +378,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryClusterDetailResult> QueryClusterDetailOutcome;
 			typedef std::future<QueryClusterDetailOutcome> QueryClusterDetailOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::QueryClusterDetailRequest&, const QueryClusterDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryClusterDetailAsyncHandler;
+			typedef Outcome<Error, Model::RebuildAppInstanceResult> RebuildAppInstanceOutcome;
+			typedef std::future<RebuildAppInstanceOutcome> RebuildAppInstanceOutcomeCallable;
+			typedef std::function<void(const RetailcloudClient*, const Model::RebuildAppInstanceRequest&, const RebuildAppInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebuildAppInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RemoveClusterNodeResult> RemoveClusterNodeOutcome;
 			typedef std::future<RemoveClusterNodeOutcome> RemoveClusterNodeOutcomeCallable;
 			typedef std::function<void(const RetailcloudClient*, const Model::RemoveClusterNodeRequest&, const RemoveClusterNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveClusterNodeAsyncHandler;
@@ -503,6 +518,9 @@ namespace AlibabaCloud
 			DescribeDeployOrderDetailOutcome describeDeployOrderDetail(const Model::DescribeDeployOrderDetailRequest &request)const;
 			void describeDeployOrderDetailAsync(const Model::DescribeDeployOrderDetailRequest& request, const DescribeDeployOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeployOrderDetailOutcomeCallable describeDeployOrderDetailCallable(const Model::DescribeDeployOrderDetailRequest& request) const;
+			DescribeJobLogOutcome describeJobLog(const Model::DescribeJobLogRequest &request)const;
+			void describeJobLogAsync(const Model::DescribeJobLogRequest& request, const DescribeJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobLogOutcomeCallable describeJobLogCallable(const Model::DescribeJobLogRequest& request) const;
 			DescribePodEventsOutcome describePodEvents(const Model::DescribePodEventsRequest &request)const;
 			void describePodEventsAsync(const Model::DescribePodEventsRequest& request, const DescribePodEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePodEventsOutcomeCallable describePodEventsCallable(const Model::DescribePodEventsRequest& request) const;
@@ -557,6 +575,9 @@ namespace AlibabaCloud
 			ListDeployOrdersOutcome listDeployOrders(const Model::ListDeployOrdersRequest &request)const;
 			void listDeployOrdersAsync(const Model::ListDeployOrdersRequest& request, const ListDeployOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeployOrdersOutcomeCallable listDeployOrdersCallable(const Model::ListDeployOrdersRequest& request) const;
+			ListJobHistoriesOutcome listJobHistories(const Model::ListJobHistoriesRequest &request)const;
+			void listJobHistoriesAsync(const Model::ListJobHistoriesRequest& request, const ListJobHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListJobHistoriesOutcomeCallable listJobHistoriesCallable(const Model::ListJobHistoriesRequest& request) const;
 			ListNodeLabelBindingsOutcome listNodeLabelBindings(const Model::ListNodeLabelBindingsRequest &request)const;
 			void listNodeLabelBindingsAsync(const Model::ListNodeLabelBindingsRequest& request, const ListNodeLabelBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodeLabelBindingsOutcomeCallable listNodeLabelBindingsCallable(const Model::ListNodeLabelBindingsRequest& request) const;
@@ -590,6 +611,9 @@ namespace AlibabaCloud
 			QueryClusterDetailOutcome queryClusterDetail(const Model::QueryClusterDetailRequest &request)const;
 			void queryClusterDetailAsync(const Model::QueryClusterDetailRequest& request, const QueryClusterDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryClusterDetailOutcomeCallable queryClusterDetailCallable(const Model::QueryClusterDetailRequest& request) const;
+			RebuildAppInstanceOutcome rebuildAppInstance(const Model::RebuildAppInstanceRequest &request)const;
+			void rebuildAppInstanceAsync(const Model::RebuildAppInstanceRequest& request, const RebuildAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebuildAppInstanceOutcomeCallable rebuildAppInstanceCallable(const Model::RebuildAppInstanceRequest& request) const;
 			RemoveClusterNodeOutcome removeClusterNode(const Model::RemoveClusterNodeRequest &request)const;
 			void removeClusterNodeAsync(const Model::RemoveClusterNodeRequest& request, const RemoveClusterNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveClusterNodeOutcomeCallable removeClusterNodeCallable(const Model::RemoveClusterNodeRequest& request) const;

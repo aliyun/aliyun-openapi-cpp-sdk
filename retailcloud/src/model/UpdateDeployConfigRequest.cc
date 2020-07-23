@@ -108,6 +108,17 @@ void UpdateDeployConfigRequest::setId(long id)
 	setParameter("Id", std::to_string(id));
 }
 
+std::string UpdateDeployConfigRequest::getCronJob()const
+{
+	return cronJob_;
+}
+
+void UpdateDeployConfigRequest::setCronJob(const std::string& cronJob)
+{
+	cronJob_ = cronJob;
+	setParameter("CronJob", cronJob);
+}
+
 std::string UpdateDeployConfigRequest::getDeployment()const
 {
 	return deployment_;

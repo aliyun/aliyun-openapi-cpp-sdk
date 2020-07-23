@@ -119,6 +119,17 @@ void CreateDeployConfigRequest::setSecretList(const std::vector<std::string>& se
 	}
 }
 
+std::string CreateDeployConfigRequest::getCronJob()const
+{
+	return cronJob_;
+}
+
+void CreateDeployConfigRequest::setCronJob(const std::string& cronJob)
+{
+	cronJob_ = cronJob;
+	setParameter("CronJob", cronJob);
+}
+
 std::string CreateDeployConfigRequest::getDeployment()const
 {
 	return deployment_;

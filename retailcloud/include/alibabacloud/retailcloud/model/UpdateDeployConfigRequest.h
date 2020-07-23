@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setSecretList(const std::vector<std::string>& secretList);
 				long getId()const;
 				void setId(long id);
+				std::string getCronJob()const;
+				void setCronJob(const std::string& cronJob);
 				std::string getDeployment()const;
 				void setDeployment(const std::string& deployment);
 
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				long appId_;
 				std::vector<std::string> secretList_;
 				long id_;
+				std::string cronJob_;
 				std::string deployment_;
 
 			};

@@ -1,3 +1,7 @@
+2020-07-23 Version: 1.36.533
+- Supported AAA for BBB.
+- Fixed bugs for CCC.
+
 2020-07-23 Version: 1.36.532
 - Add AddSecretBlacklist and DeleteSecretBlacklist.
 - Suppoort ASR.

@@ -89,6 +89,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/DescribeDatabasesResult.h
 	include/alibabacloud/retailcloud/model/DescribeDeployOrderDetailRequest.h
 	include/alibabacloud/retailcloud/model/DescribeDeployOrderDetailResult.h
+	include/alibabacloud/retailcloud/model/DescribeJobLogRequest.h
+	include/alibabacloud/retailcloud/model/DescribeJobLogResult.h
 	include/alibabacloud/retailcloud/model/DescribePodEventsRequest.h
 	include/alibabacloud/retailcloud/model/DescribePodEventsResult.h
 	include/alibabacloud/retailcloud/model/DescribePodLogRequest.h
@@ -125,6 +127,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/ListDeployConfigResult.h
 	include/alibabacloud/retailcloud/model/ListDeployOrdersRequest.h
 	include/alibabacloud/retailcloud/model/ListDeployOrdersResult.h
+	include/alibabacloud/retailcloud/model/ListJobHistoriesRequest.h
+	include/alibabacloud/retailcloud/model/ListJobHistoriesResult.h
 	include/alibabacloud/retailcloud/model/ListNodeLabelBindingsRequest.h
 	include/alibabacloud/retailcloud/model/ListNodeLabelBindingsResult.h
 	include/alibabacloud/retailcloud/model/ListNodeLabelsRequest.h
@@ -147,6 +151,8 @@ set(retailcloud_public_header_model
 	include/alibabacloud/retailcloud/model/ModifySlbAPResult.h
 	include/alibabacloud/retailcloud/model/QueryClusterDetailRequest.h
 	include/alibabacloud/retailcloud/model/QueryClusterDetailResult.h
+	include/alibabacloud/retailcloud/model/RebuildAppInstanceRequest.h
+	include/alibabacloud/retailcloud/model/RebuildAppInstanceResult.h
 	include/alibabacloud/retailcloud/model/RemoveClusterNodeRequest.h
 	include/alibabacloud/retailcloud/model/RemoveClusterNodeResult.h
 	include/alibabacloud/retailcloud/model/ResetAccountPasswordRequest.h
@@ -238,6 +244,8 @@ set(retailcloud_src
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDeployOrderDetailRequest.cc
 	src/model/DescribeDeployOrderDetailResult.cc
+	src/model/DescribeJobLogRequest.cc
+	src/model/DescribeJobLogResult.cc
 	src/model/DescribePodEventsRequest.cc
 	src/model/DescribePodEventsResult.cc
 	src/model/DescribePodLogRequest.cc
@@ -274,6 +282,8 @@ set(retailcloud_src
 	src/model/ListDeployConfigResult.cc
 	src/model/ListDeployOrdersRequest.cc
 	src/model/ListDeployOrdersResult.cc
+	src/model/ListJobHistoriesRequest.cc
+	src/model/ListJobHistoriesResult.cc
 	src/model/ListNodeLabelBindingsRequest.cc
 	src/model/ListNodeLabelBindingsResult.cc
 	src/model/ListNodeLabelsRequest.cc
@@ -296,6 +306,8 @@ set(retailcloud_src
 	src/model/ModifySlbAPResult.cc
 	src/model/QueryClusterDetailRequest.cc
 	src/model/QueryClusterDetailResult.cc
+	src/model/RebuildAppInstanceRequest.cc
+	src/model/RebuildAppInstanceResult.cc
 	src/model/RemoveClusterNodeRequest.cc
 	src/model/RemoveClusterNodeResult.cc
 	src/model/ResetAccountPasswordRequest.cc

@@ -1275,6 +1275,42 @@ RetailcloudClient::DescribeDeployOrderDetailOutcomeCallable RetailcloudClient::d
 	return task->get_future();
 }
 
+RetailcloudClient::DescribeJobLogOutcome RetailcloudClient::describeJobLog(const DescribeJobLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeJobLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeJobLogOutcome(DescribeJobLogResult(outcome.result()));
+	else
+		return DescribeJobLogOutcome(outcome.error());
+}
+
+void RetailcloudClient::describeJobLogAsync(const DescribeJobLogRequest& request, const DescribeJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeJobLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::DescribeJobLogOutcomeCallable RetailcloudClient::describeJobLogCallable(const DescribeJobLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeJobLogOutcome()>>(
+			[this, request]()
+			{
+			return this->describeJobLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::DescribePodEventsOutcome RetailcloudClient::describePodEvents(const DescribePodEventsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1923,6 +1959,42 @@ RetailcloudClient::ListDeployOrdersOutcomeCallable RetailcloudClient::listDeploy
 	return task->get_future();
 }
 
+RetailcloudClient::ListJobHistoriesOutcome RetailcloudClient::listJobHistories(const ListJobHistoriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobHistoriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobHistoriesOutcome(ListJobHistoriesResult(outcome.result()));
+	else
+		return ListJobHistoriesOutcome(outcome.error());
+}
+
+void RetailcloudClient::listJobHistoriesAsync(const ListJobHistoriesRequest& request, const ListJobHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJobHistories(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::ListJobHistoriesOutcomeCallable RetailcloudClient::listJobHistoriesCallable(const ListJobHistoriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobHistoriesOutcome()>>(
+			[this, request]()
+			{
+			return this->listJobHistories(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RetailcloudClient::ListNodeLabelBindingsOutcome RetailcloudClient::listNodeLabelBindings(const ListNodeLabelBindingsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2313,6 +2385,42 @@ RetailcloudClient::QueryClusterDetailOutcomeCallable RetailcloudClient::queryClu
 			[this, request]()
 			{
 			return this->queryClusterDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RetailcloudClient::RebuildAppInstanceOutcome RetailcloudClient::rebuildAppInstance(const RebuildAppInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebuildAppInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebuildAppInstanceOutcome(RebuildAppInstanceResult(outcome.result()));
+	else
+		return RebuildAppInstanceOutcome(outcome.error());
+}
+
+void RetailcloudClient::rebuildAppInstanceAsync(const RebuildAppInstanceRequest& request, const RebuildAppInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebuildAppInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RetailcloudClient::RebuildAppInstanceOutcomeCallable RetailcloudClient::rebuildAppInstanceCallable(const RebuildAppInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebuildAppInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->rebuildAppInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

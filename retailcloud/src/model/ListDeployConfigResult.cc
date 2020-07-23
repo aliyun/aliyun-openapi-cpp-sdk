@@ -61,6 +61,8 @@ void ListDeployConfigResult::parse(const std::string &payload)
 			dataObject.containerYamlConf.configMap = containerYamlConfNode["ConfigMap"].asString();
 		if(!containerYamlConfNode["StatefulSet"].isNull())
 			dataObject.containerYamlConf.statefulSet = containerYamlConfNode["StatefulSet"].asString();
+		if(!containerYamlConfNode["CronJob"].isNull())
+			dataObject.containerYamlConf.cronJob = containerYamlConfNode["CronJob"].asString();
 			auto allConfigMapList = containerYamlConfNode["ConfigMapList"]["ConfigMapList"];
 			for (auto value : allConfigMapList)
 				dataObject.containerYamlConf.configMapList.push_back(value.asString());

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTDEPLOYCONFIGRESULT_H_
-#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTDEPLOYCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_RETAILCLOUD_MODEL_LISTJOBHISTORIESRESULT_H_
+#define ALIBABACLOUD_RETAILCLOUD_MODEL_LISTJOBHISTORIESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListDeployConfigResult : public ServiceResult
+			class ALIBABACLOUD_RETAILCLOUD_EXPORT ListJobHistoriesResult : public ServiceResult
 			{
 			public:
-				struct DeployConfigInstance
+				struct JobDetail
 				{
-					struct ContainerCodePath
-					{
-						std::string codePath;
-					};
-					struct ContainerYamlConf
-					{
-						std::vector<std::string> configMapList;
-						std::string configMap;
-						std::vector<std::string> secretList;
-						std::string cronJob;
-						std::string deployment;
-						std::string statefulSet;
-					};
-					ContainerYamlConf containerYamlConf;
-					ContainerCodePath containerCodePath;
-					long appId;
-					long id;
-					std::string envType;
+					int activeDeadlineSeconds;
+					int succeeded;
+					int backoffLimit;
+					std::vector<std::string> podList;
+					std::string message;
+					std::string completionTime;
+					int failed;
+					std::string startTime;
+					int parallelism;
 					std::string name;
+					int completions;
 				};
 
 
-				ListDeployConfigResult();
-				explicit ListDeployConfigResult(const std::string &payload);
-				~ListDeployConfigResult();
+				ListJobHistoriesResult();
+				explicit ListJobHistoriesResult(const std::string &payload);
+				~ListJobHistoriesResult();
 				long getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::string getErrorMsg()const;
-				std::vector<DeployConfigInstance> getData()const;
+				std::vector<JobDetail> getData()const;
 				int getCode()const;
 
 			protected:
@@ -73,11 +65,11 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				std::string errorMsg_;
-				std::vector<DeployConfigInstance> data_;
+				std::vector<JobDetail> data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTDEPLOYCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_RETAILCLOUD_MODEL_LISTJOBHISTORIESRESULT_H_
