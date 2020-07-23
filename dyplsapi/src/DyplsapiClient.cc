@@ -87,6 +87,42 @@ DyplsapiClient::AddAxnTrackNoOutcomeCallable DyplsapiClient::addAxnTrackNoCallab
 	return task->get_future();
 }
 
+DyplsapiClient::AddSecretBlacklistOutcome DyplsapiClient::addSecretBlacklist(const AddSecretBlacklistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSecretBlacklistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSecretBlacklistOutcome(AddSecretBlacklistResult(outcome.result()));
+	else
+		return AddSecretBlacklistOutcome(outcome.error());
+}
+
+void DyplsapiClient::addSecretBlacklistAsync(const AddSecretBlacklistRequest& request, const AddSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSecretBlacklist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::AddSecretBlacklistOutcomeCallable DyplsapiClient::addSecretBlacklistCallable(const AddSecretBlacklistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSecretBlacklistOutcome()>>(
+			[this, request]()
+			{
+			return this->addSecretBlacklist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::BindAxbOutcome DyplsapiClient::bindAxb(const BindAxbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,114 @@ DyplsapiClient::CreateAxgGroupOutcomeCallable DyplsapiClient::createAxgGroupCall
 			[this, request]()
 			{
 			return this->createAxgGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::DeleteSecretBlacklistOutcome DyplsapiClient::deleteSecretBlacklist(const DeleteSecretBlacklistRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSecretBlacklistOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSecretBlacklistOutcome(DeleteSecretBlacklistResult(outcome.result()));
+	else
+		return DeleteSecretBlacklistOutcome(outcome.error());
+}
+
+void DyplsapiClient::deleteSecretBlacklistAsync(const DeleteSecretBlacklistRequest& request, const DeleteSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSecretBlacklist(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::DeleteSecretBlacklistOutcomeCallable DyplsapiClient::deleteSecretBlacklistCallable(const DeleteSecretBlacklistRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSecretBlacklistOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSecretBlacklist(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::GetSecretAsrDetailOutcome DyplsapiClient::getSecretAsrDetail(const GetSecretAsrDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretAsrDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretAsrDetailOutcome(GetSecretAsrDetailResult(outcome.result()));
+	else
+		return GetSecretAsrDetailOutcome(outcome.error());
+}
+
+void DyplsapiClient::getSecretAsrDetailAsync(const GetSecretAsrDetailRequest& request, const GetSecretAsrDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretAsrDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::GetSecretAsrDetailOutcomeCallable DyplsapiClient::getSecretAsrDetailCallable(const GetSecretAsrDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretAsrDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretAsrDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::LockSecretNoOutcome DyplsapiClient::lockSecretNo(const LockSecretNoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LockSecretNoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LockSecretNoOutcome(LockSecretNoResult(outcome.result()));
+	else
+		return LockSecretNoOutcome(outcome.error());
+}
+
+void DyplsapiClient::lockSecretNoAsync(const LockSecretNoRequest& request, const LockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, lockSecretNo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::LockSecretNoOutcomeCallable DyplsapiClient::lockSecretNoCallable(const LockSecretNoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LockSecretNoOutcome()>>(
+			[this, request]()
+			{
+			return this->lockSecretNo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +801,42 @@ DyplsapiClient::UnbindSubscriptionOutcomeCallable DyplsapiClient::unbindSubscrip
 			[this, request]()
 			{
 			return this->unbindSubscription(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::UnlockSecretNoOutcome DyplsapiClient::unlockSecretNo(const UnlockSecretNoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnlockSecretNoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnlockSecretNoOutcome(UnlockSecretNoResult(outcome.result()));
+	else
+		return UnlockSecretNoOutcome(outcome.error());
+}
+
+void DyplsapiClient::unlockSecretNoAsync(const UnlockSecretNoRequest& request, const UnlockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unlockSecretNo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::UnlockSecretNoOutcomeCallable DyplsapiClient::unlockSecretNoCallable(const UnlockSecretNoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnlockSecretNoOutcome()>>(
+			[this, request]()
+			{
+			return this->unlockSecretNo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

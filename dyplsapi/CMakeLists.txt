@@ -23,6 +23,8 @@ set(dyplsapi_public_header
 set(dyplsapi_public_header_model 
 	include/alibabacloud/dyplsapi/model/AddAxnTrackNoRequest.h
 	include/alibabacloud/dyplsapi/model/AddAxnTrackNoResult.h
+	include/alibabacloud/dyplsapi/model/AddSecretBlacklistRequest.h
+	include/alibabacloud/dyplsapi/model/AddSecretBlacklistResult.h
 	include/alibabacloud/dyplsapi/model/BindAxbRequest.h
 	include/alibabacloud/dyplsapi/model/BindAxbResult.h
 	include/alibabacloud/dyplsapi/model/BindAxgRequest.h
@@ -35,6 +37,12 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/BuySecretNoResult.h
 	include/alibabacloud/dyplsapi/model/CreateAxgGroupRequest.h
 	include/alibabacloud/dyplsapi/model/CreateAxgGroupResult.h
+	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistRequest.h
+	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistResult.h
+	include/alibabacloud/dyplsapi/model/GetSecretAsrDetailRequest.h
+	include/alibabacloud/dyplsapi/model/GetSecretAsrDetailResult.h
+	include/alibabacloud/dyplsapi/model/LockSecretNoRequest.h
+	include/alibabacloud/dyplsapi/model/LockSecretNoResult.h
 	include/alibabacloud/dyplsapi/model/OperateAxgGroupRequest.h
 	include/alibabacloud/dyplsapi/model/OperateAxgGroupResult.h
 	include/alibabacloud/dyplsapi/model/OperateBlackNoRequest.h
@@ -55,6 +63,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/ReleaseSecretNoResult.h
 	include/alibabacloud/dyplsapi/model/UnbindSubscriptionRequest.h
 	include/alibabacloud/dyplsapi/model/UnbindSubscriptionResult.h
+	include/alibabacloud/dyplsapi/model/UnlockSecretNoRequest.h
+	include/alibabacloud/dyplsapi/model/UnlockSecretNoResult.h
 	include/alibabacloud/dyplsapi/model/UpdateSubscriptionRequest.h
 	include/alibabacloud/dyplsapi/model/UpdateSubscriptionResult.h )
 
@@ -62,6 +72,8 @@ set(dyplsapi_src
 	src/DyplsapiClient.cc
 	src/model/AddAxnTrackNoRequest.cc
 	src/model/AddAxnTrackNoResult.cc
+	src/model/AddSecretBlacklistRequest.cc
+	src/model/AddSecretBlacklistResult.cc
 	src/model/BindAxbRequest.cc
 	src/model/BindAxbResult.cc
 	src/model/BindAxgRequest.cc
@@ -74,6 +86,12 @@ set(dyplsapi_src
 	src/model/BuySecretNoResult.cc
 	src/model/CreateAxgGroupRequest.cc
 	src/model/CreateAxgGroupResult.cc
+	src/model/DeleteSecretBlacklistRequest.cc
+	src/model/DeleteSecretBlacklistResult.cc
+	src/model/GetSecretAsrDetailRequest.cc
+	src/model/GetSecretAsrDetailResult.cc
+	src/model/LockSecretNoRequest.cc
+	src/model/LockSecretNoResult.cc
 	src/model/OperateAxgGroupRequest.cc
 	src/model/OperateAxgGroupResult.cc
 	src/model/OperateBlackNoRequest.cc
@@ -94,6 +112,8 @@ set(dyplsapi_src
 	src/model/ReleaseSecretNoResult.cc
 	src/model/UnbindSubscriptionRequest.cc
 	src/model/UnbindSubscriptionResult.cc
+	src/model/UnlockSecretNoRequest.cc
+	src/model/UnlockSecretNoResult.cc
 	src/model/UpdateSubscriptionRequest.cc
 	src/model/UpdateSubscriptionResult.cc )
 

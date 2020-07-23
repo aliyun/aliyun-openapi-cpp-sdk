@@ -62,6 +62,10 @@ void QuerySubscriptionDetailResult::parse(const std::string &payload)
 		secretBindDetailDTO_.callRestrict = secretBindDetailDTONode["CallRestrict"].asString();
 	if(!secretBindDetailDTONode["Status"].isNull())
 		secretBindDetailDTO_.status = std::stol(secretBindDetailDTONode["Status"].asString());
+	if(!secretBindDetailDTONode["ASRStatus"].isNull())
+		secretBindDetailDTO_.aSRStatus = secretBindDetailDTONode["ASRStatus"].asString() == "true";
+	if(!secretBindDetailDTONode["ASRModelId"].isNull())
+		secretBindDetailDTO_.aSRModelId = secretBindDetailDTONode["ASRModelId"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

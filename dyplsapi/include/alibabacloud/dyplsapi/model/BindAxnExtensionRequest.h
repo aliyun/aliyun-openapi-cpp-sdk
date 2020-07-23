@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setPhoneNoX(const std::string& phoneNoX);
 				std::string getRingConfig()const;
 				void setRingConfig(const std::string& ringConfig);
+				bool getASRStatus()const;
+				void setASRStatus(bool aSRStatus);
 				std::string getPhoneNoB()const;
 				void setPhoneNoB(const std::string& phoneNoB);
 				std::string getPhoneNoA()const;
@@ -67,6 +69,8 @@ namespace AlibabaCloud
 				void setIsRecordingEnabled(bool isRecordingEnabled);
 				std::string getOutId()const;
 				void setOutId(const std::string& outId);
+				std::string getASRModelId()const;
+				void setASRModelId(const std::string& aSRModelId);
 
             private:
 				long resourceOwnerId_;
@@ -75,6 +79,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string phoneNoX_;
 				std::string ringConfig_;
+				bool aSRStatus_;
 				std::string phoneNoB_;
 				std::string phoneNoA_;
 				std::string expectCity_;
@@ -85,6 +90,7 @@ namespace AlibabaCloud
 				std::string expiration_;
 				bool isRecordingEnabled_;
 				std::string outId_;
+				std::string aSRModelId_;
 
 			};
 		}

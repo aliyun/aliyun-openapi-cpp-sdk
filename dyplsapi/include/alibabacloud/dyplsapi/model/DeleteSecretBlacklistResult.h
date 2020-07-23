@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_QUERYSUBSCRIPTIONDETAILRESULT_H_
-#define ALIBABACLOUD_DYPLSAPI_MODEL_QUERYSUBSCRIPTIONDETAILRESULT_H_
+#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_DELETESECRETBLACKLISTRESULT_H_
+#define ALIBABACLOUD_DYPLSAPI_MODEL_DELETESECRETBLACKLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,20 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYPLSAPI_EXPORT QuerySubscriptionDetailResult : public ServiceResult
+			class ALIBABACLOUD_DYPLSAPI_EXPORT DeleteSecretBlacklistResult : public ServiceResult
 			{
 			public:
-				struct SecretBindDetailDTO
-				{
-					long status;
-					bool aSRStatus;
-					std::string phoneNoX;
-					std::string expireDate;
-					std::string subsId;
-					long groupId;
-					std::string extension;
-					std::string callRestrict;
-					std::string gmtCreate;
-					std::string aSRModelId;
-					bool needRecord;
-					std::string phoneNoB;
-					std::string phoneNoA;
-				};
 
 
-				QuerySubscriptionDetailResult();
-				explicit QuerySubscriptionDetailResult(const std::string &payload);
-				~QuerySubscriptionDetailResult();
-				SecretBindDetailDTO getSecretBindDetailDTO()const;
+				DeleteSecretBlacklistResult();
+				explicit DeleteSecretBlacklistResult(const std::string &payload);
+				~DeleteSecretBlacklistResult();
 				std::string getMessage()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				SecretBindDetailDTO secretBindDetailDTO_;
 				std::string message_;
 				std::string code_;
 
@@ -68,4 +50,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_QUERYSUBSCRIPTIONDETAILRESULT_H_
+#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_DELETESECRETBLACKLISTRESULT_H_

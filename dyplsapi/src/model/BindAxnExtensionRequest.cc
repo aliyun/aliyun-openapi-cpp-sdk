@@ -93,6 +93,17 @@ void BindAxnExtensionRequest::setRingConfig(const std::string& ringConfig)
 	setParameter("RingConfig", ringConfig);
 }
 
+bool BindAxnExtensionRequest::getASRStatus()const
+{
+	return aSRStatus_;
+}
+
+void BindAxnExtensionRequest::setASRStatus(bool aSRStatus)
+{
+	aSRStatus_ = aSRStatus;
+	setParameter("ASRStatus", aSRStatus ? "true" : "false");
+}
+
 std::string BindAxnExtensionRequest::getPhoneNoB()const
 {
 	return phoneNoB_;
@@ -201,5 +212,16 @@ void BindAxnExtensionRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
 	setParameter("OutId", outId);
+}
+
+std::string BindAxnExtensionRequest::getASRModelId()const
+{
+	return aSRModelId_;
+}
+
+void BindAxnExtensionRequest::setASRModelId(const std::string& aSRModelId)
+{
+	aSRModelId_ = aSRModelId;
+	setParameter("ASRModelId", aSRModelId);
 }
 

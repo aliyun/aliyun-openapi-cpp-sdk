@@ -104,6 +104,17 @@ void UpdateSubscriptionRequest::setRingConfig(const std::string& ringConfig)
 	setParameter("RingConfig", ringConfig);
 }
 
+bool UpdateSubscriptionRequest::getASRStatus()const
+{
+	return aSRStatus_;
+}
+
+void UpdateSubscriptionRequest::setASRStatus(bool aSRStatus)
+{
+	aSRStatus_ = aSRStatus;
+	setParameter("ASRStatus", aSRStatus ? "true" : "false");
+}
+
 std::string UpdateSubscriptionRequest::getPhoneNoB()const
 {
 	return phoneNoB_;
@@ -212,6 +223,17 @@ void UpdateSubscriptionRequest::setOperateType(const std::string& operateType)
 {
 	operateType_ = operateType;
 	setParameter("OperateType", operateType);
+}
+
+std::string UpdateSubscriptionRequest::getASRModelId()const
+{
+	return aSRModelId_;
+}
+
+void UpdateSubscriptionRequest::setASRModelId(const std::string& aSRModelId)
+{
+	aSRModelId_ = aSRModelId;
+	setParameter("ASRModelId", aSRModelId);
 }
 
 std::string UpdateSubscriptionRequest::getCallRestrict()const

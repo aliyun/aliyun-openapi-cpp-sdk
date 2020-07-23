@@ -24,6 +24,8 @@
 #include "DyplsapiExport.h"
 #include "model/AddAxnTrackNoRequest.h"
 #include "model/AddAxnTrackNoResult.h"
+#include "model/AddSecretBlacklistRequest.h"
+#include "model/AddSecretBlacklistResult.h"
 #include "model/BindAxbRequest.h"
 #include "model/BindAxbResult.h"
 #include "model/BindAxgRequest.h"
@@ -36,6 +38,12 @@
 #include "model/BuySecretNoResult.h"
 #include "model/CreateAxgGroupRequest.h"
 #include "model/CreateAxgGroupResult.h"
+#include "model/DeleteSecretBlacklistRequest.h"
+#include "model/DeleteSecretBlacklistResult.h"
+#include "model/GetSecretAsrDetailRequest.h"
+#include "model/GetSecretAsrDetailResult.h"
+#include "model/LockSecretNoRequest.h"
+#include "model/LockSecretNoResult.h"
 #include "model/OperateAxgGroupRequest.h"
 #include "model/OperateAxgGroupResult.h"
 #include "model/OperateBlackNoRequest.h"
@@ -56,6 +64,8 @@
 #include "model/ReleaseSecretNoResult.h"
 #include "model/UnbindSubscriptionRequest.h"
 #include "model/UnbindSubscriptionResult.h"
+#include "model/UnlockSecretNoRequest.h"
+#include "model/UnlockSecretNoResult.h"
 #include "model/UpdateSubscriptionRequest.h"
 #include "model/UpdateSubscriptionResult.h"
 
@@ -70,6 +80,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddAxnTrackNoResult> AddAxnTrackNoOutcome;
 			typedef std::future<AddAxnTrackNoOutcome> AddAxnTrackNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::AddAxnTrackNoRequest&, const AddAxnTrackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddAxnTrackNoAsyncHandler;
+			typedef Outcome<Error, Model::AddSecretBlacklistResult> AddSecretBlacklistOutcome;
+			typedef std::future<AddSecretBlacklistOutcome> AddSecretBlacklistOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::AddSecretBlacklistRequest&, const AddSecretBlacklistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSecretBlacklistAsyncHandler;
 			typedef Outcome<Error, Model::BindAxbResult> BindAxbOutcome;
 			typedef std::future<BindAxbOutcome> BindAxbOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::BindAxbRequest&, const BindAxbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAxbAsyncHandler;
@@ -88,6 +101,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAxgGroupResult> CreateAxgGroupOutcome;
 			typedef std::future<CreateAxgGroupOutcome> CreateAxgGroupOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::CreateAxgGroupRequest&, const CreateAxgGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAxgGroupAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSecretBlacklistResult> DeleteSecretBlacklistOutcome;
+			typedef std::future<DeleteSecretBlacklistOutcome> DeleteSecretBlacklistOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::DeleteSecretBlacklistRequest&, const DeleteSecretBlacklistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretBlacklistAsyncHandler;
+			typedef Outcome<Error, Model::GetSecretAsrDetailResult> GetSecretAsrDetailOutcome;
+			typedef std::future<GetSecretAsrDetailOutcome> GetSecretAsrDetailOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::GetSecretAsrDetailRequest&, const GetSecretAsrDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretAsrDetailAsyncHandler;
+			typedef Outcome<Error, Model::LockSecretNoResult> LockSecretNoOutcome;
+			typedef std::future<LockSecretNoOutcome> LockSecretNoOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::LockSecretNoRequest&, const LockSecretNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockSecretNoAsyncHandler;
 			typedef Outcome<Error, Model::OperateAxgGroupResult> OperateAxgGroupOutcome;
 			typedef std::future<OperateAxgGroupOutcome> OperateAxgGroupOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::OperateAxgGroupRequest&, const OperateAxgGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAxgGroupAsyncHandler;
@@ -118,6 +140,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnbindSubscriptionResult> UnbindSubscriptionOutcome;
 			typedef std::future<UnbindSubscriptionOutcome> UnbindSubscriptionOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::UnbindSubscriptionRequest&, const UnbindSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindSubscriptionAsyncHandler;
+			typedef Outcome<Error, Model::UnlockSecretNoResult> UnlockSecretNoOutcome;
+			typedef std::future<UnlockSecretNoOutcome> UnlockSecretNoOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::UnlockSecretNoRequest&, const UnlockSecretNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockSecretNoAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSubscriptionResult> UpdateSubscriptionOutcome;
 			typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::UpdateSubscriptionRequest&, const UpdateSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSubscriptionAsyncHandler;
@@ -129,6 +154,9 @@ namespace AlibabaCloud
 			AddAxnTrackNoOutcome addAxnTrackNo(const Model::AddAxnTrackNoRequest &request)const;
 			void addAxnTrackNoAsync(const Model::AddAxnTrackNoRequest& request, const AddAxnTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddAxnTrackNoOutcomeCallable addAxnTrackNoCallable(const Model::AddAxnTrackNoRequest& request) const;
+			AddSecretBlacklistOutcome addSecretBlacklist(const Model::AddSecretBlacklistRequest &request)const;
+			void addSecretBlacklistAsync(const Model::AddSecretBlacklistRequest& request, const AddSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSecretBlacklistOutcomeCallable addSecretBlacklistCallable(const Model::AddSecretBlacklistRequest& request) const;
 			BindAxbOutcome bindAxb(const Model::BindAxbRequest &request)const;
 			void bindAxbAsync(const Model::BindAxbRequest& request, const BindAxbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindAxbOutcomeCallable bindAxbCallable(const Model::BindAxbRequest& request) const;
@@ -147,6 +175,15 @@ namespace AlibabaCloud
 			CreateAxgGroupOutcome createAxgGroup(const Model::CreateAxgGroupRequest &request)const;
 			void createAxgGroupAsync(const Model::CreateAxgGroupRequest& request, const CreateAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAxgGroupOutcomeCallable createAxgGroupCallable(const Model::CreateAxgGroupRequest& request) const;
+			DeleteSecretBlacklistOutcome deleteSecretBlacklist(const Model::DeleteSecretBlacklistRequest &request)const;
+			void deleteSecretBlacklistAsync(const Model::DeleteSecretBlacklistRequest& request, const DeleteSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSecretBlacklistOutcomeCallable deleteSecretBlacklistCallable(const Model::DeleteSecretBlacklistRequest& request) const;
+			GetSecretAsrDetailOutcome getSecretAsrDetail(const Model::GetSecretAsrDetailRequest &request)const;
+			void getSecretAsrDetailAsync(const Model::GetSecretAsrDetailRequest& request, const GetSecretAsrDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSecretAsrDetailOutcomeCallable getSecretAsrDetailCallable(const Model::GetSecretAsrDetailRequest& request) const;
+			LockSecretNoOutcome lockSecretNo(const Model::LockSecretNoRequest &request)const;
+			void lockSecretNoAsync(const Model::LockSecretNoRequest& request, const LockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			LockSecretNoOutcomeCallable lockSecretNoCallable(const Model::LockSecretNoRequest& request) const;
 			OperateAxgGroupOutcome operateAxgGroup(const Model::OperateAxgGroupRequest &request)const;
 			void operateAxgGroupAsync(const Model::OperateAxgGroupRequest& request, const OperateAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateAxgGroupOutcomeCallable operateAxgGroupCallable(const Model::OperateAxgGroupRequest& request) const;
@@ -177,6 +214,9 @@ namespace AlibabaCloud
 			UnbindSubscriptionOutcome unbindSubscription(const Model::UnbindSubscriptionRequest &request)const;
 			void unbindSubscriptionAsync(const Model::UnbindSubscriptionRequest& request, const UnbindSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnbindSubscriptionOutcomeCallable unbindSubscriptionCallable(const Model::UnbindSubscriptionRequest& request) const;
+			UnlockSecretNoOutcome unlockSecretNo(const Model::UnlockSecretNoRequest &request)const;
+			void unlockSecretNoAsync(const Model::UnlockSecretNoRequest& request, const UnlockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnlockSecretNoOutcomeCallable unlockSecretNoCallable(const Model::UnlockSecretNoRequest& request) const;
 			UpdateSubscriptionOutcome updateSubscription(const Model::UpdateSubscriptionRequest &request)const;
 			void updateSubscriptionAsync(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSubscriptionOutcomeCallable updateSubscriptionCallable(const Model::UpdateSubscriptionRequest& request) const;

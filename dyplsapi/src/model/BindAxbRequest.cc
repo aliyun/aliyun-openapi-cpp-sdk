@@ -82,6 +82,17 @@ void BindAxbRequest::setRingConfig(const std::string& ringConfig)
 	setParameter("RingConfig", ringConfig);
 }
 
+bool BindAxbRequest::getASRStatus()const
+{
+	return aSRStatus_;
+}
+
+void BindAxbRequest::setASRStatus(bool aSRStatus)
+{
+	aSRStatus_ = aSRStatus;
+	setParameter("ASRStatus", aSRStatus ? "true" : "false");
+}
+
 std::string BindAxbRequest::getPhoneNoB()const
 {
 	return phoneNoB_;
@@ -190,6 +201,17 @@ void BindAxbRequest::setOutId(const std::string& outId)
 {
 	outId_ = outId;
 	setParameter("OutId", outId);
+}
+
+std::string BindAxbRequest::getASRModelId()const
+{
+	return aSRModelId_;
+}
+
+void BindAxbRequest::setASRModelId(const std::string& aSRModelId)
+{
+	aSRModelId_ = aSRModelId;
+	setParameter("ASRModelId", aSRModelId);
 }
 
 std::string BindAxbRequest::getCallRestrict()const
