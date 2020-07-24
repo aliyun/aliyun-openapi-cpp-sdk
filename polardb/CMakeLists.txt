@@ -59,6 +59,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeBackupLogsResult.h
 	include/alibabacloud/polardb/model/DescribeBackupPolicyRequest.h
 	include/alibabacloud/polardb/model/DescribeBackupPolicyResult.h
+	include/alibabacloud/polardb/model/DescribeBackupTasksRequest.h
+	include/alibabacloud/polardb/model/DescribeBackupTasksResult.h
 	include/alibabacloud/polardb/model/DescribeBackupsRequest.h
 	include/alibabacloud/polardb/model/DescribeBackupsResult.h
 	include/alibabacloud/polardb/model/DescribeDBClusterAccessWhitelistRequest.h
@@ -190,6 +192,8 @@ set(polardb_src
 	src/model/DescribeBackupLogsResult.cc
 	src/model/DescribeBackupPolicyRequest.cc
 	src/model/DescribeBackupPolicyResult.cc
+	src/model/DescribeBackupTasksRequest.cc
+	src/model/DescribeBackupTasksResult.cc
 	src/model/DescribeBackupsRequest.cc
 	src/model/DescribeBackupsResult.cc
 	src/model/DescribeDBClusterAccessWhitelistRequest.cc
