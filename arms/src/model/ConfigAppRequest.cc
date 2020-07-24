@@ -49,14 +49,14 @@ void ConfigAppRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
-bool ConfigAppRequest::getEnable()const
+std::string ConfigAppRequest::getEnable()const
 {
 	return enable_;
 }
 
-void ConfigAppRequest::setEnable(bool enable)
+void ConfigAppRequest::setEnable(const std::string& enable)
 {
 	enable_ = enable;
-	setParameter("Enable", enable ? "true" : "false");
+	setParameter("Enable", enable);
 }
 

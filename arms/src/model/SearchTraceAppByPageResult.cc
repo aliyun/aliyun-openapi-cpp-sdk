@@ -68,6 +68,9 @@ void SearchTraceAppByPageResult::parse(const std::string &payload)
 			traceAppObject.updateTime = std::stol(pageBeanNodeTraceAppsTraceApp["UpdateTime"].asString());
 		if(!pageBeanNodeTraceAppsTraceApp["Show"].isNull())
 			traceAppObject.show = pageBeanNodeTraceAppsTraceApp["Show"].asString() == "true";
+		auto allLabels = value["Labels"]["Labels"];
+		for (auto value : allLabels)
+			traceAppObject.labels.push_back(value.asString());
 		pageBean_.traceApps.push_back(traceAppObject);
 	}
 

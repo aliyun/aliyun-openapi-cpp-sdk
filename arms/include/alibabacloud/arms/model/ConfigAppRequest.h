@@ -39,13 +39,13 @@ namespace AlibabaCloud
 				void setAppIds(const std::string& appIds);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				bool getEnable()const;
-				void setEnable(bool enable);
+				std::string getEnable()const;
+				void setEnable(const std::string& enable);
 
             private:
 				std::string appIds_;
 				std::string regionId_;
-				bool enable_;
+				std::string enable_;
 
 			};
 		}
