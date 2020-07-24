@@ -53,6 +53,22 @@ void ListFaceGroupsResult::parse(const std::string &payload)
 			faceGroupsObject.createTime = valueFaceGroupsFaceGroupsItem["CreateTime"].asString();
 		if(!valueFaceGroupsFaceGroupsItem["ModifyTime"].isNull())
 			faceGroupsObject.modifyTime = valueFaceGroupsFaceGroupsItem["ModifyTime"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksA"].isNull())
+			faceGroupsObject.remarksA = valueFaceGroupsFaceGroupsItem["RemarksA"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksB"].isNull())
+			faceGroupsObject.remarksB = valueFaceGroupsFaceGroupsItem["RemarksB"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksC"].isNull())
+			faceGroupsObject.remarksC = valueFaceGroupsFaceGroupsItem["RemarksC"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksD"].isNull())
+			faceGroupsObject.remarksD = valueFaceGroupsFaceGroupsItem["RemarksD"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksArrayA"].isNull())
+			faceGroupsObject.remarksArrayA = valueFaceGroupsFaceGroupsItem["RemarksArrayA"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["RemarksArrayB"].isNull())
+			faceGroupsObject.remarksArrayB = valueFaceGroupsFaceGroupsItem["RemarksArrayB"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["ExternalId"].isNull())
+			faceGroupsObject.externalId = valueFaceGroupsFaceGroupsItem["ExternalId"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["ImageCount"].isNull())
+			faceGroupsObject.imageCount = std::stoi(valueFaceGroupsFaceGroupsItem["ImageCount"].asString());
 		auto groupCoverFaceNode = value["GroupCoverFace"];
 		if(!groupCoverFaceNode["FaceId"].isNull())
 			faceGroupsObject.groupCoverFace.faceId = groupCoverFaceNode["FaceId"].asString();

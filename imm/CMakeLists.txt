@@ -105,6 +105,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetDocIndexTaskResult.h
 	include/alibabacloud/imm/model/GetImageRequest.h
 	include/alibabacloud/imm/model/GetImageResult.h
+	include/alibabacloud/imm/model/GetImageCroppingSuggestionsRequest.h
+	include/alibabacloud/imm/model/GetImageCroppingSuggestionsResult.h
 	include/alibabacloud/imm/model/GetImageJobRequest.h
 	include/alibabacloud/imm/model/GetImageJobResult.h
 	include/alibabacloud/imm/model/GetMediaMetaRequest.h
@@ -258,6 +260,8 @@ set(imm_src
 	src/model/GetDocIndexTaskResult.cc
 	src/model/GetImageRequest.cc
 	src/model/GetImageResult.cc
+	src/model/GetImageCroppingSuggestionsRequest.cc
+	src/model/GetImageCroppingSuggestionsResult.cc
 	src/model/GetImageJobRequest.cc
 	src/model/GetImageJobResult.cc
 	src/model/GetMediaMetaRequest.cc

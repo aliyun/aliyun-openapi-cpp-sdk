@@ -38,6 +38,17 @@ void UpdateFaceGroupRequest::setProject(const std::string& project)
 	setParameter("Project", project);
 }
 
+std::string UpdateFaceGroupRequest::getExternalId()const
+{
+	return externalId_;
+}
+
+void UpdateFaceGroupRequest::setExternalId(const std::string& externalId)
+{
+	externalId_ = externalId;
+	setParameter("ExternalId", externalId);
+}
+
 std::string UpdateFaceGroupRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -60,6 +71,28 @@ void UpdateFaceGroupRequest::setGroupId(const std::string& groupId)
 	setParameter("GroupId", groupId);
 }
 
+std::string UpdateFaceGroupRequest::getRemarksB()const
+{
+	return remarksB_;
+}
+
+void UpdateFaceGroupRequest::setRemarksB(const std::string& remarksB)
+{
+	remarksB_ = remarksB;
+	setParameter("RemarksB", remarksB);
+}
+
+std::string UpdateFaceGroupRequest::getRemarksA()const
+{
+	return remarksA_;
+}
+
+void UpdateFaceGroupRequest::setRemarksA(const std::string& remarksA)
+{
+	remarksA_ = remarksA;
+	setParameter("RemarksA", remarksA);
+}
+
 std::string UpdateFaceGroupRequest::getGroupName()const
 {
 	return groupName_;
@@ -69,6 +102,50 @@ void UpdateFaceGroupRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setParameter("GroupName", groupName);
+}
+
+std::string UpdateFaceGroupRequest::getRemarksArrayA()const
+{
+	return remarksArrayA_;
+}
+
+void UpdateFaceGroupRequest::setRemarksArrayA(const std::string& remarksArrayA)
+{
+	remarksArrayA_ = remarksArrayA;
+	setParameter("RemarksArrayA", remarksArrayA);
+}
+
+std::string UpdateFaceGroupRequest::getRemarksArrayB()const
+{
+	return remarksArrayB_;
+}
+
+void UpdateFaceGroupRequest::setRemarksArrayB(const std::string& remarksArrayB)
+{
+	remarksArrayB_ = remarksArrayB;
+	setParameter("RemarksArrayB", remarksArrayB);
+}
+
+std::string UpdateFaceGroupRequest::getRemarksD()const
+{
+	return remarksD_;
+}
+
+void UpdateFaceGroupRequest::setRemarksD(const std::string& remarksD)
+{
+	remarksD_ = remarksD;
+	setParameter("RemarksD", remarksD);
+}
+
+std::string UpdateFaceGroupRequest::getRemarksC()const
+{
+	return remarksC_;
+}
+
+void UpdateFaceGroupRequest::setRemarksC(const std::string& remarksC)
+{
+	remarksC_ = remarksC;
+	setParameter("RemarksC", remarksC);
 }
 
 std::string UpdateFaceGroupRequest::getSetId()const

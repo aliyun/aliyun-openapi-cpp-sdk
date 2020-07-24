@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setWatermarkType(const std::string& watermarkType);
 				std::string getTargetUri()const;
 				void setTargetUri(const std::string& targetUri);
+				std::string getModel()const;
+				void setModel(const std::string& model);
 				std::string getTargetImageType()const;
 				void setTargetImageType(const std::string& targetImageType);
 				std::string getImageUri()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string watermarkType_;
 				std::string targetUri_;
+				std::string model_;
 				std::string targetImageType_;
 				std::string imageUri_;
 

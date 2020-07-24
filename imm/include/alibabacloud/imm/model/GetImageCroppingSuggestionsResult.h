@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETPROJECTRESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_GETPROJECTRESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSRESULT_H_
+#define ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetProjectResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT GetImageCroppingSuggestionsResult : public ServiceResult
 			{
 			public:
+				struct CroppingSuggestionsItem
+				{
+					struct CroppingBoundary
+					{
+						int left;
+						int top;
+						int height;
+						int width;
+					};
+					std::string aspectRatio;
+					float score;
+					CroppingBoundary croppingBoundary;
+				};
 
 
-				GetProjectResult();
-				explicit GetProjectResult(const std::string &payload);
-				~GetProjectResult();
-				std::string getProject()const;
-				std::string getModifyTime()const;
-				std::string getType()const;
-				int getCU()const;
-				std::string getServiceRole()const;
-				std::string getEndpoint()const;
-				std::string getCreateTime()const;
-				std::string getRegionId()const;
-				std::string getBillingType()const;
+				GetImageCroppingSuggestionsResult();
+				explicit GetImageCroppingSuggestionsResult(const std::string &payload);
+				~GetImageCroppingSuggestionsResult();
+				std::string getImageUri()const;
+				std::vector<CroppingSuggestionsItem> getCroppingSuggestions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string project_;
-				std::string modifyTime_;
-				std::string type_;
-				int cU_;
-				std::string serviceRole_;
-				std::string endpoint_;
-				std::string createTime_;
-				std::string regionId_;
-				std::string billingType_;
+				std::string imageUri_;
+				std::vector<CroppingSuggestionsItem> croppingSuggestions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETPROJECTRESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSRESULT_H_

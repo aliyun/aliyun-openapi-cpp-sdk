@@ -55,6 +55,8 @@ void PutProjectResult::parse(const std::string &payload)
 		endpoint_ = value["Endpoint"].asString();
 	if(!value["BillingType"].isNull())
 		billingType_ = value["BillingType"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 
@@ -91,6 +93,11 @@ std::string PutProjectResult::getEndpoint()const
 std::string PutProjectResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string PutProjectResult::getRegionId()const
+{
+	return regionId_;
 }
 
 std::string PutProjectResult::getBillingType()const

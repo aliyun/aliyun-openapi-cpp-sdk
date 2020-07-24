@@ -106,6 +106,8 @@
 #include "model/GetDocIndexTaskResult.h"
 #include "model/GetImageRequest.h"
 #include "model/GetImageResult.h"
+#include "model/GetImageCroppingSuggestionsRequest.h"
+#include "model/GetImageCroppingSuggestionsResult.h"
 #include "model/GetImageJobRequest.h"
 #include "model/GetImageJobResult.h"
 #include "model/GetMediaMetaRequest.h"
@@ -307,6 +309,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetImageResult> GetImageOutcome;
 			typedef std::future<GetImageOutcome> GetImageOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetImageRequest&, const GetImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageAsyncHandler;
+			typedef Outcome<Error, Model::GetImageCroppingSuggestionsResult> GetImageCroppingSuggestionsOutcome;
+			typedef std::future<GetImageCroppingSuggestionsOutcome> GetImageCroppingSuggestionsOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetImageCroppingSuggestionsRequest&, const GetImageCroppingSuggestionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageCroppingSuggestionsAsyncHandler;
 			typedef Outcome<Error, Model::GetImageJobResult> GetImageJobOutcome;
 			typedef std::future<GetImageJobOutcome> GetImageJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetImageJobRequest&, const GetImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageJobAsyncHandler;
@@ -537,6 +542,9 @@ namespace AlibabaCloud
 			GetImageOutcome getImage(const Model::GetImageRequest &request)const;
 			void getImageAsync(const Model::GetImageRequest& request, const GetImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageOutcomeCallable getImageCallable(const Model::GetImageRequest& request) const;
+			GetImageCroppingSuggestionsOutcome getImageCroppingSuggestions(const Model::GetImageCroppingSuggestionsRequest &request)const;
+			void getImageCroppingSuggestionsAsync(const Model::GetImageCroppingSuggestionsRequest& request, const GetImageCroppingSuggestionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageCroppingSuggestionsOutcomeCallable getImageCroppingSuggestionsCallable(const Model::GetImageCroppingSuggestionsRequest& request) const;
 			GetImageJobOutcome getImageJob(const Model::GetImageJobRequest &request)const;
 			void getImageJobAsync(const Model::GetImageJobRequest& request, const GetImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageJobOutcomeCallable getImageJobCallable(const Model::GetImageJobRequest& request) const;

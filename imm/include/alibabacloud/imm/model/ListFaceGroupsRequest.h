@@ -37,27 +37,48 @@ namespace AlibabaCloud
 
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getRemarksBQuery()const;
+				void setRemarksBQuery(const std::string& remarksBQuery);
+				std::string getExternalId()const;
+				void setExternalId(const std::string& externalId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				int getLimit()const;
 				void setLimit(int limit);
+				std::string getRemarksArrayBQuery()const;
+				void setRemarksArrayBQuery(const std::string& remarksArrayBQuery);
 				std::string getOrder()const;
 				void setOrder(const std::string& order);
+				std::string getRemarksAQuery()const;
+				void setRemarksAQuery(const std::string& remarksAQuery);
 				std::string getOrderBy()const;
 				void setOrderBy(const std::string& orderBy);
+				std::string getRemarksDQuery()const;
+				void setRemarksDQuery(const std::string& remarksDQuery);
+				std::string getRemarksArrayAQuery()const;
+				void setRemarksArrayAQuery(const std::string& remarksArrayAQuery);
 				std::string getMarker()const;
 				void setMarker(const std::string& marker);
 				std::string getSetId()const;
 				void setSetId(const std::string& setId);
+				std::string getRemarksCQuery()const;
+				void setRemarksCQuery(const std::string& remarksCQuery);
 
             private:
 				std::string project_;
+				std::string remarksBQuery_;
+				std::string externalId_;
 				std::string accessKeyId_;
 				int limit_;
+				std::string remarksArrayBQuery_;
 				std::string order_;
+				std::string remarksAQuery_;
 				std::string orderBy_;
+				std::string remarksDQuery_;
+				std::string remarksArrayAQuery_;
 				std::string marker_;
 				std::string setId_;
+				std::string remarksCQuery_;
 
 			};
 		}

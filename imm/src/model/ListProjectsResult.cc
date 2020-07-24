@@ -59,6 +59,8 @@ void ListProjectsResult::parse(const std::string &payload)
 			projectsObject.type = valueProjectsProjectsItem["Type"].asString();
 		if(!valueProjectsProjectsItem["BillingType"].isNull())
 			projectsObject.billingType = valueProjectsProjectsItem["BillingType"].asString();
+		if(!valueProjectsProjectsItem["RegionId"].isNull())
+			projectsObject.regionId = valueProjectsProjectsItem["RegionId"].asString();
 		projects_.push_back(projectsObject);
 	}
 	if(!value["NextMarker"].isNull())

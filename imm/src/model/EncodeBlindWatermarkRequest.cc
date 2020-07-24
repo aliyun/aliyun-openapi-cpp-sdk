@@ -104,6 +104,17 @@ void EncodeBlindWatermarkRequest::setTargetUri(const std::string& targetUri)
 	setParameter("TargetUri", targetUri);
 }
 
+std::string EncodeBlindWatermarkRequest::getModel()const
+{
+	return model_;
+}
+
+void EncodeBlindWatermarkRequest::setModel(const std::string& model)
+{
+	model_ = model;
+	setParameter("Model", model);
+}
+
 std::string EncodeBlindWatermarkRequest::getTargetImageType()const
 {
 	return targetImageType_;

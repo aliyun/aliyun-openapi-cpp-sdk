@@ -43,6 +43,7 @@ namespace AlibabaCloud
 				std::string getType()const;
 				std::string getServiceRole()const;
 				std::string getCreateTime()const;
+				std::string getRegionId()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 				std::string type_;
 				std::string serviceRole_;
 				std::string createTime_;
+				std::string regionId_;
 
 			};
 		}

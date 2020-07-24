@@ -82,6 +82,17 @@ void DecodeBlindWatermarkRequest::setTargetUri(const std::string& targetUri)
 	setParameter("TargetUri", targetUri);
 }
 
+std::string DecodeBlindWatermarkRequest::getModel()const
+{
+	return model_;
+}
+
+void DecodeBlindWatermarkRequest::setModel(const std::string& model)
+{
+	model_ = model;
+	setParameter("Model", model);
+}
+
 std::string DecodeBlindWatermarkRequest::getImageUri()const
 {
 	return imageUri_;

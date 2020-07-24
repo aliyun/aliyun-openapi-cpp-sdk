@@ -51,6 +51,8 @@ void UpdateProjectResult::parse(const std::string &payload)
 		cU_ = std::stoi(value["CU"].asString());
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 
@@ -82,5 +84,10 @@ std::string UpdateProjectResult::getServiceRole()const
 std::string UpdateProjectResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string UpdateProjectResult::getRegionId()const
+{
+	return regionId_;
 }
 

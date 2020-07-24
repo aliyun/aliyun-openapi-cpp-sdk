@@ -37,12 +37,26 @@ namespace AlibabaCloud
 
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getExternalId()const;
+				void setExternalId(const std::string& externalId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getRemarksB()const;
+				void setRemarksB(const std::string& remarksB);
+				std::string getRemarksA()const;
+				void setRemarksA(const std::string& remarksA);
 				std::string getGroupName()const;
 				void setGroupName(const std::string& groupName);
+				std::string getRemarksArrayA()const;
+				void setRemarksArrayA(const std::string& remarksArrayA);
+				std::string getRemarksArrayB()const;
+				void setRemarksArrayB(const std::string& remarksArrayB);
+				std::string getRemarksD()const;
+				void setRemarksD(const std::string& remarksD);
+				std::string getRemarksC()const;
+				void setRemarksC(const std::string& remarksC);
 				std::string getSetId()const;
 				void setSetId(const std::string& setId);
 				std::string getGroupCoverFaceId()const;
@@ -50,9 +64,16 @@ namespace AlibabaCloud
 
             private:
 				std::string project_;
+				std::string externalId_;
 				std::string accessKeyId_;
 				std::string groupId_;
+				std::string remarksB_;
+				std::string remarksA_;
 				std::string groupName_;
+				std::string remarksArrayA_;
+				std::string remarksArrayB_;
+				std::string remarksD_;
+				std::string remarksC_;
 				std::string setId_;
 				std::string groupCoverFaceId_;
 

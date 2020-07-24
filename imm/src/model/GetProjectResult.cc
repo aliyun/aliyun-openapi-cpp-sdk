@@ -55,6 +55,8 @@ void GetProjectResult::parse(const std::string &payload)
 		cU_ = std::stoi(value["CU"].asString());
 	if(!value["BillingType"].isNull())
 		billingType_ = value["BillingType"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 
@@ -91,6 +93,11 @@ std::string GetProjectResult::getEndpoint()const
 std::string GetProjectResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string GetProjectResult::getRegionId()const
+{
+	return regionId_;
 }
 
 std::string GetProjectResult::getBillingType()const

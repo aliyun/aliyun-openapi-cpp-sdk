@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_DECODEBLINDWATERMARKREQUEST_H_
-#define ALIBABACLOUD_IMM_MODEL_DECODEBLINDWATERMARKREQUEST_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT DecodeBlindWatermarkRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IMM_EXPORT GetImageCroppingSuggestionsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DecodeBlindWatermarkRequest();
-				~DecodeBlindWatermarkRequest();
+				GetImageCroppingSuggestionsRequest();
+				~GetImageCroppingSuggestionsRequest();
 
-				int getImageQuality()const;
-				void setImageQuality(int imageQuality);
 				std::string getProject()const;
 				void setProject(const std::string& project);
+				std::string getAspectRatios()const;
+				void setAspectRatios(const std::string& aspectRatios);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getWatermarkType()const;
-				void setWatermarkType(const std::string& watermarkType);
-				std::string getTargetUri()const;
-				void setTargetUri(const std::string& targetUri);
-				std::string getModel()const;
-				void setModel(const std::string& model);
 				std::string getImageUri()const;
 				void setImageUri(const std::string& imageUri);
-				std::string getOriginalImageUri()const;
-				void setOriginalImageUri(const std::string& originalImageUri);
 
             private:
-				int imageQuality_;
 				std::string project_;
+				std::string aspectRatios_;
 				std::string accessKeyId_;
-				std::string watermarkType_;
-				std::string targetUri_;
-				std::string model_;
 				std::string imageUri_;
-				std::string originalImageUri_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_DECODEBLINDWATERMARKREQUEST_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_GETIMAGECROPPINGSUGGESTIONSREQUEST_H_

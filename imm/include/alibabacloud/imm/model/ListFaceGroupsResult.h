@@ -51,8 +51,16 @@ namespace AlibabaCloud
 					std::string groupName;
 					std::string modifyTime;
 					std::string createTime;
-					int faceCount;
+					std::string externalId;
+					std::string remarksA;
+					std::string remarksB;
 					std::string groupId;
+					std::string remarksArrayB;
+					std::string remarksC;
+					int imageCount;
+					std::string remarksD;
+					std::string remarksArrayA;
+					int faceCount;
 				};
 
 

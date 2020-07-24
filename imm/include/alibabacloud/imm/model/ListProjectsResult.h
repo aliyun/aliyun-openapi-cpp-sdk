@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string serviceRole;
 					std::string endpoint;
 					std::string createTime;
+					std::string regionId;
 					std::string billingType;
 				};
 

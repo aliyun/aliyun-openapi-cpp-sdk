@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				std::string getServiceRole()const;
 				std::string getEndpoint()const;
 				std::string getCreateTime()const;
+				std::string getRegionId()const;
 				std::string getBillingType()const;
 
 			protected:
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				std::string serviceRole_;
 				std::string endpoint_;
 				std::string createTime_;
+				std::string regionId_;
 				std::string billingType_;
 
 			};
