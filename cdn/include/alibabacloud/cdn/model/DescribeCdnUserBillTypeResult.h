@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGRESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPERESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveAppRecordConfigResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserBillTypeResult : public ServiceResult
 			{
 			public:
+				struct BillTypeDataItem
+				{
+					std::string billType;
+					std::string billingCycle;
+					std::string endTime;
+					std::string startTime;
+					std::string product;
+					std::string dimension;
+				};
 
 
-				DeleteLiveAppRecordConfigResult();
-				explicit DeleteLiveAppRecordConfigResult(const std::string &payload);
-				~DeleteLiveAppRecordConfigResult();
+				DescribeCdnUserBillTypeResult();
+				explicit DescribeCdnUserBillTypeResult(const std::string &payload);
+				~DescribeCdnUserBillTypeResult();
+				std::vector<BillTypeDataItem> getBillTypeData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<BillTypeDataItem> billTypeData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPERESULT_H_

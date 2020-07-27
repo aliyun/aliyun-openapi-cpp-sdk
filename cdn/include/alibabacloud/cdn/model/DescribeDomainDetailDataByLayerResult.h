@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_STARTMIXSTREAMSSERVICERESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_STARTMIXSTREAMSSERVICERESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINDETAILDATABYLAYERRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINDETAILDATABYLAYERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT StartMixStreamsServiceResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeDomainDetailDataByLayerResult : public ServiceResult
 			{
 			public:
-				struct MixStreamsInfo
+				struct DataModule
 				{
-					std::string streamName;
+					long acc;
+					float ipv6Bps;
+					std::string httpCode;
+					float ipv6Qps;
+					float bps;
+					long traf;
+					long ipv6Acc;
 					std::string domainName;
-					std::string appName;
+					float qps;
+					long ipv6Traf;
+					std::string timeStamp;
 				};
 
 
-				StartMixStreamsServiceResult();
-				explicit StartMixStreamsServiceResult(const std::string &payload);
-				~StartMixStreamsServiceResult();
-				std::vector<MixStreamsInfo> getMixStreamsInfoList()const;
+				DescribeDomainDetailDataByLayerResult();
+				explicit DescribeDomainDetailDataByLayerResult(const std::string &payload);
+				~DescribeDomainDetailDataByLayerResult();
+				std::vector<DataModule> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<MixStreamsInfo> mixStreamsInfoList_;
+				std::vector<DataModule> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_STARTMIXSTREAMSSERVICERESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINDETAILDATABYLAYERRESULT_H_

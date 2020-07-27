@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveDomainMappingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeRefreshTaskByIdRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteLiveDomainMappingRequest();
-				~DeleteLiveDomainMappingRequest();
+				DescribeRefreshTaskByIdRequest();
+				~DescribeRefreshTaskByIdRequest();
 
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPullDomain()const;
-				void setPullDomain(const std::string& pullDomain);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getPushDomain()const;
-				void setPushDomain(const std::string& pushDomain);
 
             private:
+				int pageNumber_;
+				int pageSize_;
+				std::string taskId_;
 				long ownerId_;
-				std::string pullDomain_;
-				std::string securityToken_;
-				std::string pushDomain_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_

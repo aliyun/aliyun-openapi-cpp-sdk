@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGRESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGRESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPEREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
@@ -29,21 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveDomainMappingResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserBillTypeRequest : public RpcServiceRequest
 			{
+
 			public:
+				DescribeCdnUserBillTypeRequest();
+				~DescribeCdnUserBillTypeRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-				DeleteLiveDomainMappingResult();
-				explicit DeleteLiveDomainMappingResult(const std::string &payload);
-				~DeleteLiveDomainMappingResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
+				std::string startTime_;
+				std::string endTime_;
+				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVEDOMAINMAPPINGRESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERBILLTYPEREQUEST_H_

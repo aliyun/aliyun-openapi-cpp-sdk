@@ -126,14 +126,3 @@ void SetDomainServerCertificateRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string SetDomainServerCertificateRequest::getRegion()const
-{
-	return region_;
-}
-
-void SetDomainServerCertificateRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
-}
-

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPSNAPSHOTCONFIGRESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPSNAPSHOTCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINNAMESOFVERSIONRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINNAMESOFVERSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveAppSnapshotConfigResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeDomainNamesOfVersionResult : public ServiceResult
 			{
 			public:
+				struct Content
+				{
+					std::string domainId;
+					std::string domainName;
+				};
 
 
-				DeleteLiveAppSnapshotConfigResult();
-				explicit DeleteLiveAppSnapshotConfigResult(const std::string &payload);
-				~DeleteLiveAppSnapshotConfigResult();
+				DescribeDomainNamesOfVersionResult();
+				explicit DescribeDomainNamesOfVersionResult(const std::string &payload);
+				~DescribeDomainNamesOfVersionResult();
+				int getTotalCount()const;
+				std::vector<Content> getContents()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				std::vector<Content> contents_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPSNAPSHOTCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINNAMESOFVERSIONRESULT_H_

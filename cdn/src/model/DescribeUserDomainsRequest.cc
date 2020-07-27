@@ -131,6 +131,17 @@ void DescribeUserDomainsRequest::setFuncFilter(const std::string& funcFilter)
 	setParameter("FuncFilter", funcFilter);
 }
 
+std::string DescribeUserDomainsRequest::getCoverage()const
+{
+	return coverage_;
+}
+
+void DescribeUserDomainsRequest::setCoverage(const std::string& coverage)
+{
+	coverage_ = coverage;
+	setParameter("Coverage", coverage);
+}
+
 std::string DescribeUserDomainsRequest::getDomainName()const
 {
 	return domainName_;

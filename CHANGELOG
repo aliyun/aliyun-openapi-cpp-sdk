@@ -1,3 +1,6 @@
+2020-07-27 Version: 1.36.539
+- Add HSF apis.
+
 2020-07-24 Version: 1.36.538
 - Edit ListTraceApp api with add tags.
 - Edit SearchTraceAppByName api with add tags.

@@ -63,6 +63,8 @@ void DescribeUserDomainsResult::parse(const std::string &payload)
 			domainsObject.resourceGroupId = valueDomainsPageData["ResourceGroupId"].asString();
 		if(!valueDomainsPageData["Sandbox"].isNull())
 			domainsObject.sandbox = valueDomainsPageData["Sandbox"].asString();
+		if(!valueDomainsPageData["Coverage"].isNull())
+			domainsObject.coverage = valueDomainsPageData["Coverage"].asString();
 		auto allSourcesNode = allDomainsNode["Sources"]["Source"];
 		for (auto allDomainsNodeSourcesSource : allSourcesNode)
 		{

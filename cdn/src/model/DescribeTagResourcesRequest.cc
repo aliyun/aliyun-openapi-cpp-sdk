@@ -27,17 +27,6 @@ DescribeTagResourcesRequest::DescribeTagResourcesRequest() :
 DescribeTagResourcesRequest::~DescribeTagResourcesRequest()
 {}
 
-std::string DescribeTagResourcesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void DescribeTagResourcesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string DescribeTagResourcesRequest::getScope()const
 {
 	return scope_;

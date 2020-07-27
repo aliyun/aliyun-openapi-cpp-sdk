@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveAppRecordConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserConfigsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteLiveAppRecordConfigRequest();
-				~DeleteLiveAppRecordConfigRequest();
+				DescribeCdnUserConfigsRequest();
+				~DescribeCdnUserConfigsRequest();
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				std::string getFunctionName()const;
+				void setFunctionName(const std::string& functionName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 
             private:
-				std::string domainName_;
+				std::string functionName_;
 				long ownerId_;
-				std::string appName_;
-				std::string securityToken_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVEAPPRECORDCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSREQUEST_H_

@@ -53,8 +53,8 @@ void DescribeRefreshQuotaResult::parse(const std::string &payload)
 		blockQuota_ = value["BlockQuota"].asString();
 	if(!value["PreloadRemain"].isNull())
 		preloadRemain_ = value["PreloadRemain"].asString();
-	if(!value["blockRemain"].isNull())
-		blockRemain_ = value["blockRemain"].asString();
+	if(!value["BlockRemain"].isNull())
+		blockRemain_ = value["BlockRemain"].asString();
 	if(!value["RegexQuota"].isNull())
 		regexQuota_ = value["RegexQuota"].asString();
 	if(!value["RegexRemain"].isNull())

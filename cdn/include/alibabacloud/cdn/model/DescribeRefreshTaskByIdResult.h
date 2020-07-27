@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DELETELIVESTREAMTRANSCODERESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DELETELIVESTREAMTRANSCODERESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DeleteLiveStreamTranscodeResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeRefreshTaskByIdResult : public ServiceResult
 			{
 			public:
+				struct CDNTask
+				{
+					std::string status;
+					std::string objectType;
+					std::string objectPath;
+					std::string taskId;
+					std::string description;
+					std::string creationTime;
+					std::string process;
+				};
 
 
-				DeleteLiveStreamTranscodeResult();
-				explicit DeleteLiveStreamTranscodeResult(const std::string &payload);
-				~DeleteLiveStreamTranscodeResult();
+				DescribeRefreshTaskByIdResult();
+				explicit DescribeRefreshTaskByIdResult(const std::string &payload);
+				~DescribeRefreshTaskByIdResult();
+				long getTotalCount()const;
+				std::vector<CDNTask> getTasks()const;
+				long getPageSize()const;
+				long getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long totalCount_;
+				std::vector<CDNTask> tasks_;
+				long pageSize_;
+				long pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DELETELIVESTREAMTRANSCODERESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDRESULT_H_

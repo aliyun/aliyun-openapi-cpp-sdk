@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_STOPMIXSTREAMSSERVICERESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_STOPMIXSTREAMSSERVICERESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT StopMixStreamsServiceResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserConfigsResult : public ServiceResult
 			{
 			public:
-				struct MixStreamsInfo
+				struct Config
 				{
-					std::string streamName;
-					std::string domainName;
-					std::string appName;
+					std::string functionName;
+					std::string argValue;
+					std::string argName;
 				};
 
 
-				StopMixStreamsServiceResult();
-				explicit StopMixStreamsServiceResult(const std::string &payload);
-				~StopMixStreamsServiceResult();
-				std::vector<MixStreamsInfo> getMixStreamsInfoList()const;
+				DescribeCdnUserConfigsResult();
+				explicit DescribeCdnUserConfigsResult(const std::string &payload);
+				~DescribeCdnUserConfigsResult();
+				std::vector<Config> getConfigs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<MixStreamsInfo> mixStreamsInfoList_;
+				std::vector<Config> configs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_STOPMIXSTREAMSSERVICERESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERCONFIGSRESULT_H_

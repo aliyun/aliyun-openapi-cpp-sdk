@@ -35,20 +35,20 @@ namespace AlibabaCloud
 				PushObjectCacheRequest();
 				~PushObjectCacheRequest();
 
-				std::string getArea()const;
-				void setArea(const std::string& area);
 				std::string getObjectPath()const;
 				void setObjectPath(const std::string& objectPath);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getArea()const;
+				void setArea(const std::string& area);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
             private:
-				std::string area_;
 				std::string objectPath_;
-				long ownerId_;
 				std::string securityToken_;
+				std::string area_;
+				long ownerId_;
 
 			};
 		}

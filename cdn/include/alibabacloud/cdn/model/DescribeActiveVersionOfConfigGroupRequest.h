@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBETAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBETAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEACTIVEVERSIONOFCONFIGGROUPREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBEACTIVEVERSIONOFCONFIGGROUPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeTagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeActiveVersionOfConfigGroupRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string key;
-					std::string value;
-				};
 
 			public:
-				DescribeTagResourcesRequest();
-				~DescribeTagResourcesRequest();
+				DescribeActiveVersionOfConfigGroupRequest();
+				~DescribeActiveVersionOfConfigGroupRequest();
 
-				std::string getScope()const;
-				void setScope(const std::string& scope);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
+				std::string getEnv()const;
+				void setEnv(const std::string& env);
+				std::string getConfigGroupId()const;
+				void setConfigGroupId(const std::string& configGroupId);
 
             private:
-				std::string scope_;
-				std::vector<Tag> tag_;
-				std::vector<std::string> resourceId_;
 				long ownerId_;
-				std::string resourceType_;
+				std::string env_;
+				std::string configGroupId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBETAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEACTIVEVERSIONOFCONFIGGROUPREQUEST_H_
