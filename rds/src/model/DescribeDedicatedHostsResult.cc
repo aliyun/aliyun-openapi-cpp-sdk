@@ -95,6 +95,10 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.storageUsed = valueDedicatedHostsDedicatedHostsItem["StorageUsed"].asString();
 		if(!valueDedicatedHostsDedicatedHostsItem["ImageCategory"].isNull())
 			dedicatedHostsObject.imageCategory = valueDedicatedHostsDedicatedHostsItem["ImageCategory"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["DedicatedHostGroupId"].isNull())
+			dedicatedHostsObject.dedicatedHostGroupId = valueDedicatedHostsDedicatedHostsItem["DedicatedHostGroupId"].asString();
+		if(!valueDedicatedHostsDedicatedHostsItem["Engine"].isNull())
+			dedicatedHostsObject.engine = valueDedicatedHostsDedicatedHostsItem["Engine"].asString();
 		dedicatedHosts_.push_back(dedicatedHostsObject);
 	}
 	if(!value["DedicatedHostGroupId"].isNull())

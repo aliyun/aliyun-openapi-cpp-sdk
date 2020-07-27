@@ -71,6 +71,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateDedicatedHostUserResult.h
 	include/alibabacloud/rds/model/CreateDiagnosticReportRequest.h
 	include/alibabacloud/rds/model/CreateDiagnosticReportResult.h
+	include/alibabacloud/rds/model/CreateHostAccountRequest.h
+	include/alibabacloud/rds/model/CreateHostAccountResult.h
 	include/alibabacloud/rds/model/CreateMigrateTaskRequest.h
 	include/alibabacloud/rds/model/CreateMigrateTaskResult.h
 	include/alibabacloud/rds/model/CreateMigrateTaskForSQLServerRequest.h
@@ -97,6 +99,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteDedicatedHostAccountResult.h
 	include/alibabacloud/rds/model/DeleteDedicatedHostGroupRequest.h
 	include/alibabacloud/rds/model/DeleteDedicatedHostGroupResult.h
+	include/alibabacloud/rds/model/DeleteHostAccountRequest.h
+	include/alibabacloud/rds/model/DeleteHostAccountResult.h
 	include/alibabacloud/rds/model/DeleteParameterGroupRequest.h
 	include/alibabacloud/rds/model/DeleteParameterGroupResult.h
 	include/alibabacloud/rds/model/DescibeImportsFromDatabaseRequest.h
@@ -203,6 +207,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeEventsResult.h
 	include/alibabacloud/rds/model/DescribeHASwitchConfigRequest.h
 	include/alibabacloud/rds/model/DescribeHASwitchConfigResult.h
+	include/alibabacloud/rds/model/DescribeHostAccountsRequest.h
+	include/alibabacloud/rds/model/DescribeHostAccountsResult.h
 	include/alibabacloud/rds/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/rds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/rds/model/DescribeInstanceCrossBackupPolicyRequest.h
@@ -237,6 +243,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeParametersResult.h
 	include/alibabacloud/rds/model/DescribePriceRequest.h
 	include/alibabacloud/rds/model/DescribePriceResult.h
+	include/alibabacloud/rds/model/DescribeRdsResourceSettingsRequest.h
+	include/alibabacloud/rds/model/DescribeRdsResourceSettingsResult.h
 	include/alibabacloud/rds/model/DescribeReadDBInstanceDelayRequest.h
 	include/alibabacloud/rds/model/DescribeReadDBInstanceDelayResult.h
 	include/alibabacloud/rds/model/DescribeRegionsRequest.h
@@ -399,6 +407,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ResetAccountForPGResult.h
 	include/alibabacloud/rds/model/ResetAccountPasswordRequest.h
 	include/alibabacloud/rds/model/ResetAccountPasswordResult.h
+	include/alibabacloud/rds/model/ResetHostAccountPasswordRequest.h
+	include/alibabacloud/rds/model/ResetHostAccountPasswordResult.h
 	include/alibabacloud/rds/model/RestartDBInstanceRequest.h
 	include/alibabacloud/rds/model/RestartDBInstanceResult.h
 	include/alibabacloud/rds/model/RestartDedicatedHostRequest.h
@@ -492,6 +502,8 @@ set(rds_src
 	src/model/CreateDedicatedHostUserResult.cc
 	src/model/CreateDiagnosticReportRequest.cc
 	src/model/CreateDiagnosticReportResult.cc
+	src/model/CreateHostAccountRequest.cc
+	src/model/CreateHostAccountResult.cc
 	src/model/CreateMigrateTaskRequest.cc
 	src/model/CreateMigrateTaskResult.cc
 	src/model/CreateMigrateTaskForSQLServerRequest.cc
@@ -518,6 +530,8 @@ set(rds_src
 	src/model/DeleteDedicatedHostAccountResult.cc
 	src/model/DeleteDedicatedHostGroupRequest.cc
 	src/model/DeleteDedicatedHostGroupResult.cc
+	src/model/DeleteHostAccountRequest.cc
+	src/model/DeleteHostAccountResult.cc
 	src/model/DeleteParameterGroupRequest.cc
 	src/model/DeleteParameterGroupResult.cc
 	src/model/DescibeImportsFromDatabaseRequest.cc
@@ -624,6 +638,8 @@ set(rds_src
 	src/model/DescribeEventsResult.cc
 	src/model/DescribeHASwitchConfigRequest.cc
 	src/model/DescribeHASwitchConfigResult.cc
+	src/model/DescribeHostAccountsRequest.cc
+	src/model/DescribeHostAccountsResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/DescribeInstanceCrossBackupPolicyRequest.cc
@@ -658,6 +674,8 @@ set(rds_src
 	src/model/DescribeParametersResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
+	src/model/DescribeRdsResourceSettingsRequest.cc
+	src/model/DescribeRdsResourceSettingsResult.cc
 	src/model/DescribeReadDBInstanceDelayRequest.cc
 	src/model/DescribeReadDBInstanceDelayResult.cc
 	src/model/DescribeRegionsRequest.cc
@@ -820,6 +838,8 @@ set(rds_src
 	src/model/ResetAccountForPGResult.cc
 	src/model/ResetAccountPasswordRequest.cc
 	src/model/ResetAccountPasswordResult.cc
+	src/model/ResetHostAccountPasswordRequest.cc
+	src/model/ResetHostAccountPasswordResult.cc
 	src/model/RestartDBInstanceRequest.cc
 	src/model/RestartDBInstanceResult.cc
 	src/model/RestartDedicatedHostRequest.cc

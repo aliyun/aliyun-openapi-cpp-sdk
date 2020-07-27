@@ -93,6 +93,17 @@ void ModifyBackupPolicyRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string ModifyBackupPolicyRequest::getBackupInterval()const
+{
+	return backupInterval_;
+}
+
+void ModifyBackupPolicyRequest::setBackupInterval(const std::string& backupInterval)
+{
+	backupInterval_ = backupInterval;
+	setParameter("BackupInterval", backupInterval);
+}
+
 std::string ModifyBackupPolicyRequest::getDuplicationContent()const
 {
 	return duplicationContent_;
@@ -300,6 +311,17 @@ void ModifyBackupPolicyRequest::setArchiveBackupRetentionPeriod(const std::strin
 {
 	archiveBackupRetentionPeriod_ = archiveBackupRetentionPeriod;
 	setParameter("ArchiveBackupRetentionPeriod", archiveBackupRetentionPeriod);
+}
+
+std::string ModifyBackupPolicyRequest::getCategory()const
+{
+	return category_;
+}
+
+void ModifyBackupPolicyRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 
 std::string ModifyBackupPolicyRequest::getLogBackupRetentionPeriod()const

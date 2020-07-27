@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				DescribeBackupPolicyResult();
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
+				std::string getCategory()const;
 				std::string getDuplication()const;
 				std::string getArchiveBackupRetentionPeriod()const;
 				std::string getArchiveBackupKeepPolicy()const;
@@ -65,12 +66,15 @@ namespace AlibabaCloud
 				std::string getBackupLog()const;
 				std::string getEnableBackupLog()const;
 				std::string getLocalLogRetentionSpace()const;
+				int getSupportReleasedKeep()const;
 				int getBackupRetentionPeriod()const;
 				std::string getDuplicationContent()const;
+				std::string getBackupInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string category_;
 				std::string duplication_;
 				std::string archiveBackupRetentionPeriod_;
 				std::string archiveBackupKeepPolicy_;
@@ -89,8 +93,10 @@ namespace AlibabaCloud
 				std::string backupLog_;
 				std::string enableBackupLog_;
 				std::string localLogRetentionSpace_;
+				int supportReleasedKeep_;
 				int backupRetentionPeriod_;
 				std::string duplicationContent_;
+				std::string backupInterval_;
 
 			};
 		}

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string dedicatedHostId;
 					std::string createdTime;
 					std::string endTime;
+					std::string dedicatedHostGroupId;
 					std::string bastionInstanceId;
 					std::string imageCategory;
 					std::string hostStorage;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 					std::string memoryUsed;
 					std::string cpuUsed;
 					std::string hostName;
+					std::string engine;
 					std::string allocationStatus;
 					std::string memAllocationRatio;
 					std::string zoneId;

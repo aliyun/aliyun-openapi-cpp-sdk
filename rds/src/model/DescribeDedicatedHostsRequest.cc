@@ -126,6 +126,17 @@ void DescribeDedicatedHostsRequest::setOrderId(long orderId)
 	setParameter("OrderId", std::to_string(orderId));
 }
 
+std::string DescribeDedicatedHostsRequest::getDedicatedHostId()const
+{
+	return dedicatedHostId_;
+}
+
+void DescribeDedicatedHostsRequest::setDedicatedHostId(const std::string& dedicatedHostId)
+{
+	dedicatedHostId_ = dedicatedHostId;
+	setParameter("DedicatedHostId", dedicatedHostId);
+}
+
 long DescribeDedicatedHostsRequest::getOwnerId()const
 {
 	return ownerId_;

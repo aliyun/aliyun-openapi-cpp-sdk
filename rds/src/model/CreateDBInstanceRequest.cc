@@ -258,6 +258,17 @@ void CreateDBInstanceRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+std::string CreateDBInstanceRequest::getStorageAutoScale()const
+{
+	return storageAutoScale_;
+}
+
+void CreateDBInstanceRequest::setStorageAutoScale(const std::string& storageAutoScale)
+{
+	storageAutoScale_ = storageAutoScale;
+	setParameter("StorageAutoScale", storageAutoScale);
+}
+
 std::string CreateDBInstanceRequest::getInstanceNetworkType()const
 {
 	return instanceNetworkType_;
@@ -443,6 +454,28 @@ void CreateDBInstanceRequest::setUsedTime(const std::string& usedTime)
 {
 	usedTime_ = usedTime;
 	setParameter("UsedTime", usedTime);
+}
+
+int CreateDBInstanceRequest::getStorageUpperBound()const
+{
+	return storageUpperBound_;
+}
+
+void CreateDBInstanceRequest::setStorageUpperBound(int storageUpperBound)
+{
+	storageUpperBound_ = storageUpperBound;
+	setParameter("StorageUpperBound", std::to_string(storageUpperBound));
+}
+
+int CreateDBInstanceRequest::getStorageThreshold()const
+{
+	return storageThreshold_;
+}
+
+void CreateDBInstanceRequest::setStorageThreshold(int storageThreshold)
+{
+	storageThreshold_ = storageThreshold;
+	setParameter("StorageThreshold", std::to_string(storageThreshold));
 }
 
 std::string CreateDBInstanceRequest::getVPCId()const

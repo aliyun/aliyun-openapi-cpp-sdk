@@ -91,6 +91,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.copyOnlyBackup = valueItemsBackup["CopyOnlyBackup"].asString();
 		if(!valueItemsBackup["StorageClass"].isNull())
 			itemsObject.storageClass = valueItemsBackup["StorageClass"].asString();
+		if(!valueItemsBackup["IsAvail"].isNull())
+			itemsObject.isAvail = std::stoi(valueItemsBackup["IsAvail"].asString());
 		items_.push_back(itemsObject);
 	}
 	if(!value["TotalRecordCount"].isNull())

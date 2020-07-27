@@ -71,6 +71,17 @@ void DescribeBackupPolicyRequest::setBackupPolicyMode(const std::string& backupP
 	setParameter("BackupPolicyMode", backupPolicyMode);
 }
 
+std::string DescribeBackupPolicyRequest::getReleasedKeepPolicy()const
+{
+	return releasedKeepPolicy_;
+}
+
+void DescribeBackupPolicyRequest::setReleasedKeepPolicy(const std::string& releasedKeepPolicy)
+{
+	releasedKeepPolicy_ = releasedKeepPolicy;
+	setParameter("ReleasedKeepPolicy", releasedKeepPolicy);
+}
+
 std::string DescribeBackupPolicyRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

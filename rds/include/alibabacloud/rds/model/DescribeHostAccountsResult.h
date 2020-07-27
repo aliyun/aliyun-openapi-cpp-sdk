@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESBYEXPIRETIMERESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESBYEXPIRETIMERESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeDBInstancesByExpireTimeResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeHostAccountsResult : public ServiceResult
 			{
 			public:
-				struct DBInstanceExpireTime
+				struct AccountsItem
 				{
-					std::string dBInstanceStatus;
+					std::string accountDescription;
+					std::string accountStatus;
 					std::string dBInstanceId;
-					std::string lockMode;
-					std::string payType;
-					std::string expireTime;
-					std::string dBInstanceDescription;
+					std::string accountType;
+					std::string accountName;
 				};
 
 
-				DescribeDBInstancesByExpireTimeResult();
-				explicit DescribeDBInstancesByExpireTimeResult(const std::string &payload);
-				~DescribeDBInstancesByExpireTimeResult();
-				int getTotalRecordCount()const;
-				int getPageRecordCount()const;
-				int getPageNumber()const;
-				std::vector<DBInstanceExpireTime> getItems()const;
+				DescribeHostAccountsResult();
+				explicit DescribeHostAccountsResult(const std::string &payload);
+				~DescribeHostAccountsResult();
+				std::vector<AccountsItem> getAccounts()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalRecordCount_;
-				int pageRecordCount_;
-				int pageNumber_;
-				std::vector<DBInstanceExpireTime> items_;
+				std::vector<AccountsItem> accounts_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDBINSTANCESBYEXPIRETIMERESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSRESULT_H_

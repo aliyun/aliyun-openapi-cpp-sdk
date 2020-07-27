@@ -37,9 +37,9 @@ namespace AlibabaCloud
 					struct Extra
 					{
 						std::string replicaGroupStatus;
-						std::vector<std::string> dBInstanceId;
 						std::string replicaGroupID;
 						std::string activeReplicaDBInstanceID;
+						std::vector<std::string> dBInstanceIds;
 					};
 					struct SlaveZone
 					{

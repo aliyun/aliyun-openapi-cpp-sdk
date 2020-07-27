@@ -85,7 +85,18 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		releasedKeepPolicy_ = value["ReleasedKeepPolicy"].asString();
 	if(!value["LogBackupLocalRetentionNumber"].isNull())
 		logBackupLocalRetentionNumber_ = std::stoi(value["LogBackupLocalRetentionNumber"].asString());
+	if(!value["Category"].isNull())
+		category_ = value["Category"].asString();
+	if(!value["SupportReleasedKeep"].isNull())
+		supportReleasedKeep_ = std::stoi(value["SupportReleasedKeep"].asString());
+	if(!value["BackupInterval"].isNull())
+		backupInterval_ = value["BackupInterval"].asString();
 
+}
+
+std::string DescribeBackupPolicyResult::getCategory()const
+{
+	return category_;
 }
 
 std::string DescribeBackupPolicyResult::getDuplication()const
@@ -178,6 +189,11 @@ std::string DescribeBackupPolicyResult::getLocalLogRetentionSpace()const
 	return localLogRetentionSpace_;
 }
 
+int DescribeBackupPolicyResult::getSupportReleasedKeep()const
+{
+	return supportReleasedKeep_;
+}
+
 int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 {
 	return backupRetentionPeriod_;
@@ -186,5 +202,10 @@ int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 std::string DescribeBackupPolicyResult::getDuplicationContent()const
 {
 	return duplicationContent_;
+}
+
+std::string DescribeBackupPolicyResult::getBackupInterval()const
+{
+	return backupInterval_;
 }
 

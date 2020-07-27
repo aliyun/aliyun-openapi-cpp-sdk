@@ -75,6 +75,26 @@ void DescribeDedicatedHostGroupsResult::parse(const std::string &payload)
 			dedicatedHostGroupsObject.bastionInstanceId = valueDedicatedHostGroupsDedicatedHostGroupsItem["BastionInstanceId"].asString();
 		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["OpenPermission"].isNull())
 			dedicatedHostGroupsObject.openPermission = valueDedicatedHostGroupsDedicatedHostGroupsItem["OpenPermission"].asString();
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["MemUtility"].isNull())
+			dedicatedHostGroupsObject.memUtility = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["MemUtility"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["MemUsedAmount"].isNull())
+			dedicatedHostGroupsObject.memUsedAmount = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["MemUsedAmount"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskUtility"].isNull())
+			dedicatedHostGroupsObject.diskUtility = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskUtility"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskUsedAmount"].isNull())
+			dedicatedHostGroupsObject.diskUsedAmount = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskUsedAmount"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["CpuAllocateRation"].isNull())
+			dedicatedHostGroupsObject.cpuAllocateRation = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["CpuAllocateRation"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["CpuAllocatedAmount"].isNull())
+			dedicatedHostGroupsObject.cpuAllocatedAmount = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["CpuAllocatedAmount"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["MemAllocateRation"].isNull())
+			dedicatedHostGroupsObject.memAllocateRation = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["MemAllocateRation"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["MemAllocatedAmount"].isNull())
+			dedicatedHostGroupsObject.memAllocatedAmount = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["MemAllocatedAmount"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskAllocateRation"].isNull())
+			dedicatedHostGroupsObject.diskAllocateRation = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskAllocateRation"].asString());
+		if(!valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskAllocatedAmount"].isNull())
+			dedicatedHostGroupsObject.diskAllocatedAmount = std::stof(valueDedicatedHostGroupsDedicatedHostGroupsItem["DiskAllocatedAmount"].asString());
 		auto allZoneIDList = value["ZoneIDList"]["ZoneIDList"];
 		for (auto value : allZoneIDList)
 			dedicatedHostGroupsObject.zoneIDList.push_back(value.asString());

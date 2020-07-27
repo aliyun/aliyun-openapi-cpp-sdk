@@ -53,6 +53,8 @@ void DescribeDBInstancesByExpireTimeResult::parse(const std::string &payload)
 			itemsObject.dBInstanceStatus = valueItemsDBInstanceExpireTime["DBInstanceStatus"].asString();
 		if(!valueItemsDBInstanceExpireTime["LockMode"].isNull())
 			itemsObject.lockMode = valueItemsDBInstanceExpireTime["LockMode"].asString();
+		if(!valueItemsDBInstanceExpireTime["PayType"].isNull())
+			itemsObject.payType = valueItemsDBInstanceExpireTime["PayType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

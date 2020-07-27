@@ -104,6 +104,17 @@ void CreateReadOnlyDBInstanceRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getTddlRegionConfig()const
+{
+	return tddlRegionConfig_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setTddlRegionConfig(const std::string& tddlRegionConfig)
+{
+	tddlRegionConfig_ = tddlRegionConfig;
+	setParameter("TddlRegionConfig", tddlRegionConfig);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getTargetDedicatedHostIdForMaster()const
 {
 	return targetDedicatedHostIdForMaster_;
@@ -137,6 +148,17 @@ void CreateReadOnlyDBInstanceRequest::setDBInstanceDescription(const std::string
 	setParameter("DBInstanceDescription", dBInstanceDescription);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getGdnInstanceName()const
+{
+	return gdnInstanceName_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setGdnInstanceName(const std::string& gdnInstanceName)
+{
+	gdnInstanceName_ = gdnInstanceName;
+	setParameter("GdnInstanceName", gdnInstanceName);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getDBInstanceStorageType()const
 {
 	return dBInstanceStorageType_;
@@ -157,6 +179,17 @@ void CreateReadOnlyDBInstanceRequest::setDedicatedHostGroupId(const std::string&
 {
 	dedicatedHostGroupId_ = dedicatedHostGroupId;
 	setParameter("DedicatedHostGroupId", dedicatedHostGroupId);
+}
+
+std::string CreateReadOnlyDBInstanceRequest::getTddlBizType()const
+{
+	return tddlBizType_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setTddlBizType(const std::string& tddlBizType)
+{
+	tddlBizType_ = tddlBizType;
+	setParameter("TddlBizType", tddlBizType);
 }
 
 std::string CreateReadOnlyDBInstanceRequest::getResourceOwnerAccount()const

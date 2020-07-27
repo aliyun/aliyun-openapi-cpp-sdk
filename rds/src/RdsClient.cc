@@ -951,6 +951,42 @@ RdsClient::CreateDiagnosticReportOutcomeCallable RdsClient::createDiagnosticRepo
 	return task->get_future();
 }
 
+RdsClient::CreateHostAccountOutcome RdsClient::createHostAccount(const CreateHostAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHostAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHostAccountOutcome(CreateHostAccountResult(outcome.result()));
+	else
+		return CreateHostAccountOutcome(outcome.error());
+}
+
+void RdsClient::createHostAccountAsync(const CreateHostAccountRequest& request, const CreateHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHostAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CreateHostAccountOutcomeCallable RdsClient::createHostAccountCallable(const CreateHostAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHostAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->createHostAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CreateMigrateTaskOutcome RdsClient::createMigrateTask(const CreateMigrateTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ RdsClient::DeleteDedicatedHostGroupOutcomeCallable RdsClient::deleteDedicatedHos
 			[this, request]()
 			{
 			return this->deleteDedicatedHostGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeleteHostAccountOutcome RdsClient::deleteHostAccount(const DeleteHostAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteHostAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteHostAccountOutcome(DeleteHostAccountResult(outcome.result()));
+	else
+		return DeleteHostAccountOutcome(outcome.error());
+}
+
+void RdsClient::deleteHostAccountAsync(const DeleteHostAccountRequest& request, const DeleteHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteHostAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteHostAccountOutcomeCallable RdsClient::deleteHostAccountCallable(const DeleteHostAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteHostAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteHostAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3327,6 +3399,42 @@ RdsClient::DescribeHASwitchConfigOutcomeCallable RdsClient::describeHASwitchConf
 	return task->get_future();
 }
 
+RdsClient::DescribeHostAccountsOutcome RdsClient::describeHostAccounts(const DescribeHostAccountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeHostAccountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeHostAccountsOutcome(DescribeHostAccountsResult(outcome.result()));
+	else
+		return DescribeHostAccountsOutcome(outcome.error());
+}
+
+void RdsClient::describeHostAccountsAsync(const DescribeHostAccountsRequest& request, const DescribeHostAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeHostAccounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeHostAccountsOutcomeCallable RdsClient::describeHostAccountsCallable(const DescribeHostAccountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeHostAccountsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeHostAccounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::DescribeInstanceAutoRenewalAttributeOutcome RdsClient::describeInstanceAutoRenewalAttribute(const DescribeInstanceAutoRenewalAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4041,42 @@ RdsClient::DescribePriceOutcomeCallable RdsClient::describePriceCallable(const D
 			[this, request]()
 			{
 			return this->describePrice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeRdsResourceSettingsOutcome RdsClient::describeRdsResourceSettings(const DescribeRdsResourceSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRdsResourceSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRdsResourceSettingsOutcome(DescribeRdsResourceSettingsResult(outcome.result()));
+	else
+		return DescribeRdsResourceSettingsOutcome(outcome.error());
+}
+
+void RdsClient::describeRdsResourceSettingsAsync(const DescribeRdsResourceSettingsRequest& request, const DescribeRdsResourceSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRdsResourceSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeRdsResourceSettingsOutcomeCallable RdsClient::describeRdsResourceSettingsCallable(const DescribeRdsResourceSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRdsResourceSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRdsResourceSettings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6849,6 +6993,42 @@ RdsClient::ResetAccountPasswordOutcomeCallable RdsClient::resetAccountPasswordCa
 			[this, request]()
 			{
 			return this->resetAccountPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ResetHostAccountPasswordOutcome RdsClient::resetHostAccountPassword(const ResetHostAccountPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetHostAccountPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetHostAccountPasswordOutcome(ResetHostAccountPasswordResult(outcome.result()));
+	else
+		return ResetHostAccountPasswordOutcome(outcome.error());
+}
+
+void RdsClient::resetHostAccountPasswordAsync(const ResetHostAccountPasswordRequest& request, const ResetHostAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetHostAccountPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ResetHostAccountPasswordOutcomeCallable RdsClient::resetHostAccountPasswordCallable(const ResetHostAccountPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetHostAccountPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->resetHostAccountPassword(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

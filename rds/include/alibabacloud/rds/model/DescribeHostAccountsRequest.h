@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeBackupPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeHostAccountsRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeBackupPolicyRequest();
-				~DescribeBackupPolicyRequest();
+				DescribeHostAccountsRequest();
+				~DescribeHostAccountsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerAccount()const;
+				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getBackupPolicyMode()const;
-				void setBackupPolicyMode(const std::string& backupPolicyMode);
-				std::string getReleasedKeepPolicy()const;
-				void setReleasedKeepPolicy(const std::string& releasedKeepPolicy);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getCompressType()const;
-				void setCompressType(const std::string& compressType);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
             private:
 				long resourceOwnerId_;
+				std::string resourceOwnerAccount_;
+				std::string clientToken_;
+				long ownerId_;
 				std::string accessKeyId_;
 				std::string dBInstanceId_;
-				std::string backupPolicyMode_;
-				std::string releasedKeepPolicy_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				std::string compressType_;
-				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEBACKUPPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHOSTACCOUNTSREQUEST_H_

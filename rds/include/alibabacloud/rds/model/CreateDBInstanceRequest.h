@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setTunnelId(const std::string& tunnelId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				std::string getStorageAutoScale()const;
+				void setStorageAutoScale(const std::string& storageAutoScale);
 				std::string getInstanceNetworkType()const;
 				void setInstanceNetworkType(const std::string& instanceNetworkType);
 				std::string getConnectionMode()const;
@@ -111,6 +113,10 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getUsedTime()const;
 				void setUsedTime(const std::string& usedTime);
+				int getStorageUpperBound()const;
+				void setStorageUpperBound(int storageUpperBound);
+				int getStorageThreshold()const;
+				void setStorageThreshold(int storageThreshold);
 				std::string getVPCId()const;
 				void setVPCId(const std::string& vPCId);
 				std::string getCategory()const;
@@ -140,6 +146,7 @@ namespace AlibabaCloud
 				std::string roleARN_;
 				std::string tunnelId_;
 				std::string zoneId_;
+				std::string storageAutoScale_;
 				std::string instanceNetworkType_;
 				std::string connectionMode_;
 				std::string clientToken_;
@@ -157,6 +164,8 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string usedTime_;
+				int storageUpperBound_;
+				int storageThreshold_;
 				std::string vPCId_;
 				std::string category_;
 				std::string payType_;

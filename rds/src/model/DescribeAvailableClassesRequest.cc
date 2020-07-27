@@ -148,17 +148,6 @@ void DescribeAvailableClassesRequest::setOwnerAccount(const std::string& ownerAc
 	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string DescribeAvailableClassesRequest::getCommodityCode()const
-{
-	return commodityCode_;
-}
-
-void DescribeAvailableClassesRequest::setCommodityCode(const std::string& commodityCode)
-{
-	commodityCode_ = commodityCode;
-	setParameter("CommodityCode", commodityCode);
-}
-
 long DescribeAvailableClassesRequest::getOwnerId()const
 {
 	return ownerId_;

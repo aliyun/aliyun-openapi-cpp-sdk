@@ -82,6 +82,17 @@ void DescribeAvailableZonesRequest::setEngine(const std::string& engine)
 	setParameter("Engine", engine);
 }
 
+std::string DescribeAvailableZonesRequest::getInstanceChargeType()const
+{
+	return instanceChargeType_;
+}
+
+void DescribeAvailableZonesRequest::setInstanceChargeType(const std::string& instanceChargeType)
+{
+	instanceChargeType_ = instanceChargeType;
+	setParameter("InstanceChargeType", instanceChargeType);
+}
+
 std::string DescribeAvailableZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
