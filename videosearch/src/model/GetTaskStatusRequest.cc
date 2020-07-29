@@ -49,17 +49,6 @@ void GetTaskStatusRequest::setInstanceId(const std::string& instanceId)
 	setBodyParameter("InstanceId", instanceId);
 }
 
-std::string GetTaskStatusRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void GetTaskStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::string GetTaskStatusRequest::getTaskId()const
 {
 	return taskId_;

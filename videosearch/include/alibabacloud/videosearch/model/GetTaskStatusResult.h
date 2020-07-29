@@ -32,16 +32,36 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VIDEOSEARCH_EXPORT GetTaskStatusResult : public ServiceResult
 			{
 			public:
+				struct TaskInfo
+				{
+					int status;
+					long taskId;
+					std::string description;
+					std::string videoId;
+					std::string errorInfo;
+					float duration;
+					std::string processResultOss;
+					long submitTime;
+					std::string videoUrl;
+					std::string videoTags;
+					long finishTime;
+					long analysisUseTime;
+					int storageInfo;
+					std::string queryTags;
+					std::string resolution;
+				};
 
 
 				GetTaskStatusResult();
 				explicit GetTaskStatusResult(const std::string &payload);
 				~GetTaskStatusResult();
+				TaskInfo getTaskInfo()const;
 				int getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				TaskInfo taskInfo_;
 				int data_;
 
 			};
