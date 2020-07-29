@@ -86,6 +86,8 @@ void ListFilesResult::parse(const std::string &payload)
 			fileObject.lastEditTime = std::stol(dataNodeFilesFile["LastEditTime"].asString());
 		if(!dataNodeFilesFile["CommitStatus"].isNull())
 			fileObject.commitStatus = std::stoi(dataNodeFilesFile["CommitStatus"].asString());
+		if(!dataNodeFilesFile["FileId"].isNull())
+			fileObject.fileId = std::stol(dataNodeFilesFile["FileId"].asString());
 		data_.files.push_back(fileObject);
 	}
 	if(!value["Success"].isNull())
