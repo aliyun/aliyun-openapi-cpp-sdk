@@ -159,6 +159,42 @@ DbsClient::CreateFullBackupSetDownloadOutcomeCallable DbsClient::createFullBacku
 	return task->get_future();
 }
 
+DbsClient::CreateGetDBListFromAgentTaskOutcome DbsClient::createGetDBListFromAgentTask(const CreateGetDBListFromAgentTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGetDBListFromAgentTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGetDBListFromAgentTaskOutcome(CreateGetDBListFromAgentTaskResult(outcome.result()));
+	else
+		return CreateGetDBListFromAgentTaskOutcome(outcome.error());
+}
+
+void DbsClient::createGetDBListFromAgentTaskAsync(const CreateGetDBListFromAgentTaskRequest& request, const CreateGetDBListFromAgentTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGetDBListFromAgentTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::CreateGetDBListFromAgentTaskOutcomeCallable DbsClient::createGetDBListFromAgentTaskCallable(const CreateGetDBListFromAgentTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGetDBListFromAgentTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createGetDBListFromAgentTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DbsClient::CreateIncrementBackupSetDownloadOutcome DbsClient::createIncrementBackupSetDownload(const CreateIncrementBackupSetDownloadRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ DbsClient::DescribeRestoreTaskListOutcomeCallable DbsClient::describeRestoreTask
 			[this, request]()
 			{
 			return this->describeRestoreTaskList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DbsClient::GetDBListFromAgentOutcome DbsClient::getDBListFromAgent(const GetDBListFromAgentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDBListFromAgentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDBListFromAgentOutcome(GetDBListFromAgentResult(outcome.result()));
+	else
+		return GetDBListFromAgentOutcome(outcome.error());
+}
+
+void DbsClient::getDBListFromAgentAsync(const GetDBListFromAgentRequest& request, const GetDBListFromAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDBListFromAgent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DbsClient::GetDBListFromAgentOutcomeCallable DbsClient::getDBListFromAgentCallable(const GetDBListFromAgentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDBListFromAgentOutcome()>>(
+			[this, request]()
+			{
+			return this->getDBListFromAgent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

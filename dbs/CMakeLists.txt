@@ -27,6 +27,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/CreateBackupPlanResult.h
 	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadRequest.h
 	include/alibabacloud/dbs/model/CreateFullBackupSetDownloadResult.h
+	include/alibabacloud/dbs/model/CreateGetDBListFromAgentTaskRequest.h
+	include/alibabacloud/dbs/model/CreateGetDBListFromAgentTaskResult.h
 	include/alibabacloud/dbs/model/CreateIncrementBackupSetDownloadRequest.h
 	include/alibabacloud/dbs/model/CreateIncrementBackupSetDownloadResult.h
 	include/alibabacloud/dbs/model/CreateRestoreTaskRequest.h
@@ -55,6 +57,8 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeRestoreRangeInfoResult.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListRequest.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListResult.h
+	include/alibabacloud/dbs/model/GetDBListFromAgentRequest.h
+	include/alibabacloud/dbs/model/GetDBListFromAgentResult.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsResult.h
 	include/alibabacloud/dbs/model/ModifyBackupPlanNameRequest.h
@@ -86,6 +90,8 @@ set(dbs_src
 	src/model/CreateBackupPlanResult.cc
 	src/model/CreateFullBackupSetDownloadRequest.cc
 	src/model/CreateFullBackupSetDownloadResult.cc
+	src/model/CreateGetDBListFromAgentTaskRequest.cc
+	src/model/CreateGetDBListFromAgentTaskResult.cc
 	src/model/CreateIncrementBackupSetDownloadRequest.cc
 	src/model/CreateIncrementBackupSetDownloadResult.cc
 	src/model/CreateRestoreTaskRequest.cc
@@ -114,6 +120,8 @@ set(dbs_src
 	src/model/DescribeRestoreRangeInfoResult.cc
 	src/model/DescribeRestoreTaskListRequest.cc
 	src/model/DescribeRestoreTaskListResult.cc
+	src/model/GetDBListFromAgentRequest.cc
+	src/model/GetDBListFromAgentResult.cc
 	src/model/ModifyBackupObjectsRequest.cc
 	src/model/ModifyBackupObjectsResult.cc
 	src/model/ModifyBackupPlanNameRequest.cc
