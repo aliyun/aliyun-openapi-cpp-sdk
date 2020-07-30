@@ -66,6 +66,10 @@ void InitDeviceResult::parse(const std::string &payload)
 		resultObject_.bucketName = resultObjectNode["BucketName"].asString();
 	if(!resultObjectNode["FileNamePrefix"].isNull())
 		resultObject_.fileNamePrefix = resultObjectNode["FileNamePrefix"].asString();
+	if(!resultObjectNode["FileName"].isNull())
+		resultObject_.fileName = resultObjectNode["FileName"].asString();
+	if(!resultObjectNode["PresignedUrl"].isNull())
+		resultObject_.presignedUrl = resultObjectNode["PresignedUrl"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())

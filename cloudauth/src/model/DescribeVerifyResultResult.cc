@@ -46,6 +46,12 @@ void DescribeVerifyResultResult::parse(const std::string &payload)
 		material_.idCardName = materialNode["IdCardName"].asString();
 	if(!materialNode["IdCardNumber"].isNull())
 		material_.idCardNumber = materialNode["IdCardNumber"].asString();
+	if(!materialNode["FaceQuality"].isNull())
+		material_.faceQuality = materialNode["FaceQuality"].asString();
+	if(!materialNode["FaceGlobalUrl"].isNull())
+		material_.faceGlobalUrl = materialNode["FaceGlobalUrl"].asString();
+	if(!materialNode["FaceMask"].isNull())
+		material_.faceMask = materialNode["FaceMask"].asString() == "true";
 	auto idCardInfoNode = materialNode["IdCardInfo"];
 	if(!idCardInfoNode["Number"].isNull())
 		material_.idCardInfo.number = idCardInfoNode["Number"].asString();

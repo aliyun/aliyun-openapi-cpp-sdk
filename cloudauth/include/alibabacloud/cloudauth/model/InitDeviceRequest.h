@@ -47,10 +47,14 @@ namespace AlibabaCloud
 				void setDeviceToken(const std::string& deviceToken);
 				std::string getCertifyId()const;
 				void setCertifyId(const std::string& certifyId);
+				std::string getWebUmidToken()const;
+				void setWebUmidToken(const std::string& webUmidToken);
 				std::string getOuterOrderNo()const;
 				void setOuterOrderNo(const std::string& outerOrderNo);
 				std::string getProduceNode()const;
 				void setProduceNode(const std::string& produceNode);
+				std::string getUaToken()const;
+				void setUaToken(const std::string& uaToken);
 				std::string getProductName()const;
 				void setProductName(const std::string& productName);
 				std::string getCertifyPrincipal()const;
@@ -65,8 +69,10 @@ namespace AlibabaCloud
 				std::string appVersion_;
 				std::string deviceToken_;
 				std::string certifyId_;
+				std::string webUmidToken_;
 				std::string outerOrderNo_;
 				std::string produceNode_;
+				std::string uaToken_;
 				std::string productName_;
 				std::string certifyPrincipal_;
 				std::string metaInfo_;

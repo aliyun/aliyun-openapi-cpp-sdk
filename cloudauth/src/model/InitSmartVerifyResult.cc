@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/InitFaceVerifyResult.h>
+#include <alibabacloud/cloudauth/model/InitSmartVerifyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-InitFaceVerifyResult::InitFaceVerifyResult() :
+InitSmartVerifyResult::InitSmartVerifyResult() :
 	ServiceResult()
 {}
 
-InitFaceVerifyResult::InitFaceVerifyResult(const std::string &payload) :
+InitSmartVerifyResult::InitSmartVerifyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-InitFaceVerifyResult::~InitFaceVerifyResult()
+InitSmartVerifyResult::~InitSmartVerifyResult()
 {}
 
-void InitFaceVerifyResult::parse(const std::string &payload)
+void InitSmartVerifyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -42,8 +42,6 @@ void InitFaceVerifyResult::parse(const std::string &payload)
 	auto resultObjectNode = value["ResultObject"];
 	if(!resultObjectNode["CertifyId"].isNull())
 		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!resultObjectNode["CertifyUrl"].isNull())
-		resultObject_.certifyUrl = resultObjectNode["CertifyUrl"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
@@ -51,17 +49,17 @@ void InitFaceVerifyResult::parse(const std::string &payload)
 
 }
 
-InitFaceVerifyResult::ResultObject InitFaceVerifyResult::getResultObject()const
+InitSmartVerifyResult::ResultObject InitSmartVerifyResult::getResultObject()const
 {
 	return resultObject_;
 }
 
-std::string InitFaceVerifyResult::getMessage()const
+std::string InitSmartVerifyResult::getMessage()const
 {
 	return message_;
 }
 
-std::string InitFaceVerifyResult::getCode()const
+std::string InitSmartVerifyResult::getCode()const
 {
 	return code_;
 }

@@ -14,36 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cloudauth/model/InitFaceVerifyResult.h>
+#include <alibabacloud/cloudauth/model/DescribeSmartVerifyResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cloudauth;
 using namespace AlibabaCloud::Cloudauth::Model;
 
-InitFaceVerifyResult::InitFaceVerifyResult() :
+DescribeSmartVerifyResult::DescribeSmartVerifyResult() :
 	ServiceResult()
 {}
 
-InitFaceVerifyResult::InitFaceVerifyResult(const std::string &payload) :
+DescribeSmartVerifyResult::DescribeSmartVerifyResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-InitFaceVerifyResult::~InitFaceVerifyResult()
+DescribeSmartVerifyResult::~DescribeSmartVerifyResult()
 {}
 
-void InitFaceVerifyResult::parse(const std::string &payload)
+void DescribeSmartVerifyResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultObjectNode = value["ResultObject"];
-	if(!resultObjectNode["CertifyId"].isNull())
-		resultObject_.certifyId = resultObjectNode["CertifyId"].asString();
-	if(!resultObjectNode["CertifyUrl"].isNull())
-		resultObject_.certifyUrl = resultObjectNode["CertifyUrl"].asString();
+	if(!resultObjectNode["Passed"].isNull())
+		resultObject_.passed = resultObjectNode["Passed"].asString();
+	if(!resultObjectNode["SubCode"].isNull())
+		resultObject_.subCode = resultObjectNode["SubCode"].asString();
+	if(!resultObjectNode["MaterialInfo"].isNull())
+		resultObject_.materialInfo = resultObjectNode["MaterialInfo"].asString();
+	if(!resultObjectNode["DeviceToken"].isNull())
+		resultObject_.deviceToken = resultObjectNode["DeviceToken"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
@@ -51,17 +55,17 @@ void InitFaceVerifyResult::parse(const std::string &payload)
 
 }
 
-InitFaceVerifyResult::ResultObject InitFaceVerifyResult::getResultObject()const
+DescribeSmartVerifyResult::ResultObject DescribeSmartVerifyResult::getResultObject()const
 {
 	return resultObject_;
 }
 
-std::string InitFaceVerifyResult::getMessage()const
+std::string DescribeSmartVerifyResult::getMessage()const
 {
 	return message_;
 }
 
-std::string InitFaceVerifyResult::getCode()const
+std::string DescribeSmartVerifyResult::getCode()const
 {
 	return code_;
 }

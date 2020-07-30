@@ -555,6 +555,42 @@ CloudauthClient::DescribeSdkUrlOutcomeCallable CloudauthClient::describeSdkUrlCa
 	return task->get_future();
 }
 
+CloudauthClient::DescribeSmartVerifyOutcome CloudauthClient::describeSmartVerify(const DescribeSmartVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSmartVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSmartVerifyOutcome(DescribeSmartVerifyResult(outcome.result()));
+	else
+		return DescribeSmartVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::describeSmartVerifyAsync(const DescribeSmartVerifyRequest& request, const DescribeSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSmartVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::DescribeSmartVerifyOutcomeCallable CloudauthClient::describeSmartVerifyCallable(const DescribeSmartVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSmartVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSmartVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudauthClient::DescribeUpdatePackageResultOutcome CloudauthClient::describeUpdatePackageResult(const DescribeUpdatePackageResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1125,42 @@ CloudauthClient::InitFaceVerifyOutcomeCallable CloudauthClient::initFaceVerifyCa
 			[this, request]()
 			{
 			return this->initFaceVerify(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudauthClient::InitSmartVerifyOutcome CloudauthClient::initSmartVerify(const InitSmartVerifyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitSmartVerifyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitSmartVerifyOutcome(InitSmartVerifyResult(outcome.result()));
+	else
+		return InitSmartVerifyOutcome(outcome.error());
+}
+
+void CloudauthClient::initSmartVerifyAsync(const InitSmartVerifyRequest& request, const InitSmartVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initSmartVerify(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudauthClient::InitSmartVerifyOutcomeCallable CloudauthClient::initSmartVerifyCallable(const InitSmartVerifyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitSmartVerifyOutcome()>>(
+			[this, request]()
+			{
+			return this->initSmartVerify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

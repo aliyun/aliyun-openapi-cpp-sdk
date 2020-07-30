@@ -75,8 +75,6 @@ void VerifyMaterialResult::parse(const std::string &payload)
 		verifyStatus_ = std::stoi(value["VerifyStatus"].asString());
 	if(!value["AuthorityComparisionScore"].isNull())
 		authorityComparisionScore_ = std::stof(value["AuthorityComparisionScore"].asString());
-	if(!value["FaceComparisonScore"].isNull())
-		faceComparisonScore_ = std::stof(value["FaceComparisonScore"].asString());
 	if(!value["IdCardFaceComparisonScore"].isNull())
 		idCardFaceComparisonScore_ = std::stof(value["IdCardFaceComparisonScore"].asString());
 
@@ -100,11 +98,6 @@ float VerifyMaterialResult::getAuthorityComparisionScore()const
 std::string VerifyMaterialResult::getVerifyToken()const
 {
 	return verifyToken_;
-}
-
-float VerifyMaterialResult::getFaceComparisonScore()const
-{
-	return faceComparisonScore_;
 }
 
 float VerifyMaterialResult::getIdCardFaceComparisonScore()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_INITDEVICERESULT_H_
-#define ALIBABACLOUD_CLOUDAUTH_MODEL_INITDEVICERESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYRESULT_H_
+#define ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAUTH_EXPORT InitDeviceResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAUTH_EXPORT DescribeSmartVerifyResult : public ServiceResult
 			{
 			public:
 				struct ResultObject
 				{
-					std::string retMessageSub;
-					std::string certifyId;
-					std::string message;
-					std::string extParams;
-					std::string accessKeySecret;
-					std::string fileName;
-					std::string ossEndPoint;
-					std::string securityToken;
-					std::string bucketName;
-					std::string presignedUrl;
-					std::string retCode;
-					std::string fileNamePrefix;
-					std::string accessKeyId;
-					std::string retCodeSub;
-					std::string protocol;
+					std::string passed;
+					std::string deviceToken;
+					std::string materialInfo;
+					std::string subCode;
 				};
 
 
-				InitDeviceResult();
-				explicit InitDeviceResult(const std::string &payload);
-				~InitDeviceResult();
+				DescribeSmartVerifyResult();
+				explicit DescribeSmartVerifyResult(const std::string &payload);
+				~DescribeSmartVerifyResult();
 				ResultObject getResultObject()const;
 				std::string getMessage()const;
 				std::string getCode()const;
@@ -70,4 +59,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_INITDEVICERESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAUTH_MODEL_DESCRIBESMARTVERIFYRESULT_H_

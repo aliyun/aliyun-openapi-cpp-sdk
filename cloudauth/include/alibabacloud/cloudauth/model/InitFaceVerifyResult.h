@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ResultObject
 				{
 					std::string certifyId;
+					std::string certifyUrl;
 				};
 
 

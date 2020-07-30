@@ -49,6 +49,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/DescribeRPSDKResult.h
 	include/alibabacloud/cloudauth/model/DescribeSdkUrlRequest.h
 	include/alibabacloud/cloudauth/model/DescribeSdkUrlResult.h
+	include/alibabacloud/cloudauth/model/DescribeSmartVerifyRequest.h
+	include/alibabacloud/cloudauth/model/DescribeSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultRequest.h
 	include/alibabacloud/cloudauth/model/DescribeUpdatePackageResultResult.h
 	include/alibabacloud/cloudauth/model/DescribeUploadInfoRequest.h
@@ -79,6 +81,8 @@ set(cloudauth_public_header_model
 	include/alibabacloud/cloudauth/model/InitDeviceResult.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyRequest.h
 	include/alibabacloud/cloudauth/model/InitFaceVerifyResult.h
+	include/alibabacloud/cloudauth/model/InitSmartVerifyRequest.h
+	include/alibabacloud/cloudauth/model/InitSmartVerifyResult.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoRequest.h
 	include/alibabacloud/cloudauth/model/ModifyDeviceInfoResult.h
 	include/alibabacloud/cloudauth/model/SubmitMaterialsRequest.h
@@ -124,6 +128,8 @@ set(cloudauth_src
 	src/model/DescribeRPSDKResult.cc
 	src/model/DescribeSdkUrlRequest.cc
 	src/model/DescribeSdkUrlResult.cc
+	src/model/DescribeSmartVerifyRequest.cc
+	src/model/DescribeSmartVerifyResult.cc
 	src/model/DescribeUpdatePackageResultRequest.cc
 	src/model/DescribeUpdatePackageResultResult.cc
 	src/model/DescribeUploadInfoRequest.cc
@@ -154,6 +160,8 @@ set(cloudauth_src
 	src/model/InitDeviceResult.cc
 	src/model/InitFaceVerifyRequest.cc
 	src/model/InitFaceVerifyResult.cc
+	src/model/InitSmartVerifyRequest.cc
+	src/model/InitSmartVerifyResult.cc
 	src/model/ModifyDeviceInfoRequest.cc
 	src/model/ModifyDeviceInfoResult.cc
 	src/model/SubmitMaterialsRequest.cc

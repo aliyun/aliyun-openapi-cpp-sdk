@@ -62,7 +62,6 @@ namespace AlibabaCloud
 				Material getMaterial()const;
 				float getAuthorityComparisionScore()const;
 				std::string getVerifyToken()const;
-				float getFaceComparisonScore()const;
 				float getIdCardFaceComparisonScore()const;
 
 			protected:
@@ -72,7 +71,6 @@ namespace AlibabaCloud
 				Material material_;
 				float authorityComparisionScore_;
 				std::string verifyToken_;
-				float faceComparisonScore_;
 				float idCardFaceComparisonScore_;
 
 			};

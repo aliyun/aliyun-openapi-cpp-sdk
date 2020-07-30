@@ -93,6 +93,17 @@ void InitDeviceRequest::setCertifyId(const std::string& certifyId)
 	setParameter("CertifyId", certifyId);
 }
 
+std::string InitDeviceRequest::getWebUmidToken()const
+{
+	return webUmidToken_;
+}
+
+void InitDeviceRequest::setWebUmidToken(const std::string& webUmidToken)
+{
+	webUmidToken_ = webUmidToken;
+	setBodyParameter("WebUmidToken", webUmidToken);
+}
+
 std::string InitDeviceRequest::getOuterOrderNo()const
 {
 	return outerOrderNo_;
@@ -113,6 +124,17 @@ void InitDeviceRequest::setProduceNode(const std::string& produceNode)
 {
 	produceNode_ = produceNode;
 	setParameter("ProduceNode", produceNode);
+}
+
+std::string InitDeviceRequest::getUaToken()const
+{
+	return uaToken_;
+}
+
+void InitDeviceRequest::setUaToken(const std::string& uaToken)
+{
+	uaToken_ = uaToken;
+	setBodyParameter("UaToken", uaToken);
 }
 
 std::string InitDeviceRequest::getProductName()const
