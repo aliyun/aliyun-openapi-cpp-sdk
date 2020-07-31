@@ -57,16 +57,11 @@ void GetStackResult::parse(const std::string &payload)
 			stackInfoObject.exception = valueStackInfoStackInfoItem["Exception"].asString();
 		if(!valueStackInfoStackInfoItem["Line"].isNull())
 			stackInfoObject.line = valueStackInfoStackInfoItem["Line"].asString();
-		auto allExtInfoNode = allStackInfoNode["ExtInfo"]["ExtInfoItem"];
-		for (auto allStackInfoNodeExtInfoExtInfoItem : allExtInfoNode)
-		{
-			StackInfoItem::ExtInfoItem extInfoObject;
-			if(!allStackInfoNodeExtInfoExtInfoItem["Type"].isNull())
-				extInfoObject.type = allStackInfoNodeExtInfoExtInfoItem["Type"].asString();
-			if(!allStackInfoNodeExtInfoExtInfoItem["Info"].isNull())
-				extInfoObject.info = allStackInfoNodeExtInfoExtInfoItem["Info"].asString();
-			stackInfoObject.extInfo.push_back(extInfoObject);
-		}
+		auto extInfoNode = value["ExtInfo"];
+		if(!extInfoNode["Type"].isNull())
+			stackInfoObject.extInfo.type = extInfoNode["Type"].asString();
+		if(!extInfoNode["Info"].isNull())
+			stackInfoObject.extInfo.info = extInfoNode["Info"].asString();
 		stackInfo_.push_back(stackInfoObject);
 	}
 

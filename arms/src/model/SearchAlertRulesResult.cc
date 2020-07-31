@@ -78,11 +78,19 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 			alertRuleEntityObject.updateTime = std::stol(pageBeanNodeAlertRulesAlertRuleEntity["UpdateTime"].asString());
 		if(!pageBeanNodeAlertRulesAlertRuleEntity["UserId"].isNull())
 			alertRuleEntityObject.userId = pageBeanNodeAlertRulesAlertRuleEntity["UserId"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["Title"].isNull())
+			alertRuleEntityObject.title = pageBeanNodeAlertRulesAlertRuleEntity["Title"].asString();
+		if(!pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIds"].isNull())
+			alertRuleEntityObject.contactGroupIds = pageBeanNodeAlertRulesAlertRuleEntity["ContactGroupIds"].asString();
 		auto alarmContextNode = value["AlarmContext"];
 		if(!alarmContextNode["AlarmContentTemplate"].isNull())
 			alertRuleEntityObject.alarmContext.alarmContentTemplate = alarmContextNode["AlarmContentTemplate"].asString();
 		if(!alarmContextNode["AlarmContentSubTitle"].isNull())
 			alertRuleEntityObject.alarmContext.alarmContentSubTitle = alarmContextNode["AlarmContentSubTitle"].asString();
+		if(!alarmContextNode["Content"].isNull())
+			alertRuleEntityObject.alarmContext.content = alarmContextNode["Content"].asString();
+		if(!alarmContextNode["SubTitle"].isNull())
+			alertRuleEntityObject.alarmContext.subTitle = alarmContextNode["SubTitle"].asString();
 		auto alertRuleNode = value["AlertRule"];
 		if(!alertRuleNode["Operator"].isNull())
 			alertRuleEntityObject.alertRule._operator = alertRuleNode["Operator"].asString();
@@ -137,6 +145,9 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 		auto allAlertWays = value["AlertWays"]["AlertWay"];
 		for (auto value : allAlertWays)
 			alertRuleEntityObject.alertWays.push_back(value.asString());
+		auto allAlertWay = value["AlertWay"]["AlertWay"];
+		for (auto value : allAlertWay)
+			alertRuleEntityObject.alertWay.push_back(value.asString());
 		pageBean_.alertRules.push_back(alertRuleEntityObject);
 	}
 

@@ -60,6 +60,17 @@ void ImportCustomAlertRulesRequest::setContactGroupIds(const std::string& contac
 	setParameter("ContactGroupIds", contactGroupIds);
 }
 
+std::string ImportCustomAlertRulesRequest::getTemplateAlertConfig()const
+{
+	return templateAlertConfig_;
+}
+
+void ImportCustomAlertRulesRequest::setTemplateAlertConfig(const std::string& templateAlertConfig)
+{
+	templateAlertConfig_ = templateAlertConfig;
+	setParameter("TemplateAlertConfig", templateAlertConfig);
+}
+
 std::string ImportCustomAlertRulesRequest::getProxyUserId()const
 {
 	return proxyUserId_;
@@ -69,16 +80,5 @@ void ImportCustomAlertRulesRequest::setProxyUserId(const std::string& proxyUserI
 {
 	proxyUserId_ = proxyUserId;
 	setParameter("ProxyUserId", proxyUserId);
-}
-
-std::string ImportCustomAlertRulesRequest::getTemplageAlertConfig()const
-{
-	return templageAlertConfig_;
-}
-
-void ImportCustomAlertRulesRequest::setTemplageAlertConfig(const std::string& templageAlertConfig)
-{
-	templageAlertConfig_ = templageAlertConfig;
-	setParameter("TemplageAlertConfig", templageAlertConfig);
 }
 

@@ -40,6 +40,8 @@ namespace AlibabaCloud
 						{
 							std::string alarmContentTemplate;
 							std::string alarmContentSubTitle;
+							std::string content;
+							std::string subTitle;
 						};
 						struct AlertRule
 						{
@@ -80,11 +82,14 @@ namespace AlibabaCloud
 						MetricParam metricParam;
 						int alertVersion;
 						long taskId;
+						std::string contactGroupIds;
 						std::string config;
 						long createTime;
 						std::vector<std::string> alertWays;
+						std::string title;
 						std::string taskStatus;
 						AlarmContext alarmContext;
+						std::vector<std::string> alertWay;
 						int alertType;
 						std::string contactGroupIdList;
 						Notice notice;

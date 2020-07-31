@@ -60,3 +60,14 @@ void GetStackRequest::setRpcID(const std::string& rpcID)
 	setParameter("RpcID", rpcID);
 }
 
+std::string GetStackRequest::getPid()const
+{
+	return pid_;
+}
+
+void GetStackRequest::setPid(const std::string& pid)
+{
+	pid_ = pid;
+	setParameter("Pid", pid);
+}
+

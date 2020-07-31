@@ -41,17 +41,17 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getContactGroupIds()const;
 				void setContactGroupIds(const std::string& contactGroupIds);
+				std::string getTemplateAlertConfig()const;
+				void setTemplateAlertConfig(const std::string& templateAlertConfig);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
-				std::string getTemplageAlertConfig()const;
-				void setTemplageAlertConfig(const std::string& templageAlertConfig);
 
             private:
 				bool isAutoStart_;
 				std::string regionId_;
 				std::string contactGroupIds_;
+				std::string templateAlertConfig_;
 				std::string proxyUserId_;
-				std::string templageAlertConfig_;
 
 			};
 		}

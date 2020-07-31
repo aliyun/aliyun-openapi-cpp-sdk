@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct StackInfoItem
 				{
-					struct ExtInfoItem
+					struct ExtInfo
 					{
 						std::string type;
 						std::string info;
 					};
 					std::string line;
 					std::string serviceName;
-					std::vector<StackInfoItem::ExtInfoItem> extInfo;
+					ExtInfo extInfo;
 					std::string rpcId;
 					long startTime;
 					long duration;

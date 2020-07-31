@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setRegionId(const std::string& regionId);
 				std::string getRpcID()const;
 				void setRpcID(const std::string& rpcID);
+				std::string getPid()const;
+				void setPid(const std::string& pid);
 
             private:
 				std::string traceID_;
 				std::string regionId_;
 				std::string rpcID_;
+				std::string pid_;
 
 			};
 		}

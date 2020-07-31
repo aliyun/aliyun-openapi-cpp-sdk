@@ -49,6 +49,17 @@ void DeleteTraceAppRequest::setAppId(const std::string& appId)
 	setParameter("AppId", appId);
 }
 
+std::string DeleteTraceAppRequest::getPid()const
+{
+	return pid_;
+}
+
+void DeleteTraceAppRequest::setPid(const std::string& pid)
+{
+	pid_ = pid;
+	setParameter("Pid", pid);
+}
+
 std::string DeleteTraceAppRequest::getType()const
 {
 	return type_;
