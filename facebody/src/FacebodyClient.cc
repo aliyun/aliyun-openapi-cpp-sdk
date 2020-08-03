@@ -627,6 +627,42 @@ FacebodyClient::EnhanceFaceOutcomeCallable FacebodyClient::enhanceFaceCallable(c
 	return task->get_future();
 }
 
+FacebodyClient::ExtractPedestrianFeatureAttributeOutcome FacebodyClient::extractPedestrianFeatureAttribute(const ExtractPedestrianFeatureAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExtractPedestrianFeatureAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExtractPedestrianFeatureAttributeOutcome(ExtractPedestrianFeatureAttributeResult(outcome.result()));
+	else
+		return ExtractPedestrianFeatureAttributeOutcome(outcome.error());
+}
+
+void FacebodyClient::extractPedestrianFeatureAttributeAsync(const ExtractPedestrianFeatureAttributeRequest& request, const ExtractPedestrianFeatureAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, extractPedestrianFeatureAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::ExtractPedestrianFeatureAttributeOutcomeCallable FacebodyClient::extractPedestrianFeatureAttributeCallable(const ExtractPedestrianFeatureAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExtractPedestrianFeatureAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->extractPedestrianFeatureAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::FaceBeautyOutcome FacebodyClient::faceBeauty(const FaceBeautyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

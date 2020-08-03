@@ -53,6 +53,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/DetectVideoLivingFaceResult.h
 	include/alibabacloud/facebody/model/EnhanceFaceRequest.h
 	include/alibabacloud/facebody/model/EnhanceFaceResult.h
+	include/alibabacloud/facebody/model/ExtractPedestrianFeatureAttributeRequest.h
+	include/alibabacloud/facebody/model/ExtractPedestrianFeatureAttributeResult.h
 	include/alibabacloud/facebody/model/FaceBeautyRequest.h
 	include/alibabacloud/facebody/model/FaceBeautyResult.h
 	include/alibabacloud/facebody/model/FaceFilterRequest.h
@@ -120,6 +122,8 @@ set(facebody_src
 	src/model/DetectVideoLivingFaceResult.cc
 	src/model/EnhanceFaceRequest.cc
 	src/model/EnhanceFaceResult.cc
+	src/model/ExtractPedestrianFeatureAttributeRequest.cc
+	src/model/ExtractPedestrianFeatureAttributeResult.cc
 	src/model/FaceBeautyRequest.cc
 	src/model/FaceBeautyResult.cc
 	src/model/FaceFilterRequest.cc
