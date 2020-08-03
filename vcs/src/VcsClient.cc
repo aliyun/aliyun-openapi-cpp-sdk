@@ -447,6 +447,42 @@ VcsClient::GetBodyOptionsOutcomeCallable VcsClient::getBodyOptionsCallable(const
 	return task->get_future();
 }
 
+VcsClient::GetDeviceConfigOutcome VcsClient::getDeviceConfig(const GetDeviceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceConfigOutcome(GetDeviceConfigResult(outcome.result()));
+	else
+		return GetDeviceConfigOutcome(outcome.error());
+}
+
+void VcsClient::getDeviceConfigAsync(const GetDeviceConfigRequest& request, const GetDeviceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetDeviceConfigOutcomeCallable VcsClient::getDeviceConfigCallable(const GetDeviceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetDeviceLiveUrlOutcome VcsClient::getDeviceLiveUrl(const GetDeviceLiveUrlRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +765,42 @@ VcsClient::GetVideoSummaryTaskResultOutcomeCallable VcsClient::getVideoSummaryTa
 			[this, request]()
 			{
 			return this->getVideoSummaryTaskResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::InvokeMotorModelOutcome VcsClient::invokeMotorModel(const InvokeMotorModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InvokeMotorModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InvokeMotorModelOutcome(InvokeMotorModelResult(outcome.result()));
+	else
+		return InvokeMotorModelOutcome(outcome.error());
+}
+
+void VcsClient::invokeMotorModelAsync(const InvokeMotorModelRequest& request, const InvokeMotorModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, invokeMotorModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::InvokeMotorModelOutcomeCallable VcsClient::invokeMotorModelCallable(const InvokeMotorModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InvokeMotorModelOutcome()>>(
+			[this, request]()
+			{
+			return this->invokeMotorModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1167,78 @@ VcsClient::RecognizeImageOutcomeCallable VcsClient::recognizeImageCallable(const
 	return task->get_future();
 }
 
+VcsClient::RegisterDeviceOutcome VcsClient::registerDevice(const RegisterDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterDeviceOutcome(RegisterDeviceResult(outcome.result()));
+	else
+		return RegisterDeviceOutcome(outcome.error());
+}
+
+void VcsClient::registerDeviceAsync(const RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::RegisterDeviceOutcomeCallable VcsClient::registerDeviceCallable(const RegisterDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->registerDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ReportDeviceCapacityOutcome VcsClient::reportDeviceCapacity(const ReportDeviceCapacityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReportDeviceCapacityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReportDeviceCapacityOutcome(ReportDeviceCapacityResult(outcome.result()));
+	else
+		return ReportDeviceCapacityOutcome(outcome.error());
+}
+
+void VcsClient::reportDeviceCapacityAsync(const ReportDeviceCapacityRequest& request, const ReportDeviceCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reportDeviceCapacity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ReportDeviceCapacityOutcomeCallable VcsClient::reportDeviceCapacityCallable(const ReportDeviceCapacityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReportDeviceCapacityOutcome()>>(
+			[this, request]()
+			{
+			return this->reportDeviceCapacity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::SaveVideoSummaryTaskVideoOutcome VcsClient::saveVideoSummaryTaskVideo(const SaveVideoSummaryTaskVideoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,6 +1377,42 @@ VcsClient::StopMonitorOutcomeCallable VcsClient::stopMonitorCallable(const StopM
 			[this, request]()
 			{
 			return this->stopMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::SyncDeviceTimeOutcome VcsClient::syncDeviceTime(const SyncDeviceTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SyncDeviceTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SyncDeviceTimeOutcome(SyncDeviceTimeResult(outcome.result()));
+	else
+		return SyncDeviceTimeOutcome(outcome.error());
+}
+
+void VcsClient::syncDeviceTimeAsync(const SyncDeviceTimeRequest& request, const SyncDeviceTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, syncDeviceTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SyncDeviceTimeOutcomeCallable VcsClient::syncDeviceTimeCallable(const SyncDeviceTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SyncDeviceTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->syncDeviceTime(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

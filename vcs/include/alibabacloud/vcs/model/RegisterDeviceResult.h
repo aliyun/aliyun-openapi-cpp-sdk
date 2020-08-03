@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_REGISTERDEVICERESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_REGISTERDEVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetMonitorResultResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT RegisterDeviceResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct RecordsItem
-					{
-						std::string leftUpX;
-						std::string leftUpY;
-						std::string score;
-						std::string targetPicUrl;
-						std::string rightBottomX;
-						std::string rightBottomY;
-						std::string gbId;
-						std::string monitorPicUrl;
-						std::string shotTime;
-						std::string picUrl;
-					};
-					std::string maxId;
-					std::vector<RecordsItem> records;
-				};
 
 
-				GetMonitorResultResult();
-				explicit GetMonitorResultResult(const std::string &payload);
-				~GetMonitorResultResult();
+				RegisterDeviceResult();
+				explicit RegisterDeviceResult(const std::string &payload);
+				~RegisterDeviceResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::string getRetryInterval()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::string retryInterval_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_REGISTERDEVICERESULT_H_

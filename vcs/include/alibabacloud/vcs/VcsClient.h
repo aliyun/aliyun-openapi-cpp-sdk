@@ -44,6 +44,8 @@
 #include "model/DeleteVideoSummaryTaskResult.h"
 #include "model/GetBodyOptionsRequest.h"
 #include "model/GetBodyOptionsResult.h"
+#include "model/GetDeviceConfigRequest.h"
+#include "model/GetDeviceConfigResult.h"
 #include "model/GetDeviceLiveUrlRequest.h"
 #include "model/GetDeviceLiveUrlResult.h"
 #include "model/GetDeviceVideoUrlRequest.h"
@@ -60,6 +62,8 @@
 #include "model/GetVideoComposeResultResult.h"
 #include "model/GetVideoSummaryTaskResultRequest.h"
 #include "model/GetVideoSummaryTaskResultResult.h"
+#include "model/InvokeMotorModelRequest.h"
+#include "model/InvokeMotorModelResult.h"
 #include "model/ListBodyAlgorithmResultsRequest.h"
 #include "model/ListBodyAlgorithmResultsResult.h"
 #include "model/ListCorpsRequest.h"
@@ -80,6 +84,10 @@
 #include "model/RecognizeFaceQualityResult.h"
 #include "model/RecognizeImageRequest.h"
 #include "model/RecognizeImageResult.h"
+#include "model/RegisterDeviceRequest.h"
+#include "model/RegisterDeviceResult.h"
+#include "model/ReportDeviceCapacityRequest.h"
+#include "model/ReportDeviceCapacityResult.h"
 #include "model/SaveVideoSummaryTaskVideoRequest.h"
 #include "model/SaveVideoSummaryTaskVideoResult.h"
 #include "model/SearchBodyRequest.h"
@@ -88,6 +96,8 @@
 #include "model/SearchFaceResult.h"
 #include "model/StopMonitorRequest.h"
 #include "model/StopMonitorResult.h"
+#include "model/SyncDeviceTimeRequest.h"
+#include "model/SyncDeviceTimeResult.h"
 #include "model/UpdateCorpRequest.h"
 #include "model/UpdateCorpResult.h"
 #include "model/UpdateDeviceRequest.h"
@@ -138,6 +148,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBodyOptionsResult> GetBodyOptionsOutcome;
 			typedef std::future<GetBodyOptionsOutcome> GetBodyOptionsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetBodyOptionsRequest&, const GetBodyOptionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBodyOptionsAsyncHandler;
+			typedef Outcome<Error, Model::GetDeviceConfigResult> GetDeviceConfigOutcome;
+			typedef std::future<GetDeviceConfigOutcome> GetDeviceConfigOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetDeviceConfigRequest&, const GetDeviceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceLiveUrlResult> GetDeviceLiveUrlOutcome;
 			typedef std::future<GetDeviceLiveUrlOutcome> GetDeviceLiveUrlOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetDeviceLiveUrlRequest&, const GetDeviceLiveUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceLiveUrlAsyncHandler;
@@ -162,6 +175,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVideoSummaryTaskResultResult> GetVideoSummaryTaskResultOutcome;
 			typedef std::future<GetVideoSummaryTaskResultOutcome> GetVideoSummaryTaskResultOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetVideoSummaryTaskResultRequest&, const GetVideoSummaryTaskResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoSummaryTaskResultAsyncHandler;
+			typedef Outcome<Error, Model::InvokeMotorModelResult> InvokeMotorModelOutcome;
+			typedef std::future<InvokeMotorModelOutcome> InvokeMotorModelOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::InvokeMotorModelRequest&, const InvokeMotorModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InvokeMotorModelAsyncHandler;
 			typedef Outcome<Error, Model::ListBodyAlgorithmResultsResult> ListBodyAlgorithmResultsOutcome;
 			typedef std::future<ListBodyAlgorithmResultsOutcome> ListBodyAlgorithmResultsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListBodyAlgorithmResultsRequest&, const ListBodyAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyAlgorithmResultsAsyncHandler;
@@ -192,6 +208,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeImageResult> RecognizeImageOutcome;
 			typedef std::future<RecognizeImageOutcome> RecognizeImageOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::RecognizeImageRequest&, const RecognizeImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageAsyncHandler;
+			typedef Outcome<Error, Model::RegisterDeviceResult> RegisterDeviceOutcome;
+			typedef std::future<RegisterDeviceOutcome> RegisterDeviceOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::RegisterDeviceRequest&, const RegisterDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ReportDeviceCapacityResult> ReportDeviceCapacityOutcome;
+			typedef std::future<ReportDeviceCapacityOutcome> ReportDeviceCapacityOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ReportDeviceCapacityRequest&, const ReportDeviceCapacityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReportDeviceCapacityAsyncHandler;
 			typedef Outcome<Error, Model::SaveVideoSummaryTaskVideoResult> SaveVideoSummaryTaskVideoOutcome;
 			typedef std::future<SaveVideoSummaryTaskVideoOutcome> SaveVideoSummaryTaskVideoOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::SaveVideoSummaryTaskVideoRequest&, const SaveVideoSummaryTaskVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveVideoSummaryTaskVideoAsyncHandler;
@@ -204,6 +226,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopMonitorResult> StopMonitorOutcome;
 			typedef std::future<StopMonitorOutcome> StopMonitorOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::StopMonitorRequest&, const StopMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMonitorAsyncHandler;
+			typedef Outcome<Error, Model::SyncDeviceTimeResult> SyncDeviceTimeOutcome;
+			typedef std::future<SyncDeviceTimeOutcome> SyncDeviceTimeOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::SyncDeviceTimeRequest&, const SyncDeviceTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncDeviceTimeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCorpResult> UpdateCorpOutcome;
 			typedef std::future<UpdateCorpOutcome> UpdateCorpOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UpdateCorpRequest&, const UpdateCorpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCorpAsyncHandler;
@@ -254,6 +279,9 @@ namespace AlibabaCloud
 			GetBodyOptionsOutcome getBodyOptions(const Model::GetBodyOptionsRequest &request)const;
 			void getBodyOptionsAsync(const Model::GetBodyOptionsRequest& request, const GetBodyOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBodyOptionsOutcomeCallable getBodyOptionsCallable(const Model::GetBodyOptionsRequest& request) const;
+			GetDeviceConfigOutcome getDeviceConfig(const Model::GetDeviceConfigRequest &request)const;
+			void getDeviceConfigAsync(const Model::GetDeviceConfigRequest& request, const GetDeviceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDeviceConfigOutcomeCallable getDeviceConfigCallable(const Model::GetDeviceConfigRequest& request) const;
 			GetDeviceLiveUrlOutcome getDeviceLiveUrl(const Model::GetDeviceLiveUrlRequest &request)const;
 			void getDeviceLiveUrlAsync(const Model::GetDeviceLiveUrlRequest& request, const GetDeviceLiveUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceLiveUrlOutcomeCallable getDeviceLiveUrlCallable(const Model::GetDeviceLiveUrlRequest& request) const;
@@ -278,6 +306,9 @@ namespace AlibabaCloud
 			GetVideoSummaryTaskResultOutcome getVideoSummaryTaskResult(const Model::GetVideoSummaryTaskResultRequest &request)const;
 			void getVideoSummaryTaskResultAsync(const Model::GetVideoSummaryTaskResultRequest& request, const GetVideoSummaryTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoSummaryTaskResultOutcomeCallable getVideoSummaryTaskResultCallable(const Model::GetVideoSummaryTaskResultRequest& request) const;
+			InvokeMotorModelOutcome invokeMotorModel(const Model::InvokeMotorModelRequest &request)const;
+			void invokeMotorModelAsync(const Model::InvokeMotorModelRequest& request, const InvokeMotorModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InvokeMotorModelOutcomeCallable invokeMotorModelCallable(const Model::InvokeMotorModelRequest& request) const;
 			ListBodyAlgorithmResultsOutcome listBodyAlgorithmResults(const Model::ListBodyAlgorithmResultsRequest &request)const;
 			void listBodyAlgorithmResultsAsync(const Model::ListBodyAlgorithmResultsRequest& request, const ListBodyAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListBodyAlgorithmResultsOutcomeCallable listBodyAlgorithmResultsCallable(const Model::ListBodyAlgorithmResultsRequest& request) const;
@@ -308,6 +339,12 @@ namespace AlibabaCloud
 			RecognizeImageOutcome recognizeImage(const Model::RecognizeImageRequest &request)const;
 			void recognizeImageAsync(const Model::RecognizeImageRequest& request, const RecognizeImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageOutcomeCallable recognizeImageCallable(const Model::RecognizeImageRequest& request) const;
+			RegisterDeviceOutcome registerDevice(const Model::RegisterDeviceRequest &request)const;
+			void registerDeviceAsync(const Model::RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RegisterDeviceOutcomeCallable registerDeviceCallable(const Model::RegisterDeviceRequest& request) const;
+			ReportDeviceCapacityOutcome reportDeviceCapacity(const Model::ReportDeviceCapacityRequest &request)const;
+			void reportDeviceCapacityAsync(const Model::ReportDeviceCapacityRequest& request, const ReportDeviceCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReportDeviceCapacityOutcomeCallable reportDeviceCapacityCallable(const Model::ReportDeviceCapacityRequest& request) const;
 			SaveVideoSummaryTaskVideoOutcome saveVideoSummaryTaskVideo(const Model::SaveVideoSummaryTaskVideoRequest &request)const;
 			void saveVideoSummaryTaskVideoAsync(const Model::SaveVideoSummaryTaskVideoRequest& request, const SaveVideoSummaryTaskVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SaveVideoSummaryTaskVideoOutcomeCallable saveVideoSummaryTaskVideoCallable(const Model::SaveVideoSummaryTaskVideoRequest& request) const;
@@ -320,6 +357,9 @@ namespace AlibabaCloud
 			StopMonitorOutcome stopMonitor(const Model::StopMonitorRequest &request)const;
 			void stopMonitorAsync(const Model::StopMonitorRequest& request, const StopMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopMonitorOutcomeCallable stopMonitorCallable(const Model::StopMonitorRequest& request) const;
+			SyncDeviceTimeOutcome syncDeviceTime(const Model::SyncDeviceTimeRequest &request)const;
+			void syncDeviceTimeAsync(const Model::SyncDeviceTimeRequest& request, const SyncDeviceTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SyncDeviceTimeOutcomeCallable syncDeviceTimeCallable(const Model::SyncDeviceTimeRequest& request) const;
 			UpdateCorpOutcome updateCorp(const Model::UpdateCorpRequest &request)const;
 			void updateCorpAsync(const Model::UpdateCorpRequest& request, const UpdateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCorpOutcomeCallable updateCorpCallable(const Model::UpdateCorpRequest& request) const;

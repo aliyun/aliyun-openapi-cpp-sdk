@@ -43,6 +43,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskResult.h
 	include/alibabacloud/vcs/model/GetBodyOptionsRequest.h
 	include/alibabacloud/vcs/model/GetBodyOptionsResult.h
+	include/alibabacloud/vcs/model/GetDeviceConfigRequest.h
+	include/alibabacloud/vcs/model/GetDeviceConfigResult.h
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlResult.h
 	include/alibabacloud/vcs/model/GetDeviceVideoUrlRequest.h
@@ -59,6 +61,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetVideoComposeResultResult.h
 	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultRequest.h
 	include/alibabacloud/vcs/model/GetVideoSummaryTaskResultResult.h
+	include/alibabacloud/vcs/model/InvokeMotorModelRequest.h
+	include/alibabacloud/vcs/model/InvokeMotorModelResult.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
@@ -79,6 +83,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/RecognizeFaceQualityResult.h
 	include/alibabacloud/vcs/model/RecognizeImageRequest.h
 	include/alibabacloud/vcs/model/RecognizeImageResult.h
+	include/alibabacloud/vcs/model/RegisterDeviceRequest.h
+	include/alibabacloud/vcs/model/RegisterDeviceResult.h
+	include/alibabacloud/vcs/model/ReportDeviceCapacityRequest.h
+	include/alibabacloud/vcs/model/ReportDeviceCapacityResult.h
 	include/alibabacloud/vcs/model/SaveVideoSummaryTaskVideoRequest.h
 	include/alibabacloud/vcs/model/SaveVideoSummaryTaskVideoResult.h
 	include/alibabacloud/vcs/model/SearchBodyRequest.h
@@ -87,6 +95,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/SearchFaceResult.h
 	include/alibabacloud/vcs/model/StopMonitorRequest.h
 	include/alibabacloud/vcs/model/StopMonitorResult.h
+	include/alibabacloud/vcs/model/SyncDeviceTimeRequest.h
+	include/alibabacloud/vcs/model/SyncDeviceTimeResult.h
 	include/alibabacloud/vcs/model/UpdateCorpRequest.h
 	include/alibabacloud/vcs/model/UpdateCorpResult.h
 	include/alibabacloud/vcs/model/UpdateDeviceRequest.h
@@ -120,6 +130,8 @@ set(vcs_src
 	src/model/DeleteVideoSummaryTaskResult.cc
 	src/model/GetBodyOptionsRequest.cc
 	src/model/GetBodyOptionsResult.cc
+	src/model/GetDeviceConfigRequest.cc
+	src/model/GetDeviceConfigResult.cc
 	src/model/GetDeviceLiveUrlRequest.cc
 	src/model/GetDeviceLiveUrlResult.cc
 	src/model/GetDeviceVideoUrlRequest.cc
@@ -136,6 +148,8 @@ set(vcs_src
 	src/model/GetVideoComposeResultResult.cc
 	src/model/GetVideoSummaryTaskResultRequest.cc
 	src/model/GetVideoSummaryTaskResultResult.cc
+	src/model/InvokeMotorModelRequest.cc
+	src/model/InvokeMotorModelResult.cc
 	src/model/ListBodyAlgorithmResultsRequest.cc
 	src/model/ListBodyAlgorithmResultsResult.cc
 	src/model/ListCorpsRequest.cc
@@ -156,6 +170,10 @@ set(vcs_src
 	src/model/RecognizeFaceQualityResult.cc
 	src/model/RecognizeImageRequest.cc
 	src/model/RecognizeImageResult.cc
+	src/model/RegisterDeviceRequest.cc
+	src/model/RegisterDeviceResult.cc
+	src/model/ReportDeviceCapacityRequest.cc
+	src/model/ReportDeviceCapacityResult.cc
 	src/model/SaveVideoSummaryTaskVideoRequest.cc
 	src/model/SaveVideoSummaryTaskVideoResult.cc
 	src/model/SearchBodyRequest.cc
@@ -164,6 +182,8 @@ set(vcs_src
 	src/model/SearchFaceResult.cc
 	src/model/StopMonitorRequest.cc
 	src/model/StopMonitorResult.cc
+	src/model/SyncDeviceTimeRequest.cc
+	src/model/SyncDeviceTimeResult.cc
 	src/model/UpdateCorpRequest.cc
 	src/model/UpdateCorpResult.cc
 	src/model/UpdateDeviceRequest.cc

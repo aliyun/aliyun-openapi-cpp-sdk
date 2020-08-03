@@ -64,6 +64,8 @@ void GetMonitorResultResult::parse(const std::string &payload)
 			recordsItemObject.shotTime = dataNodeRecordsRecordsItem["ShotTime"].asString();
 		if(!dataNodeRecordsRecordsItem["MonitorPicUrl"].isNull())
 			recordsItemObject.monitorPicUrl = dataNodeRecordsRecordsItem["MonitorPicUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["TargetPicUrl"].isNull())
+			recordsItemObject.targetPicUrl = dataNodeRecordsRecordsItem["TargetPicUrl"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

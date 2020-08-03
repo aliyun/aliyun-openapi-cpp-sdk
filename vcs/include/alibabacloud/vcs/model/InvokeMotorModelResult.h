@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_INVOKEMOTORMODELRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_INVOKEMOTORMODELRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetMonitorResultResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT InvokeMotorModelResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct RecordsItem
-					{
-						std::string leftUpX;
-						std::string leftUpY;
-						std::string score;
-						std::string targetPicUrl;
-						std::string rightBottomX;
-						std::string rightBottomY;
-						std::string gbId;
-						std::string monitorPicUrl;
-						std::string shotTime;
-						std::string picUrl;
-					};
-					std::string maxId;
-					std::vector<RecordsItem> records;
+					std::string structList;
 				};
 
 
-				GetMonitorResultResult();
-				explicit GetMonitorResultResult(const std::string &payload);
-				~GetMonitorResultResult();
+				InvokeMotorModelResult();
+				explicit InvokeMotorModelResult(const std::string &payload);
+				~InvokeMotorModelResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -70,4 +56,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETMONITORRESULTRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_INVOKEMOTORMODELRESULT_H_
