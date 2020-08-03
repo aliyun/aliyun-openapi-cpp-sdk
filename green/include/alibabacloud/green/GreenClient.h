@@ -94,12 +94,8 @@
 #include "model/DescribeAuditRangeResult.h"
 #include "model/DescribeAuditSettingRequest.h"
 #include "model/DescribeAuditSettingResult.h"
-#include "model/DescribeBizTypeImageLibRequest.h"
-#include "model/DescribeBizTypeImageLibResult.h"
 #include "model/DescribeBizTypeSettingRequest.h"
 #include "model/DescribeBizTypeSettingResult.h"
-#include "model/DescribeBizTypeTextLibRequest.h"
-#include "model/DescribeBizTypeTextLibResult.h"
 #include "model/DescribeBizTypesRequest.h"
 #include "model/DescribeBizTypesResult.h"
 #include "model/DescribeCustomOcrTemplateRequest.h"
@@ -431,15 +427,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAuditSettingResult> DescribeAuditSettingOutcome;
 			typedef std::future<DescribeAuditSettingOutcome> DescribeAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditSettingRequest&, const DescribeAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditSettingAsyncHandler;
-			typedef Outcome<Error, Model::DescribeBizTypeImageLibResult> DescribeBizTypeImageLibOutcome;
-			typedef std::future<DescribeBizTypeImageLibOutcome> DescribeBizTypeImageLibOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeImageLibRequest&, const DescribeBizTypeImageLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeImageLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypeSettingResult> DescribeBizTypeSettingOutcome;
 			typedef std::future<DescribeBizTypeSettingOutcome> DescribeBizTypeSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeSettingRequest&, const DescribeBizTypeSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeSettingAsyncHandler;
-			typedef Outcome<Error, Model::DescribeBizTypeTextLibResult> DescribeBizTypeTextLibOutcome;
-			typedef std::future<DescribeBizTypeTextLibOutcome> DescribeBizTypeTextLibOutcomeCallable;
-			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeTextLibRequest&, const DescribeBizTypeTextLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeTextLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypesResult> DescribeBizTypesOutcome;
 			typedef std::future<DescribeBizTypesOutcome> DescribeBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypesRequest&, const DescribeBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypesAsyncHandler;
@@ -874,15 +864,9 @@ namespace AlibabaCloud
 			DescribeAuditSettingOutcome describeAuditSetting(const Model::DescribeAuditSettingRequest &request)const;
 			void describeAuditSettingAsync(const Model::DescribeAuditSettingRequest& request, const DescribeAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditSettingOutcomeCallable describeAuditSettingCallable(const Model::DescribeAuditSettingRequest& request) const;
-			DescribeBizTypeImageLibOutcome describeBizTypeImageLib(const Model::DescribeBizTypeImageLibRequest &request)const;
-			void describeBizTypeImageLibAsync(const Model::DescribeBizTypeImageLibRequest& request, const DescribeBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeBizTypeImageLibOutcomeCallable describeBizTypeImageLibCallable(const Model::DescribeBizTypeImageLibRequest& request) const;
 			DescribeBizTypeSettingOutcome describeBizTypeSetting(const Model::DescribeBizTypeSettingRequest &request)const;
 			void describeBizTypeSettingAsync(const Model::DescribeBizTypeSettingRequest& request, const DescribeBizTypeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypeSettingOutcomeCallable describeBizTypeSettingCallable(const Model::DescribeBizTypeSettingRequest& request) const;
-			DescribeBizTypeTextLibOutcome describeBizTypeTextLib(const Model::DescribeBizTypeTextLibRequest &request)const;
-			void describeBizTypeTextLibAsync(const Model::DescribeBizTypeTextLibRequest& request, const DescribeBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeBizTypeTextLibOutcomeCallable describeBizTypeTextLibCallable(const Model::DescribeBizTypeTextLibRequest& request) const;
 			DescribeBizTypesOutcome describeBizTypes(const Model::DescribeBizTypesRequest &request)const;
 			void describeBizTypesAsync(const Model::DescribeBizTypesRequest& request, const DescribeBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypesOutcomeCallable describeBizTypesCallable(const Model::DescribeBizTypesRequest& request) const;

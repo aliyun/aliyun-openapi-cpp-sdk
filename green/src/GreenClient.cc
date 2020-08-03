@@ -1347,42 +1347,6 @@ GreenClient::DescribeAuditSettingOutcomeCallable GreenClient::describeAuditSetti
 	return task->get_future();
 }
 
-GreenClient::DescribeBizTypeImageLibOutcome GreenClient::describeBizTypeImageLib(const DescribeBizTypeImageLibRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBizTypeImageLibOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBizTypeImageLibOutcome(DescribeBizTypeImageLibResult(outcome.result()));
-	else
-		return DescribeBizTypeImageLibOutcome(outcome.error());
-}
-
-void GreenClient::describeBizTypeImageLibAsync(const DescribeBizTypeImageLibRequest& request, const DescribeBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBizTypeImageLib(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DescribeBizTypeImageLibOutcomeCallable GreenClient::describeBizTypeImageLibCallable(const DescribeBizTypeImageLibRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBizTypeImageLibOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBizTypeImageLib(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 GreenClient::DescribeBizTypeSettingOutcome GreenClient::describeBizTypeSetting(const DescribeBizTypeSettingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,42 +1377,6 @@ GreenClient::DescribeBizTypeSettingOutcomeCallable GreenClient::describeBizTypeS
 			[this, request]()
 			{
 			return this->describeBizTypeSetting(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-GreenClient::DescribeBizTypeTextLibOutcome GreenClient::describeBizTypeTextLib(const DescribeBizTypeTextLibRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeBizTypeTextLibOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeBizTypeTextLibOutcome(DescribeBizTypeTextLibResult(outcome.result()));
-	else
-		return DescribeBizTypeTextLibOutcome(outcome.error());
-}
-
-void GreenClient::describeBizTypeTextLibAsync(const DescribeBizTypeTextLibRequest& request, const DescribeBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeBizTypeTextLib(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-GreenClient::DescribeBizTypeTextLibOutcomeCallable GreenClient::describeBizTypeTextLibCallable(const DescribeBizTypeTextLibRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeBizTypeTextLibOutcome()>>(
-			[this, request]()
-			{
-			return this->describeBizTypeTextLib(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

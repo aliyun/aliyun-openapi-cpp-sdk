@@ -93,12 +93,8 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeAuditRangeResult.h
 	include/alibabacloud/green/model/DescribeAuditSettingRequest.h
 	include/alibabacloud/green/model/DescribeAuditSettingResult.h
-	include/alibabacloud/green/model/DescribeBizTypeImageLibRequest.h
-	include/alibabacloud/green/model/DescribeBizTypeImageLibResult.h
 	include/alibabacloud/green/model/DescribeBizTypeSettingRequest.h
 	include/alibabacloud/green/model/DescribeBizTypeSettingResult.h
-	include/alibabacloud/green/model/DescribeBizTypeTextLibRequest.h
-	include/alibabacloud/green/model/DescribeBizTypeTextLibResult.h
 	include/alibabacloud/green/model/DescribeBizTypesRequest.h
 	include/alibabacloud/green/model/DescribeBizTypesResult.h
 	include/alibabacloud/green/model/DescribeCustomOcrTemplateRequest.h
@@ -388,12 +384,8 @@ set(green_src
 	src/model/DescribeAuditRangeResult.cc
 	src/model/DescribeAuditSettingRequest.cc
 	src/model/DescribeAuditSettingResult.cc
-	src/model/DescribeBizTypeImageLibRequest.cc
-	src/model/DescribeBizTypeImageLibResult.cc
 	src/model/DescribeBizTypeSettingRequest.cc
 	src/model/DescribeBizTypeSettingResult.cc
-	src/model/DescribeBizTypeTextLibRequest.cc
-	src/model/DescribeBizTypeTextLibResult.cc
 	src/model/DescribeBizTypesRequest.cc
 	src/model/DescribeBizTypesResult.cc
 	src/model/DescribeCustomOcrTemplateRequest.cc
