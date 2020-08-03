@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VoiceCancelScanRequest;
 
 VoiceCancelScanRequest::VoiceCancelScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/voice/cancelscan");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoiceCancelScanRequest::~VoiceCancelScanRequest()
 {}
@@ -33,6 +36,6 @@ std::string VoiceCancelScanRequest::getClientInfo()const
 void VoiceCancelScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

@@ -93,8 +93,12 @@ set(green_public_header_model
 	include/alibabacloud/green/model/DescribeAuditRangeResult.h
 	include/alibabacloud/green/model/DescribeAuditSettingRequest.h
 	include/alibabacloud/green/model/DescribeAuditSettingResult.h
+	include/alibabacloud/green/model/DescribeBizTypeImageLibRequest.h
+	include/alibabacloud/green/model/DescribeBizTypeImageLibResult.h
 	include/alibabacloud/green/model/DescribeBizTypeSettingRequest.h
 	include/alibabacloud/green/model/DescribeBizTypeSettingResult.h
+	include/alibabacloud/green/model/DescribeBizTypeTextLibRequest.h
+	include/alibabacloud/green/model/DescribeBizTypeTextLibResult.h
 	include/alibabacloud/green/model/DescribeBizTypesRequest.h
 	include/alibabacloud/green/model/DescribeBizTypesResult.h
 	include/alibabacloud/green/model/DescribeCustomOcrTemplateRequest.h
@@ -241,8 +245,12 @@ set(green_public_header_model
 	include/alibabacloud/green/model/UpdateAuditRangeResult.h
 	include/alibabacloud/green/model/UpdateAuditSettingRequest.h
 	include/alibabacloud/green/model/UpdateAuditSettingResult.h
+	include/alibabacloud/green/model/UpdateBizTypeImageLibRequest.h
+	include/alibabacloud/green/model/UpdateBizTypeImageLibResult.h
 	include/alibabacloud/green/model/UpdateBizTypeSettingRequest.h
 	include/alibabacloud/green/model/UpdateBizTypeSettingResult.h
+	include/alibabacloud/green/model/UpdateBizTypeTextLibRequest.h
+	include/alibabacloud/green/model/UpdateBizTypeTextLibResult.h
 	include/alibabacloud/green/model/UpdateCustomOcrTemplateRequest.h
 	include/alibabacloud/green/model/UpdateCustomOcrTemplateResult.h
 	include/alibabacloud/green/model/UpdateImageLibRequest.h
@@ -302,7 +310,9 @@ set(green_public_header_model
 	include/alibabacloud/green/model/VoiceIdentityStartRegisterRequest.h
 	include/alibabacloud/green/model/VoiceIdentityStartRegisterResult.h
 	include/alibabacloud/green/model/VoiceIdentityUnregisterRequest.h
-	include/alibabacloud/green/model/VoiceIdentityUnregisterResult.h )
+	include/alibabacloud/green/model/VoiceIdentityUnregisterResult.h
+	include/alibabacloud/green/model/VoiceSyncScanRequest.h
+	include/alibabacloud/green/model/VoiceSyncScanResult.h )
 
 set(green_src 
 	src/GreenClient.cc
@@ -378,8 +388,12 @@ set(green_src
 	src/model/DescribeAuditRangeResult.cc
 	src/model/DescribeAuditSettingRequest.cc
 	src/model/DescribeAuditSettingResult.cc
+	src/model/DescribeBizTypeImageLibRequest.cc
+	src/model/DescribeBizTypeImageLibResult.cc
 	src/model/DescribeBizTypeSettingRequest.cc
 	src/model/DescribeBizTypeSettingResult.cc
+	src/model/DescribeBizTypeTextLibRequest.cc
+	src/model/DescribeBizTypeTextLibResult.cc
 	src/model/DescribeBizTypesRequest.cc
 	src/model/DescribeBizTypesResult.cc
 	src/model/DescribeCustomOcrTemplateRequest.cc
@@ -526,8 +540,12 @@ set(green_src
 	src/model/UpdateAuditRangeResult.cc
 	src/model/UpdateAuditSettingRequest.cc
 	src/model/UpdateAuditSettingResult.cc
+	src/model/UpdateBizTypeImageLibRequest.cc
+	src/model/UpdateBizTypeImageLibResult.cc
 	src/model/UpdateBizTypeSettingRequest.cc
 	src/model/UpdateBizTypeSettingResult.cc
+	src/model/UpdateBizTypeTextLibRequest.cc
+	src/model/UpdateBizTypeTextLibResult.cc
 	src/model/UpdateCustomOcrTemplateRequest.cc
 	src/model/UpdateCustomOcrTemplateResult.cc
 	src/model/UpdateImageLibRequest.cc
@@ -587,7 +605,9 @@ set(green_src
 	src/model/VoiceIdentityStartRegisterRequest.cc
 	src/model/VoiceIdentityStartRegisterResult.cc
 	src/model/VoiceIdentityUnregisterRequest.cc
-	src/model/VoiceIdentityUnregisterResult.cc )
+	src/model/VoiceIdentityUnregisterResult.cc
+	src/model/VoiceSyncScanRequest.cc
+	src/model/VoiceSyncScanResult.cc )
 
 add_library(green ${LIB_TYPE}
 	${green_public_header}

@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VoiceIdentityStartCheckRequest;
 
 VoiceIdentityStartCheckRequest::VoiceIdentityStartCheckRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/voice/auth/start/check");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoiceIdentityStartCheckRequest::~VoiceIdentityStartCheckRequest()
 {}
@@ -33,7 +36,7 @@ std::string VoiceIdentityStartCheckRequest::getRegionId()const
 void VoiceIdentityStartCheckRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string VoiceIdentityStartCheckRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string VoiceIdentityStartCheckRequest::getClientInfo()const
 void VoiceIdentityStartCheckRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

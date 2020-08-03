@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::AddSimilarityLibraryRequest;
 
 AddSimilarityLibraryRequest::AddSimilarityLibraryRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/similarity/library/add");
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddSimilarityLibraryRequest::~AddSimilarityLibraryRequest()
 {}
@@ -33,6 +36,6 @@ std::string AddSimilarityLibraryRequest::getClientInfo()const
 void AddSimilarityLibraryRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

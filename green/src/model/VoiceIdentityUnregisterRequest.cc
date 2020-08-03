@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VoiceIdentityUnregisterRequest;
 
 VoiceIdentityUnregisterRequest::VoiceIdentityUnregisterRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/voice/auth/unregister");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoiceIdentityUnregisterRequest::~VoiceIdentityUnregisterRequest()
 {}
@@ -33,7 +36,7 @@ std::string VoiceIdentityUnregisterRequest::getRegionId()const
 void VoiceIdentityUnregisterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string VoiceIdentityUnregisterRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string VoiceIdentityUnregisterRequest::getClientInfo()const
 void VoiceIdentityUnregisterRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

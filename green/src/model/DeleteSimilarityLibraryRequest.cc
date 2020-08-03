@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeleteSimilarityLibraryRequest;
 
 DeleteSimilarityLibraryRequest::DeleteSimilarityLibraryRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/similarity/library/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSimilarityLibraryRequest::~DeleteSimilarityLibraryRequest()
 {}
@@ -33,6 +36,6 @@ std::string DeleteSimilarityLibraryRequest::getClientInfo()const
 void DeleteSimilarityLibraryRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

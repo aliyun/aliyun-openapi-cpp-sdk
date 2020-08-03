@@ -59,6 +59,10 @@ void DescribeOssIncrementCheckSettingResult::parse(const std::string &payload)
 		imageAutoFreeze_.porn = imageAutoFreezeNode["Porn"].asString();
 	if(!imageAutoFreezeNode["Terrorism"].isNull())
 		imageAutoFreeze_.terrorism = imageAutoFreezeNode["Terrorism"].asString();
+	if(!imageAutoFreezeNode["Ad"].isNull())
+		imageAutoFreeze_.ad = imageAutoFreezeNode["Ad"].asString();
+	if(!imageAutoFreezeNode["Live"].isNull())
+		imageAutoFreeze_.live = imageAutoFreezeNode["Live"].asString();
 	auto allImageSceneList = value["ImageSceneList"]["ImageScene"];
 	for (const auto &item : allImageSceneList)
 		imageSceneList_.push_back(item.asString());

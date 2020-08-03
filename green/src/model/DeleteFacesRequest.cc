@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeleteFacesRequest;
 
 DeleteFacesRequest::DeleteFacesRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/face/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteFacesRequest::~DeleteFacesRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteFacesRequest::getRegionId()const
 void DeleteFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteFacesRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string DeleteFacesRequest::getClientInfo()const
 void DeleteFacesRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

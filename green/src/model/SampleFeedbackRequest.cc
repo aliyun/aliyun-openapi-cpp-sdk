@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::SampleFeedbackRequest;
 
 SampleFeedbackRequest::SampleFeedbackRequest() :
 	RoaServiceRequest("green", "2016-12-22")
-{}
+{
+	setResourcePath("/sample/feedback");
+	setMethod(HttpRequest::Method::Post);
+}
 
 SampleFeedbackRequest::~SampleFeedbackRequest()
 {}

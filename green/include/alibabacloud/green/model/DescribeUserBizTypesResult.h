@@ -36,8 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string sourceBizType;
 					bool gray;
+					bool citeTemplate;
 					std::string bizType;
 					std::string source;
+					std::string industryInfo;
 				};
 
 

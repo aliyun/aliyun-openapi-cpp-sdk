@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VoiceIdentityStartRegisterRequest;
 
 VoiceIdentityStartRegisterRequest::VoiceIdentityStartRegisterRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/voice/auth/start/register");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoiceIdentityStartRegisterRequest::~VoiceIdentityStartRegisterRequest()
 {}
@@ -33,7 +36,7 @@ std::string VoiceIdentityStartRegisterRequest::getRegionId()const
 void VoiceIdentityStartRegisterRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string VoiceIdentityStartRegisterRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string VoiceIdentityStartRegisterRequest::getClientInfo()const
 void VoiceIdentityStartRegisterRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

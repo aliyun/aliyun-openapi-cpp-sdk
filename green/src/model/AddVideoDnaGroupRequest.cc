@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::AddVideoDnaGroupRequest;
 
 AddVideoDnaGroupRequest::AddVideoDnaGroupRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/video/dna/group/add");
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddVideoDnaGroupRequest::~AddVideoDnaGroupRequest()
 {}
@@ -33,6 +36,6 @@ std::string AddVideoDnaGroupRequest::getClientInfo()const
 void AddVideoDnaGroupRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

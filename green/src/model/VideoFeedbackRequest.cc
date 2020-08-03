@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VideoFeedbackRequest;
 
 VideoFeedbackRequest::VideoFeedbackRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/video/feedback");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VideoFeedbackRequest::~VideoFeedbackRequest()
 {}
@@ -33,6 +36,6 @@ std::string VideoFeedbackRequest::getClientInfo()const
 void VideoFeedbackRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

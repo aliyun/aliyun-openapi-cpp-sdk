@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::ImageResultsRequest;
 
 ImageResultsRequest::ImageResultsRequest() :
 	RoaServiceRequest("green", "2016-12-22")
-{}
+{
+	setResourcePath("/image/results");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImageResultsRequest::~ImageResultsRequest()
 {}

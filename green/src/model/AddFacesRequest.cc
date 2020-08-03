@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::AddFacesRequest;
 
 AddFacesRequest::AddFacesRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/face/add");
+	setMethod(HttpRequest::Method::Post);
+}
 
 AddFacesRequest::~AddFacesRequest()
 {}
@@ -33,7 +36,7 @@ std::string AddFacesRequest::getRegionId()const
 void AddFacesRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string AddFacesRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string AddFacesRequest::getClientInfo()const
 void AddFacesRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

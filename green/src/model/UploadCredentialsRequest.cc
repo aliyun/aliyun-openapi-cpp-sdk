@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::UploadCredentialsRequest;
 
 UploadCredentialsRequest::UploadCredentialsRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/credentials/uploadcredentials");
+	setMethod(HttpRequest::Method::Post);
+}
 
 UploadCredentialsRequest::~UploadCredentialsRequest()
 {}
@@ -33,7 +36,7 @@ std::string UploadCredentialsRequest::getRegionId()const
 void UploadCredentialsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string UploadCredentialsRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string UploadCredentialsRequest::getClientInfo()const
 void UploadCredentialsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

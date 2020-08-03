@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::ImageScanFeedbackRequest;
 
 ImageScanFeedbackRequest::ImageScanFeedbackRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/image/feedback");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImageScanFeedbackRequest::~ImageScanFeedbackRequest()
 {}
@@ -33,6 +36,6 @@ std::string ImageScanFeedbackRequest::getClientInfo()const
 void ImageScanFeedbackRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

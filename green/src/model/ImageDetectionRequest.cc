@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::ImageDetectionRequest;
 
 ImageDetectionRequest::ImageDetectionRequest() :
 	RoaServiceRequest("green", "2016-12-22")
-{}
+{
+	setResourcePath("/image/detection");
+	setMethod(HttpRequest::Method::Post);
+}
 
 ImageDetectionRequest::~ImageDetectionRequest()
 {}

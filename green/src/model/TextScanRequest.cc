@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::TextScanRequest;
 
 TextScanRequest::TextScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/text/scan");
+	setMethod(HttpRequest::Method::Post);
+}
 
 TextScanRequest::~TextScanRequest()
 {}
@@ -33,6 +36,6 @@ std::string TextScanRequest::getClientInfo()const
 void TextScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

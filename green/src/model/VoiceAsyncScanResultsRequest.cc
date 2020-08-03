@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VoiceAsyncScanResultsRequest;
 
 VoiceAsyncScanResultsRequest::VoiceAsyncScanResultsRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/voice/results");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VoiceAsyncScanResultsRequest::~VoiceAsyncScanResultsRequest()
 {}
@@ -33,6 +36,6 @@ std::string VoiceAsyncScanResultsRequest::getClientInfo()const
 void VoiceAsyncScanResultsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

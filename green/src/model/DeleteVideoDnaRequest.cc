@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeleteVideoDnaRequest;
 
 DeleteVideoDnaRequest::DeleteVideoDnaRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/video/dna/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteVideoDnaRequest::~DeleteVideoDnaRequest()
 {}
@@ -33,6 +36,6 @@ std::string DeleteVideoDnaRequest::getClientInfo()const
 void DeleteVideoDnaRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

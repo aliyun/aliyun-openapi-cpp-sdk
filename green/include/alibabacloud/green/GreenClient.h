@@ -20,7 +20,7 @@
 #include <future>
 #include <alibabacloud/core/AsyncCallerContext.h>
 #include <alibabacloud/core/EndpointProvider.h>
-#include <alibabacloud/core/RpcServiceClient.h>
+#include <alibabacloud/core/RoaServiceClient.h>
 #include "GreenExport.h"
 #include "model/AddFacesRequest.h"
 #include "model/AddFacesResult.h"
@@ -94,8 +94,12 @@
 #include "model/DescribeAuditRangeResult.h"
 #include "model/DescribeAuditSettingRequest.h"
 #include "model/DescribeAuditSettingResult.h"
+#include "model/DescribeBizTypeImageLibRequest.h"
+#include "model/DescribeBizTypeImageLibResult.h"
 #include "model/DescribeBizTypeSettingRequest.h"
 #include "model/DescribeBizTypeSettingResult.h"
+#include "model/DescribeBizTypeTextLibRequest.h"
+#include "model/DescribeBizTypeTextLibResult.h"
 #include "model/DescribeBizTypesRequest.h"
 #include "model/DescribeBizTypesResult.h"
 #include "model/DescribeCustomOcrTemplateRequest.h"
@@ -242,8 +246,12 @@
 #include "model/UpdateAuditRangeResult.h"
 #include "model/UpdateAuditSettingRequest.h"
 #include "model/UpdateAuditSettingResult.h"
+#include "model/UpdateBizTypeImageLibRequest.h"
+#include "model/UpdateBizTypeImageLibResult.h"
 #include "model/UpdateBizTypeSettingRequest.h"
 #include "model/UpdateBizTypeSettingResult.h"
+#include "model/UpdateBizTypeTextLibRequest.h"
+#include "model/UpdateBizTypeTextLibResult.h"
 #include "model/UpdateCustomOcrTemplateRequest.h"
 #include "model/UpdateCustomOcrTemplateResult.h"
 #include "model/UpdateImageLibRequest.h"
@@ -304,13 +312,15 @@
 #include "model/VoiceIdentityStartRegisterResult.h"
 #include "model/VoiceIdentityUnregisterRequest.h"
 #include "model/VoiceIdentityUnregisterResult.h"
+#include "model/VoiceSyncScanRequest.h"
+#include "model/VoiceSyncScanResult.h"
 
 
 namespace AlibabaCloud
 {
 	namespace Green
 	{
-		class ALIBABACLOUD_GREEN_EXPORT GreenClient : public RpcServiceClient
+		class ALIBABACLOUD_GREEN_EXPORT GreenClient : public RoaServiceClient
 		{
 		public:
 			typedef Outcome<Error, Model::AddFacesResult> AddFacesOutcome;
@@ -421,9 +431,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAuditSettingResult> DescribeAuditSettingOutcome;
 			typedef std::future<DescribeAuditSettingOutcome> DescribeAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeAuditSettingRequest&, const DescribeAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBizTypeImageLibResult> DescribeBizTypeImageLibOutcome;
+			typedef std::future<DescribeBizTypeImageLibOutcome> DescribeBizTypeImageLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeImageLibRequest&, const DescribeBizTypeImageLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeImageLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypeSettingResult> DescribeBizTypeSettingOutcome;
 			typedef std::future<DescribeBizTypeSettingOutcome> DescribeBizTypeSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeSettingRequest&, const DescribeBizTypeSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBizTypeTextLibResult> DescribeBizTypeTextLibOutcome;
+			typedef std::future<DescribeBizTypeTextLibOutcome> DescribeBizTypeTextLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypeTextLibRequest&, const DescribeBizTypeTextLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypeTextLibAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBizTypesResult> DescribeBizTypesOutcome;
 			typedef std::future<DescribeBizTypesOutcome> DescribeBizTypesOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::DescribeBizTypesRequest&, const DescribeBizTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTypesAsyncHandler;
@@ -643,9 +659,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAuditSettingResult> UpdateAuditSettingOutcome;
 			typedef std::future<UpdateAuditSettingOutcome> UpdateAuditSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateAuditSettingRequest&, const UpdateAuditSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAuditSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBizTypeImageLibResult> UpdateBizTypeImageLibOutcome;
+			typedef std::future<UpdateBizTypeImageLibOutcome> UpdateBizTypeImageLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeImageLibRequest&, const UpdateBizTypeImageLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeImageLibAsyncHandler;
 			typedef Outcome<Error, Model::UpdateBizTypeSettingResult> UpdateBizTypeSettingOutcome;
 			typedef std::future<UpdateBizTypeSettingOutcome> UpdateBizTypeSettingOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeSettingRequest&, const UpdateBizTypeSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeSettingAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBizTypeTextLibResult> UpdateBizTypeTextLibOutcome;
+			typedef std::future<UpdateBizTypeTextLibOutcome> UpdateBizTypeTextLibOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::UpdateBizTypeTextLibRequest&, const UpdateBizTypeTextLibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBizTypeTextLibAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCustomOcrTemplateResult> UpdateCustomOcrTemplateOutcome;
 			typedef std::future<UpdateCustomOcrTemplateOutcome> UpdateCustomOcrTemplateOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::UpdateCustomOcrTemplateRequest&, const UpdateCustomOcrTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCustomOcrTemplateAsyncHandler;
@@ -736,6 +758,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VoiceIdentityUnregisterResult> VoiceIdentityUnregisterOutcome;
 			typedef std::future<VoiceIdentityUnregisterOutcome> VoiceIdentityUnregisterOutcomeCallable;
 			typedef std::function<void(const GreenClient*, const Model::VoiceIdentityUnregisterRequest&, const VoiceIdentityUnregisterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VoiceIdentityUnregisterAsyncHandler;
+			typedef Outcome<Error, Model::VoiceSyncScanResult> VoiceSyncScanOutcome;
+			typedef std::future<VoiceSyncScanOutcome> VoiceSyncScanOutcomeCallable;
+			typedef std::function<void(const GreenClient*, const Model::VoiceSyncScanRequest&, const VoiceSyncScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VoiceSyncScanAsyncHandler;
 
 			GreenClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			GreenClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -849,9 +874,15 @@ namespace AlibabaCloud
 			DescribeAuditSettingOutcome describeAuditSetting(const Model::DescribeAuditSettingRequest &request)const;
 			void describeAuditSettingAsync(const Model::DescribeAuditSettingRequest& request, const DescribeAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditSettingOutcomeCallable describeAuditSettingCallable(const Model::DescribeAuditSettingRequest& request) const;
+			DescribeBizTypeImageLibOutcome describeBizTypeImageLib(const Model::DescribeBizTypeImageLibRequest &request)const;
+			void describeBizTypeImageLibAsync(const Model::DescribeBizTypeImageLibRequest& request, const DescribeBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBizTypeImageLibOutcomeCallable describeBizTypeImageLibCallable(const Model::DescribeBizTypeImageLibRequest& request) const;
 			DescribeBizTypeSettingOutcome describeBizTypeSetting(const Model::DescribeBizTypeSettingRequest &request)const;
 			void describeBizTypeSettingAsync(const Model::DescribeBizTypeSettingRequest& request, const DescribeBizTypeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypeSettingOutcomeCallable describeBizTypeSettingCallable(const Model::DescribeBizTypeSettingRequest& request) const;
+			DescribeBizTypeTextLibOutcome describeBizTypeTextLib(const Model::DescribeBizTypeTextLibRequest &request)const;
+			void describeBizTypeTextLibAsync(const Model::DescribeBizTypeTextLibRequest& request, const DescribeBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBizTypeTextLibOutcomeCallable describeBizTypeTextLibCallable(const Model::DescribeBizTypeTextLibRequest& request) const;
 			DescribeBizTypesOutcome describeBizTypes(const Model::DescribeBizTypesRequest &request)const;
 			void describeBizTypesAsync(const Model::DescribeBizTypesRequest& request, const DescribeBizTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBizTypesOutcomeCallable describeBizTypesCallable(const Model::DescribeBizTypesRequest& request) const;
@@ -1071,9 +1102,15 @@ namespace AlibabaCloud
 			UpdateAuditSettingOutcome updateAuditSetting(const Model::UpdateAuditSettingRequest &request)const;
 			void updateAuditSettingAsync(const Model::UpdateAuditSettingRequest& request, const UpdateAuditSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAuditSettingOutcomeCallable updateAuditSettingCallable(const Model::UpdateAuditSettingRequest& request) const;
+			UpdateBizTypeImageLibOutcome updateBizTypeImageLib(const Model::UpdateBizTypeImageLibRequest &request)const;
+			void updateBizTypeImageLibAsync(const Model::UpdateBizTypeImageLibRequest& request, const UpdateBizTypeImageLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBizTypeImageLibOutcomeCallable updateBizTypeImageLibCallable(const Model::UpdateBizTypeImageLibRequest& request) const;
 			UpdateBizTypeSettingOutcome updateBizTypeSetting(const Model::UpdateBizTypeSettingRequest &request)const;
 			void updateBizTypeSettingAsync(const Model::UpdateBizTypeSettingRequest& request, const UpdateBizTypeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBizTypeSettingOutcomeCallable updateBizTypeSettingCallable(const Model::UpdateBizTypeSettingRequest& request) const;
+			UpdateBizTypeTextLibOutcome updateBizTypeTextLib(const Model::UpdateBizTypeTextLibRequest &request)const;
+			void updateBizTypeTextLibAsync(const Model::UpdateBizTypeTextLibRequest& request, const UpdateBizTypeTextLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBizTypeTextLibOutcomeCallable updateBizTypeTextLibCallable(const Model::UpdateBizTypeTextLibRequest& request) const;
 			UpdateCustomOcrTemplateOutcome updateCustomOcrTemplate(const Model::UpdateCustomOcrTemplateRequest &request)const;
 			void updateCustomOcrTemplateAsync(const Model::UpdateCustomOcrTemplateRequest& request, const UpdateCustomOcrTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCustomOcrTemplateOutcomeCallable updateCustomOcrTemplateCallable(const Model::UpdateCustomOcrTemplateRequest& request) const;
@@ -1164,6 +1201,9 @@ namespace AlibabaCloud
 			VoiceIdentityUnregisterOutcome voiceIdentityUnregister(const Model::VoiceIdentityUnregisterRequest &request)const;
 			void voiceIdentityUnregisterAsync(const Model::VoiceIdentityUnregisterRequest& request, const VoiceIdentityUnregisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VoiceIdentityUnregisterOutcomeCallable voiceIdentityUnregisterCallable(const Model::VoiceIdentityUnregisterRequest& request) const;
+			VoiceSyncScanOutcome voiceSyncScan(const Model::VoiceSyncScanRequest &request)const;
+			void voiceSyncScanAsync(const Model::VoiceSyncScanRequest& request, const VoiceSyncScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VoiceSyncScanOutcomeCallable voiceSyncScanCallable(const Model::VoiceSyncScanRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

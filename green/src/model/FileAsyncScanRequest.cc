@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::FileAsyncScanRequest;
 
 FileAsyncScanRequest::FileAsyncScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/file/asyncscan");
+	setMethod(HttpRequest::Method::Post);
+}
 
 FileAsyncScanRequest::~FileAsyncScanRequest()
 {}
@@ -33,6 +36,6 @@ std::string FileAsyncScanRequest::getClientInfo()const
 void FileAsyncScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

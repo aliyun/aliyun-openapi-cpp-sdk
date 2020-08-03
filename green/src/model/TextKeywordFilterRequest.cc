@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::TextKeywordFilterRequest;
 
 TextKeywordFilterRequest::TextKeywordFilterRequest() :
 	RoaServiceRequest("green", "2016-12-22")
-{}
+{
+	setResourcePath("/text/keyword_filter");
+	setMethod(HttpRequest::Method::Post);
+}
 
 TextKeywordFilterRequest::~TextKeywordFilterRequest()
 {}

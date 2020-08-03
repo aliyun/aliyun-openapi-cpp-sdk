@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeletePersonRequest;
 
 DeletePersonRequest::DeletePersonRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/person/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeletePersonRequest::~DeletePersonRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeletePersonRequest::getRegionId()const
 void DeletePersonRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeletePersonRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string DeletePersonRequest::getClientInfo()const
 void DeletePersonRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

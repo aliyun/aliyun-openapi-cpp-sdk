@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeleteSimilarityImageRequest;
 
 DeleteSimilarityImageRequest::DeleteSimilarityImageRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/similarity/image/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteSimilarityImageRequest::~DeleteSimilarityImageRequest()
 {}
@@ -33,6 +36,6 @@ std::string DeleteSimilarityImageRequest::getClientInfo()const
 void DeleteSimilarityImageRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

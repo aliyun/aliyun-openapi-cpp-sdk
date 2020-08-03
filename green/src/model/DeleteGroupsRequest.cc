@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DeleteGroupsRequest;
 
 DeleteGroupsRequest::DeleteGroupsRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/person/groups/delete");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DeleteGroupsRequest::~DeleteGroupsRequest()
 {}
@@ -33,7 +36,7 @@ std::string DeleteGroupsRequest::getRegionId()const
 void DeleteGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string DeleteGroupsRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string DeleteGroupsRequest::getClientInfo()const
 void DeleteGroupsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

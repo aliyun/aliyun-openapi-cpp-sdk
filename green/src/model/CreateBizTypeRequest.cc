@@ -38,6 +38,17 @@ void CreateBizTypeRequest::setBizTypeImport(const std::string& bizTypeImport)
 	setParameter("BizTypeImport", bizTypeImport);
 }
 
+bool CreateBizTypeRequest::getCiteTemplate()const
+{
+	return citeTemplate_;
+}
+
+void CreateBizTypeRequest::setCiteTemplate(bool citeTemplate)
+{
+	citeTemplate_ = citeTemplate;
+	setParameter("CiteTemplate", citeTemplate ? "true" : "false");
+}
+
 std::string CreateBizTypeRequest::getSourceIp()const
 {
 	return sourceIp_;

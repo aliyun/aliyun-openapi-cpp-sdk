@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::GetPersonsRequest;
 
 GetPersonsRequest::GetPersonsRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/group/persons");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetPersonsRequest::~GetPersonsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetPersonsRequest::getRegionId()const
 void GetPersonsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GetPersonsRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string GetPersonsRequest::getClientInfo()const
 void GetPersonsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::DetectFaceRequest;
 
 DetectFaceRequest::DetectFaceRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/face/detect");
+	setMethod(HttpRequest::Method::Post);
+}
 
 DetectFaceRequest::~DetectFaceRequest()
 {}
@@ -33,6 +36,6 @@ std::string DetectFaceRequest::getClientInfo()const
 void DetectFaceRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

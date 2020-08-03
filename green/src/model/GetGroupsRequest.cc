@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::GetGroupsRequest;
 
 GetGroupsRequest::GetGroupsRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/sface/groups");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetGroupsRequest::~GetGroupsRequest()
 {}
@@ -33,7 +36,7 @@ std::string GetGroupsRequest::getRegionId()const
 void GetGroupsRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
-	setCoreParameter("RegionId", regionId);
+	setParameter("RegionId", regionId);
 }
 
 std::string GetGroupsRequest::getClientInfo()const
@@ -44,6 +47,6 @@ std::string GetGroupsRequest::getClientInfo()const
 void GetGroupsRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

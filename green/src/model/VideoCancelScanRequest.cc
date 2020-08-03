@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VideoCancelScanRequest;
 
 VideoCancelScanRequest::VideoCancelScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/video/cancelscan");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VideoCancelScanRequest::~VideoCancelScanRequest()
 {}
@@ -33,6 +36,6 @@ std::string VideoCancelScanRequest::getClientInfo()const
 void VideoCancelScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

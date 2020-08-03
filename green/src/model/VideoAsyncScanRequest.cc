@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::VideoAsyncScanRequest;
 
 VideoAsyncScanRequest::VideoAsyncScanRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/video/asyncscan");
+	setMethod(HttpRequest::Method::Post);
+}
 
 VideoAsyncScanRequest::~VideoAsyncScanRequest()
 {}
@@ -33,6 +36,6 @@ std::string VideoAsyncScanRequest::getClientInfo()const
 void VideoAsyncScanRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

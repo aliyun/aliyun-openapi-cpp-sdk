@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::ImageResultRequest;
 
 ImageResultRequest::ImageResultRequest() :
 	RoaServiceRequest("green", "2016-12-22")
-{}
+{
+	setResourcePath("/image/result/[taskid]");
+	setMethod(HttpRequest::Method::Get);
+}
 
 ImageResultRequest::~ImageResultRequest()
 {}
@@ -33,6 +36,6 @@ std::string ImageResultRequest::getTaskid()const
 void ImageResultRequest::setTaskid(const std::string& taskid)
 {
 	taskid_ = taskid;
-	setCoreParameter("Taskid", taskid);
+	setParameter("Taskid", taskid);
 }
 

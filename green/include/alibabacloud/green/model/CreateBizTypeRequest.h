@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getBizTypeImport()const;
 				void setBizTypeImport(const std::string& bizTypeImport);
+				bool getCiteTemplate()const;
+				void setCiteTemplate(bool citeTemplate);
 				std::string getSourceIp()const;
 				void setSourceIp(const std::string& sourceIp);
 				std::string getIndustryInfo()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::string bizTypeImport_;
+				bool citeTemplate_;
 				std::string sourceIp_;
 				std::string industryInfo_;
 				std::string bizTypeName_;

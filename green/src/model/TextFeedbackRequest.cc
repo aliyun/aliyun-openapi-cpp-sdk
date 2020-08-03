@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::TextFeedbackRequest;
 
 TextFeedbackRequest::TextFeedbackRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/text/feedback");
+	setMethod(HttpRequest::Method::Post);
+}
 
 TextFeedbackRequest::~TextFeedbackRequest()
 {}
@@ -33,6 +36,6 @@ std::string TextFeedbackRequest::getClientInfo()const
 void TextFeedbackRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

@@ -20,7 +20,10 @@ using AlibabaCloud::Green::Model::GetSimilarityImageRequest;
 
 GetSimilarityImageRequest::GetSimilarityImageRequest() :
 	RoaServiceRequest("green", "2018-05-09")
-{}
+{
+	setResourcePath("/green/similarity/image/get");
+	setMethod(HttpRequest::Method::Post);
+}
 
 GetSimilarityImageRequest::~GetSimilarityImageRequest()
 {}
@@ -33,6 +36,6 @@ std::string GetSimilarityImageRequest::getClientInfo()const
 void GetSimilarityImageRequest::setClientInfo(const std::string& clientInfo)
 {
 	clientInfo_ = clientInfo;
-	setCoreParameter("ClientInfo", clientInfo);
+	setParameter("ClientInfo", clientInfo);
 }
 

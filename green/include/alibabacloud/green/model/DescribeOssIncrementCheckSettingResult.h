@@ -34,7 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct ImageAutoFreeze
 				{
+					std::string ad;
 					std::string terrorism;
+					std::string live;
 					bool enabled;
 					std::string porn;
 				};
