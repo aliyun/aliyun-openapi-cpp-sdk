@@ -39,12 +39,15 @@ namespace AlibabaCloud
 				void setPicPath(const std::string& picPath);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getPicUrl()const;
+				void setPicUrl(const std::string& picUrl);
 				std::string getPicId()const;
 				void setPicId(const std::string& picId);
 
             private:
 				std::string picPath_;
 				std::string corpId_;
+				std::string picUrl_;
 				std::string picId_;
 
 			};

@@ -49,6 +49,17 @@ void InvokeMotorModelRequest::setCorpId(const std::string& corpId)
 	setBodyParameter("CorpId", corpId);
 }
 
+std::string InvokeMotorModelRequest::getPicUrl()const
+{
+	return picUrl_;
+}
+
+void InvokeMotorModelRequest::setPicUrl(const std::string& picUrl)
+{
+	picUrl_ = picUrl;
+	setBodyParameter("PicUrl", picUrl);
+}
+
 std::string InvokeMotorModelRequest::getPicId()const
 {
 	return picId_;
