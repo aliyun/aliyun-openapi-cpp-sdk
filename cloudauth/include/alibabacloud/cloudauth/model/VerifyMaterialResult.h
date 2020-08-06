@@ -49,7 +49,10 @@ namespace AlibabaCloud
 						std::string name;
 					};
 					std::string idCardName;
+					std::string faceGlobalUrl;
+					std::string faceQuality;
 					std::string idCardNumber;
+					std::string faceMask;
 					IdCardInfo idCardInfo;
 					std::string faceImageUrl;
 				};
