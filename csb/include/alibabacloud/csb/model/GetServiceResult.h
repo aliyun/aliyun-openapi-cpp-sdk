@@ -70,6 +70,7 @@ namespace AlibabaCloud
 						std::string ownerId;
 						std::string consumeTypesJSON;
 						bool skipAuth;
+						int qps;
 						std::vector<ServiceVersion> serviceVersionsList;
 						bool ottFlag;
 						std::string interfaceName;

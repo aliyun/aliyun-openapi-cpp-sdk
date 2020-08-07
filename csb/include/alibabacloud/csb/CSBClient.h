@@ -24,6 +24,8 @@
 #include "CSBExport.h"
 #include "model/ApproveOrderListRequest.h"
 #include "model/ApproveOrderListResult.h"
+#include "model/CheckSLRDeleteRequest.h"
+#include "model/CheckSLRDeleteResult.h"
 #include "model/CheckServiceExistRequest.h"
 #include "model/CheckServiceExistResult.h"
 #include "model/CommitSuccessedServicesRequest.h"
@@ -76,6 +78,10 @@
 #include "model/FindOrderableListResult.h"
 #include "model/FindOrderedListRequest.h"
 #include "model/FindOrderedListResult.h"
+#include "model/FindOrderedServiceListRequest.h"
+#include "model/FindOrderedServiceListResult.h"
+#include "model/FindOtherInstanceListRequest.h"
+#include "model/FindOtherInstanceListResult.h"
 #include "model/FindProjectListRequest.h"
 #include "model/FindProjectListResult.h"
 #include "model/FindProjectStatisticalDataRequest.h"
@@ -136,6 +142,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApproveOrderListResult> ApproveOrderListOutcome;
 			typedef std::future<ApproveOrderListOutcome> ApproveOrderListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::ApproveOrderListRequest&, const ApproveOrderListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApproveOrderListAsyncHandler;
+			typedef Outcome<Error, Model::CheckSLRDeleteResult> CheckSLRDeleteOutcome;
+			typedef std::future<CheckSLRDeleteOutcome> CheckSLRDeleteOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::CheckSLRDeleteRequest&, const CheckSLRDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckSLRDeleteAsyncHandler;
 			typedef Outcome<Error, Model::CheckServiceExistResult> CheckServiceExistOutcome;
 			typedef std::future<CheckServiceExistOutcome> CheckServiceExistOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::CheckServiceExistRequest&, const CheckServiceExistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceExistAsyncHandler;
@@ -214,6 +223,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FindOrderedListResult> FindOrderedListOutcome;
 			typedef std::future<FindOrderedListOutcome> FindOrderedListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindOrderedListRequest&, const FindOrderedListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindOrderedListAsyncHandler;
+			typedef Outcome<Error, Model::FindOrderedServiceListResult> FindOrderedServiceListOutcome;
+			typedef std::future<FindOrderedServiceListOutcome> FindOrderedServiceListOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindOrderedServiceListRequest&, const FindOrderedServiceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindOrderedServiceListAsyncHandler;
+			typedef Outcome<Error, Model::FindOtherInstanceListResult> FindOtherInstanceListOutcome;
+			typedef std::future<FindOtherInstanceListOutcome> FindOtherInstanceListOutcomeCallable;
+			typedef std::function<void(const CSBClient*, const Model::FindOtherInstanceListRequest&, const FindOtherInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindOtherInstanceListAsyncHandler;
 			typedef Outcome<Error, Model::FindProjectListResult> FindProjectListOutcome;
 			typedef std::future<FindProjectListOutcome> FindProjectListOutcomeCallable;
 			typedef std::function<void(const CSBClient*, const Model::FindProjectListRequest&, const FindProjectListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindProjectListAsyncHandler;
@@ -294,6 +309,9 @@ namespace AlibabaCloud
 			ApproveOrderListOutcome approveOrderList(const Model::ApproveOrderListRequest &request)const;
 			void approveOrderListAsync(const Model::ApproveOrderListRequest& request, const ApproveOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApproveOrderListOutcomeCallable approveOrderListCallable(const Model::ApproveOrderListRequest& request) const;
+			CheckSLRDeleteOutcome checkSLRDelete(const Model::CheckSLRDeleteRequest &request)const;
+			void checkSLRDeleteAsync(const Model::CheckSLRDeleteRequest& request, const CheckSLRDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckSLRDeleteOutcomeCallable checkSLRDeleteCallable(const Model::CheckSLRDeleteRequest& request) const;
 			CheckServiceExistOutcome checkServiceExist(const Model::CheckServiceExistRequest &request)const;
 			void checkServiceExistAsync(const Model::CheckServiceExistRequest& request, const CheckServiceExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckServiceExistOutcomeCallable checkServiceExistCallable(const Model::CheckServiceExistRequest& request) const;
@@ -372,6 +390,12 @@ namespace AlibabaCloud
 			FindOrderedListOutcome findOrderedList(const Model::FindOrderedListRequest &request)const;
 			void findOrderedListAsync(const Model::FindOrderedListRequest& request, const FindOrderedListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindOrderedListOutcomeCallable findOrderedListCallable(const Model::FindOrderedListRequest& request) const;
+			FindOrderedServiceListOutcome findOrderedServiceList(const Model::FindOrderedServiceListRequest &request)const;
+			void findOrderedServiceListAsync(const Model::FindOrderedServiceListRequest& request, const FindOrderedServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindOrderedServiceListOutcomeCallable findOrderedServiceListCallable(const Model::FindOrderedServiceListRequest& request) const;
+			FindOtherInstanceListOutcome findOtherInstanceList(const Model::FindOtherInstanceListRequest &request)const;
+			void findOtherInstanceListAsync(const Model::FindOtherInstanceListRequest& request, const FindOtherInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindOtherInstanceListOutcomeCallable findOtherInstanceListCallable(const Model::FindOtherInstanceListRequest& request) const;
 			FindProjectListOutcome findProjectList(const Model::FindProjectListRequest &request)const;
 			void findProjectListAsync(const Model::FindProjectListRequest& request, const FindProjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FindProjectListOutcomeCallable findProjectListCallable(const Model::FindProjectListRequest& request) const;

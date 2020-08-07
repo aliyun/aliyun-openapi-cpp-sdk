@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTRESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindInstanceNodeListResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT FindOrderedServiceListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct InstanceNode
+					struct Order
 					{
-						std::string instanceName;
-						std::string importedName;
-						bool isImported;
-						std::string ownerId;
-						long csbId;
-						std::string groupAddress;
-						std::string edasTenantInfo;
+						struct SlaInfo
+						{
+							long qps;
+							long qph;
+						};
+						int orderStatus;
+						long gmtCreate;
+						long credentialGroupId;
+						std::string serviceName;
+						std::string projectName;
+						int serviceStatus;
+						std::string credentialGroupName;
+						long gmtModified;
+						std::string serviceVersion;
 						long id;
-						int deleted;
-						std::string brokerCmdAddress;
-						std::string brokerAddress;
+						SlaInfo slaInfo;
+						std::string serviceId;
 					};
 					int currentPage;
 					int pageNumber;
-					std::vector<InstanceNode> instanceNodeList;
+					long total;
+					std::vector<Order> orderList;
 				};
 
 
-				FindInstanceNodeListResult();
-				explicit FindInstanceNodeListResult(const std::string &payload);
-				~FindInstanceNodeListResult();
+				FindOrderedServiceListResult();
+				explicit FindOrderedServiceListResult(const std::string &payload);
+				~FindOrderedServiceListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -72,4 +79,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTRESULT_H_

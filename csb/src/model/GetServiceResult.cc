@@ -117,6 +117,8 @@ void GetServiceResult::parse(const std::string &payload)
 		data_.service.validConsumeTypes = serviceNode["ValidConsumeTypes"].asString() == "true";
 	if(!serviceNode["ValidProvideType"].isNull())
 		data_.service.validProvideType = serviceNode["ValidProvideType"].asString() == "true";
+	if(!serviceNode["Qps"].isNull())
+		data_.service.qps = std::stoi(serviceNode["Qps"].asString());
 	auto allServiceVersionsListNode = serviceNode["ServiceVersionsList"]["ServiceVersion"];
 	for (auto serviceNodeServiceVersionsListServiceVersion : allServiceVersionsListNode)
 	{

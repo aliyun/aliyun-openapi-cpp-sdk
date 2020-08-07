@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						bool allVisiable;
 						std::string serviceName;
 						bool skipAuth;
+						int qps;
 						std::string alias;
 						std::string userId;
 						std::string routeConfJson;

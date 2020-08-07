@@ -94,6 +94,8 @@ void FindServiceListResult::parse(const std::string &payload)
 			serviceObject.casTargets = dataNodeServiceListService["CasTargets"].asString();
 		if(!dataNodeServiceListService["RouteConfJson"].isNull())
 			serviceObject.routeConfJson = dataNodeServiceListService["RouteConfJson"].asString();
+		if(!dataNodeServiceListService["Qps"].isNull())
+			serviceObject.qps = std::stoi(dataNodeServiceListService["Qps"].asString());
 		data_.serviceList.push_back(serviceObject);
 	}
 	if(!value["Message"].isNull())

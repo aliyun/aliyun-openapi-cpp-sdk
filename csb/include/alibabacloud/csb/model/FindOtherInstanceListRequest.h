@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindBrokerSLOHisListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT FindOtherInstanceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				FindBrokerSLOHisListRequest();
-				~FindBrokerSLOHisListRequest();
+				FindOtherInstanceListRequest();
+				~FindOtherInstanceListRequest();
 
-				long getCsbId()const;
-				void setCsbId(long csbId);
-				std::string getBeginDdHHmm()const;
-				void setBeginDdHHmm(const std::string& beginDdHHmm);
-				std::string getEndDdHHmm()const;
-				void setEndDdHHmm(const std::string& endDdHHmm);
+				int getPageNum()const;
+				void setPageNum(int pageNum);
+				std::string getSearchTxt()const;
+				void setSearchTxt(const std::string& searchTxt);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 
             private:
-				long csbId_;
-				std::string beginDdHHmm_;
-				std::string endDdHHmm_;
+				int pageNum_;
+				std::string searchTxt_;
+				int pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDBROKERSLOHISLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTREQUEST_H_

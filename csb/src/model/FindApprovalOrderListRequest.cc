@@ -60,6 +60,17 @@ void FindApprovalOrderListRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+std::string FindApprovalOrderListRequest::getCredentialGroupName()const
+{
+	return credentialGroupName_;
+}
+
+void FindApprovalOrderListRequest::setCredentialGroupName(const std::string& credentialGroupName)
+{
+	credentialGroupName_ = credentialGroupName;
+	setParameter("CredentialGroupName", credentialGroupName);
+}
+
 std::string FindApprovalOrderListRequest::getAlias()const
 {
 	return alias_;

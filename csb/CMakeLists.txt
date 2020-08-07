@@ -23,6 +23,8 @@ set(csb_public_header
 set(csb_public_header_model 
 	include/alibabacloud/csb/model/ApproveOrderListRequest.h
 	include/alibabacloud/csb/model/ApproveOrderListResult.h
+	include/alibabacloud/csb/model/CheckSLRDeleteRequest.h
+	include/alibabacloud/csb/model/CheckSLRDeleteResult.h
 	include/alibabacloud/csb/model/CheckServiceExistRequest.h
 	include/alibabacloud/csb/model/CheckServiceExistResult.h
 	include/alibabacloud/csb/model/CommitSuccessedServicesRequest.h
@@ -75,6 +77,10 @@ set(csb_public_header_model
 	include/alibabacloud/csb/model/FindOrderableListResult.h
 	include/alibabacloud/csb/model/FindOrderedListRequest.h
 	include/alibabacloud/csb/model/FindOrderedListResult.h
+	include/alibabacloud/csb/model/FindOrderedServiceListRequest.h
+	include/alibabacloud/csb/model/FindOrderedServiceListResult.h
+	include/alibabacloud/csb/model/FindOtherInstanceListRequest.h
+	include/alibabacloud/csb/model/FindOtherInstanceListResult.h
 	include/alibabacloud/csb/model/FindProjectListRequest.h
 	include/alibabacloud/csb/model/FindProjectListResult.h
 	include/alibabacloud/csb/model/FindProjectStatisticalDataRequest.h
@@ -128,6 +134,8 @@ set(csb_src
 	src/CSBClient.cc
 	src/model/ApproveOrderListRequest.cc
 	src/model/ApproveOrderListResult.cc
+	src/model/CheckSLRDeleteRequest.cc
+	src/model/CheckSLRDeleteResult.cc
 	src/model/CheckServiceExistRequest.cc
 	src/model/CheckServiceExistResult.cc
 	src/model/CommitSuccessedServicesRequest.cc
@@ -180,6 +188,10 @@ set(csb_src
 	src/model/FindOrderableListResult.cc
 	src/model/FindOrderedListRequest.cc
 	src/model/FindOrderedListResult.cc
+	src/model/FindOrderedServiceListRequest.cc
+	src/model/FindOrderedServiceListResult.cc
+	src/model/FindOtherInstanceListRequest.cc
+	src/model/FindOtherInstanceListResult.cc
 	src/model/FindProjectListRequest.cc
 	src/model/FindProjectListResult.cc
 	src/model/FindProjectStatisticalDataRequest.cc

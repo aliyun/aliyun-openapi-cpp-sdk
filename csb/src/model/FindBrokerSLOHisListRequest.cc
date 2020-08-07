@@ -38,3 +38,25 @@ void FindBrokerSLOHisListRequest::setCsbId(long csbId)
 	setParameter("CsbId", std::to_string(csbId));
 }
 
+std::string FindBrokerSLOHisListRequest::getBeginDdHHmm()const
+{
+	return beginDdHHmm_;
+}
+
+void FindBrokerSLOHisListRequest::setBeginDdHHmm(const std::string& beginDdHHmm)
+{
+	beginDdHHmm_ = beginDdHHmm;
+	setParameter("BeginDdHHmm", beginDdHHmm);
+}
+
+std::string FindBrokerSLOHisListRequest::getEndDdHHmm()const
+{
+	return endDdHHmm_;
+}
+
+void FindBrokerSLOHisListRequest::setEndDdHHmm(const std::string& endDdHHmm)
+{
+	endDdHHmm_ = endDdHHmm;
+	setParameter("EndDdHHmm", endDdHHmm);
+}
+

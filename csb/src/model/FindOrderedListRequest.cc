@@ -71,6 +71,17 @@ void FindOrderedListRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+std::string FindOrderedListRequest::getCredentialGroupName()const
+{
+	return credentialGroupName_;
+}
+
+void FindOrderedListRequest::setCredentialGroupName(const std::string& credentialGroupName)
+{
+	credentialGroupName_ = credentialGroupName;
+	setParameter("CredentialGroupName", credentialGroupName);
+}
+
 std::string FindOrderedListRequest::getAlias()const
 {
 	return alias_;

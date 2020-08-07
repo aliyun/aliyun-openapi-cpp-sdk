@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTRESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindInstanceNodeListResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT FindOtherInstanceListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct InstanceNode
+					struct Item
 					{
-						std::string instanceName;
-						std::string importedName;
-						bool isImported;
-						std::string ownerId;
-						long csbId;
-						std::string groupAddress;
-						std::string edasTenantInfo;
+						long gmtCreate;
+						std::string statusStr;
+						std::string description;
+						long ownerId;
+						std::string runStatus;
+						long gmtModified;
+						std::string vpcName;
 						long id;
-						int deleted;
-						std::string brokerCmdAddress;
-						std::string brokerAddress;
+						int instanceCategory;
+						std::string name;
 					};
 					int currentPage;
 					int pageNumber;
-					std::vector<InstanceNode> instanceNodeList;
+					std::vector<Item> itemList;
 				};
 
 
-				FindInstanceNodeListResult();
-				explicit FindInstanceNodeListResult(const std::string &payload);
-				~FindInstanceNodeListResult();
+				FindOtherInstanceListResult();
+				explicit FindOtherInstanceListResult(const std::string &payload);
+				~FindOtherInstanceListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -72,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDOTHERINSTANCELISTRESULT_H_

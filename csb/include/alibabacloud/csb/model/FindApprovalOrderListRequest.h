@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setCsbId(long csbId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				std::string getCredentialGroupName()const;
+				void setCredentialGroupName(const std::string& credentialGroupName);
 				std::string getAlias()const;
 				void setAlias(const std::string& alias);
 				std::string getServiceName()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string projectName_;
 				long csbId_;
 				int pageNum_;
+				std::string credentialGroupName_;
 				std::string alias_;
 				std::string serviceName_;
 				long serviceId_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDORDEREDLISTREQUEST_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDORDEREDLISTREQUEST_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTREQUEST_H_
+#define ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindOrderedListRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CSB_EXPORT FindOrderedServiceListRequest : public RpcServiceRequest
 			{
 
 			public:
-				FindOrderedListRequest();
-				~FindOrderedListRequest();
+				FindOrderedServiceListRequest();
+				~FindOrderedServiceListRequest();
 
 				std::string getProjectName()const;
 				void setProjectName(const std::string& projectName);
@@ -45,14 +45,16 @@ namespace AlibabaCloud
 				void setPageNum(int pageNum);
 				std::string getCredentialGroupName()const;
 				void setCredentialGroupName(const std::string& credentialGroupName);
-				std::string getAlias()const;
-				void setAlias(const std::string& alias);
+				std::string getAccessKey()const;
+				void setAccessKey(const std::string& accessKey);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getServiceName()const;
 				void setServiceName(const std::string& serviceName);
 				long getServiceId()const;
 				void setServiceId(long serviceId);
-				std::string getStatus()const;
-				void setStatus(const std::string& status);
+				long getProjectId()const;
+				void setProjectId(long projectId);
 
             private:
 				std::string projectName_;
@@ -60,13 +62,14 @@ namespace AlibabaCloud
 				long csbId_;
 				int pageNum_;
 				std::string credentialGroupName_;
-				std::string alias_;
+				std::string accessKey_;
+				int pageSize_;
 				std::string serviceName_;
 				long serviceId_;
-				std::string status_;
+				long projectId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDORDEREDLISTREQUEST_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_FINDORDEREDSERVICELISTREQUEST_H_

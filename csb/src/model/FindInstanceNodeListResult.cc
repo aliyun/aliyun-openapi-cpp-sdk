@@ -62,6 +62,14 @@ void FindInstanceNodeListResult::parse(const std::string &payload)
 			instanceNodeObject.edasTenantInfo = dataNodeInstanceNodeListInstanceNode["EdasTenantInfo"].asString();
 		if(!dataNodeInstanceNodeListInstanceNode["ImportedName"].isNull())
 			instanceNodeObject.importedName = dataNodeInstanceNodeListInstanceNode["ImportedName"].asString();
+		if(!dataNodeInstanceNodeListInstanceNode["CsbId"].isNull())
+			instanceNodeObject.csbId = std::stol(dataNodeInstanceNodeListInstanceNode["CsbId"].asString());
+		if(!dataNodeInstanceNodeListInstanceNode["Deleted"].isNull())
+			instanceNodeObject.deleted = std::stoi(dataNodeInstanceNodeListInstanceNode["Deleted"].asString());
+		if(!dataNodeInstanceNodeListInstanceNode["OwnerId"].isNull())
+			instanceNodeObject.ownerId = dataNodeInstanceNodeListInstanceNode["OwnerId"].asString();
+		if(!dataNodeInstanceNodeListInstanceNode["BrokerCmdAddress"].isNull())
+			instanceNodeObject.brokerCmdAddress = dataNodeInstanceNodeListInstanceNode["BrokerCmdAddress"].asString();
 		data_.instanceNodeList.push_back(instanceNodeObject);
 	}
 	if(!value["Code"].isNull())

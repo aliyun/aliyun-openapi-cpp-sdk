@@ -87,6 +87,42 @@ CSBClient::ApproveOrderListOutcomeCallable CSBClient::approveOrderListCallable(c
 	return task->get_future();
 }
 
+CSBClient::CheckSLRDeleteOutcome CSBClient::checkSLRDelete(const CheckSLRDeleteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckSLRDeleteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckSLRDeleteOutcome(CheckSLRDeleteResult(outcome.result()));
+	else
+		return CheckSLRDeleteOutcome(outcome.error());
+}
+
+void CSBClient::checkSLRDeleteAsync(const CheckSLRDeleteRequest& request, const CheckSLRDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkSLRDelete(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::CheckSLRDeleteOutcomeCallable CSBClient::checkSLRDeleteCallable(const CheckSLRDeleteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckSLRDeleteOutcome()>>(
+			[this, request]()
+			{
+			return this->checkSLRDelete(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSBClient::CheckServiceExistOutcome CSBClient::checkServiceExist(const CheckServiceExistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1053,78 @@ CSBClient::FindOrderedListOutcomeCallable CSBClient::findOrderedListCallable(con
 			[this, request]()
 			{
 			return this->findOrderedList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindOrderedServiceListOutcome CSBClient::findOrderedServiceList(const FindOrderedServiceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindOrderedServiceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindOrderedServiceListOutcome(FindOrderedServiceListResult(outcome.result()));
+	else
+		return FindOrderedServiceListOutcome(outcome.error());
+}
+
+void CSBClient::findOrderedServiceListAsync(const FindOrderedServiceListRequest& request, const FindOrderedServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findOrderedServiceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindOrderedServiceListOutcomeCallable CSBClient::findOrderedServiceListCallable(const FindOrderedServiceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindOrderedServiceListOutcome()>>(
+			[this, request]()
+			{
+			return this->findOrderedServiceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSBClient::FindOtherInstanceListOutcome CSBClient::findOtherInstanceList(const FindOtherInstanceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindOtherInstanceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindOtherInstanceListOutcome(FindOtherInstanceListResult(outcome.result()));
+	else
+		return FindOtherInstanceListOutcome(outcome.error());
+}
+
+void CSBClient::findOtherInstanceListAsync(const FindOtherInstanceListRequest& request, const FindOtherInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findOtherInstanceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSBClient::FindOtherInstanceListOutcomeCallable CSBClient::findOtherInstanceListCallable(const FindOtherInstanceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindOtherInstanceListOutcome()>>(
+			[this, request]()
+			{
+			return this->findOtherInstanceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

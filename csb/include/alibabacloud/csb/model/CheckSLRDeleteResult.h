@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
-#define ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#ifndef ALIBABACLOUD_CSB_MODEL_CHECKSLRDELETERESULT_H_
+#define ALIBABACLOUD_CSB_MODEL_CHECKSLRDELETERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,47 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CSB_EXPORT FindInstanceNodeListResult : public ServiceResult
+			class ALIBABACLOUD_CSB_EXPORT CheckSLRDeleteResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct RoleUsage
 				{
-					struct InstanceNode
-					{
-						std::string instanceName;
-						std::string importedName;
-						bool isImported;
-						std::string ownerId;
-						long csbId;
-						std::string groupAddress;
-						std::string edasTenantInfo;
-						long id;
-						int deleted;
-						std::string brokerCmdAddress;
-						std::string brokerAddress;
-					};
-					int currentPage;
-					int pageNumber;
-					std::vector<InstanceNode> instanceNodeList;
+					std::string region;
+					std::vector<std::string> resources;
 				};
 
 
-				FindInstanceNodeListResult();
-				explicit FindInstanceNodeListResult(const std::string &payload);
-				~FindInstanceNodeListResult();
+				CheckSLRDeleteResult();
+				explicit CheckSLRDeleteResult(const std::string &payload);
+				~CheckSLRDeleteResult();
 				std::string getMessage()const;
-				Data getData()const;
+				bool getDeletable()const;
+				std::vector<RoleUsage> getRoleUsages()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				bool deletable_;
+				std::vector<RoleUsage> roleUsages_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CSB_MODEL_FINDINSTANCENODELISTRESULT_H_
+#endif // !ALIBABACLOUD_CSB_MODEL_CHECKSLRDELETERESULT_H_
