@@ -23,6 +23,8 @@ set(dataworks-public_public_header
 set(dataworks-public_public_header_model 
 	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleRequest.h
+	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleResult.h
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionRequest.h
@@ -43,6 +45,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateFolderResult.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/CreateProjectMemberRequest.h
+	include/alibabacloud/dataworks-public/model/CreateProjectMemberResult.h
 	include/alibabacloud/dataworks-public/model/CreateQualityEntityRequest.h
 	include/alibabacloud/dataworks-public/model/CreateQualityEntityResult.h
 	include/alibabacloud/dataworks-public/model/CreateQualityFollowerRequest.h
@@ -69,6 +73,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/DeleteProjectMemberRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteProjectMemberResult.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityEntityRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityEntityResult.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityFollowerRequest.h
@@ -189,6 +195,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListNodeIOResult.h
 	include/alibabacloud/dataworks-public/model/ListNodesRequest.h
 	include/alibabacloud/dataworks-public/model/ListNodesResult.h
+	include/alibabacloud/dataworks-public/model/ListProjectMembersRequest.h
+	include/alibabacloud/dataworks-public/model/ListProjectMembersResult.h
+	include/alibabacloud/dataworks-public/model/ListProjectRolesRequest.h
+	include/alibabacloud/dataworks-public/model/ListProjectRolesResult.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesRequest.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesResult.h
 	include/alibabacloud/dataworks-public/model/ListRemindsRequest.h
@@ -199,6 +209,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/RemoveProjectMemberFromRoleRequest.h
+	include/alibabacloud/dataworks-public/model/RemoveProjectMemberFromRoleResult.h
 	include/alibabacloud/dataworks-public/model/RestartInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/RestartInstanceResult.h
 	include/alibabacloud/dataworks-public/model/ResumeInstanceRequest.h
@@ -238,6 +250,8 @@ set(dataworks-public_src
 	src/Dataworks-publicClient.cc
 	src/model/AbolishDataServiceApiRequest.cc
 	src/model/AbolishDataServiceApiResult.cc
+	src/model/AddProjectMemberToRoleRequest.cc
+	src/model/AddProjectMemberToRoleResult.cc
 	src/model/AddToMetaCategoryRequest.cc
 	src/model/AddToMetaCategoryResult.cc
 	src/model/CheckMetaPartitionRequest.cc
@@ -258,6 +272,8 @@ set(dataworks-public_src
 	src/model/CreateFolderResult.cc
 	src/model/CreateMetaCategoryRequest.cc
 	src/model/CreateMetaCategoryResult.cc
+	src/model/CreateProjectMemberRequest.cc
+	src/model/CreateProjectMemberResult.cc
 	src/model/CreateQualityEntityRequest.cc
 	src/model/CreateQualityEntityResult.cc
 	src/model/CreateQualityFollowerRequest.cc
@@ -284,6 +300,8 @@ set(dataworks-public_src
 	src/model/DeleteFromMetaCategoryResult.cc
 	src/model/DeleteMetaCategoryRequest.cc
 	src/model/DeleteMetaCategoryResult.cc
+	src/model/DeleteProjectMemberRequest.cc
+	src/model/DeleteProjectMemberResult.cc
 	src/model/DeleteQualityEntityRequest.cc
 	src/model/DeleteQualityEntityResult.cc
 	src/model/DeleteQualityFollowerRequest.cc
@@ -404,6 +422,10 @@ set(dataworks-public_src
 	src/model/ListNodeIOResult.cc
 	src/model/ListNodesRequest.cc
 	src/model/ListNodesResult.cc
+	src/model/ListProjectMembersRequest.cc
+	src/model/ListProjectMembersResult.cc
+	src/model/ListProjectRolesRequest.cc
+	src/model/ListProjectRolesResult.cc
 	src/model/ListQualityRulesRequest.cc
 	src/model/ListQualityRulesResult.cc
 	src/model/ListRemindsRequest.cc
@@ -414,6 +436,8 @@ set(dataworks-public_src
 	src/model/ListTopicsResult.cc
 	src/model/PublishDataServiceApiRequest.cc
 	src/model/PublishDataServiceApiResult.cc
+	src/model/RemoveProjectMemberFromRoleRequest.cc
+	src/model/RemoveProjectMemberFromRoleResult.cc
 	src/model/RestartInstanceRequest.cc
 	src/model/RestartInstanceResult.cc
 	src/model/ResumeInstanceRequest.cc

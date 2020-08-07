@@ -87,6 +87,42 @@ Dataworks_publicClient::AbolishDataServiceApiOutcomeCallable Dataworks_publicCli
 	return task->get_future();
 }
 
+Dataworks_publicClient::AddProjectMemberToRoleOutcome Dataworks_publicClient::addProjectMemberToRole(const AddProjectMemberToRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddProjectMemberToRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddProjectMemberToRoleOutcome(AddProjectMemberToRoleResult(outcome.result()));
+	else
+		return AddProjectMemberToRoleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::addProjectMemberToRoleAsync(const AddProjectMemberToRoleRequest& request, const AddProjectMemberToRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addProjectMemberToRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::AddProjectMemberToRoleOutcomeCallable Dataworks_publicClient::addProjectMemberToRoleCallable(const AddProjectMemberToRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddProjectMemberToRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->addProjectMemberToRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::AddToMetaCategoryOutcome Dataworks_publicClient::addToMetaCategory(const AddToMetaCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +477,42 @@ Dataworks_publicClient::CreateMetaCategoryOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->createMetaCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::CreateProjectMemberOutcome Dataworks_publicClient::createProjectMember(const CreateProjectMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateProjectMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateProjectMemberOutcome(CreateProjectMemberResult(outcome.result()));
+	else
+		return CreateProjectMemberOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createProjectMemberAsync(const CreateProjectMemberRequest& request, const CreateProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createProjectMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateProjectMemberOutcomeCallable Dataworks_publicClient::createProjectMemberCallable(const CreateProjectMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateProjectMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->createProjectMember(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -909,6 +981,42 @@ Dataworks_publicClient::DeleteMetaCategoryOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->deleteMetaCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::DeleteProjectMemberOutcome Dataworks_publicClient::deleteProjectMember(const DeleteProjectMemberRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProjectMemberOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProjectMemberOutcome(DeleteProjectMemberResult(outcome.result()));
+	else
+		return DeleteProjectMemberOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteProjectMemberAsync(const DeleteProjectMemberRequest& request, const DeleteProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProjectMember(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteProjectMemberOutcomeCallable Dataworks_publicClient::deleteProjectMemberCallable(const DeleteProjectMemberRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProjectMemberOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProjectMember(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3075,6 +3183,78 @@ Dataworks_publicClient::ListNodesOutcomeCallable Dataworks_publicClient::listNod
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListProjectMembersOutcome Dataworks_publicClient::listProjectMembers(const ListProjectMembersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectMembersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectMembersOutcome(ListProjectMembersResult(outcome.result()));
+	else
+		return ListProjectMembersOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listProjectMembersAsync(const ListProjectMembersRequest& request, const ListProjectMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectMembers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListProjectMembersOutcomeCallable Dataworks_publicClient::listProjectMembersCallable(const ListProjectMembersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectMembersOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectMembers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListProjectRolesOutcome Dataworks_publicClient::listProjectRoles(const ListProjectRolesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectRolesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectRolesOutcome(ListProjectRolesResult(outcome.result()));
+	else
+		return ListProjectRolesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listProjectRolesAsync(const ListProjectRolesRequest& request, const ListProjectRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjectRoles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListProjectRolesOutcomeCallable Dataworks_publicClient::listProjectRolesCallable(const ListProjectRolesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectRolesOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjectRoles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListQualityRulesOutcome Dataworks_publicClient::listQualityRules(const ListQualityRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3249,6 +3429,42 @@ Dataworks_publicClient::PublishDataServiceApiOutcomeCallable Dataworks_publicCli
 			[this, request]()
 			{
 			return this->publishDataServiceApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::RemoveProjectMemberFromRoleOutcome Dataworks_publicClient::removeProjectMemberFromRole(const RemoveProjectMemberFromRoleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveProjectMemberFromRoleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveProjectMemberFromRoleOutcome(RemoveProjectMemberFromRoleResult(outcome.result()));
+	else
+		return RemoveProjectMemberFromRoleOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::removeProjectMemberFromRoleAsync(const RemoveProjectMemberFromRoleRequest& request, const RemoveProjectMemberFromRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeProjectMemberFromRole(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::RemoveProjectMemberFromRoleOutcomeCallable Dataworks_publicClient::removeProjectMemberFromRoleCallable(const RemoveProjectMemberFromRoleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveProjectMemberFromRoleOutcome()>>(
+			[this, request]()
+			{
+			return this->removeProjectMemberFromRole(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

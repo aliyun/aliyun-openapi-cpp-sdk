@@ -24,6 +24,8 @@
 #include "Dataworks_publicExport.h"
 #include "model/AbolishDataServiceApiRequest.h"
 #include "model/AbolishDataServiceApiResult.h"
+#include "model/AddProjectMemberToRoleRequest.h"
+#include "model/AddProjectMemberToRoleResult.h"
 #include "model/AddToMetaCategoryRequest.h"
 #include "model/AddToMetaCategoryResult.h"
 #include "model/CheckMetaPartitionRequest.h"
@@ -44,6 +46,8 @@
 #include "model/CreateFolderResult.h"
 #include "model/CreateMetaCategoryRequest.h"
 #include "model/CreateMetaCategoryResult.h"
+#include "model/CreateProjectMemberRequest.h"
+#include "model/CreateProjectMemberResult.h"
 #include "model/CreateQualityEntityRequest.h"
 #include "model/CreateQualityEntityResult.h"
 #include "model/CreateQualityFollowerRequest.h"
@@ -70,6 +74,8 @@
 #include "model/DeleteFromMetaCategoryResult.h"
 #include "model/DeleteMetaCategoryRequest.h"
 #include "model/DeleteMetaCategoryResult.h"
+#include "model/DeleteProjectMemberRequest.h"
+#include "model/DeleteProjectMemberResult.h"
 #include "model/DeleteQualityEntityRequest.h"
 #include "model/DeleteQualityEntityResult.h"
 #include "model/DeleteQualityFollowerRequest.h"
@@ -190,6 +196,10 @@
 #include "model/ListNodeIOResult.h"
 #include "model/ListNodesRequest.h"
 #include "model/ListNodesResult.h"
+#include "model/ListProjectMembersRequest.h"
+#include "model/ListProjectMembersResult.h"
+#include "model/ListProjectRolesRequest.h"
+#include "model/ListProjectRolesResult.h"
 #include "model/ListQualityRulesRequest.h"
 #include "model/ListQualityRulesResult.h"
 #include "model/ListRemindsRequest.h"
@@ -200,6 +210,8 @@
 #include "model/ListTopicsResult.h"
 #include "model/PublishDataServiceApiRequest.h"
 #include "model/PublishDataServiceApiResult.h"
+#include "model/RemoveProjectMemberFromRoleRequest.h"
+#include "model/RemoveProjectMemberFromRoleResult.h"
 #include "model/RestartInstanceRequest.h"
 #include "model/RestartInstanceResult.h"
 #include "model/ResumeInstanceRequest.h"
@@ -246,6 +258,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AbolishDataServiceApiResult> AbolishDataServiceApiOutcome;
 			typedef std::future<AbolishDataServiceApiOutcome> AbolishDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::AbolishDataServiceApiRequest&, const AbolishDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AbolishDataServiceApiAsyncHandler;
+			typedef Outcome<Error, Model::AddProjectMemberToRoleResult> AddProjectMemberToRoleOutcome;
+			typedef std::future<AddProjectMemberToRoleOutcome> AddProjectMemberToRoleOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::AddProjectMemberToRoleRequest&, const AddProjectMemberToRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddProjectMemberToRoleAsyncHandler;
 			typedef Outcome<Error, Model::AddToMetaCategoryResult> AddToMetaCategoryOutcome;
 			typedef std::future<AddToMetaCategoryOutcome> AddToMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::AddToMetaCategoryRequest&, const AddToMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddToMetaCategoryAsyncHandler;
@@ -276,6 +291,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateMetaCategoryResult> CreateMetaCategoryOutcome;
 			typedef std::future<CreateMetaCategoryOutcome> CreateMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateMetaCategoryRequest&, const CreateMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMetaCategoryAsyncHandler;
+			typedef Outcome<Error, Model::CreateProjectMemberResult> CreateProjectMemberOutcome;
+			typedef std::future<CreateProjectMemberOutcome> CreateProjectMemberOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateProjectMemberRequest&, const CreateProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectMemberAsyncHandler;
 			typedef Outcome<Error, Model::CreateQualityEntityResult> CreateQualityEntityOutcome;
 			typedef std::future<CreateQualityEntityOutcome> CreateQualityEntityOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CreateQualityEntityRequest&, const CreateQualityEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityEntityAsyncHandler;
@@ -315,6 +333,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteMetaCategoryResult> DeleteMetaCategoryOutcome;
 			typedef std::future<DeleteMetaCategoryOutcome> DeleteMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteMetaCategoryRequest&, const DeleteMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetaCategoryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProjectMemberResult> DeleteProjectMemberOutcome;
+			typedef std::future<DeleteProjectMemberOutcome> DeleteProjectMemberOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteProjectMemberRequest&, const DeleteProjectMemberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectMemberAsyncHandler;
 			typedef Outcome<Error, Model::DeleteQualityEntityResult> DeleteQualityEntityOutcome;
 			typedef std::future<DeleteQualityEntityOutcome> DeleteQualityEntityOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteQualityEntityRequest&, const DeleteQualityEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityEntityAsyncHandler;
@@ -495,6 +516,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListNodesResult> ListNodesOutcome;
 			typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListNodesRequest&, const ListNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNodesAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectMembersResult> ListProjectMembersOutcome;
+			typedef std::future<ListProjectMembersOutcome> ListProjectMembersOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListProjectMembersRequest&, const ListProjectMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectMembersAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectRolesResult> ListProjectRolesOutcome;
+			typedef std::future<ListProjectRolesOutcome> ListProjectRolesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListProjectRolesRequest&, const ListProjectRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectRolesAsyncHandler;
 			typedef Outcome<Error, Model::ListQualityRulesResult> ListQualityRulesOutcome;
 			typedef std::future<ListQualityRulesOutcome> ListQualityRulesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListQualityRulesRequest&, const ListQualityRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQualityRulesAsyncHandler;
@@ -510,6 +537,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishDataServiceApiResult> PublishDataServiceApiOutcome;
 			typedef std::future<PublishDataServiceApiOutcome> PublishDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::PublishDataServiceApiRequest&, const PublishDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishDataServiceApiAsyncHandler;
+			typedef Outcome<Error, Model::RemoveProjectMemberFromRoleResult> RemoveProjectMemberFromRoleOutcome;
+			typedef std::future<RemoveProjectMemberFromRoleOutcome> RemoveProjectMemberFromRoleOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::RemoveProjectMemberFromRoleRequest&, const RemoveProjectMemberFromRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveProjectMemberFromRoleAsyncHandler;
 			typedef Outcome<Error, Model::RestartInstanceResult> RestartInstanceOutcome;
 			typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::RestartInstanceRequest&, const RestartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -569,6 +599,9 @@ namespace AlibabaCloud
 			AbolishDataServiceApiOutcome abolishDataServiceApi(const Model::AbolishDataServiceApiRequest &request)const;
 			void abolishDataServiceApiAsync(const Model::AbolishDataServiceApiRequest& request, const AbolishDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AbolishDataServiceApiOutcomeCallable abolishDataServiceApiCallable(const Model::AbolishDataServiceApiRequest& request) const;
+			AddProjectMemberToRoleOutcome addProjectMemberToRole(const Model::AddProjectMemberToRoleRequest &request)const;
+			void addProjectMemberToRoleAsync(const Model::AddProjectMemberToRoleRequest& request, const AddProjectMemberToRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddProjectMemberToRoleOutcomeCallable addProjectMemberToRoleCallable(const Model::AddProjectMemberToRoleRequest& request) const;
 			AddToMetaCategoryOutcome addToMetaCategory(const Model::AddToMetaCategoryRequest &request)const;
 			void addToMetaCategoryAsync(const Model::AddToMetaCategoryRequest& request, const AddToMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddToMetaCategoryOutcomeCallable addToMetaCategoryCallable(const Model::AddToMetaCategoryRequest& request) const;
@@ -599,6 +632,9 @@ namespace AlibabaCloud
 			CreateMetaCategoryOutcome createMetaCategory(const Model::CreateMetaCategoryRequest &request)const;
 			void createMetaCategoryAsync(const Model::CreateMetaCategoryRequest& request, const CreateMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMetaCategoryOutcomeCallable createMetaCategoryCallable(const Model::CreateMetaCategoryRequest& request) const;
+			CreateProjectMemberOutcome createProjectMember(const Model::CreateProjectMemberRequest &request)const;
+			void createProjectMemberAsync(const Model::CreateProjectMemberRequest& request, const CreateProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateProjectMemberOutcomeCallable createProjectMemberCallable(const Model::CreateProjectMemberRequest& request) const;
 			CreateQualityEntityOutcome createQualityEntity(const Model::CreateQualityEntityRequest &request)const;
 			void createQualityEntityAsync(const Model::CreateQualityEntityRequest& request, const CreateQualityEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateQualityEntityOutcomeCallable createQualityEntityCallable(const Model::CreateQualityEntityRequest& request) const;
@@ -638,6 +674,9 @@ namespace AlibabaCloud
 			DeleteMetaCategoryOutcome deleteMetaCategory(const Model::DeleteMetaCategoryRequest &request)const;
 			void deleteMetaCategoryAsync(const Model::DeleteMetaCategoryRequest& request, const DeleteMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMetaCategoryOutcomeCallable deleteMetaCategoryCallable(const Model::DeleteMetaCategoryRequest& request) const;
+			DeleteProjectMemberOutcome deleteProjectMember(const Model::DeleteProjectMemberRequest &request)const;
+			void deleteProjectMemberAsync(const Model::DeleteProjectMemberRequest& request, const DeleteProjectMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProjectMemberOutcomeCallable deleteProjectMemberCallable(const Model::DeleteProjectMemberRequest& request) const;
 			DeleteQualityEntityOutcome deleteQualityEntity(const Model::DeleteQualityEntityRequest &request)const;
 			void deleteQualityEntityAsync(const Model::DeleteQualityEntityRequest& request, const DeleteQualityEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQualityEntityOutcomeCallable deleteQualityEntityCallable(const Model::DeleteQualityEntityRequest& request) const;
@@ -818,6 +857,12 @@ namespace AlibabaCloud
 			ListNodesOutcome listNodes(const Model::ListNodesRequest &request)const;
 			void listNodesAsync(const Model::ListNodesRequest& request, const ListNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNodesOutcomeCallable listNodesCallable(const Model::ListNodesRequest& request) const;
+			ListProjectMembersOutcome listProjectMembers(const Model::ListProjectMembersRequest &request)const;
+			void listProjectMembersAsync(const Model::ListProjectMembersRequest& request, const ListProjectMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectMembersOutcomeCallable listProjectMembersCallable(const Model::ListProjectMembersRequest& request) const;
+			ListProjectRolesOutcome listProjectRoles(const Model::ListProjectRolesRequest &request)const;
+			void listProjectRolesAsync(const Model::ListProjectRolesRequest& request, const ListProjectRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectRolesOutcomeCallable listProjectRolesCallable(const Model::ListProjectRolesRequest& request) const;
 			ListQualityRulesOutcome listQualityRules(const Model::ListQualityRulesRequest &request)const;
 			void listQualityRulesAsync(const Model::ListQualityRulesRequest& request, const ListQualityRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQualityRulesOutcomeCallable listQualityRulesCallable(const Model::ListQualityRulesRequest& request) const;
@@ -833,6 +878,9 @@ namespace AlibabaCloud
 			PublishDataServiceApiOutcome publishDataServiceApi(const Model::PublishDataServiceApiRequest &request)const;
 			void publishDataServiceApiAsync(const Model::PublishDataServiceApiRequest& request, const PublishDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishDataServiceApiOutcomeCallable publishDataServiceApiCallable(const Model::PublishDataServiceApiRequest& request) const;
+			RemoveProjectMemberFromRoleOutcome removeProjectMemberFromRole(const Model::RemoveProjectMemberFromRoleRequest &request)const;
+			void removeProjectMemberFromRoleAsync(const Model::RemoveProjectMemberFromRoleRequest& request, const RemoveProjectMemberFromRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveProjectMemberFromRoleOutcomeCallable removeProjectMemberFromRoleCallable(const Model::RemoveProjectMemberFromRoleRequest& request) const;
 			RestartInstanceOutcome restartInstance(const Model::RestartInstanceRequest &request)const;
 			void restartInstanceAsync(const Model::RestartInstanceRequest& request, const RestartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartInstanceOutcomeCallable restartInstanceCallable(const Model::RestartInstanceRequest& request) const;
