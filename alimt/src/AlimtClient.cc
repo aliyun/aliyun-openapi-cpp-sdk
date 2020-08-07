@@ -31,21 +31,21 @@ AlimtClient::AlimtClient(const Credentials &credentials, const ClientConfigurati
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::AlimtClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::AlimtClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alimt");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlimtClient::~AlimtClient()
@@ -153,6 +153,150 @@ AlimtClient::GetDocTranslateTaskOutcomeCallable AlimtClient::getDocTranslateTask
 			[this, request]()
 			{
 			return this->getDocTranslateTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetImageDiagnoseOutcome AlimtClient::getImageDiagnose(const GetImageDiagnoseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageDiagnoseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageDiagnoseOutcome(GetImageDiagnoseResult(outcome.result()));
+	else
+		return GetImageDiagnoseOutcome(outcome.error());
+}
+
+void AlimtClient::getImageDiagnoseAsync(const GetImageDiagnoseRequest& request, const GetImageDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageDiagnose(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetImageDiagnoseOutcomeCallable AlimtClient::getImageDiagnoseCallable(const GetImageDiagnoseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageDiagnoseOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageDiagnose(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetImageTranslateOutcome AlimtClient::getImageTranslate(const GetImageTranslateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageTranslateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageTranslateOutcome(GetImageTranslateResult(outcome.result()));
+	else
+		return GetImageTranslateOutcome(outcome.error());
+}
+
+void AlimtClient::getImageTranslateAsync(const GetImageTranslateRequest& request, const GetImageTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageTranslate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetImageTranslateOutcomeCallable AlimtClient::getImageTranslateCallable(const GetImageTranslateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageTranslateOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageTranslate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetTitleDiagnoseOutcome AlimtClient::getTitleDiagnose(const GetTitleDiagnoseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTitleDiagnoseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTitleDiagnoseOutcome(GetTitleDiagnoseResult(outcome.result()));
+	else
+		return GetTitleDiagnoseOutcome(outcome.error());
+}
+
+void AlimtClient::getTitleDiagnoseAsync(const GetTitleDiagnoseRequest& request, const GetTitleDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTitleDiagnose(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetTitleDiagnoseOutcomeCallable AlimtClient::getTitleDiagnoseCallable(const GetTitleDiagnoseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTitleDiagnoseOutcome()>>(
+			[this, request]()
+			{
+			return this->getTitleDiagnose(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::GetTitleGenerateOutcome AlimtClient::getTitleGenerate(const GetTitleGenerateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTitleGenerateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTitleGenerateOutcome(GetTitleGenerateResult(outcome.result()));
+	else
+		return GetTitleGenerateOutcome(outcome.error());
+}
+
+void AlimtClient::getTitleGenerateAsync(const GetTitleGenerateRequest& request, const GetTitleGenerateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTitleGenerate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetTitleGenerateOutcomeCallable AlimtClient::getTitleGenerateCallable(const GetTitleGenerateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTitleGenerateOutcome()>>(
+			[this, request]()
+			{
+			return this->getTitleGenerate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

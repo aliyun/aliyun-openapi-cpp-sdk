@@ -28,6 +28,14 @@
 #include "model/GetDetectLanguageResult.h"
 #include "model/GetDocTranslateTaskRequest.h"
 #include "model/GetDocTranslateTaskResult.h"
+#include "model/GetImageDiagnoseRequest.h"
+#include "model/GetImageDiagnoseResult.h"
+#include "model/GetImageTranslateRequest.h"
+#include "model/GetImageTranslateResult.h"
+#include "model/GetTitleDiagnoseRequest.h"
+#include "model/GetTitleDiagnoseResult.h"
+#include "model/GetTitleGenerateRequest.h"
+#include "model/GetTitleGenerateResult.h"
 #include "model/TranslateRequest.h"
 #include "model/TranslateResult.h"
 #include "model/TranslateCertificateRequest.h"
@@ -54,6 +62,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDocTranslateTaskResult> GetDocTranslateTaskOutcome;
 			typedef std::future<GetDocTranslateTaskOutcome> GetDocTranslateTaskOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetDocTranslateTaskRequest&, const GetDocTranslateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDocTranslateTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetImageDiagnoseResult> GetImageDiagnoseOutcome;
+			typedef std::future<GetImageDiagnoseOutcome> GetImageDiagnoseOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetImageDiagnoseRequest&, const GetImageDiagnoseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageDiagnoseAsyncHandler;
+			typedef Outcome<Error, Model::GetImageTranslateResult> GetImageTranslateOutcome;
+			typedef std::future<GetImageTranslateOutcome> GetImageTranslateOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetImageTranslateRequest&, const GetImageTranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageTranslateAsyncHandler;
+			typedef Outcome<Error, Model::GetTitleDiagnoseResult> GetTitleDiagnoseOutcome;
+			typedef std::future<GetTitleDiagnoseOutcome> GetTitleDiagnoseOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetTitleDiagnoseRequest&, const GetTitleDiagnoseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleDiagnoseAsyncHandler;
+			typedef Outcome<Error, Model::GetTitleGenerateResult> GetTitleGenerateOutcome;
+			typedef std::future<GetTitleGenerateOutcome> GetTitleGenerateOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetTitleGenerateRequest&, const GetTitleGenerateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleGenerateAsyncHandler;
 			typedef Outcome<Error, Model::TranslateResult> TranslateOutcome;
 			typedef std::future<TranslateOutcome> TranslateOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateRequest&, const TranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateAsyncHandler;
@@ -80,6 +100,18 @@ namespace AlibabaCloud
 			GetDocTranslateTaskOutcome getDocTranslateTask(const Model::GetDocTranslateTaskRequest &request)const;
 			void getDocTranslateTaskAsync(const Model::GetDocTranslateTaskRequest& request, const GetDocTranslateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDocTranslateTaskOutcomeCallable getDocTranslateTaskCallable(const Model::GetDocTranslateTaskRequest& request) const;
+			GetImageDiagnoseOutcome getImageDiagnose(const Model::GetImageDiagnoseRequest &request)const;
+			void getImageDiagnoseAsync(const Model::GetImageDiagnoseRequest& request, const GetImageDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageDiagnoseOutcomeCallable getImageDiagnoseCallable(const Model::GetImageDiagnoseRequest& request) const;
+			GetImageTranslateOutcome getImageTranslate(const Model::GetImageTranslateRequest &request)const;
+			void getImageTranslateAsync(const Model::GetImageTranslateRequest& request, const GetImageTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageTranslateOutcomeCallable getImageTranslateCallable(const Model::GetImageTranslateRequest& request) const;
+			GetTitleDiagnoseOutcome getTitleDiagnose(const Model::GetTitleDiagnoseRequest &request)const;
+			void getTitleDiagnoseAsync(const Model::GetTitleDiagnoseRequest& request, const GetTitleDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTitleDiagnoseOutcomeCallable getTitleDiagnoseCallable(const Model::GetTitleDiagnoseRequest& request) const;
+			GetTitleGenerateOutcome getTitleGenerate(const Model::GetTitleGenerateRequest &request)const;
+			void getTitleGenerateAsync(const Model::GetTitleGenerateRequest& request, const GetTitleGenerateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTitleGenerateOutcomeCallable getTitleGenerateCallable(const Model::GetTitleGenerateRequest& request) const;
 			TranslateOutcome translate(const Model::TranslateRequest &request)const;
 			void translateAsync(const Model::TranslateRequest& request, const TranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateOutcomeCallable translateCallable(const Model::TranslateRequest& request) const;

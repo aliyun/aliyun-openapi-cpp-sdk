@@ -27,6 +27,14 @@ set(alimt_public_header_model
 	include/alibabacloud/alimt/model/GetDetectLanguageResult.h
 	include/alibabacloud/alimt/model/GetDocTranslateTaskRequest.h
 	include/alibabacloud/alimt/model/GetDocTranslateTaskResult.h
+	include/alibabacloud/alimt/model/GetImageDiagnoseRequest.h
+	include/alibabacloud/alimt/model/GetImageDiagnoseResult.h
+	include/alibabacloud/alimt/model/GetImageTranslateRequest.h
+	include/alibabacloud/alimt/model/GetImageTranslateResult.h
+	include/alibabacloud/alimt/model/GetTitleDiagnoseRequest.h
+	include/alibabacloud/alimt/model/GetTitleDiagnoseResult.h
+	include/alibabacloud/alimt/model/GetTitleGenerateRequest.h
+	include/alibabacloud/alimt/model/GetTitleGenerateResult.h
 	include/alibabacloud/alimt/model/TranslateRequest.h
 	include/alibabacloud/alimt/model/TranslateResult.h
 	include/alibabacloud/alimt/model/TranslateCertificateRequest.h
@@ -44,6 +52,14 @@ set(alimt_src
 	src/model/GetDetectLanguageResult.cc
 	src/model/GetDocTranslateTaskRequest.cc
 	src/model/GetDocTranslateTaskResult.cc
+	src/model/GetImageDiagnoseRequest.cc
+	src/model/GetImageDiagnoseResult.cc
+	src/model/GetImageTranslateRequest.cc
+	src/model/GetImageTranslateResult.cc
+	src/model/GetTitleDiagnoseRequest.cc
+	src/model/GetTitleDiagnoseResult.cc
+	src/model/GetTitleGenerateRequest.cc
+	src/model/GetTitleGenerateResult.cc
 	src/model/TranslateRequest.cc
 	src/model/TranslateResult.cc
 	src/model/TranslateCertificateRequest.cc
