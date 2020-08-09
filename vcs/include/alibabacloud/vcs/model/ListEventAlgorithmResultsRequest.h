@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
+				std::string getExtendValue()const;
+				void setExtendValue(const std::string& extendValue);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 
             private:
 				std::string corpId_;
+				std::string extendValue_;
 				std::string endTime_;
 				std::string startTime_;
 				std::string pageNumber_;

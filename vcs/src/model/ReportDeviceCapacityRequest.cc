@@ -42,6 +42,7 @@ void ReportDeviceCapacityRequest::setStreamCapacities(const std::vector<StreamCa
 		setParameter(streamCapacitiesObjStr + ".MaxStream", streamCapacitiesObj.maxStream);
 		setParameter(streamCapacitiesObjStr + ".EncodeFormat", streamCapacitiesObj.encodeFormat);
 		setParameter(streamCapacitiesObjStr + ".MaxFrameRate", streamCapacitiesObj.maxFrameRate);
+		setParameter(streamCapacitiesObjStr + ".GovLengthRange", streamCapacitiesObj.govLengthRange);
 		setParameter(streamCapacitiesObjStr + ".Resolution", streamCapacitiesObj.resolution);
 	}
 }

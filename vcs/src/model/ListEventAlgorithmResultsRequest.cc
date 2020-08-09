@@ -38,6 +38,17 @@ void ListEventAlgorithmResultsRequest::setCorpId(const std::string& corpId)
 	setBodyParameter("CorpId", corpId);
 }
 
+std::string ListEventAlgorithmResultsRequest::getExtendValue()const
+{
+	return extendValue_;
+}
+
+void ListEventAlgorithmResultsRequest::setExtendValue(const std::string& extendValue)
+{
+	extendValue_ = extendValue;
+	setBodyParameter("ExtendValue", extendValue);
+}
+
 std::string ListEventAlgorithmResultsRequest::getEndTime()const
 {
 	return endTime_;

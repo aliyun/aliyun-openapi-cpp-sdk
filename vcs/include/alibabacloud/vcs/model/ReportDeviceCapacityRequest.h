@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string maxStream;
 					std::string encodeFormat;
 					std::string maxFrameRate;
+					std::string govLengthRange;
 					std::string resolution;
 				};
 

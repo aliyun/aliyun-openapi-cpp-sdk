@@ -37,9 +37,12 @@ namespace AlibabaCloud
 					struct RecordsItem
 					{
 						std::string picUrlPath;
+						std::string extendValue;
 						std::string corpId;
 						std::string eventType;
+						std::string extendValueThree;
 						std::string targetPicUrlPath;
+						std::string extendValueTwo;
 						std::string shotTime;
 						std::string recordId;
 						std::string capStyle;
@@ -57,6 +60,7 @@ namespace AlibabaCloud
 				ListEventAlgorithmResultsResult();
 				explicit ListEventAlgorithmResultsResult(const std::string &payload);
 				~ListEventAlgorithmResultsResult();
+				std::string getExtendValue()const;
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -64,6 +68,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string extendValue_;
 				std::string message_;
 				Data data_;
 				std::string code_;

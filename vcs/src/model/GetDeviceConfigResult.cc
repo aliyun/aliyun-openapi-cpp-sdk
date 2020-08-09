@@ -87,12 +87,21 @@ void GetDeviceConfigResult::parse(const std::string &payload)
 		resolution_ = value["Resolution"].asString();
 	if(!value["RetryInterval"].isNull())
 		retryInterval_ = value["RetryInterval"].asString();
+	if(!value["DeviceId"].isNull())
+		deviceId_ = value["DeviceId"].asString();
+	if(!value["UserName"].isNull())
+		userName_ = value["UserName"].asString();
+	if(!value["PassWord"].isNull())
+		passWord_ = value["PassWord"].asString();
+	if(!value["Protocol"].isNull())
+		protocol_ = value["Protocol"].asString();
+	if(!value["ServerId"].isNull())
+		serverId_ = value["ServerId"].asString();
+	if(!value["ServerPort"].isNull())
+		serverPort_ = value["ServerPort"].asString();
+	if(!value["ServerIp"].isNull())
+		serverIp_ = value["ServerIp"].asString();
 
-}
-
-std::string GetDeviceConfigResult::getFrameRate()const
-{
-	return frameRate_;
 }
 
 std::string GetDeviceConfigResult::getEncodeFormat()const
@@ -105,24 +114,24 @@ std::string GetDeviceConfigResult::getMessage()const
 	return message_;
 }
 
+std::string GetDeviceConfigResult::getDeviceId()const
+{
+	return deviceId_;
+}
+
 std::string GetDeviceConfigResult::getLatitude()const
 {
 	return latitude_;
 }
 
-std::string GetDeviceConfigResult::getCode()const
-{
-	return code_;
-}
-
-std::string GetDeviceConfigResult::getLongitude()const
-{
-	return longitude_;
-}
-
 std::vector<GetDeviceConfigResult::OSDListItem> GetDeviceConfigResult::getOSDList()const
 {
 	return oSDList_;
+}
+
+std::string GetDeviceConfigResult::getPassWord()const
+{
+	return passWord_;
 }
 
 std::string GetDeviceConfigResult::getOSDTimeY()const
@@ -133,6 +142,11 @@ std::string GetDeviceConfigResult::getOSDTimeY()const
 std::string GetDeviceConfigResult::getOSDTimeEnable()const
 {
 	return oSDTimeEnable_;
+}
+
+std::string GetDeviceConfigResult::getServerId()const
+{
+	return serverId_;
 }
 
 std::string GetDeviceConfigResult::getDeviceAddress()const
@@ -150,14 +164,49 @@ int GetDeviceConfigResult::getGovLength()const
 	return govLength_;
 }
 
-std::string GetDeviceConfigResult::getRetryInterval()const
-{
-	return retryInterval_;
-}
-
 std::string GetDeviceConfigResult::getAudioFormat()const
 {
 	return audioFormat_;
+}
+
+std::string GetDeviceConfigResult::getProtocol()const
+{
+	return protocol_;
+}
+
+bool GetDeviceConfigResult::getAudioEnable()const
+{
+	return audioEnable_;
+}
+
+std::string GetDeviceConfigResult::getFrameRate()const
+{
+	return frameRate_;
+}
+
+std::string GetDeviceConfigResult::getUserName()const
+{
+	return userName_;
+}
+
+std::string GetDeviceConfigResult::getServerIp()const
+{
+	return serverIp_;
+}
+
+std::string GetDeviceConfigResult::getCode()const
+{
+	return code_;
+}
+
+std::string GetDeviceConfigResult::getLongitude()const
+{
+	return longitude_;
+}
+
+std::string GetDeviceConfigResult::getRetryInterval()const
+{
+	return retryInterval_;
 }
 
 std::string GetDeviceConfigResult::getBitRate()const
@@ -165,9 +214,9 @@ std::string GetDeviceConfigResult::getBitRate()const
 	return bitRate_;
 }
 
-bool GetDeviceConfigResult::getAudioEnable()const
+std::string GetDeviceConfigResult::getServerPort()const
 {
-	return audioEnable_;
+	return serverPort_;
 }
 
 std::string GetDeviceConfigResult::getDeviceName()const

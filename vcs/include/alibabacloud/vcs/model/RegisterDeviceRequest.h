@@ -37,18 +37,18 @@ namespace AlibabaCloud
 
 				std::string getDeviceTimeStamp()const;
 				void setDeviceTimeStamp(const std::string& deviceTimeStamp);
+				std::string getDeviceSn()const;
+				void setDeviceSn(const std::string& deviceSn);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
 				std::string getServerId()const;
 				void setServerId(const std::string& serverId);
-				std::string getDeviceSerialNumber()const;
-				void setDeviceSerialNumber(const std::string& deviceSerialNumber);
 
             private:
 				std::string deviceTimeStamp_;
+				std::string deviceSn_;
 				std::string deviceId_;
 				std::string serverId_;
-				std::string deviceSerialNumber_;
 
 			};
 		}

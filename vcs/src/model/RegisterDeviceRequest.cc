@@ -38,6 +38,17 @@ void RegisterDeviceRequest::setDeviceTimeStamp(const std::string& deviceTimeStam
 	setBodyParameter("DeviceTimeStamp", deviceTimeStamp);
 }
 
+std::string RegisterDeviceRequest::getDeviceSn()const
+{
+	return deviceSn_;
+}
+
+void RegisterDeviceRequest::setDeviceSn(const std::string& deviceSn)
+{
+	deviceSn_ = deviceSn;
+	setBodyParameter("DeviceSn", deviceSn);
+}
+
 std::string RegisterDeviceRequest::getDeviceId()const
 {
 	return deviceId_;
@@ -58,16 +69,5 @@ void RegisterDeviceRequest::setServerId(const std::string& serverId)
 {
 	serverId_ = serverId;
 	setBodyParameter("ServerId", serverId);
-}
-
-std::string RegisterDeviceRequest::getDeviceSerialNumber()const
-{
-	return deviceSerialNumber_;
-}
-
-void RegisterDeviceRequest::setDeviceSerialNumber(const std::string& deviceSerialNumber)
-{
-	deviceSerialNumber_ = deviceSerialNumber;
-	setBodyParameter("DeviceSerialNumber", deviceSerialNumber);
 }
 

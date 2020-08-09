@@ -70,13 +70,26 @@ void ListEventAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.targetPicUrlPath = dataNodeRecordsRecordsItem["TargetPicUrlPath"].asString();
 		if(!dataNodeRecordsRecordsItem["RecordId"].isNull())
 			recordsItemObject.recordId = dataNodeRecordsRecordsItem["RecordId"].asString();
+		if(!dataNodeRecordsRecordsItem["ExtendValue"].isNull())
+			recordsItemObject.extendValue = dataNodeRecordsRecordsItem["ExtendValue"].asString();
+		if(!dataNodeRecordsRecordsItem["ExtendValueTwo"].isNull())
+			recordsItemObject.extendValueTwo = dataNodeRecordsRecordsItem["ExtendValueTwo"].asString();
+		if(!dataNodeRecordsRecordsItem["ExtendValueThree"].isNull())
+			recordsItemObject.extendValueThree = dataNodeRecordsRecordsItem["ExtendValueThree"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["ExtendValue"].isNull())
+		extendValue_ = value["ExtendValue"].asString();
 
+}
+
+std::string ListEventAlgorithmResultsResult::getExtendValue()const
+{
+	return extendValue_;
 }
 
 std::string ListEventAlgorithmResultsResult::getMessage()const
