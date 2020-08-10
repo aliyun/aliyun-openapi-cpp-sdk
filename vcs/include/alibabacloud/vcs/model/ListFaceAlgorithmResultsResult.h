@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						float rightBottomX;
 						float rightBottomY;
 						std::string targetPicUrlPath;
+						std::string sourceId;
 						std::string maxAge;
 						float leftTopY;
 						std::string capStyle;

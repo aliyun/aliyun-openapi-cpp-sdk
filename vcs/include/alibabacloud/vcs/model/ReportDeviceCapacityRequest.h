@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setLatitude(const std::string& latitude);
 				std::string getPresetNum()const;
 				void setPresetNum(const std::string& presetNum);
+				std::string getDeviceTimeStamp()const;
+				void setDeviceTimeStamp(const std::string& deviceTimeStamp);
 				std::string getDeviceSn()const;
 				void setDeviceSn(const std::string& deviceSn);
 				std::string getAudioFormat()const;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::vector<StreamCapacities> streamCapacities_;
 				std::string latitude_;
 				std::string presetNum_;
+				std::string deviceTimeStamp_;
 				std::string deviceSn_;
 				std::string audioFormat_;
 				std::string pTZCapacity_;

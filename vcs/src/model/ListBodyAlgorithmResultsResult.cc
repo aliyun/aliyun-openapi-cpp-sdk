@@ -94,6 +94,8 @@ void ListBodyAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.coatColor = dataNodeRecordsRecordsItem["CoatColor"].asString();
 		if(!dataNodeRecordsRecordsItem["TrousersColor"].isNull())
 			recordsItemObject.trousersColor = dataNodeRecordsRecordsItem["TrousersColor"].asString();
+		if(!dataNodeRecordsRecordsItem["SourceId"].isNull())
+			recordsItemObject.sourceId = dataNodeRecordsRecordsItem["SourceId"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

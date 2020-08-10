@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						std::string motorColor;
 						float rightBottomY;
 						std::string targetPicUrlPath;
+						std::string sourceId;
 						std::string calling;
 						std::string motorClass;
 						float leftTopY;

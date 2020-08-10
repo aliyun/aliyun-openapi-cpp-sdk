@@ -82,6 +82,8 @@ void ListFaceAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.picUrlPath = dataNodeRecordsRecordsItem["PicUrlPath"].asString();
 		if(!dataNodeRecordsRecordsItem["TargetPicUrlPath"].isNull())
 			recordsItemObject.targetPicUrlPath = dataNodeRecordsRecordsItem["TargetPicUrlPath"].asString();
+		if(!dataNodeRecordsRecordsItem["SourceId"].isNull())
+			recordsItemObject.sourceId = dataNodeRecordsRecordsItem["SourceId"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

@@ -92,6 +92,8 @@ void ListMotorAlgorithmResultsResult::parse(const std::string &payload)
 			recordsItemObject.safetyBelt = dataNodeRecordsRecordsItem["SafetyBelt"].asString();
 		if(!dataNodeRecordsRecordsItem["Calling"].isNull())
 			recordsItemObject.calling = dataNodeRecordsRecordsItem["Calling"].asString();
+		if(!dataNodeRecordsRecordsItem["SourceId"].isNull())
+			recordsItemObject.sourceId = dataNodeRecordsRecordsItem["SourceId"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())

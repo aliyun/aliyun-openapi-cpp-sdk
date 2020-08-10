@@ -69,6 +69,17 @@ void ReportDeviceCapacityRequest::setPresetNum(const std::string& presetNum)
 	setBodyParameter("PresetNum", presetNum);
 }
 
+std::string ReportDeviceCapacityRequest::getDeviceTimeStamp()const
+{
+	return deviceTimeStamp_;
+}
+
+void ReportDeviceCapacityRequest::setDeviceTimeStamp(const std::string& deviceTimeStamp)
+{
+	deviceTimeStamp_ = deviceTimeStamp;
+	setBodyParameter("DeviceTimeStamp", deviceTimeStamp);
+}
+
 std::string ReportDeviceCapacityRequest::getDeviceSn()const
 {
 	return deviceSn_;
