@@ -32,40 +32,40 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListProjectMembersResult : public ServiceResult
 			{
 			public:
-				struct ProjectMember
+				struct Data
 				{
-					struct Role
+					struct ProjectMember
 					{
-						std::string projectRoleName;
-						std::string projectRoleType;
-						std::string projectRoleCode;
-						int projectRoleId;
+						struct Role
+						{
+							std::string projectRoleName;
+							std::string projectRoleType;
+							std::string projectRoleCode;
+							int projectRoleId;
+						};
+						std::string status;
+						std::vector<ProjectMember::Role> projectRoleList;
+						std::string projectMemberType;
+						std::string projectMemberId;
+						std::string nick;
+						std::string projectMemberName;
 					};
-					std::string createOn;
-					std::string status;
-					std::vector<ProjectMember::Role> projectRoleList;
-					std::string projectMemberType;
-					std::string projectMemberId;
-					std::string nick;
-					std::string projectMemberName;
+					int totalCount;
+					std::vector<ProjectMember> projectMemberList;
+					int pageSize;
+					int pageNumber;
 				};
 
 
 				ListProjectMembersResult();
 				explicit ListProjectMembersResult(const std::string &payload);
 				~ListProjectMembersResult();
-				int getTotalNum()const;
-				std::vector<ProjectMember> getProjectMemberList()const;
-				int getPageNum()const;
-				int getPageSize()const;
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalNum_;
-				std::vector<ProjectMember> projectMemberList_;
-				int pageNum_;
-				int pageSize_;
+				Data data_;
 
 			};
 		}

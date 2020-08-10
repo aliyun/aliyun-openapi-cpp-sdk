@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				CreateProjectMemberRequest();
 				~CreateProjectMemberRequest();
 
+				std::string getRoleCode()const;
+				void setRoleCode(const std::string& roleCode);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				long getProjectId()const;
@@ -43,6 +45,7 @@ namespace AlibabaCloud
 				void setUserId(const std::string& userId);
 
             private:
+				std::string roleCode_;
 				std::string clientToken_;
 				long projectId_;
 				std::string userId_;

@@ -27,6 +27,17 @@ CreateProjectMemberRequest::CreateProjectMemberRequest() :
 CreateProjectMemberRequest::~CreateProjectMemberRequest()
 {}
 
+std::string CreateProjectMemberRequest::getRoleCode()const
+{
+	return roleCode_;
+}
+
+void CreateProjectMemberRequest::setRoleCode(const std::string& roleCode)
+{
+	roleCode_ = roleCode;
+	setParameter("RoleCode", roleCode);
+}
+
 std::string CreateProjectMemberRequest::getClientToken()const
 {
 	return clientToken_;

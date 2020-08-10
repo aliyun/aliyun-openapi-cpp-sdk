@@ -39,26 +39,31 @@ void ListProjectMembersResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allProjectMemberListNode = value["ProjectMemberList"]["ProjectMember"];
-	for (auto valueProjectMemberListProjectMember : allProjectMemberListNode)
+	auto dataNode = value["Data"];
+	if(!dataNode["PageNumber"].isNull())
+		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["TotalCount"].isNull())
+		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
+	auto allProjectMemberListNode = dataNode["ProjectMemberList"]["ProjectMember"];
+	for (auto dataNodeProjectMemberListProjectMember : allProjectMemberListNode)
 	{
-		ProjectMember projectMemberListObject;
-		if(!valueProjectMemberListProjectMember["ProjectMemberId"].isNull())
-			projectMemberListObject.projectMemberId = valueProjectMemberListProjectMember["ProjectMemberId"].asString();
-		if(!valueProjectMemberListProjectMember["ProjectMemberName"].isNull())
-			projectMemberListObject.projectMemberName = valueProjectMemberListProjectMember["ProjectMemberName"].asString();
-		if(!valueProjectMemberListProjectMember["ProjectMemberType"].isNull())
-			projectMemberListObject.projectMemberType = valueProjectMemberListProjectMember["ProjectMemberType"].asString();
-		if(!valueProjectMemberListProjectMember["CreateOn"].isNull())
-			projectMemberListObject.createOn = valueProjectMemberListProjectMember["CreateOn"].asString();
-		if(!valueProjectMemberListProjectMember["Nick"].isNull())
-			projectMemberListObject.nick = valueProjectMemberListProjectMember["Nick"].asString();
-		if(!valueProjectMemberListProjectMember["Status"].isNull())
-			projectMemberListObject.status = valueProjectMemberListProjectMember["Status"].asString();
+		Data::ProjectMember projectMemberObject;
+		if(!dataNodeProjectMemberListProjectMember["Nick"].isNull())
+			projectMemberObject.nick = dataNodeProjectMemberListProjectMember["Nick"].asString();
+		if(!dataNodeProjectMemberListProjectMember["ProjectMemberId"].isNull())
+			projectMemberObject.projectMemberId = dataNodeProjectMemberListProjectMember["ProjectMemberId"].asString();
+		if(!dataNodeProjectMemberListProjectMember["ProjectMemberName"].isNull())
+			projectMemberObject.projectMemberName = dataNodeProjectMemberListProjectMember["ProjectMemberName"].asString();
+		if(!dataNodeProjectMemberListProjectMember["ProjectMemberType"].isNull())
+			projectMemberObject.projectMemberType = dataNodeProjectMemberListProjectMember["ProjectMemberType"].asString();
+		if(!dataNodeProjectMemberListProjectMember["Status"].isNull())
+			projectMemberObject.status = dataNodeProjectMemberListProjectMember["Status"].asString();
 		auto allProjectRoleListNode = allProjectMemberListNode["ProjectRoleList"]["Role"];
 		for (auto allProjectMemberListNodeProjectRoleListRole : allProjectRoleListNode)
 		{
-			ProjectMember::Role projectRoleListObject;
+			Data::ProjectMember::Role projectRoleListObject;
 			if(!allProjectMemberListNodeProjectRoleListRole["ProjectRoleCode"].isNull())
 				projectRoleListObject.projectRoleCode = allProjectMemberListNodeProjectRoleListRole["ProjectRoleCode"].asString();
 			if(!allProjectMemberListNodeProjectRoleListRole["ProjectRoleId"].isNull())
@@ -67,36 +72,15 @@ void ListProjectMembersResult::parse(const std::string &payload)
 				projectRoleListObject.projectRoleName = allProjectMemberListNodeProjectRoleListRole["ProjectRoleName"].asString();
 			if(!allProjectMemberListNodeProjectRoleListRole["ProjectRoleType"].isNull())
 				projectRoleListObject.projectRoleType = allProjectMemberListNodeProjectRoleListRole["ProjectRoleType"].asString();
-			projectMemberListObject.projectRoleList.push_back(projectRoleListObject);
+			projectMemberObject.projectRoleList.push_back(projectRoleListObject);
 		}
-		projectMemberList_.push_back(projectMemberListObject);
+		data_.projectMemberList.push_back(projectMemberObject);
 	}
-	if(!value["PageNum"].isNull())
-		pageNum_ = std::stoi(value["PageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stoi(value["TotalNum"].asString());
 
 }
 
-int ListProjectMembersResult::getTotalNum()const
+ListProjectMembersResult::Data ListProjectMembersResult::getData()const
 {
-	return totalNum_;
-}
-
-std::vector<ListProjectMembersResult::ProjectMember> ListProjectMembersResult::getProjectMemberList()const
-{
-	return projectMemberList_;
-}
-
-int ListProjectMembersResult::getPageNum()const
-{
-	return pageNum_;
-}
-
-int ListProjectMembersResult::getPageSize()const
-{
-	return pageSize_;
+	return data_;
 }
 
