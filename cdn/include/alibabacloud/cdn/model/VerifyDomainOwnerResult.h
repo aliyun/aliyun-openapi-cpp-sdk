@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_VERIFYDOMAINOWNERRESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_VERIFYDOMAINOWNERRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/cdn/CdnExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeRefreshTaskByIdRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT VerifyDomainOwnerResult : public ServiceResult
 			{
-
 			public:
-				DescribeRefreshTaskByIdRequest();
-				~DescribeRefreshTaskByIdRequest();
 
-				std::string getTaskId()const;
-				void setTaskId(const std::string& taskId);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string taskId_;
-				long ownerId_;
+				VerifyDomainOwnerResult();
+				explicit VerifyDomainOwnerResult(const std::string &payload);
+				~VerifyDomainOwnerResult();
+				std::string getContent()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEREFRESHTASKBYIDREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_VERIFYDOMAINOWNERRESULT_H_

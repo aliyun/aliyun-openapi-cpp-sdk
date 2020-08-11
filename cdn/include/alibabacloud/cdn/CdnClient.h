@@ -290,6 +290,8 @@
 #include "model/DescribeUserUsageDetailDataExportTaskResult.h"
 #include "model/DescribeUserVipsByDomainRequest.h"
 #include "model/DescribeUserVipsByDomainResult.h"
+#include "model/DescribeVerifyContentRequest.h"
+#include "model/DescribeVerifyContentResult.h"
 #include "model/DisableRealtimeLogDeliveryRequest.h"
 #include "model/DisableRealtimeLogDeliveryResult.h"
 #include "model/EnableRealtimeLogDeliveryRequest.h"
@@ -412,6 +414,8 @@
 #include "model/UpdateFCTriggerResult.h"
 #include "model/UpdateLiveAppSnapshotConfigRequest.h"
 #include "model/UpdateLiveAppSnapshotConfigResult.h"
+#include "model/VerifyDomainOwnerRequest.h"
+#include "model/VerifyDomainOwnerResult.h"
 
 
 namespace AlibabaCloud
@@ -823,6 +827,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserVipsByDomainResult> DescribeUserVipsByDomainOutcome;
 			typedef std::future<DescribeUserVipsByDomainOutcome> DescribeUserVipsByDomainOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeUserVipsByDomainRequest&, const DescribeUserVipsByDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserVipsByDomainAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVerifyContentResult> DescribeVerifyContentOutcome;
+			typedef std::future<DescribeVerifyContentOutcome> DescribeVerifyContentOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeVerifyContentRequest&, const DescribeVerifyContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVerifyContentAsyncHandler;
 			typedef Outcome<Error, Model::DisableRealtimeLogDeliveryResult> DisableRealtimeLogDeliveryOutcome;
 			typedef std::future<DisableRealtimeLogDeliveryOutcome> DisableRealtimeLogDeliveryOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DisableRealtimeLogDeliveryRequest&, const DisableRealtimeLogDeliveryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableRealtimeLogDeliveryAsyncHandler;
@@ -1006,6 +1013,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLiveAppSnapshotConfigResult> UpdateLiveAppSnapshotConfigOutcome;
 			typedef std::future<UpdateLiveAppSnapshotConfigOutcome> UpdateLiveAppSnapshotConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::UpdateLiveAppSnapshotConfigRequest&, const UpdateLiveAppSnapshotConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAppSnapshotConfigAsyncHandler;
+			typedef Outcome<Error, Model::VerifyDomainOwnerResult> VerifyDomainOwnerOutcome;
+			typedef std::future<VerifyDomainOwnerOutcome> VerifyDomainOwnerOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::VerifyDomainOwnerRequest&, const VerifyDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainOwnerAsyncHandler;
 
 			CdnClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CdnClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -1413,6 +1423,9 @@ namespace AlibabaCloud
 			DescribeUserVipsByDomainOutcome describeUserVipsByDomain(const Model::DescribeUserVipsByDomainRequest &request)const;
 			void describeUserVipsByDomainAsync(const Model::DescribeUserVipsByDomainRequest& request, const DescribeUserVipsByDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserVipsByDomainOutcomeCallable describeUserVipsByDomainCallable(const Model::DescribeUserVipsByDomainRequest& request) const;
+			DescribeVerifyContentOutcome describeVerifyContent(const Model::DescribeVerifyContentRequest &request)const;
+			void describeVerifyContentAsync(const Model::DescribeVerifyContentRequest& request, const DescribeVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVerifyContentOutcomeCallable describeVerifyContentCallable(const Model::DescribeVerifyContentRequest& request) const;
 			DisableRealtimeLogDeliveryOutcome disableRealtimeLogDelivery(const Model::DisableRealtimeLogDeliveryRequest &request)const;
 			void disableRealtimeLogDeliveryAsync(const Model::DisableRealtimeLogDeliveryRequest& request, const DisableRealtimeLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableRealtimeLogDeliveryOutcomeCallable disableRealtimeLogDeliveryCallable(const Model::DisableRealtimeLogDeliveryRequest& request) const;
@@ -1596,6 +1609,9 @@ namespace AlibabaCloud
 			UpdateLiveAppSnapshotConfigOutcome updateLiveAppSnapshotConfig(const Model::UpdateLiveAppSnapshotConfigRequest &request)const;
 			void updateLiveAppSnapshotConfigAsync(const Model::UpdateLiveAppSnapshotConfigRequest& request, const UpdateLiveAppSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveAppSnapshotConfigOutcomeCallable updateLiveAppSnapshotConfigCallable(const Model::UpdateLiveAppSnapshotConfigRequest& request) const;
+			VerifyDomainOwnerOutcome verifyDomainOwner(const Model::VerifyDomainOwnerRequest &request)const;
+			void verifyDomainOwnerAsync(const Model::VerifyDomainOwnerRequest& request, const VerifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyDomainOwnerOutcomeCallable verifyDomainOwnerCallable(const Model::VerifyDomainOwnerRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

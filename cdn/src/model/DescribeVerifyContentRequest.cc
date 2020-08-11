@@ -14,36 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdn/model/DescribeRefreshTaskByIdRequest.h>
+#include <alibabacloud/cdn/model/DescribeVerifyContentRequest.h>
 
-using AlibabaCloud::Cdn::Model::DescribeRefreshTaskByIdRequest;
+using AlibabaCloud::Cdn::Model::DescribeVerifyContentRequest;
 
-DescribeRefreshTaskByIdRequest::DescribeRefreshTaskByIdRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeRefreshTaskById")
+DescribeVerifyContentRequest::DescribeVerifyContentRequest() :
+	RpcServiceRequest("cdn", "2018-05-10", "DescribeVerifyContent")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeRefreshTaskByIdRequest::~DescribeRefreshTaskByIdRequest()
+DescribeVerifyContentRequest::~DescribeVerifyContentRequest()
 {}
 
-std::string DescribeRefreshTaskByIdRequest::getTaskId()const
+std::string DescribeVerifyContentRequest::getDomainName()const
 {
-	return taskId_;
+	return domainName_;
 }
 
-void DescribeRefreshTaskByIdRequest::setTaskId(const std::string& taskId)
+void DescribeVerifyContentRequest::setDomainName(const std::string& domainName)
 {
-	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+	domainName_ = domainName;
+	setParameter("DomainName", domainName);
 }
 
-long DescribeRefreshTaskByIdRequest::getOwnerId()const
+long DescribeVerifyContentRequest::getOwnerId()const
 {
 	return ownerId_;
 }
 
-void DescribeRefreshTaskByIdRequest::setOwnerId(long ownerId)
+void DescribeVerifyContentRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));

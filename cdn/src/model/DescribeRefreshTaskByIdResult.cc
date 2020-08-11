@@ -59,10 +59,6 @@ void DescribeRefreshTaskByIdResult::parse(const std::string &payload)
 			tasksObject.objectType = valueTasksCDNTask["ObjectType"].asString();
 		tasks_.push_back(tasksObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
 
@@ -76,15 +72,5 @@ long DescribeRefreshTaskByIdResult::getTotalCount()const
 std::vector<DescribeRefreshTaskByIdResult::CDNTask> DescribeRefreshTaskByIdResult::getTasks()const
 {
 	return tasks_;
-}
-
-long DescribeRefreshTaskByIdResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-long DescribeRefreshTaskByIdResult::getPageNumber()const
-{
-	return pageNumber_;
 }
 

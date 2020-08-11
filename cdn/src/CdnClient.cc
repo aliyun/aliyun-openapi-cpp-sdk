@@ -4875,6 +4875,42 @@ CdnClient::DescribeUserVipsByDomainOutcomeCallable CdnClient::describeUserVipsBy
 	return task->get_future();
 }
 
+CdnClient::DescribeVerifyContentOutcome CdnClient::describeVerifyContent(const DescribeVerifyContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVerifyContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVerifyContentOutcome(DescribeVerifyContentResult(outcome.result()));
+	else
+		return DescribeVerifyContentOutcome(outcome.error());
+}
+
+void CdnClient::describeVerifyContentAsync(const DescribeVerifyContentRequest& request, const DescribeVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVerifyContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeVerifyContentOutcomeCallable CdnClient::describeVerifyContentCallable(const DescribeVerifyContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVerifyContentOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVerifyContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DisableRealtimeLogDeliveryOutcome CdnClient::disableRealtimeLogDelivery(const DisableRealtimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7065,6 +7101,42 @@ CdnClient::UpdateLiveAppSnapshotConfigOutcomeCallable CdnClient::updateLiveAppSn
 			[this, request]()
 			{
 			return this->updateLiveAppSnapshotConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CdnClient::VerifyDomainOwnerOutcome CdnClient::verifyDomainOwner(const VerifyDomainOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyDomainOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyDomainOwnerOutcome(VerifyDomainOwnerResult(outcome.result()));
+	else
+		return VerifyDomainOwnerOutcome(outcome.error());
+}
+
+void CdnClient::verifyDomainOwnerAsync(const VerifyDomainOwnerRequest& request, const VerifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyDomainOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::VerifyDomainOwnerOutcomeCallable CdnClient::verifyDomainOwnerCallable(const VerifyDomainOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyDomainOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyDomainOwner(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

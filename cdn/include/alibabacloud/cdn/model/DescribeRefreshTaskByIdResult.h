@@ -49,16 +49,12 @@ namespace AlibabaCloud
 				~DescribeRefreshTaskByIdResult();
 				long getTotalCount()const;
 				std::vector<CDNTask> getTasks()const;
-				long getPageSize()const;
-				long getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long totalCount_;
 				std::vector<CDNTask> tasks_;
-				long pageSize_;
-				long pageNumber_;
 
 			};
 		}

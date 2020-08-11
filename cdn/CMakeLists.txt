@@ -289,6 +289,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeUserUsageDetailDataExportTaskResult.h
 	include/alibabacloud/cdn/model/DescribeUserVipsByDomainRequest.h
 	include/alibabacloud/cdn/model/DescribeUserVipsByDomainResult.h
+	include/alibabacloud/cdn/model/DescribeVerifyContentRequest.h
+	include/alibabacloud/cdn/model/DescribeVerifyContentResult.h
 	include/alibabacloud/cdn/model/DisableRealtimeLogDeliveryRequest.h
 	include/alibabacloud/cdn/model/DisableRealtimeLogDeliveryResult.h
 	include/alibabacloud/cdn/model/EnableRealtimeLogDeliveryRequest.h
@@ -410,7 +412,9 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/UpdateFCTriggerRequest.h
 	include/alibabacloud/cdn/model/UpdateFCTriggerResult.h
 	include/alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigRequest.h
-	include/alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigResult.h )
+	include/alibabacloud/cdn/model/UpdateLiveAppSnapshotConfigResult.h
+	include/alibabacloud/cdn/model/VerifyDomainOwnerRequest.h
+	include/alibabacloud/cdn/model/VerifyDomainOwnerResult.h )
 
 set(cdn_src 
 	src/CdnClient.cc
@@ -682,6 +686,8 @@ set(cdn_src
 	src/model/DescribeUserUsageDetailDataExportTaskResult.cc
 	src/model/DescribeUserVipsByDomainRequest.cc
 	src/model/DescribeUserVipsByDomainResult.cc
+	src/model/DescribeVerifyContentRequest.cc
+	src/model/DescribeVerifyContentResult.cc
 	src/model/DisableRealtimeLogDeliveryRequest.cc
 	src/model/DisableRealtimeLogDeliveryResult.cc
 	src/model/EnableRealtimeLogDeliveryRequest.cc
@@ -803,7 +809,9 @@ set(cdn_src
 	src/model/UpdateFCTriggerRequest.cc
 	src/model/UpdateFCTriggerResult.cc
 	src/model/UpdateLiveAppSnapshotConfigRequest.cc
-	src/model/UpdateLiveAppSnapshotConfigResult.cc )
+	src/model/UpdateLiveAppSnapshotConfigResult.cc
+	src/model/VerifyDomainOwnerRequest.cc
+	src/model/VerifyDomainOwnerResult.cc )
 
 add_library(cdn ${LIB_TYPE}
 	${cdn_public_header}
