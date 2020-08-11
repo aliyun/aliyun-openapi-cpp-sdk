@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setDescription(const std::string& description);
 				std::string getSnapshotName()const;
 				void setSnapshotName(const std::string& snapshotName);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getDiskId()const;
 				void setDiskId(const std::string& diskId);
 				std::vector<Tag> getTag()const;
@@ -69,6 +71,7 @@ namespace AlibabaCloud
 				std::string clientToken_;
 				std::string description_;
 				std::string snapshotName_;
+				std::string resourceGroupId_;
 				std::string diskId_;
 				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;

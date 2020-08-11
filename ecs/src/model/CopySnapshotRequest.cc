@@ -60,6 +60,17 @@ void CopySnapshotRequest::setDestinationRegionId(const std::string& destinationR
 	setParameter("DestinationRegionId", destinationRegionId);
 }
 
+std::string CopySnapshotRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CopySnapshotRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CopySnapshotRequest::getRegionId()const
 {
 	return regionId_;

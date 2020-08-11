@@ -71,6 +71,17 @@ void CreateSnapshotRequest::setSnapshotName(const std::string& snapshotName)
 	setParameter("SnapshotName", snapshotName);
 }
 
+std::string CreateSnapshotRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CreateSnapshotRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CreateSnapshotRequest::getDiskId()const
 {
 	return diskId_;

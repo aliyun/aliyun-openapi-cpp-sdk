@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string description;
+					std::string allocationStatus;
 					std::string storageCapacityUnitId;
 					int capacity;
 					std::string expiredTime;

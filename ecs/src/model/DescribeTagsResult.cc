@@ -68,6 +68,8 @@ void DescribeTagsResult::parse(const std::string &payload)
 			tagsObject.resourceTypeCount.ddh = std::stoi(resourceTypeCountNode["Ddh"].asString());
 		if(!resourceTypeCountNode["KeyPair"].isNull())
 			tagsObject.resourceTypeCount.keyPair = std::stoi(resourceTypeCountNode["KeyPair"].asString());
+		if(!resourceTypeCountNode["SnapshotPolicy"].isNull())
+			tagsObject.resourceTypeCount.snapshotPolicy = std::stoi(resourceTypeCountNode["SnapshotPolicy"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["PageSize"].isNull())

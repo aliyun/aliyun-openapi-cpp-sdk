@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setName(const std::string& name);
 				std::vector<std::string> getStatus()const;
 				void setStatus(const std::vector<std::string>& status);
+				std::string getAllocationType()const;
+				void setAllocationType(const std::string& allocationType);
 
             private:
 				long resourceOwnerId_;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string name_;
 				std::vector<std::string> status_;
+				std::string allocationType_;
 
 			};
 		}

@@ -152,3 +152,14 @@ void DescribeStorageCapacityUnitsRequest::setStatus(const std::vector<std::strin
 	}
 }
 
+std::string DescribeStorageCapacityUnitsRequest::getAllocationType()const
+{
+	return allocationType_;
+}
+
+void DescribeStorageCapacityUnitsRequest::setAllocationType(const std::string& allocationType)
+{
+	allocationType_ = allocationType;
+	setParameter("AllocationType", allocationType);
+}
+

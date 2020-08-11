@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setEncryptAlgorithm(const std::string& encryptAlgorithm);
 				std::string getDestinationRegionId()const;
 				void setDestinationRegionId(const std::string& destinationRegionId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::vector<Tag> getTag()const;
@@ -73,6 +75,7 @@ namespace AlibabaCloud
 				std::string imageId_;
 				std::string encryptAlgorithm_;
 				std::string destinationRegionId_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;

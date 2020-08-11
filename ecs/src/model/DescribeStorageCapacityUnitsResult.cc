@@ -61,6 +61,8 @@ void DescribeStorageCapacityUnitsResult::parse(const std::string &payload)
 			storageCapacityUnitsObject.startTime = valueStorageCapacityUnitsStorageCapacityUnit["StartTime"].asString();
 		if(!valueStorageCapacityUnitsStorageCapacityUnit["Description"].isNull())
 			storageCapacityUnitsObject.description = valueStorageCapacityUnitsStorageCapacityUnit["Description"].asString();
+		if(!valueStorageCapacityUnitsStorageCapacityUnit["AllocationStatus"].isNull())
+			storageCapacityUnitsObject.allocationStatus = valueStorageCapacityUnitsStorageCapacityUnit["AllocationStatus"].asString();
 		storageCapacityUnits_.push_back(storageCapacityUnitsObject);
 	}
 	if(!value["TotalCount"].isNull())

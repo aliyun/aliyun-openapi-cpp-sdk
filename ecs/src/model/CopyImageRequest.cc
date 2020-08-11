@@ -71,6 +71,17 @@ void CopyImageRequest::setDestinationRegionId(const std::string& destinationRegi
 	setParameter("DestinationRegionId", destinationRegionId);
 }
 
+std::string CopyImageRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CopyImageRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CopyImageRequest::getRegionId()const
 {
 	return regionId_;
