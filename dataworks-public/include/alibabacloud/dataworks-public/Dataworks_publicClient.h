@@ -200,6 +200,8 @@
 #include "model/ListProjectMembersResult.h"
 #include "model/ListProjectRolesRequest.h"
 #include "model/ListProjectRolesResult.h"
+#include "model/ListProjectsRequest.h"
+#include "model/ListProjectsResult.h"
 #include "model/ListQualityRulesRequest.h"
 #include "model/ListQualityRulesResult.h"
 #include "model/ListRemindsRequest.h"
@@ -522,6 +524,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListProjectRolesResult> ListProjectRolesOutcome;
 			typedef std::future<ListProjectRolesOutcome> ListProjectRolesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListProjectRolesRequest&, const ListProjectRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectRolesAsyncHandler;
+			typedef Outcome<Error, Model::ListProjectsResult> ListProjectsOutcome;
+			typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListProjectsRequest&, const ListProjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProjectsAsyncHandler;
 			typedef Outcome<Error, Model::ListQualityRulesResult> ListQualityRulesOutcome;
 			typedef std::future<ListQualityRulesOutcome> ListQualityRulesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListQualityRulesRequest&, const ListQualityRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQualityRulesAsyncHandler;
@@ -863,6 +868,9 @@ namespace AlibabaCloud
 			ListProjectRolesOutcome listProjectRoles(const Model::ListProjectRolesRequest &request)const;
 			void listProjectRolesAsync(const Model::ListProjectRolesRequest& request, const ListProjectRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListProjectRolesOutcomeCallable listProjectRolesCallable(const Model::ListProjectRolesRequest& request) const;
+			ListProjectsOutcome listProjects(const Model::ListProjectsRequest &request)const;
+			void listProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProjectsOutcomeCallable listProjectsCallable(const Model::ListProjectsRequest& request) const;
 			ListQualityRulesOutcome listQualityRules(const Model::ListQualityRulesRequest &request)const;
 			void listQualityRulesAsync(const Model::ListQualityRulesRequest& request, const ListQualityRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQualityRulesOutcomeCallable listQualityRulesCallable(const Model::ListQualityRulesRequest& request) const;

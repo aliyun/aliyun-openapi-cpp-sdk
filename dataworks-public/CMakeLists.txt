@@ -199,6 +199,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListProjectMembersResult.h
 	include/alibabacloud/dataworks-public/model/ListProjectRolesRequest.h
 	include/alibabacloud/dataworks-public/model/ListProjectRolesResult.h
+	include/alibabacloud/dataworks-public/model/ListProjectsRequest.h
+	include/alibabacloud/dataworks-public/model/ListProjectsResult.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesRequest.h
 	include/alibabacloud/dataworks-public/model/ListQualityRulesResult.h
 	include/alibabacloud/dataworks-public/model/ListRemindsRequest.h
@@ -426,6 +428,8 @@ set(dataworks-public_src
 	src/model/ListProjectMembersResult.cc
 	src/model/ListProjectRolesRequest.cc
 	src/model/ListProjectRolesResult.cc
+	src/model/ListProjectsRequest.cc
+	src/model/ListProjectsResult.cc
 	src/model/ListQualityRulesRequest.cc
 	src/model/ListQualityRulesResult.cc
 	src/model/ListRemindsRequest.cc

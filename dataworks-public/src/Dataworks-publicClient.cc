@@ -3255,6 +3255,42 @@ Dataworks_publicClient::ListProjectRolesOutcomeCallable Dataworks_publicClient::
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListProjectsOutcome Dataworks_publicClient::listProjects(const ListProjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListProjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListProjectsOutcome(ListProjectsResult(outcome.result()));
+	else
+		return ListProjectsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listProjectsAsync(const ListProjectsRequest& request, const ListProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listProjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListProjectsOutcomeCallable Dataworks_publicClient::listProjectsCallable(const ListProjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListProjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->listProjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListQualityRulesOutcome Dataworks_publicClient::listQualityRules(const ListQualityRulesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
