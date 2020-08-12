@@ -71,6 +71,17 @@ void SyncDtsStatusRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string SyncDtsStatusRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void SyncDtsStatusRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setParameter("TaskId", taskId);
+}
+
 std::string SyncDtsStatusRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setAutoPay(bool autoPay);
 				std::string getFromApp()const;
 				void setFromApp(const std::string& fromApp);
+				std::string getMajorVersion()const;
+				void setMajorVersion(const std::string& majorVersion);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				std::string businessInfo_;
 				bool autoPay_;
 				std::string fromApp_;
+				std::string majorVersion_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;

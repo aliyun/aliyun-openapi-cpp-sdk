@@ -126,6 +126,17 @@ void ModifyInstanceSpecRequest::setFromApp(const std::string& fromApp)
 	setParameter("FromApp", fromApp);
 }
 
+std::string ModifyInstanceSpecRequest::getMajorVersion()const
+{
+	return majorVersion_;
+}
+
+void ModifyInstanceSpecRequest::setMajorVersion(const std::string& majorVersion)
+{
+	majorVersion_ = majorVersion;
+	setParameter("MajorVersion", majorVersion);
+}
+
 std::string ModifyInstanceSpecRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
