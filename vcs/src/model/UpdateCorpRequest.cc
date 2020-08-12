@@ -27,6 +27,17 @@ UpdateCorpRequest::UpdateCorpRequest() :
 UpdateCorpRequest::~UpdateCorpRequest()
 {}
 
+std::string UpdateCorpRequest::getIsvSubId()const
+{
+	return isvSubId_;
+}
+
+void UpdateCorpRequest::setIsvSubId(const std::string& isvSubId)
+{
+	isvSubId_ = isvSubId;
+	setBodyParameter("IsvSubId", isvSubId);
+}
+
 std::string UpdateCorpRequest::getCorpId()const
 {
 	return corpId_;

@@ -66,6 +66,8 @@ void ListCorpsResult::parse(const std::string &payload)
 			recordObject.appName = dataNodeRecordsRecord["AppName"].asString();
 		if(!dataNodeRecordsRecord["DeviceCount"].isNull())
 			recordObject.deviceCount = std::stoi(dataNodeRecordsRecord["DeviceCount"].asString());
+		if(!dataNodeRecordsRecord["IsvSubId"].isNull())
+			recordObject.isvSubId = dataNodeRecordsRecord["IsvSubId"].asString();
 		data_.records.push_back(recordObject);
 	}
 	if(!value["Code"].isNull())

@@ -30,10 +30,14 @@
 #include "model/AddMonitorResult.h"
 #include "model/CreateCorpRequest.h"
 #include "model/CreateCorpResult.h"
+#include "model/CreateCorpGroupRequest.h"
+#include "model/CreateCorpGroupResult.h"
 #include "model/CreateVideoComposeTaskRequest.h"
 #include "model/CreateVideoComposeTaskResult.h"
 #include "model/CreateVideoSummaryTaskRequest.h"
 #include "model/CreateVideoSummaryTaskResult.h"
+#include "model/DeleteCorpGroupRequest.h"
+#include "model/DeleteCorpGroupResult.h"
 #include "model/DeleteDataSourceRequest.h"
 #include "model/DeleteDataSourceResult.h"
 #include "model/DeleteDeviceRequest.h"
@@ -66,6 +70,8 @@
 #include "model/InvokeMotorModelResult.h"
 #include "model/ListBodyAlgorithmResultsRequest.h"
 #include "model/ListBodyAlgorithmResultsResult.h"
+#include "model/ListCorpGroupsRequest.h"
+#include "model/ListCorpGroupsResult.h"
 #include "model/ListCorpsRequest.h"
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
@@ -127,12 +133,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCorpResult> CreateCorpOutcome;
 			typedef std::future<CreateCorpOutcome> CreateCorpOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateCorpRequest&, const CreateCorpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpAsyncHandler;
+			typedef Outcome<Error, Model::CreateCorpGroupResult> CreateCorpGroupOutcome;
+			typedef std::future<CreateCorpGroupOutcome> CreateCorpGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::CreateCorpGroupRequest&, const CreateCorpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateVideoComposeTaskResult> CreateVideoComposeTaskOutcome;
 			typedef std::future<CreateVideoComposeTaskOutcome> CreateVideoComposeTaskOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateVideoComposeTaskRequest&, const CreateVideoComposeTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoComposeTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateVideoSummaryTaskResult> CreateVideoSummaryTaskOutcome;
 			typedef std::future<CreateVideoSummaryTaskOutcome> CreateVideoSummaryTaskOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateVideoSummaryTaskRequest&, const CreateVideoSummaryTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSummaryTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCorpGroupResult> DeleteCorpGroupOutcome;
+			typedef std::future<DeleteCorpGroupOutcome> DeleteCorpGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::DeleteCorpGroupRequest&, const DeleteCorpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCorpGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDataSourceResult> DeleteDataSourceOutcome;
 			typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::DeleteDataSourceRequest&, const DeleteDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourceAsyncHandler;
@@ -181,6 +193,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListBodyAlgorithmResultsResult> ListBodyAlgorithmResultsOutcome;
 			typedef std::future<ListBodyAlgorithmResultsOutcome> ListBodyAlgorithmResultsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListBodyAlgorithmResultsRequest&, const ListBodyAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyAlgorithmResultsAsyncHandler;
+			typedef Outcome<Error, Model::ListCorpGroupsResult> ListCorpGroupsOutcome;
+			typedef std::future<ListCorpGroupsOutcome> ListCorpGroupsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListCorpGroupsRequest&, const ListCorpGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListCorpsResult> ListCorpsOutcome;
 			typedef std::future<ListCorpsOutcome> ListCorpsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpsRequest&, const ListCorpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpsAsyncHandler;
@@ -258,12 +273,18 @@ namespace AlibabaCloud
 			CreateCorpOutcome createCorp(const Model::CreateCorpRequest &request)const;
 			void createCorpAsync(const Model::CreateCorpRequest& request, const CreateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCorpOutcomeCallable createCorpCallable(const Model::CreateCorpRequest& request) const;
+			CreateCorpGroupOutcome createCorpGroup(const Model::CreateCorpGroupRequest &request)const;
+			void createCorpGroupAsync(const Model::CreateCorpGroupRequest& request, const CreateCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCorpGroupOutcomeCallable createCorpGroupCallable(const Model::CreateCorpGroupRequest& request) const;
 			CreateVideoComposeTaskOutcome createVideoComposeTask(const Model::CreateVideoComposeTaskRequest &request)const;
 			void createVideoComposeTaskAsync(const Model::CreateVideoComposeTaskRequest& request, const CreateVideoComposeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoComposeTaskOutcomeCallable createVideoComposeTaskCallable(const Model::CreateVideoComposeTaskRequest& request) const;
 			CreateVideoSummaryTaskOutcome createVideoSummaryTask(const Model::CreateVideoSummaryTaskRequest &request)const;
 			void createVideoSummaryTaskAsync(const Model::CreateVideoSummaryTaskRequest& request, const CreateVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoSummaryTaskOutcomeCallable createVideoSummaryTaskCallable(const Model::CreateVideoSummaryTaskRequest& request) const;
+			DeleteCorpGroupOutcome deleteCorpGroup(const Model::DeleteCorpGroupRequest &request)const;
+			void deleteCorpGroupAsync(const Model::DeleteCorpGroupRequest& request, const DeleteCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCorpGroupOutcomeCallable deleteCorpGroupCallable(const Model::DeleteCorpGroupRequest& request) const;
 			DeleteDataSourceOutcome deleteDataSource(const Model::DeleteDataSourceRequest &request)const;
 			void deleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataSourceOutcomeCallable deleteDataSourceCallable(const Model::DeleteDataSourceRequest& request) const;
@@ -312,6 +333,9 @@ namespace AlibabaCloud
 			ListBodyAlgorithmResultsOutcome listBodyAlgorithmResults(const Model::ListBodyAlgorithmResultsRequest &request)const;
 			void listBodyAlgorithmResultsAsync(const Model::ListBodyAlgorithmResultsRequest& request, const ListBodyAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListBodyAlgorithmResultsOutcomeCallable listBodyAlgorithmResultsCallable(const Model::ListBodyAlgorithmResultsRequest& request) const;
+			ListCorpGroupsOutcome listCorpGroups(const Model::ListCorpGroupsRequest &request)const;
+			void listCorpGroupsAsync(const Model::ListCorpGroupsRequest& request, const ListCorpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCorpGroupsOutcomeCallable listCorpGroupsCallable(const Model::ListCorpGroupsRequest& request) const;
 			ListCorpsOutcome listCorps(const Model::ListCorpsRequest &request)const;
 			void listCorpsAsync(const Model::ListCorpsRequest& request, const ListCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpsOutcomeCallable listCorpsCallable(const Model::ListCorpsRequest& request) const;

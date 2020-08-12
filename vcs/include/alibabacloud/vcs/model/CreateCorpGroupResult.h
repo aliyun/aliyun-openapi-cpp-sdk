@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_CREATECORPGROUPRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_CREATECORPGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListCorpsResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT CreateCorpGroupResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct Record
-					{
-						std::string corpId;
-						std::string description;
-						std::string parentCorpId;
-						std::string isvSubId;
-						std::string createDate;
-						std::string corpName;
-						std::string appName;
-						int deviceCount;
-					};
-					int totalCount;
-					int pageSize;
-					int totalPage;
-					int pageNumber;
-					std::vector<Record> records;
-				};
 
 
-				ListCorpsResult();
-				explicit ListCorpsResult(const std::string &payload);
-				~ListCorpsResult();
+				CreateCorpGroupResult();
+				explicit CreateCorpGroupResult(const std::string &payload);
+				~CreateCorpGroupResult();
 				std::string getMessage()const;
-				Data getData()const;
 				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
 				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_CREATECORPGROUPRESULT_H_

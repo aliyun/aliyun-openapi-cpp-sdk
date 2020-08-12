@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_UPDATECORPREQUEST_H_
-#define ALIBABACLOUD_VCS_MODEL_UPDATECORPREQUEST_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPSREQUEST_H_
+#define ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT UpdateCorpRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VCS_EXPORT ListCorpGroupsRequest : public RpcServiceRequest
 			{
 
 			public:
-				UpdateCorpRequest();
-				~UpdateCorpRequest();
+				ListCorpGroupsRequest();
+				~ListCorpGroupsRequest();
 
-				std::string getIsvSubId()const;
-				void setIsvSubId(const std::string& isvSubId);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
-				std::string getParentCorpId()const;
-				void setParentCorpId(const std::string& parentCorpId);
-				std::string getDescription()const;
-				void setDescription(const std::string& description);
-				std::string getAppName()const;
-				void setAppName(const std::string& appName);
-				std::string getCorpName()const;
-				void setCorpName(const std::string& corpName);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
 
             private:
-				std::string isvSubId_;
 				std::string corpId_;
-				std::string parentCorpId_;
-				std::string description_;
-				std::string appName_;
-				std::string corpName_;
+				long pageNumber_;
+				long pageSize_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_UPDATECORPREQUEST_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPSREQUEST_H_

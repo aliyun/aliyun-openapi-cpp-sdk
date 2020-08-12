@@ -38,6 +38,17 @@ void CreateCorpRequest::setAlgorithmType(const std::string& algorithmType)
 	setBodyParameter("AlgorithmType", algorithmType);
 }
 
+std::string CreateCorpRequest::getIsvSubId()const
+{
+	return isvSubId_;
+}
+
+void CreateCorpRequest::setIsvSubId(const std::string& isvSubId)
+{
+	isvSubId_ = isvSubId;
+	setBodyParameter("IsvSubId", isvSubId);
+}
+
 std::string CreateCorpRequest::getParentCorpId()const
 {
 	return parentCorpId_;

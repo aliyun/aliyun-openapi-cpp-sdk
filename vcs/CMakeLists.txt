@@ -29,10 +29,14 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/AddMonitorResult.h
 	include/alibabacloud/vcs/model/CreateCorpRequest.h
 	include/alibabacloud/vcs/model/CreateCorpResult.h
+	include/alibabacloud/vcs/model/CreateCorpGroupRequest.h
+	include/alibabacloud/vcs/model/CreateCorpGroupResult.h
 	include/alibabacloud/vcs/model/CreateVideoComposeTaskRequest.h
 	include/alibabacloud/vcs/model/CreateVideoComposeTaskResult.h
 	include/alibabacloud/vcs/model/CreateVideoSummaryTaskRequest.h
 	include/alibabacloud/vcs/model/CreateVideoSummaryTaskResult.h
+	include/alibabacloud/vcs/model/DeleteCorpGroupRequest.h
+	include/alibabacloud/vcs/model/DeleteCorpGroupResult.h
 	include/alibabacloud/vcs/model/DeleteDataSourceRequest.h
 	include/alibabacloud/vcs/model/DeleteDataSourceResult.h
 	include/alibabacloud/vcs/model/DeleteDeviceRequest.h
@@ -65,6 +69,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/InvokeMotorModelResult.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsResult.h
+	include/alibabacloud/vcs/model/ListCorpGroupsRequest.h
+	include/alibabacloud/vcs/model/ListCorpGroupsResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
@@ -116,10 +122,14 @@ set(vcs_src
 	src/model/AddMonitorResult.cc
 	src/model/CreateCorpRequest.cc
 	src/model/CreateCorpResult.cc
+	src/model/CreateCorpGroupRequest.cc
+	src/model/CreateCorpGroupResult.cc
 	src/model/CreateVideoComposeTaskRequest.cc
 	src/model/CreateVideoComposeTaskResult.cc
 	src/model/CreateVideoSummaryTaskRequest.cc
 	src/model/CreateVideoSummaryTaskResult.cc
+	src/model/DeleteCorpGroupRequest.cc
+	src/model/DeleteCorpGroupResult.cc
 	src/model/DeleteDataSourceRequest.cc
 	src/model/DeleteDataSourceResult.cc
 	src/model/DeleteDeviceRequest.cc
@@ -152,6 +162,8 @@ set(vcs_src
 	src/model/InvokeMotorModelResult.cc
 	src/model/ListBodyAlgorithmResultsRequest.cc
 	src/model/ListBodyAlgorithmResultsResult.cc
+	src/model/ListCorpGroupsRequest.cc
+	src/model/ListCorpGroupsResult.cc
 	src/model/ListCorpsRequest.cc
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc

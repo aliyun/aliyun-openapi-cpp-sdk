@@ -195,6 +195,42 @@ VcsClient::CreateCorpOutcomeCallable VcsClient::createCorpCallable(const CreateC
 	return task->get_future();
 }
 
+VcsClient::CreateCorpGroupOutcome VcsClient::createCorpGroup(const CreateCorpGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCorpGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCorpGroupOutcome(CreateCorpGroupResult(outcome.result()));
+	else
+		return CreateCorpGroupOutcome(outcome.error());
+}
+
+void VcsClient::createCorpGroupAsync(const CreateCorpGroupRequest& request, const CreateCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCorpGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::CreateCorpGroupOutcomeCallable VcsClient::createCorpGroupCallable(const CreateCorpGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCorpGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createCorpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::CreateVideoComposeTaskOutcome VcsClient::createVideoComposeTask(const CreateVideoComposeTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ VcsClient::CreateVideoSummaryTaskOutcomeCallable VcsClient::createVideoSummaryTa
 			[this, request]()
 			{
 			return this->createVideoSummaryTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteCorpGroupOutcome VcsClient::deleteCorpGroup(const DeleteCorpGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCorpGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCorpGroupOutcome(DeleteCorpGroupResult(outcome.result()));
+	else
+		return DeleteCorpGroupOutcome(outcome.error());
+}
+
+void VcsClient::deleteCorpGroupAsync(const DeleteCorpGroupRequest& request, const DeleteCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCorpGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteCorpGroupOutcomeCallable VcsClient::deleteCorpGroupCallable(const DeleteCorpGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCorpGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCorpGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -837,6 +909,42 @@ VcsClient::ListBodyAlgorithmResultsOutcomeCallable VcsClient::listBodyAlgorithmR
 			[this, request]()
 			{
 			return this->listBodyAlgorithmResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListCorpGroupsOutcome VcsClient::listCorpGroups(const ListCorpGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpGroupsOutcome(ListCorpGroupsResult(outcome.result()));
+	else
+		return ListCorpGroupsOutcome(outcome.error());
+}
+
+void VcsClient::listCorpGroupsAsync(const ListCorpGroupsRequest& request, const ListCorpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListCorpGroupsOutcomeCallable VcsClient::listCorpGroupsCallable(const ListCorpGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getAlgorithmType()const;
 				void setAlgorithmType(const std::string& algorithmType);
+				std::string getIsvSubId()const;
+				void setIsvSubId(const std::string& isvSubId);
 				std::string getParentCorpId()const;
 				void setParentCorpId(const std::string& parentCorpId);
 				std::string getDescription()const;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 
             private:
 				std::string algorithmType_;
+				std::string isvSubId_;
 				std::string parentCorpId_;
 				std::string description_;
 				std::string appName_;
