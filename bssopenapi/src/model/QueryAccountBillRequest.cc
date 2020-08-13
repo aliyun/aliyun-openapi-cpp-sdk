@@ -71,6 +71,17 @@ void QueryAccountBillRequest::setOwnerID(long ownerID)
 	setParameter("OwnerID", std::to_string(ownerID));
 }
 
+long QueryAccountBillRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void QueryAccountBillRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
 bool QueryAccountBillRequest::getIsGroupByProduct()const
 {
 	return isGroupByProduct_;

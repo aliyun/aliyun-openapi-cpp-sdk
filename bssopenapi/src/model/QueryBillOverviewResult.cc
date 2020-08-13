@@ -90,6 +90,10 @@ void QueryBillOverviewResult::parse(const std::string &payload)
 			itemObject.paymentCurrency = dataNodeItemsItem["PaymentCurrency"].asString();
 		if(!dataNodeItemsItem["RoundDownDiscount"].isNull())
 			itemObject.roundDownDiscount = dataNodeItemsItem["RoundDownDiscount"].asString();
+		if(!dataNodeItemsItem["PipCode"].isNull())
+			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
+		if(!dataNodeItemsItem["CommodityCode"].isNull())
+			itemObject.commodityCode = dataNodeItemsItem["CommodityCode"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

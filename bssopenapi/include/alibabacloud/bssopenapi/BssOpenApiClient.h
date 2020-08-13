@@ -114,6 +114,8 @@
 #include "model/QueryResellerAvailableQuotaResult.h"
 #include "model/QueryResourcePackageInstancesRequest.h"
 #include "model/QueryResourcePackageInstancesResult.h"
+#include "model/QuerySettleBillRequest.h"
+#include "model/QuerySettleBillResult.h"
 #include "model/QuerySettlementBillRequest.h"
 #include "model/QuerySettlementBillResult.h"
 #include "model/QuerySplitItemBillRequest.h"
@@ -285,6 +287,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryResourcePackageInstancesResult> QueryResourcePackageInstancesOutcome;
 			typedef std::future<QueryResourcePackageInstancesOutcome> QueryResourcePackageInstancesOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResourcePackageInstancesRequest&, const QueryResourcePackageInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourcePackageInstancesAsyncHandler;
+			typedef Outcome<Error, Model::QuerySettleBillResult> QuerySettleBillOutcome;
+			typedef std::future<QuerySettleBillOutcome> QuerySettleBillOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySettleBillRequest&, const QuerySettleBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySettleBillAsyncHandler;
 			typedef Outcome<Error, Model::QuerySettlementBillResult> QuerySettlementBillOutcome;
 			typedef std::future<QuerySettlementBillOutcome> QuerySettlementBillOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QuerySettlementBillRequest&, const QuerySettlementBillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySettlementBillAsyncHandler;
@@ -464,6 +469,9 @@ namespace AlibabaCloud
 			QueryResourcePackageInstancesOutcome queryResourcePackageInstances(const Model::QueryResourcePackageInstancesRequest &request)const;
 			void queryResourcePackageInstancesAsync(const Model::QueryResourcePackageInstancesRequest& request, const QueryResourcePackageInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResourcePackageInstancesOutcomeCallable queryResourcePackageInstancesCallable(const Model::QueryResourcePackageInstancesRequest& request) const;
+			QuerySettleBillOutcome querySettleBill(const Model::QuerySettleBillRequest &request)const;
+			void querySettleBillAsync(const Model::QuerySettleBillRequest& request, const QuerySettleBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySettleBillOutcomeCallable querySettleBillCallable(const Model::QuerySettleBillRequest& request) const;
 			QuerySettlementBillOutcome querySettlementBill(const Model::QuerySettlementBillRequest &request)const;
 			void querySettlementBillAsync(const Model::QuerySettlementBillRequest& request, const QuerySettlementBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySettlementBillOutcomeCallable querySettlementBillCallable(const Model::QuerySettlementBillRequest& request) const;

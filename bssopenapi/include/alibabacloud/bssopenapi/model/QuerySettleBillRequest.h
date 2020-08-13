@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,51 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySplitItemBillRequest : public RpcServiceRequest
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySettleBillRequest : public RpcServiceRequest
 			{
 
 			public:
-				QuerySplitItemBillRequest();
-				~QuerySplitItemBillRequest();
+				QuerySettleBillRequest();
+				~QuerySettleBillRequest();
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
+				bool getIsHideZeroCharge()const;
+				void setIsHideZeroCharge(bool isHideZeroCharge);
+				bool getIsDisplayLocalCurrency()const;
+				void setIsDisplayLocalCurrency(bool isDisplayLocalCurrency);
 				std::string getSubscriptionType()const;
 				void setSubscriptionType(const std::string& subscriptionType);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
+				std::string getType()const;
+				void setType(const std::string& type);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				int getPageNum()const;
-				void setPageNum(int pageNum);
 				long getBillOwnerId()const;
 				void setBillOwnerId(long billOwnerId);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 
             private:
 				std::string productCode_;
+				bool isHideZeroCharge_;
+				bool isDisplayLocalCurrency_;
 				std::string subscriptionType_;
 				std::string billingCycle_;
+				std::string type_;
 				long ownerId_;
-				int pageNum_;
 				long billOwnerId_;
 				std::string productType_;
-				int pageSize_;
+				std::string nextToken_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSPLITITEMBILLREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLREQUEST_H_

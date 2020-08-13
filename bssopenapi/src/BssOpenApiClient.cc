@@ -1707,6 +1707,42 @@ BssOpenApiClient::QueryResourcePackageInstancesOutcomeCallable BssOpenApiClient:
 	return task->get_future();
 }
 
+BssOpenApiClient::QuerySettleBillOutcome BssOpenApiClient::querySettleBill(const QuerySettleBillRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySettleBillOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySettleBillOutcome(QuerySettleBillResult(outcome.result()));
+	else
+		return QuerySettleBillOutcome(outcome.error());
+}
+
+void BssOpenApiClient::querySettleBillAsync(const QuerySettleBillRequest& request, const QuerySettleBillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySettleBill(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QuerySettleBillOutcomeCallable BssOpenApiClient::querySettleBillCallable(const QuerySettleBillRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySettleBillOutcome()>>(
+			[this, request]()
+			{
+			return this->querySettleBill(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QuerySettlementBillOutcome BssOpenApiClient::querySettlementBill(const QuerySettlementBillRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

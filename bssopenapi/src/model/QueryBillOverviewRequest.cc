@@ -60,6 +60,17 @@ void QueryBillOverviewRequest::setBillingCycle(const std::string& billingCycle)
 	setParameter("BillingCycle", billingCycle);
 }
 
+long QueryBillOverviewRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void QueryBillOverviewRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
 std::string QueryBillOverviewRequest::getProductType()const
 {
 	return productType_;

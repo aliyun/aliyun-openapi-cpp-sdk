@@ -115,6 +115,17 @@ void QueryBillRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+long QueryBillRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void QueryBillRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
 std::string QueryBillRequest::getProductType()const
 {
 	return productType_;

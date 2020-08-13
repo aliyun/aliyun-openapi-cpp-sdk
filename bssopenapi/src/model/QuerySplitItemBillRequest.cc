@@ -82,6 +82,17 @@ void QuerySplitItemBillRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+long QuerySplitItemBillRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void QuerySplitItemBillRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
 std::string QuerySplitItemBillRequest::getProductType()const
 {
 	return productType_;

@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryBillResult.h>
+#include <alibabacloud/bssopenapi/model/QuerySettleBillResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::BssOpenApi;
 using namespace AlibabaCloud::BssOpenApi::Model;
 
-QueryBillResult::QueryBillResult() :
+QuerySettleBillResult::QuerySettleBillResult() :
 	ServiceResult()
 {}
 
-QueryBillResult::QueryBillResult(const std::string &payload) :
+QuerySettleBillResult::QuerySettleBillResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-QueryBillResult::~QueryBillResult()
+QuerySettleBillResult::~QuerySettleBillResult()
 {}
 
-void QueryBillResult::parse(const std::string &payload)
+void QuerySettleBillResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -46,10 +46,10 @@ void QueryBillResult::parse(const std::string &payload)
 		data_.accountID = dataNode["AccountID"].asString();
 	if(!dataNode["AccountName"].isNull())
 		data_.accountName = dataNode["AccountName"].asString();
-	if(!dataNode["PageNum"].isNull())
-		data_.pageNum = std::stoi(dataNode["PageNum"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
+	if(!dataNode["NextToken"].isNull())
+		data_.nextToken = dataNode["NextToken"].asString();
+	if(!dataNode["MaxResults"].isNull())
+		data_.maxResults = std::stoi(dataNode["MaxResults"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stoi(dataNode["TotalCount"].asString());
 	auto allItemsNode = dataNode["Items"]["Item"];
@@ -127,22 +127,22 @@ void QueryBillResult::parse(const std::string &payload)
 
 }
 
-std::string QueryBillResult::getMessage()const
+std::string QuerySettleBillResult::getMessage()const
 {
 	return message_;
 }
 
-QueryBillResult::Data QueryBillResult::getData()const
+QuerySettleBillResult::Data QuerySettleBillResult::getData()const
 {
 	return data_;
 }
 
-std::string QueryBillResult::getCode()const
+std::string QuerySettleBillResult::getCode()const
 {
 	return code_;
 }
 
-bool QueryBillResult::getSuccess()const
+bool QuerySettleBillResult::getSuccess()const
 {
 	return success_;
 }

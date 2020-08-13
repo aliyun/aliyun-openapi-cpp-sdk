@@ -93,6 +93,17 @@ void QueryInstanceBillRequest::setPageNum(int pageNum)
 	setParameter("PageNum", std::to_string(pageNum));
 }
 
+long QueryInstanceBillRequest::getBillOwnerId()const
+{
+	return billOwnerId_;
+}
+
+void QueryInstanceBillRequest::setBillOwnerId(long billOwnerId)
+{
+	billOwnerId_ = billOwnerId;
+	setParameter("BillOwnerId", std::to_string(billOwnerId));
+}
+
 std::string QueryInstanceBillRequest::getBillingDate()const
 {
 	return billingDate_;

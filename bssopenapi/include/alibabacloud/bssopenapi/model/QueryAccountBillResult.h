@@ -44,6 +44,7 @@ namespace AlibabaCloud
 						float outstandingAmount;
 						float paymentAmount;
 						float deductedByPrepaidCard;
+						std::string pipCode;
 						float invoiceDiscount;
 						std::string subscriptionType;
 						float pretaxGrossAmount;

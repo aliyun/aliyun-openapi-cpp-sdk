@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				int getPageNum()const;
 				void setPageNum(int pageNum);
+				long getBillOwnerId()const;
+				void setBillOwnerId(long billOwnerId);
 				std::string getBillingDate()const;
 				void setBillingDate(const std::string& billingDate);
 				std::string getProductType()const;
@@ -65,6 +67,7 @@ namespace AlibabaCloud
 				std::string billingCycle_;
 				long ownerId_;
 				int pageNum_;
+				long billOwnerId_;
 				std::string billingDate_;
 				std::string productType_;
 				bool isBillingItem_;

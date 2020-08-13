@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						float pretaxGrossAmount;
 						std::string instanceConfig;
 						std::string currency;
+						std::string commodityCode;
 						std::string costUnit;
 						std::string resourceGroup;
 						std::string billingType;
@@ -64,6 +65,7 @@ namespace AlibabaCloud
 						std::string billingItem;
 						std::string nickName;
 						std::string intranetIP;
+						std::string pipCode;
 						std::string servicePeriodUnit;
 						std::string servicePeriod;
 						std::string deductedByResourcePackage;

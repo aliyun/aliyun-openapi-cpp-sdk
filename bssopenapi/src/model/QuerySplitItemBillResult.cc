@@ -132,6 +132,10 @@ void QuerySplitItemBillResult::parse(const std::string &payload)
 			itemObject.splitItemID = dataNodeItemsItem["SplitItemID"].asString();
 		if(!dataNodeItemsItem["SplitItemName"].isNull())
 			itemObject.splitItemName = dataNodeItemsItem["SplitItemName"].asString();
+		if(!dataNodeItemsItem["PipCode"].isNull())
+			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
+		if(!dataNodeItemsItem["CommodityCode"].isNull())
+			itemObject.commodityCode = dataNodeItemsItem["CommodityCode"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

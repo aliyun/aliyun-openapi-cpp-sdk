@@ -36,6 +36,7 @@ namespace AlibabaCloud
 					std::string resourceId;
 					std::string commodityCode;
 					long resourceUserId;
+					std::string apportionCode;
 				};
 
 			public:

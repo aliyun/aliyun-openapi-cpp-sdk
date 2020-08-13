@@ -49,12 +49,14 @@ namespace AlibabaCloud
 						std::string paymentCurrency;
 						float paymentAmount;
 						float deductedByPrepaidCard;
+						std::string pipCode;
 						float invoiceDiscount;
 						std::string item;
 						std::string subscriptionType;
 						float pretaxGrossAmount;
 						float pretaxAmount;
 						std::string currency;
+						std::string commodityCode;
 						float pretaxAmountLocal;
 					};
 					std::string billingCycle;

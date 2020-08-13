@@ -130,6 +130,10 @@ void QueryInstanceBillResult::parse(const std::string &payload)
 			itemObject.billingDate = dataNodeItemsItem["BillingDate"].asString();
 		if(!dataNodeItemsItem["ServicePeriodUnit"].isNull())
 			itemObject.servicePeriodUnit = dataNodeItemsItem["ServicePeriodUnit"].asString();
+		if(!dataNodeItemsItem["PipCode"].isNull())
+			itemObject.pipCode = dataNodeItemsItem["PipCode"].asString();
+		if(!dataNodeItemsItem["CommodityCode"].isNull())
+			itemObject.commodityCode = dataNodeItemsItem["CommodityCode"].asString();
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Success"].isNull())

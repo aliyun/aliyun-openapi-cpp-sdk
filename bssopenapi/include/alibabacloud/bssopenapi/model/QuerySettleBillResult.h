@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryBillResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySettleBillResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -70,16 +70,16 @@ namespace AlibabaCloud
 					std::string billingCycle;
 					int totalCount;
 					std::string accountID;
-					int pageNum;
-					int pageSize;
+					std::string nextToken;
+					int maxResults;
 					std::vector<Item> items;
 					std::string accountName;
 				};
 
 
-				QueryBillResult();
-				explicit QueryBillResult(const std::string &payload);
-				~QueryBillResult();
+				QuerySettleBillResult();
+				explicit QuerySettleBillResult(const std::string &payload);
+				~QuerySettleBillResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -97,4 +97,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYBILLRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSETTLEBILLRESULT_H_

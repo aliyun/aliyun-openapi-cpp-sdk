@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setSubscriptionType(const std::string& subscriptionType);
 				std::string getBillingCycle()const;
 				void setBillingCycle(const std::string& billingCycle);
+				long getBillOwnerId()const;
+				void setBillOwnerId(long billOwnerId);
 				std::string getProductType()const;
 				void setProductType(const std::string& productType);
 
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 				std::string productCode_;
 				std::string subscriptionType_;
 				std::string billingCycle_;
+				long billOwnerId_;
 				std::string productType_;
 
 			};
