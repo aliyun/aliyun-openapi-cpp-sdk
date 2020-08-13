@@ -1,3 +1,6 @@
+2020-08-13 Version: 1.36.576
+- GetImageTranslate add column orc.
+
 2020-08-13 Version: 1.36.575
 - DescribePrice update amount parameters type, float to string.
 - Add ResourceGroupId parameter to support resource group.
