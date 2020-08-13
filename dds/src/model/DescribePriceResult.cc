@@ -56,11 +56,11 @@ void DescribePriceResult::parse(const std::string &payload)
 	{
 		SubOrder subOrdersObject;
 		if(!valueSubOrdersSubOrder["OriginalAmount"].isNull())
-			subOrdersObject.originalAmount = std::stof(valueSubOrdersSubOrder["OriginalAmount"].asString());
+			subOrdersObject.originalAmount = valueSubOrdersSubOrder["OriginalAmount"].asString();
 		if(!valueSubOrdersSubOrder["TradeAmount"].isNull())
-			subOrdersObject.tradeAmount = std::stof(valueSubOrdersSubOrder["TradeAmount"].asString());
+			subOrdersObject.tradeAmount = valueSubOrdersSubOrder["TradeAmount"].asString();
 		if(!valueSubOrdersSubOrder["DiscountAmount"].isNull())
-			subOrdersObject.discountAmount = std::stof(valueSubOrdersSubOrder["DiscountAmount"].asString());
+			subOrdersObject.discountAmount = valueSubOrdersSubOrder["DiscountAmount"].asString();
 		if(!valueSubOrdersSubOrder["InstanceId"].isNull())
 			subOrdersObject.instanceId = valueSubOrdersSubOrder["InstanceId"].asString();
 		auto allRuleIds = value["RuleIds"]["RuleId"];
@@ -70,11 +70,11 @@ void DescribePriceResult::parse(const std::string &payload)
 	}
 	auto orderNode = value["Order"];
 	if(!orderNode["OriginalAmount"].isNull())
-		order_.originalAmount = std::stof(orderNode["OriginalAmount"].asString());
+		order_.originalAmount = orderNode["OriginalAmount"].asString();
 	if(!orderNode["TradeAmount"].isNull())
-		order_.tradeAmount = std::stof(orderNode["TradeAmount"].asString());
+		order_.tradeAmount = orderNode["TradeAmount"].asString();
 	if(!orderNode["DiscountAmount"].isNull())
-		order_.discountAmount = std::stof(orderNode["DiscountAmount"].asString());
+		order_.discountAmount = orderNode["DiscountAmount"].asString();
 	if(!orderNode["Currency"].isNull())
 		order_.currency = orderNode["Currency"].asString();
 	auto allCouponsNode = orderNode["Coupons"]["Coupon"];

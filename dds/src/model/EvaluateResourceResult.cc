@@ -14,45 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/DeleteNodeResult.h>
+#include <alibabacloud/dds/model/EvaluateResourceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-DeleteNodeResult::DeleteNodeResult() :
+EvaluateResourceResult::EvaluateResourceResult() :
 	ServiceResult()
 {}
 
-DeleteNodeResult::DeleteNodeResult(const std::string &payload) :
+EvaluateResourceResult::EvaluateResourceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteNodeResult::~DeleteNodeResult()
+EvaluateResourceResult::~EvaluateResourceResult()
 {}
 
-void DeleteNodeResult::parse(const std::string &payload)
+void EvaluateResourceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = std::stoi(value["TaskId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
+	if(!value["Engine"].isNull())
+		engine_ = value["Engine"].asString();
+	if(!value["EngineVersion"].isNull())
+		engineVersion_ = value["EngineVersion"].asString();
+	if(!value["DBInstanceAvailable"].isNull())
+		dBInstanceAvailable_ = value["DBInstanceAvailable"].asString();
 
 }
 
-int DeleteNodeResult::getTaskId()const
+std::string EvaluateResourceResult::getDBInstanceAvailable()const
 {
-	return taskId_;
+	return dBInstanceAvailable_;
 }
 
-std::string DeleteNodeResult::getOrderId()const
+std::string EvaluateResourceResult::getEngineVersion()const
 {
-	return orderId_;
+	return engineVersion_;
+}
+
+std::string EvaluateResourceResult::getEngine()const
+{
+	return engine_;
 }
 

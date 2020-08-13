@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_TAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_TAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,18 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT TagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DDS_EXPORT DescribeActiveOperationTaskCountRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				TagResourcesRequest();
-				~TagResourcesRequest();
+				DescribeActiveOperationTaskCountRequest();
+				~DescribeActiveOperationTaskCountRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
@@ -47,35 +41,26 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;
-				std::string regionId_;
-				std::vector<Tag> tag_;
-				std::vector<std::string> resourceId_;
+				std::string securityToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string resourceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_TAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKCOUNTREQUEST_H_

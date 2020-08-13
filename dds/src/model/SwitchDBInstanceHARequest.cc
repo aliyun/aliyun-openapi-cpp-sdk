@@ -49,6 +49,17 @@ void SwitchDBInstanceHARequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+int SwitchDBInstanceHARequest::getSwitchMode()const
+{
+	return switchMode_;
+}
+
+void SwitchDBInstanceHARequest::setSwitchMode(int switchMode)
+{
+	switchMode_ = switchMode;
+	setParameter("SwitchMode", std::to_string(switchMode));
+}
+
 std::string SwitchDBInstanceHARequest::getRoleIds()const
 {
 	return roleIds_;

@@ -71,6 +71,17 @@ void DescribeErrorLogRecordsRequest::setAccessKeyId(const std::string& accessKey
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeErrorLogRecordsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeErrorLogRecordsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeErrorLogRecordsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -124,17 +135,6 @@ void DescribeErrorLogRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setParameter("NodeId", nodeId);
-}
-
-long DescribeErrorLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeErrorLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setParameter("SQLId", std::to_string(sQLId));
 }
 
 std::string DescribeErrorLogRecordsRequest::getResourceOwnerAccount()const

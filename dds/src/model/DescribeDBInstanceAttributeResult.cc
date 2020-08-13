@@ -71,6 +71,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.vSwitchId = valueDBInstancesDBInstance["VSwitchId"].asString();
 		if(!valueDBInstancesDBInstance["VPCCloudInstanceIds"].isNull())
 			dBInstancesObject.vPCCloudInstanceIds = valueDBInstancesDBInstance["VPCCloudInstanceIds"].asString();
+		if(!valueDBInstancesDBInstance["KindCode"].isNull())
+			dBInstancesObject.kindCode = valueDBInstancesDBInstance["KindCode"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceStatus"].isNull())
 			dBInstancesObject.dBInstanceStatus = valueDBInstancesDBInstance["DBInstanceStatus"].asString();
 		if(!valueDBInstancesDBInstance["LockMode"].isNull())

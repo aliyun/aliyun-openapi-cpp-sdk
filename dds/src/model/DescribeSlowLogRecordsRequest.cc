@@ -71,6 +71,17 @@ void DescribeSlowLogRecordsRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeSlowLogRecordsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeSlowLogRecordsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeSlowLogRecordsRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -113,17 +124,6 @@ void DescribeSlowLogRecordsRequest::setNodeId(const std::string& nodeId)
 {
 	nodeId_ = nodeId;
 	setParameter("NodeId", nodeId);
-}
-
-long DescribeSlowLogRecordsRequest::getSQLId()const
-{
-	return sQLId_;
-}
-
-void DescribeSlowLogRecordsRequest::setSQLId(long sQLId)
-{
-	sQLId_ = sQLId;
-	setParameter("SQLId", std::to_string(sQLId));
 }
 
 std::string DescribeSlowLogRecordsRequest::getResourceOwnerAccount()const

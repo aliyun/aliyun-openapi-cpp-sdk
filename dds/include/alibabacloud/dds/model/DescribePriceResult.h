@@ -43,10 +43,10 @@ namespace AlibabaCloud
 					};
 					std::vector<std::string> ruleIds1;
 					std::string currency;
-					float tradeAmount;
+					std::string tradeAmount;
 					std::vector<Coupon> coupons;
-					float originalAmount;
-					float discountAmount;
+					std::string originalAmount;
+					std::string discountAmount;
 				};
 				struct Rule
 				{
@@ -58,9 +58,9 @@ namespace AlibabaCloud
 				{
 					std::string instanceId;
 					std::vector<std::string> ruleIds;
-					float tradeAmount;
-					float originalAmount;
-					float discountAmount;
+					std::string tradeAmount;
+					std::string originalAmount;
+					std::string discountAmount;
 				};
 
 

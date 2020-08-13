@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DeleteNodeResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT DescribeActiveOperationTaskTypeResult : public ServiceResult
 			{
 			public:
+				struct Items
+				{
+					std::string taskType;
+					int count;
+				};
 
 
-				DeleteNodeResult();
-				explicit DeleteNodeResult(const std::string &payload);
-				~DeleteNodeResult();
-				int getTaskId()const;
-				std::string getOrderId()const;
+				DescribeActiveOperationTaskTypeResult();
+				explicit DescribeActiveOperationTaskTypeResult(const std::string &payload);
+				~DescribeActiveOperationTaskTypeResult();
+				std::vector<Items> getTypeList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int taskId_;
-				std::string orderId_;
+				std::vector<Items> typeList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_DESCRIBEACTIVEOPERATIONTASKTYPERESULT_H_

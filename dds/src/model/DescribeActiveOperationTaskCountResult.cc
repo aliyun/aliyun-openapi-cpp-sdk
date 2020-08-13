@@ -14,45 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dds/model/DeleteNodeResult.h>
+#include <alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dds;
 using namespace AlibabaCloud::Dds::Model;
 
-DeleteNodeResult::DeleteNodeResult() :
+DescribeActiveOperationTaskCountResult::DescribeActiveOperationTaskCountResult() :
 	ServiceResult()
 {}
 
-DeleteNodeResult::DeleteNodeResult(const std::string &payload) :
+DescribeActiveOperationTaskCountResult::DescribeActiveOperationTaskCountResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteNodeResult::~DeleteNodeResult()
+DescribeActiveOperationTaskCountResult::~DescribeActiveOperationTaskCountResult()
 {}
 
-void DeleteNodeResult::parse(const std::string &payload)
+void DescribeActiveOperationTaskCountResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = std::stoi(value["TaskId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = value["OrderId"].asString();
+	if(!value["TaskCount"].isNull())
+		taskCount_ = std::stoi(value["TaskCount"].asString());
+	if(!value["NeedPop"].isNull())
+		needPop_ = std::stoi(value["NeedPop"].asString());
 
 }
 
-int DeleteNodeResult::getTaskId()const
+int DescribeActiveOperationTaskCountResult::getNeedPop()const
 {
-	return taskId_;
+	return needPop_;
 }
 
-std::string DeleteNodeResult::getOrderId()const
+int DescribeActiveOperationTaskCountResult::getTaskCount()const
 {
-	return orderId_;
+	return taskCount_;
 }
 

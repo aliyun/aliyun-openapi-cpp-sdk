@@ -104,3 +104,14 @@ void DescribeUserEncryptionKeyListRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string DescribeUserEncryptionKeyListRequest::getTargetRegionId()const
+{
+	return targetRegionId_;
+}
+
+void DescribeUserEncryptionKeyListRequest::setTargetRegionId(const std::string& targetRegionId)
+{
+	targetRegionId_ = targetRegionId;
+	setParameter("TargetRegionId", targetRegionId);
+}
+

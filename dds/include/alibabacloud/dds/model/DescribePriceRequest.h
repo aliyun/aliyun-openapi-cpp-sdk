@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setCouponNo(const std::string& couponNo);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
 				std::string getBusinessInfo()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
 				std::string productCode_;
 				std::string couponNo_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string securityToken_;
 				std::string businessInfo_;
 				std::string resourceOwnerAccount_;

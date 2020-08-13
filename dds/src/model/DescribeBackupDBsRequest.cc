@@ -60,6 +60,17 @@ void DescribeBackupDBsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeBackupDBsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeBackupDBsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeBackupDBsRequest::getSecurityToken()const
 {
 	return securityToken_;

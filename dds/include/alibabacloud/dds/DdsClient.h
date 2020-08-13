@@ -46,6 +46,10 @@
 #include "model/DeleteNodeResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
+#include "model/DescribeActiveOperationTaskCountRequest.h"
+#include "model/DescribeActiveOperationTaskCountResult.h"
+#include "model/DescribeActiveOperationTaskTypeRequest.h"
+#include "model/DescribeActiveOperationTaskTypeResult.h"
 #include "model/DescribeAuditFilesRequest.h"
 #include "model/DescribeAuditFilesResult.h"
 #include "model/DescribeAuditLogFilterRequest.h"
@@ -122,6 +126,8 @@
 #include "model/DescribeUserEncryptionKeyListResult.h"
 #include "model/DestroyInstanceRequest.h"
 #include "model/DestroyInstanceResult.h"
+#include "model/EvaluateResourceRequest.h"
+#include "model/EvaluateResourceResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/MigrateAvailableZoneRequest.h"
@@ -235,6 +241,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeActiveOperationTaskCountResult> DescribeActiveOperationTaskCountOutcome;
+			typedef std::future<DescribeActiveOperationTaskCountOutcome> DescribeActiveOperationTaskCountOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeActiveOperationTaskCountRequest&, const DescribeActiveOperationTaskCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeActiveOperationTaskTypeResult> DescribeActiveOperationTaskTypeOutcome;
+			typedef std::future<DescribeActiveOperationTaskTypeOutcome> DescribeActiveOperationTaskTypeOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::DescribeActiveOperationTaskTypeRequest&, const DescribeActiveOperationTaskTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveOperationTaskTypeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditFilesResult> DescribeAuditFilesOutcome;
 			typedef std::future<DescribeAuditFilesOutcome> DescribeAuditFilesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DescribeAuditFilesRequest&, const DescribeAuditFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditFilesAsyncHandler;
@@ -349,6 +361,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DestroyInstanceResult> DestroyInstanceOutcome;
 			typedef std::future<DestroyInstanceOutcome> DestroyInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::DestroyInstanceRequest&, const DestroyInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstanceAsyncHandler;
+			typedef Outcome<Error, Model::EvaluateResourceResult> EvaluateResourceOutcome;
+			typedef std::future<EvaluateResourceOutcome> EvaluateResourceOutcomeCallable;
+			typedef std::function<void(const DdsClient*, const Model::EvaluateResourceRequest&, const EvaluateResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateResourceAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -492,6 +507,12 @@ namespace AlibabaCloud
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
+			DescribeActiveOperationTaskCountOutcome describeActiveOperationTaskCount(const Model::DescribeActiveOperationTaskCountRequest &request)const;
+			void describeActiveOperationTaskCountAsync(const Model::DescribeActiveOperationTaskCountRequest& request, const DescribeActiveOperationTaskCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeActiveOperationTaskCountOutcomeCallable describeActiveOperationTaskCountCallable(const Model::DescribeActiveOperationTaskCountRequest& request) const;
+			DescribeActiveOperationTaskTypeOutcome describeActiveOperationTaskType(const Model::DescribeActiveOperationTaskTypeRequest &request)const;
+			void describeActiveOperationTaskTypeAsync(const Model::DescribeActiveOperationTaskTypeRequest& request, const DescribeActiveOperationTaskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeActiveOperationTaskTypeOutcomeCallable describeActiveOperationTaskTypeCallable(const Model::DescribeActiveOperationTaskTypeRequest& request) const;
 			DescribeAuditFilesOutcome describeAuditFiles(const Model::DescribeAuditFilesRequest &request)const;
 			void describeAuditFilesAsync(const Model::DescribeAuditFilesRequest& request, const DescribeAuditFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditFilesOutcomeCallable describeAuditFilesCallable(const Model::DescribeAuditFilesRequest& request) const;
@@ -606,6 +627,9 @@ namespace AlibabaCloud
 			DestroyInstanceOutcome destroyInstance(const Model::DestroyInstanceRequest &request)const;
 			void destroyInstanceAsync(const Model::DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DestroyInstanceOutcomeCallable destroyInstanceCallable(const Model::DestroyInstanceRequest& request) const;
+			EvaluateResourceOutcome evaluateResource(const Model::EvaluateResourceRequest &request)const;
+			void evaluateResourceAsync(const Model::EvaluateResourceRequest& request, const EvaluateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EvaluateResourceOutcomeCallable evaluateResourceCallable(const Model::EvaluateResourceRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;

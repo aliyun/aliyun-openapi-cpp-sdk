@@ -39,12 +39,12 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getNextToken()const;
 				void setNextToken(const std::string& nextToken);
-				std::string getProduct()const;
-				void setProduct(const std::string& product);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -53,20 +53,17 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getResourceType()const;
 				void setResourceType(const std::string& resourceType);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
 
             private:
 				long resourceOwnerId_;
 				std::string accessKeyId_;
+				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string nextToken_;
-				std::string product_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string resourceType_;
-				std::string category_;
 
 			};
 		}

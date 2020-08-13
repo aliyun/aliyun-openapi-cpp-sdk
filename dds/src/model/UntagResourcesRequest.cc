@@ -49,6 +49,17 @@ void UntagResourcesRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string UntagResourcesRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void UntagResourcesRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string UntagResourcesRequest::getRegionId()const
 {
 	return regionId_;

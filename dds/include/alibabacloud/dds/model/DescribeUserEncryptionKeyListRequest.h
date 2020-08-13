@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getTargetRegionId()const;
+				void setTargetRegionId(const std::string& targetRegionId);
 
             private:
 				long resourceOwnerId_;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
+				std::string targetRegionId_;
 
 			};
 		}

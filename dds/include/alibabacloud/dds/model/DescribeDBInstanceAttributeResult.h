@@ -122,6 +122,7 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string regionId;
 					std::string expireTime;
+					std::string kindCode;
 				};
 
 

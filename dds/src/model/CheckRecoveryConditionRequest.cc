@@ -49,6 +49,17 @@ void CheckRecoveryConditionRequest::setAccessKeyId(const std::string& accessKeyI
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string CheckRecoveryConditionRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void CheckRecoveryConditionRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string CheckRecoveryConditionRequest::getDatabaseNames()const
 {
 	return databaseNames_;

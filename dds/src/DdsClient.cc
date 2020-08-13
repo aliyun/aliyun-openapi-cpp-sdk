@@ -483,6 +483,78 @@ DdsClient::DescribeAccountsOutcomeCallable DdsClient::describeAccountsCallable(c
 	return task->get_future();
 }
 
+DdsClient::DescribeActiveOperationTaskCountOutcome DdsClient::describeActiveOperationTaskCount(const DescribeActiveOperationTaskCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTaskCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTaskCountOutcome(DescribeActiveOperationTaskCountResult(outcome.result()));
+	else
+		return DescribeActiveOperationTaskCountOutcome(outcome.error());
+}
+
+void DdsClient::describeActiveOperationTaskCountAsync(const DescribeActiveOperationTaskCountRequest& request, const DescribeActiveOperationTaskCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTaskCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeActiveOperationTaskCountOutcomeCallable DdsClient::describeActiveOperationTaskCountCallable(const DescribeActiveOperationTaskCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskCountOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTaskCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::DescribeActiveOperationTaskTypeOutcome DdsClient::describeActiveOperationTaskType(const DescribeActiveOperationTaskTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTaskTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTaskTypeOutcome(DescribeActiveOperationTaskTypeResult(outcome.result()));
+	else
+		return DescribeActiveOperationTaskTypeOutcome(outcome.error());
+}
+
+void DdsClient::describeActiveOperationTaskTypeAsync(const DescribeActiveOperationTaskTypeRequest& request, const DescribeActiveOperationTaskTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTaskType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::DescribeActiveOperationTaskTypeOutcomeCallable DdsClient::describeActiveOperationTaskTypeCallable(const DescribeActiveOperationTaskTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTaskType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::DescribeAuditFilesOutcome DdsClient::describeAuditFiles(const DescribeAuditFilesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,6 +1917,42 @@ DdsClient::DestroyInstanceOutcomeCallable DdsClient::destroyInstanceCallable(con
 			[this, request]()
 			{
 			return this->destroyInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DdsClient::EvaluateResourceOutcome DdsClient::evaluateResource(const EvaluateResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EvaluateResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EvaluateResourceOutcome(EvaluateResourceResult(outcome.result()));
+	else
+		return EvaluateResourceOutcome(outcome.error());
+}
+
+void DdsClient::evaluateResourceAsync(const EvaluateResourceRequest& request, const EvaluateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, evaluateResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::EvaluateResourceOutcomeCallable DdsClient::evaluateResourceCallable(const EvaluateResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EvaluateResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->evaluateResource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getConnectionDomain()const;
+				void setConnectionDomain(const std::string& connectionDomain);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDBInstanceType()const;
@@ -111,6 +113,7 @@ namespace AlibabaCloud
 				std::string expireTime_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				std::string connectionDomain_;
 				long ownerId_;
 				std::string dBInstanceType_;
 				std::string dBInstanceClass_;

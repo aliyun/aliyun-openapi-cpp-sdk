@@ -49,6 +49,17 @@ void DescribeDBInstanceAttributeRequest::setAccessKeyId(const std::string& acces
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeDBInstanceAttributeRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeDBInstanceAttributeRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeDBInstanceAttributeRequest::getSecurityToken()const
 {
 	return securityToken_;

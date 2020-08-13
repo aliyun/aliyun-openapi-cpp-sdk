@@ -45,6 +45,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DeleteNodeResult.h
 	include/alibabacloud/dds/model/DescribeAccountsRequest.h
 	include/alibabacloud/dds/model/DescribeAccountsResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskCountResult.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeRequest.h
+	include/alibabacloud/dds/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/dds/model/DescribeAuditFilesRequest.h
 	include/alibabacloud/dds/model/DescribeAuditFilesResult.h
 	include/alibabacloud/dds/model/DescribeAuditLogFilterRequest.h
@@ -121,6 +125,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeUserEncryptionKeyListResult.h
 	include/alibabacloud/dds/model/DestroyInstanceRequest.h
 	include/alibabacloud/dds/model/DestroyInstanceResult.h
+	include/alibabacloud/dds/model/EvaluateResourceRequest.h
+	include/alibabacloud/dds/model/EvaluateResourceResult.h
 	include/alibabacloud/dds/model/ListTagResourcesRequest.h
 	include/alibabacloud/dds/model/ListTagResourcesResult.h
 	include/alibabacloud/dds/model/MigrateAvailableZoneRequest.h
@@ -216,6 +222,10 @@ set(dds_src
 	src/model/DeleteNodeResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeActiveOperationTaskCountRequest.cc
+	src/model/DescribeActiveOperationTaskCountResult.cc
+	src/model/DescribeActiveOperationTaskTypeRequest.cc
+	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAuditFilesRequest.cc
 	src/model/DescribeAuditFilesResult.cc
 	src/model/DescribeAuditLogFilterRequest.cc
@@ -292,6 +302,8 @@ set(dds_src
 	src/model/DescribeUserEncryptionKeyListResult.cc
 	src/model/DestroyInstanceRequest.cc
 	src/model/DestroyInstanceResult.cc
+	src/model/EvaluateResourceRequest.cc
+	src/model/EvaluateResourceResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/MigrateAvailableZoneRequest.cc

@@ -71,6 +71,17 @@ void DescribePriceRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribePriceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribePriceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribePriceRequest::getSecurityToken()const
 {
 	return securityToken_;

@@ -49,6 +49,17 @@ void DescribeTagsRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeTagsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeTagsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeTagsRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,17 +80,6 @@ void DescribeTagsRequest::setNextToken(const std::string& nextToken)
 {
 	nextToken_ = nextToken;
 	setParameter("NextToken", nextToken);
-}
-
-std::string DescribeTagsRequest::getProduct()const
-{
-	return product_;
-}
-
-void DescribeTagsRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setParameter("Product", product);
 }
 
 std::string DescribeTagsRequest::getResourceOwnerAccount()const
@@ -124,16 +124,5 @@ void DescribeTagsRequest::setResourceType(const std::string& resourceType)
 {
 	resourceType_ = resourceType;
 	setParameter("ResourceType", resourceType);
-}
-
-std::string DescribeTagsRequest::getCategory()const
-{
-	return category_;
-}
-
-void DescribeTagsRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
 }
 

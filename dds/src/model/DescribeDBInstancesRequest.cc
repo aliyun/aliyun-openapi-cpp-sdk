@@ -230,6 +230,17 @@ void DescribeDBInstancesRequest::setOwnerAccount(const std::string& ownerAccount
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+std::string DescribeDBInstancesRequest::getConnectionDomain()const
+{
+	return connectionDomain_;
+}
+
+void DescribeDBInstancesRequest::setConnectionDomain(const std::string& connectionDomain)
+{
+	connectionDomain_ = connectionDomain;
+	setParameter("ConnectionDomain", connectionDomain);
+}
+
 long DescribeDBInstancesRequest::getOwnerId()const
 {
 	return ownerId_;

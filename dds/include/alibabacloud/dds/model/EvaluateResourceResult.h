@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
-#define ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_EVALUATERESOURCERESULT_H_
+#define ALIBABACLOUD_DDS_MODEL_EVALUATERESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DDS_EXPORT DeleteNodeResult : public ServiceResult
+			class ALIBABACLOUD_DDS_EXPORT EvaluateResourceResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteNodeResult();
-				explicit DeleteNodeResult(const std::string &payload);
-				~DeleteNodeResult();
-				int getTaskId()const;
-				std::string getOrderId()const;
+				EvaluateResourceResult();
+				explicit EvaluateResourceResult(const std::string &payload);
+				~EvaluateResourceResult();
+				std::string getDBInstanceAvailable()const;
+				std::string getEngineVersion()const;
+				std::string getEngine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int taskId_;
-				std::string orderId_;
+				std::string dBInstanceAvailable_;
+				std::string engineVersion_;
+				std::string engine_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DDS_MODEL_DELETENODERESULT_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_EVALUATERESOURCERESULT_H_
