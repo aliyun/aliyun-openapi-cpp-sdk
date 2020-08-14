@@ -14,38 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/DeleteDBInstanceResult.h>
+#include <alibabacloud/rds/model/CheckCloudResourceAuthorizedResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-DeleteDBInstanceResult::DeleteDBInstanceResult() :
+CheckCloudResourceAuthorizedResult::CheckCloudResourceAuthorizedResult() :
 	ServiceResult()
 {}
 
-DeleteDBInstanceResult::DeleteDBInstanceResult(const std::string &payload) :
+CheckCloudResourceAuthorizedResult::CheckCloudResourceAuthorizedResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteDBInstanceResult::~DeleteDBInstanceResult()
+CheckCloudResourceAuthorizedResult::~CheckCloudResourceAuthorizedResult()
 {}
 
-void DeleteDBInstanceResult::parse(const std::string &payload)
+void CheckCloudResourceAuthorizedResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
+	if(!value["AuthorizationState"].isNull())
+		authorizationState_ = std::stoi(value["AuthorizationState"].asString());
+	if(!value["RoleArn"].isNull())
+		roleArn_ = value["RoleArn"].asString();
 
 }
 
-std::string DeleteDBInstanceResult::getRegionId()const
+int CheckCloudResourceAuthorizedResult::getAuthorizationState()const
 {
-	return regionId_;
+	return authorizationState_;
+}
+
+std::string CheckCloudResourceAuthorizedResult::getRoleArn()const
+{
+	return roleArn_;
 }
 

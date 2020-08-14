@@ -38,17 +38,6 @@ void RestartDBInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string RestartDBInstanceRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
-}
-
-void RestartDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
-}
-
 std::string RestartDBInstanceRequest::getClientToken()const
 {
 	return clientToken_;
@@ -58,6 +47,72 @@ void RestartDBInstanceRequest::setClientToken(const std::string& clientToken)
 {
 	clientToken_ = clientToken;
 	setParameter("ClientToken", clientToken);
+}
+
+std::string RestartDBInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void RestartDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string RestartDBInstanceRequest::getRestartMethod()const
+{
+	return restartMethod_;
+}
+
+void RestartDBInstanceRequest::setRestartMethod(const std::string& restartMethod)
+{
+	restartMethod_ = restartMethod;
+	setParameter("RestartMethod", restartMethod);
+}
+
+std::string RestartDBInstanceRequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void RestartDBInstanceRequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setParameter("EffectiveTime", effectiveTime);
+}
+
+std::string RestartDBInstanceRequest::getDBInstanceId()const
+{
+	return dBInstanceId_;
+}
+
+void RestartDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
+{
+	dBInstanceId_ = dBInstanceId;
+	setParameter("DBInstanceId", dBInstanceId);
+}
+
+std::string RestartDBInstanceRequest::getSwitchTime()const
+{
+	return switchTime_;
+}
+
+void RestartDBInstanceRequest::setSwitchTime(const std::string& switchTime)
+{
+	switchTime_ = switchTime;
+	setParameter("SwitchTime", switchTime);
+}
+
+std::string RestartDBInstanceRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
+}
+
+void RestartDBInstanceRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
 std::string RestartDBInstanceRequest::getOwnerAccount()const
@@ -80,27 +135,5 @@ void RestartDBInstanceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
-}
-
-std::string RestartDBInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void RestartDBInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-std::string RestartDBInstanceRequest::getDBInstanceId()const
-{
-	return dBInstanceId_;
-}
-
-void RestartDBInstanceRequest::setDBInstanceId(const std::string& dBInstanceId)
-{
-	dBInstanceId_ = dBInstanceId;
-	setParameter("DBInstanceId", dBInstanceId);
 }
 

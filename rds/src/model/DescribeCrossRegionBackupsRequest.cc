@@ -115,6 +115,17 @@ void DescribeCrossRegionBackupsRequest::setResourceOwnerAccount(const std::strin
 	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
+int DescribeCrossRegionBackupsRequest::getBackupId()const
+{
+	return backupId_;
+}
+
+void DescribeCrossRegionBackupsRequest::setBackupId(int backupId)
+{
+	backupId_ = backupId;
+	setParameter("BackupId", std::to_string(backupId));
+}
+
 std::string DescribeCrossRegionBackupsRequest::getEndTime()const
 {
 	return endTime_;

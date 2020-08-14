@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/DeleteDBInstanceResult.h>
+#include <alibabacloud/rds/model/ModifyDasInstanceConfigResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-DeleteDBInstanceResult::DeleteDBInstanceResult() :
+ModifyDasInstanceConfigResult::ModifyDasInstanceConfigResult() :
 	ServiceResult()
 {}
 
-DeleteDBInstanceResult::DeleteDBInstanceResult(const std::string &payload) :
+ModifyDasInstanceConfigResult::ModifyDasInstanceConfigResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteDBInstanceResult::~DeleteDBInstanceResult()
+ModifyDasInstanceConfigResult::~ModifyDasInstanceConfigResult()
 {}
 
-void DeleteDBInstanceResult::parse(const std::string &payload)
+void ModifyDasInstanceConfigResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 
-}
-
-std::string DeleteDBInstanceResult::getRegionId()const
-{
-	return regionId_;
 }
 

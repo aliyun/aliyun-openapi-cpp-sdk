@@ -71,3 +71,14 @@ void CreateDiagnosticReportRequest::setDBInstanceId(const std::string& dBInstanc
 	setParameter("DBInstanceId", dBInstanceId);
 }
 
+std::string CreateDiagnosticReportRequest::getCategory()const
+{
+	return category_;
+}
+
+void CreateDiagnosticReportRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
+}
+

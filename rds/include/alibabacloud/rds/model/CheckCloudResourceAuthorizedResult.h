@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DeleteDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT CheckCloudResourceAuthorizedResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteDBInstanceResult();
-				explicit DeleteDBInstanceResult(const std::string &payload);
-				~DeleteDBInstanceResult();
-				std::string getRegionId()const;
+				CheckCloudResourceAuthorizedResult();
+				explicit CheckCloudResourceAuthorizedResult(const std::string &payload);
+				~CheckCloudResourceAuthorizedResult();
+				int getAuthorizationState()const;
+				std::string getRoleArn()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string regionId_;
+				int authorizationState_;
+				std::string roleArn_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_CHECKCLOUDRESOURCEAUTHORIZEDRESULT_H_

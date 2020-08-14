@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DeleteDBInstanceResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeDasInstanceConfigResult : public ServiceResult
 			{
 			public:
 
 
-				DeleteDBInstanceResult();
-				explicit DeleteDBInstanceResult(const std::string &payload);
-				~DeleteDBInstanceResult();
-				std::string getRegionId()const;
+				DescribeDasInstanceConfigResult();
+				explicit DescribeDasInstanceConfigResult(const std::string &payload);
+				~DescribeDasInstanceConfigResult();
+				int getStorageUpperBound()const;
+				std::string getDBInstanceId()const;
+				int getMaxStorageUpperBound()const;
+				std::string getData()const;
+				int getStorageThreshold()const;
+				std::string getDBType()const;
+				bool getStorageAutoScale()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string regionId_;
+				int storageUpperBound_;
+				std::string dBInstanceId_;
+				int maxStorageUpperBound_;
+				std::string data_;
+				int storageThreshold_;
+				std::string dBType_;
+				bool storageAutoScale_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGRESULT_H_

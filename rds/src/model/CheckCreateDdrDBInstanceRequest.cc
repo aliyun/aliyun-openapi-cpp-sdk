@@ -71,6 +71,17 @@ void CheckCreateDdrDBInstanceRequest::setHostType(const std::string& hostType)
 	setParameter("HostType", hostType);
 }
 
+std::string CheckCreateDdrDBInstanceRequest::getBinlogRole()const
+{
+	return binlogRole_;
+}
+
+void CheckCreateDdrDBInstanceRequest::setBinlogRole(const std::string& binlogRole)
+{
+	binlogRole_ = binlogRole;
+	setParameter("BinlogRole", binlogRole);
+}
+
 std::string CheckCreateDdrDBInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;
@@ -203,6 +214,17 @@ void CheckCreateDdrDBInstanceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string CheckCreateDdrDBInstanceRequest::getBinlogPosition()const
+{
+	return binlogPosition_;
+}
+
+void CheckCreateDdrDBInstanceRequest::setBinlogPosition(const std::string& binlogPosition)
+{
+	binlogPosition_ = binlogPosition;
+	setParameter("BinlogPosition", binlogPosition);
+}
+
 std::string CheckCreateDdrDBInstanceRequest::getDBInstanceClass()const
 {
 	return dBInstanceClass_;
@@ -223,6 +245,17 @@ void CheckCreateDdrDBInstanceRequest::setRestoreType(const std::string& restoreT
 {
 	restoreType_ = restoreType;
 	setParameter("RestoreType", restoreType);
+}
+
+std::string CheckCreateDdrDBInstanceRequest::getBinlogName()const
+{
+	return binlogName_;
+}
+
+void CheckCreateDdrDBInstanceRequest::setBinlogName(const std::string& binlogName)
+{
+	binlogName_ = binlogName;
+	setParameter("BinlogName", binlogName);
 }
 
 std::string CheckCreateDdrDBInstanceRequest::getSourceRegion()const

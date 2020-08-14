@@ -456,6 +456,17 @@ void CreateDBInstanceRequest::setUsedTime(const std::string& usedTime)
 	setParameter("UsedTime", usedTime);
 }
 
+std::string CreateDBInstanceRequest::getTargetMinorVersion()const
+{
+	return targetMinorVersion_;
+}
+
+void CreateDBInstanceRequest::setTargetMinorVersion(const std::string& targetMinorVersion)
+{
+	targetMinorVersion_ = targetMinorVersion;
+	setParameter("TargetMinorVersion", targetMinorVersion);
+}
+
 int CreateDBInstanceRequest::getStorageUpperBound()const
 {
 	return storageUpperBound_;

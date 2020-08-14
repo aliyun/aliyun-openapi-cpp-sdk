@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT RestartDBInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DescribeDasInstanceConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				RestartDBInstanceRequest();
-				~RestartDBInstanceRequest();
+				DescribeDasInstanceConfigRequest();
+				~DescribeDasInstanceConfigRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRestartMethod()const;
-				void setRestartMethod(const std::string& restartMethod);
-				std::string getEffectiveTime()const;
-				void setEffectiveTime(const std::string& effectiveTime);
-				std::string getDBInstanceId()const;
-				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getSwitchTime()const;
-				void setSwitchTime(const std::string& switchTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getDBInstanceId()const;
+				void setDBInstanceId(const std::string& dBInstanceId);
 
             private:
 				long resourceOwnerId_;
-				std::string clientToken_;
-				std::string accessKeyId_;
-				std::string restartMethod_;
-				std::string effectiveTime_;
-				std::string dBInstanceId_;
-				std::string switchTime_;
 				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
+				std::string clientToken_;
 				long ownerId_;
+				std::string accessKeyId_;
+				std::string dBInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_RESTARTDBINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEDASINSTANCECONFIGREQUEST_H_

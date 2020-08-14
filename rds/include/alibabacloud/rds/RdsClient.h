@@ -34,6 +34,8 @@
 #include "model/CancelImportResult.h"
 #include "model/CheckAccountNameAvailableRequest.h"
 #include "model/CheckAccountNameAvailableResult.h"
+#include "model/CheckCloudResourceAuthorizedRequest.h"
+#include "model/CheckCloudResourceAuthorizedResult.h"
 #include "model/CheckCreateDdrDBInstanceRequest.h"
 #include "model/CheckCreateDdrDBInstanceResult.h"
 #include "model/CheckDBNameAvailableRequest.h"
@@ -58,6 +60,8 @@
 #include "model/CreateBackupResult.h"
 #include "model/CreateDBInstanceRequest.h"
 #include "model/CreateDBInstanceResult.h"
+#include "model/CreateDBProxyEndpointAddressRequest.h"
+#include "model/CreateDBProxyEndpointAddressResult.h"
 #include "model/CreateDatabaseRequest.h"
 #include "model/CreateDatabaseResult.h"
 #include "model/CreateDdrInstanceRequest.h"
@@ -94,6 +98,8 @@
 #include "model/DeleteBackupFileResult.h"
 #include "model/DeleteDBInstanceRequest.h"
 #include "model/DeleteDBInstanceResult.h"
+#include "model/DeleteDBProxyEndpointAddressRequest.h"
+#include "model/DeleteDBProxyEndpointAddressResult.h"
 #include "model/DeleteDatabaseRequest.h"
 #include "model/DeleteDatabaseResult.h"
 #include "model/DeleteDedicatedHostAccountRequest.h"
@@ -188,6 +194,8 @@
 #include "model/DescribeDBProxyPerformanceResult.h"
 #include "model/DescribeDTCSecurityIpHostsForSQLServerRequest.h"
 #include "model/DescribeDTCSecurityIpHostsForSQLServerResult.h"
+#include "model/DescribeDasInstanceConfigRequest.h"
+#include "model/DescribeDasInstanceConfigResult.h"
 #include "model/DescribeDatabasesRequest.h"
 #include "model/DescribeDatabasesResult.h"
 #include "model/DescribeDedicatedHostAttributeRequest.h"
@@ -352,6 +360,8 @@
 #include "model/ModifyDBProxyInstanceResult.h"
 #include "model/ModifyDTCSecurityIpHostsForSQLServerRequest.h"
 #include "model/ModifyDTCSecurityIpHostsForSQLServerResult.h"
+#include "model/ModifyDasInstanceConfigRequest.h"
+#include "model/ModifyDasInstanceConfigResult.h"
 #include "model/ModifyDedicatedHostAccountRequest.h"
 #include "model/ModifyDedicatedHostAccountResult.h"
 #include "model/ModifyDedicatedHostAttributeRequest.h"
@@ -477,6 +487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckAccountNameAvailableResult> CheckAccountNameAvailableOutcome;
 			typedef std::future<CheckAccountNameAvailableOutcome> CheckAccountNameAvailableOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CheckAccountNameAvailableRequest&, const CheckAccountNameAvailableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountNameAvailableAsyncHandler;
+			typedef Outcome<Error, Model::CheckCloudResourceAuthorizedResult> CheckCloudResourceAuthorizedOutcome;
+			typedef std::future<CheckCloudResourceAuthorizedOutcome> CheckCloudResourceAuthorizedOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CheckCloudResourceAuthorizedRequest&, const CheckCloudResourceAuthorizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckCloudResourceAuthorizedAsyncHandler;
 			typedef Outcome<Error, Model::CheckCreateDdrDBInstanceResult> CheckCreateDdrDBInstanceOutcome;
 			typedef std::future<CheckCreateDdrDBInstanceOutcome> CheckCreateDdrDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CheckCreateDdrDBInstanceRequest&, const CheckCreateDdrDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckCreateDdrDBInstanceAsyncHandler;
@@ -513,6 +526,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDBInstanceResult> CreateDBInstanceOutcome;
 			typedef std::future<CreateDBInstanceOutcome> CreateDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateDBInstanceRequest&, const CreateDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateDBProxyEndpointAddressResult> CreateDBProxyEndpointAddressOutcome;
+			typedef std::future<CreateDBProxyEndpointAddressOutcome> CreateDBProxyEndpointAddressOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::CreateDBProxyEndpointAddressRequest&, const CreateDBProxyEndpointAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBProxyEndpointAddressAsyncHandler;
 			typedef Outcome<Error, Model::CreateDatabaseResult> CreateDatabaseOutcome;
 			typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::CreateDatabaseRequest&, const CreateDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -567,6 +583,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDBInstanceResult> DeleteDBInstanceOutcome;
 			typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDBInstanceRequest&, const DeleteDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDBProxyEndpointAddressResult> DeleteDBProxyEndpointAddressOutcome;
+			typedef std::future<DeleteDBProxyEndpointAddressOutcome> DeleteDBProxyEndpointAddressOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DeleteDBProxyEndpointAddressRequest&, const DeleteDBProxyEndpointAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBProxyEndpointAddressAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDatabaseResult> DeleteDatabaseOutcome;
 			typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DeleteDatabaseRequest&, const DeleteDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatabaseAsyncHandler;
@@ -708,6 +727,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDTCSecurityIpHostsForSQLServerResult> DescribeDTCSecurityIpHostsForSQLServerOutcome;
 			typedef std::future<DescribeDTCSecurityIpHostsForSQLServerOutcome> DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDTCSecurityIpHostsForSQLServerRequest&, const DescribeDTCSecurityIpHostsForSQLServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDTCSecurityIpHostsForSQLServerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDasInstanceConfigResult> DescribeDasInstanceConfigOutcome;
+			typedef std::future<DescribeDasInstanceConfigOutcome> DescribeDasInstanceConfigOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeDasInstanceConfigRequest&, const DescribeDasInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDasInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabasesResult> DescribeDatabasesOutcome;
 			typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeDatabasesRequest&, const DescribeDatabasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -954,6 +976,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDTCSecurityIpHostsForSQLServerResult> ModifyDTCSecurityIpHostsForSQLServerOutcome;
 			typedef std::future<ModifyDTCSecurityIpHostsForSQLServerOutcome> ModifyDTCSecurityIpHostsForSQLServerOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDTCSecurityIpHostsForSQLServerRequest&, const ModifyDTCSecurityIpHostsForSQLServerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDTCSecurityIpHostsForSQLServerAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDasInstanceConfigResult> ModifyDasInstanceConfigOutcome;
+			typedef std::future<ModifyDasInstanceConfigOutcome> ModifyDasInstanceConfigOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::ModifyDasInstanceConfigRequest&, const ModifyDasInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDasInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDedicatedHostAccountResult> ModifyDedicatedHostAccountOutcome;
 			typedef std::future<ModifyDedicatedHostAccountOutcome> ModifyDedicatedHostAccountOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::ModifyDedicatedHostAccountRequest&, const ModifyDedicatedHostAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDedicatedHostAccountAsyncHandler;
@@ -1124,6 +1149,9 @@ namespace AlibabaCloud
 			CheckAccountNameAvailableOutcome checkAccountNameAvailable(const Model::CheckAccountNameAvailableRequest &request)const;
 			void checkAccountNameAvailableAsync(const Model::CheckAccountNameAvailableRequest& request, const CheckAccountNameAvailableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAccountNameAvailableOutcomeCallable checkAccountNameAvailableCallable(const Model::CheckAccountNameAvailableRequest& request) const;
+			CheckCloudResourceAuthorizedOutcome checkCloudResourceAuthorized(const Model::CheckCloudResourceAuthorizedRequest &request)const;
+			void checkCloudResourceAuthorizedAsync(const Model::CheckCloudResourceAuthorizedRequest& request, const CheckCloudResourceAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckCloudResourceAuthorizedOutcomeCallable checkCloudResourceAuthorizedCallable(const Model::CheckCloudResourceAuthorizedRequest& request) const;
 			CheckCreateDdrDBInstanceOutcome checkCreateDdrDBInstance(const Model::CheckCreateDdrDBInstanceRequest &request)const;
 			void checkCreateDdrDBInstanceAsync(const Model::CheckCreateDdrDBInstanceRequest& request, const CheckCreateDdrDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckCreateDdrDBInstanceOutcomeCallable checkCreateDdrDBInstanceCallable(const Model::CheckCreateDdrDBInstanceRequest& request) const;
@@ -1160,6 +1188,9 @@ namespace AlibabaCloud
 			CreateDBInstanceOutcome createDBInstance(const Model::CreateDBInstanceRequest &request)const;
 			void createDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBInstanceOutcomeCallable createDBInstanceCallable(const Model::CreateDBInstanceRequest& request) const;
+			CreateDBProxyEndpointAddressOutcome createDBProxyEndpointAddress(const Model::CreateDBProxyEndpointAddressRequest &request)const;
+			void createDBProxyEndpointAddressAsync(const Model::CreateDBProxyEndpointAddressRequest& request, const CreateDBProxyEndpointAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDBProxyEndpointAddressOutcomeCallable createDBProxyEndpointAddressCallable(const Model::CreateDBProxyEndpointAddressRequest& request) const;
 			CreateDatabaseOutcome createDatabase(const Model::CreateDatabaseRequest &request)const;
 			void createDatabaseAsync(const Model::CreateDatabaseRequest& request, const CreateDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatabaseOutcomeCallable createDatabaseCallable(const Model::CreateDatabaseRequest& request) const;
@@ -1214,6 +1245,9 @@ namespace AlibabaCloud
 			DeleteDBInstanceOutcome deleteDBInstance(const Model::DeleteDBInstanceRequest &request)const;
 			void deleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBInstanceOutcomeCallable deleteDBInstanceCallable(const Model::DeleteDBInstanceRequest& request) const;
+			DeleteDBProxyEndpointAddressOutcome deleteDBProxyEndpointAddress(const Model::DeleteDBProxyEndpointAddressRequest &request)const;
+			void deleteDBProxyEndpointAddressAsync(const Model::DeleteDBProxyEndpointAddressRequest& request, const DeleteDBProxyEndpointAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDBProxyEndpointAddressOutcomeCallable deleteDBProxyEndpointAddressCallable(const Model::DeleteDBProxyEndpointAddressRequest& request) const;
 			DeleteDatabaseOutcome deleteDatabase(const Model::DeleteDatabaseRequest &request)const;
 			void deleteDatabaseAsync(const Model::DeleteDatabaseRequest& request, const DeleteDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDatabaseOutcomeCallable deleteDatabaseCallable(const Model::DeleteDatabaseRequest& request) const;
@@ -1355,6 +1389,9 @@ namespace AlibabaCloud
 			DescribeDTCSecurityIpHostsForSQLServerOutcome describeDTCSecurityIpHostsForSQLServer(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest &request)const;
 			void describeDTCSecurityIpHostsForSQLServerAsync(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest& request, const DescribeDTCSecurityIpHostsForSQLServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable describeDTCSecurityIpHostsForSQLServerCallable(const Model::DescribeDTCSecurityIpHostsForSQLServerRequest& request) const;
+			DescribeDasInstanceConfigOutcome describeDasInstanceConfig(const Model::DescribeDasInstanceConfigRequest &request)const;
+			void describeDasInstanceConfigAsync(const Model::DescribeDasInstanceConfigRequest& request, const DescribeDasInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDasInstanceConfigOutcomeCallable describeDasInstanceConfigCallable(const Model::DescribeDasInstanceConfigRequest& request) const;
 			DescribeDatabasesOutcome describeDatabases(const Model::DescribeDatabasesRequest &request)const;
 			void describeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabasesOutcomeCallable describeDatabasesCallable(const Model::DescribeDatabasesRequest& request) const;
@@ -1601,6 +1638,9 @@ namespace AlibabaCloud
 			ModifyDTCSecurityIpHostsForSQLServerOutcome modifyDTCSecurityIpHostsForSQLServer(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest &request)const;
 			void modifyDTCSecurityIpHostsForSQLServerAsync(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest& request, const ModifyDTCSecurityIpHostsForSQLServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDTCSecurityIpHostsForSQLServerOutcomeCallable modifyDTCSecurityIpHostsForSQLServerCallable(const Model::ModifyDTCSecurityIpHostsForSQLServerRequest& request) const;
+			ModifyDasInstanceConfigOutcome modifyDasInstanceConfig(const Model::ModifyDasInstanceConfigRequest &request)const;
+			void modifyDasInstanceConfigAsync(const Model::ModifyDasInstanceConfigRequest& request, const ModifyDasInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDasInstanceConfigOutcomeCallable modifyDasInstanceConfigCallable(const Model::ModifyDasInstanceConfigRequest& request) const;
 			ModifyDedicatedHostAccountOutcome modifyDedicatedHostAccount(const Model::ModifyDedicatedHostAccountRequest &request)const;
 			void modifyDedicatedHostAccountAsync(const Model::ModifyDedicatedHostAccountRequest& request, const ModifyDedicatedHostAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDedicatedHostAccountOutcomeCallable modifyDedicatedHostAccountCallable(const Model::ModifyDedicatedHostAccountRequest& request) const;

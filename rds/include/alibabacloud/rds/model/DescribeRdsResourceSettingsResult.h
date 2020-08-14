@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string startDate;
 					std::string poppedUpButtonUrl;
+					std::string isTop;
 					std::string poppedUpButtonType;
 					std::string resourceNiche;
 					std::string noticeBarContent;

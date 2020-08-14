@@ -113,6 +113,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getUsedTime()const;
 				void setUsedTime(const std::string& usedTime);
+				std::string getTargetMinorVersion()const;
+				void setTargetMinorVersion(const std::string& targetMinorVersion);
 				int getStorageUpperBound()const;
 				void setStorageUpperBound(int storageUpperBound);
 				int getStorageThreshold()const;
@@ -164,6 +166,7 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string usedTime_;
+				std::string targetMinorVersion_;
 				int storageUpperBound_;
 				int storageThreshold_;
 				std::string vPCId_;

@@ -59,6 +59,8 @@ void DescribeRdsResourceSettingsResult::parse(const std::string &payload)
 			rdsInstanceResourceSettingsObject.poppedUpButtonUrl = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpButtonUrl"].asString();
 		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpContent"].isNull())
 			rdsInstanceResourceSettingsObject.poppedUpContent = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["PoppedUpContent"].asString();
+		if(!valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["IsTop"].isNull())
+			rdsInstanceResourceSettingsObject.isTop = valueRdsInstanceResourceSettingsRdsInstanceResourceSetting["IsTop"].asString();
 		rdsInstanceResourceSettings_.push_back(rdsInstanceResourceSettingsObject);
 	}
 

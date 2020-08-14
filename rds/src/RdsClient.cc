@@ -267,6 +267,42 @@ RdsClient::CheckAccountNameAvailableOutcomeCallable RdsClient::checkAccountNameA
 	return task->get_future();
 }
 
+RdsClient::CheckCloudResourceAuthorizedOutcome RdsClient::checkCloudResourceAuthorized(const CheckCloudResourceAuthorizedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckCloudResourceAuthorizedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckCloudResourceAuthorizedOutcome(CheckCloudResourceAuthorizedResult(outcome.result()));
+	else
+		return CheckCloudResourceAuthorizedOutcome(outcome.error());
+}
+
+void RdsClient::checkCloudResourceAuthorizedAsync(const CheckCloudResourceAuthorizedRequest& request, const CheckCloudResourceAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkCloudResourceAuthorized(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CheckCloudResourceAuthorizedOutcomeCallable RdsClient::checkCloudResourceAuthorizedCallable(const CheckCloudResourceAuthorizedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckCloudResourceAuthorizedOutcome()>>(
+			[this, request]()
+			{
+			return this->checkCloudResourceAuthorized(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 RdsClient::CheckCreateDdrDBInstanceOutcome RdsClient::checkCreateDdrDBInstance(const CheckCreateDdrDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +729,42 @@ RdsClient::CreateDBInstanceOutcomeCallable RdsClient::createDBInstanceCallable(c
 			[this, request]()
 			{
 			return this->createDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::CreateDBProxyEndpointAddressOutcome RdsClient::createDBProxyEndpointAddress(const CreateDBProxyEndpointAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDBProxyEndpointAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDBProxyEndpointAddressOutcome(CreateDBProxyEndpointAddressResult(outcome.result()));
+	else
+		return CreateDBProxyEndpointAddressOutcome(outcome.error());
+}
+
+void RdsClient::createDBProxyEndpointAddressAsync(const CreateDBProxyEndpointAddressRequest& request, const CreateDBProxyEndpointAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDBProxyEndpointAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::CreateDBProxyEndpointAddressOutcomeCallable RdsClient::createDBProxyEndpointAddressCallable(const CreateDBProxyEndpointAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDBProxyEndpointAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->createDBProxyEndpointAddress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1413,42 @@ RdsClient::DeleteDBInstanceOutcomeCallable RdsClient::deleteDBInstanceCallable(c
 			[this, request]()
 			{
 			return this->deleteDBInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DeleteDBProxyEndpointAddressOutcome RdsClient::deleteDBProxyEndpointAddress(const DeleteDBProxyEndpointAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDBProxyEndpointAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDBProxyEndpointAddressOutcome(DeleteDBProxyEndpointAddressResult(outcome.result()));
+	else
+		return DeleteDBProxyEndpointAddressOutcome(outcome.error());
+}
+
+void RdsClient::deleteDBProxyEndpointAddressAsync(const DeleteDBProxyEndpointAddressRequest& request, const DeleteDBProxyEndpointAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDBProxyEndpointAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DeleteDBProxyEndpointAddressOutcomeCallable RdsClient::deleteDBProxyEndpointAddressCallable(const DeleteDBProxyEndpointAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDBProxyEndpointAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDBProxyEndpointAddress(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3033,6 +3141,42 @@ RdsClient::DescribeDTCSecurityIpHostsForSQLServerOutcomeCallable RdsClient::desc
 			[this, request]()
 			{
 			return this->describeDTCSecurityIpHostsForSQLServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeDasInstanceConfigOutcome RdsClient::describeDasInstanceConfig(const DescribeDasInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDasInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDasInstanceConfigOutcome(DescribeDasInstanceConfigResult(outcome.result()));
+	else
+		return DescribeDasInstanceConfigOutcome(outcome.error());
+}
+
+void RdsClient::describeDasInstanceConfigAsync(const DescribeDasInstanceConfigRequest& request, const DescribeDasInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDasInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeDasInstanceConfigOutcomeCallable RdsClient::describeDasInstanceConfigCallable(const DescribeDasInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDasInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDasInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5985,6 +6129,42 @@ RdsClient::ModifyDTCSecurityIpHostsForSQLServerOutcomeCallable RdsClient::modify
 			[this, request]()
 			{
 			return this->modifyDTCSecurityIpHostsForSQLServer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::ModifyDasInstanceConfigOutcome RdsClient::modifyDasInstanceConfig(const ModifyDasInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDasInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDasInstanceConfigOutcome(ModifyDasInstanceConfigResult(outcome.result()));
+	else
+		return ModifyDasInstanceConfigOutcome(outcome.error());
+}
+
+void RdsClient::modifyDasInstanceConfigAsync(const ModifyDasInstanceConfigRequest& request, const ModifyDasInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDasInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::ModifyDasInstanceConfigOutcomeCallable RdsClient::modifyDasInstanceConfigCallable(const ModifyDasInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDasInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDasInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

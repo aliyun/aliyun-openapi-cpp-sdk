@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBECROSSREGIONBACKUPSREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBECROSSREGIONBACKUPSREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDASINSTANCECONFIGREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYDASINSTANCECONFIGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeCrossRegionBackupsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT ModifyDasInstanceConfigRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeCrossRegionBackupsRequest();
-				~DescribeCrossRegionBackupsRequest();
+				ModifyDasInstanceConfigRequest();
+				~ModifyDasInstanceConfigRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				int getBackupId()const;
-				void setBackupId(int backupId);
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getCrossBackupRegion()const;
-				void setCrossBackupRegion(const std::string& crossBackupRegion);
-				int getCrossBackupId()const;
-				void setCrossBackupId(int crossBackupId);
+				int getStorageUpperBound()const;
+				void setStorageUpperBound(int storageUpperBound);
+				int getStorageThreshold()const;
+				void setStorageThreshold(int storageThreshold);
+				std::string getStorageAutoScale()const;
+				void setStorageAutoScale(const std::string& storageAutoScale);
 
             private:
 				long resourceOwnerId_;
-				std::string startTime_;
-				int pageNumber_;
+				std::string clientToken_;
 				std::string accessKeyId_;
-				std::string regionId_;
-				int pageSize_;
 				std::string dBInstanceId_;
 				std::string resourceOwnerAccount_;
-				int backupId_;
-				std::string endTime_;
 				long ownerId_;
-				std::string crossBackupRegion_;
-				int crossBackupId_;
+				int storageUpperBound_;
+				int storageThreshold_;
+				std::string storageAutoScale_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBECROSSREGIONBACKUPSREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDASINSTANCECONFIGREQUEST_H_

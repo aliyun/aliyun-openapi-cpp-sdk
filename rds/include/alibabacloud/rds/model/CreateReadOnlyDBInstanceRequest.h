@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setDBInstanceStorage(int dBInstanceStorage);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
+				std::string getInstructionSetArch()const;
+				void setInstructionSetArch(const std::string& instructionSetArch);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getAccessKeyId()const;
@@ -92,6 +94,7 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				int dBInstanceStorage_;
 				std::string clientToken_;
+				std::string instructionSetArch_;
 				std::string engineVersion_;
 				std::string accessKeyId_;
 				std::string resourceGroupId_;

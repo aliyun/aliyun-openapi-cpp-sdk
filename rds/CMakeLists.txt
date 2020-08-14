@@ -33,6 +33,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CancelImportResult.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableRequest.h
 	include/alibabacloud/rds/model/CheckAccountNameAvailableResult.h
+	include/alibabacloud/rds/model/CheckCloudResourceAuthorizedRequest.h
+	include/alibabacloud/rds/model/CheckCloudResourceAuthorizedResult.h
 	include/alibabacloud/rds/model/CheckCreateDdrDBInstanceRequest.h
 	include/alibabacloud/rds/model/CheckCreateDdrDBInstanceResult.h
 	include/alibabacloud/rds/model/CheckDBNameAvailableRequest.h
@@ -57,6 +59,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/CreateBackupResult.h
 	include/alibabacloud/rds/model/CreateDBInstanceRequest.h
 	include/alibabacloud/rds/model/CreateDBInstanceResult.h
+	include/alibabacloud/rds/model/CreateDBProxyEndpointAddressRequest.h
+	include/alibabacloud/rds/model/CreateDBProxyEndpointAddressResult.h
 	include/alibabacloud/rds/model/CreateDatabaseRequest.h
 	include/alibabacloud/rds/model/CreateDatabaseResult.h
 	include/alibabacloud/rds/model/CreateDdrInstanceRequest.h
@@ -93,6 +97,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DeleteBackupFileResult.h
 	include/alibabacloud/rds/model/DeleteDBInstanceRequest.h
 	include/alibabacloud/rds/model/DeleteDBInstanceResult.h
+	include/alibabacloud/rds/model/DeleteDBProxyEndpointAddressRequest.h
+	include/alibabacloud/rds/model/DeleteDBProxyEndpointAddressResult.h
 	include/alibabacloud/rds/model/DeleteDatabaseRequest.h
 	include/alibabacloud/rds/model/DeleteDatabaseResult.h
 	include/alibabacloud/rds/model/DeleteDedicatedHostAccountRequest.h
@@ -187,6 +193,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeDBProxyPerformanceResult.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/DescribeDTCSecurityIpHostsForSQLServerResult.h
+	include/alibabacloud/rds/model/DescribeDasInstanceConfigRequest.h
+	include/alibabacloud/rds/model/DescribeDasInstanceConfigResult.h
 	include/alibabacloud/rds/model/DescribeDatabasesRequest.h
 	include/alibabacloud/rds/model/DescribeDatabasesResult.h
 	include/alibabacloud/rds/model/DescribeDedicatedHostAttributeRequest.h
@@ -351,6 +359,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBProxyInstanceResult.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerRequest.h
 	include/alibabacloud/rds/model/ModifyDTCSecurityIpHostsForSQLServerResult.h
+	include/alibabacloud/rds/model/ModifyDasInstanceConfigRequest.h
+	include/alibabacloud/rds/model/ModifyDasInstanceConfigResult.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostAccountRequest.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostAccountResult.h
 	include/alibabacloud/rds/model/ModifyDedicatedHostAttributeRequest.h
@@ -464,6 +474,8 @@ set(rds_src
 	src/model/CancelImportResult.cc
 	src/model/CheckAccountNameAvailableRequest.cc
 	src/model/CheckAccountNameAvailableResult.cc
+	src/model/CheckCloudResourceAuthorizedRequest.cc
+	src/model/CheckCloudResourceAuthorizedResult.cc
 	src/model/CheckCreateDdrDBInstanceRequest.cc
 	src/model/CheckCreateDdrDBInstanceResult.cc
 	src/model/CheckDBNameAvailableRequest.cc
@@ -488,6 +500,8 @@ set(rds_src
 	src/model/CreateBackupResult.cc
 	src/model/CreateDBInstanceRequest.cc
 	src/model/CreateDBInstanceResult.cc
+	src/model/CreateDBProxyEndpointAddressRequest.cc
+	src/model/CreateDBProxyEndpointAddressResult.cc
 	src/model/CreateDatabaseRequest.cc
 	src/model/CreateDatabaseResult.cc
 	src/model/CreateDdrInstanceRequest.cc
@@ -524,6 +538,8 @@ set(rds_src
 	src/model/DeleteBackupFileResult.cc
 	src/model/DeleteDBInstanceRequest.cc
 	src/model/DeleteDBInstanceResult.cc
+	src/model/DeleteDBProxyEndpointAddressRequest.cc
+	src/model/DeleteDBProxyEndpointAddressResult.cc
 	src/model/DeleteDatabaseRequest.cc
 	src/model/DeleteDatabaseResult.cc
 	src/model/DeleteDedicatedHostAccountRequest.cc
@@ -618,6 +634,8 @@ set(rds_src
 	src/model/DescribeDBProxyPerformanceResult.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/DescribeDTCSecurityIpHostsForSQLServerResult.cc
+	src/model/DescribeDasInstanceConfigRequest.cc
+	src/model/DescribeDasInstanceConfigResult.cc
 	src/model/DescribeDatabasesRequest.cc
 	src/model/DescribeDatabasesResult.cc
 	src/model/DescribeDedicatedHostAttributeRequest.cc
@@ -782,6 +800,8 @@ set(rds_src
 	src/model/ModifyDBProxyInstanceResult.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerRequest.cc
 	src/model/ModifyDTCSecurityIpHostsForSQLServerResult.cc
+	src/model/ModifyDasInstanceConfigRequest.cc
+	src/model/ModifyDasInstanceConfigResult.cc
 	src/model/ModifyDedicatedHostAccountRequest.cc
 	src/model/ModifyDedicatedHostAccountResult.cc
 	src/model/ModifyDedicatedHostAttributeRequest.cc

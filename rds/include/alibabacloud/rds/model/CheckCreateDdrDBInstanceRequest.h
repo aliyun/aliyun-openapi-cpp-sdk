@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setSourceDBInstanceName(const std::string& sourceDBInstanceName);
 				std::string getHostType()const;
 				void setHostType(const std::string& hostType);
+				std::string getBinlogRole()const;
+				void setBinlogRole(const std::string& binlogRole);
 				std::string getEngineVersion()const;
 				void setEngineVersion(const std::string& engineVersion);
 				std::string getUserBakSetURL()const;
@@ -67,10 +69,14 @@ namespace AlibabaCloud
 				void setBackupSetId(const std::string& backupSetId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getBinlogPosition()const;
+				void setBinlogPosition(const std::string& binlogPosition);
 				std::string getDBInstanceClass()const;
 				void setDBInstanceClass(const std::string& dBInstanceClass);
 				std::string getRestoreType()const;
 				void setRestoreType(const std::string& restoreType);
+				std::string getBinlogName()const;
+				void setBinlogName(const std::string& binlogName);
 				std::string getSourceRegion()const;
 				void setSourceRegion(const std::string& sourceRegion);
 
@@ -79,6 +85,7 @@ namespace AlibabaCloud
 				int dBInstanceStorage_;
 				std::string sourceDBInstanceName_;
 				std::string hostType_;
+				std::string binlogRole_;
 				std::string engineVersion_;
 				std::string userBakSetURL_;
 				std::string accessKeyId_;
@@ -91,8 +98,10 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string backupSetId_;
 				long ownerId_;
+				std::string binlogPosition_;
 				std::string dBInstanceClass_;
 				std::string restoreType_;
+				std::string binlogName_;
 				std::string sourceRegion_;
 
 			};

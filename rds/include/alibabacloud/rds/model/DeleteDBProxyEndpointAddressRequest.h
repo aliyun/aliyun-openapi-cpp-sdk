@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DELETEDBPROXYENDPOINTADDRESSREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_DELETEDBPROXYENDPOINTADDRESSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT CreateDiagnosticReportRequest : public RpcServiceRequest
+			class ALIBABACLOUD_RDS_EXPORT DeleteDBProxyEndpointAddressRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDiagnosticReportRequest();
-				~CreateDiagnosticReportRequest();
+				DeleteDBProxyEndpointAddressRequest();
+				~DeleteDBProxyEndpointAddressRequest();
 
-				std::string getEndTime()const;
-				void setEndTime(const std::string& endTime);
-				std::string getStartTime()const;
-				void setStartTime(const std::string& startTime);
+				std::string getDBProxyConnectStringNetType()const;
+				void setDBProxyConnectStringNetType(const std::string& dBProxyConnectStringNetType);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDBProxyEndpointId()const;
+				void setDBProxyEndpointId(const std::string& dBProxyEndpointId);
 				std::string getDBInstanceId()const;
 				void setDBInstanceId(const std::string& dBInstanceId);
-				std::string getCategory()const;
-				void setCategory(const std::string& category);
 
             private:
-				std::string endTime_;
-				std::string startTime_;
+				std::string dBProxyConnectStringNetType_;
 				std::string accessKeyId_;
+				std::string regionId_;
+				std::string dBProxyEndpointId_;
 				std::string dBInstanceId_;
-				std::string category_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_CREATEDIAGNOSTICREPORTREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DELETEDBPROXYENDPOINTADDRESSREQUEST_H_

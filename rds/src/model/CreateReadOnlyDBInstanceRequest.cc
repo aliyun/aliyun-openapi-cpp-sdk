@@ -60,6 +60,17 @@ void CreateReadOnlyDBInstanceRequest::setClientToken(const std::string& clientTo
 	setParameter("ClientToken", clientToken);
 }
 
+std::string CreateReadOnlyDBInstanceRequest::getInstructionSetArch()const
+{
+	return instructionSetArch_;
+}
+
+void CreateReadOnlyDBInstanceRequest::setInstructionSetArch(const std::string& instructionSetArch)
+{
+	instructionSetArch_ = instructionSetArch;
+	setParameter("InstructionSetArch", instructionSetArch);
+}
+
 std::string CreateReadOnlyDBInstanceRequest::getEngineVersion()const
 {
 	return engineVersion_;
