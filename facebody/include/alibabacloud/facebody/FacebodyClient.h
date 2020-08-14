@@ -26,6 +26,8 @@
 #include "model/AddFaceResult.h"
 #include "model/AddFaceEntityRequest.h"
 #include "model/AddFaceEntityResult.h"
+#include "model/BlurFaceRequest.h"
+#include "model/BlurFaceResult.h"
 #include "model/BodyPostureRequest.h"
 #include "model/BodyPostureResult.h"
 #include "model/CompareFaceRequest.h"
@@ -44,6 +46,8 @@
 #include "model/DetectCelebrityResult.h"
 #include "model/DetectFaceRequest.h"
 #include "model/DetectFaceResult.h"
+#include "model/DetectIPCPedestrianRequest.h"
+#include "model/DetectIPCPedestrianResult.h"
 #include "model/DetectLivingFaceRequest.h"
 #include "model/DetectLivingFaceResult.h"
 #include "model/DetectMaskRequest.h"
@@ -103,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddFaceEntityResult> AddFaceEntityOutcome;
 			typedef std::future<AddFaceEntityOutcome> AddFaceEntityOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::AddFaceEntityRequest&, const AddFaceEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFaceEntityAsyncHandler;
+			typedef Outcome<Error, Model::BlurFaceResult> BlurFaceOutcome;
+			typedef std::future<BlurFaceOutcome> BlurFaceOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::BlurFaceRequest&, const BlurFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BlurFaceAsyncHandler;
 			typedef Outcome<Error, Model::BodyPostureResult> BodyPostureOutcome;
 			typedef std::future<BodyPostureOutcome> BodyPostureOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::BodyPostureRequest&, const BodyPostureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BodyPostureAsyncHandler;
@@ -130,6 +137,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectFaceResult> DetectFaceOutcome;
 			typedef std::future<DetectFaceOutcome> DetectFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectFaceRequest&, const DetectFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAsyncHandler;
+			typedef Outcome<Error, Model::DetectIPCPedestrianResult> DetectIPCPedestrianOutcome;
+			typedef std::future<DetectIPCPedestrianOutcome> DetectIPCPedestrianOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianRequest&, const DetectIPCPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianAsyncHandler;
 			typedef Outcome<Error, Model::DetectLivingFaceResult> DetectLivingFaceOutcome;
 			typedef std::future<DetectLivingFaceOutcome> DetectLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectLivingFaceRequest&, const DetectLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLivingFaceAsyncHandler;
@@ -207,6 +217,9 @@ namespace AlibabaCloud
 			AddFaceEntityOutcome addFaceEntity(const Model::AddFaceEntityRequest &request)const;
 			void addFaceEntityAsync(const Model::AddFaceEntityRequest& request, const AddFaceEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFaceEntityOutcomeCallable addFaceEntityCallable(const Model::AddFaceEntityRequest& request) const;
+			BlurFaceOutcome blurFace(const Model::BlurFaceRequest &request)const;
+			void blurFaceAsync(const Model::BlurFaceRequest& request, const BlurFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BlurFaceOutcomeCallable blurFaceCallable(const Model::BlurFaceRequest& request) const;
 			BodyPostureOutcome bodyPosture(const Model::BodyPostureRequest &request)const;
 			void bodyPostureAsync(const Model::BodyPostureRequest& request, const BodyPostureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BodyPostureOutcomeCallable bodyPostureCallable(const Model::BodyPostureRequest& request) const;
@@ -234,6 +247,9 @@ namespace AlibabaCloud
 			DetectFaceOutcome detectFace(const Model::DetectFaceRequest &request)const;
 			void detectFaceAsync(const Model::DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectFaceOutcomeCallable detectFaceCallable(const Model::DetectFaceRequest& request) const;
+			DetectIPCPedestrianOutcome detectIPCPedestrian(const Model::DetectIPCPedestrianRequest &request)const;
+			void detectIPCPedestrianAsync(const Model::DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectIPCPedestrianOutcomeCallable detectIPCPedestrianCallable(const Model::DetectIPCPedestrianRequest& request) const;
 			DetectLivingFaceOutcome detectLivingFace(const Model::DetectLivingFaceRequest &request)const;
 			void detectLivingFaceAsync(const Model::DetectLivingFaceRequest& request, const DetectLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLivingFaceOutcomeCallable detectLivingFaceCallable(const Model::DetectLivingFaceRequest& request) const;

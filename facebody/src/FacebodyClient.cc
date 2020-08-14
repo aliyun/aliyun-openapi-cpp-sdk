@@ -31,21 +31,21 @@ FacebodyClient::FacebodyClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FacebodyClient::FacebodyClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FacebodyClient::FacebodyClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 FacebodyClient::~FacebodyClient()
@@ -117,6 +117,42 @@ FacebodyClient::AddFaceEntityOutcomeCallable FacebodyClient::addFaceEntityCallab
 			[this, request]()
 			{
 			return this->addFaceEntity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::BlurFaceOutcome FacebodyClient::blurFace(const BlurFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BlurFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BlurFaceOutcome(BlurFaceResult(outcome.result()));
+	else
+		return BlurFaceOutcome(outcome.error());
+}
+
+void FacebodyClient::blurFaceAsync(const BlurFaceRequest& request, const BlurFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, blurFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::BlurFaceOutcomeCallable FacebodyClient::blurFaceCallable(const BlurFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BlurFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->blurFace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,6 +477,42 @@ FacebodyClient::DetectFaceOutcomeCallable FacebodyClient::detectFaceCallable(con
 			[this, request]()
 			{
 			return this->detectFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::DetectIPCPedestrianOutcome FacebodyClient::detectIPCPedestrian(const DetectIPCPedestrianRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectIPCPedestrianOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectIPCPedestrianOutcome(DetectIPCPedestrianResult(outcome.result()));
+	else
+		return DetectIPCPedestrianOutcome(outcome.error());
+}
+
+void FacebodyClient::detectIPCPedestrianAsync(const DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectIPCPedestrian(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DetectIPCPedestrianOutcomeCallable FacebodyClient::detectIPCPedestrianCallable(const DetectIPCPedestrianRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectIPCPedestrianOutcome()>>(
+			[this, request]()
+			{
+			return this->detectIPCPedestrian(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
