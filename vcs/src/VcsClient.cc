@@ -627,6 +627,42 @@ VcsClient::GetDeviceVideoUrlOutcomeCallable VcsClient::getDeviceVideoUrlCallable
 	return task->get_future();
 }
 
+VcsClient::GetFaceModelResultOutcome VcsClient::getFaceModelResult(const GetFaceModelResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetFaceModelResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetFaceModelResultOutcome(GetFaceModelResultResult(outcome.result()));
+	else
+		return GetFaceModelResultOutcome(outcome.error());
+}
+
+void VcsClient::getFaceModelResultAsync(const GetFaceModelResultRequest& request, const GetFaceModelResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getFaceModelResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetFaceModelResultOutcomeCallable VcsClient::getFaceModelResultCallable(const GetFaceModelResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetFaceModelResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getFaceModelResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::GetFaceOptionsOutcome VcsClient::getFaceOptions(const GetFaceOptionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -915,6 +951,42 @@ VcsClient::ListBodyAlgorithmResultsOutcomeCallable VcsClient::listBodyAlgorithmR
 	return task->get_future();
 }
 
+VcsClient::ListCorpGroupMetricsOutcome VcsClient::listCorpGroupMetrics(const ListCorpGroupMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpGroupMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpGroupMetricsOutcome(ListCorpGroupMetricsResult(outcome.result()));
+	else
+		return ListCorpGroupMetricsOutcome(outcome.error());
+}
+
+void VcsClient::listCorpGroupMetricsAsync(const ListCorpGroupMetricsRequest& request, const ListCorpGroupMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpGroupMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListCorpGroupMetricsOutcomeCallable VcsClient::listCorpGroupMetricsCallable(const ListCorpGroupMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpGroupMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpGroupMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListCorpGroupsOutcome VcsClient::listCorpGroups(const ListCorpGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1017,42 @@ VcsClient::ListCorpGroupsOutcomeCallable VcsClient::listCorpGroupsCallable(const
 			[this, request]()
 			{
 			return this->listCorpGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListCorpMetricsOutcome VcsClient::listCorpMetrics(const ListCorpMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCorpMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCorpMetricsOutcome(ListCorpMetricsResult(outcome.result()));
+	else
+		return ListCorpMetricsOutcome(outcome.error());
+}
+
+void VcsClient::listCorpMetricsAsync(const ListCorpMetricsRequest& request, const ListCorpMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCorpMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListCorpMetricsOutcomeCallable VcsClient::listCorpMetricsCallable(const ListCorpMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCorpMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->listCorpMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1161,6 +1269,42 @@ VcsClient::ListMotorAlgorithmResultsOutcomeCallable VcsClient::listMotorAlgorith
 			[this, request]()
 			{
 			return this->listMotorAlgorithmResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListPersonTraceOutcome VcsClient::listPersonTrace(const ListPersonTraceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPersonTraceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPersonTraceOutcome(ListPersonTraceResult(outcome.result()));
+	else
+		return ListPersonTraceOutcome(outcome.error());
+}
+
+void VcsClient::listPersonTraceAsync(const ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPersonTrace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListPersonTraceOutcomeCallable VcsClient::listPersonTraceCallable(const ListPersonTraceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPersonTraceOutcome()>>(
+			[this, request]()
+			{
+			return this->listPersonTrace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

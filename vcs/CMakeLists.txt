@@ -53,6 +53,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlResult.h
 	include/alibabacloud/vcs/model/GetDeviceVideoUrlRequest.h
 	include/alibabacloud/vcs/model/GetDeviceVideoUrlResult.h
+	include/alibabacloud/vcs/model/GetFaceModelResultRequest.h
+	include/alibabacloud/vcs/model/GetFaceModelResultResult.h
 	include/alibabacloud/vcs/model/GetFaceOptionsRequest.h
 	include/alibabacloud/vcs/model/GetFaceOptionsResult.h
 	include/alibabacloud/vcs/model/GetInventoryRequest.h
@@ -69,8 +71,12 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/InvokeMotorModelResult.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListBodyAlgorithmResultsResult.h
+	include/alibabacloud/vcs/model/ListCorpGroupMetricsRequest.h
+	include/alibabacloud/vcs/model/ListCorpGroupMetricsResult.h
 	include/alibabacloud/vcs/model/ListCorpGroupsRequest.h
 	include/alibabacloud/vcs/model/ListCorpGroupsResult.h
+	include/alibabacloud/vcs/model/ListCorpMetricsRequest.h
+	include/alibabacloud/vcs/model/ListCorpMetricsResult.h
 	include/alibabacloud/vcs/model/ListCorpsRequest.h
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
@@ -83,6 +89,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListMetricsResult.h
 	include/alibabacloud/vcs/model/ListMotorAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListMotorAlgorithmResultsResult.h
+	include/alibabacloud/vcs/model/ListPersonTraceRequest.h
+	include/alibabacloud/vcs/model/ListPersonTraceResult.h
 	include/alibabacloud/vcs/model/ListPersonsRequest.h
 	include/alibabacloud/vcs/model/ListPersonsResult.h
 	include/alibabacloud/vcs/model/RecognizeFaceQualityRequest.h
@@ -146,6 +154,8 @@ set(vcs_src
 	src/model/GetDeviceLiveUrlResult.cc
 	src/model/GetDeviceVideoUrlRequest.cc
 	src/model/GetDeviceVideoUrlResult.cc
+	src/model/GetFaceModelResultRequest.cc
+	src/model/GetFaceModelResultResult.cc
 	src/model/GetFaceOptionsRequest.cc
 	src/model/GetFaceOptionsResult.cc
 	src/model/GetInventoryRequest.cc
@@ -162,8 +172,12 @@ set(vcs_src
 	src/model/InvokeMotorModelResult.cc
 	src/model/ListBodyAlgorithmResultsRequest.cc
 	src/model/ListBodyAlgorithmResultsResult.cc
+	src/model/ListCorpGroupMetricsRequest.cc
+	src/model/ListCorpGroupMetricsResult.cc
 	src/model/ListCorpGroupsRequest.cc
 	src/model/ListCorpGroupsResult.cc
+	src/model/ListCorpMetricsRequest.cc
+	src/model/ListCorpMetricsResult.cc
 	src/model/ListCorpsRequest.cc
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc
@@ -176,6 +190,8 @@ set(vcs_src
 	src/model/ListMetricsResult.cc
 	src/model/ListMotorAlgorithmResultsRequest.cc
 	src/model/ListMotorAlgorithmResultsResult.cc
+	src/model/ListPersonTraceRequest.cc
+	src/model/ListPersonTraceResult.cc
 	src/model/ListPersonsRequest.cc
 	src/model/ListPersonsResult.cc
 	src/model/RecognizeFaceQualityRequest.cc

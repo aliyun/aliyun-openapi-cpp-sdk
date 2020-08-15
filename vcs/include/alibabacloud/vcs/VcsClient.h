@@ -54,6 +54,8 @@
 #include "model/GetDeviceLiveUrlResult.h"
 #include "model/GetDeviceVideoUrlRequest.h"
 #include "model/GetDeviceVideoUrlResult.h"
+#include "model/GetFaceModelResultRequest.h"
+#include "model/GetFaceModelResultResult.h"
 #include "model/GetFaceOptionsRequest.h"
 #include "model/GetFaceOptionsResult.h"
 #include "model/GetInventoryRequest.h"
@@ -70,8 +72,12 @@
 #include "model/InvokeMotorModelResult.h"
 #include "model/ListBodyAlgorithmResultsRequest.h"
 #include "model/ListBodyAlgorithmResultsResult.h"
+#include "model/ListCorpGroupMetricsRequest.h"
+#include "model/ListCorpGroupMetricsResult.h"
 #include "model/ListCorpGroupsRequest.h"
 #include "model/ListCorpGroupsResult.h"
+#include "model/ListCorpMetricsRequest.h"
+#include "model/ListCorpMetricsResult.h"
 #include "model/ListCorpsRequest.h"
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
@@ -84,6 +90,8 @@
 #include "model/ListMetricsResult.h"
 #include "model/ListMotorAlgorithmResultsRequest.h"
 #include "model/ListMotorAlgorithmResultsResult.h"
+#include "model/ListPersonTraceRequest.h"
+#include "model/ListPersonTraceResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
 #include "model/RecognizeFaceQualityRequest.h"
@@ -169,6 +177,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeviceVideoUrlResult> GetDeviceVideoUrlOutcome;
 			typedef std::future<GetDeviceVideoUrlOutcome> GetDeviceVideoUrlOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetDeviceVideoUrlRequest&, const GetDeviceVideoUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceVideoUrlAsyncHandler;
+			typedef Outcome<Error, Model::GetFaceModelResultResult> GetFaceModelResultOutcome;
+			typedef std::future<GetFaceModelResultOutcome> GetFaceModelResultOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetFaceModelResultRequest&, const GetFaceModelResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceModelResultAsyncHandler;
 			typedef Outcome<Error, Model::GetFaceOptionsResult> GetFaceOptionsOutcome;
 			typedef std::future<GetFaceOptionsOutcome> GetFaceOptionsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetFaceOptionsRequest&, const GetFaceOptionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceOptionsAsyncHandler;
@@ -193,9 +204,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListBodyAlgorithmResultsResult> ListBodyAlgorithmResultsOutcome;
 			typedef std::future<ListBodyAlgorithmResultsOutcome> ListBodyAlgorithmResultsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListBodyAlgorithmResultsRequest&, const ListBodyAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyAlgorithmResultsAsyncHandler;
+			typedef Outcome<Error, Model::ListCorpGroupMetricsResult> ListCorpGroupMetricsOutcome;
+			typedef std::future<ListCorpGroupMetricsOutcome> ListCorpGroupMetricsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListCorpGroupMetricsRequest&, const ListCorpGroupMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpGroupMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ListCorpGroupsResult> ListCorpGroupsOutcome;
 			typedef std::future<ListCorpGroupsOutcome> ListCorpGroupsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpGroupsRequest&, const ListCorpGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListCorpMetricsResult> ListCorpMetricsOutcome;
+			typedef std::future<ListCorpMetricsOutcome> ListCorpMetricsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListCorpMetricsRequest&, const ListCorpMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ListCorpsResult> ListCorpsOutcome;
 			typedef std::future<ListCorpsOutcome> ListCorpsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpsRequest&, const ListCorpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpsAsyncHandler;
@@ -214,6 +231,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListMotorAlgorithmResultsResult> ListMotorAlgorithmResultsOutcome;
 			typedef std::future<ListMotorAlgorithmResultsOutcome> ListMotorAlgorithmResultsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListMotorAlgorithmResultsRequest&, const ListMotorAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMotorAlgorithmResultsAsyncHandler;
+			typedef Outcome<Error, Model::ListPersonTraceResult> ListPersonTraceOutcome;
+			typedef std::future<ListPersonTraceOutcome> ListPersonTraceOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListPersonTraceRequest&, const ListPersonTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTraceAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
@@ -309,6 +329,9 @@ namespace AlibabaCloud
 			GetDeviceVideoUrlOutcome getDeviceVideoUrl(const Model::GetDeviceVideoUrlRequest &request)const;
 			void getDeviceVideoUrlAsync(const Model::GetDeviceVideoUrlRequest& request, const GetDeviceVideoUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceVideoUrlOutcomeCallable getDeviceVideoUrlCallable(const Model::GetDeviceVideoUrlRequest& request) const;
+			GetFaceModelResultOutcome getFaceModelResult(const Model::GetFaceModelResultRequest &request)const;
+			void getFaceModelResultAsync(const Model::GetFaceModelResultRequest& request, const GetFaceModelResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFaceModelResultOutcomeCallable getFaceModelResultCallable(const Model::GetFaceModelResultRequest& request) const;
 			GetFaceOptionsOutcome getFaceOptions(const Model::GetFaceOptionsRequest &request)const;
 			void getFaceOptionsAsync(const Model::GetFaceOptionsRequest& request, const GetFaceOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFaceOptionsOutcomeCallable getFaceOptionsCallable(const Model::GetFaceOptionsRequest& request) const;
@@ -333,9 +356,15 @@ namespace AlibabaCloud
 			ListBodyAlgorithmResultsOutcome listBodyAlgorithmResults(const Model::ListBodyAlgorithmResultsRequest &request)const;
 			void listBodyAlgorithmResultsAsync(const Model::ListBodyAlgorithmResultsRequest& request, const ListBodyAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListBodyAlgorithmResultsOutcomeCallable listBodyAlgorithmResultsCallable(const Model::ListBodyAlgorithmResultsRequest& request) const;
+			ListCorpGroupMetricsOutcome listCorpGroupMetrics(const Model::ListCorpGroupMetricsRequest &request)const;
+			void listCorpGroupMetricsAsync(const Model::ListCorpGroupMetricsRequest& request, const ListCorpGroupMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCorpGroupMetricsOutcomeCallable listCorpGroupMetricsCallable(const Model::ListCorpGroupMetricsRequest& request) const;
 			ListCorpGroupsOutcome listCorpGroups(const Model::ListCorpGroupsRequest &request)const;
 			void listCorpGroupsAsync(const Model::ListCorpGroupsRequest& request, const ListCorpGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpGroupsOutcomeCallable listCorpGroupsCallable(const Model::ListCorpGroupsRequest& request) const;
+			ListCorpMetricsOutcome listCorpMetrics(const Model::ListCorpMetricsRequest &request)const;
+			void listCorpMetricsAsync(const Model::ListCorpMetricsRequest& request, const ListCorpMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCorpMetricsOutcomeCallable listCorpMetricsCallable(const Model::ListCorpMetricsRequest& request) const;
 			ListCorpsOutcome listCorps(const Model::ListCorpsRequest &request)const;
 			void listCorpsAsync(const Model::ListCorpsRequest& request, const ListCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpsOutcomeCallable listCorpsCallable(const Model::ListCorpsRequest& request) const;
@@ -354,6 +383,9 @@ namespace AlibabaCloud
 			ListMotorAlgorithmResultsOutcome listMotorAlgorithmResults(const Model::ListMotorAlgorithmResultsRequest &request)const;
 			void listMotorAlgorithmResultsAsync(const Model::ListMotorAlgorithmResultsRequest& request, const ListMotorAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMotorAlgorithmResultsOutcomeCallable listMotorAlgorithmResultsCallable(const Model::ListMotorAlgorithmResultsRequest& request) const;
+			ListPersonTraceOutcome listPersonTrace(const Model::ListPersonTraceRequest &request)const;
+			void listPersonTraceAsync(const Model::ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPersonTraceOutcomeCallable listPersonTraceCallable(const Model::ListPersonTraceRequest& request) const;
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
