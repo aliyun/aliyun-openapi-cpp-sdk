@@ -38,6 +38,17 @@ void ImportCustomAlertRulesRequest::setIsAutoStart(bool isAutoStart)
 	setParameter("IsAutoStart", isAutoStart ? "true" : "false");
 }
 
+std::string ImportCustomAlertRulesRequest::getProxyUserId()const
+{
+	return proxyUserId_;
+}
+
+void ImportCustomAlertRulesRequest::setProxyUserId(const std::string& proxyUserId)
+{
+	proxyUserId_ = proxyUserId;
+	setParameter("ProxyUserId", proxyUserId);
+}
+
 std::string ImportCustomAlertRulesRequest::getRegionId()const
 {
 	return regionId_;
@@ -71,14 +82,14 @@ void ImportCustomAlertRulesRequest::setTemplateAlertConfig(const std::string& te
 	setParameter("TemplateAlertConfig", templateAlertConfig);
 }
 
-std::string ImportCustomAlertRulesRequest::getProxyUserId()const
+std::string ImportCustomAlertRulesRequest::getTemplageAlertConfig()const
 {
-	return proxyUserId_;
+	return templageAlertConfig_;
 }
 
-void ImportCustomAlertRulesRequest::setProxyUserId(const std::string& proxyUserId)
+void ImportCustomAlertRulesRequest::setTemplageAlertConfig(const std::string& templageAlertConfig)
 {
-	proxyUserId_ = proxyUserId;
-	setParameter("ProxyUserId", proxyUserId);
+	templageAlertConfig_ = templageAlertConfig;
+	setParameter("TemplageAlertConfig", templageAlertConfig);
 }
 

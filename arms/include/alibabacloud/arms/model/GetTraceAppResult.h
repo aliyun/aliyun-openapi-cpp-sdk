@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_GETTRACEAPPRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_GETTRACEAPPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT SearchAlertContactGroupResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT GetTraceAppResult : public ServiceResult
 			{
 			public:
-				struct ContactGroup
+				struct TraceApp
 				{
-					struct Contact
-					{
-						std::string email;
-						std::string phone;
-						std::string userId;
-						long createTime;
-						long updateTime;
-						long contactId;
-						std::string dingRobot;
-						std::string contactName;
-						bool systemNoc;
-					};
-					long contactGroupId;
-					std::vector<ContactGroup::Contact> contacts;
-					std::string contactGroupName;
+					std::string type;
+					long appId;
 					std::string userId;
 					long createTime;
 					long updateTime;
+					std::string pid;
+					bool show;
+					std::vector<std::string> labels;
+					std::string regionId;
+					std::string appName;
 				};
 
 
-				SearchAlertContactGroupResult();
-				explicit SearchAlertContactGroupResult(const std::string &payload);
-				~SearchAlertContactGroupResult();
-				std::vector<ContactGroup> getContactGroups()const;
+				GetTraceAppResult();
+				explicit GetTraceAppResult(const std::string &payload);
+				~GetTraceAppResult();
+				TraceApp getTraceApp()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ContactGroup> contactGroups_;
+				TraceApp traceApp_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_GETTRACEAPPRESULT_H_

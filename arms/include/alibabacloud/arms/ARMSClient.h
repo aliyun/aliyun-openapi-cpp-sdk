@@ -64,6 +64,8 @@
 #include "model/GetStackResult.h"
 #include "model/GetTraceRequest.h"
 #include "model/GetTraceResult.h"
+#include "model/GetTraceAppRequest.h"
+#include "model/GetTraceAppResult.h"
 #include "model/ImportAppAlertRulesRequest.h"
 #include "model/ImportAppAlertRulesResult.h"
 #include "model/ImportCustomAlertRulesRequest.h"
@@ -186,6 +188,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTraceResult> GetTraceOutcome;
 			typedef std::future<GetTraceOutcome> GetTraceOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetTraceRequest&, const GetTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAsyncHandler;
+			typedef Outcome<Error, Model::GetTraceAppResult> GetTraceAppOutcome;
+			typedef std::future<GetTraceAppOutcome> GetTraceAppOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetTraceAppRequest&, const GetTraceAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTraceAppAsyncHandler;
 			typedef Outcome<Error, Model::ImportAppAlertRulesResult> ImportAppAlertRulesOutcome;
 			typedef std::future<ImportAppAlertRulesOutcome> ImportAppAlertRulesOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::ImportAppAlertRulesRequest&, const ImportAppAlertRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportAppAlertRulesAsyncHandler;
@@ -329,6 +334,9 @@ namespace AlibabaCloud
 			GetTraceOutcome getTrace(const Model::GetTraceRequest &request)const;
 			void getTraceAsync(const Model::GetTraceRequest& request, const GetTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTraceOutcomeCallable getTraceCallable(const Model::GetTraceRequest& request) const;
+			GetTraceAppOutcome getTraceApp(const Model::GetTraceAppRequest &request)const;
+			void getTraceAppAsync(const Model::GetTraceAppRequest& request, const GetTraceAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTraceAppOutcomeCallable getTraceAppCallable(const Model::GetTraceAppRequest& request) const;
 			ImportAppAlertRulesOutcome importAppAlertRules(const Model::ImportAppAlertRulesRequest &request)const;
 			void importAppAlertRulesAsync(const Model::ImportAppAlertRulesRequest& request, const ImportAppAlertRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportAppAlertRulesOutcomeCallable importAppAlertRulesCallable(const Model::ImportAppAlertRulesRequest& request) const;

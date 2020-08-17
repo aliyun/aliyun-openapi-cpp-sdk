@@ -57,7 +57,7 @@ void SearchEventsResult::parse(const std::string &payload)
 		if(!pageBeanNodeEventEventItem["AlertType"].isNull())
 			eventItemObject.alertType = std::stoi(pageBeanNodeEventEventItem["AlertType"].asString());
 		if(!pageBeanNodeEventEventItem["EventLevel"].isNull())
-			eventItemObject.eventLevel = std::stoi(pageBeanNodeEventEventItem["EventLevel"].asString());
+			eventItemObject.eventLevel = pageBeanNodeEventEventItem["EventLevel"].asString();
 		if(!pageBeanNodeEventEventItem["Message"].isNull())
 			eventItemObject.message = pageBeanNodeEventEventItem["Message"].asString();
 		if(!pageBeanNodeEventEventItem["AlertId"].isNull())

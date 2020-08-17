@@ -63,6 +63,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/GetStackResult.h
 	include/alibabacloud/arms/model/GetTraceRequest.h
 	include/alibabacloud/arms/model/GetTraceResult.h
+	include/alibabacloud/arms/model/GetTraceAppRequest.h
+	include/alibabacloud/arms/model/GetTraceAppResult.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesRequest.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesResult.h
 	include/alibabacloud/arms/model/ImportCustomAlertRulesRequest.h
@@ -158,6 +160,8 @@ set(arms_src
 	src/model/GetStackResult.cc
 	src/model/GetTraceRequest.cc
 	src/model/GetTraceResult.cc
+	src/model/GetTraceAppRequest.cc
+	src/model/GetTraceAppResult.cc
 	src/model/ImportAppAlertRulesRequest.cc
 	src/model/ImportAppAlertRulesResult.cc
 	src/model/ImportCustomAlertRulesRequest.cc

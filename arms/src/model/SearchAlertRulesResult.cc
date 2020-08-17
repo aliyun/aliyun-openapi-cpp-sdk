@@ -145,7 +145,7 @@ void SearchAlertRulesResult::parse(const std::string &payload)
 		auto allAlertWays = value["AlertWays"]["AlertWay"];
 		for (auto value : allAlertWays)
 			alertRuleEntityObject.alertWays.push_back(value.asString());
-		auto allAlertWay = value["AlertWay"]["AlertWay"];
+		auto allAlertWay = value["AlertWay"]["NocWay"];
 		for (auto value : allAlertWay)
 			alertRuleEntityObject.alertWay.push_back(value.asString());
 		pageBean_.alertRules.push_back(alertRuleEntityObject);
