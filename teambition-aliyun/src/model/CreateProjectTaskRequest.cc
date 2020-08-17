@@ -60,6 +60,17 @@ void CreateProjectTaskRequest::setExecutorId(const std::string& executorId)
 	setBodyParameter("ExecutorId", executorId);
 }
 
+std::string CreateProjectTaskRequest::getTaskFlowStatusId()const
+{
+	return taskFlowStatusId_;
+}
+
+void CreateProjectTaskRequest::setTaskFlowStatusId(const std::string& taskFlowStatusId)
+{
+	taskFlowStatusId_ = taskFlowStatusId;
+	setBodyParameter("TaskFlowStatusId", taskFlowStatusId);
+}
+
 std::string CreateProjectTaskRequest::getStartDate()const
 {
 	return startDate_;
@@ -135,17 +146,6 @@ void CreateProjectTaskRequest::setDueDate(const std::string& dueDate)
 {
 	dueDate_ = dueDate;
 	setBodyParameter("DueDate", dueDate);
-}
-
-std::string CreateProjectTaskRequest::getTasFlowStatusId()const
-{
-	return tasFlowStatusId_;
-}
-
-void CreateProjectTaskRequest::setTasFlowStatusId(const std::string& tasFlowStatusId)
-{
-	tasFlowStatusId_ = tasFlowStatusId;
-	setBodyParameter("TasFlowStatusId", tasFlowStatusId);
 }
 
 std::string CreateProjectTaskRequest::getScenarioFieldConfigId()const

@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setVisible(const std::string& visible);
 				std::string getExecutorId()const;
 				void setExecutorId(const std::string& executorId);
+				std::string getTaskFlowStatusId()const;
+				void setTaskFlowStatusId(const std::string& taskFlowStatusId);
 				std::string getStartDate()const;
 				void setStartDate(const std::string& startDate);
 				int getPriority()const;
@@ -55,8 +57,6 @@ namespace AlibabaCloud
 				void setSprintId(const std::string& sprintId);
 				std::string getDueDate()const;
 				void setDueDate(const std::string& dueDate);
-				std::string getTasFlowStatusId()const;
-				void setTasFlowStatusId(const std::string& tasFlowStatusId);
 				std::string getScenarioFieldConfigId()const;
 				void setScenarioFieldConfigId(const std::string& scenarioFieldConfigId);
 				std::string getProjectId()const;
@@ -68,6 +68,7 @@ namespace AlibabaCloud
 				std::string note_;
 				std::string visible_;
 				std::string executorId_;
+				std::string taskFlowStatusId_;
 				std::string startDate_;
 				int priority_;
 				std::string parentTaskId_;
@@ -75,7 +76,6 @@ namespace AlibabaCloud
 				std::string content_;
 				std::string sprintId_;
 				std::string dueDate_;
-				std::string tasFlowStatusId_;
 				std::string scenarioFieldConfigId_;
 				std::string projectId_;
 				std::string taskListId_;
