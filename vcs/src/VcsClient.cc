@@ -1131,6 +1131,42 @@ VcsClient::ListDevicesOutcomeCallable VcsClient::listDevicesCallable(const ListD
 	return task->get_future();
 }
 
+VcsClient::ListEventAlgorithmDetailsOutcome VcsClient::listEventAlgorithmDetails(const ListEventAlgorithmDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEventAlgorithmDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEventAlgorithmDetailsOutcome(ListEventAlgorithmDetailsResult(outcome.result()));
+	else
+		return ListEventAlgorithmDetailsOutcome(outcome.error());
+}
+
+void VcsClient::listEventAlgorithmDetailsAsync(const ListEventAlgorithmDetailsRequest& request, const ListEventAlgorithmDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEventAlgorithmDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListEventAlgorithmDetailsOutcomeCallable VcsClient::listEventAlgorithmDetailsCallable(const ListEventAlgorithmDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEventAlgorithmDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->listEventAlgorithmDetails(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListEventAlgorithmResultsOutcome VcsClient::listEventAlgorithmResults(const ListEventAlgorithmResultsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

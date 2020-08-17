@@ -82,6 +82,8 @@
 #include "model/ListCorpsResult.h"
 #include "model/ListDevicesRequest.h"
 #include "model/ListDevicesResult.h"
+#include "model/ListEventAlgorithmDetailsRequest.h"
+#include "model/ListEventAlgorithmDetailsResult.h"
 #include "model/ListEventAlgorithmResultsRequest.h"
 #include "model/ListEventAlgorithmResultsResult.h"
 #include "model/ListFaceAlgorithmResultsRequest.h"
@@ -219,6 +221,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDevicesResult> ListDevicesOutcome;
 			typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListDevicesRequest&, const ListDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
+			typedef Outcome<Error, Model::ListEventAlgorithmDetailsResult> ListEventAlgorithmDetailsOutcome;
+			typedef std::future<ListEventAlgorithmDetailsOutcome> ListEventAlgorithmDetailsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListEventAlgorithmDetailsRequest&, const ListEventAlgorithmDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventAlgorithmDetailsAsyncHandler;
 			typedef Outcome<Error, Model::ListEventAlgorithmResultsResult> ListEventAlgorithmResultsOutcome;
 			typedef std::future<ListEventAlgorithmResultsOutcome> ListEventAlgorithmResultsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListEventAlgorithmResultsRequest&, const ListEventAlgorithmResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEventAlgorithmResultsAsyncHandler;
@@ -371,6 +376,9 @@ namespace AlibabaCloud
 			ListDevicesOutcome listDevices(const Model::ListDevicesRequest &request)const;
 			void listDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevicesOutcomeCallable listDevicesCallable(const Model::ListDevicesRequest& request) const;
+			ListEventAlgorithmDetailsOutcome listEventAlgorithmDetails(const Model::ListEventAlgorithmDetailsRequest &request)const;
+			void listEventAlgorithmDetailsAsync(const Model::ListEventAlgorithmDetailsRequest& request, const ListEventAlgorithmDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListEventAlgorithmDetailsOutcomeCallable listEventAlgorithmDetailsCallable(const Model::ListEventAlgorithmDetailsRequest& request) const;
 			ListEventAlgorithmResultsOutcome listEventAlgorithmResults(const Model::ListEventAlgorithmResultsRequest &request)const;
 			void listEventAlgorithmResultsAsync(const Model::ListEventAlgorithmResultsRequest& request, const ListEventAlgorithmResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEventAlgorithmResultsOutcomeCallable listEventAlgorithmResultsCallable(const Model::ListEventAlgorithmResultsRequest& request) const;

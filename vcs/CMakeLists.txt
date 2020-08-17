@@ -81,6 +81,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListCorpsResult.h
 	include/alibabacloud/vcs/model/ListDevicesRequest.h
 	include/alibabacloud/vcs/model/ListDevicesResult.h
+	include/alibabacloud/vcs/model/ListEventAlgorithmDetailsRequest.h
+	include/alibabacloud/vcs/model/ListEventAlgorithmDetailsResult.h
 	include/alibabacloud/vcs/model/ListEventAlgorithmResultsRequest.h
 	include/alibabacloud/vcs/model/ListEventAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListFaceAlgorithmResultsRequest.h
@@ -182,6 +184,8 @@ set(vcs_src
 	src/model/ListCorpsResult.cc
 	src/model/ListDevicesRequest.cc
 	src/model/ListDevicesResult.cc
+	src/model/ListEventAlgorithmDetailsRequest.cc
+	src/model/ListEventAlgorithmDetailsResult.cc
 	src/model/ListEventAlgorithmResultsRequest.cc
 	src/model/ListEventAlgorithmResultsResult.cc
 	src/model/ListFaceAlgorithmResultsRequest.cc
