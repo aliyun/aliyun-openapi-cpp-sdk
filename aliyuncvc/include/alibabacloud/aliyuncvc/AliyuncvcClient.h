@@ -74,6 +74,8 @@
 #include "model/GetMembersResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
+#include "model/InviteUserRequest.h"
+#include "model/InviteUserResult.h"
 #include "model/JoinDeviceMeetingRequest.h"
 #include "model/JoinDeviceMeetingResult.h"
 #include "model/JoinLiveRequest.h"
@@ -197,6 +199,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::InviteUserResult> InviteUserOutcome;
+			typedef std::future<InviteUserOutcome> InviteUserOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::InviteUserRequest&, const InviteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InviteUserAsyncHandler;
 			typedef Outcome<Error, Model::JoinDeviceMeetingResult> JoinDeviceMeetingOutcome;
 			typedef std::future<JoinDeviceMeetingOutcome> JoinDeviceMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::JoinDeviceMeetingRequest&, const JoinDeviceMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinDeviceMeetingAsyncHandler;
@@ -334,6 +339,9 @@ namespace AlibabaCloud
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			InviteUserOutcome inviteUser(const Model::InviteUserRequest &request)const;
+			void inviteUserAsync(const Model::InviteUserRequest& request, const InviteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InviteUserOutcomeCallable inviteUserCallable(const Model::InviteUserRequest& request) const;
 			JoinDeviceMeetingOutcome joinDeviceMeeting(const Model::JoinDeviceMeetingRequest &request)const;
 			void joinDeviceMeetingAsync(const Model::JoinDeviceMeetingRequest& request, const JoinDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			JoinDeviceMeetingOutcomeCallable joinDeviceMeetingCallable(const Model::JoinDeviceMeetingRequest& request) const;
