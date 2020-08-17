@@ -40,14 +40,14 @@ namespace AlibabaCloud
 						int genderCode;
 						int respiratorColor;
 						int ethicCode;
-						int rightBottomX;
+						float rightBottomX;
 						int ageLowerLimit;
 						std::string faceStyle;
-						int rightBottomY;
+						float rightBottomY;
 						std::vector<std::string> featureData;
-						int leftTopY;
+						float leftTopY;
 						int capStyle;
-						int leftTopX;
+						float leftTopX;
 						int hairColor;
 						int skinColor;
 						int ageUpLimit;

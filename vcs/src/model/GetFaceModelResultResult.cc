@@ -53,9 +53,9 @@ void GetFaceModelResultResult::parse(const std::string &payload)
 		if(!dataNodeRecordsRecordsItem["SkinColor"].isNull())
 			recordsItemObject.skinColor = std::stoi(dataNodeRecordsRecordsItem["SkinColor"].asString());
 		if(!dataNodeRecordsRecordsItem["RightBottomY"].isNull())
-			recordsItemObject.rightBottomY = std::stoi(dataNodeRecordsRecordsItem["RightBottomY"].asString());
+			recordsItemObject.rightBottomY = std::stof(dataNodeRecordsRecordsItem["RightBottomY"].asString());
 		if(!dataNodeRecordsRecordsItem["RightBottomX"].isNull())
-			recordsItemObject.rightBottomX = std::stoi(dataNodeRecordsRecordsItem["RightBottomX"].asString());
+			recordsItemObject.rightBottomX = std::stof(dataNodeRecordsRecordsItem["RightBottomX"].asString());
 		if(!dataNodeRecordsRecordsItem["HairStyle"].isNull())
 			recordsItemObject.hairStyle = std::stoi(dataNodeRecordsRecordsItem["HairStyle"].asString());
 		if(!dataNodeRecordsRecordsItem["GenderCode"].isNull())
@@ -67,9 +67,9 @@ void GetFaceModelResultResult::parse(const std::string &payload)
 		if(!dataNodeRecordsRecordsItem["AgeLowerLimit"].isNull())
 			recordsItemObject.ageLowerLimit = std::stoi(dataNodeRecordsRecordsItem["AgeLowerLimit"].asString());
 		if(!dataNodeRecordsRecordsItem["LeftTopY"].isNull())
-			recordsItemObject.leftTopY = std::stoi(dataNodeRecordsRecordsItem["LeftTopY"].asString());
+			recordsItemObject.leftTopY = std::stof(dataNodeRecordsRecordsItem["LeftTopY"].asString());
 		if(!dataNodeRecordsRecordsItem["LeftTopX"].isNull())
-			recordsItemObject.leftTopX = std::stoi(dataNodeRecordsRecordsItem["LeftTopX"].asString());
+			recordsItemObject.leftTopX = std::stof(dataNodeRecordsRecordsItem["LeftTopX"].asString());
 		if(!dataNodeRecordsRecordsItem["HairColor"].isNull())
 			recordsItemObject.hairColor = std::stoi(dataNodeRecordsRecordsItem["HairColor"].asString());
 		if(!dataNodeRecordsRecordsItem["AgeUpLimit"].isNull())
