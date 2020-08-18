@@ -36,6 +36,8 @@
 #include "model/CreateMultiZoneClusterResult.h"
 #include "model/CreateRestorePlanRequest.h"
 #include "model/CreateRestorePlanResult.h"
+#include "model/DeleteHBaseHaDBRequest.h"
+#include "model/DeleteHBaseHaDBResult.h"
 #include "model/DeleteHbaseHaSlbRequest.h"
 #include "model/DeleteHbaseHaSlbResult.h"
 #include "model/DeleteInstanceRequest.h"
@@ -68,6 +70,12 @@
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeIpWhitelistRequest.h"
 #include "model/DescribeIpWhitelistResult.h"
+#include "model/DescribeMultiZoneAvailableRegionsRequest.h"
+#include "model/DescribeMultiZoneAvailableRegionsResult.h"
+#include "model/DescribeMultiZoneAvailableResourceRequest.h"
+#include "model/DescribeMultiZoneAvailableResourceResult.h"
+#include "model/DescribeMultiZoneClusterRequest.h"
+#include "model/DescribeMultiZoneClusterResult.h"
 #include "model/DescribeRecoverableTimeRangeRequest.h"
 #include "model/DescribeRecoverableTimeRangeResult.h"
 #include "model/DescribeRegionsRequest.h"
@@ -88,6 +96,8 @@
 #include "model/EnableHBaseueBackupResult.h"
 #include "model/EnableHBaseueModuleRequest.h"
 #include "model/EnableHBaseueModuleResult.h"
+#include "model/EvaluateMultiZoneResourceRequest.h"
+#include "model/EvaluateMultiZoneResourceResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ListTagsRequest.h"
@@ -126,6 +136,8 @@
 #include "model/TagResourcesResult.h"
 #include "model/UnTagResourcesRequest.h"
 #include "model/UnTagResourcesResult.h"
+#include "model/UpgradeMultiZoneClusterRequest.h"
+#include "model/UpgradeMultiZoneClusterResult.h"
 #include "model/XpackRelateDBRequest.h"
 #include "model/XpackRelateDBResult.h"
 
@@ -158,6 +170,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRestorePlanResult> CreateRestorePlanOutcome;
 			typedef std::future<CreateRestorePlanOutcome> CreateRestorePlanOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateRestorePlanRequest&, const CreateRestorePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestorePlanAsyncHandler;
+			typedef Outcome<Error, Model::DeleteHBaseHaDBResult> DeleteHBaseHaDBOutcome;
+			typedef std::future<DeleteHBaseHaDBOutcome> DeleteHBaseHaDBOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DeleteHBaseHaDBRequest&, const DeleteHBaseHaDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHBaseHaDBAsyncHandler;
 			typedef Outcome<Error, Model::DeleteHbaseHaSlbResult> DeleteHbaseHaSlbOutcome;
 			typedef std::future<DeleteHbaseHaSlbOutcome> DeleteHbaseHaSlbOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteHbaseHaSlbRequest&, const DeleteHbaseHaSlbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHbaseHaSlbAsyncHandler;
@@ -206,6 +221,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeIpWhitelistResult> DescribeIpWhitelistOutcome;
 			typedef std::future<DescribeIpWhitelistOutcome> DescribeIpWhitelistOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeIpWhitelistRequest&, const DescribeIpWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMultiZoneAvailableRegionsResult> DescribeMultiZoneAvailableRegionsOutcome;
+			typedef std::future<DescribeMultiZoneAvailableRegionsOutcome> DescribeMultiZoneAvailableRegionsOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeMultiZoneAvailableRegionsRequest&, const DescribeMultiZoneAvailableRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiZoneAvailableRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMultiZoneAvailableResourceResult> DescribeMultiZoneAvailableResourceOutcome;
+			typedef std::future<DescribeMultiZoneAvailableResourceOutcome> DescribeMultiZoneAvailableResourceOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeMultiZoneAvailableResourceRequest&, const DescribeMultiZoneAvailableResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiZoneAvailableResourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMultiZoneClusterResult> DescribeMultiZoneClusterOutcome;
+			typedef std::future<DescribeMultiZoneClusterOutcome> DescribeMultiZoneClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::DescribeMultiZoneClusterRequest&, const DescribeMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiZoneClusterAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecoverableTimeRangeResult> DescribeRecoverableTimeRangeOutcome;
 			typedef std::future<DescribeRecoverableTimeRangeOutcome> DescribeRecoverableTimeRangeOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DescribeRecoverableTimeRangeRequest&, const DescribeRecoverableTimeRangeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecoverableTimeRangeAsyncHandler;
@@ -236,6 +260,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableHBaseueModuleResult> EnableHBaseueModuleOutcome;
 			typedef std::future<EnableHBaseueModuleOutcome> EnableHBaseueModuleOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::EnableHBaseueModuleRequest&, const EnableHBaseueModuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableHBaseueModuleAsyncHandler;
+			typedef Outcome<Error, Model::EvaluateMultiZoneResourceResult> EvaluateMultiZoneResourceOutcome;
+			typedef std::future<EvaluateMultiZoneResourceOutcome> EvaluateMultiZoneResourceOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::EvaluateMultiZoneResourceRequest&, const EvaluateMultiZoneResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateMultiZoneResourceAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -293,6 +320,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnTagResourcesResult> UnTagResourcesOutcome;
 			typedef std::future<UnTagResourcesOutcome> UnTagResourcesOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::UnTagResourcesRequest&, const UnTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpgradeMultiZoneClusterResult> UpgradeMultiZoneClusterOutcome;
+			typedef std::future<UpgradeMultiZoneClusterOutcome> UpgradeMultiZoneClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::UpgradeMultiZoneClusterRequest&, const UpgradeMultiZoneClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeMultiZoneClusterAsyncHandler;
 			typedef Outcome<Error, Model::XpackRelateDBResult> XpackRelateDBOutcome;
 			typedef std::future<XpackRelateDBOutcome> XpackRelateDBOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::XpackRelateDBRequest&, const XpackRelateDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> XpackRelateDBAsyncHandler;
@@ -322,6 +352,9 @@ namespace AlibabaCloud
 			CreateRestorePlanOutcome createRestorePlan(const Model::CreateRestorePlanRequest &request)const;
 			void createRestorePlanAsync(const Model::CreateRestorePlanRequest& request, const CreateRestorePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRestorePlanOutcomeCallable createRestorePlanCallable(const Model::CreateRestorePlanRequest& request) const;
+			DeleteHBaseHaDBOutcome deleteHBaseHaDB(const Model::DeleteHBaseHaDBRequest &request)const;
+			void deleteHBaseHaDBAsync(const Model::DeleteHBaseHaDBRequest& request, const DeleteHBaseHaDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteHBaseHaDBOutcomeCallable deleteHBaseHaDBCallable(const Model::DeleteHBaseHaDBRequest& request) const;
 			DeleteHbaseHaSlbOutcome deleteHbaseHaSlb(const Model::DeleteHbaseHaSlbRequest &request)const;
 			void deleteHbaseHaSlbAsync(const Model::DeleteHbaseHaSlbRequest& request, const DeleteHbaseHaSlbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteHbaseHaSlbOutcomeCallable deleteHbaseHaSlbCallable(const Model::DeleteHbaseHaSlbRequest& request) const;
@@ -370,6 +403,15 @@ namespace AlibabaCloud
 			DescribeIpWhitelistOutcome describeIpWhitelist(const Model::DescribeIpWhitelistRequest &request)const;
 			void describeIpWhitelistAsync(const Model::DescribeIpWhitelistRequest& request, const DescribeIpWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIpWhitelistOutcomeCallable describeIpWhitelistCallable(const Model::DescribeIpWhitelistRequest& request) const;
+			DescribeMultiZoneAvailableRegionsOutcome describeMultiZoneAvailableRegions(const Model::DescribeMultiZoneAvailableRegionsRequest &request)const;
+			void describeMultiZoneAvailableRegionsAsync(const Model::DescribeMultiZoneAvailableRegionsRequest& request, const DescribeMultiZoneAvailableRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMultiZoneAvailableRegionsOutcomeCallable describeMultiZoneAvailableRegionsCallable(const Model::DescribeMultiZoneAvailableRegionsRequest& request) const;
+			DescribeMultiZoneAvailableResourceOutcome describeMultiZoneAvailableResource(const Model::DescribeMultiZoneAvailableResourceRequest &request)const;
+			void describeMultiZoneAvailableResourceAsync(const Model::DescribeMultiZoneAvailableResourceRequest& request, const DescribeMultiZoneAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMultiZoneAvailableResourceOutcomeCallable describeMultiZoneAvailableResourceCallable(const Model::DescribeMultiZoneAvailableResourceRequest& request) const;
+			DescribeMultiZoneClusterOutcome describeMultiZoneCluster(const Model::DescribeMultiZoneClusterRequest &request)const;
+			void describeMultiZoneClusterAsync(const Model::DescribeMultiZoneClusterRequest& request, const DescribeMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMultiZoneClusterOutcomeCallable describeMultiZoneClusterCallable(const Model::DescribeMultiZoneClusterRequest& request) const;
 			DescribeRecoverableTimeRangeOutcome describeRecoverableTimeRange(const Model::DescribeRecoverableTimeRangeRequest &request)const;
 			void describeRecoverableTimeRangeAsync(const Model::DescribeRecoverableTimeRangeRequest& request, const DescribeRecoverableTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecoverableTimeRangeOutcomeCallable describeRecoverableTimeRangeCallable(const Model::DescribeRecoverableTimeRangeRequest& request) const;
@@ -400,6 +442,9 @@ namespace AlibabaCloud
 			EnableHBaseueModuleOutcome enableHBaseueModule(const Model::EnableHBaseueModuleRequest &request)const;
 			void enableHBaseueModuleAsync(const Model::EnableHBaseueModuleRequest& request, const EnableHBaseueModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableHBaseueModuleOutcomeCallable enableHBaseueModuleCallable(const Model::EnableHBaseueModuleRequest& request) const;
+			EvaluateMultiZoneResourceOutcome evaluateMultiZoneResource(const Model::EvaluateMultiZoneResourceRequest &request)const;
+			void evaluateMultiZoneResourceAsync(const Model::EvaluateMultiZoneResourceRequest& request, const EvaluateMultiZoneResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EvaluateMultiZoneResourceOutcomeCallable evaluateMultiZoneResourceCallable(const Model::EvaluateMultiZoneResourceRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -457,6 +502,9 @@ namespace AlibabaCloud
 			UnTagResourcesOutcome unTagResources(const Model::UnTagResourcesRequest &request)const;
 			void unTagResourcesAsync(const Model::UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnTagResourcesOutcomeCallable unTagResourcesCallable(const Model::UnTagResourcesRequest& request) const;
+			UpgradeMultiZoneClusterOutcome upgradeMultiZoneCluster(const Model::UpgradeMultiZoneClusterRequest &request)const;
+			void upgradeMultiZoneClusterAsync(const Model::UpgradeMultiZoneClusterRequest& request, const UpgradeMultiZoneClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpgradeMultiZoneClusterOutcomeCallable upgradeMultiZoneClusterCallable(const Model::UpgradeMultiZoneClusterRequest& request) const;
 			XpackRelateDBOutcome xpackRelateDB(const Model::XpackRelateDBRequest &request)const;
 			void xpackRelateDBAsync(const Model::XpackRelateDBRequest& request, const XpackRelateDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			XpackRelateDBOutcomeCallable xpackRelateDBCallable(const Model::XpackRelateDBRequest& request) const;

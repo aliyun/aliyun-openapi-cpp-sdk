@@ -35,6 +35,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/CreateMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/CreateRestorePlanRequest.h
 	include/alibabacloud/hbase/model/CreateRestorePlanResult.h
+	include/alibabacloud/hbase/model/DeleteHBaseHaDBRequest.h
+	include/alibabacloud/hbase/model/DeleteHBaseHaDBResult.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbRequest.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbResult.h
 	include/alibabacloud/hbase/model/DeleteInstanceRequest.h
@@ -67,6 +69,12 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/DescribeInstancesResult.h
 	include/alibabacloud/hbase/model/DescribeIpWhitelistRequest.h
 	include/alibabacloud/hbase/model/DescribeIpWhitelistResult.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneAvailableRegionsRequest.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneAvailableRegionsResult.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneAvailableResourceRequest.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneAvailableResourceResult.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneClusterRequest.h
+	include/alibabacloud/hbase/model/DescribeMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/DescribeRecoverableTimeRangeRequest.h
 	include/alibabacloud/hbase/model/DescribeRecoverableTimeRangeResult.h
 	include/alibabacloud/hbase/model/DescribeRegionsRequest.h
@@ -87,6 +95,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/EnableHBaseueBackupResult.h
 	include/alibabacloud/hbase/model/EnableHBaseueModuleRequest.h
 	include/alibabacloud/hbase/model/EnableHBaseueModuleResult.h
+	include/alibabacloud/hbase/model/EvaluateMultiZoneResourceRequest.h
+	include/alibabacloud/hbase/model/EvaluateMultiZoneResourceResult.h
 	include/alibabacloud/hbase/model/ListTagResourcesRequest.h
 	include/alibabacloud/hbase/model/ListTagResourcesResult.h
 	include/alibabacloud/hbase/model/ListTagsRequest.h
@@ -125,6 +135,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/TagResourcesResult.h
 	include/alibabacloud/hbase/model/UnTagResourcesRequest.h
 	include/alibabacloud/hbase/model/UnTagResourcesResult.h
+	include/alibabacloud/hbase/model/UpgradeMultiZoneClusterRequest.h
+	include/alibabacloud/hbase/model/UpgradeMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/XpackRelateDBRequest.h
 	include/alibabacloud/hbase/model/XpackRelateDBResult.h )
 
@@ -144,6 +156,8 @@ set(hbase_src
 	src/model/CreateMultiZoneClusterResult.cc
 	src/model/CreateRestorePlanRequest.cc
 	src/model/CreateRestorePlanResult.cc
+	src/model/DeleteHBaseHaDBRequest.cc
+	src/model/DeleteHBaseHaDBResult.cc
 	src/model/DeleteHbaseHaSlbRequest.cc
 	src/model/DeleteHbaseHaSlbResult.cc
 	src/model/DeleteInstanceRequest.cc
@@ -176,6 +190,12 @@ set(hbase_src
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeIpWhitelistRequest.cc
 	src/model/DescribeIpWhitelistResult.cc
+	src/model/DescribeMultiZoneAvailableRegionsRequest.cc
+	src/model/DescribeMultiZoneAvailableRegionsResult.cc
+	src/model/DescribeMultiZoneAvailableResourceRequest.cc
+	src/model/DescribeMultiZoneAvailableResourceResult.cc
+	src/model/DescribeMultiZoneClusterRequest.cc
+	src/model/DescribeMultiZoneClusterResult.cc
 	src/model/DescribeRecoverableTimeRangeRequest.cc
 	src/model/DescribeRecoverableTimeRangeResult.cc
 	src/model/DescribeRegionsRequest.cc
@@ -196,6 +216,8 @@ set(hbase_src
 	src/model/EnableHBaseueBackupResult.cc
 	src/model/EnableHBaseueModuleRequest.cc
 	src/model/EnableHBaseueModuleResult.cc
+	src/model/EvaluateMultiZoneResourceRequest.cc
+	src/model/EvaluateMultiZoneResourceResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ListTagsRequest.cc
@@ -234,6 +256,8 @@ set(hbase_src
 	src/model/TagResourcesResult.cc
 	src/model/UnTagResourcesRequest.cc
 	src/model/UnTagResourcesResult.cc
+	src/model/UpgradeMultiZoneClusterRequest.cc
+	src/model/UpgradeMultiZoneClusterResult.cc
 	src/model/XpackRelateDBRequest.cc
 	src/model/XpackRelateDBResult.cc )
 
