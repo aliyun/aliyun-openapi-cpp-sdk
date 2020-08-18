@@ -38,6 +38,17 @@ void StartLiveRequest::setLiveUUID(const std::string& liveUUID)
 	setBodyParameter("LiveUUID", liveUUID);
 }
 
+std::string StartLiveRequest::getPushInfo()const
+{
+	return pushInfo_;
+}
+
+void StartLiveRequest::setPushInfo(const std::string& pushInfo)
+{
+	pushInfo_ = pushInfo;
+	setBodyParameter("PushInfo", pushInfo);
+}
+
 std::string StartLiveRequest::getUserId()const
 {
 	return userId_;
@@ -47,5 +58,16 @@ void StartLiveRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setBodyParameter("UserId", userId);
+}
+
+std::string StartLiveRequest::getLayoutInfo()const
+{
+	return layoutInfo_;
+}
+
+void StartLiveRequest::setLayoutInfo(const std::string& layoutInfo)
+{
+	layoutInfo_ = layoutInfo;
+	setBodyParameter("LayoutInfo", layoutInfo);
 }
 

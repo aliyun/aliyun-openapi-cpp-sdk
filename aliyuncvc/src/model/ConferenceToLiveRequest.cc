@@ -14,58 +14,69 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/aliyuncvc/model/CreateLiveRequest.h>
+#include <alibabacloud/aliyuncvc/model/ConferenceToLiveRequest.h>
 
-using AlibabaCloud::Aliyuncvc::Model::CreateLiveRequest;
+using AlibabaCloud::Aliyuncvc::Model::ConferenceToLiveRequest;
 
-CreateLiveRequest::CreateLiveRequest() :
-	RpcServiceRequest("aliyuncvc", "2019-10-30", "CreateLive")
+ConferenceToLiveRequest::ConferenceToLiveRequest() :
+	RpcServiceRequest("aliyuncvc", "2019-10-30", "ConferenceToLive")
 {
 	setMethod(HttpRequest::Method::Post);
 }
 
-CreateLiveRequest::~CreateLiveRequest()
+ConferenceToLiveRequest::~ConferenceToLiveRequest()
 {}
 
-std::string CreateLiveRequest::getUserId()const
+std::string ConferenceToLiveRequest::getUserId()const
 {
 	return userId_;
 }
 
-void CreateLiveRequest::setUserId(const std::string& userId)
+void ConferenceToLiveRequest::setUserId(const std::string& userId)
 {
 	userId_ = userId;
 	setBodyParameter("UserId", userId);
 }
 
-bool CreateLiveRequest::getOpenPasswordFlag()const
+bool ConferenceToLiveRequest::getOpenPasswordFlag()const
 {
 	return openPasswordFlag_;
 }
 
-void CreateLiveRequest::setOpenPasswordFlag(bool openPasswordFlag)
+void ConferenceToLiveRequest::setOpenPasswordFlag(bool openPasswordFlag)
 {
 	openPasswordFlag_ = openPasswordFlag;
 	setBodyParameter("OpenPasswordFlag", openPasswordFlag ? "true" : "false");
 }
 
-std::string CreateLiveRequest::getPassword()const
+std::string ConferenceToLiveRequest::getMeetingUUID()const
+{
+	return meetingUUID_;
+}
+
+void ConferenceToLiveRequest::setMeetingUUID(const std::string& meetingUUID)
+{
+	meetingUUID_ = meetingUUID;
+	setBodyParameter("MeetingUUID", meetingUUID);
+}
+
+std::string ConferenceToLiveRequest::getPassword()const
 {
 	return password_;
 }
 
-void CreateLiveRequest::setPassword(const std::string& password)
+void ConferenceToLiveRequest::setPassword(const std::string& password)
 {
 	password_ = password;
 	setBodyParameter("Password", password);
 }
 
-std::string CreateLiveRequest::getLiveName()const
+std::string ConferenceToLiveRequest::getLiveName()const
 {
 	return liveName_;
 }
 
-void CreateLiveRequest::setLiveName(const std::string& liveName)
+void ConferenceToLiveRequest::setLiveName(const std::string& liveName)
 {
 	liveName_ = liveName;
 	setBodyParameter("LiveName", liveName);

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CONFERENCETOLIVEREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_CONFERENCETOLIVEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateLiveRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT ConferenceToLiveRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateLiveRequest();
-				~CreateLiveRequest();
+				ConferenceToLiveRequest();
+				~ConferenceToLiveRequest();
 
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				bool getOpenPasswordFlag()const;
 				void setOpenPasswordFlag(bool openPasswordFlag);
+				std::string getMeetingUUID()const;
+				void setMeetingUUID(const std::string& meetingUUID);
 				std::string getPassword()const;
 				void setPassword(const std::string& password);
 				std::string getLiveName()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string userId_;
 				bool openPasswordFlag_;
+				std::string meetingUUID_;
 				std::string password_;
 				std::string liveName_;
 
@@ -54,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CONFERENCETOLIVEREQUEST_H_

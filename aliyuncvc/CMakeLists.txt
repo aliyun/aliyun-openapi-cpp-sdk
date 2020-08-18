@@ -31,6 +31,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/BatchDeleteDevicesResult.h
 	include/alibabacloud/aliyuncvc/model/CallDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/CallDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/ConferenceToLiveRequest.h
+	include/alibabacloud/aliyuncvc/model/ConferenceToLiveResult.h
 	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/CreateDeviceMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/CreateEvaluationRequest.h
@@ -47,6 +49,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/CreateUserInternationalResult.h
 	include/alibabacloud/aliyuncvc/model/CustomGonggeLayoutRequest.h
 	include/alibabacloud/aliyuncvc/model/CustomGonggeLayoutResult.h
+	include/alibabacloud/aliyuncvc/model/CustomLayoutRequest.h
+	include/alibabacloud/aliyuncvc/model/CustomLayoutResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteLiveRequest.h
@@ -55,6 +59,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/DeleteMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserRequest.h
 	include/alibabacloud/aliyuncvc/model/DeleteUserResult.h
+	include/alibabacloud/aliyuncvc/model/EnableLiveSpeakerRequest.h
+	include/alibabacloud/aliyuncvc/model/EnableLiveSpeakerResult.h
 	include/alibabacloud/aliyuncvc/model/EndDeviceMeetingRequest.h
 	include/alibabacloud/aliyuncvc/model/EndDeviceMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/EndLiveRequest.h
@@ -103,6 +109,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/RegisterDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceResult.h
+	include/alibabacloud/aliyuncvc/model/SendMeetingCommandRequest.h
+	include/alibabacloud/aliyuncvc/model/SendMeetingCommandResult.h
 	include/alibabacloud/aliyuncvc/model/StartLiveRequest.h
 	include/alibabacloud/aliyuncvc/model/StartLiveResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatRequest.h
@@ -124,6 +132,8 @@ set(aliyuncvc_src
 	src/model/BatchDeleteDevicesResult.cc
 	src/model/CallDeviceRequest.cc
 	src/model/CallDeviceResult.cc
+	src/model/ConferenceToLiveRequest.cc
+	src/model/ConferenceToLiveResult.cc
 	src/model/CreateDeviceMeetingRequest.cc
 	src/model/CreateDeviceMeetingResult.cc
 	src/model/CreateEvaluationRequest.cc
@@ -140,6 +150,8 @@ set(aliyuncvc_src
 	src/model/CreateUserInternationalResult.cc
 	src/model/CustomGonggeLayoutRequest.cc
 	src/model/CustomGonggeLayoutResult.cc
+	src/model/CustomLayoutRequest.cc
+	src/model/CustomLayoutResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
 	src/model/DeleteLiveRequest.cc
@@ -148,6 +160,8 @@ set(aliyuncvc_src
 	src/model/DeleteMeetingResult.cc
 	src/model/DeleteUserRequest.cc
 	src/model/DeleteUserResult.cc
+	src/model/EnableLiveSpeakerRequest.cc
+	src/model/EnableLiveSpeakerResult.cc
 	src/model/EndDeviceMeetingRequest.cc
 	src/model/EndDeviceMeetingResult.cc
 	src/model/EndLiveRequest.cc
@@ -196,6 +210,8 @@ set(aliyuncvc_src
 	src/model/RegisterDeviceResult.cc
 	src/model/RegisterUemDeviceRequest.cc
 	src/model/RegisterUemDeviceResult.cc
+	src/model/SendMeetingCommandRequest.cc
+	src/model/SendMeetingCommandResult.cc
 	src/model/StartLiveRequest.cc
 	src/model/StartLiveResult.cc
 	src/model/UpdateDeviceHeartBeatRequest.cc

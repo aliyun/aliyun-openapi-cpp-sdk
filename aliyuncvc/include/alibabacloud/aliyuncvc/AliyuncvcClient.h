@@ -32,6 +32,8 @@
 #include "model/BatchDeleteDevicesResult.h"
 #include "model/CallDeviceRequest.h"
 #include "model/CallDeviceResult.h"
+#include "model/ConferenceToLiveRequest.h"
+#include "model/ConferenceToLiveResult.h"
 #include "model/CreateDeviceMeetingRequest.h"
 #include "model/CreateDeviceMeetingResult.h"
 #include "model/CreateEvaluationRequest.h"
@@ -48,6 +50,8 @@
 #include "model/CreateUserInternationalResult.h"
 #include "model/CustomGonggeLayoutRequest.h"
 #include "model/CustomGonggeLayoutResult.h"
+#include "model/CustomLayoutRequest.h"
+#include "model/CustomLayoutResult.h"
 #include "model/DeleteDeviceRequest.h"
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteLiveRequest.h"
@@ -56,6 +60,8 @@
 #include "model/DeleteMeetingResult.h"
 #include "model/DeleteUserRequest.h"
 #include "model/DeleteUserResult.h"
+#include "model/EnableLiveSpeakerRequest.h"
+#include "model/EnableLiveSpeakerResult.h"
 #include "model/EndDeviceMeetingRequest.h"
 #include "model/EndDeviceMeetingResult.h"
 #include "model/EndLiveRequest.h"
@@ -104,6 +110,8 @@
 #include "model/RegisterDeviceResult.h"
 #include "model/RegisterUemDeviceRequest.h"
 #include "model/RegisterUemDeviceResult.h"
+#include "model/SendMeetingCommandRequest.h"
+#include "model/SendMeetingCommandResult.h"
 #include "model/StartLiveRequest.h"
 #include "model/StartLiveResult.h"
 #include "model/UpdateDeviceHeartBeatRequest.h"
@@ -136,6 +144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CallDeviceResult> CallDeviceOutcome;
 			typedef std::future<CallDeviceOutcome> CallDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CallDeviceRequest&, const CallDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceAsyncHandler;
+			typedef Outcome<Error, Model::ConferenceToLiveResult> ConferenceToLiveOutcome;
+			typedef std::future<ConferenceToLiveOutcome> ConferenceToLiveOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ConferenceToLiveRequest&, const ConferenceToLiveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConferenceToLiveAsyncHandler;
 			typedef Outcome<Error, Model::CreateDeviceMeetingResult> CreateDeviceMeetingOutcome;
 			typedef std::future<CreateDeviceMeetingOutcome> CreateDeviceMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CreateDeviceMeetingRequest&, const CreateDeviceMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceMeetingAsyncHandler;
@@ -160,6 +171,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CustomGonggeLayoutResult> CustomGonggeLayoutOutcome;
 			typedef std::future<CustomGonggeLayoutOutcome> CustomGonggeLayoutOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::CustomGonggeLayoutRequest&, const CustomGonggeLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CustomGonggeLayoutAsyncHandler;
+			typedef Outcome<Error, Model::CustomLayoutResult> CustomLayoutOutcome;
+			typedef std::future<CustomLayoutOutcome> CustomLayoutOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::CustomLayoutRequest&, const CustomLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CustomLayoutAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDeviceResult> DeleteDeviceOutcome;
 			typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::DeleteDeviceRequest&, const DeleteDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -172,6 +186,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
 			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+			typedef Outcome<Error, Model::EnableLiveSpeakerResult> EnableLiveSpeakerOutcome;
+			typedef std::future<EnableLiveSpeakerOutcome> EnableLiveSpeakerOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::EnableLiveSpeakerRequest&, const EnableLiveSpeakerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableLiveSpeakerAsyncHandler;
 			typedef Outcome<Error, Model::EndDeviceMeetingResult> EndDeviceMeetingOutcome;
 			typedef std::future<EndDeviceMeetingOutcome> EndDeviceMeetingOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::EndDeviceMeetingRequest&, const EndDeviceMeetingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EndDeviceMeetingAsyncHandler;
@@ -244,6 +261,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RegisterUemDeviceResult> RegisterUemDeviceOutcome;
 			typedef std::future<RegisterUemDeviceOutcome> RegisterUemDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::RegisterUemDeviceRequest&, const RegisterUemDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterUemDeviceAsyncHandler;
+			typedef Outcome<Error, Model::SendMeetingCommandResult> SendMeetingCommandOutcome;
+			typedef std::future<SendMeetingCommandOutcome> SendMeetingCommandOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::SendMeetingCommandRequest&, const SendMeetingCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendMeetingCommandAsyncHandler;
 			typedef Outcome<Error, Model::StartLiveResult> StartLiveOutcome;
 			typedef std::future<StartLiveOutcome> StartLiveOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::StartLiveRequest&, const StartLiveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveAsyncHandler;
@@ -276,6 +296,9 @@ namespace AlibabaCloud
 			CallDeviceOutcome callDevice(const Model::CallDeviceRequest &request)const;
 			void callDeviceAsync(const Model::CallDeviceRequest& request, const CallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CallDeviceOutcomeCallable callDeviceCallable(const Model::CallDeviceRequest& request) const;
+			ConferenceToLiveOutcome conferenceToLive(const Model::ConferenceToLiveRequest &request)const;
+			void conferenceToLiveAsync(const Model::ConferenceToLiveRequest& request, const ConferenceToLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ConferenceToLiveOutcomeCallable conferenceToLiveCallable(const Model::ConferenceToLiveRequest& request) const;
 			CreateDeviceMeetingOutcome createDeviceMeeting(const Model::CreateDeviceMeetingRequest &request)const;
 			void createDeviceMeetingAsync(const Model::CreateDeviceMeetingRequest& request, const CreateDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceMeetingOutcomeCallable createDeviceMeetingCallable(const Model::CreateDeviceMeetingRequest& request) const;
@@ -300,6 +323,9 @@ namespace AlibabaCloud
 			CustomGonggeLayoutOutcome customGonggeLayout(const Model::CustomGonggeLayoutRequest &request)const;
 			void customGonggeLayoutAsync(const Model::CustomGonggeLayoutRequest& request, const CustomGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CustomGonggeLayoutOutcomeCallable customGonggeLayoutCallable(const Model::CustomGonggeLayoutRequest& request) const;
+			CustomLayoutOutcome customLayout(const Model::CustomLayoutRequest &request)const;
+			void customLayoutAsync(const Model::CustomLayoutRequest& request, const CustomLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CustomLayoutOutcomeCallable customLayoutCallable(const Model::CustomLayoutRequest& request) const;
 			DeleteDeviceOutcome deleteDevice(const Model::DeleteDeviceRequest &request)const;
 			void deleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeviceOutcomeCallable deleteDeviceCallable(const Model::DeleteDeviceRequest& request) const;
@@ -312,6 +338,9 @@ namespace AlibabaCloud
 			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
 			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
+			EnableLiveSpeakerOutcome enableLiveSpeaker(const Model::EnableLiveSpeakerRequest &request)const;
+			void enableLiveSpeakerAsync(const Model::EnableLiveSpeakerRequest& request, const EnableLiveSpeakerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableLiveSpeakerOutcomeCallable enableLiveSpeakerCallable(const Model::EnableLiveSpeakerRequest& request) const;
 			EndDeviceMeetingOutcome endDeviceMeeting(const Model::EndDeviceMeetingRequest &request)const;
 			void endDeviceMeetingAsync(const Model::EndDeviceMeetingRequest& request, const EndDeviceMeetingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EndDeviceMeetingOutcomeCallable endDeviceMeetingCallable(const Model::EndDeviceMeetingRequest& request) const;
@@ -384,6 +413,9 @@ namespace AlibabaCloud
 			RegisterUemDeviceOutcome registerUemDevice(const Model::RegisterUemDeviceRequest &request)const;
 			void registerUemDeviceAsync(const Model::RegisterUemDeviceRequest& request, const RegisterUemDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterUemDeviceOutcomeCallable registerUemDeviceCallable(const Model::RegisterUemDeviceRequest& request) const;
+			SendMeetingCommandOutcome sendMeetingCommand(const Model::SendMeetingCommandRequest &request)const;
+			void sendMeetingCommandAsync(const Model::SendMeetingCommandRequest& request, const SendMeetingCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendMeetingCommandOutcomeCallable sendMeetingCommandCallable(const Model::SendMeetingCommandRequest& request) const;
 			StartLiveOutcome startLive(const Model::StartLiveRequest &request)const;
 			void startLiveAsync(const Model::StartLiveRequest& request, const StartLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartLiveOutcomeCallable startLiveCallable(const Model::StartLiveRequest& request) const;

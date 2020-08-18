@@ -37,12 +37,18 @@ namespace AlibabaCloud
 
 				std::string getLiveUUID()const;
 				void setLiveUUID(const std::string& liveUUID);
+				std::string getPushInfo()const;
+				void setPushInfo(const std::string& pushInfo);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
+				std::string getLayoutInfo()const;
+				void setLayoutInfo(const std::string& layoutInfo);
 
             private:
 				std::string liveUUID_;
+				std::string pushInfo_;
 				std::string userId_;
+				std::string layoutInfo_;
 
 			};
 		}

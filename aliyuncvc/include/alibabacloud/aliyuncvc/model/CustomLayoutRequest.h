@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_CUSTOMLAYOUTREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_CUSTOMLAYOUTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT CreateLiveRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT CustomLayoutRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateLiveRequest();
-				~CreateLiveRequest();
+				CustomLayoutRequest();
+				~CustomLayoutRequest();
 
-				std::string getUserId()const;
-				void setUserId(const std::string& userId);
-				bool getOpenPasswordFlag()const;
-				void setOpenPasswordFlag(bool openPasswordFlag);
-				std::string getPassword()const;
-				void setPassword(const std::string& password);
-				std::string getLiveName()const;
-				void setLiveName(const std::string& liveName);
+				std::string getLiveUUID()const;
+				void setLiveUUID(const std::string& liveUUID);
+				std::string getLayoutInfo()const;
+				void setLayoutInfo(const std::string& layoutInfo);
 
             private:
-				std::string userId_;
-				bool openPasswordFlag_;
-				std::string password_;
-				std::string liveName_;
+				std::string liveUUID_;
+				std::string layoutInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CREATELIVEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_CUSTOMLAYOUTREQUEST_H_

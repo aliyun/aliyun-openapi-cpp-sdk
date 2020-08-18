@@ -231,6 +231,42 @@ AliyuncvcClient::CallDeviceOutcomeCallable AliyuncvcClient::callDeviceCallable(c
 	return task->get_future();
 }
 
+AliyuncvcClient::ConferenceToLiveOutcome AliyuncvcClient::conferenceToLive(const ConferenceToLiveRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ConferenceToLiveOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ConferenceToLiveOutcome(ConferenceToLiveResult(outcome.result()));
+	else
+		return ConferenceToLiveOutcome(outcome.error());
+}
+
+void AliyuncvcClient::conferenceToLiveAsync(const ConferenceToLiveRequest& request, const ConferenceToLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, conferenceToLive(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::ConferenceToLiveOutcomeCallable AliyuncvcClient::conferenceToLiveCallable(const ConferenceToLiveRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ConferenceToLiveOutcome()>>(
+			[this, request]()
+			{
+			return this->conferenceToLive(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::CreateDeviceMeetingOutcome AliyuncvcClient::createDeviceMeeting(const CreateDeviceMeetingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,42 @@ AliyuncvcClient::CustomGonggeLayoutOutcomeCallable AliyuncvcClient::customGongge
 	return task->get_future();
 }
 
+AliyuncvcClient::CustomLayoutOutcome AliyuncvcClient::customLayout(const CustomLayoutRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CustomLayoutOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CustomLayoutOutcome(CustomLayoutResult(outcome.result()));
+	else
+		return CustomLayoutOutcome(outcome.error());
+}
+
+void AliyuncvcClient::customLayoutAsync(const CustomLayoutRequest& request, const CustomLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, customLayout(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::CustomLayoutOutcomeCallable AliyuncvcClient::customLayoutCallable(const CustomLayoutRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CustomLayoutOutcome()>>(
+			[this, request]()
+			{
+			return this->customLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::DeleteDeviceOutcome AliyuncvcClient::deleteDevice(const DeleteDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +729,42 @@ AliyuncvcClient::DeleteUserOutcomeCallable AliyuncvcClient::deleteUserCallable(c
 			[this, request]()
 			{
 			return this->deleteUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::EnableLiveSpeakerOutcome AliyuncvcClient::enableLiveSpeaker(const EnableLiveSpeakerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableLiveSpeakerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableLiveSpeakerOutcome(EnableLiveSpeakerResult(outcome.result()));
+	else
+		return EnableLiveSpeakerOutcome(outcome.error());
+}
+
+void AliyuncvcClient::enableLiveSpeakerAsync(const EnableLiveSpeakerRequest& request, const EnableLiveSpeakerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableLiveSpeaker(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::EnableLiveSpeakerOutcomeCallable AliyuncvcClient::enableLiveSpeakerCallable(const EnableLiveSpeakerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableLiveSpeakerOutcome()>>(
+			[this, request]()
+			{
+			return this->enableLiveSpeaker(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1521,6 +1629,42 @@ AliyuncvcClient::RegisterUemDeviceOutcomeCallable AliyuncvcClient::registerUemDe
 			[this, request]()
 			{
 			return this->registerUemDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AliyuncvcClient::SendMeetingCommandOutcome AliyuncvcClient::sendMeetingCommand(const SendMeetingCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendMeetingCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendMeetingCommandOutcome(SendMeetingCommandResult(outcome.result()));
+	else
+		return SendMeetingCommandOutcome(outcome.error());
+}
+
+void AliyuncvcClient::sendMeetingCommandAsync(const SendMeetingCommandRequest& request, const SendMeetingCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendMeetingCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::SendMeetingCommandOutcomeCallable AliyuncvcClient::sendMeetingCommandCallable(const SendMeetingCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendMeetingCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->sendMeetingCommand(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
