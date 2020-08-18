@@ -87,6 +87,42 @@ OnsMqttClient::ApplyTokenOutcomeCallable OnsMqttClient::applyTokenCallable(const
 	return task->get_future();
 }
 
+OnsMqttClient::BatchQuerySessionByClientIdsOutcome OnsMqttClient::batchQuerySessionByClientIds(const BatchQuerySessionByClientIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchQuerySessionByClientIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchQuerySessionByClientIdsOutcome(BatchQuerySessionByClientIdsResult(outcome.result()));
+	else
+		return BatchQuerySessionByClientIdsOutcome(outcome.error());
+}
+
+void OnsMqttClient::batchQuerySessionByClientIdsAsync(const BatchQuerySessionByClientIdsRequest& request, const BatchQuerySessionByClientIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchQuerySessionByClientIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsMqttClient::BatchQuerySessionByClientIdsOutcomeCallable OnsMqttClient::batchQuerySessionByClientIdsCallable(const BatchQuerySessionByClientIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchQuerySessionByClientIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->batchQuerySessionByClientIds(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OnsMqttClient::CreateGroupIdOutcome OnsMqttClient::createGroupId(const CreateGroupIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -195,6 +231,42 @@ OnsMqttClient::ListGroupIdOutcomeCallable OnsMqttClient::listGroupIdCallable(con
 	return task->get_future();
 }
 
+OnsMqttClient::QuerySessionByClientIdOutcome OnsMqttClient::querySessionByClientId(const QuerySessionByClientIdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySessionByClientIdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySessionByClientIdOutcome(QuerySessionByClientIdResult(outcome.result()));
+	else
+		return QuerySessionByClientIdOutcome(outcome.error());
+}
+
+void OnsMqttClient::querySessionByClientIdAsync(const QuerySessionByClientIdRequest& request, const QuerySessionByClientIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySessionByClientId(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsMqttClient::QuerySessionByClientIdOutcomeCallable OnsMqttClient::querySessionByClientIdCallable(const QuerySessionByClientIdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySessionByClientIdOutcome()>>(
+			[this, request]()
+			{
+			return this->querySessionByClientId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OnsMqttClient::QueryTokenOutcome OnsMqttClient::queryToken(const QueryTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +333,42 @@ OnsMqttClient::RevokeTokenOutcomeCallable OnsMqttClient::revokeTokenCallable(con
 			[this, request]()
 			{
 			return this->revokeToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OnsMqttClient::SendMessageOutcome OnsMqttClient::sendMessage(const SendMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendMessageOutcome(SendMessageResult(outcome.result()));
+	else
+		return SendMessageOutcome(outcome.error());
+}
+
+void OnsMqttClient::sendMessageAsync(const SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsMqttClient::SendMessageOutcomeCallable OnsMqttClient::sendMessageCallable(const SendMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->sendMessage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

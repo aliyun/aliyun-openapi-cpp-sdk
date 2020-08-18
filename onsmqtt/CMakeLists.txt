@@ -23,31 +23,43 @@ set(onsmqtt_public_header
 set(onsmqtt_public_header_model 
 	include/alibabacloud/onsmqtt/model/ApplyTokenRequest.h
 	include/alibabacloud/onsmqtt/model/ApplyTokenResult.h
+	include/alibabacloud/onsmqtt/model/BatchQuerySessionByClientIdsRequest.h
+	include/alibabacloud/onsmqtt/model/BatchQuerySessionByClientIdsResult.h
 	include/alibabacloud/onsmqtt/model/CreateGroupIdRequest.h
 	include/alibabacloud/onsmqtt/model/CreateGroupIdResult.h
 	include/alibabacloud/onsmqtt/model/DeleteGroupIdRequest.h
 	include/alibabacloud/onsmqtt/model/DeleteGroupIdResult.h
 	include/alibabacloud/onsmqtt/model/ListGroupIdRequest.h
 	include/alibabacloud/onsmqtt/model/ListGroupIdResult.h
+	include/alibabacloud/onsmqtt/model/QuerySessionByClientIdRequest.h
+	include/alibabacloud/onsmqtt/model/QuerySessionByClientIdResult.h
 	include/alibabacloud/onsmqtt/model/QueryTokenRequest.h
 	include/alibabacloud/onsmqtt/model/QueryTokenResult.h
 	include/alibabacloud/onsmqtt/model/RevokeTokenRequest.h
-	include/alibabacloud/onsmqtt/model/RevokeTokenResult.h )
+	include/alibabacloud/onsmqtt/model/RevokeTokenResult.h
+	include/alibabacloud/onsmqtt/model/SendMessageRequest.h
+	include/alibabacloud/onsmqtt/model/SendMessageResult.h )
 
 set(onsmqtt_src 
 	src/OnsMqttClient.cc
 	src/model/ApplyTokenRequest.cc
 	src/model/ApplyTokenResult.cc
+	src/model/BatchQuerySessionByClientIdsRequest.cc
+	src/model/BatchQuerySessionByClientIdsResult.cc
 	src/model/CreateGroupIdRequest.cc
 	src/model/CreateGroupIdResult.cc
 	src/model/DeleteGroupIdRequest.cc
 	src/model/DeleteGroupIdResult.cc
 	src/model/ListGroupIdRequest.cc
 	src/model/ListGroupIdResult.cc
+	src/model/QuerySessionByClientIdRequest.cc
+	src/model/QuerySessionByClientIdResult.cc
 	src/model/QueryTokenRequest.cc
 	src/model/QueryTokenResult.cc
 	src/model/RevokeTokenRequest.cc
-	src/model/RevokeTokenResult.cc )
+	src/model/RevokeTokenResult.cc
+	src/model/SendMessageRequest.cc
+	src/model/SendMessageResult.cc )
 
 add_library(onsmqtt ${LIB_TYPE}
 	${onsmqtt_public_header}
