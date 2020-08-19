@@ -50,6 +50,10 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].isNull())
 			domainTranscodeListObject.transcodeTemplate = valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].asString();
 		auto customTranscodeParametersNode = value["CustomTranscodeParameters"];
+		if(!customTranscodeParametersNode["RtsFlag"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.rtsFlag = customTranscodeParametersNode["RtsFlag"].asString();
+		if(!customTranscodeParametersNode["Bframes"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.bframes = customTranscodeParametersNode["Bframes"].asString();
 		if(!customTranscodeParametersNode["VideoBitrate"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.videoBitrate = std::stoi(customTranscodeParametersNode["VideoBitrate"].asString());
 		if(!customTranscodeParametersNode["FPS"].isNull())

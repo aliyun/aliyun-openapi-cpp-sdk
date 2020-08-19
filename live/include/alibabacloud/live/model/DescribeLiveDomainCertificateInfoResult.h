@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINCERTIFICATEINFORESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINCERTIFICATEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainCertificateInfoResult : public ServiceResult
 			{
 			public:
-				struct LiveAppRecord
+				struct CertInfo
 				{
-					std::string sourceUrl;
-					std::string streamName;
-					std::string endTime;
+					std::string status;
+					std::string certLife;
 					std::string domainName;
-					std::string startTime;
-					std::string appName;
+					std::string sSLPub;
+					std::string certDomainName;
+					std::string certOrg;
+					std::string certType;
+					std::string certExpireTime;
+					std::string certName;
+					std::string sSLProtocol;
 				};
 
 
-				DescribeLivePullStreamConfigResult();
-				explicit DescribeLivePullStreamConfigResult(const std::string &payload);
-				~DescribeLivePullStreamConfigResult();
-				std::vector<LiveAppRecord> getLiveAppRecordList()const;
+				DescribeLiveDomainCertificateInfoResult();
+				explicit DescribeLiveDomainCertificateInfoResult(const std::string &payload);
+				~DescribeLiveDomainCertificateInfoResult();
+				std::vector<CertInfo> getCertInfos()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LiveAppRecord> liveAppRecordList_;
+				std::vector<CertInfo> certInfos_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINCERTIFICATEINFORESULT_H_

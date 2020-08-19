@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setSequenceOssObject(const std::string& sequenceOssObject);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getCallback()const;
+				void setCallback(const std::string& callback);
 
             private:
 				int timeInterval_;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 				std::string domainName_;
 				std::string sequenceOssObject_;
 				long ownerId_;
+				std::string callback_;
 
 			};
 		}

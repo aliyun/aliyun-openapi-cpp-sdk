@@ -59,6 +59,8 @@ void DescribeLiveSnapshotConfigResult::parse(const std::string &payload)
 			liveStreamSnapshotConfigListObject.sequenceOssObject = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["SequenceOssObject"].asString();
 		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].isNull())
 			liveStreamSnapshotConfigListObject.createTime = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["CreateTime"].asString();
+		if(!valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].isNull())
+			liveStreamSnapshotConfigListObject.callback = valueLiveStreamSnapshotConfigListLiveStreamSnapshotConfig["Callback"].asString();
 		liveStreamSnapshotConfigList_.push_back(liveStreamSnapshotConfigListObject);
 	}
 	if(!value["PageNum"].isNull())

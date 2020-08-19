@@ -27,6 +27,17 @@ UnTagLiveResourcesRequest::UnTagLiveResourcesRequest() :
 UnTagLiveResourcesRequest::~UnTagLiveResourcesRequest()
 {}
 
+bool UnTagLiveResourcesRequest::getAll()const
+{
+	return all_;
+}
+
+void UnTagLiveResourcesRequest::setAll(bool all)
+{
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
+}
+
 std::vector<std::string> UnTagLiveResourcesRequest::getResourceId()const
 {
 	return resourceId_;

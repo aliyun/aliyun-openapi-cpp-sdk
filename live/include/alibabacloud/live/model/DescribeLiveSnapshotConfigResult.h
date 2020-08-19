@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string overwriteOssObject;
 					std::string sequenceOssObject;
+					std::string callback;
 					int timeInterval;
 					std::string ossEndpoint;
 					std::string domainName;

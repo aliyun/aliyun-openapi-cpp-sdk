@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTIMESHIFTDATAREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTIMESHIFTDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,27 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLivePullStreamConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainTimeShiftDataRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeLivePullStreamConfigRequest();
-				~DescribeLivePullStreamConfigRequest();
+				DescribeLiveDomainTimeShiftDataRequest();
+				~DescribeLiveDomainTimeShiftDataRequest();
 
+				std::string getStartTime()const;
+				void setStartTime(const std::string& startTime);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
+				std::string getEndTime()const;
+				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getInterval()const;
+				void setInterval(const std::string& interval);
 
             private:
+				std::string startTime_;
 				std::string domainName_;
+				std::string endTime_;
 				long ownerId_;
-				std::string securityToken_;
+				std::string interval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEPULLSTREAMCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINTIMESHIFTDATAREQUEST_H_

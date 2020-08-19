@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setAppName(const std::string& appName);
 				std::string getStreamName()const;
 				void setStreamName(const std::string& streamName);
+				std::string getPullAlways()const;
+				void setPullAlways(const std::string& pullAlways);
 				std::string getDomainName()const;
 				void setDomainName(const std::string& domainName);
 				std::string getEndTime()const;
@@ -54,6 +56,7 @@ namespace AlibabaCloud
 				std::string startTime_;
 				std::string appName_;
 				std::string streamName_;
+				std::string pullAlways_;
 				std::string domainName_;
 				std::string endTime_;
 				long ownerId_;

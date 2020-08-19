@@ -61,6 +61,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddLiveSnapshotDetectPornConfigResult.h
 	include/alibabacloud/live/model/AddLiveStreamTranscodeRequest.h
 	include/alibabacloud/live/model/AddLiveStreamTranscodeResult.h
+	include/alibabacloud/live/model/AddRtsLiveStreamTranscodeRequest.h
+	include/alibabacloud/live/model/AddRtsLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/AddTrancodeSEIRequest.h
 	include/alibabacloud/live/model/AddTrancodeSEIResult.h
 	include/alibabacloud/live/model/AllowPushStreamRequest.h
@@ -199,12 +201,16 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByTimeStampRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainBpsDataByTimeStampResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainCertificateInfoRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainCertificateInfoResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainConfigsRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainDetailRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainDetailResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainFrameRateAndBitRateDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainFrameRateAndBitRateDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainLimitRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainLimitResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainMappingResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainOnlineUserNumRequest.h
@@ -225,14 +231,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainRecordDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataResult.h
+	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveDomainTimeShiftDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainTrafficDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigResult.h
-	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
-	include/alibabacloud/live/model/DescribeLivePullStreamConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeDeliveryAccRequest.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeDeliveryAccResult.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeLogAuthorizedRequest.h
@@ -460,6 +466,8 @@ set(live_src
 	src/model/AddLiveSnapshotDetectPornConfigResult.cc
 	src/model/AddLiveStreamTranscodeRequest.cc
 	src/model/AddLiveStreamTranscodeResult.cc
+	src/model/AddRtsLiveStreamTranscodeRequest.cc
+	src/model/AddRtsLiveStreamTranscodeResult.cc
 	src/model/AddTrancodeSEIRequest.cc
 	src/model/AddTrancodeSEIResult.cc
 	src/model/AllowPushStreamRequest.cc
@@ -598,12 +606,16 @@ set(live_src
 	src/model/DescribeLiveDomainBpsDataResult.cc
 	src/model/DescribeLiveDomainBpsDataByTimeStampRequest.cc
 	src/model/DescribeLiveDomainBpsDataByTimeStampResult.cc
+	src/model/DescribeLiveDomainCertificateInfoRequest.cc
+	src/model/DescribeLiveDomainCertificateInfoResult.cc
 	src/model/DescribeLiveDomainConfigsRequest.cc
 	src/model/DescribeLiveDomainConfigsResult.cc
 	src/model/DescribeLiveDomainDetailRequest.cc
 	src/model/DescribeLiveDomainDetailResult.cc
 	src/model/DescribeLiveDomainFrameRateAndBitRateDataRequest.cc
 	src/model/DescribeLiveDomainFrameRateAndBitRateDataResult.cc
+	src/model/DescribeLiveDomainLimitRequest.cc
+	src/model/DescribeLiveDomainLimitResult.cc
 	src/model/DescribeLiveDomainMappingRequest.cc
 	src/model/DescribeLiveDomainMappingResult.cc
 	src/model/DescribeLiveDomainOnlineUserNumRequest.cc
@@ -624,14 +636,14 @@ set(live_src
 	src/model/DescribeLiveDomainRecordDataResult.cc
 	src/model/DescribeLiveDomainSnapshotDataRequest.cc
 	src/model/DescribeLiveDomainSnapshotDataResult.cc
+	src/model/DescribeLiveDomainTimeShiftDataRequest.cc
+	src/model/DescribeLiveDomainTimeShiftDataResult.cc
 	src/model/DescribeLiveDomainTrafficDataRequest.cc
 	src/model/DescribeLiveDomainTrafficDataResult.cc
 	src/model/DescribeLiveDomainTranscodeDataRequest.cc
 	src/model/DescribeLiveDomainTranscodeDataResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
 	src/model/DescribeLiveLazyPullStreamConfigResult.cc
-	src/model/DescribeLivePullStreamConfigRequest.cc
-	src/model/DescribeLivePullStreamConfigResult.cc
 	src/model/DescribeLiveRealtimeDeliveryAccRequest.cc
 	src/model/DescribeLiveRealtimeDeliveryAccResult.cc
 	src/model/DescribeLiveRealtimeLogAuthorizedRequest.cc

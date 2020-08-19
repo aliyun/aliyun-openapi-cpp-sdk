@@ -60,6 +60,17 @@ void AddLivePullStreamInfoConfigRequest::setStreamName(const std::string& stream
 	setParameter("StreamName", streamName);
 }
 
+std::string AddLivePullStreamInfoConfigRequest::getPullAlways()const
+{
+	return pullAlways_;
+}
+
+void AddLivePullStreamInfoConfigRequest::setPullAlways(const std::string& pullAlways)
+{
+	pullAlways_ = pullAlways;
+	setParameter("PullAlways", pullAlways);
+}
+
 std::string AddLivePullStreamInfoConfigRequest::getDomainName()const
 {
 	return domainName_;

@@ -126,3 +126,14 @@ void AddLiveAppSnapshotConfigRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
+std::string AddLiveAppSnapshotConfigRequest::getCallback()const
+{
+	return callback_;
+}
+
+void AddLiveAppSnapshotConfigRequest::setCallback(const std::string& callback)
+{
+	callback_ = callback;
+	setParameter("Callback", callback);
+}
+

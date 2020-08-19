@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_UNTAGLIVERESOURCESREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_UNTAGLIVERESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINLIMITREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINLIMITREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT UnTagLiveResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainLimitRequest : public RpcServiceRequest
 			{
 
 			public:
-				UnTagLiveResourcesRequest();
-				~UnTagLiveResourcesRequest();
+				DescribeLiveDomainLimitRequest();
+				~DescribeLiveDomainLimitRequest();
 
-				bool getAll()const;
-				void setAll(bool all);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getLiveapiRequestFrom()const;
+				void setLiveapiRequestFrom(const std::string& liveapiRequestFrom);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::vector<std::string> getTagKey()const;
-				void setTagKey(const std::vector<std::string>& tagKey);
 
             private:
-				bool all_;
-				std::vector<std::string> resourceId_;
+				std::string liveapiRequestFrom_;
+				std::string domainName_;
 				long ownerId_;
-				std::string resourceType_;
-				std::vector<std::string> tagKey_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_UNTAGLIVERESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINLIMITREQUEST_H_
