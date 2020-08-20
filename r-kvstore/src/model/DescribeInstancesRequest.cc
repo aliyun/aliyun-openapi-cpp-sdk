@@ -208,6 +208,17 @@ void DescribeInstancesRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+bool DescribeInstancesRequest::getGlobalInstance()const
+{
+	return globalInstance_;
+}
+
+void DescribeInstancesRequest::setGlobalInstance(bool globalInstance)
+{
+	globalInstance_ = globalInstance;
+	setParameter("GlobalInstance", globalInstance ? "true" : "false");
+}
+
 long DescribeInstancesRequest::getOwnerId()const
 {
 	return ownerId_;

@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "R_kvstoreExport.h"
+#include "model/AllocateDirectConnectionRequest.h"
+#include "model/AllocateDirectConnectionResult.h"
 #include "model/AllocateInstancePublicConnectionRequest.h"
 #include "model/AllocateInstancePublicConnectionResult.h"
 #include "model/CreateAccountRequest.h"
@@ -34,6 +36,8 @@
 #include "model/CreateDedicatedInstanceResult.h"
 #include "model/CreateDedicatedUserClusterRequest.h"
 #include "model/CreateDedicatedUserClusterResult.h"
+#include "model/CreateGlobalDistributeCacheRequest.h"
+#include "model/CreateGlobalDistributeCacheResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
 #include "model/CreateUserClusterHostRequest.h"
@@ -68,6 +72,8 @@
 #include "model/DescribeDedicatedClusterInstanceListResult.h"
 #include "model/DescribeDedicatedUserClusterRequest.h"
 #include "model/DescribeDedicatedUserClusterResult.h"
+#include "model/DescribeGlobalDistributeCacheRequest.h"
+#include "model/DescribeGlobalDistributeCacheResult.h"
 #include "model/DescribeHistoryMonitorValuesRequest.h"
 #include "model/DescribeHistoryMonitorValuesResult.h"
 #include "model/DescribeInstanceAttributeRequest.h"
@@ -156,6 +162,8 @@
 #include "model/ModifySecurityIpsResult.h"
 #include "model/ModifyUserClusterHostRequest.h"
 #include "model/ModifyUserClusterHostResult.h"
+#include "model/ReleaseDirectConnectionRequest.h"
+#include "model/ReleaseDirectConnectionResult.h"
 #include "model/ReleaseInstancePublicConnectionRequest.h"
 #include "model/ReleaseInstancePublicConnectionResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -187,6 +195,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_R_KVSTORE_EXPORT R_kvstoreClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AllocateDirectConnectionResult> AllocateDirectConnectionOutcome;
+			typedef std::future<AllocateDirectConnectionOutcome> AllocateDirectConnectionOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::AllocateDirectConnectionRequest&, const AllocateDirectConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateDirectConnectionAsyncHandler;
 			typedef Outcome<Error, Model::AllocateInstancePublicConnectionResult> AllocateInstancePublicConnectionOutcome;
 			typedef std::future<AllocateInstancePublicConnectionOutcome> AllocateInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::AllocateInstancePublicConnectionRequest&, const AllocateInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateInstancePublicConnectionAsyncHandler;
@@ -205,6 +216,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDedicatedUserClusterResult> CreateDedicatedUserClusterOutcome;
 			typedef std::future<CreateDedicatedUserClusterOutcome> CreateDedicatedUserClusterOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateDedicatedUserClusterRequest&, const CreateDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedUserClusterAsyncHandler;
+			typedef Outcome<Error, Model::CreateGlobalDistributeCacheResult> CreateGlobalDistributeCacheOutcome;
+			typedef std::future<CreateGlobalDistributeCacheOutcome> CreateGlobalDistributeCacheOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::CreateGlobalDistributeCacheRequest&, const CreateGlobalDistributeCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalDistributeCacheAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -256,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDedicatedUserClusterResult> DescribeDedicatedUserClusterOutcome;
 			typedef std::future<DescribeDedicatedUserClusterOutcome> DescribeDedicatedUserClusterOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeDedicatedUserClusterRequest&, const DescribeDedicatedUserClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedUserClusterAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGlobalDistributeCacheResult> DescribeGlobalDistributeCacheOutcome;
+			typedef std::future<DescribeGlobalDistributeCacheOutcome> DescribeGlobalDistributeCacheOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeGlobalDistributeCacheRequest&, const DescribeGlobalDistributeCacheOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDistributeCacheAsyncHandler;
 			typedef Outcome<Error, Model::DescribeHistoryMonitorValuesResult> DescribeHistoryMonitorValuesOutcome;
 			typedef std::future<DescribeHistoryMonitorValuesOutcome> DescribeHistoryMonitorValuesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::DescribeHistoryMonitorValuesRequest&, const DescribeHistoryMonitorValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryMonitorValuesAsyncHandler;
@@ -388,6 +405,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyUserClusterHostResult> ModifyUserClusterHostOutcome;
 			typedef std::future<ModifyUserClusterHostOutcome> ModifyUserClusterHostOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ModifyUserClusterHostRequest&, const ModifyUserClusterHostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserClusterHostAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseDirectConnectionResult> ReleaseDirectConnectionOutcome;
+			typedef std::future<ReleaseDirectConnectionOutcome> ReleaseDirectConnectionOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseDirectConnectionRequest&, const ReleaseDirectConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseDirectConnectionAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseInstancePublicConnectionResult> ReleaseInstancePublicConnectionOutcome;
 			typedef std::future<ReleaseInstancePublicConnectionOutcome> ReleaseInstancePublicConnectionOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ReleaseInstancePublicConnectionRequest&, const ReleaseInstancePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseInstancePublicConnectionAsyncHandler;
@@ -426,6 +446,9 @@ namespace AlibabaCloud
 			R_kvstoreClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			R_kvstoreClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~R_kvstoreClient();
+			AllocateDirectConnectionOutcome allocateDirectConnection(const Model::AllocateDirectConnectionRequest &request)const;
+			void allocateDirectConnectionAsync(const Model::AllocateDirectConnectionRequest& request, const AllocateDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AllocateDirectConnectionOutcomeCallable allocateDirectConnectionCallable(const Model::AllocateDirectConnectionRequest& request) const;
 			AllocateInstancePublicConnectionOutcome allocateInstancePublicConnection(const Model::AllocateInstancePublicConnectionRequest &request)const;
 			void allocateInstancePublicConnectionAsync(const Model::AllocateInstancePublicConnectionRequest& request, const AllocateInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateInstancePublicConnectionOutcomeCallable allocateInstancePublicConnectionCallable(const Model::AllocateInstancePublicConnectionRequest& request) const;
@@ -444,6 +467,9 @@ namespace AlibabaCloud
 			CreateDedicatedUserClusterOutcome createDedicatedUserCluster(const Model::CreateDedicatedUserClusterRequest &request)const;
 			void createDedicatedUserClusterAsync(const Model::CreateDedicatedUserClusterRequest& request, const CreateDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDedicatedUserClusterOutcomeCallable createDedicatedUserClusterCallable(const Model::CreateDedicatedUserClusterRequest& request) const;
+			CreateGlobalDistributeCacheOutcome createGlobalDistributeCache(const Model::CreateGlobalDistributeCacheRequest &request)const;
+			void createGlobalDistributeCacheAsync(const Model::CreateGlobalDistributeCacheRequest& request, const CreateGlobalDistributeCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateGlobalDistributeCacheOutcomeCallable createGlobalDistributeCacheCallable(const Model::CreateGlobalDistributeCacheRequest& request) const;
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
@@ -495,6 +521,9 @@ namespace AlibabaCloud
 			DescribeDedicatedUserClusterOutcome describeDedicatedUserCluster(const Model::DescribeDedicatedUserClusterRequest &request)const;
 			void describeDedicatedUserClusterAsync(const Model::DescribeDedicatedUserClusterRequest& request, const DescribeDedicatedUserClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDedicatedUserClusterOutcomeCallable describeDedicatedUserClusterCallable(const Model::DescribeDedicatedUserClusterRequest& request) const;
+			DescribeGlobalDistributeCacheOutcome describeGlobalDistributeCache(const Model::DescribeGlobalDistributeCacheRequest &request)const;
+			void describeGlobalDistributeCacheAsync(const Model::DescribeGlobalDistributeCacheRequest& request, const DescribeGlobalDistributeCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGlobalDistributeCacheOutcomeCallable describeGlobalDistributeCacheCallable(const Model::DescribeGlobalDistributeCacheRequest& request) const;
 			DescribeHistoryMonitorValuesOutcome describeHistoryMonitorValues(const Model::DescribeHistoryMonitorValuesRequest &request)const;
 			void describeHistoryMonitorValuesAsync(const Model::DescribeHistoryMonitorValuesRequest& request, const DescribeHistoryMonitorValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHistoryMonitorValuesOutcomeCallable describeHistoryMonitorValuesCallable(const Model::DescribeHistoryMonitorValuesRequest& request) const;
@@ -627,6 +656,9 @@ namespace AlibabaCloud
 			ModifyUserClusterHostOutcome modifyUserClusterHost(const Model::ModifyUserClusterHostRequest &request)const;
 			void modifyUserClusterHostAsync(const Model::ModifyUserClusterHostRequest& request, const ModifyUserClusterHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUserClusterHostOutcomeCallable modifyUserClusterHostCallable(const Model::ModifyUserClusterHostRequest& request) const;
+			ReleaseDirectConnectionOutcome releaseDirectConnection(const Model::ReleaseDirectConnectionRequest &request)const;
+			void releaseDirectConnectionAsync(const Model::ReleaseDirectConnectionRequest& request, const ReleaseDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseDirectConnectionOutcomeCallable releaseDirectConnectionCallable(const Model::ReleaseDirectConnectionRequest& request) const;
 			ReleaseInstancePublicConnectionOutcome releaseInstancePublicConnection(const Model::ReleaseInstancePublicConnectionRequest &request)const;
 			void releaseInstancePublicConnectionAsync(const Model::ReleaseInstancePublicConnectionRequest& request, const ReleaseInstancePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseInstancePublicConnectionOutcomeCallable releaseInstancePublicConnectionCallable(const Model::ReleaseInstancePublicConnectionRequest& request) const;

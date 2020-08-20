@@ -38,6 +38,39 @@ void DeleteInstanceRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+bool DeleteInstanceRequest::getReleaseSubInstance()const
+{
+	return releaseSubInstance_;
+}
+
+void DeleteInstanceRequest::setReleaseSubInstance(bool releaseSubInstance)
+{
+	releaseSubInstance_ = releaseSubInstance;
+	setParameter("ReleaseSubInstance", releaseSubInstance ? "true" : "false");
+}
+
+std::string DeleteInstanceRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
+}
+
+void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
+}
+
+std::string DeleteInstanceRequest::getSecurityToken()const
+{
+	return securityToken_;
+}
+
+void DeleteInstanceRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
+}
+
 std::string DeleteInstanceRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -71,15 +104,15 @@ void DeleteInstanceRequest::setOwnerId(long ownerId)
 	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DeleteInstanceRequest::getAccessKeyId()const
+std::string DeleteInstanceRequest::getGlobalInstanceId()const
 {
-	return accessKeyId_;
+	return globalInstanceId_;
 }
 
-void DeleteInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
+void DeleteInstanceRequest::setGlobalInstanceId(const std::string& globalInstanceId)
 {
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+	globalInstanceId_ = globalInstanceId;
+	setParameter("GlobalInstanceId", globalInstanceId);
 }
 
 std::string DeleteInstanceRequest::getInstanceId()const
@@ -91,16 +124,5 @@ void DeleteInstanceRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
-}
-
-std::string DeleteInstanceRequest::getSecurityToken()const
-{
-	return securityToken_;
-}
-
-void DeleteInstanceRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
 }
 

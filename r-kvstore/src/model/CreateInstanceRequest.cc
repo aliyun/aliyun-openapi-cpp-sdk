@@ -115,6 +115,17 @@ void CreateInstanceRequest::setBusinessInfo(const std::string& businessInfo)
 	setParameter("BusinessInfo", businessInfo);
 }
 
+int CreateInstanceRequest::getShardCount()const
+{
+	return shardCount_;
+}
+
+void CreateInstanceRequest::setShardCount(int shardCount)
+{
+	shardCount_ = shardCount;
+	setParameter("ShardCount", std::to_string(shardCount));
+}
+
 std::string CreateInstanceRequest::getAutoRenewPeriod()const
 {
 	return autoRenewPeriod_;
@@ -335,6 +346,17 @@ void CreateInstanceRequest::setOwnerAccount(const std::string& ownerAccount)
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+bool CreateInstanceRequest::getGlobalInstance()const
+{
+	return globalInstance_;
+}
+
+void CreateInstanceRequest::setGlobalInstance(bool globalInstance)
+{
+	globalInstance_ = globalInstance;
+	setParameter("GlobalInstance", globalInstance ? "true" : "false");
+}
+
 std::string CreateInstanceRequest::getToken()const
 {
 	return token_;
@@ -344,6 +366,17 @@ void CreateInstanceRequest::setToken(const std::string& token)
 {
 	token_ = token;
 	setParameter("Token", token);
+}
+
+std::string CreateInstanceRequest::getGlobalInstanceId()const
+{
+	return globalInstanceId_;
+}
+
+void CreateInstanceRequest::setGlobalInstanceId(const std::string& globalInstanceId)
+{
+	globalInstanceId_ = globalInstanceId;
+	setParameter("GlobalInstanceId", globalInstanceId);
 }
 
 std::string CreateInstanceRequest::getVpcId()const

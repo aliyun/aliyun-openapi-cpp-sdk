@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHEREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,21 +28,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DeleteInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT DescribeGlobalDistributeCacheRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteInstanceRequest();
-				~DeleteInstanceRequest();
+				DescribeGlobalDistributeCacheRequest();
+				~DescribeGlobalDistributeCacheRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getReleaseSubInstance()const;
-				void setReleaseSubInstance(bool releaseSubInstance);
+				std::string getPageNumber()const;
+				void setPageNumber(const std::string& pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getPageSize()const;
+				void setPageSize(const std::string& pageSize);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -51,22 +53,20 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getGlobalInstanceId()const;
 				void setGlobalInstanceId(const std::string& globalInstanceId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
 
             private:
 				long resourceOwnerId_;
-				bool releaseSubInstance_;
+				std::string pageNumber_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string pageSize_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
 				std::string globalInstanceId_;
-				std::string instanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DESCRIBEGLOBALDISTRIBUTECACHEREQUEST_H_

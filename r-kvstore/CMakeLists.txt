@@ -21,6 +21,8 @@ set(r-kvstore_public_header
 	include/alibabacloud/r-kvstore/R_kvstoreExport.h )
 
 set(r-kvstore_public_header_model 
+	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionRequest.h
+	include/alibabacloud/r-kvstore/model/AllocateDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/AllocateInstancePublicConnectionResult.h
 	include/alibabacloud/r-kvstore/model/CreateAccountRequest.h
@@ -33,6 +35,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/CreateDedicatedInstanceResult.h
 	include/alibabacloud/r-kvstore/model/CreateDedicatedUserClusterRequest.h
 	include/alibabacloud/r-kvstore/model/CreateDedicatedUserClusterResult.h
+	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheRequest.h
+	include/alibabacloud/r-kvstore/model/CreateGlobalDistributeCacheResult.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceRequest.h
 	include/alibabacloud/r-kvstore/model/CreateInstanceResult.h
 	include/alibabacloud/r-kvstore/model/CreateUserClusterHostRequest.h
@@ -67,6 +71,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedClusterInstanceListResult.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeDedicatedUserClusterResult.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheRequest.h
+	include/alibabacloud/r-kvstore/model/DescribeGlobalDistributeCacheResult.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesRequest.h
 	include/alibabacloud/r-kvstore/model/DescribeHistoryMonitorValuesResult.h
 	include/alibabacloud/r-kvstore/model/DescribeInstanceAttributeRequest.h
@@ -155,6 +161,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/ModifySecurityIpsResult.h
 	include/alibabacloud/r-kvstore/model/ModifyUserClusterHostRequest.h
 	include/alibabacloud/r-kvstore/model/ModifyUserClusterHostResult.h
+	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionRequest.h
+	include/alibabacloud/r-kvstore/model/ReleaseDirectConnectionResult.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionRequest.h
 	include/alibabacloud/r-kvstore/model/ReleaseInstancePublicConnectionResult.h
 	include/alibabacloud/r-kvstore/model/RenewInstanceRequest.h
@@ -180,6 +188,8 @@ set(r-kvstore_public_header_model
 
 set(r-kvstore_src 
 	src/R-kvstoreClient.cc
+	src/model/AllocateDirectConnectionRequest.cc
+	src/model/AllocateDirectConnectionResult.cc
 	src/model/AllocateInstancePublicConnectionRequest.cc
 	src/model/AllocateInstancePublicConnectionResult.cc
 	src/model/CreateAccountRequest.cc
@@ -192,6 +202,8 @@ set(r-kvstore_src
 	src/model/CreateDedicatedInstanceResult.cc
 	src/model/CreateDedicatedUserClusterRequest.cc
 	src/model/CreateDedicatedUserClusterResult.cc
+	src/model/CreateGlobalDistributeCacheRequest.cc
+	src/model/CreateGlobalDistributeCacheResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
 	src/model/CreateUserClusterHostRequest.cc
@@ -226,6 +238,8 @@ set(r-kvstore_src
 	src/model/DescribeDedicatedClusterInstanceListResult.cc
 	src/model/DescribeDedicatedUserClusterRequest.cc
 	src/model/DescribeDedicatedUserClusterResult.cc
+	src/model/DescribeGlobalDistributeCacheRequest.cc
+	src/model/DescribeGlobalDistributeCacheResult.cc
 	src/model/DescribeHistoryMonitorValuesRequest.cc
 	src/model/DescribeHistoryMonitorValuesResult.cc
 	src/model/DescribeInstanceAttributeRequest.cc
@@ -314,6 +328,8 @@ set(r-kvstore_src
 	src/model/ModifySecurityIpsResult.cc
 	src/model/ModifyUserClusterHostRequest.cc
 	src/model/ModifyUserClusterHostResult.cc
+	src/model/ReleaseDirectConnectionRequest.cc
+	src/model/ReleaseDirectConnectionResult.cc
 	src/model/ReleaseInstancePublicConnectionRequest.cc
 	src/model/ReleaseInstancePublicConnectionResult.cc
 	src/model/RenewInstanceRequest.cc

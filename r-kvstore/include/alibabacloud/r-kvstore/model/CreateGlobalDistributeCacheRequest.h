@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
-#define ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
+#ifndef ALIBABACLOUD_R_KVSTORE_MODEL_CREATEGLOBALDISTRIBUTECACHEREQUEST_H_
+#define ALIBABACLOUD_R_KVSTORE_MODEL_CREATEGLOBALDISTRIBUTECACHEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,17 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_R_KVSTORE_EXPORT DeleteInstanceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_R_KVSTORE_EXPORT CreateGlobalDistributeCacheRequest : public RpcServiceRequest
 			{
 
 			public:
-				DeleteInstanceRequest();
-				~DeleteInstanceRequest();
+				CreateGlobalDistributeCacheRequest();
+				~CreateGlobalDistributeCacheRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				bool getReleaseSubInstance()const;
-				void setReleaseSubInstance(bool releaseSubInstance);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
@@ -49,24 +47,20 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getGlobalInstanceId()const;
-				void setGlobalInstanceId(const std::string& globalInstanceId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
+				std::string getSeedSubInstanceId()const;
+				void setSeedSubInstanceId(const std::string& seedSubInstanceId);
 
             private:
 				long resourceOwnerId_;
-				bool releaseSubInstance_;
 				std::string accessKeyId_;
 				std::string securityToken_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string globalInstanceId_;
-				std::string instanceId_;
+				std::string seedSubInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_DELETEINSTANCEREQUEST_H_
+#endif // !ALIBABACLOUD_R_KVSTORE_MODEL_CREATEGLOBALDISTRIBUTECACHEREQUEST_H_

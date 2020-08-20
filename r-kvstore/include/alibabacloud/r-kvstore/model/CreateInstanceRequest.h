@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setSecurityToken(const std::string& securityToken);
 				std::string getBusinessInfo()const;
 				void setBusinessInfo(const std::string& businessInfo);
+				int getShardCount()const;
+				void setShardCount(int shardCount);
 				std::string getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(const std::string& autoRenewPeriod);
 				std::string getPeriod()const;
@@ -91,8 +93,12 @@ namespace AlibabaCloud
 				void setSrcDBInstanceId(const std::string& srcDBInstanceId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				bool getGlobalInstance()const;
+				void setGlobalInstance(bool globalInstance);
 				std::string getToken()const;
 				void setToken(const std::string& token);
+				std::string getGlobalInstanceId()const;
+				void setGlobalInstanceId(const std::string& globalInstanceId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getChargeType()const;
@@ -109,6 +115,7 @@ namespace AlibabaCloud
 				std::string password_;
 				std::string securityToken_;
 				std::string businessInfo_;
+				int shardCount_;
 				std::string autoRenewPeriod_;
 				std::string period_;
 				std::string backupId_;
@@ -129,7 +136,9 @@ namespace AlibabaCloud
 				std::string resourceOwnerAccount_;
 				std::string srcDBInstanceId_;
 				std::string ownerAccount_;
+				bool globalInstance_;
 				std::string token_;
+				std::string globalInstanceId_;
 				std::string vpcId_;
 				std::string chargeType_;
 				std::string config_;

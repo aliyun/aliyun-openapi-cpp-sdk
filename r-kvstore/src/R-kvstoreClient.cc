@@ -51,6 +51,42 @@ R_kvstoreClient::R_kvstoreClient(const std::string & accessKeyId, const std::str
 R_kvstoreClient::~R_kvstoreClient()
 {}
 
+R_kvstoreClient::AllocateDirectConnectionOutcome R_kvstoreClient::allocateDirectConnection(const AllocateDirectConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AllocateDirectConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AllocateDirectConnectionOutcome(AllocateDirectConnectionResult(outcome.result()));
+	else
+		return AllocateDirectConnectionOutcome(outcome.error());
+}
+
+void R_kvstoreClient::allocateDirectConnectionAsync(const AllocateDirectConnectionRequest& request, const AllocateDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, allocateDirectConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::AllocateDirectConnectionOutcomeCallable R_kvstoreClient::allocateDirectConnectionCallable(const AllocateDirectConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AllocateDirectConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->allocateDirectConnection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::AllocateInstancePublicConnectionOutcome R_kvstoreClient::allocateInstancePublicConnection(const AllocateInstancePublicConnectionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,6 +297,42 @@ R_kvstoreClient::CreateDedicatedUserClusterOutcomeCallable R_kvstoreClient::crea
 			[this, request]()
 			{
 			return this->createDedicatedUserCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::CreateGlobalDistributeCacheOutcome R_kvstoreClient::createGlobalDistributeCache(const CreateGlobalDistributeCacheRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateGlobalDistributeCacheOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateGlobalDistributeCacheOutcome(CreateGlobalDistributeCacheResult(outcome.result()));
+	else
+		return CreateGlobalDistributeCacheOutcome(outcome.error());
+}
+
+void R_kvstoreClient::createGlobalDistributeCacheAsync(const CreateGlobalDistributeCacheRequest& request, const CreateGlobalDistributeCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createGlobalDistributeCache(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::CreateGlobalDistributeCacheOutcomeCallable R_kvstoreClient::createGlobalDistributeCacheCallable(const CreateGlobalDistributeCacheRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateGlobalDistributeCacheOutcome()>>(
+			[this, request]()
+			{
+			return this->createGlobalDistributeCache(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -873,6 +945,42 @@ R_kvstoreClient::DescribeDedicatedUserClusterOutcomeCallable R_kvstoreClient::de
 			[this, request]()
 			{
 			return this->describeDedicatedUserCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::DescribeGlobalDistributeCacheOutcome R_kvstoreClient::describeGlobalDistributeCache(const DescribeGlobalDistributeCacheRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGlobalDistributeCacheOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGlobalDistributeCacheOutcome(DescribeGlobalDistributeCacheResult(outcome.result()));
+	else
+		return DescribeGlobalDistributeCacheOutcome(outcome.error());
+}
+
+void R_kvstoreClient::describeGlobalDistributeCacheAsync(const DescribeGlobalDistributeCacheRequest& request, const DescribeGlobalDistributeCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGlobalDistributeCache(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::DescribeGlobalDistributeCacheOutcomeCallable R_kvstoreClient::describeGlobalDistributeCacheCallable(const DescribeGlobalDistributeCacheRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGlobalDistributeCacheOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGlobalDistributeCache(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2457,6 +2565,42 @@ R_kvstoreClient::ModifyUserClusterHostOutcomeCallable R_kvstoreClient::modifyUse
 			[this, request]()
 			{
 			return this->modifyUserClusterHost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+R_kvstoreClient::ReleaseDirectConnectionOutcome R_kvstoreClient::releaseDirectConnection(const ReleaseDirectConnectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseDirectConnectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseDirectConnectionOutcome(ReleaseDirectConnectionResult(outcome.result()));
+	else
+		return ReleaseDirectConnectionOutcome(outcome.error());
+}
+
+void R_kvstoreClient::releaseDirectConnectionAsync(const ReleaseDirectConnectionRequest& request, const ReleaseDirectConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseDirectConnection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::ReleaseDirectConnectionOutcomeCallable R_kvstoreClient::releaseDirectConnectionCallable(const ReleaseDirectConnectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseDirectConnectionOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseDirectConnection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
