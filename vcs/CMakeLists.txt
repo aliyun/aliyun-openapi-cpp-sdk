@@ -93,6 +93,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/ListMotorAlgorithmResultsResult.h
 	include/alibabacloud/vcs/model/ListPersonTraceRequest.h
 	include/alibabacloud/vcs/model/ListPersonTraceResult.h
+	include/alibabacloud/vcs/model/ListPersonVisitCountRequest.h
+	include/alibabacloud/vcs/model/ListPersonVisitCountResult.h
 	include/alibabacloud/vcs/model/ListPersonsRequest.h
 	include/alibabacloud/vcs/model/ListPersonsResult.h
 	include/alibabacloud/vcs/model/RecognizeFaceQualityRequest.h
@@ -196,6 +198,8 @@ set(vcs_src
 	src/model/ListMotorAlgorithmResultsResult.cc
 	src/model/ListPersonTraceRequest.cc
 	src/model/ListPersonTraceResult.cc
+	src/model/ListPersonVisitCountRequest.cc
+	src/model/ListPersonVisitCountResult.cc
 	src/model/ListPersonsRequest.cc
 	src/model/ListPersonsResult.cc
 	src/model/RecognizeFaceQualityRequest.cc

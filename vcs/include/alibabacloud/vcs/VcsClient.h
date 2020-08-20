@@ -94,6 +94,8 @@
 #include "model/ListMotorAlgorithmResultsResult.h"
 #include "model/ListPersonTraceRequest.h"
 #include "model/ListPersonTraceResult.h"
+#include "model/ListPersonVisitCountRequest.h"
+#include "model/ListPersonVisitCountResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
 #include "model/RecognizeFaceQualityRequest.h"
@@ -239,6 +241,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonTraceResult> ListPersonTraceOutcome;
 			typedef std::future<ListPersonTraceOutcome> ListPersonTraceOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonTraceRequest&, const ListPersonTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonTraceAsyncHandler;
+			typedef Outcome<Error, Model::ListPersonVisitCountResult> ListPersonVisitCountOutcome;
+			typedef std::future<ListPersonVisitCountOutcome> ListPersonVisitCountOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListPersonVisitCountRequest&, const ListPersonVisitCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonVisitCountAsyncHandler;
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
@@ -394,6 +399,9 @@ namespace AlibabaCloud
 			ListPersonTraceOutcome listPersonTrace(const Model::ListPersonTraceRequest &request)const;
 			void listPersonTraceAsync(const Model::ListPersonTraceRequest& request, const ListPersonTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonTraceOutcomeCallable listPersonTraceCallable(const Model::ListPersonTraceRequest& request) const;
+			ListPersonVisitCountOutcome listPersonVisitCount(const Model::ListPersonVisitCountRequest &request)const;
+			void listPersonVisitCountAsync(const Model::ListPersonVisitCountRequest& request, const ListPersonVisitCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPersonVisitCountOutcomeCallable listPersonVisitCountCallable(const Model::ListPersonVisitCountRequest& request) const;
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;

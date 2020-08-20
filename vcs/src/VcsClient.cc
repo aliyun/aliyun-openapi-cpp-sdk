@@ -1347,6 +1347,42 @@ VcsClient::ListPersonTraceOutcomeCallable VcsClient::listPersonTraceCallable(con
 	return task->get_future();
 }
 
+VcsClient::ListPersonVisitCountOutcome VcsClient::listPersonVisitCount(const ListPersonVisitCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPersonVisitCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPersonVisitCountOutcome(ListPersonVisitCountResult(outcome.result()));
+	else
+		return ListPersonVisitCountOutcome(outcome.error());
+}
+
+void VcsClient::listPersonVisitCountAsync(const ListPersonVisitCountRequest& request, const ListPersonVisitCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPersonVisitCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListPersonVisitCountOutcomeCallable VcsClient::listPersonVisitCountCallable(const ListPersonVisitCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPersonVisitCountOutcome()>>(
+			[this, request]()
+			{
+			return this->listPersonVisitCount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListPersonsOutcome VcsClient::listPersons(const ListPersonsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
