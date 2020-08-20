@@ -27,6 +27,17 @@ DescribeCursorRequest::DescribeCursorRequest() :
 DescribeCursorRequest::~DescribeCursorRequest()
 {}
 
+int DescribeCursorRequest::getPartitionIndex()const
+{
+	return partitionIndex_;
+}
+
+void DescribeCursorRequest::setPartitionIndex(int partitionIndex)
+{
+	partitionIndex_ = partitionIndex;
+	setBodyParameter("PartitionIndex", std::to_string(partitionIndex));
+}
+
 long DescribeCursorRequest::getStoreId()const
 {
 	return storeId_;

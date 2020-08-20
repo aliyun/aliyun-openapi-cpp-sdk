@@ -75,19 +75,29 @@ namespace AlibabaCloud
 				PullActionDataResult();
 				explicit PullActionDataResult(const std::string &payload);
 				~PullActionDataResult();
+				std::string getMessage()const;
 				std::vector<Action> getActions()const;
 				long getNextMessageId()const;
+				int getPartitionIndex()const;
+				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
+				std::string getDynamicMessage()const;
 				std::string getErrorMessage()const;
+				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				std::vector<Action> actions_;
 				long nextMessageId_;
+				int partitionIndex_;
+				std::string dynamicCode_;
 				std::string errorCode_;
+				std::string dynamicMessage_;
 				std::string errorMessage_;
+				std::string code_;
 				bool success_;
 
 			};

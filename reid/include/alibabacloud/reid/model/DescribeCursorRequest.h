@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DescribeCursorRequest();
 				~DescribeCursorRequest();
 
+				int getPartitionIndex()const;
+				void setPartitionIndex(int partitionIndex);
 				long getStoreId()const;
 				void setStoreId(long storeId);
 				std::string getTime()const;
 				void setTime(const std::string& time);
 
             private:
+				int partitionIndex_;
 				long storeId_;
 				std::string time_;
 

@@ -77,14 +77,14 @@ void PullActionDataResult::parse(const std::string &payload)
 			actionsObject.locationId = std::stol(valueActionsAction["LocationId"].asString());
 		if(!valueActionsAction["StayPeriod"].isNull())
 			actionsObject.stayPeriod = std::stoi(valueActionsAction["StayPeriod"].asString());
+		if(!valueActionsAction["FacePointNumber"].isNull())
+			actionsObject.facePointNumber = std::stoi(valueActionsAction["FacePointNumber"].asString());
 		if(!valueActionsAction["Score"].isNull())
 			actionsObject.score = std::stof(valueActionsAction["Score"].asString());
 		if(!valueActionsAction["SpecialType"].isNull())
 			actionsObject.specialType = valueActionsAction["SpecialType"].asString();
 		if(!valueActionsAction["ImageObjectKey"].isNull())
 			actionsObject.imageObjectKey = valueActionsAction["ImageObjectKey"].asString();
-		if(!valueActionsAction["FacePointNumber"].isNull())
-			actionsObject.facePointNumber = std::stoi(valueActionsAction["FacePointNumber"].asString());
 		auto objectPositionInImageNode = value["ObjectPositionInImage"];
 		if(!objectPositionInImageNode["Bottom"].isNull())
 			actionsObject.objectPositionInImage.bottom = std::stof(objectPositionInImageNode["Bottom"].asString());
@@ -105,11 +105,26 @@ void PullActionDataResult::parse(const std::string &payload)
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["PartitionIndex"].isNull())
+		partitionIndex_ = std::stoi(value["PartitionIndex"].asString());
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["NextMessageId"].isNull())
 		nextMessageId_ = std::stol(value["NextMessageId"].asString());
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
 
+}
+
+std::string PullActionDataResult::getMessage()const
+{
+	return message_;
 }
 
 std::vector<PullActionDataResult::Action> PullActionDataResult::getActions()const
@@ -122,14 +137,34 @@ long PullActionDataResult::getNextMessageId()const
 	return nextMessageId_;
 }
 
+int PullActionDataResult::getPartitionIndex()const
+{
+	return partitionIndex_;
+}
+
+std::string PullActionDataResult::getDynamicCode()const
+{
+	return dynamicCode_;
+}
+
 std::string PullActionDataResult::getErrorCode()const
 {
 	return errorCode_;
 }
 
+std::string PullActionDataResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
+}
+
 std::string PullActionDataResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string PullActionDataResult::getCode()const
+{
+	return code_;
 }
 
 bool PullActionDataResult::getSuccess()const

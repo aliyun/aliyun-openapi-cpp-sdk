@@ -27,6 +27,17 @@ PullActionDataRequest::PullActionDataRequest() :
 PullActionDataRequest::~PullActionDataRequest()
 {}
 
+int PullActionDataRequest::getPartitionIndex()const
+{
+	return partitionIndex_;
+}
+
+void PullActionDataRequest::setPartitionIndex(int partitionIndex)
+{
+	partitionIndex_ = partitionIndex;
+	setBodyParameter("PartitionIndex", std::to_string(partitionIndex));
+}
+
 long PullActionDataRequest::getStoreId()const
 {
 	return storeId_;

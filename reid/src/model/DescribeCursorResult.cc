@@ -45,14 +45,37 @@ void DescribeCursorResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Cursor"].isNull())
 		cursor_ = value["Cursor"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["DynamicCode"].isNull())
+		dynamicCode_ = value["DynamicCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
 
+}
+
+std::string DescribeCursorResult::getMessage()const
+{
+	return message_;
+}
+
+std::string DescribeCursorResult::getDynamicCode()const
+{
+	return dynamicCode_;
 }
 
 std::string DescribeCursorResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+std::string DescribeCursorResult::getDynamicMessage()const
+{
+	return dynamicMessage_;
 }
 
 std::string DescribeCursorResult::getErrorMessage()const
@@ -63,6 +86,11 @@ std::string DescribeCursorResult::getErrorMessage()const
 std::string DescribeCursorResult::getCursor()const
 {
 	return cursor_;
+}
+
+std::string DescribeCursorResult::getCode()const
+{
+	return code_;
 }
 
 bool DescribeCursorResult::getSuccess()const

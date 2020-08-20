@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				PullActionDataRequest();
 				~PullActionDataRequest();
 
+				int getPartitionIndex()const;
+				void setPartitionIndex(int partitionIndex);
 				long getStoreId()const;
 				void setStoreId(long storeId);
 				long getEndMessageId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setStartMessageId(long startMessageId);
 
             private:
+				int partitionIndex_;
 				long storeId_;
 				long endMessageId_;
 				int limit_;

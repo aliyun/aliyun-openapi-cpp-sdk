@@ -37,17 +37,25 @@ namespace AlibabaCloud
 				DescribeCursorResult();
 				explicit DescribeCursorResult(const std::string &payload);
 				~DescribeCursorResult();
+				std::string getMessage()const;
+				std::string getDynamicCode()const;
 				std::string getErrorCode()const;
+				std::string getDynamicMessage()const;
 				std::string getErrorMessage()const;
 				std::string getCursor()const;
+				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::string dynamicCode_;
 				std::string errorCode_;
+				std::string dynamicMessage_;
 				std::string errorMessage_;
 				std::string cursor_;
+				std::string code_;
 				bool success_;
 
 			};
