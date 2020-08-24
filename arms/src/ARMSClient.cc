@@ -591,6 +591,42 @@ ARMSClient::DescribeTraceLocationOutcomeCallable ARMSClient::describeTraceLocati
 	return task->get_future();
 }
 
+ARMSClient::GetAppApiByPageOutcome ARMSClient::getAppApiByPage(const GetAppApiByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppApiByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppApiByPageOutcome(GetAppApiByPageResult(outcome.result()));
+	else
+		return GetAppApiByPageOutcome(outcome.error());
+}
+
+void ARMSClient::getAppApiByPageAsync(const GetAppApiByPageRequest& request, const GetAppApiByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppApiByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::GetAppApiByPageOutcomeCallable ARMSClient::getAppApiByPageCallable(const GetAppApiByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppApiByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppApiByPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::GetConsistencySnapshotOutcome ARMSClient::getConsistencySnapshot(const GetConsistencySnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1197,42 @@ ARMSClient::QueryMetricOutcomeCallable ARMSClient::queryMetricCallable(const Que
 			[this, request]()
 			{
 			return this->queryMetric(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::QueryMetricByPageOutcome ARMSClient::queryMetricByPage(const QueryMetricByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryMetricByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryMetricByPageOutcome(QueryMetricByPageResult(outcome.result()));
+	else
+		return QueryMetricByPageOutcome(outcome.error());
+}
+
+void ARMSClient::queryMetricByPageAsync(const QueryMetricByPageRequest& request, const QueryMetricByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryMetricByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::QueryMetricByPageOutcomeCallable ARMSClient::queryMetricByPageCallable(const QueryMetricByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryMetricByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->queryMetricByPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

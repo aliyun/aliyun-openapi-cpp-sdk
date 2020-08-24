@@ -51,6 +51,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
 	include/alibabacloud/arms/model/DescribeTraceLocationRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
+	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
+	include/alibabacloud/arms/model/GetAppApiByPageResult.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
 	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
 	include/alibabacloud/arms/model/GetMultipleTraceRequest.h
@@ -83,6 +85,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/QueryDatasetResult.h
 	include/alibabacloud/arms/model/QueryMetricRequest.h
 	include/alibabacloud/arms/model/QueryMetricResult.h
+	include/alibabacloud/arms/model/QueryMetricByPageRequest.h
+	include/alibabacloud/arms/model/QueryMetricByPageResult.h
 	include/alibabacloud/arms/model/SearchAlertContactRequest.h
 	include/alibabacloud/arms/model/SearchAlertContactResult.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupRequest.h
@@ -148,6 +152,8 @@ set(arms_src
 	src/model/DescribeTraceLicenseKeyResult.cc
 	src/model/DescribeTraceLocationRequest.cc
 	src/model/DescribeTraceLocationResult.cc
+	src/model/GetAppApiByPageRequest.cc
+	src/model/GetAppApiByPageResult.cc
 	src/model/GetConsistencySnapshotRequest.cc
 	src/model/GetConsistencySnapshotResult.cc
 	src/model/GetMultipleTraceRequest.cc
@@ -180,6 +186,8 @@ set(arms_src
 	src/model/QueryDatasetResult.cc
 	src/model/QueryMetricRequest.cc
 	src/model/QueryMetricResult.cc
+	src/model/QueryMetricByPageRequest.cc
+	src/model/QueryMetricByPageResult.cc
 	src/model/SearchAlertContactRequest.cc
 	src/model/SearchAlertContactResult.cc
 	src/model/SearchAlertContactGroupRequest.cc

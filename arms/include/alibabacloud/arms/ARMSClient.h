@@ -52,6 +52,8 @@
 #include "model/DescribeTraceLicenseKeyResult.h"
 #include "model/DescribeTraceLocationRequest.h"
 #include "model/DescribeTraceLocationResult.h"
+#include "model/GetAppApiByPageRequest.h"
+#include "model/GetAppApiByPageResult.h"
 #include "model/GetConsistencySnapshotRequest.h"
 #include "model/GetConsistencySnapshotResult.h"
 #include "model/GetMultipleTraceRequest.h"
@@ -84,6 +86,8 @@
 #include "model/QueryDatasetResult.h"
 #include "model/QueryMetricRequest.h"
 #include "model/QueryMetricResult.h"
+#include "model/QueryMetricByPageRequest.h"
+#include "model/QueryMetricByPageResult.h"
 #include "model/SearchAlertContactRequest.h"
 #include "model/SearchAlertContactResult.h"
 #include "model/SearchAlertContactGroupRequest.h"
@@ -170,6 +174,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTraceLocationResult> DescribeTraceLocationOutcome;
 			typedef std::future<DescribeTraceLocationOutcome> DescribeTraceLocationOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DescribeTraceLocationRequest&, const DescribeTraceLocationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceLocationAsyncHandler;
+			typedef Outcome<Error, Model::GetAppApiByPageResult> GetAppApiByPageOutcome;
+			typedef std::future<GetAppApiByPageOutcome> GetAppApiByPageOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::GetAppApiByPageRequest&, const GetAppApiByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppApiByPageAsyncHandler;
 			typedef Outcome<Error, Model::GetConsistencySnapshotResult> GetConsistencySnapshotOutcome;
 			typedef std::future<GetConsistencySnapshotOutcome> GetConsistencySnapshotOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::GetConsistencySnapshotRequest&, const GetConsistencySnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetConsistencySnapshotAsyncHandler;
@@ -218,6 +225,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMetricResult> QueryMetricOutcome;
 			typedef std::future<QueryMetricOutcome> QueryMetricOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::QueryMetricRequest&, const QueryMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMetricAsyncHandler;
+			typedef Outcome<Error, Model::QueryMetricByPageResult> QueryMetricByPageOutcome;
+			typedef std::future<QueryMetricByPageOutcome> QueryMetricByPageOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::QueryMetricByPageRequest&, const QueryMetricByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMetricByPageAsyncHandler;
 			typedef Outcome<Error, Model::SearchAlertContactResult> SearchAlertContactOutcome;
 			typedef std::future<SearchAlertContactOutcome> SearchAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchAlertContactRequest&, const SearchAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchAlertContactAsyncHandler;
@@ -316,6 +326,9 @@ namespace AlibabaCloud
 			DescribeTraceLocationOutcome describeTraceLocation(const Model::DescribeTraceLocationRequest &request)const;
 			void describeTraceLocationAsync(const Model::DescribeTraceLocationRequest& request, const DescribeTraceLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTraceLocationOutcomeCallable describeTraceLocationCallable(const Model::DescribeTraceLocationRequest& request) const;
+			GetAppApiByPageOutcome getAppApiByPage(const Model::GetAppApiByPageRequest &request)const;
+			void getAppApiByPageAsync(const Model::GetAppApiByPageRequest& request, const GetAppApiByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAppApiByPageOutcomeCallable getAppApiByPageCallable(const Model::GetAppApiByPageRequest& request) const;
 			GetConsistencySnapshotOutcome getConsistencySnapshot(const Model::GetConsistencySnapshotRequest &request)const;
 			void getConsistencySnapshotAsync(const Model::GetConsistencySnapshotRequest& request, const GetConsistencySnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetConsistencySnapshotOutcomeCallable getConsistencySnapshotCallable(const Model::GetConsistencySnapshotRequest& request) const;
@@ -364,6 +377,9 @@ namespace AlibabaCloud
 			QueryMetricOutcome queryMetric(const Model::QueryMetricRequest &request)const;
 			void queryMetricAsync(const Model::QueryMetricRequest& request, const QueryMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMetricOutcomeCallable queryMetricCallable(const Model::QueryMetricRequest& request) const;
+			QueryMetricByPageOutcome queryMetricByPage(const Model::QueryMetricByPageRequest &request)const;
+			void queryMetricByPageAsync(const Model::QueryMetricByPageRequest& request, const QueryMetricByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryMetricByPageOutcomeCallable queryMetricByPageCallable(const Model::QueryMetricByPageRequest& request) const;
 			SearchAlertContactOutcome searchAlertContact(const Model::SearchAlertContactRequest &request)const;
 			void searchAlertContactAsync(const Model::SearchAlertContactRequest& request, const SearchAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchAlertContactOutcomeCallable searchAlertContactCallable(const Model::SearchAlertContactRequest& request) const;
