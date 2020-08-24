@@ -21,16 +21,48 @@ set(devops-rdc_public_header
 	include/alibabacloud/devops-rdc/Devops_rdcExport.h )
 
 set(devops-rdc_public_header_model 
+	include/alibabacloud/devops-rdc/model/BatchInsertMembersRequest.h
+	include/alibabacloud/devops-rdc/model/BatchInsertMembersResult.h
 	include/alibabacloud/devops-rdc/model/CancelPipelineRequest.h
 	include/alibabacloud/devops-rdc/model/CancelPipelineResult.h
+	include/alibabacloud/devops-rdc/model/CheckAliyunAccountExistsRequest.h
+	include/alibabacloud/devops-rdc/model/CheckAliyunAccountExistsResult.h
 	include/alibabacloud/devops-rdc/model/CreateCredentialRequest.h
 	include/alibabacloud/devops-rdc/model/CreateCredentialResult.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsOrganizationRequest.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsOrganizationResult.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectRequest.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectResult.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectSprintRequest.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectSprintResult.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectTaskRequest.h
+	include/alibabacloud/devops-rdc/model/CreateDevopsProjectTaskResult.h
 	include/alibabacloud/devops-rdc/model/CreatePipelineRequest.h
 	include/alibabacloud/devops-rdc/model/CreatePipelineResult.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionRequest.h
 	include/alibabacloud/devops-rdc/model/CreateServiceConnectionResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsOrganizationMembersResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectMembersRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectMembersResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectSprintRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectSprintResult.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectTaskRequest.h
+	include/alibabacloud/devops-rdc/model/DeleteDevopsProjectTaskResult.h
 	include/alibabacloud/devops-rdc/model/ExecutePipelineRequest.h
 	include/alibabacloud/devops-rdc/model/ExecutePipelineResult.h
+	include/alibabacloud/devops-rdc/model/GetDevopsOrganizationMembersRequest.h
+	include/alibabacloud/devops-rdc/model/GetDevopsOrganizationMembersResult.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectInfoRequest.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectInfoResult.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectMembersRequest.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectMembersResult.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectSprintInfoRequest.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectSprintInfoResult.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoRequest.h
+	include/alibabacloud/devops-rdc/model/GetDevopsProjectTaskInfoResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceBuildNumberStatusRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceBuildNumberStatusResult.h
 	include/alibabacloud/devops-rdc/model/GetPipelineInstanceGroupStatusRequest.h
@@ -43,25 +75,79 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/GetPipelineLogResult.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusRequest.h
 	include/alibabacloud/devops-rdc/model/GetPipleineLatestInstanceStatusResult.h
+	include/alibabacloud/devops-rdc/model/GetUserByAliyunUidRequest.h
+	include/alibabacloud/devops-rdc/model/GetUserByAliyunUidResult.h
+	include/alibabacloud/devops-rdc/model/InsertDevopsUserRequest.h
+	include/alibabacloud/devops-rdc/model/InsertDevopsUserResult.h
+	include/alibabacloud/devops-rdc/model/InsertProjectMembersRequest.h
+	include/alibabacloud/devops-rdc/model/InsertProjectMembersResult.h
 	include/alibabacloud/devops-rdc/model/ListCredentialsRequest.h
 	include/alibabacloud/devops-rdc/model/ListCredentialsResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectSprintsRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectSprintsResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowStatusRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTaskFlowStatusResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTasksRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsProjectTasksResult.h
+	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigRequest.h
+	include/alibabacloud/devops-rdc/model/ListDevopsScenarioFieldConfigResult.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesRequest.h
 	include/alibabacloud/devops-rdc/model/ListPipelinesResult.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsRequest.h
-	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h )
+	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectRequest.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectResult.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintRequest.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintResult.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskRequest.h
+	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectTaskResult.h )
 
 set(devops-rdc_src 
 	src/Devops-rdcClient.cc
+	src/model/BatchInsertMembersRequest.cc
+	src/model/BatchInsertMembersResult.cc
 	src/model/CancelPipelineRequest.cc
 	src/model/CancelPipelineResult.cc
+	src/model/CheckAliyunAccountExistsRequest.cc
+	src/model/CheckAliyunAccountExistsResult.cc
 	src/model/CreateCredentialRequest.cc
 	src/model/CreateCredentialResult.cc
+	src/model/CreateDevopsOrganizationRequest.cc
+	src/model/CreateDevopsOrganizationResult.cc
+	src/model/CreateDevopsProjectRequest.cc
+	src/model/CreateDevopsProjectResult.cc
+	src/model/CreateDevopsProjectSprintRequest.cc
+	src/model/CreateDevopsProjectSprintResult.cc
+	src/model/CreateDevopsProjectTaskRequest.cc
+	src/model/CreateDevopsProjectTaskResult.cc
 	src/model/CreatePipelineRequest.cc
 	src/model/CreatePipelineResult.cc
 	src/model/CreateServiceConnectionRequest.cc
 	src/model/CreateServiceConnectionResult.cc
+	src/model/DeleteDevopsOrganizationMembersRequest.cc
+	src/model/DeleteDevopsOrganizationMembersResult.cc
+	src/model/DeleteDevopsProjectRequest.cc
+	src/model/DeleteDevopsProjectResult.cc
+	src/model/DeleteDevopsProjectMembersRequest.cc
+	src/model/DeleteDevopsProjectMembersResult.cc
+	src/model/DeleteDevopsProjectSprintRequest.cc
+	src/model/DeleteDevopsProjectSprintResult.cc
+	src/model/DeleteDevopsProjectTaskRequest.cc
+	src/model/DeleteDevopsProjectTaskResult.cc
 	src/model/ExecutePipelineRequest.cc
 	src/model/ExecutePipelineResult.cc
+	src/model/GetDevopsOrganizationMembersRequest.cc
+	src/model/GetDevopsOrganizationMembersResult.cc
+	src/model/GetDevopsProjectInfoRequest.cc
+	src/model/GetDevopsProjectInfoResult.cc
+	src/model/GetDevopsProjectMembersRequest.cc
+	src/model/GetDevopsProjectMembersResult.cc
+	src/model/GetDevopsProjectSprintInfoRequest.cc
+	src/model/GetDevopsProjectSprintInfoResult.cc
+	src/model/GetDevopsProjectTaskInfoRequest.cc
+	src/model/GetDevopsProjectTaskInfoResult.cc
 	src/model/GetPipelineInstanceBuildNumberStatusRequest.cc
 	src/model/GetPipelineInstanceBuildNumberStatusResult.cc
 	src/model/GetPipelineInstanceGroupStatusRequest.cc
@@ -74,12 +160,34 @@ set(devops-rdc_src
 	src/model/GetPipelineLogResult.cc
 	src/model/GetPipleineLatestInstanceStatusRequest.cc
 	src/model/GetPipleineLatestInstanceStatusResult.cc
+	src/model/GetUserByAliyunUidRequest.cc
+	src/model/GetUserByAliyunUidResult.cc
+	src/model/InsertDevopsUserRequest.cc
+	src/model/InsertDevopsUserResult.cc
+	src/model/InsertProjectMembersRequest.cc
+	src/model/InsertProjectMembersResult.cc
 	src/model/ListCredentialsRequest.cc
 	src/model/ListCredentialsResult.cc
+	src/model/ListDevopsProjectSprintsRequest.cc
+	src/model/ListDevopsProjectSprintsResult.cc
+	src/model/ListDevopsProjectTaskFlowRequest.cc
+	src/model/ListDevopsProjectTaskFlowResult.cc
+	src/model/ListDevopsProjectTaskFlowStatusRequest.cc
+	src/model/ListDevopsProjectTaskFlowStatusResult.cc
+	src/model/ListDevopsProjectTasksRequest.cc
+	src/model/ListDevopsProjectTasksResult.cc
+	src/model/ListDevopsScenarioFieldConfigRequest.cc
+	src/model/ListDevopsScenarioFieldConfigResult.cc
 	src/model/ListPipelinesRequest.cc
 	src/model/ListPipelinesResult.cc
 	src/model/ListServiceConnectionsRequest.cc
-	src/model/ListServiceConnectionsResult.cc )
+	src/model/ListServiceConnectionsResult.cc
+	src/model/UpdateDevopsProjectRequest.cc
+	src/model/UpdateDevopsProjectResult.cc
+	src/model/UpdateDevopsProjectSprintRequest.cc
+	src/model/UpdateDevopsProjectSprintResult.cc
+	src/model/UpdateDevopsProjectTaskRequest.cc
+	src/model/UpdateDevopsProjectTaskResult.cc )
 
 add_library(devops-rdc ${LIB_TYPE}
 	${devops-rdc_public_header}
