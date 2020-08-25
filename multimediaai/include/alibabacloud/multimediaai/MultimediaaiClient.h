@@ -32,6 +32,8 @@
 #include "model/CreateGifTaskResult.h"
 #include "model/CreateLabelTaskRequest.h"
 #include "model/CreateLabelTaskResult.h"
+#include "model/CreateTemplateRequest.h"
+#include "model/CreateTemplateResult.h"
 #include "model/DeleteFaceGroupRequest.h"
 #include "model/DeleteFaceGroupResult.h"
 #include "model/DeleteFaceImageRequest.h"
@@ -42,14 +44,20 @@
 #include "model/GetTaskResultResult.h"
 #include "model/GetTaskStatusRequest.h"
 #include "model/GetTaskStatusResult.h"
+#include "model/GetTemplateRequest.h"
+#include "model/GetTemplateResult.h"
 #include "model/ListFaceGroupsRequest.h"
 #include "model/ListFaceGroupsResult.h"
 #include "model/ListFaceImagesRequest.h"
 #include "model/ListFaceImagesResult.h"
 #include "model/ListFacePersonsRequest.h"
 #include "model/ListFacePersonsResult.h"
+#include "model/ListTemplatesRequest.h"
+#include "model/ListTemplatesResult.h"
 #include "model/RegisterFaceImageRequest.h"
 #include "model/RegisterFaceImageResult.h"
+#include "model/UpdateTemplateRequest.h"
+#include "model/UpdateTemplateResult.h"
 
 
 namespace AlibabaCloud
@@ -74,6 +82,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateLabelTaskResult> CreateLabelTaskOutcome;
 			typedef std::future<CreateLabelTaskOutcome> CreateLabelTaskOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::CreateLabelTaskRequest&, const CreateLabelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLabelTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateTemplateResult> CreateTemplateOutcome;
+			typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::CreateTemplateRequest&, const CreateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DeleteFaceGroupResult> DeleteFaceGroupOutcome;
 			typedef std::future<DeleteFaceGroupOutcome> DeleteFaceGroupOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::DeleteFaceGroupRequest&, const DeleteFaceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceGroupAsyncHandler;
@@ -89,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTaskStatusResult> GetTaskStatusOutcome;
 			typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::GetTaskStatusRequest&, const GetTaskStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetTemplateResult> GetTemplateOutcome;
+			typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::GetTemplateRequest&, const GetTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTemplateAsyncHandler;
 			typedef Outcome<Error, Model::ListFaceGroupsResult> ListFaceGroupsOutcome;
 			typedef std::future<ListFaceGroupsOutcome> ListFaceGroupsOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::ListFaceGroupsRequest&, const ListFaceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceGroupsAsyncHandler;
@@ -98,9 +112,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFacePersonsResult> ListFacePersonsOutcome;
 			typedef std::future<ListFacePersonsOutcome> ListFacePersonsOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::ListFacePersonsRequest&, const ListFacePersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFacePersonsAsyncHandler;
+			typedef Outcome<Error, Model::ListTemplatesResult> ListTemplatesOutcome;
+			typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::ListTemplatesRequest&, const ListTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::RegisterFaceImageResult> RegisterFaceImageOutcome;
 			typedef std::future<RegisterFaceImageOutcome> RegisterFaceImageOutcomeCallable;
 			typedef std::function<void(const MultimediaaiClient*, const Model::RegisterFaceImageRequest&, const RegisterFaceImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterFaceImageAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTemplateResult> UpdateTemplateOutcome;
+			typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
+			typedef std::function<void(const MultimediaaiClient*, const Model::UpdateTemplateRequest&, const UpdateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTemplateAsyncHandler;
 
 			MultimediaaiClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			MultimediaaiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -121,6 +141,9 @@ namespace AlibabaCloud
 			CreateLabelTaskOutcome createLabelTask(const Model::CreateLabelTaskRequest &request)const;
 			void createLabelTaskAsync(const Model::CreateLabelTaskRequest& request, const CreateLabelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLabelTaskOutcomeCallable createLabelTaskCallable(const Model::CreateLabelTaskRequest& request) const;
+			CreateTemplateOutcome createTemplate(const Model::CreateTemplateRequest &request)const;
+			void createTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateTemplateOutcomeCallable createTemplateCallable(const Model::CreateTemplateRequest& request) const;
 			DeleteFaceGroupOutcome deleteFaceGroup(const Model::DeleteFaceGroupRequest &request)const;
 			void deleteFaceGroupAsync(const Model::DeleteFaceGroupRequest& request, const DeleteFaceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceGroupOutcomeCallable deleteFaceGroupCallable(const Model::DeleteFaceGroupRequest& request) const;
@@ -136,6 +159,9 @@ namespace AlibabaCloud
 			GetTaskStatusOutcome getTaskStatus(const Model::GetTaskStatusRequest &request)const;
 			void getTaskStatusAsync(const Model::GetTaskStatusRequest& request, const GetTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTaskStatusOutcomeCallable getTaskStatusCallable(const Model::GetTaskStatusRequest& request) const;
+			GetTemplateOutcome getTemplate(const Model::GetTemplateRequest &request)const;
+			void getTemplateAsync(const Model::GetTemplateRequest& request, const GetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTemplateOutcomeCallable getTemplateCallable(const Model::GetTemplateRequest& request) const;
 			ListFaceGroupsOutcome listFaceGroups(const Model::ListFaceGroupsRequest &request)const;
 			void listFaceGroupsAsync(const Model::ListFaceGroupsRequest& request, const ListFaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFaceGroupsOutcomeCallable listFaceGroupsCallable(const Model::ListFaceGroupsRequest& request) const;
@@ -145,9 +171,15 @@ namespace AlibabaCloud
 			ListFacePersonsOutcome listFacePersons(const Model::ListFacePersonsRequest &request)const;
 			void listFacePersonsAsync(const Model::ListFacePersonsRequest& request, const ListFacePersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFacePersonsOutcomeCallable listFacePersonsCallable(const Model::ListFacePersonsRequest& request) const;
+			ListTemplatesOutcome listTemplates(const Model::ListTemplatesRequest &request)const;
+			void listTemplatesAsync(const Model::ListTemplatesRequest& request, const ListTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTemplatesOutcomeCallable listTemplatesCallable(const Model::ListTemplatesRequest& request) const;
 			RegisterFaceImageOutcome registerFaceImage(const Model::RegisterFaceImageRequest &request)const;
 			void registerFaceImageAsync(const Model::RegisterFaceImageRequest& request, const RegisterFaceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterFaceImageOutcomeCallable registerFaceImageCallable(const Model::RegisterFaceImageRequest& request) const;
+			UpdateTemplateOutcome updateTemplate(const Model::UpdateTemplateRequest &request)const;
+			void updateTemplateAsync(const Model::UpdateTemplateRequest& request, const UpdateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTemplateOutcomeCallable updateTemplateCallable(const Model::UpdateTemplateRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

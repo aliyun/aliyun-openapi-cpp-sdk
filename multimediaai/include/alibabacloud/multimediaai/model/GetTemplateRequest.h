@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
-#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATEREQUEST_H_
+#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/multimediaai/MultimediaaiExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT RegisterFaceImageResult : public ServiceResult
+			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT GetTemplateRequest : public RpcServiceRequest
 			{
+
 			public:
-				struct FaceImage
-				{
-					long faceImageId;
-				};
+				GetTemplateRequest();
+				~GetTemplateRequest();
 
+				long getTemplateId()const;
+				void setTemplateId(long templateId);
 
-				RegisterFaceImageResult();
-				explicit RegisterFaceImageResult(const std::string &payload);
-				~RegisterFaceImageResult();
-				std::vector<FaceImage> getFaceImages()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::vector<FaceImage> faceImages_;
+            private:
+				long templateId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATEREQUEST_H_

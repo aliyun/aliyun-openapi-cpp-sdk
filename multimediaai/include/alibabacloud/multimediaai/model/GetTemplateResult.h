@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
-#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATERESULT_H_
+#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT RegisterFaceImageResult : public ServiceResult
+			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT GetTemplateResult : public ServiceResult
 			{
 			public:
-				struct FaceImage
-				{
-					long faceImageId;
-				};
 
 
-				RegisterFaceImageResult();
-				explicit RegisterFaceImageResult(const std::string &payload);
-				~RegisterFaceImageResult();
-				std::vector<FaceImage> getFaceImages()const;
+				GetTemplateResult();
+				explicit GetTemplateResult(const std::string &payload);
+				~GetTemplateResult();
+				bool getIsDefault()const;
+				int getCategory()const;
+				std::string getContent()const;
+				std::string getCreateTime()const;
+				std::string getUpdateTime()const;
+				std::string getTemplateName()const;
+				std::string getTemplateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<FaceImage> faceImages_;
+				bool isDefault_;
+				int category_;
+				std::string content_;
+				std::string createTime_;
+				std::string updateTime_;
+				std::string templateName_;
+				std::string templateId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_GETTEMPLATERESULT_H_

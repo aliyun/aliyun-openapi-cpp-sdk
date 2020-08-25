@@ -231,6 +231,42 @@ MultimediaaiClient::CreateLabelTaskOutcomeCallable MultimediaaiClient::createLab
 	return task->get_future();
 }
 
+MultimediaaiClient::CreateTemplateOutcome MultimediaaiClient::createTemplate(const CreateTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTemplateOutcome(CreateTemplateResult(outcome.result()));
+	else
+		return CreateTemplateOutcome(outcome.error());
+}
+
+void MultimediaaiClient::createTemplateAsync(const CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::CreateTemplateOutcomeCallable MultimediaaiClient::createTemplateCallable(const CreateTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MultimediaaiClient::DeleteFaceGroupOutcome MultimediaaiClient::deleteFaceGroup(const DeleteFaceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +447,42 @@ MultimediaaiClient::GetTaskStatusOutcomeCallable MultimediaaiClient::getTaskStat
 	return task->get_future();
 }
 
+MultimediaaiClient::GetTemplateOutcome MultimediaaiClient::getTemplate(const GetTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTemplateOutcome(GetTemplateResult(outcome.result()));
+	else
+		return GetTemplateOutcome(outcome.error());
+}
+
+void MultimediaaiClient::getTemplateAsync(const GetTemplateRequest& request, const GetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::GetTemplateOutcomeCallable MultimediaaiClient::getTemplateCallable(const GetTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MultimediaaiClient::ListFaceGroupsOutcome MultimediaaiClient::listFaceGroups(const ListFaceGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +591,42 @@ MultimediaaiClient::ListFacePersonsOutcomeCallable MultimediaaiClient::listFaceP
 	return task->get_future();
 }
 
+MultimediaaiClient::ListTemplatesOutcome MultimediaaiClient::listTemplates(const ListTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTemplatesOutcome(ListTemplatesResult(outcome.result()));
+	else
+		return ListTemplatesOutcome(outcome.error());
+}
+
+void MultimediaaiClient::listTemplatesAsync(const ListTemplatesRequest& request, const ListTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::ListTemplatesOutcomeCallable MultimediaaiClient::listTemplatesCallable(const ListTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MultimediaaiClient::RegisterFaceImageOutcome MultimediaaiClient::registerFaceImage(const RegisterFaceImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +657,42 @@ MultimediaaiClient::RegisterFaceImageOutcomeCallable MultimediaaiClient::registe
 			[this, request]()
 			{
 			return this->registerFaceImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MultimediaaiClient::UpdateTemplateOutcome MultimediaaiClient::updateTemplate(const UpdateTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTemplateOutcome(UpdateTemplateResult(outcome.result()));
+	else
+		return UpdateTemplateOutcome(outcome.error());
+}
+
+void MultimediaaiClient::updateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MultimediaaiClient::UpdateTemplateOutcomeCallable MultimediaaiClient::updateTemplateCallable(const UpdateTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

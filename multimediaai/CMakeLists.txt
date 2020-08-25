@@ -31,6 +31,8 @@ set(multimediaai_public_header_model
 	include/alibabacloud/multimediaai/model/CreateGifTaskResult.h
 	include/alibabacloud/multimediaai/model/CreateLabelTaskRequest.h
 	include/alibabacloud/multimediaai/model/CreateLabelTaskResult.h
+	include/alibabacloud/multimediaai/model/CreateTemplateRequest.h
+	include/alibabacloud/multimediaai/model/CreateTemplateResult.h
 	include/alibabacloud/multimediaai/model/DeleteFaceGroupRequest.h
 	include/alibabacloud/multimediaai/model/DeleteFaceGroupResult.h
 	include/alibabacloud/multimediaai/model/DeleteFaceImageRequest.h
@@ -41,14 +43,20 @@ set(multimediaai_public_header_model
 	include/alibabacloud/multimediaai/model/GetTaskResultResult.h
 	include/alibabacloud/multimediaai/model/GetTaskStatusRequest.h
 	include/alibabacloud/multimediaai/model/GetTaskStatusResult.h
+	include/alibabacloud/multimediaai/model/GetTemplateRequest.h
+	include/alibabacloud/multimediaai/model/GetTemplateResult.h
 	include/alibabacloud/multimediaai/model/ListFaceGroupsRequest.h
 	include/alibabacloud/multimediaai/model/ListFaceGroupsResult.h
 	include/alibabacloud/multimediaai/model/ListFaceImagesRequest.h
 	include/alibabacloud/multimediaai/model/ListFaceImagesResult.h
 	include/alibabacloud/multimediaai/model/ListFacePersonsRequest.h
 	include/alibabacloud/multimediaai/model/ListFacePersonsResult.h
+	include/alibabacloud/multimediaai/model/ListTemplatesRequest.h
+	include/alibabacloud/multimediaai/model/ListTemplatesResult.h
 	include/alibabacloud/multimediaai/model/RegisterFaceImageRequest.h
-	include/alibabacloud/multimediaai/model/RegisterFaceImageResult.h )
+	include/alibabacloud/multimediaai/model/RegisterFaceImageResult.h
+	include/alibabacloud/multimediaai/model/UpdateTemplateRequest.h
+	include/alibabacloud/multimediaai/model/UpdateTemplateResult.h )
 
 set(multimediaai_src 
 	src/MultimediaaiClient.cc
@@ -62,6 +70,8 @@ set(multimediaai_src
 	src/model/CreateGifTaskResult.cc
 	src/model/CreateLabelTaskRequest.cc
 	src/model/CreateLabelTaskResult.cc
+	src/model/CreateTemplateRequest.cc
+	src/model/CreateTemplateResult.cc
 	src/model/DeleteFaceGroupRequest.cc
 	src/model/DeleteFaceGroupResult.cc
 	src/model/DeleteFaceImageRequest.cc
@@ -72,14 +82,20 @@ set(multimediaai_src
 	src/model/GetTaskResultResult.cc
 	src/model/GetTaskStatusRequest.cc
 	src/model/GetTaskStatusResult.cc
+	src/model/GetTemplateRequest.cc
+	src/model/GetTemplateResult.cc
 	src/model/ListFaceGroupsRequest.cc
 	src/model/ListFaceGroupsResult.cc
 	src/model/ListFaceImagesRequest.cc
 	src/model/ListFaceImagesResult.cc
 	src/model/ListFacePersonsRequest.cc
 	src/model/ListFacePersonsResult.cc
+	src/model/ListTemplatesRequest.cc
+	src/model/ListTemplatesResult.cc
 	src/model/RegisterFaceImageRequest.cc
-	src/model/RegisterFaceImageResult.cc )
+	src/model/RegisterFaceImageResult.cc
+	src/model/UpdateTemplateRequest.cc
+	src/model/UpdateTemplateResult.cc )
 
 add_library(multimediaai ${LIB_TYPE}
 	${multimediaai_public_header}

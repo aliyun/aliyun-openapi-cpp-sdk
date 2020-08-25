@@ -14,44 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/multimediaai/model/RegisterFaceImageResult.h>
+#include <alibabacloud/multimediaai/model/CreateTemplateResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Multimediaai;
 using namespace AlibabaCloud::Multimediaai::Model;
 
-RegisterFaceImageResult::RegisterFaceImageResult() :
+CreateTemplateResult::CreateTemplateResult() :
 	ServiceResult()
 {}
 
-RegisterFaceImageResult::RegisterFaceImageResult(const std::string &payload) :
+CreateTemplateResult::CreateTemplateResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RegisterFaceImageResult::~RegisterFaceImageResult()
+CreateTemplateResult::~CreateTemplateResult()
 {}
 
-void RegisterFaceImageResult::parse(const std::string &payload)
+void CreateTemplateResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaceImagesNode = value["FaceImages"]["FaceImage"];
-	for (auto valueFaceImagesFaceImage : allFaceImagesNode)
-	{
-		FaceImage faceImagesObject;
-		if(!valueFaceImagesFaceImage["FaceImageId"].isNull())
-			faceImagesObject.faceImageId = std::stol(valueFaceImagesFaceImage["FaceImageId"].asString());
-		faceImages_.push_back(faceImagesObject);
-	}
+	if(!value["TemplateId"].isNull())
+		templateId_ = value["TemplateId"].asString();
 
 }
 
-std::vector<RegisterFaceImageResult::FaceImage> RegisterFaceImageResult::getFaceImages()const
+std::string CreateTemplateResult::getTemplateId()const
 {
-	return faceImages_;
+	return templateId_;
 }
 

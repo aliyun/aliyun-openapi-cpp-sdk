@@ -14,44 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/multimediaai/model/RegisterFaceImageResult.h>
+#include <alibabacloud/multimediaai/model/UpdateTemplateResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Multimediaai;
 using namespace AlibabaCloud::Multimediaai::Model;
 
-RegisterFaceImageResult::RegisterFaceImageResult() :
+UpdateTemplateResult::UpdateTemplateResult() :
 	ServiceResult()
 {}
 
-RegisterFaceImageResult::RegisterFaceImageResult(const std::string &payload) :
+UpdateTemplateResult::UpdateTemplateResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RegisterFaceImageResult::~RegisterFaceImageResult()
+UpdateTemplateResult::~UpdateTemplateResult()
 {}
 
-void RegisterFaceImageResult::parse(const std::string &payload)
+void UpdateTemplateResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allFaceImagesNode = value["FaceImages"]["FaceImage"];
-	for (auto valueFaceImagesFaceImage : allFaceImagesNode)
-	{
-		FaceImage faceImagesObject;
-		if(!valueFaceImagesFaceImage["FaceImageId"].isNull())
-			faceImagesObject.faceImageId = std::stol(valueFaceImagesFaceImage["FaceImageId"].asString());
-		faceImages_.push_back(faceImagesObject);
-	}
 
-}
-
-std::vector<RegisterFaceImageResult::FaceImage> RegisterFaceImageResult::getFaceImages()const
-{
-	return faceImages_;
 }
 

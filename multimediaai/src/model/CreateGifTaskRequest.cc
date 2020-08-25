@@ -49,6 +49,17 @@ void CreateGifTaskRequest::setVideoUrl(const std::string& videoUrl)
 	setParameter("VideoUrl", videoUrl);
 }
 
+std::string CreateGifTaskRequest::getScales()const
+{
+	return scales_;
+}
+
+void CreateGifTaskRequest::setScales(const std::string& scales)
+{
+	scales_ = scales;
+	setBodyParameter("Scales", scales);
+}
+
 std::string CreateGifTaskRequest::getVideoName()const
 {
 	return videoName_;

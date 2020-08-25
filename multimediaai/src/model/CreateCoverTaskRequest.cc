@@ -49,6 +49,17 @@ void CreateCoverTaskRequest::setVideoUrl(const std::string& videoUrl)
 	setParameter("VideoUrl", videoUrl);
 }
 
+std::string CreateCoverTaskRequest::getScales()const
+{
+	return scales_;
+}
+
+void CreateCoverTaskRequest::setScales(const std::string& scales)
+{
+	scales_ = scales;
+	setBodyParameter("Scales", scales);
+}
+
 std::string CreateCoverTaskRequest::getVideoName()const
 {
 	return videoName_;

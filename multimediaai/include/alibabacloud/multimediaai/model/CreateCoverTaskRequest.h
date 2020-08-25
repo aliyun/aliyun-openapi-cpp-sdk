@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setTemplateId(long templateId);
 				std::string getVideoUrl()const;
 				void setVideoUrl(const std::string& videoUrl);
+				std::string getScales()const;
+				void setScales(const std::string& scales);
 				std::string getVideoName()const;
 				void setVideoName(const std::string& videoName);
 				std::string getCallbackUrl()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
             private:
 				long templateId_;
 				std::string videoUrl_;
+				std::string scales_;
 				std::string videoName_;
 				std::string callbackUrl_;
 				std::string applicationId_;

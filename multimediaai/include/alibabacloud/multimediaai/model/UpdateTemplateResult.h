@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
-#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_UPDATETEMPLATERESULT_H_
+#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_UPDATETEMPLATERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT RegisterFaceImageResult : public ServiceResult
+			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT UpdateTemplateResult : public ServiceResult
 			{
 			public:
-				struct FaceImage
-				{
-					long faceImageId;
-				};
 
 
-				RegisterFaceImageResult();
-				explicit RegisterFaceImageResult(const std::string &payload);
-				~RegisterFaceImageResult();
-				std::vector<FaceImage> getFaceImages()const;
+				UpdateTemplateResult();
+				explicit UpdateTemplateResult(const std::string &payload);
+				~UpdateTemplateResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<FaceImage> faceImages_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_REGISTERFACEIMAGERESULT_H_
+#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_UPDATETEMPLATERESULT_H_

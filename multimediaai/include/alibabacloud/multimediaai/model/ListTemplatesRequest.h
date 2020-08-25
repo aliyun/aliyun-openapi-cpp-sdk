@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_CREATEGIFTASKREQUEST_H_
-#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_CREATEGIFTASKREQUEST_H_
+#ifndef ALIBABACLOUD_MULTIMEDIAAI_MODEL_LISTTEMPLATESREQUEST_H_
+#define ALIBABACLOUD_MULTIMEDIAAI_MODEL_LISTTEMPLATESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT CreateGifTaskRequest : public RpcServiceRequest
+			class ALIBABACLOUD_MULTIMEDIAAI_EXPORT ListTemplatesRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateGifTaskRequest();
-				~CreateGifTaskRequest();
+				ListTemplatesRequest();
+				~ListTemplatesRequest();
 
 				long getTemplateId()const;
 				void setTemplateId(long templateId);
-				std::string getVideoUrl()const;
-				void setVideoUrl(const std::string& videoUrl);
-				std::string getScales()const;
-				void setScales(const std::string& scales);
-				std::string getVideoName()const;
-				void setVideoName(const std::string& videoName);
-				std::string getCallbackUrl()const;
-				void setCallbackUrl(const std::string& callbackUrl);
-				std::string getApplicationId()const;
-				void setApplicationId(const std::string& applicationId);
+				int getType()const;
+				void setType(int type);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getTemplateName()const;
+				void setTemplateName(const std::string& templateName);
 
             private:
 				long templateId_;
-				std::string videoUrl_;
-				std::string scales_;
-				std::string videoName_;
-				std::string callbackUrl_;
-				std::string applicationId_;
+				int type_;
+				int pageNumber_;
+				int pageSize_;
+				std::string templateName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_CREATEGIFTASKREQUEST_H_
+#endif // !ALIBABACLOUD_MULTIMEDIAAI_MODEL_LISTTEMPLATESREQUEST_H_
