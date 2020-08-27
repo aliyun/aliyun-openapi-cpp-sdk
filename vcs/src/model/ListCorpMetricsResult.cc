@@ -51,6 +51,16 @@ void ListCorpMetricsResult::parse(const std::string &payload)
 			dataObject.tagMetrics = valueDataDataItem["TagMetrics"].asString();
 		if(!valueDataDataItem["TagValue"].isNull())
 			dataObject.tagValue = valueDataDataItem["TagValue"].asString();
+		if(!valueDataDataItem["DeviceGroupId"].isNull())
+			dataObject.deviceGroupId = valueDataDataItem["DeviceGroupId"].asString();
+		if(!valueDataDataItem["DeviceId"].isNull())
+			dataObject.deviceId = valueDataDataItem["DeviceId"].asString();
+		if(!valueDataDataItem["UserGroupId"].isNull())
+			dataObject.userGroupId = valueDataDataItem["UserGroupId"].asString();
+		if(!valueDataDataItem["PersonId"].isNull())
+			dataObject.personId = valueDataDataItem["PersonId"].asString();
+		if(!valueDataDataItem["DateId"].isNull())
+			dataObject.dateId = valueDataDataItem["DateId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

@@ -43,18 +43,27 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
+				std::string getDeviceGroupList()const;
+				void setDeviceGroupList(const std::string& deviceGroupList);
 				std::string getTagCode()const;
 				void setTagCode(const std::string& tagCode);
+				std::string getUserGroupList()const;
+				void setUserGroupList(const std::string& userGroupList);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
+				std::string getDeviceIdList()const;
+				void setDeviceIdList(const std::string& deviceIdList);
 
             private:
 				std::string corpId_;
 				std::string endTime_;
 				std::string startTime_;
 				std::string pageNumber_;
+				std::string deviceGroupList_;
 				std::string tagCode_;
+				std::string userGroupList_;
 				std::string pageSize_;
+				std::string deviceIdList_;
 
 			};
 		}

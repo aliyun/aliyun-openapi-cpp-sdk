@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPMETRICSRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPMETRICSRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_BINDUSERRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_BINDUSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListCorpGroupMetricsResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT BindUserResult : public ServiceResult
 			{
 			public:
-				struct DataItem
-				{
-					std::string corpId;
-					std::string personID;
-					std::string corpGroupId;
-					std::string deviceGroupId;
-					std::string deviceId;
-					std::string userGroupId;
-					std::string tagMetrics;
-					std::string tagCode;
-					std::string tagValue;
-					std::string dateId;
-				};
 
 
-				ListCorpGroupMetricsResult();
-				explicit ListCorpGroupMetricsResult(const std::string &payload);
-				~ListCorpGroupMetricsResult();
-				int getTotalCount()const;
+				BindUserResult();
+				explicit BindUserResult(const std::string &payload);
+				~BindUserResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<DataItem> getData()const;
+				bool getData()const;
 				std::string getCode()const;
-				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<DataItem> data_;
+				bool data_;
 				std::string code_;
-				std::string success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTCORPGROUPMETRICSRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_BINDUSERRESULT_H_

@@ -35,26 +35,38 @@ namespace AlibabaCloud
 				ListCorpGroupMetricsRequest();
 				~ListCorpGroupMetricsRequest();
 
+				std::string getCorpId()const;
+				void setCorpId(const std::string& corpId);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getDeviceId()const;
+				void setDeviceId(const std::string& deviceId);
 				std::string getPageNumber()const;
 				void setPageNumber(const std::string& pageNumber);
+				std::string getDeviceGroup()const;
+				void setDeviceGroup(const std::string& deviceGroup);
 				std::string getTagCode()const;
 				void setTagCode(const std::string& tagCode);
 				std::string getPageSize()const;
 				void setPageSize(const std::string& pageSize);
+				std::string getUserGroup()const;
+				void setUserGroup(const std::string& userGroup);
 
             private:
+				std::string corpId_;
 				std::string groupId_;
 				std::string endTime_;
 				std::string startTime_;
+				std::string deviceId_;
 				std::string pageNumber_;
+				std::string deviceGroup_;
 				std::string tagCode_;
 				std::string pageSize_;
+				std::string userGroup_;
 
 			};
 		}

@@ -31,21 +31,21 @@ VcsClient::VcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::VcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::VcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 VcsClient::~VcsClient()
@@ -159,6 +159,78 @@ VcsClient::AddMonitorOutcomeCallable VcsClient::addMonitorCallable(const AddMoni
 	return task->get_future();
 }
 
+VcsClient::BindCorpGroupOutcome VcsClient::bindCorpGroup(const BindCorpGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindCorpGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindCorpGroupOutcome(BindCorpGroupResult(outcome.result()));
+	else
+		return BindCorpGroupOutcome(outcome.error());
+}
+
+void VcsClient::bindCorpGroupAsync(const BindCorpGroupRequest& request, const BindCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindCorpGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::BindCorpGroupOutcomeCallable VcsClient::bindCorpGroupCallable(const BindCorpGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindCorpGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->bindCorpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::BindUserOutcome VcsClient::bindUser(const BindUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindUserOutcome(BindUserResult(outcome.result()));
+	else
+		return BindUserOutcome(outcome.error());
+}
+
+void VcsClient::bindUserAsync(const BindUserRequest& request, const BindUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::BindUserOutcomeCallable VcsClient::bindUserCallable(const BindUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindUserOutcome()>>(
+			[this, request]()
+			{
+			return this->bindUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::CreateCorpOutcome VcsClient::createCorp(const CreateCorpRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +297,78 @@ VcsClient::CreateCorpGroupOutcomeCallable VcsClient::createCorpGroupCallable(con
 			[this, request]()
 			{
 			return this->createCorpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::CreateUserOutcome VcsClient::createUser(const CreateUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserOutcome(CreateUserResult(outcome.result()));
+	else
+		return CreateUserOutcome(outcome.error());
+}
+
+void VcsClient::createUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::CreateUserOutcomeCallable VcsClient::createUserCallable(const CreateUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
+			[this, request]()
+			{
+			return this->createUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::CreateUserGroupOutcome VcsClient::createUserGroup(const CreateUserGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateUserGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateUserGroupOutcome(CreateUserGroupResult(outcome.result()));
+	else
+		return CreateUserGroupOutcome(outcome.error());
+}
+
+void VcsClient::createUserGroupAsync(const CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createUserGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::CreateUserGroupOutcomeCallable VcsClient::createUserGroupCallable(const CreateUserGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateUserGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createUserGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -441,6 +585,78 @@ VcsClient::DeleteRecordsOutcomeCallable VcsClient::deleteRecordsCallable(const D
 			[this, request]()
 			{
 			return this->deleteRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteUserOutcome VcsClient::deleteUser(const DeleteUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserOutcome(DeleteUserResult(outcome.result()));
+	else
+		return DeleteUserOutcome(outcome.error());
+}
+
+void VcsClient::deleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteUserOutcomeCallable VcsClient::deleteUserCallable(const DeleteUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteUserGroupOutcome VcsClient::deleteUserGroup(const DeleteUserGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserGroupOutcome(DeleteUserGroupResult(outcome.result()));
+	else
+		return DeleteUserGroupOutcome(outcome.error());
+}
+
+void VcsClient::deleteUserGroupAsync(const DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUserGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteUserGroupOutcomeCallable VcsClient::deleteUserGroupCallable(const DeleteUserGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUserGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +1017,78 @@ VcsClient::GetPersonDetailOutcomeCallable VcsClient::getPersonDetailCallable(con
 			[this, request]()
 			{
 			return this->getPersonDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetPersonListOutcome VcsClient::getPersonList(const GetPersonListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPersonListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPersonListOutcome(GetPersonListResult(outcome.result()));
+	else
+		return GetPersonListOutcome(outcome.error());
+}
+
+void VcsClient::getPersonListAsync(const GetPersonListRequest& request, const GetPersonListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPersonList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetPersonListOutcomeCallable VcsClient::getPersonListCallable(const GetPersonListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPersonListOutcome()>>(
+			[this, request]()
+			{
+			return this->getPersonList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetUserDetailOutcome VcsClient::getUserDetail(const GetUserDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserDetailOutcome(GetUserDetailResult(outcome.result()));
+	else
+		return GetUserDetailOutcome(outcome.error());
+}
+
+void VcsClient::getUserDetailAsync(const GetUserDetailRequest& request, const GetUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetUserDetailOutcomeCallable VcsClient::getUserDetailCallable(const GetUserDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,6 +1707,78 @@ VcsClient::ListPersonsOutcomeCallable VcsClient::listPersonsCallable(const ListP
 	return task->get_future();
 }
 
+VcsClient::ListUserGroupsOutcome VcsClient::listUserGroups(const ListUserGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserGroupsOutcome(ListUserGroupsResult(outcome.result()));
+	else
+		return ListUserGroupsOutcome(outcome.error());
+}
+
+void VcsClient::listUserGroupsAsync(const ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListUserGroupsOutcomeCallable VcsClient::listUserGroupsCallable(const ListUserGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::ListUsersOutcome VcsClient::listUsers(const ListUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUsersOutcome(ListUsersResult(outcome.result()));
+	else
+		return ListUsersOutcome(outcome.error());
+}
+
+void VcsClient::listUsersAsync(const ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListUsersOutcomeCallable VcsClient::listUsersCallable(const ListUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->listUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::RecognizeFaceQualityOutcome VcsClient::recognizeFaceQuality(const RecognizeFaceQualityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1743,6 +2103,78 @@ VcsClient::SyncDeviceTimeOutcomeCallable VcsClient::syncDeviceTimeCallable(const
 	return task->get_future();
 }
 
+VcsClient::UnbindCorpGroupOutcome VcsClient::unbindCorpGroup(const UnbindCorpGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindCorpGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindCorpGroupOutcome(UnbindCorpGroupResult(outcome.result()));
+	else
+		return UnbindCorpGroupOutcome(outcome.error());
+}
+
+void VcsClient::unbindCorpGroupAsync(const UnbindCorpGroupRequest& request, const UnbindCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindCorpGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UnbindCorpGroupOutcomeCallable VcsClient::unbindCorpGroupCallable(const UnbindCorpGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindCorpGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindCorpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UnbindUserOutcome VcsClient::unbindUser(const UnbindUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindUserOutcome(UnbindUserResult(outcome.result()));
+	else
+		return UnbindUserOutcome(outcome.error());
+}
+
+void VcsClient::unbindUserAsync(const UnbindUserRequest& request, const UnbindUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UnbindUserOutcomeCallable VcsClient::unbindUserCallable(const UnbindUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindUserOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::UpdateCorpOutcome VcsClient::updateCorp(const UpdateCorpRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1851,6 +2283,78 @@ VcsClient::UpdateMonitorOutcomeCallable VcsClient::updateMonitorCallable(const U
 	return task->get_future();
 }
 
+VcsClient::UpdateUserOutcome VcsClient::updateUser(const UpdateUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserOutcome(UpdateUserResult(outcome.result()));
+	else
+		return UpdateUserOutcome(outcome.error());
+}
+
+void VcsClient::updateUserAsync(const UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UpdateUserOutcomeCallable VcsClient::updateUserCallable(const UpdateUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UpdateUserGroupOutcome VcsClient::updateUserGroup(const UpdateUserGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateUserGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateUserGroupOutcome(UpdateUserGroupResult(outcome.result()));
+	else
+		return UpdateUserGroupOutcome(outcome.error());
+}
+
+void VcsClient::updateUserGroupAsync(const UpdateUserGroupRequest& request, const UpdateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateUserGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UpdateUserGroupOutcomeCallable VcsClient::updateUserGroupCallable(const UpdateUserGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateUserGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateUserGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::UploadFileOutcome VcsClient::uploadFile(const UploadFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +2385,42 @@ VcsClient::UploadFileOutcomeCallable VcsClient::uploadFileCallable(const UploadF
 			[this, request]()
 			{
 			return this->uploadFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UploadImageOutcome VcsClient::uploadImage(const UploadImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadImageOutcome(UploadImageResult(outcome.result()));
+	else
+		return UploadImageOutcome(outcome.error());
+}
+
+void VcsClient::uploadImageAsync(const UploadImageRequest& request, const UploadImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UploadImageOutcomeCallable VcsClient::uploadImageCallable(const UploadImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadImageOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

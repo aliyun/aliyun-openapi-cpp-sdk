@@ -28,10 +28,18 @@
 #include "model/AddDeviceResult.h"
 #include "model/AddMonitorRequest.h"
 #include "model/AddMonitorResult.h"
+#include "model/BindCorpGroupRequest.h"
+#include "model/BindCorpGroupResult.h"
+#include "model/BindUserRequest.h"
+#include "model/BindUserResult.h"
 #include "model/CreateCorpRequest.h"
 #include "model/CreateCorpResult.h"
 #include "model/CreateCorpGroupRequest.h"
 #include "model/CreateCorpGroupResult.h"
+#include "model/CreateUserRequest.h"
+#include "model/CreateUserResult.h"
+#include "model/CreateUserGroupRequest.h"
+#include "model/CreateUserGroupResult.h"
 #include "model/CreateVideoComposeTaskRequest.h"
 #include "model/CreateVideoComposeTaskResult.h"
 #include "model/CreateVideoSummaryTaskRequest.h"
@@ -44,6 +52,10 @@
 #include "model/DeleteDeviceResult.h"
 #include "model/DeleteRecordsRequest.h"
 #include "model/DeleteRecordsResult.h"
+#include "model/DeleteUserRequest.h"
+#include "model/DeleteUserResult.h"
+#include "model/DeleteUserGroupRequest.h"
+#include "model/DeleteUserGroupResult.h"
 #include "model/DeleteVideoSummaryTaskRequest.h"
 #include "model/DeleteVideoSummaryTaskResult.h"
 #include "model/GetBodyOptionsRequest.h"
@@ -64,6 +76,10 @@
 #include "model/GetMonitorResultResult.h"
 #include "model/GetPersonDetailRequest.h"
 #include "model/GetPersonDetailResult.h"
+#include "model/GetPersonListRequest.h"
+#include "model/GetPersonListResult.h"
+#include "model/GetUserDetailRequest.h"
+#include "model/GetUserDetailResult.h"
 #include "model/GetVideoComposeResultRequest.h"
 #include "model/GetVideoComposeResultResult.h"
 #include "model/GetVideoSummaryTaskResultRequest.h"
@@ -98,6 +114,10 @@
 #include "model/ListPersonVisitCountResult.h"
 #include "model/ListPersonsRequest.h"
 #include "model/ListPersonsResult.h"
+#include "model/ListUserGroupsRequest.h"
+#include "model/ListUserGroupsResult.h"
+#include "model/ListUsersRequest.h"
+#include "model/ListUsersResult.h"
 #include "model/RecognizeFaceQualityRequest.h"
 #include "model/RecognizeFaceQualityResult.h"
 #include "model/RecognizeImageRequest.h"
@@ -116,14 +136,24 @@
 #include "model/StopMonitorResult.h"
 #include "model/SyncDeviceTimeRequest.h"
 #include "model/SyncDeviceTimeResult.h"
+#include "model/UnbindCorpGroupRequest.h"
+#include "model/UnbindCorpGroupResult.h"
+#include "model/UnbindUserRequest.h"
+#include "model/UnbindUserResult.h"
 #include "model/UpdateCorpRequest.h"
 #include "model/UpdateCorpResult.h"
 #include "model/UpdateDeviceRequest.h"
 #include "model/UpdateDeviceResult.h"
 #include "model/UpdateMonitorRequest.h"
 #include "model/UpdateMonitorResult.h"
+#include "model/UpdateUserRequest.h"
+#include "model/UpdateUserResult.h"
+#include "model/UpdateUserGroupRequest.h"
+#include "model/UpdateUserGroupResult.h"
 #include "model/UploadFileRequest.h"
 #include "model/UploadFileResult.h"
+#include "model/UploadImageRequest.h"
+#include "model/UploadImageResult.h"
 
 
 namespace AlibabaCloud
@@ -142,12 +172,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddMonitorResult> AddMonitorOutcome;
 			typedef std::future<AddMonitorOutcome> AddMonitorOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::AddMonitorRequest&, const AddMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddMonitorAsyncHandler;
+			typedef Outcome<Error, Model::BindCorpGroupResult> BindCorpGroupOutcome;
+			typedef std::future<BindCorpGroupOutcome> BindCorpGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::BindCorpGroupRequest&, const BindCorpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindCorpGroupAsyncHandler;
+			typedef Outcome<Error, Model::BindUserResult> BindUserOutcome;
+			typedef std::future<BindUserOutcome> BindUserOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::BindUserRequest&, const BindUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindUserAsyncHandler;
 			typedef Outcome<Error, Model::CreateCorpResult> CreateCorpOutcome;
 			typedef std::future<CreateCorpOutcome> CreateCorpOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateCorpRequest&, const CreateCorpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpAsyncHandler;
 			typedef Outcome<Error, Model::CreateCorpGroupResult> CreateCorpGroupOutcome;
 			typedef std::future<CreateCorpGroupOutcome> CreateCorpGroupOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateCorpGroupRequest&, const CreateCorpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorpGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateUserResult> CreateUserOutcome;
+			typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::CreateUserRequest&, const CreateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+			typedef Outcome<Error, Model::CreateUserGroupResult> CreateUserGroupOutcome;
+			typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::CreateUserGroupRequest&, const CreateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateVideoComposeTaskResult> CreateVideoComposeTaskOutcome;
 			typedef std::future<CreateVideoComposeTaskOutcome> CreateVideoComposeTaskOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::CreateVideoComposeTaskRequest&, const CreateVideoComposeTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoComposeTaskAsyncHandler;
@@ -166,6 +208,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteRecordsResult> DeleteRecordsOutcome;
 			typedef std::future<DeleteRecordsOutcome> DeleteRecordsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::DeleteRecordsRequest&, const DeleteRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserResult> DeleteUserOutcome;
+			typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::DeleteUserRequest&, const DeleteUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserGroupResult> DeleteUserGroupOutcome;
+			typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::DeleteUserGroupRequest&, const DeleteUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteVideoSummaryTaskResult> DeleteVideoSummaryTaskOutcome;
 			typedef std::future<DeleteVideoSummaryTaskOutcome> DeleteVideoSummaryTaskOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::DeleteVideoSummaryTaskRequest&, const DeleteVideoSummaryTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoSummaryTaskAsyncHandler;
@@ -196,6 +244,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPersonDetailResult> GetPersonDetailOutcome;
 			typedef std::future<GetPersonDetailOutcome> GetPersonDetailOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetPersonDetailRequest&, const GetPersonDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetPersonListResult> GetPersonListOutcome;
+			typedef std::future<GetPersonListOutcome> GetPersonListOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetPersonListRequest&, const GetPersonListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonListAsyncHandler;
+			typedef Outcome<Error, Model::GetUserDetailResult> GetUserDetailOutcome;
+			typedef std::future<GetUserDetailOutcome> GetUserDetailOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::GetUserDetailRequest&, const GetUserDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetVideoComposeResultResult> GetVideoComposeResultOutcome;
 			typedef std::future<GetVideoComposeResultOutcome> GetVideoComposeResultOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetVideoComposeResultRequest&, const GetVideoComposeResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoComposeResultAsyncHandler;
@@ -247,6 +301,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPersonsResult> ListPersonsOutcome;
 			typedef std::future<ListPersonsOutcome> ListPersonsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListPersonsRequest&, const ListPersonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPersonsAsyncHandler;
+			typedef Outcome<Error, Model::ListUserGroupsResult> ListUserGroupsOutcome;
+			typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListUserGroupsRequest&, const ListUserGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
+			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeFaceQualityResult> RecognizeFaceQualityOutcome;
 			typedef std::future<RecognizeFaceQualityOutcome> RecognizeFaceQualityOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::RecognizeFaceQualityRequest&, const RecognizeFaceQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFaceQualityAsyncHandler;
@@ -274,6 +334,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SyncDeviceTimeResult> SyncDeviceTimeOutcome;
 			typedef std::future<SyncDeviceTimeOutcome> SyncDeviceTimeOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::SyncDeviceTimeRequest&, const SyncDeviceTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncDeviceTimeAsyncHandler;
+			typedef Outcome<Error, Model::UnbindCorpGroupResult> UnbindCorpGroupOutcome;
+			typedef std::future<UnbindCorpGroupOutcome> UnbindCorpGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UnbindCorpGroupRequest&, const UnbindCorpGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindCorpGroupAsyncHandler;
+			typedef Outcome<Error, Model::UnbindUserResult> UnbindUserOutcome;
+			typedef std::future<UnbindUserOutcome> UnbindUserOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UnbindUserRequest&, const UnbindUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindUserAsyncHandler;
 			typedef Outcome<Error, Model::UpdateCorpResult> UpdateCorpOutcome;
 			typedef std::future<UpdateCorpOutcome> UpdateCorpOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UpdateCorpRequest&, const UpdateCorpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCorpAsyncHandler;
@@ -283,9 +349,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateMonitorResult> UpdateMonitorOutcome;
 			typedef std::future<UpdateMonitorOutcome> UpdateMonitorOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UpdateMonitorRequest&, const UpdateMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMonitorAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserResult> UpdateUserOutcome;
+			typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UpdateUserRequest&, const UpdateUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserAsyncHandler;
+			typedef Outcome<Error, Model::UpdateUserGroupResult> UpdateUserGroupOutcome;
+			typedef std::future<UpdateUserGroupOutcome> UpdateUserGroupOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UpdateUserGroupRequest&, const UpdateUserGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserGroupAsyncHandler;
 			typedef Outcome<Error, Model::UploadFileResult> UploadFileOutcome;
 			typedef std::future<UploadFileOutcome> UploadFileOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::UploadFileRequest&, const UploadFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileAsyncHandler;
+			typedef Outcome<Error, Model::UploadImageResult> UploadImageOutcome;
+			typedef std::future<UploadImageOutcome> UploadImageOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::UploadImageRequest&, const UploadImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadImageAsyncHandler;
 
 			VcsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			VcsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -300,12 +375,24 @@ namespace AlibabaCloud
 			AddMonitorOutcome addMonitor(const Model::AddMonitorRequest &request)const;
 			void addMonitorAsync(const Model::AddMonitorRequest& request, const AddMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddMonitorOutcomeCallable addMonitorCallable(const Model::AddMonitorRequest& request) const;
+			BindCorpGroupOutcome bindCorpGroup(const Model::BindCorpGroupRequest &request)const;
+			void bindCorpGroupAsync(const Model::BindCorpGroupRequest& request, const BindCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindCorpGroupOutcomeCallable bindCorpGroupCallable(const Model::BindCorpGroupRequest& request) const;
+			BindUserOutcome bindUser(const Model::BindUserRequest &request)const;
+			void bindUserAsync(const Model::BindUserRequest& request, const BindUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindUserOutcomeCallable bindUserCallable(const Model::BindUserRequest& request) const;
 			CreateCorpOutcome createCorp(const Model::CreateCorpRequest &request)const;
 			void createCorpAsync(const Model::CreateCorpRequest& request, const CreateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCorpOutcomeCallable createCorpCallable(const Model::CreateCorpRequest& request) const;
 			CreateCorpGroupOutcome createCorpGroup(const Model::CreateCorpGroupRequest &request)const;
 			void createCorpGroupAsync(const Model::CreateCorpGroupRequest& request, const CreateCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCorpGroupOutcomeCallable createCorpGroupCallable(const Model::CreateCorpGroupRequest& request) const;
+			CreateUserOutcome createUser(const Model::CreateUserRequest &request)const;
+			void createUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateUserOutcomeCallable createUserCallable(const Model::CreateUserRequest& request) const;
+			CreateUserGroupOutcome createUserGroup(const Model::CreateUserGroupRequest &request)const;
+			void createUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateUserGroupOutcomeCallable createUserGroupCallable(const Model::CreateUserGroupRequest& request) const;
 			CreateVideoComposeTaskOutcome createVideoComposeTask(const Model::CreateVideoComposeTaskRequest &request)const;
 			void createVideoComposeTaskAsync(const Model::CreateVideoComposeTaskRequest& request, const CreateVideoComposeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVideoComposeTaskOutcomeCallable createVideoComposeTaskCallable(const Model::CreateVideoComposeTaskRequest& request) const;
@@ -324,6 +411,12 @@ namespace AlibabaCloud
 			DeleteRecordsOutcome deleteRecords(const Model::DeleteRecordsRequest &request)const;
 			void deleteRecordsAsync(const Model::DeleteRecordsRequest& request, const DeleteRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteRecordsOutcomeCallable deleteRecordsCallable(const Model::DeleteRecordsRequest& request) const;
+			DeleteUserOutcome deleteUser(const Model::DeleteUserRequest &request)const;
+			void deleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserOutcomeCallable deleteUserCallable(const Model::DeleteUserRequest& request) const;
+			DeleteUserGroupOutcome deleteUserGroup(const Model::DeleteUserGroupRequest &request)const;
+			void deleteUserGroupAsync(const Model::DeleteUserGroupRequest& request, const DeleteUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserGroupOutcomeCallable deleteUserGroupCallable(const Model::DeleteUserGroupRequest& request) const;
 			DeleteVideoSummaryTaskOutcome deleteVideoSummaryTask(const Model::DeleteVideoSummaryTaskRequest &request)const;
 			void deleteVideoSummaryTaskAsync(const Model::DeleteVideoSummaryTaskRequest& request, const DeleteVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVideoSummaryTaskOutcomeCallable deleteVideoSummaryTaskCallable(const Model::DeleteVideoSummaryTaskRequest& request) const;
@@ -354,6 +447,12 @@ namespace AlibabaCloud
 			GetPersonDetailOutcome getPersonDetail(const Model::GetPersonDetailRequest &request)const;
 			void getPersonDetailAsync(const Model::GetPersonDetailRequest& request, const GetPersonDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPersonDetailOutcomeCallable getPersonDetailCallable(const Model::GetPersonDetailRequest& request) const;
+			GetPersonListOutcome getPersonList(const Model::GetPersonListRequest &request)const;
+			void getPersonListAsync(const Model::GetPersonListRequest& request, const GetPersonListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPersonListOutcomeCallable getPersonListCallable(const Model::GetPersonListRequest& request) const;
+			GetUserDetailOutcome getUserDetail(const Model::GetUserDetailRequest &request)const;
+			void getUserDetailAsync(const Model::GetUserDetailRequest& request, const GetUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserDetailOutcomeCallable getUserDetailCallable(const Model::GetUserDetailRequest& request) const;
 			GetVideoComposeResultOutcome getVideoComposeResult(const Model::GetVideoComposeResultRequest &request)const;
 			void getVideoComposeResultAsync(const Model::GetVideoComposeResultRequest& request, const GetVideoComposeResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVideoComposeResultOutcomeCallable getVideoComposeResultCallable(const Model::GetVideoComposeResultRequest& request) const;
@@ -405,6 +504,12 @@ namespace AlibabaCloud
 			ListPersonsOutcome listPersons(const Model::ListPersonsRequest &request)const;
 			void listPersonsAsync(const Model::ListPersonsRequest& request, const ListPersonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPersonsOutcomeCallable listPersonsCallable(const Model::ListPersonsRequest& request) const;
+			ListUserGroupsOutcome listUserGroups(const Model::ListUserGroupsRequest &request)const;
+			void listUserGroupsAsync(const Model::ListUserGroupsRequest& request, const ListUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserGroupsOutcomeCallable listUserGroupsCallable(const Model::ListUserGroupsRequest& request) const;
+			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
+			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
 			RecognizeFaceQualityOutcome recognizeFaceQuality(const Model::RecognizeFaceQualityRequest &request)const;
 			void recognizeFaceQualityAsync(const Model::RecognizeFaceQualityRequest& request, const RecognizeFaceQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeFaceQualityOutcomeCallable recognizeFaceQualityCallable(const Model::RecognizeFaceQualityRequest& request) const;
@@ -432,6 +537,12 @@ namespace AlibabaCloud
 			SyncDeviceTimeOutcome syncDeviceTime(const Model::SyncDeviceTimeRequest &request)const;
 			void syncDeviceTimeAsync(const Model::SyncDeviceTimeRequest& request, const SyncDeviceTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SyncDeviceTimeOutcomeCallable syncDeviceTimeCallable(const Model::SyncDeviceTimeRequest& request) const;
+			UnbindCorpGroupOutcome unbindCorpGroup(const Model::UnbindCorpGroupRequest &request)const;
+			void unbindCorpGroupAsync(const Model::UnbindCorpGroupRequest& request, const UnbindCorpGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindCorpGroupOutcomeCallable unbindCorpGroupCallable(const Model::UnbindCorpGroupRequest& request) const;
+			UnbindUserOutcome unbindUser(const Model::UnbindUserRequest &request)const;
+			void unbindUserAsync(const Model::UnbindUserRequest& request, const UnbindUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindUserOutcomeCallable unbindUserCallable(const Model::UnbindUserRequest& request) const;
 			UpdateCorpOutcome updateCorp(const Model::UpdateCorpRequest &request)const;
 			void updateCorpAsync(const Model::UpdateCorpRequest& request, const UpdateCorpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCorpOutcomeCallable updateCorpCallable(const Model::UpdateCorpRequest& request) const;
@@ -441,9 +552,18 @@ namespace AlibabaCloud
 			UpdateMonitorOutcome updateMonitor(const Model::UpdateMonitorRequest &request)const;
 			void updateMonitorAsync(const Model::UpdateMonitorRequest& request, const UpdateMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateMonitorOutcomeCallable updateMonitorCallable(const Model::UpdateMonitorRequest& request) const;
+			UpdateUserOutcome updateUser(const Model::UpdateUserRequest &request)const;
+			void updateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserOutcomeCallable updateUserCallable(const Model::UpdateUserRequest& request) const;
+			UpdateUserGroupOutcome updateUserGroup(const Model::UpdateUserGroupRequest &request)const;
+			void updateUserGroupAsync(const Model::UpdateUserGroupRequest& request, const UpdateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateUserGroupOutcomeCallable updateUserGroupCallable(const Model::UpdateUserGroupRequest& request) const;
 			UploadFileOutcome uploadFile(const Model::UploadFileRequest &request)const;
 			void uploadFileAsync(const Model::UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadFileOutcomeCallable uploadFileCallable(const Model::UploadFileRequest& request) const;
+			UploadImageOutcome uploadImage(const Model::UploadImageRequest &request)const;
+			void uploadImageAsync(const Model::UploadImageRequest& request, const UploadImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadImageOutcomeCallable uploadImageCallable(const Model::UploadImageRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

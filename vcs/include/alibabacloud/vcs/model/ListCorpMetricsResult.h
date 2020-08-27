@@ -35,9 +35,14 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					std::string corpId;
+					std::string personId;
+					std::string deviceGroupId;
+					std::string deviceId;
+					std::string userGroupId;
 					std::string tagMetrics;
 					std::string tagCode;
 					std::string tagValue;
+					std::string dateId;
 				};
 
 

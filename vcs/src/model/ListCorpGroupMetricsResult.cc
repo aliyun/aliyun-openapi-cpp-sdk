@@ -39,20 +39,30 @@ void ListCorpGroupMetricsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["Day"];
-	for (auto valueDataDay : allDataNode)
+	auto allDataNode = value["Data"]["DataItem"];
+	for (auto valueDataDataItem : allDataNode)
 	{
-		Day dataObject;
-		if(!valueDataDay["CheckedTime"].isNull())
-			dataObject.checkedTime = valueDataDay["CheckedTime"].asString();
-		if(!valueDataDay["TagMetrics"].isNull())
-			dataObject.tagMetrics = valueDataDay["TagMetrics"].asString();
-		if(!valueDataDay["TagCode"].isNull())
-			dataObject.tagCode = valueDataDay["TagCode"].asString();
-		if(!valueDataDay["TagValue"].isNull())
-			dataObject.tagValue = valueDataDay["TagValue"].asString();
-		if(!valueDataDay["GroupId"].isNull())
-			dataObject.groupId = valueDataDay["GroupId"].asString();
+		DataItem dataObject;
+		if(!valueDataDataItem["DateId"].isNull())
+			dataObject.dateId = valueDataDataItem["DateId"].asString();
+		if(!valueDataDataItem["TagMetrics"].isNull())
+			dataObject.tagMetrics = valueDataDataItem["TagMetrics"].asString();
+		if(!valueDataDataItem["TagCode"].isNull())
+			dataObject.tagCode = valueDataDataItem["TagCode"].asString();
+		if(!valueDataDataItem["TagValue"].isNull())
+			dataObject.tagValue = valueDataDataItem["TagValue"].asString();
+		if(!valueDataDataItem["CorpGroupId"].isNull())
+			dataObject.corpGroupId = valueDataDataItem["CorpGroupId"].asString();
+		if(!valueDataDataItem["CorpId"].isNull())
+			dataObject.corpId = valueDataDataItem["CorpId"].asString();
+		if(!valueDataDataItem["DeviceGroupId"].isNull())
+			dataObject.deviceGroupId = valueDataDataItem["DeviceGroupId"].asString();
+		if(!valueDataDataItem["DeviceId"].isNull())
+			dataObject.deviceId = valueDataDataItem["DeviceId"].asString();
+		if(!valueDataDataItem["UserGroupId"].isNull())
+			dataObject.userGroupId = valueDataDataItem["UserGroupId"].asString();
+		if(!valueDataDataItem["PersonID"].isNull())
+			dataObject.personID = valueDataDataItem["PersonID"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
@@ -90,7 +100,7 @@ int ListCorpGroupMetricsResult::getPageNumber()const
 	return pageNumber_;
 }
 
-std::vector<ListCorpGroupMetricsResult::Day> ListCorpGroupMetricsResult::getData()const
+std::vector<ListCorpGroupMetricsResult::DataItem> ListCorpGroupMetricsResult::getData()const
 {
 	return data_;
 }

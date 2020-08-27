@@ -71,6 +71,17 @@ void ListCorpMetricsRequest::setPageNumber(const std::string& pageNumber)
 	setBodyParameter("PageNumber", pageNumber);
 }
 
+std::string ListCorpMetricsRequest::getDeviceGroupList()const
+{
+	return deviceGroupList_;
+}
+
+void ListCorpMetricsRequest::setDeviceGroupList(const std::string& deviceGroupList)
+{
+	deviceGroupList_ = deviceGroupList;
+	setBodyParameter("DeviceGroupList", deviceGroupList);
+}
+
 std::string ListCorpMetricsRequest::getTagCode()const
 {
 	return tagCode_;
@@ -82,6 +93,17 @@ void ListCorpMetricsRequest::setTagCode(const std::string& tagCode)
 	setBodyParameter("TagCode", tagCode);
 }
 
+std::string ListCorpMetricsRequest::getUserGroupList()const
+{
+	return userGroupList_;
+}
+
+void ListCorpMetricsRequest::setUserGroupList(const std::string& userGroupList)
+{
+	userGroupList_ = userGroupList;
+	setBodyParameter("UserGroupList", userGroupList);
+}
+
 std::string ListCorpMetricsRequest::getPageSize()const
 {
 	return pageSize_;
@@ -91,5 +113,16 @@ void ListCorpMetricsRequest::setPageSize(const std::string& pageSize)
 {
 	pageSize_ = pageSize;
 	setBodyParameter("PageSize", pageSize);
+}
+
+std::string ListCorpMetricsRequest::getDeviceIdList()const
+{
+	return deviceIdList_;
+}
+
+void ListCorpMetricsRequest::setDeviceIdList(const std::string& deviceIdList)
+{
+	deviceIdList_ = deviceIdList;
+	setBodyParameter("DeviceIdList", deviceIdList);
 }
 
