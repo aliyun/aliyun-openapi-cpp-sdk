@@ -47,6 +47,8 @@ void ListDevopsProjectTaskFlowResult::parse(const std::string &payload)
 			objectObject.id = valueObjectTaskflow["Id"].asString();
 		if(!valueObjectTaskflow["Type"].isNull())
 			objectObject.type = valueObjectTaskflow["Type"].asString();
+		if(!valueObjectTaskflow["Name"].isNull())
+			objectObject.name = valueObjectTaskflow["Name"].asString();
 		object_.push_back(objectObject);
 	}
 	if(!value["Successful"].isNull())
