@@ -29,6 +29,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/AddNodesResult.h
 	include/alibabacloud/ehpc/model/AddQueueRequest.h
 	include/alibabacloud/ehpc/model/AddQueueResult.h
+	include/alibabacloud/ehpc/model/AddSecurityGroupRequest.h
+	include/alibabacloud/ehpc/model/AddSecurityGroupResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
 	include/alibabacloud/ehpc/model/ApplyNodesRequest.h
@@ -67,6 +69,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/DeleteNodesResult.h
 	include/alibabacloud/ehpc/model/DeleteQueueRequest.h
 	include/alibabacloud/ehpc/model/DeleteQueueResult.h
+	include/alibabacloud/ehpc/model/DeleteSecurityGroupRequest.h
+	include/alibabacloud/ehpc/model/DeleteSecurityGroupResult.h
 	include/alibabacloud/ehpc/model/DeleteUsersRequest.h
 	include/alibabacloud/ehpc/model/DeleteUsersResult.h
 	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigRequest.h
@@ -173,8 +177,12 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/ListQueuesResult.h
 	include/alibabacloud/ehpc/model/ListRegionsRequest.h
 	include/alibabacloud/ehpc/model/ListRegionsResult.h
+	include/alibabacloud/ehpc/model/ListSecurityGroupsRequest.h
+	include/alibabacloud/ehpc/model/ListSecurityGroupsResult.h
 	include/alibabacloud/ehpc/model/ListSoftwaresRequest.h
 	include/alibabacloud/ehpc/model/ListSoftwaresResult.h
+	include/alibabacloud/ehpc/model/ListTasksRequest.h
+	include/alibabacloud/ehpc/model/ListTasksResult.h
 	include/alibabacloud/ehpc/model/ListUsersRequest.h
 	include/alibabacloud/ehpc/model/ListUsersResult.h
 	include/alibabacloud/ehpc/model/ListVolumesRequest.h
@@ -258,6 +266,8 @@ set(ehpc_src
 	src/model/AddNodesResult.cc
 	src/model/AddQueueRequest.cc
 	src/model/AddQueueResult.cc
+	src/model/AddSecurityGroupRequest.cc
+	src/model/AddSecurityGroupResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
 	src/model/ApplyNodesRequest.cc
@@ -296,6 +306,8 @@ set(ehpc_src
 	src/model/DeleteNodesResult.cc
 	src/model/DeleteQueueRequest.cc
 	src/model/DeleteQueueResult.cc
+	src/model/DeleteSecurityGroupRequest.cc
+	src/model/DeleteSecurityGroupResult.cc
 	src/model/DeleteUsersRequest.cc
 	src/model/DeleteUsersResult.cc
 	src/model/DescribeAutoScaleConfigRequest.cc
@@ -402,8 +414,12 @@ set(ehpc_src
 	src/model/ListQueuesResult.cc
 	src/model/ListRegionsRequest.cc
 	src/model/ListRegionsResult.cc
+	src/model/ListSecurityGroupsRequest.cc
+	src/model/ListSecurityGroupsResult.cc
 	src/model/ListSoftwaresRequest.cc
 	src/model/ListSoftwaresResult.cc
+	src/model/ListTasksRequest.cc
+	src/model/ListTasksResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
 	src/model/ListVolumesRequest.cc

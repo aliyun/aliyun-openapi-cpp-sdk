@@ -41,7 +41,14 @@ void CreateHybridClusterResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ClusterId"].isNull())
 		clusterId_ = value["ClusterId"].asString();
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string CreateHybridClusterResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string CreateHybridClusterResult::getClusterId()const

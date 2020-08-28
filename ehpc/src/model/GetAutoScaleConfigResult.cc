@@ -61,6 +61,8 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 			queuesObject.maxNodesInQueue = std::stoi(valueQueuesQueueInfo["MaxNodesInQueue"].asString());
 		if(!valueQueuesQueueInfo["MinNodesInQueue"].isNull())
 			queuesObject.minNodesInQueue = std::stoi(valueQueuesQueueInfo["MinNodesInQueue"].asString());
+		if(!valueQueuesQueueInfo["QueueImageId"].isNull())
+			queuesObject.queueImageId = valueQueuesQueueInfo["QueueImageId"].asString();
 		auto allInstanceTypesNode = allQueuesNode["InstanceTypes"]["InstanceTypeInfo"];
 		for (auto allQueuesNodeInstanceTypesInstanceTypeInfo : allInstanceTypesNode)
 		{

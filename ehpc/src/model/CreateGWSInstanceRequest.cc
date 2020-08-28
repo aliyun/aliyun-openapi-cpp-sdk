@@ -159,6 +159,17 @@ void CreateGWSInstanceRequest::setWorkMode(const std::string& workMode)
 	setParameter("WorkMode", workMode);
 }
 
+std::string CreateGWSInstanceRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateGWSInstanceRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
 std::string CreateGWSInstanceRequest::getPeriodUnit()const
 {
 	return periodUnit_;

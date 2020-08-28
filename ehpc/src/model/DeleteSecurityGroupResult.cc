@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/StartNodesResult.h>
+#include <alibabacloud/ehpc/model/DeleteSecurityGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
-StartNodesResult::StartNodesResult() :
+DeleteSecurityGroupResult::DeleteSecurityGroupResult() :
 	ServiceResult()
 {}
 
-StartNodesResult::StartNodesResult(const std::string &payload) :
+DeleteSecurityGroupResult::DeleteSecurityGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartNodesResult::~StartNodesResult()
+DeleteSecurityGroupResult::~DeleteSecurityGroupResult()
 {}
 
-void StartNodesResult::parse(const std::string &payload)
+void DeleteSecurityGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 
-}
-
-std::string StartNodesResult::getTaskId()const
-{
-	return taskId_;
 }
 

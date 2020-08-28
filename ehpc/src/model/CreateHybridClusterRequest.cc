@@ -219,6 +219,17 @@ void CreateHybridClusterRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+std::string CreateHybridClusterRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateHybridClusterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateHybridClusterRequest::getEhpcVersion()const
 {
 	return ehpcVersion_;

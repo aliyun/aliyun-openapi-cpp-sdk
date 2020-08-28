@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				long getUserUid()const;
+				void setUserUid(long userUid);
+				std::string getUserName()const;
+				void setUserName(const std::string& userName);
 
             private:
 				std::string clusterId_;
@@ -52,6 +56,8 @@ namespace AlibabaCloud
 				std::string accessKeyId_;
 				std::string instanceId_;
 				int pageSize_;
+				long userUid_;
+				std::string userName_;
 
 			};
 		}

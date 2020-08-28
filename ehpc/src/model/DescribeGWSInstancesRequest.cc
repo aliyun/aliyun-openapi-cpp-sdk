@@ -82,3 +82,25 @@ void DescribeGWSInstancesRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+long DescribeGWSInstancesRequest::getUserUid()const
+{
+	return userUid_;
+}
+
+void DescribeGWSInstancesRequest::setUserUid(long userUid)
+{
+	userUid_ = userUid;
+	setParameter("UserUid", std::to_string(userUid));
+}
+
+std::string DescribeGWSInstancesRequest::getUserName()const
+{
+	return userName_;
+}
+
+void DescribeGWSInstancesRequest::setUserName(const std::string& userName)
+{
+	userName_ = userName;
+	setParameter("UserName", userName);
+}
+

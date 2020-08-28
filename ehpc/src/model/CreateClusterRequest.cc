@@ -153,6 +153,17 @@ void CreateClusterRequest::setEcsOrderLoginCount(int ecsOrderLoginCount)
 	setParameter("EcsOrderLoginCount", std::to_string(ecsOrderLoginCount));
 }
 
+bool CreateClusterRequest::getWithoutElasticIp()const
+{
+	return withoutElasticIp_;
+}
+
+void CreateClusterRequest::setWithoutElasticIp(bool withoutElasticIp)
+{
+	withoutElasticIp_ = withoutElasticIp;
+	setParameter("WithoutElasticIp", withoutElasticIp ? "true" : "false");
+}
+
 std::string CreateClusterRequest::getRemoteVisEnable()const
 {
 	return remoteVisEnable_;
@@ -354,6 +365,17 @@ void CreateClusterRequest::setImageId(const std::string& imageId)
 {
 	imageId_ = imageId;
 	setParameter("ImageId", imageId);
+}
+
+std::string CreateClusterRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateClusterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
 std::string CreateClusterRequest::getEhpcVersion()const

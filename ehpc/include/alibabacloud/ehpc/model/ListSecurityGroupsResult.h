@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTSECURITYGROUPSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTSECURITYGROUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT AddNodesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListSecurityGroupsResult : public ServiceResult
 			{
 			public:
 
 
-				AddNodesResult();
-				explicit AddNodesResult(const std::string &payload);
-				~AddNodesResult();
-				std::string getTaskId()const;
-				std::vector<std::string> getInstanceIds()const;
+				ListSecurityGroupsResult();
+				explicit ListSecurityGroupsResult(const std::string &payload);
+				~ListSecurityGroupsResult();
+				std::vector<std::string> getSecurityGroups()const;
+				int getTotalCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskId_;
-				std::vector<std::string> instanceIds_;
+				std::vector<std::string> securityGroups_;
+				int totalCount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTSECURITYGROUPSRESULT_H_

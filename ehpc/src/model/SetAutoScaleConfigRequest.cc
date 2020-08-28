@@ -196,6 +196,7 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<Queues>& queues)
 		}
 		setParameter(queuesObjStr + ".MaxNodesInQueue", std::to_string(queuesObj.maxNodesInQueue));
 		setParameter(queuesObjStr + ".InstanceType", queuesObj.instanceType);
+		setParameter(queuesObjStr + ".QueueImageId", queuesObj.queueImageId);
 		setParameter(queuesObjStr + ".EnableAutoGrow", queuesObj.enableAutoGrow ? "true" : "false");
 		setParameter(queuesObjStr + ".SpotPriceLimit", std::to_string(queuesObj.spotPriceLimit));
 		setParameter(queuesObjStr + ".EnableAutoShrink", queuesObj.enableAutoShrink ? "true" : "false");

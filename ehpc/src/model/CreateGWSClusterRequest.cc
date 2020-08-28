@@ -49,6 +49,17 @@ void CreateGWSClusterRequest::setClusterType(const std::string& clusterType)
 	setParameter("ClusterType", clusterType);
 }
 
+std::string CreateGWSClusterRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void CreateGWSClusterRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
 std::string CreateGWSClusterRequest::getVpcId()const
 {
 	return vpcId_;

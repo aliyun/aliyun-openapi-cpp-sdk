@@ -49,3 +49,25 @@ void DescribeGWSClusterPolicyRequest::setAccessKeyId(const std::string& accessKe
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+bool DescribeGWSClusterPolicyRequest::getAsyncMode()const
+{
+	return asyncMode_;
+}
+
+void DescribeGWSClusterPolicyRequest::setAsyncMode(bool asyncMode)
+{
+	asyncMode_ = asyncMode;
+	setParameter("AsyncMode", asyncMode ? "true" : "false");
+}
+
+std::string DescribeGWSClusterPolicyRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void DescribeGWSClusterPolicyRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setParameter("TaskId", taskId);
+}
+

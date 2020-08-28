@@ -93,3 +93,25 @@ void SetGWSClusterPolicyRequest::setUsbRedirect(const std::string& usbRedirect)
 	setParameter("UsbRedirect", usbRedirect);
 }
 
+bool SetGWSClusterPolicyRequest::getAsyncMode()const
+{
+	return asyncMode_;
+}
+
+void SetGWSClusterPolicyRequest::setAsyncMode(bool asyncMode)
+{
+	asyncMode_ = asyncMode;
+	setParameter("AsyncMode", asyncMode ? "true" : "false");
+}
+
+std::string SetGWSClusterPolicyRequest::getUdpPort()const
+{
+	return udpPort_;
+}
+
+void SetGWSClusterPolicyRequest::setUdpPort(const std::string& udpPort)
+{
+	udpPort_ = udpPort;
+	setParameter("UdpPort", udpPort);
+}
+

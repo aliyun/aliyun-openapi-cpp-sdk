@@ -59,6 +59,8 @@ namespace AlibabaCloud
 				void setClusterId(const std::string& clusterId);
 				std::string getWorkMode()const;
 				void setWorkMode(const std::string& workMode);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getPeriodUnit()const;
 				void setPeriodUnit(const std::string& periodUnit);
 				bool getAutoRenew()const;
@@ -83,6 +85,7 @@ namespace AlibabaCloud
 				std::string period_;
 				std::string clusterId_;
 				std::string workMode_;
+				std::string vSwitchId_;
 				std::string periodUnit_;
 				bool autoRenew_;
 				std::string internetChargeType_;

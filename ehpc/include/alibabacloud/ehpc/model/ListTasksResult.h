@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTTASKSRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTTASKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT AddNodesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT ListTasksResult : public ServiceResult
 			{
 			public:
+				struct TaskInfo
+				{
+					std::string status;
+					std::string errors;
+					std::string taskId;
+					std::string clusterId;
+					std::string taskType;
+					std::string request;
+					int currentStep;
+					int totalSteps;
+					std::string result;
+				};
 
 
-				AddNodesResult();
-				explicit AddNodesResult(const std::string &payload);
-				~AddNodesResult();
-				std::string getTaskId()const;
-				std::vector<std::string> getInstanceIds()const;
+				ListTasksResult();
+				explicit ListTasksResult(const std::string &payload);
+				~ListTasksResult();
+				int getTotalCount()const;
+				std::vector<TaskInfo> getTasks()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskId_;
-				std::vector<std::string> instanceIds_;
+				int totalCount_;
+				std::vector<TaskInfo> tasks_;
+				int pageSize_;
+				int pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_ADDNODESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTTASKSRESULT_H_

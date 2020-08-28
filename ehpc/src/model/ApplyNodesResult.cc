@@ -46,7 +46,14 @@ void ApplyNodesResult::parse(const std::string &payload)
 		detail_ = value["Detail"].asString();
 	if(!value["SatisfiedAmount"].isNull())
 		satisfiedAmount_ = std::stoi(value["SatisfiedAmount"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 
+}
+
+std::string ApplyNodesResult::getTaskId()const
+{
+	return taskId_;
 }
 
 int ApplyNodesResult::getSatisfiedAmount()const

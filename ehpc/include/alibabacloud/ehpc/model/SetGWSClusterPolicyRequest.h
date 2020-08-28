@@ -47,6 +47,10 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUsbRedirect()const;
 				void setUsbRedirect(const std::string& usbRedirect);
+				bool getAsyncMode()const;
+				void setAsyncMode(bool asyncMode);
+				std::string getUdpPort()const;
+				void setUdpPort(const std::string& udpPort);
 
             private:
 				std::string watermark_;
@@ -55,6 +59,8 @@ namespace AlibabaCloud
 				std::string clipboard_;
 				std::string accessKeyId_;
 				std::string usbRedirect_;
+				bool asyncMode_;
+				std::string udpPort_;
 
 			};
 		}

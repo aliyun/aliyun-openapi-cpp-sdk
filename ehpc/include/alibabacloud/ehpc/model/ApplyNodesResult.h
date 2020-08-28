@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				ApplyNodesResult();
 				explicit ApplyNodesResult(const std::string &payload);
 				~ApplyNodesResult();
+				std::string getTaskId()const;
 				int getSatisfiedAmount()const;
 				std::vector<std::string> getInstanceIds()const;
 				std::string getDetail()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string taskId_;
 				int satisfiedAmount_;
 				std::vector<std::string> instanceIds_;
 				std::string detail_;

@@ -87,6 +87,8 @@ namespace AlibabaCloud
 				void setZoneId(const std::string& zoneId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getEhpcVersion()const;
 				void setEhpcVersion(const std::string& ehpcVersion);
 				std::string getSecurityGroupId()const;
@@ -142,6 +144,7 @@ namespace AlibabaCloud
 				std::string volumeId_;
 				std::string zoneId_;
 				std::string imageId_;
+				std::string clientToken_;
 				std::string ehpcVersion_;
 				std::string securityGroupId_;
 				std::string description_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_DESCRIBEGWSCLUSTERPOLICYREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_DESCRIBEGWSCLUSTERPOLICYREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_LISTTASKSREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_LISTTASKSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT DescribeGWSClusterPolicyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EHPC_EXPORT ListTasksRequest : public RpcServiceRequest
 			{
 
 			public:
-				DescribeGWSClusterPolicyRequest();
-				~DescribeGWSClusterPolicyRequest();
+				ListTasksRequest();
+				~ListTasksRequest();
 
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				bool getAsyncMode()const;
-				void setAsyncMode(bool asyncMode);
+				bool getArchived()const;
+				void setArchived(bool archived);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 
             private:
 				std::string clusterId_;
+				int pageNumber_;
 				std::string accessKeyId_;
-				bool asyncMode_;
+				bool archived_;
+				int pageSize_;
 				std::string taskId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_DESCRIBEGWSCLUSTERPOLICYREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_LISTTASKSREQUEST_H_

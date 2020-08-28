@@ -81,6 +81,8 @@ namespace AlibabaCloud
 				void setPassword(const std::string& password);
 				int getEcsOrderLoginCount()const;
 				void setEcsOrderLoginCount(int ecsOrderLoginCount);
+				bool getWithoutElasticIp()const;
+				void setWithoutElasticIp(bool withoutElasticIp);
 				std::string getRemoteVisEnable()const;
 				void setRemoteVisEnable(const std::string& remoteVisEnable);
 				int getSystemDiskSize()const;
@@ -117,6 +119,8 @@ namespace AlibabaCloud
 				void setSccClusterId(const std::string& sccClusterId);
 				std::string getImageId()const;
 				void setImageId(const std::string& imageId);
+				std::string getClientToken()const;
+				void setClientToken(const std::string& clientToken);
 				std::string getEhpcVersion()const;
 				void setEhpcVersion(const std::string& ehpcVersion);
 				std::string getAccountType()const;
@@ -169,6 +173,7 @@ namespace AlibabaCloud
 				std::string resourceGroupId_;
 				std::string password_;
 				int ecsOrderLoginCount_;
+				bool withoutElasticIp_;
 				std::string remoteVisEnable_;
 				int systemDiskSize_;
 				std::string computeSpotPriceLimit_;
@@ -187,6 +192,7 @@ namespace AlibabaCloud
 				std::string zoneId_;
 				std::string sccClusterId_;
 				std::string imageId_;
+				std::string clientToken_;
 				std::string ehpcVersion_;
 				std::string accountType_;
 				std::string securityGroupId_;

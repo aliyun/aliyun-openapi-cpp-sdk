@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getClusterType()const;
 				void setClusterType(const std::string& clusterType);
+				std::string getVSwitchId()const;
+				void setVSwitchId(const std::string& vSwitchId);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
 				std::string getName()const;
@@ -47,6 +49,7 @@ namespace AlibabaCloud
             private:
 				std::string accessKeyId_;
 				std::string clusterType_;
+				std::string vSwitchId_;
 				std::string vpcId_;
 				std::string name_;
 

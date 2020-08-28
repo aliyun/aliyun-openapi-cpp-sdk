@@ -30,6 +30,8 @@
 #include "model/AddNodesResult.h"
 #include "model/AddQueueRequest.h"
 #include "model/AddQueueResult.h"
+#include "model/AddSecurityGroupRequest.h"
+#include "model/AddSecurityGroupResult.h"
 #include "model/AddUsersRequest.h"
 #include "model/AddUsersResult.h"
 #include "model/ApplyNodesRequest.h"
@@ -68,6 +70,8 @@
 #include "model/DeleteNodesResult.h"
 #include "model/DeleteQueueRequest.h"
 #include "model/DeleteQueueResult.h"
+#include "model/DeleteSecurityGroupRequest.h"
+#include "model/DeleteSecurityGroupResult.h"
 #include "model/DeleteUsersRequest.h"
 #include "model/DeleteUsersResult.h"
 #include "model/DescribeAutoScaleConfigRequest.h"
@@ -174,8 +178,12 @@
 #include "model/ListQueuesResult.h"
 #include "model/ListRegionsRequest.h"
 #include "model/ListRegionsResult.h"
+#include "model/ListSecurityGroupsRequest.h"
+#include "model/ListSecurityGroupsResult.h"
 #include "model/ListSoftwaresRequest.h"
 #include "model/ListSoftwaresResult.h"
+#include "model/ListTasksRequest.h"
+#include "model/ListTasksResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
 #include "model/ListVolumesRequest.h"
@@ -269,6 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddQueueResult> AddQueueOutcome;
 			typedef std::future<AddQueueOutcome> AddQueueOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddQueueRequest&, const AddQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddQueueAsyncHandler;
+			typedef Outcome<Error, Model::AddSecurityGroupResult> AddSecurityGroupOutcome;
+			typedef std::future<AddSecurityGroupOutcome> AddSecurityGroupOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::AddSecurityGroupRequest&, const AddSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddSecurityGroupAsyncHandler;
 			typedef Outcome<Error, Model::AddUsersResult> AddUsersOutcome;
 			typedef std::future<AddUsersOutcome> AddUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::AddUsersRequest&, const AddUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersAsyncHandler;
@@ -326,6 +337,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteQueueResult> DeleteQueueOutcome;
 			typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteQueueRequest&, const DeleteQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQueueAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSecurityGroupResult> DeleteSecurityGroupOutcome;
+			typedef std::future<DeleteSecurityGroupOutcome> DeleteSecurityGroupOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::DeleteSecurityGroupRequest&, const DeleteSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteUsersResult> DeleteUsersOutcome;
 			typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::DeleteUsersRequest&, const DeleteUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
@@ -485,9 +499,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRegionsResult> ListRegionsOutcome;
 			typedef std::future<ListRegionsOutcome> ListRegionsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListRegionsRequest&, const ListRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRegionsAsyncHandler;
+			typedef Outcome<Error, Model::ListSecurityGroupsResult> ListSecurityGroupsOutcome;
+			typedef std::future<ListSecurityGroupsOutcome> ListSecurityGroupsOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListSecurityGroupsRequest&, const ListSecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecurityGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListSoftwaresResult> ListSoftwaresOutcome;
 			typedef std::future<ListSoftwaresOutcome> ListSoftwaresOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListSoftwaresRequest&, const ListSoftwaresOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSoftwaresAsyncHandler;
+			typedef Outcome<Error, Model::ListTasksResult> ListTasksOutcome;
+			typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::ListTasksRequest&, const ListTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
@@ -613,6 +633,9 @@ namespace AlibabaCloud
 			AddQueueOutcome addQueue(const Model::AddQueueRequest &request)const;
 			void addQueueAsync(const Model::AddQueueRequest& request, const AddQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddQueueOutcomeCallable addQueueCallable(const Model::AddQueueRequest& request) const;
+			AddSecurityGroupOutcome addSecurityGroup(const Model::AddSecurityGroupRequest &request)const;
+			void addSecurityGroupAsync(const Model::AddSecurityGroupRequest& request, const AddSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddSecurityGroupOutcomeCallable addSecurityGroupCallable(const Model::AddSecurityGroupRequest& request) const;
 			AddUsersOutcome addUsers(const Model::AddUsersRequest &request)const;
 			void addUsersAsync(const Model::AddUsersRequest& request, const AddUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUsersOutcomeCallable addUsersCallable(const Model::AddUsersRequest& request) const;
@@ -670,6 +693,9 @@ namespace AlibabaCloud
 			DeleteQueueOutcome deleteQueue(const Model::DeleteQueueRequest &request)const;
 			void deleteQueueAsync(const Model::DeleteQueueRequest& request, const DeleteQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteQueueOutcomeCallable deleteQueueCallable(const Model::DeleteQueueRequest& request) const;
+			DeleteSecurityGroupOutcome deleteSecurityGroup(const Model::DeleteSecurityGroupRequest &request)const;
+			void deleteSecurityGroupAsync(const Model::DeleteSecurityGroupRequest& request, const DeleteSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSecurityGroupOutcomeCallable deleteSecurityGroupCallable(const Model::DeleteSecurityGroupRequest& request) const;
 			DeleteUsersOutcome deleteUsers(const Model::DeleteUsersRequest &request)const;
 			void deleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteUsersOutcomeCallable deleteUsersCallable(const Model::DeleteUsersRequest& request) const;
@@ -829,9 +855,15 @@ namespace AlibabaCloud
 			ListRegionsOutcome listRegions(const Model::ListRegionsRequest &request)const;
 			void listRegionsAsync(const Model::ListRegionsRequest& request, const ListRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRegionsOutcomeCallable listRegionsCallable(const Model::ListRegionsRequest& request) const;
+			ListSecurityGroupsOutcome listSecurityGroups(const Model::ListSecurityGroupsRequest &request)const;
+			void listSecurityGroupsAsync(const Model::ListSecurityGroupsRequest& request, const ListSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSecurityGroupsOutcomeCallable listSecurityGroupsCallable(const Model::ListSecurityGroupsRequest& request) const;
 			ListSoftwaresOutcome listSoftwares(const Model::ListSoftwaresRequest &request)const;
 			void listSoftwaresAsync(const Model::ListSoftwaresRequest& request, const ListSoftwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSoftwaresOutcomeCallable listSoftwaresCallable(const Model::ListSoftwaresRequest& request) const;
+			ListTasksOutcome listTasks(const Model::ListTasksRequest &request)const;
+			void listTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTasksOutcomeCallable listTasksCallable(const Model::ListTasksRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;

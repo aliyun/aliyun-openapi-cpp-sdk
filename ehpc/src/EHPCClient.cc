@@ -195,6 +195,42 @@ EHPCClient::AddQueueOutcomeCallable EHPCClient::addQueueCallable(const AddQueueR
 	return task->get_future();
 }
 
+EHPCClient::AddSecurityGroupOutcome EHPCClient::addSecurityGroup(const AddSecurityGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSecurityGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSecurityGroupOutcome(AddSecurityGroupResult(outcome.result()));
+	else
+		return AddSecurityGroupOutcome(outcome.error());
+}
+
+void EHPCClient::addSecurityGroupAsync(const AddSecurityGroupRequest& request, const AddSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSecurityGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::AddSecurityGroupOutcomeCallable EHPCClient::addSecurityGroupCallable(const AddSecurityGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSecurityGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->addSecurityGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::AddUsersOutcome EHPCClient::addUsers(const AddUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -873,6 +909,42 @@ EHPCClient::DeleteQueueOutcomeCallable EHPCClient::deleteQueueCallable(const Del
 			[this, request]()
 			{
 			return this->deleteQueue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::DeleteSecurityGroupOutcome EHPCClient::deleteSecurityGroup(const DeleteSecurityGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSecurityGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSecurityGroupOutcome(DeleteSecurityGroupResult(outcome.result()));
+	else
+		return DeleteSecurityGroupOutcome(outcome.error());
+}
+
+void EHPCClient::deleteSecurityGroupAsync(const DeleteSecurityGroupRequest& request, const DeleteSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSecurityGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::DeleteSecurityGroupOutcomeCallable EHPCClient::deleteSecurityGroupCallable(const DeleteSecurityGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSecurityGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2787,6 +2859,42 @@ EHPCClient::ListRegionsOutcomeCallable EHPCClient::listRegionsCallable(const Lis
 	return task->get_future();
 }
 
+EHPCClient::ListSecurityGroupsOutcome EHPCClient::listSecurityGroups(const ListSecurityGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecurityGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecurityGroupsOutcome(ListSecurityGroupsResult(outcome.result()));
+	else
+		return ListSecurityGroupsOutcome(outcome.error());
+}
+
+void EHPCClient::listSecurityGroupsAsync(const ListSecurityGroupsRequest& request, const ListSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecurityGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListSecurityGroupsOutcomeCallable EHPCClient::listSecurityGroupsCallable(const ListSecurityGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecurityGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecurityGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::ListSoftwaresOutcome EHPCClient::listSoftwares(const ListSoftwaresRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2817,6 +2925,42 @@ EHPCClient::ListSoftwaresOutcomeCallable EHPCClient::listSoftwaresCallable(const
 			[this, request]()
 			{
 			return this->listSoftwares(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EHPCClient::ListTasksOutcome EHPCClient::listTasks(const ListTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTasksOutcome(ListTasksResult(outcome.result()));
+	else
+		return ListTasksOutcome(outcome.error());
+}
+
+void EHPCClient::listTasksAsync(const ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::ListTasksOutcomeCallable EHPCClient::listTasksCallable(const ListTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					int maxNodesInQueue;
 					std::string resourceGroupId;
 					bool enableAutoGrow;
+					std::string queueImageId;
 					float spotPriceLimit;
 					std::vector<QueueInfo::InstanceTypeInfo> instanceTypes;
 					bool enableAutoShrink;

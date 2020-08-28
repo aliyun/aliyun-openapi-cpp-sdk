@@ -14,38 +14,46 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/StartNodesResult.h>
+#include <alibabacloud/ehpc/model/ListSecurityGroupsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
-StartNodesResult::StartNodesResult() :
+ListSecurityGroupsResult::ListSecurityGroupsResult() :
 	ServiceResult()
 {}
 
-StartNodesResult::StartNodesResult(const std::string &payload) :
+ListSecurityGroupsResult::ListSecurityGroupsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-StartNodesResult::~StartNodesResult()
+ListSecurityGroupsResult::~ListSecurityGroupsResult()
 {}
 
-void StartNodesResult::parse(const std::string &payload)
+void ListSecurityGroupsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
+	auto allSecurityGroups = value["SecurityGroups"]["SecurityGroup"];
+	for (const auto &item : allSecurityGroups)
+		securityGroups_.push_back(item.asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
-std::string StartNodesResult::getTaskId()const
+std::vector<std::string> ListSecurityGroupsResult::getSecurityGroups()const
 {
-	return taskId_;
+	return securityGroups_;
+}
+
+int ListSecurityGroupsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 

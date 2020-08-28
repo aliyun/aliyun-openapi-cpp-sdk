@@ -38,6 +38,17 @@ void AddNodesRequest::setImageId(const std::string& imageId)
 	setParameter("ImageId", imageId);
 }
 
+std::string AddNodesRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void AddNodesRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 bool AddNodesRequest::getAllocatePublicAddress()const
 {
 	return allocatePublicAddress_;
