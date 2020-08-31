@@ -25,6 +25,10 @@ set(industry-brain_public_header_model
 	include/alibabacloud/industry-brain/model/AsyncResponsePostResult.h
 	include/alibabacloud/industry-brain/model/GetAlgorithmHistoryResultRequest.h
 	include/alibabacloud/industry-brain/model/GetAlgorithmHistoryResultResult.h
+	include/alibabacloud/industry-brain/model/GetPointReckoningValueRequest.h
+	include/alibabacloud/industry-brain/model/GetPointReckoningValueResult.h
+	include/alibabacloud/industry-brain/model/GetPointSampleValueRequest.h
+	include/alibabacloud/industry-brain/model/GetPointSampleValueResult.h
 	include/alibabacloud/industry-brain/model/GetServiceResultAsyncRequest.h
 	include/alibabacloud/industry-brain/model/GetServiceResultAsyncResult.h
 	include/alibabacloud/industry-brain/model/InvokeServiceRequest.h
@@ -38,6 +42,10 @@ set(industry-brain_src
 	src/model/AsyncResponsePostResult.cc
 	src/model/GetAlgorithmHistoryResultRequest.cc
 	src/model/GetAlgorithmHistoryResultResult.cc
+	src/model/GetPointReckoningValueRequest.cc
+	src/model/GetPointReckoningValueResult.cc
+	src/model/GetPointSampleValueRequest.cc
+	src/model/GetPointSampleValueResult.cc
 	src/model/GetServiceResultAsyncRequest.cc
 	src/model/GetServiceResultAsyncResult.cc
 	src/model/InvokeServiceRequest.cc

@@ -19,7 +19,7 @@
 using AlibabaCloud::Industry_brain::Model::InvokeServiceAsyncRequest;
 
 InvokeServiceAsyncRequest::InvokeServiceAsyncRequest() :
-	RpcServiceRequest("industry-brain", "2019-06-29", "InvokeServiceAsync")
+	RpcServiceRequest("industry-brain", "2019-06-30", "InvokeServiceAsync")
 {
 	setMethod(HttpRequest::Method::Post);
 }
@@ -36,6 +36,17 @@ void InvokeServiceAsyncRequest::setIsShowInput(bool isShowInput)
 {
 	isShowInput_ = isShowInput;
 	setParameter("IsShowInput", isShowInput ? "true" : "false");
+}
+
+std::string InvokeServiceAsyncRequest::getContext()const
+{
+	return context_;
+}
+
+void InvokeServiceAsyncRequest::setContext(const std::string& context)
+{
+	context_ = context;
+	setParameter("Context", context);
 }
 
 std::string InvokeServiceAsyncRequest::getServiceId()const

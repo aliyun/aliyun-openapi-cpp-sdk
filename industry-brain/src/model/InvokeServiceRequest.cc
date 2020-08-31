@@ -19,7 +19,7 @@
 using AlibabaCloud::Industry_brain::Model::InvokeServiceRequest;
 
 InvokeServiceRequest::InvokeServiceRequest() :
-	RpcServiceRequest("industry-brain", "2019-06-29", "InvokeService")
+	RpcServiceRequest("industry-brain", "2019-06-30", "InvokeService")
 {
 	setMethod(HttpRequest::Method::Post);
 }

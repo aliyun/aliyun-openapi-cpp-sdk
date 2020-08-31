@@ -26,6 +26,10 @@
 #include "model/AsyncResponsePostResult.h"
 #include "model/GetAlgorithmHistoryResultRequest.h"
 #include "model/GetAlgorithmHistoryResultResult.h"
+#include "model/GetPointReckoningValueRequest.h"
+#include "model/GetPointReckoningValueResult.h"
+#include "model/GetPointSampleValueRequest.h"
+#include "model/GetPointSampleValueResult.h"
 #include "model/GetServiceResultAsyncRequest.h"
 #include "model/GetServiceResultAsyncResult.h"
 #include "model/InvokeServiceRequest.h"
@@ -47,6 +51,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAlgorithmHistoryResultResult> GetAlgorithmHistoryResultOutcome;
 			typedef std::future<GetAlgorithmHistoryResultOutcome> GetAlgorithmHistoryResultOutcomeCallable;
 			typedef std::function<void(const Industry_brainClient*, const Model::GetAlgorithmHistoryResultRequest&, const GetAlgorithmHistoryResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAlgorithmHistoryResultAsyncHandler;
+			typedef Outcome<Error, Model::GetPointReckoningValueResult> GetPointReckoningValueOutcome;
+			typedef std::future<GetPointReckoningValueOutcome> GetPointReckoningValueOutcomeCallable;
+			typedef std::function<void(const Industry_brainClient*, const Model::GetPointReckoningValueRequest&, const GetPointReckoningValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPointReckoningValueAsyncHandler;
+			typedef Outcome<Error, Model::GetPointSampleValueResult> GetPointSampleValueOutcome;
+			typedef std::future<GetPointSampleValueOutcome> GetPointSampleValueOutcomeCallable;
+			typedef std::function<void(const Industry_brainClient*, const Model::GetPointSampleValueRequest&, const GetPointSampleValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPointSampleValueAsyncHandler;
 			typedef Outcome<Error, Model::GetServiceResultAsyncResult> GetServiceResultAsyncOutcome;
 			typedef std::future<GetServiceResultAsyncOutcome> GetServiceResultAsyncOutcomeCallable;
 			typedef std::function<void(const Industry_brainClient*, const Model::GetServiceResultAsyncRequest&, const GetServiceResultAsyncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceResultAsyncAsyncHandler;
@@ -67,6 +77,12 @@ namespace AlibabaCloud
 			GetAlgorithmHistoryResultOutcome getAlgorithmHistoryResult(const Model::GetAlgorithmHistoryResultRequest &request)const;
 			void getAlgorithmHistoryResultAsync(const Model::GetAlgorithmHistoryResultRequest& request, const GetAlgorithmHistoryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAlgorithmHistoryResultOutcomeCallable getAlgorithmHistoryResultCallable(const Model::GetAlgorithmHistoryResultRequest& request) const;
+			GetPointReckoningValueOutcome getPointReckoningValue(const Model::GetPointReckoningValueRequest &request)const;
+			void getPointReckoningValueAsync(const Model::GetPointReckoningValueRequest& request, const GetPointReckoningValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPointReckoningValueOutcomeCallable getPointReckoningValueCallable(const Model::GetPointReckoningValueRequest& request) const;
+			GetPointSampleValueOutcome getPointSampleValue(const Model::GetPointSampleValueRequest &request)const;
+			void getPointSampleValueAsync(const Model::GetPointSampleValueRequest& request, const GetPointSampleValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPointSampleValueOutcomeCallable getPointSampleValueCallable(const Model::GetPointSampleValueRequest& request) const;
 			GetServiceResultAsyncOutcome getServiceResultAsync(const Model::GetServiceResultAsyncRequest &request)const;
 			void getServiceResultAsyncAsync(const Model::GetServiceResultAsyncRequest& request, const GetServiceResultAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceResultAsyncOutcomeCallable getServiceResultAsyncCallable(const Model::GetServiceResultAsyncRequest& request) const;

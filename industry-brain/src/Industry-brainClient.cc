@@ -123,6 +123,78 @@ Industry_brainClient::GetAlgorithmHistoryResultOutcomeCallable Industry_brainCli
 	return task->get_future();
 }
 
+Industry_brainClient::GetPointReckoningValueOutcome Industry_brainClient::getPointReckoningValue(const GetPointReckoningValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPointReckoningValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPointReckoningValueOutcome(GetPointReckoningValueResult(outcome.result()));
+	else
+		return GetPointReckoningValueOutcome(outcome.error());
+}
+
+void Industry_brainClient::getPointReckoningValueAsync(const GetPointReckoningValueRequest& request, const GetPointReckoningValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPointReckoningValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Industry_brainClient::GetPointReckoningValueOutcomeCallable Industry_brainClient::getPointReckoningValueCallable(const GetPointReckoningValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPointReckoningValueOutcome()>>(
+			[this, request]()
+			{
+			return this->getPointReckoningValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Industry_brainClient::GetPointSampleValueOutcome Industry_brainClient::getPointSampleValue(const GetPointSampleValueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPointSampleValueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPointSampleValueOutcome(GetPointSampleValueResult(outcome.result()));
+	else
+		return GetPointSampleValueOutcome(outcome.error());
+}
+
+void Industry_brainClient::getPointSampleValueAsync(const GetPointSampleValueRequest& request, const GetPointSampleValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPointSampleValue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Industry_brainClient::GetPointSampleValueOutcomeCallable Industry_brainClient::getPointSampleValueCallable(const GetPointSampleValueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPointSampleValueOutcome()>>(
+			[this, request]()
+			{
+			return this->getPointSampleValue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Industry_brainClient::GetServiceResultAsyncOutcome Industry_brainClient::getServiceResultAsync(const GetServiceResultAsyncRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
