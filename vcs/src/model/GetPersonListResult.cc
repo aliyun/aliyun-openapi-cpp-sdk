@@ -58,6 +58,8 @@ void GetPersonListResult::parse(const std::string &payload)
 			recordsItemObject.personId = dataNodeRecordsRecordsItem["PersonId"].asString();
 		if(!dataNodeRecordsRecordsItem["SearchMatchingRate"].isNull())
 			recordsItemObject.searchMatchingRate = dataNodeRecordsRecordsItem["SearchMatchingRate"].asString();
+		if(!dataNodeRecordsRecordsItem["LastShotTime"].isNull())
+			recordsItemObject.lastShotTime = std::stol(dataNodeRecordsRecordsItem["LastShotTime"].asString());
 		auto allPropertyTagListNode = allRecordsNode["PropertyTagList"]["TagList"];
 		for (auto allRecordsNodePropertyTagListTagList : allPropertyTagListNode)
 		{

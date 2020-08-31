@@ -48,6 +48,7 @@ namespace AlibabaCloud
 						std::string searchMatchingRate;
 						std::vector<RecordsItem::TagList> propertyTagList;
 						std::string faceUrl;
+						long lastShotTime;
 					};
 					long totalCount;
 					long pageSize;

@@ -39,14 +39,20 @@ namespace AlibabaCloud
 				void setCorpId(const std::string& corpId);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
+				std::string getCountType()const;
+				void setCountType(const std::string& countType);
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 				std::string getTimeAggregateType()const;
 				void setTimeAggregateType(const std::string& timeAggregateType);
+				std::string getMaxVal()const;
+				void setMaxVal(const std::string& maxVal);
 				std::string getTagCode()const;
 				void setTagCode(const std::string& tagCode);
+				std::string getMinVal()const;
+				void setMinVal(const std::string& minVal);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getAggregateType()const;
@@ -55,10 +61,13 @@ namespace AlibabaCloud
             private:
 				std::string corpId_;
 				std::string endTime_;
+				std::string countType_;
 				std::string startTime_;
 				int pageNumber_;
 				std::string timeAggregateType_;
+				std::string maxVal_;
 				std::string tagCode_;
+				std::string minVal_;
 				int pageSize_;
 				std::string aggregateType_;
 

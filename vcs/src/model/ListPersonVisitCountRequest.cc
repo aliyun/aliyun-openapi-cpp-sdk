@@ -49,6 +49,17 @@ void ListPersonVisitCountRequest::setEndTime(const std::string& endTime)
 	setBodyParameter("EndTime", endTime);
 }
 
+std::string ListPersonVisitCountRequest::getCountType()const
+{
+	return countType_;
+}
+
+void ListPersonVisitCountRequest::setCountType(const std::string& countType)
+{
+	countType_ = countType;
+	setBodyParameter("CountType", countType);
+}
+
 std::string ListPersonVisitCountRequest::getStartTime()const
 {
 	return startTime_;
@@ -82,6 +93,17 @@ void ListPersonVisitCountRequest::setTimeAggregateType(const std::string& timeAg
 	setBodyParameter("TimeAggregateType", timeAggregateType);
 }
 
+std::string ListPersonVisitCountRequest::getMaxVal()const
+{
+	return maxVal_;
+}
+
+void ListPersonVisitCountRequest::setMaxVal(const std::string& maxVal)
+{
+	maxVal_ = maxVal;
+	setBodyParameter("MaxVal", maxVal);
+}
+
 std::string ListPersonVisitCountRequest::getTagCode()const
 {
 	return tagCode_;
@@ -91,6 +113,17 @@ void ListPersonVisitCountRequest::setTagCode(const std::string& tagCode)
 {
 	tagCode_ = tagCode;
 	setBodyParameter("TagCode", tagCode);
+}
+
+std::string ListPersonVisitCountRequest::getMinVal()const
+{
+	return minVal_;
+}
+
+void ListPersonVisitCountRequest::setMinVal(const std::string& minVal)
+{
+	minVal_ = minVal;
+	setBodyParameter("MinVal", minVal);
 }
 
 int ListPersonVisitCountRequest::getPageSize()const
