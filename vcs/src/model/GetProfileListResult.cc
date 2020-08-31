@@ -45,7 +45,7 @@ void GetProfileListResult::parse(const std::string &payload)
 	if(!dataNode["PageSize"].isNull())
 		data_.pageSize = std::stol(dataNode["PageSize"].asString());
 	if(!dataNode["Success"].isNull())
-		data_.success = std::stol(dataNode["Success"].asString());
+		data_.success = dataNode["Success"].asString() == "true";
 	if(!dataNode["Total"].isNull())
 		data_.total = std::stol(dataNode["Total"].asString());
 	auto allRecordsNode = dataNode["Records"]["RecordsItem"];

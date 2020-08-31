@@ -52,7 +52,7 @@ namespace AlibabaCloud
 					long pageNumber;
 					long total;
 					std::vector<RecordsItem> records;
-					long success;
+					bool success;
 				};
 
 
