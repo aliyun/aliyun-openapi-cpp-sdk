@@ -37,10 +37,12 @@ namespace AlibabaCloud
 					struct RecordsItem
 					{
 						std::string userName;
+						std::string personId;
 						std::string idNumber;
 						int userId;
 						int userGroupId;
 						std::string isvSubId;
+						std::string matchingRate;
 						std::string attachment;
 						std::string gender;
 						std::string bizId;

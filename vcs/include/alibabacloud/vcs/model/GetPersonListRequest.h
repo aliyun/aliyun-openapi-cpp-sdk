@@ -35,20 +35,29 @@ namespace AlibabaCloud
 				GetPersonListRequest();
 				~GetPersonListRequest();
 
-				std::string getFaceImageUrl()const;
-				void setFaceImageUrl(const std::string& faceImageUrl);
-				std::string getPageNumber()const;
-				void setPageNumber(const std::string& pageNumber);
-				std::string getCorpIdList()const;
-				void setCorpIdList(const std::string& corpIdList);
-				std::string getPageSize()const;
-				void setPageSize(const std::string& pageSize);
+				std::string getCorpId()const;
+				void setCorpId(const std::string& corpId);
+				std::string getFaceMatchingRateThreshold()const;
+				void setFaceMatchingRateThreshold(const std::string& faceMatchingRateThreshold);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
+				std::map<std::string, std::string> getCorpIdList()const;
+				void setCorpIdList(const std::map<std::string, std::string>& corpIdList);
+				std::string getFaceUrl()const;
+				void setFaceUrl(const std::string& faceUrl);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
+				std::map<std::string, std::string> getPersonIdList()const;
+				void setPersonIdList(const std::map<std::string, std::string>& personIdList);
 
             private:
-				std::string faceImageUrl_;
-				std::string pageNumber_;
-				std::string corpIdList_;
-				std::string pageSize_;
+				std::string corpId_;
+				std::string faceMatchingRateThreshold_;
+				long pageNumber_;
+				std::map<std::string, std::string> corpIdList_;
+				std::string faceUrl_;
+				long pageSize_;
+				std::map<std::string, std::string> personIdList_;
 
 			};
 		}

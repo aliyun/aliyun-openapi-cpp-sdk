@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTUSERSREQUEST_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTUSERSREQUEST_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_GETPROFILELISTREQUEST_H_
+#define ALIBABACLOUD_VCS_MODEL_GETPROFILELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,15 +28,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListUsersRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VCS_EXPORT GetProfileListRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListUsersRequest();
-				~ListUsersRequest();
+				GetProfileListRequest();
+				~GetProfileListRequest();
 
-				std::map<std::string, std::string> getUserList()const;
-				void setUserList(const std::map<std::string, std::string>& userList);
+				std::map<std::string, std::string> getProfileIdList()const;
+				void setProfileIdList(const std::map<std::string, std::string>& profileIdList);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				int getGender()const;
@@ -45,55 +45,52 @@ namespace AlibabaCloud
 				void setPlateNo(const std::string& plateNo);
 				std::string getIdNumber()const;
 				void setIdNumber(const std::string& idNumber);
-				std::string getFaceImageUrl()const;
-				void setFaceImageUrl(const std::string& faceImageUrl);
-				std::map<std::string, std::string> getPersonList()const;
-				void setPersonList(const std::map<std::string, std::string>& personList);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
-				std::string getAttachment()const;
-				void setAttachment(const std::string& attachment);
+				std::string getFaceUrl()const;
+				void setFaceUrl(const std::string& faceUrl);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::map<std::string, std::string> getPersonIdList()const;
+				void setPersonIdList(const std::map<std::string, std::string>& personIdList);
+				std::string getLiveAddress()const;
+				void setLiveAddress(const std::string& liveAddress);
 				std::string getIsvSubId()const;
 				void setIsvSubId(const std::string& isvSubId);
-				std::string getAddress()const;
-				void setAddress(const std::string& address);
-				long getUserGroupId()const;
-				void setUserGroupId(long userGroupId);
+				std::string getSceneType()const;
+				void setSceneType(const std::string& sceneType);
 				std::string getPhoneNo()const;
 				void setPhoneNo(const std::string& phoneNo);
+				long getCatalogId()const;
+				void setCatalogId(long catalogId);
+				std::string getName()const;
+				void setName(const std::string& name);
 				std::string getBizId()const;
 				void setBizId(const std::string& bizId);
-				int getAge()const;
-				void setAge(int age);
 				std::string getMatchingRateThreshold()const;
 				void setMatchingRateThreshold(const std::string& matchingRateThreshold);
-				std::string getUserName()const;
-				void setUserName(const std::string& userName);
 
             private:
-				std::map<std::string, std::string> userList_;
+				std::map<std::string, std::string> profileIdList_;
 				std::string corpId_;
 				int gender_;
 				std::string plateNo_;
 				std::string idNumber_;
-				std::string faceImageUrl_;
-				std::map<std::string, std::string> personList_;
 				long pageNumber_;
-				std::string attachment_;
+				std::string faceUrl_;
 				long pageSize_;
+				std::map<std::string, std::string> personIdList_;
+				std::string liveAddress_;
 				std::string isvSubId_;
-				std::string address_;
-				long userGroupId_;
+				std::string sceneType_;
 				std::string phoneNo_;
+				long catalogId_;
+				std::string name_;
 				std::string bizId_;
-				int age_;
 				std::string matchingRateThreshold_;
-				std::string userName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTUSERSREQUEST_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_GETPROFILELISTREQUEST_H_

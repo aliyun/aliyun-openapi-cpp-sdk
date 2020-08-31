@@ -27,8 +27,14 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/AddDeviceResult.h
 	include/alibabacloud/vcs/model/AddMonitorRequest.h
 	include/alibabacloud/vcs/model/AddMonitorResult.h
+	include/alibabacloud/vcs/model/AddProfileRequest.h
+	include/alibabacloud/vcs/model/AddProfileResult.h
+	include/alibabacloud/vcs/model/AddProfileCatalogRequest.h
+	include/alibabacloud/vcs/model/AddProfileCatalogResult.h
 	include/alibabacloud/vcs/model/BindCorpGroupRequest.h
 	include/alibabacloud/vcs/model/BindCorpGroupResult.h
+	include/alibabacloud/vcs/model/BindPersonRequest.h
+	include/alibabacloud/vcs/model/BindPersonResult.h
 	include/alibabacloud/vcs/model/BindUserRequest.h
 	include/alibabacloud/vcs/model/BindUserResult.h
 	include/alibabacloud/vcs/model/CreateCorpRequest.h
@@ -49,6 +55,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/DeleteDataSourceResult.h
 	include/alibabacloud/vcs/model/DeleteDeviceRequest.h
 	include/alibabacloud/vcs/model/DeleteDeviceResult.h
+	include/alibabacloud/vcs/model/DeleteProfileRequest.h
+	include/alibabacloud/vcs/model/DeleteProfileResult.h
+	include/alibabacloud/vcs/model/DeleteProfileCatalogRequest.h
+	include/alibabacloud/vcs/model/DeleteProfileCatalogResult.h
 	include/alibabacloud/vcs/model/DeleteRecordsRequest.h
 	include/alibabacloud/vcs/model/DeleteRecordsResult.h
 	include/alibabacloud/vcs/model/DeleteUserRequest.h
@@ -59,6 +69,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskResult.h
 	include/alibabacloud/vcs/model/GetBodyOptionsRequest.h
 	include/alibabacloud/vcs/model/GetBodyOptionsResult.h
+	include/alibabacloud/vcs/model/GetCatalogListRequest.h
+	include/alibabacloud/vcs/model/GetCatalogListResult.h
 	include/alibabacloud/vcs/model/GetDeviceConfigRequest.h
 	include/alibabacloud/vcs/model/GetDeviceConfigResult.h
 	include/alibabacloud/vcs/model/GetDeviceLiveUrlRequest.h
@@ -77,6 +89,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/GetPersonDetailResult.h
 	include/alibabacloud/vcs/model/GetPersonListRequest.h
 	include/alibabacloud/vcs/model/GetPersonListResult.h
+	include/alibabacloud/vcs/model/GetProfileDetailRequest.h
+	include/alibabacloud/vcs/model/GetProfileDetailResult.h
+	include/alibabacloud/vcs/model/GetProfileListRequest.h
+	include/alibabacloud/vcs/model/GetProfileListResult.h
 	include/alibabacloud/vcs/model/GetUserDetailRequest.h
 	include/alibabacloud/vcs/model/GetUserDetailResult.h
 	include/alibabacloud/vcs/model/GetVideoComposeResultRequest.h
@@ -137,6 +153,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/SyncDeviceTimeResult.h
 	include/alibabacloud/vcs/model/UnbindCorpGroupRequest.h
 	include/alibabacloud/vcs/model/UnbindCorpGroupResult.h
+	include/alibabacloud/vcs/model/UnbindPersonRequest.h
+	include/alibabacloud/vcs/model/UnbindPersonResult.h
 	include/alibabacloud/vcs/model/UnbindUserRequest.h
 	include/alibabacloud/vcs/model/UnbindUserResult.h
 	include/alibabacloud/vcs/model/UpdateCorpRequest.h
@@ -145,6 +163,10 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/UpdateDeviceResult.h
 	include/alibabacloud/vcs/model/UpdateMonitorRequest.h
 	include/alibabacloud/vcs/model/UpdateMonitorResult.h
+	include/alibabacloud/vcs/model/UpdateProfileRequest.h
+	include/alibabacloud/vcs/model/UpdateProfileResult.h
+	include/alibabacloud/vcs/model/UpdateProfileCatalogRequest.h
+	include/alibabacloud/vcs/model/UpdateProfileCatalogResult.h
 	include/alibabacloud/vcs/model/UpdateUserRequest.h
 	include/alibabacloud/vcs/model/UpdateUserResult.h
 	include/alibabacloud/vcs/model/UpdateUserGroupRequest.h
@@ -162,8 +184,14 @@ set(vcs_src
 	src/model/AddDeviceResult.cc
 	src/model/AddMonitorRequest.cc
 	src/model/AddMonitorResult.cc
+	src/model/AddProfileRequest.cc
+	src/model/AddProfileResult.cc
+	src/model/AddProfileCatalogRequest.cc
+	src/model/AddProfileCatalogResult.cc
 	src/model/BindCorpGroupRequest.cc
 	src/model/BindCorpGroupResult.cc
+	src/model/BindPersonRequest.cc
+	src/model/BindPersonResult.cc
 	src/model/BindUserRequest.cc
 	src/model/BindUserResult.cc
 	src/model/CreateCorpRequest.cc
@@ -184,6 +212,10 @@ set(vcs_src
 	src/model/DeleteDataSourceResult.cc
 	src/model/DeleteDeviceRequest.cc
 	src/model/DeleteDeviceResult.cc
+	src/model/DeleteProfileRequest.cc
+	src/model/DeleteProfileResult.cc
+	src/model/DeleteProfileCatalogRequest.cc
+	src/model/DeleteProfileCatalogResult.cc
 	src/model/DeleteRecordsRequest.cc
 	src/model/DeleteRecordsResult.cc
 	src/model/DeleteUserRequest.cc
@@ -194,6 +226,8 @@ set(vcs_src
 	src/model/DeleteVideoSummaryTaskResult.cc
 	src/model/GetBodyOptionsRequest.cc
 	src/model/GetBodyOptionsResult.cc
+	src/model/GetCatalogListRequest.cc
+	src/model/GetCatalogListResult.cc
 	src/model/GetDeviceConfigRequest.cc
 	src/model/GetDeviceConfigResult.cc
 	src/model/GetDeviceLiveUrlRequest.cc
@@ -212,6 +246,10 @@ set(vcs_src
 	src/model/GetPersonDetailResult.cc
 	src/model/GetPersonListRequest.cc
 	src/model/GetPersonListResult.cc
+	src/model/GetProfileDetailRequest.cc
+	src/model/GetProfileDetailResult.cc
+	src/model/GetProfileListRequest.cc
+	src/model/GetProfileListResult.cc
 	src/model/GetUserDetailRequest.cc
 	src/model/GetUserDetailResult.cc
 	src/model/GetVideoComposeResultRequest.cc
@@ -272,6 +310,8 @@ set(vcs_src
 	src/model/SyncDeviceTimeResult.cc
 	src/model/UnbindCorpGroupRequest.cc
 	src/model/UnbindCorpGroupResult.cc
+	src/model/UnbindPersonRequest.cc
+	src/model/UnbindPersonResult.cc
 	src/model/UnbindUserRequest.cc
 	src/model/UnbindUserResult.cc
 	src/model/UpdateCorpRequest.cc
@@ -280,6 +320,10 @@ set(vcs_src
 	src/model/UpdateDeviceResult.cc
 	src/model/UpdateMonitorRequest.cc
 	src/model/UpdateMonitorResult.cc
+	src/model/UpdateProfileRequest.cc
+	src/model/UpdateProfileResult.cc
+	src/model/UpdateProfileCatalogRequest.cc
+	src/model/UpdateProfileCatalogResult.cc
 	src/model/UpdateUserRequest.cc
 	src/model/UpdateUserResult.cc
 	src/model/UpdateUserGroupRequest.cc

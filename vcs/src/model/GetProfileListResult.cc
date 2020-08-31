@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vcs/model/ListUsersResult.h>
+#include <alibabacloud/vcs/model/GetProfileListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vcs;
 using namespace AlibabaCloud::Vcs::Model;
 
-ListUsersResult::ListUsersResult() :
+GetProfileListResult::GetProfileListResult() :
 	ServiceResult()
 {}
 
-ListUsersResult::ListUsersResult(const std::string &payload) :
+GetProfileListResult::GetProfileListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListUsersResult::~ListUsersResult()
+GetProfileListResult::~GetProfileListResult()
 {}
 
-void ListUsersResult::parse(const std::string &payload)
+void GetProfileListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -52,30 +52,28 @@ void ListUsersResult::parse(const std::string &payload)
 	for (auto dataNodeRecordsRecordsItem : allRecordsNode)
 	{
 		Data::RecordsItem recordsItemObject;
-		if(!dataNodeRecordsRecordsItem["UserGroupId"].isNull())
-			recordsItemObject.userGroupId = std::stoi(dataNodeRecordsRecordsItem["UserGroupId"].asString());
-		if(!dataNodeRecordsRecordsItem["Age"].isNull())
-			recordsItemObject.age = dataNodeRecordsRecordsItem["Age"].asString();
-		if(!dataNodeRecordsRecordsItem["Attachment"].isNull())
-			recordsItemObject.attachment = dataNodeRecordsRecordsItem["Attachment"].asString();
+		if(!dataNodeRecordsRecordsItem["SceneType"].isNull())
+			recordsItemObject.sceneType = dataNodeRecordsRecordsItem["SceneType"].asString();
 		if(!dataNodeRecordsRecordsItem["BizId"].isNull())
 			recordsItemObject.bizId = dataNodeRecordsRecordsItem["BizId"].asString();
-		if(!dataNodeRecordsRecordsItem["FaceImageUrl"].isNull())
-			recordsItemObject.faceImageUrl = dataNodeRecordsRecordsItem["FaceImageUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["FaceUrl"].isNull())
+			recordsItemObject.faceUrl = dataNodeRecordsRecordsItem["FaceUrl"].asString();
 		if(!dataNodeRecordsRecordsItem["Gender"].isNull())
 			recordsItemObject.gender = dataNodeRecordsRecordsItem["Gender"].asString();
 		if(!dataNodeRecordsRecordsItem["IdNumber"].isNull())
 			recordsItemObject.idNumber = dataNodeRecordsRecordsItem["IdNumber"].asString();
-		if(!dataNodeRecordsRecordsItem["UserId"].isNull())
-			recordsItemObject.userId = std::stoi(dataNodeRecordsRecordsItem["UserId"].asString());
-		if(!dataNodeRecordsRecordsItem["UserName"].isNull())
-			recordsItemObject.userName = dataNodeRecordsRecordsItem["UserName"].asString();
 		if(!dataNodeRecordsRecordsItem["IsvSubId"].isNull())
 			recordsItemObject.isvSubId = dataNodeRecordsRecordsItem["IsvSubId"].asString();
-		if(!dataNodeRecordsRecordsItem["MatchingRate"].isNull())
-			recordsItemObject.matchingRate = dataNodeRecordsRecordsItem["MatchingRate"].asString();
+		if(!dataNodeRecordsRecordsItem["SearchMatchingRate"].isNull())
+			recordsItemObject.searchMatchingRate = dataNodeRecordsRecordsItem["SearchMatchingRate"].asString();
 		if(!dataNodeRecordsRecordsItem["PersonId"].isNull())
 			recordsItemObject.personId = dataNodeRecordsRecordsItem["PersonId"].asString();
+		if(!dataNodeRecordsRecordsItem["CatalogId"].isNull())
+			recordsItemObject.catalogId = std::stoi(dataNodeRecordsRecordsItem["CatalogId"].asString());
+		if(!dataNodeRecordsRecordsItem["ProfileId"].isNull())
+			recordsItemObject.profileId = std::stoi(dataNodeRecordsRecordsItem["ProfileId"].asString());
+		if(!dataNodeRecordsRecordsItem["Name"].isNull())
+			recordsItemObject.name = dataNodeRecordsRecordsItem["Name"].asString();
 		data_.records.push_back(recordsItemObject);
 	}
 	if(!value["Code"].isNull())
@@ -85,17 +83,17 @@ void ListUsersResult::parse(const std::string &payload)
 
 }
 
-std::string ListUsersResult::getMessage()const
+std::string GetProfileListResult::getMessage()const
 {
 	return message_;
 }
 
-ListUsersResult::Data ListUsersResult::getData()const
+GetProfileListResult::Data GetProfileListResult::getData()const
 {
 	return data_;
 }
 
-std::string ListUsersResult::getCode()const
+std::string GetProfileListResult::getCode()const
 {
 	return code_;
 }

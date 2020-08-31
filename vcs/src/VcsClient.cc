@@ -31,21 +31,21 @@ VcsClient::VcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::~VcsClient()
@@ -159,6 +159,78 @@ VcsClient::AddMonitorOutcomeCallable VcsClient::addMonitorCallable(const AddMoni
 	return task->get_future();
 }
 
+VcsClient::AddProfileOutcome VcsClient::addProfile(const AddProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddProfileOutcome(AddProfileResult(outcome.result()));
+	else
+		return AddProfileOutcome(outcome.error());
+}
+
+void VcsClient::addProfileAsync(const AddProfileRequest& request, const AddProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::AddProfileOutcomeCallable VcsClient::addProfileCallable(const AddProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->addProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::AddProfileCatalogOutcome VcsClient::addProfileCatalog(const AddProfileCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddProfileCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddProfileCatalogOutcome(AddProfileCatalogResult(outcome.result()));
+	else
+		return AddProfileCatalogOutcome(outcome.error());
+}
+
+void VcsClient::addProfileCatalogAsync(const AddProfileCatalogRequest& request, const AddProfileCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addProfileCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::AddProfileCatalogOutcomeCallable VcsClient::addProfileCatalogCallable(const AddProfileCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddProfileCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->addProfileCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::BindCorpGroupOutcome VcsClient::bindCorpGroup(const BindCorpGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +261,42 @@ VcsClient::BindCorpGroupOutcomeCallable VcsClient::bindCorpGroupCallable(const B
 			[this, request]()
 			{
 			return this->bindCorpGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::BindPersonOutcome VcsClient::bindPerson(const BindPersonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindPersonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindPersonOutcome(BindPersonResult(outcome.result()));
+	else
+		return BindPersonOutcome(outcome.error());
+}
+
+void VcsClient::bindPersonAsync(const BindPersonRequest& request, const BindPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindPerson(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::BindPersonOutcomeCallable VcsClient::bindPersonCallable(const BindPersonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindPersonOutcome()>>(
+			[this, request]()
+			{
+			return this->bindPerson(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +663,78 @@ VcsClient::DeleteDeviceOutcomeCallable VcsClient::deleteDeviceCallable(const Del
 	return task->get_future();
 }
 
+VcsClient::DeleteProfileOutcome VcsClient::deleteProfile(const DeleteProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProfileOutcome(DeleteProfileResult(outcome.result()));
+	else
+		return DeleteProfileOutcome(outcome.error());
+}
+
+void VcsClient::deleteProfileAsync(const DeleteProfileRequest& request, const DeleteProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteProfileOutcomeCallable VcsClient::deleteProfileCallable(const DeleteProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DeleteProfileCatalogOutcome VcsClient::deleteProfileCatalog(const DeleteProfileCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteProfileCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteProfileCatalogOutcome(DeleteProfileCatalogResult(outcome.result()));
+	else
+		return DeleteProfileCatalogOutcome(outcome.error());
+}
+
+void VcsClient::deleteProfileCatalogAsync(const DeleteProfileCatalogRequest& request, const DeleteProfileCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteProfileCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DeleteProfileCatalogOutcomeCallable VcsClient::deleteProfileCatalogCallable(const DeleteProfileCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteProfileCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteProfileCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::DeleteRecordsOutcome VcsClient::deleteRecords(const DeleteRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +909,42 @@ VcsClient::GetBodyOptionsOutcomeCallable VcsClient::getBodyOptionsCallable(const
 			[this, request]()
 			{
 			return this->getBodyOptions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetCatalogListOutcome VcsClient::getCatalogList(const GetCatalogListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCatalogListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCatalogListOutcome(GetCatalogListResult(outcome.result()));
+	else
+		return GetCatalogListOutcome(outcome.error());
+}
+
+void VcsClient::getCatalogListAsync(const GetCatalogListRequest& request, const GetCatalogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCatalogList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetCatalogListOutcomeCallable VcsClient::getCatalogListCallable(const GetCatalogListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCatalogListOutcome()>>(
+			[this, request]()
+			{
+			return this->getCatalogList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1053,6 +1269,78 @@ VcsClient::GetPersonListOutcomeCallable VcsClient::getPersonListCallable(const G
 			[this, request]()
 			{
 			return this->getPersonList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetProfileDetailOutcome VcsClient::getProfileDetail(const GetProfileDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetProfileDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetProfileDetailOutcome(GetProfileDetailResult(outcome.result()));
+	else
+		return GetProfileDetailOutcome(outcome.error());
+}
+
+void VcsClient::getProfileDetailAsync(const GetProfileDetailRequest& request, const GetProfileDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getProfileDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetProfileDetailOutcomeCallable VcsClient::getProfileDetailCallable(const GetProfileDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetProfileDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getProfileDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::GetProfileListOutcome VcsClient::getProfileList(const GetProfileListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetProfileListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetProfileListOutcome(GetProfileListResult(outcome.result()));
+	else
+		return GetProfileListOutcome(outcome.error());
+}
+
+void VcsClient::getProfileListAsync(const GetProfileListRequest& request, const GetProfileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getProfileList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::GetProfileListOutcomeCallable VcsClient::getProfileListCallable(const GetProfileListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetProfileListOutcome()>>(
+			[this, request]()
+			{
+			return this->getProfileList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2139,6 +2427,42 @@ VcsClient::UnbindCorpGroupOutcomeCallable VcsClient::unbindCorpGroupCallable(con
 	return task->get_future();
 }
 
+VcsClient::UnbindPersonOutcome VcsClient::unbindPerson(const UnbindPersonRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnbindPersonOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnbindPersonOutcome(UnbindPersonResult(outcome.result()));
+	else
+		return UnbindPersonOutcome(outcome.error());
+}
+
+void VcsClient::unbindPersonAsync(const UnbindPersonRequest& request, const UnbindPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unbindPerson(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UnbindPersonOutcomeCallable VcsClient::unbindPersonCallable(const UnbindPersonRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnbindPersonOutcome()>>(
+			[this, request]()
+			{
+			return this->unbindPerson(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::UnbindUserOutcome VcsClient::unbindUser(const UnbindUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2277,6 +2601,78 @@ VcsClient::UpdateMonitorOutcomeCallable VcsClient::updateMonitorCallable(const U
 			[this, request]()
 			{
 			return this->updateMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UpdateProfileOutcome VcsClient::updateProfile(const UpdateProfileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProfileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProfileOutcome(UpdateProfileResult(outcome.result()));
+	else
+		return UpdateProfileOutcome(outcome.error());
+}
+
+void VcsClient::updateProfileAsync(const UpdateProfileRequest& request, const UpdateProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProfile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UpdateProfileOutcomeCallable VcsClient::updateProfileCallable(const UpdateProfileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProfileOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProfile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::UpdateProfileCatalogOutcome VcsClient::updateProfileCatalog(const UpdateProfileCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateProfileCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateProfileCatalogOutcome(UpdateProfileCatalogResult(outcome.result()));
+	else
+		return UpdateProfileCatalogOutcome(outcome.error());
+}
+
+void VcsClient::updateProfileCatalogAsync(const UpdateProfileCatalogRequest& request, const UpdateProfileCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateProfileCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::UpdateProfileCatalogOutcomeCallable VcsClient::updateProfileCatalogCallable(const UpdateProfileCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateProfileCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->updateProfileCatalog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

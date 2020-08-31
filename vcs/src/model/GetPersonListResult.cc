@@ -41,34 +41,36 @@ void GetPersonListResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["PageNumber"].isNull())
-		data_.pageNumber = dataNode["PageNumber"].asString();
+		data_.pageNumber = std::stol(dataNode["PageNumber"].asString());
 	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = dataNode["PageSize"].asString();
+		data_.pageSize = std::stol(dataNode["PageSize"].asString());
 	if(!dataNode["TotalCount"].isNull())
-		data_.totalCount = dataNode["TotalCount"].asString();
+		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	auto allRecordsNode = dataNode["Records"]["RecordsItem"];
 	for (auto dataNodeRecordsRecordsItem : allRecordsNode)
 	{
 		Data::RecordsItem recordsItemObject;
-		if(!dataNodeRecordsRecordsItem["FirstAppearTime"].isNull())
-			recordsItemObject.firstAppearTime = dataNodeRecordsRecordsItem["FirstAppearTime"].asString();
+		if(!dataNodeRecordsRecordsItem["FaceUrl"].isNull())
+			recordsItemObject.faceUrl = dataNodeRecordsRecordsItem["FaceUrl"].asString();
+		if(!dataNodeRecordsRecordsItem["FirstShotTime"].isNull())
+			recordsItemObject.firstShotTime = std::stol(dataNodeRecordsRecordsItem["FirstShotTime"].asString());
 		if(!dataNodeRecordsRecordsItem["PersonId"].isNull())
 			recordsItemObject.personId = dataNodeRecordsRecordsItem["PersonId"].asString();
-		if(!dataNodeRecordsRecordsItem["FaceImageUrl"].isNull())
-			recordsItemObject.faceImageUrl = dataNodeRecordsRecordsItem["FaceImageUrl"].asString();
-		auto allTagListNode = allRecordsNode["TagList"]["TagListItem"];
-		for (auto allRecordsNodeTagListTagListItem : allTagListNode)
+		if(!dataNodeRecordsRecordsItem["SearchMatchingRate"].isNull())
+			recordsItemObject.searchMatchingRate = dataNodeRecordsRecordsItem["SearchMatchingRate"].asString();
+		auto allPropertyTagListNode = allRecordsNode["PropertyTagList"]["TagList"];
+		for (auto allRecordsNodePropertyTagListTagList : allPropertyTagListNode)
 		{
-			Data::RecordsItem::TagListItem tagListObject;
-			if(!allRecordsNodeTagListTagListItem["Code"].isNull())
-				tagListObject.code = allRecordsNodeTagListTagListItem["Code"].asString();
-			if(!allRecordsNodeTagListTagListItem["Value"].isNull())
-				tagListObject.value = allRecordsNodeTagListTagListItem["Value"].asString();
-			if(!allRecordsNodeTagListTagListItem["TagCodeName"].isNull())
-				tagListObject.tagCodeName = allRecordsNodeTagListTagListItem["TagCodeName"].asString();
-			if(!allRecordsNodeTagListTagListItem["TagName"].isNull())
-				tagListObject.tagName = allRecordsNodeTagListTagListItem["TagName"].asString();
-			recordsItemObject.tagList.push_back(tagListObject);
+			Data::RecordsItem::TagList propertyTagListObject;
+			if(!allRecordsNodePropertyTagListTagList["Code"].isNull())
+				propertyTagListObject.code = allRecordsNodePropertyTagListTagList["Code"].asString();
+			if(!allRecordsNodePropertyTagListTagList["TagCodeName"].isNull())
+				propertyTagListObject.tagCodeName = allRecordsNodePropertyTagListTagList["TagCodeName"].asString();
+			if(!allRecordsNodePropertyTagListTagList["TagName"].isNull())
+				propertyTagListObject.tagName = allRecordsNodePropertyTagListTagList["TagName"].asString();
+			if(!allRecordsNodePropertyTagListTagList["Value"].isNull())
+				propertyTagListObject.value = allRecordsNodePropertyTagListTagList["Value"].asString();
+			recordsItemObject.propertyTagList.push_back(propertyTagListObject);
 		}
 		data_.records.push_back(recordsItemObject);
 	}

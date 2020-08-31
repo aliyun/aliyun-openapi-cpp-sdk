@@ -27,47 +27,80 @@ GetPersonListRequest::GetPersonListRequest() :
 GetPersonListRequest::~GetPersonListRequest()
 {}
 
-std::string GetPersonListRequest::getFaceImageUrl()const
+std::string GetPersonListRequest::getCorpId()const
 {
-	return faceImageUrl_;
+	return corpId_;
 }
 
-void GetPersonListRequest::setFaceImageUrl(const std::string& faceImageUrl)
+void GetPersonListRequest::setCorpId(const std::string& corpId)
 {
-	faceImageUrl_ = faceImageUrl;
-	setBodyParameter("FaceImageUrl", faceImageUrl);
+	corpId_ = corpId;
+	setBodyParameter("CorpId", corpId);
 }
 
-std::string GetPersonListRequest::getPageNumber()const
+std::string GetPersonListRequest::getFaceMatchingRateThreshold()const
+{
+	return faceMatchingRateThreshold_;
+}
+
+void GetPersonListRequest::setFaceMatchingRateThreshold(const std::string& faceMatchingRateThreshold)
+{
+	faceMatchingRateThreshold_ = faceMatchingRateThreshold;
+	setBodyParameter("FaceMatchingRateThreshold", faceMatchingRateThreshold);
+}
+
+long GetPersonListRequest::getPageNumber()const
 {
 	return pageNumber_;
 }
 
-void GetPersonListRequest::setPageNumber(const std::string& pageNumber)
+void GetPersonListRequest::setPageNumber(long pageNumber)
 {
 	pageNumber_ = pageNumber;
-	setBodyParameter("PageNumber", pageNumber);
+	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
-std::string GetPersonListRequest::getCorpIdList()const
+std::map<std::string, std::string> GetPersonListRequest::getCorpIdList()const
 {
 	return corpIdList_;
 }
 
-void GetPersonListRequest::setCorpIdList(const std::string& corpIdList)
+void GetPersonListRequest::setCorpIdList(const std::map<std::string, std::string>& corpIdList)
 {
 	corpIdList_ = corpIdList;
-	setBodyParameter("CorpIdList", corpIdList);
+	setJsonParameters("CorpIdList", corpIdList);
 }
 
-std::string GetPersonListRequest::getPageSize()const
+std::string GetPersonListRequest::getFaceUrl()const
+{
+	return faceUrl_;
+}
+
+void GetPersonListRequest::setFaceUrl(const std::string& faceUrl)
+{
+	faceUrl_ = faceUrl;
+	setBodyParameter("FaceUrl", faceUrl);
+}
+
+long GetPersonListRequest::getPageSize()const
 {
 	return pageSize_;
 }
 
-void GetPersonListRequest::setPageSize(const std::string& pageSize)
+void GetPersonListRequest::setPageSize(long pageSize)
 {
 	pageSize_ = pageSize;
-	setBodyParameter("PageSize", pageSize);
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+std::map<std::string, std::string> GetPersonListRequest::getPersonIdList()const
+{
+	return personIdList_;
+}
+
+void GetPersonListRequest::setPersonIdList(const std::map<std::string, std::string>& personIdList)
+{
+	personIdList_ = personIdList;
+	setJsonParameters("PersonIdList", personIdList);
 }
 

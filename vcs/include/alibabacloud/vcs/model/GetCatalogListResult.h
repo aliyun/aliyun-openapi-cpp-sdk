@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETPERSONLISTRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETPERSONLISTRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_GETCATALOGLISTRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_GETCATALOGLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,49 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetPersonListResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT GetCatalogListResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DataItem
 				{
-					struct RecordsItem
-					{
-						struct TagList
-						{
-							std::string tagCodeName;
-							std::string tagName;
-							std::string value;
-							std::string code;
-						};
-						long firstShotTime;
-						std::string personId;
-						std::string searchMatchingRate;
-						std::vector<RecordsItem::TagList> propertyTagList;
-						std::string faceUrl;
-					};
-					long totalCount;
-					long pageSize;
-					long pageNumber;
-					std::vector<RecordsItem> records;
+					long parentCatalogId;
+					long profileCount;
+					std::string isvSubId;
+					std::string catalogName;
+					long catalogId;
 				};
 
 
-				GetPersonListResult();
-				explicit GetPersonListResult(const std::string &payload);
-				~GetPersonListResult();
+				GetCatalogListResult();
+				explicit GetCatalogListResult(const std::string &payload);
+				~GetCatalogListResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::vector<DataItem> getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::vector<DataItem> data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETPERSONLISTRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_GETCATALOGLISTRESULT_H_

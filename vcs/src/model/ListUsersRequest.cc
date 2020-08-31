@@ -27,6 +27,17 @@ ListUsersRequest::ListUsersRequest() :
 ListUsersRequest::~ListUsersRequest()
 {}
 
+std::map<std::string, std::string> ListUsersRequest::getUserList()const
+{
+	return userList_;
+}
+
+void ListUsersRequest::setUserList(const std::map<std::string, std::string>& userList)
+{
+	userList_ = userList;
+	setJsonParameters("UserList", userList);
+}
+
 std::string ListUsersRequest::getCorpId()const
 {
 	return corpId_;
@@ -80,6 +91,17 @@ void ListUsersRequest::setFaceImageUrl(const std::string& faceImageUrl)
 {
 	faceImageUrl_ = faceImageUrl;
 	setBodyParameter("FaceImageUrl", faceImageUrl);
+}
+
+std::map<std::string, std::string> ListUsersRequest::getPersonList()const
+{
+	return personList_;
+}
+
+void ListUsersRequest::setPersonList(const std::map<std::string, std::string>& personList)
+{
+	personList_ = personList;
+	setJsonParameters("PersonList", personList);
 }
 
 long ListUsersRequest::getPageNumber()const
@@ -179,6 +201,17 @@ void ListUsersRequest::setAge(int age)
 {
 	age_ = age;
 	setBodyParameter("Age", std::to_string(age));
+}
+
+std::string ListUsersRequest::getMatchingRateThreshold()const
+{
+	return matchingRateThreshold_;
+}
+
+void ListUsersRequest::setMatchingRateThreshold(const std::string& matchingRateThreshold)
+{
+	matchingRateThreshold_ = matchingRateThreshold;
+	setBodyParameter("MatchingRateThreshold", matchingRateThreshold);
 }
 
 std::string ListUsersRequest::getUserName()const
