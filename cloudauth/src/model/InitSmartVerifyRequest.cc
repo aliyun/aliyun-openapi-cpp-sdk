@@ -38,6 +38,17 @@ void InitSmartVerifyRequest::setIp(const std::string& ip)
 	setBodyParameter("Ip", ip);
 }
 
+std::string InitSmartVerifyRequest::getCertName()const
+{
+	return certName_;
+}
+
+void InitSmartVerifyRequest::setCertName(const std::string& certName)
+{
+	certName_ = certName;
+	setBodyParameter("CertName", certName);
+}
+
 std::string InitSmartVerifyRequest::getMobile()const
 {
 	return mobile_;
@@ -69,6 +80,17 @@ void InitSmartVerifyRequest::setMode(const std::string& mode)
 {
 	mode_ = mode;
 	setBodyParameter("Mode", mode);
+}
+
+std::string InitSmartVerifyRequest::getCertNo()const
+{
+	return certNo_;
+}
+
+void InitSmartVerifyRequest::setCertNo(const std::string& certNo)
+{
+	certNo_ = certNo;
+	setBodyParameter("CertNo", certNo);
 }
 
 std::string InitSmartVerifyRequest::getOuterOrderNo()const
@@ -113,5 +135,16 @@ void InitSmartVerifyRequest::setMetaInfo(const std::string& metaInfo)
 {
 	metaInfo_ = metaInfo;
 	setBodyParameter("MetaInfo", metaInfo);
+}
+
+std::string InitSmartVerifyRequest::getOcr()const
+{
+	return ocr_;
+}
+
+void InitSmartVerifyRequest::setOcr(const std::string& ocr)
+{
+	ocr_ = ocr;
+	setBodyParameter("Ocr", ocr);
 }
 

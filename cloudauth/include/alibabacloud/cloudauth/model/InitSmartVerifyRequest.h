@@ -37,12 +37,16 @@ namespace AlibabaCloud
 
 				std::string getIp()const;
 				void setIp(const std::string& ip);
+				std::string getCertName()const;
+				void setCertName(const std::string& certName);
 				std::string getMobile()const;
 				void setMobile(const std::string& mobile);
 				std::string getUserId()const;
 				void setUserId(const std::string& userId);
 				std::string getMode()const;
 				void setMode(const std::string& mode);
+				std::string getCertNo()const;
+				void setCertNo(const std::string& certNo);
 				std::string getOuterOrderNo()const;
 				void setOuterOrderNo(const std::string& outerOrderNo);
 				std::string getCertType()const;
@@ -51,16 +55,21 @@ namespace AlibabaCloud
 				void setSceneId(long sceneId);
 				std::string getMetaInfo()const;
 				void setMetaInfo(const std::string& metaInfo);
+				std::string getOcr()const;
+				void setOcr(const std::string& ocr);
 
             private:
 				std::string ip_;
+				std::string certName_;
 				std::string mobile_;
 				std::string userId_;
 				std::string mode_;
+				std::string certNo_;
 				std::string outerOrderNo_;
 				std::string certType_;
 				long sceneId_;
 				std::string metaInfo_;
+				std::string ocr_;
 
 			};
 		}

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string passed;
 					std::string materialInfo;
+					float passedScore;
 					std::string subCode;
 				};
 
