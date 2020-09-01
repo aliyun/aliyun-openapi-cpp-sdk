@@ -93,15 +93,15 @@ void ListPersonVisitCountRequest::setTimeAggregateType(const std::string& timeAg
 	setBodyParameter("TimeAggregateType", timeAggregateType);
 }
 
-std::string ListPersonVisitCountRequest::getMaxVal()const
+int ListPersonVisitCountRequest::getMaxVal()const
 {
 	return maxVal_;
 }
 
-void ListPersonVisitCountRequest::setMaxVal(const std::string& maxVal)
+void ListPersonVisitCountRequest::setMaxVal(int maxVal)
 {
 	maxVal_ = maxVal;
-	setBodyParameter("MaxVal", maxVal);
+	setBodyParameter("MaxVal", std::to_string(maxVal));
 }
 
 std::string ListPersonVisitCountRequest::getTagCode()const
@@ -115,15 +115,15 @@ void ListPersonVisitCountRequest::setTagCode(const std::string& tagCode)
 	setBodyParameter("TagCode", tagCode);
 }
 
-std::string ListPersonVisitCountRequest::getMinVal()const
+int ListPersonVisitCountRequest::getMinVal()const
 {
 	return minVal_;
 }
 
-void ListPersonVisitCountRequest::setMinVal(const std::string& minVal)
+void ListPersonVisitCountRequest::setMinVal(int minVal)
 {
 	minVal_ = minVal;
-	setBodyParameter("MinVal", minVal);
+	setBodyParameter("MinVal", std::to_string(minVal));
 }
 
 int ListPersonVisitCountRequest::getPageSize()const
