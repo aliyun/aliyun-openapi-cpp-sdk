@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setPushTime(const std::string& pushTime);
 				int getSendSpeed()const;
 				void setSendSpeed(int sendSpeed);
+				std::string getAndroidNotificationHuaweiChannel()const;
+				void setAndroidNotificationHuaweiChannel(const std::string& androidNotificationHuaweiChannel);
 				std::string getAndroidPopupActivity()const;
 				void setAndroidPopupActivity(const std::string& androidPopupActivity);
 				std::string getIOSRemindBody()const;
@@ -137,6 +139,7 @@ namespace AlibabaCloud
 				std::string deviceType_;
 				std::string pushTime_;
 				int sendSpeed_;
+				std::string androidNotificationHuaweiChannel_;
 				std::string androidPopupActivity_;
 				std::string iOSRemindBody_;
 				std::string androidNotifyType_;

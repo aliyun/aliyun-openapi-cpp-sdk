@@ -93,6 +93,17 @@ void PushRequest::setSendSpeed(int sendSpeed)
 	setParameter("SendSpeed", std::to_string(sendSpeed));
 }
 
+std::string PushRequest::getAndroidNotificationHuaweiChannel()const
+{
+	return androidNotificationHuaweiChannel_;
+}
+
+void PushRequest::setAndroidNotificationHuaweiChannel(const std::string& androidNotificationHuaweiChannel)
+{
+	androidNotificationHuaweiChannel_ = androidNotificationHuaweiChannel;
+	setParameter("AndroidNotificationHuaweiChannel", androidNotificationHuaweiChannel);
+}
+
 std::string PushRequest::getAndroidPopupActivity()const
 {
 	return androidPopupActivity_;

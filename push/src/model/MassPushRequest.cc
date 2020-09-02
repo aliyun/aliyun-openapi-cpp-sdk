@@ -59,6 +59,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".DeviceType", pushTaskObj.deviceType);
 		setParameter(pushTaskObjStr + ".PushTime", pushTaskObj.pushTime);
 		setParameter(pushTaskObjStr + ".SendSpeed", std::to_string(pushTaskObj.sendSpeed));
+		setParameter(pushTaskObjStr + ".AndroidNotificationHuaweiChannel", pushTaskObj.androidNotificationHuaweiChannel);
 		setParameter(pushTaskObjStr + ".AndroidPopupActivity", pushTaskObj.androidPopupActivity);
 		setParameter(pushTaskObjStr + ".IOSRemindBody", pushTaskObj.iOSRemindBody);
 		setParameter(pushTaskObjStr + ".IOSExtParameters", pushTaskObj.iOSExtParameters);

@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string deviceType;
 					std::string pushTime;
 					int sendSpeed;
+					std::string androidNotificationHuaweiChannel;
 					std::string androidPopupActivity;
 					std::string iOSRemindBody;
 					std::string iOSExtParameters;
