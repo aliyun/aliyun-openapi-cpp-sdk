@@ -39,8 +39,14 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getTemplateBodyParams()const;
 				void setTemplateBodyParams(const std::string& templateBodyParams);
+				std::string getLink()const;
+				void setLink(const std::string& link);
+				std::string getCaption()const;
+				void setCaption(const std::string& caption);
 				std::string getType()const;
 				void setType(const std::string& type);
+				std::string getBody()const;
+				void setBody(const std::string& body);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getChannelType()const;
@@ -55,11 +61,16 @@ namespace AlibabaCloud
 				void setTo(const std::string& to);
 				std::string getTemplateCode()const;
 				void setTemplateCode(const std::string& templateCode);
+				std::string getMediaType()const;
+				void setMediaType(const std::string& mediaType);
 
             private:
 				long resourceOwnerId_;
 				std::string templateBodyParams_;
+				std::string link_;
+				std::string caption_;
 				std::string type_;
+				std::string body_;
 				std::string accessKeyId_;
 				std::string channelType_;
 				std::string from_;
@@ -67,6 +78,7 @@ namespace AlibabaCloud
 				long ownerId_;
 				std::string to_;
 				std::string templateCode_;
+				std::string mediaType_;
 
 			};
 		}

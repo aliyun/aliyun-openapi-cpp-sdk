@@ -46,7 +46,29 @@ std::string SendMessageRequest::getTemplateBodyParams()const
 void SendMessageRequest::setTemplateBodyParams(const std::string& templateBodyParams)
 {
 	templateBodyParams_ = templateBodyParams;
-	setParameter("TemplateBodyParams", templateBodyParams);
+	setBodyParameter("TemplateBodyParams", templateBodyParams);
+}
+
+std::string SendMessageRequest::getLink()const
+{
+	return link_;
+}
+
+void SendMessageRequest::setLink(const std::string& link)
+{
+	link_ = link;
+	setBodyParameter("Link", link);
+}
+
+std::string SendMessageRequest::getCaption()const
+{
+	return caption_;
+}
+
+void SendMessageRequest::setCaption(const std::string& caption)
+{
+	caption_ = caption;
+	setBodyParameter("Caption", caption);
 }
 
 std::string SendMessageRequest::getType()const
@@ -57,7 +79,18 @@ std::string SendMessageRequest::getType()const
 void SendMessageRequest::setType(const std::string& type)
 {
 	type_ = type;
-	setParameter("Type", type);
+	setBodyParameter("Type", type);
+}
+
+std::string SendMessageRequest::getBody()const
+{
+	return body_;
+}
+
+void SendMessageRequest::setBody(const std::string& body)
+{
+	body_ = body;
+	setBodyParameter("Body", body);
 }
 
 std::string SendMessageRequest::getAccessKeyId()const
@@ -79,7 +112,7 @@ std::string SendMessageRequest::getChannelType()const
 void SendMessageRequest::setChannelType(const std::string& channelType)
 {
 	channelType_ = channelType;
-	setParameter("ChannelType", channelType);
+	setBodyParameter("ChannelType", channelType);
 }
 
 std::string SendMessageRequest::getFrom()const
@@ -90,7 +123,7 @@ std::string SendMessageRequest::getFrom()const
 void SendMessageRequest::setFrom(const std::string& from)
 {
 	from_ = from;
-	setParameter("From", from);
+	setBodyParameter("From", from);
 }
 
 std::string SendMessageRequest::getResourceOwnerAccount()const
@@ -123,7 +156,7 @@ std::string SendMessageRequest::getTo()const
 void SendMessageRequest::setTo(const std::string& to)
 {
 	to_ = to;
-	setParameter("To", to);
+	setBodyParameter("To", to);
 }
 
 std::string SendMessageRequest::getTemplateCode()const
@@ -134,6 +167,17 @@ std::string SendMessageRequest::getTemplateCode()const
 void SendMessageRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
-	setParameter("TemplateCode", templateCode);
+	setBodyParameter("TemplateCode", templateCode);
+}
+
+std::string SendMessageRequest::getMediaType()const
+{
+	return mediaType_;
+}
+
+void SendMessageRequest::setMediaType(const std::string& mediaType)
+{
+	mediaType_ = mediaType;
+	setBodyParameter("MediaType", mediaType);
 }
 
