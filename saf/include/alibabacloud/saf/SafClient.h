@@ -26,6 +26,8 @@
 #include "model/ExecuteExtendServiceResult.h"
 #include "model/ExecuteRequestRequest.h"
 #include "model/ExecuteRequestResult.h"
+#include "model/ExecuteRequestMLRequest.h"
+#include "model/ExecuteRequestMLResult.h"
 #include "model/ExecuteRequestSGRequest.h"
 #include "model/ExecuteRequestSGResult.h"
 
@@ -43,6 +45,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteRequestResult> ExecuteRequestOutcome;
 			typedef std::future<ExecuteRequestOutcome> ExecuteRequestOutcomeCallable;
 			typedef std::function<void(const SafClient*, const Model::ExecuteRequestRequest&, const ExecuteRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestAsyncHandler;
+			typedef Outcome<Error, Model::ExecuteRequestMLResult> ExecuteRequestMLOutcome;
+			typedef std::future<ExecuteRequestMLOutcome> ExecuteRequestMLOutcomeCallable;
+			typedef std::function<void(const SafClient*, const Model::ExecuteRequestMLRequest&, const ExecuteRequestMLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestMLAsyncHandler;
 			typedef Outcome<Error, Model::ExecuteRequestSGResult> ExecuteRequestSGOutcome;
 			typedef std::future<ExecuteRequestSGOutcome> ExecuteRequestSGOutcomeCallable;
 			typedef std::function<void(const SafClient*, const Model::ExecuteRequestSGRequest&, const ExecuteRequestSGOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteRequestSGAsyncHandler;
@@ -57,6 +62,9 @@ namespace AlibabaCloud
 			ExecuteRequestOutcome executeRequest(const Model::ExecuteRequestRequest &request)const;
 			void executeRequestAsync(const Model::ExecuteRequestRequest& request, const ExecuteRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteRequestOutcomeCallable executeRequestCallable(const Model::ExecuteRequestRequest& request) const;
+			ExecuteRequestMLOutcome executeRequestML(const Model::ExecuteRequestMLRequest &request)const;
+			void executeRequestMLAsync(const Model::ExecuteRequestMLRequest& request, const ExecuteRequestMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExecuteRequestMLOutcomeCallable executeRequestMLCallable(const Model::ExecuteRequestMLRequest& request) const;
 			ExecuteRequestSGOutcome executeRequestSG(const Model::ExecuteRequestSGRequest &request)const;
 			void executeRequestSGAsync(const Model::ExecuteRequestSGRequest& request, const ExecuteRequestSGAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteRequestSGOutcomeCallable executeRequestSGCallable(const Model::ExecuteRequestSGRequest& request) const;

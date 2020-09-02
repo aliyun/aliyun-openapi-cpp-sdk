@@ -31,21 +31,21 @@ SafClient::SafClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
 }
 
 SafClient::SafClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
 }
 
 SafClient::SafClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "SAF");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "saf");
 }
 
 SafClient::~SafClient()
@@ -117,6 +117,42 @@ SafClient::ExecuteRequestOutcomeCallable SafClient::executeRequestCallable(const
 			[this, request]()
 			{
 			return this->executeRequest(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SafClient::ExecuteRequestMLOutcome SafClient::executeRequestML(const ExecuteRequestMLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteRequestMLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteRequestMLOutcome(ExecuteRequestMLResult(outcome.result()));
+	else
+		return ExecuteRequestMLOutcome(outcome.error());
+}
+
+void SafClient::executeRequestMLAsync(const ExecuteRequestMLRequest& request, const ExecuteRequestMLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeRequestML(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SafClient::ExecuteRequestMLOutcomeCallable SafClient::executeRequestMLCallable(const ExecuteRequestMLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteRequestMLOutcome()>>(
+			[this, request]()
+			{
+			return this->executeRequestML(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
