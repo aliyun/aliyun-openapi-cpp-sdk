@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					bool iOSMutableContent;
 					int androidNotificationBarPriority;
 					std::string expireTime;
+					std::string androidNotificationVivoChannel;
 					std::string androidPopupBody;
 					std::string iOSNotificationCategory;
 					std::string androidNotificationXiaomiChannel;

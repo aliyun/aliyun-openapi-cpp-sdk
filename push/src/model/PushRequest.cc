@@ -192,6 +192,17 @@ void PushRequest::setExpireTime(const std::string& expireTime)
 	setParameter("ExpireTime", expireTime);
 }
 
+std::string PushRequest::getAndroidNotificationVivoChannel()const
+{
+	return androidNotificationVivoChannel_;
+}
+
+void PushRequest::setAndroidNotificationVivoChannel(const std::string& androidNotificationVivoChannel)
+{
+	androidNotificationVivoChannel_ = androidNotificationVivoChannel;
+	setParameter("AndroidNotificationVivoChannel", androidNotificationVivoChannel);
+}
+
 std::string PushRequest::getIOSNotificationCategory()const
 {
 	return iOSNotificationCategory_;

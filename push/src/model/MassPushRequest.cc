@@ -69,6 +69,7 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".IOSMutableContent", pushTaskObj.iOSMutableContent ? "true" : "false");
 		setParameter(pushTaskObjStr + ".AndroidNotificationBarPriority", std::to_string(pushTaskObj.androidNotificationBarPriority));
 		setParameter(pushTaskObjStr + ".ExpireTime", pushTaskObj.expireTime);
+		setParameter(pushTaskObjStr + ".AndroidNotificationVivoChannel", pushTaskObj.androidNotificationVivoChannel);
 		setParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
 		setParameter(pushTaskObjStr + ".IOSNotificationCategory", pushTaskObj.iOSNotificationCategory);
 		setParameter(pushTaskObjStr + ".AndroidNotificationXiaomiChannel", pushTaskObj.androidNotificationXiaomiChannel);
