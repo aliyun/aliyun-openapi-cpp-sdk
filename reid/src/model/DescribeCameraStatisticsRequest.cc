@@ -60,3 +60,14 @@ void DescribeCameraStatisticsRequest::setEndTimestamp(long endTimestamp)
 	setBodyParameter("EndTimestamp", std::to_string(endTimestamp));
 }
 
+long DescribeCameraStatisticsRequest::getLocationId()const
+{
+	return locationId_;
+}
+
+void DescribeCameraStatisticsRequest::setLocationId(long locationId)
+{
+	locationId_ = locationId;
+	setBodyParameter("LocationId", std::to_string(locationId));
+}
+

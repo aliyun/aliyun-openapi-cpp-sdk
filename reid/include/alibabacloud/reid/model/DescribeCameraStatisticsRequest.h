@@ -41,11 +41,14 @@ namespace AlibabaCloud
 				void setStoreId(long storeId);
 				long getEndTimestamp()const;
 				void setEndTimestamp(long endTimestamp);
+				long getLocationId()const;
+				void setLocationId(long locationId);
 
             private:
 				long startTimestamp_;
 				long storeId_;
 				long endTimestamp_;
+				long locationId_;
 
 			};
 		}
