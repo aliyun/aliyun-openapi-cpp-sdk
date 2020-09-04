@@ -111,6 +111,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnTopDomainsByFlowResult.h
 	include/alibabacloud/scdn/model/DescribeScdnUserDomainsRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnUserDomainsResult.h
+	include/alibabacloud/scdn/model/DescribeScdnUserProtectInfoRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnUserProtectInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaResult.h
 	include/alibabacloud/scdn/model/OpenScdnServiceRequest.h
@@ -119,8 +121,6 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/PreloadScdnObjectCachesResult.h
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesRequest.h
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesResult.h
-	include/alibabacloud/scdn/model/SetDomainServerCertificateRequest.h
-	include/alibabacloud/scdn/model/SetDomainServerCertificateResult.h
 	include/alibabacloud/scdn/model/SetScdnBotInfoRequest.h
 	include/alibabacloud/scdn/model/SetScdnBotInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnCcInfoRequest.h
@@ -230,6 +230,8 @@ set(scdn_src
 	src/model/DescribeScdnTopDomainsByFlowResult.cc
 	src/model/DescribeScdnUserDomainsRequest.cc
 	src/model/DescribeScdnUserDomainsResult.cc
+	src/model/DescribeScdnUserProtectInfoRequest.cc
+	src/model/DescribeScdnUserProtectInfoResult.cc
 	src/model/DescribeScdnUserQuotaRequest.cc
 	src/model/DescribeScdnUserQuotaResult.cc
 	src/model/OpenScdnServiceRequest.cc
@@ -238,8 +240,6 @@ set(scdn_src
 	src/model/PreloadScdnObjectCachesResult.cc
 	src/model/RefreshScdnObjectCachesRequest.cc
 	src/model/RefreshScdnObjectCachesResult.cc
-	src/model/SetDomainServerCertificateRequest.cc
-	src/model/SetDomainServerCertificateResult.cc
 	src/model/SetScdnBotInfoRequest.cc
 	src/model/SetScdnBotInfoResult.cc
 	src/model/SetScdnCcInfoRequest.cc

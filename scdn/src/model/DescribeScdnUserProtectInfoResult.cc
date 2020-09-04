@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/SetDomainServerCertificateResult.h>
+#include <alibabacloud/scdn/model/DescribeScdnUserProtectInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Scdn;
 using namespace AlibabaCloud::Scdn::Model;
 
-SetDomainServerCertificateResult::SetDomainServerCertificateResult() :
+DescribeScdnUserProtectInfoResult::DescribeScdnUserProtectInfoResult() :
 	ServiceResult()
 {}
 
-SetDomainServerCertificateResult::SetDomainServerCertificateResult(const std::string &payload) :
+DescribeScdnUserProtectInfoResult::DescribeScdnUserProtectInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetDomainServerCertificateResult::~SetDomainServerCertificateResult()
+DescribeScdnUserProtectInfoResult::~DescribeScdnUserProtectInfoResult()
 {}
 
-void SetDomainServerCertificateResult::parse(const std::string &payload)
+void DescribeScdnUserProtectInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ServiceDDoS"].isNull())
+		serviceDDoS_ = std::stoi(value["ServiceDDoS"].asString());
 
+}
+
+int DescribeScdnUserProtectInfoResult::getServiceDDoS()const
+{
+	return serviceDDoS_;
 }
 

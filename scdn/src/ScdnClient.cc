@@ -1671,6 +1671,42 @@ ScdnClient::DescribeScdnUserDomainsOutcomeCallable ScdnClient::describeScdnUserD
 	return task->get_future();
 }
 
+ScdnClient::DescribeScdnUserProtectInfoOutcome ScdnClient::describeScdnUserProtectInfo(const DescribeScdnUserProtectInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeScdnUserProtectInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeScdnUserProtectInfoOutcome(DescribeScdnUserProtectInfoResult(outcome.result()));
+	else
+		return DescribeScdnUserProtectInfoOutcome(outcome.error());
+}
+
+void ScdnClient::describeScdnUserProtectInfoAsync(const DescribeScdnUserProtectInfoRequest& request, const DescribeScdnUserProtectInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeScdnUserProtectInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::DescribeScdnUserProtectInfoOutcomeCallable ScdnClient::describeScdnUserProtectInfoCallable(const DescribeScdnUserProtectInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeScdnUserProtectInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeScdnUserProtectInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::DescribeScdnUserQuotaOutcome ScdnClient::describeScdnUserQuota(const DescribeScdnUserQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,42 +1845,6 @@ ScdnClient::RefreshScdnObjectCachesOutcomeCallable ScdnClient::refreshScdnObject
 			[this, request]()
 			{
 			return this->refreshScdnObjectCaches(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ScdnClient::SetDomainServerCertificateOutcome ScdnClient::setDomainServerCertificate(const SetDomainServerCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetDomainServerCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetDomainServerCertificateOutcome(SetDomainServerCertificateResult(outcome.result()));
-	else
-		return SetDomainServerCertificateOutcome(outcome.error());
-}
-
-void ScdnClient::setDomainServerCertificateAsync(const SetDomainServerCertificateRequest& request, const SetDomainServerCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setDomainServerCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ScdnClient::SetDomainServerCertificateOutcomeCallable ScdnClient::setDomainServerCertificateCallable(const SetDomainServerCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetDomainServerCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->setDomainServerCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

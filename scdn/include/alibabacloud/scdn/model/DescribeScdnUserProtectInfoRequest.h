@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_SETDOMAINSERVERCERTIFICATERESULT_H_
-#define ALIBABACLOUD_SCDN_MODEL_SETDOMAINSERVERCERTIFICATERESULT_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNUSERPROTECTINFOREQUEST_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNUSERPROTECTINFOREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/scdn/ScdnExport.h>
 
 namespace AlibabaCloud
@@ -29,21 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT SetDomainServerCertificateResult : public ServiceResult
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnUserProtectInfoRequest : public RpcServiceRequest
 			{
+
 			public:
+				DescribeScdnUserProtectInfoRequest();
+				~DescribeScdnUserProtectInfoRequest();
 
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-				SetDomainServerCertificateResult();
-				explicit SetDomainServerCertificateResult(const std::string &payload);
-				~SetDomainServerCertificateResult();
-
-			protected:
-				void parse(const std::string &payload);
-			private:
+            private:
+				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_SETDOMAINSERVERCERTIFICATERESULT_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNUSERPROTECTINFOREQUEST_H_
