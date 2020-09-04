@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_SETWAFCONFIGREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_SETWAFCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERDOMAINSBYFUNCREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERDOMAINSBYFUNCREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT SetWafConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnUserDomainsByFuncRequest : public RpcServiceRequest
 			{
 
 			public:
-				SetWafConfigRequest();
-				~SetWafConfigRequest();
+				DescribeCdnUserDomainsByFuncRequest();
+				~DescribeCdnUserDomainsByFuncRequest();
 
-				std::string getEnable()const;
-				void setEnable(const std::string& enable);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
+				std::string getResourceGroupId()const;
+				void setResourceGroupId(const std::string& resourceGroupId);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				long getConfigId()const;
-				void setConfigId(long configId);
+				int getFuncId()const;
+				void setFuncId(int funcId);
 
             private:
-				std::string enable_;
-				std::string domainName_;
+				int pageNumber_;
+				std::string resourceGroupId_;
+				int pageSize_;
 				long ownerId_;
-				long configId_;
+				int funcId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_SETWAFCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNUSERDOMAINSBYFUNCREQUEST_H_

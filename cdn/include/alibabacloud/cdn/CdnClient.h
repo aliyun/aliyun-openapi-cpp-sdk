@@ -110,6 +110,8 @@
 #include "model/DescribeCdnUserBillTypeResult.h"
 #include "model/DescribeCdnUserConfigsRequest.h"
 #include "model/DescribeCdnUserConfigsResult.h"
+#include "model/DescribeCdnUserDomainsByFuncRequest.h"
+#include "model/DescribeCdnUserDomainsByFuncResult.h"
 #include "model/DescribeCdnUserQuotaRequest.h"
 #include "model/DescribeCdnUserQuotaResult.h"
 #include "model/DescribeCdnUserResourcePackageRequest.h"
@@ -398,8 +400,6 @@
 #include "model/SetUserGreenManagerConfigResult.h"
 #include "model/SetVideoSeekConfigRequest.h"
 #include "model/SetVideoSeekConfigResult.h"
-#include "model/SetWafConfigRequest.h"
-#include "model/SetWafConfigResult.h"
 #include "model/SetWaitingRoomConfigRequest.h"
 #include "model/SetWaitingRoomConfigResult.h"
 #include "model/StartCdnDomainRequest.h"
@@ -557,6 +557,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCdnUserConfigsResult> DescribeCdnUserConfigsOutcome;
 			typedef std::future<DescribeCdnUserConfigsOutcome> DescribeCdnUserConfigsOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserConfigsRequest&, const DescribeCdnUserConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserConfigsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnUserDomainsByFuncResult> DescribeCdnUserDomainsByFuncOutcome;
+			typedef std::future<DescribeCdnUserDomainsByFuncOutcome> DescribeCdnUserDomainsByFuncOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserDomainsByFuncRequest&, const DescribeCdnUserDomainsByFuncOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserDomainsByFuncAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCdnUserQuotaResult> DescribeCdnUserQuotaOutcome;
 			typedef std::future<DescribeCdnUserQuotaOutcome> DescribeCdnUserQuotaOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserQuotaRequest&, const DescribeCdnUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserQuotaAsyncHandler;
@@ -989,9 +992,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetVideoSeekConfigResult> SetVideoSeekConfigOutcome;
 			typedef std::future<SetVideoSeekConfigOutcome> SetVideoSeekConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetVideoSeekConfigRequest&, const SetVideoSeekConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoSeekConfigAsyncHandler;
-			typedef Outcome<Error, Model::SetWafConfigResult> SetWafConfigOutcome;
-			typedef std::future<SetWafConfigOutcome> SetWafConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetWafConfigRequest&, const SetWafConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWafConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetWaitingRoomConfigResult> SetWaitingRoomConfigOutcome;
 			typedef std::future<SetWaitingRoomConfigOutcome> SetWaitingRoomConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetWaitingRoomConfigRequest&, const SetWaitingRoomConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWaitingRoomConfigAsyncHandler;
@@ -1153,6 +1153,9 @@ namespace AlibabaCloud
 			DescribeCdnUserConfigsOutcome describeCdnUserConfigs(const Model::DescribeCdnUserConfigsRequest &request)const;
 			void describeCdnUserConfigsAsync(const Model::DescribeCdnUserConfigsRequest& request, const DescribeCdnUserConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnUserConfigsOutcomeCallable describeCdnUserConfigsCallable(const Model::DescribeCdnUserConfigsRequest& request) const;
+			DescribeCdnUserDomainsByFuncOutcome describeCdnUserDomainsByFunc(const Model::DescribeCdnUserDomainsByFuncRequest &request)const;
+			void describeCdnUserDomainsByFuncAsync(const Model::DescribeCdnUserDomainsByFuncRequest& request, const DescribeCdnUserDomainsByFuncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnUserDomainsByFuncOutcomeCallable describeCdnUserDomainsByFuncCallable(const Model::DescribeCdnUserDomainsByFuncRequest& request) const;
 			DescribeCdnUserQuotaOutcome describeCdnUserQuota(const Model::DescribeCdnUserQuotaRequest &request)const;
 			void describeCdnUserQuotaAsync(const Model::DescribeCdnUserQuotaRequest& request, const DescribeCdnUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnUserQuotaOutcomeCallable describeCdnUserQuotaCallable(const Model::DescribeCdnUserQuotaRequest& request) const;
@@ -1585,9 +1588,6 @@ namespace AlibabaCloud
 			SetVideoSeekConfigOutcome setVideoSeekConfig(const Model::SetVideoSeekConfigRequest &request)const;
 			void setVideoSeekConfigAsync(const Model::SetVideoSeekConfigRequest& request, const SetVideoSeekConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVideoSeekConfigOutcomeCallable setVideoSeekConfigCallable(const Model::SetVideoSeekConfigRequest& request) const;
-			SetWafConfigOutcome setWafConfig(const Model::SetWafConfigRequest &request)const;
-			void setWafConfigAsync(const Model::SetWafConfigRequest& request, const SetWafConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetWafConfigOutcomeCallable setWafConfigCallable(const Model::SetWafConfigRequest& request) const;
 			SetWaitingRoomConfigOutcome setWaitingRoomConfig(const Model::SetWaitingRoomConfigRequest &request)const;
 			void setWaitingRoomConfigAsync(const Model::SetWaitingRoomConfigRequest& request, const SetWaitingRoomConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetWaitingRoomConfigOutcomeCallable setWaitingRoomConfigCallable(const Model::SetWaitingRoomConfigRequest& request) const;

@@ -109,6 +109,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnUserBillTypeResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserConfigsRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserConfigsResult.h
+	include/alibabacloud/cdn/model/DescribeCdnUserDomainsByFuncRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnUserDomainsByFuncResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageRequest.h
@@ -397,8 +399,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetUserGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetVideoSeekConfigRequest.h
 	include/alibabacloud/cdn/model/SetVideoSeekConfigResult.h
-	include/alibabacloud/cdn/model/SetWafConfigRequest.h
-	include/alibabacloud/cdn/model/SetWafConfigResult.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigResult.h
 	include/alibabacloud/cdn/model/StartCdnDomainRequest.h
@@ -506,6 +506,8 @@ set(cdn_src
 	src/model/DescribeCdnUserBillTypeResult.cc
 	src/model/DescribeCdnUserConfigsRequest.cc
 	src/model/DescribeCdnUserConfigsResult.cc
+	src/model/DescribeCdnUserDomainsByFuncRequest.cc
+	src/model/DescribeCdnUserDomainsByFuncResult.cc
 	src/model/DescribeCdnUserQuotaRequest.cc
 	src/model/DescribeCdnUserQuotaResult.cc
 	src/model/DescribeCdnUserResourcePackageRequest.cc
@@ -794,8 +796,6 @@ set(cdn_src
 	src/model/SetUserGreenManagerConfigResult.cc
 	src/model/SetVideoSeekConfigRequest.cc
 	src/model/SetVideoSeekConfigResult.cc
-	src/model/SetWafConfigRequest.cc
-	src/model/SetWafConfigResult.cc
 	src/model/SetWaitingRoomConfigRequest.cc
 	src/model/SetWaitingRoomConfigResult.cc
 	src/model/StartCdnDomainRequest.cc

@@ -1635,6 +1635,42 @@ CdnClient::DescribeCdnUserConfigsOutcomeCallable CdnClient::describeCdnUserConfi
 	return task->get_future();
 }
 
+CdnClient::DescribeCdnUserDomainsByFuncOutcome CdnClient::describeCdnUserDomainsByFunc(const DescribeCdnUserDomainsByFuncRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnUserDomainsByFuncOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnUserDomainsByFuncOutcome(DescribeCdnUserDomainsByFuncResult(outcome.result()));
+	else
+		return DescribeCdnUserDomainsByFuncOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnUserDomainsByFuncAsync(const DescribeCdnUserDomainsByFuncRequest& request, const DescribeCdnUserDomainsByFuncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnUserDomainsByFunc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnUserDomainsByFuncOutcomeCallable CdnClient::describeCdnUserDomainsByFuncCallable(const DescribeCdnUserDomainsByFuncRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnUserDomainsByFuncOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnUserDomainsByFunc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnUserQuotaOutcome CdnClient::describeCdnUserQuota(const DescribeCdnUserQuotaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6813,42 +6849,6 @@ CdnClient::SetVideoSeekConfigOutcomeCallable CdnClient::setVideoSeekConfigCallab
 			[this, request]()
 			{
 			return this->setVideoSeekConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CdnClient::SetWafConfigOutcome CdnClient::setWafConfig(const SetWafConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetWafConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetWafConfigOutcome(SetWafConfigResult(outcome.result()));
-	else
-		return SetWafConfigOutcome(outcome.error());
-}
-
-void CdnClient::setWafConfigAsync(const SetWafConfigRequest& request, const SetWafConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setWafConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetWafConfigOutcomeCallable CdnClient::setWafConfigCallable(const SetWafConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetWafConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setWafConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
