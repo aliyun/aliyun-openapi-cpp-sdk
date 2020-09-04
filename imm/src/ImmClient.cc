@@ -1635,6 +1635,42 @@ ImmClient::GetImageJobOutcomeCallable ImmClient::getImageJobCallable(const GetIm
 	return task->get_future();
 }
 
+ImmClient::GetImageQualityOutcome ImmClient::getImageQuality(const GetImageQualityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageQualityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageQualityOutcome(GetImageQualityResult(outcome.result()));
+	else
+		return GetImageQualityOutcome(outcome.error());
+}
+
+void ImmClient::getImageQualityAsync(const GetImageQualityRequest& request, const GetImageQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageQuality(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::GetImageQualityOutcomeCallable ImmClient::getImageQualityCallable(const GetImageQualityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageQualityOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageQuality(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImmClient::GetMediaMetaOutcome ImmClient::getMediaMeta(const GetMediaMetaRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -82,6 +82,28 @@ void IndexVideoRequest::setAccessKeyId(const std::string& accessKeyId)
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string IndexVideoRequest::getNotifyEndpoint()const
+{
+	return notifyEndpoint_;
+}
+
+void IndexVideoRequest::setNotifyEndpoint(const std::string& notifyEndpoint)
+{
+	notifyEndpoint_ = notifyEndpoint;
+	setParameter("NotifyEndpoint", notifyEndpoint);
+}
+
+std::string IndexVideoRequest::getNotifyTopicName()const
+{
+	return notifyTopicName_;
+}
+
+void IndexVideoRequest::setNotifyTopicName(const std::string& notifyTopicName)
+{
+	notifyTopicName_ = notifyTopicName;
+	setParameter("NotifyTopicName", notifyTopicName);
+}
+
 std::string IndexVideoRequest::getRemarksB()const
 {
 	return remarksB_;

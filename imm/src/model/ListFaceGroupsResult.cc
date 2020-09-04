@@ -69,6 +69,14 @@ void ListFaceGroupsResult::parse(const std::string &payload)
 			faceGroupsObject.externalId = valueFaceGroupsFaceGroupsItem["ExternalId"].asString();
 		if(!valueFaceGroupsFaceGroupsItem["ImageCount"].isNull())
 			faceGroupsObject.imageCount = std::stoi(valueFaceGroupsFaceGroupsItem["ImageCount"].asString());
+		if(!valueFaceGroupsFaceGroupsItem["Gender"].isNull())
+			faceGroupsObject.gender = valueFaceGroupsFaceGroupsItem["Gender"].asString();
+		if(!valueFaceGroupsFaceGroupsItem["MaxAge"].isNull())
+			faceGroupsObject.maxAge = std::stof(valueFaceGroupsFaceGroupsItem["MaxAge"].asString());
+		if(!valueFaceGroupsFaceGroupsItem["AverageAge"].isNull())
+			faceGroupsObject.averageAge = std::stof(valueFaceGroupsFaceGroupsItem["AverageAge"].asString());
+		if(!valueFaceGroupsFaceGroupsItem["MinAge"].isNull())
+			faceGroupsObject.minAge = std::stof(valueFaceGroupsFaceGroupsItem["MinAge"].asString());
 		auto groupCoverFaceNode = value["GroupCoverFace"];
 		if(!groupCoverFaceNode["FaceId"].isNull())
 			faceGroupsObject.groupCoverFace.faceId = groupCoverFaceNode["FaceId"].asString();

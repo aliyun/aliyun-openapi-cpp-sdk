@@ -110,6 +110,8 @@
 #include "model/GetImageCroppingSuggestionsResult.h"
 #include "model/GetImageJobRequest.h"
 #include "model/GetImageJobResult.h"
+#include "model/GetImageQualityRequest.h"
+#include "model/GetImageQualityResult.h"
 #include "model/GetMediaMetaRequest.h"
 #include "model/GetMediaMetaResult.h"
 #include "model/GetOfficeConversionTaskRequest.h"
@@ -315,6 +317,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetImageJobResult> GetImageJobOutcome;
 			typedef std::future<GetImageJobOutcome> GetImageJobOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetImageJobRequest&, const GetImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageJobAsyncHandler;
+			typedef Outcome<Error, Model::GetImageQualityResult> GetImageQualityOutcome;
+			typedef std::future<GetImageQualityOutcome> GetImageQualityOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::GetImageQualityRequest&, const GetImageQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageQualityAsyncHandler;
 			typedef Outcome<Error, Model::GetMediaMetaResult> GetMediaMetaOutcome;
 			typedef std::future<GetMediaMetaOutcome> GetMediaMetaOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetMediaMetaRequest&, const GetMediaMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaMetaAsyncHandler;
@@ -548,6 +553,9 @@ namespace AlibabaCloud
 			GetImageJobOutcome getImageJob(const Model::GetImageJobRequest &request)const;
 			void getImageJobAsync(const Model::GetImageJobRequest& request, const GetImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageJobOutcomeCallable getImageJobCallable(const Model::GetImageJobRequest& request) const;
+			GetImageQualityOutcome getImageQuality(const Model::GetImageQualityRequest &request)const;
+			void getImageQualityAsync(const Model::GetImageQualityRequest& request, const GetImageQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageQualityOutcomeCallable getImageQualityCallable(const Model::GetImageQualityRequest& request) const;
 			GetMediaMetaOutcome getMediaMeta(const Model::GetMediaMetaRequest &request)const;
 			void getMediaMetaAsync(const Model::GetMediaMetaRequest& request, const GetMediaMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMediaMetaOutcomeCallable getMediaMetaCallable(const Model::GetMediaMetaRequest& request) const;

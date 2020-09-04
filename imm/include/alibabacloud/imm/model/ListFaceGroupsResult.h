@@ -52,12 +52,16 @@ namespace AlibabaCloud
 					std::string modifyTime;
 					std::string createTime;
 					std::string externalId;
+					float maxAge;
+					std::string gender;
 					std::string remarksA;
+					float averageAge;
 					std::string remarksB;
 					std::string groupId;
 					std::string remarksArrayB;
 					std::string remarksC;
 					int imageCount;
+					float minAge;
 					std::string remarksD;
 					std::string remarksArrayA;
 					int faceCount;

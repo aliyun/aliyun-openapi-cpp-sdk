@@ -45,6 +45,10 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
+				std::string getNotifyEndpoint()const;
+				void setNotifyEndpoint(const std::string& notifyEndpoint);
+				std::string getNotifyTopicName()const;
+				void setNotifyTopicName(const std::string& notifyTopicName);
 				std::string getRemarksB()const;
 				void setRemarksB(const std::string& remarksB);
 				std::string getRemarksA()const;
@@ -72,6 +76,8 @@ namespace AlibabaCloud
 				std::string externalId_;
 				std::string startTime_;
 				std::string accessKeyId_;
+				std::string notifyEndpoint_;
+				std::string notifyTopicName_;
 				std::string remarksB_;
 				std::string remarksA_;
 				std::string endTime_;
