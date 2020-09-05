@@ -93,6 +93,17 @@ void GetProfileListRequest::setPageNumber(long pageNumber)
 	setBodyParameter("PageNumber", std::to_string(pageNumber));
 }
 
+std::string GetProfileListRequest::getFaceImageId()const
+{
+	return faceImageId_;
+}
+
+void GetProfileListRequest::setFaceImageId(const std::string& faceImageId)
+{
+	faceImageId_ = faceImageId;
+	setBodyParameter("FaceImageId", faceImageId);
+}
+
 std::string GetProfileListRequest::getFaceUrl()const
 {
 	return faceUrl_;

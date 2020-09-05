@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				GetDeviceVideoUrlRequest();
 				~GetDeviceVideoUrlRequest();
 
+				std::string getOutProtocol()const;
+				void setOutProtocol(const std::string& outProtocol);
 				std::string getCorpId()const;
 				void setCorpId(const std::string& corpId);
 				std::string getGbId()const;
@@ -43,12 +45,16 @@ namespace AlibabaCloud
 				void setEndTime(long endTime);
 				long getStartTime()const;
 				void setStartTime(long startTime);
+				std::string getDeviceId()const;
+				void setDeviceId(const std::string& deviceId);
 
             private:
+				std::string outProtocol_;
 				std::string corpId_;
 				std::string gbId_;
 				long endTime_;
 				long startTime_;
+				std::string deviceId_;
 
 			};
 		}

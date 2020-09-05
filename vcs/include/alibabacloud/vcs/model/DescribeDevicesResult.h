@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_GETDEVICEVIDEOURLRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_GETDEVICEVIDEOURLRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_DESCRIBEDEVICESRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_DESCRIBEDEVICESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,49 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT GetDeviceVideoUrlResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT DescribeDevicesResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct Record
+					{
+						std::string inProtocol;
+						int status;
+						std::string deviceType;
+						std::string corpId;
+						std::string deviceAddress;
+						std::string deviceId;
+						std::string createTime;
+						std::string latitude;
+						std::string vendor;
+						std::string longitude;
+						std::string deviceName;
+					};
+					int totalCount;
+					int pageNum;
+					int pageSize;
+					int totalPage;
+					std::vector<Record> records;
+				};
 
 
-				GetDeviceVideoUrlResult();
-				explicit GetDeviceVideoUrlResult(const std::string &payload);
-				~GetDeviceVideoUrlResult();
+				DescribeDevicesResult();
+				explicit DescribeDevicesResult(const std::string &payload);
+				~DescribeDevicesResult();
 				std::string getMessage()const;
+				Data getData()const;
 				std::string getCode()const;
-				std::string getOutProtocol()const;
-				std::string getUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				Data data_;
 				std::string code_;
-				std::string outProtocol_;
-				std::string url_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_GETDEVICEVIDEOURLRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_DESCRIBEDEVICESRESULT_H_

@@ -45,6 +45,8 @@ void GetDeviceVideoUrlResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Url"].isNull())
 		url_ = value["Url"].asString();
+	if(!value["OutProtocol"].isNull())
+		outProtocol_ = value["OutProtocol"].asString();
 
 }
 
@@ -56,6 +58,11 @@ std::string GetDeviceVideoUrlResult::getMessage()const
 std::string GetDeviceVideoUrlResult::getCode()const
 {
 	return code_;
+}
+
+std::string GetDeviceVideoUrlResult::getOutProtocol()const
+{
+	return outProtocol_;
 }
 
 std::string GetDeviceVideoUrlResult::getUrl()const

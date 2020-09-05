@@ -31,21 +31,21 @@ VcsClient::VcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::VcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "vcs");
 }
 
 VcsClient::~VcsClient()
@@ -873,6 +873,42 @@ VcsClient::DeleteVideoSummaryTaskOutcomeCallable VcsClient::deleteVideoSummaryTa
 			[this, request]()
 			{
 			return this->deleteVideoSummaryTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VcsClient::DescribeDevicesOutcome VcsClient::describeDevices(const DescribeDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDevicesOutcome(DescribeDevicesResult(outcome.result()));
+	else
+		return DescribeDevicesOutcome(outcome.error());
+}
+
+void VcsClient::describeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::DescribeDevicesOutcomeCallable VcsClient::describeDevicesCallable(const DescribeDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDevices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

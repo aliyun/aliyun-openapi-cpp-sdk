@@ -27,6 +27,28 @@ GetDeviceLiveUrlRequest::GetDeviceLiveUrlRequest() :
 GetDeviceLiveUrlRequest::~GetDeviceLiveUrlRequest()
 {}
 
+std::string GetDeviceLiveUrlRequest::getOutProtocol()const
+{
+	return outProtocol_;
+}
+
+void GetDeviceLiveUrlRequest::setOutProtocol(const std::string& outProtocol)
+{
+	outProtocol_ = outProtocol;
+	setBodyParameter("OutProtocol", outProtocol);
+}
+
+int GetDeviceLiveUrlRequest::getStreamType()const
+{
+	return streamType_;
+}
+
+void GetDeviceLiveUrlRequest::setStreamType(int streamType)
+{
+	streamType_ = streamType;
+	setBodyParameter("StreamType", std::to_string(streamType));
+}
+
 std::string GetDeviceLiveUrlRequest::getCorpId()const
 {
 	return corpId_;
@@ -47,5 +69,16 @@ void GetDeviceLiveUrlRequest::setGbId(const std::string& gbId)
 {
 	gbId_ = gbId;
 	setBodyParameter("GbId", gbId);
+}
+
+std::string GetDeviceLiveUrlRequest::getDeviceId()const
+{
+	return deviceId_;
+}
+
+void GetDeviceLiveUrlRequest::setDeviceId(const std::string& deviceId)
+{
+	deviceId_ = deviceId;
+	setBodyParameter("DeviceId", deviceId);
 }
 

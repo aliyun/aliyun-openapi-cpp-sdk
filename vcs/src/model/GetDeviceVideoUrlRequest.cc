@@ -27,6 +27,17 @@ GetDeviceVideoUrlRequest::GetDeviceVideoUrlRequest() :
 GetDeviceVideoUrlRequest::~GetDeviceVideoUrlRequest()
 {}
 
+std::string GetDeviceVideoUrlRequest::getOutProtocol()const
+{
+	return outProtocol_;
+}
+
+void GetDeviceVideoUrlRequest::setOutProtocol(const std::string& outProtocol)
+{
+	outProtocol_ = outProtocol;
+	setBodyParameter("OutProtocol", outProtocol);
+}
+
 std::string GetDeviceVideoUrlRequest::getCorpId()const
 {
 	return corpId_;
@@ -69,5 +80,16 @@ void GetDeviceVideoUrlRequest::setStartTime(long startTime)
 {
 	startTime_ = startTime;
 	setBodyParameter("StartTime", std::to_string(startTime));
+}
+
+std::string GetDeviceVideoUrlRequest::getDeviceId()const
+{
+	return deviceId_;
+}
+
+void GetDeviceVideoUrlRequest::setDeviceId(const std::string& deviceId)
+{
+	deviceId_ = deviceId;
+	setBodyParameter("DeviceId", deviceId);
 }
 

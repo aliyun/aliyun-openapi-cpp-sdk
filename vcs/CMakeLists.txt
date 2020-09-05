@@ -67,6 +67,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/DeleteUserGroupResult.h
 	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskRequest.h
 	include/alibabacloud/vcs/model/DeleteVideoSummaryTaskResult.h
+	include/alibabacloud/vcs/model/DescribeDevicesRequest.h
+	include/alibabacloud/vcs/model/DescribeDevicesResult.h
 	include/alibabacloud/vcs/model/GetBodyOptionsRequest.h
 	include/alibabacloud/vcs/model/GetBodyOptionsResult.h
 	include/alibabacloud/vcs/model/GetCatalogListRequest.h
@@ -224,6 +226,8 @@ set(vcs_src
 	src/model/DeleteUserGroupResult.cc
 	src/model/DeleteVideoSummaryTaskRequest.cc
 	src/model/DeleteVideoSummaryTaskResult.cc
+	src/model/DescribeDevicesRequest.cc
+	src/model/DescribeDevicesResult.cc
 	src/model/GetBodyOptionsRequest.cc
 	src/model/GetBodyOptionsResult.cc
 	src/model/GetCatalogListRequest.cc

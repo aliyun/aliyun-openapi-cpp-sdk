@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setIdNumber(const std::string& idNumber);
 				long getPageNumber()const;
 				void setPageNumber(long pageNumber);
+				std::string getFaceImageId()const;
+				void setFaceImageId(const std::string& faceImageId);
 				std::string getFaceUrl()const;
 				void setFaceUrl(const std::string& faceUrl);
 				long getPageSize()const;
@@ -77,6 +79,7 @@ namespace AlibabaCloud
 				std::string plateNo_;
 				std::string idNumber_;
 				long pageNumber_;
+				std::string faceImageId_;
 				std::string faceUrl_;
 				long pageSize_;
 				std::map<std::string, std::string> personIdList_;

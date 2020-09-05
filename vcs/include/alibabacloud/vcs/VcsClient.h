@@ -68,6 +68,8 @@
 #include "model/DeleteUserGroupResult.h"
 #include "model/DeleteVideoSummaryTaskRequest.h"
 #include "model/DeleteVideoSummaryTaskResult.h"
+#include "model/DescribeDevicesRequest.h"
+#include "model/DescribeDevicesResult.h"
 #include "model/GetBodyOptionsRequest.h"
 #include "model/GetBodyOptionsResult.h"
 #include "model/GetCatalogListRequest.h"
@@ -254,6 +256,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVideoSummaryTaskResult> DeleteVideoSummaryTaskOutcome;
 			typedef std::future<DeleteVideoSummaryTaskOutcome> DeleteVideoSummaryTaskOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::DeleteVideoSummaryTaskRequest&, const DeleteVideoSummaryTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoSummaryTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDevicesResult> DescribeDevicesOutcome;
+			typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::DescribeDevicesRequest&, const DescribeDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
 			typedef Outcome<Error, Model::GetBodyOptionsResult> GetBodyOptionsOutcome;
 			typedef std::future<GetBodyOptionsOutcome> GetBodyOptionsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::GetBodyOptionsRequest&, const GetBodyOptionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBodyOptionsAsyncHandler;
@@ -490,6 +495,9 @@ namespace AlibabaCloud
 			DeleteVideoSummaryTaskOutcome deleteVideoSummaryTask(const Model::DeleteVideoSummaryTaskRequest &request)const;
 			void deleteVideoSummaryTaskAsync(const Model::DeleteVideoSummaryTaskRequest& request, const DeleteVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVideoSummaryTaskOutcomeCallable deleteVideoSummaryTaskCallable(const Model::DeleteVideoSummaryTaskRequest& request) const;
+			DescribeDevicesOutcome describeDevices(const Model::DescribeDevicesRequest &request)const;
+			void describeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDevicesOutcomeCallable describeDevicesCallable(const Model::DescribeDevicesRequest& request) const;
 			GetBodyOptionsOutcome getBodyOptions(const Model::GetBodyOptionsRequest &request)const;
 			void getBodyOptionsAsync(const Model::GetBodyOptionsRequest& request, const GetBodyOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBodyOptionsOutcomeCallable getBodyOptionsCallable(const Model::GetBodyOptionsRequest& request) const;

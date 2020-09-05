@@ -37,15 +37,19 @@ namespace AlibabaCloud
 				GetDeviceLiveUrlResult();
 				explicit GetDeviceLiveUrlResult(const std::string &payload);
 				~GetDeviceLiveUrlResult();
+				int getStreamType()const;
 				std::string getMessage()const;
 				std::string getCode()const;
+				std::string getOutProtocol()const;
 				std::string getUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int streamType_;
 				std::string message_;
 				std::string code_;
+				std::string outProtocol_;
 				std::string url_;
 
 			};

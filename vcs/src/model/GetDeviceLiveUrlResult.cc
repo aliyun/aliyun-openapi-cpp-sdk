@@ -41,11 +41,20 @@ void GetDeviceLiveUrlResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Url"].isNull())
-		url_ = value["Url"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Url"].isNull())
+		url_ = value["Url"].asString();
+	if(!value["OutProtocol"].isNull())
+		outProtocol_ = value["OutProtocol"].asString();
+	if(!value["StreamType"].isNull())
+		streamType_ = std::stoi(value["StreamType"].asString());
 
+}
+
+int GetDeviceLiveUrlResult::getStreamType()const
+{
+	return streamType_;
 }
 
 std::string GetDeviceLiveUrlResult::getMessage()const
@@ -56,6 +65,11 @@ std::string GetDeviceLiveUrlResult::getMessage()const
 std::string GetDeviceLiveUrlResult::getCode()const
 {
 	return code_;
+}
+
+std::string GetDeviceLiveUrlResult::getOutProtocol()const
+{
+	return outProtocol_;
 }
 
 std::string GetDeviceLiveUrlResult::getUrl()const
