@@ -37,7 +37,7 @@ namespace AlibabaCloud
 					struct Record
 					{
 						std::string inProtocol;
-						int status;
+						std::string status;
 						std::string deviceType;
 						std::string corpId;
 						std::string deviceAddress;

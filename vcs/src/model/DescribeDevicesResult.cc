@@ -69,7 +69,7 @@ void DescribeDevicesResult::parse(const std::string &payload)
 		if(!dataNodeRecordsRecord["Longitude"].isNull())
 			recordObject.longitude = dataNodeRecordsRecord["Longitude"].asString();
 		if(!dataNodeRecordsRecord["Status"].isNull())
-			recordObject.status = std::stoi(dataNodeRecordsRecord["Status"].asString());
+			recordObject.status = dataNodeRecordsRecord["Status"].asString();
 		if(!dataNodeRecordsRecord["Vendor"].isNull())
 			recordObject.vendor = dataNodeRecordsRecord["Vendor"].asString();
 		if(!dataNodeRecordsRecord["CorpId"].isNull())
