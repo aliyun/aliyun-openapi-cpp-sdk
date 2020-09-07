@@ -31,21 +31,21 @@ OosClient::OosClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::OosClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::OosClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::~OosClient()
@@ -81,6 +81,78 @@ OosClient::CancelExecutionOutcomeCallable OosClient::cancelExecutionCallable(con
 			[this, request]()
 			{
 			return this->cancelExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::CreateParameterOutcome OosClient::createParameter(const CreateParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateParameterOutcome(CreateParameterResult(outcome.result()));
+	else
+		return CreateParameterOutcome(outcome.error());
+}
+
+void OosClient::createParameterAsync(const CreateParameterRequest& request, const CreateParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateParameterOutcomeCallable OosClient::createParameterCallable(const CreateParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->createParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::CreateSecretParameterOutcome OosClient::createSecretParameter(const CreateSecretParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSecretParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSecretParameterOutcome(CreateSecretParameterResult(outcome.result()));
+	else
+		return CreateSecretParameterOutcome(outcome.error());
+}
+
+void OosClient::createSecretParameterAsync(const CreateSecretParameterRequest& request, const CreateSecretParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSecretParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateSecretParameterOutcomeCallable OosClient::createSecretParameterCallable(const CreateSecretParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSecretParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->createSecretParameter(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -153,6 +225,78 @@ OosClient::DeleteExecutionsOutcomeCallable OosClient::deleteExecutionsCallable(c
 			[this, request]()
 			{
 			return this->deleteExecutions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::DeleteParameterOutcome OosClient::deleteParameter(const DeleteParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteParameterOutcome(DeleteParameterResult(outcome.result()));
+	else
+		return DeleteParameterOutcome(outcome.error());
+}
+
+void OosClient::deleteParameterAsync(const DeleteParameterRequest& request, const DeleteParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeleteParameterOutcomeCallable OosClient::deleteParameterCallable(const DeleteParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::DeleteSecretParameterOutcome OosClient::deleteSecretParameter(const DeleteSecretParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSecretParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSecretParameterOutcome(DeleteSecretParameterResult(outcome.result()));
+	else
+		return DeleteSecretParameterOutcome(outcome.error());
+}
+
+void OosClient::deleteSecretParameterAsync(const DeleteSecretParameterRequest& request, const DeleteSecretParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSecretParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeleteSecretParameterOutcomeCallable OosClient::deleteSecretParameterCallable(const DeleteSecretParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSecretParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSecretParameter(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -339,6 +483,78 @@ OosClient::GetExecutionTemplateOutcomeCallable OosClient::getExecutionTemplateCa
 	return task->get_future();
 }
 
+OosClient::GetParameterOutcome OosClient::getParameter(const GetParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetParameterOutcome(GetParameterResult(outcome.result()));
+	else
+		return GetParameterOutcome(outcome.error());
+}
+
+void OosClient::getParameterAsync(const GetParameterRequest& request, const GetParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetParameterOutcomeCallable OosClient::getParameterCallable(const GetParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->getParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetSecretParameterOutcome OosClient::getSecretParameter(const GetSecretParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSecretParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSecretParameterOutcome(GetSecretParameterResult(outcome.result()));
+	else
+		return GetSecretParameterOutcome(outcome.error());
+}
+
+void OosClient::getSecretParameterAsync(const GetSecretParameterRequest& request, const GetSecretParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSecretParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetSecretParameterOutcomeCallable OosClient::getSecretParameterCallable(const GetSecretParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSecretParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->getSecretParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetTemplateOutcome OosClient::getTemplate(const GetTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +735,78 @@ OosClient::ListExecutionsOutcomeCallable OosClient::listExecutionsCallable(const
 	return task->get_future();
 }
 
+OosClient::ListParameterVersionsOutcome OosClient::listParameterVersions(const ListParameterVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListParameterVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListParameterVersionsOutcome(ListParameterVersionsResult(outcome.result()));
+	else
+		return ListParameterVersionsOutcome(outcome.error());
+}
+
+void OosClient::listParameterVersionsAsync(const ListParameterVersionsRequest& request, const ListParameterVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listParameterVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListParameterVersionsOutcomeCallable OosClient::listParameterVersionsCallable(const ListParameterVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListParameterVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listParameterVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListParametersOutcome OosClient::listParameters(const ListParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListParametersOutcome(ListParametersResult(outcome.result()));
+	else
+		return ListParametersOutcome(outcome.error());
+}
+
+void OosClient::listParametersAsync(const ListParametersRequest& request, const ListParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListParametersOutcomeCallable OosClient::listParametersCallable(const ListParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->listParameters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::ListResourceExecutionStatusOutcome OosClient::listResourceExecutionStatus(const ListResourceExecutionStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +837,78 @@ OosClient::ListResourceExecutionStatusOutcomeCallable OosClient::listResourceExe
 			[this, request]()
 			{
 			return this->listResourceExecutionStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListSecretParameterVersionsOutcome OosClient::listSecretParameterVersions(const ListSecretParameterVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecretParameterVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecretParameterVersionsOutcome(ListSecretParameterVersionsResult(outcome.result()));
+	else
+		return ListSecretParameterVersionsOutcome(outcome.error());
+}
+
+void OosClient::listSecretParameterVersionsAsync(const ListSecretParameterVersionsRequest& request, const ListSecretParameterVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecretParameterVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListSecretParameterVersionsOutcomeCallable OosClient::listSecretParameterVersionsCallable(const ListSecretParameterVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecretParameterVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecretParameterVersions(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListSecretParametersOutcome OosClient::listSecretParameters(const ListSecretParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecretParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecretParametersOutcome(ListSecretParametersResult(outcome.result()));
+	else
+		return ListSecretParametersOutcome(outcome.error());
+}
+
+void OosClient::listSecretParametersAsync(const ListSecretParametersRequest& request, const ListSecretParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecretParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListSecretParametersOutcomeCallable OosClient::listSecretParametersCallable(const ListSecretParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecretParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecretParameters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -945,6 +1305,78 @@ OosClient::UntagResourcesOutcomeCallable OosClient::untagResourcesCallable(const
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateParameterOutcome OosClient::updateParameter(const UpdateParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateParameterOutcome(UpdateParameterResult(outcome.result()));
+	else
+		return UpdateParameterOutcome(outcome.error());
+}
+
+void OosClient::updateParameterAsync(const UpdateParameterRequest& request, const UpdateParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateParameterOutcomeCallable OosClient::updateParameterCallable(const UpdateParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->updateParameter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateSecretParameterOutcome OosClient::updateSecretParameter(const UpdateSecretParameterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSecretParameterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSecretParameterOutcome(UpdateSecretParameterResult(outcome.result()));
+	else
+		return UpdateSecretParameterOutcome(outcome.error());
+}
+
+void OosClient::updateSecretParameterAsync(const UpdateSecretParameterRequest& request, const UpdateSecretParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSecretParameter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateSecretParameterOutcomeCallable OosClient::updateSecretParameterCallable(const UpdateSecretParameterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSecretParameterOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSecretParameter(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

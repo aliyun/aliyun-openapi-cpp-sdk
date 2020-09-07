@@ -23,10 +23,18 @@ set(oos_public_header
 set(oos_public_header_model 
 	include/alibabacloud/oos/model/CancelExecutionRequest.h
 	include/alibabacloud/oos/model/CancelExecutionResult.h
+	include/alibabacloud/oos/model/CreateParameterRequest.h
+	include/alibabacloud/oos/model/CreateParameterResult.h
+	include/alibabacloud/oos/model/CreateSecretParameterRequest.h
+	include/alibabacloud/oos/model/CreateSecretParameterResult.h
 	include/alibabacloud/oos/model/CreateTemplateRequest.h
 	include/alibabacloud/oos/model/CreateTemplateResult.h
 	include/alibabacloud/oos/model/DeleteExecutionsRequest.h
 	include/alibabacloud/oos/model/DeleteExecutionsResult.h
+	include/alibabacloud/oos/model/DeleteParameterRequest.h
+	include/alibabacloud/oos/model/DeleteParameterResult.h
+	include/alibabacloud/oos/model/DeleteSecretParameterRequest.h
+	include/alibabacloud/oos/model/DeleteSecretParameterResult.h
 	include/alibabacloud/oos/model/DeleteTemplateRequest.h
 	include/alibabacloud/oos/model/DeleteTemplateResult.h
 	include/alibabacloud/oos/model/DeleteTemplatesRequest.h
@@ -37,6 +45,10 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GenerateExecutionPolicyResult.h
 	include/alibabacloud/oos/model/GetExecutionTemplateRequest.h
 	include/alibabacloud/oos/model/GetExecutionTemplateResult.h
+	include/alibabacloud/oos/model/GetParameterRequest.h
+	include/alibabacloud/oos/model/GetParameterResult.h
+	include/alibabacloud/oos/model/GetSecretParameterRequest.h
+	include/alibabacloud/oos/model/GetSecretParameterResult.h
 	include/alibabacloud/oos/model/GetTemplateRequest.h
 	include/alibabacloud/oos/model/GetTemplateResult.h
 	include/alibabacloud/oos/model/ListActionsRequest.h
@@ -47,8 +59,16 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListExecutionRiskyTasksResult.h
 	include/alibabacloud/oos/model/ListExecutionsRequest.h
 	include/alibabacloud/oos/model/ListExecutionsResult.h
+	include/alibabacloud/oos/model/ListParameterVersionsRequest.h
+	include/alibabacloud/oos/model/ListParameterVersionsResult.h
+	include/alibabacloud/oos/model/ListParametersRequest.h
+	include/alibabacloud/oos/model/ListParametersResult.h
 	include/alibabacloud/oos/model/ListResourceExecutionStatusRequest.h
 	include/alibabacloud/oos/model/ListResourceExecutionStatusResult.h
+	include/alibabacloud/oos/model/ListSecretParameterVersionsRequest.h
+	include/alibabacloud/oos/model/ListSecretParameterVersionsResult.h
+	include/alibabacloud/oos/model/ListSecretParametersRequest.h
+	include/alibabacloud/oos/model/ListSecretParametersResult.h
 	include/alibabacloud/oos/model/ListTagKeysRequest.h
 	include/alibabacloud/oos/model/ListTagKeysResult.h
 	include/alibabacloud/oos/model/ListTagResourcesRequest.h
@@ -71,6 +91,10 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/TriggerExecutionResult.h
 	include/alibabacloud/oos/model/UntagResourcesRequest.h
 	include/alibabacloud/oos/model/UntagResourcesResult.h
+	include/alibabacloud/oos/model/UpdateParameterRequest.h
+	include/alibabacloud/oos/model/UpdateParameterResult.h
+	include/alibabacloud/oos/model/UpdateSecretParameterRequest.h
+	include/alibabacloud/oos/model/UpdateSecretParameterResult.h
 	include/alibabacloud/oos/model/UpdateTemplateRequest.h
 	include/alibabacloud/oos/model/UpdateTemplateResult.h
 	include/alibabacloud/oos/model/ValidateTemplateContentRequest.h
@@ -80,10 +104,18 @@ set(oos_src
 	src/OosClient.cc
 	src/model/CancelExecutionRequest.cc
 	src/model/CancelExecutionResult.cc
+	src/model/CreateParameterRequest.cc
+	src/model/CreateParameterResult.cc
+	src/model/CreateSecretParameterRequest.cc
+	src/model/CreateSecretParameterResult.cc
 	src/model/CreateTemplateRequest.cc
 	src/model/CreateTemplateResult.cc
 	src/model/DeleteExecutionsRequest.cc
 	src/model/DeleteExecutionsResult.cc
+	src/model/DeleteParameterRequest.cc
+	src/model/DeleteParameterResult.cc
+	src/model/DeleteSecretParameterRequest.cc
+	src/model/DeleteSecretParameterResult.cc
 	src/model/DeleteTemplateRequest.cc
 	src/model/DeleteTemplateResult.cc
 	src/model/DeleteTemplatesRequest.cc
@@ -94,6 +126,10 @@ set(oos_src
 	src/model/GenerateExecutionPolicyResult.cc
 	src/model/GetExecutionTemplateRequest.cc
 	src/model/GetExecutionTemplateResult.cc
+	src/model/GetParameterRequest.cc
+	src/model/GetParameterResult.cc
+	src/model/GetSecretParameterRequest.cc
+	src/model/GetSecretParameterResult.cc
 	src/model/GetTemplateRequest.cc
 	src/model/GetTemplateResult.cc
 	src/model/ListActionsRequest.cc
@@ -104,8 +140,16 @@ set(oos_src
 	src/model/ListExecutionRiskyTasksResult.cc
 	src/model/ListExecutionsRequest.cc
 	src/model/ListExecutionsResult.cc
+	src/model/ListParameterVersionsRequest.cc
+	src/model/ListParameterVersionsResult.cc
+	src/model/ListParametersRequest.cc
+	src/model/ListParametersResult.cc
 	src/model/ListResourceExecutionStatusRequest.cc
 	src/model/ListResourceExecutionStatusResult.cc
+	src/model/ListSecretParameterVersionsRequest.cc
+	src/model/ListSecretParameterVersionsResult.cc
+	src/model/ListSecretParametersRequest.cc
+	src/model/ListSecretParametersResult.cc
 	src/model/ListTagKeysRequest.cc
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagResourcesRequest.cc
@@ -128,6 +172,10 @@ set(oos_src
 	src/model/TriggerExecutionResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdateParameterRequest.cc
+	src/model/UpdateParameterResult.cc
+	src/model/UpdateSecretParameterRequest.cc
+	src/model/UpdateSecretParameterResult.cc
 	src/model/UpdateTemplateRequest.cc
 	src/model/UpdateTemplateResult.cc
 	src/model/ValidateTemplateContentRequest.cc
