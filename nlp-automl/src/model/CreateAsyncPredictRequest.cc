@@ -60,6 +60,17 @@ void CreateAsyncPredictRequest::setDetailTag(const std::string& detailTag)
 	setBodyParameter("DetailTag", detailTag);
 }
 
+std::string CreateAsyncPredictRequest::getFetchContent()const
+{
+	return fetchContent_;
+}
+
+void CreateAsyncPredictRequest::setFetchContent(const std::string& fetchContent)
+{
+	fetchContent_ = fetchContent;
+	setBodyParameter("FetchContent", fetchContent);
+}
+
 std::string CreateAsyncPredictRequest::getContent()const
 {
 	return content_;

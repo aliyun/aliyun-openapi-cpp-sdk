@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setFileType(const std::string& fileType);
 				std::string getDetailTag()const;
 				void setDetailTag(const std::string& detailTag);
+				std::string getFetchContent()const;
+				void setFetchContent(const std::string& fetchContent);
 				std::string getContent()const;
 				void setContent(const std::string& content);
 				std::string getFileContent()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				int topK_;
 				std::string fileType_;
 				std::string detailTag_;
+				std::string fetchContent_;
 				std::string content_;
 				std::string fileContent_;
 				int modelId_;
