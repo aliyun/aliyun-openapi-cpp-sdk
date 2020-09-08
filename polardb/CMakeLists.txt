@@ -53,6 +53,12 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DeleteDatabaseResult.h
 	include/alibabacloud/polardb/model/DescribeAccountsRequest.h
 	include/alibabacloud/polardb/model/DescribeAccountsResult.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRequest.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskResult.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountRequest.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountResult.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeRequest.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/DescribeBackupLogsRequest.h
@@ -111,6 +117,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyAccountDescriptionResult.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordRequest.h
 	include/alibabacloud/polardb/model/ModifyAccountPasswordResult.h
+	include/alibabacloud/polardb/model/ModifyActiveOperationTaskRequest.h
+	include/alibabacloud/polardb/model/ModifyActiveOperationTaskResult.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeRequest.h
 	include/alibabacloud/polardb/model/ModifyAutoRenewAttributeResult.h
 	include/alibabacloud/polardb/model/ModifyBackupPolicyRequest.h
@@ -186,6 +194,12 @@ set(polardb_src
 	src/model/DeleteDatabaseResult.cc
 	src/model/DescribeAccountsRequest.cc
 	src/model/DescribeAccountsResult.cc
+	src/model/DescribeActiveOperationTaskRequest.cc
+	src/model/DescribeActiveOperationTaskResult.cc
+	src/model/DescribeActiveOperationTaskCountRequest.cc
+	src/model/DescribeActiveOperationTaskCountResult.cc
+	src/model/DescribeActiveOperationTaskTypeRequest.cc
+	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
 	src/model/DescribeAutoRenewAttributeResult.cc
 	src/model/DescribeBackupLogsRequest.cc
@@ -244,6 +258,8 @@ set(polardb_src
 	src/model/ModifyAccountDescriptionResult.cc
 	src/model/ModifyAccountPasswordRequest.cc
 	src/model/ModifyAccountPasswordResult.cc
+	src/model/ModifyActiveOperationTaskRequest.cc
+	src/model/ModifyActiveOperationTaskResult.cc
 	src/model/ModifyAutoRenewAttributeRequest.cc
 	src/model/ModifyAutoRenewAttributeResult.cc
 	src/model/ModifyBackupPolicyRequest.cc

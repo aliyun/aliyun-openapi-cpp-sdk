@@ -1,4 +1,11 @@
 2020-09-08 Version: patch
+- Add DescribeActiveOperationTask.
+- Add DescribeActiveOperationTaskCount.
+- Add DescribeActiveOperationTaskRegion.
+- Add DescribeActiveOperationTaskType.
+- Add ModifyActiveOperationTask.
+
+2020-09-08 Version: patch
 - Modify CreateAsyncPredict add new parameters.
 
 2020-09-07 Version: patch
