@@ -447,6 +447,42 @@ FacebodyClient::DetectCelebrityOutcomeCallable FacebodyClient::detectCelebrityCa
 	return task->get_future();
 }
 
+FacebodyClient::DetectChefCapOutcome FacebodyClient::detectChefCap(const DetectChefCapRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectChefCapOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectChefCapOutcome(DetectChefCapResult(outcome.result()));
+	else
+		return DetectChefCapOutcome(outcome.error());
+}
+
+void FacebodyClient::detectChefCapAsync(const DetectChefCapRequest& request, const DetectChefCapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectChefCap(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DetectChefCapOutcomeCallable FacebodyClient::detectChefCapCallable(const DetectChefCapRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectChefCapOutcome()>>(
+			[this, request]()
+			{
+			return this->detectChefCap(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::DetectFaceOutcome FacebodyClient::detectFace(const DetectFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +729,42 @@ FacebodyClient::EnhanceFaceOutcomeCallable FacebodyClient::enhanceFaceCallable(c
 			[this, request]()
 			{
 			return this->enhanceFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::ExtractPedestrianFeatureAttrOutcome FacebodyClient::extractPedestrianFeatureAttr(const ExtractPedestrianFeatureAttrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExtractPedestrianFeatureAttrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExtractPedestrianFeatureAttrOutcome(ExtractPedestrianFeatureAttrResult(outcome.result()));
+	else
+		return ExtractPedestrianFeatureAttrOutcome(outcome.error());
+}
+
+void FacebodyClient::extractPedestrianFeatureAttrAsync(const ExtractPedestrianFeatureAttrRequest& request, const ExtractPedestrianFeatureAttrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, extractPedestrianFeatureAttr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::ExtractPedestrianFeatureAttrOutcomeCallable FacebodyClient::extractPedestrianFeatureAttrCallable(const ExtractPedestrianFeatureAttrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExtractPedestrianFeatureAttrOutcome()>>(
+			[this, request]()
+			{
+			return this->extractPedestrianFeatureAttr(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -44,6 +44,8 @@
 #include "model/DetectBodyCountResult.h"
 #include "model/DetectCelebrityRequest.h"
 #include "model/DetectCelebrityResult.h"
+#include "model/DetectChefCapRequest.h"
+#include "model/DetectChefCapResult.h"
 #include "model/DetectFaceRequest.h"
 #include "model/DetectFaceResult.h"
 #include "model/DetectIPCPedestrianRequest.h"
@@ -58,6 +60,8 @@
 #include "model/DetectVideoLivingFaceResult.h"
 #include "model/EnhanceFaceRequest.h"
 #include "model/EnhanceFaceResult.h"
+#include "model/ExtractPedestrianFeatureAttrRequest.h"
+#include "model/ExtractPedestrianFeatureAttrResult.h"
 #include "model/ExtractPedestrianFeatureAttributeRequest.h"
 #include "model/ExtractPedestrianFeatureAttributeResult.h"
 #include "model/FaceBeautyRequest.h"
@@ -134,6 +138,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectCelebrityResult> DetectCelebrityOutcome;
 			typedef std::future<DetectCelebrityOutcome> DetectCelebrityOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectCelebrityRequest&, const DetectCelebrityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectCelebrityAsyncHandler;
+			typedef Outcome<Error, Model::DetectChefCapResult> DetectChefCapOutcome;
+			typedef std::future<DetectChefCapOutcome> DetectChefCapOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::DetectChefCapRequest&, const DetectChefCapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectChefCapAsyncHandler;
 			typedef Outcome<Error, Model::DetectFaceResult> DetectFaceOutcome;
 			typedef std::future<DetectFaceOutcome> DetectFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectFaceRequest&, const DetectFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAsyncHandler;
@@ -155,6 +162,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnhanceFaceResult> EnhanceFaceOutcome;
 			typedef std::future<EnhanceFaceOutcome> EnhanceFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::EnhanceFaceRequest&, const EnhanceFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceFaceAsyncHandler;
+			typedef Outcome<Error, Model::ExtractPedestrianFeatureAttrResult> ExtractPedestrianFeatureAttrOutcome;
+			typedef std::future<ExtractPedestrianFeatureAttrOutcome> ExtractPedestrianFeatureAttrOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::ExtractPedestrianFeatureAttrRequest&, const ExtractPedestrianFeatureAttrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPedestrianFeatureAttrAsyncHandler;
 			typedef Outcome<Error, Model::ExtractPedestrianFeatureAttributeResult> ExtractPedestrianFeatureAttributeOutcome;
 			typedef std::future<ExtractPedestrianFeatureAttributeOutcome> ExtractPedestrianFeatureAttributeOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ExtractPedestrianFeatureAttributeRequest&, const ExtractPedestrianFeatureAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPedestrianFeatureAttributeAsyncHandler;
@@ -244,6 +254,9 @@ namespace AlibabaCloud
 			DetectCelebrityOutcome detectCelebrity(const Model::DetectCelebrityRequest &request)const;
 			void detectCelebrityAsync(const Model::DetectCelebrityRequest& request, const DetectCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectCelebrityOutcomeCallable detectCelebrityCallable(const Model::DetectCelebrityRequest& request) const;
+			DetectChefCapOutcome detectChefCap(const Model::DetectChefCapRequest &request)const;
+			void detectChefCapAsync(const Model::DetectChefCapRequest& request, const DetectChefCapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectChefCapOutcomeCallable detectChefCapCallable(const Model::DetectChefCapRequest& request) const;
 			DetectFaceOutcome detectFace(const Model::DetectFaceRequest &request)const;
 			void detectFaceAsync(const Model::DetectFaceRequest& request, const DetectFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectFaceOutcomeCallable detectFaceCallable(const Model::DetectFaceRequest& request) const;
@@ -265,6 +278,9 @@ namespace AlibabaCloud
 			EnhanceFaceOutcome enhanceFace(const Model::EnhanceFaceRequest &request)const;
 			void enhanceFaceAsync(const Model::EnhanceFaceRequest& request, const EnhanceFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceFaceOutcomeCallable enhanceFaceCallable(const Model::EnhanceFaceRequest& request) const;
+			ExtractPedestrianFeatureAttrOutcome extractPedestrianFeatureAttr(const Model::ExtractPedestrianFeatureAttrRequest &request)const;
+			void extractPedestrianFeatureAttrAsync(const Model::ExtractPedestrianFeatureAttrRequest& request, const ExtractPedestrianFeatureAttrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExtractPedestrianFeatureAttrOutcomeCallable extractPedestrianFeatureAttrCallable(const Model::ExtractPedestrianFeatureAttrRequest& request) const;
 			ExtractPedestrianFeatureAttributeOutcome extractPedestrianFeatureAttribute(const Model::ExtractPedestrianFeatureAttributeRequest &request)const;
 			void extractPedestrianFeatureAttributeAsync(const Model::ExtractPedestrianFeatureAttributeRequest& request, const ExtractPedestrianFeatureAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtractPedestrianFeatureAttributeOutcomeCallable extractPedestrianFeatureAttributeCallable(const Model::ExtractPedestrianFeatureAttributeRequest& request) const;
