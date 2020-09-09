@@ -51,6 +51,78 @@ ImageprocessClient::ImageprocessClient(const std::string & accessKeyId, const st
 ImageprocessClient::~ImageprocessClient()
 {}
 
+ImageprocessClient::CalcCACSOutcome ImageprocessClient::calcCACS(const CalcCACSRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CalcCACSOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CalcCACSOutcome(CalcCACSResult(outcome.result()));
+	else
+		return CalcCACSOutcome(outcome.error());
+}
+
+void ImageprocessClient::calcCACSAsync(const CalcCACSRequest& request, const CalcCACSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, calcCACS(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::CalcCACSOutcomeCallable ImageprocessClient::calcCACSCallable(const CalcCACSRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CalcCACSOutcome()>>(
+			[this, request]()
+			{
+			return this->calcCACS(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::ClassifyFNFOutcome ImageprocessClient::classifyFNF(const ClassifyFNFRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ClassifyFNFOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ClassifyFNFOutcome(ClassifyFNFResult(outcome.result()));
+	else
+		return ClassifyFNFOutcome(outcome.error());
+}
+
+void ImageprocessClient::classifyFNFAsync(const ClassifyFNFRequest& request, const ClassifyFNFAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, classifyFNF(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ClassifyFNFOutcomeCallable ImageprocessClient::classifyFNFCallable(const ClassifyFNFRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ClassifyFNFOutcome()>>(
+			[this, request]()
+			{
+			return this->classifyFNF(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::DetectCovid19CadOutcome ImageprocessClient::detectCovid19Cad(const DetectCovid19CadRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -81,6 +153,78 @@ ImageprocessClient::DetectCovid19CadOutcomeCallable ImageprocessClient::detectCo
 			[this, request]()
 			{
 			return this->detectCovid19Cad(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::DetectHipKeypointXRayOutcome ImageprocessClient::detectHipKeypointXRay(const DetectHipKeypointXRayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectHipKeypointXRayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectHipKeypointXRayOutcome(DetectHipKeypointXRayResult(outcome.result()));
+	else
+		return DetectHipKeypointXRayOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectHipKeypointXRayAsync(const DetectHipKeypointXRayRequest& request, const DetectHipKeypointXRayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectHipKeypointXRay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectHipKeypointXRayOutcomeCallable ImageprocessClient::detectHipKeypointXRayCallable(const DetectHipKeypointXRayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectHipKeypointXRayOutcome()>>(
+			[this, request]()
+			{
+			return this->detectHipKeypointXRay(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::DetectKneeKeypointXRayOutcome ImageprocessClient::detectKneeKeypointXRay(const DetectKneeKeypointXRayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectKneeKeypointXRayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectKneeKeypointXRayOutcome(DetectKneeKeypointXRayResult(outcome.result()));
+	else
+		return DetectKneeKeypointXRayOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectKneeKeypointXRayAsync(const DetectKneeKeypointXRayRequest& request, const DetectKneeKeypointXRayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectKneeKeypointXRay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectKneeKeypointXRayOutcomeCallable ImageprocessClient::detectKneeKeypointXRayCallable(const DetectKneeKeypointXRayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectKneeKeypointXRayOutcome()>>(
+			[this, request]()
+			{
+			return this->detectKneeKeypointXRay(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -225,6 +369,42 @@ ImageprocessClient::GetAsyncJobResultOutcomeCallable ImageprocessClient::getAsyn
 			[this, request]()
 			{
 			return this->getAsyncJobResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::RunCTRegistrationOutcome ImageprocessClient::runCTRegistration(const RunCTRegistrationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunCTRegistrationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunCTRegistrationOutcome(RunCTRegistrationResult(outcome.result()));
+	else
+		return RunCTRegistrationOutcome(outcome.error());
+}
+
+void ImageprocessClient::runCTRegistrationAsync(const RunCTRegistrationRequest& request, const RunCTRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runCTRegistration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::RunCTRegistrationOutcomeCallable ImageprocessClient::runCTRegistrationCallable(const RunCTRegistrationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunCTRegistrationOutcome()>>(
+			[this, request]()
+			{
+			return this->runCTRegistration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

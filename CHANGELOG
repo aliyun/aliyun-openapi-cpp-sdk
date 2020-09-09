@@ -1,3 +1,6 @@
+2020-09-09 Version: patch
+- Release DetectKneeKeypointXRay, DetectHipKeypointXRay, CalcCACS, RunCTRegistration, ClassifyFNF.
+
 2020-09-08 Version: patch
 - Supported backend interface for ICBU.
 

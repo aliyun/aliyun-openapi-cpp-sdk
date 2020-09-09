@@ -21,8 +21,16 @@ set(imageprocess_public_header
 	include/alibabacloud/imageprocess/ImageprocessExport.h )
 
 set(imageprocess_public_header_model 
+	include/alibabacloud/imageprocess/model/CalcCACSRequest.h
+	include/alibabacloud/imageprocess/model/CalcCACSResult.h
+	include/alibabacloud/imageprocess/model/ClassifyFNFRequest.h
+	include/alibabacloud/imageprocess/model/ClassifyFNFResult.h
 	include/alibabacloud/imageprocess/model/DetectCovid19CadRequest.h
 	include/alibabacloud/imageprocess/model/DetectCovid19CadResult.h
+	include/alibabacloud/imageprocess/model/DetectHipKeypointXRayRequest.h
+	include/alibabacloud/imageprocess/model/DetectHipKeypointXRayResult.h
+	include/alibabacloud/imageprocess/model/DetectKneeKeypointXRayRequest.h
+	include/alibabacloud/imageprocess/model/DetectKneeKeypointXRayResult.h
 	include/alibabacloud/imageprocess/model/DetectKneeXRayRequest.h
 	include/alibabacloud/imageprocess/model/DetectKneeXRayResult.h
 	include/alibabacloud/imageprocess/model/DetectLungNoduleRequest.h
@@ -31,13 +39,23 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/DetectSpineMRIResult.h
 	include/alibabacloud/imageprocess/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/imageprocess/model/GetAsyncJobResultResult.h
+	include/alibabacloud/imageprocess/model/RunCTRegistrationRequest.h
+	include/alibabacloud/imageprocess/model/RunCTRegistrationResult.h
 	include/alibabacloud/imageprocess/model/TranslateMedRequest.h
 	include/alibabacloud/imageprocess/model/TranslateMedResult.h )
 
 set(imageprocess_src 
 	src/ImageprocessClient.cc
+	src/model/CalcCACSRequest.cc
+	src/model/CalcCACSResult.cc
+	src/model/ClassifyFNFRequest.cc
+	src/model/ClassifyFNFResult.cc
 	src/model/DetectCovid19CadRequest.cc
 	src/model/DetectCovid19CadResult.cc
+	src/model/DetectHipKeypointXRayRequest.cc
+	src/model/DetectHipKeypointXRayResult.cc
+	src/model/DetectKneeKeypointXRayRequest.cc
+	src/model/DetectKneeKeypointXRayResult.cc
 	src/model/DetectKneeXRayRequest.cc
 	src/model/DetectKneeXRayResult.cc
 	src/model/DetectLungNoduleRequest.cc
@@ -46,6 +64,8 @@ set(imageprocess_src
 	src/model/DetectSpineMRIResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
+	src/model/RunCTRegistrationRequest.cc
+	src/model/RunCTRegistrationResult.cc
 	src/model/TranslateMedRequest.cc
 	src/model/TranslateMedResult.cc )
 
