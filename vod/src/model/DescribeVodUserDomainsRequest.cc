@@ -82,6 +82,22 @@ void DescribeVodUserDomainsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::vector<DescribeVodUserDomainsRequest::Tag> DescribeVodUserDomainsRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeVodUserDomainsRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
+}
+
 std::string DescribeVodUserDomainsRequest::getFuncFilter()const
 {
 	return funcFilter_;

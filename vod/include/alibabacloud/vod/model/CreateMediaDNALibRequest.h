@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_CREATEMEDIADNALIBREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_CREATEMEDIADNALIBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT SubmitAIMediaAuditJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT CreateMediaDNALibRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitAIMediaAuditJobRequest();
-				~SubmitAIMediaAuditJobRequest();
+				CreateMediaDNALibRequest();
+				~CreateMediaDNALibRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerId()const;
+				void setResourceOwnerId(const std::string& resourceOwnerId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getUserData()const;
-				void setUserData(const std::string& userData);
+				std::string getModelType()const;
+				void setModelType(const std::string& modelType);
+				std::string getLibRegion()const;
+				void setLibRegion(const std::string& libRegion);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getMediaId()const;
-				void setMediaId(const std::string& mediaId);
-				std::string getTemplateId()const;
-				void setTemplateId(const std::string& templateId);
-				std::string getMediaAuditConfiguration()const;
-				void setMediaAuditConfiguration(const std::string& mediaAuditConfiguration);
-				std::string getMediaType()const;
-				void setMediaType(const std::string& mediaType);
 
             private:
-				long resourceOwnerId_;
+				std::string resourceOwnerId_;
 				std::string accessKeyId_;
-				std::string userData_;
+				std::string modelType_;
+				std::string libRegion_;
 				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
 				std::string ownerId_;
-				std::string mediaId_;
-				std::string templateId_;
-				std::string mediaAuditConfiguration_;
-				std::string mediaType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_CREATEMEDIADNALIBREQUEST_H_

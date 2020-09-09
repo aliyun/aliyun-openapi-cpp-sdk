@@ -72,6 +72,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string videoId;
 						std::string downloadSwitch;
+						std::string auditLabel;
 						std::string title;
 						float duration;
 						std::string auditStatus;
@@ -79,6 +80,7 @@ namespace AlibabaCloud
 						std::string customMediaInfo;
 						std::string appId;
 						std::string transcodeMode;
+						std::string auditAbnormalModules;
 						std::string creationTime;
 						std::string coverURL;
 						std::string regionId;

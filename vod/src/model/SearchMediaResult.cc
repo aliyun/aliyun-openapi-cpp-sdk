@@ -102,6 +102,10 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.video.customMediaInfo = videoNode["CustomMediaInfo"].asString();
 		if(!videoNode["AppId"].isNull())
 			mediaListObject.video.appId = videoNode["AppId"].asString();
+		if(!videoNode["AuditAbnormalModules"].isNull())
+			mediaListObject.video.auditAbnormalModules = videoNode["AuditAbnormalModules"].asString();
+		if(!videoNode["AuditLabel"].isNull())
+			mediaListObject.video.auditLabel = videoNode["AuditLabel"].asString();
 		auto allPlayInfoListNode = videoNode["PlayInfoList"]["PlayInfo"];
 		for (auto videoNodePlayInfoListPlayInfo : allPlayInfoListNode)
 		{

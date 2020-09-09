@@ -104,6 +104,17 @@ void SubmitAIMediaAuditJobRequest::setTemplateId(const std::string& templateId)
 	setParameter("TemplateId", templateId);
 }
 
+std::string SubmitAIMediaAuditJobRequest::getMediaAuditConfiguration()const
+{
+	return mediaAuditConfiguration_;
+}
+
+void SubmitAIMediaAuditJobRequest::setMediaAuditConfiguration(const std::string& mediaAuditConfiguration)
+{
+	mediaAuditConfiguration_ = mediaAuditConfiguration;
+	setParameter("MediaAuditConfiguration", mediaAuditConfiguration);
+}
+
 std::string SubmitAIMediaAuditJobRequest::getMediaType()const
 {
 	return mediaType_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
-#define ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_SUBMITAIIMAGEJOBREQUEST_H_
+#define ALIBABACLOUD_VOD_MODEL_SUBMITAIIMAGEJOBREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT SubmitAIMediaAuditJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_VOD_EXPORT SubmitAIImageJobRequest : public RpcServiceRequest
 			{
 
 			public:
-				SubmitAIMediaAuditJobRequest();
-				~SubmitAIMediaAuditJobRequest();
+				SubmitAIImageJobRequest();
+				~SubmitAIImageJobRequest();
 
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
+				std::string getResourceOwnerId()const;
+				void setResourceOwnerId(const std::string& resourceOwnerId);
+				std::string getAIPipelineId()const;
+				void setAIPipelineId(const std::string& aIPipelineId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getUserData()const;
 				void setUserData(const std::string& userData);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
+				std::string getOwnerAccount()const;
+				void setOwnerAccount(const std::string& ownerAccount);
+				std::string getVideoId()const;
+				void setVideoId(const std::string& videoId);
+				std::string getAITemplateId()const;
+				void setAITemplateId(const std::string& aITemplateId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getMediaId()const;
-				void setMediaId(const std::string& mediaId);
-				std::string getTemplateId()const;
-				void setTemplateId(const std::string& templateId);
-				std::string getMediaAuditConfiguration()const;
-				void setMediaAuditConfiguration(const std::string& mediaAuditConfiguration);
-				std::string getMediaType()const;
-				void setMediaType(const std::string& mediaType);
 
             private:
-				long resourceOwnerId_;
+				std::string resourceOwnerId_;
+				std::string aIPipelineId_;
 				std::string accessKeyId_;
 				std::string userData_;
 				std::string resourceOwnerAccount_;
+				std::string ownerAccount_;
+				std::string videoId_;
+				std::string aITemplateId_;
 				std::string ownerId_;
-				std::string mediaId_;
-				std::string templateId_;
-				std::string mediaAuditConfiguration_;
-				std::string mediaType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITAIMEDIAAUDITJOBREQUEST_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_SUBMITAIIMAGEJOBREQUEST_H_

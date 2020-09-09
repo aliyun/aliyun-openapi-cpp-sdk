@@ -1,4 +1,10 @@
 2020-09-09 Version: patch
+- Add support cn-beijing service region.
+- Add ai video cover interface,include submit and query.
+- Add dynamic image query interface.
+- Update SubmitMediaAuditJob support MediaAuditConfiguration to set ResourceType.
+
+2020-09-09 Version: patch
 - Release ChangeSky.
 
 2020-09-09 Version: patch
