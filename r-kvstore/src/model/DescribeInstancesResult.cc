@@ -90,7 +90,7 @@ void DescribeInstancesResult::parse(const std::string &payload)
 		if(!valueInstancesKVStoreInstance["EndTime"].isNull())
 			instancesObject.endTime = valueInstancesKVStoreInstance["EndTime"].asString();
 		if(!valueInstancesKVStoreInstance["HasRenewChangeOrder"].isNull())
-			instancesObject.hasRenewChangeOrder = valueInstancesKVStoreInstance["HasRenewChangeOrder"].asString();
+			instancesObject.hasRenewChangeOrder = valueInstancesKVStoreInstance["HasRenewChangeOrder"].asString() == "true";
 		if(!valueInstancesKVStoreInstance["IsRds"].isNull())
 			instancesObject.isRds = valueInstancesKVStoreInstance["IsRds"].asString() == "true";
 		if(!valueInstancesKVStoreInstance["InstanceType"].isNull())

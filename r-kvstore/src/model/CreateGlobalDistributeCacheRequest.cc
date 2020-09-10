@@ -38,6 +38,17 @@ void CreateGlobalDistributeCacheRequest::setResourceOwnerId(long resourceOwnerId
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string CreateGlobalDistributeCacheRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void CreateGlobalDistributeCacheRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string CreateGlobalDistributeCacheRequest::getAccessKeyId()const
 {
 	return accessKeyId_;

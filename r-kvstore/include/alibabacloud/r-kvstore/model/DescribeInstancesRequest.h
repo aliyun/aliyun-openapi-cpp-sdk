@@ -65,6 +65,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::string getEditionType()const;
+				void setEditionType(const std::string& editionType);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getInstanceStatus()const;
@@ -105,6 +107,7 @@ namespace AlibabaCloud
 				std::string securityToken_;
 				int pageSize_;
 				std::string instanceType_;
+				std::string editionType_;
 				std::vector<Tag> tag_;
 				std::string instanceStatus_;
 				std::string resourceOwnerAccount_;

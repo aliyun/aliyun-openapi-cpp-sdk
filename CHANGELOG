@@ -1,3 +1,6 @@
+2020-09-10 Version: patch
+- Update HasRenewChangeOrder type to Boolean in DescribeInstances.
+
 2020-09-09 Version: patch
 - Add support cn-beijing service region.
 - Add ai video cover interface,include submit and query.

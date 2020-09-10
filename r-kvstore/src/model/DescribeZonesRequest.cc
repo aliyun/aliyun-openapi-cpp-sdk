@@ -60,6 +60,17 @@ void DescribeZonesRequest::setSecurityToken(const std::string& securityToken)
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string DescribeZonesRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void DescribeZonesRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
 std::string DescribeZonesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

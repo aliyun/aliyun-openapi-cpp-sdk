@@ -159,6 +159,17 @@ void DescribeInstancesRequest::setInstanceType(const std::string& instanceType)
 	setParameter("InstanceType", instanceType);
 }
 
+std::string DescribeInstancesRequest::getEditionType()const
+{
+	return editionType_;
+}
+
+void DescribeInstancesRequest::setEditionType(const std::string& editionType)
+{
+	editionType_ = editionType;
+	setParameter("EditionType", editionType);
+}
+
 std::vector<DescribeInstancesRequest::Tag> DescribeInstancesRequest::getTag()const
 {
 	return tag_;
