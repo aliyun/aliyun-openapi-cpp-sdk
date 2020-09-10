@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT ModifyBackupStrategyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT EnableBackupLogRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyBackupStrategyRequest();
-				~ModifyBackupStrategyRequest();
+				EnableBackupLogRequest();
+				~EnableBackupLogRequest();
 
-				int getBackupLogIntervalSeconds()const;
-				void setBackupLogIntervalSeconds(int backupLogIntervalSeconds);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getBackupPeriod()const;
-				void setBackupPeriod(const std::string& backupPeriod);
-				std::string getBackupStartTime()const;
-				void setBackupStartTime(const std::string& backupStartTime);
-				std::string getBackupStrategyType()const;
-				void setBackupStrategyType(const std::string& backupStrategyType);
 
             private:
-				int backupLogIntervalSeconds_;
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;
-				std::string backupPeriod_;
-				std::string backupStartTime_;
-				std::string backupStrategyType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGREQUEST_H_

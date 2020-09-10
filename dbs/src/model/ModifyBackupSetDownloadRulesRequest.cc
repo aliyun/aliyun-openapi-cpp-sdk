@@ -115,6 +115,17 @@ void ModifyBackupSetDownloadRulesRequest::setIncrementDataFormat(const std::stri
 	setParameter("IncrementDataFormat", incrementDataFormat);
 }
 
+std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadTargetTypeLocation()const
+{
+	return backupSetDownloadTargetTypeLocation_;
+}
+
+void ModifyBackupSetDownloadRulesRequest::setBackupSetDownloadTargetTypeLocation(const std::string& backupSetDownloadTargetTypeLocation)
+{
+	backupSetDownloadTargetTypeLocation_ = backupSetDownloadTargetTypeLocation;
+	setParameter("BackupSetDownloadTargetTypeLocation", backupSetDownloadTargetTypeLocation);
+}
+
 std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadDir()const
 {
 	return backupSetDownloadDir_;

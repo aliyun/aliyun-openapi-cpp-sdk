@@ -58,6 +58,10 @@
 #include "model/DescribeRestoreRangeInfoResult.h"
 #include "model/DescribeRestoreTaskListRequest.h"
 #include "model/DescribeRestoreTaskListResult.h"
+#include "model/DisableBackupLogRequest.h"
+#include "model/DisableBackupLogResult.h"
+#include "model/EnableBackupLogRequest.h"
+#include "model/EnableBackupLogResult.h"
 #include "model/GetDBListFromAgentRequest.h"
 #include "model/GetDBListFromAgentResult.h"
 #include "model/ModifyBackupObjectsRequest.h"
@@ -70,6 +74,10 @@
 #include "model/ModifyBackupSourceEndpointResult.h"
 #include "model/ModifyBackupStrategyRequest.h"
 #include "model/ModifyBackupStrategyResult.h"
+#include "model/ModifyStorageStrategyRequest.h"
+#include "model/ModifyStorageStrategyResult.h"
+#include "model/ReleaseBackupPlanRequest.h"
+#include "model/ReleaseBackupPlanResult.h"
 #include "model/RenewBackupPlanRequest.h"
 #include "model/RenewBackupPlanResult.h"
 #include "model/StartBackupPlanRequest.h"
@@ -145,6 +153,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRestoreTaskListResult> DescribeRestoreTaskListOutcome;
 			typedef std::future<DescribeRestoreTaskListOutcome> DescribeRestoreTaskListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeRestoreTaskListRequest&, const DescribeRestoreTaskListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskListAsyncHandler;
+			typedef Outcome<Error, Model::DisableBackupLogResult> DisableBackupLogOutcome;
+			typedef std::future<DisableBackupLogOutcome> DisableBackupLogOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::DisableBackupLogRequest&, const DisableBackupLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableBackupLogAsyncHandler;
+			typedef Outcome<Error, Model::EnableBackupLogResult> EnableBackupLogOutcome;
+			typedef std::future<EnableBackupLogOutcome> EnableBackupLogOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::EnableBackupLogRequest&, const EnableBackupLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableBackupLogAsyncHandler;
 			typedef Outcome<Error, Model::GetDBListFromAgentResult> GetDBListFromAgentOutcome;
 			typedef std::future<GetDBListFromAgentOutcome> GetDBListFromAgentOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::GetDBListFromAgentRequest&, const GetDBListFromAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBListFromAgentAsyncHandler;
@@ -163,6 +177,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyBackupStrategyResult> ModifyBackupStrategyOutcome;
 			typedef std::future<ModifyBackupStrategyOutcome> ModifyBackupStrategyOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::ModifyBackupStrategyRequest&, const ModifyBackupStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupStrategyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyStorageStrategyResult> ModifyStorageStrategyOutcome;
+			typedef std::future<ModifyStorageStrategyOutcome> ModifyStorageStrategyOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::ModifyStorageStrategyRequest&, const ModifyStorageStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageStrategyAsyncHandler;
+			typedef Outcome<Error, Model::ReleaseBackupPlanResult> ReleaseBackupPlanOutcome;
+			typedef std::future<ReleaseBackupPlanOutcome> ReleaseBackupPlanOutcomeCallable;
+			typedef std::function<void(const DbsClient*, const Model::ReleaseBackupPlanRequest&, const ReleaseBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseBackupPlanAsyncHandler;
 			typedef Outcome<Error, Model::RenewBackupPlanResult> RenewBackupPlanOutcome;
 			typedef std::future<RenewBackupPlanOutcome> RenewBackupPlanOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::RenewBackupPlanRequest&, const RenewBackupPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewBackupPlanAsyncHandler;
@@ -240,6 +260,12 @@ namespace AlibabaCloud
 			DescribeRestoreTaskListOutcome describeRestoreTaskList(const Model::DescribeRestoreTaskListRequest &request)const;
 			void describeRestoreTaskListAsync(const Model::DescribeRestoreTaskListRequest& request, const DescribeRestoreTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRestoreTaskListOutcomeCallable describeRestoreTaskListCallable(const Model::DescribeRestoreTaskListRequest& request) const;
+			DisableBackupLogOutcome disableBackupLog(const Model::DisableBackupLogRequest &request)const;
+			void disableBackupLogAsync(const Model::DisableBackupLogRequest& request, const DisableBackupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableBackupLogOutcomeCallable disableBackupLogCallable(const Model::DisableBackupLogRequest& request) const;
+			EnableBackupLogOutcome enableBackupLog(const Model::EnableBackupLogRequest &request)const;
+			void enableBackupLogAsync(const Model::EnableBackupLogRequest& request, const EnableBackupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableBackupLogOutcomeCallable enableBackupLogCallable(const Model::EnableBackupLogRequest& request) const;
 			GetDBListFromAgentOutcome getDBListFromAgent(const Model::GetDBListFromAgentRequest &request)const;
 			void getDBListFromAgentAsync(const Model::GetDBListFromAgentRequest& request, const GetDBListFromAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBListFromAgentOutcomeCallable getDBListFromAgentCallable(const Model::GetDBListFromAgentRequest& request) const;
@@ -258,6 +284,12 @@ namespace AlibabaCloud
 			ModifyBackupStrategyOutcome modifyBackupStrategy(const Model::ModifyBackupStrategyRequest &request)const;
 			void modifyBackupStrategyAsync(const Model::ModifyBackupStrategyRequest& request, const ModifyBackupStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupStrategyOutcomeCallable modifyBackupStrategyCallable(const Model::ModifyBackupStrategyRequest& request) const;
+			ModifyStorageStrategyOutcome modifyStorageStrategy(const Model::ModifyStorageStrategyRequest &request)const;
+			void modifyStorageStrategyAsync(const Model::ModifyStorageStrategyRequest& request, const ModifyStorageStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyStorageStrategyOutcomeCallable modifyStorageStrategyCallable(const Model::ModifyStorageStrategyRequest& request) const;
+			ReleaseBackupPlanOutcome releaseBackupPlan(const Model::ReleaseBackupPlanRequest &request)const;
+			void releaseBackupPlanAsync(const Model::ReleaseBackupPlanRequest& request, const ReleaseBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReleaseBackupPlanOutcomeCallable releaseBackupPlanCallable(const Model::ReleaseBackupPlanRequest& request) const;
 			RenewBackupPlanOutcome renewBackupPlan(const Model::RenewBackupPlanRequest &request)const;
 			void renewBackupPlanAsync(const Model::RenewBackupPlanRequest& request, const RenewBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewBackupPlanOutcomeCallable renewBackupPlanCallable(const Model::RenewBackupPlanRequest& request) const;

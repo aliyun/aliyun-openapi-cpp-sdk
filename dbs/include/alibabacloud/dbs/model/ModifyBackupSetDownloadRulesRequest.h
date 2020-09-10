@@ -51,6 +51,8 @@ namespace AlibabaCloud
 				void setOpenAutoDownload(bool openAutoDownload);
 				std::string getIncrementDataFormat()const;
 				void setIncrementDataFormat(const std::string& incrementDataFormat);
+				std::string getBackupSetDownloadTargetTypeLocation()const;
+				void setBackupSetDownloadTargetTypeLocation(const std::string& backupSetDownloadTargetTypeLocation);
 				std::string getBackupSetDownloadDir()const;
 				void setBackupSetDownloadDir(const std::string& backupSetDownloadDir);
 
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				std::string ownerId_;
 				bool openAutoDownload_;
 				std::string incrementDataFormat_;
+				std::string backupSetDownloadTargetTypeLocation_;
 				std::string backupSetDownloadDir_;
 
 			};

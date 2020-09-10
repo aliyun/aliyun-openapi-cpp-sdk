@@ -27,6 +27,17 @@ ModifyBackupStrategyRequest::ModifyBackupStrategyRequest() :
 ModifyBackupStrategyRequest::~ModifyBackupStrategyRequest()
 {}
 
+int ModifyBackupStrategyRequest::getBackupLogIntervalSeconds()const
+{
+	return backupLogIntervalSeconds_;
+}
+
+void ModifyBackupStrategyRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds)
+{
+	backupLogIntervalSeconds_ = backupLogIntervalSeconds;
+	setParameter("BackupLogIntervalSeconds", std::to_string(backupLogIntervalSeconds));
+}
+
 std::string ModifyBackupStrategyRequest::getClientToken()const
 {
 	return clientToken_;

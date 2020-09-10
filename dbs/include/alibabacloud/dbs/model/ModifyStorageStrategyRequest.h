@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
-#define ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_
+#define ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT ModifyBackupStrategyRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DBS_EXPORT ModifyStorageStrategyRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyBackupStrategyRequest();
-				~ModifyBackupStrategyRequest();
+				ModifyStorageStrategyRequest();
+				~ModifyStorageStrategyRequest();
 
-				int getBackupLogIntervalSeconds()const;
-				void setBackupLogIntervalSeconds(int backupLogIntervalSeconds);
+				int getDuplicationArchivePeriod()const;
+				void setDuplicationArchivePeriod(int duplicationArchivePeriod);
 				std::string getClientToken()const;
 				void setClientToken(const std::string& clientToken);
 				std::string getBackupPlanId()const;
 				void setBackupPlanId(const std::string& backupPlanId);
 				std::string getOwnerId()const;
 				void setOwnerId(const std::string& ownerId);
-				std::string getBackupPeriod()const;
-				void setBackupPeriod(const std::string& backupPeriod);
-				std::string getBackupStartTime()const;
-				void setBackupStartTime(const std::string& backupStartTime);
-				std::string getBackupStrategyType()const;
-				void setBackupStrategyType(const std::string& backupStrategyType);
+				int getBackupRetentionPeriod()const;
+				void setBackupRetentionPeriod(int backupRetentionPeriod);
+				int getDuplicationInfrequentAccessPeriod()const;
+				void setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod);
 
             private:
-				int backupLogIntervalSeconds_;
+				int duplicationArchivePeriod_;
 				std::string clientToken_;
 				std::string backupPlanId_;
 				std::string ownerId_;
-				std::string backupPeriod_;
-				std::string backupStartTime_;
-				std::string backupStrategyType_;
+				int backupRetentionPeriod_;
+				int duplicationInfrequentAccessPeriod_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_MODIFYBACKUPSTRATEGYREQUEST_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_

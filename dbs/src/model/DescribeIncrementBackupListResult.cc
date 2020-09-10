@@ -45,6 +45,8 @@ void DescribeIncrementBackupListResult::parse(const std::string &payload)
 		IncrementBackupFile itemsObject;
 		if(!valueItemsIncrementBackupFile["BackupSetId"].isNull())
 			itemsObject.backupSetId = valueItemsIncrementBackupFile["BackupSetId"].asString();
+		if(!valueItemsIncrementBackupFile["BackupSetJobId"].isNull())
+			itemsObject.backupSetJobId = valueItemsIncrementBackupFile["BackupSetJobId"].asString();
 		if(!valueItemsIncrementBackupFile["SourceEndpointIpPort"].isNull())
 			itemsObject.sourceEndpointIpPort = valueItemsIncrementBackupFile["SourceEndpointIpPort"].asString();
 		if(!valueItemsIncrementBackupFile["StartTime"].isNull())

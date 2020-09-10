@@ -57,6 +57,10 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeRestoreRangeInfoResult.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListRequest.h
 	include/alibabacloud/dbs/model/DescribeRestoreTaskListResult.h
+	include/alibabacloud/dbs/model/DisableBackupLogRequest.h
+	include/alibabacloud/dbs/model/DisableBackupLogResult.h
+	include/alibabacloud/dbs/model/EnableBackupLogRequest.h
+	include/alibabacloud/dbs/model/EnableBackupLogResult.h
 	include/alibabacloud/dbs/model/GetDBListFromAgentRequest.h
 	include/alibabacloud/dbs/model/GetDBListFromAgentResult.h
 	include/alibabacloud/dbs/model/ModifyBackupObjectsRequest.h
@@ -69,6 +73,10 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/ModifyBackupSourceEndpointResult.h
 	include/alibabacloud/dbs/model/ModifyBackupStrategyRequest.h
 	include/alibabacloud/dbs/model/ModifyBackupStrategyResult.h
+	include/alibabacloud/dbs/model/ModifyStorageStrategyRequest.h
+	include/alibabacloud/dbs/model/ModifyStorageStrategyResult.h
+	include/alibabacloud/dbs/model/ReleaseBackupPlanRequest.h
+	include/alibabacloud/dbs/model/ReleaseBackupPlanResult.h
 	include/alibabacloud/dbs/model/RenewBackupPlanRequest.h
 	include/alibabacloud/dbs/model/RenewBackupPlanResult.h
 	include/alibabacloud/dbs/model/StartBackupPlanRequest.h
@@ -120,6 +128,10 @@ set(dbs_src
 	src/model/DescribeRestoreRangeInfoResult.cc
 	src/model/DescribeRestoreTaskListRequest.cc
 	src/model/DescribeRestoreTaskListResult.cc
+	src/model/DisableBackupLogRequest.cc
+	src/model/DisableBackupLogResult.cc
+	src/model/EnableBackupLogRequest.cc
+	src/model/EnableBackupLogResult.cc
 	src/model/GetDBListFromAgentRequest.cc
 	src/model/GetDBListFromAgentResult.cc
 	src/model/ModifyBackupObjectsRequest.cc
@@ -132,6 +144,10 @@ set(dbs_src
 	src/model/ModifyBackupSourceEndpointResult.cc
 	src/model/ModifyBackupStrategyRequest.cc
 	src/model/ModifyBackupStrategyResult.cc
+	src/model/ModifyStorageStrategyRequest.cc
+	src/model/ModifyStorageStrategyResult.cc
+	src/model/ReleaseBackupPlanRequest.cc
+	src/model/ReleaseBackupPlanResult.cc
 	src/model/RenewBackupPlanRequest.cc
 	src/model/RenewBackupPlanResult.cc
 	src/model/StartBackupPlanRequest.cc

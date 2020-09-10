@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTRESULT_H_
-#define ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTRESULT_H_
+#ifndef ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGRESULT_H_
+#define ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBS_EXPORT DescribeIncrementBackupListResult : public ServiceResult
+			class ALIBABACLOUD_DBS_EXPORT EnableBackupLogResult : public ServiceResult
 			{
 			public:
-				struct IncrementBackupFile
-				{
-					std::string sourceEndpointIpPort;
-					std::string storageMethod;
-					long endTime;
-					std::string backupSetJobId;
-					long backupSize;
-					long startTime;
-					long backupSetExpiredTime;
-					std::string backupSetId;
-					std::string backupStatus;
-				};
 
 
-				DescribeIncrementBackupListResult();
-				explicit DescribeIncrementBackupListResult(const std::string &payload);
-				~DescribeIncrementBackupListResult();
-				int getPageSize()const;
-				int getPageNum()const;
+				EnableBackupLogResult();
+				explicit EnableBackupLogResult(const std::string &payload);
+				~EnableBackupLogResult();
 				int getHttpStatusCode()const;
-				int getTotalElements()const;
-				std::vector<IncrementBackupFile> getItems()const;
-				int getTotalPages()const;
+				std::string getBackupPlanId()const;
+				bool getNeedPrecheck()const;
 				std::string getErrMessage()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
@@ -62,12 +47,9 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int pageNum_;
 				int httpStatusCode_;
-				int totalElements_;
-				std::vector<IncrementBackupFile> items_;
-				int totalPages_;
+				std::string backupPlanId_;
+				bool needPrecheck_;
 				std::string errMessage_;
 				bool success_;
 				std::string errCode_;
@@ -76,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBS_MODEL_DESCRIBEINCREMENTBACKUPLISTRESULT_H_
+#endif // !ALIBABACLOUD_DBS_MODEL_ENABLEBACKUPLOGRESULT_H_
