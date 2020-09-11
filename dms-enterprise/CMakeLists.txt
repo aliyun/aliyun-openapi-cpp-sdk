@@ -23,6 +23,8 @@ set(dms-enterprise_public_header
 set(dms-enterprise_public_header_model 
 	include/alibabacloud/dms-enterprise/model/ApproveOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CheckFinishMissionRequest.h
+	include/alibabacloud/dms-enterprise/model/CheckFinishMissionResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateOrderRequest.h
@@ -41,6 +43,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ExecuteDataCorrectResult.h
 	include/alibabacloud/dms-enterprise/model/ExecuteDataExportRequest.h
 	include/alibabacloud/dms-enterprise/model/ExecuteDataExportResult.h
+	include/alibabacloud/dms-enterprise/model/ExecuteScriptRequest.h
+	include/alibabacloud/dms-enterprise/model/ExecuteScriptResult.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesRequest.h
@@ -122,6 +126,8 @@ set(dms-enterprise_src
 	src/Dms-enterpriseClient.cc
 	src/model/ApproveOrderRequest.cc
 	src/model/ApproveOrderResult.cc
+	src/model/CheckFinishMissionRequest.cc
+	src/model/CheckFinishMissionResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
 	src/model/CreateOrderRequest.cc
@@ -140,6 +146,8 @@ set(dms-enterprise_src
 	src/model/ExecuteDataCorrectResult.cc
 	src/model/ExecuteDataExportRequest.cc
 	src/model/ExecuteDataExportResult.cc
+	src/model/ExecuteScriptRequest.cc
+	src/model/ExecuteScriptResult.cc
 	src/model/GetApprovalDetailRequest.cc
 	src/model/GetApprovalDetailResult.cc
 	src/model/GetDataCorrectBackupFilesRequest.cc

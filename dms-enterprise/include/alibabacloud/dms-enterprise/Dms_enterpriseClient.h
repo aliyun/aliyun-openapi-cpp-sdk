@@ -24,6 +24,8 @@
 #include "Dms_enterpriseExport.h"
 #include "model/ApproveOrderRequest.h"
 #include "model/ApproveOrderResult.h"
+#include "model/CheckFinishMissionRequest.h"
+#include "model/CheckFinishMissionResult.h"
 #include "model/CloseOrderRequest.h"
 #include "model/CloseOrderResult.h"
 #include "model/CreateOrderRequest.h"
@@ -42,6 +44,8 @@
 #include "model/ExecuteDataCorrectResult.h"
 #include "model/ExecuteDataExportRequest.h"
 #include "model/ExecuteDataExportResult.h"
+#include "model/ExecuteScriptRequest.h"
+#include "model/ExecuteScriptResult.h"
 #include "model/GetApprovalDetailRequest.h"
 #include "model/GetApprovalDetailResult.h"
 #include "model/GetDataCorrectBackupFilesRequest.h"
@@ -130,6 +134,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApproveOrderResult> ApproveOrderOutcome;
 			typedef std::future<ApproveOrderOutcome> ApproveOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ApproveOrderRequest&, const ApproveOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApproveOrderAsyncHandler;
+			typedef Outcome<Error, Model::CheckFinishMissionResult> CheckFinishMissionOutcome;
+			typedef std::future<CheckFinishMissionOutcome> CheckFinishMissionOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CheckFinishMissionRequest&, const CheckFinishMissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckFinishMissionAsyncHandler;
 			typedef Outcome<Error, Model::CloseOrderResult> CloseOrderOutcome;
 			typedef std::future<CloseOrderOutcome> CloseOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CloseOrderRequest&, const CloseOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseOrderAsyncHandler;
@@ -157,6 +164,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteDataExportResult> ExecuteDataExportOutcome;
 			typedef std::future<ExecuteDataExportOutcome> ExecuteDataExportOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ExecuteDataExportRequest&, const ExecuteDataExportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteDataExportAsyncHandler;
+			typedef Outcome<Error, Model::ExecuteScriptResult> ExecuteScriptOutcome;
+			typedef std::future<ExecuteScriptOutcome> ExecuteScriptOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ExecuteScriptRequest&, const ExecuteScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteScriptAsyncHandler;
 			typedef Outcome<Error, Model::GetApprovalDetailResult> GetApprovalDetailOutcome;
 			typedef std::future<GetApprovalDetailOutcome> GetApprovalDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetApprovalDetailRequest&, const GetApprovalDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApprovalDetailAsyncHandler;
@@ -279,6 +289,9 @@ namespace AlibabaCloud
 			ApproveOrderOutcome approveOrder(const Model::ApproveOrderRequest &request)const;
 			void approveOrderAsync(const Model::ApproveOrderRequest& request, const ApproveOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApproveOrderOutcomeCallable approveOrderCallable(const Model::ApproveOrderRequest& request) const;
+			CheckFinishMissionOutcome checkFinishMission(const Model::CheckFinishMissionRequest &request)const;
+			void checkFinishMissionAsync(const Model::CheckFinishMissionRequest& request, const CheckFinishMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckFinishMissionOutcomeCallable checkFinishMissionCallable(const Model::CheckFinishMissionRequest& request) const;
 			CloseOrderOutcome closeOrder(const Model::CloseOrderRequest &request)const;
 			void closeOrderAsync(const Model::CloseOrderRequest& request, const CloseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseOrderOutcomeCallable closeOrderCallable(const Model::CloseOrderRequest& request) const;
@@ -306,6 +319,9 @@ namespace AlibabaCloud
 			ExecuteDataExportOutcome executeDataExport(const Model::ExecuteDataExportRequest &request)const;
 			void executeDataExportAsync(const Model::ExecuteDataExportRequest& request, const ExecuteDataExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteDataExportOutcomeCallable executeDataExportCallable(const Model::ExecuteDataExportRequest& request) const;
+			ExecuteScriptOutcome executeScript(const Model::ExecuteScriptRequest &request)const;
+			void executeScriptAsync(const Model::ExecuteScriptRequest& request, const ExecuteScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExecuteScriptOutcomeCallable executeScriptCallable(const Model::ExecuteScriptRequest& request) const;
 			GetApprovalDetailOutcome getApprovalDetail(const Model::GetApprovalDetailRequest &request)const;
 			void getApprovalDetailAsync(const Model::GetApprovalDetailRequest& request, const GetApprovalDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetApprovalDetailOutcomeCallable getApprovalDetailCallable(const Model::GetApprovalDetailRequest& request) const;

@@ -87,6 +87,42 @@ Dms_enterpriseClient::ApproveOrderOutcomeCallable Dms_enterpriseClient::approveO
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CheckFinishMissionOutcome Dms_enterpriseClient::checkFinishMission(const CheckFinishMissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckFinishMissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckFinishMissionOutcome(CheckFinishMissionResult(outcome.result()));
+	else
+		return CheckFinishMissionOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::checkFinishMissionAsync(const CheckFinishMissionRequest& request, const CheckFinishMissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkFinishMission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CheckFinishMissionOutcomeCallable Dms_enterpriseClient::checkFinishMissionCallable(const CheckFinishMissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckFinishMissionOutcome()>>(
+			[this, request]()
+			{
+			return this->checkFinishMission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CloseOrderOutcome Dms_enterpriseClient::closeOrder(const CloseOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ Dms_enterpriseClient::ExecuteDataExportOutcomeCallable Dms_enterpriseClient::exe
 			[this, request]()
 			{
 			return this->executeDataExport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ExecuteScriptOutcome Dms_enterpriseClient::executeScript(const ExecuteScriptRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteScriptOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteScriptOutcome(ExecuteScriptResult(outcome.result()));
+	else
+		return ExecuteScriptOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::executeScriptAsync(const ExecuteScriptRequest& request, const ExecuteScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeScript(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ExecuteScriptOutcomeCallable Dms_enterpriseClient::executeScriptCallable(const ExecuteScriptRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteScriptOutcome()>>(
+			[this, request]()
+			{
+			return this->executeScript(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
