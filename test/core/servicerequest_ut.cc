@@ -40,6 +40,7 @@ namespace {
 
     TestServiceRequest sr1("ECS", "1.0");
     TestServiceRequest sr2(sr1);
+    EXPECT_EQ(string("1.0"), sr1.getHeader(string("x-acs-version")));
 
     sr1.addParameter("k1", "v1");
     sr2.addParameter("k2", "v2");
