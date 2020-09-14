@@ -150,6 +150,8 @@
 #include "model/SearchBodyResult.h"
 #include "model/SearchFaceRequest.h"
 #include "model/SearchFaceResult.h"
+#include "model/SearchObjectRequest.h"
+#include "model/SearchObjectResult.h"
 #include "model/StopMonitorRequest.h"
 #include "model/StopMonitorResult.h"
 #include "model/SyncDeviceTimeRequest.h"
@@ -379,6 +381,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchFaceResult> SearchFaceOutcome;
 			typedef std::future<SearchFaceOutcome> SearchFaceOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::SearchFaceRequest&, const SearchFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchFaceAsyncHandler;
+			typedef Outcome<Error, Model::SearchObjectResult> SearchObjectOutcome;
+			typedef std::future<SearchObjectOutcome> SearchObjectOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::SearchObjectRequest&, const SearchObjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchObjectAsyncHandler;
 			typedef Outcome<Error, Model::StopMonitorResult> StopMonitorOutcome;
 			typedef std::future<StopMonitorOutcome> StopMonitorOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::StopMonitorRequest&, const StopMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopMonitorAsyncHandler;
@@ -618,6 +623,9 @@ namespace AlibabaCloud
 			SearchFaceOutcome searchFace(const Model::SearchFaceRequest &request)const;
 			void searchFaceAsync(const Model::SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchFaceOutcomeCallable searchFaceCallable(const Model::SearchFaceRequest& request) const;
+			SearchObjectOutcome searchObject(const Model::SearchObjectRequest &request)const;
+			void searchObjectAsync(const Model::SearchObjectRequest& request, const SearchObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchObjectOutcomeCallable searchObjectCallable(const Model::SearchObjectRequest& request) const;
 			StopMonitorOutcome stopMonitor(const Model::StopMonitorRequest &request)const;
 			void stopMonitorAsync(const Model::StopMonitorRequest& request, const StopMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopMonitorOutcomeCallable stopMonitorCallable(const Model::StopMonitorRequest& request) const;

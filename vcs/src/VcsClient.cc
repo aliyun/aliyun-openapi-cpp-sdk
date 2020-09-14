@@ -2355,6 +2355,42 @@ VcsClient::SearchFaceOutcomeCallable VcsClient::searchFaceCallable(const SearchF
 	return task->get_future();
 }
 
+VcsClient::SearchObjectOutcome VcsClient::searchObject(const SearchObjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchObjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchObjectOutcome(SearchObjectResult(outcome.result()));
+	else
+		return SearchObjectOutcome(outcome.error());
+}
+
+void VcsClient::searchObjectAsync(const SearchObjectRequest& request, const SearchObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchObject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::SearchObjectOutcomeCallable VcsClient::searchObjectCallable(const SearchObjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchObjectOutcome()>>(
+			[this, request]()
+			{
+			return this->searchObject(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::StopMonitorOutcome VcsClient::stopMonitor(const StopMonitorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

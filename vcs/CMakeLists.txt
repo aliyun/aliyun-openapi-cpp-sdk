@@ -149,6 +149,8 @@ set(vcs_public_header_model
 	include/alibabacloud/vcs/model/SearchBodyResult.h
 	include/alibabacloud/vcs/model/SearchFaceRequest.h
 	include/alibabacloud/vcs/model/SearchFaceResult.h
+	include/alibabacloud/vcs/model/SearchObjectRequest.h
+	include/alibabacloud/vcs/model/SearchObjectResult.h
 	include/alibabacloud/vcs/model/StopMonitorRequest.h
 	include/alibabacloud/vcs/model/StopMonitorResult.h
 	include/alibabacloud/vcs/model/SyncDeviceTimeRequest.h
@@ -308,6 +310,8 @@ set(vcs_src
 	src/model/SearchBodyResult.cc
 	src/model/SearchFaceRequest.cc
 	src/model/SearchFaceResult.cc
+	src/model/SearchObjectRequest.cc
+	src/model/SearchObjectResult.cc
 	src/model/StopMonitorRequest.cc
 	src/model/StopMonitorResult.cc
 	src/model/SyncDeviceTimeRequest.cc

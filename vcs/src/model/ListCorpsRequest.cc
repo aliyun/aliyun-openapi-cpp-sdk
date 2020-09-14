@@ -49,3 +49,14 @@ void ListCorpsRequest::setPageSize(int pageSize)
 	setBodyParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListCorpsRequest::getCorpName()const
+{
+	return corpName_;
+}
+
+void ListCorpsRequest::setCorpName(const std::string& corpName)
+{
+	corpName_ = corpName;
+	setBodyParameter("CorpName", corpName);
+}
+

@@ -80,6 +80,34 @@ void GetFaceModelResultResult::parse(const std::string &payload)
 			recordsItemObject.glassColor = std::stoi(dataNodeRecordsRecordsItem["GlassColor"].asString());
 		if(!dataNodeRecordsRecordsItem["CapColor"].isNull())
 			recordsItemObject.capColor = std::stoi(dataNodeRecordsRecordsItem["CapColor"].asString());
+		if(!dataNodeRecordsRecordsItem["CapColorReliability"].isNull())
+			recordsItemObject.capColorReliability = dataNodeRecordsRecordsItem["CapColorReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["RespiratorColorReliability"].isNull())
+			recordsItemObject.respiratorColorReliability = dataNodeRecordsRecordsItem["RespiratorColorReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["EthicCodeReliability"].isNull())
+			recordsItemObject.ethicCodeReliability = dataNodeRecordsRecordsItem["EthicCodeReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["GenderCodeReliability"].isNull())
+			recordsItemObject.genderCodeReliability = dataNodeRecordsRecordsItem["GenderCodeReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["GlassColorReliability"].isNull())
+			recordsItemObject.glassColorReliability = dataNodeRecordsRecordsItem["GlassColorReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["SkinColorReliability"].isNull())
+			recordsItemObject.skinColorReliability = dataNodeRecordsRecordsItem["SkinColorReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["MustacheStyleReliability"].isNull())
+			recordsItemObject.mustacheStyleReliability = dataNodeRecordsRecordsItem["MustacheStyleReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["CapStyleReliability"].isNull())
+			recordsItemObject.capStyleReliability = dataNodeRecordsRecordsItem["CapStyleReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["FaceStyleReliability"].isNull())
+			recordsItemObject.faceStyleReliability = dataNodeRecordsRecordsItem["FaceStyleReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["GlassStyleReliability"].isNull())
+			recordsItemObject.glassStyleReliability = dataNodeRecordsRecordsItem["GlassStyleReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["AgeUpLimitReliability"].isNull())
+			recordsItemObject.ageUpLimitReliability = dataNodeRecordsRecordsItem["AgeUpLimitReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["HairStyleReliability"].isNull())
+			recordsItemObject.hairStyleReliability = dataNodeRecordsRecordsItem["HairStyleReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["AgeLowerLimitReliability"].isNull())
+			recordsItemObject.ageLowerLimitReliability = dataNodeRecordsRecordsItem["AgeLowerLimitReliability"].asString();
+		if(!dataNodeRecordsRecordsItem["HairColorReliability"].isNull())
+			recordsItemObject.hairColorReliability = dataNodeRecordsRecordsItem["HairColorReliability"].asString();
 		auto allFeatureData = value["FeatureData"]["FeatureData"];
 		for (auto value : allFeatureData)
 			recordsItemObject.featureData.push_back(value.asString());
