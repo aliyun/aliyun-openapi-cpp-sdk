@@ -23,6 +23,7 @@ RpcServiceRequest::RpcServiceRequest(const std::string &product,
                                      const std::string &action)
     : ServiceRequest(product, version) {
   setActionName(action);
+  setHeader(std::string("x-acs-action"), action);
 }
 
 RpcServiceRequest::~RpcServiceRequest() {}

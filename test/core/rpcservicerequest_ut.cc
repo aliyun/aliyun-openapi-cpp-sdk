@@ -15,4 +15,5 @@ TEST(test_RpcServiceRequest, basic) {
   EXPECT_TRUE(rpc.actionName() == action);
   EXPECT_TRUE(rpc.product() == product);
   EXPECT_TRUE(rpc.version() == version);
+  EXPECT_EQ(string("testAction"), rpc.getHeader(string("x-acs-action")));
 }

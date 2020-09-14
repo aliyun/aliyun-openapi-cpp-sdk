@@ -25,7 +25,9 @@ ServiceRequest::ServiceRequest(const std::string &product,
     : content_(nullptr), contentSize_(0), params_(), product_(product),
       resourcePath_("/"), version_(version), scheme_("https"),
       connectTimeout_(kInvalidTimeout), readTimeout_(kInvalidTimeout),
-      method_(HttpRequest::Method::Get) {}
+      method_(HttpRequest::Method::Get) {
+  setHeader(std::string("x-acs-version"), version);
+}
 
 ServiceRequest::ServiceRequest(const ServiceRequest &other)
     : content_(nullptr), contentSize_(other.contentSize_),
