@@ -45,7 +45,14 @@ void InvokeServiceResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Context"].isNull())
+		context_ = value["Context"].asString();
 
+}
+
+std::string InvokeServiceResult::getContext()const
+{
+	return context_;
 }
 
 std::string InvokeServiceResult::getMessage()const

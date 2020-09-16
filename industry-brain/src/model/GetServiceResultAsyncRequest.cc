@@ -19,9 +19,9 @@
 using AlibabaCloud::Industry_brain::Model::GetServiceResultAsyncRequest;
 
 GetServiceResultAsyncRequest::GetServiceResultAsyncRequest() :
-	RpcServiceRequest("industry-brain", "2019-06-30", "GetServiceResultAsync")
+	RpcServiceRequest("industry-brain", "2019-06-29", "GetServiceResultAsync")
 {
-	setMethod(HttpRequest::Method::Get);
+	setMethod(HttpRequest::Method::Post);
 }
 
 GetServiceResultAsyncRequest::~GetServiceResultAsyncRequest()

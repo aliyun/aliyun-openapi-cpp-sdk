@@ -19,7 +19,7 @@
 using AlibabaCloud::Industry_brain::Model::GetAlgorithmHistoryResultRequest;
 
 GetAlgorithmHistoryResultRequest::GetAlgorithmHistoryResultRequest() :
-	RpcServiceRequest("industry-brain", "2019-06-30", "GetAlgorithmHistoryResult")
+	RpcServiceRequest("industry-brain", "2019-06-29", "GetAlgorithmHistoryResult")
 {
 	setMethod(HttpRequest::Method::Get);
 }

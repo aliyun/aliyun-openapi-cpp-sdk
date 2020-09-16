@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				bool getIsShowInput()const;
 				void setIsShowInput(bool isShowInput);
-				std::string getContext()const;
-				void setContext(const std::string& context);
 				std::string getServiceId()const;
 				void setServiceId(const std::string& serviceId);
 				std::string getParams()const;
@@ -48,7 +46,6 @@ namespace AlibabaCloud
 
             private:
 				bool isShowInput_;
-				std::string context_;
 				std::string serviceId_;
 				std::string params_;
 				std::string requestData_;

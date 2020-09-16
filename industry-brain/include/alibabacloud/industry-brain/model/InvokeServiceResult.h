@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				InvokeServiceResult();
 				explicit InvokeServiceResult(const std::string &payload);
 				~InvokeServiceResult();
+				std::string getContext()const;
 				std::string getMessage()const;
 				std::string getData()const;
 				std::string getCode()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string context_;
 				std::string message_;
 				std::string data_;
 				std::string code_;

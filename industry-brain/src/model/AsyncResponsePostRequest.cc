@@ -19,7 +19,7 @@
 using AlibabaCloud::Industry_brain::Model::AsyncResponsePostRequest;
 
 AsyncResponsePostRequest::AsyncResponsePostRequest() :
-	RpcServiceRequest("industry-brain", "2019-06-30", "AsyncResponsePost")
+	RpcServiceRequest("industry-brain", "2019-06-29", "AsyncResponsePost")
 {
 	setMethod(HttpRequest::Method::Post);
 }
