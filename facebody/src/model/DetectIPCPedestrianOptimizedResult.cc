@@ -14,42 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/facebody/model/DetectIPCPedestrianResult.h>
+#include <alibabacloud/facebody/model/DetectIPCPedestrianOptimizedResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Facebody;
 using namespace AlibabaCloud::Facebody::Model;
 
-DetectIPCPedestrianResult::DetectIPCPedestrianResult() :
+DetectIPCPedestrianOptimizedResult::DetectIPCPedestrianOptimizedResult() :
 	ServiceResult()
 {}
 
-DetectIPCPedestrianResult::DetectIPCPedestrianResult(const std::string &payload) :
+DetectIPCPedestrianOptimizedResult::DetectIPCPedestrianOptimizedResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DetectIPCPedestrianResult::~DetectIPCPedestrianResult()
+DetectIPCPedestrianOptimizedResult::~DetectIPCPedestrianOptimizedResult()
 {}
 
-void DetectIPCPedestrianResult::parse(const std::string &payload)
+void DetectIPCPedestrianOptimizedResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	auto allImageInfoListNode = dataNode["ImageInfoList"]["ImageInfoListItem"];
-	for (auto dataNodeImageInfoListImageInfoListItem : allImageInfoListNode)
+	auto allImageInfoListNode = dataNode["ImageInfoList"]["imageInfoListItem"];
+	for (auto dataNodeImageInfoListimageInfoListItem : allImageInfoListNode)
 	{
 		Data::ImageInfoListItem imageInfoListItemObject;
-		if(!dataNodeImageInfoListImageInfoListItem["ErrorCode"].isNull())
-			imageInfoListItemObject.errorCode = dataNodeImageInfoListImageInfoListItem["ErrorCode"].asString();
-		if(!dataNodeImageInfoListImageInfoListItem["ErrorMessage"].isNull())
-			imageInfoListItemObject.errorMessage = dataNodeImageInfoListImageInfoListItem["ErrorMessage"].asString();
-		if(!dataNodeImageInfoListImageInfoListItem["DataId"].isNull())
-			imageInfoListItemObject.dataId = dataNodeImageInfoListImageInfoListItem["DataId"].asString();
 		auto allElementsNode = allImageInfoListNode["Elements"]["Element"];
 		for (auto allImageInfoListNodeElementsElement : allElementsNode)
 		{
@@ -66,7 +60,7 @@ void DetectIPCPedestrianResult::parse(const std::string &payload)
 
 }
 
-DetectIPCPedestrianResult::Data DetectIPCPedestrianResult::getData()const
+DetectIPCPedestrianOptimizedResult::Data DetectIPCPedestrianOptimizedResult::getData()const
 {
 	return data_;
 }

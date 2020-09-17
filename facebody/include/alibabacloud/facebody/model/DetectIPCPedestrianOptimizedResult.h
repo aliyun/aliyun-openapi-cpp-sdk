@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_DETECTMASKRESULT_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_DETECTMASKRESULT_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDRESULT_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT DetectMaskResult : public ServiceResult
+			class ALIBABACLOUD_FACEBODY_EXPORT DetectIPCPedestrianOptimizedResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					int mask;
-					float faceProbability;
+					struct ImageInfoListItem
+					{
+						struct Element
+						{
+							float score;
+							std::vector<std::string> boxes;
+						};
+						std::vector<ImageInfoListItem::Element> elements;
+					};
+					std::vector<ImageInfoListItem> imageInfoList;
 				};
 
 
-				DetectMaskResult();
-				explicit DetectMaskResult(const std::string &payload);
-				~DetectMaskResult();
+				DetectIPCPedestrianOptimizedResult();
+				explicit DetectIPCPedestrianOptimizedResult(const std::string &payload);
+				~DetectIPCPedestrianOptimizedResult();
 				Data getData()const;
 
 			protected:
@@ -53,4 +61,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_DETECTMASKRESULT_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDRESULT_H_

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEFACEREQUEST_H_
-#define ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEFACEREQUEST_H_
+#ifndef ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDREQUEST_H_
+#define ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <alibabacloud/facebody/FacebodyExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_FACEBODY_EXPORT RecognizeFaceRequest : public RpcServiceRequest
+			class ALIBABACLOUD_FACEBODY_EXPORT DetectIPCPedestrianOptimizedRequest : public RoaServiceRequest
 			{
 
 			public:
-				RecognizeFaceRequest();
-				~RecognizeFaceRequest();
+				DetectIPCPedestrianOptimizedRequest();
+				~DetectIPCPedestrianOptimizedRequest();
 
-				int getImageType()const;
-				void setImageType(int imageType);
-				std::string getImageURL()const;
-				void setImageURL(const std::string& imageURL);
+				std::string getImageData()const;
+				void setImageData(const std::string& imageData);
+				long getWidth()const;
+				void setWidth(long width);
+				long getHeight()const;
+				void setHeight(long height);
 
             private:
-				int imageType_;
-				std::string imageURL_;
+				std::string imageData_;
+				long width_;
+				long height_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_FACEBODY_MODEL_RECOGNIZEFACEREQUEST_H_
+#endif // !ALIBABACLOUD_FACEBODY_MODEL_DETECTIPCPEDESTRIANOPTIMIZEDREQUEST_H_
