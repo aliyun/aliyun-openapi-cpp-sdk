@@ -121,12 +121,19 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		resourceGroupId_ = value["ResourceGroupId"].asString();
 	if(!value["DataLevel1BackupChainSize"].isNull())
 		dataLevel1BackupChainSize_ = std::stol(value["DataLevel1BackupChainSize"].asString());
+	if(!value["Category"].isNull())
+		category_ = value["Category"].asString();
 
 }
 
 int DescribeDBClusterAttributeResult::getDeletionLock()const
 {
 	return deletionLock_;
+}
+
+std::string DescribeDBClusterAttributeResult::getCategory()const
+{
+	return category_;
 }
 
 std::string DescribeDBClusterAttributeResult::getResourceGroupId()const

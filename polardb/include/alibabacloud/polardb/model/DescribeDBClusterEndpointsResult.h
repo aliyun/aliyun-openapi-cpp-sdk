@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::string nodes;
 					std::string readWriteMode;
 					std::string endpointConfig;
+					std::string dBEndpointDescription;
 				};
 
 

@@ -137,6 +137,17 @@ void CreateDBClusterEndpointRequest::setEndpointConfig(const std::string& endpoi
 	setParameter("EndpointConfig", endpointConfig);
 }
 
+std::string CreateDBClusterEndpointRequest::getDBEndpointDescription()const
+{
+	return dBEndpointDescription_;
+}
+
+void CreateDBClusterEndpointRequest::setDBEndpointDescription(const std::string& dBEndpointDescription)
+{
+	dBEndpointDescription_ = dBEndpointDescription;
+	setParameter("DBEndpointDescription", dBEndpointDescription);
+}
+
 long CreateDBClusterEndpointRequest::getOwnerId()const
 {
 	return ownerId_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_CREATEDBCLUSTERENDPOINTREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_CREATEDBCLUSTERENDPOINTREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,57 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT CreateDBClusterEndpointRequest : public RpcServiceRequest
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeActiveOperationTaskRegionRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDBClusterEndpointRequest();
-				~CreateDBClusterEndpointRequest();
+				DescribeActiveOperationTaskRegionRequest();
+				~DescribeActiveOperationTaskRegionRequest();
 
-				std::string getAutoAddNewNodes()const;
-				void setAutoAddNewNodes(const std::string& autoAddNewNodes);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getReadWriteMode()const;
-				void setReadWriteMode(const std::string& readWriteMode);
-				std::string getEndpointType()const;
-				void setEndpointType(const std::string& endpointType);
+				int getIsHistory()const;
+				void setIsHistory(int isHistory);
+				std::string getSecurityToken()const;
+				void setSecurityToken(const std::string& securityToken);
+				std::string getTaskType()const;
+				void setTaskType(const std::string& taskType);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getDBClusterId()const;
-				void setDBClusterId(const std::string& dBClusterId);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getEndpointConfig()const;
-				void setEndpointConfig(const std::string& endpointConfig);
-				std::string getDBEndpointDescription()const;
-				void setDBEndpointDescription(const std::string& dBEndpointDescription);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getNodes()const;
-				void setNodes(const std::string& nodes);
 
             private:
-				std::string autoAddNewNodes_;
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string accessKeyId_;
-				std::string readWriteMode_;
-				std::string endpointType_;
+				int isHistory_;
+				std::string securityToken_;
+				std::string taskType_;
 				std::string resourceOwnerAccount_;
-				std::string dBClusterId_;
 				std::string ownerAccount_;
-				std::string endpointConfig_;
-				std::string dBEndpointDescription_;
 				long ownerId_;
-				std::string nodes_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_CREATEDBCLUSTERENDPOINTREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEACTIVEOPERATIONTASKREGIONREQUEST_H_

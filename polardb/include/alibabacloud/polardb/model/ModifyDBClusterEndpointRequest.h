@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setOwnerAccount(const std::string& ownerAccount);
 				std::string getEndpointConfig()const;
 				void setEndpointConfig(const std::string& endpointConfig);
+				std::string getDBEndpointDescription()const;
+				void setDBEndpointDescription(const std::string& dBEndpointDescription);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getNodes()const;
@@ -68,6 +70,7 @@ namespace AlibabaCloud
 				std::string dBClusterId_;
 				std::string ownerAccount_;
 				std::string endpointConfig_;
+				std::string dBEndpointDescription_;
 				long ownerId_;
 				std::string nodes_;
 

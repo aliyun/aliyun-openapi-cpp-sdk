@@ -699,6 +699,42 @@ PolardbClient::DescribeActiveOperationTaskCountOutcomeCallable PolardbClient::de
 	return task->get_future();
 }
 
+PolardbClient::DescribeActiveOperationTaskRegionOutcome PolardbClient::describeActiveOperationTaskRegion(const DescribeActiveOperationTaskRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeActiveOperationTaskRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeActiveOperationTaskRegionOutcome(DescribeActiveOperationTaskRegionResult(outcome.result()));
+	else
+		return DescribeActiveOperationTaskRegionOutcome(outcome.error());
+}
+
+void PolardbClient::describeActiveOperationTaskRegionAsync(const DescribeActiveOperationTaskRegionRequest& request, const DescribeActiveOperationTaskRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeActiveOperationTaskRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeActiveOperationTaskRegionOutcomeCallable PolardbClient::describeActiveOperationTaskRegionCallable(const DescribeActiveOperationTaskRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeActiveOperationTaskRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->describeActiveOperationTaskRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeActiveOperationTaskTypeOutcome PolardbClient::describeActiveOperationTaskType(const DescribeActiveOperationTaskTypeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -57,6 +57,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeActiveOperationTaskResult.h
 	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountRequest.h
 	include/alibabacloud/polardb/model/DescribeActiveOperationTaskCountResult.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRegionRequest.h
+	include/alibabacloud/polardb/model/DescribeActiveOperationTaskRegionResult.h
 	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeRequest.h
 	include/alibabacloud/polardb/model/DescribeActiveOperationTaskTypeResult.h
 	include/alibabacloud/polardb/model/DescribeAutoRenewAttributeRequest.h
@@ -198,6 +200,8 @@ set(polardb_src
 	src/model/DescribeActiveOperationTaskResult.cc
 	src/model/DescribeActiveOperationTaskCountRequest.cc
 	src/model/DescribeActiveOperationTaskCountResult.cc
+	src/model/DescribeActiveOperationTaskRegionRequest.cc
+	src/model/DescribeActiveOperationTaskRegionResult.cc
 	src/model/DescribeActiveOperationTaskTypeRequest.cc
 	src/model/DescribeActiveOperationTaskTypeResult.cc
 	src/model/DescribeAutoRenewAttributeRequest.cc
