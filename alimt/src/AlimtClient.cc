@@ -303,6 +303,42 @@ AlimtClient::GetTitleGenerateOutcomeCallable AlimtClient::getTitleGenerateCallab
 	return task->get_future();
 }
 
+AlimtClient::GetTitleIntelligenceOutcome AlimtClient::getTitleIntelligence(const GetTitleIntelligenceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTitleIntelligenceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTitleIntelligenceOutcome(GetTitleIntelligenceResult(outcome.result()));
+	else
+		return GetTitleIntelligenceOutcome(outcome.error());
+}
+
+void AlimtClient::getTitleIntelligenceAsync(const GetTitleIntelligenceRequest& request, const GetTitleIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTitleIntelligence(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetTitleIntelligenceOutcomeCallable AlimtClient::getTitleIntelligenceCallable(const GetTitleIntelligenceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTitleIntelligenceOutcome()>>(
+			[this, request]()
+			{
+			return this->getTitleIntelligence(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::TranslateOutcome AlimtClient::translate(const TranslateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

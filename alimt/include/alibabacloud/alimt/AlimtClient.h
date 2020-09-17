@@ -36,6 +36,8 @@
 #include "model/GetTitleDiagnoseResult.h"
 #include "model/GetTitleGenerateRequest.h"
 #include "model/GetTitleGenerateResult.h"
+#include "model/GetTitleIntelligenceRequest.h"
+#include "model/GetTitleIntelligenceResult.h"
 #include "model/TranslateRequest.h"
 #include "model/TranslateResult.h"
 #include "model/TranslateCertificateRequest.h"
@@ -74,6 +76,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTitleGenerateResult> GetTitleGenerateOutcome;
 			typedef std::future<GetTitleGenerateOutcome> GetTitleGenerateOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetTitleGenerateRequest&, const GetTitleGenerateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleGenerateAsyncHandler;
+			typedef Outcome<Error, Model::GetTitleIntelligenceResult> GetTitleIntelligenceOutcome;
+			typedef std::future<GetTitleIntelligenceOutcome> GetTitleIntelligenceOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetTitleIntelligenceRequest&, const GetTitleIntelligenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleIntelligenceAsyncHandler;
 			typedef Outcome<Error, Model::TranslateResult> TranslateOutcome;
 			typedef std::future<TranslateOutcome> TranslateOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateRequest&, const TranslateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateAsyncHandler;
@@ -112,6 +117,9 @@ namespace AlibabaCloud
 			GetTitleGenerateOutcome getTitleGenerate(const Model::GetTitleGenerateRequest &request)const;
 			void getTitleGenerateAsync(const Model::GetTitleGenerateRequest& request, const GetTitleGenerateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTitleGenerateOutcomeCallable getTitleGenerateCallable(const Model::GetTitleGenerateRequest& request) const;
+			GetTitleIntelligenceOutcome getTitleIntelligence(const Model::GetTitleIntelligenceRequest &request)const;
+			void getTitleIntelligenceAsync(const Model::GetTitleIntelligenceRequest& request, const GetTitleIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTitleIntelligenceOutcomeCallable getTitleIntelligenceCallable(const Model::GetTitleIntelligenceRequest& request) const;
 			TranslateOutcome translate(const Model::TranslateRequest &request)const;
 			void translateAsync(const Model::TranslateRequest& request, const TranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateOutcomeCallable translateCallable(const Model::TranslateRequest& request) const;
