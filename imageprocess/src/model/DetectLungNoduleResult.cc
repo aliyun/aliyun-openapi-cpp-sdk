@@ -66,8 +66,20 @@ void DetectLungNoduleResult::parse(const std::string &payload)
 				elementsObject.z = std::stof(allSeriesNodeElementsElement["Z"].asString());
 			if(!allSeriesNodeElementsElement["Y"].isNull())
 				elementsObject.y = std::stof(allSeriesNodeElementsElement["Y"].asString());
+			if(!allSeriesNodeElementsElement["ImageX"].isNull())
+				elementsObject.imageX = std::stof(allSeriesNodeElementsElement["ImageX"].asString());
+			if(!allSeriesNodeElementsElement["ImageY"].isNull())
+				elementsObject.imageY = std::stof(allSeriesNodeElementsElement["ImageY"].asString());
+			if(!allSeriesNodeElementsElement["ImageZ"].isNull())
+				elementsObject.imageZ = std::stof(allSeriesNodeElementsElement["ImageZ"].asString());
 			serieObject.elements.push_back(elementsObject);
 		}
+		auto allOrigin = value["Origin"]["Origin"];
+		for (auto value : allOrigin)
+			serieObject.origin.push_back(value.asString());
+		auto allSpacing = value["Spacing"]["Spacing"];
+		for (auto value : allSpacing)
+			serieObject.spacing.push_back(value.asString());
 		data_.series.push_back(serieObject);
 	}
 

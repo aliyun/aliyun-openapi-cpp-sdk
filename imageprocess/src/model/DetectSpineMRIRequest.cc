@@ -27,6 +27,17 @@ DetectSpineMRIRequest::DetectSpineMRIRequest() :
 DetectSpineMRIRequest::~DetectSpineMRIRequest()
 {}
 
+std::string DetectSpineMRIRequest::getDataFormat()const
+{
+	return dataFormat_;
+}
+
+void DetectSpineMRIRequest::setDataFormat(const std::string& dataFormat)
+{
+	dataFormat_ = dataFormat;
+	setBodyParameter("DataFormat", dataFormat);
+}
+
 std::vector<DetectSpineMRIRequest::URLList> DetectSpineMRIRequest::getURLList()const
 {
 	return uRLList_;
@@ -40,5 +51,27 @@ void DetectSpineMRIRequest::setURLList(const std::vector<URLList>& uRLList)
 		std::string uRLListObjStr = "URLList." + std::to_string(dep1 + 1);
 		setParameter(uRLListObjStr + ".URL", uRLListObj.uRL);
 	}
+}
+
+std::string DetectSpineMRIRequest::getOrgId()const
+{
+	return orgId_;
+}
+
+void DetectSpineMRIRequest::setOrgId(const std::string& orgId)
+{
+	orgId_ = orgId;
+	setBodyParameter("OrgId", orgId);
+}
+
+std::string DetectSpineMRIRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectSpineMRIRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
 }
 

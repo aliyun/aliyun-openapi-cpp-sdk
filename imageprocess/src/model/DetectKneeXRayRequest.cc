@@ -49,3 +49,25 @@ void DetectKneeXRayRequest::setUrl(const std::string& url)
 	setBodyParameter("Url", url);
 }
 
+std::string DetectKneeXRayRequest::getOrgId()const
+{
+	return orgId_;
+}
+
+void DetectKneeXRayRequest::setOrgId(const std::string& orgId)
+{
+	orgId_ = orgId;
+	setBodyParameter("OrgId", orgId);
+}
+
+std::string DetectKneeXRayRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectKneeXRayRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
+}
+

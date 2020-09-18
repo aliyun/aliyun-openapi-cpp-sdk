@@ -39,10 +39,16 @@ namespace AlibabaCloud
 				void setDataFormat(const std::string& dataFormat);
 				std::string getUrl()const;
 				void setUrl(const std::string& url);
+				std::string getOrgId()const;
+				void setOrgId(const std::string& orgId);
+				std::string getOrgName()const;
+				void setOrgName(const std::string& orgName);
 
             private:
 				std::string dataFormat_;
 				std::string url_;
+				std::string orgId_;
+				std::string orgName_;
 
 			};
 		}

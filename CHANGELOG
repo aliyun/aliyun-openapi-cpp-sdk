@@ -1,3 +1,6 @@
+2020-09-18 Version: patch
+- Update DetectLungNodule, DetectSpineMRI, DetectKneeXRay, DetectCovid19Cad.
+
 2020-09-17 Version: patch
 - Add Api DetectIPCPedestrianOptimized.
 

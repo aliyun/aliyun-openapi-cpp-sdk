@@ -38,7 +38,10 @@ namespace AlibabaCloud
 					{
 						struct Element
 						{
+							float imageZ;
+							float imageY;
 							std::string lobe;
+							float imageX;
 							std::string category;
 							float confidence;
 							std::string lung;
@@ -47,6 +50,8 @@ namespace AlibabaCloud
 							float z;
 							float diameter;
 						};
+						std::vector<std::string> origin;
+						std::vector<std::string> spacing;
 						std::vector<Serie::Element> elements;
 						std::string seriesInstanceUid;
 					};

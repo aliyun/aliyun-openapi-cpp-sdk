@@ -40,14 +40,23 @@ namespace AlibabaCloud
 				DetectLungNoduleRequest();
 				~DetectLungNoduleRequest();
 
+				std::string getDataFormat()const;
+				void setDataFormat(const std::string& dataFormat);
 				std::vector<URLList> getURLList()const;
 				void setURLList(const std::vector<URLList>& uRLList);
+				std::string getOrgId()const;
+				void setOrgId(const std::string& orgId);
 				bool getAsync()const;
 				void setAsync(bool async);
+				std::string getOrgName()const;
+				void setOrgName(const std::string& orgName);
 
             private:
+				std::string dataFormat_;
 				std::vector<URLList> uRLList_;
+				std::string orgId_;
 				bool async_;
+				std::string orgName_;
 
 			};
 		}

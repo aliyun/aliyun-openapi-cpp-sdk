@@ -27,6 +27,17 @@ DetectCovid19CadRequest::DetectCovid19CadRequest() :
 DetectCovid19CadRequest::~DetectCovid19CadRequest()
 {}
 
+std::string DetectCovid19CadRequest::getDataFormat()const
+{
+	return dataFormat_;
+}
+
+void DetectCovid19CadRequest::setDataFormat(const std::string& dataFormat)
+{
+	dataFormat_ = dataFormat;
+	setBodyParameter("DataFormat", dataFormat);
+}
+
 std::vector<DetectCovid19CadRequest::URLList> DetectCovid19CadRequest::getURLList()const
 {
 	return uRLList_;
@@ -42,6 +53,17 @@ void DetectCovid19CadRequest::setURLList(const std::vector<URLList>& uRLList)
 	}
 }
 
+std::string DetectCovid19CadRequest::getOrgId()const
+{
+	return orgId_;
+}
+
+void DetectCovid19CadRequest::setOrgId(const std::string& orgId)
+{
+	orgId_ = orgId;
+	setBodyParameter("OrgId", orgId);
+}
+
 bool DetectCovid19CadRequest::getAsync()const
 {
 	return async_;
@@ -51,5 +73,16 @@ void DetectCovid19CadRequest::setAsync(bool async)
 {
 	async_ = async;
 	setBodyParameter("Async", async ? "true" : "false");
+}
+
+std::string DetectCovid19CadRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectCovid19CadRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
 }
 

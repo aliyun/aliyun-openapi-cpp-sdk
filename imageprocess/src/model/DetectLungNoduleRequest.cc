@@ -27,6 +27,17 @@ DetectLungNoduleRequest::DetectLungNoduleRequest() :
 DetectLungNoduleRequest::~DetectLungNoduleRequest()
 {}
 
+std::string DetectLungNoduleRequest::getDataFormat()const
+{
+	return dataFormat_;
+}
+
+void DetectLungNoduleRequest::setDataFormat(const std::string& dataFormat)
+{
+	dataFormat_ = dataFormat;
+	setBodyParameter("DataFormat", dataFormat);
+}
+
 std::vector<DetectLungNoduleRequest::URLList> DetectLungNoduleRequest::getURLList()const
 {
 	return uRLList_;
@@ -42,6 +53,17 @@ void DetectLungNoduleRequest::setURLList(const std::vector<URLList>& uRLList)
 	}
 }
 
+std::string DetectLungNoduleRequest::getOrgId()const
+{
+	return orgId_;
+}
+
+void DetectLungNoduleRequest::setOrgId(const std::string& orgId)
+{
+	orgId_ = orgId;
+	setBodyParameter("OrgId", orgId);
+}
+
 bool DetectLungNoduleRequest::getAsync()const
 {
 	return async_;
@@ -51,5 +73,16 @@ void DetectLungNoduleRequest::setAsync(bool async)
 {
 	async_ = async;
 	setBodyParameter("Async", async ? "true" : "false");
+}
+
+std::string DetectLungNoduleRequest::getOrgName()const
+{
+	return orgName_;
+}
+
+void DetectLungNoduleRequest::setOrgName(const std::string& orgName)
+{
+	orgName_ = orgName;
+	setBodyParameter("OrgName", orgName);
 }
 
