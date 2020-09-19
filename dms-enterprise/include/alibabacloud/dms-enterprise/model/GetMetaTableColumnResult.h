@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLECOLUMNRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLECOLUMNRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTablesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetMetaTableColumnResult : public ServiceResult
 			{
 			public:
-				struct Table
+				struct Column
 				{
-					std::string tableId;
-					std::string tableType;
+					std::string columnId;
+					std::string columnName;
+					std::string columnType;
 					std::string description;
-					std::string databaseId;
-					std::string encoding;
-					long numRows;
-					std::string tableName;
-					std::string tableGuid;
-					std::string tableSchemaName;
-					std::vector<std::string> ownerNameList;
-					long storeCapacity;
-					std::string engine;
-					std::vector<std::string> ownerIdList;
+					int position;
+					bool autoIncrement;
+					std::string securityLevel;
+					int dataLength;
+					int dataScale;
+					std::string primaryKey;
+					int dataPrecision;
+					bool nullable;
 				};
 
 
-				ListTablesResult();
-				explicit ListTablesResult(const std::string &payload);
-				~ListTablesResult();
-				long getTotalCount()const;
-				std::vector<Table> getTableList()const;
+				GetMetaTableColumnResult();
+				explicit GetMetaTableColumnResult(const std::string &payload);
+				~GetMetaTableColumnResult();
+				std::vector<Column> getColumnList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -62,8 +60,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::vector<Table> tableList_;
+				std::vector<Column> columnList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLECOLUMNRESULT_H_

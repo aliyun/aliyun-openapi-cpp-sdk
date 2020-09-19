@@ -55,6 +55,10 @@ void ListLogicTablesResult::parse(const std::string &payload)
 			logicTableListObject.tableExpr = valueLogicTableListLogicTable["TableExpr"].asString();
 		if(!valueLogicTableListLogicTable["TableCount"].isNull())
 			logicTableListObject.tableCount = valueLogicTableListLogicTable["TableCount"].asString();
+		if(!valueLogicTableListLogicTable["TableGuid"].isNull())
+			logicTableListObject.tableGuid = valueLogicTableListLogicTable["TableGuid"].asString();
+		if(!valueLogicTableListLogicTable["SchemaName"].isNull())
+			logicTableListObject.schemaName = valueLogicTableListLogicTable["SchemaName"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			logicTableListObject.ownerIdList.push_back(value.asString());

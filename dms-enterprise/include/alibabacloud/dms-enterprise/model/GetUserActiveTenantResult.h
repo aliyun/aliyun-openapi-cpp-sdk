@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETUSERACTIVETENANTRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETUSERACTIVETENANTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTablesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetUserActiveTenantResult : public ServiceResult
 			{
 			public:
-				struct Table
+				struct Tenant
 				{
-					std::string tableId;
-					std::string tableType;
-					std::string description;
-					std::string databaseId;
-					std::string encoding;
-					long numRows;
-					std::string tableName;
-					std::string tableGuid;
-					std::string tableSchemaName;
-					std::vector<std::string> ownerNameList;
-					long storeCapacity;
-					std::string engine;
-					std::vector<std::string> ownerIdList;
+					std::string status;
+					std::string tenantName;
+					long tid;
 				};
 
 
-				ListTablesResult();
-				explicit ListTablesResult(const std::string &payload);
-				~ListTablesResult();
-				long getTotalCount()const;
-				std::vector<Table> getTableList()const;
+				GetUserActiveTenantResult();
+				explicit GetUserActiveTenantResult(const std::string &payload);
+				~GetUserActiveTenantResult();
+				Tenant getTenant()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -62,8 +51,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::vector<Table> tableList_;
+				Tenant tenant_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETUSERACTIVETENANTRESULT_H_

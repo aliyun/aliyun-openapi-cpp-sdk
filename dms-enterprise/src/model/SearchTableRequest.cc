@@ -27,37 +27,15 @@ SearchTableRequest::SearchTableRequest() :
 SearchTableRequest::~SearchTableRequest()
 {}
 
-std::string SearchTableRequest::getSearchTarget()const
+bool SearchTableRequest::getReturnGuid()const
 {
-	return searchTarget_;
+	return returnGuid_;
 }
 
-void SearchTableRequest::setSearchTarget(const std::string& searchTarget)
+void SearchTableRequest::setReturnGuid(bool returnGuid)
 {
-	searchTarget_ = searchTarget;
-	setParameter("SearchTarget", searchTarget);
-}
-
-int SearchTableRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void SearchTableRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string SearchTableRequest::getEnvType()const
-{
-	return envType_;
-}
-
-void SearchTableRequest::setEnvType(const std::string& envType)
-{
-	envType_ = envType;
-	setParameter("EnvType", envType);
+	returnGuid_ = returnGuid;
+	setParameter("ReturnGuid", returnGuid ? "true" : "false");
 }
 
 std::string SearchTableRequest::getSearchKey()const
@@ -102,5 +80,49 @@ void SearchTableRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string SearchTableRequest::getSearchTarget()const
+{
+	return searchTarget_;
+}
+
+void SearchTableRequest::setSearchTarget(const std::string& searchTarget)
+{
+	searchTarget_ = searchTarget;
+	setParameter("SearchTarget", searchTarget);
+}
+
+int SearchTableRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void SearchTableRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string SearchTableRequest::getEnvType()const
+{
+	return envType_;
+}
+
+void SearchTableRequest::setEnvType(const std::string& envType)
+{
+	envType_ = envType;
+	setParameter("EnvType", envType);
+}
+
+std::string SearchTableRequest::getDbType()const
+{
+	return dbType_;
+}
+
+void SearchTableRequest::setDbType(const std::string& dbType)
+{
+	dbType_ = dbType;
+	setParameter("DbType", dbType);
 }
 

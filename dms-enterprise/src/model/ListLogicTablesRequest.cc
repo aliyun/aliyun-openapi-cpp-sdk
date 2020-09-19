@@ -38,6 +38,17 @@ void ListLogicTablesRequest::setSearchName(const std::string& searchName)
 	setParameter("SearchName", searchName);
 }
 
+bool ListLogicTablesRequest::getReturnGuid()const
+{
+	return returnGuid_;
+}
+
+void ListLogicTablesRequest::setReturnGuid(bool returnGuid)
+{
+	returnGuid_ = returnGuid;
+	setParameter("ReturnGuid", returnGuid ? "true" : "false");
+}
+
 int ListLogicTablesRequest::getPageSize()const
 {
 	return pageSize_;

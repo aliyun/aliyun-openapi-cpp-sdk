@@ -61,12 +61,20 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/GetLogicDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/GetLogicDatabaseResult.h
+	include/alibabacloud/dms-enterprise/model/GetMetaTableColumnRequest.h
+	include/alibabacloud/dms-enterprise/model/GetMetaTableColumnResult.h
+	include/alibabacloud/dms-enterprise/model/GetMetaTableDetailInfoRequest.h
+	include/alibabacloud/dms-enterprise/model/GetMetaTableDetailInfoResult.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetOrderBaseInfoRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOrderBaseInfoResult.h
+	include/alibabacloud/dms-enterprise/model/GetTableDBTopologyRequest.h
+	include/alibabacloud/dms-enterprise/model/GetTableDBTopologyResult.h
 	include/alibabacloud/dms-enterprise/model/GetUserRequest.h
 	include/alibabacloud/dms-enterprise/model/GetUserResult.h
+	include/alibabacloud/dms-enterprise/model/GetUserActiveTenantRequest.h
+	include/alibabacloud/dms-enterprise/model/GetUserActiveTenantResult.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionRequest.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/ListColumnsRequest.h
@@ -93,6 +101,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListTablesResult.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListUserPermissionsResult.h
+	include/alibabacloud/dms-enterprise/model/ListUserTenantsRequest.h
+	include/alibabacloud/dms-enterprise/model/ListUserTenantsResult.h
 	include/alibabacloud/dms-enterprise/model/ListUsersRequest.h
 	include/alibabacloud/dms-enterprise/model/ListUsersResult.h
 	include/alibabacloud/dms-enterprise/model/ListWorkFlowNodesRequest.h
@@ -164,12 +174,20 @@ set(dms-enterprise_src
 	src/model/GetInstanceResult.cc
 	src/model/GetLogicDatabaseRequest.cc
 	src/model/GetLogicDatabaseResult.cc
+	src/model/GetMetaTableColumnRequest.cc
+	src/model/GetMetaTableColumnResult.cc
+	src/model/GetMetaTableDetailInfoRequest.cc
+	src/model/GetMetaTableDetailInfoResult.cc
 	src/model/GetOpLogRequest.cc
 	src/model/GetOpLogResult.cc
 	src/model/GetOrderBaseInfoRequest.cc
 	src/model/GetOrderBaseInfoResult.cc
+	src/model/GetTableDBTopologyRequest.cc
+	src/model/GetTableDBTopologyResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/GetUserActiveTenantRequest.cc
+	src/model/GetUserActiveTenantResult.cc
 	src/model/GrantUserPermissionRequest.cc
 	src/model/GrantUserPermissionResult.cc
 	src/model/ListColumnsRequest.cc
@@ -196,6 +214,8 @@ set(dms-enterprise_src
 	src/model/ListTablesResult.cc
 	src/model/ListUserPermissionsRequest.cc
 	src/model/ListUserPermissionsResult.cc
+	src/model/ListUserTenantsRequest.cc
+	src/model/ListUserTenantsResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
 	src/model/ListWorkFlowNodesRequest.cc

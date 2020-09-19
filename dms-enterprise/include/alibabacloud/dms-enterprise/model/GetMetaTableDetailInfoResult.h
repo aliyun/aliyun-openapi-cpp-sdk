@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLEDETAILINFORESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLEDETAILINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTablesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetMetaTableDetailInfoResult : public ServiceResult
 			{
 			public:
-				struct Table
+				struct DetailInfo
 				{
-					std::string tableId;
-					std::string tableType;
-					std::string description;
-					std::string databaseId;
-					std::string encoding;
-					long numRows;
-					std::string tableName;
-					std::string tableGuid;
-					std::string tableSchemaName;
-					std::vector<std::string> ownerNameList;
-					long storeCapacity;
-					std::string engine;
-					std::vector<std::string> ownerIdList;
+					struct Column
+					{
+						std::string columnId;
+						std::string columnName;
+						std::string description;
+						std::string columnType;
+						std::string position;
+						bool autoIncrement;
+						int dataLength;
+						int dataScale;
+						int dataPrecision;
+						bool nullable;
+					};
+					struct Index
+					{
+						std::string indexName;
+						std::string indexId;
+						std::vector<std::string> indexColumns;
+						bool unique;
+						std::string indexType;
+					};
+					std::vector<Column> columnList;
+					std::vector<Index> indexList;
 				};
 
 
-				ListTablesResult();
-				explicit ListTablesResult(const std::string &payload);
-				~ListTablesResult();
-				long getTotalCount()const;
-				std::vector<Table> getTableList()const;
+				GetMetaTableDetailInfoResult();
+				explicit GetMetaTableDetailInfoResult(const std::string &payload);
+				~GetMetaTableDetailInfoResult();
+				DetailInfo getDetailInfo()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -62,8 +71,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::vector<Table> tableList_;
+				DetailInfo detailInfo_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +80,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETMETATABLEDETAILINFORESULT_H_

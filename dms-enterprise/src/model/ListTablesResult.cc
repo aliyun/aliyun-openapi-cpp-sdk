@@ -61,6 +61,10 @@ void ListTablesResult::parse(const std::string &payload)
 			tableListObject.numRows = std::stol(valueTableListTable["NumRows"].asString());
 		if(!valueTableListTable["StoreCapacity"].isNull())
 			tableListObject.storeCapacity = std::stol(valueTableListTable["StoreCapacity"].asString());
+		if(!valueTableListTable["TableGuid"].isNull())
+			tableListObject.tableGuid = valueTableListTable["TableGuid"].asString();
+		if(!valueTableListTable["Description"].isNull())
+			tableListObject.description = valueTableListTable["Description"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			tableListObject.ownerIdList.push_back(value.asString());

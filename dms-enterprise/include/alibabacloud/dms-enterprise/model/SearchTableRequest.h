@@ -35,12 +35,8 @@ namespace AlibabaCloud
 				SearchTableRequest();
 				~SearchTableRequest();
 
-				std::string getSearchTarget()const;
-				void setSearchTarget(const std::string& searchTarget);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getEnvType()const;
-				void setEnvType(const std::string& envType);
+				bool getReturnGuid()const;
+				void setReturnGuid(bool returnGuid);
 				std::string getSearchKey()const;
 				void setSearchKey(const std::string& searchKey);
 				std::string getSearchRange()const;
@@ -49,15 +45,25 @@ namespace AlibabaCloud
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSearchTarget()const;
+				void setSearchTarget(const std::string& searchTarget);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getEnvType()const;
+				void setEnvType(const std::string& envType);
+				std::string getDbType()const;
+				void setDbType(const std::string& dbType);
 
             private:
-				std::string searchTarget_;
-				int pageSize_;
-				std::string envType_;
+				bool returnGuid_;
 				std::string searchKey_;
 				std::string searchRange_;
 				long tid_;
 				int pageNumber_;
+				std::string searchTarget_;
+				int pageSize_;
+				std::string envType_;
+				std::string dbType_;
 
 			};
 		}

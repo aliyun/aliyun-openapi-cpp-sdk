@@ -35,15 +35,19 @@ namespace AlibabaCloud
 				struct SearchTable
 				{
 					std::string tableId;
-					std::string tableName;
-					std::string tableSchemaName;
+					std::string description;
 					std::string databaseId;
 					std::string encoding;
+					std::string dBSearchName;
+					std::string envType;
+					std::string dbType;
+					std::string tableName;
+					std::string tableGuid;
+					std::string tableSchemaName;
+					std::string dbName;
 					std::vector<std::string> ownerNameList;
 					bool logic;
-					std::string dBSearchName;
 					std::string engine;
-					std::string envType;
 					std::vector<std::string> ownerIdList;
 				};
 

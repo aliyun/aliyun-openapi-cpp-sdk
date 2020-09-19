@@ -258,3 +258,14 @@ void UpdateInstanceRequest::setVpcId(const std::string& vpcId)
 	setParameter("VpcId", vpcId);
 }
 
+bool UpdateInstanceRequest::getSkipTest()const
+{
+	return skipTest_;
+}
+
+void UpdateInstanceRequest::setSkipTest(bool skipTest)
+{
+	skipTest_ = skipTest;
+	setParameter("SkipTest", skipTest ? "true" : "false");
+}
+

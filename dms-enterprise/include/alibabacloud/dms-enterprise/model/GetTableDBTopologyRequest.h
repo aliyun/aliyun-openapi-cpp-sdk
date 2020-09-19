@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICTABLESREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICTABLESREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListLogicTablesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetTableDBTopologyRequest : public RpcServiceRequest
 			{
 
 			public:
-				ListLogicTablesRequest();
-				~ListLogicTablesRequest();
+				GetTableDBTopologyRequest();
+				~GetTableDBTopologyRequest();
 
-				std::string getSearchName()const;
-				void setSearchName(const std::string& searchName);
-				bool getReturnGuid()const;
-				void setReturnGuid(bool returnGuid);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getDatabaseId()const;
-				void setDatabaseId(const std::string& databaseId);
+				std::string getTableGuid()const;
+				void setTableGuid(const std::string& tableGuid);
 				long getTid()const;
 				void setTid(long tid);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
             private:
-				std::string searchName_;
-				bool returnGuid_;
-				int pageSize_;
-				std::string databaseId_;
+				std::string tableGuid_;
 				long tid_;
-				int pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICTABLESREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYREQUEST_H_

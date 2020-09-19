@@ -247,6 +247,17 @@ void RegisterInstanceRequest::setDbaUid(long dbaUid)
 	setParameter("DbaUid", std::to_string(dbaUid));
 }
 
+bool RegisterInstanceRequest::getSkipTest()const
+{
+	return skipTest_;
+}
+
+void RegisterInstanceRequest::setSkipTest(bool skipTest)
+{
+	skipTest_ = skipTest;
+	setParameter("SkipTest", skipTest ? "true" : "false");
+}
+
 std::string RegisterInstanceRequest::getSafeRule()const
 {
 	return safeRule_;

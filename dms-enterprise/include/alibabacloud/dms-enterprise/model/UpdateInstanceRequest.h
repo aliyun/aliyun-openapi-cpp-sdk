@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setPort(int port);
 				std::string getVpcId()const;
 				void setVpcId(const std::string& vpcId);
+				bool getSkipTest()const;
+				void setSkipTest(bool skipTest);
 
             private:
 				std::string safeRuleId_;
@@ -100,6 +102,7 @@ namespace AlibabaCloud
 				std::string instanceId_;
 				int port_;
 				std::string vpcId_;
+				bool skipTest_;
 
 			};
 		}

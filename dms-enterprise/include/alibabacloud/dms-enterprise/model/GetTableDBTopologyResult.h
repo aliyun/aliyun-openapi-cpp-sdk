@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTablesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetTableDBTopologyResult : public ServiceResult
 			{
 			public:
-				struct Table
+				struct DBTopology
 				{
-					std::string tableId;
-					std::string tableType;
-					std::string description;
-					std::string databaseId;
-					std::string encoding;
-					long numRows;
+					struct DataSource
+					{
+						struct Database
+						{
+							struct Table
+							{
+								std::string tableId;
+								std::string tableName;
+								std::string tableType;
+							};
+							std::string dbId;
+							std::string dbName;
+							std::vector<Database::Table> tableList;
+							std::string envType;
+							std::string dbType;
+						};
+						std::vector<DataSource::Database> databaseList;
+						int port;
+						std::string host;
+						std::string dbType;
+						std::string sid;
+					};
 					std::string tableName;
 					std::string tableGuid;
-					std::string tableSchemaName;
-					std::vector<std::string> ownerNameList;
-					long storeCapacity;
-					std::string engine;
-					std::vector<std::string> ownerIdList;
+					std::vector<DataSource> dataSourceList;
 				};
 
 
-				ListTablesResult();
-				explicit ListTablesResult(const std::string &payload);
-				~ListTablesResult();
-				long getTotalCount()const;
-				std::vector<Table> getTableList()const;
+				GetTableDBTopologyResult();
+				explicit GetTableDBTopologyResult(const std::string &payload);
+				~GetTableDBTopologyResult();
+				DBTopology getDBTopology()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -62,8 +73,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::vector<Table> tableList_;
+				DBTopology dBTopology_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +82,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTABLESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETTABLEDBTOPOLOGYRESULT_H_

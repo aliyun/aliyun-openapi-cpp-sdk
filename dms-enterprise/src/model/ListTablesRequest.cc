@@ -38,6 +38,17 @@ void ListTablesRequest::setSearchName(const std::string& searchName)
 	setParameter("SearchName", searchName);
 }
 
+bool ListTablesRequest::getReturnGuid()const
+{
+	return returnGuid_;
+}
+
+void ListTablesRequest::setReturnGuid(bool returnGuid)
+{
+	returnGuid_ = returnGuid;
+	setParameter("ReturnGuid", returnGuid ? "true" : "false");
+}
+
 int ListTablesRequest::getPageSize()const
 {
 	return pageSize_;

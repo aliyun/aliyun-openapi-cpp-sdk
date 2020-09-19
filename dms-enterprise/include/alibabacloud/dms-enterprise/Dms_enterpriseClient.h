@@ -62,12 +62,20 @@
 #include "model/GetInstanceResult.h"
 #include "model/GetLogicDatabaseRequest.h"
 #include "model/GetLogicDatabaseResult.h"
+#include "model/GetMetaTableColumnRequest.h"
+#include "model/GetMetaTableColumnResult.h"
+#include "model/GetMetaTableDetailInfoRequest.h"
+#include "model/GetMetaTableDetailInfoResult.h"
 #include "model/GetOpLogRequest.h"
 #include "model/GetOpLogResult.h"
 #include "model/GetOrderBaseInfoRequest.h"
 #include "model/GetOrderBaseInfoResult.h"
+#include "model/GetTableDBTopologyRequest.h"
+#include "model/GetTableDBTopologyResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
+#include "model/GetUserActiveTenantRequest.h"
+#include "model/GetUserActiveTenantResult.h"
 #include "model/GrantUserPermissionRequest.h"
 #include "model/GrantUserPermissionResult.h"
 #include "model/ListColumnsRequest.h"
@@ -94,6 +102,8 @@
 #include "model/ListTablesResult.h"
 #include "model/ListUserPermissionsRequest.h"
 #include "model/ListUserPermissionsResult.h"
+#include "model/ListUserTenantsRequest.h"
+#include "model/ListUserTenantsResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
 #include "model/ListWorkFlowNodesRequest.h"
@@ -191,15 +201,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLogicDatabaseResult> GetLogicDatabaseOutcome;
 			typedef std::future<GetLogicDatabaseOutcome> GetLogicDatabaseOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetLogicDatabaseRequest&, const GetLogicDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLogicDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::GetMetaTableColumnResult> GetMetaTableColumnOutcome;
+			typedef std::future<GetMetaTableColumnOutcome> GetMetaTableColumnOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetMetaTableColumnRequest&, const GetMetaTableColumnOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableColumnAsyncHandler;
+			typedef Outcome<Error, Model::GetMetaTableDetailInfoResult> GetMetaTableDetailInfoOutcome;
+			typedef std::future<GetMetaTableDetailInfoOutcome> GetMetaTableDetailInfoOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetMetaTableDetailInfoRequest&, const GetMetaTableDetailInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableDetailInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetOpLogResult> GetOpLogOutcome;
 			typedef std::future<GetOpLogOutcome> GetOpLogOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOpLogRequest&, const GetOpLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpLogAsyncHandler;
 			typedef Outcome<Error, Model::GetOrderBaseInfoResult> GetOrderBaseInfoOutcome;
 			typedef std::future<GetOrderBaseInfoOutcome> GetOrderBaseInfoOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOrderBaseInfoRequest&, const GetOrderBaseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderBaseInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetTableDBTopologyResult> GetTableDBTopologyOutcome;
+			typedef std::future<GetTableDBTopologyOutcome> GetTableDBTopologyOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetTableDBTopologyRequest&, const GetTableDBTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTableDBTopologyAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::GetUserActiveTenantResult> GetUserActiveTenantOutcome;
+			typedef std::future<GetUserActiveTenantOutcome> GetUserActiveTenantOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetUserActiveTenantRequest&, const GetUserActiveTenantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserActiveTenantAsyncHandler;
 			typedef Outcome<Error, Model::GrantUserPermissionResult> GrantUserPermissionOutcome;
 			typedef std::future<GrantUserPermissionOutcome> GrantUserPermissionOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GrantUserPermissionRequest&, const GrantUserPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantUserPermissionAsyncHandler;
@@ -239,6 +261,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUserPermissionsResult> ListUserPermissionsOutcome;
 			typedef std::future<ListUserPermissionsOutcome> ListUserPermissionsOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListUserPermissionsRequest&, const ListUserPermissionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserPermissionsAsyncHandler;
+			typedef Outcome<Error, Model::ListUserTenantsResult> ListUserTenantsOutcome;
+			typedef std::future<ListUserTenantsOutcome> ListUserTenantsOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListUserTenantsRequest&, const ListUserTenantsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserTenantsAsyncHandler;
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
@@ -346,15 +371,27 @@ namespace AlibabaCloud
 			GetLogicDatabaseOutcome getLogicDatabase(const Model::GetLogicDatabaseRequest &request)const;
 			void getLogicDatabaseAsync(const Model::GetLogicDatabaseRequest& request, const GetLogicDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLogicDatabaseOutcomeCallable getLogicDatabaseCallable(const Model::GetLogicDatabaseRequest& request) const;
+			GetMetaTableColumnOutcome getMetaTableColumn(const Model::GetMetaTableColumnRequest &request)const;
+			void getMetaTableColumnAsync(const Model::GetMetaTableColumnRequest& request, const GetMetaTableColumnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMetaTableColumnOutcomeCallable getMetaTableColumnCallable(const Model::GetMetaTableColumnRequest& request) const;
+			GetMetaTableDetailInfoOutcome getMetaTableDetailInfo(const Model::GetMetaTableDetailInfoRequest &request)const;
+			void getMetaTableDetailInfoAsync(const Model::GetMetaTableDetailInfoRequest& request, const GetMetaTableDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMetaTableDetailInfoOutcomeCallable getMetaTableDetailInfoCallable(const Model::GetMetaTableDetailInfoRequest& request) const;
 			GetOpLogOutcome getOpLog(const Model::GetOpLogRequest &request)const;
 			void getOpLogAsync(const Model::GetOpLogRequest& request, const GetOpLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOpLogOutcomeCallable getOpLogCallable(const Model::GetOpLogRequest& request) const;
 			GetOrderBaseInfoOutcome getOrderBaseInfo(const Model::GetOrderBaseInfoRequest &request)const;
 			void getOrderBaseInfoAsync(const Model::GetOrderBaseInfoRequest& request, const GetOrderBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOrderBaseInfoOutcomeCallable getOrderBaseInfoCallable(const Model::GetOrderBaseInfoRequest& request) const;
+			GetTableDBTopologyOutcome getTableDBTopology(const Model::GetTableDBTopologyRequest &request)const;
+			void getTableDBTopologyAsync(const Model::GetTableDBTopologyRequest& request, const GetTableDBTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTableDBTopologyOutcomeCallable getTableDBTopologyCallable(const Model::GetTableDBTopologyRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			GetUserActiveTenantOutcome getUserActiveTenant(const Model::GetUserActiveTenantRequest &request)const;
+			void getUserActiveTenantAsync(const Model::GetUserActiveTenantRequest& request, const GetUserActiveTenantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserActiveTenantOutcomeCallable getUserActiveTenantCallable(const Model::GetUserActiveTenantRequest& request) const;
 			GrantUserPermissionOutcome grantUserPermission(const Model::GrantUserPermissionRequest &request)const;
 			void grantUserPermissionAsync(const Model::GrantUserPermissionRequest& request, const GrantUserPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantUserPermissionOutcomeCallable grantUserPermissionCallable(const Model::GrantUserPermissionRequest& request) const;
@@ -394,6 +431,9 @@ namespace AlibabaCloud
 			ListUserPermissionsOutcome listUserPermissions(const Model::ListUserPermissionsRequest &request)const;
 			void listUserPermissionsAsync(const Model::ListUserPermissionsRequest& request, const ListUserPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserPermissionsOutcomeCallable listUserPermissionsCallable(const Model::ListUserPermissionsRequest& request) const;
+			ListUserTenantsOutcome listUserTenants(const Model::ListUserTenantsRequest &request)const;
+			void listUserTenantsAsync(const Model::ListUserTenantsRequest& request, const ListUserTenantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserTenantsOutcomeCallable listUserTenantsCallable(const Model::ListUserTenantsRequest& request) const;
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;

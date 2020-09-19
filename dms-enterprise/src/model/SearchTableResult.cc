@@ -61,6 +61,14 @@ void SearchTableResult::parse(const std::string &payload)
 			searchTableListObject.envType = valueSearchTableListSearchTable["EnvType"].asString();
 		if(!valueSearchTableListSearchTable["DBSearchName"].isNull())
 			searchTableListObject.dBSearchName = valueSearchTableListSearchTable["DBSearchName"].asString();
+		if(!valueSearchTableListSearchTable["DbType"].isNull())
+			searchTableListObject.dbType = valueSearchTableListSearchTable["DbType"].asString();
+		if(!valueSearchTableListSearchTable["Description"].isNull())
+			searchTableListObject.description = valueSearchTableListSearchTable["Description"].asString();
+		if(!valueSearchTableListSearchTable["DbName"].isNull())
+			searchTableListObject.dbName = valueSearchTableListSearchTable["DbName"].asString();
+		if(!valueSearchTableListSearchTable["TableGuid"].isNull())
+			searchTableListObject.tableGuid = valueSearchTableListSearchTable["TableGuid"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			searchTableListObject.ownerIdList.push_back(value.asString());

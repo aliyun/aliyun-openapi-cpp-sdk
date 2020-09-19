@@ -36,11 +36,13 @@ namespace AlibabaCloud
 				{
 					std::string tableId;
 					std::string tableName;
+					std::string tableGuid;
 					std::string tableExpr;
 					std::string tableCount;
 					std::string databaseId;
 					std::vector<std::string> ownerNameList;
 					bool logic;
+					std::string schemaName;
 					std::vector<std::string> ownerIdList;
 				};
 
