@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setParentCorpId(const std::string& parentCorpId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getIconPath()const;
+				void setIconPath(const std::string& iconPath);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
 				std::string getCorpName()const;
@@ -53,6 +55,7 @@ namespace AlibabaCloud
 				std::string corpId_;
 				std::string parentCorpId_;
 				std::string description_;
+				std::string iconPath_;
 				std::string appName_;
 				std::string corpName_;
 

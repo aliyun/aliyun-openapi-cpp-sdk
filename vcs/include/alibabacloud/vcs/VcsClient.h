@@ -114,6 +114,8 @@
 #include "model/ListCorpMetricsResult.h"
 #include "model/ListCorpsRequest.h"
 #include "model/ListCorpsResult.h"
+#include "model/ListDeviceGroupsRequest.h"
+#include "model/ListDeviceGroupsResult.h"
 #include "model/ListDevicesRequest.h"
 #include "model/ListDevicesResult.h"
 #include "model/ListEventAlgorithmDetailsRequest.h"
@@ -327,6 +329,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCorpsResult> ListCorpsOutcome;
 			typedef std::future<ListCorpsOutcome> ListCorpsOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListCorpsRequest&, const ListCorpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCorpsAsyncHandler;
+			typedef Outcome<Error, Model::ListDeviceGroupsResult> ListDeviceGroupsOutcome;
+			typedef std::future<ListDeviceGroupsOutcome> ListDeviceGroupsOutcomeCallable;
+			typedef std::function<void(const VcsClient*, const Model::ListDeviceGroupsRequest&, const ListDeviceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ListDevicesResult> ListDevicesOutcome;
 			typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
 			typedef std::function<void(const VcsClient*, const Model::ListDevicesRequest&, const ListDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
@@ -569,6 +574,9 @@ namespace AlibabaCloud
 			ListCorpsOutcome listCorps(const Model::ListCorpsRequest &request)const;
 			void listCorpsAsync(const Model::ListCorpsRequest& request, const ListCorpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCorpsOutcomeCallable listCorpsCallable(const Model::ListCorpsRequest& request) const;
+			ListDeviceGroupsOutcome listDeviceGroups(const Model::ListDeviceGroupsRequest &request)const;
+			void listDeviceGroupsAsync(const Model::ListDeviceGroupsRequest& request, const ListDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDeviceGroupsOutcomeCallable listDeviceGroupsCallable(const Model::ListDeviceGroupsRequest& request) const;
 			ListDevicesOutcome listDevices(const Model::ListDevicesRequest &request)const;
 			void listDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDevicesOutcomeCallable listDevicesCallable(const Model::ListDevicesRequest& request) const;

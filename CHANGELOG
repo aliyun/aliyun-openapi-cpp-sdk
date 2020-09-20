@@ -1,3 +1,6 @@
+2020-09-20 Version: patch
+- Add describe devices to return device status.
+
 2020-09-19 Version: patch
 - Support query user tenant list and current active tenant.
 - Support query table meta information via table GUID.

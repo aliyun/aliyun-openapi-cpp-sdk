@@ -27,6 +27,17 @@ SearchObjectRequest::SearchObjectRequest() :
 SearchObjectRequest::~SearchObjectRequest()
 {}
 
+std::string SearchObjectRequest::getAlgorithmType()const
+{
+	return algorithmType_;
+}
+
+void SearchObjectRequest::setAlgorithmType(const std::string& algorithmType)
+{
+	algorithmType_ = algorithmType;
+	setBodyParameter("AlgorithmType", algorithmType);
+}
+
 std::string SearchObjectRequest::getCorpId()const
 {
 	return corpId_;
@@ -36,6 +47,17 @@ void SearchObjectRequest::setCorpId(const std::string& corpId)
 {
 	corpId_ = corpId;
 	setBodyParameter("CorpId", corpId);
+}
+
+long SearchObjectRequest::getEndTime()const
+{
+	return endTime_;
+}
+
+void SearchObjectRequest::setEndTime(long endTime)
+{
+	endTime_ = endTime;
+	setBodyParameter("EndTime", std::to_string(endTime));
 }
 
 long SearchObjectRequest::getStartTime()const
@@ -58,61 +80,6 @@ void SearchObjectRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setBodyParameter("PageNumber", std::to_string(pageNumber));
-}
-
-std::string SearchObjectRequest::getPicContent()const
-{
-	return picContent_;
-}
-
-void SearchObjectRequest::setPicContent(const std::string& picContent)
-{
-	picContent_ = picContent;
-	setBodyParameter("PicContent", picContent);
-}
-
-int SearchObjectRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void SearchObjectRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setBodyParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string SearchObjectRequest::getObjectType()const
-{
-	return objectType_;
-}
-
-void SearchObjectRequest::setObjectType(const std::string& objectType)
-{
-	objectType_ = objectType;
-	setBodyParameter("ObjectType", objectType);
-}
-
-std::string SearchObjectRequest::getAlgorithmType()const
-{
-	return algorithmType_;
-}
-
-void SearchObjectRequest::setAlgorithmType(const std::string& algorithmType)
-{
-	algorithmType_ = algorithmType;
-	setBodyParameter("AlgorithmType", algorithmType);
-}
-
-long SearchObjectRequest::getEndTime()const
-{
-	return endTime_;
-}
-
-void SearchObjectRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setBodyParameter("EndTime", std::to_string(endTime));
 }
 
 std::map<std::string, std::string> SearchObjectRequest::getDeviceList()const
@@ -146,6 +113,28 @@ void SearchObjectRequest::setImagePath(const std::string& imagePath)
 {
 	imagePath_ = imagePath;
 	setBodyParameter("ImagePath", imagePath);
+}
+
+int SearchObjectRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void SearchObjectRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setBodyParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string SearchObjectRequest::getObjectType()const
+{
+	return objectType_;
+}
+
+void SearchObjectRequest::setObjectType(const std::string& objectType)
+{
+	objectType_ = objectType;
+	setBodyParameter("ObjectType", objectType);
 }
 
 std::string SearchObjectRequest::getConditions()const

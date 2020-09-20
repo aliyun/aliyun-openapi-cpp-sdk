@@ -49,6 +49,8 @@ namespace AlibabaCloud
 				void setAttributeOperateType(const std::string& attributeOperateType);
 				std::string getRuleExpression()const;
 				void setRuleExpression(const std::string& ruleExpression);
+				int getNotifierTimeOut()const;
+				void setNotifierTimeOut(int notifierTimeOut);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
 				std::string getDeviceOperateType()const;
@@ -57,8 +59,16 @@ namespace AlibabaCloud
 				void setPicList(const std::string& picList);
 				std::string getAttributeValueList()const;
 				void setAttributeValueList(const std::string& attributeValueList);
+				std::string getNotifierAppSecret()const;
+				void setNotifierAppSecret(const std::string& notifierAppSecret);
+				std::string getNotifierExtendValues()const;
+				void setNotifierExtendValues(const std::string& notifierExtendValues);
 				std::string getDeviceList()const;
 				void setDeviceList(const std::string& deviceList);
+				std::string getNotifierUrl()const;
+				void setNotifierUrl(const std::string& notifierUrl);
+				std::string getNotifierType()const;
+				void setNotifierType(const std::string& notifierType);
 				std::string getAlgorithmVendor()const;
 				void setAlgorithmVendor(const std::string& algorithmVendor);
 
@@ -70,11 +80,16 @@ namespace AlibabaCloud
 				std::string attributeName_;
 				std::string attributeOperateType_;
 				std::string ruleExpression_;
+				int notifierTimeOut_;
 				std::string taskId_;
 				std::string deviceOperateType_;
 				std::string picList_;
 				std::string attributeValueList_;
+				std::string notifierAppSecret_;
+				std::string notifierExtendValues_;
 				std::string deviceList_;
+				std::string notifierUrl_;
+				std::string notifierType_;
 				std::string algorithmVendor_;
 
 			};

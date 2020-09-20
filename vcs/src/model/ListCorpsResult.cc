@@ -68,6 +68,10 @@ void ListCorpsResult::parse(const std::string &payload)
 			recordObject.deviceCount = std::stoi(dataNodeRecordsRecord["DeviceCount"].asString());
 		if(!dataNodeRecordsRecord["IsvSubId"].isNull())
 			recordObject.isvSubId = dataNodeRecordsRecord["IsvSubId"].asString();
+		if(!dataNodeRecordsRecord["AcuUsed"].isNull())
+			recordObject.acuUsed = std::stoi(dataNodeRecordsRecord["AcuUsed"].asString());
+		if(!dataNodeRecordsRecord["IconPath"].isNull())
+			recordObject.iconPath = dataNodeRecordsRecord["IconPath"].asString();
 		data_.records.push_back(recordObject);
 	}
 	if(!value["Code"].isNull())

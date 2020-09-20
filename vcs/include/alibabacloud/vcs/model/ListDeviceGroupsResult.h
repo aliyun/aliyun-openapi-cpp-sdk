@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
-#define ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
+#ifndef ALIBABACLOUD_VCS_MODEL_LISTDEVICEGROUPSRESULT_H_
+#define ALIBABACLOUD_VCS_MODEL_LISTDEVICEGROUPSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,48 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VCS_EXPORT ListCorpsResult : public ServiceResult
+			class ALIBABACLOUD_VCS_EXPORT ListDeviceGroupsResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct DataItem
 				{
-					struct Record
+					struct ListItem
 					{
-						std::string iconPath;
-						std::string corpId;
-						std::string description;
-						std::string parentCorpId;
-						std::string isvSubId;
-						std::string createDate;
-						int acuUsed;
-						std::string corpName;
-						std::string appName;
-						int deviceCount;
+						std::string codingFormat;
+						std::string installAddress;
+						std::string regionName;
+						std::string dataSourceType;
+						std::string deviceGroup;
+						std::string deviceCode;
+						std::string regionId;
+						std::string bitRate;
+						std::string resolvingPower;
+						std::string deviceName;
 					};
-					int totalCount;
-					int pageSize;
-					int totalPage;
-					int pageNumber;
-					std::vector<Record> records;
+					std::string totalCount;
+					std::vector<DataItem::ListItem> list;
 				};
 
 
-				ListCorpsResult();
-				explicit ListCorpsResult(const std::string &payload);
-				~ListCorpsResult();
+				ListDeviceGroupsResult();
+				explicit ListDeviceGroupsResult(const std::string &payload);
+				~ListDeviceGroupsResult();
 				std::string getMessage()const;
-				Data getData()const;
+				std::vector<DataItem> getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
+				std::vector<DataItem> data_;
 				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VCS_MODEL_LISTCORPSRESULT_H_
+#endif // !ALIBABACLOUD_VCS_MODEL_LISTDEVICEGROUPSRESULT_H_

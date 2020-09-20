@@ -1707,6 +1707,42 @@ VcsClient::ListCorpsOutcomeCallable VcsClient::listCorpsCallable(const ListCorps
 	return task->get_future();
 }
 
+VcsClient::ListDeviceGroupsOutcome VcsClient::listDeviceGroups(const ListDeviceGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeviceGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeviceGroupsOutcome(ListDeviceGroupsResult(outcome.result()));
+	else
+		return ListDeviceGroupsOutcome(outcome.error());
+}
+
+void VcsClient::listDeviceGroupsAsync(const ListDeviceGroupsRequest& request, const ListDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeviceGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VcsClient::ListDeviceGroupsOutcomeCallable VcsClient::listDeviceGroupsCallable(const ListDeviceGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeviceGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeviceGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VcsClient::ListDevicesOutcome VcsClient::listDevices(const ListDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

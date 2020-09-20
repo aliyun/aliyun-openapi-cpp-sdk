@@ -104,6 +104,17 @@ void UpdateMonitorRequest::setRuleExpression(const std::string& ruleExpression)
 	setBodyParameter("RuleExpression", ruleExpression);
 }
 
+int UpdateMonitorRequest::getNotifierTimeOut()const
+{
+	return notifierTimeOut_;
+}
+
+void UpdateMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
+{
+	notifierTimeOut_ = notifierTimeOut;
+	setBodyParameter("NotifierTimeOut", std::to_string(notifierTimeOut));
+}
+
 std::string UpdateMonitorRequest::getTaskId()const
 {
 	return taskId_;
@@ -148,6 +159,28 @@ void UpdateMonitorRequest::setAttributeValueList(const std::string& attributeVal
 	setBodyParameter("AttributeValueList", attributeValueList);
 }
 
+std::string UpdateMonitorRequest::getNotifierAppSecret()const
+{
+	return notifierAppSecret_;
+}
+
+void UpdateMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
+{
+	notifierAppSecret_ = notifierAppSecret;
+	setBodyParameter("NotifierAppSecret", notifierAppSecret);
+}
+
+std::string UpdateMonitorRequest::getNotifierExtendValues()const
+{
+	return notifierExtendValues_;
+}
+
+void UpdateMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
+{
+	notifierExtendValues_ = notifierExtendValues;
+	setBodyParameter("NotifierExtendValues", notifierExtendValues);
+}
+
 std::string UpdateMonitorRequest::getDeviceList()const
 {
 	return deviceList_;
@@ -157,6 +190,28 @@ void UpdateMonitorRequest::setDeviceList(const std::string& deviceList)
 {
 	deviceList_ = deviceList;
 	setBodyParameter("DeviceList", deviceList);
+}
+
+std::string UpdateMonitorRequest::getNotifierUrl()const
+{
+	return notifierUrl_;
+}
+
+void UpdateMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
+{
+	notifierUrl_ = notifierUrl;
+	setBodyParameter("NotifierUrl", notifierUrl);
+}
+
+std::string UpdateMonitorRequest::getNotifierType()const
+{
+	return notifierType_;
+}
+
+void UpdateMonitorRequest::setNotifierType(const std::string& notifierType)
+{
+	notifierType_ = notifierType;
+	setBodyParameter("NotifierType", notifierType);
 }
 
 std::string UpdateMonitorRequest::getAlgorithmVendor()const

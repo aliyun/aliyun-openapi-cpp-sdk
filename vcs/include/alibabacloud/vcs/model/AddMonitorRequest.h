@@ -41,8 +41,18 @@ namespace AlibabaCloud
 				void setCorpId(const std::string& corpId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				std::string getNotifierAppSecret()const;
+				void setNotifierAppSecret(const std::string& notifierAppSecret);
+				std::string getNotifierExtendValues()const;
+				void setNotifierExtendValues(const std::string& notifierExtendValues);
+				std::string getNotifierUrl()const;
+				void setNotifierUrl(const std::string& notifierUrl);
+				std::string getNotifierType()const;
+				void setNotifierType(const std::string& notifierType);
 				int getBatchIndicator()const;
 				void setBatchIndicator(int batchIndicator);
+				int getNotifierTimeOut()const;
+				void setNotifierTimeOut(int notifierTimeOut);
 				std::string getAlgorithmVendor()const;
 				void setAlgorithmVendor(const std::string& algorithmVendor);
 
@@ -50,7 +60,12 @@ namespace AlibabaCloud
 				std::string monitorType_;
 				std::string corpId_;
 				std::string description_;
+				std::string notifierAppSecret_;
+				std::string notifierExtendValues_;
+				std::string notifierUrl_;
+				std::string notifierType_;
 				int batchIndicator_;
+				int notifierTimeOut_;
 				std::string algorithmVendor_;
 
 			};

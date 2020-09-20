@@ -60,6 +60,50 @@ void AddMonitorRequest::setDescription(const std::string& description)
 	setBodyParameter("Description", description);
 }
 
+std::string AddMonitorRequest::getNotifierAppSecret()const
+{
+	return notifierAppSecret_;
+}
+
+void AddMonitorRequest::setNotifierAppSecret(const std::string& notifierAppSecret)
+{
+	notifierAppSecret_ = notifierAppSecret;
+	setBodyParameter("NotifierAppSecret", notifierAppSecret);
+}
+
+std::string AddMonitorRequest::getNotifierExtendValues()const
+{
+	return notifierExtendValues_;
+}
+
+void AddMonitorRequest::setNotifierExtendValues(const std::string& notifierExtendValues)
+{
+	notifierExtendValues_ = notifierExtendValues;
+	setBodyParameter("NotifierExtendValues", notifierExtendValues);
+}
+
+std::string AddMonitorRequest::getNotifierUrl()const
+{
+	return notifierUrl_;
+}
+
+void AddMonitorRequest::setNotifierUrl(const std::string& notifierUrl)
+{
+	notifierUrl_ = notifierUrl;
+	setBodyParameter("NotifierUrl", notifierUrl);
+}
+
+std::string AddMonitorRequest::getNotifierType()const
+{
+	return notifierType_;
+}
+
+void AddMonitorRequest::setNotifierType(const std::string& notifierType)
+{
+	notifierType_ = notifierType;
+	setBodyParameter("NotifierType", notifierType);
+}
+
 int AddMonitorRequest::getBatchIndicator()const
 {
 	return batchIndicator_;
@@ -69,6 +113,17 @@ void AddMonitorRequest::setBatchIndicator(int batchIndicator)
 {
 	batchIndicator_ = batchIndicator;
 	setBodyParameter("BatchIndicator", std::to_string(batchIndicator));
+}
+
+int AddMonitorRequest::getNotifierTimeOut()const
+{
+	return notifierTimeOut_;
+}
+
+void AddMonitorRequest::setNotifierTimeOut(int notifierTimeOut)
+{
+	notifierTimeOut_ = notifierTimeOut;
+	setBodyParameter("NotifierTimeOut", std::to_string(notifierTimeOut));
 }
 
 std::string AddMonitorRequest::getAlgorithmVendor()const

@@ -71,6 +71,17 @@ void UpdateCorpRequest::setDescription(const std::string& description)
 	setBodyParameter("Description", description);
 }
 
+std::string UpdateCorpRequest::getIconPath()const
+{
+	return iconPath_;
+}
+
+void UpdateCorpRequest::setIconPath(const std::string& iconPath)
+{
+	iconPath_ = iconPath;
+	setBodyParameter("IconPath", iconPath);
+}
+
 std::string UpdateCorpRequest::getAppName()const
 {
 	return appName_;
