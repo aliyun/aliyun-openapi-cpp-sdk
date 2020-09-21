@@ -42,6 +42,8 @@ void TranslateResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Translated"].isNull())
 		data_.translated = dataNode["Translated"].asString();
+	if(!dataNode["WordCount"].isNull())
+		data_.wordCount = dataNode["WordCount"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

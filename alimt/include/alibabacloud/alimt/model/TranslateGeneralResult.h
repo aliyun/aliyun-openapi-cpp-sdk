@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string wordCount;
 					std::string translated;
 				};
 
