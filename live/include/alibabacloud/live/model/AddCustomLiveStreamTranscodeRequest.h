@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string get_Template()const;
 				void set_Template(const std::string& _template);
+				std::string getLazy()const;
+				void setLazy(const std::string& lazy);
 				std::string getGop()const;
 				void setGop(const std::string& gop);
 				std::string getAudioCodec()const;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 
             private:
 				std::string _template_;
+				std::string lazy_;
 				std::string gop_;
 				std::string audioCodec_;
 				std::string templateType_;

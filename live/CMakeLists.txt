@@ -51,6 +51,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddLiveDomainResult.h
 	include/alibabacloud/live/model/AddLiveDomainMappingRequest.h
 	include/alibabacloud/live/model/AddLiveDomainMappingResult.h
+	include/alibabacloud/live/model/AddLiveDomainPlayMappingRequest.h
+	include/alibabacloud/live/model/AddLiveDomainPlayMappingResult.h
 	include/alibabacloud/live/model/AddLivePullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/AddLivePullStreamInfoConfigResult.h
 	include/alibabacloud/live/model/AddLiveRecordNotifyConfigRequest.h
@@ -93,6 +95,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
+	include/alibabacloud/live/model/CreateMixStreamRequest.h
+	include/alibabacloud/live/model/CreateMixStreamResult.h
 	include/alibabacloud/live/model/CreateRoomRequest.h
 	include/alibabacloud/live/model/CreateRoomResult.h
 	include/alibabacloud/live/model/DeleteBoardRequest.h
@@ -147,6 +151,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/live/model/DeleteMixStreamRequest.h
+	include/alibabacloud/live/model/DeleteMixStreamResult.h
 	include/alibabacloud/live/model/DeleteRoomRequest.h
 	include/alibabacloud/live/model/DeleteRoomResult.h
 	include/alibabacloud/live/model/DescribeBoardEventsRequest.h
@@ -239,6 +245,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainTranscodeDataResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigResult.h
+	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
+	include/alibabacloud/live/model/DescribeLivePullStreamConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeDeliveryAccRequest.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeDeliveryAccResult.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeLogAuthorizedRequest.h
@@ -297,6 +305,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
+	include/alibabacloud/live/model/DescribeMixStreamListResult.h
 	include/alibabacloud/live/model/DescribeRecordRequest.h
 	include/alibabacloud/live/model/DescribeRecordResult.h
 	include/alibabacloud/live/model/DescribeRecordsRequest.h
@@ -399,6 +409,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/StopLiveIndexResult.h
 	include/alibabacloud/live/model/TagLiveResourcesRequest.h
 	include/alibabacloud/live/model/TagLiveResourcesResult.h
+	include/alibabacloud/live/model/TriggerRecordRequest.h
+	include/alibabacloud/live/model/TriggerRecordResult.h
 	include/alibabacloud/live/model/UnTagLiveResourcesRequest.h
 	include/alibabacloud/live/model/UnTagLiveResourcesResult.h
 	include/alibabacloud/live/model/UpdateBoardRequest.h
@@ -422,7 +434,9 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainRequest.h
-	include/alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h )
+	include/alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h
+	include/alibabacloud/live/model/UpdateMixStreamRequest.h
+	include/alibabacloud/live/model/UpdateMixStreamResult.h )
 
 set(live_src 
 	src/LiveClient.cc
@@ -456,6 +470,8 @@ set(live_src
 	src/model/AddLiveDomainResult.cc
 	src/model/AddLiveDomainMappingRequest.cc
 	src/model/AddLiveDomainMappingResult.cc
+	src/model/AddLiveDomainPlayMappingRequest.cc
+	src/model/AddLiveDomainPlayMappingResult.cc
 	src/model/AddLivePullStreamInfoConfigRequest.cc
 	src/model/AddLivePullStreamInfoConfigResult.cc
 	src/model/AddLiveRecordNotifyConfigRequest.cc
@@ -498,6 +514,8 @@ set(live_src
 	src/model/CreateLiveRealTimeLogDeliveryResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
+	src/model/CreateMixStreamRequest.cc
+	src/model/CreateMixStreamResult.cc
 	src/model/CreateRoomRequest.cc
 	src/model/CreateRoomResult.cc
 	src/model/DeleteBoardRequest.cc
@@ -552,6 +570,8 @@ set(live_src
 	src/model/DeleteLiveStreamTranscodeResult.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigResult.cc
+	src/model/DeleteMixStreamRequest.cc
+	src/model/DeleteMixStreamResult.cc
 	src/model/DeleteRoomRequest.cc
 	src/model/DeleteRoomResult.cc
 	src/model/DescribeBoardEventsRequest.cc
@@ -644,6 +664,8 @@ set(live_src
 	src/model/DescribeLiveDomainTranscodeDataResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
 	src/model/DescribeLiveLazyPullStreamConfigResult.cc
+	src/model/DescribeLivePullStreamConfigRequest.cc
+	src/model/DescribeLivePullStreamConfigResult.cc
 	src/model/DescribeLiveRealtimeDeliveryAccRequest.cc
 	src/model/DescribeLiveRealtimeDeliveryAccResult.cc
 	src/model/DescribeLiveRealtimeLogAuthorizedRequest.cc
@@ -702,6 +724,8 @@ set(live_src
 	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeMixStreamListRequest.cc
+	src/model/DescribeMixStreamListResult.cc
 	src/model/DescribeRecordRequest.cc
 	src/model/DescribeRecordResult.cc
 	src/model/DescribeRecordsRequest.cc
@@ -804,6 +828,8 @@ set(live_src
 	src/model/StopLiveIndexResult.cc
 	src/model/TagLiveResourcesRequest.cc
 	src/model/TagLiveResourcesResult.cc
+	src/model/TriggerRecordRequest.cc
+	src/model/TriggerRecordResult.cc
 	src/model/UnTagLiveResourcesRequest.cc
 	src/model/UnTagLiveResourcesResult.cc
 	src/model/UpdateBoardRequest.cc
@@ -827,7 +853,9 @@ set(live_src
 	src/model/UpdateLiveSnapshotDetectPornConfigRequest.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigResult.cc
 	src/model/UpdateLiveTopLevelDomainRequest.cc
-	src/model/UpdateLiveTopLevelDomainResult.cc )
+	src/model/UpdateLiveTopLevelDomainResult.cc
+	src/model/UpdateMixStreamRequest.cc
+	src/model/UpdateMixStreamResult.cc )
 
 add_library(live ${LIB_TYPE}
 	${live_public_header}

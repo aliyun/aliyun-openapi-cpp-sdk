@@ -37,21 +37,33 @@ namespace AlibabaCloud
 
 				std::string get_Template()const;
 				void set_Template(const std::string& _template);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
+				std::string getLazy()const;
+				void setLazy(const std::string& lazy);
+				std::string getMix()const;
+				void setMix(const std::string& mix);
 				std::string getApp()const;
 				void setApp(const std::string& app);
+				std::string getWatermark()const;
+				void setWatermark(const std::string& watermark);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getDomain()const;
 				void setDomain(const std::string& domain);
+				std::string getWaterPattern()const;
+				void setWaterPattern(const std::string& waterPattern);
+				std::string getOnlyAudio()const;
+				void setOnlyAudio(const std::string& onlyAudio);
 
             private:
 				std::string _template_;
-				std::string securityToken_;
+				std::string lazy_;
+				std::string mix_;
 				std::string app_;
+				std::string watermark_;
 				long ownerId_;
 				std::string domain_;
+				std::string waterPattern_;
+				std::string onlyAudio_;
 
 			};
 		}

@@ -38,15 +38,26 @@ void AddLiveStreamTranscodeRequest::set_Template(const std::string& _template)
 	setParameter("_Template", _template);
 }
 
-std::string AddLiveStreamTranscodeRequest::getSecurityToken()const
+std::string AddLiveStreamTranscodeRequest::getLazy()const
 {
-	return securityToken_;
+	return lazy_;
 }
 
-void AddLiveStreamTranscodeRequest::setSecurityToken(const std::string& securityToken)
+void AddLiveStreamTranscodeRequest::setLazy(const std::string& lazy)
 {
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+	lazy_ = lazy;
+	setParameter("Lazy", lazy);
+}
+
+std::string AddLiveStreamTranscodeRequest::getMix()const
+{
+	return mix_;
+}
+
+void AddLiveStreamTranscodeRequest::setMix(const std::string& mix)
+{
+	mix_ = mix;
+	setParameter("Mix", mix);
 }
 
 std::string AddLiveStreamTranscodeRequest::getApp()const
@@ -58,6 +69,17 @@ void AddLiveStreamTranscodeRequest::setApp(const std::string& app)
 {
 	app_ = app;
 	setParameter("App", app);
+}
+
+std::string AddLiveStreamTranscodeRequest::getWatermark()const
+{
+	return watermark_;
+}
+
+void AddLiveStreamTranscodeRequest::setWatermark(const std::string& watermark)
+{
+	watermark_ = watermark;
+	setParameter("Watermark", watermark);
 }
 
 long AddLiveStreamTranscodeRequest::getOwnerId()const
@@ -80,5 +102,27 @@ void AddLiveStreamTranscodeRequest::setDomain(const std::string& domain)
 {
 	domain_ = domain;
 	setParameter("Domain", domain);
+}
+
+std::string AddLiveStreamTranscodeRequest::getWaterPattern()const
+{
+	return waterPattern_;
+}
+
+void AddLiveStreamTranscodeRequest::setWaterPattern(const std::string& waterPattern)
+{
+	waterPattern_ = waterPattern;
+	setParameter("WaterPattern", waterPattern);
+}
+
+std::string AddLiveStreamTranscodeRequest::getOnlyAudio()const
+{
+	return onlyAudio_;
+}
+
+void AddLiveStreamTranscodeRequest::setOnlyAudio(const std::string& onlyAudio)
+{
+	onlyAudio_ = onlyAudio;
+	setParameter("OnlyAudio", onlyAudio);
 }
 

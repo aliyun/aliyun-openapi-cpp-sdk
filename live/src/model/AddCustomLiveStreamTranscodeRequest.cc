@@ -38,6 +38,17 @@ void AddCustomLiveStreamTranscodeRequest::set_Template(const std::string& _templ
 	setParameter("_Template", _template);
 }
 
+std::string AddCustomLiveStreamTranscodeRequest::getLazy()const
+{
+	return lazy_;
+}
+
+void AddCustomLiveStreamTranscodeRequest::setLazy(const std::string& lazy)
+{
+	lazy_ = lazy;
+	setParameter("Lazy", lazy);
+}
+
 std::string AddCustomLiveStreamTranscodeRequest::getGop()const
 {
 	return gop_;

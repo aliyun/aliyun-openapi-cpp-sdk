@@ -49,6 +49,17 @@ void AddRtsLiveStreamTranscodeRequest::setDeleteBframes(bool deleteBframes)
 	setParameter("DeleteBframes", deleteBframes ? "true" : "false");
 }
 
+std::string AddRtsLiveStreamTranscodeRequest::getLazy()const
+{
+	return lazy_;
+}
+
+void AddRtsLiveStreamTranscodeRequest::setLazy(const std::string& lazy)
+{
+	lazy_ = lazy;
+	setParameter("Lazy", lazy);
+}
+
 std::string AddRtsLiveStreamTranscodeRequest::getGop()const
 {
 	return gop_;

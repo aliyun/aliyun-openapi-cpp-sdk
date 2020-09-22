@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void set_Template(const std::string& _template);
 				bool getDeleteBframes()const;
 				void setDeleteBframes(bool deleteBframes);
+				std::string getLazy()const;
+				void setLazy(const std::string& lazy);
 				std::string getGop()const;
 				void setGop(const std::string& gop);
 				bool getOpus()const;
@@ -75,6 +77,7 @@ namespace AlibabaCloud
             private:
 				std::string _template_;
 				bool deleteBframes_;
+				std::string lazy_;
 				std::string gop_;
 				bool opus_;
 				std::string audioCodec_;

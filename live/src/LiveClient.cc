@@ -31,21 +31,21 @@ LiveClient::LiveClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "live");
 }
 
 LiveClient::LiveClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "live");
 }
 
 LiveClient::LiveClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "live");
 }
 
 LiveClient::~LiveClient()
@@ -585,6 +585,42 @@ LiveClient::AddLiveDomainMappingOutcomeCallable LiveClient::addLiveDomainMapping
 			[this, request]()
 			{
 			return this->addLiveDomainMapping(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::AddLiveDomainPlayMappingOutcome LiveClient::addLiveDomainPlayMapping(const AddLiveDomainPlayMappingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveDomainPlayMappingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveDomainPlayMappingOutcome(AddLiveDomainPlayMappingResult(outcome.result()));
+	else
+		return AddLiveDomainPlayMappingOutcome(outcome.error());
+}
+
+void LiveClient::addLiveDomainPlayMappingAsync(const AddLiveDomainPlayMappingRequest& request, const AddLiveDomainPlayMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveDomainPlayMapping(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveDomainPlayMappingOutcomeCallable LiveClient::addLiveDomainPlayMappingCallable(const AddLiveDomainPlayMappingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveDomainPlayMappingOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveDomainPlayMapping(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1341,6 +1377,42 @@ LiveClient::CreateLiveStreamRecordIndexFilesOutcomeCallable LiveClient::createLi
 			[this, request]()
 			{
 			return this->createLiveStreamRecordIndexFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CreateMixStreamOutcome LiveClient::createMixStream(const CreateMixStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMixStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMixStreamOutcome(CreateMixStreamResult(outcome.result()));
+	else
+		return CreateMixStreamOutcome(outcome.error());
+}
+
+void LiveClient::createMixStreamAsync(const CreateMixStreamRequest& request, const CreateMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMixStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateMixStreamOutcomeCallable LiveClient::createMixStreamCallable(const CreateMixStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMixStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->createMixStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2313,6 +2385,42 @@ LiveClient::DeleteLiveStreamsNotifyUrlConfigOutcomeCallable LiveClient::deleteLi
 			[this, request]()
 			{
 			return this->deleteLiveStreamsNotifyUrlConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteMixStreamOutcome LiveClient::deleteMixStream(const DeleteMixStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMixStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMixStreamOutcome(DeleteMixStreamResult(outcome.result()));
+	else
+		return DeleteMixStreamOutcome(outcome.error());
+}
+
+void LiveClient::deleteMixStreamAsync(const DeleteMixStreamRequest& request, const DeleteMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMixStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteMixStreamOutcomeCallable LiveClient::deleteMixStreamCallable(const DeleteMixStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMixStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMixStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3975,6 +4083,42 @@ LiveClient::DescribeLiveLazyPullStreamConfigOutcomeCallable LiveClient::describe
 	return task->get_future();
 }
 
+LiveClient::DescribeLivePullStreamConfigOutcome LiveClient::describeLivePullStreamConfig(const DescribeLivePullStreamConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLivePullStreamConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLivePullStreamConfigOutcome(DescribeLivePullStreamConfigResult(outcome.result()));
+	else
+		return DescribeLivePullStreamConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLivePullStreamConfigAsync(const DescribeLivePullStreamConfigRequest& request, const DescribeLivePullStreamConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLivePullStreamConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLivePullStreamConfigOutcomeCallable LiveClient::describeLivePullStreamConfigCallable(const DescribeLivePullStreamConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLivePullStreamConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLivePullStreamConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveRealtimeDeliveryAccOutcome LiveClient::describeLiveRealtimeDeliveryAcc(const DescribeLiveRealtimeDeliveryAccRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5013,6 +5157,42 @@ LiveClient::DescribeLiveUserTagsOutcomeCallable LiveClient::describeLiveUserTags
 			[this, request]()
 			{
 			return this->describeLiveUserTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeMixStreamListOutcome LiveClient::describeMixStreamList(const DescribeMixStreamListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMixStreamListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMixStreamListOutcome(DescribeMixStreamListResult(outcome.result()));
+	else
+		return DescribeMixStreamListOutcome(outcome.error());
+}
+
+void LiveClient::describeMixStreamListAsync(const DescribeMixStreamListRequest& request, const DescribeMixStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMixStreamList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeMixStreamListOutcomeCallable LiveClient::describeMixStreamListCallable(const DescribeMixStreamListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMixStreamListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMixStreamList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6855,6 +7035,42 @@ LiveClient::TagLiveResourcesOutcomeCallable LiveClient::tagLiveResourcesCallable
 	return task->get_future();
 }
 
+LiveClient::TriggerRecordOutcome LiveClient::triggerRecord(const TriggerRecordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TriggerRecordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TriggerRecordOutcome(TriggerRecordResult(outcome.result()));
+	else
+		return TriggerRecordOutcome(outcome.error());
+}
+
+void LiveClient::triggerRecordAsync(const TriggerRecordRequest& request, const TriggerRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, triggerRecord(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::TriggerRecordOutcomeCallable LiveClient::triggerRecordCallable(const TriggerRecordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TriggerRecordOutcome()>>(
+			[this, request]()
+			{
+			return this->triggerRecord(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::UnTagLiveResourcesOutcome LiveClient::unTagLiveResources(const UnTagLiveResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7281,6 +7497,42 @@ LiveClient::UpdateLiveTopLevelDomainOutcomeCallable LiveClient::updateLiveTopLev
 			[this, request]()
 			{
 			return this->updateLiveTopLevelDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateMixStreamOutcome LiveClient::updateMixStream(const UpdateMixStreamRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMixStreamOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMixStreamOutcome(UpdateMixStreamResult(outcome.result()));
+	else
+		return UpdateMixStreamOutcome(outcome.error());
+}
+
+void LiveClient::updateMixStreamAsync(const UpdateMixStreamRequest& request, const UpdateMixStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMixStream(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateMixStreamOutcomeCallable LiveClient::updateMixStreamCallable(const UpdateMixStreamRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMixStreamOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMixStream(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
