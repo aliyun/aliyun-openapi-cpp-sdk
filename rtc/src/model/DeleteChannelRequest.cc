@@ -27,6 +27,17 @@ DeleteChannelRequest::DeleteChannelRequest() :
 DeleteChannelRequest::~DeleteChannelRequest()
 {}
 
+std::string DeleteChannelRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DeleteChannelRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DeleteChannelRequest::getOwnerId()const
 {
 	return ownerId_;

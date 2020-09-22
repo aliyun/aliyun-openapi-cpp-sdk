@@ -52,6 +52,8 @@ namespace AlibabaCloud
 				void setLayoutIds(const std::vector<long>& layoutIds);
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
@@ -63,6 +65,7 @@ namespace AlibabaCloud
 				int cropMode_;
 				std::vector<long> layoutIds_;
 				std::string taskId_;
+				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
 

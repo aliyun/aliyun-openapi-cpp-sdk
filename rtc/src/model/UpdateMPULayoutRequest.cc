@@ -90,6 +90,17 @@ void UpdateMPULayoutRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::string UpdateMPULayoutRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void UpdateMPULayoutRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long UpdateMPULayoutRequest::getOwnerId()const
 {
 	return ownerId_;

@@ -71,6 +71,17 @@ void ModifyConferenceRequest::setConferenceName(const std::string& conferenceNam
 	setParameter("ConferenceName", conferenceName);
 }
 
+std::string ModifyConferenceRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void ModifyConferenceRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long ModifyConferenceRequest::getOwnerId()const
 {
 	return ownerId_;

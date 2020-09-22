@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setMaxUserNum(int maxUserNum);
 				int getDuration()const;
 				void setDuration(int duration);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				std::string getTopics()const;
 				void setTopics(const std::string& topics);
 				long getOwnerId()const;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				int startTime_;
 				int maxUserNum_;
 				int duration_;
+				std::string showLog_;
 				std::string topics_;
 				long ownerId_;
 				std::string priority_;

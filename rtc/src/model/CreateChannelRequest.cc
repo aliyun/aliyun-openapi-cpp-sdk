@@ -27,6 +27,17 @@ CreateChannelRequest::CreateChannelRequest() :
 CreateChannelRequest::~CreateChannelRequest()
 {}
 
+std::string CreateChannelRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void CreateChannelRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long CreateChannelRequest::getOwnerId()const
 {
 	return ownerId_;

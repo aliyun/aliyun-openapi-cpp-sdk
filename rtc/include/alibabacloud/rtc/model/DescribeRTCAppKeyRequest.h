@@ -35,12 +35,15 @@ namespace AlibabaCloud
 				DescribeRTCAppKeyRequest();
 				~DescribeRTCAppKeyRequest();
 
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
+				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
 

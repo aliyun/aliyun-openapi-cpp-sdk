@@ -49,6 +49,17 @@ void DescribeRtcDurationDataRequest::setServiceArea(const std::string& serviceAr
 	setParameter("ServiceArea", serviceArea);
 }
 
+std::string DescribeRtcDurationDataRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcDurationDataRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string DescribeRtcDurationDataRequest::getEndTime()const
 {
 	return endTime_;

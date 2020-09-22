@@ -49,6 +49,17 @@ void DescribeRtcPeakUserCntDataRequest::setServiceArea(const std::string& servic
 	setParameter("ServiceArea", serviceArea);
 }
 
+std::string DescribeRtcPeakUserCntDataRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcPeakUserCntDataRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string DescribeRtcPeakUserCntDataRequest::getEndTime()const
 {
 	return endTime_;

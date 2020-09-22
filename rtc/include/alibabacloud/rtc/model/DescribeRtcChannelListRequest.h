@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setServiceArea(const std::string& serviceArea);
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getPageNo()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string userId_;
 				std::string serviceArea_;
 				long pageSize_;
+				std::string showLog_;
 				long ownerId_;
 				long pageNo_;
 				std::string appId_;

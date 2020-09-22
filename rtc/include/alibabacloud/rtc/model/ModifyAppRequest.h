@@ -35,16 +35,19 @@ namespace AlibabaCloud
 				ModifyAppRequest();
 				~ModifyAppRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getAppName()const;
 				void setAppName(const std::string& appName);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
-				long ownerId_;
 				std::string appName_;
+				std::string showLog_;
+				long ownerId_;
 				std::string appId_;
 
 			};

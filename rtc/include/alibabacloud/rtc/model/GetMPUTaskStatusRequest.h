@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getTaskId()const;
 				void setTaskId(const std::string& taskId);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
@@ -44,6 +46,7 @@ namespace AlibabaCloud
 
             private:
 				std::string taskId_;
+				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
 

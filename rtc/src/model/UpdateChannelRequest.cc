@@ -27,6 +27,17 @@ UpdateChannelRequest::UpdateChannelRequest() :
 UpdateChannelRequest::~UpdateChannelRequest()
 {}
 
+std::string UpdateChannelRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void UpdateChannelRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long UpdateChannelRequest::getOwnerId()const
 {
 	return ownerId_;

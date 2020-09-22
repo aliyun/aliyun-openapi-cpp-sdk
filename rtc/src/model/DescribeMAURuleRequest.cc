@@ -27,6 +27,17 @@ DescribeMAURuleRequest::DescribeMAURuleRequest() :
 DescribeMAURuleRequest::~DescribeMAURuleRequest()
 {}
 
+std::string DescribeMAURuleRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeMAURuleRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeMAURuleRequest::getOwnerId()const
 {
 	return ownerId_;

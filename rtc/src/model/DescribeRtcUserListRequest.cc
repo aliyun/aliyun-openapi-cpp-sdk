@@ -38,6 +38,28 @@ void DescribeRtcUserListRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeRtcUserListRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcUserListRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
+std::string DescribeRtcUserListRequest::getSubUser()const
+{
+	return subUser_;
+}
+
+void DescribeRtcUserListRequest::setSubUser(const std::string& subUser)
+{
+	subUser_ = subUser;
+	setParameter("SubUser", subUser);
+}
+
 std::string DescribeRtcUserListRequest::getEndTime()const
 {
 	return endTime_;
@@ -58,6 +80,17 @@ void DescribeRtcUserListRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeRtcUserListRequest::getPubUser()const
+{
+	return pubUser_;
+}
+
+void DescribeRtcUserListRequest::setPubUser(const std::string& pubUser)
+{
+	pubUser_ = pubUser;
+	setParameter("PubUser", pubUser);
 }
 
 std::string DescribeRtcUserListRequest::getAppId()const

@@ -60,6 +60,17 @@ void ReceiveNotifyRequest::setEvent(const std::string& event)
 	setParameter("Event", event);
 }
 
+std::string ReceiveNotifyRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void ReceiveNotifyRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long ReceiveNotifyRequest::getOwnerId()const
 {
 	return ownerId_;

@@ -60,6 +60,17 @@ void SetChannelPropertyRequest::setDuration(int duration)
 	setParameter("Duration", std::to_string(duration));
 }
 
+std::string SetChannelPropertyRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void SetChannelPropertyRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string SetChannelPropertyRequest::getTopics()const
 {
 	return topics_;

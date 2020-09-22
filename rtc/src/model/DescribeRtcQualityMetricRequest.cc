@@ -38,6 +38,17 @@ void DescribeRtcQualityMetricRequest::setStartTime(const std::string& startTime)
 	setParameter("StartTime", startTime);
 }
 
+std::string DescribeRtcQualityMetricRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcQualityMetricRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string DescribeRtcQualityMetricRequest::getSubUser()const
 {
 	return subUser_;

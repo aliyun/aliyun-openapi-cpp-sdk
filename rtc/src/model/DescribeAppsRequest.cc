@@ -49,6 +49,17 @@ void DescribeAppsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeAppsRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeAppsRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string DescribeAppsRequest::getOrder()const
 {
 	return order_;

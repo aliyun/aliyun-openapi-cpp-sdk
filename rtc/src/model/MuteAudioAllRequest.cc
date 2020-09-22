@@ -38,6 +38,17 @@ void MuteAudioAllRequest::setConferenceId(const std::string& conferenceId)
 	setParameter("ConferenceId", conferenceId);
 }
 
+std::string MuteAudioAllRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void MuteAudioAllRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long MuteAudioAllRequest::getOwnerId()const
 {
 	return ownerId_;

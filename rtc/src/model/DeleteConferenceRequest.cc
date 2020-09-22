@@ -38,6 +38,17 @@ void DeleteConferenceRequest::setConferenceId(const std::string& conferenceId)
 	setParameter("ConferenceId", conferenceId);
 }
 
+std::string DeleteConferenceRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DeleteConferenceRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DeleteConferenceRequest::getOwnerId()const
 {
 	return ownerId_;

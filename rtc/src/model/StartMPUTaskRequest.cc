@@ -27,6 +27,17 @@ StartMPUTaskRequest::StartMPUTaskRequest() :
 StartMPUTaskRequest::~StartMPUTaskRequest()
 {}
 
+int StartMPUTaskRequest::getPayloadType()const
+{
+	return payloadType_;
+}
+
+void StartMPUTaskRequest::setPayloadType(int payloadType)
+{
+	payloadType_ = payloadType;
+	setParameter("PayloadType", std::to_string(payloadType));
+}
+
 std::vector<StartMPUTaskRequest::UserPanes> StartMPUTaskRequest::getUserPanes()const
 {
 	return userPanes_;
@@ -42,6 +53,17 @@ void StartMPUTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 		setParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
 		setParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
 	}
+}
+
+int StartMPUTaskRequest::getRtpExtInfo()const
+{
+	return rtpExtInfo_;
+}
+
+void StartMPUTaskRequest::setRtpExtInfo(int rtpExtInfo)
+{
+	rtpExtInfo_ = rtpExtInfo;
+	setParameter("RtpExtInfo", std::to_string(rtpExtInfo));
 }
 
 int StartMPUTaskRequest::getBackgroundColor()const
@@ -64,6 +86,17 @@ void StartMPUTaskRequest::setCropMode(int cropMode)
 {
 	cropMode_ = cropMode;
 	setParameter("CropMode", std::to_string(cropMode));
+}
+
+int StartMPUTaskRequest::getReportVad()const
+{
+	return reportVad_;
+}
+
+void StartMPUTaskRequest::setReportVad(int reportVad)
+{
+	reportVad_ = reportVad;
+	setParameter("ReportVad", std::to_string(reportVad));
 }
 
 std::string StartMPUTaskRequest::getTaskProfile()const
@@ -101,6 +134,17 @@ void StartMPUTaskRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::string StartMPUTaskRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void StartMPUTaskRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string StartMPUTaskRequest::getStreamURL()const
 {
 	return streamURL_;
@@ -110,6 +154,17 @@ void StartMPUTaskRequest::setStreamURL(const std::string& streamURL)
 {
 	streamURL_ = streamURL;
 	setParameter("StreamURL", streamURL);
+}
+
+long StartMPUTaskRequest::getVadInterval()const
+{
+	return vadInterval_;
+}
+
+void StartMPUTaskRequest::setVadInterval(long vadInterval)
+{
+	vadInterval_ = vadInterval;
+	setParameter("VadInterval", std::to_string(vadInterval));
 }
 
 long StartMPUTaskRequest::getOwnerId()const
@@ -145,6 +200,17 @@ void StartMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+long StartMPUTaskRequest::getTimeStampRef()const
+{
+	return timeStampRef_;
+}
+
+void StartMPUTaskRequest::setTimeStampRef(long timeStampRef)
+{
+	timeStampRef_ = timeStampRef;
+	setParameter("TimeStampRef", std::to_string(timeStampRef));
 }
 
 int StartMPUTaskRequest::getMediaEncode()const

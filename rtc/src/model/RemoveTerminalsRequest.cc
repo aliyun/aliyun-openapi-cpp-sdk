@@ -40,6 +40,17 @@ void RemoveTerminalsRequest::setTerminalIds(const std::vector<std::string>& term
 	}
 }
 
+std::string RemoveTerminalsRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void RemoveTerminalsRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long RemoveTerminalsRequest::getOwnerId()const
 {
 	return ownerId_;

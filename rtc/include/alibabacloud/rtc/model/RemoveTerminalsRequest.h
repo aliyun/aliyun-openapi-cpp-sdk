@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::vector<std::string> getTerminalIds()const;
 				void setTerminalIds(const std::vector<std::string>& terminalIds);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::vector<std::string> terminalIds_;
+				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
 				std::string channelId_;

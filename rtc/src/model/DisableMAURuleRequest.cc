@@ -27,6 +27,17 @@ DisableMAURuleRequest::DisableMAURuleRequest() :
 DisableMAURuleRequest::~DisableMAURuleRequest()
 {}
 
+std::string DisableMAURuleRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DisableMAURuleRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DisableMAURuleRequest::getOwnerId()const
 {
 	return ownerId_;

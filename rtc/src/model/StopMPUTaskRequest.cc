@@ -27,6 +27,28 @@ StopMPUTaskRequest::StopMPUTaskRequest() :
 StopMPUTaskRequest::~StopMPUTaskRequest()
 {}
 
+std::string StopMPUTaskRequest::getTaskId()const
+{
+	return taskId_;
+}
+
+void StopMPUTaskRequest::setTaskId(const std::string& taskId)
+{
+	taskId_ = taskId;
+	setParameter("TaskId", taskId);
+}
+
+std::string StopMPUTaskRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void StopMPUTaskRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long StopMPUTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -47,16 +69,5 @@ void StopMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
-}
-
-std::string StopMPUTaskRequest::getTaskId()const
-{
-	return taskId_;
-}
-
-void StopMPUTaskRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setParameter("TaskId", taskId);
 }
 

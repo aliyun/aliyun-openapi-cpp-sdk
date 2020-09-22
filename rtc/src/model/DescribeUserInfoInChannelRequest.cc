@@ -38,6 +38,17 @@ void DescribeUserInfoInChannelRequest::setUserId(const std::string& userId)
 	setParameter("UserId", userId);
 }
 
+std::string DescribeUserInfoInChannelRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeUserInfoInChannelRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeUserInfoInChannelRequest::getOwnerId()const
 {
 	return ownerId_;

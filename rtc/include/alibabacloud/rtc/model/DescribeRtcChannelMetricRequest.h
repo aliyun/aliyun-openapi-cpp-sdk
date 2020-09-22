@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				DescribeRtcChannelMetricRequest();
 				~DescribeRtcChannelMetricRequest();
 
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setTimePoint(const std::string& timePoint);
 
             private:
+				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
 				std::string channelId_;

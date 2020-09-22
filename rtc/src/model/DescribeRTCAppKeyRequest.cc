@@ -27,6 +27,17 @@ DescribeRTCAppKeyRequest::DescribeRTCAppKeyRequest() :
 DescribeRTCAppKeyRequest::~DescribeRTCAppKeyRequest()
 {}
 
+std::string DescribeRTCAppKeyRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRTCAppKeyRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeRTCAppKeyRequest::getOwnerId()const
 {
 	return ownerId_;

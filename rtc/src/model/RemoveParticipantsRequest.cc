@@ -51,6 +51,17 @@ void RemoveParticipantsRequest::setConferenceId(const std::string& conferenceId)
 	setParameter("ConferenceId", conferenceId);
 }
 
+std::string RemoveParticipantsRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void RemoveParticipantsRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long RemoveParticipantsRequest::getOwnerId()const
 {
 	return ownerId_;

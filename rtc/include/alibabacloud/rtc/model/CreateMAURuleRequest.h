@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setUseridPrefix(const std::string& useridPrefix);
 				std::string getChannelPrefix()const;
 				void setChannelPrefix(const std::string& channelPrefix);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getMauTemplateId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string useridPrefix_;
 				std::string channelPrefix_;
+				std::string showLog_;
 				long ownerId_;
 				long mauTemplateId_;
 				std::string appId_;

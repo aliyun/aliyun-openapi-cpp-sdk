@@ -27,6 +27,17 @@ EnableMAURuleRequest::EnableMAURuleRequest() :
 EnableMAURuleRequest::~EnableMAURuleRequest()
 {}
 
+std::string EnableMAURuleRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void EnableMAURuleRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long EnableMAURuleRequest::getOwnerId()const
 {
 	return ownerId_;

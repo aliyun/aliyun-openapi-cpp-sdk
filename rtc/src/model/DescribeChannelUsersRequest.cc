@@ -27,6 +27,17 @@ DescribeChannelUsersRequest::DescribeChannelUsersRequest() :
 DescribeChannelUsersRequest::~DescribeChannelUsersRequest()
 {}
 
+std::string DescribeChannelUsersRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeChannelUsersRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeChannelUsersRequest::getOwnerId()const
 {
 	return ownerId_;

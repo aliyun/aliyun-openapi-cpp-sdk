@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				void setContent(const std::string& content);
 				std::string getEvent()const;
 				void setEvent(const std::string& event);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getContentType()const;
@@ -52,6 +54,7 @@ namespace AlibabaCloud
 				std::string traceId_;
 				std::string content_;
 				std::string event_;
+				std::string showLog_;
 				long ownerId_;
 				std::string contentType_;
 				std::string bizId_;

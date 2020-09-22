@@ -27,6 +27,17 @@ DescribeRtcChannelMetricRequest::DescribeRtcChannelMetricRequest() :
 DescribeRtcChannelMetricRequest::~DescribeRtcChannelMetricRequest()
 {}
 
+std::string DescribeRtcChannelMetricRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcChannelMetricRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeRtcChannelMetricRequest::getOwnerId()const
 {
 	return ownerId_;

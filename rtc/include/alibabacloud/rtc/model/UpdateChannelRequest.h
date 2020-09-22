@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				UpdateChannelRequest();
 				~UpdateChannelRequest();
 
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getNonce()const;
@@ -45,6 +47,7 @@ namespace AlibabaCloud
 				void setChannelId(const std::string& channelId);
 
             private:
+				std::string showLog_;
 				long ownerId_;
 				std::string nonce_;
 				std::string appId_;

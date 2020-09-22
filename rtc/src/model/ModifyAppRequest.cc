@@ -27,17 +27,6 @@ ModifyAppRequest::ModifyAppRequest() :
 ModifyAppRequest::~ModifyAppRequest()
 {}
 
-long ModifyAppRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void ModifyAppRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string ModifyAppRequest::getAppName()const
 {
 	return appName_;
@@ -47,6 +36,28 @@ void ModifyAppRequest::setAppName(const std::string& appName)
 {
 	appName_ = appName;
 	setParameter("AppName", appName);
+}
+
+std::string ModifyAppRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void ModifyAppRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
+long ModifyAppRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void ModifyAppRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string ModifyAppRequest::getAppId()const

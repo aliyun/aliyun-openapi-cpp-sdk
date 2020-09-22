@@ -27,6 +27,17 @@ DeleteMAURuleRequest::DeleteMAURuleRequest() :
 DeleteMAURuleRequest::~DeleteMAURuleRequest()
 {}
 
+std::string DeleteMAURuleRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DeleteMAURuleRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DeleteMAURuleRequest::getOwnerId()const
 {
 	return ownerId_;

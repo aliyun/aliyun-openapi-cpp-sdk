@@ -27,17 +27,6 @@ DescribeConferenceAuthInfoRequest::DescribeConferenceAuthInfoRequest() :
 DescribeConferenceAuthInfoRequest::~DescribeConferenceAuthInfoRequest()
 {}
 
-long DescribeConferenceAuthInfoRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeConferenceAuthInfoRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
-}
-
 std::string DescribeConferenceAuthInfoRequest::getConferenceId()const
 {
 	return conferenceId_;
@@ -47,6 +36,28 @@ void DescribeConferenceAuthInfoRequest::setConferenceId(const std::string& confe
 {
 	conferenceId_ = conferenceId;
 	setParameter("ConferenceId", conferenceId);
+}
+
+std::string DescribeConferenceAuthInfoRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeConferenceAuthInfoRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
+long DescribeConferenceAuthInfoRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribeConferenceAuthInfoRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
 std::string DescribeConferenceAuthInfoRequest::getAppId()const

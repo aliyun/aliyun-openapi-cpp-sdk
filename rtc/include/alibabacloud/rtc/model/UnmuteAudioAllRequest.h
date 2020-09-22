@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				std::string getConferenceId()const;
 				void setConferenceId(const std::string& conferenceId);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getParticipantId()const;
@@ -46,6 +48,7 @@ namespace AlibabaCloud
 
             private:
 				std::string conferenceId_;
+				std::string showLog_;
 				long ownerId_;
 				std::string participantId_;
 				std::string appId_;

@@ -49,6 +49,17 @@ void DescribeChannelParticipantsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeChannelParticipantsRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeChannelParticipantsRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 std::string DescribeChannelParticipantsRequest::getOrder()const
 {
 	return order_;

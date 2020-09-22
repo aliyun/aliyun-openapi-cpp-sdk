@@ -37,10 +37,16 @@ namespace AlibabaCloud
 
 				std::string getStartTime()const;
 				void setStartTime(const std::string& startTime);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
+				std::string getSubUser()const;
+				void setSubUser(const std::string& subUser);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
+				std::string getPubUser()const;
+				void setPubUser(const std::string& pubUser);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 				std::string getChannelId()const;
@@ -48,8 +54,11 @@ namespace AlibabaCloud
 
             private:
 				std::string startTime_;
+				std::string showLog_;
+				std::string subUser_;
 				std::string endTime_;
 				long ownerId_;
+				std::string pubUser_;
 				std::string appId_;
 				std::string channelId_;
 

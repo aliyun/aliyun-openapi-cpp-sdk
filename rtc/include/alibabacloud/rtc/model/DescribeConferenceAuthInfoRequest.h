@@ -35,16 +35,19 @@ namespace AlibabaCloud
 				DescribeConferenceAuthInfoRequest();
 				~DescribeConferenceAuthInfoRequest();
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 				std::string getConferenceId()const;
 				void setConferenceId(const std::string& conferenceId);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
 
             private:
-				long ownerId_;
 				std::string conferenceId_;
+				std::string showLog_;
+				long ownerId_;
 				std::string appId_;
 
 			};

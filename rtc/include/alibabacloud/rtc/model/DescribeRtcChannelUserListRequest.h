@@ -37,6 +37,8 @@ namespace AlibabaCloud
 
 				long getPageSize()const;
 				void setPageSize(long pageSize);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				long getPageNo()const;
@@ -50,6 +52,7 @@ namespace AlibabaCloud
 
             private:
 				long pageSize_;
+				std::string showLog_;
 				long ownerId_;
 				long pageNo_;
 				std::string appId_;

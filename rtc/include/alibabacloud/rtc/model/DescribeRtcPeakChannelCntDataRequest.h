@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setStartTime(const std::string& startTime);
 				std::string getServiceArea()const;
 				void setServiceArea(const std::string& serviceArea);
+				std::string getShowLog()const;
+				void setShowLog(const std::string& showLog);
 				std::string getEndTime()const;
 				void setEndTime(const std::string& endTime);
 				long getOwnerId()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string startTime_;
 				std::string serviceArea_;
+				std::string showLog_;
 				std::string endTime_;
 				long ownerId_;
 				std::string appId_;

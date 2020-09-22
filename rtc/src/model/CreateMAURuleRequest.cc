@@ -49,6 +49,17 @@ void CreateMAURuleRequest::setChannelPrefix(const std::string& channelPrefix)
 	setParameter("ChannelPrefix", channelPrefix);
 }
 
+std::string CreateMAURuleRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void CreateMAURuleRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long CreateMAURuleRequest::getOwnerId()const
 {
 	return ownerId_;

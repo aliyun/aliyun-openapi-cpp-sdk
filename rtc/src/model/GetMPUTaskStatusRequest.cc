@@ -38,6 +38,17 @@ void GetMPUTaskStatusRequest::setTaskId(const std::string& taskId)
 	setParameter("TaskId", taskId);
 }
 
+std::string GetMPUTaskStatusRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void GetMPUTaskStatusRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long GetMPUTaskStatusRequest::getOwnerId()const
 {
 	return ownerId_;

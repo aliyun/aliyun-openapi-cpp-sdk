@@ -38,6 +38,17 @@ void DescribeRtcChannelUserListRequest::setPageSize(long pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string DescribeRtcChannelUserListRequest::getShowLog()const
+{
+	return showLog_;
+}
+
+void DescribeRtcChannelUserListRequest::setShowLog(const std::string& showLog)
+{
+	showLog_ = showLog;
+	setParameter("ShowLog", showLog);
+}
+
 long DescribeRtcChannelUserListRequest::getOwnerId()const
 {
 	return ownerId_;
