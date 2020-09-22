@@ -1,0 +1,554 @@
+#
+# Copyright 2009-2017 Alibaba Cloud All rights reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+set(public_header_dir ${CMAKE_CURRENT_SOURCE_DIR}/../include)
+
+set(vs_public_header 
+	include/alibabacloud/vs/VsClient.h
+	include/alibabacloud/vs/VsExport.h )
+
+set(vs_public_header_model 
+	include/alibabacloud/vs/model/AddVsPullStreamInfoConfigRequest.h
+	include/alibabacloud/vs/model/AddVsPullStreamInfoConfigResult.h
+	include/alibabacloud/vs/model/BatchBindDirectoriesRequest.h
+	include/alibabacloud/vs/model/BatchBindDirectoriesResult.h
+	include/alibabacloud/vs/model/BatchBindParentPlatformDevicesRequest.h
+	include/alibabacloud/vs/model/BatchBindParentPlatformDevicesResult.h
+	include/alibabacloud/vs/model/BatchBindPurchasedDevicesRequest.h
+	include/alibabacloud/vs/model/BatchBindPurchasedDevicesResult.h
+	include/alibabacloud/vs/model/BatchBindTemplateRequest.h
+	include/alibabacloud/vs/model/BatchBindTemplateResult.h
+	include/alibabacloud/vs/model/BatchBindTemplatesRequest.h
+	include/alibabacloud/vs/model/BatchBindTemplatesResult.h
+	include/alibabacloud/vs/model/BatchDeleteDevicesRequest.h
+	include/alibabacloud/vs/model/BatchDeleteDevicesResult.h
+	include/alibabacloud/vs/model/BatchDeleteVsDomainConfigsRequest.h
+	include/alibabacloud/vs/model/BatchDeleteVsDomainConfigsResult.h
+	include/alibabacloud/vs/model/BatchForbidVsStreamRequest.h
+	include/alibabacloud/vs/model/BatchForbidVsStreamResult.h
+	include/alibabacloud/vs/model/BatchResumeVsStreamRequest.h
+	include/alibabacloud/vs/model/BatchResumeVsStreamResult.h
+	include/alibabacloud/vs/model/BatchSetVsDomainConfigsRequest.h
+	include/alibabacloud/vs/model/BatchSetVsDomainConfigsResult.h
+	include/alibabacloud/vs/model/BatchStartDevicesRequest.h
+	include/alibabacloud/vs/model/BatchStartDevicesResult.h
+	include/alibabacloud/vs/model/BatchStartStreamsRequest.h
+	include/alibabacloud/vs/model/BatchStartStreamsResult.h
+	include/alibabacloud/vs/model/BatchStopDevicesRequest.h
+	include/alibabacloud/vs/model/BatchStopDevicesResult.h
+	include/alibabacloud/vs/model/BatchStopStreamsRequest.h
+	include/alibabacloud/vs/model/BatchStopStreamsResult.h
+	include/alibabacloud/vs/model/BatchUnbindDirectoriesRequest.h
+	include/alibabacloud/vs/model/BatchUnbindDirectoriesResult.h
+	include/alibabacloud/vs/model/BatchUnbindParentPlatformDevicesRequest.h
+	include/alibabacloud/vs/model/BatchUnbindParentPlatformDevicesResult.h
+	include/alibabacloud/vs/model/BatchUnbindPurchasedDevicesRequest.h
+	include/alibabacloud/vs/model/BatchUnbindPurchasedDevicesResult.h
+	include/alibabacloud/vs/model/BatchUnbindTemplateRequest.h
+	include/alibabacloud/vs/model/BatchUnbindTemplateResult.h
+	include/alibabacloud/vs/model/BatchUnbindTemplatesRequest.h
+	include/alibabacloud/vs/model/BatchUnbindTemplatesResult.h
+	include/alibabacloud/vs/model/BindDirectoryRequest.h
+	include/alibabacloud/vs/model/BindDirectoryResult.h
+	include/alibabacloud/vs/model/BindParentPlatformDeviceRequest.h
+	include/alibabacloud/vs/model/BindParentPlatformDeviceResult.h
+	include/alibabacloud/vs/model/BindPurchasedDeviceRequest.h
+	include/alibabacloud/vs/model/BindPurchasedDeviceResult.h
+	include/alibabacloud/vs/model/BindTemplateRequest.h
+	include/alibabacloud/vs/model/BindTemplateResult.h
+	include/alibabacloud/vs/model/ContinuousAdjustRequest.h
+	include/alibabacloud/vs/model/ContinuousAdjustResult.h
+	include/alibabacloud/vs/model/ContinuousMoveRequest.h
+	include/alibabacloud/vs/model/ContinuousMoveResult.h
+	include/alibabacloud/vs/model/CreateDeviceRequest.h
+	include/alibabacloud/vs/model/CreateDeviceResult.h
+	include/alibabacloud/vs/model/CreateDeviceAlarmRequest.h
+	include/alibabacloud/vs/model/CreateDeviceAlarmResult.h
+	include/alibabacloud/vs/model/CreateDirectoryRequest.h
+	include/alibabacloud/vs/model/CreateDirectoryResult.h
+	include/alibabacloud/vs/model/CreateGroupRequest.h
+	include/alibabacloud/vs/model/CreateGroupResult.h
+	include/alibabacloud/vs/model/CreateParentPlatformRequest.h
+	include/alibabacloud/vs/model/CreateParentPlatformResult.h
+	include/alibabacloud/vs/model/CreateStreamSnapshotRequest.h
+	include/alibabacloud/vs/model/CreateStreamSnapshotResult.h
+	include/alibabacloud/vs/model/CreateTemplateRequest.h
+	include/alibabacloud/vs/model/CreateTemplateResult.h
+	include/alibabacloud/vs/model/DeleteDeviceRequest.h
+	include/alibabacloud/vs/model/DeleteDeviceResult.h
+	include/alibabacloud/vs/model/DeleteDirectoryRequest.h
+	include/alibabacloud/vs/model/DeleteDirectoryResult.h
+	include/alibabacloud/vs/model/DeleteGroupRequest.h
+	include/alibabacloud/vs/model/DeleteGroupResult.h
+	include/alibabacloud/vs/model/DeleteParentPlatformRequest.h
+	include/alibabacloud/vs/model/DeleteParentPlatformResult.h
+	include/alibabacloud/vs/model/DeletePresetRequest.h
+	include/alibabacloud/vs/model/DeletePresetResult.h
+	include/alibabacloud/vs/model/DeleteTemplateRequest.h
+	include/alibabacloud/vs/model/DeleteTemplateResult.h
+	include/alibabacloud/vs/model/DeleteVsPullStreamInfoConfigRequest.h
+	include/alibabacloud/vs/model/DeleteVsPullStreamInfoConfigResult.h
+	include/alibabacloud/vs/model/DeleteVsStreamsNotifyUrlConfigRequest.h
+	include/alibabacloud/vs/model/DeleteVsStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/vs/model/DescribeAccountStatRequest.h
+	include/alibabacloud/vs/model/DescribeAccountStatResult.h
+	include/alibabacloud/vs/model/DescribeDeviceRequest.h
+	include/alibabacloud/vs/model/DescribeDeviceResult.h
+	include/alibabacloud/vs/model/DescribeDeviceChannelsRequest.h
+	include/alibabacloud/vs/model/DescribeDeviceChannelsResult.h
+	include/alibabacloud/vs/model/DescribeDeviceGatewayRequest.h
+	include/alibabacloud/vs/model/DescribeDeviceGatewayResult.h
+	include/alibabacloud/vs/model/DescribeDeviceURLRequest.h
+	include/alibabacloud/vs/model/DescribeDeviceURLResult.h
+	include/alibabacloud/vs/model/DescribeDevicesRequest.h
+	include/alibabacloud/vs/model/DescribeDevicesResult.h
+	include/alibabacloud/vs/model/DescribeDirectoriesRequest.h
+	include/alibabacloud/vs/model/DescribeDirectoriesResult.h
+	include/alibabacloud/vs/model/DescribeDirectoryRequest.h
+	include/alibabacloud/vs/model/DescribeDirectoryResult.h
+	include/alibabacloud/vs/model/DescribeGroupRequest.h
+	include/alibabacloud/vs/model/DescribeGroupResult.h
+	include/alibabacloud/vs/model/DescribeGroupsRequest.h
+	include/alibabacloud/vs/model/DescribeGroupsResult.h
+	include/alibabacloud/vs/model/DescribeParentPlatformRequest.h
+	include/alibabacloud/vs/model/DescribeParentPlatformResult.h
+	include/alibabacloud/vs/model/DescribeParentPlatformDevicesRequest.h
+	include/alibabacloud/vs/model/DescribeParentPlatformDevicesResult.h
+	include/alibabacloud/vs/model/DescribeParentPlatformsRequest.h
+	include/alibabacloud/vs/model/DescribeParentPlatformsResult.h
+	include/alibabacloud/vs/model/DescribePresetsRequest.h
+	include/alibabacloud/vs/model/DescribePresetsResult.h
+	include/alibabacloud/vs/model/DescribePurchasedDeviceRequest.h
+	include/alibabacloud/vs/model/DescribePurchasedDeviceResult.h
+	include/alibabacloud/vs/model/DescribePurchasedDevicesRequest.h
+	include/alibabacloud/vs/model/DescribePurchasedDevicesResult.h
+	include/alibabacloud/vs/model/DescribeRecordsRequest.h
+	include/alibabacloud/vs/model/DescribeRecordsResult.h
+	include/alibabacloud/vs/model/DescribeStreamRequest.h
+	include/alibabacloud/vs/model/DescribeStreamResult.h
+	include/alibabacloud/vs/model/DescribeStreamURLRequest.h
+	include/alibabacloud/vs/model/DescribeStreamURLResult.h
+	include/alibabacloud/vs/model/DescribeStreamVodListRequest.h
+	include/alibabacloud/vs/model/DescribeStreamVodListResult.h
+	include/alibabacloud/vs/model/DescribeStreamsRequest.h
+	include/alibabacloud/vs/model/DescribeStreamsResult.h
+	include/alibabacloud/vs/model/DescribeTemplateRequest.h
+	include/alibabacloud/vs/model/DescribeTemplateResult.h
+	include/alibabacloud/vs/model/DescribeTemplatesRequest.h
+	include/alibabacloud/vs/model/DescribeTemplatesResult.h
+	include/alibabacloud/vs/model/DescribeVodStreamURLRequest.h
+	include/alibabacloud/vs/model/DescribeVodStreamURLResult.h
+	include/alibabacloud/vs/model/DescribeVsCertificateDetailRequest.h
+	include/alibabacloud/vs/model/DescribeVsCertificateDetailResult.h
+	include/alibabacloud/vs/model/DescribeVsCertificateListRequest.h
+	include/alibabacloud/vs/model/DescribeVsCertificateListResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainBpsDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainBpsDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainCertificateInfoRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainCertificateInfoResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainConfigsRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainConfigsResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainDetailRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainDetailResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainPvDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainPvDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainRecordDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainRecordDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainRegionDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainRegionDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainReqBpsDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainReqBpsDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainReqTrafficDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainReqTrafficDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainSnapshotDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainSnapshotDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainTrafficDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainTrafficDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainUvDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainUvDataResult.h
+	include/alibabacloud/vs/model/DescribeVsPullStreamInfoConfigRequest.h
+	include/alibabacloud/vs/model/DescribeVsPullStreamInfoConfigResult.h
+	include/alibabacloud/vs/model/DescribeVsStreamsNotifyUrlConfigRequest.h
+	include/alibabacloud/vs/model/DescribeVsStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/vs/model/DescribeVsStreamsOnlineListRequest.h
+	include/alibabacloud/vs/model/DescribeVsStreamsOnlineListResult.h
+	include/alibabacloud/vs/model/DescribeVsStreamsPublishListRequest.h
+	include/alibabacloud/vs/model/DescribeVsStreamsPublishListResult.h
+	include/alibabacloud/vs/model/DescribeVsTopDomainsByFlowRequest.h
+	include/alibabacloud/vs/model/DescribeVsTopDomainsByFlowResult.h
+	include/alibabacloud/vs/model/DescribeVsUpPeakPublishStreamDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsUpPeakPublishStreamDataResult.h
+	include/alibabacloud/vs/model/DescribeVsUserResourcePackageRequest.h
+	include/alibabacloud/vs/model/DescribeVsUserResourcePackageResult.h
+	include/alibabacloud/vs/model/ForbidVsStreamRequest.h
+	include/alibabacloud/vs/model/ForbidVsStreamResult.h
+	include/alibabacloud/vs/model/GotoPresetRequest.h
+	include/alibabacloud/vs/model/GotoPresetResult.h
+	include/alibabacloud/vs/model/ModifyDeviceRequest.h
+	include/alibabacloud/vs/model/ModifyDeviceResult.h
+	include/alibabacloud/vs/model/ModifyDeviceAlarmRequest.h
+	include/alibabacloud/vs/model/ModifyDeviceAlarmResult.h
+	include/alibabacloud/vs/model/ModifyDeviceCaptureRequest.h
+	include/alibabacloud/vs/model/ModifyDeviceCaptureResult.h
+	include/alibabacloud/vs/model/ModifyDeviceChannelsRequest.h
+	include/alibabacloud/vs/model/ModifyDeviceChannelsResult.h
+	include/alibabacloud/vs/model/ModifyDirectoryRequest.h
+	include/alibabacloud/vs/model/ModifyDirectoryResult.h
+	include/alibabacloud/vs/model/ModifyGroupRequest.h
+	include/alibabacloud/vs/model/ModifyGroupResult.h
+	include/alibabacloud/vs/model/ModifyParentPlatformRequest.h
+	include/alibabacloud/vs/model/ModifyParentPlatformResult.h
+	include/alibabacloud/vs/model/ModifyTemplateRequest.h
+	include/alibabacloud/vs/model/ModifyTemplateResult.h
+	include/alibabacloud/vs/model/ResumeVsStreamRequest.h
+	include/alibabacloud/vs/model/ResumeVsStreamResult.h
+	include/alibabacloud/vs/model/SetPresetRequest.h
+	include/alibabacloud/vs/model/SetPresetResult.h
+	include/alibabacloud/vs/model/SetVsDomainCertificateRequest.h
+	include/alibabacloud/vs/model/SetVsDomainCertificateResult.h
+	include/alibabacloud/vs/model/SetVsStreamsNotifyUrlConfigRequest.h
+	include/alibabacloud/vs/model/SetVsStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/vs/model/StartDeviceRequest.h
+	include/alibabacloud/vs/model/StartDeviceResult.h
+	include/alibabacloud/vs/model/StartParentPlatformRequest.h
+	include/alibabacloud/vs/model/StartParentPlatformResult.h
+	include/alibabacloud/vs/model/StartRecordStreamRequest.h
+	include/alibabacloud/vs/model/StartRecordStreamResult.h
+	include/alibabacloud/vs/model/StartStreamRequest.h
+	include/alibabacloud/vs/model/StartStreamResult.h
+	include/alibabacloud/vs/model/StartTransferStreamRequest.h
+	include/alibabacloud/vs/model/StartTransferStreamResult.h
+	include/alibabacloud/vs/model/StopAdjustRequest.h
+	include/alibabacloud/vs/model/StopAdjustResult.h
+	include/alibabacloud/vs/model/StopDeviceRequest.h
+	include/alibabacloud/vs/model/StopDeviceResult.h
+	include/alibabacloud/vs/model/StopMoveRequest.h
+	include/alibabacloud/vs/model/StopMoveResult.h
+	include/alibabacloud/vs/model/StopRecordStreamRequest.h
+	include/alibabacloud/vs/model/StopRecordStreamResult.h
+	include/alibabacloud/vs/model/StopStreamRequest.h
+	include/alibabacloud/vs/model/StopStreamResult.h
+	include/alibabacloud/vs/model/StopTransferStreamRequest.h
+	include/alibabacloud/vs/model/StopTransferStreamResult.h
+	include/alibabacloud/vs/model/SyncCatalogsRequest.h
+	include/alibabacloud/vs/model/SyncCatalogsResult.h
+	include/alibabacloud/vs/model/UnbindDirectoryRequest.h
+	include/alibabacloud/vs/model/UnbindDirectoryResult.h
+	include/alibabacloud/vs/model/UnbindParentPlatformDeviceRequest.h
+	include/alibabacloud/vs/model/UnbindParentPlatformDeviceResult.h
+	include/alibabacloud/vs/model/UnbindPurchasedDeviceRequest.h
+	include/alibabacloud/vs/model/UnbindPurchasedDeviceResult.h
+	include/alibabacloud/vs/model/UnbindTemplateRequest.h
+	include/alibabacloud/vs/model/UnbindTemplateResult.h
+	include/alibabacloud/vs/model/UnlockDeviceRequest.h
+	include/alibabacloud/vs/model/UnlockDeviceResult.h
+	include/alibabacloud/vs/model/UpdateVsPullStreamInfoConfigRequest.h
+	include/alibabacloud/vs/model/UpdateVsPullStreamInfoConfigResult.h )
+
+set(vs_src 
+	src/VsClient.cc
+	src/model/AddVsPullStreamInfoConfigRequest.cc
+	src/model/AddVsPullStreamInfoConfigResult.cc
+	src/model/BatchBindDirectoriesRequest.cc
+	src/model/BatchBindDirectoriesResult.cc
+	src/model/BatchBindParentPlatformDevicesRequest.cc
+	src/model/BatchBindParentPlatformDevicesResult.cc
+	src/model/BatchBindPurchasedDevicesRequest.cc
+	src/model/BatchBindPurchasedDevicesResult.cc
+	src/model/BatchBindTemplateRequest.cc
+	src/model/BatchBindTemplateResult.cc
+	src/model/BatchBindTemplatesRequest.cc
+	src/model/BatchBindTemplatesResult.cc
+	src/model/BatchDeleteDevicesRequest.cc
+	src/model/BatchDeleteDevicesResult.cc
+	src/model/BatchDeleteVsDomainConfigsRequest.cc
+	src/model/BatchDeleteVsDomainConfigsResult.cc
+	src/model/BatchForbidVsStreamRequest.cc
+	src/model/BatchForbidVsStreamResult.cc
+	src/model/BatchResumeVsStreamRequest.cc
+	src/model/BatchResumeVsStreamResult.cc
+	src/model/BatchSetVsDomainConfigsRequest.cc
+	src/model/BatchSetVsDomainConfigsResult.cc
+	src/model/BatchStartDevicesRequest.cc
+	src/model/BatchStartDevicesResult.cc
+	src/model/BatchStartStreamsRequest.cc
+	src/model/BatchStartStreamsResult.cc
+	src/model/BatchStopDevicesRequest.cc
+	src/model/BatchStopDevicesResult.cc
+	src/model/BatchStopStreamsRequest.cc
+	src/model/BatchStopStreamsResult.cc
+	src/model/BatchUnbindDirectoriesRequest.cc
+	src/model/BatchUnbindDirectoriesResult.cc
+	src/model/BatchUnbindParentPlatformDevicesRequest.cc
+	src/model/BatchUnbindParentPlatformDevicesResult.cc
+	src/model/BatchUnbindPurchasedDevicesRequest.cc
+	src/model/BatchUnbindPurchasedDevicesResult.cc
+	src/model/BatchUnbindTemplateRequest.cc
+	src/model/BatchUnbindTemplateResult.cc
+	src/model/BatchUnbindTemplatesRequest.cc
+	src/model/BatchUnbindTemplatesResult.cc
+	src/model/BindDirectoryRequest.cc
+	src/model/BindDirectoryResult.cc
+	src/model/BindParentPlatformDeviceRequest.cc
+	src/model/BindParentPlatformDeviceResult.cc
+	src/model/BindPurchasedDeviceRequest.cc
+	src/model/BindPurchasedDeviceResult.cc
+	src/model/BindTemplateRequest.cc
+	src/model/BindTemplateResult.cc
+	src/model/ContinuousAdjustRequest.cc
+	src/model/ContinuousAdjustResult.cc
+	src/model/ContinuousMoveRequest.cc
+	src/model/ContinuousMoveResult.cc
+	src/model/CreateDeviceRequest.cc
+	src/model/CreateDeviceResult.cc
+	src/model/CreateDeviceAlarmRequest.cc
+	src/model/CreateDeviceAlarmResult.cc
+	src/model/CreateDirectoryRequest.cc
+	src/model/CreateDirectoryResult.cc
+	src/model/CreateGroupRequest.cc
+	src/model/CreateGroupResult.cc
+	src/model/CreateParentPlatformRequest.cc
+	src/model/CreateParentPlatformResult.cc
+	src/model/CreateStreamSnapshotRequest.cc
+	src/model/CreateStreamSnapshotResult.cc
+	src/model/CreateTemplateRequest.cc
+	src/model/CreateTemplateResult.cc
+	src/model/DeleteDeviceRequest.cc
+	src/model/DeleteDeviceResult.cc
+	src/model/DeleteDirectoryRequest.cc
+	src/model/DeleteDirectoryResult.cc
+	src/model/DeleteGroupRequest.cc
+	src/model/DeleteGroupResult.cc
+	src/model/DeleteParentPlatformRequest.cc
+	src/model/DeleteParentPlatformResult.cc
+	src/model/DeletePresetRequest.cc
+	src/model/DeletePresetResult.cc
+	src/model/DeleteTemplateRequest.cc
+	src/model/DeleteTemplateResult.cc
+	src/model/DeleteVsPullStreamInfoConfigRequest.cc
+	src/model/DeleteVsPullStreamInfoConfigResult.cc
+	src/model/DeleteVsStreamsNotifyUrlConfigRequest.cc
+	src/model/DeleteVsStreamsNotifyUrlConfigResult.cc
+	src/model/DescribeAccountStatRequest.cc
+	src/model/DescribeAccountStatResult.cc
+	src/model/DescribeDeviceRequest.cc
+	src/model/DescribeDeviceResult.cc
+	src/model/DescribeDeviceChannelsRequest.cc
+	src/model/DescribeDeviceChannelsResult.cc
+	src/model/DescribeDeviceGatewayRequest.cc
+	src/model/DescribeDeviceGatewayResult.cc
+	src/model/DescribeDeviceURLRequest.cc
+	src/model/DescribeDeviceURLResult.cc
+	src/model/DescribeDevicesRequest.cc
+	src/model/DescribeDevicesResult.cc
+	src/model/DescribeDirectoriesRequest.cc
+	src/model/DescribeDirectoriesResult.cc
+	src/model/DescribeDirectoryRequest.cc
+	src/model/DescribeDirectoryResult.cc
+	src/model/DescribeGroupRequest.cc
+	src/model/DescribeGroupResult.cc
+	src/model/DescribeGroupsRequest.cc
+	src/model/DescribeGroupsResult.cc
+	src/model/DescribeParentPlatformRequest.cc
+	src/model/DescribeParentPlatformResult.cc
+	src/model/DescribeParentPlatformDevicesRequest.cc
+	src/model/DescribeParentPlatformDevicesResult.cc
+	src/model/DescribeParentPlatformsRequest.cc
+	src/model/DescribeParentPlatformsResult.cc
+	src/model/DescribePresetsRequest.cc
+	src/model/DescribePresetsResult.cc
+	src/model/DescribePurchasedDeviceRequest.cc
+	src/model/DescribePurchasedDeviceResult.cc
+	src/model/DescribePurchasedDevicesRequest.cc
+	src/model/DescribePurchasedDevicesResult.cc
+	src/model/DescribeRecordsRequest.cc
+	src/model/DescribeRecordsResult.cc
+	src/model/DescribeStreamRequest.cc
+	src/model/DescribeStreamResult.cc
+	src/model/DescribeStreamURLRequest.cc
+	src/model/DescribeStreamURLResult.cc
+	src/model/DescribeStreamVodListRequest.cc
+	src/model/DescribeStreamVodListResult.cc
+	src/model/DescribeStreamsRequest.cc
+	src/model/DescribeStreamsResult.cc
+	src/model/DescribeTemplateRequest.cc
+	src/model/DescribeTemplateResult.cc
+	src/model/DescribeTemplatesRequest.cc
+	src/model/DescribeTemplatesResult.cc
+	src/model/DescribeVodStreamURLRequest.cc
+	src/model/DescribeVodStreamURLResult.cc
+	src/model/DescribeVsCertificateDetailRequest.cc
+	src/model/DescribeVsCertificateDetailResult.cc
+	src/model/DescribeVsCertificateListRequest.cc
+	src/model/DescribeVsCertificateListResult.cc
+	src/model/DescribeVsDomainBpsDataRequest.cc
+	src/model/DescribeVsDomainBpsDataResult.cc
+	src/model/DescribeVsDomainCertificateInfoRequest.cc
+	src/model/DescribeVsDomainCertificateInfoResult.cc
+	src/model/DescribeVsDomainConfigsRequest.cc
+	src/model/DescribeVsDomainConfigsResult.cc
+	src/model/DescribeVsDomainDetailRequest.cc
+	src/model/DescribeVsDomainDetailResult.cc
+	src/model/DescribeVsDomainPvDataRequest.cc
+	src/model/DescribeVsDomainPvDataResult.cc
+	src/model/DescribeVsDomainRecordDataRequest.cc
+	src/model/DescribeVsDomainRecordDataResult.cc
+	src/model/DescribeVsDomainRegionDataRequest.cc
+	src/model/DescribeVsDomainRegionDataResult.cc
+	src/model/DescribeVsDomainReqBpsDataRequest.cc
+	src/model/DescribeVsDomainReqBpsDataResult.cc
+	src/model/DescribeVsDomainReqTrafficDataRequest.cc
+	src/model/DescribeVsDomainReqTrafficDataResult.cc
+	src/model/DescribeVsDomainSnapshotDataRequest.cc
+	src/model/DescribeVsDomainSnapshotDataResult.cc
+	src/model/DescribeVsDomainTrafficDataRequest.cc
+	src/model/DescribeVsDomainTrafficDataResult.cc
+	src/model/DescribeVsDomainUvDataRequest.cc
+	src/model/DescribeVsDomainUvDataResult.cc
+	src/model/DescribeVsPullStreamInfoConfigRequest.cc
+	src/model/DescribeVsPullStreamInfoConfigResult.cc
+	src/model/DescribeVsStreamsNotifyUrlConfigRequest.cc
+	src/model/DescribeVsStreamsNotifyUrlConfigResult.cc
+	src/model/DescribeVsStreamsOnlineListRequest.cc
+	src/model/DescribeVsStreamsOnlineListResult.cc
+	src/model/DescribeVsStreamsPublishListRequest.cc
+	src/model/DescribeVsStreamsPublishListResult.cc
+	src/model/DescribeVsTopDomainsByFlowRequest.cc
+	src/model/DescribeVsTopDomainsByFlowResult.cc
+	src/model/DescribeVsUpPeakPublishStreamDataRequest.cc
+	src/model/DescribeVsUpPeakPublishStreamDataResult.cc
+	src/model/DescribeVsUserResourcePackageRequest.cc
+	src/model/DescribeVsUserResourcePackageResult.cc
+	src/model/ForbidVsStreamRequest.cc
+	src/model/ForbidVsStreamResult.cc
+	src/model/GotoPresetRequest.cc
+	src/model/GotoPresetResult.cc
+	src/model/ModifyDeviceRequest.cc
+	src/model/ModifyDeviceResult.cc
+	src/model/ModifyDeviceAlarmRequest.cc
+	src/model/ModifyDeviceAlarmResult.cc
+	src/model/ModifyDeviceCaptureRequest.cc
+	src/model/ModifyDeviceCaptureResult.cc
+	src/model/ModifyDeviceChannelsRequest.cc
+	src/model/ModifyDeviceChannelsResult.cc
+	src/model/ModifyDirectoryRequest.cc
+	src/model/ModifyDirectoryResult.cc
+	src/model/ModifyGroupRequest.cc
+	src/model/ModifyGroupResult.cc
+	src/model/ModifyParentPlatformRequest.cc
+	src/model/ModifyParentPlatformResult.cc
+	src/model/ModifyTemplateRequest.cc
+	src/model/ModifyTemplateResult.cc
+	src/model/ResumeVsStreamRequest.cc
+	src/model/ResumeVsStreamResult.cc
+	src/model/SetPresetRequest.cc
+	src/model/SetPresetResult.cc
+	src/model/SetVsDomainCertificateRequest.cc
+	src/model/SetVsDomainCertificateResult.cc
+	src/model/SetVsStreamsNotifyUrlConfigRequest.cc
+	src/model/SetVsStreamsNotifyUrlConfigResult.cc
+	src/model/StartDeviceRequest.cc
+	src/model/StartDeviceResult.cc
+	src/model/StartParentPlatformRequest.cc
+	src/model/StartParentPlatformResult.cc
+	src/model/StartRecordStreamRequest.cc
+	src/model/StartRecordStreamResult.cc
+	src/model/StartStreamRequest.cc
+	src/model/StartStreamResult.cc
+	src/model/StartTransferStreamRequest.cc
+	src/model/StartTransferStreamResult.cc
+	src/model/StopAdjustRequest.cc
+	src/model/StopAdjustResult.cc
+	src/model/StopDeviceRequest.cc
+	src/model/StopDeviceResult.cc
+	src/model/StopMoveRequest.cc
+	src/model/StopMoveResult.cc
+	src/model/StopRecordStreamRequest.cc
+	src/model/StopRecordStreamResult.cc
+	src/model/StopStreamRequest.cc
+	src/model/StopStreamResult.cc
+	src/model/StopTransferStreamRequest.cc
+	src/model/StopTransferStreamResult.cc
+	src/model/SyncCatalogsRequest.cc
+	src/model/SyncCatalogsResult.cc
+	src/model/UnbindDirectoryRequest.cc
+	src/model/UnbindDirectoryResult.cc
+	src/model/UnbindParentPlatformDeviceRequest.cc
+	src/model/UnbindParentPlatformDeviceResult.cc
+	src/model/UnbindPurchasedDeviceRequest.cc
+	src/model/UnbindPurchasedDeviceResult.cc
+	src/model/UnbindTemplateRequest.cc
+	src/model/UnbindTemplateResult.cc
+	src/model/UnlockDeviceRequest.cc
+	src/model/UnlockDeviceResult.cc
+	src/model/UpdateVsPullStreamInfoConfigRequest.cc
+	src/model/UpdateVsPullStreamInfoConfigResult.cc )
+
+add_library(vs ${LIB_TYPE}
+	${vs_public_header}
+	${vs_public_header_model}
+	${vs_src})
+
+set_target_properties(vs
+	PROPERTIES
+	LINKER_LANGUAGE CXX
+	ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	OUTPUT_NAME ${TARGET_OUTPUT_NAME_PREFIX}vs
+	)
+
+if(${LIB_TYPE} STREQUAL "SHARED")
+	set_target_properties(vs
+		PROPERTIES
+		DEFINE_SYMBOL ALIBABACLOUD_VS_LIBRARY)
+endif()
+
+target_include_directories(vs
+	PRIVATE include
+		${CMAKE_SOURCE_DIR}/core/include
+	)
+target_link_libraries(vs
+	core)
+
+if(CMAKE_HOST_WIN32)
+	ExternalProject_Get_Property(jsoncpp INSTALL_DIR)
+	set(jsoncpp_install_dir ${INSTALL_DIR})
+	add_dependencies(vs
+		jsoncpp)
+	target_include_directories(vs
+		PRIVATE	${jsoncpp_install_dir}/include)
+	target_link_libraries(vs
+		${jsoncpp_install_dir}/lib/jsoncpp.lib)
+	set_target_properties(vs
+    	PROPERTIES
+    		COMPILE_OPTIONS "/bigobj")
+else()
+	target_include_directories(vs
+		PRIVATE /usr/include/jsoncpp)
+	target_link_libraries(vs
+		jsoncpp)
+endif()
+
+install(FILES ${vs_public_header}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/vs)
+install(FILES ${vs_public_header_model}
+	DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/alibabacloud/vs/model)
+install(TARGETS vs
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+	)
