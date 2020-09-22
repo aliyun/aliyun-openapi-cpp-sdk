@@ -71,6 +71,17 @@ void ModifyInstanceMajorVersionRequest::setSecurityToken(const std::string& secu
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyInstanceMajorVersionRequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void ModifyInstanceMajorVersionRequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setParameter("EffectiveTime", effectiveTime);
+}
+
 std::string ModifyInstanceMajorVersionRequest::getMajorVersion()const
 {
 	return majorVersion_;

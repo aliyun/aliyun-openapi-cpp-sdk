@@ -71,6 +71,17 @@ void ModifyInstanceMinorVersionRequest::setSecurityToken(const std::string& secu
 	setParameter("SecurityToken", securityToken);
 }
 
+std::string ModifyInstanceMinorVersionRequest::getEffectiveTime()const
+{
+	return effectiveTime_;
+}
+
+void ModifyInstanceMinorVersionRequest::setEffectiveTime(const std::string& effectiveTime)
+{
+	effectiveTime_ = effectiveTime;
+	setParameter("EffectiveTime", effectiveTime);
+}
+
 std::string ModifyInstanceMinorVersionRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

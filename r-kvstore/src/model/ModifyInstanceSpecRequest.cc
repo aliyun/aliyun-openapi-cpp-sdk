@@ -38,6 +38,17 @@ void ModifyInstanceSpecRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceSpecRequest::getClientToken()const
+{
+	return clientToken_;
+}
+
+void ModifyInstanceSpecRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
+}
+
 std::string ModifyInstanceSpecRequest::getCouponNo()const
 {
 	return couponNo_;

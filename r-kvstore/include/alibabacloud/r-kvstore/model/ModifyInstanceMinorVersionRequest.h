@@ -43,6 +43,8 @@ namespace AlibabaCloud
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getSecurityToken()const;
 				void setSecurityToken(const std::string& securityToken);
+				std::string getEffectiveTime()const;
+				void setEffectiveTime(const std::string& effectiveTime);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getMinorversion()const;
@@ -59,6 +61,7 @@ namespace AlibabaCloud
 				std::string effectTime_;
 				std::string accessKeyId_;
 				std::string securityToken_;
+				std::string effectiveTime_;
 				std::string resourceOwnerAccount_;
 				std::string minorversion_;
 				std::string ownerAccount_;
