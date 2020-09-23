@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					{
 						std::string dedicatedHostId;
 						std::string dedicatedHostName;
+						std::string dedicatedHostClusterId;
 					};
 					struct EcsCapacityReservationAttr
 					{
@@ -126,6 +127,7 @@ namespace AlibabaCloud
 					long localStorageCapacity;
 					std::string instanceTypeFamily;
 					DedicatedInstanceAttribute dedicatedInstanceAttribute;
+					int spotDuration;
 					int localStorageAmount;
 					std::vector<std::string> publicIpAddress;
 					std::string gPUSpec;

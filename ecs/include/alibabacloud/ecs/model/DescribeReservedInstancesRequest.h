@@ -30,6 +30,12 @@ namespace AlibabaCloud
 		{
 			class ALIBABACLOUD_ECS_EXPORT DescribeReservedInstancesRequest : public RpcServiceRequest
 			{
+			public:
+				struct Tag
+				{
+					std::string key;
+					std::string value;
+				};
 
 			public:
 				DescribeReservedInstancesRequest();
@@ -49,6 +55,8 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				std::string getInstanceType()const;
 				void setInstanceType(const std::string& instanceType);
+				std::vector<Tag> getTag()const;
+				void setTag(const std::vector<Tag>& tag);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
@@ -78,6 +86,7 @@ namespace AlibabaCloud
 				std::string scope_;
 				int pageSize_;
 				std::string instanceType_;
+				std::vector<Tag> tag_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				std::string instanceTypeFamily_;

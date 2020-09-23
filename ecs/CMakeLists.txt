@@ -83,6 +83,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
 	include/alibabacloud/ecs/model/CreateCommandResult.h
+	include/alibabacloud/ecs/model/CreateDedicatedHostClusterRequest.h
+	include/alibabacloud/ecs/model/CreateDedicatedHostClusterResult.h
 	include/alibabacloud/ecs/model/CreateDemandRequest.h
 	include/alibabacloud/ecs/model/CreateDemandResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
@@ -141,6 +143,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteBandwidthPackageResult.h
 	include/alibabacloud/ecs/model/DeleteCommandRequest.h
 	include/alibabacloud/ecs/model/DeleteCommandResult.h
+	include/alibabacloud/ecs/model/DeleteDedicatedHostClusterRequest.h
+	include/alibabacloud/ecs/model/DeleteDedicatedHostClusterResult.h
 	include/alibabacloud/ecs/model/DeleteDemandRequest.h
 	include/alibabacloud/ecs/model/DeleteDemandResult.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetRequest.h
@@ -217,6 +221,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeCommandsResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewRequest.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewResult.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostClustersRequest.h
+	include/alibabacloud/ecs/model/DescribeDedicatedHostClustersResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostTypesRequest.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostTypesResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostsRequest.h
@@ -329,6 +335,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeSecurityGroupReferencesResult.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupsRequest.h
 	include/alibabacloud/ecs/model/DescribeSecurityGroupsResult.h
+	include/alibabacloud/ecs/model/DescribeSendFileResultsRequest.h
+	include/alibabacloud/ecs/model/DescribeSendFileResultsResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotLinksRequest.h
 	include/alibabacloud/ecs/model/DescribeSnapshotLinksResult.h
 	include/alibabacloud/ecs/model/DescribeSnapshotMonitorDataRequest.h
@@ -429,6 +437,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoReleaseTimeResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostAutoRenewAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostClusterAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyDedicatedHostClusterAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDedicatedHostsChargeTypeResult.h
 	include/alibabacloud/ecs/model/ModifyDemandRequest.h
@@ -565,6 +575,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunCommandResult.h
 	include/alibabacloud/ecs/model/RunInstancesRequest.h
 	include/alibabacloud/ecs/model/RunInstancesResult.h
+	include/alibabacloud/ecs/model/SendFileRequest.h
+	include/alibabacloud/ecs/model/SendFileResult.h
 	include/alibabacloud/ecs/model/StartInstanceRequest.h
 	include/alibabacloud/ecs/model/StartInstanceResult.h
 	include/alibabacloud/ecs/model/StartInstancesRequest.h
@@ -656,6 +668,8 @@ set(ecs_src
 	src/model/CreateAutoSnapshotPolicyResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
+	src/model/CreateDedicatedHostClusterRequest.cc
+	src/model/CreateDedicatedHostClusterResult.cc
 	src/model/CreateDemandRequest.cc
 	src/model/CreateDemandResult.cc
 	src/model/CreateDeploymentSetRequest.cc
@@ -714,6 +728,8 @@ set(ecs_src
 	src/model/DeleteBandwidthPackageResult.cc
 	src/model/DeleteCommandRequest.cc
 	src/model/DeleteCommandResult.cc
+	src/model/DeleteDedicatedHostClusterRequest.cc
+	src/model/DeleteDedicatedHostClusterResult.cc
 	src/model/DeleteDemandRequest.cc
 	src/model/DeleteDemandResult.cc
 	src/model/DeleteDeploymentSetRequest.cc
@@ -790,6 +806,8 @@ set(ecs_src
 	src/model/DescribeCommandsResult.cc
 	src/model/DescribeDedicatedHostAutoRenewRequest.cc
 	src/model/DescribeDedicatedHostAutoRenewResult.cc
+	src/model/DescribeDedicatedHostClustersRequest.cc
+	src/model/DescribeDedicatedHostClustersResult.cc
 	src/model/DescribeDedicatedHostTypesRequest.cc
 	src/model/DescribeDedicatedHostTypesResult.cc
 	src/model/DescribeDedicatedHostsRequest.cc
@@ -902,6 +920,8 @@ set(ecs_src
 	src/model/DescribeSecurityGroupReferencesResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
 	src/model/DescribeSecurityGroupsResult.cc
+	src/model/DescribeSendFileResultsRequest.cc
+	src/model/DescribeSendFileResultsResult.cc
 	src/model/DescribeSnapshotLinksRequest.cc
 	src/model/DescribeSnapshotLinksResult.cc
 	src/model/DescribeSnapshotMonitorDataRequest.cc
@@ -1002,6 +1022,8 @@ set(ecs_src
 	src/model/ModifyDedicatedHostAutoReleaseTimeResult.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeRequest.cc
 	src/model/ModifyDedicatedHostAutoRenewAttributeResult.cc
+	src/model/ModifyDedicatedHostClusterAttributeRequest.cc
+	src/model/ModifyDedicatedHostClusterAttributeResult.cc
 	src/model/ModifyDedicatedHostsChargeTypeRequest.cc
 	src/model/ModifyDedicatedHostsChargeTypeResult.cc
 	src/model/ModifyDemandRequest.cc
@@ -1138,6 +1160,8 @@ set(ecs_src
 	src/model/RunCommandResult.cc
 	src/model/RunInstancesRequest.cc
 	src/model/RunInstancesResult.cc
+	src/model/SendFileRequest.cc
+	src/model/SendFileResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
 	src/model/StartInstancesRequest.cc

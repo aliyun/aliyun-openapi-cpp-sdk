@@ -83,6 +83,10 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.autoReleaseTime = valueDedicatedHostsDedicatedHost["AutoReleaseTime"].asString();
 		if(!valueDedicatedHostsDedicatedHost["ResourceGroupId"].isNull())
 			dedicatedHostsObject.resourceGroupId = valueDedicatedHostsDedicatedHost["ResourceGroupId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["DedicatedHostClusterId"].isNull())
+			dedicatedHostsObject.dedicatedHostClusterId = valueDedicatedHostsDedicatedHost["DedicatedHostClusterId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["CpuOverCommitRatio"].isNull())
+			dedicatedHostsObject.cpuOverCommitRatio = std::stof(valueDedicatedHostsDedicatedHost["CpuOverCommitRatio"].asString());
 		auto allInstancesNode = allDedicatedHostsNode["Instances"]["Instance"];
 		for (auto allDedicatedHostsNodeInstancesInstance : allInstancesNode)
 		{

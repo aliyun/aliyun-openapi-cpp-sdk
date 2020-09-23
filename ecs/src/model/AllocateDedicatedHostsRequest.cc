@@ -60,6 +60,17 @@ void AllocateDedicatedHostsRequest::setDescription(const std::string& descriptio
 	setParameter("Description", description);
 }
 
+float AllocateDedicatedHostsRequest::getCpuOverCommitRatio()const
+{
+	return cpuOverCommitRatio_;
+}
+
+void AllocateDedicatedHostsRequest::setCpuOverCommitRatio(float cpuOverCommitRatio)
+{
+	cpuOverCommitRatio_ = cpuOverCommitRatio;
+	setParameter("CpuOverCommitRatio", std::to_string(cpuOverCommitRatio));
+}
+
 std::string AllocateDedicatedHostsRequest::getResourceGroupId()const
 {
 	return resourceGroupId_;
@@ -91,6 +102,17 @@ void AllocateDedicatedHostsRequest::setActionOnMaintenance(const std::string& ac
 {
 	actionOnMaintenance_ = actionOnMaintenance;
 	setParameter("ActionOnMaintenance", actionOnMaintenance);
+}
+
+std::string AllocateDedicatedHostsRequest::getDedicatedHostClusterId()const
+{
+	return dedicatedHostClusterId_;
+}
+
+void AllocateDedicatedHostsRequest::setDedicatedHostClusterId(const std::string& dedicatedHostClusterId)
+{
+	dedicatedHostClusterId_ = dedicatedHostClusterId;
+	setParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 }
 
 std::vector<AllocateDedicatedHostsRequest::Tag> AllocateDedicatedHostsRequest::getTag()const

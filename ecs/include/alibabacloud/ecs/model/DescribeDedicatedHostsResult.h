@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					Capacity capacity;
 					std::string dedicatedHostName;
 					std::string expiredTime;
+					float cpuOverCommitRatio;
 					std::string saleCycle;
 					std::vector<DedicatedHost::Tag> tags;
 					std::string status;
@@ -92,6 +93,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string regionId;
 					std::vector<std::string> supportedInstanceTypesList;
+					std::string dedicatedHostClusterId;
 					std::string autoReleaseTime;
 				};
 

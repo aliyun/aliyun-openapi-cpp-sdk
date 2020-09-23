@@ -45,7 +45,9 @@ namespace AlibabaCloud
 					std::string gPUSpec;
 					std::vector<std::string> supportedInstanceTypeFamilies;
 					int totalVgpus;
+					std::string cpuOverCommitRatioRange;
 					std::vector<std::string> supportedInstanceTypesList;
+					bool supportCpuOverCommitRatio;
 					int totalVcpus;
 				};
 

@@ -280,6 +280,17 @@ void RunInstancesRequest::setSpotInterruptionBehavior(const std::string& spotInt
 	setParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
 }
 
+int RunInstancesRequest::getNetworkInterfaceQueueNumber()const
+{
+	return networkInterfaceQueueNumber_;
+}
+
+void RunInstancesRequest::setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber)
+{
+	networkInterfaceQueueNumber_ = networkInterfaceQueueNumber;
+	setParameter("NetworkInterfaceQueueNumber", std::to_string(networkInterfaceQueueNumber));
+}
+
 std::string RunInstancesRequest::getIoOptimized()const
 {
 	return ioOptimized_;
@@ -361,6 +372,17 @@ void RunInstancesRequest::setArn(const std::vector<Arn>& arn)
 		setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
 		setParameter(arnObjStr + ".RoleType", arnObj.roleType);
 	}
+}
+
+std::string RunInstancesRequest::getSchedulerOptions()const
+{
+	return schedulerOptions_;
+}
+
+void RunInstancesRequest::setSchedulerOptions(const std::string& schedulerOptions)
+{
+	schedulerOptions_ = schedulerOptions;
+	setParameter("SchedulerOptions", schedulerOptions);
 }
 
 std::string RunInstancesRequest::getResourceOwnerAccount()const
@@ -754,6 +776,7 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<NetworkInterface
 		}
 		setParameter(networkInterfaceObjStr + ".NetworkInterfaceName", networkInterfaceObj.networkInterfaceName);
 		setParameter(networkInterfaceObjStr + ".Description", networkInterfaceObj.description);
+		setParameter(networkInterfaceObjStr + ".QueueNumber", std::to_string(networkInterfaceObj.queueNumber));
 	}
 }
 

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
+				bool getWaitForNetworkConfigurationReady()const;
+				void setWaitForNetworkConfigurationReady(bool waitForNetworkConfigurationReady);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::string trunkNetworkInstanceId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
+				bool waitForNetworkConfigurationReady_;
 				long ownerId_;
 				std::string instanceId_;
 				std::string networkInterfaceId_;

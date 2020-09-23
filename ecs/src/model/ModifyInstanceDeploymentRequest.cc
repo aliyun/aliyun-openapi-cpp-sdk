@@ -60,6 +60,17 @@ void ModifyInstanceDeploymentRequest::setDeploymentSetGroupNo(int deploymentSetG
 	setParameter("DeploymentSetGroupNo", std::to_string(deploymentSetGroupNo));
 }
 
+std::string ModifyInstanceDeploymentRequest::getDedicatedHostClusterId()const
+{
+	return dedicatedHostClusterId_;
+}
+
+void ModifyInstanceDeploymentRequest::setDedicatedHostClusterId(const std::string& dedicatedHostClusterId)
+{
+	dedicatedHostClusterId_ = dedicatedHostClusterId;
+	setParameter("DedicatedHostClusterId", dedicatedHostClusterId);
+}
+
 std::string ModifyInstanceDeploymentRequest::getInstanceType()const
 {
 	return instanceType_;

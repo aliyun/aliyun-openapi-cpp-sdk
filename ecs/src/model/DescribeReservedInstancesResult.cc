@@ -83,6 +83,16 @@ void DescribeReservedInstancesResult::parse(const std::string &payload)
 				operationLocksObject.lockReason = allReservedInstancesNodeOperationLocksOperationLock["LockReason"].asString();
 			reservedInstancesObject.operationLocks.push_back(operationLocksObject);
 		}
+		auto allTagsNode = allReservedInstancesNode["Tags"]["Tag"];
+		for (auto allReservedInstancesNodeTagsTag : allTagsNode)
+		{
+			ReservedInstance::Tag tagsObject;
+			if(!allReservedInstancesNodeTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = allReservedInstancesNodeTagsTag["TagKey"].asString();
+			if(!allReservedInstancesNodeTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = allReservedInstancesNodeTagsTag["TagValue"].asString();
+			reservedInstancesObject.tags.push_back(tagsObject);
+		}
 		reservedInstances_.push_back(reservedInstancesObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -70,6 +70,8 @@ void DescribeTagsResult::parse(const std::string &payload)
 			tagsObject.resourceTypeCount.keyPair = std::stoi(resourceTypeCountNode["KeyPair"].asString());
 		if(!resourceTypeCountNode["SnapshotPolicy"].isNull())
 			tagsObject.resourceTypeCount.snapshotPolicy = std::stoi(resourceTypeCountNode["SnapshotPolicy"].asString());
+		if(!resourceTypeCountNode["ReservedInstance"].isNull())
+			tagsObject.resourceTypeCount.reservedInstance = std::stoi(resourceTypeCountNode["ReservedInstance"].asString());
 		tags_.push_back(tagsObject);
 	}
 	if(!value["PageSize"].isNull())

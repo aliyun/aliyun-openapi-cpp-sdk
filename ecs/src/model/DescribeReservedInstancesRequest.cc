@@ -104,6 +104,22 @@ void DescribeReservedInstancesRequest::setInstanceType(const std::string& instan
 	setParameter("InstanceType", instanceType);
 }
 
+std::vector<DescribeReservedInstancesRequest::Tag> DescribeReservedInstancesRequest::getTag()const
+{
+	return tag_;
+}
+
+void DescribeReservedInstancesRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+	}
+}
+
 std::string DescribeReservedInstancesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;

@@ -49,6 +49,17 @@ void ModifyInstanceAttributeRequest::setRecyclable(bool recyclable)
 	setParameter("Recyclable", recyclable ? "true" : "false");
 }
 
+int ModifyInstanceAttributeRequest::getNetworkInterfaceQueueNumber()const
+{
+	return networkInterfaceQueueNumber_;
+}
+
+void ModifyInstanceAttributeRequest::setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber)
+{
+	networkInterfaceQueueNumber_ = networkInterfaceQueueNumber;
+	setParameter("NetworkInterfaceQueueNumber", std::to_string(networkInterfaceQueueNumber));
+}
+
 std::string ModifyInstanceAttributeRequest::getDescription()const
 {
 	return description_;

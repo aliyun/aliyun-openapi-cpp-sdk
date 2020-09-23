@@ -41,6 +41,8 @@ namespace AlibabaCloud
 				CreateNetworkInterfaceRequest();
 				~CreateNetworkInterfaceRequest();
 
+				int getQueueNumber()const;
+				void setQueueNumber(int queueNumber);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getClientToken()const;
@@ -81,6 +83,7 @@ namespace AlibabaCloud
 				void setPrimaryIpAddress(const std::string& primaryIpAddress);
 
             private:
+				int queueNumber_;
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string securityGroupId_;

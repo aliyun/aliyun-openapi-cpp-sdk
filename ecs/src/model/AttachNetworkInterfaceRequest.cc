@@ -82,6 +82,17 @@ void AttachNetworkInterfaceRequest::setOwnerAccount(const std::string& ownerAcco
 	setParameter("OwnerAccount", ownerAccount);
 }
 
+bool AttachNetworkInterfaceRequest::getWaitForNetworkConfigurationReady()const
+{
+	return waitForNetworkConfigurationReady_;
+}
+
+void AttachNetworkInterfaceRequest::setWaitForNetworkConfigurationReady(bool waitForNetworkConfigurationReady)
+{
+	waitForNetworkConfigurationReady_ = waitForNetworkConfigurationReady;
+	setParameter("WaitForNetworkConfigurationReady", waitForNetworkConfigurationReady ? "true" : "false");
+}
+
 long AttachNetworkInterfaceRequest::getOwnerId()const
 {
 	return ownerId_;

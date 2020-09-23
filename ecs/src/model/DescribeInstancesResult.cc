@@ -119,6 +119,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.spotStrategy = valueInstancesInstance["SpotStrategy"].asString();
 		if(!valueInstancesInstance["SpotPriceLimit"].isNull())
 			instancesObject.spotPriceLimit = std::stof(valueInstancesInstance["SpotPriceLimit"].asString());
+		if(!valueInstancesInstance["SpotDuration"].isNull())
+			instancesObject.spotDuration = std::stoi(valueInstancesInstance["SpotDuration"].asString());
 		if(!valueInstancesInstance["ResourceGroupId"].isNull())
 			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
 		if(!valueInstancesInstance["KeyPairName"].isNull())
@@ -191,6 +193,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.dedicatedHostAttribute.dedicatedHostId = dedicatedHostAttributeNode["DedicatedHostId"].asString();
 		if(!dedicatedHostAttributeNode["DedicatedHostName"].isNull())
 			instancesObject.dedicatedHostAttribute.dedicatedHostName = dedicatedHostAttributeNode["DedicatedHostName"].asString();
+		if(!dedicatedHostAttributeNode["DedicatedHostClusterId"].isNull())
+			instancesObject.dedicatedHostAttribute.dedicatedHostClusterId = dedicatedHostAttributeNode["DedicatedHostClusterId"].asString();
 		auto ecsCapacityReservationAttrNode = value["EcsCapacityReservationAttr"];
 		if(!ecsCapacityReservationAttrNode["CapacityReservationId"].isNull())
 			instancesObject.ecsCapacityReservationAttr.capacityReservationId = ecsCapacityReservationAttrNode["CapacityReservationId"].asString();

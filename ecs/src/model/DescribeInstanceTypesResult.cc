@@ -87,6 +87,12 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.eniTrunkSupported = valueInstanceTypesInstanceType["EniTrunkSupported"].asString() == "true";
 		if(!valueInstanceTypesInstanceType["EniTotalQuantity"].isNull())
 			instanceTypesObject.eniTotalQuantity = std::stoi(valueInstanceTypesInstanceType["EniTotalQuantity"].asString());
+		if(!valueInstanceTypesInstanceType["MaximumQueueNumberPerEni"].isNull())
+			instanceTypesObject.maximumQueueNumberPerEni = std::stoi(valueInstanceTypesInstanceType["MaximumQueueNumberPerEni"].asString());
+		if(!valueInstanceTypesInstanceType["PrimaryEniQueueNumber"].isNull())
+			instanceTypesObject.primaryEniQueueNumber = std::stoi(valueInstanceTypesInstanceType["PrimaryEniQueueNumber"].asString());
+		if(!valueInstanceTypesInstanceType["SecondaryEniQueueNumber"].isNull())
+			instanceTypesObject.secondaryEniQueueNumber = std::stoi(valueInstanceTypesInstanceType["SecondaryEniQueueNumber"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 

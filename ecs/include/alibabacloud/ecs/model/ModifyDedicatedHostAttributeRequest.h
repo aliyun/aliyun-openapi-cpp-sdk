@@ -39,10 +39,14 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				float getCpuOverCommitRatio()const;
+				void setCpuOverCommitRatio(float cpuOverCommitRatio);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getActionOnMaintenance()const;
 				void setActionOnMaintenance(const std::string& actionOnMaintenance);
+				std::string getDedicatedHostClusterId()const;
+				void setDedicatedHostClusterId(const std::string& dedicatedHostClusterId);
 				std::string getDedicatedHostName()const;
 				void setDedicatedHostName(const std::string& dedicatedHostName);
 				std::string getResourceOwnerAccount()const;
@@ -63,8 +67,10 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				std::string description_;
+				float cpuOverCommitRatio_;
 				std::string regionId_;
 				std::string actionOnMaintenance_;
+				std::string dedicatedHostClusterId_;
 				std::string dedicatedHostName_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;

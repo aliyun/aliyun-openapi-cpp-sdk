@@ -47,12 +47,16 @@ namespace AlibabaCloud
 				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
+				float getCpuOverCommitRatio()const;
+				void setCpuOverCommitRatio(float cpuOverCommitRatio);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
 				std::string getActionOnMaintenance()const;
 				void setActionOnMaintenance(const std::string& actionOnMaintenance);
+				std::string getDedicatedHostClusterId()const;
+				void setDedicatedHostClusterId(const std::string& dedicatedHostClusterId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::string getDedicatedHostType()const;
@@ -92,9 +96,11 @@ namespace AlibabaCloud
 				long resourceOwnerId_;
 				std::string clientToken_;
 				std::string description_;
+				float cpuOverCommitRatio_;
 				std::string resourceGroupId_;
 				std::string regionId_;
 				std::string actionOnMaintenance_;
+				std::string dedicatedHostClusterId_;
 				std::vector<Tag> tag_;
 				std::string dedicatedHostType_;
 				int autoRenewPeriod_;

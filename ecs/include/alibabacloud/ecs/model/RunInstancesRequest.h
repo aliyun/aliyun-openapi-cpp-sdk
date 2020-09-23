@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::vector<std::string> securityGroupIds;
 					std::string networkInterfaceName;
 					std::string description;
+					int queueNumber;
 				};
 				struct DataDisk
 				{
@@ -117,6 +118,8 @@ namespace AlibabaCloud
 				void setImageId(const std::string& imageId);
 				std::string getSpotInterruptionBehavior()const;
 				void setSpotInterruptionBehavior(const std::string& spotInterruptionBehavior);
+				int getNetworkInterfaceQueueNumber()const;
+				void setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber);
 				std::string getIoOptimized()const;
 				void setIoOptimized(const std::string& ioOptimized);
 				std::string getSecurityGroupId()const;
@@ -131,6 +134,8 @@ namespace AlibabaCloud
 				void setHibernationConfigured(bool hibernationConfigured);
 				std::vector<Arn> getArn()const;
 				void setArn(const std::vector<Arn>& arn);
+				std::string getSchedulerOptions()const;
+				void setSchedulerOptions(const std::string& schedulerOptions);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getSystemDiskDiskName()const;
@@ -248,6 +253,7 @@ namespace AlibabaCloud
 				std::string affinity_;
 				std::string imageId_;
 				std::string spotInterruptionBehavior_;
+				int networkInterfaceQueueNumber_;
 				std::string ioOptimized_;
 				std::string securityGroupId_;
 				std::string systemDiskPerformanceLevel_;
@@ -255,6 +261,7 @@ namespace AlibabaCloud
 				std::string instanceType_;
 				bool hibernationConfigured_;
 				std::vector<Arn> arn_;
+				std::string schedulerOptions_;
 				std::string resourceOwnerAccount_;
 				std::string systemDiskDiskName_;
 				std::string dedicatedHostId_;

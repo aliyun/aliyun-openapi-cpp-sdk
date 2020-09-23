@@ -232,6 +232,17 @@ void DescribeDisksRequest::setZoneId(const std::string& zoneId)
 	setParameter("ZoneId", zoneId);
 }
 
+int DescribeDisksRequest::getMaxResults()const
+{
+	return maxResults_;
+}
+
+void DescribeDisksRequest::setMaxResults(int maxResults)
+{
+	maxResults_ = maxResults;
+	setParameter("MaxResults", std::to_string(maxResults));
+}
+
 std::string DescribeDisksRequest::getStatus()const
 {
 	return status_;
@@ -274,6 +285,17 @@ void DescribeDisksRequest::setRegionId(const std::string& regionId)
 {
 	regionId_ = regionId;
 	setParameter("RegionId", regionId);
+}
+
+std::string DescribeDisksRequest::getNextToken()const
+{
+	return nextToken_;
+}
+
+void DescribeDisksRequest::setNextToken(const std::string& nextToken)
+{
+	nextToken_ = nextToken;
+	setParameter("NextToken", nextToken);
 }
 
 int DescribeDisksRequest::getPageSize()const

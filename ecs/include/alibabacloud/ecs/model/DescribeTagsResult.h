@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						int eni;
 						int keyPair;
 						int snapshotPolicy;
+						int reservedInstance;
 						int instance;
 						int volume;
 						int launchTemplate;

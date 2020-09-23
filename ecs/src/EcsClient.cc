@@ -1167,6 +1167,42 @@ EcsClient::CreateCommandOutcomeCallable EcsClient::createCommandCallable(const C
 	return task->get_future();
 }
 
+EcsClient::CreateDedicatedHostClusterOutcome EcsClient::createDedicatedHostCluster(const CreateDedicatedHostClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDedicatedHostClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDedicatedHostClusterOutcome(CreateDedicatedHostClusterResult(outcome.result()));
+	else
+		return CreateDedicatedHostClusterOutcome(outcome.error());
+}
+
+void EcsClient::createDedicatedHostClusterAsync(const CreateDedicatedHostClusterRequest& request, const CreateDedicatedHostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDedicatedHostCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDedicatedHostClusterOutcomeCallable EcsClient::createDedicatedHostClusterCallable(const CreateDedicatedHostClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDedicatedHostClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createDedicatedHostCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateDemandOutcome EcsClient::createDemand(const CreateDemandRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2205,6 +2241,42 @@ EcsClient::DeleteCommandOutcomeCallable EcsClient::deleteCommandCallable(const D
 			[this, request]()
 			{
 			return this->deleteCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteDedicatedHostClusterOutcome EcsClient::deleteDedicatedHostCluster(const DeleteDedicatedHostClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDedicatedHostClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDedicatedHostClusterOutcome(DeleteDedicatedHostClusterResult(outcome.result()));
+	else
+		return DeleteDedicatedHostClusterOutcome(outcome.error());
+}
+
+void EcsClient::deleteDedicatedHostClusterAsync(const DeleteDedicatedHostClusterRequest& request, const DeleteDedicatedHostClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDedicatedHostCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteDedicatedHostClusterOutcomeCallable EcsClient::deleteDedicatedHostClusterCallable(const DeleteDedicatedHostClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDedicatedHostClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDedicatedHostCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3573,6 +3645,42 @@ EcsClient::DescribeDedicatedHostAutoRenewOutcomeCallable EcsClient::describeDedi
 			[this, request]()
 			{
 			return this->describeDedicatedHostAutoRenew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDedicatedHostClustersOutcome EcsClient::describeDedicatedHostClusters(const DescribeDedicatedHostClustersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDedicatedHostClustersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDedicatedHostClustersOutcome(DescribeDedicatedHostClustersResult(outcome.result()));
+	else
+		return DescribeDedicatedHostClustersOutcome(outcome.error());
+}
+
+void EcsClient::describeDedicatedHostClustersAsync(const DescribeDedicatedHostClustersRequest& request, const DescribeDedicatedHostClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDedicatedHostClusters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDedicatedHostClustersOutcomeCallable EcsClient::describeDedicatedHostClustersCallable(const DescribeDedicatedHostClustersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDedicatedHostClustersOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDedicatedHostClusters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5595,6 +5703,42 @@ EcsClient::DescribeSecurityGroupsOutcomeCallable EcsClient::describeSecurityGrou
 	return task->get_future();
 }
 
+EcsClient::DescribeSendFileResultsOutcome EcsClient::describeSendFileResults(const DescribeSendFileResultsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSendFileResultsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSendFileResultsOutcome(DescribeSendFileResultsResult(outcome.result()));
+	else
+		return DescribeSendFileResultsOutcome(outcome.error());
+}
+
+void EcsClient::describeSendFileResultsAsync(const DescribeSendFileResultsRequest& request, const DescribeSendFileResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSendFileResults(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeSendFileResultsOutcomeCallable EcsClient::describeSendFileResultsCallable(const DescribeSendFileResultsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSendFileResultsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSendFileResults(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeSnapshotLinksOutcome EcsClient::describeSnapshotLinks(const DescribeSnapshotLinksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7389,6 +7533,42 @@ EcsClient::ModifyDedicatedHostAutoRenewAttributeOutcomeCallable EcsClient::modif
 			[this, request]()
 			{
 			return this->modifyDedicatedHostAutoRenewAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyDedicatedHostClusterAttributeOutcome EcsClient::modifyDedicatedHostClusterAttribute(const ModifyDedicatedHostClusterAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDedicatedHostClusterAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDedicatedHostClusterAttributeOutcome(ModifyDedicatedHostClusterAttributeResult(outcome.result()));
+	else
+		return ModifyDedicatedHostClusterAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyDedicatedHostClusterAttributeAsync(const ModifyDedicatedHostClusterAttributeRequest& request, const ModifyDedicatedHostClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDedicatedHostClusterAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDedicatedHostClusterAttributeOutcomeCallable EcsClient::modifyDedicatedHostClusterAttributeCallable(const ModifyDedicatedHostClusterAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDedicatedHostClusterAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDedicatedHostClusterAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9837,6 +10017,42 @@ EcsClient::RunInstancesOutcomeCallable EcsClient::runInstancesCallable(const Run
 			[this, request]()
 			{
 			return this->runInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::SendFileOutcome EcsClient::sendFile(const SendFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendFileOutcome(SendFileResult(outcome.result()));
+	else
+		return SendFileOutcome(outcome.error());
+}
+
+void EcsClient::sendFileAsync(const SendFileRequest& request, const SendFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::SendFileOutcomeCallable EcsClient::sendFileCallable(const SendFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendFileOutcome()>>(
+			[this, request]()
+			{
+			return this->sendFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setInstanceId(const std::string& instanceId);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
+				int getMaxResults()const;
+				void setMaxResults(int maxResults);
 				std::string getStatus()const;
 				void setStatus(const std::string& status);
 				std::string getSnapshotId()const;
@@ -85,6 +87,8 @@ namespace AlibabaCloud
 				void setPageNumber(int pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
+				std::string getNextToken()const;
+				void setNextToken(const std::string& nextToken);
 				int getPageSize()const;
 				void setPageSize(int pageSize);
 				std::string getDiskIds()const;
@@ -129,10 +133,12 @@ namespace AlibabaCloud
 				std::vector<std::string> additionalAttributes_;
 				std::string instanceId_;
 				std::string zoneId_;
+				int maxResults_;
 				std::string status_;
 				std::string snapshotId_;
 				int pageNumber_;
 				std::string regionId_;
+				std::string nextToken_;
 				int pageSize_;
 				std::string diskIds_;
 				bool deleteWithInstance_;

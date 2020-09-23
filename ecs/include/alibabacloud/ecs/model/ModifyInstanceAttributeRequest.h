@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setResourceOwnerId(long resourceOwnerId);
 				bool getRecyclable()const;
 				void setRecyclable(bool recyclable);
+				int getNetworkInterfaceQueueNumber()const;
+				void setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
 				bool getDeletionProtection()const;
@@ -67,6 +69,7 @@ namespace AlibabaCloud
             private:
 				long resourceOwnerId_;
 				bool recyclable_;
+				int networkInterfaceQueueNumber_;
 				std::string description_;
 				bool deletionProtection_;
 				std::string userData_;

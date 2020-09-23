@@ -27,6 +27,17 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
 CreateNetworkInterfaceRequest::~CreateNetworkInterfaceRequest()
 {}
 
+int CreateNetworkInterfaceRequest::getQueueNumber()const
+{
+	return queueNumber_;
+}
+
+void CreateNetworkInterfaceRequest::setQueueNumber(int queueNumber)
+{
+	queueNumber_ = queueNumber;
+	setParameter("QueueNumber", std::to_string(queueNumber));
+}
+
 long CreateNetworkInterfaceRequest::getResourceOwnerId()const
 {
 	return resourceOwnerId_;

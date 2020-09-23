@@ -49,6 +49,17 @@ void ModifyDedicatedHostAttributeRequest::setDescription(const std::string& desc
 	setParameter("Description", description);
 }
 
+float ModifyDedicatedHostAttributeRequest::getCpuOverCommitRatio()const
+{
+	return cpuOverCommitRatio_;
+}
+
+void ModifyDedicatedHostAttributeRequest::setCpuOverCommitRatio(float cpuOverCommitRatio)
+{
+	cpuOverCommitRatio_ = cpuOverCommitRatio;
+	setParameter("CpuOverCommitRatio", std::to_string(cpuOverCommitRatio));
+}
+
 std::string ModifyDedicatedHostAttributeRequest::getRegionId()const
 {
 	return regionId_;
@@ -69,6 +80,17 @@ void ModifyDedicatedHostAttributeRequest::setActionOnMaintenance(const std::stri
 {
 	actionOnMaintenance_ = actionOnMaintenance;
 	setParameter("ActionOnMaintenance", actionOnMaintenance);
+}
+
+std::string ModifyDedicatedHostAttributeRequest::getDedicatedHostClusterId()const
+{
+	return dedicatedHostClusterId_;
+}
+
+void ModifyDedicatedHostAttributeRequest::setDedicatedHostClusterId(const std::string& dedicatedHostClusterId)
+{
+	dedicatedHostClusterId_ = dedicatedHostClusterId;
+	setParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 }
 
 std::string ModifyDedicatedHostAttributeRequest::getDedicatedHostName()const

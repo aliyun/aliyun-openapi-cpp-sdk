@@ -155,6 +155,8 @@ void DescribeDisksResult::parse(const std::string &payload)
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
@@ -166,6 +168,11 @@ int DescribeDisksResult::getTotalCount()const
 int DescribeDisksResult::getPageSize()const
 {
 	return pageSize_;
+}
+
+std::string DescribeDisksResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 int DescribeDisksResult::getPageNumber()const

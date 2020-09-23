@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCESRESULT_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDHOSTCLUSTERSRESULT_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDHOSTCLUSTERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,59 +29,60 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT DescribeReservedInstancesResult : public ServiceResult
+			class ALIBABACLOUD_ECS_EXPORT DescribeDedicatedHostClustersResult : public ServiceResult
 			{
 			public:
-				struct ReservedInstance
+				struct DedicatedHostCluster
 				{
-					struct OperationLock
+					struct DedicatedHostClusterCapacity
 					{
-						std::string lockReason;
+						struct LocalStorageCapacity
+						{
+							int totalDisk;
+							int availableDisk;
+							std::string dataDiskCategory;
+						};
+						int totalMemory;
+						int availableMemory;
+						int availableVcpus;
+						int totalVcpus;
+						std::vector<LocalStorageCapacity> localStorageCapacities;
 					};
 					struct Tag
 					{
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string status;
 					std::string description;
-					std::string allocationStatus;
 					std::string zoneId;
-					std::string platform;
+					std::string dedicatedHostClusterName;
 					std::string resourceGroupId;
-					std::string startTime;
-					std::vector<ReservedInstance::OperationLock> operationLocks;
-					std::string offeringType;
-					int instanceAmount;
-					std::string scope;
-					std::string expiredTime;
-					std::string creationTime;
-					std::string reservedInstanceId;
+					DedicatedHostClusterCapacity dedicatedHostClusterCapacity;
 					std::string regionId;
-					std::string reservedInstanceName;
-					std::string instanceType;
-					std::vector<ReservedInstance::Tag> tags;
+					std::vector<std::string> dedicatedHostIds;
+					std::vector<DedicatedHostCluster::Tag> tags;
+					std::string dedicatedHostClusterId;
 				};
 
 
-				DescribeReservedInstancesResult();
-				explicit DescribeReservedInstancesResult(const std::string &payload);
-				~DescribeReservedInstancesResult();
+				DescribeDedicatedHostClustersResult();
+				explicit DescribeDedicatedHostClustersResult(const std::string &payload);
+				~DescribeDedicatedHostClustersResult();
+				std::vector<DedicatedHostCluster> getDedicatedHostClusters()const;
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<ReservedInstance> getReservedInstances()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<DedicatedHostCluster> dedicatedHostClusters_;
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<ReservedInstance> reservedInstances_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDEDICATEDHOSTCLUSTERSRESULT_H_

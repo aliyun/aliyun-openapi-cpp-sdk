@@ -97,6 +97,7 @@ namespace AlibabaCloud
 				~DescribeDisksResult();
 				int getTotalCount()const;
 				int getPageSize()const;
+				std::string getNextToken()const;
 				int getPageNumber()const;
 				std::vector<Disk> getDisks()const;
 
@@ -105,6 +106,7 @@ namespace AlibabaCloud
 			private:
 				int totalCount_;
 				int pageSize_;
+				std::string nextToken_;
 				int pageNumber_;
 				std::vector<Disk> disks_;
 

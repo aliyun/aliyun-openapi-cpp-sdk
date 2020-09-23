@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDHOSTCLUSTERREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDHOSTCLUSTERREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,7 +28,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT PurchaseReservedInstancesOfferingRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT CreateDedicatedHostClusterRequest : public RpcServiceRequest
 			{
 			public:
 				struct Tag
@@ -38,68 +38,47 @@ namespace AlibabaCloud
 				};
 
 			public:
-				PurchaseReservedInstancesOfferingRequest();
-				~PurchaseReservedInstancesOfferingRequest();
+				CreateDedicatedHostClusterRequest();
+				~CreateDedicatedHostClusterRequest();
 
+				std::string getDedicatedHostClusterName()const;
+				void setDedicatedHostClusterName(const std::string& dedicatedHostClusterName);
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
 				std::string getDescription()const;
 				void setDescription(const std::string& description);
-				std::string getPlatform()const;
-				void setPlatform(const std::string& platform);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getScope()const;
-				void setScope(const std::string& scope);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
-				int getPeriod()const;
-				void setPeriod(int period);
+				bool getDryRun()const;
+				void setDryRun(bool dryRun);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getPeriodUnit()const;
-				void setPeriodUnit(const std::string& periodUnit);
-				std::string getOfferingType()const;
-				void setOfferingType(const std::string& offeringType);
 				std::string getZoneId()const;
 				void setZoneId(const std::string& zoneId);
-				std::string getReservedInstanceName()const;
-				void setReservedInstanceName(const std::string& reservedInstanceName);
-				int getInstanceAmount()const;
-				void setInstanceAmount(int instanceAmount);
 
             private:
+				std::string dedicatedHostClusterName_;
 				long resourceOwnerId_;
-				std::string clientToken_;
 				std::string description_;
-				std::string platform_;
 				std::string resourceGroupId_;
 				std::string regionId_;
-				std::string scope_;
-				std::string instanceType_;
 				std::vector<Tag> tag_;
-				int period_;
+				bool dryRun_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
 				long ownerId_;
-				std::string periodUnit_;
-				std::string offeringType_;
 				std::string zoneId_;
-				std::string reservedInstanceName_;
-				int instanceAmount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_PURCHASERESERVEDINSTANCESOFFERINGREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_CREATEDEDICATEDHOSTCLUSTERREQUEST_H_

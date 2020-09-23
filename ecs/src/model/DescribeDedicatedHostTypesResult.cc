@@ -65,6 +65,10 @@ void DescribeDedicatedHostTypesResult::parse(const std::string &payload)
 			dedicatedHostTypesObject.localStorageCategory = valueDedicatedHostTypesDedicatedHostType["LocalStorageCategory"].asString();
 		if(!valueDedicatedHostTypesDedicatedHostType["GPUSpec"].isNull())
 			dedicatedHostTypesObject.gPUSpec = valueDedicatedHostTypesDedicatedHostType["GPUSpec"].asString();
+		if(!valueDedicatedHostTypesDedicatedHostType["SupportCpuOverCommitRatio"].isNull())
+			dedicatedHostTypesObject.supportCpuOverCommitRatio = valueDedicatedHostTypesDedicatedHostType["SupportCpuOverCommitRatio"].asString() == "true";
+		if(!valueDedicatedHostTypesDedicatedHostType["CpuOverCommitRatioRange"].isNull())
+			dedicatedHostTypesObject.cpuOverCommitRatioRange = valueDedicatedHostTypesDedicatedHostType["CpuOverCommitRatioRange"].asString();
 		auto allSupportedInstanceTypeFamilies = value["SupportedInstanceTypeFamilies"]["SupportedInstanceTypeFamily"];
 		for (auto value : allSupportedInstanceTypeFamilies)
 			dedicatedHostTypesObject.supportedInstanceTypeFamilies.push_back(value.asString());

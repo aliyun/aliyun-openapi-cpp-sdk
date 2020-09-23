@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEDEPLOYMENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEDEPLOYMENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBESENDFILERESULTSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBESENDFILERESULTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,63 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ECS_EXPORT ModifyInstanceDeploymentRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ECS_EXPORT DescribeSendFileResultsRequest : public RpcServiceRequest
 			{
 
 			public:
-				ModifyInstanceDeploymentRequest();
-				~ModifyInstanceDeploymentRequest();
+				DescribeSendFileResultsRequest();
+				~DescribeSendFileResultsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
+				long getPageNumber()const;
+				void setPageNumber(long pageNumber);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				int getDeploymentSetGroupNo()const;
-				void setDeploymentSetGroupNo(int deploymentSetGroupNo);
-				std::string getDedicatedHostClusterId()const;
-				void setDedicatedHostClusterId(const std::string& dedicatedHostClusterId);
-				std::string getInstanceType()const;
-				void setInstanceType(const std::string& instanceType);
-				std::string getDeploymentSetId()const;
-				void setDeploymentSetId(const std::string& deploymentSetId);
+				long getPageSize()const;
+				void setPageSize(long pageSize);
+				std::string getInvokeId()const;
+				void setInvokeId(const std::string& invokeId);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				std::string getOwnerAccount()const;
 				void setOwnerAccount(const std::string& ownerAccount);
-				std::string getTenancy()const;
-				void setTenancy(const std::string& tenancy);
-				std::string getDedicatedHostId()const;
-				void setDedicatedHostId(const std::string& dedicatedHostId);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getInstanceId()const;
 				void setInstanceId(const std::string& instanceId);
-				bool getForce()const;
-				void setForce(bool force);
-				std::string getMigrationType()const;
-				void setMigrationType(const std::string& migrationType);
-				std::string getAffinity()const;
-				void setAffinity(const std::string& affinity);
+				std::string getName()const;
+				void setName(const std::string& name);
 
             private:
 				long resourceOwnerId_;
+				long pageNumber_;
 				std::string regionId_;
-				int deploymentSetGroupNo_;
-				std::string dedicatedHostClusterId_;
-				std::string instanceType_;
-				std::string deploymentSetId_;
+				long pageSize_;
+				std::string invokeId_;
 				std::string resourceOwnerAccount_;
 				std::string ownerAccount_;
-				std::string tenancy_;
-				std::string dedicatedHostId_;
 				long ownerId_;
 				std::string instanceId_;
-				bool force_;
-				std::string migrationType_;
-				std::string affinity_;
+				std::string name_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYINSTANCEDEPLOYMENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBESENDFILERESULTSREQUEST_H_

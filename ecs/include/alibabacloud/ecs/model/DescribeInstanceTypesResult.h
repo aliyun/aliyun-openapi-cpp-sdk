@@ -34,27 +34,30 @@ namespace AlibabaCloud
 			public:
 				struct InstanceType
 				{
-					float memorySize;
 					long instancePpsTx;
-					int eniIpv6AddressQuantity;
-					int cpuCoreCount;
+					int primaryEniQueueNumber;
 					long localStorageCapacity;
 					int totalEniQueueQuantity;
-					int eniTotalQuantity;
 					bool eniTrunkSupported;
 					std::string instanceTypeFamily;
 					long instancePpsRx;
-					int initialCredit;
-					int eniQuantity;
 					int instanceBandwidthRx;
-					int gPUAmount;
 					int instanceBandwidthTx;
 					int localStorageAmount;
+					int secondaryEniQueueNumber;
 					std::string localStorageCategory;
 					std::string gPUSpec;
+					std::string instanceTypeId;
+					float memorySize;
+					int maximumQueueNumberPerEni;
+					int eniIpv6AddressQuantity;
+					int cpuCoreCount;
+					int eniTotalQuantity;
+					int initialCredit;
+					int eniQuantity;
+					int gPUAmount;
 					int baselineCredit;
 					std::string instanceFamilyLevel;
-					std::string instanceTypeId;
 					int eniPrivateIpAddressQuantity;
 				};
 
