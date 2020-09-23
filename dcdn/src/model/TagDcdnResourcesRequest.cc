@@ -27,17 +27,6 @@ TagDcdnResourcesRequest::TagDcdnResourcesRequest() :
 TagDcdnResourcesRequest::~TagDcdnResourcesRequest()
 {}
 
-std::string TagDcdnResourcesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void TagDcdnResourcesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::vector<TagDcdnResourcesRequest::Tag> TagDcdnResourcesRequest::getTag()const
 {
 	return tag_;

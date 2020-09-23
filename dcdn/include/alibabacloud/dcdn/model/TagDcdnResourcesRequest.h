@@ -41,8 +41,6 @@ namespace AlibabaCloud
 				TagDcdnResourcesRequest();
 				~TagDcdnResourcesRequest();
 
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
 				std::vector<std::string> getResourceId()const;
@@ -53,7 +51,6 @@ namespace AlibabaCloud
 				void setResourceType(const std::string& resourceType);
 
             private:
-				std::string regionId_;
 				std::vector<Tag> tag_;
 				std::vector<std::string> resourceId_;
 				long ownerId_;

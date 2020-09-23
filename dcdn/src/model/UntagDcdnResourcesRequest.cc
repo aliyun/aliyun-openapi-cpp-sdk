@@ -27,15 +27,15 @@ UntagDcdnResourcesRequest::UntagDcdnResourcesRequest() :
 UntagDcdnResourcesRequest::~UntagDcdnResourcesRequest()
 {}
 
-std::string UntagDcdnResourcesRequest::getRegionId()const
+bool UntagDcdnResourcesRequest::getAll()const
 {
-	return regionId_;
+	return all_;
 }
 
-void UntagDcdnResourcesRequest::setRegionId(const std::string& regionId)
+void UntagDcdnResourcesRequest::setAll(bool all)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> UntagDcdnResourcesRequest::getResourceId()const

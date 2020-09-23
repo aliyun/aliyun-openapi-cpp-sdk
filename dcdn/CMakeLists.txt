@@ -25,8 +25,12 @@ set(dcdn_public_header_model
 	include/alibabacloud/dcdn/model/AddDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/AddDcdnIpaDomainRequest.h
 	include/alibabacloud/dcdn/model/AddDcdnIpaDomainResult.h
+	include/alibabacloud/dcdn/model/BatchAddDcdnDomainRequest.h
+	include/alibabacloud/dcdn/model/BatchAddDcdnDomainResult.h
 	include/alibabacloud/dcdn/model/BatchDeleteDcdnDomainConfigsRequest.h
 	include/alibabacloud/dcdn/model/BatchDeleteDcdnDomainConfigsResult.h
+	include/alibabacloud/dcdn/model/BatchSetDcdnDomainCertificateRequest.h
+	include/alibabacloud/dcdn/model/BatchSetDcdnDomainCertificateResult.h
 	include/alibabacloud/dcdn/model/BatchSetDcdnDomainConfigsRequest.h
 	include/alibabacloud/dcdn/model/BatchSetDcdnDomainConfigsResult.h
 	include/alibabacloud/dcdn/model/BatchSetDcdnIpaDomainConfigsRequest.h
@@ -202,8 +206,12 @@ set(dcdn_src
 	src/model/AddDcdnDomainResult.cc
 	src/model/AddDcdnIpaDomainRequest.cc
 	src/model/AddDcdnIpaDomainResult.cc
+	src/model/BatchAddDcdnDomainRequest.cc
+	src/model/BatchAddDcdnDomainResult.cc
 	src/model/BatchDeleteDcdnDomainConfigsRequest.cc
 	src/model/BatchDeleteDcdnDomainConfigsResult.cc
+	src/model/BatchSetDcdnDomainCertificateRequest.cc
+	src/model/BatchSetDcdnDomainCertificateResult.cc
 	src/model/BatchSetDcdnDomainConfigsRequest.cc
 	src/model/BatchSetDcdnDomainConfigsResult.cc
 	src/model/BatchSetDcdnIpaDomainConfigsRequest.cc

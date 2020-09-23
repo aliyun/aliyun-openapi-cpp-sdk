@@ -26,8 +26,12 @@
 #include "model/AddDcdnDomainResult.h"
 #include "model/AddDcdnIpaDomainRequest.h"
 #include "model/AddDcdnIpaDomainResult.h"
+#include "model/BatchAddDcdnDomainRequest.h"
+#include "model/BatchAddDcdnDomainResult.h"
 #include "model/BatchDeleteDcdnDomainConfigsRequest.h"
 #include "model/BatchDeleteDcdnDomainConfigsResult.h"
+#include "model/BatchSetDcdnDomainCertificateRequest.h"
+#include "model/BatchSetDcdnDomainCertificateResult.h"
 #include "model/BatchSetDcdnDomainConfigsRequest.h"
 #include "model/BatchSetDcdnDomainConfigsResult.h"
 #include "model/BatchSetDcdnIpaDomainConfigsRequest.h"
@@ -211,9 +215,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDcdnIpaDomainResult> AddDcdnIpaDomainOutcome;
 			typedef std::future<AddDcdnIpaDomainOutcome> AddDcdnIpaDomainOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::AddDcdnIpaDomainRequest&, const AddDcdnIpaDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDcdnIpaDomainAsyncHandler;
+			typedef Outcome<Error, Model::BatchAddDcdnDomainResult> BatchAddDcdnDomainOutcome;
+			typedef std::future<BatchAddDcdnDomainOutcome> BatchAddDcdnDomainOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::BatchAddDcdnDomainRequest&, const BatchAddDcdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddDcdnDomainAsyncHandler;
 			typedef Outcome<Error, Model::BatchDeleteDcdnDomainConfigsResult> BatchDeleteDcdnDomainConfigsOutcome;
 			typedef std::future<BatchDeleteDcdnDomainConfigsOutcome> BatchDeleteDcdnDomainConfigsOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::BatchDeleteDcdnDomainConfigsRequest&, const BatchDeleteDcdnDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteDcdnDomainConfigsAsyncHandler;
+			typedef Outcome<Error, Model::BatchSetDcdnDomainCertificateResult> BatchSetDcdnDomainCertificateOutcome;
+			typedef std::future<BatchSetDcdnDomainCertificateOutcome> BatchSetDcdnDomainCertificateOutcomeCallable;
+			typedef std::function<void(const DcdnClient*, const Model::BatchSetDcdnDomainCertificateRequest&, const BatchSetDcdnDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetDcdnDomainCertificateAsyncHandler;
 			typedef Outcome<Error, Model::BatchSetDcdnDomainConfigsResult> BatchSetDcdnDomainConfigsOutcome;
 			typedef std::future<BatchSetDcdnDomainConfigsOutcome> BatchSetDcdnDomainConfigsOutcomeCallable;
 			typedef std::function<void(const DcdnClient*, const Model::BatchSetDcdnDomainConfigsRequest&, const BatchSetDcdnDomainConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchSetDcdnDomainConfigsAsyncHandler;
@@ -477,9 +487,15 @@ namespace AlibabaCloud
 			AddDcdnIpaDomainOutcome addDcdnIpaDomain(const Model::AddDcdnIpaDomainRequest &request)const;
 			void addDcdnIpaDomainAsync(const Model::AddDcdnIpaDomainRequest& request, const AddDcdnIpaDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDcdnIpaDomainOutcomeCallable addDcdnIpaDomainCallable(const Model::AddDcdnIpaDomainRequest& request) const;
+			BatchAddDcdnDomainOutcome batchAddDcdnDomain(const Model::BatchAddDcdnDomainRequest &request)const;
+			void batchAddDcdnDomainAsync(const Model::BatchAddDcdnDomainRequest& request, const BatchAddDcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchAddDcdnDomainOutcomeCallable batchAddDcdnDomainCallable(const Model::BatchAddDcdnDomainRequest& request) const;
 			BatchDeleteDcdnDomainConfigsOutcome batchDeleteDcdnDomainConfigs(const Model::BatchDeleteDcdnDomainConfigsRequest &request)const;
 			void batchDeleteDcdnDomainConfigsAsync(const Model::BatchDeleteDcdnDomainConfigsRequest& request, const BatchDeleteDcdnDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchDeleteDcdnDomainConfigsOutcomeCallable batchDeleteDcdnDomainConfigsCallable(const Model::BatchDeleteDcdnDomainConfigsRequest& request) const;
+			BatchSetDcdnDomainCertificateOutcome batchSetDcdnDomainCertificate(const Model::BatchSetDcdnDomainCertificateRequest &request)const;
+			void batchSetDcdnDomainCertificateAsync(const Model::BatchSetDcdnDomainCertificateRequest& request, const BatchSetDcdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchSetDcdnDomainCertificateOutcomeCallable batchSetDcdnDomainCertificateCallable(const Model::BatchSetDcdnDomainCertificateRequest& request) const;
 			BatchSetDcdnDomainConfigsOutcome batchSetDcdnDomainConfigs(const Model::BatchSetDcdnDomainConfigsRequest &request)const;
 			void batchSetDcdnDomainConfigsAsync(const Model::BatchSetDcdnDomainConfigsRequest& request, const BatchSetDcdnDomainConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchSetDcdnDomainConfigsOutcomeCallable batchSetDcdnDomainConfigsCallable(const Model::BatchSetDcdnDomainConfigsRequest& request) const;

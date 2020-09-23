@@ -123,6 +123,42 @@ DcdnClient::AddDcdnIpaDomainOutcomeCallable DcdnClient::addDcdnIpaDomainCallable
 	return task->get_future();
 }
 
+DcdnClient::BatchAddDcdnDomainOutcome DcdnClient::batchAddDcdnDomain(const BatchAddDcdnDomainRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchAddDcdnDomainOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchAddDcdnDomainOutcome(BatchAddDcdnDomainResult(outcome.result()));
+	else
+		return BatchAddDcdnDomainOutcome(outcome.error());
+}
+
+void DcdnClient::batchAddDcdnDomainAsync(const BatchAddDcdnDomainRequest& request, const BatchAddDcdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchAddDcdnDomain(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchAddDcdnDomainOutcomeCallable DcdnClient::batchAddDcdnDomainCallable(const BatchAddDcdnDomainRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchAddDcdnDomainOutcome()>>(
+			[this, request]()
+			{
+			return this->batchAddDcdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DcdnClient::BatchDeleteDcdnDomainConfigsOutcome DcdnClient::batchDeleteDcdnDomainConfigs(const BatchDeleteDcdnDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,42 @@ DcdnClient::BatchDeleteDcdnDomainConfigsOutcomeCallable DcdnClient::batchDeleteD
 			[this, request]()
 			{
 			return this->batchDeleteDcdnDomainConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DcdnClient::BatchSetDcdnDomainCertificateOutcome DcdnClient::batchSetDcdnDomainCertificate(const BatchSetDcdnDomainCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchSetDcdnDomainCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchSetDcdnDomainCertificateOutcome(BatchSetDcdnDomainCertificateResult(outcome.result()));
+	else
+		return BatchSetDcdnDomainCertificateOutcome(outcome.error());
+}
+
+void DcdnClient::batchSetDcdnDomainCertificateAsync(const BatchSetDcdnDomainCertificateRequest& request, const BatchSetDcdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchSetDcdnDomainCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DcdnClient::BatchSetDcdnDomainCertificateOutcomeCallable DcdnClient::batchSetDcdnDomainCertificateCallable(const BatchSetDcdnDomainCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchSetDcdnDomainCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->batchSetDcdnDomainCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
