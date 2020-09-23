@@ -34,23 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct StandardComponents
 				{
-					struct Addon_name
-					{
-						std::string required;
-						std::string version;
-						std::string config;
-						bool disabled;
-						std::string name;
-					};
-					Addon_name addon_name;
+					std::string componentName;
 				};
 				struct ComponentGroupsItem
 				{
 					struct ItemsItem
 					{
+						std::string description;
 						std::string required;
 						std::string version;
-						std::string config;
 						bool disabled;
 						std::string name;
 					};

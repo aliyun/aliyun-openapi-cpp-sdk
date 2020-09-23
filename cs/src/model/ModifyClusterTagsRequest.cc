@@ -39,25 +39,3 @@ void ModifyClusterTagsRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
-std::string ModifyClusterTagsRequest::getValue()const
-{
-	return value_;
-}
-
-void ModifyClusterTagsRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setBodyParameter("Value", value);
-}
-
-std::string ModifyClusterTagsRequest::getKey()const
-{
-	return key_;
-}
-
-void ModifyClusterTagsRequest::setKey(const std::string& key)
-{
-	key_ = key;
-	setBodyParameter("Key", key);
-}
-

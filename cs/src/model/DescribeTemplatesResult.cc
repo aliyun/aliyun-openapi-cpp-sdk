@@ -39,48 +39,47 @@ void DescribeTemplatesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["template"].isNull())
-		_template_ = value["template"].asString();
-	if(!value["acl"].isNull())
-		acl_ = value["acl"].asString();
-	if(!value["name"].isNull())
-		name_ = value["name"].asString();
-	if(!value["tags"].isNull())
-		tags_ = value["tags"].asString();
-	if(!value["template_type"].isNull())
-		template_type_ = value["template_type"].asString();
-	if(!value["description"].isNull())
-		description_ = value["description"].asString();
+	auto alltemplatesNode = value["templates"]["templatesItem"];
+	for (auto valuetemplatestemplatesItem : alltemplatesNode)
+	{
+		TemplatesItem templatesObject;
+		if(!valuetemplatestemplatesItem["template"].isNull())
+			templatesObject._template = valuetemplatestemplatesItem["template"].asString();
+		if(!valuetemplatestemplatesItem["created"].isNull())
+			templatesObject.created = valuetemplatestemplatesItem["created"].asString();
+		if(!valuetemplatestemplatesItem["name"].isNull())
+			templatesObject.name = valuetemplatestemplatesItem["name"].asString();
+		if(!valuetemplatestemplatesItem["description"].isNull())
+			templatesObject.description = valuetemplatestemplatesItem["description"].asString();
+		if(!valuetemplatestemplatesItem["template_type"].isNull())
+			templatesObject.template_type = valuetemplatestemplatesItem["template_type"].asString();
+		if(!valuetemplatestemplatesItem["id"].isNull())
+			templatesObject.id = valuetemplatestemplatesItem["id"].asString();
+		if(!valuetemplatestemplatesItem["acl"].isNull())
+			templatesObject.acl = valuetemplatestemplatesItem["acl"].asString();
+		if(!valuetemplatestemplatesItem["updated"].isNull())
+			templatesObject.updated = valuetemplatestemplatesItem["updated"].asString();
+		if(!valuetemplatestemplatesItem["tags"].isNull())
+			templatesObject.tags = valuetemplatestemplatesItem["tags"].asString();
+		templates_.push_back(templatesObject);
+	}
+	auto page_infoNode = value["page_info"];
+	if(!page_infoNode["page_number"].isNull())
+		page_info_.page_number = std::stol(page_infoNode["page_number"].asString());
+	if(!page_infoNode["total_count"].isNull())
+		page_info_.total_count = std::stol(page_infoNode["total_count"].asString());
+	if(!page_infoNode["page_size"].isNull())
+		page_info_.page_size = std::stol(page_infoNode["page_size"].asString());
 
 }
 
-std::string DescribeTemplatesResult::get_Template()const
+DescribeTemplatesResult::Page_info DescribeTemplatesResult::getPage_info()const
 {
-	return _template_;
+	return page_info_;
 }
 
-std::string DescribeTemplatesResult::getDescription()const
+std::vector<DescribeTemplatesResult::TemplatesItem> DescribeTemplatesResult::gettemplates()const
 {
-	return description_;
-}
-
-std::string DescribeTemplatesResult::getAcl()const
-{
-	return acl_;
-}
-
-std::string DescribeTemplatesResult::getTemplate_type()const
-{
-	return template_type_;
-}
-
-std::string DescribeTemplatesResult::getTags()const
-{
-	return tags_;
-}
-
-std::string DescribeTemplatesResult::getName()const
-{
-	return name_;
+	return templates_;
 }
 

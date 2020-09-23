@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				};
 				struct Node
 				{
-					std::string instance_name;
 					std::string error_message;
+					std::string instance_name;
 					std::string creation_time;
 					std::string image_id;
 					std::string instance_status;
@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					std::string instance_id;
 					std::string node_name;
 					std::string instance_type;
-					std::string expired_time;
 					bool is_aliyun_node;
+					std::string expired_time;
 				};
 
 

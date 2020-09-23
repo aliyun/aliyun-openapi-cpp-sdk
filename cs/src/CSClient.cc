@@ -231,6 +231,42 @@ CSClient::CreateClusterOutcomeCallable CSClient::createClusterCallable(const Cre
 	return task->get_future();
 }
 
+CSClient::CreateKubernetesTriggerOutcome CSClient::createKubernetesTrigger(const CreateKubernetesTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateKubernetesTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateKubernetesTriggerOutcome(CreateKubernetesTriggerResult(outcome.result()));
+	else
+		return CreateKubernetesTriggerOutcome(outcome.error());
+}
+
+void CSClient::createKubernetesTriggerAsync(const CreateKubernetesTriggerRequest& request, const CreateKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createKubernetesTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::CreateKubernetesTriggerOutcomeCallable CSClient::createKubernetesTriggerCallable(const CreateKubernetesTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateKubernetesTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->createKubernetesTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::CreateTemplateOutcome CSClient::createTemplate(const CreateTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -261,42 +297,6 @@ CSClient::CreateTemplateOutcomeCallable CSClient::createTemplateCallable(const C
 			[this, request]()
 			{
 			return this->createTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CSClient::CreateTriggerHookOutcome CSClient::createTriggerHook(const CreateTriggerHookRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateTriggerHookOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateTriggerHookOutcome(CreateTriggerHookResult(outcome.result()));
-	else
-		return CreateTriggerHookOutcome(outcome.error());
-}
-
-void CSClient::createTriggerHookAsync(const CreateTriggerHookRequest& request, const CreateTriggerHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createTriggerHook(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSClient::CreateTriggerHookOutcomeCallable CSClient::createTriggerHookCallable(const CreateTriggerHookRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateTriggerHookOutcome()>>(
-			[this, request]()
-			{
-			return this->createTriggerHook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -375,6 +375,42 @@ CSClient::DeleteClusterNodesOutcomeCallable CSClient::deleteClusterNodesCallable
 	return task->get_future();
 }
 
+CSClient::DeleteKubernetesTriggerOutcome CSClient::deleteKubernetesTrigger(const DeleteKubernetesTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteKubernetesTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteKubernetesTriggerOutcome(DeleteKubernetesTriggerResult(outcome.result()));
+	else
+		return DeleteKubernetesTriggerOutcome(outcome.error());
+}
+
+void CSClient::deleteKubernetesTriggerAsync(const DeleteKubernetesTriggerRequest& request, const DeleteKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteKubernetesTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DeleteKubernetesTriggerOutcomeCallable CSClient::deleteKubernetesTriggerCallable(const DeleteKubernetesTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteKubernetesTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteKubernetesTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::DeleteTemplateOutcome CSClient::deleteTemplate(const DeleteTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,42 +441,6 @@ CSClient::DeleteTemplateOutcomeCallable CSClient::deleteTemplateCallable(const D
 			[this, request]()
 			{
 			return this->deleteTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CSClient::DeleteTriggerHookOutcome CSClient::deleteTriggerHook(const DeleteTriggerHookRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteTriggerHookOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteTriggerHookOutcome(DeleteTriggerHookResult(outcome.result()));
-	else
-		return DeleteTriggerHookOutcome(outcome.error());
-}
-
-void CSClient::deleteTriggerHookAsync(const DeleteTriggerHookRequest& request, const DeleteTriggerHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteTriggerHook(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSClient::DeleteTriggerHookOutcomeCallable CSClient::deleteTriggerHookCallable(const DeleteTriggerHookRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteTriggerHookOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteTriggerHook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,42 +519,6 @@ CSClient::DescribeAddonsOutcomeCallable CSClient::describeAddonsCallable(const D
 	return task->get_future();
 }
 
-CSClient::DescribeApiVersionOutcome CSClient::describeApiVersion(const DescribeApiVersionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeApiVersionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeApiVersionOutcome(DescribeApiVersionResult(outcome.result()));
-	else
-		return DescribeApiVersionOutcome(outcome.error());
-}
-
-void CSClient::describeApiVersionAsync(const DescribeApiVersionRequest& request, const DescribeApiVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeApiVersion(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CSClient::DescribeApiVersionOutcomeCallable CSClient::describeApiVersionCallable(const DescribeApiVersionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeApiVersionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeApiVersion(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CSClient::DescribeClusterAddonUpgradeStatusOutcome CSClient::describeClusterAddonUpgradeStatus(const DescribeClusterAddonUpgradeStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +549,42 @@ CSClient::DescribeClusterAddonUpgradeStatusOutcomeCallable CSClient::describeClu
 			[this, request]()
 			{
 			return this->describeClusterAddonUpgradeStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::DescribeClusterAddonsUpgradeStatusOutcome CSClient::describeClusterAddonsUpgradeStatus(const DescribeClusterAddonsUpgradeStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClusterAddonsUpgradeStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClusterAddonsUpgradeStatusOutcome(DescribeClusterAddonsUpgradeStatusResult(outcome.result()));
+	else
+		return DescribeClusterAddonsUpgradeStatusOutcome(outcome.error());
+}
+
+void CSClient::describeClusterAddonsUpgradeStatusAsync(const DescribeClusterAddonsUpgradeStatusRequest& request, const DescribeClusterAddonsUpgradeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClusterAddonsUpgradeStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClusterAddonsUpgradeStatusOutcomeCallable CSClient::describeClusterAddonsUpgradeStatusCallable(const DescribeClusterAddonsUpgradeStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClusterAddonsUpgradeStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClusterAddonsUpgradeStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -915,6 +915,42 @@ CSClient::DescribeClustersOutcomeCallable CSClient::describeClustersCallable(con
 	return task->get_future();
 }
 
+CSClient::DescribeClustersV1Outcome CSClient::describeClustersV1(const DescribeClustersV1Request &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClustersV1Outcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClustersV1Outcome(DescribeClustersV1Result(outcome.result()));
+	else
+		return DescribeClustersV1Outcome(outcome.error());
+}
+
+void CSClient::describeClustersV1Async(const DescribeClustersV1Request& request, const DescribeClustersV1AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClustersV1(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::DescribeClustersV1OutcomeCallable CSClient::describeClustersV1Callable(const DescribeClustersV1Request &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClustersV1Outcome()>>(
+			[this, request]()
+			{
+			return this->describeClustersV1(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::DescribeExternalAgentOutcome CSClient::describeExternalAgent(const DescribeExternalAgentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1095,42 @@ CSClient::DescribeWorkflowsOutcomeCallable CSClient::describeWorkflowsCallable(c
 	return task->get_future();
 }
 
+CSClient::GetKubernetesTriggerOutcome CSClient::getKubernetesTrigger(const GetKubernetesTriggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetKubernetesTriggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetKubernetesTriggerOutcome(GetKubernetesTriggerResult(outcome.result()));
+	else
+		return GetKubernetesTriggerOutcome(outcome.error());
+}
+
+void CSClient::getKubernetesTriggerAsync(const GetKubernetesTriggerRequest& request, const GetKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getKubernetesTrigger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::GetKubernetesTriggerOutcomeCallable CSClient::getKubernetesTriggerCallable(const GetKubernetesTriggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetKubernetesTriggerOutcome()>>(
+			[this, request]()
+			{
+			return this->getKubernetesTrigger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CSClient::GetUpgradeStatusOutcome CSClient::getUpgradeStatus(const GetUpgradeStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,6 +1269,42 @@ CSClient::ModifyClusterOutcomeCallable CSClient::modifyClusterCallable(const Mod
 			[this, request]()
 			{
 			return this->modifyCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::ModifyClusterConfigurationOutcome CSClient::modifyClusterConfiguration(const ModifyClusterConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterConfigurationOutcome(ModifyClusterConfigurationResult(outcome.result()));
+	else
+		return ModifyClusterConfigurationOutcome(outcome.error());
+}
+
+void CSClient::modifyClusterConfigurationAsync(const ModifyClusterConfigurationRequest& request, const ModifyClusterConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::ModifyClusterConfigurationOutcomeCallable CSClient::modifyClusterConfigurationCallable(const ModifyClusterConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterConfiguration(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1629,6 +1737,42 @@ CSClient::UpdateK8sClusterUserConfigExpireOutcomeCallable CSClient::updateK8sClu
 			[this, request]()
 			{
 			return this->updateK8sClusterUserConfigExpire(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CSClient::UpdateTemplateOutcome CSClient::updateTemplate(const UpdateTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTemplateOutcome(UpdateTemplateResult(outcome.result()));
+	else
+		return UpdateTemplateOutcome(outcome.error());
+}
+
+void CSClient::updateTemplateAsync(const UpdateTemplateRequest& request, const UpdateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CSClient::UpdateTemplateOutcomeCallable CSClient::updateTemplateCallable(const UpdateTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

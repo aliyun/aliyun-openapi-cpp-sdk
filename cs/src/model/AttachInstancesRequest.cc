@@ -72,6 +72,17 @@ void AttachInstancesRequest::setCpu_policy(const std::string& cpu_policy)
 	setBodyParameter("Cpu_policy", cpu_policy);
 }
 
+bool AttachInstancesRequest::getIs_edge_worker()const
+{
+	return is_edge_worker_;
+}
+
+void AttachInstancesRequest::setIs_edge_worker(bool is_edge_worker)
+{
+	is_edge_worker_ = is_edge_worker;
+	setBodyParameter("Is_edge_worker", is_edge_worker ? "true" : "false");
+}
+
 std::string AttachInstancesRequest::getClusterId()const
 {
 	return clusterId_;
@@ -83,6 +94,28 @@ void AttachInstancesRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+std::string AttachInstancesRequest::getUser_data()const
+{
+	return user_data_;
+}
+
+void AttachInstancesRequest::setUser_data(const std::string& user_data)
+{
+	user_data_ = user_data;
+	setBodyParameter("User_data", user_data);
+}
+
+std::string AttachInstancesRequest::getImage_id()const
+{
+	return image_id_;
+}
+
+void AttachInstancesRequest::setImage_id(const std::string& image_id)
+{
+	image_id_ = image_id;
+	setBodyParameter("Image_id", image_id);
+}
+
 bool AttachInstancesRequest::getFormat_disk()const
 {
 	return format_disk_;
@@ -92,5 +125,16 @@ void AttachInstancesRequest::setFormat_disk(bool format_disk)
 {
 	format_disk_ = format_disk;
 	setBodyParameter("Format_disk", format_disk ? "true" : "false");
+}
+
+std::string AttachInstancesRequest::getNodepool_id()const
+{
+	return nodepool_id_;
+}
+
+void AttachInstancesRequest::setNodepool_id(const std::string& nodepool_id)
+{
+	nodepool_id_ = nodepool_id;
+	setBodyParameter("Nodepool_id", nodepool_id);
 }
 

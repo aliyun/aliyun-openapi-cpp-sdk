@@ -35,13 +35,10 @@ namespace AlibabaCloud
 				UnInstallClusterAddonsRequest();
 				~UnInstallClusterAddonsRequest();
 
-				std::string getName()const;
-				void setName(const std::string& name);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 
             private:
-				std::string name_;
 				std::string clusterId_;
 
 			};

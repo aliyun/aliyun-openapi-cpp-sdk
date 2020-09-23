@@ -41,12 +41,10 @@ void ScaleOutClusterResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["cluster_id"].isNull())
 		cluster_id_ = value["cluster_id"].asString();
-	if(!value["request_id"].isNull())
-		request_id_ = value["request_id"].asString();
 	if(!value["task_id"].isNull())
 		task_id_ = value["task_id"].asString();
-	if(!value["instanceId"].isNull())
-		instanceId_ = value["instanceId"].asString();
+	if(!value["request_id"].isNull())
+		request_id_ = value["request_id"].asString();
 
 }
 
@@ -58,11 +56,6 @@ std::string ScaleOutClusterResult::getRequest_id()const
 std::string ScaleOutClusterResult::getCluster_id()const
 {
 	return cluster_id_;
-}
-
-std::string ScaleOutClusterResult::getInstanceId()const
-{
-	return instanceId_;
 }
 
 std::string ScaleOutClusterResult::getTask_id()const

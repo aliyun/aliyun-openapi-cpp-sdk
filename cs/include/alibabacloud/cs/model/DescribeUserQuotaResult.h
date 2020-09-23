@@ -37,18 +37,20 @@ namespace AlibabaCloud
 				DescribeUserQuotaResult();
 				explicit DescribeUserQuotaResult(const std::string &payload);
 				~DescribeUserQuotaResult();
-				int getNode_quota()const;
-				int getAmk_cluster_quota()const;
-				int getCluster_quota()const;
-				int getAsk_cluster_quota()const;
+				long getAmk_cluster_quota()const;
+				long getNode_quota()const;
+				long getCluster_quota()const;
+				long getAsk_cluster_quota()const;
+				long getCluster_nodepool_quota()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int node_quota_;
-				int amk_cluster_quota_;
-				int cluster_quota_;
-				int ask_cluster_quota_;
+				long amk_cluster_quota_;
+				long node_quota_;
+				long cluster_quota_;
+				long ask_cluster_quota_;
+				long cluster_nodepool_quota_;
 
 			};
 		}

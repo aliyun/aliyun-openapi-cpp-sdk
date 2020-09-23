@@ -28,6 +28,17 @@ UpgradeClusterRequest::UpgradeClusterRequest() :
 UpgradeClusterRequest::~UpgradeClusterRequest()
 {}
 
+std::string UpgradeClusterRequest::getComponent_name()const
+{
+	return component_name_;
+}
+
+void UpgradeClusterRequest::setComponent_name(const std::string& component_name)
+{
+	component_name_ = component_name;
+	setBodyParameter("Component_name", component_name);
+}
+
 std::string UpgradeClusterRequest::getClusterId()const
 {
 	return clusterId_;
@@ -48,5 +59,16 @@ void UpgradeClusterRequest::setVersion(const std::string& version)
 {
 	version_ = version;
 	setBodyParameter("Version", version);
+}
+
+std::string UpgradeClusterRequest::getNext_version()const
+{
+	return next_version_;
+}
+
+void UpgradeClusterRequest::setNext_version(const std::string& next_version)
+{
+	next_version_ = next_version;
+	setBodyParameter("Next_version", next_version);
 }
 

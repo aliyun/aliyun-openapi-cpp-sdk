@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DeleteTriggerHookResult.h>
+#include <alibabacloud/cs/model/ModifyClusterConfigurationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CS;
 using namespace AlibabaCloud::CS::Model;
 
-DeleteTriggerHookResult::DeleteTriggerHookResult() :
+ModifyClusterConfigurationResult::ModifyClusterConfigurationResult() :
 	ServiceResult()
 {}
 
-DeleteTriggerHookResult::DeleteTriggerHookResult(const std::string &payload) :
+ModifyClusterConfigurationResult::ModifyClusterConfigurationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteTriggerHookResult::~DeleteTriggerHookResult()
+ModifyClusterConfigurationResult::~ModifyClusterConfigurationResult()
 {}
 
-void DeleteTriggerHookResult::parse(const std::string &payload)
+void ModifyClusterConfigurationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

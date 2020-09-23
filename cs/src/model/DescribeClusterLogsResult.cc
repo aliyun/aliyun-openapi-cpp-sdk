@@ -43,10 +43,14 @@ void DescribeClusterLogsResult::parse(const std::string &payload)
 		cluster_id_ = value["cluster_id"].asString();
 	if(!value["cluster_log"].isNull())
 		cluster_log_ = value["cluster_log"].asString();
-	if(!value["log_level"].isNull())
-		log_level_ = value["log_level"].asString();
 	if(!value["created"].isNull())
 		created_ = value["created"].asString();
+	if(!value["log_level"].isNull())
+		log_level_ = value["log_level"].asString();
+	if(!value["ID"].isNull())
+		iD_ = value["ID"].asString();
+	if(!value["updated"].isNull())
+		updated_ = value["updated"].asString();
 
 }
 
@@ -55,9 +59,19 @@ std::string DescribeClusterLogsResult::getCluster_id()const
 	return cluster_id_;
 }
 
+std::string DescribeClusterLogsResult::getUpdated()const
+{
+	return updated_;
+}
+
 std::string DescribeClusterLogsResult::getLog_level()const
 {
 	return log_level_;
+}
+
+std::string DescribeClusterLogsResult::getID()const
+{
+	return iD_;
 }
 
 std::string DescribeClusterLogsResult::getCluster_log()const

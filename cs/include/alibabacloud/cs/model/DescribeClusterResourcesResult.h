@@ -32,24 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClusterResourcesResult : public ServiceResult
 			{
 			public:
-				struct ResourcesItem
-				{
-					std::string resource_info;
-					std::string state;
-					std::string resource_type;
-					std::string instance_id;
-				};
 
 
 				DescribeClusterResourcesResult();
 				explicit DescribeClusterResourcesResult(const std::string &payload);
 				~DescribeClusterResourcesResult();
-				std::vector<ResourcesItem> getresources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ResourcesItem> resources_;
 
 			};
 		}

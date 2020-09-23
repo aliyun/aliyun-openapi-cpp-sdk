@@ -28,6 +28,17 @@ CreateClusterRequest::CreateClusterRequest() :
 CreateClusterRequest::~CreateClusterRequest()
 {}
 
+bool CreateClusterRequest::getPrivate_zone()const
+{
+	return private_zone_;
+}
+
+void CreateClusterRequest::setPrivate_zone(bool private_zone)
+{
+	private_zone_ = private_zone;
+	setBodyParameter("Private_zone", private_zone ? "true" : "false");
+}
+
 std::string CreateClusterRequest::getProxy_mode()const
 {
 	return proxy_mode_;
@@ -50,6 +61,17 @@ void CreateClusterRequest::setMaster_system_disk_category(const std::string& mas
 	setBodyParameter("Master_system_disk_category", master_system_disk_category);
 }
 
+long CreateClusterRequest::getMaster_period()const
+{
+	return master_period_;
+}
+
+void CreateClusterRequest::setMaster_period(long master_period)
+{
+	master_period_ = master_period;
+	setBodyParameter("Master_period", std::to_string(master_period));
+}
+
 bool CreateClusterRequest::getCloud_monitor_flags()const
 {
 	return cloud_monitor_flags_;
@@ -59,17 +81,6 @@ void CreateClusterRequest::setCloud_monitor_flags(bool cloud_monitor_flags)
 {
 	cloud_monitor_flags_ = cloud_monitor_flags;
 	setBodyParameter("Cloud_monitor_flags", cloud_monitor_flags ? "true" : "false");
-}
-
-int CreateClusterRequest::getMaster_period()const
-{
-	return master_period_;
-}
-
-void CreateClusterRequest::setMaster_period(int master_period)
-{
-	master_period_ = master_period;
-	setBodyParameter("Master_period", std::to_string(master_period));
 }
 
 bool CreateClusterRequest::getSsh_flags()const
@@ -149,6 +160,17 @@ void CreateClusterRequest::setPlatform(const std::string& platform)
 	setBodyParameter("Platform", platform);
 }
 
+std::string CreateClusterRequest::getService_cidr()const
+{
+	return service_cidr_;
+}
+
+void CreateClusterRequest::setService_cidr(const std::string& service_cidr)
+{
+	service_cidr_ = service_cidr;
+	setBodyParameter("Service_cidr", service_cidr);
+}
+
 std::string CreateClusterRequest::getNode_port_range()const
 {
 	return node_port_range_;
@@ -160,15 +182,15 @@ void CreateClusterRequest::setNode_port_range(const std::string& node_port_range
 	setBodyParameter("Node_port_range", node_port_range);
 }
 
-std::string CreateClusterRequest::getService_cidr()const
+std::string CreateClusterRequest::getZone_id()const
 {
-	return service_cidr_;
+	return zone_id_;
 }
 
-void CreateClusterRequest::setService_cidr(const std::string& service_cidr)
+void CreateClusterRequest::setZone_id(const std::string& zone_id)
 {
-	service_cidr_ = service_cidr;
-	setBodyParameter("Service_cidr", service_cidr);
+	zone_id_ = zone_id;
+	setBodyParameter("Zone_id", zone_id);
 }
 
 std::string CreateClusterRequest::getLogin_password()const
@@ -193,6 +215,17 @@ void CreateClusterRequest::setKubernetes_version(const std::string& kubernetes_v
 	setBodyParameter("Kubernetes_version", kubernetes_version);
 }
 
+bool CreateClusterRequest::getIs_enterprise_security_group()const
+{
+	return is_enterprise_security_group_;
+}
+
+void CreateClusterRequest::setIs_enterprise_security_group(bool is_enterprise_security_group)
+{
+	is_enterprise_security_group_ = is_enterprise_security_group;
+	setBodyParameter("Is_enterprise_security_group", is_enterprise_security_group ? "true" : "false");
+}
+
 std::string CreateClusterRequest::getMaster_period_unit()const
 {
 	return master_period_unit_;
@@ -204,48 +237,48 @@ void CreateClusterRequest::setMaster_period_unit(const std::string& master_perio
 	setBodyParameter("Master_period_unit", master_period_unit);
 }
 
-int CreateClusterRequest::getMaster_system_disk_size()const
+long CreateClusterRequest::getMaster_system_disk_size()const
 {
 	return master_system_disk_size_;
 }
 
-void CreateClusterRequest::setMaster_system_disk_size(int master_system_disk_size)
+void CreateClusterRequest::setMaster_system_disk_size(long master_system_disk_size)
 {
 	master_system_disk_size_ = master_system_disk_size;
 	setBodyParameter("Master_system_disk_size", std::to_string(master_system_disk_size));
 }
 
-int CreateClusterRequest::getMaster_count()const
+long CreateClusterRequest::getMaster_count()const
 {
 	return master_count_;
 }
 
-void CreateClusterRequest::setMaster_count(int master_count)
+void CreateClusterRequest::setMaster_count(long master_count)
 {
 	master_count_ = master_count;
 	setBodyParameter("Master_count", std::to_string(master_count));
 }
 
-int CreateClusterRequest::getNum_of_nodes()const
+long CreateClusterRequest::getNum_of_nodes()const
 {
 	return num_of_nodes_;
 }
 
-void CreateClusterRequest::setNum_of_nodes(int num_of_nodes)
+void CreateClusterRequest::setNum_of_nodes(long num_of_nodes)
 {
 	num_of_nodes_ = num_of_nodes;
 	setBodyParameter("Num_of_nodes", std::to_string(num_of_nodes));
 }
 
-bool CreateClusterRequest::getDeletion_protection()const
+std::string CreateClusterRequest::getDeletion_protection()const
 {
 	return deletion_protection_;
 }
 
-void CreateClusterRequest::setDeletion_protection(bool deletion_protection)
+void CreateClusterRequest::setDeletion_protection(const std::string& deletion_protection)
 {
 	deletion_protection_ = deletion_protection;
-	setBodyParameter("Deletion_protection", deletion_protection ? "true" : "false");
+	setBodyParameter("Deletion_protection", deletion_protection);
 }
 
 std::string CreateClusterRequest::getKey_pair()const
@@ -259,17 +292,6 @@ void CreateClusterRequest::setKey_pair(const std::string& key_pair)
 	setBodyParameter("Key_pair", key_pair);
 }
 
-bool CreateClusterRequest::getWorker_data_disk()const
-{
-	return worker_data_disk_;
-}
-
-void CreateClusterRequest::setWorker_data_disk(bool worker_data_disk)
-{
-	worker_data_disk_ = worker_data_disk;
-	setBodyParameter("Worker_data_disk", worker_data_disk ? "true" : "false");
-}
-
 bool CreateClusterRequest::getMaster_auto_renew()const
 {
 	return master_auto_renew_;
@@ -279,6 +301,17 @@ void CreateClusterRequest::setMaster_auto_renew(bool master_auto_renew)
 {
 	master_auto_renew_ = master_auto_renew;
 	setBodyParameter("Master_auto_renew", master_auto_renew ? "true" : "false");
+}
+
+std::string CreateClusterRequest::getProfile()const
+{
+	return profile_;
+}
+
+void CreateClusterRequest::setProfile(const std::string& profile)
+{
+	profile_ = profile;
+	setBodyParameter("Profile", profile);
 }
 
 std::string CreateClusterRequest::getRegion_id()const
@@ -314,15 +347,15 @@ void CreateClusterRequest::setWorker_system_disk_category(const std::string& wor
 	setBodyParameter("Worker_system_disk_category", worker_system_disk_category);
 }
 
-std::string CreateClusterRequest::getRuntime()const
+std::string CreateClusterRequest::getUser_data()const
 {
-	return runtime_;
+	return user_data_;
 }
 
-void CreateClusterRequest::setRuntime(const std::string& runtime)
+void CreateClusterRequest::setUser_data(const std::string& user_data)
 {
-	runtime_ = runtime;
-	setBodyParameter("Runtime", runtime);
+	user_data_ = user_data;
+	setBodyParameter("User_data", user_data);
 }
 
 std::string CreateClusterRequest::getWorker_period_unit()const
@@ -358,59 +391,81 @@ void CreateClusterRequest::setNode_cidr_mask(const std::string& node_cidr_mask)
 	setBodyParameter("Node_cidr_mask", node_cidr_mask);
 }
 
-int CreateClusterRequest::getWorker_auto_renew_period()const
+long CreateClusterRequest::getWorker_auto_renew_period()const
 {
 	return worker_auto_renew_period_;
 }
 
-void CreateClusterRequest::setWorker_auto_renew_period(int worker_auto_renew_period)
+void CreateClusterRequest::setWorker_auto_renew_period(long worker_auto_renew_period)
 {
 	worker_auto_renew_period_ = worker_auto_renew_period;
 	setBodyParameter("Worker_auto_renew_period", std::to_string(worker_auto_renew_period));
 }
 
-int CreateClusterRequest::getMaster_auto_renew_period()const
+long CreateClusterRequest::getMaster_auto_renew_period()const
 {
 	return master_auto_renew_period_;
 }
 
-void CreateClusterRequest::setMaster_auto_renew_period(int master_auto_renew_period)
+void CreateClusterRequest::setMaster_auto_renew_period(long master_auto_renew_period)
 {
 	master_auto_renew_period_ = master_auto_renew_period;
 	setBodyParameter("Master_auto_renew_period", std::to_string(master_auto_renew_period));
 }
 
-int CreateClusterRequest::getWorker_period()const
+long CreateClusterRequest::getWorker_period()const
 {
 	return worker_period_;
 }
 
-void CreateClusterRequest::setWorker_period(int worker_period)
+void CreateClusterRequest::setWorker_period(long worker_period)
 {
 	worker_period_ = worker_period;
 	setBodyParameter("Worker_period", std::to_string(worker_period));
 }
 
-int CreateClusterRequest::getTimeout_mins()const
+long CreateClusterRequest::getTimeout_mins()const
 {
 	return timeout_mins_;
 }
 
-void CreateClusterRequest::setTimeout_mins(int timeout_mins)
+void CreateClusterRequest::setTimeout_mins(long timeout_mins)
 {
 	timeout_mins_ = timeout_mins;
 	setBodyParameter("Timeout_mins", std::to_string(timeout_mins));
 }
 
-int CreateClusterRequest::getWorker_system_disk_size()const
+std::string CreateClusterRequest::getImages_id()const
+{
+	return images_id_;
+}
+
+void CreateClusterRequest::setImages_id(const std::string& images_id)
+{
+	images_id_ = images_id;
+	setBodyParameter("Images_id", images_id);
+}
+
+long CreateClusterRequest::getWorker_system_disk_size()const
 {
 	return worker_system_disk_size_;
 }
 
-void CreateClusterRequest::setWorker_system_disk_size(int worker_system_disk_size)
+void CreateClusterRequest::setWorker_system_disk_size(long worker_system_disk_size)
 {
 	worker_system_disk_size_ = worker_system_disk_size;
 	setBodyParameter("Worker_system_disk_size", std::to_string(worker_system_disk_size));
+}
+
+std::string CreateClusterRequest::getVpcid()const
+{
+	return vpcid_;
+}
+
+void CreateClusterRequest::setVpcid(const std::string& vpcid)
+{
+	vpcid_ = vpcid;
+	setBodyParameter("Vpcid", vpcid);
 }
 
 std::string CreateClusterRequest::getOs_type()const
@@ -433,17 +488,6 @@ void CreateClusterRequest::setCpu_policy(const std::string& cpu_policy)
 {
 	cpu_policy_ = cpu_policy;
 	setBodyParameter("Cpu_policy", cpu_policy);
-}
-
-std::string CreateClusterRequest::getVpcid()const
-{
-	return vpcid_;
-}
-
-void CreateClusterRequest::setVpcid(const std::string& vpcid)
-{
-	vpcid_ = vpcid;
-	setBodyParameter("Vpcid", vpcid);
 }
 
 std::string CreateClusterRequest::getName()const

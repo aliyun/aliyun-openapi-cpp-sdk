@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				ModifyClusterTagsResult();
 				explicit ModifyClusterTagsResult(const std::string &payload);
 				~ModifyClusterTagsResult();
-				std::string getRequestId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string requestId_;
 
 			};
 		}

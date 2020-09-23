@@ -35,14 +35,20 @@ namespace AlibabaCloud
 				UpgradeClusterRequest();
 				~UpgradeClusterRequest();
 
+				std::string getComponent_name()const;
+				void setComponent_name(const std::string& component_name);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
 				std::string getVersion()const;
 				void setVersion(const std::string& version);
+				std::string getNext_version()const;
+				void setNext_version(const std::string& next_version);
 
             private:
+				std::string component_name_;
 				std::string clusterId_;
 				std::string version_;
+				std::string next_version_;
 
 			};
 		}

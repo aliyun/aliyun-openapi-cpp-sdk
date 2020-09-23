@@ -51,33 +51,24 @@ void DescribeAddonsResult::parse(const std::string &payload)
 			ComponentGroupsItem::ItemsItem itemsObject;
 			if(!allComponentGroupsNodeitemsitemsItem["name"].isNull())
 				itemsObject.name = allComponentGroupsNodeitemsitemsItem["name"].asString();
-			if(!allComponentGroupsNodeitemsitemsItem["config"].isNull())
-				itemsObject.config = allComponentGroupsNodeitemsitemsItem["config"].asString();
-			if(!allComponentGroupsNodeitemsitemsItem["required"].isNull())
-				itemsObject.required = allComponentGroupsNodeitemsitemsItem["required"].asString();
+			if(!allComponentGroupsNodeitemsitemsItem["description"].isNull())
+				itemsObject.description = allComponentGroupsNodeitemsitemsItem["description"].asString();
 			if(!allComponentGroupsNodeitemsitemsItem["disabled"].isNull())
 				itemsObject.disabled = allComponentGroupsNodeitemsitemsItem["disabled"].asString() == "true";
 			if(!allComponentGroupsNodeitemsitemsItem["version"].isNull())
 				itemsObject.version = allComponentGroupsNodeitemsitemsItem["version"].asString();
+			if(!allComponentGroupsNodeitemsitemsItem["required"].isNull())
+				itemsObject.required = allComponentGroupsNodeitemsitemsItem["required"].asString();
 			componentGroupsObject.items.push_back(itemsObject);
 		}
-		auto all_Default = value["default"]["default_addon_name"];
+		auto all_Default = value["default"]["ComponentName"];
 		for (auto value : all_Default)
 			componentGroupsObject._default.push_back(value.asString());
 		componentGroups_.push_back(componentGroupsObject);
 	}
 	auto standardComponentsNode = value["StandardComponents"];
-	auto addon_nameNode = standardComponentsNode["addon_name"];
-	if(!addon_nameNode["name"].isNull())
-		standardComponents_.addon_name.name = addon_nameNode["name"].asString();
-	if(!addon_nameNode["config"].isNull())
-		standardComponents_.addon_name.config = addon_nameNode["config"].asString();
-	if(!addon_nameNode["required"].isNull())
-		standardComponents_.addon_name.required = addon_nameNode["required"].asString();
-	if(!addon_nameNode["disabled"].isNull())
-		standardComponents_.addon_name.disabled = addon_nameNode["disabled"].asString() == "true";
-	if(!addon_nameNode["version"].isNull())
-		standardComponents_.addon_name.version = addon_nameNode["version"].asString();
+	if(!standardComponentsNode["ComponentName"].isNull())
+		standardComponents_.componentName = standardComponentsNode["ComponentName"].asString();
 
 }
 

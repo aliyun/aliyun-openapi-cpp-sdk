@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKRESULT_H_
-#define ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_GETKUBERNETESTRIGGERRESULT_H_
+#define ALIBABACLOUD_CS_MODEL_GETKUBERNETESTRIGGERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DeleteTriggerHookResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT GetKubernetesTriggerResult : public ServiceResult
 			{
 			public:
+				struct TriggersItem
+				{
+					std::string action;
+					std::string cluster_id;
+					std::string project_id;
+					std::string token;
+					std::string id;
+				};
 
 
-				DeleteTriggerHookResult();
-				explicit DeleteTriggerHookResult(const std::string &payload);
-				~DeleteTriggerHookResult();
+				GetKubernetesTriggerResult();
+				explicit GetKubernetesTriggerResult(const std::string &payload);
+				~GetKubernetesTriggerResult();
+				std::vector<TriggersItem> gettriggers()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<TriggersItem> triggers_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_GETKUBERNETESTRIGGERRESULT_H_

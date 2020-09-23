@@ -28,17 +28,6 @@ UnInstallClusterAddonsRequest::UnInstallClusterAddonsRequest() :
 UnInstallClusterAddonsRequest::~UnInstallClusterAddonsRequest()
 {}
 
-std::string UnInstallClusterAddonsRequest::getName()const
-{
-	return name_;
-}
-
-void UnInstallClusterAddonsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setBodyParameter("Name", name);
-}
-
 std::string UnInstallClusterAddonsRequest::getClusterId()const
 {
 	return clusterId_;

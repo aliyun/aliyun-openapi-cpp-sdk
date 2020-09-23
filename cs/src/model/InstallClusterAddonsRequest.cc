@@ -28,28 +28,6 @@ InstallClusterAddonsRequest::InstallClusterAddonsRequest() :
 InstallClusterAddonsRequest::~InstallClusterAddonsRequest()
 {}
 
-std::string InstallClusterAddonsRequest::getName()const
-{
-	return name_;
-}
-
-void InstallClusterAddonsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setBodyParameter("Name", name);
-}
-
-bool InstallClusterAddonsRequest::getDisabled()const
-{
-	return disabled_;
-}
-
-void InstallClusterAddonsRequest::setDisabled(bool disabled)
-{
-	disabled_ = disabled;
-	setBodyParameter("Disabled", disabled ? "true" : "false");
-}
-
 std::string InstallClusterAddonsRequest::getClusterId()const
 {
 	return clusterId_;
@@ -59,38 +37,5 @@ void InstallClusterAddonsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
-}
-
-std::string InstallClusterAddonsRequest::getVersion()const
-{
-	return version_;
-}
-
-void InstallClusterAddonsRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setBodyParameter("Version", version);
-}
-
-std::string InstallClusterAddonsRequest::getConfig()const
-{
-	return config_;
-}
-
-void InstallClusterAddonsRequest::setConfig(const std::string& config)
-{
-	config_ = config;
-	setBodyParameter("Config", config);
-}
-
-std::string InstallClusterAddonsRequest::getRequired()const
-{
-	return required_;
-}
-
-void InstallClusterAddonsRequest::setRequired(const std::string& required)
-{
-	required_ = required;
-	setBodyParameter("Required", required);
 }
 

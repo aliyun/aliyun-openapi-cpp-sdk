@@ -40,16 +40,16 @@ void DescribeClusterAddonUpgradeStatusResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto addon_infoNode = value["addon_info"];
+	if(!addon_infoNode["component_name"].isNull())
+		addon_info_.component_name = addon_infoNode["component_name"].asString();
 	if(!addon_infoNode["message"].isNull())
 		addon_info_.message = addon_infoNode["message"].asString();
 	if(!addon_infoNode["category"].isNull())
 		addon_info_.category = addon_infoNode["category"].asString();
-	if(!addon_infoNode["yaml"].isNull())
-		addon_info_.yaml = addon_infoNode["yaml"].asString();
-	if(!addon_infoNode["component_name"].isNull())
-		addon_info_.component_name = addon_infoNode["component_name"].asString();
 	if(!addon_infoNode["version"].isNull())
 		addon_info_.version = addon_infoNode["version"].asString();
+	if(!addon_infoNode["yaml"].isNull())
+		addon_info_.yaml = addon_infoNode["yaml"].asString();
 	if(!value["template"].isNull())
 		_template_ = value["template"].asString();
 	if(!value["can_upgrade"].isNull())

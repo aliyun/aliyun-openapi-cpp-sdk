@@ -28,17 +28,6 @@ UpgradeClusterAddonsRequest::UpgradeClusterAddonsRequest() :
 UpgradeClusterAddonsRequest::~UpgradeClusterAddonsRequest()
 {}
 
-std::string UpgradeClusterAddonsRequest::getComponent_name()const
-{
-	return component_name_;
-}
-
-void UpgradeClusterAddonsRequest::setComponent_name(const std::string& component_name)
-{
-	component_name_ = component_name;
-	setBodyParameter("Component_name", component_name);
-}
-
 std::string UpgradeClusterAddonsRequest::getClusterId()const
 {
 	return clusterId_;
@@ -48,16 +37,5 @@ void UpgradeClusterAddonsRequest::setClusterId(const std::string& clusterId)
 {
 	clusterId_ = clusterId;
 	setParameter("ClusterId", clusterId);
-}
-
-std::string UpgradeClusterAddonsRequest::getVersion()const
-{
-	return version_;
-}
-
-void UpgradeClusterAddonsRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setBodyParameter("Version", version);
 }
 

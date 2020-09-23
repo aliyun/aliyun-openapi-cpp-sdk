@@ -43,10 +43,10 @@ void AttachInstancesResult::parse(const std::string &payload)
 	for (auto valuelistlistItem : alllistNode)
 	{
 		ListItem listObject;
-		if(!valuelistlistItem["code"].isNull())
-			listObject.code = valuelistlistItem["code"].asString();
 		if(!valuelistlistItem["instanceId"].isNull())
 			listObject.instanceId = valuelistlistItem["instanceId"].asString();
+		if(!valuelistlistItem["code"].isNull())
+			listObject.code = valuelistlistItem["code"].asString();
 		if(!valuelistlistItem["message"].isNull())
 			listObject.message = valuelistlistItem["message"].asString();
 		list_.push_back(listObject);

@@ -32,49 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeClustersResult : public ServiceResult
 			{
 			public:
-				struct ClusterDetail
-				{
-					struct TagsItem
-					{
-						std::string value;
-						std::string key;
-					};
-					std::string cluster_type;
-					std::string resource_group_id;
-					std::string data_disk_category;
-					std::string docker_version;
-					std::string cluster_id;
-					std::string external_loadbalancer_id;
-					std::string updated;
-					std::string region_id;
-					std::string size;
-					std::string vpc_id;
-					std::string vswitch_id;
-					std::string meta_data;
-					bool deletion_protection;
-					std::string network_mode;
-					std::string security_group_id;
-					std::vector<ClusterDetail::TagsItem> tags;
-					std::string name;
-					int data_disk_size;
-					std::string created;
-					std::string state;
-					std::string zone_id;
-					std::string vswitch_cidr;
-					std::string master_url;
-					std::string current_version;
-				};
 
 
 				DescribeClustersResult();
 				explicit DescribeClustersResult(const std::string &payload);
 				~DescribeClustersResult();
-				std::vector<ClusterDetail> getclusters()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ClusterDetail> clusters_;
 
 			};
 		}

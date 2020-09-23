@@ -14,17 +14,28 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DeleteTriggerHookRequest.h>
+#include <alibabacloud/cs/model/ModifyClusterConfigurationRequest.h>
 
-using AlibabaCloud::CS::Model::DeleteTriggerHookRequest;
+using AlibabaCloud::CS::Model::ModifyClusterConfigurationRequest;
 
-DeleteTriggerHookRequest::DeleteTriggerHookRequest() :
+ModifyClusterConfigurationRequest::ModifyClusterConfigurationRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
 {
-	setResourcePath("/api/v2/hook/trigger");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/clusters/[ClusterId]/configuration");
+	setMethod(HttpRequest::Method::Put);
 }
 
-DeleteTriggerHookRequest::~DeleteTriggerHookRequest()
+ModifyClusterConfigurationRequest::~ModifyClusterConfigurationRequest()
 {}
+
+std::string ModifyClusterConfigurationRequest::getClusterId()const
+{
+	return clusterId_;
+}
+
+void ModifyClusterConfigurationRequest::setClusterId(const std::string& clusterId)
+{
+	clusterId_ = clusterId;
+	setParameter("ClusterId", clusterId);
+}
 

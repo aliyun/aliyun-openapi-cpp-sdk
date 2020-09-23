@@ -39,34 +39,41 @@ void DescribeUserQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["cluster_quota"].isNull())
-		cluster_quota_ = std::stoi(value["cluster_quota"].asString());
-	if(!value["node_quota"].isNull())
-		node_quota_ = std::stoi(value["node_quota"].asString());
-	if(!value["ask_cluster_quota"].isNull())
-		ask_cluster_quota_ = std::stoi(value["ask_cluster_quota"].asString());
+	if(!value["cluster_nodepool_quota"].isNull())
+		cluster_nodepool_quota_ = std::stol(value["cluster_nodepool_quota"].asString());
 	if(!value["amk_cluster_quota"].isNull())
-		amk_cluster_quota_ = std::stoi(value["amk_cluster_quota"].asString());
+		amk_cluster_quota_ = std::stol(value["amk_cluster_quota"].asString());
+	if(!value["cluster_quota"].isNull())
+		cluster_quota_ = std::stol(value["cluster_quota"].asString());
+	if(!value["node_quota"].isNull())
+		node_quota_ = std::stol(value["node_quota"].asString());
+	if(!value["ask_cluster_quota"].isNull())
+		ask_cluster_quota_ = std::stol(value["ask_cluster_quota"].asString());
 
 }
 
-int DescribeUserQuotaResult::getNode_quota()const
-{
-	return node_quota_;
-}
-
-int DescribeUserQuotaResult::getAmk_cluster_quota()const
+long DescribeUserQuotaResult::getAmk_cluster_quota()const
 {
 	return amk_cluster_quota_;
 }
 
-int DescribeUserQuotaResult::getCluster_quota()const
+long DescribeUserQuotaResult::getNode_quota()const
+{
+	return node_quota_;
+}
+
+long DescribeUserQuotaResult::getCluster_quota()const
 {
 	return cluster_quota_;
 }
 
-int DescribeUserQuotaResult::getAsk_cluster_quota()const
+long DescribeUserQuotaResult::getAsk_cluster_quota()const
 {
 	return ask_cluster_quota_;
+}
+
+long DescribeUserQuotaResult::getCluster_nodepool_quota()const
+{
+	return cluster_nodepool_quota_;
 }
 

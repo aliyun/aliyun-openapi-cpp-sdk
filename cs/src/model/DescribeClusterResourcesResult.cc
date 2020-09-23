@@ -39,25 +39,6 @@ void DescribeClusterResourcesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allresourcesNode = value["resources"]["resourcesItem"];
-	for (auto valueresourcesresourcesItem : allresourcesNode)
-	{
-		ResourcesItem resourcesObject;
-		if(!valueresourcesresourcesItem["instance_id"].isNull())
-			resourcesObject.instance_id = valueresourcesresourcesItem["instance_id"].asString();
-		if(!valueresourcesresourcesItem["resource_type"].isNull())
-			resourcesObject.resource_type = valueresourcesresourcesItem["resource_type"].asString();
-		if(!valueresourcesresourcesItem["resource_info"].isNull())
-			resourcesObject.resource_info = valueresourcesresourcesItem["resource_info"].asString();
-		if(!valueresourcesresourcesItem["state"].isNull())
-			resourcesObject.state = valueresourcesresourcesItem["state"].asString();
-		resources_.push_back(resourcesObject);
-	}
 
-}
-
-std::vector<DescribeClusterResourcesResult::ResourcesItem> DescribeClusterResourcesResult::getresources()const
-{
-	return resources_;
 }
 

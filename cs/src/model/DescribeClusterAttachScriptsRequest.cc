@@ -39,3 +39,14 @@ void DescribeClusterAttachScriptsRequest::setClusterId(const std::string& cluste
 	setParameter("ClusterId", clusterId);
 }
 
+std::string DescribeClusterAttachScriptsRequest::getArch()const
+{
+	return arch_;
+}
+
+void DescribeClusterAttachScriptsRequest::setArch(const std::string& arch)
+{
+	arch_ = arch;
+	setBodyParameter("Arch", arch);
+}
+

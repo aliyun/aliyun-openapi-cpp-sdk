@@ -39,6 +39,13 @@ void DescribeClusterV2UserKubeconfigResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["config"].isNull())
+		config_ = value["config"].asString();
 
+}
+
+std::string DescribeClusterV2UserKubeconfigResult::getConfig()const
+{
+	return config_;
 }
 

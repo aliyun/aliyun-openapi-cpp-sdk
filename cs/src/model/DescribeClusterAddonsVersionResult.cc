@@ -39,62 +39,13 @@ void DescribeClusterAddonsVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["template"].isNull())
-		_template_ = value["template"].asString();
-	if(!value["next_version"].isNull())
-		next_version_ = value["next_version"].asString();
-	if(!value["can_upgrade"].isNull())
-		can_upgrade_ = value["can_upgrade"].asString() == "true";
-	if(!value["component_name"].isNull())
-		component_name_ = value["component_name"].asString();
-	if(!value["version"].isNull())
-		version_ = value["version"].asString();
-	if(!value["changed"].isNull())
-		changed_ = value["changed"].asString();
-	if(!value["message"].isNull())
-		message_ = value["message"].asString();
-	if(!value["required"].isNull())
-		required_ = value["required"].asString() == "true";
+	if(!value["AddonsName"].isNull())
+		addonsName_ = value["AddonsName"].asString();
 
 }
 
-std::string DescribeClusterAddonsVersionResult::getNext_version()const
+std::string DescribeClusterAddonsVersionResult::getAddonsName()const
 {
-	return next_version_;
-}
-
-std::string DescribeClusterAddonsVersionResult::get_Template()const
-{
-	return _template_;
-}
-
-bool DescribeClusterAddonsVersionResult::getCan_upgrade()const
-{
-	return can_upgrade_;
-}
-
-std::string DescribeClusterAddonsVersionResult::getMessage()const
-{
-	return message_;
-}
-
-bool DescribeClusterAddonsVersionResult::getRequired()const
-{
-	return required_;
-}
-
-std::string DescribeClusterAddonsVersionResult::getVersion()const
-{
-	return version_;
-}
-
-std::string DescribeClusterAddonsVersionResult::getChanged()const
-{
-	return changed_;
-}
-
-std::string DescribeClusterAddonsVersionResult::getComponent_name()const
-{
-	return component_name_;
+	return addonsName_;
 }
 

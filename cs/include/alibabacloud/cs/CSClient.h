@@ -32,26 +32,26 @@
 #include "model/CancelWorkflowResult.h"
 #include "model/CreateClusterRequest.h"
 #include "model/CreateClusterResult.h"
+#include "model/CreateKubernetesTriggerRequest.h"
+#include "model/CreateKubernetesTriggerResult.h"
 #include "model/CreateTemplateRequest.h"
 #include "model/CreateTemplateResult.h"
-#include "model/CreateTriggerHookRequest.h"
-#include "model/CreateTriggerHookResult.h"
 #include "model/DeleteClusterRequest.h"
 #include "model/DeleteClusterResult.h"
 #include "model/DeleteClusterNodesRequest.h"
 #include "model/DeleteClusterNodesResult.h"
+#include "model/DeleteKubernetesTriggerRequest.h"
+#include "model/DeleteKubernetesTriggerResult.h"
 #include "model/DeleteTemplateRequest.h"
 #include "model/DeleteTemplateResult.h"
-#include "model/DeleteTriggerHookRequest.h"
-#include "model/DeleteTriggerHookResult.h"
 #include "model/DescirbeWorkflowRequest.h"
 #include "model/DescirbeWorkflowResult.h"
 #include "model/DescribeAddonsRequest.h"
 #include "model/DescribeAddonsResult.h"
-#include "model/DescribeApiVersionRequest.h"
-#include "model/DescribeApiVersionResult.h"
 #include "model/DescribeClusterAddonUpgradeStatusRequest.h"
 #include "model/DescribeClusterAddonUpgradeStatusResult.h"
+#include "model/DescribeClusterAddonsUpgradeStatusRequest.h"
+#include "model/DescribeClusterAddonsUpgradeStatusResult.h"
 #include "model/DescribeClusterAddonsVersionRequest.h"
 #include "model/DescribeClusterAddonsVersionResult.h"
 #include "model/DescribeClusterAttachScriptsRequest.h"
@@ -70,6 +70,8 @@
 #include "model/DescribeClusterV2UserKubeconfigResult.h"
 #include "model/DescribeClustersRequest.h"
 #include "model/DescribeClustersResult.h"
+#include "model/DescribeClustersV1Request.h"
+#include "model/DescribeClustersV1Result.h"
 #include "model/DescribeExternalAgentRequest.h"
 #include "model/DescribeExternalAgentResult.h"
 #include "model/DescribeTemplatesRequest.h"
@@ -78,6 +80,8 @@
 #include "model/DescribeUserQuotaResult.h"
 #include "model/DescribeWorkflowsRequest.h"
 #include "model/DescribeWorkflowsResult.h"
+#include "model/GetKubernetesTriggerRequest.h"
+#include "model/GetKubernetesTriggerResult.h"
 #include "model/GetUpgradeStatusRequest.h"
 #include "model/GetUpgradeStatusResult.h"
 #include "model/InstallClusterAddonsRequest.h"
@@ -86,6 +90,8 @@
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyClusterRequest.h"
 #include "model/ModifyClusterResult.h"
+#include "model/ModifyClusterConfigurationRequest.h"
+#include "model/ModifyClusterConfigurationResult.h"
 #include "model/ModifyClusterTagsRequest.h"
 #include "model/ModifyClusterTagsResult.h"
 #include "model/PauseClusterUpgradeRequest.h"
@@ -110,6 +116,8 @@
 #include "model/UnInstallClusterAddonsResult.h"
 #include "model/UpdateK8sClusterUserConfigExpireRequest.h"
 #include "model/UpdateK8sClusterUserConfigExpireResult.h"
+#include "model/UpdateTemplateRequest.h"
+#include "model/UpdateTemplateResult.h"
 #include "model/UpgradeClusterRequest.h"
 #include "model/UpgradeClusterResult.h"
 #include "model/UpgradeClusterAddonsRequest.h"
@@ -138,36 +146,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateClusterResult> CreateClusterOutcome;
 			typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::CreateClusterRequest&, const CreateClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
+			typedef Outcome<Error, Model::CreateKubernetesTriggerResult> CreateKubernetesTriggerOutcome;
+			typedef std::future<CreateKubernetesTriggerOutcome> CreateKubernetesTriggerOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::CreateKubernetesTriggerRequest&, const CreateKubernetesTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKubernetesTriggerAsyncHandler;
 			typedef Outcome<Error, Model::CreateTemplateResult> CreateTemplateOutcome;
 			typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::CreateTemplateRequest&, const CreateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
-			typedef Outcome<Error, Model::CreateTriggerHookResult> CreateTriggerHookOutcome;
-			typedef std::future<CreateTriggerHookOutcome> CreateTriggerHookOutcomeCallable;
-			typedef std::function<void(const CSClient*, const Model::CreateTriggerHookRequest&, const CreateTriggerHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTriggerHookAsyncHandler;
 			typedef Outcome<Error, Model::DeleteClusterResult> DeleteClusterOutcome;
 			typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DeleteClusterRequest&, const DeleteClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteClusterNodesResult> DeleteClusterNodesOutcome;
 			typedef std::future<DeleteClusterNodesOutcome> DeleteClusterNodesOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DeleteClusterNodesRequest&, const DeleteClusterNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterNodesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteKubernetesTriggerResult> DeleteKubernetesTriggerOutcome;
+			typedef std::future<DeleteKubernetesTriggerOutcome> DeleteKubernetesTriggerOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::DeleteKubernetesTriggerRequest&, const DeleteKubernetesTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKubernetesTriggerAsyncHandler;
 			typedef Outcome<Error, Model::DeleteTemplateResult> DeleteTemplateOutcome;
 			typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DeleteTemplateRequest&, const DeleteTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
-			typedef Outcome<Error, Model::DeleteTriggerHookResult> DeleteTriggerHookOutcome;
-			typedef std::future<DeleteTriggerHookOutcome> DeleteTriggerHookOutcomeCallable;
-			typedef std::function<void(const CSClient*, const Model::DeleteTriggerHookRequest&, const DeleteTriggerHookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTriggerHookAsyncHandler;
 			typedef Outcome<Error, Model::DescirbeWorkflowResult> DescirbeWorkflowOutcome;
 			typedef std::future<DescirbeWorkflowOutcome> DescirbeWorkflowOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescirbeWorkflowRequest&, const DescirbeWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescirbeWorkflowAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAddonsResult> DescribeAddonsOutcome;
 			typedef std::future<DescribeAddonsOutcome> DescribeAddonsOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeAddonsRequest&, const DescribeAddonsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddonsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeApiVersionResult> DescribeApiVersionOutcome;
-			typedef std::future<DescribeApiVersionOutcome> DescribeApiVersionOutcomeCallable;
-			typedef std::function<void(const CSClient*, const Model::DescribeApiVersionRequest&, const DescribeApiVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiVersionAsyncHandler;
 			typedef Outcome<Error, Model::DescribeClusterAddonUpgradeStatusResult> DescribeClusterAddonUpgradeStatusOutcome;
 			typedef std::future<DescribeClusterAddonUpgradeStatusOutcome> DescribeClusterAddonUpgradeStatusOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeClusterAddonUpgradeStatusRequest&, const DescribeClusterAddonUpgradeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAddonUpgradeStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterAddonsUpgradeStatusResult> DescribeClusterAddonsUpgradeStatusOutcome;
+			typedef std::future<DescribeClusterAddonsUpgradeStatusOutcome> DescribeClusterAddonsUpgradeStatusOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::DescribeClusterAddonsUpgradeStatusRequest&, const DescribeClusterAddonsUpgradeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAddonsUpgradeStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeClusterAddonsVersionResult> DescribeClusterAddonsVersionOutcome;
 			typedef std::future<DescribeClusterAddonsVersionOutcome> DescribeClusterAddonsVersionOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeClusterAddonsVersionRequest&, const DescribeClusterAddonsVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAddonsVersionAsyncHandler;
@@ -195,6 +203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeClustersResult> DescribeClustersOutcome;
 			typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeClustersRequest&, const DescribeClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClustersV1Result> DescribeClustersV1Outcome;
+			typedef std::future<DescribeClustersV1Outcome> DescribeClustersV1OutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::DescribeClustersV1Request&, const DescribeClustersV1Outcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersV1AsyncHandler;
 			typedef Outcome<Error, Model::DescribeExternalAgentResult> DescribeExternalAgentOutcome;
 			typedef std::future<DescribeExternalAgentOutcome> DescribeExternalAgentOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeExternalAgentRequest&, const DescribeExternalAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalAgentAsyncHandler;
@@ -207,6 +218,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeWorkflowsResult> DescribeWorkflowsOutcome;
 			typedef std::future<DescribeWorkflowsOutcome> DescribeWorkflowsOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::DescribeWorkflowsRequest&, const DescribeWorkflowsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowsAsyncHandler;
+			typedef Outcome<Error, Model::GetKubernetesTriggerResult> GetKubernetesTriggerOutcome;
+			typedef std::future<GetKubernetesTriggerOutcome> GetKubernetesTriggerOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::GetKubernetesTriggerRequest&, const GetKubernetesTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetKubernetesTriggerAsyncHandler;
 			typedef Outcome<Error, Model::GetUpgradeStatusResult> GetUpgradeStatusOutcome;
 			typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::GetUpgradeStatusRequest&, const GetUpgradeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeStatusAsyncHandler;
@@ -219,6 +233,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyClusterResult> ModifyClusterOutcome;
 			typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::ModifyClusterRequest&, const ModifyClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterConfigurationResult> ModifyClusterConfigurationOutcome;
+			typedef std::future<ModifyClusterConfigurationOutcome> ModifyClusterConfigurationOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::ModifyClusterConfigurationRequest&, const ModifyClusterConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConfigurationAsyncHandler;
 			typedef Outcome<Error, Model::ModifyClusterTagsResult> ModifyClusterTagsOutcome;
 			typedef std::future<ModifyClusterTagsOutcome> ModifyClusterTagsOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::ModifyClusterTagsRequest&, const ModifyClusterTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterTagsAsyncHandler;
@@ -255,6 +272,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateK8sClusterUserConfigExpireResult> UpdateK8sClusterUserConfigExpireOutcome;
 			typedef std::future<UpdateK8sClusterUserConfigExpireOutcome> UpdateK8sClusterUserConfigExpireOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::UpdateK8sClusterUserConfigExpireRequest&, const UpdateK8sClusterUserConfigExpireOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateK8sClusterUserConfigExpireAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTemplateResult> UpdateTemplateOutcome;
+			typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
+			typedef std::function<void(const CSClient*, const Model::UpdateTemplateRequest&, const UpdateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTemplateAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeClusterResult> UpgradeClusterOutcome;
 			typedef std::future<UpgradeClusterOutcome> UpgradeClusterOutcomeCallable;
 			typedef std::function<void(const CSClient*, const Model::UpgradeClusterRequest&, const UpgradeClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterAsyncHandler;
@@ -281,36 +301,36 @@ namespace AlibabaCloud
 			CreateClusterOutcome createCluster(const Model::CreateClusterRequest &request)const;
 			void createClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateClusterOutcomeCallable createClusterCallable(const Model::CreateClusterRequest& request) const;
+			CreateKubernetesTriggerOutcome createKubernetesTrigger(const Model::CreateKubernetesTriggerRequest &request)const;
+			void createKubernetesTriggerAsync(const Model::CreateKubernetesTriggerRequest& request, const CreateKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateKubernetesTriggerOutcomeCallable createKubernetesTriggerCallable(const Model::CreateKubernetesTriggerRequest& request) const;
 			CreateTemplateOutcome createTemplate(const Model::CreateTemplateRequest &request)const;
 			void createTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTemplateOutcomeCallable createTemplateCallable(const Model::CreateTemplateRequest& request) const;
-			CreateTriggerHookOutcome createTriggerHook(const Model::CreateTriggerHookRequest &request)const;
-			void createTriggerHookAsync(const Model::CreateTriggerHookRequest& request, const CreateTriggerHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateTriggerHookOutcomeCallable createTriggerHookCallable(const Model::CreateTriggerHookRequest& request) const;
 			DeleteClusterOutcome deleteCluster(const Model::DeleteClusterRequest &request)const;
 			void deleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteClusterOutcomeCallable deleteClusterCallable(const Model::DeleteClusterRequest& request) const;
 			DeleteClusterNodesOutcome deleteClusterNodes(const Model::DeleteClusterNodesRequest &request)const;
 			void deleteClusterNodesAsync(const Model::DeleteClusterNodesRequest& request, const DeleteClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteClusterNodesOutcomeCallable deleteClusterNodesCallable(const Model::DeleteClusterNodesRequest& request) const;
+			DeleteKubernetesTriggerOutcome deleteKubernetesTrigger(const Model::DeleteKubernetesTriggerRequest &request)const;
+			void deleteKubernetesTriggerAsync(const Model::DeleteKubernetesTriggerRequest& request, const DeleteKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteKubernetesTriggerOutcomeCallable deleteKubernetesTriggerCallable(const Model::DeleteKubernetesTriggerRequest& request) const;
 			DeleteTemplateOutcome deleteTemplate(const Model::DeleteTemplateRequest &request)const;
 			void deleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTemplateOutcomeCallable deleteTemplateCallable(const Model::DeleteTemplateRequest& request) const;
-			DeleteTriggerHookOutcome deleteTriggerHook(const Model::DeleteTriggerHookRequest &request)const;
-			void deleteTriggerHookAsync(const Model::DeleteTriggerHookRequest& request, const DeleteTriggerHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteTriggerHookOutcomeCallable deleteTriggerHookCallable(const Model::DeleteTriggerHookRequest& request) const;
 			DescirbeWorkflowOutcome descirbeWorkflow(const Model::DescirbeWorkflowRequest &request)const;
 			void descirbeWorkflowAsync(const Model::DescirbeWorkflowRequest& request, const DescirbeWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescirbeWorkflowOutcomeCallable descirbeWorkflowCallable(const Model::DescirbeWorkflowRequest& request) const;
 			DescribeAddonsOutcome describeAddons(const Model::DescribeAddonsRequest &request)const;
 			void describeAddonsAsync(const Model::DescribeAddonsRequest& request, const DescribeAddonsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAddonsOutcomeCallable describeAddonsCallable(const Model::DescribeAddonsRequest& request) const;
-			DescribeApiVersionOutcome describeApiVersion(const Model::DescribeApiVersionRequest &request)const;
-			void describeApiVersionAsync(const Model::DescribeApiVersionRequest& request, const DescribeApiVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeApiVersionOutcomeCallable describeApiVersionCallable(const Model::DescribeApiVersionRequest& request) const;
 			DescribeClusterAddonUpgradeStatusOutcome describeClusterAddonUpgradeStatus(const Model::DescribeClusterAddonUpgradeStatusRequest &request)const;
 			void describeClusterAddonUpgradeStatusAsync(const Model::DescribeClusterAddonUpgradeStatusRequest& request, const DescribeClusterAddonUpgradeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClusterAddonUpgradeStatusOutcomeCallable describeClusterAddonUpgradeStatusCallable(const Model::DescribeClusterAddonUpgradeStatusRequest& request) const;
+			DescribeClusterAddonsUpgradeStatusOutcome describeClusterAddonsUpgradeStatus(const Model::DescribeClusterAddonsUpgradeStatusRequest &request)const;
+			void describeClusterAddonsUpgradeStatusAsync(const Model::DescribeClusterAddonsUpgradeStatusRequest& request, const DescribeClusterAddonsUpgradeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterAddonsUpgradeStatusOutcomeCallable describeClusterAddonsUpgradeStatusCallable(const Model::DescribeClusterAddonsUpgradeStatusRequest& request) const;
 			DescribeClusterAddonsVersionOutcome describeClusterAddonsVersion(const Model::DescribeClusterAddonsVersionRequest &request)const;
 			void describeClusterAddonsVersionAsync(const Model::DescribeClusterAddonsVersionRequest& request, const DescribeClusterAddonsVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClusterAddonsVersionOutcomeCallable describeClusterAddonsVersionCallable(const Model::DescribeClusterAddonsVersionRequest& request) const;
@@ -338,6 +358,9 @@ namespace AlibabaCloud
 			DescribeClustersOutcome describeClusters(const Model::DescribeClustersRequest &request)const;
 			void describeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClustersOutcomeCallable describeClustersCallable(const Model::DescribeClustersRequest& request) const;
+			DescribeClustersV1Outcome describeClustersV1(const Model::DescribeClustersV1Request &request)const;
+			void describeClustersV1Async(const Model::DescribeClustersV1Request& request, const DescribeClustersV1AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClustersV1OutcomeCallable describeClustersV1Callable(const Model::DescribeClustersV1Request& request) const;
 			DescribeExternalAgentOutcome describeExternalAgent(const Model::DescribeExternalAgentRequest &request)const;
 			void describeExternalAgentAsync(const Model::DescribeExternalAgentRequest& request, const DescribeExternalAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeExternalAgentOutcomeCallable describeExternalAgentCallable(const Model::DescribeExternalAgentRequest& request) const;
@@ -350,6 +373,9 @@ namespace AlibabaCloud
 			DescribeWorkflowsOutcome describeWorkflows(const Model::DescribeWorkflowsRequest &request)const;
 			void describeWorkflowsAsync(const Model::DescribeWorkflowsRequest& request, const DescribeWorkflowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWorkflowsOutcomeCallable describeWorkflowsCallable(const Model::DescribeWorkflowsRequest& request) const;
+			GetKubernetesTriggerOutcome getKubernetesTrigger(const Model::GetKubernetesTriggerRequest &request)const;
+			void getKubernetesTriggerAsync(const Model::GetKubernetesTriggerRequest& request, const GetKubernetesTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetKubernetesTriggerOutcomeCallable getKubernetesTriggerCallable(const Model::GetKubernetesTriggerRequest& request) const;
 			GetUpgradeStatusOutcome getUpgradeStatus(const Model::GetUpgradeStatusRequest &request)const;
 			void getUpgradeStatusAsync(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUpgradeStatusOutcomeCallable getUpgradeStatusCallable(const Model::GetUpgradeStatusRequest& request) const;
@@ -362,6 +388,9 @@ namespace AlibabaCloud
 			ModifyClusterOutcome modifyCluster(const Model::ModifyClusterRequest &request)const;
 			void modifyClusterAsync(const Model::ModifyClusterRequest& request, const ModifyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterOutcomeCallable modifyClusterCallable(const Model::ModifyClusterRequest& request) const;
+			ModifyClusterConfigurationOutcome modifyClusterConfiguration(const Model::ModifyClusterConfigurationRequest &request)const;
+			void modifyClusterConfigurationAsync(const Model::ModifyClusterConfigurationRequest& request, const ModifyClusterConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterConfigurationOutcomeCallable modifyClusterConfigurationCallable(const Model::ModifyClusterConfigurationRequest& request) const;
 			ModifyClusterTagsOutcome modifyClusterTags(const Model::ModifyClusterTagsRequest &request)const;
 			void modifyClusterTagsAsync(const Model::ModifyClusterTagsRequest& request, const ModifyClusterTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterTagsOutcomeCallable modifyClusterTagsCallable(const Model::ModifyClusterTagsRequest& request) const;
@@ -398,6 +427,9 @@ namespace AlibabaCloud
 			UpdateK8sClusterUserConfigExpireOutcome updateK8sClusterUserConfigExpire(const Model::UpdateK8sClusterUserConfigExpireRequest &request)const;
 			void updateK8sClusterUserConfigExpireAsync(const Model::UpdateK8sClusterUserConfigExpireRequest& request, const UpdateK8sClusterUserConfigExpireAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateK8sClusterUserConfigExpireOutcomeCallable updateK8sClusterUserConfigExpireCallable(const Model::UpdateK8sClusterUserConfigExpireRequest& request) const;
+			UpdateTemplateOutcome updateTemplate(const Model::UpdateTemplateRequest &request)const;
+			void updateTemplateAsync(const Model::UpdateTemplateRequest& request, const UpdateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTemplateOutcomeCallable updateTemplateCallable(const Model::UpdateTemplateRequest& request) const;
 			UpgradeClusterOutcome upgradeCluster(const Model::UpgradeClusterRequest &request)const;
 			void upgradeClusterAsync(const Model::UpgradeClusterRequest& request, const UpgradeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeClusterOutcomeCallable upgradeClusterCallable(const Model::UpgradeClusterRequest& request) const;

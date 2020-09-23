@@ -14,17 +14,28 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/DescribeApiVersionRequest.h>
+#include <alibabacloud/cs/model/DeleteKubernetesTriggerRequest.h>
 
-using AlibabaCloud::CS::Model::DescribeApiVersionRequest;
+using AlibabaCloud::CS::Model::DeleteKubernetesTriggerRequest;
 
-DescribeApiVersionRequest::DescribeApiVersionRequest() :
+DeleteKubernetesTriggerRequest::DeleteKubernetesTriggerRequest() :
 	RoaServiceRequest("cs", "2015-12-15")
 {
-	setResourcePath("/version");
-	setMethod(HttpRequest::Method::Get);
+	setResourcePath("/triggers/revoke/[Id]");
+	setMethod(HttpRequest::Method::Delete);
 }
 
-DescribeApiVersionRequest::~DescribeApiVersionRequest()
+DeleteKubernetesTriggerRequest::~DeleteKubernetesTriggerRequest()
 {}
+
+std::string DeleteKubernetesTriggerRequest::getId()const
+{
+	return id_;
+}
+
+void DeleteKubernetesTriggerRequest::setId(const std::string& id)
+{
+	id_ = id;
+	setParameter("Id", id);
+}
 

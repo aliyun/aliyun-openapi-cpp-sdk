@@ -38,7 +38,9 @@ namespace AlibabaCloud
 				explicit DescribeClusterLogsResult(const std::string &payload);
 				~DescribeClusterLogsResult();
 				std::string getCluster_id()const;
+				std::string getUpdated()const;
 				std::string getLog_level()const;
+				std::string getID()const;
 				std::string getCluster_log()const;
 				std::string getCreated()const;
 
@@ -46,7 +48,9 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string cluster_id_;
+				std::string updated_;
 				std::string log_level_;
+				std::string iD_;
 				std::string cluster_log_;
 				std::string created_;
 

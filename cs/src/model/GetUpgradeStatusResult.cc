@@ -39,25 +39,25 @@ void GetUpgradeStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["status"].isNull())
-		status_ = value["status"].asString();
+	if(!value["error_message"].isNull())
+		error_message_ = value["error_message"].asString();
 	if(!value["precheck_report_id"].isNull())
 		precheck_report_id_ = value["precheck_report_id"].asString();
 	if(!value["upgrade_step"].isNull())
 		upgrade_step_ = value["upgrade_step"].asString();
-	if(!value["error_message"].isNull())
-		error_message_ = value["error_message"].asString();
+	if(!value["status"].isNull())
+		status_ = value["status"].asString();
 
-}
-
-std::string GetUpgradeStatusResult::getStatus()const
-{
-	return status_;
 }
 
 std::string GetUpgradeStatusResult::getError_message()const
 {
 	return error_message_;
+}
+
+std::string GetUpgradeStatusResult::getStatus()const
+{
+	return status_;
 }
 
 std::string GetUpgradeStatusResult::getPrecheck_report_id()const

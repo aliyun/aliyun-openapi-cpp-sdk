@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cs/model/CreateTriggerHookResult.h>
+#include <alibabacloud/cs/model/UpdateTemplateResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CS;
 using namespace AlibabaCloud::CS::Model;
 
-CreateTriggerHookResult::CreateTriggerHookResult() :
+UpdateTemplateResult::UpdateTemplateResult() :
 	ServiceResult()
 {}
 
-CreateTriggerHookResult::CreateTriggerHookResult(const std::string &payload) :
+UpdateTemplateResult::UpdateTemplateResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateTriggerHookResult::~CreateTriggerHookResult()
+UpdateTemplateResult::~UpdateTemplateResult()
 {}
 
-void CreateTriggerHookResult::parse(const std::string &payload)
+void UpdateTemplateResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

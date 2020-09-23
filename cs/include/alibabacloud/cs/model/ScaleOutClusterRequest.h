@@ -47,6 +47,8 @@ namespace AlibabaCloud
 				void setCloud_monitor_flags(bool cloud_monitor_flags);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
+				std::string getUser_data()const;
+				void setUser_data(const std::string& user_data);
 				std::string getWorker_period_unit()const;
 				void setWorker_period_unit(const std::string& worker_period_unit);
 				bool getWorker_auto_renew()const;
@@ -63,6 +65,8 @@ namespace AlibabaCloud
 				void setCpu_policy(const std::string& cpu_policy);
 				bool getDisable_rollback()const;
 				void setDisable_rollback(bool disable_rollback);
+				std::string getImage_id()const;
+				void setImage_id(const std::string& image_id);
 				std::string getWorker_instance_charge_type()const;
 				void setWorker_instance_charge_type(const std::string& worker_instance_charge_type);
 
@@ -73,6 +77,7 @@ namespace AlibabaCloud
 				std::string worker_system_disk_category_;
 				bool cloud_monitor_flags_;
 				std::string clusterId_;
+				std::string user_data_;
 				std::string worker_period_unit_;
 				bool worker_auto_renew_;
 				int worker_auto_renew_period_;
@@ -81,6 +86,7 @@ namespace AlibabaCloud
 				int worker_system_disk_size_;
 				std::string cpu_policy_;
 				bool disable_rollback_;
+				std::string image_id_;
 				std::string worker_instance_charge_type_;
 
 			};

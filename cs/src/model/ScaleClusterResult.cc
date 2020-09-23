@@ -39,6 +39,27 @@ void ScaleClusterResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["cluster_id"].isNull())
+		cluster_id_ = value["cluster_id"].asString();
+	if(!value["task_id"].isNull())
+		task_id_ = value["task_id"].asString();
+	if(!value["request_id"].isNull())
+		request_id_ = value["request_id"].asString();
 
+}
+
+std::string ScaleClusterResult::getRequest_id()const
+{
+	return request_id_;
+}
+
+std::string ScaleClusterResult::getCluster_id()const
+{
+	return cluster_id_;
+}
+
+std::string ScaleClusterResult::getTask_id()const
+{
+	return task_id_;
 }
 

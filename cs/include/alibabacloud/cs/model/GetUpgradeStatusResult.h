@@ -37,16 +37,16 @@ namespace AlibabaCloud
 				GetUpgradeStatusResult();
 				explicit GetUpgradeStatusResult(const std::string &payload);
 				~GetUpgradeStatusResult();
-				std::string getStatus()const;
 				std::string getError_message()const;
+				std::string getStatus()const;
 				std::string getPrecheck_report_id()const;
 				std::string getUpgrade_step()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
 				std::string error_message_;
+				std::string status_;
 				std::string precheck_report_id_;
 				std::string upgrade_step_;
 

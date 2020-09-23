@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONREQUEST_H_
-#define ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONREQUEST_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERADDONSUPGRADESTATUSREQUEST_H_
+#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERADDONSUPGRADESTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,18 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DescribeApiVersionRequest : public RoaServiceRequest
+			class ALIBABACLOUD_CS_EXPORT DescribeClusterAddonsUpgradeStatusRequest : public RoaServiceRequest
 			{
 
 			public:
-				DescribeApiVersionRequest();
-				~DescribeApiVersionRequest();
+				DescribeClusterAddonsUpgradeStatusRequest();
+				~DescribeClusterAddonsUpgradeStatusRequest();
 
+				std::string getClusterId()const;
+				void setClusterId(const std::string& clusterId);
 
             private:
+				std::string clusterId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONREQUEST_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERADDONSUPGRADESTATUSREQUEST_H_

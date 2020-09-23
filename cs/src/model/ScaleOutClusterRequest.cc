@@ -94,6 +94,17 @@ void ScaleOutClusterRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+std::string ScaleOutClusterRequest::getUser_data()const
+{
+	return user_data_;
+}
+
+void ScaleOutClusterRequest::setUser_data(const std::string& user_data)
+{
+	user_data_ = user_data;
+	setBodyParameter("User_data", user_data);
+}
+
 std::string ScaleOutClusterRequest::getWorker_period_unit()const
 {
 	return worker_period_unit_;
@@ -180,6 +191,17 @@ void ScaleOutClusterRequest::setDisable_rollback(bool disable_rollback)
 {
 	disable_rollback_ = disable_rollback;
 	setBodyParameter("Disable_rollback", disable_rollback ? "true" : "false");
+}
+
+std::string ScaleOutClusterRequest::getImage_id()const
+{
+	return image_id_;
+}
+
+void ScaleOutClusterRequest::setImage_id(const std::string& image_id)
+{
+	image_id_ = image_id;
+	setBodyParameter("Image_id", image_id);
 }
 
 std::string ScaleOutClusterRequest::getWorker_instance_charge_type()const

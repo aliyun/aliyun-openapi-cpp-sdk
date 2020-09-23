@@ -32,27 +32,37 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CS_EXPORT DescribeTemplatesResult : public ServiceResult
 			{
 			public:
+				struct Page_info
+				{
+					long page_size;
+					long page_number;
+					long total_count;
+				};
+				struct TemplatesItem
+				{
+					std::string _template;
+					std::string description;
+					std::string updated;
+					std::string template_type;
+					std::string id;
+					std::string acl;
+					std::string tags;
+					std::string created;
+					std::string name;
+				};
 
 
 				DescribeTemplatesResult();
 				explicit DescribeTemplatesResult(const std::string &payload);
 				~DescribeTemplatesResult();
-				std::string get_Template()const;
-				std::string getDescription()const;
-				std::string getAcl()const;
-				std::string getTemplate_type()const;
-				std::string getTags()const;
-				std::string getName()const;
+				Page_info getPage_info()const;
+				std::vector<TemplatesItem> gettemplates()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string _template_;
-				std::string description_;
-				std::string acl_;
-				std::string template_type_;
-				std::string tags_;
-				std::string name_;
+				Page_info page_info_;
+				std::vector<TemplatesItem> templates_;
 
 			};
 		}

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKREQUEST_H_
-#define ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKREQUEST_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERSV1REQUEST_H_
+#define ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERSV1REQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,18 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DeleteTriggerHookRequest : public RoaServiceRequest
+			class ALIBABACLOUD_CS_EXPORT DescribeClustersV1Request : public RoaServiceRequest
 			{
 
 			public:
-				DeleteTriggerHookRequest();
-				~DeleteTriggerHookRequest();
+				DescribeClustersV1Request();
+				~DescribeClustersV1Request();
 
+				std::string getClusterType()const;
+				void setClusterType(const std::string& clusterType);
+				long getPage_number()const;
+				void setPage_number(long page_number);
+				std::string getName()const;
+				void setName(const std::string& name);
+				long getPage_size()const;
+				void setPage_size(long page_size);
 
             private:
+				std::string clusterType_;
+				long page_number_;
+				std::string name_;
+				long page_size_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DELETETRIGGERHOOKREQUEST_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBECLUSTERSV1REQUEST_H_

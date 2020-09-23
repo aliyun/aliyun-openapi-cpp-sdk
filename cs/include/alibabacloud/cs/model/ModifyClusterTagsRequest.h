@@ -37,15 +37,9 @@ namespace AlibabaCloud
 
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getValue()const;
-				void setValue(const std::string& value);
-				std::string getKey()const;
-				void setKey(const std::string& key);
 
             private:
 				std::string clusterId_;
-				std::string value_;
-				std::string key_;
 
 			};
 		}

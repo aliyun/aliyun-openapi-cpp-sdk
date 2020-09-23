@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONRESULT_H_
-#define ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONRESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_CREATEKUBERNETESTRIGGERRESULT_H_
+#define ALIBABACLOUD_CS_MODEL_CREATEKUBERNETESTRIGGERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT DescribeApiVersionResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT CreateKubernetesTriggerResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeApiVersionResult();
-				explicit DescribeApiVersionResult(const std::string &payload);
-				~DescribeApiVersionResult();
-				std::string getDocker_version()const;
-				std::string getVersion()const;
-				std::string getBuild()const;
-				std::string getDocker_region_versions()const;
+				CreateKubernetesTriggerResult();
+				explicit CreateKubernetesTriggerResult(const std::string &payload);
+				~CreateKubernetesTriggerResult();
+				std::string getAction()const;
+				std::string getCluster_id()const;
+				std::string getProject_id()const;
+				std::string getId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string docker_version_;
-				std::string version_;
-				std::string build_;
-				std::string docker_region_versions_;
+				std::string action_;
+				std::string cluster_id_;
+				std::string project_id_;
+				std::string id_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_DESCRIBEAPIVERSIONRESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_CREATEKUBERNETESTRIGGERRESULT_H_

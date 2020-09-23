@@ -31,26 +31,26 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/CancelWorkflowResult.h
 	include/alibabacloud/cs/model/CreateClusterRequest.h
 	include/alibabacloud/cs/model/CreateClusterResult.h
+	include/alibabacloud/cs/model/CreateKubernetesTriggerRequest.h
+	include/alibabacloud/cs/model/CreateKubernetesTriggerResult.h
 	include/alibabacloud/cs/model/CreateTemplateRequest.h
 	include/alibabacloud/cs/model/CreateTemplateResult.h
-	include/alibabacloud/cs/model/CreateTriggerHookRequest.h
-	include/alibabacloud/cs/model/CreateTriggerHookResult.h
 	include/alibabacloud/cs/model/DeleteClusterRequest.h
 	include/alibabacloud/cs/model/DeleteClusterResult.h
 	include/alibabacloud/cs/model/DeleteClusterNodesRequest.h
 	include/alibabacloud/cs/model/DeleteClusterNodesResult.h
+	include/alibabacloud/cs/model/DeleteKubernetesTriggerRequest.h
+	include/alibabacloud/cs/model/DeleteKubernetesTriggerResult.h
 	include/alibabacloud/cs/model/DeleteTemplateRequest.h
 	include/alibabacloud/cs/model/DeleteTemplateResult.h
-	include/alibabacloud/cs/model/DeleteTriggerHookRequest.h
-	include/alibabacloud/cs/model/DeleteTriggerHookResult.h
 	include/alibabacloud/cs/model/DescirbeWorkflowRequest.h
 	include/alibabacloud/cs/model/DescirbeWorkflowResult.h
 	include/alibabacloud/cs/model/DescribeAddonsRequest.h
 	include/alibabacloud/cs/model/DescribeAddonsResult.h
-	include/alibabacloud/cs/model/DescribeApiVersionRequest.h
-	include/alibabacloud/cs/model/DescribeApiVersionResult.h
 	include/alibabacloud/cs/model/DescribeClusterAddonUpgradeStatusRequest.h
 	include/alibabacloud/cs/model/DescribeClusterAddonUpgradeStatusResult.h
+	include/alibabacloud/cs/model/DescribeClusterAddonsUpgradeStatusRequest.h
+	include/alibabacloud/cs/model/DescribeClusterAddonsUpgradeStatusResult.h
 	include/alibabacloud/cs/model/DescribeClusterAddonsVersionRequest.h
 	include/alibabacloud/cs/model/DescribeClusterAddonsVersionResult.h
 	include/alibabacloud/cs/model/DescribeClusterAttachScriptsRequest.h
@@ -69,6 +69,8 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/DescribeClusterV2UserKubeconfigResult.h
 	include/alibabacloud/cs/model/DescribeClustersRequest.h
 	include/alibabacloud/cs/model/DescribeClustersResult.h
+	include/alibabacloud/cs/model/DescribeClustersV1Request.h
+	include/alibabacloud/cs/model/DescribeClustersV1Result.h
 	include/alibabacloud/cs/model/DescribeExternalAgentRequest.h
 	include/alibabacloud/cs/model/DescribeExternalAgentResult.h
 	include/alibabacloud/cs/model/DescribeTemplatesRequest.h
@@ -77,6 +79,8 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/DescribeUserQuotaResult.h
 	include/alibabacloud/cs/model/DescribeWorkflowsRequest.h
 	include/alibabacloud/cs/model/DescribeWorkflowsResult.h
+	include/alibabacloud/cs/model/GetKubernetesTriggerRequest.h
+	include/alibabacloud/cs/model/GetKubernetesTriggerResult.h
 	include/alibabacloud/cs/model/GetUpgradeStatusRequest.h
 	include/alibabacloud/cs/model/GetUpgradeStatusResult.h
 	include/alibabacloud/cs/model/InstallClusterAddonsRequest.h
@@ -85,6 +89,8 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/ListTagResourcesResult.h
 	include/alibabacloud/cs/model/ModifyClusterRequest.h
 	include/alibabacloud/cs/model/ModifyClusterResult.h
+	include/alibabacloud/cs/model/ModifyClusterConfigurationRequest.h
+	include/alibabacloud/cs/model/ModifyClusterConfigurationResult.h
 	include/alibabacloud/cs/model/ModifyClusterTagsRequest.h
 	include/alibabacloud/cs/model/ModifyClusterTagsResult.h
 	include/alibabacloud/cs/model/PauseClusterUpgradeRequest.h
@@ -109,6 +115,8 @@ set(cs_public_header_model
 	include/alibabacloud/cs/model/UnInstallClusterAddonsResult.h
 	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireRequest.h
 	include/alibabacloud/cs/model/UpdateK8sClusterUserConfigExpireResult.h
+	include/alibabacloud/cs/model/UpdateTemplateRequest.h
+	include/alibabacloud/cs/model/UpdateTemplateResult.h
 	include/alibabacloud/cs/model/UpgradeClusterRequest.h
 	include/alibabacloud/cs/model/UpgradeClusterResult.h
 	include/alibabacloud/cs/model/UpgradeClusterAddonsRequest.h
@@ -126,26 +134,26 @@ set(cs_src
 	src/model/CancelWorkflowResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
+	src/model/CreateKubernetesTriggerRequest.cc
+	src/model/CreateKubernetesTriggerResult.cc
 	src/model/CreateTemplateRequest.cc
 	src/model/CreateTemplateResult.cc
-	src/model/CreateTriggerHookRequest.cc
-	src/model/CreateTriggerHookResult.cc
 	src/model/DeleteClusterRequest.cc
 	src/model/DeleteClusterResult.cc
 	src/model/DeleteClusterNodesRequest.cc
 	src/model/DeleteClusterNodesResult.cc
+	src/model/DeleteKubernetesTriggerRequest.cc
+	src/model/DeleteKubernetesTriggerResult.cc
 	src/model/DeleteTemplateRequest.cc
 	src/model/DeleteTemplateResult.cc
-	src/model/DeleteTriggerHookRequest.cc
-	src/model/DeleteTriggerHookResult.cc
 	src/model/DescirbeWorkflowRequest.cc
 	src/model/DescirbeWorkflowResult.cc
 	src/model/DescribeAddonsRequest.cc
 	src/model/DescribeAddonsResult.cc
-	src/model/DescribeApiVersionRequest.cc
-	src/model/DescribeApiVersionResult.cc
 	src/model/DescribeClusterAddonUpgradeStatusRequest.cc
 	src/model/DescribeClusterAddonUpgradeStatusResult.cc
+	src/model/DescribeClusterAddonsUpgradeStatusRequest.cc
+	src/model/DescribeClusterAddonsUpgradeStatusResult.cc
 	src/model/DescribeClusterAddonsVersionRequest.cc
 	src/model/DescribeClusterAddonsVersionResult.cc
 	src/model/DescribeClusterAttachScriptsRequest.cc
@@ -164,6 +172,8 @@ set(cs_src
 	src/model/DescribeClusterV2UserKubeconfigResult.cc
 	src/model/DescribeClustersRequest.cc
 	src/model/DescribeClustersResult.cc
+	src/model/DescribeClustersV1Request.cc
+	src/model/DescribeClustersV1Result.cc
 	src/model/DescribeExternalAgentRequest.cc
 	src/model/DescribeExternalAgentResult.cc
 	src/model/DescribeTemplatesRequest.cc
@@ -172,6 +182,8 @@ set(cs_src
 	src/model/DescribeUserQuotaResult.cc
 	src/model/DescribeWorkflowsRequest.cc
 	src/model/DescribeWorkflowsResult.cc
+	src/model/GetKubernetesTriggerRequest.cc
+	src/model/GetKubernetesTriggerResult.cc
 	src/model/GetUpgradeStatusRequest.cc
 	src/model/GetUpgradeStatusResult.cc
 	src/model/InstallClusterAddonsRequest.cc
@@ -180,6 +192,8 @@ set(cs_src
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyClusterRequest.cc
 	src/model/ModifyClusterResult.cc
+	src/model/ModifyClusterConfigurationRequest.cc
+	src/model/ModifyClusterConfigurationResult.cc
 	src/model/ModifyClusterTagsRequest.cc
 	src/model/ModifyClusterTagsResult.cc
 	src/model/PauseClusterUpgradeRequest.cc
@@ -204,6 +218,8 @@ set(cs_src
 	src/model/UnInstallClusterAddonsResult.cc
 	src/model/UpdateK8sClusterUserConfigExpireRequest.cc
 	src/model/UpdateK8sClusterUserConfigExpireResult.cc
+	src/model/UpdateTemplateRequest.cc
+	src/model/UpdateTemplateResult.cc
 	src/model/UpgradeClusterRequest.cc
 	src/model/UpgradeClusterResult.cc
 	src/model/UpgradeClusterAddonsRequest.cc

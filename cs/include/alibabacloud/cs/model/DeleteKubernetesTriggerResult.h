@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CS_MODEL_CREATETRIGGERHOOKRESULT_H_
-#define ALIBABACLOUD_CS_MODEL_CREATETRIGGERHOOKRESULT_H_
+#ifndef ALIBABACLOUD_CS_MODEL_DELETEKUBERNETESTRIGGERRESULT_H_
+#define ALIBABACLOUD_CS_MODEL_DELETEKUBERNETESTRIGGERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CS_EXPORT CreateTriggerHookResult : public ServiceResult
+			class ALIBABACLOUD_CS_EXPORT DeleteKubernetesTriggerResult : public ServiceResult
 			{
 			public:
 
 
-				CreateTriggerHookResult();
-				explicit CreateTriggerHookResult(const std::string &payload);
-				~CreateTriggerHookResult();
+				DeleteKubernetesTriggerResult();
+				explicit DeleteKubernetesTriggerResult(const std::string &payload);
+				~DeleteKubernetesTriggerResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CS_MODEL_CREATETRIGGERHOOKRESULT_H_
+#endif // !ALIBABACLOUD_CS_MODEL_DELETEKUBERNETESTRIGGERRESULT_H_
