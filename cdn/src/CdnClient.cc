@@ -6783,42 +6783,6 @@ CdnClient::SetSourceHostConfigOutcomeCallable CdnClient::setSourceHostConfigCall
 	return task->get_future();
 }
 
-CdnClient::SetUserGreenManagerConfigOutcome CdnClient::setUserGreenManagerConfig(const SetUserGreenManagerConfigRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetUserGreenManagerConfigOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetUserGreenManagerConfigOutcome(SetUserGreenManagerConfigResult(outcome.result()));
-	else
-		return SetUserGreenManagerConfigOutcome(outcome.error());
-}
-
-void CdnClient::setUserGreenManagerConfigAsync(const SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setUserGreenManagerConfig(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CdnClient::SetUserGreenManagerConfigOutcomeCallable CdnClient::setUserGreenManagerConfigCallable(const SetUserGreenManagerConfigRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetUserGreenManagerConfigOutcome()>>(
-			[this, request]()
-			{
-			return this->setUserGreenManagerConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CdnClient::SetVideoSeekConfigOutcome CdnClient::setVideoSeekConfig(const SetVideoSeekConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -395,8 +395,6 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/SetReqHeaderConfigResult.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigRequest.h
 	include/alibabacloud/cdn/model/SetSourceHostConfigResult.h
-	include/alibabacloud/cdn/model/SetUserGreenManagerConfigRequest.h
-	include/alibabacloud/cdn/model/SetUserGreenManagerConfigResult.h
 	include/alibabacloud/cdn/model/SetVideoSeekConfigRequest.h
 	include/alibabacloud/cdn/model/SetVideoSeekConfigResult.h
 	include/alibabacloud/cdn/model/SetWaitingRoomConfigRequest.h
@@ -792,8 +790,6 @@ set(cdn_src
 	src/model/SetReqHeaderConfigResult.cc
 	src/model/SetSourceHostConfigRequest.cc
 	src/model/SetSourceHostConfigResult.cc
-	src/model/SetUserGreenManagerConfigRequest.cc
-	src/model/SetUserGreenManagerConfigResult.cc
 	src/model/SetVideoSeekConfigRequest.cc
 	src/model/SetVideoSeekConfigResult.cc
 	src/model/SetWaitingRoomConfigRequest.cc

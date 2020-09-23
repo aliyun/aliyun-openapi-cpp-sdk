@@ -396,8 +396,6 @@
 #include "model/SetReqHeaderConfigResult.h"
 #include "model/SetSourceHostConfigRequest.h"
 #include "model/SetSourceHostConfigResult.h"
-#include "model/SetUserGreenManagerConfigRequest.h"
-#include "model/SetUserGreenManagerConfigResult.h"
 #include "model/SetVideoSeekConfigRequest.h"
 #include "model/SetVideoSeekConfigResult.h"
 #include "model/SetWaitingRoomConfigRequest.h"
@@ -986,9 +984,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetSourceHostConfigResult> SetSourceHostConfigOutcome;
 			typedef std::future<SetSourceHostConfigOutcome> SetSourceHostConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetSourceHostConfigRequest&, const SetSourceHostConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSourceHostConfigAsyncHandler;
-			typedef Outcome<Error, Model::SetUserGreenManagerConfigResult> SetUserGreenManagerConfigOutcome;
-			typedef std::future<SetUserGreenManagerConfigOutcome> SetUserGreenManagerConfigOutcomeCallable;
-			typedef std::function<void(const CdnClient*, const Model::SetUserGreenManagerConfigRequest&, const SetUserGreenManagerConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserGreenManagerConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetVideoSeekConfigResult> SetVideoSeekConfigOutcome;
 			typedef std::future<SetVideoSeekConfigOutcome> SetVideoSeekConfigOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::SetVideoSeekConfigRequest&, const SetVideoSeekConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoSeekConfigAsyncHandler;
@@ -1582,9 +1577,6 @@ namespace AlibabaCloud
 			SetSourceHostConfigOutcome setSourceHostConfig(const Model::SetSourceHostConfigRequest &request)const;
 			void setSourceHostConfigAsync(const Model::SetSourceHostConfigRequest& request, const SetSourceHostConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetSourceHostConfigOutcomeCallable setSourceHostConfigCallable(const Model::SetSourceHostConfigRequest& request) const;
-			SetUserGreenManagerConfigOutcome setUserGreenManagerConfig(const Model::SetUserGreenManagerConfigRequest &request)const;
-			void setUserGreenManagerConfigAsync(const Model::SetUserGreenManagerConfigRequest& request, const SetUserGreenManagerConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetUserGreenManagerConfigOutcomeCallable setUserGreenManagerConfigCallable(const Model::SetUserGreenManagerConfigRequest& request) const;
 			SetVideoSeekConfigOutcome setVideoSeekConfig(const Model::SetVideoSeekConfigRequest &request)const;
 			void setVideoSeekConfigAsync(const Model::SetVideoSeekConfigRequest& request, const SetVideoSeekConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVideoSeekConfigOutcomeCallable setVideoSeekConfigCallable(const Model::SetVideoSeekConfigRequest& request) const;
