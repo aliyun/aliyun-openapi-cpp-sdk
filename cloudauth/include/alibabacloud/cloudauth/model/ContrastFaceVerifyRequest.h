@@ -37,16 +37,8 @@ namespace AlibabaCloud
 
 				std::string getProductCode()const;
 				void setProductCode(const std::string& productCode);
-				std::string getOssObjectName()const;
-				void setOssObjectName(const std::string& ossObjectName);
 				std::string getFaceContrastPicture()const;
 				void setFaceContrastPicture(const std::string& faceContrastPicture);
-				std::string getCertName()const;
-				void setCertName(const std::string& certName);
-				std::string getIp()const;
-				void setIp(const std::string& ip);
-				std::string getMobile()const;
-				void setMobile(const std::string& mobile);
 				std::string getDeviceToken()const;
 				void setDeviceToken(const std::string& deviceToken);
 				std::string getUserId()const;
@@ -61,6 +53,16 @@ namespace AlibabaCloud
 				void setCertType(const std::string& certType);
 				std::string getFaceContrastPictureUrl()const;
 				void setFaceContrastPictureUrl(const std::string& faceContrastPictureUrl);
+				std::string getModel()const;
+				void setModel(const std::string& model);
+				std::string getOssObjectName()const;
+				void setOssObjectName(const std::string& ossObjectName);
+				std::string getCertName()const;
+				void setCertName(const std::string& certName);
+				std::string getIp()const;
+				void setIp(const std::string& ip);
+				std::string getMobile()const;
+				void setMobile(const std::string& mobile);
 				long getSceneId()const;
 				void setSceneId(long sceneId);
 				std::string getOssBucketName()const;
@@ -68,11 +70,7 @@ namespace AlibabaCloud
 
             private:
 				std::string productCode_;
-				std::string ossObjectName_;
 				std::string faceContrastPicture_;
-				std::string certName_;
-				std::string ip_;
-				std::string mobile_;
 				std::string deviceToken_;
 				std::string userId_;
 				std::string certifyId_;
@@ -80,6 +78,11 @@ namespace AlibabaCloud
 				std::string outerOrderNo_;
 				std::string certType_;
 				std::string faceContrastPictureUrl_;
+				std::string model_;
+				std::string ossObjectName_;
+				std::string certName_;
+				std::string ip_;
+				std::string mobile_;
 				long sceneId_;
 				std::string ossBucketName_;
 

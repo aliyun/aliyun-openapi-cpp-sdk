@@ -38,17 +38,6 @@ void ContrastFaceVerifyRequest::setProductCode(const std::string& productCode)
 	setBodyParameter("ProductCode", productCode);
 }
 
-std::string ContrastFaceVerifyRequest::getOssObjectName()const
-{
-	return ossObjectName_;
-}
-
-void ContrastFaceVerifyRequest::setOssObjectName(const std::string& ossObjectName)
-{
-	ossObjectName_ = ossObjectName;
-	setBodyParameter("OssObjectName", ossObjectName);
-}
-
 std::string ContrastFaceVerifyRequest::getFaceContrastPicture()const
 {
 	return faceContrastPicture_;
@@ -58,39 +47,6 @@ void ContrastFaceVerifyRequest::setFaceContrastPicture(const std::string& faceCo
 {
 	faceContrastPicture_ = faceContrastPicture;
 	setBodyParameter("FaceContrastPicture", faceContrastPicture);
-}
-
-std::string ContrastFaceVerifyRequest::getCertName()const
-{
-	return certName_;
-}
-
-void ContrastFaceVerifyRequest::setCertName(const std::string& certName)
-{
-	certName_ = certName;
-	setBodyParameter("CertName", certName);
-}
-
-std::string ContrastFaceVerifyRequest::getIp()const
-{
-	return ip_;
-}
-
-void ContrastFaceVerifyRequest::setIp(const std::string& ip)
-{
-	ip_ = ip;
-	setBodyParameter("Ip", ip);
-}
-
-std::string ContrastFaceVerifyRequest::getMobile()const
-{
-	return mobile_;
-}
-
-void ContrastFaceVerifyRequest::setMobile(const std::string& mobile)
-{
-	mobile_ = mobile;
-	setBodyParameter("Mobile", mobile);
 }
 
 std::string ContrastFaceVerifyRequest::getDeviceToken()const
@@ -168,6 +124,61 @@ void ContrastFaceVerifyRequest::setFaceContrastPictureUrl(const std::string& fac
 {
 	faceContrastPictureUrl_ = faceContrastPictureUrl;
 	setBodyParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
+}
+
+std::string ContrastFaceVerifyRequest::getModel()const
+{
+	return model_;
+}
+
+void ContrastFaceVerifyRequest::setModel(const std::string& model)
+{
+	model_ = model;
+	setParameter("Model", model);
+}
+
+std::string ContrastFaceVerifyRequest::getOssObjectName()const
+{
+	return ossObjectName_;
+}
+
+void ContrastFaceVerifyRequest::setOssObjectName(const std::string& ossObjectName)
+{
+	ossObjectName_ = ossObjectName;
+	setBodyParameter("OssObjectName", ossObjectName);
+}
+
+std::string ContrastFaceVerifyRequest::getCertName()const
+{
+	return certName_;
+}
+
+void ContrastFaceVerifyRequest::setCertName(const std::string& certName)
+{
+	certName_ = certName;
+	setBodyParameter("CertName", certName);
+}
+
+std::string ContrastFaceVerifyRequest::getIp()const
+{
+	return ip_;
+}
+
+void ContrastFaceVerifyRequest::setIp(const std::string& ip)
+{
+	ip_ = ip;
+	setBodyParameter("Ip", ip);
+}
+
+std::string ContrastFaceVerifyRequest::getMobile()const
+{
+	return mobile_;
+}
+
+void ContrastFaceVerifyRequest::setMobile(const std::string& mobile)
+{
+	mobile_ = mobile;
+	setBodyParameter("Mobile", mobile);
 }
 
 long ContrastFaceVerifyRequest::getSceneId()const
