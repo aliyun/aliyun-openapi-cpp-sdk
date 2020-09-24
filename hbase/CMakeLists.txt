@@ -35,6 +35,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/CreateMultiZoneClusterResult.h
 	include/alibabacloud/hbase/model/CreateRestorePlanRequest.h
 	include/alibabacloud/hbase/model/CreateRestorePlanResult.h
+	include/alibabacloud/hbase/model/CreateServerlessClusterRequest.h
+	include/alibabacloud/hbase/model/CreateServerlessClusterResult.h
 	include/alibabacloud/hbase/model/DeleteHBaseHaDBRequest.h
 	include/alibabacloud/hbase/model/DeleteHBaseHaDBResult.h
 	include/alibabacloud/hbase/model/DeleteHbaseHaSlbRequest.h
@@ -156,6 +158,8 @@ set(hbase_src
 	src/model/CreateMultiZoneClusterResult.cc
 	src/model/CreateRestorePlanRequest.cc
 	src/model/CreateRestorePlanResult.cc
+	src/model/CreateServerlessClusterRequest.cc
+	src/model/CreateServerlessClusterResult.cc
 	src/model/DeleteHBaseHaDBRequest.cc
 	src/model/DeleteHBaseHaDBResult.cc
 	src/model/DeleteHbaseHaSlbRequest.cc

@@ -303,6 +303,42 @@ HBaseClient::CreateRestorePlanOutcomeCallable HBaseClient::createRestorePlanCall
 	return task->get_future();
 }
 
+HBaseClient::CreateServerlessClusterOutcome HBaseClient::createServerlessCluster(const CreateServerlessClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateServerlessClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateServerlessClusterOutcome(CreateServerlessClusterResult(outcome.result()));
+	else
+		return CreateServerlessClusterOutcome(outcome.error());
+}
+
+void HBaseClient::createServerlessClusterAsync(const CreateServerlessClusterRequest& request, const CreateServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createServerlessCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::CreateServerlessClusterOutcomeCallable HBaseClient::createServerlessClusterCallable(const CreateServerlessClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateServerlessClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->createServerlessCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::DeleteHBaseHaDBOutcome HBaseClient::deleteHBaseHaDB(const DeleteHBaseHaDBRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

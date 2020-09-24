@@ -36,6 +36,8 @@
 #include "model/CreateMultiZoneClusterResult.h"
 #include "model/CreateRestorePlanRequest.h"
 #include "model/CreateRestorePlanResult.h"
+#include "model/CreateServerlessClusterRequest.h"
+#include "model/CreateServerlessClusterResult.h"
 #include "model/DeleteHBaseHaDBRequest.h"
 #include "model/DeleteHBaseHaDBResult.h"
 #include "model/DeleteHbaseHaSlbRequest.h"
@@ -170,6 +172,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRestorePlanResult> CreateRestorePlanOutcome;
 			typedef std::future<CreateRestorePlanOutcome> CreateRestorePlanOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::CreateRestorePlanRequest&, const CreateRestorePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRestorePlanAsyncHandler;
+			typedef Outcome<Error, Model::CreateServerlessClusterResult> CreateServerlessClusterOutcome;
+			typedef std::future<CreateServerlessClusterOutcome> CreateServerlessClusterOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::CreateServerlessClusterRequest&, const CreateServerlessClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessClusterAsyncHandler;
 			typedef Outcome<Error, Model::DeleteHBaseHaDBResult> DeleteHBaseHaDBOutcome;
 			typedef std::future<DeleteHBaseHaDBOutcome> DeleteHBaseHaDBOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::DeleteHBaseHaDBRequest&, const DeleteHBaseHaDBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHBaseHaDBAsyncHandler;
@@ -352,6 +357,9 @@ namespace AlibabaCloud
 			CreateRestorePlanOutcome createRestorePlan(const Model::CreateRestorePlanRequest &request)const;
 			void createRestorePlanAsync(const Model::CreateRestorePlanRequest& request, const CreateRestorePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRestorePlanOutcomeCallable createRestorePlanCallable(const Model::CreateRestorePlanRequest& request) const;
+			CreateServerlessClusterOutcome createServerlessCluster(const Model::CreateServerlessClusterRequest &request)const;
+			void createServerlessClusterAsync(const Model::CreateServerlessClusterRequest& request, const CreateServerlessClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServerlessClusterOutcomeCallable createServerlessClusterCallable(const Model::CreateServerlessClusterRequest& request) const;
 			DeleteHBaseHaDBOutcome deleteHBaseHaDB(const Model::DeleteHBaseHaDBRequest &request)const;
 			void deleteHBaseHaDBAsync(const Model::DeleteHBaseHaDBRequest& request, const DeleteHBaseHaDBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteHBaseHaDBOutcomeCallable deleteHBaseHaDBCallable(const Model::DeleteHBaseHaDBRequest& request) const;
