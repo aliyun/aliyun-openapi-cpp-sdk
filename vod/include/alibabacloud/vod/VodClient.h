@@ -48,6 +48,8 @@
 #include "model/CreateAppInfoResult.h"
 #include "model/CreateAuditRequest.h"
 #include "model/CreateAuditResult.h"
+#include "model/CreateDNADBRequest.h"
+#include "model/CreateDNADBResult.h"
 #include "model/CreateMediaDNALibRequest.h"
 #include "model/CreateMediaDNALibResult.h"
 #include "model/CreateUploadAttachedMediaRequest.h"
@@ -150,6 +152,8 @@
 #include "model/GetAuditHistoryResult.h"
 #include "model/GetCategoriesRequest.h"
 #include "model/GetCategoriesResult.h"
+#include "model/GetDNADBRequest.h"
+#include "model/GetDNADBResult.h"
 #include "model/GetDRMCertInfoRequest.h"
 #include "model/GetDRMCertInfoResult.h"
 #include "model/GetDRMLicenseRequest.h"
@@ -212,6 +216,8 @@
 #include "model/ListAppPoliciesForIdentityResult.h"
 #include "model/ListAuditSecurityIpRequest.h"
 #include "model/ListAuditSecurityIpResult.h"
+#include "model/ListDNADBRequest.h"
+#include "model/ListDNADBResult.h"
 #include "model/ListDynamicImageRequest.h"
 #include "model/ListDynamicImageResult.h"
 #include "model/ListLiveRecordVideoRequest.h"
@@ -260,6 +266,8 @@
 #include "model/SetMessageCallbackResult.h"
 #include "model/SetVodDomainCertificateRequest.h"
 #include "model/SetVodDomainCertificateResult.h"
+#include "model/SubmitAIImageAuditJobRequest.h"
+#include "model/SubmitAIImageAuditJobResult.h"
 #include "model/SubmitAIImageJobRequest.h"
 #include "model/SubmitAIImageJobResult.h"
 #include "model/SubmitAIJobRequest.h"
@@ -356,6 +364,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAuditResult> CreateAuditOutcome;
 			typedef std::future<CreateAuditOutcome> CreateAuditOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CreateAuditRequest&, const CreateAuditOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditAsyncHandler;
+			typedef Outcome<Error, Model::CreateDNADBResult> CreateDNADBOutcome;
+			typedef std::future<CreateDNADBOutcome> CreateDNADBOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::CreateDNADBRequest&, const CreateDNADBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDNADBAsyncHandler;
 			typedef Outcome<Error, Model::CreateMediaDNALibResult> CreateMediaDNALibOutcome;
 			typedef std::future<CreateMediaDNALibOutcome> CreateMediaDNALibOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::CreateMediaDNALibRequest&, const CreateMediaDNALibOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaDNALibAsyncHandler;
@@ -509,6 +520,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCategoriesResult> GetCategoriesOutcome;
 			typedef std::future<GetCategoriesOutcome> GetCategoriesOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetCategoriesRequest&, const GetCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCategoriesAsyncHandler;
+			typedef Outcome<Error, Model::GetDNADBResult> GetDNADBOutcome;
+			typedef std::future<GetDNADBOutcome> GetDNADBOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetDNADBRequest&, const GetDNADBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDNADBAsyncHandler;
 			typedef Outcome<Error, Model::GetDRMCertInfoResult> GetDRMCertInfoOutcome;
 			typedef std::future<GetDRMCertInfoOutcome> GetDRMCertInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetDRMCertInfoRequest&, const GetDRMCertInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDRMCertInfoAsyncHandler;
@@ -602,6 +616,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAuditSecurityIpResult> ListAuditSecurityIpOutcome;
 			typedef std::future<ListAuditSecurityIpOutcome> ListAuditSecurityIpOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListAuditSecurityIpRequest&, const ListAuditSecurityIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAuditSecurityIpAsyncHandler;
+			typedef Outcome<Error, Model::ListDNADBResult> ListDNADBOutcome;
+			typedef std::future<ListDNADBOutcome> ListDNADBOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::ListDNADBRequest&, const ListDNADBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDNADBAsyncHandler;
 			typedef Outcome<Error, Model::ListDynamicImageResult> ListDynamicImageOutcome;
 			typedef std::future<ListDynamicImageOutcome> ListDynamicImageOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::ListDynamicImageRequest&, const ListDynamicImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDynamicImageAsyncHandler;
@@ -674,6 +691,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetVodDomainCertificateResult> SetVodDomainCertificateOutcome;
 			typedef std::future<SetVodDomainCertificateOutcome> SetVodDomainCertificateOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SetVodDomainCertificateRequest&, const SetVodDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetVodDomainCertificateAsyncHandler;
+			typedef Outcome<Error, Model::SubmitAIImageAuditJobResult> SubmitAIImageAuditJobOutcome;
+			typedef std::future<SubmitAIImageAuditJobOutcome> SubmitAIImageAuditJobOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::SubmitAIImageAuditJobRequest&, const SubmitAIImageAuditJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAIImageAuditJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitAIImageJobResult> SubmitAIImageJobOutcome;
 			typedef std::future<SubmitAIImageJobOutcome> SubmitAIImageJobOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SubmitAIImageJobRequest&, const SubmitAIImageJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAIImageJobAsyncHandler;
@@ -790,6 +810,9 @@ namespace AlibabaCloud
 			CreateAuditOutcome createAudit(const Model::CreateAuditRequest &request)const;
 			void createAuditAsync(const Model::CreateAuditRequest& request, const CreateAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAuditOutcomeCallable createAuditCallable(const Model::CreateAuditRequest& request) const;
+			CreateDNADBOutcome createDNADB(const Model::CreateDNADBRequest &request)const;
+			void createDNADBAsync(const Model::CreateDNADBRequest& request, const CreateDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDNADBOutcomeCallable createDNADBCallable(const Model::CreateDNADBRequest& request) const;
 			CreateMediaDNALibOutcome createMediaDNALib(const Model::CreateMediaDNALibRequest &request)const;
 			void createMediaDNALibAsync(const Model::CreateMediaDNALibRequest& request, const CreateMediaDNALibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateMediaDNALibOutcomeCallable createMediaDNALibCallable(const Model::CreateMediaDNALibRequest& request) const;
@@ -943,6 +966,9 @@ namespace AlibabaCloud
 			GetCategoriesOutcome getCategories(const Model::GetCategoriesRequest &request)const;
 			void getCategoriesAsync(const Model::GetCategoriesRequest& request, const GetCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCategoriesOutcomeCallable getCategoriesCallable(const Model::GetCategoriesRequest& request) const;
+			GetDNADBOutcome getDNADB(const Model::GetDNADBRequest &request)const;
+			void getDNADBAsync(const Model::GetDNADBRequest& request, const GetDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDNADBOutcomeCallable getDNADBCallable(const Model::GetDNADBRequest& request) const;
 			GetDRMCertInfoOutcome getDRMCertInfo(const Model::GetDRMCertInfoRequest &request)const;
 			void getDRMCertInfoAsync(const Model::GetDRMCertInfoRequest& request, const GetDRMCertInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDRMCertInfoOutcomeCallable getDRMCertInfoCallable(const Model::GetDRMCertInfoRequest& request) const;
@@ -1036,6 +1062,9 @@ namespace AlibabaCloud
 			ListAuditSecurityIpOutcome listAuditSecurityIp(const Model::ListAuditSecurityIpRequest &request)const;
 			void listAuditSecurityIpAsync(const Model::ListAuditSecurityIpRequest& request, const ListAuditSecurityIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAuditSecurityIpOutcomeCallable listAuditSecurityIpCallable(const Model::ListAuditSecurityIpRequest& request) const;
+			ListDNADBOutcome listDNADB(const Model::ListDNADBRequest &request)const;
+			void listDNADBAsync(const Model::ListDNADBRequest& request, const ListDNADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDNADBOutcomeCallable listDNADBCallable(const Model::ListDNADBRequest& request) const;
 			ListDynamicImageOutcome listDynamicImage(const Model::ListDynamicImageRequest &request)const;
 			void listDynamicImageAsync(const Model::ListDynamicImageRequest& request, const ListDynamicImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDynamicImageOutcomeCallable listDynamicImageCallable(const Model::ListDynamicImageRequest& request) const;
@@ -1108,6 +1137,9 @@ namespace AlibabaCloud
 			SetVodDomainCertificateOutcome setVodDomainCertificate(const Model::SetVodDomainCertificateRequest &request)const;
 			void setVodDomainCertificateAsync(const Model::SetVodDomainCertificateRequest& request, const SetVodDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetVodDomainCertificateOutcomeCallable setVodDomainCertificateCallable(const Model::SetVodDomainCertificateRequest& request) const;
+			SubmitAIImageAuditJobOutcome submitAIImageAuditJob(const Model::SubmitAIImageAuditJobRequest &request)const;
+			void submitAIImageAuditJobAsync(const Model::SubmitAIImageAuditJobRequest& request, const SubmitAIImageAuditJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitAIImageAuditJobOutcomeCallable submitAIImageAuditJobCallable(const Model::SubmitAIImageAuditJobRequest& request) const;
 			SubmitAIImageJobOutcome submitAIImageJob(const Model::SubmitAIImageJobRequest &request)const;
 			void submitAIImageJobAsync(const Model::SubmitAIImageJobRequest& request, const SubmitAIImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAIImageJobOutcomeCallable submitAIImageJobCallable(const Model::SubmitAIImageJobRequest& request) const;

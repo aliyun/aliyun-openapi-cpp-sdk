@@ -47,6 +47,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/CreateAppInfoResult.h
 	include/alibabacloud/vod/model/CreateAuditRequest.h
 	include/alibabacloud/vod/model/CreateAuditResult.h
+	include/alibabacloud/vod/model/CreateDNADBRequest.h
+	include/alibabacloud/vod/model/CreateDNADBResult.h
 	include/alibabacloud/vod/model/CreateMediaDNALibRequest.h
 	include/alibabacloud/vod/model/CreateMediaDNALibResult.h
 	include/alibabacloud/vod/model/CreateUploadAttachedMediaRequest.h
@@ -149,6 +151,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetAuditHistoryResult.h
 	include/alibabacloud/vod/model/GetCategoriesRequest.h
 	include/alibabacloud/vod/model/GetCategoriesResult.h
+	include/alibabacloud/vod/model/GetDNADBRequest.h
+	include/alibabacloud/vod/model/GetDNADBResult.h
 	include/alibabacloud/vod/model/GetDRMCertInfoRequest.h
 	include/alibabacloud/vod/model/GetDRMCertInfoResult.h
 	include/alibabacloud/vod/model/GetDRMLicenseRequest.h
@@ -211,6 +215,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/ListAppPoliciesForIdentityResult.h
 	include/alibabacloud/vod/model/ListAuditSecurityIpRequest.h
 	include/alibabacloud/vod/model/ListAuditSecurityIpResult.h
+	include/alibabacloud/vod/model/ListDNADBRequest.h
+	include/alibabacloud/vod/model/ListDNADBResult.h
 	include/alibabacloud/vod/model/ListDynamicImageRequest.h
 	include/alibabacloud/vod/model/ListDynamicImageResult.h
 	include/alibabacloud/vod/model/ListLiveRecordVideoRequest.h
@@ -259,6 +265,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/SetMessageCallbackResult.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateRequest.h
 	include/alibabacloud/vod/model/SetVodDomainCertificateResult.h
+	include/alibabacloud/vod/model/SubmitAIImageAuditJobRequest.h
+	include/alibabacloud/vod/model/SubmitAIImageAuditJobResult.h
 	include/alibabacloud/vod/model/SubmitAIImageJobRequest.h
 	include/alibabacloud/vod/model/SubmitAIImageJobResult.h
 	include/alibabacloud/vod/model/SubmitAIJobRequest.h
@@ -336,6 +344,8 @@ set(vod_src
 	src/model/CreateAppInfoResult.cc
 	src/model/CreateAuditRequest.cc
 	src/model/CreateAuditResult.cc
+	src/model/CreateDNADBRequest.cc
+	src/model/CreateDNADBResult.cc
 	src/model/CreateMediaDNALibRequest.cc
 	src/model/CreateMediaDNALibResult.cc
 	src/model/CreateUploadAttachedMediaRequest.cc
@@ -438,6 +448,8 @@ set(vod_src
 	src/model/GetAuditHistoryResult.cc
 	src/model/GetCategoriesRequest.cc
 	src/model/GetCategoriesResult.cc
+	src/model/GetDNADBRequest.cc
+	src/model/GetDNADBResult.cc
 	src/model/GetDRMCertInfoRequest.cc
 	src/model/GetDRMCertInfoResult.cc
 	src/model/GetDRMLicenseRequest.cc
@@ -500,6 +512,8 @@ set(vod_src
 	src/model/ListAppPoliciesForIdentityResult.cc
 	src/model/ListAuditSecurityIpRequest.cc
 	src/model/ListAuditSecurityIpResult.cc
+	src/model/ListDNADBRequest.cc
+	src/model/ListDNADBResult.cc
 	src/model/ListDynamicImageRequest.cc
 	src/model/ListDynamicImageResult.cc
 	src/model/ListLiveRecordVideoRequest.cc
@@ -548,6 +562,8 @@ set(vod_src
 	src/model/SetMessageCallbackResult.cc
 	src/model/SetVodDomainCertificateRequest.cc
 	src/model/SetVodDomainCertificateResult.cc
+	src/model/SubmitAIImageAuditJobRequest.cc
+	src/model/SubmitAIImageAuditJobResult.cc
 	src/model/SubmitAIImageJobRequest.cc
 	src/model/SubmitAIImageJobResult.cc
 	src/model/SubmitAIJobRequest.cc

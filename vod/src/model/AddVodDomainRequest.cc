@@ -60,6 +60,17 @@ void AddVodDomainRequest::setScope(const std::string& scope)
 	setParameter("Scope", scope);
 }
 
+std::string AddVodDomainRequest::getTopLevelDomain()const
+{
+	return topLevelDomain_;
+}
+
+void AddVodDomainRequest::setTopLevelDomain(const std::string& topLevelDomain)
+{
+	topLevelDomain_ = topLevelDomain;
+	setParameter("TopLevelDomain", topLevelDomain);
+}
+
 std::string AddVodDomainRequest::getOwnerAccount()const
 {
 	return ownerAccount_;
