@@ -65,6 +65,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/EndDeviceMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/EndLiveRequest.h
 	include/alibabacloud/aliyuncvc/model/EndLiveResult.h
+	include/alibabacloud/aliyuncvc/model/GetAccountInfoRequest.h
+	include/alibabacloud/aliyuncvc/model/GetAccountInfoResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeRequest.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceInfoRequest.h
@@ -79,6 +81,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/GetMeetingMemberResult.h
 	include/alibabacloud/aliyuncvc/model/GetMembersRequest.h
 	include/alibabacloud/aliyuncvc/model/GetMembersResult.h
+	include/alibabacloud/aliyuncvc/model/GetStatisticRequest.h
+	include/alibabacloud/aliyuncvc/model/GetStatisticResult.h
 	include/alibabacloud/aliyuncvc/model/GetUserRequest.h
 	include/alibabacloud/aliyuncvc/model/GetUserResult.h
 	include/alibabacloud/aliyuncvc/model/InviteUserRequest.h
@@ -91,6 +95,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/JoinMeetingResult.h
 	include/alibabacloud/aliyuncvc/model/JoinMeetingInternationalRequest.h
 	include/alibabacloud/aliyuncvc/model/JoinMeetingInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/ListConferenceDevicesRequest.h
+	include/alibabacloud/aliyuncvc/model/ListConferenceDevicesResult.h
 	include/alibabacloud/aliyuncvc/model/ListDeviceIpRequest.h
 	include/alibabacloud/aliyuncvc/model/ListDeviceIpResult.h
 	include/alibabacloud/aliyuncvc/model/ListDevicesRequest.h
@@ -103,10 +109,14 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/ListMembersResult.h
 	include/alibabacloud/aliyuncvc/model/ListUsersRequest.h
 	include/alibabacloud/aliyuncvc/model/ListUsersResult.h
+	include/alibabacloud/aliyuncvc/model/ModifyDeviceBackgroundRequest.h
+	include/alibabacloud/aliyuncvc/model/ModifyDeviceBackgroundResult.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordRequest.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordResult.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalRequest.h
 	include/alibabacloud/aliyuncvc/model/ModifyMeetingPasswordInternationalResult.h
+	include/alibabacloud/aliyuncvc/model/RefreshDeviceScreenCodeRequest.h
+	include/alibabacloud/aliyuncvc/model/RefreshDeviceScreenCodeResult.h
 	include/alibabacloud/aliyuncvc/model/RegisterDeviceRequest.h
 	include/alibabacloud/aliyuncvc/model/RegisterDeviceResult.h
 	include/alibabacloud/aliyuncvc/model/RegisterUemDeviceRequest.h
@@ -117,6 +127,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/StartLiveResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatRequest.h
 	include/alibabacloud/aliyuncvc/model/UpdateDeviceHeartBeatResult.h
+	include/alibabacloud/aliyuncvc/model/UpdateDeviceStartupPictureRequest.h
+	include/alibabacloud/aliyuncvc/model/UpdateDeviceStartupPictureResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateGonggeLayoutRequest.h
 	include/alibabacloud/aliyuncvc/model/UpdateGonggeLayoutResult.h
 	include/alibabacloud/aliyuncvc/model/UpdateLivePasswordRequest.h
@@ -168,6 +180,8 @@ set(aliyuncvc_src
 	src/model/EndDeviceMeetingResult.cc
 	src/model/EndLiveRequest.cc
 	src/model/EndLiveResult.cc
+	src/model/GetAccountInfoRequest.cc
+	src/model/GetAccountInfoResult.cc
 	src/model/GetDeviceActiveCodeRequest.cc
 	src/model/GetDeviceActiveCodeResult.cc
 	src/model/GetDeviceInfoRequest.cc
@@ -182,6 +196,8 @@ set(aliyuncvc_src
 	src/model/GetMeetingMemberResult.cc
 	src/model/GetMembersRequest.cc
 	src/model/GetMembersResult.cc
+	src/model/GetStatisticRequest.cc
+	src/model/GetStatisticResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
 	src/model/InviteUserRequest.cc
@@ -194,6 +210,8 @@ set(aliyuncvc_src
 	src/model/JoinMeetingResult.cc
 	src/model/JoinMeetingInternationalRequest.cc
 	src/model/JoinMeetingInternationalResult.cc
+	src/model/ListConferenceDevicesRequest.cc
+	src/model/ListConferenceDevicesResult.cc
 	src/model/ListDeviceIpRequest.cc
 	src/model/ListDeviceIpResult.cc
 	src/model/ListDevicesRequest.cc
@@ -206,10 +224,14 @@ set(aliyuncvc_src
 	src/model/ListMembersResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
+	src/model/ModifyDeviceBackgroundRequest.cc
+	src/model/ModifyDeviceBackgroundResult.cc
 	src/model/ModifyMeetingPasswordRequest.cc
 	src/model/ModifyMeetingPasswordResult.cc
 	src/model/ModifyMeetingPasswordInternationalRequest.cc
 	src/model/ModifyMeetingPasswordInternationalResult.cc
+	src/model/RefreshDeviceScreenCodeRequest.cc
+	src/model/RefreshDeviceScreenCodeResult.cc
 	src/model/RegisterDeviceRequest.cc
 	src/model/RegisterDeviceResult.cc
 	src/model/RegisterUemDeviceRequest.cc
@@ -220,6 +242,8 @@ set(aliyuncvc_src
 	src/model/StartLiveResult.cc
 	src/model/UpdateDeviceHeartBeatRequest.cc
 	src/model/UpdateDeviceHeartBeatResult.cc
+	src/model/UpdateDeviceStartupPictureRequest.cc
+	src/model/UpdateDeviceStartupPictureResult.cc
 	src/model/UpdateGonggeLayoutRequest.cc
 	src/model/UpdateGonggeLayoutResult.cc
 	src/model/UpdateLivePasswordRequest.cc

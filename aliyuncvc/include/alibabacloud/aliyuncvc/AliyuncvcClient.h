@@ -66,6 +66,8 @@
 #include "model/EndDeviceMeetingResult.h"
 #include "model/EndLiveRequest.h"
 #include "model/EndLiveResult.h"
+#include "model/GetAccountInfoRequest.h"
+#include "model/GetAccountInfoResult.h"
 #include "model/GetDeviceActiveCodeRequest.h"
 #include "model/GetDeviceActiveCodeResult.h"
 #include "model/GetDeviceInfoRequest.h"
@@ -80,6 +82,8 @@
 #include "model/GetMeetingMemberResult.h"
 #include "model/GetMembersRequest.h"
 #include "model/GetMembersResult.h"
+#include "model/GetStatisticRequest.h"
+#include "model/GetStatisticResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
 #include "model/InviteUserRequest.h"
@@ -92,6 +96,8 @@
 #include "model/JoinMeetingResult.h"
 #include "model/JoinMeetingInternationalRequest.h"
 #include "model/JoinMeetingInternationalResult.h"
+#include "model/ListConferenceDevicesRequest.h"
+#include "model/ListConferenceDevicesResult.h"
 #include "model/ListDeviceIpRequest.h"
 #include "model/ListDeviceIpResult.h"
 #include "model/ListDevicesRequest.h"
@@ -104,10 +110,14 @@
 #include "model/ListMembersResult.h"
 #include "model/ListUsersRequest.h"
 #include "model/ListUsersResult.h"
+#include "model/ModifyDeviceBackgroundRequest.h"
+#include "model/ModifyDeviceBackgroundResult.h"
 #include "model/ModifyMeetingPasswordRequest.h"
 #include "model/ModifyMeetingPasswordResult.h"
 #include "model/ModifyMeetingPasswordInternationalRequest.h"
 #include "model/ModifyMeetingPasswordInternationalResult.h"
+#include "model/RefreshDeviceScreenCodeRequest.h"
+#include "model/RefreshDeviceScreenCodeResult.h"
 #include "model/RegisterDeviceRequest.h"
 #include "model/RegisterDeviceResult.h"
 #include "model/RegisterUemDeviceRequest.h"
@@ -118,6 +128,8 @@
 #include "model/StartLiveResult.h"
 #include "model/UpdateDeviceHeartBeatRequest.h"
 #include "model/UpdateDeviceHeartBeatResult.h"
+#include "model/UpdateDeviceStartupPictureRequest.h"
+#include "model/UpdateDeviceStartupPictureResult.h"
 #include "model/UpdateGonggeLayoutRequest.h"
 #include "model/UpdateGonggeLayoutResult.h"
 #include "model/UpdateLivePasswordRequest.h"
@@ -197,6 +209,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EndLiveResult> EndLiveOutcome;
 			typedef std::future<EndLiveOutcome> EndLiveOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::EndLiveRequest&, const EndLiveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EndLiveAsyncHandler;
+			typedef Outcome<Error, Model::GetAccountInfoResult> GetAccountInfoOutcome;
+			typedef std::future<GetAccountInfoOutcome> GetAccountInfoOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetAccountInfoRequest&, const GetAccountInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceActiveCodeResult> GetDeviceActiveCodeOutcome;
 			typedef std::future<GetDeviceActiveCodeOutcome> GetDeviceActiveCodeOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetDeviceActiveCodeRequest&, const GetDeviceActiveCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceActiveCodeAsyncHandler;
@@ -218,6 +233,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMembersResult> GetMembersOutcome;
 			typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetMembersRequest&, const GetMembersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMembersAsyncHandler;
+			typedef Outcome<Error, Model::GetStatisticResult> GetStatisticOutcome;
+			typedef std::future<GetStatisticOutcome> GetStatisticOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetStatisticRequest&, const GetStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticAsyncHandler;
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
@@ -236,6 +254,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::JoinMeetingInternationalResult> JoinMeetingInternationalOutcome;
 			typedef std::future<JoinMeetingInternationalOutcome> JoinMeetingInternationalOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::JoinMeetingInternationalRequest&, const JoinMeetingInternationalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> JoinMeetingInternationalAsyncHandler;
+			typedef Outcome<Error, Model::ListConferenceDevicesResult> ListConferenceDevicesOutcome;
+			typedef std::future<ListConferenceDevicesOutcome> ListConferenceDevicesOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ListConferenceDevicesRequest&, const ListConferenceDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConferenceDevicesAsyncHandler;
 			typedef Outcome<Error, Model::ListDeviceIpResult> ListDeviceIpOutcome;
 			typedef std::future<ListDeviceIpOutcome> ListDeviceIpOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ListDeviceIpRequest&, const ListDeviceIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceIpAsyncHandler;
@@ -254,12 +275,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUsersResult> ListUsersOutcome;
 			typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ListUsersRequest&, const ListUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsersAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDeviceBackgroundResult> ModifyDeviceBackgroundOutcome;
+			typedef std::future<ModifyDeviceBackgroundOutcome> ModifyDeviceBackgroundOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::ModifyDeviceBackgroundRequest&, const ModifyDeviceBackgroundOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceBackgroundAsyncHandler;
 			typedef Outcome<Error, Model::ModifyMeetingPasswordResult> ModifyMeetingPasswordOutcome;
 			typedef std::future<ModifyMeetingPasswordOutcome> ModifyMeetingPasswordOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ModifyMeetingPasswordRequest&, const ModifyMeetingPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMeetingPasswordAsyncHandler;
 			typedef Outcome<Error, Model::ModifyMeetingPasswordInternationalResult> ModifyMeetingPasswordInternationalOutcome;
 			typedef std::future<ModifyMeetingPasswordInternationalOutcome> ModifyMeetingPasswordInternationalOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::ModifyMeetingPasswordInternationalRequest&, const ModifyMeetingPasswordInternationalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMeetingPasswordInternationalAsyncHandler;
+			typedef Outcome<Error, Model::RefreshDeviceScreenCodeResult> RefreshDeviceScreenCodeOutcome;
+			typedef std::future<RefreshDeviceScreenCodeOutcome> RefreshDeviceScreenCodeOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::RefreshDeviceScreenCodeRequest&, const RefreshDeviceScreenCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefreshDeviceScreenCodeAsyncHandler;
 			typedef Outcome<Error, Model::RegisterDeviceResult> RegisterDeviceOutcome;
 			typedef std::future<RegisterDeviceOutcome> RegisterDeviceOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::RegisterDeviceRequest&, const RegisterDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceAsyncHandler;
@@ -275,6 +302,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDeviceHeartBeatResult> UpdateDeviceHeartBeatOutcome;
 			typedef std::future<UpdateDeviceHeartBeatOutcome> UpdateDeviceHeartBeatOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateDeviceHeartBeatRequest&, const UpdateDeviceHeartBeatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceHeartBeatAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDeviceStartupPictureResult> UpdateDeviceStartupPictureOutcome;
+			typedef std::future<UpdateDeviceStartupPictureOutcome> UpdateDeviceStartupPictureOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateDeviceStartupPictureRequest&, const UpdateDeviceStartupPictureOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceStartupPictureAsyncHandler;
 			typedef Outcome<Error, Model::UpdateGonggeLayoutResult> UpdateGonggeLayoutOutcome;
 			typedef std::future<UpdateGonggeLayoutOutcome> UpdateGonggeLayoutOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::UpdateGonggeLayoutRequest&, const UpdateGonggeLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGonggeLayoutAsyncHandler;
@@ -352,6 +382,9 @@ namespace AlibabaCloud
 			EndLiveOutcome endLive(const Model::EndLiveRequest &request)const;
 			void endLiveAsync(const Model::EndLiveRequest& request, const EndLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EndLiveOutcomeCallable endLiveCallable(const Model::EndLiveRequest& request) const;
+			GetAccountInfoOutcome getAccountInfo(const Model::GetAccountInfoRequest &request)const;
+			void getAccountInfoAsync(const Model::GetAccountInfoRequest& request, const GetAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccountInfoOutcomeCallable getAccountInfoCallable(const Model::GetAccountInfoRequest& request) const;
 			GetDeviceActiveCodeOutcome getDeviceActiveCode(const Model::GetDeviceActiveCodeRequest &request)const;
 			void getDeviceActiveCodeAsync(const Model::GetDeviceActiveCodeRequest& request, const GetDeviceActiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceActiveCodeOutcomeCallable getDeviceActiveCodeCallable(const Model::GetDeviceActiveCodeRequest& request) const;
@@ -373,6 +406,9 @@ namespace AlibabaCloud
 			GetMembersOutcome getMembers(const Model::GetMembersRequest &request)const;
 			void getMembersAsync(const Model::GetMembersRequest& request, const GetMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMembersOutcomeCallable getMembersCallable(const Model::GetMembersRequest& request) const;
+			GetStatisticOutcome getStatistic(const Model::GetStatisticRequest &request)const;
+			void getStatisticAsync(const Model::GetStatisticRequest& request, const GetStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetStatisticOutcomeCallable getStatisticCallable(const Model::GetStatisticRequest& request) const;
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
@@ -391,6 +427,9 @@ namespace AlibabaCloud
 			JoinMeetingInternationalOutcome joinMeetingInternational(const Model::JoinMeetingInternationalRequest &request)const;
 			void joinMeetingInternationalAsync(const Model::JoinMeetingInternationalRequest& request, const JoinMeetingInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			JoinMeetingInternationalOutcomeCallable joinMeetingInternationalCallable(const Model::JoinMeetingInternationalRequest& request) const;
+			ListConferenceDevicesOutcome listConferenceDevices(const Model::ListConferenceDevicesRequest &request)const;
+			void listConferenceDevicesAsync(const Model::ListConferenceDevicesRequest& request, const ListConferenceDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListConferenceDevicesOutcomeCallable listConferenceDevicesCallable(const Model::ListConferenceDevicesRequest& request) const;
 			ListDeviceIpOutcome listDeviceIp(const Model::ListDeviceIpRequest &request)const;
 			void listDeviceIpAsync(const Model::ListDeviceIpRequest& request, const ListDeviceIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDeviceIpOutcomeCallable listDeviceIpCallable(const Model::ListDeviceIpRequest& request) const;
@@ -409,12 +448,18 @@ namespace AlibabaCloud
 			ListUsersOutcome listUsers(const Model::ListUsersRequest &request)const;
 			void listUsersAsync(const Model::ListUsersRequest& request, const ListUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsersOutcomeCallable listUsersCallable(const Model::ListUsersRequest& request) const;
+			ModifyDeviceBackgroundOutcome modifyDeviceBackground(const Model::ModifyDeviceBackgroundRequest &request)const;
+			void modifyDeviceBackgroundAsync(const Model::ModifyDeviceBackgroundRequest& request, const ModifyDeviceBackgroundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDeviceBackgroundOutcomeCallable modifyDeviceBackgroundCallable(const Model::ModifyDeviceBackgroundRequest& request) const;
 			ModifyMeetingPasswordOutcome modifyMeetingPassword(const Model::ModifyMeetingPasswordRequest &request)const;
 			void modifyMeetingPasswordAsync(const Model::ModifyMeetingPasswordRequest& request, const ModifyMeetingPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyMeetingPasswordOutcomeCallable modifyMeetingPasswordCallable(const Model::ModifyMeetingPasswordRequest& request) const;
 			ModifyMeetingPasswordInternationalOutcome modifyMeetingPasswordInternational(const Model::ModifyMeetingPasswordInternationalRequest &request)const;
 			void modifyMeetingPasswordInternationalAsync(const Model::ModifyMeetingPasswordInternationalRequest& request, const ModifyMeetingPasswordInternationalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyMeetingPasswordInternationalOutcomeCallable modifyMeetingPasswordInternationalCallable(const Model::ModifyMeetingPasswordInternationalRequest& request) const;
+			RefreshDeviceScreenCodeOutcome refreshDeviceScreenCode(const Model::RefreshDeviceScreenCodeRequest &request)const;
+			void refreshDeviceScreenCodeAsync(const Model::RefreshDeviceScreenCodeRequest& request, const RefreshDeviceScreenCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RefreshDeviceScreenCodeOutcomeCallable refreshDeviceScreenCodeCallable(const Model::RefreshDeviceScreenCodeRequest& request) const;
 			RegisterDeviceOutcome registerDevice(const Model::RegisterDeviceRequest &request)const;
 			void registerDeviceAsync(const Model::RegisterDeviceRequest& request, const RegisterDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterDeviceOutcomeCallable registerDeviceCallable(const Model::RegisterDeviceRequest& request) const;
@@ -430,6 +475,9 @@ namespace AlibabaCloud
 			UpdateDeviceHeartBeatOutcome updateDeviceHeartBeat(const Model::UpdateDeviceHeartBeatRequest &request)const;
 			void updateDeviceHeartBeatAsync(const Model::UpdateDeviceHeartBeatRequest& request, const UpdateDeviceHeartBeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDeviceHeartBeatOutcomeCallable updateDeviceHeartBeatCallable(const Model::UpdateDeviceHeartBeatRequest& request) const;
+			UpdateDeviceStartupPictureOutcome updateDeviceStartupPicture(const Model::UpdateDeviceStartupPictureRequest &request)const;
+			void updateDeviceStartupPictureAsync(const Model::UpdateDeviceStartupPictureRequest& request, const UpdateDeviceStartupPictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDeviceStartupPictureOutcomeCallable updateDeviceStartupPictureCallable(const Model::UpdateDeviceStartupPictureRequest& request) const;
 			UpdateGonggeLayoutOutcome updateGonggeLayout(const Model::UpdateGonggeLayoutRequest &request)const;
 			void updateGonggeLayoutAsync(const Model::UpdateGonggeLayoutRequest& request, const UpdateGonggeLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGonggeLayoutOutcomeCallable updateGonggeLayoutCallable(const Model::UpdateGonggeLayoutRequest& request) const;
