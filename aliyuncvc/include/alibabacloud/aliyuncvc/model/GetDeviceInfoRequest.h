@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/aliyuncvc/AliyuncvcExport.h>
 
 namespace AlibabaCloud
@@ -29,27 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT DeleteUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceInfoRequest : public RpcServiceRequest
 			{
+
 			public:
+				GetDeviceInfoRequest();
+				~GetDeviceInfoRequest();
 
+				std::string getCastScreenCode()const;
+				void setCastScreenCode(const std::string& castScreenCode);
 
-				DeleteUserResult();
-				explicit DeleteUserResult(const std::string &payload);
-				~DeleteUserResult();
-				std::string getMessage()const;
-				int getErrorCode()const;
-				bool getSuccess()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string message_;
-				int errorCode_;
-				bool success_;
+            private:
+				std::string castScreenCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFOREQUEST_H_

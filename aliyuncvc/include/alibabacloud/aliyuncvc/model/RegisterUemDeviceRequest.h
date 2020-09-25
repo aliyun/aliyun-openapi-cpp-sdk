@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				void setIP(const std::string& iP);
 				std::string getGroupId()const;
 				void setGroupId(const std::string& groupId);
+				std::string getOwnerId()const;
+				void setOwnerId(const std::string& ownerId);
 				std::string getDeviceId()const;
 				void setDeviceId(const std::string& deviceId);
 				std::string getGroupName()const;
@@ -51,6 +53,7 @@ namespace AlibabaCloud
             private:
 				std::string iP_;
 				std::string groupId_;
+				std::string ownerId_;
 				std::string deviceId_;
 				std::string groupName_;
 				std::string mac_;

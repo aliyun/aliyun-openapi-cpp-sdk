@@ -67,6 +67,8 @@ set(aliyuncvc_public_header_model
 	include/alibabacloud/aliyuncvc/model/EndLiveResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeRequest.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceActiveCodeResult.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceInfoRequest.h
+	include/alibabacloud/aliyuncvc/model/GetDeviceInfoResult.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceTokenRequest.h
 	include/alibabacloud/aliyuncvc/model/GetDeviceTokenResult.h
 	include/alibabacloud/aliyuncvc/model/GetMeetingRequest.h
@@ -168,6 +170,8 @@ set(aliyuncvc_src
 	src/model/EndLiveResult.cc
 	src/model/GetDeviceActiveCodeRequest.cc
 	src/model/GetDeviceActiveCodeResult.cc
+	src/model/GetDeviceInfoRequest.cc
+	src/model/GetDeviceInfoResult.cc
 	src/model/GetDeviceTokenRequest.cc
 	src/model/GetDeviceTokenResult.cc
 	src/model/GetMeetingRequest.cc

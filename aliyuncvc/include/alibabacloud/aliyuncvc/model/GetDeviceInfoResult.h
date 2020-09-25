@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
-#define ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_
+#define ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,15 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIYUNCVC_EXPORT DeleteUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIYUNCVC_EXPORT GetDeviceInfoResult : public ServiceResult
 			{
 			public:
+				struct Device
+				{
+					int status;
+					std::string castScreenCode;
+					std::string iP;
+					std::string sn;
+					std::string ssid;
+					std::string activationCode;
+					std::string mac;
+				};
 
 
-				DeleteUserResult();
-				explicit DeleteUserResult(const std::string &payload);
-				~DeleteUserResult();
+				GetDeviceInfoResult();
+				explicit GetDeviceInfoResult(const std::string &payload);
+				~GetDeviceInfoResult();
 				std::string getMessage()const;
+				Device getDevice()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +56,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				Device device_;
 				int errorCode_;
 				bool success_;
 
@@ -52,4 +64,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_DELETEUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIYUNCVC_MODEL_GETDEVICEINFORESULT_H_

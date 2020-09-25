@@ -68,6 +68,8 @@
 #include "model/EndLiveResult.h"
 #include "model/GetDeviceActiveCodeRequest.h"
 #include "model/GetDeviceActiveCodeResult.h"
+#include "model/GetDeviceInfoRequest.h"
+#include "model/GetDeviceInfoResult.h"
 #include "model/GetDeviceTokenRequest.h"
 #include "model/GetDeviceTokenResult.h"
 #include "model/GetMeetingRequest.h"
@@ -198,6 +200,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeviceActiveCodeResult> GetDeviceActiveCodeOutcome;
 			typedef std::future<GetDeviceActiveCodeOutcome> GetDeviceActiveCodeOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetDeviceActiveCodeRequest&, const GetDeviceActiveCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceActiveCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetDeviceInfoResult> GetDeviceInfoOutcome;
+			typedef std::future<GetDeviceInfoOutcome> GetDeviceInfoOutcomeCallable;
+			typedef std::function<void(const AliyuncvcClient*, const Model::GetDeviceInfoRequest&, const GetDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetDeviceTokenResult> GetDeviceTokenOutcome;
 			typedef std::future<GetDeviceTokenOutcome> GetDeviceTokenOutcomeCallable;
 			typedef std::function<void(const AliyuncvcClient*, const Model::GetDeviceTokenRequest&, const GetDeviceTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceTokenAsyncHandler;
@@ -350,6 +355,9 @@ namespace AlibabaCloud
 			GetDeviceActiveCodeOutcome getDeviceActiveCode(const Model::GetDeviceActiveCodeRequest &request)const;
 			void getDeviceActiveCodeAsync(const Model::GetDeviceActiveCodeRequest& request, const GetDeviceActiveCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceActiveCodeOutcomeCallable getDeviceActiveCodeCallable(const Model::GetDeviceActiveCodeRequest& request) const;
+			GetDeviceInfoOutcome getDeviceInfo(const Model::GetDeviceInfoRequest &request)const;
+			void getDeviceInfoAsync(const Model::GetDeviceInfoRequest& request, const GetDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDeviceInfoOutcomeCallable getDeviceInfoCallable(const Model::GetDeviceInfoRequest& request) const;
 			GetDeviceTokenOutcome getDeviceToken(const Model::GetDeviceTokenRequest &request)const;
 			void getDeviceTokenAsync(const Model::GetDeviceTokenRequest& request, const GetDeviceTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceTokenOutcomeCallable getDeviceTokenCallable(const Model::GetDeviceTokenRequest& request) const;

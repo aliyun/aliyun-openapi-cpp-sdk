@@ -40,7 +40,7 @@ void DeleteUserResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
+		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
 	if(!value["Message"].isNull())
@@ -58,7 +58,7 @@ int DeleteUserResult::getErrorCode()const
 	return errorCode_;
 }
 
-std::string DeleteUserResult::getSuccess()const
+bool DeleteUserResult::getSuccess()const
 {
 	return success_;
 }

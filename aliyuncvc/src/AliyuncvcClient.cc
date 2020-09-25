@@ -879,6 +879,42 @@ AliyuncvcClient::GetDeviceActiveCodeOutcomeCallable AliyuncvcClient::getDeviceAc
 	return task->get_future();
 }
 
+AliyuncvcClient::GetDeviceInfoOutcome AliyuncvcClient::getDeviceInfo(const GetDeviceInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDeviceInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDeviceInfoOutcome(GetDeviceInfoResult(outcome.result()));
+	else
+		return GetDeviceInfoOutcome(outcome.error());
+}
+
+void AliyuncvcClient::getDeviceInfoAsync(const GetDeviceInfoRequest& request, const GetDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDeviceInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AliyuncvcClient::GetDeviceInfoOutcomeCallable AliyuncvcClient::getDeviceInfoCallable(const GetDeviceInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDeviceInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getDeviceInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AliyuncvcClient::GetDeviceTokenOutcome AliyuncvcClient::getDeviceToken(const GetDeviceTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

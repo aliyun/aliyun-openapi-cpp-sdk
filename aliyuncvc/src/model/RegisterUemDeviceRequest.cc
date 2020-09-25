@@ -49,6 +49,17 @@ void RegisterUemDeviceRequest::setGroupId(const std::string& groupId)
 	setParameter("GroupId", groupId);
 }
 
+std::string RegisterUemDeviceRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void RegisterUemDeviceRequest::setOwnerId(const std::string& ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", ownerId);
+}
+
 std::string RegisterUemDeviceRequest::getDeviceId()const
 {
 	return deviceId_;
