@@ -55,14 +55,14 @@ void GetVideoResult::parse(const std::string &payload)
 	for (auto valueVideoTagsVideoTagsItem : allVideoTagsNode)
 	{
 		VideoTagsItem videoTagsObject;
-		if(!valueVideoTagsVideoTagsItem["VideoTagName"].isNull())
-			videoTagsObject.videoTagName = valueVideoTagsVideoTagsItem["VideoTagName"].asString();
-		if(!valueVideoTagsVideoTagsItem["VideoTagEnName"].isNull())
-			videoTagsObject.videoTagEnName = valueVideoTagsVideoTagsItem["VideoTagEnName"].asString();
-		if(!valueVideoTagsVideoTagsItem["VideoTagConfidence"].isNull())
-			videoTagsObject.videoTagConfidence = std::stof(valueVideoTagsVideoTagsItem["VideoTagConfidence"].asString());
-		if(!valueVideoTagsVideoTagsItem["VideoTagLevel"].isNull())
-			videoTagsObject.videoTagLevel = std::stoi(valueVideoTagsVideoTagsItem["VideoTagLevel"].asString());
+		if(!valueVideoTagsVideoTagsItem["TagName"].isNull())
+			videoTagsObject.tagName = valueVideoTagsVideoTagsItem["TagName"].asString();
+		if(!valueVideoTagsVideoTagsItem["ParentTagName"].isNull())
+			videoTagsObject.parentTagName = valueVideoTagsVideoTagsItem["ParentTagName"].asString();
+		if(!valueVideoTagsVideoTagsItem["TagConfidence"].isNull())
+			videoTagsObject.tagConfidence = std::stof(valueVideoTagsVideoTagsItem["TagConfidence"].asString());
+		if(!valueVideoTagsVideoTagsItem["TagLevel"].isNull())
+			videoTagsObject.tagLevel = std::stoi(valueVideoTagsVideoTagsItem["TagLevel"].asString());
 		videoTags_.push_back(videoTagsObject);
 	}
 	auto allPersonsNode = value["Persons"]["PersonsItem"];

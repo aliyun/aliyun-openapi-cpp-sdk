@@ -36,9 +36,10 @@ namespace AlibabaCloud
 				{
 					struct VideoTagsItem
 					{
-						std::string videoTagEnName;
-						std::string videoTagName;
-						float videoTagConfidence;
+						std::string tagName;
+						float tagConfidence;
+						int tagLevel;
+						std::string parentTagName;
 					};
 					struct CelebrityItem
 					{

@@ -155,6 +155,8 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ListVideoTasksResult.h
 	include/alibabacloud/imm/model/ListVideosRequest.h
 	include/alibabacloud/imm/model/ListVideosResult.h
+	include/alibabacloud/imm/model/OpenImmServiceRequest.h
+	include/alibabacloud/imm/model/OpenImmServiceResult.h
 	include/alibabacloud/imm/model/PutProjectRequest.h
 	include/alibabacloud/imm/model/PutProjectResult.h
 	include/alibabacloud/imm/model/RefreshOfficeEditTokenRequest.h
@@ -312,6 +314,8 @@ set(imm_src
 	src/model/ListVideoTasksResult.cc
 	src/model/ListVideosRequest.cc
 	src/model/ListVideosResult.cc
+	src/model/OpenImmServiceRequest.cc
+	src/model/OpenImmServiceResult.cc
 	src/model/PutProjectRequest.cc
 	src/model/PutProjectResult.cc
 	src/model/RefreshOfficeEditTokenRequest.cc

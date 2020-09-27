@@ -31,21 +31,21 @@ ImmClient::ImmClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::ImmClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::ImmClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "imm");
 }
 
 ImmClient::~ImmClient()
@@ -2457,6 +2457,42 @@ ImmClient::ListVideosOutcomeCallable ImmClient::listVideosCallable(const ListVid
 			[this, request]()
 			{
 			return this->listVideos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImmClient::OpenImmServiceOutcome ImmClient::openImmService(const OpenImmServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenImmServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenImmServiceOutcome(OpenImmServiceResult(outcome.result()));
+	else
+		return OpenImmServiceOutcome(outcome.error());
+}
+
+void ImmClient::openImmServiceAsync(const OpenImmServiceRequest& request, const OpenImmServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openImmService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImmClient::OpenImmServiceOutcomeCallable ImmClient::openImmServiceCallable(const OpenImmServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenImmServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openImmService(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

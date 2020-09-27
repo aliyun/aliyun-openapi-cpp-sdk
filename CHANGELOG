@@ -1,4 +1,7 @@
 2020-09-27 Version: patch
+- Support Open Service API.
+
+2020-09-27 Version: patch
 - DescribeAvailableResource support list available resource for modify instance.
 
 2020-09-25 Version: patch

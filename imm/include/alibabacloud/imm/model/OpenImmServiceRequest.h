@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICEREQUEST_H_
+#define ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/imm/ImmExport.h>
 
 namespace AlibabaCloud
@@ -29,25 +28,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetDRMLicenseResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT OpenImmServiceRequest : public RpcServiceRequest
 			{
+
 			public:
+				OpenImmServiceRequest();
+				~OpenImmServiceRequest();
 
+				long getOwnerId()const;
+				void setOwnerId(long ownerId);
 
-				GetDRMLicenseResult();
-				explicit GetDRMLicenseResult(const std::string &payload);
-				~GetDRMLicenseResult();
-				std::string getDeviceInfo()const;
-				std::string getDRMData()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				std::string deviceInfo_;
-				std::string dRMData_;
+            private:
+				long ownerId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICEREQUEST_H_

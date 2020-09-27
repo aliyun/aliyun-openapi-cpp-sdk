@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
-#define ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
+#ifndef ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICERESULT_H_
+#define ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMM_EXPORT GetDRMLicenseResult : public ServiceResult
+			class ALIBABACLOUD_IMM_EXPORT OpenImmServiceResult : public ServiceResult
 			{
 			public:
 
 
-				GetDRMLicenseResult();
-				explicit GetDRMLicenseResult(const std::string &payload);
-				~GetDRMLicenseResult();
-				std::string getDeviceInfo()const;
-				std::string getDRMData()const;
+				OpenImmServiceResult();
+				explicit OpenImmServiceResult(const std::string &payload);
+				~OpenImmServiceResult();
+				std::string getOrderId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string deviceInfo_;
-				std::string dRMData_;
+				std::string orderId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMM_MODEL_GETDRMLICENSERESULT_H_
+#endif // !ALIBABACLOUD_IMM_MODEL_OPENIMMSERVICERESULT_H_

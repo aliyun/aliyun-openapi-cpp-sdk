@@ -156,6 +156,8 @@
 #include "model/ListVideoTasksResult.h"
 #include "model/ListVideosRequest.h"
 #include "model/ListVideosResult.h"
+#include "model/OpenImmServiceRequest.h"
+#include "model/OpenImmServiceResult.h"
 #include "model/PutProjectRequest.h"
 #include "model/PutProjectResult.h"
 #include "model/RefreshOfficeEditTokenRequest.h"
@@ -386,6 +388,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListVideosResult> ListVideosOutcome;
 			typedef std::future<ListVideosOutcome> ListVideosOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ListVideosRequest&, const ListVideosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVideosAsyncHandler;
+			typedef Outcome<Error, Model::OpenImmServiceResult> OpenImmServiceOutcome;
+			typedef std::future<OpenImmServiceOutcome> OpenImmServiceOutcomeCallable;
+			typedef std::function<void(const ImmClient*, const Model::OpenImmServiceRequest&, const OpenImmServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenImmServiceAsyncHandler;
 			typedef Outcome<Error, Model::PutProjectResult> PutProjectOutcome;
 			typedef std::future<PutProjectOutcome> PutProjectOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::PutProjectRequest&, const PutProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutProjectAsyncHandler;
@@ -622,6 +627,9 @@ namespace AlibabaCloud
 			ListVideosOutcome listVideos(const Model::ListVideosRequest &request)const;
 			void listVideosAsync(const Model::ListVideosRequest& request, const ListVideosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVideosOutcomeCallable listVideosCallable(const Model::ListVideosRequest& request) const;
+			OpenImmServiceOutcome openImmService(const Model::OpenImmServiceRequest &request)const;
+			void openImmServiceAsync(const Model::OpenImmServiceRequest& request, const OpenImmServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenImmServiceOutcomeCallable openImmServiceCallable(const Model::OpenImmServiceRequest& request) const;
 			PutProjectOutcome putProject(const Model::PutProjectRequest &request)const;
 			void putProjectAsync(const Model::PutProjectRequest& request, const PutProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutProjectOutcomeCallable putProjectCallable(const Model::PutProjectRequest& request) const;

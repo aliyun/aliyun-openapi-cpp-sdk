@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imm/model/GetDRMLicenseResult.h>
+#include <alibabacloud/imm/model/OpenImmServiceResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Imm;
 using namespace AlibabaCloud::Imm::Model;
 
-GetDRMLicenseResult::GetDRMLicenseResult() :
+OpenImmServiceResult::OpenImmServiceResult() :
 	ServiceResult()
 {}
 
-GetDRMLicenseResult::GetDRMLicenseResult(const std::string &payload) :
+OpenImmServiceResult::OpenImmServiceResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetDRMLicenseResult::~GetDRMLicenseResult()
+OpenImmServiceResult::~OpenImmServiceResult()
 {}
 
-void GetDRMLicenseResult::parse(const std::string &payload)
+void OpenImmServiceResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DRMData"].isNull())
-		dRMData_ = value["DRMData"].asString();
-	if(!value["DeviceInfo"].isNull())
-		deviceInfo_ = value["DeviceInfo"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = value["OrderId"].asString();
 
 }
 
-std::string GetDRMLicenseResult::getDeviceInfo()const
+std::string OpenImmServiceResult::getOrderId()const
 {
-	return deviceInfo_;
-}
-
-std::string GetDRMLicenseResult::getDRMData()const
-{
-	return dRMData_;
+	return orderId_;
 }
 
