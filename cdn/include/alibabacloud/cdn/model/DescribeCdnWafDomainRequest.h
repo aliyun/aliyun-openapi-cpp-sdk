@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_TAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_TAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBECDNWAFDOMAINREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_DESCRIBECDNWAFDOMAINREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,36 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT TagResourcesRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CDN_EXPORT DescribeCdnWafDomainRequest : public RpcServiceRequest
 			{
-			public:
-				struct Tag
-				{
-					std::string key;
-					std::string value;
-				};
 
 			public:
-				TagResourcesRequest();
-				~TagResourcesRequest();
+				DescribeCdnWafDomainRequest();
+				~DescribeCdnWafDomainRequest();
 
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-				std::vector<std::string> getResourceId()const;
-				void setResourceId(const std::vector<std::string>& resourceId);
+				std::string getRegionId()const;
+				void setRegionId(const std::string& regionId);
+				std::string getDomainName()const;
+				void setDomainName(const std::string& domainName);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
 
             private:
-				std::vector<Tag> tag_;
-				std::vector<std::string> resourceId_;
+				std::string regionId_;
+				std::string domainName_;
 				long ownerId_;
-				std::string resourceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_TAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBECDNWAFDOMAINREQUEST_H_

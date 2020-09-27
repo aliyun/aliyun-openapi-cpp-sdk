@@ -27,15 +27,15 @@ UntagResourcesRequest::UntagResourcesRequest() :
 UntagResourcesRequest::~UntagResourcesRequest()
 {}
 
-std::string UntagResourcesRequest::getRegionId()const
+bool UntagResourcesRequest::getAll()const
 {
-	return regionId_;
+	return all_;
 }
 
-void UntagResourcesRequest::setRegionId(const std::string& regionId)
+void UntagResourcesRequest::setAll(bool all)
 {
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+	all_ = all;
+	setParameter("All", all ? "true" : "false");
 }
 
 std::vector<std::string> UntagResourcesRequest::getResourceId()const

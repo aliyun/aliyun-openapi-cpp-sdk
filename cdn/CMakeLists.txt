@@ -115,6 +115,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnUserQuotaResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserResourcePackageResult.h
+	include/alibabacloud/cdn/model/DescribeCdnWafDomainRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnWafDomainResult.h
 	include/alibabacloud/cdn/model/DescribeCertificateInfoByIDRequest.h
 	include/alibabacloud/cdn/model/DescribeCertificateInfoByIDResult.h
 	include/alibabacloud/cdn/model/DescribeConfigOfVersionRequest.h
@@ -510,6 +512,8 @@ set(cdn_src
 	src/model/DescribeCdnUserQuotaResult.cc
 	src/model/DescribeCdnUserResourcePackageRequest.cc
 	src/model/DescribeCdnUserResourcePackageResult.cc
+	src/model/DescribeCdnWafDomainRequest.cc
+	src/model/DescribeCdnWafDomainResult.cc
 	src/model/DescribeCertificateInfoByIDRequest.cc
 	src/model/DescribeCertificateInfoByIDResult.cc
 	src/model/DescribeConfigOfVersionRequest.cc

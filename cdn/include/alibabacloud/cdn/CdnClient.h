@@ -116,6 +116,8 @@
 #include "model/DescribeCdnUserQuotaResult.h"
 #include "model/DescribeCdnUserResourcePackageRequest.h"
 #include "model/DescribeCdnUserResourcePackageResult.h"
+#include "model/DescribeCdnWafDomainRequest.h"
+#include "model/DescribeCdnWafDomainResult.h"
 #include "model/DescribeCertificateInfoByIDRequest.h"
 #include "model/DescribeCertificateInfoByIDResult.h"
 #include "model/DescribeConfigOfVersionRequest.h"
@@ -564,6 +566,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCdnUserResourcePackageResult> DescribeCdnUserResourcePackageOutcome;
 			typedef std::future<DescribeCdnUserResourcePackageOutcome> DescribeCdnUserResourcePackageOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserResourcePackageRequest&, const DescribeCdnUserResourcePackageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserResourcePackageAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnWafDomainResult> DescribeCdnWafDomainOutcome;
+			typedef std::future<DescribeCdnWafDomainOutcome> DescribeCdnWafDomainOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnWafDomainRequest&, const DescribeCdnWafDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnWafDomainAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertificateInfoByIDResult> DescribeCertificateInfoByIDOutcome;
 			typedef std::future<DescribeCertificateInfoByIDOutcome> DescribeCertificateInfoByIDOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCertificateInfoByIDRequest&, const DescribeCertificateInfoByIDOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateInfoByIDAsyncHandler;
@@ -1157,6 +1162,9 @@ namespace AlibabaCloud
 			DescribeCdnUserResourcePackageOutcome describeCdnUserResourcePackage(const Model::DescribeCdnUserResourcePackageRequest &request)const;
 			void describeCdnUserResourcePackageAsync(const Model::DescribeCdnUserResourcePackageRequest& request, const DescribeCdnUserResourcePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnUserResourcePackageOutcomeCallable describeCdnUserResourcePackageCallable(const Model::DescribeCdnUserResourcePackageRequest& request) const;
+			DescribeCdnWafDomainOutcome describeCdnWafDomain(const Model::DescribeCdnWafDomainRequest &request)const;
+			void describeCdnWafDomainAsync(const Model::DescribeCdnWafDomainRequest& request, const DescribeCdnWafDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnWafDomainOutcomeCallable describeCdnWafDomainCallable(const Model::DescribeCdnWafDomainRequest& request) const;
 			DescribeCertificateInfoByIDOutcome describeCertificateInfoByID(const Model::DescribeCertificateInfoByIDRequest &request)const;
 			void describeCertificateInfoByIDAsync(const Model::DescribeCertificateInfoByIDRequest& request, const DescribeCertificateInfoByIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertificateInfoByIDOutcomeCallable describeCertificateInfoByIDCallable(const Model::DescribeCertificateInfoByIDRequest& request) const;

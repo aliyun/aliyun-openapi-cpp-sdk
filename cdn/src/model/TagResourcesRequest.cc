@@ -27,17 +27,6 @@ TagResourcesRequest::TagResourcesRequest() :
 TagResourcesRequest::~TagResourcesRequest()
 {}
 
-std::string TagResourcesRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void TagResourcesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag()const
 {
 	return tag_;
