@@ -115,6 +115,8 @@ set(r-kvstore_public_header_model
 	include/alibabacloud/r-kvstore/model/FlushInstanceResult.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeRequest.h
 	include/alibabacloud/r-kvstore/model/GrantAccountPrivilegeResult.h
+	include/alibabacloud/r-kvstore/model/InitializeKvstorePermissionRequest.h
+	include/alibabacloud/r-kvstore/model/InitializeKvstorePermissionResult.h
 	include/alibabacloud/r-kvstore/model/ListTagResourcesRequest.h
 	include/alibabacloud/r-kvstore/model/ListTagResourcesResult.h
 	include/alibabacloud/r-kvstore/model/MigrateToOtherZoneRequest.h
@@ -282,6 +284,8 @@ set(r-kvstore_src
 	src/model/FlushInstanceResult.cc
 	src/model/GrantAccountPrivilegeRequest.cc
 	src/model/GrantAccountPrivilegeResult.cc
+	src/model/InitializeKvstorePermissionRequest.cc
+	src/model/InitializeKvstorePermissionResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/MigrateToOtherZoneRequest.cc

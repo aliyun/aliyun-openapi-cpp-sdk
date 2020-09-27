@@ -82,6 +82,17 @@ void ModifyResourceGroupRequest::setRegionId(const std::string& regionId)
 	setParameter("RegionId", regionId);
 }
 
+std::string ModifyResourceGroupRequest::getProduct()const
+{
+	return product_;
+}
+
+void ModifyResourceGroupRequest::setProduct(const std::string& product)
+{
+	product_ = product;
+	setParameter("Product", product);
+}
+
 std::string ModifyResourceGroupRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
@@ -124,5 +135,16 @@ void ModifyResourceGroupRequest::setInstanceId(const std::string& instanceId)
 {
 	instanceId_ = instanceId;
 	setParameter("InstanceId", instanceId);
+}
+
+std::string ModifyResourceGroupRequest::getCategory()const
+{
+	return category_;
+}
+
+void ModifyResourceGroupRequest::setCategory(const std::string& category)
+{
+	category_ = category;
+	setParameter("Category", category);
 }
 

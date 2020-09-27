@@ -116,6 +116,8 @@
 #include "model/FlushInstanceResult.h"
 #include "model/GrantAccountPrivilegeRequest.h"
 #include "model/GrantAccountPrivilegeResult.h"
+#include "model/InitializeKvstorePermissionRequest.h"
+#include "model/InitializeKvstorePermissionResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/MigrateToOtherZoneRequest.h"
@@ -336,6 +338,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GrantAccountPrivilegeResult> GrantAccountPrivilegeOutcome;
 			typedef std::future<GrantAccountPrivilegeOutcome> GrantAccountPrivilegeOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::GrantAccountPrivilegeRequest&, const GrantAccountPrivilegeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegeAsyncHandler;
+			typedef Outcome<Error, Model::InitializeKvstorePermissionResult> InitializeKvstorePermissionOutcome;
+			typedef std::future<InitializeKvstorePermissionOutcome> InitializeKvstorePermissionOutcomeCallable;
+			typedef std::function<void(const R_kvstoreClient*, const Model::InitializeKvstorePermissionRequest&, const InitializeKvstorePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitializeKvstorePermissionAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const R_kvstoreClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -587,6 +592,9 @@ namespace AlibabaCloud
 			GrantAccountPrivilegeOutcome grantAccountPrivilege(const Model::GrantAccountPrivilegeRequest &request)const;
 			void grantAccountPrivilegeAsync(const Model::GrantAccountPrivilegeRequest& request, const GrantAccountPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantAccountPrivilegeOutcomeCallable grantAccountPrivilegeCallable(const Model::GrantAccountPrivilegeRequest& request) const;
+			InitializeKvstorePermissionOutcome initializeKvstorePermission(const Model::InitializeKvstorePermissionRequest &request)const;
+			void initializeKvstorePermissionAsync(const Model::InitializeKvstorePermissionRequest& request, const InitializeKvstorePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InitializeKvstorePermissionOutcomeCallable initializeKvstorePermissionCallable(const Model::InitializeKvstorePermissionRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;

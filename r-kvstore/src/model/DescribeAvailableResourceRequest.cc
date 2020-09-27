@@ -49,6 +49,17 @@ void DescribeAvailableResourceRequest::setAccessKeyId(const std::string& accessK
 	setParameter("AccessKeyId", accessKeyId);
 }
 
+std::string DescribeAvailableResourceRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+void DescribeAvailableResourceRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
+}
+
 std::string DescribeAvailableResourceRequest::getSecurityToken()const
 {
 	return securityToken_;
@@ -124,6 +135,17 @@ void DescribeAvailableResourceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getInstanceId()const
+{
+	return instanceId_;
+}
+
+void DescribeAvailableResourceRequest::setInstanceId(const std::string& instanceId)
+{
+	instanceId_ = instanceId;
+	setParameter("InstanceId", instanceId);
 }
 
 std::string DescribeAvailableResourceRequest::getZoneId()const

@@ -1743,6 +1743,42 @@ R_kvstoreClient::GrantAccountPrivilegeOutcomeCallable R_kvstoreClient::grantAcco
 	return task->get_future();
 }
 
+R_kvstoreClient::InitializeKvstorePermissionOutcome R_kvstoreClient::initializeKvstorePermission(const InitializeKvstorePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InitializeKvstorePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InitializeKvstorePermissionOutcome(InitializeKvstorePermissionResult(outcome.result()));
+	else
+		return InitializeKvstorePermissionOutcome(outcome.error());
+}
+
+void R_kvstoreClient::initializeKvstorePermissionAsync(const InitializeKvstorePermissionRequest& request, const InitializeKvstorePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, initializeKvstorePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+R_kvstoreClient::InitializeKvstorePermissionOutcomeCallable R_kvstoreClient::initializeKvstorePermissionCallable(const InitializeKvstorePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InitializeKvstorePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->initializeKvstorePermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 R_kvstoreClient::ListTagResourcesOutcome R_kvstoreClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
