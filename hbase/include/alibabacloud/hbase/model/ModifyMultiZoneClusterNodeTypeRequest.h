@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_HBASE_MODEL_RESIZENODECOUNTREQUEST_H_
-#define ALIBABACLOUD_HBASE_MODEL_RESIZENODECOUNTREQUEST_H_
+#ifndef ALIBABACLOUD_HBASE_MODEL_MODIFYMULTIZONECLUSTERNODETYPEREQUEST_H_
+#define ALIBABACLOUD_HBASE_MODEL_MODIFYMULTIZONECLUSTERNODETYPEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,30 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_HBASE_EXPORT ResizeNodeCountRequest : public RpcServiceRequest
+			class ALIBABACLOUD_HBASE_EXPORT ModifyMultiZoneClusterNodeTypeRequest : public RpcServiceRequest
 			{
 
 			public:
-				ResizeNodeCountRequest();
-				~ResizeNodeCountRequest();
+				ModifyMultiZoneClusterNodeTypeRequest();
+				~ModifyMultiZoneClusterNodeTypeRequest();
 
+				std::string getLogInstanceType()const;
+				void setLogInstanceType(const std::string& logInstanceType);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getVSwitchId()const;
-				void setVSwitchId(const std::string& vSwitchId);
-				int getNodeCount()const;
-				void setNodeCount(int nodeCount);
-				std::string getZoneId()const;
-				void setZoneId(const std::string& zoneId);
+				std::string getMasterInstanceType()const;
+				void setMasterInstanceType(const std::string& masterInstanceType);
+				std::string getCoreInstanceType()const;
+				void setCoreInstanceType(const std::string& coreInstanceType);
 
             private:
+				std::string logInstanceType_;
 				std::string clusterId_;
-				std::string vSwitchId_;
-				int nodeCount_;
-				std::string zoneId_;
+				std::string masterInstanceType_;
+				std::string coreInstanceType_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_HBASE_MODEL_RESIZENODECOUNTREQUEST_H_
+#endif // !ALIBABACLOUD_HBASE_MODEL_MODIFYMULTIZONECLUSTERNODETYPEREQUEST_H_

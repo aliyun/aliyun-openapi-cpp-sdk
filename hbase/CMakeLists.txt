@@ -113,6 +113,8 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/ModifyInstanceNameResult.h
 	include/alibabacloud/hbase/model/ModifyIpWhitelistRequest.h
 	include/alibabacloud/hbase/model/ModifyIpWhitelistResult.h
+	include/alibabacloud/hbase/model/ModifyMultiZoneClusterNodeTypeRequest.h
+	include/alibabacloud/hbase/model/ModifyMultiZoneClusterNodeTypeResult.h
 	include/alibabacloud/hbase/model/ModifySecurityGroupsRequest.h
 	include/alibabacloud/hbase/model/ModifySecurityGroupsResult.h
 	include/alibabacloud/hbase/model/ModifyUIAccountPasswordRequest.h
@@ -127,6 +129,10 @@ set(hbase_public_header_model
 	include/alibabacloud/hbase/model/RenewInstanceResult.h
 	include/alibabacloud/hbase/model/ResizeDiskSizeRequest.h
 	include/alibabacloud/hbase/model/ResizeDiskSizeResult.h
+	include/alibabacloud/hbase/model/ResizeMultiZoneClusterDiskSizeRequest.h
+	include/alibabacloud/hbase/model/ResizeMultiZoneClusterDiskSizeResult.h
+	include/alibabacloud/hbase/model/ResizeMultiZoneClusterNodeCountRequest.h
+	include/alibabacloud/hbase/model/ResizeMultiZoneClusterNodeCountResult.h
 	include/alibabacloud/hbase/model/ResizeNodeCountRequest.h
 	include/alibabacloud/hbase/model/ResizeNodeCountResult.h
 	include/alibabacloud/hbase/model/RestartInstanceRequest.h
@@ -236,6 +242,8 @@ set(hbase_src
 	src/model/ModifyInstanceNameResult.cc
 	src/model/ModifyIpWhitelistRequest.cc
 	src/model/ModifyIpWhitelistResult.cc
+	src/model/ModifyMultiZoneClusterNodeTypeRequest.cc
+	src/model/ModifyMultiZoneClusterNodeTypeResult.cc
 	src/model/ModifySecurityGroupsRequest.cc
 	src/model/ModifySecurityGroupsResult.cc
 	src/model/ModifyUIAccountPasswordRequest.cc
@@ -250,6 +258,10 @@ set(hbase_src
 	src/model/RenewInstanceResult.cc
 	src/model/ResizeDiskSizeRequest.cc
 	src/model/ResizeDiskSizeResult.cc
+	src/model/ResizeMultiZoneClusterDiskSizeRequest.cc
+	src/model/ResizeMultiZoneClusterDiskSizeResult.cc
+	src/model/ResizeMultiZoneClusterNodeCountRequest.cc
+	src/model/ResizeMultiZoneClusterNodeCountResult.cc
 	src/model/ResizeNodeCountRequest.cc
 	src/model/ResizeNodeCountResult.cc
 	src/model/RestartInstanceRequest.cc

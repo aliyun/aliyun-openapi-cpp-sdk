@@ -1707,6 +1707,42 @@ HBaseClient::ModifyIpWhitelistOutcomeCallable HBaseClient::modifyIpWhitelistCall
 	return task->get_future();
 }
 
+HBaseClient::ModifyMultiZoneClusterNodeTypeOutcome HBaseClient::modifyMultiZoneClusterNodeType(const ModifyMultiZoneClusterNodeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyMultiZoneClusterNodeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyMultiZoneClusterNodeTypeOutcome(ModifyMultiZoneClusterNodeTypeResult(outcome.result()));
+	else
+		return ModifyMultiZoneClusterNodeTypeOutcome(outcome.error());
+}
+
+void HBaseClient::modifyMultiZoneClusterNodeTypeAsync(const ModifyMultiZoneClusterNodeTypeRequest& request, const ModifyMultiZoneClusterNodeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyMultiZoneClusterNodeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ModifyMultiZoneClusterNodeTypeOutcomeCallable HBaseClient::modifyMultiZoneClusterNodeTypeCallable(const ModifyMultiZoneClusterNodeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyMultiZoneClusterNodeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyMultiZoneClusterNodeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HBaseClient::ModifySecurityGroupsOutcome HBaseClient::modifySecurityGroups(const ModifySecurityGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,6 +1989,78 @@ HBaseClient::ResizeDiskSizeOutcomeCallable HBaseClient::resizeDiskSizeCallable(c
 			[this, request]()
 			{
 			return this->resizeDiskSize(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ResizeMultiZoneClusterDiskSizeOutcome HBaseClient::resizeMultiZoneClusterDiskSize(const ResizeMultiZoneClusterDiskSizeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeMultiZoneClusterDiskSizeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeMultiZoneClusterDiskSizeOutcome(ResizeMultiZoneClusterDiskSizeResult(outcome.result()));
+	else
+		return ResizeMultiZoneClusterDiskSizeOutcome(outcome.error());
+}
+
+void HBaseClient::resizeMultiZoneClusterDiskSizeAsync(const ResizeMultiZoneClusterDiskSizeRequest& request, const ResizeMultiZoneClusterDiskSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeMultiZoneClusterDiskSize(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ResizeMultiZoneClusterDiskSizeOutcomeCallable HBaseClient::resizeMultiZoneClusterDiskSizeCallable(const ResizeMultiZoneClusterDiskSizeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeMultiZoneClusterDiskSizeOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeMultiZoneClusterDiskSize(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HBaseClient::ResizeMultiZoneClusterNodeCountOutcome HBaseClient::resizeMultiZoneClusterNodeCount(const ResizeMultiZoneClusterNodeCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeMultiZoneClusterNodeCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeMultiZoneClusterNodeCountOutcome(ResizeMultiZoneClusterNodeCountResult(outcome.result()));
+	else
+		return ResizeMultiZoneClusterNodeCountOutcome(outcome.error());
+}
+
+void HBaseClient::resizeMultiZoneClusterNodeCountAsync(const ResizeMultiZoneClusterNodeCountRequest& request, const ResizeMultiZoneClusterNodeCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeMultiZoneClusterNodeCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HBaseClient::ResizeMultiZoneClusterNodeCountOutcomeCallable HBaseClient::resizeMultiZoneClusterNodeCountCallable(const ResizeMultiZoneClusterNodeCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeMultiZoneClusterNodeCountOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeMultiZoneClusterNodeCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

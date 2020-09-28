@@ -1,4 +1,7 @@
 2020-09-28 Version: patch
+- Support for resize hbaseue multi-zone cluster.
+
+2020-09-28 Version: patch
 - Support filtering keys and secrets.
 - Support opening KMS service and describing service status by API.
 - Add a prefix limitation for SecretName.

@@ -38,6 +38,17 @@ void ResizeNodeCountRequest::setClusterId(const std::string& clusterId)
 	setParameter("ClusterId", clusterId);
 }
 
+std::string ResizeNodeCountRequest::getVSwitchId()const
+{
+	return vSwitchId_;
+}
+
+void ResizeNodeCountRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
+}
+
 int ResizeNodeCountRequest::getNodeCount()const
 {
 	return nodeCount_;
@@ -47,5 +58,16 @@ void ResizeNodeCountRequest::setNodeCount(int nodeCount)
 {
 	nodeCount_ = nodeCount;
 	setParameter("NodeCount", std::to_string(nodeCount));
+}
+
+std::string ResizeNodeCountRequest::getZoneId()const
+{
+	return zoneId_;
+}
+
+void ResizeNodeCountRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 

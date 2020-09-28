@@ -114,6 +114,8 @@
 #include "model/ModifyInstanceNameResult.h"
 #include "model/ModifyIpWhitelistRequest.h"
 #include "model/ModifyIpWhitelistResult.h"
+#include "model/ModifyMultiZoneClusterNodeTypeRequest.h"
+#include "model/ModifyMultiZoneClusterNodeTypeResult.h"
 #include "model/ModifySecurityGroupsRequest.h"
 #include "model/ModifySecurityGroupsResult.h"
 #include "model/ModifyUIAccountPasswordRequest.h"
@@ -128,6 +130,10 @@
 #include "model/RenewInstanceResult.h"
 #include "model/ResizeDiskSizeRequest.h"
 #include "model/ResizeDiskSizeResult.h"
+#include "model/ResizeMultiZoneClusterDiskSizeRequest.h"
+#include "model/ResizeMultiZoneClusterDiskSizeResult.h"
+#include "model/ResizeMultiZoneClusterNodeCountRequest.h"
+#include "model/ResizeMultiZoneClusterNodeCountResult.h"
 #include "model/ResizeNodeCountRequest.h"
 #include "model/ResizeNodeCountResult.h"
 #include "model/RestartInstanceRequest.h"
@@ -289,6 +295,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyIpWhitelistResult> ModifyIpWhitelistOutcome;
 			typedef std::future<ModifyIpWhitelistOutcome> ModifyIpWhitelistOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifyIpWhitelistRequest&, const ModifyIpWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpWhitelistAsyncHandler;
+			typedef Outcome<Error, Model::ModifyMultiZoneClusterNodeTypeResult> ModifyMultiZoneClusterNodeTypeOutcome;
+			typedef std::future<ModifyMultiZoneClusterNodeTypeOutcome> ModifyMultiZoneClusterNodeTypeOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ModifyMultiZoneClusterNodeTypeRequest&, const ModifyMultiZoneClusterNodeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMultiZoneClusterNodeTypeAsyncHandler;
 			typedef Outcome<Error, Model::ModifySecurityGroupsResult> ModifySecurityGroupsOutcome;
 			typedef std::future<ModifySecurityGroupsOutcome> ModifySecurityGroupsOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ModifySecurityGroupsRequest&, const ModifySecurityGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupsAsyncHandler;
@@ -310,6 +319,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResizeDiskSizeResult> ResizeDiskSizeOutcome;
 			typedef std::future<ResizeDiskSizeOutcome> ResizeDiskSizeOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ResizeDiskSizeRequest&, const ResizeDiskSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskSizeAsyncHandler;
+			typedef Outcome<Error, Model::ResizeMultiZoneClusterDiskSizeResult> ResizeMultiZoneClusterDiskSizeOutcome;
+			typedef std::future<ResizeMultiZoneClusterDiskSizeOutcome> ResizeMultiZoneClusterDiskSizeOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ResizeMultiZoneClusterDiskSizeRequest&, const ResizeMultiZoneClusterDiskSizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeMultiZoneClusterDiskSizeAsyncHandler;
+			typedef Outcome<Error, Model::ResizeMultiZoneClusterNodeCountResult> ResizeMultiZoneClusterNodeCountOutcome;
+			typedef std::future<ResizeMultiZoneClusterNodeCountOutcome> ResizeMultiZoneClusterNodeCountOutcomeCallable;
+			typedef std::function<void(const HBaseClient*, const Model::ResizeMultiZoneClusterNodeCountRequest&, const ResizeMultiZoneClusterNodeCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeMultiZoneClusterNodeCountAsyncHandler;
 			typedef Outcome<Error, Model::ResizeNodeCountResult> ResizeNodeCountOutcome;
 			typedef std::future<ResizeNodeCountOutcome> ResizeNodeCountOutcomeCallable;
 			typedef std::function<void(const HBaseClient*, const Model::ResizeNodeCountRequest&, const ResizeNodeCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResizeNodeCountAsyncHandler;
@@ -474,6 +489,9 @@ namespace AlibabaCloud
 			ModifyIpWhitelistOutcome modifyIpWhitelist(const Model::ModifyIpWhitelistRequest &request)const;
 			void modifyIpWhitelistAsync(const Model::ModifyIpWhitelistRequest& request, const ModifyIpWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyIpWhitelistOutcomeCallable modifyIpWhitelistCallable(const Model::ModifyIpWhitelistRequest& request) const;
+			ModifyMultiZoneClusterNodeTypeOutcome modifyMultiZoneClusterNodeType(const Model::ModifyMultiZoneClusterNodeTypeRequest &request)const;
+			void modifyMultiZoneClusterNodeTypeAsync(const Model::ModifyMultiZoneClusterNodeTypeRequest& request, const ModifyMultiZoneClusterNodeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyMultiZoneClusterNodeTypeOutcomeCallable modifyMultiZoneClusterNodeTypeCallable(const Model::ModifyMultiZoneClusterNodeTypeRequest& request) const;
 			ModifySecurityGroupsOutcome modifySecurityGroups(const Model::ModifySecurityGroupsRequest &request)const;
 			void modifySecurityGroupsAsync(const Model::ModifySecurityGroupsRequest& request, const ModifySecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifySecurityGroupsOutcomeCallable modifySecurityGroupsCallable(const Model::ModifySecurityGroupsRequest& request) const;
@@ -495,6 +513,12 @@ namespace AlibabaCloud
 			ResizeDiskSizeOutcome resizeDiskSize(const Model::ResizeDiskSizeRequest &request)const;
 			void resizeDiskSizeAsync(const Model::ResizeDiskSizeRequest& request, const ResizeDiskSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResizeDiskSizeOutcomeCallable resizeDiskSizeCallable(const Model::ResizeDiskSizeRequest& request) const;
+			ResizeMultiZoneClusterDiskSizeOutcome resizeMultiZoneClusterDiskSize(const Model::ResizeMultiZoneClusterDiskSizeRequest &request)const;
+			void resizeMultiZoneClusterDiskSizeAsync(const Model::ResizeMultiZoneClusterDiskSizeRequest& request, const ResizeMultiZoneClusterDiskSizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeMultiZoneClusterDiskSizeOutcomeCallable resizeMultiZoneClusterDiskSizeCallable(const Model::ResizeMultiZoneClusterDiskSizeRequest& request) const;
+			ResizeMultiZoneClusterNodeCountOutcome resizeMultiZoneClusterNodeCount(const Model::ResizeMultiZoneClusterNodeCountRequest &request)const;
+			void resizeMultiZoneClusterNodeCountAsync(const Model::ResizeMultiZoneClusterNodeCountRequest& request, const ResizeMultiZoneClusterNodeCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResizeMultiZoneClusterNodeCountOutcomeCallable resizeMultiZoneClusterNodeCountCallable(const Model::ResizeMultiZoneClusterNodeCountRequest& request) const;
 			ResizeNodeCountOutcome resizeNodeCount(const Model::ResizeNodeCountRequest &request)const;
 			void resizeNodeCountAsync(const Model::ResizeNodeCountRequest& request, const ResizeNodeCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResizeNodeCountOutcomeCallable resizeNodeCountCallable(const Model::ResizeNodeCountRequest& request) const;
