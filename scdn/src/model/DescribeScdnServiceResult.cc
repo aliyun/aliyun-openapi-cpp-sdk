@@ -111,8 +111,6 @@ void DescribeScdnServiceResult::parse(const std::string &payload)
 		priceType_ = value["PriceType"].asString();
 	if(!value["PricingCycle"].isNull())
 		pricingCycle_ = value["PricingCycle"].asString();
-	if(!value["ChangingChargeType"].isNull())
-		changingChargeType1_ = value["ChangingChargeType"].asString();
 
 }
 
@@ -254,11 +252,6 @@ std::string DescribeScdnServiceResult::getChangingAffectTime()const
 std::string DescribeScdnServiceResult::getInternetChargeType()const
 {
 	return internetChargeType_;
-}
-
-std::string DescribeScdnServiceResult::getChangingChargeType1()const
-{
-	return changingChargeType1_;
 }
 
 std::string DescribeScdnServiceResult::getDDoSBasicValue()const

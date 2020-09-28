@@ -69,7 +69,6 @@ namespace AlibabaCloud
 				std::vector<LockReason> getOperationLocks()const;
 				std::string getChangingAffectTime()const;
 				std::string getInternetChargeType()const;
-				std::string getChangingChargeType1()const;
 				std::string getDDoSBasicValue()const;
 				std::string getProtectType()const;
 				std::string getCurrentCcProtection()const;
@@ -107,7 +106,6 @@ namespace AlibabaCloud
 				std::vector<LockReason> operationLocks_;
 				std::string changingAffectTime_;
 				std::string internetChargeType_;
-				std::string changingChargeType1_;
 				std::string dDoSBasicValue_;
 				std::string protectType_;
 				std::string currentCcProtection_;
