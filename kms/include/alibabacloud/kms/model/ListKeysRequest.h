@@ -37,11 +37,14 @@ namespace AlibabaCloud
 
 				int getPageSize()const;
 				void setPageSize(int pageSize);
+				std::string getFilters()const;
+				void setFilters(const std::string& filters);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
 
             private:
 				int pageSize_;
+				std::string filters_;
 				int pageNumber_;
 
 			};

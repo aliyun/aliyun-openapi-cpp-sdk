@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_LISTSECRETSREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_LISTSECRETSREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_DESCRIBEACCOUNTKMSSTATUSRESULT_H_
+#define ALIBABACLOUD_KMS_MODEL_DESCRIBEACCOUNTKMSSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/kms/KmsExport.h>
 
 namespace AlibabaCloud
@@ -28,30 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_KMS_EXPORT ListSecretsRequest : public RpcServiceRequest
+			class ALIBABACLOUD_KMS_EXPORT DescribeAccountKmsStatusResult : public ServiceResult
 			{
-
 			public:
-				ListSecretsRequest();
-				~ListSecretsRequest();
 
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getFilters()const;
-				void setFilters(const std::string& filters);
-				std::string getFetchTags()const;
-				void setFetchTags(const std::string& fetchTags);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 
-            private:
-				int pageSize_;
-				std::string filters_;
-				std::string fetchTags_;
-				int pageNumber_;
+				DescribeAccountKmsStatusResult();
+				explicit DescribeAccountKmsStatusResult(const std::string &payload);
+				~DescribeAccountKmsStatusResult();
+				std::string getAccountStatus()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string accountStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_KMS_MODEL_LISTSECRETSREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_DESCRIBEACCOUNTKMSSTATUSRESULT_H_

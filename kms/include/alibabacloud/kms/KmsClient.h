@@ -48,6 +48,8 @@
 #include "model/DeleteKeyMaterialResult.h"
 #include "model/DeleteSecretRequest.h"
 #include "model/DeleteSecretResult.h"
+#include "model/DescribeAccountKmsStatusRequest.h"
+#include "model/DescribeAccountKmsStatusResult.h"
 #include "model/DescribeKeyRequest.h"
 #include "model/DescribeKeyResult.h"
 #include "model/DescribeKeyVersionRequest.h"
@@ -96,6 +98,8 @@
 #include "model/ListSecretVersionIdsResult.h"
 #include "model/ListSecretsRequest.h"
 #include "model/ListSecretsResult.h"
+#include "model/OpenKmsServiceRequest.h"
+#include "model/OpenKmsServiceResult.h"
 #include "model/PutSecretValueRequest.h"
 #include "model/PutSecretValueResult.h"
 #include "model/ReEncryptRequest.h"
@@ -166,6 +170,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteSecretResult> DeleteSecretOutcome;
 			typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DeleteSecretRequest&, const DeleteSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAccountKmsStatusResult> DescribeAccountKmsStatusOutcome;
+			typedef std::future<DescribeAccountKmsStatusOutcome> DescribeAccountKmsStatusOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::DescribeAccountKmsStatusRequest&, const DescribeAccountKmsStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountKmsStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeKeyResult> DescribeKeyOutcome;
 			typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::DescribeKeyRequest&, const DescribeKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKeyAsyncHandler;
@@ -238,6 +245,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSecretsResult> ListSecretsOutcome;
 			typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListSecretsRequest&, const ListSecretsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecretsAsyncHandler;
+			typedef Outcome<Error, Model::OpenKmsServiceResult> OpenKmsServiceOutcome;
+			typedef std::future<OpenKmsServiceOutcome> OpenKmsServiceOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::OpenKmsServiceRequest&, const OpenKmsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenKmsServiceAsyncHandler;
 			typedef Outcome<Error, Model::PutSecretValueResult> PutSecretValueOutcome;
 			typedef std::future<PutSecretValueOutcome> PutSecretValueOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::PutSecretValueRequest&, const PutSecretValueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PutSecretValueAsyncHandler;
@@ -315,6 +325,9 @@ namespace AlibabaCloud
 			DeleteSecretOutcome deleteSecret(const Model::DeleteSecretRequest &request)const;
 			void deleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretOutcomeCallable deleteSecretCallable(const Model::DeleteSecretRequest& request) const;
+			DescribeAccountKmsStatusOutcome describeAccountKmsStatus(const Model::DescribeAccountKmsStatusRequest &request)const;
+			void describeAccountKmsStatusAsync(const Model::DescribeAccountKmsStatusRequest& request, const DescribeAccountKmsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAccountKmsStatusOutcomeCallable describeAccountKmsStatusCallable(const Model::DescribeAccountKmsStatusRequest& request) const;
 			DescribeKeyOutcome describeKey(const Model::DescribeKeyRequest &request)const;
 			void describeKeyAsync(const Model::DescribeKeyRequest& request, const DescribeKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeKeyOutcomeCallable describeKeyCallable(const Model::DescribeKeyRequest& request) const;
@@ -387,6 +400,9 @@ namespace AlibabaCloud
 			ListSecretsOutcome listSecrets(const Model::ListSecretsRequest &request)const;
 			void listSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSecretsOutcomeCallable listSecretsCallable(const Model::ListSecretsRequest& request) const;
+			OpenKmsServiceOutcome openKmsService(const Model::OpenKmsServiceRequest &request)const;
+			void openKmsServiceAsync(const Model::OpenKmsServiceRequest& request, const OpenKmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenKmsServiceOutcomeCallable openKmsServiceCallable(const Model::OpenKmsServiceRequest& request) const;
 			PutSecretValueOutcome putSecretValue(const Model::PutSecretValueRequest &request)const;
 			void putSecretValueAsync(const Model::PutSecretValueRequest& request, const PutSecretValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PutSecretValueOutcomeCallable putSecretValueCallable(const Model::PutSecretValueRequest& request) const;

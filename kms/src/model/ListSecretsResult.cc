@@ -43,14 +43,14 @@ void ListSecretsResult::parse(const std::string &payload)
 	for (auto valueSecretListSecret : allSecretListNode)
 	{
 		Secret secretListObject;
-		if(!valueSecretListSecret["SecretName"].isNull())
-			secretListObject.secretName = valueSecretListSecret["SecretName"].asString();
 		if(!valueSecretListSecret["CreateTime"].isNull())
 			secretListObject.createTime = valueSecretListSecret["CreateTime"].asString();
-		if(!valueSecretListSecret["UpdateTime"].isNull())
-			secretListObject.updateTime = valueSecretListSecret["UpdateTime"].asString();
 		if(!valueSecretListSecret["PlannedDeleteTime"].isNull())
 			secretListObject.plannedDeleteTime = valueSecretListSecret["PlannedDeleteTime"].asString();
+		if(!valueSecretListSecret["SecretName"].isNull())
+			secretListObject.secretName = valueSecretListSecret["SecretName"].asString();
+		if(!valueSecretListSecret["UpdateTime"].isNull())
+			secretListObject.updateTime = valueSecretListSecret["UpdateTime"].asString();
 		auto allTagsNode = allSecretListNode["Tags"]["Tag"];
 		for (auto allSecretListNodeTagsTag : allTagsNode)
 		{

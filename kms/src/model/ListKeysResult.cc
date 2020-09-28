@@ -43,18 +43,18 @@ void ListKeysResult::parse(const std::string &payload)
 	for (auto valueKeysKey : allKeysNode)
 	{
 		Key keysObject;
-		if(!valueKeysKey["KeyId"].isNull())
-			keysObject.keyId = valueKeysKey["KeyId"].asString();
 		if(!valueKeysKey["KeyArn"].isNull())
 			keysObject.keyArn = valueKeysKey["KeyArn"].asString();
+		if(!valueKeysKey["KeyId"].isNull())
+			keysObject.keyId = valueKeysKey["KeyId"].asString();
 		keys_.push_back(keysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

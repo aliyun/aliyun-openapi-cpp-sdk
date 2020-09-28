@@ -38,6 +38,17 @@ void ListKeysRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListKeysRequest::getFilters()const
+{
+	return filters_;
+}
+
+void ListKeysRequest::setFilters(const std::string& filters)
+{
+	filters_ = filters;
+	setParameter("Filters", filters);
+}
+
 int ListKeysRequest::getPageNumber()const
 {
 	return pageNumber_;

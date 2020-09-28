@@ -38,6 +38,17 @@ void ListSecretsRequest::setPageSize(int pageSize)
 	setParameter("PageSize", std::to_string(pageSize));
 }
 
+std::string ListSecretsRequest::getFilters()const
+{
+	return filters_;
+}
+
+void ListSecretsRequest::setFilters(const std::string& filters)
+{
+	filters_ = filters;
+	setParameter("Filters", filters);
+}
+
 std::string ListSecretsRequest::getFetchTags()const
 {
 	return fetchTags_;

@@ -47,6 +47,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/DeleteKeyMaterialResult.h
 	include/alibabacloud/kms/model/DeleteSecretRequest.h
 	include/alibabacloud/kms/model/DeleteSecretResult.h
+	include/alibabacloud/kms/model/DescribeAccountKmsStatusRequest.h
+	include/alibabacloud/kms/model/DescribeAccountKmsStatusResult.h
 	include/alibabacloud/kms/model/DescribeKeyRequest.h
 	include/alibabacloud/kms/model/DescribeKeyResult.h
 	include/alibabacloud/kms/model/DescribeKeyVersionRequest.h
@@ -95,6 +97,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListSecretVersionIdsResult.h
 	include/alibabacloud/kms/model/ListSecretsRequest.h
 	include/alibabacloud/kms/model/ListSecretsResult.h
+	include/alibabacloud/kms/model/OpenKmsServiceRequest.h
+	include/alibabacloud/kms/model/OpenKmsServiceResult.h
 	include/alibabacloud/kms/model/PutSecretValueRequest.h
 	include/alibabacloud/kms/model/PutSecretValueResult.h
 	include/alibabacloud/kms/model/ReEncryptRequest.h
@@ -146,6 +150,8 @@ set(kms_src
 	src/model/DeleteKeyMaterialResult.cc
 	src/model/DeleteSecretRequest.cc
 	src/model/DeleteSecretResult.cc
+	src/model/DescribeAccountKmsStatusRequest.cc
+	src/model/DescribeAccountKmsStatusResult.cc
 	src/model/DescribeKeyRequest.cc
 	src/model/DescribeKeyResult.cc
 	src/model/DescribeKeyVersionRequest.cc
@@ -194,6 +200,8 @@ set(kms_src
 	src/model/ListSecretVersionIdsResult.cc
 	src/model/ListSecretsRequest.cc
 	src/model/ListSecretsResult.cc
+	src/model/OpenKmsServiceRequest.cc
+	src/model/OpenKmsServiceResult.cc
 	src/model/PutSecretValueRequest.cc
 	src/model/PutSecretValueResult.cc
 	src/model/ReEncryptRequest.cc
