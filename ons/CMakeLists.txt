@@ -115,6 +115,8 @@ set(ons_public_header_model
 	include/alibabacloud/ons/model/OnsWarnCreateResult.h
 	include/alibabacloud/ons/model/OnsWarnDeleteRequest.h
 	include/alibabacloud/ons/model/OnsWarnDeleteResult.h
+	include/alibabacloud/ons/model/OpenOnsServiceRequest.h
+	include/alibabacloud/ons/model/OpenOnsServiceResult.h
 	include/alibabacloud/ons/model/TagResourcesRequest.h
 	include/alibabacloud/ons/model/TagResourcesResult.h
 	include/alibabacloud/ons/model/UntagResourcesRequest.h
@@ -216,6 +218,8 @@ set(ons_src
 	src/model/OnsWarnCreateResult.cc
 	src/model/OnsWarnDeleteRequest.cc
 	src/model/OnsWarnDeleteResult.cc
+	src/model/OpenOnsServiceRequest.cc
+	src/model/OpenOnsServiceResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UntagResourcesRequest.cc

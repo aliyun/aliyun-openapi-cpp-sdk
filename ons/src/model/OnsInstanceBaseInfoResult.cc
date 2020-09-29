@@ -54,6 +54,10 @@ void OnsInstanceBaseInfoResult::parse(const std::string &payload)
 		instanceBaseInfo_.independentNaming = instanceBaseInfoNode["IndependentNaming"].asString() == "true";
 	if(!instanceBaseInfoNode["Remark"].isNull())
 		instanceBaseInfo_.remark = instanceBaseInfoNode["Remark"].asString();
+	if(!instanceBaseInfoNode["TopicCapacity"].isNull())
+		instanceBaseInfo_.topicCapacity = std::stoi(instanceBaseInfoNode["TopicCapacity"].asString());
+	if(!instanceBaseInfoNode["MaxTps"].isNull())
+		instanceBaseInfo_.maxTps = std::stol(instanceBaseInfoNode["MaxTps"].asString());
 	auto endpointsNode = instanceBaseInfoNode["Endpoints"];
 	if(!endpointsNode["TcpEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.tcpEndpoint = endpointsNode["TcpEndpoint"].asString();

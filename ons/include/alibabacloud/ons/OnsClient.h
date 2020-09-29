@@ -116,6 +116,8 @@
 #include "model/OnsWarnCreateResult.h"
 #include "model/OnsWarnDeleteRequest.h"
 #include "model/OnsWarnDeleteResult.h"
+#include "model/OpenOnsServiceRequest.h"
+#include "model/OpenOnsServiceResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -270,6 +272,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OnsWarnDeleteResult> OnsWarnDeleteOutcome;
 			typedef std::future<OnsWarnDeleteOutcome> OnsWarnDeleteOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsWarnDeleteRequest&, const OnsWarnDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsWarnDeleteAsyncHandler;
+			typedef Outcome<Error, Model::OpenOnsServiceResult> OpenOnsServiceOutcome;
+			typedef std::future<OpenOnsServiceOutcome> OpenOnsServiceOutcomeCallable;
+			typedef std::function<void(const OnsClient*, const Model::OpenOnsServiceRequest&, const OpenOnsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenOnsServiceAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -422,6 +427,9 @@ namespace AlibabaCloud
 			OnsWarnDeleteOutcome onsWarnDelete(const Model::OnsWarnDeleteRequest &request)const;
 			void onsWarnDeleteAsync(const Model::OnsWarnDeleteRequest& request, const OnsWarnDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsWarnDeleteOutcomeCallable onsWarnDeleteCallable(const Model::OnsWarnDeleteRequest& request) const;
+			OpenOnsServiceOutcome openOnsService(const Model::OpenOnsServiceRequest &request)const;
+			void openOnsServiceAsync(const Model::OpenOnsServiceRequest& request, const OpenOnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenOnsServiceOutcomeCallable openOnsServiceCallable(const Model::OpenOnsServiceRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;

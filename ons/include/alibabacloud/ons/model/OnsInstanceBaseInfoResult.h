@@ -43,6 +43,8 @@ namespace AlibabaCloud
 					};
 					Endpoints endpoints;
 					std::string instanceName;
+					long maxTps;
+					int topicCapacity;
 					std::string instanceId;
 					long releaseTime;
 					int instanceStatus;
