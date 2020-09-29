@@ -303,6 +303,42 @@ ImageprocessClient::DetectLungNoduleOutcomeCallable ImageprocessClient::detectLu
 	return task->get_future();
 }
 
+ImageprocessClient::DetectSkinDiseaseOutcome ImageprocessClient::detectSkinDisease(const DetectSkinDiseaseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectSkinDiseaseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectSkinDiseaseOutcome(DetectSkinDiseaseResult(outcome.result()));
+	else
+		return DetectSkinDiseaseOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectSkinDiseaseAsync(const DetectSkinDiseaseRequest& request, const DetectSkinDiseaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectSkinDisease(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectSkinDiseaseOutcomeCallable ImageprocessClient::detectSkinDiseaseCallable(const DetectSkinDiseaseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectSkinDiseaseOutcome()>>(
+			[this, request]()
+			{
+			return this->detectSkinDisease(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::DetectSpineMRIOutcome ImageprocessClient::detectSpineMRI(const DetectSpineMRIRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,42 @@ ImageprocessClient::RunCTRegistrationOutcomeCallable ImageprocessClient::runCTRe
 			[this, request]()
 			{
 			return this->runCTRegistration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::RunMedQAOutcome ImageprocessClient::runMedQA(const RunMedQARequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunMedQAOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunMedQAOutcome(RunMedQAResult(outcome.result()));
+	else
+		return RunMedQAOutcome(outcome.error());
+}
+
+void ImageprocessClient::runMedQAAsync(const RunMedQARequest& request, const RunMedQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runMedQA(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::RunMedQAOutcomeCallable ImageprocessClient::runMedQACallable(const RunMedQARequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunMedQAOutcome()>>(
+			[this, request]()
+			{
+			return this->runMedQA(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

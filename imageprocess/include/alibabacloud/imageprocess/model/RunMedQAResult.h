@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
-#define ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_RUNMEDQARESULT_H_
+#define ALIBABACLOUD_IMAGEPROCESS_MODEL_RUNMEDQARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGEPROCESS_EXPORT CalcCACSResult : public ServiceResult
+			class ALIBABACLOUD_IMAGEPROCESS_EXPORT RunMedQAResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string score;
-					std::string resultUrl;
+					std::string answer;
+					std::vector<std::string> similarQuestion;
 				};
 
 
-				CalcCACSResult();
-				explicit CalcCACSResult(const std::string &payload);
-				~CalcCACSResult();
+				RunMedQAResult();
+				explicit RunMedQAResult(const std::string &payload);
+				~RunMedQAResult();
 				Data getData()const;
 
 			protected:
@@ -53,4 +53,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_RUNMEDQARESULT_H_

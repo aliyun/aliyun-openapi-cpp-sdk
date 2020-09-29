@@ -36,12 +36,16 @@
 #include "model/DetectKneeXRayResult.h"
 #include "model/DetectLungNoduleRequest.h"
 #include "model/DetectLungNoduleResult.h"
+#include "model/DetectSkinDiseaseRequest.h"
+#include "model/DetectSkinDiseaseResult.h"
 #include "model/DetectSpineMRIRequest.h"
 #include "model/DetectSpineMRIResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
 #include "model/RunCTRegistrationRequest.h"
 #include "model/RunCTRegistrationResult.h"
+#include "model/RunMedQARequest.h"
+#include "model/RunMedQAResult.h"
 #include "model/TranslateMedRequest.h"
 #include "model/TranslateMedResult.h"
 
@@ -74,6 +78,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectLungNoduleResult> DetectLungNoduleOutcome;
 			typedef std::future<DetectLungNoduleOutcome> DetectLungNoduleOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectLungNoduleRequest&, const DetectLungNoduleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLungNoduleAsyncHandler;
+			typedef Outcome<Error, Model::DetectSkinDiseaseResult> DetectSkinDiseaseOutcome;
+			typedef std::future<DetectSkinDiseaseOutcome> DetectSkinDiseaseOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::DetectSkinDiseaseRequest&, const DetectSkinDiseaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectSkinDiseaseAsyncHandler;
 			typedef Outcome<Error, Model::DetectSpineMRIResult> DetectSpineMRIOutcome;
 			typedef std::future<DetectSpineMRIOutcome> DetectSpineMRIOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectSpineMRIRequest&, const DetectSpineMRIOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectSpineMRIAsyncHandler;
@@ -83,6 +90,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunCTRegistrationResult> RunCTRegistrationOutcome;
 			typedef std::future<RunCTRegistrationOutcome> RunCTRegistrationOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::RunCTRegistrationRequest&, const RunCTRegistrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunCTRegistrationAsyncHandler;
+			typedef Outcome<Error, Model::RunMedQAResult> RunMedQAOutcome;
+			typedef std::future<RunMedQAOutcome> RunMedQAOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::RunMedQARequest&, const RunMedQAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunMedQAAsyncHandler;
 			typedef Outcome<Error, Model::TranslateMedResult> TranslateMedOutcome;
 			typedef std::future<TranslateMedOutcome> TranslateMedOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::TranslateMedRequest&, const TranslateMedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateMedAsyncHandler;
@@ -112,6 +122,9 @@ namespace AlibabaCloud
 			DetectLungNoduleOutcome detectLungNodule(const Model::DetectLungNoduleRequest &request)const;
 			void detectLungNoduleAsync(const Model::DetectLungNoduleRequest& request, const DetectLungNoduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLungNoduleOutcomeCallable detectLungNoduleCallable(const Model::DetectLungNoduleRequest& request) const;
+			DetectSkinDiseaseOutcome detectSkinDisease(const Model::DetectSkinDiseaseRequest &request)const;
+			void detectSkinDiseaseAsync(const Model::DetectSkinDiseaseRequest& request, const DetectSkinDiseaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectSkinDiseaseOutcomeCallable detectSkinDiseaseCallable(const Model::DetectSkinDiseaseRequest& request) const;
 			DetectSpineMRIOutcome detectSpineMRI(const Model::DetectSpineMRIRequest &request)const;
 			void detectSpineMRIAsync(const Model::DetectSpineMRIRequest& request, const DetectSpineMRIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectSpineMRIOutcomeCallable detectSpineMRICallable(const Model::DetectSpineMRIRequest& request) const;
@@ -121,6 +134,9 @@ namespace AlibabaCloud
 			RunCTRegistrationOutcome runCTRegistration(const Model::RunCTRegistrationRequest &request)const;
 			void runCTRegistrationAsync(const Model::RunCTRegistrationRequest& request, const RunCTRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunCTRegistrationOutcomeCallable runCTRegistrationCallable(const Model::RunCTRegistrationRequest& request) const;
+			RunMedQAOutcome runMedQA(const Model::RunMedQARequest &request)const;
+			void runMedQAAsync(const Model::RunMedQARequest& request, const RunMedQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RunMedQAOutcomeCallable runMedQACallable(const Model::RunMedQARequest& request) const;
 			TranslateMedOutcome translateMed(const Model::TranslateMedRequest &request)const;
 			void translateMedAsync(const Model::TranslateMedRequest& request, const TranslateMedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateMedOutcomeCallable translateMedCallable(const Model::TranslateMedRequest& request) const;

@@ -14,40 +14,41 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imageprocess/model/CalcCACSResult.h>
+#include <alibabacloud/imageprocess/model/RunMedQAResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Imageprocess;
 using namespace AlibabaCloud::Imageprocess::Model;
 
-CalcCACSResult::CalcCACSResult() :
+RunMedQAResult::RunMedQAResult() :
 	ServiceResult()
 {}
 
-CalcCACSResult::CalcCACSResult(const std::string &payload) :
+RunMedQAResult::RunMedQAResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CalcCACSResult::~CalcCACSResult()
+RunMedQAResult::~RunMedQAResult()
 {}
 
-void CalcCACSResult::parse(const std::string &payload)
+void RunMedQAResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Score"].isNull())
-		data_.score = dataNode["Score"].asString();
-	if(!dataNode["ResultUrl"].isNull())
-		data_.resultUrl = dataNode["ResultUrl"].asString();
+	if(!dataNode["Answer"].isNull())
+		data_.answer = dataNode["Answer"].asString();
+		auto allSimilarQuestion = dataNode["SimilarQuestion"]["SimilarQuestion"];
+		for (auto value : allSimilarQuestion)
+			data_.similarQuestion.push_back(value.asString());
 
 }
 
-CalcCACSResult::Data CalcCACSResult::getData()const
+RunMedQAResult::Data RunMedQAResult::getData()const
 {
 	return data_;
 }

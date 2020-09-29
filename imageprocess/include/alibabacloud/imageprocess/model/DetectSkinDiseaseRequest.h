@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
-#define ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#ifndef ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTSKINDISEASEREQUEST_H_
+#define ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTSKINDISEASEREQUEST_H_
 
 #include <string>
 #include <vector>
-#include <utility>
-#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <alibabacloud/imageprocess/ImageprocessExport.h>
 
 namespace AlibabaCloud
@@ -29,28 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IMAGEPROCESS_EXPORT CalcCACSResult : public ServiceResult
+			class ALIBABACLOUD_IMAGEPROCESS_EXPORT DetectSkinDiseaseRequest : public RpcServiceRequest
 			{
+
 			public:
-				struct Data
-				{
-					std::string score;
-					std::string resultUrl;
-				};
+				DetectSkinDiseaseRequest();
+				~DetectSkinDiseaseRequest();
 
+				std::string getUrl()const;
+				void setUrl(const std::string& url);
+				std::string getOrgId()const;
+				void setOrgId(const std::string& orgId);
+				std::string getOrgName()const;
+				void setOrgName(const std::string& orgName);
 
-				CalcCACSResult();
-				explicit CalcCACSResult(const std::string &payload);
-				~CalcCACSResult();
-				Data getData()const;
-
-			protected:
-				void parse(const std::string &payload);
-			private:
-				Data data_;
+            private:
+				std::string url_;
+				std::string orgId_;
+				std::string orgName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_CALCCACSRESULT_H_
+#endif // !ALIBABACLOUD_IMAGEPROCESS_MODEL_DETECTSKINDISEASEREQUEST_H_

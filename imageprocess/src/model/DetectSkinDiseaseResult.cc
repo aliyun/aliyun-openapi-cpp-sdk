@@ -14,40 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/imageprocess/model/CalcCACSResult.h>
+#include <alibabacloud/imageprocess/model/DetectSkinDiseaseResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Imageprocess;
 using namespace AlibabaCloud::Imageprocess::Model;
 
-CalcCACSResult::CalcCACSResult() :
+DetectSkinDiseaseResult::DetectSkinDiseaseResult() :
 	ServiceResult()
 {}
 
-CalcCACSResult::CalcCACSResult(const std::string &payload) :
+DetectSkinDiseaseResult::DetectSkinDiseaseResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CalcCACSResult::~CalcCACSResult()
+DetectSkinDiseaseResult::~DetectSkinDiseaseResult()
 {}
 
-void CalcCACSResult::parse(const std::string &payload)
+void DetectSkinDiseaseResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["Score"].isNull())
-		data_.score = dataNode["Score"].asString();
-	if(!dataNode["ResultUrl"].isNull())
-		data_.resultUrl = dataNode["ResultUrl"].asString();
+	if(!dataNode["Results"].isNull())
+		data_.results = dataNode["Results"].asString();
 
 }
 
-CalcCACSResult::Data CalcCACSResult::getData()const
+DetectSkinDiseaseResult::Data DetectSkinDiseaseResult::getData()const
 {
 	return data_;
 }
