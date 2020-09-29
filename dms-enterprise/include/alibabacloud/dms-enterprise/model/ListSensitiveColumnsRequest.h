@@ -37,27 +37,27 @@ namespace AlibabaCloud
 
 				std::string getSchemaName()const;
 				void setSchemaName(const std::string& schemaName);
-				std::string getSecurityLevel()const;
-				void setSecurityLevel(const std::string& securityLevel);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getTableName()const;
-				void setTableName(const std::string& tableName);
 				std::string getColumnName()const;
 				void setColumnName(const std::string& columnName);
 				long getTid()const;
 				void setTid(long tid);
 				int getPageNumber()const;
 				void setPageNumber(int pageNumber);
+				std::string getSecurityLevel()const;
+				void setSecurityLevel(const std::string& securityLevel);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getTableName()const;
+				void setTableName(const std::string& tableName);
 
             private:
 				std::string schemaName_;
-				std::string securityLevel_;
-				int pageSize_;
-				std::string tableName_;
 				std::string columnName_;
 				long tid_;
 				int pageNumber_;
+				std::string securityLevel_;
+				int pageSize_;
+				std::string tableName_;
 
 			};
 		}

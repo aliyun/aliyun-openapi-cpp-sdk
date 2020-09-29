@@ -38,39 +38,6 @@ void ListSensitiveColumnsRequest::setSchemaName(const std::string& schemaName)
 	setParameter("SchemaName", schemaName);
 }
 
-std::string ListSensitiveColumnsRequest::getSecurityLevel()const
-{
-	return securityLevel_;
-}
-
-void ListSensitiveColumnsRequest::setSecurityLevel(const std::string& securityLevel)
-{
-	securityLevel_ = securityLevel;
-	setParameter("SecurityLevel", securityLevel);
-}
-
-int ListSensitiveColumnsRequest::getPageSize()const
-{
-	return pageSize_;
-}
-
-void ListSensitiveColumnsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
-}
-
-std::string ListSensitiveColumnsRequest::getTableName()const
-{
-	return tableName_;
-}
-
-void ListSensitiveColumnsRequest::setTableName(const std::string& tableName)
-{
-	tableName_ = tableName;
-	setParameter("TableName", tableName);
-}
-
 std::string ListSensitiveColumnsRequest::getColumnName()const
 {
 	return columnName_;
@@ -102,5 +69,38 @@ void ListSensitiveColumnsRequest::setPageNumber(int pageNumber)
 {
 	pageNumber_ = pageNumber;
 	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
+std::string ListSensitiveColumnsRequest::getSecurityLevel()const
+{
+	return securityLevel_;
+}
+
+void ListSensitiveColumnsRequest::setSecurityLevel(const std::string& securityLevel)
+{
+	securityLevel_ = securityLevel;
+	setParameter("SecurityLevel", securityLevel);
+}
+
+int ListSensitiveColumnsRequest::getPageSize()const
+{
+	return pageSize_;
+}
+
+void ListSensitiveColumnsRequest::setPageSize(int pageSize)
+{
+	pageSize_ = pageSize;
+	setParameter("PageSize", std::to_string(pageSize));
+}
+
+std::string ListSensitiveColumnsRequest::getTableName()const
+{
+	return tableName_;
+}
+
+void ListSensitiveColumnsRequest::setTableName(const std::string& tableName)
+{
+	tableName_ = tableName;
+	setParameter("TableName", tableName);
 }
 

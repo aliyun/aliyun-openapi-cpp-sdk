@@ -27,6 +27,28 @@ ListDatabaseUserPermssionsRequest::ListDatabaseUserPermssionsRequest() :
 ListDatabaseUserPermssionsRequest::~ListDatabaseUserPermssionsRequest()
 {}
 
+long ListDatabaseUserPermssionsRequest::getTid()const
+{
+	return tid_;
+}
+
+void ListDatabaseUserPermssionsRequest::setTid(long tid)
+{
+	tid_ = tid;
+	setParameter("Tid", std::to_string(tid));
+}
+
+int ListDatabaseUserPermssionsRequest::getPageNumber()const
+{
+	return pageNumber_;
+}
+
+void ListDatabaseUserPermssionsRequest::setPageNumber(int pageNumber)
+{
+	pageNumber_ = pageNumber;
+	setParameter("PageNumber", std::to_string(pageNumber));
+}
+
 std::string ListDatabaseUserPermssionsRequest::getPermType()const
 {
 	return permType_;
@@ -69,28 +91,6 @@ void ListDatabaseUserPermssionsRequest::setLogic(bool logic)
 {
 	logic_ = logic;
 	setParameter("Logic", logic ? "true" : "false");
-}
-
-long ListDatabaseUserPermssionsRequest::getTid()const
-{
-	return tid_;
-}
-
-void ListDatabaseUserPermssionsRequest::setTid(long tid)
-{
-	tid_ = tid;
-	setParameter("Tid", std::to_string(tid));
-}
-
-int ListDatabaseUserPermssionsRequest::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-void ListDatabaseUserPermssionsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
 }
 
 std::string ListDatabaseUserPermssionsRequest::getUserName()const

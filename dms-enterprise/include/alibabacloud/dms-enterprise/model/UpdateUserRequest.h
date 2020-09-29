@@ -37,8 +37,6 @@ namespace AlibabaCloud
 
 				std::string getRoleNames()const;
 				void setRoleNames(const std::string& roleNames);
-				long getUid()const;
-				void setUid(long uid);
 				long getMaxResultCount()const;
 				void setMaxResultCount(long maxResultCount);
 				long getMaxExecuteCount()const;
@@ -49,15 +47,17 @@ namespace AlibabaCloud
 				void setMobile(const std::string& mobile);
 				long getTid()const;
 				void setTid(long tid);
+				long getUid()const;
+				void setUid(long uid);
 
             private:
 				std::string roleNames_;
-				long uid_;
 				long maxResultCount_;
 				long maxExecuteCount_;
 				std::string userNick_;
 				std::string mobile_;
 				long tid_;
+				long uid_;
 
 			};
 		}

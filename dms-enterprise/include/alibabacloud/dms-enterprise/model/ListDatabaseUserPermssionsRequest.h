@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				ListDatabaseUserPermssionsRequest();
 				~ListDatabaseUserPermssionsRequest();
 
+				long getTid()const;
+				void setTid(long tid);
+				int getPageNumber()const;
+				void setPageNumber(int pageNumber);
 				std::string getPermType()const;
 				void setPermType(const std::string& permType);
 				std::string getDbId()const;
@@ -43,20 +47,16 @@ namespace AlibabaCloud
 				void setPageSize(int pageSize);
 				bool getLogic()const;
 				void setLogic(bool logic);
-				long getTid()const;
-				void setTid(long tid);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
 				std::string getUserName()const;
 				void setUserName(const std::string& userName);
 
             private:
+				long tid_;
+				int pageNumber_;
 				std::string permType_;
 				std::string dbId_;
 				int pageSize_;
 				bool logic_;
-				long tid_;
-				int pageNumber_;
 				std::string userName_;
 
 			};

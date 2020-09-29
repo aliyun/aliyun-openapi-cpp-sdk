@@ -38,17 +38,6 @@ void UpdateUserRequest::setRoleNames(const std::string& roleNames)
 	setParameter("RoleNames", roleNames);
 }
 
-long UpdateUserRequest::getUid()const
-{
-	return uid_;
-}
-
-void UpdateUserRequest::setUid(long uid)
-{
-	uid_ = uid;
-	setParameter("Uid", std::to_string(uid));
-}
-
 long UpdateUserRequest::getMaxResultCount()const
 {
 	return maxResultCount_;
@@ -102,5 +91,16 @@ void UpdateUserRequest::setTid(long tid)
 {
 	tid_ = tid;
 	setParameter("Tid", std::to_string(tid));
+}
+
+long UpdateUserRequest::getUid()const
+{
+	return uid_;
+}
+
+void UpdateUserRequest::setUid(long uid)
+{
+	uid_ = uid;
+	setParameter("Uid", std::to_string(uid));
 }
 
