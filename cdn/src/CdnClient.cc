@@ -1527,6 +1527,42 @@ CdnClient::DescribeCdnTypesOutcomeCallable CdnClient::describeCdnTypesCallable(c
 	return task->get_future();
 }
 
+CdnClient::DescribeCdnUserBillHistoryOutcome CdnClient::describeCdnUserBillHistory(const DescribeCdnUserBillHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdnUserBillHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdnUserBillHistoryOutcome(DescribeCdnUserBillHistoryResult(outcome.result()));
+	else
+		return DescribeCdnUserBillHistoryOutcome(outcome.error());
+}
+
+void CdnClient::describeCdnUserBillHistoryAsync(const DescribeCdnUserBillHistoryRequest& request, const DescribeCdnUserBillHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdnUserBillHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CdnClient::DescribeCdnUserBillHistoryOutcomeCallable CdnClient::describeCdnUserBillHistoryCallable(const DescribeCdnUserBillHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdnUserBillHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdnUserBillHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CdnClient::DescribeCdnUserBillPredictionOutcome CdnClient::describeCdnUserBillPrediction(const DescribeCdnUserBillPredictionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

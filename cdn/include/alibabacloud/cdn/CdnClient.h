@@ -104,6 +104,8 @@
 #include "model/DescribeCdnServiceResult.h"
 #include "model/DescribeCdnTypesRequest.h"
 #include "model/DescribeCdnTypesResult.h"
+#include "model/DescribeCdnUserBillHistoryRequest.h"
+#include "model/DescribeCdnUserBillHistoryResult.h"
 #include "model/DescribeCdnUserBillPredictionRequest.h"
 #include "model/DescribeCdnUserBillPredictionResult.h"
 #include "model/DescribeCdnUserBillTypeRequest.h"
@@ -548,6 +550,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCdnTypesResult> DescribeCdnTypesOutcome;
 			typedef std::future<DescribeCdnTypesOutcome> DescribeCdnTypesOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnTypesRequest&, const DescribeCdnTypesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnTypesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdnUserBillHistoryResult> DescribeCdnUserBillHistoryOutcome;
+			typedef std::future<DescribeCdnUserBillHistoryOutcome> DescribeCdnUserBillHistoryOutcomeCallable;
+			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserBillHistoryRequest&, const DescribeCdnUserBillHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserBillHistoryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCdnUserBillPredictionResult> DescribeCdnUserBillPredictionOutcome;
 			typedef std::future<DescribeCdnUserBillPredictionOutcome> DescribeCdnUserBillPredictionOutcomeCallable;
 			typedef std::function<void(const CdnClient*, const Model::DescribeCdnUserBillPredictionRequest&, const DescribeCdnUserBillPredictionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnUserBillPredictionAsyncHandler;
@@ -1144,6 +1149,9 @@ namespace AlibabaCloud
 			DescribeCdnTypesOutcome describeCdnTypes(const Model::DescribeCdnTypesRequest &request)const;
 			void describeCdnTypesAsync(const Model::DescribeCdnTypesRequest& request, const DescribeCdnTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnTypesOutcomeCallable describeCdnTypesCallable(const Model::DescribeCdnTypesRequest& request) const;
+			DescribeCdnUserBillHistoryOutcome describeCdnUserBillHistory(const Model::DescribeCdnUserBillHistoryRequest &request)const;
+			void describeCdnUserBillHistoryAsync(const Model::DescribeCdnUserBillHistoryRequest& request, const DescribeCdnUserBillHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdnUserBillHistoryOutcomeCallable describeCdnUserBillHistoryCallable(const Model::DescribeCdnUserBillHistoryRequest& request) const;
 			DescribeCdnUserBillPredictionOutcome describeCdnUserBillPrediction(const Model::DescribeCdnUserBillPredictionRequest &request)const;
 			void describeCdnUserBillPredictionAsync(const Model::DescribeCdnUserBillPredictionRequest& request, const DescribeCdnUserBillPredictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCdnUserBillPredictionOutcomeCallable describeCdnUserBillPredictionCallable(const Model::DescribeCdnUserBillPredictionRequest& request) const;

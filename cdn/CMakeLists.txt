@@ -103,6 +103,8 @@ set(cdn_public_header_model
 	include/alibabacloud/cdn/model/DescribeCdnServiceResult.h
 	include/alibabacloud/cdn/model/DescribeCdnTypesRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnTypesResult.h
+	include/alibabacloud/cdn/model/DescribeCdnUserBillHistoryRequest.h
+	include/alibabacloud/cdn/model/DescribeCdnUserBillHistoryResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserBillPredictionRequest.h
 	include/alibabacloud/cdn/model/DescribeCdnUserBillPredictionResult.h
 	include/alibabacloud/cdn/model/DescribeCdnUserBillTypeRequest.h
@@ -500,6 +502,8 @@ set(cdn_src
 	src/model/DescribeCdnServiceResult.cc
 	src/model/DescribeCdnTypesRequest.cc
 	src/model/DescribeCdnTypesResult.cc
+	src/model/DescribeCdnUserBillHistoryRequest.cc
+	src/model/DescribeCdnUserBillHistoryResult.cc
 	src/model/DescribeCdnUserBillPredictionRequest.cc
 	src/model/DescribeCdnUserBillPredictionResult.cc
 	src/model/DescribeCdnUserBillTypeRequest.cc
