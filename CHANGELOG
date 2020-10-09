@@ -1,3 +1,6 @@
+2020-10-09 Version: patch
+- Update SetVideoSeekConfig API.
+
 2020-09-29 Version: patch
 - Add API OpenOnsService which can active ons service.
 
