@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CamsExport.h"
+#include "model/CheckContactsRequest.h"
+#include "model/CheckContactsResult.h"
 #include "model/SendMessageRequest.h"
 #include "model/SendMessageResult.h"
 
@@ -33,6 +35,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CAMS_EXPORT CamsClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CheckContactsResult> CheckContactsOutcome;
+			typedef std::future<CheckContactsOutcome> CheckContactsOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::CheckContactsRequest&, const CheckContactsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckContactsAsyncHandler;
 			typedef Outcome<Error, Model::SendMessageResult> SendMessageOutcome;
 			typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
 			typedef std::function<void(const CamsClient*, const Model::SendMessageRequest&, const SendMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
@@ -41,6 +46,9 @@ namespace AlibabaCloud
 			CamsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CamsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CamsClient();
+			CheckContactsOutcome checkContacts(const Model::CheckContactsRequest &request)const;
+			void checkContactsAsync(const Model::CheckContactsRequest& request, const CheckContactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckContactsOutcomeCallable checkContactsCallable(const Model::CheckContactsRequest& request) const;
 			SendMessageOutcome sendMessage(const Model::SendMessageRequest &request)const;
 			void sendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendMessageOutcomeCallable sendMessageCallable(const Model::SendMessageRequest& request) const;

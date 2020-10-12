@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_SENDMESSAGEREQUEST_H_
-#define ALIBABACLOUD_CAMS_MODEL_SENDMESSAGEREQUEST_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSREQUEST_H_
+#define ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,60 +28,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAMS_EXPORT SendMessageRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CAMS_EXPORT CheckContactsRequest : public RpcServiceRequest
 			{
 
 			public:
-				SendMessageRequest();
-				~SendMessageRequest();
+				CheckContactsRequest();
+				~CheckContactsRequest();
 
 				long getResourceOwnerId()const;
 				void setResourceOwnerId(long resourceOwnerId);
-				std::string getMessageType()const;
-				void setMessageType(const std::string& messageType);
-				std::string getTemplateBodyParams()const;
-				void setTemplateBodyParams(const std::string& templateBodyParams);
-				std::string getLink()const;
-				void setLink(const std::string& link);
-				std::string getCaption()const;
-				void setCaption(const std::string& caption);
-				std::string getType()const;
-				void setType(const std::string& type);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getChannelType()const;
 				void setChannelType(const std::string& channelType);
 				std::string getFrom()const;
 				void setFrom(const std::string& from);
-				std::string getText()const;
-				void setText(const std::string& text);
 				std::string getResourceOwnerAccount()const;
 				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
-				std::string getTo()const;
-				void setTo(const std::string& to);
-				std::string getTemplateCode()const;
-				void setTemplateCode(const std::string& templateCode);
+				std::string getContacts()const;
+				void setContacts(const std::string& contacts);
 
             private:
 				long resourceOwnerId_;
-				std::string messageType_;
-				std::string templateBodyParams_;
-				std::string link_;
-				std::string caption_;
-				std::string type_;
 				std::string accessKeyId_;
 				std::string channelType_;
 				std::string from_;
-				std::string text_;
 				std::string resourceOwnerAccount_;
 				long ownerId_;
-				std::string to_;
-				std::string templateCode_;
+				std::string contacts_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAMS_MODEL_SENDMESSAGEREQUEST_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSREQUEST_H_

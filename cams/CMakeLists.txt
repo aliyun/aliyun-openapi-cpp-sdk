@@ -21,11 +21,15 @@ set(cams_public_header
 	include/alibabacloud/cams/CamsExport.h )
 
 set(cams_public_header_model 
+	include/alibabacloud/cams/model/CheckContactsRequest.h
+	include/alibabacloud/cams/model/CheckContactsResult.h
 	include/alibabacloud/cams/model/SendMessageRequest.h
 	include/alibabacloud/cams/model/SendMessageResult.h )
 
 set(cams_src 
 	src/CamsClient.cc
+	src/model/CheckContactsRequest.cc
+	src/model/CheckContactsResult.cc
 	src/model/SendMessageRequest.cc
 	src/model/SendMessageResult.cc )
 

@@ -51,6 +51,42 @@ CamsClient::CamsClient(const std::string & accessKeyId, const std::string & acce
 CamsClient::~CamsClient()
 {}
 
+CamsClient::CheckContactsOutcome CamsClient::checkContacts(const CheckContactsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckContactsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckContactsOutcome(CheckContactsResult(outcome.result()));
+	else
+		return CheckContactsOutcome(outcome.error());
+}
+
+void CamsClient::checkContactsAsync(const CheckContactsRequest& request, const CheckContactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkContacts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CamsClient::CheckContactsOutcomeCallable CamsClient::checkContactsCallable(const CheckContactsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckContactsOutcome()>>(
+			[this, request]()
+			{
+			return this->checkContacts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CamsClient::SendMessageOutcome CamsClient::sendMessage(const SendMessageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

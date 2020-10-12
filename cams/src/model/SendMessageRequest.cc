@@ -38,6 +38,17 @@ void SendMessageRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::string SendMessageRequest::getMessageType()const
+{
+	return messageType_;
+}
+
+void SendMessageRequest::setMessageType(const std::string& messageType)
+{
+	messageType_ = messageType;
+	setBodyParameter("MessageType", messageType);
+}
+
 std::string SendMessageRequest::getTemplateBodyParams()const
 {
 	return templateBodyParams_;
@@ -82,17 +93,6 @@ void SendMessageRequest::setType(const std::string& type)
 	setBodyParameter("Type", type);
 }
 
-std::string SendMessageRequest::getBody()const
-{
-	return body_;
-}
-
-void SendMessageRequest::setBody(const std::string& body)
-{
-	body_ = body;
-	setBodyParameter("Body", body);
-}
-
 std::string SendMessageRequest::getAccessKeyId()const
 {
 	return accessKeyId_;
@@ -124,6 +124,17 @@ void SendMessageRequest::setFrom(const std::string& from)
 {
 	from_ = from;
 	setBodyParameter("From", from);
+}
+
+std::string SendMessageRequest::getText()const
+{
+	return text_;
+}
+
+void SendMessageRequest::setText(const std::string& text)
+{
+	text_ = text;
+	setBodyParameter("Text", text);
 }
 
 std::string SendMessageRequest::getResourceOwnerAccount()const
@@ -168,16 +179,5 @@ void SendMessageRequest::setTemplateCode(const std::string& templateCode)
 {
 	templateCode_ = templateCode;
 	setBodyParameter("TemplateCode", templateCode);
-}
-
-std::string SendMessageRequest::getMediaType()const
-{
-	return mediaType_;
-}
-
-void SendMessageRequest::setMediaType(const std::string& mediaType)
-{
-	mediaType_ = mediaType;
-	setBodyParameter("MediaType", mediaType);
 }
 
