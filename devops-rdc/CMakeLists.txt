@@ -97,6 +97,8 @@ set(devops-rdc_public_header_model
 	include/alibabacloud/devops-rdc/model/ListPipelinesResult.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsRequest.h
 	include/alibabacloud/devops-rdc/model/ListServiceConnectionsResult.h
+	include/alibabacloud/devops-rdc/model/ListUserOrganizationRequest.h
+	include/alibabacloud/devops-rdc/model/ListUserOrganizationResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectRequest.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectResult.h
 	include/alibabacloud/devops-rdc/model/UpdateDevopsProjectSprintRequest.h
@@ -182,6 +184,8 @@ set(devops-rdc_src
 	src/model/ListPipelinesResult.cc
 	src/model/ListServiceConnectionsRequest.cc
 	src/model/ListServiceConnectionsResult.cc
+	src/model/ListUserOrganizationRequest.cc
+	src/model/ListUserOrganizationResult.cc
 	src/model/UpdateDevopsProjectRequest.cc
 	src/model/UpdateDevopsProjectResult.cc
 	src/model/UpdateDevopsProjectSprintRequest.cc

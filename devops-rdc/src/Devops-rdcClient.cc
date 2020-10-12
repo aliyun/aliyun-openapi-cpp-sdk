@@ -1419,6 +1419,42 @@ Devops_rdcClient::ListServiceConnectionsOutcomeCallable Devops_rdcClient::listSe
 	return task->get_future();
 }
 
+Devops_rdcClient::ListUserOrganizationOutcome Devops_rdcClient::listUserOrganization(const ListUserOrganizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListUserOrganizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListUserOrganizationOutcome(ListUserOrganizationResult(outcome.result()));
+	else
+		return ListUserOrganizationOutcome(outcome.error());
+}
+
+void Devops_rdcClient::listUserOrganizationAsync(const ListUserOrganizationRequest& request, const ListUserOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listUserOrganization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Devops_rdcClient::ListUserOrganizationOutcomeCallable Devops_rdcClient::listUserOrganizationCallable(const ListUserOrganizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListUserOrganizationOutcome()>>(
+			[this, request]()
+			{
+			return this->listUserOrganization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Devops_rdcClient::UpdateDevopsProjectOutcome Devops_rdcClient::updateDevopsProject(const UpdateDevopsProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -98,6 +98,8 @@
 #include "model/ListPipelinesResult.h"
 #include "model/ListServiceConnectionsRequest.h"
 #include "model/ListServiceConnectionsResult.h"
+#include "model/ListUserOrganizationRequest.h"
+#include "model/ListUserOrganizationResult.h"
 #include "model/UpdateDevopsProjectRequest.h"
 #include "model/UpdateDevopsProjectResult.h"
 #include "model/UpdateDevopsProjectSprintRequest.h"
@@ -227,6 +229,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListServiceConnectionsResult> ListServiceConnectionsOutcome;
 			typedef std::future<ListServiceConnectionsOutcome> ListServiceConnectionsOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::ListServiceConnectionsRequest&, const ListServiceConnectionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceConnectionsAsyncHandler;
+			typedef Outcome<Error, Model::ListUserOrganizationResult> ListUserOrganizationOutcome;
+			typedef std::future<ListUserOrganizationOutcome> ListUserOrganizationOutcomeCallable;
+			typedef std::function<void(const Devops_rdcClient*, const Model::ListUserOrganizationRequest&, const ListUserOrganizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserOrganizationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDevopsProjectResult> UpdateDevopsProjectOutcome;
 			typedef std::future<UpdateDevopsProjectOutcome> UpdateDevopsProjectOutcomeCallable;
 			typedef std::function<void(const Devops_rdcClient*, const Model::UpdateDevopsProjectRequest&, const UpdateDevopsProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevopsProjectAsyncHandler;
@@ -355,6 +360,9 @@ namespace AlibabaCloud
 			ListServiceConnectionsOutcome listServiceConnections(const Model::ListServiceConnectionsRequest &request)const;
 			void listServiceConnectionsAsync(const Model::ListServiceConnectionsRequest& request, const ListServiceConnectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceConnectionsOutcomeCallable listServiceConnectionsCallable(const Model::ListServiceConnectionsRequest& request) const;
+			ListUserOrganizationOutcome listUserOrganization(const Model::ListUserOrganizationRequest &request)const;
+			void listUserOrganizationAsync(const Model::ListUserOrganizationRequest& request, const ListUserOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListUserOrganizationOutcomeCallable listUserOrganizationCallable(const Model::ListUserOrganizationRequest& request) const;
 			UpdateDevopsProjectOutcome updateDevopsProject(const Model::UpdateDevopsProjectRequest &request)const;
 			void updateDevopsProjectAsync(const Model::UpdateDevopsProjectRequest& request, const UpdateDevopsProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDevopsProjectOutcomeCallable updateDevopsProjectCallable(const Model::UpdateDevopsProjectRequest& request) const;
