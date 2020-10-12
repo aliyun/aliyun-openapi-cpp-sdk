@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ALIYUNCVC_EXPORT ListConferenceDevicesResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct ConferencesDatas
 				{
 					struct Data
 					{
@@ -57,16 +57,16 @@ namespace AlibabaCloud
 				ListConferenceDevicesResult();
 				explicit ListConferenceDevicesResult(const std::string &payload);
 				~ListConferenceDevicesResult();
+				ConferencesDatas getConferencesDatas()const;
 				std::string getMessage()const;
-				Data getData()const;
 				int getErrorCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				ConferencesDatas conferencesDatas_;
 				std::string message_;
-				Data data_;
 				int errorCode_;
 				bool success_;
 

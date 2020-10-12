@@ -39,38 +39,38 @@ void ListConferenceDevicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Total"].isNull())
-		data_.total = std::stoi(dataNode["Total"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
-	if(!dataNode["PageNumber"].isNull())
-		data_.pageNumber = std::stoi(dataNode["PageNumber"].asString());
-	auto allConferencesNode = dataNode["Conferences"]["data"];
-	for (auto dataNodeConferencesdata : allConferencesNode)
+	auto conferencesDatasNode = value["ConferencesDatas"];
+	if(!conferencesDatasNode["Total"].isNull())
+		conferencesDatas_.total = std::stoi(conferencesDatasNode["Total"].asString());
+	if(!conferencesDatasNode["PageSize"].isNull())
+		conferencesDatas_.pageSize = std::stoi(conferencesDatasNode["PageSize"].asString());
+	if(!conferencesDatasNode["PageNumber"].isNull())
+		conferencesDatas_.pageNumber = std::stoi(conferencesDatasNode["PageNumber"].asString());
+	auto allConferencesNode = conferencesDatasNode["Conferences"]["data"];
+	for (auto conferencesDatasNodeConferencesdata : allConferencesNode)
 	{
-		Data::Data dataObject;
-		if(!dataNodeConferencesdata["ActivationCode"].isNull())
-			dataObject.activationCode = dataNodeConferencesdata["ActivationCode"].asString();
-		if(!dataNodeConferencesdata["ConferenceCode"].isNull())
-			dataObject.conferenceCode = dataNodeConferencesdata["ConferenceCode"].asString();
-		if(!dataNodeConferencesdata["ConferenceName"].isNull())
-			dataObject.conferenceName = dataNodeConferencesdata["ConferenceName"].asString();
-		if(!dataNodeConferencesdata["CreateTime"].isNull())
-			dataObject.createTime = dataNodeConferencesdata["CreateTime"].asString();
-		if(!dataNodeConferencesdata["DeviceModel"].isNull())
-			dataObject.deviceModel = dataNodeConferencesdata["DeviceModel"].asString();
-		if(!dataNodeConferencesdata["Manufacturer"].isNull())
-			dataObject.manufacturer = dataNodeConferencesdata["Manufacturer"].asString();
-		if(!dataNodeConferencesdata["PictureUrl"].isNull())
-			dataObject.pictureUrl = dataNodeConferencesdata["PictureUrl"].asString();
-		if(!dataNodeConferencesdata["SN"].isNull())
-			dataObject.sN = dataNodeConferencesdata["SN"].asString();
-		if(!dataNodeConferencesdata["Status"].isNull())
-			dataObject.status = dataNodeConferencesdata["Status"].asString();
-		if(!dataNodeConferencesdata["CastScreenCode"].isNull())
-			dataObject.castScreenCode = dataNodeConferencesdata["CastScreenCode"].asString();
-		data_.conferences.push_back(dataObject);
+		ConferencesDatas::Data dataObject;
+		if(!conferencesDatasNodeConferencesdata["ActivationCode"].isNull())
+			dataObject.activationCode = conferencesDatasNodeConferencesdata["ActivationCode"].asString();
+		if(!conferencesDatasNodeConferencesdata["ConferenceCode"].isNull())
+			dataObject.conferenceCode = conferencesDatasNodeConferencesdata["ConferenceCode"].asString();
+		if(!conferencesDatasNodeConferencesdata["ConferenceName"].isNull())
+			dataObject.conferenceName = conferencesDatasNodeConferencesdata["ConferenceName"].asString();
+		if(!conferencesDatasNodeConferencesdata["CreateTime"].isNull())
+			dataObject.createTime = conferencesDatasNodeConferencesdata["CreateTime"].asString();
+		if(!conferencesDatasNodeConferencesdata["DeviceModel"].isNull())
+			dataObject.deviceModel = conferencesDatasNodeConferencesdata["DeviceModel"].asString();
+		if(!conferencesDatasNodeConferencesdata["Manufacturer"].isNull())
+			dataObject.manufacturer = conferencesDatasNodeConferencesdata["Manufacturer"].asString();
+		if(!conferencesDatasNodeConferencesdata["PictureUrl"].isNull())
+			dataObject.pictureUrl = conferencesDatasNodeConferencesdata["PictureUrl"].asString();
+		if(!conferencesDatasNodeConferencesdata["SN"].isNull())
+			dataObject.sN = conferencesDatasNodeConferencesdata["SN"].asString();
+		if(!conferencesDatasNodeConferencesdata["Status"].isNull())
+			dataObject.status = conferencesDatasNodeConferencesdata["Status"].asString();
+		if(!conferencesDatasNodeConferencesdata["CastScreenCode"].isNull())
+			dataObject.castScreenCode = conferencesDatasNodeConferencesdata["CastScreenCode"].asString();
+		conferencesDatas_.conferences.push_back(dataObject);
 	}
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = std::stoi(value["ErrorCode"].asString());
@@ -81,14 +81,14 @@ void ListConferenceDevicesResult::parse(const std::string &payload)
 
 }
 
+ListConferenceDevicesResult::ConferencesDatas ListConferenceDevicesResult::getConferencesDatas()const
+{
+	return conferencesDatas_;
+}
+
 std::string ListConferenceDevicesResult::getMessage()const
 {
 	return message_;
-}
-
-ListConferenceDevicesResult::Data ListConferenceDevicesResult::getData()const
-{
-	return data_;
 }
 
 int ListConferenceDevicesResult::getErrorCode()const
