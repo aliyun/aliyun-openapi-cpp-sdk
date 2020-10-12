@@ -38,6 +38,17 @@ void ApproveOrderRequest::setApprovalType(const std::string& approvalType)
 	setParameter("ApprovalType", approvalType);
 }
 
+std::string ApproveOrderRequest::getComment()const
+{
+	return comment_;
+}
+
+void ApproveOrderRequest::setComment(const std::string& comment)
+{
+	comment_ = comment;
+	setParameter("Comment", comment);
+}
+
 long ApproveOrderRequest::getTid()const
 {
 	return tid_;
