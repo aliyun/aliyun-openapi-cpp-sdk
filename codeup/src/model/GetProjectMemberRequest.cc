@@ -14,61 +14,72 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/DeleteRepositoryRequest.h>
+#include <alibabacloud/codeup/model/GetProjectMemberRequest.h>
 
-using AlibabaCloud::Codeup::Model::DeleteRepositoryRequest;
+using AlibabaCloud::Codeup::Model::GetProjectMemberRequest;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() :
+GetProjectMemberRequest::GetProjectMemberRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/remove");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/api/v3/projects/[ProjectId]/members/[UserId]");
+	setMethod(HttpRequest::Method::Get);
 }
 
-DeleteRepositoryRequest::~DeleteRepositoryRequest()
+GetProjectMemberRequest::~GetProjectMemberRequest()
 {}
 
-std::string DeleteRepositoryRequest::getOrganizationId()const
+std::string GetProjectMemberRequest::getOrganizationId()const
 {
 	return organizationId_;
 }
 
-void DeleteRepositoryRequest::setOrganizationId(const std::string& organizationId)
+void GetProjectMemberRequest::setOrganizationId(const std::string& organizationId)
 {
 	organizationId_ = organizationId;
 	setParameter("OrganizationId", organizationId);
 }
 
-std::string DeleteRepositoryRequest::getSubUserId()const
+std::string GetProjectMemberRequest::getSubUserId()const
 {
 	return subUserId_;
 }
 
-void DeleteRepositoryRequest::setSubUserId(const std::string& subUserId)
+void GetProjectMemberRequest::setSubUserId(const std::string& subUserId)
 {
 	subUserId_ = subUserId;
 	setParameter("SubUserId", subUserId);
 }
 
-std::string DeleteRepositoryRequest::getAccessToken()const
+std::string GetProjectMemberRequest::getAccessToken()const
 {
 	return accessToken_;
 }
 
-void DeleteRepositoryRequest::setAccessToken(const std::string& accessToken)
+void GetProjectMemberRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
 	setParameter("AccessToken", accessToken);
 }
 
-long DeleteRepositoryRequest::getProjectId()const
+long GetProjectMemberRequest::getProjectId()const
 {
 	return projectId_;
 }
 
-void DeleteRepositoryRequest::setProjectId(long projectId)
+void GetProjectMemberRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setParameter("ProjectId", std::to_string(projectId));
+}
+
+long GetProjectMemberRequest::getUserId()const
+{
+	return userId_;
+}
+
+void GetProjectMemberRequest::setUserId(long userId)
+{
+	userId_ = userId;
+	setParameter("UserId", std::to_string(userId));
 }
 

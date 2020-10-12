@@ -14,59 +14,48 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/DeleteRepositoryRequest.h>
+#include <alibabacloud/codeup/model/AddWebhookRequest.h>
 
-using AlibabaCloud::Codeup::Model::DeleteRepositoryRequest;
+using AlibabaCloud::Codeup::Model::AddWebhookRequest;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() :
+AddWebhookRequest::AddWebhookRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/remove");
+	setResourcePath("/api/v3/projects/[ProjectId]/hooks");
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteRepositoryRequest::~DeleteRepositoryRequest()
+AddWebhookRequest::~AddWebhookRequest()
 {}
 
-std::string DeleteRepositoryRequest::getOrganizationId()const
+std::string AddWebhookRequest::getOrganizationId()const
 {
 	return organizationId_;
 }
 
-void DeleteRepositoryRequest::setOrganizationId(const std::string& organizationId)
+void AddWebhookRequest::setOrganizationId(const std::string& organizationId)
 {
 	organizationId_ = organizationId;
 	setParameter("OrganizationId", organizationId);
 }
 
-std::string DeleteRepositoryRequest::getSubUserId()const
-{
-	return subUserId_;
-}
-
-void DeleteRepositoryRequest::setSubUserId(const std::string& subUserId)
-{
-	subUserId_ = subUserId;
-	setParameter("SubUserId", subUserId);
-}
-
-std::string DeleteRepositoryRequest::getAccessToken()const
+std::string AddWebhookRequest::getAccessToken()const
 {
 	return accessToken_;
 }
 
-void DeleteRepositoryRequest::setAccessToken(const std::string& accessToken)
+void AddWebhookRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
 	setParameter("AccessToken", accessToken);
 }
 
-long DeleteRepositoryRequest::getProjectId()const
+long AddWebhookRequest::getProjectId()const
 {
 	return projectId_;
 }
 
-void DeleteRepositoryRequest::setProjectId(long projectId)
+void AddWebhookRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setParameter("ProjectId", std::to_string(projectId));

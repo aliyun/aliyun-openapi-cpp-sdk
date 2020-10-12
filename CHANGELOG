@@ -1,4 +1,7 @@
 2020-10-12 Version: patch
+- Support add webhook, get repository info via id or path.
+
+2020-10-12 Version: patch
 - Public beta version.
 - Add Api Overseas.
 

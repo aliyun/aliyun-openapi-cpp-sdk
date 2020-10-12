@@ -25,12 +25,22 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/AddGroupMemberResult.h
 	include/alibabacloud/codeup/model/AddRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/AddRepositoryMemberResult.h
+	include/alibabacloud/codeup/model/AddWebhookRequest.h
+	include/alibabacloud/codeup/model/AddWebhookResult.h
+	include/alibabacloud/codeup/model/CreateBranchRequest.h
+	include/alibabacloud/codeup/model/CreateBranchResult.h
 	include/alibabacloud/codeup/model/CreateFileRequest.h
 	include/alibabacloud/codeup/model/CreateFileResult.h
+	include/alibabacloud/codeup/model/CreateMergeRequestRequest.h
+	include/alibabacloud/codeup/model/CreateMergeRequestResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryResult.h
 	include/alibabacloud/codeup/model/CreateRepositoryGroupRequest.h
 	include/alibabacloud/codeup/model/CreateRepositoryGroupResult.h
+	include/alibabacloud/codeup/model/CreateTagRequest.h
+	include/alibabacloud/codeup/model/CreateTagResult.h
+	include/alibabacloud/codeup/model/DeleteBranchRequest.h
+	include/alibabacloud/codeup/model/DeleteBranchResult.h
 	include/alibabacloud/codeup/model/DeleteFileRequest.h
 	include/alibabacloud/codeup/model/DeleteFileResult.h
 	include/alibabacloud/codeup/model/DeleteGroupMemberRequest.h
@@ -41,16 +51,28 @@ set(codeup_public_header_model
 	include/alibabacloud/codeup/model/DeleteRepositoryGroupResult.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/DeleteRepositoryMemberResult.h
+	include/alibabacloud/codeup/model/GetBranchInfoRequest.h
+	include/alibabacloud/codeup/model/GetBranchInfoResult.h
 	include/alibabacloud/codeup/model/GetCodeupOrganizationRequest.h
 	include/alibabacloud/codeup/model/GetCodeupOrganizationResult.h
 	include/alibabacloud/codeup/model/GetFileBlobsRequest.h
 	include/alibabacloud/codeup/model/GetFileBlobsResult.h
+	include/alibabacloud/codeup/model/GetProjectMemberRequest.h
+	include/alibabacloud/codeup/model/GetProjectMemberResult.h
+	include/alibabacloud/codeup/model/GetRepositoryInfoRequest.h
+	include/alibabacloud/codeup/model/GetRepositoryInfoResult.h
 	include/alibabacloud/codeup/model/ListGroupMemberRequest.h
 	include/alibabacloud/codeup/model/ListGroupMemberResult.h
+	include/alibabacloud/codeup/model/ListGroupRepositoriesRequest.h
+	include/alibabacloud/codeup/model/ListGroupRepositoriesResult.h
+	include/alibabacloud/codeup/model/ListGroupsRequest.h
+	include/alibabacloud/codeup/model/ListGroupsResult.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryMemberResult.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeRequest.h
 	include/alibabacloud/codeup/model/ListRepositoryTreeResult.h
+	include/alibabacloud/codeup/model/MergeMergeRequestRequest.h
+	include/alibabacloud/codeup/model/MergeMergeRequestResult.h
 	include/alibabacloud/codeup/model/UpdateFileRequest.h
 	include/alibabacloud/codeup/model/UpdateFileResult.h
 	include/alibabacloud/codeup/model/UpdateGroupMemberRequest.h
@@ -64,12 +86,22 @@ set(codeup_src
 	src/model/AddGroupMemberResult.cc
 	src/model/AddRepositoryMemberRequest.cc
 	src/model/AddRepositoryMemberResult.cc
+	src/model/AddWebhookRequest.cc
+	src/model/AddWebhookResult.cc
+	src/model/CreateBranchRequest.cc
+	src/model/CreateBranchResult.cc
 	src/model/CreateFileRequest.cc
 	src/model/CreateFileResult.cc
+	src/model/CreateMergeRequestRequest.cc
+	src/model/CreateMergeRequestResult.cc
 	src/model/CreateRepositoryRequest.cc
 	src/model/CreateRepositoryResult.cc
 	src/model/CreateRepositoryGroupRequest.cc
 	src/model/CreateRepositoryGroupResult.cc
+	src/model/CreateTagRequest.cc
+	src/model/CreateTagResult.cc
+	src/model/DeleteBranchRequest.cc
+	src/model/DeleteBranchResult.cc
 	src/model/DeleteFileRequest.cc
 	src/model/DeleteFileResult.cc
 	src/model/DeleteGroupMemberRequest.cc
@@ -80,16 +112,28 @@ set(codeup_src
 	src/model/DeleteRepositoryGroupResult.cc
 	src/model/DeleteRepositoryMemberRequest.cc
 	src/model/DeleteRepositoryMemberResult.cc
+	src/model/GetBranchInfoRequest.cc
+	src/model/GetBranchInfoResult.cc
 	src/model/GetCodeupOrganizationRequest.cc
 	src/model/GetCodeupOrganizationResult.cc
 	src/model/GetFileBlobsRequest.cc
 	src/model/GetFileBlobsResult.cc
+	src/model/GetProjectMemberRequest.cc
+	src/model/GetProjectMemberResult.cc
+	src/model/GetRepositoryInfoRequest.cc
+	src/model/GetRepositoryInfoResult.cc
 	src/model/ListGroupMemberRequest.cc
 	src/model/ListGroupMemberResult.cc
+	src/model/ListGroupRepositoriesRequest.cc
+	src/model/ListGroupRepositoriesResult.cc
+	src/model/ListGroupsRequest.cc
+	src/model/ListGroupsResult.cc
 	src/model/ListRepositoryMemberRequest.cc
 	src/model/ListRepositoryMemberResult.cc
 	src/model/ListRepositoryTreeRequest.cc
 	src/model/ListRepositoryTreeResult.cc
+	src/model/MergeMergeRequestRequest.cc
+	src/model/MergeMergeRequestResult.cc
 	src/model/UpdateFileRequest.cc
 	src/model/UpdateFileResult.cc
 	src/model/UpdateGroupMemberRequest.cc

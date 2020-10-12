@@ -21,8 +21,8 @@ using AlibabaCloud::Codeup::Model::DeleteRepositoryGroupRequest;
 DeleteRepositoryGroupRequest::DeleteRepositoryGroupRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/groups/[GroupId]");
-	setMethod(HttpRequest::Method::Delete);
+	setResourcePath("/api/v3/groups/[GroupId]/remove");
+	setMethod(HttpRequest::Method::Post);
 }
 
 DeleteRepositoryGroupRequest::~DeleteRepositoryGroupRequest()

@@ -14,59 +14,59 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/DeleteRepositoryRequest.h>
+#include <alibabacloud/codeup/model/CreateMergeRequestRequest.h>
 
-using AlibabaCloud::Codeup::Model::DeleteRepositoryRequest;
+using AlibabaCloud::Codeup::Model::CreateMergeRequestRequest;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() :
+CreateMergeRequestRequest::CreateMergeRequestRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/remove");
+	setResourcePath("/api/v4/projects/[ProjectId]/merge_requests");
 	setMethod(HttpRequest::Method::Post);
 }
 
-DeleteRepositoryRequest::~DeleteRepositoryRequest()
+CreateMergeRequestRequest::~CreateMergeRequestRequest()
 {}
 
-std::string DeleteRepositoryRequest::getOrganizationId()const
+std::string CreateMergeRequestRequest::getOrganizationId()const
 {
 	return organizationId_;
 }
 
-void DeleteRepositoryRequest::setOrganizationId(const std::string& organizationId)
+void CreateMergeRequestRequest::setOrganizationId(const std::string& organizationId)
 {
 	organizationId_ = organizationId;
 	setParameter("OrganizationId", organizationId);
 }
 
-std::string DeleteRepositoryRequest::getSubUserId()const
+std::string CreateMergeRequestRequest::getSubUserId()const
 {
 	return subUserId_;
 }
 
-void DeleteRepositoryRequest::setSubUserId(const std::string& subUserId)
+void CreateMergeRequestRequest::setSubUserId(const std::string& subUserId)
 {
 	subUserId_ = subUserId;
 	setParameter("SubUserId", subUserId);
 }
 
-std::string DeleteRepositoryRequest::getAccessToken()const
+std::string CreateMergeRequestRequest::getAccessToken()const
 {
 	return accessToken_;
 }
 
-void DeleteRepositoryRequest::setAccessToken(const std::string& accessToken)
+void CreateMergeRequestRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
 	setParameter("AccessToken", accessToken);
 }
 
-long DeleteRepositoryRequest::getProjectId()const
+long CreateMergeRequestRequest::getProjectId()const
 {
 	return projectId_;
 }
 
-void DeleteRepositoryRequest::setProjectId(long projectId)
+void CreateMergeRequestRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setParameter("ProjectId", std::to_string(projectId));

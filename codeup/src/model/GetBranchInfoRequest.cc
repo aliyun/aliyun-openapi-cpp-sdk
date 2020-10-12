@@ -14,61 +14,72 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/codeup/model/DeleteRepositoryRequest.h>
+#include <alibabacloud/codeup/model/GetBranchInfoRequest.h>
 
-using AlibabaCloud::Codeup::Model::DeleteRepositoryRequest;
+using AlibabaCloud::Codeup::Model::GetBranchInfoRequest;
 
-DeleteRepositoryRequest::DeleteRepositoryRequest() :
+GetBranchInfoRequest::GetBranchInfoRequest() :
 	RoaServiceRequest("codeup", "2020-04-14")
 {
-	setResourcePath("/api/v3/projects/[ProjectId]/remove");
-	setMethod(HttpRequest::Method::Post);
+	setResourcePath("/api/v3/projects/[ProjectId]/repository/branches/[BranchName]");
+	setMethod(HttpRequest::Method::Get);
 }
 
-DeleteRepositoryRequest::~DeleteRepositoryRequest()
+GetBranchInfoRequest::~GetBranchInfoRequest()
 {}
 
-std::string DeleteRepositoryRequest::getOrganizationId()const
+std::string GetBranchInfoRequest::getOrganizationId()const
 {
 	return organizationId_;
 }
 
-void DeleteRepositoryRequest::setOrganizationId(const std::string& organizationId)
+void GetBranchInfoRequest::setOrganizationId(const std::string& organizationId)
 {
 	organizationId_ = organizationId;
 	setParameter("OrganizationId", organizationId);
 }
 
-std::string DeleteRepositoryRequest::getSubUserId()const
+std::string GetBranchInfoRequest::getSubUserId()const
 {
 	return subUserId_;
 }
 
-void DeleteRepositoryRequest::setSubUserId(const std::string& subUserId)
+void GetBranchInfoRequest::setSubUserId(const std::string& subUserId)
 {
 	subUserId_ = subUserId;
 	setParameter("SubUserId", subUserId);
 }
 
-std::string DeleteRepositoryRequest::getAccessToken()const
+std::string GetBranchInfoRequest::getAccessToken()const
 {
 	return accessToken_;
 }
 
-void DeleteRepositoryRequest::setAccessToken(const std::string& accessToken)
+void GetBranchInfoRequest::setAccessToken(const std::string& accessToken)
 {
 	accessToken_ = accessToken;
 	setParameter("AccessToken", accessToken);
 }
 
-long DeleteRepositoryRequest::getProjectId()const
+long GetBranchInfoRequest::getProjectId()const
 {
 	return projectId_;
 }
 
-void DeleteRepositoryRequest::setProjectId(long projectId)
+void GetBranchInfoRequest::setProjectId(long projectId)
 {
 	projectId_ = projectId;
 	setParameter("ProjectId", std::to_string(projectId));
+}
+
+std::string GetBranchInfoRequest::getBranchName()const
+{
+	return branchName_;
+}
+
+void GetBranchInfoRequest::setBranchName(const std::string& branchName)
+{
+	branchName_ = branchName;
+	setParameter("BranchName", branchName);
 }
 
