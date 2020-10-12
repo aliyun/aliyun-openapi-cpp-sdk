@@ -17,6 +17,9 @@ This document introduces how to obtain and call this SDK.
 
 If you have any problem while using Alibaba Cloud SDK for C++, please submit an [issue](https://github.com/aliyun/aliyun-openapi-cpp-sdk/issues/new).
 
+## Troubleshoot
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
+
 ## Requirements
 
 - To use this SDK, you must have an Alibaba Cloud account and an AccessKey.
