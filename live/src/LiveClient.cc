@@ -339,6 +339,42 @@ LiveClient::AddCustomLiveStreamTranscodeOutcomeCallable LiveClient::addCustomLiv
 	return task->get_future();
 }
 
+LiveClient::AddLiveASRConfigOutcome LiveClient::addLiveASRConfig(const AddLiveASRConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddLiveASRConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddLiveASRConfigOutcome(AddLiveASRConfigResult(outcome.result()));
+	else
+		return AddLiveASRConfigOutcome(outcome.error());
+}
+
+void LiveClient::addLiveASRConfigAsync(const AddLiveASRConfigRequest& request, const AddLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addLiveASRConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::AddLiveASRConfigOutcomeCallable LiveClient::addLiveASRConfigCallable(const AddLiveASRConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddLiveASRConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->addLiveASRConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::AddLiveAppRecordConfigOutcome LiveClient::addLiveAppRecordConfig(const AddLiveAppRecordConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +1851,42 @@ LiveClient::DeleteHtmlResourceOutcomeCallable LiveClient::deleteHtmlResourceCall
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveASRConfigOutcome LiveClient::deleteLiveASRConfig(const DeleteLiveASRConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveASRConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveASRConfigOutcome(DeleteLiveASRConfigResult(outcome.result()));
+	else
+		return DeleteLiveASRConfigOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveASRConfigAsync(const DeleteLiveASRConfigRequest& request, const DeleteLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveASRConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveASRConfigOutcomeCallable LiveClient::deleteLiveASRConfigCallable(const DeleteLiveASRConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveASRConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveASRConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveAppRecordConfigOutcome LiveClient::deleteLiveAppRecordConfig(const DeleteLiveAppRecordConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3105,6 +3177,42 @@ LiveClient::DescribeHtmlResourceOutcomeCallable LiveClient::describeHtmlResource
 			[this, request]()
 			{
 			return this->describeHtmlResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveAsrConfigOutcome LiveClient::describeLiveAsrConfig(const DescribeLiveAsrConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveAsrConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveAsrConfigOutcome(DescribeLiveAsrConfigResult(outcome.result()));
+	else
+		return DescribeLiveAsrConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveAsrConfigAsync(const DescribeLiveAsrConfigRequest& request, const DescribeLiveAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveAsrConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveAsrConfigOutcomeCallable LiveClient::describeLiveAsrConfigCallable(const DescribeLiveAsrConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveAsrConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveAsrConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7245,6 +7353,42 @@ LiveClient::UpdateCasterSceneConfigOutcomeCallable LiveClient::updateCasterScene
 			[this, request]()
 			{
 			return this->updateCasterSceneConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveASRConfigOutcome LiveClient::updateLiveASRConfig(const UpdateLiveASRConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveASRConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveASRConfigOutcome(UpdateLiveASRConfigResult(outcome.result()));
+	else
+		return UpdateLiveASRConfigOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveASRConfigAsync(const UpdateLiveASRConfigRequest& request, const UpdateLiveASRConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveASRConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveASRConfigOutcomeCallable LiveClient::updateLiveASRConfigCallable(const UpdateLiveASRConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveASRConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveASRConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
