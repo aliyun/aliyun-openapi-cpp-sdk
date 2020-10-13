@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					int audioMixCount;
 					long layoutId;
 					std::vector<PanesItem> panes;
+					std::string name;
 				};
 
 

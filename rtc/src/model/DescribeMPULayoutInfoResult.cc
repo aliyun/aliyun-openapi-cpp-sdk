@@ -42,6 +42,8 @@ void DescribeMPULayoutInfoResult::parse(const std::string &payload)
 	auto layoutNode = value["Layout"];
 	if(!layoutNode["LayoutId"].isNull())
 		layout_.layoutId = std::stol(layoutNode["LayoutId"].asString());
+	if(!layoutNode["Name"].isNull())
+		layout_.name = layoutNode["Name"].asString();
 	if(!layoutNode["AudioMixCount"].isNull())
 		layout_.audioMixCount = std::stoi(layoutNode["AudioMixCount"].asString());
 	auto allPanesNode = layoutNode["Panes"]["PanesItem"];

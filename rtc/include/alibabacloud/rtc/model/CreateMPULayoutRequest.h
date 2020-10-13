@@ -54,6 +54,8 @@ namespace AlibabaCloud
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				std::string getName()const;
+				void setName(const std::string& name);
 				int getAudioMixCount()const;
 				void setAudioMixCount(int audioMixCount);
 
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string showLog_;
 				long ownerId_;
 				std::string appId_;
+				std::string name_;
 				int audioMixCount_;
 
 			};

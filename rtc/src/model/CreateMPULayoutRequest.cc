@@ -81,6 +81,17 @@ void CreateMPULayoutRequest::setAppId(const std::string& appId)
 	setParameter("AppId", appId);
 }
 
+std::string CreateMPULayoutRequest::getName()const
+{
+	return name_;
+}
+
+void CreateMPULayoutRequest::setName(const std::string& name)
+{
+	name_ = name;
+	setParameter("Name", name);
+}
+
 int CreateMPULayoutRequest::getAudioMixCount()const
 {
 	return audioMixCount_;
