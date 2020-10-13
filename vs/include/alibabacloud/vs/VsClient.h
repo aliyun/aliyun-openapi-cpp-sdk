@@ -166,6 +166,8 @@
 #include "model/DescribeVsDomainDetailResult.h"
 #include "model/DescribeVsDomainPvDataRequest.h"
 #include "model/DescribeVsDomainPvDataResult.h"
+#include "model/DescribeVsDomainPvUvDataRequest.h"
+#include "model/DescribeVsDomainPvUvDataResult.h"
 #include "model/DescribeVsDomainRecordDataRequest.h"
 #include "model/DescribeVsDomainRecordDataResult.h"
 #include "model/DescribeVsDomainRegionDataRequest.h"
@@ -483,6 +485,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVsDomainPvDataResult> DescribeVsDomainPvDataOutcome;
 			typedef std::future<DescribeVsDomainPvDataOutcome> DescribeVsDomainPvDataOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeVsDomainPvDataRequest&, const DescribeVsDomainPvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsDomainPvDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVsDomainPvUvDataResult> DescribeVsDomainPvUvDataOutcome;
+			typedef std::future<DescribeVsDomainPvUvDataOutcome> DescribeVsDomainPvUvDataOutcomeCallable;
+			typedef std::function<void(const VsClient*, const Model::DescribeVsDomainPvUvDataRequest&, const DescribeVsDomainPvUvDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsDomainPvUvDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVsDomainRecordDataResult> DescribeVsDomainRecordDataOutcome;
 			typedef std::future<DescribeVsDomainRecordDataOutcome> DescribeVsDomainRecordDataOutcomeCallable;
 			typedef std::function<void(const VsClient*, const Model::DescribeVsDomainRecordDataRequest&, const DescribeVsDomainRecordDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsDomainRecordDataAsyncHandler;
@@ -842,6 +847,9 @@ namespace AlibabaCloud
 			DescribeVsDomainPvDataOutcome describeVsDomainPvData(const Model::DescribeVsDomainPvDataRequest &request)const;
 			void describeVsDomainPvDataAsync(const Model::DescribeVsDomainPvDataRequest& request, const DescribeVsDomainPvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVsDomainPvDataOutcomeCallable describeVsDomainPvDataCallable(const Model::DescribeVsDomainPvDataRequest& request) const;
+			DescribeVsDomainPvUvDataOutcome describeVsDomainPvUvData(const Model::DescribeVsDomainPvUvDataRequest &request)const;
+			void describeVsDomainPvUvDataAsync(const Model::DescribeVsDomainPvUvDataRequest& request, const DescribeVsDomainPvUvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVsDomainPvUvDataOutcomeCallable describeVsDomainPvUvDataCallable(const Model::DescribeVsDomainPvUvDataRequest& request) const;
 			DescribeVsDomainRecordDataOutcome describeVsDomainRecordData(const Model::DescribeVsDomainRecordDataRequest &request)const;
 			void describeVsDomainRecordDataAsync(const Model::DescribeVsDomainRecordDataRequest& request, const DescribeVsDomainRecordDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVsDomainRecordDataOutcomeCallable describeVsDomainRecordDataCallable(const Model::DescribeVsDomainRecordDataRequest& request) const;

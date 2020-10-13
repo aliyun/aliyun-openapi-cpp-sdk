@@ -165,6 +165,8 @@ set(vs_public_header_model
 	include/alibabacloud/vs/model/DescribeVsDomainDetailResult.h
 	include/alibabacloud/vs/model/DescribeVsDomainPvDataRequest.h
 	include/alibabacloud/vs/model/DescribeVsDomainPvDataResult.h
+	include/alibabacloud/vs/model/DescribeVsDomainPvUvDataRequest.h
+	include/alibabacloud/vs/model/DescribeVsDomainPvUvDataResult.h
 	include/alibabacloud/vs/model/DescribeVsDomainRecordDataRequest.h
 	include/alibabacloud/vs/model/DescribeVsDomainRecordDataResult.h
 	include/alibabacloud/vs/model/DescribeVsDomainRegionDataRequest.h
@@ -404,6 +406,8 @@ set(vs_src
 	src/model/DescribeVsDomainDetailResult.cc
 	src/model/DescribeVsDomainPvDataRequest.cc
 	src/model/DescribeVsDomainPvDataResult.cc
+	src/model/DescribeVsDomainPvUvDataRequest.cc
+	src/model/DescribeVsDomainPvUvDataResult.cc
 	src/model/DescribeVsDomainRecordDataRequest.cc
 	src/model/DescribeVsDomainRecordDataResult.cc
 	src/model/DescribeVsDomainRegionDataRequest.cc

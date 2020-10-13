@@ -2643,6 +2643,42 @@ VsClient::DescribeVsDomainPvDataOutcomeCallable VsClient::describeVsDomainPvData
 	return task->get_future();
 }
 
+VsClient::DescribeVsDomainPvUvDataOutcome VsClient::describeVsDomainPvUvData(const DescribeVsDomainPvUvDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVsDomainPvUvDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVsDomainPvUvDataOutcome(DescribeVsDomainPvUvDataResult(outcome.result()));
+	else
+		return DescribeVsDomainPvUvDataOutcome(outcome.error());
+}
+
+void VsClient::describeVsDomainPvUvDataAsync(const DescribeVsDomainPvUvDataRequest& request, const DescribeVsDomainPvUvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVsDomainPvUvData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VsClient::DescribeVsDomainPvUvDataOutcomeCallable VsClient::describeVsDomainPvUvDataCallable(const DescribeVsDomainPvUvDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVsDomainPvUvDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVsDomainPvUvData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VsClient::DescribeVsDomainRecordDataOutcome VsClient::describeVsDomainRecordData(const DescribeVsDomainRecordDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
