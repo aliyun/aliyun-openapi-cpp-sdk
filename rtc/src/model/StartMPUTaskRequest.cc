@@ -52,6 +52,28 @@ void StartMPUTaskRequest::setUserPanes(const std::vector<UserPanes>& userPanes)
 		setParameter(userPanesObjStr + ".PaneId", std::to_string(userPanesObj.paneId));
 		setParameter(userPanesObjStr + ".UserId", userPanesObj.userId);
 		setParameter(userPanesObjStr + ".SourceType", userPanesObj.sourceType);
+		for(int dep2 = 0; dep2!= userPanesObj.images.size(); dep2++) {
+			auto imagesObj = userPanesObj.images.at(dep2);
+			std::string imagesObjStr = userPanesObjStr + "Images." + std::to_string(dep2 + 1);
+			setParameter(imagesObjStr + ".Url", imagesObj.url);
+			setParameter(imagesObjStr + ".Display", std::to_string(imagesObj.display));
+			setParameter(imagesObjStr + ".X", std::to_string(imagesObj.x));
+			setParameter(imagesObjStr + ".Y", std::to_string(imagesObj.y));
+			setParameter(imagesObjStr + ".Width", std::to_string(imagesObj.width));
+			setParameter(imagesObjStr + ".Height", std::to_string(imagesObj.height));
+			setParameter(imagesObjStr + ".ZOrder", std::to_string(imagesObj.zOrder));
+		}
+		for(int dep2 = 0; dep2!= userPanesObj.texts.size(); dep2++) {
+			auto textsObj = userPanesObj.texts.at(dep2);
+			std::string textsObjStr = userPanesObjStr + "Texts." + std::to_string(dep2 + 1);
+			setParameter(textsObjStr + ".Text", textsObj.text);
+			setParameter(textsObjStr + ".X", std::to_string(textsObj.x));
+			setParameter(textsObjStr + ".Y", std::to_string(textsObj.y));
+			setParameter(textsObjStr + ".FontType", std::to_string(textsObj.fontType));
+			setParameter(textsObjStr + ".FontSize", std::to_string(textsObj.fontSize));
+			setParameter(textsObjStr + ".FontColor", std::to_string(textsObj.fontColor));
+			setParameter(textsObjStr + ".ZOrder", std::to_string(textsObj.zOrder));
+		}
 	}
 }
 
@@ -167,6 +189,28 @@ void StartMPUTaskRequest::setVadInterval(long vadInterval)
 	setParameter("VadInterval", std::to_string(vadInterval));
 }
 
+std::vector<StartMPUTaskRequest::Watermarks> StartMPUTaskRequest::getWatermarks()const
+{
+	return watermarks_;
+}
+
+void StartMPUTaskRequest::setWatermarks(const std::vector<Watermarks>& watermarks)
+{
+	watermarks_ = watermarks;
+	for(int dep1 = 0; dep1!= watermarks.size(); dep1++) {
+		auto watermarksObj = watermarks.at(dep1);
+		std::string watermarksObjStr = "Watermarks." + std::to_string(dep1 + 1);
+		setParameter(watermarksObjStr + ".Url", watermarksObj.url);
+		setParameter(watermarksObjStr + ".Alpha", std::to_string(watermarksObj.alpha));
+		setParameter(watermarksObjStr + ".Display", std::to_string(watermarksObj.display));
+		setParameter(watermarksObjStr + ".X", std::to_string(watermarksObj.x));
+		setParameter(watermarksObjStr + ".Y", std::to_string(watermarksObj.y));
+		setParameter(watermarksObjStr + ".Width", std::to_string(watermarksObj.width));
+		setParameter(watermarksObjStr + ".Height", std::to_string(watermarksObj.height));
+		setParameter(watermarksObjStr + ".ZOrder", std::to_string(watermarksObj.zOrder));
+	}
+}
+
 long StartMPUTaskRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -200,6 +244,27 @@ void StartMPUTaskRequest::setAppId(const std::string& appId)
 {
 	appId_ = appId;
 	setParameter("AppId", appId);
+}
+
+std::vector<StartMPUTaskRequest::Backgrounds> StartMPUTaskRequest::getBackgrounds()const
+{
+	return backgrounds_;
+}
+
+void StartMPUTaskRequest::setBackgrounds(const std::vector<Backgrounds>& backgrounds)
+{
+	backgrounds_ = backgrounds;
+	for(int dep1 = 0; dep1!= backgrounds.size(); dep1++) {
+		auto backgroundsObj = backgrounds.at(dep1);
+		std::string backgroundsObjStr = "Backgrounds." + std::to_string(dep1 + 1);
+		setParameter(backgroundsObjStr + ".Url", backgroundsObj.url);
+		setParameter(backgroundsObjStr + ".Display", std::to_string(backgroundsObj.display));
+		setParameter(backgroundsObjStr + ".X", std::to_string(backgroundsObj.x));
+		setParameter(backgroundsObjStr + ".Y", std::to_string(backgroundsObj.y));
+		setParameter(backgroundsObjStr + ".Width", std::to_string(backgroundsObj.width));
+		setParameter(backgroundsObjStr + ".Height", std::to_string(backgroundsObj.height));
+		setParameter(backgroundsObjStr + ".ZOrder", std::to_string(backgroundsObj.zOrder));
+	}
 }
 
 long StartMPUTaskRequest::getTimeStampRef()const

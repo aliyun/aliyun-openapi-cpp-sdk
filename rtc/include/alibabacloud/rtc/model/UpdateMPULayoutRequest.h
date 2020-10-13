@@ -36,6 +36,49 @@ namespace AlibabaCloud
 					int paneId;
 					std::string userId;
 					std::string sourceType;
+					struct Images
+					{
+						std::string url;
+						int display;
+						float x;
+						float y;
+						float width;
+						float height;
+						int zOrder;
+					};
+					std::vector<Images> images;
+					struct Texts
+					{
+						std::string text;
+						float x;
+						float y;
+						int fontType;
+						int fontSize;
+						int fontColor;
+						int zOrder;
+					};
+					std::vector<Texts> texts;
+				};
+				struct Watermarks
+				{
+					std::string url;
+					float alpha;
+					int display;
+					float x;
+					float y;
+					float width;
+					float height;
+					int zOrder;
+				};
+				struct Backgrounds
+				{
+					std::string url;
+					int display;
+					float x;
+					float y;
+					float width;
+					float height;
+					int zOrder;
 				};
 
 			public:
@@ -54,10 +97,14 @@ namespace AlibabaCloud
 				void setTaskId(const std::string& taskId);
 				std::string getShowLog()const;
 				void setShowLog(const std::string& showLog);
+				std::vector<Watermarks> getWatermarks()const;
+				void setWatermarks(const std::vector<Watermarks>& watermarks);
 				long getOwnerId()const;
 				void setOwnerId(long ownerId);
 				std::string getAppId()const;
 				void setAppId(const std::string& appId);
+				std::vector<Backgrounds> getBackgrounds()const;
+				void setBackgrounds(const std::vector<Backgrounds>& backgrounds);
 
             private:
 				std::vector<UserPanes> userPanes_;
@@ -66,8 +113,10 @@ namespace AlibabaCloud
 				std::vector<long> layoutIds_;
 				std::string taskId_;
 				std::string showLog_;
+				std::vector<Watermarks> watermarks_;
 				long ownerId_;
 				std::string appId_;
+				std::vector<Backgrounds> backgrounds_;
 
 			};
 		}
