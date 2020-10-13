@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					};
 					int status;
 					int facePointNumber;
+					int bodyPointNumber;
 					int stayPeriod;
 					long leaveTimestamp;
 					long gmtModified;

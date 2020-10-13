@@ -1,4 +1,8 @@
 2020-10-13 Version: patch
+- ListActionData add parameters.
+- PullActionData add parameters.
+
+2020-10-13 Version: patch
 - Generated 2018-01-11 for `rtc`.
 
 2020-10-13 Version: patch

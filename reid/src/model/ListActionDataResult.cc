@@ -85,6 +85,8 @@ void ListActionDataResult::parse(const std::string &payload)
 			actionsObject.imageObjectKey = valueActionsAction["ImageObjectKey"].asString();
 		if(!valueActionsAction["FacePointNumber"].isNull())
 			actionsObject.facePointNumber = std::stoi(valueActionsAction["FacePointNumber"].asString());
+		if(!valueActionsAction["BodyPointNumber"].isNull())
+			actionsObject.bodyPointNumber = std::stoi(valueActionsAction["BodyPointNumber"].asString());
 		auto objectPositionInImageNode = value["ObjectPositionInImage"];
 		if(!objectPositionInImageNode["Bottom"].isNull())
 			actionsObject.objectPositionInImage.bottom = std::stof(objectPositionInImageNode["Bottom"].asString());

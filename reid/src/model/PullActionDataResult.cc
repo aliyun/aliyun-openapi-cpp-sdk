@@ -85,6 +85,8 @@ void PullActionDataResult::parse(const std::string &payload)
 			actionsObject.specialType = valueActionsAction["SpecialType"].asString();
 		if(!valueActionsAction["ImageObjectKey"].isNull())
 			actionsObject.imageObjectKey = valueActionsAction["ImageObjectKey"].asString();
+		if(!valueActionsAction["BodyPointNumber"].isNull())
+			actionsObject.bodyPointNumber = std::stoi(valueActionsAction["BodyPointNumber"].asString());
 		auto objectPositionInImageNode = value["ObjectPositionInImage"];
 		if(!objectPositionInImageNode["Bottom"].isNull())
 			actionsObject.objectPositionInImage.bottom = std::stof(objectPositionInImageNode["Bottom"].asString());
