@@ -35,10 +35,13 @@ namespace AlibabaCloud
 				ExtractPedestrianFeatureAttributeRequest();
 				~ExtractPedestrianFeatureAttributeRequest();
 
+				std::string getMode()const;
+				void setMode(const std::string& mode);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				std::string mode_;
 				std::string imageURL_;
 
 			};

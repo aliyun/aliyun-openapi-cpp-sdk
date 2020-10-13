@@ -50,8 +50,6 @@
 #include "model/DetectFaceResult.h"
 #include "model/DetectIPCPedestrianRequest.h"
 #include "model/DetectIPCPedestrianResult.h"
-#include "model/DetectIPCPedestrianOptimizedRequest.h"
-#include "model/DetectIPCPedestrianOptimizedResult.h"
 #include "model/DetectLivingFaceRequest.h"
 #include "model/DetectLivingFaceResult.h"
 #include "model/DetectMaskRequest.h"
@@ -82,6 +80,8 @@
 #include "model/ListFaceDbsResult.h"
 #include "model/ListFaceEntitiesRequest.h"
 #include "model/ListFaceEntitiesResult.h"
+#include "model/PedestrianDetectAttributeRequest.h"
+#include "model/PedestrianDetectAttributeResult.h"
 #include "model/RecognizeActionRequest.h"
 #include "model/RecognizeActionResult.h"
 #include "model/RecognizeExpressionRequest.h"
@@ -149,9 +149,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectIPCPedestrianResult> DetectIPCPedestrianOutcome;
 			typedef std::future<DetectIPCPedestrianOutcome> DetectIPCPedestrianOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianRequest&, const DetectIPCPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianAsyncHandler;
-			typedef Outcome<Error, Model::DetectIPCPedestrianOptimizedResult> DetectIPCPedestrianOptimizedOutcome;
-			typedef std::future<DetectIPCPedestrianOptimizedOutcome> DetectIPCPedestrianOptimizedOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianOptimizedRequest&, const DetectIPCPedestrianOptimizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianOptimizedAsyncHandler;
 			typedef Outcome<Error, Model::DetectLivingFaceResult> DetectLivingFaceOutcome;
 			typedef std::future<DetectLivingFaceOutcome> DetectLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectLivingFaceRequest&, const DetectLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLivingFaceAsyncHandler;
@@ -197,6 +194,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFaceEntitiesResult> ListFaceEntitiesOutcome;
 			typedef std::future<ListFaceEntitiesOutcome> ListFaceEntitiesOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ListFaceEntitiesRequest&, const ListFaceEntitiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceEntitiesAsyncHandler;
+			typedef Outcome<Error, Model::PedestrianDetectAttributeResult> PedestrianDetectAttributeOutcome;
+			typedef std::future<PedestrianDetectAttributeOutcome> PedestrianDetectAttributeOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::PedestrianDetectAttributeRequest&, const PedestrianDetectAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PedestrianDetectAttributeAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeActionResult> RecognizeActionOutcome;
 			typedef std::future<RecognizeActionOutcome> RecognizeActionOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::RecognizeActionRequest&, const RecognizeActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeActionAsyncHandler;
@@ -268,9 +268,6 @@ namespace AlibabaCloud
 			DetectIPCPedestrianOutcome detectIPCPedestrian(const Model::DetectIPCPedestrianRequest &request)const;
 			void detectIPCPedestrianAsync(const Model::DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectIPCPedestrianOutcomeCallable detectIPCPedestrianCallable(const Model::DetectIPCPedestrianRequest& request) const;
-			DetectIPCPedestrianOptimizedOutcome detectIPCPedestrianOptimized(const Model::DetectIPCPedestrianOptimizedRequest &request)const;
-			void detectIPCPedestrianOptimizedAsync(const Model::DetectIPCPedestrianOptimizedRequest& request, const DetectIPCPedestrianOptimizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectIPCPedestrianOptimizedOutcomeCallable detectIPCPedestrianOptimizedCallable(const Model::DetectIPCPedestrianOptimizedRequest& request) const;
 			DetectLivingFaceOutcome detectLivingFace(const Model::DetectLivingFaceRequest &request)const;
 			void detectLivingFaceAsync(const Model::DetectLivingFaceRequest& request, const DetectLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLivingFaceOutcomeCallable detectLivingFaceCallable(const Model::DetectLivingFaceRequest& request) const;
@@ -316,6 +313,9 @@ namespace AlibabaCloud
 			ListFaceEntitiesOutcome listFaceEntities(const Model::ListFaceEntitiesRequest &request)const;
 			void listFaceEntitiesAsync(const Model::ListFaceEntitiesRequest& request, const ListFaceEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFaceEntitiesOutcomeCallable listFaceEntitiesCallable(const Model::ListFaceEntitiesRequest& request) const;
+			PedestrianDetectAttributeOutcome pedestrianDetectAttribute(const Model::PedestrianDetectAttributeRequest &request)const;
+			void pedestrianDetectAttributeAsync(const Model::PedestrianDetectAttributeRequest& request, const PedestrianDetectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PedestrianDetectAttributeOutcomeCallable pedestrianDetectAttributeCallable(const Model::PedestrianDetectAttributeRequest& request) const;
 			RecognizeActionOutcome recognizeAction(const Model::RecognizeActionRequest &request)const;
 			void recognizeActionAsync(const Model::RecognizeActionRequest& request, const RecognizeActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeActionOutcomeCallable recognizeActionCallable(const Model::RecognizeActionRequest& request) const;

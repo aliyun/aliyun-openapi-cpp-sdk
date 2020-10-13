@@ -31,21 +31,21 @@ FacebodyClient::FacebodyClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
 }
 
 FacebodyClient::FacebodyClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
 }
 
 FacebodyClient::FacebodyClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "facebody");
 }
 
 FacebodyClient::~FacebodyClient()
@@ -549,42 +549,6 @@ FacebodyClient::DetectIPCPedestrianOutcomeCallable FacebodyClient::detectIPCPede
 			[this, request]()
 			{
 			return this->detectIPCPedestrian(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::DetectIPCPedestrianOptimizedOutcome FacebodyClient::detectIPCPedestrianOptimized(const DetectIPCPedestrianOptimizedRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectIPCPedestrianOptimizedOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectIPCPedestrianOptimizedOutcome(DetectIPCPedestrianOptimizedResult(outcome.result()));
-	else
-		return DetectIPCPedestrianOptimizedOutcome(outcome.error());
-}
-
-void FacebodyClient::detectIPCPedestrianOptimizedAsync(const DetectIPCPedestrianOptimizedRequest& request, const DetectIPCPedestrianOptimizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectIPCPedestrianOptimized(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::DetectIPCPedestrianOptimizedOutcomeCallable FacebodyClient::detectIPCPedestrianOptimizedCallable(const DetectIPCPedestrianOptimizedRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectIPCPedestrianOptimizedOutcome()>>(
-			[this, request]()
-			{
-			return this->detectIPCPedestrianOptimized(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,6 +1089,42 @@ FacebodyClient::ListFaceEntitiesOutcomeCallable FacebodyClient::listFaceEntities
 			[this, request]()
 			{
 			return this->listFaceEntities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::PedestrianDetectAttributeOutcome FacebodyClient::pedestrianDetectAttribute(const PedestrianDetectAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PedestrianDetectAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PedestrianDetectAttributeOutcome(PedestrianDetectAttributeResult(outcome.result()));
+	else
+		return PedestrianDetectAttributeOutcome(outcome.error());
+}
+
+void FacebodyClient::pedestrianDetectAttributeAsync(const PedestrianDetectAttributeRequest& request, const PedestrianDetectAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pedestrianDetectAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::PedestrianDetectAttributeOutcomeCallable FacebodyClient::pedestrianDetectAttributeCallable(const PedestrianDetectAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PedestrianDetectAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->pedestrianDetectAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

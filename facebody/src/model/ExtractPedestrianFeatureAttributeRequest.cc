@@ -27,6 +27,17 @@ ExtractPedestrianFeatureAttributeRequest::ExtractPedestrianFeatureAttributeReque
 ExtractPedestrianFeatureAttributeRequest::~ExtractPedestrianFeatureAttributeRequest()
 {}
 
+std::string ExtractPedestrianFeatureAttributeRequest::getMode()const
+{
+	return mode_;
+}
+
+void ExtractPedestrianFeatureAttributeRequest::setMode(const std::string& mode)
+{
+	mode_ = mode;
+	setBodyParameter("Mode", mode);
+}
+
 std::string ExtractPedestrianFeatureAttributeRequest::getImageURL()const
 {
 	return imageURL_;
