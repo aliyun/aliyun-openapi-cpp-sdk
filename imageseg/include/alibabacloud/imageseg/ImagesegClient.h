@@ -56,6 +56,8 @@
 #include "model/SegmentLogoResult.h"
 #include "model/SegmentSceneRequest.h"
 #include "model/SegmentSceneResult.h"
+#include "model/SegmentSkinRequest.h"
+#include "model/SegmentSkinResult.h"
 #include "model/SegmentSkyRequest.h"
 #include "model/SegmentSkyResult.h"
 #include "model/SegmentVehicleRequest.h"
@@ -120,6 +122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentSceneResult> SegmentSceneOutcome;
 			typedef std::future<SegmentSceneOutcome> SegmentSceneOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentSceneRequest&, const SegmentSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentSceneAsyncHandler;
+			typedef Outcome<Error, Model::SegmentSkinResult> SegmentSkinOutcome;
+			typedef std::future<SegmentSkinOutcome> SegmentSkinOutcomeCallable;
+			typedef std::function<void(const ImagesegClient*, const Model::SegmentSkinRequest&, const SegmentSkinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentSkinAsyncHandler;
 			typedef Outcome<Error, Model::SegmentSkyResult> SegmentSkyOutcome;
 			typedef std::future<SegmentSkyOutcome> SegmentSkyOutcomeCallable;
 			typedef std::function<void(const ImagesegClient*, const Model::SegmentSkyRequest&, const SegmentSkyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentSkyAsyncHandler;
@@ -182,6 +187,9 @@ namespace AlibabaCloud
 			SegmentSceneOutcome segmentScene(const Model::SegmentSceneRequest &request)const;
 			void segmentSceneAsync(const Model::SegmentSceneRequest& request, const SegmentSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentSceneOutcomeCallable segmentSceneCallable(const Model::SegmentSceneRequest& request) const;
+			SegmentSkinOutcome segmentSkin(const Model::SegmentSkinRequest &request)const;
+			void segmentSkinAsync(const Model::SegmentSkinRequest& request, const SegmentSkinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentSkinOutcomeCallable segmentSkinCallable(const Model::SegmentSkinRequest& request) const;
 			SegmentSkyOutcome segmentSky(const Model::SegmentSkyRequest &request)const;
 			void segmentSkyAsync(const Model::SegmentSkyRequest& request, const SegmentSkyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentSkyOutcomeCallable segmentSkyCallable(const Model::SegmentSkyRequest& request) const;

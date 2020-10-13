@@ -663,6 +663,42 @@ ImagesegClient::SegmentSceneOutcomeCallable ImagesegClient::segmentSceneCallable
 	return task->get_future();
 }
 
+ImagesegClient::SegmentSkinOutcome ImagesegClient::segmentSkin(const SegmentSkinRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentSkinOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentSkinOutcome(SegmentSkinResult(outcome.result()));
+	else
+		return SegmentSkinOutcome(outcome.error());
+}
+
+void ImagesegClient::segmentSkinAsync(const SegmentSkinRequest& request, const SegmentSkinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentSkin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImagesegClient::SegmentSkinOutcomeCallable ImagesegClient::segmentSkinCallable(const SegmentSkinRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentSkinOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentSkin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImagesegClient::SegmentSkyOutcome ImagesegClient::segmentSky(const SegmentSkyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

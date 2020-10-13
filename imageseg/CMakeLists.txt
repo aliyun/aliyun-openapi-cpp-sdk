@@ -55,6 +55,8 @@ set(imageseg_public_header_model
 	include/alibabacloud/imageseg/model/SegmentLogoResult.h
 	include/alibabacloud/imageseg/model/SegmentSceneRequest.h
 	include/alibabacloud/imageseg/model/SegmentSceneResult.h
+	include/alibabacloud/imageseg/model/SegmentSkinRequest.h
+	include/alibabacloud/imageseg/model/SegmentSkinResult.h
 	include/alibabacloud/imageseg/model/SegmentSkyRequest.h
 	include/alibabacloud/imageseg/model/SegmentSkyResult.h
 	include/alibabacloud/imageseg/model/SegmentVehicleRequest.h
@@ -96,6 +98,8 @@ set(imageseg_src
 	src/model/SegmentLogoResult.cc
 	src/model/SegmentSceneRequest.cc
 	src/model/SegmentSceneResult.cc
+	src/model/SegmentSkinRequest.cc
+	src/model/SegmentSkinResult.cc
 	src/model/SegmentSkyRequest.cc
 	src/model/SegmentSkyResult.cc
 	src/model/SegmentVehicleRequest.cc

@@ -1,3 +1,6 @@
+2020-10-13 Version: patch
+- Release SegmentSkin.
+
 2020-10-12 Version: patch
 - Support add webhook, get repository info via id or path.
 
