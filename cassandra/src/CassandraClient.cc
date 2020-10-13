@@ -951,6 +951,42 @@ CassandraClient::DescribeNodeToolExecutionHistoriesOutcomeCallable CassandraClie
 	return task->get_future();
 }
 
+CassandraClient::DescribeNodeToolExecutionHistoryOutcome CassandraClient::describeNodeToolExecutionHistory(const DescribeNodeToolExecutionHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNodeToolExecutionHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNodeToolExecutionHistoryOutcome(DescribeNodeToolExecutionHistoryResult(outcome.result()));
+	else
+		return DescribeNodeToolExecutionHistoryOutcome(outcome.error());
+}
+
+void CassandraClient::describeNodeToolExecutionHistoryAsync(const DescribeNodeToolExecutionHistoryRequest& request, const DescribeNodeToolExecutionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNodeToolExecutionHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CassandraClient::DescribeNodeToolExecutionHistoryOutcomeCallable CassandraClient::describeNodeToolExecutionHistoryCallable(const DescribeNodeToolExecutionHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNodeToolExecutionHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNodeToolExecutionHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CassandraClient::DescribeParameterModificationHistoriesOutcome CassandraClient::describeParameterModificationHistories(const DescribeParameterModificationHistoriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

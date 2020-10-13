@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CASSANDRA_MODEL_EXECUTENODETOOLREQUEST_H_
-#define ALIBABACLOUD_CASSANDRA_MODEL_EXECUTENODETOOLREQUEST_H_
+#ifndef ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBENODETOOLEXECUTIONHISTORYREQUEST_H_
+#define ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBENODETOOLEXECUTIONHISTORYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,33 +28,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CASSANDRA_EXPORT ExecuteNodeToolRequest : public RpcServiceRequest
+			class ALIBABACLOUD_CASSANDRA_EXPORT DescribeNodeToolExecutionHistoryRequest : public RpcServiceRequest
 			{
 
 			public:
-				ExecuteNodeToolRequest();
-				~ExecuteNodeToolRequest();
+				DescribeNodeToolExecutionHistoryRequest();
+				~DescribeNodeToolExecutionHistoryRequest();
 
-				std::string getExecuteNodes()const;
-				void setExecuteNodes(const std::string& executeNodes);
-				std::string getDataCenterId()const;
-				void setDataCenterId(const std::string& dataCenterId);
 				std::string getClusterId()const;
 				void setClusterId(const std::string& clusterId);
-				std::string getCommand()const;
-				void setCommand(const std::string& command);
-				std::string getArguments()const;
-				void setArguments(const std::string& arguments);
+				std::string getJobId()const;
+				void setJobId(const std::string& jobId);
+				std::string getDcId()const;
+				void setDcId(const std::string& dcId);
 
             private:
-				std::string executeNodes_;
-				std::string dataCenterId_;
 				std::string clusterId_;
-				std::string command_;
-				std::string arguments_;
+				std::string jobId_;
+				std::string dcId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CASSANDRA_MODEL_EXECUTENODETOOLREQUEST_H_
+#endif // !ALIBABACLOUD_CASSANDRA_MODEL_DESCRIBENODETOOLEXECUTIONHISTORYREQUEST_H_

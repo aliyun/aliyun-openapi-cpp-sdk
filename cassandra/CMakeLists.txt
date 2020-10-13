@@ -71,6 +71,8 @@ set(cassandra_public_header_model
 	include/alibabacloud/cassandra/model/DescribeIpWhitelistGroupsResult.h
 	include/alibabacloud/cassandra/model/DescribeNodeToolExecutionHistoriesRequest.h
 	include/alibabacloud/cassandra/model/DescribeNodeToolExecutionHistoriesResult.h
+	include/alibabacloud/cassandra/model/DescribeNodeToolExecutionHistoryRequest.h
+	include/alibabacloud/cassandra/model/DescribeNodeToolExecutionHistoryResult.h
 	include/alibabacloud/cassandra/model/DescribeParameterModificationHistoriesRequest.h
 	include/alibabacloud/cassandra/model/DescribeParameterModificationHistoriesResult.h
 	include/alibabacloud/cassandra/model/DescribeParametersRequest.h
@@ -176,6 +178,8 @@ set(cassandra_src
 	src/model/DescribeIpWhitelistGroupsResult.cc
 	src/model/DescribeNodeToolExecutionHistoriesRequest.cc
 	src/model/DescribeNodeToolExecutionHistoriesResult.cc
+	src/model/DescribeNodeToolExecutionHistoryRequest.cc
+	src/model/DescribeNodeToolExecutionHistoryResult.cc
 	src/model/DescribeParameterModificationHistoriesRequest.cc
 	src/model/DescribeParameterModificationHistoriesResult.cc
 	src/model/DescribeParametersRequest.cc

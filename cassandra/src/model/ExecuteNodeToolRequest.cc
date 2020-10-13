@@ -27,6 +27,17 @@ ExecuteNodeToolRequest::ExecuteNodeToolRequest() :
 ExecuteNodeToolRequest::~ExecuteNodeToolRequest()
 {}
 
+std::string ExecuteNodeToolRequest::getExecuteNodes()const
+{
+	return executeNodes_;
+}
+
+void ExecuteNodeToolRequest::setExecuteNodes(const std::string& executeNodes)
+{
+	executeNodes_ = executeNodes;
+	setParameter("ExecuteNodes", executeNodes);
+}
+
 std::string ExecuteNodeToolRequest::getDataCenterId()const
 {
 	return dataCenterId_;

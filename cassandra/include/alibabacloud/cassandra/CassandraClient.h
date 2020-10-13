@@ -72,6 +72,8 @@
 #include "model/DescribeIpWhitelistGroupsResult.h"
 #include "model/DescribeNodeToolExecutionHistoriesRequest.h"
 #include "model/DescribeNodeToolExecutionHistoriesResult.h"
+#include "model/DescribeNodeToolExecutionHistoryRequest.h"
+#include "model/DescribeNodeToolExecutionHistoryResult.h"
 #include "model/DescribeParameterModificationHistoriesRequest.h"
 #include "model/DescribeParameterModificationHistoriesResult.h"
 #include "model/DescribeParametersRequest.h"
@@ -208,6 +210,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNodeToolExecutionHistoriesResult> DescribeNodeToolExecutionHistoriesOutcome;
 			typedef std::future<DescribeNodeToolExecutionHistoriesOutcome> DescribeNodeToolExecutionHistoriesOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::DescribeNodeToolExecutionHistoriesRequest&, const DescribeNodeToolExecutionHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeToolExecutionHistoriesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNodeToolExecutionHistoryResult> DescribeNodeToolExecutionHistoryOutcome;
+			typedef std::future<DescribeNodeToolExecutionHistoryOutcome> DescribeNodeToolExecutionHistoryOutcomeCallable;
+			typedef std::function<void(const CassandraClient*, const Model::DescribeNodeToolExecutionHistoryRequest&, const DescribeNodeToolExecutionHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeToolExecutionHistoryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeParameterModificationHistoriesResult> DescribeParameterModificationHistoriesOutcome;
 			typedef std::future<DescribeParameterModificationHistoriesOutcome> DescribeParameterModificationHistoriesOutcomeCallable;
 			typedef std::function<void(const CassandraClient*, const Model::DescribeParameterModificationHistoriesRequest&, const DescribeParameterModificationHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParameterModificationHistoriesAsyncHandler;
@@ -366,6 +371,9 @@ namespace AlibabaCloud
 			DescribeNodeToolExecutionHistoriesOutcome describeNodeToolExecutionHistories(const Model::DescribeNodeToolExecutionHistoriesRequest &request)const;
 			void describeNodeToolExecutionHistoriesAsync(const Model::DescribeNodeToolExecutionHistoriesRequest& request, const DescribeNodeToolExecutionHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNodeToolExecutionHistoriesOutcomeCallable describeNodeToolExecutionHistoriesCallable(const Model::DescribeNodeToolExecutionHistoriesRequest& request) const;
+			DescribeNodeToolExecutionHistoryOutcome describeNodeToolExecutionHistory(const Model::DescribeNodeToolExecutionHistoryRequest &request)const;
+			void describeNodeToolExecutionHistoryAsync(const Model::DescribeNodeToolExecutionHistoryRequest& request, const DescribeNodeToolExecutionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNodeToolExecutionHistoryOutcomeCallable describeNodeToolExecutionHistoryCallable(const Model::DescribeNodeToolExecutionHistoryRequest& request) const;
 			DescribeParameterModificationHistoriesOutcome describeParameterModificationHistories(const Model::DescribeParameterModificationHistoriesRequest &request)const;
 			void describeParameterModificationHistoriesAsync(const Model::DescribeParameterModificationHistoriesRequest& request, const DescribeParameterModificationHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeParameterModificationHistoriesOutcomeCallable describeParameterModificationHistoriesCallable(const Model::DescribeParameterModificationHistoriesRequest& request) const;
