@@ -92,6 +92,8 @@
 #include "model/CreateDeploymentSetResult.h"
 #include "model/CreateDiskRequest.h"
 #include "model/CreateDiskResult.h"
+#include "model/CreateElasticityAssuranceRequest.h"
+#include "model/CreateElasticityAssuranceResult.h"
 #include "model/CreateForwardEntryRequest.h"
 #include "model/CreateForwardEntryResult.h"
 #include "model/CreateHaVipRequest.h"
@@ -244,6 +246,10 @@
 #include "model/DescribeEipAddressesResult.h"
 #include "model/DescribeEipMonitorDataRequest.h"
 #include "model/DescribeEipMonitorDataResult.h"
+#include "model/DescribeElasticityAssuranceInstancesRequest.h"
+#include "model/DescribeElasticityAssuranceInstancesResult.h"
+#include "model/DescribeElasticityAssurancesRequest.h"
+#include "model/DescribeElasticityAssurancesResult.h"
 #include "model/DescribeEniMonitorDataRequest.h"
 #include "model/DescribeEniMonitorDataResult.h"
 #include "model/DescribeForwardTableEntriesRequest.h"
@@ -260,6 +266,8 @@
 #include "model/DescribeImageSupportInstanceTypesResult.h"
 #include "model/DescribeImagesRequest.h"
 #include "model/DescribeImagesResult.h"
+#include "model/DescribeInstanceAttachmentAttributesRequest.h"
+#include "model/DescribeInstanceAttachmentAttributesResult.h"
 #include "model/DescribeInstanceAttributeRequest.h"
 #include "model/DescribeInstanceAttributeResult.h"
 #include "model/DescribeInstanceAutoRenewAttributeRequest.h"
@@ -466,6 +474,8 @@
 #include "model/ModifyImageShareGroupPermissionResult.h"
 #include "model/ModifyImageSharePermissionRequest.h"
 #include "model/ModifyImageSharePermissionResult.h"
+#include "model/ModifyInstanceAttachmentAttributesRequest.h"
+#include "model/ModifyInstanceAttachmentAttributesResult.h"
 #include "model/ModifyInstanceAttributeRequest.h"
 #include "model/ModifyInstanceAttributeResult.h"
 #include "model/ModifyInstanceAutoReleaseTimeRequest.h"
@@ -578,6 +588,8 @@
 #include "model/RunInstancesResult.h"
 #include "model/SendFileRequest.h"
 #include "model/SendFileResult.h"
+#include "model/StartElasticityAssuranceRequest.h"
+#include "model/StartElasticityAssuranceResult.h"
 #include "model/StartInstanceRequest.h"
 #include "model/StartInstanceResult.h"
 #include "model/StartInstancesRequest.h"
@@ -718,6 +730,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDiskResult> CreateDiskOutcome;
 			typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDiskRequest&, const CreateDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskAsyncHandler;
+			typedef Outcome<Error, Model::CreateElasticityAssuranceResult> CreateElasticityAssuranceOutcome;
+			typedef std::future<CreateElasticityAssuranceOutcome> CreateElasticityAssuranceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateElasticityAssuranceRequest&, const CreateElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticityAssuranceAsyncHandler;
 			typedef Outcome<Error, Model::CreateForwardEntryResult> CreateForwardEntryOutcome;
 			typedef std::future<CreateForwardEntryOutcome> CreateForwardEntryOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateForwardEntryRequest&, const CreateForwardEntryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateForwardEntryAsyncHandler;
@@ -946,6 +961,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEipMonitorDataResult> DescribeEipMonitorDataOutcome;
 			typedef std::future<DescribeEipMonitorDataOutcome> DescribeEipMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeEipMonitorDataRequest&, const DescribeEipMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEipMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticityAssuranceInstancesResult> DescribeElasticityAssuranceInstancesOutcome;
+			typedef std::future<DescribeElasticityAssuranceInstancesOutcome> DescribeElasticityAssuranceInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeElasticityAssuranceInstancesRequest&, const DescribeElasticityAssuranceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticityAssuranceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeElasticityAssurancesResult> DescribeElasticityAssurancesOutcome;
+			typedef std::future<DescribeElasticityAssurancesOutcome> DescribeElasticityAssurancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeElasticityAssurancesRequest&, const DescribeElasticityAssurancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticityAssurancesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEniMonitorDataResult> DescribeEniMonitorDataOutcome;
 			typedef std::future<DescribeEniMonitorDataOutcome> DescribeEniMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeEniMonitorDataRequest&, const DescribeEniMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEniMonitorDataAsyncHandler;
@@ -970,6 +991,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeImagesResult> DescribeImagesOutcome;
 			typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeImagesRequest&, const DescribeImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceAttachmentAttributesResult> DescribeInstanceAttachmentAttributesOutcome;
+			typedef std::future<DescribeInstanceAttachmentAttributesOutcome> DescribeInstanceAttachmentAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceAttachmentAttributesRequest&, const DescribeInstanceAttachmentAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAttachmentAttributesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceAttributeResult> DescribeInstanceAttributeOutcome;
 			typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeInstanceAttributeRequest&, const DescribeInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAttributeAsyncHandler;
@@ -1279,6 +1303,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyImageSharePermissionResult> ModifyImageSharePermissionOutcome;
 			typedef std::future<ModifyImageSharePermissionOutcome> ModifyImageSharePermissionOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyImageSharePermissionRequest&, const ModifyImageSharePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageSharePermissionAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceAttachmentAttributesResult> ModifyInstanceAttachmentAttributesOutcome;
+			typedef std::future<ModifyInstanceAttachmentAttributesOutcome> ModifyInstanceAttachmentAttributesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceAttachmentAttributesRequest&, const ModifyInstanceAttachmentAttributesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttachmentAttributesAsyncHandler;
 			typedef Outcome<Error, Model::ModifyInstanceAttributeResult> ModifyInstanceAttributeOutcome;
 			typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyInstanceAttributeRequest&, const ModifyInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttributeAsyncHandler;
@@ -1447,6 +1474,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendFileResult> SendFileOutcome;
 			typedef std::future<SendFileOutcome> SendFileOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::SendFileRequest&, const SendFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendFileAsyncHandler;
+			typedef Outcome<Error, Model::StartElasticityAssuranceResult> StartElasticityAssuranceOutcome;
+			typedef std::future<StartElasticityAssuranceOutcome> StartElasticityAssuranceOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::StartElasticityAssuranceRequest&, const StartElasticityAssuranceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartElasticityAssuranceAsyncHandler;
 			typedef Outcome<Error, Model::StartInstanceResult> StartInstanceOutcome;
 			typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::StartInstanceRequest&, const StartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
@@ -1596,6 +1626,9 @@ namespace AlibabaCloud
 			CreateDiskOutcome createDisk(const Model::CreateDiskRequest &request)const;
 			void createDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDiskOutcomeCallable createDiskCallable(const Model::CreateDiskRequest& request) const;
+			CreateElasticityAssuranceOutcome createElasticityAssurance(const Model::CreateElasticityAssuranceRequest &request)const;
+			void createElasticityAssuranceAsync(const Model::CreateElasticityAssuranceRequest& request, const CreateElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateElasticityAssuranceOutcomeCallable createElasticityAssuranceCallable(const Model::CreateElasticityAssuranceRequest& request) const;
 			CreateForwardEntryOutcome createForwardEntry(const Model::CreateForwardEntryRequest &request)const;
 			void createForwardEntryAsync(const Model::CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateForwardEntryOutcomeCallable createForwardEntryCallable(const Model::CreateForwardEntryRequest& request) const;
@@ -1824,6 +1857,12 @@ namespace AlibabaCloud
 			DescribeEipMonitorDataOutcome describeEipMonitorData(const Model::DescribeEipMonitorDataRequest &request)const;
 			void describeEipMonitorDataAsync(const Model::DescribeEipMonitorDataRequest& request, const DescribeEipMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEipMonitorDataOutcomeCallable describeEipMonitorDataCallable(const Model::DescribeEipMonitorDataRequest& request) const;
+			DescribeElasticityAssuranceInstancesOutcome describeElasticityAssuranceInstances(const Model::DescribeElasticityAssuranceInstancesRequest &request)const;
+			void describeElasticityAssuranceInstancesAsync(const Model::DescribeElasticityAssuranceInstancesRequest& request, const DescribeElasticityAssuranceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticityAssuranceInstancesOutcomeCallable describeElasticityAssuranceInstancesCallable(const Model::DescribeElasticityAssuranceInstancesRequest& request) const;
+			DescribeElasticityAssurancesOutcome describeElasticityAssurances(const Model::DescribeElasticityAssurancesRequest &request)const;
+			void describeElasticityAssurancesAsync(const Model::DescribeElasticityAssurancesRequest& request, const DescribeElasticityAssurancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeElasticityAssurancesOutcomeCallable describeElasticityAssurancesCallable(const Model::DescribeElasticityAssurancesRequest& request) const;
 			DescribeEniMonitorDataOutcome describeEniMonitorData(const Model::DescribeEniMonitorDataRequest &request)const;
 			void describeEniMonitorDataAsync(const Model::DescribeEniMonitorDataRequest& request, const DescribeEniMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEniMonitorDataOutcomeCallable describeEniMonitorDataCallable(const Model::DescribeEniMonitorDataRequest& request) const;
@@ -1848,6 +1887,9 @@ namespace AlibabaCloud
 			DescribeImagesOutcome describeImages(const Model::DescribeImagesRequest &request)const;
 			void describeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImagesOutcomeCallable describeImagesCallable(const Model::DescribeImagesRequest& request) const;
+			DescribeInstanceAttachmentAttributesOutcome describeInstanceAttachmentAttributes(const Model::DescribeInstanceAttachmentAttributesRequest &request)const;
+			void describeInstanceAttachmentAttributesAsync(const Model::DescribeInstanceAttachmentAttributesRequest& request, const DescribeInstanceAttachmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceAttachmentAttributesOutcomeCallable describeInstanceAttachmentAttributesCallable(const Model::DescribeInstanceAttachmentAttributesRequest& request) const;
 			DescribeInstanceAttributeOutcome describeInstanceAttribute(const Model::DescribeInstanceAttributeRequest &request)const;
 			void describeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAttributeOutcomeCallable describeInstanceAttributeCallable(const Model::DescribeInstanceAttributeRequest& request) const;
@@ -2157,6 +2199,9 @@ namespace AlibabaCloud
 			ModifyImageSharePermissionOutcome modifyImageSharePermission(const Model::ModifyImageSharePermissionRequest &request)const;
 			void modifyImageSharePermissionAsync(const Model::ModifyImageSharePermissionRequest& request, const ModifyImageSharePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyImageSharePermissionOutcomeCallable modifyImageSharePermissionCallable(const Model::ModifyImageSharePermissionRequest& request) const;
+			ModifyInstanceAttachmentAttributesOutcome modifyInstanceAttachmentAttributes(const Model::ModifyInstanceAttachmentAttributesRequest &request)const;
+			void modifyInstanceAttachmentAttributesAsync(const Model::ModifyInstanceAttachmentAttributesRequest& request, const ModifyInstanceAttachmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceAttachmentAttributesOutcomeCallable modifyInstanceAttachmentAttributesCallable(const Model::ModifyInstanceAttachmentAttributesRequest& request) const;
 			ModifyInstanceAttributeOutcome modifyInstanceAttribute(const Model::ModifyInstanceAttributeRequest &request)const;
 			void modifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyInstanceAttributeOutcomeCallable modifyInstanceAttributeCallable(const Model::ModifyInstanceAttributeRequest& request) const;
@@ -2325,6 +2370,9 @@ namespace AlibabaCloud
 			SendFileOutcome sendFile(const Model::SendFileRequest &request)const;
 			void sendFileAsync(const Model::SendFileRequest& request, const SendFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendFileOutcomeCallable sendFileCallable(const Model::SendFileRequest& request) const;
+			StartElasticityAssuranceOutcome startElasticityAssurance(const Model::StartElasticityAssuranceRequest &request)const;
+			void startElasticityAssuranceAsync(const Model::StartElasticityAssuranceRequest& request, const StartElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartElasticityAssuranceOutcomeCallable startElasticityAssuranceCallable(const Model::StartElasticityAssuranceRequest& request) const;
 			StartInstanceOutcome startInstance(const Model::StartInstanceRequest &request)const;
 			void startInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstanceOutcomeCallable startInstanceCallable(const Model::StartInstanceRequest& request) const;

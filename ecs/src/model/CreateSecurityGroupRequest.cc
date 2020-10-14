@@ -49,6 +49,17 @@ void CreateSecurityGroupRequest::setClientToken(const std::string& clientToken)
 	setParameter("ClientToken", clientToken);
 }
 
+bool CreateSecurityGroupRequest::getServiceManaged()const
+{
+	return serviceManaged_;
+}
+
+void CreateSecurityGroupRequest::setServiceManaged(bool serviceManaged)
+{
+	serviceManaged_ = serviceManaged;
+	setParameter("ServiceManaged", serviceManaged ? "true" : "false");
+}
+
 std::string CreateSecurityGroupRequest::getDescription()const
 {
 	return description_;

@@ -77,6 +77,8 @@ namespace AlibabaCloud
 				void setDeletionProtection(bool deletionProtection);
 				std::string getResourceGroupId()const;
 				void setResourceGroupId(const std::string& resourceGroupId);
+				std::string getPrivatePoolOptionsMatchCriteria()const;
+				void setPrivatePoolOptionsMatchCriteria(const std::string& privatePoolOptionsMatchCriteria);
 				std::string getHostName()const;
 				void setHostName(const std::string& hostName);
 				std::string getPassword()const;
@@ -87,6 +89,8 @@ namespace AlibabaCloud
 				void setStorageSetPartitionNumber(int storageSetPartitionNumber);
 				std::vector<Tag> getTag()const;
 				void setTag(const std::vector<Tag>& tag);
+				std::string getPrivatePoolOptionsId()const;
+				void setPrivatePoolOptionsId(const std::string& privatePoolOptionsId);
 				int getAutoRenewPeriod()const;
 				void setAutoRenewPeriod(int autoRenewPeriod);
 				std::string getNodeControllerId()const;
@@ -201,11 +205,13 @@ namespace AlibabaCloud
 				float spotPriceLimit_;
 				bool deletionProtection_;
 				std::string resourceGroupId_;
+				std::string privatePoolOptionsMatchCriteria_;
 				std::string hostName_;
 				std::string password_;
 				int deploymentSetGroupNo_;
 				int storageSetPartitionNumber_;
 				std::vector<Tag> tag_;
+				std::string privatePoolOptionsId_;
 				int autoRenewPeriod_;
 				std::string nodeControllerId_;
 				int period_;

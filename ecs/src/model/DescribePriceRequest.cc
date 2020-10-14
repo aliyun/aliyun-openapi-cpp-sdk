@@ -104,6 +104,17 @@ void DescribePriceRequest::setDataDisk1PerformanceLevel(const std::string& dataD
 	setParameter("DataDisk1PerformanceLevel", dataDisk1PerformanceLevel);
 }
 
+std::string DescribePriceRequest::getAssuranceTimes()const
+{
+	return assuranceTimes_;
+}
+
+void DescribePriceRequest::setAssuranceTimes(const std::string& assuranceTimes)
+{
+	assuranceTimes_ = assuranceTimes;
+	setParameter("AssuranceTimes", assuranceTimes);
+}
+
 long DescribePriceRequest::getOwnerId()const
 {
 	return ownerId_;
@@ -113,6 +124,17 @@ void DescribePriceRequest::setOwnerId(long ownerId)
 {
 	ownerId_ = ownerId;
 	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+int DescribePriceRequest::getInstanceCpuCoreCount()const
+{
+	return instanceCpuCoreCount_;
+}
+
+void DescribePriceRequest::setInstanceCpuCoreCount(int instanceCpuCoreCount)
+{
+	instanceCpuCoreCount_ = instanceCpuCoreCount;
+	setParameter("InstanceCpuCoreCount", std::to_string(instanceCpuCoreCount));
 }
 
 std::string DescribePriceRequest::getInternetChargeType()const
@@ -146,6 +168,19 @@ void DescribePriceRequest::setInstanceAmount(int instanceAmount)
 {
 	instanceAmount_ = instanceAmount;
 	setParameter("InstanceAmount", std::to_string(instanceAmount));
+}
+
+std::vector<std::string> DescribePriceRequest::getInstanceTypeList()const
+{
+	return instanceTypeList_;
+}
+
+void DescribePriceRequest::setInstanceTypeList(const std::vector<std::string>& instanceTypeList)
+{
+	instanceTypeList_ = instanceTypeList;
+	for(int dep1 = 0; dep1!= instanceTypeList.size(); dep1++) {
+		setParameter("InstanceTypeList."+ std::to_string(dep1), instanceTypeList.at(dep1));
+	}
 }
 
 std::string DescribePriceRequest::getDataDisk3PerformanceLevel()const

@@ -82,6 +82,17 @@ void RunInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string RunInstancesRequest::getPrivatePoolOptionsMatchCriteria()const
+{
+	return privatePoolOptionsMatchCriteria_;
+}
+
+void RunInstancesRequest::setPrivatePoolOptionsMatchCriteria(const std::string& privatePoolOptionsMatchCriteria)
+{
+	privatePoolOptionsMatchCriteria_ = privatePoolOptionsMatchCriteria;
+	setParameter("PrivatePoolOptionsMatchCriteria", privatePoolOptionsMatchCriteria);
+}
+
 std::string RunInstancesRequest::getHostName()const
 {
 	return hostName_;
@@ -555,6 +566,17 @@ void RunInstancesRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(tagObjStr + ".Key", tagObj.key);
 		setParameter(tagObjStr + ".Value", tagObj.value);
 	}
+}
+
+std::string RunInstancesRequest::getPrivatePoolOptionsId()const
+{
+	return privatePoolOptionsId_;
+}
+
+void RunInstancesRequest::setPrivatePoolOptionsId(const std::string& privatePoolOptionsId)
+{
+	privatePoolOptionsId_ = privatePoolOptionsId;
+	setParameter("PrivatePoolOptionsId", privatePoolOptionsId);
 }
 
 int RunInstancesRequest::getAutoRenewPeriod()const

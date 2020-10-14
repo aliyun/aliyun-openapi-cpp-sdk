@@ -91,6 +91,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
+	include/alibabacloud/ecs/model/CreateElasticityAssuranceRequest.h
+	include/alibabacloud/ecs/model/CreateElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ecs/model/CreateForwardEntryResult.h
 	include/alibabacloud/ecs/model/CreateHaVipRequest.h
@@ -243,6 +245,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeEipAddressesResult.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEipMonitorDataResult.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssuranceInstancesRequest.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssuranceInstancesResult.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssurancesRequest.h
+	include/alibabacloud/ecs/model/DescribeElasticityAssurancesResult.h
 	include/alibabacloud/ecs/model/DescribeEniMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeEniMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribeForwardTableEntriesRequest.h
@@ -259,6 +265,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeImageSupportInstanceTypesResult.h
 	include/alibabacloud/ecs/model/DescribeImagesRequest.h
 	include/alibabacloud/ecs/model/DescribeImagesResult.h
+	include/alibabacloud/ecs/model/DescribeInstanceAttachmentAttributesRequest.h
+	include/alibabacloud/ecs/model/DescribeInstanceAttachmentAttributesResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceAttributeRequest.h
 	include/alibabacloud/ecs/model/DescribeInstanceAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeInstanceAutoRenewAttributeRequest.h
@@ -465,6 +473,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyImageShareGroupPermissionResult.h
 	include/alibabacloud/ecs/model/ModifyImageSharePermissionRequest.h
 	include/alibabacloud/ecs/model/ModifyImageSharePermissionResult.h
+	include/alibabacloud/ecs/model/ModifyInstanceAttachmentAttributesRequest.h
+	include/alibabacloud/ecs/model/ModifyInstanceAttachmentAttributesResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyInstanceAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyInstanceAutoReleaseTimeRequest.h
@@ -577,6 +587,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RunInstancesResult.h
 	include/alibabacloud/ecs/model/SendFileRequest.h
 	include/alibabacloud/ecs/model/SendFileResult.h
+	include/alibabacloud/ecs/model/StartElasticityAssuranceRequest.h
+	include/alibabacloud/ecs/model/StartElasticityAssuranceResult.h
 	include/alibabacloud/ecs/model/StartInstanceRequest.h
 	include/alibabacloud/ecs/model/StartInstanceResult.h
 	include/alibabacloud/ecs/model/StartInstancesRequest.h
@@ -676,6 +688,8 @@ set(ecs_src
 	src/model/CreateDeploymentSetResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
+	src/model/CreateElasticityAssuranceRequest.cc
+	src/model/CreateElasticityAssuranceResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
 	src/model/CreateHaVipRequest.cc
@@ -828,6 +842,10 @@ set(ecs_src
 	src/model/DescribeEipAddressesResult.cc
 	src/model/DescribeEipMonitorDataRequest.cc
 	src/model/DescribeEipMonitorDataResult.cc
+	src/model/DescribeElasticityAssuranceInstancesRequest.cc
+	src/model/DescribeElasticityAssuranceInstancesResult.cc
+	src/model/DescribeElasticityAssurancesRequest.cc
+	src/model/DescribeElasticityAssurancesResult.cc
 	src/model/DescribeEniMonitorDataRequest.cc
 	src/model/DescribeEniMonitorDataResult.cc
 	src/model/DescribeForwardTableEntriesRequest.cc
@@ -844,6 +862,8 @@ set(ecs_src
 	src/model/DescribeImageSupportInstanceTypesResult.cc
 	src/model/DescribeImagesRequest.cc
 	src/model/DescribeImagesResult.cc
+	src/model/DescribeInstanceAttachmentAttributesRequest.cc
+	src/model/DescribeInstanceAttachmentAttributesResult.cc
 	src/model/DescribeInstanceAttributeRequest.cc
 	src/model/DescribeInstanceAttributeResult.cc
 	src/model/DescribeInstanceAutoRenewAttributeRequest.cc
@@ -1050,6 +1070,8 @@ set(ecs_src
 	src/model/ModifyImageShareGroupPermissionResult.cc
 	src/model/ModifyImageSharePermissionRequest.cc
 	src/model/ModifyImageSharePermissionResult.cc
+	src/model/ModifyInstanceAttachmentAttributesRequest.cc
+	src/model/ModifyInstanceAttachmentAttributesResult.cc
 	src/model/ModifyInstanceAttributeRequest.cc
 	src/model/ModifyInstanceAttributeResult.cc
 	src/model/ModifyInstanceAutoReleaseTimeRequest.cc
@@ -1162,6 +1184,8 @@ set(ecs_src
 	src/model/RunInstancesResult.cc
 	src/model/SendFileRequest.cc
 	src/model/SendFileResult.cc
+	src/model/StartElasticityAssuranceRequest.cc
+	src/model/StartElasticityAssuranceResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
 	src/model/StartInstancesRequest.cc

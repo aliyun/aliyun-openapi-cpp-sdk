@@ -115,6 +115,17 @@ void CreateInstanceRequest::setResourceGroupId(const std::string& resourceGroupI
 	setParameter("ResourceGroupId", resourceGroupId);
 }
 
+std::string CreateInstanceRequest::getPrivatePoolOptionsMatchCriteria()const
+{
+	return privatePoolOptionsMatchCriteria_;
+}
+
+void CreateInstanceRequest::setPrivatePoolOptionsMatchCriteria(const std::string& privatePoolOptionsMatchCriteria)
+{
+	privatePoolOptionsMatchCriteria_ = privatePoolOptionsMatchCriteria;
+	setParameter("PrivatePoolOptionsMatchCriteria", privatePoolOptionsMatchCriteria);
+}
+
 std::string CreateInstanceRequest::getHostName()const
 {
 	return hostName_;
@@ -173,6 +184,17 @@ void CreateInstanceRequest::setTag(const std::vector<Tag>& tag)
 		setParameter(tagObjStr + ".Value", tagObj.value);
 		setParameter(tagObjStr + ".Key", tagObj.key);
 	}
+}
+
+std::string CreateInstanceRequest::getPrivatePoolOptionsId()const
+{
+	return privatePoolOptionsId_;
+}
+
+void CreateInstanceRequest::setPrivatePoolOptionsId(const std::string& privatePoolOptionsId)
+{
+	privatePoolOptionsId_ = privatePoolOptionsId;
+	setParameter("PrivatePoolOptionsId", privatePoolOptionsId);
 }
 
 int CreateInstanceRequest::getAutoRenewPeriod()const

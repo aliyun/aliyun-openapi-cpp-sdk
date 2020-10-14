@@ -1311,6 +1311,42 @@ EcsClient::CreateDiskOutcomeCallable EcsClient::createDiskCallable(const CreateD
 	return task->get_future();
 }
 
+EcsClient::CreateElasticityAssuranceOutcome EcsClient::createElasticityAssurance(const CreateElasticityAssuranceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateElasticityAssuranceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateElasticityAssuranceOutcome(CreateElasticityAssuranceResult(outcome.result()));
+	else
+		return CreateElasticityAssuranceOutcome(outcome.error());
+}
+
+void EcsClient::createElasticityAssuranceAsync(const CreateElasticityAssuranceRequest& request, const CreateElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createElasticityAssurance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateElasticityAssuranceOutcomeCallable EcsClient::createElasticityAssuranceCallable(const CreateElasticityAssuranceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateElasticityAssuranceOutcome()>>(
+			[this, request]()
+			{
+			return this->createElasticityAssurance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateForwardEntryOutcome EcsClient::createForwardEntry(const CreateForwardEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4047,6 +4083,78 @@ EcsClient::DescribeEipMonitorDataOutcomeCallable EcsClient::describeEipMonitorDa
 	return task->get_future();
 }
 
+EcsClient::DescribeElasticityAssuranceInstancesOutcome EcsClient::describeElasticityAssuranceInstances(const DescribeElasticityAssuranceInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeElasticityAssuranceInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeElasticityAssuranceInstancesOutcome(DescribeElasticityAssuranceInstancesResult(outcome.result()));
+	else
+		return DescribeElasticityAssuranceInstancesOutcome(outcome.error());
+}
+
+void EcsClient::describeElasticityAssuranceInstancesAsync(const DescribeElasticityAssuranceInstancesRequest& request, const DescribeElasticityAssuranceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeElasticityAssuranceInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeElasticityAssuranceInstancesOutcomeCallable EcsClient::describeElasticityAssuranceInstancesCallable(const DescribeElasticityAssuranceInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeElasticityAssuranceInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeElasticityAssuranceInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeElasticityAssurancesOutcome EcsClient::describeElasticityAssurances(const DescribeElasticityAssurancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeElasticityAssurancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeElasticityAssurancesOutcome(DescribeElasticityAssurancesResult(outcome.result()));
+	else
+		return DescribeElasticityAssurancesOutcome(outcome.error());
+}
+
+void EcsClient::describeElasticityAssurancesAsync(const DescribeElasticityAssurancesRequest& request, const DescribeElasticityAssurancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeElasticityAssurances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeElasticityAssurancesOutcomeCallable EcsClient::describeElasticityAssurancesCallable(const DescribeElasticityAssurancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeElasticityAssurancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeElasticityAssurances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeEniMonitorDataOutcome EcsClient::describeEniMonitorData(const DescribeEniMonitorDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4329,6 +4437,42 @@ EcsClient::DescribeImagesOutcomeCallable EcsClient::describeImagesCallable(const
 			[this, request]()
 			{
 			return this->describeImages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeInstanceAttachmentAttributesOutcome EcsClient::describeInstanceAttachmentAttributes(const DescribeInstanceAttachmentAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceAttachmentAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceAttachmentAttributesOutcome(DescribeInstanceAttachmentAttributesResult(outcome.result()));
+	else
+		return DescribeInstanceAttachmentAttributesOutcome(outcome.error());
+}
+
+void EcsClient::describeInstanceAttachmentAttributesAsync(const DescribeInstanceAttachmentAttributesRequest& request, const DescribeInstanceAttachmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceAttachmentAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeInstanceAttachmentAttributesOutcomeCallable EcsClient::describeInstanceAttachmentAttributesCallable(const DescribeInstanceAttachmentAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceAttachmentAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceAttachmentAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8043,6 +8187,42 @@ EcsClient::ModifyImageSharePermissionOutcomeCallable EcsClient::modifyImageShare
 	return task->get_future();
 }
 
+EcsClient::ModifyInstanceAttachmentAttributesOutcome EcsClient::modifyInstanceAttachmentAttributes(const ModifyInstanceAttachmentAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceAttachmentAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceAttachmentAttributesOutcome(ModifyInstanceAttachmentAttributesResult(outcome.result()));
+	else
+		return ModifyInstanceAttachmentAttributesOutcome(outcome.error());
+}
+
+void EcsClient::modifyInstanceAttachmentAttributesAsync(const ModifyInstanceAttachmentAttributesRequest& request, const ModifyInstanceAttachmentAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceAttachmentAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyInstanceAttachmentAttributesOutcomeCallable EcsClient::modifyInstanceAttachmentAttributesCallable(const ModifyInstanceAttachmentAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceAttachmentAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceAttachmentAttributes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyInstanceAttributeOutcome EcsClient::modifyInstanceAttribute(const ModifyInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10053,6 +10233,42 @@ EcsClient::SendFileOutcomeCallable EcsClient::sendFileCallable(const SendFileReq
 			[this, request]()
 			{
 			return this->sendFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::StartElasticityAssuranceOutcome EcsClient::startElasticityAssurance(const StartElasticityAssuranceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartElasticityAssuranceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartElasticityAssuranceOutcome(StartElasticityAssuranceResult(outcome.result()));
+	else
+		return StartElasticityAssuranceOutcome(outcome.error());
+}
+
+void EcsClient::startElasticityAssuranceAsync(const StartElasticityAssuranceRequest& request, const StartElasticityAssuranceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startElasticityAssurance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::StartElasticityAssuranceOutcomeCallable EcsClient::startElasticityAssuranceCallable(const StartElasticityAssuranceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartElasticityAssuranceOutcome()>>(
+			[this, request]()
+			{
+			return this->startElasticityAssurance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

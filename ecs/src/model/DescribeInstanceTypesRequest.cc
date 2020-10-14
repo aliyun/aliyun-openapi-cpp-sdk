@@ -38,6 +38,19 @@ void DescribeInstanceTypesRequest::setResourceOwnerId(long resourceOwnerId)
 	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
+std::vector<std::string> DescribeInstanceTypesRequest::getInstanceTypes()const
+{
+	return instanceTypes_;
+}
+
+void DescribeInstanceTypesRequest::setInstanceTypes(const std::vector<std::string>& instanceTypes)
+{
+	instanceTypes_ = instanceTypes;
+	for(int dep1 = 0; dep1!= instanceTypes.size(); dep1++) {
+		setParameter("InstanceTypes."+ std::to_string(dep1), instanceTypes.at(dep1));
+	}
+}
+
 std::string DescribeInstanceTypesRequest::getResourceOwnerAccount()const
 {
 	return resourceOwnerAccount_;
