@@ -37,6 +37,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
+	include/alibabacloud/arms/model/CreateWehookRequest.h
+	include/alibabacloud/arms/model/CreateWehookResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactRequest.h
 	include/alibabacloud/arms/model/DeleteAlertContactResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactGroupRequest.h
@@ -87,6 +89,8 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/QueryMetricResult.h
 	include/alibabacloud/arms/model/QueryMetricByPageRequest.h
 	include/alibabacloud/arms/model/QueryMetricByPageResult.h
+	include/alibabacloud/arms/model/SaveTraceAppConfigRequest.h
+	include/alibabacloud/arms/model/SaveTraceAppConfigResult.h
 	include/alibabacloud/arms/model/SearchAlertContactRequest.h
 	include/alibabacloud/arms/model/SearchAlertContactResult.h
 	include/alibabacloud/arms/model/SearchAlertContactGroupRequest.h
@@ -118,7 +122,9 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/UpdateAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/UpdateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/UpdateAlertRuleRequest.h
-	include/alibabacloud/arms/model/UpdateAlertRuleResult.h )
+	include/alibabacloud/arms/model/UpdateAlertRuleResult.h
+	include/alibabacloud/arms/model/UpdateWebhookRequest.h
+	include/alibabacloud/arms/model/UpdateWebhookResult.h )
 
 set(arms_src 
 	src/ARMSClient.cc
@@ -138,6 +144,8 @@ set(arms_src
 	src/model/CreateAlertContactGroupResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
+	src/model/CreateWehookRequest.cc
+	src/model/CreateWehookResult.cc
 	src/model/DeleteAlertContactRequest.cc
 	src/model/DeleteAlertContactResult.cc
 	src/model/DeleteAlertContactGroupRequest.cc
@@ -188,6 +196,8 @@ set(arms_src
 	src/model/QueryMetricResult.cc
 	src/model/QueryMetricByPageRequest.cc
 	src/model/QueryMetricByPageResult.cc
+	src/model/SaveTraceAppConfigRequest.cc
+	src/model/SaveTraceAppConfigResult.cc
 	src/model/SearchAlertContactRequest.cc
 	src/model/SearchAlertContactResult.cc
 	src/model/SearchAlertContactGroupRequest.cc
@@ -219,7 +229,9 @@ set(arms_src
 	src/model/UpdateAlertContactGroupRequest.cc
 	src/model/UpdateAlertContactGroupResult.cc
 	src/model/UpdateAlertRuleRequest.cc
-	src/model/UpdateAlertRuleResult.cc )
+	src/model/UpdateAlertRuleResult.cc
+	src/model/UpdateWebhookRequest.cc
+	src/model/UpdateWebhookResult.cc )
 
 add_library(arms ${LIB_TYPE}
 	${arms_public_header}

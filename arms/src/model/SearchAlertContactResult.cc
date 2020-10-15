@@ -68,6 +68,8 @@ void SearchAlertContactResult::parse(const std::string &payload)
 			contactObject.updateTime = std::stol(pageBeanNodeContactsContact["UpdateTime"].asString());
 		if(!pageBeanNodeContactsContact["SystemNoc"].isNull())
 			contactObject.systemNoc = pageBeanNodeContactsContact["SystemNoc"].asString() == "true";
+		if(!pageBeanNodeContactsContact["Webhook"].isNull())
+			contactObject.webhook = pageBeanNodeContactsContact["Webhook"].asString();
 		pageBean_.contacts.push_back(contactObject);
 	}
 

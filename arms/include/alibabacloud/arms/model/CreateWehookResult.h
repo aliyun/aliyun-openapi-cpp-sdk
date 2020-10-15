@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTRESULT_H_
-#define ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTRESULT_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKRESULT_H_
+#define ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT SearchAlertContactResult : public ServiceResult
+			class ALIBABACLOUD_ARMS_EXPORT CreateWehookResult : public ServiceResult
 			{
 			public:
-				struct PageBean
-				{
-					struct Contact
-					{
-						std::string email;
-						std::string phone;
-						std::string userId;
-						long createTime;
-						long updateTime;
-						std::string webhook;
-						long contactId;
-						std::string dingRobot;
-						std::string contactName;
-						bool systemNoc;
-					};
-					int totalCount;
-					std::vector<Contact> contacts;
-					int pageSize;
-					int pageNumber;
-				};
 
 
-				SearchAlertContactResult();
-				explicit SearchAlertContactResult(const std::string &payload);
-				~SearchAlertContactResult();
-				PageBean getPageBean()const;
+				CreateWehookResult();
+				explicit CreateWehookResult(const std::string &payload);
+				~CreateWehookResult();
+				std::string getContactId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				PageBean pageBean_;
+				std::string contactId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTRESULT_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKRESULT_H_

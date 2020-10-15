@@ -38,6 +38,8 @@
 #include "model/CreateAlertContactGroupResult.h"
 #include "model/CreateRetcodeAppRequest.h"
 #include "model/CreateRetcodeAppResult.h"
+#include "model/CreateWehookRequest.h"
+#include "model/CreateWehookResult.h"
 #include "model/DeleteAlertContactRequest.h"
 #include "model/DeleteAlertContactResult.h"
 #include "model/DeleteAlertContactGroupRequest.h"
@@ -88,6 +90,8 @@
 #include "model/QueryMetricResult.h"
 #include "model/QueryMetricByPageRequest.h"
 #include "model/QueryMetricByPageResult.h"
+#include "model/SaveTraceAppConfigRequest.h"
+#include "model/SaveTraceAppConfigResult.h"
 #include "model/SearchAlertContactRequest.h"
 #include "model/SearchAlertContactResult.h"
 #include "model/SearchAlertContactGroupRequest.h"
@@ -120,6 +124,8 @@
 #include "model/UpdateAlertContactGroupResult.h"
 #include "model/UpdateAlertRuleRequest.h"
 #include "model/UpdateAlertRuleResult.h"
+#include "model/UpdateWebhookRequest.h"
+#include "model/UpdateWebhookResult.h"
 
 
 namespace AlibabaCloud
@@ -153,6 +159,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateRetcodeAppResult> CreateRetcodeAppOutcome;
 			typedef std::future<CreateRetcodeAppOutcome> CreateRetcodeAppOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::CreateRetcodeAppRequest&, const CreateRetcodeAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRetcodeAppAsyncHandler;
+			typedef Outcome<Error, Model::CreateWehookResult> CreateWehookOutcome;
+			typedef std::future<CreateWehookOutcome> CreateWehookOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::CreateWehookRequest&, const CreateWehookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWehookAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAlertContactResult> DeleteAlertContactOutcome;
 			typedef std::future<DeleteAlertContactOutcome> DeleteAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::DeleteAlertContactRequest&, const DeleteAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlertContactAsyncHandler;
@@ -228,6 +237,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryMetricByPageResult> QueryMetricByPageOutcome;
 			typedef std::future<QueryMetricByPageOutcome> QueryMetricByPageOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::QueryMetricByPageRequest&, const QueryMetricByPageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryMetricByPageAsyncHandler;
+			typedef Outcome<Error, Model::SaveTraceAppConfigResult> SaveTraceAppConfigOutcome;
+			typedef std::future<SaveTraceAppConfigOutcome> SaveTraceAppConfigOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::SaveTraceAppConfigRequest&, const SaveTraceAppConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveTraceAppConfigAsyncHandler;
 			typedef Outcome<Error, Model::SearchAlertContactResult> SearchAlertContactOutcome;
 			typedef std::future<SearchAlertContactOutcome> SearchAlertContactOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::SearchAlertContactRequest&, const SearchAlertContactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchAlertContactAsyncHandler;
@@ -276,6 +288,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAlertRuleResult> UpdateAlertRuleOutcome;
 			typedef std::future<UpdateAlertRuleOutcome> UpdateAlertRuleOutcomeCallable;
 			typedef std::function<void(const ARMSClient*, const Model::UpdateAlertRuleRequest&, const UpdateAlertRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleAsyncHandler;
+			typedef Outcome<Error, Model::UpdateWebhookResult> UpdateWebhookOutcome;
+			typedef std::future<UpdateWebhookOutcome> UpdateWebhookOutcomeCallable;
+			typedef std::function<void(const ARMSClient*, const Model::UpdateWebhookRequest&, const UpdateWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWebhookAsyncHandler;
 
 			ARMSClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ARMSClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -305,6 +320,9 @@ namespace AlibabaCloud
 			CreateRetcodeAppOutcome createRetcodeApp(const Model::CreateRetcodeAppRequest &request)const;
 			void createRetcodeAppAsync(const Model::CreateRetcodeAppRequest& request, const CreateRetcodeAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateRetcodeAppOutcomeCallable createRetcodeAppCallable(const Model::CreateRetcodeAppRequest& request) const;
+			CreateWehookOutcome createWehook(const Model::CreateWehookRequest &request)const;
+			void createWehookAsync(const Model::CreateWehookRequest& request, const CreateWehookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWehookOutcomeCallable createWehookCallable(const Model::CreateWehookRequest& request) const;
 			DeleteAlertContactOutcome deleteAlertContact(const Model::DeleteAlertContactRequest &request)const;
 			void deleteAlertContactAsync(const Model::DeleteAlertContactRequest& request, const DeleteAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAlertContactOutcomeCallable deleteAlertContactCallable(const Model::DeleteAlertContactRequest& request) const;
@@ -380,6 +398,9 @@ namespace AlibabaCloud
 			QueryMetricByPageOutcome queryMetricByPage(const Model::QueryMetricByPageRequest &request)const;
 			void queryMetricByPageAsync(const Model::QueryMetricByPageRequest& request, const QueryMetricByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryMetricByPageOutcomeCallable queryMetricByPageCallable(const Model::QueryMetricByPageRequest& request) const;
+			SaveTraceAppConfigOutcome saveTraceAppConfig(const Model::SaveTraceAppConfigRequest &request)const;
+			void saveTraceAppConfigAsync(const Model::SaveTraceAppConfigRequest& request, const SaveTraceAppConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveTraceAppConfigOutcomeCallable saveTraceAppConfigCallable(const Model::SaveTraceAppConfigRequest& request) const;
 			SearchAlertContactOutcome searchAlertContact(const Model::SearchAlertContactRequest &request)const;
 			void searchAlertContactAsync(const Model::SearchAlertContactRequest& request, const SearchAlertContactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchAlertContactOutcomeCallable searchAlertContactCallable(const Model::SearchAlertContactRequest& request) const;
@@ -428,6 +449,9 @@ namespace AlibabaCloud
 			UpdateAlertRuleOutcome updateAlertRule(const Model::UpdateAlertRuleRequest &request)const;
 			void updateAlertRuleAsync(const Model::UpdateAlertRuleRequest& request, const UpdateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAlertRuleOutcomeCallable updateAlertRuleCallable(const Model::UpdateAlertRuleRequest& request) const;
+			UpdateWebhookOutcome updateWebhook(const Model::UpdateWebhookRequest &request)const;
+			void updateWebhookAsync(const Model::UpdateWebhookRequest& request, const UpdateWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateWebhookOutcomeCallable updateWebhookCallable(const Model::UpdateWebhookRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

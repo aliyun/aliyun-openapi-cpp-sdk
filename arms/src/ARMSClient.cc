@@ -339,6 +339,42 @@ ARMSClient::CreateRetcodeAppOutcomeCallable ARMSClient::createRetcodeAppCallable
 	return task->get_future();
 }
 
+ARMSClient::CreateWehookOutcome ARMSClient::createWehook(const CreateWehookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateWehookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateWehookOutcome(CreateWehookResult(outcome.result()));
+	else
+		return CreateWehookOutcome(outcome.error());
+}
+
+void ARMSClient::createWehookAsync(const CreateWehookRequest& request, const CreateWehookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createWehook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::CreateWehookOutcomeCallable ARMSClient::createWehookCallable(const CreateWehookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateWehookOutcome()>>(
+			[this, request]()
+			{
+			return this->createWehook(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::DeleteAlertContactOutcome ARMSClient::deleteAlertContact(const DeleteAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1239,6 +1275,42 @@ ARMSClient::QueryMetricByPageOutcomeCallable ARMSClient::queryMetricByPageCallab
 	return task->get_future();
 }
 
+ARMSClient::SaveTraceAppConfigOutcome ARMSClient::saveTraceAppConfig(const SaveTraceAppConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveTraceAppConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveTraceAppConfigOutcome(SaveTraceAppConfigResult(outcome.result()));
+	else
+		return SaveTraceAppConfigOutcome(outcome.error());
+}
+
+void ARMSClient::saveTraceAppConfigAsync(const SaveTraceAppConfigRequest& request, const SaveTraceAppConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveTraceAppConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::SaveTraceAppConfigOutcomeCallable ARMSClient::saveTraceAppConfigCallable(const SaveTraceAppConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveTraceAppConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->saveTraceAppConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ARMSClient::SearchAlertContactOutcome ARMSClient::searchAlertContact(const SearchAlertContactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1809,6 +1881,42 @@ ARMSClient::UpdateAlertRuleOutcomeCallable ARMSClient::updateAlertRuleCallable(c
 			[this, request]()
 			{
 			return this->updateAlertRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ARMSClient::UpdateWebhookOutcome ARMSClient::updateWebhook(const UpdateWebhookRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateWebhookOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateWebhookOutcome(UpdateWebhookResult(outcome.result()));
+	else
+		return UpdateWebhookOutcome(outcome.error());
+}
+
+void ARMSClient::updateWebhookAsync(const UpdateWebhookRequest& request, const UpdateWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateWebhook(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ARMSClient::UpdateWebhookOutcomeCallable ARMSClient::updateWebhookCallable(const UpdateWebhookRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateWebhookOutcome()>>(
+			[this, request]()
+			{
+			return this->updateWebhook(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

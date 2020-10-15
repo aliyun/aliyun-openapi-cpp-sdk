@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPREQUEST_H_
-#define ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKREQUEST_H_
+#define ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,39 +28,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ARMS_EXPORT SearchAlertContactGroupRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ARMS_EXPORT CreateWehookRequest : public RpcServiceRequest
 			{
 
 			public:
-				SearchAlertContactGroupRequest();
-				~SearchAlertContactGroupRequest();
+				CreateWehookRequest();
+				~CreateWehookRequest();
 
-				long getContactId()const;
-				void setContactId(long contactId);
-				bool getIsDetail()const;
-				void setIsDetail(bool isDetail);
-				std::string getContactGroupName()const;
-				void setContactGroupName(const std::string& contactGroupName);
+				std::string getHeaders()const;
+				void setHeaders(const std::string& headers);
+				std::string getMethod()const;
+				void setMethod(const std::string& method);
+				std::string getParams()const;
+				void setParams(const std::string& params);
 				std::string getProxyUserId()const;
 				void setProxyUserId(const std::string& proxyUserId);
+				std::string getBody()const;
+				void setBody(const std::string& body);
+				std::string getUrl()const;
+				void setUrl(const std::string& url);
 				std::string getContactName()const;
 				void setContactName(const std::string& contactName);
 				std::string getRegionId()const;
 				void setRegionId(const std::string& regionId);
-				std::string getContactGroupIds()const;
-				void setContactGroupIds(const std::string& contactGroupIds);
 
             private:
-				long contactId_;
-				bool isDetail_;
-				std::string contactGroupName_;
+				std::string headers_;
+				std::string method_;
+				std::string params_;
 				std::string proxyUserId_;
+				std::string body_;
+				std::string url_;
 				std::string contactName_;
 				std::string regionId_;
-				std::string contactGroupIds_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ARMS_MODEL_SEARCHALERTCONTACTGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_ARMS_MODEL_CREATEWEHOOKREQUEST_H_

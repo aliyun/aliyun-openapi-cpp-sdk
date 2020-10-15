@@ -27,28 +27,6 @@ SearchAlertContactGroupRequest::SearchAlertContactGroupRequest() :
 SearchAlertContactGroupRequest::~SearchAlertContactGroupRequest()
 {}
 
-std::string SearchAlertContactGroupRequest::getContactName()const
-{
-	return contactName_;
-}
-
-void SearchAlertContactGroupRequest::setContactName(const std::string& contactName)
-{
-	contactName_ = contactName;
-	setParameter("ContactName", contactName);
-}
-
-std::string SearchAlertContactGroupRequest::getRegionId()const
-{
-	return regionId_;
-}
-
-void SearchAlertContactGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
-}
-
 long SearchAlertContactGroupRequest::getContactId()const
 {
 	return contactId_;
@@ -58,6 +36,17 @@ void SearchAlertContactGroupRequest::setContactId(long contactId)
 {
 	contactId_ = contactId;
 	setParameter("ContactId", std::to_string(contactId));
+}
+
+bool SearchAlertContactGroupRequest::getIsDetail()const
+{
+	return isDetail_;
+}
+
+void SearchAlertContactGroupRequest::setIsDetail(bool isDetail)
+{
+	isDetail_ = isDetail;
+	setParameter("IsDetail", isDetail ? "true" : "false");
 }
 
 std::string SearchAlertContactGroupRequest::getContactGroupName()const
@@ -80,5 +69,38 @@ void SearchAlertContactGroupRequest::setProxyUserId(const std::string& proxyUser
 {
 	proxyUserId_ = proxyUserId;
 	setParameter("ProxyUserId", proxyUserId);
+}
+
+std::string SearchAlertContactGroupRequest::getContactName()const
+{
+	return contactName_;
+}
+
+void SearchAlertContactGroupRequest::setContactName(const std::string& contactName)
+{
+	contactName_ = contactName;
+	setParameter("ContactName", contactName);
+}
+
+std::string SearchAlertContactGroupRequest::getRegionId()const
+{
+	return regionId_;
+}
+
+void SearchAlertContactGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
+}
+
+std::string SearchAlertContactGroupRequest::getContactGroupIds()const
+{
+	return contactGroupIds_;
+}
+
+void SearchAlertContactGroupRequest::setContactGroupIds(const std::string& contactGroupIds)
+{
+	contactGroupIds_ = contactGroupIds;
+	setParameter("ContactGroupIds", contactGroupIds);
 }
 

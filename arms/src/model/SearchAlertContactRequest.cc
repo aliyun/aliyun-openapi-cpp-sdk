@@ -49,6 +49,17 @@ void SearchAlertContactRequest::setProxyUserId(const std::string& proxyUserId)
 	setParameter("ProxyUserId", proxyUserId);
 }
 
+std::string SearchAlertContactRequest::getContactIds()const
+{
+	return contactIds_;
+}
+
+void SearchAlertContactRequest::setContactIds(const std::string& contactIds)
+{
+	contactIds_ = contactIds;
+	setParameter("ContactIds", contactIds);
+}
+
 std::string SearchAlertContactRequest::getContactName()const
 {
 	return contactName_;
