@@ -128,6 +128,9 @@ RoaServiceClient::buildHttpRequest(const std::string &endpoint,
     request.setHeader("Content-MD5",
                       ComputeContentMD5(msg.content(), msg.contentSize()));
     request.setBody(msg.content(), msg.contentSize());
+  } else {
+    request.setHeader("Content-MD5",
+                      ComputeContentMD5(msg.content(), msg.contentSize()));
   }
 
   std::time_t t = std::time(nullptr);
