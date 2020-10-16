@@ -89,6 +89,8 @@ namespace AlibabaCloud
 				void setIOSRemind(bool iOSRemind);
 				std::string getAndroidMusic()const;
 				void setAndroidMusic(const std::string& androidMusic);
+				std::string getIOSNotificationCollapseId()const;
+				void setIOSNotificationCollapseId(const std::string& iOSNotificationCollapseId);
 				std::string getPushType()const;
 				void setPushType(const std::string& pushType);
 				std::string getAndroidExtParameters()const;
@@ -123,6 +125,8 @@ namespace AlibabaCloud
 				void setAndroidActivity(const std::string& androidActivity);
 				std::string getSmsSignName()const;
 				void setSmsSignName(const std::string& smsSignName);
+				int getAndroidNotificationNotifyId()const;
+				void setAndroidNotificationNotifyId(int androidNotificationNotifyId);
 				long getAppKey()const;
 				void setAppKey(long appKey);
 				std::string getTargetValue()const;
@@ -160,6 +164,7 @@ namespace AlibabaCloud
 				std::string iOSSubtitle_;
 				bool iOSRemind_;
 				std::string androidMusic_;
+				std::string iOSNotificationCollapseId_;
 				std::string pushType_;
 				std::string androidExtParameters_;
 				int iOSBadge_;
@@ -177,6 +182,7 @@ namespace AlibabaCloud
 				bool androidRemind_;
 				std::string androidActivity_;
 				std::string smsSignName_;
+				int androidNotificationNotifyId_;
 				long appKey_;
 				std::string targetValue_;
 				std::string androidXiaoMiActivity_;

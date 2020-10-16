@@ -324,6 +324,17 @@ void PushRequest::setAndroidMusic(const std::string& androidMusic)
 	setParameter("AndroidMusic", androidMusic);
 }
 
+std::string PushRequest::getIOSNotificationCollapseId()const
+{
+	return iOSNotificationCollapseId_;
+}
+
+void PushRequest::setIOSNotificationCollapseId(const std::string& iOSNotificationCollapseId)
+{
+	iOSNotificationCollapseId_ = iOSNotificationCollapseId;
+	setParameter("IOSNotificationCollapseId", iOSNotificationCollapseId);
+}
+
 std::string PushRequest::getPushType()const
 {
 	return pushType_;
@@ -509,6 +520,17 @@ void PushRequest::setSmsSignName(const std::string& smsSignName)
 {
 	smsSignName_ = smsSignName;
 	setParameter("SmsSignName", smsSignName);
+}
+
+int PushRequest::getAndroidNotificationNotifyId()const
+{
+	return androidNotificationNotifyId_;
+}
+
+void PushRequest::setAndroidNotificationNotifyId(int androidNotificationNotifyId)
+{
+	androidNotificationNotifyId_ = androidNotificationNotifyId;
+	setParameter("AndroidNotificationNotifyId", std::to_string(androidNotificationNotifyId));
 }
 
 long PushRequest::getAppKey()const

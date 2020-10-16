@@ -69,10 +69,12 @@ namespace AlibabaCloud
 					std::string androidXiaoMiNotifyBody;
 					std::string iOSSubtitle;
 					bool iOSRemind;
+					int androidNotificationNotifyId;
 					std::string targetValue;
 					std::string androidMusic;
 					std::string androidXiaoMiActivity;
 					std::string androidXiaoMiNotifyTitle;
+					std::string iOSNotificationCollapseId;
 					std::string pushType;
 				};
 

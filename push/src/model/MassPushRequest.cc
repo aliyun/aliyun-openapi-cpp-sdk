@@ -85,10 +85,12 @@ void MassPushRequest::setPushTask(const std::vector<PushTask>& pushTask)
 		setParameter(pushTaskObjStr + ".AndroidXiaoMiNotifyBody", pushTaskObj.androidXiaoMiNotifyBody);
 		setParameter(pushTaskObjStr + ".IOSSubtitle", pushTaskObj.iOSSubtitle);
 		setParameter(pushTaskObjStr + ".IOSRemind", pushTaskObj.iOSRemind ? "true" : "false");
+		setParameter(pushTaskObjStr + ".AndroidNotificationNotifyId", std::to_string(pushTaskObj.androidNotificationNotifyId));
 		setParameter(pushTaskObjStr + ".TargetValue", pushTaskObj.targetValue);
 		setParameter(pushTaskObjStr + ".AndroidMusic", pushTaskObj.androidMusic);
 		setParameter(pushTaskObjStr + ".AndroidXiaoMiActivity", pushTaskObj.androidXiaoMiActivity);
 		setParameter(pushTaskObjStr + ".AndroidXiaoMiNotifyTitle", pushTaskObj.androidXiaoMiNotifyTitle);
+		setParameter(pushTaskObjStr + ".IOSNotificationCollapseId", pushTaskObj.iOSNotificationCollapseId);
 		setParameter(pushTaskObjStr + ".PushType", pushTaskObj.pushType);
 	}
 }
