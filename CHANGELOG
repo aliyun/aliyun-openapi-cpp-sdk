@@ -2,6 +2,9 @@
 - Metering.
 
 2020-10-16 Version: patch
+- Metering.
+
+2020-10-16 Version: patch
 - Supported AndroidNotificationNotifyId for Push and MassPush.
 - Supported iOSNotificationCollapseId for Push and MassPush.
 
